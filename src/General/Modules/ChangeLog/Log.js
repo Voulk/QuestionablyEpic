@@ -10,6 +10,16 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 23,
+    date: "1st July",
+    changes: [
+      "Updated Trinket Analysis Colors.",
+      "Updated formulas for Anima Sphere, Hallowed Discernment and Well-Honed Instincts to match live values.",
+      "Adjusted stat soft DR coefficients for the new patch.",
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 2,
     date: "30th June",
     changes: [

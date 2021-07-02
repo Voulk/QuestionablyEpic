@@ -156,7 +156,6 @@ export function getSoulbindFormula(effectID, player, contentType) {
     const critPerStack = 0.25 * STATPERONEPERCENT.Retail.CRIT
 
     bonus_stats.Crit = (critPerStack * averageValiantStacks) + (5 * STATPERONEPERCENT.Retail.CRIT * 15 * ppm) / 60
-    console.log("Average Valiant Stacks: " + averageValiantStacks);
 
   }
 
@@ -210,7 +209,6 @@ export function getSoulbindFormula(effectID, player, contentType) {
       
       if (player.getSpec() === "Holy Paladin") {
         const oneDivineToll = getPaladinCovAbility("Mikanikos", player, contentType);
-        console.log("DT: " + JSON.stringify(oneDivineToll));
 
         bonus_stats.HPS = oneDivineToll['HPS'] * (reductionPerTarget * expectedTargets[contentType]);
     }

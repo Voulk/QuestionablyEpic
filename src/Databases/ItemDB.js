@@ -143,9 +143,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -173,9 +171,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -203,9 +199,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -233,9 +227,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -263,9 +255,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -293,9 +283,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -323,9 +311,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -353,9 +339,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -383,9 +367,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -418,9 +400,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -448,9 +428,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -478,9 +456,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -508,9 +484,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -538,9 +512,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -568,9 +540,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -598,9 +568,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -628,9 +596,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -658,9 +624,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -688,9 +652,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -718,9 +680,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -748,9 +708,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -778,9 +736,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -808,9 +764,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -838,9 +792,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -868,9 +820,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -898,9 +848,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -928,9 +876,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -958,9 +904,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -988,9 +932,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -1018,9 +960,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -1048,9 +988,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -1078,9 +1016,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -1108,9 +1044,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -1138,9 +1072,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -1168,9 +1100,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -1198,9 +1128,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -1228,9 +1156,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -1258,9 +1184,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -1288,9 +1212,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -1318,9 +1240,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -1348,9 +1268,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -1378,9 +1296,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -1408,9 +1324,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -1438,9 +1352,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -1468,9 +1380,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -1503,9 +1413,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -1533,9 +1441,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -1563,9 +1469,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -1593,9 +1497,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -1623,9 +1525,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -1653,9 +1553,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -1683,9 +1581,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -1713,9 +1609,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -1743,9 +1637,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -1773,9 +1665,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -1803,9 +1693,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -1833,9 +1721,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -1863,9 +1749,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -1893,9 +1777,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -1928,9 +1810,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -1958,9 +1838,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -1988,9 +1866,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -2018,9 +1894,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -2048,9 +1922,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -2078,9 +1950,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -2108,9 +1978,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -2138,9 +2006,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -2168,9 +2034,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -2198,9 +2062,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -2228,9 +2090,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -2258,9 +2118,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -2288,9 +2146,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -2318,9 +2174,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -2348,9 +2202,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -2378,9 +2230,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -2408,9 +2258,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -2438,9 +2286,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -2468,9 +2314,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -2498,9 +2342,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -2528,9 +2370,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -2558,9 +2398,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -2588,9 +2426,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -2623,9 +2459,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -2653,9 +2487,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -2683,9 +2515,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -2713,9 +2543,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -2743,9 +2571,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -2773,9 +2599,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -2803,9 +2627,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -2833,9 +2655,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -2863,9 +2683,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -2893,9 +2711,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -2923,9 +2739,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -2953,9 +2767,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -2983,9 +2795,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -3013,9 +2823,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -3043,9 +2851,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -3073,9 +2879,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -3103,9 +2907,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -3133,9 +2935,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -3163,9 +2963,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -3193,9 +2991,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -3223,9 +3019,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -3253,9 +3047,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -3283,9 +3075,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -3313,9 +3103,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -3343,9 +3131,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -3378,9 +3164,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -3408,9 +3192,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -3438,9 +3220,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -3468,9 +3248,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -3498,9 +3276,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -3533,9 +3309,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -3563,9 +3337,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -3593,9 +3365,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -3623,9 +3393,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -3653,9 +3421,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -3683,9 +3449,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -3713,9 +3477,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -3743,9 +3505,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -3773,9 +3533,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -3803,9 +3561,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -3833,9 +3589,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -3863,9 +3617,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -3893,9 +3645,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -3923,9 +3673,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -3953,9 +3701,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -3983,9 +3729,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -4013,9 +3757,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -4043,9 +3785,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -4073,9 +3813,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -4103,9 +3841,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -4133,9 +3869,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -4163,9 +3897,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -4198,9 +3930,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -4228,9 +3958,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -4258,9 +3986,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -4288,9 +4014,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -4318,9 +4042,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -4348,9 +4070,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -4378,9 +4098,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -4408,9 +4126,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -4438,9 +4154,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -4468,9 +4182,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -4498,9 +4210,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -4528,9 +4238,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -4558,9 +4266,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -4588,9 +4294,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3610
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -4618,9 +4322,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -4648,9 +4350,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3610
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -4678,9 +4378,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -4708,9 +4406,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -4743,9 +4439,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -4773,9 +4467,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -4803,9 +4495,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -4833,9 +4523,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -4863,9 +4551,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -4893,9 +4579,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -4923,9 +4607,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -4953,9 +4635,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -4983,9 +4663,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -5013,9 +4691,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -5043,9 +4719,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -5073,9 +4747,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -5103,9 +4775,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -5133,9 +4803,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -5163,9 +4831,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -5193,9 +4859,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -5228,9 +4892,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -5258,9 +4920,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -5288,9 +4948,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -5318,9 +4976,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -5348,9 +5004,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -5378,9 +5032,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -5408,9 +5060,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -5438,9 +5088,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -5468,9 +5116,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -5498,9 +5144,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -5528,9 +5172,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -5558,9 +5200,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -5588,9 +5228,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -5618,9 +5256,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -5648,9 +5284,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -5678,9 +5312,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -5708,9 +5340,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -5738,9 +5368,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -5768,9 +5396,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -5798,9 +5424,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -5828,9 +5452,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -5858,9 +5480,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -5888,9 +5508,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -5918,9 +5536,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -5948,9 +5564,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -5978,9 +5592,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -6008,9 +5620,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -6038,9 +5648,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -6068,9 +5676,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -6098,9 +5704,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -6128,9 +5732,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -6158,9 +5760,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -6193,9 +5793,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -6223,9 +5821,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -6253,9 +5849,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -6283,9 +5877,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -6313,9 +5905,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -6343,9 +5933,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -6373,9 +5961,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -6403,9 +5989,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -6433,9 +6017,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -6463,9 +6045,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -6493,9 +6073,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -6523,9 +6101,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -6553,9 +6129,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -6583,9 +6157,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -6613,9 +6185,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -6643,9 +6213,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -6673,9 +6241,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -6703,9 +6269,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -6733,9 +6297,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -6763,9 +6325,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -6793,9 +6353,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -6823,9 +6381,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -6853,9 +6409,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -6883,9 +6437,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -6913,9 +6465,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -6943,9 +6493,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -6973,9 +6521,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -7008,9 +6554,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -7038,9 +6582,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -7068,9 +6610,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -7098,9 +6638,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -7128,9 +6666,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -7158,9 +6694,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -7188,9 +6722,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -7218,9 +6750,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -7248,9 +6778,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -7278,9 +6806,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -7308,9 +6834,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -7338,9 +6862,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -7368,9 +6890,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -7398,9 +6918,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -7428,9 +6946,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -7458,9 +6974,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -7488,9 +7002,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -7518,9 +7030,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -7548,9 +7058,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -7578,9 +7086,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -7608,9 +7114,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -7638,9 +7142,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -7668,9 +7170,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -7698,9 +7198,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -7728,9 +7226,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -7758,9 +7254,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -7788,9 +7282,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -7818,9 +7310,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -7848,9 +7338,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -7878,9 +7366,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -7908,9 +7394,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -7938,9 +7422,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -7968,9 +7450,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -7998,9 +7478,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -8028,9 +7506,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -8058,9 +7534,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -8088,9 +7562,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -8118,9 +7590,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -8148,9 +7618,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -8178,9 +7646,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -8208,9 +7674,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3849
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -8238,9 +7702,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -8268,9 +7730,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -8298,9 +7758,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -8328,9 +7786,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -8358,9 +7814,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -8388,9 +7842,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -8418,9 +7870,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -8448,9 +7898,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -8478,9 +7926,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -8513,9 +7959,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -8548,9 +7992,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -8583,9 +8025,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -8613,9 +8053,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -8643,9 +8081,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -8673,9 +8109,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -8703,9 +8137,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -8733,9 +8165,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -8763,9 +8193,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -8793,9 +8221,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -8823,9 +8249,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -8853,9 +8277,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -8883,9 +8305,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -8913,9 +8333,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4200
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -8943,9 +8361,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -8973,9 +8389,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -9003,9 +8417,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1820
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -9033,9 +8445,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -9063,9 +8473,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -9093,9 +8501,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -9123,9 +8529,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -9153,9 +8557,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -9183,9 +8585,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -9213,9 +8613,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -9243,9 +8641,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -9278,9 +8674,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -9313,9 +8707,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -9348,9 +8740,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -9383,9 +8773,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -9418,9 +8806,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -9448,9 +8834,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -9478,9 +8862,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -9508,9 +8890,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -9538,9 +8918,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -9568,9 +8946,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1571
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -9598,9 +8974,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -9628,9 +9002,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -9658,9 +9030,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -9688,9 +9058,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -9718,9 +9086,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -9748,9 +9114,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -9778,9 +9142,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -9808,9 +9170,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -9838,9 +9198,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -9868,9 +9226,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -9898,9 +9254,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -9928,9 +9282,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -9958,9 +9310,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -9988,9 +9338,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -10018,9 +9366,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -10048,9 +9394,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -10078,9 +9422,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -10108,9 +9450,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4952
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -10138,9 +9478,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -10173,9 +9511,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -10208,9 +9544,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -10243,9 +9577,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -10273,9 +9605,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -10303,9 +9633,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -10333,9 +9661,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -10363,9 +9689,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -10393,9 +9717,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -10423,9 +9745,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -10453,9 +9773,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -10483,9 +9801,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -10513,9 +9829,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -10543,9 +9857,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -10573,9 +9885,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -10603,9 +9913,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -10633,9 +9941,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -10663,9 +9969,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -10693,9 +9997,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -10723,9 +10025,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -10753,9 +10053,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -10783,9 +10081,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -10813,9 +10109,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -10843,9 +10137,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -10873,9 +10165,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -10903,9 +10193,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -10933,9 +10221,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -10963,9 +10249,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -10993,9 +10277,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -11023,9 +10305,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5264
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -11053,9 +10333,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -11083,9 +10361,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -11113,9 +10389,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -11143,9 +10417,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -11173,9 +10445,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -11203,9 +10473,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 6,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -11233,9 +10501,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 6,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -11263,9 +10529,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3474
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -11285,13 +10549,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 35,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 4603,
             "stamina": 7857,
@@ -11300,9 +10557,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3492
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -11322,13 +10577,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 35,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 4603,
             "stamina": 7857,
@@ -11337,9 +10585,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3492
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -11367,9 +10613,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3474
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -11389,13 +10633,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 35,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 4603,
             "stamina": 7460,
@@ -11404,9 +10641,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3492
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -11426,13 +10661,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 35,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 4603,
             "stamina": 7460,
@@ -11441,9 +10669,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3492
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -11471,9 +10697,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3458
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -11493,13 +10717,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 35,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 4718,
             "stamina": 7817,
@@ -11508,9 +10725,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3521
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -11530,13 +10745,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 35,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 4718,
             "stamina": 7817,
@@ -11545,9 +10753,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3521
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -11575,9 +10781,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3458
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -11597,13 +10801,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 35,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 4718,
             "stamina": 7394,
@@ -11612,9 +10809,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3521
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -11634,13 +10829,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 35,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 4718,
             "stamina": 7394,
@@ -11649,9 +10837,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3521
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -11679,9 +10865,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -11701,13 +10885,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 35,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 4783,
             "stamina": 7391,
@@ -11716,9 +10893,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3478
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -11738,13 +10913,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 35,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 4783,
             "stamina": 7391,
@@ -11753,9 +10921,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3478
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -11783,9 +10949,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -11805,13 +10969,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 35,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 4783,
             "stamina": 7826,
@@ -11820,9 +10977,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3478
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -11842,13 +10997,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 35,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 4783,
             "stamina": 7826,
@@ -11857,9 +11005,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3478
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -11879,13 +11025,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 35,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -11894,9 +11033,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -11924,9 +11061,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -11954,9 +11089,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -11976,13 +11109,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 35,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -11991,9 +11117,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -12021,9 +11145,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -12043,13 +11165,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 35,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7494,
@@ -12058,9 +11173,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -12088,9 +11201,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -12110,13 +11221,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 35,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -12125,9 +11229,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -12155,9 +11257,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4493
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -12185,9 +11285,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2899
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -12215,9 +11313,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2899
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -12237,13 +11333,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 32,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 3404,
             "stamina": 8085,
@@ -12252,9 +11341,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3404
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -12282,9 +11369,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4426
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -12312,9 +11397,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4426
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -12342,9 +11425,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4426
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -12364,13 +11445,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 32,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 4545,
             "stamina": 7091,
@@ -12379,9 +11453,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2727
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -12401,13 +11473,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 32,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 4524,
             "stamina": 8333,
@@ -12416,9 +11481,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3333
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -12438,13 +11501,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 32,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 4524,
             "stamina": 8333,
@@ -12453,9 +11509,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3333
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -12483,9 +11537,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -12513,9 +11565,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -12543,9 +11593,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -12573,9 +11621,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -12603,9 +11649,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -12633,9 +11677,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -12663,9 +11705,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -12693,9 +11733,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -12723,9 +11761,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -12753,9 +11789,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -12783,9 +11817,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -12813,9 +11845,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -12843,9 +11873,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -12873,9 +11901,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -12903,9 +11929,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -12933,9 +11957,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2700
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -12963,9 +11985,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -12993,9 +12013,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -13023,9 +12041,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -13053,9 +12069,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -13083,9 +12097,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -13113,9 +12125,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -13143,9 +12153,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -13173,9 +12181,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -13203,9 +12209,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -13233,9 +12237,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -13263,9 +12265,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -13293,9 +12293,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -13323,9 +12321,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -13353,9 +12349,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -13383,9 +12377,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -13413,9 +12405,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -13443,9 +12433,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -13473,9 +12461,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -13503,9 +12489,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -13533,9 +12517,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -13563,9 +12545,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -13593,9 +12573,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -13623,9 +12601,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -13653,9 +12629,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -13683,9 +12657,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -13713,9 +12685,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -13743,9 +12713,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -13773,9 +12741,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -13803,9 +12769,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -13833,9 +12797,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -13863,9 +12825,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -13893,9 +12853,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -13923,9 +12881,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -13953,9 +12909,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -13983,9 +12937,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -14013,9 +12965,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -14043,9 +12993,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -14073,9 +13021,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -14103,9 +13049,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -14133,9 +13077,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -14163,9 +13105,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -14193,9 +13133,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -14223,9 +13161,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -14253,9 +13189,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -14283,9 +13217,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -14313,9 +13245,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -14343,9 +13273,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -14373,9 +13301,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -14403,9 +13329,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -14433,9 +13357,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -14463,9 +13385,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -14493,9 +13413,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -14523,9 +13441,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -14553,9 +13469,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -14583,9 +13497,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -14613,9 +13525,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -14643,9 +13553,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -14678,9 +13586,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -14713,9 +13619,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -14743,9 +13647,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -14773,9 +13675,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -14803,9 +13703,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -14833,9 +13731,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -14863,9 +13759,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -14893,9 +13787,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3900
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -14923,9 +13815,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -14953,9 +13843,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -14983,9 +13871,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -15013,9 +13899,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -15043,9 +13927,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -15073,9 +13955,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -15103,9 +13983,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -15133,9 +14011,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -15163,9 +14039,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -15193,9 +14067,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -15223,9 +14095,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -15253,9 +14123,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -15283,9 +14151,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -15313,9 +14179,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -15343,9 +14207,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -15373,9 +14235,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -15403,9 +14263,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -15433,9 +14291,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -15463,9 +14319,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3600
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -15493,9 +14347,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -15523,9 +14375,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -15553,9 +14403,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -15583,9 +14431,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3400
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -15613,9 +14459,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -15643,9 +14487,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -15673,9 +14515,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -15703,9 +14543,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -15733,9 +14571,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -15763,9 +14599,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -15793,9 +14627,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -15823,9 +14655,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -15853,9 +14683,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -15883,9 +14711,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -15913,9 +14739,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -15943,9 +14767,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -15973,9 +14795,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -16003,9 +14823,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -16034,9 +14852,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -16065,9 +14881,7 @@ export const itemDB = [
             "versatility": 3800
         },
         "faction": "alliance",
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -16096,9 +14910,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -16127,9 +14939,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -16158,9 +14968,7 @@ export const itemDB = [
             "versatility": 3800
         },
         "faction": "horde",
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -16189,9 +14997,7 @@ export const itemDB = [
             "versatility": 3000
         },
         "faction": "horde",
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -16219,9 +15025,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -16249,9 +15053,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -16279,9 +15081,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -16309,9 +15109,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -16339,9 +15137,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -16369,9 +15165,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -16399,9 +15193,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -16429,9 +15221,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -16459,9 +15249,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -16489,9 +15277,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -16519,9 +15305,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -16549,9 +15333,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -16579,9 +15361,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -16609,9 +15389,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -16639,9 +15417,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -16669,9 +15445,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -16699,9 +15473,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -16729,9 +15501,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -16760,9 +15530,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -16795,9 +15563,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -16825,9 +15591,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -16855,9 +15619,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -16885,9 +15647,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -16915,9 +15675,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -16945,9 +15703,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -16975,9 +15731,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -17005,9 +15759,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -17035,9 +15787,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -17065,9 +15815,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -17095,9 +15843,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -17125,9 +15871,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -17155,9 +15899,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -17185,9 +15927,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -17215,9 +15955,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -17245,9 +15983,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -17275,9 +16011,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -17305,9 +16039,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -17335,9 +16067,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -17365,9 +16095,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -17395,9 +16123,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -17425,9 +16151,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -17455,9 +16179,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -17485,9 +16207,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -17515,9 +16235,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -17545,9 +16263,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -17575,9 +16291,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -17605,9 +16319,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -17635,9 +16347,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -17665,9 +16375,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -17695,9 +16403,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -17725,9 +16431,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -17755,9 +16459,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -17785,9 +16487,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -17815,9 +16515,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -17845,9 +16543,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -17875,9 +16571,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -17906,9 +16600,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -17941,9 +16633,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -17971,9 +16661,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -18001,9 +16689,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -18031,9 +16717,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -18061,9 +16745,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -18091,9 +16773,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -18121,9 +16801,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -18151,9 +16829,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -18181,9 +16857,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -18211,9 +16885,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -18241,9 +16913,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -18271,9 +16941,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -18306,9 +16974,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -18336,9 +17002,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -18366,9 +17030,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -18396,9 +17058,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -18427,9 +17087,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -18462,9 +17120,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -18492,9 +17148,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -18522,9 +17176,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -18552,9 +17204,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -18582,9 +17232,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -18612,9 +17260,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -18642,9 +17288,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -18672,9 +17316,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -18702,9 +17344,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -18732,9 +17372,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -18762,9 +17400,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -18792,9 +17428,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -18827,9 +17461,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -18857,9 +17489,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -18888,9 +17518,7 @@ export const itemDB = [
             "versatility": 6666
         },
         "onUseTrinket": true,
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -18923,9 +17551,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -18953,9 +17579,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -18983,9 +17607,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -19013,9 +17635,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -19043,9 +17663,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -19073,9 +17691,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -19103,9 +17719,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -19133,9 +17747,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -19163,9 +17775,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -19193,9 +17803,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -19223,9 +17831,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -19253,9 +17859,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -19283,9 +17887,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -19313,9 +17915,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -19343,9 +17943,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -19373,9 +17971,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -19403,9 +17999,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -19433,9 +18027,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -19463,9 +18055,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -19493,9 +18083,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -19523,9 +18111,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -19553,9 +18139,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -19583,9 +18167,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -19613,9 +18195,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -19643,9 +18223,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -19673,9 +18251,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -19703,9 +18279,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -19733,9 +18307,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -19763,9 +18335,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -19793,9 +18363,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -19823,9 +18391,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -19853,9 +18419,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -19883,9 +18447,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -19913,9 +18475,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -19943,9 +18503,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -19973,9 +18531,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -20003,9 +18559,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -20033,9 +18587,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -20063,9 +18615,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -20093,9 +18643,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -20123,9 +18671,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -20153,9 +18699,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -20183,9 +18727,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -20213,9 +18755,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -20243,9 +18783,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -20273,9 +18811,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -20303,9 +18839,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -20333,9 +18867,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -20363,9 +18895,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -20393,9 +18923,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -20423,9 +18951,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -20453,9 +18979,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -20483,9 +19007,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -20513,9 +19035,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -20543,9 +19063,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -20573,9 +19091,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -20603,9 +19119,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -20633,9 +19147,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -20663,9 +19175,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -20693,9 +19203,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -20723,9 +19231,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -20753,9 +19259,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -20783,9 +19287,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -20813,9 +19315,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -20843,9 +19343,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -20873,9 +19371,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -20903,9 +19399,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -20933,9 +19427,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -20963,9 +19455,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -20993,9 +19483,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -21023,9 +19511,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -21053,9 +19539,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -21083,9 +19567,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -21113,9 +19595,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -21143,9 +19623,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -21173,9 +19651,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -21203,9 +19679,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -21233,9 +19707,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -21263,9 +19735,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -21293,9 +19763,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -21323,9 +19791,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -21353,9 +19819,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -21383,9 +19847,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -21413,9 +19875,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -21444,9 +19904,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -21479,9 +19937,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -21509,9 +19965,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -21539,9 +19993,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -21569,9 +20021,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -21599,9 +20049,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -21629,9 +20077,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -21659,9 +20105,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -21689,9 +20133,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -21719,9 +20161,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -21749,9 +20189,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -21779,9 +20217,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -21809,9 +20245,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -21839,9 +20273,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -21869,9 +20301,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -21904,9 +20334,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -21934,9 +20362,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -21964,9 +20390,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -21994,9 +20418,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -22024,9 +20446,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -22054,9 +20474,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -22084,9 +20502,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -22114,9 +20530,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -22144,9 +20558,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -22174,9 +20586,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -22209,9 +20619,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -22239,9 +20647,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -22269,9 +20675,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -22299,9 +20703,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -22329,9 +20731,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -22359,9 +20759,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -22394,9 +20792,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -22424,9 +20820,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -22454,9 +20848,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -22489,9 +20881,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -22519,9 +20909,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -22549,9 +20937,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -22579,9 +20965,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -22609,9 +20993,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -22639,9 +21021,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -22669,9 +21049,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -22704,9 +21082,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -22734,9 +21110,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -22764,9 +21138,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -22794,9 +21166,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -22824,9 +21194,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -22854,9 +21222,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -22884,9 +21250,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -22914,9 +21278,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -22944,9 +21306,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -22974,9 +21334,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -23004,9 +21362,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -23034,9 +21390,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -23064,9 +21418,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -23094,9 +21446,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -23124,9 +21474,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -23154,9 +21502,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -23184,9 +21530,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -23219,9 +21563,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -23249,9 +21591,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -23279,9 +21619,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -23309,9 +21647,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -23339,9 +21675,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -23369,9 +21703,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -23399,9 +21731,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -23429,9 +21759,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -23459,9 +21787,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -23489,9 +21815,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -23519,9 +21843,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -23554,9 +21876,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -23584,9 +21904,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -23614,9 +21932,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -23644,9 +21960,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -23674,9 +21988,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -23704,9 +22016,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -23734,9 +22044,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -23764,9 +22072,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -23794,9 +22100,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -23824,9 +22128,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -23854,9 +22156,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -23884,9 +22184,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -23914,9 +22212,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -23949,9 +22245,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -23979,9 +22273,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -24009,9 +22301,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -24039,9 +22329,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -24069,9 +22357,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -24099,9 +22385,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -24129,9 +22413,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -24159,9 +22441,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -24189,9 +22469,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -24219,9 +22497,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -24249,9 +22525,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -24279,9 +22553,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -24309,9 +22581,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -24339,9 +22609,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -24369,9 +22637,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -24399,9 +22665,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -24429,9 +22693,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -24459,9 +22721,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -24489,9 +22749,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -24519,9 +22777,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -24549,9 +22805,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -24579,9 +22833,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -24609,9 +22861,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -24639,9 +22889,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -24669,9 +22917,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -24699,9 +22945,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -24729,9 +22973,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -24759,9 +23001,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -24789,9 +23029,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -24819,9 +23057,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -24849,9 +23085,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -24879,9 +23113,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -24909,9 +23141,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -24939,9 +23169,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -24969,9 +23197,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -24999,9 +23225,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -25029,9 +23253,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -25059,9 +23281,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -25089,9 +23309,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -25119,9 +23337,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -25149,9 +23365,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -25179,9 +23393,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -25209,9 +23421,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -25239,9 +23449,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -25269,9 +23477,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -25299,9 +23505,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -25329,9 +23533,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -25359,9 +23561,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -25389,9 +23589,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -25419,9 +23617,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -25449,9 +23645,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -25479,9 +23673,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -25509,9 +23701,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -25539,9 +23729,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -25569,9 +23757,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -25599,9 +23785,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -25629,9 +23813,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -25659,9 +23841,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -25689,9 +23869,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -25719,9 +23897,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -25749,9 +23925,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -25779,9 +23953,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -25809,9 +23981,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -25839,9 +24009,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -25869,9 +24037,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -25899,9 +24065,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -25929,9 +24093,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -25959,9 +24121,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -25989,9 +24149,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -26019,9 +24177,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -26049,9 +24205,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -26079,9 +24233,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -26109,9 +24261,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -26139,9 +24289,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -26169,9 +24317,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -26199,9 +24345,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -26229,9 +24373,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -26259,9 +24401,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -26289,9 +24429,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -26319,9 +24457,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -26349,9 +24485,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -26380,9 +24514,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -26415,9 +24547,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -26445,9 +24575,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -26475,9 +24603,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -26505,9 +24631,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -26535,9 +24659,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -26565,9 +24687,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -26595,9 +24715,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -26625,9 +24743,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -26655,9 +24771,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -26685,9 +24799,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -26715,9 +24827,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -26745,9 +24855,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -26775,9 +24883,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -26805,9 +24911,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -26835,9 +24939,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -26865,9 +24967,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -26895,9 +24995,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -26925,9 +25023,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -26955,9 +25051,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -26985,9 +25079,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -27015,9 +25107,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -27045,9 +25135,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -27075,9 +25163,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -27105,9 +25191,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -27127,13 +25211,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -27142,9 +25219,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -27169,13 +25244,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -27185,9 +25253,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -27207,13 +25273,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -27223,9 +25282,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -27245,13 +25302,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -27261,9 +25311,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -27283,13 +25331,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -27299,9 +25340,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -27329,9 +25368,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -27359,9 +25396,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -27389,9 +25424,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -27419,9 +25452,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -27449,9 +25480,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -27479,9 +25508,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -27509,9 +25536,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -27539,9 +25564,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -27561,13 +25584,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -27577,9 +25593,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -27599,13 +25613,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -27615,9 +25622,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -27637,13 +25642,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -27653,9 +25651,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -27675,13 +25671,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -27691,9 +25680,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -27713,13 +25700,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -27729,9 +25709,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -27751,13 +25729,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -27767,9 +25738,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -27789,13 +25758,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -27805,9 +25767,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -27827,13 +25787,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -27843,9 +25796,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -27865,13 +25816,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -27881,9 +25825,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -27903,13 +25845,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -27919,9 +25854,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -27941,13 +25874,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -27957,9 +25883,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -27979,13 +25903,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -27995,9 +25912,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -28025,9 +25940,7 @@ export const itemDB = [
             "mastery": 2500,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -28055,9 +25968,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -28085,9 +25996,7 @@ export const itemDB = [
             "mastery": 2800,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -28115,9 +26024,7 @@ export const itemDB = [
             "mastery": 2800,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -28145,9 +26052,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2800
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -28175,9 +26080,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -28210,9 +26113,7 @@ export const itemDB = [
             "mastery": 2500,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -28232,13 +26133,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28247,9 +26141,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -28269,13 +26161,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 110,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28284,9 +26169,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -28306,13 +26189,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 125,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28321,9 +26197,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -28343,13 +26217,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28358,9 +26225,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -28380,13 +26245,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 110,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28395,9 +26253,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -28417,13 +26273,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 125,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28432,9 +26281,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -28454,13 +26301,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28469,9 +26309,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -28491,13 +26329,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 110,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28506,9 +26337,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -28528,13 +26357,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 125,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28543,9 +26365,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -28565,13 +26385,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28580,9 +26393,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -28602,13 +26413,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 110,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28617,9 +26421,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -28639,13 +26441,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 125,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28654,9 +26449,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -28676,13 +26469,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28691,9 +26477,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -28713,13 +26497,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 110,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28728,9 +26505,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -28750,13 +26525,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 125,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28765,9 +26533,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -28787,13 +26553,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28802,9 +26561,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -28824,13 +26581,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 110,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28839,9 +26589,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -28861,13 +26609,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 125,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28876,9 +26617,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -28898,13 +26637,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28913,9 +26645,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -28935,13 +26665,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 110,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28950,9 +26673,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -28972,13 +26693,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 125,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -28987,9 +26701,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -29009,13 +26721,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -29024,9 +26729,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -29046,13 +26749,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 110,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -29061,9 +26757,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -29083,13 +26777,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 125,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -29098,9 +26785,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -29128,9 +26813,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -29158,9 +26841,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -29188,9 +26869,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -29218,9 +26897,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -29248,9 +26925,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -29278,9 +26953,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -29308,9 +26981,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -29338,9 +27009,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -29368,9 +27037,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -29398,9 +27065,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -29428,9 +27093,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -29458,9 +27121,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -29488,9 +27149,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -29510,13 +27169,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 125,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -29525,9 +27177,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -29552,13 +27202,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 110,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -29567,9 +27210,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -29594,13 +27235,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 95,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -29609,9 +27243,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -29645,9 +27277,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -29676,9 +27306,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -29706,9 +27334,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -29742,9 +27368,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -29773,9 +27397,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -29804,9 +27426,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -29835,9 +27455,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -29866,9 +27484,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -29897,9 +27513,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -29928,9 +27542,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -29959,9 +27571,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -29990,9 +27600,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -30021,9 +27629,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -30052,9 +27658,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -30083,9 +27687,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -30114,9 +27716,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -30145,9 +27745,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -30176,9 +27774,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -30207,9 +27803,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -30238,9 +27832,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -30269,9 +27861,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -30300,9 +27890,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -30331,9 +27919,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -30362,9 +27948,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -30393,9 +27977,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -30424,9 +28006,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -30455,9 +28035,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -30486,9 +28064,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -30517,9 +28093,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -30548,9 +28122,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -30579,9 +28151,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -30609,9 +28179,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -30639,9 +28207,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -30669,9 +28235,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -30699,9 +28263,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -30729,9 +28291,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -30759,9 +28319,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -30789,9 +28347,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -30819,9 +28375,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -30849,9 +28403,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -30879,9 +28431,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -30914,9 +28464,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -30944,9 +28492,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -30974,9 +28520,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -31004,9 +28548,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -31034,9 +28576,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -31064,9 +28604,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -31094,9 +28632,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -31124,9 +28660,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -31154,9 +28688,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -31184,9 +28716,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2150
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -31214,9 +28744,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -31244,9 +28772,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -31274,9 +28800,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -31304,9 +28828,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -31334,9 +28856,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -31364,9 +28884,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -31394,9 +28912,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -31424,9 +28940,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -31454,9 +28968,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -31484,9 +28996,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -31514,9 +29024,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -31544,9 +29052,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -31574,9 +29080,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -31604,9 +29108,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -31634,9 +29136,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -31664,9 +29164,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -31694,9 +29192,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -31724,9 +29220,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -31754,9 +29248,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -31784,9 +29276,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -31814,9 +29304,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -31844,9 +29332,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -31875,9 +29361,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -31906,9 +29390,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -31937,9 +29419,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -31968,9 +29448,7 @@ export const itemDB = [
             "versatility": 7000
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -31999,9 +29477,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -32035,9 +29511,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -32066,9 +29540,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -32097,9 +29569,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -32128,9 +29598,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -32159,9 +29627,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -32190,9 +29656,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -32221,9 +29685,7 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -32252,9 +29714,7 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -32283,9 +29743,7 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -32314,9 +29772,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -32345,9 +29801,7 @@ export const itemDB = [
             "versatility": 7750
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -32376,9 +29830,7 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -32407,9 +29859,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -32438,9 +29888,7 @@ export const itemDB = [
             "versatility": 8000
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -32469,9 +29917,7 @@ export const itemDB = [
             "versatility": 7000
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -32500,9 +29946,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -32531,9 +29975,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -32562,9 +30004,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -32593,9 +30033,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -32629,9 +30067,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -32660,9 +30096,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -32691,9 +30125,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -32722,9 +30154,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -32753,9 +30183,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -32784,9 +30212,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -32815,9 +30241,7 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -32846,9 +30270,7 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -32877,9 +30299,7 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -32908,9 +30328,7 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -32939,9 +30357,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -32970,9 +30386,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -33000,9 +30414,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -33030,9 +30442,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -33060,9 +30470,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -33090,9 +30498,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -33120,9 +30526,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -33150,9 +30554,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -33181,9 +30583,7 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -33212,9 +30612,7 @@ export const itemDB = [
             "versatility": 4550
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -33243,9 +30641,7 @@ export const itemDB = [
             "versatility": 3800
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -33274,9 +30670,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -33305,9 +30699,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -33336,9 +30728,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -33367,9 +30757,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -33398,9 +30786,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -33429,9 +30815,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -33460,9 +30844,7 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -33491,9 +30873,7 @@ export const itemDB = [
             "versatility": 3800
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -33522,9 +30902,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -33553,9 +30931,7 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -33584,9 +30960,7 @@ export const itemDB = [
             "versatility": 3800
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -33615,9 +30989,7 @@ export const itemDB = [
             "versatility": 4550
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -33646,9 +31018,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -33677,9 +31047,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -33708,9 +31076,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -33739,9 +31105,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -33770,9 +31134,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -33801,9 +31163,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -33832,9 +31192,7 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -33863,9 +31221,7 @@ export const itemDB = [
             "versatility": 3800
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -33894,9 +31250,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -33924,9 +31278,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -33954,9 +31306,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -33984,9 +31334,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -34014,9 +31362,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -34044,9 +31390,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7750
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -34074,9 +31418,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -34104,9 +31446,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -34134,9 +31474,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -34164,9 +31502,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -34194,9 +31530,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -34224,9 +31558,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -34254,9 +31586,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4700
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -34284,9 +31614,7 @@ export const itemDB = [
             "mastery": 8750,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -34314,9 +31642,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -34344,9 +31670,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -34374,9 +31698,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -34404,9 +31726,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -34434,9 +31754,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -34464,9 +31782,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -34499,9 +31815,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -34534,9 +31848,7 @@ export const itemDB = [
             "mastery": 6666,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -34569,9 +31881,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -34604,9 +31914,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -34639,9 +31947,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -34669,9 +31975,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -34699,9 +32003,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -34729,9 +32031,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -34759,9 +32059,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -34789,9 +32087,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -34819,9 +32115,7 @@ export const itemDB = [
             "mastery": 4700,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -34849,9 +32143,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -34879,9 +32171,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -34909,9 +32199,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -34939,9 +32227,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -34969,9 +32255,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -34999,9 +32283,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -35029,9 +32311,7 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -35059,9 +32339,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -35089,9 +32367,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -35119,9 +32395,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -35149,9 +32423,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -35179,9 +32451,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -35209,9 +32479,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -35239,9 +32507,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -35269,9 +32535,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -35299,9 +32563,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -35329,9 +32591,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -35359,9 +32619,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -35389,9 +32647,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -35419,9 +32675,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -35449,9 +32703,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -35479,9 +32731,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -35509,9 +32759,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -35539,9 +32787,7 @@ export const itemDB = [
             "mastery": 8000,
             "versatility": 9500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -35569,9 +32815,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -35599,9 +32843,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -35629,9 +32871,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -35659,9 +32899,7 @@ export const itemDB = [
             "mastery": 4700,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -35689,9 +32927,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -35719,9 +32955,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -35749,9 +32983,7 @@ export const itemDB = [
             "mastery": 9500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -35779,9 +33011,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -35809,9 +33039,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -35839,9 +33067,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -35869,9 +33095,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -35899,9 +33123,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -35929,9 +33151,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -35959,9 +33179,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -35989,9 +33207,7 @@ export const itemDB = [
             "mastery": 7500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -36019,9 +33235,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -36049,9 +33263,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -36079,9 +33291,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -36109,9 +33319,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -36139,9 +33347,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -36169,9 +33375,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -36199,9 +33403,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -36229,9 +33431,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -36259,9 +33459,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -36289,9 +33487,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -36319,9 +33515,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -36349,9 +33543,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -36379,9 +33571,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -36409,9 +33599,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -36439,9 +33627,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -36469,9 +33655,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -36499,9 +33683,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -36529,9 +33711,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -36559,9 +33739,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -36589,9 +33767,7 @@ export const itemDB = [
             "mastery": 8250,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -36619,9 +33795,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -36649,9 +33823,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -36679,9 +33851,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -36709,9 +33879,7 @@ export const itemDB = [
             "mastery": 8750,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -36739,9 +33907,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -36769,9 +33935,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -36799,9 +33963,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -36829,9 +33991,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -36859,9 +34019,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -36889,9 +34047,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -36919,9 +34075,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -36949,9 +34103,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -36979,9 +34131,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -37009,9 +34159,7 @@ export const itemDB = [
             "mastery": 4700,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -37039,9 +34187,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -37069,9 +34215,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -37099,9 +34243,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -37129,9 +34271,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -37159,9 +34299,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -37189,9 +34327,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -37219,9 +34355,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -37249,9 +34383,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -37279,9 +34411,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -37309,9 +34439,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -37339,9 +34467,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -37369,9 +34495,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -37399,9 +34523,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -37429,9 +34551,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -37459,9 +34579,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -37489,9 +34607,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -37519,9 +34635,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -37549,9 +34663,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -37579,9 +34691,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -37609,9 +34719,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -37639,9 +34747,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -37669,9 +34775,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -37699,9 +34803,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -37729,9 +34831,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -37759,9 +34859,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -37789,9 +34887,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -37819,9 +34915,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -37849,9 +34943,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -37879,9 +34971,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4700
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -37909,9 +34999,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -37939,9 +35027,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -37969,9 +35055,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -37999,9 +35083,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -38029,9 +35111,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -38059,9 +35139,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -38089,9 +35167,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -38119,9 +35195,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -38149,9 +35223,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -38179,9 +35251,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -38209,9 +35279,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -38239,9 +35307,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -38269,9 +35335,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -38299,9 +35363,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -38329,9 +35391,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -38359,9 +35419,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -38389,9 +35447,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -38419,9 +35475,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -38449,9 +35503,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -38479,9 +35531,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -38509,9 +35559,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -38539,9 +35587,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -38569,9 +35615,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -38599,9 +35643,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -38629,9 +35671,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -38659,9 +35699,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -38689,9 +35727,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -38719,9 +35755,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -38749,9 +35783,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -38779,9 +35811,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -38809,9 +35839,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -38839,9 +35867,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -38869,9 +35895,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -38899,9 +35923,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -38929,9 +35951,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -38959,9 +35979,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -38989,9 +36007,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -39019,9 +36035,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -39049,9 +36063,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -39079,9 +36091,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -39109,9 +36119,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -39139,9 +36147,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -39169,9 +36175,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -39199,9 +36203,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -39229,9 +36231,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -39259,9 +36259,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -39289,9 +36287,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -39319,9 +36315,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -39349,9 +36343,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -39379,9 +36371,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -39409,9 +36399,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -39439,9 +36427,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -39469,9 +36455,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -39499,9 +36483,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -39529,9 +36511,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -39559,9 +36539,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -39589,9 +36567,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -39619,9 +36595,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -39649,9 +36623,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -39679,9 +36651,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -39709,9 +36679,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -39739,9 +36707,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -39769,9 +36735,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -39799,9 +36763,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -39829,9 +36791,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -39859,9 +36819,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -39889,9 +36847,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -39919,9 +36875,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -39949,9 +36903,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -39979,9 +36931,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -40009,9 +36959,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -40044,9 +36992,7 @@ export const itemDB = [
             "mastery": 9250,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -40074,9 +37020,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -40104,9 +37048,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40134,9 +37076,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40164,9 +37104,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40194,9 +37132,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40224,9 +37160,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40254,9 +37188,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40284,9 +37216,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40314,9 +37244,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40344,9 +37272,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40374,9 +37300,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40404,9 +37328,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40434,9 +37356,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40464,9 +37384,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40494,9 +37412,7 @@ export const itemDB = [
             "mastery": 4200,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40524,9 +37440,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40554,9 +37468,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40584,9 +37496,7 @@ export const itemDB = [
             "mastery": 4200,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40614,9 +37524,7 @@ export const itemDB = [
             "mastery": 4200,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40644,9 +37552,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -40674,9 +37580,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -40704,9 +37608,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -40734,9 +37636,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -40764,9 +37664,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -40794,9 +37692,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -40824,9 +37720,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -40854,9 +37748,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -40884,9 +37776,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -40914,9 +37804,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -40944,9 +37832,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -40974,9 +37860,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41004,9 +37888,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41034,9 +37916,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41064,9 +37944,7 @@ export const itemDB = [
             "mastery": 4200,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41094,9 +37972,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41124,9 +38000,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41154,9 +38028,7 @@ export const itemDB = [
             "mastery": 4200,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41184,9 +38056,7 @@ export const itemDB = [
             "mastery": 4200,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41214,9 +38084,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41244,9 +38112,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41274,9 +38140,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41304,9 +38168,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41334,9 +38196,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41364,9 +38224,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41394,9 +38252,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41424,9 +38280,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41454,9 +38308,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41484,9 +38336,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41514,9 +38364,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41544,9 +38392,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41574,9 +38420,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41604,9 +38448,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41634,9 +38476,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41664,9 +38504,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41694,9 +38532,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41724,9 +38560,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -41754,9 +38588,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41784,9 +38616,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41814,9 +38644,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41844,9 +38672,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41874,9 +38700,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41904,9 +38728,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41934,9 +38756,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41964,9 +38784,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -41994,9 +38812,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42024,9 +38840,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42054,9 +38868,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42084,9 +38896,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42114,9 +38924,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42144,9 +38952,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42174,9 +38980,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42204,9 +39008,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42234,9 +39036,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42264,9 +39064,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42294,9 +39092,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42324,9 +39120,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42354,9 +39148,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42384,9 +39176,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42414,9 +39204,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42444,9 +39232,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42474,9 +39260,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42504,9 +39288,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42534,9 +39316,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42564,9 +39344,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42594,9 +39372,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42624,9 +39400,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42654,9 +39428,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42684,9 +39456,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42714,9 +39484,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42744,9 +39512,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -42775,9 +39541,7 @@ export const itemDB = [
             "versatility": 3200
         },
         "faction": "horde",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -42806,9 +39570,7 @@ export const itemDB = [
             "versatility": 3200
         },
         "faction": "alliance",
-        "expansion": 2,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -42837,9 +39599,7 @@ export const itemDB = [
             "versatility": 3200
         },
         "faction": "horde",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -42868,9 +39628,7 @@ export const itemDB = [
             "versatility": 3200
         },
         "faction": "alliance",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -42899,9 +39657,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -42930,9 +39686,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -42961,9 +39715,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -42992,9 +39744,7 @@ export const itemDB = [
             "versatility": 2000
         },
         "faction": "horde",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -43023,9 +39773,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -43054,9 +39802,7 @@ export const itemDB = [
             "versatility": 3200
         },
         "faction": "horde",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -43085,9 +39831,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -43116,9 +39860,7 @@ export const itemDB = [
             "versatility": 2000
         },
         "faction": "alliance",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -43147,9 +39889,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -43178,9 +39918,7 @@ export const itemDB = [
             "versatility": 3200
         },
         "faction": "alliance",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -43209,9 +39947,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -43240,9 +39976,7 @@ export const itemDB = [
             "versatility": 15000
         },
         "faction": "horde",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -43271,9 +40005,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -43302,9 +40034,7 @@ export const itemDB = [
             "versatility": 15000
         },
         "faction": "alliance",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -43333,9 +40063,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -43364,9 +40092,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -43394,9 +40120,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -43424,9 +40148,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -43454,9 +40176,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -43484,9 +40204,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -43514,9 +40232,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -43544,9 +40260,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -43574,9 +40288,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -43604,9 +40316,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -43634,9 +40344,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -43664,9 +40372,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2600
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -43694,9 +40400,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -43724,9 +40428,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -43754,9 +40456,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -43784,9 +40484,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -43814,9 +40512,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -43844,9 +40540,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 11500
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -43874,9 +40568,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4823
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -43904,9 +40596,7 @@ export const itemDB = [
             "mastery": 2303,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -43934,9 +40624,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -43964,9 +40652,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4284
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -43994,9 +40680,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2905
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -44024,9 +40708,7 @@ export const itemDB = [
             "mastery": 4592,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -44054,9 +40736,7 @@ export const itemDB = [
             "mastery": 4354,
             "versatility": 2646
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -44085,9 +40765,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -44116,9 +40794,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -44147,9 +40823,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -44178,9 +40852,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -44209,9 +40881,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -44240,9 +40910,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -44271,9 +40939,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -44302,9 +40968,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -44333,9 +40997,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -44364,9 +41026,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -44395,9 +41055,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -44426,9 +41084,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -44457,9 +41113,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -44488,9 +41142,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -44519,9 +41171,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -44550,9 +41200,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -44581,9 +41229,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -44612,9 +41258,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -44643,9 +41287,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -44674,9 +41316,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -44705,9 +41345,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -44736,9 +41374,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -44767,9 +41403,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -44798,9 +41432,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -44829,9 +41461,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -44860,9 +41490,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -44891,9 +41519,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -44922,9 +41548,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -44953,9 +41577,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -44984,9 +41606,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -45015,9 +41635,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -45046,9 +41664,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -45077,9 +41693,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -45108,9 +41722,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -45139,9 +41751,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -45170,9 +41780,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -45201,9 +41809,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -45232,9 +41838,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -45263,9 +41867,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -45294,9 +41896,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -45325,9 +41925,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -45356,9 +41954,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -45387,9 +41983,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -45418,9 +42012,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -45449,9 +42041,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -45480,9 +42070,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -45511,9 +42099,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -45542,9 +42128,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -45573,9 +42157,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -45604,9 +42186,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -45635,9 +42215,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -45666,9 +42244,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -45697,9 +42273,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -45728,9 +42302,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -45759,9 +42331,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -45790,9 +42360,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -45826,9 +42394,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -45853,13 +42419,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 151,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -45869,9 +42428,7 @@ export const itemDB = [
             "versatility": 12500,
             "unallocated": 5000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -45891,13 +42448,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 151,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -45907,9 +42457,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 5000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -45929,13 +42477,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 151,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -45945,9 +42486,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 5000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -45967,13 +42506,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 151,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -45983,9 +42515,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 5000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -46005,13 +42535,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 100,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -46020,9 +42543,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -46042,13 +42563,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 100,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -46057,9 +42571,7 @@ export const itemDB = [
             "mastery": 10000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -46079,13 +42591,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 100,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -46094,9 +42599,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -46116,13 +42619,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 100,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -46131,9 +42627,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -46153,13 +42647,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 100,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -46168,9 +42655,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -46190,13 +42675,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 100,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -46205,9 +42683,7 @@ export const itemDB = [
             "mastery": 10000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -46227,13 +42703,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 100,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -46242,9 +42711,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -46264,13 +42731,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 100,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -46279,9 +42739,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -46301,13 +42759,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 151,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -46317,9 +42768,7 @@ export const itemDB = [
             "versatility": 12500,
             "unallocated": 5000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -46339,13 +42788,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 151,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -46355,9 +42797,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 5000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -46377,13 +42817,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 151,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -46393,9 +42826,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 5000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -46415,13 +42846,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 151,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -46431,9 +42855,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 5000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -46462,9 +42884,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -46493,9 +42913,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -46524,9 +42942,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -46555,9 +42971,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -46586,9 +43000,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -46617,9 +43029,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -46648,9 +43058,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -46679,9 +43087,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -46710,9 +43116,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -46741,9 +43145,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -46772,9 +43174,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -46803,9 +43203,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -46834,9 +43232,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -46865,9 +43261,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -46896,9 +43290,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -46927,9 +43319,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -46958,9 +43348,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -46989,9 +43377,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -47020,9 +43406,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -47051,9 +43435,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -47082,9 +43464,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -47113,9 +43493,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -47144,9 +43522,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -47175,9 +43551,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -47206,9 +43580,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -47237,9 +43609,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -47268,9 +43638,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -47298,9 +43666,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4200
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -47328,9 +43694,7 @@ export const itemDB = [
             "mastery": 3000,
             "versatility": 4000
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -47358,9 +43722,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 3,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -47388,9 +43750,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -47418,9 +43778,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -47448,9 +43806,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -47478,9 +43834,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -47508,9 +43862,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -47538,9 +43890,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -47568,9 +43918,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -47598,9 +43946,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -47628,9 +43974,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -47658,9 +44002,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -47688,9 +44030,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -47718,9 +44058,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -47748,9 +44086,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -47778,9 +44114,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -47808,9 +44142,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -47838,9 +44170,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -47868,9 +44198,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -47898,9 +44226,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -47928,9 +44254,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -47958,9 +44282,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -47988,9 +44310,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -48018,9 +44338,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -48048,9 +44366,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -48078,9 +44394,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -48108,9 +44422,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -48138,9 +44450,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -48168,9 +44478,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -48198,9 +44506,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -48228,9 +44534,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -48258,9 +44562,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -48288,9 +44590,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -48318,9 +44618,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -48348,9 +44646,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -48378,9 +44674,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -48408,9 +44702,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -48443,9 +44735,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -48474,9 +44764,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -48509,9 +44797,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -48539,9 +44825,7 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -48569,9 +44853,7 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 4250
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -48599,9 +44881,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -48629,9 +44909,7 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -48659,9 +44937,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -48689,9 +44965,7 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -48719,9 +44993,7 @@ export const itemDB = [
             "mastery": 4750,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -48749,9 +45021,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -48779,9 +45049,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -48809,9 +45077,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -48839,9 +45105,7 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -48869,9 +45133,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -48899,9 +45161,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -48934,9 +45194,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -48970,9 +45228,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -49005,9 +45261,7 @@ export const itemDB = [
             "mastery": 4795,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -49035,9 +45289,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -49065,9 +45317,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -49095,9 +45345,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -49125,9 +45373,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -49155,9 +45401,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -49185,9 +45429,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -49215,9 +45457,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -49245,9 +45485,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -49275,9 +45513,7 @@ export const itemDB = [
             "mastery": 3563,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -49305,9 +45541,7 @@ export const itemDB = [
             "mastery": 3682,
             "versatility": 3318
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -49335,9 +45569,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -49365,9 +45597,7 @@ export const itemDB = [
             "mastery": 3843,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -49395,9 +45625,7 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 4550
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -49425,9 +45653,7 @@ export const itemDB = [
             "mastery": 4746,
             "versatility": 2254
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -49455,9 +45681,7 @@ export const itemDB = [
             "mastery": 4851,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -49485,9 +45709,7 @@ export const itemDB = [
             "mastery": 3409,
             "versatility": 3591
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -49515,9 +45737,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -49545,9 +45765,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -49575,9 +45793,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -49605,9 +45821,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -49635,9 +45849,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -49665,9 +45877,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -49695,9 +45905,7 @@ export const itemDB = [
             "mastery": 4739,
             "versatility": 2261
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -49725,9 +45933,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -49755,9 +45961,7 @@ export const itemDB = [
             "mastery": 4522,
             "versatility": 2478
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -49785,9 +45989,7 @@ export const itemDB = [
             "mastery": 3808,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -49815,9 +46017,7 @@ export const itemDB = [
             "mastery": 3605,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -49845,9 +46045,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2744
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -49875,9 +46073,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4613
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -49905,9 +46101,7 @@ export const itemDB = [
             "mastery": 2695,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -49935,9 +46129,7 @@ export const itemDB = [
             "mastery": 4802,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -49965,9 +46157,7 @@ export const itemDB = [
             "mastery": 3612,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -49995,9 +46185,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -50025,9 +46213,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -50055,9 +46241,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -50085,9 +46269,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -50115,9 +46297,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -50145,9 +46325,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -50175,9 +46353,7 @@ export const itemDB = [
             "mastery": 2485,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -50205,9 +46381,7 @@ export const itemDB = [
             "mastery": 3787,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -50235,9 +46409,7 @@ export const itemDB = [
             "mastery": 2625,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -50265,9 +46437,7 @@ export const itemDB = [
             "mastery": 4053,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -50295,9 +46465,7 @@ export const itemDB = [
             "mastery": 4893,
             "versatility": 2107
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -50325,9 +46493,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3654
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -50355,9 +46521,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3857
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -50385,9 +46549,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2534
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -50415,9 +46577,7 @@ export const itemDB = [
             "mastery": 3528,
             "versatility": 3472
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -50445,9 +46605,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2779
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -50475,9 +46633,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -50505,9 +46661,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -50535,9 +46689,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -50565,9 +46717,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -50595,9 +46745,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -50625,9 +46773,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -50655,9 +46801,7 @@ export const itemDB = [
             "mastery": 4081,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -50685,9 +46829,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4340
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -50715,9 +46857,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2653
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -50745,9 +46885,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -50775,9 +46913,7 @@ export const itemDB = [
             "mastery": 2688,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -50805,9 +46941,7 @@ export const itemDB = [
             "mastery": 2856,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -50835,9 +46969,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3094
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -50865,9 +46997,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3451
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -50895,9 +47025,7 @@ export const itemDB = [
             "mastery": 3325,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -50925,9 +47053,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -50955,9 +47081,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -50990,9 +47114,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -51020,9 +47142,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -51050,9 +47170,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -51080,9 +47198,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -51110,9 +47226,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -51140,9 +47254,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 2750
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -51170,9 +47282,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -51200,9 +47310,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -51230,9 +47338,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -51261,9 +47367,7 @@ export const itemDB = [
             "mastery": 2800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -51292,9 +47396,7 @@ export const itemDB = [
             "mastery": 4350,
             "versatility": 2650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -51323,9 +47425,7 @@ export const itemDB = [
             "mastery": 2500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -51354,9 +47454,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -51385,9 +47483,7 @@ export const itemDB = [
             "mastery": 2350,
             "versatility": 4650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -51416,9 +47512,7 @@ export const itemDB = [
             "mastery": 4500,
             "versatility": 2500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -51447,9 +47541,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -51478,9 +47570,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -51509,9 +47599,7 @@ export const itemDB = [
             "mastery": 3250,
             "versatility": 3750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -51539,10 +47627,8 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "kyrian",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -51576,10 +47662,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "kyrian",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -51607,10 +47691,8 @@ export const itemDB = [
             "mastery": 2150,
             "versatility": 4850
         },
-        "expansion": 8,
         "covenant": "kyrian",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -51638,9 +47720,7 @@ export const itemDB = [
             "mastery": 7500,
             "versatility": 10000
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -51669,9 +47749,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -51705,9 +47783,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -51740,9 +47816,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -51770,9 +47844,7 @@ export const itemDB = [
             "mastery": 11000,
             "versatility": 6500
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -51800,9 +47872,7 @@ export const itemDB = [
             "mastery": 9500,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -51830,9 +47900,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10500
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -51860,9 +47928,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -51890,9 +47956,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -51920,9 +47984,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -51950,9 +48012,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -51980,9 +48040,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2592
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -52010,9 +48068,7 @@ export const itemDB = [
             "mastery": 3008,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -52040,9 +48096,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2889
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -52070,9 +48124,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -52092,13 +48144,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 85,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "PRISMATIC"
-                }
-            ]
-        },
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -52107,9 +48152,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -52137,9 +48180,7 @@ export const itemDB = [
             "mastery": 3694,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -52167,9 +48208,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2796
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -52197,10 +48236,8 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "kyrian",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -52228,9 +48265,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -52258,9 +48293,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -52288,9 +48321,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -52318,9 +48349,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -52348,9 +48377,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -52378,9 +48405,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -52408,9 +48433,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -52438,9 +48461,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -52468,9 +48489,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -52498,9 +48517,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -52528,9 +48545,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -52558,9 +48573,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -52588,9 +48601,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -52618,9 +48629,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -52648,9 +48657,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -52678,9 +48685,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -52708,9 +48713,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -52738,9 +48741,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -52768,9 +48769,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -52798,9 +48797,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -52828,9 +48825,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -52858,9 +48853,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -52888,9 +48881,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -52918,9 +48909,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -52948,9 +48937,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -52978,9 +48965,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -53008,9 +48993,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -53038,9 +49021,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -53068,9 +49049,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -53098,9 +49077,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -53128,9 +49105,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -53158,9 +49133,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -53188,9 +49161,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -53218,9 +49189,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -53248,9 +49217,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -53278,9 +49245,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -53308,9 +49273,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -53338,9 +49301,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -53368,9 +49329,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -53398,9 +49357,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -53428,9 +49385,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -53458,9 +49413,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -53488,9 +49441,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -53518,9 +49469,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -53548,9 +49497,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -53578,9 +49525,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -53608,9 +49553,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -53638,9 +49581,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -53668,9 +49609,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -53698,9 +49637,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -53728,9 +49665,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -53758,9 +49693,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -53788,9 +49721,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -53818,9 +49749,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -53848,9 +49777,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -53878,9 +49805,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -53908,9 +49833,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -53938,9 +49861,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -53968,9 +49889,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -53998,9 +49917,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -54028,9 +49945,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -54058,9 +49973,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -54088,9 +50001,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -54118,9 +50029,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -54148,9 +50057,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -54178,9 +50085,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -54208,9 +50113,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -54238,9 +50141,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -54268,9 +50169,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -54298,9 +50197,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -54328,9 +50225,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -54358,9 +50253,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -54388,9 +50281,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -54418,9 +50309,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -54448,9 +50337,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -54478,9 +50365,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -54508,9 +50393,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -54538,9 +50421,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -54568,9 +50449,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -54598,9 +50477,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -54628,9 +50505,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -54658,9 +50533,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -54688,9 +50561,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -54718,9 +50589,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -54748,9 +50617,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -54778,9 +50645,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -54808,9 +50673,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -54838,9 +50701,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -54868,9 +50729,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -54898,9 +50757,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -54928,9 +50785,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -54958,9 +50813,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -54988,9 +50841,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -55018,9 +50869,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -55048,9 +50897,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -55078,9 +50925,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -55108,9 +50953,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -55138,9 +50981,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -55168,9 +51009,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -55198,9 +51037,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -55228,9 +51065,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -55258,9 +51093,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -55288,9 +51121,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -55318,9 +51149,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -55348,9 +51177,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -55378,9 +51205,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -55408,9 +51233,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -55438,9 +51261,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -55468,9 +51289,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -55498,9 +51317,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -55528,9 +51345,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -55558,9 +51373,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -55588,9 +51401,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -55618,9 +51429,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -55648,9 +51457,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -55678,9 +51485,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -55708,9 +51513,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -55738,9 +51541,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -55768,9 +51569,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -55798,9 +51597,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -55828,9 +51625,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -55858,9 +51653,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -55888,9 +51681,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -55918,9 +51709,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -55948,9 +51737,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -55978,9 +51765,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -56008,9 +51793,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -56038,9 +51821,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -56068,9 +51849,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -56098,9 +51877,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -56128,9 +51905,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -56158,9 +51933,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -56188,9 +51961,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -56218,9 +51989,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -56248,9 +52017,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -56278,9 +52045,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -56308,9 +52073,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -56338,9 +52101,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -56368,9 +52129,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -56398,9 +52157,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -56429,9 +52186,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -56460,9 +52215,7 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -56491,9 +52244,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -56522,9 +52273,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -56553,9 +52302,7 @@ export const itemDB = [
             "mastery": 4700,
             "versatility": 2300
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -56584,9 +52331,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4850
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -56615,9 +52360,7 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 4700
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -56646,9 +52389,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -56676,9 +52417,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -56706,9 +52445,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -56736,9 +52473,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -56766,9 +52501,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -56796,9 +52529,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -56826,9 +52557,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -56856,9 +52585,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -56886,9 +52613,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -56916,9 +52641,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -56946,9 +52669,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -56976,9 +52697,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -57006,9 +52725,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -57036,9 +52753,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -57066,9 +52781,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -57096,9 +52809,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -57126,9 +52837,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -57156,9 +52865,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -57186,9 +52893,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -57216,9 +52921,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -57246,9 +52949,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -57276,9 +52977,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -57306,9 +53005,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -57336,9 +53033,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -57366,9 +53061,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -57396,9 +53089,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -57426,9 +53117,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -57456,9 +53145,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -57486,9 +53173,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -57516,9 +53201,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -57546,9 +53229,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -57576,9 +53257,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -57606,9 +53285,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -57636,9 +53313,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -57666,9 +53341,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -57696,9 +53369,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -57726,9 +53397,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -57756,9 +53425,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -57786,9 +53453,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -57816,9 +53481,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -57846,9 +53509,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -57876,9 +53537,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -57906,9 +53565,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -57936,9 +53593,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -57966,9 +53621,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -57996,9 +53649,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -58026,9 +53677,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -58056,9 +53705,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -58086,9 +53733,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -58116,9 +53761,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 9000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -58146,9 +53789,7 @@ export const itemDB = [
             "mastery": 8250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -58176,9 +53817,7 @@ export const itemDB = [
             "mastery": 9750,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -58206,9 +53845,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 8500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -58236,9 +53873,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -58266,9 +53901,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -58296,9 +53929,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -58326,9 +53957,7 @@ export const itemDB = [
             "mastery": 8750,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -58356,9 +53985,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -58386,9 +54013,7 @@ export const itemDB = [
             "mastery": 8500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -58416,9 +54041,7 @@ export const itemDB = [
             "mastery": 9750,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -58446,9 +54069,7 @@ export const itemDB = [
             "mastery": 7500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -58476,9 +54097,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -58506,9 +54125,7 @@ export const itemDB = [
             "mastery": 6666,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -58541,9 +54158,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -58576,9 +54191,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -58611,9 +54224,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -58646,9 +54257,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -58681,9 +54290,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -58716,9 +54323,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -58751,9 +54356,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -58786,9 +54389,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -58821,9 +54422,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -58857,9 +54456,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -58893,9 +54490,7 @@ export const itemDB = [
             "versatility": 6666
         },
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -58928,9 +54523,7 @@ export const itemDB = [
             "mastery": 8000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -58958,9 +54551,7 @@ export const itemDB = [
             "mastery": 7750,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -58988,9 +54579,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -59018,9 +54607,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -59048,9 +54635,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 8750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -59078,9 +54663,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -59108,9 +54691,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -59138,9 +54719,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -59168,9 +54747,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -59198,9 +54775,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -59234,9 +54809,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -59270,9 +54843,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -59306,9 +54877,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -59342,9 +54911,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -59378,9 +54945,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -59414,9 +54979,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -59450,9 +55013,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -59486,9 +55047,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -59522,9 +55081,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -59558,9 +55115,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -59594,9 +55149,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -59630,9 +55183,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -59666,9 +55217,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -59702,9 +55251,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -59738,9 +55285,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -59774,9 +55319,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -59810,9 +55353,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -59846,9 +55387,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -59882,9 +55421,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -59918,9 +55455,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -59954,9 +55489,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -59990,9 +55523,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -60026,9 +55557,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -60062,9 +55591,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -60098,9 +55625,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -60134,9 +55659,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -60170,9 +55693,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -60206,9 +55727,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -60242,9 +55761,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -60278,9 +55795,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -60314,9 +55829,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -60350,9 +55863,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -60386,9 +55897,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -60422,9 +55931,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -60460,9 +55967,7 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -60501,9 +56006,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -60537,9 +56040,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -60573,9 +56074,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -60609,9 +56108,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -60645,9 +56142,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -60681,9 +56176,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -60717,9 +56210,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -60753,9 +56244,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -60789,9 +56278,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -60825,9 +56312,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -60861,9 +56346,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -60897,9 +56380,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -60933,9 +56414,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -60969,9 +56448,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -61005,9 +56482,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -61041,9 +56516,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -61077,9 +56550,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -61113,9 +56584,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -61149,9 +56618,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -61185,9 +56652,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -61221,9 +56686,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -61257,9 +56720,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -61293,9 +56754,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -61329,9 +56788,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -61365,9 +56822,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -61401,9 +56856,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -61437,9 +56890,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -61473,9 +56924,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -61509,9 +56958,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -61545,9 +56992,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -61581,9 +57026,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -61617,9 +57060,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -61653,9 +57094,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -61689,9 +57128,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -61725,9 +57162,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -61763,9 +57198,7 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -61804,9 +57237,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -61834,9 +57265,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -61869,9 +57298,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -61904,9 +57331,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -61939,9 +57364,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -61969,9 +57392,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -61999,9 +57420,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -62029,9 +57448,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -62059,9 +57476,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -62089,9 +57504,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -62119,9 +57532,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -62149,9 +57560,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -62179,9 +57588,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -62209,9 +57616,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -62239,9 +57644,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -62269,9 +57672,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -62299,9 +57700,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -62329,9 +57728,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -62359,9 +57756,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -62389,9 +57784,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -62419,9 +57812,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -62449,9 +57840,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -62479,9 +57868,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -62509,9 +57896,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -62539,9 +57924,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -62569,9 +57952,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -62599,9 +57980,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -62629,9 +58008,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -62659,9 +58036,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -62689,9 +58064,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -62719,9 +58092,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -62749,9 +58120,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -62779,9 +58148,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -62809,9 +58176,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -62839,9 +58204,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -62869,9 +58232,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -62899,9 +58260,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -62929,9 +58288,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -62959,9 +58316,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -62989,9 +58344,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -63019,9 +58372,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -63049,9 +58400,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -63079,9 +58428,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -63109,9 +58456,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -63139,9 +58484,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -63169,9 +58512,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -63199,9 +58540,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -63229,9 +58568,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -63259,9 +58596,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -63289,9 +58624,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -63319,9 +58652,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -63349,9 +58680,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -63379,9 +58708,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -63409,9 +58736,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -63439,9 +58764,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -63469,9 +58792,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -63499,9 +58820,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -63529,9 +58848,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -63559,9 +58876,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -63589,9 +58904,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -63619,9 +58932,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -63649,9 +58960,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -63679,9 +58988,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -63709,9 +59016,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -63739,9 +59044,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -63769,9 +59072,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -63799,9 +59100,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -63829,9 +59128,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -63859,9 +59156,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -63889,9 +59184,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -63919,9 +59212,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -63949,9 +59240,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -63979,9 +59268,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -64009,9 +59296,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -64039,9 +59324,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -64069,9 +59352,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -64099,9 +59380,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -64129,9 +59408,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -64159,9 +59436,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -64189,9 +59464,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -64219,9 +59492,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -64250,9 +59521,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -64281,9 +59550,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -64312,9 +59579,7 @@ export const itemDB = [
             "mastery": 3250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -64343,9 +59608,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -64374,9 +59637,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -64405,9 +59666,7 @@ export const itemDB = [
             "mastery": 4500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -64436,9 +59695,7 @@ export const itemDB = [
             "mastery": 4650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -64467,9 +59724,7 @@ export const itemDB = [
             "mastery": 2650,
             "versatility": 4350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -64498,9 +59753,7 @@ export const itemDB = [
             "mastery": 2950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -64528,9 +59781,7 @@ export const itemDB = [
             "mastery": 11000,
             "versatility": 6500
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -64558,9 +59809,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -64588,9 +59837,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -64623,9 +59870,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -64658,9 +59903,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -64693,9 +59936,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -64728,9 +59969,7 @@ export const itemDB = [
             "mastery": 11000,
             "versatility": 6500
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -64758,9 +59997,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -64788,9 +60025,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -64818,9 +60053,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -64848,9 +60081,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -64878,9 +60109,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -64908,9 +60137,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -64938,9 +60165,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -64968,9 +60193,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -64998,9 +60221,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -65028,9 +60249,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -65059,9 +60278,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -65094,9 +60311,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -65124,9 +60339,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -65154,9 +60367,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -65184,9 +60395,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -65214,9 +60423,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -65244,9 +60451,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -65274,9 +60479,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -65304,9 +60507,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -65334,9 +60535,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -65364,9 +60563,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -65394,9 +60591,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -65424,9 +60619,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -65454,9 +60647,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -65484,9 +60675,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -65514,9 +60703,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -65544,9 +60731,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -65574,9 +60759,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -65604,9 +60787,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -65634,9 +60815,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -65664,9 +60843,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -65694,9 +60871,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -65724,9 +60899,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -65754,9 +60927,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -65784,9 +60955,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -65814,9 +60983,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -65844,9 +61011,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -65874,9 +61039,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -65904,9 +61067,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -65934,9 +61095,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -65964,9 +61123,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -65994,9 +61151,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -66024,9 +61179,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -66054,9 +61207,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -66084,9 +61235,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -66114,9 +61263,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -66144,9 +61291,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -66174,9 +61319,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -66204,9 +61347,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -66239,9 +61380,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -66269,10 +61408,8 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
-        "expansion": 8,
         "covenant": "kyrian",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -66306,10 +61443,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "kyrian",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -66337,10 +61472,8 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "kyrian",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -66374,10 +61507,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "kyrian",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -66405,10 +61536,8 @@ export const itemDB = [
             "mastery": 4850,
             "versatility": 2150
         },
-        "expansion": 8,
         "covenant": "kyrian",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -66436,9 +61565,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -66466,9 +61593,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -66496,9 +61621,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -66526,9 +61649,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -66556,9 +61677,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -66586,9 +61705,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -66616,9 +61733,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -66646,9 +61761,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -66676,9 +61789,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -66706,9 +61817,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -66736,9 +61845,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -66766,9 +61873,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -66796,9 +61901,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -66826,9 +61929,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -66856,9 +61957,7 @@ export const itemDB = [
             "mastery": 9250,
             "versatility": 8250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -66887,9 +61986,7 @@ export const itemDB = [
             "mastery": 4650,
             "versatility": 2350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -66918,9 +62015,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -66949,9 +62044,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -66980,9 +62073,7 @@ export const itemDB = [
             "mastery": 2350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -67011,9 +62102,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -67042,9 +62131,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -67073,9 +62160,7 @@ export const itemDB = [
             "mastery": 4800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -67104,9 +62189,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -67135,9 +62218,7 @@ export const itemDB = [
             "mastery": 3100,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -67171,9 +62252,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -67207,9 +62286,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -67243,9 +62320,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -67279,9 +62354,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -67315,9 +62388,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -67351,9 +62422,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -67387,9 +62456,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -67423,9 +62490,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -67459,9 +62524,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -67495,9 +62558,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -67531,9 +62592,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -67567,9 +62626,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -67603,9 +62660,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -67639,9 +62694,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -67675,9 +62728,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -67711,9 +62762,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -67747,9 +62796,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -67783,9 +62830,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -67819,9 +62864,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -67855,9 +62898,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -67891,9 +62932,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -67927,9 +62966,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -67963,9 +63000,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -67999,9 +63034,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -68035,9 +63068,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -68071,9 +63102,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -68107,9 +63136,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -68143,9 +63170,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -68179,9 +63204,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -68215,9 +63238,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -68251,9 +63272,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -68287,9 +63306,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -68323,9 +63340,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -68359,9 +63374,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -68396,9 +63409,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -68437,9 +63448,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -68473,9 +63482,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -68509,9 +63516,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -68546,9 +63551,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -68587,9 +63590,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -68623,9 +63624,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -68659,9 +63658,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -68695,9 +63692,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -68731,9 +63726,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -68767,9 +63760,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -68803,9 +63794,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -68839,9 +63828,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -68875,9 +63862,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -68911,9 +63896,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -68947,9 +63930,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -68983,9 +63964,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -69019,9 +63998,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -69055,9 +64032,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -69091,9 +64066,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -69127,9 +64100,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -69163,9 +64134,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -69199,9 +64168,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -69235,9 +64202,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -69271,9 +64236,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -69307,9 +64270,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -69343,9 +64304,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -69379,9 +64338,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -69415,9 +64372,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -69451,9 +64406,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -69487,9 +64440,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -69523,9 +64474,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -69559,9 +64508,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -69595,9 +64542,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -69631,9 +64576,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -69667,9 +64610,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -69703,9 +64644,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -69739,9 +64678,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -69775,9 +64712,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -69811,9 +64746,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -69848,9 +64781,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -69889,9 +64820,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -69925,9 +64854,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -69961,9 +64888,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -69998,9 +64923,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -70039,9 +64962,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -70075,9 +64996,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -70111,9 +65030,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -70147,9 +65064,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -70183,9 +65098,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -70223,9 +65136,7 @@ export const itemDB = [
                 "encounterId": 2402
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -70263,9 +65174,7 @@ export const itemDB = [
                 "encounterId": 2400
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -70303,9 +65212,7 @@ export const itemDB = [
                 "encounterId": 2405
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -70343,9 +65250,7 @@ export const itemDB = [
                 "encounterId": 2400
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -70383,9 +65288,7 @@ export const itemDB = [
                 "encounterId": 2402
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -70423,9 +65326,7 @@ export const itemDB = [
                 "encounterId": 2400
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -70463,9 +65364,7 @@ export const itemDB = [
                 "encounterId": 2402
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -70503,9 +65402,7 @@ export const itemDB = [
                 "encounterId": 2400
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -70543,9 +65440,7 @@ export const itemDB = [
                 "encounterId": 2405
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -70583,9 +65478,7 @@ export const itemDB = [
                 "encounterId": 2400
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -70623,9 +65516,7 @@ export const itemDB = [
                 "encounterId": 2405
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -70663,9 +65554,7 @@ export const itemDB = [
                 "encounterId": 2405
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -70703,9 +65592,7 @@ export const itemDB = [
                 "encounterId": 2405
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -70743,9 +65630,7 @@ export const itemDB = [
                 "encounterId": 2400
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -70783,9 +65668,7 @@ export const itemDB = [
                 "encounterId": 2402
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -70823,9 +65706,7 @@ export const itemDB = [
                 "encounterId": 2402
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -70863,9 +65744,7 @@ export const itemDB = [
                 "encounterId": 2402
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -70903,9 +65782,7 @@ export const itemDB = [
                 "encounterId": 2400
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -70960,9 +65837,7 @@ export const itemDB = [
                 "encounterId": 2400
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -71000,9 +65875,7 @@ export const itemDB = [
                 "encounterId": 2405
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -71040,9 +65913,7 @@ export const itemDB = [
                 "encounterId": 2405
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -71080,9 +65951,7 @@ export const itemDB = [
                 "encounterId": 2395
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -71120,9 +65989,7 @@ export const itemDB = [
                 "encounterId": 2395
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -71160,9 +66027,7 @@ export const itemDB = [
                 "encounterId": 2395
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -71200,9 +66065,7 @@ export const itemDB = [
                 "encounterId": 2395
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -71240,9 +66103,7 @@ export const itemDB = [
                 "encounterId": 2395
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -71280,9 +66141,7 @@ export const itemDB = [
                 "encounterId": 2391
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -71320,9 +66179,7 @@ export const itemDB = [
                 "encounterId": 2391
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -71360,9 +66217,7 @@ export const itemDB = [
                 "encounterId": 2391
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -71400,9 +66255,7 @@ export const itemDB = [
                 "encounterId": 2391
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -71440,9 +66293,7 @@ export const itemDB = [
                 "encounterId": 2391
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -71480,9 +66331,7 @@ export const itemDB = [
                 "encounterId": 2392
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -71520,9 +66369,7 @@ export const itemDB = [
                 "encounterId": 2392
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -71560,9 +66407,7 @@ export const itemDB = [
                 "encounterId": 2392
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -71600,9 +66445,7 @@ export const itemDB = [
                 "encounterId": 2392
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -71640,9 +66483,7 @@ export const itemDB = [
                 "encounterId": 2392
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -71680,9 +66521,7 @@ export const itemDB = [
                 "encounterId": 2419
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -71720,9 +66559,7 @@ export const itemDB = [
                 "encounterId": 2404
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -71760,9 +66597,7 @@ export const itemDB = [
                 "encounterId": 2419
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -71800,9 +66635,7 @@ export const itemDB = [
                 "encounterId": 2404
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -71840,9 +66673,7 @@ export const itemDB = [
                 "encounterId": 2403
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -71880,9 +66711,7 @@ export const itemDB = [
                 "encounterId": 2419
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -71920,9 +66749,7 @@ export const itemDB = [
                 "encounterId": 2404
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -71960,9 +66787,7 @@ export const itemDB = [
                 "encounterId": 2419
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -72000,9 +66825,7 @@ export const itemDB = [
                 "encounterId": 2403
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -72040,9 +66863,7 @@ export const itemDB = [
                 "encounterId": 2404
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -72080,9 +66901,7 @@ export const itemDB = [
                 "encounterId": 2403
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -72120,9 +66939,7 @@ export const itemDB = [
                 "encounterId": 2404
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -72165,9 +66982,7 @@ export const itemDB = [
                 "encounterId": 2392
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -72210,9 +67025,7 @@ export const itemDB = [
                 "encounterId": 2419
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -72250,9 +67063,7 @@ export const itemDB = [
                 "encounterId": 2404
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -72290,9 +67101,7 @@ export const itemDB = [
                 "encounterId": 2403
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -72330,9 +67139,7 @@ export const itemDB = [
                 "encounterId": 2396
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -72370,9 +67177,7 @@ export const itemDB = [
                 "encounterId": 2396
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -72410,9 +67215,7 @@ export const itemDB = [
                 "encounterId": 2396
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -72450,9 +67253,7 @@ export const itemDB = [
                 "encounterId": 2396
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -72490,9 +67291,7 @@ export const itemDB = [
                 "encounterId": 2396
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -72530,9 +67329,7 @@ export const itemDB = [
                 "encounterId": 2396
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -72587,9 +67384,7 @@ export const itemDB = [
                 "encounterId": 2390
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -72627,9 +67422,7 @@ export const itemDB = [
                 "encounterId": 2389
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -72667,9 +67460,7 @@ export const itemDB = [
                 "encounterId": 2401
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -72707,9 +67498,7 @@ export const itemDB = [
                 "encounterId": 2390
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -72747,9 +67536,7 @@ export const itemDB = [
                 "encounterId": 2397
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -72787,9 +67574,7 @@ export const itemDB = [
                 "encounterId": 2389
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -72827,9 +67612,7 @@ export const itemDB = [
                 "encounterId": 2417
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -72867,9 +67650,7 @@ export const itemDB = [
                 "encounterId": 2401
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -72907,9 +67688,7 @@ export const itemDB = [
                 "encounterId": 2397
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -72947,9 +67726,7 @@ export const itemDB = [
                 "encounterId": 2397
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -72987,9 +67764,7 @@ export const itemDB = [
                 "encounterId": 2390
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -73027,9 +67802,7 @@ export const itemDB = [
                 "encounterId": 2417
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -73067,9 +67840,7 @@ export const itemDB = [
                 "encounterId": 2397
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -73107,9 +67878,7 @@ export const itemDB = [
                 "encounterId": 2417
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -73147,9 +67916,7 @@ export const itemDB = [
                 "encounterId": 2389
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -73187,9 +67954,7 @@ export const itemDB = [
                 "encounterId": 2401
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -73227,9 +67992,7 @@ export const itemDB = [
                 "encounterId": 2390
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -73268,9 +68031,7 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -73326,9 +68087,7 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -73383,9 +68142,7 @@ export const itemDB = [
                 "encounterId": 2387
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -73423,9 +68180,7 @@ export const itemDB = [
                 "encounterId": 2406
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -73463,9 +68218,7 @@ export const itemDB = [
                 "encounterId": 2411
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -73503,9 +68256,7 @@ export const itemDB = [
                 "encounterId": 2387
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -73543,9 +68294,7 @@ export const itemDB = [
                 "encounterId": 2413
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -73583,9 +68332,7 @@ export const itemDB = [
                 "encounterId": 2406
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -73623,9 +68370,7 @@ export const itemDB = [
                 "encounterId": 2406
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -73663,9 +68408,7 @@ export const itemDB = [
                 "encounterId": 2387
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -73703,9 +68446,7 @@ export const itemDB = [
                 "encounterId": 2413
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -73743,9 +68484,7 @@ export const itemDB = [
                 "encounterId": 2411
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -73783,9 +68522,7 @@ export const itemDB = [
                 "encounterId": 2411
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -73823,9 +68560,7 @@ export const itemDB = [
                 "encounterId": 2413
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -73863,9 +68598,7 @@ export const itemDB = [
                 "encounterId": 2413
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -73904,9 +68637,7 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -73961,9 +68692,7 @@ export const itemDB = [
                 "encounterId": 2406
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -74001,9 +68730,7 @@ export const itemDB = [
                 "encounterId": 2411
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -74041,9 +68768,7 @@ export const itemDB = [
                 "encounterId": 2413
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -74081,9 +68806,7 @@ export const itemDB = [
                 "encounterId": 2406
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -74121,9 +68844,7 @@ export const itemDB = [
                 "encounterId": 2413
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -74161,9 +68882,7 @@ export const itemDB = [
                 "encounterId": 2411
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -74201,9 +68920,7 @@ export const itemDB = [
                 "encounterId": 2387
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -74241,9 +68958,7 @@ export const itemDB = [
                 "encounterId": 2388
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -74281,9 +68996,7 @@ export const itemDB = [
                 "encounterId": 2388
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -74321,9 +69034,7 @@ export const itemDB = [
                 "encounterId": 2415
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -74361,9 +69072,7 @@ export const itemDB = [
                 "encounterId": 2421
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -74401,9 +69110,7 @@ export const itemDB = [
                 "encounterId": 2407
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -74441,9 +69148,7 @@ export const itemDB = [
                 "encounterId": 2407
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -74481,9 +69186,7 @@ export const itemDB = [
                 "encounterId": 2421
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -74521,9 +69224,7 @@ export const itemDB = [
                 "encounterId": 2421
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -74561,9 +69262,7 @@ export const itemDB = [
                 "encounterId": 2415
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -74601,9 +69300,7 @@ export const itemDB = [
                 "encounterId": 2388
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -74641,9 +69338,7 @@ export const itemDB = [
                 "encounterId": 2415
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -74681,9 +69376,7 @@ export const itemDB = [
                 "encounterId": 2388
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -74721,9 +69414,7 @@ export const itemDB = [
                 "encounterId": 2421
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -74761,9 +69452,7 @@ export const itemDB = [
                 "encounterId": 2388
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -74802,9 +69491,7 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -74860,9 +69547,7 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -74917,9 +69602,7 @@ export const itemDB = [
                 "encounterId": 2415
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -74957,9 +69640,7 @@ export const itemDB = [
                 "encounterId": 2421
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -74997,9 +69678,7 @@ export const itemDB = [
                 "encounterId": 2407
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -75037,9 +69716,7 @@ export const itemDB = [
                 "encounterId": 2407
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -75077,9 +69754,7 @@ export const itemDB = [
                 "encounterId": 2415
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -75117,9 +69792,7 @@ export const itemDB = [
                 "encounterId": 2407
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -75157,9 +69830,7 @@ export const itemDB = [
                 "encounterId": 2417
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -75197,9 +69868,7 @@ export const itemDB = [
                 "encounterId": 2417
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -75237,9 +69906,7 @@ export const itemDB = [
                 "encounterId": 2401
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -75277,9 +69944,7 @@ export const itemDB = [
                 "encounterId": 2389
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -75317,9 +69982,7 @@ export const itemDB = [
                 "encounterId": 2397
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -75357,9 +70020,7 @@ export const itemDB = [
                 "encounterId": 2417
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -75388,9 +70049,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 8750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -75419,9 +70078,7 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 8750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -75459,9 +70116,7 @@ export const itemDB = [
                 "encounterId": 2423
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -75499,9 +70154,7 @@ export const itemDB = [
                 "encounterId": 2423
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -75539,9 +70192,7 @@ export const itemDB = [
                 "encounterId": 2423
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -75579,9 +70230,7 @@ export const itemDB = [
                 "encounterId": 2423
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -75619,9 +70268,7 @@ export const itemDB = [
                 "encounterId": 2423
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -75649,9 +70296,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -75679,9 +70324,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -75709,9 +70352,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -75739,9 +70380,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -75769,9 +70408,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -75799,9 +70436,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -75829,9 +70464,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -75865,10 +70498,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "kyrian",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -75896,10 +70527,8 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "expansion": 8,
         "covenant": "kyrian",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -75927,10 +70556,8 @@ export const itemDB = [
             "mastery": 5000,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "kyrian",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -75968,9 +70595,7 @@ export const itemDB = [
                 "encounterId": 2408
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -76008,9 +70633,7 @@ export const itemDB = [
                 "encounterId": 2408
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -76048,9 +70671,7 @@ export const itemDB = [
                 "encounterId": 2408
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -76088,9 +70709,7 @@ export const itemDB = [
                 "encounterId": 2408
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -76118,9 +70737,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -76158,9 +70775,7 @@ export const itemDB = [
                 "encounterId": 2409
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -76198,9 +70813,7 @@ export const itemDB = [
                 "encounterId": 2409
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -76238,9 +70851,7 @@ export const itemDB = [
                 "encounterId": 2409
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -76278,9 +70889,7 @@ export const itemDB = [
                 "encounterId": 2409
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -76318,9 +70927,7 @@ export const itemDB = [
                 "encounterId": 2409
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -76358,9 +70965,7 @@ export const itemDB = [
                 "encounterId": 2398
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -76398,9 +71003,7 @@ export const itemDB = [
                 "encounterId": 2398
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -76438,9 +71041,7 @@ export const itemDB = [
                 "encounterId": 2398
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -76478,9 +71079,7 @@ export const itemDB = [
                 "encounterId": 2398
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -76518,9 +71117,7 @@ export const itemDB = [
                 "encounterId": 2398
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -76559,9 +71156,7 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -76616,9 +71211,7 @@ export const itemDB = [
                 "encounterId": 2410
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -76656,9 +71249,7 @@ export const itemDB = [
                 "encounterId": 2410
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -76696,9 +71287,7 @@ export const itemDB = [
                 "encounterId": 2410
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -76736,9 +71325,7 @@ export const itemDB = [
                 "encounterId": 2410
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -76776,9 +71363,7 @@ export const itemDB = [
                 "encounterId": 2410
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -76806,9 +71391,7 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -76836,9 +71419,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -76866,9 +71447,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -76896,9 +71475,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -76926,10 +71503,8 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
-        "expansion": 8,
         "covenant": "night_fae",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -76963,10 +71538,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "night_fae",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -76994,10 +71567,8 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "night_fae",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -77025,9 +71596,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -77055,9 +71624,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -77085,9 +71652,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -77115,10 +71680,8 @@ export const itemDB = [
             "mastery": 4850,
             "versatility": 2150
         },
-        "expansion": 8,
         "covenant": "night_fae",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -77152,10 +71715,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "night_fae",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -77183,10 +71744,8 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "night_fae",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -77214,9 +71773,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -77244,9 +71801,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -77274,9 +71829,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -77304,9 +71857,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -77334,9 +71885,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -77364,9 +71913,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -77400,10 +71947,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "night_fae",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -77431,10 +71976,8 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "night_fae",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -77462,10 +72005,8 @@ export const itemDB = [
             "mastery": 2150,
             "versatility": 4850
         },
-        "expansion": 8,
         "covenant": "night_fae",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -77493,9 +72034,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -77524,9 +72063,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4850
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -77555,9 +72092,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2150
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -77585,9 +72120,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -77615,9 +72148,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -77645,9 +72176,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -77675,9 +72204,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -77706,9 +72233,7 @@ export const itemDB = [
             "mastery": 5000,
             "versatility": 2000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -77736,9 +72261,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -77766,9 +72289,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -77796,9 +72317,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -77826,9 +72345,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -77856,9 +72373,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -77886,9 +72401,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -77916,9 +72429,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -77946,9 +72457,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -77977,9 +72486,7 @@ export const itemDB = [
             "mastery": 4850,
             "versatility": 2150
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -78008,9 +72515,7 @@ export const itemDB = [
             "mastery": 2000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -78039,9 +72544,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2150
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -78070,9 +72573,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -78101,9 +72602,7 @@ export const itemDB = [
             "mastery": 5000,
             "versatility": 2000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -78132,9 +72631,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4700
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -78163,9 +72660,7 @@ export const itemDB = [
             "mastery": 2000,
             "versatility": 5000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -78194,9 +72689,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -78225,9 +72718,7 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -78256,9 +72747,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -78286,9 +72775,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -78316,9 +72803,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -78346,9 +72831,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -78376,9 +72859,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -78406,9 +72887,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -78436,9 +72915,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -78466,9 +72943,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -78496,9 +72971,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -78526,9 +72999,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -78556,9 +73027,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -78587,9 +73056,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -78618,9 +73085,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -78649,9 +73114,7 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -78680,9 +73143,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -78711,9 +73172,7 @@ export const itemDB = [
             "mastery": 4700,
             "versatility": 2300
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -78742,9 +73201,7 @@ export const itemDB = [
             "mastery": 5000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -78773,9 +73230,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4850
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -78804,9 +73259,7 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 4700
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -78834,9 +73287,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -78864,9 +73315,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -78894,9 +73343,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -78924,9 +73371,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -78954,9 +73399,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -78984,9 +73427,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -79014,9 +73455,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -79044,9 +73483,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -79074,9 +73511,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -79104,9 +73539,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -79134,9 +73567,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -79165,9 +73596,7 @@ export const itemDB = [
             "mastery": 4800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -79196,9 +73625,7 @@ export const itemDB = [
             "mastery": 2950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -79227,9 +73654,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -79258,9 +73683,7 @@ export const itemDB = [
             "mastery": 2200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -79289,9 +73712,7 @@ export const itemDB = [
             "mastery": 4800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -79320,9 +73741,7 @@ export const itemDB = [
             "mastery": 2350,
             "versatility": 4650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -79351,9 +73770,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -79382,9 +73799,7 @@ export const itemDB = [
             "mastery": 2350,
             "versatility": 4650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -79413,9 +73828,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -79443,9 +73856,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -79473,9 +73884,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -79503,9 +73912,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -79533,9 +73940,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -79563,10 +73968,8 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "expansion": 8,
         "covenant": "night_fae",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -79594,9 +73997,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -79624,10 +74025,8 @@ export const itemDB = [
             "mastery": 5000,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "night_fae",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -79661,10 +74060,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "night_fae",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -79692,9 +74089,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -79728,10 +74123,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "night_fae",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -79759,10 +74152,8 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "night_fae",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -79790,10 +74181,8 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
-        "expansion": 8,
         "covenant": "night_fae",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -79831,9 +74220,7 @@ export const itemDB = [
                 "encounterId": 2412
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -79871,9 +74258,7 @@ export const itemDB = [
                 "encounterId": 2412
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -79911,9 +74296,7 @@ export const itemDB = [
                 "encounterId": 2399
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -79951,9 +74334,7 @@ export const itemDB = [
                 "encounterId": 2399
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -79991,9 +74372,7 @@ export const itemDB = [
                 "encounterId": 2416
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -80031,9 +74410,7 @@ export const itemDB = [
                 "encounterId": 2399
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -80071,9 +74448,7 @@ export const itemDB = [
                 "encounterId": 2416
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -80111,9 +74486,7 @@ export const itemDB = [
                 "encounterId": 2414
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -80151,9 +74524,7 @@ export const itemDB = [
                 "encounterId": 2414
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -80191,9 +74562,7 @@ export const itemDB = [
                 "encounterId": 2414
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -80231,9 +74600,7 @@ export const itemDB = [
                 "encounterId": 2412
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -80271,9 +74638,7 @@ export const itemDB = [
                 "encounterId": 2399
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -80311,9 +74676,7 @@ export const itemDB = [
                 "encounterId": 2416
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -80351,9 +74714,7 @@ export const itemDB = [
                 "encounterId": 2416
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -80391,9 +74752,7 @@ export const itemDB = [
                 "encounterId": 2414
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -80431,9 +74790,7 @@ export const itemDB = [
                 "encounterId": 2412
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -80471,9 +74828,7 @@ export const itemDB = [
                 "encounterId": 2399
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -80512,16 +74867,13 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
             "name": "Empyreal Ordnance"
         },
-        "levelRange": [
-        ]
+        "levelRange": []
     },
     {
         "id": 180119,
@@ -80558,9 +74910,7 @@ export const itemDB = [
                 "encounterId": 2412
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -80615,9 +74965,7 @@ export const itemDB = [
                 "encounterId": 2412
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -80645,9 +74993,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -80675,9 +75021,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -80705,9 +75049,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -80735,9 +75077,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -80765,9 +75105,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -80795,9 +75133,7 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -80825,9 +75161,7 @@ export const itemDB = [
             "mastery": 6000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -80855,9 +75189,7 @@ export const itemDB = [
             "mastery": 11500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -80885,9 +75217,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -80915,9 +75245,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -80945,9 +75273,7 @@ export const itemDB = [
             "mastery": 6000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -80975,9 +75301,7 @@ export const itemDB = [
             "mastery": 11500,
             "versatility": 6000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -81005,9 +75329,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 11500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -81035,9 +75357,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -81065,9 +75385,7 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -81095,9 +75413,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -81125,9 +75441,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -81155,9 +75469,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -81185,9 +75497,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -81215,9 +75525,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -81245,9 +75553,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -81275,9 +75581,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -81305,9 +75609,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -81335,9 +75637,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -81365,9 +75665,7 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -81401,9 +75699,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -81431,9 +75727,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -81461,9 +75755,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -81491,9 +75783,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -81521,9 +75811,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -81551,9 +75839,7 @@ export const itemDB = [
             "mastery": 4100,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -81581,9 +75867,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -81611,9 +75895,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -81641,9 +75923,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -81671,9 +75951,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -81701,9 +75979,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -81731,9 +76007,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -81761,9 +76035,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -81791,9 +76063,7 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 4250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -81821,9 +76091,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -81851,9 +76119,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -81881,9 +76147,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -81911,9 +76175,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -81941,9 +76203,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -81971,9 +76231,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -82001,9 +76259,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -82031,9 +76287,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -82061,9 +76315,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -82091,9 +76343,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -82121,9 +76371,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -82151,9 +76399,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -82181,9 +76427,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -82211,9 +76455,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -82241,9 +76483,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -82271,9 +76511,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -82301,9 +76539,7 @@ export const itemDB = [
             "mastery": 8750,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -82331,9 +76567,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -82361,9 +76595,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -82392,9 +76624,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -82423,9 +76653,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -82454,9 +76682,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -82485,9 +76711,7 @@ export const itemDB = [
             "mastery": 4850,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -82516,9 +76740,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -82547,9 +76769,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -82578,9 +76798,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -82609,9 +76827,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -82640,9 +76856,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -82671,9 +76885,7 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -82702,9 +76914,7 @@ export const itemDB = [
             "mastery": 2150,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -82733,9 +76943,7 @@ export const itemDB = [
             "mastery": 4850,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -82764,9 +76972,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -82795,9 +77001,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -82826,9 +77030,7 @@ export const itemDB = [
             "mastery": 2000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -82857,9 +77059,7 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -82888,9 +77088,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -82919,9 +77117,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -82950,9 +77146,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -82981,9 +77175,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -83012,9 +77204,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -83043,9 +77233,7 @@ export const itemDB = [
             "mastery": 4850,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -83074,9 +77262,7 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -83105,9 +77291,7 @@ export const itemDB = [
             "mastery": 2000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -83136,9 +77320,7 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -83167,9 +77349,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -83198,9 +77378,7 @@ export const itemDB = [
             "mastery": 2150,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -83229,9 +77407,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -83260,9 +77436,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -83291,9 +77465,7 @@ export const itemDB = [
             "mastery": 4850,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -83322,9 +77494,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -83353,9 +77523,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -83384,9 +77552,7 @@ export const itemDB = [
             "mastery": 4100,
             "versatility": 2900
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -83415,9 +77581,7 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -83446,9 +77610,7 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -83477,9 +77639,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -83507,9 +77667,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -83537,9 +77695,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -83567,9 +77723,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -83597,9 +77751,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -83627,9 +77779,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -83657,9 +77807,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -83687,9 +77835,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -83717,9 +77863,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -83747,9 +77891,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -83777,9 +77919,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -83807,9 +77947,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -83837,9 +77975,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -83867,9 +78003,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -83897,9 +78031,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -83927,9 +78059,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -83957,9 +78087,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -83987,9 +78115,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -84018,9 +78144,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -84048,9 +78172,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -84078,9 +78200,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -84108,9 +78228,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -84138,9 +78256,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -84168,9 +78284,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -84198,9 +78312,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -84228,9 +78340,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -84258,9 +78368,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -84288,9 +78396,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -84318,9 +78424,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -84348,9 +78452,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -84378,9 +78480,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -84408,9 +78508,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -84438,9 +78536,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -84468,9 +78564,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -84498,9 +78592,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -84528,9 +78620,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -84558,9 +78648,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -84588,9 +78676,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 8500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -84618,9 +78704,7 @@ export const itemDB = [
             "mastery": 8000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -84648,9 +78732,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -84678,9 +78760,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -84708,9 +78788,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -84745,9 +78823,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -84780,9 +78856,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -84822,9 +78896,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -84858,9 +78930,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -84894,9 +78964,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -84930,9 +78998,7 @@ export const itemDB = [
             "versatility": 6666
         },
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -84965,9 +79031,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -84995,9 +79059,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -85025,9 +79087,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -85055,9 +79115,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -85085,9 +79143,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -85115,9 +79171,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -85145,9 +79199,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -85175,9 +79227,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -85205,9 +79255,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -85235,9 +79283,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -85265,9 +79311,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -85295,9 +79339,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -85325,9 +79367,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -85355,9 +79395,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -85385,9 +79423,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -85415,9 +79451,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -85445,9 +79479,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -85475,9 +79507,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -85505,9 +79535,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -85535,9 +79563,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -85565,9 +79591,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -85595,9 +79619,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -85625,9 +79647,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -85655,9 +79675,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -85685,9 +79703,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -85715,9 +79731,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -85745,9 +79759,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -85775,9 +79787,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -85805,9 +79815,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -85835,9 +79843,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -85865,9 +79871,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -85895,9 +79899,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -85925,9 +79927,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -85955,9 +79955,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -85985,9 +79983,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -86015,9 +80011,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -86046,9 +80040,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -86081,9 +80073,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -86117,9 +80107,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -86152,9 +80140,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -86187,9 +80173,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -86222,9 +80206,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -86252,9 +80234,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -86282,9 +80262,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -86312,9 +80290,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -86342,9 +80318,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -86372,9 +80346,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -86402,9 +80374,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -86432,9 +80402,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -86462,9 +80430,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -86492,9 +80458,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -86522,9 +80486,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -86552,9 +80514,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -86582,9 +80542,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -86612,9 +80570,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -86642,9 +80598,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -86672,9 +80626,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -86702,9 +80654,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -86732,9 +80682,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -86762,9 +80710,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -86792,9 +80738,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -86822,9 +80766,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -86852,9 +80794,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -86882,9 +80822,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -86912,9 +80850,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -86942,9 +80878,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -86972,9 +80906,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -87002,9 +80934,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -87032,9 +80962,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -87062,9 +80990,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -87092,9 +81018,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -87122,9 +81046,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -87152,9 +81074,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -87182,9 +81102,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -87212,9 +81130,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -87242,9 +81158,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -87272,9 +81186,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 9750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -87302,9 +81214,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 9250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -87332,9 +81242,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -87362,9 +81270,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -87392,9 +81298,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -87422,9 +81326,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -87452,9 +81354,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -87482,9 +81382,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -87512,9 +81410,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -87542,9 +81438,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -87572,9 +81466,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -87602,9 +81494,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -87632,9 +81522,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -87662,9 +81550,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -87692,9 +81578,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -87722,9 +81606,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -87752,9 +81634,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -87782,9 +81662,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -87812,9 +81690,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -87842,9 +81718,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -87872,9 +81746,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -87902,9 +81774,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -87932,9 +81802,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -87962,9 +81830,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -87992,9 +81858,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -88022,9 +81886,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -88052,9 +81914,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -88082,9 +81942,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -88112,9 +81970,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -88142,9 +81998,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -88172,9 +82026,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -88202,9 +82054,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -88232,9 +82082,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -88262,9 +82110,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -88292,9 +82138,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -88322,9 +82166,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -88352,9 +82194,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -88382,9 +82222,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -88412,9 +82250,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -88442,9 +82278,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -88472,9 +82306,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -88502,9 +82334,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -88532,9 +82362,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -88562,9 +82390,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -88592,9 +82418,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -88622,9 +82446,7 @@ export const itemDB = [
             "mastery": 9250,
             "versatility": 8250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -88652,9 +82474,7 @@ export const itemDB = [
             "mastery": 10000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -88682,9 +82502,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -88712,9 +82530,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -88742,9 +82558,7 @@ export const itemDB = [
             "mastery": 9750,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -88779,9 +82593,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -88815,9 +82627,7 @@ export const itemDB = [
             "mastery": 5000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -88845,9 +82655,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -88876,9 +82684,7 @@ export const itemDB = [
             "mastery": 4700,
             "versatility": 2300
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -88907,9 +82713,7 @@ export const itemDB = [
             "mastery": 2150,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -88938,9 +82742,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2300
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -88969,9 +82771,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -89000,9 +82800,7 @@ export const itemDB = [
             "mastery": 4850,
             "versatility": 2150
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -89031,9 +82829,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -89062,9 +82858,7 @@ export const itemDB = [
             "mastery": 2150,
             "versatility": 4850
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -89093,9 +82887,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -89123,9 +82915,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -89153,9 +82943,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -89183,9 +82971,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -89213,9 +82999,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -89243,9 +83027,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -89273,9 +83055,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -89303,9 +83083,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -89333,9 +83111,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -89363,9 +83139,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -89394,9 +83168,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -89424,9 +83196,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -89454,9 +83224,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -89484,9 +83252,7 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 4100
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -89515,9 +83281,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -89546,9 +83310,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -89577,9 +83339,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -89608,9 +83368,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -89639,9 +83397,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -89670,9 +83426,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -89701,9 +83455,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -89732,9 +83484,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -89763,9 +83513,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -89794,9 +83542,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -89825,9 +83571,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -89856,9 +83600,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -89887,9 +83629,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -89918,9 +83658,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -89949,9 +83687,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -89980,9 +83716,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -90011,9 +83745,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -90042,9 +83774,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -90073,9 +83803,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -90104,9 +83832,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -90135,9 +83861,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -90166,9 +83890,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -90197,9 +83919,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -90228,9 +83948,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -90259,9 +83977,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -90290,9 +84006,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -90321,9 +84035,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -90352,9 +84064,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -90383,9 +84093,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -90414,9 +84122,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -90445,9 +84151,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -90476,9 +84180,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -90507,9 +84209,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -90538,9 +84238,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -90569,9 +84267,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -90600,9 +84296,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -90630,9 +84324,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -90660,9 +84352,7 @@ export const itemDB = [
             "mastery": 2250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -90690,10 +84380,8 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "venthyr",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -90721,10 +84409,8 @@ export const itemDB = [
             "mastery": 5000,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "venthyr",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -90752,10 +84438,8 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "venthyr",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -90783,10 +84467,8 @@ export const itemDB = [
             "mastery": 2150,
             "versatility": 4850
         },
-        "expansion": 8,
         "covenant": "venthyr",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -90814,10 +84496,8 @@ export const itemDB = [
             "mastery": 4850,
             "versatility": 2150
         },
-        "expansion": 8,
         "covenant": "venthyr",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -90851,10 +84531,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "venthyr",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -90888,10 +84566,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "venthyr",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -90925,10 +84601,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "venthyr",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -90962,10 +84636,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "venthyr",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -90999,10 +84671,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "venthyr",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -91030,10 +84700,8 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
-        "expansion": 8,
         "covenant": "venthyr",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -91061,10 +84729,8 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "expansion": 8,
         "covenant": "venthyr",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -91092,10 +84758,8 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
-        "expansion": 8,
         "covenant": "venthyr",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -91123,10 +84787,8 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "venthyr",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -91154,10 +84816,8 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "venthyr",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -91186,9 +84846,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -91221,9 +84879,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -91256,9 +84912,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -91291,9 +84945,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -91326,9 +84978,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -91361,9 +85011,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -91391,9 +85039,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -91421,9 +85067,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -91451,9 +85095,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -91481,9 +85123,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -91511,9 +85151,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -91541,9 +85179,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -91571,9 +85207,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 0,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -91601,9 +85235,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -91637,9 +85269,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -91668,9 +85298,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -91699,9 +85327,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 2600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -91730,9 +85356,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -91761,9 +85385,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -91792,9 +85414,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -91823,9 +85443,7 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -91853,9 +85471,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -91883,9 +85499,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -91913,9 +85527,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -91943,9 +85555,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -91979,9 +85589,7 @@ export const itemDB = [
                 "encounterId": 2393
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -92015,9 +85623,7 @@ export const itemDB = [
                 "encounterId": 2422
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -92051,9 +85657,7 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -92087,9 +85691,7 @@ export const itemDB = [
                 "encounterId": 2393
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -92123,9 +85725,7 @@ export const itemDB = [
                 "encounterId": 2424
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -92159,9 +85759,7 @@ export const itemDB = [
                 "encounterId": 2394
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -92195,9 +85793,7 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -92231,9 +85827,7 @@ export const itemDB = [
                 "encounterId": 2426
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -92267,9 +85861,7 @@ export const itemDB = [
                 "encounterId": 2394
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -92303,9 +85895,7 @@ export const itemDB = [
                 "encounterId": 2420
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -92339,9 +85929,7 @@ export const itemDB = [
                 "encounterId": 2422
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -92375,9 +85963,7 @@ export const itemDB = [
                 "encounterId": 2418
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -92411,9 +85997,7 @@ export const itemDB = [
                 "encounterId": 2429
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -92447,9 +86031,7 @@ export const itemDB = [
                 "encounterId": 2426
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -92483,9 +86065,7 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -92519,9 +86099,7 @@ export const itemDB = [
                 "encounterId": 2425
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -92555,9 +86133,7 @@ export const itemDB = [
                 "encounterId": 2428
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -92591,9 +86167,7 @@ export const itemDB = [
                 "encounterId": 2393
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -92627,9 +86201,7 @@ export const itemDB = [
                 "encounterId": 2428
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -92663,9 +86235,7 @@ export const itemDB = [
                 "encounterId": 2429
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -92699,9 +86269,7 @@ export const itemDB = [
                 "encounterId": 2429
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -92735,9 +86303,7 @@ export const itemDB = [
                 "encounterId": 2424
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -92771,9 +86337,7 @@ export const itemDB = [
                 "encounterId": 2425
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -92807,9 +86371,7 @@ export const itemDB = [
                 "encounterId": 2394
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -92843,9 +86405,7 @@ export const itemDB = [
                 "encounterId": 2428
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -92879,9 +86439,7 @@ export const itemDB = [
                 "encounterId": 2428
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -92915,9 +86473,7 @@ export const itemDB = [
                 "encounterId": 2425
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -92951,9 +86507,7 @@ export const itemDB = [
                 "encounterId": 2424
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -92987,9 +86541,7 @@ export const itemDB = [
                 "encounterId": 2418
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -93023,9 +86575,7 @@ export const itemDB = [
                 "encounterId": 2394
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -93059,9 +86609,7 @@ export const itemDB = [
                 "encounterId": 2394
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -93095,9 +86643,7 @@ export const itemDB = [
                 "encounterId": 2422
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -93131,9 +86677,7 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -93167,9 +86711,7 @@ export const itemDB = [
                 "encounterId": 2428
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -93203,9 +86745,7 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -93239,9 +86779,7 @@ export const itemDB = [
                 "encounterId": 2426
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -93275,9 +86813,7 @@ export const itemDB = [
                 "encounterId": 2418
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -93311,9 +86847,7 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -93347,9 +86881,7 @@ export const itemDB = [
                 "encounterId": 2426
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -93383,9 +86915,7 @@ export const itemDB = [
                 "encounterId": 2420
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -93419,9 +86949,7 @@ export const itemDB = [
                 "encounterId": 2394
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -93455,9 +86983,7 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -93491,9 +87017,7 @@ export const itemDB = [
                 "encounterId": 2429
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -93527,9 +87051,7 @@ export const itemDB = [
                 "encounterId": 2418
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -93563,9 +87085,7 @@ export const itemDB = [
                 "encounterId": 2424
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -93599,9 +87119,7 @@ export const itemDB = [
                 "encounterId": 2420
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -93635,9 +87153,7 @@ export const itemDB = [
                 "encounterId": 2394
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -93671,9 +87187,7 @@ export const itemDB = [
                 "encounterId": 2426
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -93707,9 +87221,7 @@ export const itemDB = [
                 "encounterId": 2428
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -93743,9 +87255,7 @@ export const itemDB = [
                 "encounterId": 2422
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -93779,9 +87289,7 @@ export const itemDB = [
                 "encounterId": 2420
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -93815,9 +87323,7 @@ export const itemDB = [
                 "encounterId": 2393
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -93851,9 +87357,7 @@ export const itemDB = [
                 "encounterId": 2428
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -93887,9 +87391,7 @@ export const itemDB = [
                 "encounterId": 2425
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -93923,9 +87425,7 @@ export const itemDB = [
                 "encounterId": 2426
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -93959,9 +87459,7 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -93995,9 +87493,7 @@ export const itemDB = [
                 "encounterId": 2425
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -94031,9 +87527,7 @@ export const itemDB = [
                 "encounterId": 2422
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -94067,9 +87561,7 @@ export const itemDB = [
                 "encounterId": 2393
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -94103,9 +87595,7 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -94139,9 +87629,7 @@ export const itemDB = [
                 "encounterId": 2424
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -94175,9 +87663,7 @@ export const itemDB = [
                 "encounterId": 2420
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -94211,9 +87697,7 @@ export const itemDB = [
                 "encounterId": 2418
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -94247,9 +87731,7 @@ export const itemDB = [
                 "encounterId": 2426
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -94283,9 +87765,7 @@ export const itemDB = [
                 "encounterId": 2429
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -94313,9 +87793,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -94343,9 +87821,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -94373,9 +87849,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -94403,9 +87877,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -94433,9 +87905,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -94463,9 +87933,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -94493,9 +87961,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -94523,9 +87989,7 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -94553,9 +88017,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -94583,9 +88045,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -94619,9 +88079,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -94655,10 +88113,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "necrolord",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -94692,10 +88148,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "necrolord",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -94729,10 +88183,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "necrolord",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -94766,10 +88218,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "necrolord",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -94797,9 +88247,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -94828,9 +88276,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -94859,9 +88305,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -94890,9 +88334,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -94921,9 +88363,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -94952,9 +88392,7 @@ export const itemDB = [
             "versatility": 4250
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -94983,9 +88421,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -95014,9 +88450,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -95045,9 +88479,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -95076,9 +88508,7 @@ export const itemDB = [
             "versatility": 2250
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -95107,9 +88537,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -95138,9 +88566,7 @@ export const itemDB = [
             "versatility": 4250
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -95169,9 +88595,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -95200,9 +88624,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -95231,9 +88653,7 @@ export const itemDB = [
             "versatility": 2625
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -95262,9 +88682,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -95293,9 +88711,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -95324,9 +88740,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -95355,9 +88769,7 @@ export const itemDB = [
             "versatility": 2250
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -95386,9 +88798,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -95417,9 +88827,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -95448,9 +88856,7 @@ export const itemDB = [
             "versatility": 4250
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -95479,9 +88885,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -95510,9 +88914,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -95541,9 +88943,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -95572,9 +88972,7 @@ export const itemDB = [
             "versatility": 2750
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -95603,9 +89001,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -95634,9 +89030,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -95665,9 +89059,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -95696,9 +89088,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -95727,9 +89117,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -95758,9 +89146,7 @@ export const itemDB = [
             "versatility": 4750
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -95789,9 +89175,7 @@ export const itemDB = [
             "versatility": 4750
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -95820,9 +89204,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -95851,9 +89233,7 @@ export const itemDB = [
             "versatility": 2375
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -95882,9 +89262,7 @@ export const itemDB = [
             "versatility": 2300
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -95913,9 +89291,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -95944,9 +89320,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -95975,9 +89349,7 @@ export const itemDB = [
             "versatility": 4500
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -96006,9 +89378,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -96037,9 +89407,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -96068,9 +89436,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -96099,9 +89465,7 @@ export const itemDB = [
             "versatility": 2250
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -96130,9 +89494,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -96161,9 +89523,7 @@ export const itemDB = [
             "versatility": 4750
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -96192,9 +89552,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -96223,9 +89581,7 @@ export const itemDB = [
             "versatility": 4000
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -96254,9 +89610,7 @@ export const itemDB = [
             "versatility": 4750
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -96285,9 +89639,7 @@ export const itemDB = [
             "versatility": 4750
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -96316,9 +89668,7 @@ export const itemDB = [
             "versatility": 2600
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -96347,9 +89697,7 @@ export const itemDB = [
             "versatility": 2000
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -96378,9 +89726,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -96409,9 +89755,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -96440,9 +89784,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -96471,9 +89813,7 @@ export const itemDB = [
             "versatility": 2750
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -96502,9 +89842,7 @@ export const itemDB = [
             "versatility": 4250
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -96533,9 +89871,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -96564,9 +89900,7 @@ export const itemDB = [
             "versatility": 4250
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -96595,9 +89929,7 @@ export const itemDB = [
             "versatility": 2300
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -96626,9 +89958,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -96657,9 +89987,7 @@ export const itemDB = [
             "versatility": 4750
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -96688,9 +90016,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -96719,9 +90045,7 @@ export const itemDB = [
             "versatility": 2875
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -96750,9 +90074,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -96781,9 +90103,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -96812,9 +90132,7 @@ export const itemDB = [
             "versatility": 2250
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -96843,9 +90161,7 @@ export const itemDB = [
             "versatility": 4125
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -96874,9 +90190,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -96905,9 +90219,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -96936,9 +90248,7 @@ export const itemDB = [
             "versatility": 4750
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -96967,9 +90277,7 @@ export const itemDB = [
             "versatility": 2625
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -96998,9 +90306,7 @@ export const itemDB = [
             "versatility": 2600
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -97029,9 +90335,7 @@ export const itemDB = [
             "versatility": 2000
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -97059,9 +90363,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 2750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -97089,9 +90391,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -97119,9 +90419,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 2600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -97149,9 +90447,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -97179,9 +90475,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -97209,9 +90503,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -97239,9 +90531,7 @@ export const itemDB = [
             "mastery": 3250,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -97269,9 +90559,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -97299,9 +90587,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -97329,9 +90615,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -97359,9 +90643,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -97389,9 +90671,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -97419,9 +90699,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -97449,9 +90727,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -97479,9 +90755,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -97509,9 +90783,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -97539,9 +90811,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -97569,9 +90839,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -97599,9 +90867,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -97629,9 +90895,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -97659,9 +90923,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -97689,9 +90951,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -97719,9 +90979,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -97754,9 +91012,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -97784,9 +91040,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -97814,9 +91068,7 @@ export const itemDB = [
             "mastery": 4500,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -97844,9 +91096,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -97874,9 +91124,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -97904,9 +91152,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -97934,9 +91180,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -97964,9 +91208,7 @@ export const itemDB = [
             "mastery": 2500,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -97994,9 +91236,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -98024,9 +91264,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -98054,9 +91292,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -98084,9 +91320,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -98114,9 +91348,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -98144,9 +91376,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -98174,9 +91404,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -98204,9 +91432,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -98234,9 +91460,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -98264,9 +91488,7 @@ export const itemDB = [
             "mastery": 1750,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -98294,9 +91516,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 15000
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -98324,9 +91544,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -98354,9 +91572,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -98384,9 +91600,7 @@ export const itemDB = [
             "mastery": 5250,
             "versatility": 12250
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -98414,9 +91628,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -98444,9 +91656,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -98474,9 +91684,7 @@ export const itemDB = [
             "mastery": 2000,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -98504,9 +91712,7 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -98534,9 +91740,7 @@ export const itemDB = [
             "mastery": 3250,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -98564,9 +91768,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12250
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -98594,9 +91796,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -98624,9 +91824,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -98654,9 +91852,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -98684,9 +91880,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -98714,9 +91908,7 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -98744,9 +91936,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -98774,9 +91964,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -98804,9 +91992,7 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -98834,9 +92020,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -98864,9 +92048,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -98894,9 +92076,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -98924,9 +92104,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -98955,9 +92133,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -98986,9 +92162,7 @@ export const itemDB = [
             "versatility": 4250
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -99017,9 +92191,7 @@ export const itemDB = [
             "versatility": 2750
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -99048,9 +92220,7 @@ export const itemDB = [
             "versatility": 5000
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -99079,9 +92249,7 @@ export const itemDB = [
             "versatility": 3250
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -99110,9 +92278,7 @@ export const itemDB = [
             "versatility": 2000
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -99141,9 +92307,7 @@ export const itemDB = [
             "versatility": 4000
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -99172,9 +92336,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -99203,9 +92365,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -99234,9 +92394,7 @@ export const itemDB = [
             "versatility": 2750
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -99265,9 +92423,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -99296,9 +92452,7 @@ export const itemDB = [
             "versatility": 4500
         },
         "faction": "alliance",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -99327,9 +92481,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -99358,9 +92510,7 @@ export const itemDB = [
             "versatility": 4250
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -99389,9 +92539,7 @@ export const itemDB = [
             "versatility": 2750
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -99420,9 +92568,7 @@ export const itemDB = [
             "versatility": 5000
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -99451,9 +92597,7 @@ export const itemDB = [
             "versatility": 3250
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -99482,9 +92626,7 @@ export const itemDB = [
             "versatility": 2000
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -99513,9 +92655,7 @@ export const itemDB = [
             "versatility": 4000
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -99544,9 +92684,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -99575,9 +92713,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -99606,9 +92742,7 @@ export const itemDB = [
             "versatility": 2750
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -99637,9 +92771,7 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -99668,9 +92800,7 @@ export const itemDB = [
             "versatility": 4500
         },
         "faction": "horde",
-        "expansion": 7,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -99698,9 +92828,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -99734,9 +92862,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -99769,9 +92895,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -99804,9 +92928,7 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -99834,9 +92956,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -99864,9 +92984,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2300
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -99894,9 +93012,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2300
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -99930,9 +93046,7 @@ export const itemDB = [
                 "encounterId": 2422
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -99972,9 +93086,7 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -100019,9 +93131,7 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -100060,15 +93170,17 @@ export const itemDB = [
                 "encounterId": 2428
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
             "name": "Consumptive Infusion"
         },
         "levelRange": [
+            187,
+            200,
+            213,
+            226
         ]
     },
     {
@@ -100103,15 +93215,17 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
             "name": "Macabre Sheet Music"
         },
         "levelRange": [
+            187,
+            200,
+            213,
+            226
         ]
     },
     {
@@ -100145,9 +93259,7 @@ export const itemDB = [
                 "encounterId": 2424
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -100192,9 +93304,7 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -100239,9 +93349,7 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -100281,9 +93389,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -100323,9 +93429,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -100365,9 +93469,7 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -100401,9 +93503,7 @@ export const itemDB = [
             "mastery": 12000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -100432,9 +93532,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 11250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -100463,9 +93561,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -100494,9 +93590,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -100530,9 +93624,7 @@ export const itemDB = [
                 "encounterId": 2430
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -100566,9 +93658,7 @@ export const itemDB = [
                 "encounterId": 2432
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -100602,9 +93692,7 @@ export const itemDB = [
                 "encounterId": 2432
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -100638,9 +93726,7 @@ export const itemDB = [
                 "encounterId": 2431
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -100674,9 +93760,7 @@ export const itemDB = [
                 "encounterId": 2432
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -100710,9 +93794,7 @@ export const itemDB = [
                 "encounterId": 2433
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -100746,9 +93828,7 @@ export const itemDB = [
                 "encounterId": 2433
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -100782,9 +93862,7 @@ export const itemDB = [
                 "encounterId": 2430
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -100818,9 +93896,7 @@ export const itemDB = [
                 "encounterId": 2431
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -100854,9 +93930,7 @@ export const itemDB = [
                 "encounterId": 2433
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -100890,9 +93964,7 @@ export const itemDB = [
                 "encounterId": 2431
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -100926,9 +93998,7 @@ export const itemDB = [
                 "encounterId": 2430
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -100962,9 +94032,7 @@ export const itemDB = [
                 "encounterId": 2433
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -100998,9 +94066,7 @@ export const itemDB = [
                 "encounterId": 2432
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -101034,9 +94100,7 @@ export const itemDB = [
                 "encounterId": 2430
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -101070,9 +94134,7 @@ export const itemDB = [
                 "encounterId": 2431
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -101106,9 +94168,7 @@ export const itemDB = [
                 "encounterId": 2430
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -101142,9 +94202,7 @@ export const itemDB = [
                 "encounterId": 2432
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -101178,9 +94236,7 @@ export const itemDB = [
                 "encounterId": 2431
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -101214,9 +94270,7 @@ export const itemDB = [
                 "encounterId": 2433
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -101244,9 +94298,7 @@ export const itemDB = [
             "mastery": 6000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -101280,9 +94332,7 @@ export const itemDB = [
                 "encounterId": 2430
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -101316,9 +94366,7 @@ export const itemDB = [
                 "encounterId": 2433
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -101352,9 +94400,7 @@ export const itemDB = [
                 "encounterId": 2432
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -101388,9 +94434,7 @@ export const itemDB = [
                 "encounterId": 2431
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -101418,9 +94462,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -101448,9 +94490,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -101478,9 +94518,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -101508,9 +94546,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -101538,9 +94574,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -101568,9 +94602,7 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -101598,9 +94630,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -101628,9 +94658,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -101658,9 +94686,7 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -101688,9 +94714,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -101718,9 +94742,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -101748,10 +94770,8 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "necrolord",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -101779,10 +94799,8 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "necrolord",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -101810,10 +94828,8 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
-        "expansion": 8,
         "covenant": "necrolord",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -101841,10 +94857,8 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "expansion": 8,
         "covenant": "necrolord",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -101872,10 +94886,8 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
-        "expansion": 8,
         "covenant": "necrolord",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -101903,10 +94915,8 @@ export const itemDB = [
             "mastery": 2150,
             "versatility": 4850
         },
-        "expansion": 8,
         "covenant": "necrolord",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -101934,10 +94944,8 @@ export const itemDB = [
             "mastery": 4850,
             "versatility": 2150
         },
-        "expansion": 8,
         "covenant": "necrolord",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -101965,10 +94973,8 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "necrolord",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -101996,10 +95002,8 @@ export const itemDB = [
             "mastery": 5000,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "necrolord",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -102027,10 +95031,8 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "necrolord",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -102058,10 +95060,8 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "covenant": "kyrian",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -102089,10 +95089,8 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
-        "expansion": 8,
         "covenant": "kyrian",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -102120,9 +95118,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -102155,9 +95151,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -102185,9 +95179,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -102215,9 +95207,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -102245,9 +95235,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -102275,9 +95263,7 @@ export const itemDB = [
             "mastery": 4100,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -102305,9 +95291,7 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -102335,9 +95319,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -102365,9 +95347,7 @@ export const itemDB = [
             "mastery": 6750,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -102395,9 +95375,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -102425,9 +95403,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -102455,9 +95431,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -102485,9 +95459,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -102515,9 +95487,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -102551,9 +95521,7 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -102581,9 +95549,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -102611,9 +95577,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -102641,9 +95605,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -102671,9 +95633,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -102701,9 +95661,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -102731,9 +95689,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -102761,9 +95717,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -102791,9 +95745,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -102821,9 +95773,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -102851,9 +95801,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -102881,9 +95829,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -102911,9 +95857,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -102941,9 +95885,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -102971,9 +95913,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -103001,9 +95941,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -103037,10 +95975,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "kyrian",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -103074,10 +96010,8 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "expansion": 8,
         "covenant": "necrolord",
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -103105,9 +96039,7 @@ export const itemDB = [
             "mastery": 3100,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -103135,9 +96067,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -103165,9 +96095,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -103195,9 +96123,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -103225,9 +96151,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -103255,9 +96179,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -103285,9 +96207,7 @@ export const itemDB = [
             "mastery": 4100,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -103315,9 +96235,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -103345,9 +96263,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -103375,9 +96291,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -103405,9 +96319,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -103435,9 +96347,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -103465,9 +96375,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -103495,9 +96403,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -103525,9 +96431,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -103555,9 +96459,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -103585,9 +96487,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -103615,9 +96515,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3850
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -103645,9 +96543,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3850
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -103675,9 +96571,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3850
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -103705,9 +96599,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3850
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -103735,9 +96627,7 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -103765,9 +96655,7 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -103795,9 +96683,7 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -103825,9 +96711,7 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -103855,9 +96739,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3150
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -103885,9 +96767,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3150
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -103915,9 +96795,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3150
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -103945,9 +96823,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3150
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -103975,9 +96851,7 @@ export const itemDB = [
             "mastery": 3850,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -104005,9 +96879,7 @@ export const itemDB = [
             "mastery": 3850,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -104035,9 +96907,7 @@ export const itemDB = [
             "mastery": 3850,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -104065,9 +96935,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3150
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -104095,9 +96963,7 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -104125,9 +96991,7 @@ export const itemDB = [
             "mastery": 3850,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -104155,9 +97019,7 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -104185,9 +97047,7 @@ export const itemDB = [
             "mastery": 9250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -104215,9 +97075,7 @@ export const itemDB = [
             "mastery": 3850,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -104245,9 +97103,7 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -104275,9 +97131,7 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -104305,9 +97159,7 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -104335,9 +97187,7 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -104365,9 +97215,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3850
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -104395,9 +97243,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3850
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -104425,9 +97271,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3850
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -104455,9 +97299,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3850
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -104485,9 +97327,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -104515,9 +97355,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 8250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -104545,9 +97383,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -104575,9 +97411,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -104605,9 +97439,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -104641,9 +97473,7 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -104671,9 +97501,7 @@ export const itemDB = [
             "mastery": 4500,
             "versatility": 2500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -104701,9 +97529,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -104731,9 +97557,7 @@ export const itemDB = [
             "mastery": 2500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -104761,9 +97585,7 @@ export const itemDB = [
             "mastery": 15000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -104791,9 +97613,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -104821,9 +97641,7 @@ export const itemDB = [
             "mastery": 4200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -104851,9 +97669,7 @@ export const itemDB = [
             "mastery": 3900,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -104881,9 +97697,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -104911,9 +97725,7 @@ export const itemDB = [
             "mastery": 4000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -104941,9 +97753,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -104971,9 +97781,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -105001,9 +97809,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -105031,9 +97837,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -105061,9 +97865,7 @@ export const itemDB = [
             "mastery": 3900,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -105091,9 +97893,7 @@ export const itemDB = [
             "mastery": 2500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -105121,9 +97921,7 @@ export const itemDB = [
             "mastery": 4300,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -105151,9 +97949,7 @@ export const itemDB = [
             "mastery": 2800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -105181,9 +97977,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3900
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -105211,9 +98005,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3100
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -105241,9 +98033,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -105276,9 +98066,7 @@ export const itemDB = [
             "mastery": 2800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -105306,9 +98094,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -105336,9 +98122,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -105371,9 +98155,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -105407,9 +98189,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -105443,9 +98223,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -105478,9 +98256,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -105513,9 +98289,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4700
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -105543,9 +98317,7 @@ export const itemDB = [
             "mastery": 2825,
             "versatility": 4175
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -105573,9 +98345,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -105603,9 +98373,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -105633,9 +98401,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -105663,9 +98429,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -105693,9 +98457,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -105723,9 +98485,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -105753,9 +98513,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4025
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -105783,9 +98541,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -105813,9 +98569,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -105843,9 +98597,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -105873,9 +98625,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -105903,9 +98653,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -105933,9 +98681,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -105963,9 +98709,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -105993,9 +98737,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -106023,9 +98765,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -106053,9 +98793,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -106083,9 +98821,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -106113,9 +98849,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -106143,9 +98877,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -106173,9 +98905,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -106203,9 +98933,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -106233,9 +98961,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -106263,9 +98989,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -106293,9 +99017,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -106323,9 +99045,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -106353,9 +99073,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -106383,9 +99101,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -106413,9 +99129,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 11000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -106443,9 +99157,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -106473,9 +99185,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4150
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -106503,9 +99213,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -106533,9 +99241,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4150
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -106565,9 +99271,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -106600,9 +99304,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -106630,9 +99332,7 @@ export const itemDB = [
             "mastery": 2175,
             "versatility": 4825
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -106660,9 +99360,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -106690,9 +99388,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -106720,9 +99416,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -106750,9 +99444,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -106780,9 +99472,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -106810,9 +99500,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -106840,9 +99528,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4675
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -106870,9 +99556,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -106900,9 +99584,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -106930,9 +99612,7 @@ export const itemDB = [
             "mastery": 2350,
             "versatility": 4650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -106960,9 +99640,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -106990,9 +99668,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -107020,9 +99696,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -107050,9 +99724,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -107080,9 +99752,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -107110,9 +99780,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -107140,9 +99808,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -107170,9 +99836,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -107200,9 +99864,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -107230,9 +99892,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -107260,9 +99920,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -107290,9 +99948,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -107320,9 +99976,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -107350,9 +100004,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -107380,9 +100032,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -107410,9 +100060,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -107440,9 +100088,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -107470,9 +100116,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -107500,9 +100144,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -107530,9 +100172,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -107560,9 +100200,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -107590,9 +100228,7 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 4450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -107620,9 +100256,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -107652,9 +100286,7 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -107696,9 +100328,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 13500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -107726,9 +100356,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -107756,9 +100384,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -107786,9 +100412,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -107816,9 +100440,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -107846,9 +100468,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -107876,9 +100496,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -107906,9 +100524,7 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 4100
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -107936,9 +100552,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -107966,9 +100580,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4150
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -107996,9 +100608,7 @@ export const itemDB = [
             "mastery": 2825,
             "versatility": 4175
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -108026,9 +100636,7 @@ export const itemDB = [
             "mastery": 3275,
             "versatility": 3725
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -108056,9 +100664,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -108086,9 +100692,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -108116,9 +100720,7 @@ export const itemDB = [
             "mastery": 2975,
             "versatility": 4025
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -108146,9 +100748,7 @@ export const itemDB = [
             "mastery": 3275,
             "versatility": 3725
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -108176,9 +100776,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -108206,9 +100804,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4025
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -108236,9 +100832,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -108266,9 +100860,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -108296,9 +100888,7 @@ export const itemDB = [
             "mastery": 3275,
             "versatility": 3725
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -108326,9 +100916,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -108356,9 +100944,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -108386,9 +100972,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -108416,9 +101000,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -108446,9 +101028,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -108476,9 +101056,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -108506,9 +101084,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -108536,9 +101112,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -108566,9 +101140,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -108596,9 +101168,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -108626,9 +101196,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -108656,9 +101224,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -108686,9 +101252,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -108716,9 +101280,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -108746,9 +101308,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -108776,9 +101336,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -108807,9 +101365,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -108842,9 +101398,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -108872,9 +101426,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -108902,9 +101454,7 @@ export const itemDB = [
             "mastery": 8000,
             "versatility": 9500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -108933,9 +101483,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -108968,9 +101516,7 @@ export const itemDB = [
             "mastery": 7750,
             "versatility": 9750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -108998,9 +101544,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -109028,9 +101572,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -109058,9 +101600,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -109088,9 +101628,7 @@ export const itemDB = [
             "mastery": 2475,
             "versatility": 4525
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -109118,9 +101656,7 @@ export const itemDB = [
             "mastery": 2250,
             "versatility": 4750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -109148,9 +101684,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -109178,9 +101712,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -109208,9 +101740,7 @@ export const itemDB = [
             "mastery": 2100,
             "versatility": 4900
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -109238,9 +101768,7 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 4450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -109268,9 +101796,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -109298,9 +101824,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -109328,9 +101852,7 @@ export const itemDB = [
             "mastery": 2325,
             "versatility": 4675
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -109358,9 +101880,7 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 4450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -109388,9 +101908,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -109418,9 +101936,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4675
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -109448,9 +101964,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -109478,9 +101992,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -109508,9 +102020,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -109538,9 +102048,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -109568,9 +102076,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -109598,9 +102104,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -109628,9 +102132,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -109658,9 +102160,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -109688,9 +102188,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -109718,9 +102216,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -109748,9 +102244,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -109778,9 +102272,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -109808,9 +102300,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -109838,9 +102328,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -109868,9 +102356,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -109898,9 +102384,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -109928,9 +102412,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -109958,9 +102440,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -109988,9 +102468,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -110019,9 +102497,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -110063,9 +102539,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 13500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -110093,9 +102567,7 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 4450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -110123,9 +102595,7 @@ export const itemDB = [
             "mastery": 5500,
             "versatility": 12000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -110154,9 +102624,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -110189,9 +102657,7 @@ export const itemDB = [
             "mastery": 4000,
             "versatility": 13500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -110219,9 +102685,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -110249,9 +102713,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -110279,9 +102741,7 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 3850
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -110309,9 +102769,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -110339,9 +102797,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -110369,9 +102825,7 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -110400,9 +102854,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -110436,9 +102888,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -110472,9 +102922,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -110507,9 +102955,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -110538,9 +102984,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -110574,9 +103018,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -110610,9 +103052,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -110645,9 +103085,7 @@ export const itemDB = [
             "mastery": 4650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -110675,9 +103113,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -110711,9 +103147,7 @@ export const itemDB = [
                 "encounterId": 2449
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -110747,9 +103181,7 @@ export const itemDB = [
                 "encounterId": 2448
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -110783,9 +103215,7 @@ export const itemDB = [
                 "encounterId": 2451
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -110819,9 +103249,7 @@ export const itemDB = [
                 "encounterId": 2455
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -110855,9 +103283,7 @@ export const itemDB = [
                 "encounterId": 2455
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -110891,9 +103317,7 @@ export const itemDB = [
                 "encounterId": 2451
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -110927,9 +103351,7 @@ export const itemDB = [
                 "encounterId": 2436
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -110963,9 +103385,7 @@ export const itemDB = [
                 "encounterId": 2448
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -110999,9 +103419,7 @@ export const itemDB = [
                 "encounterId": 2452
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -111035,9 +103453,7 @@ export const itemDB = [
                 "encounterId": 2448
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -111071,9 +103487,7 @@ export const itemDB = [
                 "encounterId": 2437
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -111107,9 +103521,7 @@ export const itemDB = [
                 "encounterId": 2454
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -111143,9 +103555,7 @@ export const itemDB = [
                 "encounterId": 2437
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -111179,9 +103589,7 @@ export const itemDB = [
                 "encounterId": 2454
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -111215,9 +103623,7 @@ export const itemDB = [
                 "encounterId": 2449
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -111251,9 +103657,7 @@ export const itemDB = [
                 "encounterId": 2449
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -111287,9 +103691,7 @@ export const itemDB = [
                 "encounterId": 2449
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -111323,9 +103725,7 @@ export const itemDB = [
                 "encounterId": 2451
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -111359,9 +103759,7 @@ export const itemDB = [
                 "encounterId": 2455
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -111395,9 +103793,7 @@ export const itemDB = [
                 "encounterId": 2451
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -111431,9 +103827,7 @@ export const itemDB = [
                 "encounterId": 2455
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -111467,9 +103861,7 @@ export const itemDB = [
                 "encounterId": 2452
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -111503,9 +103895,7 @@ export const itemDB = [
                 "encounterId": 2448
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -111539,9 +103929,7 @@ export const itemDB = [
                 "encounterId": 2452
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -111575,9 +103963,7 @@ export const itemDB = [
                 "encounterId": 2448
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -111611,9 +103997,7 @@ export const itemDB = [
                 "encounterId": 2452
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -111647,9 +104031,7 @@ export const itemDB = [
                 "encounterId": 2436
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -111683,9 +104065,7 @@ export const itemDB = [
                 "encounterId": 2436
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -111719,9 +104099,7 @@ export const itemDB = [
                 "encounterId": 2454
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -111755,9 +104133,7 @@ export const itemDB = [
                 "encounterId": 2436
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -111791,9 +104167,7 @@ export const itemDB = [
                 "encounterId": 2452
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -111827,9 +104201,7 @@ export const itemDB = [
                 "encounterId": 2455
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -111863,9 +104235,7 @@ export const itemDB = [
                 "encounterId": 2454
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -111899,9 +104269,7 @@ export const itemDB = [
                 "encounterId": 2437
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -111935,9 +104303,7 @@ export const itemDB = [
                 "encounterId": 2437
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -111971,9 +104337,7 @@ export const itemDB = [
                 "encounterId": 2436
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -112007,9 +104371,7 @@ export const itemDB = [
                 "encounterId": 2455
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -112051,9 +104413,7 @@ export const itemDB = [
                 "encounterId": 2449
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -112087,9 +104447,7 @@ export const itemDB = [
                 "encounterId": 2454
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -112123,9 +104481,7 @@ export const itemDB = [
                 "encounterId": 2455
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -112159,9 +104515,7 @@ export const itemDB = [
                 "encounterId": 2454
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -112195,9 +104549,7 @@ export const itemDB = [
                 "encounterId": 2449
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -112231,9 +104583,7 @@ export const itemDB = [
                 "encounterId": 2452
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -112267,9 +104617,7 @@ export const itemDB = [
                 "encounterId": 2451
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -112303,9 +104651,7 @@ export const itemDB = [
                 "encounterId": 2436
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -112344,9 +104690,7 @@ export const itemDB = [
                 "encounterId": 2436
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -112388,9 +104732,7 @@ export const itemDB = [
                 "encounterId": 2436
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -112423,9 +104765,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -112453,9 +104793,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -112483,9 +104821,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -112513,9 +104849,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -112543,9 +104877,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -112573,9 +104905,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -112603,9 +104933,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -112633,9 +104961,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -112663,9 +104989,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -112693,9 +105017,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -112723,9 +105045,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -112753,9 +105073,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -112783,9 +105101,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -112813,9 +105129,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -112843,9 +105157,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -112873,9 +105185,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -112903,9 +105213,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -112933,9 +105241,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -112963,9 +105269,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -112993,9 +105297,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -113023,9 +105325,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -113053,9 +105353,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -113083,9 +105381,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -113113,9 +105409,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -113143,9 +105437,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -113173,9 +105465,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -113203,9 +105493,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -113233,9 +105521,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -113263,9 +105549,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -113293,9 +105577,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -113323,9 +105605,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -113353,9 +105633,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -113383,9 +105661,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -113413,9 +105689,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -113443,9 +105717,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -113473,9 +105745,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -113503,9 +105773,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -113533,9 +105801,7 @@ export const itemDB = [
             "mastery": 8000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -113563,9 +105829,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -113593,9 +105857,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -113623,9 +105885,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 9500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -113653,9 +105913,7 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -113683,9 +105941,7 @@ export const itemDB = [
             "mastery": 9000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -113713,9 +105969,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -113743,9 +105997,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -113773,9 +106025,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -113803,9 +106053,7 @@ export const itemDB = [
             "mastery": 9250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -113833,9 +106081,7 @@ export const itemDB = [
             "mastery": 9250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -113863,9 +106109,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -113893,9 +106137,7 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -113923,9 +106165,7 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -113953,9 +106193,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -113983,9 +106221,7 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -114013,9 +106249,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -114043,9 +106277,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -114073,9 +106305,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -114103,9 +106333,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -114133,9 +106361,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -114163,9 +106389,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -114193,9 +106417,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -114223,9 +106445,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -114253,9 +106473,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -114283,9 +106501,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -114313,9 +106529,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -114343,9 +106557,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -114373,9 +106585,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -114403,9 +106613,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -114433,9 +106641,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -114463,9 +106669,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -114493,9 +106697,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -114523,9 +106725,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -114553,9 +106753,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -114583,9 +106781,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -114613,9 +106809,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -114643,9 +106837,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -114673,9 +106865,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -114703,9 +106893,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -114733,9 +106921,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -114763,9 +106949,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -114793,9 +106977,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -114823,9 +107005,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -114853,9 +107033,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -114883,9 +107061,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -114913,9 +107089,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -114943,9 +107117,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -114973,9 +107145,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -115003,9 +107173,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -115033,9 +107201,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -115063,9 +107229,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -115093,9 +107257,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -115123,9 +107285,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -115153,9 +107313,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -115188,9 +107346,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -115218,9 +107374,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 2600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -115248,9 +107402,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -115278,9 +107430,7 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -115308,9 +107458,7 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -115338,9 +107486,7 @@ export const itemDB = [
             "mastery": 4100,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -115368,9 +107514,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 2600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -115398,9 +107542,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -115428,9 +107570,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -115458,9 +107598,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -115488,9 +107626,7 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -115518,9 +107654,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -115548,9 +107682,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 2750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -115578,9 +107710,7 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -115608,9 +107738,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -115638,9 +107766,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -115668,9 +107794,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -115698,9 +107822,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -115728,9 +107850,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -115758,9 +107878,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -115788,9 +107906,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -115818,9 +107934,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -115848,9 +107962,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -115878,9 +107990,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -115908,9 +108018,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -115938,9 +108046,7 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -115968,9 +108074,7 @@ export const itemDB = [
             "mastery": 4100,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -115998,9 +108102,7 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -116028,9 +108130,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -116058,9 +108158,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -116088,9 +108186,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -116118,9 +108214,7 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -116148,9 +108242,7 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -116178,9 +108270,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -116208,9 +108298,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -116238,9 +108326,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -116268,9 +108354,7 @@ export const itemDB = [
             "mastery": 10500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -116304,9 +108388,7 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -116326,13 +108408,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -116347,10 +108422,9 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Chest"
+        "slot": "Chest",
+        "socketType": "Domination"
     },
     {
         "id": 186283,
@@ -116369,13 +108443,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -116390,10 +108457,9 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "socketType": "Domination"
     },
     {
         "id": 186284,
@@ -116412,13 +108478,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -116433,10 +108492,9 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Domination"
     },
     {
         "id": 186285,
@@ -116469,9 +108527,7 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -116491,13 +108547,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -116512,10 +108561,9 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "socketType": "Domination"
     },
     {
         "id": 186287,
@@ -116534,13 +108582,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -116555,10 +108596,9 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Head"
+        "slot": "Head",
+        "socketType": "Domination"
     },
     {
         "id": 186288,
@@ -116591,9 +108631,7 @@ export const itemDB = [
                 "encounterId": 2442
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -116627,9 +108665,7 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -116663,9 +108699,7 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -116699,9 +108733,7 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -116721,13 +108753,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -116742,10 +108767,9 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Head"
+        "slot": "Head",
+        "socketType": "Domination"
     },
     {
         "id": 186293,
@@ -116778,9 +108802,7 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -116814,9 +108836,7 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -116836,13 +108856,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -116857,10 +108870,9 @@ export const itemDB = [
                 "encounterId": 2442
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Hands"
+        "slot": "Hands",
+        "socketType": "Domination"
     },
     {
         "id": 186296,
@@ -116879,13 +108891,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -116900,10 +108905,9 @@ export const itemDB = [
                 "encounterId": 2442
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Chest"
+        "slot": "Chest",
+        "socketType": "Domination"
     },
     {
         "id": 186297,
@@ -116936,9 +108940,7 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -116958,13 +108960,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -116979,10 +108974,9 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "socketType": "Domination"
     },
     {
         "id": 186299,
@@ -117015,9 +109009,7 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -117037,13 +109029,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -117058,10 +109043,9 @@ export const itemDB = [
                 "encounterId": 2442
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Domination"
     },
     {
         "id": 186302,
@@ -117094,9 +109078,7 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -117116,13 +109098,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -117137,10 +109112,9 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Chest"
+        "slot": "Chest",
+        "socketType": "Domination"
     },
     {
         "id": 186304,
@@ -117159,13 +109133,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -117180,10 +109147,9 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Head"
+        "slot": "Head",
+        "socketType": "Domination"
     },
     {
         "id": 186305,
@@ -117202,13 +109168,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -117223,10 +109182,9 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "socketType": "Domination"
     },
     {
         "id": 186306,
@@ -117245,13 +109203,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -117266,10 +109217,9 @@ export const itemDB = [
                 "encounterId": 2442
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Domination"
     },
     {
         "id": 186307,
@@ -117302,9 +109252,7 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -117338,9 +109286,7 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -117374,9 +109320,7 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -117396,13 +109340,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -117417,10 +109354,9 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Chest"
+        "slot": "Chest",
+        "socketType": "Domination"
     },
     {
         "id": 186313,
@@ -117453,9 +109389,7 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -117475,13 +109409,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -117496,10 +109423,9 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "socketType": "Domination"
     },
     {
         "id": 186315,
@@ -117518,13 +109444,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -117539,10 +109458,9 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Head"
+        "slot": "Head",
+        "socketType": "Domination"
     },
     {
         "id": 186316,
@@ -117561,13 +109479,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -117582,10 +109493,9 @@ export const itemDB = [
                 "encounterId": 2442
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "socketType": "Domination"
     },
     {
         "id": 186317,
@@ -117618,9 +109528,7 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -117654,9 +109562,7 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -117690,9 +109596,7 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -117712,13 +109616,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -117733,10 +109630,9 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Chest"
+        "slot": "Chest",
+        "socketType": "Domination"
     },
     {
         "id": 186321,
@@ -117755,13 +109651,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 233,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -117776,10 +109665,9 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "socketType": "Domination"
     },
     {
         "id": 186322,
@@ -117798,13 +109686,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 233,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -117819,10 +109700,9 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Domination"
     },
     {
         "id": 186323,
@@ -117855,9 +109735,7 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -117877,13 +109755,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 233,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -117898,10 +109769,9 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "socketType": "Domination"
     },
     {
         "id": 186325,
@@ -117920,13 +109790,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 233,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -117941,10 +109804,9 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Head"
+        "slot": "Head",
+        "socketType": "Domination"
     },
     {
         "id": 186326,
@@ -117977,9 +109839,7 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -117999,13 +109859,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -118020,10 +109873,9 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Head"
+        "slot": "Head",
+        "socketType": "Domination"
     },
     {
         "id": 186331,
@@ -118056,9 +109908,7 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -118092,9 +109942,7 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -118114,13 +109962,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -118135,10 +109976,9 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Hands"
+        "slot": "Hands",
+        "socketType": "Domination"
     },
     {
         "id": 186334,
@@ -118157,13 +109997,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 233,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -118178,10 +110011,9 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Chest"
+        "slot": "Chest",
+        "socketType": "Domination"
     },
     {
         "id": 186335,
@@ -118214,9 +110046,7 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -118236,13 +110066,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 233,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -118257,10 +110080,9 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "socketType": "Domination"
     },
     {
         "id": 186337,
@@ -118279,13 +110101,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -118300,10 +110115,9 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Domination"
     },
     {
         "id": 186338,
@@ -118322,13 +110136,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 233,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -118343,10 +110150,9 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Domination"
     },
     {
         "id": 186339,
@@ -118379,9 +110185,7 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -118401,13 +110205,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -118422,10 +110219,9 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Chest"
+        "slot": "Chest",
+        "socketType": "Domination"
     },
     {
         "id": 186341,
@@ -118444,13 +110240,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -118465,10 +110254,9 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Head"
+        "slot": "Head",
+        "socketType": "Domination"
     },
     {
         "id": 186342,
@@ -118487,13 +110275,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 233,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -118508,10 +110289,9 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "socketType": "Domination"
     },
     {
         "id": 186343,
@@ -118530,13 +110310,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -118551,10 +110324,9 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Domination"
     },
     {
         "id": 186344,
@@ -118587,9 +110359,7 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -118623,9 +110393,7 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -118645,13 +110413,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -118666,10 +110427,9 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Hands"
+        "slot": "Hands",
+        "socketType": "Domination"
     },
     {
         "id": 186347,
@@ -118688,13 +110448,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -118709,10 +110462,9 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Chest"
+        "slot": "Chest",
+        "socketType": "Domination"
     },
     {
         "id": 186348,
@@ -118745,9 +110497,7 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -118767,13 +110517,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 233,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -118788,10 +110531,9 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "socketType": "Domination"
     },
     {
         "id": 186350,
@@ -118810,13 +110552,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 233,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -118831,10 +110566,9 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Head"
+        "slot": "Head",
+        "socketType": "Domination"
     },
     {
         "id": 186351,
@@ -118853,13 +110587,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 233,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -118874,10 +110601,9 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "socketType": "Domination"
     },
     {
         "id": 186352,
@@ -118910,9 +110636,7 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -118946,9 +110670,7 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -118982,9 +110704,7 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -119018,9 +110738,7 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -119054,9 +110772,7 @@ export const itemDB = [
                 "encounterId": 999
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -119090,9 +110806,7 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -119126,9 +110840,7 @@ export const itemDB = [
                 "encounterId": 999
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -119162,9 +110874,7 @@ export const itemDB = [
                 "encounterId": 999
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -119198,9 +110908,7 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -119234,9 +110942,7 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -119270,9 +110976,7 @@ export const itemDB = [
                 "encounterId": 999
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -119292,13 +110996,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -119313,10 +111010,9 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Domination"
     },
     {
         "id": 186364,
@@ -119349,9 +111045,7 @@ export const itemDB = [
                 "encounterId": -16
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -119385,9 +111079,7 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -119421,9 +111113,7 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -119457,9 +111147,7 @@ export const itemDB = [
                 "encounterId": 999
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -119493,9 +111181,7 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -119515,13 +111201,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -119536,10 +111215,9 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Hands"
+        "slot": "Hands",
+        "socketType": "Domination"
     },
     {
         "id": 186370,
@@ -119572,9 +111250,7 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -119608,9 +111284,7 @@ export const itemDB = [
                 "encounterId": 999
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -119644,9 +111318,7 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -119680,9 +111352,7 @@ export const itemDB = [
                 "encounterId": -16
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -119716,9 +111386,7 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -119752,9 +111420,7 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -119788,9 +111454,7 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -119824,9 +111488,7 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -119860,9 +111522,7 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -119896,9 +111556,7 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -119932,9 +111590,7 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -119968,9 +111624,7 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -120004,9 +111658,7 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -120040,9 +111692,7 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -120076,9 +111726,7 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -120112,9 +111760,7 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -120148,9 +111794,7 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -120184,9 +111828,7 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -120220,9 +111862,7 @@ export const itemDB = [
                 "encounterId": 2442
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -120256,9 +111896,7 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -120292,9 +111930,7 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -120333,9 +111969,7 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -120374,9 +112008,7 @@ export const itemDB = [
                 "encounterId": 2442
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -120421,9 +112053,7 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -120468,9 +112098,7 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -120514,9 +112142,7 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -120555,9 +112181,7 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -120596,9 +112220,7 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -120642,9 +112264,7 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -120682,9 +112302,7 @@ export const itemDB = [
             "mastery": 11000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -120712,9 +112330,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -120742,9 +112358,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -120772,9 +112386,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -120802,9 +112414,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -120832,9 +112442,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -120862,9 +112470,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7000
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -120892,9 +112498,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -120922,9 +112526,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -120952,9 +112554,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -120982,9 +112582,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 1,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -121012,9 +112610,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -121042,9 +112638,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -121072,9 +112666,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 2750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -121102,9 +112694,7 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -121132,9 +112722,7 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -121162,9 +112750,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -121192,9 +112778,7 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 4250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -121222,9 +112806,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -121252,9 +112834,7 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -121282,9 +112862,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -121312,9 +112890,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -121342,9 +112918,7 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 4250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -121372,9 +112946,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -121402,9 +112974,7 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 4250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -121432,9 +113002,7 @@ export const itemDB = [
             "mastery": 5250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -121462,9 +113030,7 @@ export const itemDB = [
             "mastery": 4100,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -121492,9 +113058,7 @@ export const itemDB = [
             "mastery": 5750,
             "versatility": 11750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -121522,9 +113086,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -121552,9 +113114,7 @@ export const itemDB = [
             "mastery": 6500,
             "versatility": 11000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -121582,9 +113142,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -121612,9 +113170,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -121642,9 +113198,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -121672,9 +113226,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -121702,9 +113254,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -121732,9 +113282,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -121762,9 +113310,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -121792,9 +113338,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -121822,9 +113366,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -121852,9 +113394,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -121882,9 +113422,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -121912,9 +113450,7 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -121942,9 +113478,7 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -121972,9 +113506,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -122002,9 +113534,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -122032,9 +113562,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -122062,9 +113590,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -122092,9 +113618,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -122122,9 +113646,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -122152,9 +113674,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -122182,9 +113702,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -122212,9 +113730,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -122242,9 +113758,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -122272,9 +113786,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -122302,9 +113814,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -122332,9 +113842,7 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -122362,9 +113870,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -122392,9 +113898,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -122422,9 +113926,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -122452,9 +113954,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -122482,9 +113982,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -122512,9 +114010,7 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -122542,9 +114038,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -122572,9 +114066,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -122602,9 +114094,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -122632,9 +114122,7 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -122662,9 +114150,7 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -122692,9 +114178,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -122723,9 +114207,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -122758,9 +114240,7 @@ export const itemDB = [
             "mastery": 9500,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -122788,9 +114268,7 @@ export const itemDB = [
             "mastery": 7000,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -122818,9 +114296,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 2600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shield"
     },
     {
@@ -122848,9 +114324,7 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Offhand"
     },
     {
@@ -122878,9 +114352,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "1H Weapon"
     },
     {
@@ -122908,9 +114380,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "2H Weapon"
     },
     {
@@ -122938,9 +114408,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -122968,9 +114436,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -122998,9 +114464,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -123028,9 +114492,7 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 4550
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -123058,9 +114520,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -123088,9 +114548,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -123118,9 +114576,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -123148,9 +114604,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -123178,9 +114632,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -123208,9 +114660,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -123238,9 +114688,7 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -123268,9 +114716,7 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -123298,9 +114744,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -123328,9 +114772,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -123358,9 +114800,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 2600
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -123388,9 +114828,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -123418,9 +114856,7 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -123448,9 +114884,7 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 4550
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -123478,9 +114912,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -123508,9 +114940,7 @@ export const itemDB = [
             "mastery": 4100,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -123538,9 +114968,7 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Head"
     },
     {
@@ -123568,9 +114996,7 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -123598,9 +115024,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Feet"
     },
     {
@@ -123628,9 +115052,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Hands"
     },
     {
@@ -123658,9 +115080,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Legs"
     },
     {
@@ -123688,9 +115108,7 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 4550
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -123718,9 +115136,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Waist"
     },
     {
@@ -123748,9 +115164,7 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Wrist"
     },
     {
@@ -123778,9 +115192,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Chest"
     },
     {
@@ -123808,9 +115220,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -123838,9 +115248,7 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Shoulder"
     },
     {
@@ -123868,9 +115276,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -123898,9 +115304,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12500
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -123928,9 +115332,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Back"
     },
     {
@@ -123958,9 +115360,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 11000
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -123988,9 +115388,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     },
     {
@@ -124018,9 +115416,7 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Finger"
     },
     {
@@ -124054,9 +115450,7 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -124081,13 +115475,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -124096,10 +115483,9 @@ export const itemDB = [
             "mastery": 2050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Domination"
     },
     {
         "id": 187535,
@@ -124118,13 +115504,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -124133,10 +115512,9 @@ export const itemDB = [
             "mastery": 2270,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Domination"
     },
     {
         "id": 187536,
@@ -124155,13 +115533,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -124170,10 +115541,9 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2160
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Hands"
+        "slot": "Hands",
+        "socketType": "Domination"
     },
     {
         "id": 187537,
@@ -124192,13 +115562,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -124207,10 +115570,9 @@ export const itemDB = [
             "mastery": 2270,
             "versatility": 4730
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Hands"
+        "slot": "Hands",
+        "socketType": "Domination"
     },
     {
         "id": 187538,
@@ -124229,13 +115591,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -124244,10 +115599,9 @@ export const itemDB = [
             "mastery": 2270,
             "versatility": 4730
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Hands"
+        "slot": "Hands",
+        "socketType": "Domination"
     },
     {
         "id": 187539,
@@ -124266,13 +115620,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -124281,10 +115628,9 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2160
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Hands"
+        "slot": "Hands",
+        "socketType": "Domination"
     },
     {
         "id": 187540,
@@ -124303,13 +115649,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -124318,10 +115657,9 @@ export const itemDB = [
             "mastery": 2270,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Domination"
     },
     {
         "id": 187541,
@@ -124340,13 +115678,6 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 226,
-        "socketInfo": {
-            "sockets": [
-                {
-                    "type": "DOMINATION"
-                }
-            ]
-        },
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -124355,10 +115686,9 @@ export const itemDB = [
             "mastery": 2050,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Domination"
     },
     {
         "id": 187552,
@@ -124385,9 +115715,7 @@ export const itemDB = [
             "mastery": 9250,
             "versatility": 0
         },
-        "expansion": 8,
         "dropLoc": "",
-        "selectable": "true",
         "slot": "Neck"
     }
 ]

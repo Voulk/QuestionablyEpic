@@ -139,18 +139,21 @@ export default class VerticalChart extends PureComponent {
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
           {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
           {/*<Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" /> */}
-          <Bar dataKey={187} fill={"#9BB5DD"} stackId="a" />
-          <Bar dataKey={194} fill={"#BBCDEA"} stackId="a" />
-          <Bar dataKey={200} fill={"#7ECC7E"} stackId="a" />
-          <Bar dataKey={207} fill={"#A1EAA1"} stackId="a" />
-          <Bar dataKey={213} fill={"#C97474"} stackId="a" />
-          <Bar dataKey={220} fill={"#DD9090"} stackId="a" />
+          <Bar dataKey={187} fill={"#7291c4"} stackId="a" />
+          <Bar dataKey={194} fill={"#9fb8d7"} stackId="a" />
+          <Bar dataKey={200} fill={"#BBCDEA"} stackId="a" />
+
+          <Bar dataKey={207} fill={"#72C47F"} stackId="a" />
+          <Bar dataKey={213} fill={"#97d79f"} stackId="a" />
+          <Bar dataKey={220} fill={"#bbeabf"} stackId="a" />
+
           <Bar dataKey={226} fill={"#D8BE7B"} stackId="a" />
-          <Bar dataKey={233} fill={"#e6bc53"} stackId="a" />
-          <Bar dataKey={239} fill={"#2CC8EF"} stackId="a" />
-          <Bar dataKey={246} fill={"#FE26AC"} stackId="a" />
-          <Bar dataKey={252} fill={"#1ECC42"} stackId="a" />
-          <Bar dataKey={259} fill={"#5ACC7E"} stackId="a" />
+          <Bar dataKey={233} fill={"#e0d09b"} stackId="a" />
+          <Bar dataKey={239} fill={"#eae2bb"} stackId="a" />
+
+          <Bar dataKey={246} fill={"#d87b7b"} stackId="a" />
+          <Bar dataKey={252} fill={"#e29b9b"} stackId="a" />
+          <Bar dataKey={259} fill={"#eabbbb"} stackId="a" />
         </BarChart>
       </ResponsiveContainer>
     );

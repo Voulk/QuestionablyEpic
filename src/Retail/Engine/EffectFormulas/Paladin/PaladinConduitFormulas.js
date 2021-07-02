@@ -47,9 +47,8 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
     const oneHolyShock = player.getSingleCast(IDHOLYSHOCK, contentType);
     const expectedHolyPower = Math.pow(trait_bonus, 2) + Math.pow(trait_bonus, 3);
     const HPSOneHolyPower = getOneHolyPower(player, contentType);
-    expectedOverhealing = contentType === "Raid" ? 0.59 : 0.3;
+    expectedOverhealing = contentType === "Raid" ? 0.51 : 0.3;
 
-    
     const HPSBonusHolyShocks = trait_bonus * oneHolyShock * 3 * (1 - expectedOverhealing) / 60;
     //const HPSBonusHolyPower = HPSOneHolyPower * expectedHolyPower / 60;
     const HPSBonusHolyPower = 0; // Disabled until live testing.
@@ -66,7 +65,7 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
     const wingsMult = getWingsHealingInc(player.getStatPerc("Crit")); // Ashen Hallow is always played with Wings, so the conduit gets the full benefit. 
     const ashen_ticks = 15 * player.getStatPerc("Haste");
 
-    bonus_stats.HPS = (trait_bonus * ashen_tick_sp * ashen_ticks * player.getStatMultiplier("NOHASTE") * player.getStatMultiplier("Vers") * wingsMult) / 240;
+    bonus_stats.HPS = (trait_bonus * ashen_tick_sp * ashen_ticks * player.getStatMultiplier("NOHASTE") * wingsMult) / 240;
   }
   // Righteous Might (Necrolord)
   else if (conduitID === 340192) {
@@ -98,15 +97,6 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
     expectedOverhealing = 0.04;
 
     bonus_stats.HPS = trait_bonus * (1 - expectedOverhealing) * player.getSpellHPS(IDWORDOFGLORY, contentType);
-  }
-  else if (
-    /* ----------------------------------- Adaptive Armor Fragment ---------------------------------- */
-    conduitID === 357902
-  ) {
-  } else if (
-    /* ----------------------------------- Condensed Anima Sphere ----------------------------------- */
-    conduitID === 357888
-  ) {
   }
 
   return bonus_stats;
