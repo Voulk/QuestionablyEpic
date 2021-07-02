@@ -30,11 +30,11 @@ export default function TazaveshGearContainer(props) {
       <Grid item xs={12} key={"mythicContainer-" + i} style={{ padding: "4px 0px" }}>
         <Paper style={{ backgroundColor: "#191c23", padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
           <Grid container spacing={2}>
-            <Grid item style={{ padding: 0 }}>
+            <Grid item style={{ padding: 0, alignSelf: "center" }}>
               <div
                 style={{
-                  width: 207,
-                  height: "100%",
+                  width: 181,
+                  height: 175,
                   paddingLeft: 8,
                   backgroundImage: `url(${UpgradeFinderBossImages(key, "", 1194)})`,
                   backgroundRepeat: "no-repeat",
@@ -49,10 +49,45 @@ export default function TazaveshGearContainer(props) {
               </div>
             </Grid>
             <Divider orientation="vertical" flexItem style={{ marginRight: 4 }} />
-            <Grid item xs={12} sm container spacing={1} style={{ marginRight: 6 }}>
-              {[...filterItemListBySource(itemList, 1194, key, 233)].map((item, index) => (
-                <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
-              ))}
+            <Grid item xs={12} sm container direction="column" spacing={1}>
+              <Grid item xs={12} container spacing={1}>
+                <Grid item xs={12}>
+                  <Typography
+                    variant="h6"
+                    color="primary"
+                    align="center"
+                    style={{
+                      backgroundColor: "#35383e",
+                      borderRadius: 4,
+                    }}
+                  >
+                    {"Mythic"}
+                  </Typography>
+                </Grid>
+
+                {[...filterItemListBySource(itemList, 1194, key, 226)].map((item, index) => (
+                  <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
+                ))}
+              </Grid>
+              <Grid item xs={12} container spacing={1}>
+                <Grid item xs={12}>
+                  <Typography
+                    variant="h6"
+                    color="primary"
+                    align="center"
+                    style={{
+                      backgroundColor: "#35383e",
+                      borderRadius: 4,
+                    }}
+                  >
+                    {"Hard Mode"}
+                  </Typography>
+                </Grid>
+
+                {[...filterItemListBySource(itemList, 1194, key, 233)].map((item, index) => (
+                  <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
+                ))}
+              </Grid>
             </Grid>
           </Grid>
         </Paper>
