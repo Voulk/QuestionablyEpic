@@ -77,11 +77,12 @@ export const getDruidConduit = (conduitID, player, contentType, conduitLevel) =>
 
   // Well-Honed Instincts
   else if (conduitID === 340553) {
-    let trait_bonus = 90 - conduitLevel * 6; // This is actually the cooldown on the effect. TODO: Improve the precision of the number. It's an odd one.
-    let time_spent_on_cooldown = 0.5;
-    let frenzied_regen_healing = player.activeStats.stamina * 20 * 0.24;
+    const traitBonusList = [135, 123, 113, 104, 97, 90, 84, 79, 75, 71, 67, 64, 61, 58, 56]; // This is actually the cooldown on the effect. TODO: Improve the precision of the number. It's an odd one.
+    const traitBonus = traitBonusList[conduitLevel]
+    const timeSpentOnCooldown = 0.5;
+    const frenziedRegenHealing = player.activeStats.stamina * 20 * 0.24;
 
-    bonus_stats.HPS = (frenzied_regen_healing * time_spent_on_cooldown) / trait_bonus;
+    bonus_stats.HPS = (frenziedRegenHealing * timeSpentOnCooldown) / traitBonus;
   }
 
   // Ursine Vigor
@@ -96,17 +97,7 @@ export const getDruidConduit = (conduitID, player, contentType, conduitLevel) =>
     let percent_self_casts = 0.04;
 
     bonus_stats.HPS = (regrowth_hps + frenzied_hps) * trait_bonus * percent_self_casts;
-  } else if (
-    /* ----------------------------------- Adaptive Armor Fragment ---------------------------------- */
-    conduitID === 357902
-  ) {
-
-  } else if (
-    /* ----------------------------------- Condensed Anima Sphere ----------------------------------- */
-    conduitID === 357888
-  ) {
-  }
-
+  } 
   // =============================
 
   return bonus_stats;

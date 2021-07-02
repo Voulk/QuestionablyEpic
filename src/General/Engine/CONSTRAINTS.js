@@ -4,7 +4,7 @@
 // but isn't giving them information they can actually use. 
 export const CONSTRAINTS = {
     Retail: {
-        maxItemLevel: 270,
+        maxItemLevel: 300,
         minItemLevel: 90,
         maxSecondaryWeight: 0.9,
         minSecondaryWeight: 0,
