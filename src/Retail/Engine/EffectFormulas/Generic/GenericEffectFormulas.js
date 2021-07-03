@@ -14,7 +14,8 @@ export function getGenericEffect(effectName, player, contentType) {
     const effect= {
       coefficient: 0.165898,
       duration: 15,
-      ppm: 2
+      ppm: 2,
+      table: -1
     }
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
 
