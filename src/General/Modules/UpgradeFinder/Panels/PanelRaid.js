@@ -216,7 +216,7 @@ export default function RaidGearContainer(props) {
                     }}
                     className="container-UpgradeCards"
                   >
-                    <Typography variant="h6" noWrap className="centered-UpgradeCards">
+                    <Typography variant="h6" style={{width: "100%" }} className="centered-UpgradeCards">
                       {t("BossNames." + key)}
                     </Typography>
                   </div>

@@ -43,7 +43,7 @@ export default function TazaveshGearContainer(props) {
                 }}
                 className="container-UpgradeCards"
               >
-                <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
+                <Typography variant="h6" style={{width: "100%"}} className="centered-UpgradeCards-Dungeons">
                   {t("BossNames.Tazavesh." + key)}
                 </Typography>
               </div>

@@ -39,7 +39,7 @@
 .centered-UpgradeCards {
   position: absolute;
   text-shadow: 1px 1px 4px black;
-  top: 90%;
+  top: 85%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
