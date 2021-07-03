@@ -7,16 +7,13 @@ import { convertPPMToUptime, getProcessedValue } from "../EffectUtilities";
 // Examples include the legendary cloak, Azshara's Staff, most Crucible of Storms items and so forth.
 // Shadowlands is light on them so far but we can expect to see more as the expansion progresses.
 
-export function getGenericEffect(effectName, player, contentType) {
+export function getEffectValue(effectName, player, contentType, itemLevel = 0) {
   let bonus_stats = {};
+  let activeEffect = effect_data.find((effect) => effect.name === effectName);
 
   if (effectName === "Passable Credentials") {
-    const effect= {
-      coefficient: 0.165898,
-      duration: 15,
-      ppm: 2,
-      table: -1
-    }
+    const effect = activeEffect.effects[0];
+
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
 
   } else if (effectName === "Effect2") {

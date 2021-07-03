@@ -1,5 +1,5 @@
 
-import { getTrinketEffect, getProcessedValue } from "./TrinketEffectFormulas";
+import {getProcessedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { userSettings } from "General/Modules/Settings/SettingsObject";
 import Player from "General/Modules/Player/Player";
 import { trinket_data} from "./TrinketData";
