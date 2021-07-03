@@ -11,9 +11,9 @@ describe("Passable Credentials Data Check", () => {
 
     each`
     level   | expectedResult
-    ${226}  | ${194}
-    ${200}  | ${172}
-    ${154}  | ${135}
+    ${226}  | ${25}
+    ${200}  | ${20}
+    ${183}  | ${17}
     // add new test cases here
     `.test("Passable Credientials Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
