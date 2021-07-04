@@ -6,7 +6,7 @@ import DungeonHeaderIcons from "../../CooldownPlanner/Functions/IconFunctions/Du
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
 import { filterItemListBySource, filterBCItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
-import { encounterDB } from "../../Player/InstanceDB";
+import { encounterDB } from "../../../../Databases/InstanceDB";
 import { itemLevels } from "../../../../Databases/itemLevelsDB";
 import { useSelector } from "react-redux";
 

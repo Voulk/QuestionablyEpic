@@ -199,4 +199,7 @@ export const translatedStat = {
   hp5: { // Classic
     en: "HP5"
   },
+  resilience: { // Classic
+    en: "Resilience"
+  },
 };

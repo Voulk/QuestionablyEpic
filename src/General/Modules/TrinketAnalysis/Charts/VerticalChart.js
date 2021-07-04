@@ -69,6 +69,10 @@ export default class VerticalChart extends PureComponent {
           220: getLevelDiff(map2.name, db, 220, map2),
           226: getLevelDiff(map2.name, db, 226, map2),
           233: getLevelDiff(map2.name, db, 233, map2),
+          239: getLevelDiff(map2.name, db, 239, map2),
+          246: getLevelDiff(map2.name, db, 246, map2),
+          252: getLevelDiff(map2.name, db, 252, map2),
+          259: getLevelDiff(map2.name, db, 259, map2),
         });
       });
 
@@ -135,14 +139,21 @@ export default class VerticalChart extends PureComponent {
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
           {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
           {/*<Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" /> */}
-          <Bar dataKey={187} fill={"#9BB5DD"} stackId="a" />
-          <Bar dataKey={194} fill={"#BBCDEA"} stackId="a" />
-          <Bar dataKey={200} fill={"#7ECC7E"} stackId="a" />
-          <Bar dataKey={207} fill={"#A1EAA1"} stackId="a" />
-          <Bar dataKey={213} fill={"#C97474"} stackId="a" />
-          <Bar dataKey={220} fill={"#DD9090"} stackId="a" />
+          <Bar dataKey={187} fill={"#7291c4"} stackId="a" />
+          <Bar dataKey={194} fill={"#9fb8d7"} stackId="a" />
+          <Bar dataKey={200} fill={"#BBCDEA"} stackId="a" />
+
+          <Bar dataKey={207} fill={"#72C47F"} stackId="a" />
+          <Bar dataKey={213} fill={"#97d79f"} stackId="a" />
+          <Bar dataKey={220} fill={"#bbeabf"} stackId="a" />
+
           <Bar dataKey={226} fill={"#D8BE7B"} stackId="a" />
-          <Bar dataKey={233} fill={"#e6bc53"} stackId="a" />
+          <Bar dataKey={233} fill={"#e0d09b"} stackId="a" />
+          <Bar dataKey={239} fill={"#eae2bb"} stackId="a" />
+
+          <Bar dataKey={246} fill={"#d87b7b"} stackId="a" />
+          <Bar dataKey={252} fill={"#e29b9b"} stackId="a" />
+          <Bar dataKey={259} fill={"#eabbbb"} stackId="a" />
         </BarChart>
       </ResponsiveContainer>
     );

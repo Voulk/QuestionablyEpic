@@ -9,6 +9,65 @@
 
 export const changeLog = [
   {
+    version: "9.1 / 2.5.1",
+    update: 23,
+    date: "1st July",
+    changes: [
+      "Updated Trinket Analysis Colors.",
+      "Updated formulas for Anima Sphere, Hallowed Discernment and Well-Honed Instincts to match live values.",
+      "Adjusted stat soft DR coefficients for the new patch.",
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 2,
+    date: "30th June",
+    changes: [
+      "Soulbinds: Combat Med, Soothing Shade, Grove Invigoration and Bron all updated to the now nerfed in-game values.",
+      "Disc Priest: Updated the default spell model for 9.1.",
+      "New Trinket: Tome of Insight.",
+      "Bugfix: Covenant icons should now appear as expected."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 1,
+    date: "29th June",
+    changes: [
+      "Retail: All 9.1 content added to the game.",
+    ],
+  },
+  {
+    version: "9.0.5 / 2.5.1",
+    update: 9,
+    date: "22nd June",
+    changes: [
+      "Bugfix: BC Troll Priests should no longer get an error when running Top Gear or Upgrade Finder.",
+      "Bugfix: Importing Suffixed items multiple times should no longer double their stat allocations.",
+      "Bugfix: Fixed a rare bug where some BC gems weren't using the correct stat line."
+    ],
+  },
+  {
+    version: "9.0.5 / 2.5.1",
+    update: 8,
+    date: "10th June",
+    changes: [
+      "Improved clarity around the QE Import addon, and where to get it.",
+      "Revamped the help text at the top of every module.",
+      "BC: Added Badge gear to Upgrade Finder."
+    ],
+  },
+  {
+    version: "9.0.5 / 2.5.1",
+    update: 7,
+    date: "8th June",
+    changes: [
+      "Fixed a bug where gems were being counted twice in set scores.",
+      "Fixed a bug where Spirit was being undervalued for BC Druid.",
+      "Fixed some minor UI bugs."
+    ],
+  },
+  {
     version: "9.0.5 / 2.5.1",
     update: 6,
     date: "2nd June",

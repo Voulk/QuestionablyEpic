@@ -2,8 +2,8 @@ export const druidDefaultSpellData = (contentType) => {
   let spellList = {};
   if (contentType === "Raid") {
     spellList = {
-      774: { cpm: 16.6, avgcast: 7440, hps: 2320, overhealing: 0.26 }, // Rejuv
-      48438: { cpm: 2.86, avgcast: 34640, hps: 1902, overhealing: 0.22 }, // Wild Growth
+      774: { cpm: 16.6, avgcast: 7440, hps: 2520, overhealing: 0.26 }, // Rejuv
+      48438: { cpm: 2.86, avgcast: 34640, hps: 2202, overhealing: 0.22 }, // Wild Growth
       157982: { cpm: 1.3, avgcast: 32974, hps: 853, overhealing: 0.36 }, // Tranquility
       8936: { cpm: 3.8, avgcast: 10814, hps: 815, overhealing: 0.18, hits: 12 }, // Regrowth
       81269: { cpm: 1.44, avgcast: 23772, hps: 698, overhealing: 0.19 }, // Efflorescence
@@ -32,19 +32,19 @@ export const druidDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.39,
-    crit: 0.35,
-    mastery: 0.34,
-    versatility: 0.34,
+    haste: 0.41,
+    crit: 0.37,
+    mastery: 0.36,
+    versatility: 0.36,
     leech: 0.56,
     defaults: true,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.38,
-    crit: 0.33,
+    haste: 0.4,
+    crit: 0.35,
     mastery: 0.36,
-    versatility: 0.34,
+    versatility: 0.36,
     leech: 0.28,
     defaults: true,
   };
@@ -56,24 +56,28 @@ export const druidDefaultSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
-      ConvokeChannelHPS: 390,
+      ConvokeChannelHPS: 480,
       OneManaHealing: 4.1,
       CastsPerMinute: 32, // ONLY tracks spells with a mana cost.
       cooldownMult: {
-        oneMinute: 1.3,
+        oneMinute: 1.25,
+        ninetySeconds: 1,
         twoMinutes: 1.42,
+        twoMinutesOrb: 1.34,
         threeMinutes: 1.2,
       },
       HoldYourGroundUptime: 0.8
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
-      ConvokeChannelHPS: 360,
+      ConvokeChannelHPS: 460,
       OneManaHealing: 1.2,
       CastsPerMinute: 30,
       cooldownMult: {
         oneMinute: 1.2,
+        ninetySeconds: 1,
         twoMinutes: 1.35,
+        twoMinutesOrb: 1.32,
         threeMinutes: 1,
       },
       HoldYourGroundUptime: 0.8

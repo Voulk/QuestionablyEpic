@@ -134,7 +134,6 @@ function buildItemPossibilities(player, contentType, playerSettings) {
     const rawItem = BCItemDB[i];
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
         if (rawItem.sources[0].instanceId === -1) {
-          console.log("Dungeon Item with d:" + rawItem.sources[0].difficultyId);
           if (rawItem.sources[0].difficultyId === dungeonDifficulty) {
             
             const itemSource = rawItem.sources[0];
@@ -154,7 +153,6 @@ function buildItemPossibilities(player, contentType, playerSettings) {
 
       }
     }
-    console.log(itemPoss);
     return itemPoss;
   }
  

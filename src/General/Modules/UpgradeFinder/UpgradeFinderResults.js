@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import { Tabs, Tab, Box, AppBar, Typography, Grid } from "@material-ui/core";
+import { Button, Tabs, Tab, Box, AppBar, Typography, Grid } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { getDifferentialByID } from "../../Engine/ItemUtilities";
 import MythicPlusGearContainer from "./Panels/PanelMythicPlus";
@@ -31,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     borderRight: `1px solid ${theme.palette.divider}`,
   },
   raidHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/Bosses/CastleNathria/loadingScreenArt.png").default})`,
+    backgroundImage: `url(${require("../../../Images/Bosses/SanctumOfDomination/SanctumArt.png").default})`,
     borderRadius: "4px 0px 0px 4px",
     height: 75,
     whiteSpace: "nowrap",
@@ -166,11 +167,15 @@ export default function UpgradeFinderResults(props) {
     setTabValue(newValue);
   };
 
+  const returnToSetup = () => {
+    props.setShowReport(false);
+  }
+
   const upgradeFinderResultsRetail = () => {
     return (
       <div className={classes.header}>
         <Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
-          {result.contentType + " " + t("UpgradeFinder.Header")}
+          {t("UpgradeFinder.Header") + " - " + result.contentType}
         </Typography>
         <AppBar
           position="static"
@@ -258,8 +263,11 @@ export default function UpgradeFinderResults(props) {
   const upgradeFinderResultsBC = () => {
     return (
       <div className={classes.header}>
-        <Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
-          {result.contentType + " " + t("UpgradeFinder.Header")}
+        <Button color="primary" variant="outlined" onClick={() => returnToSetup()} style={{ float: "left", position: "fixed" }}>
+          {t("UpgradeFinder.BackButton")}
+        </Button> 
+        <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>
+          {t("UpgradeFinder.Header")}
         </Typography>
         <AppBar
           position="static"
@@ -315,9 +323,7 @@ export default function UpgradeFinderResults(props) {
         {/* PVP */}
         <TabPanel value={tabvalue} index={2}>
           <div className={classes.panel}>
-            <Grid container>
-              {/*<PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}
-            </Grid>
+            <Grid container>{/*<PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}</Grid>
           </div>
         </TabPanel>
 

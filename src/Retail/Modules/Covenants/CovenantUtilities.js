@@ -10,7 +10,7 @@ import i18n from "i18next";
 export function getAvailableClassConduits(spec) {
   let currentLanguage = i18n.language;
   let conduits = [];
-  const defaultItemLevel = 184;
+  const defaultItemLevel = 200;
   // TODO Implement the below rework, need to include the covenant in the mapping
   // example of potential rework
   // conduits
@@ -127,6 +127,14 @@ export function getAvailableClassConduits(spec) {
     conduits.push(new ActiveConduit(337748, defaultItemLevel, localizedName(337748), "Endurance"));
     conduits.push(new ActiveConduit(337662, defaultItemLevel, localizedName(337662), "Endurance"));
   }
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                            Conduits Available to All Classes in 9.1                            */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* ----------------------------------- Adaptive Armor Fragment ---------------------------------- */
+  conduits.push(new ActiveConduit(357902, defaultItemLevel, localizedName(357902), "Potency"));
+  /* ----------------------------------- Condensed Anima Sphere ----------------------------------- */
+  conduits.push(new ActiveConduit(357888, defaultItemLevel, localizedName(357888), "Endurance"));
 
   return conduits;
 }

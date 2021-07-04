@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { makeStyles } from "@material-ui/core/styles";
 import { Card, CardActions, CardContent, Divider, Grid, Typography } from "@material-ui/core";
 import { legendaryImages } from "./LegendaryIcons";
+import { legendaryNameTranslator } from "./LegendaryTranslations";
 
 const useStyles = makeStyles({
   root: {
@@ -16,7 +17,8 @@ const useStyles = makeStyles({
 });
 
 export default function LegendaryObject(props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const classes = useStyles();
   // Item Provided to Component
   const item = props.item;
@@ -28,6 +30,15 @@ export default function LegendaryObject(props) {
   const paddedDPS = Math.round(item.effectiveDPS).toString().padStart(3);
   // If the dps string is greater than 5, return DPS: paddedDPS else nothing
   const dpsString = item.effectiveDPS > 5 ? "DPS: " + paddedDPS : "";
+
+  const legendaryDataObject = legendaryNameTranslator(item.name)[currentLanguage];
+
+  const covenantSigils = {
+    Kyrian: process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png",
+    "Night Fae": process.env.PUBLIC_URL + "/Images/Interface/Fae_Sigil.png",
+    Venthyr: process.env.PUBLIC_URL + "/Images/Interface/Venthyr_Sigil.png",
+    Necrolord: process.env.PUBLIC_URL + "/Images/Interface/Death_Lords_Sigil.png",
+  };
 
   return (
     // Breakpoints (12 units / row)
@@ -61,11 +72,17 @@ export default function LegendaryObject(props) {
                   lineHeight: 1,
                 }}
               >
-                {t(item.name + ".name")}
+                {legendaryDataObject.name}
+                {covenantSigils[legendaryDataObject.covenant] !== undefined ? (
+                  <img height={40} style={{ float: "right", position: "absolute", marginTop: -7, marginLeft: 10 }} src={covenantSigils[legendaryDataObject.covenant]} alt={t("Covenants." + legendaryDataObject.covenant)} />
+                ) : (
+                  ""
+                )}
               </Typography>
               {/* -------------------------------- Slots available to Legendary -------------------------------- */}
-              <Typography variant="caption">{t(item.name + ".slot")}</Typography>
+              <Typography variant="caption">{legendaryDataObject.slot}</Typography>
             </div>
+
             {/* --------------------------------------- Legendary Icon --------------------------------------- */}
             <img
               height={40}
@@ -87,7 +104,7 @@ export default function LegendaryObject(props) {
               <CardContent style={{ padding: 0 }}>
                 {/* -------------------------------- Legendary Effect Description -------------------------------- */}
                 <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
-                  {t(item.name + ".desc")}
+                  {legendaryDataObject.desc}
                 </Typography>
               </CardContent>
             </Grid>
@@ -109,7 +126,7 @@ export default function LegendaryObject(props) {
         <CardActions>
           {/* ----------------------------------- Legendary drop location ---------------------------------- */}
           <Typography variant="caption" component="p" style={{ padding: "0px 8px" }}>
-            {t("Source")}: {t(item.name + ".droploc")}
+            {t("Source")}: {legendaryDataObject.droploc}
           </Typography>
         </CardActions>
       </Card>

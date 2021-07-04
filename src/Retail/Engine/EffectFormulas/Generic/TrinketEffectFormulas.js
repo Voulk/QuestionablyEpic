@@ -1,5 +1,6 @@
 import { convertPPMToUptime, getScalarValue } from "../EffectUtilities";
 import { trinket_data } from "./TrinketData";
+import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
 // import { STAT } from "../../../../General/Engine/STAT";
 import SPEC from "../../../../General/Engine/SPECS";
 
@@ -90,6 +91,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     */
     let effect = activeTrinket.effects[0];
     let playerBestSecondary = player.getHighestStatWeight(contentType, ["versatility"]); // Exclude Vers since there isn't a Vers version.
+    //console.log("Changeling " + itemLevel + ". : " + getProcessedValue(effect.coefficient, effect.table, itemLevel));
 
     bonus_stats[playerBestSecondary] = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
     //
@@ -104,6 +106,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     const multiplier = 1 + effect.multiplier * (userSettings.hymnalAllies || 0);
 
     bonus_stats.crit = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration * effect.stacks * multiplier) / 60;
+    console.log("Hymnal: " + bonus_stats.crit);
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -157,8 +160,19 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let crit_effect = activeTrinket.effects[0];
 
     bonus_stats.hps = (getProcessedValue(heal_effect.coefficient, heal_effect.table, itemLevel, heal_effect.efficiency) / heal_effect.cooldown) * player.getStatMultiplier("CRITVERS");
-    bonus_stats.crit = (getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.duration * crit_effect.multiplier) / crit_effect.cooldown;
-    bonus_stats.crit *= player.getCooldownMult("twoMinutes", contentType);
+    
+    if (player.getSpec() === "Discipline Priest") {
+      bonus_stats.crit = (getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.duration * crit_effect.multiplier) / 180;
+      bonus_stats.crit *= player.getCooldownMult("threeMinutes", contentType);
+    }
+    else {
+      bonus_stats.crit = (getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.duration * crit_effect.multiplier) / 120;
+      bonus_stats.crit *= player.getCooldownMult("twoMinutes", contentType);
+    }
+    
+    
+    
+    
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -219,7 +233,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /* ---------------------------------------------------------------------------------------------- */
     /*                             Sinful Gladiator's Insignia of Alacrity                            */
     /* ---------------------------------------------------------------------------------------------- */
-    effectName === "Sinful Gladiator's Insignia of Alacrity"
+    effectName === "Gladiator's Insignia of Alacrity"
   ) {
     let effect = activeTrinket.effects[0];
 
@@ -229,7 +243,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /* ---------------------------------------------------------------------------------------------- */
     /*                              Sinful Gladiator's Badge of Ferocity                              */
     /* ---------------------------------------------------------------------------------------------- */
-    effectName === "Sinful Gladiator's Badge of Ferocity"
+    effectName === "Gladiator's Badge of Ferocity"
   ) {
     // Test
     let effect = activeTrinket.effects[0];
@@ -267,7 +281,8 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let effect = activeTrinket.effects[0];
     let playerBestSecondary = player.getHighestStatWeight(contentType, ["versatility"]); // Exclude Vers since there isn't a Vers version.
 
-    bonus_stats[playerBestSecondary] = ((getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown) * 0.87;
+    bonus_stats[playerBestSecondary] = ((getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown) * 0.75;
+    bonus_stats[playerBestSecondary] *= player.getCooldownMult("threeMinutes", contentType);
     // TODO: power reduced by 5% because of the chance something interferes. This needs to be much much better and I'll fix it up this week.
     //
   } else if (
@@ -325,8 +340,8 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let effect = activeTrinket.effects[0];
 
     bonus_stats.mastery = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
+    bonus_stats.mastery *= player.getCooldownMult("ninetySeconds", contentType);
 
-    if (player.getSpec() === SPEC.RESTODRUID) bonus_stats.mastery *= 1.2; // Bell is combined with Flourish.
     // We need a better way to model interaction with spec cooldowns.
     //
   } else if (
@@ -514,7 +529,124 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
       bonus_stats.haste *= player.getCooldownMult("twoMinutes", contentType);
     }
     //
-  } else {
+  }else if (
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Soul Cage Fragment                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    effectName === "Soul Cage Fragment"
+  ) {
+    let effect = activeTrinket.effects[0];
+
+    bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+    //
+  }
+  else if (
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Titanic Ocular Gland                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    effectName === "Titanic Ocular Gland"
+  ) {
+    let effect = activeTrinket.effects[0];
+    const statValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
+    const uptime = effect.uptime;
+    const playerBestSecondary = player.getHighestStatWeight(contentType);
+
+    bonus_stats[playerBestSecondary] = statValue * uptime - statValue * (1 - uptime);
+    //
+  }   
+  else if (
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   So'leah's Secret Technique                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    effectName === "So'leah's Secret Technique"
+  ) {
+    let effect = activeTrinket.effects[0];
+    const allyEffect = activeTrinket.effects[1];
+    const playerBestSecondary = player.getHighestStatWeight(contentType);
+
+    bonus_stats[playerBestSecondary] = getProcessedValue(effect.coefficient, effect.table, itemLevel) + getProcessedValue(allyEffect.coefficient, allyEffect.table, itemLevel);
+    //
+  } else if (
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Carved Ivory Keepsake                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    effectName === "Carved Ivory Keepsake"
+  ) {
+    let effect = activeTrinket.effects[0];
+
+    /* ------- Hastes impact on the trinket PPM is included in the secondary multiplier below. ------ */
+    bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / 60) * effect.ppm * player.getStatMultiplier("NOMAST");
+    //
+  }
+ else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                      Resonant Silver Bell                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Resonant Silver Bell"
+) {
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / 60) * effect.ppm * player.getStatMultiplier("CRITVERS");
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                    Shadowed Orb of Torment                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Shadowed Orb of Torment"
+) {
+  // Test
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.mastery = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
+  bonus_stats.mastery *= player.getCooldownMult("twoMinutesOrb", contentType);
+
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                            First Class Healing Distributor                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "First Class Healing Distributor"
+) {
+  const healEffect = activeTrinket.effects[0];
+  const hasteEffect = activeTrinket.effects[1];
+  const meteor = 1 + healEffect.targets[contentType] * healEffect.meteor;
+
+  /* ------- Hastes impact on the trinket PPM is included in the secondary multiplier below. ------ */
+  bonus_stats.hps = (getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel, healEffect.efficiency) / 60) * meteor * healEffect.ppm * player.getStatMultiplier("NOMAST");
+  bonus_stats.haste = getProcessedValue(hasteEffect.coefficient, hasteEffect.table, itemLevel) * convertPPMToUptime(hasteEffect.ppm, hasteEffect.duration);
+
+  console.log("Haste" + getProcessedValue(hasteEffect.coefficient, hasteEffect.table, itemLevel) + ". Itemlevel: " + itemLevel);
+  console.log("Healing" + getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel, 1) + ". Itemlevel: " + itemLevel);
+  console.log("HPS: " + bonus_stats.hps + ". Haste: " + bonus_stats.haste + ". lv: " + itemLevel);
+  console.log("Avg Haste: " + bonus_stats.haste)
+  console.log("Uptime: " + convertPPMToUptime(hasteEffect.ppm * player.getStatPerc("Haste"), hasteEffect.duration));
+} else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                    Scrawled Word of Recall                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Scrawled Word of Recall"
+) {
+  const effect = activeTrinket.effects[0];
+  const expectedCDR = Math.round(10*getProcessedValue(effect.coefficient, effect.table, itemLevel, 1, false)*effect.specMod[player.getSpec()])/10;
+
+  if (player.getSpec() === "Holy Paladin") {
+    bonus_stats.hps = ((getAdjustedHolyShock(player, contentType) * (expectedCDR / 7.5)) - player.getSpecialQuery("OneManaHealing", contentType) * 1600) / 60 * 0.8
+  }
+
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                         Tome of Insight                                        */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Tome of Insight"
+) {
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration) * player.getStatPerc("Haste");
+  //
+}
+  else {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        No Trinkets Found                                       */
     /* ---------------------------------------------------------------------------------------------- */
@@ -559,6 +691,7 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
   return Math.round(estHPS);
 }
 
-export function getProcessedValue(coefficient, table, itemLevel, efficiency = 1) {
-  return Math.round(coefficient * getScalarValue(table, itemLevel) * efficiency);
+export function getProcessedValue(coefficient, table, itemLevel, efficiency = 1, floor=true) {
+  if (floor) return Math.floor(coefficient * getScalarValue(table, itemLevel) * efficiency);
+  else return coefficient * getScalarValue(table, itemLevel) * efficiency;
 }

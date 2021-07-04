@@ -37,34 +37,35 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   header: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: "55%",
+      width: "85%",
       marginTop: 120,
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.up("sm")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: "55%",
+      width: "80%",
+      marginTop: 140,
     },
-    [theme.breakpoints.down("lg")]: {
+    [theme.breakpoints.up("md")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: "55%",
+      width: "65%",
     },
-    [theme.breakpoints.up("xl")]: {
+    [theme.breakpoints.up("lg")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: "55%",
+      width: "55%",
     },
   },
 }));
@@ -100,7 +101,13 @@ export default function UpgradeFinderFront(props) {
   const currentLanguage = i18n.language;
   const contentType = useSelector((state) => state.contentType);
   const gameType = useSelector((state) => state.gameType);
-  const helpText = gameType === "Retail" ? t("UpgradeFinderFront.HelpText") : t("UpgradeFinderFront.HelpTextBC"); // TODO: Implement BC Help Text
+  const helpBlurb = t("UpgradeFinderFront.HelpText")
+  const helpText = gameType === "Retail" ? ["Insert a SimC string to automatically import your gear.", "(Optional) Use the settings panel to make further customizations.", "Select a raid difficulty, Mythic+ level and PVP rating. If you don't play any particular content type, feel free to set it to 0.",
+                                            "Hit Go at the bottom of the page."] : 
+                                            ["Insert a QE Import string to automatically import your gear.",
+                                            "(Optional) Use the settings panel to set specific gem types, enchants and how much value to put on extra mana.",
+                                            "Select a dungeon difficulty, and (optionally) a PVP rating.",
+                                            "Hit Go at the bottom of the page."];
 
   const marks = [
     {
@@ -116,7 +123,7 @@ export default function UpgradeFinderFront(props) {
       value: 1,
       label: (
         <div className={classes.labels}>
-          <div>lvl 187</div>
+          <div>lvl 210</div>
           <div>M 2</div>
         </div>
       ),
@@ -125,7 +132,7 @@ export default function UpgradeFinderFront(props) {
       value: 2,
       label: (
         <div className={classes.labels}>
-          <div>lvl 190</div>
+          <div>lvl 213</div>
           <div>M 3</div>
         </div>
       ),
@@ -134,8 +141,8 @@ export default function UpgradeFinderFront(props) {
       value: 3,
       label: (
         <div className={classes.labels}>
-          <div>lvl 194</div>
-          <div>M 4-5</div>
+          <div>lvl 216</div>
+          <div>M 4</div>
         </div>
       ),
     },
@@ -143,8 +150,8 @@ export default function UpgradeFinderFront(props) {
       value: 4,
       label: (
         <div className={classes.labels}>
-          <div>lvl 197</div>
-          <div>M 6</div>
+          <div>lvl 220</div>
+          <div>M 5</div>
         </div>
       ),
     },
@@ -152,8 +159,8 @@ export default function UpgradeFinderFront(props) {
       value: 5,
       label: (
         <div className={classes.labels}>
-          <div>lvl 200</div>
-          <div>M 7-9</div>
+          <div>lvl 223</div>
+          <div>M 6-7</div>
         </div>
       ),
     },
@@ -161,8 +168,8 @@ export default function UpgradeFinderFront(props) {
       value: 6,
       label: (
         <div className={classes.labels}>
-          <div>lvl 203</div>
-          <div>M 10-11</div>
+          <div>lvl 226</div>
+          <div>M 8-9</div>
         </div>
       ),
     },
@@ -170,8 +177,8 @@ export default function UpgradeFinderFront(props) {
       value: 7,
       label: (
         <div className={classes.labels}>
-          <div>lvl 207</div>
-          <div>M 12-14</div>
+          <div>lvl 229</div>
+          <div>M 10-11</div>
         </div>
       ),
     },
@@ -179,8 +186,8 @@ export default function UpgradeFinderFront(props) {
       value: 8,
       label: (
         <div className={classes.labels}>
-          <div>lvl 210</div>
-          <div>M 15</div>
+          <div>lvl 233</div>
+          <div>M 12-13</div>
         </div>
       ),
     },
@@ -188,7 +195,8 @@ export default function UpgradeFinderFront(props) {
       value: 9,
       label: (
         <div className={classes.labels}>
-          <div>lvl 213</div>
+          <div>lvl 236</div>
+          <div>M 14-15</div>
         </div>
       ),
     },
@@ -196,7 +204,7 @@ export default function UpgradeFinderFront(props) {
       value: 10,
       label: (
         <div className={classes.labels}>
-          <div>lvl 216</div>
+          <div>lvl 239</div>
         </div>
       ),
     },
@@ -204,7 +212,7 @@ export default function UpgradeFinderFront(props) {
       value: 11,
       label: (
         <div className={classes.labels}>
-          <div>lvl 220 </div>
+          <div>lvl 242 </div>
         </div>
       ),
     },
@@ -212,7 +220,23 @@ export default function UpgradeFinderFront(props) {
       value: 12,
       label: (
         <div className={classes.labels}>
-          <div>lvl 226</div>
+          <div>lvl 246</div>
+        </div>
+      ),
+    },
+    {
+      value: 13,
+      label: (
+        <div className={classes.labels}>
+          <div>lvl 249</div>
+        </div>
+      ),
+    },
+    {
+      value: 14,
+      label: (
+        <div className={classes.labels}>
+          <div>lvl 252</div>
         </div>
       ),
     },
@@ -298,7 +322,7 @@ export default function UpgradeFinderFront(props) {
       <Grid container spacing={1}>
         {/* ---------------------------- Help Text Section --------------------------- */}
         <Grid item xs={12}>
-          <HelpText text={helpText} />
+          <HelpText blurb={helpBlurb} text={helpText} />
         </Grid>
         <Grid item xs={12}>
           <UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
@@ -376,7 +400,7 @@ export default function UpgradeFinderFront(props) {
                 step={null}
                 valueLabelDisplay="off"
                 marks={marks}
-                max={12}
+                max={14}
                 change={props.setDungeonDifficulty}
               />
             </Paper>

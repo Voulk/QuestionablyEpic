@@ -142,32 +142,50 @@ function getConduitRank(itemLevel) {
     200: 5,
     213: 6,
     226: 7,
+    239: 8,
+    252: 9
   };
 
   return ranks[itemLevel];
 }
 
 export function getConduitFormula(effectID, player, contentType, itemLevel = 145) {
+
   let conduitRank = getConduitRank(itemLevel);
   let bonus_stats = {};
-
-  switch (player.spec) {
-    case SPEC.DISCPRIEST:
-    case SPEC.HOLYPRIEST:
-      bonus_stats = getPriestConduit(effectID, player, contentType, conduitRank);
-      break;
-    case SPEC.RESTODRUID:
-      bonus_stats = getDruidConduit(effectID, player, contentType, conduitRank);
-      break;
-    case SPEC.RESTOSHAMAN:
-      bonus_stats = getShamanConduit(effectID, player, contentType, conduitRank);
-      break;
-    case SPEC.HOLYPALADIN:
-      bonus_stats = getPaladinConduit(effectID, player, contentType, conduitRank);
-      break;
-    case SPEC.MISTWEAVERMONK:
-      bonus_stats = getMonkConduit(effectID, player, contentType, conduitRank);
-      break;
+  if (effectID === 357902) {
+    // % intellect increase when healed by another player. 15s duration, 30s cooldown.
+    const percentInc = 0.02 + conduitRank * 0.002;
+    const uptime = contentType == "Raid" ? 0.4 : 0;
+    const intGain = percentInc * player.getInt() * uptime;
+    bonus_stats.HPS = intGain / player.getInt() * (player.getHPS(contentType) * 0.75); // Remove this 0.75 modifier when the cast models update.
+  }
+  else if (effectID === 357888) {
+    // Small heal based on your max health whenever you take damage. 10s cooldown. The heal on this is currently 10x it's tooltip value.
+    const percHealing = (0.25 + conduitRank * 0.025) / 100 * 10;
+    const ppm = 60 / 10 * 0.7; // Condensed Anima Sphere notably does not proc off a significant number of abilities.
+    const expectedOverhealing = 0.3;
+    bonus_stats.HPS = percHealing * ppm * (1 - expectedOverhealing) * player.activeStats.stamina * 20 * 1.06 / 60;
+  }
+  else {
+    switch (player.spec) {
+      case SPEC.DISCPRIEST:
+      case SPEC.HOLYPRIEST:
+        bonus_stats = getPriestConduit(effectID, player, contentType, conduitRank);
+        break;
+      case SPEC.RESTODRUID:
+        bonus_stats = getDruidConduit(effectID, player, contentType, conduitRank);
+        break;
+      case SPEC.RESTOSHAMAN:
+        bonus_stats = getShamanConduit(effectID, player, contentType, conduitRank);
+        break;
+      case SPEC.HOLYPALADIN:
+        bonus_stats = getPaladinConduit(effectID, player, contentType, conduitRank);
+        break;
+      case SPEC.MISTWEAVERMONK:
+        bonus_stats = getMonkConduit(effectID, player, contentType, conduitRank);
+        break;
+    }
   }
 
   return bonus_stats;

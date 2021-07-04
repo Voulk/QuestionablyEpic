@@ -65,10 +65,11 @@ export default function chartCooldownUpdater(tableData) {
     .filter((key) => key.Cooldown !== undefined)
     .map((key) => ({
       ability: key.Cooldown,
-      timestamp: moment.duration("00:" + key.time).asMilliseconds(),
+      timestamp: moment.duration((key.cooldownTime === undefined || key.cooldownTime === "") ? "00:" + key.time : "00:" + key.cooldownTime).asMilliseconds(),
       abilityname: key.name + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
     }))
     .map((key) => {
+      console.log(key.timestamp);
       customCooldownDurations.push(
         durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
       );
@@ -79,7 +80,7 @@ export default function chartCooldownUpdater(tableData) {
     .filter((key) => key.Cooldown1 !== undefined)
     .map((key) => ({
       ability: key.Cooldown1,
-      timestamp: moment.duration("00:" + key.time).asMilliseconds(),
+      timestamp: moment.duration((key.cooldownTime1 === undefined || key.cooldownTime1 === "") ? "00:" + key.time : "00:" + key.cooldownTime1).asMilliseconds(),
       abilityname: key.name1 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1),
     }))
     .map((key) =>
@@ -93,7 +94,7 @@ export default function chartCooldownUpdater(tableData) {
     .filter((key) => key.Cooldown2 !== undefined)
     .map((key) => ({
       ability: key.Cooldown2,
-      timestamp: moment.duration("00:" + key.time).asMilliseconds(),
+      timestamp: moment.duration((key.cooldownTime2 === undefined || key.cooldownTime2 === "") ? "00:" + key.time : "00:" + key.cooldownTime2).asMilliseconds(),
       abilityname: key.name2 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2),
     }))
     .map((key) =>
@@ -107,7 +108,7 @@ export default function chartCooldownUpdater(tableData) {
     .filter((key) => key.Cooldown3 !== undefined)
     .map((key) => ({
       ability: key.Cooldown3,
-      timestamp: moment.duration("00:" + key.time).asMilliseconds(),
+      timestamp: moment.duration((key.cooldownTime3 === undefined || key.cooldownTime3 === "") ? "00:" + key.time : "00:" + key.cooldownTime3).asMilliseconds(),
       abilityname: key.name3 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3),
     }))
     .map((key) =>
@@ -121,7 +122,7 @@ export default function chartCooldownUpdater(tableData) {
     .filter((key) => key.Cooldown4 !== undefined)
     .map((key) => ({
       ability: key.Cooldown4,
-      timestamp: moment.duration("00:" + key.time).asMilliseconds(),
+      timestamp: moment.duration((key.cooldownTime4 === undefined || key.cooldownTime4 === "") ? "00:" + key.time : "00:" + key.cooldownTime4).asMilliseconds(),
       abilityname: key.name4 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4),
     }))
     .map((key) =>

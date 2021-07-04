@@ -3,9 +3,7 @@ export const getDruidRelic = (effectName, player) => {
     // These are going to be moved to a proper file soon.
     let bonus_stats = {};
 
-    console.log(player);
-
-
+    //console.log(player);
 
     if (effectName === undefined) {
         /* ---------------------------------------------------------------------------------------------- */

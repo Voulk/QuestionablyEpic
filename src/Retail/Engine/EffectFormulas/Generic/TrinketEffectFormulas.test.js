@@ -57,7 +57,7 @@ describe("Overflowing Anima Cage Test", () => {
   });
 
 });
-
+/*
 describe("Boon of the Archon Test", () => {
     const druid = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
     druid.activeStats = {
@@ -105,7 +105,7 @@ describe("Boon of the Archon Test", () => {
         localSettings.includeGroupBenefits = false;
         expect(Math.round(getTrinketEffect("Boon of the Archon", druid, "Raid", level, localSettings).crit)).toBe(expectedResult);
   });
-  */
+  
 
-});
+});*/
 
