@@ -255,7 +255,7 @@ export default async function updatechartdata(starttime, endtime) {
   }));
 
 
-  const healthUpdated = Object.entries(health)
+  const healthUpdated = health
 
   /* ----------------------- Flatten the map we just created into an array. ----------------------- */
   let cooldownwithdurations = healerDurations.flat();
