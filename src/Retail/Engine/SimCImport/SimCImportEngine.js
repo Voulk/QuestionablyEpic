@@ -290,6 +290,7 @@ function processItem(line, player, contentType, type) {
         else if (bonus_id == 7239) itemLevel = 181;
         else if (bonus_id == 7240) itemLevel = 200;
         else if (bonus_id == 7241) itemLevel = 180;
+        else if (bonus_id == 7461) itemLevel = 230;
       } else if ("name_override" in idPayload) {
         // Legendaries
 

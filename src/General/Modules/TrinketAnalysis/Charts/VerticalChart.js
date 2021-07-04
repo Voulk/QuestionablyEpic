@@ -68,6 +68,7 @@ export default class VerticalChart extends PureComponent {
           213: getLevelDiff(map2.name, db, 213, map2),
           220: getLevelDiff(map2.name, db, 220, map2),
           226: getLevelDiff(map2.name, db, 226, map2),
+          230: getLevelDiff(map2.name, db, 230, map2),
           233: getLevelDiff(map2.name, db, 233, map2),
           239: getLevelDiff(map2.name, db, 239, map2),
           246: getLevelDiff(map2.name, db, 246, map2),
@@ -148,6 +149,7 @@ export default class VerticalChart extends PureComponent {
           <Bar dataKey={220} fill={"#bbeabf"} stackId="a" />
 
           <Bar dataKey={226} fill={"#D8BE7B"} stackId="a" />
+          <Bar dataKey={230} fill={"#e0d06b"} stackId="a" />
           <Bar dataKey={233} fill={"#e0d09b"} stackId="a" />
           <Bar dataKey={239} fill={"#eae2bb"} stackId="a" />
 

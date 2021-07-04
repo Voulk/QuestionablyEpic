@@ -245,7 +245,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /*
     This is basically 100% uptime on one target at a time. Team benefit is included.
     */
-    bonus_stats.Haste = 4.9 * STATPERONEPERCENT.Retail.HASTE;
+    bonus_stats.Haste = 4.85 * STATPERONEPERCENT.Retail.HASTE;
   } else if (
     /* ----------------------------------------- Called Shot ---------------------------------------- */
     effectID === 352501
@@ -254,6 +254,9 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* -------------------------------------- Survivor's Rally -------------------------------------- */
     effectID === 352502
   ) {
+    const expectedPPM = 0.67 // 1 minute ICD, high proc chance because 80% is a high threshold. 
+    const playerHealth = player.activeStats.stamina * 20;
+    bonus_stats.HPS = expectedPPM * playerHealth * 0.2 / 60;
   } else if (
     /* ---------------------------------------- Bonded Hearts --------------------------------------- */
     effectID === 352503
@@ -286,10 +289,10 @@ export function getSoulbindFormula(effectID, player, contentType) {
   ) {
     /*
     TODO: Expand to include overhealing on yourself.
-    Double check the shield_consumed is a fair approximation when the expansion goes live.
+    Double check the shield_consumed is a fair approximation.
     */
     let trait_bonus = 0.1;
-    let shield_consumed = contentType == "Raid" ? 0.78 : 0.32; // The percentage of our overhealing shield that gets consumed. Likely to be very high.
+    let shield_consumed = contentType == "Raid" ? 0.78 : 0.3; // The percentage of our overhealing shield that gets consumed. Likely to be very high.
     let overhealing = player.getRawHPS(contentType) - player.getHPS(contentType);
 
     bonus_stats.HPS = trait_bonus * shield_consumed * overhealing;
@@ -297,7 +300,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* -------------------------------------- Field of Blossoms ------------------------------------- */
     effectID === 319191
   ) {
-    let expectedUptime = (1 / 6) * 0.67;
+    let expectedUptime = (1 / 6) * 0.64; // Likely needs fight-by-fight expected uptimes.
     bonus_stats.Haste = 12 * STATPERONEPERCENT.Retail.HASTE * expectedUptime;
   } else if (
     /* --------------------------------------- Cunning Dreams --------------------------------------- */
@@ -307,10 +310,15 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* ---------------------------------------- Waking Dreams --------------------------------------- */
     effectID === 352779
   ) {
+      const expectedPPM = 0.74 // 1 minute ICD, high proc chance because 80% is a high threshold. 
+      const playerHealth = player.activeStats.stamina * 20;
+      bonus_stats.HPS = expectedPPM * playerHealth * 0.2 / 60;
+
   } else if (
     /* ---------------------------------------- Dream Delver ---------------------------------------- */
     effectID === 352786
   ) {
+
   }
 
   /* ---------------------------------------------------------------------------------------------- */
