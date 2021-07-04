@@ -56054,7 +56054,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": " Gladiator's Badge of Ferocity"
+            "name": "Gladiator's Badge of Ferocity"
         },
         "levelRange": []
     },
@@ -57285,7 +57285,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": " Gladiator's Badge of Ferocity"
+            "name": "Gladiator's Badge of Ferocity"
         },
         "levelRange": []
     },
@@ -99354,7 +99354,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": " Gladiator's Badge of Ferocity"
+            "name": "Gladiator's Badge of Ferocity"
         },
         "levelRange": []
     },
@@ -100369,7 +100369,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": " Gladiator's Badge of Ferocity"
+            "name": "Gladiator's Badge of Ferocity"
         },
         "levelRange": [
             200,
