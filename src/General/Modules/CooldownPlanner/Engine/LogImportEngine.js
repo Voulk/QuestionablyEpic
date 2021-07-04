@@ -67,7 +67,7 @@ export default async function updatechartdata(starttime, endtime) {
   const damage = await importDamageLogData(starttime, endtime, this.state.reportid);
 
   const health = await importRaidHealth(starttime, endtime, this.state.reportid);
-  console.log(health);
+  
   /* --------------------------- Map Healer Data for ID, Name and Class. -------------------------- */
   const healerIDName = healers.map((key) => ({
     id: key.id,
@@ -255,10 +255,7 @@ export default async function updatechartdata(starttime, endtime) {
   }));
 
 
-  const healthUpdated = health.map( key=> ({
-    timestamp: moment(fightDuration(key.timestamp, this.state.time)).valueOf(),
-    health: key.health
-  }))
+  const healthUpdated = Object.entries(health)
 
   /* ----------------------- Flatten the map we just created into an array. ----------------------- */
   let cooldownwithdurations = healerDurations.flat();
@@ -270,6 +267,7 @@ export default async function updatechartdata(starttime, endtime) {
   /* ------- Concat the damage arrays with the cooldown durations with the missing durations ------ */
   let unmitigatedDamageFromLogWithTimesAddedAndCooldowns = unmitigatedDamageMap.concat(cooldownwithdurations, times);
   unmitigatedDamageFromLogWithTimesAddedAndCooldowns = unmitigatedDamageFromLogWithTimesAddedAndCooldowns.concat(healthUpdated);
+  
 
   let mitigatedDamageFromLogWithTimesAddedAndCooldowns = mitigatedDamageMap.concat(cooldownwithdurations, times);
   mitigatedDamageFromLogWithTimesAddedAndCooldowns = mitigatedDamageFromLogWithTimesAddedAndCooldowns.concat(healthUpdated);

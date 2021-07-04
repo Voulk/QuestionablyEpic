@@ -136,7 +136,7 @@ class Chart extends Component {
   };
 
   render() {
-    console.log(this.props.unmitigated)
+    // console.log(this.props.unmitigated)
     // Shortens long numbers i.e 1000000 will be 1M
     const DataFormater = (number) => {
       if (number > 1000000000) {
@@ -179,7 +179,7 @@ class Chart extends Component {
               }}
             />
             <YAxis yAxisId="2" orientation="right" stroke="#f5f5f5" tick={false} domain={["dataMin", 5]} />
-            <YAxis yAxisId="3" orientation="right" stroke="#f5f5f5" tick={false} domain={[0, 2000]} />
+            <YAxis yAxisId="3" orientation="right" stroke="#f5f5f5" tick={false} domain={[0, 100]} />
             <Legend
               verticalAlign="bottom"
               iconType="square"
@@ -203,7 +203,7 @@ class Chart extends Component {
               labelFormatter={(timeStr) => moment(timeStr).format("mm:ss")}
             />
             {this.drawAreas(this.props.cooldownsToShow === true ? this.props.cooldown : this.props.customCooldowns)}
-            <Line yAxisId="3" type="monotone" dataKey="health" stroke="#ff7300" />
+            <Line yAxisId="3" type="monotone" dataKey="health" stroke="#ff7300" dot={false} />
           </ComposedChart>
         </ResponsiveContainer>
       </Paper>

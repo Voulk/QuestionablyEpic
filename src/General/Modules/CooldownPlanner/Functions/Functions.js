@@ -65,7 +65,7 @@ export function reduceTimestampshealth(array) {
           } else x[prop] = n[prop];
       }
       x.timestamp = cur.timestamp;
-      x.health = x.health / count;
+      x.health = cur.health / count;
       return x;
     }, {});
     return acc;
@@ -601,7 +601,9 @@ export async function importRaidHealth(starttime, endtime, reportid) {
   await axios
     .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + ABILITYID + API2)
     .then((result) => {
-      health = result.data.series.filter((key) => key.type !== "Pet").map((key) => key.data.map((key2) =>({ timestamp: moment(fightDuration(key2[0], starttime)).valueOf(), health: key2[1] })));
+      result.data.series
+        .filter((key) => key.type !== "Pet")
+        .map((key) => key.data.map((key2) => health.push({ timestamp: moment(fightDuration(key2[0], starttime)).startOf("second").valueOf(), health: key2[1] })));
     })
     .catch(function (error) {
       console.log(error);
@@ -624,12 +626,13 @@ export async function importRaidHealth(starttime, endtime, reportid) {
   //         console.log(error);
   //       });
   //   } while (nextpage !== undefined || null);
-  // }
+  // }.
+  health2 = health.flat();
+  health2.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
+  health2 = reduceTimestampshealth(health2);
+  health2 = Object.entries(health2).map(key => key[1])
 
-  health.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
-  health.flat()
-  console.log(health);
   // reducedHealth = reduceTimestamps(health);
   // console.log(reducedHealth);
-  return reducedHealth;
+  return health2;
 }
