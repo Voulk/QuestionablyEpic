@@ -10,6 +10,9 @@ export function UpgradeFinder(props) {
   const [itemSelection, setItemSelection] = React.useState([]);
   const [showReport, setShowReport] = React.useState(false);
   const [playerSettings, setPlayerSettings] = React.useState({ raid: [2, 3], dungeon: 6, pvp: 0 });
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   const setRaidDifficulty = (difficulty) => {
     let currDiff = playerSettings.raid;

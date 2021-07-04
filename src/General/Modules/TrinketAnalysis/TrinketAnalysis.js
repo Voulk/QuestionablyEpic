@@ -82,9 +82,9 @@ const getHighestTrinketScore = (db, trinket, gameType) => {
 // };
 
 export default function TrinketAnalysis(props) {
-  /*useEffect(() => {
+  useEffect(() => {
       ReactGA.pageview(window.location.pathname + window.location.search);
-    }, []); */
+    }, []);
 
   const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
