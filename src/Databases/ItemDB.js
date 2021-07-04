@@ -27405,7 +27405,6 @@ export const itemDB = [
             "name": "Spiritual Alchemy Stone"
         },
         "levelRange": [
-            230
         ]
     },
     {
@@ -57355,7 +57354,6 @@ export const itemDB = [
             "name": "Spiritual Alchemy Stone"
         },
         "levelRange": [
-            230
         ]
     },
     {
@@ -57390,7 +57388,6 @@ export const itemDB = [
             "name": "Spiritual Alchemy Stone"
         },
         "levelRange": [
-            230
         ]
     },
     {
@@ -63502,7 +63499,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": " Gladiator's Insignia of Alacrity"
+            "name": "Gladiator's Insignia of Alacrity"
         },
         "levelRange": []
     },
@@ -64874,7 +64871,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": " Gladiator's Insignia of Alacrity"
+            "name": "Gladiator's Insignia of Alacrity"
         },
         "levelRange": []
     },
@@ -101448,7 +101445,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": " Gladiator's Insignia of Alacrity"
+            "name": "Gladiator's Insignia of Alacrity"
         },
         "levelRange": []
     },
@@ -102580,7 +102577,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": " Gladiator's Insignia of Alacrity"
+            "name": "Gladiator's Insignia of Alacrity"
         },
         "levelRange": [
             200,
