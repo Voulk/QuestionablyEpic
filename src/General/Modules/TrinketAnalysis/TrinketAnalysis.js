@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Paper, Typography, Grid } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { itemDB } from "../../../Databases/ItemDB";
