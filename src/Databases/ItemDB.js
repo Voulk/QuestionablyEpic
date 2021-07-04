@@ -27340,7 +27340,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Spiritual Alchemy Stone"
         },
-        "levelRange": []
+        "levelRange": [230]
     },
     {
         "id": 171374,
@@ -93177,10 +93177,6 @@ export const itemDB = [
             "name": "Consumptive Infusion"
         },
         "levelRange": [
-            187,
-            200,
-            213,
-            226
         ]
     },
     {

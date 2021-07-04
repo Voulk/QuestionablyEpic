@@ -856,7 +856,7 @@ export const trinket_data = [
         coefficient: 83.59375,
         table: -8,
         ppm: 2,
-        efficiency: 0.45, // 
+        efficiency: 0.35, // 
       },
     ],
   },

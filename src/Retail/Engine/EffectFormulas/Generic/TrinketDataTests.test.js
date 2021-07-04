@@ -300,3 +300,18 @@ describe("Tome of Insight", () => {
         expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
     });
 });
+
+describe("Spiritual Alchemy Stone Data Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Spiritual Alchemy Stone");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${230}  | ${318}
+    ${165}  | ${173}
+    // add new test cases here
+    `.test("Spiritual Alchemy Stone Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+  
+        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
+    });
+});
