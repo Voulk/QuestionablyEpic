@@ -210,11 +210,13 @@ function processItem(line, player, contentType, type) {
   let craftedStats = [];
   let itemBonusStats = {}; // Bonus_stats that don't naturally come on the item. Crafting and "of the X" items are the primary example.
   let gemID = []; // Used for Domination sockets only (currently).
+  let gemString = "";
   let enchantID = 0; // currently unused.
   let missiveStats = [];
   let itemEffect = {}; // This is called automatically for everything except Legendaries.
   let itemEquipped = !line.includes("#");
   let bonusIDS = "";
+  
 
   // Build out our item information.
   // This is not the finest code in the land but it is effective at pulling the information we need.
@@ -317,6 +319,7 @@ function processItem(line, player, contentType, type) {
   if (gemID.length > 0) {
     gemID.forEach((gem) => {
       const effect = checkIfDomGem(parseInt(gem));
+      gemString += gem + ":"
       if (effect) itemEffect = effect;
     })
   }
@@ -330,6 +333,7 @@ function processItem(line, player, contentType, type) {
     item.active = itemEquipped || item.vaultItem;
     item.isEquipped = itemEquipped;
     item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, itemTertiary);
+    item.gemString = (gemString !== "") ? gemString.slice(0, -1) : "";
     if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
 
     item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");
