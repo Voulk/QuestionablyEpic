@@ -104,6 +104,15 @@ class ItemSet {
       }
     }
 
+    // Domination Socket Code
+    let unholyGems = this.effectList.filter(function (effect) {
+      return effect.type === "domination gem" && effect.gemColor === "Unholy";
+    });
+    if (unholyGems > 3) this.effectList.push({"type": "domination gem", "name": "Chaos Bane"})
+
+    console.log("UNHOLY GEMS" + unholyGems.length);
+
+    // -----------------
     this.setStats = setStats;
     this.setSockets = setSockets;
 

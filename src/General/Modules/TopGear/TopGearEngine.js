@@ -379,6 +379,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   enchants["Gems"] = highestWeight;
   //console.log("Sockets added : " + 16 * builtSet.setSockets + " to " + highestWeight);
 
+
+
   let effectStats = [];
   effectStats.push(bonus_stats);
   for (var x = 0; x < itemSet.effectList.length; x++) {
