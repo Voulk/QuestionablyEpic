@@ -21,6 +21,7 @@ describe("Passable Credentials Data Check", () => {
     });
 });
 
+
 describe("Shard of Zed Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeEffect = effectData.find((effect) => effect.name === "Shard of Zed");
@@ -28,12 +29,31 @@ describe("Shard of Zed Data Check", () => {
 
     each`
     rank   | expectedResult
-    ${4}  | ${25}
-    ${3}  | ${20}
-    ${0}  | ${17}
+    ${4}  | ${334}
+    ${3}  | ${292}
+    ${2}  | ${250}
+    ${1}  | ${208}
+    ${0}  | ${166}
     // add new test cases here
     `.test("Shard of Zed Test - $rank - Expects: $expectedResult", ({ rank, expectedResult }) => {
   
-        expect(getProcessedValue(effect.coefficient[rank], effect.table, 200)).toBe(expectedResult);
+        expect(Math.round(getProcessedValue(effect.coefficient[rank], effect.table, 200, 1, false))).toBe(expectedResult);
+    });
+});
+
+describe("Chaos Bane Data Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeEffect = effectData.find((effect) => effect.name === "Chaos Bane");
+    
+
+    each`
+    effectNum   | expectedResult
+    ${1}  | ${300}
+    ${0}  | ${10}
+    // add new test cases here
+    `.test("Chaos Bane Test - $effectNum - Expects: $expectedResult", ({ effectNum, expectedResult }) => {
+        let effect = activeEffect.effects[effectNum];
+        console.log(effect);
+        expect(getProcessedValue(effect.coefficient, effect.table, 174, 1, true)).toBe(expectedResult);
     });
 });
