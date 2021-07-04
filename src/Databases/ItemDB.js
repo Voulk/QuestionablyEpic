@@ -27340,7 +27340,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Spiritual Alchemy Stone"
         },
-        "levelRange": []
+        "levelRange": [230]
     },
     {
         "id": 171374,
@@ -93177,10 +93177,6 @@ export const itemDB = [
             "name": "Consumptive Infusion"
         },
         "levelRange": [
-            187,
-            200,
-            213,
-            226
         ]
     },
     {
@@ -106082,7 +106078,11 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Neck"
+        "slot": "Neck",
+        "effect": {
+            "type": "special",
+            "name": "Passable Credentials"
+        }
     },
     {
         "id": 186004,
@@ -115715,7 +115715,12 @@ export const itemDB = [
             "mastery": 9250,
             "versatility": 0
         },
+
         "dropLoc": "",
-        "slot": "Neck"
+        "slot": "Neck",
+        "effect": {
+            "type": "special",
+            "name": "Passable Credentials"
+        }
     }
 ]

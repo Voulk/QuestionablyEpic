@@ -10,7 +10,17 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
-    update: 23,
+    update: 4,
+    date: "4th July",
+    changes: [
+      "Added Spiritual Alchemy Stone to the trinket chart.",
+      "Added formula for Perfectly Forged Credentials and variants.",
+      "Added SimC Import support for 230 crafted items.",
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 3,
     date: "1st July",
     changes: [
       "Updated Trinket Analysis Colors.",
