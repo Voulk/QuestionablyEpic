@@ -10,6 +10,7 @@ import BCChart from "./Charts/BCChart";
 import HelpText from "../SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
+import ReactGA from "react-ga";
 // import Settings from "../Settings/Settings";
 // import userSettings from "../Settings/SettingsObject";
 

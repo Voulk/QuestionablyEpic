@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
 import { Paper, Grid, Typography, Button } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
+import ReactGA from "react-ga";
 
 export function UpgradeFinder(props) {
   const [itemSelection, setItemSelection] = React.useState([]);
