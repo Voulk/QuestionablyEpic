@@ -43,7 +43,7 @@ export default function MythicPlusGearContainer(props) {
                 }}
                 className="container-UpgradeCards"
               >
-                <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
+                <Typography variant="h6" style={{ width: "100%" }} className="centered-UpgradeCards-Dungeons">
                   {t("DungeonNames." + key)}
                 </Typography>
               </div>
@@ -87,7 +87,7 @@ export default function MythicPlusGearContainer(props) {
             <Grid item xs={12} sm container spacing={1} style={{ marginRight: 6 }}>
               {[...filterBCItemListBySource(itemList, -1, key)].map((item, index) => (
                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
-              ))} 
+              ))}
             </Grid>
           </Grid>
         </Paper>

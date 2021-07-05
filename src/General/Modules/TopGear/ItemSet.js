@@ -19,6 +19,7 @@ class ItemSet {
   sumSoftScore = 0;
   hardScore = 0;
   setSockets = 0;
+  setDoms = 0;
   uniques = {};
   effectList = [];
 
@@ -37,6 +38,8 @@ class ItemSet {
 
   // BC Socket List
   bcSockets = {};
+
+
 
   // This is for testing purposes only. It will print every item in the collection to the console.
   // printSet() {
@@ -80,6 +83,7 @@ class ItemSet {
     //console.log("Compiling Stats for Item List of legnth: " + this.itemList.length);
     let setStats = this.getStartingStats(gameType)
     let setSockets = 0;
+    let domSockets = 0;
     for (var i = 0; i < this.itemList.length; i++) {
       let item = this.itemList[i];
 
@@ -92,6 +96,7 @@ class ItemSet {
       }
 
       if (item.socket) setSockets++;
+      if (item.hasDomSocket) domSockets++;
       if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
       if (item.setID) {
         this.sets[item.setID] = (item.setID in this.sets) ? this.sets[item.setID] + 1 : 1;
@@ -104,8 +109,30 @@ class ItemSet {
       }
     }
 
+    // Domination Socket Code
+    const unholyGems = this.effectList.filter(function (effect) {
+      return effect.type === "domination gem" && effect.gemColor === "Unholy";
+    });
+    const frostGems = this.effectList.filter(function (effect) {
+      return effect.type === "domination gem" && effect.gemColor === "Frost";
+    });
+    const bloodGems = this.effectList.filter(function (effect) {
+      return effect.type === "domination gem" && effect.gemColor === "Blood";
+    });
+
+    if (unholyGems > 3) this.effectList.push({"type": "domination gem", "name": "Chaos Bane"})
+    else if (frostGems > 3) this.effectList.push({"type": "domination gem", "name": "Winds of Winter"})
+    else if (bloodGems > 3) this.effectList.push({"type": "domination gem", "name": "Blood Link"})
+
+
+    console.log("UNHOLY GEMS" + unholyGems.length);
+    console.log("FROST GEMS" + frostGems.length);
+    console.log("BLOOD GEMS" + bloodGems.length);
+
+    // -----------------
     this.setStats = setStats;
     this.setSockets = setSockets;
+    this.domSockets = domSockets;
 
     return this;
   }

@@ -316,7 +316,7 @@
         "348520": "Reverberating Hammer",
         "355573": "Cruciform Axe",
         "348363": "Spiked Ball",
-        "Fatescribe Roh-Kalo":  "",
+        "Fatescribe Roh-Kalo": "",
         "351685": "Heroic Destiny",
         "353931": "Twist Fate",
         "353696": "Unstable Accretion",
@@ -477,6 +477,7 @@
       "2425": "Stone Legion Generals",
       "2424": "Sire Denathrius",
       "999": "BoE Trash Drops",
+      "998": "BoE Trash Drops",
       "SanctumOfDomination": "SanctumOfDomination",
       "2435": "The Tarragrue",
       "2442": "The Eye of the Jailer",
@@ -488,6 +489,17 @@
       "2447": "Fatescribe Roh-Kalo",
       "2440": "Kel'Thuzad",
       "2441": "Sylvanas Windrunner",
+      "Tazavesh Bosses": "",
+      "Tazavesh": {
+        "2437": "Zo'phex the Sentinel",
+        "2454": "The Grand Menagerie",
+        "2436": "Mailroom Mayhem",
+        "2452": "Myza's Oasis",
+        "2451": "So'azmi",
+        "2448": "Hylbrande",
+        "2449": "Timecap'n Hooktail",
+        "2455": "So'leah"
+      },
       "Karazahn Bosses": " ",
       "652": "Attumen the Huntsman",
       "653": "Moroes",
@@ -500,7 +512,6 @@
       "660": "Chess Event",
       "661": "Prince Malchezaar",
       "662": "Nightbane",
-
       "649": "High King Maulgar",
       "650": "Gruul the Dragonkiller",
       "651": "Magtheridon"
@@ -530,7 +541,7 @@
       "248": "Hellfire Ramparts",
       "256": "The Blood Furnace",
       "259": "The Shattered Halls",
-  
+
       "260": "The Slave Pens",
       "261": "The Steamvault",
       "262": "The Underbog",
@@ -539,11 +550,11 @@
       "247": "Auchenai Crypts",
       "252": "Sethekk Halls",
       "253": "Shadow Labyrinth",
-  
+
       "258": "The Mechanar",
       "257": "The Botanica",
       "254": "The Arcatraz",
-  
+
       "251": "Old Hillsbrad Foothills",
       "255": "The Black Morass",
       "249": "Magister's Terrace"
@@ -568,7 +579,8 @@
       "2430": "Valinor",
       "2431": "Mortanis",
       "2432": "Oranomonos",
-      "2433": "Nurgash"
+      "2433": "Nurgash",
+      "2456": "Mor'geth"
     },
 
     "SimCInput": {
@@ -1052,7 +1064,6 @@
       "slot": "Waist, Wrist, or Finger",
       "desc": "Your spells and abilities have a low chance to summon a familiar to your side, increasing your healing by 10% for 10s. This effect is duplicated on up to 3 allies at 50% effectiveness, preferring allies with the same role.",
       "droploc": "Wild Hunt Reputation, Revered"
-
     },
 
     "Covenants": {

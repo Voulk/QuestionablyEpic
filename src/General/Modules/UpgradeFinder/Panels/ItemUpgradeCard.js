@@ -10,6 +10,12 @@ const useStyles = makeStyles({
   root: {
     minWidth: 250,
   },
+  dom: {
+    borderColor: "#05d102",
+    //backgroundColor: "#515751",
+    borderStyle: "solid",
+    minWidth: 250,
+  },
   downgrade: {
     minWidth: 250,
     backgroundColor: "#303030",
@@ -42,6 +48,7 @@ export default function ItemCard(props) {
   const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
   const itemDifferential = props.itemDifferential;
+  const hasDom = item.hasDomSocket;
   const gameType = useSelector((state) => state.gameType);
   const wowheadDomain = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
 
@@ -104,7 +111,7 @@ export default function ItemCard(props) {
 
   return (
     <Grid item xs={12} sm={12} md={12} lg={6} xl={4}>
-      <Card className={itemDifferential == 0 ? classes.downgrade : classes.root} variant="outlined">
+      <Card className={itemDifferential == 0 ? classes.downgrade : hasDom ? classes.dom : classes.root} variant="outlined">
         <Grid container display="inline-flex" wrap="nowrap" justify="space-between">
           <Grid item xs="auto">
             <CardContent

@@ -1,4 +1,4 @@
-import { getGenericEffect } from "./Generic/GenericEffectFormulas";
+import { getGenericEffect, getDominationGemEffect } from "./Generic/GenericEffectFormulas";
 import { getDruidLegendary } from "./Druid/DruidLegendaryFormulas";
 import { getDiscPriestLegendary } from "./Priest/DiscPriestLegendaryFormulas";
 import { getHolyPriestLegendary } from "./Priest/HolyPriestLegendaryFormulas";
@@ -44,6 +44,10 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0, userS
     if (effect.type === "special") {
       bonus_stats = getGenericEffect(effectName, player, contentType, itemLevel);
     } 
+    else if (effect.type === "domination gem") {
+      const effectRank = effect.rank;
+      bonus_stats = getDominationGemEffect(effectName, player, contentType, effectRank);
+    }
     else if (effectType === "spec legendary") {
       switch (player.spec) {
         case "Discipline Priest":
