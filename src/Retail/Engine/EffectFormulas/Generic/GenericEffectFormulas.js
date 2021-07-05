@@ -22,3 +22,20 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
 
   return bonus_stats;
 }
+
+export function getDominationGemEffect(effectName, player, contentType, rank) {
+  let bonus_stats = {};
+  let activeEffect = effectData.find((effect) => effect.name === effectName);
+
+  if (effectName === "Shard of Zed") {
+    const effect = activeEffect.effects[0];
+    const throughput = Math.round(getProcessedValue(effect.coefficient[rank], effect.table, 0, 1, false)) * effect.ppm * 5 * effect.expectedTargets[contentType] / 60
+    bonus_stats.hps = throughput;
+    bonus_stats.dps = throughput;
+
+  } else if (effectName === "Effect2") {
+
+  }
+
+  return bonus_stats;
+}

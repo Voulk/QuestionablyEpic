@@ -1,6 +1,7 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
 import { conduitDB, conduitRanks } from "../../../Databases/ConduitDB";
+import { dominationGemDB } from "../../../Databases/DominationGemDB";
 import { calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import Item from "../../../General/Modules/Player/Item";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
@@ -208,12 +209,14 @@ function processItem(line, player, contentType, type) {
   let levelOverride = 0; // A player can forgo the bonus_id system and override an items level if they wish by entering ilevel= at the end of an item.
   let craftedStats = [];
   let itemBonusStats = {}; // Bonus_stats that don't naturally come on the item. Crafting and "of the X" items are the primary example.
-  let gemID = 0; // currently unused.
+  let gemID = []; // Used for Domination sockets only (currently).
+  let gemString = "";
   let enchantID = 0; // currently unused.
   let missiveStats = [];
   let itemEffect = {}; // This is called automatically for everything except Legendaries.
   let itemEquipped = !line.includes("#");
   let bonusIDS = "";
+  
 
   // Build out our item information.
   // This is not the finest code in the land but it is effective at pulling the information we need.
@@ -229,7 +232,8 @@ function processItem(line, player, contentType, type) {
     else if (info.includes("bonus_id=")) {
       itemBonusIDs = info.split("=")[1].split("/");
       bonusIDS = itemBonusIDs.join(":");
-    } else if (info.includes("gem_id=")) gemID = parseInt(info.split("=")[1]);
+    } 
+    else if (info.includes("gem_id=")) gemID = info.split("=")[1].split("/");
     else if (info.includes("enchant_id=")) enchantID = parseInt(info.split("=")[1]);
     else if (info.includes("id=")) itemID = parseInt(info.split("=")[1]);
     else if (info.includes("drop_level=")) dropLevel = parseInt(info.split("=")[1]);
@@ -311,6 +315,14 @@ function processItem(line, player, contentType, type) {
   if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
   if (levelOverride !== 0) itemLevel = Math.min(499, levelOverride);
 
+  // Check Gems for Dom sockets
+  if (gemID.length > 0) {
+    gemID.forEach((gem) => {
+      const effect = checkIfDomGem(parseInt(gem));
+      gemString += gem + ":"
+      if (effect) itemEffect = effect;
+    })
+  }
 
   // Add the new item to our characters item collection.
   if (itemLevel > 60 && itemID !== 0 && getItem(itemID) !== "") {
@@ -321,6 +333,7 @@ function processItem(line, player, contentType, type) {
     item.active = itemEquipped || item.vaultItem;
     item.isEquipped = itemEquipped;
     item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, itemTertiary);
+    item.gemString = (gemString !== "") ? gemString.slice(0, -1) : "";
     if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
 
     item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");
@@ -333,6 +346,14 @@ function processItem(line, player, contentType, type) {
   } else {
     //console.log("Item Level out of range: " + itemLevel);
   }
+}
+
+function checkIfDomGem(id) {
+  let temp = dominationGemDB.filter(function (gem) {
+    return gem.gemID === id;
+  });
+  if (temp.length > 0 && 'effect' in temp[0]) return temp[0].effect;
+  else return null
 }
 
 function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) {
