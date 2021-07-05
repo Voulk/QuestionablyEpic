@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
 const getPVPItemLevel = (sourceID, difficulty) => {
   if (sourceID === -17) {
     return itemLevels.pvp[difficulty];
-  } else if (sourceID === -16) return 197;
+  } else if (sourceID === -16) return 203;
   else return -1;
 };
 
@@ -30,7 +30,7 @@ const pvpIcons = {
 const itemLevels = {
   raid: [187, 200, 213, 226],
   dungeon: [184, 184, 187, 190, 194, 194, 197, 200, 200, 200, 203, 203, 207, 207, 207, 210],
-  pvp: [200, 207, 213, 220, 226, 226],
+  pvp: [220, 226, 233, 240, 246, 246],
 };
 
 export default function PvPGearContainer(props) {

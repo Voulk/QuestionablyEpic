@@ -477,6 +477,7 @@
       "2425": "Stone Legion Generals",
       "2424": "Sire Denathrius",
       "999": "BoE Trash Drops",
+      "998": "BoE Trash Drops",
       "SanctumOfDomination": "SanctumOfDomination",
       "2435": "The Tarragrue",
       "2442": "The Eye of the Jailer",
@@ -578,7 +579,8 @@
       "2430": "Valinor",
       "2431": "Mortanis",
       "2432": "Oranomonos",
-      "2433": "Nurgash"
+      "2433": "Nurgash",
+      "2456": "Mor'geth"
     },
 
     "SimCInput": {

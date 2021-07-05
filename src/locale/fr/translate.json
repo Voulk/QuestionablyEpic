@@ -393,6 +393,7 @@
       "2447": "Fatescribe Roh-Kalo",
       "2440": "Kel'Thuzad",
       "2441": "Sylvanas Coursevent",
+      "998": "BoE Trash Drops",
       "Tazavesh Bosses": "",
       "Tazavesh": {
         "2437": "Zo’phex la sentinelle",
@@ -434,7 +435,8 @@
       "2430": "Valinor",
       "2431": "Mortanis",
       "2432": "Oranomonos",
-      "2433": "Nurgash"
+      "2433": "Nurgash",
+      "2456": "Mor'geth"
     },
 
     "SimCInput": {

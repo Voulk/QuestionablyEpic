@@ -117,14 +117,15 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, slot) {
   const bossID = itemSource.encounterId;
 
   if (instanceID === 1193) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
-  if (instanceID === 1192) itemLevel = 207;
+  else if (instanceID === 1192 && bossID !== 2456) itemLevel = 207; // The 9.0 world bosses drop 207 gear.
+  else if (instanceID === 1192 && bossID === 2456) itemLevel = 233; // The 9.1 world boss drops 233 gear.
   // World Bosses
   else if (instanceID === -1) itemLevel = itemLevels.dungeon[playerSettings.dungeon];
-  else if (instanceID === -16) itemLevel = 197;
+  else if (instanceID === -16) itemLevel = 203;
   else if (instanceID === -17) {
     // Conquest
     itemLevel = itemLevels.pvp[playerSettings.pvp];
-    if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
+    //if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
   }
   if (bossID === 2440 || bossID === 2441) itemLevel += 7; // Kel'Thuzad / Sylvanus
 
