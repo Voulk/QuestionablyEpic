@@ -131,7 +131,8 @@ export function filterItemListBySource(itemList, sourceInstance, sourceBoss, lev
     // console.log(item);
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
-    if (itemEncounter == 2425 || itemEncounter == 2424) expectedItemLevel += 7;
+    if (itemEncounter == 2440 || itemEncounter == 2441) expectedItemLevel += 7;
+    if (itemEncounter == 2456) expectedItemLevel = 233;
     else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
 
     //console.log(expectedItemLevel);
@@ -540,7 +541,6 @@ function compileStats(stats, bonus_stats) {
   
 }
 
-// 141 Hallowed Garments
 function applyBCStatMods(spec, setStats) {
       // This can be properly formalized.
   if (spec === "Holy Paladin BC") {
@@ -627,115 +627,6 @@ function sumObjectsByKey(...objs) {
   }, {});
 }
 
-
-// --------------------------------
-// ----- Deprecated Functions -----
-// --------------------------------
-// Will be removed by the end of April.
-
-// Builds a stat string out of an items given stats and effect.
-// Stats should be listed in order of quantity.
-/**
- * 
- * @deprecated
- */
- export function buildStatStringOld(stats, effect, lang = "en") {
-  //const { t, i18n } = useTranslation();
-  let statString = "";
-  let statsList = [
-    { key: "haste", val: stats["haste"] },
-    { key: "crit", val: stats["crit"] },
-    { key: "mastery", val: stats["mastery"] },
-    { key: "versatility", val: stats["versatility"] },
-  ];
-
-  statsList = statsList.sort(function (a, b) {
-    return b.val - a.val;
-  });
-
-  for (var ind in statsList) {
-    let statKey = statsList[ind]["key"];
-
-    statString +=
-      statsList[ind]["val"] > 0
-        ? statsList[ind]["val"] +
-          " " +
-          translatedStat[statKey][lang] +
-          //correctCasing(statsList[ind]["key"]) +
-          " / " //t("stats." + statsList[ind]["key"])
-        : "";
-  }
-
-  if (effect !== "") statString += "Effect" + " / "; // t("itemTags.effect")
-
-  return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
-}
-
-/**
- * 
- * @param {*} id 
- * @returns A specific items base item level.
- * 
- * @deprecated and will be removed at a later date. Functions should use getItemProp instead. 
- */
- export function getItemLevel(id) {
-  console.warn("GetItemLevel is now deprecated");
-  const item = getItem(id);
-
-  if (item !== "") return item.itemLevel;
-  else {
-    reportError(this, "ItemUtilities", "Item Level not found or item missing", id);
-    return -2;
-  }
-}
-
-// Returns the selected items effect.
-// No need for error checking here since returning no effect is an acceptable and common result.
-/**
- * 
- * @param {*} id 
- * @returns 
- * 
- * @deprecated
- */
- export function getItemEffect(id) {
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
-
-  if (temp.length > 0 && "effect" in temp[0]) return temp[0].effect;
-  else return "";
-}
-
-/**
- * 
- * @deprecated
- */
- export function getItemSlot(id) {
-  console.warn("GetItemSlot is now deprecated");
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
-
-  if (temp.length > 0) return temp[0].slot;
-  else return 0;
-}
-
-// Returns a translated item name based on an ID.
-/**
- * 
- * @param {*} id 
- * @returns 
- * @deprecated
- */
-export function getItemSubclass(id) {
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
-
-  if (temp.length > 0 && "itemSubClass" in temp[0]) return temp[0].itemSubClass;
-  else return "";
-}
 
 
 

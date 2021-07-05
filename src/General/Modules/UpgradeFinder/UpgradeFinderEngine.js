@@ -117,14 +117,15 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, slot) {
   const bossID = itemSource.encounterId;
 
   if (instanceID === 1193) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
-  if (instanceID === 1192) itemLevel = 207;
+  else if (instanceID === 1192 && bossID !== 2456) itemLevel = 207; // The 9.0 world bosses drop 207 gear.
+  else if (instanceID === 1192 && bossID === 2456) itemLevel = 233; // The 9.1 world boss drops 233 gear.
   // World Bosses
   else if (instanceID === -1) itemLevel = itemLevels.dungeon[playerSettings.dungeon];
-  else if (instanceID === -16) itemLevel = 197;
+  else if (instanceID === -16) itemLevel = 203;
   else if (instanceID === -17) {
     // Conquest
     itemLevel = itemLevels.pvp[playerSettings.pvp];
-    if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
+    //if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
   }
   if (bossID === 2440 || bossID === 2441) itemLevel += 7; // Kel'Thuzad / Sylvanus
 
@@ -155,14 +156,23 @@ function buildItemPossibilities(player, contentType, playerSettings) {
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
       const itemSource = rawItem.sources[0];
 
-      if (itemSource.instanceId === 1190) {
+      if (itemSource.instanceId === 1193) { // Sanctum of Domination
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const itemLevel = getSetItemLevel(itemSource, playerSettings, x, rawItem.slot);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0]);
           //console.log("Difficulty: " + playerSettings.raid[x] + ". Item level: " + itemLevel)
           itemPoss.push(item);
         }
-      } else {
+      }
+      else if (itemSource.instanceId === 1194) {
+        // Taz. This will be moved to the Mythic+ section in 9.2 but deserves a separate section for now.
+        const item226 = buildItem(player, contentType, rawItem, 226, rawItem.sources[0]);
+        itemPoss.push(item226);
+
+        const item233 = buildItem(player, contentType, rawItem, 233, rawItem.sources[0]);
+        itemPoss.push(item233);
+      }
+      else {
         const itemLevel = getSetItemLevel(itemSource, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0]);
 

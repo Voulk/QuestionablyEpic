@@ -391,7 +391,19 @@
       "2446": "Wächter der Ersten",
       "2447": "Fatescribe Roh-Kalo",
       "2440": "Kel'Thuzad",
-      "2441": "Sylvanas Windläufer"
+      "2441": "Sylvanas Windläufer",
+      "998": "BoE Trash Drops",
+      "Tazavesh Bosses": "",
+      "Tazavesh": {
+        "2437": "Zo'phex der Wächter",
+        "2454": "Die Große Menagerie",
+        "2436": "Postraumfiasko",
+        "2452": "Myzas Oase",
+        "2451": "So'azmi",
+        "2448": "Hylbrand",
+        "2449": "Zeitkäpt'n Hakenschwanz",
+        "2455": "So'leah"
+      }
     },
 
     "DungeonNames": {
@@ -432,7 +444,8 @@
       "2430": "Valinor",
       "2431": "Mortanis",
       "2432": "Oranomonos",
-      "2433": "Nurgash"
+      "2433": "Nurgash",
+      "2456": "Mor'geth"
     },
 
     "SimCInput": {

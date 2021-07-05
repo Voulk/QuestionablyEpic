@@ -5,6 +5,7 @@ export const instanceDB = {
   "-1": "Dungeons",
   "1190": "Castle Nathria",
   "1192": "World Bosses",
+  "1193": "Sanctum of Domination",
 };
 
 export const encounterDB = {
@@ -140,8 +141,9 @@ export const encounterDB = {
 
   /* ---------------------------------------- World Bosses ---------------------------------------- */
   1192: [
+    2456, // Mor'geth, Tormentor of the Damned (9.1)
     2430, // "Valinor, the Light of Eons",
-    2431, //"Mortanis",
+    2431, // "Mortanis",
     2432, // "Oranomonos the Everbranching",
     2433, //"Nurgash Muckformed",
   ],
@@ -158,6 +160,7 @@ export const encounterDB = {
     2447, // Fatescribe Roh-Kalo
     2440, // Kel'Thuzad
     2441, // Sylvanas Windrunner
+    999, // BoEs,
   ],
 
   /* ------------------------------------------ Dungeons ------------------------------------------ */
@@ -170,6 +173,17 @@ export const encounterDB = {
     1187, //"Theater of Pain",
     1188, //"De Other Side",
     1189, //"Sanguine Depths",
+  ],
+  /* ---------------------------------- Tazavesh, The Vieled City --------------------------------- */
+  1194: [
+    2437, // Zo'phex the Sentinel,
+    2454, // The Grand Menagerie
+    2436, // Mailroom Mayhem
+    2452, // Myza's Oasis
+    2451, // So'azmi
+    2448, // Hylbrande
+    2449, // Timecap'n Hooktail
+    2455, // So'leah
   ],
 
   /* --------------------------------------------- PVP -------------------------------------------- */
