@@ -17,6 +17,7 @@ class Item {
     this.bonusIDS = bonusIDS || "";
     this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot"), getItemAllocations(id), tertiary);
     this.effect = getItemProp(id, "effect");
+    this.hasDomSocket = (getItemProp(id, "socketType") === "Domination");
     //console.log("Setting level to " + level);
   }
 
@@ -36,6 +37,7 @@ class Item {
   vaultItem = false;
   isEquipped = false;
   source = {};
+  hasDomSocket = false;
 
   // The stats on the item. These should already be adjusted for item level.
   // HPS is a calculated field. It includes any item effects that provide healing or absorbs.
