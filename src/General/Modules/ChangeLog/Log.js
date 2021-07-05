@@ -10,6 +10,16 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 5,
+    date: "5th July",
+    changes: [
+      "Launched the 9.1 Upgrade Finder.",
+      "Added a back button to the Retail upgrade Finder. BC already had it.",
+      "Bugfix: Crafted items should no longer import with more stats than they should.",
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 4,
     date: "4th July",
     changes: [
