@@ -105,12 +105,24 @@ class ItemSet {
     }
 
     // Domination Socket Code
-    let unholyGems = this.effectList.filter(function (effect) {
+    const unholyGems = this.effectList.filter(function (effect) {
       return effect.type === "domination gem" && effect.gemColor === "Unholy";
     });
+    const frostGems = this.effectList.filter(function (effect) {
+      return effect.type === "domination gem" && effect.gemColor === "Frost";
+    });
+    const bloodGems = this.effectList.filter(function (effect) {
+      return effect.type === "domination gem" && effect.gemColor === "Blood";
+    });
+
     if (unholyGems > 3) this.effectList.push({"type": "domination gem", "name": "Chaos Bane"})
+    else if (frostGems > 3) this.effectList.push({"type": "domination gem", "name": "Winds of Winter"})
+    else if (bloodGems > 3) this.effectList.push({"type": "domination gem", "name": "Blood Link"})
+
 
     console.log("UNHOLY GEMS" + unholyGems.length);
+    console.log("FROST GEMS" + frostGems.length);
+    console.log("BLOOD GEMS" + bloodGems.length);
 
     // -----------------
     this.setStats = setStats;

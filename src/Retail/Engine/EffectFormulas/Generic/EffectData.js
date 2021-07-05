@@ -20,7 +20,7 @@ export const effectData = [
     // DOMINATION SOCKETS
     {
         /* ---------------------------------------------------------------------------------------------- */
-        /*                                        Shards of Zed                                    */
+        /*                                            Shards of Zed                                       */
         /* ---------------------------------------------------------------------------------------------- */
         
         name: "Shard of Zed", // Chance on cast to give a target an Unholy Aura, leeching from nearby enemies for 10s.
@@ -84,4 +84,103 @@ export const effectData = [
           },
         ],
       },
+      {
+        /* ---------------------------------------------------------------------------------------------- */
+        /*                                          Shards of Cor                                         */
+        /* ---------------------------------------------------------------------------------------------- */
+        
+        name: "Shard of Cor", // Your damage is increased by 1.5% for 20s after attacking an enemy you have not yet damaged.
+        effects: [
+          {
+            coefficient: [], 
+            duration: 20,
+            table: -1,
+            uptime: {Raid: 0.2, Dungeon: 0.45}, // TODO
+          },
+        ],
+      },
+      {
+        /* ---------------------------------------------------------------------------------------------- */
+        /*                                            Shards of Tel                                       */
+        /* ---------------------------------------------------------------------------------------------- */
+        
+        name: "Shard of Tel", // Your critical hits cause their target to absorb the next X damage dealt to them. 
+        effects: [
+          {
+            coefficient: [0.007334, 0.009135, 0.010979, 0.012824, 0.014668], 
+            table: -6,
+            ppm: 0.95, // 1s ICD
+            expectedWastage: 0.1 // This is reasonably low since the absorb lasts 6 seconds and is small enough to be used first.
+          },
+        ],
+      },
+      {
+        /* ---------------------------------------------------------------------------------------------- */
+        /*                                            Shards of Kyr                                       */
+        /* ---------------------------------------------------------------------------------------------- */
+        
+        name: "Shard of Kyr", // Gain an absorb every 5 seconds, stacking up to a cap. 
+        effects: [
+          {
+            coefficient: [0.028306, 0.035383, 0.04246, 0.049536, 0.056613], 
+            table: -6,
+            ppm: 12,
+          },
+        ],
+      },
+      {
+        /* ---------------------------------------------------------------------------------------------- */
+        /*                                         Winds of Winter                                        */
+        /* ---------------------------------------------------------------------------------------------- */
+        
+        name: "Winds of Winter", // 6% of your critical hits and healing are stored. You get an absorb and deal damage very 20s based on what is stored.
+        effects: [
+          {
+            coefficient: [], 
+            table: -6,
+            stored: 0.06,
+            wastage: 0.1
+          },
+        ],
+      },
+      {
+        /* ---------------------------------------------------------------------------------------------- */
+        /*                                            Shards of Bek                                       */
+        /* ---------------------------------------------------------------------------------------------- */
+        
+        name: "Shard of Bek", // Your damage is increased by 1.5% when you have 50% or more health than your target
+        effects: [
+          {
+            coefficient: [], 
+            table: -6,
+            uptime: 0.5
+          },
+        ],
+      },
+      {
+        /* ---------------------------------------------------------------------------------------------- */
+        /*                                            Shards of Jas                                       */
+        /* ---------------------------------------------------------------------------------------------- */
+        
+        name: "Shard of Jas", // Incoming healing you receive is increased by 0.7%. Your maximum health is increased by 300.
+        effects: [
+          {
+            coefficient: [], 
+            table: -6,
+          },
+        ],
+      },
+      {
+        /* ---------------------------------------------------------------------------------------------- */
+        /*                                            Shards of Rev                                       */
+        /* ---------------------------------------------------------------------------------------------- */
+        
+        name: "Shard of Rev", // Leech
+        effects: [
+          {
+            coefficient: [0.315789, 0.389474, 0.473684, 0.547368, 0.631579], 
+            table: -1,
+          },
+        ],
+      }
 ]
