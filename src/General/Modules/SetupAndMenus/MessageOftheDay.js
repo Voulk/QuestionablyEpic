@@ -4,9 +4,8 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay = [
-    "- Expect ALL information to change as blizzard are making rapid hotfixes.",
-    "- There are two very overtuned trinkets. These are likely to be nerfed before the raid opens.",
-    "- The Upgrade Finder will return later this week.",
+    "- 9.1: Blizzard continue to make hotfixes. QE Live will be updated quickly in response to any changes.",
+    "- 9.1: There are two very overtuned trinkets. These are likely to be nerfed before the raid opens.",
 ];
 
   return (

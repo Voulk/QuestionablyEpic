@@ -14,7 +14,7 @@ import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngi
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
 const softSlice = 3000;
-const DR_CONST = 0.00346669230769231;
+const DR_CONST = 0.00377669230769231;
 const DR_CONSTLEECH = 0.04322569230769231;
 
 
@@ -29,10 +29,7 @@ export function expensive(time) {
 // Unfortunately we aren't able to pass objects through to our worker. This recreates our player object since we'll need it for effect formulas. 
 function setupPlayer(player, contentType, castModel) {
 
-  //console.log(player);
   let newPlayer = new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights);
-  //newPlayer = Object.assign(newPlayer, player);
-  //console.log("NEW PLAYER");
   newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
 
@@ -162,9 +159,6 @@ function createSets(itemList, rawWepCombos) {
     }
   }
   slotLengths.Weapon = Object.keys(wepCombos).length;
-
-  //console.log(JSON.stringify(slotLengths));
-  // console.log(splitItems.Finger);
 
   for (var head = 0; head < slotLengths.Head; head++) {
     let softScore = { head: splitItems.Head[head].softScore };
@@ -377,7 +371,9 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   // Sockets
   bonus_stats[highestWeight] += 16 * builtSet.setSockets;
   enchants["Gems"] = highestWeight;
-  //console.log("Sockets added : " + 16 * builtSet.setSockets + " to " + highestWeight);
+
+  // This might change later, but is a way to estimate the value of a domination socket on a piece in the Upgrade Finder.
+  if (userSettings.dominationSockets === "Upgrade Finder") bonus_stats.hps += builtSet.domSockets * 200;
 
   let effectStats = [];
   effectStats.push(bonus_stats);

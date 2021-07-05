@@ -208,7 +208,10 @@ export default function UpgradeFinderResults(props) {
   const upgradeFinderResultsRetail = () => {
     return (
       <div className={classes.header}>
-        <Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
+        <Button color="primary" variant="outlined" onClick={() => returnToSetup()} style={{ float: "left", position: "fixed" }}>
+          {t("UpgradeFinder.BackButton")}
+        </Button>
+        <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>
           {t("UpgradeFinder.Header") + " - " + result.contentType}
         </Typography>
         <AppBar

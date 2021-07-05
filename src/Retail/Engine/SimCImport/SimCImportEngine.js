@@ -5,7 +5,6 @@ import { dominationGemDB } from "../../../Databases/DominationGemDB";
 import { calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import Item from "../../../General/Modules/Player/Item";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
-import { isConstructSignatureDeclaration } from "typescript";
 
 const stat_ids = {
   36: "haste",
@@ -251,8 +250,6 @@ function processItem(line, player, contentType, type) {
   for (var k = 0; k < itemBonusIDs.length; k++) {
     let bonus_id = itemBonusIDs[k].toString();
     let idPayload = bonus_IDs[bonus_id];
-    //console.log(JSON.stringify(idPayload));
-    //console.log(bonus_id);
     if (idPayload !== undefined) {
       if ("level" in idPayload) {
         itemLevel += idPayload["level"];
@@ -307,10 +304,10 @@ function processItem(line, player, contentType, type) {
       }
     }
     // Missives
-    else if (bonus_id === "6647") missiveStats.push("crit");
-    else if (bonus_id === "6648") missiveStats.push("mastery");
-    else if (bonus_id === "6649") missiveStats.push("haste");
-    else if (bonus_id === "6650") missiveStats.push("versatility");
+    else if (bonus_id === "6647" && craftedStats.length === 0) missiveStats.push("crit");
+    else if (bonus_id === "6648" && craftedStats.length === 0) missiveStats.push("mastery");
+    else if (bonus_id === "6649" && craftedStats.length === 0) missiveStats.push("haste");
+    else if (bonus_id === "6650" && craftedStats.length === 0) missiveStats.push("versatility");
   }
   if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
   if (levelOverride !== 0) itemLevel = Math.min(499, levelOverride);
@@ -386,6 +383,7 @@ function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) 
   }
 
   crafted_stats.forEach((stat) => {
+
     bonus_stats[stat_ids[stat]] = allocation;
   });
   return bonus_stats;
