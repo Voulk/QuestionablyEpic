@@ -290,6 +290,7 @@ function processItem(line, player, contentType, type) {
         else if (bonus_id == 7239) itemLevel = 181;
         else if (bonus_id == 7240) itemLevel = 200;
         else if (bonus_id == 7241) itemLevel = 180;
+        else if (bonus_id == 7461) itemLevel = 230;
       } else if ("name_override" in idPayload) {
         // Legendaries
 
@@ -310,6 +311,7 @@ function processItem(line, player, contentType, type) {
   if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
   if (levelOverride !== 0) itemLevel = Math.min(499, levelOverride);
 
+
   // Add the new item to our characters item collection.
   if (itemLevel > 60 && itemID !== 0 && getItem(itemID) !== "") {
     let itemAllocations = getItemAllocations(itemID, missiveStats);
@@ -318,8 +320,8 @@ function processItem(line, player, contentType, type) {
     item.vaultItem = type === "Vault";
     item.active = itemEquipped || item.vaultItem;
     item.isEquipped = itemEquipped;
-    if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
     item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, itemTertiary);
+    if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
 
     item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");
     if (item.effect.type && item.effect.type === "spec legendary") item.uniqueEquip = "legendary";
@@ -338,19 +340,26 @@ function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) 
   let bonus_stats = {};
 
   if (["Chest", "Head", "Legs"].includes(slot)) {
-    if (itemLevel >= 168) allocation = 50;
+    if (itemLevel >= 230) allocation = 72;
+    else if (itemLevel >= 168) allocation = 50;
     else if (itemLevel >= 151) allocation = 40;
     else if (itemLevel >= 129) allocation = 24;
+
   } else if (["Shoulder", "Waist", "Hands", "Feet"].includes(slot)) {
-    if (itemLevel >= 168) allocation = 37;
+    if (itemLevel >= 230) allocation = 54;
+    else if (itemLevel >= 168) allocation = 37;
     else if (itemLevel >= 151) allocation = 29;
     else if (itemLevel >= 129) allocation = 18;
+
   } else if (["Back", "Wrist"].includes(slot)) {
-    if (itemLevel >= 168) allocation = 29;
+    if (itemLevel >= 230) allocation = 41;
+    else if (itemLevel >= 168) allocation = 29;
     else if (itemLevel >= 151) allocation = 22;
     else if (itemLevel >= 129) allocation = 12;
+
   } else if (["Neck", "Finger"].includes(slot)) {
-    if (itemLevel >= 168) allocation = 34;
+    if (itemLevel >= 230) allocation = 63;
+    else if (itemLevel >= 168) allocation = 34;
     else if (itemLevel >= 151) allocation = 29;
     else if (itemLevel >= 117) allocation = 24;
   }
@@ -366,7 +375,10 @@ function checkDefaultSocket(id) {
     return item.id === id;
   });
 
-  if (temp.length > 0) return "socketInfo" in temp[0];
+  if (temp.length > 0) {
+    const socketType = temp[0].socketType;
+    return socketType == "Prismatic";
+  }
   else return 0;
 }
 

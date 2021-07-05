@@ -1,4 +1,5 @@
-import { convertPPMToUptime } from "../EffectUtilities";
+import { convertPPMToUptime, getProcessedValue } from "../EffectUtilities";
+import { effectData} from "./EffectData";
 
 /* ---------------------------------------------------------------------------------------------- */
 /*                                         Generic Effects                                        */
@@ -7,11 +8,15 @@ import { convertPPMToUptime } from "../EffectUtilities";
 // Examples include the legendary cloak, Azshara's Staff, most Crucible of Storms items and so forth.
 // Shadowlands is light on them so far but we can expect to see more as the expansion progresses.
 
-export function getGenericEffect(effectName, player, contentType) {
+export function getGenericEffect(effectName, player, contentType, itemLevel = 0) {
   let bonus_stats = {};
+  let activeEffect = effectData.find((effect) => effect.name === effectName);
 
-  if (effectName === "Ashjrakamas") {
-    bonus_stats.intellect = 0;
+  if (effectName === "Passable Credentials") {
+    const effect = activeEffect.effects[0];
+
+    bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+
   } else if (effectName === "Effect2") {
   }
 

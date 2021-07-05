@@ -1,4 +1,4 @@
-import { convertPPMToUptime, getScalarValue } from "../EffectUtilities";
+import { convertPPMToUptime, getProcessedValue } from "../EffectUtilities";
 import { trinket_data } from "./TrinketData";
 import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
 // import { STAT } from "../../../../General/Engine/STAT";
@@ -225,9 +225,12 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /*
     Eventually we'll include mana in bonus_stats and calculate it at the end. Until then, we'll auto-convert to HPS.
     */
+    const manaPotionReturn = 10000;
+    const potionsUsed = player.getFightLength(contentType) > 360 ? 2 : 1; 
+    bonus_stats.hps = manaPotionReturn * potionsUsed * player.getSpecialQuery("OneManaHealing", contentType) / player.getFightLength(contentType) * 0.8;
 
     /* ------------------------------------- Health Potion Bonus ------------------------------------ */
-    bonus_stats.hps = ((10000 * 0.4) / player.getFightLength(contentType)) * 0.9; // 0.9 represents overhealing. We'll capture this better later.
+    bonus_stats.hps += ((10000 * 0.4) / player.getFightLength(contentType)) * 0.9; // 0.9 represents overhealing. We'll capture this better later.
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -691,7 +694,4 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
   return Math.round(estHPS);
 }
 
-export function getProcessedValue(coefficient, table, itemLevel, efficiency = 1, floor=true) {
-  if (floor) return Math.floor(coefficient * getScalarValue(table, itemLevel) * efficiency);
-  else return coefficient * getScalarValue(table, itemLevel) * efficiency;
-}
+

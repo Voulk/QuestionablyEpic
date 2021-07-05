@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Paper, Typography, Grid } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { itemDB } from "../../../Databases/ItemDB";
@@ -10,6 +10,7 @@ import BCChart from "./Charts/BCChart";
 import HelpText from "../SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
+import ReactGA from "react-ga";
 // import Settings from "../Settings/Settings";
 // import userSettings from "../Settings/SettingsObject";
 
@@ -82,13 +83,13 @@ const getHighestTrinketScore = (db, trinket, gameType) => {
 // };
 
 export default function TrinketAnalysis(props) {
-  /*useEffect(() => {
+  useEffect(() => {
       ReactGA.pageview(window.location.pathname + window.location.search);
-    }, []); */
+    }, []);
 
   const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
-  const itemLevels = [187, 194, 200, 207, 213, 220, 226, 233, 239, 246, 252, 259];
+  const itemLevels = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
     (key) =>
