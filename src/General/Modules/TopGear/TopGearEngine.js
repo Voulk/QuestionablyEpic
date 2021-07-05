@@ -379,6 +379,9 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   enchants["Gems"] = highestWeight;
   //console.log("Sockets added : " + 16 * builtSet.setSockets + " to " + highestWeight);
 
+  // This might change later, but is a way to estimate the value of a domination socket on a piece in the Upgrade Finder.
+  if (userSettings.dominationSockets === "Upgrade Finder") bonus_stats.hps += builtSet.domSockets * 200;
+
   let effectStats = [];
   effectStats.push(bonus_stats);
   for (var x = 0; x < itemSet.effectList.length; x++) {

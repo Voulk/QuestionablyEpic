@@ -96,7 +96,7 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
 
   //console.log(wepList);
   //console.log(baseItemList);
-
+  userSettings.dominationSockets = "Upgrade Finder";
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
 
   for (var x = 0; x < itemPoss.length; x++) {

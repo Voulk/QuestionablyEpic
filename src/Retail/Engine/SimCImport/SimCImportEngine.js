@@ -250,8 +250,6 @@ function processItem(line, player, contentType, type) {
   for (var k = 0; k < itemBonusIDs.length; k++) {
     let bonus_id = itemBonusIDs[k].toString();
     let idPayload = bonus_IDs[bonus_id];
-    //console.log(JSON.stringify(idPayload));
-    //console.log(bonus_id);
     if (idPayload !== undefined) {
       if ("level" in idPayload) {
         itemLevel += idPayload["level"];
@@ -311,7 +309,6 @@ function processItem(line, player, contentType, type) {
     else if (bonus_id === "6649" && craftedStats.length === 0) missiveStats.push("haste");
     else if (bonus_id === "6650" && craftedStats.length === 0) missiveStats.push("versatility");
   }
-  console.log(craftedStats);
   if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
   if (levelOverride !== 0) itemLevel = Math.min(499, levelOverride);
 
