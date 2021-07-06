@@ -14,6 +14,7 @@ export const changeLog = [
     date: "6th July",
     changes: [
       "Tome of Insight / First Class Healing Distributor were nerfed in game, and this is live in all modules.",
+      "Bugfix: The Tazavesh int proc necks will now import at the correct item level."
     ],
   },
   {
