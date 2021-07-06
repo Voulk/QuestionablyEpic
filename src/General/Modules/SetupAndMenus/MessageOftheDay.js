@@ -4,8 +4,8 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay = [
+    "- 9.1: Tome of Insight / First Class Healing Distributor nerfs are included in all modules.",
     "- 9.1: Blizzard continue to make hotfixes. QE Live will be updated quickly in response to any changes.",
-    "- 9.1: There are two very overtuned trinkets. These are likely to be nerfed before the raid opens.",
 ];
 
   return (

@@ -159,6 +159,7 @@ describe("Titanic Ocular Gland", () => {
     });
 });
 
+/*
 describe("First Class Healing Distributor", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = trinket_data.find((trinket) => trinket.name === "First Class Healing Distributor");
@@ -184,7 +185,7 @@ describe("First Class Healing Distributor", () => {
   
         expect(getProcessedValue(effect2.coefficient, effect2.table, level)).toBe(expectedResult);
     });
-});
+}); */
 
 /*
 describe("Cabalists Hymnal Data Check", () => {
@@ -287,6 +288,7 @@ describe("Sunblood Amethyst", () => {
     });
 });
 
+/*
 describe("Tome of Insight", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = trinket_data.find((trinket) => trinket.name === "Tome of Insight");
@@ -299,7 +301,7 @@ describe("Tome of Insight", () => {
   
         expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
     });
-});
+}); */
 
 describe("Spiritual Alchemy Stone Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
