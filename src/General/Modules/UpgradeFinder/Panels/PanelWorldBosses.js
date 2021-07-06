@@ -30,8 +30,8 @@ export default function WorldBossGearContainer(props) {
             <Grid item>
               <div
                 style={{
-                  width: 175,
-                  height: 181,
+                  width: 94,
+                  height: 100,
                   paddingLeft: 8,
                   backgroundImage: `url(${UpgradeFinderBossImages(key)})`,
                   backgroundRepeat: "no-repeat",

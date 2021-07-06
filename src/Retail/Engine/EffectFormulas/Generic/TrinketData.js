@@ -887,12 +887,12 @@ export const trinket_data = [
     effects: [
       {
         /* ----------------------------------------- Healing Portion ---------------------------------------- */
-        coefficient: 32.7898,
+        coefficient: 19.081795,
         table: -8,
-        efficiency: 0.6, // The expected overhealing on this trinket is very high.
+        efficiency: 0.48, // The expected overhealing on this trinket is very high.
         ppm: 3,
         targets: { Raid: 4.2, Dungeon: 2.9 }, // 8 yard range
-        meteor: 0.15, // TODO: Confirm
+        meteor: 0.15,
       },
       {
         /* --------------------------------------- Haste Portion --------------------------------------- */
@@ -930,7 +930,7 @@ export const trinket_data = [
     name: "Tome of Insight",
     effects: [
       {
-        coefficient: 1.546671, // The spell data also has a 1.679526 (-7) coefficient that is unused.
+        coefficient: 0.897, // The spell data also has a 1.679526 (-7) coefficient that is unused. Was previously 1.546671
         table: -7,
         duration: 20,
         ppm: 2,
