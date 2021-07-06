@@ -58,12 +58,34 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
   else if (effectName === "Blood Link") {
     const effect = activeEffect.effects[0];
     const value = Math.round(getProcessedValue(effect.coefficient, effect.table, 174, 1, false)) * player.getStatPerc("Vers") * player.getStatPerc("Crit")
-    console.log("Raw: " + getProcessedValue(effect.coefficient, effect.table, 174, 1, false));
     bonus_stats.hps = value * effect.ppm * (1 - effect.expectedOverhealing) * player.getStatPerc("Vers") / 60; // The healing effect basically scales with Vers twice.
     bonus_stats.dps = value * effect.ppm / 60;
-    console.log(bonus_stats.hps);
 
   }
+
+  else if (effectName === "Winds of Winter") {
+    // This requires a specific log query, so is using close-to-accurate placeholders for now.
+    const effect = activeEffect.effects[0];
+    let playerCrit = player.getStatPerc("Crit") - 1; 
+    if (player.getSpec() === "Holy Paladin") playerCrit += (0.2*20/120 + 0.2*3/120);
+    const critHealingPerc = ((playerCrit * 2) / (1 - playerCrit + playerCrit * 2));
+    
+    bonus_stats.dps = player.getStatPerc("Vers") * critHealingPerc * 0.06 * effect.specOvercap[player.getSpec()] * effect.specAbilitiesThatWork[player.getSpec()] * (player.getRawHPS(contentType) + player.getDPS(contentType));
+    bonus_stats.hps = bonus_stats.dps;
+  }
+  else if (effectName === "Chaos Bane") {
+    // This requires a specific log query, so is using close-to-accurate placeholders for now.
+    const stackingEffect = activeEffect.effects[0];
+    const bigProc = activeEffect.effects[1];
+
+    const stackingIntGain = getProcessedValue(stackingEffect.coefficient, stackingEffect.table, 174, 1, true)
+    const bigProcIntGain = getProcessedValue(bigProc.coefficient, bigProc.table, 174, 1, true)
+
+    const intGain = (14 / 2 * stackingIntGain) + (bigProcIntGain * 15 / (60 / stackingEffect.ppm * 15))
+    
+    bonus_stats.intellect = intGain;
+  }
+
 
   return bonus_stats;
 }

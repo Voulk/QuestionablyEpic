@@ -136,8 +136,10 @@ export const effectData = [
         name: "Winds of Winter", // 6% of your critical hits and healing are stored. You get an absorb and deal damage very 20s based on what is stored.
         effects: [
           {
-            coefficient: [], 
-            table: -6,
+            coefficient: 7.44707, // The coefficient is for the maximum amount stored on a crit.
+            table: -8,
+            specOvercap: {"Restoration Druid": 0.94, "Holy Paladin": 0.6, "Mistweaver Monk": 0.85, "Restoration Shaman": 0.94, "Holy Priest": 0.75, "Discipline Priest": 0.7},
+            specAbilitiesThatWork: {"Restoration Druid": 0.85, "Holy Paladin": 0.6, "Mistweaver Monk": 1, "Restoration Shaman": 0.57, "Holy Priest": 0.94, "Discipline Priest": 0.26}, // Winds of Winter doesn't work on multiple abilities in the game. Disc and Holy Paladin are penalized most heavily.
             stored: 0.06,
             wastage: 0.1
           },

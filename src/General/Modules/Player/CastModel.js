@@ -55,6 +55,7 @@ class CastModel {
     this.fightInfo = {
       hps: 10200,
       rawhps: 12020,
+      dps: 1000,
       fightLength: 340,
       reportID: "Default",
       bossName: "Default",
