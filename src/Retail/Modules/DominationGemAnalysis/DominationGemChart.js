@@ -122,11 +122,11 @@ export default class DomChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          <Bar dataKey={0} fill={"#610167"} stackId="a" />
-          <Bar dataKey={1} fill={"#83018b"} stackId="a" />
-          <Bar dataKey={2} fill={"#a601b0"} stackId="a" />
-          <Bar dataKey={3} fill={"#cb01d7"} stackId="a" />
-          <Bar dataKey={4} fill={"#f100ff"} stackId="a" />
+          <Bar dataKey={0} fill={"#208c81"} stackId="a" />
+          <Bar dataKey={1} fill={"#2aa497"} stackId="a" />
+          <Bar dataKey={2} fill={"#34bdad"} stackId="a" />
+          <Bar dataKey={3} fill={"#3ed6c4"} stackId="a" />
+          <Bar dataKey={4} fill={"#49f0db"} stackId="a" />
 
         </BarChart>
       </ResponsiveContainer>

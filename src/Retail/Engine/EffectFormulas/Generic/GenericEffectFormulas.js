@@ -55,5 +55,15 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
 
   }
 
+  else if (effectName === "Blood Link") {
+    const effect = activeEffect.effects[0];
+    const value = Math.round(getProcessedValue(effect.coefficient, effect.table, 174, 1, false)) * player.getStatPerc("Vers") * player.getStatPerc("Crit")
+    console.log("Raw: " + getProcessedValue(effect.coefficient, effect.table, 174, 1, false));
+    bonus_stats.hps = value * effect.ppm * (1 - effect.expectedOverhealing) * player.getStatPerc("Vers") / 60; // The healing effect basically scales with Vers twice.
+    bonus_stats.dps = value * effect.ppm / 60;
+    console.log(bonus_stats.hps);
+
+  }
+
   return bonus_stats;
 }

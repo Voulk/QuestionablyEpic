@@ -182,5 +182,20 @@ export const effectData = [
             table: -1,
           },
         ],
-      }
+      },
+      {
+        /* ---------------------------------------------------------------------------------------------- */
+        /*                                            Blood Link                                          */
+        /* ---------------------------------------------------------------------------------------------- */
+        
+        name: "Blood Link", // These use tables as if 174 ilvl.
+        effects: [
+          {
+            coefficient: 22.3414, 
+            table: -9, // -8 in the spell data.
+            ppm: 20, // Has a 100% uptime, and procs every 3 seconds.
+            expectedOverhealing: 0.2,
+          },
+        ],
+      },
 ]

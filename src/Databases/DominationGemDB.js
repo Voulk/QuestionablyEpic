@@ -921,4 +921,24 @@ export const dominationGemDB = [
       rank: 4,
     },
   },
+
+  // Set Bonuses
+  {
+    gemID: 355804,
+    icon: "ability_creature_cursed_04",
+    name: {
+      en: "Blood Link",
+      de: "Splitter von Bek",
+      fr: "Éclat de Bek",
+      ru: "Осколок Бек",
+      ch: "贝克碎片",
+    },
+    type: "Set Bonus",
+    effect: {
+      type: "domination gem",
+      gemColor: "Blood",
+      name: "Blood Link",
+      rank: 0,
+    },
+  },
 ];

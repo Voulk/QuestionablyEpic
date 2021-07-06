@@ -74,6 +74,11 @@ const getDomScoreAtRank = (effectName, rank, player, contentType, metric) => {
   
 };
 
+const getHighestDomScore = (gem) => {
+  if ("r4" in gem) return gem.r4;
+  else return gem.r0;
+}
+
 
 const getHighestTrinketScore = (db, trinket, gameType) => {
   const trinketID = trinket.id;
@@ -123,7 +128,7 @@ export default function DominationAnalysis(props) {
   }
 
 
-  activeGems.sort((a, b) => (a.r0 < b.r0 ? 1 : -1));
+  activeGems.sort((a, b) => (getHighestDomScore(a) < getHighestDomScore(b) ? 1 : -1));
 
   console.log(activeGems);
   return (
