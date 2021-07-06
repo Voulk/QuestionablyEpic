@@ -10,6 +10,14 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 6,
+    date: "6th July",
+    changes: [
+      "Tome of Insight / First Class Healing Distributor were nerfed in game, and this is live in all modules.",
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 5,
     date: "5th July",
     changes: [

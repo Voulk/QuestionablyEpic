@@ -619,11 +619,6 @@ else if (
   bonus_stats.hps = (getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel, healEffect.efficiency) / 60) * meteor * healEffect.ppm * player.getStatMultiplier("NOMAST");
   bonus_stats.haste = getProcessedValue(hasteEffect.coefficient, hasteEffect.table, itemLevel) * convertPPMToUptime(hasteEffect.ppm, hasteEffect.duration);
 
-  console.log("Haste" + getProcessedValue(hasteEffect.coefficient, hasteEffect.table, itemLevel) + ". Itemlevel: " + itemLevel);
-  console.log("Healing" + getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel, 1) + ". Itemlevel: " + itemLevel);
-  console.log("HPS: " + bonus_stats.hps + ". Haste: " + bonus_stats.haste + ". lv: " + itemLevel);
-  console.log("Avg Haste: " + bonus_stats.haste)
-  console.log("Uptime: " + convertPPMToUptime(hasteEffect.ppm * player.getStatPerc("Haste"), hasteEffect.duration));
 } else if (
   /* ---------------------------------------------------------------------------------------------- */
   /*                                    Scrawled Word of Recall                                     */
@@ -646,7 +641,7 @@ else if (
 ) {
   let effect = activeTrinket.effects[0];
 
-  bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration) * player.getStatPerc("Haste");
+  bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
   //
 }
   else {
