@@ -9,6 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
 import { dominationGemDB } from "Databases/DominationGemDB";
 import { getDominationGemEffect } from "Retail/Engine/EffectFormulas/Generic/GenericEffectFormulas";
+import MetricToggle from "./MetricToggle";
 // import Settings from "../Settings/Settings";
 // import userSettings from "../Settings/SettingsObject";
 
@@ -59,27 +60,24 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
       estHPS += value;
     }
   }
-  return Math.round(100*estHPS)/100;
+  return Math.round(100 * estHPS) / 100;
 }
 
 const getDomScoreAtRank = (effectName, rank, player, contentType, metric) => {
-  const gemEffect = getDominationGemEffect(effectName, player, contentType, rank)
+  const gemEffect = getDominationGemEffect(effectName, player, contentType, rank);
 
   if (metric === "hps") {
     return getEstimatedHPS(gemEffect, player, contentType);
+  } else if (metric === "dps") {
+    return Math.round(100 * gemEffect.dps) / 100 || 0;
   }
-  else if (metric === "dps") {
-    return Math.round(100*gemEffect.dps)/100 || 0;
-  }
-  
 };
 
 // If a gem is a set bonus, we only need to show the one rank. Otherwise we'll sort gems by the highest rank.
 const getHighestDomScore = (gem) => {
   if ("r5" in gem) return gem.r5;
   else return gem.r1;
-}
-
+};
 
 const getHighestTrinketScore = (db, trinket, gameType) => {
   const trinketID = trinket.id;
@@ -100,15 +98,16 @@ const getHighestTrinketScore = (db, trinket, gameType) => {
 
 export default function DominationAnalysis(props) {
   useEffect(() => {
-      ReactGA.pageview(window.location.pathname + window.location.search);
-    }, []);
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
-  const metric = "hps";
+  const [metric, setMetric] = React.useState("hps");
+
   //const itemLevels = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
 
-  const db = dominationGemDB.filter((gem => gem.effect.rank === 0));
+  const db = dominationGemDB.filter((gem) => gem.effect.rank === 0);
   const helpText = [t("DominationSocketAnalysis.HelpText")];
   const classes = useStyles();
 
@@ -118,15 +117,14 @@ export default function DominationAnalysis(props) {
     const domGem = db[i];
     let gemAtLevels = {
       id: domGem.gemID,
-      name: domGem.name["en"]
+      name: domGem.name["en"],
     };
 
-      for (var x = 1; x <= 5; x++) {
-        gemAtLevels["r" + x] = getDomScoreAtRank(domGem.name["en"], x-1, props.player, contentType, metric);
-      }
-      activeGems.push(gemAtLevels);
+    for (var x = 1; x <= 5; x++) {
+      gemAtLevels["r" + x] = getDomScoreAtRank(domGem.name["en"], x - 1, props.player, contentType, metric);
+    }
+    activeGems.push(gemAtLevels);
   }
-
 
   activeGems.sort((a, b) => (getHighestDomScore(a) < getHighestDomScore(b) ? 1 : -1));
 
@@ -141,6 +139,9 @@ export default function DominationAnalysis(props) {
         </Grid>
         <Grid item xs={12}>
           <HelpText text={helpText} />
+        </Grid>
+        <Grid item xs={12}>
+          <MetricToggle metric={metric} setMetric={setMetric} />
         </Grid>
         {/* <Grid item xs={12}>
           <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} />
