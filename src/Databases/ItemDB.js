@@ -106120,7 +106120,7 @@ export const itemDB = [
         "icon": "inv_jewelcrafting_70_maxlvlneck_blue",
         "itemClass": 4,
         "itemSubClass": 0,
-        "itemLevel": 155,
+        "itemLevel": 183,
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -106148,7 +106148,7 @@ export const itemDB = [
         "icon": "inv_jewelcrafting_70_lvlupneck_purple",
         "itemClass": 4,
         "itemSubClass": 0,
-        "itemLevel": 155,
+        "itemLevel": 200,
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -115793,7 +115793,7 @@ export const itemDB = [
         "icon": "inv_jewelcrafting_70_maxlvlneck_purple",
         "itemClass": 4,
         "itemSubClass": 0,
-        "itemLevel": 155,
+        "itemLevel": 226,
         "stats": {
             "intellect": 0,
             "stamina": 7889,
