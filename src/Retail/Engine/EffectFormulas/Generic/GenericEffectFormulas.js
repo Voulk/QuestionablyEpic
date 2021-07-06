@@ -106,7 +106,6 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
 
     const damageIncrease = Math.round(getProcessedValue(effect.coefficient[rank], effect.table, 174, 1, false))
     const uptime = effect.uptime;
-    console.log(damageIncrease);
     bonus_stats.dps = damageIncrease * player.getDPS(contentType) * uptime / 100 / 100; // Divided by 10,000 effectively.
 
   }
