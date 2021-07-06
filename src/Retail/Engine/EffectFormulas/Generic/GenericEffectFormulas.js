@@ -84,6 +84,31 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
     const intGain = (14 / 2 * stackingIntGain) + (bigProcIntGain * 15 / (60 / stackingEffect.ppm * 15))
     
     bonus_stats.intellect = intGain;
+    bonus_stats.dps = intGain / player.getInt() * player.getDPS(contentType);
+  }
+  else if (effectName === "Shard of Dyz") {
+    const effect = activeEffect.effects[0];
+
+    const damageIncrease = Math.round(getProcessedValue(effect.coefficient[rank], effect.table, 174, 1, false))
+    const stacks = effect.stacks;
+    bonus_stats.dps = damageIncrease * player.getDPS(contentType) * stacks / 100 / 100; // Divided by 10,000 effectively.
+  }
+  else if (effectName === "Shard of Cor") {
+    const effect = activeEffect.effects[0];
+
+    const damageIncrease = Math.round(getProcessedValue(effect.coefficient[rank], effect.table, 174, 1, false))
+    const uptime = effect.uptime[contentType];
+    bonus_stats.dps = damageIncrease * player.getDPS(contentType) * uptime / 100 / 100; // Divided by 10,000 effectively.
+
+  }
+  else if (effectName === "Shard of Bek") {
+    const effect = activeEffect.effects[0];
+
+    const damageIncrease = Math.round(getProcessedValue(effect.coefficient[rank], effect.table, 174, 1, false))
+    const uptime = effect.uptime;
+    console.log(damageIncrease);
+    bonus_stats.dps = damageIncrease * player.getDPS(contentType) * uptime / 100 / 100; // Divided by 10,000 effectively.
+
   }
 
 

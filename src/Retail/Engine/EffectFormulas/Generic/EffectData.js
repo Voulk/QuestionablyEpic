@@ -92,7 +92,7 @@ export const effectData = [
         name: "Shard of Cor", // Your damage is increased by 1.5% for 20s after attacking an enemy you have not yet damaged.
         effects: [
           {
-            coefficient: [], 
+            coefficient: [1.578947, 1.978947, 2.368421, 2.768421, 3.157895], 
             duration: 20,
             table: -1,
             uptime: {Raid: 0.2, Dungeon: 0.45}, // TODO
@@ -153,8 +153,8 @@ export const effectData = [
         name: "Shard of Bek", // Your damage is increased by 1.5% when you have 50% or more health than your target
         effects: [
           {
-            coefficient: [], 
-            table: -6,
+            coefficient: [1.578947, 1.978947, 2.368421, 2.768421, 3.157895], 
+            table: -1,
             uptime: 0.5
           },
         ],
