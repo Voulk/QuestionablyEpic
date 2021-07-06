@@ -118,6 +118,7 @@ export default class VerticalChart extends PureComponent {
               backgroundColor: "#1b1b1b",
               border: "1px solid rgba(255, 255, 255, 0.12)",
             }}
+            isAnimationActive={false} 
             labelFormatter={(timeStr) => getTranslatedItemName(timeStr, currentLanguage)}
             formatter={(value, name, props) => {
               {
