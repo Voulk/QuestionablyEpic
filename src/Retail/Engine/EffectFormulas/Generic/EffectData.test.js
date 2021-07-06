@@ -45,7 +45,6 @@ describe("Chaos Bane Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeEffect = effectData.find((effect) => effect.name === "Chaos Bane");
     
-
     each`
     effectNum   | expectedResult
     ${1}  | ${300}
@@ -53,7 +52,6 @@ describe("Chaos Bane Data Check", () => {
     // add new test cases here
     `.test("Chaos Bane Test - $effectNum - Expects: $expectedResult", ({ effectNum, expectedResult }) => {
         let effect = activeEffect.effects[effectNum];
-        console.log(effect);
         expect(getProcessedValue(effect.coefficient, effect.table, 174, 1, true)).toBe(expectedResult);
     });
 });
@@ -112,5 +110,39 @@ describe("Shard of Kyr Data Check", () => {
     `.test("Shard of Kyr Test - $rank - Expects: $expectedResult", ({ rank, expectedResult }) => {
   
         expect(Math.round(getProcessedValue(effect.coefficient[rank], effect.table, 174, 1, false))).toBe(expectedResult);
+    });
+});
+
+describe("Shard of Dyz Data Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeEffect = effectData.find((effect) => effect.name === "Shard of Dyz");
+    const effect = activeEffect.effects[0];
+
+    each`
+    rank   | expectedResult
+    ${4}  | ${50}
+    ${3}  | ${44}
+    ${2}  | ${37}
+    ${1}  | ${31}
+    ${0}  | ${25}
+    // add new test cases here
+    `.test("Shard of Dyz Test - $rank - Expects: $expectedResult", ({ rank, expectedResult }) => {
+  
+        expect(Math.round(getProcessedValue(effect.coefficient[rank], effect.table, 174, 1, false))).toBe(expectedResult);
+    });
+});
+
+describe("Blood Link Data Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeEffect = effectData.find((effect) => effect.name === "Blood Link");
+    
+    each`
+    effectNum   | expectedResult
+    ${0}  | ${540}
+    // add new test cases here
+    `.test("Blood Link Test - $effectNum - Expects: $expectedResult", ({ effectNum, expectedResult }) => {
+        let effect = activeEffect.effects[effectNum];
+        console.log(effect);
+        expect(getProcessedValue(effect.coefficient, effect.table, 174, 1, true)).toBe(expectedResult);
     });
 });

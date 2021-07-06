@@ -921,4 +921,60 @@ export const dominationGemDB = [
       rank: 4,
     },
   },
+
+  // Set Bonuses
+  {
+    gemID: 355804,
+    icon: "ability_creature_cursed_04",
+    name: {
+      en: "Blood Link",
+      de: "Splitter von Bek",
+      fr: "Éclat de Bek",
+      ru: "Осколок Бек",
+      ch: "贝克碎片",
+    },
+    type: "Set Bonus",
+    effect: {
+      type: "domination gem",
+      gemColor: "Blood Set Bonus",
+      name: "Blood Link",
+      rank: 0,
+    },
+  },
+  {
+    gemID: 355735,
+    icon: "spell_frost_arcticwinds",
+    name: {
+      en: "Winds of Winter",
+      de: "Winds of Winter",
+      fr: "Winds of Winter",
+      ru: "Winds of Winter",
+      ch: "Winds of Winter",
+    },
+    type: "Set Bonus",
+    effect: {
+      type: "domination gem",
+      gemColor: "Frost Set Bonus",
+      name: "Winds of Winter",
+      rank: 0,
+    },
+  },
+  {
+    gemID: 355829,
+    icon: "spell_fire_twilightflamestrike",
+    name: {
+      en: "Chaos Bane",
+      de: "Chaos Bane",
+      fr: "Chaos Bane",
+      ru: "Chaos Bane",
+      ch: "Chaos Bane",
+    },
+    type: "Set Bonus",
+    effect: {
+      type: "domination gem",
+      gemColor: "Unholy Set Bonus",
+      name: "Chaos Bane",
+      rank: 0,
+    },
+  },
 ];

@@ -159,15 +159,15 @@ describe("Titanic Ocular Gland", () => {
     });
 });
 
-/*
+
 describe("First Class Healing Distributor", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = trinket_data.find((trinket) => trinket.name === "First Class Healing Distributor");
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
-    ${233}  | ${2365}
-    ${226}  | ${2129}
+    ${233}  | ${1376}
+    ${226}  | ${1239}
     // add new test cases here
     `.test("First Class Healing Distributor Heal Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
@@ -185,27 +185,8 @@ describe("First Class Healing Distributor", () => {
   
         expect(getProcessedValue(effect2.coefficient, effect2.table, level)).toBe(expectedResult);
     });
-}); */
-
-/*
-describe("Cabalists Hymnal Data Check", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Cabalist's Hymnal");
-    const effect = activeTrinket.effects[0];
-    each`
-    level    | expectedResult
-    ${233}  | ${294}
-    ${220}  | ${276}
-    ${207}  | ${257}
-    ${194}  | ${237}
-    // add new test cases here
-    `.test("Cabalists Hymnal Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-  
-        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
-    });
 });
 
-*/
 
 describe("Instructor's Divine Bell", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
@@ -288,20 +269,20 @@ describe("Sunblood Amethyst", () => {
     });
 });
 
-/*
 describe("Tome of Insight", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = trinket_data.find((trinket) => trinket.name === "Tome of Insight");
     const effect = activeTrinket.effects[0];
     each`
     level   | expectedResult
-    ${200}  | ${271}
+    ${207}  | ${164}
+    ${200}  | ${157}
     // add new test cases here
     `.test("Tome of Insight Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
         expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
     });
-}); */
+});
 
 describe("Spiritual Alchemy Stone Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.

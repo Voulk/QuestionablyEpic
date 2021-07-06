@@ -92,7 +92,7 @@ export const effectData = [
         name: "Shard of Cor", // Your damage is increased by 1.5% for 20s after attacking an enemy you have not yet damaged.
         effects: [
           {
-            coefficient: [], 
+            coefficient: [1.578947, 1.978947, 2.368421, 2.768421, 3.157895], 
             duration: 20,
             table: -1,
             uptime: {Raid: 0.2, Dungeon: 0.45}, // TODO
@@ -109,7 +109,7 @@ export const effectData = [
           {
             coefficient: [0.007334, 0.009135, 0.010979, 0.012824, 0.014668], 
             table: -6,
-            ppm: 0.95, // 1s ICD
+            ppm: 45,
             expectedWastage: 0.1 // This is reasonably low since the absorb lasts 6 seconds and is small enough to be used first.
           },
         ],
@@ -136,8 +136,10 @@ export const effectData = [
         name: "Winds of Winter", // 6% of your critical hits and healing are stored. You get an absorb and deal damage very 20s based on what is stored.
         effects: [
           {
-            coefficient: [], 
-            table: -6,
+            coefficient: 7.44707, // The coefficient is for the maximum amount stored on a crit.
+            table: -8,
+            specOvercap: {"Restoration Druid": 0.94, "Holy Paladin": 0.6, "Mistweaver Monk": 0.85, "Restoration Shaman": 0.94, "Holy Priest": 0.75, "Discipline Priest": 0.7},
+            specAbilitiesThatWork: {"Restoration Druid": 0.85, "Holy Paladin": 0.6, "Mistweaver Monk": 1, "Restoration Shaman": 0.57, "Holy Priest": 0.94, "Discipline Priest": 0.26}, // Winds of Winter doesn't work on multiple abilities in the game. Disc and Holy Paladin are penalized most heavily.
             stored: 0.06,
             wastage: 0.1
           },
@@ -151,8 +153,8 @@ export const effectData = [
         name: "Shard of Bek", // Your damage is increased by 1.5% when you have 50% or more health than your target
         effects: [
           {
-            coefficient: [], 
-            table: -6,
+            coefficient: [1.578947, 1.978947, 2.368421, 2.768421, 3.157895], 
+            table: -1,
             uptime: 0.5
           },
         ],
@@ -182,5 +184,20 @@ export const effectData = [
             table: -1,
           },
         ],
-      }
+      },
+      {
+        /* ---------------------------------------------------------------------------------------------- */
+        /*                                            Blood Link                                          */
+        /* ---------------------------------------------------------------------------------------------- */
+        
+        name: "Blood Link", // These use tables as if 174 ilvl.
+        effects: [
+          {
+            coefficient: 22.3414, 
+            table: -9, // -8 in the spell data.
+            ppm: 20, // Has a 100% uptime, and procs every 3 seconds.
+            expectedOverhealing: 0.2,
+          },
+        ],
+      },
 ]

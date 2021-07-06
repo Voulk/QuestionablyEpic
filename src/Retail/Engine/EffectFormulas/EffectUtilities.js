@@ -15,7 +15,10 @@ export function getScalarValue(table, itemLevel) {
     return randPropPoints[itemLevel]["slotValues"][0] * combat_ratings_mult_by_ilvl[itemLevel];
   } else if (table === -6) {
       return 23316.22963; // This is a level-scaled value and 23315 is the value for level 60.
-  } else {
+  } else if (table === -9) {
+    return randPropPoints[itemLevel]["p1"]; // This is the damage_replace_stat column in SimC.
+  } 
+  else {
     // return error
     return -1;
   }
