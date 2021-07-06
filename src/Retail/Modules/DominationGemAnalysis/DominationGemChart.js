@@ -53,11 +53,11 @@ export default class DomChart extends PureComponent {
         arr.push({
           name: map2.id,
           //i161: map2.i161,
-          0: map2.r0,
-          1: getRankDiff(1, map2),
+          1: map2.r1,
           2: getRankDiff(2, map2),
           3: getRankDiff(3, map2),
-          4: getRankDiff(4, map2)
+          4: getRankDiff(4, map2),
+          5: getRankDiff(5, map2)
         });
       });
 
@@ -122,11 +122,11 @@ export default class DomChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          <Bar dataKey={0} fill={"#208c81"} stackId="a" />
-          <Bar dataKey={1} fill={"#2aa497"} stackId="a" />
-          <Bar dataKey={2} fill={"#34bdad"} stackId="a" />
-          <Bar dataKey={3} fill={"#3ed6c4"} stackId="a" />
-          <Bar dataKey={4} fill={"#49f0db"} stackId="a" />
+          <Bar dataKey={1} fill={"#208c81"} stackId="a" />
+          <Bar dataKey={2} fill={"#2aa497"} stackId="a" />
+          <Bar dataKey={3} fill={"#34bdad"} stackId="a" />
+          <Bar dataKey={4} fill={"#3ed6c4"} stackId="a" />
+          <Bar dataKey={5} fill={"#49f0db"} stackId="a" />
 
         </BarChart>
       </ResponsiveContainer>

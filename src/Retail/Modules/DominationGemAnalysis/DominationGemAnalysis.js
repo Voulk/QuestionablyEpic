@@ -69,14 +69,15 @@ const getDomScoreAtRank = (effectName, rank, player, contentType, metric) => {
     return getEstimatedHPS(gemEffect, player, contentType);
   }
   else if (metric === "dps") {
-    return Math.round(100*gemEffect.dps)/100;
+    return Math.round(100*gemEffect.dps)/100 || 0;
   }
   
 };
 
+// If a gem is a set bonus, we only need to show the one rank. Otherwise we'll sort gems by the highest rank.
 const getHighestDomScore = (gem) => {
-  if ("r4" in gem) return gem.r4;
-  else return gem.r0;
+  if ("r5" in gem) return gem.r5;
+  else return gem.r1;
 }
 
 
@@ -104,7 +105,6 @@ export default function DominationAnalysis(props) {
 
   const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
-  const ranks = [0, 1, 2, 3, 4]
   const metric = "hps";
   //const itemLevels = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
 
@@ -121,8 +121,8 @@ export default function DominationAnalysis(props) {
       name: domGem.name["en"]
     };
 
-      for (var x = 0; x <= 4; x++) {
-        gemAtLevels["r" + x] = getDomScoreAtRank(domGem.name["en"], x, props.player, contentType, metric);
+      for (var x = 1; x <= 5; x++) {
+        gemAtLevels["r" + x] = getDomScoreAtRank(domGem.name["en"], x-1, props.player, contentType, metric);
       }
       activeGems.push(gemAtLevels);
   }
