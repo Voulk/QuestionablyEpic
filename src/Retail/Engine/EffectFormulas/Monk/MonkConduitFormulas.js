@@ -3,11 +3,14 @@ const NOURISHING_CHI = 0.1875;
 const JADE_BOND = 0.0625;
 const RISING_SUN_REVIVAL = 0.125;
 const RESPLENDENT_MIST = 0.5;
+const RESPLENDENT_MIST_HIT_CHANCE = .3;
 
 //covenant specific
 const STIKE_WITH_CLARITY = 1;
 //const WAY_OF_THE_FAE = .105;
 const BONE_MARROW_HOPS = 0.4;
+const BONE_DUST_BREW_HIT_CHANCE = .5;
+const BONE_DUST_BREW_DEFAULT_MULTISTRIKE_PERCENT = .35;
 const IMBUED_REFLECTIONS = 0.3625;
 
 //endurance
@@ -15,12 +18,13 @@ const FORTIFYING_INGREDIENTS = 0.12;
 const HARM_DEINAL = 0.25;
 //const GROUND_BREATH = .15;
 
-const IDVIVIFY = 116670;
-const IDSOOTHINGBREATH = 322118;
-const IDREVIVAL = 115310;
-const IDFORTIFYINGBREW = 115203;
-const IDGUSTOFMISTS = 191894;
-const CHIJI_GUST_OF_MIST = 343819;
+const ID_VIVIFY = 116670;
+const ID_SOOTHING_BREATH = 322118;
+const OTHER_ID_SOOTHING_BREATH = 343737;
+const ID_REVIVAL = 115310;
+const ID_FORTIFYING_BREW = 115203;
+const ID_GUST_OF_MISTS = 191894;
+const CHI_JI_GUST_OF_MIST = 343819;
 const EXPEL_HARM_SELF = 322101;
 const EXPEL_HARM_TARGET = 344939;
 
@@ -39,10 +43,14 @@ export const getMonkConduit = (conduitID, player, contentType, conduitLevel) => 
   if (conduitID === 336773) {
     const conduitPower = conduitScaling(JADE_BOND, conduitLevel);
     // You can only have one of the two so its gonna be 0 + real or real + 0 so we can cheat and be lazy
-    //this is just easier to read and debug HAHAHAHAHA
-    const yulonHealing = player.getSpellHPS(IDSOOTHINGBREATH, contentType);
-    const chijiHealing = player.getSpellHPS(CHIJI_GUST_OF_MIST, contentType);
-    const chijiAndYulonHelaing = yulonHealing + chijiHealing;
+    // this is just easier to read and debug HAHAHAHAHA
+    const yulonHealing = player.getSpellHPS(ID_SOOTHING_BREATH, contentType);
+    const yulonOtherSpellID = player.getSpellHPS(OTHER_ID_SOOTHING_BREATH, contentType);
+    const chijiHealing = player.getSpellHPS(CHI_JI_GUST_OF_MIST, contentType);
+    // so this might seem strange but yu'lon healing and yu'lon other spell id should be the same
+    // but the report might be weird where one gets the value and the other doesn't
+    // so to fight this we just pick the highest of the two by default
+    const chijiAndYulonHelaing = Math.max(yulonHealing, yulonOtherSpellID) + chijiHealing;
     const directHealingIncrease = chijiAndYulonHelaing * conduitPower;
 
     // TODO cdr stuffs ???
@@ -65,16 +73,17 @@ export const getMonkConduit = (conduitID, player, contentType, conduitLevel) => 
   // Resplendent Mist
   else if (conduitID === 336812) {
     const conduitPower = conduitScaling(RESPLENDENT_MIST, conduitLevel);
-    const conduitChance = 0.3;
-    const hrHPS = player.getSpellHPS(IDGUSTOFMISTS, contentType);
-    const directHealingIncrease = hrHPS * conduitPower * conduitChance;
+    const gomHPS = player.getSpellHPS(ID_GUST_OF_MISTS, contentType);
+    const chijiHPS = player.getSpellHPS(CHI_JI_GUST_OF_MIST, contentType);
+    const effectedGoMHPS = gomHPS + chijiHPS;
+    const directHealingIncrease = effectedGoMHPS * conduitPower * RESPLENDENT_MIST_HIT_CHANCE;
 
     bonus_stats.HPS = directHealingIncrease;
   }
   // Rising Sun Revival
   else if (conduitID === 337099) {
     const conduitPower = conduitScaling(RISING_SUN_REVIVAL, conduitLevel);
-    const hrHPS = player.getSpellHPS(IDREVIVAL, contentType);
+    const hrHPS = player.getSpellHPS(ID_REVIVAL, contentType);
     const directHealingIncrease = hrHPS * conduitPower;
 
     // TODO cdr stuff
@@ -107,7 +116,8 @@ export const getMonkConduit = (conduitID, player, contentType, conduitLevel) => 
   else if (conduitID === 337301) {
     const conduitPower = conduitScaling(IMBUED_REFLECTIONS, conduitLevel);
 
-    const envSP = 3.6 * 1.4; //for some reason their env multiplier effects their env healing
+    // Dropping this to 1.3 as you're not suppose to run mist wrap raid. 
+    const envSP = 3.6 * 1.3; //for some reason their env multiplier effects their env healing
     const soomSP = 1.04;
     const multiplier = player.getStatMultiplier("NOMAST") * player.getInt();
 
@@ -131,11 +141,11 @@ export const getMonkConduit = (conduitID, player, contentType, conduitLevel) => 
     const uptimeWithBMH = 10 / 57.5;
     const normalUptime = 10 / 60;
     const netUptimeFromBMH = uptimeWithBMH - normalUptime;
-    const boneDustBrewHitRate = .5;
+    const boneDustBrewHitRate = BONE_DUST_BREW_HIT_CHANCE;
 
     const conduitPower = conduitScaling(BONE_MARROW_HOPS, conduitLevel);
-    const actualIncreaseForBDB = (1 + conduitPower) * 0.35;
-    const actualIncreaseFromBMH = actualIncreaseForBDB - 0.35;
+    const actualIncreaseForBDB = (1 + conduitPower) * BONE_DUST_BREW_DEFAULT_MULTISTRIKE_PERCENT;
+    const actualIncreaseFromBMH = actualIncreaseForBDB - BONE_DUST_BREW_DEFAULT_MULTISTRIKE_PERCENT;
 
     const totalHPS = player.getHPS(contentType);
 
@@ -145,6 +155,7 @@ export const getMonkConduit = (conduitID, player, contentType, conduitLevel) => 
     bonus_stats.HPS = directHealingIncrease + extraUptimeHPS;
   }
   // Way of the Fae (Night Fae) NO HPS BOOST
+  // 9.1 update. Still doesn't impact healing. We love this conduit
   else if (conduitID === 337303) {
     bonus_stats.HPS = 0;
   }
@@ -158,7 +169,7 @@ export const getMonkConduit = (conduitID, player, contentType, conduitLevel) => 
 
     const shield = maxHP * versPercent * conduitPower;
 
-    const cpm = player.getSpellCPM(IDFORTIFYINGBREW, contentType);
+    const cpm = player.getSpellCPM(ID_FORTIFYING_BREW, contentType);
 
     const hps = (shield * cpm) / 60;
 
@@ -166,7 +177,7 @@ export const getMonkConduit = (conduitID, player, contentType, conduitLevel) => 
   }
   // Grounding Breath
   else if (conduitID === 336632) {
-    const healingPerVivify = player.getSingleCast(IDVIVIFY, contentType);
+    const healingPerVivify = player.getSingleCast(ID_VIVIFY, contentType);
 
     const durationOfFight = player.getFightLength(contentType);
     const numberOfExtraVivifies = Math.ceil(durationOfFight / 60);
