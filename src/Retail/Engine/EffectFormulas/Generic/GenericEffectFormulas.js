@@ -33,6 +33,24 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
     bonus_stats.hps = throughput;
     bonus_stats.dps = throughput;
 
+  }
+  else if (effectName === "Shard of Rev") {
+    const effect = activeEffect.effects[0];
+    const leech = Math.round(getProcessedValue(effect.coefficient[rank], effect.table, 174, 1, false))
+    bonus_stats.leech = leech;
+
+  }
+  else if (effectName === "Shard of Kyr") {
+    const effect = activeEffect.effects[0];
+    const absorb = Math.round(getProcessedValue(effect.coefficient[rank], effect.table, 174, 1, false))
+    bonus_stats.hps = absorb * effect.ppm / 60;
+
+  } 
+  else if (effectName === "Shard of Tel") {
+    const effect = activeEffect.effects[0];
+    const absorb = Math.round(getProcessedValue(effect.coefficient[rank], effect.table, 174, 1, false))
+    bonus_stats.hps = absorb * effect.ppm * (1 - effect.expectedWastage) / 60;
+
   } else if (effectName === "Effect2") {
 
   }

@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip } from "recharts";
 // import chroma from "chroma-js";
-import { getItemIcon, getTranslatedItemName, getTranslatedDominationGem } from "General/Engine/ItemUtilities";
+import { getGemIcon, getTranslatedDominationGem } from "General/Engine/ItemUtilities";
 import "General/Modules/TrinketAnalysis/Charts/VerticalChart.css";
 import i18n from "i18next";
 
@@ -73,8 +73,8 @@ export default class DomChart extends PureComponent {
             <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {truncateString(getTranslatedDominationGem(payload.value, currentLanguage), 32)}
             </text>
-            <a data-wowhead={"item=" + payload.value + "&ilvl=200" + "&domain=tbc-" + currentLanguage}>
-              <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value, "BurningCrusade")} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
+            <a data-wowhead={"item=" + payload.value + "&domain=" + currentLanguage}>
+              <img width={20} height={20} x={0} y={0} src={getGemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </a>
           </foreignObject>
         </g>
@@ -122,13 +122,11 @@ export default class DomChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
-          {/*<Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" /> */}
-          <Bar dataKey={0} fill={"#e6bc53"} stackId="a" />
-          <Bar dataKey={1} fill={"#a3bc53"} stackId="a" />
-          <Bar dataKey={2} fill={"#f69c23"} stackId="a" />
-          <Bar dataKey={3} fill={"#345c53"} stackId="a" />
-          <Bar dataKey={4} fill={"#66fc53"} stackId="a" />
+          <Bar dataKey={0} fill={"#610167"} stackId="a" />
+          <Bar dataKey={1} fill={"#83018b"} stackId="a" />
+          <Bar dataKey={2} fill={"#a601b0"} stackId="a" />
+          <Bar dataKey={3} fill={"#cb01d7"} stackId="a" />
+          <Bar dataKey={4} fill={"#f100ff"} stackId="a" />
 
         </BarChart>
       </ResponsiveContainer>

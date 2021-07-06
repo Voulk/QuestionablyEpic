@@ -46,18 +46,34 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+/* ------------ Converts a bonus_stats dictionary to a singular estimated HPS number. ----------- */
+// TODO: Remove this. It's just for testing.
+function getEstimatedHPS(bonus_stats, player, contentType) {
+  let estHPS = 0;
+  for (const [key, value] of Object.entries(bonus_stats)) {
+    if (["haste", "mastery", "crit", "versatility", "leech"].includes(key)) {
+      estHPS += ((value * player.getStatWeight(contentType, key)) / player.activeStats.intellect) * player.getHPS(contentType);
+    } else if (key === "intellect") {
+      estHPS += (value / player.activeStats.intellect) * player.getHPS(contentType);
+    } else if (key === "hps") {
+      estHPS += value;
+    }
+  }
+  return Math.round(100*estHPS)/100;
+}
+
 const getDomScoreAtRank = (effectName, rank, player, contentType, metric) => {
   const gemEffect = getDominationGemEffect(effectName, player, contentType, rank)
-  return gemEffect[metric] || 0;
 
+  if (metric === "hps") {
+    return getEstimatedHPS(gemEffect, player, contentType);
+  }
+  else if (metric === "dps") {
+    return Math.round(100*gemEffect.dps)/100;
+  }
+  
 };
 
-const getBCTrinketScore = (id, player) => {
-  let item = new BCItem(id, "", "Trinket", "");
-  item.softScore = scoreItem(item, player, "Raid", "BurningCrusade");
-
-  return item.softScore;
-};
 
 const getHighestTrinketScore = (db, trinket, gameType) => {
   const trinketID = trinket.id;
@@ -88,7 +104,7 @@ export default function DominationAnalysis(props) {
   //const itemLevels = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
 
   const db = dominationGemDB.filter((gem => gem.effect.rank === 0));
-  const helpText = [t("TrinketAnalysis.HelpText")];
+  const helpText = [t("DominationSocketAnalysis.HelpText")];
   const classes = useStyles();
 
   let activeGems = [];
@@ -107,7 +123,7 @@ export default function DominationAnalysis(props) {
   }
 
 
-    //activeGems.sort((a, b) => (getHighestTrinketScore(trinketDB, a, gameType) < getHighestTrinketScore(trinketDB, b, gameType) ? 1 : -1));
+  activeGems.sort((a, b) => (a.r0 < b.r0 ? 1 : -1));
 
   console.log(activeGems);
   return (
@@ -115,7 +131,7 @@ export default function DominationAnalysis(props) {
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
-            {t("TrinketAnalysis.Header")}
+            {t("DominationSocketAnalysis.Header")}
           </Typography>
         </Grid>
         <Grid item xs={12}>

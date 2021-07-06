@@ -251,6 +251,11 @@ export function getItemIcon(id, gameType = "Retail") {
   }
 }
 
+export function getGemIcon(id) {
+  const gem = dominationGemDB.filter((gem) => gem.gemID === id);
+  return "https://wow.zamimg.com/images/wow/icons/large/" + gem[0].icon + ".jpg"
+}
+
 
 // Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
 export function getItemAllocations(id, missiveStats = []) {

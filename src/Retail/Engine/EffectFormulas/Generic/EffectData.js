@@ -109,7 +109,7 @@ export const effectData = [
           {
             coefficient: [0.007334, 0.009135, 0.010979, 0.012824, 0.014668], 
             table: -6,
-            ppm: 0.95, // 1s ICD
+            ppm: 45,
             expectedWastage: 0.1 // This is reasonably low since the absorb lasts 6 seconds and is small enough to be used first.
           },
         ],
