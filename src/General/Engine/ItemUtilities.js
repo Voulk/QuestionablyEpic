@@ -1,4 +1,5 @@
 import { itemDB } from "../../Databases/ItemDB";
+import { dominationGemDB } from "../../Databases/DominationGemDB";
 import { BCItemDB } from "Databases/BCItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
@@ -200,6 +201,15 @@ export function getTranslatedItemName(id, lang, effect, gameType = "Retail") {
     else return "Unknown Item";
   }
 }
+
+// Returns a translated item name based on an ID.
+export function getTranslatedDominationGem(id, lang) {
+    let temp = dominationGemDB.filter(function (gem) {
+      return gem.gemID === id;
+    });
+    if (temp.length > 0) return temp[0].name[lang];
+    else return "Unknown Gem";
+} 
 
 
 // Grabs a specific item from whichever item database is currently selected.
