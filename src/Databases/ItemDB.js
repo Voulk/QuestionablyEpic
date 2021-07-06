@@ -115543,7 +115543,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Soul Cage Fragment"
         },
-        "levelRange": []
+        "levelRange": [233]
     },
     {
         "id": 187534,
