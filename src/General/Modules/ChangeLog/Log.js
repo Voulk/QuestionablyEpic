@@ -10,6 +10,14 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 7,
+    date: "7th July",
+    changes: [
+      "Bugfix: Alchemy Stone now grants the correct amount of mana.",
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 6,
     date: "6th July",
     changes: [
