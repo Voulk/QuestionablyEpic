@@ -352,6 +352,9 @@ class Player {
   getHPS = (contentType) => {
     return this.castModel[contentType].getFightInfo("hps");
   };
+  getDPS = (contentType) => {
+    return this.castModel[contentType].getFightInfo("dps");
+  };
   // HPS including overhealing.
   getRawHPS = (contentType) => {
     return this.castModel[contentType].getFightInfo("rawhps");
@@ -471,7 +474,7 @@ class Player {
       this.activeStats = {
         intellect: 1800,
         haste: 800,
-        crit: 200,
+        crit: 240,
         mastery: 550,
         versatility: 340,
         stamina: 1900,

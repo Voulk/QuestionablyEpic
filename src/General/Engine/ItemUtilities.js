@@ -1,4 +1,5 @@
 import { itemDB } from "../../Databases/ItemDB";
+import { dominationGemDB } from "../../Databases/DominationGemDB";
 import { BCItemDB } from "Databases/BCItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
@@ -201,6 +202,15 @@ export function getTranslatedItemName(id, lang, effect, gameType = "Retail") {
   }
 }
 
+// Returns a translated item name based on an ID.
+export function getTranslatedDominationGem(id, lang) {
+    let temp = dominationGemDB.filter(function (gem) {
+      return gem.gemID === id;
+    });
+    if (temp.length > 0) return temp[0].name[lang];
+    else return "Unknown Gem";
+} 
+
 
 // Grabs a specific item from whichever item database is currently selected.
 export function getItem(id, gameType = "Retail") {
@@ -239,6 +249,11 @@ export function getItemIcon(id, gameType = "Retail") {
     reportError(this, "ItemUtilities", "Icon not found for ID", id);
     return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
   }
+}
+
+export function getGemIcon(id) {
+  const gem = dominationGemDB.filter((gem) => gem.gemID === id);
+  return "https://wow.zamimg.com/images/wow/icons/large/" + gem[0].icon + ".jpg"
 }
 
 

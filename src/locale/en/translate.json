@@ -786,6 +786,11 @@
       "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. World quest trinkets and settings panel coming soon."
     },
 
+    "DominationSocketAnalysis": {
+      "Header": "Domination Socket Analysis",
+      "HelpText": "This is a quick way to see how strong Domination Gems are for your character. These are still being tuned and results could change."
+    },
+
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {
       "name": "Vision of Unending Growth",
