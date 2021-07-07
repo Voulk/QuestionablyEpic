@@ -224,8 +224,8 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /*
     Eventually we'll include mana in bonus_stats and calculate it at the end. Until then, we'll auto-convert to HPS.
     */
-    const manaPotionReturn = 10000;
-    const potionsUsed = player.getFightLength(contentType) > 360 ? 2 : 1; 
+    const manaPotionReturn = 10000 * .4; // sit down potion is 10k. Alch stone gives 40% of that
+    const potionsUsed = Math.ceil(player.getFightLength(contentType) / 360); // One potion every 6 minutes
     bonus_stats.hps = manaPotionReturn * potionsUsed * player.getSpecialQuery("OneManaHealing", contentType) / player.getFightLength(contentType) * 0.8;
 
     /* ------------------------------------- Health Potion Bonus ------------------------------------ */
@@ -256,10 +256,8 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     // TODO: replace
     if (player.getSpec() === "Mistweaver Monk" && player.getCovenant() === "necrolord") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
     else if (player.getSpec() === "Holy Paladin" && player.getCovenant() === "kyrian") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
-    else if (player.getSpec() === "Holy Paladin" && player.getCovenant() !== "kyrian") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType) - 0.34;
     else if (player.getSpec() !== "Mistweaver Monk") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
     //if (player.getSpec() === SPEC.HOLYPALADIN) bonus_stats.intellect *= 1.42; // This needs to be refined, but represents the power increase from combining with Divine Toll.
-    //if (player.getSpec() === SPEC.DISCPRIEST) bonus_stats.intellect *= 1.68; // This needs to be refined, but represents the power increase from combining with Spirit Shell.
     // We need a better way to model interaction with spec cooldowns.
     //
   } else if (
