@@ -54,7 +54,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
       Your Phial heals for 35% additional health, but over 10 seconds.
       */
       let expected_overhealing = 0.55;
-      let healing_bonus = player.activeStats.stamina * 20 * 0.35;
+      let healing_bonus = player.getHealth() * 0.35;
       let uses_per_combat = 1.5;
 
       bonus_stats.HPS = (healing_bonus * uses_per_combat * (1 - expected_overhealing)) / player.getFightLength(contentType); // Placeholder.
@@ -97,7 +97,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* --------------------------------------- Valiant Strikes -------------------------------------- */
     effectID === 329791
   ) {
-    let average_health_pool = player.activeStats.stamina * 20; // The players health is an acceptable average for an average target.
+    let average_health_pool = player.getHealth(); // The players health is an acceptable average for an average target.
     let ppm = 0.49; // POSTLIVE: Check against logs.
 
     bonus_stats.HPS = (average_health_pool * 0.2 * ppm) / 60;
@@ -105,7 +105,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* --------------------------------------- Cleansing Rites -------------------------------------- */
     effectID === 329784
   ) {
-    let health_pool = player.activeStats.stamina * 20;
+    let health_pool = player.getHealth();
 
     bonus_stats.HPS = (health_pool * 0.1) / player.getFightLength(contentType);
   } else if (
@@ -140,7 +140,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* ------------------------------------ Hope Springs Eternal ------------------------------------ */
     effectID === 351489
   ) {
-      const onePhial = player.activeStats.stamina * 20 * 0.2; // DR portion not accounted for.
+      const onePhial = player.getHealth() * 0.2; // DR portion not accounted for.
 
       bonus_stats.HPS = onePhial * 3 / player.getFightLength(contentType);
   } else if (
@@ -255,7 +255,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     effectID === 352502
   ) {
     const expectedPPM = 0.67 // 1 minute ICD, high proc chance because 80% is a high threshold. 
-    const playerHealth = player.activeStats.stamina * 20;
+    const playerHealth = player.getHealth() * 20;
     bonus_stats.HPS = expectedPPM * playerHealth * 0.2 / 60;
   } else if (
     /* ---------------------------------------- Bonded Hearts --------------------------------------- */
@@ -311,7 +311,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     effectID === 352779
   ) {
       const expectedPPM = 0.74 // 1 minute ICD, high proc chance because 80% is a high threshold. 
-      const playerHealth = player.activeStats.stamina * 20;
+      const playerHealth = player.getHealth() * 20;
       bonus_stats.HPS = expectedPPM * playerHealth * 0.2 / 60;
 
   } else if (
@@ -412,7 +412,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* ------------------------------------ Token of Appreciation ----------------------------------- */
     effectID === 336245
   ) {
-    const expectedPPM = 9.59; // ~3.9 targets getting an absorb every ~25 seconds.
+    const expectedPPM = 9.72; // ~3.9 targets getting an absorb every ~25 seconds.
     const healAmount = player.getInt() * 1.5 * player.getStatPerc("Versatility"); // TODO: Implement the Spell Power -> Attack Power conversion.
     const expectedWastage = 0.04; // Unused shields. Very low.
 
@@ -459,7 +459,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
   ) {
     const spec = player.getSpec();
     const expected_uptime = player.getSpecialQuery("HoldYourGroundUptime", contentType);
-    const percentHealingAffected = spec === SPEC.DISCPRIEST ? 0.25 : 1;
+    const percentHealingAffected = 1; // The Disc Priest bug has been fixed.
 
     bonus_stats.HPS = expected_uptime * (player.getHPS(contentType) * 0.04 * percentHealingAffected);
   } else if (

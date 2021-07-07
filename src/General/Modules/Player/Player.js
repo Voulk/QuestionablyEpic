@@ -63,7 +63,7 @@ class Player {
     crit: 350,
     mastery: 0,
     versatility: 200,
-    stamina: 1490,
+    stamina: 1900,
   };
 
   // Stat weights are normalized around intellect.
@@ -359,6 +359,12 @@ class Player {
   getRawHPS = (contentType) => {
     return this.castModel[contentType].getFightInfo("rawhps");
   };
+
+  // Returns the players health.
+  getHealth = (contentType) => {
+    const hasFort = (contentType === "Raid" || this.spec.includes("Priest"));
+    return this.activeStats.stamina * 20 * (hasFort ? 1.1 : 1);
+  }
 
   getFightLength = (contentType) => {
     return this.castModel[contentType].getFightInfo("fightLength");
