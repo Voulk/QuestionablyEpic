@@ -224,8 +224,8 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /*
     Eventually we'll include mana in bonus_stats and calculate it at the end. Until then, we'll auto-convert to HPS.
     */
-    const manaPotionReturn = 10000;
-    const potionsUsed = player.getFightLength(contentType) > 360 ? 2 : 1; 
+    const manaPotionReturn = 10000 * .4; // sit down potion is 10k. Alch stone gives 40% of that
+    const potionsUsed = Math.ceil(player.getFightLength(contentType) / 360); // One potion every 6 minutes
     bonus_stats.hps = manaPotionReturn * potionsUsed * player.getSpecialQuery("OneManaHealing", contentType) / player.getFightLength(contentType) * 0.8;
 
     /* ------------------------------------- Health Potion Bonus ------------------------------------ */
