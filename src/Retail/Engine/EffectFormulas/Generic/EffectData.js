@@ -109,8 +109,8 @@ export const effectData = [
           {
             coefficient: [0.007334, 0.009135, 0.010979, 0.012824, 0.014668], 
             table: -6,
-            ppm: 45,
-            expectedWastage: 0.1 // This is reasonably low since the absorb lasts 6 seconds and is small enough to be used first.
+            ppm: {"Restoration Druid": 31, "Holy Paladin": 14, "Mistweaver Monk": 42, "Restoration Shaman": 18, "Holy Priest": 11, "Discipline Priest": 11},
+            expectedWastage: 0.15 // This is reasonably low since the absorb lasts 6 seconds and is small enough to be used first.
           },
         ],
       },
