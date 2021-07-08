@@ -19,6 +19,7 @@ import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 import { useSelector } from "react-redux";
 import Settings from "../Settings/Settings";
 import userSettings from "../Settings/SettingsObject";
+import { dominationGemDB } from "../../../Databases/DominationGemDB";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -149,6 +150,7 @@ export default function QuickCompare(props) {
   const [itemDropdown, setItemDropdown] = useState([]); // Filled later based on item slot and armor type.
   const [AutoValue, setAutoValue] = useState(itemDropdown[0]);
   const [inputValue, setInputValue] = useState("");
+  const [dominationSocket, setDominationSocket] = useState("");
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
   const slots = getSlots();
@@ -159,6 +161,12 @@ export default function QuickCompare(props) {
     "Item scores are shown in the top right corner in yellow.",
   ];
   const gameType = useSelector((state) => state.gameType);
+
+  console.log(
+    getItemDB("Retail")
+      .filter((key) => key.id === itemID)
+      .map((key) => key.socketType),
+  );
 
   /* ------------------------ End Simc Module Functions ----------------------- */
 
@@ -256,6 +264,10 @@ export default function QuickCompare(props) {
 
   const itemTertiaryChanged = (event) => {
     setItemTertiary(event.target.value);
+  };
+
+  const itemDominationChanged = (event) => {
+    setDominationSocket(event.target.value);
   };
 
   const changeSlot = (e, v) => {
@@ -407,31 +419,84 @@ export default function QuickCompare(props) {
                 </FormControl>
               </Grid>
 
+              {/* ---------------------------------------------------------------------------------------------- */
+              /*                                             Sockets                                            */
+              /* ----------------------------------------------------------------------------------------------  */}
+
               {gameType === "Retail" ? (
                 <Grid item>
                   <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
                     <InputLabel id="itemsocket">{t("QuickCompare.Socket")}</InputLabel>
-                    <Select
-                      // key={1}
-                      labelId="itemsocket"
-                      value={itemSocket}
-                      onChange={itemSocketChanged}
-                      MenuProps={menuStyle}
-                      label={t("QuickCompare.Socket")}
-                    >
+                    <Select key={"sockets"} labelId="itemsocket" value={itemSocket} onChange={itemSocketChanged} MenuProps={menuStyle} label={t("QuickCompare.Socket")}>
                       {[
                         <MenuItem key={1} label={t("Yes")} value={true}>
                           {t("Yes")}
                         </MenuItem>,
                         <Divider key={2} />,
-                      ]}
-                      ,
-                      {[
+                        ,
                         <MenuItem key={3} label={t("No")} value={false}>
                           {t("No")}
                         </MenuItem>,
                         <Divider key={4} />,
                       ]}
+                    </Select>
+                  </FormControl>
+                </Grid>
+              ) : (
+                ""
+              )}
+              
+              {/* ---------------------------------------------------------------------------------------------- */
+              /*                                        Domination Socket                                       */
+              /* ----------------------------------------------------------------------------------------------  */}
+
+              {gameType === "Retail" ? (
+                <Grid item>
+                  <FormControl
+                    className={classes.formControl}
+                    variant="outlined"
+                    size="small"
+                    style={{ width: t("QuickCompare.DominationSocket").length > 10 ? 160 : 140 }}
+                    disabled={
+                      itemLevel !== "" &&
+                      getItemDB("Retail")
+                        .filter((key) => key.id === itemID)
+                        .map((key) => key.socketType)[0] === "Domination"
+                        ? false
+                        : true
+                    }
+                  >
+                    <InputLabel id="itemtertiary">{t("QuickCompare.DominationSocket")}</InputLabel>
+                    <Select
+                      key={"DominationSocket"}
+                      labelId="DominationSocket"
+                      value={dominationSocket}
+                      onChange={itemDominationChanged}
+                      MenuProps={menuStyle}
+                      label={t("QuickCompare.DominationSocket")}
+                    >
+                      {dominationGemDB
+                        .filter((filter) => filter.type !== "Set Bonus")
+                        .map((key, i) => [
+                          <MenuItem key={key.gemID} label={key.name[currentLanguage]} value={key.gemID}>
+                            <a data-wowhead={"item=" + key.gemID}>
+                              <img
+                                style={{
+                                  height: 20,
+                                  width: 20,
+                                  margin: "0px 5px 0px 0px",
+                                  verticalAlign: "middle",
+                                  borderRadius: 4,
+                                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                                }}
+                                src={process.env.PUBLIC_URL + "/Images/Icons/" + key.icon + ".jpg"}
+                                alt="Holy Paladin"
+                              />
+                            </a>
+                            {key.name[currentLanguage] + " " + "[" + (key.effect.rank + 1) + "]"}
+                          </MenuItem>,
+                          <Divider key={i} />,
+                        ])}
                     </Select>
                   </FormControl>
                 </Grid>

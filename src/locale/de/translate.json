@@ -339,7 +339,8 @@
       "HelpText": "Der Schnellvergleich erlaubt es dir, Gegenstände Kopf an Kopf zu vergleichen. Du kannst manuell Gegenstände hinzufügen, indem du die Dropdown-Menüs weiter oben verwendest oder indem du einen 'SimC'-String des gleichnamigen Addons einfügst. Die Wertung der Items wird automatisch in gelber Farbe oben rechts in der Ecke angezeigt und die Gegenstände sind nach ihrer Stärke geordnet.",
       "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300DE",
       "ItemAdded": "Gegenstand hinzugefügt!",
-      "ItemDeleted": "Gegenstand entfernt!"
+      "ItemDeleted": "Gegenstand entfernt!",
+      "DominationSocket": "Domination"
     },
 
     "Races": {

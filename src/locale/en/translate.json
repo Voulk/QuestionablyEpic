@@ -435,7 +435,8 @@
       "HelpText": "Quick Compare allows you to compare items one by one. Scores include stats, gems and effects, but not set bonuses. Use Top Gear to include those.",
       "ItemErrorMsg": "Item Not Added. Ilvl Cap exceeded.",
       "ItemAdded": "Item Added!",
-      "ItemDeleted": "Item Deleted!"
+      "ItemDeleted": "Item Deleted!",
+      "DominationSocket": "Domination"
     },
 
     "Races": {
