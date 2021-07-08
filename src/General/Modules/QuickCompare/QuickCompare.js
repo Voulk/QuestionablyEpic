@@ -223,6 +223,8 @@ export default function QuickCompare(props) {
 
     if (gameType === "Retail") {
       item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "");
+      item.setDominationGem(dominationSocket);
+
     } else {
       item = new BCItem(itemID, itemName, getItemProp(itemID, "slot", gameType), "");
     }

@@ -77,6 +77,10 @@ class Item {
 
   }
 
+  setDominationGem(id) {
+    if (this.hasDomSocket) this.domGemID = id;
+  }
+
   addStats(bonus_stats) {
     for (var stat in this.stats) {
       if (stat in bonus_stats) {
