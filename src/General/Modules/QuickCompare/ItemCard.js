@@ -7,6 +7,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import { dominationGemDB } from "../../../Databases/DominationGemDB";
 
 const useStyles = makeStyles({
   root: {
@@ -55,7 +56,7 @@ export default function ItemCard(props) {
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
   const gameType = useSelector((state) => state.gameType);
   const itemQuality = item.getQualityColor();
-  
+
   /*
   const itemQuality = (itemLevel, itemID) => {
     if (gameType !== "Retail") {
@@ -92,7 +93,7 @@ export default function ItemCard(props) {
   let isVault = item.vaultItem;
   const deleteActive = item.offhandID === 0;
   const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
-  const gemString = (gameType === "Retail" && item.gemString) ? "&gems=" + item.gemString : "";
+  const gemString = gameType === "Retail" && item.gemString ? "&gems=" + item.gemString : "";
 
   if (item.offhandID > 0) {
     itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
@@ -108,8 +109,7 @@ export default function ItemCard(props) {
     </div>
   ) : null;
 
-  const tertiary = ('tertiary' in props.item && props.item.tertiary !== "") ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
-
+  const tertiary = "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
   // If item.offHandID > 0 then return this card which handles the double names + stats
   if (item.offhandID > 0) {
@@ -221,7 +221,7 @@ export default function ItemCard(props) {
               }}
             >
               <div className="container-ItemCards">
-                <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + gemString +  "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom}>
+                <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + gemString + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom}>
                   <img
                     alt="img"
                     width={42}
@@ -276,6 +276,24 @@ export default function ItemCard(props) {
               <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
                 <Grid item xs={11}>
                   <Typography variant="subtitle2" wrap="nowrap" display="block" style={{ paddingTop: 0, paddingLeft: 4 }} align="left">
+                    {true ? (
+                      <a data-wowhead={"item=" + 187316 + "&domain=" + wowheadDom}>
+                        <img
+                          style={{
+                            height: 16,
+                            width: 16,
+                            margin: "0px 5px 0px 0px",
+                            verticalAlign: "middle",
+                            borderRadius: 4,
+                            border: "1px solid rgba(255, 255, 255, 0.12)",
+                          }}
+                          src={process.env.PUBLIC_URL + "/Images/Icons/" + dominationGemDB.filter((key) => key.gemID === 187316).map((key) => key.icon)[0] + ".jpg"}
+                          alt={dominationGemDB.filter((key) => key.id === 187316).map((key) => key.name[currentLanguage])[0]}
+                        />
+                      </a>
+                    ) : (
+                      ""
+                    )}
                     {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
                   </Typography>
                 </Grid>

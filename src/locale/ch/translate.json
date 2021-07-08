@@ -350,7 +350,8 @@
       "HelpText": "Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.CH",
       "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300CH",
       "ItemAdded": "Item Added!CH",
-      "ItemDeleted": "Item Deleted!CH"
+      "ItemDeleted": "Item Deleted!CH",
+      "DominationSocket": "Domination"
     },
 
     "Races": {
