@@ -889,7 +889,7 @@ export const trinket_data = [
         /* ----------------------------------------- Healing Portion ---------------------------------------- */
         coefficient: 19.081795,
         table: -8,
-        efficiency: 0.48, // The expected overhealing on this trinket is very high.
+        efficiency: 0.45, // The expected overhealing on this trinket is very high.
         ppm: 3,
         targets: { Raid: 4.2, Dungeon: 2.9 }, // 8 yard range
         meteor: 0.15,

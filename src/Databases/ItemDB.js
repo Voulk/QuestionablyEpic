@@ -111436,7 +111436,7 @@ export const itemDB = [
         "sources": [
             {
                 "instanceId": 1193,
-                "encounterId": -16
+                "encounterId": 999
             }
         ],
         "dropLoc": "",
