@@ -425,14 +425,18 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
 export function buildStatString(stats, effect, lang = "en") {
   let statString = "";
   let statsList = []
-  const ignoreList = ["stamina", "bonus_stats", "strength", "agility"]
+  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech"]
   for (const [statkey, statvalue] of Object.entries(stats)) {
     if (!ignoreList.includes(statkey)) statsList.push({key: statkey, val: statvalue})
   }
 
+
+
   statsList = statsList.sort(function (a, b) {
     return b.val - a.val;
   });
+
+  if ('intellect' in stats && stats.intellect > 0) statString = stats.intellect + " Int / ";
   
   for (var ind in statsList) {
     let statKey = statsList[ind]["key"];
