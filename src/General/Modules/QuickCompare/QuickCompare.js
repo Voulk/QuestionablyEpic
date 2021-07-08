@@ -445,7 +445,7 @@ export default function QuickCompare(props) {
               ) : (
                 ""
               )}
-              
+
               {/* ---------------------------------------------------------------------------------------------- */
               /*                                        Domination Socket                                       */
               /* ----------------------------------------------------------------------------------------------  */}
@@ -490,7 +490,7 @@ export default function QuickCompare(props) {
                                   border: "1px solid rgba(255, 255, 255, 0.12)",
                                 }}
                                 src={process.env.PUBLIC_URL + "/Images/Icons/" + key.icon + ".jpg"}
-                                alt="Holy Paladin"
+                                alt={key.name[currentLanguage]}
                               />
                             </a>
                             {key.name[currentLanguage] + " " + "[" + (key.effect.rank + 1) + "]"}
