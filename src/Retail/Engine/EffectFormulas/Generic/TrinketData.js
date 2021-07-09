@@ -887,7 +887,7 @@ export const trinket_data = [
     effects: [
       {
         /* ----------------------------------------- Healing Portion ---------------------------------------- */
-        coefficient: 19.081795,
+        coefficient: 21.946373,
         table: -8,
         efficiency: 0.45, // The expected overhealing on this trinket is very high.
         ppm: 3,
