@@ -166,8 +166,8 @@ describe("First Class Healing Distributor", () => {
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
-    ${233}  | ${1376}
-    ${226}  | ${1239}
+    ${233}  | ${1583}
+    ${226}  | ${1424}
     // add new test cases here
     `.test("First Class Healing Distributor Heal Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
