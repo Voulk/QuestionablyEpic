@@ -64,7 +64,7 @@ export default function ConduitObject(props) {
             <Grid item xs="auto">
               {/* -------------------------------- Image for the Conduit + Ilvl + WHTooltip --------------------------------  */}
               <div className="container">
-                <a data-wowhead={"spell=" + conduit.id + "&domain=" + currentLanguage}>
+                <a data-wowhead={"spell=" + conduit.id + "&domain=" + currentLanguage + "&ilvl=" + conduit.itemLevel}>
                   <img
                     alt=""
                     width={24}
