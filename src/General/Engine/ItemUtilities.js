@@ -422,6 +422,14 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   return stats;
 }
 
+export function getDomGemEffect(id) {
+  let temp = dominationGemDB.filter(function (gem) {
+    return gem.gemID === id;
+  });
+  if (temp.length > 0 && 'effect' in temp[0]) return temp[0].effect;
+  else return ""
+} 
+
 export function buildStatString(stats, effect, lang = "en") {
   let statString = "";
   let statsList = []
@@ -429,8 +437,6 @@ export function buildStatString(stats, effect, lang = "en") {
   for (const [statkey, statvalue] of Object.entries(stats)) {
     if (!ignoreList.includes(statkey)) statsList.push({key: statkey, val: statvalue})
   }
-
-
 
   statsList = statsList.sort(function (a, b) {
     return b.val - a.val;
