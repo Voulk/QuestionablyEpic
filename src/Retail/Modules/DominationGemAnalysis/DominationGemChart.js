@@ -73,7 +73,7 @@ export default class DomChart extends PureComponent {
             <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {truncateString(getTranslatedDominationGem(payload.value, currentLanguage), 32)}
             </text>
-            <a data-wowhead={"item=" + payload.value + "&domain=" + currentLanguage}>
+            <a data-wowhead={(payload.value>200000  ? "spell=" : "item=")  + payload.value + "&domain=" + currentLanguage}>
               <img width={20} height={20} x={0} y={0} src={getGemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </a>
           </foreignObject>

@@ -340,7 +340,8 @@
       "HelpText": "La fonction 'Comparaison rapide d'équipement' vous permets de comparer vos pièces individuellement. Vous pouvez ajouter des équipements manuellement en utilisant le menu déroulant ci-dessus ou via l'importation de vos données SimC. Le pointage est automatiquement affiché dans le coin supérieur droit en jaune, et les équipements sont ensuite triés en commençant par la pièce ayant le meilleur pointage.",
       "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300FR",
       "ItemAdded": "Item Added!FR",
-      "ItemDeleted": "Item Deleted!FR"
+      "ItemDeleted": "Item Deleted!FR",
+      "DominationSocket": "Domination"
     },
 
     "Races": {
