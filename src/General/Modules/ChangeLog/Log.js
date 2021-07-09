@@ -10,6 +10,16 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 8,
+    date: "9th July",
+    changes: [
+      "First Class Healing Distributor was nerfed a second time, and that change is now live.",
+      "Manual entry is now available for Domination sockets and will show on all socketed items.",
+      "UI: Tidied up the stat text on items with leech. Also, Intellect will now always be listed first."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 7,
     date: "7th July",
     changes: [

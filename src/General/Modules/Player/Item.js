@@ -38,6 +38,7 @@ class Item {
   isEquipped = false;
   source = {};
   hasDomSocket = false;
+  domGemID = 0;
 
   // The stats on the item. These should already be adjusted for item level.
   // HPS is a calculated field. It includes any item effects that provide healing or absorbs.
@@ -73,6 +74,11 @@ class Item {
     else if (this.level >= 183) return "#a73fee";
     else if (this.level >= 120) return "#328CE3";
     else return "#1eff00";
+
+  }
+
+  setDominationGem(id) {
+    if (this.hasDomSocket) this.domGemID = id;
   }
 
   addStats(bonus_stats) {

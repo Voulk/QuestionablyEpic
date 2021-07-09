@@ -147,8 +147,8 @@ export default function ItemCard(props) {
                 <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
                   <Grid item xs={11}>
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px" }}>
-                    {true ? (
-                      <a data-wowhead={"item=" + 187316 + "&domain=" + currentLanguage}>
+                    {item.domGemID !== 0 ? (
+                      <a data-wowhead={"item=" + item.domGemID + "&domain=" + currentLanguage}>
                         <img
                           style={{
                             height: 16,
@@ -158,8 +158,8 @@ export default function ItemCard(props) {
                             borderRadius: 4,
                             border: "1px solid rgba(255, 255, 255, 0.12)",
                           }}
-                          src={process.env.PUBLIC_URL + "/Images/Icons/" + dominationGemDB.filter((key) => key.gemID === 187316).map((key) => key.icon)[0] + ".jpg"}
-                          alt={dominationGemDB.filter((key) => key.id === 187316).map((key) => key.name[currentLanguage])[0]}
+                          src={process.env.PUBLIC_URL + "/Images/Icons/" + dominationGemDB.filter((key) => key.gemID === item.domGemID).map((key) => key.icon)[0] + ".jpg"}
+                          alt={dominationGemDB.filter((key) => key.id === item.domGemID).map((key) => key.name[currentLanguage])[0]}
                         />
                       </a>
                     ) : (

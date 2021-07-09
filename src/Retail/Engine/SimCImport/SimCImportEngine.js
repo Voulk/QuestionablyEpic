@@ -215,6 +215,7 @@ function processItem(line, player, contentType, type) {
   let itemEffect = {}; // This is called automatically for everything except Legendaries.
   let itemEquipped = !line.includes("#");
   let bonusIDS = "";
+  let domGemID = 0;
   
 
   // Build out our item information.
@@ -317,7 +318,10 @@ function processItem(line, player, contentType, type) {
     gemID.forEach((gem) => {
       const effect = checkIfDomGem(parseInt(gem));
       gemString += gem + ":"
-      if (effect) itemEffect = effect;
+      if (effect) {
+        itemEffect = effect;
+        domGemID = gem;
+      } 
     })
   }
 
@@ -334,6 +338,7 @@ function processItem(line, player, contentType, type) {
     if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
 
     item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");
+    item.domGemID = parseInt(domGemID);
     if (item.effect.type && item.effect.type === "spec legendary") item.uniqueEquip = "legendary";
     else if (item.vaultItem) item.uniqueEquip = "vault";
     item.softScore = scoreItem(item, player, contentType);

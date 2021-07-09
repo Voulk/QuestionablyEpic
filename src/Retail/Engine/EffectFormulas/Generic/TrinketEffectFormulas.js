@@ -613,7 +613,7 @@ else if (
   const meteor = 1 + healEffect.targets[contentType] * healEffect.meteor;
 
   /* ------- Hastes impact on the trinket PPM is included in the secondary multiplier below. ------ */
-  bonus_stats.hps = (getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel, healEffect.efficiency) / 60) * meteor * healEffect.ppm * player.getStatMultiplier("NOMAST");
+  bonus_stats.hps = (getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel, healEffect.efficiency) / 60) * meteor * healEffect.ppm * player.getStatMultiplier("CRITVERS");
   bonus_stats.haste = getProcessedValue(hasteEffect.coefficient, hasteEffect.table, itemLevel) * convertPPMToUptime(hasteEffect.ppm, hasteEffect.duration);
 
 } else if (
