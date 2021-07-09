@@ -375,7 +375,7 @@
       "ExploreCovenants": "Explore Covenants",
       "LegendaryAnalysis": "Legendary Analysis",
       "TrinketAnalysis": "Trinket Analysis",
-      "DominationAnalysis": "Domination Analysis (Coming soon)",
+      "DominationAnalysis": "Domination Analysis (Alpha)",
       "GreatVault": "The Great Vault (Coming Soon)",
       "CooldownPlanner": "Cooldown Planner (Coming Soon)",
       "Profile": "Profile",
@@ -789,7 +789,7 @@
 
     "DominationSocketAnalysis": {
       "Header": "Domination Socket Analysis",
-      "HelpText": "This is a quick way to see how strong Domination Gems are for your character. These are still being tuned and results could change."
+      "HelpText": "This is a quick way to see how strong Domination Gems are for your character. These are still being tuned and results could change. This is still a very new module, and use it as rough guidance only."
     },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
