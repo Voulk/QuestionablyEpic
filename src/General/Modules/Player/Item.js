@@ -1,4 +1,4 @@
-import { calcStatsAtLevel, getItemAllocations, getItemProp } from "../../Engine/ItemUtilities";
+import { calcStatsAtLevel, getItemAllocations, getItemProp, getDomGemEffect } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
 
 // The Item class represents an active item in the app at a specific item level.
@@ -78,7 +78,10 @@ class Item {
   }
 
   setDominationGem(id) {
-    if (this.hasDomSocket) this.domGemID = id;
+    if (this.hasDomSocket) {
+      this.domGemID = id;
+      this.effect = getDomGemEffect(id)
+    }
   }
 
   addStats(bonus_stats) {
