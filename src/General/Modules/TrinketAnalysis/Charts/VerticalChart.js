@@ -56,30 +56,23 @@ export default class VerticalChart extends PureComponent {
     const currentLanguage = i18n.language;
     const data = this.props.data;
     const db = this.props.db;
+    /* ------------------------- Ilvls to Show on Chart & Colour Generation ------------------------- */
+    const iLvls = [187, 194, 200, 213, 220, 226, 230, 233, 239, 246, 252, 259];
+    const barColours = colorGenerator("Paired", iLvls.length);
+
     let arr = [];
     let cleanedArray = [];
     Object.entries(data)
       .map((key) => key[1])
       .map((map2) => {
+        /* -------------------------- Map Ilvls & Scores Then create an object -------------------------- */
+        let x = Object.fromEntries(iLvls.map((ilvl) => [ilvl, getLevelDiff(map2.name, db, ilvl, map2)]));
+        /* ------------------------- Push Trinket ID & Spread Scores into array ------------------------- */
         arr.push({
           name: map2.id,
-          //i161: map2.i161,
-          187: getLevelDiff(map2.name, db, 187, map2),
-          194: getLevelDiff(map2.name, db, 194, map2),
-          200: getLevelDiff(map2.name, db, 200, map2),
-          207: getLevelDiff(map2.name, db, 207, map2),
-          213: getLevelDiff(map2.name, db, 213, map2),
-          220: getLevelDiff(map2.name, db, 220, map2),
-          226: getLevelDiff(map2.name, db, 226, map2),
-          230: getLevelDiff(map2.name, db, 230, map2),
-          233: getLevelDiff(map2.name, db, 233, map2),
-          239: getLevelDiff(map2.name, db, 239, map2),
-          246: getLevelDiff(map2.name, db, 246, map2),
-          252: getLevelDiff(map2.name, db, 252, map2),
-          259: getLevelDiff(map2.name, db, 259, map2),
+          ...x,
         });
       });
-
     /* ------------ Map new Array of Cleaned Objects (No Zero Values) ----------- */
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
 
@@ -99,9 +92,6 @@ export default class VerticalChart extends PureComponent {
         </g>
       );
     };
-
-    const iLvls = [187, 194, 200, 213, 220, 226, 230, 233, 239, 246, 252, 259];
-    const barColours = colorGenerator("Paired", iLvls.length);
 
     return (
       <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={2}>
@@ -153,8 +143,6 @@ export default class VerticalChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
-          {/*<Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" /> */}
           {iLvls.map((key, i) => (
             <Bar dataKey={key} fill={barColours[i]} stackId="a">
               {data.map((entry, index) => (

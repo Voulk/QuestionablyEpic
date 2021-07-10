@@ -85,7 +85,10 @@ export default class DomChart extends PureComponent {
       );
     };
 
-    const barColours = colorGenerator("BrBG", 7);
+    /* -------------------------------------------- Ranks ------------------------------------------- */
+    const ranks = [1, 2, 3, 4, 5];
+    /* ------- We add 2 to the ranks length to remove the darker colours created by the brewer ------ */
+    const barColours = colorGenerator("BrBG", ranks.length + 2);
 
     return (
       <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={2}>
@@ -138,31 +141,13 @@ export default class DomChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          <Bar dataKey={1} fill={barColours[5]} stackId="a">
-            {data.map((entry, index) => (
-              <Cell fill={this.state.focusBar === index || this.state.mouseLeave ? barColours[5] : chroma(barColours[5]).alpha(0.2)} />
-            ))}
-          </Bar>
-          <Bar dataKey={2} fill={barColours[4]} stackId="a">
-            {data.map((entry, index) => (
-              <Cell fill={this.state.focusBar === index || this.state.mouseLeave ? barColours[4] : chroma(barColours[4]).alpha(0.2)} />
-            ))}
-          </Bar>
-          <Bar dataKey={3} fill={barColours[3]} stackId="a">
-            {data.map((entry, index) => (
-              <Cell fill={this.state.focusBar === index || this.state.mouseLeave ? barColours[3] : chroma(barColours[3]).alpha(0.2)} />
-            ))}
-          </Bar>
-          <Bar dataKey={4} fill={barColours[2]} stackId="a">
-            {data.map((entry, index) => (
-              <Cell fill={this.state.focusBar === index || this.state.mouseLeave ? barColours[2] : chroma(barColours[2]).alpha(0.2)} />
-            ))}
-          </Bar>
-          <Bar dataKey={5} fill={barColours[1]} stackId="a">
-            {data.map((entry, index) => (
-              <Cell fill={this.state.focusBar === index || this.state.mouseLeave ? barColours[1] : chroma(barColours[1]).alpha(0.2)} />
-            ))}
-          </Bar>
+          {ranks.map((rank, i) => (
+            <Bar dataKey={rank} fill={barColours[ranks.length - i]} stackId="a">
+              {data.map((entry, index) => (
+                <Cell fill={this.state.focusBar === index || this.state.mouseLeave ? barColours[ranks.length - i] : chroma(barColours[ranks.length - i]).alpha(0.2)} />
+              ))}
+            </Bar>
+          ))}
         </BarChart>
       </ResponsiveContainer>
     );
