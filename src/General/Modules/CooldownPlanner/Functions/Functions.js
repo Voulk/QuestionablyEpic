@@ -563,5 +563,5 @@ export async function importSummaryData(starttime, endtime, reportid) {
 }
 
 export function colorGenerator(brewerCode, numberOfColours) {
-  return chroma.scale(brewerCode).colors(numberOfColours)
+  return chroma.scale(brewerCode).colors(numberOfColours);
 }
