@@ -203,7 +203,7 @@ class Chart extends Component {
               labelFormatter={(timeStr) => moment(timeStr).format("mm:ss")}
             />
             {this.drawAreas(this.props.cooldownsToShow === true ? this.props.cooldown : this.props.customCooldowns)}
-            <Line yAxisId="3" type="monotone" dataKey="health" stroke="#ff7300" dot={false} />
+            <Line yAxisId="3" type="monotone" dataKey="health" stroke="#FF0000" dot={false} />
           </ComposedChart>
         </ResponsiveContainer>
       </Paper>

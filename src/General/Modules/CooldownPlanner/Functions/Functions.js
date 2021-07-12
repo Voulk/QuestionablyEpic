@@ -598,41 +598,116 @@ export async function importRaidHealth(starttime, endtime, reportid) {
   let reducedHealth = [];
   let nextpage = 0;
 
+  // await axios
+  //   .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + ABILITYID + API2)
+  //   .then((result) => {
+  //     result.data.series
+  //       .filter((key) => key.type !== "Pet")
+  //       .map((key) => key.data.map((key2) => health.push({ timestamp: moment(fightDuration(key2[0], starttime)).startOf("second").valueOf(), health: key2[1] })));
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   });
+
   await axios
     .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + ABILITYID + API2)
     .then((result) => {
-      result.data.series
-        .filter((key) => key.type !== "Pet")
-        .map((key) => key.data.map((key2) => health.push({ timestamp: moment(fightDuration(key2[0], starttime)).startOf("second").valueOf(), health: key2[1] })));
+      const data = result.data;
+      const players = data.series.filter((key) => key.type !== "Pet");
+
+      const entities = [];
+      players.forEach((series) => {
+        const newSeries = {
+          ...series,
+          lastValue: 100, // fights start at full hp
+          data: {},
+        };
+
+        series.data.forEach((item) => {
+          const milisecondsIntoFight = moment(item[0] - starttime)
+            .startOf("second")
+            .valueOf();
+
+          const health = item[1];
+          newSeries.data[milisecondsIntoFight] = Math.min(100, health);
+        });
+        entities.push(newSeries);
+      });
+
+      // const deathsBySecond = {};
+      // if (data.deaths) {
+      //   data.deaths.forEach((death) => {
+      //     const secIntoFight = moment(death.timestamp - starttime)
+      //       .startOf("second")
+      //       .valueOf();
+
+      //     if (death.targetIsFriendly) {
+      //       deathsBySecond[secIntoFight] = true;
+      //     }
+      //   });
+      // }
+
+      const fightDurationInSeconds = moment(endtime - starttime).startOf("second");
+      console.log(fightDurationInSeconds);
+      for (let i = 0; i <= fightDurationInSeconds; i += 1000) {
+        console.log(entities);
+        entities.forEach((series) => {
+          series.data[i] = series.data[i] !== undefined ? series.data[i] : series.lastValue;
+          series.lastValue = series.data[i];
+        });
+        // deathsBySecond[i] = deathsBySecond[i] !== undefined ? deathsBySecond[i] : undefined;
+      }
+      const raidHealth = entities.map((player) => {
+        const data = Object.entries(player.data).map(([key, value]) => ({
+          timestamp: Number(key),
+          health: value,
+        }));
+        return data;
+      });
+
+      //   const deaths = Object.entries(deathsBySecond)
+      //     .filter(([_, value]) => Boolean(value))
+      //     .map(([key]) => ({ x: Number(key) }));
+
+      console.log(raidHealth);
+      health = raidHealth;
     })
+
     .catch(function (error) {
       console.log(error);
     });
+  blah(health);
 
-  // // Loop of the import updating the next page until the next page is undefined (no next page from json return)
-  // if (nextpage !== undefined || null) {
-  //   do {
-  //     await axios
-  //       .get(APIdamagetaken + reportid + START + nextpage + END + endtime + HOSTILITY + ABILITYID + API2)
-  //       .then((result) => {
-  //         health = health.concat(
-  //           Object.keys(result.data.series)
-  //             // .filter((key) => key.type !== "Pet")
-  //             .map((key) => console.log(key)),
-  //         );
-  //         nextpage = result.data.nextPageTimestamp;
-  //       })
-  //       .catch(function (error) {
-  //         console.log(error);
-  //       });
-  //   } while (nextpage !== undefined || null);
-  // }.
-  health2 = health.flat();
-  health2.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
-  health2 = reduceTimestampshealth(health2);
-  health2 = Object.entries(health2).map(key => key[1])
+  let arr = [];
+  Object.entries(health)
+    .map((key) => key)
+    .map((key2) => key2[1])
+    .map((map2) => {
+      map2.map((object) => {
+        console.log(object);
+        /* -------------------------- Map Ilvls & Scores Then create an object -------------------------- */
+        // let x = Object.fromEntries(object.map( mapper => ["timestamp", mapper.timestamp], ["health", mapper.health]);
+        /* ------------------------- Push Trinket ID & Spread Scores into array ------------------------- */
+        arr.push(object);
+      });
+    });
 
-  // reducedHealth = reduceTimestamps(health);
-  // console.log(reducedHealth);
+  console.log(arr);
+
+  // health2 = arr.flat();
+  arr.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
+
+  // health2 = Object.entries(health2).map((key, i) => key[i]);
+  console.log(arr)
+  health2 = reduceTimestampshealth(arr);
+  
+  console.log(health2)
   return health2;
 }
+
+const blah = (obj) => {
+  console.log(obj);
+  let newObj = {};
+  obj.map((key) => Object.assign(newObj, key));
+  console.log(newObj);
+};

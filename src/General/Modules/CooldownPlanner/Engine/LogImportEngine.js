@@ -267,7 +267,6 @@ export default async function updatechartdata(starttime, endtime) {
   /* ------- Concat the damage arrays with the cooldown durations with the missing durations ------ */
   let unmitigatedDamageFromLogWithTimesAddedAndCooldowns = unmitigatedDamageMap.concat(cooldownwithdurations, times);
   unmitigatedDamageFromLogWithTimesAddedAndCooldowns = unmitigatedDamageFromLogWithTimesAddedAndCooldowns.concat(healthUpdated);
-  
 
   let mitigatedDamageFromLogWithTimesAddedAndCooldowns = mitigatedDamageMap.concat(cooldownwithdurations, times);
   mitigatedDamageFromLogWithTimesAddedAndCooldowns = mitigatedDamageFromLogWithTimesAddedAndCooldowns.concat(healthUpdated);
