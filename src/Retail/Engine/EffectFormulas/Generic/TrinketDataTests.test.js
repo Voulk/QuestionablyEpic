@@ -125,6 +125,7 @@ describe("Scrawled Word of Recall", () => {
     });
 });
 
+/* There is currently no way to verify the post-buff specifics, so this test has been disabled until servers go live.
 describe("Shadowed Orb of Torment", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = trinket_data.find((trinket) => trinket.name === "Shadowed Orb of Torment");
@@ -140,7 +141,7 @@ describe("Shadowed Orb of Torment", () => {
   
         expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
     });
-});
+}); 
 
 describe("Titanic Ocular Gland", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
@@ -157,7 +158,7 @@ describe("Titanic Ocular Gland", () => {
   
         expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
     });
-});
+}); */
 
 
 describe("First Class Healing Distributor", () => {
