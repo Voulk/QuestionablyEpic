@@ -801,7 +801,7 @@ export const trinket_data = [
     name: "Titanic Ocular Gland",
     effects: [
       {
-        coefficient: 0.555215,
+        coefficient: 0.555215 * 1.04,
         table: -7,
         uptime: 0.92,
       },
@@ -869,7 +869,7 @@ export const trinket_data = [
     name: "Shadowed Orb of Torment", // Tormented Insight
     effects: [
       {
-        coefficient: 1.328551,
+        coefficient: 1.328551 * 1.61, // 1.328551
         table: -7,
         duration: 40,
         cooldown: 120,
