@@ -34,7 +34,7 @@ export const paladinDefaultSpecialQueries = (contentType) => {
         oneMinute: 1.75,
         ninetySeconds: 1,
         twoMinutes: 1.39,
-        twoMinutesOrb: 1.34,
+        twoMinutesOrb: 1.32,
         threeMinutes: 1,
       },
       HoldYourGroundUptime: 0.4
@@ -47,7 +47,7 @@ export const paladinDefaultSpecialQueries = (contentType) => {
         oneMinute: 1.76,
         ninetySeconds: 1,
         twoMinutes: 1.2,
-        twoMinutesOrb: 1.34,
+        twoMinutesOrb: 1.32,
         threeMinutes: 1,
       },
       HoldYourGroundUptime: 0.35
