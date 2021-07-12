@@ -162,7 +162,7 @@ export function getConduitFormula(effectID, player, contentType, itemLevel = 145
     bonus_stats.HPS = intGain / player.getInt() * (player.getHPS(contentType) * 0.75); // Remove this 0.75 modifier when the cast models update.
   }
   else if (effectID === 357888) {
-    // Small heal based on your max health whenever you take damage. 10s cooldown. The heal on this is currently 10x it's tooltip value.
+    // Small heal based on your max health whenever you take damage. 10s cooldown.
     const percHealing = (0.25 + conduitRank * 0.025) / 100 * 10;
     const ppm = 60 / 10 * 0.7; // Condensed Anima Sphere notably does not proc off a significant number of abilities.
     const expectedOverhealing = 0.32;
