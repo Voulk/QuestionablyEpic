@@ -99,9 +99,9 @@ export default function AddNewChar(props) {
   const handleClose = () => {
     setOpen(false);
   };
-  const handleAdd = (name, spec, allChars, updateChar, region, realm, race, gameType) => {
+  const handleAdd = (name, spec, allChars, updateChar, region, realm, race, gameType, covenant) => {
     setOpen(false);
-    allChars.addChar(name, spec, region, realm, race, gameType);
+    allChars.addChar(name, spec, region, realm, race, gameType, covenant);
     updateChar(allChars);
     props.charAddedSnack();
     setSelectedRace("");
@@ -231,7 +231,7 @@ export default function AddNewChar(props) {
                 </Select>
               </FormControl>
             </Grid>
-            <Grid item xs={12}>
+            {gameType == "Retail" ? <Grid item xs={12}>
               <FormControl disabled={healClass === "" ? true : false} className={classes.formControl} variant="outlined" size="small" label={t("Covenant")}>
                 <InputLabel id="NewCovSelector">{t("Covenant")}</InputLabel>
                 <Select label={t("Covenant")} value={selectedCovenant} onChange={handleChangeCovenant} MenuProps={menuStyle}>
@@ -248,7 +248,7 @@ export default function AddNewChar(props) {
                         .map((item, i) => [item, <Divider key={i} />])}
                 </Select>
               </FormControl>
-            </Grid>
+            </Grid> : ""}
           </Grid>
         </DialogContent>
         <DialogActions>
@@ -256,9 +256,9 @@ export default function AddNewChar(props) {
             {t("Cancel")}
           </Button>
           <Button
-            onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace, gameType)}
+            onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace, gameType, selectedCovenant)}
             color="primary"
-            disabled={(selectedRace === "" || selectedCovenant === "") ? true : false}
+            disabled={(selectedRace === "" || (selectedCovenant === "" && gameType == "Retail")) ? true : false}
             variant="outlined"
           >
             {t("Add")}
