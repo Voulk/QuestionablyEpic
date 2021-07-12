@@ -175,6 +175,7 @@ export default function CharCards(props) {
   const [charName, setCharName] = React.useState(player.charName);
   const [healClass, setHealClass] = React.useState(player.getSpec());
   const [selectedRace, setSelectedRace] = React.useState(player.getRace());
+  const [selectedCovenant, setSelectedRCovenant] = React.useState(player.getCov());
   const [intellect, setIntellect] = React.useState("1");
   const [critical, setCritical] = React.useState(player.getStatWeight(contentType, STAT.CRITICAL_STRIKE));
   const [haste, setHaste] = React.useState(player.getStatWeight(contentType, STAT.HASTE));
