@@ -146,7 +146,11 @@ class ItemSet {
     } else if (this.uniques["vault"] && this.uniques["vault"] > 1) {
       //console.log("SET NOT VIABLE - Vault");
       return false;
-    } else {
+    } else if (this.uniques["crafted"] && this.uniques["crafted"] > 1) {
+      //console.log("SET NOT VIABLE - 230 Crafted Items");
+      return false;
+    }
+     else {
       return true;
     }
   }

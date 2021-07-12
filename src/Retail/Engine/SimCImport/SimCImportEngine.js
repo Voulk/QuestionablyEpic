@@ -216,6 +216,7 @@ function processItem(line, player, contentType, type) {
   let itemEquipped = !line.includes("#");
   let bonusIDS = "";
   let domGemID = 0;
+  let uniqueTag = "";
   
 
   // Build out our item information.
@@ -309,6 +310,8 @@ function processItem(line, player, contentType, type) {
     else if (bonus_id === "6648" && craftedStats.length === 0) missiveStats.push("mastery");
     else if (bonus_id === "6649" && craftedStats.length === 0) missiveStats.push("haste");
     else if (bonus_id === "6650" && craftedStats.length === 0) missiveStats.push("versatility");
+
+    if (bonus_id === "7461") uniqueTag = "crafted";
   }
   if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
   if (levelOverride !== 0) itemLevel = Math.min(499, levelOverride);
@@ -341,6 +344,7 @@ function processItem(line, player, contentType, type) {
     item.domGemID = parseInt(domGemID);
     if (item.effect.type && item.effect.type === "spec legendary") item.uniqueEquip = "legendary";
     else if (item.vaultItem) item.uniqueEquip = "vault";
+    else item.uniqueEquip = uniqueTag;
     item.softScore = scoreItem(item, player, contentType);
 
     //console.log("Adding Item: " + item.id + " in slot: " + itemSlot);
