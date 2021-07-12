@@ -30,8 +30,9 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
             We should take care that we never use the Name tags in the string.
     */
 
-    let vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : lines.length;
-    let linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : 0;
+    
+    let linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : lines.length;
+    let vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : linkedItems;
 
     // We only use the covenant variable to expand weapon tokens. Setting a default is a better approach than showing none if it's missing,
     // given the weapons and offhands are near identical anyway.
@@ -42,7 +43,7 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
 
     for (var i = 8; i < lines.length; i++) {
       let line = lines[i];
-      let type = i > vaultItems || i < linkedItems ? "Vault" : "Regular";
+      let type = i > vaultItems && i < linkedItems ? "Vault" : "Regular";
       // If our line doesn't include an item ID, skip it.
       if (line.includes("id=")) {
         if (line.includes("unknown")) {
