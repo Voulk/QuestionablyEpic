@@ -30,8 +30,9 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
             We should take care that we never use the Name tags in the string.
     */
 
-    let vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : lines.length;
-    let linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : 0;
+    
+    let linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : lines.length;
+    let vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : linkedItems;
 
     // We only use the covenant variable to expand weapon tokens. Setting a default is a better approach than showing none if it's missing,
     // given the weapons and offhands are near identical anyway.
@@ -42,7 +43,7 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
 
     for (var i = 8; i < lines.length; i++) {
       let line = lines[i];
-      let type = i > vaultItems || i < linkedItems ? "Vault" : "Regular";
+      let type = i > vaultItems && i < linkedItems ? "Vault" : "Regular";
       // If our line doesn't include an item ID, skip it.
       if (line.includes("id=")) {
         if (line.includes("unknown")) {
@@ -216,6 +217,7 @@ function processItem(line, player, contentType, type) {
   let itemEquipped = !line.includes("#");
   let bonusIDS = "";
   let domGemID = 0;
+  let uniqueTag = "";
   
 
   // Build out our item information.
@@ -304,11 +306,28 @@ function processItem(line, player, contentType, type) {
         //console.log("Legendary detected" + JSON.stringify(itemEffect));
       }
     }
-    // Missives
-    else if (bonus_id === "6647" && craftedStats.length === 0) missiveStats.push("crit");
-    else if (bonus_id === "6648" && craftedStats.length === 0) missiveStats.push("mastery");
-    else if (bonus_id === "6649" && craftedStats.length === 0) missiveStats.push("haste");
-    else if (bonus_id === "6650" && craftedStats.length === 0) missiveStats.push("versatility");
+    // Missives.
+    // Missives are on every legendary, and are annoyingly also on some crafted items.
+    // Crafted items will either have a missive ID and an INCORRECT crafted_stats id or just a CORRECT crafted_stats ID.
+    // Therefore if a missive ID is present, we need to kill the crafted_stats value.
+    else if (bonus_id === "6647") {
+      missiveStats.push("crit");
+      craftedStats = "";
+    }
+    else if (bonus_id === "6648") {
+      missiveStats.push("mastery");
+      craftedStats = "";
+    }
+    else if (bonus_id === "6649") {
+      missiveStats.push("haste");
+      craftedStats = "";
+    }
+    else if (bonus_id === "6650") {
+      missiveStats.push("versatility");
+      craftedStats = "";
+    }
+
+    if (bonus_id === "7461") uniqueTag = "crafted";
   }
   if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
   if (levelOverride !== 0) itemLevel = Math.min(499, levelOverride);
@@ -341,6 +360,7 @@ function processItem(line, player, contentType, type) {
     item.domGemID = parseInt(domGemID);
     if (item.effect.type && item.effect.type === "spec legendary") item.uniqueEquip = "legendary";
     else if (item.vaultItem) item.uniqueEquip = "vault";
+    else item.uniqueEquip = uniqueTag;
     item.softScore = scoreItem(item, player, contentType);
 
     //console.log("Adding Item: " + item.id + " in slot: " + itemSlot);
