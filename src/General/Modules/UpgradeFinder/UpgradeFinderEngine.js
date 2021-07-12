@@ -91,12 +91,12 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   //buildWepCombos(player, false, false); // TODO: DEL
 
   const baseHPS = player.getHPS(contentType);
+  userSettings.dominationSockets = "Upgrade Finder";
   const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel);
   const baseScore = baseSet.itemSet.hardScore;
 
-  //console.log(wepList);
-  //console.log(baseItemList);
-  userSettings.dominationSockets = "Upgrade Finder";
+
+  
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
 
   for (var x = 0; x < itemPoss.length; x++) {
