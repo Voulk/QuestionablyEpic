@@ -49,7 +49,8 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
         if (line.includes("unknown")) {
           processToken(line, player, contentType, type, covenant);
         } else {
-          processItem(line, player, contentType, type);
+          const item = processItem(line, player, contentType, type)
+          if (item) player.addActiveItem(item);
         }
       }
 
@@ -196,7 +197,7 @@ function processToken(line, player, contentType, type, covenant) {
   //console.log("Creating Token with level" + tokenLevel + ", and ID: " + tokenID);
 }
 
-function processItem(line, player, contentType, type) {
+export function processItem(line, player, contentType, type) {
   // Split string.
   let infoArray = line.split(",");
   let itemID = -1;
@@ -364,9 +365,11 @@ function processItem(line, player, contentType, type) {
     item.softScore = scoreItem(item, player, contentType);
 
     //console.log("Adding Item: " + item.id + " in slot: " + itemSlot);
-    player.addActiveItem(item);
+    return item;
+    //player.addActiveItem(item);
   } else {
     //console.log("Item Level out of range: " + itemLevel);
+    return null
   }
 }
 
