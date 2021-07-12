@@ -306,11 +306,26 @@ function processItem(line, player, contentType, type) {
         //console.log("Legendary detected" + JSON.stringify(itemEffect));
       }
     }
-    // Missives
-    else if (bonus_id === "6647" && craftedStats.length === 0) missiveStats.push("crit");
-    else if (bonus_id === "6648" && craftedStats.length === 0) missiveStats.push("mastery");
-    else if (bonus_id === "6649" && craftedStats.length === 0) missiveStats.push("haste");
-    else if (bonus_id === "6650" && craftedStats.length === 0) missiveStats.push("versatility");
+    // Missives.
+    // Missives are on every legendary, and are annoyingly also on some crafted items.
+    // Crafted items will either have a missive ID and an INCORRECT crafted_stats id or just a CORRECT crafted_stats ID.
+    // Therefore if a missive ID is present, we need to kill the crafted_stats value.
+    else if (bonus_id === "6647") {
+      missiveStats.push("crit");
+      craftedStats = "";
+    }
+    else if (bonus_id === "6648") {
+      missiveStats.push("mastery");
+      craftedStats = "";
+    }
+    else if (bonus_id === "6649") {
+      missiveStats.push("haste");
+      craftedStats = "";
+    }
+    else if (bonus_id === "6650") {
+      missiveStats.push("versatility");
+      craftedStats = "";
+    }
 
     if (bonus_id === "7461") uniqueTag = "crafted";
   }
