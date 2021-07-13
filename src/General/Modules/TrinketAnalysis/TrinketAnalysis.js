@@ -11,6 +11,8 @@ import HelpText from "../SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
+import MetricToggle from "Retail/Modules/DominationGemAnalysis/MetricToggle";
+import SourceToggle from "./SourceToggle";
 // import Settings from "../Settings/Settings";
 // import userSettings from "../Settings/SettingsObject";
 
@@ -84,10 +86,16 @@ const getHighestTrinketScore = (db, trinket, gameType) => {
 
 export default function TrinketAnalysis(props) {
   useEffect(() => {
-      ReactGA.pageview(window.location.pathname + window.location.search);
-    }, []);
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   const { t } = useTranslation();
+  const [metric, setMetric] = React.useState("hps");
+  const [sources, setSources] = React.useState(() => ["World Quests", "Raids", "Dungeons"]);
+console.log(sources)
+  const handleSource = (event, newSources) => {
+    setSources(newSources);
+  };
   const contentType = useSelector((state) => state.contentType);
   const itemLevels = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
   const gameType = useSelector((state) => state.gameType);
@@ -139,6 +147,17 @@ export default function TrinketAnalysis(props) {
         {/* <Grid item xs={12}>
           <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} />
         </Grid> */}
+
+        <Grid item xs={12} container spacing={0} direction="row" justify="space-between">
+          <Grid item>
+            <MetricToggle metric={metric} setMetric={setMetric} />
+          </Grid>
+
+          <Grid item>
+            <SourceToggle metric={sources} setMetric={handleSource} />
+          </Grid>
+        </Grid>
+
         <Grid item xs={12}>
           <Grid container spacing={1} justify="center">
             <Grid item xs={12}>
