@@ -281,7 +281,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let effect = activeTrinket.effects[0];
     let playerBestSecondary = player.getHighestStatWeight(contentType, ["versatility"]); // Exclude Vers since there isn't a Vers version.
 
-    bonus_stats[playerBestSecondary] = ((getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown) * 0.75;
+    bonus_stats[playerBestSecondary] = ((getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown) * 0.65;
     bonus_stats[playerBestSecondary] *= player.getCooldownMult("threeMinutes", contentType);
     // TODO: power reduced by 5% because of the chance something interferes. This needs to be much much better and I'll fix it up this week.
     //
