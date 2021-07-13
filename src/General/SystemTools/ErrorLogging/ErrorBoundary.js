@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 
 export default class ErrorBoundary extends Component {
   state = {
@@ -14,6 +15,7 @@ export default class ErrorBoundary extends Component {
     // eslint-disable-next-line no-console
     console.log({ error, errorInfo });
     console.error("CAUGHT BY ERROR BOUNDARY");
+    reportError(this, "Unknown Crash", "Unknown Crash", "");
     this.setState({ errorInfo });
   }
   render() {
