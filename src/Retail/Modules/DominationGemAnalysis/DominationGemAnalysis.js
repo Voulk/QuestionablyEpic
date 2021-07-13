@@ -128,7 +128,7 @@ export default function DominationAnalysis(props) {
 
   activeGems.sort((a, b) => (getHighestDomScore(a) < getHighestDomScore(b) ? 1 : -1));
 
-  console.log(activeGems);
+  //console.log(activeGems);
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>

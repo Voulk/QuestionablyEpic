@@ -125,9 +125,9 @@ class ItemSet {
     else if (bloodGems > 3) this.effectList.push({"type": "domination gem", "name": "Blood Link"})
 
 
-    console.log("UNHOLY GEMS" + unholyGems.length);
-    console.log("FROST GEMS" + frostGems.length);
-    console.log("BLOOD GEMS" + bloodGems.length);
+    //console.log("UNHOLY GEMS" + unholyGems.length);
+    //console.log("FROST GEMS" + frostGems.length);
+    //console.log("BLOOD GEMS" + bloodGems.length);
 
     // -----------------
     this.setStats = setStats;

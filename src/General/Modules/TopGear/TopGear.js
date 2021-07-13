@@ -147,7 +147,7 @@ export default function TopGear(props) {
       }
     }
     setErrorMessage(errorMessage);
-    console.log(slotLengths);
+    //console.log(slotLengths);
     return topgearOk;
   };
 
