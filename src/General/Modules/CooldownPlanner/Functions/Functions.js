@@ -50,27 +50,27 @@ export function reduceTimestamps(array) {
 }
 
 // reduces array provided by timestamp. returns multiple abilities to one timestamp
-export function reduceTimestampshealth(array) {
+export function reduceTimestampshealth(array, playersInRaid) {
   let timestampSum = array.reduce((acc, cur) => {
     acc[cur.timestamp] = array.reduce((x, n) => {
-      // console.log(x)
-      let count = 1;
+      let count = 0;
       for (let prop in n) {
         if (cur.timestamp === n.timestamp)
-          if (x.hasOwnProperty("health")) {
-            count = count + 1;
-            // console.log(count)
-            // console.log(x["health"])
+          if (x.hasOwnProperty(prop)) {
             x[prop] += n[prop];
           } else x[prop] = n[prop];
       }
       x.timestamp = cur.timestamp;
-      x.health = cur.health / count;
+      // x.health = x.health;
       return x;
     }, {});
     return acc;
   }, {});
-  return timestampSum;
+
+  console.log(Object.entries(timestampSum));
+  let newArrayOfObjects = [];
+  Object.entries(timestampSum).map((key) => newArrayOfObjects.push(key[1]));
+  return newArrayOfObjects;
 }
 
 // returns fight duration Time end - time start of log
@@ -616,10 +616,10 @@ export async function importRaidHealth(starttime, endtime, reportid) {
       const players = data.series.filter((key) => key.type !== "Pet");
 
       const entities = [];
-      players.forEach((series) => {
-        const newSeries = {
-          ...series,
-          lastValue: 100, // fights start at full hp
+      players.forEach((player) => {
+        const newPlayer = {
+          ...player,
+          lastHealthValue: 100,
           data: {},
         };
 
@@ -634,28 +634,13 @@ export async function importRaidHealth(starttime, endtime, reportid) {
         entities.push(newSeries);
       });
 
-      // const deathsBySecond = {};
-      // if (data.deaths) {
-      //   data.deaths.forEach((death) => {
-      //     const secIntoFight = moment(death.timestamp - starttime)
-      //       .startOf("second")
-      //       .valueOf();
-
-      //     if (death.targetIsFriendly) {
-      //       deathsBySecond[secIntoFight] = true;
-      //     }
-      //   });
-      // }
-
       const fightDurationInSeconds = moment(endtime - starttime).startOf("second");
       console.log(fightDurationInSeconds);
       for (let i = 0; i <= fightDurationInSeconds; i += 1000) {
-        console.log(entities);
         entities.forEach((series) => {
-          series.data[i] = series.data[i] !== undefined ? series.data[i] : series.lastValue;
-          series.lastValue = series.data[i];
+          series.data[i] = series.data[i] !== undefined ? series.data[i] : series.lastHealthValue;
+          series.lastHealthValue = series.data[i];
         });
-        // deathsBySecond[i] = deathsBySecond[i] !== undefined ? deathsBySecond[i] : undefined;
       }
       const raidHealth = entities.map((player) => {
         const data = Object.entries(player.data).map(([key, value]) => ({
@@ -664,19 +649,12 @@ export async function importRaidHealth(starttime, endtime, reportid) {
         }));
         return data;
       });
-
-      //   const deaths = Object.entries(deathsBySecond)
-      //     .filter(([_, value]) => Boolean(value))
-      //     .map(([key]) => ({ x: Number(key) }));
-
-      console.log(raidHealth);
       health = raidHealth;
     })
 
     .catch(function (error) {
       console.log(error);
     });
-  blah(health);
 
   let arr = [];
   Object.entries(health)
@@ -684,30 +662,11 @@ export async function importRaidHealth(starttime, endtime, reportid) {
     .map((key2) => key2[1])
     .map((map2) => {
       map2.map((object) => {
-        console.log(object);
-        /* -------------------------- Map Ilvls & Scores Then create an object -------------------------- */
-        // let x = Object.fromEntries(object.map( mapper => ["timestamp", mapper.timestamp], ["health", mapper.health]);
-        /* ------------------------- Push Trinket ID & Spread Scores into array ------------------------- */
         arr.push(object);
       });
     });
 
-  console.log(arr);
-
-  // health2 = arr.flat();
   arr.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
-
-  // health2 = Object.entries(health2).map((key, i) => key[i]);
-  console.log(arr)
-  health2 = reduceTimestampshealth(arr);
-  
-  console.log(health2)
+  health2 = reduceTimestampshealth(arr, health.length);
   return health2;
 }
-
-const blah = (obj) => {
-  console.log(obj);
-  let newObj = {};
-  obj.map((key) => Object.assign(newObj, key));
-  console.log(newObj);
-};
