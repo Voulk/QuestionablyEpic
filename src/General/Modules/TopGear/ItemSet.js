@@ -125,9 +125,9 @@ class ItemSet {
     else if (bloodGems > 3) this.effectList.push({"type": "domination gem", "name": "Blood Link"})
 
 
-    console.log("UNHOLY GEMS" + unholyGems.length);
-    console.log("FROST GEMS" + frostGems.length);
-    console.log("BLOOD GEMS" + bloodGems.length);
+    //console.log("UNHOLY GEMS" + unholyGems.length);
+    //console.log("FROST GEMS" + frostGems.length);
+    //console.log("BLOOD GEMS" + bloodGems.length);
 
     // -----------------
     this.setStats = setStats;
@@ -146,7 +146,11 @@ class ItemSet {
     } else if (this.uniques["vault"] && this.uniques["vault"] > 1) {
       //console.log("SET NOT VIABLE - Vault");
       return false;
-    } else {
+    } else if (this.uniques["crafted"] && this.uniques["crafted"] > 1) {
+      //console.log("SET NOT VIABLE - 230 Crafted Items");
+      return false;
+    }
+     else {
       return true;
     }
   }

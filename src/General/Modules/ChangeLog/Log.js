@@ -10,6 +10,20 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 9,
+    date: "12th July",
+    changes: [
+      "Shadowed Orb of Torment & Titanic Ocular Gland updated to post-buff values.",
+      "You can now select your Covenant in the character right click menu to further tune results.",
+      "Top Gear: 230 crafted items are now restricted to one per gear set.",
+      "SimC Imports: Added support for the 'Linked Items' tag.",
+      "Updated several portions of the model to better align with 9.1 data now that we have some early logs.",
+      "Bugfix: 10% of the new crafted items use a unique bonus ID structure. This is now supported.",
+      "Bugfix: Empty domination sockets in your equipped set will no longer cause Upgrade Finder results to be errant."  
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 8,
     date: "9th July",
     changes: [

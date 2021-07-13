@@ -21,7 +21,7 @@ export default function TierObject(props) {
   const currentLanguage = i18n.language;
   // Item Provided to Component
   const set = props.set;
-  console.log(set);
+  //console.log(set);
   // Player Data
   // const player = props.player;
   // const slots = set.slots;

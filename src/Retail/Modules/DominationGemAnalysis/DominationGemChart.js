@@ -50,7 +50,6 @@ export default class DomChart extends PureComponent {
 
     let arr = [];
     let cleanedArray = [];
-    console.log(data);
     Object.entries(data)
       .map((key) => key[1])
       .map((map2) => {

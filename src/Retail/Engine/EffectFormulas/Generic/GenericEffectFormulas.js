@@ -29,9 +29,11 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
 
   if (effectName === "Shard of Zed") {
     const effect = activeEffect.effects[0];
+    const expectedOverhealing = 0.4;
+    const dpsWastage = 0.3;
     const throughput = Math.round(getProcessedValue(effect.coefficient[rank], effect.table, 0, 1, false)) * effect.ppm * 5 * effect.expectedTargets[contentType] / 60
-    bonus_stats.hps = throughput;
-    bonus_stats.dps = throughput;
+    bonus_stats.hps = throughput * (1 - expectedOverhealing);
+    bonus_stats.dps = throughput * (1 - dpsWastage);
 
   }
   else if (effectName === "Shard of Rev") {

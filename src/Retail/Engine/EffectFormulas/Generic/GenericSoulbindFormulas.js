@@ -255,7 +255,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     effectID === 352502
   ) {
     const expectedPPM = 0.67 // 1 minute ICD, high proc chance because 80% is a high threshold. 
-    const playerHealth = player.getHealth() * 20;
+    const playerHealth = player.getHealth();
     bonus_stats.HPS = expectedPPM * playerHealth * 0.2 / 60;
   } else if (
     /* ---------------------------------------- Bonded Hearts --------------------------------------- */
@@ -311,7 +311,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     effectID === 352779
   ) {
       const expectedPPM = 0.74 // 1 minute ICD, high proc chance because 80% is a high threshold. 
-      const playerHealth = player.getHealth() * 20;
+      const playerHealth = player.getHealth();
       bonus_stats.HPS = expectedPPM * playerHealth * 0.2 / 60;
 
   } else if (
