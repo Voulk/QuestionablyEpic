@@ -616,10 +616,10 @@ export async function importRaidHealth(starttime, endtime, reportid) {
       const players = data.series.filter((key) => key.type !== "Pet");
 
       const entities = [];
-      players.forEach((player) => {
-        const newPlayer = {
-          ...player,
-          lastHealthValue: 100,
+      players.forEach((series) => {
+        const newSeries = {
+          ...series,
+          lastValue: 100,
           data: {},
         };
 
@@ -638,8 +638,8 @@ export async function importRaidHealth(starttime, endtime, reportid) {
       console.log(fightDurationInSeconds);
       for (let i = 0; i <= fightDurationInSeconds; i += 1000) {
         entities.forEach((series) => {
-          series.data[i] = series.data[i] !== undefined ? series.data[i] : series.lastHealthValue;
-          series.lastHealthValue = series.data[i];
+          series.data[i] = series.data[i] !== undefined ? series.data[i] : series.lastValue;
+          series.lastValue = series.data[i];
         });
       }
       const raidHealth = entities.map((player) => {
