@@ -4,8 +4,7 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay = [
-    "- 9.1: A second First Class Healing Distributor nerf is included in all modules.",
-    "- 9.1: Blizzard continue to make hotfixes. QE Live will be updated quickly in response to any changes.",
+    "9.1: The Shadowed Orb & Titanic Ocular Gland buffs are live in all modules.",
 ];
 
   return (

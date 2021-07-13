@@ -74,6 +74,7 @@ export default function WelcomeDialog(props) {
   const [charName, setCharName] = React.useState("");
   const [regions, setRegions] = React.useState("");
   const [selectedRace, setSelectedRace] = React.useState("");
+  const [selectedCovenant, setSelectedCovenant] = React.useState("");
   const [server, setServer] = React.useState("");
   const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade;
   const region = ["CN", "US", "TW", "EU", "KR"];
@@ -93,14 +94,15 @@ export default function WelcomeDialog(props) {
   /* ---------------------------------------------------------------------------------------------- */
   /*                                     Add Character Function                                     */
   /* ---------------------------------------------------------------------------------------------- */
-  const handleAdd = (name, spec, allChars, updateChar, region, realm, race, gameType) => {
+  const handleAdd = (name, spec, allChars, updateChar, region, realm, race, gameType, covenant) => {
     setOpen(false);
-    allChars.addChar(name, spec, region, realm, race, gameType);
+    allChars.addChar(name, spec, region, realm, race, gameType, covenant);
     updateChar(allChars);
     props.charAddedSnack();
     setSelectedRace("");
     setHealClass("");
     setServer("");
+    setSelectedCovenant("");
     // setRegions(null);
     setCharName("");
     /* ----- Set welcomeMessage local storage to true, so that the message does not show anymore ---- */
@@ -115,6 +117,9 @@ export default function WelcomeDialog(props) {
   };
   const handleChangeRace = (event) => {
     setSelectedRace(event.target.value);
+  };
+  const handleChangeCovenant = (event) => {
+    setSelectedCovenant(event.target.value);
   };
   const handleChangeName = (event) => {
     setCharName(event.target.value);
@@ -258,6 +263,24 @@ export default function WelcomeDialog(props) {
                 </Select>
               </FormControl>
             </Grid>
+            {gameType == "Retail" ? <Grid item xs={12}>
+              <FormControl disabled={healClass === "" ? true : false} className={classes.formControl} variant="outlined" size="small" label={t("Covenant")}>
+                <InputLabel id="NewCovSelector">{t("Covenant")}</InputLabel>
+                <Select label={t("Covenant")} value={selectedCovenant} onChange={handleChangeCovenant} MenuProps={menuStyle}>
+                  {healClass === ""
+                    ? ""
+                    : ["kyrian", "necrolord", "night_fae", "venthyr"]
+                        .map((key, i) => (
+                          <MenuItem key={i} value={key}>
+                            <div style={{ display: "inline-flex" }}>
+                              {t(key)}
+                            </div>
+                          </MenuItem>
+                        ))
+                        .map((item, i) => [item, <Divider key={i} />])}
+                </Select>
+              </FormControl>
+            </Grid> : ""}
           </Grid>
         </DialogContent>
       ) : (
@@ -276,9 +299,9 @@ export default function WelcomeDialog(props) {
           {page === 2 ? (
             // ------------------------------------ Add Button for Page 2 -----------------------------------
             <Button
-              onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace, gameType)}
+              onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace, gameType, selectedCovenant)}
               color="primary"
-              disabled={selectedRace === "" ? true : false}
+              disabled={(selectedRace === "" || (selectedCovenant === "" && gameType == "Retail")) ? true : false}
               variant="outlined"
             >
               {t("Add")}
