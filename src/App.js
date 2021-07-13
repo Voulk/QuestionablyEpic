@@ -21,8 +21,6 @@ import ErrorBoundary from "General/SystemTools/ErrorLogging/ErrorBoundary";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import * as Sentry from "@sentry/react";
-import { Integrations } from "@sentry/tracing";
 import ls from "local-storage";
 import QESnackbar from "General/Modules/CooldownPlanner/BasicComponents/SnackBar";
 // import { createBrowserHistory } from "history"; // not used TODO: remove?
@@ -55,15 +53,6 @@ const theme = createMuiTheme({
 
 process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
 
-Sentry.init({
-  dsn: "https://2b2f81e5ca1e4c9a9dfa1f5c858361e4@o919279.ingest.sentry.io/5863333",
-  integrations: [new Integrations.BrowserTracing()],
-  release: "qe-live@9.1.10",
-  // Set tracesSampleRate to 1.0 to capture 100%
-  // of transactions for performance monitoring.
-  // We recommend adjusting this value in production
-  tracesSampleRate: 1.0,
-});
 
 class App extends Component {
   constructor() {
