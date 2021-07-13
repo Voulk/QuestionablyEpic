@@ -115,8 +115,8 @@ class Player {
     const selectedCov = cov.toLowerCase().replace(/"/g, "");
     if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(selectedCov)) this.covenant = selectedCov;
     else {
-      reportError(this, "Player", "Invalid Covenant Supplied", selectedCov);
-      throw new Error("Invalid Covenant Supplied");
+      this.setDefaultCovenant(this.spec);
+      //reportError(this, "Player", "Invalid Covenant Supplied", selectedCov);
     }
   };
 
@@ -130,7 +130,8 @@ class Player {
     // This one is very flexible, but is also not used in any current formulas. It will be replaced when the models are updated.
     else {
       reportError(this, "Player", "Invalid Covenant Supplied", spec);
-      throw new Error("Invalid Spec Supplied to Cov Default");
+      this.covenant = "night_fae";
+      //throw new Error("Invalid Spec Supplied to Cov Default");
     }
   };
 
