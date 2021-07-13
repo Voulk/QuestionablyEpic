@@ -108,7 +108,7 @@ class PlayerChars {
     }
     else {
       let newChar = new Player(name, spec, this.allChar.length, region, realm, race)
-      newChar.setCovenant(covenant);
+      if (covenant !== "") newChar.setCovenant(covenant);
       this.allChar.push(newChar);
     }
     
