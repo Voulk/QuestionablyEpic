@@ -10,6 +10,14 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 10,
+    date: "13th July",
+    changes: [
+      "Bugfix: Fixed a bug that was preventing some players from loading the app",
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 9,
     date: "12th July",
     changes: [
