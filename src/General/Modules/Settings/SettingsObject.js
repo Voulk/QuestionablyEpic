@@ -5,6 +5,7 @@ const userSettings = {
     includeGroupBenefits: false,
     autoSocket: false, // Automatically sockets viable items.
     dominationSockets: "auto",
+    vaultDomGem: "none",
 
     manaProfile: "Standard",
     raidBuffs: false,
