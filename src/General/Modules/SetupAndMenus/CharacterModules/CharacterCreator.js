@@ -240,14 +240,14 @@ export default function AddNewChar(props) {
                     ? ""
                     : ["kyrian", "necrolord", "night_fae", "venthyr"]
                         .map((key, i) => (
-                          <MenuItem key={i} value={key}>
+                          <MenuItem key={"covenant" + i} value={key}>
                             <div style={{ display: "inline-flex" }}>
                               {t(key)}
                               {covenantIcons(key)}
                             </div>
                           </MenuItem>
                         ))
-                        .map((item, i) => [item, <Divider key={i} />])}
+                        .map((item, i) => [item, <Divider key={"covDiv"+ i} />])}
                 </Select>
               </FormControl>
             </Grid> : ""}

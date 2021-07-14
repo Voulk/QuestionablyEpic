@@ -1,25 +1,21 @@
 import React from "react";
 
 export default function covenantIcons(props) {
-  let src = "";
+  let source = "";
 
   const icons = (covenant) => {
     switch (covenant) {
       case covenant === "kyrian":
-        src = process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png";
-        break
+        return process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png";
       case covenant === "necrolord":
-        src = process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png";
-        break
+        return process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png";
       case covenant === "night_fae":
-        src = process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png";
-        break
+        return process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png";
       case covenant === "venthyr":
-        src = process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png";
-        break
+        return process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png";
     }
   };
-  console.log(icons(props));
+console.log(icons(props))
   return (
     <img
       style={{
