@@ -52,7 +52,7 @@ export default function RetailSettings(props) {
   const [autoSocketValue, setAutoSocketValue] = useState(props.userSettings.autoSocket);
 
   /* ----------------------------------- Domination Socket State ---------------------------------- */
-  const [dominationSocket, setDominationSocket] = useState("");
+  const [dominationSocket, setDominationSocket] = useState(props.userSettings.vaultDomGem);
 
   const paladinPlaystyles = [
     { label: "Default", value: "default" },
