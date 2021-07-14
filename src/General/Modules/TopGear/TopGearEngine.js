@@ -49,6 +49,15 @@ function autoSocketItems(itemList) {
 
 }
 
+function autoGemVault(itemList, userSettings) {
+  for (var i = 0; i < itemList.length; i++) {
+    let item = itemList[i];
+    if (item.vaultItem && item.hasDomSocket) {
+      item.setDominationGem(userSettings.vaultDomGem);
+      }
+  }
+}
+
 export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
   //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
   //console.log("CL::::" + currentLanguage);
@@ -59,6 +68,7 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   const newPlayer = setupPlayer(player, contentType, castModel);
   let itemList = deepCopyFunction(rawItemList); // Here we duplicate the users items so that nothing is changed during the process. 
   itemList = userSettings.autoSocket ? autoSocketItems(itemList) : itemList;
+  itemList = userSettings.vaultDomGem !== "none" ? autoGemVault(itemList) : itemList;
 
   let itemSets = createSets(itemList, wepCombos);
 
