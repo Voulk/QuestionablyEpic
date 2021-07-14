@@ -77,8 +77,9 @@ export default function RetailSettings(props) {
     setAutoSocketValue(value);
   };
 
-  const itemDominationChanged = (event) => {
-    setDominationSocket(event.target.value);
+  const updateVaultDom = (value) => {
+    props.editSettings("vaultDomGem", value)
+    setDominationSocket(value);
   };
 
   // const options = [
@@ -301,7 +302,7 @@ export default function RetailSettings(props) {
             </div>
           </Grid>
           <FormControl variant="outlined" size="small" style={{ width: t("QuickCompare.DominationSocket").length > 10 ? 160 : 140 }}>
-            <Select key={"DominationSocket"} labelId="DominationSocket" value={dominationSocket} onChange={itemDominationChanged} MenuProps={menuStyle}>
+            <Select key={"DominationSocket"} labelId="DominationSocket" value={dominationSocket} onChange={(e) => updateVaultDom(e.target.value)} MenuProps={menuStyle}>
               {dominationGemDB
                 .filter((filter) => filter.type !== "Set Bonus")
                 .map((key, i) => [

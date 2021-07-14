@@ -8,6 +8,7 @@ import { convertPPMToUptime } from "../../../Retail/Engine/EffectFormulas/Effect
 import Player from "../Player/Player";
 import CastModel from "../Player/CastModel";
 import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngine"
+import { getDomGemEffect } from "General/Engine/ItemUtilities"
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
@@ -52,13 +53,20 @@ function autoSocketItems(itemList) {
 function autoGemVault(itemList, userSettings) {
   for (var i = 0; i < itemList.length; i++) {
     let item = itemList[i];
-    if (item.vaultItem && item.hasDomSocket) {
-      item.setDominationGem(userSettings.vaultDomGem);
+    if (item.vaultItem && item.hasDomSocket && userSettings.vaultDomGem !== "") {
+      //item.setDominationGem(userSettings.vaultDomGem);
+      const gemID = userSettings.vaultDomGem;
+      item.domGemID = gemID;
+      item.effect = getDomGemEffect(gemID)
+      item.gemString = gemID;
       }
   }
+
+  return itemList;
 }
 
 export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
+  console.log(userSettings);
   //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
   //console.log("CL::::" + currentLanguage);
   var t0 = performance.now();
@@ -68,7 +76,7 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   const newPlayer = setupPlayer(player, contentType, castModel);
   let itemList = deepCopyFunction(rawItemList); // Here we duplicate the users items so that nothing is changed during the process. 
   itemList = userSettings.autoSocket ? autoSocketItems(itemList) : itemList;
-  itemList = userSettings.vaultDomGem !== "none" ? autoGemVault(itemList) : itemList;
+  itemList = userSettings.vaultDomGem !== "none" ? autoGemVault(itemList, userSettings) : itemList;
 
   let itemSets = createSets(itemList, wepCombos);
 
