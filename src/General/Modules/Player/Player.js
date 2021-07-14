@@ -114,6 +114,7 @@ class Player {
   setCovenant = (cov) => {
     let selectedCov = "";
     if (!cov) selectedCov = "";
+    else selectedCov = cov;
 
     selectedCov = selectedCov.toLowerCase().replace(/"/g, "");
     if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(selectedCov)) this.covenant = selectedCov;

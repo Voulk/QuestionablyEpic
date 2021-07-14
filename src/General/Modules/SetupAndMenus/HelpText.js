@@ -64,7 +64,7 @@ export default function HelpText(props) {
           </div>
         </AccordionSummary>
         <Divider variant="middle" />
-        <AccordionDetails className={classes.details} noWrap>
+        <AccordionDetails className={classes.details} >
           <Grid container>
             <Grid item xs={12}>
               <Typography style={{ color: "##fffff7", marginBottom: 0, width: "100%" }} align="left" variant="subtitle1" display="inline" paragraph>
@@ -72,8 +72,8 @@ export default function HelpText(props) {
               </Typography>
             </Grid>
 
-            {helpText.map((key) => (
-              <Grid item xs={12}>
+            {helpText.map((key, i) => (
+              <Grid item xs={12} key={"helpText" + i}>
                 <Typography style={{ color: "##fffff7", marginBottom: 0, width: "100%" }} align="left" variant="subtitle1" display="inline">
                   {bull} {key}
                 </Typography>

@@ -39,7 +39,7 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
     const covenantLine = lines.filter((x) => x.includes("covenant"));
     const covenant = covenantLine.length > 0 ? covenantLine[0].split("=")[1].toLowerCase() : "venthyr";
 
-    player.setCovenant(covenant);
+    //player.setCovenant(covenant);
 
     for (var i = 8; i < lines.length; i++) {
       let line = lines[i];
