@@ -112,8 +112,10 @@ class Player {
   };
 
   setCovenant = (cov) => {
+    console.log("Setting cov to " + cov);
     let selectedCov = "";
     if (!cov) selectedCov = "";
+    else selectedCov = cov;
 
     selectedCov = selectedCov.toLowerCase().replace(/"/g, "");
     if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(selectedCov)) this.covenant = selectedCov;
@@ -124,6 +126,7 @@ class Player {
   };
 
   setDefaultCovenant = (spec) => {
+    console.log("Returning to Default Covenant");
     if (spec === "Holy Paladin") this.covenant = "kyrian";
     else if (spec === "Restoration Druid") this.covenant = "night_fae";
     else if (spec === "Restoration Shaman") this.covenant = "necrolord";
