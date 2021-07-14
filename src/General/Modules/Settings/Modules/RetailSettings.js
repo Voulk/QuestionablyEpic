@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { MenuItem, Grid, FormControl, Select, Typography, Divider, TextField, Tooltip } from "@material-ui/core";
+import { MenuItem, Grid, FormControl, Select, Typography, Divider, TextField, Tooltip, InputLabel } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { setBounds } from "../../../Engine/CONSTRAINTS";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
+import { dominationGemDB } from "../../../../Databases/DominationGemDB";
 
 const menuStyle = {
   style: { marginTop: 5 },
@@ -27,8 +28,13 @@ const menuStyle = {
 };
 
 export default function RetailSettings(props) {
-  const { t } = useTranslation();
-  // const playerSpec = props.player.getSpec();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+  const playerSpec = props.player.getSpec();
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             States                                             */
+  /* ---------------------------------------------------------------------------------------------- */
 
   /* ---------------------------------------- Hymnal State ---------------------------------------- */
   const [hymnalValue, setHymnalValue] = useState(props.userSettings.hymnalAllies);
@@ -39,8 +45,22 @@ export default function RetailSettings(props) {
   /* -------------------------------------- Disc Talent State ------------------------------------- */
   // const [discTalent, setDiscTalent] = useState(109964);
 
+  /* ----------------------------------- Paladin Playstyle State ---------------------------------- */
+  const [paladinPlaystyle, setPaladinPlaystyle] = useState("default");
+
   /* -------------------------------------- Auto-Socket State ------------------------------------- */
   const [autoSocketValue, setAutoSocketValue] = useState(props.userSettings.autoSocket);
+
+  /* ----------------------------------- Domination Socket State ---------------------------------- */
+  const [dominationSocket, setDominationSocket] = useState("");
+
+  const paladinPlaystyles = [
+    { label: "Default", value: "default" },
+    { label: "Glimmer of Light", value: "glimmer" },
+    { label: "Light of the Martyr", value: "glimmer" },
+    { label: "Kyrian", value: "kyrian" },
+    { label: "Venthyr", value: "venthyr" },
+  ];
 
   const updateHymnal = (value) => {
     props.editSettings("hymnalAllies", setBounds(value, 0, 4));
@@ -55,6 +75,11 @@ export default function RetailSettings(props) {
   const updateAutoSocketValue = (value) => {
     props.editSettings("autoSocket", value);
     setAutoSocketValue(value);
+  };
+
+  const updateVaultDom = (value) => {
+    props.editSettings("vaultDomGem", value)
+    setDominationSocket(value);
   };
 
   // const options = [
@@ -80,7 +105,14 @@ export default function RetailSettings(props) {
                 <Typography color="primary" style={{ marginRight: 4 }} noWrap>
                   {t("Settings.Retail.Setting0Title")}
                 </Typography>
-                <Tooltip title={<Typography align="center" variant="body2">{t("Settings.Retail.Setting0Tooltip")}</Typography>} placement="top-start">
+                <Tooltip
+                  title={
+                    <Typography align="center" variant="body2">
+                      {t("Settings.Retail.Setting0Tooltip")}
+                    </Typography>
+                  }
+                  placement="top-start"
+                >
                   <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
                 </Tooltip>
               </div>
@@ -113,7 +145,14 @@ export default function RetailSettings(props) {
                 <Typography color="primary" style={{ marginRight: 4 }} noWrap>
                   {t("Settings.Retail.Setting1Title")}
                 </Typography>
-                <Tooltip title={<Typography align="center" variant="body2">{t("Settings.Retail.Setting1Tooltip")}</Typography>} placement="top-start">
+                <Tooltip
+                  title={
+                    <Typography align="center" variant="body2">
+                      {t("Settings.Retail.Setting1Tooltip")}
+                    </Typography>
+                  }
+                  placement="top-start"
+                >
                   <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
                 </Tooltip>
               </div>
@@ -166,8 +205,44 @@ export default function RetailSettings(props) {
             ) : (
               ""
             )} */}
-      {/* ----------------------------- Discipline Priest Setting Divinder ----------------------------- */}
-      {/* {playerSpec === "Discipline Priest" ? <Divider orientation="vertical" flexItem /> : ""} */}
+
+      {/* --------------------------------- Paladin Playstyle Selection --------------------------------  */}
+      {/* {playerSpec === "Holy Paladin" ? (
+        <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
+          <Grid container spacing={0} style={{ padding: "0px 8px" }}>
+            <Grid item xs={12}>
+              <div style={{ display: "inline-flex" }}>
+                <Typography color="primary" style={{ marginRight: 4 }} noWrap>
+                  {t("Settings.Retail.Setting5Title")}
+                </Typography>
+                <Tooltip
+                  title={
+                    <Typography align="center" variant="body2">
+                      {t("Settings.Retail.Setting5Tooltip")}
+                    </Typography>
+                  }
+                  placement="top-start"
+                >
+                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
+                </Tooltip>
+              </div>
+            </Grid>
+            <Grid item xs={12}>
+              <FormControl variant="outlined" fullWidth size="small">
+                <Select labelId="slots" value={paladinPlaystyle} onChange={(e) => setPaladinPlaystyle(e.target.value)} MenuProps={menuStyle}>
+                  {paladinPlaystyles.map((key, i) => (
+                    <MenuItem id={key.label} value={key.value} style={{ justifyContent: "center" }}>
+                      {key.label}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </Grid>
+          </Grid>
+        </Grid>
+      ) : (
+        ""
+      )} */}
       {/* ----------------------------------------- Auto Socket Items ---------------------------------------- */}
       {props.autoSocket === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
@@ -177,7 +252,14 @@ export default function RetailSettings(props) {
                 <Typography color="primary" style={{ marginRight: 4 }} noWrap>
                   {t("Settings.Retail.Setting3Title")}
                 </Typography>
-                <Tooltip title={<Typography align="center" variant="body2">{t("Settings.Retail.Setting3Tooltip")}</Typography>} placement="top-start">
+                <Tooltip
+                  title={
+                    <Typography align="center" variant="body2">
+                      {t("Settings.Retail.Setting3Tooltip")}
+                    </Typography>
+                  }
+                  placement="top-start"
+                >
                   <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
                 </Tooltip>
               </div>
@@ -199,34 +281,54 @@ export default function RetailSettings(props) {
       ) : (
         ""
       )}
-      {/* ----------------------------------------- Free Option ---------------------------------------- */}
-      {/*
-            <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-              <Grid container spacing={1} style={{ padding: "0px 8px" }}>
-                <Grid item xs={12}>
-                  <Tooltip
-                    title={<Typography align="center" variant="body2">{t("Settings.Retail.Setting4Tooltip")}</Typography>}
-                    placement="top-start"
-                  >
-                    <Typography color="primary">
-                      {t("Settings.Retail.Setting4Title")}
-                    </Typography>
-                  </Tooltip>
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    id="AlliesNumber"
-                    value={value4}
-                    style={{ maxWidth: 75 }}
-                    onChange={(e) => setValue4(e.target.value)}
-                    variant="outlined"
-                    size="small"
-                    type="number"
-                  />
-                </Grid>
-              </Grid>
-            </Grid>
-            */}
+      {/* --------------------------- Domination Socket for Great Vault Items --------------------------  */}
+      <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
+        <Grid container spacing={0} style={{ padding: "0px 8px" }}>
+          <Grid item xs={12}>
+            <div style={{ display: "inline-flex" }}>
+              <Typography color="primary" style={{ marginRight: 4 }} noWrap>
+                {t("Settings.Retail.Setting4Title")}
+              </Typography>
+              <Tooltip
+                title={
+                  <Typography align="center" variant="body2">
+                    {t("Settings.Retail.Setting4Tooltip")}
+                  </Typography>
+                }
+                placement="top-start"
+              >
+                <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
+              </Tooltip>
+            </div>
+          </Grid>
+          <FormControl variant="outlined" size="small" style={{ width: t("QuickCompare.DominationSocket").length > 10 ? 160 : 140 }}>
+            <Select key={"DominationSocket"} labelId="DominationSocket" value={dominationSocket} onChange={(e) => updateVaultDom(e.target.value)} MenuProps={menuStyle}>
+              {dominationGemDB
+                .filter((filter) => filter.type !== "Set Bonus")
+                .map((key, i) => [
+                  <MenuItem key={key.gemID} label={key.name[currentLanguage]} value={key.gemID}>
+                    <a data-wowhead={"item=" + key.gemID}>
+                      <img
+                        style={{
+                          height: 20,
+                          width: 20,
+                          margin: "0px 5px 0px 0px",
+                          verticalAlign: "middle",
+                          borderRadius: 4,
+                          border: "1px solid rgba(255, 255, 255, 0.12)",
+                        }}
+                        src={process.env.PUBLIC_URL + "/Images/Icons/" + key.icon + ".jpg"}
+                        alt={key.name[currentLanguage]}
+                      />
+                    </a>
+                    {key.name[currentLanguage] + " " + "[" + (key.effect.rank + 1) + "]"}
+                  </MenuItem>,
+                  <Divider key={i} />,
+                ])}
+            </Select>
+          </FormControl>
+        </Grid>
+      </Grid>
       {/* ----------------------------------------- Free Option ---------------------------------------- */}
       {/*
             <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
