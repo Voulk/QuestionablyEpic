@@ -111,5 +111,9 @@ export default function classIcons(props, style) {
   if (props === "" || props === undefined) {
     return null;
   }
-  return <img style={{ ...style }} src={src} alt={alt} />;
+  return (
+    <div>
+      <img style={{ ...style }} src={src} alt={alt} />
+    </div>
+  );
 }
