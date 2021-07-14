@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
+import covenantIcons from "../../CooldownPlanner/Functions/IconFunctions/CovenantIcons"
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { bcClassRaceList, classRaceList } from "../../CooldownPlanner/Data/Data";
 import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
@@ -242,6 +243,7 @@ export default function AddNewChar(props) {
                           <MenuItem key={i} value={key}>
                             <div style={{ display: "inline-flex" }}>
                               {t(key)}
+                              {covenantIcons(key)}
                             </div>
                           </MenuItem>
                         ))
