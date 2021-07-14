@@ -5,17 +5,18 @@ export default function covenantIcons(props) {
 
   const icons = (covenant) => {
     switch (covenant) {
-      case covenant === "kyrian":
+      case "kyrian":
         return process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png";
-      case covenant === "necrolord":
+      case "necrolord":
         return process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png";
-      case covenant === "night_fae":
+      case "night_fae":
         return process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png";
-      case covenant === "venthyr":
+      case "venthyr":
         return process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png";
     }
   };
 console.log(icons(props))
+
   return (
     <img
       style={{
