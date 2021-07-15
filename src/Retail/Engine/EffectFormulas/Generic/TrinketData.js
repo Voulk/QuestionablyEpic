@@ -937,6 +937,25 @@ export const trinket_data = [
       },
     ],
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Forbidden Necromantic Tome                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    
+    */
+    name: "Forbidden Necromantic Tome",
+    effects: [
+      {
+        coefficient: 0.337095, 
+        table: -7,
+        duration: 15,
+        averageStacks: {"Restoration Druid": 0.7, "Holy Paladin": 1.5, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.8, "Holy Priest": 0.7, "Discipline Priest": 1.6},
+        // The average stacks value is correct, but should be rewritten to include the formula in the code.
+        ppm: 5,
+      },
+    ],
+  },
 ];
 
 /* ------------------------------------------- Unused ------------------------------------------- */
