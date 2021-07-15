@@ -109097,7 +109097,8 @@ export const itemDB = [
             }
         ],
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Domination"
     },
     {
         "id": 186301,
@@ -109408,7 +109409,8 @@ export const itemDB = [
             }
         ],
         "dropLoc": "",
-        "slot": "Hands"
+        "slot": "Hands",
+        "socketType": "Domination"
     },
     {
         "id": 186312,
