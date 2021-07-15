@@ -143,7 +143,6 @@ const CharTab = withStyles((theme) => ({
   selected: {},
 }))((props) => <Tab {...props} />);
 const menuStyle = {
-  style: { marginTop: 5 },
   MenuListProps: {
     style: { paddingTop: 0, paddingBottom: 0 },
   },
@@ -371,7 +370,7 @@ export default function CharCards(props) {
     /*                      Character Card for the main menu                      */
     /* -------------------------------------------------------------------------- */
     <Grid item xs={12} sm={6} md={6} lg={6} xl={4}>
-      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : ""}>
+      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : null}>
         <Card className={rootClassName} variant="outlined" raised={true}>
           <Avatar src={specImages[spec].default} variant="square" alt="" className={classes.large} />
           <Divider orientation="vertical" flexItem />
