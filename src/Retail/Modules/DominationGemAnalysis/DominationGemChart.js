@@ -31,6 +31,7 @@ const cleanZerosFromArray = (obj) => {
     }, {});
 };
 
+/* ------------------------------- Set strings to a certain length ------------------------------ */
 const truncateString = (str, num) => {
   if (str.length <= num) {
     return str;
@@ -50,6 +51,10 @@ export default class DomChart extends PureComponent {
 
     let arr = [];
     let cleanedArray = [];
+
+    /* ---------------------------- Create Chart Data from supplied data ---------------------------- */
+    // map each entry in "data" and push the differences between ranks to a new Array
+    // this is so that chart shows the correct length for each score on the stacked bar chart
     Object.entries(data)
       .map((key) => key[1])
       .map((map2) => {
@@ -67,15 +72,17 @@ export default class DomChart extends PureComponent {
     /* ------------ Map new Array of Cleaned Objects (No Zero Values) ----------- */
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
 
-    /* ----------------------- Y-Axis Label Customization ----------------------- */
+    /* ---------------------- Y-Axis Label Customization (Domination Gem Names) --------------------- */
     const CustomizedYAxisTick = (props) => {
       const { x, y, payload } = props;
       return (
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
+            {/* ---------------------------------------- Trinket name ----------------------------------------  */}
             <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {truncateString(getTranslatedDominationGem(payload.value, currentLanguage), 32)}
             </text>
+            {/* ------------------------------ Trinket Icon with Wowhead Tooltip -----------------------------  */}
             <a data-wowhead={(payload.value > 200000 ? "spell=" : "item=") + payload.value + "&domain=" + currentLanguage}>
               <img width={20} height={20} x={0} y={0} src={getGemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </a>
@@ -86,7 +93,7 @@ export default class DomChart extends PureComponent {
 
     /* -------------------------------------------- Ranks ------------------------------------------- */
     const ranks = [1, 2, 3, 4, 5];
-    /* ------- We add 2 to the ranks length to remove the darker colours created by the brewer ------ */
+    /* ---------- We add 2 to the rank length to remove the darkest/lightest colour created --------- */
     const barColours = colorGenerator("BrBG", ranks.length + 2);
 
     return (
@@ -101,6 +108,7 @@ export default class DomChart extends PureComponent {
             bottom: 20,
             left: 250,
           }}
+          /* ------------ When the cursor enters the chart the hovered bar will be set as focus ----------- */
           onMouseMove={(state) => {
             if (state.isTooltipActive) {
               this.setState({ focusBar: state.activeTooltipIndex, mouseLeave: false });
@@ -118,8 +126,11 @@ export default class DomChart extends PureComponent {
               backgroundColor: "#1b1b1b",
               border: "1px solid rgba(255, 255, 255, 0.12)",
             }}
+            // isAnimationActive set to false to avoid the 'jittering' users experiencing when the tooltip animates off screen up to the cursor causing the scroll bar to appear then disappear
             isAnimationActive={false}
-            labelFormatter={(timeStr) => getTranslatedDominationGem(timeStr, currentLanguage)}
+            // translate the domination gem into the users currently selected language
+            labelFormatter={(string) => getTranslatedDominationGem(string, currentLanguage)}
+            // only show values in the tooltip if > 0
             formatter={(value, name, props) => {
               {
                 if (value > 0) {
@@ -136,12 +147,16 @@ export default class DomChart extends PureComponent {
               }
             }}
           />
-
+          {/* ---------------------------------------- Chart Legend ----------------------------------------  */}
           <Legend verticalAlign="top" />
+          {/* ----------------------------------- Background Divding Lines ---------------------------------  */}
           <CartesianGrid vertical={true} horizontal={false} />
+          {/* -------------------------------- Verticle Axis (Trinket Names) -------------------------------  */}
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
+          {/* -------------------- Here we map a bar for each rank provided to the chart -------------------  */}
           {ranks.map((rank, i) => (
             <Bar dataKey={rank} fill={barColours[ranks.length - i]} stackId="a">
+              {/* ------------------------------------ Hover effect for bar ------------------------------------  */}
               {data.map((entry, index) => (
                 <Cell fill={this.state.focusBar === index || this.state.mouseLeave ? barColours[ranks.length - i] : chroma(barColours[ranks.length - i]).alpha(0.2)} />
               ))}
