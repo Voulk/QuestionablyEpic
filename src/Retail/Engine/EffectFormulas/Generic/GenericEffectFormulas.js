@@ -57,11 +57,11 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
 
   }
 
+  // Blood Link scales with crit and versatility, but not haste.
   else if (effectName === "Blood Link") {
     const effect = activeEffect.effects[0];
-    console.log("Rank: " + rank);
     const value = Math.round(getProcessedValue(effect.coefficient[rank], effect.table, 174, 1, false)) * player.getStatPerc("Vers") * player.getStatPerc("Crit")
-    bonus_stats.hps = value * effect.ppm * (1 - effect.expectedOverhealing) * player.getStatPerc("Vers") / 60; // The healing effect basically scales with Vers twice.
+    bonus_stats.hps = value * effect.ppm * (1 - effect.expectedOverhealing) / 60; // The healing effect basically scales with Vers twice.
     bonus_stats.dps = value * effect.ppm / 60;
 
   }
