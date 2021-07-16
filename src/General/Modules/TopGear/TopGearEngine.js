@@ -66,7 +66,7 @@ function autoGemVault(itemList, userSettings) {
 }
 
 export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
-  console.log(userSettings);
+  //console.log(userSettings);
   //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
   //console.log("CL::::" + currentLanguage);
   var t0 = performance.now();

@@ -120,19 +120,20 @@ class ItemSet {
       return effect.type === "domination gem" && effect.gemColor === "Blood";
     });
 
-    if (unholyGems > 3) this.effectList.push({"type": "domination gem", "name": "Chaos Bane"})
-    else if (frostGems > 3) this.effectList.push({"type": "domination gem", "name": "Winds of Winter"})
-    else if (bloodGems > 3) this.effectList.push({"type": "domination gem", "name": "Blood Link"})
+    if (unholyGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Chaos Bane", "rank": 0})
+    else if (frostGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Winds of Winter", "rank": 0})
+    else if (bloodGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Blood Link", "rank": 0})
 
 
-    //console.log("UNHOLY GEMS" + unholyGems.length);
-    //console.log("FROST GEMS" + frostGems.length);
-    //console.log("BLOOD GEMS" + bloodGems.length);
+    /*console.log("UNHOLY GEMS" + unholyGems.length);
+    console.log("FROST GEMS" + frostGems.length);
+    console.log("BLOOD GEMS" + bloodGems.length); */
 
     // -----------------
     this.setStats = setStats;
     this.setSockets = setSockets;
     this.domSockets = domSockets;
+    //console.log(this.effectList);
 
     return this;
   }

@@ -52,7 +52,7 @@ describe("Chaos Bane Data Check", () => {
     // add new test cases here
     `.test("Chaos Bane Test - $effectNum - Expects: $expectedResult", ({ effectNum, expectedResult }) => {
         let effect = activeEffect.effects[effectNum];
-        expect(getProcessedValue(effect.coefficient, effect.table, 174, 1, true)).toBe(expectedResult);
+        expect(getProcessedValue(effect.coefficient[0], effect.table, 174, 1, true)).toBe(expectedResult);
     });
 });
 
@@ -143,6 +143,6 @@ describe("Blood Link Data Check", () => {
     `.test("Blood Link Test - $effectNum - Expects: $expectedResult", ({ effectNum, expectedResult }) => {
         let effect = activeEffect.effects[effectNum];
         console.log(effect);
-        expect(getProcessedValue(effect.coefficient, effect.table, 174, 1, true)).toBe(expectedResult);
+        expect(getProcessedValue(effect.coefficient[0], effect.table, 174, 1, true)).toBe(expectedResult);
     });
 });
