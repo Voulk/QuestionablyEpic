@@ -11,7 +11,7 @@ export const changeLog = [
   {
     version: "9.1 / 2.5.1",
     update: 12,
-    date: "14th July",
+    date: "16th July",
     changes: [
       "Added Set Bonus Ranks",
       "Added Forbidden Necromantic Tome"
