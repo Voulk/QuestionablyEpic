@@ -109097,7 +109097,8 @@ export const itemDB = [
             }
         ],
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Domination"
     },
     {
         "id": 186301,
@@ -109408,7 +109409,8 @@ export const itemDB = [
             }
         ],
         "dropLoc": "",
-        "slot": "Hands"
+        "slot": "Hands",
+        "socketType": "Domination"
     },
     {
         "id": 186312,
@@ -112023,7 +112025,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Forbidden Necromantic Tome"
         },
-        "levelRange": []
+        "levelRange": [220, 233, 246, 259]
     },
     {
         "id": 186422,

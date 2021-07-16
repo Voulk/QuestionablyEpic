@@ -71,13 +71,13 @@ export const effectData = [
         name: "Chaos Bane", // These use tables as if 174 ilvl.
         effects: [
           {
-            coefficient: 0.105263, 
+            coefficient: [0.105263, 0.1578945, 0.210526, 0.2631575, 0.315789], 
             duration: 30,
             table: -1,
             ppm: 8, // Does have a 0.5s GCD. Doesn't proc while Effect#2 is active.
           },
           {
-            coefficient: 3.158, 
+            coefficient: [3.158, 4.737, 6.316, 7.895, 9.474], 
             duration: 30,
             table: -1,
             ppm: 8,
@@ -136,11 +136,11 @@ export const effectData = [
         name: "Winds of Winter", // 6% of your critical hits and healing are stored. You get an absorb and deal damage very 20s based on what is stored.
         effects: [
           {
-            coefficient: 7.44707, // The coefficient is for the maximum amount stored on a crit.
+            coefficient: [7.44707, 11.170605, 14.89414, 18.617675, 22.34121], // The coefficient is for the maximum amount stored on a crit.
             table: -8,
             specOvercap: {"Restoration Druid": 0.94, "Holy Paladin": 0.6, "Mistweaver Monk": 0.85, "Restoration Shaman": 0.94, "Holy Priest": 0.75, "Discipline Priest": 0.7},
             specAbilitiesThatWork: {"Restoration Druid": 0.85, "Holy Paladin": 0.6, "Mistweaver Monk": 1, "Restoration Shaman": 0.57, "Holy Priest": 0.94, "Discipline Priest": 0.26}, // Winds of Winter doesn't work on multiple abilities in the game. Disc and Holy Paladin are penalized most heavily.
-            stored: 0.06,
+            stored: [0.06, 0.12, 0.18, 0.24, 0.3],
             wastage: 0.1
           },
         ],
@@ -193,7 +193,7 @@ export const effectData = [
         name: "Blood Link", // These use tables as if 174 ilvl.
         effects: [
           {
-            coefficient: 22.3414, 
+            coefficient: [22.3414, 33.5121, 44.6828, 55.8535, 67.0242], 
             table: -9, // -8 in the spell data.
             ppm: 20, // Has a 100% uptime, and procs every 3 seconds.
             expectedOverhealing: 0.2,

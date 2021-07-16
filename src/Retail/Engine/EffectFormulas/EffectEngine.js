@@ -130,7 +130,7 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0, userS
       bonus_stats = getGenericEffectBC(effectName, player, contentType);
     } 
   }
-  //console.log("ITEM EFFECT" + effectName + " " + effectType + ". " + ". Result: " + JSON.stringify(bonus_stats));
+  console.log("ITEM EFFECT" + effectName + " " + effectType + ". " + ". Result: " + JSON.stringify(bonus_stats));
   return bonus_stats;
 }
 

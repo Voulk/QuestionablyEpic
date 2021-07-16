@@ -641,6 +641,17 @@ else if (
   bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
   //
 }
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                   Forbidden Necromantic Tome                                   */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Forbidden Necromantic Tome"
+) {
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.averageStacks[player.getSpec()];
+  //
+}
   else {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        No Trinkets Found                                       */
