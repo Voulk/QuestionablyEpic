@@ -59,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "auto",
       marginRight: "auto",
       width: "65%",
+      marginTop: 0,
     },
     [theme.breakpoints.up("lg")]: {
       justifyContent: "center",
@@ -66,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "auto",
       marginRight: "auto",
       width: "55%",
+      marginTop: 0,
     },
   },
 }));

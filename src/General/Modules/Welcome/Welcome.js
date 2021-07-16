@@ -13,6 +13,7 @@ import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunction
 import { useSelector } from "react-redux";
 import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
+import { covenantIcons } from "../CooldownPlanner/Functions/CovenantFunctions";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -228,6 +229,7 @@ export default function WelcomeDialog(props) {
                     .filter((filter) => gameType === availableClasses[filter].gameType)
                     .map((key, i) => (
                       <MenuItem key={i} value={key} style={{ color: classColoursJS(key) }}>
+                        <div style={{ display: "inline-flex" }}>
                         {classIcons(key, {
                           height: 20,
                           width: 20,
@@ -237,6 +239,7 @@ export default function WelcomeDialog(props) {
                           border: "1px solid rgba(255, 255, 255, 0.12)",
                         })}
                         {t("Classes." + key)}
+                        </div>
                       </MenuItem>
                     ))
                     .map((item, i) => [item, <Divider key={i} />])}
@@ -273,6 +276,7 @@ export default function WelcomeDialog(props) {
                         .map((key, i) => (
                           <MenuItem key={i} value={key}>
                             <div style={{ display: "inline-flex" }}>
+                              {covenantIcons(key, 20, 20)}
                               {t(key)}
                             </div>
                           </MenuItem>

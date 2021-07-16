@@ -82,7 +82,7 @@ export default class VerticalChart extends PureComponent {
       return (
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
-            <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
+            <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {truncateString(getTranslatedItemName(payload.value, currentLanguage), 32)}
             </text>
             <a data-wowhead={"item=" + payload.value + "&ilvl=200" + "&domain=" + currentLanguage}>
@@ -114,7 +114,7 @@ export default class VerticalChart extends PureComponent {
           }}
         >
           <XAxis type="number" stroke="#f5f5f5" axisLine={false} />
-          <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} padding={0} height={1} axisLine={false} />
+          <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} height={1} axisLine={false} />
           <Tooltip
             cursor={false}
             labelStyle={{ color: "#ffffff" }}

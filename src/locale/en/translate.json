@@ -399,6 +399,7 @@
         "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
         "Profile": "Edit your details and connect to Patreon",
         "UpgradeFinder": "Find your next piece of gear!",
+        "DominationAnalysis": "Get a glance at all Domination Bonuses at once!",
         "TrinketAnalysis": "Check out how different trinkets compare, but in graph form",
         "TierSets": "Find out how strong your classes tier sets are."
       }
@@ -658,13 +659,13 @@
         "Setting3Title": "Auto Socket Items",
         "Setting3TextFieldLabel": "",
         "Setting4Spacer": "--------------------------------------------------------------------",
-        "Setting4Tooltip": "",
-        "Setting4Title": "",
-        "Setting4TextFieldLabel": "",
+        "Setting4Tooltip": "Choose a Gem to socket into your vault items",
+        "Setting4Title": "Vault Dom Gem",
+        "Setting4TextFieldLabel": "Vault Dom Gem",
         "Setting5Spacer": "--------------------------------------------------------------------",
-        "Setting5Tooltip": "",
-        "Setting5Title": "",
-        "Setting5TextFieldLabel": ""
+        "Setting5Tooltip": "Choose your playstyle",
+        "Setting5Title": "Playstyle",
+        "Setting5TextFieldLabel": "Playstyle"
       },
       "BurningCrusade": {
         "Setting0Spacer": "--------------------------------------------------------------------",

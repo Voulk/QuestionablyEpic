@@ -31,7 +31,8 @@ class PlayerChars {
         }
         else {
           let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights);
-          newChar.setCovenant(player.covenant);
+          if (player.covenant) newChar.setCovenant(player.covenant);
+          else newChar.setDefaultCovenant(player.spec);
           charArray.push(newChar);
         }
         
