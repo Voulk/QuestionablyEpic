@@ -645,7 +645,7 @@ export async function importRaidHealth(starttime, endtime, reportid) {
       const raidHealth = entities.map((player) => {
         const data = Object.entries(player.data).map(([key, value]) => ({
           timestamp: Number(key),
-          health: value,
+          "Raid Health": value,
         }));
         return data;
       });

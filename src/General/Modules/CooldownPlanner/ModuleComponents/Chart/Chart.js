@@ -179,7 +179,7 @@ class Chart extends Component {
               }}
             />
             <YAxis yAxisId="2" orientation="right" stroke="#f5f5f5" tick={false} domain={["dataMin", 5]} />
-            <YAxis yAxisId="3" orientation="right" stroke="#f5f5f5" tick={false} domain={[0, 100]} />
+            <YAxis yAxisId="3" orientation="right" stroke="#f5f5f5" tick={false} domain={[0, "dataMax"]} hide={true} />
             <Legend
               verticalAlign="bottom"
               iconType="square"
@@ -203,7 +203,7 @@ class Chart extends Component {
               labelFormatter={(timeStr) => moment(timeStr).format("mm:ss")}
             />
             {this.drawAreas(this.props.cooldownsToShow === true ? this.props.cooldown : this.props.customCooldowns)}
-            <Line yAxisId="3" type="monotone" dataKey="health" stroke="#FF0000" dot={false} />
+            <Line yAxisId="3" type="monotone" dataKey="Raid Health" stroke="#FF0000" dot={false} />
           </ComposedChart>
         </ResponsiveContainer>
       </Paper>
