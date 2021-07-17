@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
+import { covenantIcons } from "../../CooldownPlanner/Functions/CovenantFunctions";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { bcClassRaceList, classRaceList } from "../../CooldownPlanner/Data/Data";
 import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
@@ -87,10 +88,11 @@ export default function AddNewChar(props) {
   const [charName, setCharName] = React.useState("");
   const [regions, setRegions] = React.useState("");
   const [selectedRace, setSelectedRace] = React.useState("");
+  const [selectedCovenant, setSelectedCovenant] = React.useState("");
   const [server, setServer] = React.useState("");
   const region = ["CN", "US", "TW", "EU", "KR"];
 
-  const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade 
+  const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade;
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -98,13 +100,14 @@ export default function AddNewChar(props) {
   const handleClose = () => {
     setOpen(false);
   };
-  const handleAdd = (name, spec, allChars, updateChar, region, realm, race, gameType) => {
+  const handleAdd = (name, spec, allChars, updateChar, region, realm, race, gameType, covenant) => {
     setOpen(false);
-    allChars.addChar(name, spec, region, realm, race, gameType);
+    allChars.addChar(name, spec, region, realm, race, gameType, covenant);
     updateChar(allChars);
     props.charAddedSnack();
     setSelectedRace("");
     setHealClass("");
+    setSelectedCovenant("");
     setServer("");
     // setRegions(null);
     setCharName("");
@@ -114,6 +117,9 @@ export default function AddNewChar(props) {
   };
   const handleChangeRace = (event) => {
     setSelectedRace(event.target.value);
+  };
+  const handleChangeCovenant = (event) => {
+    setSelectedCovenant(event.target.value);
   };
   const handleChangeName = (event) => {
     setCharName(event.target.value);
@@ -125,8 +131,6 @@ export default function AddNewChar(props) {
   const handleChangeServer = (serverName) => {
     setServer(serverName);
   };
-
-
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={6} xl={4}>
@@ -157,7 +161,7 @@ export default function AddNewChar(props) {
                   <Select label={t("Region")} value={regions} onChange={handleChangeRegion} MenuProps={menuStyle}>
                     {Object.values(region)
                       .map((key, i) => (
-                        <MenuItem key={i} value={key}>
+                        <MenuItem key={"region" + i} value={key}>
                           {key}
                         </MenuItem>
                       ))
@@ -191,16 +195,18 @@ export default function AddNewChar(props) {
                   {Object.getOwnPropertyNames(availableClasses)
                     .filter((filter) => gameType === availableClasses[filter].gameType)
                     .map((key, i) => (
-                      <MenuItem key={i} value={key} style={{ color: classColoursJS(key) }}>
-                        {classIcons(key, {
-                          height: 20,
-                          width: 20,
-                          margin: "0px 5px 0px 5px",
-                          verticalAlign: "middle",
-                          borderRadius: 4,
-                          border: "1px solid rgba(255, 255, 255, 0.12)",
-                        })}
-                        {t("Classes." + key)}
+                      <MenuItem key={"class" + i} value={key} style={{ color: classColoursJS(key) }}>
+                        <div style={{ display: "inline-flex" }}>
+                          {classIcons(key, {
+                            height: 20,
+                            width: 20,
+                            margin: "0px 5px 0px 5px",
+                            verticalAlign: "middle",
+                            borderRadius: 4,
+                            border: "1px solid rgba(255, 255, 255, 0.12)",
+                          })}
+                          {t("Classes." + key)}
+                        </div>
                       </MenuItem>
                     ))
                     .map((item, i) => [item, <Divider key={i} />])}
@@ -215,7 +221,7 @@ export default function AddNewChar(props) {
                     ? ""
                     : availableClasses[healClass.toString()].races
                         .map((key, i) => (
-                          <MenuItem key={i} value={key}>
+                          <MenuItem key={"race" + i} value={key}>
                             <div style={{ display: "inline-flex" }}>
                               {raceIcons(key)}
                               {t(key)}
@@ -226,6 +232,29 @@ export default function AddNewChar(props) {
                 </Select>
               </FormControl>
             </Grid>
+            {gameType == "Retail" ? (
+              <Grid item xs={12}>
+                <FormControl disabled={healClass === "" ? true : false} className={classes.formControl} variant="outlined" size="small" label={t("Covenant")}>
+                  <InputLabel id="NewCovSelector">{t("Covenant")}</InputLabel>
+                  <Select label={t("Covenant")} value={selectedCovenant} onChange={handleChangeCovenant} MenuProps={menuStyle}>
+                    {healClass === ""
+                      ? ""
+                      : ["kyrian", "necrolord", "night_fae", "venthyr"]
+                          .map((key, i) => (
+                            <MenuItem key={"covenant" + i} value={key}>
+                              <div style={{ display: "inline-flex" }}>
+                                {covenantIcons(key, 26, 26)}
+                                {t(key)}
+                              </div>
+                            </MenuItem>
+                          ))
+                          .map((item, i) => [item, <Divider key={"covDiv" + i} />])}
+                  </Select>
+                </FormControl>
+              </Grid>
+            ) : (
+              ""
+            )}
           </Grid>
         </DialogContent>
         <DialogActions>
@@ -233,9 +262,9 @@ export default function AddNewChar(props) {
             {t("Cancel")}
           </Button>
           <Button
-            onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace, gameType)}
+            onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace, gameType, selectedCovenant)}
             color="primary"
-            disabled={selectedRace === "" ? true : false}
+            disabled={selectedRace === "" || (selectedCovenant === "" && gameType == "Retail") ? true : false}
             variant="outlined"
           >
             {t("Add")}

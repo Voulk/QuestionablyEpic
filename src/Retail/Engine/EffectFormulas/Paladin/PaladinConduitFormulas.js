@@ -86,8 +86,8 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
   // Golden Path
   else if (conduitID === 339114) {
     let trait_bonus = 1.8 + conduitLevel * 0.2;
-    let consecration_CPM = 3;
-    expectedOverhealing = 0.65;
+    let consecration_CPM = 2.8;
+    expectedOverhealing = 0.66;
 
     bonus_stats.HPS = (trait_bonus * consecration_CPM * 0.05 * 12 * (1 - expectedOverhealing) * player.getStatMultiplier("NOHASTE")) / 60;
   }

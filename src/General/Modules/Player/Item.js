@@ -1,4 +1,4 @@
-import { calcStatsAtLevel, getItemAllocations, getItemProp } from "../../Engine/ItemUtilities";
+import { calcStatsAtLevel, getItemAllocations, getItemProp, getDomGemEffect } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
 
 // The Item class represents an active item in the app at a specific item level.
@@ -17,6 +17,7 @@ class Item {
     this.bonusIDS = bonusIDS || "";
     this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot"), getItemAllocations(id), tertiary);
     this.effect = getItemProp(id, "effect");
+    this.hasDomSocket = (getItemProp(id, "socketType") === "Domination");
     //console.log("Setting level to " + level);
   }
 
@@ -36,6 +37,8 @@ class Item {
   vaultItem = false;
   isEquipped = false;
   source = {};
+  hasDomSocket = false;
+  domGemID = 0;
 
   // The stats on the item. These should already be adjusted for item level.
   // HPS is a calculated field. It includes any item effects that provide healing or absorbs.
@@ -71,6 +74,14 @@ class Item {
     else if (this.level >= 183) return "#a73fee";
     else if (this.level >= 120) return "#328CE3";
     else return "#1eff00";
+
+  }
+
+  setDominationGem(id) {
+    if (this.hasDomSocket) {
+      this.domGemID = id;
+      this.effect = getDomGemEffect(id)
+    }
   }
 
   addStats(bonus_stats) {

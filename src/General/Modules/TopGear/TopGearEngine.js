@@ -8,13 +8,14 @@ import { convertPPMToUptime } from "../../../Retail/Engine/EffectFormulas/Effect
 import Player from "../Player/Player";
 import CastModel from "../Player/CastModel";
 import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngine"
+import { getDomGemEffect } from "General/Engine/ItemUtilities"
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
 const softSlice = 3000;
-const DR_CONST = 0.00346669230769231;
+const DR_CONST = 0.00364669230769231;
 const DR_CONSTLEECH = 0.04322569230769231;
 
 
@@ -29,10 +30,7 @@ export function expensive(time) {
 // Unfortunately we aren't able to pass objects through to our worker. This recreates our player object since we'll need it for effect formulas. 
 function setupPlayer(player, contentType, castModel) {
 
-  //console.log(player);
   let newPlayer = new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights);
-  //newPlayer = Object.assign(newPlayer, player);
-  //console.log("NEW PLAYER");
   newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
 
@@ -52,7 +50,23 @@ function autoSocketItems(itemList) {
 
 }
 
+function autoGemVault(itemList, userSettings) {
+  for (var i = 0; i < itemList.length; i++) {
+    let item = itemList[i];
+    if (item.vaultItem && item.hasDomSocket && userSettings.vaultDomGem !== "") {
+      //item.setDominationGem(userSettings.vaultDomGem);
+      const gemID = userSettings.vaultDomGem;
+      item.domGemID = gemID;
+      item.effect = getDomGemEffect(gemID)
+      item.gemString = gemID;
+      }
+  }
+
+  return itemList;
+}
+
 export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
+  //console.log(userSettings);
   //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
   //console.log("CL::::" + currentLanguage);
   var t0 = performance.now();
@@ -62,6 +76,7 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   const newPlayer = setupPlayer(player, contentType, castModel);
   let itemList = deepCopyFunction(rawItemList); // Here we duplicate the users items so that nothing is changed during the process. 
   itemList = userSettings.autoSocket ? autoSocketItems(itemList) : itemList;
+  itemList = userSettings.vaultDomGem !== "none" ? autoGemVault(itemList, userSettings) : itemList;
 
   let itemSets = createSets(itemList, wepCombos);
 
@@ -162,9 +177,6 @@ function createSets(itemList, rawWepCombos) {
     }
   }
   slotLengths.Weapon = Object.keys(wepCombos).length;
-
-  //console.log(JSON.stringify(slotLengths));
-  // console.log(splitItems.Finger);
 
   for (var head = 0; head < slotLengths.Head; head++) {
     let softScore = { head: splitItems.Head[head].softScore };
@@ -377,7 +389,9 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   // Sockets
   bonus_stats[highestWeight] += 16 * builtSet.setSockets;
   enchants["Gems"] = highestWeight;
-  //console.log("Sockets added : " + 16 * builtSet.setSockets + " to " + highestWeight);
+
+  // This might change later, but is a way to estimate the value of a domination socket on a piece in the Upgrade Finder.
+  if (userSettings.dominationSockets === "Upgrade Finder") bonus_stats.hps += builtSet.domSockets * 200;
 
   let effectStats = [];
   effectStats.push(bonus_stats);
@@ -392,16 +406,16 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
 
   compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
   applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
-  addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
   // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
-  console.log("Base: " + JSON.stringify(adjusted_weights));
+  //console.log("Base: " + JSON.stringify(adjusted_weights));
   adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;
   adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.Retail.CRIT)) / 2;
   adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.Retail.VERSATILITY)) / 2;
   adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.Retail.MASTERYA[player.spec])) / 2;
   adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.Retail.LEECH)) / 2;
-
-  console.log("Adj: " + JSON.stringify(adjusted_weights));
+  addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
+  
+  //console.log("Adj: " + JSON.stringify(adjusted_weights));
   // Calculate a hard score using the rebalanced stat weights.
 
   for (var stat in setStats) {

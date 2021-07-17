@@ -10,7 +10,95 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
-    update: 23,
+    update: 12,
+    date: "16th July",
+    changes: [
+      "Added Set Bonus Ranks",
+      "Added Forbidden Necromantic Tome"
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 11,
+    date: "14th July",
+    changes: [
+      "Vault: You can now choose which domination gem to socket in vault items.",
+      "Added character covenant to cards.",
+      "Bugfix: Character covenants will no longer reset occasionally."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 10,
+    date: "13th July",
+    changes: [
+      "Bugfix: Fixed a bug that was preventing some players from loading the app",
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 9,
+    date: "12th July",
+    changes: [
+      "Shadowed Orb of Torment & Titanic Ocular Gland updated to post-buff values.",
+      "You can now select your Covenant in the character right click menu to further tune results.",
+      "Top Gear: 230 crafted items are now restricted to one per gear set.",
+      "SimC Imports: Added support for the 'Linked Items' tag.",
+      "Updated several portions of the model to better align with 9.1 data now that we have some early logs.",
+      "Bugfix: 10% of the new crafted items use a unique bonus ID structure. This is now supported.",
+      "Bugfix: Empty domination sockets in your equipped set will no longer cause Upgrade Finder results to be errant."  
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 8,
+    date: "9th July",
+    changes: [
+      "First Class Healing Distributor was nerfed a second time, and that change is now live.",
+      "Manual entry is now available for Domination sockets and will show on all socketed items.",
+      "UI: Tidied up the stat text on items with leech. Also, Intellect will now always be listed first."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 7,
+    date: "7th July",
+    changes: [
+      "Bugfix: Alchemy Stone now grants the correct amount of mana.",
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 6,
+    date: "6th July",
+    changes: [
+      "Tome of Insight / First Class Healing Distributor were nerfed in game, and this is live in all modules.",
+      "Bugfix: The Tazavesh int proc necks will now import at the correct item level."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 5,
+    date: "5th July",
+    changes: [
+      "Launched the 9.1 Upgrade Finder.",
+      "Added a back button to the Retail upgrade Finder. BC already had it.",
+      "Bugfix: Crafted items should no longer import with more stats than they should.",
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 4,
+    date: "4th July",
+    changes: [
+      "Added Spiritual Alchemy Stone to the trinket chart.",
+      "Added formula for Perfectly Forged Credentials and variants.",
+      "Added SimC Import support for 230 crafted items.",
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 3,
     date: "1st July",
     changes: [
       "Updated Trinket Analysis Colors.",

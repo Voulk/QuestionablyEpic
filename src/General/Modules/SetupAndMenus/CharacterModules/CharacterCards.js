@@ -19,6 +19,8 @@ import { STAT } from "../../../Engine/STAT";
 import { apiGetPlayerImage } from "../ConnectionUtilities";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
+import { setConstantValue } from "typescript";
+import { covenantIcons } from "../../CooldownPlanner/Functions/CovenantFunctions";
 
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
@@ -141,7 +143,6 @@ const CharTab = withStyles((theme) => ({
   selected: {},
 }))((props) => <Tab {...props} />);
 const menuStyle = {
-  style: { marginTop: 5 },
   MenuListProps: {
     style: { paddingTop: 0, paddingBottom: 0 },
   },
@@ -175,6 +176,7 @@ export default function CharCards(props) {
   const [charName, setCharName] = React.useState(player.charName);
   const [healClass, setHealClass] = React.useState(player.getSpec());
   const [selectedRace, setSelectedRace] = React.useState(player.getRace());
+  const [selectedCovenant, setSelectedCovenant] = React.useState(player.getCovenant());
   const [intellect, setIntellect] = React.useState("1");
   const [critical, setCritical] = React.useState(player.getStatWeight(contentType, STAT.CRITICAL_STRIKE));
   const [haste, setHaste] = React.useState(player.getStatWeight(contentType, STAT.HASTE));
@@ -212,6 +214,9 @@ export default function CharCards(props) {
   };
   const handleChangeRace = (event) => {
     setSelectedRace(event.target.value);
+  };
+  const handleChangeCovenant = (event) => {
+    setSelectedCovenant(event.target.value);
   };
   const handleChangeRegion = (event) => {
     setRegion(event.target.value);
@@ -330,6 +335,7 @@ export default function CharCards(props) {
     };
 
     newPlayer.editChar(contentType, charName, server, region, selectedRace, weights);
+    newPlayer.setCovenant(selectedCovenant);
     setOpen(false);
     props.singleUpdate(newPlayer);
     props.charUpdatedSnack();
@@ -337,6 +343,8 @@ export default function CharCards(props) {
 
   /* ---------------------------- Spec for the card --------------------------- */
   const spec = props.cardType === "Char" ? props.char.spec : "";
+  console.log(props.char);
+  const covenant = props.char.covenant;
   const gameType = useSelector((state) => state.gameType);
   const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade;
   const availableClasses = classRaceList;
@@ -362,7 +370,7 @@ export default function CharCards(props) {
     /*                      Character Card for the main menu                      */
     /* -------------------------------------------------------------------------- */
     <Grid item xs={12} sm={6} md={6} lg={6} xl={4}>
-      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : ""}>
+      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : null}>
         <Card className={rootClassName} variant="outlined" raised={true}>
           <Avatar src={specImages[spec].default} variant="square" alt="" className={classes.large} />
           <Divider orientation="vertical" flexItem />
@@ -371,18 +379,27 @@ export default function CharCards(props) {
               <Grid container style={{ marginTop: 1 }} spacing={1}>
                 {/* ------------------------ Character name and Realm ------------------------ */}
                 <Grid item xs={10}>
-                  <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec) }}>
+                  <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec), display: "inline-flex" }}>
                     {props.name}
                     <Tooltip title={t(classTranslator(spec))} style={{ color: classColoursJS(spec) }} placement="top">
+                      {/* ----------------------------------------- Class Icon -----------------------------------------  */}
                       {classIcons(spec, {
                         height: 20,
                         width: 20,
-                        margin: "0px 5px 0px 5px",
+                        margin: "0px 0px 0px 5px",
                         verticalAlign: "middle",
                         borderRadius: 4,
                         border: "1px solid rgba(255, 255, 255, 0.12)",
                       })}
                     </Tooltip>
+                    {/* ---------------------------------------- Covenant Icon ---------------------------------------  */}
+                    {gameType === "Retail" ? (
+                      <Tooltip title={t(covenant)} style={{ color: classColoursJS(spec) }} placement="top">
+                        {covenantIcons(covenant, 20, 20)}
+                      </Tooltip>
+                    ) : (
+                      ""
+                    )}
                   </Typography>
                 </Grid>
                 {/* ---- Settings Button - More apparent for users how to edit characters ---- */}
@@ -473,7 +490,7 @@ export default function CharCards(props) {
                           <InputLabel id="ClassSelector">{t("Region")}</InputLabel>
                           <Select value={region} onChange={handleChangeRegion} label={t("Region")} MenuProps={menuStyle}>
                             {Object.values(regions).map((key, i) => (
-                              <MenuItem key={i} value={key}>
+                              <MenuItem key={"charCardRegion" + i} value={key}>
                                 {key}
                               </MenuItem>
                             ))}
@@ -509,9 +526,11 @@ export default function CharCards(props) {
                           <Select label={t("Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
                             {Object.getOwnPropertyNames(availableClasses)
                               .map((key, i) => (
-                                <MenuItem key={i} value={key}>
-                                  {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
-                                  {t("Classes." + key)}
+                                <MenuItem key={"charCardClass" + i} value={key}>
+                                  <div style={{ display: "inline-flex" }}>
+                                    {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
+                                    {t("Classes." + key)}
+                                  </div>
                                 </MenuItem>
                               ))
                               .map((menuItems, i) => [menuItems, <Divider key={i} />])}
@@ -527,9 +546,29 @@ export default function CharCards(props) {
                               ? ""
                               : availableClasses[healClass.toString()].races
                                   .map((key, i) => (
-                                    <MenuItem key={i} value={key}>
+                                    <MenuItem key={"charCardRace" + i} value={key}>
                                       <div style={{ display: "inline-flex" }}>
                                         {raceIcons(key)}
+                                        {t(key)}
+                                      </div>
+                                    </MenuItem>
+                                  ))
+                                  .map((menuItems, i) => [menuItems, <Divider key={i} />])}
+                          </Select>
+                        </FormControl>
+                      </Grid>
+                      {/* ------------------------------- Covenant Select ------------------------------ */}
+                      <Grid item xs={12}>
+                        <FormControl disabled={healClass === "" ? true : false} fullWidth variant="outlined" size="small" label={t("Covenant")}>
+                          <InputLabel id="CovSelector">{t("Covenant")}</InputLabel>
+                          <Select value={selectedCovenant} onChange={handleChangeCovenant} label={t("Covenant")} MenuProps={menuStyle}>
+                            {healClass === ""
+                              ? ""
+                              : ["kyrian", "venthyr", "necrolord", "night_fae"]
+                                  .map((key, i) => (
+                                    <MenuItem key={"charChardCovenant" + i} value={key}>
+                                      <div style={{ display: "inline-flex" }}>
+                                        {covenantIcons(key, 20, 20)}
                                         {t(key)}
                                       </div>
                                     </MenuItem>

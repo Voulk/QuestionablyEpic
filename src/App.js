@@ -5,6 +5,7 @@ import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
 import LegendaryCompare from "Retail/Modules/Legendaries/LegendaryCompare.js";
 import TrinketAnalysis from "General/Modules/TrinketAnalysis/TrinketAnalysis";
 import QuickCompare from "General/Modules/QuickCompare/QuickCompare";
+import DominationAnalysis from "Retail/Modules/DominationGemAnalysis/DominationGemAnalysis"
 import QEHeader from "General/Modules/SetupAndMenus/Header/QEHeader";
 import TopGearReport from "General/Modules/TopGear/TopGearReport";
 import QEProfile from "General/Modules/SetupAndMenus/QEProfile";
@@ -51,6 +52,7 @@ const theme = createMuiTheme({
 });
 
 process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
+
 
 class App extends Component {
   constructor() {
@@ -368,6 +370,7 @@ class App extends Component {
                 <Route path="/topgear" render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
                 <Route path="/legendaries" render={() => <LegendaryCompare player={activePlayer} />} />
                 <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} />} />
+                <Route path="/dominationgems" render={() => <DominationAnalysis player={activePlayer} />} />
                 <Route path="/soulbinds" render={() => <CovenantExploration player={activePlayer} updatePlayerChar={this.updatePlayerChar} />} />
                 <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                 <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />

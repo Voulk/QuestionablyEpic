@@ -1,4 +1,4 @@
-import { getGenericEffect } from "./Generic/GenericEffectFormulas";
+import { getGenericEffect, getDominationGemEffect } from "./Generic/GenericEffectFormulas";
 import { getDruidLegendary } from "./Druid/DruidLegendaryFormulas";
 import { getDiscPriestLegendary } from "./Priest/DiscPriestLegendaryFormulas";
 import { getHolyPriestLegendary } from "./Priest/HolyPriestLegendaryFormulas";
@@ -38,15 +38,16 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0, userS
   const effectName = effect.name;
   const effectType = effect.type;
 
-  
-
-
   // ----- Retail Effect -----
   // Can either be a Spec Legendary, Trinket, or a special item effect like those found back in Crucible of Storms or the legendary BFA cloak.
   if (gameType === "Retail") {
     if (effect.type === "special") {
-      bonus_stats = getGenericEffect(effectName, player, contentType);
+      bonus_stats = getGenericEffect(effectName, player, contentType, itemLevel);
     } 
+    else if (effect.type === "domination gem") {
+      const effectRank = effect.rank;
+      bonus_stats = getDominationGemEffect(effectName, player, contentType, effectRank);
+    }
     else if (effectType === "spec legendary") {
       switch (player.spec) {
         case "Discipline Priest":
@@ -156,16 +157,16 @@ export function getConduitFormula(effectID, player, contentType, itemLevel = 145
   if (effectID === 357902) {
     // % intellect increase when healed by another player. 15s duration, 30s cooldown.
     const percentInc = 0.02 + conduitRank * 0.002;
-    const uptime = contentType == "Raid" ? 0.4 : 0;
+    const uptime = contentType == "Raid" ? 0.45 : 0;
     const intGain = percentInc * player.getInt() * uptime;
     bonus_stats.HPS = intGain / player.getInt() * (player.getHPS(contentType) * 0.75); // Remove this 0.75 modifier when the cast models update.
   }
   else if (effectID === 357888) {
-    // Small heal based on your max health whenever you take damage. 10s cooldown. The heal on this is currently 10x it's tooltip value.
+    // Small heal based on your max health whenever you take damage. 10s cooldown.
     const percHealing = (0.25 + conduitRank * 0.025) / 100 * 10;
     const ppm = 60 / 10 * 0.7; // Condensed Anima Sphere notably does not proc off a significant number of abilities.
-    const expectedOverhealing = 0.3;
-    bonus_stats.HPS = percHealing * ppm * (1 - expectedOverhealing) * player.activeStats.stamina * 20 * 1.06 / 60;
+    const expectedOverhealing = 0.32;
+    bonus_stats.HPS = percHealing * ppm * (1 - expectedOverhealing) * player.getHealth() / 60;
   }
   else {
     switch (player.spec) {

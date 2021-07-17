@@ -77,10 +77,10 @@ export const getDruidConduit = (conduitID, player, contentType, conduitLevel) =>
 
   // Well-Honed Instincts
   else if (conduitID === 340553) {
-    const traitBonusList = [135, 123, 113, 104, 97, 90, 84, 79, 75, 71, 67, 64, 61, 58, 56]; // This is actually the cooldown on the effect. TODO: Improve the precision of the number. It's an odd one.
+    const traitBonusList = [135, 123, 113, 104, 97, 90, 84, 79, 75, 71, 67, 64, 61, 58, 56]; //
     const traitBonus = traitBonusList[conduitLevel]
-    const timeSpentOnCooldown = 0.5;
-    const frenziedRegenHealing = player.activeStats.stamina * 20 * 0.24;
+    const timeSpentOnCooldown = 0.7;
+    const frenziedRegenHealing = player.getHealth() * 0.24;
 
     bonus_stats.HPS = (frenziedRegenHealing * timeSpentOnCooldown) / traitBonus;
   }

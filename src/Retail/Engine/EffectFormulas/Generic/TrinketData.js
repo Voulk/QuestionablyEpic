@@ -1,9 +1,5 @@
 export const trinket_data = [
   {
-
-    /* --------------------------------------- 9.1 Trinkets ----------------------------------------- */
-    
-
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        Lingering Sunmote                                       */
     /* ---------------------------------------------------------------------------------------------- */
@@ -805,7 +801,7 @@ export const trinket_data = [
     name: "Titanic Ocular Gland",
     effects: [
       {
-        coefficient: 0.555215,
+        coefficient: 0.555215 * 1.04,
         table: -7,
         uptime: 0.92,
       },
@@ -860,7 +856,7 @@ export const trinket_data = [
         coefficient: 83.59375,
         table: -8,
         ppm: 2,
-        efficiency: 0.45, // 
+        efficiency: 0.35, // 
       },
     ],
   },
@@ -873,7 +869,7 @@ export const trinket_data = [
     name: "Shadowed Orb of Torment", // Tormented Insight
     effects: [
       {
-        coefficient: 1.328551,
+        coefficient: 1.328551 * 1.61, // 1.328551
         table: -7,
         duration: 40,
         cooldown: 120,
@@ -891,12 +887,12 @@ export const trinket_data = [
     effects: [
       {
         /* ----------------------------------------- Healing Portion ---------------------------------------- */
-        coefficient: 32.7898,
+        coefficient: 21.946373,
         table: -8,
-        efficiency: 0.6, // The expected overhealing on this trinket is very high.
+        efficiency: 0.45, // The expected overhealing on this trinket is very high.
         ppm: 3,
         targets: { Raid: 4.2, Dungeon: 2.9 }, // 8 yard range
-        meteor: 0.15, // TODO: Confirm
+        meteor: 0.15,
       },
       {
         /* --------------------------------------- Haste Portion --------------------------------------- */
@@ -934,10 +930,29 @@ export const trinket_data = [
     name: "Tome of Insight",
     effects: [
       {
-        coefficient: 1.546671, // The spell data also has a 1.679526 (-7) coefficient that is unused.
+        coefficient: 0.897, // The spell data also has a 1.679526 (-7) coefficient that is unused. Was previously 1.546671
         table: -7,
         duration: 20,
         ppm: 2,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Forbidden Necromantic Tome                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    
+    */
+    name: "Forbidden Necromantic Tome",
+    effects: [
+      {
+        coefficient: 0.337095, 
+        table: -7,
+        duration: 15,
+        averageStacks: {"Restoration Druid": 0.6, "Holy Paladin": 1.5, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.65, "Holy Priest": 0.6, "Discipline Priest": 1.6},
+        // The average stacks value is correct, but should be rewritten to include the formula in the code.
+        ppm: 5,
       },
     ],
   },

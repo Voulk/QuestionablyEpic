@@ -63,7 +63,7 @@ class Player {
     crit: 350,
     mastery: 0,
     versatility: 200,
-    stamina: 1490,
+    stamina: 1900,
   };
 
   // Stat weights are normalized around intellect.
@@ -112,11 +112,15 @@ class Player {
   };
 
   setCovenant = (cov) => {
-    const selectedCov = cov.toLowerCase().replace(/"/g, "");
+    let selectedCov = "";
+    if (!cov) selectedCov = "";
+    else selectedCov = cov;
+
+    selectedCov = selectedCov.toLowerCase().replace(/"/g, "");
     if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(selectedCov)) this.covenant = selectedCov;
     else {
-      reportError(this, "Player", "Invalid Covenant Supplied", selectedCov);
-      throw new Error("Invalid Covenant Supplied");
+      this.setDefaultCovenant(this.spec);
+      //reportError(this, "Player", "Invalid Covenant Supplied", selectedCov);
     }
   };
 
@@ -130,7 +134,8 @@ class Player {
     // This one is very flexible, but is also not used in any current formulas. It will be replaced when the models are updated.
     else {
       reportError(this, "Player", "Invalid Covenant Supplied", spec);
-      throw new Error("Invalid Spec Supplied to Cov Default");
+      this.covenant = "night_fae";
+      //throw new Error("Invalid Spec Supplied to Cov Default");
     }
   };
 
@@ -352,10 +357,19 @@ class Player {
   getHPS = (contentType) => {
     return this.castModel[contentType].getFightInfo("hps");
   };
+  getDPS = (contentType) => {
+    return this.castModel[contentType].getFightInfo("dps");
+  };
   // HPS including overhealing.
   getRawHPS = (contentType) => {
     return this.castModel[contentType].getFightInfo("rawhps");
   };
+
+  // Returns the players health.
+  getHealth = (contentType) => {
+    const hasFort = (contentType === "Raid" || this.spec.includes("Priest"));
+    return this.activeStats.stamina * 20 * (hasFort ? 1.1 : 1);
+  }
 
   getFightLength = (contentType) => {
     return this.castModel[contentType].getFightInfo("fightLength");
@@ -471,7 +485,7 @@ class Player {
       this.activeStats = {
         intellect: 1800,
         haste: 800,
-        crit: 200,
+        crit: 240,
         mastery: 550,
         versatility: 340,
         stamina: 1900,

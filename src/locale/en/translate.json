@@ -40,6 +40,11 @@
     "Leech": "Leech",
     "Region": "Region",
     "Race": "Race",
+    "Covenant": "Covenant",
+    "kyrian": "Kyrian",
+    "necrolord": "Necrolord",
+    "night_fae": "Night Fae",
+    "venthyr": "Venthyr",
     "Select Class": "Select Class",
     "Select Race": "Select Race",
     "HowToUse": "How it works",
@@ -316,7 +321,7 @@
         "348520": "Reverberating Hammer",
         "355573": "Cruciform Axe",
         "348363": "Spiked Ball",
-        "Fatescribe Roh-Kalo":  "",
+        "Fatescribe Roh-Kalo": "",
         "351685": "Heroic Destiny",
         "353931": "Twist Fate",
         "353696": "Unstable Accretion",
@@ -375,7 +380,7 @@
       "ExploreCovenants": "Explore Covenants",
       "LegendaryAnalysis": "Legendary Analysis",
       "TrinketAnalysis": "Trinket Analysis",
-      "DominationAnalysis": "Domination Analysis (Coming soon)",
+      "DominationAnalysis": "Domination Analysis (Alpha)",
       "GreatVault": "The Great Vault (Coming Soon)",
       "CooldownPlanner": "Cooldown Planner (Coming Soon)",
       "Profile": "Profile",
@@ -394,6 +399,7 @@
         "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
         "Profile": "Edit your details and connect to Patreon",
         "UpgradeFinder": "Find your next piece of gear!",
+        "DominationAnalysis": "Get a glance at all Domination Bonuses at once!",
         "TrinketAnalysis": "Check out how different trinkets compare, but in graph form",
         "TierSets": "Find out how strong your classes tier sets are."
       }
@@ -435,7 +441,8 @@
       "HelpText": "Quick Compare allows you to compare items one by one. Scores include stats, gems and effects, but not set bonuses. Use Top Gear to include those.",
       "ItemErrorMsg": "Item Not Added. Ilvl Cap exceeded.",
       "ItemAdded": "Item Added!",
-      "ItemDeleted": "Item Deleted!"
+      "ItemDeleted": "Item Deleted!",
+      "DominationSocket": "Domination"
     },
 
     "Races": {
@@ -477,6 +484,7 @@
       "2425": "Stone Legion Generals",
       "2424": "Sire Denathrius",
       "999": "BoE Trash Drops",
+      "998": "BoE Trash Drops",
       "SanctumOfDomination": "SanctumOfDomination",
       "2435": "The Tarragrue",
       "2442": "The Eye of the Jailer",
@@ -488,6 +496,17 @@
       "2447": "Fatescribe Roh-Kalo",
       "2440": "Kel'Thuzad",
       "2441": "Sylvanas Windrunner",
+      "Tazavesh Bosses": "",
+      "Tazavesh": {
+        "2437": "Zo'phex the Sentinel",
+        "2454": "The Grand Menagerie",
+        "2436": "Mailroom Mayhem",
+        "2452": "Myza's Oasis",
+        "2451": "So'azmi",
+        "2448": "Hylbrande",
+        "2449": "Timecap'n Hooktail",
+        "2455": "So'leah"
+      },
       "Karazahn Bosses": " ",
       "652": "Attumen the Huntsman",
       "653": "Moroes",
@@ -500,7 +519,6 @@
       "660": "Chess Event",
       "661": "Prince Malchezaar",
       "662": "Nightbane",
-
       "649": "High King Maulgar",
       "650": "Gruul the Dragonkiller",
       "651": "Magtheridon"
@@ -530,7 +548,7 @@
       "248": "Hellfire Ramparts",
       "256": "The Blood Furnace",
       "259": "The Shattered Halls",
-  
+
       "260": "The Slave Pens",
       "261": "The Steamvault",
       "262": "The Underbog",
@@ -539,11 +557,11 @@
       "247": "Auchenai Crypts",
       "252": "Sethekk Halls",
       "253": "Shadow Labyrinth",
-  
+
       "258": "The Mechanar",
       "257": "The Botanica",
       "254": "The Arcatraz",
-  
+
       "251": "Old Hillsbrad Foothills",
       "255": "The Black Morass",
       "249": "Magister's Terrace"
@@ -568,7 +586,8 @@
       "2430": "Valinor",
       "2431": "Mortanis",
       "2432": "Oranomonos",
-      "2433": "Nurgash"
+      "2433": "Nurgash",
+      "2456": "Mor'geth"
     },
 
     "SimCInput": {
@@ -640,13 +659,13 @@
         "Setting3Title": "Auto Socket Items",
         "Setting3TextFieldLabel": "",
         "Setting4Spacer": "--------------------------------------------------------------------",
-        "Setting4Tooltip": "",
-        "Setting4Title": "",
-        "Setting4TextFieldLabel": "",
+        "Setting4Tooltip": "Choose a Gem to socket into your vault items",
+        "Setting4Title": "Vault Dom Gem",
+        "Setting4TextFieldLabel": "Vault Dom Gem",
         "Setting5Spacer": "--------------------------------------------------------------------",
-        "Setting5Tooltip": "",
-        "Setting5Title": "",
-        "Setting5TextFieldLabel": ""
+        "Setting5Tooltip": "Choose your playstyle",
+        "Setting5Title": "Playstyle",
+        "Setting5TextFieldLabel": "Playstyle"
       },
       "BurningCrusade": {
         "Setting0Spacer": "--------------------------------------------------------------------",
@@ -772,6 +791,11 @@
     "TrinketAnalysis": {
       "Header": "Trinket Analysis",
       "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. World quest trinkets and settings panel coming soon."
+    },
+
+    "DominationSocketAnalysis": {
+      "Header": "Domination Socket Analysis",
+      "HelpText": "This is a quick way to see how strong Domination Gems are for your character. These are still being tuned and results could change. This is still a very new module, and use it as rough guidance only."
     },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
@@ -1052,7 +1076,6 @@
       "slot": "Waist, Wrist, or Finger",
       "desc": "Your spells and abilities have a low chance to summon a familiar to your side, increasing your healing by 10% for 10s. This effect is duplicated on up to 3 allies at 50% effectiveness, preferring allies with the same role.",
       "droploc": "Wild Hunt Reputation, Revered"
-
     },
 
     "Covenants": {

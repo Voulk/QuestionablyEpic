@@ -55,6 +55,7 @@ class CastModel {
     this.fightInfo = {
       hps: 10200,
       rawhps: 12020,
+      dps: 1000,
       fightLength: 340,
       reportID: "Default",
       bossName: "Default",
@@ -65,21 +66,27 @@ class CastModel {
     if (spec === SPEC.RESTODRUID) {
       spellList = druidDefaultSpellData(contentType);
       specialQueries = druidDefaultSpecialQueries(contentType);
+      this.fightInfo.dps = 700;
     } else if (spec === SPEC.HOLYPALADIN) {
       spellList = paladinDefaultSpellData(contentType);
       specialQueries = paladinDefaultSpecialQueries(contentType);
+      this.fightInfo.dps = 1650;
     } else if (spec === SPEC.RESTOSHAMAN) {
       spellList = shamanDefaultSpellData(contentType);
       specialQueries = shamanDefaultSpecialQueries(contentType);
+      this.fightInfo.dps = 725;
     } else if (spec === SPEC.MISTWEAVERMONK) {
       spellList = monkDefaultSpellData(contentType);
       specialQueries = monkDefaultSpecialQueries(contentType);
+      this.fightInfo.dps = 1180;
     } else if (spec === SPEC.DISCPRIEST) {
       spellList = discPriestDefaultSpellData(contentType);
       specialQueries = discPriestDefaultSpecialQueries(contentType);
+      this.fightInfo.dps = 1300;
     } else if (spec === SPEC.HOLYPRIEST) {
       spellList = holyPriestDefaultSpellData(contentType);
       specialQueries = holyPriestDefaultSpecialQueries(contentType);
+      this.fightInfo.dps = 775;
     } 
     
     // Burning Crusade Profiles

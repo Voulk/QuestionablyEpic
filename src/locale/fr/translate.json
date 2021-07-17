@@ -340,7 +340,8 @@
       "HelpText": "La fonction 'Comparaison rapide d'équipement' vous permets de comparer vos pièces individuellement. Vous pouvez ajouter des équipements manuellement en utilisant le menu déroulant ci-dessus ou via l'importation de vos données SimC. Le pointage est automatiquement affiché dans le coin supérieur droit en jaune, et les équipements sont ensuite triés en commençant par la pièce ayant le meilleur pointage.",
       "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300FR",
       "ItemAdded": "Item Added!FR",
-      "ItemDeleted": "Item Deleted!FR"
+      "ItemDeleted": "Item Deleted!FR",
+      "DominationSocket": "Domination"
     },
 
     "Races": {
@@ -392,7 +393,19 @@
       "2446": "Gardien des Fondateurs",
       "2447": "Fatescribe Roh-Kalo",
       "2440": "Kel'Thuzad",
-      "2441": "Sylvanas Coursevent"
+      "2441": "Sylvanas Coursevent",
+      "998": "BoE Trash Drops",
+      "Tazavesh Bosses": "",
+      "Tazavesh": {
+        "2437": "Zo’phex la sentinelle",
+        "2454": "Grandiose Ménagerie",
+        "2436": "Courrier chaotique",
+        "2452": "Oasis d’Au’myza",
+        "2451": "So’azmi",
+        "2448": "Hylbrande",
+        "2449": "Chronocapitaine Harpagone",
+        "2455": "So’leah"
+      }
     },
 
     "DungeonNames": {
@@ -423,7 +436,8 @@
       "2430": "Valinor",
       "2431": "Mortanis",
       "2432": "Oranomonos",
-      "2433": "Nurgash"
+      "2433": "Nurgash",
+      "2456": "Mor'geth"
     },
 
     "SimCInput": {
@@ -493,9 +507,9 @@
         "Setting3Title": "Auto Socket Items",
         "Setting3TextFieldLabel": "",
         "Setting4Spacer": "--------------------------------------------------------------------",
-        "Setting4Tooltip": "",
-        "Setting4Title": "",
-        "Setting4TextFieldLabel": "",
+        "Setting4Tooltip": "Choose a Gem to socket into your vault items",
+        "Setting4Title": "Vault Dom Gem",
+        "Setting4TextFieldLabel": "Vault Dom Gem",
         "Setting5Spacer": "--------------------------------------------------------------------",
         "Setting5Tooltip": "",
         "Setting5Title": "",

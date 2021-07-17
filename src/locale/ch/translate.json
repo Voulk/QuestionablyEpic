@@ -350,7 +350,8 @@
       "HelpText": "Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.CH",
       "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300CH",
       "ItemAdded": "Item Added!CH",
-      "ItemDeleted": "Item Deleted!CH"
+      "ItemDeleted": "Item Deleted!CH",
+      "DominationSocket": "Domination"
     },
 
     "Races": {
@@ -391,7 +392,6 @@
       "2394": "泥拳",
       "2425": "顽石军团干将",
       "2424": "德纳修斯大帝",
-
       "999": "BoE Trash Drops",
       "SanctumOfDomination": "SanctumOfDomination",
       "2435": "希尔瓦娜斯·风行者",
@@ -403,7 +403,19 @@
       "2446": "初诞者的卫士",
       "2447": "Fatescribe Roh-Kalo",
       "2440": "克尔苏加德",
-      "2441": "希尔瓦娜斯·风行者"
+      "2441": "希尔瓦娜斯·风行者",
+      "998": "BoE Trash Drops",
+      "Tazavesh Bosses": "",
+      "Tazavesh": {
+        "2437": "哨卫佐·菲克斯",
+        "2454": "卖品会",
+        "2436": "收发室乱战",
+        "2452": "麦扎的绿洲",
+        "2451": "索·阿兹密",
+        "2448": "希尔布兰德",
+        "2449": "时空船长钩尾",
+        "2455": "索·莉亚"
+      }
     },
 
     "DungeonNames": {
@@ -434,7 +446,8 @@
       "2430": "Valinor",
       "2431": "Mortanis",
       "2432": "长青之枝",
-      "2433": "诺尔伽什"
+      "2433": "诺尔伽什",
+      "2456": "Mor'geth"
     },
 
     "SimCInput": {
@@ -504,9 +517,9 @@
         "Setting3Title": "Auto Socket Items",
         "Setting3TextFieldLabel": "",
         "Setting4Spacer": "--------------------------------------------------------------------",
-        "Setting4Tooltip": "",
-        "Setting4Title": "",
-        "Setting4TextFieldLabel": "",
+        "Setting4Tooltip": "Choose a Gem to socket into your vault items",
+        "Setting4Title": "Vault Dom Gem",
+        "Setting4TextFieldLabel": "Vault Dom Gem",
         "Setting5Spacer": "--------------------------------------------------------------------",
         "Setting5Tooltip": "",
         "Setting5Title": "",

@@ -65,15 +65,28 @@ describe("Covenant getters / setters", () => {
     test("Set Correct Covenant", () => {
         const druid = new Player("Broccoliz", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
 
-        druid.setCovenant("night_fae");
-        expect(druid.getCovenant()).toEqual("night_fae");
+        druid.setCovenant("venthyr");
+        expect(druid.getCovenant()).toEqual("venthyr");
     });
-
+    /*
     test("Set Invalid Covenant", () => {
         const druid = new Player("Vrocas", "Restoration Druid", 99, "EU", "Tarren Mill", "Tauren");
         expect(() => 
             {druid.setCovenant("Maldraxxus");
         }).toThrow("Invalid Covenant Supplied");   
+    }); */
+    test("Set null covenant.", () => {
+        const druid = new Player("VoulkDruid", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+
+        druid.setCovenant(null);
+        expect(druid.getCovenant()).toEqual("night_fae");
+    });
+
+    test("Set blank covenant.", () => {
+        const druid = new Player("VoulkDruid", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+
+        druid.setCovenant("");
+        expect(druid.getCovenant()).toEqual("night_fae");
     });
 
     test("Set Correct Covenant but with erroneous quotes.", () => {

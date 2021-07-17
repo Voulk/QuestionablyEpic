@@ -10558,7 +10558,8 @@ export const itemDB = [
             "versatility": 3492
         },
         "dropLoc": "",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Prismatic"
     },
     {
         "id": 147585,
@@ -10586,7 +10587,8 @@ export const itemDB = [
             "versatility": 3492
         },
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 147586,
@@ -10642,7 +10644,8 @@ export const itemDB = [
             "versatility": 3492
         },
         "dropLoc": "",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Prismatic"
     },
     {
         "id": 147588,
@@ -10670,7 +10673,8 @@ export const itemDB = [
             "versatility": 3492
         },
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 147589,
@@ -10726,7 +10730,8 @@ export const itemDB = [
             "versatility": 3521
         },
         "dropLoc": "",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Prismatic"
     },
     {
         "id": 147591,
@@ -10754,7 +10759,8 @@ export const itemDB = [
             "versatility": 3521
         },
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 147592,
@@ -10810,7 +10816,8 @@ export const itemDB = [
             "versatility": 3521
         },
         "dropLoc": "",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Prismatic"
     },
     {
         "id": 147594,
@@ -10838,7 +10845,8 @@ export const itemDB = [
             "versatility": 3521
         },
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 147595,
@@ -10894,7 +10902,8 @@ export const itemDB = [
             "versatility": 3478
         },
         "dropLoc": "",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Prismatic"
     },
     {
         "id": 147597,
@@ -10922,7 +10931,8 @@ export const itemDB = [
             "versatility": 3478
         },
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 147598,
@@ -10978,7 +10988,8 @@ export const itemDB = [
             "versatility": 3478
         },
         "dropLoc": "",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Prismatic"
     },
     {
         "id": 147600,
@@ -11006,7 +11017,8 @@ export const itemDB = [
             "versatility": 3478
         },
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 147601,
@@ -11034,7 +11046,8 @@ export const itemDB = [
             "versatility": 3506
         },
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 147602,
@@ -11118,7 +11131,8 @@ export const itemDB = [
             "versatility": 3506
         },
         "dropLoc": "",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Prismatic"
     },
     {
         "id": 147605,
@@ -11174,7 +11188,8 @@ export const itemDB = [
             "versatility": 3506
         },
         "dropLoc": "",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Prismatic"
     },
     {
         "id": 147607,
@@ -11230,7 +11245,8 @@ export const itemDB = [
             "versatility": 3506
         },
         "dropLoc": "",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Prismatic"
     },
     {
         "id": 147609,
@@ -11342,7 +11358,8 @@ export const itemDB = [
             "versatility": 3404
         },
         "dropLoc": "",
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "socketType": "Prismatic"
     },
     {
         "id": 147613,
@@ -11454,7 +11471,8 @@ export const itemDB = [
             "versatility": 2727
         },
         "dropLoc": "",
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "socketType": "Prismatic"
     },
     {
         "id": 147771,
@@ -11482,7 +11500,8 @@ export const itemDB = [
             "versatility": 3333
         },
         "dropLoc": "",
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "socketType": "Prismatic"
     },
     {
         "id": 147772,
@@ -11510,7 +11529,8 @@ export const itemDB = [
             "versatility": 3333
         },
         "dropLoc": "",
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "socketType": "Prismatic"
     },
     {
         "id": 150434,
@@ -25225,6 +25245,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Ascended Alchemist Stone"
         },
+        "socketType": "Prismatic",
         "levelRange": []
     },
     {
@@ -25254,7 +25275,8 @@ export const itemDB = [
         },
         "faction": "alliance",
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 168682,
@@ -25283,7 +25305,8 @@ export const itemDB = [
         },
         "faction": "alliance",
         "dropLoc": "",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Prismatic"
     },
     {
         "id": 168685,
@@ -25312,7 +25335,8 @@ export const itemDB = [
         },
         "faction": "horde",
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 168688,
@@ -25341,7 +25365,8 @@ export const itemDB = [
         },
         "faction": "horde",
         "dropLoc": "",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Prismatic"
     },
     {
         "id": 168690,
@@ -25594,7 +25619,8 @@ export const itemDB = [
         },
         "faction": "alliance",
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 168709,
@@ -25623,7 +25649,8 @@ export const itemDB = [
         },
         "faction": "alliance",
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 168712,
@@ -25652,7 +25679,8 @@ export const itemDB = [
         },
         "faction": "horde",
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 168715,
@@ -25681,7 +25709,8 @@ export const itemDB = [
         },
         "faction": "horde",
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 168718,
@@ -25710,7 +25739,8 @@ export const itemDB = [
         },
         "faction": "alliance",
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 168721,
@@ -25739,7 +25769,8 @@ export const itemDB = [
         },
         "faction": "alliance",
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 168724,
@@ -25768,7 +25799,8 @@ export const itemDB = [
         },
         "faction": "horde",
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 168727,
@@ -25797,7 +25829,8 @@ export const itemDB = [
         },
         "faction": "horde",
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 168730,
@@ -25826,7 +25859,8 @@ export const itemDB = [
         },
         "faction": "alliance",
         "dropLoc": "",
-        "slot": "Hands"
+        "slot": "Hands",
+        "socketType": "Prismatic"
     },
     {
         "id": 168733,
@@ -25855,7 +25889,8 @@ export const itemDB = [
         },
         "faction": "alliance",
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 168736,
@@ -25884,7 +25919,8 @@ export const itemDB = [
         },
         "faction": "horde",
         "dropLoc": "",
-        "slot": "Hands"
+        "slot": "Hands",
+        "socketType": "Prismatic"
     },
     {
         "id": 168739,
@@ -25913,7 +25949,8 @@ export const itemDB = [
         },
         "faction": "horde",
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 169223,
@@ -26142,7 +26179,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 170387,
@@ -26170,7 +26208,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 170388,
@@ -26198,7 +26237,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 170389,
@@ -26226,7 +26266,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Prismatic"
     },
     {
         "id": 170390,
@@ -26254,7 +26295,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Prismatic"
     },
     {
         "id": 170391,
@@ -26282,7 +26324,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Waist"
+        "slot": "Waist",
+        "socketType": "Prismatic"
     },
     {
         "id": 170432,
@@ -26310,7 +26353,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 170433,
@@ -26338,7 +26382,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 170434,
@@ -26366,7 +26411,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 170435,
@@ -26394,7 +26440,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 170436,
@@ -26422,7 +26469,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 170437,
@@ -26450,7 +26498,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 170438,
@@ -26478,7 +26527,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 170439,
@@ -26506,7 +26556,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 170440,
@@ -26534,7 +26585,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Prismatic"
     },
     {
         "id": 170441,
@@ -26562,7 +26614,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 170442,
@@ -26590,7 +26643,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 170443,
@@ -26618,7 +26672,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 170456,
@@ -26646,7 +26701,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Hands"
+        "slot": "Hands",
+        "socketType": "Prismatic"
     },
     {
         "id": 170457,
@@ -26674,7 +26730,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Hands"
+        "slot": "Hands",
+        "socketType": "Prismatic"
     },
     {
         "id": 170458,
@@ -26702,7 +26759,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Hands"
+        "slot": "Hands",
+        "socketType": "Prismatic"
     },
     {
         "id": 170459,
@@ -26730,7 +26788,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 170460,
@@ -26758,7 +26817,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 170461,
@@ -26786,7 +26846,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Legs"
+        "slot": "Legs",
+        "socketType": "Prismatic"
     },
     {
         "id": 170470,
@@ -27183,6 +27244,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Peerless Alchemist Stone"
         },
+        "socketType": "Prismatic",
         "levelRange": []
     },
     {
@@ -27216,6 +27278,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Awakened Alchemist Stone"
         },
+        "socketType": "Prismatic",
         "levelRange": []
     },
     {
@@ -27249,6 +27312,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Unbound Alchemist Stone"
         },
+        "socketType": "Prismatic",
         "levelRange": []
     },
     {
@@ -27340,7 +27404,8 @@ export const itemDB = [
             "type": "trinket",
             "name": "Spiritual Alchemy Stone"
         },
-        "levelRange": []
+        "levelRange": [
+        ]
     },
     {
         "id": 171374,
@@ -42429,7 +42494,8 @@ export const itemDB = [
             "unallocated": 5000
         },
         "dropLoc": "",
-        "slot": "Finger"
+        "slot": "Finger",
+        "socketType": "Prismatic"
     },
     {
         "id": 173132,
@@ -42458,7 +42524,8 @@ export const itemDB = [
             "unallocated": 5000
         },
         "dropLoc": "",
-        "slot": "Finger"
+        "slot": "Finger",
+        "socketType": "Prismatic"
     },
     {
         "id": 173133,
@@ -42487,7 +42554,8 @@ export const itemDB = [
             "unallocated": 5000
         },
         "dropLoc": "",
-        "slot": "Finger"
+        "slot": "Finger",
+        "socketType": "Prismatic"
     },
     {
         "id": 173134,
@@ -42516,7 +42584,8 @@ export const itemDB = [
             "unallocated": 5000
         },
         "dropLoc": "",
-        "slot": "Finger"
+        "slot": "Finger",
+        "socketType": "Prismatic"
     },
     {
         "id": 173135,
@@ -42544,7 +42613,8 @@ export const itemDB = [
             "versatility": 10000
         },
         "dropLoc": "",
-        "slot": "Finger"
+        "slot": "Finger",
+        "socketType": "Prismatic"
     },
     {
         "id": 173136,
@@ -42572,7 +42642,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Finger"
+        "slot": "Finger",
+        "socketType": "Prismatic"
     },
     {
         "id": 173137,
@@ -42600,7 +42671,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Finger"
+        "slot": "Finger",
+        "socketType": "Prismatic"
     },
     {
         "id": 173138,
@@ -42628,7 +42700,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Finger"
+        "slot": "Finger",
+        "socketType": "Prismatic"
     },
     {
         "id": 173140,
@@ -42656,7 +42729,8 @@ export const itemDB = [
             "versatility": 10000
         },
         "dropLoc": "",
-        "slot": "Neck"
+        "slot": "Neck",
+        "socketType": "Prismatic"
     },
     {
         "id": 173141,
@@ -42684,7 +42758,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Neck"
+        "slot": "Neck",
+        "socketType": "Prismatic"
     },
     {
         "id": 173142,
@@ -42712,7 +42787,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Neck"
+        "slot": "Neck",
+        "socketType": "Prismatic"
     },
     {
         "id": 173143,
@@ -42740,7 +42816,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Neck"
+        "slot": "Neck",
+        "socketType": "Prismatic"
     },
     {
         "id": 173144,
@@ -42769,7 +42846,8 @@ export const itemDB = [
             "unallocated": 5000
         },
         "dropLoc": "",
-        "slot": "Neck"
+        "slot": "Neck",
+        "socketType": "Prismatic"
     },
     {
         "id": 173145,
@@ -42798,7 +42876,8 @@ export const itemDB = [
             "unallocated": 5000
         },
         "dropLoc": "",
-        "slot": "Neck"
+        "slot": "Neck",
+        "socketType": "Prismatic"
     },
     {
         "id": 173146,
@@ -42827,7 +42906,8 @@ export const itemDB = [
             "unallocated": 5000
         },
         "dropLoc": "",
-        "slot": "Neck"
+        "slot": "Neck",
+        "socketType": "Prismatic"
     },
     {
         "id": 173147,
@@ -42856,7 +42936,8 @@ export const itemDB = [
             "unallocated": 5000
         },
         "dropLoc": "",
-        "slot": "Neck"
+        "slot": "Neck",
+        "socketType": "Prismatic"
     },
     {
         "id": 173193,
@@ -48153,7 +48234,8 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Finger"
+        "slot": "Finger",
+        "socketType": "Prismatic"
     },
     {
         "id": 175009,
@@ -57271,7 +57353,8 @@ export const itemDB = [
             "type": "trinket",
             "name": "Spiritual Alchemy Stone"
         },
-        "levelRange": []
+        "levelRange": [
+        ]
     },
     {
         "id": 175942,
@@ -57304,7 +57387,8 @@ export const itemDB = [
             "type": "trinket",
             "name": "Spiritual Alchemy Stone"
         },
-        "levelRange": []
+        "levelRange": [
+        ]
     },
     {
         "id": 175943,
@@ -57337,7 +57421,9 @@ export const itemDB = [
             "type": "trinket",
             "name": "Spiritual Alchemy Stone"
         },
-        "levelRange": []
+        "levelRange": [
+            230
+        ]
     },
     {
         "id": 175988,
@@ -63555,7 +63641,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Gladiator's Emblem"
+            "name": " Gladiator's Emblem"
         },
         "levelRange": []
     },
@@ -64927,7 +65013,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Gladiator's Emblem"
+            "name": " Gladiator's Emblem"
         },
         "levelRange": []
     },
@@ -78827,7 +78913,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Gladiator's Medallion"
+            "name": " Gladiator's Medallion"
         },
         "levelRange": []
     },
@@ -78900,7 +78986,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Gladiator's Relentless Brooch"
+            "name": " Gladiator's Relentless Brooch"
         },
         "levelRange": []
     },
@@ -82597,7 +82683,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Gladiator's Sigil of Adaptation"
+            "name": " Gladiator's Sigil of Adaptation"
         },
         "levelRange": []
     },
@@ -93176,12 +93262,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Consumptive Infusion"
         },
-        "levelRange": [
-            187,
-            200,
-            213,
-            226
-        ]
+        "levelRange": []
     },
     {
         "id": 184024,
@@ -93221,12 +93302,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Macabre Sheet Music"
         },
-        "levelRange": [
-            187,
-            200,
-            213,
-            226
-        ]
+        "levelRange": []
     },
     {
         "id": 184028,
@@ -93393,7 +93469,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Gladiator's Medallion"
+            "name": " Gladiator's Medallion"
         },
         "levelRange": []
     },
@@ -93433,7 +93509,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Gladiator's Relentless Brooch"
+            "name": " Gladiator's Relentless Brooch"
         },
         "levelRange": []
     },
@@ -93473,7 +93549,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Gladiator's Sigil of Adaptation"
+            "name": " Gladiator's Sigil of Adaptation"
         },
         "levelRange": []
     },
@@ -101487,7 +101563,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Unchained Gladiator's Emblem"
+            "name": " Gladiator's Emblem"
         },
         "levelRange": []
     },
@@ -102628,7 +102704,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Unchained Gladiator's Emblem"
+            "name": " Gladiator's Emblem"
         },
         "levelRange": []
     },
@@ -102858,7 +102934,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Unchained Gladiator's Medallion"
+            "name": " Gladiator's Medallion"
         },
         "levelRange": []
     },
@@ -102892,7 +102968,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Unchained Gladiator's Relentless Brooch"
+            "name": " Gladiator's Relentless Brooch"
         },
         "levelRange": []
     },
@@ -102926,7 +103002,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Unchained Gladiator's Sigil of Adaptation"
+            "name": " Gladiator's Sigil of Adaptation"
         },
         "levelRange": []
     },
@@ -102988,7 +103064,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Unchained Gladiator's Medallion"
+            "name": " Gladiator's Medallion"
         },
         "levelRange": []
     },
@@ -103022,7 +103098,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Unchained Gladiator's Relentless Brooch"
+            "name": " Gladiator's Relentless Brooch"
         },
         "levelRange": []
     },
@@ -103056,7 +103132,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Unchained Gladiator's Sigil of Adaptation"
+            "name": " Gladiator's Sigil of Adaptation"
         },
         "levelRange": []
     },
@@ -106044,7 +106120,7 @@ export const itemDB = [
         "icon": "inv_jewelcrafting_70_maxlvlneck_blue",
         "itemClass": 4,
         "itemSubClass": 0,
-        "itemLevel": 155,
+        "itemLevel": 183,
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -106072,7 +106148,7 @@ export const itemDB = [
         "icon": "inv_jewelcrafting_70_lvlupneck_purple",
         "itemClass": 4,
         "itemSubClass": 0,
-        "itemLevel": 155,
+        "itemLevel": 200,
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -106082,7 +106158,11 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Neck"
+        "slot": "Neck",
+        "effect": {
+            "type": "special",
+            "name": "Passable Credentials"
+        }
     },
     {
         "id": 186004,
@@ -107319,7 +107399,14 @@ export const itemDB = [
             "type": "trinket",
             "name": "Tome of Insight"
         },
-        "levelRange": [200, 207, 213, 220, 226, 233]
+        "levelRange": [
+            200,
+            207,
+            213,
+            220,
+            226,
+            233
+        ]
     },
     {
         "id": 186207,
@@ -109010,7 +109097,8 @@ export const itemDB = [
             }
         ],
         "dropLoc": "",
-        "slot": "Feet"
+        "slot": "Feet",
+        "socketType": "Domination"
     },
     {
         "id": 186301,
@@ -109321,7 +109409,8 @@ export const itemDB = [
             }
         ],
         "dropLoc": "",
-        "slot": "Hands"
+        "slot": "Hands",
+        "socketType": "Domination"
     },
     {
         "id": 186312,
@@ -111349,7 +111438,7 @@ export const itemDB = [
         "sources": [
             {
                 "instanceId": 1193,
-                "encounterId": -16
+                "encounterId": 999
             }
         ],
         "dropLoc": "",
@@ -111936,7 +112025,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Forbidden Necromantic Tome"
         },
-        "levelRange": []
+        "levelRange": [220, 233, 246, 259]
     },
     {
         "id": 186422,
@@ -114211,7 +114300,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Unchained Gladiator's Shackles"
+            "name": " Gladiator's Shackles"
         },
         "levelRange": []
     },
@@ -115456,7 +115545,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Soul Cage Fragment"
         },
-        "levelRange": []
+        "levelRange": [233]
     },
     {
         "id": 187534,
@@ -115706,7 +115795,7 @@ export const itemDB = [
         "icon": "inv_jewelcrafting_70_maxlvlneck_purple",
         "itemClass": 4,
         "itemSubClass": 0,
-        "itemLevel": 155,
+        "itemLevel": 226,
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -115716,6 +115805,10 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Neck"
+        "slot": "Neck",
+        "effect": {
+            "type": "special",
+            "name": "Passable Credentials"
+        }
     }
 ]

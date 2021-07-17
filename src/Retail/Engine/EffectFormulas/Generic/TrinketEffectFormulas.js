@@ -1,4 +1,4 @@
-import { convertPPMToUptime, getScalarValue } from "../EffectUtilities";
+import { convertPPMToUptime, getProcessedValue } from "../EffectUtilities";
 import { trinket_data } from "./TrinketData";
 import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
 // import { STAT } from "../../../../General/Engine/STAT";
@@ -106,7 +106,6 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     const multiplier = 1 + effect.multiplier * (userSettings.hymnalAllies || 0);
 
     bonus_stats.crit = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration * effect.stacks * multiplier) / 60;
-    console.log("Hymnal: " + bonus_stats.crit);
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -225,9 +224,12 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /*
     Eventually we'll include mana in bonus_stats and calculate it at the end. Until then, we'll auto-convert to HPS.
     */
+    const manaPotionReturn = 10000 * .4; // sit down potion is 10k. Alch stone gives 40% of that
+    const potionsUsed = Math.ceil(player.getFightLength(contentType) / 360); // One potion every 6 minutes
+    bonus_stats.hps = manaPotionReturn * potionsUsed * player.getSpecialQuery("OneManaHealing", contentType) / player.getFightLength(contentType) * 0.8;
 
     /* ------------------------------------- Health Potion Bonus ------------------------------------ */
-    bonus_stats.hps = ((10000 * 0.4) / player.getFightLength(contentType)) * 0.9; // 0.9 represents overhealing. We'll capture this better later.
+    bonus_stats.hps += ((10000 * 0.4) / player.getFightLength(contentType)) * 0.9; // 0.9 represents overhealing. We'll capture this better later.
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -254,10 +256,8 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     // TODO: replace
     if (player.getSpec() === "Mistweaver Monk" && player.getCovenant() === "necrolord") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
     else if (player.getSpec() === "Holy Paladin" && player.getCovenant() === "kyrian") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
-    else if (player.getSpec() === "Holy Paladin" && player.getCovenant() !== "kyrian") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType) - 0.34;
-    else if (player.getSpec() !== "Mistweaver Monk") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
+    else if (player.getSpec() !== "Mistweaver Monk" && player.getSpec() !== "Holy Paladin") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
     //if (player.getSpec() === SPEC.HOLYPALADIN) bonus_stats.intellect *= 1.42; // This needs to be refined, but represents the power increase from combining with Divine Toll.
-    //if (player.getSpec() === SPEC.DISCPRIEST) bonus_stats.intellect *= 1.68; // This needs to be refined, but represents the power increase from combining with Spirit Shell.
     // We need a better way to model interaction with spec cooldowns.
     //
   } else if (
@@ -281,7 +281,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let effect = activeTrinket.effects[0];
     let playerBestSecondary = player.getHighestStatWeight(contentType, ["versatility"]); // Exclude Vers since there isn't a Vers version.
 
-    bonus_stats[playerBestSecondary] = ((getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown) * 0.75;
+    bonus_stats[playerBestSecondary] = ((getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown) * 0.65;
     bonus_stats[playerBestSecondary] *= player.getCooldownMult("threeMinutes", contentType);
     // TODO: power reduced by 5% because of the chance something interferes. This needs to be much much better and I'll fix it up this week.
     //
@@ -613,14 +613,9 @@ else if (
   const meteor = 1 + healEffect.targets[contentType] * healEffect.meteor;
 
   /* ------- Hastes impact on the trinket PPM is included in the secondary multiplier below. ------ */
-  bonus_stats.hps = (getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel, healEffect.efficiency) / 60) * meteor * healEffect.ppm * player.getStatMultiplier("NOMAST");
+  bonus_stats.hps = (getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel, healEffect.efficiency) / 60) * meteor * healEffect.ppm * player.getStatMultiplier("CRITVERS");
   bonus_stats.haste = getProcessedValue(hasteEffect.coefficient, hasteEffect.table, itemLevel) * convertPPMToUptime(hasteEffect.ppm, hasteEffect.duration);
 
-  console.log("Haste" + getProcessedValue(hasteEffect.coefficient, hasteEffect.table, itemLevel) + ". Itemlevel: " + itemLevel);
-  console.log("Healing" + getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel, 1) + ". Itemlevel: " + itemLevel);
-  console.log("HPS: " + bonus_stats.hps + ". Haste: " + bonus_stats.haste + ". lv: " + itemLevel);
-  console.log("Avg Haste: " + bonus_stats.haste)
-  console.log("Uptime: " + convertPPMToUptime(hasteEffect.ppm * player.getStatPerc("Haste"), hasteEffect.duration));
 } else if (
   /* ---------------------------------------------------------------------------------------------- */
   /*                                    Scrawled Word of Recall                                     */
@@ -643,7 +638,18 @@ else if (
 ) {
   let effect = activeTrinket.effects[0];
 
-  bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration) * player.getStatPerc("Haste");
+  bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                   Forbidden Necromantic Tome                                   */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Forbidden Necromantic Tome"
+) {
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.averageStacks[player.getSpec()];
   //
 }
   else {
@@ -691,7 +697,4 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
   return Math.round(estHPS);
 }
 
-export function getProcessedValue(coefficient, table, itemLevel, efficiency = 1, floor=true) {
-  if (floor) return Math.floor(coefficient * getScalarValue(table, itemLevel) * efficiency);
-  else return coefficient * getScalarValue(table, itemLevel) * efficiency;
-}
+

@@ -1,5 +1,5 @@
 
-import { getTrinketEffect, getProcessedValue } from "./TrinketEffectFormulas";
+import {getProcessedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { userSettings } from "General/Modules/Settings/SettingsObject";
 import Player from "General/Modules/Player/Player";
 import { trinket_data} from "./TrinketData";
@@ -125,6 +125,7 @@ describe("Scrawled Word of Recall", () => {
     });
 });
 
+/* There is currently no way to verify the post-buff specifics, so this test has been disabled until servers go live.
 describe("Shadowed Orb of Torment", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = trinket_data.find((trinket) => trinket.name === "Shadowed Orb of Torment");
@@ -140,7 +141,7 @@ describe("Shadowed Orb of Torment", () => {
   
         expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
     });
-});
+}); 
 
 describe("Titanic Ocular Gland", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
@@ -157,7 +158,8 @@ describe("Titanic Ocular Gland", () => {
   
         expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
     });
-});
+}); */
+
 
 describe("First Class Healing Distributor", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
@@ -165,8 +167,8 @@ describe("First Class Healing Distributor", () => {
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
-    ${233}  | ${2365}
-    ${226}  | ${2129}
+    ${233}  | ${1583}
+    ${226}  | ${1424}
     // add new test cases here
     `.test("First Class Healing Distributor Heal Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
@@ -186,25 +188,6 @@ describe("First Class Healing Distributor", () => {
     });
 });
 
-/*
-describe("Cabalists Hymnal Data Check", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Cabalist's Hymnal");
-    const effect = activeTrinket.effects[0];
-    each`
-    level    | expectedResult
-    ${233}  | ${294}
-    ${220}  | ${276}
-    ${207}  | ${257}
-    ${194}  | ${237}
-    // add new test cases here
-    `.test("Cabalists Hymnal Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-  
-        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
-    });
-});
-
-*/
 
 describe("Instructor's Divine Bell", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
@@ -293,9 +276,25 @@ describe("Tome of Insight", () => {
     const effect = activeTrinket.effects[0];
     each`
     level   | expectedResult
-    ${200}  | ${271}
+    ${207}  | ${164}
+    ${200}  | ${157}
     // add new test cases here
     `.test("Tome of Insight Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+  
+        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
+    });
+});
+
+describe("Spiritual Alchemy Stone Data Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Spiritual Alchemy Stone");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${230}  | ${318}
+    ${165}  | ${173}
+    // add new test cases here
+    `.test("Spiritual Alchemy Stone Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
         expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
     });

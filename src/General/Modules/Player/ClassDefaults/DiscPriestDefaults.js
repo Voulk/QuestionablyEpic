@@ -19,10 +19,10 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
       CastsPerMinute: 36,
       cooldownMult: {
         oneMinute: 1,
-        ninetySeconds: 2.09,
+        ninetySeconds: 2.4,
         twoMinutes: 1,
-        twoMinutesOrb: 1,
-        threeMinutes: 2.15,
+        twoMinutesOrb: 0.85,
+        threeMinutes: 2.32,
       },
       HoldYourGroundUptime: 0.8
     };
@@ -34,7 +34,7 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
         oneMinute: 1.1,
         ninetySeconds: 1.1,
         twoMinutes: 1.1,
-        twoMinutesOrb: 1.1,
+        twoMinutesOrb: 1,
         threeMinutes: 1.1,
       },
       HoldYourGroundUptime: 0.8

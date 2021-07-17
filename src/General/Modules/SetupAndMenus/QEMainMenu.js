@@ -66,12 +66,12 @@ export default function QEMainMenu(props) {
     gameType === "Retail"
       ? {
           "MainMenu.TopGear": ["/topgear", true, "TopGear"],
-          "MainMenu.UpgradeFinder": ["/UpgradeFinder", false, "UpgradeFinder"],
+          "MainMenu.UpgradeFinder": ["/UpgradeFinder", true, "UpgradeFinder"],
           "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
           "MainMenu.ExploreCovenants": ["/soulbinds", true, "ExploreCovenants"],
           "MainMenu.LegendaryAnalysis": ["/legendaries", true, "LegendaryAnalysis"],
           "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
-          "MainMenu.DominationAnalysis": ["/dominationsockets", false, "DominationAnalysis"],
+          "MainMenu.DominationAnalysis": ["/dominationgems", true, "DominationAnalysis"],
           "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
           "MainMenu.Profile": ["/profile", true, "Profile"],
         }

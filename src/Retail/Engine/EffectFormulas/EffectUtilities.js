@@ -13,10 +13,20 @@ export function getScalarValue(table, itemLevel) {
     return randPropPoints[itemLevel]["slotValues"][0];
   } else if (table === -7) {
     return randPropPoints[itemLevel]["slotValues"][0] * combat_ratings_mult_by_ilvl[itemLevel];
-  } else {
+  } else if (table === -6) {
+      return 23316.22963; // This is a level-scaled value and 23315 is the value for level 60.
+  } else if (table === -9) {
+    return randPropPoints[itemLevel]["p1"]; // This is the damage_replace_stat column in SimC.
+  } 
+  else {
     // return error
     return -1;
   }
+}
+
+export function getProcessedValue(coefficient, table, itemLevel, efficiency = 1, floor=true) {
+  if (floor) return Math.floor(coefficient * getScalarValue(table, itemLevel) * efficiency);
+  else return coefficient * getScalarValue(table, itemLevel) * efficiency;
 }
 
 export function getBestWeaponEnchant(player, contentType) {

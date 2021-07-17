@@ -68,6 +68,7 @@ export default class VerticalChart extends PureComponent {
           213: getLevelDiff(map2.name, db, 213, map2),
           220: getLevelDiff(map2.name, db, 220, map2),
           226: getLevelDiff(map2.name, db, 226, map2),
+          230: getLevelDiff(map2.name, db, 230, map2),
           233: getLevelDiff(map2.name, db, 233, map2),
           239: getLevelDiff(map2.name, db, 239, map2),
           246: getLevelDiff(map2.name, db, 246, map2),
@@ -85,7 +86,7 @@ export default class VerticalChart extends PureComponent {
       return (
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
-            <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
+            <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {truncateString(getTranslatedItemName(payload.value, currentLanguage), 32)}
             </text>
             <a data-wowhead={"item=" + payload.value + "&ilvl=200" + "&domain=" + currentLanguage}>
@@ -110,13 +111,14 @@ export default class VerticalChart extends PureComponent {
           }}
         >
           <XAxis type="number" stroke="#f5f5f5" axisLine={false} />
-          <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} padding={0} height={1} axisLine={false} />
+          <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} height={1} axisLine={false} />
           <Tooltip
             labelStyle={{ color: "#ffffff" }}
             contentStyle={{
               backgroundColor: "#1b1b1b",
               border: "1px solid rgba(255, 255, 255, 0.12)",
             }}
+            isAnimationActive={false} 
             labelFormatter={(timeStr) => getTranslatedItemName(timeStr, currentLanguage)}
             formatter={(value, name, props) => {
               {
@@ -148,6 +150,7 @@ export default class VerticalChart extends PureComponent {
           <Bar dataKey={220} fill={"#bbeabf"} stackId="a" />
 
           <Bar dataKey={226} fill={"#D8BE7B"} stackId="a" />
+          <Bar dataKey={230} fill={"#e0d06b"} stackId="a" />
           <Bar dataKey={233} fill={"#e0d09b"} stackId="a" />
           <Bar dataKey={239} fill={"#eae2bb"} stackId="a" />
 

@@ -30,7 +30,10 @@ class PlayerChars {
           charArray.push(new BCPlayer(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights));
         }
         else {
-          charArray.push(new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights));
+          let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights);
+          if (player.covenant) newChar.setCovenant(player.covenant);
+          else newChar.setDefaultCovenant(player.spec);
+          charArray.push(newChar);
         }
         
         index += 1;
@@ -99,13 +102,15 @@ class PlayerChars {
   };
 
   // Add a new character to the array then save it.
-  addChar = (name, spec, region, realm, race, gameType) => {
+  addChar = (name, spec, region, realm, race, gameType, covenant = "") => {
     //alert("Adding new Character")
     if (gameType === "BurningCrusade") {
       this.allChar.push(new BCPlayer(name, spec, this.allChar.length, region, realm, race))
     }
     else {
-      this.allChar.push(new Player(name, spec, this.allChar.length, region, realm, race));
+      let newChar = new Player(name, spec, this.allChar.length, region, realm, race)
+      if (covenant !== "") newChar.setCovenant(covenant);
+      this.allChar.push(newChar);
     }
     
     this.saveAllChar();

@@ -1,4 +1,5 @@
 import { itemDB } from "../../Databases/ItemDB";
+import { dominationGemDB } from "../../Databases/DominationGemDB";
 import { BCItemDB } from "Databases/BCItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
@@ -131,7 +132,8 @@ export function filterItemListBySource(itemList, sourceInstance, sourceBoss, lev
     // console.log(item);
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
-    if (itemEncounter == 2425 || itemEncounter == 2424) expectedItemLevel += 7;
+    if (itemEncounter == 2440 || itemEncounter == 2441) expectedItemLevel += 7;
+    if (itemEncounter == 2456) expectedItemLevel = 233;
     else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
 
     //console.log(expectedItemLevel);
@@ -200,6 +202,15 @@ export function getTranslatedItemName(id, lang, effect, gameType = "Retail") {
   }
 }
 
+// Returns a translated item name based on an ID.
+export function getTranslatedDominationGem(id, lang) {
+    let temp = dominationGemDB.filter(function (gem) {
+      return gem.gemID === id;
+    });
+    if (temp.length > 0) return temp[0].name[lang];
+    else return "Unknown Gem";
+} 
+
 
 // Grabs a specific item from whichever item database is currently selected.
 export function getItem(id, gameType = "Retail") {
@@ -238,6 +249,11 @@ export function getItemIcon(id, gameType = "Retail") {
     reportError(this, "ItemUtilities", "Icon not found for ID", id);
     return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
   }
+}
+
+export function getGemIcon(id) {
+  const gem = dominationGemDB.filter((gem) => gem.gemID === id);
+  return "https://wow.zamimg.com/images/wow/icons/large/" + gem[0].icon + ".jpg"
 }
 
 
@@ -399,17 +415,25 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
       // This is an occasionally off-by-one formula for leech that should be rewritten.
       stats.leech = Math.ceil(28 + 0.2413 * (itemLevel - 155));
     } else {
-      const terMult = (slot === "Finger" || slot === "Neck") ? 0.174027 : 0.433932;
+      const terMult = (slot === "Finger" || slot === "Neck") ? 0.174027 : 0.442932;
       stats.leech = Math.floor(terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility));
     }
   }
   return stats;
 }
 
+export function getDomGemEffect(id) {
+  let temp = dominationGemDB.filter(function (gem) {
+    return gem.gemID === id;
+  });
+  if (temp.length > 0 && 'effect' in temp[0]) return temp[0].effect;
+  else return ""
+} 
+
 export function buildStatString(stats, effect, lang = "en") {
   let statString = "";
   let statsList = []
-  const ignoreList = ["stamina", "bonus_stats", "strength", "agility"]
+  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech"]
   for (const [statkey, statvalue] of Object.entries(stats)) {
     if (!ignoreList.includes(statkey)) statsList.push({key: statkey, val: statvalue})
   }
@@ -417,6 +441,8 @@ export function buildStatString(stats, effect, lang = "en") {
   statsList = statsList.sort(function (a, b) {
     return b.val - a.val;
   });
+
+  if ('intellect' in stats && stats.intellect > 0) statString = stats.intellect + " Int / ";
   
   for (var ind in statsList) {
     let statKey = statsList[ind]["key"];
@@ -540,7 +566,6 @@ function compileStats(stats, bonus_stats) {
   
 }
 
-// 141 Hallowed Garments
 function applyBCStatMods(spec, setStats) {
       // This can be properly formalized.
   if (spec === "Holy Paladin BC") {
@@ -627,115 +652,6 @@ function sumObjectsByKey(...objs) {
   }, {});
 }
 
-
-// --------------------------------
-// ----- Deprecated Functions -----
-// --------------------------------
-// Will be removed by the end of April.
-
-// Builds a stat string out of an items given stats and effect.
-// Stats should be listed in order of quantity.
-/**
- * 
- * @deprecated
- */
- export function buildStatStringOld(stats, effect, lang = "en") {
-  //const { t, i18n } = useTranslation();
-  let statString = "";
-  let statsList = [
-    { key: "haste", val: stats["haste"] },
-    { key: "crit", val: stats["crit"] },
-    { key: "mastery", val: stats["mastery"] },
-    { key: "versatility", val: stats["versatility"] },
-  ];
-
-  statsList = statsList.sort(function (a, b) {
-    return b.val - a.val;
-  });
-
-  for (var ind in statsList) {
-    let statKey = statsList[ind]["key"];
-
-    statString +=
-      statsList[ind]["val"] > 0
-        ? statsList[ind]["val"] +
-          " " +
-          translatedStat[statKey][lang] +
-          //correctCasing(statsList[ind]["key"]) +
-          " / " //t("stats." + statsList[ind]["key"])
-        : "";
-  }
-
-  if (effect !== "") statString += "Effect" + " / "; // t("itemTags.effect")
-
-  return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
-}
-
-/**
- * 
- * @param {*} id 
- * @returns A specific items base item level.
- * 
- * @deprecated and will be removed at a later date. Functions should use getItemProp instead. 
- */
- export function getItemLevel(id) {
-  console.warn("GetItemLevel is now deprecated");
-  const item = getItem(id);
-
-  if (item !== "") return item.itemLevel;
-  else {
-    reportError(this, "ItemUtilities", "Item Level not found or item missing", id);
-    return -2;
-  }
-}
-
-// Returns the selected items effect.
-// No need for error checking here since returning no effect is an acceptable and common result.
-/**
- * 
- * @param {*} id 
- * @returns 
- * 
- * @deprecated
- */
- export function getItemEffect(id) {
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
-
-  if (temp.length > 0 && "effect" in temp[0]) return temp[0].effect;
-  else return "";
-}
-
-/**
- * 
- * @deprecated
- */
- export function getItemSlot(id) {
-  console.warn("GetItemSlot is now deprecated");
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
-
-  if (temp.length > 0) return temp[0].slot;
-  else return 0;
-}
-
-// Returns a translated item name based on an ID.
-/**
- * 
- * @param {*} id 
- * @returns 
- * @deprecated
- */
-export function getItemSubclass(id) {
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
-
-  if (temp.length > 0 && "itemSubClass" in temp[0]) return temp[0].itemSubClass;
-  else return "";
-}
 
 
 

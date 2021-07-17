@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const TOPGEARCAP = 34; // TODO
+const TOPGEARCAP = 31; // TODO
 
 export default function TopGear(props) {
   const { t, i18n } = useTranslation();
@@ -147,7 +147,7 @@ export default function TopGear(props) {
       }
     }
     setErrorMessage(errorMessage);
-    console.log(slotLengths);
+    //console.log(slotLengths);
     return topgearOk;
   };
 

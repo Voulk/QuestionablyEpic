@@ -4,9 +4,7 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay = [
-    "- Expect ALL information to change as blizzard are making rapid hotfixes.",
-    "- There are two very overtuned trinkets. These are likely to be nerfed before the raid opens.",
-    "- The Upgrade Finder will return later this week.",
+    "9.1: The Shadowed Orb & Titanic Ocular Gland buffs are live in all modules.",
 ];
 
   return (

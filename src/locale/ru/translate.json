@@ -40,6 +40,11 @@
     "Leech": "Самоисцеление",
     "Region": "Регион",
     "Race": "Раса",
+    "Covenant": "Covenant",
+    "kyrian": "Kyrian",
+    "necrolord": "Necrolord",
+    "night_fae": "Night Fae",
+    "venthyr": "Venthyr",
     "Select Class": "Выберите класс",
     "Select Race": "Выберите расу",
     "HowToUse": "Как пользоваться приложением",
@@ -340,7 +345,8 @@
       "HelpText": "'Быстрое сравнение' позволяет сравнивать предметы по одному. Вы можете добавлять предметы вручную с помощью выпадающего списка выше, либо добавить их все сразу, вставив строку импорта SimC. Счёт автоматически отображается в правом-верхнем углу, а предметы сортируются по эффективности.",
       "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300",
       "ItemAdded": "Предмет добавлен!",
-      "ItemDeleted": "Предмет удалён!"
+      "ItemDeleted": "Предмет удалён!",
+      "DominationSocket": "Domination"
     },
 
     "Races": {
@@ -392,7 +398,19 @@
       "2446": "Стражница Предвечных",
       "2447": "Fatescribe Roh-Kalo",
       "2440": "Кел'Тузад",
-      "2441": "Сильвана Ветрокрылая"
+      "2441": "Сильвана Ветрокрылая",
+      "998": "BoE Trash Drops",
+      "Tazavesh Bosses": "",
+      "Tazavesh": {
+        "2437": "Зо'фекс Часовой",
+        "2454": "Большой зверинец",
+        "2436": "Кавардак на почте",
+        "2452": "'Оазис Мизы'",
+        "2451": "So'azmi",
+        "2448": "Со'азми",
+        "2449": "Хронокэп Крюкохвост",
+        "2455": "Со'лея"
+      }
     },
 
     "DungeonNames": {
@@ -435,7 +453,8 @@
       "2430": "Валинор",
       "2431": "Мортанис",
       "2432": "Ораномонос",
-      "2433": "Нургаш "
+      "2433": "Нургаш ",
+      "2456": "Мор'гет"
     },
 
     "SimCInput": {
@@ -505,9 +524,9 @@
         "Setting3Title": "Auto Socket Items",
         "Setting3TextFieldLabel": "",
         "Setting4Spacer": "--------------------------------------------------------------------",
-        "Setting4Tooltip": "",
-        "Setting4Title": "",
-        "Setting4TextFieldLabel": "",
+        "Setting4Tooltip": "Choose a Gem to socket into your vault items",
+        "Setting4Title": "Vault Dom Gem",
+        "Setting4TextFieldLabel": "Vault Dom Gem",
         "Setting5Spacer": "--------------------------------------------------------------------",
         "Setting5Tooltip": "",
         "Setting5Title": "",
@@ -634,6 +653,11 @@
     "TrinketAnalysis": {
       "Header": "Анализ аксессуаров",
       "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. World quest trinkets and settings panel coming soon."
+    },
+
+    "DominationSocketAnalysis": {
+      "Header": "Domination Socket Analysis",
+      "HelpText": "This is a quick way to see how strong Domination Gems are for your character. These are still being tuned and results could change."
     },
 
     "Covenants": {

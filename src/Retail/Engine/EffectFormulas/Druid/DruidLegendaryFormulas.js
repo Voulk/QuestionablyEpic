@@ -103,7 +103,7 @@ export const getDruidLegendary = (effectName, player, contentType) => {
 
   } else if (name === "Oath of the Elder Druid") {
     let legendaryIncrease = 0.75;
-    let playerHealth = player.activeStats.stamina * 20;
+    let playerHealth = player.getHealth();
     let yseras = playerHealth * 0.03 * legendaryIncrease;
 
     bonus_stats.hps = Math.round(yseras / 5);
