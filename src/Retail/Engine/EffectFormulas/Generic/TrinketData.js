@@ -950,7 +950,7 @@ export const trinket_data = [
         coefficient: 0.337095, 
         table: -7,
         duration: 15,
-        averageStacks: {"Restoration Druid": 0.6, "Holy Paladin": 1.5, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.65, "Holy Priest": 0.6, "Discipline Priest": 1.6},
+        averageStacks: {"Restoration Druid": 0.6, "Holy Paladin": 0.4, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.65, "Holy Priest": 0.6, "Discipline Priest": 1.6},
         // The average stacks value is correct, but should be rewritten to include the formula in the code.
         ppm: 5,
       },
