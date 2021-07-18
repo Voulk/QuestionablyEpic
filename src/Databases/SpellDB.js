@@ -6,7 +6,7 @@ export const spellData = [
   { id: 116670, name: "Vivify", icon: "ability_monk_vivify" },
   { id: 115310, name: "Revival", icon: "spell_monk_revival" },
   { id: 191894, name: "Mastery: Gust of Mists", icon: "ability_monk_souldance" },
-  { id: 343655, name: "Enveloping Breath", icon: "ability_monk_dragonkick" },
+  { id: 325209, name: "Enveloping Breath", icon: "ability_monk_chiexplosion" },
   { id: 191837, name: "Essence Font", icon: "ability_monk_essencefont" },
   { id: 115151, name: "Renewing Mist", icon: "ability_monk_renewingmists" },
   { id: 274909, name: "Rising Mist", icon: "ability_monk_effuse" },
