@@ -172,7 +172,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
         const item233 = buildItem(player, contentType, rawItem, 233, rawItem.sources[0]);
         itemPoss.push(item233);
       }
-      else {
+      else if (itemSource.instanceId !== 1190) { // Exclude Nathria gear.
         const itemLevel = getSetItemLevel(itemSource, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0]);
 
