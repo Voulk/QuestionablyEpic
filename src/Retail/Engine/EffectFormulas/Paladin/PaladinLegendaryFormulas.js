@@ -160,7 +160,7 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
     /*                                        Divine Resonance                                        */
     /* ---------------------------------------------------------------------------------------------- */
     const specialSettings = {
-      numCopies: 5,
+      numCopies: 3,
       copyStrength: 0.2,
     };
   

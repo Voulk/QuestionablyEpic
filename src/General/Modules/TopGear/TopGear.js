@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const TOPGEARCAP = 34; // TODO
+const TOPGEARCAP = 31; // TODO
 
 export default function TopGear(props) {
   const { t, i18n } = useTranslation();

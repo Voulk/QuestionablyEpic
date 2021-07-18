@@ -10,6 +10,33 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 12,
+    date: "16th July",
+    changes: [
+      "Added Set Bonus Ranks",
+      "Added Forbidden Necromantic Tome"
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 11,
+    date: "14th July",
+    changes: [
+      "Vault: You can now choose which domination gem to socket in vault items.",
+      "Added character covenant to cards.",
+      "Bugfix: Character covenants will no longer reset occasionally."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 10,
+    date: "13th July",
+    changes: [
+      "Bugfix: Fixed a bug that was preventing some players from loading the app",
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 9,
     date: "12th July",
     changes: [
