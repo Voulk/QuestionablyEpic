@@ -10,11 +10,20 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 13,
+    date: "18th July",
+    changes: [
+      "Added a formula for the Celestial Spirits legendary.",
+      "The Upgrade Finder upgrades-by-slot tab will now show item sources."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 12,
     date: "16th July",
     changes: [
-      "Added Set Bonus Ranks",
-      "Added Forbidden Necromantic Tome"
+      "Added Set Bonus Ranks.",
+      "Added Forbidden Necromantic Tome."
     ],
   },
   {
