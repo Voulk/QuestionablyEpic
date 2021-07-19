@@ -1,18 +1,14 @@
 import React, { forwardRef } from "react";
 import MaterialTable, { MTableToolbar } from "material-table";
-import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import abilityIcons from "../../Functions/IconFunctions/AbilityIcons.js";
+import abilityIcons from "../../CooldownPlanner/Functions/IconFunctions/AbilityIcons.js";
 import { localizationFR } from "locale/fr/TableLocale";
 import { localizationEN } from "locale/en/TableLocale";
 import { localizationRU } from "locale/ru/TableLocale";
 import { localizationCH } from "locale/ch/TableLocale";
-import moment from "moment";
-import { externalsDB } from "../../../../../Databases/ExternalsDB";
 import { Divider, Paper } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
-import { classColoursJS } from "../../Functions/ClassColourFunctions";
-import classIcons from "../../Functions/IconFunctions/ClassIcons";
+import { ArrowDownward, ChevronRight, FilterList } from "@material-ui/icons";
 
 const theme = createMuiTheme({
   overrides: {
@@ -35,11 +31,14 @@ const theme = createMuiTheme({
     secondary: { main: "#e0e0e0" },
   },
 });
+
 const tableIcons = {
   SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  DetailPanel: forwardRef((props, ref) => <ChevronRight {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  Filter: forwardRef((props, ref) => <FilterList {...props} ref={ref} />),
 };
 
-export default function ExternalTimeline(props) {
+export default function EnemyCastsTimeline(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
@@ -61,57 +60,23 @@ export default function ExternalTimeline(props) {
         icons={tableIcons}
         columns={[
           {
-            title: t("Caster"),
-            field: "caster",
+            title: t("Enemy"),
+            field: "name",
             cellStyle: {
               whiteSpace: "nowrap",
-              // borderRight: "1px solid rgb(81 81 81)",
               padding: "2px 0px",
               fontSize: 14,
             },
             headerStyle: {
               fontSize: 14,
             },
-            render: (rowData) => (
-              <div style={{ color: classColoursJS(rowData.casterClass) }}>
-                {classIcons(rowData.casterClass, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
-                {rowData.caster}
-              </div>
-            ),
+            defaultGroupOrder: 0,
           },
           {
-            field: "casterClass",
-            hidden: true,
-          },
-          {
-            field: "targetClass",
-            hidden: true,
-          },
-          {
-            title: t("Target"),
-            field: "target",
-            cellStyle: {
-              whiteSpace: "nowrap",
-              // borderRight: "1px solid rgb(81 81 81)",
-              padding: "2px 0px",
-              fontSize: 14,
-            },
-            headerStyle: {
-              fontSize: 14,
-            },
-            render: (rowData) => (
-              <div style={{ color: classColoursJS(rowData.targetClass) }}>
-                {classIcons(rowData.targetClass, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
-                {rowData.target}
-              </div>
-            ),
-          },
-          {
-            title: t("External"),
+            title: t("Ability"),
             field: "ability",
             cellStyle: {
               whiteSpace: "nowrap",
-              // borderRight: "1px solid rgb(81 81 81)",
               padding: "2px 8px",
               fontSize: 14,
             },
@@ -136,47 +101,24 @@ export default function ExternalTimeline(props) {
             width: "2%",
             cellStyle: {
               whiteSpace: "nowrap",
-              // borderRight: "1px solid rgb(81 81 81)",
               padding: "2px 8px",
               fontSize: 14,
             },
             headerStyle: {
               fontSize: 14,
             },
+            filtering: false,
           },
           {
-            title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
-            width: "2%",
-            cellStyle: {
-              whiteSpace: "nowrap",
-              padding: "2px 8px",
-              fontSize: 14,
-            },
-            headerStyle: {
-              fontSize: 14,
-            },
-            render: (rowData) => (
-              <div>
-                {moment(rowData.timestamp, "mm:ss")
-                  .add(
-                    externalsDB
-                      .filter((obj) => {
-                        return obj.guid === rowData.guid;
-                      })
-                      .map((obj) => obj.cooldown)
-                      .toString(),
-                    "s",
-                  )
-                  .format("mm:ss")}
-              </div>
-            ),
+            field: "id",
+            hidden: true,
           },
         ]}
-        title={t("CooldownPlanner.Headers.ExternalTimeline")}
+        title={t("CooldownPlanner.Headers.EnemyCastTimeline")}
+        icons={tableIcons}
         header={true}
         data={props.data}
         style={{
-          // marginTop: "8px",
           color: "#ffffff",
           fontSize: "0.8 rem",
           whiteSpace: "nowrap",
@@ -197,12 +139,13 @@ export default function ExternalTimeline(props) {
           toolbar: true,
           header: true,
           search: false,
+          searchFieldVariant: "outlined",
+          filtering: false,
           headerStyle: {
             border: "1px solid #c8b054",
             padding: "0px 8px 0px 8px",
             backgroundColor: "#c8b054",
             color: "#000",
-            // fontSize: "0.8 rem",
           },
           rowStyle: (rowData, index) => {
             if (index % 2) {
@@ -229,7 +172,6 @@ export default function ExternalTimeline(props) {
           },
           actionsColumnIndex: 6,
           paging: false,
-          // tableLayout: "fixed",
         }}
       />
     </ThemeProvider>

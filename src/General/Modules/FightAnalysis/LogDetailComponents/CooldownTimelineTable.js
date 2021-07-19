@@ -1,14 +1,18 @@
 import React, { forwardRef } from "react";
 import MaterialTable, { MTableToolbar } from "material-table";
+import ArrowDownward from "@material-ui/icons/ArrowDownward";
+import moment from "moment";
+import { Divider, Paper } from "@material-ui/core";
+import { useTranslation } from "react-i18next";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import abilityIcons from "../../Functions/IconFunctions/AbilityIcons.js";
+import abilityIcons from "../../CooldownPlanner/Functions/IconFunctions/AbilityIcons.js";
 import { localizationFR } from "locale/fr/TableLocale";
 import { localizationEN } from "locale/en/TableLocale";
 import { localizationRU } from "locale/ru/TableLocale";
 import { localizationCH } from "locale/ch/TableLocale";
-import { Divider, Paper } from "@material-ui/core";
-import { useTranslation } from "react-i18next";
-import { ArrowDownward, ChevronRight, FilterList } from "@material-ui/icons";
+import { healerCooldownsDetailed } from "../../CooldownPlanner/Data/Data.js";
+import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
+import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 
 const theme = createMuiTheme({
   overrides: {
@@ -31,14 +35,11 @@ const theme = createMuiTheme({
     secondary: { main: "#e0e0e0" },
   },
 });
-
 const tableIcons = {
   SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />),
-  DetailPanel: forwardRef((props, ref) => <ChevronRight {...props} style={{ color: "#ffee77" }} ref={ref} />),
-  Filter: forwardRef((props, ref) => <FilterList {...props} ref={ref} />),
 };
 
-export default function EnemyCastsTimeline(props) {
+export default function CooldownTimeline(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
@@ -60,7 +61,7 @@ export default function EnemyCastsTimeline(props) {
         icons={tableIcons}
         columns={[
           {
-            title: t("Enemy"),
+            title: t("Name"),
             field: "name",
             cellStyle: {
               whiteSpace: "nowrap",
@@ -70,10 +71,19 @@ export default function EnemyCastsTimeline(props) {
             headerStyle: {
               fontSize: 14,
             },
-            defaultGroupOrder: 0,
+            render: (rowData) => (
+              <div style={{ color: classColoursJS(rowData.class), display: "inline-flex" }}>
+                {classIcons(rowData.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
+                {rowData.name}
+              </div>
+            ),
           },
           {
-            title: t("Ability"),
+            field: "class",
+            hidden: true,
+          },
+          {
+            title: t("Cooldown"),
             field: "ability",
             cellStyle: {
               whiteSpace: "nowrap",
@@ -84,7 +94,7 @@ export default function EnemyCastsTimeline(props) {
               fontSize: 14,
             },
             render: (rowData) => (
-              <div>
+              <div style={{ display: "inline-flex" }}>
                 {abilityIcons(rowData.guid, {
                   height: 20,
                   width: 20,
@@ -107,15 +117,36 @@ export default function EnemyCastsTimeline(props) {
             headerStyle: {
               fontSize: 14,
             },
-            filtering: false,
           },
           {
-            field: "id",
-            hidden: true,
+            title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
+            width: "2%",
+            cellStyle: {
+              whiteSpace: "nowrap",
+              padding: "2px 8px",
+              fontSize: 14,
+            },
+            headerStyle: {
+              fontSize: 14,
+            },
+            render: (rowData) => (
+              <div>
+                {moment(rowData.timestamp, "mm:ss")
+                  .add(
+                    healerCooldownsDetailed
+                      .filter((obj) => {
+                        return obj.guid === rowData.guid;
+                      })
+                      .map((obj) => obj.cooldown)
+                      .toString(),
+                    "s",
+                  )
+                  .format("mm:ss")}
+              </div>
+            ),
           },
         ]}
-        title={t("CooldownPlanner.Headers.EnemyCastTimeline")}
-        icons={tableIcons}
+        title={t("CooldownPlanner.Headers.CooldownTimeline")}
         header={true}
         data={props.data}
         style={{
@@ -139,8 +170,6 @@ export default function EnemyCastsTimeline(props) {
           toolbar: true,
           header: true,
           search: false,
-          searchFieldVariant: "outlined",
-          filtering: false,
           headerStyle: {
             border: "1px solid #c8b054",
             padding: "0px 8px 0px 8px",

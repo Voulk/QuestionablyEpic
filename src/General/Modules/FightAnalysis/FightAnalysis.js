@@ -2,23 +2,23 @@ import React, { Component } from "react";
 import { Typography, Collapse, CircularProgress, Grid, Accordion, AccordionSummary, AccordionDetails, Dialog, Divider, Paper, Grow } from "@material-ui/core";
 import LogLinkInput from "../../SystemTools/LogImport/LogLinkInput";
 import Chart from "../CooldownPlanner/ModuleComponents/Chart/Chart";
-import Example from "../CooldownPlanner/ModuleComponents/LogDetailComponents/DTPSBarChart";
+import Example from "./LogDetailComponents/DTPSBarChart";
 import FightSelectorButton from "../../SystemTools/LogImport/FightSelectorButton";
 import LoadingOverlay from "react-loading-overlay";
 // import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
-import CooldownTimeline from "../CooldownPlanner/ModuleComponents/LogDetailComponents/CooldownTimelineTable";
+import CooldownTimeline from "./LogDetailComponents/CooldownTimelineTable";
 import { fightDuration, warcraftLogReportID, logDifficulty } from "../CooldownPlanner/Functions/Functions";
 import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import ERTTable from "../CooldownPlanner/ModuleComponents/ERTTable";
 import SwitchLabels from "../CooldownPlanner/BasicComponents/Switch";
-import HealerInfoTable from "../CooldownPlanner/ModuleComponents/LogDetailComponents/HealerInfoCards";
+import HealerInfoTable from "./LogDetailComponents/HealerInfoCards";
 import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
 import updatechartdata from "../CooldownPlanner/Engine/LogImportEngine.js";
 import chartCooldownUpdater from "../CooldownPlanner/Engine/UserCooldownChartEngine.js";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ls from "local-storage";
-import ExternalTimeline from "../CooldownPlanner/ModuleComponents/LogDetailComponents/ExternalTimelineTable";
-import EnemyCastsTimeline from "../CooldownPlanner/ModuleComponents/LogDetailComponents/EnemyCasts";
+import ExternalTimeline from "./LogDetailComponents/ExternalTimelineTable";
+import EnemyCastsTimeline from "./LogDetailComponents/EnemyCasts";
 
 class FightAnalysis extends Component {
   constructor() {
@@ -239,13 +239,13 @@ class FightAnalysis extends Component {
             <Grid item xs={12}>
               <Typography variant="h4" align="center" style={{ padding: "10px 0px 5px 0px" }} color="primary">
                 {/* // TODO Translate */}
-                Cooldown Planner
+                Fight Analysis
               </Typography>
             </Grid>
 
             {/* ----------- Grid Container for the User Input Components, With Paper as the Surface ---------- */}
             <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-              <Paper elevation={0} padding={0}>
+              <Paper elevation={0} padding={0} style={{ padding: "10px 5px 10px 10px" }}>
                 {/* ------------------- Grid Container for the Log Input/Fight Selection Button ------------------ */}
                 <Grid
                   container
@@ -253,7 +253,7 @@ class FightAnalysis extends Component {
                   justify="space-between"
                   style={{
                     // display: "inline-flex",
-                    padding: 5,
+
                     width: "100%",
                   }}
                 >
@@ -286,78 +286,88 @@ class FightAnalysis extends Component {
                 {/* ---------------------------- Imported Log Info (Name, Length etc) ---------------------------- */}
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" spacing={1}>
                   <Grid item xs={8}>
-                    <Collapse in={this.state.damageTableShow}> 
-                    <Grow in={this.state.damageTableShow} style={{ transformOrigin: "0 0 0" }} {...(this.state.damageTableShow ? { timeout: 1000 } : {})}>
-                    <Paper bgcolor="#333" elevation={0}>
-                      <div
-                        style={{
-                          display: "inline-flex",
-                          width: "100%",
-                          justifyContent: "center",
-                        }}
-                      >
-                        {bossHeaders(this.state.currentBossID, {
-                          height: 64,
-                          width: 128,
-                          padding: "0px 5px 0px 5px",
-                          verticalAlign: "middle",
-                          marginRight: "-50px",
-                        })}
-                        <div>
-                          {this.state.showname ? (
-                            <Typography
-                              style={{
-                                fontWeight: 500,
-                                fontSize: "1.25rem",
-                                padding: "0px 16px 0px 16px",
-                                whiteSpace: "nowrap",
-                              }}
-                              color="primary"
-                            >
-                              {this.state.boss} - {this.state.currentDifficulty}
-                              {this.state.currentKeystone === null || this.state.currentKeystone === undefined ? null : this.state.currentKeystone}
-                            </Typography>
-                          ) : null}
-                          {this.state.showname ? (
-                            <Typography
-                              style={{
-                                fontWeight: 500,
-                                fontSize: "0.9rem",
-                                color: "white",
-                                padding: "0px 16px 0px 16px",
-                                textAlign: "center",
-                              }}
-                            >
-                              {this.state.currentFighttime + " - " + this.state.killWipe}
-                            </Typography>
-                          ) : null}
-                        </div>
-                      </div>
-                    </Paper>
-                    </Grow>
+                    <Collapse in={this.state.damageTableShow}>
+                      <Grow in={this.state.damageTableShow} style={{ transformOrigin: "0 0 0" }} {...(this.state.damageTableShow ? { timeout: 1000 } : {})}>
+                        <Paper
+                          bgcolor="#333"
+                          elevation={0}
+                          style={{
+                            display: "inline-flex",
+                            width: "100%",
+                            justifyContent: "center",
+                          }}
+                        >
+                          {bossHeaders(this.state.currentBossID, {
+                            height: 64,
+                            width: 128,
+                            padding: "0px 5px 0px 5px",
+                            verticalAlign: "middle",
+                            marginRight: "-50px",
+                          })}
+                          <div>
+                            {this.state.showname ? (
+                              <Typography
+                                style={{
+                                  fontWeight: 500,
+                                  fontSize: "1.25rem",
+                                  padding: "0px 16px 0px 16px",
+                                  whiteSpace: "nowrap",
+                                }}
+                                color="primary"
+                              >
+                                {this.state.boss} - {this.state.currentDifficulty}
+                                {this.state.currentKeystone === null || this.state.currentKeystone === undefined ? null : this.state.currentKeystone}
+                              </Typography>
+                            ) : null}
+                            {this.state.showname ? (
+                              <Typography
+                                style={{
+                                  fontWeight: 500,
+                                  fontSize: "0.9rem",
+                                  color: "white",
+                                  padding: "0px 16px 0px 16px",
+                                  textAlign: "center",
+                                }}
+                              >
+                                {this.state.currentFighttime + " - " + this.state.killWipe}
+                              </Typography>
+                            ) : null}
+                          </div>
+                        </Paper>
+                      </Grow>
                     </Collapse>
                   </Grid>
 
                   {/* ------------------------------ Container for the Toggle Buttons ------------------------------ */}
                   <Grid item xs={4}>
                     <Collapse in={this.state.damageTableShow}>
-                    <Grow in={this.state.damageTableShow} style={{ transformOrigin: "0 0 0" }} {...(this.state.damageTableShow ? { timeout: 1000 } : {})}>
-                    <Paper elevation={0}>
-                      <div
-                        style={{
-                          display: "inline-flex",
-                          margin: "0px 0px 4px 0px",
-                          // padding: "10px 10px 10px 10px",
-                          height: 64,
-                        }}
-                      >
-                        <SwitchLabels disabled={this.state.switchPanelShow} check={this.damageTableShow} label={"Log Chart"} />
-                        <SwitchLabels disabled={this.state.switchPanelShow} check={this.logDetailsShow} label={"Toggle Log Details"} />
-                        <SwitchLabels disabled={this.state.switchPanelShow} check={this.customCooldownsOnChart} label={"Show Custom Coolowns"} />
-                        <SwitchLabels disabled={this.state.switchPanelShow} check={this.changeDataSet} label={this.state.chartData === true ? "Unmitigated" : "Mitigated"} />
-                      </div>
-                    </Paper>
-                    </Grow>
+                      <Grow in={this.state.damageTableShow} style={{ transformOrigin: "0 0 0" }} {...(this.state.damageTableShow ? { timeout: 1000 } : {})}>
+                        <Paper
+                          elevation={0}
+                          style={{
+                            display: "inline-flex",
+                            margin: "0px 0px 4px 0px",
+                            // padding: "10px 10px 10px 10px",
+                            height: 64,
+                            width: "100%",
+                          }}
+                        >
+                          <Grid container direction="row" justify="space-evenly" alignItems="center">
+                            {/* <Grid item>
+                              <SwitchLabels disabled={this.state.switchPanelShow} check={this.damageTableShow} label={"Log Chart"} />
+                            </Grid> */}
+                            {/* <Grid item>
+                              <SwitchLabels disabled={this.state.switchPanelShow} check={this.logDetailsShow} label={"Toggle Log Details"} />
+                            </Grid> */}
+                            <Grid item>
+                              <SwitchLabels disabled={this.state.switchPanelShow} check={this.customCooldownsOnChart} label={"Show Custom Coolowns"} />
+                            </Grid>
+                            <Grid item>
+                              <SwitchLabels disabled={this.state.switchPanelShow} check={this.changeDataSet} label={this.state.chartData === true ? "Unmitigated" : "Mitigated"} />
+                            </Grid>
+                          </Grid>
+                        </Paper>
+                      </Grow>
                     </Collapse>
                   </Grid>
                 </Grid>
@@ -371,7 +381,7 @@ class FightAnalysis extends Component {
                 md={12}
                 lg={12}
                 xl={12}
-                padding={1}
+                // padding={1}
                 style={{
                   display: this.state.damageTableShow ? "block" : "none",
                 }}

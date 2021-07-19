@@ -28,6 +28,7 @@ import QESnackbar from "General/Modules/CooldownPlanner/BasicComponents/SnackBar
 import { dbCheckPatron, dbGetArticleList } from "General/Modules/SetupAndMenus/ConnectionUtilities.js";
 
 import ReactGA from "react-ga";
+// import HolyDiver from "General/Modules/CooldownPlanner/ModuleComponents/CooldownPlannerModule";
 
 const theme = createMuiTheme({
   palette: {
@@ -365,7 +366,8 @@ class App extends Component {
                     />
                   )}
                 />
-                <Route path="/holydiver" render={() => <FightAnalysis />} />
+                <Route path="/fightAnalysis" render={() => <FightAnalysis />} />
+                <Route path="/HolyDiver" render={() => <HolyDiver />} />
                 <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} />} />
                 <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
                 <Route path="/topgear" render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />

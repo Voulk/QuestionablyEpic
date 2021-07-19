@@ -1,18 +1,18 @@
 import React, { forwardRef } from "react";
 import MaterialTable, { MTableToolbar } from "material-table";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
-import moment from "moment";
-import { Divider, Paper } from "@material-ui/core";
-import { useTranslation } from "react-i18next";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import abilityIcons from "../../Functions/IconFunctions/AbilityIcons.js";
+import abilityIcons from "../../CooldownPlanner/Functions/IconFunctions/AbilityIcons.js";
 import { localizationFR } from "locale/fr/TableLocale";
 import { localizationEN } from "locale/en/TableLocale";
 import { localizationRU } from "locale/ru/TableLocale";
 import { localizationCH } from "locale/ch/TableLocale";
-import { healerCooldownsDetailed } from "../../Data/Data.js";
-import { classColoursJS } from "../../Functions/ClassColourFunctions";
-import classIcons from "../../Functions/IconFunctions/ClassIcons";
+import moment from "moment";
+import { externalsDB } from "../../../../Databases/ExternalsDB";
+import { Divider, Paper } from "@material-ui/core";
+import { useTranslation } from "react-i18next";
+import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
+import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 
 const theme = createMuiTheme({
   overrides: {
@@ -39,7 +39,7 @@ const tableIcons = {
   SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />),
 };
 
-export default function CooldownTimeline(props) {
+export default function ExternalTimeline(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
@@ -61,10 +61,11 @@ export default function CooldownTimeline(props) {
         icons={tableIcons}
         columns={[
           {
-            title: t("Name"),
-            field: "name",
+            title: t("Caster"),
+            field: "caster",
             cellStyle: {
               whiteSpace: "nowrap",
+              // borderRight: "1px solid rgb(81 81 81)",
               padding: "2px 0px",
               fontSize: 14,
             },
@@ -72,21 +73,45 @@ export default function CooldownTimeline(props) {
               fontSize: 14,
             },
             render: (rowData) => (
-              <div style={{ color: classColoursJS(rowData.class) }}>
-                {classIcons(rowData.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
-                {rowData.name}
+              <div style={{ color: classColoursJS(rowData.casterClass), display: "inline-flex" }}>
+                {classIcons(rowData.casterClass, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
+                {rowData.caster}
               </div>
             ),
           },
           {
-            field: "class",
+            field: "casterClass",
             hidden: true,
           },
           {
-            title: t("Cooldown"),
+            field: "targetClass",
+            hidden: true,
+          },
+          {
+            title: t("Target"),
+            field: "target",
+            cellStyle: {
+              whiteSpace: "nowrap",
+              // borderRight: "1px solid rgb(81 81 81)",
+              padding: "2px 0px",
+              fontSize: 14,
+            },
+            headerStyle: {
+              fontSize: 14,
+            },
+            render: (rowData) => (
+              <div style={{ color: classColoursJS(rowData.targetClass), display: "inline-flex" }}>
+                {classIcons(rowData.targetClass, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
+                {rowData.target}
+              </div>
+            ),
+          },
+          {
+            title: t("External"),
             field: "ability",
             cellStyle: {
               whiteSpace: "nowrap",
+              // borderRight: "1px solid rgb(81 81 81)",
               padding: "2px 8px",
               fontSize: 14,
             },
@@ -94,7 +119,7 @@ export default function CooldownTimeline(props) {
               fontSize: 14,
             },
             render: (rowData) => (
-              <div>
+              <div style={{ display: "inline-flex" }}>
                 {abilityIcons(rowData.guid, {
                   height: 20,
                   width: 20,
@@ -111,6 +136,7 @@ export default function CooldownTimeline(props) {
             width: "2%",
             cellStyle: {
               whiteSpace: "nowrap",
+              // borderRight: "1px solid rgb(81 81 81)",
               padding: "2px 8px",
               fontSize: 14,
             },
@@ -133,7 +159,7 @@ export default function CooldownTimeline(props) {
               <div>
                 {moment(rowData.timestamp, "mm:ss")
                   .add(
-                    healerCooldownsDetailed
+                    externalsDB
                       .filter((obj) => {
                         return obj.guid === rowData.guid;
                       })
@@ -146,10 +172,11 @@ export default function CooldownTimeline(props) {
             ),
           },
         ]}
-        title={t("CooldownPlanner.Headers.CooldownTimeline")}
+        title={t("CooldownPlanner.Headers.ExternalTimeline")}
         header={true}
         data={props.data}
         style={{
+          // marginTop: "8px",
           color: "#ffffff",
           fontSize: "0.8 rem",
           whiteSpace: "nowrap",
@@ -175,6 +202,7 @@ export default function CooldownTimeline(props) {
             padding: "0px 8px 0px 8px",
             backgroundColor: "#c8b054",
             color: "#000",
+            // fontSize: "0.8 rem",
           },
           rowStyle: (rowData, index) => {
             if (index % 2) {
@@ -201,6 +229,7 @@ export default function CooldownTimeline(props) {
           },
           actionsColumnIndex: 6,
           paging: false,
+          // tableLayout: "fixed",
         }}
       />
     </ThemeProvider>
