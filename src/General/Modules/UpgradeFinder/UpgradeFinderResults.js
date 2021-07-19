@@ -207,12 +207,14 @@ export default function UpgradeFinderResults(props) {
   const upgradeFinderResultsRetail = () => {
     return (
       <div className={classes.header}>
-        <Button color="primary" variant="outlined" onClick={() => returnToSetup()} style={{ float: "left", position: "fixed" }}>
-          {t("UpgradeFinder.BackButton")}
-        </Button>
-        <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>
-          {t("UpgradeFinder.Header") + " - " + result.contentType}
-        </Typography>
+        <div>
+          <Button color="primary" variant="outlined" onClick={() => returnToSetup()} style={{ position: "absolute" }}>
+            {t("UpgradeFinder.BackButton")}
+          </Button>
+          <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>
+            {t("UpgradeFinder.Header") + " - " + result.contentType}
+          </Typography>
+        </div>
         <AppBar
           position="static"
           style={{
@@ -316,12 +318,14 @@ export default function UpgradeFinderResults(props) {
   const upgradeFinderResultsBC = () => {
     return (
       <div className={classes.header}>
-        <Button color="primary" variant="outlined" onClick={() => returnToSetup()} style={{ float: "left", position: "fixed" }}>
-          {t("UpgradeFinder.BackButton")}
-        </Button>
-        <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>
-          {t("UpgradeFinder.Header")}
-        </Typography>
+        <div>
+          <Button color="primary" variant="outlined" onClick={() => returnToSetup()} style={{ position: "absolute" }}>
+            {t("UpgradeFinder.BackButton")}
+          </Button>
+          <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>
+            {t("UpgradeFinder.Header")}
+          </Typography>
+        </div>
         <AppBar
           position="static"
           style={{
