@@ -1,6 +1,8 @@
 import { convertPPMToUptime, getProcessedValue } from "../EffectUtilities";
 import { trinket_data } from "./TrinketData";
 import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
+import { getMasteryAddition } from "../Monk/MistweaverMiscFormulas"
+
 // import { STAT } from "../../../../General/Engine/STAT";
 import SPEC from "../../../../General/Engine/SPECS";
 
@@ -598,8 +600,17 @@ else if (
   // Test
   let effect = activeTrinket.effects[0];
 
-  bonus_stats.mastery = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
-  bonus_stats.mastery *= player.getCooldownMult("twoMinutesOrb", contentType);
+  if (player.getSpec() === "Mistweaver Monk") {
+    // Average mastery value is a poor approximation for Mistweaver who are likely to combine the trinket with a higher than normal stream of mastery events.
+    const mastery = getProcessedValue(effect.coefficient, effect.table, itemLevel);
+    const gusts = 40;
+    bonus_stats.hps = getMasteryAddition(player.getInt(), mastery, player.getStatPerc("Crit"), player.getStatPerc("Vers")) * gusts / effect.cooldown;
+  }
+  else {
+    bonus_stats.mastery = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
+    bonus_stats.mastery *= player.getCooldownMult("twoMinutesOrb", contentType);
+  }
+
 
 }
 else if (
