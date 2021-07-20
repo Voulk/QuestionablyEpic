@@ -72,9 +72,12 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
     let playerCrit = player.getStatPerc("Crit") - 1; 
     if (player.getSpec() === "Holy Paladin") playerCrit += (0.2*20/120 + 0.2*3/120);
     const critHealingPerc = ((playerCrit * 2) / (1 - playerCrit + playerCrit * 2));
+    const effectiveThroughput = (player.getRawHPS(contentType) + player.getDPS(contentType)) * effect.specAbilitiesThatWork[player.getSpec()]
+    const failureChance = 0.2; // Winds of Winter will sometimes just not proc at all, losing you the damage.
     
-    bonus_stats.dps = player.getStatPerc("Vers") * critHealingPerc * effect.stored[rank] * effect.specOvercap[player.getSpec()] * effect.specAbilitiesThatWork[player.getSpec()] * (player.getRawHPS(contentType) + player.getDPS(contentType));
-    bonus_stats.hps = bonus_stats.dps;
+    bonus_stats.hps = player.getStatPerc("Vers")  * critHealingPerc * effect.stored[rank] * effect.specOvercap[player.getSpec()] * (1 - failureChance) * effectiveThroughput * (1+playerCrit)                    
+    bonus_stats.dps = bonus_stats.hps;
+    
   }
   else if (effectName === "Chaos Bane") {
     // This requires a specific log query, so is using close-to-accurate placeholders for now.

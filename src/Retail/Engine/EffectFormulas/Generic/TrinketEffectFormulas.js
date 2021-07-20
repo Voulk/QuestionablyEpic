@@ -597,7 +597,6 @@ else if (
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Shadowed Orb of Torment"
 ) {
-  // Test
   let effect = activeTrinket.effects[0];
 
   if (player.getSpec() === "Mistweaver Monk") {
