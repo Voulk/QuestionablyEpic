@@ -67,7 +67,7 @@ export default async function updatechartdata(starttime, endtime) {
   const damage = await importDamageLogData(starttime, endtime, this.state.reportid);
 
   const health = await importRaidHealth(starttime, endtime, this.state.reportid);
-  
+
   /* --------------------------- Map Healer Data for ID, Name and Class. -------------------------- */
   const healerIDName = healers.map((key) => ({
     id: key.id,
@@ -254,8 +254,7 @@ export default async function updatechartdata(starttime, endtime) {
       .toString(),
   }));
 
-
-  const healthUpdated = health
+  const healthUpdated = health;
 
   /* ----------------------- Flatten the map we just created into an array. ----------------------- */
   let cooldownwithdurations = healerDurations.flat();
@@ -326,12 +325,14 @@ export default async function updatechartdata(starttime, endtime) {
     })
     .sort((a, b) => (b.damage > a.damage ? 1 : -1));
 
+  /* ---------- Here we set all the returned data to state in the FightAnalysis Component --------- */
   this.setState({
     unmitigatedChartDataNoCooldownsOriginal: sortedDataUnmitigatedNoCooldowns,
     unmitigatedChartDataNoCooldowns: sortedDataUnmitigatedNoCooldowns,
     mitigatedChartDataNoCooldownsOriginal: sortedDataMitigatedDamageNoCooldowns,
     mitigatedChartDataNoCooldowns: sortedDataMitigatedDamageNoCooldowns,
     legenddata: uniqueArrayNewForLegend,
+    /* ------------------ Unmitigated Chart Data - With Cooldowns Used from the log ----------------- */
     unmitigatedChartData: sortedDataUnmitigatedWithCooldowns,
     mitigatedChartData: sortedDataMitigatedDamageWithCooldowns,
     Updateddatacasts: updateddatacastsTimeline,
@@ -357,8 +358,8 @@ export default async function updatechartdata(starttime, endtime) {
         },
       ],
     })),
-    currentEndTime: endtime,
-    currentStartTime: starttime,
+    // currentEndTime: endtime,
+    // currentStartTime: starttime,
     summedUnmitigatedDamagePerSecond: summedUnmitigatedDamagePerSecond,
     summedMitigationDamagePerSecond: summedMitigationDamagePerSecond,
     externalUsageTimelineData: updateddatacastsExternalsTimeline,

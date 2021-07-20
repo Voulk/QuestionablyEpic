@@ -1,15 +1,13 @@
 import React, { Component } from "react";
-import { Typography, Collapse, CircularProgress, Grid, Accordion, AccordionSummary, AccordionDetails, Dialog, Divider, Paper, Grow } from "@material-ui/core";
+import { Typography, Collapse, CircularProgress, Grid, Dialog, Divider, Paper, Grow } from "@material-ui/core";
 import LogLinkInput from "../../SystemTools/LogImport/LogLinkInput";
 import Chart from "../CooldownPlanner/ModuleComponents/Chart/Chart";
 import Example from "./LogDetailComponents/DTPSBarChart";
 import FightSelectorButton from "../../SystemTools/LogImport/FightSelectorButton";
 import LoadingOverlay from "react-loading-overlay";
-// import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
 import CooldownTimeline from "./LogDetailComponents/CooldownTimelineTable";
 import { fightDuration, warcraftLogReportID, logDifficulty } from "../CooldownPlanner/Functions/Functions";
 import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
-import ERTTable from "../CooldownPlanner/ModuleComponents/ERTTable";
 import SwitchLabels from "../CooldownPlanner/BasicComponents/Switch";
 import HealerInfoTable from "./LogDetailComponents/HealerInfoCards";
 import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
@@ -23,8 +21,11 @@ import EnemyCastsTimeline from "./LogDetailComponents/EnemyCasts";
 class FightAnalysis extends Component {
   constructor() {
     super();
-    /* ----------------------- We bind the below functions to this Component. ----------------------- */
-    // This means these functions can be passed as props to other components and they will return here rather than in the component they are sent to.
+    // Here we bind functions to this component. This means that any data returned from them will only affect this component, not the ones they are sent to.
+    // Example:
+    // this.reportidHandler below returns the WCL code for the report. As it is bound to this component,
+    // we pass it as a prop to the LogLinkInput component so that anytime the link is pasted in the code gets saved here, rather than in that components state.
+
     this.reportidHandler = this.reportidHandler.bind(this);
     this.damageTableShow = this.damageTableShow.bind(this);
     this.customCooldownsOnChart = this.customCooldownsOnChart.bind(this);
@@ -36,19 +37,29 @@ class FightAnalysis extends Component {
     this.handleERTClickOpen = this.handleERTClickOpen.bind(this);
     this.handleHealTeamClickOpen = this.handleHealTeamClickOpen.bind(this);
 
-    /* ---------------------- We set our state for the cooldown Planner Module. --------------------- */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                              State                                             */
+    /* ---------------------------------------------------------------------------------------------- */
     this.state = {
+      /* --------------------- Current Boss ID returned from the inserted log link -------------------- */
       currentBossID: null,
+      /* ------------------ Unmitigated Chart Data - With Cooldowns Used from the log ----------------- */
       unmitigatedChartData: [],
-      logactuallink: null,
-      loglink: "Insert Log Here",
+      /* --------------------------- WCL Report ID from the pasted log link --------------------------- */
       reportid: null,
+      /* -------------------------------- Start time of Selected Fight -------------------------------- */
       time: null,
-      times: [{ timestamp: 0 }],
+      currentStartTime: 0,
+      /* --------------------------------- End time of Selected Fight --------------------------------- */
       timeend: null,
+      currentEndTime: 0,
+      /* ---------------- List of damaging abilities from the selected fight with GUID ---------------- */
       abilityList: ["Melee"],
+      /* ------------- Array of Cooldowns in the fight. Format: 'Ptolemy - Avenging Wrath' ------------ */
       cooldownlist: ["none"],
       loadingcheck: false,
+
+      /* -------------- Boss Name Returned from the log (localized from report language) -------------- */
       boss: null,
       healernames: [],
       checked: false,
@@ -58,8 +69,7 @@ class FightAnalysis extends Component {
       mitigatedChartDataNoCooldownsOriginal: [],
       mitigatedChartDataNoCooldowns: [],
       cooldownlistcustom2: ["none"],
-      currentEndTime: 0,
-      currentStartTime: 0,
+
       damageTableShow: false,
       logDetailsShow: false,
       customCooldownsOnChart: false,
@@ -223,6 +233,7 @@ class FightAnalysis extends Component {
 
   render() {
     /* ------------------------------------ Data Loading Spinner ------------------------------------ */
+    console.log(this.state);
     let spinnershow = this.state.loadingcheck;
 
     return (
@@ -454,7 +465,7 @@ class FightAnalysis extends Component {
           </Grid>
         </div>
 
-        {/* ------------------------------------ ERT Note Export Table ----------------------------------- */}
+        {/* ------------------------------------ ERT Note Export Table -----------------------------------
         <Dialog onClose={this.handleERTClose} aria-labelledby="ERT-Dialog" open={this.state.ertDialogState} maxWidth="md" fullWidth PaperProps={{ style: { minWidth: 300 } }}>
           <ERTTable
             ertListTimeNoIcons={this.state.ertListTimeNoIcons}
@@ -464,7 +475,7 @@ class FightAnalysis extends Component {
             ertListNoteIcons={this.state.ertListNoteIcons}
             ertListNoteNoIcons={this.state.ertListNoteNoIcons}
           />
-        </Dialog>
+        </Dialog> */}
 
         {/* ------------------------------------- Healer Team Dialog ------------------------------------- */}
         {/* ------------------- This is where you enter your healing team into the app. ------------------ */}
