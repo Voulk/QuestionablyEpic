@@ -2356,8 +2356,8 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
                 en: {
                   name: "Sinister Teachings",
                   slot: "Wrist, Finger",
-                  desc: "Fallen Order summons 1 additional [Ox][Crane][Tiger] adept for 24 sec. While you have an active adept, your abilities that critically hit reduce the cooldown of Fallen Order by 3 sec. (750ms cooldown)",
-                  droploc: "Venthyr",
+                  desc: "Fallen Order summons 1 additional adept for 24 sec. While you have an active adept, your abilities that critically hit reduce the cooldown of Fallen Order by 5 sec.",
+                  droploc: "Venthyr Renown 48",
                   covenant: "Venthyr",
                 },
                 de: {
