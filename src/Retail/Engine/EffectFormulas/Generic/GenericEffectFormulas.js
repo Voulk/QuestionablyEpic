@@ -58,15 +58,15 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
   }
 
   // Blood Link scales with crit and versatility, but not haste.
-  else if (effectName === "Blood Link") {
+  else if (effectName === "Blood Link" && contentType === "Raid") {
     const effect = activeEffect.effects[0];
     const value = Math.round(getProcessedValue(effect.coefficient[rank], effect.table, 174, 1, false)) * player.getStatPerc("Vers") * player.getStatPerc("Crit")
     bonus_stats.hps = value * effect.ppm * (1 - effect.expectedOverhealing) / 60; // The healing effect basically scales with Vers twice.
     bonus_stats.dps = value * effect.ppm / 60;
-
+    
   }
 
-  else if (effectName === "Winds of Winter") {
+  else if (effectName === "Winds of Winter" && contentType === "Raid") {
     // This requires a specific log query, so is using close-to-accurate placeholders for now.
     const effect = activeEffect.effects[0];
     let playerCrit = player.getStatPerc("Crit") - 1; 
@@ -79,7 +79,7 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
     bonus_stats.dps = bonus_stats.hps;
     
   }
-  else if (effectName === "Chaos Bane") {
+  else if (effectName === "Chaos Bane" && contentType === "Raid") {
     // This requires a specific log query, so is using close-to-accurate placeholders for now.
     const stackingEffect = activeEffect.effects[0];
     const bigProc = activeEffect.effects[1];
