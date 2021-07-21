@@ -13,7 +13,7 @@ export const getMonkLegendary = (effectName, player, contentType) => {
 
   if (name === "Ancient Teachings of the Monastery") {
     const essenceFontCPM = player.getSpellCPM(ID_ESSENCE_FONT, contentType);
-    const dpsDuringDuration = 1200;// this is a 75% parse
+    const dpsDuringDuration = 1250; // this is a 75% parse
     const multiplier = 2.5;
     const buffUptime = (12 * essenceFontCPM) / 60; // While the buff lasts 15s, the Essence Font channel lasts 3.
     const expectedOverhealing = 0.3;
@@ -64,7 +64,7 @@ export const getMonkLegendary = (effectName, player, contentType) => {
 
     const mult = player.getStatMultiplier("NOMAST") * player.getInt();
     const baseCooldown = 180;
-    const effectiveCD = 60; // This seems to be the average cd with this lego
+    const effectiveCD = contentType == "Raid" ? 60 : 92; // This seems to be the average cd with this lego
     const fallenOrderSpells = [
       {sp: 3.6 * 1.4 * (7/6), castsPerClone: 1.2}, 
       // Enveloping Mist. For some reason their env multiplier effects their env healing. They are only supposed to cast 1 EnV per clone, but they sometimes like to cast two instead.
