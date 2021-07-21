@@ -48,22 +48,20 @@ class FightAnalysis extends Component {
       /* --------------------------- WCL Report ID from the pasted log link --------------------------- */
       reportid: null,
       /* -------------------------------- Start time of Selected Fight -------------------------------- */
-      time: null,
       currentStartTime: 0,
       /* --------------------------------- End time of Selected Fight --------------------------------- */
-      timeend: null,
       currentEndTime: 0,
       /* ---------------- List of damaging abilities from the selected fight with GUID ---------------- */
       abilityList: ["Melee"],
       /* ------------- Array of Cooldowns in the fight. Format: 'Ptolemy - Avenging Wrath' ------------ */
       cooldownlist: ["none"],
+      /* ------------- Controls whether the loading spinner shows while the log is loading ------------ */
       loadingcheck: false,
-
       /* -------------- Boss Name Returned from the log (localized from report language) -------------- */
       boss: null,
+      /* ----------------------------- Array of healer names from the log ----------------------------- */
       healernames: [],
-      checked: false,
-      tabledata: [],
+
       unmitigatedChartDataNoCooldownsOriginal: [],
       unmitigatedChartDataNoCooldowns: [],
       mitigatedChartDataNoCooldownsOriginal: [],
@@ -409,7 +407,7 @@ class FightAnalysis extends Component {
                       legendata={this.state.legenddata}
                       cooldownsToShow={this.state.customCooldownsOnChart}
                       cooldown={this.state.cooldownlist}
-                      endtime={fightDuration(this.state.timeend, this.state.time)}
+                      endtime={fightDuration(this.state.currentEndTime, this.state.currentStartTime)}
                       customCooldowns={this.state.cooldownlistcustom2}
                       showcds={true}
                     />
