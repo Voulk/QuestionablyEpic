@@ -10,6 +10,16 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 14,
+    date: "21st July",
+    changes: [
+      "Added Warlords of Draenor Timewalking items.",
+      "Mistweaver: Added formulas for multiple legendaries.",
+      "Adjusted Domination Set bonuses with live data. Removed their value in the Dungeon setting."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 13,
     date: "18th July",
     changes: [
