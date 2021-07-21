@@ -283,7 +283,6 @@ class App extends Component {
       ls.set("lang", "en");
     }
 
-    //console.log("COMPONENT MOUNTED" + window.location.pathname + window.location.search);
     this.setState({
       playerLoginID: ls.get("id") || "",
       playerBattleTag: ls.get("btag") || "",

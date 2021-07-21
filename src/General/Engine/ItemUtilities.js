@@ -128,15 +128,11 @@ export function filterBCItemListBySource(itemList, sourceInstance, sourceBoss) {
 
 export function filterItemListBySource(itemList, sourceInstance, sourceBoss, level, pvpRank = 0) {
   let temp = itemList.filter(function (item) {
-    // console.log("Filtering: " + item.id);
-    // console.log(item);
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
     if (itemEncounter == 2440 || itemEncounter == 2441) expectedItemLevel += 7;
     if (itemEncounter == 2456) expectedItemLevel = 233;
     else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
-
-    //console.log(expectedItemLevel);
 
     return (
       item.level == expectedItemLevel &&
@@ -173,7 +169,6 @@ export function getItemDB(gameType = "Retail") {
 
 export function getDifferentialByID(diffList, id, level) {
   let temp = diffList.filter(function (item) {
-    //console.log(item);
     return item.item == id && item.level == level;
   });
 
@@ -242,7 +237,6 @@ export function getItemProp(id, prop, gameType = "Retail") {
 // Add some support for missing icons.
 export function getItemIcon(id, gameType = "Retail") {
   const item = getItem(id, gameType);
-  //console.log("https://wow.zamimg.com/images/wow/icons/large/" + item.icon + " .jpg");
   if (gameType === "BurningCrusade" && item !== "") return "https://wow.zamimg.com/images/wow/icons/large/" + item.icon + ".jpg";
   else if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
   else if (item !== "") {
@@ -271,8 +265,7 @@ export function getItemAllocations(id, missiveStats = []) {
       }
     }
   }
-  //console.log(JSON.stringify(temp) + temp.length)
-  //console.log(temp[0].icon)
+
   if (item !== "") return statArray;
   else return 0;
 }
@@ -321,7 +314,6 @@ export function buildWepCombos(player, active = false, equipped = false) {
   let off_hands = player.getActiveItems("Offhands", active, equipped);
   let two_handers = player.getActiveItems("2H Weapon", active, equipped);
 
-  //console.log("MH: " + main_hands.length + ". OH: " + off_hands.length + ". 2H: " + two_handers.length);
 
   for (let i = 0; i < main_hands.length; i++) {
     // Some say j is the best variable for a nested loop, but are they right?
@@ -329,8 +321,6 @@ export function buildWepCombos(player, active = false, equipped = false) {
     for (let k = 0; k < off_hands.length; k++) {
       let off_hand = off_hands[k];
 
-      //console.log("Wep Loop" + i + "/" + k + ". " + main_hand.level + ". " + off_hand.level);
-      // console.log(main_hand);
       if (main_hand.vaultItem && off_hand.vaultItem) {
         // If both main hand and off hand are vault items, then we can't make a combination out of them.
         continue;
@@ -358,7 +348,6 @@ export function buildWepCombos(player, active = false, equipped = false) {
         // For future perhaps
         // item.mainHandSocket = main_Hand.socket
         // item.offHandSocket = off_Hand.socket
-        //console.log("COMBO: " + main_hand.level + " - " + off_hand.level + ". Combined: " + item.level);
         wep_list.push(item);
       }
     }
@@ -369,7 +358,6 @@ export function buildWepCombos(player, active = false, equipped = false) {
   }
 
   wep_list.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
-  //console.log(JSON.stringify(wep_list));
   return wep_list.slice(0, 9);
 }
 
@@ -522,7 +510,6 @@ export function socketItem(item, player) {
   let socketBonus = 0
   if (socketList.bonus) {
     for (const [stat, value] of Object.entries(socketList.bonus)) {
-      //console.log("Stat: " + stat + ". Value: " + value);
       socketBonus += value * player[stat];
     }
   }
@@ -612,20 +599,17 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
       if (stat !== "bonus_stats") {
         let statSum = sumStats[stat]
         score += statSum * player.getStatWeight(contentType, stat);
-        //console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score with amount " + sumStats[stat]);
       }
 
   }
 
   // Add any bonus HPS
   if ("bonus_stats" in item_stats && "hps" in bonus_stats) {
-    //console.log("Adding bonus_stats to score");
     score += (bonus_stats.hps / player.getHPS(contentType)) * player.activeStats.intellect;
   }
 
   // Add any bonus Mana
   if ("bonus_stats" in item_stats && "mana" in bonus_stats) {
-    //console.log("Adding bonus_stats to score");
     score += ((bonus_stats.mana * player.getSpecialQuery("OneManaHealing", contentType)) / player.getHPS(contentType)) * player.activeStats.intellect;
   }
 
@@ -638,7 +622,6 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
   if (item.sockets) {
     socketItem(item, player.statWeights["Raid"]);
     score += item.socketedGems['score'];
-    //console.log("Adding score: " + item.socketedGems['score'])
   }
 
   return Math.round(100 * score) / 100;

@@ -18,7 +18,6 @@ class Item {
     this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot"), getItemAllocations(id), tertiary);
     this.effect = getItemProp(id, "effect");
     this.hasDomSocket = (getItemProp(id, "socketType") === "Domination");
-    //console.log("Setting level to " + level);
   }
 
   id = 0; // The items ID
