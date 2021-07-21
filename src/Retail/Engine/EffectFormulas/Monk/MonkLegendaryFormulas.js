@@ -90,7 +90,6 @@ export const getMonkLegendary = (effectName, player, contentType) => {
     const netHPS = hpsDueToCDR + hpsDueToExtraClone;
 
     bonus_stats.hps = netHPS;
-    console.log("Healing from Cast: " + bonus_stats.hps * 60);
   } else if (name === "Call to Arms"){
     const envbHealing = player.getSpellHPS(ID_ENVELOPING_BREATH_ID, contentType);
     const celestialDuration = .5;

@@ -76,7 +76,6 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     //console.log("CL::::" + currentLanguage);
     var t0 = performance.now();
-    // console.log("Running Top Gear");
     let count = 0;
 
     const newPlayer = setupPlayer(player, contentType, castModel);
@@ -423,9 +422,6 @@ function createSets(itemList, rawWepCombos) {
     }
   }
   slotLengths.Weapon = Object.keys(wepCombos).length;
-
-  //console.log(JSON.stringify(slotLengths));
-  // console.log(splitItems.Finger);
 
   for (var head = 0; head < slotLengths.Head; head++) {
     let softScore = { head: splitItems.Head[head].softScore };
