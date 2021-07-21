@@ -293,6 +293,7 @@ export function processItem(line, player, contentType, type) {
         else if (bonus_id == 7238) itemLevel = 164;
         else if (bonus_id == 7185) itemLevel = 168;
         else if (bonus_id == 7239) itemLevel = 181;
+        else if (bonus_id == 7464) itemLevel = 184; // Timewalking WoD
         else if (bonus_id == 7240) itemLevel = 200;
         else if (bonus_id == 7241) itemLevel = 180;
         else if (bonus_id == 7461) itemLevel = 230;
