@@ -603,7 +603,7 @@ else if (
   if (player.getSpec() === "Mistweaver Monk") {
     // Average mastery value is a poor approximation for Mistweaver who are likely to combine the trinket with a higher than normal stream of mastery events.
     const mastery = getProcessedValue(effect.coefficient, effect.table, itemLevel);
-    const gusts = (contentType === "Raid") ? 40 : 22;
+    const gusts = (contentType === "Raid") ? 41 : 22;
     bonus_stats.hps = getMasteryAddition(player.getInt(), mastery, player.getStatPerc("Crit"), player.getStatPerc("Vers")) * gusts / effect.cooldown;
   }
   else {
