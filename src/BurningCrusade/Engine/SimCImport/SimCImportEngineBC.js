@@ -7,7 +7,6 @@ import { suffixDB } from "BurningCrusade/Databases/SuffixDB";
 
 export function runBCSimC(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput) {
   var lines = simCInput.split("\n");
-  //console.log("Running BC SimC");
 
   // Check that the SimC string is valid.
   if (checkSimCValid(lines.slice(1, 8), lines.length, player.getSpec(), setErrorMessage)) {
@@ -45,7 +44,6 @@ export function runBCSimC(simCInput, player, contentType, setErrorMessage, snack
 // - The version of the SimC addon is reasonably up to date. This is currently not active so automatically passes.
 // - The string length is less than our specified maximum. This is a loose requirement that's mostly designed around preventing user error like copy pasting their string twice.
 function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
-  // console.log("Checking SimC Valid");
   let checks = {
     class: false,
     version: true,
@@ -54,8 +52,6 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
   };
   let errorMessage = "";
 
-  // console.log(simCHeader);
-  // console.log(playerClass);
 
   for (var i = 0; i < simCHeader.length; i++) {
     let line = simCHeader[i];
@@ -151,7 +147,6 @@ function processItem(line, player, contentType, type) {
     //item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");
     item.softScore = scoreItem(item, player, contentType, "BurningCrusade");
 
-    //console.log("Adding Item: " + item.id + " in slot: " + itemSlot);
     player.addActiveItem(item);
   } else {
     //console.log("Item Level out of range: " + itemLevel);

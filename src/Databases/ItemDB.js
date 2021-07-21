@@ -33606,7 +33606,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Spiritual Alchemy Stone"
         },
-        "levelRange": []
+        "levelRange": [230]
     },
     {
         "id": 171374,
@@ -121777,7 +121777,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Soul Cage Fragment"
         },
-        "levelRange": []
+        "levelRange": [233]
     },
     {
         "id": 187534,

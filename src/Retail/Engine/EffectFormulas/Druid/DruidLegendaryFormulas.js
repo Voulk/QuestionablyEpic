@@ -170,7 +170,6 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     spellExtensions[contentType].forEach((spell) => (extraSpellPow += (spell.sp * spell.expectedExtraSpells * (1 - extraSpellsOverhealing[contentType]))));
     hps.extraSpells = Math.round((extraSpellPow / fightLength * expectedConvokes) * player.getStatMultiplier("ALL"));
 
-    console.log(hps);
     bonus_stats.hps = hps.flourishes + hps.extraSpells + hps.soulbindSynergy;
   } else {
     bonus_stats.hps = 0;

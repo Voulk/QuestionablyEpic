@@ -83,11 +83,6 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
     const oneWordOfGloryBonus = Math.max(0, oneWordOfGlory * wordOfGloryMasteryCoeff - oneLightOfDawn);
     const HPSWordOfGlory = (buffedWordOfGlories * oneWordOfGloryBonus) / 60;
 
-    /*
-    console.log("MastDiff: " + mastDiff + ". LoDUptime: " + lightOfDawnUptime + "Max: " + maxMasteryEff + ". Avg: " + averageMasteryEff);
-    console.log("Coeff: " + wordOfGloryMasteryCoeff + ". oneBonus: " + oneWordOfGloryBonus);
-    console.log("One Word of Glory: " + oneWordOfGlory + ". One LoD: " + oneLightOfDawn);
-    */
     bonus_stats.hps = Math.round(HPSMasteryBonus + HPSWordOfGlory);
   } else if (name === "Of Dusk and Dawn") {
     /* ---------------------------------------------------------------------------------------------- */

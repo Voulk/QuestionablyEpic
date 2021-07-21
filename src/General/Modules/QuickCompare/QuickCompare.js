@@ -162,11 +162,12 @@ export default function QuickCompare(props) {
   ];
   const gameType = useSelector((state) => state.gameType);
 
+  /*
   console.log(
     getItemDB("Retail")
       .filter((key) => key.id === itemID)
       .map((key) => key.socketType),
-  );
+  ); */
 
   /* ------------------------ End Simc Module Functions ----------------------- */
 
