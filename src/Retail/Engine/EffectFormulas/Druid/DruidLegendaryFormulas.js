@@ -11,8 +11,6 @@ export const getDruidLegendary = (effectName, player, contentType) => {
   let bonus_stats = {};
   let name = effectName;
 
-  // console.log("Looking at effect:" + name);
-
   /*
     The rejuv spreading legendary can best be expressed as a percentage increase to our rejuv healing. 
     TODO: When accepting log input we will eventually have to take into account those already wearing it since it changes our formula slightly.
@@ -24,7 +22,6 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     let rejuvHealingInc = expectedTicksWithLegendary / baseTicks - 1;
     let expectedHPS = Math.round(rejuvHealingInc * rejuvHealingHPS);
 
-    //console.log("Expected Increase: " + rejuvHealingInc);
     // Return result.
     bonus_stats.hps = expectedHPS;
 
@@ -34,7 +31,6 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     let oneRejuv = 0.29 * 6 * player.getStatMultiplier("ALL") * 0.87 * processDruidRawHealing(player, 774);
 
     let freeRejuvsPerMinute = wildGrowthCPM * procChance * 3;
-    //console.log("Free rejuvs a min: " + freeRejuvsPerMinute + ", one rejuv: " + oneRejuv);
     bonus_stats.hps = Math.round((freeRejuvsPerMinute * oneRejuv) / 60);
 
   } else if (name === "Verdant Infusion") {
@@ -88,8 +84,6 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     // 10% Lifebloom Penalty
     const lifebloomHPS = player.getSpellHPS(IDLIFEBLOOM, contentType);
     const deduction = lifebloomHPS * 0.1;
-
-    //console.log("saew" + hps_clearcasting + ". " + oneRegrowth + ". " + freeClearcasts + " " + ". Phosy " + hps_phosy);
 
     bonus_stats.hps = Math.round( hps_phosy + hps_clearcasting - deduction);
   }

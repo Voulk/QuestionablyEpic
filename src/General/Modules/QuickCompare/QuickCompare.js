@@ -162,13 +162,6 @@ export default function QuickCompare(props) {
   ];
   const gameType = useSelector((state) => state.gameType);
 
-  /*
-  console.log(
-    getItemDB("Retail")
-      .filter((key) => key.id === itemID)
-      .map((key) => key.socketType),
-  ); */
-
   /* ------------------------ End Simc Module Functions ----------------------- */
 
   const handleClickDelete = () => {
@@ -295,9 +288,7 @@ export default function QuickCompare(props) {
   /* ---------------------------------------------------------------------------------------------- */
 
   const editSettings = (setting, newValue) => {
-    //console.log("Updating Settings" + setting + ". " + newValue);
     userSettings[setting] = newValue;
-    //console.log("Settings: " + JSON.stringify(userSettings));
   };
 
   // TODO. Calculate the score for a given item.

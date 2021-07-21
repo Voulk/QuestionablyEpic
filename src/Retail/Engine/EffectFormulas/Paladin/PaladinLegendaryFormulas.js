@@ -148,7 +148,6 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
 
     //let akn = 2.5 / 60; //getAwakeningWingsUptime(player, contentType);
     //let awakening_hps = (akn * wingsEffHealingIncrease + 1 * (1 - akn) );
-    //console.log("Wings Uptime: " + akn + ". Awakening healing increase:" + awakening_hps);
   }
   else if (name === "Divine Resonance") {
     /* ---------------------------------------------------------------------------------------------- */
