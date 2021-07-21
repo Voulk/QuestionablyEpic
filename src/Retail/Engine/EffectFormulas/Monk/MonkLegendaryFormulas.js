@@ -1,23 +1,19 @@
-const IDVIVIFY = 116670;
-const IDSOOTHINGBREATH = 343737;
-const IDREVIVAL = 115310;
-const IDFORTIFYINGBREW = 115203;
-const IDGUSTOFMISTS = 191894;
-const IDRENEWINGMIST = 119611;
-const IDENVELOPINGMIST = 124682;
-const IDESSENCEFONT = 191840;
+const ID_VIVIFY = 116670;
+const ID_RENEWING_MIST = 119611;
+const ID_ENVELOPING_MIST = 124682;
+const ID_ESSENCE_FONT = 191840;
+const ID_CHI_JI_GOM = 343819;
+const ID_SOOTHING_BREATH = 343737;
+const ID_ENVELOPING_BREATH_ID = 325209;
 
 export const getMonkLegendary = (effectName, player, contentType) => {
   let result = 0.0;
   let name = effectName;
   let bonus_stats = {};
 
-  /*
-
-    */
   if (name === "Ancient Teachings of the Monastery") {
-    const essenceFontCPM = player.getSpellCPM(IDESSENCEFONT, contentType);
-    const dpsDuringDuration = 700;
+    const essenceFontCPM = player.getSpellCPM(ID_ESSENCE_FONT, contentType);
+    const dpsDuringDuration = 1250; // this is a 75% parse
     const multiplier = 2.5;
     const buffUptime = (12 * essenceFontCPM) / 60; // While the buff lasts 15s, the Essence Font channel lasts 3.
     const expectedOverhealing = 0.3;
@@ -27,16 +23,16 @@ export const getMonkLegendary = (effectName, player, contentType) => {
     // Do Math
     bonus_stats.hps = 0;
   } else if (name === "Tear of Morning") {
-    // Do Math
     const vivify = {
-      cpm: player.getSpellCPM(IDVIVIFY, contentType),
-      hps: player.getSpellHPS(IDVIVIFY, contentType),
+      cpm: player.getSpellCPM(ID_VIVIFY, contentType),
+      hps: player.getSpellHPS(ID_VIVIFY, contentType),
       percentOnRemTargets: player.getSpecialQuery("percentVivifyOnRemTargets", contentType),
     };
-    const envelopingMist = { cpm: player.getSpellCPM(IDENVELOPINGMIST, contentType), singleCast: player.getSingleCast(IDENVELOPINGMIST, contentType) };
+    const envelopingMist = { cpm: player.getSpellCPM(ID_ENVELOPING_MIST, contentType), singleCast: player.getSingleCast(ID_ENVELOPING_MIST, contentType) };
     const renewingMist = {
-      avgStacks: 2.9, // Can be closely modelled as VivifyHits / VivifyCasts - 1
-      oneSpread: player.getSingleCast(IDRENEWINGMIST, contentType) / 2,
+      // might want to bump this up since people should be averaging more than 2.9
+      avgStacks: 3.5, // Can be closely modelled as VivifyHits / VivifyCasts - 1
+      oneSpread: player.getSingleCast(ID_RENEWING_MIST, contentType) / 2,
     }; // ReMs spread at their current duration, which means we only get half of a ReM per spread on average.
 
     const HPSRem = (vivify.percentOnRemTargets * renewingMist.oneSpread * vivify.cpm) / 60;
@@ -48,7 +44,7 @@ export const getMonkLegendary = (effectName, player, contentType) => {
     bonus_stats.hps = HPSRem + HPSViv + HPSEnv;
     
   } else if (name === "Yu'lon's Whisper") {
-    const thunderFocusTeaCPM = 1.5;
+    const thunderFocusTeaCPM = 1.8;
     const yulonSP = 1.8;
     const yulonExpectedOverhealing = 0.22;
     const yulonTargets = { Raid: 5.9, Dungeon: 3.2 };
@@ -64,9 +60,67 @@ export const getMonkLegendary = (effectName, player, contentType) => {
     const celestialManaCostPerSecond = 1100;
 
     bonus_stats.hps = (celestialHPS - celestialManaCostPerSecond * player.getSpecialQuery("OneManaHealing", contentType)) * celestialUptime * 0.33;
-  } else if (name === "Roll Out") {
-    bonus_stats.hps = 0;
-  } else {
+  } else if (name === "Sinister Teachings") {
+
+    const mult = player.getStatMultiplier("NOMAST") * player.getInt();
+    const baseCooldown = 180;
+    const effectiveCD = contentType == "Raid" ? 60 : 92; // This seems to be the average cd with this lego
+    const fallenOrderSpells = [
+      {sp: 3.6 * 1.4 * (7/6), castsPerClone: 1.2}, 
+      // Enveloping Mist. For some reason their env multiplier effects their env healing. They are only supposed to cast 1 EnV per clone, but they sometimes like to cast two instead.
+      {sp: 1.04, castsPerClone: 1.5} // Soothing Mist
+  ]
+
+    const numberOfCraneClones = 4;
+    const overhealing = .5; // 50% overheal which is typical
+
+    let healingFromClone = 0;
+    fallenOrderSpells.forEach(spell => (healingFromClone += (spell.sp * spell.castsPerClone * mult) * (1 - overhealing)));
+
+    //const healingFromOneClone = oneEnvHealing * envCastsPerClone + oneSoomHealing * soomCastsPerClone;
+    const healingFromFOCast = healingFromClone * numberOfCraneClones;
+    const hpsDueToCDR = healingFromFOCast / effectiveCD - healingFromFOCast / baseCooldown; // find the difference
+
+    // This is gonna look simple but it allows for easy editing later
+    // This lego makes 1 clone summon instantly and last the whole duration the door is open
+    // 24 = doors duration
+    // 8 = default duration of a clone
+    const durationMultiplier = 24 / 8;
+    const hpsDueToExtraClone = healingFromClone * durationMultiplier / effectiveCD;
+    const netHPS = hpsDueToCDR + hpsDueToExtraClone;
+
+    bonus_stats.hps = netHPS;
+    console.log("Healing from Cast: " + bonus_stats.hps * 60);
+  } else if (name === "Call to Arms"){
+    const envbHealing = player.getSpellHPS(ID_ENVELOPING_BREATH_ID, contentType);
+    const celestialDuration = .5;
+    const hotDuration = .5;
+    const envbHealingBoost = .05;
+    // ~50% hot duration
+    // ~50% of the casts
+    const ctaEnvbHealing = envbHealing * celestialDuration * hotDuration;
+
+    // Boosts all enveloping breath healing by 5%
+    const healingDueToBoost = envbHealing * celestialDuration * envbHealingBoost + ctaEnvbHealing * (1 + envbHealingBoost);
+
+    // deal with chi-ji
+    // data will need to be updated to make this work
+    // These are at full power so we just can assume 50% hits
+    const chijiGOMHealing = player.getSpellHPS(ID_CHI_JI_GOM, contentType) * celestialDuration;
+    
+    bonus_stats.hps = ctaEnvbHealing + healingDueToBoost + chijiGOMHealing;
+  } else if(name === "Faeline Harmony") {
+    //TODO this should be rougly 2x the stomps and 2x the ef healing from stomp (all queryable)
+    //TODO also look at logs find up time on 8% healing buff accross the raid
+    //TODO multiply that by hps zzz
+
+    bonus_stats.hps = -1;
+  } else if (name === "Bountiful Brew") {
+    //TODO just take bdb healing and bdb gust and do a nice * 1.5 
+    //TODO figure out emeni healing boost since bb did proc soulbinds last time i checked
+
+   bonus_stats.hps = -1; 
+  }else {
     bonus_stats.hps = -1;
   }
 

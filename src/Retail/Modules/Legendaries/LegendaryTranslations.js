@@ -2237,7 +2237,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
             name: "Call to Arms",
             slot: "Legs, Feet",
             desc: "Weapons of Order calls forth Chi-Ji, the Red Crane / Yu'lon, the Jade Serpent to assist you for 12 sec. (500ms cooldown)",
-            droploc: "Kyrian",
+            droploc: "Kyrian Renown 48",
             covenant: "Kyrian",
           },
           de: {
@@ -2277,7 +2277,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
               name: "Bountiful Brew",
               slot: "Neck, Shoulder, Chest",
               desc: "Your abilities have a low chance to cast Bonedust Brew at your target's location. (Approximately 1.25 procs per minute, 500ms cooldown)",
-              droploc: "Necrolord",
+              droploc: "Necrolord Renown 48",
               covenant: "Necrolord",
             },
             de: {
@@ -2356,8 +2356,8 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
                 en: {
                   name: "Sinister Teachings",
                   slot: "Wrist, Finger",
-                  desc: "Fallen Order summons 1 additional [Ox][Crane][Tiger] adept for 24 sec. While you have an active adept, your abilities that critically hit reduce the cooldown of Fallen Order by 3 sec. (750ms cooldown)",
-                  droploc: "Venthyr",
+                  desc: "Fallen Order summons 1 additional adept for 24 sec. While you have an active adept, your abilities that critically hit reduce the cooldown of Fallen Order by 5 sec.",
+                  droploc: "Venthyr Renown 48",
                   covenant: "Venthyr",
                 },
                 de: {

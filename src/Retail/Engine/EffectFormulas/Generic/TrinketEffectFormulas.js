@@ -1,6 +1,8 @@
 import { convertPPMToUptime, getProcessedValue } from "../EffectUtilities";
 import { trinket_data } from "./TrinketData";
 import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
+import { getMasteryAddition } from "../Monk/MistweaverMiscFormulas"
+
 // import { STAT } from "../../../../General/Engine/STAT";
 import SPEC from "../../../../General/Engine/SPECS";
 
@@ -278,12 +280,13 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /* ---------------------------------------------------------------------------------------------- */
     effectName === "Inscrutable Quantum Device"
   ) {
-    let effect = activeTrinket.effects[0];
-    let playerBestSecondary = player.getHighestStatWeight(contentType, ["versatility"]); // Exclude Vers since there isn't a Vers version.
+    const effect = activeTrinket.effects[0];
+    const playerBestSecondary = player.getHighestStatWeight(contentType, ["versatility"]); // Exclude Vers since there isn't a Vers version.
+    const failureChance = (contentType === "Raid" ? 0.34 : 0.12);
 
-    bonus_stats[playerBestSecondary] = ((getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown) * 0.65;
+    bonus_stats[playerBestSecondary] = ((getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown) * (1 - failureChance);
     bonus_stats[playerBestSecondary] *= player.getCooldownMult("threeMinutes", contentType);
-    // TODO: power reduced by 5% because of the chance something interferes. This needs to be much much better and I'll fix it up this week.
+    // TODO: power reduced because of the chance something interferes. This needs to be much much better and I'll fix it up this week.
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -595,11 +598,20 @@ else if (
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Shadowed Orb of Torment"
 ) {
-  // Test
-  let effect = activeTrinket.effects[0];
+  const effect = activeTrinket.effects[0];
 
-  bonus_stats.mastery = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
-  bonus_stats.mastery *= player.getCooldownMult("twoMinutesOrb", contentType);
+  if (player.getSpec() === "Mistweaver Monk") {
+    // Average mastery value is a poor approximation for Mistweaver who are likely to combine the trinket with a higher than normal stream of mastery events.
+    const mastery = getProcessedValue(effect.coefficient, effect.table, itemLevel);
+    const gusts = (contentType === "Raid") ? 40 : 22;
+    bonus_stats.hps = getMasteryAddition(player.getInt(), mastery, player.getStatPerc("Crit"), player.getStatPerc("Vers")) * gusts / effect.cooldown;
+  }
+  else {
+    const expectedEfficiency = 0.87; // Shadowed Orb is easy to mess up, but full value should be guaranteed in most cases.
+    bonus_stats.mastery = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown * expectedEfficiency;
+    bonus_stats.mastery *= player.getCooldownMult("twoMinutesOrb", contentType);
+  }
+
 
 }
 else if (

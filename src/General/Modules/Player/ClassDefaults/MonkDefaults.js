@@ -4,7 +4,7 @@ export const monkDefaultSpellData = (contentType) => {
     spellList = {
       196725: { cpm: 52.31, avgcast: 1742.69, hps: 1515.74, overhealing: 0.14 }, //Refreshing Jade Wind
       191840: { cpm: 2.49, avgcast: 33582.63, hps: 1316.39, overhealing: 0.27 }, // Essence Font
-      343655: { cpm: 0, avgcast: 0, hps: 1076.62, overhealing: 0.48 }, // Enveloping Breath
+      325209: { cpm: 0, avgcast: 0, hps: 1076.62, overhealing: 0.48 }, // Enveloping Breath
       115310: { cpm: 0.31, avgcast: 168141.11, hps: 878.24, overhealing: 0.35 }, // Revival
       119611: { cpm: 5.41, avgcast: 6911.81, hps: 623.78, overhealing: 0.35 }, // Renewing Mist
       274909: { cpm: 0, avgcast: 0, hps: 409.03, overhealing: 0.47 }, // Rising Mist
@@ -17,7 +17,7 @@ export const monkDefaultSpellData = (contentType) => {
       116670: { casts: 13, healing: 143871, hps: 1030.2 }, // Vivify
       115310: { casts: 1, healing: 123536, hps: 884.6 }, // Revival
       191894: { casts: 0, healing: 123408, hps: 883.7 }, // Gust of Mists
-      343655: { casts: 0, healing: 116780, hps: 836.2 }, // Enveloping Breath
+      325209: { casts: 0, healing: 116780, hps: 836.2 }, // Enveloping Breath
       191840: { casts: 15, healing: 109532, hps: 784.3 }, // Essence Font
       119611: { casts: 14, healing: 106834, hps: 765 }, // Renewing Mist
       274909: { casts: 0, healing: 26087, hps: 186.8 }, // Rising Mist
@@ -30,7 +30,7 @@ export const monkDefaultSpellData = (contentType) => {
     spellList = {
       196725: { cpm: 52.31, avgcast: 1742.69, hps: 1515.74, overhealing: 0.14 }, //Refreshing Jade Wind
       191840: { cpm: 2.49, avgcast: 33582.63, hps: 1316.39, overhealing: 0.27 }, // Essence Font
-      343655: { cpm: 0, avgcast: 0, hps: 1076.62, overhealing: 0.48 }, // Enveloping Breath
+      325209: { cpm: 0, avgcast: 0, hps: 1076.62, overhealing: 0.48 }, // Enveloping Breath
       115310: { cpm: 0.31, avgcast: 168141.11, hps: 878.24, overhealing: 0.35 }, // Revival
       119611: { cpm: 5.41, avgcast: 6911.81, hps: 623.78, overhealing: 0.35 }, // Renewing Mist
       274909: { cpm: 0, avgcast: 0, hps: 409.03, overhealing: 0.47 }, // Rising Mist

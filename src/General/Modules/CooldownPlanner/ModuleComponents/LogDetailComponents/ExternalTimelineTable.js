@@ -73,7 +73,7 @@ export default function ExternalTimeline(props) {
               fontSize: 14,
             },
             render: (rowData) => (
-              <div style={{ color: classColoursJS(rowData.casterClass) }}>
+              <div style={{ color: classColoursJS(rowData.casterClass), display: "inline-flex" }}>
                 {classIcons(rowData.casterClass, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
                 {rowData.caster}
               </div>
@@ -100,7 +100,7 @@ export default function ExternalTimeline(props) {
               fontSize: 14,
             },
             render: (rowData) => (
-              <div style={{ color: classColoursJS(rowData.targetClass) }}>
+              <div style={{ color: classColoursJS(rowData.targetClass), display: "inline-flex" }}>
                 {classIcons(rowData.targetClass, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
                 {rowData.target}
               </div>
