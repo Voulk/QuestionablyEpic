@@ -536,10 +536,10 @@ class Player {
     } else if (spec === SPEC.MISTWEAVERMONK) {
       this.activeStats = {
         intellect: 1800,
-        haste: 125,
+        haste: 400,
         crit: 590,
-        mastery: 200,
-        versatility: 370,
+        mastery: 360,
+        versatility: 410,
         stamina: 1900,
       };
 

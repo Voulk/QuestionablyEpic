@@ -4,7 +4,7 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay = [
-    "9.1: The Shadowed Orb & Titanic Ocular Gland buffs are live in all modules.",
+    "9.1: Blizzard continue to make hotfixes a few weeks into the patch. Continue checking back for up to date information.",
 ];
 
   return (

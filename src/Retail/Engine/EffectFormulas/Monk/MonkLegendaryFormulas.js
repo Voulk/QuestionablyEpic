@@ -13,7 +13,7 @@ export const getMonkLegendary = (effectName, player, contentType) => {
 
   if (name === "Ancient Teachings of the Monastery") {
     const essenceFontCPM = player.getSpellCPM(ID_ESSENCE_FONT, contentType);
-    const dpsDuringDuration = 1200;// this is a 75% parse
+    const dpsDuringDuration = 1250; // this is a 75% parse
     const multiplier = 2.5;
     const buffUptime = (12 * essenceFontCPM) / 60; // While the buff lasts 15s, the Essence Font channel lasts 3.
     const expectedOverhealing = 0.3;
@@ -61,39 +61,36 @@ export const getMonkLegendary = (effectName, player, contentType) => {
 
     bonus_stats.hps = (celestialHPS - celestialManaCostPerSecond * player.getSpecialQuery("OneManaHealing", contentType)) * celestialUptime * 0.33;
   } else if (name === "Sinister Teachings") {
-    // Dropping this to 1.3 as you're not suppose to run mist wrap raid. 
-    const envSP = 3.6 * 1.3; //for some reason their env multiplier effects their env healing
-    const soomSP = 1.04;
-    const multiplier = player.getStatMultiplier("NOMAST") * player.getInt();
-    
-    const cooldown = 180;
-    const reducedCD = 60;// This seems to be the average cd with this lego
+
+    const mult = player.getStatMultiplier("NOMAST") * player.getInt();
+    const baseCooldown = 180;
+    const effectiveCD = contentType == "Raid" ? 60 : 92; // This seems to be the average cd with this lego
+    const fallenOrderSpells = [
+      {sp: 3.6 * 1.4 * (7/6), castsPerClone: 1.2}, 
+      // Enveloping Mist. For some reason their env multiplier effects their env healing. They are only supposed to cast 1 EnV per clone, but they sometimes like to cast two instead.
+      {sp: 1.04, castsPerClone: 1.5} // Soothing Mist
+  ]
+
     const numberOfCraneClones = 4;
-    const envCastsPerClone = 1;
-    const soomCastsPerClone = 1.5;
     const overhealing = .5; // 50% overheal which is typical
 
-    const oneEnvHealing = envSP * multiplier * overhealing;
-    const oneSoomHealing = soomSP * multiplier * overhealing;
+    let healingFromClone = 0;
+    fallenOrderSpells.forEach(spell => (healingFromClone += (spell.sp * spell.castsPerClone * mult) * (1 - overhealing)));
 
-    const healingFromOneClone = oneEnvHealing * envCastsPerClone + oneSoomHealing * soomCastsPerClone;
-    const healingFromFOCast = healingFromOneClone * numberOfCraneClones;
-    
-    const normalHPS = healingFromFOCast / cooldown;
-    const reducedHPS = healingFromFOCast / reducedCD;
-
-    const hpsDueToCDR = reducedHPS - normalHPS;// find the difference
+    //const healingFromOneClone = oneEnvHealing * envCastsPerClone + oneSoomHealing * soomCastsPerClone;
+    const healingFromFOCast = healingFromClone * numberOfCraneClones;
+    const hpsDueToCDR = healingFromFOCast / effectiveCD - healingFromFOCast / baseCooldown; // find the difference
 
     // This is gonna look simple but it allows for easy editing later
     // This lego makes 1 clone summon instantly and last the whole duration the door is open
     // 24 = doors duration
     // 8 = default duration of a clone
     const durationMultiplier = 24 / 8;
-    const hpsDueToExtraClone = healingFromOneClone * durationMultiplier / reducedCD;
-
+    const hpsDueToExtraClone = healingFromClone * durationMultiplier / effectiveCD;
     const netHPS = hpsDueToCDR + hpsDueToExtraClone;
 
     bonus_stats.hps = netHPS;
+    console.log("Healing from Cast: " + bonus_stats.hps * 60);
   } else if (name === "Call to Arms"){
     const envbHealing = player.getSpellHPS(ID_ENVELOPING_BREATH_ID, contentType);
     const celestialDuration = .5;
