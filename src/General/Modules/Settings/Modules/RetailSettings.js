@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { setBounds } from "../../../Engine/CONSTRAINTS";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import { dominationGemDB } from "../../../../Databases/DominationGemDB";
-import { getGemIcon} from "../../../Engine/ItemUtilities"
+import { getGemIcon } from "../../../Engine/ItemUtilities";
 
 const menuStyle = {
   style: { marginTop: 5 },
@@ -79,7 +79,7 @@ export default function RetailSettings(props) {
   };
 
   const updateVaultDom = (value) => {
-    props.editSettings("vaultDomGem", value)
+    props.editSettings("vaultDomGem", value);
     setDominationSocket(value);
   };
 
