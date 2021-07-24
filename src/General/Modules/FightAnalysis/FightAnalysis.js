@@ -1,23 +1,19 @@
 import React, { Component } from "react";
 import { Typography, Collapse, CircularProgress, Grid, Dialog, Divider, Paper, Grow } from "@material-ui/core";
 import LogLinkInput from "../../SystemTools/LogImport/LogLinkInput";
-import Chart from "../CooldownPlanner/ModuleComponents/Chart/Chart";
-import Example from "./LogDetailComponents/DTPSBarChart";
+import Chart from "./Chart/Chart";
+import Example from "./Components/DTPSBarChart";
 import FightSelectorButton from "../../SystemTools/LogImport/FightSelectorButton";
 import LoadingOverlay from "react-loading-overlay";
-import CooldownTimeline from "./LogDetailComponents/CooldownTimelineTable";
+import CooldownTimeline from "./Components/CooldownTimelineTable";
 import { fightDuration, warcraftLogReportID, logDifficulty } from "../CooldownPlanner/Functions/Functions";
 import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import SwitchLabels from "../CooldownPlanner/BasicComponents/Switch";
-import HealerInfoTable from "./LogDetailComponents/HealerInfoCards";
-import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
-import updatechartdata from "../CooldownPlanner/Engine/LogImportEngine.js";
-import chartCooldownUpdater from "../CooldownPlanner/Engine/UserCooldownChartEngine.js";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import ls from "local-storage";
-import ExternalTimeline from "./LogDetailComponents/ExternalTimelineTable";
-import EnemyCastsTimeline from "./LogDetailComponents/EnemyCasts";
-
+import HealerInfoTable from "./Components/HealerInfoCards";
+import updatechartdata from "./Engine/LogImportEngine.js";
+import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
+import ExternalTimeline from "./Components/ExternalTimelineTable";
+import EnemyCastsTimeline from "./Components/EnemyCasts";
 class FightAnalysis extends Component {
   constructor() {
     super();
@@ -27,14 +23,11 @@ class FightAnalysis extends Component {
     // we pass it as a prop to the LogLinkInput component so that anytime the link is pasted in the code gets saved here, rather than in that components state.
 
     this.reportidHandler = this.reportidHandler.bind(this);
-    this.damageTableShow = this.damageTableShow.bind(this);
+    this.logSupplied = this.logSupplied.bind(this);
     this.customCooldownsOnChart = this.customCooldownsOnChart.bind(this);
     this.handler = this.handler.bind(this);
     this.updatechartdataNew = updatechartdata.bind(this);
     this.chartCooldownUpdater = chartCooldownUpdater.bind(this);
-    this.ertHandler = this.ertHandler.bind(this);
-    this.timelineHandler = this.timelineHandler.bind(this);
-    this.handleERTClickOpen = this.handleERTClickOpen.bind(this);
     this.handleHealTeamClickOpen = this.handleHealTeamClickOpen.bind(this);
 
     /* ---------------------------------------------------------------------------------------------- */
@@ -61,43 +54,37 @@ class FightAnalysis extends Component {
       boss: null,
       /* ----------------------------- Array of healer names from the log ----------------------------- */
       healernames: [],
-
+      /* --------------------------- Unmitigated data returned original data -------------------------- */
       unmitigatedChartDataNoCooldownsOriginal: [],
+      /* ---------------------------- Unmitigated data, no cooldowns added ---------------------------- */
       unmitigatedChartDataNoCooldowns: [],
       mitigatedChartDataNoCooldownsOriginal: [],
       mitigatedChartDataNoCooldowns: [],
       cooldownlistcustom2: ["none"],
-
-      damageTableShow: false,
-      logDetailsShow: false,
+      /* --- Whether a log has been supplied to the module, hides the chart and data tables if false -- */
+      logSupplied: false,
+      /* ----------------------------------- Show Cooldowns on Chart ---------------------------------- */
       customCooldownsOnChart: false,
-      switchPanelShow: true,
-      ertListTimeNoIcons: [],
-      ertListBossAbility: [],
-      ertListAbilityNoTimeIconsAll: [],
-      ertListTimeIcons: [],
-      ertListNoteIcons: [],
-      ertListNoteNoIcons: [],
       currentFighttime: null,
-      killWipe: null,
+      killOrWipe: null,
       showname: false,
       Updateddatacasts: [],
       ertshowhide: false,
-      timelineshowhide: false,
       legenddata: [],
       uniqueArrayGuid: [],
       mitigatedChartData: [],
       chartData: true,
+
       summedUnmitigatedDamagePerSecond: [],
+      /* --------------------------------------- Raid Difficulty -------------------------------------- */
       currentDifficulty: null,
+      /* --------------------------------------- Keystone Level --------------------------------------- */
       currentKeystone: null,
-      cooldownPlannerCurrentData: [],
-      cooldownPlannerCurrentRaid: "",
-      cooldownPlannerCurrentBoss: "",
-      cooldownPlannerCurrentPlan: 1,
-      ertDialogState: false,
+      /* ----------------------------- Popup State of the Heal Team Table ----------------------------- */
       healTeamDialogState: false,
+      /* ---------------------------- Array of External Usage & Timestamps ---------------------------- */
       externalUsageTimelineData: [],
+      /* ------------------------------ Array of Enemy Casts & Timestamps ----------------------------- */
       enemyCastsTimelineData: [],
     };
   }
@@ -111,78 +98,21 @@ class FightAnalysis extends Component {
       timeend: info[1],
       nextpage: info[0],
       boss: info[2],
-      logDetailsShow: true,
-      switchPanelShow: false,
-      damageTableShow: true,
+      logSupplied: true,
       customCooldownsOnChart: true,
       currentFighttime: info[3],
-      killWipe: info[4],
+      killOrWipe: info[4],
       currentBossID: info[5],
       currentDifficulty: logDifficulty(info[6]),
       currentKeystone: info[7],
       cooldownPlannerCurrentRaid: info[8],
       cooldownPlannerCurrentBoss: info[5],
     });
-
-    /* ------------ Get the 1st plan for imported boss/log and set as data automatically ------------ */
-    let data = ls.get(info[8] + "." + info[5] + ".1");
-    if (data !== null) {
-      this.setState({
-        cooldownPlannerCurrentData: data,
-      });
-    }
-  };
-
-  /* ------------------------------------ Change Raid Function ------------------------------------ */
-  /* -------------------------- This changes which raid the plan is using ------------------------- */
-  handleChangeRaidCooldownPlanner = (event) => {
-    this.setState({
-      cooldownPlannerCurrentRaid: event,
-    });
-  };
-
-  /* ------------------------------------ Change Boss Function ------------------------------------ */
-  /* -------------------------- This changes which boss the plan is using ------------------------- */
-  handleChangeBossCooldownPlanner = (event) => {
-    this.setState({
-      cooldownPlannerCurrentBoss: event,
-      cooldownPlannerCurrentPlan: 1,
-    });
-    /* ----------------- Get the 1st Plan for Selected Boss and set as current data ----------------- */
-    let data = ls.get(this.state.cooldownPlannerCurrentRaid + "." + event + ".1");
-    this.setState({
-      cooldownPlannerCurrentData: data,
-    });
-  };
-
-  /* ------------------------------------ Change Plan Function ------------------------------------ */
-
-  handleChangePlanCooldownPlanner = (event) => {
-    this.setState({ cooldownPlannerCurrentPlan: event });
-    /* ------------------------- If Plan does not exist then set empty array ------------------------ */
-    if (ls.get(this.state.cooldownPlannerCurrentRaid + "." + this.state.cooldownPlannerCurrentBoss + "." + event) === null) {
-      ls.set(this.state.cooldownPlannerCurrentRaid + "." + this.state.cooldownPlannerCurrentBoss + "." + event, []);
-    }
-
-    /* -------------------------- Get the Relevant Plan from local storage -------------------------- */
-    let data = ls.get(this.state.cooldownPlannerCurrentRaid + "." + this.state.cooldownPlannerCurrentBoss + "." + event);
-    this.setState({
-      cooldownPlannerCurrentData: data,
-    });
-  };
-
-  handleChangeDataCooldownPlanner = (data) => {
-    this.setState({ cooldownPlannerCurrentData: data });
   };
 
   /* ------------------ Sets the state on whether the Log Cooldown Chart is Shown ----------------- */
-  damageTableShow = (event) => {
-    this.setState({ damageTableShow: event });
-  };
-
-  /* ------------------------------ Shows / Hides the Details Panels ------------------------------ */
-  logDetailsShow = (event) => {
-    this.setState({ logDetailsShow: event });
+  logSupplied = (event) => {
+    this.setState({ logSupplied: event });
   };
 
   /* -------------- Sets the state on whether the User Input Cooldowns are Shown. ------------- */
@@ -199,27 +129,6 @@ class FightAnalysis extends Component {
     this.setState({ reportid: warcraftLogReportID(event.target.value) });
   };
 
-  ertHandler = () => {
-    this.setState((prevState) => ({
-      ertshowhide: !prevState.ertshowhide,
-    }));
-  };
-
-  timelineHandler = () => {
-    this.setState((prevState) => ({
-      timelineshowhide: !prevState.timelineshowhide,
-    }));
-  };
-
-  // ERT Dialog Handlers
-  handleERTClickOpen = () => {
-    this.setState({ ertDialogState: true });
-  };
-
-  handleERTClose = () => {
-    this.setState({ ertDialogState: false });
-  };
-
   /* ---------------------------------- Heal Team Dialog Handlers --------------------------------- */
   handleHealTeamClickOpen = () => {
     this.setState({ healTeamDialogState: true });
@@ -231,7 +140,6 @@ class FightAnalysis extends Component {
 
   render() {
     /* ------------------------------------ Data Loading Spinner ------------------------------------ */
-    console.log(this.state);
     let spinnershow = this.state.loadingcheck;
 
     return (
@@ -288,15 +196,15 @@ class FightAnalysis extends Component {
               alignItems="flex-start"
               spacing={1}
               style={{
-                display: this.state.damageTableShow ? "block" : "none",
+                display: this.state.logSupplied ? "block" : "none",
               }}
             >
               <Grid item xs={12}>
                 {/* ---------------------------- Imported Log Info (Name, Length etc) ---------------------------- */}
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" spacing={1}>
                   <Grid item xs={8}>
-                    <Collapse in={this.state.damageTableShow}>
-                      <Grow in={this.state.damageTableShow} style={{ transformOrigin: "0 0 0" }} {...(this.state.damageTableShow ? { timeout: 1000 } : {})}>
+                    <Collapse in={this.state.logSupplied}>
+                      <Grow in={this.state.logSupplied} style={{ transformOrigin: "0 0 0" }} {...(this.state.logSupplied ? { timeout: 1000 } : {})}>
                         <Paper
                           bgcolor="#333"
                           elevation={0}
@@ -306,6 +214,7 @@ class FightAnalysis extends Component {
                             justifyContent: "center",
                           }}
                         >
+                          {/* ----------------------------------------- Boss Image -----------------------------------------  */}
                           {bossHeaders(this.state.currentBossID, {
                             height: 64,
                             width: 128,
@@ -314,33 +223,31 @@ class FightAnalysis extends Component {
                             marginRight: "-50px",
                           })}
                           <div>
-                            {this.state.showname ? (
-                              <Typography
-                                style={{
-                                  fontWeight: 500,
-                                  fontSize: "1.25rem",
-                                  padding: "0px 16px 0px 16px",
-                                  whiteSpace: "nowrap",
-                                }}
-                                color="primary"
-                              >
-                                {this.state.boss} - {this.state.currentDifficulty}
-                                {this.state.currentKeystone === null || this.state.currentKeystone === undefined ? null : this.state.currentKeystone}
-                              </Typography>
-                            ) : null}
-                            {this.state.showname ? (
-                              <Typography
-                                style={{
-                                  fontWeight: 500,
-                                  fontSize: "0.9rem",
-                                  color: "white",
-                                  padding: "0px 16px 0px 16px",
-                                  textAlign: "center",
-                                }}
-                              >
-                                {this.state.currentFighttime + " - " + this.state.killWipe}
-                              </Typography>
-                            ) : null}
+                            {/* ------------------------ Boss Name/Dungeon & Difficulty/Keystone Level ----------------------- */}
+                            <Typography
+                              style={{
+                                fontWeight: 500,
+                                fontSize: "1.25rem",
+                                padding: "0px 16px 0px 16px",
+                                whiteSpace: "nowrap",
+                              }}
+                              color="primary"
+                            >
+                              {this.state.boss} - {this.state.currentDifficulty}
+                              {this.state.currentKeystone === null || this.state.currentKeystone === undefined ? null : this.state.currentKeystone}
+                            </Typography>
+                            {/* ---------------------------------- Fight Length & Kill/Wipe ----------------------------------  */}
+                            <Typography
+                              style={{
+                                fontWeight: 500,
+                                fontSize: "0.9rem",
+                                color: "white",
+                                padding: "0px 16px 0px 16px",
+                                textAlign: "center",
+                              }}
+                            >
+                              {this.state.currentFighttime + " - " + this.state.killOrWipe}
+                            </Typography>
                           </div>
                         </Paper>
                       </Grow>
@@ -349,8 +256,8 @@ class FightAnalysis extends Component {
 
                   {/* ------------------------------ Container for the Toggle Buttons ------------------------------ */}
                   <Grid item xs={4}>
-                    <Collapse in={this.state.damageTableShow}>
-                      <Grow in={this.state.damageTableShow} style={{ transformOrigin: "0 0 0" }} {...(this.state.damageTableShow ? { timeout: 1000 } : {})}>
+                    <Collapse in={this.state.logSupplied}>
+                      <Grow in={this.state.logSupplied} style={{ transformOrigin: "0 0 0" }} {...(this.state.logSupplied ? { timeout: 1000 } : {})}>
                         <Paper
                           elevation={0}
                           style={{
@@ -362,17 +269,13 @@ class FightAnalysis extends Component {
                           }}
                         >
                           <Grid container direction="row" justify="space-evenly" alignItems="center">
-                            {/* <Grid item>
-                              <SwitchLabels disabled={this.state.switchPanelShow} check={this.damageTableShow} label={"Log Chart"} />
-                            </Grid> */}
-                            {/* <Grid item>
-                              <SwitchLabels disabled={this.state.switchPanelShow} check={this.logDetailsShow} label={"Toggle Log Details"} />
-                            </Grid> */}
+                            {/* TODO: Translate */}
                             <Grid item>
-                              <SwitchLabels disabled={this.state.switchPanelShow} check={this.customCooldownsOnChart} label={"Show Custom Coolowns"} />
+                              <SwitchLabels check={this.customCooldownsOnChart} label={"Show Coolowns"} />
                             </Grid>
                             <Grid item>
-                              <SwitchLabels disabled={this.state.switchPanelShow} check={this.changeDataSet} label={this.state.chartData === true ? "Unmitigated" : "Mitigated"} />
+                              {/* TODO: Translate */}
+                              <SwitchLabels check={this.changeDataSet} label={this.state.chartData === true ? "Unmitigated" : "Mitigated"} />
                             </Grid>
                           </Grid>
                         </Paper>
@@ -390,12 +293,11 @@ class FightAnalysis extends Component {
                 md={12}
                 lg={12}
                 xl={12}
-                // padding={1}
                 style={{
-                  display: this.state.damageTableShow ? "block" : "none",
+                  display: this.state.logSupplied ? "block" : "none",
                 }}
               >
-                <Collapse in={this.state.damageTableShow}>
+                <Collapse in={this.state.logSupplied}>
                   <LoadingOverlay active={spinnershow} spinner={<CircularProgress color="secondary" />}>
                     <Chart
                       dataToShow={this.state.chartData}
@@ -414,36 +316,37 @@ class FightAnalysis extends Component {
                   </LoadingOverlay>
                 </Collapse>
               </Grid>
-            </Grid>
-            {/* ----------------------------- Grid Container for the log details ----------------------------- */}
-            {/* ---------------- Cooldown / External Timeline / Healer Info Cards / DTPS by ability --------------- */}
-            <Grid
-              item
-              container
-              style={{
-                display: this.state.logDetailsShow ? "block" : "none",
-              }}
-            >
-              <Collapse in={this.state.logDetailsShow} style={{ width: "100%" }}>
+
+              {/* ----------------------------- Grid Container for the log details ----------------------------- */}
+              {/* ---------------- Cooldown / External Timeline / Healer Info Cards / DTPS by ability --------------- */}
+              <Grid item container>
                 <Grid item container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
-                  {/* ----------------------------------- Cooldown Usage Timeline ---------------------------------- */}
+                  {/* ---------------------------------------------------------------------------------------------- */
+                  /*                                     Cooldown Usage Timeline                                     */
+                  /* ----------------------------------------------------------------------------------------------  */}
                   <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
                     <CooldownTimeline data={this.state.Updateddatacasts} />
                   </Grid>
-                  {/* ----------------------------------- External Usage Timeline ---------------------------------- */}
+                  {/* ---------------------------------------------------------------------------------------------- */
+                  /*                                     External Usage Timeline                                     */
+                  /* ----------------------------------------------------------------------------------------------  */}
                   <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
                     <ExternalTimeline data={this.state.externalUsageTimelineData} />
                   </Grid>
-                  {/* ----------------------------------------- DTPS Graph ----------------------------------------- */}
+                  {/* ---------------------------------------------------------------------------------------------- */
+                  /*                                           DTPS Graph                                            */
+                  /* ----------------------------------------------------------------------------------------------  */}
                   <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
                     <Example dataToShow={this.state.chartData} mitigated={this.state.summedMitigationDamagePerSecond} unmitigated={this.state.summedUnmitigatedDamagePerSecond} />
                   </Grid>
-                  {/* ---------------------------------- Healer Information Cards ---------------------------------- */}
+                  {/* ---------------------------------------------------------------------------------------------- */
+                  /*                                    Healer Information Cards                                     */
+                  /* ----------------------------------------------------------------------------------------------  */}
                   {/* ------------------------------- Stats / Talents / Soulbinds Etc ------------------------------ */}
                   <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
                     <Paper style={{ padding: 8, marginBottom: 8 }} elevation={0}>
                       <Typography variant="h6" color="primary" style={{ padding: "4px 8px 4px 24px" }}>
-                        {/* // TODO Translate */}
+                        {/* TODO: Translate */}
                         Healer Information
                       </Typography>
                       <Divider />
@@ -452,34 +355,16 @@ class FightAnalysis extends Component {
                   </Grid>
 
                   {/* ------------------------------------ Enemy Casts Timeline ------------------------------------ */}
-                  {/* ----------- Not sure if this will be used, but it shows the enemies casts and when ----------- */}
+                  {/* --- Not sure if this will be used, but it shows the enemies casts and when might be useful ---  */}
                   <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
                     <EnemyCastsTimeline data={this.state.enemyCastsTimelineData} />
                   </Grid>
                 </Grid>
-              </Collapse>
+              </Grid>
+              <Grid item xs={12} style={{ height: 350 }} />
             </Grid>
-            <Grid item xs={12} style={{ height: 350 }} />
           </Grid>
         </div>
-
-        {/* ------------------------------------ ERT Note Export Table -----------------------------------
-        <Dialog onClose={this.handleERTClose} aria-labelledby="ERT-Dialog" open={this.state.ertDialogState} maxWidth="md" fullWidth PaperProps={{ style: { minWidth: 300 } }}>
-          <ERTTable
-            ertListTimeNoIcons={this.state.ertListTimeNoIcons}
-            ertListBossAbility={this.state.ertListBossAbility}
-            ertListAbilityNoTimeIconsAll={this.state.ertListAbilityNoTimeIconsAll}
-            ertListTimeIcons={this.state.ertListTimeIcons}
-            ertListNoteIcons={this.state.ertListNoteIcons}
-            ertListNoteNoIcons={this.state.ertListNoteNoIcons}
-          />
-        </Dialog> */}
-
-        {/* ------------------------------------- Healer Team Dialog ------------------------------------- */}
-        {/* ------------------- This is where you enter your healing team into the app. ------------------ */}
-        <Dialog onClose={this.handleHealTeamClose} aria-labelledby="ERT-Dialog" open={this.state.healTeamDialogState} maxWidth="lg" fullWidth PaperProps={{ style: { minWidth: 300 } }}>
-          <HealTeam />
-        </Dialog>
       </div>
     );
   }

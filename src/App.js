@@ -1,6 +1,6 @@
 import React, { Component, useEffect } from "react";
 import "./App.css";
-import HolyDiver from "General/Modules/CooldownPlanner/CooldownPlannerModule.js";
+import CooldownPlannerModule from "General/Modules/CooldownPlanner/CooldownPlannerModule.js";
 import FightAnalysis from "General/Modules/FightAnalysis/FightAnalysis"
 import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
 import LegendaryCompare from "Retail/Modules/Legendaries/LegendaryCompare.js";
@@ -367,7 +367,7 @@ class App extends Component {
                   )}
                 />
                 <Route path="/fightAnalysis" render={() => <FightAnalysis />} />
-                <Route path="/HolyDiver" render={() => <HolyDiver />} />
+                <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule />} />
                 <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} />} />
                 <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
                 <Route path="/topgear" render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />

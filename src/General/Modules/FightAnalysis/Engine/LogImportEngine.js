@@ -1,6 +1,6 @@
 //prettier-ignore
 import { addMissingTimestamps, getUniqueObjectsFromArray, reduceTimestamps, fightDuration, importHealerLogData, importDamageLogData, importCastsLogData,
-  durationmaker, sumDamage, importSummaryData, importExternalCastsLogData, importCharacterIds, importEnemyCasts, importEnemyIds, importRaidHealth } from "../Functions/Functions";
+  durationmaker, sumDamage, importSummaryData, importExternalCastsLogData, importCharacterIds, importEnemyCasts, importEnemyIds, importRaidHealth } from "../../CooldownPlanner/Functions/Functions";
 import moment from "moment";
 
 /* =============================================

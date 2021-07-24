@@ -1,38 +1,16 @@
 import React, { Component } from "react";
-import { Typography, Collapse, CircularProgress, Grid, Accordion, AccordionSummary, AccordionDetails, Dialog, Divider, Paper, Grow } from "@material-ui/core";
-import LogLinkInput from "../../SystemTools/LogImport/LogLinkInput";
-import Chart from "./ModuleComponents/Chart/Chart";
-import Example from "../FightAnalysis/LogDetailComponents/DTPSBarChart";
-import FightSelectorButton from "../../SystemTools/LogImport/FightSelectorButton";
-import LoadingOverlay from "react-loading-overlay";
+import { Typography, Grid, Dialog } from "@material-ui/core";
 import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
-import CooldownTimeline from "../FightAnalysis/LogDetailComponents/CooldownTimelineTable";
-import { fightDuration, warcraftLogReportID, logDifficulty } from "../CooldownPlanner/Functions/Functions";
-import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import ERTTable from "../CooldownPlanner/ModuleComponents/ERTTable";
-import SwitchLabels from "./BasicComponents/Switch";
-import HealerInfoTable from "../FightAnalysis/LogDetailComponents/HealerInfoCards";
 import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
-import updatechartdata from "./Engine/LogImportEngine.js";
-import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ls from "local-storage";
-import ExternalTimeline from "../FightAnalysis/LogDetailComponents/ExternalTimelineTable";
-import EnemyCastsTimeline from "../FightAnalysis/LogDetailComponents/EnemyCasts";
 
-class HolyDiver extends Component {
+class CooldownPlannerModule extends Component {
   constructor() {
     super();
     /* ----------------------- We bind the below functions to this Component. ----------------------- */
     // This means these functions can be passed as props to other components and they will return here rather than in the component they are sent to.
-    this.reportidHandler = this.reportidHandler.bind(this);
-    this.damageTableShow = this.damageTableShow.bind(this);
-    this.customCooldownsOnChart = this.customCooldownsOnChart.bind(this);
-    this.handler = this.handler.bind(this);
-    this.updatechartdataNew = updatechartdata.bind(this);
-    this.chartCooldownUpdater = chartCooldownUpdater.bind(this);
     this.ertHandler = this.ertHandler.bind(this);
-    this.timelineHandler = this.timelineHandler.bind(this);
     this.handleChangeBossCooldownPlanner = this.handleChangeBossCooldownPlanner.bind(this);
     this.handleChangeRaidCooldownPlanner = this.handleChangeRaidCooldownPlanner.bind(this);
     this.handleChangeDataCooldownPlanner = this.handleChangeDataCooldownPlanner.bind(this);
@@ -42,92 +20,21 @@ class HolyDiver extends Component {
 
     /* ---------------------- We set our state for the cooldown Planner Module. --------------------- */
     this.state = {
-      currentBossID: null,
-      unmitigatedChartData: [],
-      logactuallink: null,
-      loglink: "Insert Log Here",
-      reportid: null,
-      time: null,
-      times: [{ timestamp: 0 }],
-      timeend: null,
-      abilityList: ["Melee"],
-      cooldownlist: ["none"],
-      loadingcheck: false,
-      boss: null,
-      healernames: [],
-      checked: false,
-      tabledata: [],
-      unmitigatedChartDataNoCooldownsOriginal: [],
-      unmitigatedChartDataNoCooldowns: [],
-      mitigatedChartDataNoCooldownsOriginal: [],
-      mitigatedChartDataNoCooldowns: [],
-      cooldownlistcustom2: ["none"],
-      currentEndTime: 0,
-      currentStartTime: 0,
-      damageTableShow: false,
-      logDetailsShow: false,
-      customCooldownsOnChart: false,
-      switchPanelShow: true,
       ertListTimeNoIcons: [],
       ertListBossAbility: [],
       ertListAbilityNoTimeIconsAll: [],
       ertListTimeIcons: [],
       ertListNoteIcons: [],
       ertListNoteNoIcons: [],
-      currentFighttime: null,
-      killWipe: null,
-      showname: false,
-      Updateddatacasts: [],
       ertshowhide: false,
-      timelineshowhide: false,
-      legenddata: [],
-      uniqueArrayGuid: [],
-      mitigatedChartData: [],
-      chartData: true,
-      summedUnmitigatedDamagePerSecond: [],
-      currentDifficulty: null,
-      currentKeystone: null,
       cooldownPlannerCurrentData: [],
       cooldownPlannerCurrentRaid: "",
       cooldownPlannerCurrentBoss: "",
       cooldownPlannerCurrentPlan: 1,
       ertDialogState: false,
       healTeamDialogState: false,
-      externalUsageTimelineData: [],
-      enemyCastsTimelineData: [],
     };
   }
-
-  /* -------------------------- this function is bound to this component. ------------------------- */
-  /* ------- It is passed as a prop for the fight Selector, the states are set from the data ------ */
-  handler = (info) => {
-    this.setState({
-      showname: true,
-      time: info[0],
-      timeend: info[1],
-      nextpage: info[0],
-      boss: info[2],
-      logDetailsShow: true,
-      switchPanelShow: false,
-      damageTableShow: true,
-      customCooldownsOnChart: true,
-      currentFighttime: info[3],
-      killWipe: info[4],
-      currentBossID: info[5],
-      currentDifficulty: logDifficulty(info[6]),
-      currentKeystone: info[7],
-      cooldownPlannerCurrentRaid: info[8],
-      cooldownPlannerCurrentBoss: info[5],
-    });
-
-    /* ------------ Get the 1st plan for imported boss/log and set as data automatically ------------ */
-    let data = ls.get(info[8] + "." + info[5] + ".1");
-    if (data !== null) {
-      this.setState({
-        cooldownPlannerCurrentData: data,
-      });
-    }
-  };
 
   /* ------------------------------------ Change Raid Function ------------------------------------ */
   /* -------------------------- This changes which raid the plan is using ------------------------- */
@@ -171,39 +78,9 @@ class HolyDiver extends Component {
     this.setState({ cooldownPlannerCurrentData: data });
   };
 
-  /* ------------------ Sets the state on whether the Log Cooldown Chart is Shown ----------------- */
-  damageTableShow = (event) => {
-    this.setState({ damageTableShow: event });
-  };
-
-  /* ------------------------------ Shows / Hides the Details Panels ------------------------------ */
-  logDetailsShow = (event) => {
-    this.setState({ logDetailsShow: event });
-  };
-
-  /* -------------- Sets the state on whether the User Input Cooldowns are Shown. ------------- */
-  customCooldownsOnChart = (event) => {
-    this.setState({ customCooldownsOnChart: event });
-  };
-
-  /* ------------------- Sets the state for Unmitigated/Mitigated Damage shown. ------------------- */
-  changeDataSet = (event) => {
-    this.setState({ chartData: event });
-  };
-
-  reportidHandler = (event) => {
-    this.setState({ reportid: warcraftLogReportID(event.target.value) });
-  };
-
   ertHandler = () => {
     this.setState((prevState) => ({
       ertshowhide: !prevState.ertshowhide,
-    }));
-  };
-
-  timelineHandler = () => {
-    this.setState((prevState) => ({
-      timelineshowhide: !prevState.timelineshowhide,
     }));
   };
 
@@ -226,9 +103,6 @@ class HolyDiver extends Component {
   };
 
   render() {
-    /* ------------------------------------ Data Loading Spinner ------------------------------------ */
-    let spinnershow = this.state.loadingcheck;
-
     return (
       <div
         style={{
@@ -251,7 +125,7 @@ class HolyDiver extends Component {
             <Grid item container direction="row" justify="flex-start" alignItems="flex-start" spacing={1} margin={4}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12} padding={1}>
                 <CooldownPlanner
-                  update={this.chartCooldownUpdater}
+                  // update={this.chartCooldownUpdater}
                   data={this.state.cooldownPlannerCurrentData}
                   currentBoss={this.state.cooldownPlannerCurrentBoss}
                   bossHandler={this.handleChangeBossCooldownPlanner}
@@ -290,4 +164,4 @@ class HolyDiver extends Component {
   }
 }
 
-export default HolyDiver;
+export default CooldownPlannerModule;
