@@ -42,7 +42,7 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     */
     // Do Math
     let durationIncrease = 10;
-    let expectedOverhealing = 0.52;
+    let expectedOverhealing = 0.44;
     let swiftmendCPM = 3.8;
     let power = 0;
     const isCW = contentType === "Raid" ? false : true;

@@ -889,7 +889,7 @@ export const trinket_data = [
         /* ----------------------------------------- Healing Portion ---------------------------------------- */
         coefficient: 21.946373,
         table: -8,
-        efficiency: 0.45, // The expected overhealing on this trinket is very high.
+        efficiency: 0.4, // The expected overhealing on this trinket is very high.
         ppm: 3,
         targets: { Raid: 4.2, Dungeon: 2.9 }, // 8 yard range
         meteor: 0.15,
@@ -950,7 +950,7 @@ export const trinket_data = [
         coefficient: 0.337095, 
         table: -7,
         duration: 15,
-        averageStacks: {"Restoration Druid": 0.6, "Holy Paladin": 0.4, "Mistweaver Monk": 0.3, "Restoration Shaman": 0.65, "Holy Priest": 0.6, "Discipline Priest": 1.6},
+        averageStacks: {"Restoration Druid": 0.6, "Holy Paladin": 0.4, "Mistweaver Monk": 0, "Restoration Shaman": 0.65, "Holy Priest": 0.6, "Discipline Priest": 1.6},
         // The average stacks value is correct, but should be rewritten to include the formula in the code.
         ppm: 5,
       },

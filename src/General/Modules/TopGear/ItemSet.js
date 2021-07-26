@@ -109,20 +109,42 @@ class ItemSet {
       }
     }
 
+    let lowestGemRanks = {
+      unholy: 4,
+      frost: 4,
+      blood: 4
+    }
+
     // Domination Socket Code
+
+    // Poll Unholy gems
     const unholyGems = this.effectList.filter(function (effect) {
-      return effect.type === "domination gem" && effect.gemColor === "Unholy";
+      if (effect.type === "domination gem" && effect.gemColor === "Unholy") {
+        lowestGemRanks.unholy = Math.min(effect.rank, lowestGemRanks.unholy);
+        return true;
+      }
     });
+    // Poll Frost Gems
     const frostGems = this.effectList.filter(function (effect) {
+      if (effect.type === "domination gem" && effect.gemColor === "Frost") {
+        lowestGemRanks.frost = Math.min(effect.rank, lowestGemRanks.frost);
+        return true;
+      };
       return effect.type === "domination gem" && effect.gemColor === "Frost";
     });
+    // Poll Blood Gems
     const bloodGems = this.effectList.filter(function (effect) {
-      return effect.type === "domination gem" && effect.gemColor === "Blood";
+      if (effect.type === "domination gem" && effect.gemColor === "Blood") {
+        lowestGemRanks.frost = Math.min(effect.rank, lowestGemRanks.blood);
+        return true;
+      }
     });
 
-    if (unholyGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Chaos Bane", "rank": 0})
-    else if (frostGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Winds of Winter", "rank": 0})
-    else if (bloodGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Blood Link", "rank": 0})
+    
+
+    if (unholyGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Chaos Bane", "rank": lowestGemRanks.unholy})
+    else if (frostGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Winds of Winter", "rank": lowestGemRanks.frost})
+    else if (bloodGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Blood Link", "rank": lowestGemRanks.blood})
     // -----------------
     this.setStats = setStats;
     this.setSockets = setSockets;

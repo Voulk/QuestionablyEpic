@@ -10,6 +10,14 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 15,
+    date: "26th July",
+    changes: [
+      "Fixed a bug where higher rank dom set bonuses were being calculated at a lower rank."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 14,
     date: "21st July",
     changes: [

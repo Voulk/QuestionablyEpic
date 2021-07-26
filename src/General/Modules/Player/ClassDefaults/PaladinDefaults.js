@@ -28,20 +28,20 @@ export const paladinDefaultSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
-      OneManaHealing: 1.2,
+      OneManaHealing: 1.9,
       CastsPerMinute: 27,
       cooldownMult: {
         oneMinute: 1.75,
         ninetySeconds: 1,
         twoMinutes: 1.39,
-        twoMinutesOrb: 1.32,
+        twoMinutesOrb: 1.31,
         threeMinutes: 1,
       },
       HoldYourGroundUptime: 0.4
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
-      OneManaHealing: 0.6,
+      OneManaHealing: 0.7,
       CastsPerMinute: 30,
       cooldownMult: {
         oneMinute: 1.76,
