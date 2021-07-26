@@ -118256,7 +118256,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Forbidden Necromantic Tome"
         },
-        "levelRange": []
+        "levelRange": [220, 233, 246, 259]
     },
     {
         "id": 186422,
