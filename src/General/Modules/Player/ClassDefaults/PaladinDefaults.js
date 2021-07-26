@@ -28,7 +28,7 @@ export const paladinDefaultSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
-      OneManaHealing: 1.2,
+      OneManaHealing: 1.9,
       CastsPerMinute: 27,
       cooldownMult: {
         oneMinute: 1.75,
@@ -41,7 +41,7 @@ export const paladinDefaultSpecialQueries = (contentType) => {
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
-      OneManaHealing: 0.6,
+      OneManaHealing: 0.7,
       CastsPerMinute: 30,
       cooldownMult: {
         oneMinute: 1.76,
