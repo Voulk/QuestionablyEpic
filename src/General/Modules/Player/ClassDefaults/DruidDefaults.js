@@ -63,7 +63,7 @@ export const druidDefaultSpecialQueries = (contentType) => {
         oneMinute: 1.25,
         ninetySeconds: 1,
         twoMinutes: 1.42,
-        twoMinutesOrb: 1.24,
+        twoMinutesOrb: 1.22,
         threeMinutes: 1.2,
       },
       HoldYourGroundUptime: 0.8

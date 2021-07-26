@@ -33606,7 +33606,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Spiritual Alchemy Stone"
         },
-        "levelRange": [230]
+        "levelRange": []
     },
     {
         "id": 171374,
@@ -99585,12 +99585,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Manabound Mirror"
         },
-        "levelRange": [
-            194,
-            207,
-            220,
-            233
-        ]
+        "levelRange": []
     },
     {
         "id": 184030,
@@ -118256,7 +118251,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Forbidden Necromantic Tome"
         },
-        "levelRange": []
+        "levelRange": [220, 233, 246, 259]
     },
     {
         "id": 186422,
