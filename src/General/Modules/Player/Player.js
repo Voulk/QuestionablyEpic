@@ -46,13 +46,15 @@ class Player {
   activeItems = [];
   activeConduits = [];
   renown = 1;
-  castModel = {};
+  castModel = {}; // Remove once CastModels is complete.
+  castModels = [];
   covenant = "";
   region = "";
   realm = "";
   race = "";
   talents = [];
   gameType = ""; // Currently the options are Retail or Burning Crusade.
+  activeModelID = {"Raid": 0, "Dungeon": 1}; // Currently active Cast Model.
 
   // The players active stats from their character page. These are raw rather than being percentages.
   // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
@@ -354,15 +356,19 @@ class Player {
     return this.spec;
   };
 
+  getActiveModel = (contentType) => {
+    return this.castModels[this.activeModelID[contentType]];
+  }
+
   getHPS = (contentType) => {
-    return this.castModel[contentType].getFightInfo("hps");
+    return this.getActiveModel(contentType).getFightInfo("hps");
   };
   getDPS = (contentType) => {
-    return this.castModel[contentType].getFightInfo("dps");
+    return this.getActiveModel(contentType).getFightInfo("dps");
   };
   // HPS including overhealing.
   getRawHPS = (contentType) => {
-    return this.castModel[contentType].getFightInfo("rawhps");
+    return this.getActiveModel(contentType).getFightInfo("rawhps");
   };
 
   // Returns the players health.
@@ -372,7 +378,7 @@ class Player {
   }
 
   getFightLength = (contentType) => {
-    return this.castModel[contentType].getFightInfo("fightLength");
+    return this.getActiveModel(contentType).getFightInfo("fightLength");
   };
 
   getInt = () => {
@@ -380,52 +386,52 @@ class Player {
   };
 
   getSpecialQuery = (queryIdentifier, contentType) => {
-    return this.castModel[contentType].getSpecialQuery(queryIdentifier);
+    return this.getActiveModel(contentType).getSpecialQuery(queryIdentifier);
   };
 
   getCooldownMult = (queryIdentifier, contentType) => {
-    return this.castModel[contentType].getSpecialQuery(queryIdentifier, "cooldownMult");
+    return this.getActiveModel(contentType).getSpecialQuery(queryIdentifier, "cooldownMult");
   };
 
   getSingleCast = (spellID, contentType, castType = "avgcast") => {
-    return this.castModel[contentType].getSpellData(spellID, castType);
+    return this.getActiveModel(contentType).getSpellData(spellID, castType);
   };
 
   getSpellCPM = (spellID, contentType) => {
-    return this.castModel[contentType].getSpellData(spellID, "cpm");
+    return this.getActiveModel(contentType).getSpellData(spellID, "cpm");
   };
 
   // Use getSpellCPM where possible. 
   getSpellCasts = (spellID, contentType) => {
-    return this.castModel[contentType].getSpellData(spellID, "cpm") * this.getFightLength(contentType) / 60;
+    return this.getActiveModel(contentType).getSpellData(spellID, "cpm") * this.getFightLength(contentType) / 60;
   };
 
   getSpellHPS = (spellID, contentType) => {
-    return this.castModel[contentType].getSpellData(spellID, "hps");
+    return this.getActiveModel(contentType).getSpellData(spellID, "hps");
   };
 
   getSpellRawHPS = (spellID, contentType) => {
-    return this.castModel[contentType].getSpellData(spellID, "hps") / (1 - this.castModel[contentType].getSpellData(spellID, "overhealing"));
+    return this.getActiveModel(contentType).getSpellData(spellID, "hps") / (1 - this.castModel[contentType].getSpellData(spellID, "overhealing"));
   };
 
   /* --------------- Return the Spell List for the content Type --------------- */
 
   getSpellList = (contentType) => {
-    return this.castModel[contentType].spellList;
+    return this.getActiveModel(contentType).spellList;
   };
 
   /* ------------- Return the Saved ReportID from the imported log ------------ */
   getReportID = (contentType) => {
-    return this.castModel[contentType].fightInfo.reportID;
+    return this.getActiveModel(contentType).fightInfo.reportID;
   };
 
   /* ------------ Return the Saved Boss Name from the imported log ------------ */
   getBossName = (contentType) => {
-    return this.castModel[contentType].fightInfo.bossName;
+    return this.getActiveModel(contentType).fightInfo.bossName;
   };
 
   setSpellPattern = (spellList) => {
-    if (spellList !== {}) this.castModel["Raid"].setSpellList(spellList);
+    if (spellList !== {}) this.getActiveModel("Raid").setSpellList(spellList);
   };
 
   setActiveStats = (stats) => {
@@ -433,7 +439,7 @@ class Player {
   };
 
   setFightInfo = (info) => {
-    if (Object.keys(info).length > 0) this.castModel["Raid"].setFightInfo(info);
+    if (Object.keys(info).length > 0) this.getActiveModel("Raid").setFightInfo(info);
   };
 
   setDefaultWeights = (spec, contentType) => {
@@ -468,6 +474,10 @@ class Player {
       Raid: new CastModel(spec, "Raid"),
       Dungeon: new CastModel(spec, "Dungeon"),
     };
+
+    this.castModels.push(new CastModel(spec, "Raid"))
+    this.castModels.push(new CastModel(spec, "Dungeon"))
+    //console.log(this.castModels);
 
     if (spec === SPEC.RESTODRUID) {
       this.activeStats = {

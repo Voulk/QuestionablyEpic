@@ -7,7 +7,6 @@ import { monkDefaultSpecialQueries, monkDefaultSpellData } from "./ClassDefaults
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData } from "./ClassDefaults/HolyPriestDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData } from "./ClassDefaults/DiscPriestDefaults";
 
-// THIS IS NOT YET IN USE BUT WILL BE VERY SHORTLY.
 class CastModel {
   constructor(spec, contentType) {
     this.contentType = contentType;
