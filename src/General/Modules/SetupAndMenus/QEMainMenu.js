@@ -141,9 +141,9 @@ export default function QEMainMenu(props) {
               {patron ? t("MainMenu.PatronThanks") : t("MainMenu.PatronInvite")}
             </Button>
           </Grid>
-          {/*<Grid item xs={12}>
+          {<Grid item xs={12}>
             <MessageOfTheDay /> 
-            </Grid> */}
+            </Grid>}
 
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.
