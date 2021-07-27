@@ -5,7 +5,7 @@ import { scoreItem } from "../../Engine/ItemUtilities";
 import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
 import { druidDefaultStatWeights } from "./ClassDefaults/DruidDefaults";
-import { paladinDefaultStatWeights } from "./ClassDefaults/PaladinDefaults";
+import { paladinDefaultStatWeights } from "./ClassDefaults/Paladin/PaladinDefaults";
 import { shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
 import { discPriestDefaultStatWeights } from "./ClassDefaults/DiscPriestDefaults";
 import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";

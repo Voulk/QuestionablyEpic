@@ -1,16 +1,16 @@
 import { createModifiersFromModifierFlags } from "typescript";
 import SPEC from "../../Engine/SPECS";
 import { druidDefaultSpecialQueries, druidDefaultSpellData } from "./ClassDefaults/DruidDefaults";
-import { paladinDefaultSpecialQueries, paladinDefaultSpellData } from "./ClassDefaults/PaladinDefaults";
+import { paladinDefaultSpecialQueries, paladinDefaultSpellData } from "./ClassDefaults/Paladin/PaladinDefaults";
 import { shamanDefaultSpecialQueries, shamanDefaultSpellData } from "./ClassDefaults/ShamanDefaults";
 import { monkDefaultSpecialQueries, monkDefaultSpellData } from "./ClassDefaults/MonkDefaults";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData } from "./ClassDefaults/HolyPriestDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData } from "./ClassDefaults/DiscPriestDefaults";
 
 class CastModel {
-  constructor(spec, contentType) {
+  constructor(spec, contentType, modelID) {
     this.contentType = contentType;
-    this.setDefaults(spec, contentType);
+    this.setDefaults(spec, contentType, modelID);
   }
 
   spellList = {};
@@ -19,6 +19,7 @@ class CastModel {
   contentType = "";
   reportID = "";
   bossName = "";
+  statWeights = {};
 
   setSpellList = (spellListing) => {
     this.spellList = spellListing;
@@ -50,7 +51,7 @@ class CastModel {
     else return 0;
   };
 
-  setDefaults = (spec, contentType) => {
+  setDefaults = (spec, contentType, modelID) => {
     this.fightInfo = {
       hps: 9300,
       rawhps: 11020,
@@ -67,9 +68,18 @@ class CastModel {
       specialQueries = druidDefaultSpecialQueries(contentType);
       this.fightInfo.dps = 700;
     } else if (spec === SPEC.HOLYPALADIN) {
-      spellList = paladinDefaultSpellData(contentType);
-      specialQueries = paladinDefaultSpecialQueries(contentType);
-      this.fightInfo.dps = 1650;
+
+      if (modelID === "PaladinKyrian") {
+        spellList = paladinDefaultSpellData(contentType);
+        specialQueries = paladinDefaultSpecialQueries(contentType);
+        this.fightInfo.dps = 1650;
+      }
+      else if (modelID === "PaladinMaraads") {
+        spellList = paladinMaraadsSpellData(contentType);
+        specialQueries = paladinMaraadsSpecialQueries(contentType);
+        this.fightInfo.dps = 1650;
+      }
+
     } else if (spec === SPEC.RESTOSHAMAN) {
       spellList = shamanDefaultSpellData(contentType);
       specialQueries = shamanDefaultSpecialQueries(contentType);
