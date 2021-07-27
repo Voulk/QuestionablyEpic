@@ -71,13 +71,15 @@ export const effectData = [
         name: "Chaos Bane", // These use tables as if 174 ilvl.
         effects: [
           {
-            coefficient: [0.052632, 0.078948, 0.105264, 0.13158, 0.157896], 
+            //coefficient: [0.052632, 0.078948, 0.105264, 0.13158, 0.157896], 
+            coefficient: [0.105263, 0.1578945, 0.210526, 0.2631575, 0.315789],
             duration: 30,
             table: -1,
             ppm: 8, // Does have a 0.5s GCD. Doesn't proc while Effect#2 is active.
           },
           {
-            coefficient: [1.578947, 2.3684205, 3.157894, 3.9473675, 4.736841], 
+            //coefficient: [1.578947, 2.3684205, 3.157894, 3.9473675, 4.736841], 
+            coefficient: [3.158, 4.737, 6.316, 7.895, 9.474], 
             duration: 30,
             table: -1,
             ppm: 8,
@@ -141,7 +143,8 @@ export const effectData = [
             specOvercap: {"Restoration Druid": 0.92, "Holy Paladin": 0.6, "Mistweaver Monk": 0.82, "Restoration Shaman": 0.94, "Holy Priest": 0.62, "Discipline Priest": 0.7},
             specAbilitiesThatWork: {"Restoration Druid": 0.81, "Holy Paladin": 0.7, "Mistweaver Monk": 0.68, "Restoration Shaman": 0.47, "Holy Priest": 0.91, "Discipline Priest": 0.26}, // Winds of Winter doesn't work on multiple abilities in the game. Disc and Holy Paladin are penalized most heavily.
            
-            stored: [0.05, 0.075, 0.1, 0.125, 0.15],
+            //stored: [0.05, 0.075, 0.1, 0.125, 0.15],
+            stored: [0.06, 0.09, 0.12, 0.15, 0.18],
             wastage: 0.1
           },
         ],
@@ -194,7 +197,8 @@ export const effectData = [
         name: "Blood Link", // These use tables as if 174 ilvl.
         effects: [
           {
-            coefficient: [13.404727, 20.107, 26.809454, 33.5118175, 40.214181], 
+            //coefficient: [13.404727, 20.107, 26.809454, 33.5118175, 40.214181], 
+            coefficient: [22.3414, 33.5121, 44.6828, 55.8535, 67.0242], 
             table: -9, // -8 in the spell data.
             ppm: 20, // Has a 100% uptime, and procs every 3 seconds.
             expectedOverhealing: 0.2,
