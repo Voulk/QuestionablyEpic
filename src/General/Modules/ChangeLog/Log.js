@@ -10,6 +10,14 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 16,
+    date: "27th July",
+    changes: [
+      "Adjusted the power of set bonuses due to nerfs on live servers."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 15,
     date: "26th July",
     changes: [
