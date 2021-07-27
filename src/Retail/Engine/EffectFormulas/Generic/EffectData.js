@@ -141,7 +141,7 @@ export const effectData = [
             coefficient: [7.44707, 11.170605, 14.89414, 18.617675, 22.34121], // The coefficient is for the maximum amount stored on a crit.
             table: -8,
             specOvercap: {"Restoration Druid": 0.92, "Holy Paladin": 0.6, "Mistweaver Monk": 0.82, "Restoration Shaman": 0.94, "Holy Priest": 0.62, "Discipline Priest": 0.7},
-            specAbilitiesThatWork: {"Restoration Druid": 0.81, "Holy Paladin": 0.7, "Mistweaver Monk": 0.68, "Restoration Shaman": 0.47, "Holy Priest": 0.91, "Discipline Priest": 0.26}, // Winds of Winter doesn't work on multiple abilities in the game. Disc and Holy Paladin are penalized most heavily.
+            specAbilitiesThatWork: {"Restoration Druid": 0.84, "Holy Paladin": 0.7, "Mistweaver Monk": 0.68, "Restoration Shaman": 0.47, "Holy Priest": 0.91, "Discipline Priest": 0.26}, // Winds of Winter doesn't work on multiple abilities in the game. Disc and Holy Paladin are penalized most heavily.
            
             //stored: [0.05, 0.075, 0.1, 0.125, 0.15],
             stored: [0.06, 0.09, 0.12, 0.15, 0.18],
