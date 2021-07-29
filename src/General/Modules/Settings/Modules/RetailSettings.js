@@ -46,7 +46,7 @@ export default function RetailSettings(props) {
   // const [discTalent, setDiscTalent] = useState(109964);
 
   /* ----------------------------------- Paladin Playstyle State ---------------------------------- */
-  const [paladinPlaystyle, setPaladinPlaystyle] = useState("default");
+  const [specBuild, setSpecBuild] = useState(props.player.activeModelID[props.contentType]);
 
   /* -------------------------------------- Auto-Socket State ------------------------------------- */
   const [autoSocketValue, setAutoSocketValue] = useState(props.userSettings.autoSocket);
@@ -54,13 +54,10 @@ export default function RetailSettings(props) {
   /* ----------------------------------- Domination Socket State ---------------------------------- */
   const [dominationSocket, setDominationSocket] = useState(props.userSettings.vaultDomGem);
 
-  const paladinPlaystyles = [
-    { label: "Default", value: "default" },
-    { label: "Glimmer of Light", value: "glimmer" },
-    { label: "Light of the Martyr", value: "glimmer" },
-    { label: "Kyrian", value: "kyrian" },
-    { label: "Venthyr", value: "venthyr" },
-  ];
+
+  const specBuilds = props.player.getAllModels()
+  console.log(specBuilds);
+  console.log("Currently selected: " + props.player.activeModelID[props.contentType])
 
   const updateHymnal = (value) => {
     props.editSettings("hymnalAllies", setBounds(value, 0, 4));
@@ -80,6 +77,11 @@ export default function RetailSettings(props) {
   const updateVaultDom = (value) => {
     props.editSettings("vaultDomGem", value)
     setDominationSocket(value);
+  };
+
+  const updateSpecBuild = (value) => {
+    //props.editSettings("vaultDomGem", value)
+    setSpecBuild(value);
   };
 
   // const options = [
@@ -206,8 +208,7 @@ export default function RetailSettings(props) {
               ""
             )} */}
 
-      {/* --------------------------------- Paladin Playstyle Selection --------------------------------  */}
-      {/* {playerSpec === "Holy Paladin" ? (
+      {/* --------------------------------- Playstyle / Build Selection --------------------------------  */}
         <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
           <Grid container spacing={0} style={{ padding: "0px 8px" }}>
             <Grid item xs={12}>
@@ -229,10 +230,10 @@ export default function RetailSettings(props) {
             </Grid>
             <Grid item xs={12}>
               <FormControl variant="outlined" fullWidth size="small">
-                <Select labelId="slots" value={paladinPlaystyle} onChange={(e) => setPaladinPlaystyle(e.target.value)} MenuProps={menuStyle}>
-                  {paladinPlaystyles.map((key, i) => (
-                    <MenuItem id={key.label} value={key.value} style={{ justifyContent: "center" }}>
-                      {key.label}
+                <Select labelId="slots" value={props.player.activeModelID[props.contentType]} onChange={(e) => updateSpecBuild(e.target.value)} MenuProps={menuStyle}>
+                  {specBuilds.map((key, i) => (
+                    <MenuItem id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
+                      {key.modelName}
                     </MenuItem>
                   ))}
                 </Select>
@@ -240,9 +241,6 @@ export default function RetailSettings(props) {
             </Grid>
           </Grid>
         </Grid>
-      ) : (
-        ""
-      )} */}
       {/* ----------------------------------------- Auto Socket Items ---------------------------------------- */}
       {props.autoSocket === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>

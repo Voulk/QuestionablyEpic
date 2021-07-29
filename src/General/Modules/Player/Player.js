@@ -360,6 +360,11 @@ class Player {
     return this.castModels[this.activeModelID[contentType]];
   }
 
+  // TODO: Add a content type filter.
+  getAllModels = (contentType) => {
+    return this.castModels; 
+  }
+
   getHPS = (contentType) => {
     return this.getActiveModel(contentType).getFightInfo("hps");
   };
@@ -475,11 +480,14 @@ class Player {
       Dungeon: new CastModel(spec, "Dungeon"),
     };
 
-    this.castModels.push(new CastModel(spec, "Raid"))
-    this.castModels.push(new CastModel(spec, "Dungeon"))
+
     //console.log(this.castModels);
 
     if (spec === SPEC.RESTODRUID) {
+
+      this.castModels.push(new CastModel(spec, "Raid", "Default"))
+      this.castModels.push(new CastModel(spec, "Dungeon", "Default"))
+
       this.activeStats = {
         intellect: 1800,
         haste: 790,
@@ -491,7 +499,14 @@ class Player {
       this.statWeights.Raid = druidDefaultStatWeights("Raid");
       this.statWeights.Dungeon = druidDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
+
     } else if (spec === SPEC.HOLYPALADIN) {
+
+      this.castModels.push(new CastModel(spec, "Raid", "PaladinKyrian", 0)) 
+      this.castModels.push(new CastModel(spec, "Raid", "PaladinMaraads", 1))
+      this.castModels.push(new CastModel(spec, "Raid", "PaladinVenthyr", 2))
+      this.castModels.push(new CastModel(spec, "Dungeon", "Default", 3))
+
       this.activeStats = {
         intellect: 1800,
         haste: 800,
@@ -504,8 +519,11 @@ class Player {
       this.statWeights.Raid = paladinDefaultStatWeights("Raid");
       this.statWeights.Dungeon = paladinDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
+
     } else if (spec === SPEC.RESTOSHAMAN) {
       // all of this needs a proper input once
+      this.castModels.push(new CastModel(spec, "Raid", "Default"))
+      this.castModels.push(new CastModel(spec, "Dungeon", "Default"))
       this.activeStats = {
         intellect: 1800,
         haste: 125,
@@ -517,7 +535,12 @@ class Player {
       this.statWeights.Raid = shamanDefaultStatWeights("Raid");
       this.statWeights.Dungeon = shamanDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
+
     } else if (spec === SPEC.DISCPRIEST) {
+
+      this.castModels.push(new CastModel(spec, "Raid", "Default"))
+      this.castModels.push(new CastModel(spec, "Dungeon", "Default"))
+
       this.activeStats = {
         intellect: 1800,
         haste: 700,
@@ -530,7 +553,10 @@ class Player {
       this.statWeights.Raid = discPriestDefaultStatWeights("Raid");
       this.statWeights.Dungeon = discPriestDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
+
     } else if (spec === SPEC.HOLYPRIEST) {
+      this.castModels.push(new CastModel(spec, "Raid", "Default"))
+      this.castModels.push(new CastModel(spec, "Dungeon", "Default"))
       this.activeStats = {
         intellect: 1800,
         haste: 125,
@@ -543,7 +569,12 @@ class Player {
       this.statWeights.Raid = holyPriestDefaultStatWeights("Raid");
       this.statWeights.Dungeon = holyPriestDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
+
     } else if (spec === SPEC.MISTWEAVERMONK) {
+
+      this.castModels.push(new CastModel(spec, "Raid", "Default"))
+      this.castModels.push(new CastModel(spec, "Dungeon", "Default"))
+
       this.activeStats = {
         intellect: 1800,
         haste: 400,

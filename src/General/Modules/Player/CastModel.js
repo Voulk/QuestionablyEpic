@@ -2,14 +2,16 @@ import { createModifiersFromModifierFlags } from "typescript";
 import SPEC from "../../Engine/SPECS";
 import { druidDefaultSpecialQueries, druidDefaultSpellData } from "./ClassDefaults/DruidDefaults";
 import { paladinDefaultSpecialQueries, paladinDefaultSpellData } from "./ClassDefaults/Paladin/PaladinDefaults";
+import { paladinMaraadsSpellData, paladinMaraadsSpecialQueries } from "./ClassDefaults/Paladin/PaladinMaraadsRaid";
 import { shamanDefaultSpecialQueries, shamanDefaultSpellData } from "./ClassDefaults/ShamanDefaults";
 import { monkDefaultSpecialQueries, monkDefaultSpellData } from "./ClassDefaults/MonkDefaults";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData } from "./ClassDefaults/HolyPriestDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData } from "./ClassDefaults/DiscPriestDefaults";
 
 class CastModel {
-  constructor(spec, contentType, modelID) {
+  constructor(spec, contentType, modelID, arrID) {
     this.contentType = contentType;
+    this.arrayID = arrID;
     this.setDefaults(spec, contentType, modelID);
   }
 
@@ -20,6 +22,8 @@ class CastModel {
   reportID = "";
   bossName = "";
   statWeights = {};
+  modelName = "";
+  arrayID = 0;
 
   setSpellList = (spellListing) => {
     this.spellList = spellListing;
@@ -70,11 +74,19 @@ class CastModel {
     } else if (spec === SPEC.HOLYPALADIN) {
 
       if (modelID === "PaladinKyrian") {
+        this.modelName = "Kyrian Default"
         spellList = paladinDefaultSpellData(contentType);
         specialQueries = paladinDefaultSpecialQueries(contentType);
         this.fightInfo.dps = 1650;
       }
       else if (modelID === "PaladinMaraads") {
+        this.modelName = "Venthyr + Maraads"
+        spellList = paladinMaraadsSpellData(contentType);
+        specialQueries = paladinMaraadsSpecialQueries(contentType);
+        this.fightInfo.dps = 1650;
+      }
+      else if (modelID === "PaladinVenthyr") {
+        this.modelName = "Venthyr Default";
         spellList = paladinMaraadsSpellData(contentType);
         specialQueries = paladinMaraadsSpecialQueries(contentType);
         this.fightInfo.dps = 1650;
