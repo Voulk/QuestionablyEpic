@@ -152,7 +152,7 @@ export default function SoulbindNode(props) {
   const trait = props.soulbindTrait;
   const type = "type" in trait ? trait.type : "Soulbind"; // Soulbind, Potency Conduit, Endurance Conduit, Finesse Conduit
   const name = getLocalizedName(trait, type, currentLanguage);
-  const icon = process.env.PUBLIC_URL + "/Images/Icons/" + trait.icon;
+  const icon = process.env.PUBLIC_URL + "/Images/Interface/SoulbindExploration/TraitIcons/" + trait.icon;
 
   /* ----- if trait.enhanced > than current renown, normal container, else enhanced container ----- */
   const containerIcon =
