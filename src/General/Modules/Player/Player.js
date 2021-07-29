@@ -360,6 +360,10 @@ class Player {
     return this.castModels[this.activeModelID[contentType]];
   }
 
+  setModelID = (id, contentType) => {
+    this.activeModelID[contentType] = id
+  }
+
   // TODO: Add a content type filter.
   getAllModels = (contentType) => {
     return this.castModels; 
