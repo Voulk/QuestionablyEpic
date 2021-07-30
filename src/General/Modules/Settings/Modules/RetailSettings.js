@@ -56,8 +56,6 @@ export default function RetailSettings(props) {
 
 
   const specBuilds = props.player.getAllModels()
-  console.log(specBuilds);
-  console.log("Currently selected: " + props.player.activeModelID[props.contentType])
 
   const updateHymnal = (value) => {
     props.editSettings("hymnalAllies", setBounds(value, 0, 4));

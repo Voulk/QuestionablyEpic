@@ -97,6 +97,20 @@ class CastModel {
       specialQueries = shamanDefaultSpecialQueries(contentType);
       this.fightInfo.dps = 725;
     } else if (spec === SPEC.MISTWEAVERMONK) {
+
+      if (modelID === "Default") {
+        this.modelName = "Default"
+        spellList = monkDefaultSpellData(contentType);
+        specialQueries = monkDefaultSpecialQueries(contentType);
+        this.fightInfo.dps = 1200;
+      }
+      if (modelID === "SinTeachings") {
+        this.modelName = "Venthyr & Sinister Teachings"
+        spellList = monkDefaultSpellData(contentType);
+        specialQueries = monkDefaultSpecialQueries(contentType);
+        this.fightInfo.dps = 1200;
+      }
+
       spellList = monkDefaultSpellData(contentType);
       specialQueries = monkDefaultSpecialQueries(contentType);
       this.fightInfo.dps = 1180;

@@ -575,9 +575,12 @@ class Player {
       this.statWeights.DefaultWeights = true;
 
     } else if (spec === SPEC.MISTWEAVERMONK) {
+      const models = [{identifier: "Default", content: "Raid"}, {identifier: "SinTeachings", content: "Raid"},
+                      {identifier: "Default", content: "Dungeon"}]
 
-      this.castModels.push(new CastModel(spec, "Raid", "Default"))
-      this.castModels.push(new CastModel(spec, "Dungeon", "Default"))
+
+      models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)))
+
 
       this.activeStats = {
         intellect: 1800,
