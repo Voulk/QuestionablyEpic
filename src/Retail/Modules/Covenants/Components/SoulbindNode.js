@@ -152,20 +152,20 @@ export default function SoulbindNode(props) {
   const trait = props.soulbindTrait;
   const type = "type" in trait ? trait.type : "Soulbind"; // Soulbind, Potency Conduit, Endurance Conduit, Finesse Conduit
   const name = getLocalizedName(trait, type, currentLanguage);
-  const icon = process.env.PUBLIC_URL + "/Images/Interface/SoulbindExploration/TraitIcons/" + trait.icon;
+  const icon = process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Icons/" + trait.icon;
 
   /* ----- if trait.enhanced > than current renown, normal container, else enhanced container ----- */
   const containerIcon =
     trait.enhanced > currentRenown
-      ? "/Images/Interface/soulbindcontainer" + (type.includes("Conduit") ? "hex" : "circle") + (trait.active ? "active" : "") + ".png"
-      : "/Images/Interface/soulbindcontainer" + (type.includes("Conduit") ? "hexenhanced" : "circle") + (trait.active ? "active" : "") + ".png";
+      ? "/Images/Interface/CovenantExploration/UI/soulbindcontainer" + (type.includes("Conduit") ? "hex" : "circle") + (trait.active ? "active" : "") + ".png"
+      : "/Images/Interface/CovenantExploration/UI/soulbindcontainer" + (type.includes("Conduit") ? "hexenhanced" : "circle") + (trait.active ? "active" : "") + ".png";
 
   const conduitTag = type.includes("Potency")
-    ? "/Images/Interface/PotencyConduitImg.png"
+    ? "/Images/Interface/CovenantExploration/UI/PotencyConduitImg.png"
     : type.includes("Endurance Conduit")
-    ? "/Images/Interface/EnduranceConduitImg.png"
+    ? "/Images/Interface/CovenantExploration/UI/EnduranceConduitImg.png"
     : type.includes("Finesse Conduit")
-    ? "/Images/Interface/FinesseConduitImg.png"
+    ? "/Images/Interface/CovenantExploration/UI/FinesseConduitImg.png"
     : "";
 
   const covenantName = getCovenant(trait.soulbind);
