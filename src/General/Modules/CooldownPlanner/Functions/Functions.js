@@ -49,6 +49,30 @@ export function reduceTimestamps(array) {
   return timestampSum;
 }
 
+// reduces array provided by timestamp. returns multiple abilities to one timestamp
+export function reduceTimestampshealth(array, playersInRaid) {
+  let timestampSum = array.reduce((acc, cur) => {
+    acc[cur.timestamp] = array.reduce((x, n) => {
+      let count = 0;
+      for (let prop in n) {
+        if (cur.timestamp === n.timestamp)
+          if (x.hasOwnProperty(prop)) {
+            x[prop] += n[prop];
+          } else x[prop] = n[prop];
+      }
+      x.timestamp = cur.timestamp;
+      // x.health = x.health;
+      return x;
+    }, {});
+    return acc;
+  }, {});
+
+  console.log(Object.entries(timestampSum));
+  let newArrayOfObjects = [];
+  Object.entries(timestampSum).map((key) => newArrayOfObjects.push(key[1]));
+  return newArrayOfObjects;
+}
+
 // returns fight duration Time end - time start of log
 export function fightDuration(time1, time2) {
   return time1 - time2;
@@ -564,4 +588,89 @@ export async function importSummaryData(starttime, endtime, reportid) {
 
 export function colorGenerator(brewerCode, numberOfColours) {
   return chroma.scale(brewerCode).colors(numberOfColours);
+}
+
+export async function importRaidHealth(starttime, endtime, reportid) {
+  const APIdamagetaken = "https://www.warcraftlogs.com:443/v1/report/tables/resources/";
+  const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
+  const START = "?start=";
+  const END = "&end=";
+  const HOSTILITY = "&hostility=0";
+  const ABILITYID = "&abilityid=1000";
+  let health = [];
+  let health2 = [];
+  let reducedHealth = [];
+  let nextpage = 0;
+
+  // await axios
+  //   .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + ABILITYID + API2)
+  //   .then((result) => {
+  //     result.data.series
+  //       .filter((key) => key.type !== "Pet")
+  //       .map((key) => key.data.map((key2) => health.push({ timestamp: moment(fightDuration(key2[0], starttime)).startOf("second").valueOf(), health: key2[1] })));
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   });
+
+  await axios
+    .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + ABILITYID + API2)
+    .then((result) => {
+      const data = result.data;
+      const players = data.series.filter((key) => key.type !== "Pet");
+
+      const entities = [];
+      players.forEach((series) => {
+        const newSeries = {
+          ...series,
+          lastValue: 100,
+          data: {},
+        };
+
+        series.data.forEach((item) => {
+          const milisecondsIntoFight = moment(item[0] - starttime)
+            .startOf("second")
+            .valueOf();
+
+          const health = item[1];
+          newSeries.data[milisecondsIntoFight] = Math.min(100, health);
+        });
+        entities.push(newSeries);
+      });
+
+      const fightDurationInSeconds = moment(endtime - starttime).startOf("second");
+      console.log(fightDurationInSeconds);
+      for (let i = 0; i <= fightDurationInSeconds; i += 1000) {
+        entities.forEach((series) => {
+          series.data[i] = series.data[i] !== undefined ? series.data[i] : series.lastValue;
+          series.lastValue = series.data[i];
+        });
+      }
+      const raidHealth = entities.map((player) => {
+        const data = Object.entries(player.data).map(([key, value]) => ({
+          timestamp: Number(key),
+          "Raid Health": value,
+        }));
+        return data;
+      });
+      health = raidHealth;
+    })
+
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  let arr = [];
+  Object.entries(health)
+    .map((key) => key)
+    .map((key2) => key2[1])
+    .map((map2) => {
+      map2.map((object) => {
+        arr.push(object);
+      });
+    });
+
+  arr.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
+  health2 = reduceTimestampshealth(arr, health.length);
+  return health2;
 }

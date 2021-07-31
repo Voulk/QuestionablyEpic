@@ -10,6 +10,50 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 17,
+    date: "27th July",
+    changes: [
+      "Adjusted the power of set bonuses due to nerfs on live servers & then reverted them again."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 15,
+    date: "26th July",
+    changes: [
+      "Fixed a bug where higher rank dom set bonuses were being calculated at a lower rank."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 14,
+    date: "21st July",
+    changes: [
+      "Added Warlords of Draenor Timewalking items.",
+      "Mistweaver: Added formulas for multiple legendaries.",
+      "Adjusted Domination Set bonuses with live data. Removed their value in the Dungeon setting."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 13,
+    date: "18th July",
+    changes: [
+      "Added a formula for the Celestial Spirits legendary.",
+      "The Upgrade Finder upgrades-by-slot tab will now show item sources."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 12,
+    date: "16th July",
+    changes: [
+      "Added Set Bonus Ranks.",
+      "Added Forbidden Necromantic Tome."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 11,
     date: "14th July",
     changes: [

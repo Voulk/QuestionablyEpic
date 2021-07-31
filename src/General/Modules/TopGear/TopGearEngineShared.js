@@ -21,8 +21,6 @@ export function buildDifferential(itemSet, primeSet, player, contentType) {
         scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
         rawDifference: Math.round((itemSet.hardScore - primeSet.hardScore) / player.getInt(contentType) * player.getHPS(contentType)),
     };
-    //console.log("Prime List: " + JSON.stringify(primeSet));
-    //console.log("Diff List: " + JSON.stringify(diffList))
 
     for (var x = 0; x < primeList.length; x++) {
         if (primeList[x].uniqueHash !== diffList[x].uniqueHash) {    

@@ -153,7 +153,7 @@ const fillLegendaries = (container, spec, player, contentType) => {
       "Tear of Morning",
       // "Vitality Sacrifice",
       // "Sephuz's Proclamation",
-      "Echo of Eonar",
+      // "Echo of Eonar",
       "Call to Arms",
       "Bountiful Brew",
       "Faeline Harmony",

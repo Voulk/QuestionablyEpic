@@ -72,7 +72,7 @@ export default function CooldownTimeline(props) {
               fontSize: 14,
             },
             render: (rowData) => (
-              <div style={{ color: classColoursJS(rowData.class) }}>
+              <div style={{ color: classColoursJS(rowData.class), display: "inline-flex" }}>
                 {classIcons(rowData.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
                 {rowData.name}
               </div>
@@ -94,7 +94,7 @@ export default function CooldownTimeline(props) {
               fontSize: 14,
             },
             render: (rowData) => (
-              <div>
+              <div style={{ display: "inline-flex"}}>
                 {abilityIcons(rowData.guid, {
                   height: 20,
                   width: 20,

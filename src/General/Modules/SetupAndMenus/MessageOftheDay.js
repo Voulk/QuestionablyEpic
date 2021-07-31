@@ -4,7 +4,7 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay = [
-    "9.1: The Shadowed Orb & Titanic Ocular Gland buffs are live in all modules.",
+    "The Set Bonus nerfs that briefly hit live servers have been reverted.",
 ];
 
   return (

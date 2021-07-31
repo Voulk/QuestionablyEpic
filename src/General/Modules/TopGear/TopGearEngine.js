@@ -66,7 +66,7 @@ function autoGemVault(itemList, userSettings) {
 }
 
 export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
-  console.log(userSettings);
+  //console.log(userSettings);
   //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
   //console.log("CL::::" + currentLanguage);
   var t0 = performance.now();
@@ -282,8 +282,6 @@ function buildDifferential(itemSet, primeSet, player, contentType) {
     scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
     rawDifference: Math.round((itemSet.hardScore - primeSet.hardScore) / player.getInt(contentType) * player.getHPS(contentType)),
   };
-  //console.log("Prime List: " + JSON.stringify(primeSet));
-  //console.log("Diff List: " + JSON.stringify(diffList))
 
   for (var x = 0; x < primeList.length; x++) {
     if (primeList[x].uniqueHash !== diffList[x].uniqueHash) {    
@@ -296,7 +294,6 @@ function buildDifferential(itemSet, primeSet, player, contentType) {
       
     }
   }
-  //console.log("D:" + JSON.stringify(differentials));
   return differentials;
 }
 
@@ -407,7 +404,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
   applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
   // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
-  //console.log("Base: " + JSON.stringify(adjusted_weights));
   adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;
   adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.Retail.CRIT)) / 2;
   adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.Retail.VERSATILITY)) / 2;
@@ -415,7 +411,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.Retail.LEECH)) / 2;
   addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
   
-  //console.log("Adj: " + JSON.stringify(adjusted_weights));
   // Calculate a hard score using the rebalanced stat weights.
 
   for (var stat in setStats) {
@@ -428,9 +423,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     }
   }
 
-  //console.log(JSON.stringify(setStats));
-  //console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
-  //console.log("Enchants: " + JSON.stringify(enchants));
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
@@ -511,14 +503,6 @@ export function applyDiminishingReturns(stats) {
     } 
   }
     
-    //console.log("Stat: " + stats[i])
-
-  /*
-
-  */
-  //console.log("Stats Post-DR" + JSON.stringify(stats))
-  //console.log("Stats Post-DR", + JSON.stringify(stats))
-
   return stats;
 
 }

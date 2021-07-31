@@ -37,12 +37,6 @@ export function checkSocketBonus(socketsAvailable, socketedGems) {
     else if (socketsAvailable[i] === "red" && (socketedGems[i] !== "red" && socketedGems[i] !== "purple" && socketedGems[i] !== "orange")) match = false;
     else if (socketsAvailable[i] === "yellow" && (socketedGems[i] !== "yellow" && socketedGems[i] !== "green" && socketedGems[i] !== "orange")) match = false;
   }
-  /*
-  console.log("Checking for Socket Bonus")
-  console.log(socketedGems);
-  console.log(socketsAvailable);
-  console.log("Match: " + match);
-  */
   return match;
 
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, Tooltip, Legend } from "recharts";
+import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, Tooltip, Legend, ComposedChart, Line } from "recharts";
 import chroma from "chroma-js";
 import "./Chart.css";
 import moment from "moment";
@@ -136,6 +136,7 @@ class Chart extends Component {
   };
 
   render() {
+    // console.log(this.props.unmitigated)
     // Shortens long numbers i.e 1000000 will be 1M
     const DataFormater = (number) => {
       if (number > 1000000000) {
@@ -153,7 +154,7 @@ class Chart extends Component {
     return (
       <Paper style={{ padding: 10 }} elevation={0}>
         <ResponsiveContainer className="ResponsiveContainer" aspect={4 / 0.8}>
-          <AreaChart data={this.data2Show(this.props.dataToShow, this.props.cooldownsToShow )} margin={{ left: 22, right: -44 }} width="100%">
+          <ComposedChart data={this.data2Show(this.props.dataToShow, this.props.cooldownsToShow)} margin={{ left: 22, right: -44 }} width="100%">
             <XAxis
               dataKey="timestamp"
               scale="time"
@@ -178,6 +179,7 @@ class Chart extends Component {
               }}
             />
             <YAxis yAxisId="2" orientation="right" stroke="#f5f5f5" tick={false} domain={["dataMin", 5]} />
+            <YAxis yAxisId="3" orientation="right" stroke="#f5f5f5" tick={false} domain={[0, "dataMax"]} hide={true} />
             <Legend
               verticalAlign="bottom"
               iconType="square"
@@ -201,7 +203,8 @@ class Chart extends Component {
               labelFormatter={(timeStr) => moment(timeStr).format("mm:ss")}
             />
             {this.drawAreas(this.props.cooldownsToShow === true ? this.props.cooldown : this.props.customCooldowns)}
-          </AreaChart>
+            <Line yAxisId="3" type="monotone" dataKey="Raid Health" stroke="#FF0000" dot={false} />
+          </ComposedChart>
         </ResponsiveContainer>
       </Paper>
     );

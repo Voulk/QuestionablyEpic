@@ -52,7 +52,7 @@ export default class BCChart extends PureComponent {
     const currentLanguage = i18n.language;
     const data = this.props.data;
     const db = this.props.db;
-    
+
     let arr = [];
     let cleanedArray = [];
     console.log(data);
@@ -75,7 +75,7 @@ export default class BCChart extends PureComponent {
       return (
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
-            <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
+            <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "BurningCrusade"), 32)}
             </text>
             <a data-wowhead={"item=" + payload.value + "&ilvl=200" + "&domain=tbc-" + currentLanguage}>
@@ -130,7 +130,6 @@ export default class BCChart extends PureComponent {
           {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
           {/*<Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" /> */}
           <Bar dataKey={100} fill={"#e6bc53"} stackId="a" />
-
         </BarChart>
       </ResponsiveContainer>
     );
