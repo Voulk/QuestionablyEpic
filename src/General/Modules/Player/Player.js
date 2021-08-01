@@ -361,7 +361,17 @@ class Player {
   }
 
   setModelID = (id, contentType) => {
-    this.activeModelID[contentType] = id
+    if ((contentType === "Raid" || contentType === "Dungeon") && id && id < this.castModels.length) {
+      // Check that it's a valid ID.
+      this.activeModelID[contentType] = id;
+    }
+    else {
+      // This is a critical error that could crash the app so we'll reset models to defaults
+      this.activeModelID["Raid"] = 0;
+      this.activeModelID["Dungeon"] = 1;
+      reportError(this, "Player", "Attempt to set invalid Model ID", id);
+    }
+    
   }
 
   // TODO: Add a content type filter.
@@ -374,7 +384,6 @@ class Player {
     else {
       return this.castModels; 
     }
-    
   }
 
   getHPS = (contentType) => {
@@ -515,9 +524,10 @@ class Player {
     } else if (spec === SPEC.HOLYPALADIN) {
 
       this.castModels.push(new CastModel(spec, "Raid", "PaladinKyrian", 0)) 
-      this.castModels.push(new CastModel(spec, "Raid", "PaladinMaraads", 1))
-      this.castModels.push(new CastModel(spec, "Raid", "PaladinVenthyr", 2))
-      this.castModels.push(new CastModel(spec, "Dungeon", "Default", 3))
+      this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1))
+      this.castModels.push(new CastModel(spec, "Raid", "PaladinMaraads", 2))
+      this.castModels.push(new CastModel(spec, "Raid", "PaladinVenthyr", 3))
+      
 
       this.activeStats = {
         intellect: 1800,
@@ -583,8 +593,9 @@ class Player {
       this.statWeights.DefaultWeights = true;
 
     } else if (spec === SPEC.MISTWEAVERMONK) {
-      const models = [{identifier: "Default", content: "Raid"}, {identifier: "SinTeachings", content: "Raid"},
-                      {identifier: "Default", content: "Dungeon"}]
+      const models = [{identifier: "Raid Default", content: "Raid"}, {identifier: "Dungeon Default", content: "Dungeon"}, 
+                      {identifier: "SinTeachings", content: "Raid"}]
+                      
 
 
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)))
