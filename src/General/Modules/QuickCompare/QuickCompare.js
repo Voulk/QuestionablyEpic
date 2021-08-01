@@ -13,7 +13,7 @@ import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 import { useSelector } from "react-redux";
 import Settings from "../Settings/Settings";
 import userSettings from "../Settings/SettingsObject";
-import ItemAddbar from "./ItemAddBar";
+import ItemBar from "../ItemBar/ItemBar";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -178,7 +178,7 @@ export default function QuickCompare(props) {
           <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} />
         </Grid> */}
 
-        <ItemAddbar player={props.player} setItemList={setItemList} />
+        <ItemBar player={props.player} setItemList={setItemList} />
 
         {/* -------------------------------------------------------------------------- */
         /*                             Header/Item Mapping                            */

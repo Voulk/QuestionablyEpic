@@ -8,7 +8,6 @@ import MuiAlert from "@material-ui/lab/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
 import BCItem from "../Player/BCItem";
-import "./QuickCompare.css";
 import { getItemDB, getValidArmorTypes, getValidWeaponTypes, getItemProp, scoreItem } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
@@ -79,7 +78,7 @@ function getSlots() {
   return slots;
 }
 
-export default function ItemAddBar(props) {
+export default function ItemBar(props) {
   const contentType = useSelector((state) => state.contentType);
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;

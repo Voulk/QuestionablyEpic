@@ -17,7 +17,7 @@ import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
-import ItemAddBar from "../QuickCompare/ItemAddBar";
+import ItemBar from "../ItemBar/ItemBar";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -241,7 +241,7 @@ export default function TopGear(props) {
           {<UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />}
         </Grid>
         <Grid item xs={12}>
-          {<ItemAddBar player={props.player} setItemList={setItemList} />}
+          {<ItemBar player={props.player} setItemList={setItemList} />}
         </Grid>
         <Grid item xs={12}>
           {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
