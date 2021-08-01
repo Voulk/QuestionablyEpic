@@ -366,7 +366,15 @@ class Player {
 
   // TODO: Add a content type filter.
   getAllModels = (contentType) => {
-    return this.castModels; 
+    if (contentType) {
+      return this.castModels.filter(function (model) {
+        return model.contentType == contentType;
+      });
+    }
+    else {
+      return this.castModels; 
+    }
+    
   }
 
   getHPS = (contentType) => {

@@ -55,7 +55,7 @@ export default function RetailSettings(props) {
   const [dominationSocket, setDominationSocket] = useState(props.userSettings.vaultDomGem);
 
 
-  const specBuilds = props.player.getAllModels()
+  const specBuilds = props.player.getAllModels(props.contentType)
 
   const updateHymnal = (value) => {
     props.editSettings("hymnalAllies", setBounds(value, 0, 4));
