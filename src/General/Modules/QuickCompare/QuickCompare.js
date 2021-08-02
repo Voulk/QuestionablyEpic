@@ -11,7 +11,7 @@ import BCItem from "../Player/BCItem";
 import "./QuickCompare.css";
 //import { itemDB } from "../../Databases/ItemDB";
 import { itemDB } from "../../../Databases/ItemDB";
-import { getItemDB, getValidArmorTypes, getValidWeaponTypes, getItemProp, scoreItem, buildWepCombos } from "../../Engine/ItemUtilities";
+import { getItemDB, getValidArmorTypes, getValidWeaponTypes, getItemProp, scoreItem, buildWepCombos, getGemIcon } from "../../Engine/ItemUtilities";
 import ItemCard from "./ItemCard";
 import HelpText from "../SetupAndMenus/HelpText";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
@@ -483,7 +483,7 @@ export default function QuickCompare(props) {
                                   borderRadius: 4,
                                   border: "1px solid rgba(255, 255, 255, 0.12)",
                                 }}
-                                src={process.env.PUBLIC_URL + "/Images/Icons/" + key.icon + ".jpg"}
+                                src={getGemIcon(key.gemID)}
                                 alt={key.name[currentLanguage]}
                               />
                             </a>
