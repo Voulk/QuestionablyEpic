@@ -4200,7 +4200,7 @@ export const soulbindDB = [
       de: "Immer Zeit für ein Teekränzchen",
     },
     // TODO: Missing Actual Icon
-    icon: "trade_engineering.jpg",
+    icon: "archaeology_5_0_pandarenteaset.jpg",
     soulbind: "Theotar",
     position: [9, 0],
     renown: 45,
@@ -4227,25 +4227,6 @@ export const soulbindDB = [
 
   /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
-    id: 8196767,
-    names: {
-      en: "Endurance Conduit",
-      cn: "韧如树皮",
-      fr: "Intermédiaire d’endurance",
-      ru: "Проводник выносливости",
-      de: "Widerstandsmedium",
-    },
-    icon: "EmptyConduit.jpg",
-    soulbind: "Theotar",
-    position: [10, 0],
-    renown: 49,
-    active: false,
-    stat_bonus: {},
-    type: "Endurance Conduit",
-    slotted_id: -1,
-    enhanced: 79,
-  },
-  {
     id: 8196768,
     names: {
       en: "Finesse Conduit",
@@ -4256,11 +4237,30 @@ export const soulbindDB = [
     },
     icon: "EmptyConduit.jpg",
     soulbind: "Theotar",
-    position: [10, 2],
+    position: [10, 0],
     renown: 49,
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 79,
+  },
+  {
+    id: 8196767,
+    names: {
+      en: "Endurance Conduit",
+      cn: "韧如树皮",
+      fr: "Intermédiaire d’endurance",
+      ru: "Проводник выносливости",
+      de: "Widerstandsmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Theotar",
+    position: [10, 2],
+    renown: 49,
+    active: false,
+    stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
     enhanced: 79,
   },
 
@@ -4275,8 +4275,7 @@ export const soulbindDB = [
       ru: "Дух праздника",
       de: "Partyaufmerksamkeiten",
     },
-    // TODO: Missing Actual Icon
-    icon: "trade_engineering.jpg",
+    icon: "inv_misc_food_vendor_roastedbarlytea.jpg",
     soulbind: "Theotar",
     position: [11, 1],
     renown: 54,
@@ -4671,7 +4670,7 @@ export const soulbindDB = [
       de: "Schlachtfeldpräsenz",
     },
     // TODO: Missing Actual Icon
-    icon: "trade_engineering.jpg",
+    icon: "achievement_bg_3flagcap_nodeaths.jpg",
     soulbind: "Draven",
     position: [11, 1],
     renown: 57,

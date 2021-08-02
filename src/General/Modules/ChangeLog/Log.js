@@ -10,6 +10,22 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 17,
+    date: "27th July",
+    changes: [
+      "Adjusted the power of set bonuses due to nerfs on live servers & then reverted them again."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 15,
+    date: "26th July",
+    changes: [
+      "Fixed a bug where higher rank dom set bonuses were being calculated at a lower rank."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 14,
     date: "21st July",
     changes: [

@@ -68,7 +68,7 @@ export const shamanDefaultSpecialQueries = (contentType) => {
         oneMinute: 1.1,
         ninetySeconds: 1,
         twoMinutes: 1.1,
-        twoMinutesOrb: 1.1,
+        twoMinutesOrb: 1.07,
         threeMinutes: 1.3,
       },
       HoldYourGroundUptime: 0.8

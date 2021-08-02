@@ -4,7 +4,7 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay = [
-    "9.1: Blizzard continue to make hotfixes. Continue checking back for up to date information.",
+    "The Set Bonus nerfs that briefly hit live servers have been reverted.",
 ];
 
   return (

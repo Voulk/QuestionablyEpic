@@ -41,6 +41,7 @@ describe("Shard of Zed Data Check", () => {
     });
 });
 
+/*
 describe("Chaos Bane Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeEffect = effectData.find((effect) => effect.name === "Chaos Bane");
@@ -54,7 +55,7 @@ describe("Chaos Bane Data Check", () => {
         let effect = activeEffect.effects[effectNum];
         expect(getProcessedValue(effect.coefficient[0], effect.table, 174, 1, true)).toBe(expectedResult);
     });
-});
+});*/
 
 describe("Shard of Rev Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
@@ -131,7 +132,7 @@ describe("Shard of Dyz Data Check", () => {
         expect(Math.round(getProcessedValue(effect.coefficient[rank], effect.table, 174, 1, false))).toBe(expectedResult);
     });
 });
-
+/*
 describe("Blood Link Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeEffect = effectData.find((effect) => effect.name === "Blood Link");
@@ -145,4 +146,4 @@ describe("Blood Link Data Check", () => {
         console.log(effect);
         expect(getProcessedValue(effect.coefficient[0], effect.table, 174, 1, true)).toBe(expectedResult);
     });
-});
+}); */
