@@ -276,7 +276,7 @@ export default function ItemCard(props) {
               <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
                 <Grid item xs={11}>
                   <Typography variant="subtitle2" wrap="nowrap" display="block" style={{ paddingTop: 0, paddingLeft: 4 }} align="left">
-                    {props.item.domGemID !== 0 ? (
+                    {(props.item.domGemID !== 0 && gameType === "Retail") ? (
                       <a data-wowhead={"item=" + props.item.domGemID + "&domain=" + wowheadDom}>
                         <img
                           style={{
