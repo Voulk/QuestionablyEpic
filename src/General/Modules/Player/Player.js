@@ -374,7 +374,6 @@ class Player {
     
   }
 
-  // TODO: Add a content type filter.
   getAllModels = (contentType) => {
     if (contentType) {
       return this.castModels.filter(function (model) {
@@ -382,7 +381,7 @@ class Player {
       });
     }
     else {
-      return this.castModels; 
+      return this.castModels;
     }
   }
 
