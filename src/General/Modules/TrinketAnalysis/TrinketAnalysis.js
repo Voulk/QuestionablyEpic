@@ -91,8 +91,130 @@ export default function TrinketAnalysis(props) {
 
   const { t } = useTranslation();
   const [metric, setMetric] = React.useState("hps");
-  const [sources, setSources] = React.useState(() => ["World Quests", "Raids", "Dungeons"]);
-console.log(sources)
+  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]);
+
+  const sourceHandler = (array, sources) => {
+    let results = [];
+    const shadowlandsRaids = [
+      /* --------------------------------------- Castle Nathria --------------------------------------- */
+      1190,
+      /* ------------------------------------ Sanctum of Domination ----------------------------------- */
+      1193,
+    ];
+    const shadowlandsDungeons = [
+      /* -------------------------------------- General Dungeons -------------------------------------- */
+      -1,
+      /* ------------------------------------------ Tazavesh ------------------------------------------ */
+      1194,
+    ];
+    const shadowlandsTheRest = [
+      undefined,
+      /* ---------------------------------------- World Bosses ---------------------------------------- */
+      1192,
+    ];
+    /* --------------------------------- The Rest & Raids & Dungeons -------------------------------- */
+    if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Dungeons") === true) {
+      results = array;
+    }
+    /* ------------------------------- The Rest & Raids / NO DUNGEONS ------------------------------- */
+    if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Dungeons") === false) {
+      results = array.filter((item) => {
+        if (
+          /* -------------------------------- World Quests / Other Sources -------------------------------- */
+          item["sources"] === undefined ||
+          shadowlandsTheRest.includes(item["sources"][0]["instanceId"]) ||
+          /* -------------------------------------------- Raids ------------------------------------------- */
+          shadowlandsRaids.includes(item["sources"][0]["instanceId"])
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+    }
+    /* ------------------------------- The Rest & Dungeons / NO RAIDS ------------------------------- */
+    if (sources.includes("The Rest") === true && sources.includes("Raids") === false && sources.includes("Dungeons") === true) {
+      results = array.filter((item) => {
+        if (
+          /* -------------------------------- World Quests / Other Sources -------------------------------- */
+          item["sources"] === undefined ||
+          shadowlandsTheRest.includes(item["sources"][0]["instanceId"]) ||
+          /* ------------------------------------------ Dungeons ------------------------------------------ */
+          shadowlandsDungeons.includes(item["sources"][0]["instanceId"])
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+    }
+    /* ------------------------------- Dungeons & Raids / NO THE REST ------------------------------- */
+    if (sources.includes("The Rest") === false && sources.includes("Raids") === true && sources.includes("Dungeons") === true) {
+      results = array.filter((item) => {
+        if (item["sources"] === undefined) {
+          return false;
+        } else {
+          if (
+            /* ------------------------------------------ Dungeons ------------------------------------------ */
+            shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) ||
+            /* -------------------------------------------- Raids ------------------------------------------- */
+            shadowlandsRaids.includes(item["sources"][0]["instanceId"])
+          ) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      });
+    }
+    /* ---------------------------------------- Dungeons Only --------------------------------------- */
+    if (sources.includes("The Rest") === false && sources.includes("Raids") === false && sources.includes("Dungeons") === true) {
+      results = array.filter((item) => {
+        if (item["sources"] === undefined) {
+          return false;
+        } else {
+          if (
+            /* ------------------------------------------ Dungeons ------------------------------------------ */
+            shadowlandsDungeons.includes(item["sources"][0]["instanceId"])
+          ) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      });
+    }
+    /* ----------------------------------------- Raids Only ----------------------------------------- */
+    if (sources.includes("The Rest") === false && sources.includes("Raids") === true && sources.includes("Dungeons") === false) {
+      results = array.filter((item) => {
+        if (item["sources"] === undefined) {
+          return false;
+        } else {
+          if (shadowlandsRaids.includes(item["sources"][0]["instanceId"])) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      });
+    }
+    /* ---------------------------------------- The Rest Only --------------------------------------- */
+    if (sources.includes("The Rest") === true && sources.includes("Raids") === false && sources.includes("Dungeons") === false) {
+      results = array.filter((item) => {
+        if (item["sources"] === undefined) {
+          return true;
+        } else {
+          if (shadowlandsTheRest.includes(item["sources"][0]["instanceId"])) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      });
+    }
+    console.log(results);
+    return results;
+  };
   const handleSource = (event, newSources) => {
     setSources(newSources);
   };
@@ -104,13 +226,15 @@ console.log(sources)
       key.slot === "Trinket" &&
       ((gameType === "BurningCrusade" && "phase" in key && key.phase < 2 && (!("class" in key) || props.player.getSpec().includes(key.class))) || (gameType === "Retail" && key.levelRange.length > 0)),
   );
+  const filteredTrinketDB = sourceHandler(trinketDB, sources);
+
   const helpText = [t("TrinketAnalysis.HelpText")];
   const classes = useStyles();
 
   let activeTrinkets = [];
 
-  for (var i = 0; i < trinketDB.length; i++) {
-    const trinket = trinketDB[i];
+  for (var i = 0; i < filteredTrinketDB.length; i++) {
+    const trinket = filteredTrinketDB[i];
     let trinketAtLevels = {
       id: trinket.id,
       name: getTranslatedItemName(trinket.id, "en"),
@@ -130,7 +254,7 @@ console.log(sources)
   if (gameType === "BurningCrusade") {
     activeTrinkets.sort((a, b) => (a.i100 < b.i100 ? 1 : -1));
   } else {
-    activeTrinkets.sort((a, b) => (getHighestTrinketScore(trinketDB, a, gameType) < getHighestTrinketScore(trinketDB, b, gameType) ? 1 : -1));
+    activeTrinkets.sort((a, b) => (getHighestTrinketScore(filteredTrinketDB, a, gameType) < getHighestTrinketScore(filteredTrinketDB, b, gameType) ? 1 : -1));
   }
 
   return (
@@ -162,7 +286,7 @@ console.log(sources)
           <Grid container spacing={1} justify="center">
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                {gameType === "Retail" ? <VerticalChart data={activeTrinkets} db={trinketDB} /> : <BCChart data={activeTrinkets} db={trinketDB} />}
+                {gameType === "Retail" ? <VerticalChart data={activeTrinkets} db={filteredTrinketDB} /> : <BCChart data={activeTrinkets} db={trinketDB} />}
               </Paper>
             </Grid>
           </Grid>
