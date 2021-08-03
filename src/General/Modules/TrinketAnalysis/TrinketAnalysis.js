@@ -93,6 +93,9 @@ export default function TrinketAnalysis(props) {
   const [metric, setMetric] = React.useState("hps");
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]);
 
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                    Trinket Source Filtering                                    */
+  /* ---------------------------------------------------------------------------------------------- */
   const sourceHandler = (array, sources) => {
     let results = [];
     const shadowlandsRaids = [
@@ -112,11 +115,17 @@ export default function TrinketAnalysis(props) {
       /* ---------------------------------------- World Bosses ---------------------------------------- */
       1192,
     ];
-    /* --------------------------------- The Rest & Raids & Dungeons -------------------------------- */
+
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   The Rest & Raids & Dungeons                                  */
+    /* ---------------------------------------------------------------------------------------------- */
     if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Dungeons") === true) {
       results = array;
     }
-    /* ------------------------------- The Rest & Raids / NO DUNGEONS ------------------------------- */
+
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 The Rest & Raids / NO DUNGEONS                                 */
+    /* ---------------------------------------------------------------------------------------------- */
     if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Dungeons") === false) {
       results = array.filter((item) => {
         if (
@@ -132,7 +141,10 @@ export default function TrinketAnalysis(props) {
         }
       });
     }
-    /* ------------------------------- The Rest & Dungeons / NO RAIDS ------------------------------- */
+
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 The Rest & Dungeons / NO RAIDS                                 */
+    /* ---------------------------------------------------------------------------------------------- */
     if (sources.includes("The Rest") === true && sources.includes("Raids") === false && sources.includes("Dungeons") === true) {
       results = array.filter((item) => {
         if (
@@ -148,7 +160,10 @@ export default function TrinketAnalysis(props) {
         }
       });
     }
-    /* ------------------------------- Dungeons & Raids / NO THE REST ------------------------------- */
+
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Dungeons & Raids / NO THE REST                                 */
+    /* ---------------------------------------------------------------------------------------------- */
     if (sources.includes("The Rest") === false && sources.includes("Raids") === true && sources.includes("Dungeons") === true) {
       results = array.filter((item) => {
         if (item["sources"] === undefined) {
@@ -167,7 +182,10 @@ export default function TrinketAnalysis(props) {
         }
       });
     }
-    /* ---------------------------------------- Dungeons Only --------------------------------------- */
+
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Dungeons Only                                         */
+    /* ---------------------------------------------------------------------------------------------- */
     if (sources.includes("The Rest") === false && sources.includes("Raids") === false && sources.includes("Dungeons") === true) {
       results = array.filter((item) => {
         if (item["sources"] === undefined) {
@@ -184,7 +202,10 @@ export default function TrinketAnalysis(props) {
         }
       });
     }
-    /* ----------------------------------------- Raids Only ----------------------------------------- */
+
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                           Raids Only                                           */
+    /* ---------------------------------------------------------------------------------------------- */
     if (sources.includes("The Rest") === false && sources.includes("Raids") === true && sources.includes("Dungeons") === false) {
       results = array.filter((item) => {
         if (item["sources"] === undefined) {
@@ -198,7 +219,10 @@ export default function TrinketAnalysis(props) {
         }
       });
     }
-    /* ---------------------------------------- The Rest Only --------------------------------------- */
+
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          The Rest Only                                         */
+    /* ---------------------------------------------------------------------------------------------- */
     if (sources.includes("The Rest") === true && sources.includes("Raids") === false && sources.includes("Dungeons") === false) {
       results = array.filter((item) => {
         if (item["sources"] === undefined) {
@@ -212,9 +236,9 @@ export default function TrinketAnalysis(props) {
         }
       });
     }
-    console.log(results);
     return results;
   };
+
   const handleSource = (event, newSources) => {
     setSources(newSources);
   };
