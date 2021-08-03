@@ -24,6 +24,7 @@ class CastModel {
   statWeights = {};
   modelName = "";
   arrayID = 0;
+  baseStatWeights = {}
 
   setSpellList = (spellListing) => {
     this.spellList = spellListing;
@@ -147,6 +148,11 @@ class CastModel {
     this.setSpellList(spellList);
     this.specialQueries = specialQueries;
   };
+
+  getBaseStatWeights = () => {
+
+
+  }
 
   getClassicDruid = () => {
     return {
