@@ -10,6 +10,18 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 18,
+    date: "3rd August",
+    changes: [
+      "Winds of Winter buffed on live servers by 50%.",
+      "Blood Link buffed on live servers by 20%.",
+      "Multiple in-game bugs with Winds of Winter fixed including Ashen Hallow & Pets",
+      "Bugfix: Fixed the order of two traits in Theotars tree.",
+      "BC: Fixed a bug where Domination Shards could occasionally appear on BC items."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 17,
     date: "27th July",
     changes: [
