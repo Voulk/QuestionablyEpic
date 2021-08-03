@@ -11,7 +11,22 @@ describe("Test Constructor", () => {
 
 });
 
+describe("Test Default Model Weights", () => {
 
+    test("Mistweaver Monk", () => {
+        const monk = new Player("Mock", "Mistweaver Monk", 99, "NA", "Stonemaul", "Night Elf");
+        const starterWeights = {...monk.getActiveModel("Raid").statWeights};
+        console.log(starterWeights);
+        console.log(monk)
+
+        expect(starterWeights.crit).toEqual(monk.getStatWeight("Raid", crit))
+
+    });
+
+
+});
+
+/*
 describe("Test Default Stat Weights", () => {
 
     test("Druid", () => {
@@ -58,7 +73,7 @@ describe("Test Default Stat Weights", () => {
     
     // Can add the other specs below if necessary.
 
-});
+});*/
 
 
 describe("Covenant getters / setters", () => {

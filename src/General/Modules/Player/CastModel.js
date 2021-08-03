@@ -4,7 +4,7 @@ import { druidDefaultSpecialQueries, druidDefaultSpellData } from "./ClassDefaul
 import { paladinDefaultSpecialQueries, paladinDefaultSpellData } from "./ClassDefaults/Paladin/PaladinDefaults";
 import { paladinMaraadsSpellData, paladinMaraadsSpecialQueries } from "./ClassDefaults/Paladin/PaladinMaraadsRaid";
 import { shamanDefaultSpecialQueries, shamanDefaultSpellData } from "./ClassDefaults/ShamanDefaults";
-import { monkDefaultSpecialQueries, monkDefaultSpellData } from "./ClassDefaults/MonkDefaults";
+import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/MonkDefaults";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData } from "./ClassDefaults/HolyPriestDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData } from "./ClassDefaults/DiscPriestDefaults";
 
@@ -97,24 +97,29 @@ class CastModel {
       spellList = shamanDefaultSpellData(contentType);
       specialQueries = shamanDefaultSpecialQueries(contentType);
       this.fightInfo.dps = 725;
+
+      // --- Mistweaver Monk
     } else if (spec === SPEC.MISTWEAVERMONK) {
 
       if (modelID === "Raid Default") {
         this.modelName = "Raid Default"
-        spellList = monkDefaultSpellData(contentType);
-        specialQueries = monkDefaultSpecialQueries(contentType);
+        spellList = monkDefaultSpellData("Raid");
+        specialQueries = monkDefaultSpecialQueries("Raid");
+        this.baseStatWeights = monkDefaultStatWeights("Raid");
         this.fightInfo.dps = 1200;
       }
       else if (modelID === "Dungeon Default") {
         this.modelName = "Dungeon Default"
-        spellList = monkDefaultSpellData(contentType);
+        spellList = monkDefaultSpellData("Dungeon");
         specialQueries = monkDefaultSpecialQueries(contentType);
-        this.fightInfo.dps = 1200;
+        this.baseStatWeights = monkDefaultStatWeights("Dungeon");
+        this.fightInfo.dps = 2100;
       }
       else if (modelID === "SinTeachings") {
         this.modelName = "Venthyr & Sinister Teachings"
         spellList = monkDefaultSpellData(contentType);
         specialQueries = monkDefaultSpecialQueries(contentType);
+        this.baseStatWeights = monkDefaultStatWeights("Raid");
         this.fightInfo.dps = 1200;
       }
 
@@ -150,8 +155,7 @@ class CastModel {
   };
 
   getBaseStatWeights = () => {
-
-
+    return this.baseStatWeights;
   }
 
   getClassicDruid = () => {
