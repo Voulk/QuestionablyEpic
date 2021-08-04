@@ -301,9 +301,9 @@ export default function TrinketAnalysis(props) {
         </Grid> */}
         {gameType === "Retail" ? (
           <Grid item xs={12} container spacing={0} direction="row" justify="space-between">
-            <Grid item>
+            {/* <Grid item>
               <MetricToggle metric={metric} setMetric={setMetric} />
-            </Grid>
+            </Grid> */}
 
             <Grid item>
               <SourceToggle metric={sources} setMetric={handleSource} />
