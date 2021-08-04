@@ -82,8 +82,8 @@ class Player {
     this.realm = realm;
     this.region = region;
     this.race = race;
-    this.statWeights[contentType] = weights;
-    this.statWeights.DefaultWeights = false;
+    this.getActiveModel(contentType).baseStatWeights = weights;
+    //this.statWeights.DefaultWeights = false;
   };
 
   getRace = () => {
@@ -468,6 +468,11 @@ class Player {
     if (Object.keys(info).length > 0) this.getActiveModel("Raid").setFightInfo(info);
   };
 
+  setModelDefaults = (contentType) => {
+    const activeModel = this.getActiveModel(contentType);
+    activeModel.setDefaults(this.spec, contentType, activeModel.modelName)
+  }
+
   setDefaultWeights = (spec, contentType) => {
     if (spec === SPEC.RESTODRUID) {
       this.statWeights[contentType] = druidDefaultStatWeights(contentType);
@@ -522,10 +527,10 @@ class Player {
       this.statWeights.DefaultWeights = true;
 
     } else if (spec === SPEC.HOLYPALADIN) {
-      this.castModels.push(new CastModel(spec, "Raid", "PaladinKyrian", 0)) 
-      this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1))
-      this.castModels.push(new CastModel(spec, "Raid", "PaladinMaraads", 2))
-      this.castModels.push(new CastModel(spec, "Raid", "PaladinVenthyr", 3))
+      this.castModels.push(new CastModel(spec, "Raid", "Kyrian Default", 0)) 
+      this.castModels.push(new CastModel(spec, "Dungeon", "Kyrian Default", 1))
+      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Maraads", 2))
+      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Default", 3))
       
 
       this.activeStats = {

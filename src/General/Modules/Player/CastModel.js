@@ -74,8 +74,7 @@ class CastModel {
       this.fightInfo.dps = 700;
     } else if (spec === SPEC.HOLYPALADIN) {
 
-      if (modelID === "PaladinKyrian") {
-       
+      if (modelID === "Kyrian Default") {
         this.modelName = "Kyrian Default"
         spellList = paladinVenthyrSpellData(contentType);
         specialQueries = paladinVenthyrSpecialQueries(contentType);
@@ -83,14 +82,14 @@ class CastModel {
         this.fightInfo.dps = 1650;
 
       }
-      else if (modelID === "PaladinMaraads") {
-        this.modelName = "Venthyr + Maraads"
+      else if (modelID === "Venthyr Maraads") {
+        this.modelName = "Venthyr Maraads"
         spellList = paladinMaraadsSpellData(contentType);
         specialQueries = paladinMaraadsSpecialQueries(contentType);
         this.baseStatWeights = paladinMaraadsStatWeights("Raid");
         this.fightInfo.dps = 1650;
       }
-      else if (modelID === "PaladinVenthyr") {
+      else if (modelID === "Venthyr Default") {
         this.modelName = "Venthyr Default";
         spellList = paladinVenthyrSpellData(contentType);
         specialQueries = paladinVenthyrSpecialQueries(contentType);

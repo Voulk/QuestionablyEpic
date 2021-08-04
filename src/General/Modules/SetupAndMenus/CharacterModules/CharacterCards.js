@@ -310,7 +310,7 @@ export default function CharCards(props) {
   const resetDefaults = () => {
     let newPlayer = props.char;
 
-    newPlayer.setDefaultWeights(newPlayer.getSpec(), contentType);
+    newPlayer.setModelDefaults(contentType);
     props.singleUpdate(newPlayer);
     props.charUpdatedSnack();
 
