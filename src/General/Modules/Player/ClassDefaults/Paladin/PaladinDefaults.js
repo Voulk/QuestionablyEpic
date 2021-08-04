@@ -1,4 +1,4 @@
-export const paladinDefaultSpellData = (contentType) => {
+export const paladinVenthyrSpellData = (contentType) => {
   let spellList = {};
   if (contentType === "Raid") {
     spellList = {
@@ -24,7 +24,7 @@ export const paladinDefaultSpellData = (contentType) => {
   return spellList;
 };
 
-export const paladinDefaultSpecialQueries = (contentType) => {
+export const paladinVenthyrSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
@@ -59,7 +59,7 @@ export const paladinDefaultSpecialQueries = (contentType) => {
   return specialQueries;
 };
 
-export const paladinDefaultStatWeights = (contentType) => {
+export const paladinVenthyrStatWeights = (contentType) => {
   let statWeights = {};
 
   statWeights.Raid = {

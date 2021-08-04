@@ -5,7 +5,6 @@ import { scoreItem } from "../../Engine/ItemUtilities";
 import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
 import { druidDefaultStatWeights } from "./ClassDefaults/DruidDefaults";
-import { paladinDefaultStatWeights } from "./ClassDefaults/Paladin/PaladinDefaults";
 import { shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
 import { discPriestDefaultStatWeights } from "./ClassDefaults/DiscPriestDefaults";
 import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
@@ -105,6 +104,7 @@ class Player {
 
     return 0;
   };
+
 
   setStatWeights = (newWeights, contentType) => {
     this.statWeights[contentType] = newWeights;
@@ -520,8 +520,8 @@ class Player {
       this.statWeights.Raid = druidDefaultStatWeights("Raid");
       this.statWeights.Dungeon = druidDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
-    } else if (spec === SPEC.HOLYPALADIN) {
 
+    } else if (spec === SPEC.HOLYPALADIN) {
       this.castModels.push(new CastModel(spec, "Raid", "PaladinKyrian", 0)) 
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1))
       this.castModels.push(new CastModel(spec, "Raid", "PaladinMaraads", 2))
@@ -537,9 +537,9 @@ class Player {
         stamina: 1900,
       };
 
-      this.statWeights.Raid = paladinDefaultStatWeights("Raid");
-      this.statWeights.Dungeon = paladinDefaultStatWeights("Dungeon");
-      this.statWeights.DefaultWeights = true;
+      //this.statWeights.Raid = paladinDefaultStatWeights("Raid");
+      //this.statWeights.Dungeon = paladinDefaultStatWeights("Dungeon");
+      //this.statWeights.DefaultWeights = true;
 
     } else if (spec === SPEC.RESTOSHAMAN) {
       // all of this needs a proper input once

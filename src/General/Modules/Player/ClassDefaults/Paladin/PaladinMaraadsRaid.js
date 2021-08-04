@@ -59,12 +59,12 @@ export const paladinMaraadsSpellData = (contentType) => {
     return specialQueries;
   };
   
-  export const paladinDefaultStatWeights = (contentType) => {
+  export const paladinMaraadsStatWeights = (contentType) => {
     let statWeights = {};
   
     statWeights.Raid = {
       intellect: 1,
-      haste: 0.41,
+      haste: 0.99,
       crit: 0.29,
       mastery: 0.39,
       versatility: 0.36,

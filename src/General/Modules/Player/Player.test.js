@@ -15,14 +15,12 @@ describe("Test Default Model Weights", () => {
 
     test("Mistweaver Monk", () => {
         const monk = new Player("Mock", "Mistweaver Monk", 99, "NA", "Stonemaul", "Night Elf");
-        const starterWeights = {...monk.getActiveModel("Raid").statWeights};
-        console.log(starterWeights);
-        console.log(monk)
+        const starterWeights = {...monk.getActiveModel("Raid").baseStatWeights};
+        //console.log(monk)
 
-        expect(starterWeights.crit).toEqual(monk.getStatWeight("Raid", crit))
+        expect(starterWeights.crit).toEqual(monk.getStatWeight("Raid", "crit"))
 
     });
-
 
 });
 

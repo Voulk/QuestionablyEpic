@@ -457,7 +457,7 @@ export function mergeBonusStats(stats) {
 function getHighestWeight(player, contentType) {
   let max = "";
   let maxValue = 0;
-  let weights = player.statWeights[contentType];
+  let weights = player.getActiveModel(contentType).getBaseWeights();
 
   for (var stat in weights) {
     if (weights[stat] > maxValue && ["crit", "haste", "mastery", "versatility"].includes(stat)) {
