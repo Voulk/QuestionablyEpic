@@ -72,7 +72,7 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
     let playerCrit = player.getStatPerc("Crit") - 1; 
     if (player.getSpec() === "Holy Paladin") playerCrit += (0.3*0.56 + 0.2*3/120); // Wings represents a 30% crit increase during a period of time where over half of our healing takes place.
     const critHealingPerc = ((playerCrit * 2) / (1 - playerCrit + playerCrit * 2));
-    const effectiveThroughput = (player.getRawHPS(contentType) + player.getDPS(contentType)) * effect.specAbilitiesThatWork[player.getSpec()]
+    const effectiveThroughput = (player.getHPS(contentType) + player.getDPS(contentType)) * effect.specAbilitiesThatWork[player.getSpec()]
     const failureChance = 0.1; // Winds of Winter will sometimes just not proc at all, losing you the damage.
     
     let baseThroughput = player.getStatPerc("Vers")  * critHealingPerc * effect.stored[rank] * effect.specOvercap[player.getSpec()] * (1 - failureChance) * effectiveThroughput;
