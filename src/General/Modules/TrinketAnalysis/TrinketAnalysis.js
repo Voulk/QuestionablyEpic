@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Paper, Typography, Grid } from "@material-ui/core";
+import { Paper, Typography, Grid, Tooltip } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { itemDB } from "../../../Databases/ItemDB";
 import Item from "../Player/Item";
@@ -13,6 +13,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
 import MetricToggle from "Retail/Modules/DominationGemAnalysis/MetricToggle";
 import SourceToggle from "./SourceToggle";
+import ToggleButton from "@material-ui/lab/ToggleButton";
+import VisibilityIcon from "@material-ui/icons/Visibility";
 // import Settings from "../Settings/Settings";
 // import userSettings from "../Settings/SettingsObject";
 
@@ -92,6 +94,7 @@ export default function TrinketAnalysis(props) {
   const { t } = useTranslation();
   const [metric, setMetric] = React.useState("hps");
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]);
+  const [colourBlind, setColourBlind] = React.useState(false);
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                    Trinket Source Filtering                                    */
@@ -256,9 +259,10 @@ export default function TrinketAnalysis(props) {
   const classes = useStyles();
 
   let activeTrinkets = [];
+  let finalDB = gameType === "Retail" ? filteredTrinketDB : trinketDB;
 
-  for (var i = 0; i < filteredTrinketDB.length; i++) {
-    const trinket = filteredTrinketDB[i];
+  for (var i = 0; i < finalDB.length; i++) {
+    const trinket = finalDB[i];
     let trinketAtLevels = {
       id: trinket.id,
       name: getTranslatedItemName(trinket.id, "en"),
@@ -278,7 +282,7 @@ export default function TrinketAnalysis(props) {
   if (gameType === "BurningCrusade") {
     activeTrinkets.sort((a, b) => (a.i100 < b.i100 ? 1 : -1));
   } else {
-    activeTrinkets.sort((a, b) => (getHighestTrinketScore(filteredTrinketDB, a, gameType) < getHighestTrinketScore(filteredTrinketDB, b, gameType) ? 1 : -1));
+    activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, gameType) < getHighestTrinketScore(finalDB, b, gameType) ? 1 : -1));
   }
 
   return (
@@ -295,26 +299,47 @@ export default function TrinketAnalysis(props) {
         {/* <Grid item xs={12}>
           <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} />
         </Grid> */}
+        {gameType === "Retail" ? (
+          <Grid item xs={12} container spacing={0} direction="row" justify="space-between">
+            <Grid item>
+              <MetricToggle metric={metric} setMetric={setMetric} />
+            </Grid>
 
-        <Grid item xs={12} container spacing={0} direction="row" justify="space-between">
-          <Grid item>
-            <MetricToggle metric={metric} setMetric={setMetric} />
+            <Grid item>
+              <SourceToggle metric={sources} setMetric={handleSource} />
+            </Grid>
           </Grid>
-
-          <Grid item>
-            <SourceToggle metric={sources} setMetric={handleSource} />
-          </Grid>
-        </Grid>
-
+        ) : (
+          ""
+        )}
         <Grid item xs={12}>
           <Grid container spacing={1} justify="center">
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                {gameType === "Retail" ? <VerticalChart data={activeTrinkets} db={filteredTrinketDB} /> : <BCChart data={activeTrinkets} db={trinketDB} />}
+                {gameType === "Retail" ? <VerticalChart data={activeTrinkets} db={finalDB} colourBlind={colourBlind} /> : <BCChart data={activeTrinkets} db={trinketDB} />}
               </Paper>
             </Grid>
           </Grid>
         </Grid>
+        {gameType === "Retail" ? (
+          <Grid item xs={12} container spacing={0} direction="row" justify="flex-end">
+            <Grid item>
+              <Tooltip title={"Colourblind Mode"} arrow>
+                <ToggleButton
+                  value="check"
+                  selected={colourBlind}
+                  onChange={() => {
+                    setColourBlind(!colourBlind);
+                  }}
+                >
+                  <VisibilityIcon />
+                </ToggleButton>
+              </Tooltip>
+            </Grid>
+          </Grid>
+        ) : (
+          ""
+        )}
       </Grid>
     </div>
   );

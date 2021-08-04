@@ -56,9 +56,10 @@ export default class VerticalChart extends PureComponent {
     const currentLanguage = i18n.language;
     const data = this.props.data;
     const db = this.props.db;
+    const colourBlind = this.props.colourBlind;
     /* ------------------------- Ilvls to Show on Chart & Colour Generation ------------------------- */
     const iLvls = [187, 194, 200, 213, 220, 226, 230, 233, 239, 246, 252, 259];
-    const barColours = colorGenerator("Paired", iLvls.length);
+    const barColours = colorGenerator(colourBlind ? "BrBG" : "Paired", colourBlind ? iLvls.length + 2 : iLvls.length);
 
     let arr = [];
     let cleanedArray = [];
@@ -144,9 +145,11 @@ export default class VerticalChart extends PureComponent {
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
           {iLvls.map((key, i) => (
-            <Bar dataKey={key} fill={barColours[i]} stackId="a">
+            <Bar dataKey={key} fill={barColours[colourBlind ? iLvls.length - i : i]} stackId="a">
               {data.map((entry, index) => (
-                <Cell fill={this.state.focusBar === index || this.state.mouseLeave ? barColours[i] : chroma(barColours[i]).alpha(0.2)} />
+                <Cell
+                  fill={this.state.focusBar === index || this.state.mouseLeave ? barColours[colourBlind ? iLvls.length - i : i] : chroma(barColours[colourBlind ? iLvls.length - i : i]).alpha(0.2)}
+                />
               ))}
             </Bar>
           ))}
