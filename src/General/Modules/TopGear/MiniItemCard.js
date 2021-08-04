@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Card, CardContent, Typography, Grid, Divider } from "@material-ui/core";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemIcon } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 // import DeleteIcon from "@material-ui/icons/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
@@ -100,7 +100,7 @@ export default function ItemCard(props) {
     </div>
   ) : null;
 
-  const tertiary = ('tertiary' in props.item && props.item.tertiary !== "") ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
+  const tertiary = "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
@@ -158,13 +158,14 @@ export default function ItemCard(props) {
                             borderRadius: 4,
                             border: "1px solid rgba(255, 255, 255, 0.12)",
                           }}
-                          src={process.env.PUBLIC_URL + "/Images/Icons/" + dominationGemDB.filter((key) => key.gemID === item.domGemID).map((key) => key.icon)[0] + ".jpg"}
+                          src={getGemIcon(item.domGemID)}
                           alt={dominationGemDB.filter((key) => key.id === item.domGemID).map((key) => key.name[currentLanguage])[0]}
                         />
                       </a>
                     ) : (
                       ""
                     )}
+
                       {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
                     </Typography>
                   </Grid>

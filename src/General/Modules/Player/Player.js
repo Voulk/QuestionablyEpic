@@ -520,7 +520,6 @@ class Player {
       this.statWeights.Raid = druidDefaultStatWeights("Raid");
       this.statWeights.Dungeon = druidDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
-
     } else if (spec === SPEC.HOLYPALADIN) {
 
       this.castModels.push(new CastModel(spec, "Raid", "PaladinKyrian", 0)) 
