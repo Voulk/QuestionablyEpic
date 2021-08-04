@@ -140,8 +140,8 @@ export const effectData = [
           {
             coefficient: [7.44707, 11.170605, 14.89414, 18.617675, 22.34121], // The coefficient is for the maximum amount stored on a crit. It was unchanged in the buff.
             table: -8,
-            specOvercap: {"Restoration Druid": 0.87, "Holy Paladin": 0.61, "Mistweaver Monk": 0.81, "Restoration Shaman": 0.7, "Holy Priest": 0.62, "Discipline Priest": 0.82},
-            specAbilitiesThatWork: {"Restoration Druid": 1, "Holy Paladin": 1, "Mistweaver Monk": 1, "Restoration Shaman": 0.46, "Holy Priest": 1, "Discipline Priest": 1}, // Winds of Winter doesn't work on multiple abilities in the game. Disc and Holy Paladin are penalized most heavily.
+            specOvercap: {"Restoration Druid": 0.89, "Holy Paladin": 0.65, "Mistweaver Monk": 0.82, "Restoration Shaman": 0.7, "Holy Priest": 0.61, "Discipline Priest": 0.82},
+            specAbilitiesThatWork: {"Restoration Druid": 0.99, "Holy Paladin": 0.96, "Mistweaver Monk": 0.97, "Restoration Shaman": 0.46, "Holy Priest": 1, "Discipline Priest": 0.86}, // Winds of Winter doesn't work on multiple abilities in the game. Disc and Holy Paladin are penalized most heavily.
             expectedOverhealing: 0.25, // Even though the absorb lasts quite a while, wastage is unavoidable.
             //stored: [0.05, 0.075, 0.1, 0.125, 0.15],
             stored: [0.09, 0.135, 0.18, 0.225, 0.27]
