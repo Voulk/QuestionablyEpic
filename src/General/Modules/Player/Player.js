@@ -33,7 +33,7 @@ class Player {
       this.gameType = "Retail";
     }
     
-    if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
+    //if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
     
 
     //this.getStatPerc = getStatPerc;
@@ -356,6 +356,17 @@ class Player {
   getSpec = () => {
     return this.spec;
   };
+
+  initializeModels = (raid, dungeon) => {
+    if (raid && dungeon && raid !== dungeon && raid < this.castModels.length && dungeon < this.castModels.length) {
+      // Check if models are valid choices
+      this.activeModelID = {"Raid": raid, "Dungeon": dungeon}
+    }
+    else {
+      // The given model IDs were invalid so we'll set the defaults instead.
+      this.activeModelID = {"Raid": 0, "Dungeon": 1}
+    }
+  }
 
   getActiveModel = (contentType) => {
     return this.castModels[this.activeModelID[contentType]];

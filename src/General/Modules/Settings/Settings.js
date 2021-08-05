@@ -86,7 +86,7 @@ export default function Settings(props) {
         <AccordionDetails className={classes.details}>
           {/* ---- If gameType = "Retail" show Retail Settings, otherwise show Burning Crusade Settings ---- */}
           {gameType === "Retail" ? (
-            <RetailSettings player={props.player} contentType={props.contentType} userSettings={props.userSettings} editSettings={props.editSettings} {...retailSettingsShown} />
+            <RetailSettings player={props.player} contentType={props.contentType} userSettings={props.userSettings} editSettings={props.editSettings} singleUpdate={props.singleUpdate} {...retailSettingsShown} />
           ) : (
             <BurningCrusadeSettings player={props.player} userSettings={props.userSettings} editSettings={props.editSettings} {...burningCrusadeSettingsShown} />
           )}

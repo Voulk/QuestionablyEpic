@@ -366,7 +366,7 @@ class App extends Component {
                 <Route path="/holydiver" render={() => <HolyDiver />} />
                 <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} />} />
                 <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
-                <Route path="/topgear" render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
+                <Route path="/topgear" render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} />} />
                 <Route path="/legendaries" render={() => <LegendaryCompare player={activePlayer} />} />
                 <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} />} />
                 <Route path="/dominationgems" render={() => <DominationAnalysis player={activePlayer} />} />

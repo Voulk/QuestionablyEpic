@@ -245,7 +245,7 @@ export default function TopGear(props) {
         </Grid>
         <Grid item xs={12}>
           {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
-          <Settings player={props.player} contentType={contentType} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
+          <Settings player={props.player} contentType={contentType} userSettings={userSettings} editSettings={editSettings} singleUpdate={props.singleUpdate} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
         </Grid>
 
         {props.player.activeItems.length > 0 ? (
