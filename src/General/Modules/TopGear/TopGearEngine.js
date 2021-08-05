@@ -34,6 +34,8 @@ function setupPlayer(player, contentType, castModel) {
   newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
 
+
+
   return newPlayer;
 
 }
@@ -74,6 +76,10 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   let count = 0;
 
   const newPlayer = setupPlayer(player, contentType, castModel);
+
+  let newCastModel = new CastModel(newPlayer.getSpec(), contentType, castModel.modelName, 0) 
+  newCastModel = Object.assign(newCastModel, castModel);
+
   let itemList = deepCopyFunction(rawItemList); // Here we duplicate the users items so that nothing is changed during the process. 
   itemList = userSettings.autoSocket ? autoSocketItems(itemList) : itemList;
   itemList = userSettings.vaultDomGem !== "none" ? autoGemVault(itemList, userSettings) : itemList;
@@ -98,7 +104,7 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
     */
 
   for (var i = 0; i < itemSets.length; i++) {
-    itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings);
+    itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel);
   }
   itemSets = pruneItems(itemSets);
 
@@ -316,7 +322,7 @@ function sumScore(obj) {
 }
 
 // A true evaluation function on a set.
-function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
+function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel) {
   // Get Base Stats
   let builtSet = itemSet.compileStats();
   let setStats = builtSet.setStats;
@@ -339,11 +345,11 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
 
   let adjusted_weights = {
     intellect: 1,
-    haste: player.statWeights[contentType]["haste"],
-    crit: player.statWeights[contentType]["crit"],
-    mastery: player.statWeights[contentType]["mastery"],
-    versatility: player.statWeights[contentType]["versatility"],
-    leech: player.statWeights[contentType]["leech"],
+    haste: castModel.baseStatWeights["haste"],
+    crit: castModel.baseStatWeights["crit"],
+    mastery: castModel.baseStatWeights["mastery"],
+    versatility: castModel.baseStatWeights["versatility"],
+    leech: castModel.baseStatWeights["leech"],
   };
   //console.log("Weights Before: " + JSON.stringify(adjusted_weights));
 
@@ -356,7 +362,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   // Rings - Best secondary.
   // We use the players highest stat weight here. Using the adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
   // single percentage. The stress this could cause a player is likely not worth the optimization.
-  let highestWeight = getHighestWeight(player, contentType);
+  let highestWeight = getHighestWeight(castModel);
   bonus_stats[highestWeight] += 32; // 16 x 2.
   enchants["Finger"] = "+16 " + highestWeight;
 
@@ -454,10 +460,11 @@ export function mergeBonusStats(stats) {
 }
 
 //
-function getHighestWeight(player, contentType) {
+function getHighestWeight(castModel) {
   let max = "";
   let maxValue = 0;
-  let weights = player.getActiveModel(contentType).getBaseWeights();
+  console.log(castModel);
+  let weights = castModel.getBaseStatWeights();
 
   for (var stat in weights) {
     if (weights[stat] > maxValue && ["crit", "haste", "mastery", "versatility"].includes(stat)) {

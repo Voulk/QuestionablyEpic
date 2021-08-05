@@ -154,11 +154,11 @@ export default function TopGear(props) {
     if (checkTopGearValid) {
       setBtnActive(false);
       const currentLanguage = i18n.language;
-      let itemList = props.player.getSelectedItems();
+      const itemList = props.player.getSelectedItems();
       let wepCombos = buildWepCombos(props.player, true);
-      let baseHPS = props.player.getHPS(contentType);
-      let strippedPlayer = JSON.parse(JSON.stringify(props.player));
-      let strippedCastModel = JSON.parse(JSON.stringify(props.player.castModel[contentType]));
+      const baseHPS = props.player.getHPS(contentType);
+      const strippedPlayer = JSON.parse(JSON.stringify(props.player));
+      const strippedCastModel = JSON.parse(JSON.stringify(props.player.getActiveModel(contentType)));
 
       if (gameType === "Retail") {
         const worker = require("workerize-loader!./TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
