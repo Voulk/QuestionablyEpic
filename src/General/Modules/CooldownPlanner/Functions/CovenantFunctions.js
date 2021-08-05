@@ -5,13 +5,13 @@ export function covenantIcons(props, height, width) {
   const icons = (covenant) => {
     switch (covenant) {
       case "kyrian":
-        return process.env.PUBLIC_URL + "/Images/Icons/inv_misc_sigil_bastion01.jpg";
+        return process.env.PUBLIC_URL + "/Images/Interface/Covenants/KyrianIcon.jpg";
       case "necrolord":
-        return process.env.PUBLIC_URL + "/Images/Icons/9xp_sigil_maldraxxus01.jpg";
+        return process.env.PUBLIC_URL + "/Images/Interface/Covenants/NecrolordsIcon.jpg";
       case "night_fae":
-        return process.env.PUBLIC_URL + "/Images/Icons/9xp_sigil_ardenweald01.jpg";
+        return process.env.PUBLIC_URL + "/Images/Interface/Covenants/NightFaeIcon.jpg";
       case "venthyr":
-        return process.env.PUBLIC_URL + "/Images/Icons/inv_misc_sigil_revendreth01.jpg";
+        return process.env.PUBLIC_URL + "/Images/Interface/Covenants/VenthyrIcon.jpg";
     }
   };
 

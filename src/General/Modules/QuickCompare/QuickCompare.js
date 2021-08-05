@@ -107,7 +107,6 @@ export default function QuickCompare(props) {
   // const currentLanguage = i18n.language;
   const classes = useStyles();
   /* ----------------------------- Snackbar State ----------------------------- */
-  const [open, setOpen] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
   /* ------------------------------ Define State ----------------------------- */
   const [activeSlot, setSlot] = useState("");
