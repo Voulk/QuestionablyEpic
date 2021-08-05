@@ -1335,9 +1335,9 @@ export default function CooldownPlanner(props) {
 
   /* ------------- When the currently loaded data is updated the props.update function ------------ */
   /* ------------- passed from the cooldown planner module will update the state also. ------------ */
-  // useEffect(() => {
-  //   props.update(currentData);
-  // }, [currentData]);
+  useEffect(() => {
+    props.update(currentData);
+  }, [currentData]);
 
   /* ------- Sets the localization of the table based on the users selected language in i18 ------- */
   let curLang = () => {

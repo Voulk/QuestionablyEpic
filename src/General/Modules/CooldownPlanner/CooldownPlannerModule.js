@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Typography, Grid, Dialog } from "@material-ui/core";
 import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
+import chartCooldownUpdater from "../FightAnalysis/Engine/UserCooldownChartEngine"
 import ERTTable from "../CooldownPlanner/ModuleComponents/ERTTable";
 import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
 import ls from "local-storage";
+import ertEngine from "../FightAnalysis/Engine/ERTEngine"
 
 class CooldownPlannerModule extends Component {
   constructor() {
@@ -11,6 +13,7 @@ class CooldownPlannerModule extends Component {
     /* ----------------------- We bind the below functions to this Component. ----------------------- */
     // This means these functions can be passed as props to other components and they will return here rather than in the component they are sent to.
     this.ertHandler = this.ertHandler.bind(this);
+    this.ertEngine = ertEngine.bind(this)
     this.handleChangeBossCooldownPlanner = this.handleChangeBossCooldownPlanner.bind(this);
     this.handleChangeRaidCooldownPlanner = this.handleChangeRaidCooldownPlanner.bind(this);
     this.handleChangeDataCooldownPlanner = this.handleChangeDataCooldownPlanner.bind(this);
@@ -33,6 +36,9 @@ class CooldownPlannerModule extends Component {
       cooldownPlannerCurrentPlan: 1,
       ertDialogState: false,
       healTeamDialogState: false,
+      mitigatedChartDataNoCooldowns: [],
+      unmitigatedChartDataNoCooldowns: [],
+      cooldownlistcustom2: []
     };
   }
 
@@ -125,7 +131,7 @@ class CooldownPlannerModule extends Component {
             <Grid item container direction="row" justify="flex-start" alignItems="flex-start" spacing={1} margin={4}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12} padding={1}>
                 <CooldownPlanner
-                  // update={this.chartCooldownUpdater}
+                  update={this.ertEngine}
                   data={this.state.cooldownPlannerCurrentData}
                   currentBoss={this.state.cooldownPlannerCurrentBoss}
                   bossHandler={this.handleChangeBossCooldownPlanner}
