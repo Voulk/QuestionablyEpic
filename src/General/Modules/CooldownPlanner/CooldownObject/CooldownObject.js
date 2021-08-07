@@ -12,11 +12,7 @@ class Cooldowns {
       });
 
       raidList.map((key) => {
-        bossList.filter((filter) => filter.zoneID === key.zoneID).map((map) => Object.assign(this.cooldowns[0][key.zoneID], { ["default"]: { 1: [] } }));
-      });
-
-      raidList.map((key) => {
-        bossList.filter((filter) => filter.zoneID === key.zoneID).map((map) => Object.assign(this.cooldowns[0][key.zoneID], { [map.DungeonEncounterID]: { 1: [] } }));
+        bossList.filter((filter) => filter.zoneID === key.zoneID).map((map) => Object.assign(this.cooldowns[0][key.zoneID], { ["default"]: { 1: [] }, [map.DungeonEncounterID]: { 1: [] } }));
       });
 
       this.updateCooldownsAll(this.cooldowns);
