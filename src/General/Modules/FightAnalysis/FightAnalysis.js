@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Typography, Collapse, CircularProgress, Grid, Dialog, Divider, Paper, Grow } from "@material-ui/core";
+import { Typography, Collapse, CircularProgress, Grid, Dialog, Divider, Paper, Grow, FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
 import LogLinkInput from "../../SystemTools/LogImport/LogLinkInput";
 import Chart from "./Chart/Chart";
 import Example from "./Components/DTPSBarChart";
@@ -14,6 +14,7 @@ import updatechartdata from "./Engine/LogImportEngine.js";
 import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
 import ExternalTimeline from "./Components/ExternalTimelineTable";
 import EnemyCastsTimeline from "./Components/EnemyCasts";
+import { makeStyles } from "@material-ui/core/styles";
 class FightAnalysis extends Component {
   constructor() {
     super();
@@ -86,6 +87,7 @@ class FightAnalysis extends Component {
       externalUsageTimelineData: [],
       /* ------------------------------ Array of Enemy Casts & Timestamps ----------------------------- */
       enemyCastsTimelineData: [],
+      customPlanSelected: "",
     };
   }
 
@@ -138,9 +140,34 @@ class FightAnalysis extends Component {
     this.setState({ healTeamDialogState: false });
   };
 
+  handleCustomPlanChange = (plan) => {
+    this.setState({ customPlanSelected: plan });
+  };
+
   render() {
     /* ------------------------------------ Data Loading Spinner ------------------------------------ */
     let spinnershow = this.state.loadingcheck;
+
+    const menuStyle = {
+      style: { marginTop: 5 },
+      MenuListProps: {
+        style: { paddingTop: 0, paddingBottom: 0 },
+      },
+      PaperProps: {
+        style: {
+          border: "1px solid rgba(255, 255, 255, 0.23)",
+        },
+      },
+      anchorOrigin: {
+        vertical: "bottom",
+        horizontal: "left",
+      },
+      transformOrigin: {
+        vertical: "top",
+        horizontal: "left",
+      },
+      getContentAnchorEl: null,
+    };
 
     return (
       <div
@@ -277,6 +304,31 @@ class FightAnalysis extends Component {
                               {/* TODO: Translate */}
                               <SwitchLabels check={this.changeDataSet} label={this.state.chartData === true ? "Unmitigated" : "Mitigated"} />
                             </Grid>
+                          </Grid>
+                          <Grid item>
+                            <FormControl variant="outlined" size="small">
+                              <InputLabel id="itemsocket">Custom Cooldowns</InputLabel>
+                              <Select
+                                key={"sockets"}
+                                labelId="itemsocket"
+                                value={this.state.customPlanSelected}
+                                onChange={this.handleCustomPlanChange}
+                                MenuProps={menuStyle}
+                                label={"Custom Cooldowns"}
+                              >
+                                {[
+                                  <MenuItem key={1} label={"yes"} value={true}>
+                                    {"yes"}
+                                  </MenuItem>,
+                                  <Divider key={2} />,
+                                  ,
+                                  <MenuItem key={3} label={"No"} value={false}>
+                                    {"No"}
+                                  </MenuItem>,
+                                  <Divider key={4} />,
+                                ]}
+                              </Select>
+                            </FormControl>
                           </Grid>
                         </Paper>
                       </Grow>
