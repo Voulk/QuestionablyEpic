@@ -6,8 +6,8 @@ import { Button, TextField, InputLabel, FormControl, Grow, MenuItem, Divider, Pa
 import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import moment from "moment";
 import { healerCooldownsDetailed, raidList } from "../Data/Data";
-import { bossList } from "../Data/CooldownPlannerBossList"
-import { bossAbilities} from "../Data/CooldownPlannerBossAbilityList"
+import { bossList } from "../Data/CooldownPlannerBossList";
+import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { useTranslation } from "react-i18next";
 import { localizationFR } from "locale/fr/TableLocale";
@@ -155,6 +155,11 @@ export default function CooldownPlanner(props) {
   const currentRaid = props.currentRaid;
   const currentPlan = props.currentPlan;
   const currentData = props.data;
+  const currentCooldowns = currentData.getCooldowns(currentRaid);
+  currentData.getCooldownsArray();
+  console.log(currentCooldowns);
+  let currentPlanData = currentCooldowns[currentBoss][currentPlan];
+
   const handleChangeRaid = props.raidHandler;
   const handleChangeBoss = props.bossHandler;
   const handleChangePlan = props.planHandler;
@@ -1336,8 +1341,8 @@ export default function CooldownPlanner(props) {
   /* ------------- When the currently loaded data is updated the props.update function ------------ */
   /* ------------- passed from the cooldown planner module will update the state also. ------------ */
   useEffect(() => {
-    props.update(currentData);
-  }, [currentData]);
+    props.update(currentPlanData);
+  }, [currentPlanData]);
 
   /* ------- Sets the localization of the table based on the users selected language in i18 ------- */
   let curLang = () => {
@@ -1368,7 +1373,7 @@ export default function CooldownPlanner(props) {
       <MaterialTable
         icons={tableIcons}
         columns={columns}
-        data={currentData}
+        data={currentPlanData}
         style={{
           padding: 10,
         }}
