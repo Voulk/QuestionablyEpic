@@ -168,7 +168,7 @@ class Player {
   getHighestStatWeight = (contentType, ignore = []) => {
     let max = "";
     let maxValue = -1;
-    let weights = this.statWeights[contentType];
+    let weights = this.getActiveModel(contentType).getBaseStatWeights();
 
     for (var stat in weights) {
       if (weights[stat] > maxValue && !ignore.includes(stat) && ["crit", "haste", "mastery", "versatility"].includes(stat)) {

@@ -3,6 +3,7 @@ const IDHOLYLIGHT = 82326;
 const IDHOLYSHOCK = 25914;
 const IDSHOCKBARRIER = 337824;
 const IDWORDOFGLORY = 85673;
+const IDMARTYR = 183998;
 
 import { getOneHolyPower, getAwakeningWingsUptime, getWingsHealingInc, processPaladinRawHealing } from "./PaladinMiscFormulas";
 
@@ -39,6 +40,12 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
   }
   // Untempered Dedication
   else if (conduitID === 339987) {
+    if (player.getActiveModel(contentType).modelName === "Venthyr Maraads") {
+      const traitBonus = 0.045 + conduitLevel * 0.005;
+      const averageStacks = 4.9;
+
+      bonus_stats.HPS = traitBonus * averageStacks * player.getSpellHPS(IDMARTYR, contentType);
+    }
   }
   // Ringing Clarity (Kyrian)
   else if (conduitID === 340218) {

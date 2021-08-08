@@ -7,7 +7,8 @@ export const paladinMaraadsSpellData = (contentType) => {
         25914: { cpm: 8.94, avgcast: 8242, hps: 1606, overhealing: 0.18 }, // Holy Shock
         82326: { cpm: 0.67, avgcast: 5886, hps: 93, overhealing: 0.5 }, // Holy Light
         337824: { cpm: 0, avgcast: 0, hps: 863, overhealing: 0.21 }, // Shock Barrier
-        53652: { cpm: 0.04, avgcast: 127103, hps: 1279, overhealing: 0.44 }, // Beacon of Light
+        53652: { cpm: 0.04, avgcast: 14400, hps: 1279, overhealing: 0.44 }, // Beacon of Light
+        183998: { cpm: 0.04, avgcast: 127103, hps: 1500, overhealing: 0.31 }, // Light of the Martyr
       };
     } else if (contentType === "Dungeon") {
       spellList = {
