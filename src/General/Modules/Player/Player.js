@@ -448,7 +448,7 @@ class Player {
   };
 
   getSpellRawHPS = (spellID, contentType) => {
-    return this.getActiveModel(contentType).getSpellData(spellID, "hps") / (1 - this.castModel[contentType].getSpellData(spellID, "overhealing"));
+    return this.getActiveModel(contentType).getSpellData(spellID, "hps") / (1 - this.getActiveModel(contentType).getSpellData(spellID, "overhealing"));
   };
 
   /* --------------- Return the Spell List for the content Type --------------- */

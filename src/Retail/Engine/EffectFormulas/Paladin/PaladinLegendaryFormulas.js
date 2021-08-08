@@ -48,6 +48,7 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
     const holyShockIncrease = 0.2; // This is one application of the absorb, and will be placed 3 times.
     const wastedShield = 0.22;
     const holyShockRawHPS = player.getSpellRawHPS(IDHOLYSHOCK, contentType);
+    console.log("Holy Shock RAW: " + holyShockRawHPS);
 
     bonus_stats.hps = Math.round(holyShockIncrease * 3 * (1 - wastedShield) * holyShockRawHPS);
   } else if (name === "Inflorescence of the Sunwell") {
@@ -122,12 +123,6 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
     const healingOneHolyPower = getOneHolyPower(player, contentType);
 
     bonus_stats.hps = (procChance * judgementCPM * healingOneHolyPower) / 60;
-  } else if (name === "Maraads Dying Breath") {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                      Maraads Dying Breath                                      */
-    /* ---------------------------------------------------------------------------------------------- */
-
-    bonus_stats.hps = -1;
   } else if (name === "Relentless Inquisitor") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                      Relentless Inquisitor                                     */

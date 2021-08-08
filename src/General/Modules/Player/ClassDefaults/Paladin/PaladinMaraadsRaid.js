@@ -2,13 +2,19 @@ export const paladinMaraadsSpellData = (contentType) => {
     let spellList = {};
     if (contentType === "Raid") {
       spellList = {
-        225311: { cpm: 8.21, avgcast: 14452, hps: 2498, overhealing: 0.23 }, // Light of Dawn
-        85673: { cpm: 1.03, avgcast: 8679, hps: 188, overhealing: 0.28 }, // Word of Glory
-        25914: { cpm: 8.94, avgcast: 8242, hps: 1606, overhealing: 0.18 }, // Holy Shock
-        82326: { cpm: 0.67, avgcast: 5886, hps: 93, overhealing: 0.5 }, // Holy Light
-        337824: { cpm: 0, avgcast: 0, hps: 863, overhealing: 0.21 }, // Shock Barrier
-        53652: { cpm: 0.04, avgcast: 14400, hps: 1279, overhealing: 0.44 }, // Beacon of Light
-        183998: { cpm: 0.04, avgcast: 127103, hps: 1500, overhealing: 0.31 }, // Light of the Martyr
+        225311: { cpm: 7.07, avgcast: 15575, hps: 2040, overhealing: 0.37 }, // Light of Dawn
+        53652: { cpm: 0.04, avgcast: 87621, hps: 1837, overhealing: 0.58 }, // Beacon of Light
+        316958: { cpm: 0.26, avgcast: 230885, hps: 1101, overhealing: 0.69 }, // Ashen Hallow
+        25914: { cpm: 6.97, avgcast: 6413, hps: 829, overhealing: 0.28 }, // Holy Shock
+        183998: { cpm: 3.65, avgcast: 5801, hps: 1746, overhealing: 0.22 }, // Light of the Martyr
+        287268: { cpm: 0, avgcast: 0, hps: 604, overhealing: 0.33 }, // Glimmer of Light
+        119952: { cpm: 0, avgcast: 0, hps: 557, overhealing: 0.35 }, // Arcing Light
+        183778: { cpm: 0, avgcast: 0, hps: 375, overhealing: 0.06 }, // Judgment of Light
+        223306: { cpm: 2.62, avgcast: 4319, hps: 199, overhealing: 0.55 }, // Bestow Faith
+        633: { cpm: 0.14, avgcast: 32166, hps: 82, overhealing: 0.44 }, // Lay on Hands
+        85673: { cpm: 0.32, avgcast: 10543, hps: 62, overhealing: 0.15 }, // Word of Glory
+        82326: { cpm: 0.4, avgcast: 5426, hps: 42, overhealing: 0.35 }, // Holy Light
+        19750: { cpm: 0.32, avgcast: 6687, hps: 38, overhealing: 0.21 }, // Flash of Light    
       };
     } else if (contentType === "Dungeon") {
       spellList = {
