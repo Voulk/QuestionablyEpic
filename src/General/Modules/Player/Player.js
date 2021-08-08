@@ -539,9 +539,10 @@ class Player {
 
     } else if (spec === SPEC.HOLYPALADIN) {
       this.castModels.push(new CastModel(spec, "Raid", "Kyrian Default", 0)) 
-      this.castModels.push(new CastModel(spec, "Dungeon", "Kyrian Default", 1))
-      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Maraads", 2))
-      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Default", 3))
+      this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1))
+      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Default", 2))
+      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Maraads", 3))
+      
       
 
       this.activeStats = {

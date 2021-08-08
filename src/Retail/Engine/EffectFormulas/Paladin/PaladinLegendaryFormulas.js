@@ -21,7 +21,6 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
     /*
     Maraads is yet to be implemented, but will be soon.
     */
-    if (player.getActiveModel(contentType).modelName === "Venthyr Maraads") {
       const legendaryBonus = 0.1;
       const averageStacks = 4.9;
       const backlashDamage = 0.25; 
@@ -31,10 +30,6 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
       const baseThroughput = legendaryBonus * averageStacks * player.getSpellHPS(IDMARTYR, contentType);
 
       bonus_stats.hps = baseThroughput * (1 + beaconHealing * (1 - beaconOverhealing)) * (1 - backlashDamage);
-    }
-    else {
-      bonus_stats.hps = 0;
-    }
 
   } else if (name === "Shock Barrier") {
     /* ---------------------------------------------------------------------------------------------- */

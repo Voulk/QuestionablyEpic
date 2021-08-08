@@ -41,13 +41,11 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
   }
   // Untempered Dedication
   else if (conduitID === 339987) {
-    if (player.getActiveModel(contentType).modelName === "Venthyr Maraads") {
-      const backlashDamage = 0.25; 
-      const traitBonus = 0.045 + conduitLevel * 0.005;
-      const averageStacks = 4.9;
+    const backlashDamage = 0.25; 
+    const traitBonus = 0.045 + conduitLevel * 0.005;
+    const averageStacks = 4.9;
 
-      bonus_stats.HPS = traitBonus * averageStacks * player.getSpellHPS(IDMARTYR, contentType) * (1 - backlashDamage);
-    }
+    bonus_stats.HPS = traitBonus * averageStacks * player.getSpellHPS(IDMARTYR, contentType) * (1 - backlashDamage);
   }
   // Ringing Clarity (Kyrian)
   else if (conduitID === 340218) {

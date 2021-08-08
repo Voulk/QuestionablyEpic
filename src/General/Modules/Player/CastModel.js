@@ -2,6 +2,7 @@ import { createModifiersFromModifierFlags } from "typescript";
 import SPEC from "../../Engine/SPECS";
 import { druidDefaultSpecialQueries, druidDefaultSpellData } from "./ClassDefaults/DruidDefaults";
 import { paladinVenthyrSpecialQueries, paladinVenthyrSpellData, paladinVenthyrStatWeights } from "./ClassDefaults/Paladin/PaladinDefaults";
+import { paladinKyrianSpecialQueries, paladinKyrianSpellData, paladinKyrianStatWeights } from "./ClassDefaults/Paladin/PaladinKyrian";
 import { paladinMaraadsSpellData, paladinMaraadsSpecialQueries, paladinMaraadsStatWeights } from "./ClassDefaults/Paladin/PaladinMaraadsRaid";
 import { shamanDefaultSpecialQueries, shamanDefaultSpellData } from "./ClassDefaults/ShamanDefaults";
 import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/MonkDefaults";
@@ -72,13 +73,14 @@ class CastModel {
       spellList = druidDefaultSpellData(contentType);
       specialQueries = druidDefaultSpecialQueries(contentType);
       this.fightInfo.dps = 700;
+
     } else if (spec === SPEC.HOLYPALADIN) {
 
       if (modelID === "Kyrian Default") {
         this.modelName = "Kyrian Default"
-        spellList = paladinVenthyrSpellData(contentType);
-        specialQueries = paladinVenthyrSpecialQueries(contentType);
-        this.baseStatWeights = paladinVenthyrStatWeights("Raid");
+        spellList = paladinKyrianSpellData(contentType);
+        specialQueries = paladinKyrianSpecialQueries(contentType);
+        this.baseStatWeights = paladinKyrianStatWeights("Raid");
         this.fightInfo.dps = 1650;
 
       }
@@ -87,14 +89,21 @@ class CastModel {
         spellList = paladinMaraadsSpellData(contentType);
         specialQueries = paladinMaraadsSpecialQueries(contentType);
         this.baseStatWeights = paladinMaraadsStatWeights("Raid");
-        this.fightInfo.dps = 1650;
+        this.fightInfo.dps = 1900;
       }
       else if (modelID === "Venthyr Default") {
         this.modelName = "Venthyr Default";
         spellList = paladinVenthyrSpellData(contentType);
         specialQueries = paladinVenthyrSpecialQueries(contentType);
         this.baseStatWeights = paladinVenthyrStatWeights("Raid");
-        this.fightInfo.dps = 1650;
+        this.fightInfo.dps = 2100;
+      }
+      else if (modelID === "Default") { // Dungeon
+        this.modelName = "Default";
+        spellList = paladinVenthyrSpellData(contentType);
+        specialQueries = paladinVenthyrSpecialQueries(contentType);
+        this.baseStatWeights = paladinVenthyrStatWeights("Raid");
+        this.fightInfo.dps = 4400;
       }
 
     } else if (spec === SPEC.RESTOSHAMAN) {

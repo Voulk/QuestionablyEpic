@@ -1,21 +1,19 @@
-export const paladinVenthyrSpellData = (contentType) => {
+export const paladinKyrianSpellData = (contentType) => {
   let spellList = {};
   if (contentType === "Raid") {
     spellList = {
-      225311: { cpm: 7.93, avgcast: 15229, hps: 2225, overhealing: 0.4 }, // Light of Dawn
-      316958: { cpm: 0.25, avgcast: 233896, hps: 1097, overhealing: 0.7 }, // Ashen Hallow
-      25914: { cpm: 8.76, avgcast: 6606, hps: 1065, overhealing: 0.31 }, // Holy Shock
-      53652: { cpm: 0.05, avgcast: 41331, hps: 970, overhealing: 0.62 }, // Beacon of Light
-      337824: { cpm: 0, avgcast: 0, hps: 748, overhealing: 0.25 }, // Shock Barrier
-      287268: { cpm: 0, avgcast: 0, hps: 708, overhealing: 0.41 }, // Glimmer of Light
-      119952: { cpm: 0, avgcast: 0, hps: 547, overhealing: 0.33 }, // Arcing Light
-      183778: { cpm: 0, avgcast: 0, hps: 441, overhealing: 0.06 }, // Judgment of Light
-      85673: { cpm: 1.23, avgcast: 10378, hps: 239, overhealing: 0.24 }, // Word of Glory
-      223306: { cpm: 3.1, avgcast: 3377, hps: 200, overhealing: 0.74 }, // Bestow Faith
-      633: { cpm: 0.14, avgcast: 30251, hps: 78, overhealing: 1 }, // Lay on Hands
-      183998: { cpm: 0.41, avgcast: 3578, hps: 56, overhealing: 0.07 }, // Light of the Martyr
-      19750: { cpm: 0.44, avgcast: 5896, hps: 48, overhealing: 0.2 }, // Flash of Light
-
+      225311: { cpm: 8.71, avgcast: 16173, hps: 2575, overhealing: 0.39 }, // Light of Dawn
+      25914: { cpm: 8.87, avgcast: 10172, hps: 1668, overhealing: 0.31 }, // Holy Shock
+      53652: { cpm: 0.08, avgcast: 52446, hps: 1080, overhealing: 0.59 }, // Beacon of Light
+      337824: { cpm: 0, avgcast: 0, hps: 968, overhealing: 0.22 }, // Shock Barrier
+      119952: { cpm: 0, avgcast: 0, hps: 501, overhealing: 0.41 }, // Arcing Light
+      183778: { cpm: 0, avgcast: 0, hps: 435, overhealing: 0.05 }, // Judgment of Light
+      85673: { cpm: 1.59, avgcast: 10780, hps: 342, overhealing: 0.4 }, // Word of Glory
+      223306: { cpm: 3.16, avgcast: 4766, hps: 277, overhealing: 0.49 }, // Bestow Faith
+      183998: { cpm: 0.35, avgcast: 4057, hps: 100, overhealing: 0.08 }, // Light of the Martyr
+      633: { cpm: 0.14, avgcast: 33064, hps: 79, overhealing: 0.54 }, // Lay on Hands
+      82326: { cpm: 0.44, avgcast: 4664, hps: 39, overhealing: 0.48 }, // Holy Light
+      19750: { cpm: 0.38, avgcast: 5331, hps: 32, overhealing: 0.29 }, // Flash of Light
     };
   } else if (contentType === "Dungeon") {
     spellList = {
@@ -32,7 +30,7 @@ export const paladinVenthyrSpellData = (contentType) => {
   return spellList;
 };
 
-export const paladinVenthyrSpecialQueries = (contentType) => {
+export const paladinKyrianSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
@@ -67,7 +65,7 @@ export const paladinVenthyrSpecialQueries = (contentType) => {
   return specialQueries;
 };
 
-export const paladinVenthyrStatWeights = (contentType) => {
+export const paladinKyrianStatWeights = (contentType) => {
   let statWeights = {};
 
   statWeights.Raid = {
