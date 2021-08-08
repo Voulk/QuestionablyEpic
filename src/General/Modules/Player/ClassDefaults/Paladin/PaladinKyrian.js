@@ -70,19 +70,19 @@ export const paladinKyrianStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.41,
-    crit: 0.29,
-    mastery: 0.39,
-    versatility: 0.36,
-    leech: 0.57,
+    haste: 0.45,
+    crit: 0.34,
+    mastery: 0.43,
+    versatility: 0.41,
+    leech: 0.62,
     defaults: true,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.41,
-    crit: 0.33,
-    mastery: 0.24,
-    versatility: 0.37,
+    haste: 0.44,
+    crit: 0.37,
+    mastery: 0.29,
+    versatility: 0.43,
     leech: 0.38,
     defaults: true,
   };

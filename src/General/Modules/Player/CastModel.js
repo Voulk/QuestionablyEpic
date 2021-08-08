@@ -70,19 +70,18 @@ class CastModel {
     let spellList = {};
     let specialQueries = {};
     if (spec === SPEC.RESTODRUID) {
+      this.modelName = "Default";
       spellList = druidDefaultSpellData(contentType);
       specialQueries = druidDefaultSpecialQueries(contentType);
       this.fightInfo.dps = 700;
 
     } else if (spec === SPEC.HOLYPALADIN) {
-
       if (modelID === "Kyrian Default") {
-        this.modelName = "Kyrian Default"
+        this.modelName = "Kyrian Default";
         spellList = paladinKyrianSpellData(contentType);
         specialQueries = paladinKyrianSpecialQueries(contentType);
         this.baseStatWeights = paladinKyrianStatWeights("Raid");
         this.fightInfo.dps = 1650;
-
       }
       else if (modelID === "Venthyr Maraads") {
         this.modelName = "Venthyr Maraads"
@@ -107,6 +106,7 @@ class CastModel {
       }
 
     } else if (spec === SPEC.RESTOSHAMAN) {
+      this.modelName = "Default";
       spellList = shamanDefaultSpellData(contentType);
       specialQueries = shamanDefaultSpecialQueries(contentType);
       this.fightInfo.dps = 725;
@@ -128,24 +128,22 @@ class CastModel {
         this.baseStatWeights = monkDefaultStatWeights("Dungeon");
         this.fightInfo.dps = 2100;
       }
-      else if (modelID === "SinTeachings") {
-        this.modelName = "Venthyr & Sinister Teachings"
+      else if (modelID === "Sinister Teachings") {
+        this.modelName = "Sinister Teachings"
         spellList = monkDefaultSpellData(contentType);
         specialQueries = monkDefaultSpecialQueries(contentType);
         this.baseStatWeights = monkDefaultStatWeights("Raid");
-        this.fightInfo.dps = 1200;
+        this.fightInfo.dps = 1600;
       }
 
-      /*spellList = monkDefaultSpellData(contentType);
-      specialQueries = monkDefaultSpecialQueries(contentType);
-      this.fightInfo.dps = 1180;*/
-
     } else if (spec === SPEC.DISCPRIEST) {
+      this.modelName = "Default";
       spellList = discPriestDefaultSpellData(contentType);
       specialQueries = discPriestDefaultSpecialQueries(contentType);
       this.fightInfo.dps = 1300;
 
     } else if (spec === SPEC.HOLYPRIEST) {
+      this.modelName = "Default";
       spellList = holyPriestDefaultSpellData(contentType);
       specialQueries = holyPriestDefaultSpecialQueries(contentType);
       this.fightInfo.dps = 775;
