@@ -14,6 +14,7 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
   // === Potency Conduits ===
   // Enkindled Spirits
   if (conduitID === 339570) {
+    
     let trait_bonus = 0.27 + conduitLevel * 0.03;
     let one_lod = player.getSingleCast(IDLIGHTOFDAWN, contentType);
 
@@ -41,10 +42,11 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
   // Untempered Dedication
   else if (conduitID === 339987) {
     if (player.getActiveModel(contentType).modelName === "Venthyr Maraads") {
+      const backlashDamage = 0.25; 
       const traitBonus = 0.045 + conduitLevel * 0.005;
       const averageStacks = 4.9;
 
-      bonus_stats.HPS = traitBonus * averageStacks * player.getSpellHPS(IDMARTYR, contentType);
+      bonus_stats.HPS = traitBonus * averageStacks * player.getSpellHPS(IDMARTYR, contentType) * (1 - backlashDamage);
     }
   }
   // Ringing Clarity (Kyrian)

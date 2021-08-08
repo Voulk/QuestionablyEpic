@@ -33,8 +33,7 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
       bonus_stats.hps = baseThroughput * (1 + beaconHealing * (1 - beaconOverhealing)) * (1 - backlashDamage);
     }
     else {
-
-      bonus_stats.hps = 5;
+      bonus_stats.hps = 0;
     }
 
   } else if (name === "Shock Barrier") {
