@@ -1,4 +1,4 @@
-import React, { useEffect, forwardRef } from "react";
+import React, { useEffect, forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "material-table";
 import ClassCooldownMenuItems from "../Menus/ClassCooldownMenuItems";
 import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search } from "@material-ui/icons";
@@ -19,6 +19,7 @@ import bossIcons from "../Functions/IconFunctions/BossIcons";
 import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
 import classIcons from "../Functions/IconFunctions/ClassIcons";
 import ls from "local-storage";
+import Cooldowns from "../CooldownObject/CooldownObject";
 
 const useStyles = makeStyles(() => ({
   formControl: {
@@ -147,24 +148,40 @@ const tableIcons = {
 export default function CooldownPlanner(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
-  // const { useState } = React;
   const currentLanguage = i18n.language;
-  const rl = raidList;
-  const setData = props.dataUpdateHandler;
-  const currentBoss = props.currentBoss;
-  const currentRaid = props.currentRaid;
-  const currentPlan = props.currentPlan;
-  const currentData = props.data;
-  const currentCooldowns = currentData.getCooldowns(currentRaid);
-  currentData.getCooldownsArray();
-  console.log(currentCooldowns);
-  let currentPlanData = currentCooldowns[currentBoss][currentPlan];
 
-  const handleChangeRaid = props.raidHandler;
-  const handleChangeBoss = props.bossHandler;
-  const handleChangePlan = props.planHandler;
+  const cooldownObject = new Cooldowns();
+  
+  const [currentRaid, setCurrentRaid] = useState(2450);
+  const [currentBoss, setCurrentBoss] = useState("");
+  const [currentPlan, setCurrentPlan] = useState("");
+  const [data, setData] = useState([]);
+
+  const rl = raidList;
+
   const ertDialogOpen = props.ertDialogOpen;
   const healTeamDialogOpen = props.healTeamDialogOpen;
+
+  const loadPlanData = (currentBoss, newPlan) => {
+    setCurrentPlan(newPlan);
+    const bossCooldowns = cooldownObject.getCooldowns(currentBoss);
+    console.log(bossCooldowns)
+    const planCooldowns = bossCooldowns[newPlan];
+    console.log(planCooldowns)
+    setData(planCooldowns);
+  };
+
+  const updateStorage = (boss, plan, currentData) => {
+    console.log("working")
+    console.log(currentData)
+    cooldownObject.updateCooldownPlan(boss, plan, currentData);
+    console.log(cooldownObject)
+  };
+
+  const changeBoss = (newBoss) => {
+    setCurrentBoss(newBoss)
+    setCurrentPlan('')
+  };
 
   /* --- Function to Show the time Cooldowns will be available again (Currently Column Hidden) --- */
   const timeCheck = (castTime, cooldown) => {
@@ -1340,9 +1357,9 @@ export default function CooldownPlanner(props) {
 
   /* ------------- When the currently loaded data is updated the props.update function ------------ */
   /* ------------- passed from the cooldown planner module will update the state also. ------------ */
-  useEffect(() => {
-    props.update(currentPlanData);
-  }, [currentPlanData]);
+  // useEffect(() => {
+  //   props.update(currentPlanData);
+  // }, [currentPlanData]);
 
   /* ------- Sets the localization of the table based on the users selected language in i18 ------- */
   let curLang = () => {
@@ -1357,23 +1374,14 @@ export default function CooldownPlanner(props) {
     }
   };
 
-  /* --------------------------- Update Local Storage for selected plan --------------------------- */
-  let updateStorage = (props) => {
-    if (ls.get(currentRaid + "." + currentBoss + "." + currentPlan) === null) {
-      ls.set(currentRaid + "." + currentBoss + "." + currentPlan, []);
-    }
-    ls.set(
-      currentRaid + "." + currentBoss + "." + currentPlan,
-      props.sort((a, b) => (a.time > b.time ? 1 : -1)),
-    );
-  };
+  console.log(cooldownObject);
 
   return (
     <ThemeProvider theme={themeCooldownTable}>
       <MaterialTable
         icons={tableIcons}
         columns={columns}
-        data={currentPlanData}
+        data={data}
         style={{
           padding: 10,
         }}
@@ -1459,13 +1467,13 @@ export default function CooldownPlanner(props) {
                   </Button>
                 </Grid>
                 {/* ---------------------------------- Raid Selection Drop Down ---------------------------------- */}
-                <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                {/* <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                   <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small">
                     <InputLabel id="RaidSelector">{t("CooldownPlanner.TableLabels.RaidSelectorLabel")}</InputLabel>
                     <Select
                       labelId="RaidSelector"
                       value={currentRaid}
-                      onChange={(e) => handleChangeRaid(e.target.value)}
+                      onChange={(e) => setCurrentRaid(e.target.value)}
                       label={t("CooldownPlanner.TableLabels.RaidSelectorLabel")}
                       MenuProps={menuStyle}
                     >
@@ -1478,7 +1486,7 @@ export default function CooldownPlanner(props) {
                         .map((key, i) => [key, <Divider key={i} />])}
                     </Select>
                   </FormControl>
-                </Grid>
+                </Grid> */}
                 {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
                 <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                   <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small" disabled={currentRaid === "" ? true : false}>
@@ -1486,7 +1494,7 @@ export default function CooldownPlanner(props) {
                     <Select
                       labelId="BossSelector"
                       value={currentBoss}
-                      onChange={(e) => handleChangeBoss(e.target.value)}
+                      onChange={(e) => changeBoss(e.target.value)}
                       label={t("CooldownPlanner.TableLabels.BossSelectorLabel")}
                       MenuProps={menuStyle}
                     >
@@ -1510,12 +1518,9 @@ export default function CooldownPlanner(props) {
                 <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                   <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small" disabled={currentBoss === "" ? true : false}>
                     <InputLabel id="RaidSelector">{t("Select Plan")}</InputLabel>
-                    <Select labelId="RaidSelector" label={t("Select Plan")} value={currentPlan} onChange={(e) => handleChangePlan(e.target.value)}>
-                      <MenuItem value={1}>Plan 1</MenuItem>
+                    <Select labelId="RaidSelector" label={t("Select Plan")} value={currentPlan} onChange={(e) => loadPlanData(currentBoss, e.target.value)}>
+                      <MenuItem value={"default"}>Default</MenuItem>
                       <Divider />
-                      <MenuItem value={2}>Plan 2</MenuItem>
-                      <Divider />
-                      <MenuItem value={3}>Plan 3</MenuItem>
                     </Select>
                   </FormControl>
                 </Grid>
@@ -1544,17 +1549,17 @@ export default function CooldownPlanner(props) {
             new Promise((resolve, reject) => {
               setTimeout(() => {
                 /* ------------------ Spread Current Data and the New Data into updated Object (Sorted) ------------------ */
-                setData([...currentData, newData].sort((a, b) => (a.time > b.time ? 1 : -1)));
+                setData([...data, newData].sort((a, b) => (a.time > b.time ? 1 : -1)));
                 resolve();
                 /* ------------------------------------ Update local storage ------------------------------------ */
-                updateStorage([...currentData, newData], currentBoss);
+                updateStorage(currentBoss, currentPlan, [...data, newData]);
               }, 1000);
             }),
           onRowUpdate: (newData, oldData) =>
             new Promise((resolve, reject) => {
               setTimeout(() => {
                 /* --------------------------- Spread Current Data to update row data --------------------------- */
-                const dataUpdate = [...currentData];
+                const dataUpdate = [...data];
                 /* -------------------------- Set index as the old datas ID for updated ------------------------- */
                 const index = oldData.tableData.id;
                 /* -------------------- Set the Updated Data as the old datas id replacing it ------------------- */
@@ -1562,7 +1567,7 @@ export default function CooldownPlanner(props) {
                 /* ---------------------------------- Set Updated Data (Sorted) --------------------------------- */
                 setData([...dataUpdate].sort((a, b) => (a.time > b.time ? 1 : -1)));
                 /* ------------------------------------ Update local storage ------------------------------------ */
-                updateStorage([...dataUpdate], currentBoss);
+                updateStorage(currentBoss, currentPlan, [...dataUpdate]);
                 resolve();
               }, 1000);
             }),
@@ -1570,7 +1575,7 @@ export default function CooldownPlanner(props) {
             new Promise((resolve, reject) => {
               setTimeout(() => {
                 /* ------------------------------------- Spread current data ------------------------------------ */
-                const dataDelete = [...currentData];
+                const dataDelete = [...data];
                 /* -------------------------- Set index as the old datas ID for deletion ------------------------- */
                 const index = oldData.tableData.id;
                 /* --------------------------------------- Delete Row Data -------------------------------------- */
@@ -1578,7 +1583,7 @@ export default function CooldownPlanner(props) {
                 /* -------------------------- Set the New Data without the spliced row -------------------------- */
                 setData([...dataDelete].sort((a, b) => (a.time > b.time ? 1 : -1)));
                 /* ------------------------------------ Update local storage ------------------------------------ */
-                updateStorage([...dataDelete], currentBoss);
+                updateStorage(currentBoss, currentPlan, [...dataDelete]);
                 resolve();
               }, 1000);
             }),

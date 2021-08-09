@@ -6,7 +6,7 @@ import ERTTable from "../CooldownPlanner/ModuleComponents/ERTTable";
 import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
 import ls from "local-storage";
 import ertEngine from "../FightAnalysis/Engine/ERTEngine";
-import Cooldowns from "./CooldownObject/CooldownObject.js";
+
 
 class CooldownPlannerModule extends Component {
   constructor() {
@@ -15,16 +15,11 @@ class CooldownPlannerModule extends Component {
     // This means these functions can be passed as props to other components and they will return here rather than in the component they are sent to.
     this.ertHandler = this.ertHandler.bind(this);
     this.ertEngine = ertEngine.bind(this);
-    this.handleChangeBossCooldownPlanner = this.handleChangeBossCooldownPlanner.bind(this);
-    this.handleChangeRaidCooldownPlanner = this.handleChangeRaidCooldownPlanner.bind(this);
-    this.handleChangeDataCooldownPlanner = this.handleChangeDataCooldownPlanner.bind(this);
-    this.handleChangePlanCooldownPlanner = this.handleChangePlanCooldownPlanner.bind(this);
     this.handleERTClickOpen = this.handleERTClickOpen.bind(this);
     this.handleHealTeamClickOpen = this.handleHealTeamClickOpen.bind(this);
 
     /* ---------------------- We set our state for the cooldown Planner Module. --------------------- */
     this.state = {
-      cooldowns: new Cooldowns(),
       ertListTimeNoIcons: [],
       ertListBossAbility: [],
       ertListAbilityNoTimeIconsAll: [],
@@ -32,10 +27,6 @@ class CooldownPlannerModule extends Component {
       ertListNoteIcons: [],
       ertListNoteNoIcons: [],
       ertshowhide: false,
-      cooldownPlannerCurrentData: [],
-      cooldownPlannerCurrentRaid: "default",
-      cooldownPlannerCurrentBoss: "default",
-      cooldownPlannerCurrentPlan: 1,
       ertDialogState: false,
       healTeamDialogState: false,
       mitigatedChartDataNoCooldowns: [],
@@ -43,48 +34,6 @@ class CooldownPlannerModule extends Component {
       cooldownlistcustom2: [],
     };
   }
-
-  /* ------------------------------------ Change Raid Function ------------------------------------ */
-  /* -------------------------- This changes which raid the plan is using ------------------------- */
-  handleChangeRaidCooldownPlanner = (event) => {
-    this.setState({
-      cooldownPlannerCurrentRaid: event,
-    });
-  };
-
-  /* ------------------------------------ Change Boss Function ------------------------------------ */
-  /* -------------------------- This changes which boss the plan is using ------------------------- */
-  handleChangeBossCooldownPlanner = (event) => {
-    this.setState({
-      cooldownPlannerCurrentBoss: event,
-      cooldownPlannerCurrentPlan: 1,
-    });
-    /* ----------------- Get the 1st Plan for Selected Boss and set as current data ----------------- */
-    let data = ls.get(this.state.cooldownPlannerCurrentRaid + "." + event + ".1");
-    this.setState({
-      cooldownPlannerCurrentData: data,
-    });
-  };
-
-  /* ------------------------------------ Change Plan Function ------------------------------------ */
-
-  handleChangePlanCooldownPlanner = (event) => {
-    this.setState({ cooldownPlannerCurrentPlan: event });
-    /* ------------------------- If Plan does not exist then set empty array ------------------------ */
-    if (ls.get(this.state.cooldownPlannerCurrentRaid + "." + this.state.cooldownPlannerCurrentBoss + "." + event) === null) {
-      ls.set(this.state.cooldownPlannerCurrentRaid + "." + this.state.cooldownPlannerCurrentBoss + "." + event, []);
-    }
-
-    /* -------------------------- Get the Relevant Plan from local storage -------------------------- */
-    let data = ls.get(this.state.cooldownPlannerCurrentRaid + "." + this.state.cooldownPlannerCurrentBoss + "." + event);
-    this.setState({
-      cooldownPlannerCurrentData: data,
-    });
-  };
-
-  handleChangeDataCooldownPlanner = (data) => {
-    this.setState({ cooldownPlannerCurrentData: data });
-  };
 
   ertHandler = () => {
     this.setState((prevState) => ({
@@ -111,7 +60,7 @@ class CooldownPlannerModule extends Component {
   };
 
   render() {
-    console.log(this.state.cooldowns);
+    console.log(this.state);
     return (
       <div
         style={{
@@ -135,13 +84,7 @@ class CooldownPlannerModule extends Component {
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12} padding={1}>
                 <CooldownPlanner
                   update={this.ertEngine}
-                  data={this.state.cooldowns} // this.state.cooldownPlannerCurrentData
-                  currentBoss={this.state.cooldownPlannerCurrentBoss}
-                  bossHandler={this.handleChangeBossCooldownPlanner}
-                  currentRaid={this.state.cooldownPlannerCurrentRaid}
-                  raidHandler={this.handleChangeRaidCooldownPlanner}
-                  planHandler={this.handleChangePlanCooldownPlanner}
-                  currentPlan={this.state.cooldownPlannerCurrentPlan}
+                  cooldownObject={this.state.cooldowns}
                   dataUpdateHandler={this.handleChangeDataCooldownPlanner}
                   ertDialogOpen={this.handleERTClickOpen}
                   healTeamDialogOpen={this.handleHealTeamClickOpen}

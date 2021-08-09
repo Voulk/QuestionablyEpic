@@ -4,16 +4,13 @@ import ls from "local-storage";
 
 class Cooldowns {
   constructor(plan) {
-    this.cooldowns = JSON.parse(ls.get("cooldownPlans")) || [{ default: { default: { 1: [] } } }];
-    console.log(this.cooldowns.length);
-    if (this.cooldowns.length === 1) {
-      raidList.map((key) => {
-        Object.assign(this.cooldowns[0], { [key.zoneID]: [] });
-      });
+    this.cooldowns = JSON.parse(ls.get("cooldownPlans")) || [{ default: { default: [] } }];
 
-      raidList.map((key) => {
-        bossList.filter((filter) => filter.zoneID === key.zoneID).map((map) => Object.assign(this.cooldowns[0][key.zoneID], { ["default"]: { 1: [] }, [map.DungeonEncounterID]: { 1: [] } }));
-      });
+    if (Object.entries(this.cooldowns[0]).length === 1) {
+      bossList.filter((filter) => filter.zoneID === 2450).map((map) => Object.assign(this.cooldowns[0], { [map.DungeonEncounterID]: { default: [] } }));
+      //   raidList.map((key) => {
+      //     bossList.filter((filter) => filter.zoneID === 2450).map((map) => Object.assign(this.cooldowns[0][key.zoneID], { ["default"]: { 1: [] }}));
+      //   });
 
       this.updateCooldownsAll(this.cooldowns);
     }
@@ -23,8 +20,8 @@ class Cooldowns {
     return this.cooldowns;
   };
 
-  getCooldowns = (raidID) => {
-    return this.cooldowns[0][raidID];
+  getCooldowns = (bossID) => {
+    return this.cooldowns[0][bossID];
   };
 
   addCooldown = (item) => {
@@ -33,6 +30,12 @@ class Cooldowns {
 
   deleteCooldown = () => {
     this.cooldowns = [];
+  };
+
+  updateCooldownPlan = (boss, plan, cooldowns) => {
+    console.log(cooldowns);
+    this.cooldowns[0][boss][plan] = cooldowns;
+    ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
   };
 
   updateCooldownsAll = (object) => {
