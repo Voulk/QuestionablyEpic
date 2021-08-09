@@ -151,7 +151,7 @@ export default function CooldownPlanner(props) {
   const currentLanguage = i18n.language;
 
   const cooldownObject = new Cooldowns();
-  
+
   const [currentRaid, setCurrentRaid] = useState(2450);
   const [currentBoss, setCurrentBoss] = useState("");
   const [currentPlan, setCurrentPlan] = useState("");
@@ -165,22 +165,23 @@ export default function CooldownPlanner(props) {
   const loadPlanData = (currentBoss, newPlan) => {
     setCurrentPlan(newPlan);
     const bossCooldowns = cooldownObject.getCooldowns(currentBoss);
-    console.log(bossCooldowns)
+    console.log(bossCooldowns);
     const planCooldowns = bossCooldowns[newPlan];
-    console.log(planCooldowns)
+    console.log(planCooldowns);
     setData(planCooldowns);
   };
 
   const updateStorage = (boss, plan, currentData) => {
-    console.log("working")
-    console.log(currentData)
+    console.log("working");
+    console.log(currentData);
     cooldownObject.updateCooldownPlan(boss, plan, currentData);
-    console.log(cooldownObject)
+    console.log(cooldownObject);
   };
 
   const changeBoss = (newBoss) => {
-    setCurrentBoss(newBoss)
-    setCurrentPlan('')
+    setCurrentBoss(newBoss);
+    setCurrentPlan();
+    loadPlanData(newBoss, "default");
   };
 
   /* --- Function to Show the time Cooldowns will be available again (Currently Column Hidden) --- */
@@ -1491,13 +1492,7 @@ export default function CooldownPlanner(props) {
                 <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                   <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small" disabled={currentRaid === "" ? true : false}>
                     <InputLabel id="BossSelector">{t("CooldownPlanner.TableLabels.BossSelectorLabel")}</InputLabel>
-                    <Select
-                      labelId="BossSelector"
-                      value={currentBoss}
-                      onChange={(e) => changeBoss(e.target.value)}
-                      label={t("CooldownPlanner.TableLabels.BossSelectorLabel")}
-                      MenuProps={menuStyle}
-                    >
+                    <Select labelId="BossSelector" value={currentBoss} onChange={(e) => changeBoss(e.target.value)} label={t("CooldownPlanner.TableLabels.BossSelectorLabel")} MenuProps={menuStyle}>
                       {bossList
                         .filter((obj) => {
                           return obj.zoneID === currentRaid;
