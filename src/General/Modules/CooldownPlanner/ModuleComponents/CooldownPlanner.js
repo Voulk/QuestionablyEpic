@@ -151,33 +151,32 @@ export default function CooldownPlanner(props) {
   const currentLanguage = i18n.language;
 
   const cooldownObject = new Cooldowns();
+  const ertDialogOpen = props.ertDialogOpen;
+  const healTeamDialogOpen = props.healTeamDialogOpen;
 
+  /* ---------------- State for Raid shown (Current is Sanctum of Domination 2450) ---------------- */
+  // Only bosses for Sanctum will be shown in the drop down
   const [currentRaid, setCurrentRaid] = useState(2450);
   const [currentBoss, setCurrentBoss] = useState("");
   const [currentPlan, setCurrentPlan] = useState("");
   const [data, setData] = useState([]);
 
-  const rl = raidList;
-
-  const ertDialogOpen = props.ertDialogOpen;
-  const healTeamDialogOpen = props.healTeamDialogOpen;
-
+  /* ------------------------------- Loads relevant plan into table ------------------------------- */
   const loadPlanData = (currentBoss, newPlan) => {
     setCurrentPlan(newPlan);
+    /* ------------------------------- Get List of Plans for the boss ------------------------------- */
     const bossCooldowns = cooldownObject.getCooldowns(currentBoss);
-    console.log(bossCooldowns);
+    /* --------------------------------------- Set the lected --------------------------------------- */
     const planCooldowns = bossCooldowns[newPlan];
-    console.log(planCooldowns);
     setData(planCooldowns);
   };
 
+  /* --------------------- Updates the plan in cooldownObject in local storage -------------------- */
   const updateStorage = (boss, plan, currentData) => {
-    console.log("working");
-    console.log(currentData);
     cooldownObject.updateCooldownPlan(boss, plan, currentData);
-    console.log(cooldownObject);
   };
 
+  /* -------------------------------------- Changes the Boss -------------------------------------- */
   const changeBoss = (newBoss) => {
     setCurrentBoss(newBoss);
     setCurrentPlan();
