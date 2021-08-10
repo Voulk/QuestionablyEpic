@@ -28,12 +28,21 @@ class Cooldowns {
     this.cooldowns.push(item);
   };
 
+  addNewPlan = (item, boss) => {
+    Object.assign(this.cooldowns[0][boss], { [item]: [] });
+    ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
+  };
+
+  deletePlan = (planName, boss) => {
+    delete this.cooldowns[0][boss][planName];
+    ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
+  };
+
   deleteCooldown = () => {
     this.cooldowns = [];
   };
 
   updateCooldownPlan = (boss, plan, cooldowns) => {
-    console.log(cooldowns);
     this.cooldowns[0][boss][plan] = cooldowns;
     ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
   };

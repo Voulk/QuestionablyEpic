@@ -20,6 +20,9 @@ import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
 import classIcons from "../Functions/IconFunctions/ClassIcons";
 import ls from "local-storage";
 import Cooldowns from "../CooldownObject/CooldownObject";
+import AddPlanDialog from "./AddPlanDialog";
+import DeletePlanDialog from "./DeletePlanDialog";
+import { red } from "@material-ui/core/colors";
 
 const useStyles = makeStyles(() => ({
   formControl: {
@@ -39,6 +42,12 @@ const useStyles = makeStyles(() => ({
     },
   },
 }));
+
+const deleteTheme = createMuiTheme({
+  palette: {
+    primary: red,
+  },
+});
 
 const themeCooldownTable = createMuiTheme({
   overrides: {
@@ -154,12 +163,42 @@ export default function CooldownPlanner(props) {
   const ertDialogOpen = props.ertDialogOpen;
   const healTeamDialogOpen = props.healTeamDialogOpen;
 
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                            Add Plan                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+  const [openAddPlanDialog, setOpenAddPlanDialog] = React.useState(false);
+
+  const handleAddPlanDialogClickOpen = () => {
+    setOpenAddPlanDialog(true);
+  };
+
+  const handleAddPlanDialogClose = (value) => {
+    setOpenAddPlanDialog(false);
+  };
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                           Delete Plan                                          */
+  /* ---------------------------------------------------------------------------------------------- */
+  const [openDeletePlanDialog, setOpenDeletePlanDialog] = React.useState(false);
+
+  const handleDeletePlanDialogClickOpen = () => {
+    setOpenDeletePlanDialog(true);
+  };
+
+  const handleDeletePlanDialogClose = (value) => {
+    setOpenDeletePlanDialog(false);
+  };
+
   /* ---------------- State for Raid shown (Current is Sanctum of Domination 2450) ---------------- */
   // Only bosses for Sanctum will be shown in the drop down
   const [currentRaid, setCurrentRaid] = useState(2450);
-  const [currentBoss, setCurrentBoss] = useState("");
+  const [currentBoss, setCurrentBoss] = useState(2423);
   const [currentPlan, setCurrentPlan] = useState("");
   const [data, setData] = useState([]);
+
+  const getBossPlanNames = (boss) => {
+    return Object.keys(cooldownObject.getCooldowns(boss));
+  };
 
   /* ------------------------------- Loads relevant plan into table ------------------------------- */
   const loadPlanData = (currentBoss, newPlan) => {
@@ -206,6 +245,7 @@ export default function CooldownPlanner(props) {
     return time;
   };
 
+  console.log(getBossPlanNames(currentBoss));
   let columns = [
     {
       /* --- The Cast Time Column. This is where the time the user expects the cooldown to be cast. --- */
@@ -1513,10 +1553,32 @@ export default function CooldownPlanner(props) {
                   <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small" disabled={currentBoss === "" ? true : false}>
                     <InputLabel id="RaidSelector">{t("Select Plan")}</InputLabel>
                     <Select labelId="RaidSelector" label={t("Select Plan")} value={currentPlan} onChange={(e) => loadPlanData(currentBoss, e.target.value)}>
-                      <MenuItem value={"default"}>Default</MenuItem>
-                      <Divider />
+                      {getBossPlanNames(currentBoss).map((key) => (
+                        <MenuItem value={key}>{key}</MenuItem>
+                      ))}
                     </Select>
                   </FormControl>
+                </Grid>
+
+                <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <Button key={8} variant="contained" color="primary" onClick={handleAddPlanDialogClickOpen} size="small">
+                    Add
+                  </Button>
+                </Grid>
+
+                <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <ThemeProvider theme={deleteTheme}>
+                    <Button
+                      key={8}
+                      variant="contained"
+                      color="primary"
+                      onClick={handleDeletePlanDialogClickOpen}
+                      size="small"
+                      disabled={currentPlan === "" || currentPlan === "default" ? true : false}
+                    >
+                      Delete
+                    </Button>
+                  </ThemeProvider>
                 </Grid>
 
                 {/* ----------------------------- ERT Note Button (Opens ERT Dialog) ----------------------------- */}
@@ -1582,6 +1644,18 @@ export default function CooldownPlanner(props) {
               }, 1000);
             }),
         }}
+      />
+
+      <AddPlanDialog openAddPlanDialog={openAddPlanDialog} handleAddPlanDialogClose={handleAddPlanDialogClose} cooldownObject={cooldownObject} currentBoss={currentBoss} loadPlanData={loadPlanData} />
+
+      <DeletePlanDialog
+        openDeletePlanDialog={openDeletePlanDialog}
+        handleDeletePlanDialogClose={handleDeletePlanDialogClose}
+        currentPlan={currentPlan}
+        setCurrentPlan={setCurrentPlan}
+        setData={setData}
+        cooldownObject={cooldownObject}
+        currentBoss={currentBoss}
       />
     </ThemeProvider>
   );
