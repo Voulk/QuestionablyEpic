@@ -203,8 +203,13 @@ export default function LegendaryCompare(props) {
       <Grid item container spacing={1} direction="row">
         {/* ---------------------------------------- Module Title ---------------------------------------- */}
         <Grid item xs={12}>
-          <Typography color="primary" variant="h4" align="center" style={{ paddingBottom: 16 }}>
+          <Typography color="primary" variant="h4" align="center" style={{ paddingBottom: 4 }}>
             {t("LegendaryCompare.Title")}
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography color="primary" variant="subtitle2" align="center" style={{ paddingBottom: 12 }}>
+            {"Current Playstyle selected: " + props.player.getActiveModel(contentType).modelName}
           </Typography>
         </Grid>
         {/* ------------------------------ Map the Legendary list into Cards ----------------------------- */}
