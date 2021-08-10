@@ -15,7 +15,7 @@ export const getMonkLegendary = (effectName, player, contentType) => {
     const essenceFontCPM = player.getSpellCPM(ID_ESSENCE_FONT, contentType);
     const dpsDuringDuration = 1250; // this is a 75% parse
     const multiplier = 2.5;
-    const buffUptime = (12 * essenceFontCPM) / 60; // While the buff lasts 15s, the Essence Font channel lasts 3.
+    const buffUptime = Math.min(1, (12 * essenceFontCPM) / 60); // While the buff lasts 15s, the Essence Font channel lasts 3.
     const expectedOverhealing = 0.3;
     
     bonus_stats.hps = buffUptime * multiplier * dpsDuringDuration * (1 - expectedOverhealing);

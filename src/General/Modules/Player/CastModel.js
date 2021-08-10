@@ -1,13 +1,13 @@
 import { createModifiersFromModifierFlags } from "typescript";
 import SPEC from "../../Engine/SPECS";
-import { druidDefaultSpecialQueries, druidDefaultSpellData } from "./ClassDefaults/DruidDefaults";
+import { druidDefaultSpecialQueries, druidDefaultSpellData, druidDefaultStatWeights } from "./ClassDefaults/DruidDefaults";
 import { paladinVenthyrSpecialQueries, paladinVenthyrSpellData, paladinVenthyrStatWeights } from "./ClassDefaults/Paladin/PaladinDefaults";
 import { paladinKyrianSpecialQueries, paladinKyrianSpellData, paladinKyrianStatWeights } from "./ClassDefaults/Paladin/PaladinKyrian";
 import { paladinMaraadsSpellData, paladinMaraadsSpecialQueries, paladinMaraadsStatWeights } from "./ClassDefaults/Paladin/PaladinMaraadsRaid";
-import { shamanDefaultSpecialQueries, shamanDefaultSpellData } from "./ClassDefaults/ShamanDefaults";
+import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
 import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/MonkDefaults";
-import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData } from "./ClassDefaults/HolyPriestDefaults";
-import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData } from "./ClassDefaults/DiscPriestDefaults";
+import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
+import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./ClassDefaults/DiscPriestDefaults";
 
 class CastModel {
   constructor(spec, contentType, modelID, arrID) {
@@ -73,6 +73,7 @@ class CastModel {
       this.modelName = "Default";
       spellList = druidDefaultSpellData(contentType);
       specialQueries = druidDefaultSpecialQueries(contentType);
+      this.baseStatWeights = druidDefaultStatWeights(contentType);
       this.fightInfo.dps = 700;
 
     } else if (spec === SPEC.HOLYPALADIN) {
@@ -101,7 +102,7 @@ class CastModel {
         this.modelName = "Default";
         spellList = paladinVenthyrSpellData(contentType);
         specialQueries = paladinVenthyrSpecialQueries(contentType);
-        this.baseStatWeights = paladinVenthyrStatWeights("Raid");
+        this.baseStatWeights = paladinVenthyrStatWeights(contentType);
         this.fightInfo.dps = 4400;
       }
 
@@ -109,6 +110,7 @@ class CastModel {
       this.modelName = "Default";
       spellList = shamanDefaultSpellData(contentType);
       specialQueries = shamanDefaultSpecialQueries(contentType);
+      this.baseStatWeights = shamanDefaultStatWeights(contentType);
       this.fightInfo.dps = 725;
 
       // --- Mistweaver Monk
@@ -140,12 +142,14 @@ class CastModel {
       this.modelName = "Default";
       spellList = discPriestDefaultSpellData(contentType);
       specialQueries = discPriestDefaultSpecialQueries(contentType);
+      this.baseStatWeights = discPriestDefaultStatWeights(contentType);
       this.fightInfo.dps = 1300;
 
     } else if (spec === SPEC.HOLYPRIEST) {
       this.modelName = "Default";
       spellList = holyPriestDefaultSpellData(contentType);
       specialQueries = holyPriestDefaultSpecialQueries(contentType);
+      this.baseStatWeights = holyPriestDefaultStatWeights(contentType);
       this.fightInfo.dps = 775;
     } 
     
