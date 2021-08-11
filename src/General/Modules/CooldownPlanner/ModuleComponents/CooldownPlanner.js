@@ -23,6 +23,8 @@ import Cooldowns from "../CooldownObject/CooldownObject";
 import AddPlanDialog from "./AddPlanDialog";
 import DeletePlanDialog from "./DeletePlanDialog";
 import { red } from "@material-ui/core/colors";
+import ExportPlanDialog from "./ExportPlanDialog";
+import ImportPlanDialog from "./ImportPlanDialog";
 
 const useStyles = makeStyles(() => ({
   formControl: {
@@ -1579,6 +1581,12 @@ export default function CooldownPlanner(props) {
                       Delete
                     </Button>
                   </ThemeProvider>
+                </Grid>
+                <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <ImportPlanDialog variant="outlined" disableElevation={true} buttonLabel="Import" color="primary" cooldownObject={cooldownObject} loadPlanData={loadPlanData} />
+                </Grid>
+                <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <ExportPlanDialog variant="outlined" disableElevation={true} buttonLabel="Export" data={data} color="primary" boss={currentBoss} planName={currentPlan} plan={data} />
                 </Grid>
 
                 {/* ----------------------------- ERT Note Button (Opens ERT Dialog) ----------------------------- */}

@@ -42,6 +42,11 @@ class Cooldowns {
     this.cooldowns = [];
   };
 
+  importPlan = (boss, planName, importedPlanObject) => {
+    Object.assign(this.cooldowns[0][boss], { [planName]: importedPlanObject });
+    ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
+  }
+
   updateCooldownPlan = (boss, plan, cooldowns) => {
     this.cooldowns[0][boss][plan] = cooldowns;
     ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
