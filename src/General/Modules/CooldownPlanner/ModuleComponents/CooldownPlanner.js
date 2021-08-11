@@ -204,7 +204,9 @@ export default function CooldownPlanner(props) {
 
   /* ------------------------------- Loads relevant plan into table ------------------------------- */
   const loadPlanData = (currentBoss, newPlan) => {
+    setCurrentBoss(currentBoss);
     setCurrentPlan(newPlan);
+
     /* ------------------------------- Get List of Plans for the boss ------------------------------- */
     const bossCooldowns = cooldownObject.getCooldowns(currentBoss);
     /* --------------------------------------- Set the lected --------------------------------------- */
@@ -219,8 +221,6 @@ export default function CooldownPlanner(props) {
 
   /* -------------------------------------- Changes the Boss -------------------------------------- */
   const changeBoss = (newBoss) => {
-    setCurrentBoss(newBoss);
-    setCurrentPlan();
     loadPlanData(newBoss, "default");
   };
 
@@ -247,7 +247,6 @@ export default function CooldownPlanner(props) {
     return time;
   };
 
-  console.log(getBossPlanNames(currentBoss));
   let columns = [
     {
       /* --- The Cast Time Column. This is where the time the user expects the cooldown to be cast. --- */

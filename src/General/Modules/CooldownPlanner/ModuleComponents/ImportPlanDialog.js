@@ -17,7 +17,8 @@ export default function ImportPlanDialog(props) {
     setOpen(false);
   };
 
-  function processplan(importedString, cooldownObject) {
+  /* -------------------------- process the imported string into the app -------------------------- */
+  const processplan = (importedString, cooldownObject) => {
     let importedPlan = "";
     let importedBoss = "";
     let importPlanName = "";
@@ -42,7 +43,7 @@ export default function ImportPlanDialog(props) {
 
     cooldownObject.importPlan(importedBoss, importPlanName, importedPlan);
     loadPlanData(importedBoss, importPlanName);
-  }
+  };
 
   const handleSubmit = () => {
     processplan(importedPlanString, cooldownObject);
