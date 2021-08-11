@@ -10,11 +10,27 @@ class BCPlayer extends Player {
         if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
     }
 
+    getStatWeight = (contentType, stat) => {
+        const lcStat = stat.toLowerCase();
+        const weights = this.statWeights["Raid"];
+        if (!weights) {
+          reportError(this, "Player", "Invalid Stat Weight", stat);
+          return 0;
+        }
+    
+        if (lcStat in weights) {
+          return weights[lcStat];
+        }
+    
+        return 0;
+      };
+
     setupDefaults = (spec) => {
         this.castModel = {
             Raid: new CastModel(spec, "Raid"),
             Dungeon: new CastModel(spec, "Dungeon"), // Unused in BC.
         };
+        this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
         // These are starter weights, and can and will change during the engine calculation process.
         if (spec === "Restoration Druid BC") {
             this.statWeights = {

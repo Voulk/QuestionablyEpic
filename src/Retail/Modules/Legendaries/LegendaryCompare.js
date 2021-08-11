@@ -209,7 +209,7 @@ export default function LegendaryCompare(props) {
         </Grid>
         <Grid item xs={12}>
           <Typography color="primary" variant="subtitle2" align="center" style={{ paddingBottom: 12 }}>
-            {"Current Playstyle selected: " + props.player.getActiveModel(contentType).modelName}
+            {"Current Playstyle selected: " + props.player.getActiveModel(contentType).modelName + " - " + contentType}
           </Typography>
         </Grid>
         {/* ------------------------------ Map the Legendary list into Cards ----------------------------- */}
