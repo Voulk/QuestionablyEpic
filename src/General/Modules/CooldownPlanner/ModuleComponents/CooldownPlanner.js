@@ -421,7 +421,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* ------------------------ Renders the healer name outside of Edit Mode. ----------------------- */
-      render: (rowData) => <div style={{ color: classColoursJS(rowData.class) }}>{rowData.name}</div>,
+      render: (rowData) => <div style={{ color: classColoursJS(rowData.class), display: "inline-flex" }}>{rowData.name}</div>,
       /* ---------- Component for name selection when the table is in edit mode. ---------- */
       editComponent: (props) => (
         <ThemeProvider theme={selectMenu}>
@@ -454,7 +454,7 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
                     {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                     {key.name}
                   </MenuItem>
@@ -483,7 +483,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
       render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class) }}>
+        <div style={{ color: classColoursJS(rowData.class), display: "inline-flex" }}>
           {rowData.class === undefined ? "" : classIcons(rowData.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
           {t("CooldownPlanner.Classes." + rowData.class)}
         </div>
@@ -492,7 +492,7 @@ export default function CooldownPlanner(props) {
       editComponent: (props) => {
         let data = { ...props.rowData };
         return (
-          <div style={{ color: classColoursJS(data.class) }}>
+          <div style={{ color: classColoursJS(data.class), display: "inline-flex" }}>
             {data.class === undefined ? "" : classIcons(data.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
             {t("CooldownPlanner.Classes." + data.class)}
           </div>
@@ -622,7 +622,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
-      render: (rowData) => <div style={{ color: classColoursJS(rowData.class1) }}>{rowData.name1}</div>,
+      render: (rowData) => <div style={{ color: classColoursJS(rowData.class1), display: "inline-flex" }}>{rowData.name1}</div>,
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
       editComponent: (props) => (
         <ThemeProvider theme={selectMenu}>
@@ -655,7 +655,7 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
                     {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                     {key.name}
                   </MenuItem>
@@ -685,7 +685,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
       render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class1) }}>
+        <div style={{ color: classColoursJS(rowData.class1), display: "inline-flex" }}>
           {rowData.class1 === undefined ? "" : classIcons(rowData.class1, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
           {t("CooldownPlanner.Classes." + rowData.class1)}
         </div>
@@ -694,7 +694,7 @@ export default function CooldownPlanner(props) {
       editComponent: (props) => {
         let data = { ...props.rowData };
         return (
-          <div style={{ color: classColoursJS(data.class1) }}>
+          <div style={{ color: classColoursJS(data.class1), display: "inline-flex" }}>
             {data.class1 === undefined ? "" : classIcons(data.class1, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
             {t("CooldownPlanner.Classes." + data.class1)}
           </div>
@@ -825,7 +825,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
-      render: (rowData) => <div style={{ color: classColoursJS(rowData.class2) }}>{rowData.name2}</div>,
+      render: (rowData) => <div style={{ color: classColoursJS(rowData.class2), display: "inline-flex" }}>{rowData.name2}</div>,
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
       editComponent: (props) => (
         <ThemeProvider theme={selectMenu}>
@@ -858,7 +858,7 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
                     {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                     {key.name}
                   </MenuItem>
@@ -884,7 +884,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
       render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class2) }}>
+        <div style={{ color: classColoursJS(rowData.class2), display: "inline-flex" }}>
           {rowData.class2 === undefined ? "" : classIcons(rowData.class2, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
           {t("CooldownPlanner.Classes." + rowData.class2)}
         </div>
@@ -893,7 +893,7 @@ export default function CooldownPlanner(props) {
       editComponent: (props) => {
         let data = { ...props.rowData };
         return (
-          <div style={{ color: classColoursJS(data.class2) }}>
+          <div style={{ color: classColoursJS(data.class2), display: "inline-flex" }}>
             {data.class2 === undefined ? "" : classIcons(data.class2, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
             {t("CooldownPlanner.Classes." + data.class2)}
           </div>
@@ -1024,7 +1024,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
-      render: (rowData) => <div style={{ color: classColoursJS(rowData.class3) }}>{rowData.name3}</div>,
+      render: (rowData) => <div style={{ color: classColoursJS(rowData.class3), display: "inline-flex" }}>{rowData.name3}</div>,
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
       editComponent: (props) => (
         <ThemeProvider theme={selectMenu}>
@@ -1057,7 +1057,7 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
                     {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                     {key.name}
                   </MenuItem>
@@ -1084,7 +1084,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
       render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class3) }}>
+        <div style={{ color: classColoursJS(rowData.class3), display: "inline-flex" }}>
           {rowData.class3 === undefined ? "" : classIcons(rowData.class3, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
           {t("CooldownPlanner.Classes." + rowData.class3)}
         </div>
@@ -1093,7 +1093,7 @@ export default function CooldownPlanner(props) {
       editComponent: (props) => {
         let data = { ...props.rowData };
         return (
-          <div style={{ color: classColoursJS(data.class3) }}>
+          <div style={{ color: classColoursJS(data.class3), display: "inline-flex" }}>
             {data.class3 === undefined ? "" : classIcons(data.class3, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
             {t("CooldownPlanner.Classes." + data.class3)}
           </div>
@@ -1222,7 +1222,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
-      render: (rowData) => <div style={{ color: classColoursJS(rowData.class4) }}>{rowData.name4}</div>,
+      render: (rowData) => <div style={{ color: classColoursJS(rowData.class4), display: "inline-flex" }}>{rowData.name4}</div>,
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
       editComponent: (props) => (
         <ThemeProvider theme={selectMenu}>
@@ -1255,7 +1255,7 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
                     {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                     {key.name}
                   </MenuItem>
@@ -1282,7 +1282,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
       render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class4) }}>
+        <div style={{ color: classColoursJS(rowData.class4), display: "inline-flex" }}>
           {rowData.class3 === undefined ? "" : classIcons(rowData.class4, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
           {t("CooldownPlanner.Classes." + rowData.class4)}
         </div>
@@ -1291,7 +1291,7 @@ export default function CooldownPlanner(props) {
       editComponent: (props) => {
         let data = { ...props.rowData };
         return (
-          <div style={{ color: classColoursJS(data.class4) }}>
+          <div style={{ color: classColoursJS(data.class4), display: "inline-flex" }}>
             {data.class4 === undefined ? "" : classIcons(data.class4, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
             {t("CooldownPlanner.Classes." + data.class4)}
           </div>
