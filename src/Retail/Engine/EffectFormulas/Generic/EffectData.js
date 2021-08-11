@@ -71,12 +71,14 @@ export const effectData = [
         name: "Chaos Bane", // These use tables as if 174 ilvl.
         effects: [
           {
-            coefficient: [0.105263, 0.1578945, 0.210526, 0.2631575, 0.315789], 
+            //coefficient: [0.052632, 0.078948, 0.105264, 0.13158, 0.157896], 
+            coefficient: [0.105263, 0.1578945, 0.210526, 0.2631575, 0.315789],
             duration: 30,
             table: -1,
             ppm: 8, // Does have a 0.5s GCD. Doesn't proc while Effect#2 is active.
           },
           {
+            //coefficient: [1.578947, 2.3684205, 3.157894, 3.9473675, 4.736841], 
             coefficient: [3.158, 4.737, 6.316, 7.895, 9.474], 
             duration: 30,
             table: -1,
@@ -136,12 +138,13 @@ export const effectData = [
         name: "Winds of Winter", // 6% of your critical hits and healing are stored. You get an absorb and deal damage very 20s based on what is stored.
         effects: [
           {
-            coefficient: [7.44707, 11.170605, 14.89414, 18.617675, 22.34121], // The coefficient is for the maximum amount stored on a crit.
+            coefficient: [7.44707, 11.170605, 14.89414, 18.617675, 22.34121], // The coefficient is for the maximum amount stored on a crit. It was unchanged in the buff.
             table: -8,
-            specOvercap: {"Restoration Druid": 0.94, "Holy Paladin": 0.6, "Mistweaver Monk": 0.85, "Restoration Shaman": 0.94, "Holy Priest": 0.75, "Discipline Priest": 0.7},
-            specAbilitiesThatWork: {"Restoration Druid": 0.85, "Holy Paladin": 0.7, "Mistweaver Monk": 1, "Restoration Shaman": 0.57, "Holy Priest": 0.94, "Discipline Priest": 0.26}, // Winds of Winter doesn't work on multiple abilities in the game. Disc and Holy Paladin are penalized most heavily.
-            stored: [0.06, 0.12, 0.18, 0.24, 0.3],
-            wastage: 0.1
+            specOvercap: {"Restoration Druid": 0.89, "Holy Paladin": 0.65, "Mistweaver Monk": 0.82, "Restoration Shaman": 0.7, "Holy Priest": 0.61, "Discipline Priest": 0.82},
+            specAbilitiesThatWork: {"Restoration Druid": 0.99, "Holy Paladin": 0.96, "Mistweaver Monk": 0.97, "Restoration Shaman": 0.46, "Holy Priest": 1, "Discipline Priest": 0.86}, // Winds of Winter doesn't work on multiple abilities in the game. Disc and Holy Paladin are penalized most heavily.
+            expectedOverhealing: 0.25, // Even though the absorb lasts quite a while, wastage is unavoidable.
+            //stored: [0.05, 0.075, 0.1, 0.125, 0.15],
+            stored: [0.09, 0.135, 0.18, 0.225, 0.27]
           },
         ],
       },
@@ -192,11 +195,13 @@ export const effectData = [
         
         name: "Blood Link", // These use tables as if 174 ilvl.
         effects: [
-          {
-            coefficient: [22.3414, 33.5121, 44.6828, 55.8535, 67.0242], 
+          {    
+            //coefficient: [22.3414, 33.5121, 44.6828, 55.8535, 67.0242], // Original Value
+            //coefficient: [13.404727, 20.107, 26.809454, 33.5118175, 40.214181], // Reverted Nerf
+            coefficient: [26.809452, 40.214178, 53.618904, 67.02363, 80.428356], // New Post-buff value
             table: -9, // -8 in the spell data.
             ppm: 20, // Has a 100% uptime, and procs every 3 seconds.
-            expectedOverhealing: 0.2,
+            expectedOverhealing: 0.15,
           },
         ],
       },

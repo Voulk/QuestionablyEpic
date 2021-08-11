@@ -9,7 +9,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Vision of Unending Growth",
-          slot: "Head or Feet",
+          slot: "Head, Feet or Legs",
           desc: "Rejuvenation has a 2.5% chance to create a new Rejuvenation on a nearby target on tick.",
           droploc: "Torghast, Fracture Chambers, Layer 3+",
         },
@@ -79,7 +79,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Verdant Infusion",
-          slot: "Shoulder or Hands",
+          slot: "Shoulders, Hands or Back",
           desc: "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 10s.",
           droploc: "Oranomonos, World Boss",
         },
@@ -264,10 +264,9 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Kindred Affinity",
-          slot: "Neck or Shoulder",
-          desc:
-            "You and your Kindred Spirit each gain a bonus secondary stat based on their Covenant. This bonus is doubled while the bond is Empowered. Kyrian: Mastery increased by 0. Night Fae: Haste increased by 5%. Venthyr: Critical Strike chance increased by 5%. Necrolord: Versatility increased by 5%.",
-          droploc: "Kyrian",
+          slot: "Neck or Shoulders",
+          desc: "You and your Kindred Spirit each gain a 8% secondary stat buff based on their Covenant. This bonus is doubled while the bond is Empowered.",
+          droploc: "Kyrian Renown 48",
           covenant: "Kyrian",
         },
         de: {
@@ -308,9 +307,9 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Sinful Hysteria",
-          slot: "Waist, Hands",
-          desc: "Each time Ravenous Frenzy is applied its duration is increased by 0.2 sec. Additionally, Ravenous Frenzy lingers and will not overcome you for 5 sec after it ends.",
-          droploc: "Venthyr",
+          slot: "Waist or Hands",
+          desc: "Every time Ravenous Frenzy stacks, its duration is increased by 0.2 sec. Additionally, the buff lingers for 5 seconds after Ravenous Frenzy ends.",
+          droploc: "Venthyr Renown 48",
           covenant: "Venthyr",
         },
         de: {
@@ -351,9 +350,9 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Unbridled Swarm",
-          slot: "Chest, Wrist",
+          slot: "Chest or Wrist",
           desc: "Adaptive Swarm has a 60% chance to split into two Swarms each time it jumps.",
-          droploc: "Necrolord",
+          droploc: "Necrolord Renown 48",
           covenant: "Necrolord",
         },
         de: {
@@ -394,15 +393,15 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Celestial Spirits",
-          slot: "Legs, Feet",
-          desc: "The cooldown and duration of Convoke the Spirits is reduced by 50%. Convoke the Spirits has an increased chance to use an exceptional spell or ability.",
-          droploc: "Night Fae",
+          slot: "Legs or Feet",
+          desc: "The cooldown of Convoke the Spirits is halved to one minute, but the number of spells only reduced by 25% (to 9 from 12).  Convoke the Spirits has an increased chance to cast Flourish.",
+          droploc: "Night Fae Renown 48",
           covenant: "Night Fae",
         },
         de: {
-          name: "",
-          slot: "",
-          desc: "",
+          name: "Himmlische Geister",
+          slot: "Legs, Feet",
+          desc: "Verringert die Abklingzeit von 'Konvokation der Geister' um 50% und die Dauer um 25%. 'Konvokation der Geister' hat eine erhöhte Chance, einen außergewöhnlichen Zauber oder eine außergewöhnliche Fähigkeit einzusetzen.",
           droploc: "",
           covenant: "Night Fae",
         },
@@ -414,9 +413,9 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
           covenant: "Night Fae",
         },
         ru: {
-          name: "",
-          slot: "",
-          desc: "",
+          name: "Небесные духи",
+          slot: "Legs, Feet",
+          desc: "Сокращает время восстановления Созыва духов на 50%, а время действия этой способности – 25%.",
           droploc: "",
           covenant: "Night Fae",
         },
@@ -438,7 +437,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Of Dusk and Dawn",
-          slot: "Head or Shoulder",
+          slot: "Head or Shoulders",
           desc: "When you reach 5 Holy Power, gain 6% damage and healing for 12 seconds. When you reach 0 Holy Power, gain 4% DR for 12 seconds.",
           droploc: "Stone Legion Generals, Castle Nathria",
         },
@@ -2238,7 +2237,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
             name: "Call to Arms",
             slot: "Legs, Feet",
             desc: "Weapons of Order calls forth Chi-Ji, the Red Crane / Yu'lon, the Jade Serpent to assist you for 12 sec. (500ms cooldown)",
-            droploc: "Kyrian",
+            droploc: "Kyrian Renown 48",
             covenant: "Kyrian",
           },
           de: {
@@ -2278,7 +2277,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
               name: "Bountiful Brew",
               slot: "Neck, Shoulder, Chest",
               desc: "Your abilities have a low chance to cast Bonedust Brew at your target's location. (Approximately 1.25 procs per minute, 500ms cooldown)",
-              droploc: "Necrolord",
+              droploc: "Necrolord Renown 48",
               covenant: "Necrolord",
             },
             de: {
@@ -2357,8 +2356,8 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
                 en: {
                   name: "Sinister Teachings",
                   slot: "Wrist, Finger",
-                  desc: "Fallen Order summons 1 additional [Ox][Crane][Tiger] adept for 24 sec. While you have an active adept, your abilities that critically hit reduce the cooldown of Fallen Order by 3 sec. (750ms cooldown)",
-                  droploc: "Venthyr",
+                  desc: "Fallen Order summons 1 additional adept for 24 sec. While you have an active adept, your abilities that critically hit reduce the cooldown of Fallen Order by 5 sec.",
+                  droploc: "Venthyr Renown 48",
                   covenant: "Venthyr",
                 },
                 de: {

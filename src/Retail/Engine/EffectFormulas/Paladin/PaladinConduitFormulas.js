@@ -25,7 +25,6 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
     const wingsCritBonus = 20 / 120 * 0.3; // We could swap out 20 for wings uptime here to include Awakening.
     const holyShockBaseCrit = player.getStatPerc("Crit") + 0.3 + wingsCritBonus; // This is Holy Shocks *effective* base crit chance. 
     const holyShockIncrease = (holyShockBaseCrit + trait_bonus) / holyShockBaseCrit - 1;
-    //console.log("HSI: " + holyShockIncrease);
 
     bonus_stats.HPS = holyShockIncrease * (player.getSpellHPS(IDHOLYSHOCK, contentType) + player.getSpellHPS(IDSHOCKBARRIER, contentType));
   }

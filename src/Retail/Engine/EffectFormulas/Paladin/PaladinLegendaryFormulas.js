@@ -76,24 +76,19 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
 
     /* -------------------------------- Calculate Word of Glory bonus ------------------------------- */
     const buffedWordOfGlories = lightOfDawnCPM;
-    const oneWordOfGlory = player.getStatMultiplier("ALL") * 3.15 * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.95;
+    const oneWordOfGlory = player.getStatMultiplier("ALL") * 3.15 * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.92;
     const oneLightOfDawn = player.getStatMultiplier("ALL") * 1.05 * lightOfDawnTargets * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.78;
 
     const wordOfGloryMasteryCoeff = (1 + (player.getStatPerc("Mastery") - 1) * 1.5) / player.getStatPerc("Mastery");
     const oneWordOfGloryBonus = Math.max(0, oneWordOfGlory * wordOfGloryMasteryCoeff - oneLightOfDawn);
     const HPSWordOfGlory = (buffedWordOfGlories * oneWordOfGloryBonus) / 60;
 
-    /*
-    console.log("MastDiff: " + mastDiff + ". LoDUptime: " + lightOfDawnUptime + "Max: " + maxMasteryEff + ". Avg: " + averageMasteryEff);
-    console.log("Coeff: " + wordOfGloryMasteryCoeff + ". oneBonus: " + oneWordOfGloryBonus);
-    console.log("One Word of Glory: " + oneWordOfGlory + ". One LoD: " + oneLightOfDawn);
-    */
     bonus_stats.hps = Math.round(HPSMasteryBonus + HPSWordOfGlory);
   } else if (name === "Of Dusk and Dawn") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        Of Dusk and Dawn                                        */
     /* ---------------------------------------------------------------------------------------------- */
-    const offensiveBuffUptime = 0.84;
+    const offensiveBuffUptime = 0.88;
     const legendaryBonus = 0.06;
 
     bonus_stats.dps = 0;
@@ -153,7 +148,6 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
 
     //let akn = 2.5 / 60; //getAwakeningWingsUptime(player, contentType);
     //let awakening_hps = (akn * wingsEffHealingIncrease + 1 * (1 - akn) );
-    //console.log("Wings Uptime: " + akn + ". Awakening healing increase:" + awakening_hps);
   }
   else if (name === "Divine Resonance") {
     /* ---------------------------------------------------------------------------------------------- */
@@ -161,7 +155,7 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
     /* ---------------------------------------------------------------------------------------------- */
     const specialSettings = {
       numCopies: 3,
-      copyStrength: 0.2,
+      copyStrength: 0.5,
     };
   
     bonus_stats = getPaladinCovAbility("Pelagos", player, contentType, specialSettings);

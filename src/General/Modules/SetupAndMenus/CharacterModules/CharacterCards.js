@@ -343,7 +343,6 @@ export default function CharCards(props) {
 
   /* ---------------------------- Spec for the card --------------------------- */
   const spec = props.cardType === "Char" ? props.char.spec : "";
-  console.log(props.char);
   const covenant = props.char.covenant;
   const gameType = useSelector((state) => state.gameType);
   const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade;

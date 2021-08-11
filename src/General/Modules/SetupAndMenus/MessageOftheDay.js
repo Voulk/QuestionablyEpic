@@ -4,7 +4,8 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay = [
-    "9.1: The Shadowed Orb & Titanic Ocular Gland buffs are live in all modules.",
+    "The set bonus buffs are now live!",
+    "Winds of Winter is an estimate at this point until more logs come in!"
 ];
 
   return (

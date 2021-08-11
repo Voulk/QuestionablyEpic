@@ -12,7 +12,6 @@ export const getGenericEffectBC = (effectName, player) => {
     }
     else if (effectName === "Gladiator's Ornamented Gloves") {
         // Insightful Earthstorm Diamond
-        console.log("Paladin Gloves");
         bonus_stats.spellcrit = 66; // PH TODO
     }
     

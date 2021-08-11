@@ -481,6 +481,7 @@ class Player {
       this.statWeights.Raid = druidDefaultStatWeights("Raid");
       this.statWeights.Dungeon = druidDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
+      
     } else if (spec === SPEC.HOLYPALADIN) {
       this.activeStats = {
         intellect: 1800,
@@ -494,6 +495,7 @@ class Player {
       this.statWeights.Raid = paladinDefaultStatWeights("Raid");
       this.statWeights.Dungeon = paladinDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
+
     } else if (spec === SPEC.RESTOSHAMAN) {
       // all of this needs a proper input once
       this.activeStats = {
@@ -507,6 +509,7 @@ class Player {
       this.statWeights.Raid = shamanDefaultStatWeights("Raid");
       this.statWeights.Dungeon = shamanDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
+
     } else if (spec === SPEC.DISCPRIEST) {
       this.activeStats = {
         intellect: 1800,
@@ -520,6 +523,7 @@ class Player {
       this.statWeights.Raid = discPriestDefaultStatWeights("Raid");
       this.statWeights.Dungeon = discPriestDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
+
     } else if (spec === SPEC.HOLYPRIEST) {
       this.activeStats = {
         intellect: 1800,
@@ -533,13 +537,14 @@ class Player {
       this.statWeights.Raid = holyPriestDefaultStatWeights("Raid");
       this.statWeights.Dungeon = holyPriestDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
+
     } else if (spec === SPEC.MISTWEAVERMONK) {
       this.activeStats = {
         intellect: 1800,
-        haste: 125,
+        haste: 400,
         crit: 590,
-        mastery: 200,
-        versatility: 370,
+        mastery: 360,
+        versatility: 410,
         stamina: 1900,
       };
 
