@@ -8,7 +8,7 @@ import { druidDefaultStatWeights } from "./ClassDefaults/DruidDefaults";
 import { shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
 import { discPriestDefaultStatWeights } from "./ClassDefaults/DiscPriestDefaults";
 import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
-import { monkDefaultStatWeights } from "./ClassDefaults/MonkDefaults";
+import { monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 
 class Player {

@@ -5,7 +5,8 @@ import { paladinVenthyrSpecialQueries, paladinVenthyrSpellData, paladinVenthyrSt
 import { paladinKyrianSpecialQueries, paladinKyrianSpellData, paladinKyrianStatWeights } from "./ClassDefaults/Paladin/PaladinKyrian";
 import { paladinMaraadsSpellData, paladinMaraadsSpecialQueries, paladinMaraadsStatWeights } from "./ClassDefaults/Paladin/PaladinMaraadsRaid";
 import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
-import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/MonkDefaults";
+import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
+import { monkSinSpecialQueries, monkSinSpellData, monkSinStatWeights } from "./ClassDefaults/Monk/MonkSinTeachings";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./ClassDefaults/DiscPriestDefaults";
 
@@ -132,9 +133,9 @@ class CastModel {
       }
       else if (modelID === "Sinister Teachings") {
         this.modelName = "Sinister Teachings"
-        spellList = monkDefaultSpellData(contentType);
-        specialQueries = monkDefaultSpecialQueries(contentType);
-        this.baseStatWeights = monkDefaultStatWeights("Raid");
+        spellList = monkSinSpellData(contentType);
+        specialQueries = monkSinSpecialQueries(contentType);
+        this.baseStatWeights = monkSinStatWeights("Raid");
         this.fightInfo.dps = 1600;
       }
 
