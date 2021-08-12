@@ -588,7 +588,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
 
   // Calculate Effect.
   if (item.effect) {
-    bonus_stats = getEffectValue(item.effect, player, contentType, item.level, {}, gameType);
+    bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, {}, gameType);
   }
 
   // Multiply the item's stats by our stat weights.

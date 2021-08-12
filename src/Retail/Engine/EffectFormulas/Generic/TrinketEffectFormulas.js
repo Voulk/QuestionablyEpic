@@ -7,7 +7,7 @@ import { getMasteryAddition } from "../Monk/MistweaverMiscFormulas"
 import SPEC from "../../../../General/Engine/SPECS";
 
 // TODO: Write proper comments. See Lingering Sunmote for an example.
-export function getTrinketEffect(effectName, player, contentType, itemLevel, userSettings = {}) {
+export function getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings = {}) {
   let bonus_stats = {};
 
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */

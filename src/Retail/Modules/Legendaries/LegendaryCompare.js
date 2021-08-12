@@ -63,7 +63,7 @@ const convertToHPS = (bonus_stats, player, contentType) => {
 
 const createLegendary = (legendaryName, container, spec, player, contentType) => {
   let lego = new Legendary(legendaryName);
-  lego.bonus_stats = getEffectValue({ name: lego.name, type: "spec legendary" }, player, contentType);
+  lego.bonus_stats = getEffectValue({ name: lego.name, type: "spec legendary" }, player, player.getActiveModel(contentType), contentType);
   lego.effectiveHPS = convertToHPS(lego.bonus_stats, player, contentType);
   lego.effectiveDPS = "dps" in lego.bonus_stats ? lego.bonus_stats.dps : 0;
 

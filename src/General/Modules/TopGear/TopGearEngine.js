@@ -401,7 +401,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   for (var x = 0; x < itemSet.effectList.length; x++) {
     
     //console.log("EFF: " + JSON.stringify(itemSet.effectList[x]));
-    effectStats.push(getEffectValue(itemSet.effectList[x], player, contentType, itemSet.effectList[x].level, userSettings));
+    effectStats.push(getEffectValue(itemSet.effectList[x], player, castModel, contentType, itemSet.effectList[x].level, userSettings));
 
   }
   bonus_stats = mergeBonusStats(effectStats);
