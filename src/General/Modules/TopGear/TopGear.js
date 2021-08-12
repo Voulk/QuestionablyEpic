@@ -17,6 +17,7 @@ import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
+import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -35,12 +36,8 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   header: {
-    [theme.breakpoints.down("sm")]: {
-
-    },
-    [theme.breakpoints.up("md")]: {
-
-    },
+    [theme.breakpoints.down("sm")]: {},
+    [theme.breakpoints.up("md")]: {},
   },
   root: {
     [theme.breakpoints.down("xs")]: {
@@ -72,8 +69,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
-
 
 const TOPGEARCAP = 31; // TODO
 
@@ -168,18 +163,15 @@ export default function TopGear(props) {
           props.setTopResult(result);
           history.push("/report/");
         });
-      }
-      else {
+      } else {
         const worker = require("workerize-loader!./TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
         let instance = new worker();
         instance.runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
           //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
           props.setTopResult(result);
           history.push("/report/");
-      });
-    }
-
-
+        });
+      }
     } else {
       /* ---------------------------------------- Return error. --------------------------------------- */
     }
@@ -187,10 +179,18 @@ export default function TopGear(props) {
 
   const selectedItemCount = props.player.getSelectedItems().length;
   const helpBlurb = t("TopGear.HelpText" + gameType);
-  const helpText = gameType === "Retail" ? ["Add your SimC string to automatically import your entire set of items into the app.", "Select any items you want included in the comparison. We'll automatically add anything you're currently wearing.", 
-                    "When you're all set, hit the big Go button at the bottom of the page to run the module."] :
-                    ["Add your QE Import String to automatically import your entire set of items into the app.", "Select any items you want included in the comparison. We'll automatically add anything you're currently wearing.", 
-                    "When you're all set, hit the big Go button at the bottom of the page to run the module."]
+  const helpText =
+    gameType === "Retail"
+      ? [
+          "Add your SimC string to automatically import your entire set of items into the app.",
+          "Select any items you want included in the comparison. We'll automatically add anything you're currently wearing.",
+          "When you're all set, hit the big Go button at the bottom of the page to run the module.",
+        ]
+      : [
+          "Add your QE Import String to automatically import your entire set of items into the app.",
+          "Select any items you want included in the comparison. We'll automatically add anything you're currently wearing.",
+          "When you're all set, hit the big Go button at the bottom of the page to run the module.",
+        ];
 
   const activateItem = (unique, active) => {
     if (selectedItemCount < CONSTRAINTS.Shared.topGearMaxItems || active) {
@@ -221,15 +221,11 @@ export default function TopGear(props) {
     { label: t("slotNames.weapons"), slotName: "AllMainhands" },
     { label: t("slotNames.offhands"), slotName: "Offhands" },
   ];
-  if (gameType === "BurningCrusade") slotList.push({ label: t("slotNames.relics"), slotName: "Relics & Wands" })
+  if (gameType === "BurningCrusade") slotList.push({ label: t("slotNames.relics"), slotName: "Relics & Wands" });
 
   return (
     <div className={classes.root}>
-      <Grid
-        container
-        spacing={1}
-        justify="center"
-      >
+      <Grid container spacing={1} justify="center">
         {
           <Grid item xs={12}>
             <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
@@ -246,6 +242,10 @@ export default function TopGear(props) {
         <Grid item xs={12}>
           {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
           <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
+        </Grid>
+        <Grid item xs={12}>
+          {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
+          <DominationGems player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
         </Grid>
 
         {props.player.activeItems.length > 0 ? (
