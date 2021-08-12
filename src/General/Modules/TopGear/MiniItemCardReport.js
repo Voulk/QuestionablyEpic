@@ -13,20 +13,20 @@ import { dominationGemDB } from "../../../Databases/DominationGemDB";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 200,
+    minWidth: 210,
     borderColor: "grey",
     borderRadius: "5px",
   },
   vault: {
     borderColor: "#0288d1",
     backgroundColor: "#3E4651",
-    minWidth: 200,
+    minWidth: 210,
     borderStyle: "dashed",
   },
   notequipped: {
     borderColor: "#CECE02",
     backgroundColor: "#3E4651",
-    minWidth: 200,
+    minWidth: 210,
     borderStyle: "dashed",
     borderWidth: "1px",
   },
@@ -151,7 +151,7 @@ export default function ItemCardReport(props) {
                 <Divider />
                 <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
                   <Grid item xs={12} style={{ display: "contents" }}>
-                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px" }}>
+                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px"}}>
                     {item.domGemID !== 0 ? (
                       <a data-wowhead={"item=" + item.domGemID + "&domain=" + currentLanguage}>
                         <img

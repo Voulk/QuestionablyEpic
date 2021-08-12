@@ -169,7 +169,6 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     else {
       bonus_stats.crit = (getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.duration * crit_effect.multiplier) / 120;
       bonus_stats.crit *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
-      console.log(player.getActiveModel(contentType))
     }
     
     

@@ -446,7 +446,8 @@ export function buildStatString(stats, effect, lang = "en") {
         : "";
   }
 
-  if (effect !== "" && effect && effect.type !== "domination gem") statString += "Effect" + " / "; // t("itemTags.effect")
+  // Add an "effect" tag. We exclude Dom gems and Legendaries here because it's already clear they are giving you an effect.
+  if (effect !== "" && effect && effect.type !== "domination gem" && effect.type !== "spec legendary") statString += "Effect" + " / "; // t("itemTags.effect")
 
 
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.

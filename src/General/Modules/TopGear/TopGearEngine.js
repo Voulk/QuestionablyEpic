@@ -403,8 +403,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   for (var x = 0; x < itemSet.effectList.length; x++) {
     effectStats.push(getEffectValue(itemSet.effectList[x], player, castModel, contentType, itemSet.effectList[x].level, userSettings, "Retail", setStats));
   }
-  bonus_stats = mergeBonusStats(effectStats);
-  
+  //bonus_stats = mergeBonusStats(effectStats);
+  setStats = compileStats(setStats, mergeBonusStats(effectStats));
   
   applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
   // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
@@ -430,6 +430,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
+  //console.log(builtSet);
   return builtSet; // Temp
 }
 
