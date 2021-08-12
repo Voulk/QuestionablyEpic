@@ -185,7 +185,8 @@ export default function DominationGemSelection(props) {
                         </a>
                         {key.name[currentLanguage] + " " + "(" + (key.effect.rank + 1) + ")"}
                       </MenuItem>
-                    ))}
+                    ))
+                    .map((menuItem) => [menuItem, <Divider />])}
                 </Select>
               </FormControl>
             </Grid>
