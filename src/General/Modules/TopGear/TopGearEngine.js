@@ -394,7 +394,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   enchants["Gems"] = highestWeight;
 
   // This might change later, but is a way to estimate the value of a domination socket on a piece in the Upgrade Finder.
-  if (userSettings.dominationSockets === "Upgrade Finder") bonus_stats.hps += builtSet.domSockets * 200;
+  if (userSettings.dominationSockets === "Upgrade Finder") bonus_stats.hps += builtSet.domSockets * 250;
   compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
 
   // Handle Effects
