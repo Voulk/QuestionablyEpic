@@ -446,7 +446,7 @@ export function buildStatString(stats, effect, lang = "en") {
         : "";
   }
 
-  if (effect !== "") statString += "Effect" + " / "; // t("itemTags.effect")
+  if (effect !== "" && effect && effect.type !== "domination gem") statString += "Effect" + " / "; // t("itemTags.effect")
 
 
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.

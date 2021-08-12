@@ -395,19 +395,17 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
 
   // This might change later, but is a way to estimate the value of a domination socket on a piece in the Upgrade Finder.
   if (userSettings.dominationSockets === "Upgrade Finder") bonus_stats.hps += builtSet.domSockets * 200;
+  compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
 
+  // Handle Effects
   let effectStats = [];
   effectStats.push(bonus_stats);
   for (var x = 0; x < itemSet.effectList.length; x++) {
-    
-    //console.log("EFF: " + JSON.stringify(itemSet.effectList[x]));
-    effectStats.push(getEffectValue(itemSet.effectList[x], player, castModel, contentType, itemSet.effectList[x].level, userSettings));
-
+    effectStats.push(getEffectValue(itemSet.effectList[x], player, castModel, contentType, itemSet.effectList[x].level, userSettings, "Retail", setStats));
   }
   bonus_stats = mergeBonusStats(effectStats);
   
-  console.log("Bonus Stats: " + JSON.stringify(bonus_stats));
-  compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
+  
   applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
   // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
   adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;
