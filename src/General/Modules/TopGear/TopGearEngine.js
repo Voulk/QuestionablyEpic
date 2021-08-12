@@ -382,7 +382,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // Weapon - Celestial Guidance
   // Eternal Grace is so poor right now that I don't even think it deserves inclusion.
   let expected_uptime = convertPPMToUptime(3, 10);
-  bonus_stats.intellect = (setStats.intellect + bonus_stats.intellect) * 0.05 * expected_uptime;
+  bonus_stats.intellect += (setStats.intellect + bonus_stats.intellect) * 0.05 * expected_uptime;
   enchants["CombinedWeapon"] = "Celestial Guidance";
 
   // 5% int boost for wearing the same items.
@@ -406,7 +406,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   }
   bonus_stats = mergeBonusStats(effectStats);
   
-
+  console.log("Bonus Stats: " + JSON.stringify(bonus_stats));
   compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
   applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
   // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
