@@ -14,6 +14,7 @@ import updatechartdata from "./Engine/LogImportEngine.js";
 import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
 import ExternalTimeline from "./Components/ExternalTimelineTable";
 import EnemyCastsTimeline from "./Components/EnemyCasts";
+import Cooldowns from "../CooldownPlanner/CooldownObject/CooldownObject";
 import { makeStyles } from "@material-ui/core/styles";
 class FightAnalysis extends Component {
   constructor() {
@@ -88,6 +89,7 @@ class FightAnalysis extends Component {
       /* ------------------------------ Array of Enemy Casts & Timestamps ----------------------------- */
       enemyCastsTimelineData: [],
       customPlanSelected: "",
+      cooldownObject: new Cooldowns(),
     };
   }
 
@@ -140,8 +142,18 @@ class FightAnalysis extends Component {
     this.setState({ healTeamDialogState: false });
   };
 
-  handleCustomPlanChange = (plan) => {
+  handleCustomPlanChange = (plan, currentBossID) => {
+    /* ------------------------------- Get List of Plans for the boss ------------------------------- */
+    const bossCooldowns = this.state.cooldownObject.getCooldowns(currentBossID);
+    /* --------------------------------------- Set the lected --------------------------------------- */
+    const planCooldowns = bossCooldowns[plan];
+
     this.setState({ customPlanSelected: plan });
+    this.chartCooldownUpdater(planCooldowns);
+  };
+
+  getBossPlanNames = (boss) => {
+    return Object.keys(this.state.cooldownObject.getCooldowns(boss));
   };
 
   render() {
@@ -298,37 +310,27 @@ class FightAnalysis extends Component {
                           <Grid container direction="row" justify="space-evenly" alignItems="center">
                             {/* TODO: Translate */}
                             <Grid item>
-                              <SwitchLabels check={this.customCooldownsOnChart} label={"Show Coolowns"} />
+                              <SwitchLabels check={this.customCooldownsOnChart} label={"Show Custom Cooldowns"} />
                             </Grid>
                             <Grid item>
                               {/* TODO: Translate */}
-                              <SwitchLabels check={this.changeDataSet} label={this.state.chartData === true ? "Unmitigated" : "Mitigated"} />
+                              <SwitchLabels check={this.changeDataSet} label={this.state.chartData === true ? "Unmitigated Damage" : "Mitigated Damage"} />
                             </Grid>
-                          </Grid>
-                          <Grid item>
-                            <FormControl variant="outlined" size="small">
-                              <InputLabel id="itemsocket">Custom Cooldowns</InputLabel>
-                              <Select
-                                key={"sockets"}
-                                labelId="itemsocket"
-                                value={this.state.customPlanSelected}
-                                onChange={this.handleCustomPlanChange}
-                                MenuProps={menuStyle}
-                                label={"Custom Cooldowns"}
-                              >
-                                {[
-                                  <MenuItem key={1} label={"yes"} value={true}>
-                                    {"yes"}
-                                  </MenuItem>,
-                                  <Divider key={2} />,
-                                  ,
-                                  <MenuItem key={3} label={"No"} value={false}>
-                                    {"No"}
-                                  </MenuItem>,
-                                  <Divider key={4} />,
-                                ]}
-                              </Select>
-                            </FormControl>
+                            <Grid item>
+                              <FormControl style={{width: 200}} variant="outlined" size="small">
+                                <InputLabel id="itemsocket">Custom Cooldowns</InputLabel>
+                                <Select
+                                  key={"sockets"}
+                                  labelId="itemsocket"
+                                  value={this.state.customPlanSelected}
+                                  onChange={(e) => this.handleCustomPlanChange(e.target.value, this.state.currentBossID)}
+                                  MenuProps={menuStyle}
+                                  label={"Custom Cooldowns"}
+                                >
+                                  {this.state.currentBossID === null ? "" : this.getBossPlanNames(this.state.currentBossID).map((key) => <MenuItem value={key}>{key}</MenuItem>)}
+                                </Select>
+                              </FormControl>
+                            </Grid>
                           </Grid>
                         </Paper>
                       </Grow>

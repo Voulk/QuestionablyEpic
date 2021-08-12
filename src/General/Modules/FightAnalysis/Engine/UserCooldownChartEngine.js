@@ -16,6 +16,7 @@ export default function chartCooldownUpdater(tableData) {
   let unmitigatedChartDataNoCooldowns = [];
   let mitigatedChartDataNoCooldowns = [];
   let pushedArray = [];
+  console.log(tableData)
 
   /* --------- Push Each Cooldown in the table to a new array in "Name - Cooldown" format --------- */
 
