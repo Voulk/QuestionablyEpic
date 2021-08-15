@@ -60,6 +60,7 @@ export default function DominationGemSelection(props) {
   // Oth
   const [othLevel, setOthLevel] = useState(0);
 
+  /* ----------------------- List of Domination Gems in the game (Base Gem) ----------------------- */
   const dominationGems = [
     /* ------------------------------------------- Unholy ------------------------------------------- */
     "Shard of Zed",
@@ -75,6 +76,7 @@ export default function DominationGemSelection(props) {
     "Shard of Kyr",
   ];
 
+  /* ---------------------- For the Gem and Rank provided set the state value --------------------- */
   const setDomGemState = (gem, rank) => {
     switch (gem) {
       /* ------------------------------------------- Unholy ------------------------------------------- */
@@ -112,6 +114,7 @@ export default function DominationGemSelection(props) {
     }
   };
 
+  /* ------------------------- For the Gem Provided return the state value ------------------------ */
   const getDomGemvalue = (gem) => {
     switch (gem) {
       /* ------------------------------------------- Unholy ------------------------------------------- */
@@ -145,6 +148,8 @@ export default function DominationGemSelection(props) {
       {dominationGems.map((key) => (
         <Grid item xs={4} sm={4} md={4} lg={4} xl={4}>
           <Grid container spacing={0} style={{ padding: "0px 8px" }}>
+            {/* --------------------------- Title for each selector if ever needed ---------------------------  */}
+
             {/* <Grid item xs={12}>
               <div style={{ display: "inline-flex" }}>
                 <Typography color="primary" style={{ marginRight: 4 }} noWrap>
@@ -153,7 +158,7 @@ export default function DominationGemSelection(props) {
                 <Tooltip
                   title={
                     <Typography align="center" variant="body2">
-                      {t("Settings.Retail.Setting1Tooltip")}
+                      Icon Tooltip
                     </Typography>
                   }
                   placement="top-start"
@@ -162,9 +167,15 @@ export default function DominationGemSelection(props) {
                 </Tooltip>
               </div>
             </Grid> */}
+
             <Grid item xs={12}>
+              {/* ------------------------------------ Domination Delection ------------------------------------  */}
               <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
                 <Select labelId="groupValue" value={getDomGemvalue(key)} onChange={(e) => setDomGemState(key, e.target.value)} MenuProps={menuStyle}>
+                  {/* 
+                  // Map the Domination DB filtered by the gem provided from the original mapping
+                  //  in to a menu item for each rank for the select 
+                  */}
                   {dominationGemDB
                     .filter((filter) => filter.effect.name === key)
                     .map((key) => (
@@ -186,6 +197,7 @@ export default function DominationGemSelection(props) {
                         {key.name[currentLanguage] + " " + "(" + (key.effect.rank + 1) + ")"}
                       </MenuItem>
                     ))
+                    /* ------------------------------ Map the Menu Item with a Divider ------------------------------ */
                     .map((menuItem) => [menuItem, <Divider />])}
                 </Select>
               </FormControl>

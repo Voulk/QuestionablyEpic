@@ -613,7 +613,8 @@
       "SelectedItems": "Selected ItemsCH",
       "CompetitiveAlternative": "Competitive AlternativesCH",
       "StatPanel": { "AvgStats": "Average Stats (includes procs)CH" },
-      "itemMissingError": "Error: Add item - "
+      "itemMissingError": "Error: Add item - ",
+      "DominationSelection": {"HeaderTitle": "Domination Gems"}
     },
 
     "UpgradeFinder": {

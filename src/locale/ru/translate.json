@@ -577,7 +577,8 @@
       "BackToGearSelection": "Вернуться к выбору экипировки",
       "CompetitiveAlternative": "Возможные альтернативы",
       "StatPanel": { "AvgStats": "Усреднённые характеристики (включая проки)" },
-      "itemMissingError": "Ошибка: добавьте предмет"
+      "itemMissingError": "Ошибка: добавьте предмет",
+      "DominationSelection": {"HeaderTitle": "Domination Gems"}
     },
 
     "Snackbars": {

@@ -48,16 +48,16 @@ const useStyles = makeStyles((theme) => ({
 export default function DominationGems(props) {
   const classes = useStyles();
   const { t } = useTranslation();
-  /* --------------------------------- Determine current GameType --------------------------------- */
-  const gameType = useSelector((state) => state.gameType);
 
   return (
     <div className={classes.root}>
       <Accordion defaultExpanded={true} disabled={false} elevation={0}>
+        {/* ---------------------------------------------------------------------------------------------- */
+        /*                                         Accordian Title                                         */
+        /* ---------------------------------------------------------------------------------------------- */}
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
           <div className={classes.column}>
-            {/* <SettingsIcon style={{ marginRight: 4 }} /> */}
-            <Typography className={classes.heading}>Domination Gems</Typography>
+            <Typography className={classes.heading}>{t("DominationSelection.HeaderTitle")}</Typography>
           </div>
         </AccordionSummary>
         <Divider variant="middle" />
