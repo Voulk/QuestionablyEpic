@@ -290,11 +290,12 @@
       "ExploreCovenants": "Erkunde die Pakte",
       "LegendaryAnalysis": "Analyse der legendären Effekte",
       "TrinketAnalysis": "Trinket Analysis (New)",
-      "DominationAnalysis": "Domination Analysis (Coming soon)",
+      "DominationAnalysis": "Domination Analysis (Beta)",
       "CooldownPlanner": "Cooldownplaner (Coming Soon)",
       "Profile": "Profil",
       "CharHeader": "Charaktere",
       "CharHelpText": "Füge deine Charaktere hier hinzu. Rechtsklick um deine Wertegewichtungen, Serverinformationen und mehr zu bearbeiten.",
+      "FightAnalysis": "Fight Analysis (Coming Soon)",
       "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Recent Spec Articles",

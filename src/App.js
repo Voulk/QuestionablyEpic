@@ -24,6 +24,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ls from "local-storage";
 import QESnackbar from "General/Modules/CooldownPlanner/BasicComponents/SnackBar";
+import TestingPage from "General/Modules/CooldownPlanner/TestingLandingPage";
 // import { createBrowserHistory } from "history"; // not used TODO: remove?
 import { dbCheckPatron, dbGetArticleList } from "General/Modules/SetupAndMenus/ConnectionUtilities.js";
 
@@ -367,6 +368,7 @@ class App extends Component {
                 />
                 <Route path="/fightAnalysis" render={() => <FightAnalysis />} />
                 <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule />} />
+                <Route path="/holydiver" render={() => <TestingPage />} />
                 <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} />} />
                 <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
                 <Route path="/topgear" render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
