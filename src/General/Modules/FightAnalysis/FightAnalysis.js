@@ -310,14 +310,40 @@ class FightAnalysis extends Component {
                           <Grid container direction="row" justify="space-evenly" alignItems="center">
                             {/* TODO: Translate */}
                             <Grid item>
-                              <SwitchLabels check={this.customCooldownsOnChart} label={"Show Custom Cooldowns"} />
+                              <FormControl style={{ width: 200 }} variant="outlined" size="small">
+                                <InputLabel id="itemsocket">Custom Cooldowns</InputLabel>
+                                <Select
+                                  key={"cooldownsShown"}
+                                  labelId="cooldownsShown"
+                                  value={this.state.customCooldownsOnChart}
+                                  onChange={(e) => this.customCooldownsOnChart(e.target.value)}
+                                  MenuProps={menuStyle}
+                                  label={"Cooldowns Shown"}
+                                >
+                                  <MenuItem value={true}>Log Cooldowns</MenuItem>
+                                  <MenuItem value={false}>Custom Cooldowns</MenuItem>
+                                </Select>
+                              </FormControl>
                             </Grid>
                             <Grid item>
                               {/* TODO: Translate */}
-                              <SwitchLabels check={this.changeDataSet} label={this.state.chartData === true ? "Unmitigated Damage" : "Mitigated Damage"} />
+                              <FormControl style={{ width: 200 }} variant="outlined" size="small">
+                                <InputLabel id="itemsocket">Custom Cooldowns</InputLabel>
+                                <Select
+                                  key={"damageType"}
+                                  labelId="damageType"
+                                  value={this.state.chartData}
+                                  onChange={(e) => this.changeDataSet(e.target.value)}
+                                  MenuProps={menuStyle}
+                                  label={"Damage Type"}
+                                >
+                                  <MenuItem value={true}>Unmitigated Damage</MenuItem>
+                                  <MenuItem value={false}>Mitigated Damage</MenuItem>
+                                </Select>
+                              </FormControl>
                             </Grid>
                             <Grid item>
-                              <FormControl style={{width: 200}} variant="outlined" size="small">
+                              <FormControl style={{ width: 200 }} variant="outlined" size="small">
                                 <InputLabel id="itemsocket">Custom Cooldowns</InputLabel>
                                 <Select
                                   key={"sockets"}
