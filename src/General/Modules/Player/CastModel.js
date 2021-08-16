@@ -177,6 +177,10 @@ class CastModel {
     return this.baseStatWeights;
   }
 
+  setStatWeights = (newWeights) => {
+    this.baseStatWeights = newWeights;
+  };
+
   getClassicDruid = () => {
     return {
       33763: { cpm: 21.2, avgcast: 4197, overhealing: 0.29 }, // Lifebloom

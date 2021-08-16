@@ -152,7 +152,7 @@ export default function ItemCardReport(props) {
                 <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
                   <Grid item xs={12} style={{ display: "contents" }}>
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px"}}>
-                    {item.domGemID !== 0 ? (
+                    {('domGemID' in item && item.domGemID !== 0) ? (
                       <a data-wowhead={"item=" + item.domGemID + "&domain=" + currentLanguage}>
                         <img
                           style={{

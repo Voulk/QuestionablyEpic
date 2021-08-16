@@ -113,14 +113,14 @@ describe("Covenant getters / setters", () => {
 describe("GetHighestStatWeight", () => {
     test("Basic Test", () => {
         const druid = new Player("Torty", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
-        druid.statWeights.Raid = {intellect: 1, crit: 0.45, haste: 0.44, mastery: 0.42, leech: 0.6};
+        druid.getActiveModel("Raid").setStatWeights({intellect: 1, crit: 0.45, haste: 0.44, mastery: 0.42, leech: 0.6});
 
         expect(druid.getHighestStatWeight("Raid")).toEqual("crit");
         
     });
     test("Stat Weights with Ignore", () => {
         const druid = new Player("Myth", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
-        druid.statWeights.Raid = {intellect: 1, crit: 0.45, haste: 0.44, mastery: 0.42, leech: 0.6};
+        druid.getActiveModel("Raid").setStatWeights({intellect: 1, crit: 0.45, haste: 0.44, mastery: 0.42, leech: 0.6});
 
         expect(druid.getHighestStatWeight("Raid", ["crit"])).toEqual("haste");
 
