@@ -386,7 +386,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
       //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
       stats[key] = Math.round(rand_prop * allocation * 0.0001 * combat_mult);
     } else if (key === "intellect") {
-      stats[key] = Math.floor(rand_prop * allocation * 0.0001 * 1);
+      stats[key] = Math.round((rand_prop * allocation * 0.0001) * 1);
     } else if (key === "stamina") {
       // todo
     }
@@ -441,7 +441,8 @@ export function buildStatString(stats, effect, lang = "en") {
         : "";
   }
 
-  if (effect !== "") statString += "Effect" + " / "; // t("itemTags.effect")
+  // Add an "effect" tag. We exclude Dom gems and Legendaries here because it's already clear they are giving you an effect.
+  if (effect !== "" && effect && effect.type !== "domination gem" && effect.type !== "spec legendary") statString += "Effect" + " / "; // t("itemTags.effect")
 
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
 }
@@ -566,7 +567,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
 
   // Calculate Effect.
   if (item.effect) {
-    bonus_stats = getEffectValue(item.effect, player, contentType, item.level, {}, gameType);
+    bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, {}, gameType);
   }
 
   // Multiply the item's stats by our stat weights.

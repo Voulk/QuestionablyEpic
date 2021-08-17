@@ -177,8 +177,11 @@ export default function CovenantExploration(props) {
   return (
     <div className={classes.header}>
       {/* ---------------------------------------- Module Header ---------------------------------------  */}
-      <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
+      <Typography variant="h4" align="center" style={{ padding: "10px 10px 0px 10px" }} color="primary">
         {t("Soulbinds.Header")}
+      </Typography>
+      <Typography color="primary" variant="subtitle2" align="center" style={{ paddingBottom: 8 }}>
+        {"Current Playstyle selected: " + props.player.getActiveModel(contentType).modelName + " - " + contentType}
       </Typography>
       <div className={classes.root}>
         <AppBar position="static" style={{ backgroundColor: "#000", borderRadius: "4px 4px 0px 0px" }} elevation={0}>

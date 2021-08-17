@@ -5,11 +5,10 @@ import { scoreItem } from "../../Engine/ItemUtilities";
 import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
 import { druidDefaultStatWeights } from "./ClassDefaults/DruidDefaults";
-import { paladinDefaultStatWeights } from "./ClassDefaults/PaladinDefaults";
 import { shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
 import { discPriestDefaultStatWeights } from "./ClassDefaults/DiscPriestDefaults";
 import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
-import { monkDefaultStatWeights } from "./ClassDefaults/MonkDefaults";
+import { monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 
 class Player {
@@ -34,7 +33,7 @@ class Player {
       this.gameType = "Retail";
     }
     
-    if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
+    //if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
     
 
     //this.getStatPerc = getStatPerc;
@@ -46,13 +45,15 @@ class Player {
   activeItems = [];
   activeConduits = [];
   renown = 1;
-  castModel = {};
+  castModel = {}; // Remove once CastModels is complete.
+  castModels = [];
   covenant = "";
   region = "";
   realm = "";
   race = "";
   talents = [];
   gameType = ""; // Currently the options are Retail or Burning Crusade.
+  activeModelID = {"Raid": 0, "Dungeon": 1}; // Currently active Cast Model.
 
   // The players active stats from their character page. These are raw rather than being percentages.
   // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
@@ -81,8 +82,8 @@ class Player {
     this.realm = realm;
     this.region = region;
     this.race = race;
-    this.statWeights[contentType] = weights;
-    this.statWeights.DefaultWeights = false;
+    this.getActiveModel(contentType).baseStatWeights = weights;
+    //this.statWeights.DefaultWeights = false;
   };
 
   getRace = () => {
@@ -91,13 +92,14 @@ class Player {
 
   getStatWeight = (contentType, stat) => {
     const lcStat = stat.toLowerCase();
-    if (!this.statWeights[contentType]) {
+    const weights = this.getActiveModel(contentType).getBaseStatWeights();
+    if (!weights) {
       reportError(this, "Player", "Invalid Stat Weight", stat);
       return 0;
     }
 
-    if (lcStat in this.statWeights[contentType]) {
-      return this.statWeights[contentType][lcStat];
+    if (lcStat in weights) {
+      return weights[lcStat];
     }
 
     return 0;
@@ -165,7 +167,7 @@ class Player {
   getHighestStatWeight = (contentType, ignore = []) => {
     let max = "";
     let maxValue = -1;
-    let weights = this.statWeights[contentType];
+    let weights = this.getActiveModel(contentType).getBaseStatWeights();
 
     for (var stat in weights) {
       if (weights[stat] > maxValue && !ignore.includes(stat) && ["crit", "haste", "mastery", "versatility"].includes(stat)) {
@@ -354,15 +356,55 @@ class Player {
     return this.spec;
   };
 
+  initializeModels = (raid, dungeon) => {
+    if (raid && dungeon && raid !== dungeon && raid < this.castModels.length && dungeon < this.castModels.length) {
+      // Check if models are valid choices
+      this.activeModelID = {"Raid": raid, "Dungeon": dungeon}
+    }
+    else {
+      // The given model IDs were invalid so we'll set the defaults instead.
+      this.activeModelID = {"Raid": 0, "Dungeon": 1}
+    }
+  }
+
+  getActiveModel = (contentType) => {
+    return this.castModels[this.activeModelID[contentType]];
+  }
+
+  setModelID = (id, contentType) => {
+    if ((contentType === "Raid" || contentType === "Dungeon") && id && id < this.castModels.length) {
+      // Check that it's a valid ID.
+      this.activeModelID[contentType] = id;
+    }
+    else {
+      // This is a critical error that could crash the app so we'll reset models to defaults
+      this.activeModelID["Raid"] = 0;
+      this.activeModelID["Dungeon"] = 1;
+      reportError(this, "Player", "Attempt to set invalid Model ID", id);
+    }
+    
+  }
+
+  getAllModels = (contentType) => {
+    if (contentType) {
+      return this.castModels.filter(function (model) {
+        return model.contentType == contentType;
+      });
+    }
+    else {
+      return this.castModels;
+    }
+  }
+
   getHPS = (contentType) => {
-    return this.castModel[contentType].getFightInfo("hps");
+    return this.getActiveModel(contentType).getFightInfo("hps");
   };
   getDPS = (contentType) => {
-    return this.castModel[contentType].getFightInfo("dps");
+    return this.getActiveModel(contentType).getFightInfo("dps");
   };
   // HPS including overhealing.
   getRawHPS = (contentType) => {
-    return this.castModel[contentType].getFightInfo("rawhps");
+    return this.getActiveModel(contentType).getFightInfo("rawhps");
   };
 
   // Returns the players health.
@@ -372,7 +414,7 @@ class Player {
   }
 
   getFightLength = (contentType) => {
-    return this.castModel[contentType].getFightInfo("fightLength");
+    return this.getActiveModel(contentType).getFightInfo("fightLength");
   };
 
   getInt = () => {
@@ -380,52 +422,52 @@ class Player {
   };
 
   getSpecialQuery = (queryIdentifier, contentType) => {
-    return this.castModel[contentType].getSpecialQuery(queryIdentifier);
+    return this.getActiveModel(contentType).getSpecialQuery(queryIdentifier);
   };
 
   getCooldownMult = (queryIdentifier, contentType) => {
-    return this.castModel[contentType].getSpecialQuery(queryIdentifier, "cooldownMult");
+    return this.getActiveModel(contentType).getSpecialQuery(queryIdentifier, "cooldownMult");
   };
 
   getSingleCast = (spellID, contentType, castType = "avgcast") => {
-    return this.castModel[contentType].getSpellData(spellID, castType);
+    return this.getActiveModel(contentType).getSpellData(spellID, castType);
   };
 
   getSpellCPM = (spellID, contentType) => {
-    return this.castModel[contentType].getSpellData(spellID, "cpm");
+    return this.getActiveModel(contentType).getSpellData(spellID, "cpm");
   };
 
   // Use getSpellCPM where possible. 
   getSpellCasts = (spellID, contentType) => {
-    return this.castModel[contentType].getSpellData(spellID, "cpm") * this.getFightLength(contentType) / 60;
+    return this.getActiveModel(contentType).getSpellData(spellID, "cpm") * this.getFightLength(contentType) / 60;
   };
 
   getSpellHPS = (spellID, contentType) => {
-    return this.castModel[contentType].getSpellData(spellID, "hps");
+    return this.getActiveModel(contentType).getSpellData(spellID, "hps");
   };
 
   getSpellRawHPS = (spellID, contentType) => {
-    return this.castModel[contentType].getSpellData(spellID, "hps") / (1 - this.castModel[contentType].getSpellData(spellID, "overhealing"));
+    return this.getActiveModel(contentType).getSpellData(spellID, "hps") / (1 - this.getActiveModel(contentType).getSpellData(spellID, "overhealing"));
   };
 
   /* --------------- Return the Spell List for the content Type --------------- */
 
   getSpellList = (contentType) => {
-    return this.castModel[contentType].spellList;
+    return this.getActiveModel(contentType).spellList;
   };
 
   /* ------------- Return the Saved ReportID from the imported log ------------ */
   getReportID = (contentType) => {
-    return this.castModel[contentType].fightInfo.reportID;
+    return this.getActiveModel(contentType).fightInfo.reportID;
   };
 
   /* ------------ Return the Saved Boss Name from the imported log ------------ */
   getBossName = (contentType) => {
-    return this.castModel[contentType].fightInfo.bossName;
+    return this.getActiveModel(contentType).fightInfo.bossName;
   };
 
   setSpellPattern = (spellList) => {
-    if (spellList !== {}) this.castModel["Raid"].setSpellList(spellList);
+    if (spellList !== {}) this.getActiveModel("Raid").setSpellList(spellList);
   };
 
   setActiveStats = (stats) => {
@@ -433,8 +475,13 @@ class Player {
   };
 
   setFightInfo = (info) => {
-    if (Object.keys(info).length > 0) this.castModel["Raid"].setFightInfo(info);
+    if (Object.keys(info).length > 0) this.getActiveModel("Raid").setFightInfo(info);
   };
+
+  setModelDefaults = (contentType) => {
+    const activeModel = this.getActiveModel(contentType);
+    activeModel.setDefaults(this.spec, contentType, activeModel.modelName)
+  }
 
   setDefaultWeights = (spec, contentType) => {
     if (spec === SPEC.RESTODRUID) {
@@ -469,7 +516,14 @@ class Player {
       Dungeon: new CastModel(spec, "Dungeon"),
     };
 
+
+    //console.log(this.castModels);
+
     if (spec === SPEC.RESTODRUID) {
+
+      this.castModels.push(new CastModel(spec, "Raid", "Default", 0))
+      this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1))
+
       this.activeStats = {
         intellect: 1800,
         haste: 790,
@@ -478,11 +532,18 @@ class Player {
         versatility: 320,
         stamina: 1900,
       };
+      /*
       this.statWeights.Raid = druidDefaultStatWeights("Raid");
       this.statWeights.Dungeon = druidDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
-      
+      */
+
     } else if (spec === SPEC.HOLYPALADIN) {
+      this.castModels.push(new CastModel(spec, "Raid", "Kyrian Default", 0)) 
+      this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1))
+      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Default", 2))
+      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Maraads", 3))
+      
       this.activeStats = {
         intellect: 1800,
         haste: 800,
@@ -492,12 +553,10 @@ class Player {
         stamina: 1900,
       };
 
-      this.statWeights.Raid = paladinDefaultStatWeights("Raid");
-      this.statWeights.Dungeon = paladinDefaultStatWeights("Dungeon");
-      this.statWeights.DefaultWeights = true;
-
     } else if (spec === SPEC.RESTOSHAMAN) {
       // all of this needs a proper input once
+      this.castModels.push(new CastModel(spec, "Raid", "Default", 0))
+      this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1))
       this.activeStats = {
         intellect: 1800,
         haste: 125,
@@ -506,11 +565,17 @@ class Player {
         versatility: 370,
         stamina: 1900,
       };
+      /*
       this.statWeights.Raid = shamanDefaultStatWeights("Raid");
       this.statWeights.Dungeon = shamanDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
+      */
 
     } else if (spec === SPEC.DISCPRIEST) {
+
+      this.castModels.push(new CastModel(spec, "Raid", "Default", 0))
+      this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1))
+
       this.activeStats = {
         intellect: 1800,
         haste: 700,
@@ -520,11 +585,14 @@ class Player {
         stamina: 1900,
       };
 
+      /*
       this.statWeights.Raid = discPriestDefaultStatWeights("Raid");
       this.statWeights.Dungeon = discPriestDefaultStatWeights("Dungeon");
-      this.statWeights.DefaultWeights = true;
+      this.statWeights.DefaultWeights = true; */
 
     } else if (spec === SPEC.HOLYPRIEST) {
+      this.castModels.push(new CastModel(spec, "Raid", "Default", 0))
+      this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1))
       this.activeStats = {
         intellect: 1800,
         haste: 125,
@@ -533,12 +601,16 @@ class Player {
         versatility: 400,
         stamina: 1900,
       };
-
+      /*
       this.statWeights.Raid = holyPriestDefaultStatWeights("Raid");
       this.statWeights.Dungeon = holyPriestDefaultStatWeights("Dungeon");
-      this.statWeights.DefaultWeights = true;
+      this.statWeights.DefaultWeights = true; */
 
     } else if (spec === SPEC.MISTWEAVERMONK) {
+      const models = [{identifier: "Raid Default", content: "Raid"}, {identifier: "Dungeon Default", content: "Dungeon"}, 
+                      {identifier: "Sinister Teachings", content: "Raid"}]
+      models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)))
+
       this.activeStats = {
         intellect: 1800,
         haste: 400,
@@ -547,10 +619,11 @@ class Player {
         versatility: 410,
         stamina: 1900,
       };
-
+      /*
       this.statWeights.Raid = monkDefaultStatWeights("Raid");
       this.statWeights.Dungeon = monkDefaultStatWeights("Dungeon");
-      this.statWeights.DefaultWeights = true;
+      this.statWeights.DefaultWeights = true; */
+      
     } else if (spec.includes("BC")) {
     }
     else {

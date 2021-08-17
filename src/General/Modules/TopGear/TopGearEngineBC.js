@@ -311,7 +311,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     effectStats.push(bonus_stats);
     for (var x = 0; x < effectList.length; x++) {
       //console.log(effectList[x]);
-      effectStats.push(getEffectValue(effectList[x], player, contentType, effectList[x].level, userSettings, "BurningCrusade", setStats));
+      effectStats.push(getEffectValue(effectList[x], player, "", contentType, effectList[x].level, userSettings, "BurningCrusade", setStats));
   
     }
     bonus_stats = mergeBonusStats(effectStats);

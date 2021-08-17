@@ -619,7 +619,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
         en: {
           name: "Shadowbreaker, Dawn of the Sun",
           slot: "Shoulder or Hands",
-          desc: "Light of Dawns range is increased to 40 yards, and all allies healed receive full effect from your Mastery for 8s.",
+          desc: "Light of Dawn's range is increased to 40 yards, and all allies healed receive full effect from your Mastery for 8s.",
           droploc: "Sun King's Salvation, Castle Nathria",
         },
         de: {

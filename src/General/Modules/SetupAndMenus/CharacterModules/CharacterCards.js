@@ -310,7 +310,7 @@ export default function CharCards(props) {
   const resetDefaults = () => {
     let newPlayer = props.char;
 
-    newPlayer.setDefaultWeights(newPlayer.getSpec(), contentType);
+    newPlayer.setModelDefaults(contentType);
     props.singleUpdate(newPlayer);
     props.charUpdatedSnack();
 
@@ -327,11 +327,11 @@ export default function CharCards(props) {
     let newPlayer = props.char;
     let weights = {
       intellect: 1,
-      haste: haste > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.statWeights[contentType].haste : haste,
-      crit: critical > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.statWeights[contentType].crit : critical,
-      mastery: mastery > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.statWeights[contentType].mastery : mastery,
-      versatility: versatility > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.statWeights[contentType].versatility : versatility,
-      leech: leech > CONSTRAINTS.Retail.maxTertiaryWeight ? newPlayer.statWeights[contentType].leech : leech,
+      haste: haste > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.getStatWeight(contentType, STAT.HASTE) : haste,
+      crit: critical > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.getStatWeight(contentType, STAT.CRITICAL_STRIKE) : critical,
+      mastery: mastery > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.getStatWeight(contentType, STAT.MASTERY) : mastery,
+      versatility: versatility > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.getStatWeight(contentType, STAT.VERSATILITY) : versatility,
+      leech: leech > CONSTRAINTS.Retail.maxTertiaryWeight ? newPlayer.getStatWeight(contentType, STAT.LEECH) : leech,
     };
 
     newPlayer.editChar(contentType, charName, server, region, selectedRace, weights);
