@@ -3,6 +3,8 @@ import React from "react";
 import { Menu, MenuItem, Paper } from "@material-ui/core";
 import { getConduitName, filterConduits, getCovenant } from "../CovenantUtilities";
 import { useTranslation } from "react-i18next";
+import { getEstimatedHPS } from "../CovenantUtilities";
+import { getConduitFormula } from "../../../Engine/EffectFormulas/EffectEngine";
 
 /* ---------------------------------------------------------------------------------------------- */
 /*                                         Node Positions                                         */
@@ -169,8 +171,11 @@ export default function SoulbindNode(props) {
     : "";
 
   const covenantName = getCovenant(trait.soulbind);
+  const player = props.player;
+  //let stat_bonus = trait.bonus_stats;
+  const enhanced = props.player.getRenownLevel() >= trait.enhanced;
+  const stat_bonus = getConduitFormula(trait.slotted_id, player, props.contentType, player.getConduitLevel(trait.slotted_id), enhanced);
 
-  let stat_bonus = trait.bonus_stats;
   let position = {
     row: trait.position[0],
     column: trait.position[1],

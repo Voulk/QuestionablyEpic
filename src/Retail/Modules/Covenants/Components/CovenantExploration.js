@@ -501,6 +501,7 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
                 setConduitInSlot={setConduitInSlot}
                 soulbindTrait={trait}
                 player={player}
+                contentType={contentType}
                 potencyConduits={potencyConduits}
                 enduranceConduits={enduranceConduits}
               />
