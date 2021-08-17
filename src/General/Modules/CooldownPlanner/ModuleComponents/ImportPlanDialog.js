@@ -7,6 +7,8 @@ export default function ImportPlanDialog(props) {
   const { variant, disableElevation, buttonLabel, color, cooldownObject, loadPlanData } = props;
   const [open, setOpen] = React.useState(false);
   const [importedPlanString, setImportedPlanString] = React.useState("");
+  const [error, setError] = React.useState(false);
+  const [disableButton, setDisableButton] = React.useState(false);
   const [errorMessage, setErrorMessage] = React.useState("");
 
   const handleClickOpen = () => {
@@ -14,7 +16,51 @@ export default function ImportPlanDialog(props) {
   };
 
   const handleClose = () => {
+    setError(false);
     setOpen(false);
+  };
+
+  /* --------------- Check that the pasted string is compatible (Needs further work) -------------- */
+  const checkForQEString = (importedString) => {
+    var lines = importedString.split("\n");
+    if (lines[0] !== "# QE Cooldown Planner") {
+      setError(true);
+      setErrorMessage("There's something wrong with the string :(");
+      setDisableButton(true);
+    } else {
+      lines[0] === "# QE Cooldown Planner" ? setError(false) : setError(true);
+      error ? setErrorMessage("There's something wrong with the string :(") : "";
+      error ? "" : checkForDuplicatePlan(importedString);
+      error ? setDisableButton(true) : setDisableButton(false);
+    }
+  };
+
+  /* --- Check and warn for Duplicate Plan Names as it will be overwritten by the imported plan --- */
+  const checkForDuplicatePlan = (importedString) => {
+    let importedBoss = "";
+    let importPlanName = "";
+
+    var lines = importedString.split("\n");
+
+    for (var i = 0; i < lines.length; i++) {
+      let line = lines[i];
+      /* ------------------------- If line includes "Boss=" then process line ------------------------- */
+      if (line.includes("Boss=")) {
+        importedBoss = parseInt(line.split("Boss=")[1]);
+      }
+      /* ------------------------ If line includes "PlanName" then process line ----------------------- */
+      if (line.includes("PlanName=")) {
+        importPlanName = line.split("PlanName=")[1];
+      }
+    }
+
+    /* ---------------------- Retreive the list of plans for the imported boss ---------------------- */
+    const bossPlans = Object.keys(cooldownObject.getCooldowns(importedBoss));
+    /* ---------------------------- Check if the plan name exists already --------------------------- */
+    const duplicatePlanNameCheck = bossPlans.includes(importPlanName) ? true : false;
+    duplicatePlanNameCheck ? setErrorMessage("Duplicate plan name detected, Importing this plan will overwrite it with this import!") : "";
+    setError(duplicatePlanNameCheck);
+    setImportedPlanString(importedString);
   };
 
   /* -------------------------- process the imported string into the app -------------------------- */
@@ -47,6 +93,7 @@ export default function ImportPlanDialog(props) {
 
   const handleSubmit = () => {
     processplan(importedPlanString, cooldownObject);
+    setError(false);
     setOpen(false);
   };
 
@@ -63,26 +110,28 @@ export default function ImportPlanDialog(props) {
           <TextField
             autoFocus
             multiline={true}
+            error={error}
+            helperText={error ? errorMessage : ""}
             margin="dense"
             id="simcentry"
             label={"Import"}
             fullWidth
             style={{ height: "100%" }}
             variant="outlined"
-            onChange={(e) => setImportedPlanString(e.target.value)}
-            onKeyPress={(e) => {
-              if (e.key === "Enter") {
-                e.preventDefault();
-                handleSubmit();
-              }
-            }}
+            onChange={(e) => checkForQEString(e.target.value)}
+            // onKeyPress={(e) => {
+            //   if (e.key === "Enter") {
+            //     e.preventDefault();
+            //     handleSubmit();
+            //   }
+            // }}
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary" variant="outlined">
             {t("Cancel")}
           </Button>
-          <Button onClick={handleSubmit} color="primary" variant="outlined">
+          <Button onClick={handleSubmit} color="primary" variant="outlined" disabled={disableButton}>
             {t("Submit")}
           </Button>
         </DialogActions>
