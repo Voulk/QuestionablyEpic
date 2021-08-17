@@ -1,17 +1,20 @@
 import { createModifiersFromModifierFlags } from "typescript";
 import SPEC from "../../Engine/SPECS";
-import { druidDefaultSpecialQueries, druidDefaultSpellData } from "./ClassDefaults/DruidDefaults";
-import { paladinDefaultSpecialQueries, paladinDefaultSpellData } from "./ClassDefaults/PaladinDefaults";
-import { shamanDefaultSpecialQueries, shamanDefaultSpellData } from "./ClassDefaults/ShamanDefaults";
-import { monkDefaultSpecialQueries, monkDefaultSpellData } from "./ClassDefaults/MonkDefaults";
-import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData } from "./ClassDefaults/HolyPriestDefaults";
-import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData } from "./ClassDefaults/DiscPriestDefaults";
+import { druidDefaultSpecialQueries, druidDefaultSpellData, druidDefaultStatWeights } from "./ClassDefaults/DruidDefaults";
+import { paladinVenthyrSpecialQueries, paladinVenthyrSpellData, paladinVenthyrStatWeights } from "./ClassDefaults/Paladin/PaladinDefaults";
+import { paladinKyrianSpecialQueries, paladinKyrianSpellData, paladinKyrianStatWeights } from "./ClassDefaults/Paladin/PaladinKyrian";
+import { paladinMaraadsSpellData, paladinMaraadsSpecialQueries, paladinMaraadsStatWeights } from "./ClassDefaults/Paladin/PaladinMaraadsRaid";
+import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
+import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
+import { monkSinSpecialQueries, monkSinSpellData, monkSinStatWeights } from "./ClassDefaults/Monk/MonkSinTeachings";
+import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
+import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./ClassDefaults/DiscPriestDefaults";
 
-// THIS IS NOT YET IN USE BUT WILL BE VERY SHORTLY.
 class CastModel {
-  constructor(spec, contentType) {
+  constructor(spec, contentType, modelID, arrID) {
     this.contentType = contentType;
-    this.setDefaults(spec, contentType);
+    this.arrayID = arrID;
+    this.setDefaults(spec, contentType, modelID);
   }
 
   spellList = {};
@@ -20,6 +23,10 @@ class CastModel {
   contentType = "";
   reportID = "";
   bossName = "";
+  statWeights = {};
+  modelName = "";
+  arrayID = 0;
+  baseStatWeights = {}
 
   setSpellList = (spellListing) => {
     this.spellList = spellListing;
@@ -51,10 +58,10 @@ class CastModel {
     else return 0;
   };
 
-  setDefaults = (spec, contentType) => {
+  setDefaults = (spec, contentType, modelID) => {
     this.fightInfo = {
       hps: 9300,
-      rawhps: 11020,
+      rawhps: 12320,
       dps: 1000,
       fightLength: 340,
       reportID: "Default",
@@ -64,28 +71,86 @@ class CastModel {
     let spellList = {};
     let specialQueries = {};
     if (spec === SPEC.RESTODRUID) {
+      this.modelName = "Default";
       spellList = druidDefaultSpellData(contentType);
       specialQueries = druidDefaultSpecialQueries(contentType);
+      this.baseStatWeights = druidDefaultStatWeights(contentType);
       this.fightInfo.dps = 700;
+
     } else if (spec === SPEC.HOLYPALADIN) {
-      spellList = paladinDefaultSpellData(contentType);
-      specialQueries = paladinDefaultSpecialQueries(contentType);
-      this.fightInfo.dps = 1650;
+      if (modelID === "Kyrian Default") {
+        this.modelName = "Kyrian Default";
+        spellList = paladinKyrianSpellData(contentType);
+        specialQueries = paladinKyrianSpecialQueries(contentType);
+        this.baseStatWeights = paladinKyrianStatWeights("Raid");
+        this.fightInfo.dps = 1650;
+      }
+      else if (modelID === "Venthyr Maraads") {
+        this.modelName = "Venthyr Maraads"
+        spellList = paladinMaraadsSpellData(contentType);
+        specialQueries = paladinMaraadsSpecialQueries(contentType);
+        this.baseStatWeights = paladinMaraadsStatWeights("Raid");
+        this.fightInfo.dps = 1900;
+      }
+      else if (modelID === "Venthyr Default") {
+        this.modelName = "Venthyr Default";
+        spellList = paladinVenthyrSpellData(contentType);
+        specialQueries = paladinVenthyrSpecialQueries(contentType);
+        this.baseStatWeights = paladinVenthyrStatWeights("Raid");
+        this.fightInfo.dps = 2100;
+      }
+      else if (modelID === "Default") { // Dungeon
+        this.modelName = "Default";
+        spellList = paladinVenthyrSpellData(contentType);
+        specialQueries = paladinVenthyrSpecialQueries(contentType);
+        this.baseStatWeights = paladinVenthyrStatWeights(contentType);
+        this.fightInfo.dps = 4400;
+      }
+
     } else if (spec === SPEC.RESTOSHAMAN) {
+      this.modelName = "Default";
       spellList = shamanDefaultSpellData(contentType);
       specialQueries = shamanDefaultSpecialQueries(contentType);
+      this.baseStatWeights = shamanDefaultStatWeights(contentType);
       this.fightInfo.dps = 725;
+
+      // --- Mistweaver Monk
     } else if (spec === SPEC.MISTWEAVERMONK) {
-      spellList = monkDefaultSpellData(contentType);
-      specialQueries = monkDefaultSpecialQueries(contentType);
-      this.fightInfo.dps = 1180;
+
+      if (modelID === "Raid Default") {
+        this.modelName = "Raid Default"
+        spellList = monkDefaultSpellData("Raid");
+        specialQueries = monkDefaultSpecialQueries("Raid");
+        this.baseStatWeights = monkDefaultStatWeights("Raid");
+        this.fightInfo.dps = 1200;
+      }
+      else if (modelID === "Dungeon Default") {
+        this.modelName = "Dungeon Default"
+        spellList = monkDefaultSpellData("Dungeon");
+        specialQueries = monkDefaultSpecialQueries(contentType);
+        this.baseStatWeights = monkDefaultStatWeights("Dungeon");
+        this.fightInfo.dps = 2100;
+      }
+      else if (modelID === "Sinister Teachings") {
+        this.modelName = "Sinister Teachings"
+        spellList = monkSinSpellData(contentType);
+        specialQueries = monkSinSpecialQueries(contentType);
+        this.baseStatWeights = monkSinStatWeights("Raid");
+        this.fightInfo.dps = 1600;
+      }
+
     } else if (spec === SPEC.DISCPRIEST) {
+      this.modelName = "Default";
       spellList = discPriestDefaultSpellData(contentType);
       specialQueries = discPriestDefaultSpecialQueries(contentType);
+      this.baseStatWeights = discPriestDefaultStatWeights(contentType);
       this.fightInfo.dps = 1300;
+
     } else if (spec === SPEC.HOLYPRIEST) {
+      this.modelName = "Default";
       spellList = holyPriestDefaultSpellData(contentType);
       specialQueries = holyPriestDefaultSpecialQueries(contentType);
+      this.baseStatWeights = holyPriestDefaultStatWeights(contentType);
       this.fightInfo.dps = 775;
     } 
     
@@ -105,6 +170,14 @@ class CastModel {
 
     this.setSpellList(spellList);
     this.specialQueries = specialQueries;
+  };
+
+  getBaseStatWeights = () => {
+    return this.baseStatWeights;
+  }
+
+  setStatWeights = (newWeights) => {
+    this.baseStatWeights = newWeights;
   };
 
   getClassicDruid = () => {

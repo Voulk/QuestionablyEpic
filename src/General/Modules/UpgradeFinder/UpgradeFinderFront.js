@@ -329,7 +329,7 @@ export default function UpgradeFinderFront(props) {
           <UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
         </Grid>
         <Grid item xs={12}>
-          <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
+          <Settings player={props.player} contentType={contentType} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} autoSocket={true} singleUpdate={props.singleUpdate} />
         </Grid>
         {/* ------------------------------ Raid Section ------------------------------ */}
 

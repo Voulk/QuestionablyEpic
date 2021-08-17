@@ -73,6 +73,7 @@ export default function QEMainMenu(props) {
           "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
           "MainMenu.DominationAnalysis": ["/dominationgems", true, "DominationAnalysis"],
           "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
+          // "MainMenu.FightAnalysis": ["/fightAnalysis", true, "FightAnalysis"],
           "MainMenu.Profile": ["/profile", true, "Profile"],
         }
       : {

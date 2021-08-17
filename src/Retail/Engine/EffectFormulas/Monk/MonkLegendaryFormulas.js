@@ -15,7 +15,7 @@ export const getMonkLegendary = (effectName, player, contentType) => {
     const essenceFontCPM = player.getSpellCPM(ID_ESSENCE_FONT, contentType);
     const dpsDuringDuration = 1250; // this is a 75% parse
     const multiplier = 2.5;
-    const buffUptime = (12 * essenceFontCPM) / 60; // While the buff lasts 15s, the Essence Font channel lasts 3.
+    const buffUptime = Math.min(1, (12 * essenceFontCPM) / 60); // While the buff lasts 15s, the Essence Font channel lasts 3.
     const expectedOverhealing = 0.3;
     
     bonus_stats.hps = buffUptime * multiplier * dpsDuringDuration * (1 - expectedOverhealing);
@@ -60,11 +60,13 @@ export const getMonkLegendary = (effectName, player, contentType) => {
     const celestialManaCostPerSecond = 1100;
 
     bonus_stats.hps = (celestialHPS - celestialManaCostPerSecond * player.getSpecialQuery("OneManaHealing", contentType)) * celestialUptime * 0.33;
+
   } else if (name === "Sinister Teachings") {
 
     const mult = player.getStatMultiplier("NOMAST") * player.getInt();
+    const conduitMult = 1.616; // Imbued Reflections 239 ilvl.
     const baseCooldown = 180;
-    const effectiveCD = contentType == "Raid" ? 60 : 92; // This seems to be the average cd with this lego
+    const effectiveCD = contentType == "Raid" ? 60 : 92; // This seems to be the average cd with this lego. Replace with proper formula based on Crit. TODO. 
     const fallenOrderSpells = [
       {sp: 3.6 * 1.4 * (7/6), castsPerClone: 1.2}, 
       // Enveloping Mist. For some reason their env multiplier effects their env healing. They are only supposed to cast 1 EnV per clone, but they sometimes like to cast two instead.
@@ -87,9 +89,10 @@ export const getMonkLegendary = (effectName, player, contentType) => {
     // 8 = default duration of a clone
     const durationMultiplier = 24 / 8;
     const hpsDueToExtraClone = healingFromClone * durationMultiplier / effectiveCD;
-    const netHPS = hpsDueToCDR + hpsDueToExtraClone;
+    const netHPS = (hpsDueToCDR + hpsDueToExtraClone) * conduitMult;
 
     bonus_stats.hps = netHPS;
+
   } else if (name === "Call to Arms"){
     const envbHealing = player.getSpellHPS(ID_ENVELOPING_BREATH_ID, contentType);
     const celestialDuration = .5;

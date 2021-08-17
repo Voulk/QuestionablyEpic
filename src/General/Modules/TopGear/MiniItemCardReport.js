@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Card, CardContent, CardActionArea, Typography, Grid, Divider } from "@material-ui/core";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemIcon } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 import hasteSocket from "../../../Images/Resources/hasteSocket.jpg";
 import critSocket from "../../../Images/Resources/critSocket.jpg";
@@ -9,23 +9,24 @@ import masterySocket from "../../../Images/Resources/masterySocket.jpg";
 import versSocket from "../../../Images/Resources/versSocket.jpg";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import { dominationGemDB } from "../../../Databases/DominationGemDB";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 200,
+    minWidth: 210,
     borderColor: "grey",
     borderRadius: "5px",
   },
   vault: {
     borderColor: "#0288d1",
     backgroundColor: "#3E4651",
-    minWidth: 200,
+    minWidth: 210,
     borderStyle: "dashed",
   },
   notequipped: {
     borderColor: "#CECE02",
     backgroundColor: "#3E4651",
-    minWidth: 200,
+    minWidth: 210,
     borderStyle: "dashed",
     borderWidth: "1px",
   },
@@ -150,7 +151,25 @@ export default function ItemCardReport(props) {
                 <Divider />
                 <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
                   <Grid item xs={12} style={{ display: "contents" }}>
-                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px" }}>
+                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px"}}>
+                    {('domGemID' in item && item.domGemID !== 0) ? (
+                      <a data-wowhead={"item=" + item.domGemID + "&domain=" + currentLanguage}>
+                        <img
+                          style={{
+                            height: 16,
+                            width: 16,
+                            margin: "0px 0px 0px 0px",
+                            verticalAlign: "middle",
+                            borderRadius: 4,
+                            border: "1px solid rgba(255, 255, 255, 0.12)",
+                          }}
+                          src={getGemIcon(item.domGemID)}
+                          alt={dominationGemDB.filter((key) => key.id === item.domGemID).map((key) => key.name[currentLanguage])[0]}
+                        />
+                      </a>
+                    ) : (
+                      ""
+                    )}
                       {socket} {statString} {tertiary} {isVault ? " / Vault" : ""}
                     </Typography>
                     {enchantCheck(item)}

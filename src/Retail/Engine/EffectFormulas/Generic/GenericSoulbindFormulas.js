@@ -83,7 +83,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
   ) {
       const duration = 10;
       const expectedUptime = duration / (3 * 30); // 30 card deck with 1 success. Card drawn every 3 seconds.
-      const buffPercentage = 0.12;
+      const buffPercentage = 0.10;
 
       bonus_stats.Intellect = buffPercentage * player.getInt() * expectedUptime;
 

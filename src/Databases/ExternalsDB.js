@@ -67,4 +67,18 @@ export const externalsDB = [
     icon: "ability_monk_chicocoon",
     cooldown: 120,
   },
+
+  {
+    guid: 33206,
+    name: {
+      en: "Pain Suppression",
+      de: "Schmerzunterdrückung",
+      fr: "Suppression de la douleur",
+      ru: "Подавление боли",
+      ch: "痛苦压制",
+    },
+    wowhead: "https://www.wowhead.com/spell=33206/pain-suppression",
+    icon: "spell_holy_painsupression",
+    cooldown: 180,
+  },
 ];

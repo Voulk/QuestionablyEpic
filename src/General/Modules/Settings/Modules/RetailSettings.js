@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { setBounds } from "../../../Engine/CONSTRAINTS";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import { dominationGemDB } from "../../../../Databases/DominationGemDB";
+import { getGemIcon } from "../../../Engine/ItemUtilities";
 
 const menuStyle = {
   style: { marginTop: 5 },
@@ -46,7 +47,7 @@ export default function RetailSettings(props) {
   // const [discTalent, setDiscTalent] = useState(109964);
 
   /* ----------------------------------- Paladin Playstyle State ---------------------------------- */
-  const [paladinPlaystyle, setPaladinPlaystyle] = useState("default");
+  const [specBuild, setSpecBuild] = useState(props.player.activeModelID[props.contentType]);
 
   /* -------------------------------------- Auto-Socket State ------------------------------------- */
   const [autoSocketValue, setAutoSocketValue] = useState(props.userSettings.autoSocket);
@@ -54,13 +55,8 @@ export default function RetailSettings(props) {
   /* ----------------------------------- Domination Socket State ---------------------------------- */
   const [dominationSocket, setDominationSocket] = useState(props.userSettings.vaultDomGem);
 
-  const paladinPlaystyles = [
-    { label: "Default", value: "default" },
-    { label: "Glimmer of Light", value: "glimmer" },
-    { label: "Light of the Martyr", value: "glimmer" },
-    { label: "Kyrian", value: "kyrian" },
-    { label: "Venthyr", value: "venthyr" },
-  ];
+
+  const specBuilds = props.player.getAllModels(props.contentType)
 
   const updateHymnal = (value) => {
     props.editSettings("hymnalAllies", setBounds(value, 0, 4));
@@ -78,8 +74,15 @@ export default function RetailSettings(props) {
   };
 
   const updateVaultDom = (value) => {
-    props.editSettings("vaultDomGem", value)
+    props.editSettings("vaultDomGem", value);
     setDominationSocket(value);
+  };
+
+  const updateSpecBuild = (value) => {
+    //props.editSettings("vaultDomGem", value)
+    props.player.setModelID(value, props.contentType);
+    setSpecBuild(value);
+    props.singleUpdate(props.player);
   };
 
   // const options = [
@@ -206,8 +209,7 @@ export default function RetailSettings(props) {
               ""
             )} */}
 
-      {/* --------------------------------- Paladin Playstyle Selection --------------------------------  */}
-      {/* {playerSpec === "Holy Paladin" ? (
+      {/* --------------------------------- Playstyle / Build Selection --------------------------------  */}
         <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
           <Grid container spacing={0} style={{ padding: "0px 8px" }}>
             <Grid item xs={12}>
@@ -229,10 +231,10 @@ export default function RetailSettings(props) {
             </Grid>
             <Grid item xs={12}>
               <FormControl variant="outlined" fullWidth size="small">
-                <Select labelId="slots" value={paladinPlaystyle} onChange={(e) => setPaladinPlaystyle(e.target.value)} MenuProps={menuStyle}>
-                  {paladinPlaystyles.map((key, i) => (
-                    <MenuItem id={key.label} value={key.value} style={{ justifyContent: "center" }}>
-                      {key.label}
+                <Select labelId="slots" value={props.player.activeModelID[props.contentType]} onChange={(e) => updateSpecBuild(e.target.value)} MenuProps={menuStyle}>
+                  {specBuilds.map((key, i) => (
+                    <MenuItem id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
+                      {key.modelName}
                     </MenuItem>
                   ))}
                 </Select>
@@ -240,9 +242,6 @@ export default function RetailSettings(props) {
             </Grid>
           </Grid>
         </Grid>
-      ) : (
-        ""
-      )} */}
       {/* ----------------------------------------- Auto Socket Items ---------------------------------------- */}
       {props.autoSocket === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
@@ -317,7 +316,7 @@ export default function RetailSettings(props) {
                           borderRadius: 4,
                           border: "1px solid rgba(255, 255, 255, 0.12)",
                         }}
-                        src={process.env.PUBLIC_URL + "/Images/Icons/" + key.icon + ".jpg"}
+                        src={getGemIcon(key.gemID)}
                         alt={key.name[currentLanguage]}
                       />
                     </a>

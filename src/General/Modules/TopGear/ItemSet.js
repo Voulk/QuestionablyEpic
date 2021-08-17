@@ -146,6 +146,7 @@ class ItemSet {
     else if (frostGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Winds of Winter", "rank": lowestGemRanks.frost})
     else if (bloodGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Blood Link", "rank": lowestGemRanks.blood})
     // -----------------
+
     this.setStats = setStats;
     this.setSockets = setSockets;
     this.domSockets = domSockets;

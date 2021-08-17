@@ -61,7 +61,7 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
   else if (effectName === "Blood Link" && contentType === "Raid") {
     const effect = activeEffect.effects[0];
     const value = Math.round(getProcessedValue(effect.coefficient[rank], effect.table, 174, 1, false)) * player.getStatPerc("Vers") * player.getStatPerc("Crit")
-    bonus_stats.hps = value * effect.ppm * (1 - effect.expectedOverhealing) / 60; // The healing effect basically scales with Vers twice.
+    bonus_stats.hps = value * effect.ppm * (1 - effect.expectedOverhealing) / 60;
     bonus_stats.dps = value * effect.ppm / 60;
     
   }
@@ -70,13 +70,21 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
     // This requires a specific log query, so is using close-to-accurate placeholders for now.
     const effect = activeEffect.effects[0];
     let playerCrit = player.getStatPerc("Crit") - 1; 
-    if (player.getSpec() === "Holy Paladin") playerCrit += (0.2*20/120 + 0.2*3/120);
+    if (player.getSpec() === "Holy Paladin") playerCrit += (0.3*0.56 + 0.2*3/120); // Wings represents a 30% crit increase during a period of time where over half of our healing takes place.
     const critHealingPerc = ((playerCrit * 2) / (1 - playerCrit + playerCrit * 2));
-    const effectiveThroughput = (player.getRawHPS(contentType) + player.getDPS(contentType)) * effect.specAbilitiesThatWork[player.getSpec()]
-    const failureChance = 0.2; // Winds of Winter will sometimes just not proc at all, losing you the damage.
+    const effectiveThroughput = (player.getHPS(contentType) + player.getDPS(contentType)) * effect.specAbilitiesThatWork[player.getSpec()]
+    const failureChance = 0.1; // Winds of Winter will sometimes just not proc at all, losing you the damage.
     
-    bonus_stats.hps = player.getStatPerc("Vers")  * critHealingPerc * effect.stored[rank] * effect.specOvercap[player.getSpec()] * (1 - failureChance) * effectiveThroughput * (1+playerCrit)                    
-    bonus_stats.dps = bonus_stats.hps;
+    let baseThroughput = player.getStatPerc("Vers")  * critHealingPerc * effect.stored[rank] * effect.specOvercap[player.getSpec()] * (1 - failureChance) * effectiveThroughput;
+
+    // Kyrian Paladin
+    if (player.getSpec() === "Holy Paladin" && player.getCovenant() === "kyrian") baseThroughput = baseThroughput * 0.5;
+    // Replace this with the model updates later this week.
+
+    bonus_stats.hps = baseThroughput * (1 - effect.expectedOverhealing);
+    bonus_stats.dps = baseThroughput * player.getStatPerc("Crit"); // Winds of Winter critting doesn't appear to funnel back to it's absorb but further analysis is required.
+
+    //console.log("Crit Healing Perc: " + critHealingPerc + ". Player Crit: " + playerCrit + ". EffThroughput: " + effectiveThroughput);
     
   }
   else if (effectName === "Chaos Bane" && contentType === "Raid") {

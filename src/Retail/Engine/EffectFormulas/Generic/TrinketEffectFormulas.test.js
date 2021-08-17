@@ -17,7 +17,7 @@ describe("Overflowing Anima Cage Test", () => {
         const localSettings = {...userSettings};
         localSettings.includeGroupBenefits = false;
 
-        const trinketResult = getTrinketEffect("Overflowing Anima Cage", druid, contentType, itemLevel, localSettings);
+        const trinketResult = getTrinketEffect("Overflowing Anima Cage", druid, druid.getActiveModel(contentType), contentType, itemLevel, localSettings);
         expect(Math.round(trinketResult.crit)).toEqual(20 * effect.efficiency);
 
     });
@@ -26,7 +26,7 @@ describe("Overflowing Anima Cage Test", () => {
         const localSettings = {...userSettings};
         localSettings.includeGroupBenefits = true;
 
-        const trinketResult = getTrinketEffect("Overflowing Anima Cage", druid, contentType, itemLevel, localSettings);
+        const trinketResult = getTrinketEffect("Overflowing Anima Cage", druid, druid.getActiveModel(contentType), contentType, itemLevel, localSettings);
 
         expect(Math.round(trinketResult.crit)).toEqual(20 * effect.efficiency * effect.targets[contentType]);
 
@@ -36,7 +36,7 @@ describe("Overflowing Anima Cage Test", () => {
         const localSettings = {...userSettings};
         localSettings.includeGroupBenefits = true;
 
-        const trinketResult = getTrinketEffect("Overflowing Anima Cage", druid, "Dungeon", itemLevel, localSettings);
+        const trinketResult = getTrinketEffect("Overflowing Anima Cage", druid, druid.getActiveModel(contentType), "Dungeon", itemLevel, localSettings);
 
         expect(Math.round(trinketResult.crit)).toEqual(Math.round(20 * effect.efficiency * effect.targets["Dungeon"]));
 
@@ -53,7 +53,7 @@ describe("Overflowing Anima Cage Test", () => {
     `.test("Ilvl Test - $level - Raid - Expects: $expectedResult", ({ level, expectedResult }) => {
         const localSettings = {...userSettings};
         localSettings.includeGroupBenefits = false;
-        expect(Math.round(getTrinketEffect("Overflowing Anima Cage", druid, "Raid", level, localSettings).crit)).toBe(expectedResult);
+        expect(Math.round(getTrinketEffect("Overflowing Anima Cage", druid, druid.getActiveModel(contentType), "Raid", level, localSettings).crit)).toBe(expectedResult);
   });
 
 });

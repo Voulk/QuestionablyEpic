@@ -177,8 +177,11 @@ export default function CovenantExploration(props) {
   return (
     <div className={classes.header}>
       {/* ---------------------------------------- Module Header ---------------------------------------  */}
-      <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
+      <Typography variant="h4" align="center" style={{ padding: "10px 10px 0px 10px" }} color="primary">
         {t("Soulbinds.Header")}
+      </Typography>
+      <Typography color="primary" variant="subtitle2" align="center" style={{ paddingBottom: 8 }}>
+        {"Current Playstyle selected: " + props.player.getActiveModel(contentType).modelName + " - " + contentType}
       </Typography>
       <div className={classes.root}>
         <AppBar position="static" style={{ backgroundColor: "#000", borderRadius: "4px 4px 0px 0px" }} elevation={0}>
@@ -189,7 +192,7 @@ export default function CovenantExploration(props) {
               className={classes.kyrianHeaderStyle}
               icon={
                 <div className="container">
-                  <img height={45} src={process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png"} alt={t("Covenants.Kyrian")} />
+                  <img height={45} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/CovenantSigils/Kyrian_Sigil.png"} alt={t("Covenants.Kyrian")} />
                   <div className="centered"> {t("Covenants.Kyrian")} </div>
                 </div>
               }
@@ -200,7 +203,7 @@ export default function CovenantExploration(props) {
               className={classes.nightFaeHeaderStyle}
               icon={
                 <div className="container">
-                  <img height={45} src={process.env.PUBLIC_URL + "/Images/Interface/Fae_Sigil.png"} alt={t("Covenants.NightFae")} />
+                  <img height={45} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/CovenantSigils/Fae_Sigil.png"} alt={t("Covenants.NightFae")} />
                   <div className="centered"> {t("Covenants.NightFae")} </div>
                 </div>
               }
@@ -211,7 +214,7 @@ export default function CovenantExploration(props) {
               className={classes.venthyrHeaderStyle}
               icon={
                 <div className="container">
-                  <img height={45} src={process.env.PUBLIC_URL + "/Images/Interface/Venthyr_Sigil.png"} alt={t("Covenants.Venthyr")} />
+                  <img height={45} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/CovenantSigils/Venthyr_Sigil.png"} alt={t("Covenants.Venthyr")} />
                   <div className="centered"> {t("Covenants.Venthyr")} </div>
                 </div>
               }
@@ -222,7 +225,7 @@ export default function CovenantExploration(props) {
               className={classes.necrolordHeaderStyle}
               icon={
                 <div className="container">
-                  <img height={45} src={process.env.PUBLIC_URL + "/Images/Interface/Death_Lords_Sigil.png"} alt={t("Covenants.Necrolords")} />
+                  <img height={45} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/CovenantSigils/Death_Lords_Sigil.png"} alt={t("Covenants.Necrolords")} />
                   <div className="centered"> {t("Covenants.Necrolords")} </div>
                 </div>
               }
@@ -248,21 +251,21 @@ export default function CovenantExploration(props) {
               {/* ----------------------------------------- Pelagos Tab ----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={139} alt={t("Covenants.Soulbinds.Pelagos")} src={process.env.PUBLIC_URL + "/Images/Interface/Pelagos.png"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Pelagos")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Pelagos.png"} />}
                 label={t("Covenants.Soulbinds.Pelagos")}
                 {...a11yPropsVert(0)}
               />
               {/* ------------------------------------------ Kleia Tab -----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={139} alt={t("Covenants.Soulbinds.Kleia")} src={process.env.PUBLIC_URL + "/Images/Interface/Kleia.png"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Kleia")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Kleia.png"} />}
                 label={t("Covenants.Soulbinds.Kleia")}
                 {...a11yPropsVert(1)}
               />
               {/* ---------------------------------------- Mikanikos Tab ---------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={139} alt={t("Covenants.Soulbinds.Mikanikos")} src={process.env.PUBLIC_URL + "/Images/Interface/forgelite-prime-mikanikos.png"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Mikanikos")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/forgelite-prime-mikanikos.png"} />}
                 label={t("Covenants.Soulbinds.Mikanikos")}
                 {...a11yPropsVert(2)}
               />
@@ -299,21 +302,21 @@ export default function CovenantExploration(props) {
               {/* ------------------------------------------ Niya Tab ------------------------------------------ */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={139} alt={t("Covenants.Soulbinds.Niya")} src={process.env.PUBLIC_URL + "/Images/Interface/Niya.png"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Niya")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Niya.png"} />}
                 label={t("Covenants.Soulbinds.Niya")}
                 {...a11yPropsVert(0)}
               />
               {/* --------------------------------------- Dreamweaver Tab -------------------------------------- */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={139} alt={t("Covenants.Soulbinds.Dreamweaver")} src={process.env.PUBLIC_URL + "/Images/Interface/Dreamweaver.png"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Dreamweaver")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Dreamweaver.png"} />}
                 label={t("Covenants.Soulbinds.Dreamweaver")}
                 {...a11yPropsVert(1)}
               />
               {/* ----------------------------------------- Korayn Tab ----------------------------------------- */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={139} alt={t("Covenants.Soulbinds.Korayn")} src={process.env.PUBLIC_URL + "/Images/Interface/Korayn.png"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Korayn")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Korayn.png"} />}
                 label={t("Covenants.Soulbinds.Korayn")}
                 {...a11yPropsVert(2)}
               />
@@ -350,21 +353,21 @@ export default function CovenantExploration(props) {
               {/* ----------------------------------------- Nadjia Tab ----------------------------------------- */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={139} alt={t("Covenants.Soulbinds.Nadjia")} src={process.env.PUBLIC_URL + "/Images/Interface/Nadjia.png"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Nadjia")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Nadjia.png"} />}
                 label={t("Covenants.Soulbinds.Nadjia")}
                 {...a11yPropsVert(0)}
               />
               {/* ----------------------------------------- Theotar Tab ---------------------------------------- */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={139} alt={t("Covenants.Soulbinds.Theotar")} src={process.env.PUBLIC_URL + "/Images/Interface/Theotar.png"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Theotar")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Theotar.png"} />}
                 label={t("Covenants.Soulbinds.Theotar")}
                 {...a11yPropsVert(1)}
               />
               {/* ----------------------------------------- Draven Tab ----------------------------------------- */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={139} alt={t("Covenants.Soulbinds.Draven")} src={process.env.PUBLIC_URL + "/Images/Interface/Draven.png"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Draven")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Draven.png"} />}
                 label={t("Covenants.Soulbinds.Draven")}
                 {...a11yPropsVert(2)}
               />
@@ -403,21 +406,21 @@ export default function CovenantExploration(props) {
               {/* ---------------------------------------- Marileth Tab ----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={139} alt={t("Covenants.Soulbinds.Marileth")} src={process.env.PUBLIC_URL + "/Images/Interface/Marileth.png"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Marileth")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Marileth.png"} />}
                 label={t("Covenants.Soulbinds.Marileth")}
                 {...a11yPropsVert(0)}
               />
               {/* ------------------------------------------ Emeni Tab -----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={139} alt={t("Covenants.Soulbinds.Emeni")} src={process.env.PUBLIC_URL + "/Images/Interface/Emeni.png"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Emeni")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Emeni.png"} />}
                 label={t("Covenants.Soulbinds.Emeni")}
                 {...a11yPropsVert(1)}
               />
               {/* ----------------------------------------- Heirmir Tab ----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={139} alt={t("Covenants.Soulbinds.Heirmir")} src={process.env.PUBLIC_URL + "/Images/Interface/Heirmir.png"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Heirmir")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Heirmir.png"} />}
                 label={t("Covenants.Soulbinds.Heirmir")}
                 {...a11yPropsVert(2)}
               />
@@ -469,14 +472,14 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
       <Grid item>
         <div id="soulbinds" style={{ position: "relative" }}>
           {/* ---------------------------------- Soulbind Background Image --------------------------------- */}
-          <img src={process.env.PUBLIC_URL + "/Images/Interface/SoulbindBackgroundFat.jpg"} height={980} width={605} alt="" />
+          <img src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/UI/SoulbindBackgroundFat.jpg"} height={980} width={605} alt="" />
 
           {/* ---------------------------------- Conduit Connector Mapping --------------------------------- */}
           <div id="nodes" style={{}}>
             {activeConnectors.map((trait, index) => (
               <img
                 key={index}
-                src={process.env.PUBLIC_URL + "/Images/Interface/SoulbindsLine" + trait.src}
+                src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/UI/SoulbindsLine" + trait.src}
                 style={{
                   position: "absolute",
                   zIndex: 0,
@@ -498,6 +501,7 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
                 setConduitInSlot={setConduitInSlot}
                 soulbindTrait={trait}
                 player={player}
+                contentType={contentType}
                 potencyConduits={potencyConduits}
                 enduranceConduits={enduranceConduits}
               />
@@ -524,7 +528,7 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
               <Grid item xs={12}>
                 <div style={{ display: "flex" }}>
                   <img
-                    src={process.env.PUBLIC_URL + "/Images/Interface/inv_misc_covenant_renown.jpg"}
+                    src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/UI/inv_misc_covenant_renown.jpg"}
                     width={36}
                     height={36}
                     style={{ margin: 4, borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
@@ -569,7 +573,7 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
               <Grid item xs={12}>
                 {/* --------------------------------------- Potency Header --------------------------------------- */}
                 <img
-                  src={process.env.PUBLIC_URL + "/Images/Interface/PotencyConduitTag.png"}
+                  src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/UI/PotencyConduitTag.png"}
                   style={{
                     objectFit: "cover",
                     width: "214px",
@@ -589,7 +593,7 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
               <Grid item xs={12}>
                 {/* -------------------------------------- Endurance Header -------------------------------------- */}
                 <img
-                  src={process.env.PUBLIC_URL + "/Images/Interface/EnduranceConduitTag.png"}
+                  src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/UI/EnduranceConduitTag.png"}
                   style={{
                     objectFit: "cover",
                     width: "214px",

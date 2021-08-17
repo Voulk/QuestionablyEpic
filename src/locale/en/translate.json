@@ -386,6 +386,7 @@
       "Profile": "Profile",
       "CharHeader": "Characters",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.",
+      "FightAnalysis": "Fight Analysis (Coming Soon)",
       "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Recent Spec Articles",
@@ -769,7 +770,7 @@
       "UpgradeBySlot": "Upgrades by Slot",
       "BackButton": "Back to Setup"
     },
-
+    "Renown Level": "Renown Level",
     "UpgradeFinderFront": {
       "Header": "Upgrade Finder",
       "RaidDifficultyHeader": "Raid Difficulty",
@@ -882,7 +883,7 @@
     "Shadowbreaker, Dawn of the Sun": {
       "name": "Shadowbreaker, Dawn of the Sun",
       "slot": "Shoulder or Hands",
-      "desc": "Light of Dawns range is increased to 40 yards, and all allies healed receive full effect from your Mastery for 8s.",
+      "desc": "Light of Dawn's range is increased to 40 yards, and all allies healed receive full effect from your Mastery for 8s.",
       "droploc": "Sun King's Salvation, Castle Nathria"
     },
     "Shock Barrier": {
