@@ -20,9 +20,9 @@ export default function ImportPlanDialog(props) {
     setOpen(false);
   };
 
-  const stringCheckForQEString = (importedString) => {
+  /* --------------- Check that the pasted string is compatible (Needs further work) -------------- */
+  const checkForQEString = (importedString) => {
     var lines = importedString.split("\n");
-    console.log(lines);
     if (lines[0] !== "# QE Cooldown Planner") {
       setError(true);
       setErrorMessage("There's something wrong with the string :(");
@@ -30,13 +30,13 @@ export default function ImportPlanDialog(props) {
     } else {
       lines[0] === "# QE Cooldown Planner" ? setError(false) : setError(true);
       error ? setErrorMessage("There's something wrong with the string :(") : "";
-      error ? "" : stringCheckForDuplicatePlan(importedString);
+      error ? "" : checkForDuplicatePlan(importedString);
       error ? setDisableButton(true) : setDisableButton(false);
     }
   };
 
   /* --- Check and warn for Duplicate Plan Names as it will be overwritten by the imported plan --- */
-  const stringCheckForDuplicatePlan = (importedString) => {
+  const checkForDuplicatePlan = (importedString) => {
     let importedBoss = "";
     let importPlanName = "";
 
@@ -44,7 +44,6 @@ export default function ImportPlanDialog(props) {
 
     for (var i = 0; i < lines.length; i++) {
       let line = lines[i];
-      console.log();
       /* ------------------------- If line includes "Boss=" then process line ------------------------- */
       if (line.includes("Boss=")) {
         importedBoss = parseInt(line.split("Boss=")[1]);
@@ -119,7 +118,7 @@ export default function ImportPlanDialog(props) {
             fullWidth
             style={{ height: "100%" }}
             variant="outlined"
-            onChange={(e) => stringCheckForQEString(e.target.value)}
+            onChange={(e) => checkForQEString(e.target.value)}
             // onKeyPress={(e) => {
             //   if (e.key === "Enter") {
             //     e.preventDefault();

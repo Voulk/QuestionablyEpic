@@ -12,9 +12,7 @@ export default function AddPlanDialog(props) {
   const { handleAddPlanDialogClose, openAddPlanDialog, cooldownObject, currentBoss, loadPlanData } = props;
   const [planName, setPlanName] = useState("");
   const bossPlans = Object.keys(cooldownObject.getCooldowns(currentBoss));
-  console.log(bossPlans);
   const duplicatePlanNameCheck = bossPlans.includes(planName) ? true : false;
-  console.log(duplicatePlanNameCheck);
 
   const handleClose = () => {
     setPlanName("");
