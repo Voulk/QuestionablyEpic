@@ -23,10 +23,16 @@ export default function ImportPlanDialog(props) {
   const stringCheckForQEString = (importedString) => {
     var lines = importedString.split("\n");
     console.log(lines);
-    lines[0] === "# QE Cooldown Planner" ? setError(false) : setError(true);
-    error ? setErrorMessage("There's something wrong with the string :(") : "";
-    error ? "" : stringCheckForDuplicatePlan(importedString);
-    error ? setDisableButton(true) : setDisableButton(false);
+    if (lines[0] !== "# QE Cooldown Planner") {
+      setError(true);
+      setErrorMessage("There's something wrong with the string :(");
+      setDisableButton(true);
+    } else {
+      lines[0] === "# QE Cooldown Planner" ? setError(false) : setError(true);
+      error ? setErrorMessage("There's something wrong with the string :(") : "";
+      error ? "" : stringCheckForDuplicatePlan(importedString);
+      error ? setDisableButton(true) : setDisableButton(false);
+    }
   };
 
   /* --- Check and warn for Duplicate Plan Names as it will be overwritten by the imported plan --- */
