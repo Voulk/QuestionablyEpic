@@ -134,7 +134,7 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   return bonus_stats;
 }
 
-function getConduitRank(itemLevel) {
+function getConduitRank(itemLevel, enhanced = false) {
   let ranks = {
     145: 1,
     158: 2,
@@ -147,13 +147,15 @@ function getConduitRank(itemLevel) {
     252: 9
   };
 
-  return ranks[itemLevel];
+  if (enhanced) return ranks[itemLevel] + 2
+  else return ranks[itemLevel];
 }
 
-export function getConduitFormula(effectID, player, contentType, itemLevel = 145) {
+export function getConduitFormula(effectID, player, contentType, itemLevel = 145, enhanced = false) {
 
-  let conduitRank = getConduitRank(itemLevel);
+  let conduitRank = getConduitRank(itemLevel, enhanced);
   let bonus_stats = {};
+  
   if (effectID === 357902) {
     // % intellect increase when healed by another player. 15s duration, 30s cooldown.
     const percentInc = 0.02 + conduitRank * 0.002;

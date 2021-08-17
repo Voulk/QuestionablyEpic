@@ -336,7 +336,7 @@ class Player {
 
   /* ------------------------------------- Update renown level ------------------------------------ */
   updateRenownLevel = (renownLevel) => {
-    this.renown = renownLevel;
+    this.renown = Math.max(0, Math.min(renownLevel, 80));
   };
 
   /* --------------------------------- Return current renown level -------------------------------- */
