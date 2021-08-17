@@ -174,7 +174,9 @@ export default function SoulbindNode(props) {
   const player = props.player;
   //let stat_bonus = trait.bonus_stats;
   const enhanced = props.player.getRenownLevel() >= trait.enhanced;
-  const stat_bonus = getConduitFormula(trait.slotted_id, player, props.contentType, player.getConduitLevel(trait.slotted_id), enhanced);
+  let stat_bonus = {}
+  if (!trait.slotted_id || trait.slotted_id == -1) stat_bonus = trait.bonus_stats;
+  else stat_bonus = getConduitFormula(trait.slotted_id, player, props.contentType, player.getConduitLevel(trait.slotted_id), enhanced);
 
   let position = {
     row: trait.position[0],
