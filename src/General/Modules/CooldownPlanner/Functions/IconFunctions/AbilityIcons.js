@@ -43,6 +43,7 @@ import FlourishIcon from "Images/Classes/Druid/Specialisation/Restoration/Icons/
 import AncestralProtectionIcon from "Images/Classes/Shaman/Specialisation/Restoration/Icons/Talents/AncestralProtectionTotemIcon.jpg";
 import GuardianSpiritIcon from "Images/Classes/Priest/Specialisation/Holy/Icons/GuardianSpiritIcon.jpg";
 import RaptureIcon from "Images/Classes/Priest/Specialisation/Discipline/Icons/Rapture.jpg";
+import PainSupression from "Images/Classes/Priest/Specialisation/Discipline/Icons/PainSupression.jpg"
 
 // Should probably work this off GUID
 
@@ -159,6 +160,11 @@ export default function abilityIcons(props, style) {
     spell = "spell=47536";
     source = RaptureIcon;
     alt = "Rapture";
+  }
+  if (props === 33206) {
+    spell = "spell=33206";
+    source = PainSupression;
+    alt = "Pain Supression";
   }
   // Priest Covenant Abilities
   if (props === 325013) {
