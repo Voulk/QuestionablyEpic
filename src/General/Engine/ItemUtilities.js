@@ -7,7 +7,7 @@ import { getEffectValue } from "../../Retail/Engine/EffectFormulas/EffectEngine"
 import SPEC from "../Engine/SPECS";
 import { translatedStat } from "./STAT";
 import Item from "../Modules/Player/Item";
-// import { useTranslation } from "react-i18next"; 
+// import { useTranslation } from "react-i18next";
 // import { i18n } from "react-i18next";
 import { reportError } from "../SystemTools/ErrorLogging/ErrorReporting";
 import { useSelector } from "react-redux";
@@ -92,7 +92,7 @@ export function getValidWeaponTypes(spec, slot) {
           return [0, 4, 6, 7, 10, 13];
         case SPEC.HOLYPALADIN:
           return [0, 1, 4, 5, 6, 7, 8];
-          
+
         case SPEC.RESTOSHAMAN:
           return [0, 1, 4, 5, 10, 13, 15];
         case SPEC.HOLYPRIEST:
@@ -117,10 +117,7 @@ export function getValidWeaponTypes(spec, slot) {
 
 export function filterBCItemListBySource(itemList, sourceInstance, sourceBoss) {
   let temp = itemList.filter(function (item) {
-
-    return (
-      ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0))
-    );
+    return (item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0);
   });
 
   return temp;
@@ -134,10 +131,7 @@ export function filterItemListBySource(itemList, sourceInstance, sourceBoss, lev
     if (itemEncounter == 2456) expectedItemLevel = 233;
     else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
 
-    return (
-      item.level == expectedItemLevel &&
-      ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0))
-    );
+    return item.level == expectedItemLevel && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
   });
 
   return temp;
@@ -199,13 +193,12 @@ export function getTranslatedItemName(id, lang, effect, gameType = "Retail") {
 
 // Returns a translated item name based on an ID.
 export function getTranslatedDominationGem(id, lang) {
-    let temp = dominationGemDB.filter(function (gem) {
-      return gem.gemID === id;
-    });
-    if (temp.length > 0) return temp[0].name[lang];
-    else return "Unknown Gem";
-} 
-
+  let temp = dominationGemDB.filter(function (gem) {
+    return gem.gemID === id;
+  });
+  if (temp.length > 0) return temp[0].name[lang];
+  else return "Unknown Gem";
+}
 
 // Grabs a specific item from whichever item database is currently selected.
 export function getItem(id, gameType = "Retail") {
@@ -216,18 +209,17 @@ export function getItem(id, gameType = "Retail") {
   else return "";
 }
 
-// This function grabs a selected prop from the currently selected item database. 
-// It should replace most other functions that get only one specific prop. 
+// This function grabs a selected prop from the currently selected item database.
+// It should replace most other functions that get only one specific prop.
 export function getItemProp(id, prop, gameType = "Retail") {
   const item = getItem(id, gameType);
 
   if (item !== "" && prop in item) return item[prop];
   else if (item !== "" && prop === "itemLevel") {
-    // This is for props that we should expect to have. 
+    // This is for props that we should expect to have.
     reportError(null, "ItemUtilities", "Item prop: " + prop + " not found or item missing", id);
     return -2;
-  }
-  else {
+  } else {
     // This is for props that may or may not exist on an item like effects.
     return "";
   }
@@ -247,9 +239,14 @@ export function getItemIcon(id, gameType = "Retail") {
 
 export function getGemIcon(id) {
   const gem = dominationGemDB.filter((gem) => gem.gemID === id);
-  return "https://wow.zamimg.com/images/wow/icons/large/" + gem[0].icon + ".jpg"
+  console.log(gem[0]);
+  let gemIcon = "";
+  if (gem[0] === undefined) {
+    return "https://wow.zamimg.com/images/icons/socket-domination.gif";
+  } else {
+    return "https://wow.zamimg.com/images/wow/icons/large/" + gem[0].icon + ".jpg";
+  }
 }
-
 
 // Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
 export function getItemAllocations(id, missiveStats = []) {
@@ -307,13 +304,11 @@ function getItemCat(slot) {
   }
 }
 
-
 export function buildWepCombos(player, active = false, equipped = false) {
   let wep_list = [];
   let main_hands = player.getActiveItems("1H Weapon", active, equipped);
   let off_hands = player.getActiveItems("Offhands", active, equipped);
   let two_handers = player.getActiveItems("2H Weapon", active, equipped);
-
 
   for (let i = 0; i < main_hands.length; i++) {
     // Some say j is the best variable for a nested loop, but are they right?
@@ -389,9 +384,9 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
 
     if (["haste", "crit", "mastery", "versatility", "leech"].includes(key)) {
       //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
-      stats[key] = Math.round((rand_prop * allocation * 0.0001) * combat_mult);
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * combat_mult);
     } else if (key === "intellect") {
-      stats[key] = Math.floor((rand_prop * allocation * 0.0001) * 1);
+      stats[key] = Math.floor(rand_prop * allocation * 0.0001 * 1);
     } else if (key === "stamina") {
       // todo
     }
@@ -403,7 +398,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
       // This is an occasionally off-by-one formula for leech that should be rewritten.
       stats.leech = Math.ceil(28 + 0.2413 * (itemLevel - 155));
     } else {
-      const terMult = (slot === "Finger" || slot === "Neck") ? 0.174027 : 0.442932;
+      const terMult = slot === "Finger" || slot === "Neck" ? 0.174027 : 0.442932;
       stats.leech = Math.floor(terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility));
     }
   }
@@ -414,28 +409,28 @@ export function getDomGemEffect(id) {
   let temp = dominationGemDB.filter(function (gem) {
     return gem.gemID === id;
   });
-  if (temp.length > 0 && 'effect' in temp[0]) return temp[0].effect;
-  else return ""
-} 
+  if (temp.length > 0 && "effect" in temp[0]) return temp[0].effect;
+  else return "";
+}
 
 export function buildStatString(stats, effect, lang = "en") {
   let statString = "";
-  let statsList = []
-  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech"]
+  let statsList = [];
+  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech"];
   for (const [statkey, statvalue] of Object.entries(stats)) {
-    if (!ignoreList.includes(statkey)) statsList.push({key: statkey, val: statvalue})
+    if (!ignoreList.includes(statkey)) statsList.push({ key: statkey, val: statvalue });
   }
 
   statsList = statsList.sort(function (a, b) {
     return b.val - a.val;
   });
 
-  if ('intellect' in stats && stats.intellect > 0) statString = stats.intellect + " Int / ";
-  
+  if ("intellect" in stats && stats.intellect > 0) statString = stats.intellect + " Int / ";
+
   for (var ind in statsList) {
     let statKey = statsList[ind]["key"];
-    const statName = (statKey in translatedStat) ? translatedStat[statKey][lang] : ""
-    
+    const statName = statKey in translatedStat ? translatedStat[statKey][lang] : "";
+
     statString +=
       statsList[ind]["val"] > 0
         ? statsList[ind]["val"] +
@@ -448,13 +443,8 @@ export function buildStatString(stats, effect, lang = "en") {
 
   if (effect !== "") statString += "Effect" + " / "; // t("itemTags.effect")
 
-
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
-
-
-
 }
-
 
 // Returns the string with its first letter capitalized.
 export function correctCasing(string) {
@@ -468,8 +458,7 @@ function scoreGemColor(gemList, player) {
     for (const [stat, value] of Object.entries(gem.stats)) {
       if (player[stat] && stat in player) gemScore += value * player[stat];
     }
-    gem['score'] = gemScore;
-    
+    gem["score"] = gemScore;
   }
 
   gemList = gemList.sort(function (a, b) {
@@ -479,24 +468,21 @@ function scoreGemColor(gemList, player) {
   return gemList;
 }
 
-
-
 export function getBestGem(player, color, rarity = "rare") {
-  let colors = []
+  let colors = [];
   let gems = [...GEMS];
 
-  if (color === "red") colors = ["red", "orange", "purple"] 
-  else if (color === "blue") colors = ["blue", "purple", "green"] 
-  else if (color === "yellow") colors = ["yellow", "orange", "green"] 
-  else if (color === "all") colors = ["yellow", "blue", "red", "purple", "orange", "green"] 
+  if (color === "red") colors = ["red", "orange", "purple"];
+  else if (color === "blue") colors = ["blue", "purple", "green"];
+  else if (color === "yellow") colors = ["yellow", "orange", "green"];
+  else if (color === "all") colors = ["yellow", "blue", "red", "purple", "orange", "green"];
 
-  let gemList = gems.filter((filter) => (colors.includes(filter.color) && filter.jewelcrafting === false && filter.rarity === rarity));
+  let gemList = gems.filter((filter) => colors.includes(filter.color) && filter.jewelcrafting === false && filter.rarity === rarity);
   gemList = scoreGemColor(gemList, player);
   return gemList[0];
-
 }
 
-// Get highest value of each gem color. 
+// Get highest value of each gem color.
 // Compare value of socketing highest matching colors + socket bonus, to just socketing highest colors.
 export function socketItem(item, player) {
   const socketList = item.sockets;
@@ -505,41 +491,38 @@ export function socketItem(item, player) {
     red: getBestGem(player, "red"),
     blue: getBestGem(player, "blue"),
     yellow: getBestGem(player, "yellow"),
-  }
+  };
 
-  let socketBonus = 0
+  let socketBonus = 0;
   if (socketList.bonus) {
     for (const [stat, value] of Object.entries(socketList.bonus)) {
       socketBonus += value * player[stat];
     }
   }
 
-  let colorMatch = {gems: [], score: socketBonus};
-  let socketBest = {gems: [], score: 0};
+  let colorMatch = { gems: [], score: socketBonus };
+  let socketBest = { gems: [], score: 0 };
   for (const socNum in socketList.gems) {
-    const socket = socketList.gems[socNum]
+    const socket = socketList.gems[socNum];
     // Match colors
-    if (['red', 'blue', 'yellow'].includes(socket)) {
-      colorMatch['score'] += bestGems[socket].score;
-      colorMatch['gems'].push(bestGems[socket].name);
+    if (["red", "blue", "yellow"].includes(socket)) {
+      colorMatch["score"] += bestGems[socket].score;
+      colorMatch["gems"].push(bestGems[socket].name);
 
-      socketBest['score'] += bestGems['overall'].score;
-      socketBest['gems'].push(bestGems['overall'].name);
+      socketBest["score"] += bestGems["overall"].score;
+      socketBest["gems"].push(bestGems["overall"].name);
     }
-
   }
   if (colorMatch.score >= socketBest.score) item.socketedGems = colorMatch;
-  else item.socketedGems =  item.socketedGems = socketBest;
-
+  else item.socketedGems = item.socketedGems = socketBest;
 }
 
-// Compiles stats & bonus stats into one array to which we can then apply DR etc. 
+// Compiles stats & bonus stats into one array to which we can then apply DR etc.
 // TODO, this is identical to TopGearShared, so put it somewhere accessible to both.
 function compileStats(stats, bonus_stats) {
-  
   for (const stat in stats) {
     if (stat !== "bonus_stats") {
-      stats[stat] += (bonus_stats !== undefined && stat in bonus_stats) ? bonus_stats[stat] : 0;
+      stats[stat] += bonus_stats !== undefined && stat in bonus_stats ? bonus_stats[stat] : 0;
     }
   }
 
@@ -550,32 +533,27 @@ function compileStats(stats, bonus_stats) {
   }
 
   return stats;
-  
 }
 
 function applyBCStatMods(spec, setStats) {
-      // This can be properly formalized.
+  // This can be properly formalized.
   if (spec === "Holy Paladin BC") {
     setStats.intellect = (setStats.intellect || 0) + (setStats.intellect || 0) * 0.1;
     setStats.spelldamage = (setStats.spelldamage || 0) + (setStats.intellect || 0) * 0.35;
-  }
-  else if (spec === "Restoration Shaman BC") {
+  } else if (spec === "Restoration Shaman BC") {
     setStats.bonushealing = (setStats.bonushealing || 0) + (setStats.intellect || 0) * 0.3;
     setStats.spelldamage = (setStats.spelldamage || 0) + (setStats.intellect || 0) * 0.3;
-  }
-  else if (spec === "Restoration Druid BC") {
+  } else if (spec === "Restoration Druid BC") {
     // Also gets 30% of spirit MP5 as MP5
     setStats.spirit = (setStats.spirit || 0) * 1.15;
-  }
-  else if (spec === "Holy Priest BC") {
+  } else if (spec === "Holy Priest BC") {
     // Also gets 30% of spirit MP5 as MP5
-    setStats.spirit = (setStats.spirit * 1.05) || 0;
+    setStats.spirit = setStats.spirit * 1.05 || 0;
     //talent_stats.bonushealing = (setStats.spirit + talent_stats.spirit) * 0.25;
     setStats.spelldamage = (setStats.spelldamage || 0) + (setStats.spirit || 0) * 0.25;
   }
 
   return setStats;
-
 }
 
 // Return an item score.
@@ -583,8 +561,8 @@ function applyBCStatMods(spec, setStats) {
 // Special effects, sockets and leech are then added afterwards.
 export function scoreItem(item, player, contentType, gameType = "Retail") {
   let score = 0;
-  let bonus_stats = {}
-  let item_stats = {...item.stats};
+  let bonus_stats = {};
+  let item_stats = { ...item.stats };
 
   // Calculate Effect.
   if (item.effect) {
@@ -596,11 +574,10 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
   if (gameType === "BurningCrusade") sumStats = applyBCStatMods(player.getSpec(), sumStats);
 
   for (var stat in sumStats) {
-      if (stat !== "bonus_stats") {
-        let statSum = sumStats[stat]
-        score += statSum * player.getStatWeight(contentType, stat);
-      }
-
+    if (stat !== "bonus_stats") {
+      let statSum = sumStats[stat];
+      score += statSum * player.getStatWeight(contentType, stat);
+    }
   }
 
   // Add any bonus HPS
@@ -621,7 +598,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
   // BC specific sockets
   if (item.sockets) {
     socketItem(item, player.statWeights["Raid"]);
-    score += item.socketedGems['score'];
+    score += item.socketedGems["score"];
   }
 
   return Math.round(100 * score) / 100;
@@ -634,7 +611,3 @@ function sumObjectsByKey(...objs) {
     return a;
   }, {});
 }
-
-
-
-
