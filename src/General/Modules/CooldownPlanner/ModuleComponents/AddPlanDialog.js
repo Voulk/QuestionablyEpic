@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Divider, Paper, Select, Grid, Typography } from "@material-ui/core";
@@ -10,8 +11,13 @@ AddPlanDialog.propTypes = {
 export default function AddPlanDialog(props) {
   const { handleAddPlanDialogClose, openAddPlanDialog, cooldownObject, currentBoss, loadPlanData } = props;
   const [planName, setPlanName] = useState("");
+  const bossPlans = Object.keys(cooldownObject.getCooldowns(currentBoss));
+  console.log(bossPlans);
+  const duplicatePlanNameCheck = bossPlans.includes(planName) ? true : false;
+  console.log(duplicatePlanNameCheck);
 
   const handleClose = () => {
+    setPlanName("");
     handleAddPlanDialogClose(true);
   };
 
@@ -30,10 +36,19 @@ export default function AddPlanDialog(props) {
     <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="sm" fullWidth style={{ padding: 30 }}>
       <DialogTitle id="simple-dialog-title">Enter Plan Name</DialogTitle>
       <DialogContent>
-        <TextField fullWidth variant="outlined" label="Enter Plan Name" defaultValue="" value={planName} onChange={onChangeNewPlanName} />
+        <TextField
+          error={duplicatePlanNameCheck}
+          helperText={duplicatePlanNameCheck ? "Duplicate plan name detected, please choose another." : ""}
+          fullWidth
+          variant="outlined"
+          label="Enter Plan Name"
+          defaultValue=""
+          value={planName}
+          onChange={onChangeNewPlanName}
+        />
       </DialogContent>
       <DialogActions>
-        <Button key={8} variant="contained" color="primary" onClick={(e) => addPlan(planName, currentBoss)} size="small">
+        <Button key={8} variant="contained" color="primary" onClick={(e) => addPlan(planName, currentBoss)} size="small" disabled={duplicatePlanNameCheck}>
           Add Plan
         </Button>
       </DialogActions>

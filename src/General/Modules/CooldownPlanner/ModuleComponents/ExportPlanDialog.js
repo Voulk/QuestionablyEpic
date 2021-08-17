@@ -19,7 +19,7 @@ export default function ExportPlanDialog(props) {
 
     let stringifiedPLan = JSON.stringify(plan);
 
-    exportString = "# Boss=" + boss + "\n" + "# PlanName=" + planName + "\n" + "# " + "Plan=" + "\n" + stringifiedPLan;
+    exportString = "# QE Cooldown Planner" + "\n" + "# Version=0.9" + "\n" + "# Boss=" + boss + "\n" + "# PlanName=" + planName + "\n" + "# " + "Plan=" + "\n" + stringifiedPLan;
 
     return exportString;
   }
