@@ -2236,7 +2236,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
           en: {
             name: "Call to Arms",
             slot: "Legs, Feet",
-            desc: "Weapons of Order calls forth Chi-Ji, the Red Crane / Yu'lon, the Jade Serpent to assist you for 12 sec. (500ms cooldown)",
+            desc: "Weapons of Order calls forth Chi-Ji, the Red Crane / Yu'lon, the Jade Serpent to assist you for 12 sec.",
             droploc: "Kyrian Renown 48",
             covenant: "Kyrian",
           },
@@ -2276,7 +2276,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
             en: {
               name: "Bountiful Brew",
               slot: "Neck, Shoulder, Chest",
-              desc: "Your abilities have a low chance to cast Bonedust Brew at your target's location. (Approximately 1.25 procs per minute, 500ms cooldown)",
+              desc: "Your abilities have a low chance to cast Bonedust Brew at your target's location (1.25 procs / min).",
               droploc: "Necrolord Renown 48",
               covenant: "Necrolord",
             },
