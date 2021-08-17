@@ -1,4 +1,4 @@
-import React, { useEffect, forwardRef } from "react";
+import React, { useEffect, forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "material-table";
 import ClassCooldownMenuItems from "../Menus/ClassCooldownMenuItems";
 import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search } from "@material-ui/icons";
@@ -6,8 +6,8 @@ import { Button, TextField, InputLabel, FormControl, Grow, MenuItem, Divider, Pa
 import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import moment from "moment";
 import { healerCooldownsDetailed, raidList } from "../Data/Data";
-import { bossList } from "../Data/CooldownPlannerBossList"
-import { bossAbilities} from "../Data/CooldownPlannerBossAbilityList"
+import { bossList } from "../Data/CooldownPlannerBossList";
+import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { useTranslation } from "react-i18next";
 import { localizationFR } from "locale/fr/TableLocale";
@@ -19,6 +19,12 @@ import bossIcons from "../Functions/IconFunctions/BossIcons";
 import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
 import classIcons from "../Functions/IconFunctions/ClassIcons";
 import ls from "local-storage";
+import Cooldowns from "../CooldownObject/CooldownObject";
+import AddPlanDialog from "./AddPlanDialog";
+import DeletePlanDialog from "./DeletePlanDialog";
+import { red } from "@material-ui/core/colors";
+import ExportPlanDialog from "./ExportPlanDialog";
+import ImportPlanDialog from "./ImportPlanDialog";
 
 const useStyles = makeStyles(() => ({
   formControl: {
@@ -38,6 +44,12 @@ const useStyles = makeStyles(() => ({
     },
   },
 }));
+
+const deleteTheme = createMuiTheme({
+  palette: {
+    primary: red,
+  },
+});
 
 const themeCooldownTable = createMuiTheme({
   overrides: {
@@ -147,19 +159,70 @@ const tableIcons = {
 export default function CooldownPlanner(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
-  // const { useState } = React;
   const currentLanguage = i18n.language;
-  const rl = raidList;
-  const setData = props.dataUpdateHandler;
-  const currentBoss = props.currentBoss;
-  const currentRaid = props.currentRaid;
-  const currentPlan = props.currentPlan;
-  const currentData = props.data;
-  const handleChangeRaid = props.raidHandler;
-  const handleChangeBoss = props.bossHandler;
-  const handleChangePlan = props.planHandler;
+
+  const cooldownObject = new Cooldowns();
   const ertDialogOpen = props.ertDialogOpen;
   const healTeamDialogOpen = props.healTeamDialogOpen;
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                            Add Plan                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+  const [openAddPlanDialog, setOpenAddPlanDialog] = React.useState(false);
+
+  const handleAddPlanDialogClickOpen = () => {
+    setOpenAddPlanDialog(true);
+  };
+
+  const handleAddPlanDialogClose = (value) => {
+    setOpenAddPlanDialog(false);
+  };
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                           Delete Plan                                          */
+  /* ---------------------------------------------------------------------------------------------- */
+  const [openDeletePlanDialog, setOpenDeletePlanDialog] = React.useState(false);
+
+  const handleDeletePlanDialogClickOpen = () => {
+    setOpenDeletePlanDialog(true);
+  };
+
+  const handleDeletePlanDialogClose = (value) => {
+    setOpenDeletePlanDialog(false);
+  };
+
+  /* ---------------- State for Raid shown (Current is Sanctum of Domination 2450) ---------------- */
+  // Only bosses for Sanctum will be shown in the drop down
+  const [currentRaid, setCurrentRaid] = useState(2450);
+  const [currentBoss, setCurrentBoss] = useState(2423);
+  const [currentPlan, setCurrentPlan] = useState("");
+  const [data, setData] = useState([]);
+
+  const getBossPlanNames = (boss) => {
+    return Object.keys(cooldownObject.getCooldowns(boss));
+  };
+
+  /* ------------------------------- Loads relevant plan into table ------------------------------- */
+  const loadPlanData = (currentBoss, newPlan) => {
+    setCurrentBoss(currentBoss);
+    setCurrentPlan(newPlan);
+
+    /* ------------------------------- Get List of Plans for the boss ------------------------------- */
+    const bossCooldowns = cooldownObject.getCooldowns(currentBoss);
+    /* --------------------------------------- Set the lected --------------------------------------- */
+    const planCooldowns = bossCooldowns[newPlan];
+    setData(planCooldowns);
+  };
+
+  /* --------------------- Updates the plan in cooldownObject in local storage -------------------- */
+  const updateStorage = (boss, plan, currentData) => {
+    cooldownObject.updateCooldownPlan(boss, plan, currentData);
+  };
+
+  /* -------------------------------------- Changes the Boss -------------------------------------- */
+  const changeBoss = (newBoss) => {
+    loadPlanData(newBoss, "default");
+  };
 
   /* --- Function to Show the time Cooldowns will be available again (Currently Column Hidden) --- */
   const timeCheck = (castTime, cooldown) => {
@@ -358,7 +421,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* ------------------------ Renders the healer name outside of Edit Mode. ----------------------- */
-      render: (rowData) => <div style={{ color: classColoursJS(rowData.class) }}>{rowData.name}</div>,
+      render: (rowData) => <div style={{ color: classColoursJS(rowData.class), display: "inline-flex" }}>{rowData.name}</div>,
       /* ---------- Component for name selection when the table is in edit mode. ---------- */
       editComponent: (props) => (
         <ThemeProvider theme={selectMenu}>
@@ -391,7 +454,7 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
                     {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                     {key.name}
                   </MenuItem>
@@ -420,7 +483,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
       render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class) }}>
+        <div style={{ color: classColoursJS(rowData.class), display: "inline-flex" }}>
           {rowData.class === undefined ? "" : classIcons(rowData.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
           {t("CooldownPlanner.Classes." + rowData.class)}
         </div>
@@ -429,7 +492,7 @@ export default function CooldownPlanner(props) {
       editComponent: (props) => {
         let data = { ...props.rowData };
         return (
-          <div style={{ color: classColoursJS(data.class) }}>
+          <div style={{ color: classColoursJS(data.class), display: "inline-flex" }}>
             {data.class === undefined ? "" : classIcons(data.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
             {t("CooldownPlanner.Classes." + data.class)}
           </div>
@@ -559,7 +622,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
-      render: (rowData) => <div style={{ color: classColoursJS(rowData.class1) }}>{rowData.name1}</div>,
+      render: (rowData) => <div style={{ color: classColoursJS(rowData.class1), display: "inline-flex" }}>{rowData.name1}</div>,
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
       editComponent: (props) => (
         <ThemeProvider theme={selectMenu}>
@@ -592,7 +655,7 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
                     {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                     {key.name}
                   </MenuItem>
@@ -622,7 +685,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
       render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class1) }}>
+        <div style={{ color: classColoursJS(rowData.class1), display: "inline-flex" }}>
           {rowData.class1 === undefined ? "" : classIcons(rowData.class1, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
           {t("CooldownPlanner.Classes." + rowData.class1)}
         </div>
@@ -631,7 +694,7 @@ export default function CooldownPlanner(props) {
       editComponent: (props) => {
         let data = { ...props.rowData };
         return (
-          <div style={{ color: classColoursJS(data.class1) }}>
+          <div style={{ color: classColoursJS(data.class1), display: "inline-flex" }}>
             {data.class1 === undefined ? "" : classIcons(data.class1, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
             {t("CooldownPlanner.Classes." + data.class1)}
           </div>
@@ -762,7 +825,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
-      render: (rowData) => <div style={{ color: classColoursJS(rowData.class2) }}>{rowData.name2}</div>,
+      render: (rowData) => <div style={{ color: classColoursJS(rowData.class2), display: "inline-flex" }}>{rowData.name2}</div>,
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
       editComponent: (props) => (
         <ThemeProvider theme={selectMenu}>
@@ -795,7 +858,7 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
                     {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                     {key.name}
                   </MenuItem>
@@ -821,7 +884,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
       render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class2) }}>
+        <div style={{ color: classColoursJS(rowData.class2), display: "inline-flex" }}>
           {rowData.class2 === undefined ? "" : classIcons(rowData.class2, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
           {t("CooldownPlanner.Classes." + rowData.class2)}
         </div>
@@ -830,7 +893,7 @@ export default function CooldownPlanner(props) {
       editComponent: (props) => {
         let data = { ...props.rowData };
         return (
-          <div style={{ color: classColoursJS(data.class2) }}>
+          <div style={{ color: classColoursJS(data.class2), display: "inline-flex" }}>
             {data.class2 === undefined ? "" : classIcons(data.class2, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
             {t("CooldownPlanner.Classes." + data.class2)}
           </div>
@@ -961,7 +1024,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
-      render: (rowData) => <div style={{ color: classColoursJS(rowData.class3) }}>{rowData.name3}</div>,
+      render: (rowData) => <div style={{ color: classColoursJS(rowData.class3), display: "inline-flex" }}>{rowData.name3}</div>,
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
       editComponent: (props) => (
         <ThemeProvider theme={selectMenu}>
@@ -994,7 +1057,7 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
                     {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                     {key.name}
                   </MenuItem>
@@ -1021,7 +1084,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
       render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class3) }}>
+        <div style={{ color: classColoursJS(rowData.class3), display: "inline-flex" }}>
           {rowData.class3 === undefined ? "" : classIcons(rowData.class3, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
           {t("CooldownPlanner.Classes." + rowData.class3)}
         </div>
@@ -1030,7 +1093,7 @@ export default function CooldownPlanner(props) {
       editComponent: (props) => {
         let data = { ...props.rowData };
         return (
-          <div style={{ color: classColoursJS(data.class3) }}>
+          <div style={{ color: classColoursJS(data.class3), display: "inline-flex" }}>
             {data.class3 === undefined ? "" : classIcons(data.class3, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
             {t("CooldownPlanner.Classes." + data.class3)}
           </div>
@@ -1159,7 +1222,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
-      render: (rowData) => <div style={{ color: classColoursJS(rowData.class4) }}>{rowData.name4}</div>,
+      render: (rowData) => <div style={{ color: classColoursJS(rowData.class4), display: "inline-flex" }}>{rowData.name4}</div>,
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
       editComponent: (props) => (
         <ThemeProvider theme={selectMenu}>
@@ -1192,7 +1255,7 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
                     {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                     {key.name}
                   </MenuItem>
@@ -1219,7 +1282,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
       render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class4) }}>
+        <div style={{ color: classColoursJS(rowData.class4), display: "inline-flex" }}>
           {rowData.class3 === undefined ? "" : classIcons(rowData.class4, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
           {t("CooldownPlanner.Classes." + rowData.class4)}
         </div>
@@ -1228,7 +1291,7 @@ export default function CooldownPlanner(props) {
       editComponent: (props) => {
         let data = { ...props.rowData };
         return (
-          <div style={{ color: classColoursJS(data.class4) }}>
+          <div style={{ color: classColoursJS(data.class4), display: "inline-flex" }}>
             {data.class4 === undefined ? "" : classIcons(data.class4, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
             {t("CooldownPlanner.Classes." + data.class4)}
           </div>
@@ -1336,8 +1399,8 @@ export default function CooldownPlanner(props) {
   /* ------------- When the currently loaded data is updated the props.update function ------------ */
   /* ------------- passed from the cooldown planner module will update the state also. ------------ */
   useEffect(() => {
-    props.update(currentData);
-  }, [currentData]);
+    props.update(data);
+  }, [data]);
 
   /* ------- Sets the localization of the table based on the users selected language in i18 ------- */
   let curLang = () => {
@@ -1352,23 +1415,12 @@ export default function CooldownPlanner(props) {
     }
   };
 
-  /* --------------------------- Update Local Storage for selected plan --------------------------- */
-  let updateStorage = (props) => {
-    if (ls.get(currentRaid + "." + currentBoss + "." + currentPlan) === null) {
-      ls.set(currentRaid + "." + currentBoss + "." + currentPlan, []);
-    }
-    ls.set(
-      currentRaid + "." + currentBoss + "." + currentPlan,
-      props.sort((a, b) => (a.time > b.time ? 1 : -1)),
-    );
-  };
-
   return (
     <ThemeProvider theme={themeCooldownTable}>
       <MaterialTable
         icons={tableIcons}
         columns={columns}
-        data={currentData}
+        data={data}
         style={{
           padding: 10,
         }}
@@ -1454,13 +1506,13 @@ export default function CooldownPlanner(props) {
                   </Button>
                 </Grid>
                 {/* ---------------------------------- Raid Selection Drop Down ---------------------------------- */}
-                <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                {/* <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                   <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small">
                     <InputLabel id="RaidSelector">{t("CooldownPlanner.TableLabels.RaidSelectorLabel")}</InputLabel>
                     <Select
                       labelId="RaidSelector"
                       value={currentRaid}
-                      onChange={(e) => handleChangeRaid(e.target.value)}
+                      onChange={(e) => setCurrentRaid(e.target.value)}
                       label={t("CooldownPlanner.TableLabels.RaidSelectorLabel")}
                       MenuProps={menuStyle}
                     >
@@ -1473,18 +1525,12 @@ export default function CooldownPlanner(props) {
                         .map((key, i) => [key, <Divider key={i} />])}
                     </Select>
                   </FormControl>
-                </Grid>
+                </Grid> */}
                 {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
                 <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                   <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small" disabled={currentRaid === "" ? true : false}>
                     <InputLabel id="BossSelector">{t("CooldownPlanner.TableLabels.BossSelectorLabel")}</InputLabel>
-                    <Select
-                      labelId="BossSelector"
-                      value={currentBoss}
-                      onChange={(e) => handleChangeBoss(e.target.value)}
-                      label={t("CooldownPlanner.TableLabels.BossSelectorLabel")}
-                      MenuProps={menuStyle}
-                    >
+                    <Select labelId="BossSelector" value={currentBoss} onChange={(e) => changeBoss(e.target.value)} label={t("CooldownPlanner.TableLabels.BossSelectorLabel")} MenuProps={menuStyle}>
                       {bossList
                         .filter((obj) => {
                           return obj.zoneID === currentRaid;
@@ -1505,14 +1551,39 @@ export default function CooldownPlanner(props) {
                 <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                   <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small" disabled={currentBoss === "" ? true : false}>
                     <InputLabel id="RaidSelector">{t("Select Plan")}</InputLabel>
-                    <Select labelId="RaidSelector" label={t("Select Plan")} value={currentPlan} onChange={(e) => handleChangePlan(e.target.value)}>
-                      <MenuItem value={1}>Plan 1</MenuItem>
-                      <Divider />
-                      <MenuItem value={2}>Plan 2</MenuItem>
-                      <Divider />
-                      <MenuItem value={3}>Plan 3</MenuItem>
+                    <Select labelId="RaidSelector" label={t("Select Plan")} value={currentPlan} onChange={(e) => loadPlanData(currentBoss, e.target.value)}>
+                      {getBossPlanNames(currentBoss).map((key) => (
+                        <MenuItem value={key}>{key}</MenuItem>
+                      ))}
                     </Select>
                   </FormControl>
+                </Grid>
+
+                <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <Button key={8} variant="contained" color="primary" onClick={handleAddPlanDialogClickOpen} size="small">
+                    Add
+                  </Button>
+                </Grid>
+
+                <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <ThemeProvider theme={deleteTheme}>
+                    <Button
+                      key={8}
+                      variant="contained"
+                      color="primary"
+                      onClick={handleDeletePlanDialogClickOpen}
+                      size="small"
+                      disabled={currentPlan === "" || currentPlan === "default" ? true : false}
+                    >
+                      Delete
+                    </Button>
+                  </ThemeProvider>
+                </Grid>
+                <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <ImportPlanDialog variant="outlined" disableElevation={true} buttonLabel="Import" color="primary" cooldownObject={cooldownObject} loadPlanData={loadPlanData} />
+                </Grid>
+                <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <ExportPlanDialog variant="outlined" disableElevation={true} buttonLabel="Export" data={data} color="primary" boss={currentBoss} planName={currentPlan} plan={data} />
                 </Grid>
 
                 {/* ----------------------------- ERT Note Button (Opens ERT Dialog) ----------------------------- */}
@@ -1539,17 +1610,17 @@ export default function CooldownPlanner(props) {
             new Promise((resolve, reject) => {
               setTimeout(() => {
                 /* ------------------ Spread Current Data and the New Data into updated Object (Sorted) ------------------ */
-                setData([...currentData, newData].sort((a, b) => (a.time > b.time ? 1 : -1)));
+                setData([...data, newData].sort((a, b) => (a.time > b.time ? 1 : -1)));
                 resolve();
                 /* ------------------------------------ Update local storage ------------------------------------ */
-                updateStorage([...currentData, newData], currentBoss);
+                updateStorage(currentBoss, currentPlan, [...data, newData]);
               }, 1000);
             }),
           onRowUpdate: (newData, oldData) =>
             new Promise((resolve, reject) => {
               setTimeout(() => {
                 /* --------------------------- Spread Current Data to update row data --------------------------- */
-                const dataUpdate = [...currentData];
+                const dataUpdate = [...data];
                 /* -------------------------- Set index as the old datas ID for updated ------------------------- */
                 const index = oldData.tableData.id;
                 /* -------------------- Set the Updated Data as the old datas id replacing it ------------------- */
@@ -1557,7 +1628,7 @@ export default function CooldownPlanner(props) {
                 /* ---------------------------------- Set Updated Data (Sorted) --------------------------------- */
                 setData([...dataUpdate].sort((a, b) => (a.time > b.time ? 1 : -1)));
                 /* ------------------------------------ Update local storage ------------------------------------ */
-                updateStorage([...dataUpdate], currentBoss);
+                updateStorage(currentBoss, currentPlan, [...dataUpdate]);
                 resolve();
               }, 1000);
             }),
@@ -1565,7 +1636,7 @@ export default function CooldownPlanner(props) {
             new Promise((resolve, reject) => {
               setTimeout(() => {
                 /* ------------------------------------- Spread current data ------------------------------------ */
-                const dataDelete = [...currentData];
+                const dataDelete = [...data];
                 /* -------------------------- Set index as the old datas ID for deletion ------------------------- */
                 const index = oldData.tableData.id;
                 /* --------------------------------------- Delete Row Data -------------------------------------- */
@@ -1573,11 +1644,23 @@ export default function CooldownPlanner(props) {
                 /* -------------------------- Set the New Data without the spliced row -------------------------- */
                 setData([...dataDelete].sort((a, b) => (a.time > b.time ? 1 : -1)));
                 /* ------------------------------------ Update local storage ------------------------------------ */
-                updateStorage([...dataDelete], currentBoss);
+                updateStorage(currentBoss, currentPlan, [...dataDelete]);
                 resolve();
               }, 1000);
             }),
         }}
+      />
+
+      <AddPlanDialog openAddPlanDialog={openAddPlanDialog} handleAddPlanDialogClose={handleAddPlanDialogClose} cooldownObject={cooldownObject} currentBoss={currentBoss} loadPlanData={loadPlanData} />
+
+      <DeletePlanDialog
+        openDeletePlanDialog={openDeletePlanDialog}
+        handleDeletePlanDialogClose={handleDeletePlanDialogClose}
+        currentPlan={currentPlan}
+        setCurrentPlan={setCurrentPlan}
+        setData={setData}
+        cooldownObject={cooldownObject}
+        currentBoss={currentBoss}
       />
     </ThemeProvider>
   );

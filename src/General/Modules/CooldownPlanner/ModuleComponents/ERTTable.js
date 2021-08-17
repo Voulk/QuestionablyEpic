@@ -9,7 +9,7 @@ import { localizationRU } from "locale/ru/TableLocale";
 import { localizationCH } from "locale/ch/TableLocale";
 import { useTranslation } from "react-i18next";
 import { Divider, Grid, InputLabel, FormControl, MenuItem, Select, Paper, Typography } from "@material-ui/core";
-import moment from 'moment';
+import moment from "moment";
 
 const theme = createMuiTheme({
   overrides: {
@@ -111,7 +111,7 @@ export default function ERTTable(props) {
 
   const copyToClipboard = (ertType) => {
     let data = ertFormat(ertType);
-    const copyText = data.map((key) => key.ert);
+    const copyText = data.map((key) => key.ert, <br />);
     if (navigator.clipboard) {
       navigator.clipboard.writeText(copyText).then((error) => {
         console.log(error);
@@ -190,13 +190,7 @@ export default function ERTTable(props) {
                   <Grid item xs="auto">
                     <FormControl style={{ minWidth: 200 }} variant="outlined" size="small">
                       <InputLabel id="BossSelector">{t("CooldownPlanner.TableLabels.TypeSelector")}</InputLabel>
-                      <Select
-                        labelId="BossSelector"
-                        value={ertType}
-                        onChange={(e) => setErtType(e.target.value)}
-                        label={t("CooldownPlanner.TableLabels.TypeSelector")}
-                        MenuProps={menuStyle}
-                      >
+                      <Select labelId="BossSelector" value={ertType} onChange={(e) => setErtType(e.target.value)} label={t("CooldownPlanner.TableLabels.TypeSelector")} MenuProps={menuStyle}>
                         <MenuItem key={"ert1"} value={"Time - No Icons"}>
                           Time - No Icons
                         </MenuItem>

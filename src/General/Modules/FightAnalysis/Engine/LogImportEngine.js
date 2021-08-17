@@ -1,6 +1,6 @@
 //prettier-ignore
 import { addMissingTimestamps, getUniqueObjectsFromArray, reduceTimestamps, fightDuration, importHealerLogData, importDamageLogData, importCastsLogData,
-  durationmaker, sumDamage, importSummaryData, importExternalCastsLogData, importCharacterIds, importEnemyCasts, importEnemyIds, importRaidHealth } from "../Functions/Functions";
+  durationmaker, sumDamage, importSummaryData, importExternalCastsLogData, importCharacterIds, importEnemyCasts, importEnemyIds, importRaidHealth } from "../../CooldownPlanner/Functions/Functions";
 import moment from "moment";
 
 /* =============================================
@@ -67,7 +67,7 @@ export default async function updatechartdata(starttime, endtime) {
   const damage = await importDamageLogData(starttime, endtime, this.state.reportid);
 
   const health = await importRaidHealth(starttime, endtime, this.state.reportid);
-  
+
   /* --------------------------- Map Healer Data for ID, Name and Class. -------------------------- */
   const healerIDName = healers.map((key) => ({
     id: key.id,
@@ -130,7 +130,7 @@ export default async function updatechartdata(starttime, endtime) {
     .map((key) => ({
       ability: key.ability.name,
       guid: key.ability.guid,
-      timestamp: moment(fightDuration(key.timestamp, this.state.time)).startOf("second").valueOf(),
+      timestamp: moment(fightDuration(key.timestamp, starttime)).startOf("second").valueOf(),
       [healerIDName
         .filter((obj) => {
           return obj.id === key.sourceID;
@@ -157,7 +157,7 @@ export default async function updatechartdata(starttime, endtime) {
   /* - Then converted to start of nearest second otherwise the chart will show each individual ms - */
   /* ------------------- We Don't need to delve that deep into MS for the chart. ------------------ */
   const unmitigatedDamageMap = damage.map((key) => ({
-    timestamp: moment(fightDuration(key.timestamp, this.state.time)).startOf("second").valueOf(),
+    timestamp: moment(fightDuration(key.timestamp, starttime)).startOf("second").valueOf(),
     [key.ability.name]: key.unmitigatedAmount,
   }));
 
@@ -166,7 +166,7 @@ export default async function updatechartdata(starttime, endtime) {
   /* - Then converted to start of nearest second otherwise the chart will show each individual ms - */
   /* ------------------- We Don't need to delve that deep into MS for the chart. ------------------ */
   const mitigatedDamageMap = damage.map((key) => ({
-    timestamp: moment(fightDuration(key.timestamp, this.state.time)).startOf("second").valueOf(),
+    timestamp: moment(fightDuration(key.timestamp, starttime)).startOf("second").valueOf(),
     [key.ability.name]: key.amount,
   }));
 
@@ -174,7 +174,7 @@ export default async function updatechartdata(starttime, endtime) {
   const updateddatacastsTimeline = cooldowns.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
-    timestamp: moment(fightDuration(key.timestamp, this.state.time)).startOf("second").format("mm:ss"),
+    timestamp: moment(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
     name: healerIDName
       .filter((obj) => {
         return obj.id === key.sourceID;
@@ -193,7 +193,7 @@ export default async function updatechartdata(starttime, endtime) {
   const updateddatacastsExternalsTimeline = externals.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
-    timestamp: moment(fightDuration(key.timestamp, this.state.time)).startOf("second").format("mm:ss"),
+    timestamp: moment(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
     caster: healerIDName
       .filter((obj) => {
         return obj.id === key.sourceID;
@@ -224,7 +224,7 @@ export default async function updatechartdata(starttime, endtime) {
   const enemyCastsTimeline = enemyCasts.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
-    timestamp: moment(fightDuration(key.timestamp, this.state.time)).startOf("second").format("mm:ss"),
+    timestamp: moment(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
     name: enemyIDs
       .filter((obj) => {
         return obj.id === key.sourceID;
@@ -239,7 +239,7 @@ export default async function updatechartdata(starttime, endtime) {
   const updateddatacastsExternalTimeline = cooldowns.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
-    timestamp: moment(fightDuration(key.timestamp, this.state.time)).startOf("second").format("mm:ss"),
+    timestamp: moment(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
     name: healerIDName
       .filter((obj) => {
         return obj.id === key.sourceID;
@@ -254,8 +254,7 @@ export default async function updatechartdata(starttime, endtime) {
       .toString(),
   }));
 
-
-  const healthUpdated = health
+  const healthUpdated = health;
 
   /* ----------------------- Flatten the map we just created into an array. ----------------------- */
   let cooldownwithdurations = healerDurations.flat();
@@ -326,14 +325,21 @@ export default async function updatechartdata(starttime, endtime) {
     })
     .sort((a, b) => (b.damage > a.damage ? 1 : -1));
 
+  /* ---------- Here we set all the returned data to state in the FightAnalysis Component --------- */
   this.setState({
+    /* ------------------------ Store the original Unmitigated data in state ------------------------ */
     unmitigatedChartDataNoCooldownsOriginal: sortedDataUnmitigatedNoCooldowns,
     unmitigatedChartDataNoCooldowns: sortedDataUnmitigatedNoCooldowns,
+
+    /* ------------------------- Store the original mitigated data in state ------------------------- */
     mitigatedChartDataNoCooldownsOriginal: sortedDataMitigatedDamageNoCooldowns,
     mitigatedChartDataNoCooldowns: sortedDataMitigatedDamageNoCooldowns,
+
     legenddata: uniqueArrayNewForLegend,
+    /* ------------------ Unmitigated Chart Data - With Cooldowns Used from the log ----------------- */
     unmitigatedChartData: sortedDataUnmitigatedWithCooldowns,
     mitigatedChartData: sortedDataMitigatedDamageWithCooldowns,
+    
     Updateddatacasts: updateddatacastsTimeline,
     abilityList: uniqueArray,
     cooldownlist: uniqueArrayCD,

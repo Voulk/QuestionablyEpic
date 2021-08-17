@@ -291,10 +291,11 @@
       "LegendaryAnalysis": "Анализ легендарных эффектов",
       "TrinketAnalysis": "Анализ аксессуаров",
       "CooldownPlanner": "Планировщик кулдаунов",
-      "DominationAnalysis": "Domination Analysis (Coming soon)",
+      "DominationAnalysis": "Domination Analysis (Beta)",
       "Profile": "Профиль",
       "CharHeader": "Персонажи",
       "CharHelpText": "Добавьте сюда своих персонажей. Кликните по ним правой кнопкой, чтобы изменить вес характеристик, сервер и остальное.",
+      "FightAnalysis": "Fight Analysis (Coming Soon)",
       "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Последние статьи",
