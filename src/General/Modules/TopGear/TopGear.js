@@ -150,11 +150,11 @@ export default function TopGear(props) {
     if (checkTopGearValid) {
       setBtnActive(false);
       const currentLanguage = i18n.language;
-      let itemList = props.player.getSelectedItems();
+      const itemList = props.player.getSelectedItems();
       let wepCombos = buildWepCombos(props.player, true);
-      let baseHPS = props.player.getHPS(contentType);
-      let strippedPlayer = JSON.parse(JSON.stringify(props.player));
-      let strippedCastModel = JSON.parse(JSON.stringify(props.player.castModel[contentType]));
+      const baseHPS = props.player.getHPS(contentType);
+      const strippedPlayer = JSON.parse(JSON.stringify(props.player));
+      const strippedCastModel = JSON.parse(JSON.stringify(props.player.getActiveModel(contentType)));
 
       if (gameType === "Retail") {
         const worker = require("workerize-loader!./TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
@@ -245,7 +245,7 @@ export default function TopGear(props) {
         </Grid>
         <Grid item xs={12}>
           {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
-          <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
+          <Settings player={props.player} contentType={contentType} userSettings={userSettings} editSettings={editSettings} singleUpdate={props.singleUpdate} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
         </Grid>
 
         {props.player.activeItems.length > 0 ? (

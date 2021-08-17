@@ -7,7 +7,7 @@ import { getMasteryAddition } from "../Monk/MistweaverMiscFormulas"
 import SPEC from "../../../../General/Engine/SPECS";
 
 // TODO: Write proper comments. See Lingering Sunmote for an example.
-export function getTrinketEffect(effectName, player, contentType, itemLevel, userSettings = {}) {
+export function getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings = {}) {
   let bonus_stats = {};
 
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */
@@ -164,11 +164,11 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     
     if (player.getSpec() === "Discipline Priest") {
       bonus_stats.crit = (getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.duration * crit_effect.multiplier) / 180;
-      bonus_stats.crit *= player.getCooldownMult("threeMinutes", contentType);
+      bonus_stats.crit *= castModel.getSpecialQuery("threeMinutes", "cooldownMult");
     }
     else {
       bonus_stats.crit = (getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.duration * crit_effect.multiplier) / 120;
-      bonus_stats.crit *= player.getCooldownMult("twoMinutes", contentType);
+      bonus_stats.crit *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
     }
     
     
@@ -253,14 +253,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let effect = activeTrinket.effects[0];
 
     bonus_stats.intellect = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
-
-    /* ------------------- This is horribly messy and will be replaced very soon. ------------------- */
-    // TODO: replace
-    if (player.getSpec() === "Mistweaver Monk" && player.getCovenant() === "necrolord") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
-    else if (player.getSpec() === "Holy Paladin" && player.getCovenant() === "kyrian") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
-    else if (player.getSpec() !== "Mistweaver Monk" && player.getSpec() !== "Holy Paladin") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
-    //if (player.getSpec() === SPEC.HOLYPALADIN) bonus_stats.intellect *= 1.42; // This needs to be refined, but represents the power increase from combining with Divine Toll.
-    // We need a better way to model interaction with spec cooldowns.
+    bonus_stats.intellect *= castModel.getSpecialQuery("oneMinute", "cooldownMult");
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -272,7 +265,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let effect = activeTrinket.effects[0];
 
     bonus_stats.intellect = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.stacks * effect.duration) / effect.cooldown;
-    bonus_stats.intellect *= player.getCooldownMult("threeMinutes", contentType);
+    bonus_stats.intellect *= castModel.getSpecialQuery("threeMinutes", "cooldownMult");
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -285,7 +278,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     const failureChance = (contentType === "Raid" ? 0.34 : 0.12);
 
     bonus_stats[playerBestSecondary] = ((getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown) * (1 - failureChance);
-    bonus_stats[playerBestSecondary] *= player.getCooldownMult("threeMinutes", contentType);
+    bonus_stats[playerBestSecondary] *= castModel.getSpecialQuery("threeMinutes", "cooldownMult");
     // TODO: power reduced because of the chance something interferes. This needs to be much much better and I'll fix it up this week.
     //
   } else if (
@@ -343,7 +336,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let effect = activeTrinket.effects[0];
 
     bonus_stats.mastery = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
-    bonus_stats.mastery *= player.getCooldownMult("ninetySeconds", contentType);
+    bonus_stats.mastery *= castModel.getSpecialQuery("ninetySeconds", "cooldownMult");
 
     // We need a better way to model interaction with spec cooldowns.
     //
@@ -529,7 +522,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
 
     bonus_stats.haste = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
     if (player.getSpec() === "Holy Paladin") {
-      bonus_stats.haste *= player.getCooldownMult("twoMinutes", contentType);
+      bonus_stats.haste *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
     }
     //
   }else if (
@@ -609,7 +602,7 @@ else if (
   else {
     const expectedEfficiency = 0.87; // Shadowed Orb is easy to mess up, but full value should be guaranteed in most cases.
     bonus_stats.mastery = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown * expectedEfficiency;
-    bonus_stats.mastery *= player.getCooldownMult("twoMinutesOrb", contentType);
+    bonus_stats.mastery *= castModel.getSpecialQuery("twoMinutesOrb", "cooldownMult");;
   }
 
 
