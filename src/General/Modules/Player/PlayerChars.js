@@ -33,6 +33,8 @@ class PlayerChars {
           let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights);
           if (player.covenant) newChar.setCovenant(player.covenant);
           else newChar.setDefaultCovenant(player.spec);
+          if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
+          if (player.renown > 0) newChar.updateRenownLevel(player.renown);
           charArray.push(newChar);
         }
         

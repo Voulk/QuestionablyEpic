@@ -33,7 +33,7 @@ import { getGenericSet } from "BurningCrusade/Engine/EffectFormulas/Generic/Gene
 // Effect is a small "dictionary" with two key : value pairs.
 // The EffectEngine is basically a routing device. It will take your effect and effect type and grab the right formula from the right place.
 // This allows each spec to work on spec-specific calculations without a need to interact with the other specs.
-export function getEffectValue(effect, player, contentType, itemLevel = 0, userSettings, gameType = "Retail", setStats = {}) {
+export function getEffectValue(effect, player, castModel, contentType, itemLevel = 0, userSettings, gameType = "Retail", setStats = {}) {
   let bonus_stats = {};
   const effectName = effect.name;
   const effectType = effect.type;
@@ -74,10 +74,10 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0, userS
       }
     } 
     else if (effectType === "generic legendary") {
-      bonus_stats = getGenericLegendary(effectName, player, contentType, userSettings);
+      bonus_stats = getGenericLegendary(effectName, player, castModel, contentType, userSettings);
     } 
     else if (effectType === "trinket") {
-      bonus_stats = getTrinketEffect(effectName, player, contentType, itemLevel, userSettings);
+      bonus_stats = getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings);
       //testTrinkets(player, contentType); //TODO: Remove
     }
   }
@@ -130,11 +130,11 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0, userS
       bonus_stats = getGenericEffectBC(effectName, player, contentType);
     } 
   }
-  console.log("ITEM EFFECT" + JSON.stringify(effect) + ". " + ". Result: " + JSON.stringify(bonus_stats));
+  //console.log("ITEM EFFECT" + JSON.stringify(effect) + ". " + ". Result: " + JSON.stringify(bonus_stats));
   return bonus_stats;
 }
 
-function getConduitRank(itemLevel) {
+function getConduitRank(itemLevel, enhanced = false) {
   let ranks = {
     145: 1,
     158: 2,
@@ -147,13 +147,15 @@ function getConduitRank(itemLevel) {
     252: 9
   };
 
-  return ranks[itemLevel];
+  if (enhanced) return ranks[itemLevel] + 2
+  else return ranks[itemLevel];
 }
 
-export function getConduitFormula(effectID, player, contentType, itemLevel = 145) {
+export function getConduitFormula(effectID, player, contentType, itemLevel = 145, enhanced = false) {
 
-  let conduitRank = getConduitRank(itemLevel);
+  let conduitRank = getConduitRank(itemLevel, enhanced);
   let bonus_stats = {};
+  
   if (effectID === 357902) {
     // % intellect increase when healed by another player. 15s duration, 30s cooldown.
     const percentInc = 0.02 + conduitRank * 0.002;

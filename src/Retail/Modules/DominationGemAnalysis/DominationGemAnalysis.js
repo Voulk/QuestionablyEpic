@@ -133,8 +133,13 @@ export default function DominationAnalysis(props) {
     <div className={classes.root}>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
+          <Typography variant="h4" align="center" style={{ padding: "10px 10px 1px 10px" }} color="primary">
             {t("DominationSocketAnalysis.Header")}
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography color="primary" variant="subtitle2" align="center" style={{ paddingBottom: 8 }}>
+            {"Current Playstyle selected: " + props.player.getActiveModel(contentType).modelName + " - " + contentType}
           </Typography>
         </Grid>
         <Grid item xs={12}>

@@ -2,17 +2,17 @@ import React, { forwardRef } from "react";
 import MaterialTable, { MTableToolbar } from "material-table";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import abilityIcons from "../../Functions/IconFunctions/AbilityIcons.js";
+import abilityIcons from "../../CooldownPlanner/Functions/IconFunctions/AbilityIcons.js";
 import { localizationFR } from "locale/fr/TableLocale";
 import { localizationEN } from "locale/en/TableLocale";
 import { localizationRU } from "locale/ru/TableLocale";
 import { localizationCH } from "locale/ch/TableLocale";
 import moment from "moment";
-import { externalsDB } from "../../../../../Databases/ExternalsDB";
+import { externalsDB } from "../../../../Databases/ExternalsDB";
 import { Divider, Paper } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
-import { classColoursJS } from "../../Functions/ClassColourFunctions";
-import classIcons from "../../Functions/IconFunctions/ClassIcons";
+import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
+import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 
 const theme = createMuiTheme({
   overrides: {
@@ -119,7 +119,7 @@ export default function ExternalTimeline(props) {
               fontSize: 14,
             },
             render: (rowData) => (
-              <div>
+              <div style={{ display: "inline-flex" }}>
                 {abilityIcons(rowData.guid, {
                   height: 20,
                   width: 20,
