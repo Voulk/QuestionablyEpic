@@ -87,7 +87,7 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   // console.log("Running Upgrade Finder. Strap in.");
   const baseItemList = player.getEquippedItems(true);
   const wepList = buildWepCombosUF(player, baseItemList);
-  const castModel = player.castModel[contentType];
+  const castModel = player.getActiveModel(contentType);
   //buildWepCombos(player, false, false); // TODO: DEL
 
   const baseHPS = player.getHPS(contentType);
