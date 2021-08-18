@@ -66,7 +66,7 @@ export default function DominationGems(props) {
             <Grid item xs={12}>
               {/* ------------------------------------------ Help Text -----------------------------------------  */}
               <Typography style={{ marginLeft: 8, color: "limegreen" }} noWrap>
-                I'm help text
+                Add the Shards you have in your bag and QE Live will automatically select your best combo!
               </Typography>
             </Grid>
             {/* ---------------------------------- Domination Gem Selectors ----------------------------------  */}
