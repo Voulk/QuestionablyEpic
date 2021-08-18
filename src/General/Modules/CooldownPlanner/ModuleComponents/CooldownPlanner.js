@@ -454,9 +454,11 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
-                    {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
-                    {key.name}
+                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                    <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
+                      {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
+                      {key.name}
+                    </div>
                   </MenuItem>
                 ))
                 .map((key, i) => [key, <Divider key={i} />])}
@@ -655,9 +657,11 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
-                    {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
-                    {key.name}
+                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                    <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
+                      {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
+                      {key.name}
+                    </div>
                   </MenuItem>
                 ))
                 .map((key, i) => [key, <Divider key={i} />])}
@@ -859,8 +863,10 @@ export default function CooldownPlanner(props) {
                 .get("healerInfo")
                 .map((key, i) => (
                   <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
-                    {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
-                    {key.name}
+                    <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
+                      {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
+                      {key.name}
+                    </div>
                   </MenuItem>
                 ))
                 .map((key, i) => [key, <Divider key={i} />])}
@@ -1057,9 +1063,11 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
-                    {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
-                    {key.name}
+                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                    <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
+                      {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
+                      {key.name}
+                    </div>
                   </MenuItem>
                 ))
                 .map((key, i) => [key, <Divider key={i} />])}
@@ -1256,8 +1264,10 @@ export default function CooldownPlanner(props) {
                 .get("healerInfo")
                 .map((key, i) => (
                   <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
-                    {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
-                    {key.name}
+                    <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
+                      {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
+                      {key.name}
+                    </div>
                   </MenuItem>
                 ))
                 .map((key, i) => [key, <Divider key={i} />])}
