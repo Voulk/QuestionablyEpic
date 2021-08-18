@@ -241,7 +241,7 @@ class FightAnalysis extends Component {
               <Grid item xs={12}>
                 {/* ---------------------------- Imported Log Info (Name, Length etc) ---------------------------- */}
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" spacing={1}>
-                  <Grid item xs={8}>
+                  <Grid item xs={12} sm={12} md={12} lg={12} xl={7}>
                     <Collapse in={this.state.logSupplied}>
                       <Grow in={this.state.logSupplied} style={{ transformOrigin: "0 0 0" }} {...(this.state.logSupplied ? { timeout: 1000 } : {})}>
                         <Paper
@@ -294,7 +294,7 @@ class FightAnalysis extends Component {
                   </Grid>
 
                   {/* ------------------------------ Container for the Toggle Buttons ------------------------------ */}
-                  <Grid item xs={4}>
+                  <Grid item xs={12} sm={12} md={12} lg={12} xl={5}>
                     <Collapse in={this.state.logSupplied}>
                       <Grow in={this.state.logSupplied} style={{ transformOrigin: "0 0 0" }} {...(this.state.logSupplied ? { timeout: 1000 } : {})}>
                         <Paper
