@@ -60,6 +60,14 @@ export default function DominationGemSelection(props) {
   // Oth
   const [othLevel, setOthLevel] = useState(0);
 
+  /* ----------------------------- Set the domObject to send to player ---------------------------- */
+  let domObject = [{ bek: bekLevel, jas: jasLevel, rev: revLevel, cor: corLevel, tel: telLevel, kyr: kyrLevel, dyz: dyzLevel, zed: zedLevel, oth: othLevel }];
+
+  /* --------------------- On change of the domination ranks update the object -------------------- */
+  useEffect(() => {
+    domObject = [{ bek: bekLevel, jas: jasLevel, rev: revLevel, cor: corLevel, tel: telLevel, kyr: kyrLevel, dyz: dyzLevel, zed: zedLevel, oth: othLevel }];
+  }, [bekLevel, jasLevel, revLevel, corLevel, telLevel, kyrLevel, dyzLevel, zedLevel, othLevel]);
+
   /* ----------------------- List of Domination Gems in the game (Base Gem) ----------------------- */
   const dominationGems = [
     /* ------------------------------------------- Unholy ------------------------------------------- */
