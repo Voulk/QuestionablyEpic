@@ -52,7 +52,7 @@ export const paladinVenthyrSpecialQueries = (contentType) => {
       OneManaHealing: 0.7,
       CastsPerMinute: 30,
       cooldownMult: {
-        oneMinute: 1.76,
+        oneMinute: 1,
         ninetySeconds: 1,
         twoMinutes: 1.2,
         twoMinutesOrb: 1.1,
