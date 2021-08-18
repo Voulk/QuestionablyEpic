@@ -101,9 +101,9 @@ class CastModel {
       }
       else if (modelID === "Default") { // Dungeon
         this.modelName = "Default";
-        spellList = paladinVenthyrSpellData(contentType);
-        specialQueries = paladinVenthyrSpecialQueries(contentType);
-        this.baseStatWeights = paladinVenthyrStatWeights(contentType);
+        spellList = paladinKyrianSpellData(contentType);
+        specialQueries = paladinKyrianSpecialQueries(contentType);
+        this.baseStatWeights = paladinKyrianStatWeights(contentType);
         this.fightInfo.dps = 4400;
       }
 

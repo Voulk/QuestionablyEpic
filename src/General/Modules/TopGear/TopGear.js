@@ -241,11 +241,11 @@ export default function TopGear(props) {
           {<UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />}
         </Grid>
         <Grid item xs={12}>
-          {<ItemBar player={props.player} setItemList={setItemList} />}
-        </Grid>
-        <Grid item xs={12}>
           {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
           <Settings player={props.player} contentType={contentType} userSettings={userSettings} editSettings={editSettings} singleUpdate={props.singleUpdate} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
+        </Grid>
+        <Grid item xs={12}>
+          {<ItemBar player={props.player} setItemList={setItemList} />}
         </Grid>
 
         {props.player.activeItems.length > 0 ? (

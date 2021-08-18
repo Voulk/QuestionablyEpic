@@ -17,6 +17,7 @@ export const changeLog = [
       "First version includes Sinister Teachings Mistweaver and Maraads Paladin.",
       "Updated spell data now that there's sufficient logs for the tier.",
       "Added support for enhanced conduits.",
+      "You can now add items directly in Top Gear.",
       "Bugfix: The auto-socket items setting will no longer add a prismatic socket Dom items.",
       "Bugfix: Adding a Domination item without a gem inserted will no longer crash the app.",
       "BC: Fixed a bug where Top Gear could crash with specific items."
