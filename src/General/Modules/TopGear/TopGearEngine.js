@@ -462,7 +462,6 @@ export function mergeBonusStats(stats) {
 function getHighestWeight(castModel) {
   let max = "";
   let maxValue = 0;
-  console.log(castModel);
   let weights = castModel.getBaseStatWeights();
 
   for (var stat in weights) {
