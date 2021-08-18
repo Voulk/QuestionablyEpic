@@ -10,6 +10,20 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 19,
+    date: "18th August",
+    changes: [
+      "Added full Multi-Model support for completely different playstyles.",
+      "First version includes Sinister Teachings Mistweaver and Maraads Paladin.",
+      "Updated spell data now that there's sufficient logs for the tier.",
+      "Added support for enhanced conduits.",
+      "Bugfix: The auto-socket items setting will no longer add a prismatic socket Dom items.",
+      "Bugfix: Adding a Domination item without a gem inserted will no longer crash the app.",
+      "BC: Fixed a bug where Top Gear could crash with specific items."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 18,
     date: "3rd August",
     changes: [
