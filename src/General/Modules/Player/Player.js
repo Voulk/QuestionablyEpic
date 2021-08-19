@@ -52,6 +52,7 @@ class Player {
   realm = "";
   race = "";
   talents = [];
+  dominationGemRanks = { bek: 1, jas: 1, rev: 1, cor: 1, tel: 1, kyr: 1, dyz: 1, zed: 1, oth: 1 };
   gameType = ""; // Currently the options are Retail or Burning Crusade.
 
   // The players active stats from their character page. These are raw rather than being percentages.
@@ -123,6 +124,10 @@ class Player {
       //reportError(this, "Player", "Invalid Covenant Supplied", selectedCov);
     }
   };
+
+  getDominationRanks = () => {
+    return this.dominationGemRanks;
+  }
 
   setDefaultCovenant = (spec) => {
     if (spec === "Holy Paladin") this.covenant = "kyrian";
