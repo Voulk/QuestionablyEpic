@@ -1071,7 +1071,7 @@ export const bossAbilities = [
     bossID: 2423,
     ability: "Remnant: Soulforge Heat",
     guid: 352392,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
     icon: require("Images/Bosses/SanctumOfDomination/TheTarragrue/Icons/ability_mage_fierypayback.jpg").default,
   },
   {
@@ -1131,7 +1131,7 @@ export const bossAbilities = [
     bossID: 2433,
     ability: "Deathlink",
     guid: 351155,
-    cooldownPlannerActive: false,
+    cooldownPlannerActive: true,
     icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/ability_felarakkoa_eyeofterrok.jpg").default,
   },
   {
@@ -1187,7 +1187,7 @@ export const bossAbilities = [
     bossID: 2433,
     ability: "Immediate Extermination",
     guid: 353591,
-    cooldownPlannerActive: false,
+    cooldownPlannerActive: true,
     icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/ability_blackhand_marked4death.jpg").default,
   },
   {
@@ -1241,14 +1241,14 @@ export const bossAbilities = [
     bossID: 2429,
     ability: "Song of Dissolution",
     guid: 350287,
-    cooldownPlannerActive: false,
+    cooldownPlannerActive: true,
     icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/spell_animamaw_debuff.jpg").default,
   },
   {
     bossID: 2429,
     ability: "Arthura's Crushing Gaze",
     guid: 350040,
-    cooldownPlannerActive: false,
+    cooldownPlannerActive: true,
     icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/spell_ice_lament.jpg").default,
   },
   {
@@ -1269,7 +1269,7 @@ export const bossAbilities = [
     bossID: 2429,
     ability: "Link Essence",
     guid: 350486,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
     icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/ability_warlock_soullink.jpg").default,
   },
   {
@@ -1283,14 +1283,14 @@ export const bossAbilities = [
     bossID: 2429,
     ability: "Pierce Soul",
     guid: 350475,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
     icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/ability_demonhunter_soulcleave2.jpg").default,
   },
   {
     bossID: 2429,
     ability: "Aradne's Falling Strike",
     guid: 350098,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
     icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/inv_icon_wingbroken05c.jpg").default,
   },
   {
@@ -1308,7 +1308,7 @@ export const bossAbilities = [
     bossID: 2432,
     ability: "Aura of Spite",
     guid: 354632,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
     icon: require("Images/Bosses/SanctumOfDomination/RemnantOfNerzhul/Icons/ability_bossfelorcs_necromancer_red.jpg").default,
   },
   {
@@ -1397,7 +1397,7 @@ export const bossAbilities = [
     bossID: 2434,
     ability: "Torment",
     guid: 350217,
-    cooldownPlannerActive: false,
+    cooldownPlannerActive: true,
     icon: require("Images/Bosses/SanctumOfDomination/SoulrenderDormazain/Icons/spell_animamaw_debuff.jpg").default,
   },
   {
@@ -1479,7 +1479,7 @@ export const bossAbilities = [
     bossID: 2430,
     ability: "Reverberating Hammer",
     guid: 348520,
-    cooldownPlannerActive: false,
+    cooldownPlannerActive: true,
     icon: require("Images/Bosses/SanctumOfDomination/PainsmithRaznal/Icons/inv_mace_2h_maw_c_01.jpg").default,
   },
   {
@@ -1502,70 +1502,70 @@ export const bossAbilities = [
   /* ---------------------------------------------------------------------------------------------- */
 
   {
-    bossID: 2430,
+    bossID: 2431,
     ability: "Heroic Destiny",
     guid: 351685,
     cooldownPlannerActive: false,
     icon: require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/Icons/spell_animamaw_buff.jpg").default,
   },
   {
-    bossID: 2430,
+    bossID: 2431,
     ability: "Twist Fate",
     guid: 353931,
-    cooldownPlannerActive: false,
+    cooldownPlannerActive: true,
     icon: require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/Icons/spell_animamaw_debuff.jpg").default,
   },
   {
-    bossID: 2430,
+    bossID: 2431,
     ability: "Unstable Accretion",
     guid: 353696,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
     icon: require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/Icons/spell_shadow_painfulafflictions.jpg").default,
   },
   {
-    bossID: 2430,
+    bossID: 2431,
     ability: "Call of Eternity",
     guid: 350819,
     cooldownPlannerActive: false,
     icon: require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/Icons/spell_animamaw_nova.jpg").default,
   },
   {
-    bossID: 2430,
+    bossID: 2431,
     ability: "Overwhelming Burden",
     guid: 353435,
     cooldownPlannerActive: false,
     icon: require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/Icons/spell_shadow_painandsuffering.jpg").default,
   },
   {
-    bossID: 2430,
+    bossID: 2431,
     ability: "Diviner's Probe",
     guid: 353603,
     cooldownPlannerActive: false,
     icon: require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/Icons/spell_shadow_shadowembrace.jpg").default,
   },
   {
-    bossID: 2430,
+    bossID: 2431,
     ability: "Burden of Destiny",
     guid: 353433,
-    cooldownPlannerActive: false,
+    cooldownPlannerActive: true,
     icon: require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/Icons/spell_arcane_focusedpower.jpg").default,
   },
   {
-    bossID: 2430,
+    bossID: 2431,
     ability: "Frayed Fate",
     guid: 353162,
     cooldownPlannerActive: false,
     icon: require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/Icons/inv_misc_web_01.jpg").default,
   },
   {
-    bossID: 2430,
+    bossID: 2431,
     ability: "Fated Conjunction",
     guid: 350355,
     cooldownPlannerActive: false,
     icon: require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/Icons/spell_animamaw_beam.jpg").default,
   },
   {
-    bossID: 2430,
+    bossID: 2431,
     ability: "Anomalous Blast",
     guid: 353398,
     cooldownPlannerActive: false,
@@ -1582,6 +1582,22 @@ export const bossAbilities = [
     guid: 352589,
     cooldownPlannerActive: true,
     icon: require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/Icons/spell_progenitor_nova.jpg").default,
+  },
+  {
+    // https://www.wowhead.com/spell=352538/purging-protocol
+    bossID: 2436,
+    ability: "Purging Protocol",
+    guid: 352538,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/Icons/spell_progenitor_areadenial.jpg").default,
+  },
+  {
+    // https://www.wowhead.com/spell=355352/obliterate
+    bossID: 2436,
+    ability: "Obliterate",
+    guid: 355352,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/Icons/spell_progenitor_orb2.jpg").default,
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                           Kel'Thuzad                                           */
@@ -1610,6 +1626,14 @@ export const bossAbilities = [
     cooldownPlannerActive: true,
     icon: require("Images/Bosses/SanctumOfDomination/Kelthuzad/Icons/spell_necro_inevitableend.jpg").default,
   },
+  {
+    // https://www.wowhead.com/spell=354206/howling-blizzard
+    bossID: 2422,
+    ability: "Howling Blizzard",
+    guid: 354206,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/Kelthuzad/Icons/spell_frost_arcticwinds.jpg").default,
+  },
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                       Sylvanus Windrunner                                      */
@@ -1636,7 +1660,7 @@ export const bossAbilities = [
     bossID: 2435,
     ability: "Ranger's Heartseeker",
     guid: 352650,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
     icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/spell_priest_mindspike.jpg").default,
   },
   {
@@ -1670,5 +1694,13 @@ export const bossAbilities = [
     guid: 353952,
     cooldownPlannerActive: true,
     icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/ability_warlock_improvedsoulleech.jpg").default,
+  },
+  {
+    // https://www.wowhead.com/spell=349458/domination-chains
+    bossID: 2435,
+    ability: "Domination Chains",
+    guid: 349458,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/inv_belt_44.jpg").default,
   },
 ];
