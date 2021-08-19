@@ -274,18 +274,16 @@ function createSets(itemList, rawWepCombos) {
 }
 
 export function buildBestDomSet(itemSet, player, contentType, slots) {
-  let i = 0;
-
-
   let result = []
   let results = []
-  result.length = 5;
+  result.length = slots;
   const domGems = ['bek', 'jas', 'rev', 'cor', 'tel', 'kyr', 'dyz', 'zed', 'oth' ];
   generateSet( domGems, result.length, 0);
 
   function generateSet(input, len, start) {
     if(len === 0) {
-      results.push(result);
+      //console.log( result.join(" ") )
+      results.push(result.join(","));
       return;
     }
     for (let i = start; i <= input.length - len; i++) {
@@ -293,10 +291,11 @@ export function buildBestDomSet(itemSet, player, contentType, slots) {
       generateSet(input, len-1, i+1 );
     }
   }
-
+  
   for (var x = 0; x < results.length; x++) {
     console.log(results[x]);
   }
+  console.log(results.length);
 
 }
 

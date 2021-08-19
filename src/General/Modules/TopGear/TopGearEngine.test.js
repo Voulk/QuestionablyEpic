@@ -60,7 +60,7 @@ describe("MergeBonusStats function", () => {
 
 describe("buildBestDomSet function", () => {
     test("Test 1, range of stats", () => {
-        buildBestDomSet(null, null, "Raid", 5)
+        buildBestDomSet(null, null, "Raid", 4)
     });
 
 
