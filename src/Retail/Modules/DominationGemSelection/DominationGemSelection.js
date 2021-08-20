@@ -31,6 +31,7 @@ const menuStyle = {
 export default function DominationGemSelection(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const { player } = props;
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             States                                             */
@@ -38,34 +39,43 @@ export default function DominationGemSelection(props) {
 
   /* ----------------------------------------- Blood Gems ----------------------------------------- */
   // Bek
-  const [bekLevel, setBekLevel] = useState(0);
+  const [bekLevel, setBekLevel] = useState(player.getDominationSingleRank("Shard of Bek"));
   // Jas
-  const [jasLevel, setJasLevel] = useState(0);
+  const [jasLevel, setJasLevel] = useState(player.getDominationSingleRank("Shard of Jas"));
   // Rev
-  const [revLevel, setRevLevel] = useState(0);
+  const [revLevel, setRevLevel] = useState(player.getDominationSingleRank("Shard of Rev"));
 
   /* ----------------------------------------- Frost Gems ----------------------------------------- */
   // Cor
-  const [corLevel, setCorLevel] = useState(0);
+  const [corLevel, setCorLevel] = useState(player.getDominationSingleRank("Shard of Cor"));
   // Tel
-  const [telLevel, setTelLevel] = useState(0);
+  const [telLevel, setTelLevel] = useState(player.getDominationSingleRank("Shard of Tel"));
   // Kyr
-  const [kyrLevel, setKyrLevel] = useState(0);
+  const [kyrLevel, setKyrLevel] = useState(player.getDominationSingleRank("Shard of Kyr"));
 
   /* ----------------------------------------- Unholy Gems ---------------------------------------- */
   // Dyz
-  const [dyzLevel, setDyzLevel] = useState(0);
+  const [dyzLevel, setDyzLevel] = useState(player.getDominationSingleRank("Shard of Dyz"));
   // Zed
-  const [zedLevel, setZedLevel] = useState(0);
+  const [zedLevel, setZedLevel] = useState(player.getDominationSingleRank("Shard of Zed"));
   // Oth
-  const [othLevel, setOthLevel] = useState(0);
+  const [othLevel, setOthLevel] = useState(player.getDominationSingleRank("Shard of Oth"));
 
-  /* ----------------------------- Set the domObject to send to player ---------------------------- */
-  let domObject = [{ bek: bekLevel, jas: jasLevel, rev: revLevel, cor: corLevel, tel: telLevel, kyr: kyrLevel, dyz: dyzLevel, zed: zedLevel, oth: othLevel }];
 
   /* --------------------- On change of the domination ranks update the object -------------------- */
   useEffect(() => {
-    domObject = [{ bek: bekLevel, jas: jasLevel, rev: revLevel, cor: corLevel, tel: telLevel, kyr: kyrLevel, dyz: dyzLevel, zed: zedLevel, oth: othLevel }];
+    player.setDominationRanks({
+      "Shard of Bek": bekLevel,
+      "Shard of Jas": jasLevel,
+      "Shard of Rev": revLevel,
+      "Shard of Cor": corLevel,
+      "Shard of Tel": telLevel,
+      "Shard of Kyr": kyrLevel,
+      "Shard of Dyz": dyzLevel,
+      "Shard of Zed": zedLevel,
+      "Shard of Oth": othLevel,
+    });
+    console.log(player.getDominationRanks())
   }, [bekLevel, jasLevel, revLevel, corLevel, telLevel, kyrLevel, dyzLevel, zedLevel, othLevel]);
 
   /* ----------------------- List of Domination Gems in the game (Base Gem) ----------------------- */
