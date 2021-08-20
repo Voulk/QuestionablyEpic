@@ -273,13 +273,52 @@ function createSets(itemList, rawWepCombos) {
   return itemSets;
 }
 
-export function buildBestDomSet(itemSet, player, contentType, slots) {
-  let result = []
-  let results = []
-  result.length = slots;
-  const domGems = ['bek', 'jas', 'rev', 'cor', 'tel', 'kyr', 'dyz', 'zed', 'oth' ];
-  generateSet( domGems, result.length, 0);
+// Converts a bonus_stats dictionary to a singular estimated HPS number.
+export function getEstimatedHPS(bonus_stats, player, contentType) {
+  let estHPS = 0;
+  for (const [key, value] of Object.entries(bonus_stats)) {
+    if (["haste", "mastery", "crit", "versatility", "leech"].includes(key)) {
+      estHPS += ((value * player.getStatWeight(contentType, key)) / player.activeStats.intellect) * player.getHPS(contentType);
+    } else if (key === "intellect") {
+      estHPS += (value / player.activeStats.intellect) * player.getHPS(contentType);
+    } else if (key === "hps") {
+      estHPS += value;
+    }
+  }
 
+  return Math.round(estHPS);
+}
+
+export function buildBestDomSet(itemSet, player, contentType, slots) {
+  /*     effect: {
+    type: "domination gem",
+    gemColor: "Unholy",
+    name: "Shard of Zed",
+    rank: 0,
+  }, */
+
+  let results = []
+  let scores = []
+  
+  const setScores = {'Blood': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Blood Link", "rank": 2}, player, contentType, 0, {}, "Retail", {}), player, contentType), 
+                    'Frost': 80, 
+                    'Unholy': 180};
+  const shardScores = {};
+  const domGems = ['Shard of Bek', 'Shard of Jas', 'Shard of Rev', 'Shard of Cor', 'Shard of Tel', 'Shard of Kyr', 'Shard of Dyz', 'Shard of Zed', 'Shard of Oth' ];
+  
+  for (var i = 0; i < domGems.length; i++) {
+    const shard = domGems[i];
+    const effect = {type: "domination gem", name: shard, rank: 1};
+    shardScores[shard] = getEstimatedHPS(getEffectValue(effect, player, contentType, 0, {}, "Retail", {}), player, contentType);
+  }
+  
+
+  console.log(shardScores);
+  console.log(setScores);
+
+  let result = []
+  result.length = slots;
+  generateSet( domGems, result.length, 0);
   function generateSet(input, len, start) {
     if(len === 0) {
       //console.log( result.join(" ") )
@@ -293,9 +332,31 @@ export function buildBestDomSet(itemSet, player, contentType, slots) {
   }
   
   for (var x = 0; x < results.length; x++) {
-    console.log(results[x]);
+    // One result. 
+    let score = 0;
+    results[x].split(",").forEach(shard => {
+      score += shardScores[shard];
+    })
+    
+    // Check for sets
+    if (results[x].includes("Shard of Jas") && results[x].includes("Shard of Bek") && results[x].includes("Shard of Rev")) {
+      // Blood Set
+      score += setScores['Blood']
+    }
+    else if (results[x].includes("Shard of Kyr") && results[x].includes("Shard of Cor") && results[x].includes("Shard of Tel")) {
+      // Frost Set
+      score += setScores['Frost']
+    }
+    else if (results[x].includes("Shard of Zed") && results[x].includes("Shard of Dyz") && results[x].includes("Shard of Oth")) {
+      // Unholy Set
+      score += setScores['Unholy']
+    }
+    //console.log(results[x] + ": " + score);
+    
+    scores.push({"set": results[x], "score": score});
   }
-  console.log(results.length);
+  scores = scores.sort((a, b) => (a.score < b.score ? 1 : -1));
+  //console.log(scores);
 
 }
 
