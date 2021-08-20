@@ -295,7 +295,7 @@ export function getEstimatedHPS(bonus_stats, player, contentType) {
   return Math.round(estHPS);
 }
 
-export function buildBestDomSet(itemSet, player, contentType, slots) {
+export function buildBestDomSet(itemSet, player, castModel, contentType, slots) {
   /*     effect: {
     type: "domination gem",
     gemColor: "Unholy",
@@ -306,16 +306,16 @@ export function buildBestDomSet(itemSet, player, contentType, slots) {
   let results = []
   let scores = []
   
-  const setScores = {'Blood': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Blood Link", "rank": 2}, player, contentType, 0, {}, "Retail", {}), player, contentType), 
-                    'Frost': 80, 
-                    'Unholy': 180};
+  const setScores = {'Blood': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Blood Link", "rank": 2}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType), 
+                    'Frost': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Winds of Winter", "rank": 2}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType), 
+                    'Unholy': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Chaos Bane", "rank": 2}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType)};
   const shardScores = {};
   const domGems = ['Shard of Bek', 'Shard of Jas', 'Shard of Rev', 'Shard of Cor', 'Shard of Tel', 'Shard of Kyr', 'Shard of Dyz', 'Shard of Zed', 'Shard of Oth' ];
-  
+  let effectList = [];
   for (var i = 0; i < domGems.length; i++) {
     const shard = domGems[i];
     const effect = {type: "domination gem", name: shard, rank: 1};
-    shardScores[shard] = getEstimatedHPS(getEffectValue(effect, player, contentType, 0, {}, "Retail", {}), player, contentType);
+    shardScores[shard] = getEstimatedHPS(getEffectValue(effect, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType);
   }
   
 
@@ -362,7 +362,8 @@ export function buildBestDomSet(itemSet, player, contentType, slots) {
     scores.push({"set": results[x], "score": score});
   }
   scores = scores.sort((a, b) => (a.score < b.score ? 1 : -1));
-  //console.log(scores);
+
+  console.log(scores);
 
 }
 
