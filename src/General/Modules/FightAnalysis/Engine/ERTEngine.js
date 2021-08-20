@@ -76,7 +76,7 @@ export default function ertEngine(tableData) {
     .filter((key) => key.Cooldown !== undefined)
     .map((key) => {
       let time = "{time:" + key.time + "}";
-      let option0 = classColoursERT(key.class) + key.name + "|r" + " - " + "{spell:" + key.Cooldown + "}";
+      let option0 = classColoursERT(key.class) + key.name + "|r" + "{spell:" + key.Cooldown + "}";
       let option1 = key.name1 === "" || key.name1 === undefined ? "" : ", " + classColoursERT(key.class1) + key.name1 + "|r" + "{spell:" + key.Cooldown1 + "}";
       let option2 = key.name2 === "" || key.name2 === undefined ? "" : ", " + classColoursERT(key.class2) + key.name2 + "|r" + "{spell:" + key.Cooldown2 + "}";
       let option3 = key.name3 === "" || key.name3 === undefined ? "" : ", " + classColoursERT(key.class3) + key.name3 + "|r" + "{spell:" + key.Cooldown3 + "}";
