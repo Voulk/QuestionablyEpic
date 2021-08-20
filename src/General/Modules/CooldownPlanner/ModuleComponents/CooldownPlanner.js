@@ -25,6 +25,7 @@ import DeletePlanDialog from "./DeletePlanDialog";
 import { red } from "@material-ui/core/colors";
 import ExportPlanDialog from "./ExportPlanDialog";
 import ImportPlanDialog from "./ImportPlanDialog";
+import ExportERTDialog from "./ERTDialog";
 
 const useStyles = makeStyles(() => ({
   formControl: {
@@ -162,8 +163,14 @@ export default function CooldownPlanner(props) {
   const currentLanguage = i18n.language;
 
   const cooldownObject = new Cooldowns();
-  const ertDialogOpen = props.ertDialogOpen;
   const healTeamDialogOpen = props.healTeamDialogOpen;
+
+  const ertListTimeNoIcons = props.ertListTimeNoIcons;
+  const ertListBossAbility = props.ertListBossAbility;
+  const ertListAbilityNoTimeIconsAll = props.ertListAbilityNoTimeIconsAll;
+  const ertListTimeIcons = props.ertListTimeIcons;
+  const ertListNoteIcons = props.ertListNoteIcons;
+  const ertListNoteNoIcons = props.ertListNoteNoIcons;
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                            Add Plan                                            */
@@ -1581,9 +1588,21 @@ export default function CooldownPlanner(props) {
                 {/* ----------------------------- ERT Note Button (Opens ERT Dialog) ----------------------------- */}
 
                 <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                  <Button color="primary" variant="outlined" style={{ height: 40, whiteSpace: "nowrap", width: "100%" }} onClick={() => ertDialogOpen()}>
-                    ERT Note
-                  </Button>
+                  <ExportERTDialog
+                    variant="outlined"
+                    disableElevation={true}
+                    disabled={currentPlan === "" ? true : false}
+                    buttonLabel="Note Export"
+                    color="primary"
+                    ertListTimeNoIcons={ertListTimeNoIcons}
+                    ertListBossAbility={ertListBossAbility}
+                    ertListAbilityNoTimeIconsAll={ertListAbilityNoTimeIconsAll}
+                    ertListTimeIcons={ertListTimeIcons}
+                    ertListNoteIcons={ertListNoteIcons}
+                    ertListNoteNoIcons={ertListNoteNoIcons}
+                    boss={currentBoss}
+                    planName={currentPlan}
+                  />
                 </Grid>
               </Grid>
               <Grid item xs={12} sm={6} md={12} lg={6} xl={3}>
