@@ -58,23 +58,11 @@ export default function ertEngine(tableData) {
         key.bossAbility === undefined || key.bossAbility === ""
           ? i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility)
           : i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility) + " " + "{spell:" + key.bossAbility + "}";
-      let option0 = classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) + " " + "{spell:" + key.Cooldown + "}";
-      let option1 =
-        key.name1 === "" || key.name1 === undefined
-          ? ""
-          : ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) + " " + "{spell:" + key.Cooldown1 + "}";
-      let option2 =
-        key.name2 === "" || key.name2 === undefined
-          ? ""
-          : ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) + " " + "{spell:" + key.Cooldown2 + "}";
-      let option3 =
-        key.name3 === "" || key.name3 === undefined
-          ? ""
-          : ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3) + " " + "{spell:" + key.Cooldown3 + "}";
-      let option4 =
-        key.name4 === "" || key.name4 === undefined
-          ? ""
-          : ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4) + " " + "{spell:" + key.Cooldown4 + "}";
+      let option0 = classColoursERT(key.class) + key.name + "|r" + "{spell:" + key.Cooldown + "}";
+      let option1 = key.name1 === "" || key.name1 === undefined ? "" : ", " + classColoursERT(key.class1) + key.name1 + "|r" + "{spell:" + key.Cooldown1 + "}";
+      let option2 = key.name2 === "" || key.name2 === undefined ? "" : ", " + classColoursERT(key.class2) + key.name2 + "|r" + "{spell:" + key.Cooldown2 + "}";
+      let option3 = key.name3 === "" || key.name3 === undefined ? "" : ", " + classColoursERT(key.class3) + key.name3 + "|r" + "{spell:" + key.Cooldown3 + "}";
+      let option4 = key.name4 === "" || key.name4 === undefined ? "" : ", " + classColoursERT(key.class4) + key.name4 + "|r" + "{spell:" + key.Cooldown4 + "}";
 
       return {
         ert: bossAbility + " - " + option0 + option1 + option2 + option3 + option4,
@@ -88,23 +76,11 @@ export default function ertEngine(tableData) {
     .filter((key) => key.Cooldown !== undefined)
     .map((key) => {
       let time = "{time:" + key.time + "}";
-      let option0 = classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown);
-      let option1 =
-        key.name1 === "" || key.name1 === undefined
-          ? ""
-          : ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) + " " + "{spell:" + key.Cooldown + "}";
-      let option2 =
-        key.name2 === "" || key.name2 === undefined
-          ? ""
-          : ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) + " " + "{spell:" + key.Cooldown1 + "}";
-      let option3 =
-        key.name3 === "" || key.name3 === undefined
-          ? ""
-          : ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3) + " " + "{spell:" + key.Cooldown3 + "}";
-      let option4 =
-        key.name4 === "" || key.name4 === undefined
-          ? ""
-          : ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4) + " " + "{spell:" + key.Cooldown4 + "}";
+      let option0 = classColoursERT(key.class) + key.name + "|r" + "{spell:" + key.Cooldown + "}";
+      let option1 = key.name1 === "" || key.name1 === undefined ? "" : ", " + classColoursERT(key.class1) + key.name1 + "|r" + "{spell:" + key.Cooldown1 + "}";
+      let option2 = key.name2 === "" || key.name2 === undefined ? "" : ", " + classColoursERT(key.class2) + key.name2 + "|r" + "{spell:" + key.Cooldown2 + "}";
+      let option3 = key.name3 === "" || key.name3 === undefined ? "" : ", " + classColoursERT(key.class3) + key.name3 + "|r" + "{spell:" + key.Cooldown3 + "}";
+      let option4 = key.name4 === "" || key.name4 === undefined ? "" : ", " + classColoursERT(key.class4) + key.name4 + "|r" + "{spell:" + key.Cooldown4 + "}";
 
       return {
         ert: time + " - " + option0 + option1 + option2 + option3 + option4,

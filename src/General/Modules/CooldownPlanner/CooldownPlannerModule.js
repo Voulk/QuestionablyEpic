@@ -1,21 +1,15 @@
 import React, { Component } from "react";
 import { Typography, Grid, Dialog } from "@material-ui/core";
 import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
-import chartCooldownUpdater from "../FightAnalysis/Engine/UserCooldownChartEngine";
-import ERTTable from "../CooldownPlanner/ModuleComponents/ERTTable";
 import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
-import ls from "local-storage";
 import ertEngine from "../FightAnalysis/Engine/ERTEngine";
-
 
 class CooldownPlannerModule extends Component {
   constructor() {
     super();
     /* ----------------------- We bind the below functions to this Component. ----------------------- */
     // This means these functions can be passed as props to other components and they will return here rather than in the component they are sent to.
-    this.ertHandler = this.ertHandler.bind(this);
     this.ertEngine = ertEngine.bind(this);
-    this.handleERTClickOpen = this.handleERTClickOpen.bind(this);
     this.handleHealTeamClickOpen = this.handleHealTeamClickOpen.bind(this);
 
     /* ---------------------- We set our state for the cooldown Planner Module. --------------------- */
@@ -26,29 +20,12 @@ class CooldownPlannerModule extends Component {
       ertListTimeIcons: [],
       ertListNoteIcons: [],
       ertListNoteNoIcons: [],
-      ertshowhide: false,
-      ertDialogState: false,
       healTeamDialogState: false,
       mitigatedChartDataNoCooldowns: [],
       unmitigatedChartDataNoCooldowns: [],
       cooldownlistcustom2: [],
     };
   }
-
-  ertHandler = () => {
-    this.setState((prevState) => ({
-      ertshowhide: !prevState.ertshowhide,
-    }));
-  };
-
-  // ERT Dialog Handlers
-  handleERTClickOpen = () => {
-    this.setState({ ertDialogState: true });
-  };
-
-  handleERTClose = () => {
-    this.setState({ ertDialogState: false });
-  };
 
   /* ---------------------------------- Heal Team Dialog Handlers --------------------------------- */
   handleHealTeamClickOpen = () => {
@@ -87,21 +64,15 @@ class CooldownPlannerModule extends Component {
                   dataUpdateHandler={this.handleChangeDataCooldownPlanner}
                   ertDialogOpen={this.handleERTClickOpen}
                   healTeamDialogOpen={this.handleHealTeamClickOpen}
+                  ertListTimeNoIcons={this.state.ertListTimeNoIcons}
+                  ertListBossAbility={this.state.ertListBossAbility}
+                  ertListAbilityNoTimeIconsAll={this.state.ertListAbilityNoTimeIconsAll}
+                  ertListTimeIcons={this.state.ertListTimeIcons}
+                  ertListNoteIcons={this.state.ertListNoteIcons}
+                  ertListNoteNoIcons={this.state.ertListNoteNoIcons}
                 />
               </Grid>
             </Grid>
-
-            {/* ------------------------------------ ERT Note Export Table ----------------------------------- */}
-            <Dialog onClose={this.handleERTClose} aria-labelledby="ERT-Dialog" open={this.state.ertDialogState} maxWidth="md" fullWidth PaperProps={{ style: { minWidth: 300 } }}>
-              <ERTTable
-                ertListTimeNoIcons={this.state.ertListTimeNoIcons}
-                ertListBossAbility={this.state.ertListBossAbility}
-                ertListAbilityNoTimeIconsAll={this.state.ertListAbilityNoTimeIconsAll}
-                ertListTimeIcons={this.state.ertListTimeIcons}
-                ertListNoteIcons={this.state.ertListNoteIcons}
-                ertListNoteNoIcons={this.state.ertListNoteNoIcons}
-              />
-            </Dialog>
 
             {/* ------------------------------------- Healer Team Dialog ------------------------------------- */}
             {/* ------------------- This is where you enter your healing team into the app. ------------------ */}
