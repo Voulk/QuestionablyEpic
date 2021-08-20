@@ -1388,24 +1388,6 @@ export default function CooldownPlanner(props) {
     },
   ];
 
-  /* ------ Generates the blank plan arrays in the local storage if they don't exist already. ----- */
-  useEffect(() => {
-    bossList.map((key) => {
-      if (ls.get(key.zoneID + "." + key.DungeonEncounterID + ".1") === null) {
-        ls.set(key.zoneID + "." + key.DungeonEncounterID + ".1", []);
-      }
-      if (ls.get(key.zoneID + "." + key.DungeonEncounterID + ".2") === null) {
-        ls.set(key.zoneID + "." + key.DungeonEncounterID + ".2", []);
-      }
-      if (ls.get(key.zoneID + "." + key.DungeonEncounterID + ".3") === null) {
-        ls.set(key.zoneID + "." + key.DungeonEncounterID + ".3", []);
-      }
-    });
-    if (ls.get("healerInfo") === null || ls.get("healerInfo") === undefined) {
-      ls.set("healerInfo", []);
-    }
-  });
-
   /* ------------- When the currently loaded data is updated the props.update function ------------ */
   /* ------------- passed from the cooldown planner module will update the state also. ------------ */
   useEffect(() => {
