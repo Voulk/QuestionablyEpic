@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Typography, Paper, Divider, Grid, Accordion, AccordionSummary, AccordionDetails, makeStyles } from "@material-ui/core";
-import classicons from "../../Functions/IconFunctions/ClassIcons.js";
-import talentIcons from "../../Functions/IconFunctions/TalentIcons";
-import { classColoursJS } from "../../Functions/ClassColourFunctions";
+import classicons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons.js";
+import talentIcons from "../../CooldownPlanner/Functions/IconFunctions/TalentIcons";
+import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import { useTranslation } from "react-i18next";
 // import { getItemIcon } from "../../../Engine/ItemUtilities";
 import "./HealerCardInfo.css";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { STATPERONEPERCENT } from "../../../../Engine/STAT";
+import { STATPERONEPERCENT } from "../../../Engine/STAT";
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -92,9 +92,10 @@ export default function HealerInfoCards(props) {
                 style={{
                   color: classColoursJS(key.type),
                   textAlign: "center",
+                  display: "inline-flex",
                 }}
               >
-                {classicons(key.icon, {width: 22, height: 22, verticalAlign: "middle", marginRight: 4, borderRadius: 4})}
+                {classicons(key.icon, { width: 22, height: 22, verticalAlign: "middle", marginRight: 4, borderRadius: 4 })}
                 {key.name} - {t("CooldownPlanner.HealerCards.Item Level")} {key.stats.map((stats) => stats.ilvl)} - {key.icon}
               </Typography>
             </AccordionSummary>

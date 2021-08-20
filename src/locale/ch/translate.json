@@ -296,10 +296,12 @@
       "ExploreCovenants": "Explore CovenantsCH",
       "LegendaryAnalysis": "Legendary AnalysisCH",
       "TrinketAnalysis": "Trinket AnalysisCH",
+      "DominationAnalysis": "Domination Analysis (Beta)",
       "CooldownPlanner": "Cooldown Planner (Coming Soon)CH",
       "Profile": "ProfileCH",
       "CharHeader": "CharactersCH",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.CH",
+      "FightAnalysis": "Fight Analysis (Coming Soon)",
       "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Recent Spec Articles",

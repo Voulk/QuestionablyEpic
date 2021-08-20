@@ -160,8 +160,9 @@ export function buildConduitStats(soulbindDict, player, contentType) {
     let trait = tempDict[i];
 
     if ("type" in trait && "slotted_id" in trait && trait.type.includes("Conduit")) {
-      let itemLevel = player.getConduitLevel(trait.slotted_id);
-      trait.bonus_stats = getConduitFormula(trait.slotted_id, player, contentType, itemLevel);
+      const enhanced = player.getRenownLevel() >= trait.enhanced;
+      const itemLevel = player.getConduitLevel(trait.slotted_id);
+      trait.bonus_stats = getConduitFormula(trait.slotted_id, player, contentType, itemLevel, enhanced);
     }
   }
 

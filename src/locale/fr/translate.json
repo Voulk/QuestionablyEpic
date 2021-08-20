@@ -285,10 +285,12 @@
       "ExploreCovenants": "Explorer les Covenants",
       "LegendaryAnalysis": "Analyse de Légendaire",
       "TrinketAnalysis": "Trinket Analysis",
+      "DominationAnalysis": "Domination Analysis (Beta)",
       "CooldownPlanner": "Planificateur de cooldown (Coming Soon)",
       "Profile": "Profil",
       "CharHeader": "Personnages",
       "CharHelpText": "Ajouter vos personnages ici. Clique-droit pour modifier vos informations liés aux Stats Weights, nom de votre serveur et autre.",
+      "FightAnalysis": "Fight Analysis (Coming Soon)",
       "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Recent Spec Articles",

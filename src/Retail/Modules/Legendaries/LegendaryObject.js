@@ -32,12 +32,12 @@ export default function LegendaryObject(props) {
   const dpsString = item.effectiveDPS > 5 ? "DPS: " + paddedDPS : "";
 
   const legendaryDataObject = legendaryNameTranslator(item.name)[currentLanguage];
-
+  const covFileLoc = process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/CovenantSigils";
   const covenantSigils = {
-    Kyrian: process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png",
-    "Night Fae": process.env.PUBLIC_URL + "/Images/Interface/Fae_Sigil.png",
-    Venthyr: process.env.PUBLIC_URL + "/Images/Interface/Venthyr_Sigil.png",
-    Necrolord: process.env.PUBLIC_URL + "/Images/Interface/Death_Lords_Sigil.png",
+    Kyrian: covFileLoc + "/Kyrian_Sigil.png",
+    "Night Fae": covFileLoc + "/Fae_Sigil.png",
+    Venthyr: covFileLoc + "/Venthyr_Sigil.png",
+    Necrolord: covFileLoc + "/Death_Lords_Sigil.png",
   };
 
   return (
@@ -74,7 +74,7 @@ export default function LegendaryObject(props) {
               >
                 {legendaryDataObject.name}
                 {covenantSigils[legendaryDataObject.covenant] !== undefined ? (
-                  <img height={40} style={{ float: "right", position: "absolute", marginTop: -7, marginLeft: 10 }} src={covenantSigils[legendaryDataObject.covenant]} alt={t("Covenants." + legendaryDataObject.covenant)} />
+                  <img height={40} style={{ float: "right", position: "absolute", marginTop: -7, marginLeft: 16 }} src={covenantSigils[legendaryDataObject.covenant]} alt={t("Covenants." + legendaryDataObject.covenant)} />
                 ) : (
                   ""
                 )}
