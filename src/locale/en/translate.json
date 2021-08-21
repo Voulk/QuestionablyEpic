@@ -334,10 +334,13 @@
         "353398": "Anomalous Blast",
         "GuardianOfTheFirstOnes": "",
         "352589": "Meltdown",
+        "352538": "Purging Protocol",
+        "355352": "Obliterate",
         "Kel'Thuzad": "",
         "346459": "Glacial Wrath",
         "348756": "Frost Blast",
         "354289": "Sinister Miasma",
+        "354206": "Howling Blizzard",
         "Sylvanus Windrunner": "",
         "347704": "Veil of Darkness",
         "347670": "Shadow Dagger",
@@ -345,7 +348,8 @@
         "351252": "Banshee Wail",
         "354068": "Banshee's Fury",
         "347609": "Wailing Arrow",
-        "353952": "Banshee Scream"
+        "353952": "Banshee Scream",
+        "349458": "Domination Chains"
       }
     },
 
