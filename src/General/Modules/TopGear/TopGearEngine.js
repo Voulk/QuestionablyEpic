@@ -295,30 +295,37 @@ export function getEstimatedHPS(bonus_stats, player, contentType) {
   return Math.round(estHPS);
 }
 
-export function buildBestDomSet(itemSet, player, castModel, contentType, slots) {
-  /*     effect: {
-    type: "domination gem",
-    gemColor: "Unholy",
-    name: "Shard of Zed",
-    rank: 0,
-  }, */
-
-  let results = []
-  let scores = []
-  
-  const setScores = {'Blood': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Blood Link", "rank": 2}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType), 
-                    'Frost': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Winds of Winter", "rank": 2}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType), 
-                    'Unholy': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Chaos Bane", "rank": 2}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType)};
-  const shardScores = {};
+function scoreShards(player, castModel, contentType) {
+  let shardScores = {};
   const domGems = ['Shard of Bek', 'Shard of Jas', 'Shard of Rev', 'Shard of Cor', 'Shard of Tel', 'Shard of Kyr', 'Shard of Dyz', 'Shard of Zed', 'Shard of Oth' ];
-  let effectList = [];
   for (var i = 0; i < domGems.length; i++) {
     const shard = domGems[i];
     const effect = {type: "domination gem", name: shard, rank: 1};
     shardScores[shard] = getEstimatedHPS(getEffectValue(effect, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType);
   }
-  
 
+  return shardScores;
+}
+
+function scoreSets(player, castModel, contentType) {
+  const setScores = {'Blood': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Blood Link", "rank": 2}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType), 
+  'Frost': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Winds of Winter", "rank": 2}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType), 
+  'Unholy': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Chaos Bane", "rank": 2}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType)};
+
+  return setScores;
+}
+
+export function buildBestDomSet(itemSet, player, castModel, contentType, slots) {
+
+  let results = []
+  let scores = []
+  
+  const domGems = ['Shard of Bek', 'Shard of Jas', 'Shard of Rev', 'Shard of Cor', 'Shard of Tel', 'Shard of Kyr', 'Shard of Dyz', 'Shard of Zed', 'Shard of Oth' ];
+  let effectList = [];
+
+  const shardScores = scoreShards(player, castModel, contentType);
+  const setScores = scoreSets(player, castModel, contentType);
+  
   console.log(shardScores);
   console.log(setScores);
 
@@ -327,7 +334,6 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
   generateSet( domGems, result.length, 0);
   function generateSet(input, len, start) {
     if(len === 0) {
-      //console.log( result.join(" ") )
       results.push(result.join(","));
       return;
     }
@@ -363,11 +369,47 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
   }
   scores = scores.sort((a, b) => (a.score < b.score ? 1 : -1));
 
-  console.log(scores);
+  return buildDomEffectList(scores[0].set.split(","));
 
 }
 
+function buildDomEffectList(domGems) {
+  const effectList = []
+  domGems.forEach(gem => {
+    const effect = {
+      type: "domination gem",
+      name: gem,
+      rank: 1,
+    };
+    effectList.push(effect);
 
+  });
+  if (domGems.includes("Shard of Jas") && domGems.includes("Shard of Bek") && results[x].includes("Shard of Rev")) {
+    const effect = {
+      type: "domination gem",
+      name: "Blood Link",
+      rank: 1,
+    };
+    effectList.push(effect);
+  }
+  else if (domGems.includes("Shard of Kyr") && domGems.includes("Shard of Cor") && domGems.includes("Shard of Tel")) {
+    const effect = {
+      type: "domination gem",
+      name: "Winds of Winter",
+      rank: 1,
+    };
+    effectList.push(effect);
+  }
+  else if (domGems.includes("Shard of Zed") && domGems.includes("Shard of Dyz") && domGems.includes("Shard of Oth")) {
+    const effect = {
+      type: "domination gem",
+      name: "Chaos Bane",
+      rank: 1,
+    };
+    effectList.push(effect);
+  }
+  return effectList;
+}
 
 function buildDifferential(itemSet, primeSet, player, contentType) {
   let doubleSlot = {};
@@ -486,6 +528,11 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // This might change later, but is a way to estimate the value of a domination socket on a piece in the Upgrade Finder.
   if (userSettings.dominationSockets === "Upgrade Finder") bonus_stats.hps += builtSet.domSockets * 350;
   compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
+
+  const domList = buildBestDomSet(itemSet, player, castModel, contentType, 5)
+  itemSet.effectList = itemSet.effectList.concat(domList);
+  console.log(itemSet.effectList);
+  console.log(domList);
 
   // Handle Effects
   let effectStats = [];

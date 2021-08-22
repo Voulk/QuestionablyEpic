@@ -75,7 +75,7 @@ export default function DominationGemSelection(props) {
       "Shard of Zed": zedLevel,
       "Shard of Oth": othLevel,
     });
-    console.log(player.getDominationRanks())
+    //console.log(player.getDominationRanks())
   }, [bekLevel, jasLevel, revLevel, corLevel, telLevel, kyrLevel, dyzLevel, zedLevel, othLevel]);
 
   /* ----------------------- List of Domination Gems in the game (Base Gem) ----------------------- */
