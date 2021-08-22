@@ -31,7 +31,11 @@ const menuStyle = {
 export default function DominationGemSelection(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const { player } = props;
+  const singleUpdate = props.singleUpdate;
+  const player = props.player;
+  
+  console.log(singleUpdate);
+  console.log(props);
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             States                                             */
@@ -75,6 +79,8 @@ export default function DominationGemSelection(props) {
       "Shard of Zed": zedLevel,
       "Shard of Oth": othLevel,
     });
+    singleUpdate(player);
+    console.log("Updating");
     //console.log(player.getDominationRanks())
   }, [bekLevel, jasLevel, revLevel, corLevel, telLevel, kyrLevel, dyzLevel, zedLevel, othLevel]);
 

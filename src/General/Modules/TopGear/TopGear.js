@@ -250,7 +250,7 @@ export default function TopGear(props) {
         </Grid>
         <Grid item xs={12}>
           {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
-          <DominationGems player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
+          <DominationGems player={props.player} singleUpdate={props.singleUpdate} userSettings={userSettings} />
         </Grid>
 
         {props.player.activeItems.length > 0 ? (

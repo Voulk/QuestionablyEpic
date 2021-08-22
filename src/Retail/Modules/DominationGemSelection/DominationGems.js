@@ -71,7 +71,7 @@ export default function DominationGems(props) {
             </Grid>
             {/* ---------------------------------- Domination Gem Selectors ----------------------------------  */}
             <Grid item xs={12}>
-              <DominationGemSelection player={props.player} />
+              <DominationGemSelection player={props.player} singleUpdate={props.singleUpdate} />
             </Grid>
           </Grid>
         </AccordionDetails>

@@ -51,7 +51,7 @@ class Player {
   realm = "";
   race = "";
   talents = [];
-  dominationGemRanks = JSON.parse(ls.get("dominationRanks")) || {
+  dominationGemRanks = {
     "Shard of Bek": 0,
     "Shard of Jas": 0,
     "Shard of Rev": 0,
@@ -146,7 +146,6 @@ class Player {
 
   setDominationRanks = (newRanks) => {
     this.dominationGemRanks = newRanks;
-    ls.set("dominationRanks", JSON.stringify(newRanks));
   };
 
   setDefaultCovenant = (spec) => {

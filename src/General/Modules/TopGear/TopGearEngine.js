@@ -33,7 +33,7 @@ function setupPlayer(player, contentType, castModel) {
   let newPlayer = new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights);
   newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
-
+  newPlayer.dominationGemRanks = player.dominationGemRanks;
 
 
   return newPlayer;
@@ -369,17 +369,18 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
   }
   scores = scores.sort((a, b) => (a.score < b.score ? 1 : -1));
 
-  return buildDomEffectList(scores[0].set.split(","));
+  return buildDomEffectList(scores[0].set.split(","), player);
 
 }
 
-function buildDomEffectList(domGems) {
+function buildDomEffectList(domGems, player) {
+  console.log(player);
   const effectList = []
   domGems.forEach(gem => {
     const effect = {
       type: "domination gem",
       name: gem,
-      rank: 1,
+      rank: player.getDominationSingleRank(gem),
     };
     effectList.push(effect);
 
