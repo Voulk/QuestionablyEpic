@@ -39,6 +39,8 @@ class ItemSet {
   // BC Socket List
   bcSockets = {};
 
+  domSockets = 0; // Number of domination sockets.
+
 
 
   // This is for testing purposes only. It will print every item in the collection to the console.

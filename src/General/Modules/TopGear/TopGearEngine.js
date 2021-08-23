@@ -301,7 +301,7 @@ function scoreShards(player, castModel, contentType) {
   const domGems = ['Shard of Bek', 'Shard of Jas', 'Shard of Rev', 'Shard of Cor', 'Shard of Tel', 'Shard of Kyr', 'Shard of Dyz', 'Shard of Zed', 'Shard of Oth' ];
   for (var i = 0; i < domGems.length; i++) {
     const shard = domGems[i];
-    const effect = {type: "domination gem", name: shard, rank: 1};
+    const effect = {type: "domination gem", name: shard, rank: player.getDominationSingleRank(shard)};
     shardScores[shard] = getEstimatedHPS(getEffectValue(effect, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType);
   }
 
@@ -309,9 +309,9 @@ function scoreShards(player, castModel, contentType) {
 }
 
 function scoreSets(player, castModel, contentType) {
-  const setScores = {'Blood': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Blood Link", "rank": 2}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType), 
-  'Frost': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Winds of Winter", "rank": 2}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType), 
-  'Unholy': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Chaos Bane", "rank": 2}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType)};
+  const setScores = {'Blood': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Blood Link", "rank": player.getDominationSetRank("Blood"),}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType), 
+  'Frost': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Winds of Winter", "rank": player.getDominationSetRank("Frost"),}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType), 
+  'Unholy': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Chaos Bane", "rank": player.getDominationSetRank("Unholy"),}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType)};
 
   return setScores;
 }
@@ -537,8 +537,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // This might change later, but is a way to estimate the value of a domination socket on a piece in the Upgrade Finder.
   if (userSettings.dominationSockets === "Upgrade Finder") bonus_stats.hps += builtSet.domSockets * 350;
   compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
-
-  const domList = buildBestDomSet(itemSet, player, castModel, contentType, 5, itemSet.effectList);
+  
+  const domList = buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets, itemSet.effectList);
   //itemSet.effectList = itemSet.effectList.concat(domList);
   console.log(itemSet.effectList);
   console.log(domList);
