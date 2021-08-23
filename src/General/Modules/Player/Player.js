@@ -144,6 +144,12 @@ class Player {
     return this.dominationGemRanks[gem];
   };
 
+  getDominationSetRank = (color) => {
+    if (color === "Unholy") return Math.min(this.dominationGemRanks["Shard of Dyz"], this.dominationGemRanks["Shard of Oth"], this.dominationGemRanks["Shard of Zed"])
+    else if (color === "Blood") return Math.min(this.dominationGemRanks["Shard of Jas"], this.dominationGemRanks["Shard of Rev"], this.dominationGemRanks["Shard of Bek"])
+    else if (color === "Frost") return Math.min(this.dominationGemRanks["Shard of Tel"], this.dominationGemRanks["Shard of Cor"], this.dominationGemRanks["Shard of Kyr"])
+  }
+
   setDominationRanks = (newRanks) => {
     this.dominationGemRanks = newRanks;
   };

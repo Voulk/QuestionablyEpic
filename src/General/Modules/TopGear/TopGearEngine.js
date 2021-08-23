@@ -397,7 +397,7 @@ function buildDomEffectList(domGems, player, gemList) {
     const effect = {
       type: "domination gem",
       name: "Blood Link",
-      rank: 1,
+      rank: player.getDominationSetRank("Blood"),
     };
     effects.push(effect);
   }
@@ -405,7 +405,7 @@ function buildDomEffectList(domGems, player, gemList) {
     const effect = {
       type: "domination gem",
       name: "Winds of Winter",
-      rank: 1,
+      rank: player.getDominationSetRank("Frost"),
     };
     effects.push(effect);
   }
@@ -413,7 +413,7 @@ function buildDomEffectList(domGems, player, gemList) {
     const effect = {
       type: "domination gem",
       name: "Chaos Bane",
-      rank: 1,
+      rank: player.getDominationSetRank("Unholy"),
     };
     effects.push(effect);
   }
