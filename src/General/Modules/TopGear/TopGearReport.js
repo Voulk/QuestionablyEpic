@@ -84,6 +84,7 @@ function TopGearReport(props) {
       itemList.forEach(item => {
         if (item.hasDomSocket) {
           item.domGemID = domGems[domGemCounter];
+          item.gemString = "&gems=" + domGems[domGemCounter];
           domGemCounter += 1;
         }
       });
