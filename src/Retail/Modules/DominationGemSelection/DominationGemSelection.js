@@ -80,7 +80,6 @@ export default function DominationGemSelection(props) {
       "Shard of Oth": othLevel,
     });
     singleUpdate(player);
-    console.log("Updating");
     //console.log(player.getDominationRanks())
   }, [bekLevel, jasLevel, revLevel, corLevel, telLevel, kyrLevel, dyzLevel, zedLevel, othLevel]);
 

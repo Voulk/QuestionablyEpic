@@ -9,6 +9,7 @@ import Player from "../Player/Player";
 import CastModel from "../Player/CastModel";
 import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngine"
 import { getDomGemEffect } from "General/Engine/ItemUtilities"
+import { dominationGemDB } from "Databases/DominationGemDB";
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
@@ -321,7 +322,7 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
   let scores = []
   
   const domGems = ['Shard of Bek', 'Shard of Jas', 'Shard of Rev', 'Shard of Cor', 'Shard of Tel', 'Shard of Kyr', 'Shard of Dyz', 'Shard of Zed', 'Shard of Oth' ];
-  let effectList = [];
+  //let effectList = [];
 
   const shardScores = scoreShards(player, castModel, contentType);
   const setScores = scoreSets(player, castModel, contentType);
@@ -367,23 +368,30 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
     
     scores.push({"set": results[x], "score": score});
   }
+  let gemList = []
   scores = scores.sort((a, b) => (a.score < b.score ? 1 : -1));
-
-  return buildDomEffectList(scores[0].set.split(","), player);
+  const gemEffects = buildDomEffectList(scores[0].set.split(","), player, gemList);
+  itemSet.effectList = itemSet.effectList.concat(gemEffects)
+  itemSet.domGemList = gemList;
+  return 0;
 
 }
 
-function buildDomEffectList(domGems, player) {
-  console.log(player);
-  const effectList = []
+
+function buildDomEffectList(domGems, player, gemList) {
+  const effects = []
   domGems.forEach(gem => {
+    const gemRank = player.getDominationSingleRank(gem)
     const effect = {
       type: "domination gem",
       name: gem,
-      rank: player.getDominationSingleRank(gem),
+      rank: gemRank,
     };
-    effectList.push(effect);
-
+    effects.push(effect);
+    const gemData = dominationGemDB.filter(gemDB => {
+      return gemDB.effect.name === gem && gemDB.effect.rank == gemRank;
+    });
+    if (gemData.length > 0) gemList.push(gemData[0].gemID);
   });
   if (domGems.includes("Shard of Jas") && domGems.includes("Shard of Bek") && results[x].includes("Shard of Rev")) {
     const effect = {
@@ -391,7 +399,7 @@ function buildDomEffectList(domGems, player) {
       name: "Blood Link",
       rank: 1,
     };
-    effectList.push(effect);
+    effects.push(effect);
   }
   else if (domGems.includes("Shard of Kyr") && domGems.includes("Shard of Cor") && domGems.includes("Shard of Tel")) {
     const effect = {
@@ -399,7 +407,7 @@ function buildDomEffectList(domGems, player) {
       name: "Winds of Winter",
       rank: 1,
     };
-    effectList.push(effect);
+    effects.push(effect);
   }
   else if (domGems.includes("Shard of Zed") && domGems.includes("Shard of Dyz") && domGems.includes("Shard of Oth")) {
     const effect = {
@@ -407,9 +415,9 @@ function buildDomEffectList(domGems, player) {
       name: "Chaos Bane",
       rank: 1,
     };
-    effectList.push(effect);
+    effects.push(effect);
   }
-  return effectList;
+  return effects;
 }
 
 function buildDifferential(itemSet, primeSet, player, contentType) {
@@ -530,8 +538,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   if (userSettings.dominationSockets === "Upgrade Finder") bonus_stats.hps += builtSet.domSockets * 350;
   compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
 
-  const domList = buildBestDomSet(itemSet, player, castModel, contentType, 5)
-  itemSet.effectList = itemSet.effectList.concat(domList);
+  const domList = buildBestDomSet(itemSet, player, castModel, contentType, 5, itemSet.effectList);
+  //itemSet.effectList = itemSet.effectList.concat(domList);
   console.log(itemSet.effectList);
   console.log(domList);
 
