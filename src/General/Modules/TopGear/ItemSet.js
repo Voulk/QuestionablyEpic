@@ -1,5 +1,5 @@
 // Represents a full set of items.
-import { getTranslatedItemName } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, getDomGemEffect } from "../../Engine/ItemUtilities";
 import Item from "../Player/Item";
 import { STATPERONEPERCENT, BASESTAT } from "../../Engine/STAT";
 
@@ -81,7 +81,7 @@ class ItemSet {
   }
 
   // Compiles the stats from the individual item list.
-  compileStats(gameType = "Retail") {
+  compileStats(gameType = "Retail", settings = {}) {
     //console.log("Compiling Stats for Item List of legnth: " + this.itemList.length);
     let setStats = this.getStartingStats(gameType)
     let setSockets = 0;
@@ -108,6 +108,14 @@ class ItemSet {
         let effect = item.effect;
         effect.level = item.level;
         this.effectList.push(effect);
+      }
+
+      if (item.hasDomSocket && !settings.replaceDomGems) {
+        // Don't replace dom gems.
+        console.log("Not replacing Dom gems");
+        const effect = getDomGemEffect(item.domGemID)
+        this.effectList.push(effect);
+        console.log(effect);
       }
     }
 

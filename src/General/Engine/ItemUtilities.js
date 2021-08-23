@@ -412,6 +412,7 @@ export function getDomGemEffect(id) {
   else return "";
 }
 
+
 export function buildStatString(stats, effect, lang = "en") {
   let statString = "";
   let statsList = [];
