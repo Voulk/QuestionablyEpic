@@ -89,7 +89,7 @@ export const dominationGemDB = [
     gemID: 187320,
     icon: "spell_priest_mindspike",
     name: {
-      en: "Foreboding Shard of Zed",
+      en: "Portentous Shard of Zed",
       de: "Dräuender Splitter von Zed",
       fr: "Éclat prémonitoire de Zed",
       ru: "Сулящий беду осколок Зед",
