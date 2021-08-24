@@ -247,10 +247,10 @@ export default function TopGear(props) {
         <Grid item xs={12}>
           {<ItemBar player={props.player} setItemList={setItemList} />}
         </Grid>
-        <Grid item xs={12}>
+        {gameType === "Retail" ? <Grid item xs={12}>
           {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
           <DominationGems player={props.player} singleUpdate={props.singleUpdate} userSettings={userSettings} />
-        </Grid>
+        </Grid> : ""}
 
         {props.player.activeItems.length > 0 ? (
           slotList.map((key, index) => {

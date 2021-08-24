@@ -496,10 +496,10 @@ export default function UpgradeFinderFront(props) {
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={12}>
+        {gameType === "Retail" ? <Grid item xs={12}> 
           {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
           {<DominationGems player={props.player} singleUpdate={props.singleUpdate} userSettings={userSettings} />}
-        </Grid>
+        </Grid> : ""}
         <Grid item xs={12} style={{ marginBottom: 100 }} />
       </Grid>
 
