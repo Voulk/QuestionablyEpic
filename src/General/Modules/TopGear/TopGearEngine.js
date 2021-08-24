@@ -291,6 +291,9 @@ export function getEstimatedHPS(bonus_stats, player, contentType) {
     } else if (key === "hps") {
       estHPS += value;
     }
+    else if (key === "dps" && contentType === "Dungeon") {
+      estHPS += value;
+    }
   }
 
   return Math.round(estHPS);
@@ -326,9 +329,6 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
 
   const shardScores = scoreShards(player, castModel, contentType);
   const setScores = scoreSets(player, castModel, contentType);
-  
-  console.log(shardScores);
-  console.log(setScores);
 
   let result = []
   result.length = slots;
@@ -565,7 +565,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     if (stat === "hps") {
       hardScore += (setStats[stat] / baseHPS) * player.activeStats.intellect;
     } else if (stat === "dps") {
-      continue;
+        if (contentType === "Dungeon") hardScore += (setStats[stat] / baseHPS) * player.activeStats.intellect;
+        else continue;
     } else {
       hardScore += setStats[stat] * adjusted_weights[stat];
     }

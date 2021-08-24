@@ -33,9 +33,6 @@ export default function DominationGemSelection(props) {
   const currentLanguage = i18n.language;
   const singleUpdate = props.singleUpdate;
   const player = props.player;
-  
-  console.log(singleUpdate);
-  console.log(props);
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             States                                             */
