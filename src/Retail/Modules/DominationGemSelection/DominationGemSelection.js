@@ -167,10 +167,10 @@ export default function DominationGemSelection(props) {
   };
 
   return (
-    <Grid container spacing={1} direction="row">
+    <Grid container spacing={1} direction="row" style={{ width: "100%"}}>
       {dominationGems.map((key) => (
         <Grid item xs={4} sm={4} md={4} lg={4} xl={4}>
-          <Grid container spacing={0} style={{ padding: "0px 8px" }}>
+          <Grid container spacing={0} style={{ padding: "0px 6px" }}>
             {/* --------------------------- Title for each selector if ever needed ---------------------------  */}
 
             {/* <Grid item xs={12}>

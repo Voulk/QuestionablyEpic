@@ -224,7 +224,6 @@ export default function TopGear(props) {
     { label: t("slotNames.offhands"), slotName: "Offhands" },
   ];
   if (gameType === "BurningCrusade") slotList.push({ label: t("slotNames.relics"), slotName: "Relics & Wands" });
-
   return (
     <div className={classes.root}>
       <Grid container spacing={1} justify="center">

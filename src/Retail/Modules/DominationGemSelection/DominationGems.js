@@ -6,11 +6,13 @@ import { useTranslation } from "react-i18next";
 import SettingsIcon from "@material-ui/icons/Settings";
 import DominationGemSelection from "./DominationGemSelection";
 import { useSelector } from "react-redux";
+import { Autocomplete } from "@material-ui/lab";
 // import userSettings from "./SettingsObject";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
+    width: "80%",
+    margin: "auto"
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),

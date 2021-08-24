@@ -112,10 +112,8 @@ class ItemSet {
 
       if (item.hasDomSocket && !settings.replaceDomGems) {
         // Don't replace dom gems.
-        console.log("Not replacing Dom gems");
         const effect = getDomGemEffect(item.domGemID)
         this.effectList.push(effect);
-        console.log(effect);
       }
     }
 
