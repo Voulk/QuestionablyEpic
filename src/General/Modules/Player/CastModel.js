@@ -104,7 +104,7 @@ class CastModel {
         spellList = paladinKyrianSpellData(contentType);
         specialQueries = paladinKyrianSpecialQueries(contentType);
         this.baseStatWeights = paladinKyrianStatWeights(contentType);
-        this.fightInfo.dps = 4400;
+        this.fightInfo.dps = 4800;
       }
 
     } else if (spec === SPEC.RESTOSHAMAN) {

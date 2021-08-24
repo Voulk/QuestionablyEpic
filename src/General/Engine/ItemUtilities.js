@@ -568,9 +568,8 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
   // Check if Dom Slot
   if (item.hasDomSocket && 'domGemID' in item && item.domGemID != 0) {
     const effect = getDomGemEffect(item.domGemID)
-    item.effect = effect;
+    bonus_stats = getEffectValue(effect, player, player.getActiveModel(contentType), contentType, item.level, {}, gameType);
   }
-
   // Calculate Effect.
   if (item.effect) {
     bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, {}, gameType);

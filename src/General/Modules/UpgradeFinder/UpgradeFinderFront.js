@@ -13,6 +13,7 @@ import { runUpgradeFinderBC } from "./UpgradeFinderEngineBC";
 // import { useHistory } from "react-router-dom";
 import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
+import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems";
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -494,6 +495,10 @@ export default function UpgradeFinderFront(props) {
               </Grid>
             </Grid>
           </Paper>
+        </Grid>
+        <Grid item xs={12}>
+          {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
+          {<DominationGems player={props.player} singleUpdate={props.singleUpdate} userSettings={userSettings} />}
         </Grid>
         <Grid item xs={12} style={{ marginBottom: 100 }} />
       </Grid>

@@ -330,6 +330,8 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
   const shardScores = scoreShards(player, castModel, contentType);
   const setScores = scoreSets(player, castModel, contentType);
 
+  console.log(shardScores);
+
   let result = []
   result.length = slots;
   generateSet( domGems, result.length, 0);
@@ -535,12 +537,12 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   enchants["Gems"] = highestWeight;
 
   // This might change later, but is a way to estimate the value of a domination socket on a piece in the Upgrade Finder.
-  if (userSettings.dominationSockets === "Upgrade Finder") bonus_stats.hps += builtSet.domSockets * 350;
+  //if (userSettings.dominationSockets === "Upgrade Finder") bonus_stats.hps += builtSet.domSockets * 350;
   compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
 
   if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
   //itemSet.effectList = itemSet.effectList.concat(domList);
-
+  console.log(itemSet.effectList);
   // Handle Effects
   let effectStats = [];
   effectStats.push(bonus_stats);

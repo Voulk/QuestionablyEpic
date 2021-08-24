@@ -92,6 +92,7 @@ export function UpgradeFinder(props) {
       setDungeonDifficulty={setDungeonDifficulty}
       setPVPDifficulty={setPVPDifficulty}
       setBCDungeonDifficulty={setBCDungeonDifficulty}
+      singleUpdate={props.singleUpdate}
     />
   );
 }
