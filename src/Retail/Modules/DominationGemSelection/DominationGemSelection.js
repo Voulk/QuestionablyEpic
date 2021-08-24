@@ -194,7 +194,7 @@ export default function DominationGemSelection(props) {
             <Grid item xs={12}>
               {/* ------------------------------------ Domination Delection ------------------------------------  */}
               <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
-                <Select labelId="groupValue" value={getDomGemvalue(key)} onChange={(e) => setDomGemState(key, e.target.value)} MenuProps={menuStyle}>
+                <Select labelId="groupValue" value={getDomGemvalue(key)} onChange={(e) => setDomGemState(key, e.target.value)} MenuProps={menuStyle} style={{ fontSize: 14}}>
                   {/* 
                   // Map the Domination DB filtered by the gem provided from the original mapping
                   //  in to a menu item for each rank for the select 
@@ -202,7 +202,7 @@ export default function DominationGemSelection(props) {
                   {dominationGemDB
                     .filter((filter) => filter.effect.name === key)
                     .map((key) => (
-                      <MenuItem value={key.effect.rank} style={{ justifyContent: "left" }}>
+                      <MenuItem value={key.effect.rank} style={{ justifyContent: "left", fontSize: 14 }}>
                         <a data-wowhead={"item=" + key.gemID}>
                           <img
                             style={{
