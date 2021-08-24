@@ -44,7 +44,7 @@ function setupPlayer(player, contentType, castModel) {
 function autoSocketItems(itemList) {
   for (var i = 0; i < itemList.length; i++) {
     let item = itemList[i];
-    if (['Finger', 'Head', 'Neck', 'Wrist', 'Waist'].includes(item.slot)) {
+    if (['Finger', 'Head', 'Neck', 'Wrist', 'Waist'].includes(item.slot) && !item.hasDomSocket) {
       item.socket = true;
     }
   }
