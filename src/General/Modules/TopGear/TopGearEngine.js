@@ -326,11 +326,13 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
   
   const domGems = ['Shard of Bek', 'Shard of Jas', 'Shard of Rev', 'Shard of Cor', 'Shard of Tel', 'Shard of Kyr', 'Shard of Dyz', 'Shard of Zed', 'Shard of Oth' ];
   //let effectList = [];
-
+  const setPieces = {"unholy": itemSet.itemList.filter(item => {return item.slot === "Head" && item.hasDomSocket}).length > 0,
+                    "blood": itemSet.itemList.filter(item => {return item.slot === "Chest" && item.hasDomSocket}).length > 0,
+                    "frost": itemSet.itemList.filter(item => {return item.slot === "Shoulder" && item.hasDomSocket}).length > 0}
   const shardScores = scoreShards(player, castModel, contentType);
   const setScores = scoreSets(player, castModel, contentType);
-
-  console.log(shardScores);
+  console.log(itemSet.itemList);
+  console.log(setPieces);
 
   let result = []
   result.length = slots;
@@ -354,15 +356,15 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
     })
     
     // Check for sets
-    if (results[x].includes("Shard of Jas") && results[x].includes("Shard of Bek") && results[x].includes("Shard of Rev")) {
+    if (setPieces.blood && results[x].includes("Shard of Jas") && results[x].includes("Shard of Bek") && results[x].includes("Shard of Rev")) {
       // Blood Set
       score += setScores['Blood']
     }
-    else if (results[x].includes("Shard of Kyr") && results[x].includes("Shard of Cor") && results[x].includes("Shard of Tel")) {
+    else if (setPieces.frost &&results[x].includes("Shard of Kyr") && results[x].includes("Shard of Cor") && results[x].includes("Shard of Tel")) {
       // Frost Set
       score += setScores['Frost']
     }
-    else if (results[x].includes("Shard of Zed") && results[x].includes("Shard of Dyz") && results[x].includes("Shard of Oth")) {
+    else if (setPieces.unholy &&results[x].includes("Shard of Zed") && results[x].includes("Shard of Dyz") && results[x].includes("Shard of Oth")) {
       // Unholy Set
       score += setScores['Unholy']
     }
@@ -372,7 +374,7 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
   }
   let gemList = []
   scores = scores.sort((a, b) => (a.score < b.score ? 1 : -1));
-  const gemEffects = buildDomEffectList(scores[0].set.split(","), player, gemList);
+  const gemEffects = buildDomEffectList(scores[0].set.split(","), player, gemList, setPieces);
   itemSet.effectList = itemSet.effectList.concat(gemEffects)
   itemSet.domGemList = gemList;
   return 0;
@@ -380,7 +382,7 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
 }
 
 
-function buildDomEffectList(domGems, player, gemList) {
+function buildDomEffectList(domGems, player, gemList, setPieces) {
   const effects = []
   domGems.forEach(gem => {
     const gemRank = player.getDominationSingleRank(gem)
@@ -395,7 +397,7 @@ function buildDomEffectList(domGems, player, gemList) {
     });
     if (gemData.length > 0) gemList.push(gemData[0].gemID);
   });
-  if (domGems.includes("Shard of Jas") && domGems.includes("Shard of Bek") && results[x].includes("Shard of Rev")) {
+  if (setPieces.blood && domGems.includes("Shard of Jas") && domGems.includes("Shard of Bek") && domGems.includes("Shard of Rev")) {
     const effect = {
       type: "domination gem",
       name: "Blood Link",
@@ -403,7 +405,7 @@ function buildDomEffectList(domGems, player, gemList) {
     };
     effects.push(effect);
   }
-  else if (domGems.includes("Shard of Kyr") && domGems.includes("Shard of Cor") && domGems.includes("Shard of Tel")) {
+  else if (setPieces.frost && domGems.includes("Shard of Kyr") && domGems.includes("Shard of Cor") && domGems.includes("Shard of Tel")) {
     const effect = {
       type: "domination gem",
       name: "Winds of Winter",
@@ -411,7 +413,7 @@ function buildDomEffectList(domGems, player, gemList) {
     };
     effects.push(effect);
   }
-  else if (domGems.includes("Shard of Zed") && domGems.includes("Shard of Dyz") && domGems.includes("Shard of Oth")) {
+  else if (setPieces.unholy && domGems.includes("Shard of Zed") && domGems.includes("Shard of Dyz") && domGems.includes("Shard of Oth")) {
     const effect = {
       type: "domination gem",
       name: "Chaos Bane",
