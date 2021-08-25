@@ -35,6 +35,7 @@ class PlayerChars {
           else newChar.setDefaultCovenant(player.spec);
           if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
           if (player.renown > 0) newChar.updateRenownLevel(player.renown);
+          if (player.dominationGemRanks) newChar.setDominationRanks(player.dominationGemRanks);
           charArray.push(newChar);
         }
         

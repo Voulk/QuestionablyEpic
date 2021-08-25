@@ -53,7 +53,7 @@ export default function RetailSettings(props) {
   const [autoSocketValue, setAutoSocketValue] = useState(props.userSettings.autoSocket);
 
   /* ----------------------------------- Domination Socket State ---------------------------------- */
-  const [dominationSocket, setDominationSocket] = useState(props.userSettings.vaultDomGem);
+  const [replaceDomGems, setReplaceDomGems] = useState(props.userSettings.replaceDomGems);
 
 
   const specBuilds = props.player.getAllModels(props.contentType)
@@ -73,9 +73,9 @@ export default function RetailSettings(props) {
     setAutoSocketValue(value);
   };
 
-  const updateVaultDom = (value) => {
-    props.editSettings("vaultDomGem", value);
-    setDominationSocket(value);
+  const updateReplaceDomGems = (value) => {
+    props.editSettings("replaceDomGems", value);
+    setReplaceDomGems(value);
   };
 
   const updateSpecBuild = (value) => {
@@ -301,29 +301,13 @@ export default function RetailSettings(props) {
             </div>
           </Grid>
           <FormControl variant="outlined" size="small" style={{ width: t("QuickCompare.DominationSocket").length > 10 ? 160 : 140 }}>
-            <Select key={"DominationSocket"} labelId="DominationSocket" value={dominationSocket} onChange={(e) => updateVaultDom(e.target.value)} MenuProps={menuStyle}>
-              {dominationGemDB
-                .filter((filter) => filter.type !== "Set Bonus")
-                .map((key, i) => [
-                  <MenuItem key={key.gemID} label={key.name[currentLanguage]} value={key.gemID}>
-                    <a data-wowhead={"item=" + key.gemID}>
-                      <img
-                        style={{
-                          height: 20,
-                          width: 20,
-                          margin: "0px 5px 0px 0px",
-                          verticalAlign: "middle",
-                          borderRadius: 4,
-                          border: "1px solid rgba(255, 255, 255, 0.12)",
-                        }}
-                        src={getGemIcon(key.gemID)}
-                        alt={key.name[currentLanguage]}
-                      />
-                    </a>
-                    {key.name[currentLanguage] + " " + "[" + (key.effect.rank + 1) + "]"}
-                  </MenuItem>,
-                  <Divider key={i} />,
-                ])}
+            <Select key={"DominationSocket"} labelId="DominationSocket" value={replaceDomGems} onChange={(e) => updateReplaceDomGems(e.target.value)} MenuProps={menuStyle}>
+              <MenuItem value={true} style={{ justifyContent: "center" }}>
+                {t("Yes")}
+              </MenuItem>
+              <MenuItem value={false} style={{ justifyContent: "center" }}>
+                {t("No")}
+              </MenuItem>
             </Select>
           </FormControl>
         </Grid>

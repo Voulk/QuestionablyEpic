@@ -17,6 +17,7 @@ import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
+import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems";
 import ItemBar from "../ItemBar/ItemBar";
 
 const useStyles = makeStyles((theme) => ({
@@ -223,7 +224,6 @@ export default function TopGear(props) {
     { label: t("slotNames.offhands"), slotName: "Offhands" },
   ];
   if (gameType === "BurningCrusade") slotList.push({ label: t("slotNames.relics"), slotName: "Relics & Wands" });
-
   return (
     <div className={classes.root}>
       <Grid container spacing={1} justify="center">
@@ -247,6 +247,10 @@ export default function TopGear(props) {
         <Grid item xs={12}>
           {<ItemBar player={props.player} setItemList={setItemList} />}
         </Grid>
+        {gameType === "Retail" ? <Grid item xs={12}>
+          {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
+          <DominationGems player={props.player} singleUpdate={props.singleUpdate} userSettings={userSettings} />
+        </Grid> : ""}
 
         {props.player.activeItems.length > 0 ? (
           slotList.map((key, index) => {

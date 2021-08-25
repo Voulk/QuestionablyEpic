@@ -66,6 +66,7 @@ function TopGearReport(props) {
   let differentials = {};
   let itemList = {};
   let statList = {};
+  let domGems = [];
 
 
 
@@ -75,7 +76,19 @@ function TopGearReport(props) {
     differentials = result.differentials;
     itemList = topSet.itemList;
     gemStats = (gameType === "BurningCrusade" && "socketInformation" in topSet) ? topSet.socketInformation : "";
+    domGems = (gameType === "Retail" && "domGemList" in topSet) ? topSet.domGemList : "";
     statList = topSet.setStats;
+
+    if (domGems !== "") {
+      let domGemCounter = 0;
+      itemList.forEach(item => {
+        if (item.hasDomSocket) {
+          item.domGemID = domGems[domGemCounter];
+          item.gemString = "&gems=" + domGems[domGemCounter];
+          domGemCounter += 1;
+        }
+      });
+    }
   } else {
     resultValid = false;
   }

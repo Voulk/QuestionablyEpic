@@ -340,7 +340,7 @@ export function processItem(line, player, contentType, type) {
       const effect = checkIfDomGem(parseInt(gem));
       gemString += gem + ":"
       if (effect) {
-        itemEffect = effect;
+        //itemEffect = effect;
         domGemID = gem;
       } 
     })
