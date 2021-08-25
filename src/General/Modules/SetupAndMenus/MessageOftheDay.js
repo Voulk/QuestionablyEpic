@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 
 export default function MessageOfTheDay(props) {
   //prettier-ignore
-  const gameType = props.gameType;
+  const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
       "The new Domination Gem Panel is now live!",
