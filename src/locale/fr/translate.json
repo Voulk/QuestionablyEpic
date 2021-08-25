@@ -605,8 +605,12 @@
       "SelectedItems": "Pièces choisies:",
       "CompetitiveAlternative": "Les alternatives intéressantes",
       "StatPanel": { "AvgStats": "Moyenne de stats (Incluant les procs)" },
-      "itemMissingError": "Error: Add item - ",
-      "DominationSelection": {"HeaderTitle": "Domination Gems"}
+      "itemMissingError": "Error: Add item - "
+    },
+
+    "DominationSelection": {
+      "HeaderTitle": "Domination Gems",
+      "ShardNotOwned": "not owned"
     },
 
     "UpgradeFinder": {

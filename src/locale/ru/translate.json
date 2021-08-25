@@ -578,8 +578,12 @@
       "BackToGearSelection": "Вернуться к выбору экипировки",
       "CompetitiveAlternative": "Возможные альтернативы",
       "StatPanel": { "AvgStats": "Усреднённые характеристики (включая проки)" },
-      "itemMissingError": "Ошибка: добавьте предмет",
-      "DominationSelection": {"HeaderTitle": "Domination Gems"}
+      "itemMissingError": "Ошибка: добавьте предмет"
+    },
+
+    "DominationSelection": {
+      "HeaderTitle": "Domination Gems",
+      "ShardNotOwned": "not owned"
     },
 
     "Snackbars": {

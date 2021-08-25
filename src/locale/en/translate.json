@@ -762,8 +762,11 @@
       "BackToGearSelection": "Back to Gear Selection",
       "CompetitiveAlternative": "Competitive Alternatives",
       "StatPanel": { "AvgStats": "Average Stats (includes procs)" },
-      "itemMissingError": "Error: Add item - ",
-      "DominationSelection": { "HeaderTitle": "Domination Gems" }
+      "itemMissingError": "Error: Add item - "
+    },
+    "DominationSelection": {
+      "HeaderTitle": "Domination Gems",
+      "ShardNotOwned": "not owned"
     },
 
     "UpgradeFinder": {

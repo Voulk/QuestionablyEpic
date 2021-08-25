@@ -62,7 +62,6 @@ export default function DominationGemSelection(props) {
   // Oth
   const [othLevel, setOthLevel] = useState(player.getDominationSingleRank("Shard of Oth"));
 
-
   /* --------------------- On change of the domination ranks update the object -------------------- */
   useEffect(() => {
     player.setDominationRanks({
@@ -164,7 +163,7 @@ export default function DominationGemSelection(props) {
   };
 
   return (
-    <Grid container spacing={1} direction="row" style={{ width: "100%"}}>
+    <Grid container spacing={1} direction="row" style={{ width: "100%" }}>
       {dominationGems.map((key) => (
         <Grid item xs={4} sm={4} md={4} lg={4} xl={4}>
           <Grid container spacing={0} style={{ padding: "0px 6px" }}>
@@ -191,11 +190,15 @@ export default function DominationGemSelection(props) {
             <Grid item xs={12}>
               {/* ------------------------------------ Domination Delection ------------------------------------  */}
               <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
-                <Select labelId="groupValue" value={getDomGemvalue(key)} onChange={(e) => setDomGemState(key, e.target.value)} MenuProps={menuStyle} style={{ fontSize: 14}}>
+                <Select labelId="groupValue" value={getDomGemvalue(key)} onChange={(e) => setDomGemState(key, e.target.value)} MenuProps={menuStyle} style={{ fontSize: 14 }}>
                   {/* 
                   // Map the Domination DB filtered by the gem provided from the original mapping
                   //  in to a menu item for each rank for the select 
                   */}
+                  <MenuItem value={-1} style={{ justifyContent: "left", fontSize: 14 }}>
+                    {dominationGemDB.filter((filter) => filter.effect.name === key && filter.effect.rank === 0).map((key) => key.name[currentLanguage]) + " " + t("DominationSelection.ShardNotOwned")}
+                  </MenuItem>
+                  <Divider />
                   {dominationGemDB
                     .filter((filter) => filter.effect.name === key)
                     .map((key) => (
