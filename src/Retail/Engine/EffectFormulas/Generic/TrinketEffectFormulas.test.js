@@ -1,10 +1,24 @@
 
 
-import { getTrinketEffect } from "./TrinketEffectFormulas";
+import { getTrinketEffect, getDiminishedValue } from "./TrinketEffectFormulas";
 import { userSettings } from "General/Modules/Settings/SettingsObject";
 import Player from "General/Modules/Player/Player";
 import { trinket_data} from "./TrinketData";
 import each from "jest-each";
+
+describe("Test Trinket Stat DR", () => {
+    test("Generic Haste Proc", () => {
+        const finalValue = getDiminishedValue('haste', 300, 800);
+
+        expect(finalValue).toEqual(289)
+    });
+
+    test("194 Bell with moderate mastery", () => {
+        const finalValue = getDiminishedValue('mastery', 668, 459);
+
+        expect(finalValue).toEqual(660);
+    });
+});
 
 describe("Overflowing Anima Cage Test", () => {
     const druid = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");

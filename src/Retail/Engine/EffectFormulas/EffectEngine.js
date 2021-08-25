@@ -37,6 +37,7 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   let bonus_stats = {};
   const effectName = effect.name;
   const effectType = effect.type;
+  console.log(setStats);
 
   // ----- Retail Effect -----
   // Can either be a Spec Legendary, Trinket, or a special item effect like those found back in Crucible of Storms or the legendary BFA cloak.
@@ -77,7 +78,7 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
       bonus_stats = getGenericLegendary(effectName, player, castModel, contentType, userSettings);
     } 
     else if (effectType === "trinket") {
-      bonus_stats = getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings);
+      bonus_stats = getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings, setStats);
       //testTrinkets(player, contentType); //TODO: Remove
     }
   }
