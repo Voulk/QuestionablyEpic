@@ -140,6 +140,14 @@ class Player {
     return this.dominationGemRanks;
   };
 
+  getOwnedDominationShards = () => {
+    let shardsArray = []
+    for (const [key, value] of Object.entries(this.dominationGemRanks)) {
+      if (value >= 0) shardsArray.push(key);
+    }
+    return shardsArray;
+  }
+
   getDominationSingleRank = (gem) => {
     return this.dominationGemRanks[gem];
   };

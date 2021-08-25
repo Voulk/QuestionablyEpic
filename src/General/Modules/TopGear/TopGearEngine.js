@@ -324,18 +324,18 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
   let results = []
   let scores = []
   
-  const domGems = ['Shard of Bek', 'Shard of Jas', 'Shard of Rev', 'Shard of Cor', 'Shard of Tel', 'Shard of Kyr', 'Shard of Dyz', 'Shard of Zed', 'Shard of Oth' ];
+  //const domGems = ['Shard of Bek', 'Shard of Jas', 'Shard of Rev', 'Shard of Cor', 'Shard of Tel', 'Shard of Kyr', 'Shard of Dyz', 'Shard of Zed', 'Shard of Oth' ];
+  const domGems = player.getOwnedDominationShards();
   //let effectList = [];
   const setPieces = {"unholy": itemSet.itemList.filter(item => {return item.slot === "Head" && item.hasDomSocket}).length > 0,
                     "blood": itemSet.itemList.filter(item => {return item.slot === "Chest" && item.hasDomSocket}).length > 0,
                     "frost": itemSet.itemList.filter(item => {return item.slot === "Shoulder" && item.hasDomSocket}).length > 0}
   const shardScores = scoreShards(player, castModel, contentType);
   const setScores = scoreSets(player, castModel, contentType);
-  console.log(itemSet.itemList);
-  console.log(setPieces);
+  console.log(domGems);
 
   let result = []
-  result.length = slots;
+  result.length = Math.min(domGems.length, slots);
   generateSet( domGems, result.length, 0);
   function generateSet(input, len, start) {
     if(len === 0) {
