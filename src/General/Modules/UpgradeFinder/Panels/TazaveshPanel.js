@@ -49,7 +49,7 @@ export default function TazaveshGearContainer(props) {
               </div>
             </Grid>
             <Divider orientation="vertical" flexItem style={{ marginRight: 4 }} />
-            <Grid item xs={12} sm container direction="column" spacing={1}>
+            <Grid item xs={12} sm container direction="row" spacing={1}>
               <Grid item xs={12} container spacing={1}>
                 <Grid item xs={12}>
                   <Typography

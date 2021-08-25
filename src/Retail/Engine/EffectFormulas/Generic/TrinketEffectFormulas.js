@@ -1,13 +1,26 @@
 import { convertPPMToUptime, getProcessedValue } from "../EffectUtilities";
 import { trinket_data } from "./TrinketData";
+import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
 import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
 import { getMasteryAddition } from "../Monk/MistweaverMiscFormulas"
 
 // import { STAT } from "../../../../General/Engine/STAT";
 import SPEC from "../../../../General/Engine/SPECS";
 
+export function getDiminishedValue(statID, procValue, baseStat) {
+  const DRBreakpoints = STATDIMINISHINGRETURNS[statID.toUpperCase()];
+  
+  const totalStat = baseStat + procValue;
+  let currentStat = baseStat + procValue;
+  for (var j = 0; j < DRBreakpoints.length; j++) {
+    currentStat -= Math.max((totalStat - DRBreakpoints[j]) * 0.1, 0);
+  }
+
+  return Math.round(procValue - (totalStat - currentStat));
+}
+
 // TODO: Write proper comments. See Lingering Sunmote for an example.
-export function getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings = {}) {
+export function getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings = {}, setStats = {}) {
   let bonus_stats = {};
 
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */

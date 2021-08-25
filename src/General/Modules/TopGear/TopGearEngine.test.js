@@ -1,4 +1,5 @@
-import { applyDiminishingReturns, mergeBonusStats } from "./TopGearEngine";
+import { applyDiminishingReturns, mergeBonusStats, buildBestDomSet } from "./TopGearEngine";
+import Player from '../Player/Player';
 
 describe("Test Stat DRs", () => {
     test("Basic Test - Crit above DR", () => {
@@ -55,6 +56,5 @@ describe("MergeBonusStats function", () => {
 
         expect(mergeBonusStats(bonusStatArray)).toEqual(expectedResult);
     });
-
 
 });

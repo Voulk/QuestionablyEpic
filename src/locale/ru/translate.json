@@ -581,6 +581,11 @@
       "itemMissingError": "Ошибка: добавьте предмет"
     },
 
+    "DominationSelection": {
+      "HeaderTitle": "Domination Gems",
+      "ShardNotOwned": "not owned"
+    },
+
     "Snackbars": {
       "CharAddSuccess": "Персонаж добавлен!",
       "CharUpdateSuccess": "Персонаж обновлен!",
