@@ -1,9 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardContent, Typography, Grid, Divider } from "@material-ui/core";
+import { Card, CardContent, Typography, Grid, Divider, IconButton } from "@material-ui/core";
 import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemIcon } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
-// import DeleteIcon from "@material-ui/icons/Delete";
+import DeleteIcon from "@material-ui/icons/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
@@ -58,6 +58,7 @@ export default function ItemCard(props) {
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
   const gameType = useSelector((state) => state.gameType);
   const itemQuality = item.getQualityColor();
+  const deleteActive = item.offhandID === 0;
 
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
   /*
@@ -81,6 +82,10 @@ export default function ItemCard(props) {
 
   const activateItemCard = () => {
     props.activateItem(item.uniqueHash, item.active);
+  };
+
+  const deleteItemCard = () => {
+    props.delete(item.uniqueHash);
   };
 
   let itemName = "";
@@ -167,6 +172,15 @@ export default function ItemCard(props) {
                       )}
                       {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
                     </Typography>
+                  </Grid>
+                  <Grid item xs={1} display="inline-flex" align="center">
+                    {deleteActive ? (
+                      <IconButton onClick={deleteItemCard} style={{ padding: 0 }} aria-label="delete" size="small">
+                        <DeleteIcon style={{ color: "#ad2c34" }} fontSize="small" />
+                      </IconButton>
+                    ) : (
+                      ""
+                    )}
                   </Grid>
                 </Grid>
               </Grid>

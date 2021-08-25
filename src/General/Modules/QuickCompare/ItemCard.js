@@ -276,7 +276,7 @@ export default function ItemCard(props) {
               <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
                 <Grid item xs={11}>
                   <Typography variant="subtitle2" wrap="nowrap" display="block" style={{ paddingTop: 0, paddingLeft: 4 }} align="left">
-                    {(props.item.domGemID !== 0 && gameType === "Retail") ? (
+                    {props.item.domGemID !== 0 && gameType === "Retail" ? (
                       <a data-wowhead={"item=" + props.item.domGemID + "&domain=" + wowheadDom}>
                         <img
                           style={{
@@ -298,15 +298,15 @@ export default function ItemCard(props) {
                   </Typography>
                 </Grid>
 
-                {/* <Grid item xs={1} display="inline-flex" align="center">
+                <Grid item xs={1} display="inline-flex" align="center">
                   {deleteActive ? (
-                    <IconButton onClick={deleteItemCard} aria-label="delete" size="small">
-                      <DeleteIcon style={{ color: "#ad2c34", paddingTop: 2 }} fontSize="small" />
+                    <IconButton onClick={deleteItemCard} style={{ padding: 0 }} aria-label="delete" size="small">
+                      <DeleteIcon style={{ color: "#ad2c34" }} fontSize="small" />
                     </IconButton>
                   ) : (
                     ""
                   )}
-                </Grid> */}
+                </Grid>
               </Grid>
             </Grid>
           </CardContent>
