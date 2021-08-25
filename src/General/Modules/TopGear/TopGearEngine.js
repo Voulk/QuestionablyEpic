@@ -332,7 +332,6 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
                     "frost": itemSet.itemList.filter(item => {return item.slot === "Shoulder" && item.hasDomSocket}).length > 0}
   const shardScores = scoreShards(player, castModel, contentType);
   const setScores = scoreSets(player, castModel, contentType);
-  console.log(domGems);
 
   let result = []
   result.length = Math.min(domGems.length, slots);
@@ -544,7 +543,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
 
   if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
   //itemSet.effectList = itemSet.effectList.concat(domList);
-  console.log(itemSet.effectList);
+  
   // Handle Effects
   let effectStats = [];
   effectStats.push(bonus_stats);
