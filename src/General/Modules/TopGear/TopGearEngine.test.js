@@ -58,12 +58,3 @@ describe("MergeBonusStats function", () => {
     });
 
 });
-
-describe("buildBestDomSet function", () => {
-    test("Test 1, range of stats", () => {
-        const druid = new Player("Myth", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
-        buildBestDomSet(null, druid, druid.getActiveModel("Raid"), "Raid", 5)
-    });
-
-
-});
