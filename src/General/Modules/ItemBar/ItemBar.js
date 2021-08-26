@@ -211,9 +211,24 @@ export default function ItemBar(props) {
     setDominationSocket(event.target.value);
   };
 
+  const [openAuto, setOpenAuto] = React.useState(false);
+  const handleOpen = () => {
+    if (inputValue.length > 0) {
+      setOpenAuto(true);
+    }
+  };
+  const handleInputChange = (event, newInputValue) => {
+    setInputValue(newInputValue);
+    if (newInputValue.length > 0) {
+      setOpenAuto(true);
+    } else {
+      setOpenAuto(false);
+    }
+  };
+
   return (
     <Grid item xs={12}>
-      <Paper elevation={0}>
+      <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
         <Grid
           container
           direction="row"
@@ -252,9 +267,13 @@ export default function ItemBar(props) {
                 onInputChange={(event, newInputValue) => {
                   setInputValue(newInputValue);
                 }}
+                freeSolo
                 style={{ width: "100%" }}
                 renderInput={(params) => <TextField {...params} label={t("QuickCompare.ItemName")} variant="outlined" />}
                 ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4, paddingTop: 0, paddingBottom: 0 } }}
+                open={openAuto}
+                onOpen={handleOpen}
+                onClose={() => setOpenAuto(false)}
               />
             </FormControl>
           </Grid>
@@ -290,34 +309,32 @@ export default function ItemBar(props) {
           /*                                             Sockets                                            */
           /* ----------------------------------------------------------------------------------------------  */}
 
-          {gameType === "Retail" ? (
-            <Grid item>
-              <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
-                <InputLabel id="itemsocket">{t("QuickCompare.Socket")}</InputLabel>
-                <Select key={"sockets"} labelId="itemsocket" value={itemSocket} onChange={itemSocketChanged} MenuProps={menuStyle} label={t("QuickCompare.Socket")}>
-                  {[
-                    <MenuItem key={1} label={t("Yes")} value={true}>
-                      {t("Yes")}
-                    </MenuItem>,
-                    <Divider key={2} />,
-                    ,
-                    <MenuItem key={3} label={t("No")} value={false}>
-                      {t("No")}
-                    </MenuItem>,
-                    <Divider key={4} />,
-                  ]}
-                </Select>
-              </FormControl>
-            </Grid>
-          ) : (
-            ""
-          )}
-
-          {/* ---------------------------------------------------------------------------------------------- */
-          /*                                        Domination Socket                                       */
-          /* ----------------------------------------------------------------------------------------------  */}
-
-          {gameType === "Retail" ? (
+          {getItemDB("Retail")
+            .filter((key) => key.id === itemID)
+            .map((key) => key.socketType)[0] !== "Domination" ? (
+            gameType === "Retail" ? (
+              <Grid item>
+                <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
+                  <InputLabel id="itemsocket">{t("QuickCompare.Socket")}</InputLabel>
+                  <Select key={"sockets"} labelId="itemsocket" value={itemSocket} onChange={itemSocketChanged} MenuProps={menuStyle} label={t("QuickCompare.Socket")}>
+                    {[
+                      <MenuItem key={1} label={t("Yes")} value={true}>
+                        {t("Yes")}
+                      </MenuItem>,
+                      <Divider key={2} />,
+                      ,
+                      <MenuItem key={3} label={t("No")} value={false}>
+                        {t("No")}
+                      </MenuItem>,
+                      <Divider key={4} />,
+                    ]}
+                  </Select>
+                </FormControl>
+              </Grid>
+            ) : (
+              ""
+            )
+          ) : gameType === "Retail" ? (
             <Grid item>
               <FormControl
                 className={classes.formControl}
