@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton } from "@material-ui/core";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemIcon } from "../../Engine/ItemUtilities";
 import "./ItemCard.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
@@ -276,7 +276,7 @@ export default function ItemCard(props) {
               <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
                 <Grid item xs={11}>
                   <Typography variant="subtitle2" wrap="nowrap" display="block" style={{ paddingTop: 0, paddingLeft: 4 }} align="left">
-                    {props.item.domGemID !== 0 ? (
+                    {props.item.domGemID !== 0 && gameType === "Retail" ? (
                       <a data-wowhead={"item=" + props.item.domGemID + "&domain=" + wowheadDom}>
                         <img
                           style={{
@@ -287,7 +287,7 @@ export default function ItemCard(props) {
                             borderRadius: 4,
                             border: "1px solid rgba(255, 255, 255, 0.12)",
                           }}
-                          src={process.env.PUBLIC_URL + "/Images/Icons/" + dominationGemDB.filter((key) => key.gemID === props.item.domGemID).map((key) => key.icon)[0] + ".jpg"}
+                          src={getGemIcon(props.item.domGemID)}
                           alt={dominationGemDB.filter((key) => key.id === props.item.domGemID).map((key) => key.name[currentLanguage])[0]}
                         />
                       </a>
@@ -298,15 +298,15 @@ export default function ItemCard(props) {
                   </Typography>
                 </Grid>
 
-                {/* <Grid item xs={1} display="inline-flex" align="center">
+                <Grid item xs={1} display="inline-flex" align="center">
                   {deleteActive ? (
-                    <IconButton onClick={deleteItemCard} aria-label="delete" size="small">
-                      <DeleteIcon style={{ color: "#ad2c34", paddingTop: 2 }} fontSize="small" />
+                    <IconButton onClick={deleteItemCard} style={{ padding: 0 }} aria-label="delete" size="small">
+                      <DeleteIcon style={{ color: "#ad2c34" }} fontSize="small" />
                     </IconButton>
                   ) : (
                     ""
                   )}
-                </Grid> */}
+                </Grid>
               </Grid>
             </Grid>
           </CardContent>

@@ -3,6 +3,7 @@ const IDHOLYLIGHT = 82326;
 const IDHOLYSHOCK = 25914;
 const IDSHOCKBARRIER = 337824;
 const IDWORDOFGLORY = 85673;
+const IDMARTYR = 183998;
 
 import { getOneHolyPower, getAwakeningWingsUptime, getWingsHealingInc, processPaladinRawHealing } from "./PaladinMiscFormulas";
 
@@ -13,6 +14,7 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
   // === Potency Conduits ===
   // Enkindled Spirits
   if (conduitID === 339570) {
+    
     let trait_bonus = 0.27 + conduitLevel * 0.03;
     let one_lod = player.getSingleCast(IDLIGHTOFDAWN, contentType);
 
@@ -25,7 +27,6 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
     const wingsCritBonus = 20 / 120 * 0.3; // We could swap out 20 for wings uptime here to include Awakening.
     const holyShockBaseCrit = player.getStatPerc("Crit") + 0.3 + wingsCritBonus; // This is Holy Shocks *effective* base crit chance. 
     const holyShockIncrease = (holyShockBaseCrit + trait_bonus) / holyShockBaseCrit - 1;
-    //console.log("HSI: " + holyShockIncrease);
 
     bonus_stats.HPS = holyShockIncrease * (player.getSpellHPS(IDHOLYSHOCK, contentType) + player.getSpellHPS(IDSHOCKBARRIER, contentType));
   }
@@ -40,6 +41,11 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
   }
   // Untempered Dedication
   else if (conduitID === 339987) {
+    const backlashDamage = 0.25; 
+    const traitBonus = 0.045 + conduitLevel * 0.005;
+    const averageStacks = 4.9;
+
+    bonus_stats.HPS = traitBonus * averageStacks * player.getSpellHPS(IDMARTYR, contentType) * (1 - backlashDamage);
   }
   // Ringing Clarity (Kyrian)
   else if (conduitID === 340218) {

@@ -8,6 +8,8 @@ import { convertPPMToUptime } from "../../../Retail/Engine/EffectFormulas/Effect
 import Player from "../Player/Player";
 import CastModel from "../Player/CastModel";
 import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngine"
+import { getDomGemEffect } from "General/Engine/ItemUtilities"
+import { dominationGemDB } from "Databases/DominationGemDB";
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
@@ -32,6 +34,8 @@ function setupPlayer(player, contentType, castModel) {
   let newPlayer = new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights);
   newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
+  newPlayer.dominationGemRanks = player.dominationGemRanks;
+
 
   return newPlayer;
 
@@ -40,7 +44,7 @@ function setupPlayer(player, contentType, castModel) {
 function autoSocketItems(itemList) {
   for (var i = 0; i < itemList.length; i++) {
     let item = itemList[i];
-    if (['Finger', 'Head', 'Neck', 'Wrist', 'Waist'].includes(item.slot)) {
+    if (['Finger', 'Head', 'Neck', 'Wrist', 'Waist'].includes(item.slot) && !item.hasDomSocket) {
       item.socket = true;
     }
   }
@@ -49,7 +53,23 @@ function autoSocketItems(itemList) {
 
 }
 
+function autoGemVault(itemList, userSettings) {
+  for (var i = 0; i < itemList.length; i++) {
+    let item = itemList[i];
+    if (item.vaultItem && item.hasDomSocket && userSettings.vaultDomGem !== "") {
+      //item.setDominationGem(userSettings.vaultDomGem);
+      const gemID = userSettings.vaultDomGem;
+      item.domGemID = gemID;
+      item.effect = getDomGemEffect(gemID)
+      item.gemString = gemID;
+      }
+  }
+
+  return itemList;
+}
+
 export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
+  //console.log(userSettings);
   //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
   //console.log("CL::::" + currentLanguage);
   var t0 = performance.now();
@@ -57,8 +77,13 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   let count = 0;
 
   const newPlayer = setupPlayer(player, contentType, castModel);
+
+  let newCastModel = new CastModel(newPlayer.getSpec(), contentType, castModel.modelName, 0) 
+  newCastModel = Object.assign(newCastModel, castModel);
+
   let itemList = deepCopyFunction(rawItemList); // Here we duplicate the users items so that nothing is changed during the process. 
   itemList = userSettings.autoSocket ? autoSocketItems(itemList) : itemList;
+  itemList = userSettings.vaultDomGem !== "none" ? autoGemVault(itemList, userSettings) : itemList;
 
   let itemSets = createSets(itemList, wepCombos);
 
@@ -80,7 +105,7 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
     */
 
   for (var i = 0; i < itemSets.length; i++) {
-    itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings);
+    itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel);
   }
   itemSets = pruneItems(itemSets);
 
@@ -255,6 +280,149 @@ function createSets(itemList, rawWepCombos) {
   return itemSets;
 }
 
+// Converts a bonus_stats dictionary to a singular estimated HPS number.
+export function getEstimatedHPS(bonus_stats, player, contentType) {
+  let estHPS = 0;
+  for (const [key, value] of Object.entries(bonus_stats)) {
+    if (["haste", "mastery", "crit", "versatility", "leech"].includes(key)) {
+      estHPS += ((value * player.getStatWeight(contentType, key)) / player.activeStats.intellect) * player.getHPS(contentType);
+    } else if (key === "intellect") {
+      estHPS += (value / player.activeStats.intellect) * player.getHPS(contentType);
+    } else if (key === "hps") {
+      estHPS += value;
+    }
+    else if (key === "dps" && contentType === "Dungeon") {
+      estHPS += value;
+    }
+  }
+
+  return Math.round(estHPS);
+}
+
+function scoreShards(player, castModel, contentType) {
+  let shardScores = {};
+  const domGems = ['Shard of Bek', 'Shard of Jas', 'Shard of Rev', 'Shard of Cor', 'Shard of Tel', 'Shard of Kyr', 'Shard of Dyz', 'Shard of Zed', 'Shard of Oth' ];
+  for (var i = 0; i < domGems.length; i++) {
+    const shard = domGems[i];
+    const effect = {type: "domination gem", name: shard, rank: player.getDominationSingleRank(shard)};
+    shardScores[shard] = getEstimatedHPS(getEffectValue(effect, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType);
+  }
+
+  return shardScores;
+}
+
+function scoreSets(player, castModel, contentType) {
+  const setScores = {'Blood': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Blood Link", "rank": player.getDominationSetRank("Blood"),}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType), 
+  'Frost': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Winds of Winter", "rank": player.getDominationSetRank("Frost"),}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType), 
+  'Unholy': getEstimatedHPS(getEffectValue({"type": "domination gem", "name": "Chaos Bane", "rank": player.getDominationSetRank("Unholy"),}, player, castModel, contentType, 0, {}, "Retail", {}), player, contentType)};
+
+  return setScores;
+}
+
+export function buildBestDomSet(itemSet, player, castModel, contentType, slots) {
+
+  let results = []
+  let scores = []
+  
+  //const domGems = ['Shard of Bek', 'Shard of Jas', 'Shard of Rev', 'Shard of Cor', 'Shard of Tel', 'Shard of Kyr', 'Shard of Dyz', 'Shard of Zed', 'Shard of Oth' ];
+  const domGems = player.getOwnedDominationShards();
+  //let effectList = [];
+  const setPieces = {"unholy": itemSet.itemList.filter(item => {return item.slot === "Head" && item.hasDomSocket}).length > 0,
+                    "blood": itemSet.itemList.filter(item => {return item.slot === "Chest" && item.hasDomSocket}).length > 0,
+                    "frost": itemSet.itemList.filter(item => {return item.slot === "Shoulder" && item.hasDomSocket}).length > 0}
+  const shardScores = scoreShards(player, castModel, contentType);
+  const setScores = scoreSets(player, castModel, contentType);
+
+  let result = []
+  result.length = Math.min(domGems.length, slots);
+  generateSet( domGems, result.length, 0);
+  function generateSet(input, len, start) {
+    if(len === 0) {
+      results.push(result.join(","));
+      return;
+    }
+    for (let i = start; i <= input.length - len; i++) {
+      result[result.length - len] = input[i];
+      generateSet(input, len-1, i+1 );
+    }
+  }
+  
+  for (var x = 0; x < results.length; x++) {
+    // One result. 
+    let score = 0;
+    results[x].split(",").forEach(shard => {
+      score += shardScores[shard];
+    })
+    
+    // Check for sets
+    if (setPieces.blood && results[x].includes("Shard of Jas") && results[x].includes("Shard of Bek") && results[x].includes("Shard of Rev")) {
+      // Blood Set
+      score += setScores['Blood']
+    }
+    else if (setPieces.frost &&results[x].includes("Shard of Kyr") && results[x].includes("Shard of Cor") && results[x].includes("Shard of Tel")) {
+      // Frost Set
+      score += setScores['Frost']
+    }
+    else if (setPieces.unholy &&results[x].includes("Shard of Zed") && results[x].includes("Shard of Dyz") && results[x].includes("Shard of Oth")) {
+      // Unholy Set
+      score += setScores['Unholy']
+    }
+    //console.log(results[x] + ": " + score);
+    
+    scores.push({"set": results[x], "score": score});
+  }
+  let gemList = []
+  scores = scores.sort((a, b) => (a.score < b.score ? 1 : -1));
+  const gemEffects = buildDomEffectList(scores[0].set.split(","), player, gemList, setPieces);
+  itemSet.effectList = itemSet.effectList.concat(gemEffects)
+  itemSet.domGemList = gemList;
+  return 0;
+
+}
+
+
+function buildDomEffectList(domGems, player, gemList, setPieces) {
+  const effects = []
+  domGems.forEach(gem => {
+    const gemRank = player.getDominationSingleRank(gem)
+    const effect = {
+      type: "domination gem",
+      name: gem,
+      rank: gemRank,
+    };
+    effects.push(effect);
+    const gemData = dominationGemDB.filter(gemDB => {
+      return gemDB.effect.name === gem && gemDB.effect.rank == gemRank;
+    });
+    if (gemData.length > 0) gemList.push(gemData[0].gemID);
+  });
+  if (setPieces.blood && domGems.includes("Shard of Jas") && domGems.includes("Shard of Bek") && domGems.includes("Shard of Rev")) {
+    const effect = {
+      type: "domination gem",
+      name: "Blood Link",
+      rank: player.getDominationSetRank("Blood"),
+    };
+    effects.push(effect);
+  }
+  else if (setPieces.frost && domGems.includes("Shard of Kyr") && domGems.includes("Shard of Cor") && domGems.includes("Shard of Tel")) {
+    const effect = {
+      type: "domination gem",
+      name: "Winds of Winter",
+      rank: player.getDominationSetRank("Frost"),
+    };
+    effects.push(effect);
+  }
+  else if (setPieces.unholy && domGems.includes("Shard of Zed") && domGems.includes("Shard of Dyz") && domGems.includes("Shard of Oth")) {
+    const effect = {
+      type: "domination gem",
+      name: "Chaos Bane",
+      rank: player.getDominationSetRank("Unholy"),
+    };
+    effects.push(effect);
+  }
+  return effects;
+}
+
 function buildDifferential(itemSet, primeSet, player, contentType) {
   let doubleSlot = {};
   const primeList = primeSet.itemList;
@@ -264,8 +432,6 @@ function buildDifferential(itemSet, primeSet, player, contentType) {
     scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
     rawDifference: Math.round((itemSet.hardScore - primeSet.hardScore) / player.getInt(contentType) * player.getHPS(contentType)),
   };
-  //console.log("Prime List: " + JSON.stringify(primeSet));
-  //console.log("Diff List: " + JSON.stringify(diffList))
 
   for (var x = 0; x < primeList.length; x++) {
     if (primeList[x].uniqueHash !== diffList[x].uniqueHash) {    
@@ -278,7 +444,6 @@ function buildDifferential(itemSet, primeSet, player, contentType) {
       
     }
   }
-  //console.log("D:" + JSON.stringify(differentials));
   return differentials;
 }
 
@@ -301,9 +466,9 @@ function sumScore(obj) {
 }
 
 // A true evaluation function on a set.
-function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
+function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel) {
   // Get Base Stats
-  let builtSet = itemSet.compileStats();
+  let builtSet = itemSet.compileStats("Retail", userSettings);
   let setStats = builtSet.setStats;
   let hardScore = 0;
 
@@ -324,11 +489,11 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
 
   let adjusted_weights = {
     intellect: 1,
-    haste: player.statWeights[contentType]["haste"],
-    crit: player.statWeights[contentType]["crit"],
-    mastery: player.statWeights[contentType]["mastery"],
-    versatility: player.statWeights[contentType]["versatility"],
-    leech: player.statWeights[contentType]["leech"],
+    haste: castModel.baseStatWeights["haste"],
+    crit: castModel.baseStatWeights["crit"],
+    mastery: castModel.baseStatWeights["mastery"],
+    versatility: castModel.baseStatWeights["versatility"],
+    leech: castModel.baseStatWeights["leech"],
   };
   //console.log("Weights Before: " + JSON.stringify(adjusted_weights));
 
@@ -341,7 +506,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   // Rings - Best secondary.
   // We use the players highest stat weight here. Using the adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
   // single percentage. The stress this could cause a player is likely not worth the optimization.
-  let highestWeight = getHighestWeight(player, contentType);
+  let highestWeight = getHighestWeight(castModel);
   bonus_stats[highestWeight] += 32; // 16 x 2.
   enchants["Finger"] = "+16 " + highestWeight;
 
@@ -361,7 +526,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   // Weapon - Celestial Guidance
   // Eternal Grace is so poor right now that I don't even think it deserves inclusion.
   let expected_uptime = convertPPMToUptime(3, 10);
-  bonus_stats.intellect = (setStats.intellect + bonus_stats.intellect) * 0.05 * expected_uptime;
+  bonus_stats.intellect += (setStats.intellect + bonus_stats.intellect) * 0.05 * expected_uptime;
   enchants["CombinedWeapon"] = "Celestial Guidance";
 
   // 5% int boost for wearing the same items.
@@ -373,23 +538,23 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   enchants["Gems"] = highestWeight;
 
   // This might change later, but is a way to estimate the value of a domination socket on a piece in the Upgrade Finder.
-  if (userSettings.dominationSockets === "Upgrade Finder") bonus_stats.hps += builtSet.domSockets * 200;
+  //if (userSettings.dominationSockets === "Upgrade Finder") bonus_stats.hps += builtSet.domSockets * 350;
+  compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
 
+  if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
+  //itemSet.effectList = itemSet.effectList.concat(domList);
+  
+  // Handle Effects
   let effectStats = [];
   effectStats.push(bonus_stats);
   for (var x = 0; x < itemSet.effectList.length; x++) {
-    
-    //console.log("EFF: " + JSON.stringify(itemSet.effectList[x]));
-    effectStats.push(getEffectValue(itemSet.effectList[x], player, contentType, itemSet.effectList[x].level, userSettings));
-
+    effectStats.push(getEffectValue(itemSet.effectList[x], player, castModel, contentType, itemSet.effectList[x].level, userSettings, "Retail", setStats));
   }
-  bonus_stats = mergeBonusStats(effectStats);
+  //bonus_stats = mergeBonusStats(effectStats);
+  setStats = compileStats(setStats, mergeBonusStats(effectStats));
   
-
-  compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
   applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
   // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
-  //console.log("Base: " + JSON.stringify(adjusted_weights));
   adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;
   adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.Retail.CRIT)) / 2;
   adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.Retail.VERSATILITY)) / 2;
@@ -397,25 +562,23 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.Retail.LEECH)) / 2;
   addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
   
-  //console.log("Adj: " + JSON.stringify(adjusted_weights));
   // Calculate a hard score using the rebalanced stat weights.
 
   for (var stat in setStats) {
     if (stat === "hps") {
       hardScore += (setStats[stat] / baseHPS) * player.activeStats.intellect;
     } else if (stat === "dps") {
-      continue;
+        if (contentType === "Dungeon") hardScore += (setStats[stat] / baseHPS) * player.activeStats.intellect;
+        else continue;
     } else {
       hardScore += setStats[stat] * adjusted_weights[stat];
     }
   }
 
-  //console.log(JSON.stringify(setStats));
-  //console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
-  //console.log("Enchants: " + JSON.stringify(enchants));
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
+  //console.log(builtSet);
   return builtSet; // Temp
 }
 
@@ -444,10 +607,10 @@ export function mergeBonusStats(stats) {
 }
 
 //
-function getHighestWeight(player, contentType) {
+function getHighestWeight(castModel) {
   let max = "";
   let maxValue = 0;
-  let weights = player.statWeights[contentType];
+  let weights = castModel.getBaseStatWeights();
 
   for (var stat in weights) {
     if (weights[stat] > maxValue && ["crit", "haste", "mastery", "versatility"].includes(stat)) {
@@ -493,14 +656,6 @@ export function applyDiminishingReturns(stats) {
     } 
   }
     
-    //console.log("Stat: " + stats[i])
-
-  /*
-
-  */
-  //console.log("Stats Post-DR" + JSON.stringify(stats))
-  //console.log("Stats Post-DR", + JSON.stringify(stats))
-
   return stats;
 
 }

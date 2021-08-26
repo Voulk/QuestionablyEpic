@@ -10,6 +10,108 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 20,
+    date: "24th August",
+    changes: [
+      "Added Domination Shard panel. Add your shards once, and then let QE Live automatically pick which are best.",
+      "Full support in both Top Gear and Upgrade Finder.",
+      "Removed the Vault Domination Gem setting. The panel does the same thing but is much easier to use.",
+      "DPS from shards is now included in the Dungeon setting. Further settings will be available in this area soon.",
+      "Re-added a delete button to items.",
+      "Competitive Alternatives from the vault will now have the Vault colour scheme."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 19,
+    date: "18th August",
+    changes: [
+      "Added full Multi-Model support for completely different playstyles.",
+      "First version includes Sinister Teachings Mistweaver and Maraads Paladin.",
+      "Updated spell data now that there's sufficient logs for the tier.",
+      "Added support for enhanced conduits.",
+      "You can now add items directly in Top Gear.",
+      "Bugfix: The auto-socket items setting will no longer add a prismatic socket Dom items.",
+      "Bugfix: Adding a Domination item without a gem inserted will no longer crash the app.",
+      "BC: Fixed a bug where Top Gear could crash with specific items."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 18,
+    date: "3rd August",
+    changes: [
+      "Winds of Winter buffed on live servers by 50%.",
+      "Blood Link buffed on live servers by 20%.",
+      "Multiple in-game bugs with Winds of Winter fixed including Ashen Hallow & Pets",
+      "Bugfix: Fixed the order of two traits in Theotars tree.",
+      "BC: Fixed a bug where Domination Shards could occasionally appear on BC items."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 17,
+    date: "27th July",
+    changes: [
+      "Adjusted the power of set bonuses due to nerfs on live servers & then reverted them again."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 15,
+    date: "26th July",
+    changes: [
+      "Fixed a bug where higher rank dom set bonuses were being calculated at a lower rank."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 14,
+    date: "21st July",
+    changes: [
+      "Added Warlords of Draenor Timewalking items.",
+      "Mistweaver: Added formulas for multiple legendaries.",
+      "Adjusted Domination Set bonuses with live data. Removed their value in the Dungeon setting."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 13,
+    date: "18th July",
+    changes: [
+      "Added a formula for the Celestial Spirits legendary.",
+      "The Upgrade Finder upgrades-by-slot tab will now show item sources."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 12,
+    date: "16th July",
+    changes: [
+      "Added Set Bonus Ranks.",
+      "Added Forbidden Necromantic Tome."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 11,
+    date: "14th July",
+    changes: [
+      "Vault: You can now choose which domination gem to socket in vault items.",
+      "Added character covenant to cards.",
+      "Bugfix: Character covenants will no longer reset occasionally."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
+    update: 10,
+    date: "13th July",
+    changes: [
+      "Bugfix: Fixed a bug that was preventing some players from loading the app",
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 9,
     date: "12th July",
     changes: [

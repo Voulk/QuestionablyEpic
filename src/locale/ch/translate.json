@@ -296,10 +296,12 @@
       "ExploreCovenants": "Explore CovenantsCH",
       "LegendaryAnalysis": "Legendary AnalysisCH",
       "TrinketAnalysis": "Trinket AnalysisCH",
+      "DominationAnalysis": "Domination Analysis (Beta)",
       "CooldownPlanner": "Cooldown Planner (Coming Soon)CH",
       "Profile": "ProfileCH",
       "CharHeader": "CharactersCH",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.CH",
+      "FightAnalysis": "Fight Analysis (Coming Soon)",
       "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Recent Spec Articles",
@@ -517,9 +519,9 @@
         "Setting3Title": "Auto Socket Items",
         "Setting3TextFieldLabel": "",
         "Setting4Spacer": "--------------------------------------------------------------------",
-        "Setting4Tooltip": "",
-        "Setting4Title": "",
-        "Setting4TextFieldLabel": "",
+        "Setting4Tooltip": "Choose a Gem to socket into your vault items",
+        "Setting4Title": "Vault Dom Gem",
+        "Setting4TextFieldLabel": "Vault Dom Gem",
         "Setting5Spacer": "--------------------------------------------------------------------",
         "Setting5Tooltip": "",
         "Setting5Title": "",
@@ -569,7 +571,7 @@
       "116670": "活血术",
       "115310": "还魂术",
       "191894": "精通：迷雾之风",
-      "343655": "氤氲之息",
+      "325209": "氤氲之息",
       "191837": "精华之泉",
       "115151": "复苏之雾",
       "274909": "升腾迷雾",
@@ -614,6 +616,11 @@
       "CompetitiveAlternative": "Competitive AlternativesCH",
       "StatPanel": { "AvgStats": "Average Stats (includes procs)CH" },
       "itemMissingError": "Error: Add item - "
+    },
+
+    "DominationSelection": {
+      "HeaderTitle": "Domination Gems",
+      "ShardNotOwned": "not owned"
     },
 
     "UpgradeFinder": {

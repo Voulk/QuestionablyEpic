@@ -285,10 +285,12 @@
       "ExploreCovenants": "Explorer les Covenants",
       "LegendaryAnalysis": "Analyse de Légendaire",
       "TrinketAnalysis": "Trinket Analysis",
+      "DominationAnalysis": "Domination Analysis (Beta)",
       "CooldownPlanner": "Planificateur de cooldown (Coming Soon)",
       "Profile": "Profil",
       "CharHeader": "Personnages",
       "CharHelpText": "Ajouter vos personnages ici. Clique-droit pour modifier vos informations liés aux Stats Weights, nom de votre serveur et autre.",
+      "FightAnalysis": "Fight Analysis (Coming Soon)",
       "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Recent Spec Articles",
@@ -507,9 +509,9 @@
         "Setting3Title": "Auto Socket Items",
         "Setting3TextFieldLabel": "",
         "Setting4Spacer": "--------------------------------------------------------------------",
-        "Setting4Tooltip": "",
-        "Setting4Title": "",
-        "Setting4TextFieldLabel": "",
+        "Setting4Tooltip": "Choose a Gem to socket into your vault items",
+        "Setting4Title": "Vault Dom Gem",
+        "Setting4TextFieldLabel": "Vault Dom Gem",
         "Setting5Spacer": "--------------------------------------------------------------------",
         "Setting5Tooltip": "",
         "Setting5Title": "",
@@ -559,7 +561,7 @@
       "116670": "Vivifier",
       "115310": "Regain",
       "191894": "Maîtrise : Bourrasque de brume",
-      "343655": "Souffle enveloppant",
+      "325209": "Souffle enveloppant",
       "191837": "Réceptacle d’essence",
       "115151": "Brume de rénovation",
       "274909": "Brume levante",
@@ -604,6 +606,11 @@
       "CompetitiveAlternative": "Les alternatives intéressantes",
       "StatPanel": { "AvgStats": "Moyenne de stats (Incluant les procs)" },
       "itemMissingError": "Error: Add item - "
+    },
+
+    "DominationSelection": {
+      "HeaderTitle": "Domination Gems",
+      "ShardNotOwned": "not owned"
     },
 
     "UpgradeFinder": {

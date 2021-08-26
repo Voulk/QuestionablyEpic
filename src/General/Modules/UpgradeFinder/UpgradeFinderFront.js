@@ -13,6 +13,7 @@ import { runUpgradeFinderBC } from "./UpgradeFinderEngineBC";
 // import { useHistory } from "react-router-dom";
 import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
+import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems";
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -59,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "auto",
       marginRight: "auto",
       width: "65%",
+      marginTop: 0,
     },
     [theme.breakpoints.up("lg")]: {
       justifyContent: "center",
@@ -66,6 +68,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "auto",
       marginRight: "auto",
       width: "55%",
+      marginTop: 0,
     },
   },
 }));
@@ -327,7 +330,7 @@ export default function UpgradeFinderFront(props) {
           <UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
         </Grid>
         <Grid item xs={12}>
-          <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
+          <Settings player={props.player} contentType={contentType} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} autoSocket={true} singleUpdate={props.singleUpdate} />
         </Grid>
         {/* ------------------------------ Raid Section ------------------------------ */}
 
@@ -493,6 +496,10 @@ export default function UpgradeFinderFront(props) {
             </Grid>
           </Paper>
         </Grid>
+        {gameType === "Retail" ? <Grid item xs={12}> 
+          {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
+          {<DominationGems player={props.player} singleUpdate={props.singleUpdate} userSettings={userSettings} />}
+        </Grid> : ""}
         <Grid item xs={12} style={{ marginBottom: 100 }} />
       </Grid>
 

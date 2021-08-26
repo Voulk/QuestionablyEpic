@@ -87,7 +87,7 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   // console.log("Running Upgrade Finder. Strap in.");
   const baseItemList = player.getEquippedItems(true);
   const wepList = buildWepCombosUF(player, baseItemList);
-  const castModel = player.castModel[contentType];
+  const castModel = player.getActiveModel(contentType);
   //buildWepCombos(player, false, false); // TODO: DEL
 
   const baseHPS = player.getHPS(contentType);
@@ -160,7 +160,6 @@ function buildItemPossibilities(player, contentType, playerSettings) {
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const itemLevel = getSetItemLevel(itemSource, playerSettings, x, rawItem.slot);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0]);
-          //console.log("Difficulty: " + playerSettings.raid[x] + ". Item level: " + itemLevel)
           itemPoss.push(item);
         }
       }
@@ -172,7 +171,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
         const item233 = buildItem(player, contentType, rawItem, 233, rawItem.sources[0]);
         itemPoss.push(item233);
       }
-      else {
+      else if (itemSource.instanceId !== 1190) { // Exclude Nathria gear.
         const itemLevel = getSetItemLevel(itemSource, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0]);
 

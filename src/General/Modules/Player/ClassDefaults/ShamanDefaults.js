@@ -68,7 +68,7 @@ export const shamanDefaultSpecialQueries = (contentType) => {
         oneMinute: 1.1,
         ninetySeconds: 1,
         twoMinutes: 1.1,
-        twoMinutesOrb: 1.1,
+        twoMinutesOrb: 1.07,
         threeMinutes: 1.3,
       },
       HoldYourGroundUptime: 0.8
@@ -99,19 +99,19 @@ export const shamanDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.33,
-    crit: 0.4,
-    mastery: 0.38,
-    versatility: 0.4,
-    leech: 0.44,
+    haste: 0.36,
+    crit: 0.45,
+    mastery: 0.42,
+    versatility: 0.44,
+    leech: 0.47,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.36,
-    crit: 0.36,
-    mastery: 0.29,
+    haste: 0.37,
+    crit: 0.37,
+    mastery: 0.28,
     versatility: 0.39,
-    leech: 0.19,
+    leech: 0.24,
   };
 
   return statWeights[contentType];

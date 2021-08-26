@@ -73,6 +73,7 @@ export default function QEMainMenu(props) {
           "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
           "MainMenu.DominationAnalysis": ["/dominationgems", true, "DominationAnalysis"],
           "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
+          // "MainMenu.FightAnalysis": ["/fightAnalysis", true, "FightAnalysis"],
           "MainMenu.Profile": ["/profile", true, "Profile"],
         }
       : {
@@ -142,8 +143,8 @@ export default function QEMainMenu(props) {
             </Button>
           </Grid>
           {<Grid item xs={12}>
-            <MessageOfTheDay /> 
-            </Grid> }
+            <MessageOfTheDay gameType={gameType} /> 
+          </Grid>}
 
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.

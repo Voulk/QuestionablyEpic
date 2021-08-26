@@ -1,6 +1,7 @@
 import React, { Component, useEffect } from "react";
 import "./App.css";
-import HolyDiver from "General/Modules/CooldownPlanner/CooldownPlannerModule.js";
+import CooldownPlannerModule from "General/Modules/CooldownPlanner/CooldownPlannerModule.js";
+import FightAnalysis from "General/Modules/FightAnalysis/FightAnalysis"
 import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
 import LegendaryCompare from "Retail/Modules/Legendaries/LegendaryCompare.js";
 import TrinketAnalysis from "General/Modules/TrinketAnalysis/TrinketAnalysis";
@@ -23,10 +24,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ls from "local-storage";
 import QESnackbar from "General/Modules/CooldownPlanner/BasicComponents/SnackBar";
+import TestingPage from "General/Modules/CooldownPlanner/TestingLandingPage";
 // import { createBrowserHistory } from "history"; // not used TODO: remove?
 import { dbCheckPatron, dbGetArticleList } from "General/Modules/SetupAndMenus/ConnectionUtilities.js";
 
 import ReactGA from "react-ga";
+// import HolyDiver from "General/Modules/CooldownPlanner/ModuleComponents/CooldownPlannerModule";
 
 const theme = createMuiTheme({
   palette: {
@@ -52,6 +55,7 @@ const theme = createMuiTheme({
 });
 
 process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
+
 
 class App extends Component {
   constructor() {
@@ -282,7 +286,6 @@ class App extends Component {
       ls.set("lang", "en");
     }
 
-    //console.log("COMPONENT MOUNTED" + window.location.pathname + window.location.search);
     this.setState({
       playerLoginID: ls.get("id") || "",
       playerBattleTag: ls.get("btag") || "",
@@ -363,10 +366,12 @@ class App extends Component {
                     />
                   )}
                 />
-                <Route path="/holydiver" render={() => <HolyDiver />} />
+                <Route path="/fightAnalysis" render={() => <FightAnalysis />} />
+                <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule />} />
+                <Route path="/holydiver" render={() => <TestingPage />} />
                 <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} />} />
                 <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
-                <Route path="/topgear" render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
+                <Route path="/topgear" render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} />} />
                 <Route path="/legendaries" render={() => <LegendaryCompare player={activePlayer} />} />
                 <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} />} />
                 <Route path="/dominationgems" render={() => <DominationAnalysis player={activePlayer} />} />
@@ -374,7 +379,7 @@ class App extends Component {
                 <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                 <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
                 <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />
-                <Route path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} simcSnack={this.handleSimCSnackOpen} allChars={allChars} />} />
+                <Route path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} simcSnack={this.handleSimCSnackOpen} allChars={allChars} singleUpdate={this.updatePlayerChar} />} />
 
                 {/* ---------------------------------------------------------------------------------------------- */
                 /*                                         Classic Routes                                          */

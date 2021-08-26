@@ -1,9 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardContent, Typography, Grid, Divider } from "@material-ui/core";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp } from "../../Engine/ItemUtilities";
+import { Card, CardContent, Typography, Grid, Divider, IconButton } from "@material-ui/core";
+import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemIcon } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
-// import DeleteIcon from "@material-ui/icons/Delete";
+import DeleteIcon from "@material-ui/icons/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
@@ -58,6 +58,7 @@ export default function ItemCard(props) {
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
   const gameType = useSelector((state) => state.gameType);
   const itemQuality = item.getQualityColor();
+  const deleteActive = item.offhandID === 0;
 
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
   /*
@@ -83,6 +84,10 @@ export default function ItemCard(props) {
     props.activateItem(item.uniqueHash, item.active);
   };
 
+  const deleteItemCard = () => {
+    props.delete(item.uniqueHash);
+  };
+
   let itemName = "";
   let isVault = item.vaultItem;
   // const deleteActive = item.offhandID === 0;
@@ -100,7 +105,7 @@ export default function ItemCard(props) {
     </div>
   ) : null;
 
-  const tertiary = ('tertiary' in props.item && props.item.tertiary !== "") ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
+  const tertiary = "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
@@ -147,26 +152,35 @@ export default function ItemCard(props) {
                 <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
                   <Grid item xs={11}>
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px" }}>
-                    {item.domGemID !== 0 ? (
-                      <a data-wowhead={"item=" + item.domGemID + "&domain=" + currentLanguage}>
-                        <img
-                          style={{
-                            height: 16,
-                            width: 16,
-                            margin: "0px 5px 0px 0px",
-                            verticalAlign: "middle",
-                            borderRadius: 4,
-                            border: "1px solid rgba(255, 255, 255, 0.12)",
-                          }}
-                          src={process.env.PUBLIC_URL + "/Images/Icons/" + dominationGemDB.filter((key) => key.gemID === item.domGemID).map((key) => key.icon)[0] + ".jpg"}
-                          alt={dominationGemDB.filter((key) => key.id === item.domGemID).map((key) => key.name[currentLanguage])[0]}
-                        />
-                      </a>
+                      {item.domGemID !== 0 && gameType === "Retail" ? (
+                        <a data-wowhead={"item=" + item.domGemID + "&domain=" + currentLanguage}>
+                          <img
+                            style={{
+                              height: 16,
+                              width: 16,
+                              margin: "0px 5px 0px 0px",
+                              verticalAlign: "middle",
+                              borderRadius: 4,
+                              border: "1px solid rgba(255, 255, 255, 0.12)",
+                            }}
+                            src={process.env.PUBLIC_URL + "/Images/Icons/" + dominationGemDB.filter((key) => key.gemID === item.domGemID).map((key) => key.icon)[0] + ".jpg"}
+                            alt={dominationGemDB.filter((key) => key.id === item.domGemID).map((key) => key.name[currentLanguage])[0]}
+                          />
+                        </a>
+                      ) : (
+                        ""
+                      )}
+                      {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={1} display="inline-flex" align="center">
+                    {deleteActive ? (
+                      <IconButton onClick={deleteItemCard} style={{ padding: 0 }} aria-label="delete" size="small">
+                        <DeleteIcon style={{ color: "#ad2c34" }} fontSize="small" />
+                      </IconButton>
                     ) : (
                       ""
                     )}
-                      {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
-                    </Typography>
                   </Grid>
                 </Grid>
               </Grid>

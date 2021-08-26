@@ -291,10 +291,11 @@
       "LegendaryAnalysis": "Анализ легендарных эффектов",
       "TrinketAnalysis": "Анализ аксессуаров",
       "CooldownPlanner": "Планировщик кулдаунов",
-      "DominationAnalysis": "Domination Analysis (Coming soon)",
+      "DominationAnalysis": "Domination Analysis (Beta)",
       "Profile": "Профиль",
       "CharHeader": "Персонажи",
       "CharHelpText": "Добавьте сюда своих персонажей. Кликните по ним правой кнопкой, чтобы изменить вес характеристик, сервер и остальное.",
+      "FightAnalysis": "Fight Analysis (Coming Soon)",
       "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Последние статьи",
@@ -524,9 +525,9 @@
         "Setting3Title": "Auto Socket Items",
         "Setting3TextFieldLabel": "",
         "Setting4Spacer": "--------------------------------------------------------------------",
-        "Setting4Tooltip": "",
-        "Setting4Title": "",
-        "Setting4TextFieldLabel": "",
+        "Setting4Tooltip": "Choose a Gem to socket into your vault items",
+        "Setting4Title": "Vault Dom Gem",
+        "Setting4TextFieldLabel": "Vault Dom Gem",
         "Setting5Spacer": "--------------------------------------------------------------------",
         "Setting5Tooltip": "",
         "Setting5Title": "",
@@ -580,6 +581,11 @@
       "itemMissingError": "Ошибка: добавьте предмет"
     },
 
+    "DominationSelection": {
+      "HeaderTitle": "Domination Gems",
+      "ShardNotOwned": "not owned"
+    },
+
     "Snackbars": {
       "CharAddSuccess": "Персонаж добавлен!",
       "CharUpdateSuccess": "Персонаж обновлен!",
@@ -596,7 +602,7 @@
       "116670": "Оживить",
       "115310": "Восстановление сил",
       "191894": "Искусность: туманный поток",
-      "343655": "Окутывающее дыхание",
+      "325209": "Окутывающее дыхание",
       "191837": "Купель сущности",
       "115151": "Заживляющий туман",
       "274909": "Сгущающийся туман",

@@ -20,6 +20,7 @@ import { apiGetPlayerImage } from "../ConnectionUtilities";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { setConstantValue } from "typescript";
+import { covenantIcons } from "../../CooldownPlanner/Functions/CovenantFunctions";
 
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
@@ -142,7 +143,6 @@ const CharTab = withStyles((theme) => ({
   selected: {},
 }))((props) => <Tab {...props} />);
 const menuStyle = {
-  style: { marginTop: 5 },
   MenuListProps: {
     style: { paddingTop: 0, paddingBottom: 0 },
   },
@@ -246,7 +246,6 @@ export default function CharCards(props) {
     setVersatility(player.getStatWeight(contentType, STAT.VERSATILITY));
     setLeech(player.getStatWeight(contentType, STAT.LEECH));
     setServer(player.realm);
-
   };
 
   /* -------------------------------------------------------------------------- */
@@ -311,7 +310,7 @@ export default function CharCards(props) {
   const resetDefaults = () => {
     let newPlayer = props.char;
 
-    newPlayer.setDefaultWeights(newPlayer.getSpec(), contentType);
+    newPlayer.setModelDefaults(contentType);
     props.singleUpdate(newPlayer);
     props.charUpdatedSnack();
 
@@ -328,11 +327,11 @@ export default function CharCards(props) {
     let newPlayer = props.char;
     let weights = {
       intellect: 1,
-      haste: haste > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.statWeights[contentType].haste : haste,
-      crit: critical > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.statWeights[contentType].crit : critical,
-      mastery: mastery > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.statWeights[contentType].mastery : mastery,
-      versatility: versatility > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.statWeights[contentType].versatility : versatility,
-      leech: leech > CONSTRAINTS.Retail.maxTertiaryWeight ? newPlayer.statWeights[contentType].leech : leech,
+      haste: haste > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.getStatWeight(contentType, STAT.HASTE) : haste,
+      crit: critical > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.getStatWeight(contentType, STAT.CRITICAL_STRIKE) : critical,
+      mastery: mastery > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.getStatWeight(contentType, STAT.MASTERY) : mastery,
+      versatility: versatility > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.getStatWeight(contentType, STAT.VERSATILITY) : versatility,
+      leech: leech > CONSTRAINTS.Retail.maxTertiaryWeight ? newPlayer.getStatWeight(contentType, STAT.LEECH) : leech,
     };
 
     newPlayer.editChar(contentType, charName, server, region, selectedRace, weights);
@@ -344,6 +343,7 @@ export default function CharCards(props) {
 
   /* ---------------------------- Spec for the card --------------------------- */
   const spec = props.cardType === "Char" ? props.char.spec : "";
+  const covenant = props.char.covenant;
   const gameType = useSelector((state) => state.gameType);
   const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade;
   const availableClasses = classRaceList;
@@ -369,7 +369,7 @@ export default function CharCards(props) {
     /*                      Character Card for the main menu                      */
     /* -------------------------------------------------------------------------- */
     <Grid item xs={12} sm={6} md={6} lg={6} xl={4}>
-      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : ""}>
+      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : null}>
         <Card className={rootClassName} variant="outlined" raised={true}>
           <Avatar src={specImages[spec].default} variant="square" alt="" className={classes.large} />
           <Divider orientation="vertical" flexItem />
@@ -378,18 +378,27 @@ export default function CharCards(props) {
               <Grid container style={{ marginTop: 1 }} spacing={1}>
                 {/* ------------------------ Character name and Realm ------------------------ */}
                 <Grid item xs={10}>
-                  <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec) }}>
+                  <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec), display: "inline-flex" }}>
                     {props.name}
                     <Tooltip title={t(classTranslator(spec))} style={{ color: classColoursJS(spec) }} placement="top">
+                      {/* ----------------------------------------- Class Icon -----------------------------------------  */}
                       {classIcons(spec, {
                         height: 20,
                         width: 20,
-                        margin: "0px 5px 0px 5px",
+                        margin: "0px 0px 0px 5px",
                         verticalAlign: "middle",
                         borderRadius: 4,
                         border: "1px solid rgba(255, 255, 255, 0.12)",
                       })}
                     </Tooltip>
+                    {/* ---------------------------------------- Covenant Icon ---------------------------------------  */}
+                    {gameType === "Retail" ? (
+                      <Tooltip title={t(covenant)} style={{ color: classColoursJS(spec) }} placement="top">
+                        {covenantIcons(covenant, 20, 20)}
+                      </Tooltip>
+                    ) : (
+                      ""
+                    )}
                   </Typography>
                 </Grid>
                 {/* ---- Settings Button - More apparent for users how to edit characters ---- */}
@@ -480,7 +489,7 @@ export default function CharCards(props) {
                           <InputLabel id="ClassSelector">{t("Region")}</InputLabel>
                           <Select value={region} onChange={handleChangeRegion} label={t("Region")} MenuProps={menuStyle}>
                             {Object.values(regions).map((key, i) => (
-                              <MenuItem key={i} value={key}>
+                              <MenuItem key={"charCardRegion" + i} value={key}>
                                 {key}
                               </MenuItem>
                             ))}
@@ -516,9 +525,11 @@ export default function CharCards(props) {
                           <Select label={t("Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
                             {Object.getOwnPropertyNames(availableClasses)
                               .map((key, i) => (
-                                <MenuItem key={i} value={key}>
-                                  {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
-                                  {t("Classes." + key)}
+                                <MenuItem key={"charCardClass" + i} value={key}>
+                                  <div style={{ display: "inline-flex" }}>
+                                    {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
+                                    {t("Classes." + key)}
+                                  </div>
                                 </MenuItem>
                               ))
                               .map((menuItems, i) => [menuItems, <Divider key={i} />])}
@@ -534,7 +545,7 @@ export default function CharCards(props) {
                               ? ""
                               : availableClasses[healClass.toString()].races
                                   .map((key, i) => (
-                                    <MenuItem key={i} value={key}>
+                                    <MenuItem key={"charCardRace" + i} value={key}>
                                       <div style={{ display: "inline-flex" }}>
                                         {raceIcons(key)}
                                         {t(key)}
@@ -554,9 +565,9 @@ export default function CharCards(props) {
                               ? ""
                               : ["kyrian", "venthyr", "necrolord", "night_fae"]
                                   .map((key, i) => (
-                                    <MenuItem key={i} value={key}>
+                                    <MenuItem key={"charChardCovenant" + i} value={key}>
                                       <div style={{ display: "inline-flex" }}>
-                                        {/*raceIcons(key) */}
+                                        {covenantIcons(key, 20, 20)}
                                         {t(key)}
                                       </div>
                                     </MenuItem>

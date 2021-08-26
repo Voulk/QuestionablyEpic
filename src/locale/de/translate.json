@@ -290,11 +290,12 @@
       "ExploreCovenants": "Erkunde die Pakte",
       "LegendaryAnalysis": "Analyse der legendären Effekte",
       "TrinketAnalysis": "Trinket Analysis (New)",
-      "DominationAnalysis": "Domination Analysis (Coming soon)",
+      "DominationAnalysis": "Domination Analysis (Beta)",
       "CooldownPlanner": "Cooldownplaner (Coming Soon)",
       "Profile": "Profil",
       "CharHeader": "Charaktere",
       "CharHelpText": "Füge deine Charaktere hier hinzu. Rechtsklick um deine Wertegewichtungen, Serverinformationen und mehr zu bearbeiten.",
+      "FightAnalysis": "Fight Analysis (Coming Soon)",
       "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Recent Spec Articles",
@@ -521,9 +522,9 @@
         "Setting3Title": "Auto Socket Items",
         "Setting3TextFieldLabel": "",
         "Setting4Spacer": "--------------------------------------------------------------------",
-        "Setting4Tooltip": "",
-        "Setting4Title": "",
-        "Setting4TextFieldLabel": "",
+        "Setting4Tooltip": "Choose a Gem to socket into your vault items",
+        "Setting4Title": "Vault Dom Gem",
+        "Setting4TextFieldLabel": "Vault Dom Gem",
         "Setting5Spacer": "--------------------------------------------------------------------",
         "Setting5Tooltip": "",
         "Setting5Title": "",
@@ -573,7 +574,7 @@
       "116670": "Beleben",
       "115310": "Belebung",
       "191894": "Meisterschaft: Nebelschwall",
-      "343655": "Einhüllender Atem",
+      "325209": "Einhüllender Atem",
       "191837": "Essenzborn",
       "115151": "Erneuernder Nebel",
       "274909": "Aufziehender Nebel",
@@ -619,6 +620,11 @@
       "BackToGearSelection": "Zurück zum Auswahlbildschirm",
       "StatPanel": { "AvgStats": "Durchschnittliche Werte (inkl. aller zufälligen Effekte)" },
       "itemMissingError": "Error: Add item - "
+    },
+
+    "DominationSelection": {
+      "HeaderTitle": "Domination Gems",
+      "ShardNotOwned": "not owned"
     },
 
     "UpgradeFinder": {

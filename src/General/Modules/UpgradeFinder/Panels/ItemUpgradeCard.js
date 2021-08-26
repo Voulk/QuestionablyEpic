@@ -83,8 +83,14 @@ export default function ItemCard(props) {
     if (item.source.instanceId === -1) {
       return t("DungeonNames." + item.source.encounterId);
     }
+    else if (item.source.instanceId === 1194) {
+      return t("BossNames.Tazavesh." + item.source.encounterId) + " (Tazavesh)";
+    }
     /* ----------------------------- Raid Boss Name ----------------------------- */
     if (item.source.instanceId === 1190 && item.source.encounterId > 0) {
+      return t("BossNames." + item.source.encounterId);
+    }
+    if (item.source.instanceId === 1193 && item.source.encounterId > 0) {
       return t("BossNames." + item.source.encounterId);
     }
     /* -------------------------- BC Bosses ---------------------- */

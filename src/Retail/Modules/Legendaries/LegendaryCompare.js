@@ -63,7 +63,7 @@ const convertToHPS = (bonus_stats, player, contentType) => {
 
 const createLegendary = (legendaryName, container, spec, player, contentType) => {
   let lego = new Legendary(legendaryName);
-  lego.bonus_stats = getEffectValue({ name: lego.name, type: "spec legendary" }, player, contentType);
+  lego.bonus_stats = getEffectValue({ name: lego.name, type: "spec legendary" }, player, player.getActiveModel(contentType), contentType);
   lego.effectiveHPS = convertToHPS(lego.bonus_stats, player, contentType);
   lego.effectiveDPS = "dps" in lego.bonus_stats ? lego.bonus_stats.dps : 0;
 
@@ -153,7 +153,7 @@ const fillLegendaries = (container, spec, player, contentType) => {
       "Tear of Morning",
       // "Vitality Sacrifice",
       // "Sephuz's Proclamation",
-      "Echo of Eonar",
+      // "Echo of Eonar",
       "Call to Arms",
       "Bountiful Brew",
       "Faeline Harmony",
@@ -203,8 +203,13 @@ export default function LegendaryCompare(props) {
       <Grid item container spacing={1} direction="row">
         {/* ---------------------------------------- Module Title ---------------------------------------- */}
         <Grid item xs={12}>
-          <Typography color="primary" variant="h4" align="center" style={{ paddingBottom: 16 }}>
+          <Typography color="primary" variant="h4" align="center" style={{ paddingBottom: 4 }}>
             {t("LegendaryCompare.Title")}
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography color="primary" variant="subtitle2" align="center" style={{ paddingBottom: 12 }}>
+            {"Current Playstyle selected: " + props.player.getActiveModel(contentType).modelName + " - " + contentType}
           </Typography>
         </Grid>
         {/* ------------------------------ Map the Legendary list into Cards ----------------------------- */}

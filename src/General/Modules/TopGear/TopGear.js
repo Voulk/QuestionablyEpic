@@ -6,7 +6,8 @@ import "./../QuickCompare/QuickCompare.css";
 import { useTranslation } from "react-i18next";
 // import { testTrinkets } from "../Engine/EffectFormulas/Generic/TrinketEffectFormulas";
 import { apiSendTopGearSet } from "../SetupAndMenus/ConnectionUtilities";
-import { Button, Grid, Typography, Divider } from "@material-ui/core";
+import { Button, Grid, Typography, Divider, Snackbar } from "@material-ui/core";
+import MuiAlert from "@material-ui/lab/Alert";
 import { buildWepCombos } from "../../Engine/ItemUtilities";
 import MiniItemCard from "./MiniItemCard";
 //import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
@@ -17,6 +18,8 @@ import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
+import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems";
+import ItemBar from "../ItemBar/ItemBar";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -35,12 +38,8 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   header: {
-    [theme.breakpoints.down("sm")]: {
-
-    },
-    [theme.breakpoints.up("md")]: {
-
-    },
+    [theme.breakpoints.down("sm")]: {},
+    [theme.breakpoints.up("md")]: {},
   },
   root: {
     [theme.breakpoints.down("xs")]: {
@@ -67,15 +66,17 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("lg")]: {
       marginTop: 32,
       margin: "auto",
-      width: "55%",
+      width: "60%",
       display: "block",
     },
   },
 }));
 
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
-
-const TOPGEARCAP = 34; // TODO
+const TOPGEARCAP = 31; // TODO
 
 export default function TopGear(props) {
   const { t, i18n } = useTranslation();
@@ -86,8 +87,11 @@ export default function TopGear(props) {
 
   /* ---------------------------------------- Popover Props --------------------------------------- */
   const [anchorEl, setAnchorEl] = useState(null);
+  /* ----------------------------- Snackbar State ----------------------------- */
+  const [openDelete, setOpenDelete] = useState(false);
 
   const [activeSlot, setSlot] = useState("");
+  /* ------------ itemList isn't used for anything here other than to trigger rerenders ----------- */
   const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
   const [btnActive, setBtnActive] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
@@ -110,7 +114,6 @@ export default function TopGear(props) {
     /* ------------------ Check that the player has selected an item in every slot. ----------------- */
     let topgearOk = true;
     let itemList = props.player.getSelectedItems();
-    //console.log(props.player.getSelectedItems());
     let errorMessage = "";
     let slotLengths = {
       Head: 0,
@@ -147,8 +150,25 @@ export default function TopGear(props) {
       }
     }
     setErrorMessage(errorMessage);
-    //console.log(slotLengths);
     return topgearOk;
+  };
+
+  const handleClickDelete = () => {
+    setOpenDelete(true);
+  };
+
+  const handleCloseDelete = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenDelete(false);
+  };
+
+  const deleteItem = (unique) => {
+    let player = props.player;
+    player.deleteActiveItem(unique);
+    setItemList([...player.getActiveItems(activeSlot)]);
+    handleClickDelete();
   };
 
   const unleashTopGear = () => {
@@ -156,11 +176,11 @@ export default function TopGear(props) {
     if (checkTopGearValid) {
       setBtnActive(false);
       const currentLanguage = i18n.language;
-      let itemList = props.player.getSelectedItems();
+      const itemList = props.player.getSelectedItems();
       let wepCombos = buildWepCombos(props.player, true);
-      let baseHPS = props.player.getHPS(contentType);
-      let strippedPlayer = JSON.parse(JSON.stringify(props.player));
-      let strippedCastModel = JSON.parse(JSON.stringify(props.player.castModel[contentType]));
+      const baseHPS = props.player.getHPS(contentType);
+      const strippedPlayer = JSON.parse(JSON.stringify(props.player));
+      const strippedCastModel = JSON.parse(JSON.stringify(props.player.getActiveModel(contentType)));
 
       if (gameType === "Retail") {
         const worker = require("workerize-loader!./TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
@@ -170,18 +190,15 @@ export default function TopGear(props) {
           props.setTopResult(result);
           history.push("/report/");
         });
-      }
-      else {
+      } else {
         const worker = require("workerize-loader!./TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
         let instance = new worker();
         instance.runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
           //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
           props.setTopResult(result);
           history.push("/report/");
-      });
-    }
-
-
+        });
+      }
     } else {
       /* ---------------------------------------- Return error. --------------------------------------- */
     }
@@ -189,10 +206,18 @@ export default function TopGear(props) {
 
   const selectedItemCount = props.player.getSelectedItems().length;
   const helpBlurb = t("TopGear.HelpText" + gameType);
-  const helpText = gameType === "Retail" ? ["Add your SimC string to automatically import your entire set of items into the app.", "Select any items you want included in the comparison. We'll automatically add anything you're currently wearing.", 
-                    "When you're all set, hit the big Go button at the bottom of the page to run the module."] :
-                    ["Add your QE Import String to automatically import your entire set of items into the app.", "Select any items you want included in the comparison. We'll automatically add anything you're currently wearing.", 
-                    "When you're all set, hit the big Go button at the bottom of the page to run the module."]
+  const helpText =
+    gameType === "Retail"
+      ? [
+          "Add your SimC string to automatically import your entire set of items into the app.",
+          "Select any items you want included in the comparison. We'll automatically add anything you're currently wearing.",
+          "When you're all set, hit the big Go button at the bottom of the page to run the module.",
+        ]
+      : [
+          "Add your QE Import String to automatically import your entire set of items into the app.",
+          "Select any items you want included in the comparison. We'll automatically add anything you're currently wearing.",
+          "When you're all set, hit the big Go button at the bottom of the page to run the module.",
+        ];
 
   const activateItem = (unique, active) => {
     if (selectedItemCount < CONSTRAINTS.Shared.topGearMaxItems || active) {
@@ -223,15 +248,10 @@ export default function TopGear(props) {
     { label: t("slotNames.weapons"), slotName: "AllMainhands" },
     { label: t("slotNames.offhands"), slotName: "Offhands" },
   ];
-  if (gameType === "BurningCrusade") slotList.push({ label: t("slotNames.relics"), slotName: "Relics & Wands" })
-
+  if (gameType === "BurningCrusade") slotList.push({ label: t("slotNames.relics"), slotName: "Relics & Wands" });
   return (
     <div className={classes.root}>
-      <Grid
-        container
-        spacing={1}
-        justify="center"
-      >
+      <Grid container spacing={1} justify="center">
         {
           <Grid item xs={12}>
             <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
@@ -247,8 +267,24 @@ export default function TopGear(props) {
         </Grid>
         <Grid item xs={12}>
           {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
-          <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
+          <Settings
+            player={props.player}
+            contentType={contentType}
+            userSettings={userSettings}
+            editSettings={editSettings}
+            singleUpdate={props.singleUpdate}
+            hymnalShow={true}
+            groupBuffShow={true}
+            autoSocket={true}
+          />
         </Grid>
+        <Grid item xs={12}>
+          {<ItemBar player={props.player} setItemList={setItemList} />}
+        </Grid>
+        {gameType === "Retail" ? <Grid item xs={12}>
+          {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
+          <DominationGems player={props.player} singleUpdate={props.singleUpdate} userSettings={userSettings} />
+        </Grid> : ""}
 
         {props.player.activeItems.length > 0 ? (
           slotList.map((key, index) => {
@@ -260,7 +296,7 @@ export default function TopGear(props) {
                 <Divider style={{ marginBottom: 10, width: "42%" }} />
                 <Grid container spacing={1}>
                   {[...props.player.getActiveItems(key.slotName)].map((item, index) => (
-                    <MiniItemCard key={index} item={item} activateItem={activateItem} />
+                    <MiniItemCard key={index} item={item} activateItem={activateItem} delete={deleteItem} />
                   ))}
                 </Grid>
               </Grid>
@@ -313,6 +349,13 @@ export default function TopGear(props) {
           </div>
         </div>
       </div>
+
+      {/*item deleted snackbar */}
+      <Snackbar open={openDelete} autoHideDuration={3000} onClose={handleCloseDelete}>
+        <Alert onClose={handleCloseDelete} severity="error">
+          {t("QuickCompare.ItemDeleted")}
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

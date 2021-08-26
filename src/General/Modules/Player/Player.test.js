@@ -11,7 +11,20 @@ describe("Test Constructor", () => {
 
 });
 
+describe("Test Default Model Weights", () => {
 
+    test("Mistweaver Monk", () => {
+        const monk = new Player("Mock", "Mistweaver Monk", 99, "NA", "Stonemaul", "Night Elf");
+        const starterWeights = {...monk.getActiveModel("Raid").baseStatWeights};
+        //console.log(monk)
+
+        expect(starterWeights.crit).toEqual(monk.getStatWeight("Raid", "crit"))
+
+    });
+
+});
+
+/*
 describe("Test Default Stat Weights", () => {
 
     test("Druid", () => {
@@ -58,15 +71,15 @@ describe("Test Default Stat Weights", () => {
     
     // Can add the other specs below if necessary.
 
-});
+});*/
 
 
 describe("Covenant getters / setters", () => {
     test("Set Correct Covenant", () => {
         const druid = new Player("Broccoliz", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
 
-        druid.setCovenant("night_fae");
-        expect(druid.getCovenant()).toEqual("night_fae");
+        druid.setCovenant("venthyr");
+        expect(druid.getCovenant()).toEqual("venthyr");
     });
     /*
     test("Set Invalid Covenant", () => {
@@ -75,6 +88,19 @@ describe("Covenant getters / setters", () => {
             {druid.setCovenant("Maldraxxus");
         }).toThrow("Invalid Covenant Supplied");   
     }); */
+    test("Set null covenant.", () => {
+        const druid = new Player("VoulkDruid", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+
+        druid.setCovenant(null);
+        expect(druid.getCovenant()).toEqual("night_fae");
+    });
+
+    test("Set blank covenant.", () => {
+        const druid = new Player("VoulkDruid", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+
+        druid.setCovenant("");
+        expect(druid.getCovenant()).toEqual("night_fae");
+    });
 
     test("Set Correct Covenant but with erroneous quotes.", () => {
         const druid = new Player("VoulkDruid", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
@@ -87,14 +113,14 @@ describe("Covenant getters / setters", () => {
 describe("GetHighestStatWeight", () => {
     test("Basic Test", () => {
         const druid = new Player("Torty", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
-        druid.statWeights.Raid = {intellect: 1, crit: 0.45, haste: 0.44, mastery: 0.42, leech: 0.6};
+        druid.getActiveModel("Raid").setStatWeights({intellect: 1, crit: 0.45, haste: 0.44, mastery: 0.42, leech: 0.6});
 
         expect(druid.getHighestStatWeight("Raid")).toEqual("crit");
         
     });
     test("Stat Weights with Ignore", () => {
         const druid = new Player("Myth", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
-        druid.statWeights.Raid = {intellect: 1, crit: 0.45, haste: 0.44, mastery: 0.42, leech: 0.6};
+        druid.getActiveModel("Raid").setStatWeights({intellect: 1, crit: 0.45, haste: 0.44, mastery: 0.42, leech: 0.6});
 
         expect(druid.getHighestStatWeight("Raid", ["crit"])).toEqual("haste");
 
