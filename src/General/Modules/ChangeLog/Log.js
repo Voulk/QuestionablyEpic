@@ -10,6 +10,19 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 20,
+    date: "24th August",
+    changes: [
+      "Added Domination Shard panel. Add your shards once, and then let QE Live automatically pick which are best.",
+      "Full support in both Top Gear and Upgrade Finder.",
+      "Removed the Vault Domination Gem setting. The panel does the same thing but is much easier to use.",
+      "DPS from shards is now included in the Dungeon setting. Further settings will be available in this area soon.",
+      "Re-added a delete button to items.",
+      "Competitive Alternatives from the vault will now have the Vault colour scheme."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 19,
     date: "18th August",
     changes: [

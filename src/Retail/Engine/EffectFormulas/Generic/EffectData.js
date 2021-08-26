@@ -158,7 +158,7 @@ export const effectData = [
           {
             coefficient: [1.578947, 1.978947, 2.368421, 2.768421, 3.157895], 
             table: -1,
-            uptime: 0.5
+            uptime: 0.45
           },
         ],
       },

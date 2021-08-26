@@ -37,6 +37,8 @@
     "Haste": "Haste",
     "Mastery": "Mastery",
     "Versatility": "Versatility",
+    "Bonus HPS": "Bonus HPS",
+    "Bonus DPS": "Bonus DPS",
     "Leech": "Leech",
     "Region": "Region",
     "Race": "Race",
@@ -665,9 +667,9 @@
         "Setting3Title": "Auto Socket Items",
         "Setting3TextFieldLabel": "",
         "Setting4Spacer": "--------------------------------------------------------------------",
-        "Setting4Tooltip": "Choose a Gem to socket into your vault items",
-        "Setting4Title": "Vault Dom Gem",
-        "Setting4TextFieldLabel": "Vault Dom Gem",
+        "Setting4Tooltip": "If selecting yes, all domination gems will be automatically assigned by the app, ignoring what you currently have socketed.",
+        "Setting4Title": "Replace Domination Gems",
+        "Setting4TextFieldLabel": "Replace Dom Gems",
         "Setting5Spacer": "--------------------------------------------------------------------",
         "Setting5Tooltip": "Choose your playstyle",
         "Setting5Title": "Playstyle",
@@ -764,6 +766,10 @@
       "CompetitiveAlternative": "Competitive Alternatives",
       "StatPanel": { "AvgStats": "Average Stats (includes procs)" },
       "itemMissingError": "Error: Add item - "
+    },
+    "DominationSelection": {
+      "HeaderTitle": "Domination Gems",
+      "ShardNotOwned": "not owned"
     },
 
     "UpgradeFinder": {

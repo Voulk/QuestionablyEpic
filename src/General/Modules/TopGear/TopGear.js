@@ -6,7 +6,8 @@ import "./../QuickCompare/QuickCompare.css";
 import { useTranslation } from "react-i18next";
 // import { testTrinkets } from "../Engine/EffectFormulas/Generic/TrinketEffectFormulas";
 import { apiSendTopGearSet } from "../SetupAndMenus/ConnectionUtilities";
-import { Button, Grid, Typography, Divider } from "@material-ui/core";
+import { Button, Grid, Typography, Divider, Snackbar } from "@material-ui/core";
+import MuiAlert from "@material-ui/lab/Alert";
 import { buildWepCombos } from "../../Engine/ItemUtilities";
 import MiniItemCard from "./MiniItemCard";
 //import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
@@ -17,6 +18,7 @@ import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
+import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems";
 import ItemBar from "../ItemBar/ItemBar";
 
 const useStyles = makeStyles((theme) => ({
@@ -70,6 +72,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
 const TOPGEARCAP = 31; // TODO
 
 export default function TopGear(props) {
@@ -81,9 +87,11 @@ export default function TopGear(props) {
 
   /* ---------------------------------------- Popover Props --------------------------------------- */
   const [anchorEl, setAnchorEl] = useState(null);
+  /* ----------------------------- Snackbar State ----------------------------- */
+  const [openDelete, setOpenDelete] = useState(false);
 
   const [activeSlot, setSlot] = useState("");
-    /* ------------ itemList isn't used for anything here other than to trigger rerenders ----------- */
+  /* ------------ itemList isn't used for anything here other than to trigger rerenders ----------- */
   const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
   const [btnActive, setBtnActive] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
@@ -143,6 +151,24 @@ export default function TopGear(props) {
     }
     setErrorMessage(errorMessage);
     return topgearOk;
+  };
+
+  const handleClickDelete = () => {
+    setOpenDelete(true);
+  };
+
+  const handleCloseDelete = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenDelete(false);
+  };
+
+  const deleteItem = (unique) => {
+    let player = props.player;
+    player.deleteActiveItem(unique);
+    setItemList([...player.getActiveItems(activeSlot)]);
+    handleClickDelete();
   };
 
   const unleashTopGear = () => {
@@ -223,7 +249,6 @@ export default function TopGear(props) {
     { label: t("slotNames.offhands"), slotName: "Offhands" },
   ];
   if (gameType === "BurningCrusade") slotList.push({ label: t("slotNames.relics"), slotName: "Relics & Wands" });
-
   return (
     <div className={classes.root}>
       <Grid container spacing={1} justify="center">
@@ -242,11 +267,24 @@ export default function TopGear(props) {
         </Grid>
         <Grid item xs={12}>
           {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
-          <Settings player={props.player} contentType={contentType} userSettings={userSettings} editSettings={editSettings} singleUpdate={props.singleUpdate} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
+          <Settings
+            player={props.player}
+            contentType={contentType}
+            userSettings={userSettings}
+            editSettings={editSettings}
+            singleUpdate={props.singleUpdate}
+            hymnalShow={true}
+            groupBuffShow={true}
+            autoSocket={true}
+          />
         </Grid>
         <Grid item xs={12}>
           {<ItemBar player={props.player} setItemList={setItemList} />}
         </Grid>
+        {gameType === "Retail" ? <Grid item xs={12}>
+          {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
+          <DominationGems player={props.player} singleUpdate={props.singleUpdate} userSettings={userSettings} />
+        </Grid> : ""}
 
         {props.player.activeItems.length > 0 ? (
           slotList.map((key, index) => {
@@ -258,7 +296,7 @@ export default function TopGear(props) {
                 <Divider style={{ marginBottom: 10, width: "42%" }} />
                 <Grid container spacing={1}>
                   {[...props.player.getActiveItems(key.slotName)].map((item, index) => (
-                    <MiniItemCard key={index} item={item} activateItem={activateItem} />
+                    <MiniItemCard key={index} item={item} activateItem={activateItem} delete={deleteItem} />
                   ))}
                 </Grid>
               </Grid>
@@ -311,6 +349,13 @@ export default function TopGear(props) {
           </div>
         </div>
       </div>
+
+      {/*item deleted snackbar */}
+      <Snackbar open={openDelete} autoHideDuration={3000} onClose={handleCloseDelete}>
+        <Alert onClose={handleCloseDelete} severity="error">
+          {t("QuickCompare.ItemDeleted")}
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

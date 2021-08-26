@@ -143,8 +143,8 @@ export default function QEMainMenu(props) {
             </Button>
           </Grid>
           {<Grid item xs={12}>
-            <MessageOfTheDay /> 
-            </Grid>}
+            <MessageOfTheDay gameType={gameType} /> 
+          </Grid>}
 
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.

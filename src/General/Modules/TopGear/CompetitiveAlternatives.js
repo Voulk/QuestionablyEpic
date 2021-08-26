@@ -73,9 +73,9 @@ function CompetitiveAlternatives(props) {
                                   src={getItemIcon(item.id, gameType)}
                                   style={{
                                     borderRadius: 4,
-                                    borderWidth: "1px",
-                                    borderStyle: "solid",
-                                    borderColor: itemQuality(item, gameType),
+                                    borderWidth: item.vaultItem ? "2px" : "1px",
+                                    borderStyle: item.vaultItem ? "dashed" : "solid",
+                                    borderColor: item.vaultItem ? "#0288d1" : itemQuality(item, gameType),
                                   }}
                                 />
                                 <div className="bottom-right-ItemCards"> {item.level} </div>

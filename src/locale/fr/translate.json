@@ -609,6 +609,11 @@
       "itemMissingError": "Error: Add item - "
     },
 
+    "DominationSelection": {
+      "HeaderTitle": "Domination Gems",
+      "ShardNotOwned": "not owned"
+    },
+
     "UpgradeFinder": {
       "Header": "Upgrade Finder Results",
       "MythicPlus": "Mythique +",

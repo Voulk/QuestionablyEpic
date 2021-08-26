@@ -267,7 +267,6 @@ export function getItemIcon(id, gameType = "Retail") {
 
 export function getGemIcon(id) {
   const gem = dominationGemDB.filter((gem) => gem.gemID === id);
-  console.log(gem[0]);
   let gemIcon = "";
   if (gem[0] === undefined) {
     return "https://wow.zamimg.com/images/icons/socket-domination.gif";
@@ -441,6 +440,7 @@ export function getDomGemEffect(id) {
   else return "";
 }
 
+
 export function buildStatString(stats, effect, lang = "en") {
   let statString = "";
   let statsList = [];
@@ -593,6 +593,11 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
   let bonus_stats = {};
   let item_stats = { ...item.stats };
 
+  // Check if Dom Slot
+  if (item.hasDomSocket && 'domGemID' in item && item.domGemID != 0) {
+    const effect = getDomGemEffect(item.domGemID)
+    bonus_stats = getEffectValue(effect, player, player.getActiveModel(contentType), contentType, item.level, {}, gameType);
+  }
   // Calculate Effect.
   if (item.effect) {
     bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, {}, gameType);
