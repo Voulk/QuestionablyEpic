@@ -56,32 +56,6 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-// Consider moving to somewhere more globally accessible.
-// These are value : label pairs that automatically pull the translated version of the slot name.
-// TODO: Add the remaining slots.
-function getSlots() {
-  const { t } = useTranslation();
-  let slots = [
-    { value: "Head", activeItem: "Head", label: t("slotNames.head") },
-    { value: "Neck", activeItem: "Neck", label: t("slotNames.neck") },
-    { value: "Shoulder", activeItem: "Shoulder", label: t("slotNames.shoulder") },
-    { value: "Back", activeItem: "Back", label: t("slotNames.back") },
-    { value: "Chest", activeItem: "Chest", label: t("slotNames.chest") },
-    { value: "Wrist", activeItem: "Wrist", label: t("slotNames.wrists") },
-    { value: "Hands", activeItem: "Hands", label: t("slotNames.hands") },
-    { value: "Waist", activeItem: "Waist", label: t("slotNames.waist") },
-    { value: "Legs", activeItem: "Legs", label: t("slotNames.legs") },
-    { value: "Feet", activeItem: "Feet", label: t("slotNames.feet") },
-    { value: "Finger", activeItem: "Finger", label: t("slotNames.finger") },
-    { value: "Trinket", activeItem: "Trinket", label: t("slotNames.trinket") },
-    { value: "Weapons", activeItem: "1H Weapon", label: t("slotNames.weapons") },
-    { value: "Offhands", activeItem: "Offhands", label: t("slotNames.offhands") },
-    { value: "Relics & Wands", activeItem: "Relics & Wands", label: t("slotNames.relics") },
-  ];
-
-  return slots;
-}
-
 export default function ItemBar(props) {
   const contentType = useSelector((state) => state.contentType);
   const { t, i18n } = useTranslation();
@@ -91,7 +65,6 @@ export default function ItemBar(props) {
   const [anchorEl, setAnchorEl] = useState(null);
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
-  const slots = getSlots();
   const gameType = useSelector((state) => state.gameType);
 
   /* ----------------------------- Snackbar State ----------------------------- */
@@ -143,13 +116,6 @@ export default function ItemBar(props) {
       return;
     }
     setOpen(false);
-  };
-
-  const handleCloseDelete = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setOpenDelete(false);
   };
 
   /* ---------------- Add an item to our "Active Items" array. ---------------- */
@@ -219,7 +185,7 @@ export default function ItemBar(props) {
   };
   const handleInputChange = (event, newInputValue) => {
     setInputValue(newInputValue);
-    if (newInputValue.length > 0) {
+    if (newInputValue.length > 2) {
       setOpenAuto(true);
     } else {
       setOpenAuto(false);
@@ -264,9 +230,7 @@ export default function ItemBar(props) {
                 getOptionLabel={(option) => option.label}
                 getOptionSelected={(option, value) => option.label === value.label}
                 inputValue={inputValue}
-                onInputChange={(event, newInputValue) => {
-                  setInputValue(newInputValue);
-                }}
+                onInputChange={handleInputChange}
                 freeSolo
                 style={{ width: "100%" }}
                 renderInput={(params) => <TextField {...params} label={t("QuickCompare.ItemName")} variant="outlined" />}
