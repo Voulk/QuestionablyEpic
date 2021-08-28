@@ -76,7 +76,7 @@ export default function UpgradeFinderSimCnew(props) {
 
   return (
     <Grid item xs={12}>
-      <Paper elevation={0} className={check(simcStatus)} style={{ display: "inline-flex", width: "100%", height: 102 }}>
+      <Paper elevation={0} className={check(simcStatus)} style={{ display: "inline-flex", width: "100%" }}>
         {/* <Avatar src="https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-main.jpg" variant="rounded" className={classes.rounded} /> */}
         <div
           style={{
@@ -94,18 +94,19 @@ export default function UpgradeFinderSimCnew(props) {
           }}
         />
 
-        <Grid container direction="row" justify="space-between" spacing={1}>
+        <Grid container direction="row" justify="space-between" spacing={1} style={{ padding: 8 }}>
           <Grid item xs="auto">
-            <div style={{ display: "inline-flex" }}>
-              {classIcons(currentCharacter.spec, { height: 18, width: 18, margin: "0px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
-              <Typography style={{ color: classColoursJS(currentCharacter.spec) }}>{currentCharacter.charName}</Typography>
-              <Typography style={{ color: classColoursJS(currentCharacter.spec) }}>{currentCharacter.getRealmString()}</Typography>
+            <div style={{ display: "inline-flex", verticalAlign: "middle" }}>
+              {classIcons(currentCharacter.spec, { height: 30, width: 30, margin: "0px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
+              <Typography variant="h6" style={{ color: classColoursJS(currentCharacter.spec) }}>
+                {currentCharacter.charName + " - " + currentCharacter.getRealmString()}
+              </Typography>
             </div>
           </Grid>
           <Grid item xs={12}>
             <Divider />
           </Grid>
-          <Grid item xs={2} style={{ textAlign: "center" }}>
+          <Grid item xs="auto" style={{ textAlign: "center" }}>
             <SimCraftInput
               buttonLabel={t("UpgradeFinderFront.SimCButton")}
               disableElevation={true}
@@ -116,7 +117,7 @@ export default function UpgradeFinderSimCnew(props) {
               allChars={props.allChars}
             />
           </Grid>
-          <Grid item container xs={10} alignItems="center" justify="center" spacing={1}>
+          <Grid item container xs={9} alignItems="center" justify="center" spacing={1}>
             <Grid item xs={2}>
               <Typography color="primary" align="center" variant="h5">
                 {t("Equipped")}:
