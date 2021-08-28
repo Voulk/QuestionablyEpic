@@ -20,6 +20,7 @@ import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
 import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems";
 import ItemBar from "../ItemBar/ItemBar";
+import UpgradeFinderSimCnew from "../CharacterPanel/CharacterPanel"
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -262,8 +263,11 @@ export default function TopGear(props) {
         <Grid item xs={12}>
           <HelpText blurb={helpBlurb} text={helpText} />
         </Grid>
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           {<UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />}
+        </Grid> */}
+        <Grid item xs={12}>
+          <UpgradeFinderSimCnew player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
         </Grid>
         <Grid item xs={12}>
           {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
@@ -281,10 +285,14 @@ export default function TopGear(props) {
         <Grid item xs={12}>
           {<ItemBar player={props.player} setItemList={setItemList} />}
         </Grid>
-        {gameType === "Retail" ? <Grid item xs={12}>
-          {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
-          <DominationGems player={props.player} singleUpdate={props.singleUpdate} userSettings={userSettings} />
-        </Grid> : ""}
+        {gameType === "Retail" ? (
+          <Grid item xs={12}>
+            {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
+            <DominationGems player={props.player} singleUpdate={props.singleUpdate} userSettings={userSettings} />
+          </Grid>
+        ) : (
+          ""
+        )}
 
         {props.player.activeItems.length > 0 ? (
           slotList.map((key, index) => {
