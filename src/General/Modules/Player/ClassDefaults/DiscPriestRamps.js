@@ -22,6 +22,16 @@ const getDamMult = (buffs, activeAtones, t, spellName, boonStacks) => {
     return mult; 
 }
 
+const checkBuffActive = (buffs, buffName) => {
+    return buffs.filter(function (buff) {return buff.name === buffName}).length > 0;
+}
+
+const getHealingMult = (buffs, t, spellName, boonStacks) => {
+    if (spellName === "Power Word: Shield" && checkBuffActive(buffs, "Rapture")) return 3;
+    else if (spellName === "Ascended Eruption") return 1 + boonStacks * 0.04;
+    else return 1;
+}
+
 const getActiveAtone = (atoneApp, timer) => {
     let count = 0;
     atoneApp.forEach(application => {
@@ -41,7 +51,12 @@ const getStatMult = (statArray, stats) => {
 }
 
 const getCurrentStats = (statArray, buffs) => {
-    const masteryBuff = (buffs.filter(function (buff) {return buff.name === "Divine Bell"}).length > 0 ? 668 : 0);
+    const masteryBuff = (buffs.filter(function (buff) {return buff.type === "stats"}).length > 0 ? 668 : 0);
+    const statBuffs = buffs.filter(function (buff) {return buff.buffType === "stats"});
+
+    statBuffs.forEach(buff => {
+        console.log("Buff: " + JSON.stringify(buff));
+    });
     statArray.mastery = statArray.mastery += masteryBuff;
     return statArray;
 }
@@ -68,12 +83,27 @@ export const runCastSequence = (seq, player, settings = {}) => {
     let activeBuffs = [];
     let damageBreakdown = {};
     let healing = {};
-    let totalHealing = 0;
     let totalDamage = 0;
     let timer = 0;
     let nextSpell = 0;
     let boonOfTheAscended = 0;
+    const discSpells = {...DISCSPELLS};
     const sequenceLength = 45;
+
+
+    // Add anything that alters the spell dictionary
+    if (settings['Clarity of Mind']) discSpells['Rapture'][0].atonement = 21;
+    if (settings['Pelagos']) discSpells['Boon of the Ascended'].push({
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        cooldown: 0,
+        buffType: 'stats',
+        stat: 'mastery',
+        value: 315,
+        buffDuration: 30,
+    });
+    // --
 
     for (var t = 0; t < sequenceLength; t += 0.01) {
         // Tidy up buffs and atonements.
@@ -108,24 +138,25 @@ export const runCastSequence = (seq, player, settings = {}) => {
 
         if (t > nextSpell && seq.length > 0) {
             const spellName = seq.shift();
-            const fullSpell = DISCSPELLS[spellName];
+            const fullSpell = discSpells[spellName];
+            //console.log(Math.round(t*100)/100 + ": " + spellName);
 
             fullSpell.forEach(spell => {
                 // The spell is an atonement applicator. Add atonement expiry time to our array.
                 if (spell.atonement) {
                     for (var i = 0; i < spell.targets; i++) {
-                        if (spell.atonementPos === "start") atonementApp.push(t + spell.atonement);
-                        else if (spell.atonementPos === "end") atonementApp.push(t + spell.castTime + spell.atonement);
+                        let atoneDuration = spell.atonement;
+                        if (settings['Clarity of Mind'] && (spellName === "Power Word: Shield") && checkBuffActive(activeBuffs, "Rapture")) atoneDuration += 6;
+                        if (spell.atonementPos === "start") atonementApp.push(t + atoneDuration);
+                        else if (spell.atonementPos === "end") atonementApp.push(t + spell.castTime + atoneDuration);
                     }
                 }
         
                 // The spell has a healing component. Add it's effective healing.
                 if (spell.type === 'heal') {
                     const healingVal = spell.coeff * player.getInt() * getStatMult(stats, spell.secondaries) * (1 - spell.overheal);
-                    const healingMult = (spellName === "Ascended Eruption") ? 1 + boonOfTheAscended * 0.04 : 1
+                    const healingMult = getHealingMult(activeBuffs, t, spellName, boonOfTheAscended); 
                     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets;
-                    console.log("Spell Name: " + spellName + ": " +  healingVal * healingMult * targetMult);
-                    totalHealing += healingVal * healingMult * targetMult;
                     healing[spellName] = (healing[spellName] || 0) + healingVal * healingMult * targetMult;
                 }
         
@@ -134,7 +165,7 @@ export const runCastSequence = (seq, player, settings = {}) => {
                     const activeAtonements = getActiveAtone(atonementApp, t); // Get number of active atonements.
                     const damMultiplier = getDamMult(activeBuffs, activeAtonements, t, spellName, boonOfTheAscended); // Get our damage multiplier (Schism, Sins etc);
                     const damageVal = spell.coeff * player.getInt() * getStatMult(stats, spell.secondaries); // Multiply our spell coefficient by int and secondaries.
-
+                    //console.log("Hitting spell " + spellName + " with " + activeAtonements + " active atonements");
                     damageBreakdown[spellName] = (damageBreakdown[spellName] || 0) + damageVal * damMultiplier; // Stats. Non-essential.
                     totalDamage += damageVal * damMultiplier; // Stats.
 
@@ -144,7 +175,13 @@ export const runCastSequence = (seq, player, settings = {}) => {
                     extendActiveAtonements(atonementApp, t, spell.extension);
                 }
                 else if (spell.type === "buff") {
-                    activeBuffs.push({name: spellName, expiration: t + spell.buffDuration});
+                    if (spell.buffType === "stats") {
+                        activeBuffs.push({name: spellName, expiration: t + spell.buffDuration, buffType: "stats", value: spell.value});
+                    }
+                    else {
+                        activeBuffs.push({name: spellName, expiration: t + spell.buffDuration});
+                    }
+                    
                 }
 
                 // Specific cases.
@@ -171,9 +208,7 @@ export const runCastSequence = (seq, player, settings = {}) => {
                     boonOfTheAscended += 1;
                 }
 
-
                 nextSpell += (spell.castTime / getHaste(currentStats));
-
             });   
         }
     }
@@ -181,11 +216,11 @@ export const runCastSequence = (seq, player, settings = {}) => {
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     
     //console.log("D:" + JSON.stringify(damageBreakdown));
-    //console.log("T:" + timer);
     //console.log("At:" + atonementApp);
-    console.log("H:" + JSON.stringify(healing));
-    console.log("Total healing: " + sumValues(healing));
-    //console.log("Purge: " + purgeTicks);
+    //console.log("H:" + JSON.stringify(healing));
+    //console.log("Total healing: " + sumValues(healing));
+
+    return sumValues(healing)
 
 }
 
@@ -282,6 +317,25 @@ const DISCSPELLS = {
         secondaries: ['crit', 'vers'],
         overheal: 0,
     }],
+    "Rapture": [{
+        type: "heal",
+        castTime: 1.5,
+        cost: 1550,
+        coeff: 1.65 * 3,
+        cooldown: 0,
+        atonement: 15,
+        atonementPos: 'start',
+        targets: 1,
+        secondaries: ['crit', 'vers'],
+        overheal: 0,
+    },
+    {
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        cooldown: 90,
+        buffDuration: 8,
+    }],
     "Power Word: Radiance": [{
         type: "heal",
         castTime: 2,
@@ -331,5 +385,16 @@ const DISCSPELLS = {
         cost: 0,
         cooldown: 90,
         buffDuration: 9,
-    }]
+        buffType: 'stats',
+        stat: "mastery",
+        value: 668,
+    }],
+    "Boon of the Ascended": [{
+        type: "buff",
+        castTime: 1.5,
+        cost: 0,
+        cooldown: 180,
+        buffType: "spec",
+        buffDuration: 10,
+    }],
 }

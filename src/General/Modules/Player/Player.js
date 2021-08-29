@@ -607,7 +607,7 @@ class Player {
 
       this.activeStats = {
         intellect: 1800,
-        haste: 700,
+        haste: 850,
         crit: 480,
         mastery: 370,
         versatility: 320,
