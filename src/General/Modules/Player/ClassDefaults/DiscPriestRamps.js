@@ -14,10 +14,11 @@ const extendActiveAtonements = (atoneApp, timer, extension) => {
     });
 }
 
-const getDamMult = (buffs, activeAtones, t) => {
+const getDamMult = (buffs, activeAtones, t, spellName, boonStacks) => {
     const sins = {0: 1.12, 1: 1.12, 2: 1.1, 3: 1.08, 4: 1.07, 5: 1.06, 6: 1.05, 7: 1.05, 8: 1.04, 9: 1.04, 10: 1.03}
     const schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.25 : 1; // TODO check buff. 5112
-    const mult = (activeAtones > 10 ? 1.03 : sins[activeAtones]) * schism
+    let mult = (activeAtones > 10 ? 1.03 : sins[activeAtones]) * schism
+    if (spellName === "Ascended Eruption") mult = mult * (1 + boonStacks * 0.04);
     return mult; 
 }
 
@@ -35,15 +36,32 @@ const getStatMult = (statArray, stats) => {
     let mult = 1;
     if (stats.includes("vers")) mult *= (1 + statArray['versatility'] / 40 / 100);
     if (stats.includes("crit")) mult *= (1.05 + statArray['crit'] / 35 / 100);
+    if (stats.includes("mastery")) mult *= (1.108 + statArray['mastery'] / 25.9259 / 100);
     return mult;
+}
+
+const getCurrentStats = (statArray, buffs) => {
+    const masteryBuff = (buffs.filter(function (buff) {return buff.name === "Divine Bell"}).length > 0 ? 668 : 0);
+    statArray.mastery = statArray.mastery += masteryBuff;
+    return statArray;
 }
 
 const getHaste = (stats) => {
     return 1 + stats.haste / 32 / 100;
 }
 
-export const runCastSequence = (seq, player) => {
-    const atonementApp = [];
+// Current atonement transfer rate.
+const getAtoneTrans = (mastery) => {
+    const atonementBaseTransfer = 0.5;
+    return atonementBaseTransfer * (1.108 + mastery / 25.9259 / 100);
+}
+
+const getSqrt = (targets) => {
+    return Math.sqrt(targets);
+}
+
+export const runCastSequence = (seq, player, settings = {}) => {
+    let atonementApp = [];
     const stats = player.activeStats; //
     let purgeTicks = [];
     let fiendTicks = [];
@@ -54,133 +72,205 @@ export const runCastSequence = (seq, player) => {
     let totalDamage = 0;
     let timer = 0;
     let nextSpell = 0;
+    let boonOfTheAscended = 0;
     const sequenceLength = 45;
 
-    for (var t = 0; t < sequenceLength; t += 0.1) {
+    for (var t = 0; t < sequenceLength; t += 0.01) {
+        // Tidy up buffs and atonements.
+        activeBuffs = activeBuffs.filter(function (buff) {return buff.expiration > t});
+        atonementApp = atonementApp.filter(function (buff) {return buff > t});
+
+        let currentStats = {...stats};
+        currentStats = getCurrentStats(currentStats, activeBuffs);
+
         // Check for a Purge tick at this timestamp.
         if (purgeTicks.length > 0 && t > purgeTicks[0]) {
             // Purge tick
             purgeTicks.shift();
             const activeAtonements = getActiveAtone(atonementApp, timer)
-            const damageVal = DISCSPELLS['Purge the Wicked'].dot.coeff * player.getInt() * stats.versatility / 40;
+            const damageVal = DISCSPELLS['Purge the Wicked'][0].dot.coeff * player.getInt() * stats.versatility / 40;
             const damMultiplier = getDamMult(activeBuffs, activeAtonements, t)
             damageBreakdown['Purge the Wicked'] = (damageBreakdown['Purge the Wicked'] || 0) + damageVal * damMultiplier;
             totalDamage += damageVal;
-            healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal;
+            healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * getAtoneTrans(currentStats.mastery);
         }
 
         // Check for Fiend ticks at this timestamp.
         if (fiendTicks.length > 0 && t > fiendTicks[0]) {
             fiendTicks.shift();
             const activeAtonements = getActiveAtone(atonementApp, timer)
-            const damageVal = DISCSPELLS['Shadowfiend'].dot.coeff * player.getInt() * stats.versatility / 40;
+            const damageVal = DISCSPELLS['Shadowfiend'][0].dot.coeff * player.getInt() * stats.versatility / 40;
             const damMultiplier = getDamMult(activeBuffs, activeAtonements, t)
             damageBreakdown['Shadowfiend'] = (damageBreakdown['Shadowfiend'] || 0) + damageVal * damMultiplier;
             totalDamage += damageVal;
-            healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal;
+            healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * getAtoneTrans(currentStats.mastery);
         }
 
         if (t > nextSpell && seq.length > 0) {
             const spellName = seq.shift();
-            const spell = DISCSPELLS[spellName];
-            
-            // The spell is an atonement applicator. Add atonement expiry time to our array.
-            if (spell.atonement) {
-                for (var i = 0; i < spell.targets; i++) {
-                    if (spell.atonementPos === "start") atonementApp.push(t + spell.atonement);
-                    else if (spell.atonementPos === "end") atonementApp.push(t + spell.castTime + spell.atonement);
+            const fullSpell = DISCSPELLS[spellName];
+
+            fullSpell.forEach(spell => {
+                // The spell is an atonement applicator. Add atonement expiry time to our array.
+                if (spell.atonement) {
+                    for (var i = 0; i < spell.targets; i++) {
+                        if (spell.atonementPos === "start") atonementApp.push(t + spell.atonement);
+                        else if (spell.atonementPos === "end") atonementApp.push(t + spell.castTime + spell.atonement);
+                    }
                 }
-            }
-    
-            // The spell has a healing component. Add it's effective healing.
-            if (spell.type === 'heal') {
-                const healingVal = spell.coeff * player.getInt() * getStatMult(stats, spell.secondaries);
-                totalHealing += healingVal
-                healing[spellName] = (healing[spellName] || 0) + healingVal;
-            }
-    
-            // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
-            else if (spell.type === 'damage') {
-                const activeAtonements = getActiveAtone(atonementApp, t); // Get number of active atonements.
-                const damMultiplier = getDamMult(activeBuffs, activeAtonements, t); // Get our damage multiplier (Schism, Sins etc);
-                const damageVal = spell.coeff * player.getInt() * getStatMult(stats, spell.secondaries); // Multiply our spell coefficient by int and secondaries.
+        
+                // The spell has a healing component. Add it's effective healing.
+                if (spell.type === 'heal') {
+                    const healingVal = spell.coeff * player.getInt() * getStatMult(stats, spell.secondaries) * (1 - spell.overheal);
+                    const healingMult = (spellName === "Ascended Eruption") ? 1 + boonOfTheAscended * 0.04 : 1
+                    const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets;
+                    console.log("Spell Name: " + spellName + ": " +  healingVal * healingMult * targetMult);
+                    totalHealing += healingVal * healingMult * targetMult;
+                    healing[spellName] = (healing[spellName] || 0) + healingVal * healingMult * targetMult;
+                }
+        
+                // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
+                else if (spell.type === 'damage') {
+                    const activeAtonements = getActiveAtone(atonementApp, t); // Get number of active atonements.
+                    const damMultiplier = getDamMult(activeBuffs, activeAtonements, t, spellName, boonOfTheAscended); // Get our damage multiplier (Schism, Sins etc);
+                    const damageVal = spell.coeff * player.getInt() * getStatMult(stats, spell.secondaries); // Multiply our spell coefficient by int and secondaries.
 
-                damageBreakdown[spellName] = (damageBreakdown[spellName] || 0) + damageVal * damMultiplier; // Stats. Non-essential.
-                totalDamage += damageVal * damMultiplier; // Stats.
+                    damageBreakdown[spellName] = (damageBreakdown[spellName] || 0) + damageVal * damMultiplier; // Stats. Non-essential.
+                    totalDamage += damageVal * damMultiplier; // Stats.
 
-                healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * damMultiplier;
-            }
-            else if (spell.type === "atonementExtension") {
-                extendActiveAtonements(atonementApp, t, spell.extension);
-            }
+                    healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * damMultiplier * getAtoneTrans(currentStats.mastery);
+                }
+                else if (spell.type === "atonementExtension") {
+                    extendActiveAtonements(atonementApp, t, spell.extension);
+                }
+                else if (spell.type === "buff") {
+                    activeBuffs.push({name: spellName, expiration: t + spell.buffDuration});
+                }
 
-            // Specific cases.
-            if (spellName === "Purge the Wicked") {
-                const ticks = spell.dot.duration / spell.dot.tickRate; // TODO: Add Haste.
-                for (var k = 1; k <= ticks; k++ ) {
-                    purgeTicks.push(t + spell.dot.tickRate * k);
-                }  
-            }
-            else if (spellName === "Shadowfiend") {
-                const ticks = spell.dot.duration / spell.dot.tickRate; // Add Haste.
-                for (var k = 1; k <= ticks; k++ ) {
-                    fiendTicks.push(t + spell.dot.tickRate * k);
-                }  
-            }
-            else if (spellName === "Schism") {
-                // Add the Schism buff. 
-                activeBuffs.push({name: "Schism", expiration: t + spell.buffDuration});
-            }
+                // Specific cases.
+                if (spellName === "Purge the Wicked") {
+                    const ticks = spell.dot.duration / (spell.dot.tickRate / getHaste(currentStats));
+                    for (var k = 1; k <= ticks; k++ ) {
+                        purgeTicks.push(t + spell.dot.tickRate * k);
+                    }  
+                }
+                else if (spellName === "Shadowfiend") {
+                    const ticks = spell.dot.duration / (spell.dot.tickRate / getHaste(currentStats)); // Add Haste.
+                    for (var k = 1; k <= ticks; k++ ) {
+                        fiendTicks.push(t + spell.dot.tickRate * k);
+                    }  
+                }
+                else if (spellName === "Schism") {
+                    // Add the Schism buff. 
+                    activeBuffs.push({name: "Schism", expiration: t + spell.buffDuration});
+                }
+                else if (spellName === "Ascended Blast") {
+                    boonOfTheAscended += 5;
+                }
+                else if (spellName === "Ascended Nova") {
+                    boonOfTheAscended += 1;
+                }
 
 
-            nextSpell += (spell.castTime);
+                nextSpell += (spell.castTime / getHaste(currentStats));
 
-            // Tidy up buffs and atonements.
-
+            });   
         }
     }
 
-    console.log("H:" + JSON.stringify(healing));
-    console.log("D:" + JSON.stringify(damageBreakdown));
+    const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
+    
+    //console.log("D:" + JSON.stringify(damageBreakdown));
     //console.log("T:" + timer);
-    console.log("At:" + atonementApp);
+    //console.log("At:" + atonementApp);
+    console.log("H:" + JSON.stringify(healing));
+    console.log("Total healing: " + sumValues(healing));
     //console.log("Purge: " + purgeTicks);
 
 }
 
 const DISCSPELLS = {
-    "Mind Blast": {
+    "Mind Blast": [{
         type: "damage",
         castTime: 1.5,
         cost: 1250,
         coeff: 0.74,
         cooldown: 15,
         secondaries: ['crit', 'vers']
-    },
-    "Smite": {
+    }],
+    "Smite": [{
         type: "damage",
         castTime: 1.5,
         cost: 200,
         coeff: 0.5,
         cooldown: 0,
         secondaries: ['crit', 'vers'],
-    },
-    "Schism": {
+    }],
+    "Schism": [{
         type: "damage",
         castTime: 1.5,
         cost: 0,
         coeff: 1.41,
         buffDuration: 7,
         secondaries: ['crit', 'vers'],
-    },
-    "Penance": {
+    }],
+    "Penance": [{
         type: "damage",
         castTime: 2,
         cost: 800,
         coeff: 1.128,
         secondaries: ['crit', 'vers'],
-    },
-    "Power Word: Shield": {
+    }],
+    "Ascended Blast": 
+        [{
+        type: "damage",
+        castTime: 1.5,
+        cost: 0,
+        coeff: 1.68,
+        secondaries: ['crit', 'vers'],
+        },
+        {
+            type: "heal",
+            castTime: 0,
+            coeff: 2.15,
+            targets: 1,
+            secondaries: ['crit', 'vers', 'mastery'],
+            overheal: 0.6,
+        }],
+    "Ascended Nova": 
+        [{
+        type: "damage",
+        castTime: 1,
+        cost: 0,
+        coeff: 0.7,
+        secondaries: ['crit', 'vers'],
+        },
+        {
+            type: "heal",
+            castTime: 0,
+            coeff: 0.24,
+            targets: 6,
+            secondaries: ['crit', 'vers', 'mastery'],
+            overheal: 0.3,
+        }],
+    "Ascended Eruption": 
+        [{
+        type: "damage",
+        castTime: 0,
+        cost: 0,
+        coeff: 1.68,
+        secondaries: ['crit', 'vers'],
+        },
+        {
+            type: "heal",
+            castTime: 0,
+            coeff: 2.15,
+            targets: 20,
+            secondaries: ['crit', 'vers'],
+            tags: ['sqrt'],
+            overheal: 0.6,
+        }],
+    "Power Word: Shield": [{
         type: "heal",
         castTime: 1.5,
         cost: 1550,
@@ -189,9 +279,10 @@ const DISCSPELLS = {
         atonement: 15,
         atonementPos: 'start',
         targets: 1,
-        secondaries: ['crit', 'vers']
-    },
-    "Power Word: Radiance": {
+        secondaries: ['crit', 'vers'],
+        overheal: 0,
+    }],
+    "Power Word: Radiance": [{
         type: "heal",
         castTime: 2,
         cost: 3250,
@@ -200,9 +291,10 @@ const DISCSPELLS = {
         cooldown: 20,
         atonement: 9,
         atonementPos: 'end',
-        secondaries: ['crit', 'vers']
-    },
-    "Purge the Wicked": {
+        secondaries: ['crit', 'vers'],
+        overheal: 0.35,
+    }],
+    "Purge the Wicked": [{
         type: "damage",
         castTime: 1.5,
         cost: 900,
@@ -213,8 +305,8 @@ const DISCSPELLS = {
             coeff: 0.12,
             duration: 20,
         }
-    },
-    "Shadowfiend": {
+    }],
+    "Shadowfiend": [{
         type: "",
         castTime: 1.5,
         cost: 900,
@@ -225,16 +317,19 @@ const DISCSPELLS = {
             coeff: 0.46,
             duration: 15,
         }
-    },
-    "Evangelism": {
+    }],
+    "Evangelism": [{
         type: "atonementExtension",
         castTime: 1.5,
         cost: 0,
         coeff: 0,
         extension: 6,
-    }
-
+    }],
+    "Divine Bell": [{
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        cooldown: 90,
+        buffDuration: 9,
+    }]
 }
-
-
-
