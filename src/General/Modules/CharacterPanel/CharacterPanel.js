@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Paper, Typography, Divider } from "@material-ui/core";
+import { Grid, Paper, Typography, Divider, Tooltip } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
@@ -10,6 +10,8 @@ import { deepOrange, green } from "@material-ui/core/colors";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
+import Settings from "../Settings/Settings";
+import { covenantIcons } from "../CooldownPlanner/Functions/CovenantFunctions";
 
 const useStyles = makeStyles(() => ({
   slider: {
@@ -53,6 +55,7 @@ export default function UpgradeFinderSimCnew(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const gameType = useSelector((state) => state.gameType);
+  const contentType = useSelector((state) => state.contentType);
   const currentLanguage = i18n.currentLanguage;
   const simcStatus = getSimCStatus(props.player, gameType);
   const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
@@ -73,86 +76,115 @@ export default function UpgradeFinderSimCnew(props) {
   };
 
   const currentCharacter = props.allChars.allChar[props.allChars.activeChar];
+  const covenant = currentCharacter.covenant;
 
   return (
     <Grid item xs={12}>
-      <Paper elevation={0} className={check(simcStatus)} style={{ display: "inline-flex", width: "100%" }}>
+      <Paper elevation={0} className={check(simcStatus)} style={{ display: "inline-flex", width: "80%", margin: "auto" }}>
         {/* <Avatar src="https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-main.jpg" variant="rounded" className={classes.rounded} /> */}
-        <div
-          style={{
-            backgroundImage: `url("${"https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-main.jpg"}")`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center 28%",
-            backgroundSize: "auto 500%",
-            textAlign: "center",
-            position: "relative",
-            border: "1px solid rgb(118, 118, 118)",
-            flex: "1 1 10%",
-            height: 100,
-            width: 100,
-            borderRadius: 4,
-          }}
-        />
-
-        <Grid container direction="row" justify="space-between" spacing={1} style={{ padding: 8 }}>
-          <Grid item xs="auto">
-            <div style={{ display: "inline-flex", verticalAlign: "middle" }}>
-              {classIcons(currentCharacter.spec, { height: 30, width: 30, margin: "0px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
-              <Typography variant="h6" style={{ color: classColoursJS(currentCharacter.spec) }}>
-                {currentCharacter.charName + " - " + currentCharacter.getRealmString()}
-              </Typography>
-            </div>
-          </Grid>
-          <Grid item xs={12}>
-            <Divider />
-          </Grid>
-          <Grid item xs="auto" style={{ textAlign: "center" }}>
-            <SimCraftInput
-              buttonLabel={t("UpgradeFinderFront.SimCButton")}
-              disableElevation={true}
-              color="primary"
-              variant="contained"
-              player={props.player}
-              simcSnack={props.simcSnack}
-              allChars={props.allChars}
+        <Grid container direction="row" justifyContent="space-between" spacing={1} style={{ padding: 8 }} wrap="noWrap">
+          <Grid item xs={"auto"} wrap="noWrap">
+            <div
+              style={{
+                backgroundImage: `url("${"https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-main.jpg"}")`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center 28%",
+                backgroundSize: "auto 500%",
+                textAlign: "center",
+                position: "relative",
+                border: "1px solid rgb(118, 118, 118)",
+                flex: "1 1 10%",
+                height: 88,
+                width: 88,
+                borderRadius: 4,
+              }}
             />
           </Grid>
-          <Grid item container xs={9} alignItems="center" justify="center" spacing={1}>
-            <Grid item xs={2}>
-              <Typography color="primary" align="center" variant="h5">
-                {t("Equipped")}:
-              </Typography>
-            </Grid>
-            {/* <Grid item xs={5}>
+          <Grid item xs={10} wrap="noWrap">
+            <Grid container direction="row" spacing={1}>
+              <Grid item xs={12}>
+                <div style={{ display: "inline-flex", verticalAlign: "middle" }}>
+                  {classIcons(currentCharacter.spec, { height: 30, width: 30, margin: "0px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
+                  <Tooltip title={t(covenant)} style={{ color: classColoursJS(currentCharacter.spec) }} placement="top">
+                    {covenantIcons(covenant, 30, 30)}
+                  </Tooltip>
+                  <Grid container direction="row" wrap="noWrap">
+                    <Grid item xs={12} wrap="noWrap">
+                      <Typography variant="h6" style={{ color: classColoursJS(currentCharacter.spec), margin: "0px 5px 0px 5px" }}>
+                        {currentCharacter.charName + " - " + currentCharacter.getRealmString()}
+                      </Typography>
+                    </Grid>
+                    {/* <Divider orientation="vertical" flexItem />
+                    <Grid item xs={6} wrap="noWrap">
+                      <Typography variant="h6" style={{ margin: "0px 5px 0px 5px" }}>
+                        {"Playstyle: " + props.player.getActiveModel(contentType).modelName + " - " + contentType}
+                      </Typography>
+                    </Grid> */}
+                  </Grid>
+                </div>
+              </Grid>
+              <Grid item xs={12}>
+                <Divider />
+              </Grid>
+              <Grid item xs="auto" style={{ textAlign: "center" }} wrap="noWrap">
+                <SimCraftInput
+                  buttonLabel={t("UpgradeFinderFront.SimCButton")}
+                  disableElevation={true}
+                  color="primary"
+                  variant="contained"
+                  player={props.player}
+                  simcSnack={props.simcSnack}
+                  allChars={props.allChars}
+                />
+              </Grid>
+              <Grid item xs="auto" wrap="noWrap">
+                <Typography color="primary" align="center" variant="h5">
+                  {t("Equipped")}:
+                </Typography>
+              </Grid>
+              {/* <Grid item xs={5}>
                   <Typography color="primary" align="center" variant="h5">
                     {t(simcString)}
                   </Typography>
                 </Grid> */}
 
-            <Grid item xs={10}>
-              <Grid container justify="center">
-                {props.player.activeItems
-                  .filter((key) => key.isEquipped === true)
-                  .map((key, i) => (
-                    <Grid item key={i}>
-                      <a style={{ margin: "2px 2px" }} data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + wowheadDom} key={i}>
-                        <img
-                          style={{
-                            height: 22,
-                            width: 22,
-                            verticalAlign: "middle",
-                            borderRadius: "8px",
-                            border: "1px solid",
-                            borderColor: key.getQualityColor(),
-                          }}
-                          src={getItemIcon(key.id, gameType)}
-                          alt=""
-                        />
-                      </a>
-                    </Grid>
-                  ))}
+              <Grid item xs="auto" wrap="noWrap">
+                <Grid container justify="center">
+                  {props.player.activeItems
+                    .filter((key) => key.isEquipped === true)
+                    .map((key, i) => (
+                      <Grid item key={i}>
+                        <a style={{ margin: "2px 2px" }} data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + wowheadDom} key={i}>
+                          <img
+                            style={{
+                              height: 22,
+                              width: 22,
+                              verticalAlign: "middle",
+                              borderRadius: "8px",
+                              border: "1px solid",
+                              borderColor: key.getQualityColor(),
+                            }}
+                            src={getItemIcon(key.id, gameType)}
+                            alt=""
+                          />
+                        </a>
+                      </Grid>
+                    ))}
+                </Grid>
               </Grid>
             </Grid>
+          </Grid>
+          <Grid item xs={12}>
+            <Settings
+              player={props.player}
+              contentType={props.contentType}
+              userSettings={props.userSettings}
+              editSettings={props.editSettings}
+              singleUpdate={props.singleUpdate}
+              hymnalShow={true}
+              groupBuffShow={true}
+              autoSocket={true}
+            />
           </Grid>
         </Grid>
       </Paper>

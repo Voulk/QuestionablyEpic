@@ -76,7 +76,7 @@ export default function Settings(props) {
   return (
     <div className={classes.root}>
       <Accordion defaultExpanded={true} disabled={false} elevation={0}>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
+        <AccordionSummary style={{ padding: 0 }} expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
           <div className={classes.column}>
             <SettingsIcon style={{ marginRight: 4 }} />
             <Typography className={classes.heading}>{t("Settings.SettingsTitle")}</Typography>
@@ -86,7 +86,14 @@ export default function Settings(props) {
         <AccordionDetails className={classes.details}>
           {/* ---- If gameType = "Retail" show Retail Settings, otherwise show Burning Crusade Settings ---- */}
           {gameType === "Retail" ? (
-            <RetailSettings player={props.player} contentType={props.contentType} userSettings={props.userSettings} editSettings={props.editSettings} singleUpdate={props.singleUpdate} {...retailSettingsShown} />
+            <RetailSettings
+              player={props.player}
+              contentType={props.contentType}
+              userSettings={props.userSettings}
+              editSettings={props.editSettings}
+              singleUpdate={props.singleUpdate}
+              {...retailSettingsShown}
+            />
           ) : (
             <BurningCrusadeSettings player={props.player} userSettings={props.userSettings} editSettings={props.editSettings} {...burningCrusadeSettingsShown} />
           )}

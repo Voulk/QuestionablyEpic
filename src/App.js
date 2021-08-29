@@ -40,8 +40,11 @@ const theme = createMuiTheme({
   overrides: {
     MuiAccordionSummary: {
       root: {
+        minHeight: 36,
+        height: 36,
         "&$expanded": {
-          minHeight: 48,
+          minHeight: 36,
+          height: 36,
         },
       },
       content: {
