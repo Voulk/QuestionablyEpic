@@ -6,6 +6,62 @@ const getAtonementMult = () => {
 
 }
 
+export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []) => {
+    
+    let sequence = ['Purge the Wicked']
+    
+
+    if (specialSpells.includes("Rapture")) {sequence.push('Rapture'); applicators -= 1 };
+    for (var x = 0; x < applicators; x++) {
+        sequence.push('Power Word: Shield');
+    }
+    sequence.push('Power Word: Radiance');
+    sequence.push('Power Word: Radiance');
+    sequence.push('Evanglism');
+
+    if (type === "Boon") {
+        sequence.push('Boon of the Ascended');
+        sequence.push('Ascended Blast');
+        sequence.push('Schism');
+        const hastePerc = 1 + haste / 32 / 100;
+        let boonDuration = 10 - (1.5 * 2 / hastePerc);
+        const boonPackage = (1.5 + 1 + 1) / hastePerc;
+    
+        for (var i = 0; i < boonDuration / boonPackage; i++) {
+            sequence.push('Ascended Blast');
+            if (trinkets.includes("Divine Bell") && i === 0) sequence.push("Divine Bell");
+            sequence.push('Ascended Nova');
+            sequence.push('Ascended Nova');
+        }
+        console.log(boonDuration % boonPackage);
+        if (boonDuration % boonPackage > (2.5 / hastePerc)) {
+            sequence.push('Ascended Blast');
+            sequence.push('Ascended Nova');
+        }
+        if (boonDuration % boonPackage > (1.5 / hastePerc)) {
+            sequence.push('Ascended Blast');
+        }
+    }
+    else if (type === "Fiend") {
+        if (trinkets.includes("Divine Bell")) sequence.push("Divine Bell");
+        sequence.push('Shadowfiend');
+        sequence.push('Schism');
+        sequence.push('Mind Blast');
+        sequence.push('Penance');
+        sequence.push('Smite');
+        sequence.push('Smite');
+        sequence.push('Smite');
+        sequence.push('Smite');
+        sequence.push('Smite');
+        sequence.push('Smite');
+        sequence.push('Smite');
+    }
+
+    console.log(sequence);
+    return sequence;
+    
+};
+
 const extendActiveAtonements = (atoneApp, timer, extension) => {
     atoneApp.forEach((application, i, array) => {
         if (application >= timer) {
@@ -59,7 +115,6 @@ const getCurrentStats = (statArray, buffs) => {
         statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
     });
     //statArray.mastery = statArray.mastery += masteryBuff;
-    //console.log(statArray);
     return statArray;
 }
 
@@ -97,9 +152,8 @@ const deepCopyFunction = (inObject) => {
     return outObject;
   };
 
-export const runCastSequence = (sequence, player, settings = {}, conduits) => {
+export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     let atonementApp = [];
-    const stats = player.activeStats; //
     let purgeTicks = [];
     let fiendTicks = [];
     let activeBuffs = [];
@@ -128,6 +182,7 @@ export const runCastSequence = (sequence, player, settings = {}, conduits) => {
     });
     if (settings['Kleia']) activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
     if (conduits['Courageous Ascension']) discSpells['Ascended Blast'][0].coeff *= 1.4; // Blast +40%, Eruption +1% per stack (to 4%)
+    if (conduits['Shining Radiance']) discSpells['Power Word: Radiance'][0].coeff *= 1.64; // +64% radiance healing
     // --
 
     for (var t = 0; t < sequenceLength; t += 0.01) {
@@ -140,21 +195,36 @@ export const runCastSequence = (sequence, player, settings = {}, conduits) => {
 
         // Check for a Purge tick at this timestamp.
         if (purgeTicks.length > 0 && t > purgeTicks[0]) {
-            // Purge tick
             purgeTicks.shift();
             const activeAtonements = getActiveAtone(atonementApp, timer)
-            const damageVal = DISCSPELLS['Purge the Wicked'][0].dot.coeff * player.getInt() * stats.versatility / 40;
+            const damageVal = DISCSPELLS['Purge the Wicked'][0].dot.coeff * currentStats.intellect * getStatMult(currentStats, ['crit', 'vers']);
             const damMultiplier = getDamMult(activeBuffs, activeAtonements, t)
-            damageBreakdown['Purge the Wicked'] = (damageBreakdown['Purge the Wicked'] || 0) + damageVal * damMultiplier;
-            totalDamage += damageVal;
-            healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * getAtoneTrans(currentStats.mastery);
+
+            if (purgeTicks.length === 0) {
+                // If this is the last Purge tick, add a partial tick.
+                const partialTickPercentage = ((getHaste(currentStats) - 1) % 0.1) * 10;
+
+                damageBreakdown['Purge the Wicked'] = (damageBreakdown['Purge the Wicked'] || 0) + damageVal * damMultiplier * partialTickPercentage;
+                totalDamage += damageVal;
+                healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * damMultiplier * getAtoneTrans(currentStats.mastery) * partialTickPercentage;
+                console.log("Haste: " + (getHaste(currentStats) - 1))
+                console.log(partialTickPercentage); 
+            }
+            else {         
+                damageBreakdown['Purge the Wicked'] = (damageBreakdown['Purge the Wicked'] || 0) + damageVal * damMultiplier;
+                totalDamage += damageVal;
+                healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * getAtoneTrans(currentStats.mastery);
+            }
+
+
+
         }
 
         // Check for Fiend ticks at this timestamp.
         if (fiendTicks.length > 0 && t > fiendTicks[0]) {
             fiendTicks.shift();
             const activeAtonements = getActiveAtone(atonementApp, timer)
-            const damageVal = DISCSPELLS['Shadowfiend'][0].dot.coeff * player.getInt() * stats.versatility / 40;
+            const damageVal = DISCSPELLS['Shadowfiend'][0].dot.coeff * currentStats.intellect * getStatMult(currentStats, ['crit', 'vers']);
             const damMultiplier = getDamMult(activeBuffs, activeAtonements, t)
             damageBreakdown['Shadowfiend'] = (damageBreakdown['Shadowfiend'] || 0) + damageVal * damMultiplier;
             totalDamage += damageVal;
@@ -179,7 +249,7 @@ export const runCastSequence = (sequence, player, settings = {}, conduits) => {
         
                 // The spell has a healing component. Add it's effective healing.
                 if (spell.type === 'heal') {
-                    const healingVal = spell.coeff * player.getInt() * getStatMult(stats, spell.secondaries) * (1 - spell.overheal);
+                    const healingVal = spell.coeff * currentStats.intellect * getStatMult(currentStats, spell.secondaries) * (1 - spell.overheal);
                     const healingMult = getHealingMult(activeBuffs, t, spellName, boonOfTheAscended); 
                     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets;
                     healing[spellName] = (healing[spellName] || 0) + healingVal * healingMult * targetMult;
@@ -189,7 +259,7 @@ export const runCastSequence = (sequence, player, settings = {}, conduits) => {
                 else if (spell.type === 'damage') {
                     const activeAtonements = getActiveAtone(atonementApp, t); // Get number of active atonements.
                     const damMultiplier = getDamMult(activeBuffs, activeAtonements, t, spellName, boonOfTheAscended); // Get our damage multiplier (Schism, Sins etc);
-                    const damageVal = spell.coeff * player.getInt() * getStatMult(stats, spell.secondaries); // Multiply our spell coefficient by int and secondaries.
+                    const damageVal = spell.coeff * currentStats.intellect * getStatMult(currentStats, spell.secondaries); // Multiply our spell coefficient by int and secondaries.
                     //console.log("Hitting spell " + spellName + " with " + activeAtonements + " active atonements");
                     damageBreakdown[spellName] = (damageBreakdown[spellName] || 0) + damageVal * damMultiplier; // Stats. Non-essential.
                     totalDamage += damageVal * damMultiplier; // Stats.
@@ -211,16 +281,20 @@ export const runCastSequence = (sequence, player, settings = {}, conduits) => {
 
                 // Specific cases.
                 if (spellName === "Purge the Wicked") {
-                    const ticks = spell.dot.duration / (spell.dot.tickRate / getHaste(currentStats));
+                    const adjustedTickRate = spell.dot.tickRate / getHaste(currentStats);
+                    const ticks = spell.dot.duration / adjustedTickRate;
                     for (var k = 1; k <= ticks; k++ ) {
-                        purgeTicks.push(t + spell.dot.tickRate * k);
+                        purgeTicks.push(t + adjustedTickRate * k);
                     }  
+                    purgeTicks.push(t + spell.dot.duration); // Partial tick.
                 }
                 else if (spellName === "Shadowfiend") {
-                    const ticks = spell.dot.duration / (spell.dot.tickRate / getHaste(currentStats)); // Add Haste.
+                    const adjustedTickRate = spell.dot.tickRate / getHaste(currentStats);
+                    const ticks = spell.dot.duration / adjustedTickRate; // Add Haste.
                     for (var k = 1; k <= ticks; k++ ) {
-                        fiendTicks.push(t + spell.dot.tickRate * k);
-                    }  
+                        fiendTicks.push(t + adjustedTickRate * k);
+                    } 
+
                 }
                 else if (spellName === "Schism") {
                     // Add the Schism buff. 
