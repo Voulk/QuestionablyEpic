@@ -55,9 +55,11 @@ const getCurrentStats = (statArray, buffs) => {
     const statBuffs = buffs.filter(function (buff) {return buff.buffType === "stats"});
 
     statBuffs.forEach(buff => {
-        console.log("Buff: " + JSON.stringify(buff));
+        //console.log("Buff: " + JSON.stringify(buff));
+        statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
     });
-    statArray.mastery = statArray.mastery += masteryBuff;
+    //statArray.mastery = statArray.mastery += masteryBuff;
+    //console.log(statArray);
     return statArray;
 }
 
@@ -75,7 +77,27 @@ const getSqrt = (targets) => {
     return Math.sqrt(targets);
 }
 
-export const runCastSequence = (seq, player, settings = {}) => {
+const deepCopyFunction = (inObject) => {
+    let outObject, value, key;
+  
+    if (typeof inObject !== "object" || inObject === null) {
+      return inObject; // Return the value if inObject is not an object
+    }
+  
+    // Create an array or object to hold the values
+    outObject = Array.isArray(inObject) ? [] : {};
+  
+    for (key in inObject) {
+      value = inObject[key];
+  
+      // Recursively (deep) copy for nested objects, including arrays
+      outObject[key] = deepCopyFunction(value);
+    }
+  
+    return outObject;
+  };
+
+export const runCastSequence = (sequence, player, settings = {}, conduits) => {
     let atonementApp = [];
     const stats = player.activeStats; //
     let purgeTicks = [];
@@ -87,11 +109,12 @@ export const runCastSequence = (seq, player, settings = {}) => {
     let timer = 0;
     let nextSpell = 0;
     let boonOfTheAscended = 0;
-    const discSpells = {...DISCSPELLS};
+    const discSpells = deepCopyFunction(DISCSPELLS);
+    const seq = [...sequence];
     const sequenceLength = 45;
 
-
     // Add anything that alters the spell dictionary
+    
     if (settings['Clarity of Mind']) discSpells['Rapture'][0].atonement = 21;
     if (settings['Pelagos']) discSpells['Boon of the Ascended'].push({
         type: "buff",
@@ -103,6 +126,8 @@ export const runCastSequence = (seq, player, settings = {}) => {
         value: 315,
         buffDuration: 30,
     });
+    if (settings['Kleia']) activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
+    if (conduits['Courageous Ascension']) discSpells['Ascended Blast'][0].coeff *= 1.4; // Blast +40%, Eruption +1% per stack (to 4%)
     // --
 
     for (var t = 0; t < sequenceLength; t += 0.01) {
@@ -176,7 +201,7 @@ export const runCastSequence = (seq, player, settings = {}) => {
                 }
                 else if (spell.type === "buff") {
                     if (spell.buffType === "stats") {
-                        activeBuffs.push({name: spellName, expiration: t + spell.buffDuration, buffType: "stats", value: spell.value});
+                        activeBuffs.push({name: spellName, expiration: t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
                     }
                     else {
                         activeBuffs.push({name: spellName, expiration: t + spell.buffDuration});
