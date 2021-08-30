@@ -28,9 +28,24 @@ const menuStyle = {
   getContentAnchorEl: null,
 };
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(14),
+    marginRight: 4,
+  },
+  secondaryHeading: {
+    fontSize: theme.typography.pxToRem(15),
+    color: theme.palette.text.secondary,
+  },
+}));
+
 export default function RetailSettings(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const classes = useStyles();
   const playerSpec = props.player.getSpec();
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -55,8 +70,7 @@ export default function RetailSettings(props) {
   /* ----------------------------------- Domination Socket State ---------------------------------- */
   const [replaceDomGems, setReplaceDomGems] = useState(props.userSettings.replaceDomGems);
 
-
-  const specBuilds = props.player.getAllModels(props.contentType)
+  const specBuilds = props.player.getAllModels(props.contentType);
 
   const updateHymnal = (value) => {
     props.editSettings("hymnalAllies", setBounds(value, 0, 4));
@@ -102,10 +116,10 @@ export default function RetailSettings(props) {
       {/* ------------------------- Cabalist's Hymnal Item ------------------------- */}
       {props.hymnalShow === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-          <Grid container spacing={0} style={{ padding: "0px 8px" }}>
+          <Grid container spacing={0}>
             <Grid item xs={12}>
               <div style={{ display: "inline-flex" }}>
-                <Typography color="primary" style={{ marginRight: 4 }} noWrap>
+                <Typography className={classes.heading} color="primary" noWrap>
                   {t("Settings.Retail.Setting0Title")}
                 </Typography>
                 <Tooltip
@@ -142,10 +156,10 @@ export default function RetailSettings(props) {
       {/* ------------------------- Group Buff (Treat Buff as Personal Throughput) ------------------------- */}
       {props.groupBuffShow === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-          <Grid container spacing={0} style={{ padding: "0px 8px" }}>
+          <Grid container spacing={0}>
             <Grid item xs={12}>
               <div style={{ display: "inline-flex" }}>
-                <Typography color="primary" style={{ marginRight: 4 }} noWrap>
+                <Typography className={classes.heading} color="primary" noWrap>
                   {t("Settings.Retail.Setting1Title")}
                 </Typography>
                 <Tooltip
@@ -210,45 +224,45 @@ export default function RetailSettings(props) {
             )} */}
 
       {/* --------------------------------- Playstyle / Build Selection --------------------------------  */}
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-          <Grid container spacing={0} style={{ padding: "0px 8px" }}>
-            <Grid item xs={12}>
-              <div style={{ display: "inline-flex" }}>
-                <Typography color="primary" style={{ marginRight: 4 }} noWrap>
-                  {t("Settings.Retail.Setting5Title")}
-                </Typography>
-                <Tooltip
-                  title={
-                    <Typography align="center" variant="body2">
-                      {t("Settings.Retail.Setting5Tooltip")}
-                    </Typography>
-                  }
-                  placement="top-start"
-                >
-                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
-                </Tooltip>
-              </div>
-            </Grid>
-            <Grid item xs={12}>
-              <FormControl variant="outlined" fullWidth size="small">
-                <Select labelId="slots" value={props.player.activeModelID[props.contentType]} onChange={(e) => updateSpecBuild(e.target.value)} MenuProps={menuStyle}>
-                  {specBuilds.map((key, i) => (
-                    <MenuItem id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
-                      {key.modelName}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
-            </Grid>
+      <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
+        <Grid container spacing={0}>
+          <Grid item xs={12}>
+            <div style={{ display: "inline-flex" }}>
+              <Typography className={classes.heading} color="primary" noWrap>
+                {t("Settings.Retail.Setting5Title")}
+              </Typography>
+              <Tooltip
+                title={
+                  <Typography align="center" variant="body2">
+                    {t("Settings.Retail.Setting5Tooltip")}
+                  </Typography>
+                }
+                placement="top-start"
+              >
+                <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
+              </Tooltip>
+            </div>
+          </Grid>
+          <Grid item xs={12}>
+            <FormControl variant="outlined" fullWidth size="small">
+              <Select labelId="slots" value={props.player.activeModelID[props.contentType]} onChange={(e) => updateSpecBuild(e.target.value)} MenuProps={menuStyle}>
+                {specBuilds.map((key, i) => (
+                  <MenuItem id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
+                    {key.modelName}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
           </Grid>
         </Grid>
+      </Grid>
       {/* ----------------------------------------- Auto Socket Items ---------------------------------------- */}
       {props.autoSocket === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-          <Grid container spacing={0} style={{ padding: "0px 8px" }}>
+          <Grid container spacing={0}>
             <Grid item xs={12}>
               <div style={{ display: "inline-flex" }}>
-                <Typography color="primary" style={{ marginRight: 4 }} noWrap>
+                <Typography className={classes.heading} color="primary" noWrap>
                   {t("Settings.Retail.Setting3Title")}
                 </Typography>
                 <Tooltip
@@ -282,10 +296,10 @@ export default function RetailSettings(props) {
       )}
       {/* --------------------------- Domination Socket for Great Vault Items --------------------------  */}
       <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-        <Grid container spacing={0} style={{ padding: "0px 8px" }}>
+        <Grid container spacing={0}>
           <Grid item xs={12}>
             <div style={{ display: "inline-flex" }}>
-              <Typography color="primary" style={{ marginRight: 4 }} noWrap>
+              <Typography className={classes.heading} color="primary" noWrap>
                 {t("Settings.Retail.Setting4Title")}
               </Typography>
               <Tooltip

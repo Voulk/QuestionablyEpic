@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
+    marginRight: 4,
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
@@ -27,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   details: {
     alignItems: "center",
-    padding: 8,
+    padding: 0,
   },
   column: {
     // flexBasis: "33.33%",
@@ -82,7 +83,7 @@ export default function Settings(props) {
             <Typography className={classes.heading}>{t("Settings.SettingsTitle")}</Typography>
           </div>
         </AccordionSummary>
-        <Divider variant="middle" />
+        {/* <Divider variant="middle" /> */}
         <AccordionDetails className={classes.details}>
           {/* ---- If gameType = "Retail" show Retail Settings, otherwise show Burning Crusade Settings ---- */}
           {gameType === "Retail" ? (

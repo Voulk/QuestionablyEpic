@@ -280,10 +280,7 @@ export default function TopGear(props) {
             autoSocket={true}
           />
         </Grid>
-        <Grid item xs={12}>
-          {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
 
-        </Grid>
         <Grid item xs={12}>
           {<ItemBar player={props.player} setItemList={setItemList} />}
         </Grid>

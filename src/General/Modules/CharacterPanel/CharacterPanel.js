@@ -26,6 +26,8 @@ const useStyles = makeStyles(() => ({
   },
   simcok: {
     borderStyle: "None",
+    width: "80%",
+    margin: "auto",
   },
   rounded: {
     color: "#fff",
@@ -80,10 +82,10 @@ export default function UpgradeFinderSimCnew(props) {
 
   return (
     <Grid item xs={12}>
-      <Paper elevation={0} className={check(simcStatus)} style={{ display: "inline-flex", width: "80%", margin: "auto" }}>
+      <Paper elevation={0} className={check(simcStatus)}>
         {/* <Avatar src="https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-main.jpg" variant="rounded" className={classes.rounded} /> */}
         <Grid container direction="row" justifyContent="space-between" spacing={1} style={{ padding: 8 }} wrap="noWrap">
-          <Grid item xs={"auto"} wrap="noWrap">
+          <Grid item>
             <div
               style={{
                 backgroundImage: `url("${"https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-main.jpg"}")`,
@@ -94,15 +96,15 @@ export default function UpgradeFinderSimCnew(props) {
                 position: "relative",
                 border: "1px solid rgb(118, 118, 118)",
                 flex: "1 1 10%",
-                height: 88,
-                width: 88,
+                height: 82,
+                width: 82,
                 borderRadius: 4,
               }}
             />
           </Grid>
-          <Grid item xs={10} wrap="noWrap">
-            <Grid container direction="row" spacing={1}>
-              <Grid item xs={12}>
+          <Grid item xs={12} sm container>
+            <Grid item xs container direction="column" spacing={1} justifyContent="space-between">
+              <Grid item xs>
                 <div style={{ display: "inline-flex", verticalAlign: "middle" }}>
                   {classIcons(currentCharacter.spec, { height: 30, width: 30, margin: "0px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
                   <Tooltip title={t(covenant)} style={{ color: classColoursJS(currentCharacter.spec) }} placement="top">
@@ -110,9 +112,17 @@ export default function UpgradeFinderSimCnew(props) {
                   </Tooltip>
                   <Grid container direction="row" wrap="noWrap">
                     <Grid item xs={12} wrap="noWrap">
-                      <Typography variant="h6" style={{ color: classColoursJS(currentCharacter.spec), margin: "0px 5px 0px 5px" }}>
-                        {currentCharacter.charName + " - " + currentCharacter.getRealmString()}
-                      </Typography>
+                      <div style={{ display: "inline-flex" }}>
+                        <Typography variant="h5" style={{ color: classColoursJS(currentCharacter.spec), margin: "0px 5px 0px 5px" }}>
+                          {currentCharacter.charName}
+                        </Typography>
+                        <Typography variant="h6" style={{ margin: "0px 5px 0px 5px" }}>
+                          {" - " + currentCharacter.getRealmString()}
+                        </Typography>
+                        <Typography variant="h6" color="primary">
+                          {"- Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName + " - " + props.contentType}
+                        </Typography>
+                      </div>
                     </Grid>
                     {/* <Divider orientation="vertical" flexItem />
                     <Grid item xs={6} wrap="noWrap">
@@ -123,33 +133,33 @@ export default function UpgradeFinderSimCnew(props) {
                   </Grid>
                 </div>
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs>
                 <Divider />
               </Grid>
-              <Grid item xs="auto" style={{ textAlign: "center" }} wrap="noWrap">
-                <SimCraftInput
-                  buttonLabel={t("UpgradeFinderFront.SimCButton")}
-                  disableElevation={true}
-                  color="primary"
-                  variant="contained"
-                  player={props.player}
-                  simcSnack={props.simcSnack}
-                  allChars={props.allChars}
-                />
-              </Grid>
-              <Grid item xs="auto" wrap="noWrap">
-                <Typography color="primary" align="center" variant="h5">
-                  {t("Equipped")}:
-                </Typography>
-              </Grid>
-              {/* <Grid item xs={5}>
+              <Grid item sm container justifyContent="flex-start">
+                <Grid item xs={2}>
+                  <SimCraftInput
+                    buttonLabel={t("UpgradeFinderFront.SimCButton")}
+                    disableElevation={true}
+                    color="primary"
+                    variant="contained"
+                    player={props.player}
+                    simcSnack={props.simcSnack}
+                    allChars={props.allChars}
+                  />
+                </Grid>
+                <Grid item xs={2}>
+                  <Typography color="primary" variant="h5">
+                    {t("Equipped")}:
+                  </Typography>
+                </Grid>
+                {/* <Grid item xs={5}>
                   <Typography color="primary" align="center" variant="h5">
                     {t(simcString)}
                   </Typography>
                 </Grid> */}
 
-              <Grid item xs="auto" wrap="noWrap">
-                <Grid container justify="center">
+                <Grid item container xs justifyContent="center" alignItems="center">
                   {props.player.activeItems
                     .filter((key) => key.isEquipped === true)
                     .map((key, i) => (
@@ -157,8 +167,8 @@ export default function UpgradeFinderSimCnew(props) {
                         <a style={{ margin: "2px 2px" }} data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + wowheadDom} key={i}>
                           <img
                             style={{
-                              height: 22,
-                              width: 22,
+                              height: 24,
+                              width: 24,
                               verticalAlign: "middle",
                               borderRadius: "8px",
                               border: "1px solid",
@@ -174,7 +184,9 @@ export default function UpgradeFinderSimCnew(props) {
               </Grid>
             </Grid>
           </Grid>
+
           <Grid item xs={12}>
+            <Divider />
             <Settings
               player={props.player}
               contentType={props.contentType}
