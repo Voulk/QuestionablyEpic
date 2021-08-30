@@ -8,7 +8,7 @@ import { convertPPMToUptime } from "../../../Retail/Engine/EffectFormulas/Effect
 import Player from "../Player/Player";
 import CastModel from "../Player/CastModel";
 import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngine"
-import { getDomGemEffect } from "General/Engine/ItemUtilities"
+import { getDomGemEffect, applyDiminishingReturns } from "General/Engine/ItemUtilities"
 import { dominationGemDB } from "Databases/DominationGemDB";
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
@@ -641,24 +641,6 @@ function addBaseStats(stats, spec) {
 
 }
 
-export function applyDiminishingReturns(stats) {
-  //console.log("Stats Pre-DR" + JSON.stringify(stats));
-  
-  for (const [key, value] of Object.entries(stats)) {
-    if (["crit", "haste", "mastery", "versatility", "leech"].includes(key)) {
-
-      const DRBreakpoints = STATDIMINISHINGRETURNS[key.toUpperCase()];
-  
-      const baseStat = stats[key];
-      for (var j = 0; j < DRBreakpoints.length; j++) {
-        stats[key] -= Math.max((baseStat - DRBreakpoints[j]) * 0.1, 0);
-      }
-    } 
-  }
-    
-  return stats;
-
-}
 
 
 const deepCopyFunction = (inObject) => {

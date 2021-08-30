@@ -1,6 +1,7 @@
 // 
 
 import Player from "../Player";
+import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 
 const getAtonementMult = () => {
 
@@ -17,7 +18,7 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
     }
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
-    sequence.push('Evanglism');
+    sequence.push('Evangelism');
 
     if (type === "Boon") {
         sequence.push('Boon of the Ascended');
@@ -33,7 +34,7 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
             sequence.push('Ascended Nova');
             sequence.push('Ascended Nova');
         }
-        console.log(boonDuration % boonPackage);
+
         if (boonDuration % boonPackage > (2.5 / hastePerc)) {
             sequence.push('Ascended Blast');
             sequence.push('Ascended Nova');
@@ -57,7 +58,7 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
         sequence.push('Smite');
     }
 
-    console.log(sequence);
+    //console.log(sequence);
     return sequence;
     
 };
@@ -115,7 +116,7 @@ const getCurrentStats = (statArray, buffs) => {
         statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
     });
     //statArray.mastery = statArray.mastery += masteryBuff;
-    return statArray;
+    return applyDiminishingReturns(statArray);
 }
 
 const getHaste = (stats) => {
@@ -207,8 +208,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 damageBreakdown['Purge the Wicked'] = (damageBreakdown['Purge the Wicked'] || 0) + damageVal * damMultiplier * partialTickPercentage;
                 totalDamage += damageVal;
                 healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * damMultiplier * getAtoneTrans(currentStats.mastery) * partialTickPercentage;
-                console.log("Haste: " + (getHaste(currentStats) - 1))
-                console.log(partialTickPercentage); 
             }
             else {         
                 damageBreakdown['Purge the Wicked'] = (damageBreakdown['Purge the Wicked'] || 0) + damageVal * damMultiplier;
@@ -234,7 +233,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
         if (t > nextSpell && seq.length > 0) {
             const spellName = seq.shift();
             const fullSpell = discSpells[spellName];
-            //console.log(Math.round(t*100)/100 + ": " + spellName);
 
             fullSpell.forEach(spell => {
                 // The spell is an atonement applicator. Add atonement expiry time to our array.
