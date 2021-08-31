@@ -319,6 +319,27 @@ function scoreSets(player, castModel, contentType) {
   return setScores;
 }
 
+export function checkSetPieces(itemList, playerClass) {
+  let setPieces = {"unholy": false, "blood": false, "frost": false};
+  let setSlots = {"Restoration Druid": {unholy: ["Head", "Hands"], blood: ["Chest", "Feet"], frost: ["Shoulder", "Legs"]},
+                  "Mistweaver Monk": {unholy: ["Head", "Hands"], blood: ["Chest", "Feet"], frost: ["Shoulder", "Legs"]},
+                  "Holy Priest": {unholy: ["Head", "Waist"], blood: ["Chest", "Legs"], frost: ["Shoulder", "Wrist"]},
+                  "Discipline Priest": {unholy: ["Head", "Waist"], blood: ["Chest", "Legs"], frost: ["Shoulder", "Wrist"]},
+                  "Restoration Shaman": {unholy: ["Head", "Waist"], blood: ["Chest", "Legs"], frost: ["Shoulder", "Feet"]},
+                  "Holy Paladin": {unholy: ["Head", "Wrist"], blood: ["Chest", "Hands"], frost: ["Shoulder", "Legs"]},
+  };
+
+
+  for (const set in Object.keys(setPieces)) {
+    setPieces[set] = itemList.filter(item => 
+      {return (setSlots[playerClass][set].includes(item.slot) && item.hasDomSet)}).length > 0
+  }
+  console.log(setSlots);
+  console.log(setPieces);
+  return setPieces;
+
+}
+
 export function buildBestDomSet(itemSet, player, castModel, contentType, slots) {
 
   let results = []
@@ -327,9 +348,7 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
   //const domGems = ['Shard of Bek', 'Shard of Jas', 'Shard of Rev', 'Shard of Cor', 'Shard of Tel', 'Shard of Kyr', 'Shard of Dyz', 'Shard of Zed', 'Shard of Oth' ];
   const domGems = player.getOwnedDominationShards();
   //let effectList = [];
-  const setPieces = {"unholy": itemSet.itemList.filter(item => {return item.slot === "Head" && item.hasDomSocket}).length > 0,
-                    "blood": itemSet.itemList.filter(item => {return item.slot === "Chest" && item.hasDomSocket}).length > 0,
-                    "frost": itemSet.itemList.filter(item => {return item.slot === "Shoulder" && item.hasDomSocket}).length > 0}
+  const setPieces = checkSetPieces(itemSet.itemList, player.spec);
   const shardScores = scoreShards(player, castModel, contentType);
   const setScores = scoreSets(player, castModel, contentType);
 
