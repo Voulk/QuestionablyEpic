@@ -10,6 +10,14 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 21,
+    date: "31st August",
+    changes: [
+      "WoW Hotfix: Domination Set Bonuses are now activated by two different slots instead of just one."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 20,
     date: "24th August",
     changes: [
