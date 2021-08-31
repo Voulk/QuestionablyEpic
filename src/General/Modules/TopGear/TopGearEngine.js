@@ -320,7 +320,6 @@ function scoreSets(player, castModel, contentType) {
 }
 
 export function checkSetPieces(itemList, playerClass) {
-  console.log(playerClass)
   let setPieces = {"unholy": false, "blood": false, "frost": false};
   let setSlots = {"Restoration Druid": {unholy: ["Head", "Hands"], blood: ["Chest", "Feet"], frost: ["Shoulder", "Legs"]},
                   "Mistweaver Monk": {unholy: ["Head", "Hands"], blood: ["Chest", "Feet"], frost: ["Shoulder", "Legs"]},
@@ -329,8 +328,7 @@ export function checkSetPieces(itemList, playerClass) {
                   "Restoration Shaman": {unholy: ["Head", "Waist"], blood: ["Chest", "Legs"], frost: ["Shoulder", "Feet"]},
                   "Holy Paladin": {unholy: ["Head", "Wrist"], blood: ["Chest", "Hands"], frost: ["Shoulder", "Legs"]},
   };
-
-
+  
   for (const set in setPieces) {
     setPieces[set] = itemList.filter(item => 
       {return (setSlots[playerClass][set].includes(item.slot) && item.hasDomSet)}).length > 0

@@ -729,7 +729,7 @@ export default function CharCards(props) {
                 {/* -------------------------------------------------------------------------- */
                 /*                          Imported WarcraftLog Data                         */
                 /* -------------------------------------------------------------------------- */}
-
+                {gameType === "Retail" ? 
                 <Grid container spacing={1}>
                   {/* map here */}
                   <Grid item xs={12} container>
@@ -806,12 +806,14 @@ export default function CharCards(props) {
                     </Paper>
                   </Grid>
                 </Grid>
+                : ""}
               </DialogContent>
             </Grid>
           </div>
         </TabPanel>
 
         {/* Saved Logs */}
+        {gameType === "Retail" ? 
         <TabPanel value={tabvalue} index={1}>
           <div className={classes.panel} style={{ minWidth: 912, minHeight: 506.36, padding: "20px 24px" }}>
             <Grid container spacing={1}>
@@ -897,6 +899,7 @@ export default function CharCards(props) {
             </Grid>
           </div>
         </TabPanel>
+        : ""}
 
         <DialogActions>
           <div
