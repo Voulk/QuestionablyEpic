@@ -59,11 +59,3 @@ describe("MergeBonusStats function", () => {
 
 });
 
-describe("checkSetPieces function", () => {
-    test("Test 1, Druid", () => {
-        
-
-        expect(mergeBonusStats(bonusStatArray)).toEqual(expectedResult);
-    });
-
-});
