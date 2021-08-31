@@ -113,14 +113,11 @@ export default function UpgradeFinderSimCnew(props) {
                   <Grid container direction="row" wrap="noWrap">
                     <Grid item xs={12} wrap="noWrap">
                       <div style={{ display: "inline-flex" }}>
-                        <Typography variant="h5" style={{ color: classColoursJS(currentCharacter.spec), margin: "0px 5px 0px 5px" }}>
+                        <Typography variant="h5" style={{ color: classColoursJS(currentCharacter.spec) }}>
                           {currentCharacter.charName}
                         </Typography>
                         <Typography variant="h6" style={{ margin: "0px 5px 0px 5px" }}>
-                          {" - " + currentCharacter.getRealmString()}
-                        </Typography>
-                        <Typography variant="h6" color="primary">
-                          {"- Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName + " - " + props.contentType}
+                          {"- " + currentCharacter.getRealmString()}
                         </Typography>
                       </div>
                     </Grid>
@@ -136,8 +133,8 @@ export default function UpgradeFinderSimCnew(props) {
               <Grid item xs>
                 <Divider />
               </Grid>
-              <Grid item sm container justifyContent="flex-start">
-                <Grid item xs={2}>
+              <Grid item sm container justifyContent="flex-start" spacing={1}>
+                <Grid item>
                   <SimCraftInput
                     buttonLabel={t("UpgradeFinderFront.SimCButton")}
                     disableElevation={true}
@@ -148,11 +145,12 @@ export default function UpgradeFinderSimCnew(props) {
                     allChars={props.allChars}
                   />
                 </Grid>
-                <Grid item xs={2}>
+
+                {/* <Grid item xs={2}>
                   <Typography color="primary" variant="h5">
                     {t("Equipped")}:
                   </Typography>
-                </Grid>
+                </Grid> */}
                 {/* <Grid item xs={5}>
                   <Typography color="primary" align="center" variant="h5">
                     {t(simcString)}
@@ -167,8 +165,8 @@ export default function UpgradeFinderSimCnew(props) {
                         <a style={{ margin: "2px 2px" }} data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + wowheadDom} key={i}>
                           <img
                             style={{
-                              height: 24,
-                              width: 24,
+                              height: 26,
+                              width: 26,
                               verticalAlign: "middle",
                               borderRadius: "8px",
                               border: "1px solid",

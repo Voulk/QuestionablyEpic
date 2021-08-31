@@ -81,6 +81,9 @@ export default function Settings(props) {
           <div className={classes.column}>
             <SettingsIcon style={{ marginRight: 4 }} />
             <Typography className={classes.heading}>{t("Settings.SettingsTitle")}</Typography>
+            <Typography className={classes.heading} color="primary">
+              {"- Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName + " - " + props.contentType}
+            </Typography>
           </div>
         </AccordionSummary>
         {/* <Divider variant="middle" /> */}
