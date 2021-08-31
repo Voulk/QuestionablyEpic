@@ -1660,7 +1660,7 @@ export const bossAbilities = [
     bossID: 2435,
     ability: "Ranger's Heartseeker",
     guid: 352650,
-    cooldownPlannerActive: false,
+    cooldownPlannerActive: true,
     icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/spell_priest_mindspike.jpg").default,
   },
   {
@@ -1702,5 +1702,13 @@ export const bossAbilities = [
     guid: 349458,
     cooldownPlannerActive: true,
     icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/inv_belt_44.jpg").default,
+  },
+  {
+    // https://www.wowhead.com/spell=358709/black-arrow
+    bossID: 2435,
+    ability: "Black Arrow",
+    guid: 358709,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/ability_theblackarrow.jpg").default,
   },
 ];
