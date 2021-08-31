@@ -493,7 +493,8 @@ class Player {
 
   /* ------------- Return the Saved ReportID from the imported log ------------ */
   getReportID = (contentType) => {
-    return this.getActiveModel(contentType).fightInfo.reportID;
+    if (this.getActiveModel(contentType) && 'fightInfo' in this.getActiveModel(contentType)) return this.getActiveModel(contentType).fightInfo.reportID;
+    else return "Unknown";
   };
 
   /* ------------ Return the Saved Boss Name from the imported log ------------ */
