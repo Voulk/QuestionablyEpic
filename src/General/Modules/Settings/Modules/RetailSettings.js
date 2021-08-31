@@ -80,7 +80,7 @@ export default function RetailSettings(props) {
 
   const updateSpecBuild = (value) => {
     //props.editSettings("vaultDomGem", value)
-    props.player.setModelID(value, props.contentType);
+    props.player.setModelID(parseInt(value), props.contentType);
     setSpecBuild(value);
     props.singleUpdate(props.player);
   };
