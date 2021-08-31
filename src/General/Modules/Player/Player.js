@@ -409,6 +409,8 @@ class Player {
     if (this.castModels[this.activeModelID[contentType]]) return this.castModels[this.activeModelID[contentType]];
     else {
       reportError(this, "Player", "Invalid Cast Model", contentType);
+      return this.castModels[0];
+      
     }
 
   };
