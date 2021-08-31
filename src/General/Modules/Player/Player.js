@@ -406,7 +406,11 @@ class Player {
   };
 
   getActiveModel = (contentType) => {
-    return this.castModels[this.activeModelID[contentType]];
+    if (this.castModels[this.activeModelID[contentType]]) return this.castModels[this.activeModelID[contentType]];
+    else {
+      reportError(this, "Player", "Invalid Cast Model", contentType);
+    }
+
   };
 
   setModelID = (id, contentType) => {
@@ -417,7 +421,7 @@ class Player {
       // This is a critical error that could crash the app so we'll reset models to defaults
       this.activeModelID["Raid"] = 0;
       this.activeModelID["Dungeon"] = 1;
-      reportError(this, "Player", "Attempt to set invalid Model ID", id);
+      reportError(this, "Player", "Attempt to set invalid Model ID", id + "/" + contentType);
     }
   };
 
