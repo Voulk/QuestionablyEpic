@@ -14,7 +14,7 @@ export const changeLog = [
     date: "31st August",
     changes: [
       "WoW Hotfix: Domination Set Bonuses are now activated by two different slots instead of just one.",
-      "Mistweaver: Added a Sinister Teachings dungeon profile.",
+      "Mistweaver: Added a Sinister Teachings dungeon profile. ",
     ],
   },
   {
