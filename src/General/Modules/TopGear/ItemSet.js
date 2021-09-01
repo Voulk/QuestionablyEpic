@@ -88,7 +88,7 @@ class ItemSet {
     let domSockets = 0;
     for (var i = 0; i < this.itemList.length; i++) {
       let item = this.itemList[i];
-
+      console.log(item);
       for (const [stat, value] of Object.entries(item.stats)) {
         if (stat in setStats) {
           setStats[stat] += value;

@@ -127,7 +127,8 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
 
   //console.log(differentials);
 
-  //itemSets[0].printSet()
+  //itemSets[0].printSet()\
+  console.log(itemSets);
 
   if (itemSets.length === 0) {
     let result = new TopGearResult([], []);
@@ -553,9 +554,11 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   bonus_stats[highestWeight] += 16 * builtSet.setSockets;
   enchants["Gems"] = highestWeight;
 
+  
   // This might change later, but is a way to estimate the value of a domination socket on a piece in the Upgrade Finder.
-  //if (userSettings.dominationSockets === "Upgrade Finder") bonus_stats.hps += builtSet.domSockets * 350;
-  compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
+
+  //compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
+  
 
   if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
   //itemSet.effectList = itemSet.effectList.concat(domList);
@@ -566,8 +569,9 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   for (var x = 0; x < itemSet.effectList.length; x++) {
     effectStats.push(getEffectValue(itemSet.effectList[x], player, castModel, contentType, itemSet.effectList[x].level, userSettings, "Retail", setStats));
   }
-  //bonus_stats = mergeBonusStats(effectStats);
-  setStats = compileStats(setStats, mergeBonusStats(effectStats));
+  const mergedEffectStats = mergeBonusStats(effectStats)
+  setStats = compileStats(setStats, mergedEffectStats);
+  console.log(effectStats);
   
   applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
   // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
@@ -590,7 +594,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
       hardScore += setStats[stat] * adjusted_weights[stat];
     }
   }
-
+  console.log(setStats);
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
