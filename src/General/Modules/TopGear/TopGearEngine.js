@@ -16,7 +16,7 @@ import { dominationGemDB } from "Databases/DominationGemDB";
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
 const softSlice = 3000;
-const DR_CONST = 0.00364669230769231;
+const DR_CONST = 0.00504669230769231;
 const DR_CONSTLEECH = 0.04322569230769231;
 
 
@@ -127,7 +127,8 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
 
   //console.log(differentials);
 
-  //itemSets[0].printSet()
+  //itemSets[0].printSet()\
+  //console.log(itemSets);
 
   if (itemSets.length === 0) {
     let result = new TopGearResult([], []);
@@ -341,7 +342,8 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
 
   let results = []
   let scores = []
-  
+
+
   //const domGems = ['Shard of Bek', 'Shard of Jas', 'Shard of Rev', 'Shard of Cor', 'Shard of Tel', 'Shard of Kyr', 'Shard of Dyz', 'Shard of Zed', 'Shard of Oth' ];
   const domGems = player.getOwnedDominationShards();
   //let effectList = [];
@@ -392,6 +394,7 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
   const gemEffects = buildDomEffectList(scores[0].set.split(","), player, gemList, setPieces);
   itemSet.effectList = itemSet.effectList.concat(gemEffects)
   itemSet.domGemList = gemList;
+
   return 0;
 
 }
@@ -553,31 +556,33 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   bonus_stats[highestWeight] += 16 * builtSet.setSockets;
   enchants["Gems"] = highestWeight;
 
+  
   // This might change later, but is a way to estimate the value of a domination socket on a piece in the Upgrade Finder.
-  //if (userSettings.dominationSockets === "Upgrade Finder") bonus_stats.hps += builtSet.domSockets * 350;
-  compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
 
+  //compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
+  
   if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
   //itemSet.effectList = itemSet.effectList.concat(domList);
-  
+
   // Handle Effects
   let effectStats = [];
   effectStats.push(bonus_stats);
   for (var x = 0; x < itemSet.effectList.length; x++) {
     effectStats.push(getEffectValue(itemSet.effectList[x], player, castModel, contentType, itemSet.effectList[x].level, userSettings, "Retail", setStats));
   }
-  //bonus_stats = mergeBonusStats(effectStats);
-  setStats = compileStats(setStats, mergeBonusStats(effectStats));
+  const mergedEffectStats = mergeBonusStats(effectStats)
+  setStats = compileStats(setStats, mergedEffectStats);
   
   applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
   // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
+
   adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;
   adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.Retail.CRIT)) / 2;
   adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.Retail.VERSATILITY)) / 2;
   adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.Retail.MASTERYA[player.spec])) / 2;
   adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.Retail.LEECH)) / 2;
   addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
-  
+
   // Calculate a hard score using the rebalanced stat weights.
 
   for (var stat in setStats) {

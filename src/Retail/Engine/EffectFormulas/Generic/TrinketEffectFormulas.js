@@ -3,6 +3,7 @@ import { trinket_data } from "./TrinketData";
 import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
 import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
 import { getMasteryAddition } from "../Monk/MistweaverMiscFormulas"
+import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 
 // import { STAT } from "../../../../General/Engine/STAT";
 import SPEC from "../../../../General/Engine/SPECS";
@@ -17,6 +18,25 @@ export function getDiminishedValue(statID, procValue, baseStat) {
   }
 
   return Math.round(procValue - (totalStat - currentStat));
+}
+
+export function getHighestStat(stats) {
+  let max = "";
+  let maxValue = -1;
+
+  for (var stat in stats) {
+    if (stats[stat] > maxValue && ["crit", "haste", "mastery", "versatility"].includes(stat)) {
+      max = stat;
+      maxValue = stats[stat];
+    }
+  }
+
+  if (maxValue > 0) return max;
+  else {
+    reportError(this, "TrinketEffectFormulas", "No highest stat found: " + JSON.stringify(stats));
+    return "haste"; // A default value is returned to stop the app crashing, however this is reported as an error if it were ever to occur.
+  }
+  return max;
 }
 
 // TODO: Write proper comments. See Lingering Sunmote for an example.
@@ -183,9 +203,6 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
       bonus_stats.crit = (getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.duration * crit_effect.multiplier) / 120;
       bonus_stats.crit *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
     }
-    
-    
-    
     
     //
   } else if (
@@ -555,12 +572,13 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     /* ---------------------------------------------------------------------------------------------- */
     effectName === "Titanic Ocular Gland"
   ) {
+    // Titanic Ocular Gland increases your highest secondary by X. 
     let effect = activeTrinket.effects[0];
     const statValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
     const uptime = effect.uptime;
-    const playerBestSecondary = player.getHighestStatWeight(contentType);
+    const itemSetHighestSecondary = getHighestStat(setStats);
 
-    bonus_stats[playerBestSecondary] = statValue * uptime - statValue * (1 - uptime);
+    bonus_stats[itemSetHighestSecondary] = statValue * uptime - statValue * (1 - uptime);
     //
   }   
   else if (

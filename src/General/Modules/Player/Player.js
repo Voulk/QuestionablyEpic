@@ -416,7 +416,7 @@ class Player {
   };
 
   setModelID = (id, contentType) => {
-    if ((contentType === "Raid" || contentType === "Dungeon") && id && id < this.castModels.length) {
+    if ((contentType === "Raid" || contentType === "Dungeon") && id < this.castModels.length) {
       // Check that it's a valid ID.
       this.activeModelID[contentType] = id;
     } else {

@@ -119,6 +119,7 @@ export default function QuickCompare(props) {
     "(Optional) Add your SimC or QE Import String to auto-import your entire set of items.",
     "(Optional) Manually add items using the slot drop down below.",
     "Item scores are shown in the top right corner in yellow.",
+    "Top Gear is always more accurate when building a full set of gear",
   ];
   const gameType = useSelector((state) => state.gameType);
 
