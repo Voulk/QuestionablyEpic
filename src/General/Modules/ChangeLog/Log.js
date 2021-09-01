@@ -10,6 +10,15 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 23,
+    date: "31st August",
+    changes: [
+      "Bugfix: Prismatic sockets should no longer be scored twice in some scenarios.",
+      "Bugfix: Titanic Ocular Gland should now use a sets highest stat in all modules.",
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 21,
     date: "31st August",
     changes: [
