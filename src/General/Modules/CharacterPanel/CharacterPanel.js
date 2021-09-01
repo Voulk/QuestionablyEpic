@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Paper, Typography, Divider, Tooltip } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
@@ -12,6 +12,7 @@ import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import Settings from "../Settings/Settings";
 import { covenantIcons } from "../CooldownPlanner/Functions/CovenantFunctions";
+import { apiGetPlayerImage } from "../SetupAndMenus/ConnectionUtilities";
 
 const useStyles = makeStyles(() => ({
   slider: {
@@ -56,6 +57,7 @@ const getSimCStatus = (player, gameType) => {
 export default function UpgradeFinderSimCnew(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
+  const [backgroundImage, setBackgroundImage] = useState("");
   const gameType = useSelector((state) => state.gameType);
   const contentType = useSelector((state) => state.contentType);
   const currentLanguage = i18n.currentLanguage;
@@ -80,28 +82,42 @@ export default function UpgradeFinderSimCnew(props) {
   const currentCharacter = props.allChars.allChar[props.allChars.activeChar];
   const covenant = currentCharacter.covenant;
 
+  useEffect(() => {
+    async function setImg() {
+      const img = await apiGetPlayerImage(currentCharacter);
+      console.log(img);
+      setBackgroundImage(img);
+    }
+
+    setImg();
+  }, []);
+
   return (
     <Grid item xs={12}>
       <Paper elevation={0} className={check(simcStatus)}>
         {/* <Avatar src="https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-main.jpg" variant="rounded" className={classes.rounded} /> */}
         <Grid container direction="row" justifyContent="space-between" spacing={1} style={{ padding: 8 }} wrap="noWrap">
-          <Grid item>
-            <div
-              style={{
-                backgroundImage: `url("${"https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-main.jpg"}")`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center 28%",
-                backgroundSize: "auto 500%",
-                textAlign: "center",
-                position: "relative",
-                border: "1px solid rgb(118, 118, 118)",
-                flex: "1 1 10%",
-                height: 82,
-                width: 82,
-                borderRadius: 4,
-              }}
-            />
-          </Grid>
+          {backgroundImage === "" ? (
+            ""
+          ) : (
+            <Grid item>
+              <div
+                style={{
+                  backgroundImage: `url("${backgroundImage}")`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center 28%",
+                  backgroundSize: "auto 500%",
+                  textAlign: "center",
+                  position: "relative",
+                  border: "1px solid rgb(118, 118, 118)",
+                  flex: "1 1 10%",
+                  height: 82,
+                  width: 82,
+                  borderRadius: 4,
+                }}
+              />
+            </Grid>
+          )}
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={1} justifyContent="space-between">
               <Grid item xs>
@@ -113,12 +129,15 @@ export default function UpgradeFinderSimCnew(props) {
                   <Grid container direction="row" wrap="noWrap">
                     <Grid item xs={12} wrap="noWrap">
                       <div style={{ display: "inline-flex" }}>
-                        <Typography variant="h5" style={{ color: classColoursJS(currentCharacter.spec) }}>
+                        <Typography variant="h5" style={{ color: classColoursJS(currentCharacter.spec), marginRight: 8 }}>
                           {currentCharacter.charName}
                         </Typography>
-                        <Typography variant="h6" style={{ margin: "0px 5px 0px 5px" }}>
-                          {"- " + currentCharacter.getRealmString()}
+                        <Typography variant="h6" color="primary">
+                          {"- Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName}
                         </Typography>
+                        {/* <Typography variant="h6" style={{ margin: "0px 5px 0px 5px" }}>
+                          {"- " + currentCharacter.getRealmString()}
+                        </Typography> */}
                       </div>
                     </Grid>
                     {/* <Divider orientation="vertical" flexItem />
