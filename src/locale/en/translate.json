@@ -446,7 +446,7 @@
       "Tertiary": "Tertiary",
       "AddButton": "Add",
       "Title": "Quick Compare",
-      "HelpText": "Quick Compare allows you to compare items one by one. Scores include stats, gems and effects, but not set bonuses. Use Top Gear to include those.",
+      "HelpText": "Quick Compare allows you to compare items one by one. Scores include stats, gems and effects, but not set bonuses or diminishing returns. Use Top Gear to include those.",
       "ItemErrorMsg": "Item Not Added. Ilvl Cap exceeded.",
       "ItemAdded": "Item Added!",
       "ItemDeleted": "Item Deleted!",
@@ -802,7 +802,7 @@
 
     "TrinketAnalysis": {
       "Header": "Trinket Analysis",
-      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. World quest trinkets and settings panel coming soon."
+      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing."
     },
 
     "DominationSocketAnalysis": {

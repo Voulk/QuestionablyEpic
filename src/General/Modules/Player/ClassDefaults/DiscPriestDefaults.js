@@ -19,10 +19,10 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
       CastsPerMinute: 36,
       cooldownMult: {
         oneMinute: 1,
-        ninetySeconds: 3.5,
+        ninetySeconds: 4.4,
         twoMinutes: 1,
         twoMinutesOrb: 0.85,
-        threeMinutes: 2.7,
+        threeMinutes: 2.8,
       },
       HoldYourGroundUptime: 0.8
     };
@@ -51,7 +51,7 @@ export const discPriestDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.46,
+    haste: 0.47,
     crit: 0.44,
     mastery: 0.42,
     versatility: 0.43,
