@@ -162,7 +162,7 @@ export default function UpgradeFinderSimCnew(props) {
                   </Grid>
                 </div>
               </Grid>
-              <Grid item xs>
+              <Grid item xs style={{ height: 3 }}>
                 <Divider />
               </Grid>
               <Grid item sm container justifyContent="flex-start" spacing={1}>
