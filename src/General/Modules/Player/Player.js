@@ -141,12 +141,12 @@ class Player {
   };
 
   getOwnedDominationShards = () => {
-    let shardsArray = []
+    let shardsArray = [];
     for (const [key, value] of Object.entries(this.dominationGemRanks)) {
       if (value >= 0) shardsArray.push(key);
     }
     return shardsArray;
-  }
+  };
 
   getDominationSingleRank = (gem) => {
     return this.dominationGemRanks[gem];
@@ -159,7 +159,7 @@ class Player {
     else if (color === "Frost") setRank = Math.min(this.dominationGemRanks["Shard of Tel"], this.dominationGemRanks["Shard of Cor"], this.dominationGemRanks["Shard of Kyr"]);
 
     return Math.max(0, setRank);
-  }
+  };
 
   setDominationRanks = (newRanks) => {
     this.dominationGemRanks = newRanks;
@@ -507,6 +507,10 @@ class Player {
 
   setActiveStats = (stats) => {
     if (Object.keys(stats).length > 0) this.activeStats = stats;
+  };
+
+  getActiveStats = () => {
+    return this.activeStats;
   };
 
   setFightInfo = (info) => {

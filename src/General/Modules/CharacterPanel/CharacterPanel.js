@@ -48,6 +48,10 @@ const checkCharacterValid = (player, gameType) => {
   }
 };
 
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 const getSimCStatus = (player, gameType) => {
   if (player.activeItems.length === 0) return "Missing";
   else if (checkCharacterValid(player, gameType) === false) return "Invalid";
@@ -56,6 +60,7 @@ const getSimCStatus = (player, gameType) => {
 
 export default function UpgradeFinderSimCnew(props) {
   const classes = useStyles();
+  const playerStats = props.player.getActiveStats();
   const { t, i18n } = useTranslation();
   const [backgroundImage, setBackgroundImage] = useState("");
   const gameType = useSelector((state) => state.gameType);
@@ -126,18 +131,26 @@ export default function UpgradeFinderSimCnew(props) {
                   <Tooltip title={t(covenant)} style={{ color: classColoursJS(currentCharacter.spec) }} placement="top">
                     {covenantIcons(covenant, 30, 30)}
                   </Tooltip>
-                  <Grid container direction="row" wrap="noWrap">
-                    <Grid item xs={12} wrap="noWrap">
-                      <div style={{ display: "inline-flex" }}>
-                        <Typography variant="h5" style={{ color: classColoursJS(currentCharacter.spec), marginRight: 8 }}>
+                  <Grid container direction="row">
+                    <Grid item xs={12}>
+                      <div style={{ display: "inline-flex", verticalAlign: "top" }}>
+                        <Typography variant="h6" style={{ color: classColoursJS(currentCharacter.spec), marginRight: 8, fontSize: 16, lineHeight: 1 }}>
                           {currentCharacter.charName}
                         </Typography>
-                        <Typography variant="h6" color="primary">
+                        <Typography variant="h6" color="primary" style={{ fontSize: 16, lineHeight: 1 }}>
                           {"- Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName}
                         </Typography>
                         {/* <Typography variant="h6" style={{ margin: "0px 5px 0px 5px" }}>
                           {"- " + currentCharacter.getRealmString()}
                         </Typography> */}
+                      </div>
+                    </Grid>
+                    <Grid item xs={12} style={{ height: 8 }}>
+                      <div style={{ verticalAlign: "top", marginTop: -1, display: "inline-flex" }}>
+                        {Object.keys(playerStats).map((key) => [
+                          <Typography style={{ fontSize: 11, lineHeight: 1 }}>{t(capitalizeFirstLetter(key)) + ": " + playerStats[key]}</Typography>,
+                          <Divider orientation="vertical" flexItem style={{ margin: "0px 4px" }} />,
+                        ])}
                       </div>
                     </Grid>
                     {/* <Divider orientation="vertical" flexItem />
