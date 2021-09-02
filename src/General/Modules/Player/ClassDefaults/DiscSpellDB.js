@@ -5,6 +5,7 @@ export const DISCSPELLS = {
         cost: 1250,
         coeff: 0.74,
         cooldown: 15,
+        atoneOverheal: 0.2,
         secondaries: ['crit', 'vers']
     }],
     "Smite": [{
@@ -13,6 +14,7 @@ export const DISCSPELLS = {
         cost: 200,
         coeff: 0.5,
         cooldown: 0,
+        atoneOverheal: 0.15,
         secondaries: ['crit', 'vers'],
     }],
     "Schism": [{
@@ -21,6 +23,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 1.41,
         buffDuration: 7,
+        atoneOverheal: 0.25,
         secondaries: ['crit', 'vers'],
     }],
     "Penance": [{
@@ -28,6 +31,7 @@ export const DISCSPELLS = {
         castTime: 2,
         cost: 800,
         coeff: 1.128,
+        atoneOverheal: 0.2,
         secondaries: ['crit', 'vers'],
     }],
     "Ascended Blast": 
@@ -37,6 +41,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 1.68,
         secondaries: ['crit', 'vers'],
+        atoneOverheal: 0.3,
         },
         {
             type: "heal",
@@ -53,6 +58,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 0.7,
         secondaries: ['crit', 'vers'],
+        atoneOverheal: 0.15,
         },
         {
             type: "heal",
@@ -69,6 +75,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 1.68,
         secondaries: ['crit', 'vers'],
+        atoneOverheal: 0.6,
         },
         {
             type: "heal",
@@ -128,6 +135,7 @@ export const DISCSPELLS = {
         cost: 900,
         coeff: 0.21,
         secondaries: ['crit', 'vers'],
+        atoneOverheal: 0.1,
         dot: {
             tickRate: 2,
             coeff: 0.12,
@@ -140,6 +148,7 @@ export const DISCSPELLS = {
         cost: 900,
         coeff: 0.13,
         secondaries: ['crit', 'vers'],
+        atoneOverheal: 0.2,
         dot: {
             tickRate: 1.5,
             coeff: 0.46,
@@ -171,4 +180,14 @@ export const DISCSPELLS = {
         buffType: "spec",
         buffDuration: 10,
     }],
+}
+
+export const discConduits = (conduit, rank) => {
+    if (conduit === "Exaltation") return 0.0675 + (rank * 0.0075);
+    else if (conduit === "Shining Radiance") return 0.36 + (rank * 0.04);
+    else if (conduit === "Pain Transformation") return 0.135 + (rank * 0.015);
+    else if (conduit === "Rabid Shadows") return 0.171 + (rank * 0.19);
+    else if (conduit === "Courageous Ascension") return 0.225 + (rank * 0.025);
+    else if (conduit === "Shattered Perception") return 0.117 + (rank * 0.013);
+    
 }
