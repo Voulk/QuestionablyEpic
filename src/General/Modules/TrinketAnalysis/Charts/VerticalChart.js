@@ -146,11 +146,11 @@ export default class VerticalChart extends PureComponent {
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
           {iLvls.map((key, i) => (
             <Bar dataKey={key} fill={barColours[colourBlind ? iLvls.length - i : i]} stackId="a">
-              {data.map((entry, index) => (
+              {/*data.map((entry, index) => (
                 <Cell
                   fill={this.state.focusBar === index || this.state.mouseLeave ? barColours[colourBlind ? iLvls.length - i : i] : chroma(barColours[colourBlind ? iLvls.length - i : i]).alpha(0.2)}
                 />
-              ))}
+              ))*/}
             </Bar>
           ))}
         </BarChart>
