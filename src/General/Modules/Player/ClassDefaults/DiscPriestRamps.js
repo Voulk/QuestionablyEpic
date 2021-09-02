@@ -2,9 +2,14 @@
 
 import Player from "../Player";
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
+import { DISCSPELLS } from "./DiscSpellDB"
 
-const getAtonementMult = () => {
+export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
+    
+    const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
+    const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
 
+    return boonRamp + fiendRamp;
 }
 
 export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []) => {
@@ -108,7 +113,6 @@ const getStatMult = (statArray, stats) => {
 }
 
 const getCurrentStats = (statArray, buffs) => {
-    const masteryBuff = (buffs.filter(function (buff) {return buff.type === "stats"}).length > 0 ? 668 : 0);
     const statBuffs = buffs.filter(function (buff) {return buff.buffType === "stats"});
 
     statBuffs.forEach(buff => {
@@ -321,177 +325,3 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
 }
 
-const DISCSPELLS = {
-    "Mind Blast": [{
-        type: "damage",
-        castTime: 1.5,
-        cost: 1250,
-        coeff: 0.74,
-        cooldown: 15,
-        secondaries: ['crit', 'vers']
-    }],
-    "Smite": [{
-        type: "damage",
-        castTime: 1.5,
-        cost: 200,
-        coeff: 0.5,
-        cooldown: 0,
-        secondaries: ['crit', 'vers'],
-    }],
-    "Schism": [{
-        type: "damage",
-        castTime: 1.5,
-        cost: 0,
-        coeff: 1.41,
-        buffDuration: 7,
-        secondaries: ['crit', 'vers'],
-    }],
-    "Penance": [{
-        type: "damage",
-        castTime: 2,
-        cost: 800,
-        coeff: 1.128,
-        secondaries: ['crit', 'vers'],
-    }],
-    "Ascended Blast": 
-        [{
-        type: "damage",
-        castTime: 1.5,
-        cost: 0,
-        coeff: 1.68,
-        secondaries: ['crit', 'vers'],
-        },
-        {
-            type: "heal",
-            castTime: 0,
-            coeff: 2.15,
-            targets: 1,
-            secondaries: ['crit', 'vers', 'mastery'],
-            overheal: 0.6,
-        }],
-    "Ascended Nova": 
-        [{
-        type: "damage",
-        castTime: 1,
-        cost: 0,
-        coeff: 0.7,
-        secondaries: ['crit', 'vers'],
-        },
-        {
-            type: "heal",
-            castTime: 0,
-            coeff: 0.24,
-            targets: 6,
-            secondaries: ['crit', 'vers', 'mastery'],
-            overheal: 0.3,
-        }],
-    "Ascended Eruption": 
-        [{
-        type: "damage",
-        castTime: 0,
-        cost: 0,
-        coeff: 1.68,
-        secondaries: ['crit', 'vers'],
-        },
-        {
-            type: "heal",
-            castTime: 0,
-            coeff: 2.15,
-            targets: 20,
-            secondaries: ['crit', 'vers'],
-            tags: ['sqrt'],
-            overheal: 0.6,
-        }],
-    "Power Word: Shield": [{
-        type: "heal",
-        castTime: 1.5,
-        cost: 1550,
-        coeff: 1.65,
-        cooldown: 0,
-        atonement: 15,
-        atonementPos: 'start',
-        targets: 1,
-        secondaries: ['crit', 'vers'],
-        overheal: 0,
-    }],
-    "Rapture": [{
-        type: "heal",
-        castTime: 1.5,
-        cost: 1550,
-        coeff: 1.65 * 3,
-        cooldown: 0,
-        atonement: 15,
-        atonementPos: 'start',
-        targets: 1,
-        secondaries: ['crit', 'vers'],
-        overheal: 0,
-    },
-    {
-        type: "buff",
-        castTime: 0,
-        cost: 0,
-        cooldown: 90,
-        buffDuration: 8,
-    }],
-    "Power Word: Radiance": [{
-        type: "heal",
-        castTime: 2,
-        cost: 3250,
-        coeff: 1.05,
-        targets: 5,
-        cooldown: 20,
-        atonement: 9,
-        atonementPos: 'end',
-        secondaries: ['crit', 'vers'],
-        overheal: 0.35,
-    }],
-    "Purge the Wicked": [{
-        type: "damage",
-        castTime: 1.5,
-        cost: 900,
-        coeff: 0.21,
-        secondaries: ['crit', 'vers'],
-        dot: {
-            tickRate: 2,
-            coeff: 0.12,
-            duration: 20,
-        }
-    }],
-    "Shadowfiend": [{
-        type: "",
-        castTime: 1.5,
-        cost: 900,
-        coeff: 0.13,
-        secondaries: ['crit', 'vers'],
-        dot: {
-            tickRate: 1.5,
-            coeff: 0.46,
-            duration: 15,
-        }
-    }],
-    "Evangelism": [{
-        type: "atonementExtension",
-        castTime: 1.5,
-        cost: 0,
-        coeff: 0,
-        extension: 6,
-    }],
-    "Divine Bell": [{
-        type: "buff",
-        castTime: 0,
-        cost: 0,
-        cooldown: 90,
-        buffDuration: 9,
-        buffType: 'stats',
-        stat: "mastery",
-        value: 668,
-    }],
-    "Boon of the Ascended": [{
-        type: "buff",
-        castTime: 1.5,
-        cost: 0,
-        cooldown: 180,
-        buffType: "spec",
-        buffDuration: 10,
-    }],
-}

@@ -1,6 +1,6 @@
 import { Stats } from 'fs';
 import Player from 'General/Modules/Player/Player';
-import { runCastSequence, buildRamp } from "./DiscPriestRamps";
+import { runCastSequence, buildRamp, allRamps } from "./DiscPriestRamps";
 
 
 describe("Evang Cast Sequence", () => {
@@ -9,12 +9,19 @@ describe("Evang Cast Sequence", () => {
     const boonSeq = buildRamp('Boon', 10, ["Divine Bell"], player.activeStats.haste, ['Rapture'])
     const fiendSeq = buildRamp('Fiend', 10, ["Divine Bell"], player.activeStats.haste, ['Rapture'])
 
-    const baselineBoon = runCastSequence(boonSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226});
-    const baselineFiend = runCastSequence(fiendSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226});
+    //const baselineBoon = (boonSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": frunCastSequencealse}, {"Courageous Ascension": 226, "Shining Radiance": 226});
+    //const baselineFiend = runCastSequence(fiendSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226});
     
-    const baseline = baselineBoon + baselineFiend;
+    //const baseline = baselineBoon + baselineFiend;
 
+    test("Legendaries", () => {
+        const baseline = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": false}, {});
+        const clarityOfMind = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {});
 
+        console.log("Clarity of Mind: " + ((clarityOfMind - baseline) / 180))
+    });
+
+    /*
     test("Stat Weights", () => {
 
         //console.log("Boon Ramp with CoM, Bell: " + runCastSequence(demoSequence4, player.activeStats, {"Clarity of Mind": true}, {"Courageous Ascension": 226, "Shining Radiance": 226}));
@@ -43,7 +50,7 @@ describe("Evang Cast Sequence", () => {
         });
 
         console.log(weights); 
-    });
+    }); */
     
 });
 
