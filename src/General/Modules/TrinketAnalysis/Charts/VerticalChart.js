@@ -59,7 +59,46 @@ export default class VerticalChart extends PureComponent {
     const colourBlind = this.props.colourBlind;
     /* ------------------------- Ilvls to Show on Chart & Colour Generation ------------------------- */
     const iLvls = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
-    const barColours = colorGenerator(colourBlind ? "BrBG" : "Paired", colourBlind ? iLvls.length + 2 : iLvls.length);
+
+    const barColours1 = ["#7291c4", "#9fb8d7", "#BBCDEA", "#72C47F", "#97d79f", "#bbeabf", "#D8BE7B", "#e0d06b", "#e0d09b", "#eae2bb", "#d87b7b", "#e29b9b", "#eabbbb"];
+    const barColours2 = [
+      "rgb(31, 120, 180)",
+      "rgb(166, 206, 227)",
+      "rgb(51, 160, 44)",
+      "rgb(178, 223, 138)",
+      "rgb(177, 89, 40)",
+      "rgb(255, 255, 153)",
+      "rgb(255, 127, 0)",
+      "rgb(253, 191, 111)",
+      "rgb(227, 26, 28)",
+      "rgb(251, 154, 153)",
+      "rgb(106, 61, 154)",
+      "rgb(202, 178, 214)",
+
+      "#666666",
+    ];
+
+    const barColours3 = [
+      "rgb(166, 206, 227)",
+      "rgb(31, 120, 180)",
+
+      "rgb(178, 223, 138)",
+      "rgb(51, 160, 44)",
+
+      "rgb(255, 255, 153)",
+      "rgb(177, 89, 40)",
+
+      "rgb(253, 191, 111)",
+      "rgb(255, 127, 0)",
+      "rgb(251, 154, 153)",
+      "rgb(227, 26, 28)",
+      "rgb(202, 178, 214)",
+      "rgb(106, 61, 154)",
+
+      "#666666",
+    ];
+
+    const barColours = colourBlind ? colorGenerator("BrBG", iLvls.length + 2) : barColours1;
 
     let arr = [];
     let cleanedArray = [];
