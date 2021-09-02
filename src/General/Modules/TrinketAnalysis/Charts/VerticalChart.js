@@ -6,6 +6,7 @@ import "./VerticalChart.css";
 import i18n from "i18next";
 import chroma from "chroma-js";
 import { colorGenerator } from "../../CooldownPlanner/Functions/Functions";
+import { createPartiallyEmittedExpression } from "typescript";
 
 const getLevelDiff = (trinketName, db, ilvl, map2) => {
   /* ---------- Check if item exists at item level. If not, return 0. --------- */
@@ -16,6 +17,14 @@ const getLevelDiff = (trinketName, db, ilvl, map2) => {
   const item = temp[0];
   const pos = item.levelRange.indexOf(ilvl);
   const previousLevel = item.levelRange[pos - 1];
+
+  if (trinketName === "Carved Ivory Keepsake" || trinketName === "Unchained Gladiator's Insignia of Alacrity") {
+    console.log("TrinketName: " + trinketName + " ilvl: " + ilvl);
+    console.log("Pos: " + pos + ". Prev: " + previousLevel);
+    console.log("Current value: " + map2["i" + ilvl]);
+    console.log("Add to graph: " + (map2["i" + ilvl] - map2["i" + previousLevel] || 0));
+  }
+
 
   /* ----------- Return item score - the previous item levels score. ---------- */
   if (pos > 0) {
@@ -58,7 +67,7 @@ export default class VerticalChart extends PureComponent {
     const db = this.props.db;
     const colourBlind = this.props.colourBlind;
     /* ------------------------- Ilvls to Show on Chart & Colour Generation ------------------------- */
-    const iLvls = [187, 194, 200, 213, 220, 226, 230, 233, 239, 246, 252, 259];
+    const iLvls = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
     const barColours = colorGenerator(colourBlind ? "BrBG" : "Paired", colourBlind ? iLvls.length + 2 : iLvls.length);
 
     let arr = [];
