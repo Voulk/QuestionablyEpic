@@ -59,8 +59,10 @@ export default class VerticalChart extends PureComponent {
     const colourBlind = this.props.colourBlind;
     /* ------------------------- Ilvls to Show on Chart & Colour Generation ------------------------- */
     const iLvls = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
-
- 
+    
+    /* ------------------------------------- Visibility of Ilvls ------------------------------------ */
+    // (Currently won't work as intended due to how the data is provided, currently the previous ilvl is needed to build the stacked bars)
+    let iLvlsVisible = { 187: true, 194: true, 200: true, 207: true, 213: true, 220: true, 226: true, 230: true, 233: true, 239: true, 246: true, 252: true, 259: true };
 
     const genColourScale = (colourArray) => {
       let colourScale = [];
@@ -154,13 +156,7 @@ export default class VerticalChart extends PureComponent {
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
           {iLvls.map((key, i) => (
-            <Bar dataKey={key} fill={barColours[colourBlind ? iLvls.length - i : i]} stackId="a">
-              {/*data.map((entry, index) => (
-                <Cell
-                  fill={this.state.focusBar === index || this.state.mouseLeave ? barColours[colourBlind ? iLvls.length - i : i] : chroma(barColours[colourBlind ? iLvls.length - i : i]).alpha(0.2)}
-                />
-              ))*/}
-            </Bar>
+            <Bar dataKey={iLvlsVisible[key] ? key : ""} fill={barColours[colourBlind ? iLvls.length - i : i]} stackId="a" />
           ))}
         </BarChart>
       </ResponsiveContainer>
