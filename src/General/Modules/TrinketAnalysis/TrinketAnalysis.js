@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Paper, Typography, Grid, Tooltip } from "@material-ui/core";
+import { Paper, Typography, Grid, Tooltip,Select, MenuItem } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { itemDB } from "../../../Databases/ItemDB";
 import Item from "../Player/Item";
@@ -15,6 +15,8 @@ import MetricToggle from "Retail/Modules/DominationGemAnalysis/MetricToggle";
 import SourceToggle from "./SourceToggle";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import VisibilityIcon from "@material-ui/icons/Visibility";
+import { themeSelection } from "./Charts/ChartColourThemes";
+
 // import Settings from "../Settings/Settings";
 // import userSettings from "../Settings/SettingsObject";
 
@@ -51,6 +53,27 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
+const menuStyle = {
+  style: { marginTop: 5 },
+  MenuListProps: {
+    style: { paddingTop: 0, paddingBottom: 0 },
+  },
+  PaperProps: {
+    style: {
+      border: "1px solid rgba(255, 255, 255, 0.23)",
+    },
+  },
+  anchorOrigin: {
+    vertical: "bottom",
+    horizontal: "left",
+  },
+  transformOrigin: {
+    vertical: "top",
+    horizontal: "left",
+  },
+  getContentAnchorEl: null,
+};
 
 const getTrinketAtItemLevel = (id, itemLevel, player, contentType, gameType) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
@@ -94,7 +117,10 @@ export default function TrinketAnalysis(props) {
   const { t } = useTranslation();
   const [metric, setMetric] = React.useState("hps");
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]);
+  const [theme, setTheme] = React.useState("candidate2");
   const [colourBlind, setColourBlind] = React.useState(false);
+
+  const availableThemes = ["candidate1", "candidate2", "candidate3", "candidate4", "candidate5", "candidate6", "candidate7", "IBM", "wong"];
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                    Trinket Source Filtering                                    */
@@ -321,7 +347,11 @@ export default function TrinketAnalysis(props) {
           <Grid container spacing={1} justify="center">
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                {gameType === "Retail" ? <VerticalChart data={activeTrinkets} db={finalDB} colourBlind={colourBlind} /> : <BCChart data={activeTrinkets} db={trinketDB} />}
+                {gameType === "Retail" ? (
+                  <VerticalChart data={activeTrinkets} db={finalDB} colourBlind={colourBlind} theme={themeSelection(theme)} />
+                ) : (
+                  <BCChart data={activeTrinkets} db={trinketDB} />
+                )}
               </Paper>
             </Grid>
           </Grid>
@@ -329,6 +359,13 @@ export default function TrinketAnalysis(props) {
         {gameType === "Retail" ? (
           <Grid item xs={12} container spacing={0} direction="row" justify="flex-end">
             <Grid item>
+              <Select key={"themeSelector"} labelId="themeSelectorID" variant="outlined" value={theme} onChange={(e) => setTheme(e.target.value)} MenuProps={menuStyle} label={"Cooldowns Shown"}>
+                {availableThemes.map((key) => (
+                  <MenuItem value={key}>{key}</MenuItem>
+                ))}
+              </Select>
+            </Grid>
+            {/* <Grid item>
               <Tooltip title={"Colourblind Mode"} arrow>
                 <ToggleButton
                   value="check"
@@ -340,7 +377,7 @@ export default function TrinketAnalysis(props) {
                   <VisibilityIcon />
                 </ToggleButton>
               </Tooltip>
-            </Grid>
+            </Grid> */}
           </Grid>
         ) : (
           ""
