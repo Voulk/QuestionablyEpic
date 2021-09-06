@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Paper, Typography, Grid, Tooltip,Select, MenuItem } from "@material-ui/core";
+import { Paper, Typography, Grid, Tooltip, Select, MenuItem } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { itemDB } from "../../../Databases/ItemDB";
 import Item from "../Player/Item";
@@ -120,7 +120,7 @@ export default function TrinketAnalysis(props) {
   const [theme, setTheme] = React.useState("candidate2");
   const [colourBlind, setColourBlind] = React.useState(false);
 
-  const availableThemes = ["candidate1", "candidate2", "candidate3", "candidate4", "candidate5", "candidate6", "candidate7", "IBM", "wong"];
+  const availableThemes = ["candidate1", "candidate2", "candidate3", "candidate4", "candidate5", "candidate6", "candidate7", "IBM", "wong", "candidate10", "candidate11", "candidate12", "candidate13"];
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                    Trinket Source Filtering                                    */
