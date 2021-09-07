@@ -470,6 +470,10 @@ class Player {
     return this.getActiveModel(contentType).getSpecialQuery(queryIdentifier, "cooldownMult");
   };
 
+  getRampID = (queryIdentifier, contentType) => {
+    return this.getActiveModel(contentType).getSpecialQuery(queryIdentifier, "rampID");
+  };
+
   getSingleCast = (spellID, contentType, castType = "avgcast") => {
     return this.getActiveModel(contentType).getSpellData(spellID, castType);
   };
@@ -535,6 +539,7 @@ class Player {
     } else if (spec === SPEC.DISCPRIEST) {
       this.statWeights[contentType] = discPriestDefaultStatWeights(contentType);
       this.statWeights.DefaultWeights = true;
+      
     } else if (spec === SPEC.HOLYPRIEST) {
       this.statWeights[contentType] = holyPriestDefaultStatWeights(contentType);
       this.statWeights.DefaultWeights = true;
@@ -620,6 +625,8 @@ class Player {
         versatility: 400,
         stamina: 1900,
       };
+      this.getActiveModel("Raid").setRampInfo(this.activeStats, []);
+
 
       /*
       this.statWeights.Raid = discPriestDefaultStatWeights("Raid");

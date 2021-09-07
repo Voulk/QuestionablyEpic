@@ -24,6 +24,7 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
         twoMinutesOrb: 0.85,
         threeMinutes: 2.8,
       },
+      rampData: {},
       HoldYourGroundUptime: 0.8
     };
   } else if (contentType === "Dungeon") {
@@ -37,6 +38,7 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
         twoMinutesOrb: 1,
         threeMinutes: 1.1,
       },
+      rampData: {},
       HoldYourGroundUptime: 0.8
     };
   } else {

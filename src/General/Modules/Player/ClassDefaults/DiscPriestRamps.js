@@ -101,7 +101,6 @@ const getHealingMult = (buffs, t, spellName, boonStacks, conduits) => {
         else return 3;
     }
     else if (spellName === "Ascended Eruption") {
-        console.log("Boon stacks: " + boonStacks);
         if (conduits['Courageous Ascension']) return 1 + boonStacks * 0.04;
         else return 1 + boonStacks * 0.03;
     }
@@ -170,6 +169,7 @@ const deepCopyFunction = (inObject) => {
   
     return outObject;
   };
+
 
 export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     let atonementApp = [];
@@ -341,7 +341,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     
     //console.log("D:" + JSON.stringify(damageBreakdown));
     //console.log("At:" + atonementApp);
-    console.log("H:" + JSON.stringify(healing));
+    //console.log("H:" + JSON.stringify(healing));
     //console.log("Fiend Test:" + PWSTest);
     //console.log("Total healing: " + sumValues(healing));
 
