@@ -24,11 +24,13 @@ const useStyles = makeStyles(() => ({
     borderColor: "red",
     borderWidth: "2px",
     borderStyle: "Solid",
+    width: "80%"
   },
   simcok: {
     borderStyle: "None",
     width: "80%",
     margin: "auto",
+    width: "80%"
   },
   rounded: {
     color: "#fff",
@@ -101,7 +103,7 @@ export default function UpgradeFinderSimCnew(props) {
     <Grid item xs={12}>
       <Paper elevation={0} className={check(simcStatus)}>
         {/* <Avatar src="https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-main.jpg" variant="rounded" className={classes.rounded} /> */}
-        <Grid container direction="row" justifyContent="space-between" spacing={1} style={{ padding: 8 }} wrap="noWrap">
+        <Grid container direction="row" justifyContent="space-between" spacing={1} style={{ padding: "4px 8px" }} wrap="noWrap">
           {backgroundImage === "" ? (
             ""
           ) : (
@@ -127,7 +129,7 @@ export default function UpgradeFinderSimCnew(props) {
             <Grid item xs container direction="column" spacing={1} justifyContent="space-between">
               <Grid item xs>
                 <div style={{ display: "inline-flex", verticalAlign: "middle" }}>
-                  {classIcons(currentCharacter.spec, { height: 30, width: 30, margin: "0px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
+                  {classIcons(currentCharacter.spec, { height: 30, width: 30, margin: "0px 2px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
                   <Tooltip title={t(covenant)} style={{ color: classColoursJS(currentCharacter.spec) }} placement="top">
                     {covenantIcons(covenant, 30, 30)}
                   </Tooltip>

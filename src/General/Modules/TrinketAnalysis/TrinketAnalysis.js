@@ -11,6 +11,8 @@ import HelpText from "../SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
+import UpgradeFinderSimCnew from "../CharacterPanel/CharacterPanel";
+import userSettings from "../Settings/SettingsObject";
 // import Settings from "../Settings/Settings";
 // import userSettings from "../Settings/SettingsObject";
 
@@ -84,8 +86,8 @@ const getHighestTrinketScore = (db, trinket, gameType) => {
 
 export default function TrinketAnalysis(props) {
   useEffect(() => {
-      ReactGA.pageview(window.location.pathname + window.location.search);
-    }, []);
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
@@ -98,6 +100,10 @@ export default function TrinketAnalysis(props) {
   );
   const helpText = [t("TrinketAnalysis.HelpText")];
   const classes = useStyles();
+
+  const editSettings = (setting, newValue) => {
+    userSettings[setting] = newValue;
+  };
 
   let activeTrinkets = [];
 
@@ -133,13 +139,28 @@ export default function TrinketAnalysis(props) {
             {t("TrinketAnalysis.Header")}
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+
+        {/* <Grid item xs={12}>
           <Typography color="primary" variant="subtitle2" align="center" style={{ paddingBottom: 8 }}>
             {"Current Playstyle selected: " + props.player.getActiveModel(contentType).modelName + " - " + contentType}
           </Typography>
-        </Grid>
+        </Grid> */}
         <Grid item xs={12}>
           <HelpText text={helpText} />
+        </Grid>
+        <Grid item xs={12}>
+          <UpgradeFinderSimCnew
+            player={props.player}
+            simcSnack={props.simcSnack}
+            allChars={props.allChars}
+            contentType={contentType}
+            userSettings={userSettings}
+            editSettings={editSettings}
+            singleUpdate={props.singleUpdate}
+            hymnalShow={true}
+            groupBuffShow={true}
+            autoSocket={true}
+          />
         </Grid>
         {/* <Grid item xs={12}>
           <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} />

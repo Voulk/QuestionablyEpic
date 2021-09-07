@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import Settings from "../Settings/Settings";
 import userSettings from "../Settings/SettingsObject";
 import ItemBar from "../ItemBar/ItemBar";
+import UpgradeFinderSimCnew from "../CharacterPanel/CharacterPanel";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -170,7 +171,20 @@ export default function QuickCompare(props) {
           <HelpText text={helpText} blurb={helpBlurb} />
         </Grid>
         <Grid item xs={12}>
-          <UpgradeFinderSimC quickCompare={true} player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
+          {/* <UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} /> */}
+          <UpgradeFinderSimCnew
+            quickCompare={true}
+            player={props.player}
+            simcSnack={props.simcSnack}
+            allChars={props.allChars}
+            contentType={contentType}
+            userSettings={userSettings}
+            editSettings={editSettings}
+            singleUpdate={props.singleUpdate}
+            hymnalShow={true}
+            groupBuffShow={true}
+            autoSocket={true}
+          />
         </Grid>
 
         {/*<Grid item xs={12}>

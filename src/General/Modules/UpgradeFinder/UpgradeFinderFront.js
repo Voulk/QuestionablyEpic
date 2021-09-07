@@ -14,6 +14,7 @@ import { runUpgradeFinderBC } from "./UpgradeFinderEngineBC";
 import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
 import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems";
+import UpgradeFinderSimCnew from "../CharacterPanel/CharacterPanel";
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -327,11 +328,25 @@ export default function UpgradeFinderFront(props) {
           <HelpText blurb={helpBlurb} text={helpText} />
         </Grid>
         <Grid item xs={12}>
+          <UpgradeFinderSimCnew
+            player={props.player}
+            simcSnack={props.simcSnack}
+            allChars={props.allChars}
+            contentType={contentType}
+            userSettings={userSettings}
+            editSettings={editSettings}
+            singleUpdate={props.singleUpdate}
+            hymnalShow={true}
+            groupBuffShow={true}
+            autoSocket={true}
+          />
+        </Grid>
+        {/* <Grid item xs={12}>
           <UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
         </Grid>
         <Grid item xs={12}>
           <Settings player={props.player} contentType={contentType} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} autoSocket={true} singleUpdate={props.singleUpdate} />
-        </Grid>
+        </Grid> */}
         {/* ------------------------------ Raid Section ------------------------------ */}
 
         {gameType === "Retail" ? (

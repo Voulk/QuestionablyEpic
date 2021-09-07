@@ -8,6 +8,8 @@ import { getEffectValue } from "../../Engine/EffectFormulas/EffectEngine";
 import ReactGA from "react-ga";
 import { Grid, Typography } from "@material-ui/core";
 import { useSelector } from "react-redux";
+import userSettings from "General/Modules/Settings/SettingsObject";
+import UpgradeFinderSimCnew from "General/Modules/CharacterPanel/CharacterPanel";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -198,6 +200,10 @@ export default function LegendaryCompare(props) {
   fillLegendaries(legendaryList, props.player.spec, props.player, contentType);
   sortLegendaries(legendaryList);
 
+  const editSettings = (setting, newValue) => {
+    userSettings[setting] = newValue;
+  };
+
   return (
     <div className={classes.header}>
       <Grid item container spacing={1} direction="row">
@@ -208,10 +214,24 @@ export default function LegendaryCompare(props) {
           </Typography>
         </Grid>
         <Grid item xs={12}>
+          <UpgradeFinderSimCnew
+            player={props.player}
+            simcSnack={props.simcSnack}
+            allChars={props.allChars}
+            contentType={contentType}
+            userSettings={userSettings}
+            editSettings={editSettings}
+            singleUpdate={props.singleUpdate}
+            hymnalShow={true}
+            groupBuffShow={true}
+            autoSocket={true}
+          />
+        </Grid>
+        {/* <Grid item xs={12}>
           <Typography color="primary" variant="subtitle2" align="center" style={{ paddingBottom: 12 }}>
             {"Current Playstyle selected: " + props.player.getActiveModel(contentType).modelName + " - " + contentType}
           </Typography>
-        </Grid>
+        </Grid> */}
         {/* ------------------------------ Map the Legendary list into Cards ----------------------------- */}
         <Grid item container spacing={1} direction="row">
           {legendaryList.map((item, index) => (

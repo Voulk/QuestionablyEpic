@@ -76,7 +76,7 @@ export default function Settings(props) {
 
   return (
     <div className={classes.root}>
-      <Accordion defaultExpanded={true} disabled={false} elevation={0}>
+      <Accordion defaultExpanded={false} disabled={false} elevation={0}>
         <AccordionSummary style={{ padding: 0 }} expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
           <div className={classes.column}>
             <SettingsIcon style={{ marginRight: 4 }} />
