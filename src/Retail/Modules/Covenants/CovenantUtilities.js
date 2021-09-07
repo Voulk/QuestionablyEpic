@@ -83,10 +83,11 @@ export function getAvailableClassConduits(spec) {
     conduits.push(new ActiveConduit(336379, defaultItemLevel, localizedName(336379), "Endurance"));
   } else if (spec === SPECS.DISCPRIEST) {
     conduits.push(new ActiveConduit(337790, defaultItemLevel, localizedName(337790), "Potency"));
-    conduits.push(new ActiveConduit(337786, defaultItemLevel, localizedName(337786), "Potency"));
+    conduits.push(new ActiveConduit(338338, defaultItemLevel, localizedName(338338), "Potency"));
     conduits.push(new ActiveConduit(337778, defaultItemLevel, localizedName(337778), "Potency"));
     conduits.push(new ActiveConduit(337891, defaultItemLevel, localizedName(337891), "Potency"));
-
+    conduits.push(new ActiveConduit(337786, defaultItemLevel, localizedName(337786), "Potency"));
+    
     conduits.push(new ActiveConduit(337966, defaultItemLevel, localizedName(337966), "Potency", "Kyrian"));
     conduits.push(new ActiveConduit(338315, defaultItemLevel, localizedName(338315), "Potency", "Venthyr"));
     conduits.push(new ActiveConduit(337979, defaultItemLevel, localizedName(337979), "Potency", "Necrolord"));

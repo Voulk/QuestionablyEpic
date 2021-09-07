@@ -5,6 +5,10 @@ export const getPriestConduit = (conduitID, player, contentType, conduitLevel) =
   // === Disc Potency Conduits ===
   // Exaltation
   if (conduitID === 337790) {
+    bonus_stats.HPS = player.getRampID('exaltation', contentType);
+  }
+  else if (conduitID === 338338) {
+    bonus_stats.HPS = player.getRampID('rabidShadows', contentType);
   }
   // Pain Transformation
   else if (conduitID === 337786) {

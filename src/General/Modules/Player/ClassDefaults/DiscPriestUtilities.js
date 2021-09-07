@@ -6,12 +6,14 @@ export const getRampData = (playerStats, playerTrinkets) => {
     const fiendSeq = buildRamp('Fiend', 10, ["Divine Bell"], playerStats.haste, ['Rapture'])
     const discBaseline = allRamps(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": false, "Pelagos": false}, {});
     const clarityOfMind = allRamps(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": true, "Pelagos": false}, {});
-    const exaltation = allRamps(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": true, "Pelagos": false}, {"Exaltation": 226});
+    const exaltation = allRamps(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": false, "Pelagos": false}, {"Exaltation": 226});
+    const rabidShadows = allRamps(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": false, "Pelagos": false}, {"Rabid Shadows": 226});
 
     const rampData = {
         baseline: discBaseline,
         clarityOfMind: (clarityOfMind - discBaseline) / rampTime,
         exaltation: (exaltation - discBaseline) / rampTime, 
+        rabidShadows: (rabidShadows - discBaseline) / rampTime, 
     }
     return rampData;
 }
