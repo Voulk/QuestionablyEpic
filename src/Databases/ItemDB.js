@@ -122037,5 +122037,37 @@ export const itemDB = [
             "type": "special",
             "name": "Passable Credentials"
         }
-    }
+    },
+
+    // for testing
+    // {
+    //     "id": 123,
+    //     "name": "Maraad's",
+    //     "names": {
+    //         "cn": "",
+    //         "en": "Maraad's",
+    //         "ru": "Рукавицы стража смерти",
+    //         "es": "Guanteletes de guardián de la muerte",
+    //         "br": "Manoplas do Guardião da Morte",
+    //         "kr": "",
+    //         "fr": "Gantelets du gardien de la mort",
+    //         "de": "Stulpen des Wächters des Todes"
+    //     },
+    //     "icon": "inv_glove_plate_mawraid_d_01",
+    //     "itemClass": 4,
+    //     "itemSubClass": 4,
+    //     "itemLevel": 226,
+    //     "shadowlandsLegendary": true,
+    //     "stats": {
+    //         "intellect": 5259,
+    //         "stamina": 7889,
+    //         "haste": 4840,
+    //         "crit": 0,
+    //         "mastery": 0,
+    //         "versatility": 2160
+    //     },
+    //     "dropLoc": "",
+    //     "slot": "Hands",
+    //     // "socketType": "Domination"
+    // }
 ]
