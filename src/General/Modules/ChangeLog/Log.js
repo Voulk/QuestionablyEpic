@@ -10,6 +10,15 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 24,
+    date: "8th September",
+    changes: [
+      "Bugfix: Maraads should now be scored correctly in the Top Gear module.",
+      "Visual Fix: Versatility gems will now show the correct icon in Top Gear.",
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 23,
     date: "1st September",
     changes: [
