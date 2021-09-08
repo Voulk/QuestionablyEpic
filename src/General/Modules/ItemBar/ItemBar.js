@@ -8,7 +8,7 @@ import MuiAlert from "@material-ui/lab/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
 import BCItem from "../Player/BCItem";
-import { getItemDB, getValidArmorTypes, getValidWeaponTypes, getItemProp, scoreItem } from "../../Engine/ItemUtilities";
+import { getItemDB, getValidArmorTypes, getValidWeaponTypesBySpec, getItemProp, scoreItem } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { dominationGemDB } from "../../../Databases/DominationGemDB";
@@ -18,6 +18,10 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(0.5),
     minWidth: 120,
     whiteSpace: "noWrap",
+  },
+  title: {
+    padding: theme.spacing(1),
+    paddingLeft: 16,
   },
   typography: {
     padding: theme.spacing(2),
@@ -52,43 +56,44 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-// Consider moving to somewhere more globally accessible.
-// These are value : label pairs that automatically pull the translated version of the slot name.
-// TODO: Add the remaining slots.
-function getSlots() {
-  const { t } = useTranslation();
-  let slots = [
-    { value: "Head", activeItem: "Head", label: t("slotNames.head") },
-    { value: "Neck", activeItem: "Neck", label: t("slotNames.neck") },
-    { value: "Shoulder", activeItem: "Shoulder", label: t("slotNames.shoulder") },
-    { value: "Back", activeItem: "Back", label: t("slotNames.back") },
-    { value: "Chest", activeItem: "Chest", label: t("slotNames.chest") },
-    { value: "Wrist", activeItem: "Wrist", label: t("slotNames.wrists") },
-    { value: "Hands", activeItem: "Hands", label: t("slotNames.hands") },
-    { value: "Waist", activeItem: "Waist", label: t("slotNames.waist") },
-    { value: "Legs", activeItem: "Legs", label: t("slotNames.legs") },
-    { value: "Feet", activeItem: "Feet", label: t("slotNames.feet") },
-    { value: "Finger", activeItem: "Finger", label: t("slotNames.finger") },
-    { value: "Trinket", activeItem: "Trinket", label: t("slotNames.trinket") },
-    { value: "Weapons", activeItem: "1H Weapon", label: t("slotNames.weapons") },
-    { value: "Offhands", activeItem: "Offhands", label: t("slotNames.offhands") },
-    { value: "Relics & Wands", activeItem: "Relics & Wands", label: t("slotNames.relics") },
-  ];
-
-  return slots;
-}
-
 export default function ItemBar(props) {
   const contentType = useSelector((state) => state.contentType);
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const classes = useStyles();
+  /* ------------------------------ Popover Props ----------------------------- */
+  const [anchorEl, setAnchorEl] = useState(null);
+  const openPop = Boolean(anchorEl);
+  const idPop = openPop ? "simple-popover" : undefined;
+  const gameType = useSelector((state) => state.gameType);
 
   /* ----------------------------- Snackbar State ----------------------------- */
   const [open, setOpen] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
-  /* ------------------------------ Popover Props ----------------------------- */
-  const [anchorEl, setAnchorEl] = useState(null);
+
+  const fillItems = (slotName, spec) => {
+    const acceptableArmorTypes = getValidArmorTypes(spec);
+    const acceptableWeaponTypes = getValidWeaponTypesBySpec(spec);
+    let newItemList = [];
+    const db = getItemDB(gameType);
+
+    db.filter(
+      (key) =>
+        key.slot === "Back" ||
+        (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
+        key.slot === "Holdable" ||
+        key.slot === "Offhand" ||
+        key.slot === "Shield" ||
+        (key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
+        (key.itemClass === 2 && spec === "Holy Priest BC"), // Wands
+    ).map((key) => newItemList.push({ value: key.id, label: key.names[currentLanguage] }));
+
+    newItemList.sort((a, b) => (a.label > b.label ? 1 : -1));
+    return newItemList;
+  };
+
+  const [itemDropdown, setItemDropdown] = useState(fillItems("", props.player.spec)); // Filled later based on item slot and armor type.
+
   /* ------------------------------ Define State ----------------------------- */
   const [itemLevel, setItemLevel] = useState("");
   const [itemID, setItemID] = useState("");
@@ -97,14 +102,8 @@ export default function ItemBar(props) {
   const [itemSocket, setItemSocket] = useState("");
   const [itemTertiary, setItemTertiary] = useState("");
   const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
-  const [itemDropdown, setItemDropdown] = useState([]); // Filled later based on item slot and armor type.
-  const [AutoValue, setAutoValue] = useState(itemDropdown[0]);
   const [inputValue, setInputValue] = useState("");
   const [dominationSocket, setDominationSocket] = useState("");
-  const openPop = Boolean(anchorEl);
-  const idPop = openPop ? "simple-popover" : undefined;
-  const slots = getSlots();
-  const gameType = useSelector((state) => state.gameType);
 
   /* ------------------------ End Simc Module Functions ----------------------- */
 
@@ -117,33 +116,6 @@ export default function ItemBar(props) {
       return;
     }
     setOpen(false);
-  };
-
-  const handleCloseDelete = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setOpenDelete(false);
-  };
-
-  // Fill Items fills the ItemNames box with items appropriate to the given slot and spec.
-  const fillItems = (slotName, spec) => {
-    const acceptableArmorTypes = getValidArmorTypes(spec);
-    const acceptableWeaponTypes = getValidWeaponTypes(spec, slotName);
-    let newItemList = [];
-    const db = getItemDB(gameType);
-
-    db.filter(
-      (key) =>
-        (slotName === key.slot && key.slot === "Back") ||
-        (slotName === key.slot && key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
-        (slotName === "Offhands" && (key.slot === "Holdable" || key.slot === "Offhand" || key.slot === "Shield")) ||
-        (slotName === "Weapons" && key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
-        (slotName == "Relics & Wands" && key.itemClass === 2 && spec === "Holy Priest BC"), // Wands
-    ).map((key) => newItemList.push({ value: key.id, label: key.names[currentLanguage] }));
-
-    newItemList.sort((a, b) => (a.label > b.label ? 1 : -1));
-    setItemDropdown(newItemList);
   };
 
   /* ---------------- Add an item to our "Active Items" array. ---------------- */
@@ -168,6 +140,12 @@ export default function ItemBar(props) {
     setItemList([...player.getActiveItems(activeSlot)]);
     props.setItemList([...player.getActiveItems(activeSlot)]);
     setOpen(true);
+
+    setInputValue("");
+    setItemLevel("");
+    setItemSocket("");
+    setItemTertiary("");
+    setDominationSocket("");
   };
 
   const itemNameChanged = (event, val) => {
@@ -199,82 +177,79 @@ export default function ItemBar(props) {
     setDominationSocket(event.target.value);
   };
 
-  const changeSlot = (e, v) => {
-    if (v === null) {
-      return;
-    } else {
-      setItemDropdown([]);
-      setAutoValue(v.value);
-      setInputValue("");
-      setItemLevel("");
-      setItemSocket("");
-      setItemTertiary("");
+  const [openAuto, setOpenAuto] = React.useState(false);
+  const handleOpen = () => {
+    if (inputValue.length > 0) {
+      setOpenAuto(true);
     }
-
-    setSlot(e.target.value);
-    setItemList([...props.player.getActiveItems(e.target.value)]);
-    fillItems(e.target.value, props.player.spec);
   };
+  const handleInputChange = (event, newInputValue) => {
+    setInputValue(newInputValue);
+    if (newInputValue.length > 2) {
+      setOpenAuto(true);
+    } else {
+      setOpenAuto(false);
+    }
+  };
+  /* ---------------------------------------- Missive Array --------------------------------------- */
+  const legendaryStats = ["Haste / Versatility", "Haste / Mastery", "Critical / Haste", "Critical / Mastery", "Critical / Versatility", "Mastery / Versatility"];
+  const legendaryItemLevels = [190, 210, 225, 235, 249, 262];
+
+  const isItemShadowlandsLegendary = getItemDB("Retail")
+    .filter((key) => key.id === itemID)
+    .map((key) => key.shadowlandsLegendary)[0];
+
+  const isItemDomination =
+    getItemDB("Retail")
+      .filter((key) => key.id === itemID)
+      .map((key) => key.socketType)[0] === "Domination";
 
   return (
     <Grid item xs={12}>
-      <Paper elevation={0}>
+      <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
         <Grid
           container
           direction="row"
           justify="center"
           alignItems="center"
+          spacing={1}
           style={{
             paddingTop: 4,
             paddingBottom: 4,
             display: "inline-flex",
           }}
         >
-          {/* -------------------------------------------------------------------------- */
-          /*                             Item Slot Selection                            */
-          /* -------------------------------------------------------------------------- */}
-
-          <Grid item>
-            <FormControl className={classes.formControl} variant="outlined" size="small">
-              <InputLabel id="slots">{t("QuickCompare.Slot")}</InputLabel>
-              <Select labelId="slots" value={activeSlot} onChange={(e, v) => changeSlot(e, v)} MenuProps={menuStyle} label={t("QuickCompare.Slot")}>
-                {slots
-                  .map((x, y) => (
-                    <MenuItem key={y} value={x.value}>
-                      {x.label}
-                    </MenuItem>
-                  ))
-                  .map((key, i) => [key, <Divider key={"menuItem" + i} />])}
-              </Select>
-            </FormControl>
+          <Grid item xs={12}>
+            <Typography className={classes.title}>{t("QuickCompare.ItemBarTitle")}</Typography>
+            <Divider variant="middle" />
           </Grid>
-
           {/* -------------------------------------------------------------------------- */
           /*                               Item Selection                               */
           /* -------------------------------------------------------------------------- */}
 
           <Grid item>
-            <FormControl className={classes.formControl} variant="outlined" size="small" style={{ minWidth: 350 }} disabled={activeSlot === "" ? true : false}>
+            <FormControl className={classes.formControl} variant="outlined" size="small" style={{ minWidth: 350 }}>
               <Autocomplete
                 size="small"
                 classes={{
                   option: classes.option,
                 }}
-                disabled={activeSlot === "" ? true : false}
                 id="item-select"
-                value={AutoValue}
+                // value={AutoValue}
                 onChange={(e, v) => itemNameChanged(e, v)}
                 options={itemDropdown}
                 openOnFocus={true}
                 getOptionLabel={(option) => option.label}
                 getOptionSelected={(option, value) => option.label === value.label}
                 inputValue={inputValue}
-                onInputChange={(event, newInputValue) => {
-                  setInputValue(newInputValue);
-                }}
+                onInputChange={handleInputChange}
+                freeSolo
                 style={{ width: "100%" }}
                 renderInput={(params) => <TextField {...params} label={t("QuickCompare.ItemName")} variant="outlined" />}
                 ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4, paddingTop: 0, paddingBottom: 0 } }}
+                open={openAuto}
+                onOpen={handleOpen}
+                onClose={() => setOpenAuto(false)}
               />
             </FormControl>
           </Grid>
@@ -284,105 +259,143 @@ export default function ItemBar(props) {
           /* -------------------------------------------------------------------------- */}
 
           <Grid item>
-            <FormControl className={classes.formControl} variant="outlined" size="small" style={{ width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120 }}>
-              <TextField
-                error={itemLevel > CONSTRAINTS.Retail.maxItemLevel ? true : false}
-                id="Ilvl-select"
-                onChange={(e) => itemLevelChanged(e.target.value)}
-                value={itemLevel}
-                label={t("QuickCompare.ItemLevel")}
-                disabled={itemID === "" || gameType !== "Retail" ? true : false}
-                onInput={(e) => {
-                  e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 3);
-                }}
-                variant="outlined"
-                size="small"
-                type="number"
-                inputProps={{
-                  min: CONSTRAINTS.Retail.minItemLevel,
-                  max: CONSTRAINTS.Retail.maxItemLevel,
-                }}
-              />
-            </FormControl>
+            {isItemShadowlandsLegendary ? (
+              <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemID === "" || gameType !== "Retail" ? true : false}>
+                <InputLabel id="itemLevelSelectLabel">{t("QuickCompare.ItemLevel")}</InputLabel>
+                <Select
+                  key={"itemLevelSelect"}
+                  labelId="itemLevelSelectLabelId"
+                  value={itemLevel}
+                  onChange={(e) => itemLevelChanged(e.target.value)}
+                  MenuProps={menuStyle}
+                  label={t("QuickCompare.ItemLevel")}
+                >
+                  {legendaryItemLevels.map((key) => [
+                    <MenuItem key={key} label={key} value={key}>
+                      {key}
+                    </MenuItem>,
+                    <Divider key={key + "divider"} />,
+                  ])}
+                </Select>
+              </FormControl>
+            ) : (
+              <FormControl className={classes.formControl} variant="outlined" size="small" style={{ width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120 }}>
+                <TextField
+                  error={itemLevel > CONSTRAINTS.Retail.maxItemLevel ? true : false}
+                  id="Ilvl-select"
+                  onChange={(e) => itemLevelChanged(e.target.value)}
+                  value={itemLevel}
+                  label={t("QuickCompare.ItemLevel")}
+                  disabled={itemID === "" || gameType !== "Retail" ? true : false}
+                  onInput={(e) => {
+                    e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 3);
+                  }}
+                  variant="outlined"
+                  size="small"
+                  type="number"
+                  inputProps={{
+                    min: CONSTRAINTS.Retail.minItemLevel,
+                    max: CONSTRAINTS.Retail.maxItemLevel,
+                  }}
+                />
+              </FormControl>
+            )}
           </Grid>
 
-          {/* ---------------------------------------------------------------------------------------------- */
-          /*                                             Sockets                                            */
-          /* ----------------------------------------------------------------------------------------------  */}
-
-          {gameType === "Retail" ? (
-            <Grid item>
-              <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
-                <InputLabel id="itemsocket">{t("QuickCompare.Socket")}</InputLabel>
-                <Select key={"sockets"} labelId="itemsocket" value={itemSocket} onChange={itemSocketChanged} MenuProps={menuStyle} label={t("QuickCompare.Socket")}>
-                  {[
-                    <MenuItem key={1} label={t("Yes")} value={true}>
-                      {t("Yes")}
-                    </MenuItem>,
-                    <Divider key={2} />,
-                    ,
-                    <MenuItem key={3} label={t("No")} value={false}>
-                      {t("No")}
-                    </MenuItem>,
-                    <Divider key={4} />,
-                  ]}
-                </Select>
-              </FormControl>
-            </Grid>
-          ) : (
-            ""
-          )}
-
-          {/* ---------------------------------------------------------------------------------------------- */
-          /*                                        Domination Socket                                       */
-          /* ----------------------------------------------------------------------------------------------  */}
-
-          {gameType === "Retail" ? (
-            <Grid item>
-              <FormControl
-                className={classes.formControl}
-                variant="outlined"
-                size="small"
-                style={{ width: t("QuickCompare.DominationSocket").length > 10 ? 160 : 140 }}
-                disabled={
-                  itemLevel !== "" &&
-                  getItemDB("Retail")
-                    .filter((key) => key.id === itemID)
-                    .map((key) => key.socketType)[0] === "Domination"
-                    ? false
-                    : true
-                }
-              >
-                <InputLabel id="itemtertiary">{t("QuickCompare.DominationSocket")}</InputLabel>
-                <Select key={"DominationSocket"} labelId="DominationSocket" value={dominationSocket} onChange={itemDominationChanged} MenuProps={menuStyle} label={t("QuickCompare.DominationSocket")}>
-                  {dominationGemDB
-                    .filter((filter) => filter.type !== "Set Bonus")
-                    .map((key, i) => [
-                      <MenuItem key={key.gemID} label={key.name[currentLanguage]} value={key.gemID}>
-                        <a data-wowhead={"item=" + key.gemID}>
-                          <img
-                            style={{
-                              height: 20,
-                              width: 20,
-                              margin: "0px 5px 0px 0px",
-                              verticalAlign: "middle",
-                              borderRadius: 4,
-                              border: "1px solid rgba(255, 255, 255, 0.12)",
-                            }}
-                            src={process.env.PUBLIC_URL + "/Images/Icons/" + key.icon + ".jpg"}
-                            alt={key.name[currentLanguage]}
-                          />
-                        </a>
-                        {key.name[currentLanguage] + " " + "[" + (key.effect.rank + 1) + "]"}
+          {
+            /* ---------------------------------------------------------------------------------------------- */
+            /*                                   Legendary Missive Selection                                  */
+            /* ---------------------------------------------------------------------------------------------- */
+            isItemShadowlandsLegendary === true ? (
+              <Grid item>
+                <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
+                  <InputLabel id="missiveSelectionLabel">{t("QuickCompare.Missives")}</InputLabel>
+                  <Select key={"missiveSelection"} labelId="missiveSelection" value={itemSocket} onChange={itemSocketChanged} MenuProps={menuStyle} label={t("QuickCompare.Missives")}>
+                    {legendaryStats.map((key) => [
+                      <MenuItem key={key} label={t(key)} value={true}>
+                        {t(key)}
                       </MenuItem>,
-                      <Divider key={i} />,
+                      <Divider key={key + "divider"} />,
                     ])}
-                </Select>
-              </FormControl>
-            </Grid>
-          ) : (
-            ""
-          )}
+                  </Select>
+                </FormControl>
+              </Grid>
+            ) : isItemDomination ? (
+              /* ---------------------------------------------------------------------------------------------- */
+              /*                                       Domination Sockets                                       */
+              /* ---------------------------------------------------------------------------------------------- */
+              gameType === "Retail" ? (
+                <Grid item>
+                  <FormControl
+                    className={classes.formControl}
+                    variant="outlined"
+                    size="small"
+                    style={{ width: t("QuickCompare.DominationSocket").length > 10 ? 160 : 140 }}
+                    disabled={itemLevel !== "" && isItemDomination ? false : true}
+                  >
+                    <InputLabel id="itemtertiary">{t("QuickCompare.DominationSocket")}</InputLabel>
+                    <Select
+                      key={"DominationSocket"}
+                      labelId="DominationSocket"
+                      value={dominationSocket}
+                      onChange={itemDominationChanged}
+                      MenuProps={menuStyle}
+                      label={t("QuickCompare.DominationSocket")}
+                    >
+                      {dominationGemDB
+                        .filter((filter) => filter.type !== "Set Bonus")
+                        .map((key, i) => [
+                          <MenuItem key={key.gemID} label={key.name[currentLanguage]} value={key.gemID}>
+                            <a data-wowhead={"item=" + key.gemID}>
+                              <img
+                                style={{
+                                  height: 20,
+                                  width: 20,
+                                  margin: "0px 5px 0px 0px",
+                                  verticalAlign: "middle",
+                                  borderRadius: 4,
+                                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                                }}
+                                src={process.env.PUBLIC_URL + "/Images/Icons/" + key.icon + ".jpg"}
+                                alt={key.name[currentLanguage]}
+                              />
+                            </a>
+                            {key.name[currentLanguage] + " " + "[" + (key.effect.rank + 1) + "]"}
+                          </MenuItem>,
+                          <Divider key={i} />,
+                        ])}
+                    </Select>
+                  </FormControl>
+                </Grid>
+              ) : (
+                ""
+              )
+            ) : /* ---------------------------------------------------------------------------------------------- */
+            /*                                             Sockets                                             */
+            /* ----------------------------------------------------------------------------------------------  */
+            gameType === "Retail" ? (
+              <Grid item>
+                <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
+                  <InputLabel id="itemsocket">{t("QuickCompare.Socket")}</InputLabel>
+                  <Select key={"sockets"} labelId="itemsocket" value={itemSocket} onChange={itemSocketChanged} MenuProps={menuStyle} label={t("QuickCompare.Socket")}>
+                    {[
+                      <MenuItem key={1} label={t("Yes")} value={true}>
+                        {t("Yes")}
+                      </MenuItem>,
+                      <Divider key={2} />,
+                      ,
+                      <MenuItem key={3} label={t("No")} value={false}>
+                        {t("No")}
+                      </MenuItem>,
+                      <Divider key={4} />,
+                    ]}
+                  </Select>
+                </FormControl>
+              </Grid>
+            ) : (
+              ""
+            )
+          }
 
           {/* -------------------------------------------------------------------------- */
           /*                              Tertiary Dropdown                             */
@@ -395,7 +408,7 @@ export default function ItemBar(props) {
                 variant="outlined"
                 size="small"
                 style={{ width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120 }}
-                disabled={itemLevel === "" ? true : false}
+                disabled={itemLevel === "" || isItemShadowlandsLegendary === true ? true : false}
               >
                 <InputLabel id="itemtertiary">{t("QuickCompare.Tertiary")}</InputLabel>
                 <Select key={"TertiarySelect"} labelId="itemtertiary" value={itemTertiary} onChange={itemTertiaryChanged} MenuProps={menuStyle} label={t("QuickCompare.Tertiary")}>

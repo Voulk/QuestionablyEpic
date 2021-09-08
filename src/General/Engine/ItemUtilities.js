@@ -115,6 +115,34 @@ export function getValidWeaponTypes(spec, slot) {
   }
 }
 
+export function getValidWeaponTypesBySpec(spec) {
+  switch (spec) {
+    case SPEC.RESTODRUID:
+      return [4, 5, 6, 10, 13, 15];
+    case SPEC.MISTWEAVERMONK:
+      return [0, 4, 6, 7, 10, 13];
+    case SPEC.HOLYPALADIN:
+      return [0, 1, 4, 5, 6, 7, 8];
+
+    case SPEC.RESTOSHAMAN:
+      return [0, 1, 4, 5, 10, 13, 15];
+    case SPEC.HOLYPRIEST:
+      return [4, 10, 15, 19];
+    case SPEC.DISCPRIEST:
+      return [4, 10, 15, 19];
+    case "Holy Paladin BC":
+      return [0, 1, 4, 5, 6, 7, 8];
+    case "Restoration Druid BC":
+      return [4, 5, 6, 10, 13, 15];
+    case "Restoration Shaman BC":
+      return [0, 1, 4, 5, 6, 10, 13, 15];
+    case "Holy Priest BC":
+      return [4, 10, 15, 19];
+    default:
+      return [-1, 0];
+  }
+}
+
 export function filterBCItemListBySource(itemList, sourceInstance, sourceBoss) {
   let temp = itemList.filter(function (item) {
     return (item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0);
