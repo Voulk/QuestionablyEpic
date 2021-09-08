@@ -372,7 +372,7 @@ class App extends Component {
                 <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule />} />
                 <Route path="/holydiver" render={() => <TestingPage />} />
                 <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} />} />
-                <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
+                <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} />} />
                 <Route
                   path="/topgear"
                   render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} />}

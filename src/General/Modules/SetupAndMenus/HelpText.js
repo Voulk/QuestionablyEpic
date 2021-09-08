@@ -15,11 +15,14 @@ const useStyles = makeStyles((theme) => ({
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
+    color: "limegreen",
+    marginLeft: 4,
   },
   secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary,
+    fontSize: theme.typography.pxToRem(14),
+    color: "##fffff7",
   },
+  body: { color: theme.palette.text.secondary, marginBottom: 0, width: "100%", fontSize: theme.typography.pxToRem(14) },
   icon: {
     verticalAlign: "bottom",
     height: 20,
@@ -58,23 +61,23 @@ export default function HelpText(props) {
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
           <div className={classes.column} style={{ display: "inline-flex" }}>
             <HelpIcon />
-            <Typography className={classes.heading} style={{ color: "limegreen", marginLeft: 4 }} align="left" variant="h6">
+            <Typography className={classes.heading} align="left" variant="h6">
               {t("HowToUse")}
             </Typography>
           </div>
         </AccordionSummary>
         <Divider variant="middle" />
-        <AccordionDetails className={classes.details} >
+        <AccordionDetails className={classes.details}>
           <Grid container>
             <Grid item xs={12}>
-              <Typography style={{ color: "##fffff7", marginBottom: 0, width: "100%" }} align="left" variant="subtitle1" display="inline" paragraph>
+              <Typography className={classes.secondaryHeading} align="left" variant="subtitle1" display="inline" paragraph>
                 {helpBlurb}
               </Typography>
             </Grid>
 
             {helpText.map((key, i) => (
               <Grid item xs={12} key={"helpText" + i}>
-                <Typography style={{ color: "##fffff7", marginBottom: 0, width: "100%" }} align="left" variant="subtitle1" display="inline">
+                <Typography className={classes.body} align="left" variant="subtitle1" display="inline">
                   {bull} {key}
                 </Typography>
               </Grid>

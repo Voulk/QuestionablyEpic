@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
   details: {
     alignItems: "center",
     padding: 0,
+    marginTop: 5
   },
   column: {
     // flexBasis: "33.33%",
@@ -79,9 +80,10 @@ export default function Settings(props) {
       <Accordion defaultExpanded={false} disabled={false} elevation={0}>
         <AccordionSummary style={{ padding: 0 }} expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
           <div className={classes.column}>
-            <SettingsIcon style={{ marginRight: 4 }} />
+            <SettingsIcon style={{ marginRight: 4, width: 22, height: 22 }} />
             <Typography className={classes.heading}>{t("Settings.SettingsTitle")}</Typography>
           </div>
+          
         </AccordionSummary>
         {/* <Divider variant="middle" /> */}
         <AccordionDetails className={classes.details}>

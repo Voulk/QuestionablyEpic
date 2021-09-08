@@ -40,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
   },
+  select: {
+    fontSize: theme.typography.pxToRem(14),
+  },
 }));
 
 export default function RetailSettings(props) {
@@ -115,9 +118,9 @@ export default function RetailSettings(props) {
     <Grid container spacing={1} direction="row">
       {/* ------------------------- Cabalist's Hymnal Item ------------------------- */}
       {props.hymnalShow === true ? (
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
+        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
           <Grid container spacing={0}>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               <div style={{ display: "inline-flex" }}>
                 <Typography className={classes.heading} color="primary" noWrap>
                   {t("Settings.Retail.Setting0Title")}
@@ -133,20 +136,25 @@ export default function RetailSettings(props) {
                   <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
                 </Tooltip>
               </div>
-            </Grid>
+            </Grid> */}
             <Grid item xs={12}>
-              <TextField
-                id="AlliesNumber"
-                value={hymnalValue}
-                onChange={(e) => updateHymnal(e.target.value)}
-                variant="outlined"
-                size="small"
-                type="number"
-                fullWidth
-                inputProps={{
-                  style: { textAlign: "center" },
-                }}
-              />
+              <FormControl variant="outlined" size="small" label={t("Settings.Retail.Setting0Title")} fullWidth style={{ textAlign: "center", width: 120 }}>
+                {/* <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting0Title")}</InputLabel> */}
+                <TextField
+                  id="AlliesNumber"
+                  label={t("Settings.Retail.Setting0Title")}
+                  value={hymnalValue}
+                  onChange={(e) => updateHymnal(e.target.value)}
+                  variant="outlined"
+                  size="small"
+                  type="number"
+                  // fullWidth
+                  inputProps={{
+                    style: { textAlign: "center" },
+                    className: classes.select,
+                  }}
+                />
+              </FormControl>
             </Grid>
           </Grid>
         </Grid>
@@ -155,9 +163,9 @@ export default function RetailSettings(props) {
       )}
       {/* ------------------------- Group Buff (Treat Buff as Personal Throughput) ------------------------- */}
       {props.groupBuffShow === true ? (
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
+        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
           <Grid container spacing={0}>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               <div style={{ display: "inline-flex" }}>
                 <Typography className={classes.heading} color="primary" noWrap>
                   {t("Settings.Retail.Setting1Title")}
@@ -173,10 +181,18 @@ export default function RetailSettings(props) {
                   <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
                 </Tooltip>
               </div>
-            </Grid>
+            </Grid> */}
             <Grid item xs={12}>
-              <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
-                <Select labelId="groupValue" value={groupValue} onChange={(e) => updateGroupValue(e.target.value)} MenuProps={menuStyle}>
+              <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center", minWidth: 120 }} label={t("Settings.Retail.Setting1Title")}>
+                <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting1Title")}</InputLabel>
+                <Select
+                  label={t("Settings.Retail.Setting1Title")}
+                  className={classes.select}
+                  labelId="groupValue"
+                  value={groupValue}
+                  onChange={(e) => updateGroupValue(e.target.value)}
+                  MenuProps={menuStyle}
+                >
                   <MenuItem value={true} style={{ justifyContent: "center" }}>
                     {t("Yes")}
                   </MenuItem>
@@ -224,9 +240,9 @@ export default function RetailSettings(props) {
             )} */}
 
       {/* --------------------------------- Playstyle / Build Selection --------------------------------  */}
-      <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
+      <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
         <Grid container spacing={0}>
-          <Grid item xs={12}>
+          {/* <Grid item xs={12}>
             <div style={{ display: "inline-flex" }}>
               <Typography className={classes.heading} color="primary" noWrap>
                 {t("Settings.Retail.Setting5Title")}
@@ -242,10 +258,18 @@ export default function RetailSettings(props) {
                 <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
               </Tooltip>
             </div>
-          </Grid>
+          </Grid> */}
           <Grid item xs={12}>
-            <FormControl variant="outlined" fullWidth size="small">
-              <Select labelId="slots" value={props.player.activeModelID[props.contentType]} onChange={(e) => updateSpecBuild(e.target.value)} MenuProps={menuStyle}>
+            <FormControl variant="outlined" fullWidth size="small" style={{ textAlign: "center", minWidth: 120 }} label={t("Settings.Retail.Setting5Title")}>
+              <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting5Title")}</InputLabel>
+              <Select
+                className={classes.select}
+                labelId="slots"
+                value={props.player.activeModelID[props.contentType]}
+                onChange={(e) => updateSpecBuild(e.target.value)}
+                MenuProps={menuStyle}
+                label={t("Settings.Retail.Setting5Title")}
+              >
                 {specBuilds.map((key, i) => (
                   <MenuItem id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
                     {key.modelName}
@@ -258,9 +282,9 @@ export default function RetailSettings(props) {
       </Grid>
       {/* ----------------------------------------- Auto Socket Items ---------------------------------------- */}
       {props.autoSocket === true ? (
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
+        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
           <Grid container spacing={0}>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               <div style={{ display: "inline-flex" }}>
                 <Typography className={classes.heading} color="primary" noWrap>
                   {t("Settings.Retail.Setting3Title")}
@@ -276,10 +300,18 @@ export default function RetailSettings(props) {
                   <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
                 </Tooltip>
               </div>
-            </Grid>
+            </Grid> */}
             <Grid item xs={12}>
-              <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
-                <Select labelId="groupValue" value={autoSocketValue} onChange={(e) => updateAutoSocketValue(e.target.value)} MenuProps={menuStyle}>
+              <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center", minWidth: 160 }} label={t("Settings.Retail.Setting3Title")}>
+                <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting3Title")}</InputLabel>
+                <Select
+                  className={classes.select}
+                  labelId="groupValue"
+                  value={autoSocketValue}
+                  onChange={(e) => updateAutoSocketValue(e.target.value)}
+                  MenuProps={menuStyle}
+                  label={t("Settings.Retail.Setting3Title")}
+                >
                   <MenuItem value={true} style={{ justifyContent: "center" }}>
                     {t("Yes")}
                   </MenuItem>
@@ -295,9 +327,9 @@ export default function RetailSettings(props) {
         ""
       )}
       {/* --------------------------- Domination Socket for Great Vault Items --------------------------  */}
-      <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
+      <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
         <Grid container spacing={0}>
-          <Grid item xs={12}>
+          {/* <Grid item xs={12}>
             <div style={{ display: "inline-flex" }}>
               <Typography className={classes.heading} color="primary" noWrap>
                 {t("Settings.Retail.Setting4Title")}
@@ -313,9 +345,18 @@ export default function RetailSettings(props) {
                 <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
               </Tooltip>
             </div>
-          </Grid>
-          <FormControl variant="outlined" size="small" style={{ width: t("QuickCompare.DominationSocket").length > 10 ? 160 : 140 }}>
-            <Select key={"DominationSocket"} labelId="DominationSocket" value={replaceDomGems} onChange={(e) => updateReplaceDomGems(e.target.value)} MenuProps={menuStyle}>
+          </Grid> */}
+          <FormControl variant="outlined" size="small" style={{ textAlign: "center", width: t("QuickCompare.DominationSocket").length > 10 ? 180 : 200 }} label={t("Settings.Retail.Setting4Title")}>
+            <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting4Title")}</InputLabel>
+            <Select
+              className={classes.select}
+              key={"DominationSocket"}
+              labelId="DominationSocket"
+              value={replaceDomGems}
+              onChange={(e) => updateReplaceDomGems(e.target.value)}
+              MenuProps={menuStyle}
+              label={t("Settings.Retail.Setting4Title")}
+            >
               <MenuItem value={true} style={{ justifyContent: "center" }}>
                 {t("Yes")}
               </MenuItem>
