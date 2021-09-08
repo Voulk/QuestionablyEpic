@@ -406,18 +406,24 @@ class Player {
   };
 
   getActiveModel = (contentType) => {
-    return this.castModels[this.activeModelID[contentType]];
+    if (this.castModels[this.activeModelID[contentType]]) return this.castModels[this.activeModelID[contentType]];
+    else {
+      reportError(this, "Player", "Invalid Cast Model", contentType);
+      return this.castModels[0];
+      
+    }
+
   };
 
   setModelID = (id, contentType) => {
-    if ((contentType === "Raid" || contentType === "Dungeon") && id && id < this.castModels.length) {
+    if ((contentType === "Raid" || contentType === "Dungeon") && id < this.castModels.length) {
       // Check that it's a valid ID.
       this.activeModelID[contentType] = id;
     } else {
       // This is a critical error that could crash the app so we'll reset models to defaults
       this.activeModelID["Raid"] = 0;
       this.activeModelID["Dungeon"] = 1;
-      reportError(this, "Player", "Attempt to set invalid Model ID", id);
+      reportError(this, "Player", "Attempt to set invalid Model ID", id + "/" + contentType);
     }
   };
 
@@ -493,7 +499,8 @@ class Player {
 
   /* ------------- Return the Saved ReportID from the imported log ------------ */
   getReportID = (contentType) => {
-    return this.getActiveModel(contentType).fightInfo.reportID;
+    if (this.getActiveModel(contentType) && 'fightInfo' in this.getActiveModel(contentType)) return this.getActiveModel(contentType).fightInfo.reportID;
+    else return "Unknown";
   };
 
   /* ------------ Return the Saved Boss Name from the imported log ------------ */
@@ -642,6 +649,7 @@ class Player {
         { identifier: "Raid Default", content: "Raid" },
         { identifier: "Dungeon Default", content: "Dungeon" },
         { identifier: "Sinister Teachings", content: "Raid" },
+        { identifier: "Sinister Teachings", content: "Dungeon" },
       ];
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 

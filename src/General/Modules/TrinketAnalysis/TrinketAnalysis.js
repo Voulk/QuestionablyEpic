@@ -98,7 +98,11 @@ export default function TrinketAnalysis(props) {
       key.slot === "Trinket" &&
       ((gameType === "BurningCrusade" && "phase" in key && key.phase < 2 && (!("class" in key) || props.player.getSpec().includes(key.class))) || (gameType === "Retail" && key.levelRange.length > 0)),
   );
-  const helpText = [t("TrinketAnalysis.HelpText")];
+  const helpBlurb = [t("TrinketAnalysis.HelpText")];
+  const helpText = ["The graph is generic to your spec and content type. You can get results accurate to your character in the Top Gear module.",
+                    "World Quest trinkets coming very soon.",
+                    "This is a sampling of available trinkets only. You can add ones that aren't on the list in Top Gear."];
+
   const classes = useStyles();
 
   const editSettings = (setting, newValue) => {
@@ -146,7 +150,7 @@ export default function TrinketAnalysis(props) {
           </Typography>
         </Grid> */}
         <Grid item xs={12}>
-          <HelpText text={helpText} />
+          <HelpText blurb={helpBlurb} text={helpText} />
         </Grid>
         <Grid item xs={12}>
           <UpgradeFinderSimCnew
