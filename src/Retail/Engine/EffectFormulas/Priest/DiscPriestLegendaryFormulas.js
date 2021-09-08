@@ -5,15 +5,12 @@ export const getDiscPriestLegendary = (effectName, player, contentType) => {
   let name = effectName;
   let bonus_stats = {};
 
-  const boonSeq = buildRamp('Boon', 10, ["Divine Bell"], player.activeStats.haste, ['Rapture'])
-  const fiendSeq = buildRamp('Fiend', 10, ["Divine Bell"], player.activeStats.haste, ['Rapture'])
-  const discBaseline = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": false}, {});
-
   /*
 
     */
   if (name === "Clarity of Mind") {
-    bonus_stats.hps = player.getRampID('clarityOfMind', contentType);
+    //bonus_stats.hps = player.getRampID('clarityOfMind', contentType);
+    bonus_stats.hps = (contentType === "Raid" ? 1000 : 0);
 
   } else if (name === "Crystalline Reflection") {
     // Do Math
