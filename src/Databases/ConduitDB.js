@@ -803,6 +803,22 @@ export const conduitDB = [
     show: true,
   },
   {
+    guid: 338338,
+    simcID: 80, // TODO: Update
+    abilityIcon: "spell_deathknight_gnaw_ghoul.jpg", // "spell_deathknight_gnaw_ghoul.jpg"
+    name: {
+      en: "Rabid Shadows",
+      cn: "狂躁暗影",
+      de: "Frenetische Schatten",
+      fr: "Ombres enragées",
+      ru: "Бешеные тени",
+    },
+    type: "Potency",
+    class: "Discipline Priest",
+    covenant: "",
+    show: true,
+  },
+  {
     guid: 337786,
     simcID: 76,
     abilityIcon: "spell_holy_blessedrecovery.jpg",

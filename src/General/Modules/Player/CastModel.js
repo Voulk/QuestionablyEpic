@@ -9,6 +9,7 @@ import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights
 import { monkSinSpecialQueries, monkSinSpellData, monkSinStatWeights } from "./ClassDefaults/Monk/MonkSinTeachings";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./ClassDefaults/DiscPriestDefaults";
+import { getRampData } from "General/Modules/Player/ClassDefaults/DiscPriestUtilities";
 
 class CastModel {
   constructor(spec, contentType, modelID, arrID) {
@@ -54,6 +55,7 @@ class CastModel {
 
   getSpecialQuery = (tag, CDFlag = "") => {
     if (CDFlag === "cooldownMult" && "cooldownMult" in this.specialQueries) return this.specialQueries["cooldownMult"][tag];
+    else if (CDFlag === "rampID" && "rampData" in this.specialQueries) return this.specialQueries["rampData"][tag];
     else if (tag in this.specialQueries) return this.specialQueries[tag];
     else return 0;
   };
@@ -179,6 +181,11 @@ class CastModel {
   setStatWeights = (newWeights) => {
     this.baseStatWeights = newWeights;
   };
+
+  setRampInfo = (stats, trinkets) => {
+    this.specialQueries.rampData = getRampData(stats, trinkets);
+
+  }
 
   getClassicDruid = () => {
     return {
