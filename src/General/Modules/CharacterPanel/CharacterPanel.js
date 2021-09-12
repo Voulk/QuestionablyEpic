@@ -13,6 +13,7 @@ import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunction
 import Settings from "../Settings/Settings";
 import { covenantIcons } from "../CooldownPlanner/Functions/CovenantFunctions";
 import { apiGetPlayerImage } from "../SetupAndMenus/ConnectionUtilities";
+import { characterImageStyle } from "./CharacterImageCSS";
 
 const useStyles = makeStyles(() => ({
   slider: {
@@ -24,13 +25,13 @@ const useStyles = makeStyles(() => ({
     borderColor: "red",
     borderWidth: "2px",
     borderStyle: "Solid",
-    width: "80%"
+    width: "80%",
   },
   simcok: {
     borderStyle: "None",
     width: "80%",
     margin: "auto",
-    width: "80%"
+    width: "80%",
   },
   rounded: {
     color: "#fff",
@@ -99,6 +100,8 @@ export default function UpgradeFinderSimCnew(props) {
     setImg();
   }, []);
 
+  const imageStyle = characterImageStyle(props.player.race);
+  console.log(imageStyle);
   return (
     <Grid item xs={12}>
       <Paper elevation={0} className={check(simcStatus)}>
@@ -111,16 +114,7 @@ export default function UpgradeFinderSimCnew(props) {
               <div
                 style={{
                   backgroundImage: `url("${backgroundImage}")`,
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center 28%",
-                  backgroundSize: "auto 500%",
-                  textAlign: "center",
-                  position: "relative",
-                  border: "1px solid rgb(118, 118, 118)",
-                  flex: "1 1 10%",
-                  height: 82,
-                  width: 82,
-                  borderRadius: 4,
+                  ...imageStyle,
                 }}
               />
             </Grid>

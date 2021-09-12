@@ -11,6 +11,7 @@ import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults
 import { monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 import ls from "local-storage";
+import { apiGetPlayerImage2 } from "../SetupAndMenus/ConnectionUtilities";
 
 class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
@@ -25,6 +26,7 @@ class Player {
     this.realm = realm;
     this.race = race;
     this.uniqueHash = getUnique();
+    this.charImageURL = apiGetPlayerImage2(this.region, this.charName, this.realm);
 
     if (gameType === "Retail") {
       this.setupDefaults(specName);
@@ -32,11 +34,12 @@ class Player {
       this.activeConduits = getAvailableClassConduits(specName);
       this.gameType = "Retail";
     }
-
+    console.log(this.charImageURL)
     //if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
 
     //this.getStatPerc = getStatPerc;
   }
+
 
   uniqueHash = ""; // used for deletion purposes.
   spec = "";
@@ -410,9 +413,7 @@ class Player {
     else {
       reportError(this, "Player", "Invalid Cast Model", contentType);
       return this.castModels[0];
-      
     }
-
   };
 
   setModelID = (id, contentType) => {
@@ -499,7 +500,7 @@ class Player {
 
   /* ------------- Return the Saved ReportID from the imported log ------------ */
   getReportID = (contentType) => {
-    if (this.getActiveModel(contentType) && 'fightInfo' in this.getActiveModel(contentType)) return this.getActiveModel(contentType).fightInfo.reportID;
+    if (this.getActiveModel(contentType) && "fightInfo" in this.getActiveModel(contentType)) return this.getActiveModel(contentType).fightInfo.reportID;
     else return "Unknown";
   };
 
