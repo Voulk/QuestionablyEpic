@@ -96,7 +96,7 @@ export const monkSinStatWeights = (contentType) => {
   statWeights.Raid = {
     intellect: 1,
     haste: 0.41,
-    crit: 0.59,
+    crit: 0.6,
     mastery: 0.36,
     versatility: 0.41,
     leech: 0.56,
