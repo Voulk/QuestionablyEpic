@@ -625,7 +625,7 @@ class Player {
         versatility: 400,
         stamina: 1900,
       };
-      //this.getActiveModel("Raid").setRampInfo(this.activeStats, []);
+      this.getActiveModel("Raid").setRampInfo(this.activeStats, []);
 
     } else if (spec === SPEC.HOLYPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
