@@ -26,7 +26,6 @@ class Player {
     this.realm = realm;
     this.race = race;
     this.uniqueHash = getUnique();
-    this.charImageURL = apiGetPlayerImage2(this.region, this.charName, this.realm);
 
     if (gameType === "Retail") {
       this.setupDefaults(specName);
@@ -34,12 +33,10 @@ class Player {
       this.activeConduits = getAvailableClassConduits(specName);
       this.gameType = "Retail";
     }
-    console.log(this.charImageURL)
     //if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
 
     //this.getStatPerc = getStatPerc;
   }
-
 
   uniqueHash = ""; // used for deletion purposes.
   spec = "";
