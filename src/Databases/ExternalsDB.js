@@ -27,6 +27,32 @@ export const externalsDB = [
     cooldown: 120,
   },
   {
+    guid: 1022,
+    name: {
+      en: "Blessing of Protection",
+      de: "Segen des Schutzes",
+      fr: "Bénédiction de protection",
+      ru: "Благословение защиты",
+      ch: "保护祝福",
+    },
+    wowhead: "https://www.wowhead.com/spell=1022/blessing-of-protection",
+    icon: "spell_holy_sealofprotection",
+    cooldown: 300,
+  },
+  {
+    guid: 1044,
+    name: {
+      en: "Blessing of Freedom",
+      de: "Segen der Freihei",
+      fr: "Bénédiction de liberté",
+      ru: "Благословенная свобода",
+      ch: "自由祝福",
+    },
+    wowhead: "https://www.wowhead.com/spell=1044/blessing-of-freedom",
+    icon: "spell_holy_sealofvalor",
+    cooldown: 25,
+  },
+  {
     guid: 102342,
     name: {
       en: "Ironbark",
