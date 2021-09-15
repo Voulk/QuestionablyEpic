@@ -189,5 +189,7 @@ export const discConduits = (conduit, rank) => {
     else if (conduit === "Rabid Shadows") return 0.171 + (rank * 0.19);
     else if (conduit === "Courageous Ascension") return 0.225 + (rank * 0.025);
     else if (conduit === "Shattered Perception") return 0.117 + (rank * 0.013);
-    
+    else {
+        console.error("Invalid Conduit");
+    }
 }

@@ -2,7 +2,7 @@
 
 import Player from "../Player";
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-import { DISCSPELLS } from "./DiscSpellDB"
+import { DISCSPELLS } from "./DiscSpellDB";
 
 export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
     
@@ -202,7 +202,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
         buffDuration: 30,
     });
     if (settings['Kleia']) activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
-    if (conduits['Courageous Ascension']) discSpells['Ascended Blast'][0].coeff *= 1.4; // Blast +40%, Eruption +1% per stack (to 4%)
+    if (conduits['Courageous Ascension']) discSpells['Ascended Blast'][0].coeff *= 1.45; // Blast +40%, Eruption +1% per stack (to 4%)
     if (conduits['Shining Radiance']) discSpells['Power Word: Radiance'][0].coeff *= 1.64; // +64% radiance healing
     if (conduits['Rabid Shadows']) discSpells['Shadowfiend'][0].dot.tickRate = discSpells['Shadowfiend'][0].dot.tickRate / 1.342; // Faster tick rate.
     if (conduits['Exaltation']) {

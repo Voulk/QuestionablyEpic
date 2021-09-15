@@ -1,3 +1,5 @@
+import { DISCSPELLS, discConduits } from "General/Modules/Player/ClassDefaults/DiscSpellDB"
+
 // Disc and Holy use one shared entry here since a lot of conduits overlap.
 export const getPriestConduit = (conduitID, player, contentType, conduitLevel) => {
   let bonus_stats = {};
@@ -5,17 +7,30 @@ export const getPriestConduit = (conduitID, player, contentType, conduitLevel) =
   // === Disc Potency Conduits ===
   // Exaltation
   if (conduitID === 337790) {
-    //bonus_stats.HPS = player.getRampID('exaltation', contentType);
+    const conduitCoeff = discConduits('Exaltation', conduitLevel) / discConduits('Exaltation', 9);
+    bonus_stats.HPS = player.getRampID('exaltation', contentType) * conduitCoeff;
     
   }
+  // Rabid Shadows
   else if (conduitID === 338338) {
-    //bonus_stats.HPS = player.getRampID('rabidShadows', contentType);
+    const conduitCoeff = discConduits('Rabid Shadows', conduitLevel) / discConduits('Rabid Shadows', 9);
+    bonus_stats.HPS = player.getRampID('rabidShadows', contentType);
   }
   // Pain Transformation
   else if (conduitID === 337786) {
+    const painSuppCPM = 0.27 // Move to Model. TODO.
+    const healSize = discConduits('Pain Transformation', conduitLevel) * player.getHealth();
+    const expectedOverhealing = 0.6; // Pain suppression is best used pre-emptively, meaning this conduit only really gets any value when used in a panic to cover a mistake.
+    // It is not good.
+
+    bonus_stats.HPS = painSuppCPM * healSize / 60 * (1 - expectedOverhealing);
   }
   // Shining Radiance
   else if (conduitID === 337778) {
+    const radianceCPM = 3.2 // Move to Model. TODO.
+    const radianceHealing = DISCSPELLS['Power Word: Radiance'][0]['coeff'] * player.getInt() * 5;
+
+    bonus_stats.HPS = radianceCPM * radianceHealing * 0.64 / 60;
   }
   // Swift Penitence
   else if (conduitID === 337891) {
@@ -25,6 +40,8 @@ export const getPriestConduit = (conduitID, player, contentType, conduitLevel) =
   // == Covenant-specific Conduits
   // Courageous Ascension (Kyrian)
   else if (conduitID === 337966) {
+    const conduitCoeff = discConduits('Courageous Ascension', conduitLevel) / discConduits('Courageous Ascension', 9);
+    bonus_stats.HPS = player.getRampID('courAscension', contentType) * conduitCoeff;
   }
   // Shattered Perceptions (Venthyr)
   else if (conduitID === 338315) {

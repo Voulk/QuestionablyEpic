@@ -9,8 +9,8 @@ export const getDiscPriestLegendary = (effectName, player, contentType) => {
 
     */
   if (name === "Clarity of Mind") {
-    //bonus_stats.hps = player.getRampID('clarityOfMind', contentType);
-    bonus_stats.hps = (contentType === "Raid" ? 1000 : 0);
+    bonus_stats.hps = player.getRampID('clarityOfMind', contentType);
+    //bonus_stats.hps = (contentType === "Raid" ? 1000 : 0);
 
   } else if (name === "Crystalline Reflection") {
     // Do Math
