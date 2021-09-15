@@ -53,6 +53,19 @@ export const externalsDB = [
     cooldown: 25,
   },
   {
+    guid: 633,
+    name: {
+      en: "Lay on Hands",
+      de: "Handauflegung",
+      fr: "Imposition des mains",
+      ru: "Возложение рук",
+      ch: "圣疗术",
+    },
+    wowhead: "https://www.wowhead.com/spell=633/lay-on-hands",
+    icon: "spell_holy_layonhands",
+    cooldown: 600,
+  },
+  {
     guid: 102342,
     name: {
       en: "Ironbark",
@@ -92,6 +105,20 @@ export const externalsDB = [
     wowhead: "https://www.wowhead.com/spell=116849/life-cocoon",
     icon: "ability_monk_chicocoon",
     cooldown: 120,
+  },
+
+  {
+    guid: 116841,
+    name: {
+      en: "Tiger's Lust",
+      de: "Tigerrausch",
+      fr: "Soif du tigre",
+      ru: "Тигриное рвение",
+      ch: "迅如猛虎",
+    },
+    wowhead: "https://www.wowhead.com/spell=116841/tigers-lust",
+    icon: "ability_monk_tigerslust",
+    cooldown: 30,
   },
 
   {
