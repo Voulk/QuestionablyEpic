@@ -20,7 +20,7 @@ export const getPriestConduit = (conduitID, player, contentType, conduitLevel) =
   else if (conduitID === 337786) {
     const painSuppCPM = 0.27 // Move to Model. TODO.
     const healSize = discConduits('Pain Transformation', conduitLevel) * player.getHealth();
-    const expectedOverhealing = 0.6; // Pain suppression is best used pre-emptively, meaning this conduit only really gets any value when used in a panic to cover a mistake.
+    const expectedOverhealing = 0.52; // Pain suppression is best used pre-emptively, meaning this conduit only really gets any value when used in a panic to cover a mistake.
     // It is not good.
 
     bonus_stats.HPS = painSuppCPM * healSize / 60 * (1 - expectedOverhealing);
@@ -29,8 +29,9 @@ export const getPriestConduit = (conduitID, player, contentType, conduitLevel) =
   else if (conduitID === 337778) {
     const radianceCPM = 3.2 // Move to Model. TODO.
     const radianceHealing = DISCSPELLS['Power Word: Radiance'][0]['coeff'] * player.getInt() * 5;
+    const expectedOverheal = 0.22;
 
-    bonus_stats.HPS = radianceCPM * radianceHealing * 0.64 / 60;
+    bonus_stats.HPS = radianceCPM * radianceHealing * 0.64 / 60 * (1 - expectedOverheal);
   }
   // Swift Penitence
   else if (conduitID === 337891) {
