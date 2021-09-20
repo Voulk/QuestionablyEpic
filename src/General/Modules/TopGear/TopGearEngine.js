@@ -484,14 +484,11 @@ function sumScore(obj) {
   return sum;
 }
 
-// A true evaluation function on a set.
+// An evaluation function for a single combination of gear. This is in effect where a set is scored.
 function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel) {
-  // Get Base Stats
-  let builtSet = itemSet.compileStats("Retail", userSettings);
+  let builtSet = itemSet.compileStats("Retail", userSettings); // This adds together the stats of each item in the set.
   let setStats = builtSet.setStats;
   let hardScore = 0;
-
-  //console.log(itemSet);
 
   let enchants = {};
 
@@ -500,12 +497,14 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     haste: 0,
     crit: 0,
     versatility: 0,
-    mastery: 0,//STATPERONEPERCENT.MASTERYA[player.spec] * BASESTAT.MASTERY[player.spec] * 100,
+    mastery: 0,
     leech: 0,
     hps: 0,
     dps: 0,
   };
 
+  // Our adjusted_weights will be compiled later by dynamically altering our base weights.
+  // The more we get of any one stat, the more the others are worth comparatively. Our adjusted weights will let us include that in our set score.
   let adjusted_weights = {
     intellect: 1,
     haste: castModel.baseStatWeights["haste"],
@@ -514,16 +513,11 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     versatility: castModel.baseStatWeights["versatility"],
     leech: castModel.baseStatWeights["leech"],
   };
-  //console.log("Weights Before: " + JSON.stringify(adjusted_weights));
 
-  //console.log("Weights After: " + JSON.stringify(adjusted_weights));
-
-  // Apply consumables if ticked.
-
-  // Apply Enchants & Gems
+  // == Enchants & Gems ==
 
   // Rings - Best secondary.
-  // We use the players highest stat weight here. Using the adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
+  // We use the players highest stat weight here. Using an adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
   // single percentage. The stress this could cause a player is likely not worth the optimization.
   let highestWeight = getHighestWeight(castModel);
   bonus_stats[highestWeight] += 32; // 16 x 2.
@@ -534,7 +528,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   enchants["Wrist"] = "+15 int";
 
   // Chest
-  // TODO: Add the mana enchant. In practice they are very similar.
+  // The mana enchant is actually close in value to +30 int, but for speeds sake it is not currently included. 
   bonus_stats.intellect += 30;
   enchants["Chest"] = "+30 stats";
 
@@ -543,54 +537,70 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   enchants["Back"] = "+30 leech";
 
   // Weapon - Celestial Guidance
-  // Eternal Grace is so poor right now that I don't even think it deserves inclusion.
+  // Eternal Grace is so poor that it isn't even compared.
   let expected_uptime = convertPPMToUptime(3, 10);
   bonus_stats.intellect += (setStats.intellect + bonus_stats.intellect) * 0.05 * expected_uptime;
   enchants["CombinedWeapon"] = "Celestial Guidance";
 
   // 5% int boost for wearing the same items.
-  // The system doesn't actually allow you to add items of different armor types so this is always on.
+  // QE Live doesn't actually allow you to add items of different armor types so this is always on.
+  // If the game ever encourages wearing other armor types (like with Corruption) then this can be extended.
   bonus_stats.intellect += (builtSet.setStats.intellect + bonus_stats.intellect) * 0.05;
 
   // Sockets
   bonus_stats[highestWeight] += 16 * builtSet.setSockets;
   enchants["Gems"] = highestWeight;
 
-  
-  // This might change later, but is a way to estimate the value of a domination socket on a piece in the Upgrade Finder.
-
   //compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
   
+  // == Domination Gems ==
+  // If the user would prefer to let the app decide their domination gems for them, we'll call a function to automatically put together the best set.
   if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
-  //itemSet.effectList = itemSet.effectList.concat(domList);
 
-  // Handle Effects
+
+  // === Handle Effects ===
+  // Each effect will return an object of stats. Ruby for example would return it's crit value.
+  // We'll add all of these objects into an array and then sum them all together.
+  // To learn how QE Live handles each effect you're best exploring the EffectEngine page but a few quick things should be mentioned:
+  // - On-use stat effects are combined with major cooldowns wherever possible.
+  // - All effects are based around average use cases, NOT perfect usage.
   let effectStats = [];
   effectStats.push(bonus_stats);
   for (var x = 0; x < itemSet.effectList.length; x++) {
     effectStats.push(getEffectValue(itemSet.effectList[x], player, castModel, contentType, itemSet.effectList[x].level, userSettings, "Retail", setStats));
   }
+  
   const mergedEffectStats = mergeBonusStats(effectStats)
  
-  
-  applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
-  // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
+  // == Hard Diminishing Returns ==
+  // Note: Effects and base stats are added after this step. Effects are DR'd in a separate function, as we want to DR them at the value they proc at, instead of 
+  // basing it on their average return. 
 
+  // Diminishing Returns applies to all stat rating (including procs), but not to percentage ratings or base stats.
+  applyDiminishingReturns(setStats); 
+
+  setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately. 
+
+  // This is where we apply soft DR to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
   adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;
   adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.Retail.CRIT)) / 2;
   adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.Retail.VERSATILITY)) / 2;
   adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.Retail.MASTERYA[player.spec])) / 2;
   adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.Retail.LEECH)) / 2;
 
-  addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
-  setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately. 
+  // Finally, add base stats, which don't DR. This includes our base 5% crit, and whatever base mastery our spec has.
+  addBaseStats(setStats, player.spec); 
+  
 
-  // Calculate a hard score using the rebalanced stat weights.
-
+  // == Score Calculation ==
+  // Most of the hard work is done above so this portion is rather straightforward.
+  // We multiply out each stat by it's adjusted stat weight and then convert it to effective intellect value.
+  // Anything intricate should probably be included in one of the above functions rather than here.
   for (var stat in setStats) {
     if (stat === "hps") {
       hardScore += (setStats[stat] / baseHPS) * player.activeStats.intellect;
     } else if (stat === "dps") {
+        // Dungeons use a very straightforward 1 DPS = 1 HPS calculation. This can be expanded on in future.
         if (contentType === "Dungeon") hardScore += (setStats[stat] / baseHPS) * player.activeStats.intellect;
         else continue;
     } else {
@@ -601,7 +611,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
-  //console.log(builtSet);
   return builtSet; // Temp
 }
 
