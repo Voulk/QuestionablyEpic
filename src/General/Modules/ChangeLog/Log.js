@@ -10,6 +10,16 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 25,
+    date: "8th September",
+    changes: [
+      "Prep for the release of a complete Disc backend overhaul.",
+      "Bugfix: Fixed a new bug where specific effects could be DR'd twice.",
+      "Improved help text around the app. Big stuff coming very soon!"
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 24,
     date: "8th September",
     changes: [
