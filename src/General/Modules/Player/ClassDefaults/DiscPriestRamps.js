@@ -188,7 +188,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     const sequenceLength = 45;
 
     PWSTest = 0;
-    console.log(seq);
     // Add anything that alters the spell dictionary
     
     if (settings['Clarity of Mind']) discSpells['Rapture'][0].atonement = 21;
@@ -203,6 +202,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
         buffDuration: 30,
     });
     if (settings['Kleia']) activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
+    if (settings['Penitent One']) discSpells['Penance'][0].coeff = discSpells['Penance'][0].coeff * (0.84 * 2); // This is an estimate, and would be made more accurate by adding Penance ticks instead.
 
     // Trinkets
     if (settings['Divine Bell']) discSpells['Divine Bell'][0].value = settings['Divine Bell'];
@@ -305,7 +305,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 else if (spell.type === "buff") {
                     if (spell.buffType === "stats") {
                         activeBuffs.push({name: spellName, expiration: t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
-                        console.log("Pushing buff: " + spellName);
                     }
                     else {
                         activeBuffs.push({name: spellName, expiration: t + spell.buffDuration});

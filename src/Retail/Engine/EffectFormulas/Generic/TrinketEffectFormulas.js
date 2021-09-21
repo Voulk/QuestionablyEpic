@@ -651,7 +651,7 @@ else if (
     const gusts = (contentType === "Raid") ? 41 : 22;
     bonus_stats.hps = getMasteryAddition(player.getInt(), mastery, player.getStatPerc("Crit"), player.getStatPerc("Vers")) * gusts / effect.cooldown;
   }
-  else if (player.getSpec() === "Discipline Priest") {
+  else if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
     const boonSeq = buildRamp('Boon', 10, ["Shadowed Orb"], setStats.haste, ['Rapture']);
     const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, ['Rapture']);
     const orbRamps = allRamps(boonSeq, fiendSeq, setStats, {"Clarity of Mind": false, "Pelagos": false, "Shadowed Orb": trinketValue}, {});

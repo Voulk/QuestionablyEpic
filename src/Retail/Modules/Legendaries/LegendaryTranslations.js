@@ -1411,7 +1411,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
         en: {
           name: "Spheres' Harmony",
           slot: "Shoulder, Legs",
-          desc: "Boon of the Ascended's cooldown is reduced by 2 seconds, up to 60 sec, for each stack of Boon of the Ascended consumed by Ascended Eruption.",
+          desc: "Boon of the Ascended's cooldown is reduced by 3 seconds, up to 60 sec, for each stack of Boon of the Ascended consumed by Ascended Eruption.",
           droploc: "Kyrian",
           covenant: "Kyrian",
         },
@@ -1452,7 +1452,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
           en: {
             name: "Pallid Command",
             slot: "Feet, Finger",
-            desc: "Casting Unholy Nova summons a Brooding Cleric that gains 2% additional damage and healing each time an enemy affected by Unholy Transfusion is damaged by an ally, up to 100%. The Brooding Cleric serves you for 20 sec, healing an ally for (40% of Spell power).",
+            desc: "Casting Unholy Nova summons a Brooding Cleric that gains 2% additional healing each time an enemy affected by Unholy Transfusion is damaged by an ally, up to 100%. The Brooding Cleric heals allies for 20 seconds.",
             droploc: "Necrolord",
             covenant: "Necrolord",
           },
@@ -1534,7 +1534,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
               en: {
                 name: "Shadow Word: Manipulation",
                 slot: "Neck, Wrist",
-                desc: "Mindgames lasts an additional 3 sec and reverses an additional 10% damage or healing. When Mindgames can no longer reverse healing or damage, gain 3% Critical Strike for each second remaining for 10 sec.",
+                desc: "Mindgames lasts an additional 3 sec and reverses an additional 10% damage or healing. When Mindgames can no longer reverse healing or damage, gain 5% Critical Strike for each second remaining for 10 sec.",
                 droploc: "Venthyr",
                 covenant: "Venthyr",
               },
