@@ -55,6 +55,7 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
         sequence.push('Shadowfiend');
         sequence.push('Schism');
         sequence.push('Mind Blast');
+        sequence.push('Power Word: Solace');
         sequence.push('Penance');
         sequence.push('Smite');
         sequence.push('Smite');
@@ -121,7 +122,7 @@ const getActiveAtone = (atoneApp, timer) => {
 const getStatMult = (statArray, stats) => {
     let mult = 1;
     if (stats.includes("vers")) mult *= (1 + statArray['versatility'] / 40 / 100);
-    if (stats.includes("crit")) mult *= (1.05 + statArray['crit'] / 35 / 100);
+    //if (stats.includes("crit")) mult *= (1.05 + statArray['crit'] / 35 / 100); // TODO: Re-enable
     if (stats.includes("mastery")) mult *= (1.108 + statArray['mastery'] / 25.9259 / 100);
     return mult;
 }
@@ -171,8 +172,13 @@ const deepCopyFunction = (inObject) => {
     return outObject;
   };
 
+// This function is for time reporting. It just rounds the number to something easier to process.
+const getTime = (t) => {
+    return Math.round(t*1000)/1000
+}
 
 export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
+    console.log("Running cast sequence");
     let atonementApp = [];
     let purgeTicks = [];
     let fiendTicks = [];
@@ -186,6 +192,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     const discSpells = deepCopyFunction(DISCSPELLS);
     const seq = [...sequence];
     const sequenceLength = 45;
+    const reporting = true;
 
     PWSTest = 0;
     // Add anything that alters the spell dictionary
@@ -248,7 +255,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * getAtoneTrans(currentStats.mastery);
             }
 
-
+            if (reporting) console.log(getTime(t) + " " + " Purge Tick: " + damageVal * damMultiplier);
 
         }
 
@@ -298,6 +305,8 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     totalDamage += damageVal * damMultiplier; // Stats.
 
                     healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * damMultiplier * getAtoneTrans(currentStats.mastery) * (1 - spell.atoneOverheal);
+
+                    if (reporting) console.log(getTime(t) + " " + spellName + ": " + damageVal * damMultiplier);
                 }
                 else if (spell.type === "atonementExtension") {
                     extendActiveAtonements(atonementApp, t, spell.extension);

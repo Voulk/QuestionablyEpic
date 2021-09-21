@@ -8,6 +8,15 @@ export const DISCSPELLS = {
         atoneOverheal: 0.2,
         secondaries: ['crit', 'vers']
     }],
+    "Power Word: Solace": [{
+        type: "damage",
+        castTime: 1.5,
+        cost: 0,
+        coeff: 0.75,
+        cooldown: 15,
+        atoneOverheal: 0.2,
+        secondaries: ['crit', 'vers']
+    }],
     "Smite": [{
         type: "damage",
         castTime: 1.5,
