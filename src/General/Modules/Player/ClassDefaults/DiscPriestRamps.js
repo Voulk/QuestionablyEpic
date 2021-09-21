@@ -16,11 +16,12 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
     
     let sequence = ['Purge the Wicked']
     
-
+    if (trinkets.includes("Shadowed Orb")) sequence.push("Shadowed Orb");
     if (specialSpells.includes("Rapture")) {sequence.push('Rapture'); applicators -= 1 };
     for (var x = 0; x < applicators; x++) {
         sequence.push('Power Word: Shield');
     }
+    if (trinkets.includes("Soulletting Ruby")) sequence.push("Soulletting Ruby");
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
     sequence.push('Evangelism');
@@ -187,7 +188,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     const sequenceLength = 45;
 
     PWSTest = 0;
-
+    console.log(seq);
     // Add anything that alters the spell dictionary
     
     if (settings['Clarity of Mind']) discSpells['Rapture'][0].atonement = 21;
@@ -202,6 +203,13 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
         buffDuration: 30,
     });
     if (settings['Kleia']) activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
+
+    // Trinkets
+    if (settings['Divine Bell']) discSpells['Divine Bell'][0].value = settings['Divine Bell'];
+    if (settings['Shadowed Orb']) discSpells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
+    if (settings['Soulletting Ruby']) discSpells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
+
+
     if (conduits['Courageous Ascension']) discSpells['Ascended Blast'][0].coeff *= 1.45; // Blast +40%, Eruption +1% per stack (to 4%)
     if (conduits['Shining Radiance']) discSpells['Power Word: Radiance'][0].coeff *= 1.64; // +64% radiance healing
     if (conduits['Rabid Shadows']) discSpells['Shadowfiend'][0].dot.tickRate = discSpells['Shadowfiend'][0].dot.tickRate / 1.342; // Faster tick rate.
@@ -297,6 +305,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 else if (spell.type === "buff") {
                     if (spell.buffType === "stats") {
                         activeBuffs.push({name: spellName, expiration: t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
+                        console.log("Pushing buff: " + spellName);
                     }
                     else {
                         activeBuffs.push({name: spellName, expiration: t + spell.buffDuration});

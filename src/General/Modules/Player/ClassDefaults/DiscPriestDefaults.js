@@ -22,7 +22,7 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
         ninetySeconds: 4.4,
         twoMinutes: 1,
         twoMinutesOrb: 0.85,
-        threeMinutes: 2.8,
+        threeMinutes: 1.7,
       },
       rampData: {},
       HoldYourGroundUptime: 0.8
