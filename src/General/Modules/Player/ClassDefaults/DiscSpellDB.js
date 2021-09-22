@@ -31,7 +31,7 @@ export const DISCSPELLS = {
         castTime: 1.5,
         cost: 0,
         coeff: 1.41,
-        buffDuration: 7,
+        buffDuration: 9,
         atoneOverheal: 0.25,
         secondaries: ['crit', 'vers'],
     }],

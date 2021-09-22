@@ -1,6 +1,9 @@
 import { Stats } from 'fs';
 import Player from 'General/Modules/Player/Player';
 import { runCastSequence, buildRamp, allRamps } from "./DiscPriestRamps";
+import { DISCSPELLS } from "./DiscSpellDB";
+
+// TODO: Test Disc Spells
 
 
 describe("Evang Cast Sequence", () => {
@@ -16,7 +19,6 @@ describe("Evang Cast Sequence", () => {
     
     const boonSeq = buildRamp('Boon', 10, ["Divine Bell"], player.activeStats.haste, ['Rapture'])
     const fiendSeq = buildRamp('Fiend', 10, ["Divine Bell"], player.activeStats.haste, ['Rapture'])
-    console.log(player.activeStats);
     //const baselineBoon = (boonSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": frunCastSequencealse}, {"Courageous Ascension": 226, "Shining Radiance": 226});
     //const baselineFiend = runCastSequence(fiendSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226});
     

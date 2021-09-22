@@ -294,7 +294,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     healing[spellName] = (healing[spellName] || 0) + healingVal * healingMult * targetMult;
 
                 }
-        
+                
                 // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
                 else if (spell.type === 'damage') {
                     const activeAtonements = getActiveAtone(atonementApp, t); // Get number of active atonements.
@@ -306,7 +306,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
                     healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * damMultiplier * getAtoneTrans(currentStats.mastery) * (1 - spell.atoneOverheal);
 
-                    if (reporting) console.log(getTime(t) + " " + spellName + ": " + damageVal * damMultiplier);
+                    if (reporting) console.log(getTime(t) + " " + spellName + ": " + damageVal * damMultiplier + ". Buffs: " + JSON.stringify(activeBuffs));
                 }
                 else if (spell.type === "atonementExtension") {
                     extendActiveAtonements(atonementApp, t, spell.extension);
@@ -340,7 +340,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 }
                 else if (spellName === "Schism") {
                     // Add the Schism buff. 
-                    activeBuffs.push({name: "Schism", expiration: t + spell.buffDuration});
+                    activeBuffs.push({name: "Schism", expiration: t + spell.castTime + spell.buffDuration});
                 }
                 else if (spellName === "Ascended Blast") {
                     boonOfTheAscended += 5 / 2;
