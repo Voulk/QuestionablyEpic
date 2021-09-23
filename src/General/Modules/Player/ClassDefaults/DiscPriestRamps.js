@@ -33,8 +33,8 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
         const hastePerc = 1 + haste / 32 / 100;
         let boonDuration = 10 - (1.5 * 2 / hastePerc);
         const boonPackage = (1.5 + 1 + 1) / hastePerc;
-    
-        for (var i = 0; i < boonDuration / boonPackage; i++) {
+
+        for (var i = 0; i < Math.floor(boonDuration / boonPackage); i++) {
             sequence.push('Ascended Blast');
             if (trinkets.includes("Divine Bell") && i === 0) sequence.push("Divine Bell");
             sequence.push('Ascended Nova');
@@ -48,7 +48,7 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
         else if (boonDuration % boonPackage > (1.5 / hastePerc)) {
             sequence.push('Ascended Blast');
         }
-        sequence.push("Ascended Eruption");
+        //sequence.push("Ascended Eruption");
     }
     else if (type === "Fiend") {
         if (trinkets.includes("Divine Bell")) sequence.push("Divine Bell");
@@ -228,6 +228,8 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
     for (var t = 0; t < sequenceLength; t += 0.01) {
         // Tidy up buffs and atonements.
+        let ascendedEruption = activeBuffs.filter(function (buff) {return buff.expiration < t && buff.name === "Boon of the Ascended"}).length > 0;
+        if (ascendedEruption) {console.log("Time for Ascended Eruption")}
         activeBuffs = activeBuffs.filter(function (buff) {return buff.expiration > t});
         atonementApp = atonementApp.filter(function (buff) {return buff > t});
 
@@ -271,8 +273,8 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             PWSTest++;
         }
 
-        if (t > nextSpell && seq.length > 0) {
-            const spellName = seq.shift();
+        if ((t > nextSpell && seq.length > 0) || ascendedEruption)  {
+            const spellName = ascendedEruption ? "Ascended Eruption" : seq.shift();
             const fullSpell = discSpells[spellName];
 
             fullSpell.forEach(spell => {
@@ -316,7 +318,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                         activeBuffs.push({name: spellName, expiration: t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
                     }
                     else {
-                        activeBuffs.push({name: spellName, expiration: t + spell.buffDuration});
+                        activeBuffs.push({name: spellName, expiration: t + spell.castTime + spell.buffDuration});
                     }
                     
                 }
