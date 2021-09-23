@@ -229,7 +229,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     for (var t = 0; t < sequenceLength; t += 0.01) {
         // Tidy up buffs and atonements.
         let ascendedEruption = activeBuffs.filter(function (buff) {return buff.expiration < t && buff.name === "Boon of the Ascended"}).length > 0;
-        if (ascendedEruption) {console.log("Time for Ascended Eruption")}
         activeBuffs = activeBuffs.filter(function (buff) {return buff.expiration > t});
         atonementApp = atonementApp.filter(function (buff) {return buff > t});
 
