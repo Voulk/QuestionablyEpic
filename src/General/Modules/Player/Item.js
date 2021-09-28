@@ -81,7 +81,7 @@ class Item {
   setDominationGem(id) {
     if (this.hasDomSocket) {
       this.domGemID = id;
-      this.effect = getDomGemEffect(id)
+      //this.effect = getDomGemEffect(id)
     }
   }
 
