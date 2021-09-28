@@ -565,11 +565,12 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // - On-use stat effects are combined with major cooldowns wherever possible.
   // - All effects are based around average use cases, NOT perfect usage.
   let effectStats = [];
+  
   effectStats.push(bonus_stats);
   for (var x = 0; x < itemSet.effectList.length; x++) {
     effectStats.push(getEffectValue(itemSet.effectList[x], player, castModel, contentType, itemSet.effectList[x].level, userSettings, "Retail", setStats));
   }
-  
+
   const mergedEffectStats = mergeBonusStats(effectStats)
  
   // == Hard Diminishing Returns ==
