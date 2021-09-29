@@ -3828,25 +3828,7 @@ export const soulbindDB = [
   },
 
   /* ------------------------------------------- Row 10 ------------------------------------------- */
-  {
-    id: 8196764,
-    names: {
-      en: "Endurance Conduit",
-      cn: "韧如树皮",
-      fr: "Intermédiaire d’endurance",
-      ru: "Проводник выносливости",
-      de: "Widerstandsmedium",
-    },
-    icon: "EmptyConduit.jpg",
-    soulbind: "Nadjia",
-    position: [10, 0],
-    renown: 51,
-    active: false,
-    stat_bonus: {},
-    type: "Endurance Conduit",
-    slotted_id: -1,
-    enhanced: 78,
-  },
+
   {
     id: 8196765,
     names: {
@@ -3858,11 +3840,30 @@ export const soulbindDB = [
     },
     icon: "EmptyConduit.jpg",
     soulbind: "Nadjia",
-    position: [10, 2],
+    position: [10, 0],
     renown: 51,
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 78,
+  },
+  {
+    id: 8196764,
+    names: {
+      en: "Endurance Conduit",
+      cn: "韧如树皮",
+      fr: "Intermédiaire d’endurance",
+      ru: "Проводник выносливости",
+      de: "Widerstandsmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Nadjia",
+    position: [10, 2],
+    renown: 51,
+    active: false,
+    stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
     enhanced: 78,
   },
 
@@ -4621,25 +4622,6 @@ export const soulbindDB = [
 
   /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
-    id: 8196770,
-    names: {
-      en: "Endurance Conduit",
-      cn: "韧如树皮",
-      fr: "Intermédiaire d’endurance",
-      ru: "Проводник выносливости",
-      de: "Widerstandsmedium",
-    },
-    icon: "EmptyConduit.jpg",
-    soulbind: "Draven",
-    position: [10, 0],
-    renown: 53,
-    active: false,
-    stat_bonus: {},
-    type: "Endurance Conduit",
-    slotted_id: -1,
-    enhanced: 77,
-  },
-  {
     id: 8196771,
     names: {
       en: "Finesse Conduit",
@@ -4650,13 +4632,33 @@ export const soulbindDB = [
     },
     icon: "EmptyConduit.jpg",
     soulbind: "Draven",
-    position: [10, 2],
+    position: [10, 0],
     renown: 53,
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
     enhanced: 77,
   },
+  {
+    id: 8196770,
+    names: {
+      en: "Endurance Conduit",
+      cn: "韧如树皮",
+      fr: "Intermédiaire d’endurance",
+      ru: "Проводник выносливости",
+      de: "Widerstandsmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Draven",
+    position: [10, 2],
+    renown: 53,
+    active: false,
+    stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
+    enhanced: 77,
+  },
+
 
   /* ------------------------------------------- Row 11 ------------------------------------------- */
   {
