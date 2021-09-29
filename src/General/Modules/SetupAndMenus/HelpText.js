@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(14),
-    color: "##fffff7",
+    color: theme.palette.text.secondary,
   },
   body: { color: theme.palette.text.secondary, marginBottom: 0, width: "100%", fontSize: theme.typography.pxToRem(14) },
   icon: {
@@ -70,14 +70,14 @@ export default function HelpText(props) {
         <AccordionDetails className={classes.details}>
           <Grid container>
             <Grid item xs={12}>
-              <Typography className={classes.secondaryHeading} align="left" variant="subtitle1" display="inline" paragraph>
+              <Typography className={classes.heading} style={{ color: "##fffff7", marginBottom: 0, width: "100%" }} align="left" variant="subtitle1" display="inline" paragraph>
                 {helpBlurb}
               </Typography>
             </Grid>
 
             {helpText.map((key, i) => (
               <Grid item xs={12} key={"helpText" + i}>
-                <Typography className={classes.body} align="left" variant="subtitle1" display="inline">
+                <Typography className={classes.secondaryHeading} style={{ color: "##fffff7", marginBottom: 0, width: "100%" }} align="left" variant="subtitle1" display="inline">
                   {bull} {key}
                 </Typography>
               </Grid>

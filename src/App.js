@@ -377,10 +377,19 @@ class App extends Component {
                   path="/topgear"
                   render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} />}
                 />
-                <Route path="/legendaries" render={() => <LegendaryCompare player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} />} />
-                <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars}/>} />
-                <Route path="/dominationgems" render={() => <DominationAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars}/>} />
-                <Route path="/soulbinds" render={() => <CovenantExploration player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} />} />
+                <Route
+                  path="/legendaries"
+                  render={() => <LegendaryCompare player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} />}
+                />
+                <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} />} />
+                <Route
+                  path="/dominationgems"
+                  render={() => <DominationAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} />}
+                />
+                <Route
+                  path="/soulbinds"
+                  render={() => <CovenantExploration player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} />}
+                />
                 <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                 <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
                 <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />

@@ -12,7 +12,7 @@ import { Autocomplete } from "@material-ui/lab";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "80%",
-    margin: "auto"
+    margin: "auto",
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   details: {
     alignItems: "center",
-    padding: 8,
+    // padding: 8,
   },
   column: {
     // flexBasis: "33.33%",
@@ -67,7 +67,7 @@ export default function DominationGems(props) {
           <Grid container spacing={1}>
             <Grid item xs={12}>
               {/* ------------------------------------------ Help Text -----------------------------------------  */}
-              <Typography style={{ marginLeft: 8, color: "limegreen" }} noWrap>
+              <Typography style={{ color: "limegreen", fontSize: 14 }} noWrap>
                 Add the Shards you have in your bag and QE Live will automatically select your best combo!
               </Typography>
             </Grid>
