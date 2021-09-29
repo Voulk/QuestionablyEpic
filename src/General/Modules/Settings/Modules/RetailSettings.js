@@ -232,7 +232,7 @@ export default function RetailSettings(props) {
               </div>
             </Grid>
             <Grid item xs={12}>
-              <FormControl variant="outlined" fullWidth size="small">
+              <FormControl variant="outlined" fullWidth size="small" style={{ textAlign: "center" }}>
                 <Select labelId="slots" value={props.player.activeModelID[props.contentType]} onChange={(e) => updateSpecBuild(e.target.value)} MenuProps={menuStyle}>
                   {specBuilds.map((key, i) => (
                     <MenuItem id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
@@ -302,7 +302,7 @@ export default function RetailSettings(props) {
               </Tooltip>
             </div>
           </Grid>
-          <FormControl variant="outlined" size="small" style={{ width: t("QuickCompare.DominationSocket").length > 10 ? 160 : 140 }}>
+          <FormControl variant="outlined" size="small" style={{ textAlign: "center", width: t("QuickCompare.DominationSocket").length > 10 ? 160 : 140 }}>
             <Select key={"DominationSocket"} labelId="DominationSocket" value={replaceDomGems} onChange={(e) => updateReplaceDomGems(e.target.value)} MenuProps={menuStyle}>
               <MenuItem value={true} style={{ justifyContent: "center" }}>
                 {t("Yes")}
