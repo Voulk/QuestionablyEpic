@@ -104495,7 +104495,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Instructor's Divine Bell"
         },
-        "levelRange": []
+        "levelRange": [194, 200, 207, 213]
     },
     {
         "id": 184873,
