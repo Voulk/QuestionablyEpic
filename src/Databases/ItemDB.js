@@ -99378,10 +99378,6 @@ export const itemDB = [
             "name": "Tuft of Smoldering Plumage"
         },
         "levelRange": [
-            187,
-            200,
-            213,
-            226
         ]
     },
     {
