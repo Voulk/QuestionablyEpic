@@ -764,6 +764,7 @@
       "SelectedItems": "Selected Items",
       "BackToGearSelection": "Back to Gear Selection",
       "CompetitiveAlternative": "Competitive Alternatives",
+      "CompetitiveAlternativeHelp": "This is how close other sets are to your best. Anything extremely close in score can be considered a sidegrade.",
       "StatPanel": { "AvgStats": "Average Stats (includes procs)" },
       "itemMissingError": "Error: Add item - "
     },
