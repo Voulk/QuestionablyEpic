@@ -19,11 +19,12 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
       CastsPerMinute: 36,
       cooldownMult: {
         oneMinute: 1,
-        ninetySeconds: 4.4,
+        ninetySeconds: 4.45,
         twoMinutes: 1,
         twoMinutesOrb: 0.85,
         threeMinutes: 2.8,
       },
+      rampData: {},
       HoldYourGroundUptime: 0.8
     };
   } else if (contentType === "Dungeon") {
@@ -37,6 +38,7 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
         twoMinutesOrb: 1,
         threeMinutes: 1.1,
       },
+      rampData: {},
       HoldYourGroundUptime: 0.8
     };
   } else {

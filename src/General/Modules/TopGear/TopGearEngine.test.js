@@ -1,4 +1,5 @@
-import { applyDiminishingReturns, mergeBonusStats, buildBestDomSet } from "./TopGearEngine";
+import { mergeBonusStats, buildBestDomSet } from "./TopGearEngine";
+import { applyDiminishingReturns } from "General/Engine/ItemUtilities"
 import Player from '../Player/Player';
 import { processItem } from "Retail/Engine/SimCImport/SimCImportEngine"
 import { buildWepCombos } from "General/Engine/ItemUtilities"
@@ -82,6 +83,26 @@ describe("Top Gear full test", () => {
         expect(setStats.versatility).toEqual(363);
     });
 
+    test("Test 1, Resto Shaman Stats Check", () => {
+        const player = new Player("Mock", "Restoration Shaman", 99, "NA", "Stonemaul", "Night Elf");
+
+        var lines = testShamanSet.split("\n");
+
+        for (var line = 0; line < lines.length; line++) {
+            const item = processItem(lines[line], player, "Raid", "Regular")
+            if (item) player.addActiveItem(item);
+
+        }
+        //console.log(player.activeItems);
+        const wepCombos = buildWepCombos(player, true);
+        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
+        const setStats = result.itemSet.setStats;
+
+        expect(setStats.versatility).toEqual(313);
+        expect(setStats.haste).toEqual(494);
+        expect(setStats.mastery).toEqual(335+11.66*25);
+    });
+
     test("Test 1, Disc Priest Dom Gem Check", () => {
         const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
         player.setDominationRanks({
@@ -150,4 +171,22 @@ finger2=,id=173133,enchant_id=6166,gem_id=173128,bonus_id=7461,drop_level=60,cra
 trinket1=,id=178769,bonus_id=7608/7359/6652/1566/6646
 trinket2=,id=181334,bonus_id=6652/1472/5865/6616
 main_hand=,id=178829,enchant_id=6229,bonus_id=7412/7359/6652/1524/6646
+`
+
+const testShamanSet = `
+head=,id=178692,bonus_id=6807/6652/7193/1498/6646
+neck=,id=173146,gem_id=153709,crafted_stats=49
+shoulder=,id=178695,bonus_id=6807/6652/1498/6646
+back=,id=180123,enchant_id=6204,bonus_id=6807/6652/1498/6646
+chest=,id=180100,bonus_id=6807/6652/1498/6646
+wrist=,id=178767,bonus_id=6807/42/7193/1498/6646
+hands=,id=179325,bonus_id=6807/6652/1498/6646
+waist=,id=180110,bonus_id=6807/6652/7194/1498/6646
+legs=,id=178839,bonus_id=6807/6652/1498/6646
+feet=,id=178745,bonus_id=6807/6652/1498/6646
+finger1=,id=178872,bonus_id=6807/6652/7193/1498/6646
+finger2=,id=178736,enchant_id=6166,bonus_id=6807/6652/7194/1498/6646
+trinket1=,id=178809,bonus_id=6806/6652/1485/4785
+trinket2=,id=178298,bonus_id=6784/1485/6616
+main_hand=,id=178714,enchant_id=6229,bonus_id=6807/6652/1498/6646
 `

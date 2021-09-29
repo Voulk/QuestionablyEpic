@@ -5,7 +5,7 @@ import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
 import { getEffectValue } from "../../Retail/Engine/EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
-import { translatedStat } from "./STAT";
+import { translatedStat, STATDIMINISHINGRETURNS } from "./STAT";
 import Item from "../Modules/Player/Item";
 // import { useTranslation } from "react-i18next";
 // import { i18n } from "react-i18next";
@@ -235,6 +235,25 @@ export function getItem(id, gameType = "Retail") {
   });
   if (temp.length > 0) return temp[0];
   else return "";
+}
+
+
+export function applyDiminishingReturns(stats) {
+  //console.log("Stats Pre-DR" + JSON.stringify(stats));
+  
+  for (const [key, value] of Object.entries(stats)) {
+    if (["crit", "haste", "mastery", "versatility", "leech"].includes(key)) {
+
+      const DRBreakpoints = STATDIMINISHINGRETURNS[key.toUpperCase()];
+  
+      const baseStat = stats[key];
+      for (var j = 0; j < DRBreakpoints.length; j++) {
+        stats[key] -= Math.max((baseStat - DRBreakpoints[j]) * 0.1, 0);
+      }
+    } 
+  }
+    
+  return stats;
 }
 
 // This function grabs a selected prop from the currently selected item database.

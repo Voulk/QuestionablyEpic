@@ -471,6 +471,10 @@ class Player {
     return this.getActiveModel(contentType).getSpecialQuery(queryIdentifier, "cooldownMult");
   };
 
+  getRampID = (queryIdentifier, contentType) => {
+    return this.getActiveModel(contentType).getSpecialQuery(queryIdentifier, "rampID");
+  };
+
   getSingleCast = (spellID, contentType, castType = "avgcast") => {
     return this.getActiveModel(contentType).getSpellData(spellID, castType);
   };
@@ -540,6 +544,7 @@ class Player {
     } else if (spec === SPEC.DISCPRIEST) {
       this.statWeights[contentType] = discPriestDefaultStatWeights(contentType);
       this.statWeights.DefaultWeights = true;
+      
     } else if (spec === SPEC.HOLYPRIEST) {
       this.statWeights[contentType] = holyPriestDefaultStatWeights(contentType);
       this.statWeights.DefaultWeights = true;
@@ -618,18 +623,15 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 1800,
-        haste: 700,
-        crit: 480,
-        mastery: 370,
-        versatility: 320,
+        intellect: 1850,
+        haste: 850,
+        crit: 400,
+        mastery: 400,
+        versatility: 400,
         stamina: 1900,
       };
+      //this.getActiveModel("Raid").setRampInfo(this.activeStats, []);
 
-      /*
-      this.statWeights.Raid = discPriestDefaultStatWeights("Raid");
-      this.statWeights.Dungeon = discPriestDefaultStatWeights("Dungeon");
-      this.statWeights.DefaultWeights = true; */
     } else if (spec === SPEC.HOLYPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));

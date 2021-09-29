@@ -866,7 +866,7 @@
     "Divine Resonance": {
       "name": "Divine Resonance",
       "slot": "Unknown",
-      "desc": "Every 10s for 30s after casting Divine Toll you cast it again at 60% effectiveness.",
+      "desc": "Every 10s for 15s after casting Divine Toll you cast it again at 60% effectiveness.",
       "droploc": "Unknown"
     },
     "Vanguards Momentum": {

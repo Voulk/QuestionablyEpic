@@ -7,9 +7,8 @@ export default function MessageOfTheDay(props) {
   const messageOfTheDay = {
     "Retail": [
       "The new Domination Gem Panel is now live!",
-      "QE Live is up to date with the dom set item changes."
   ],
-  "BurningCrusade": ["Tier 5 / phase 2 support will go live shortly before the patch."]
+  "BurningCrusade": ["Enjoy SSC / TK!"]
   }
 ;
 

@@ -1,3 +1,5 @@
+import { runCastSequence, buildRamp, allRamps } from "General/Modules/Player/ClassDefaults/DiscPriestRamps";
+
 export const getDiscPriestLegendary = (effectName, player, contentType) => {
   let result = 0.0;
   let name = effectName;
@@ -7,7 +9,9 @@ export const getDiscPriestLegendary = (effectName, player, contentType) => {
 
     */
   if (name === "Clarity of Mind") {
-    bonus_stats.HPS = contentType === "Raid" ? 1499 : 1; // This is meaningless, but will effect the display order while we wait to implement the effects.
+    //bonus_stats.hps = player.getRampID('clarityOfMind', contentType);
+    bonus_stats.hps = (contentType === "Raid" ? 1000 : 0);
+
   } else if (name === "Crystalline Reflection") {
     // Do Math
   } else if (name === "Kiss of Death") {
