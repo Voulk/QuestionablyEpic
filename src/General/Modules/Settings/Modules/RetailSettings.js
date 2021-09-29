@@ -100,6 +100,7 @@ export default function RetailSettings(props) {
   return (
     <Grid container spacing={1} direction="row">
       {/* ------------------------- Cabalist's Hymnal Item ------------------------- */}
+      {/*
       {props.hymnalShow === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
           <Grid container spacing={0} style={{ padding: "0px 8px" }}>
@@ -138,7 +139,8 @@ export default function RetailSettings(props) {
         </Grid>
       ) : (
         ""
-      )}
+      )} 
+      */} 
       {/* ------------------------- Group Buff (Treat Buff as Personal Throughput) ------------------------- */}
       {props.groupBuffShow === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
