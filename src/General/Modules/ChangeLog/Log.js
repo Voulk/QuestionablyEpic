@@ -10,6 +10,17 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.2",
+    update: 26,
+    date: "29th September",
+    changes: [
+      "Added raid and dungeon specific DPS values to the few specs that were still lacking them to improve dom gem DPS accuracy",
+      "UI: Text updates and clarifications around the app.",
+      "Bugfix: Fixed the position of a few Venthyr conduit nodes.",
+      "Bugfix: Fixed a rare bug where manually entering a domination item could add the gem type twice for the purpose of set bonuses."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.2",
     update: 25,
     date: "20th September",
     changes: [
