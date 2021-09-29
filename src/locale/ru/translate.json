@@ -577,6 +577,7 @@
       "SelectedItems": "Выбранные предметы:",
       "BackToGearSelection": "Вернуться к выбору экипировки",
       "CompetitiveAlternative": "Возможные альтернативы",
+      "CompetitiveAlternativeHelp": "This is how close other sets are to your best. Anything extremely close in score can be considered a sidegrade.",
       "StatPanel": { "AvgStats": "Усреднённые характеристики (включая проки)" },
       "itemMissingError": "Ошибка: добавьте предмет"
     },
