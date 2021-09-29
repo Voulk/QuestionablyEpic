@@ -74371,7 +74371,6 @@ export const itemDB = [
                 "encounterId": 2397
             }
         ],
-        "onUseTrinket": true,
         "dropLoc": "",
         "slot": "Trinket",
         "effect": {
@@ -75831,7 +75830,6 @@ export const itemDB = [
                 "encounterId": 2421
             }
         ],
-        "onUseTrinket": true,
         "dropLoc": "",
         "slot": "Trinket",
         "effect": {
@@ -118363,7 +118361,6 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "onUseTrinket": true,
         "dropLoc": "",
         "slot": "Trinket",
         "effect": {
