@@ -14,7 +14,7 @@ export const changeLog = [
     date: "29th September",
     changes: [
       "Sets with two on-use trinkets will now be correctly devalued for Holy Paladin as the value of the second drops a lot.",
-      "Added raid and dungeon specific DPS values to the few specs that were still lacking them to improve dom gem DPS accuracy.",
+      "Added dungeon specific DPS values to the few specs that were still missing them to improve dom gem DPS accuracy.",
       "UI: Text updates and clarifications around the app.",
       "Bugfix: Fixed the position of a few Venthyr conduit nodes.",
       "Bugfix: Fixed a rare bug where manually entering a domination item could add the gem type twice for the purpose of set bonuses."
