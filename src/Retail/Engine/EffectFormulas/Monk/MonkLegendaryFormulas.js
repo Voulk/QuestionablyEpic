@@ -66,7 +66,7 @@ export const getMonkLegendary = (effectName, player, contentType) => {
     const mult = player.getStatMultiplier("NOMAST") * player.getInt();
     const conduitMult = 1.616; // Imbued Reflections 239 ilvl.
     const baseCooldown = 180;
-    const effectiveCD = contentType == "Raid" ? 60 : 92; // This seems to be the average cd with this lego. Replace with proper formula based on Crit. TODO. 
+    const effectiveCD = contentType == "Raid" ? 60 : 64; // This seems to be the average cd with this lego. Replace with proper formula based on Crit. TODO. 
     const fallenOrderSpells = [
       {sp: 3.6 * 1.4 * (7/6), castsPerClone: 1.2}, 
       // Enveloping Mist. For some reason their env multiplier effects their env healing. They are only supposed to cast 1 EnV per clone, but they sometimes like to cast two instead.

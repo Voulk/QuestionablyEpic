@@ -14,7 +14,7 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
   let bonus_stats = {};
   let name = effectName;
 
-  if (name === "Maraads Dying Breath") {
+  if (name === "Maraad's Dying Breath" || name === "Maraads Dying Breath") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                      Maraads Dying Breath                                      */
     /* ---------------------------------------------------------------------------------------------- */

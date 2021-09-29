@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import MaterialTable, { MTableToolbar } from "material-table";
-import ArrowDownward from "@material-ui/icons/ArrowDownward";
+import {ArrowDownward, Clear, Search} from "@material-ui/icons";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import abilityIcons from "../../CooldownPlanner/Functions/IconFunctions/AbilityIcons.js";
 import { localizationFR } from "locale/fr/TableLocale";
@@ -37,6 +37,9 @@ const theme = createMuiTheme({
 });
 const tableIcons = {
   SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  Clear: forwardRef((props, ref) => <Clear {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  Search: forwardRef((props, ref) => <Search {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  ResetSearch: forwardRef((props, ref) => <Clear {...props} ref={ref} style={{ color: "#ffee77" }} />),
 };
 
 export default function ExternalTimeline(props) {
@@ -196,7 +199,7 @@ export default function ExternalTimeline(props) {
           showTitle: true,
           toolbar: true,
           header: true,
-          search: false,
+          search: true,
           headerStyle: {
             border: "1px solid #c8b054",
             padding: "0px 8px 0px 8px",

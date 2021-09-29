@@ -406,18 +406,24 @@ class Player {
   };
 
   getActiveModel = (contentType) => {
-    return this.castModels[this.activeModelID[contentType]];
+    if (this.castModels[this.activeModelID[contentType]]) return this.castModels[this.activeModelID[contentType]];
+    else {
+      reportError(this, "Player", "Invalid Cast Model", contentType);
+      return this.castModels[0];
+      
+    }
+
   };
 
   setModelID = (id, contentType) => {
-    if ((contentType === "Raid" || contentType === "Dungeon") && id && id < this.castModels.length) {
+    if ((contentType === "Raid" || contentType === "Dungeon") && id < this.castModels.length) {
       // Check that it's a valid ID.
       this.activeModelID[contentType] = id;
     } else {
       // This is a critical error that could crash the app so we'll reset models to defaults
       this.activeModelID["Raid"] = 0;
       this.activeModelID["Dungeon"] = 1;
-      reportError(this, "Player", "Attempt to set invalid Model ID", id);
+      reportError(this, "Player", "Attempt to set invalid Model ID", id + "/" + contentType);
     }
   };
 
@@ -464,6 +470,10 @@ class Player {
     return this.getActiveModel(contentType).getSpecialQuery(queryIdentifier, "cooldownMult");
   };
 
+  getRampID = (queryIdentifier, contentType) => {
+    return this.getActiveModel(contentType).getSpecialQuery(queryIdentifier, "rampID");
+  };
+
   getSingleCast = (spellID, contentType, castType = "avgcast") => {
     return this.getActiveModel(contentType).getSpellData(spellID, castType);
   };
@@ -493,7 +503,8 @@ class Player {
 
   /* ------------- Return the Saved ReportID from the imported log ------------ */
   getReportID = (contentType) => {
-    return this.getActiveModel(contentType).fightInfo.reportID;
+    if (this.getActiveModel(contentType) && 'fightInfo' in this.getActiveModel(contentType)) return this.getActiveModel(contentType).fightInfo.reportID;
+    else return "Unknown";
   };
 
   /* ------------ Return the Saved Boss Name from the imported log ------------ */
@@ -528,6 +539,7 @@ class Player {
     } else if (spec === SPEC.DISCPRIEST) {
       this.statWeights[contentType] = discPriestDefaultStatWeights(contentType);
       this.statWeights.DefaultWeights = true;
+      
     } else if (spec === SPEC.HOLYPRIEST) {
       this.statWeights[contentType] = holyPriestDefaultStatWeights(contentType);
       this.statWeights.DefaultWeights = true;
@@ -606,18 +618,15 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 1800,
-        haste: 700,
-        crit: 480,
-        mastery: 370,
-        versatility: 320,
+        intellect: 1850,
+        haste: 850,
+        crit: 400,
+        mastery: 400,
+        versatility: 400,
         stamina: 1900,
       };
+      //this.getActiveModel("Raid").setRampInfo(this.activeStats, []);
 
-      /*
-      this.statWeights.Raid = discPriestDefaultStatWeights("Raid");
-      this.statWeights.Dungeon = discPriestDefaultStatWeights("Dungeon");
-      this.statWeights.DefaultWeights = true; */
     } else if (spec === SPEC.HOLYPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
@@ -638,6 +647,7 @@ class Player {
         { identifier: "Raid Default", content: "Raid" },
         { identifier: "Dungeon Default", content: "Dungeon" },
         { identifier: "Sinister Teachings", content: "Raid" },
+        { identifier: "Sinister Teachings", content: "Dungeon" },
       ];
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 

@@ -43,7 +43,11 @@ import FlourishIcon from "Images/Classes/Druid/Specialisation/Restoration/Icons/
 import AncestralProtectionIcon from "Images/Classes/Shaman/Specialisation/Restoration/Icons/Talents/AncestralProtectionTotemIcon.jpg";
 import GuardianSpiritIcon from "Images/Classes/Priest/Specialisation/Holy/Icons/GuardianSpiritIcon.jpg";
 import RaptureIcon from "Images/Classes/Priest/Specialisation/Discipline/Icons/Rapture.jpg";
-import PainSupression from "Images/Classes/Priest/Specialisation/Discipline/Icons/PainSupression.jpg"
+import PainSupression from "Images/Classes/Priest/Specialisation/Discipline/Icons/PainSupression.jpg";
+import BlessingOfProtection from "Images/Classes/Paladin/Specialisation/Holy/Icons/spell_holy_sealofprotection.jpg";
+import BlessingOfFreedom from "Images/Classes/Paladin/Specialisation/Holy/Icons/spell_holy_sealofvalor.jpg";
+import LayOnHands from "Images/Classes/Paladin/Specialisation/Holy/Icons/spell_holy_layonhands.jpg";
+import TigersLust from "Images/Classes/Monk/Specialisation/Mistweaver/Icons/ability_monk_tigerslust.jpg";
 
 // Should probably work this off GUID
 
@@ -293,6 +297,27 @@ export default function abilityIcons(props, style) {
     source = LifeCocoonIcon;
     alt = "Blessing of Sacrifice";
   }
+  if (props === 1022) {
+    spell = "spell=1022";
+    source = BlessingOfProtection;
+    alt = "Blessing of Protection";
+  }
+  if (props === 1044) {
+    spell = "spell=1044";
+    source = BlessingOfFreedom;
+    alt = "Blessing of Freedom";
+  }
+  if (props === 633) {
+    spell = "spell=633";
+    source = LayOnHands;
+    alt = "Lay on Hands";
+  }
+  if (props === 116841) {
+    spell = "spell=116841";
+    source = TigersLust;
+    alt = "Tiger's Lust";
+  }
+
   if (props === "" || props === undefined) {
     return null;
   }

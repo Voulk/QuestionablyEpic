@@ -366,6 +366,7 @@ export default function CooldownPlanner(props) {
       title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
       field: "cooldownTime",
       width: "1%",
+      hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid #595959",
@@ -569,6 +570,7 @@ export default function CooldownPlanner(props) {
       title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
       field: "cooldownTime1",
       width: "1%",
+      hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid #595959",
@@ -774,6 +776,7 @@ export default function CooldownPlanner(props) {
       title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
       field: "cooldownTime2",
       width: "1%",
+      hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid #595959",
@@ -975,6 +978,7 @@ export default function CooldownPlanner(props) {
       title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
       field: "cooldownTime3",
       width: "1%",
+      hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid #595959",
@@ -1175,6 +1179,7 @@ export default function CooldownPlanner(props) {
       title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
       field: "cooldownTime4",
       width: "1%",
+      hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid #595959",
