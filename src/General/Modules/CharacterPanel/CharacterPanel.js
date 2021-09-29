@@ -103,7 +103,7 @@ export default function UpgradeFinderSimCnew(props) {
   const imageStyle = characterImageStyle(props.player.race);
   console.log(imageStyle);
   return (
-    <Grid item xs={12}>
+    // <Grid item xs={12}>
       <Paper elevation={0} className={check(simcStatus)}>
         {/* <Avatar src="https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-main.jpg" variant="rounded" className={classes.rounded} /> */}
         <Grid container direction="row" justifyContent="space-between" spacing={1} style={{ padding: "4px 8px" }} wrap="noWrap">
@@ -226,6 +226,6 @@ export default function UpgradeFinderSimCnew(props) {
           </Grid>
         </Grid>
       </Paper>
-    </Grid>
+    // </Grid>
   );
 }

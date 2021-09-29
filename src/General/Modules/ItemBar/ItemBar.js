@@ -15,13 +15,14 @@ import { dominationGemDB } from "../../../Databases/DominationGemDB";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    margin: theme.spacing(0.5),
+    // margin: theme.spacing(0.5),
     minWidth: 120,
     whiteSpace: "noWrap",
   },
   title: {
-    padding: theme.spacing(1),
+    padding: "6px 8px",
     paddingLeft: 16,
+    fontSize: theme.typography.pxToRem(15),
   },
   typography: {
     padding: theme.spacing(2),
@@ -214,8 +215,8 @@ export default function ItemBar(props) {
           alignItems="center"
           spacing={1}
           style={{
-            paddingTop: 4,
-            paddingBottom: 4,
+            // paddingTop: 4,
+            paddingBottom: 8,
             display: "inline-flex",
           }}
         >
@@ -227,8 +228,8 @@ export default function ItemBar(props) {
           /*                               Item Selection                               */
           /* -------------------------------------------------------------------------- */}
 
-          <Grid item>
-            <FormControl className={classes.formControl} variant="outlined" size="small" style={{ minWidth: 350 }}>
+          <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
+            <FormControl className={classes.formControl} variant="outlined" size="small" fullWidth>
               <Autocomplete
                 size="small"
                 classes={{
