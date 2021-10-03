@@ -14,7 +14,26 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 100,
     bottom: 0,
   },
-  subRoot: { margin: "auto", width: "45%" },
+  subRoot: {
+    [theme.breakpoints.down("xs")]: {
+      margin: "auto",
+      width: "85%",
+    },
+    [theme.breakpoints.up("sm")]: {
+      margin: "auto",
+      width: "80%",
+    },
+    [theme.breakpoints.up("md")]: {
+      margin: "auto",
+      width: "65%",
+    },
+    [theme.breakpoints.up("lg")]: {
+      margin: "auto",
+      width: "45%",
+    },
+    // margin: "auto",
+    // width: "45%",
+  },
 }));
 
 export default function QEFooter(props) {
