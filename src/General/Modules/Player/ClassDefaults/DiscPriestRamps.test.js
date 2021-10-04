@@ -1,10 +1,42 @@
 import { Stats } from 'fs';
 import Player from 'General/Modules/Player/Player';
-import { runCastSequence, buildRamp, allRamps } from "./DiscPriestRamps";
+import { runCastSequence, buildRamp, allRamps, getSpellRaw } from "./DiscPriestRamps";
 import { DISCSPELLS } from "./DiscSpellDB";
 
 // TODO: Test Disc Spells
 
+describe("Test Base Spells", () => {
+
+    const activeStats = {
+            intellect: 1974,
+            haste: 869,
+            crit: 445,
+            mastery: 451,
+            versatility: 528,
+            stamina: 1900,
+    }
+    test("Smite", () => {
+        const spell = DISCSPELLS['Smite'][0];
+
+        const damage = getSpellRaw(spell, activeStats);
+
+        expect(Math.round(damage)).toEqual(Math.round(1110*1.1771));
+    });
+    test("Mind Blast", () => {
+        const spell = DISCSPELLS['Mind Blast'][0];
+
+        const damage = getSpellRaw(spell, activeStats);
+
+        expect(Math.round(damage)).toEqual(Math.round(1666*1.1771));
+    });
+    test("Solace", () => {
+        const spell = DISCSPELLS['Power Word: Solace'][0];
+
+        const damage = getSpellRaw(spell, activeStats);
+
+        expect(Math.round(damage)).toEqual(Math.round(1680*1.1771));
+    });
+});
 
 describe("Evang Cast Sequence", () => {
     const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");

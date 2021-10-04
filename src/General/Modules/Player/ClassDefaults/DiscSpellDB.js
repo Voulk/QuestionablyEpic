@@ -12,7 +12,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 0,
-        coeff: 0.75,
+        coeff: 0.752,
         cooldown: 15,
         atoneOverheal: 0.2,
         secondaries: ['crit', 'vers']

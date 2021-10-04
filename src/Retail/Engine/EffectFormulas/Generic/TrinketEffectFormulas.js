@@ -197,15 +197,14 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
 
     bonus_stats.hps = (getProcessedValue(heal_effect.coefficient, heal_effect.table, itemLevel, heal_effect.efficiency) / heal_effect.cooldown) * player.getStatMultiplier("CRITVERS");
     
-    if (player.getSpec() === "Discipline Priest") {
+    if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
+      // 
       const boonSeq = buildRamp('Boon', 10, ["Soulletting Ruby"], setStats.haste, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, ['Rapture']);
       const rubyRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Soulletting Ruby": critValue}, {});
 
       bonus_stats.hps = bonus_stats.hps + (rubyRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - crit_effect.discOverhealing);
 
-      //bonus_stats.crit = (getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.duration * crit_effect.multiplier) / 180;
-      //bonus_stats.crit *= castModel.getSpecialQuery("threeMinutes", "cooldownMult");
     }
     else {
       bonus_stats.crit = (getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.duration * crit_effect.multiplier) / 120;

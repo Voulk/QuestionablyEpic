@@ -175,6 +175,11 @@ const deepCopyFunction = (inObject) => {
     return outObject;
   };
 
+
+export const getSpellRaw = (spell, currentStats) => {
+    return spell.coeff * currentStats.intellect * getStatMult(currentStats, spell.secondaries); // Multiply our spell coefficient by int and secondaries.
+}
+
 // This function is for time reporting. It just rounds the number to something easier to process.
 const getTime = (t) => {
     return Math.round(t*1000)/1000
@@ -307,10 +312,12 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
         
                 // The spell has a healing component. Add it's effective healing.
                 if (spell.type === 'heal') {
-                    const healingVal = spell.coeff * currentStats.intellect * getStatMult(currentStats, spell.secondaries) * (1 - spell.overheal);
+                    //const healingVal = spell.coeff * currentStats.intellect * getStatMult(currentStats, spell.secondaries) * (1 - spell.overheal); 
                     const healingMult = getHealingMult(activeBuffs, t, spellName, boonOfTheAscended, conduits); 
                     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets;
-                    healing[spellName] = (healing[spellName] || 0) + healingVal * healingMult * targetMult;
+                    const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.overheal) * healingMult * targetMult;
+                    
+                    healing[spellName] = (healing[spellName] || 0) + healingVal;
 
                 }
                 
@@ -318,14 +325,15 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 else if (spell.type === 'damage') {
                     const activeAtonements = getActiveAtone(atonementApp, t); // Get number of active atonements.
                     const damMultiplier = getDamMult(activeBuffs, activeAtonements, t, spellName, boonOfTheAscended, conduits); // Get our damage multiplier (Schism, Sins etc);
-                    const damageVal = spell.coeff * currentStats.intellect * getStatMult(currentStats, spell.secondaries); // Multiply our spell coefficient by int and secondaries.
-                    //console.log("Hitting spell " + spellName + " with " + activeAtonements + " active atonements");
-                    damageBreakdown[spellName] = (damageBreakdown[spellName] || 0) + damageVal * damMultiplier; // Stats. Non-essential.
+                    const damageVal = getSpellRaw(spell, currentStats) * damMultiplier;
+                    const atonementHealing = activeAtonements * damageVal * getAtoneTrans(currentStats.mastery) * (1 - spell.atoneOverheal)
+
+                    // This is stat tracking, though the atonement healing *will* be returned as a result.
                     totalDamage += damageVal * damMultiplier; // Stats.
+                    damageBreakdown[spellName] = (damageBreakdown[spellName] || 0) + damageVal; // This is just for stat tracking.
+                    healing['atonement'] = (healing['atonement'] || 0) + atonementHealing;
 
-                    healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * damMultiplier * getAtoneTrans(currentStats.mastery) * (1 - spell.atoneOverheal);
-
-                    if (reporting) console.log(getTime(t) + " " + spellName + ": " + damageVal * damMultiplier + ". Buffs: " + JSON.stringify(activeBuffs));
+                    if (reporting) console.log(getTime(t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(activeBuffs));
                 }
                 else if (spell.type === "atonementExtension") {
                     extendActiveAtonements(atonementApp, t, spell.extension);
