@@ -48,22 +48,25 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
         else if (boonDuration % boonPackage > (1.5 / hastePerc)) {
             sequence.push('Ascended Blast');
         }
-        //sequence.push("Ascended Eruption");
+
+        // These are low value post-ramp smites but should still be included.
+        for (var i = 0; i < 6; i++) {
+            sequence.push('Smite');
+        }
+       
     }
     else if (type === "Fiend") {
-        if (trinkets.includes("Divine Bell")) sequence.push("Divine Bell");
         sequence.push('Shadowfiend');
+        if (trinkets.includes("Divine Bell")) sequence.push("Divine Bell");
         sequence.push('Schism');
         sequence.push('Mind Blast');
         sequence.push('Power Word: Solace');
         sequence.push('Penance');
-        sequence.push('Smite');
-        sequence.push('Smite');
-        sequence.push('Smite');
-        sequence.push('Smite');
-        sequence.push('Smite');
-        sequence.push('Smite');
-        sequence.push('Smite');
+
+        for (var i = 0; i < 10; i++) {
+            sequence.push('Smite');
+        }
+        
     }
 
     //console.log(sequence);
@@ -122,7 +125,7 @@ const getActiveAtone = (atoneApp, timer) => {
 const getStatMult = (statArray, stats) => {
     let mult = 1;
     if (stats.includes("vers")) mult *= (1 + statArray['versatility'] / 40 / 100);
-    //if (stats.includes("crit")) mult *= (1.05 + statArray['crit'] / 35 / 100); // TODO: Re-enable
+    if (stats.includes("crit")) mult *= (1.05 + statArray['crit'] / 35 / 100); // TODO: Re-enable
     if (stats.includes("mastery")) mult *= (1.108 + statArray['mastery'] / 25.9259 / 100);
     return mult;
 }
@@ -178,7 +181,7 @@ const getTime = (t) => {
 }
 
 export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
-    console.log("Running cast sequence");
+    //console.log("Running cast sequence");
     let atonementApp = [];
     let purgeTicks = [];
     let fiendTicks = [];
@@ -192,10 +195,24 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     const discSpells = deepCopyFunction(DISCSPELLS);
     const seq = [...sequence];
     const sequenceLength = 45;
-    const reporting = true;
+    const reporting = false;
 
     PWSTest = 0;
     // Add anything that alters the spell dictionary
+
+    // Default Loadout
+    // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout
+    // since if we compare trinkets like Bell against an empty loadout it would be very undervalued. This gives a fair appraisal when
+    // we don't have full information about a character.
+    // As always, Top Gear is able to provide a more complete picture. 
+    if (settings['DefaultLoadout']) {
+        settings['Clarity of Mind'] = true;
+        settings['Pelagos'] = true;
+        conduits['Shining Radiance'] = 239;
+        conduits['Rabid Shadows'] = 239;
+        conduits['Courageous Ascension'] = 239;
+        
+    }
     
     if (settings['Clarity of Mind']) discSpells['Rapture'][0].atonement = 21;
     if (settings['Pelagos']) discSpells['Boon of the Ascended'].push({
@@ -208,6 +225,8 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
         value: 315,
         buffDuration: 30,
     });
+
+
     if (settings['Kleia']) activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
     if (settings['Penitent One']) discSpells['Penance'][0].coeff = discSpells['Penance'][0].coeff * (0.84 * 2); // This is an estimate, and would be made more accurate by adding Penance ticks instead.
 
@@ -215,7 +234,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     if (settings['Divine Bell']) discSpells['Divine Bell'][0].value = settings['Divine Bell'];
     if (settings['Shadowed Orb']) discSpells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
     if (settings['Soulletting Ruby']) discSpells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
-
 
     if (conduits['Courageous Ascension']) discSpells['Ascended Blast'][0].coeff *= 1.45; // Blast +40%, Eruption +1% per stack (to 4%)
     if (conduits['Shining Radiance']) discSpells['Power Word: Radiance'][0].coeff *= 1.64; // +64% radiance healing

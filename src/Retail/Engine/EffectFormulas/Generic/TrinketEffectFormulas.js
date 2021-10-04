@@ -200,9 +200,9 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     if (player.getSpec() === "Discipline Priest") {
       const boonSeq = buildRamp('Boon', 10, ["Soulletting Ruby"], setStats.haste, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, ['Rapture']);
-      const rubyRamps = allRamps(boonSeq, fiendSeq, setStats, {"Clarity of Mind": false, "Pelagos": false, "Soulletting Ruby": critValue}, {});
+      const rubyRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Soulletting Ruby": critValue}, {});
 
-      bonus_stats.hps = bonus_stats.hps + (rubyRamps - player.getRampID('baseline', contentType)) / 180;
+      bonus_stats.hps = bonus_stats.hps + (rubyRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - crit_effect.discOverhealing);
 
       //bonus_stats.crit = (getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.duration * crit_effect.multiplier) / 180;
       //bonus_stats.crit *= castModel.getSpecialQuery("threeMinutes", "cooldownMult");
@@ -376,9 +376,9 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
       const boonSeq = buildRamp('Boon', 10, ["Divine Bell"], setStats.haste, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, ["Divine Bell"], setStats.haste, ['Rapture']);
-      const bellRamps = allRamps(boonSeq, fiendSeq, setStats, {"Clarity of Mind": false, "Pelagos": false, "Divine Bell": trinketValue}, {});
-
-      bonus_stats.hps = (bellRamps - player.getRampID('baseline', contentType)) / 180;
+      const bellRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Divine Bell": trinketValue}, {});
+      
+      bonus_stats.hps = (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
     }
     else {
       bonus_stats.mastery = (trinketValue * effect.duration) / effect.cooldown;
@@ -654,9 +654,9 @@ else if (
   else if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
     const boonSeq = buildRamp('Boon', 10, ["Shadowed Orb"], setStats.haste, ['Rapture']);
     const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, ['Rapture']);
-    const orbRamps = allRamps(boonSeq, fiendSeq, setStats, {"Clarity of Mind": false, "Pelagos": false, "Shadowed Orb": trinketValue}, {});
+    const orbRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Shadowed Orb": trinketValue}, {});
 
-    bonus_stats.hps = (orbRamps - player.getRampID('baseline', contentType)) / 180;
+    bonus_stats.hps = (orbRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
   }
   else {
     const expectedEfficiency = 0.87; // Shadowed Orb is easy to mess up, but full value should be guaranteed in most cases.

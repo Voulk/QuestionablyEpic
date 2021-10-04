@@ -25,7 +25,8 @@ describe("Evang Cast Sequence", () => {
     //const baseline = baselineBoon + baselineFiend;
 
     test("Legendaries", () => {
-        const baseline = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": false}, {});
+        const baseline = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226, "Rabid Shadows": 226});
+        console.log("Baseline: " + baseline);
         //const clarityOfMind = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {});
         //const pelagos = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": true}, {});
         //const exaltation = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": false}, {"Exaltation": 226});
