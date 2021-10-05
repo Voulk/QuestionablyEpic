@@ -6,35 +6,54 @@ import { DISCSPELLS } from "./DiscSpellDB";
 // TODO: Test Disc Spells
 
 describe("Test Base Spells", () => {
-
+    const errorMargin = 1.1; // There's often some blizzard rounding hijinx in spells. If our formulas are within 1 (a fraction of a percent) then we are likely calculating it correctly.
     const activeStats = {
             intellect: 1974,
             haste: 869,
-            crit: 445,
+            crit: 1000,
             mastery: 451,
             versatility: 528,
             stamina: 1900,
     }
+    const critMult = 1.05 + activeStats.crit / 35 / 100; // TODO: Make dynamic to the above stats for cleanliness.
     test("Smite", () => {
         const spell = DISCSPELLS['Smite'][0];
 
         const damage = getSpellRaw(spell, activeStats);
 
-        expect(Math.round(damage)).toEqual(Math.round(1110*1.1771));
+        expect(Math.round(damage)).toEqual(Math.round(1110*critMult));
     });
     test("Mind Blast", () => {
         const spell = DISCSPELLS['Mind Blast'][0];
-
-        const damage = getSpellRaw(spell, activeStats);
-
-        expect(Math.round(damage)).toEqual(Math.round(1666*1.1771));
+        expect(Math.abs(getSpellRaw(spell, activeStats) - 1666*critMult)).toBeLessThan(3);
     });
     test("Solace", () => {
         const spell = DISCSPELLS['Power Word: Solace'][0];
 
         const damage = getSpellRaw(spell, activeStats);
 
-        expect(Math.round(damage)).toEqual(Math.round(1680*1.1771));
+        expect(Math.abs(damage - 1680*critMult)).toBeLessThan(errorMargin);
+    });
+    test("Schism", () => {
+        const spell = DISCSPELLS['Schism'][0];
+
+        const damage = getSpellRaw(spell, activeStats);
+
+        expect(Math.abs(damage - 3150*critMult)).toBeLessThan(errorMargin);
+    });
+    test("Power Word: Radiance", () => {
+        const spell = DISCSPELLS['Power Word: Radiance'][0];
+
+        const healing = getSpellRaw(spell, activeStats);
+
+        expect(Math.abs(healing - 2347*critMult)).toBeLessThan(errorMargin);
+    });
+    test("Power Word: Shield", () => {
+        const spell = DISCSPELLS['Power Word: Shield'][0];
+
+        const healing = getSpellRaw(spell, activeStats);
+
+        expect(Math.abs(healing - 3687*critMult)).toBeLessThan(errorMargin);
     });
 });
 
