@@ -6,7 +6,7 @@ import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
 import { druidDefaultStatWeights } from "./ClassDefaults/DruidDefaults";
 import { shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
-import { discPriestDefaultStatWeights } from "./ClassDefaults/DiscPriestDefaults";
+import { discPriestDefaultStatWeights } from "./DiscPriest/DiscPriestDefaults";
 import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";

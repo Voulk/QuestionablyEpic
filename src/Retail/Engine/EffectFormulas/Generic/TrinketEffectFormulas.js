@@ -4,7 +4,7 @@ import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
 import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
 import { getMasteryAddition } from "../Monk/MistweaverMiscFormulas"
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { runCastSequence, buildRamp, allRamps } from "General/Modules/Player/ClassDefaults/DiscPriestRamps";
+import { runCastSequence, buildRamp, allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 
 // import { STAT } from "../../../../General/Engine/STAT";
 import SPEC from "../../../../General/Engine/SPECS";

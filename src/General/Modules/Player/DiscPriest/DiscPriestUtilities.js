@@ -1,4 +1,4 @@
-import { runCastSequence, buildRamp, allRamps } from "General/Modules/Player/ClassDefaults/DiscPriestRamps";
+import { runCastSequence, buildRamp, allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 
 export const getRampData = (playerStats, playerTrinkets) => {
     console.log(playerStats);

@@ -103,7 +103,6 @@ const checkBuffActive = (buffs, buffName) => {
     return buffs.filter(function (buff) {return buff.name === buffName}).length > 0;
 }
 
-let PWSTest = 0;
 
 const getHealingMult = (buffs, t, spellName, boonStacks, conduits) => {
     if (spellName === "Power Word: Shield" && checkBuffActive(buffs, "Rapture")) {
@@ -207,7 +206,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     const sequenceLength = 45;
     const reporting = false;
 
-    PWSTest = 0;
     // Add anything that alters the spell dictionary
 
     // Default Loadout
@@ -297,7 +295,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             damageBreakdown['Shadowfiend'] = (damageBreakdown['Shadowfiend'] || 0) + damageVal * damMultiplier;
             totalDamage += damageVal;
             healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * getAtoneTrans(currentStats.mastery);
-            PWSTest++;
         }
 
         if ((t > nextSpell && seq.length > 0) || ascendedEruption)  {
@@ -391,7 +388,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     //console.log("D:" + JSON.stringify(damageBreakdown));
     //console.log("At:" + atonementApp);
     //console.log("H:" + JSON.stringify(healing));
-    //console.log("Fiend Test:" + PWSTest);
     //console.log("Total healing: " + sumValues(healing));
 
     return sumValues(healing)

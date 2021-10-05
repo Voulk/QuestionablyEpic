@@ -8,8 +8,8 @@ import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatW
 import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { monkSinSpecialQueries, monkSinSpellData, monkSinStatWeights } from "./ClassDefaults/Monk/MonkSinTeachings";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
-import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./ClassDefaults/DiscPriestDefaults";
-import { getRampData } from "General/Modules/Player/ClassDefaults/DiscPriestUtilities";
+import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./DiscPriest/DiscPriestDefaults";
+import { getRampData } from "General/Modules/Player/DiscPriest/DiscPriestUtilities";
 
 class CastModel {
   constructor(spec, contentType, modelID, arrID) {
