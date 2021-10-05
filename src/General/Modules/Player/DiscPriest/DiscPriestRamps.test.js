@@ -1,6 +1,7 @@
 import { Stats } from 'fs';
 import Player from 'General/Modules/Player/Player';
-import { runCastSequence, buildRamp, allRamps, getSpellRaw } from "./DiscPriestRamps";
+import { runCastSequence, allRamps, getSpellRaw } from "./DiscPriestRamps";
+import { buildRamp } from "./DiscRampGen";
 import { DISCSPELLS } from "./DiscSpellDB";
 
 

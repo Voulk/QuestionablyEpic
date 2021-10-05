@@ -1,4 +1,5 @@
-import { runCastSequence, buildRamp, allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { runCastSequence, allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 export const getDiscPriestLegendary = (effectName, player, contentType) => {
   let result = 0.0;
