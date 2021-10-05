@@ -3,8 +3,8 @@ import Player from 'General/Modules/Player/Player';
 import { runCastSequence, buildRamp, allRamps, getSpellRaw } from "./DiscPriestRamps";
 import { DISCSPELLS } from "./DiscSpellDB";
 
-// TODO: Test Disc Spells
 
+// These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 describe("Test Base Spells", () => {
     const errorMargin = 1.1; // There's often some blizzard rounding hijinx in spells. If our formulas are within 1 (a fraction of a percent) then we are likely calculating it correctly.
     const activeStats = {
@@ -15,7 +15,7 @@ describe("Test Base Spells", () => {
             versatility: 528,
             stamina: 1900,
     }
-    const critMult = 1.05 + activeStats.crit / 35 / 100; // TODO: Make dynamic to the above stats for cleanliness.
+    const critMult = 1.05 + activeStats.crit / 35 / 100; 
     test("Smite", () => {
         const spell = DISCSPELLS['Smite'][0];
 
@@ -55,6 +55,8 @@ describe("Test Base Spells", () => {
 
         expect(Math.abs(healing - 3687*critMult)).toBeLessThan(errorMargin);
     });
+
+    // TODO: test more spells.
 });
 
 describe("Evang Cast Sequence", () => {
@@ -74,6 +76,7 @@ describe("Evang Cast Sequence", () => {
     //const baselineFiend = runCastSequence(fiendSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226});
     
     //const baseline = baselineBoon + baselineFiend;
+
 
     test("Legendaries", () => {
         const baseline = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226, "Rabid Shadows": 226});
