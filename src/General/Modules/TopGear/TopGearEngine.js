@@ -616,7 +616,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // This is not a perfect representation of the cost of wearing two on-use trinkets as Paladin and Disc,
   // but from a practical viewpoint it achieves the objective. It could be replaced with something more
   // mathematically comprehensive in future. Disc Priest will be swapped to the new tech very soon.
-  if ((player.spec === "Holy Paladin" || player.spec === "Discipline Priest") && 'onUseTrinkets' in builtSet && builtSet.onUseTrinkets == 2) {
+  if ((player.spec === "Holy Paladin" || player.spec === "Discipline Priest") && 'onUseTrinkets' in builtSet && builtSet.onUseTrinkets.length == 2) {
     hardScore -= 37;
   }
 
@@ -706,9 +706,9 @@ function evalSetDisc(itemSet, player, contentType, baseHPS, userSettings, castMo
   
   if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
 
-  
-  const boonSeq = buildRamp('Boon', 10, [], setStats.haste, ['Rapture']);
-  const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, ['Rapture']);
+  console.log(itemSet.onUseTrinkets);
+  const boonSeq = buildRamp('Boon', 10, itemSet.onUseTrinkets, setStats.haste, ['Rapture']);
+  const fiendSeq = buildRamp('Fiend', 10, itemSet.onUseTrinkets, setStats.haste, ['Rapture']);
   const rampSettings = {};
   if (itemSet.setLegendary === "Clarity of Mind") rampSettings['Clarity of Mind'] = true;
   const setRamp = allRamps(boonSeq, fiendSeq, setStats, rampSettings, {"Courageous Ascension": 239, "Rabid Shadows": 239});

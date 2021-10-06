@@ -71,8 +71,8 @@ describe("Evang Cast Sequence", () => {
             stamina: 1900,
     }
     
-    const boonSeq = buildRamp('Boon', 10, ["Divine Bell"], player.activeStats.haste, ['Rapture'])
-    const fiendSeq = buildRamp('Fiend', 10, ["Divine Bell"], player.activeStats.haste, ['Rapture'])
+    const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell"], player.activeStats.haste, ['Rapture'])
+    const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell"], player.activeStats.haste, ['Rapture'])
     //const baselineBoon = (boonSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": frunCastSequencealse}, {"Courageous Ascension": 226, "Shining Radiance": 226});
     //const baselineFiend = runCastSequence(fiendSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226});
     

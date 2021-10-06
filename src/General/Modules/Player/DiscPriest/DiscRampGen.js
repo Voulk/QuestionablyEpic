@@ -25,7 +25,7 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
 
         for (var i = 0; i < Math.floor(boonDuration / boonPackage); i++) {
             sequence.push('Ascended Blast');
-            if (trinkets.includes("Divine Bell") && i === 0) sequence.push("Divine Bell");
+            if (trinkets.includes("Instructor's Divine Bell") && i === 0) sequence.push("Instructor's Divine Bell");
             sequence.push('Ascended Nova');
             sequence.push('Ascended Nova');
         }
@@ -46,7 +46,7 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
     }
     else if (type === "Fiend") {
         sequence.push('Shadowfiend');
-        if (trinkets.includes("Divine Bell")) sequence.push("Divine Bell");
+        if (trinkets.includes("Instructor's Divine Bell")) sequence.push("Instructor's Divine Bell");
         sequence.push('Schism');
         sequence.push('Mind Blast');
         sequence.push('Power Word: Solace');

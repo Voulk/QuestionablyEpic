@@ -207,7 +207,7 @@ export const DISCSPELLS = {
         coeff: 0,
         extension: 6,
     }],
-    "Divine Bell": [{
+    "Instructor's Divine Bell": [{
         type: "buff",
         castTime: 0,
         cost: 0,

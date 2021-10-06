@@ -22,7 +22,7 @@ class ItemSet {
   setDoms = 0;
   uniques = {};
   effectList = [];
-  onUseTrinkets = 0; // The number of on-use trinkets in the set.
+  onUseTrinkets = []; // The names of the on-use trinkets in the set.
 
   // Enchant Breakdown consists of key: value combos where key is the slot, and the value is the *name* of the enchant.
   // We only use it for display purposes on the report end.
@@ -105,7 +105,8 @@ class ItemSet {
       if (item.setID) {
         this.sets[item.setID] = (item.setID in this.sets) ? this.sets[item.setID] + 1 : 1;
       }
-      if (item.onUse) this.onUseTrinkets += 1;
+      if (item.onUse) this.onUseTrinkets.push(item.effect.name);
+        
 
       if (item.effect !== "") {
         let effect = item.effect;

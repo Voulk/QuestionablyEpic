@@ -183,7 +183,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits) => {
 
     // Trinkets
     // These settings change the stat value prescribed to a given trinket. We call these when adding trinkets so that we can grab their value at a specific item level.
-    if (settings['Divine Bell']) discSpells['Divine Bell'][0].value = settings['Divine Bell'];
+    if (settings["Instructor's Divine Bell"]) discSpells["Instructor's Divine Bell"][0].value = settings["Instructor's Divine Bell"];
     if (settings['Shadowed Orb']) discSpells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
     if (settings['Soulletting Ruby']) discSpells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
 
