@@ -452,7 +452,7 @@ function buildDifferential(itemSet, primeSet, player, contentType) {
   let differentials = {
     items: [],
     scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
-    rawDifference: Math.round((itemSet.hardScore - primeSet.hardScore) / player.getInt(contentType) * player.getHPS(contentType)),
+    rawDifference: player.spec === "Discipline Priest" ? Math.round(itemSet.hardScore - primeSet.hardScore) : Math.round((itemSet.hardScore - primeSet.hardScore) / player.getInt(contentType) * player.getHPS(contentType)),
   };
 
   for (var x = 0; x < primeList.length; x++) {
@@ -487,6 +487,37 @@ function sumScore(obj) {
   return sum;
 }
 
+function enchantItems(bonus_stats, setInt, castModel) {
+  let enchants = {};
+  // Rings - Best secondary.
+  // We use the players highest stat weight here. Using an adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
+  // single percentage. The stress this could cause a player is likely not worth the optimization.
+  let highestWeight = getHighestWeight(castModel);
+  bonus_stats[highestWeight] += 32; // 16 x 2.
+  enchants["Finger"] = "+16 " + highestWeight;
+
+  // Bracers
+  bonus_stats.intellect += 15;
+  enchants["Wrist"] = "+15 int";
+
+  // Chest
+  // The mana enchant is actually close in value to +30 int, but for speeds sake it is not currently included. 
+  bonus_stats.intellect += 30;
+  enchants["Chest"] = "+30 stats";
+
+  // Cape
+  bonus_stats.leech += 30;
+  enchants["Back"] = "+30 leech";
+
+  // Weapon - Celestial Guidance
+  // Eternal Grace is so poor that it isn't even compared.
+  let expected_uptime = convertPPMToUptime(3, 10);
+  bonus_stats.intellect += (setInt + bonus_stats.intellect) * 0.05 * expected_uptime;
+  enchants["CombinedWeapon"] = "Celestial Guidance";
+
+  return enchants;
+}
+
 // An evaluation function for a single combination of gear. This is in effect where a set is scored.
 function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel) {
   let builtSet = itemSet.compileStats("Retail", userSettings); // This adds together the stats of each item in the set.
@@ -518,32 +549,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   };
 
   // == Enchants & Gems ==
-
-  // Rings - Best secondary.
-  // We use the players highest stat weight here. Using an adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
-  // single percentage. The stress this could cause a player is likely not worth the optimization.
-  let highestWeight = getHighestWeight(castModel);
-  bonus_stats[highestWeight] += 32; // 16 x 2.
-  enchants["Finger"] = "+16 " + highestWeight;
-
-  // Bracers
-  bonus_stats.intellect += 15;
-  enchants["Wrist"] = "+15 int";
-
-  // Chest
-  // The mana enchant is actually close in value to +30 int, but for speeds sake it is not currently included. 
-  bonus_stats.intellect += 30;
-  enchants["Chest"] = "+30 stats";
-
-  // Cape
-  bonus_stats.leech += 30;
-  enchants["Back"] = "+30 leech";
-
-  // Weapon - Celestial Guidance
-  // Eternal Grace is so poor that it isn't even compared.
-  let expected_uptime = convertPPMToUptime(3, 10);
-  bonus_stats.intellect += (setStats.intellect + bonus_stats.intellect) * 0.05 * expected_uptime;
-  enchants["CombinedWeapon"] = "Celestial Guidance";
+  enchants = enchantItems(bonus_stats, setStats.intellect, castModel);
 
   // 5% int boost for wearing the same items.
   // QE Live doesn't actually allow you to add items of different armor types so this is always on.
@@ -551,6 +557,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   bonus_stats.intellect += (builtSet.setStats.intellect + bonus_stats.intellect) * 0.05;
 
   // Sockets
+  const highestWeight = getHighestWeight(castModel);
   bonus_stats[highestWeight] += 16 * builtSet.setSockets;
   enchants["Gems"] = highestWeight;
 
@@ -633,16 +640,13 @@ function evalSetDisc(itemSet, player, contentType, baseHPS, userSettings, castMo
   let setStats = builtSet.setStats;
   let hardScore = 0;
 
-  //console.log(itemSet);
-
-  let enchants = {};
 
   let bonus_stats = {
     intellect: 0,
     haste: 0,
     crit: 0,
     versatility: 0,
-    mastery: 0,//STATPERONEPERCENT.MASTERYA[player.spec] * BASESTAT.MASTERY[player.spec] * 100,
+    mastery: 0,
     leech: 0,
     hps: 0,
     dps: 0,
@@ -656,45 +660,17 @@ function evalSetDisc(itemSet, player, contentType, baseHPS, userSettings, castMo
     versatility: castModel.baseStatWeights["versatility"],
     leech: castModel.baseStatWeights["leech"],
   };
-  //console.log("Weights Before: " + JSON.stringify(adjusted_weights));
-
-  //console.log("Weights After: " + JSON.stringify(adjusted_weights));
-
-  // Apply consumables if ticked.
 
   // Apply Enchants & Gems
-
-  // Rings - Best secondary.
-  // We use the players highest stat weight here. Using the adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
-  // single percentage. The stress this could cause a player is likely not worth the optimization.
-  let highestWeight = getHighestWeight(castModel);
-  bonus_stats[highestWeight] += 32; // 16 x 2.
-  enchants["Finger"] = "+16 " + highestWeight;
-
-  // Bracers
-  bonus_stats.intellect += 15;
-  enchants["Wrist"] = "+15 int";
-
-  // Chest
-  // TODO: Add the mana enchant. In practice they are very similar.
-  bonus_stats.intellect += 30;
-  enchants["Chest"] = "+30 stats";
-
-  // Cape
-  bonus_stats.leech += 30;
-  enchants["Back"] = "+30 leech";
-
-  // Weapon - Celestial Guidance
-  // Eternal Grace is so poor right now that I don't even think it deserves inclusion.
-  let expected_uptime = convertPPMToUptime(3, 10);
-  bonus_stats.intellect += (setStats.intellect + bonus_stats.intellect) * 0.05 * expected_uptime;
-  enchants["CombinedWeapon"] = "Celestial Guidance";
+  const enchants = enchantItems(bonus_stats, setStats.intellect, castModel);
+  console.log(bonus_stats);
 
   // 5% int boost for wearing the same items.
   // The system doesn't actually allow you to add items of different armor types so this is always on.
   bonus_stats.intellect += (builtSet.setStats.intellect + bonus_stats.intellect) * 0.05;
 
   // Sockets
+  const highestWeight = getHighestWeight(castModel);
   bonus_stats[highestWeight] += 16 * builtSet.setSockets;
   enchants["Gems"] = highestWeight;
 
@@ -706,28 +682,31 @@ function evalSetDisc(itemSet, player, contentType, baseHPS, userSettings, castMo
   
   if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
 
-  console.log(itemSet.onUseTrinkets);
   const boonSeq = buildRamp('Boon', 10, itemSet.onUseTrinkets, setStats.haste, ['Rapture']);
   const fiendSeq = buildRamp('Fiend', 10, itemSet.onUseTrinkets, setStats.haste, ['Rapture']);
   const rampSettings = {};
   if (itemSet.setLegendary === "Clarity of Mind") rampSettings['Clarity of Mind'] = true;
   const setRamp = allRamps(boonSeq, fiendSeq, setStats, rampSettings, {"Courageous Ascension": 239, "Rabid Shadows": 239});
 
-  setStats.hps += setRamp / 180;
-  console.log(setRamp);
   //itemSet.effectList = itemSet.effectList.concat(domList);
 
   // Handle Effects
-  /*
   let effectStats = [];
   effectStats.push(bonus_stats);
   for (var x = 0; x < itemSet.effectList.length; x++) {
-    effectStats.push(getEffectValue(itemSet.effectList[x], player, castModel, contentType, itemSet.effectList[x].level, userSettings, "Retail", setStats));
+    const effect = itemSet.effectList[x];
+    if (!effect.onUse && effect.type !== "spec legendary") {
+      
+      effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats));
+    }
+    
   }
+  console.log(effectStats);
   const mergedEffectStats = mergeBonusStats(effectStats)
-  */
+
   
-  applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
+  //applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
+
   // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
   /*
   adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;
@@ -741,16 +720,27 @@ function evalSetDisc(itemSet, player, contentType, baseHPS, userSettings, castMo
   */
   // Calculate a hard score using the rebalanced stat weights.
 
-  for (var stat in setStats) {
+  for (var stat in mergedEffectStats) {
     if (stat === "hps") {
-      hardScore += (setStats[stat] / baseHPS) * player.activeStats.intellect;
+      hardScore += mergedEffectStats[stat];
+      console.log("Adding HPS from Merged" + mergedEffectStats[stat]);
     } else if (stat === "dps") {
-        if (contentType === "Dungeon") hardScore += (setStats[stat] / baseHPS) * player.activeStats.intellect;
+        if (contentType === "Dungeon") hardScore += (mergedEffectStats[stat] / baseHPS) * player.activeStats.intellect;
         else continue;
     } else {
-      hardScore += setStats[stat] * adjusted_weights[stat];
+      hardScore += mergedEffectStats[stat] * adjusted_weights[stat] / player.activeStats.intellect * baseHPS;
+      console.log("Adding " + mergedEffectStats[stat] + " " + stat + " of weight : " + adjusted_weights[stat] + " for result: " + mergedEffectStats[stat] * adjusted_weights[stat] / setStats.intellect * baseHPS);
     }
   }
+
+  hardScore += setRamp / 180;
+  setStats.hps += setRamp / 180;
+  hardScore += setStats.leech * adjusted_weights['leech'] / player.activeStats.intellect * baseHPS;
+  console.log("Adding ramp HPS: " +setRamp / 180);
+  console.log("Hard score: " + hardScore);
+
+  addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
+  setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately. 
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;

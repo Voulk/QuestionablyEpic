@@ -20,6 +20,7 @@ class Item {
     this.hasDomSocket = (getItemProp(id, "socketType") === "Domination");
     this.hasDomSet = (getItemProp(id, "socketType") === "Domination") || (slot === "Legs" && getItemProp(id, "sources")["instanceID"] === 1193);
     this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket") === true);
+    if (this.onUse) this.effect['onUse'] = true;
   }
 
   id = 0; // The items ID
