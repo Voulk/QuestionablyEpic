@@ -19,6 +19,7 @@ class Item {
     this.effect = getItemProp(id, "effect");
     this.hasDomSocket = (getItemProp(id, "socketType") === "Domination");
     this.hasDomSet = (getItemProp(id, "socketType") === "Domination") || (slot === "Legs" && getItemProp(id, "sources")["instanceID"] === 1193);
+    this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket") === true);
   }
 
   id = 0; // The items ID
@@ -40,6 +41,7 @@ class Item {
   hasDomSocket = false; // Has a domination socket.
   hasDomSet = false;  // Has a domination bonus. Leg slots will tick this, but not DomSocket. The rest will tick both.
   domGemID = 0;
+  onUse = false;
 
   // The stats on the item. These should already be adjusted for item level.
   // HPS is a calculated field. It includes any item effects that provide healing or absorbs.
@@ -81,7 +83,7 @@ class Item {
   setDominationGem(id) {
     if (this.hasDomSocket) {
       this.domGemID = id;
-      this.effect = getDomGemEffect(id)
+      //this.effect = getDomGemEffect(id)
     }
   }
 

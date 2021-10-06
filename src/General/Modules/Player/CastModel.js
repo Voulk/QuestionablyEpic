@@ -77,7 +77,7 @@ class CastModel {
       spellList = druidDefaultSpellData(contentType);
       specialQueries = druidDefaultSpecialQueries(contentType);
       this.baseStatWeights = druidDefaultStatWeights(contentType);
-      this.fightInfo.dps = 700;
+      this.fightInfo.dps = (contentType === "Raid" ? 700 : 3600);
 
     } else if (spec === SPEC.HOLYPALADIN) {
       if (modelID === "Kyrian Default") {
@@ -114,7 +114,7 @@ class CastModel {
       spellList = shamanDefaultSpellData(contentType);
       specialQueries = shamanDefaultSpecialQueries(contentType);
       this.baseStatWeights = shamanDefaultStatWeights(contentType);
-      this.fightInfo.dps = 725;
+      this.fightInfo.dps = (contentType === "Raid" ? 825 : 4600);
 
       // --- Mistweaver Monk
     } else if (spec === SPEC.MISTWEAVERMONK) {
@@ -146,14 +146,14 @@ class CastModel {
       spellList = discPriestDefaultSpellData(contentType);
       specialQueries = discPriestDefaultSpecialQueries(contentType);
       this.baseStatWeights = discPriestDefaultStatWeights(contentType);
-      this.fightInfo.dps = 1300;
+      this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
 
     } else if (spec === SPEC.HOLYPRIEST) {
       this.modelName = "Default";
       spellList = holyPriestDefaultSpellData(contentType);
       specialQueries = holyPriestDefaultSpecialQueries(contentType);
       this.baseStatWeights = holyPriestDefaultStatWeights(contentType);
-      this.fightInfo.dps = 775;
+      this.fightInfo.dps = (contentType === "Raid" ? 875 : 2100);
     } 
     
     // Burning Crusade Profiles

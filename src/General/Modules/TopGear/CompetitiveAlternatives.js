@@ -46,6 +46,9 @@ function CompetitiveAlternatives(props) {
             <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
               {t("TopGear.CompetitiveAlternative")}
             </Typography>
+            <Typography variant="body2" align="left" style={{ width: "100%", color: "#ffffff", fontStyle: "italic"}} color="secondary">
+              {t("TopGear.CompetitiveAlternativeHelp")}
+            </Typography>
             <Divider />
           </Grid>
           <Grid item xs={12}>
