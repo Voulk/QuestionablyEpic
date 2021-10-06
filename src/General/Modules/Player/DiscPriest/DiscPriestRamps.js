@@ -146,7 +146,7 @@ const getTime = (t) => {
 }
 
 const applyLoadoutEffects = (discSpells, settings, conduits) => {
-        // Add anything that alters the spell dictionary. This could all be moved to a separate function.
+    // Add anything that alters the spell dictionary. This could all be moved to a separate function.
 
     // Default Loadout
     // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout

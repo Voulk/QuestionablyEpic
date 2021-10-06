@@ -10,6 +10,8 @@ import CastModel from "../Player/CastModel";
 import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngine"
 import { getDomGemEffect, applyDiminishingReturns } from "General/Engine/ItemUtilities"
 import { dominationGemDB } from "Databases/DominationGemDB";
+import { runCastSequence, allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
@@ -105,7 +107,8 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
     */
 
   for (var i = 0; i < itemSets.length; i++) {
-    itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel);
+    if (newPlayer.spec === "Discipline Priest") itemSets[i] = evalSetDisc(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel);
+    else itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel);
   }
   itemSets = pruneItems(itemSets);
 
@@ -585,6 +588,139 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
   setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately. 
 
+  // Calculate a hard score using the rebalanced stat weights.
+
+  for (var stat in setStats) {
+    if (stat === "hps") {
+      hardScore += (setStats[stat] / baseHPS) * player.activeStats.intellect;
+    } else if (stat === "dps") {
+        if (contentType === "Dungeon") hardScore += (setStats[stat] / baseHPS) * player.activeStats.intellect;
+        else continue;
+    } else {
+      hardScore += setStats[stat] * adjusted_weights[stat];
+    }
+  }
+
+  builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
+  builtSet.setStats = setStats;
+  builtSet.enchantBreakdown = enchants;
+  //console.log(builtSet);
+  return builtSet; // Temp
+}
+
+// A true evaluation function on a set.
+function evalSetDisc(itemSet, player, contentType, baseHPS, userSettings, castModel) {
+  // Get Base Stats
+  let builtSet = itemSet.compileStats("Retail", userSettings);
+  let setStats = builtSet.setStats;
+  let hardScore = 0;
+
+  //console.log(itemSet);
+
+  let enchants = {};
+
+  let bonus_stats = {
+    intellect: 0,
+    haste: 0,
+    crit: 0,
+    versatility: 0,
+    mastery: 0,//STATPERONEPERCENT.MASTERYA[player.spec] * BASESTAT.MASTERY[player.spec] * 100,
+    leech: 0,
+    hps: 0,
+    dps: 0,
+  };
+
+  let adjusted_weights = {
+    intellect: 1,
+    haste: castModel.baseStatWeights["haste"],
+    crit: castModel.baseStatWeights["crit"],
+    mastery: castModel.baseStatWeights["mastery"],
+    versatility: castModel.baseStatWeights["versatility"],
+    leech: castModel.baseStatWeights["leech"],
+  };
+  //console.log("Weights Before: " + JSON.stringify(adjusted_weights));
+
+  //console.log("Weights After: " + JSON.stringify(adjusted_weights));
+
+  // Apply consumables if ticked.
+
+  // Apply Enchants & Gems
+
+  // Rings - Best secondary.
+  // We use the players highest stat weight here. Using the adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
+  // single percentage. The stress this could cause a player is likely not worth the optimization.
+  let highestWeight = getHighestWeight(castModel);
+  bonus_stats[highestWeight] += 32; // 16 x 2.
+  enchants["Finger"] = "+16 " + highestWeight;
+
+  // Bracers
+  bonus_stats.intellect += 15;
+  enchants["Wrist"] = "+15 int";
+
+  // Chest
+  // TODO: Add the mana enchant. In practice they are very similar.
+  bonus_stats.intellect += 30;
+  enchants["Chest"] = "+30 stats";
+
+  // Cape
+  bonus_stats.leech += 30;
+  enchants["Back"] = "+30 leech";
+
+  // Weapon - Celestial Guidance
+  // Eternal Grace is so poor right now that I don't even think it deserves inclusion.
+  let expected_uptime = convertPPMToUptime(3, 10);
+  bonus_stats.intellect += (setStats.intellect + bonus_stats.intellect) * 0.05 * expected_uptime;
+  enchants["CombinedWeapon"] = "Celestial Guidance";
+
+  // 5% int boost for wearing the same items.
+  // The system doesn't actually allow you to add items of different armor types so this is always on.
+  bonus_stats.intellect += (builtSet.setStats.intellect + bonus_stats.intellect) * 0.05;
+
+  // Sockets
+  bonus_stats[highestWeight] += 16 * builtSet.setSockets;
+  enchants["Gems"] = highestWeight;
+
+
+  
+  // This might change later, but is a way to estimate the value of a domination socket on a piece in the Upgrade Finder.
+
+  compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
+  
+  if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
+
+  
+  const boonSeq = buildRamp('Boon', 10, [], setStats.haste, ['Rapture']);
+  const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, ['Rapture']);
+  const rampSettings = {};
+  if (itemSet.setLegendary === "Clarity of Mind") rampSettings['Clarity of Mind'] = true;
+  const setRamp = allRamps(boonSeq, fiendSeq, setStats, rampSettings, {"Courageous Ascension": 239, "Rabid Shadows": 239});
+
+  setStats.hps += setRamp / 180;
+  console.log(setRamp);
+  //itemSet.effectList = itemSet.effectList.concat(domList);
+
+  // Handle Effects
+  /*
+  let effectStats = [];
+  effectStats.push(bonus_stats);
+  for (var x = 0; x < itemSet.effectList.length; x++) {
+    effectStats.push(getEffectValue(itemSet.effectList[x], player, castModel, contentType, itemSet.effectList[x].level, userSettings, "Retail", setStats));
+  }
+  const mergedEffectStats = mergeBonusStats(effectStats)
+  */
+  
+  applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
+  // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
+  /*
+  adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;
+  adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.Retail.CRIT)) / 2;
+  adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.Retail.VERSATILITY)) / 2;
+  adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.Retail.MASTERYA[player.spec])) / 2;
+  adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.Retail.LEECH)) / 2;
+
+  addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
+  setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately. 
+  */
   // Calculate a hard score using the rebalanced stat weights.
 
   for (var stat in setStats) {

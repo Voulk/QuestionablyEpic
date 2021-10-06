@@ -377,7 +377,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
       const boonSeq = buildRamp('Boon', 10, ["Divine Bell"], setStats.haste, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, ["Divine Bell"], setStats.haste, ['Rapture']);
       const bellRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Divine Bell": trinketValue}, {});
-      
+      //console.log("Adding X HPS: " + (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing));
       bonus_stats.hps = (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
     }
     else {
