@@ -79,14 +79,22 @@ describe("Evang Cast Sequence", () => {
     //const baseline = baselineBoon + baselineFiend;
 
 
-    test("Legendaries", () => {
-        const baseline = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226, "Rabid Shadows": 226});
+    test("Legendaries & Soulbinds", () => {
+        const baseline = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": false}, {});
         console.log("Baseline: " + baseline);
-        //const clarityOfMind = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {});
-        //const pelagos = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": true}, {});
+        const clarityOfMind = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {});
+        const pelagos = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": true}, {});
+        const rabidShadows = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": false}, {"Rabid Shadows": 226});
+
+        // These are extremely simple checks to make sure our legendaries and soulbinds are having some net impact on our result.
+        // They're not specific on their value, but will fail if any portion of the ramp isn't working correctly.
+        expect(clarityOfMind - baseline).toBeGreaterThan(0);
+        expect(pelagos - baseline).toBeGreaterThan(0);
+        expect(rabidShadows - baseline).toBeGreaterThan(0);
+        
         //const exaltation = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": false}, {"Exaltation": 226});
         //const comExaltation = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {"Exaltation": 226});
-        //const rabidShadows = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": false}, {"Rabid Shadows": 226});
+        
         //console.log("RUNNING COURAGEOUS");
         //const courageousAscension = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": false}, {"Courageous Ascension": 226});
 
