@@ -25,6 +25,7 @@ import { useLocation } from "react-router-dom";
 import ls from "local-storage";
 import QESnackbar from "General/Modules/CooldownPlanner/BasicComponents/SnackBar";
 import TestingPage from "General/Modules/CooldownPlanner/TestingLandingPage";
+import QEFooter from "General/Modules/SetupAndMenus/Footer/QEFooter";
 // import { createBrowserHistory } from "history"; // not used TODO: remove?
 import { dbCheckPatron, dbGetArticleList } from "General/Modules/SetupAndMenus/ConnectionUtilities.js";
 
@@ -412,6 +413,8 @@ class App extends Component {
                   )}
                 />
               </Switch>
+
+              <QEFooter />
             </div>
           </ThemeProvider>
         </Router>
