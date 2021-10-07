@@ -172,14 +172,21 @@ export default function RetailSettings(props) {
                 <Typography className={classes.heading} color="primary" noWrap>
                   {t("Settings.Retail.Setting1Title")}
                 </Typography>
-                
+                <Tooltip
+                  title={
+                    <Typography align="center" variant="body2">
+                      {t("Settings.Retail.Setting1Tooltip")}
+                    </Typography>
+                  }
+                  placement="top-start"
+                >
                   <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
-                
+                </Tooltip>
               </div>
             </Grid> */}
             <Grid item xs={12}>
               <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center", minWidth: 120 }} label={t("Settings.Retail.Setting1Title")}>
-                <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting1Title")}</InputLabel>
+                <InputLabel id="alliedBuffInputLabel">{t("Settings.Retail.Setting1Title")}</InputLabel>
                 <Tooltip
                   title={
                     <Typography align="center" variant="body2">
@@ -266,20 +273,29 @@ export default function RetailSettings(props) {
           <Grid item xs={12}>
             <FormControl variant="outlined" fullWidth size="small" style={{ textAlign: "center", minWidth: 120 }} label={t("Settings.Retail.Setting5Title")}>
               <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting5Title")}</InputLabel>
-              <Select
-                className={classes.select}
-                labelId="slots"
-                value={props.player.activeModelID[props.contentType]}
-                onChange={(e) => updateSpecBuild(e.target.value)}
-                MenuProps={menuStyle}
-                label={t("Settings.Retail.Setting5Title")}
+              <Tooltip
+                title={
+                  <Typography align="center" variant="body2">
+                    {t("Settings.Retail.Setting5Tooltip")}
+                  </Typography>
+                }
+                placement="top-start"
               >
-                {specBuilds.map((key, i) => (
-                  <MenuItem id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
-                    {key.modelName}
-                  </MenuItem>
-                ))}
-              </Select>
+                <Select
+                  className={classes.select}
+                  labelId="slots"
+                  value={props.player.activeModelID[props.contentType]}
+                  onChange={(e) => updateSpecBuild(e.target.value)}
+                  MenuProps={menuStyle}
+                  label={t("Settings.Retail.Setting5Title")}
+                >
+                  {specBuilds.map((key, i) => (
+                    <MenuItem id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
+                      {key.modelName}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </Tooltip>
             </FormControl>
           </Grid>
         </Grid>
@@ -308,21 +324,30 @@ export default function RetailSettings(props) {
             <Grid item xs={12}>
               <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center", minWidth: 160 }} label={t("Settings.Retail.Setting3Title")}>
                 <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting3Title")}</InputLabel>
-                <Select
-                  className={classes.select}
-                  labelId="groupValue"
-                  value={autoSocketValue}
-                  onChange={(e) => updateAutoSocketValue(e.target.value)}
-                  MenuProps={menuStyle}
-                  label={t("Settings.Retail.Setting3Title")}
+                <Tooltip
+                  title={
+                    <Typography align="center" variant="body2">
+                      {t("Settings.Retail.Setting3Tooltip")}
+                    </Typography>
+                  }
+                  placement="top-start"
                 >
-                  <MenuItem value={true} style={{ justifyContent: "center" }}>
-                    {t("Yes")}
-                  </MenuItem>
-                  <MenuItem value={false} style={{ justifyContent: "center" }}>
-                    {t("No")}
-                  </MenuItem>
-                </Select>
+                  <Select
+                    className={classes.select}
+                    labelId="groupValue"
+                    value={autoSocketValue}
+                    onChange={(e) => updateAutoSocketValue(e.target.value)}
+                    MenuProps={menuStyle}
+                    label={t("Settings.Retail.Setting3Title")}
+                  >
+                    <MenuItem value={true} style={{ justifyContent: "center" }}>
+                      {t("Yes")}
+                    </MenuItem>
+                    <MenuItem value={false} style={{ justifyContent: "center" }}>
+                      {t("No")}
+                    </MenuItem>
+                  </Select>
+                </Tooltip>
               </FormControl>
             </Grid>
           </Grid>
@@ -350,24 +375,35 @@ export default function RetailSettings(props) {
               </Tooltip>
             </div>
           </Grid> */}
-          <FormControl variant="outlined" size="small" style={{ textAlign: "center", width: t("QuickCompare.DominationSocket").length > 10 ? 180 : 200 }} label={t("Settings.Retail.Setting4Title")}>
+          <FormControl variant="outlined" size="small" style={{ textAlign: "center", width: t("QuickCompare.DominationSocket").length > 10 ? 180 : 200 }} 
+          //</Grid>label={t("Settings.Retail.Setting4Title")}
+          >
             <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting4Title")}</InputLabel>
-            <Select
-              className={classes.select}
-              key={"DominationSocket"}
-              labelId="DominationSocket"
-              value={replaceDomGems}
-              onChange={(e) => updateReplaceDomGems(e.target.value)}
-              MenuProps={menuStyle}
-              label={t("Settings.Retail.Setting4Title")}
+            <Tooltip
+              title={
+                <Typography align="center" variant="body2">
+                  {t("Settings.Retail.Setting4Tooltip")}
+                </Typography>
+              }
+              placement="top-start"
             >
-              <MenuItem value={true} style={{ justifyContent: "center" }}>
-                {t("Yes")}
-              </MenuItem>
-              <MenuItem value={false} style={{ justifyContent: "center" }}>
-                {t("No")}
-              </MenuItem>
-            </Select>
+              <Select
+                className={classes.select}
+                key={"DominationSocket"}
+                labelId="DominationSocket"
+                value={replaceDomGems}
+                onChange={(e) => updateReplaceDomGems(e.target.value)}
+                MenuProps={menuStyle}
+                label={t("Settings.Retail.Setting4Title")}
+              >
+                <MenuItem value={true} style={{ justifyContent: "center" }}>
+                  {t("Yes")}
+                </MenuItem>
+                <MenuItem value={false} style={{ justifyContent: "center" }}>
+                  {t("No")}
+                </MenuItem>
+              </Select>
+            </Tooltip>
           </FormControl>
         </Grid>
       </Grid>
