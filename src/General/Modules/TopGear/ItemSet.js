@@ -152,8 +152,6 @@ class ItemSet {
       }
     });
 
-    
-
     if (unholyGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Chaos Bane", "rank": lowestGemRanks.unholy})
     else if (frostGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Winds of Winter", "rank": lowestGemRanks.frost})
     else if (bloodGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Blood Link", "rank": lowestGemRanks.blood})
@@ -163,7 +161,6 @@ class ItemSet {
     //this.baseStats = {...setStats};
     this.setSockets = setSockets;
     this.domSockets = domSockets;
-
     return this;
   }
 

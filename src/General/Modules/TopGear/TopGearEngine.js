@@ -384,6 +384,10 @@ function enchantItems(bonus_stats, setInt, castModel) {
   return enchants;
 }
 
+function dupObject(set) {
+  return JSON.parse(JSON.stringify(set));
+}
+
 
 /**
  * This is our evaluation function. It takes a complete set of gear and assigns it a score based on the sets stats, effects, legendaries and more.
@@ -400,7 +404,12 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // == Setup == 
   let builtSet = itemSet.compileStats("Retail", userSettings);
   let setStats = builtSet.setStats;
+  let gearStats = dupObject(setStats);
+  let enchantStats = {};
+  let evalStats = {};
   let hardScore = 0;
+
+  console.log(gearStats);
 
   let bonus_stats = {
     intellect: 0,
@@ -412,7 +421,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     hps: 0,
     dps: 0,
   };
-  let evalStats = {};
+  
 
   // Our adjusted_weights will be compiled later by dynamically altering our base weights.
   // The more we get of any one stat, the more the others are worth comparatively. Our adjusted weights will let us include that in our set score.
@@ -428,10 +437,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // == Enchants and gems ==
   const enchants = enchantItems(bonus_stats, setStats.intellect, castModel);
 
-  // == Apply same set int bonus == 
-  // 5% int boost for wearing the same items.
-  // The system doesn't actually allow you to add items of different armor types so this is always on.
-  bonus_stats.intellect += (builtSet.setStats.intellect + bonus_stats.intellect) * 0.05;
 
   // Sockets
   const highestWeight = getHighestWeight(castModel);
@@ -440,7 +445,10 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
 
   // Add together the sets base stats & any enchants or gems we've added.
   compileStats(setStats, bonus_stats);
-  
+  compileStats(gearStats, bonus_stats);
+  builtSet.baseStats = gearStats;
+
+
   // == Domination Gems ==
   // This function compares every set of possible domination gems, and sockets whichever is best. You can read more about it by navigating to the function itself.
   if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
@@ -458,9 +466,14 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
         effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats));
     }
   }
-  //console.log(effectStats);
-  const mergedEffectStats = mergeBonusStats(effectStats)
 
+  const mergedEffectStats = mergeBonusStats(effectStats)
+  console.log(mergedEffectStats);
+
+  // == Apply same set int bonus == 
+  // 5% int boost for wearing the same items.
+  // The system doesn't actually allow you to add items of different armor types so this is always on.
+  bonus_stats.intellect += (builtSet.setStats.intellect + enchantStats.intellect) * 0.05;
 
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
@@ -479,7 +492,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     setStats.hps += setRamp / 180;
 
     evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
-    evalStats.leech = setStats.leech;
+    evalStats.leech = (setStats.leech || 0) + (mergedEffectStats.leech || 0);
     evalStats.hps = (setStats.hps || 0) + (mergedEffectStats.hps || 0)
   }
 
@@ -503,6 +516,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   }
 
   // == Scoring ==
+  console.log(evalStats);
   for (var stat in evalStats) {
     if (stat === "hps") {
       hardScore += evalStats[stat] / baseHPS * player.activeStats.intellect;
@@ -516,12 +530,12 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   }
 
   addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
+
   if (player.spec === "Discipline Priest") setStats = compileStats(setStats, mergedEffectStats);
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
-  //console.log(builtSet);
   return builtSet; // Temp
 }
 

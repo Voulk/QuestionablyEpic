@@ -85,17 +85,19 @@ const getActiveAtone = (atoneApp, timer) => {
     return count;
 }
 
+
 /**
  * Returns a spells stat multiplier based on which stats it scales with.
  * @param {*} statArray A characters current stats including any active buffs.
  * @param {*} stats The secondary stats a spell scales with. Pulled from it's SpellDB entry.
  * @returns 
  */
-const getStatMult = (statArray, stats) => {
+const getStatMult = (currentStats, stats) => {
     let mult = 1;
-    if (stats.includes("vers")) mult *= (1 + statArray['versatility'] / 40 / 100);
-    if (stats.includes("crit")) mult *= (1.05 + statArray['crit'] / 35 / 100); // TODO: Re-enable
-    if (stats.includes("mastery")) mult *= (1.108 + statArray['mastery'] / 25.9259 / 100);
+    
+    if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / 40 / 100);
+    if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100); // TODO: Re-enable
+    if (stats.includes("mastery")) mult *= (1.108 + currentStats['mastery'] / 25.9259 / 100);
     return mult;
 }
 
@@ -112,7 +114,8 @@ const getCurrentStats = (statArray, buffs) => {
         statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
     });
 
-    return statArray;
+    return applyDiminishingReturns(statArray);
+    //return statArray;
 }
 
 
