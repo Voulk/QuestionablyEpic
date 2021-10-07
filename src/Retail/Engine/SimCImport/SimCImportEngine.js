@@ -65,7 +65,7 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
       }
     }
 
-    //if (player.getSpec() === "Discipline Priest") adjustStatWeights(player, contentType); // Holding off for now.
+    if (player.getSpec() === "Discipline Priest") adjustStatWeights(player, contentType); // Holding off for now.
     snackHandler();
     closeDialog();
     clearSimCInput("");
@@ -432,21 +432,23 @@ function checkDefaultSocket(id) {
 
 // Currently being trialled as Discipline only.
 function adjustStatWeights(player, contentType) {
-  let equippedSet = new ItemSet(0, player.getEquippedItems(true), 0);
+  let equippedSet = new ItemSet(0, player.getEquippedItems(false), 0);
 
   equippedSet = equippedSet.compileStats();
 
   let stats = equippedSet.setStats;
-  stats.intellect = 1650;
+  //stats.intellect = stats.intellect * 1.05;
+  stats.intellect = 2100;
 
   // These are stat weights with 0 of each stat on top of the default profile.
   let base_weights = {
-    haste: 0.4,
-    mastery: 0.39,
-    versatility: 0.4,
-    crit: 0.42,
-    leech: 0.23,
-  };
+      intellect: 1,
+      haste: 0.47,
+      crit: 0.44,
+      mastery: 0.42,
+      versatility: 0.43,
+      leech: 0.25
+  }
 
   let scaling = {
     haste: 1,

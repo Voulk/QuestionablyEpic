@@ -56,7 +56,7 @@ class ItemSet {
   getStartingStats(gameType) {
     if (gameType === "Retail") {
       return {
-        intellect: 450, // TODO: 450
+        intellect: 450,
         haste: 0,
         crit: 0,
         mastery: 0,

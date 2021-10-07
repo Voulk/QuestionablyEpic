@@ -409,8 +409,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   let evalStats = {};
   let hardScore = 0;
 
-  console.log(gearStats);
-
   let bonus_stats = {
     intellect: 0,
     haste: 0,

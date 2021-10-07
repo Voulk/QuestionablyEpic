@@ -116,7 +116,8 @@ class Player {
   };
 
   setStatWeights = (newWeights, contentType) => {
-    this.statWeights[contentType] = newWeights;
+    //this.statWeights[contentType] = newWeights;
+    this.getActiveModel(contentType).setStatWeights(newWeights);
   };
 
   getCovenant = () => {
