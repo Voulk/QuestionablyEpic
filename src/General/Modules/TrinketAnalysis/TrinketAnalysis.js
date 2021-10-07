@@ -355,7 +355,7 @@ export default function TrinketAnalysis(props) {
           <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} />
         </Grid> */}
         {gameType === "Retail" ? (
-          <Grid item xs={12} container spacing={0} direction="row" justify="space-between">
+          <Grid item xs={12} container spacing={0} direction="row" justify="flex-end">
             {/* <Grid item>
               <MetricToggle metric={metric} setMetric={setMetric} />
             </Grid> */}
