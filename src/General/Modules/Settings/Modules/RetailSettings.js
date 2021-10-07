@@ -117,10 +117,11 @@ export default function RetailSettings(props) {
   return (
     <Grid container spacing={1} direction="row">
       {/* ------------------------- Cabalist's Hymnal Item ------------------------- */}
-      {props.hymnalShow === true ? (
+
+      {/* {props.hymnalShow === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
           <Grid container spacing={0}>
-            {/* <Grid item xs={12}>
+            <Grid item xs={12}>
               <div style={{ display: "inline-flex" }}>
                 <Typography className={classes.heading} color="primary" noWrap>
                   {t("Settings.Retail.Setting0Title")}
@@ -136,10 +137,10 @@ export default function RetailSettings(props) {
                   <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
                 </Tooltip>
               </div>
-            </Grid> */}
+            </Grid>
             <Grid item xs={12}>
               <FormControl variant="outlined" size="small" label={t("Settings.Retail.Setting0Title")} fullWidth style={{ textAlign: "center", width: 120 }}>
-                {/* <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting0Title")}</InputLabel> */}
+                <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting0Title")}</InputLabel>
                 <TextField
                   id="AlliesNumber"
                   label={t("Settings.Retail.Setting0Title")}
@@ -160,7 +161,8 @@ export default function RetailSettings(props) {
         </Grid>
       ) : (
         ""
-      )}
+      )}  */}
+
       {/* ------------------------- Group Buff (Treat Buff as Personal Throughput) ------------------------- */}
       {props.groupBuffShow === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
@@ -170,6 +172,14 @@ export default function RetailSettings(props) {
                 <Typography className={classes.heading} color="primary" noWrap>
                   {t("Settings.Retail.Setting1Title")}
                 </Typography>
+                
+                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
+                
+              </div>
+            </Grid> */}
+            <Grid item xs={12}>
+              <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center", minWidth: 120 }} label={t("Settings.Retail.Setting1Title")}>
+                <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting1Title")}</InputLabel>
                 <Tooltip
                   title={
                     <Typography align="center" variant="body2">
@@ -178,28 +188,22 @@ export default function RetailSettings(props) {
                   }
                   placement="top-start"
                 >
-                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
+                  <Select
+                    label={t("Settings.Retail.Setting1Title")}
+                    className={classes.select}
+                    labelId="groupValue"
+                    value={groupValue}
+                    onChange={(e) => updateGroupValue(e.target.value)}
+                    MenuProps={menuStyle}
+                  >
+                    <MenuItem value={true} style={{ justifyContent: "center" }}>
+                      {t("Yes")}
+                    </MenuItem>
+                    <MenuItem value={false} style={{ justifyContent: "center" }}>
+                      {t("No")}
+                    </MenuItem>
+                  </Select>
                 </Tooltip>
-              </div>
-            </Grid> */}
-            <Grid item xs={12}>
-              <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center", minWidth: 120 }} label={t("Settings.Retail.Setting1Title")}>
-                <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting1Title")}</InputLabel>
-                <Select
-                  label={t("Settings.Retail.Setting1Title")}
-                  className={classes.select}
-                  labelId="groupValue"
-                  value={groupValue}
-                  onChange={(e) => updateGroupValue(e.target.value)}
-                  MenuProps={menuStyle}
-                >
-                  <MenuItem value={true} style={{ justifyContent: "center" }}>
-                    {t("Yes")}
-                  </MenuItem>
-                  <MenuItem value={false} style={{ justifyContent: "center" }}>
-                    {t("No")}
-                  </MenuItem>
-                </Select>
               </FormControl>
             </Grid>
           </Grid>

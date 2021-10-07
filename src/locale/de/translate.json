@@ -619,6 +619,7 @@
       "GoMsg": "Start!",
       "SelectedItems": "Ausgewählte Gegenstände",
       "CompetitiveAlternative": "Gleichwertige Alternativen",
+      "CompetitiveAlternativeHelp": "This is how close other sets are to your best. Anything extremely close in score can be considered a sidegrade.",
       "BackToGearSelection": "Zurück zum Auswahlbildschirm",
       "StatPanel": { "AvgStats": "Durchschnittliche Werte (inkl. aller zufälligen Effekte)" },
       "itemMissingError": "Error: Add item - "

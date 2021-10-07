@@ -10,6 +10,19 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.2",
+    update: 26,
+    date: "29th September",
+    changes: [
+      "Sets with two on-use trinkets will now be correctly devalued for Holy Paladin as the value of the second drops a lot.",
+      "Added dungeon specific DPS values to the few specs that were still missing them to improve dom gem DPS accuracy.",
+      "UI: Text updates and clarifications around the app.",
+      "Removed the Hymnals in group setting. The percentage of people using this trinket is now near 0.",
+      "Bugfix: Fixed the position of a few Venthyr conduit nodes.",
+      "Bugfix: Fixed a rare bug where manually entering a domination item could add the gem type twice for the purpose of set bonuses."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.2",
     update: 25,
     date: "20th September",
     changes: [
