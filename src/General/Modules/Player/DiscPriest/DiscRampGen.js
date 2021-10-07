@@ -13,9 +13,9 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
     if (trinkets.includes("Soulletting Ruby")) sequence.push("Soulletting Ruby");
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
-    sequence.push('Evangelism');
-
+    
     if (type === "Boon") {
+        sequence.push('Evangelism');
         sequence.push('Boon of the Ascended');
         sequence.push('Ascended Blast');
         sequence.push('Schism');
@@ -45,6 +45,7 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
        
     }
     else if (type === "Fiend") {
+        sequence.push('Evangelism');
         sequence.push('Shadowfiend');
         if (trinkets.includes("Instructor's Divine Bell")) sequence.push("Instructor's Divine Bell");
         sequence.push('Schism');
@@ -56,6 +57,16 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
             sequence.push('Smite');
         }
         
+    }
+    else if (type === "Mini") {
+        sequence.push('Schism');
+        sequence.push('Mind Blast');
+        sequence.push('Power Word: Solace');
+        sequence.push('Penance');
+
+        for (var i = 0; i < 8; i++) {
+            sequence.push('Smite');
+        }
     }
 
     //console.log(sequence);

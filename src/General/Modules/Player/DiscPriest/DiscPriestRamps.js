@@ -1,8 +1,7 @@
 // 
-
-import Player from "../Player";
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { DISCSPELLS } from "./DiscSpellDB";
+import { buildRamp } from "./DiscRampGen";
 
 const discSettings = {
     chaosBrand: true
@@ -11,10 +10,12 @@ const discSettings = {
 // This function automatically casts a full set of ramps. It's easier than having functions call ramps individually and then sum them.
 export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
     
+    const miniSeq = buildRamp('Mini', 6, [], stats.haste, [])
+
+    const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
     const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
     const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
-
-    return boonRamp + fiendRamp;
+    return boonRamp + fiendRamp + miniRamp * 2;
 }
 
 /**  Extend all active atonements by @extension seconds.  */
@@ -323,7 +324,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     damageBreakdown[spellName] = (damageBreakdown[spellName] || 0) + damageVal; // This is just for stat tracking.
                     healing['atonement'] = (healing['atonement'] || 0) + atonementHealing;
 
-                    if (reporting) console.log(getTime(t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(activeBuffs));
+                    if (reporting) console.log(getTime(t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(activeBuffs) + " to " + activeAtonements);
                 }
 
                 // The spell extends atonements already active. This is specific to Evanglism. 
@@ -382,6 +383,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
 
     // Add up our healing values (including atonement) and return it.
+
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     return sumValues(healing)
 

@@ -61,18 +61,26 @@ describe("Test Base Spells", () => {
 });
 
 describe("Evang Cast Sequence", () => {
-    const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
-    player.activeStats = {
+    //const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
+    /*player.activeStats = {
             intellect: 1974,
             haste: 869,
             crit: 445,
             mastery: 451,
             versatility: 528,
             stamina: 1900,
-    }
+    } */
+    const activeStats = {
+        intellect: 1974,
+        haste: 0,
+        crit: 450,
+        mastery: 450,
+        versatility: 450,
+        stamina: 0,
+}
     
-    const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell"], player.activeStats.haste, ['Rapture'])
-    const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell"], player.activeStats.haste, ['Rapture'])
+    const boonSeq = buildRamp('Boon', 10, [], activeStats.haste, ['Rapture'])
+    const fiendSeq = buildRamp('Fiend', 10, [], activeStats.haste, ['Rapture'])
     //const baselineBoon = (boonSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": frunCastSequencealse}, {"Courageous Ascension": 226, "Shining Radiance": 226});
     //const baselineFiend = runCastSequence(fiendSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226});
     
@@ -80,17 +88,17 @@ describe("Evang Cast Sequence", () => {
 
 
     test("Legendaries & Soulbinds", () => {
-        const baseline = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": false}, {});
+        const baseline = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": false, "Pelagos": false}, {});
         console.log("Baseline: " + baseline);
-        const clarityOfMind = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {});
-        const pelagos = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": true}, {});
-        const rabidShadows = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": false}, {"Rabid Shadows": 226});
+        //const clarityOfMind = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {});
+        //const pelagos = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": true}, {});
+        //const rabidShadows = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": false}, {"Rabid Shadows": 226});
 
         // These are extremely simple checks to make sure our legendaries and soulbinds are having some net impact on our result.
         // They're not specific on their value, but will fail if any portion of the ramp isn't working correctly.
-        expect(clarityOfMind - baseline).toBeGreaterThan(0);
-        expect(pelagos - baseline).toBeGreaterThan(0);
-        expect(rabidShadows - baseline).toBeGreaterThan(0);
+        //expect(clarityOfMind - baseline).toBeGreaterThan(0);
+        //expect(pelagos - baseline).toBeGreaterThan(0);
+        //expect(rabidShadows - baseline).toBeGreaterThan(0);
         
         //const exaltation = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": false, "Pelagos": false}, {"Exaltation": 226});
         //const comExaltation = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {"Exaltation": 226});
@@ -107,6 +115,7 @@ describe("Evang Cast Sequence", () => {
 
     });
 
+   
     /*
     test("Stat Weights", () => {
 
@@ -115,20 +124,20 @@ describe("Evang Cast Sequence", () => {
 
         
         // Weights
-        
+        const baseline = allRamps(boonSeq, fiendSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226});
         const stats = ['intellect','versatility', 'crit', 'haste', 'mastery'];
         const results = {};
         stats.forEach(stat => {
 
             const adjustedStats = JSON.parse(JSON.stringify(player.activeStats));
-            adjustedStats[stat] = adjustedStats[stat] + 15;
+            adjustedStats[stat] = adjustedStats[stat] + 20;
 
-            const seq1 = buildRamp('Boon', 10, ["Divine Bell"], adjustedStats['haste'], ['Rapture'])
-            const seq2 = buildRamp('Fiend', 10, ["Divine Bell"], player.activeStats.haste, ['Rapture'])
+            const seq1 = buildRamp('Boon', 10, [], adjustedStats['haste'], ['Rapture'])
+            const seq2 = buildRamp('Fiend', 10, [],adjustedStats['haste'], ['Rapture'])
 
-            results[stat] = Math.round(runCastSequence(seq1, adjustedStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226}) +
-                                    (runCastSequence(seq2, adjustedStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226})));
-            
+            //results[stat] = Math.round(runCastSequence(seq1, adjustedStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226}) +
+            //                        (runCastSequence(seq2, adjustedStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226})));
+            results[stat] = allRamps(seq1, seq2, adjustedStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226});
         });
         const weights = {}
         stats.forEach(stat => {
@@ -136,7 +145,47 @@ describe("Evang Cast Sequence", () => {
         });
 
         console.log(weights); 
-    }); */
+    });  */
+
+
+    /*
+    test("Haste", () => {
+
+        //console.log("Boon Ramp with CoM, Bell: " + runCastSequence(demoSequence4, player.activeStats, {"Clarity of Mind": true}, {"Courageous Ascension": 226, "Shining Radiance": 226}));
+        //console.log("Boon Ramp with CoM, Bell & Kleia: " + runCastSequence(demoSequence4, player.activeStats, {"Clarity of Mind": true, "Kleia": true}, {"Courageous Ascension": 226}));
+        const activeStats = {
+            intellect: 1974,
+            haste: 0,
+            crit: 0,
+            mastery: 450,
+            versatility: 0,
+            stamina: 0,
+        }
+        
+        // Weights
+        const baseline = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226});
+        const stats = ['intellect','versatility', 'crit', 'haste', 'mastery'];
+        const results = [];
+        for (var x = 0; x < 1000; x+=10) {
+
+            const adjustedStats = JSON.parse(JSON.stringify(activeStats));
+            adjustedStats['intellect'] = x;
+
+            const seq1 = buildRamp('Boon', 10, [], adjustedStats['haste'], ['Rapture'])
+            const seq2 = buildRamp('Fiend', 10, [], adjustedStats['haste'], ['Rapture'])
+
+            //results[stat] = Math.round(runCastSequence(seq1, adjustedStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226}) +
+            //                        (runCastSequence(seq2, adjustedStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226})));
+            const healing = (allRamps(seq1, seq2, adjustedStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226}));
+            console.log(healing + ": " + x);
+            results.push((healing - baseline) / x / 180);
+        };
+        const weights = {}
+        
+        console.log(results);
+    }); 
+    */
+
     
 });
 
