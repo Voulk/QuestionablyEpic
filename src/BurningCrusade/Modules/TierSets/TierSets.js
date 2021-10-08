@@ -51,7 +51,7 @@ export default function LegendaryCompare(props) {
   }, []);
   const { t } = useTranslation();
 
-  const helpText = ["A quick look at all tier sets available for your class throughout the expansion. Specific numbers coming very soon."];
+  const helpBlurb = ["A quick look at all tier sets available for your class throughout the expansion. Specific numbers coming very soon."];
 
   return (
     <div className={classes.header}>
@@ -64,7 +64,7 @@ export default function LegendaryCompare(props) {
         </Grid>
         {/* ------------------------------------------ Help Text ----------------------------------------- */}
         <Grid item xs={12}>
-          <HelpText text={helpText} />
+          <HelpText blurb={helpBlurb} />
         </Grid>
         {/* ------------------------------ Map the Legendary list into Cards ----------------------------- */}
         <Grid item container spacing={1} direction="row">

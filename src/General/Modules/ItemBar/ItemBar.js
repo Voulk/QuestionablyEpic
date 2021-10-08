@@ -206,273 +206,271 @@ export default function ItemBar(props) {
       .map((key) => key.socketType)[0] === "Domination";
 
   return (
-    <Grid item xs={12}>
-      <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          alignItems="center"
-          spacing={1}
-          style={{
-            // paddingTop: 4,
-            paddingBottom: 8,
-            display: "inline-flex",
-          }}
-        >
-          <Grid item xs={12}>
-            <Typography className={classes.title}>{t("QuickCompare.ItemBarTitle")}</Typography>
-            <Divider variant="middle" />
-          </Grid>
-          {/* -------------------------------------------------------------------------- */
-          /*                               Item Selection                               */
-          /* -------------------------------------------------------------------------- */}
+    <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
+      <Grid
+        container
+        direction="row"
+        justify="center"
+        alignItems="center"
+        spacing={1}
+        style={{
+          // paddingTop: 4,
+          paddingBottom: 8,
+          display: "inline-flex",
+        }}
+      >
+        <Grid item xs={12}>
+          <Typography className={classes.title}>{t("QuickCompare.ItemBarTitle")}</Typography>
+          <Divider variant="middle" />
+        </Grid>
+        {/* -------------------------------------------------------------------------- */
+        /*                               Item Selection                               */
+        /* -------------------------------------------------------------------------- */}
 
-          <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
-            <FormControl className={classes.formControl} variant="outlined" size="small" fullWidth>
-              <Autocomplete
-                size="small"
-                classes={{
-                  option: classes.option,
+        <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
+          <FormControl className={classes.formControl} variant="outlined" size="small" fullWidth>
+            <Autocomplete
+              size="small"
+              classes={{
+                option: classes.option,
+              }}
+              id="item-select"
+              // value={AutoValue}
+              onChange={(e, v) => itemNameChanged(e, v)}
+              options={itemDropdown}
+              openOnFocus={true}
+              getOptionLabel={(option) => option.label}
+              getOptionSelected={(option, value) => option.label === value.label}
+              inputValue={inputValue}
+              onInputChange={handleInputChange}
+              freeSolo
+              style={{ width: "100%" }}
+              renderInput={(params) => <TextField {...params} label={t("QuickCompare.ItemName")} variant="outlined" />}
+              ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4, paddingTop: 0, paddingBottom: 0 } }}
+              open={openAuto}
+              onOpen={handleOpen}
+              onClose={() => setOpenAuto(false)}
+            />
+          </FormControl>
+        </Grid>
+
+        {/* -------------------------------------------------------------------------- */
+        /*                                 Item Level                                 */
+        /* -------------------------------------------------------------------------- */}
+
+        <Grid item>
+          {isItemShadowlandsLegendary ? (
+            <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemID === "" || gameType !== "Retail" ? true : false}>
+              <InputLabel id="itemLevelSelectLabel">{t("QuickCompare.ItemLevel")}</InputLabel>
+              <Select
+                key={"itemLevelSelect"}
+                labelId="itemLevelSelectLabelId"
+                value={itemLevel}
+                onChange={(e) => itemLevelChanged(e.target.value)}
+                MenuProps={menuStyle}
+                label={t("QuickCompare.ItemLevel")}
+              >
+                {legendaryItemLevels.map((key) => [
+                  <MenuItem key={key} label={key} value={key}>
+                    {key}
+                  </MenuItem>,
+                  <Divider key={key + "divider"} />,
+                ])}
+              </Select>
+            </FormControl>
+          ) : (
+            <FormControl className={classes.formControl} variant="outlined" size="small" style={{ width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120 }}>
+              <TextField
+                error={itemLevel > CONSTRAINTS.Retail.maxItemLevel ? true : false}
+                id="Ilvl-select"
+                onChange={(e) => itemLevelChanged(e.target.value)}
+                value={itemLevel}
+                label={t("QuickCompare.ItemLevel")}
+                disabled={itemID === "" || gameType !== "Retail" ? true : false}
+                onInput={(e) => {
+                  e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 3);
                 }}
-                id="item-select"
-                // value={AutoValue}
-                onChange={(e, v) => itemNameChanged(e, v)}
-                options={itemDropdown}
-                openOnFocus={true}
-                getOptionLabel={(option) => option.label}
-                getOptionSelected={(option, value) => option.label === value.label}
-                inputValue={inputValue}
-                onInputChange={handleInputChange}
-                freeSolo
-                style={{ width: "100%" }}
-                renderInput={(params) => <TextField {...params} label={t("QuickCompare.ItemName")} variant="outlined" />}
-                ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4, paddingTop: 0, paddingBottom: 0 } }}
-                open={openAuto}
-                onOpen={handleOpen}
-                onClose={() => setOpenAuto(false)}
+                variant="outlined"
+                size="small"
+                type="number"
+                inputProps={{
+                  min: CONSTRAINTS.Retail.minItemLevel,
+                  max: CONSTRAINTS.Retail.maxItemLevel,
+                }}
               />
             </FormControl>
-          </Grid>
+          )}
+        </Grid>
 
-          {/* -------------------------------------------------------------------------- */
-          /*                                 Item Level                                 */
-          /* -------------------------------------------------------------------------- */}
-
-          <Grid item>
-            {isItemShadowlandsLegendary ? (
-              <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemID === "" || gameType !== "Retail" ? true : false}>
-                <InputLabel id="itemLevelSelectLabel">{t("QuickCompare.ItemLevel")}</InputLabel>
-                <Select
-                  key={"itemLevelSelect"}
-                  labelId="itemLevelSelectLabelId"
-                  value={itemLevel}
-                  onChange={(e) => itemLevelChanged(e.target.value)}
-                  MenuProps={menuStyle}
-                  label={t("QuickCompare.ItemLevel")}
-                >
-                  {legendaryItemLevels.map((key) => [
-                    <MenuItem key={key} label={key} value={key}>
-                      {key}
+        {
+          /* ---------------------------------------------------------------------------------------------- */
+          /*                                   Legendary Missive Selection                                  */
+          /* ---------------------------------------------------------------------------------------------- */
+          isItemShadowlandsLegendary === true ? (
+            <Grid item>
+              <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
+                <InputLabel id="missiveSelectionLabel">{t("QuickCompare.Missives")}</InputLabel>
+                <Select key={"missiveSelection"} labelId="missiveSelection" value={itemSocket} onChange={itemSocketChanged} MenuProps={menuStyle} label={t("QuickCompare.Missives")}>
+                  {legendaryStats.map((key) => [
+                    <MenuItem key={key} label={t(key)} value={true}>
+                      {t(key)}
                     </MenuItem>,
                     <Divider key={key + "divider"} />,
                   ])}
                 </Select>
               </FormControl>
-            ) : (
-              <FormControl className={classes.formControl} variant="outlined" size="small" style={{ width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120 }}>
-                <TextField
-                  error={itemLevel > CONSTRAINTS.Retail.maxItemLevel ? true : false}
-                  id="Ilvl-select"
-                  onChange={(e) => itemLevelChanged(e.target.value)}
-                  value={itemLevel}
-                  label={t("QuickCompare.ItemLevel")}
-                  disabled={itemID === "" || gameType !== "Retail" ? true : false}
-                  onInput={(e) => {
-                    e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 3);
-                  }}
-                  variant="outlined"
-                  size="small"
-                  type="number"
-                  inputProps={{
-                    min: CONSTRAINTS.Retail.minItemLevel,
-                    max: CONSTRAINTS.Retail.maxItemLevel,
-                  }}
-                />
-              </FormControl>
-            )}
-          </Grid>
-
-          {
+            </Grid>
+          ) : isItemDomination ? (
             /* ---------------------------------------------------------------------------------------------- */
-            /*                                   Legendary Missive Selection                                  */
+            /*                                       Domination Sockets                                       */
             /* ---------------------------------------------------------------------------------------------- */
-            isItemShadowlandsLegendary === true ? (
-              <Grid item>
-                <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
-                  <InputLabel id="missiveSelectionLabel">{t("QuickCompare.Missives")}</InputLabel>
-                  <Select key={"missiveSelection"} labelId="missiveSelection" value={itemSocket} onChange={itemSocketChanged} MenuProps={menuStyle} label={t("QuickCompare.Missives")}>
-                    {legendaryStats.map((key) => [
-                      <MenuItem key={key} label={t(key)} value={true}>
-                        {t(key)}
-                      </MenuItem>,
-                      <Divider key={key + "divider"} />,
-                    ])}
-                  </Select>
-                </FormControl>
-              </Grid>
-            ) : isItemDomination ? (
-              /* ---------------------------------------------------------------------------------------------- */
-              /*                                       Domination Sockets                                       */
-              /* ---------------------------------------------------------------------------------------------- */
-              gameType === "Retail" ? (
-                <Grid item>
-                  <FormControl
-                    className={classes.formControl}
-                    variant="outlined"
-                    size="small"
-                    style={{ width: t("QuickCompare.DominationSocket").length > 10 ? 160 : 140 }}
-                    disabled={itemLevel !== "" && isItemDomination ? false : true}
-                  >
-                    <InputLabel id="itemtertiary">{t("QuickCompare.DominationSocket")}</InputLabel>
-                    <Select
-                      key={"DominationSocket"}
-                      labelId="DominationSocket"
-                      value={dominationSocket}
-                      onChange={itemDominationChanged}
-                      MenuProps={menuStyle}
-                      label={t("QuickCompare.DominationSocket")}
-                    >
-                      {dominationGemDB
-                        .filter((filter) => filter.type !== "Set Bonus")
-                        .map((key, i) => [
-                          <MenuItem key={key.gemID} label={key.name[currentLanguage]} value={key.gemID}>
-                            <a data-wowhead={"item=" + key.gemID}>
-                              <img
-                                style={{
-                                  height: 20,
-                                  width: 20,
-                                  margin: "0px 5px 0px 0px",
-                                  verticalAlign: "middle",
-                                  borderRadius: 4,
-                                  border: "1px solid rgba(255, 255, 255, 0.12)",
-                                }}
-                                src={process.env.PUBLIC_URL + "/Images/Icons/" + key.icon + ".jpg"}
-                                alt={key.name[currentLanguage]}
-                              />
-                            </a>
-                            {key.name[currentLanguage] + " " + "[" + (key.effect.rank + 1) + "]"}
-                          </MenuItem>,
-                          <Divider key={i} />,
-                        ])}
-                    </Select>
-                  </FormControl>
-                </Grid>
-              ) : (
-                ""
-              )
-            ) : /* ---------------------------------------------------------------------------------------------- */
-            /*                                             Sockets                                             */
-            /* ----------------------------------------------------------------------------------------------  */
             gameType === "Retail" ? (
               <Grid item>
-                <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
-                  <InputLabel id="itemsocket">{t("QuickCompare.Socket")}</InputLabel>
-                  <Select key={"sockets"} labelId="itemsocket" value={itemSocket} onChange={itemSocketChanged} MenuProps={menuStyle} label={t("QuickCompare.Socket")}>
-                    {[
-                      <MenuItem key={1} label={t("Yes")} value={true}>
-                        {t("Yes")}
-                      </MenuItem>,
-                      <Divider key={2} />,
-                      ,
-                      <MenuItem key={3} label={t("No")} value={false}>
-                        {t("No")}
-                      </MenuItem>,
-                      <Divider key={4} />,
-                    ]}
+                <FormControl
+                  className={classes.formControl}
+                  variant="outlined"
+                  size="small"
+                  style={{ width: t("QuickCompare.DominationSocket").length > 10 ? 160 : 140 }}
+                  disabled={itemLevel !== "" && isItemDomination ? false : true}
+                >
+                  <InputLabel id="itemtertiary">{t("QuickCompare.DominationSocket")}</InputLabel>
+                  <Select
+                    key={"DominationSocket"}
+                    labelId="DominationSocket"
+                    value={dominationSocket}
+                    onChange={itemDominationChanged}
+                    MenuProps={menuStyle}
+                    label={t("QuickCompare.DominationSocket")}
+                  >
+                    {dominationGemDB
+                      .filter((filter) => filter.type !== "Set Bonus")
+                      .map((key, i) => [
+                        <MenuItem key={key.gemID} label={key.name[currentLanguage]} value={key.gemID}>
+                          <a data-wowhead={"item=" + key.gemID}>
+                            <img
+                              style={{
+                                height: 20,
+                                width: 20,
+                                margin: "0px 5px 0px 0px",
+                                verticalAlign: "middle",
+                                borderRadius: 4,
+                                border: "1px solid rgba(255, 255, 255, 0.12)",
+                              }}
+                              src={process.env.PUBLIC_URL + "/Images/Icons/" + key.icon + ".jpg"}
+                              alt={key.name[currentLanguage]}
+                            />
+                          </a>
+                          {key.name[currentLanguage] + " " + "[" + (key.effect.rank + 1) + "]"}
+                        </MenuItem>,
+                        <Divider key={i} />,
+                      ])}
                   </Select>
                 </FormControl>
               </Grid>
             ) : (
               ""
             )
-          }
-
-          {/* -------------------------------------------------------------------------- */
-          /*                              Tertiary Dropdown                             */
-          /* -------------------------------------------------------------------------- */}
-
-          {gameType === "Retail" ? (
+          ) : /* ---------------------------------------------------------------------------------------------- */
+          /*                                             Sockets                                             */
+          /* ----------------------------------------------------------------------------------------------  */
+          gameType === "Retail" ? (
             <Grid item>
-              <FormControl
-                className={classes.formControl}
-                variant="outlined"
-                size="small"
-                style={{ width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120 }}
-                disabled={itemLevel === "" || isItemShadowlandsLegendary === true ? true : false}
-              >
-                <InputLabel id="itemtertiary">{t("QuickCompare.Tertiary")}</InputLabel>
-                <Select key={"TertiarySelect"} labelId="itemtertiary" value={itemTertiary} onChange={itemTertiaryChanged} MenuProps={menuStyle} label={t("QuickCompare.Tertiary")}>
+              <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
+                <InputLabel id="itemsocket">{t("QuickCompare.Socket")}</InputLabel>
+                <Select key={"sockets"} labelId="itemsocket" value={itemSocket} onChange={itemSocketChanged} MenuProps={menuStyle} label={t("QuickCompare.Socket")}>
                   {[
-                    <MenuItem key={"LeechItem"} label={t("Leech")} value={"Leech"}>
-                      {t("Leech")}
-                    </MenuItem>,
-                    <Divider key={1} />,
-                  ]}
-                  ,
-                  {[
-                    <MenuItem key={"AvoidanceItem"} label={t("Avoidance")} value={"Avoidance"}>
-                      {t("Avoidance")}
+                    <MenuItem key={1} label={t("Yes")} value={true}>
+                      {t("Yes")}
                     </MenuItem>,
                     <Divider key={2} />,
-                  ]}
-                  ,
-                  {[
-                    <MenuItem key={"NoneItem"} label={t("None")} value={"None"} onClick={""}>
-                      {t("None")}
+                    ,
+                    <MenuItem key={3} label={t("No")} value={false}>
+                      {t("No")}
                     </MenuItem>,
-                    <Divider key={3} />,
+                    <Divider key={4} />,
                   ]}
                 </Select>
               </FormControl>
             </Grid>
           ) : (
             ""
-          )}
+          )
+        }
 
-          {/* -------------------------------------------------------------------------- */
-          /*                                 Add Button                                 */
-          /* -------------------------------------------------------------------------- */}
+        {/* -------------------------------------------------------------------------- */
+        /*                              Tertiary Dropdown                             */
+        /* -------------------------------------------------------------------------- */}
 
+        {gameType === "Retail" ? (
           <Grid item>
-            <Button key={8} variant="contained" color="primary" onClick={addItem} size="small" disabled={itemLevel === "" ? true : false}>
-              {t("QuickCompare.AddButton")}
-            </Button>
-            <Popover
-              id={idPop}
-              open={openPop}
-              anchorEl={anchorEl}
-              onClose={handleClosePop}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "center",
-              }}
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "center",
-              }}
+            <FormControl
+              className={classes.formControl}
+              variant="outlined"
+              size="small"
+              style={{ width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120 }}
+              disabled={itemLevel === "" || isItemShadowlandsLegendary === true ? true : false}
             >
-              <Typography className={classes.typography}>{t("QuickCompare.ItemErrorMsg")}</Typography>
-            </Popover>
+              <InputLabel id="itemtertiary">{t("QuickCompare.Tertiary")}</InputLabel>
+              <Select key={"TertiarySelect"} labelId="itemtertiary" value={itemTertiary} onChange={itemTertiaryChanged} MenuProps={menuStyle} label={t("QuickCompare.Tertiary")}>
+                {[
+                  <MenuItem key={"LeechItem"} label={t("Leech")} value={"Leech"}>
+                    {t("Leech")}
+                  </MenuItem>,
+                  <Divider key={1} />,
+                ]}
+                ,
+                {[
+                  <MenuItem key={"AvoidanceItem"} label={t("Avoidance")} value={"Avoidance"}>
+                    {t("Avoidance")}
+                  </MenuItem>,
+                  <Divider key={2} />,
+                ]}
+                ,
+                {[
+                  <MenuItem key={"NoneItem"} label={t("None")} value={"None"} onClick={""}>
+                    {t("None")}
+                  </MenuItem>,
+                  <Divider key={3} />,
+                ]}
+              </Select>
+            </FormControl>
           </Grid>
-          {/*item added snackbar */}
-          <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-            <Alert onClose={handleClose} severity="success">
-              {t("QuickCompare.ItemAdded")}
-            </Alert>
-          </Snackbar>
+        ) : (
+          ""
+        )}
+
+        {/* -------------------------------------------------------------------------- */
+        /*                                 Add Button                                 */
+        /* -------------------------------------------------------------------------- */}
+
+        <Grid item>
+          <Button key={8} variant="contained" color="primary" onClick={addItem} size="small" disabled={itemLevel === "" ? true : false}>
+            {t("QuickCompare.AddButton")}
+          </Button>
+          <Popover
+            id={idPop}
+            open={openPop}
+            anchorEl={anchorEl}
+            onClose={handleClosePop}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "center",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "center",
+            }}
+          >
+            <Typography className={classes.typography}>{t("QuickCompare.ItemErrorMsg")}</Typography>
+          </Popover>
         </Grid>
-      </Paper>
-    </Grid>
+        {/* Item added snackbar */}
+        <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="success">
+            {t("QuickCompare.ItemAdded")}
+          </Alert>
+        </Snackbar>
+      </Grid>
+    </Paper>
   );
 }

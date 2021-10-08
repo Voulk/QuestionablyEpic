@@ -104,9 +104,10 @@ export default function CharacterPanel(props) {
   console.log(imageStyle);
   return (
     // <Grid item xs={12}>
-      <Paper elevation={0} className={check(simcStatus)}>
+    <Paper elevation={0} className={check(simcStatus)}>
+      <div style={{ padding: "8px 8px 8px 8px" }}>
         {/* <Avatar src="https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-main.jpg" variant="rounded" className={classes.rounded} /> */}
-        <Grid container direction="row" justifyContent="space-between" spacing={1} style={{ padding: "4px 8px" }} wrap="noWrap">
+        <Grid container direction="row" justifyContent="space-between" spacing={1} wrap="noWrap">
           {backgroundImage === "" ? (
             ""
           ) : (
@@ -136,9 +137,6 @@ export default function CharacterPanel(props) {
                         <Typography variant="h6" color="primary" style={{ fontSize: 16, lineHeight: 1 }}>
                           {"- Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName}
                         </Typography>
-                        {/* <Typography variant="h6" style={{ margin: "0px 5px 0px 5px" }}>
-                          {"- " + currentCharacter.getRealmString()}
-                        </Typography> */}
                       </div>
                     </Grid>
                     <Grid item xs={12} style={{ height: 8 }}>
@@ -149,12 +147,6 @@ export default function CharacterPanel(props) {
                         ])}
                       </div>
                     </Grid>
-                    {/* <Divider orientation="vertical" flexItem />
-                    <Grid item xs={6} wrap="noWrap">
-                      <Typography variant="h6" style={{ margin: "0px 5px 0px 5px" }}>
-                        {"Playstyle: " + props.player.getActiveModel(contentType).modelName + " - " + contentType}
-                      </Typography>
-                    </Grid> */}
                   </Grid>
                 </div>
               </Grid>
@@ -225,7 +217,8 @@ export default function CharacterPanel(props) {
             />
           </Grid>
         </Grid>
-      </Paper>
+      </div>
+    </Paper>
     // </Grid>
   );
 }

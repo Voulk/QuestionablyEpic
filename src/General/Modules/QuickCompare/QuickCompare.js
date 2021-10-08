@@ -162,17 +162,22 @@ export default function QuickCompare(props) {
         {/* -------------------------------------------------------------------------- */
         /*                         Quick Compare Title Header                         */
         /* -------------------------------------------------------------------------- */}
-
         <Grid item xs={12}>
           <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
             {t("QuickCompare.Title")}
           </Typography>
         </Grid>
+        {/* ---------------------------------------------------------------------------------------------- */
+        /*                                            Help Text                                            */
+        /* ---------------------------------------------------------------------------------------------- */}
         <Grid item xs={12}>
           <HelpText text={helpText} blurb={helpBlurb} />
         </Grid>
+
+        {/* ---------------------------------------------------------------------------------------------- */
+        /*                                         Character Panel                                         */
+        /* ----------------------------------------------------------------------------------------------  */}
         <Grid item xs={12}>
-          {/* <UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} /> */}
           <CharacterPanel
             quickCompare={true}
             player={props.player}
@@ -187,17 +192,16 @@ export default function QuickCompare(props) {
             autoSocket={true}
           />
         </Grid>
-
-        {/*<Grid item xs={12}>
-          <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} />
-        </Grid> */}
-
-        <ItemBar player={props.player} setItemList={setItemList} />
+        {/* ---------------------------------------------------------------------------------------------- */
+        /*                                          Item Add Bar                                           */
+        /* ----------------------------------------------------------------------------------------------  */}
+        <Grid item xs={12}>
+          <ItemBar player={props.player} setItemList={setItemList} />
+        </Grid>
 
         {/* -------------------------------------------------------------------------- */
         /*                             Header/Item Mapping                            */
         /* -------------------------------------------------------------------------- */}
-
         {slots
           .filter((filter) => [...props.player.getActiveItems(filter.activeItem)].length > 0)
           .map((key, i) => (

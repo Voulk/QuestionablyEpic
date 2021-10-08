@@ -263,9 +263,6 @@ export default function TopGear(props) {
         <Grid item xs={12}>
           <HelpText blurb={helpBlurb} text={helpText} />
         </Grid>
-        {/* <Grid item xs={12}>
-          {<UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />}
-        </Grid> */}
         <Grid item xs={12}>
           <CharacterPanel
             player={props.player}
@@ -282,7 +279,7 @@ export default function TopGear(props) {
         </Grid>
 
         <Grid item xs={12}>
-          {<ItemBar player={props.player} setItemList={setItemList} />}
+          <ItemBar player={props.player} setItemList={setItemList} />
         </Grid>
         {gameType === "Retail" ? (
           <Grid item xs={12}>
