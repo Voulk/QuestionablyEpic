@@ -24,6 +24,7 @@ const useStyles = makeStyles(() => ({
     borderColor: "red",
     borderWidth: "2px",
     borderStyle: "Solid",
+    margin: "auto",
     width: "80%",
   },
   simcok: {
