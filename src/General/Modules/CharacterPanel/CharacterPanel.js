@@ -7,7 +7,6 @@ import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
 import { useSelector } from "react-redux";
 import Avatar from "@material-ui/core/Avatar";
 import { deepOrange, green } from "@material-ui/core/colors";
-import AssignmentIcon from "@material-ui/icons/Assignment";
 import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import Settings from "../Settings/Settings";
@@ -100,14 +99,17 @@ export default function CharacterPanel(props) {
     setImg();
   }, []);
 
+  // TODO: this will be removed potentially by using the blizzard created avatar image.
   const imageStyle = characterImageStyle(props.player.race);
   console.log(imageStyle);
   return (
-    // <Grid item xs={12}>
     <Paper elevation={0} className={check(simcStatus)}>
       <div style={{ padding: "8px 8px 8px 8px" }}>
         {/* <Avatar src="https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-main.jpg" variant="rounded" className={classes.rounded} /> */}
         <Grid container direction="row" justifyContent="space-between" spacing={1} wrap="noWrap">
+          {/* ---------------------------------------------------------------------------------------------- */
+          /*                                         Character Image                                         */
+          /* ----------------------------------------------------------------------------------------------  */}
           {backgroundImage === "" ? (
             ""
           ) : (
@@ -124,21 +126,32 @@ export default function CharacterPanel(props) {
             <Grid item xs container direction="column" spacing={1} justifyContent="space-between">
               <Grid item xs>
                 <div style={{ display: "inline-flex", verticalAlign: "middle" }}>
+                  {/* ----------------------------------------- Class Icon -----------------------------------------  */}
                   {classIcons(currentCharacter.spec, { height: 30, width: 30, margin: "0px 2px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
+                  {/* ---------------------------------------- Covenant Icon ---------------------------------------  */}
                   <Tooltip title={t(covenant)} style={{ color: classColoursJS(currentCharacter.spec) }} placement="top">
                     {covenantIcons(covenant, 30, 30)}
                   </Tooltip>
                   <Grid container direction="row">
                     <Grid item xs={12}>
                       <div style={{ display: "inline-flex", verticalAlign: "top" }}>
+                        {/* ------------------------------------- Character Name Text ------------------------------------ */}
                         <Typography variant="h6" style={{ color: classColoursJS(currentCharacter.spec), marginRight: 8, fontSize: 16, lineHeight: 1 }}>
                           {currentCharacter.charName}
                         </Typography>
+                        {
+                          /* ----------------------------------- Current Playstyle Text -----------------------------------  */
+                          // The players currently selected playstyle
+                        }
                         <Typography variant="h6" color="primary" style={{ fontSize: 16, lineHeight: 1 }}>
                           {"- Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName}
                         </Typography>
                       </div>
                     </Grid>
+                    {
+                      /* --------------------------------------- Character Stats --------------------------------------  */
+                      // The characters current stat totals are mapped with verticle dividers between them
+                    }
                     <Grid item xs={12} style={{ height: 8 }}>
                       <div style={{ verticalAlign: "top", marginTop: -1, display: "inline-flex" }}>
                         {Object.keys(playerStats).map((key) => [
@@ -154,6 +167,7 @@ export default function CharacterPanel(props) {
                 <Divider />
               </Grid>
               <Grid item sm container justifyContent="flex-start" spacing={1}>
+                {/* ----------------------------------- Simcraft import button -----------------------------------  */}
                 <Grid item>
                   <SimCraftInput
                     buttonLabel={t("UpgradeFinderFront.SimCButton")}
@@ -166,17 +180,10 @@ export default function CharacterPanel(props) {
                   />
                 </Grid>
 
-                {/* <Grid item xs={2}>
-                  <Typography color="primary" variant="h5">
-                    {t("Equipped")}:
-                  </Typography>
-                </Grid> */}
-                {/* <Grid item xs={5}>
-                  <Typography color="primary" align="center" variant="h5">
-                    {t(simcString)}
-                  </Typography>
-                </Grid> */}
-
+                {
+                  /* ----------------------------- Characters Active (Equipped) Items -----------------------------  */
+                  // Map currently equipped items with wowhead tooltips
+                }
                 <Grid item container xs justifyContent="center" alignItems="center">
                   {props.player.activeItems
                     .filter((key) => key.isEquipped === true)
@@ -219,6 +226,5 @@ export default function CharacterPanel(props) {
         </Grid>
       </div>
     </Paper>
-    // </Grid>
   );
 }

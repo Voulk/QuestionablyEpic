@@ -17,22 +17,6 @@ import ItemBar from "../ItemBar/ItemBar";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 
 const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(0.5),
-    minWidth: 120,
-    whiteSpace: "noWrap",
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-  paper: {
-    border: "1px solid",
-    padding: theme.spacing(1),
-    backgroundColor: theme.palette.background.paper,
-  },
-  typography: {
-    padding: theme.spacing(2),
-  },
   header: {
     [theme.breakpoints.down("xs")]: {
       margin: "auto",
@@ -61,9 +45,6 @@ const useStyles = makeStyles((theme) => ({
       width: "57%",
       display: "block",
     },
-  },
-  option: {
-    borderBottom: "1px solid rgba(255, 255, 255, 0.23)",
   },
 }));
 

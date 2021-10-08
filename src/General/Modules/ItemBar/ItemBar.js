@@ -206,8 +206,9 @@ export default function ItemBar(props) {
       .map((key) => key.socketType)[0] === "Domination";
 
   return (
-    <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
+    <Paper id="itemBarPaper" elevation={0} style={{ width: "80%", margin: "auto" }}>
       <Grid
+        id="itemBarMainGridContainer"
         container
         direction="row"
         justify="center"
@@ -219,9 +220,11 @@ export default function ItemBar(props) {
           display: "inline-flex",
         }}
       >
-        <Grid item xs={12}>
-          <Typography className={classes.title}>{t("QuickCompare.ItemBarTitle")}</Typography>
-          <Divider variant="middle" />
+        <Grid id="itemBarTitleGrid" item xs={12}>
+          <Typography id="itembarTitleTypography" className={classes.title}>
+            {t("QuickCompare.ItemBarTitle")}
+          </Typography>
+          <Divider id="itemBarTitleDivider" variant="middle" />
         </Grid>
         {/* -------------------------------------------------------------------------- */
         /*                               Item Selection                               */
