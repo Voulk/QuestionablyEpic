@@ -25,3 +25,34 @@ export const getRampData = (playerStats, playerTrinkets) => {
     }
     return rampData;
 }
+
+export const genStatWeights = (activeStats, baseline) => {
+    // Weights
+    const boonSeq = buildRamp('Boon', 10, [], activeStats.haste, ['Rapture'])
+    const fiendSeq = buildRamp('Fiend', 10, [], activeStats.haste, ['Rapture'])
+    const baseline = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226});
+
+    const stats = ['intellect','versatility', 'crit', 'haste', 'mastery'];
+    const results = {};
+    stats.forEach(stat => {
+
+        const adjustedStats = JSON.parse(JSON.stringify(activeStats));
+        adjustedStats[stat] = adjustedStats[stat] + 1;
+        //console.log(adjustedStats);
+
+        const seq1 = buildRamp('Boon', 10, [], adjustedStats['haste'], ['Rapture'])
+        const seq2 = buildRamp('Fiend', 10, [], adjustedStats['haste'], ['Rapture'])
+
+        //results[stat] = Math.round(runCastSequence(seq1, adjustedStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226}) +
+        //                        (runCastSequence(seq2, adjustedStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226})));
+        results[stat] = allRamps(seq1, seq2, adjustedStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226});
+    });
+    const weights = {}
+    //console.log(baseline);
+    stats.forEach(stat => {
+        //console.log("Stat: " + stat + ". " + results[stat]);
+        weights[stat] = (results[stat] - baseline) / (results['intellect'] - baseline);
+    });
+
+
+}
