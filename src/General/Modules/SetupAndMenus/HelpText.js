@@ -76,13 +76,15 @@ export default function HelpText(props) {
               </Typography>
             </Grid>
 
-            {helpText.map((key, i) => (
-              <Grid item xs={12} key={"helpText" + i}>
-                <Typography className={classes.secondaryHeading} style={{ color: "##fffff7", marginBottom: 0, width: "100%" }} align="left" variant="subtitle1" display="inline">
-                  {bull} {key}
-                </Typography>
-              </Grid>
-            ))}
+            {helpText !== undefined
+              ? helpText.map((key, i) => (
+                  <Grid item xs={12} key={"helpText" + i}>
+                    <Typography className={classes.secondaryHeading} style={{ color: "##fffff7", marginBottom: 0, width: "100%" }} align="left" variant="subtitle1" display="inline">
+                      {bull} {key}
+                    </Typography>
+                  </Grid>
+                ))
+              : ""}
           </Grid>
         </AccordionDetails>
       </Accordion>

@@ -20,7 +20,7 @@ import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
 import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems";
 import ItemBar from "../ItemBar/ItemBar";
-import UpgradeFinderSimCnew from "../CharacterPanel/CharacterPanel";
+import CharacterPanel from "../CharacterPanel/CharacterPanel";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -267,7 +267,7 @@ export default function TopGear(props) {
           {<UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />}
         </Grid> */}
         <Grid item xs={12}>
-          <UpgradeFinderSimCnew
+          <CharacterPanel
             player={props.player}
             simcSnack={props.simcSnack}
             allChars={props.allChars}

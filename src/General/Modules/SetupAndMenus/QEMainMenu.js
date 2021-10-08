@@ -15,6 +15,7 @@ import { useSelector } from "react-redux";
 import GameTypeSwitch from "./GameTypeToggle";
 import WelcomeDialog from "../Welcome/Welcome";
 import ls from "local-storage";
+import QEFooter from "./Footer/QEFooter";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -225,6 +226,11 @@ export default function QEMainMenu(props) {
 
         <WelcomeDialog welcomeOpen={welcomeOpen} allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} />
       </div>
+
+      {/* ---------------------------------------------------------------------------------------------- */
+      /*                                             Footer                                             */
+      /* ----------------------------------------------------------------------------------------------  */}
+      <QEFooter />
     </div>
   );
 }

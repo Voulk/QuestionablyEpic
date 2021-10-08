@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   select: {
-    fontSize: theme.typography.pxToRem(14),
+    fontSize: theme.typography.pxToRem(16),
   },
 }));
 
@@ -167,51 +167,45 @@ export default function RetailSettings(props) {
       {props.groupBuffShow === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
           <Grid container spacing={0}>
-            {/* <Grid item xs={12}>
-              <div style={{ display: "inline-flex" }}>
-                <Typography className={classes.heading} color="primary" noWrap>
-                  {t("Settings.Retail.Setting1Title")}
-                </Typography>
-                <Tooltip
-                  title={
-                    <Typography align="center" variant="body2">
-                      {t("Settings.Retail.Setting1Tooltip")}
-                    </Typography>
-                  }
-                  placement="top-start"
-                >
-                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
-                </Tooltip>
-              </div>
-            </Grid> */}
             <Grid item xs={12}>
-              <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center", minWidth: 120 }} label={t("Settings.Retail.Setting1Title")}>
-                <InputLabel id="alliedBuffInputLabel">{t("Settings.Retail.Setting1Title")}</InputLabel>
-                <Tooltip
-                  title={
-                    <Typography align="center" variant="body2">
-                      {t("Settings.Retail.Setting1Tooltip")}
-                    </Typography>
-                  }
-                  placement="top-start"
+              {/* <FormControl
+                variant="outlined"
+                size="small"
+                fullWidth
+                style={{ textAlign: "center", minWidth: 120 }}
+                //  label={t("Settings.Retail.Setting1Title")}
+              > */}
+              {/* <InputLabel id="alliedBuffInputLabel">{t("Settings.Retail.Setting1Title")}</InputLabel> */}
+              <Tooltip
+                title={
+                  <Typography align="center" variant="body2">
+                    {t("Settings.Retail.Setting1Tooltip")}
+                  </Typography>
+                }
+                placement="top-start"
+              >
+                <TextField
+                  label={t("Settings.Retail.Setting1Title")}
+                  labelId="alliedBuffInputLabel"
+                  value={groupValue}
+                  onChange={(e) => updateGroupValue(e.target.value)}
+                  SelectProps={{ MenuProps: menuStyle, className: classes.select }}
+                  InputProps={{ variant: "outlined" }}
+                  select
+                  variant="outlined"
+                  size="small"
+                  fullWidth
+                  style={{ textAlign: "center", minWidth: 120 }}
                 >
-                  <Select
-                    label={t("Settings.Retail.Setting1Title")}
-                    className={classes.select}
-                    labelId="groupValue"
-                    value={groupValue}
-                    onChange={(e) => updateGroupValue(e.target.value)}
-                    MenuProps={menuStyle}
-                  >
-                    <MenuItem value={true} style={{ justifyContent: "center" }}>
-                      {t("Yes")}
-                    </MenuItem>
-                    <MenuItem value={false} style={{ justifyContent: "center" }}>
-                      {t("No")}
-                    </MenuItem>
-                  </Select>
-                </Tooltip>
-              </FormControl>
+                  <MenuItem value={true} style={{ justifyContent: "center" }}>
+                    {t("Yes")}
+                  </MenuItem>
+                  <MenuItem value={false} style={{ justifyContent: "center" }}>
+                    {t("No")}
+                  </MenuItem>
+                </TextField>
+              </Tooltip>
+              {/* </FormControl> */}
             </Grid>
           </Grid>
         </Grid>
@@ -227,13 +221,12 @@ export default function RetailSettings(props) {
                       <Typography color="primary" style={{ marginRight: 4 }} noWrap>
                         {t("Settings.Retail.Setting2Title")}
                       </Typography>
-                      <Tooltip title={<Typography align="center"  variant="body2">{t("Settings.Retail.Setting2Tooltip")}</Typography>} placement="top-start">
                         <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
-                      </Tooltip>
                     </div>
                   </Grid>
                   <Grid item xs={12}>
                     <FormControl variant="outlined" size="small">
+                    <Tooltip title={<Typography align="center"  variant="body2">{t("Settings.Retail.Setting2Tooltip")}</Typography>} placement="top-start">
                       <Select labelId="slots" value={discTalent} onChange={(e) => setDiscTalent(e.target.value)} MenuProps={menuStyle}>
                         <MenuItem id="spiritShell" value={109964} style={{ justifyContent: "center" }} >
                           {t("CooldownPlanner.ClassAbilities.109964")}
@@ -242,6 +235,7 @@ export default function RetailSettings(props) {
                           {t("CooldownPlanner.ClassAbilities.246287")}
                         </MenuItem>
                       </Select>
+                       </Tooltip>
                     </FormControl>
                   </Grid>
                 </Grid>
@@ -253,23 +247,6 @@ export default function RetailSettings(props) {
       {/* --------------------------------- Playstyle / Build Selection --------------------------------  */}
       <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
         <Grid container spacing={0}>
-          {/* <Grid item xs={12}>
-            <div style={{ display: "inline-flex" }}>
-              <Typography className={classes.heading} color="primary" noWrap>
-                {t("Settings.Retail.Setting5Title")}
-              </Typography>
-              <Tooltip
-                title={
-                  <Typography align="center" variant="body2">
-                    {t("Settings.Retail.Setting5Tooltip")}
-                  </Typography>
-                }
-                placement="top-start"
-              >
-                <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
-              </Tooltip>
-            </div>
-          </Grid> */}
           <Grid item xs={12}>
             <FormControl variant="outlined" fullWidth size="small" style={{ textAlign: "center", minWidth: 120 }} label={t("Settings.Retail.Setting5Title")}>
               <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting5Title")}</InputLabel>
@@ -304,23 +281,6 @@ export default function RetailSettings(props) {
       {props.autoSocket === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
           <Grid container spacing={0}>
-            {/* <Grid item xs={12}>
-              <div style={{ display: "inline-flex" }}>
-                <Typography className={classes.heading} color="primary" noWrap>
-                  {t("Settings.Retail.Setting3Title")}
-                </Typography>
-                <Tooltip
-                  title={
-                    <Typography align="center" variant="body2">
-                      {t("Settings.Retail.Setting3Tooltip")}
-                    </Typography>
-                  }
-                  placement="top-start"
-                >
-                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
-                </Tooltip>
-              </div>
-            </Grid> */}
             <Grid item xs={12}>
               <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center", minWidth: 160 }} label={t("Settings.Retail.Setting3Title")}>
                 <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting3Title")}</InputLabel>
@@ -358,26 +318,7 @@ export default function RetailSettings(props) {
       {/* --------------------------- Domination Socket for Great Vault Items --------------------------  */}
       <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
         <Grid container spacing={0}>
-          {/* <Grid item xs={12}>
-            <div style={{ display: "inline-flex" }}>
-              <Typography className={classes.heading} color="primary" noWrap>
-                {t("Settings.Retail.Setting4Title")}
-              </Typography>
-              <Tooltip
-                title={
-                  <Typography align="center" variant="body2">
-                    {t("Settings.Retail.Setting4Tooltip")}
-                  </Typography>
-                }
-                placement="top-start"
-              >
-                <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
-              </Tooltip>
-            </div>
-          </Grid> */}
-          <FormControl variant="outlined" size="small" style={{ textAlign: "center", width: t("QuickCompare.DominationSocket").length > 10 ? 180 : 200 }} 
-          //</Grid>label={t("Settings.Retail.Setting4Title")}
-          >
+          <FormControl variant="outlined" size="small" style={{ textAlign: "center", width: t("QuickCompare.DominationSocket").length > 10 ? 180 : 200 }}>
             <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting4Title")}</InputLabel>
             <Tooltip
               title={
@@ -412,16 +353,15 @@ export default function RetailSettings(props) {
             <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                 <Grid item xs={12}>
-                  <Tooltip
-                    title={<Typography align="center" variant="body2">{t("Settings.Retail.Setting5Tooltip")}</Typography>}
-                    placement="top-start"
-                  >
                     <Typography color="primary">
                       {t("Settings.Retail.Setting5Title")}
                     </Typography>
-                  </Tooltip>
                 </Grid>
                 <Grid item xs={12}>
+                                  <Tooltip
+                    title={<Typography align="center" variant="body2">{t("Settings.Retail.Setting5Tooltip")}</Typography>}
+                    placement="top-start"
+                  >
                   <TextField
                     id="AlliesNumber"
                     value={value5}
@@ -431,6 +371,7 @@ export default function RetailSettings(props) {
                     size="small"
                     type="number"
                   />
+                   </Tooltip>
                 </Grid>
               </Grid>
             </Grid> */}

@@ -15,7 +15,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { CONSTRAINTS } from "../../../../General/Engine/CONSTRAINTS";
 import userSettings from "General/Modules/Settings/SettingsObject";
-import UpgradeFinderSimCnew from "General/Modules/CharacterPanel/CharacterPanel";
+import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
   return (
@@ -213,7 +213,7 @@ export default function CovenantExploration(props) {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <UpgradeFinderSimCnew
+          <CharacterPanel
             player={props.player}
             simcSnack={props.simcSnack}
             allChars={props.allChars}

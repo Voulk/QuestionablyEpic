@@ -10,7 +10,7 @@ import ReactGA from "react-ga";
 import { dominationGemDB } from "Databases/DominationGemDB";
 import { getDominationGemEffect } from "Retail/Engine/EffectFormulas/Generic/GenericEffectFormulas";
 import MetricToggle from "./MetricToggle";
-import UpgradeFinderSimCnew from "General/Modules/CharacterPanel/CharacterPanel";
+import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
 import userSettings from "General/Modules/Settings/SettingsObject";
 // import Settings from "../Settings/Settings";
 // import userSettings from "../Settings/SettingsObject";
@@ -143,17 +143,11 @@ export default function DominationAnalysis(props) {
             {t("DominationSocketAnalysis.Header")}
           </Typography>
         </Grid>
-
-        {/* <Grid item xs={12}>
-          <Typography color="primary" variant="subtitle2" align="center" style={{ paddingBottom: 8 }}>
-            {"Current Playstyle selected: " + props.player.getActiveModel(contentType).modelName + " - " + contentType}
-          </Typography>
-        </Grid> */}
         <Grid item xs={12}>
-          <HelpText text={helpText} />
+          <HelpText blurb={helpText} />
         </Grid>
         <Grid item xs={12}>
-          <UpgradeFinderSimCnew
+          <CharacterPanel
             player={props.player}
             simcSnack={props.simcSnack}
             allChars={props.allChars}

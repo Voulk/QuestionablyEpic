@@ -11,7 +11,7 @@ import HelpText from "../SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
-import UpgradeFinderSimCnew from "../CharacterPanel/CharacterPanel";
+import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import userSettings from "../Settings/SettingsObject";
 import MetricToggle from "Retail/Modules/DominationGemAnalysis/MetricToggle";
 import SourceToggle from "./SourceToggle";
@@ -338,7 +338,7 @@ export default function TrinketAnalysis(props) {
           <HelpText blurb={helpBlurb} text={helpText} />
         </Grid>
         <Grid item xs={12}>
-          <UpgradeFinderSimCnew
+          <CharacterPanel
             player={props.player}
             simcSnack={props.simcSnack}
             allChars={props.allChars}

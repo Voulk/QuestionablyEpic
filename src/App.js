@@ -413,8 +413,6 @@ class App extends Component {
                   )}
                 />
               </Switch>
-
-              <QEFooter />
             </div>
           </ThemeProvider>
         </Router>

@@ -14,7 +14,7 @@ import { runUpgradeFinderBC } from "./UpgradeFinderEngineBC";
 import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
 import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems";
-import UpgradeFinderSimCnew from "../CharacterPanel/CharacterPanel";
+import CharacterPanel from "../CharacterPanel/CharacterPanel";
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -328,7 +328,7 @@ export default function UpgradeFinderFront(props) {
           <HelpText blurb={helpBlurb} text={helpText} />
         </Grid>
         <Grid item xs={12}>
-          <UpgradeFinderSimCnew
+          <CharacterPanel
             player={props.player}
             simcSnack={props.simcSnack}
             allChars={props.allChars}

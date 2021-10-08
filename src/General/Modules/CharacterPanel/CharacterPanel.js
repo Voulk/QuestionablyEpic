@@ -61,7 +61,7 @@ const getSimCStatus = (player, gameType) => {
   else return "Good";
 };
 
-export default function UpgradeFinderSimCnew(props) {
+export default function CharacterPanel(props) {
   const classes = useStyles();
   const playerStats = props.player.getActiveStats();
   const { t, i18n } = useTranslation();
