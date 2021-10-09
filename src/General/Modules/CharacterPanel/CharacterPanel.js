@@ -155,10 +155,13 @@ export default function CharacterPanel(props) {
                     }
                     <Grid item xs={12} style={{ height: 8 }}>
                       <div style={{ verticalAlign: "top", marginTop: -1, display: "inline-flex" }}>
-                        {Object.keys(playerStats).map((key) => [
-                          <Typography style={{ fontSize: 11, lineHeight: 1 }}>{t(capitalizeFirstLetter(key)) + ": " + playerStats[key]}</Typography>,
-                          <Divider orientation="vertical" flexItem style={{ margin: "0px 4px" }} />,
-                        ])}
+                        <Grid container spacing={1}>
+                          {Object.keys(playerStats).map((key) => (
+                            <Grid item>
+                              <Typography style={{ fontSize: 11, lineHeight: 1 }}>{t(capitalizeFirstLetter(key)) + ": " + playerStats[key]}</Typography>
+                            </Grid>
+                          ))}
+                        </Grid>
                       </div>
                     </Grid>
                   </Grid>

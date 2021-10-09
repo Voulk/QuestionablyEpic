@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      width: "65%",
+      width: "70%",
       marginTop: 0,
     },
     [theme.breakpoints.up("lg")]: {
@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      width: "55%",
+      width: "60%",
       marginTop: 0,
     },
   },
