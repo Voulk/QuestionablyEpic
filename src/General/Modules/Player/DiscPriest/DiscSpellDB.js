@@ -183,7 +183,7 @@ export const DISCSPELLS = {
             tickRate: 2,
             coeff: 0.12,
             aura: 1,
-            duration: 20,
+            duration: 26, // 20 x 1.3
         }
     }],
     "Shadowfiend": [{

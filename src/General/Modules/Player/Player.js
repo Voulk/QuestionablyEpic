@@ -619,11 +619,11 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 1850,
-        haste: 850,
-        crit: 400,
+        intellect: 1950,
+        haste: 750,
+        crit: 650,
         mastery: 400,
-        versatility: 400,
+        versatility: 470,
         stamina: 1900,
       };
       this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable

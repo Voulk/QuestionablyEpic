@@ -20,7 +20,7 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
         sequence.push('Ascended Blast');
         sequence.push('Schism');
         const hastePerc = 1 + haste / 32 / 100;
-        let boonDuration = 10 - (1.5 * 2 / hastePerc);
+        let boonDuration = 10 - (1.5 * 2 / hastePerc) + (1.5 / hastePerc);
         const boonPackage = (1.5 + 1 + 1) / hastePerc;
 
         for (var i = 0; i < Math.floor(boonDuration / boonPackage); i++) {
@@ -34,8 +34,15 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
             sequence.push('Ascended Blast');
             sequence.push('Ascended Nova');
         }
+        else if (boonDuration % boonPackage > (2 / hastePerc)) {
+            sequence.push('Ascended Nova');
+            sequence.push('Ascended Nova');
+        }
         else if (boonDuration % boonPackage > (1.5 / hastePerc)) {
             sequence.push('Ascended Blast');
+        }
+        else if (boonDuration % boonPackage > (1 / hastePerc)) {
+            sequence.push('Ascended Nova');
         }
 
         // These are low value post-ramp smites but should still be included.

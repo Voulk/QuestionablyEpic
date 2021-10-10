@@ -9,7 +9,7 @@ import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights
 import { monkSinSpecialQueries, monkSinSpellData, monkSinStatWeights } from "./ClassDefaults/Monk/MonkSinTeachings";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./DiscPriest/DiscPriestDefaults";
-import { getRampData } from "General/Modules/Player/DiscPriest/DiscPriestUtilities";
+import { getRampData, genStatWeights } from "General/Modules/Player/DiscPriest/DiscPriestUtilities";
 
 class CastModel {
   constructor(spec, contentType, modelID, arrID) {
@@ -184,6 +184,7 @@ class CastModel {
 
   setRampInfo = (stats, trinkets) => {
     this.specialQueries.rampData = getRampData(stats, trinkets);
+    this.baseStatWeights = genStatWeights(stats);
 
   }
 
