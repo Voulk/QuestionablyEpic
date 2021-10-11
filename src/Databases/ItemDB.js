@@ -122034,33 +122034,33 @@ export const itemDB = [
 
     // for testing
     // {
-    //     "id": 123,
-    //     "name": "Maraad's",
+    //     "id": "178926:7128:6649:6650:6935:7451:1559",
+    //     "name": "Maraad's Dying Breath (Finger) Haste/Versatility 262",
     //     "names": {
     //         "cn": "",
-    //         "en": "Maraad's",
-    //         "ru": "Рукавицы стража смерти",
-    //         "es": "Guanteletes de guardián de la muerte",
-    //         "br": "Manoplas do Guardião da Morte",
+    //         "en": "Maraad's Dying Breath (Finger)",
+    //         "ru": "",
+    //         "es": "",
+    //         "br": "",
     //         "kr": "",
-    //         "fr": "Gantelets du gardien de la mort",
-    //         "de": "Stulpen des Wächters des Todes"
+    //         "fr": "",
+    //         "de": ""
     //     },
-    //     "icon": "inv_glove_plate_mawraid_d_01",
+    //     "icon": "inv_jewelcrafting_90_maxlvlring_red",
     //     "itemClass": 4,
     //     "itemSubClass": 4,
-    //     "itemLevel": 226,
+    //     "itemLevel": 262,
     //     "shadowlandsLegendary": true,
     //     "stats": {
-    //         "intellect": 5259,
-    //         "stamina": 7889,
-    //         "haste": 4840,
+    //         "intellect": 0,
+    //         "stamina": 130,
+    //         "haste": 137,
     //         "crit": 0,
     //         "mastery": 0,
-    //         "versatility": 2160
+    //         "versatility": 137
     //     },
     //     "dropLoc": "",
-    //     "slot": "Hands",
+    //     "slot": "Finger",
     //     // "socketType": "Domination"
     // }
 ]
