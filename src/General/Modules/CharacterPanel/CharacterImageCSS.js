@@ -1,5 +1,14 @@
 export const characterImageStyle = (race) => {
-  let style = { backgroundRepeat: "no-repeat", textAlign: "center", position: "relative", border: "1px solid rgb(118, 118, 118)", flex: "1 1 10%", height: 82, width: 82, borderRadius: 4 };
+  let style = {
+    backgroundRepeat: "no-repeat",
+    textAlign: "center",
+    position: "relative",
+    border: "1px solid rgb(118, 118, 118)",
+    // flex: "1 1 10%",
+    height: 82,
+    width: 82,
+    borderRadius: 4,
+  };
   switch (race) {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                             Checked                                            */
@@ -13,8 +22,8 @@ export const characterImageStyle = (race) => {
 
     case "Races.Lightforged Draenei":
       Object.assign(style, {
-        backgroundPosition: "center 28%",
-        backgroundSize: "auto 500%",
+        // backgroundPosition: "center 28%",
+        // backgroundSize: "auto 500%",
       });
       break;
 
