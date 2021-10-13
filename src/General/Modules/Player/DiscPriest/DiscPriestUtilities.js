@@ -24,7 +24,7 @@ export const getRampData = (playerStats, playerTrinkets) => {
         courAscension: (courAscension - discBaseline) / rampTime, 
         penitentOne: (penitentOne - discBaseline) / rampTime, 
     }
-
+    console.log("Updating Ramp Data");
     return rampData;
 
 }

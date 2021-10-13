@@ -426,6 +426,7 @@ class Player {
     this.activeStats = stats;
     if (this.spec === "Discipline Priest") {
       this.getActiveModel("Raid").updateStatWeights(stats, "Raid");
+      this.getActiveModel("Raid").setRampInfo(stats);
     }
   }
 
@@ -628,15 +629,15 @@ class Player {
       this.statWeights.DefaultWeights = true;
       */
     } else if (spec === SPEC.DISCPRIEST) {
-      this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
+      this.castModels.push(new CastModel(spec, "Raid", "Kyrian Evangelism", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
         intellect: 1950,
-        haste: 850,
-        crit: 650,
-        mastery: 450,
-        versatility: 470,
+        haste: 755,
+        crit: 580,
+        mastery: 420,
+        versatility: 400,
         stamina: 1900,
       };
       this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable

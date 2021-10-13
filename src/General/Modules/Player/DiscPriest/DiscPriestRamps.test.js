@@ -86,8 +86,13 @@ describe("Evang Cast Sequence", () => {
 
     test("Legendaries & Soulbinds", () => {
 
+        const startTime = performance.now()
         const baseline = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": true, "Pelagos": true, "Instructor's Divine Bell": 660}, {});
-        console.log("Baseline: " + baseline);
+
+        const endTime = performance.now()
+
+        console.log(`Call to doSomething took ${endTime - startTime} milliseconds`)
+        //console.log("Baseline: " + baseline);
         /*
         const clarityOfMind = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": true, "Pelagos": false}, {});
         const pelagos = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": false, "Pelagos": true}, {});

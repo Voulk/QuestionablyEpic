@@ -142,11 +142,21 @@ class CastModel {
       }
 
     } else if (spec === SPEC.DISCPRIEST) {
-      this.modelName = "Default";
-      spellList = discPriestDefaultSpellData(contentType);
-      specialQueries = discPriestDefaultSpecialQueries(contentType);
-      this.baseStatWeights = discPriestDefaultStatWeights(contentType);
-      this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
+      if (modelID === "Kyrian Evangelism") {
+        this.modelName = "Kyrian Evangelism";
+        spellList = discPriestDefaultSpellData(contentType);
+        specialQueries = discPriestDefaultSpecialQueries(contentType);
+        this.baseStatWeights = discPriestDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
+      }
+      else {
+        this.modelName = "Default";
+        spellList = discPriestDefaultSpellData(contentType);
+        specialQueries = discPriestDefaultSpecialQueries(contentType);
+        this.baseStatWeights = discPriestDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
+      }
+
 
     } else if (spec === SPEC.HOLYPRIEST) {
       this.modelName = "Default";
@@ -184,7 +194,7 @@ class CastModel {
 
   setRampInfo = (stats, trinkets) => {
     this.specialQueries.rampData = getRampData(stats, trinkets);
-    this.baseStatWeights = genStatWeights(stats);
+    //this.baseStatWeights = genStatWeights(stats);
 
   }
 
@@ -227,8 +237,9 @@ class CastModel {
 
     // Currently being trialled as Discipline only.
   updateStatWeights = (stats, contentType) => {
-    //stats.intellect = stats.intellect * 1.05;
-    stats.intellect = 2100;
+
+    // Take the stats on our set and add 5% for the armor bonus and 5% for Arcane Intellect.
+    stats.intellect = Math.round(stats.intellect * 1.05 * 1.05);
 
     // These are stat weights with 0 of each stat on top of the default profile.
     let base_weights = {

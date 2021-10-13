@@ -12,11 +12,10 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
     
     const miniSeq = buildRamp('Mini', 6, [], stats.haste, [])
 
-    //const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
+    const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
     const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
-    //const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
-    //return boonRamp + fiendRamp + miniRamp * 2;
-    return boonRamp;
+    const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
+    return boonRamp + fiendRamp + miniRamp * 2;
 }
 
 /**  Extend all active atonements by @extension seconds.  */
@@ -239,15 +238,15 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
         let ascendedEruption = activeBuffs.filter(function (buff) {return buff.expiration < t && buff.name === "Boon of the Ascended"}).length > 0;
         activeBuffs = activeBuffs.filter(function (buff) {return buff.expiration > t});
         atonementApp = atonementApp.filter(function (buff) {return buff > t});
-
-
-        // Update current stats for this combat tick.
-        // Effectively base stats + any current stat buffs.
-        let currentStats = {...stats};
-        currentStats = getCurrentStats(currentStats, activeBuffs);
+        
 
         // Check for and execute a purge the wicked tick if required.
         if (purgeTicks.length > 0 && t > purgeTicks[0]) {
+            // Update current stats for this combat tick.
+            // Effectively base stats + any current stat buffs.
+            let currentStats = {...stats};
+            currentStats = getCurrentStats(currentStats, activeBuffs);
+
             purgeTicks.shift();
             const activeAtonements = getActiveAtone(atonementApp, timer)
             const damageVal = DISCSPELLS['Purge the Wicked'][0].dot.coeff * currentStats.intellect * getStatMult(currentStats, ['crit', 'vers']);
@@ -278,6 +277,11 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
         // Check for and execute a Shadow Fiend attack if required.
         // Fiend / Bender sometimes does very weird stuff in-game. This is a close representation, but not a perfect one.
         if (fiendTicks.length > 0 && t > fiendTicks[0]) {
+            // Update current stats for this combat tick.
+            // Effectively base stats + any current stat buffs.
+            let currentStats = {...stats};
+            currentStats = getCurrentStats(currentStats, activeBuffs);
+
             fiendTicks.shift();
             const activeAtonements = getActiveAtone(atonementApp, timer)
             const damageVal = DISCSPELLS['Shadowfiend'][0].dot.coeff * currentStats.intellect * getStatMult(currentStats, ['crit', 'vers']);
@@ -294,6 +298,11 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
         if ((t > nextSpell && seq.length > 0) || ascendedEruption)  {
             const spellName = ascendedEruption ? "Ascended Eruption" : seq.shift();
             const fullSpell = discSpells[spellName];
+
+            // Update current stats for this combat tick.
+            // Effectively base stats + any current stat buffs.
+            let currentStats = {...stats};
+            currentStats = getCurrentStats(currentStats, activeBuffs);
 
             // We'll iterate through the different effects the spell has.
             // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,

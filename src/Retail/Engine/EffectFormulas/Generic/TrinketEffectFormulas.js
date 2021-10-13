@@ -623,6 +623,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
 
     /* ------- Hastes impact on the trinket PPM is included in the secondary multiplier below. ------ */
     bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / 60) * effect.ppm * player.getStatMultiplier("NOMAST");
+    console.log(bonus_stats.hps);
     //
   }
  else if (
