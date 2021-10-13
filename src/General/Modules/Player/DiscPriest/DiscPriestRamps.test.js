@@ -1,6 +1,7 @@
 import { Stats } from 'fs';
 import Player from 'General/Modules/Player/Player';
 import { runCastSequence, allRamps, getSpellRaw } from "./DiscPriestRamps";
+import { genStatWeights } from './DiscPriestUtilities';
 import { buildRamp } from "./DiscRampGen";
 import { DISCSPELLS } from "./DiscSpellDB";
 
@@ -71,25 +72,21 @@ describe("Evang Cast Sequence", () => {
             stamina: 1900,
     } */
     const activeStats = {
-        intellect: 1974,
-        haste: 800,
-        crit: 450,
-        mastery: 450,
-        versatility: 450,
+        intellect: 1950,
+        haste: 88,
+        crit: 650,
+        mastery: 400,
+        versatility: 400,
         stamina: 0,
 }
     
-    const boonSeq = buildRamp('Boon', 10, [], activeStats.haste, ['Rapture'])
-    const fiendSeq = buildRamp('Fiend', 10, [], activeStats.haste, ['Rapture'])
-    //const baselineBoon = (boonSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": frunCastSequencealse}, {"Courageous Ascension": 226, "Shining Radiance": 226});
-    //const baselineFiend = runCastSequence(fiendSeq, player.activeStats, {"Clarity of Mind": true, "Pelagos": false}, {"Courageous Ascension": 226, "Shining Radiance": 226});
-    
-    //const baseline = baselineBoon + baselineFiend;
+    const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell"], activeStats.haste, ['Rapture'])
+    const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell"], activeStats.haste, ['Rapture'])
 
 
     test("Legendaries & Soulbinds", () => {
 
-        const baseline = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": true, "Pelagos": true}, {});
+        const baseline = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": true, "Pelagos": true, "Instructor's Divine Bell": 660}, {});
         console.log("Baseline: " + baseline);
         /*
         const clarityOfMind = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": true, "Pelagos": false}, {});
@@ -166,6 +163,28 @@ describe("Evang Cast Sequence", () => {
     });
 
     */
+
+    /*
+    test("Haste", () => {
+        const activeStats = {
+            intellect: 1950,
+            haste: 87,
+            crit: 650,
+            mastery: 400,
+            versatility: 470,
+            stamina: 1900,
+            };
+
+            for (var x = 87; x < 88; x++) {
+                //console.log("== Haste = " + x + " ==")
+                activeStats.haste = x;
+                genStatWeights(activeStats);
+
+            }
+
+         
+
+    }); */
 
 
     /*

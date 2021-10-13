@@ -10,7 +10,7 @@ import { discPriestDefaultStatWeights } from "./DiscPriest/DiscPriestDefaults";
 import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
-import ls from "local-storage";
+import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 
 class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
@@ -170,8 +170,8 @@ class Player {
     if (spec === "Holy Paladin") this.covenant = "kyrian";
     else if (spec === "Restoration Druid") this.covenant = "night_fae";
     else if (spec === "Restoration Shaman") this.covenant = "necrolord";
-    else if (spec === "Mistweaver Monk") this.covenant = "necrolord";
-    else if (spec === "Discipline Priest") this.covenant = "venthyr";
+    else if (spec === "Mistweaver Monk") this.covenant = "venthyr";
+    else if (spec === "Discipline Priest") this.covenant = "kyrian";
     else if (spec === "Holy Priest") this.covenant = "night_fae";
     // This one is very flexible, but is also not used in any current formulas. It will be replaced when the models are updated.
     else {
@@ -416,6 +416,19 @@ class Player {
 
   };
 
+  updatePlayerStats = () => {
+    let equippedSet = new ItemSet(0, this.getEquippedItems(false), 0);
+
+    equippedSet = equippedSet.compileStats();
+
+    let stats = equippedSet.setStats;
+
+    this.activeStats = stats;
+    if (this.spec === "Discipline Priest") {
+      this.getActiveModel("Raid").updateStatWeights(stats, "Raid");
+    }
+  }
+
   setModelID = (id, contentType) => {
     if ((contentType === "Raid" || contentType === "Dungeon") && id < this.castModels.length) {
       // Check that it's a valid ID.
@@ -620,9 +633,9 @@ class Player {
 
       this.activeStats = {
         intellect: 1950,
-        haste: 750,
+        haste: 850,
         crit: 650,
-        mastery: 400,
+        mastery: 450,
         versatility: 470,
         stamina: 1900,
       };

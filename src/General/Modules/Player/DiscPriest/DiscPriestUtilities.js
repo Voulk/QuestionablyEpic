@@ -1,9 +1,9 @@
 import { ContactSupportOutlined } from "@material-ui/icons";
+import { consoleSandbox } from "@sentry/utils";
 import { runCastSequence, allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "./DiscRampGen";
 
 export const getRampData = (playerStats, playerTrinkets) => {
-    console.log(playerStats);
     const rampTime = 180;
     const boonSeq = buildRamp('Boon', 10, [], playerStats.haste, ['Rapture'])
     const fiendSeq = buildRamp('Fiend', 10, [], playerStats.haste, ['Rapture'])
@@ -24,7 +24,9 @@ export const getRampData = (playerStats, playerTrinkets) => {
         courAscension: (courAscension - discBaseline) / rampTime, 
         penitentOne: (penitentOne - discBaseline) / rampTime, 
     }
+
     return rampData;
+
 }
 
 export const genStatWeights = (activeStats, base) => {
@@ -32,46 +34,46 @@ export const genStatWeights = (activeStats, base) => {
     const boonSeq = buildRamp('Boon', 10, [], activeStats.haste, ['Rapture'])
     const fiendSeq = buildRamp('Fiend', 10, [], activeStats.haste, ['Rapture'])
     const baseline = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": true, "Pelagos": true}, {"Rabid Shadows": 226, "Courageous Ascension": 226, "Shining Radiance": 226});
-
+    const baselineRampTime = (180+(180 / (1 + activeStats.haste / 33 / 100)))/2
+    const baselineHPS = baseline / baselineRampTime;
+    
     const stats = ['intellect','versatility', 'crit', 'haste', 'mastery'];
-    const results = {};
+
     const weights = {};
     stats.forEach(stat => {
-        let result = 0;
         let iterations = 1;
-        let weight = 0;
-        if (stat === "haste") iterations = 32;
+        let weightHPS = 0;
+        if (stat === "haste") iterations = 1;
 
         for (var i = 1; i < iterations+1; i++) {
             const adjustedStats = JSON.parse(JSON.stringify(activeStats));
-            adjustedStats[stat] = adjustedStats[stat] + i * 2;
-            console.log(adjustedStats);
+           
+            adjustedStats[stat] = adjustedStats[stat] + i * 1;
+            const rampTime = (180+(180 / (1 + adjustedStats['haste'] / 33 / 100)))/2;
+
             const seq1 = buildRamp('Boon', 10, [], adjustedStats['haste'], ['Rapture'])
             const seq2 = buildRamp('Fiend', 10, [], adjustedStats['haste'], ['Rapture'])
             const rampResult = allRamps(seq1, seq2, adjustedStats, {"Clarity of Mind": true, "Pelagos": true}, {"Rabid Shadows": 226, "Courageous Ascension": 226, "Shining Radiance": 226});
-            result += rampResult;
-            console.log("stat: " + stat + "(" + "i: " + i + ") " + (rampResult - baseline) / 180 / (i * 2))
-
             
-            if (stat !== "intellect") {
-                weight += ((rampResult - baseline) / (results['intellect'] - baseline))/i
-                console.log("Adding X: " + (i*2) + " and dividing by " + (i))
-                if (stat === "haste") {
-                    //console.log((rampResult - baseline) / (results['intellect'] - baseline)/i)
-                    //console.log("i: " + i + " " + rampResult)
-                }
-            }
+            weightHPS += (rampResult / rampTime - baselineHPS);
+
         }
-        weights[stat] = weight / iterations;
-        results[stat] = result;
+        weights[stat] = weightHPS / iterations;
 
     });
-    /*
-    const weights = {}
-    stats.forEach(stat => {
-        weights[stat] = Math.round(100*(results[stat] - baseline) / (results['intellect'] - baseline))/100;
-    }); */
 
-    console.log(weights);
-    return weights;
+    const statWeights = {}
+
+    stats.forEach(stat => {
+        statWeights[stat] = Math.round(10000*(weights[stat] / weights['intellect']))/10000;
+    }); 
+
+   /*
+    
+    console.log(hasteResults);
+    console.log(hasteWeights);
+    console.log(average(hasteWeights));
+    */
+    console.log(statWeights);
+    return statWeights;
 }

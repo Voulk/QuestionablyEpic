@@ -12,10 +12,11 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
     
     const miniSeq = buildRamp('Mini', 6, [], stats.haste, [])
 
-    const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
+    //const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
     const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
-    const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
-    return boonRamp + fiendRamp + miniRamp * 2;
+    //const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
+    //return boonRamp + fiendRamp + miniRamp * 2;
+    return boonRamp;
 }
 
 /**  Extend all active atonements by @extension seconds.  */
@@ -259,14 +260,18 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 damageBreakdown['Purge the Wicked'] = (damageBreakdown['Purge the Wicked'] || 0) + damageVal * damMultiplier * partialTickPercentage;
                 totalDamage += damageVal;
                 healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * damMultiplier * getAtoneTrans(currentStats.mastery) * partialTickPercentage;
+
+                if (reporting) console.log(getTime(t) + " " + " Purge Tick: " + damageVal * damMultiplier * partialTickPercentage + ". Buffs: " + JSON.stringify(activeBuffs) + " to " + activeAtonements);
             }
             else {         
                 damageBreakdown['Purge the Wicked'] = (damageBreakdown['Purge the Wicked'] || 0) + damageVal * damMultiplier;
                 totalDamage += damageVal;
                 healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * getAtoneTrans(currentStats.mastery);
+
+                if (reporting) console.log(getTime(t) + " " + " Purge Tick: " + damageVal * damMultiplier + ". Buffs: " + JSON.stringify(activeBuffs) + " to " + activeAtonements);
             }
 
-            if (reporting) console.log(getTime(t) + " " + " Purge Tick: " + damageVal * damMultiplier);
+            
 
         }
 
@@ -280,6 +285,8 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             damageBreakdown['Shadowfiend'] = (damageBreakdown['Shadowfiend'] || 0) + damageVal * damMultiplier;
             totalDamage += damageVal;
             healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * getAtoneTrans(currentStats.mastery);
+
+            if (reporting) console.log(getTime(t) + " Fiend Tick: " + damageVal * damMultiplier + ". Buffs: " + JSON.stringify(activeBuffs) + " to " + activeAtonements);
         }
 
         // This is a check of the current time stamp against the tick our GCD ends and we can begin our queued spell.
@@ -388,6 +395,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     // Add up our healing values (including atonement) and return it.
 
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
+    //console.log(healing);
     return sumValues(healing)
 
 }

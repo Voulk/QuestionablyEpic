@@ -46,7 +46,7 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
         }
 
         // These are low value post-ramp smites but should still be included.
-        for (var i = 0; i < 6; i++) {
+        for (var i = 0; i < 8; i++) {
             sequence.push('Smite');
         }
        
@@ -60,7 +60,7 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
         sequence.push('Power Word: Solace');
         sequence.push('Penance');
 
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 15; i++) {
             sequence.push('Smite');
         }
         
@@ -71,7 +71,7 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
         sequence.push('Power Word: Solace');
         sequence.push('Penance');
 
-        for (var i = 0; i < 8; i++) {
+        for (var i = 0; i < 10; i++) {
             sequence.push('Smite');
         }
     }

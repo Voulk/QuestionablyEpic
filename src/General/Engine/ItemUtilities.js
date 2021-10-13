@@ -212,7 +212,7 @@ export function getItem(id, gameType = "Retail") {
 
 
 export function applyDiminishingReturns(stats) {
-  //console.log("Stats Pre-DR" + JSON.stringify(stats));
+  console.log("Stats Pre-DR" + JSON.stringify(stats));
   const diminishedStats = JSON.parse(JSON.stringify(stats));
   for (const [key, value] of Object.entries(stats)) {
     if (["crit", "haste", "mastery", "versatility", "leech"].includes(key)) {
@@ -225,6 +225,7 @@ export function applyDiminishingReturns(stats) {
       }
     } 
   }
+  console.log("Stats Post-DR" + JSON.stringify(diminishedStats));
     
   return diminishedStats;
 }
