@@ -1,7 +1,7 @@
 import React from "react";
 
 /* ---------- Returns the sigil for the supplied covenant with specified width & height --------- */
-export function covenantIcons(props, height, width) {
+export function covenantIcons(props, style) {
   const icons = (covenant) => {
     switch (covenant) {
       case "kyrian":
@@ -18,14 +18,17 @@ export function covenantIcons(props, height, width) {
   return (
     <div>
       <img
-        style={{
-          height: height,
-          width: width,
-          margin: "0px 5px 0px 5px",
-          verticalAlign: "middle",
-          borderRadius: "4px",
-          border: "1px solid rgba(255, 255, 255, 0.12)",
-        }}
+        style={
+          style
+          //   {
+          //   height: height,
+          //   width: width,
+          //   margin: "0px 5px 0px 5px",
+          //   verticalAlign: "middle",
+          //   borderRadius: "4px",
+          //   border: "1px solid rgba(255, 255, 255, 0.12)",
+          // }
+        }
         src={icons(props)}
         alt={props}
       />

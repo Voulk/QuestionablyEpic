@@ -10,7 +10,7 @@ import { deepOrange, green } from "@material-ui/core/colors";
 import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import Settings from "../Settings/Settings";
-import { covenantIcons } from "../CooldownPlanner/Functions/CovenantFunctions";
+import { covenantIcons, covenantColours } from "../CooldownPlanner/Functions/CovenantFunctions";
 import { apiGetPlayerImage } from "../SetupAndMenus/ConnectionUtilities";
 import { characterImageStyle } from "./CharacterImageCSS";
 
@@ -101,7 +101,17 @@ export default function CharacterPanel(props) {
   }, []);
 
   // TODO: this will be removed potentially by using the blizzard created avatar image.
-  const imageStyle = characterImageStyle(props.player.race);
+  const imageStyle = {
+    backgroundRepeat: "no-repeat",
+    textAlign: "center",
+    position: "relative",
+    border: "1px solid rgb(118, 118, 118)",
+    // flex: "1 1 10%",
+    backgroundSize: "auto 100%",
+    height: 82,
+    width: 82,
+    borderRadius: 4,
+  };
   console.log(imageStyle);
   return (
     <Paper elevation={0} className={check(simcStatus)}>
@@ -115,13 +125,37 @@ export default function CharacterPanel(props) {
             ""
           ) : (
             <Grid id="charPanelAvatarGridItem" item>
-              <div
-                id="charPanelAvatarImage"
-                style={{
-                  backgroundImage: `url("${"https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-avatar.jpg"}")`,
-                  ...imageStyle,
-                }}
-              />
+              <div style={{ position: "relative", textAlign: "center", color: "white" }}>
+                <div
+                  id="charPanelAvatarImage"
+                  style={{
+                    backgroundImage: `url("${"https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-avatar.jpg"}")`,
+                    ...imageStyle,
+                  }}
+                />
+                <div style={{ position: "absolute", bottom: 0, left: 0 }}>
+                  {classIcons(currentCharacter.spec, {
+                    height: 22,
+                    width: 22,
+                    margin: "0px 2px 0px 0px",
+                    verticalAlign: "middle",
+                    borderRadius: 4,
+                    border: "1px solid" + classColoursJS(currentCharacter.spec),
+                  })}
+                </div>
+                <div style={{ position: "absolute", bottom: 0, right: 0 }}>
+                  <Tooltip title={t(covenant)} style={{ color: classColoursJS(currentCharacter.spec) }} placement="top">
+                    {covenantIcons(covenant, {
+                      height: 22,
+                      width: 22,
+                      // margin: "0px 5px 0px 5px",
+                      verticalAlign: "middle",
+                      borderRadius: 4,
+                      border: "1px solid" + covenantColours(covenant),
+                    })}
+                  </Tooltip>
+                </div>
+              </div>
             </Grid>
           )}
           <Grid id="charPanelMainContainer" item xs={12} sm container>
@@ -131,11 +165,9 @@ export default function CharacterPanel(props) {
                 {/* <div style={{ display: "inline-flex", verticalAlign: "middle" }}> */}
                 <Grid item xs container direction="row" spacing={1}>
                   {/* ----------------------------------------- Class Icon -----------------------------------------  */}
-                  {/* {classIcons(currentCharacter.spec, { height: 30, width: 30, margin: "0px 2px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })} */}
+
                   {/* ---------------------------------------- Covenant Icon ---------------------------------------  */}
-                  {/* <Tooltip title={t(covenant)} style={{ color: classColoursJS(currentCharacter.spec) }} placement="top">
-                        {covenantIcons(covenant, 30, 30)}
-                      </Tooltip> */}
+
                   <Grid item container direction="row">
                     <Grid item xs={12}>
                       <div
@@ -203,9 +235,13 @@ export default function CharacterPanel(props) {
                 />
               </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <Divider style={{ align: "center" }} />
-            </Grid>
+            {props.player.activeItems.count > 0 ? (
+              <Grid item xs={12}>
+                <Divider style={{ align: "center" }} />
+              </Grid>
+            ) : (
+              ""
+            )}
             <Grid item sm container justifyContent="flex-start" spacing={0}>
               {/* ----------------------------------- Simcraft import button -----------------------------------  */}
 

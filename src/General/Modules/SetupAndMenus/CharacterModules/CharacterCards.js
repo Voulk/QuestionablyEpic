@@ -394,7 +394,14 @@ export default function CharCards(props) {
                     {/* ---------------------------------------- Covenant Icon ---------------------------------------  */}
                     {gameType === "Retail" ? (
                       <Tooltip title={t(covenant)} style={{ color: classColoursJS(spec) }} placement="top">
-                        {covenantIcons(covenant, 20, 20)}
+                        {covenantIcons(covenant, {
+                          height: 20,
+                          width: 20,
+                          margin: "0px 5px 0px 5px",
+                          verticalAlign: "middle",
+                          borderRadius: 4,
+                          border: "1px solid rgba(255, 255, 255, 0.12)",
+                        })}
                       </Tooltip>
                     ) : (
                       ""
@@ -567,7 +574,14 @@ export default function CharCards(props) {
                                   .map((key, i) => (
                                     <MenuItem key={"charChardCovenant" + i} value={key}>
                                       <div style={{ display: "inline-flex" }}>
-                                        {covenantIcons(key, 20, 20)}
+                                        {covenantIcons(key, {
+                                          height: 20,
+                                          width: 20,
+                                          margin: "0px 5px 0px 5px",
+                                          verticalAlign: "middle",
+                                          borderRadius: 4,
+                                          border: "1px solid rgba(255, 255, 255, 0.12)",
+                                        })}
                                         {t(key)}
                                       </div>
                                     </MenuItem>
@@ -729,177 +743,181 @@ export default function CharCards(props) {
                 {/* -------------------------------------------------------------------------- */
                 /*                          Imported WarcraftLog Data                         */
                 /* -------------------------------------------------------------------------- */}
-                {gameType === "Retail" ? 
-                <Grid container spacing={1}>
-                  {/* map here */}
-                  <Grid item xs={12} container>
-                    {/* ------------------------------- Logs Header ------------------------------ */}
-                    <Grid item xs={12}>
-                      <Typography variant="h6" align="center" noWrap color="primary" style={{ marginTop: "12px" }}>
-                        {/* TODO: Translate */}
-                        {t("CharacterCreator.SavedLogs.Header")}
-                      </Typography>
+                {gameType === "Retail" ? (
+                  <Grid container spacing={1}>
+                    {/* map here */}
+                    <Grid item xs={12} container>
+                      {/* ------------------------------- Logs Header ------------------------------ */}
+                      <Grid item xs={12}>
+                        <Typography variant="h6" align="center" noWrap color="primary" style={{ marginTop: "12px" }}>
+                          {/* TODO: Translate */}
+                          {t("CharacterCreator.SavedLogs.Header")}
+                        </Typography>
+                      </Grid>
                     </Grid>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Paper style={{ backgroundColor: "#525252", padding: 16 }} elevation={0}>
-                      <Grid container>
-                        <Grid item container xs={11} spacing={1}>
-                          {/* -------------------------------- Report ID -------------------------------  */}
-                          <Grid item xs={3}>
-                            <Typography style={{ display: "inline-flex" }}>
-                              {t("CharacterCreator.SavedLogs.Report") + ":"}
-                              <Typography color="primary" style={{ paddingLeft: 4 }}>
-                                {props.char.getReportID(contentType)}
+                    <Grid item xs={12}>
+                      <Paper style={{ backgroundColor: "#525252", padding: 16 }} elevation={0}>
+                        <Grid container>
+                          <Grid item container xs={11} spacing={1}>
+                            {/* -------------------------------- Report ID -------------------------------  */}
+                            <Grid item xs={3}>
+                              <Typography style={{ display: "inline-flex" }}>
+                                {t("CharacterCreator.SavedLogs.Report") + ":"}
+                                <Typography color="primary" style={{ paddingLeft: 4 }}>
+                                  {props.char.getReportID(contentType)}
+                                </Typography>
                               </Typography>
-                            </Typography>
-                          </Grid>
-                          {/* -------------------------------- Boss Name -------------------------------  */}
-                          <Grid item xs={3}>
-                            <Typography style={{ display: "inline-flex" }}>
-                              {t("CharacterCreator.SavedLogs.Boss") + ":"}
-                              <Typography color="primary" style={{ paddingLeft: 4 }}>
-                                {props.char.getBossName(contentType)}
+                            </Grid>
+                            {/* -------------------------------- Boss Name -------------------------------  */}
+                            <Grid item xs={3}>
+                              <Typography style={{ display: "inline-flex" }}>
+                                {t("CharacterCreator.SavedLogs.Boss") + ":"}
+                                <Typography color="primary" style={{ paddingLeft: 4 }}>
+                                  {props.char.getBossName(contentType)}
+                                </Typography>
                               </Typography>
-                            </Typography>
-                          </Grid>
-                          {/* ------------------------------ Fight Length ------------------------------  */}
-                          <Grid item xs={3}>
-                            <Typography style={{ display: "inline-flex" }}>
-                              {t("CharacterCreator.SavedLogs.FightLength") + ":"}
-                              <Typography color="primary" style={{ paddingLeft: 4 }}>
-                                {sec2hmmss(props.char.getFightLength(contentType))}
+                            </Grid>
+                            {/* ------------------------------ Fight Length ------------------------------  */}
+                            <Grid item xs={3}>
+                              <Typography style={{ display: "inline-flex" }}>
+                                {t("CharacterCreator.SavedLogs.FightLength") + ":"}
+                                <Typography color="primary" style={{ paddingLeft: 4 }}>
+                                  {sec2hmmss(props.char.getFightLength(contentType))}
+                                </Typography>
                               </Typography>
-                            </Typography>
-                          </Grid>
-                          {/* ----------------------------------- HPS ----------------------------------  */}
-                          <Grid item xs={3}>
-                            <Typography style={{ display: "inline-flex" }}>
-                              {t("CharacterCreator.SavedLogs.HPS") + ":"}
-                              <Typography color="primary" style={{ paddingLeft: 4 }}>
-                                {props.char.getHPS(contentType)}
+                            </Grid>
+                            {/* ----------------------------------- HPS ----------------------------------  */}
+                            <Grid item xs={3}>
+                              <Typography style={{ display: "inline-flex" }}>
+                                {t("CharacterCreator.SavedLogs.HPS") + ":"}
+                                <Typography color="primary" style={{ paddingLeft: 4 }}>
+                                  {props.char.getHPS(contentType)}
+                                </Typography>
                               </Typography>
-                            </Typography>
-                          </Grid>
-                          {/* --------------------------------- Raw HPS --------------------------------  */}
-                          {/* <Grid item> */}
-                          {/*<Typography style={{ display: "inline-flex" }}>
+                            </Grid>
+                            {/* --------------------------------- Raw HPS --------------------------------  */}
+                            {/* <Grid item> */}
+                            {/*<Typography style={{ display: "inline-flex" }}>
                           {t("CharacterCreator.SavedLogs.RawHPS") + ":"}
                           <Typography color="primary" style={{ paddingLeft: 4 }}>
                             {props.char.getRawHPS(contentType)}
                           </Typography>
                         </Typography> */}
-                          {/* </Grid> */}
+                            {/* </Grid> */}
+                          </Grid>
+                          <Grid item xs={1} style={{ alignSelf: "center", textAlign: "center" }}>
+                            <Tooltip title={t("Delete")} arrow>
+                              <IconButton
+                                // onClick={deleteItemCard}
+                                aria-label="delete"
+                                size="small"
+                              >
+                                {/*<DeleteIcon style={{ color: "#ad2c34", paddingTop: 2 }} fontSize="large" /> */}
+                              </IconButton>
+                            </Tooltip>
+                          </Grid>
                         </Grid>
-                        <Grid item xs={1} style={{ alignSelf: "center", textAlign: "center" }}>
-                          <Tooltip title={t("Delete")} arrow>
-                            <IconButton
-                              // onClick={deleteItemCard}
-                              aria-label="delete"
-                              size="small"
-                            >
-                              {/*<DeleteIcon style={{ color: "#ad2c34", paddingTop: 2 }} fontSize="large" /> */}
-                            </IconButton>
-                          </Tooltip>
-                        </Grid>
-                      </Grid>
-                    </Paper>
+                      </Paper>
+                    </Grid>
                   </Grid>
-                </Grid>
-                : ""}
+                ) : (
+                  ""
+                )}
               </DialogContent>
             </Grid>
           </div>
         </TabPanel>
 
         {/* Saved Logs */}
-        {gameType === "Retail" ? 
-        <TabPanel value={tabvalue} index={1}>
-          <div className={classes.panel} style={{ minWidth: 912, minHeight: 506.36, padding: "20px 24px" }}>
-            <Grid container spacing={1}>
-              <Grid item xs={12}>
-                <Typography variant="h6" align="center" noWrap color="primary" style={{ marginTop: "12px" }}>
-                  {/* TODO: Translate */}
-                  {t("CharacterCreator.SavedLogs.Header")}
-                </Typography>
-              </Grid>
+        {gameType === "Retail" ? (
+          <TabPanel value={tabvalue} index={1}>
+            <div className={classes.panel} style={{ minWidth: 912, minHeight: 506.36, padding: "20px 24px" }}>
+              <Grid container spacing={1}>
+                <Grid item xs={12}>
+                  <Typography variant="h6" align="center" noWrap color="primary" style={{ marginTop: "12px" }}>
+                    {/* TODO: Translate */}
+                    {t("CharacterCreator.SavedLogs.Header")}
+                  </Typography>
+                </Grid>
 
-              <Grid item xs={12}>
-                <Accordion disabled onClick={() => ""} style={{ backgroundColor: "#525252" }}>
-                  <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-                    <Grid container spacing={1}>
-                      <Grid container>
-                        <Grid item container xs={11} spacing={1}>
-                          {/* -------------------------------- Report ID -------------------------------  */}
-                          <Grid item xs={3}>
-                            <Typography style={{ display: "inline-flex" }}>
-                              {t("CharacterCreator.SavedLogs.Report") + ":"}
-                              <Typography color="primary" style={{ paddingLeft: 4 }}>
-                                {props.char.getReportID(contentType)}
+                <Grid item xs={12}>
+                  <Accordion disabled onClick={() => ""} style={{ backgroundColor: "#525252" }}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+                      <Grid container spacing={1}>
+                        <Grid container>
+                          <Grid item container xs={11} spacing={1}>
+                            {/* -------------------------------- Report ID -------------------------------  */}
+                            <Grid item xs={3}>
+                              <Typography style={{ display: "inline-flex" }}>
+                                {t("CharacterCreator.SavedLogs.Report") + ":"}
+                                <Typography color="primary" style={{ paddingLeft: 4 }}>
+                                  {props.char.getReportID(contentType)}
+                                </Typography>
                               </Typography>
-                            </Typography>
-                          </Grid>
-                          {/* -------------------------------- Boss Name -------------------------------  */}
-                          <Grid item xs={3}>
-                            <Typography style={{ display: "inline-flex" }}>
-                              {t("CharacterCreator.SavedLogs.Boss") + ":"}
-                              <Typography color="primary" style={{ paddingLeft: 4 }}>
-                                {props.char.getBossName(contentType)}
+                            </Grid>
+                            {/* -------------------------------- Boss Name -------------------------------  */}
+                            <Grid item xs={3}>
+                              <Typography style={{ display: "inline-flex" }}>
+                                {t("CharacterCreator.SavedLogs.Boss") + ":"}
+                                <Typography color="primary" style={{ paddingLeft: 4 }}>
+                                  {props.char.getBossName(contentType)}
+                                </Typography>
                               </Typography>
-                            </Typography>
-                          </Grid>
-                          {/* ------------------------------ Fight Length ------------------------------  */}
-                          <Grid item xs={3}>
-                            <Typography style={{ display: "inline-flex" }}>
-                              {t("CharacterCreator.SavedLogs.FightLength") + ":"}
-                              <Typography color="primary" style={{ paddingLeft: 4 }}>
-                                {sec2hmmss(props.char.getFightLength(contentType))}
+                            </Grid>
+                            {/* ------------------------------ Fight Length ------------------------------  */}
+                            <Grid item xs={3}>
+                              <Typography style={{ display: "inline-flex" }}>
+                                {t("CharacterCreator.SavedLogs.FightLength") + ":"}
+                                <Typography color="primary" style={{ paddingLeft: 4 }}>
+                                  {sec2hmmss(props.char.getFightLength(contentType))}
+                                </Typography>
                               </Typography>
-                            </Typography>
-                          </Grid>
-                          {/* ----------------------------------- HPS ----------------------------------  */}
-                          <Grid item xs={3}>
-                            <Typography style={{ display: "inline-flex" }}>
-                              {t("CharacterCreator.SavedLogs.HPS") + ":"}
-                              <Typography color="primary" style={{ paddingLeft: 4 }}>
-                                {props.char.getHPS(contentType)}
+                            </Grid>
+                            {/* ----------------------------------- HPS ----------------------------------  */}
+                            <Grid item xs={3}>
+                              <Typography style={{ display: "inline-flex" }}>
+                                {t("CharacterCreator.SavedLogs.HPS") + ":"}
+                                <Typography color="primary" style={{ paddingLeft: 4 }}>
+                                  {props.char.getHPS(contentType)}
+                                </Typography>
                               </Typography>
-                            </Typography>
-                          </Grid>
-                          {/* --------------------------------- Raw HPS --------------------------------  */}
-                          {/* <Grid item> */}
-                          {/*<Typography style={{ display: "inline-flex" }}>
+                            </Grid>
+                            {/* --------------------------------- Raw HPS --------------------------------  */}
+                            {/* <Grid item> */}
+                            {/*<Typography style={{ display: "inline-flex" }}>
                           {t("CharacterCreator.SavedLogs.RawHPS") + ":"}
                           <Typography color="primary" style={{ paddingLeft: 4 }}>
                             {props.char.getRawHPS(contentType)}
                           </Typography>
                         </Typography> */}
-                          {/* </Grid> */}
-                        </Grid>
-                        <Grid item xs={1} style={{ alignSelf: "center", textAlign: "center" }}>
-                          <Tooltip title={t("Delete")} arrow>
-                            <IconButton
-                              // onClick={deleteItemCard}
-                              aria-label="delete"
-                              size="small"
-                            >
-                              {/*<DeleteIcon style={{ color: "#ad2c34", paddingTop: 2 }} fontSize="large" /> */}
-                            </IconButton>
-                          </Tooltip>
+                            {/* </Grid> */}
+                          </Grid>
+                          <Grid item xs={1} style={{ alignSelf: "center", textAlign: "center" }}>
+                            <Tooltip title={t("Delete")} arrow>
+                              <IconButton
+                                // onClick={deleteItemCard}
+                                aria-label="delete"
+                                size="small"
+                              >
+                                {/*<DeleteIcon style={{ color: "#ad2c34", paddingTop: 2 }} fontSize="large" /> */}
+                              </IconButton>
+                            </Tooltip>
+                          </Grid>
                         </Grid>
                       </Grid>
-                    </Grid>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    {/* ----------------------- Cast Model Breakdown Table -----------------------  */}
-                    <LogDetailsTable data={props.char.getSpellList(contentType)} />
-                  </AccordionDetails>
-                </Accordion>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      {/* ----------------------- Cast Model Breakdown Table -----------------------  */}
+                      <LogDetailsTable data={props.char.getSpellList(contentType)} />
+                    </AccordionDetails>
+                  </Accordion>
+                </Grid>
               </Grid>
-            </Grid>
-          </div>
-        </TabPanel>
-        : ""}
+            </div>
+          </TabPanel>
+        ) : (
+          ""
+        )}
 
         <DialogActions>
           <div

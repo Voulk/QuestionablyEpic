@@ -243,7 +243,14 @@ export default function AddNewChar(props) {
                           .map((key, i) => (
                             <MenuItem key={"covenant" + i} value={key}>
                               <div style={{ display: "inline-flex" }}>
-                                {covenantIcons(key, 26, 26)}
+                                {covenantIcons(key, {
+                                  height: 26,
+                                  width: 26,
+                                  margin: "0px 5px 0px 5px",
+                                  verticalAlign: "middle",
+                                  borderRadius: "4px",
+                                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                                })}
                                 {t(key)}
                               </div>
                             </MenuItem>
