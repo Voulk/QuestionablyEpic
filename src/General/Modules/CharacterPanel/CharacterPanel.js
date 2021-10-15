@@ -61,6 +61,33 @@ const getSimCStatus = (player, gameType) => {
   else return "Good";
 };
 
+const classTranslator = (spec) => {
+  switch (spec) {
+    case "Restoration Druid":
+      return "Classes.RestorationDruid";
+    case "Mistweaver Monk":
+      return "Classes.MistweaverMonk";
+    case "Holy Paladin":
+      return "Classes.HolyPaladin";
+    case "Restoration Shaman":
+      return "Classes.RestorationShaman";
+    case "Holy Priest":
+      return "Classes.HolyPriest";
+    case "Discipline Priest":
+      return "Classes.DisciplinePriest";
+    case "Holy Paladin BC":
+      return "Classes.Holy Paladin BC";
+    case "Restoration Druid BC":
+      return "Classes.Restoration Druid";
+    case "Holy Priest BC":
+      return "Classes.Holy Priest";
+    case "Restoration Shaman BC":
+      return "Classes.Restoration Shaman";
+    default:
+      return "Error";
+  }
+};
+
 export default function CharacterPanel(props) {
   const classes = useStyles();
   const playerStats = props.player.getActiveStats();
@@ -105,14 +132,15 @@ export default function CharacterPanel(props) {
     backgroundRepeat: "no-repeat",
     textAlign: "center",
     position: "relative",
-    border: "1px solid rgb(118, 118, 118)",
+    border: "1px solid" + classColoursJS(currentCharacter.spec), //rgb(118, 118, 118)",
     // flex: "1 1 10%",
     backgroundSize: "auto 100%",
-    height: 82,
-    width: 82,
+    height: 72,
+    width: 72,
     borderRadius: 4,
   };
   console.log(imageStyle);
+
   return (
     <Paper elevation={0} className={check(simcStatus)}>
       <div style={{ padding: "8px 8px 8px 8px" }}>
@@ -124,7 +152,7 @@ export default function CharacterPanel(props) {
           {backgroundImage === "" ? (
             ""
           ) : (
-            <Grid id="charPanelAvatarGridItem" item>
+            <Grid id="charPanelAvatarGridItem" item xs={3} lg="auto">
               <div style={{ position: "relative", textAlign: "center", color: "white" }}>
                 <div
                   id="charPanelAvatarImage"
@@ -133,37 +161,44 @@ export default function CharacterPanel(props) {
                     ...imageStyle,
                   }}
                 />
-                <div style={{ position: "absolute", bottom: 0, left: 0 }}>
-                  {classIcons(currentCharacter.spec, {
-                    height: 22,
-                    width: 22,
-                    margin: "0px 2px 0px 0px",
-                    verticalAlign: "middle",
-                    borderRadius: 4,
-                    border: "1px solid" + classColoursJS(currentCharacter.spec),
-                  })}
+                <div style={{ position: "absolute", bottom: 1, left: 1 }}>
+                  <Tooltip title={t(classTranslator(currentCharacter.spec))} style={{ color: classColoursJS(currentCharacter.spec) }} placement="left">
+                    {classIcons(currentCharacter.spec, {
+                      height: 22,
+                      width: 22,
+                      margin: "0px 2px 0px 0px",
+                      verticalAlign: "middle",
+                      borderRadius: "0px 0px 0px 4px",
+                      borderRight: "1px solid " + classColoursJS(currentCharacter.spec),
+                      borderTop: "1px solid" + classColoursJS(currentCharacter.spec),
+                      // borderBottom: "1px solid" + classColoursJS(currentCharacter.spec),
+                    })}
+                  </Tooltip>
                 </div>
-                <div style={{ position: "absolute", bottom: 0, right: 0 }}>
-                  <Tooltip title={t(covenant)} style={{ color: classColoursJS(currentCharacter.spec) }} placement="top">
+
+                <div style={{ position: "absolute", bottom: 24, left: 1 }}>
+                  <Tooltip title={t(covenant)} style={{ color: classColoursJS(currentCharacter.spec) }} placement="left">
                     {covenantIcons(covenant, {
                       height: 22,
                       width: 22,
                       // margin: "0px 5px 0px 5px",
                       verticalAlign: "middle",
-                      borderRadius: 4,
-                      border: "1px solid" + covenantColours(covenant),
+                      borderRadius: "0px 4px 0px 0px",
+                      borderRight: "1px solid" + covenantColours(covenant),
+                      borderTop: "1px solid" + covenantColours(covenant),
+                      // borderBottom: "1px solid" + covenantColours(covenant),
                     })}
                   </Tooltip>
                 </div>
               </div>
             </Grid>
           )}
-          <Grid id="charPanelMainContainer" item xs={12} sm container>
+          <Grid id="charPanelMainContainer" item xs={12} sm container spacing={1}>
             {/* <Grid item xs container direction="column" spacing={0} justifyContent="space-between"> */}
-            <Grid item xs={12} container direction="row" spacing={1} justifyContent="space-between">
-              <Grid item xs>
+            <Grid item xs={12} container direction="row" spacing={0} justifyContent="space-between">
+              <Grid item xs={12} lg>
                 {/* <div style={{ display: "inline-flex", verticalAlign: "middle" }}> */}
-                <Grid item xs container direction="row" spacing={1}>
+                <Grid item xs container direction="row" spacing={0}>
                   {/* ----------------------------------------- Class Icon -----------------------------------------  */}
 
                   {/* ---------------------------------------- Covenant Icon ---------------------------------------  */}
@@ -208,7 +243,7 @@ export default function CharacterPanel(props) {
                       /* --------------------------------------- Character Stats --------------------------------------  */
                       // The characters current stat totals are mapped with verticle dividers between them
                     }
-                    <Grid item xs={12} style={{ height: 8 }}>
+                    {/* <Grid item xs={12} style={{ height: 8 }}> */}
                       {/* <div style={{ verticalAlign: "top", marginTop: -1, display: "inline-flex" }}> */}
                       <Grid container spacing={1}>
                         {Object.keys(playerStats).map((key) => (
@@ -218,7 +253,7 @@ export default function CharacterPanel(props) {
                         ))}
                       </Grid>
                       {/* </div> */}
-                    </Grid>
+                    {/* </Grid> */}
                   </Grid>
                 </Grid>
                 {/* </div> */}
@@ -235,13 +270,11 @@ export default function CharacterPanel(props) {
                 />
               </Grid>
             </Grid>
-            {props.player.activeItems.count > 0 ? (
-              <Grid item xs={12}>
-                <Divider style={{ align: "center" }} />
-              </Grid>
-            ) : (
-              ""
-            )}
+
+            <Grid item xs={12}>
+              <Divider style={{ align: "center" }} />
+            </Grid>
+
             <Grid item sm container justifyContent="flex-start" spacing={0}>
               {/* ----------------------------------- Simcraft import button -----------------------------------  */}
 
@@ -250,34 +283,40 @@ export default function CharacterPanel(props) {
                 // Map currently equipped items with wowhead tooltips
               }
               <Grid item container xs justifyContent="center" spacing={1} alignItems="center">
-                {props.player.activeItems
-                  .filter((key) => key.isEquipped === true)
-                  .map((key, i) => (
-                    <Grid item key={i}>
-                      <a
-                        style={
-                          {
-                            // margin: "2px 2px"
+                {props.player.activeItems.length > 0 ? (
+                  props.player.activeItems
+                    .filter((key) => key.isEquipped === true)
+                    .map((key, i) => (
+                      <Grid item key={i}>
+                        <a
+                          style={
+                            {
+                              // margin: "2px 2px"
+                            }
                           }
-                        }
-                        data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + wowheadDom}
-                        key={i}
-                      >
-                        <img
-                          style={{
-                            height: 26,
-                            width: 26,
-                            verticalAlign: "middle",
-                            borderRadius: "8px",
-                            border: "1px solid",
-                            borderColor: key.getQualityColor(),
-                          }}
-                          src={getItemIcon(key.id, gameType)}
-                          alt=""
-                        />
-                      </a>
-                    </Grid>
-                  ))}
+                          data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + wowheadDom}
+                          key={i}
+                        >
+                          <img
+                            style={{
+                              height: 26,
+                              width: 26,
+                              verticalAlign: "middle",
+                              borderRadius: "8px",
+                              border: "1px solid",
+                              borderColor: key.getQualityColor(),
+                            }}
+                            src={getItemIcon(key.id, gameType)}
+                            alt=""
+                          />
+                        </a>
+                      </Grid>
+                    ))
+                ) : (
+                  <Grid item key={i}>
+                    <Typography>No import detected, Import your Gear via the "Import Gear" Button</Typography>
+                  </Grid>
+                )}
               </Grid>
             </Grid>
             {/* </Grid> */}
