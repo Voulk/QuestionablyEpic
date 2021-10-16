@@ -152,7 +152,7 @@ export default function CharacterPanel(props) {
           {backgroundImage === "" ? (
             ""
           ) : (
-            <Grid id="charPanelAvatarGridItem" item xs={3} lg="auto">
+            <Grid id="charPanelAvatarGridItem" item xs={12} sm="auto">
               <div style={{ position: "relative", textAlign: "center", color: "white" }}>
                 <div
                   id="charPanelAvatarImage"
@@ -195,8 +195,8 @@ export default function CharacterPanel(props) {
           )}
           <Grid id="charPanelMainContainer" item xs={12} sm container spacing={1}>
             {/* <Grid item xs container direction="column" spacing={0} justifyContent="space-between"> */}
-            <Grid item xs={12} container direction="row" spacing={0} justifyContent="space-between">
-              <Grid item xs={12} lg>
+            <Grid item xs={12} sm container direction="row" spacing={0} justifyContent="space-between">
+              <Grid item xs={12} sm>
                 {/* <div style={{ display: "inline-flex", verticalAlign: "middle" }}> */}
                 <Grid item xs container direction="row" spacing={0}>
                   {/* ----------------------------------------- Class Icon -----------------------------------------  */}
@@ -244,21 +244,21 @@ export default function CharacterPanel(props) {
                       // The characters current stat totals are mapped with verticle dividers between them
                     }
                     {/* <Grid item xs={12} style={{ height: 8 }}> */}
-                      {/* <div style={{ verticalAlign: "top", marginTop: -1, display: "inline-flex" }}> */}
-                      <Grid container spacing={1}>
-                        {Object.keys(playerStats).map((key) => (
-                          <Grid item>
-                            <Typography style={{ fontSize: 11, lineHeight: 1 }}>{t(capitalizeFirstLetter(key)) + ": " + playerStats[key]}</Typography>
-                          </Grid>
-                        ))}
-                      </Grid>
-                      {/* </div> */}
+                    {/* <div style={{ verticalAlign: "top", marginTop: -1, display: "inline-flex" }}> */}
+                    <Grid container spacing={1}>
+                      {Object.keys(playerStats).map((key) => (
+                        <Grid item>
+                          <Typography style={{ fontSize: 11, lineHeight: 1 }}>{t(capitalizeFirstLetter(key)) + ": " + playerStats[key]}</Typography>
+                        </Grid>
+                      ))}
+                    </Grid>
+                    {/* </div> */}
                     {/* </Grid> */}
                   </Grid>
                 </Grid>
                 {/* </div> */}
               </Grid>
-              <Grid item xs={12} lg={"auto"}>
+              <Grid item xs={12} sm="auto">
                 <SimCraftInput
                   buttonLabel={t("UpgradeFinderFront.SimCButton")}
                   disableElevation={true}
@@ -271,7 +271,7 @@ export default function CharacterPanel(props) {
               </Grid>
             </Grid>
 
-            <Grid item xs={12}>
+            <Grid item xs={12} style={{ padding: "0px 4px" }}>
               <Divider style={{ align: "center" }} />
             </Grid>
 
@@ -299,8 +299,8 @@ export default function CharacterPanel(props) {
                         >
                           <img
                             style={{
-                              height: 26,
-                              width: 26,
+                              height: 22,
+                              width: 22,
                               verticalAlign: "middle",
                               borderRadius: "8px",
                               border: "1px solid",

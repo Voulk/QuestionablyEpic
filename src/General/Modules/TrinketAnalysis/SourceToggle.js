@@ -17,7 +17,7 @@ export default function SourceToggle(props) {
 
   // TODO: Localise Tooltips?
   return (
-    <ToggleButtonGroup value={metric} onChange={setMetric} aria-label="contentToggle" size="small">
+    <ToggleButtonGroup value={metric} onChange={setMetric} aria-label="contentToggle" size="small" style={{ padding: 8 }}>
       <ToggleButton style={{ padding: 5 }} value="Raids" aria-label="dpsLabel">
         <Tooltip title={"Raids"} arrow>
           <div style={{ display: "inline-flex" }}>

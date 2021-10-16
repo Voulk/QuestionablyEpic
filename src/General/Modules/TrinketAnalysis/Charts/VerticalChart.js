@@ -106,7 +106,7 @@ export default class VerticalChart extends PureComponent {
           data={cleanedArray}
           layout="vertical"
           margin={{
-            top: 20,
+            top: 0,
             right: 40,
             bottom: 20,
             left: 250,
@@ -150,7 +150,7 @@ export default class VerticalChart extends PureComponent {
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
           {iLvls.map((key, i) => (
-            <Bar dataKey={iLvlsVisible[key] ? key : ""} fill={barColours[colourBlind ? iLvls.length - i : i]} stackId="a" />
+            <Bar dataKey={iLvlsVisible[key] ? key : ""} fill={barColours[i]} stackId="a" />
           ))}
         </BarChart>
       </ResponsiveContainer>

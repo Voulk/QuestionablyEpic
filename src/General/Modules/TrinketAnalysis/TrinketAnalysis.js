@@ -119,8 +119,7 @@ export default function TrinketAnalysis(props) {
   const { t } = useTranslation();
   const [metric, setMetric] = React.useState("hps");
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]);
-  const [theme, setTheme] = React.useState("candidate2");
-  const [colourBlind, setColourBlind] = React.useState(false);
+  const [theme, setTheme] = React.useState(false);
 
   const availableThemes = ["candidate1", "candidate2", "candidate3", "candidate4", "candidate5", "candidate6", "candidate7", "IBM", "wong", "candidate10", "candidate11", "candidate12", "candidate13"];
 
@@ -284,9 +283,11 @@ export default function TrinketAnalysis(props) {
   const filteredTrinketDB = sourceHandler(trinketDB, sources);
 
   const helpBlurb = [t("TrinketAnalysis.HelpText")];
-  const helpText = ["The graph is generic to your spec and content type. You can get results accurate to your character in the Top Gear module.",
-                    "World Quest trinkets coming very soon.",
-                    "This is a sampling of available trinkets only. You can add ones that aren't on the list in Top Gear."];
+  const helpText = [
+    "The graph is generic to your spec and content type. You can get results accurate to your character in the Top Gear module.",
+    "World Quest trinkets coming very soon.",
+    "This is a sampling of available trinkets only. You can add ones that aren't on the list in Top Gear.",
+  ];
   const classes = useStyles();
 
   const editSettings = (setting, newValue) => {
@@ -354,54 +355,59 @@ export default function TrinketAnalysis(props) {
         {/* <Grid item xs={12}>
           <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} />
         </Grid> */}
-        {gameType === "Retail" ? (
-          <Grid item xs={12} container spacing={0} direction="row" justify="flex-end">
-            {/* <Grid item>
-              <MetricToggle metric={metric} setMetric={setMetric} />
-            </Grid> */}
-
+        {/* {gameType === "Retail" ? (
+          <Grid item xs={12}>
             <Grid item>
-              <SourceToggle metric={sources} setMetric={handleSource} />
+              <MetricToggle metric={metric} setMetric={setMetric} />
             </Grid>
           </Grid>
         ) : (
           ""
-        )}
+        )} */}
         <Grid item xs={12}>
-          <Grid container spacing={1} justify="center">
+          <Grid container spacing={0} justify="center">
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                {gameType === "Retail" ? (
-                  <VerticalChart data={activeTrinkets} db={finalDB} colourBlind={colourBlind} theme={themeSelection(theme)} />
-                ) : (
-                  <BCChart data={activeTrinkets} db={trinketDB} />
-                )}
+                <Grid container spacing={1} direction="row" justify="flex-end">
+                  <Grid item>
+                    <SourceToggle metric={sources} setMetric={handleSource} />
+                  </Grid>
+                  {gameType === "Retail" ? (
+                    <Grid item xs={12}>
+                      <VerticalChart data={activeTrinkets} db={finalDB} theme={themeSelection(theme ? "candidate2" : "candidate11")} />
+                    </Grid>
+                  ) : (
+                    <Grid item xs={12}>
+                      <BCChart data={activeTrinkets} db={trinketDB} />
+                    </Grid>
+                  )}
+                </Grid>
               </Paper>
             </Grid>
           </Grid>
         </Grid>
         {gameType === "Retail" ? (
           <Grid item xs={12} container spacing={0} direction="row" justify="flex-end">
-            <Grid item>
+            {/* <Grid item>
               <Select key={"themeSelector"} labelId="themeSelectorID" variant="outlined" value={theme} onChange={(e) => setTheme(e.target.value)} MenuProps={menuStyle} label={"Cooldowns Shown"}>
                 {availableThemes.map((key) => (
                   <MenuItem value={key}>{key}</MenuItem>
                 ))}
               </Select>
-            </Grid>
-            {/* <Grid item>
-              <Tooltip title={"Colourblind Mode"} arrow>
+            </Grid> */}
+            <Grid item>
+              <Tooltip title={"Alternate Theme"} arrow>
                 <ToggleButton
                   value="check"
-                  selected={colourBlind}
+                  selected={theme}
                   onChange={() => {
-                    setColourBlind(!colourBlind);
+                    setTheme(!theme);
                   }}
                 >
                   <VisibilityIcon />
                 </ToggleButton>
               </Tooltip>
-            </Grid> */}
+            </Grid>
           </Grid>
         ) : (
           ""
