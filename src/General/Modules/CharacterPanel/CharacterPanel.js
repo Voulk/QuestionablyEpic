@@ -88,6 +88,21 @@ const classTranslator = (spec) => {
   }
 };
 
+/* ------------------------------ Spec Images. ------------------------------ */
+const specImages = {
+  "Restoration Druid": require("Images/DruidSmall.jpg"),
+  "Restoration Shaman": require("Images/ShamanSmall.png"),
+  "Discipline Priest": require("Images/DiscSmall.jpg"),
+  "Holy Paladin": require("Images/PaladinSmall.png"),
+  "Holy Priest": require("Images/HPriestSmall.jpg"),
+  "Mistweaver Monk": require("Images/MistweaverSmall.jpg"),
+
+  "Holy Paladin BC": require("Images/classicon_paladin.jpg"),
+  "Restoration Druid BC": require("Images/classicon_druid.jpg"),
+  "Restoration Shaman BC": require("Images/classicon_shaman.jpg"),
+  "Holy Priest BC": require("Images/classicon_priest.jpg"),
+};
+
 export default function CharacterPanel(props) {
   const classes = useStyles();
   const playerStats = props.player.getActiveStats();
@@ -119,7 +134,13 @@ export default function CharacterPanel(props) {
 
   useEffect(() => {
     async function setImg() {
-      const img = await apiGetPlayerImage(currentCharacter);
+      let img = "";
+      if (gameType === "etail") {
+        img = await apiGetPlayerImage(currentCharacter);
+      } else {
+        img = `url(${specImages[currentCharacter.spec].default})`;
+      }
+
       console.log(img);
       setBackgroundImage(img);
     }
@@ -127,7 +148,6 @@ export default function CharacterPanel(props) {
     setImg();
   }, []);
 
-  // TODO: this will be removed potentially by using the blizzard created avatar image.
   const imageStyle = {
     backgroundRepeat: "no-repeat",
     textAlign: "center",
@@ -139,7 +159,6 @@ export default function CharacterPanel(props) {
     width: 72,
     borderRadius: 4,
   };
-  console.log(imageStyle);
 
   return (
     <Paper elevation={0} className={check(simcStatus)}>
@@ -154,51 +173,72 @@ export default function CharacterPanel(props) {
           ) : (
             <Grid id="charPanelAvatarGridItem" item xs={12} sm="auto">
               <div style={{ position: "relative", textAlign: "center", color: "white" }}>
-                <div
-                  id="charPanelAvatarImage"
-                  style={{
-                    backgroundImage: `url("${"https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-avatar.jpg"}")`,
-                    ...imageStyle,
-                  }}
-                />
+                {gameType === "Retail" ? (
+                  <div
+                    id="charPanelAvatarImage"
+                    style={{
+                      backgroundImage: `url("${"https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-avatar.jpg"}")`,
+                      ...imageStyle,
+                    }}
+                  />
+                ) : (
+                  <div
+                    id="charPanelAvatarImage"
+                    style={{
+                      backgroundImage: backgroundImage,
+                      ...imageStyle,
+                    }}
+                  />
+                )}
                 <div style={{ position: "absolute", bottom: 1, left: 1 }}>
                   <Tooltip title={t(classTranslator(currentCharacter.spec))} style={{ color: classColoursJS(currentCharacter.spec) }} placement="left">
-                    {classIcons(currentCharacter.spec, {
-                      height: 22,
-                      width: 22,
-                      margin: "0px 2px 0px 0px",
-                      verticalAlign: "middle",
-                      borderRadius: "0px 0px 0px 4px",
-                      borderRight: "1px solid " + classColoursJS(currentCharacter.spec),
-                      borderTop: "1px solid" + classColoursJS(currentCharacter.spec),
-                      // borderBottom: "1px solid" + classColoursJS(currentCharacter.spec),
-                    })}
+                    {classIcons(
+                      currentCharacter.spec,
+                      gameType === "Retail"
+                        ? {
+                            height: 22,
+                            width: 22,
+                            margin: "0px 2px 0px 0px",
+                            verticalAlign: "middle",
+                            borderRadius: "0px 0px 0px 4px",
+                            borderRight: "1px solid " + classColoursJS(currentCharacter.spec),
+                            borderTop: "1px solid" + classColoursJS(currentCharacter.spec),
+                          }
+                        : {
+                            height: 26,
+                            width: 26,
+                            margin: "0px 2px 0px 0px",
+                            verticalAlign: "middle",
+                            borderRadius: "0px 4px 0px 4px",
+                            borderRight: "1px solid " + classColoursJS(currentCharacter.spec),
+                            borderTop: "1px solid" + classColoursJS(currentCharacter.spec),
+                          },
+                    )}
                   </Tooltip>
                 </div>
-
-                <div style={{ position: "absolute", bottom: 24, left: 1 }}>
-                  <Tooltip title={t(covenant)} style={{ color: classColoursJS(currentCharacter.spec) }} placement="left">
-                    {covenantIcons(covenant, {
-                      height: 22,
-                      width: 22,
-                      // margin: "0px 5px 0px 5px",
-                      verticalAlign: "middle",
-                      borderRadius: "0px 4px 0px 0px",
-                      borderRight: "1px solid" + covenantColours(covenant),
-                      borderTop: "1px solid" + covenantColours(covenant),
-                      // borderBottom: "1px solid" + covenantColours(covenant),
-                    })}
-                  </Tooltip>
-                </div>
+                {gameType === "Retail" ? (
+                  <div style={{ position: "absolute", bottom: 24, left: 1 }}>
+                    <Tooltip title={t(covenant)} style={{ color: classColoursJS(currentCharacter.spec) }} placement="left">
+                      {covenantIcons(covenant, {
+                        height: 22,
+                        width: 22,
+                        verticalAlign: "middle",
+                        borderRadius: "0px 4px 0px 0px",
+                        borderRight: "1px solid" + covenantColours(covenant),
+                        borderTop: "1px solid" + covenantColours(covenant),
+                      })}
+                    </Tooltip>
+                  </div>
+                ) : (
+                  ""
+                )}
               </div>
             </Grid>
           )}
           <Grid id="charPanelMainContainer" item xs={12} sm container spacing={1}>
-            {/* <Grid item xs container direction="column" spacing={0} justifyContent="space-between"> */}
             <Grid item xs={12} sm container direction="row" spacing={0} justifyContent="space-between">
-              <Grid item xs={12} sm>
-                {/* <div style={{ display: "inline-flex", verticalAlign: "middle" }}> */}
-                <Grid item xs container direction="row" spacing={0}>
+              <Grid item xs container direction="row" spacing={0}>
+                <Grid item xs={12} sm>
                   {/* ----------------------------------------- Class Icon -----------------------------------------  */}
 
                   {/* ---------------------------------------- Covenant Icon ---------------------------------------  */}
@@ -208,7 +248,6 @@ export default function CharacterPanel(props) {
                       <div
                         style={{
                           display: "inline-flex",
-                          //  verticalAlign: "top"
                         }}
                       >
                         {/* ------------------------------------- Character Name Text ------------------------------------ */}
@@ -218,7 +257,6 @@ export default function CharacterPanel(props) {
                             color: classColoursJS(currentCharacter.spec),
                             marginRight: 8,
                             fontSize: 16,
-                            // lineHeight: 1
                           }}
                         >
                           {currentCharacter.charName}
@@ -227,24 +265,25 @@ export default function CharacterPanel(props) {
                           /* ----------------------------------- Current Playstyle Text -----------------------------------  */
                           // The players currently selected playstyle
                         }
-                        <Typography
-                          variant="h6"
-                          color="primary"
-                          style={{
-                            fontSize: 16,
-                            //lineHeight: 1
-                          }}
-                        >
-                          {"- Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName}
-                        </Typography>
+                        {gameType === "Retail" ? (
+                          <Typography
+                            variant="h6"
+                            color="primary"
+                            style={{
+                              fontSize: 16,
+                            }}
+                          >
+                            {"- Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName}
+                          </Typography>
+                        ) : (
+                          ""
+                        )}
                       </div>
                     </Grid>
                     {
                       /* --------------------------------------- Character Stats --------------------------------------  */
                       // The characters current stat totals are mapped with verticle dividers between them
                     }
-                    {/* <Grid item xs={12} style={{ height: 8 }}> */}
-                    {/* <div style={{ verticalAlign: "top", marginTop: -1, display: "inline-flex" }}> */}
                     <Grid container spacing={1}>
                       {Object.keys(playerStats).map((key) => (
                         <Grid item>
@@ -252,12 +291,11 @@ export default function CharacterPanel(props) {
                         </Grid>
                       ))}
                     </Grid>
-                    {/* </div> */}
-                    {/* </Grid> */}
                   </Grid>
                 </Grid>
-                {/* </div> */}
               </Grid>
+              {/* ----------------------------------- Simcraft import button -----------------------------------  */}
+
               <Grid item xs={12} sm="auto">
                 <SimCraftInput
                   buttonLabel={t("UpgradeFinderFront.SimCButton")}
@@ -276,8 +314,6 @@ export default function CharacterPanel(props) {
             </Grid>
 
             <Grid item sm container justifyContent="flex-start" spacing={0}>
-              {/* ----------------------------------- Simcraft import button -----------------------------------  */}
-
               {
                 /* ----------------------------- Characters Active (Equipped) Items -----------------------------  */
                 // Map currently equipped items with wowhead tooltips
