@@ -185,6 +185,7 @@ export default function CharCards(props) {
   const [leech, setLeech] = React.useState(player.getStatWeight(contentType, STAT.LEECH));
   const [server, setServer] = React.useState(player.realm);
   const [backgroundImage, setBackgroundImage] = useState("");
+  const [avatar, setAvatar] = useState("");
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
@@ -363,7 +364,7 @@ export default function CharCards(props) {
     }
     return min + ":" + sec;
   };
-
+  console.log(props.char.charAvatarURL);
   return (
     /* -------------------------------------------------------------------------- */
     /*                      Character Card for the main menu                      */
@@ -371,7 +372,7 @@ export default function CharCards(props) {
     <Grid item xs={12} sm={6} md={6} lg={6} xl={4}>
       <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : null}>
         <Card className={rootClassName} variant="outlined" raised={true}>
-          <Avatar src={specImages[spec].default} variant="square" alt="" className={classes.large} />
+          <Avatar src={"https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-avatar.jpg"} variant="square" alt="" className={classes.large} />
           <Divider orientation="vertical" flexItem />
           <div className={classes.details}>
             <CardContent className={classes.content} style={{ paddingBottom: 0 }}>

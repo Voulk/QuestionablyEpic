@@ -11,7 +11,7 @@ import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults
 import { monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 import ls from "local-storage";
-import { apiGetPlayerImage2 } from "../SetupAndMenus/ConnectionUtilities";
+import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
 
 class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
@@ -26,7 +26,12 @@ class Player {
     this.realm = realm;
     this.race = race;
     this.uniqueHash = getUnique();
-    this.charImageURL = apiGetPlayerImage2(this.region, this.charName, this.realm);
+    this.charImageURL = apiGetPlayerImage2(this.region, this.charName, this.realm).then((res) => {
+      return res;
+    });
+    this.charAvatarURL = apiGetPlayerAvatar2(this.region, this.charName, this.realm).then((res) => {
+      return res;
+    });
 
     if (gameType === "Retail") {
       this.setupDefaults(specName);
@@ -34,12 +39,11 @@ class Player {
       this.activeConduits = getAvailableClassConduits(specName);
       this.gameType = "Retail";
     }
-    console.log(this.charImageURL)
+    console.log(this.charImageURL);
     //if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
 
     //this.getStatPerc = getStatPerc;
   }
-
 
   uniqueHash = ""; // used for deletion purposes.
   spec = "";
@@ -544,7 +548,6 @@ class Player {
     } else if (spec === SPEC.DISCPRIEST) {
       this.statWeights[contentType] = discPriestDefaultStatWeights(contentType);
       this.statWeights.DefaultWeights = true;
-      
     } else if (spec === SPEC.HOLYPRIEST) {
       this.statWeights[contentType] = holyPriestDefaultStatWeights(contentType);
       this.statWeights.DefaultWeights = true;
@@ -631,7 +634,6 @@ class Player {
         stamina: 1900,
       };
       //this.getActiveModel("Raid").setRampInfo(this.activeStats, []);
-
     } else if (spec === SPEC.HOLYPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));

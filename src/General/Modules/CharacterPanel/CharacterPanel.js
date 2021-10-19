@@ -11,7 +11,7 @@ import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import Settings from "../Settings/Settings";
 import { covenantIcons, covenantColours } from "../CooldownPlanner/Functions/CovenantFunctions";
-import { apiGetPlayerImage } from "../SetupAndMenus/ConnectionUtilities";
+import { apiGetPlayerImage, apiGetPlayerAvatar } from "../SetupAndMenus/ConnectionUtilities";
 import { characterImageStyle } from "./CharacterImageCSS";
 
 const useStyles = makeStyles(() => ({
@@ -133,10 +133,11 @@ export default function CharacterPanel(props) {
   const covenant = currentCharacter.covenant;
 
   useEffect(() => {
+    console.log("avatar: " + currentCharacter.charAvatarURL);
     async function setImg() {
       let img = "";
-      if (gameType === "etail") {
-        img = await apiGetPlayerImage(currentCharacter);
+      if (gameType === "Retail") {
+        img = await apiGetPlayerAvatar(currentCharacter);
       } else {
         img = `url(${specImages[currentCharacter.spec].default})`;
       }
@@ -177,7 +178,7 @@ export default function CharacterPanel(props) {
                   <div
                     id="charPanelAvatarImage"
                     style={{
-                      backgroundImage: `url("${"https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-avatar.jpg"}")`,
+                      backgroundImage: `url("${backgroundImage}")`,
                       ...imageStyle,
                     }}
                   />
