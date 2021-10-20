@@ -372,7 +372,7 @@ export default function CharCards(props) {
     <Grid item xs={12} sm={6} md={6} lg={6} xl={4}>
       <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : null}>
         <Card className={rootClassName} variant="outlined" raised={true}>
-          <Avatar src={"https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-avatar.jpg"} variant="square" alt="" className={classes.large} />
+          <Avatar src={props.char.charAvatarURL === "" ? specImages[props.char.spec].default : props.char.charAvatarURL} variant="square" alt="" className={classes.large} />
           <Divider orientation="vertical" flexItem />
           <div className={classes.details}>
             <CardContent className={classes.content} style={{ paddingBottom: 0 }}>

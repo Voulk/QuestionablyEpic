@@ -115,7 +115,7 @@ export async function apiGetPlayerAvatar(player) {
 }
 
 // cache image function version
-export async function apiGetPlayerAvatar2(region, charName, realm) {
+export async function apiGetPlayerAvatar2(region, charName, realm, spec) {
   if (region !== undefined || charName !== undefined || realm !== undefined) {
     let newRegion = region.toLowerCase();
     let newName = charName.toLowerCase();
@@ -126,11 +126,13 @@ export async function apiGetPlayerAvatar2(region, charName, realm) {
       .then((res) => res.text())
       .then((response) => {
         urlReturned = response;
-        var res = document.createElement("link");
-        res.rel = "preload";
-        res.as = "image";
-        res.href = urlReturned;
-        document.head.appendChild(res);
+        if (urlReturned !== "") {
+          var res = document.createElement("link");
+          res.rel = "preload";
+          res.as = "image";
+          res.href = urlReturned;
+          document.head.appendChild(res);
+        }
       })
       .catch((err) => console.log(err));
     return urlReturned;
@@ -151,11 +153,13 @@ export async function apiGetPlayerImage2(region, charName, realm) {
       .then((res) => res.text())
       .then((response) => {
         urlReturned = response;
-        var res = document.createElement("link");
-        res.rel = "preload";
-        res.as = "image";
-        res.href = urlReturned;
-        document.head.appendChild(res);
+        if (urlReturned !== "") {
+          var res = document.createElement("link");
+          res.rel = "preload";
+          res.as = "image";
+          res.href = urlReturned;
+          document.head.appendChild(res);
+        }
       })
       .catch((err) => console.log(err));
     return urlReturned;

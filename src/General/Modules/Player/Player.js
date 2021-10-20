@@ -26,11 +26,15 @@ class Player {
     this.realm = realm;
     this.race = race;
     this.uniqueHash = getUnique();
-    this.charImageURL = apiGetPlayerImage2(this.region, this.charName, this.realm).then((res) => {
-      return res;
+    this.charImageURL = "";
+    this.charAvatarURL = "";
+
+    apiGetPlayerImage2(this.region, this.charName, this.realm).then((res) => {
+      this.charImageURL = res;
     });
-    this.charAvatarURL = apiGetPlayerAvatar2(this.region, this.charName, this.realm).then((res) => {
-      return res;
+
+    apiGetPlayerAvatar2(this.region, this.charName, this.realm, this.spec).then((res) => {
+      this.charAvatarURL = res;
     });
 
     if (gameType === "Retail") {
@@ -39,7 +43,7 @@ class Player {
       this.activeConduits = getAvailableClassConduits(specName);
       this.gameType = "Retail";
     }
-    console.log(this.charImageURL);
+    // console.log(this.charImageURL);
     //if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
 
     //this.getStatPerc = getStatPerc;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Paper, Typography, Divider, Tooltip } from "@material-ui/core";
+import { Grid, Paper, Typography, Divider, Tooltip, Skeleton } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
@@ -114,6 +114,7 @@ export default function CharacterPanel(props) {
   const simcStatus = getSimCStatus(props.player, gameType);
   const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
   const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const check = (simcStatus) => {
     let style = "";
@@ -133,16 +134,14 @@ export default function CharacterPanel(props) {
   const covenant = currentCharacter.covenant;
 
   useEffect(() => {
-    console.log("avatar: " + currentCharacter.charAvatarURL);
     async function setImg() {
       let img = "";
       if (gameType === "Retail") {
-        img = await apiGetPlayerAvatar(currentCharacter);
+        img = currentCharacter.charAvatarURL === "" ? specImages[currentCharacter.spec].default : currentCharacter.charAvatarURL;
       } else {
         img = `url(${specImages[currentCharacter.spec].default})`;
       }
 
-      console.log(img);
       setBackgroundImage(img);
     }
 
