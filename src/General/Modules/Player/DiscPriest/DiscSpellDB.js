@@ -64,7 +64,16 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 2,
         cost: 800,
-        coeff: 1.128,
+        coeff: 1.128, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
+        ticks: 3,
+        atoneOverheal: 0.2,
+        secondaries: ['crit', 'vers'],
+    }],
+    "PenanceTick": [{
+        type: "damage",
+        castTime: 2, // This is dynamic based on haste at time of cast. 
+        cost: 0,
+        coeff: 0.376,
         atoneOverheal: 0.2,
         secondaries: ['crit', 'vers'],
     }],
