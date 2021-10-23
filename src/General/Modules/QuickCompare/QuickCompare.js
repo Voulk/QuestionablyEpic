@@ -152,7 +152,7 @@ export default function QuickCompare(props) {
         /*                                            Help Text                                            */
         /* ---------------------------------------------------------------------------------------------- */}
         <Grid item xs={12}>
-          <HelpText text={helpText} blurb={helpBlurb} />
+          <HelpText text={helpText} blurb={helpBlurb} expanded={true} />
         </Grid>
 
         {/* ---------------------------------------------------------------------------------------------- */

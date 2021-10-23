@@ -336,7 +336,7 @@ export default function TrinketAnalysis(props) {
           </Typography>
         </Grid> */}
         <Grid item xs={12}>
-          <HelpText blurb={helpBlurb} text={helpText} />
+          <HelpText blurb={helpBlurb} text={helpText} expanded={false} />
         </Grid>
         <Grid item xs={12}>
           <CharacterPanel

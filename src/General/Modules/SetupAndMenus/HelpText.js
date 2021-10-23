@@ -39,10 +39,11 @@ export default function HelpText(props) {
   const text = props.text;
   const blurb = props.blurb;
   const bull = <span className={classes.bullet}>•</span>;
+  const expandedDefault = props.expanded
 
   return (
     <div className={classes.root}>
-      <Accordion defaultExpanded={true} elevation={0}>
+      <Accordion defaultExpanded={expandedDefault} elevation={0}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
           <div style={{ display: "inline-flex" }}>
             <HelpIcon />

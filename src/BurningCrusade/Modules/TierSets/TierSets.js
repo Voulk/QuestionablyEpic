@@ -64,7 +64,7 @@ export default function LegendaryCompare(props) {
         </Grid>
         {/* ------------------------------------------ Help Text ----------------------------------------- */}
         <Grid item xs={12}>
-          <HelpText blurb={helpBlurb} />
+          <HelpText blurb={helpBlurb} expanded={true} />
         </Grid>
         {/* ------------------------------ Map the Legendary list into Cards ----------------------------- */}
         <Grid item container spacing={1} direction="row">

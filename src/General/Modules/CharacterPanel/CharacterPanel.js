@@ -163,7 +163,6 @@ export default function CharacterPanel(props) {
   return (
     <Paper elevation={0} className={check(simcStatus)}>
       <div style={{ padding: "8px 8px 8px 8px" }}>
-        {/* <Avatar src="https://render.worldofwarcraft.com/us/character/frostmourne/212/180358868-main.jpg" variant="rounded" className={classes.rounded} /> */}
         <Grid container direction="row" justifyContent="space-between" spacing={1}>
           {/* ---------------------------------------------------------------------------------------------- */
           /*                                         Character Image                                         */
@@ -256,7 +255,7 @@ export default function CharacterPanel(props) {
                           style={{
                             color: classColoursJS(currentCharacter.spec),
                             marginRight: 8,
-                            fontSize: 16,
+                            fontSize: gameType === "Retail" ? 16 : 22,
                           }}
                         >
                           {currentCharacter.charName}
@@ -273,7 +272,7 @@ export default function CharacterPanel(props) {
                               fontSize: 16,
                             }}
                           >
-                            {"- Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName}
+                            {"- Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName + " - " + t(contentType)}
                           </Typography>
                         ) : (
                           ""
@@ -284,13 +283,19 @@ export default function CharacterPanel(props) {
                       /* --------------------------------------- Character Stats --------------------------------------  */
                       // The characters current stat totals are mapped with verticle dividers between them
                     }
-                    <Grid container spacing={1}>
-                      {Object.keys(playerStats).map((key) => (
-                        <Grid item>
-                          <Typography style={{ fontSize: 11, lineHeight: 1 }}>{t(capitalizeFirstLetter(key)) + ": " + playerStats[key]}</Typography>
-                        </Grid>
-                      ))}
-                    </Grid>
+                    {gameType === "Retail" ? (
+                      <Grid container spacing={1}>
+                        {Object.keys(playerStats)
+                          .filter((filterOut) => filterOut !== "stamina")
+                          .map((key) => (
+                            <Grid item>
+                              <Typography style={{ fontSize: 11, lineHeight: 1 }}>{t(capitalizeFirstLetter(key)) + ": " + playerStats[key]}</Typography>
+                            </Grid>
+                          ))}
+                      </Grid>
+                    ) : (
+                      ""
+                    )}
                   </Grid>
                 </Grid>
               </Grid>
@@ -324,15 +329,7 @@ export default function CharacterPanel(props) {
                     .filter((key) => key.isEquipped === true)
                     .map((key, i) => (
                       <Grid item key={i}>
-                        <a
-                          style={
-                            {
-                              // margin: "2px 2px"
-                            }
-                          }
-                          data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + wowheadDom}
-                          key={i}
-                        >
+                        <a data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + wowheadDom} key={i}>
                           <img
                             style={{
                               height: 22,
@@ -350,12 +347,12 @@ export default function CharacterPanel(props) {
                     ))
                 ) : (
                   <Grid item key={i}>
-                    <Typography>No import detected, Import your Gear via the "Import Gear" Button</Typography>
+                    {/* // TODO: Localize this */}
+                    <Typography variant="body2">Import your gear with a SimC string via the "Import Gear" button above.</Typography>
                   </Grid>
                 )}
               </Grid>
             </Grid>
-            {/* </Grid> */}
           </Grid>
 
           <Grid item xs={12}>

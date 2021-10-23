@@ -261,7 +261,7 @@ export default function TopGear(props) {
           </Grid>
         }
         <Grid item xs={12}>
-          <HelpText blurb={helpBlurb} text={helpText} />
+          <HelpText blurb={helpBlurb} text={helpText} expanded={true} />
         </Grid>
         <Grid item xs={12}>
           <CharacterPanel
