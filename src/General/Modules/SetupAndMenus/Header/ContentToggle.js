@@ -11,7 +11,7 @@ import { Tooltip, Typography } from "@material-ui/core";
 /*                 Toggle Button to swap content used by the app (Dungeon or Raid)                */
 /* ---------------------------------------------------------------------------------------------- */
 
-export default function ContentSwitch() {
+export default function ContentSwitch(props) {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
@@ -22,6 +22,7 @@ export default function ContentSwitch() {
     if (content === null) {
     } else {
       dispatch(toggleContent(content));
+      props.charCards === true ? props.toggleStats(content) : null;
     }
   };
 

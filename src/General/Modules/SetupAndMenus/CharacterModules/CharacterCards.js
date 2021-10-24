@@ -21,6 +21,7 @@ import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { setConstantValue } from "typescript";
 import { covenantIcons } from "../../CooldownPlanner/Functions/CovenantFunctions";
+import ContentSwitch from "../Header/ContentToggle.js";
 
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
@@ -247,6 +248,16 @@ export default function CharCards(props) {
     setVersatility(player.getStatWeight(contentType, STAT.VERSATILITY));
     setLeech(player.getStatWeight(contentType, STAT.LEECH));
     setServer(player.realm);
+  };
+
+  // Function for changing stats when the content type is changed via the ContentToggle component.
+  // This is passed to the ContentToggle component with the prop "charCards={true}" so that it only runs on the character card component.
+  const ToggleContentStats = (content) => {
+    setCritical(player.getStatWeight(content, STAT.CRITICAL_STRIKE));
+    setHaste(player.getStatWeight(content, STAT.HASTE));
+    setMastery(player.getStatWeight(content, STAT.MASTERY));
+    setVersatility(player.getStatWeight(content, STAT.VERSATILITY));
+    setLeech(player.getStatWeight(content, STAT.LEECH));
   };
 
   /* -------------------------------------------------------------------------- */
@@ -604,7 +615,9 @@ export default function CharCards(props) {
                           </Typography>
                         </Grid>
                         {/* ------------------------ Stat Message/Instructions -----------------------  */}
-
+                        <Grid item xs={12} sm="auto">
+                          <ContentSwitch toggleStats={ToggleContentStats} charCards={true} />
+                        </Grid>
                         <Grid item xs={12}>
                           <Typography style={{ color: "limegreen" }} align="center" variant="subtitle2">
                             {t("CharacterCreator.StatMessage")}
