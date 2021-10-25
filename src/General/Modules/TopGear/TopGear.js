@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.down("xs")]: {
       margin: "auto",
-      width: "85%",
+      width: "100%",
       justifyContent: "center",
       display: "block",
       marginTop: 120,

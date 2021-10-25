@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Grid, Paper, Typography, Divider, Tooltip, Skeleton } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
@@ -13,6 +13,7 @@ import Settings from "../Settings/Settings";
 import { covenantIcons, covenantColours } from "../CooldownPlanner/Functions/CovenantFunctions";
 import { apiGetPlayerImage, apiGetPlayerAvatar } from "../SetupAndMenus/ConnectionUtilities";
 import { characterImageStyle } from "./CharacterImageCSS";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles(() => ({
   slider: {
@@ -116,6 +117,8 @@ export default function CharacterPanel(props) {
   const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
   const [imageLoaded, setImageLoaded] = useState(false);
 
+  const theme = useTheme();
+  const xsBreakpoint = useMediaQuery(theme.breakpoints.down("xs"));
   const check = (simcStatus) => {
     let style = "";
 
@@ -170,7 +173,7 @@ export default function CharacterPanel(props) {
           {backgroundImage === "" ? (
             ""
           ) : (
-            <Grid id="charPanelAvatarGridItem" item xs={12} sm="auto">
+            <Grid id="charPanelAvatarGridItem" item xs="auto" sm="auto">
               <div style={{ position: "relative", textAlign: "center", color: "white" }}>
                 {gameType === "Retail" ? (
                   <div
@@ -234,7 +237,7 @@ export default function CharacterPanel(props) {
               </div>
             </Grid>
           )}
-          <Grid id="charPanelMainContainer" item xs={12} sm container spacing={1}>
+          <Grid id="charPanelMainContainer" item xs sm container spacing={1}>
             <Grid item xs={12} sm container direction="row" spacing={0} justifyContent="space-between">
               <Grid item xs container direction="row" spacing={0}>
                 <Grid item xs={12} sm>
@@ -249,34 +252,40 @@ export default function CharacterPanel(props) {
                           display: "inline-flex",
                         }}
                       >
-                        {/* ------------------------------------- Character Name Text ------------------------------------ */}
-                        <Typography
-                          variant="h6"
-                          style={{
-                            color: classColoursJS(currentCharacter.spec),
-                            marginRight: 8,
-                            fontSize: gameType === "Retail" ? 16 : 22,
-                          }}
-                        >
-                          {currentCharacter.charName}
-                        </Typography>
-                        {
-                          /* ----------------------------------- Current Playstyle Text -----------------------------------  */
-                          // The players currently selected playstyle
-                        }
-                        {gameType === "Retail" ? (
-                          <Typography
-                            variant="h6"
-                            color="primary"
-                            style={{
-                              fontSize: 16,
-                            }}
-                          >
-                            {"- Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName + " - " + t(contentType)}
-                          </Typography>
-                        ) : (
-                          ""
-                        )}
+                        <Grid container direction="row">
+                          {/* ------------------------------------- Character Name Text ------------------------------------ */}
+                          <Grid item xs={12} sm="auto">
+                            <Typography
+                              variant="h6"
+                              style={{
+                                color: classColoursJS(currentCharacter.spec),
+                                marginRight: 8,
+                                fontSize: gameType === "Retail" ? 16 : 22,
+                              }}
+                            >
+                              {currentCharacter.charName}
+                            </Typography>
+                          </Grid>
+                          {
+                            /* ----------------------------------- Current Playstyle Text -----------------------------------  */
+                            // The players currently selected playstyle
+                          }
+                          {gameType === "Retail" ? (
+                            <Grid item xs={12} sm="auto">
+                              <Typography
+                                variant="h6"
+                                color="primary"
+                                style={{
+                                  fontSize: 16,
+                                }}
+                              >
+                                {xsBreakpoint ? "Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName + " - " + t(contentType) : "- Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName + " - " + t(contentType)}
+                              </Typography>
+                            </Grid>
+                          ) : (
+                            ""
+                          )}
+                        </Grid>
                       </div>
                     </Grid>
                     {
@@ -288,7 +297,7 @@ export default function CharacterPanel(props) {
                         {Object.keys(playerStats)
                           .filter((filterOut) => filterOut !== "stamina")
                           .map((key) => (
-                            <Grid item>
+                            <Grid item xs={3} sm="auto">
                               <Typography style={{ fontSize: 11, lineHeight: 1 }}>{t(capitalizeFirstLetter(key)) + ": " + playerStats[key]}</Typography>
                             </Grid>
                           ))}
