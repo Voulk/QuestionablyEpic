@@ -13,9 +13,9 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
     const miniSeq = buildRamp('Mini', 6, [], stats.haste, [])
 
     const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
-    //const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
-    //const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
-    //return boonRamp + fiendRamp + miniRamp * 2;
+    const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
+    const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
+    return boonRamp + fiendRamp + miniRamp * 2;
     return miniRamp;
 }
 
@@ -150,8 +150,16 @@ const getTime = (t) => {
     return Math.round(t*1000)/1000
 }
 
+/**
+ * This function handles all of our effects that might change our spell database before the ramps begin.
+ * It includes conduits, legendaries, and some trinket effects.
+ * 
+ * @param {*} discSpells Our spell database
+ * @param {*} settings Settings including legendaries, trinkets, soulbinds and anything that falls out of any other category.
+ * @param {*} conduits The conduits run in the current set.
+ * @returns An updated spell database with any of the above changes made.
+ */
 const applyLoadoutEffects = (discSpells, settings, conduits) => {
-    // Add anything that alters the spell dictionary. This could all be moved to a separate function.
 
     // Default Loadout
     // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout
@@ -167,12 +175,24 @@ const applyLoadoutEffects = (discSpells, settings, conduits) => {
         
     }
 
-    // Legendaries. Note that some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
+    // === Legendaries ===
+    // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
+
+    // -- Clarity of Mind --
+    // Clarity of Mind adds 6 seconds to the Atonement granted by Power Word: Shield during Rapture. 
+    // It's a straightfoward addition.
     if (settings['Clarity of Mind']) discSpells['Rapture'][0].atonement = 21;
-    if (settings['Penitent One']) discSpells['Penance'][0].coeff = discSpells['Penance'][0].coeff * (0.84 * 2); // This is an estimate, and would be made more accurate by adding Penance ticks instead.
 
+    // -- Penitent One --
+    // Power Word: Radiance has a chance to make your next Penance free, and fire 3 extra bolts.
+    // This is a close estimate, and could be made more accurate by tracking the buff and adding ticks instead of power.
+    if (settings['Penitent One']) discSpells['Penance'][0].coeff = discSpells['PenanceTick'][0].coeff * (0.84 * 2); 
+    //
 
-    // Soulbinds. Don't include Conduits in this section, just any relevant soulbind nodes themselves.
+    // === Soulbinds ===
+    // Don't include Conduits here just any relevant soulbind nodes themselves.
+    // This section can be expanded with more nodes, particularly those from other covenants.
+    // Examples: Combat Meditation, Pointed Courage
     if (settings['Pelagos']) discSpells['Boon of the Ascended'].push({
         type: "buff",
         castTime: 0,
@@ -184,24 +204,28 @@ const applyLoadoutEffects = (discSpells, settings, conduits) => {
         buffDuration: 30,
     });
     if (settings['Kleia']) activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
+    //
 
-
-    // Trinkets
+    // === Trinkets ===
     // These settings change the stat value prescribed to a given trinket. We call these when adding trinkets so that we can grab their value at a specific item level.
+    // When adding a trinket to this section, make sure it has an entry in DiscSpellDB first prescribing the buff duration, cooldown and type of stat.
     if (settings["Instructor's Divine Bell"]) discSpells["Instructor's Divine Bell"][0].value = settings["Instructor's Divine Bell"];
     if (settings['Shadowed Orb']) discSpells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
     if (settings['Soulletting Ruby']) discSpells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
+    //
 
-
-    // Conduits
+    // === Conduits ===
+    // These are all scaled based on Conduit rank.
+    // You can add whichever conduits you like here, though if it doesn't change your ramp then you might be better calculating it in the conduit formulas file instead.
+    // Examples of would be Condensed Anima Sphere.
     if (conduits['Courageous Ascension']) discSpells['Ascended Blast'][0].coeff *= 1.45; // Blast +40%, Eruption +1% per stack (to 4%)
     if (conduits['Shining Radiance']) discSpells['Power Word: Radiance'][0].coeff *= 1.64; // +64% radiance healing
-    if (conduits['Rabid Shadows']) discSpells['Shadowfiend'][0].dot.tickRate = discSpells['Shadowfiend'][0].dot.tickRate / 1.342; // Faster tick rate.
+    if (conduits['Rabid Shadows']) discSpells['Shadowfiend'][0].dot.tickRate = discSpells['Shadowfiend'][0].dot.tickRate / 1.342; // Fiends faster tick rate.
     if (conduits['Exaltation']) {
         discSpells['Rapture'][1].buffDuration = 9;
         discSpells['Rapture'][0].coeff = 1.65 * (1 + 2 * 1.135);
     }
-    // --
+    //
 
     return discSpells;
 }
@@ -231,7 +255,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, conduits);
     const seq = [...sequence];
     const sequenceLength = 45;
-    const reporting = true;
+    const reporting = false;
 
     for (var t = 0; t < sequenceLength; t += 0.01) {
         // Step 1: Check buffs and atonement and remove any that have expired.
