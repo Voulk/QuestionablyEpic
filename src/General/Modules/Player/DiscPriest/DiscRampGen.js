@@ -58,7 +58,10 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
         sequence.push('Schism');
         sequence.push('Mind Blast');
         sequence.push('Power Word: Solace');
-        sequence.push('Penance');
+        //sequence.push('Penance');
+        sequence.push('PenanceTick');
+        sequence.push('PenanceTick');
+        sequence.push('PenanceTick');
 
         for (var i = 0; i < 15; i++) {
             sequence.push('Smite');
@@ -69,7 +72,9 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
         sequence.push('Schism');
         sequence.push('Mind Blast');
         sequence.push('Power Word: Solace');
-        sequence.push('Penance');
+        sequence.push('PenanceTick');
+        sequence.push('PenanceTick');
+        sequence.push('PenanceTick');
 
         for (var i = 0; i < 10; i++) {
             sequence.push('Smite');

@@ -13,9 +13,10 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
     const miniSeq = buildRamp('Mini', 6, [], stats.haste, [])
 
     const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
-    const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
-    const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
-    return boonRamp + fiendRamp + miniRamp * 2;
+    //const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
+    //const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
+    //return boonRamp + fiendRamp + miniRamp * 2;
+    return miniRamp;
 }
 
 /**  Extend all active atonements by @extension seconds.  */
@@ -230,7 +231,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, conduits);
     const seq = [...sequence];
     const sequenceLength = 45;
-    const reporting = false;
+    const reporting = true;
 
     for (var t = 0; t < sequenceLength; t += 0.01) {
         // Step 1: Check buffs and atonement and remove any that have expired.
@@ -379,6 +380,11 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     } 
 
                 }
+                /*
+                else if (spellName === "Penance") {
+                    // Add X Penance bolts to the spell queue.
+                    
+                } */
 
                 // TODO: This was written early in the app, but can just be converted to a regular buff effect for code cleanliness.
                 else if (spellName === "Schism") {
