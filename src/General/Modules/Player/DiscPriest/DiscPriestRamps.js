@@ -3,6 +3,7 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { DISCSPELLS } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
 
+// Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
     chaosBrand: true
 }
@@ -16,10 +17,9 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
     const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
     const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
     return boonRamp + fiendRamp + miniRamp * 2;
-    return miniRamp;
 }
 
-/**  Extend all active atonements by @extension seconds.  */
+/**  Extend all active atonements by @extension seconds. This is triggered by Evanglism / Spirit Shell. */
 const extendActiveAtonements = (atoneApp, timer, extension) => {
     atoneApp.forEach((application, i, array) => {
         if (application >= timer) {
@@ -91,7 +91,7 @@ const getActiveAtone = (atoneApp, timer) => {
  * Returns a spells stat multiplier based on which stats it scales with.
  * @param {*} statArray A characters current stats including any active buffs.
  * @param {*} stats The secondary stats a spell scales with. Pulled from it's SpellDB entry.
- * @returns 
+ * @returns An effective multiplier. For a spell that scales with both crit and vers this would just be crit x vers.
  */
 const getStatMult = (currentStats, stats) => {
     let mult = 1;
@@ -242,20 +242,20 @@ const applyLoadoutEffects = (discSpells, settings, conduits) => {
  */
 export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     //console.log("Running cast sequence");
-    let atonementApp = [];
-    let purgeTicks = [];
-    let fiendTicks = [];
-    let activeBuffs = [];
-    let damageBreakdown = {};
+    let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
+    let purgeTicks = []; // Purge tick timestamps
+    let fiendTicks = []; // Fiend "tick" timestamps
+    let activeBuffs = []; // Active buffs on our character: includes stat buffs, Boon of the Ascended and so on. 
+    let damageBreakdown = {}; // A statistics object that holds a tally of our damage from each spell.
     let healing = {};
     let totalDamage = 0;
     let timer = 0;
     let nextSpell = 0;
-    let boonOfTheAscended = 0;
+    let boonOfTheAscended = 0; // This variable holds our active Boon of the Ascended stacks. Could be refactored into the activeBuffs array.
     const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, conduits);
     const seq = [...sequence];
-    const sequenceLength = 45;
-    const reporting = false;
+    const sequenceLength = 45; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const reporting = false; // A flag to report our sequences to console. Used for testing. 
 
     for (var t = 0; t < sequenceLength; t += 0.01) {
         // Step 1: Check buffs and atonement and remove any that have expired.
