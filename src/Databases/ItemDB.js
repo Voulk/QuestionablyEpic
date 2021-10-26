@@ -122030,5 +122030,172 @@ export const itemDB = [
             "type": "special",
             "name": "Passable Credentials"
         }
-    }
+    },
+    // Legion TW - Trinkets only. Replace with full DB pull.
+    {
+        "id": 137484,
+        "name": "Flask of the Solemn Night",
+        "names": {
+            "cn": "",
+            "en": "Flask of the Solemn Night",
+            "ru": "Рубин иссечения душ",
+            "es": "Rubí de extracción de almas",
+            "br": "Rubi Sangralma",
+            "kr": "",
+            "fr": "Rubis d’effusion d’âmes",
+            "de": "Seelenlassender Rubin"
+        },
+        "icon": "inv_alchemy_crystalvial",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 158,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "sources": [
+            {
+                "instanceId": -1,
+                "encounterId": 1187
+            },
+            {
+                "instanceId": 1187,
+                "encounterId": 2389
+            }
+        ],
+        "onUseTrinket": true,
+        "dropLoc": "",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Flask of the Solemn Night"
+        },
+        "levelRange": [
+            187,
+            194,
+            200,
+            207,
+            213,
+            220,
+            226,
+            233,
+            239,
+            246,
+        ]
+    },
+        // Legion TW - Trinkets only. Replace with full DB pull.
+        {
+            "id": 137378,
+            "name": "Bottled Hurricane",
+            "names": {
+                "cn": "",
+                "en": "Bottled Hurricane",
+                "ru": "Рубин иссечения душ",
+                "es": "Rubí de extracción de almas",
+                "br": "Rubi Sangralma",
+                "kr": "",
+                "fr": "Rubis d’effusion d’âmes",
+                "de": "Seelenlassender Rubin"
+            },
+            "icon": "inv_alchemy_crystalvial",
+            "itemClass": 4,
+            "itemSubClass": 0,
+            "itemLevel": 158,
+            "stats": {
+                "intellect": 0,
+                "stamina": 0,
+                "haste": 6666,
+                "crit": 0,
+                "mastery": 0,
+                "versatility": 0
+            },
+            "sources": [
+                {
+                    "instanceId": -1,
+                    "encounterId": 1187
+                },
+                {
+                    "instanceId": 1187,
+                    "encounterId": 2389
+                }
+            ],
+            "onUseTrinket": false,
+            "dropLoc": "",
+            "slot": "Trinket",
+            "effect": {
+                "type": "trinket",
+                "name": "Bottled Hurricane"
+            },
+            "levelRange": [
+                187,
+                194,
+                200,
+                207,
+                213,
+                220,
+                226,
+                233,
+                239,
+                246,
+            ]
+        },
+        {
+            "id": 137540,
+            "name": "Concave Reflecting Lens",
+            "names": {
+                "cn": "",
+                "en": "Concave Reflecting Lens",
+                "ru": "Рубин иссечения душ",
+                "es": "Rubí de extracción de almas",
+                "br": "Rubi Sangralma",
+                "kr": "",
+                "fr": "Rubis d’effusion d’âmes",
+                "de": "Seelenlassender Rubin"
+            },
+            "icon": "inv_alchemy_crystalvial",
+            "itemClass": 4,
+            "itemSubClass": 0,
+            "itemLevel": 158,
+            "stats": {
+                "intellect": 0,
+                "stamina": 0,
+                "haste": 0,
+                "crit": 6666,
+                "mastery": 0,
+                "versatility": 0
+            },
+            "sources": [
+                {
+                    "instanceId": -1,
+                    "encounterId": 1187
+                },
+                {
+                    "instanceId": 1187,
+                    "encounterId": 2389
+                }
+            ],
+            "onUseTrinket": false,
+            "dropLoc": "",
+            "slot": "Trinket",
+            "effect": {
+                "type": "trinket",
+                "name": "Concave Reflecting Lens"
+            },
+            "levelRange": [
+                187,
+                194,
+                200,
+                207,
+                213,
+                220,
+                226,
+                233,
+                239,
+                246,
+            ]
+        },
 ]
