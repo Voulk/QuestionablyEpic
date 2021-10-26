@@ -144,7 +144,7 @@ export default function DominationAnalysis(props) {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <HelpText blurb={helpText} expanded={true} />
+          <HelpText blurb={helpText} expanded={false} />
         </Grid>
         <Grid item xs={12}>
           <CharacterPanel
@@ -160,20 +160,21 @@ export default function DominationAnalysis(props) {
             autoSocket={true}
           />
         </Grid>
-        <Grid item xs={12}>
-          <MetricToggle metric={metric} setMetric={setMetric} />
-        </Grid>
+
         {/* <Grid item xs={12}>
           <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} />
         </Grid> */}
         <Grid item xs={12}>
-          <Grid container spacing={1} justify="center">
-            <Grid item xs={12}>
-              <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                {<DomChart data={activeGems} db={db} />}
-              </Paper>
+          <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
+            <Grid container spacing={1} justify="center">
+              <Grid item xs={12}>
+                <MetricToggle metric={metric} setMetric={setMetric} />
+              </Grid>
+              <Grid item xs={12}>
+                <DomChart data={activeGems} db={db} />
+              </Grid>
             </Grid>
-          </Grid>
+          </Paper>
         </Grid>
       </Grid>
     </div>

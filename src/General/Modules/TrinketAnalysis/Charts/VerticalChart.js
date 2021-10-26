@@ -106,9 +106,9 @@ export default class VerticalChart extends PureComponent {
           data={cleanedArray}
           layout="vertical"
           margin={{
-            top: 0,
+            top: -10,
             right: 40,
-            bottom: 20,
+            bottom: 10,
             left: 250,
           }}
           onMouseMove={(state) => {

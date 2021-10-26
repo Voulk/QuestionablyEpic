@@ -216,8 +216,8 @@ export default function ItemBar(props) {
         spacing={1}
         style={{
           // paddingTop: 4,
-          paddingBottom: 8,
-          display: "inline-flex",
+          paddingBottom: 4,
+          // display: "inline-flex",
         }}
       >
         <Grid id="itemBarTitleGrid" item xs={12}>
@@ -230,7 +230,7 @@ export default function ItemBar(props) {
         /*                               Item Selection                               */
         /* -------------------------------------------------------------------------- */}
 
-        <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
+        <Grid item xs={11} sm={11} md={6} lg={6} xl={5}>
           <FormControl className={classes.formControl} variant="outlined" size="small" fullWidth>
             <Autocomplete
               size="small"

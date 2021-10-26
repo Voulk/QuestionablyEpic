@@ -270,7 +270,9 @@ export default function TrinketAnalysis(props) {
   };
 
   const handleSource = (event, newSources) => {
-    setSources(newSources);
+    if (newSources.length) {
+      setSources(newSources);
+    }
   };
   const contentType = useSelector((state) => state.contentType);
   const itemLevels = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];

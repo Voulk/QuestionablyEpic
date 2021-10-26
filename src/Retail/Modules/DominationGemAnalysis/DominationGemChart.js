@@ -103,10 +103,10 @@ export default class DomChart extends PureComponent {
           data={cleanedArray}
           layout="vertical"
           margin={{
-            top: 20,
+            top: -20,
             right: 40,
-            bottom: 20,
-            left: 250,
+            bottom: 10,
+            left: 150,
           }}
           /* ------------ When the cursor enters the chart the hovered bar will be set as focus ----------- */
           onMouseMove={(state) => {

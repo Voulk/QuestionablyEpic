@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.down("xs")]: {
       margin: "auto",
-      width: "100%",
+      width: "90%",
       justifyContent: "center",
       display: "block",
       marginTop: 120,
@@ -253,13 +253,11 @@ export default function TopGear(props) {
   return (
     <div className={classes.root}>
       <Grid container spacing={1} justify="center">
-        {
-          <Grid item xs={12}>
-            <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
-              {t("TopGear.Title")}
-            </Typography>
-          </Grid>
-        }
+        <Grid item xs={12}>
+          <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
+            {t("TopGear.Title")}
+          </Typography>
+        </Grid>
         <Grid item xs={12}>
           <HelpText blurb={helpBlurb} text={helpText} expanded={true} />
         </Grid>

@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   header: {
     [theme.breakpoints.down("xs")]: {
       margin: "auto",
-      width: "85%",
+      width: "90%",
       justifyContent: "center",
       display: "block",
       marginTop: 120,

@@ -13,7 +13,7 @@ import Settings from "../Settings/Settings";
 import { covenantIcons, covenantColours } from "../CooldownPlanner/Functions/CovenantFunctions";
 import { apiGetPlayerImage, apiGetPlayerAvatar } from "../SetupAndMenus/ConnectionUtilities";
 import { characterImageStyle } from "./CharacterImageCSS";
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles(() => ({
   slider: {
@@ -106,25 +106,25 @@ const specImages = {
 
 export default function CharacterPanel(props) {
   const classes = useStyles();
-  const playerStats = props.player.getActiveStats();
+  const theme = useTheme();
+  const xsBreakpoint = useMediaQuery(theme.breakpoints.down("xs"));
+  const smBreakpoint = useMediaQuery(theme.breakpoints.down("sm"));
   const { t, i18n } = useTranslation();
+  const playerStats = props.player.getActiveStats();
   const [backgroundImage, setBackgroundImage] = useState("");
   const gameType = useSelector((state) => state.gameType);
   const contentType = useSelector((state) => state.contentType);
   const currentLanguage = i18n.currentLanguage;
   const simcStatus = getSimCStatus(props.player, gameType);
-  const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
+  // const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
   const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const currentCharacter = props.allChars.allChar[props.allChars.activeChar];
+  const covenant = currentCharacter.covenant;
 
-  const theme = useTheme();
-  const xsBreakpoint = useMediaQuery(theme.breakpoints.down("xs"));
   const check = (simcStatus) => {
     let style = "";
-
     /* ----------------------- If quickcompare prop is true then only show ok. ---------------------- */
     /* ---------------- Quickcompare doesn't need to be checked for missing items etc --------------- */
-
     if (props.quickCompare === true) {
       style = classes.simcok;
     } else {
@@ -132,9 +132,6 @@ export default function CharacterPanel(props) {
     }
     return style;
   };
-
-  const currentCharacter = props.allChars.allChar[props.allChars.activeChar];
-  const covenant = currentCharacter.covenant;
 
   useEffect(() => {
     async function setImg() {
@@ -156,7 +153,6 @@ export default function CharacterPanel(props) {
     textAlign: "center",
     position: "relative",
     border: "1px solid" + classColoursJS(currentCharacter.spec), //rgb(118, 118, 118)",
-    // flex: "1 1 10%",
     backgroundSize: "auto 100%",
     height: 72,
     width: 72,
@@ -241,10 +237,6 @@ export default function CharacterPanel(props) {
             <Grid item xs={12} sm container direction="row" spacing={0} justifyContent="space-between">
               <Grid item xs container direction="row" spacing={0}>
                 <Grid item xs={12} sm>
-                  {/* ----------------------------------------- Class Icon -----------------------------------------  */}
-
-                  {/* ---------------------------------------- Covenant Icon ---------------------------------------  */}
-
                   <Grid item container direction="row">
                     <Grid item xs={12}>
                       <div
@@ -254,9 +246,9 @@ export default function CharacterPanel(props) {
                       >
                         <Grid container direction="row">
                           {/* ------------------------------------- Character Name Text ------------------------------------ */}
-                          <Grid item xs={12} sm="auto">
+                          <Grid item xs={12} md="auto">
                             <Typography
-                              variant="h6"
+                              variant={xsBreakpoint ? "h5" : "h6"}
                               style={{
                                 color: classColoursJS(currentCharacter.spec),
                                 marginRight: 8,
@@ -271,15 +263,17 @@ export default function CharacterPanel(props) {
                             // The players currently selected playstyle
                           }
                           {gameType === "Retail" ? (
-                            <Grid item xs={12} sm="auto">
+                            <Grid item xs={12} md="auto">
                               <Typography
-                                variant="h6"
+                                variant={xsBreakpoint ? "h5" : "h6"}
                                 color="primary"
                                 style={{
                                   fontSize: 16,
                                 }}
                               >
-                                {xsBreakpoint ? "Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName + " - " + t(contentType) : "- Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName + " - " + t(contentType)}
+                                {smBreakpoint
+                                  ? "Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName + " - " + t(contentType)
+                                  : "- Current Playstyle: " + props.player.getActiveModel(props.contentType).modelName + " - " + t(contentType)}
                               </Typography>
                             </Grid>
                           ) : (
@@ -297,7 +291,7 @@ export default function CharacterPanel(props) {
                         {Object.keys(playerStats)
                           .filter((filterOut) => filterOut !== "stamina")
                           .map((key) => (
-                            <Grid item xs={3} sm="auto">
+                            <Grid item xs={4} sm="auto">
                               <Typography style={{ fontSize: 11, lineHeight: 1 }}>{t(capitalizeFirstLetter(key)) + ": " + playerStats[key]}</Typography>
                             </Grid>
                           ))}
@@ -308,8 +302,79 @@ export default function CharacterPanel(props) {
                   </Grid>
                 </Grid>
               </Grid>
-              {/* ----------------------------------- Simcraft import button -----------------------------------  */}
 
+              {/* --------------------------- If the breakpoint is xs hide, else show -------------------------- */}
+              {xsBreakpoint ? (
+                ""
+              ) : (
+                // /* ----------------------------------- Simcraft import button -----------------------------------  */
+                <Grid item xs={12} sm="auto">
+                  <SimCraftInput
+                    buttonLabel={t("UpgradeFinderFront.SimCButton")}
+                    disableElevation={true}
+                    color="primary"
+                    variant="contained"
+                    player={props.player}
+                    simcSnack={props.simcSnack}
+                    allChars={props.allChars}
+                  />
+                </Grid>
+              )}
+            </Grid>
+
+            {xsBreakpoint ? (
+              ""
+            ) : (
+              <Grid item xs={12} style={{ padding: "0px 4px" }}>
+                <Divider style={{ align: "center" }} />
+              </Grid>
+            )}
+
+            {xsBreakpoint ? (
+              ""
+            ) : (
+              <Grid item sm container justifyContent="flex-start" spacing={0}>
+                {
+                  /* ----------------------------- Characters Active (Equipped) Items -----------------------------  */
+                  // Map currently equipped items with wowhead tooltips
+                }
+                <Grid item container xs justifyContent="center" spacing={1} alignItems="center">
+                  {props.player.activeItems.length > 0 ? (
+                    props.player.activeItems
+                      .filter((key) => key.isEquipped === true)
+                      .map((key, i) => (
+                        <Grid item key={i}>
+                          <a data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + wowheadDom} key={i}>
+                            <img
+                              style={{
+                                height: 22,
+                                width: 22,
+                                verticalAlign: "middle",
+                                borderRadius: "8px",
+                                border: "1px solid",
+                                borderColor: key.getQualityColor(),
+                              }}
+                              src={getItemIcon(key.id, gameType)}
+                              alt=""
+                            />
+                          </a>
+                        </Grid>
+                      ))
+                  ) : (
+                    <Grid item key={i}>
+                      {/* // TODO: Localize this */}
+                      <Typography variant="body2">Import your gear with a SimC string via the "Import Gear" button above.</Typography>
+                    </Grid>
+                  )}
+                </Grid>
+              </Grid>
+            )}
+          </Grid>
+
+          {/* --------------------------- If the breakpoint is xs show, else hide -------------------------- */}
+          {xsBreakpoint ? (
+            // /* ----------------------------------- Simcraft import button -----------------------------------  */
+            <Grid item container spacing={1}>
               <Grid item xs={12} sm="auto">
                 <SimCraftInput
                   buttonLabel={t("UpgradeFinderFront.SimCButton")}
@@ -321,48 +386,50 @@ export default function CharacterPanel(props) {
                   allChars={props.allChars}
                 />
               </Grid>
-            </Grid>
 
-            <Grid item xs={12} style={{ padding: "0px 4px" }}>
-              <Divider style={{ align: "center" }} />
-            </Grid>
+              <Grid item xs={12} style={{ padding: "0px 4px" }}>
+                <Divider style={{ align: "center" }} />
+              </Grid>
 
-            <Grid item sm container justifyContent="flex-start" spacing={0}>
-              {
-                /* ----------------------------- Characters Active (Equipped) Items -----------------------------  */
-                // Map currently equipped items with wowhead tooltips
-              }
-              <Grid item container xs justifyContent="center" spacing={1} alignItems="center">
-                {props.player.activeItems.length > 0 ? (
-                  props.player.activeItems
-                    .filter((key) => key.isEquipped === true)
-                    .map((key, i) => (
-                      <Grid item key={i}>
-                        <a data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + wowheadDom} key={i}>
-                          <img
-                            style={{
-                              height: 22,
-                              width: 22,
-                              verticalAlign: "middle",
-                              borderRadius: "8px",
-                              border: "1px solid",
-                              borderColor: key.getQualityColor(),
-                            }}
-                            src={getItemIcon(key.id, gameType)}
-                            alt=""
-                          />
-                        </a>
-                      </Grid>
-                    ))
-                ) : (
-                  <Grid item key={i}>
-                    {/* // TODO: Localize this */}
-                    <Typography variant="body2">Import your gear with a SimC string via the "Import Gear" button above.</Typography>
-                  </Grid>
-                )}
+              <Grid item sm container justifyContent="flex-start" spacing={0}>
+                {
+                  /* ----------------------------- Characters Active (Equipped) Items -----------------------------  */
+                  // Map currently equipped items with wowhead tooltips
+                }
+                <Grid item container xs justifyContent="center" spacing={1} alignItems="center">
+                  {props.player.activeItems.length > 0 ? (
+                    props.player.activeItems
+                      .filter((key) => key.isEquipped === true)
+                      .map((key, i) => (
+                        <Grid item key={i}>
+                          <a data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + wowheadDom} key={i}>
+                            <img
+                              style={{
+                                height: 22,
+                                width: 22,
+                                verticalAlign: "middle",
+                                borderRadius: "8px",
+                                border: "1px solid",
+                                borderColor: key.getQualityColor(),
+                              }}
+                              src={getItemIcon(key.id, gameType)}
+                              alt=""
+                            />
+                          </a>
+                        </Grid>
+                      ))
+                  ) : (
+                    <Grid item key={i}>
+                      {/* // TODO: Localize this */}
+                      <Typography variant="body2">Import your gear with a SimC string via the "Import Gear" button above.</Typography>
+                    </Grid>
+                  )}
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
+          ) : (
+            ""
+          )}
 
           <Grid item xs={12}>
             <Divider />
