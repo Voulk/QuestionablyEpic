@@ -726,7 +726,17 @@ else if (
 
   bonus_stats.hps = (oneHeal * expectedPPM * effect.targets * player.getStatMultiplier("CRITVERS") / 60);
   //
-} 
+} else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                Amalgam's Seventh Spine                                         */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Amalgam's Seventh Spine"
+) {
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm) / 60;
+  //
+}
   else {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        No Trinkets Found                                       */

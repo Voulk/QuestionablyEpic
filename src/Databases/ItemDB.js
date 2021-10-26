@@ -122198,4 +122198,59 @@ export const itemDB = [
                 246,
             ]
         },
+        {
+            "id": 136714,
+            "name": "Amalgam's Seventh Spine",
+            "names": {
+                "cn": "",
+                "en": "Amalgam's Seventh Spine",
+                "ru": "Рубин иссечения душ",
+                "es": "Rubí de extracción de almas",
+                "br": "Rubi Sangralma",
+                "kr": "",
+                "fr": "Rubis d’effusion d’âmes",
+                "de": "Seelenlassender Rubin"
+            },
+            "icon": "spell_priest_mindspike",
+            "itemClass": 4,
+            "itemSubClass": 0,
+            "itemLevel": 158,
+            "stats": {
+                "intellect": 6666,
+                "stamina": 0,
+                "haste": 0,
+                "crit": 0,
+                "mastery": 0,
+                "versatility": 0
+            },
+            "sources": [
+                {
+                    "instanceId": -1,
+                    "encounterId": 1187
+                },
+                {
+                    "instanceId": 1187,
+                    "encounterId": 2389
+                }
+            ],
+            "onUseTrinket": false,
+            "dropLoc": "",
+            "slot": "Trinket",
+            "effect": {
+                "type": "trinket",
+                "name": "Amalgam's Seventh Spine"
+            },
+            "levelRange": [
+                187,
+                194,
+                200,
+                207,
+                213,
+                220,
+                226,
+                233,
+                239,
+                246,
+            ]
+        },
 ]
