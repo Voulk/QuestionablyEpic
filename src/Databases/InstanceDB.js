@@ -188,4 +188,13 @@ export const encounterDB = {
 
   /* --------------------------------------------- PVP -------------------------------------------- */
   2: [-17, -16],
+  /* ------------------------------------- Legion Timewalking ------------------------------------- */
+  3: [
+    707, // Vault of the Wardens
+    716, // Eye of Azshara
+    740, // Black Rook Hold
+    762, // Darkheart Thicket
+    767, // Neltharion's Lair
+    800, // Court of Stars
+  ],
 };
