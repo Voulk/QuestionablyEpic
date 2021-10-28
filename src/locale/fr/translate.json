@@ -419,7 +419,14 @@
       "12841": "Théâtre de la Souffrance",
       "13309": "L’Autre côté",
       "12837": "Flèches de l’Ascension",
-      "13577": "Tazavesh, le marché dissimulé"
+      "13577": "Tazavesh, le marché dissimulé",
+
+      "707": "Caveau des Gardiennes",
+      "716": "L’Œil d’Azshara",
+      "740": "Bastion du Freux",
+      "762": "Fourré Sombrecœur",
+      "767": "Repaire de Neltharion",
+      "800": "Cour des Étoiles"
     },
 
     "RaidDifficulty": {
