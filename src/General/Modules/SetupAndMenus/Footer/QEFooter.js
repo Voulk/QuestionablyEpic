@@ -8,10 +8,10 @@ import FooterLinks from "./FooterLinks";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: 4,
-    backgroundColor: "rgb(82, 82, 82,0.15)",
+    padding: 6,
+    backgroundColor: "rgb(82, 82, 82,0.25)",
     borderRadius: 4,
-    marginTop: 100,
+    marginTop: 80,
     bottom: 0,
   },
   subRoot: {

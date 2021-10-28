@@ -7,11 +7,11 @@ import { Typography, Link } from "@material-ui/core";
 // }));
 
 const list = [
-  { text: "Website", link: "#" },
-  { text: "Patreon", link: "#" },
-  { text: "Report a bug", link: "#" },
-  { text: "Make a suggestion", link: "#" },
-  { text: "Developers", link: "#" },
+  { text: "Guides", link: "https://questionablyepic.com" },
+  { text: "Support the site", link: "https://patreon.com/questionablyepic" },
+  { text: "Report a bug", link: "https://docs.google.com/forms/d/e/1FAIpQLSeUsAOadXLgrOfIDCGdHlWp0ydHRM8hXzgSGPHl06qV0fuBfg/viewform" },
+  { text: "Suggestion Box", link: "https://docs.google.com/forms/d/e/1FAIpQLSeUsAOadXLgrOfIDCGdHlWp0ydHRM8hXzgSGPHl06qV0fuBfg/viewform" },
+  { text: "Developers", link: "https://github.com/Voulk/QuestionablyEpic" },
 ];
 
 // Further Details for Link component https://mui.com/components/links/
@@ -25,6 +25,8 @@ export default function FooterLinks(props) {
           style={{ color: "white" }}
           variant="subtitle2"
           href={key.link}
+          target="_blank"
+          rel="noopener"
           // Determines whether text is underlined. Options: None, Hover, ALways
           underline="none"
         >
