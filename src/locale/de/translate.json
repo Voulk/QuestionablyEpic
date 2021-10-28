@@ -346,7 +346,9 @@
       "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300DE",
       "ItemAdded": "Gegenstand hinzugefügt!",
       "ItemDeleted": "Gegenstand entfernt!",
-      "DominationSocket": "Domination"
+      "DominationSocket": "Domination",
+      "Missives": "Missives",
+      "ItemBarTitle": "Add Items (Optional)"
     },
 
     "Races": {

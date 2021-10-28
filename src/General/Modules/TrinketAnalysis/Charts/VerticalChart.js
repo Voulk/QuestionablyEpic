@@ -1,9 +1,11 @@
 import React, { PureComponent } from "react";
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip, Cell } from "recharts";
 // import chroma from "chroma-js";
 import { getItemIcon, getTranslatedItemName } from "../../../Engine/ItemUtilities";
 import "./VerticalChart.css";
 import i18n from "i18next";
+import chroma from "chroma-js";
+import { colorGenerator } from "../../CooldownPlanner/Functions/Functions";
 
 const getLevelDiff = (trinketName, db, ilvl, map2) => {
   /* ---------- Check if item exists at item level. If not, return 0. --------- */
@@ -47,36 +49,36 @@ const truncateString = (str, num) => {
 export default class VerticalChart extends PureComponent {
   constructor() {
     super();
+    this.state = { focusBar: null, mouseLeave: true };
   }
 
   render() {
     const currentLanguage = i18n.language;
     const data = this.props.data;
     const db = this.props.db;
+    const colourBlind = this.props.colourBlind;
+    /* ------------------------- Ilvls to Show on Chart & Colour Generation ------------------------- */
+    const iLvls = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
+
+    /* ------------------------------------- Visibility of Ilvls ------------------------------------ */
+    // (Currently won't work as intended due to how the data is provided, currently the previous ilvl is needed to build the stacked bars)
+    let iLvlsVisible = { 187: true, 194: true, 200: true, 207: true, 213: true, 220: true, 226: true, 230: true, 233: true, 239: true, 246: true, 252: true, 259: true };
+
+    const barColours = colourBlind ? barColours234 : this.props.theme;
+
     let arr = [];
     let cleanedArray = [];
     Object.entries(data)
       .map((key) => key[1])
       .map((map2) => {
+        /* -------------------------- Map Ilvls & Scores Then create an object -------------------------- */
+        let x = Object.fromEntries(iLvls.map((ilvl) => [ilvl, getLevelDiff(map2.name, db, ilvl, map2)]));
+        /* ------------------------- Push Trinket ID & Spread Scores into array ------------------------- */
         arr.push({
           name: map2.id,
-          //i161: map2.i161,
-          187: getLevelDiff(map2.name, db, 187, map2),
-          194: getLevelDiff(map2.name, db, 194, map2),
-          200: getLevelDiff(map2.name, db, 200, map2),
-          207: getLevelDiff(map2.name, db, 207, map2),
-          213: getLevelDiff(map2.name, db, 213, map2),
-          220: getLevelDiff(map2.name, db, 220, map2),
-          226: getLevelDiff(map2.name, db, 226, map2),
-          230: getLevelDiff(map2.name, db, 230, map2),
-          233: getLevelDiff(map2.name, db, 233, map2),
-          239: getLevelDiff(map2.name, db, 239, map2),
-          246: getLevelDiff(map2.name, db, 246, map2),
-          252: getLevelDiff(map2.name, db, 252, map2),
-          259: getLevelDiff(map2.name, db, 259, map2),
+          ...x,
         });
       });
-
     /* ------------ Map new Array of Cleaned Objects (No Zero Values) ----------- */
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
 
@@ -90,7 +92,7 @@ export default class VerticalChart extends PureComponent {
               {truncateString(getTranslatedItemName(payload.value, currentLanguage), 32)}
             </text>
             <a data-wowhead={"item=" + payload.value + "&ilvl=200" + "&domain=" + currentLanguage}>
-              <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
+              <img width={16} height={16} x={0} y={0} src={getItemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </a>
           </foreignObject>
         </g>
@@ -104,21 +106,29 @@ export default class VerticalChart extends PureComponent {
           data={cleanedArray}
           layout="vertical"
           margin={{
-            top: 20,
+            top: -10,
             right: 40,
-            bottom: 20,
+            bottom: 10,
             left: 250,
+          }}
+          onMouseMove={(state) => {
+            if (state.isTooltipActive) {
+              this.setState({ focusBar: state.activeTooltipIndex, mouseLeave: false });
+            } else {
+              this.setState({ focusBar: null, mouseLeave: true });
+            }
           }}
         >
           <XAxis type="number" stroke="#f5f5f5" axisLine={false} />
           <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} height={1} axisLine={false} />
           <Tooltip
+            cursor={false}
             labelStyle={{ color: "#ffffff" }}
             contentStyle={{
               backgroundColor: "#1b1b1b",
               border: "1px solid rgba(255, 255, 255, 0.12)",
             }}
-            isAnimationActive={false} 
+            isAnimationActive={false}
             labelFormatter={(timeStr) => getTranslatedItemName(timeStr, currentLanguage)}
             formatter={(value, name, props) => {
               {
@@ -139,24 +149,9 @@ export default class VerticalChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
-          {/*<Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" /> */}
-          <Bar dataKey={187} fill={"#7291c4"} stackId="a" />
-          <Bar dataKey={194} fill={"#9fb8d7"} stackId="a" />
-          <Bar dataKey={200} fill={"#BBCDEA"} stackId="a" />
-
-          <Bar dataKey={207} fill={"#72C47F"} stackId="a" />
-          <Bar dataKey={213} fill={"#97d79f"} stackId="a" />
-          <Bar dataKey={220} fill={"#bbeabf"} stackId="a" />
-
-          <Bar dataKey={226} fill={"#D8BE7B"} stackId="a" />
-          <Bar dataKey={230} fill={"#e0d06b"} stackId="a" />
-          <Bar dataKey={233} fill={"#e0d09b"} stackId="a" />
-          <Bar dataKey={239} fill={"#eae2bb"} stackId="a" />
-
-          <Bar dataKey={246} fill={"#d87b7b"} stackId="a" />
-          <Bar dataKey={252} fill={"#e29b9b"} stackId="a" />
-          <Bar dataKey={259} fill={"#eabbbb"} stackId="a" />
+          {iLvls.map((key, i) => (
+            <Bar dataKey={iLvlsVisible[key] ? key : ""} fill={barColours[i]} stackId="a" />
+          ))}
         </BarChart>
       </ResponsiveContainer>
     );

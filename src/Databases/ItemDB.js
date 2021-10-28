@@ -122030,5 +122030,37 @@ export const itemDB = [
             "type": "special",
             "name": "Passable Credentials"
         }
+    },
+
+    // for testing
+    {
+        "id": "178926:7128:6649:6650:6935:7451:1559",
+        "name": "Maraad's Dying Breath (Finger) Haste/Versatility 262",
+        "names": {
+            "cn": "",
+            "en": "Maraad's Dying Breath (Finger)",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelcrafting_90_maxlvlring_red",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "stats": {
+            "intellect": 0,
+            "stamina": 130,
+            "haste": 137,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 137
+        },
+        "dropLoc": "",
+        "slot": "Finger",
+        // "socketType": "Domination"
     }
 ]

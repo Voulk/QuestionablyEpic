@@ -450,7 +450,9 @@
       "ItemErrorMsg": "Item Not Added. Ilvl Cap exceeded.",
       "ItemAdded": "Item Added!",
       "ItemDeleted": "Item Deleted!",
-      "DominationSocket": "Domination"
+      "DominationSocket": "Domination",
+      "Missives": "Missives",
+      "ItemBarTitle": "Add Items (Optional)"
     },
 
     "Races": {

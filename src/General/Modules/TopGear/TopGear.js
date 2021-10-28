@@ -20,6 +20,7 @@ import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
 import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems";
 import ItemBar from "../ItemBar/ItemBar";
+import CharacterPanel from "../CharacterPanel/CharacterPanel";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -44,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.down("xs")]: {
       margin: "auto",
-      width: "85%",
+      width: "90%",
       justifyContent: "center",
       display: "block",
       marginTop: 120,
@@ -58,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up("md")]: {
       margin: "auto",
-      width: "65%",
+      width: "70%",
       justifyContent: "center",
       display: "block",
       marginTop: 120,
@@ -252,23 +253,19 @@ export default function TopGear(props) {
   return (
     <div className={classes.root}>
       <Grid container spacing={1} justify="center">
-        {
-          <Grid item xs={12}>
-            <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
-              {t("TopGear.Title")}
-            </Typography>
-          </Grid>
-        }
         <Grid item xs={12}>
-          <HelpText blurb={helpBlurb} text={helpText} />
+          <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
+            {t("TopGear.Title")}
+          </Typography>
         </Grid>
         <Grid item xs={12}>
-          {<UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />}
+          <HelpText blurb={helpBlurb} text={helpText} expanded={true} />
         </Grid>
         <Grid item xs={12}>
-          {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
-          <Settings
+          <CharacterPanel
             player={props.player}
+            simcSnack={props.simcSnack}
+            allChars={props.allChars}
             contentType={contentType}
             userSettings={userSettings}
             editSettings={editSettings}
@@ -278,13 +275,18 @@ export default function TopGear(props) {
             autoSocket={true}
           />
         </Grid>
+
         <Grid item xs={12}>
-          {<ItemBar player={props.player} setItemList={setItemList} />}
+          <ItemBar player={props.player} setItemList={setItemList} />
         </Grid>
-        {gameType === "Retail" ? <Grid item xs={12}>
-          {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
-          <DominationGems player={props.player} singleUpdate={props.singleUpdate} userSettings={userSettings} />
-        </Grid> : ""}
+        {gameType === "Retail" ? (
+          <Grid item xs={12}>
+            {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
+            <DominationGems player={props.player} singleUpdate={props.singleUpdate} userSettings={userSettings} />
+          </Grid>
+        ) : (
+          ""
+        )}
 
         {props.player.activeItems.length > 0 ? (
           slotList.map((key, index) => {

@@ -3,8 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { MenuItem, Grid, FormControl, Select, Typography, Divider, TextField, Tooltip, InputLabel } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { setBounds } from "../../../Engine/CONSTRAINTS";
-import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
-import { dominationGemDB } from "../../../../Databases/DominationGemDB";
 import { getGemIcon } from "../../../Engine/ItemUtilities";
 
 const menuStyle = {
@@ -28,10 +26,28 @@ const menuStyle = {
   getContentAnchorEl: null,
 };
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(14),
+    marginRight: 4,
+  },
+  secondaryHeading: {
+    fontSize: theme.typography.pxToRem(15),
+    color: theme.palette.text.secondary,
+  },
+  select: {
+    fontSize: theme.typography.pxToRem(16),
+  },
+}));
+
 export default function RetailSettings(props) {
   const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.language;
-  const playerSpec = props.player.getSpec();
+  // const currentLanguage = i18n.language;
+  const classes = useStyles();
+  // const playerSpec = props.player.getSpec();
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             States                                             */
@@ -43,9 +59,6 @@ export default function RetailSettings(props) {
   /* -------------------------------------- Group Value State ------------------------------------- */
   const [groupValue, setgroupValue] = useState(props.userSettings.includeGroupBenefits);
 
-  /* -------------------------------------- Disc Talent State ------------------------------------- */
-  // const [discTalent, setDiscTalent] = useState(109964);
-
   /* ----------------------------------- Paladin Playstyle State ---------------------------------- */
   const [specBuild, setSpecBuild] = useState(props.player.activeModelID[props.contentType]);
 
@@ -55,8 +68,7 @@ export default function RetailSettings(props) {
   /* ----------------------------------- Domination Socket State ---------------------------------- */
   const [replaceDomGems, setReplaceDomGems] = useState(props.userSettings.replaceDomGems);
 
-
-  const specBuilds = props.player.getAllModels(props.contentType)
+  const specBuilds = props.player.getAllModels(props.contentType);
 
   const updateHymnal = (value) => {
     props.editSettings("hymnalAllies", setBounds(value, 0, 4));
@@ -85,28 +97,16 @@ export default function RetailSettings(props) {
     props.singleUpdate(props.player);
   };
 
-  // const options = [
-  //   { value: true, label: "Yes" },
-  //   { value: false, label: "No" },
-  // ];
-
-  /* ----------------------------------------- Free State ----------------------------------------- */
-  // const [value3, setValue3] = useState(5);
-  /* ----------------------------------------- Free State ----------------------------------------- */
-  // const [value4, setValue4] = useState(5);
-  /* ----------------------------------------- Free State ----------------------------------------- */
-  // const [value5, setValue5] = useState(5);
-
   return (
-    <Grid container spacing={1} direction="row">
+    <Grid container spacing={2} direction="row">
       {/* ------------------------- Cabalist's Hymnal Item ------------------------- */}
-      {/*
-      {props.hymnalShow === true ? (
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-          <Grid container spacing={0} style={{ padding: "0px 8px" }}>
+
+      {/* {props.hymnalShow === true ? (
+        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+          <Grid container spacing={0}>
             <Grid item xs={12}>
               <div style={{ display: "inline-flex" }}>
-                <Typography color="primary" style={{ marginRight: 4 }} noWrap>
+                <Typography className={classes.heading} color="primary" noWrap>
                   {t("Settings.Retail.Setting0Title")}
                 </Typography>
                 <Tooltip
@@ -122,225 +122,174 @@ export default function RetailSettings(props) {
               </div>
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                id="AlliesNumber"
-                value={hymnalValue}
-                onChange={(e) => updateHymnal(e.target.value)}
-                variant="outlined"
-                size="small"
-                type="number"
-                fullWidth
-                inputProps={{
-                  style: { textAlign: "center" },
-                }}
-              />
+              <FormControl variant="outlined" size="small" label={t("Settings.Retail.Setting0Title")} fullWidth style={{ textAlign: "center", width: 120 }}>
+                <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting0Title")}</InputLabel>
+                <TextField
+                  id="AlliesNumber"
+                  label={t("Settings.Retail.Setting0Title")}
+                  value={hymnalValue}
+                  onChange={(e) => updateHymnal(e.target.value)}
+                  variant="outlined"
+                  size="small"
+                  type="number"
+                  // fullWidth
+                  inputProps={{
+                    style: { textAlign: "center" },
+                    className: classes.select,
+                  }}
+                />
+              </FormControl>
             </Grid>
           </Grid>
         </Grid>
       ) : (
         ""
-      )} 
-      */} 
+      )}  */}
+
       {/* ------------------------- Group Buff (Treat Buff as Personal Throughput) ------------------------- */}
       {props.groupBuffShow === true ? (
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-          <Grid container spacing={0} style={{ padding: "0px 8px" }}>
-            <Grid item xs={12}>
-              <div style={{ display: "inline-flex" }}>
-                <Typography color="primary" style={{ marginRight: 4 }} noWrap>
-                  {t("Settings.Retail.Setting1Title")}
-                </Typography>
-                <Tooltip
-                  title={
-                    <Typography align="center" variant="body2">
-                      {t("Settings.Retail.Setting1Tooltip")}
-                    </Typography>
-                  }
-                  placement="top-start"
-                >
-                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
-                </Tooltip>
-              </div>
-            </Grid>
-            <Grid item xs={12}>
-              <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
-                <Select labelId="groupValue" value={groupValue} onChange={(e) => updateGroupValue(e.target.value)} MenuProps={menuStyle}>
-                  <MenuItem value={true} style={{ justifyContent: "center" }}>
-                    {t("Yes")}
-                  </MenuItem>
-                  <MenuItem value={false} style={{ justifyContent: "center" }}>
-                    {t("No")}
-                  </MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
-          </Grid>
-        </Grid>
-      ) : (
-        ""
-      )}
-      {/* ---------------- Discipline Priest Talent selector (Spirit Shell / Evangelism) --------------- */}
-      {/* {playerSpec === "Discipline Priest" ? (
-              <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-                <Grid container spacing={1} style={{ padding: "0px 8px" }} >
-                  <Grid item xs={12}>
-                    <div style={{ display: "inline-flex" }}>
-                      <Typography color="primary" style={{ marginRight: 4 }} noWrap>
-                        {t("Settings.Retail.Setting2Title")}
-                      </Typography>
-                      <Tooltip title={<Typography align="center"  variant="body2">{t("Settings.Retail.Setting2Tooltip")}</Typography>} placement="top-start">
-                        <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
-                      </Tooltip>
-                    </div>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <FormControl variant="outlined" size="small">
-                      <Select labelId="slots" value={discTalent} onChange={(e) => setDiscTalent(e.target.value)} MenuProps={menuStyle}>
-                        <MenuItem id="spiritShell" value={109964} style={{ justifyContent: "center" }} >
-                          {t("CooldownPlanner.ClassAbilities.109964")}
-                        </MenuItem>
-                        <MenuItem id="evangelism" value={246287} style={{ justifyContent: "center" }} >
-                          {t("CooldownPlanner.ClassAbilities.246287")}
-                        </MenuItem>
-                      </Select>
-                    </FormControl>
-                  </Grid>
-                </Grid>
-              </Grid>
-            ) : (
-              ""
-            )} */}
-
-      {/* --------------------------------- Playstyle / Build Selection --------------------------------  */}
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-          <Grid container spacing={0} style={{ padding: "0px 8px" }}>
-            <Grid item xs={12}>
-              <div style={{ display: "inline-flex" }}>
-                <Typography color="primary" style={{ marginRight: 4 }} noWrap>
-                  {t("Settings.Retail.Setting5Title")}
-                </Typography>
-                <Tooltip
-                  title={
-                    <Typography align="center" variant="body2">
-                      {t("Settings.Retail.Setting5Tooltip")}
-                    </Typography>
-                  }
-                  placement="top-start"
-                >
-                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
-                </Tooltip>
-              </div>
-            </Grid>
-            <Grid item xs={12}>
-              <FormControl variant="outlined" fullWidth size="small" style={{ textAlign: "center" }}>
-                <Select labelId="slots" value={props.player.activeModelID[props.contentType]} onChange={(e) => updateSpecBuild(e.target.value)} MenuProps={menuStyle}>
-                  {specBuilds.map((key, i) => (
-                    <MenuItem id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
-                      {key.modelName}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
-            </Grid>
-          </Grid>
-        </Grid>
-      {/* ----------------------------------------- Auto Socket Items ---------------------------------------- */}
-      {props.autoSocket === true ? (
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-          <Grid container spacing={0} style={{ padding: "0px 8px" }}>
-            <Grid item xs={12}>
-              <div style={{ display: "inline-flex" }}>
-                <Typography color="primary" style={{ marginRight: 4 }} noWrap>
-                  {t("Settings.Retail.Setting3Title")}
-                </Typography>
-                <Tooltip
-                  title={
-                    <Typography align="center" variant="body2">
-                      {t("Settings.Retail.Setting3Tooltip")}
-                    </Typography>
-                  }
-                  placement="top-start"
-                >
-                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
-                </Tooltip>
-              </div>
-            </Grid>
-            <Grid item xs={12}>
-              <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
-                <Select labelId="groupValue" value={autoSocketValue} onChange={(e) => updateAutoSocketValue(e.target.value)} MenuProps={menuStyle}>
-                  <MenuItem value={true} style={{ justifyContent: "center" }}>
-                    {t("Yes")}
-                  </MenuItem>
-                  <MenuItem value={false} style={{ justifyContent: "center" }}>
-                    {t("No")}
-                  </MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
-          </Grid>
-        </Grid>
-      ) : (
-        ""
-      )}
-      {/* --------------------------- Domination Socket for Great Vault Items --------------------------  */}
-      <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-        <Grid container spacing={0} style={{ padding: "0px 8px" }}>
-          <Grid item xs={12}>
-            <div style={{ display: "inline-flex" }}>
-              <Typography color="primary" style={{ marginRight: 4 }} noWrap>
-                {t("Settings.Retail.Setting4Title")}
+        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+          <Tooltip
+            title={
+              <Typography align="center" variant="body2">
+                {t("Settings.Retail.Setting1Tooltip")}
               </Typography>
-              <Tooltip
-                title={
-                  <Typography align="center" variant="body2">
-                    {t("Settings.Retail.Setting4Tooltip")}
-                  </Typography>
-                }
-                placement="top-start"
-              >
-                <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
-              </Tooltip>
-            </div>
-          </Grid>
-          <FormControl variant="outlined" size="small" style={{ textAlign: "center", width: t("QuickCompare.DominationSocket").length > 10 ? 160 : 140 }}>
-            <Select key={"DominationSocket"} labelId="DominationSocket" value={replaceDomGems} onChange={(e) => updateReplaceDomGems(e.target.value)} MenuProps={menuStyle}>
+            }
+            placement="top-start"
+          >
+            <TextField
+              label={t("Settings.Retail.Setting1Title")}
+              labelId="alliedBuffInputLabel"
+              value={groupValue}
+              onChange={(e) => updateGroupValue(e.target.value)}
+              SelectProps={{ MenuProps: menuStyle, className: classes.select }}
+              InputProps={{ variant: "outlined" }}
+              select
+              variant="outlined"
+              size="small"
+              fullWidth
+              style={{ textAlign: "center", minWidth: 120 }}
+            >
               <MenuItem value={true} style={{ justifyContent: "center" }}>
                 {t("Yes")}
               </MenuItem>
               <MenuItem value={false} style={{ justifyContent: "center" }}>
                 {t("No")}
               </MenuItem>
-            </Select>
-          </FormControl>
+            </TextField>
+          </Tooltip>
         </Grid>
+      ) : (
+        ""
+      )}
+
+      {/* --------------------------------- Playstyle / Build Selection --------------------------------  */}
+      <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+        <Tooltip
+          title={
+            <Typography align="center" variant="body2">
+              {t("Settings.Retail.Setting5Tooltip")}
+            </Typography>
+          }
+          placement="top-start"
+        >
+          <TextField
+            className={classes.select}
+            labelId="slots"
+            SelectProps={{ MenuProps: menuStyle, className: classes.select }}
+            InputProps={{ variant: "outlined" }}
+            select
+            variant="outlined"
+            size="small"
+            fullWidth
+            value={props.player.activeModelID[props.contentType]}
+            onChange={(e) => updateSpecBuild(e.target.value)}
+            MenuProps={menuStyle}
+            label={t("Settings.Retail.Setting5Title")}
+            style={{ textAlign: "center", minWidth: 120 }}
+          >
+            {specBuilds.map((key, i) => (
+              <MenuItem id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
+                {key.modelName}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Tooltip>
       </Grid>
-      {/* ----------------------------------------- Free Option ---------------------------------------- */}
-      {/*
-            <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-              <Grid container spacing={1} style={{ paddingLeft: 8 }}>
-                <Grid item xs={12}>
-                  <Tooltip
-                    title={<Typography align="center" variant="body2">{t("Settings.Retail.Setting5Tooltip")}</Typography>}
-                    placement="top-start"
-                  >
-                    <Typography color="primary">
-                      {t("Settings.Retail.Setting5Title")}
-                    </Typography>
-                  </Tooltip>
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    id="AlliesNumber"
-                    value={value5}
-                    style={{ maxWidth: 75 }}
-                    onChange={(e) => setValue5(e.target.value)}
-                    variant="outlined"
-                    size="small"
-                    type="number"
-                  />
-                </Grid>
-              </Grid>
-            </Grid> */}
+      {/* ----------------------------------------- Auto Socket Items ---------------------------------------- */}
+      {props.autoSocket === true ? (
+        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+          <Tooltip
+            title={
+              <Typography align="center" variant="body2">
+                {t("Settings.Retail.Setting3Tooltip")}
+              </Typography>
+            }
+            placement="top-start"
+          >
+            <TextField
+              className={classes.select}
+              labelId="groupValue"
+              value={autoSocketValue}
+              SelectProps={{ MenuProps: menuStyle, className: classes.select }}
+              InputProps={{ variant: "outlined" }}
+              select
+              variant="outlined"
+              size="small"
+              fullWidth
+              onChange={(e) => updateAutoSocketValue(e.target.value)}
+              MenuProps={menuStyle}
+              label={t("Settings.Retail.Setting3Title")}
+              style={{ textAlign: "center", minWidth: 120 }}
+            >
+              <MenuItem value={true} style={{ justifyContent: "center" }}>
+                {t("Yes")}
+              </MenuItem>
+              <MenuItem value={false} style={{ justifyContent: "center" }}>
+                {t("No")}
+              </MenuItem>
+            </TextField>
+          </Tooltip>
+        </Grid>
+      ) : (
+        ""
+      )}
+      {/* --------------------------- Domination Socket for Great Vault Items --------------------------  */}
+      <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+        <Tooltip
+          title={
+            <Typography align="center" variant="body2">
+              {t("Settings.Retail.Setting4Tooltip")}
+            </Typography>
+          }
+          placement="top-start"
+        >
+          <TextField
+            label={t("Settings.Retail.Setting4Title")}
+            className={classes.select}
+            key={"DominationSocket"}
+            labelId="DominationSocket"
+            SelectProps={{ MenuProps: menuStyle, className: classes.select }}
+            InputProps={{ variant: "outlined" }}
+            select
+            variant="outlined"
+            size="small"
+            fullWidth
+            value={replaceDomGems}
+            onChange={(e) => updateReplaceDomGems(e.target.value)}
+            MenuProps={menuStyle}
+            label={t("Settings.Retail.Setting4Title")}
+            style={{ textAlign: "center", minWidth: 200 }}
+          >
+            <MenuItem value={true} style={{ justifyContent: "center" }}>
+              {t("Yes")}
+            </MenuItem>
+            <MenuItem value={false} style={{ justifyContent: "center" }}>
+              {t("No")}
+            </MenuItem>
+          </TextField>
+        </Tooltip>
+      </Grid>
     </Grid>
   );
 }

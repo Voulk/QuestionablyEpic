@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Paper, Typography, Grid } from "@material-ui/core";
+import { Paper, Typography, Grid, Tooltip, Select, MenuItem } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { itemDB } from "../../../Databases/ItemDB";
 import Item from "../Player/Item";
@@ -11,6 +11,14 @@ import HelpText from "../SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
+import CharacterPanel from "../CharacterPanel/CharacterPanel";
+import userSettings from "../Settings/SettingsObject";
+import MetricToggle from "Retail/Modules/DominationGemAnalysis/MetricToggle";
+import SourceToggle from "./SourceToggle";
+import ToggleButton from "@material-ui/lab/ToggleButton";
+import VisibilityIcon from "@material-ui/icons/Visibility";
+import { themeSelection } from "./Charts/ChartColourThemes";
+
 // import Settings from "../Settings/Settings";
 // import userSettings from "../Settings/SettingsObject";
 
@@ -48,6 +56,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const menuStyle = {
+  style: { marginTop: 5 },
+  MenuListProps: {
+    style: { paddingTop: 0, paddingBottom: 0 },
+  },
+  PaperProps: {
+    style: {
+      border: "1px solid rgba(255, 255, 255, 0.23)",
+    },
+  },
+  anchorOrigin: {
+    vertical: "bottom",
+    horizontal: "left",
+  },
+  transformOrigin: {
+    vertical: "top",
+    horizontal: "left",
+  },
+  getContentAnchorEl: null,
+};
+
 const getTrinketAtItemLevel = (id, itemLevel, player, contentType, gameType) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
   let itemAllocations = getItemAllocations(id);
@@ -84,10 +113,167 @@ const getHighestTrinketScore = (db, trinket, gameType) => {
 
 export default function TrinketAnalysis(props) {
   useEffect(() => {
-      ReactGA.pageview(window.location.pathname + window.location.search);
-    }, []);
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   const { t } = useTranslation();
+  const [metric, setMetric] = React.useState("hps");
+  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]);
+  const [theme, setTheme] = React.useState(false);
+
+  const availableThemes = ["candidate1", "candidate2", "candidate3", "candidate4", "candidate5", "candidate6", "candidate7", "IBM", "wong", "candidate10", "candidate11", "candidate12", "candidate13"];
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                    Trinket Source Filtering                                    */
+  /* ---------------------------------------------------------------------------------------------- */
+  const sourceHandler = (array, sources) => {
+    let results = [];
+    const shadowlandsRaids = [
+      /* --------------------------------------- Castle Nathria --------------------------------------- */
+      1190,
+      /* ------------------------------------ Sanctum of Domination ----------------------------------- */
+      1193,
+    ];
+    const shadowlandsDungeons = [
+      /* -------------------------------------- General Dungeons -------------------------------------- */
+      -1,
+      /* ------------------------------------------ Tazavesh ------------------------------------------ */
+      1194,
+    ];
+    const shadowlandsTheRest = [
+      undefined,
+      /* ---------------------------------------- World Bosses ---------------------------------------- */
+      1192,
+    ];
+
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   The Rest & Raids & Dungeons                                  */
+    /* ---------------------------------------------------------------------------------------------- */
+    if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Dungeons") === true) {
+      results = array;
+    }
+
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 The Rest & Raids / NO DUNGEONS                                 */
+    /* ---------------------------------------------------------------------------------------------- */
+    if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Dungeons") === false) {
+      results = array.filter((item) => {
+        if (
+          /* -------------------------------- World Quests / Other Sources -------------------------------- */
+          item["sources"] === undefined ||
+          shadowlandsTheRest.includes(item["sources"][0]["instanceId"]) ||
+          /* -------------------------------------------- Raids ------------------------------------------- */
+          shadowlandsRaids.includes(item["sources"][0]["instanceId"])
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+    }
+
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 The Rest & Dungeons / NO RAIDS                                 */
+    /* ---------------------------------------------------------------------------------------------- */
+    if (sources.includes("The Rest") === true && sources.includes("Raids") === false && sources.includes("Dungeons") === true) {
+      results = array.filter((item) => {
+        if (
+          /* -------------------------------- World Quests / Other Sources -------------------------------- */
+          item["sources"] === undefined ||
+          shadowlandsTheRest.includes(item["sources"][0]["instanceId"]) ||
+          /* ------------------------------------------ Dungeons ------------------------------------------ */
+          shadowlandsDungeons.includes(item["sources"][0]["instanceId"])
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+    }
+
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Dungeons & Raids / NO THE REST                                 */
+    /* ---------------------------------------------------------------------------------------------- */
+    if (sources.includes("The Rest") === false && sources.includes("Raids") === true && sources.includes("Dungeons") === true) {
+      results = array.filter((item) => {
+        if (item["sources"] === undefined) {
+          return false;
+        } else {
+          if (
+            /* ------------------------------------------ Dungeons ------------------------------------------ */
+            shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) ||
+            /* -------------------------------------------- Raids ------------------------------------------- */
+            shadowlandsRaids.includes(item["sources"][0]["instanceId"])
+          ) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      });
+    }
+
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Dungeons Only                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    if (sources.includes("The Rest") === false && sources.includes("Raids") === false && sources.includes("Dungeons") === true) {
+      results = array.filter((item) => {
+        if (item["sources"] === undefined) {
+          return false;
+        } else {
+          if (
+            /* ------------------------------------------ Dungeons ------------------------------------------ */
+            shadowlandsDungeons.includes(item["sources"][0]["instanceId"])
+          ) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      });
+    }
+
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                           Raids Only                                           */
+    /* ---------------------------------------------------------------------------------------------- */
+    if (sources.includes("The Rest") === false && sources.includes("Raids") === true && sources.includes("Dungeons") === false) {
+      results = array.filter((item) => {
+        if (item["sources"] === undefined) {
+          return false;
+        } else {
+          if (shadowlandsRaids.includes(item["sources"][0]["instanceId"])) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      });
+    }
+
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          The Rest Only                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    if (sources.includes("The Rest") === true && sources.includes("Raids") === false && sources.includes("Dungeons") === false) {
+      results = array.filter((item) => {
+        if (item["sources"] === undefined) {
+          return true;
+        } else {
+          if (shadowlandsTheRest.includes(item["sources"][0]["instanceId"])) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      });
+    }
+    return results;
+  };
+
+  const handleSource = (event, newSources) => {
+    if (newSources.length) {
+      setSources(newSources);
+    }
+  };
   const contentType = useSelector((state) => state.contentType);
   const itemLevels = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
   const gameType = useSelector((state) => state.gameType);
@@ -96,17 +282,25 @@ export default function TrinketAnalysis(props) {
       key.slot === "Trinket" &&
       ((gameType === "BurningCrusade" && "phase" in key && key.phase < 2 && (!("class" in key) || props.player.getSpec().includes(key.class))) || (gameType === "Retail" && key.levelRange.length > 0)),
   );
-  const helpBlurb = [t("TrinketAnalysis.HelpText")];
-  const helpText = ["The graph is generic to your spec and content type. You can get results accurate to your character in the Top Gear module.",
-                    "World Quest trinkets coming very soon.",
-                    "This is a sampling of available trinkets only. You can add ones that aren't on the list in Top Gear."];
+  const filteredTrinketDB = sourceHandler(trinketDB, sources);
 
+  const helpBlurb = [t("TrinketAnalysis.HelpText")];
+  const helpText = [
+    "The graph is generic to your spec and content type. You can get results accurate to your character in the Top Gear module.",
+    "World Quest trinkets coming very soon.",
+    "This is a sampling of available trinkets only. You can add ones that aren't on the list in Top Gear.",
+  ];
   const classes = useStyles();
 
-  let activeTrinkets = [];
+  const editSettings = (setting, newValue) => {
+    userSettings[setting] = newValue;
+  };
 
-  for (var i = 0; i < trinketDB.length; i++) {
-    const trinket = trinketDB[i];
+  let activeTrinkets = [];
+  let finalDB = gameType === "Retail" ? filteredTrinketDB : trinketDB;
+
+  for (var i = 0; i < finalDB.length; i++) {
+    const trinket = finalDB[i];
     let trinketAtLevels = {
       id: trinket.id,
       name: getTranslatedItemName(trinket.id, "en"),
@@ -126,7 +320,7 @@ export default function TrinketAnalysis(props) {
   if (gameType === "BurningCrusade") {
     activeTrinkets.sort((a, b) => (a.i100 < b.i100 ? 1 : -1));
   } else {
-    activeTrinkets.sort((a, b) => (getHighestTrinketScore(trinketDB, a, gameType) < getHighestTrinketScore(trinketDB, b, gameType) ? 1 : -1));
+    activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, gameType) < getHighestTrinketScore(finalDB, b, gameType) ? 1 : -1));
   }
 
   return (
@@ -137,26 +331,89 @@ export default function TrinketAnalysis(props) {
             {t("TrinketAnalysis.Header")}
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+
+        {/* <Grid item xs={12}>
           <Typography color="primary" variant="subtitle2" align="center" style={{ paddingBottom: 8 }}>
             {"Current Playstyle selected: " + props.player.getActiveModel(contentType).modelName + " - " + contentType}
           </Typography>
+        </Grid> */}
+        <Grid item xs={12}>
+          <HelpText blurb={helpBlurb} text={helpText} expanded={false} />
         </Grid>
         <Grid item xs={12}>
-          <HelpText blurb={helpBlurb} text={helpText} />
+          <CharacterPanel
+            player={props.player}
+            simcSnack={props.simcSnack}
+            allChars={props.allChars}
+            contentType={contentType}
+            userSettings={userSettings}
+            editSettings={editSettings}
+            singleUpdate={props.singleUpdate}
+            hymnalShow={true}
+            groupBuffShow={true}
+            autoSocket={true}
+          />
         </Grid>
         {/* <Grid item xs={12}>
           <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} />
         </Grid> */}
+        {/* {gameType === "Retail" ? (
+          <Grid item xs={12}>
+            <Grid item>
+              <MetricToggle metric={metric} setMetric={setMetric} />
+            </Grid>
+          </Grid>
+        ) : (
+          ""
+        )} */}
         <Grid item xs={12}>
-          <Grid container spacing={1} justify="center">
+          <Grid container spacing={0} justify="center">
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                {gameType === "Retail" ? <VerticalChart data={activeTrinkets} db={trinketDB} /> : <BCChart data={activeTrinkets} db={trinketDB} />}
+                <Grid container spacing={1} direction="row" justify="flex-end">
+                  <Grid item>
+                    <SourceToggle metric={sources} setMetric={handleSource} />
+                  </Grid>
+                  {gameType === "Retail" ? (
+                    <Grid item xs={12}>
+                      <VerticalChart data={activeTrinkets} db={finalDB} theme={themeSelection(theme ? "candidate2" : "candidate11")} />
+                    </Grid>
+                  ) : (
+                    <Grid item xs={12}>
+                      <BCChart data={activeTrinkets} db={trinketDB} />
+                    </Grid>
+                  )}
+                </Grid>
               </Paper>
             </Grid>
           </Grid>
         </Grid>
+        {gameType === "Retail" ? (
+          <Grid item xs={12} container spacing={0} direction="row" justify="flex-end">
+            {/* <Grid item>
+              <Select key={"themeSelector"} labelId="themeSelectorID" variant="outlined" value={theme} onChange={(e) => setTheme(e.target.value)} MenuProps={menuStyle} label={"Cooldowns Shown"}>
+                {availableThemes.map((key) => (
+                  <MenuItem value={key}>{key}</MenuItem>
+                ))}
+              </Select>
+            </Grid> */}
+            <Grid item>
+              <Tooltip title={"Alternate Theme"} arrow>
+                <ToggleButton
+                  value="check"
+                  selected={theme}
+                  onChange={() => {
+                    setTheme(!theme);
+                  }}
+                >
+                  <VisibilityIcon />
+                </ToggleButton>
+              </Tooltip>
+            </Grid>
+          </Grid>
+        ) : (
+          ""
+        )}
       </Grid>
     </div>
   );
