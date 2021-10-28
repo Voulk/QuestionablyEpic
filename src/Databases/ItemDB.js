@@ -122051,13 +122051,18 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 262,
         "shadowlandsLegendary": true,
+        "effect": {
+            "type": "spec legendary",
+            "name": "Maraad's Dying Breath"
+        },
         "stats": {
             "intellect": 0,
-            "stamina": 130,
-            "haste": 137,
+            "stamina": 0,
+            "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 137
+            "versatility": 0,
+            "unallocated": 8750
         },
         "dropLoc": "",
         "slot": "Finger",

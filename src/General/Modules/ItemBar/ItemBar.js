@@ -8,7 +8,7 @@ import MuiAlert from "@material-ui/lab/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
 import BCItem from "../Player/BCItem";
-import { getItemDB, getValidArmorTypes, getValidWeaponTypesBySpec, getItemProp, scoreItem } from "../../Engine/ItemUtilities";
+import { getItemDB, getValidArmorTypes, getValidWeaponTypesBySpec, getItemProp, scoreItem, getItemAllocations, calcStatsAtLevel } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { dominationGemDB } from "../../../Databases/DominationGemDB";
@@ -105,6 +105,7 @@ export default function ItemBar(props) {
   const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
   const [inputValue, setInputValue] = useState("");
   const [dominationSocket, setDominationSocket] = useState("");
+  const [missives, setMissives] = useState("");
 
   /* ------------------------ End Simc Module Functions ----------------------- */
 
@@ -127,11 +128,29 @@ export default function ItemBar(props) {
     }
     let player = props.player;
     let item = "";
-
+    
     if (gameType === "Retail") {
-      item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "");
-      item.setDominationGem(dominationSocket);
+      const itemSlot = getItemProp(itemID, "slot", gameType)
+      console.log(itemID);
+      console.log("Missive: " + missives);
+
+      if (itemID.includes(":")) {
+        // Item is a legendary and gets special handling.
+        const missiveStats = missives.toLowerCase().replace(/ /g,'').split("/");
+        let itemAllocations = getItemAllocations(itemID, missiveStats);
+
+        item = new Item(itemID, itemName, itemSlot, itemSocket, itemTertiary, 0, itemLevel, "");
+        item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, "");
+
+      }
+      else {
+        item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "");
+        item.setDominationGem(dominationSocket);
+      }
+
+
     } else {
+      // Burning Crusade
       item = new BCItem(itemID, itemName, getItemProp(itemID, "slot", gameType), "");
     }
 
@@ -176,6 +195,10 @@ export default function ItemBar(props) {
 
   const itemDominationChanged = (event) => {
     setDominationSocket(event.target.value);
+  };
+
+  const itemMissivesChanged = (event) => {
+    setMissives(event.target.value);
   };
 
   const [openAuto, setOpenAuto] = React.useState(false);
@@ -313,9 +336,9 @@ export default function ItemBar(props) {
             <Grid item>
               <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
                 <InputLabel id="missiveSelectionLabel">{t("QuickCompare.Missives")}</InputLabel>
-                <Select key={"missiveSelection"} labelId="missiveSelection" value={itemSocket} onChange={itemSocketChanged} MenuProps={menuStyle} label={t("QuickCompare.Missives")}>
+                <Select key={"missiveSelection"} labelId="missiveSelection" value={missives} onChange={itemMissivesChanged} MenuProps={menuStyle} label={t("QuickCompare.Missives")}>
                   {legendaryStats.map((key) => [
-                    <MenuItem key={key} label={t(key)} value={true}>
+                    <MenuItem key={key} label={t(key)} value={key}>
                       {t(key)}
                     </MenuItem>,
                     <Divider key={key + "divider"} />,
