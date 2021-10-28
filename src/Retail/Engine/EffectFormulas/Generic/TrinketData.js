@@ -412,6 +412,7 @@ export const trinket_data = [
         table: -1,
         duration: 12,
         cooldown: 90,
+        discOverhealing: 0.25,
       },
     ],
   },

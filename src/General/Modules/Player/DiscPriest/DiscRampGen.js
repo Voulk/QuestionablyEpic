@@ -18,6 +18,7 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
         sequence.push('Evangelism');
         sequence.push('Boon of the Ascended');
         sequence.push('Ascended Blast');
+        if (trinkets.includes("Flame of Battle")) sequence.push("Flame of Battle");
         sequence.push('Schism');
         const hastePerc = 1 + haste / 32 / 100;
         let boonDuration = 10 - (1.5 * 2 / hastePerc) + (1.5 / hastePerc);
@@ -55,6 +56,7 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
         sequence.push('Evangelism');
         sequence.push('Shadowfiend');
         if (trinkets.includes("Instructor's Divine Bell")) sequence.push("Instructor's Divine Bell");
+        if (trinkets.includes("Flame of Battle")) sequence.push("Flame of Battle");
         sequence.push('Schism');
         sequence.push('Mind Blast');
         sequence.push('Power Word: Solace');

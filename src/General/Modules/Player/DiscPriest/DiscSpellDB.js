@@ -226,6 +226,16 @@ export const DISCSPELLS = {
         stat: "mastery",
         value: 668, // Trinket values are replaced by the value on the specific version of the trinket.
     }],
+    "Flame of Battle": [{
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        cooldown: 90,
+        buffDuration: 12,
+        buffType: 'stats',
+        stat: "versatility",
+        value: 668, // Trinket values are replaced by the value on the specific version of the trinket.
+    }],
     "Shadowed Orb": [{
         type: "buff",
         castTime: 0, // While this has a 2s cast time, it can be used well before our ramp starts which means it functionally does not cost us cast time.

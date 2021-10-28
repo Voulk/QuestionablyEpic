@@ -326,8 +326,21 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     effectName === "Flame of Battle"
   ) {
     let effect = activeTrinket.effects[0];
+    const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
 
-    bonus_stats.versatility = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
+    if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
+      const boonSeq = buildRamp('Boon', 10, ["Flame of Battle"], setStats.haste, ['Rapture']);
+      const fiendSeq = buildRamp('Fiend', 10, ["Flame of Battle"], setStats.haste, ['Rapture']);
+      const flameRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Flame of Battle": trinketValue}, {});
+      console.log("Adding X HPS: " + (flameRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing));
+      console.log("Trinket value: " + trinketValue);
+      bonus_stats.hps = (flameRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
+    }
+    else {
+      bonus_stats.versatility = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
+    }
+
+    
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -377,7 +390,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
       const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell"], setStats.haste, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell"], setStats.haste, ['Rapture']);
       const bellRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Instructor's Divine Bell": trinketValue}, {});
-      console.log("Adding X HPS: " + (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing));
+      //console.log("Adding X HPS: " + (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing));
       bonus_stats.hps = (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
     }
     else {
