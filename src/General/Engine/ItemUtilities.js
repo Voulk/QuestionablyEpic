@@ -238,22 +238,24 @@ export function getItem(id, gameType = "Retail") {
 }
 
 
+
 export function applyDiminishingReturns(stats) {
   //console.log("Stats Pre-DR" + JSON.stringify(stats));
-  
+  const diminishedStats = JSON.parse(JSON.stringify(stats));
   for (const [key, value] of Object.entries(stats)) {
     if (["crit", "haste", "mastery", "versatility", "leech"].includes(key)) {
 
       const DRBreakpoints = STATDIMINISHINGRETURNS[key.toUpperCase()];
   
-      const baseStat = stats[key];
+      const baseStat = diminishedStats[key];
       for (var j = 0; j < DRBreakpoints.length; j++) {
-        stats[key] -= Math.max((baseStat - DRBreakpoints[j]) * 0.1, 0);
+        diminishedStats[key] -= Math.max((baseStat - DRBreakpoints[j]) * 0.1, 0);
       }
     } 
   }
+  //console.log("Stats Post-DR" + JSON.stringify(diminishedStats));
     
-  return stats;
+  return diminishedStats;
 }
 
 // This function grabs a selected prop from the currently selected item database.

@@ -22,7 +22,7 @@ class ItemSet {
   setDoms = 0;
   uniques = {};
   effectList = [];
-  onUseTrinkets = 0; // The number of on-use trinkets in the set.
+  onUseTrinkets = []; // The names of the on-use trinkets in the set.
 
   // Enchant Breakdown consists of key: value combos where key is the slot, and the value is the *name* of the enchant.
   // We only use it for display purposes on the report end.
@@ -56,7 +56,7 @@ class ItemSet {
   getStartingStats(gameType) {
     if (gameType === "Retail") {
       return {
-        intellect: 450, // TODO: 450
+        intellect: 450,
         haste: 0,
         crit: 0,
         mastery: 0,
@@ -100,10 +100,13 @@ class ItemSet {
       if (item.socket) setSockets++;
       if (item.hasDomSocket) domSockets++;
       if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
+      if (item.effect.type === "spec legendary") this.setLegendary = item.effect.name;
+
       if (item.setID) {
         this.sets[item.setID] = (item.setID in this.sets) ? this.sets[item.setID] + 1 : 1;
       }
-      if (item.onUse) this.onUseTrinkets += 1;
+      if (item.onUse) this.onUseTrinkets.push(item.effect.name);
+        
 
       if (item.effect !== "") {
         let effect = item.effect;
@@ -149,8 +152,6 @@ class ItemSet {
       }
     });
 
-    
-
     if (unholyGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Chaos Bane", "rank": lowestGemRanks.unholy})
     else if (frostGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Winds of Winter", "rank": lowestGemRanks.frost})
     else if (bloodGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Blood Link", "rank": lowestGemRanks.blood})
@@ -160,7 +161,6 @@ class ItemSet {
     //this.baseStats = {...setStats};
     this.setSockets = setSockets;
     this.domSockets = domSockets;
-
     return this;
   }
 

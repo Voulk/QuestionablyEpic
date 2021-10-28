@@ -86396,7 +86396,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Flame of Battle"
         },
-        "levelRange": []
+        "levelRange": [194, 200, 207, 213]
     },
     {
         "id": 181502,

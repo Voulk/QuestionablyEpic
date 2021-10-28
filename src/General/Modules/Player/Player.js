@@ -6,12 +6,13 @@ import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
 import { druidDefaultStatWeights } from "./ClassDefaults/DruidDefaults";
 import { shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
-import { discPriestDefaultStatWeights } from "./ClassDefaults/DiscPriestDefaults";
+import { discPriestDefaultStatWeights } from "./DiscPriest/DiscPriestDefaults";
 import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
-import ls from "local-storage";
+import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
+
 
 class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
@@ -127,7 +128,8 @@ class Player {
   };
 
   setStatWeights = (newWeights, contentType) => {
-    this.statWeights[contentType] = newWeights;
+    //this.statWeights[contentType] = newWeights;
+    this.getActiveModel(contentType).setStatWeights(newWeights);
   };
 
   getCovenant = () => {
@@ -180,8 +182,8 @@ class Player {
     if (spec === "Holy Paladin") this.covenant = "kyrian";
     else if (spec === "Restoration Druid") this.covenant = "night_fae";
     else if (spec === "Restoration Shaman") this.covenant = "necrolord";
-    else if (spec === "Mistweaver Monk") this.covenant = "necrolord";
-    else if (spec === "Discipline Priest") this.covenant = "venthyr";
+    else if (spec === "Mistweaver Monk") this.covenant = "venthyr";
+    else if (spec === "Discipline Priest") this.covenant = "kyrian";
     else if (spec === "Holy Priest") this.covenant = "night_fae";
     // This one is very flexible, but is also not used in any current formulas. It will be replaced when the models are updated.
     else {
@@ -424,6 +426,20 @@ class Player {
     }
   };
 
+  updatePlayerStats = () => {
+    let equippedSet = new ItemSet(0, this.getEquippedItems(false), 0);
+
+    equippedSet = equippedSet.compileStats();
+
+    let stats = equippedSet.setStats;
+
+    this.activeStats = stats;
+    if (this.spec === "Discipline Priest") {
+      this.getActiveModel("Raid").updateStatWeights(stats, "Raid");
+      this.getActiveModel("Raid").setRampInfo(stats);
+    }
+  }
+
   setModelID = (id, contentType) => {
     if ((contentType === "Raid" || contentType === "Dungeon") && id < this.castModels.length) {
       // Check that it's a valid ID.
@@ -626,18 +642,19 @@ class Player {
       this.statWeights.DefaultWeights = true;
       */
     } else if (spec === SPEC.DISCPRIEST) {
-      this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
+      this.castModels.push(new CastModel(spec, "Raid", "Kyrian Evangelism", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 1850,
-        haste: 850,
-        crit: 400,
-        mastery: 400,
+        intellect: 1950,
+        haste: 755,
+        crit: 580,
+        mastery: 420,
         versatility: 400,
         stamina: 1900,
       };
-      //this.getActiveModel("Raid").setRampInfo(this.activeStats, []);
+      this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable
+
     } else if (spec === SPEC.HOLYPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));

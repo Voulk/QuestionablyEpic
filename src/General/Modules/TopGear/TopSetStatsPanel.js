@@ -1,6 +1,6 @@
 import React from "react";
 import { Paper, Grid, Typography, Divider } from "@material-ui/core";
-import { STATPERONEPERCENT } from "../../Engine/STAT";
+import { STATPERONEPERCENT, BASESTAT } from "../../Engine/STAT";
 import { useTranslation } from "react-i18next";
 
 /* ---------------------------------------------------------------------------------------------- */
