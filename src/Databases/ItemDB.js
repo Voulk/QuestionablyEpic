@@ -122035,7 +122035,7 @@ export const itemDB = [
     // for testing
     {
         "id": "178926:7128:6649:6650:6935:7451:1559",
-        "name": "Maraad's Dying Breath (Finger) Haste/Versatility 262",
+        "name": "Maraad's Dying Breath (Finger)",
         "names": {
             "cn": "",
             "en": "Maraad's Dying Breath (Finger)",
@@ -122067,5 +122067,41 @@ export const itemDB = [
         "dropLoc": "",
         "slot": "Finger",
         // "socketType": "Domination"
-    }
+    },
+        // for testing
+        {
+            "id": "178926:7129:6649:6650:6935:7451:1559",
+            "name": "Maraad's Dying Breath (Chest)",
+            "names": {
+                "cn": "",
+                "en": "Maraad's Dying Breath (Chest)",
+                "ru": "",
+                "es": "",
+                "br": "",
+                "kr": "",
+                "fr": "",
+                "de": ""
+            },
+            "icon": "inv_chest_plate_mawraid_d_01",
+            "itemClass": 4,
+            "itemSubClass": 4,
+            "itemLevel": 262,
+            "shadowlandsLegendary": true,
+            "effect": {
+                "type": "spec legendary",
+                "name": "Maraad's Dying Breath"
+            },
+            "stats": {
+                "intellect": 5259,
+                "stamina": 0,
+                "haste": 0,
+                "crit": 0,
+                "mastery": 0,
+                "versatility": 0,
+                "unallocated": 3500
+            },
+            "dropLoc": "",
+            "slot": "Chest",
+            // "socketType": "Domination"
+        }
 ]

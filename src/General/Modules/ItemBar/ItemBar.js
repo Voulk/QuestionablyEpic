@@ -216,7 +216,7 @@ export default function ItemBar(props) {
     }
   };
   /* ---------------------------------------- Missive Array --------------------------------------- */
-  const legendaryStats = ["Haste / Versatility", "Haste / Mastery", "Critical / Haste", "Critical / Mastery", "Critical / Versatility", "Mastery / Versatility"];
+  const legendaryStats = ["Haste / Versatility", "Haste / Mastery", "Haste / Crit", "Crit / Mastery", "Crit / Versatility", "Mastery / Versatility"];
   const legendaryItemLevels = [190, 210, 225, 235, 249, 262];
 
   const isItemShadowlandsLegendary = getItemDB("Retail")
