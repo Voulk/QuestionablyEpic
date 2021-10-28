@@ -332,8 +332,6 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
       const boonSeq = buildRamp('Boon', 10, ["Flame of Battle"], setStats.haste, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, ["Flame of Battle"], setStats.haste, ['Rapture']);
       const flameRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Flame of Battle": trinketValue}, {});
-      console.log("Adding X HPS: " + (flameRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing));
-      console.log("Trinket value: " + trinketValue);
       bonus_stats.hps = (flameRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
     }
     else {
