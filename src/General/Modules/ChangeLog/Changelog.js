@@ -1,5 +1,5 @@
 import React from "react";
-import { Accordion, AccordionSummary, AccordionDetails, Button, Dialog, DialogActions, DialogContent, DialogTitle, Divider, Grid, Typography } from "@material-ui/core";
+import { Accordion, AccordionSummary, AccordionDetails, Button, Dialog, DialogActions, DialogContent, DialogTitle, Divider, Grid, Typography, Link } from "@material-ui/core";
 import { changeLog } from "./Log";
 import { makeStyles } from "@material-ui/core/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -38,16 +38,26 @@ export default function Changelog() {
   };
 
   return (
-    <div style={{ color: "Whitesmoke", marginLeft: "auto", marginRight: "auto", marginBottom: 5, marginTop: 10, textAlign: "center" }}>
-      <Button className={classes.buttonStyle} onClick={handleClickOpen("paper")}>
-        {/* ----------------- The first entry in Log.js is used as the latest version for the below. The latest update must always be at the top of that array ----------------  */}
-        {/* //TODO translate the Click text */}
+    <div>
+      {/* <Button className={classes.buttonStyle} >
+        ----------------- The first entry in Log.js is used as the latest version for the below. The latest update must always be at the top of that array ---------------- 
         <div>
           QE Live {changeLog[0].version} {t("Changelog.Update")} {changeLog[0].update}.
           <br />
           {t("Changelog.LastUpdated")} {changeLog[0].date}. Click to see what's changed.
         </div>
-      </Button>
+      </Button> */}
+
+      <Link
+        component="button"
+        variant="subtitle2"
+        style={{ color: "white" }}
+        onClick={handleClickOpen("paper")}
+        // Determines whether text is underlined. Options: None, Hover, ALways
+        underline="none"
+      >
+        {t("Changelog.Header")}
+      </Link>
       <Dialog open={open} onClose={handleClose} scroll={scroll} aria-labelledby="scroll-dialog-title" aria-describedby="scroll-dialog-description" maxWidth="md" fullWidth>
         <DialogTitle disableTypography align="center" id="scroll-dialog-title">
           <Typography color="primary" variant="h4">

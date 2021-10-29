@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { AppBar, Button, Dialog, DialogContent, Typography, Grid, Divider, Paper } from "@material-ui/core";
+import { AppBar, Button, Dialog, DialogContent, Typography, Grid, Divider, Paper, Link } from "@material-ui/core";
 import { dbGetHallOfFame } from "General/Modules/SetupAndMenus/ConnectionUtilities";
 
 export default function HallOfFame() {
@@ -33,13 +33,20 @@ export default function HallOfFame() {
   const paperStyle = { backgroundColor: "#2a2c30", border: "1px solid rgba(255, 255, 255, 0.22)" };
 
   return (
-    <div style={{ marginLeft: "auto", marginRight: "auto", marginBottom: 5, marginTop: 20, textAlign: "center" }}>
+    <div>
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                      Button to open dialog                                     */
       /* ----------------------------------------------------------------------------------------------  */}
-      <Button color="primary" variant="outlined" style={{ whiteSpace: "nowrap" }} onClick={handleClickOpen}>
+      <Link
+        component="button"
+        variant="subtitle2"
+        color="primary"
+        onClick={handleClickOpen}
+        // Determines whether text is underlined. Options: None, Hover, ALways
+        underline="none"
+      >
         {t("HallOfFame.buttonLabel")}
-      </Button>
+      </Link>
 
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="md" fullWidth={true} scroll="body">
         {/* ---------------------------------------------------------------------------------------------- */

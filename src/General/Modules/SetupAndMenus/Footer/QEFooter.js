@@ -1,10 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import HallOfFame from "General/Modules/HallOfFame/HallOfFame";
 import Changelog from "General/Modules/ChangeLog/Changelog";
 import FooterLinks from "./FooterLinks";
+import { changeLog } from "../../ChangeLog/Log";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,15 +44,20 @@ export default function QEFooter(props) {
   return (
     <div className={classes.root}>
       <div className={classes.subRoot}>
-        <Grid container spacing={1} alignItems="center">
-          <Grid item xs={3}>
+        <Grid container spacing={1} justify="space-between">
+          <Grid item>
             <FooterLinks />
           </Grid>
-          <Grid item xs={6}>
+          {/* <Grid item xs={6} /> */}
+          <Grid item>
             <HallOfFame />
+            {/* <br /> */}
             <Changelog />
+            {/* <br /> */}
+            <Typography variant="subtitle2" style={{ color: "white" }}>
+              {t("Changelog.LastUpdated")} {changeLog[0].date}
+            </Typography>
           </Grid>
-          <Grid item xs={3} />
         </Grid>
       </div>
     </div>
