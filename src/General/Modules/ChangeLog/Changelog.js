@@ -39,23 +39,7 @@ export default function Changelog() {
 
   return (
     <div>
-      {/* <Button className={classes.buttonStyle} >
-        ----------------- The first entry in Log.js is used as the latest version for the below. The latest update must always be at the top of that array ---------------- 
-        <div>
-          QE Live {changeLog[0].version} {t("Changelog.Update")} {changeLog[0].update}.
-          <br />
-          {t("Changelog.LastUpdated")} {changeLog[0].date}. Click to see what's changed.
-        </div>
-      </Button> */}
-
-      <Link
-        component="button"
-        variant="subtitle2"
-        style={{ color: "white" }}
-        onClick={handleClickOpen("paper")}
-        // Determines whether text is underlined. Options: None, Hover, ALways
-        underline="none"
-      >
+      <Link component="button" variant="subtitle2" style={{ color: "white" }} onClick={handleClickOpen("paper")} underline="none">
         {t("Changelog.Header")}
       </Link>
       <Dialog open={open} onClose={handleClose} scroll={scroll} aria-labelledby="scroll-dialog-title" aria-describedby="scroll-dialog-description" maxWidth="md" fullWidth>

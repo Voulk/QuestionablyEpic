@@ -1,10 +1,5 @@
 import React from "react";
-// import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Link } from "@material-ui/core";
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {},
-// }));
+import { Link } from "@material-ui/core";
 
 const list = [
   { text: "Guides", link: "https://questionablyepic.com" },
@@ -14,22 +9,11 @@ const list = [
   { text: "Developers", link: "https://github.com/Voulk/QuestionablyEpic" },
 ];
 
-// Further Details for Link component https://mui.com/components/links/
-// Uses the same props as Typography
-
 export default function FooterLinks(props) {
   return (
     <div>
       {list.map((key) => [
-        <Link
-          style={{ color: "white" }}
-          variant="subtitle2"
-          href={key.link}
-          target="_blank"
-          rel="noopener"
-          // Determines whether text is underlined. Options: None, Hover, ALways
-          underline="none"
-        >
+        <Link style={{ color: "white" }} variant="subtitle2" href={key.link} target="_blank" rel="noopener" underline="none">
           {key.text}
         </Link>,
         <br />,

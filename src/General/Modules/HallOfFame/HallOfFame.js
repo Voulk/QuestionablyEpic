@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { AppBar, Button, Dialog, DialogContent, Typography, Grid, Divider, Paper, Link } from "@material-ui/core";
+import { AppBar, Dialog, DialogContent, Typography, Grid, Divider, Paper, Link } from "@material-ui/core";
 import { dbGetHallOfFame } from "General/Modules/SetupAndMenus/ConnectionUtilities";
 
 export default function HallOfFame() {
@@ -37,14 +37,7 @@ export default function HallOfFame() {
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                      Button to open dialog                                     */
       /* ----------------------------------------------------------------------------------------------  */}
-      <Link
-        component="button"
-        variant="subtitle2"
-        color="primary"
-        onClick={handleClickOpen}
-        // Determines whether text is underlined. Options: None, Hover, ALways
-        underline="none"
-      >
+      <Link component="button" variant="subtitle2" color="primary" onClick={handleClickOpen} underline="none">
         {t("HallOfFame.buttonLabel")}
       </Link>
 

@@ -32,8 +32,6 @@ const useStyles = makeStyles((theme) => ({
       margin: "auto",
       width: "45%",
     },
-    // margin: "auto",
-    // width: "45%",
   },
 }));
 
@@ -45,15 +43,19 @@ export default function QEFooter(props) {
     <div className={classes.root}>
       <div className={classes.subRoot}>
         <Grid container spacing={1} justify="space-between">
+          {/* ---------------------------------------------------------------------------------------------- */
+          /*                                         Left Side Links                                        */
+          /* ----------------------------------------------------------------------------------------------  */}
           <Grid item>
             <FooterLinks />
           </Grid>
-          {/* <Grid item xs={6} /> */}
+
+          {/* ---------------------------------------------------------------------------------------------- */
+          /*                                        Right Side Links                                        */
+          /* ----------------------------------------------------------------------------------------------  */}
           <Grid item>
             <HallOfFame />
-            {/* <br /> */}
             <Changelog />
-            {/* <br /> */}
             <Typography variant="subtitle2" style={{ color: "white" }}>
               {t("Changelog.LastUpdated")} {changeLog[0].date}
             </Typography>
