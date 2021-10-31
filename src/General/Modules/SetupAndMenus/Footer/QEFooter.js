@@ -9,7 +9,7 @@ import { changeLog } from "../../ChangeLog/Log";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: 6,
+    padding: 12,
     backgroundColor: "rgb(82, 82, 82,0.25)",
     borderRadius: 4,
     marginTop: 80,

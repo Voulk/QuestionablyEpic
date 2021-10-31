@@ -288,8 +288,9 @@ export default function CharacterPanel(props) {
                     }
                     {gameType === "Retail" ? (
                       <Grid container spacing={1}>
+                        {console.log(Object.keys(playerStats))}
                         {Object.keys(playerStats)
-                          .filter((filterOut) => filterOut !== "stamina")
+                          .filter((filterOut) => filterOut !== "stamina" && filterOut !== "hps" && filterOut !== "dps")
                           .map((key) => (
                             <Grid item xs={4} sm="auto">
                               <Typography style={{ fontSize: 11, lineHeight: 1 }}>{t(capitalizeFirstLetter(key)) + ": " + playerStats[key]}</Typography>
