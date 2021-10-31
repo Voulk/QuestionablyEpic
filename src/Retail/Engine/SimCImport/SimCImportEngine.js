@@ -65,7 +65,7 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
       }
     }
 
-    if (player.getSpec() === "Discipline Priest") player.updatePlayerStats(); // Holding off for now.
+    player.updatePlayerStats(); // Holding off for now.
     snackHandler();
     closeDialog();
     clearSimCInput("");
