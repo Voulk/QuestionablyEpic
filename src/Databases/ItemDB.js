@@ -79201,114 +79201,6 @@ export const itemDB = [
         "slot": "Back"
     },
     {
-        "id": 180425,
-        "name": "9.0 PvP - PvP Reward - Accessory - Cloak - 02",
-        "names": {
-            "cn": "",
-            "en": "9.0 PvP - PvP Reward - Accessory - Cloak - 02",
-            "ru": "9.0 PvP - PvP Reward - Accessory - Cloak - 02",
-            "es": "",
-            "br": "9.0 JxJ - Recompensa de JxJ - Acessório - Manto - 02",
-            "kr": "",
-            "fr": "9.0 PvP - PvP Reward - Accessory - Cloak - 02",
-            "de": "9.0 PvP - PvP Reward - Accessory - Cloak - 02"
-        },
-        "icon": "inv_cape_90pvp_d_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "itemLevel": 155,
-        "stats": {
-            "intellect": 5259,
-            "stamina": 7889,
-            "haste": 3500,
-            "crit": 0,
-            "mastery": 3500,
-            "versatility": 0
-        },
-        "slot": "Back"
-    },
-    {
-        "id": 180426,
-        "name": "9.0 PvP - PvP Reward - Accessory - Cloak - 03",
-        "names": {
-            "cn": "",
-            "en": "9.0 PvP - PvP Reward - Accessory - Cloak - 03",
-            "ru": "9.0 PvP - PvP Reward - Accessory - Cloak - 03",
-            "es": "",
-            "br": "9.0 JxJ - Recompensa de JxJ - Acessório - Manto - 03",
-            "kr": "",
-            "fr": "9.0 PvP - PvP Reward - Accessory - Cloak - 03",
-            "de": "9.0 PvP - PvP Reward - Accessory - Cloak - 03"
-        },
-        "icon": "inv_cape_90pvp_d_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "itemLevel": 155,
-        "stats": {
-            "intellect": 5259,
-            "stamina": 7889,
-            "haste": 3500,
-            "crit": 0,
-            "mastery": 3500,
-            "versatility": 0
-        },
-        "slot": "Back"
-    },
-    {
-        "id": 180427,
-        "name": "9.0 PvP - PvP Reward - Accessory - Cloak - 04",
-        "names": {
-            "cn": "",
-            "en": "9.0 PvP - PvP Reward - Accessory - Cloak - 04",
-            "ru": "9.0 PvP - PvP Reward - Accessory - Cloak - 04",
-            "es": "",
-            "br": "9.0 JxJ - Recompensa de JxJ - Acessório - Manto - 04",
-            "kr": "",
-            "fr": "9.0 PvP - PvP Reward - Accessory - Cloak - 04",
-            "de": "9.0 PvP - PvP Reward - Accessory - Cloak - 04"
-        },
-        "icon": "inv_cape_90pvp_d_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "itemLevel": 155,
-        "stats": {
-            "intellect": 5259,
-            "stamina": 7889,
-            "haste": 3500,
-            "crit": 0,
-            "mastery": 3500,
-            "versatility": 0
-        },
-        "slot": "Back"
-    },
-    {
-        "id": 180428,
-        "name": "9.0 PvP - PvP Reward - Accessory - Cloak - 05",
-        "names": {
-            "cn": "",
-            "en": "9.0 PvP - PvP Reward - Accessory - Cloak - 05",
-            "ru": "9.0 PvP - PvP Reward - Accessory - Cloak - 05",
-            "es": "",
-            "br": "9.0 JxJ - Recompensa de JxJ - Acessório - Manto - 05",
-            "kr": "",
-            "fr": "9.0 PvP - PvP Reward - Accessory - Cloak - 05",
-            "de": "9.0 PvP - PvP Reward - Accessory - Cloak - 05"
-        },
-        "icon": "inv_cape_90pvp_d_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "itemLevel": 155,
-        "stats": {
-            "intellect": 5259,
-            "stamina": 7889,
-            "haste": 3500,
-            "crit": 0,
-            "mastery": 3500,
-            "versatility": 0
-        },
-        "slot": "Back"
-    },
-    {
         "id": 180444,
         "name": "Harmonia's Chosen Belt",
         "names": {
@@ -118417,78 +118309,6 @@ export const itemDB = [
     },
     {
         "id": 10015,
-        "name": "Maraad's Dying Breath (Chest)",
-        "names": {
-            "cn": "",
-            "en": "Maraad's Dying Breath (Chest)",
-            "ru": "Maraad's Dying Breath (Chest)",
-            "es": "",
-            "br": "",
-            "kr": "",
-            "fr": "Maraad's Dying Breath (Chest)",
-            "de": "Maraad's Dying Breath (Chest)"
-        },
-        "slot": "Chest",
-        "icon": "inv_chest_plate_mawraid_d_01",
-        "itemClass": 4,
-        "itemSubClass": 4,
-        "itemLevel": 262,
-        "shadowlandsLegendary": true,
-        "classReq": [
-            "Holy Paladin"
-        ],
-        "effect": {
-            "type": "spec legendary",
-            "name": "Maraad's Dying Breath"
-        },
-        "stats": {
-            "intellect": 5259,
-            "stamina": 0,
-            "haste": 0,
-            "crit": 0,
-            "mastery": 0,
-            "versatility": 0,
-            "unallocated": 3500
-        }
-    },
-    {
-        "id": 10016,
-        "name": "Maraad's Dying Breath (Finger)",
-        "names": {
-            "cn": "",
-            "en": "Maraad's Dying Breath (Finger)",
-            "ru": "Maraad's Dying Breath (Finger)",
-            "es": "",
-            "br": "",
-            "kr": "",
-            "fr": "Maraad's Dying Breath (Finger)",
-            "de": "Maraad's Dying Breath (Finger)"
-        },
-        "slot": "Finger",
-        "icon": "inv_jewelcrafting_90_maxlvlring_red",
-        "itemClass": 4,
-        "itemSubClass": 4,
-        "itemLevel": 262,
-        "shadowlandsLegendary": true,
-        "classReq": [
-            "Holy Paladin"
-        ],
-        "effect": {
-            "type": "spec legendary",
-            "name": "Maraad's Dying Breath"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0,
-            "haste": 0,
-            "crit": 0,
-            "mastery": 0,
-            "versatility": 0,
-            "unallocated": 8750
-        }
-    },
-    {
-        "id": 10017,
         "name": "The Mad Paragon (Waist)",
         "names": {
             "cn": "",
@@ -118524,7 +118344,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10018,
+        "id": 10016,
         "name": "The Mad Paragon (Feet)",
         "names": {
             "cn": "",
@@ -118560,7 +118380,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10019,
+        "id": 10017,
         "name": "Radiant Embers (Wrist)",
         "names": {
             "cn": "",
@@ -118596,7 +118416,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10020,
+        "id": 10018,
         "name": "Radiant Embers (Hands)",
         "names": {
             "cn": "",
@@ -118632,7 +118452,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10021,
+        "id": 10019,
         "name": "Radiant Embers (Back)",
         "names": {
             "cn": "",
@@ -118668,7 +118488,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10022,
+        "id": 10020,
         "name": "Duty-Bound Gavel (Head)",
         "names": {
             "cn": "",
@@ -118704,7 +118524,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10023,
+        "id": 10021,
         "name": "Duty-Bound Gavel (Shoulder)",
         "names": {
             "cn": "",
@@ -118740,7 +118560,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10024,
+        "id": 10022,
         "name": "Duty-Bound Gavel (Finger)",
         "names": {
             "cn": "",
@@ -118776,7 +118596,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10025,
+        "id": 10023,
         "name": "Seasons of Plenty (Legs)",
         "names": {
             "cn": "",
@@ -118812,7 +118632,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10026,
+        "id": 10024,
         "name": "Seasons of Plenty (Feet)",
         "names": {
             "cn": "",
@@ -118848,7 +118668,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10027,
+        "id": 10025,
         "name": "Divine Resonance (Chest)",
         "names": {
             "cn": "",
@@ -118884,7 +118704,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10028,
+        "id": 10026,
         "name": "Divine Resonance (Waist)",
         "names": {
             "cn": "",
@@ -118920,7 +118740,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10029,
+        "id": 10027,
         "name": "The Dark Titan's Lesson (Neck)",
         "names": {
             "cn": "",
@@ -118956,7 +118776,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10030,
+        "id": 10028,
         "name": "The Dark Titan's Lesson (Back)",
         "names": {
             "cn": "",
@@ -118992,7 +118812,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10031,
+        "id": 10029,
         "name": "Verdant Infusion (Shoulder)",
         "names": {
             "cn": "",
@@ -119028,7 +118848,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10032,
+        "id": 10030,
         "name": "Verdant Infusion (Hands)",
         "names": {
             "cn": "",
@@ -119064,7 +118884,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10033,
+        "id": 10031,
         "name": "Verdant Infusion (Back)",
         "names": {
             "cn": "",
@@ -119100,7 +118920,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10034,
+        "id": 10032,
         "name": "Vision of Unending Growth (Head)",
         "names": {
             "cn": "",
@@ -119136,7 +118956,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10035,
+        "id": 10033,
         "name": "Vision of Unending Growth (Legs)",
         "names": {
             "cn": "",
@@ -119172,7 +118992,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10036,
+        "id": 10034,
         "name": "Vision of Unending Growth (Feet)",
         "names": {
             "cn": "",
@@ -119208,7 +119028,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10037,
+        "id": 10035,
         "name": "Draught of Deep Focus (Neck)",
         "names": {
             "cn": "",
@@ -119244,7 +119064,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10038,
+        "id": 10036,
         "name": "Draught of Deep Focus (Chest)",
         "names": {
             "cn": "",
@@ -119280,7 +119100,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10039,
+        "id": 10037,
         "name": "Lycara's Fleeting Grasp (Waist)",
         "names": {
             "cn": "",
@@ -119316,7 +119136,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10040,
+        "id": 10038,
         "name": "Lycara's Fleeting Grasp (Feet)",
         "names": {
             "cn": "",
@@ -119352,7 +119172,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10041,
+        "id": 10039,
         "name": "Memory of the Mother Tree (Legs)",
         "names": {
             "cn": "",
@@ -119388,7 +119208,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10042,
+        "id": 10040,
         "name": "Memory of the Mother Tree (Wrist)",
         "names": {
             "cn": "",
@@ -119424,7 +119244,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10043,
+        "id": 10041,
         "name": "Locust Swarm (Chest)",
         "names": {
             "cn": "",
@@ -119460,7 +119280,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10044,
+        "id": 10042,
         "name": "Locust Swarm (Wrist)",
         "names": {
             "cn": "",
@@ -119496,7 +119316,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10045,
+        "id": 10043,
         "name": "Kindred Affinity (Neck)",
         "names": {
             "cn": "",
@@ -119532,7 +119352,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10046,
+        "id": 10044,
         "name": "Kindred Affinity (Shoulder)",
         "names": {
             "cn": "",
@@ -119568,7 +119388,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10047,
+        "id": 10045,
         "name": "Sinful Hysteria (Waist)",
         "names": {
             "cn": "",
@@ -119604,7 +119424,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10048,
+        "id": 10046,
         "name": "Sinful Hysteria (Hands)",
         "names": {
             "cn": "",
@@ -119640,7 +119460,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10049,
+        "id": 10047,
         "name": "Celestial Spirits (Legs)",
         "names": {
             "cn": "",
@@ -119676,7 +119496,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10050,
+        "id": 10048,
         "name": "Celestial Spirits (Feet)",
         "names": {
             "cn": "",
@@ -119712,7 +119532,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10051,
+        "id": 10049,
         "name": "The Penitent One (Back)",
         "names": {
             "cn": "",
@@ -119748,7 +119568,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10052,
+        "id": 10050,
         "name": "The Penitent One (Feet)",
         "names": {
             "cn": "",
@@ -119784,7 +119604,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10053,
+        "id": 10051,
         "name": "Crystalline Reflection (Shoulder)",
         "names": {
             "cn": "",
@@ -119820,7 +119640,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10054,
+        "id": 10052,
         "name": "Crystalline Reflection (Hands)",
         "names": {
             "cn": "",
@@ -119856,7 +119676,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10055,
+        "id": 10053,
         "name": "Kiss of Death (Legs)",
         "names": {
             "cn": "",
@@ -119892,7 +119712,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10056,
+        "id": 10054,
         "name": "Kiss of Death (Feet)",
         "names": {
             "cn": "",
@@ -119928,7 +119748,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10057,
+        "id": 10055,
         "name": "Clarity of Mind (Chest)",
         "names": {
             "cn": "",
@@ -119964,7 +119784,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10058,
+        "id": 10056,
         "name": "Clarity of Mind (Finger)",
         "names": {
             "cn": "",
@@ -120000,7 +119820,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10059,
+        "id": 10057,
         "name": "Twins of the Sun Priestess (Head)",
         "names": {
             "cn": "",
@@ -120037,7 +119857,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10060,
+        "id": 10058,
         "name": "Twins of the Sun Priestess (Neck)",
         "names": {
             "cn": "",
@@ -120074,7 +119894,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10061,
+        "id": 10059,
         "name": "Twins of the Sun Priestess (Shoulder)",
         "names": {
             "cn": "",
@@ -120111,7 +119931,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10062,
+        "id": 10060,
         "name": "Cauterizing Shadows (Waist)",
         "names": {
             "cn": "",
@@ -120148,7 +119968,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10063,
+        "id": 10061,
         "name": "Cauterizing Shadows (Feet)",
         "names": {
             "cn": "",
@@ -120185,7 +120005,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10064,
+        "id": 10062,
         "name": "Sphere's Harmony (Legs)",
         "names": {
             "cn": "",
@@ -120222,7 +120042,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10065,
+        "id": 10063,
         "name": "Sphere's Harmony (Feet)",
         "names": {
             "cn": "",
@@ -120259,7 +120079,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10066,
+        "id": 10064,
         "name": "Shadow Word: Manipulation (Neck)",
         "names": {
             "cn": "",
@@ -120296,7 +120116,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10067,
+        "id": 10065,
         "name": "Shadow Word: Manipulation (Wrist)",
         "names": {
             "cn": "",
@@ -120333,7 +120153,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10068,
+        "id": 10066,
         "name": "Pallid Command (Finger)",
         "names": {
             "cn": "",
@@ -120370,7 +120190,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10069,
+        "id": 10067,
         "name": "Pallid Command (Feet)",
         "names": {
             "cn": "",
@@ -120407,7 +120227,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10070,
+        "id": 10068,
         "name": "Harmonious Apparatus (Finger)",
         "names": {
             "cn": "",
@@ -120443,7 +120263,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10071,
+        "id": 10069,
         "name": "Harmonious Apparatus (Shoulder)",
         "names": {
             "cn": "",
@@ -120479,7 +120299,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10072,
+        "id": 10070,
         "name": "Flash Concentration (Neck)",
         "names": {
             "cn": "",
@@ -120515,7 +120335,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10073,
+        "id": 10071,
         "name": "Flash Concentration (Wrist)",
         "names": {
             "cn": "",
@@ -120551,7 +120371,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10074,
+        "id": 10072,
         "name": "Divine Image (Head)",
         "names": {
             "cn": "",
@@ -120587,7 +120407,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10075,
+        "id": 10073,
         "name": "Divine Image (Waist)",
         "names": {
             "cn": "",
@@ -120623,7 +120443,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10076,
+        "id": 10074,
         "name": "Divine Image (Back)",
         "names": {
             "cn": "",
@@ -120659,7 +120479,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10077,
+        "id": 10075,
         "name": "Harmonious Apparatus (Finger)",
         "names": {
             "cn": "",
@@ -120695,7 +120515,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10078,
+        "id": 10076,
         "name": "Harmonious Apparatus (Shoulder)",
         "names": {
             "cn": "",
@@ -120731,7 +120551,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10079,
+        "id": 10077,
         "name": "X'anshi, Return of Archbishop Benedictus (Legs)",
         "names": {
             "cn": "",
@@ -120767,7 +120587,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10080,
+        "id": 10078,
         "name": "X'anshi, Return of Archbishop Benedictus (Back)",
         "names": {
             "cn": "",
@@ -120803,7 +120623,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10081,
+        "id": 10079,
         "name": "Primal Tide Core (Head)",
         "names": {
             "cn": "",
@@ -120839,7 +120659,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10082,
+        "id": 10080,
         "name": "Primal Tide Core (Hands)",
         "names": {
             "cn": "",
@@ -120875,7 +120695,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10083,
+        "id": 10081,
         "name": "Jonat's Natural Focus (Waist)",
         "names": {
             "cn": "",
@@ -120911,7 +120731,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10084,
+        "id": 10082,
         "name": "Jonat's Natural Focus (Legs)",
         "names": {
             "cn": "",
@@ -120947,7 +120767,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10085,
+        "id": 10083,
         "name": "Spiritwalker's Tidal Totem (Legs)",
         "names": {
             "cn": "",
@@ -120983,7 +120803,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10086,
+        "id": 10084,
         "name": "Spiritwalker's Tidal Totem (Back)",
         "names": {
             "cn": "",
@@ -121019,7 +120839,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10087,
+        "id": 10085,
         "name": "Earthen Harmony (Chest)",
         "names": {
             "cn": "",
@@ -121055,7 +120875,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10088,
+        "id": 10086,
         "name": "Earthen Harmony (Back)",
         "names": {
             "cn": "",
@@ -121091,7 +120911,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10089,
+        "id": 10087,
         "name": "Ancestral Reminder (Wrist)",
         "names": {
             "cn": "",
@@ -121127,7 +120947,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10090,
+        "id": 10088,
         "name": "Ancestral Reminder (Finger)",
         "names": {
             "cn": "",
@@ -121163,7 +120983,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10091,
+        "id": 10089,
         "name": "Deeptremor Stone (Waist)",
         "names": {
             "cn": "",
@@ -121199,7 +121019,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10092,
+        "id": 10090,
         "name": "Deeptremor Stone (Feet)",
         "names": {
             "cn": "",
@@ -121235,7 +121055,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10093,
+        "id": 10091,
         "name": "Deeptremor Stone (Finger)",
         "names": {
             "cn": "",
@@ -121271,7 +121091,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10094,
+        "id": 10092,
         "name": "Deeply Rooted Elements (Head)",
         "names": {
             "cn": "",
@@ -121307,7 +121127,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10095,
+        "id": 10093,
         "name": "Deeply Rooted Elements (Shoulder)",
         "names": {
             "cn": "",
@@ -121343,7 +121163,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10096,
+        "id": 10094,
         "name": "Deeply Rooted Elements (Wrist)",
         "names": {
             "cn": "",
@@ -121379,7 +121199,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10097,
+        "id": 10095,
         "name": "Seeds of Rampant Growth (Head)",
         "names": {
             "cn": "",
@@ -121415,7 +121235,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10098,
+        "id": 10096,
         "name": "Seeds of Rampant Growth (Hands)",
         "names": {
             "cn": "",
@@ -121451,7 +121271,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10099,
+        "id": 10097,
         "name": "Elemental Conduit (Chest)",
         "names": {
             "cn": "",
@@ -121487,7 +121307,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10100,
+        "id": 10098,
         "name": "Elemental Conduit (Wrist)",
         "names": {
             "cn": "",
@@ -121523,7 +121343,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10101,
+        "id": 10099,
         "name": "Raging Vesper Vortex (Legs)",
         "names": {
             "cn": "",
@@ -121559,7 +121379,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10102,
+        "id": 10100,
         "name": "Raging Vesper Vortex (Feet)",
         "names": {
             "cn": "",
@@ -121595,7 +121415,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10103,
+        "id": 10101,
         "name": "Ancient Teachings of the Monastery (Wrist)",
         "names": {
             "cn": "",
@@ -121631,7 +121451,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10104,
+        "id": 10102,
         "name": "Ancient Teachings of the Monastery (Hands)",
         "names": {
             "cn": "",
@@ -121667,7 +121487,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10105,
+        "id": 10103,
         "name": "Yu'lon's Whisper (Shoulder)",
         "names": {
             "cn": "",
@@ -121703,7 +121523,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10106,
+        "id": 10104,
         "name": "Yu'lon's Whisper (Finger)",
         "names": {
             "cn": "",
@@ -121739,7 +121559,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10107,
+        "id": 10105,
         "name": "Clouded Focus (Neck)",
         "names": {
             "cn": "",
@@ -121775,7 +121595,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10108,
+        "id": 10106,
         "name": "Clouded Focus (Wrist)",
         "names": {
             "cn": "",
@@ -121811,7 +121631,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10109,
+        "id": 10107,
         "name": "Tear of Morning (Head)",
         "names": {
             "cn": "",
@@ -121847,7 +121667,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10110,
+        "id": 10108,
         "name": "Tear of Morning (Waist)",
         "names": {
             "cn": "",
@@ -121883,7 +121703,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10111,
+        "id": 10109,
         "name": "Invoker's Delight (Head)",
         "names": {
             "cn": "",
@@ -121919,7 +121739,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10112,
+        "id": 10110,
         "name": "Invoker's Delight (Shoulder)",
         "names": {
             "cn": "",
@@ -121955,7 +121775,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10113,
+        "id": 10111,
         "name": "Invoker's Delight (Back)",
         "names": {
             "cn": "",
@@ -121991,7 +121811,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10114,
+        "id": 10112,
         "name": "Bountiful Brew (Neck)",
         "names": {
             "cn": "",
@@ -122027,7 +121847,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10115,
+        "id": 10113,
         "name": "Bountiful Brew (Shoulder)",
         "names": {
             "cn": "",
@@ -122063,7 +121883,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10116,
+        "id": 10114,
         "name": "Bountiful Brew (Chest)",
         "names": {
             "cn": "",
@@ -122099,7 +121919,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10117,
+        "id": 10115,
         "name": "Call to Arms (Legs)",
         "names": {
             "cn": "",
@@ -122135,7 +121955,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10118,
+        "id": 10116,
         "name": "Call to Arms (Feet)",
         "names": {
             "cn": "",
@@ -122171,7 +121991,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10119,
+        "id": 10117,
         "name": "Faeline Harmony (Waist)",
         "names": {
             "cn": "",
@@ -122207,7 +122027,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10120,
+        "id": 10118,
         "name": "Faeline Harmony (Hands)",
         "names": {
             "cn": "",
@@ -122243,7 +122063,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10121,
+        "id": 10119,
         "name": "Sinister Teachings (Wrist)",
         "names": {
             "cn": "",
@@ -122279,7 +122099,7 @@ export const itemDB = [
         }
     },
     {
-        "id": 10122,
+        "id": 10120,
         "name": "Sinister Teachings (Finger)",
         "names": {
             "cn": "",
