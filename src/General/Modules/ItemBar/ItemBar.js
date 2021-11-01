@@ -80,13 +80,14 @@ export default function ItemBar(props) {
 
     db.filter(
       (key) =>
+        (!('classReq' in key) || (key.classReq.includes(spec))) && (
         key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
         key.slot === "Holdable" ||
         key.slot === "Offhand" ||
         key.slot === "Shield" ||
         (key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
-        (key.itemClass === 2 && spec === "Holy Priest BC"), // Wands
+        (key.itemClass === 2 && spec === "Holy Priest BC")), // Wands
     ).map((key) => newItemList.push({ value: key.id, label: key.names[currentLanguage] }));
 
     newItemList.sort((a, b) => (a.label > b.label ? 1 : -1));
@@ -131,10 +132,8 @@ export default function ItemBar(props) {
     
     if (gameType === "Retail") {
       const itemSlot = getItemProp(itemID, "slot", gameType)
-      console.log(itemID);
-      console.log("Missive: " + missives);
 
-      if (itemID.includes(":")) {
+      if (itemID < 20000) {
         // Item is a legendary and gets special handling.
         const missiveStats = missives.toLowerCase().replace(/ /g,'').split("/");
         let itemAllocations = getItemAllocations(itemID, missiveStats);
