@@ -151,11 +151,11 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   // If we were able to make a set then create a Top Gear result and return it.
   // If not we'll send back an empty set which will show an error to the player. That's pretty rare nowadays but can happen if their SimC has empty slots in it and so on.
   if (itemSets.length === 0) {
-    let result = new TopGearResult([], []);
+    let result = new TopGearResult([], [], "");
     result.itemsCompared = itemSets.length;
     return result;
   } else {
-    let result = new TopGearResult(itemSets[0], differentials);
+    let result = new TopGearResult(itemSets[0], differentials, contentType);
     result.itemsCompared = itemSets.length;
     return result;
   }

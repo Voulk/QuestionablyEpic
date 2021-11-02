@@ -16,6 +16,7 @@ function TopGearReport(props) {
   const currentLanguage = i18n.language;
   const gameType = useSelector((state) => state.gameType);
   const boxWidth = (gameType === "BurningCrusade") ? "60%" : "70%";
+  let contentType = "";  
 
   /* ----------------------------- On Component load get player image ----------------------------- */
   useEffect(() => {
@@ -75,6 +76,7 @@ function TopGearReport(props) {
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;
     itemList = topSet.itemList;
+    contentType = result.contentType
     gemStats = (gameType === "BurningCrusade" && "socketInformation" in topSet) ? topSet.socketInformation : "";
     domGems = (gameType === "Retail" && "domGemList" in topSet) ? topSet.domGemList : "";
     statList = topSet.setStats;
@@ -230,7 +232,7 @@ function TopGearReport(props) {
                                         color: classColoursJS(props.player.spec),
                                       }}
                                     >
-                                      {props.player.spec}
+                                      {props.player.spec + " (" + contentType + ")"}
                                     </Typography>
                                   </Grid>
                                   <Grid item xs={12}>
