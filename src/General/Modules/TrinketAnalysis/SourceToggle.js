@@ -9,11 +9,10 @@ import green from "@material-ui/core/colors/green";
 const useStyles = makeStyles((theme) => ({
   selected: {
     "&&": {
-      backgroundColor: green[700],
+      backgroundColor: green[900],
       // color: theme.palette.secondary.main,
       "&:hover": {
-        backgroundColor: green[700],
-        color: "#3c52b2",
+        backgroundColor: green[900],
       },
     },
   },

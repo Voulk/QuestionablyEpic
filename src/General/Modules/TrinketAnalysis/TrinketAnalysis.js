@@ -121,7 +121,7 @@ export default function TrinketAnalysis(props) {
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]);
   const [theme, setTheme] = React.useState(false);
 
-  const availableThemes = ["candidate1", "candidate2", "candidate3", "candidate4", "candidate5", "candidate6", "candidate7", "IBM", "wong", "candidate10", "candidate11", "candidate12", "candidate13"];
+  // const availableThemes = ["candidate1", "candidate2", "candidate3", "candidate4", "candidate5", "candidate6", "candidate7", "IBM", "wong", "candidate10", "candidate11", "candidate12", "candidate13"];
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                    Trinket Source Filtering                                    */
