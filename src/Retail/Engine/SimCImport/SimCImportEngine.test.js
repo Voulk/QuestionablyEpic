@@ -128,12 +128,39 @@ describe("Test Legendary Items", () => {
 
 describe("updatePlayerStats function", () => {
     test("Sample Disc Loadout", () => {
-        const player = new Player("Voulk", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
+        const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
         var lines = testDiscSet.split("\n");
+        const ingameStats = {
+            intellect: 0,
+            haste: 0,
+            crit: 0,
+            mastery: 0,
+            versatility: 0,
+            leech: 0,
+            hps: 0,
+            dps: 0
+        }
 
-        processAllLines(player, "Raid", "venthyr", lines, -1, -1)
+        processAllLines(player, "Raid", "night_fae", lines, -1, -1)
+        expect(player.activeStats).toEqual(ingameStats)
+    });
 
-        console.log(player.activeStats);
+    test("Sample Shaman Loadout", () => {
+        const player = new Player("Voulk", "Restoration Shaman", 99, "NA", "Stonemaul", "Night Elf");
+        var lines = testDiscSet.split("\n");
+        const ingameStats = {
+            intellect: 0,
+            haste: 0,
+            crit: 0,
+            mastery: 0,
+            versatility: 0,
+            leech: 0,
+            hps: 0,
+            dps: 0
+        }
+
+        processAllLines(player, "Raid", "night_fae", lines, -1, -1)
+        expect(player.activeStats).toEqual(ingameStats)
     });
 
 })

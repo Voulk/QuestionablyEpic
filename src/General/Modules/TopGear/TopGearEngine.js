@@ -460,13 +460,13 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   for (var x = 0; x < itemSet.effectList.length; x++) {
     const effect = itemSet.effectList[x];
     if (player.spec !== "Discipline Priest" || 
-        (player.spec === "Discipline Priest" && !effect.onUse && effect.type !== "spec legendary")) {
+        (player.spec === "Discipline Priest" && !effect.onUse && effect.type !== "spec legendary") ||
+        contentType === "Dungeon") {
         effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats));
     }
   }
 
   const mergedEffectStats = mergeBonusStats(effectStats)
-  console.log(mergedEffectStats);
 
   // == Apply same set int bonus == 
   // 5% int boost for wearing the same items.
@@ -475,7 +475,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
 
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
-  if (player.spec === "Discipline Priest") {
+  if (player.spec === "Discipline Priest" && contentType === "Raid") {
     // Setup ramp cast sequences
     const boonSeq = buildRamp('Boon', 10, itemSet.onUseTrinkets, setStats.haste, ['Rapture']);
     const fiendSeq = buildRamp('Fiend', 10, itemSet.onUseTrinkets, setStats.haste, ['Rapture']);
@@ -498,7 +498,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // Here we'll apply diminishing returns. If we're a Disc Priest then we already took care of this during the ramp phase. 
   // DR on trinket procs and such are calculated in their effect formulas, so that we can DR them at their proc value, rather than their average value.
   // Disc Note: Disc DR on base stats is already included in the ramp modules and doesn't need to be reapplied here.
-  if (player.spec !== "Discipline Priest") {
+  if (!(player.spec === "Discipline Priest" && contentType === "Raid")) {
     applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
 
     // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
@@ -514,11 +514,9 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   }
 
   // == Scoring ==
-  console.log(evalStats);
   for (var stat in evalStats) {
     if (stat === "hps") {
       hardScore += evalStats[stat] / baseHPS * player.activeStats.intellect;
-
     } else if (stat === "dps") {
         if (contentType === "Dungeon") hardScore += (evalStats[stat] / baseHPS) * player.activeStats.intellect;
         else continue;
@@ -529,12 +527,12 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
 
   addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
 
-  if (player.spec === "Discipline Priest") setStats = compileStats(setStats, mergedEffectStats);
+  if (player.spec === "Discipline Priest" && contentType === "Raid") setStats = compileStats(setStats, mergedEffectStats);
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
-  return builtSet; // Temp
+  return builtSet;
 }
 
 function mergeStat(stats, statName) {
