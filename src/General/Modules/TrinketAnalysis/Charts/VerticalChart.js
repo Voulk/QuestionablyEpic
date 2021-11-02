@@ -56,7 +56,7 @@ export default class VerticalChart extends PureComponent {
     const currentLanguage = i18n.language;
     const data = this.props.data;
     const db = this.props.db;
-    const colourBlind = this.props.colourBlind;
+    const alternateColour = this.props.alternateColour;
     /* ------------------------- Ilvls to Show on Chart & Colour Generation ------------------------- */
     const iLvls = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
 
@@ -64,7 +64,7 @@ export default class VerticalChart extends PureComponent {
     // (Currently won't work as intended due to how the data is provided, currently the previous ilvl is needed to build the stacked bars)
     let iLvlsVisible = { 187: true, 194: true, 200: true, 207: true, 213: true, 220: true, 226: true, 230: true, 233: true, 239: true, 246: true, 252: true, 259: true };
 
-    const barColours = colourBlind ? barColours234 : this.props.theme;
+    const barColours = alternateColour ? barColours234 : this.props.theme;
 
     let arr = [];
     let cleanedArray = [];
