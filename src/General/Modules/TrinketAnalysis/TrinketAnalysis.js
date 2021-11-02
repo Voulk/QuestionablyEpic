@@ -372,6 +372,11 @@ export default function TrinketAnalysis(props) {
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
                 <Grid container spacing={1} direction="row" justify="flex-end">
                   <Grid item>
+                    <Typography variant="h6" style={{ padding: 8 }}>
+                      Filter:
+                    </Typography>
+                  </Grid>
+                  <Grid item>
                     <SourceToggle metric={sources} setMetric={handleSource} />
                   </Grid>
                   {gameType === "Retail" ? (

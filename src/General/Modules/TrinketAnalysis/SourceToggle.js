@@ -3,10 +3,26 @@ import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import { useTranslation } from "react-i18next";
 import { Tooltip, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import green from "@material-ui/core/colors/green";
+
+const useStyles = makeStyles((theme) => ({
+  selected: {
+    "&&": {
+      backgroundColor: green[700],
+      // color: theme.palette.secondary.main,
+      "&:hover": {
+        backgroundColor: green[700],
+        color: "#3c52b2",
+      },
+    },
+  },
+}));
 
 export default function SourceToggle(props) {
   const metric = props.metric;
   const setMetric = props.setMetric;
+  const classes = useStyles();
   const { t } = useTranslation();
   const handleContent = (event, content) => {
     if (content === null) {
@@ -18,7 +34,7 @@ export default function SourceToggle(props) {
   // TODO: Localise Tooltips?
   return (
     <ToggleButtonGroup value={metric} onChange={setMetric} aria-label="contentToggle" size="small" style={{ padding: 8 }}>
-      <ToggleButton style={{ padding: 5 }} value="Raids" aria-label="dpsLabel">
+      <ToggleButton style={{ padding: 5 }} value="Raids" aria-label="dpsLabel" classes={{ selected: classes.selected }}>
         <Tooltip title={"Raids"} arrow>
           <div style={{ display: "inline-flex" }}>
             <img
@@ -31,7 +47,7 @@ export default function SourceToggle(props) {
         </Tooltip>
       </ToggleButton>
 
-      <ToggleButton style={{ padding: 5 }} value="Dungeons" aria-label="dpsLabel">
+      <ToggleButton style={{ padding: 5 }} value="Dungeons" aria-label="dpsLabel" classes={{ selected: classes.selected }}>
         <Tooltip title={"Dungeons"} arrow>
           <div style={{ display: "inline-flex" }}>
             <img style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4 }} src={require("Images/inv_relics_hourglass.jpg").default} alt={"Dungeons"} />
@@ -40,7 +56,7 @@ export default function SourceToggle(props) {
         </Tooltip>
       </ToggleButton>
 
-      <ToggleButton style={{ padding: 5 }} value="The Rest" aria-label="hpsLabel">
+      <ToggleButton style={{ padding: 5 }} value="The Rest" aria-label="hpsLabel" classes={{ selected: classes.selected }}>
         <Tooltip title={"The Rest"} arrow>
           <div style={{ display: "inline-flex" }}>
             <img style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4 }} src={require("Images/Resources/worldQuest.png").default} alt={"World Quests"} />
