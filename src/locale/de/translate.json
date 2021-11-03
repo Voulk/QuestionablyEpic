@@ -68,6 +68,7 @@
     "Error": "Error",
     "Burning Crusade": "Burning Crusade",
     "Shadowlands": "Shadowlands",
+    "Filter": "Filter",
 
     "Changelog": {
       "Header": "Änderungsprotokoll",
@@ -659,6 +660,8 @@
       "Header": "Trinket Analysis",
       "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. World quest trinkets and settings panel coming soon."
     },
+
+    "SourceToggle": { "FilterTooltip": "You can filter the graph by toggling these buttons" },
 
     "DominationSocketAnalysis": {
       "Header": "Domination Socket Analysis",

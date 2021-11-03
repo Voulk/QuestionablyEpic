@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Paper, Typography, Grid, Tooltip, Select, MenuItem } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
-import { itemDB } from "../../../Databases/ItemDB";
 import Item from "../Player/Item";
 import BCItem from "../Player/BCItem";
 import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreItem, getTranslatedItemName, getItemDB } from "../../Engine/ItemUtilities";
@@ -13,16 +12,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import userSettings from "../Settings/SettingsObject";
-import MetricToggle from "Retail/Modules/DominationGemAnalysis/MetricToggle";
+// import MetricToggle from "Retail/Modules/DominationGemAnalysis/MetricToggle";
 import SourceToggle from "./SourceToggle";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
-
-// import Settings from "../Settings/Settings";
-// import userSettings from "../Settings/SettingsObject";
-
-// [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
+import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -118,7 +113,12 @@ export default function TrinketAnalysis(props) {
 
   const { t } = useTranslation();
   const [metric, setMetric] = React.useState("hps");
-  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]);
+  const [sources, setSources] = React.useState(() => [
+    "The Rest",
+    "Raids",
+    "Dungeons",
+    // "Legion Timewalking"
+  ]);
   const [theme, setTheme] = React.useState(false);
 
   // const availableThemes = ["candidate1", "candidate2", "candidate3", "candidate4", "candidate5", "candidate6", "candidate7", "IBM", "wong", "candidate10", "candidate11", "candidate12", "candidate13"];
@@ -370,11 +370,21 @@ export default function TrinketAnalysis(props) {
           <Grid container spacing={0} justify="center">
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                <Grid container spacing={1} direction="row" justify="flex-end">
+                <Grid container spacing={1} direction="row" justify="flex-end" alignItems="center">
                   <Grid item>
-                    <Typography variant="h6" style={{ padding: 8 }}>
-                      Filter:
-                    </Typography>
+                    <div style={{ padding: "8px 0px 8px 8px" }}>
+                      <Tooltip
+                        title={
+                          <Typography align="center" variant="body2">
+                            {t("SourceToggle.FilterTooltip")}
+                          </Typography>
+                        }
+                        style={{ marginTop: -5 }}
+                        placement="top-start"
+                      >
+                        <Typography variant="h6">{t("Filter")}:</Typography>
+                      </Tooltip>
+                    </div>
                   </Grid>
                   <Grid item>
                     <SourceToggle metric={sources} setMetric={handleSource} />
