@@ -2,7 +2,7 @@
 import Player from "General/Modules/Player/Player";
 import { processItem, processAllLines, runSimC} from "Retail/Engine/SimCImport/SimCImportEngine.js"
 
-const testDiscSet = 
+const testDruidSet = 
 `
 # Voulk - Restoration - 2021-11-02 15:51 - US/Stonemaul
 # SimC Addon 9.1.0-01
@@ -39,6 +39,44 @@ finger2=,id=178933,enchant_id=6166,bonus_id=7622/7359/41/7575/1566/6646
 trinket1=,id=178809,bonus_id=7375/7359/6652/1540/6646
 trinket2=,id=178708,bonus_id=7369/7359/6652/6917/1521/6646
 main_hand=,id=178829,enchant_id=6229,bonus_id=7412/7359/6652/1524/6646
+`
+
+const testShamanSet = 
+`
+# Voulksham - Restoration - 2021-11-03 07:40 - US/Stonemaul
+# SimC Addon 9.1.0-01
+# Requires SimulationCraft 910-01 or newer
+
+shaman="Voulksham"
+level=60
+race=draenei
+region=us
+server=stonemaul
+role=attack
+professions=enchanting=9/skinning=29
+talents=2112133
+spec=restoration
+
+covenant=necrolord
+soulbind=plague_deviser_marileth:4,323074/147:1:0/323091
+# conduits_available=112:4/147:1/95:1/93:1
+renown=5
+
+head=,id=178692,bonus_id=6807/6652/7193/1498/6646
+neck=,id=173146,gem_id=153709,crafted_stats=49
+shoulder=,id=178695,bonus_id=6807/6652/1498/6646
+back=,id=180123,enchant_id=6204,bonus_id=6807/6652/1498/6646
+chest=,id=180100,bonus_id=6807/6652/1498/6646
+wrist=,id=178767,bonus_id=6807/42/7193/1498/6646
+hands=,id=179325,bonus_id=6807/6652/1498/6646
+waist=,id=180110,bonus_id=6807/6652/7194/1498/6646
+legs=,id=178839,bonus_id=6807/6652/1498/6646
+feet=,id=178745,bonus_id=6807/6652/1498/6646
+finger1=,id=178872,bonus_id=6807/6652/7193/1498/6646
+finger2=,id=178736,enchant_id=6166,bonus_id=6807/6652/7194/1498/6646
+trinket1=,id=178809,bonus_id=6806/6652/1485/4785
+trinket2=,id=178298,bonus_id=6784/1485/6616
+main_hand=,id=178714,enchant_id=6229,bonus_id=6807/6652/1498/6646
 `
 
 describe("Test Regular Items", () => {
@@ -127,7 +165,7 @@ describe("Test Legendary Items", () => {
 describe("updatePlayerStats function", () => {
     test("Sample Druid Loadout", () => {
         const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
-        var lines = testDiscSet.split("\n");
+        var lines = testDruidSet.split("\n");
         const ingameStats = {
             intellect: 1575,
             haste: 790,
@@ -144,21 +182,21 @@ describe("updatePlayerStats function", () => {
     });
 
     test("Sample Shaman Loadout", () => {
-        const player = new Player("Voulk", "Restoration Shaman", 99, "NA", "Stonemaul", "Night Elf");
-        var lines = testDiscSet.split("\n");
+        const player = new Player("VoulkSham", "Restoration Shaman", 99, "NA", "Stonemaul", "Night Elf");
+        var lines = testShamanSet.split("\n");
         const ingameStats = {
-            intellect: 0,
-            haste: 0,
-            crit: 0,
-            mastery: 0,
-            versatility: 0,
+            intellect: 1212,
+            haste: 494,
+            crit: 231,
+            mastery: 335,
+            versatility: 313,
             leech: 0,
             hps: 0,
             dps: 0
         }
 
         processAllLines(player, "Raid", "night_fae", lines, -1, -1)
-        //expect(player.activeStats).toEqual(ingameStats)
+        expect(player.activeStats).toEqual(ingameStats)
     });
 
 })

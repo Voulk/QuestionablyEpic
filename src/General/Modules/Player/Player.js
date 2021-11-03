@@ -427,14 +427,14 @@ class Player {
   };
 
   updatePlayerStats = () => {
-    let equippedSet = new ItemSet(0, this.getEquippedItems(false), 0);
+    let equippedSet = new ItemSet(0, this.getEquippedItems(false), 0, this.spec);
 
     equippedSet = equippedSet.compileStats();
 
     let stats = equippedSet.setStats;
 
     this.activeStats = stats;
-    this.activeStats.intellect = stats.intellect * 1.05;
+    this.activeStats.intellect = Math.round(stats.intellect * 1.05);
     if (this.spec === "Discipline Priest") {
       this.getActiveModel("Raid").updateStatWeights(stats, "Raid");
       this.getActiveModel("Raid").setRampInfo(stats);

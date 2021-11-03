@@ -4,13 +4,15 @@ import Item from "../Player/Item";
 import { STATPERONEPERCENT, BASESTAT } from "../../Engine/STAT";
 
 class ItemSet {
-  constructor(id, itemList, sumSoft) {
+  constructor(id, itemList, sumSoft, spec) {
     this.id = id;
     this.itemList = itemList;
     this.sumSoftScore = Math.round(1000 * sumSoft) / 1000;
+    this.spec = spec;
   }
 
   id = 0;
+  spec = "";
 
   // Each item already has a soft score which is a simple stat weight x stat equation. The sumSoftScore adds all of these up.
   // We can use the soft score to quickly eliminate item sets that aren't competitive.
@@ -55,7 +57,7 @@ class ItemSet {
 
   getStartingStats(gameType) {
     if (gameType === "Retail") {
-      return {
+      const stats = {
         intellect: 450,
         haste: 0,
         crit: 0,
@@ -65,6 +67,9 @@ class ItemSet {
         hps: 0,
         dps: 0,
       }
+      if (this.spec === "Restoration Shaman" || this.spec === "Holy Paladin") stats.intellect = 473;
+      if (this.spec === "Discipline Priest" || this.spec === "Holy Priest" || this.spec === "Restoration Druid") stats.intellect = 450;
+      return stats
     }
     else {
       return {

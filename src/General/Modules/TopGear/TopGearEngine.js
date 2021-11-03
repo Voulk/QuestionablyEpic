@@ -167,7 +167,7 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
  * @param {*} rawWepCombos Weapon combos are just a list of all possible weapon combinations (so staves are listed alone, and 1H + OHs are paired).
  * @returns 
  */
-function createSets(itemList, rawWepCombos) {
+function createSets(itemList, rawWepCombos, spec) {
   const wepCombos = deepCopyFunction(rawWepCombos);
   let setCount = 0;
   let itemSets = [];
@@ -281,7 +281,7 @@ function createSets(itemList, rawWepCombos) {
                                       wepCombos[weapon],
                                     ];
                                     let sumSoft = sumScore(softScore);
-                                    itemSets.push(new ItemSet(setCount, includedItems, sumSoft));
+                                    itemSets.push(new ItemSet(setCount, includedItems, sumSoft, spec));
                                     setCount++;
                                   }
                                 }
