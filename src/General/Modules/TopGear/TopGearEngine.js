@@ -122,7 +122,7 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   // == Create Valid Item Sets ==
   // This just builds a set and adds it to our array so that we can score it later.
   // A valid set is just any combination of items that is wearable in-game. Item limits like on legendaries, unique items and so on are all adhered to.
-  let itemSets = createSets(itemList, wepCombos);
+  let itemSets = createSets(itemList, wepCombos, player.spec);
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
 
   // == Evaluate Sets ==
