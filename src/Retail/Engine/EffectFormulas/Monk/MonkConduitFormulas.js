@@ -1,3 +1,5 @@
+import { getSiTHPS, applyConduit } from "./FallenOrderFormulas";
+
 //potency
 const NOURISHING_CHI = 0.1875;
 const JADE_BOND = 0.0625;
@@ -114,27 +116,13 @@ export const getMonkConduit = (conduitID, player, contentType, conduitLevel) => 
   }
   // Imbued Reflections (Venthyr)
   else if (conduitID === 337301) {
-    const conduitPower = conduitScaling(IMBUED_REFLECTIONS, conduitLevel);
 
-    // Dropping this to 1.3 as you're not suppose to run mist wrap raid. 
-    const envSP = 3.6 * 1.3; //for some reason their env multiplier effects their env healing
-    const soomSP = 1.04;
-    const multiplier = player.getStatMultiplier("NOMAST") * player.getInt();
+    // Since SiT is the standard playstyle and conduit power is also tied to it
+    // SiT math has been moved to a different file in order to keep the code DRY
+    const baseHPS = getSiTHPS(player, contentType);
+    const buffedHPS = applyConduit(baseHPS, conduitLevel);
 
-    const cooldown = 180;
-    const numberOfCraneClones = 4;
-    const envCastsPerClone = 1;
-    const soomCastsPerClone = 1.5;
-
-    const envHealing = envSP * multiplier * numberOfCraneClones * envCastsPerClone;
-    const soomHealing = soomSP * multiplier * numberOfCraneClones * soomCastsPerClone;
-
-    const boostedENV = envHealing * conduitPower;
-    const boostedSoom = soomHealing * conduitPower;
-
-    const directHealingIncrease = boostedENV + boostedSoom;
-
-    bonus_stats.HPS = directHealingIncrease / cooldown;
+    bonus_stats.HPS = buffedHPS - baseHPS;
   }
   // Bone Marrow Hops (Necrolord)
   else if (conduitID === 337295) {
