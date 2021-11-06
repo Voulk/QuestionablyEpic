@@ -1,6 +1,6 @@
 import React from "react";
 import { Paper, Grid, Typography, Divider } from "@material-ui/core";
-import { STATPERONEPERCENT, BASESTAT } from "../../Engine/STAT";
+import { STATPERONEPERCENT, BASESTAT } from "../../../Engine/STAT";
 import { useTranslation } from "react-i18next";
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -10,30 +10,28 @@ import { useTranslation } from "react-i18next";
 export default function TopSetStatsPanel(props) {
   const statList = props.statList;
   const { t } = useTranslation();
-  const gameType = props.gameType
+  const gameType = props.gameType;
 
-  const stats = gameType === "Retail" ? 
-  [
-    ["Intellect", statList.intellect],
-    ["Haste", statList.haste / STATPERONEPERCENT.Retail.HASTE],
-    ["Crit", statList.crit / STATPERONEPERCENT.Retail.CRIT],
-    ["Mastery", statList.mastery / STATPERONEPERCENT.Retail.MASTERYA[props.spec]],
-    ["Versatility", statList.versatility / STATPERONEPERCENT.Retail.VERSATILITY],
-    ["Leech", statList.leech / STATPERONEPERCENT.Retail.LEECH],
-    ["Bonus HPS", statList.hps],
-    ["Bonus DPS", statList.dps],
-  ] :
-  [
-    ["Bonus Healing", statList.bonushealing],
-    ["Intellect", statList.intellect],
-    ["Spirit", statList.spirit],
-    ["MP5", statList.mp5],
-    ["Crit", statList.spellcrit / STATPERONEPERCENT.BurningCrusade.CRIT + statList.intellect / 79.4],
-    ["Haste", statList.spellhaste / STATPERONEPERCENT.BurningCrusade.HASTE],
-    
-  ]
-  
-  ;
+  const stats =
+    gameType === "Retail"
+      ? [
+          ["Intellect", statList.intellect],
+          ["Haste", statList.haste / STATPERONEPERCENT.Retail.HASTE],
+          ["Crit", statList.crit / STATPERONEPERCENT.Retail.CRIT],
+          ["Mastery", statList.mastery / STATPERONEPERCENT.Retail.MASTERYA[props.spec]],
+          ["Versatility", statList.versatility / STATPERONEPERCENT.Retail.VERSATILITY],
+          ["Leech", statList.leech / STATPERONEPERCENT.Retail.LEECH],
+          ["Bonus HPS", statList.hps],
+          ["Bonus DPS", statList.dps],
+        ]
+      : [
+          ["Bonus Healing", statList.bonushealing],
+          ["Intellect", statList.intellect],
+          ["Spirit", statList.spirit],
+          ["MP5", statList.mp5],
+          ["Crit", statList.spellcrit / STATPERONEPERCENT.BurningCrusade.CRIT + statList.intellect / 79.4],
+          ["Haste", statList.spellhaste / STATPERONEPERCENT.BurningCrusade.HASTE],
+        ];
 
   /* ----------------------- Returns a formatted string for the stat panel. ----------------------- */
   function printStat(stat, value) {
@@ -44,6 +42,7 @@ export default function TopSetStatsPanel(props) {
 
   return (
     <Paper
+      elevation={0}
       style={{
         fontSize: "12px",
         textAlign: "left",
@@ -55,17 +54,17 @@ export default function TopSetStatsPanel(props) {
       <Grid container direction="column" spacing={1}>
         {/* -------------------------------------- Stat Panel Title -------------------------------------- */}
         <Grid item xs={12}>
-          <Typography style={{ fontSize: 18 }} variant="h6" align="center" color="primary">
+          <Typography variant="subtitle1" align="center" color="primary">
             {t("TopGear.StatPanel.AvgStats")}
           </Typography>
           <Divider variant="middle" />
         </Grid>
         <Grid item xs={12} style={{ padding: "4px 16px 16px 16px" }}>
-          <Grid container direction="row" spacing={1}>
+          <Grid container direction="row" spacing={0}>
             {/* --------------------------------- Map the stats for the Panel -------------------------------- */}
             {stats.map((stat, index) => (
               <Grid item xs={6} key={index}>
-                <Typography style={{ fontSize: 16, marginLeft: "4px" }} variant="body1" align="left">
+                <Typography style={{ marginLeft: "4px" }} variant="subtitle2" align="left">
                   {printStat(stat[0], stat[1])}
                 </Typography>
               </Grid>

@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from "react";
-import ItemCardReport from "./MiniItemCardReport";
+import ItemCardReport from "../MiniItemCardReport";
 import TopSetStatsPanel from "./TopSetStatsPanel";
 // import { testList, differentialsTest } from "./TestData";
-import { apiGetPlayerImage } from "../SetupAndMenus/ConnectionUtilities";
+import { apiGetPlayerImage } from "../../SetupAndMenus/ConnectionUtilities";
 import { useTranslation } from "react-i18next";
-import { Button, Paper, Typography, Divider, Grid } from "@material-ui/core";
+import { Button, Paper, Typography, Divider, Grid, Tooltip } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
+import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
+import { covenantIcons, covenantColours } from "../../CooldownPlanner/Functions/CovenantFunctions";
+import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 
 function TopGearReport(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const gameType = useSelector((state) => state.gameType);
-  const boxWidth = (gameType === "BurningCrusade") ? "60%" : "70%";
-  let contentType = "";  
+  const boxWidth = gameType === "BurningCrusade" ? "60%" : "60%";
+  let contentType = "";
 
   /* ----------------------------- On Component load get player image ----------------------------- */
   useEffect(() => {
@@ -27,6 +29,33 @@ function TopGearReport(props) {
 
     setImg();
   }, []);
+
+  const classTranslator = (spec) => {
+    switch (spec) {
+      case "Restoration Druid":
+        return "Classes.RestorationDruid";
+      case "Mistweaver Monk":
+        return "Classes.MistweaverMonk";
+      case "Holy Paladin":
+        return "Classes.HolyPaladin";
+      case "Restoration Shaman":
+        return "Classes.RestorationShaman";
+      case "Holy Priest":
+        return "Classes.HolyPriest";
+      case "Discipline Priest":
+        return "Classes.DisciplinePriest";
+      case "Holy Paladin BC":
+        return "Classes.Holy Paladin BC";
+      case "Restoration Druid BC":
+        return "Classes.Restoration Druid";
+      case "Holy Priest BC":
+        return "Classes.Holy Priest";
+      case "Restoration Shaman BC":
+        return "Classes.Restoration Shaman";
+      default:
+        return "Error";
+    }
+  };
 
   const classIcon = () => {
     switch (props.player.spec) {
@@ -69,21 +98,19 @@ function TopGearReport(props) {
   let statList = {};
   let domGems = [];
 
-
-
   if (checkResult(result)) {
     topSet = result.itemSet;
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;
     itemList = topSet.itemList;
-    contentType = result.contentType
-    gemStats = (gameType === "BurningCrusade" && "socketInformation" in topSet) ? topSet.socketInformation : "";
-    domGems = (gameType === "Retail" && "domGemList" in topSet) ? topSet.domGemList : "";
+    contentType = result.contentType;
+    gemStats = gameType === "BurningCrusade" && "socketInformation" in topSet ? topSet.socketInformation : "";
+    domGems = gameType === "Retail" && "domGemList" in topSet ? topSet.domGemList : "";
     statList = topSet.setStats;
 
     if (domGems !== "") {
       let domGemCounter = 0;
-      itemList.forEach(item => {
+      itemList.forEach((item) => {
         if (item.hasDomSocket) {
           item.domGemID = domGems[domGemCounter];
           item.gemString = "&gems=" + domGems[domGemCounter];
@@ -96,19 +123,19 @@ function TopGearReport(props) {
   }
 
   const getGemIDs = (slot) => {
-    if (gameType === "Retail" || (!gemStats)) return "";
+    if (gameType === "Retail" || !gemStats) return "";
     else {
       let gemString = "&gems=";
-      for (var i = 0; i < gemStats.socketsAvailable.length; i++) {       
+      for (var i = 0; i < gemStats.socketsAvailable.length; i++) {
         if (gemStats.socketsAvailable[i].slot === slot) {
           for (var j = 0; j < gemStats.socketedPieces[i].length; j++) {
-            gemString += gemStats.socketedPieces[i][j]['id'].toString() + ":";
+            gemString += gemStats.socketedPieces[i][j]["id"].toString() + ":";
           }
         }
       }
       return gemString.slice(0, -1);
     }
-  }
+  };
 
   return (
     <div
@@ -141,7 +168,7 @@ function TopGearReport(props) {
                   </Grid>
                   <Grid item xs={12}>
                     <Grid container direction="row">
-                      <Grid item xs={3} style={{ width: "100%" }}>
+                      <Grid item xs={4} style={{ width: "100%" }}>
                         {/* ---------------------------------------------------------------------------------------------- */
                         /*                                         Left Side Items                                        */
                         /* ---------------------------------------------------------------------------------------------- */}
@@ -162,18 +189,27 @@ function TopGearReport(props) {
                             ))}
                         </Grid>
                       </Grid>
-                      <Grid item xs={6}>
+                      <Grid item xs={4}>
                         <div style={{ width: "40%" }} />
                       </Grid>
-                      <Grid item xs={3} style={{ width: "100%" }}>
+                      <Grid item xs={4} style={{ width: "100%" }}>
                         {/* ---------------------------------------------------------------------------------------------- */
                         /*                                        Right Side Items                                        */
                         /* ---------------------------------------------------------------------------------------------- */}
                         <Grid container spacing={1}>
                           {itemList
-                            .filter((key) => key.slot === "Hands" || key.slot === "Waist" || key.slot === "Legs" || key.slot === "Feet" || key.slot === "Finger" || key.slot === "Trinket" || key.slot === "Relics & Wands")
+                            .filter(
+                              (key) =>
+                                key.slot === "Hands" ||
+                                key.slot === "Waist" ||
+                                key.slot === "Legs" ||
+                                key.slot === "Feet" ||
+                                key.slot === "Finger" ||
+                                key.slot === "Trinket" ||
+                                key.slot === "Relics & Wands",
+                            )
                             .map((item, index) => (
-                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)}/>
+                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} />
                             ))}
                         </Grid>
                       </Grid>
@@ -189,13 +225,15 @@ function TopGearReport(props) {
                           <TopSetStatsPanel statList={statList} spec={props.player.spec} currentLanguage={currentLanguage} gameType={gameType} />
                         </Grid>
                       </Grid>
-                      <Grid item xs={3} style={{ paddingBottom: 8, alignSelf: "flex-end" }}>
+                      <Grid item xs={4} style={{ paddingBottom: 8, alignSelf: "flex-end" }}>
                         <Grid container justify="flex-end">
                           <Paper
+                            elevation={0}
                             style={{
                               fontSize: "12px",
                               textAlign: "left",
-                              maxWidth: 350,
+                              width: "100%",
+                              // maxWidth: 350,
                               backgroundColor: "rgba(44, 44, 44, 0.5)",
                               display: "block",
                             }}
@@ -207,38 +245,63 @@ function TopGearReport(props) {
                                 </Grid>
                               </Grid>
                               <Grid item xs={8}>
-                                <Grid container direction="row" style={{ paddingTop: 9, paddingBopttom: 9 }}>
+                                <Grid container direction="row" style={{ paddingTop: 8 }}>
                                   <Grid item xs={12}>
-                                    <Typography
-                                      variant="h5"
-                                      wrap="nowrap"
-                                      display="inline"
-                                      align="left"
-                                      style={{
-                                        color: classColoursJS(props.player.spec),
-                                      }}
-                                    >
-                                      {props.player.charName}
-                                    </Typography>
+                                    <div style={{ display: "inline-flex", alignItems: "center" }}>
+                                      <Typography
+                                        variant="h5"
+                                        wrap="nowrap"
+                                        display="inline"
+                                        align="left"
+                                        style={{
+                                          color: classColoursJS(props.player.spec),
+                                        }}
+                                      >
+                                        {props.player.charName}
+                                      </Typography>
+
+                                      <Tooltip title={t(classTranslator(props.player.spec))} style={{ color: classColoursJS(props.player.spec) }} placement="top" arrow>
+                                        {classIcons(props.player.spec, {
+                                          height: 22,
+                                          width: 22,
+                                          marginLeft: 4,
+                                          verticalAlign: "middle",
+                                          borderRadius: 4,
+                                          border: "1px solid " + classColoursJS(props.player.spec),
+                                        })}
+                                      </Tooltip>
+                                      {gameType === "Retail" ? (
+                                        <Tooltip title={t(props.player.covenant)} style={{ color: covenantColours(props.player.covenant) }} placement="top" arrow>
+                                          {covenantIcons(props.player.covenant, {
+                                            height: 22,
+                                            width: 22,
+                                            verticalAlign: "middle",
+                                            borderRadius: 4,
+                                            border: "1px solid" + covenantColours(props.player.covenant),
+                                            marginLeft: 4,
+                                          })}
+                                        </Tooltip>
+                                      ) : (
+                                        ""
+                                      )}
+                                    </div>
+
                                     <Divider />
                                   </Grid>
+
                                   <Grid item xs={12}>
-                                    <Typography
-                                      variant="caption"
-                                      wrap="nowrap"
-                                      display="inline"
-                                      align="left"
-                                      style={{
-                                        color: classColoursJS(props.player.spec),
-                                      }}
-                                    >
-                                      {props.player.spec + " (" + contentType + ")"}
-                                    </Typography>
-                                  </Grid>
-                                  <Grid item xs={12}>
-                                    <Typography variant="caption" wrap="nowrap" display="inline" align="left">
-                                      {props.player.region}-{props.player.realm}
-                                    </Typography>
+                                    <Grid container item direction="row" spacing={0}>
+                                      <Grid item xs={12}>
+                                        <Typography variant="caption" align="left">
+                                          {"Content: " + t(contentType)}
+                                        </Typography>
+                                      </Grid>
+                                      <Grid item xs={12}>
+                                        <Typography variant="caption" align="left">
+                                          {"Playstyle: " + props.player.getActiveModel(props.contentType).modelName}
+                                        </Typography>
+                                      </Grid>
+                                    </Grid>
                                   </Grid>
                                 </Grid>
                               </Grid>

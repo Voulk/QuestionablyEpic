@@ -8,7 +8,7 @@ import TrinketAnalysis from "General/Modules/TrinketAnalysis/TrinketAnalysis";
 import QuickCompare from "General/Modules/QuickCompare/QuickCompare";
 import DominationAnalysis from "Retail/Modules/DominationGemAnalysis/DominationGemAnalysis";
 import QEHeader from "General/Modules/SetupAndMenus/Header/QEHeader";
-import TopGearReport from "General/Modules/TopGear/TopGearReport";
+import TopGearReport from "General/Modules/TopGear/Report/TopGearReport";
 import QEProfile from "General/Modules/SetupAndMenus/QEProfile";
 import PlayerChars from "General/Modules/Player/PlayerChars";
 import CovenantExploration from "Retail/Modules/Covenants/Components/CovenantExploration.js";
@@ -389,7 +389,9 @@ class App extends Component {
                 />
                 <Route
                   path="/soulbinds"
-                  render={() => <CovenantExploration player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} />}
+                  render={() => (
+                    <CovenantExploration player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
+                  )}
                 />
                 <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                 <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />

@@ -1,6 +1,6 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import Item from "../Player/Item";
-import { runTopGear } from "../TopGear/TopGearEngine";
+import { runTopGear } from "../TopGear/Engine/TopGearEngine";
 import {
   buildWepCombos,
   calcStatsAtLevel,

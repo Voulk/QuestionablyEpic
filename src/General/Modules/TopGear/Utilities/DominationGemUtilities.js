@@ -1,4 +1,4 @@
-import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngine" ;
+import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine" ;
 import { getDomGemEffect, applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { dominationGemDB } from "Databases/DominationGemDB";
 

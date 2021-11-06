@@ -1,6 +1,6 @@
 
-import { getBestGem } from "../../Engine/ItemUtilities";
-import { deepCopyFunction } from "./TopGearEngineShared";
+import { getBestGem } from "../../../Engine/ItemUtilities";
+import { deepCopyFunction } from "../Engine/TopGearEngineShared";
 import { GEMS } from "General/Engine/GEMS";
 
 // This holds all of our gemCollection objects, so that we can sort them later and pick the best.

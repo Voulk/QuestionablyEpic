@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Paper, Typography, Divider, Grid } from "@material-ui/core";
-import { getItemIcon, getItemProp } from "../../Engine/ItemUtilities";
+import { getItemIcon, getItemProp } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
 
 function CompetitiveAlternatives(props) {
