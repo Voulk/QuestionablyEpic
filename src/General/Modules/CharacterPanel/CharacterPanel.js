@@ -10,6 +10,7 @@ import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunction
 import Settings from "../Settings/Settings";
 import { covenantIcons, covenantColours } from "../CooldownPlanner/Functions/CovenantFunctions";
 import ErrorTooltip from "./ErrorTooltip";
+import { classTranslator } from "General/Functions/CommonFunctions";
 
 const useStyles = makeStyles(() => ({
   slider: {
@@ -50,33 +51,6 @@ const getSimCStatus = (player, gameType) => {
   if (player.activeItems.length === 0) return "Missing";
   else if (checkCharacterValid(player, gameType) === false) return "Invalid";
   else return "Good";
-};
-
-const classTranslator = (spec) => {
-  switch (spec) {
-    case "Restoration Druid":
-      return "Classes.RestorationDruid";
-    case "Mistweaver Monk":
-      return "Classes.MistweaverMonk";
-    case "Holy Paladin":
-      return "Classes.HolyPaladin";
-    case "Restoration Shaman":
-      return "Classes.RestorationShaman";
-    case "Holy Priest":
-      return "Classes.HolyPriest";
-    case "Discipline Priest":
-      return "Classes.DisciplinePriest";
-    case "Holy Paladin BC":
-      return "Classes.Holy Paladin BC";
-    case "Restoration Druid BC":
-      return "Classes.Restoration Druid";
-    case "Holy Priest BC":
-      return "Classes.Holy Priest";
-    case "Restoration Shaman BC":
-      return "Classes.Restoration Shaman";
-    default:
-      return "Error";
-  }
 };
 
 /* ------------------------------ Spec Images. ------------------------------ */
@@ -162,7 +136,7 @@ export default function CharacterPanel(props) {
   );
 
   return (
-    <ErrorTooltip title={errorMessage} open={simcStatus === "Invalid" } placement="right-start">
+    <ErrorTooltip title={errorMessage} open={simcStatus === "Invalid"} placement="right-start">
       <Paper elevation={0} className={check(simcStatus)}>
         <div style={{ padding: "8px 8px 8px 8px" }}>
           <Grid container direction="row" justifyContent="space-between" spacing={1}>

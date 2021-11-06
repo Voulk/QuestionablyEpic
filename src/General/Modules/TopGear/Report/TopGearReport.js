@@ -11,6 +11,7 @@ import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
 import { covenantIcons, covenantColours } from "../../CooldownPlanner/Functions/CovenantFunctions";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
+import { classTranslator } from "../../../Functions/CommonFunctions";
 
 function TopGearReport(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
@@ -29,33 +30,6 @@ function TopGearReport(props) {
 
     setImg();
   }, []);
-
-  const classTranslator = (spec) => {
-    switch (spec) {
-      case "Restoration Druid":
-        return "Classes.RestorationDruid";
-      case "Mistweaver Monk":
-        return "Classes.MistweaverMonk";
-      case "Holy Paladin":
-        return "Classes.HolyPaladin";
-      case "Restoration Shaman":
-        return "Classes.RestorationShaman";
-      case "Holy Priest":
-        return "Classes.HolyPriest";
-      case "Discipline Priest":
-        return "Classes.DisciplinePriest";
-      case "Holy Paladin BC":
-        return "Classes.Holy Paladin BC";
-      case "Restoration Druid BC":
-        return "Classes.Restoration Druid";
-      case "Holy Priest BC":
-        return "Classes.Holy Priest";
-      case "Restoration Shaman BC":
-        return "Classes.Restoration Shaman";
-      default:
-        return "Error";
-    }
-  };
 
   const classIcon = () => {
     switch (props.player.spec) {
@@ -148,7 +122,7 @@ function TopGearReport(props) {
       {resultValid ? (
         <Grid container spacing={1}>
           <Grid item xs={12}>
-            <Paper elevation={0} style={{ padding: 10 }}>
+            <Paper elevation={0} style={{ padding: 8 }}>
               <div
                 style={{
                   justifyContent: "center",
@@ -288,21 +262,28 @@ function TopGearReport(props) {
 
                                     <Divider />
                                   </Grid>
-
-                                  <Grid item xs={12}>
-                                    <Grid container item direction="row" spacing={0}>
-                                      <Grid item xs={12}>
-                                        <Typography variant="caption" align="left">
-                                          {"Content: " + t(contentType)}
-                                        </Typography>
-                                      </Grid>
-                                      <Grid item xs={12}>
-                                        <Typography variant="caption" align="left">
-                                          {"Playstyle: " + props.player.getActiveModel(props.contentType).modelName}
-                                        </Typography>
+                                  {gameType === "Retail" ? (
+                                    <Grid item xs={12}>
+                                      <Grid container item direction="row" spacing={0}>
+                                        <Grid item xs={12}>
+                                          <Typography variant="caption" align="left">
+                                            {"Content: " + t(contentType)}
+                                          </Typography>
+                                        </Grid>
+                                        <Grid item xs={12}>
+                                          <Typography variant="caption" align="left">
+                                            {"Playstyle: " + props.player.getActiveModel(props.contentType).modelName}
+                                          </Typography>
+                                        </Grid>
                                       </Grid>
                                     </Grid>
-                                  </Grid>
+                                  ) : (
+                                    <Grid item xs={12}>
+                                      <Typography variant="caption" wrap="nowrap" display="inline" align="left">
+                                        {props.player.region}-{props.player.realm}
+                                      </Typography>
+                                    </Grid>
+                                  )}
                                 </Grid>
                               </Grid>
                             </Grid>
