@@ -13,26 +13,8 @@ const useStylesError = makeStyles((theme) => ({
   },
 }));
 
-{
-  /* <BootstrapTooltip title="Add">
-<Button>Bootstrap</Button>
-</BootstrapTooltip> */
-}
-
-const errorMessage = (
-  <div>
-    There is a problem with your import, please check if your character is wearing the correct items:
-    <br />
-    <span>• Weapon / Off Hands</span>
-    <br />
-    <span>• Helm / Neck / Chest / Wrist / Hands / Belt / Legs / Boots / Rings </span>
-    <br />
-    <span>• Trinkets</span>
-  </div>
-);
-
 export default function ErrorTooltip(props) {
   const classes = useStylesError();
 
-  return <Tooltip title={errorMessage} arrow classes={classes} {...props} />;
+  return <Tooltip arrow classes={classes} {...props} />;
 }

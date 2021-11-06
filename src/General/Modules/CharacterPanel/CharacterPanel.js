@@ -149,8 +149,20 @@ export default function CharacterPanel(props) {
     borderRadius: 4,
   };
 
+  const errorMessage = (
+    <div>
+      There is a problem with your import, please check if your character is wearing the correct items:
+      <br />
+      <span>• Weapon / Off Hands</span>
+      <br />
+      <span>• Helm / Neck / Chest / Wrist / Hands / Belt / Legs / Boots / Rings </span>
+      <br />
+      <span>• Trinkets</span>
+    </div>
+  );
+
   return (
-    <ErrorTooltip open={simcStatus !== "Good"} placement="right-start">
+    <ErrorTooltip title={errorMessage} open={simcStatus === "Invalid" } placement="right-start">
       <Paper elevation={0} className={check(simcStatus)}>
         <div style={{ padding: "8px 8px 8px 8px" }}>
           <Grid container direction="row" justifyContent="space-between" spacing={1}>
@@ -207,7 +219,7 @@ export default function CharacterPanel(props) {
                   </div>
                   {gameType === "Retail" ? (
                     <div style={{ position: "absolute", bottom: 24, left: 1 }}>
-                      <Tooltip title={t(covenant)} style={{ color: classColoursJS(currentCharacter.spec) }} placement="left">
+                      <Tooltip title={t(covenant)} style={{ color: covenantColours(covenant) }} placement="left">
                         {covenantIcons(covenant, {
                           height: 22,
                           width: 22,
