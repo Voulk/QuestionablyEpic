@@ -380,12 +380,21 @@ class App extends Component {
                 />
                 <Route
                   path="/legendaries"
-                  render={() => <LegendaryCompare player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} />}
+                  render={() => (
+                    <LegendaryCompare player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
+                  )}
                 />
-                <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} />} />
+                <Route
+                  path="/trinkets"
+                  render={() => (
+                    <TrinketAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
+                  )}
+                />
                 <Route
                   path="/dominationgems"
-                  render={() => <DominationAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} />}
+                  render={() => (
+                    <DominationAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
+                  )}
                 />
                 <Route
                   path="/soulbinds"
