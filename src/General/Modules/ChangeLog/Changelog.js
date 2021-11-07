@@ -49,7 +49,7 @@ export default function Changelog() {
           </Typography>
         </DialogTitle>
         <DialogContent dividers={scroll === "paper"}>
-          {changeLog.map((key, i) => (
+          {changeLog.slice(0, 5).map((key, i) => (
             <Accordion elevation={0} style={{ backgroundColor: "rgb(82, 82, 82)" }} key={i}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
                 <Typography className={classes.heading}>
