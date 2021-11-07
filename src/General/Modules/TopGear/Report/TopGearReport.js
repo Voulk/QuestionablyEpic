@@ -122,7 +122,7 @@ function TopGearReport(props) {
       {resultValid ? (
         <Grid container spacing={1}>
           <Grid item xs={12}>
-            <Paper elevation={0} style={{ padding: 8 }}>
+            <Paper elevation={0} style={{ padding: 0 }}>
               <div
                 style={{
                   justifyContent: "center",
