@@ -16,7 +16,7 @@ export const changeLog = [
       "Discipline Priest overhaul. Conduit / legendary information added.",
       "New Character panel incorporating old settings and SimC import panels.",
       "Recommended Slots added to prominent legendaries",
-      "Legendaries can now be added manually with whichever Missives you desire.",
+      "Legendaries can now be added manually with whichever Missives you want.",
       "Added a new Footer to the main menu to get back to the main QE site.",
       "Items can now be added manually without specifying a slot first.",
       "Top Gear & Trinket Analysis visual revamps.",

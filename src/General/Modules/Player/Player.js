@@ -179,7 +179,7 @@ class Player {
   };
 
   setDefaultCovenant = (spec) => {
-    if (spec === "Holy Paladin") this.covenant = "kyrian";
+    if (spec === "Holy Paladin") this.covenant = "venthyr";
     else if (spec === "Restoration Druid") this.covenant = "night_fae";
     else if (spec === "Restoration Shaman") this.covenant = "necrolord";
     else if (spec === "Mistweaver Monk") this.covenant = "venthyr";

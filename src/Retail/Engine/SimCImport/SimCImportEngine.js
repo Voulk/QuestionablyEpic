@@ -42,7 +42,7 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
     const covenant = covenantLine.length > 0 ? covenantLine[0].split("=")[1].toLowerCase() : "venthyr";
 
     processAllLines(player, contentType, covenant, lines, linkedItems, vaultItems)
-    //player.setCovenant(covenant);
+    player.setCovenant(covenant);
 
     snackHandler();
     closeDialog();
