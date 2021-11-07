@@ -1,15 +1,15 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Paper, Typography, Divider, Grid } from "@material-ui/core";
-import { getItemIcon, getItemProp } from "../../Engine/ItemUtilities";
+import { getItemIcon, getItemProp } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
 
 function CompetitiveAlternatives(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  
+
   // const item = props.item
-  const differentials = props.differentials
+  const differentials = props.differentials;
   const gameType = useSelector((state) => state.gameType);
   const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
   const itemQuality = (item, gameType) => {
@@ -19,16 +19,15 @@ function CompetitiveAlternatives(props) {
       else if (item.level >= 183) return "#a73fee";
       else if (item.level >= 120) return "#328CE3";
       else return "#1eff00";
-    }
-    else {
-      const quality = getItemProp(item.id, "quality", "BurningCrusade")
+    } else {
+      const quality = getItemProp(item.id, "quality", "BurningCrusade");
       if (quality === 5) return "#ff8000";
       else if (quality === 4) return "#a73fee";
       else if (quality === 3) return "#328CE3";
       else if (quality === 2) return "#1eff00";
       else return "#ffffff";
     }
-  }
+  };
 
   /* -------------------------------------- Rounding Function ------------------------------------- */
   const roundTo = (value, places) => {
@@ -40,13 +39,16 @@ function CompetitiveAlternatives(props) {
 
   return (
     <Grid item xs={12}>
-      <Paper style={{ padding: 16 }} elevation={0}>
+      <Paper
+        style={{ padding: 8 }}
+        elevation={0}
+      >
         <Grid container spacing={1}>
           <Grid item xs={12}>
             <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
               {t("TopGear.CompetitiveAlternative")}
             </Typography>
-            <Typography variant="body2" align="left" style={{ width: "100%", color: "#ffffff", fontStyle: "italic"}} color="secondary">
+            <Typography variant="body2" align="left" style={{ width: "100%", color: "#ffffff", fontStyle: "italic" }} color="secondary">
               {t("TopGear.CompetitiveAlternativeHelp")}
             </Typography>
             <Divider />

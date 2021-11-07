@@ -1,6 +1,6 @@
 import { mergeBonusStats, buildBestDomSet } from "./TopGearEngine";
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities"
-import Player from '../Player/Player';
+import Player from '../../Player/Player';
 import { processItem } from "Retail/Engine/SimCImport/SimCImportEngine"
 import { buildWepCombos } from "General/Engine/ItemUtilities"
 import { runTopGear } from "./TopGearEngine";

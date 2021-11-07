@@ -1,18 +1,18 @@
-import ItemSet from "./ItemSet";
+import ItemSet from "../ItemSet";
 import TopGearResult from "./TopGearResult";
-import Item from "../Player/Item";
+import Item from "../../Player/Item";
 import React, { useState, useEffect } from "react";
-import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../../Engine/STAT";
-import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
-import { convertPPMToUptime } from "../../../Retail/Engine/EffectFormulas/EffectUtilities";
-import Player from "../Player/Player";
-import CastModel from "../Player/CastModel";
-import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngine"
+import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../../../Engine/STAT";
+import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
+import { convertPPMToUptime } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
+import Player from "../../Player/Player";
+import CastModel from "../../Player/CastModel";
+import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine"
 import { getDomGemEffect, applyDiminishingReturns } from "General/Engine/ItemUtilities"
 
 import { runCastSequence, allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
-import { buildBestDomSet } from "./DominationGemUtilities"
+import { buildBestDomSet } from "../Utilities/DominationGemUtilities"
 
 /**
  * == Top Gear Engine ==

@@ -13,9 +13,7 @@ import MiniItemCard from "./MiniItemCard";
 //import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
 import { useHistory } from "react-router-dom";
 import HelpText from "../SetupAndMenus/HelpText";
-import Settings from "../Settings/Settings";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
-import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
 import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems";
@@ -86,8 +84,6 @@ export default function TopGear(props) {
   const classes = useStyles();
   const gameType = useSelector((state) => state.gameType);
 
-  /* ---------------------------------------- Popover Props --------------------------------------- */
-  const [anchorEl, setAnchorEl] = useState(null);
   /* ----------------------------- Snackbar State ----------------------------- */
   const [openDelete, setOpenDelete] = useState(false);
 
@@ -184,7 +180,7 @@ export default function TopGear(props) {
       const strippedCastModel = JSON.parse(JSON.stringify(props.player.getActiveModel(contentType)));
 
       if (gameType === "Retail") {
-        const worker = require("workerize-loader!./TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
+        const worker = require("workerize-loader!./Engine/TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
         let instance = new worker();
         instance.runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
           apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
@@ -192,7 +188,7 @@ export default function TopGear(props) {
           history.push("/report/");
         });
       } else {
-        const worker = require("workerize-loader!./TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
+        const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
         let instance = new worker();
         instance.runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
           //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);

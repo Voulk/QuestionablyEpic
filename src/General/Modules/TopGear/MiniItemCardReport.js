@@ -35,13 +35,13 @@ const useStyles = makeStyles({
 export default function ItemCardReport(props) {
   const classes = useStyles();
   const item = props.item;
-
+  console.log(item);
   const enchants = props.enchants;
   const { i18n } = useTranslation();
   const gameType = useSelector((state) => state.gameType);
 
   const currentLanguage = i18n.language;
-  const statString = (gameType === "BurningCrusade") ? "" : buildStatString(item.stats, item.effect, currentLanguage);
+  const statString = gameType === "BurningCrusade" ? "" : buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
   const socketImg = {
@@ -51,19 +51,18 @@ export default function ItemCardReport(props) {
     versatility: versSocket,
   };
   const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
-  const gemString = (gameType === "BurningCrusade") ? props.gems : "&gems=" + item.gemString;
+  const gemString = gameType === "BurningCrusade" ? props.gems : "&gems=" + item.gemString;
   const socketImage = socketImg[enchants["Gems"]];
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
   const itemQuality = (itemLevel, itemID) => {
     if (gameType !== "Retail") {
-      const quality = getItemProp(itemID, "quality", gameType)
+      const quality = getItemProp(itemID, "quality", gameType);
       if (quality === 5) return "#ff8000";
       else if (quality === 4) return "#a73fee";
       else if (quality === 3) return "#328CE3";
       else if (quality === 2) return "#1eff00";
       else return "#ffffff";
-    }
-    else {
+    } else {
       if (isLegendary) return "#ff8000";
       else if (itemLevel >= 183) return "#a73fee";
       else if (itemLevel >= 120) return "#328CE3";
@@ -100,7 +99,7 @@ export default function ItemCardReport(props) {
     return null;
   };
 
-  const tertiary = ('tertiary' in props.item && props.item.tertiary !== "") ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
+  const tertiary = "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
   return (
     <Grid item xs={12}>
@@ -122,8 +121,8 @@ export default function ItemCardReport(props) {
                   <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom + gemString}>
                     <img
                       alt="img"
-                      width={44}
-                      height={44}
+                      width={38}
+                      height={38}
                       src={getItemIcon(item.id, gameType)}
                       style={{
                         borderRadius: 4,
@@ -150,25 +149,25 @@ export default function ItemCardReport(props) {
                 <Divider />
                 <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
                   <Grid item xs={12} style={{ display: "contents" }}>
-                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px"}}>
-                    {('domGemID' in item && item.domGemID !== 0) ? (
-                      <a data-wowhead={"item=" + item.domGemID + "&domain=" + currentLanguage}>
-                        <img
-                          style={{
-                            height: 16,
-                            width: 16,
-                            margin: "0px 0px 0px 0px",
-                            verticalAlign: "middle",
-                            borderRadius: 4,
-                            border: "1px solid rgba(255, 255, 255, 0.12)",
-                          }}
-                          src={getGemIcon(item.domGemID)}
-                          alt={dominationGemDB.filter((key) => key.id === item.domGemID).map((key) => key.name[currentLanguage])[0]}
-                        />
-                      </a>
-                    ) : (
-                      ""
-                    )}
+                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
+                      {"domGemID" in item && item.domGemID !== 0 ? (
+                        <a data-wowhead={"item=" + item.domGemID + "&domain=" + currentLanguage}>
+                          <img
+                            style={{
+                              height: 16,
+                              width: 16,
+                              margin: "0px 0px 0px 0px",
+                              verticalAlign: "middle",
+                              borderRadius: 4,
+                              border: "1px solid rgba(255, 255, 255, 0.12)",
+                            }}
+                            src={getGemIcon(item.domGemID)}
+                            alt={dominationGemDB.filter((key) => key.id === item.domGemID).map((key) => key.name[currentLanguage])[0]}
+                          />
+                        </a>
+                      ) : (
+                        ""
+                      )}
                       {socket} {statString} {tertiary} {isVault ? " / Vault" : ""}
                     </Typography>
                     {enchantCheck(item)}

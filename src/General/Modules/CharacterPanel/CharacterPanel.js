@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Grid, Paper, Typography, Divider, Tooltip, Skeleton } from "@material-ui/core";
+import { Grid, Paper, Typography, Divider, Tooltip, useMediaQuery } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
 import { useSelector } from "react-redux";
-import Avatar from "@material-ui/core/Avatar";
-import { deepOrange, green } from "@material-ui/core/colors";
 import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import Settings from "../Settings/Settings";
 import { covenantIcons, covenantColours } from "../CooldownPlanner/Functions/CovenantFunctions";
-import { apiGetPlayerImage, apiGetPlayerAvatar } from "../SetupAndMenus/ConnectionUtilities";
-import { characterImageStyle } from "./CharacterImageCSS";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+import ErrorTooltip from "./ErrorTooltip";
+import { classTranslator } from "General/Functions/CommonFunctions";
 
 const useStyles = makeStyles(() => ({
   slider: {
@@ -33,12 +30,6 @@ const useStyles = makeStyles(() => ({
     width: "80%",
     margin: "auto",
     width: "80%",
-  },
-  rounded: {
-    color: "#fff",
-    backgroundColor: green[500],
-    height: 100,
-    width: 100,
   },
 }));
 
@@ -60,33 +51,6 @@ const getSimCStatus = (player, gameType) => {
   if (player.activeItems.length === 0) return "Missing";
   else if (checkCharacterValid(player, gameType) === false) return "Invalid";
   else return "Good";
-};
-
-const classTranslator = (spec) => {
-  switch (spec) {
-    case "Restoration Druid":
-      return "Classes.RestorationDruid";
-    case "Mistweaver Monk":
-      return "Classes.MistweaverMonk";
-    case "Holy Paladin":
-      return "Classes.HolyPaladin";
-    case "Restoration Shaman":
-      return "Classes.RestorationShaman";
-    case "Holy Priest":
-      return "Classes.HolyPriest";
-    case "Discipline Priest":
-      return "Classes.DisciplinePriest";
-    case "Holy Paladin BC":
-      return "Classes.Holy Paladin BC";
-    case "Restoration Druid BC":
-      return "Classes.Restoration Druid";
-    case "Holy Priest BC":
-      return "Classes.Holy Priest";
-    case "Restoration Shaman BC":
-      return "Classes.Restoration Shaman";
-    default:
-      return "Error";
-  }
 };
 
 /* ------------------------------ Spec Images. ------------------------------ */
@@ -159,7 +123,21 @@ export default function CharacterPanel(props) {
     borderRadius: 4,
   };
 
+  const errorMessage = (
+    <div>
+      There is a problem with your import, please check if your character is wearing the correct items:
+      <br />
+      <span>• Weapon / Off Hands</span>
+      <br />
+      <span>• Helm / Neck / Chest / Wrist / Hands / Belt / Legs / Boots / Rings </span>
+      <br />
+      <span>• Trinkets</span>
+    </div>
+  );
+
   return (
+    // disabled errortooltip until properly implemented
+    // <ErrorTooltip title={errorMessage} open={simcStatus === "Invalid"} placement="right-start">
     <Paper elevation={0} className={check(simcStatus)}>
       <div style={{ padding: "8px 8px 8px 8px" }}>
         <Grid container direction="row" justifyContent="space-between" spacing={1}>
@@ -189,7 +167,13 @@ export default function CharacterPanel(props) {
                   />
                 )}
                 <div style={{ position: "absolute", bottom: 1, left: 1 }}>
-                  <Tooltip title={t(classTranslator(currentCharacter.spec))} style={{ color: classColoursJS(currentCharacter.spec) }} placement="left">
+                  <Tooltip
+                    title={t(classTranslator(currentCharacter.spec))}
+                    // Currently Doesn't work
+                    //  style={{ color: classColoursJS(currentCharacter.spec) }}
+                    placement="left"
+                    arrow
+                  >
                     {classIcons(
                       currentCharacter.spec,
                       gameType === "Retail"
@@ -216,7 +200,13 @@ export default function CharacterPanel(props) {
                 </div>
                 {gameType === "Retail" ? (
                   <div style={{ position: "absolute", bottom: 24, left: 1 }}>
-                    <Tooltip title={t(covenant)} style={{ color: classColoursJS(currentCharacter.spec) }} placement="left">
+                    <Tooltip
+                      title={t(covenant)}
+                      // Currently Doesn't work
+                      // style={{ color: covenantColours(covenant) }}
+                      placement="left"
+                      arrow
+                    >
                       {covenantIcons(covenant, {
                         height: 22,
                         width: 22,
@@ -450,5 +440,6 @@ export default function CharacterPanel(props) {
         </Grid>
       </div>
     </Paper>
+    // </ErrorTooltip>
   );
 }
