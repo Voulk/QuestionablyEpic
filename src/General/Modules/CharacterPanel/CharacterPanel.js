@@ -283,7 +283,9 @@ export default function CharacterPanel(props) {
                       }
                       {gameType === "Retail" ? (
                         <Grid container spacing={1}>
-                          {console.log(Object.keys(playerStats))}
+                          <Grid item xs={4} sm="auto">
+                            <Typography style={{ fontSize: 11, lineHeight: 1 }}>{"Stats (pre-enchants):"}</Typography>
+                          </Grid>
                           {Object.keys(playerStats)
                             .filter((filterOut) => filterOut !== "stamina" && filterOut !== "hps" && filterOut !== "dps" && filterOut !== "leech")
                             .map((key) => (
