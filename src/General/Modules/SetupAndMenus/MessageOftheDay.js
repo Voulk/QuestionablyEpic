@@ -6,7 +6,7 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "The new Domination Gem Panel is now live!",
+      "",
   ],
   "BurningCrusade": ["Enjoy SSC / TK!"]
   }

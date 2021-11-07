@@ -34,7 +34,7 @@ export const getDiscPriestLegendary = (effectName, player, contentType) => {
       ppm: 3, // This simulates a standard single target encounter.
       sp: 0.75,
       targets: 3,
-      expectedOverhealing: 0.3,
+      expectedOverhealing: 0.45,
     }
 
     bonus_stats.hps = data.ppm * data.sp * data.targets * (1 - data.expectedOverhealing) * player.getInt() * player.getStatMultiplier("CRITVERS") / 60;
