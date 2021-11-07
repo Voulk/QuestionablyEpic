@@ -169,7 +169,7 @@ export const getMonkConduit = (conduitID, player, contentType, conduitLevel) => 
 
     const shield = maxHP * versPercent * conduitPower;
 
-    const cpm = player.getSpellCPM(ID_FORTIFYING_BREW, contentType);
+    const cpm = 0.25;      // player.getSpellCPM(ID_FORTIFYING_BREW, contentType);
 
     const hps = (shield * cpm) / 60;
 
