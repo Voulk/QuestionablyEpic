@@ -1,3 +1,5 @@
+import { getSiTHPS, applyConduit } from "./FallenOrderFormulas";
+
 const ID_VIVIFY = 116670;
 const ID_RENEWING_MIST = 119611;
 const ID_ENVELOPING_MIST = 124682;
@@ -63,33 +65,9 @@ export const getMonkLegendary = (effectName, player, contentType) => {
 
   } else if (name === "Sinister Teachings") {
 
-    const mult = player.getStatMultiplier("NOMAST") * player.getInt();
-    const conduitMult = 1.616; // Imbued Reflections 239 ilvl.
-    const baseCooldown = 180;
-    const effectiveCD = contentType == "Raid" ? 60 : 64; // This seems to be the average cd with this lego. Replace with proper formula based on Crit. TODO. 
-    const fallenOrderSpells = [
-      {sp: 3.6 * 1.4 * (7/6), castsPerClone: 1.2}, 
-      // Enveloping Mist. For some reason their env multiplier effects their env healing. They are only supposed to cast 1 EnV per clone, but they sometimes like to cast two instead.
-      {sp: 1.04, castsPerClone: 1.5} // Soothing Mist
-  ]
-
-    const numberOfCraneClones = 4;
-    const overhealing = .5; // 50% overheal which is typical
-
-    let healingFromClone = 0;
-    fallenOrderSpells.forEach(spell => (healingFromClone += (spell.sp * spell.castsPerClone * mult) * (1 - overhealing)));
-
-    //const healingFromOneClone = oneEnvHealing * envCastsPerClone + oneSoomHealing * soomCastsPerClone;
-    const healingFromFOCast = healingFromClone * numberOfCraneClones;
-    const hpsDueToCDR = healingFromFOCast / effectiveCD - healingFromFOCast / baseCooldown; // find the difference
-
-    // This is gonna look simple but it allows for easy editing later
-    // This lego makes 1 clone summon instantly and last the whole duration the door is open
-    // 24 = doors duration
-    // 8 = default duration of a clone
-    const durationMultiplier = 24 / 8;
-    const hpsDueToExtraClone = healingFromClone * durationMultiplier / effectiveCD;
-    const netHPS = (hpsDueToCDR + hpsDueToExtraClone) * conduitMult;
+    // Since SiT is the standard playstyle and conduit power is also tied to it
+    // SiT math has been moved to a different file in order to keep the code DRY
+    const netHPS = applyConduit(getSiTHPS(player, contentType), 8);
 
     bonus_stats.hps = netHPS;
 
