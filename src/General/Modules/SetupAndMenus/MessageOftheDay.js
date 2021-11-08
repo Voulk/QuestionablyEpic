@@ -6,7 +6,8 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "",
+      "Disc module revamped. Please report any suspicious results over the next few days.",
+      "Substantial app-wide update. Check the changelog for details!"
   ],
   "BurningCrusade": ["Enjoy SSC / TK!"]
   }
