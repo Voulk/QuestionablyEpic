@@ -144,7 +144,7 @@ export default function DominationAnalysis(props) {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <HelpText blurb={helpText} expanded={false} />
+          <HelpText blurb={helpText} expanded={true} />
         </Grid>
         <Grid item xs={12}>
           <CharacterPanel
