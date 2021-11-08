@@ -171,6 +171,7 @@ describe("updatePlayerStats function", () => {
             haste: 790,
             crit: 385,
             mastery: 340,
+            stamina: 2100,
             versatility: 330,
             leech: 109, // 107
             hps: 0,
@@ -189,6 +190,7 @@ describe("updatePlayerStats function", () => {
             haste: 494,
             crit: 231,
             mastery: 335,
+            stamina: 2100,
             versatility: 313,
             leech: 0,
             hps: 0,
