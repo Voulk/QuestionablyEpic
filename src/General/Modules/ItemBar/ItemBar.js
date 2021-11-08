@@ -8,7 +8,7 @@ import MuiAlert from "@material-ui/lab/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
 import BCItem from "../Player/BCItem";
-import { getItemDB, getValidArmorTypes, getValidWeaponTypesBySpec, getItemProp, scoreItem, getItemAllocations, calcStatsAtLevel } from "../../Engine/ItemUtilities";
+import { getItemDB, getValidArmorTypes, getValidWeaponTypesBySpec, getItemProp, scoreItem, getItemAllocations, calcStatsAtLevel, getLegendaryID } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { dominationGemDB } from "../../../Databases/DominationGemDB";
@@ -140,6 +140,19 @@ export default function ItemBar(props) {
 
         item = new Item(itemID, itemName, itemSlot, itemSocket, itemTertiary, 0, itemLevel, "");
         item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, "");
+        item.uniqueEquip = "legendary";
+        let bonusString = getLegendaryID(item.effect.name);
+        if (missives.includes("Haste")) bonusString += ":6649"
+        if (missives.includes("Mastery")) bonusString += ":6648"
+        if (missives.includes("Crit")) bonusString += ":6647"
+        if (missives.includes("Versatility")) bonusString += ":6650"
+        if (['Finger', 'Head', 'Neck', 'Wrist', 'Waist'].includes(itemSlot)) {
+          item.socket = true;
+          bonusString += ":6935";
+        }
+
+        item.bonusIDS = bonusString;
+        item.id = getItemProp(itemID, "baseSlotID", "Retail");
 
       }
       else {

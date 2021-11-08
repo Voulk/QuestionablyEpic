@@ -5,6 +5,7 @@ import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
 import { getEffectValue } from "../../Retail/Engine/EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
+import { bonus_IDs } from "Retail/Engine/BonusIDs"
 import { translatedStat, STATDIMINISHINGRETURNS } from "./STAT";
 import Item from "../Modules/Player/Item";
 // import { useTranslation } from "react-i18next";
@@ -459,6 +460,18 @@ export function getDomGemEffect(id) {
   });
   if (temp.length > 0 && "effect" in temp[0]) return temp[0].effect;
   else return "";
+}
+
+export function getLegendaryID(tag) {
+  let legendaryID = 0;
+  for (const prop in bonus_IDs) {
+    const entry = bonus_IDs[prop];
+
+    if ('effect' in entry && entry.effect !== null && 'spell' in entry.effect) {
+        if (entry.effect.spell.name === tag) legendaryID = prop;
+    }   
+  }
+  return legendaryID;
 }
 
 
