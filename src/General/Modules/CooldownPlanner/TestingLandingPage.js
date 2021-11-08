@@ -73,7 +73,7 @@ export default function TestingPage(props) {
       <div className={classes.root}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <HelpText text={helpText} blurb={helpBlurb} />
+            <HelpText text={helpText} blurb={helpBlurb} expanded={true} />
           </Grid>
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.

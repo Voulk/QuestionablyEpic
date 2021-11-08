@@ -63,9 +63,10 @@
     "Error": "Error",
     "Burning Crusade": "Burning Crusade",
     "Shadowlands": "Shadowlands",
+    "Filter": "Filter",
 
     "Changelog": {
-      "Header": "ChangelogCH",
+      "Header": "更改日誌",
       "Version": "VersionCH",
       "Update": "UpdateCH",
       "LastUpdated": "Last UpdatedCH",
@@ -353,7 +354,9 @@
       "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300CH",
       "ItemAdded": "Item Added!CH",
       "ItemDeleted": "Item Deleted!CH",
-      "DominationSocket": "Domination"
+      "DominationSocket": "Domination",
+      "Missives": "Missives",
+      "ItemBarTitle": "Add Items (Optional)"
     },
 
     "Races": {
@@ -648,6 +651,14 @@
       "SimCBody1Missing": "SimC - Missing",
       "HelpText": "Insert a SimC String, Select up to two raid difficulties, your standard mythic keystone level, and your PVP rating to see where you can find your next upgrade!"
     },
+
+    "TrinketAnalysis": {
+      "Header": "Trinket Analysis",
+      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing."
+    },
+
+    "SourceToggle": { "FilterTooltip": "You can filter the graph by toggling these buttons" },
+
     "Covenants": {
       "Kyrian": "格里恩",
       "Necrolords": "通灵领主",

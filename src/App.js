@@ -1,18 +1,18 @@
 import React, { Component, useEffect } from "react";
 import "./App.css";
 import CooldownPlannerModule from "General/Modules/CooldownPlanner/CooldownPlannerModule.js";
-import FightAnalysis from "General/Modules/FightAnalysis/FightAnalysis"
+import FightAnalysis from "General/Modules/FightAnalysis/FightAnalysis";
 import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
 import LegendaryCompare from "Retail/Modules/Legendaries/LegendaryCompare.js";
 import TrinketAnalysis from "General/Modules/TrinketAnalysis/TrinketAnalysis";
 import QuickCompare from "General/Modules/QuickCompare/QuickCompare";
-import DominationAnalysis from "Retail/Modules/DominationGemAnalysis/DominationGemAnalysis"
+import DominationAnalysis from "Retail/Modules/DominationGemAnalysis/DominationGemAnalysis";
 import QEHeader from "General/Modules/SetupAndMenus/Header/QEHeader";
-import TopGearReport from "General/Modules/TopGear/TopGearReport";
+import TopGearReport from "General/Modules/TopGear/Report/TopGearReport";
 import QEProfile from "General/Modules/SetupAndMenus/QEProfile";
 import PlayerChars from "General/Modules/Player/PlayerChars";
 import CovenantExploration from "Retail/Modules/Covenants/Components/CovenantExploration.js";
-import TierSets from "./BurningCrusade/Modules/TierSets/TierSets"
+import TierSets from "./BurningCrusade/Modules/TierSets/TierSets";
 import { UpgradeFinder } from "General/Modules/UpgradeFinder/UpgradeFinder";
 import { ConfirmLogin, QELogin } from "General/Modules/SetupAndMenus/Header/QELogin";
 import { withTranslation } from "react-i18next";
@@ -25,6 +25,7 @@ import { useLocation } from "react-router-dom";
 import ls from "local-storage";
 import QESnackbar from "General/Modules/CooldownPlanner/BasicComponents/SnackBar";
 import TestingPage from "General/Modules/CooldownPlanner/TestingLandingPage";
+import QEFooter from "General/Modules/SetupAndMenus/Footer/QEFooter";
 // import { createBrowserHistory } from "history"; // not used TODO: remove?
 import { dbCheckPatron, dbGetArticleList } from "General/Modules/SetupAndMenus/ConnectionUtilities.js";
 
@@ -40,8 +41,11 @@ const theme = createMuiTheme({
   overrides: {
     MuiAccordionSummary: {
       root: {
+        minHeight: 36,
+        height: 36,
         "&$expanded": {
-          minHeight: 48,
+          minHeight: 36,
+          height: 36,
         },
       },
       content: {
@@ -55,7 +59,6 @@ const theme = createMuiTheme({
 });
 
 process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
-
 
 class App extends Component {
   constructor() {
@@ -370,12 +373,35 @@ class App extends Component {
                 <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule />} />
                 <Route path="/holydiver" render={() => <TestingPage />} />
                 <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} />} />
-                <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
-                <Route path="/topgear" render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} />} />
-                <Route path="/legendaries" render={() => <LegendaryCompare player={activePlayer} />} />
-                <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} />} />
-                <Route path="/dominationgems" render={() => <DominationAnalysis player={activePlayer} />} />
-                <Route path="/soulbinds" render={() => <CovenantExploration player={activePlayer} updatePlayerChar={this.updatePlayerChar} />} />
+                <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} />} />
+                <Route
+                  path="/topgear"
+                  render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} />}
+                />
+                <Route
+                  path="/legendaries"
+                  render={() => (
+                    <LegendaryCompare player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
+                  )}
+                />
+                <Route
+                  path="/trinkets"
+                  render={() => (
+                    <TrinketAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
+                  )}
+                />
+                <Route
+                  path="/dominationgems"
+                  render={() => (
+                    <DominationAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
+                  )}
+                />
+                <Route
+                  path="/soulbinds"
+                  render={() => (
+                    <CovenantExploration player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
+                  )}
+                />
                 <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                 <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
                 <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />

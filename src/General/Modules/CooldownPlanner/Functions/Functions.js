@@ -2,7 +2,7 @@ import moment from "moment";
 import axios from "axios";
 import { damageExclusions, healerCooldownsDetailed } from "../Data/Data";
 import { externalsDB } from "../../../../Databases/ExternalsDB";
-
+import chroma from "chroma-js";
 // import i18n from "i18next";
 
 // Returns Seconds from 0 to Loglength
@@ -584,6 +584,10 @@ export async function importSummaryData(starttime, endtime, reportid) {
     });
 
   return summary;
+}
+
+export function colorGenerator(brewerCode, numberOfColours) {
+  return chroma.scale(brewerCode).colors(numberOfColours);
 }
 
 export async function importRaidHealth(starttime, endtime, reportid) {

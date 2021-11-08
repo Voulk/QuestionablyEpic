@@ -14,28 +14,13 @@ import { useSelector } from "react-redux";
 import Settings from "../Settings/Settings";
 import userSettings from "../Settings/SettingsObject";
 import ItemBar from "../ItemBar/ItemBar";
+import CharacterPanel from "../CharacterPanel/CharacterPanel";
 
 const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(0.5),
-    minWidth: 120,
-    whiteSpace: "noWrap",
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-  paper: {
-    border: "1px solid",
-    padding: theme.spacing(1),
-    backgroundColor: theme.palette.background.paper,
-  },
-  typography: {
-    padding: theme.spacing(2),
-  },
   header: {
     [theme.breakpoints.down("xs")]: {
       margin: "auto",
-      width: "85%",
+      width: "90%",
       justifyContent: "center",
       display: "block",
       marginTop: 120,
@@ -49,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up("md")]: {
       margin: "auto",
-      width: "65%",
+      width: "70%",
       justifyContent: "center",
       display: "block",
       marginTop: 120,
@@ -57,12 +42,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("lg")]: {
       marginTop: 32,
       margin: "auto",
-      width: "57%",
+      width: "60%",
       display: "block",
     },
-  },
-  option: {
-    borderBottom: "1px solid rgba(255, 255, 255, 0.23)",
   },
 }));
 
@@ -161,29 +143,46 @@ export default function QuickCompare(props) {
         {/* -------------------------------------------------------------------------- */
         /*                         Quick Compare Title Header                         */
         /* -------------------------------------------------------------------------- */}
-
         <Grid item xs={12}>
           <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
             {t("QuickCompare.Title")}
           </Typography>
         </Grid>
+        {/* ---------------------------------------------------------------------------------------------- */
+        /*                                            Help Text                                            */
+        /* ---------------------------------------------------------------------------------------------- */}
         <Grid item xs={12}>
-          <HelpText text={helpText} blurb={helpBlurb} />
-        </Grid>
-        <Grid item xs={12}>
-          <UpgradeFinderSimC quickCompare={true} player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
+          <HelpText text={helpText} blurb={helpBlurb} expanded={true} />
         </Grid>
 
-        {/*<Grid item xs={12}>
-          <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} />
-        </Grid> */}
-
-        <ItemBar player={props.player} setItemList={setItemList} />
+        {/* ---------------------------------------------------------------------------------------------- */
+        /*                                         Character Panel                                         */
+        /* ----------------------------------------------------------------------------------------------  */}
+        <Grid item xs={12}>
+          <CharacterPanel
+            quickCompare={true}
+            player={props.player}
+            simcSnack={props.simcSnack}
+            allChars={props.allChars}
+            contentType={contentType}
+            userSettings={userSettings}
+            editSettings={editSettings}
+            singleUpdate={props.singleUpdate}
+            hymnalShow={true}
+            groupBuffShow={true}
+            autoSocket={true}
+          />
+        </Grid>
+        {/* ---------------------------------------------------------------------------------------------- */
+        /*                                          Item Add Bar                                           */
+        /* ----------------------------------------------------------------------------------------------  */}
+        <Grid item xs={12}>
+          <ItemBar player={props.player} setItemList={setItemList} />
+        </Grid>
 
         {/* -------------------------------------------------------------------------- */
         /*                             Header/Item Mapping                            */
         /* -------------------------------------------------------------------------- */}
-
         {slots
           .filter((filter) => [...props.player.getActiveItems(filter.activeItem)].length > 0)
           .map((key, i) => (

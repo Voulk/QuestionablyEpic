@@ -8,8 +8,8 @@ import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatW
 import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { monkSinSpecialQueries, monkSinSpellData, monkSinStatWeights } from "./ClassDefaults/Monk/MonkSinTeachings";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
-import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./ClassDefaults/DiscPriestDefaults";
-import { getRampData } from "General/Modules/Player/ClassDefaults/DiscPriestUtilities";
+import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./DiscPriest/DiscPriestDefaults";
+import { getRampData, genStatWeights } from "General/Modules/Player/DiscPriest/DiscPriestUtilities";
 
 class CastModel {
   constructor(spec, contentType, modelID, arrID) {
@@ -142,11 +142,21 @@ class CastModel {
       }
 
     } else if (spec === SPEC.DISCPRIEST) {
-      this.modelName = "Default";
-      spellList = discPriestDefaultSpellData(contentType);
-      specialQueries = discPriestDefaultSpecialQueries(contentType);
-      this.baseStatWeights = discPriestDefaultStatWeights(contentType);
-      this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
+      if (modelID === "Kyrian Evangelism") {
+        this.modelName = "Kyrian Evangelism";
+        spellList = discPriestDefaultSpellData(contentType);
+        specialQueries = discPriestDefaultSpecialQueries(contentType);
+        this.baseStatWeights = discPriestDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
+      }
+      else {
+        this.modelName = "Default";
+        spellList = discPriestDefaultSpellData(contentType);
+        specialQueries = discPriestDefaultSpecialQueries(contentType);
+        this.baseStatWeights = discPriestDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
+      }
+
 
     } else if (spec === SPEC.HOLYPRIEST) {
       this.modelName = "Default";
@@ -184,6 +194,7 @@ class CastModel {
 
   setRampInfo = (stats, trinkets) => {
     this.specialQueries.rampData = getRampData(stats, trinkets);
+    //this.baseStatWeights = genStatWeights(stats);
 
   }
 
@@ -222,6 +233,87 @@ class CastModel {
       8936: { cpm: 0.6, avgcast: 4321, overhealing: 0.11 }, // Regrowth R8
 
     };
+  }
+
+    // Currently being trialled as Discipline only.
+  updateStatWeights = (stats, contentType) => {
+
+    // Take the stats on our set and add 5% for the armor bonus and 5% for Arcane Intellect.
+    stats.intellect = Math.round(stats.intellect * 1.05 * 1.05);
+
+    // These are stat weights with 0 of each stat on top of the default profile.
+    let base_weights = {
+        intellect: 1,
+        haste: 0.47,
+        crit: 0.44,
+        mastery: 0.42,
+        versatility: 0.43,
+        leech: 0.25
+    }
+
+    let scaling = {
+      haste: 1,
+      mastery: 0.72,
+      versatility: 0.99,
+      intellect: 0.991,
+      crit: 0.968,
+      leech: 0.31,
+    };
+
+    let new_weights = {};
+
+    const baselineScore =
+      stats.intellect *
+      scaling.intellect *
+      (1 + (stats.crit / 35 / 100) * scaling.crit) *
+      (1 + (stats.haste / 33 / 100) * scaling.haste) *
+      (1 + (stats.mastery / 27.9 / 100) * scaling.mastery) *
+      (1 + (stats.versatility / 40 / 100) * scaling.versatility);
+
+    const intScore =
+      ((10 + stats.intellect) *
+        scaling.intellect *
+        (1 + (stats.crit / 35 / 100) * scaling.crit) *
+        (1 + (stats.haste / 33 / 100) * scaling.haste) *
+        (1 + (stats.mastery / 27.9 / 100) * scaling.mastery) *
+        (1 + (stats.versatility / 40 / 100) * scaling.versatility) -
+        baselineScore) /
+      10;
+
+    /*(((((stats.intellect) * scaling.intellect) * (1 + ((5 + stats.crit) / 35 / 100 * scaling.crit)) * 
+                            (1 + (stats.haste / 33 / 100 * scaling.haste)) * (1 + (stats.mastery / 27.9 / 100 * scaling.mastery)) * 
+                            (1 + stats.versatility / 40 / 100 * scaling.versatility))) - baselineScore) / 5 / intScore;         */
+
+    //new_weights.intellect = ((100 + stats.intellect * percent_scaling.intellect) * (1 + (stats.crit / 35) * (1 + (stats.haste / 33)))
+
+    for (const [stat, value] of Object.entries(base_weights)) {
+      new_weights[stat] = this.getSecWeight(stats, scaling, baselineScore, intScore, stat);
+    }
+    new_weights.leech = base_weights.leech;
+
+    //console.log(JSON.stringify(base_weights));
+
+    //console.log(JSON.stringify(new_weights));
+
+    this.setStatWeights(new_weights);
+  }
+
+  getSecWeight = (baseStats, scaling, baselineScore, intScore, statName) => {
+    let stats = { ...baseStats };
+    stats[statName] += 5;
+
+    const newWeight =
+      (stats.intellect *
+        scaling.intellect *
+        (1 + (stats.crit / 35 / 100) * scaling.crit) *
+        (1 + (stats.haste / 33 / 100) * scaling.haste) *
+        (1 + (stats.mastery / 27.9 / 100) * scaling.mastery) *
+        (1 + (stats.versatility / 40 / 100) * scaling.versatility) -
+        baselineScore) /
+      5 /
+      intScore;
+
+    return Math.round(1000 * newWeight) / 1000;
   }
 
 }

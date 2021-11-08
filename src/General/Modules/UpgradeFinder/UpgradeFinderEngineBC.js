@@ -1,6 +1,6 @@
 import { BCItemDB} from "../../../Databases/BCItemDB";
 import BCItem from "../Player/BCItem";
-import { runTopGearBC } from "../TopGear/TopGearEngineBC";
+import { runTopGearBC } from "../TopGear/Engine/TopGearEngineBC";
 import {
   buildWepCombos,
   calcStatsAtLevel,

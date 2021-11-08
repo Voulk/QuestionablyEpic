@@ -143,7 +143,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -171,7 +170,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -199,7 +197,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -227,7 +224,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -255,7 +251,6 @@ export const itemDB = [
             "mastery": 4459,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -288,7 +283,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -316,7 +310,6 @@ export const itemDB = [
             "mastery": 3506,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -344,7 +337,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2909
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -372,7 +364,6 @@ export const itemDB = [
             "mastery": 3610,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -400,7 +391,6 @@ export const itemDB = [
             "mastery": 3418,
             "versatility": 3559
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -428,7 +418,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -456,7 +445,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -484,7 +472,6 @@ export const itemDB = [
             "mastery": 3610,
             "versatility": 3332
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -512,7 +499,6 @@ export const itemDB = [
             "mastery": 3951,
             "versatility": 2745
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -540,7 +526,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3858
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -568,7 +553,6 @@ export const itemDB = [
             "mastery": 2664,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -596,7 +580,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -624,7 +607,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -652,7 +634,6 @@ export const itemDB = [
             "mastery": 3506,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -680,7 +661,6 @@ export const itemDB = [
             "mastery": 3076,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -708,7 +688,6 @@ export const itemDB = [
             "mastery": 3810,
             "versatility": 2992
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -736,7 +715,6 @@ export const itemDB = [
             "mastery": 3810,
             "versatility": 2992
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -764,7 +742,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -792,7 +769,6 @@ export const itemDB = [
             "mastery": 3506,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -820,7 +796,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -848,7 +823,6 @@ export const itemDB = [
             "mastery": 3559,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -876,7 +850,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2664
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -904,7 +877,6 @@ export const itemDB = [
             "mastery": 3332,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -932,7 +904,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -960,7 +931,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -988,7 +958,6 @@ export const itemDB = [
             "mastery": 2664,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -1016,7 +985,6 @@ export const itemDB = [
             "mastery": 3161,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -1044,7 +1012,6 @@ export const itemDB = [
             "mastery": 3418,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -1072,7 +1039,6 @@ export const itemDB = [
             "mastery": 2827,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -1100,7 +1066,6 @@ export const itemDB = [
             "mastery": 3332,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -1128,7 +1093,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1156,7 +1120,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1184,7 +1147,6 @@ export const itemDB = [
             "mastery": 3610,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1212,7 +1174,6 @@ export const itemDB = [
             "mastery": 3161,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1240,7 +1201,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2745
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1268,7 +1228,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1296,7 +1255,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1324,7 +1282,6 @@ export const itemDB = [
             "mastery": 2992,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1352,7 +1309,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2909
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1380,7 +1336,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1408,7 +1363,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3161
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1436,7 +1390,6 @@ export const itemDB = [
             "mastery": 2992,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1464,7 +1417,6 @@ export const itemDB = [
             "mastery": 3997,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1492,7 +1444,6 @@ export const itemDB = [
             "mastery": 3506,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1520,7 +1471,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1548,7 +1498,6 @@ export const itemDB = [
             "mastery": 2992,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1576,7 +1525,6 @@ export const itemDB = [
             "mastery": 2664,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1604,7 +1552,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1632,7 +1579,6 @@ export const itemDB = [
             "mastery": 3076,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1660,7 +1606,6 @@ export const itemDB = [
             "mastery": 2745,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -1688,7 +1633,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -1716,7 +1660,6 @@ export const itemDB = [
             "mastery": 3332,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -1744,7 +1687,6 @@ export const itemDB = [
             "mastery": 3506,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -1772,7 +1714,6 @@ export const itemDB = [
             "mastery": 3161,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -1800,7 +1741,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -1828,7 +1768,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -1856,7 +1795,6 @@ export const itemDB = [
             "mastery": 3161,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -1884,7 +1822,6 @@ export const itemDB = [
             "mastery": 2664,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -1912,7 +1849,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3161
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -1940,7 +1876,6 @@ export const itemDB = [
             "mastery": 3076,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -1968,7 +1903,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -1996,7 +1930,6 @@ export const itemDB = [
             "mastery": 2745,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -2024,7 +1957,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2909
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -2052,7 +1984,6 @@ export const itemDB = [
             "mastery": 3246,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -2080,7 +2011,6 @@ export const itemDB = [
             "mastery": 2909,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -2108,7 +2038,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -2136,7 +2065,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -2164,7 +2092,6 @@ export const itemDB = [
             "mastery": 3076,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -2192,7 +2119,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -2220,7 +2146,6 @@ export const itemDB = [
             "mastery": 3161,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -2248,7 +2173,6 @@ export const itemDB = [
             "mastery": 2909,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2276,7 +2200,6 @@ export const itemDB = [
             "mastery": 3610,
             "versatility": 3332
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2304,7 +2227,6 @@ export const itemDB = [
             "mastery": 3161,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2332,7 +2254,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2360,7 +2281,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3332
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2388,7 +2308,6 @@ export const itemDB = [
             "mastery": 2909,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2416,7 +2335,6 @@ export const itemDB = [
             "mastery": 3161,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2444,7 +2362,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2472,7 +2389,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2500,7 +2416,6 @@ export const itemDB = [
             "mastery": 3610,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2528,7 +2443,6 @@ export const itemDB = [
             "mastery": 3076,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2556,7 +2470,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2584,7 +2497,6 @@ export const itemDB = [
             "mastery": 2664,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2612,7 +2524,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2640,7 +2551,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2668,7 +2578,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3418
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2696,7 +2605,6 @@ export const itemDB = [
             "mastery": 3761,
             "versatility": 3076
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2724,7 +2632,6 @@ export const itemDB = [
             "mastery": 3506,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2752,7 +2659,6 @@ export const itemDB = [
             "mastery": 3506,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2780,7 +2686,6 @@ export const itemDB = [
             "mastery": 2664,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -2808,7 +2713,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -2836,7 +2740,6 @@ export const itemDB = [
             "mastery": 2664,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -2864,7 +2767,6 @@ export const itemDB = [
             "mastery": 3761,
             "versatility": 3076
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -2892,7 +2794,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3161
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -2920,7 +2821,6 @@ export const itemDB = [
             "mastery": 3076,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -2948,7 +2848,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -2976,7 +2875,6 @@ export const itemDB = [
             "mastery": 3711,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -3004,7 +2902,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -3032,7 +2929,6 @@ export const itemDB = [
             "mastery": 3161,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -3060,7 +2956,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -3088,7 +2983,6 @@ export const itemDB = [
             "mastery": 3661,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -3116,7 +3010,6 @@ export const itemDB = [
             "mastery": 3905,
             "versatility": 2827
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -3144,7 +3037,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -3172,7 +3064,6 @@ export const itemDB = [
             "mastery": 2664,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -3200,7 +3091,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3418
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -3228,7 +3118,6 @@ export const itemDB = [
             "mastery": 3761,
             "versatility": 3076
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -3256,7 +3145,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -3284,7 +3172,6 @@ export const itemDB = [
             "mastery": 2745,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -3312,7 +3199,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -3340,7 +3226,6 @@ export const itemDB = [
             "mastery": 3506,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -3368,7 +3253,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3396,7 +3280,6 @@ export const itemDB = [
             "mastery": 2827,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3424,7 +3307,6 @@ export const itemDB = [
             "mastery": 2909,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3452,7 +3334,6 @@ export const itemDB = [
             "mastery": 3332,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3480,7 +3361,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3508,7 +3388,6 @@ export const itemDB = [
             "mastery": 3810,
             "versatility": 2992
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3536,7 +3415,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3564,7 +3442,6 @@ export const itemDB = [
             "mastery": 3418,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3592,7 +3469,6 @@ export const itemDB = [
             "mastery": 2664,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3620,7 +3496,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3648,7 +3523,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3676,7 +3550,6 @@ export const itemDB = [
             "mastery": 3246,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3704,7 +3577,6 @@ export const itemDB = [
             "mastery": 2992,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3732,7 +3604,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3418
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3760,7 +3631,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3788,7 +3658,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3816,7 +3685,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3418
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3844,7 +3712,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3872,7 +3739,6 @@ export const itemDB = [
             "mastery": 2992,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3900,7 +3766,6 @@ export const itemDB = [
             "mastery": 3610,
             "versatility": 3332
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -3928,7 +3793,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -3956,7 +3820,6 @@ export const itemDB = [
             "mastery": 3506,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -3984,7 +3847,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3810
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -4012,7 +3874,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3711
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -4040,7 +3901,6 @@ export const itemDB = [
             "mastery": 3332,
             "versatility": 3610
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -4068,7 +3928,6 @@ export const itemDB = [
             "mastery": 3610,
             "versatility": 3332
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -4096,7 +3955,6 @@ export const itemDB = [
             "mastery": 3161,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -4124,7 +3982,6 @@ export const itemDB = [
             "mastery": 3506,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -4152,7 +4009,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4180,7 +4036,6 @@ export const itemDB = [
             "mastery": 2909,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4208,7 +4063,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4236,7 +4090,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4264,7 +4117,6 @@ export const itemDB = [
             "mastery": 2909,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4292,7 +4144,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4320,7 +4171,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3332
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4348,7 +4198,6 @@ export const itemDB = [
             "mastery": 3951,
             "versatility": 2745
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4376,7 +4225,6 @@ export const itemDB = [
             "mastery": 3246,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4404,7 +4252,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4432,7 +4279,6 @@ export const itemDB = [
             "mastery": 3905,
             "versatility": 2827
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4460,7 +4306,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4488,7 +4333,6 @@ export const itemDB = [
             "mastery": 3076,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4516,7 +4360,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4544,7 +4387,6 @@ export const itemDB = [
             "mastery": 3332,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4572,7 +4414,6 @@ export const itemDB = [
             "mastery": 3076,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4600,7 +4441,6 @@ export const itemDB = [
             "mastery": 2664,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4628,7 +4468,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4656,7 +4495,6 @@ export const itemDB = [
             "mastery": 3161,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4684,7 +4522,6 @@ export const itemDB = [
             "mastery": 2664,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -4712,7 +4549,6 @@ export const itemDB = [
             "mastery": 3506,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -4740,7 +4576,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2664
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -4768,7 +4603,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -4796,7 +4630,6 @@ export const itemDB = [
             "mastery": 3559,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -4824,7 +4657,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3246
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -4852,7 +4684,6 @@ export const itemDB = [
             "mastery": 3161,
             "versatility": 3711
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -4880,7 +4711,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -4908,7 +4738,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3997
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -4936,7 +4765,6 @@ export const itemDB = [
             "mastery": 3076,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -4964,7 +4792,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -4992,7 +4819,6 @@ export const itemDB = [
             "mastery": 2992,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5020,7 +4846,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2827
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5048,7 +4873,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5076,7 +4900,6 @@ export const itemDB = [
             "mastery": 2992,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5104,7 +4927,6 @@ export const itemDB = [
             "mastery": 2664,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5132,7 +4954,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3418
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5160,7 +4981,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5188,7 +5008,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5216,7 +5035,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5244,7 +5062,6 @@ export const itemDB = [
             "mastery": 3076,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5272,7 +5089,6 @@ export const itemDB = [
             "mastery": 3418,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5300,7 +5116,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5328,7 +5143,6 @@ export const itemDB = [
             "mastery": 2992,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5356,7 +5170,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5384,7 +5197,6 @@ export const itemDB = [
             "mastery": 2827,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5412,7 +5224,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5440,7 +5251,6 @@ export const itemDB = [
             "mastery": 3076,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5468,7 +5278,6 @@ export const itemDB = [
             "mastery": 3661,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -5496,7 +5305,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -5529,7 +5337,6 @@ export const itemDB = [
             "mastery": 6666,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -5562,7 +5369,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -5595,7 +5401,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -5628,7 +5433,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -5661,7 +5465,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -5694,7 +5497,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -5727,7 +5529,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4444
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -5760,7 +5561,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4444
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -5793,7 +5593,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3689
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -5826,7 +5625,6 @@ export const itemDB = [
             "mastery": 6666,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -5859,7 +5657,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -5892,7 +5689,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4444
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -5925,7 +5721,6 @@ export const itemDB = [
             "mastery": 3506,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -5953,7 +5748,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -5981,7 +5775,6 @@ export const itemDB = [
             "mastery": 3506,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -6009,7 +5802,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -6037,7 +5829,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -6065,7 +5856,6 @@ export const itemDB = [
             "mastery": 3246,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -6093,7 +5883,6 @@ export const itemDB = [
             "mastery": 3711,
             "versatility": 3161
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -6121,7 +5910,6 @@ export const itemDB = [
             "mastery": 3076,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -6149,7 +5937,6 @@ export const itemDB = [
             "mastery": 3161,
             "versatility": 3711
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -6177,7 +5964,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -6205,7 +5991,6 @@ export const itemDB = [
             "mastery": 3997,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -6233,7 +6018,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3858
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -6261,7 +6045,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -6289,7 +6072,6 @@ export const itemDB = [
             "mastery": 3711,
             "versatility": 3161
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -6317,7 +6099,6 @@ export const itemDB = [
             "mastery": 3418,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -6345,7 +6126,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -6373,7 +6153,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -6401,7 +6180,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -6429,7 +6207,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -6457,7 +6234,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -6485,7 +6261,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -6513,7 +6288,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -6541,7 +6315,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -6569,7 +6342,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -6602,7 +6374,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -6630,7 +6401,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -6658,7 +6428,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -6686,7 +6455,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -6714,7 +6482,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -6742,7 +6509,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -6770,7 +6536,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -6798,7 +6563,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -6826,7 +6590,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -6854,7 +6617,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -6882,7 +6644,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -6910,7 +6671,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -6938,7 +6698,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -6966,7 +6725,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -6994,7 +6752,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -7022,7 +6779,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -7050,7 +6806,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -7078,7 +6833,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -7106,7 +6860,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -7134,7 +6887,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -7162,7 +6914,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -7190,7 +6941,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -7218,7 +6968,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -7246,7 +6995,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -7274,7 +7022,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -7302,7 +7049,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -7330,7 +7076,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -7358,7 +7103,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -7386,7 +7130,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -7414,7 +7157,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -7442,7 +7184,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -7470,7 +7211,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -7498,7 +7238,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -7526,7 +7265,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -7554,7 +7292,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -7582,7 +7319,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -7615,7 +7351,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -7643,7 +7378,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -7671,7 +7405,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -7699,7 +7432,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -7727,7 +7459,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -7755,7 +7486,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -7783,7 +7513,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -7811,7 +7540,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -7839,7 +7567,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -7867,7 +7594,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -7895,7 +7621,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -7923,7 +7648,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -7951,7 +7675,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -7979,7 +7702,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -8012,7 +7734,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -8040,7 +7761,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -8068,7 +7788,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -8096,7 +7815,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -8124,7 +7842,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -8152,7 +7869,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -8180,7 +7896,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -8208,7 +7923,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -8236,7 +7950,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -8264,7 +7977,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -8292,7 +8004,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -8320,7 +8031,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -8348,7 +8058,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -8376,7 +8085,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -8404,7 +8112,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -8432,7 +8139,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -8460,7 +8166,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -8488,7 +8193,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -8516,7 +8220,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -8544,7 +8247,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -8572,7 +8274,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -8600,7 +8301,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -8628,7 +8328,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -8661,7 +8360,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -8689,7 +8387,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -8717,7 +8414,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -8745,7 +8441,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -8773,7 +8468,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -8801,7 +8495,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -8829,7 +8522,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -8857,7 +8549,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -8885,7 +8576,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -8913,7 +8603,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -8941,7 +8630,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -8969,7 +8657,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -8997,7 +8684,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -9025,7 +8711,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -9053,7 +8738,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -9081,7 +8765,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -9109,7 +8792,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -9137,7 +8819,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -9165,7 +8846,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -9193,7 +8873,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -9221,7 +8900,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -9249,7 +8927,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -9277,7 +8954,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -9305,7 +8981,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -9333,7 +9008,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -9366,7 +9040,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -9394,7 +9067,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -9422,7 +9094,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -9450,7 +9121,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -9478,7 +9148,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -9511,7 +9180,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -9539,7 +9207,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -9567,7 +9234,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -9595,7 +9261,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -9623,7 +9288,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -9651,7 +9315,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -9679,7 +9342,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -9707,7 +9369,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -9735,7 +9396,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -9763,7 +9423,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -9791,7 +9450,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -9819,7 +9477,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3076
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -9847,7 +9504,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -9875,7 +9531,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -9903,7 +9558,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -9931,7 +9585,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -9959,7 +9612,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -9987,7 +9639,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -10015,7 +9666,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -10043,7 +9693,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -10071,7 +9720,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -10099,7 +9747,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -10132,7 +9779,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -10160,7 +9806,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -10188,7 +9833,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -10216,7 +9860,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -10244,7 +9887,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -10272,7 +9914,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -10300,7 +9941,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -10328,7 +9968,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -10356,7 +9995,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -10384,7 +10022,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -10412,7 +10049,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -10440,7 +10076,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -10468,7 +10103,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -10496,7 +10130,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3610
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -10524,7 +10157,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -10552,7 +10184,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3610
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -10580,7 +10211,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -10608,7 +10238,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -10641,7 +10270,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -10669,7 +10297,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -10697,7 +10324,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -10725,7 +10351,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -10753,7 +10378,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -10781,7 +10405,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -10809,7 +10432,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -10837,7 +10459,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -10865,7 +10486,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -10893,7 +10513,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -10921,7 +10540,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -10949,7 +10567,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -10977,7 +10594,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -11005,7 +10621,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -11033,7 +10648,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -11061,7 +10675,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -11094,7 +10707,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -11122,7 +10734,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -11150,7 +10761,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -11178,7 +10788,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -11206,7 +10815,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -11234,7 +10842,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -11262,7 +10869,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -11290,7 +10896,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -11318,7 +10923,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -11346,7 +10950,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -11374,7 +10977,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -11402,7 +11004,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -11430,7 +11031,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -11458,7 +11058,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -11486,7 +11085,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -11514,7 +11112,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -11542,7 +11139,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -11570,7 +11166,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -11598,7 +11193,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -11626,7 +11220,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -11654,7 +11247,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -11682,7 +11274,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -11710,7 +11301,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -11738,7 +11328,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -11766,7 +11355,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -11794,7 +11382,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -11822,7 +11409,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -11850,7 +11436,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -11878,7 +11463,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -11906,7 +11490,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -11934,7 +11517,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -11962,7 +11544,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -11995,7 +11576,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -12023,7 +11603,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -12051,7 +11630,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -12079,7 +11657,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -12107,7 +11684,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -12135,7 +11711,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -12163,7 +11738,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -12191,7 +11765,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -12219,7 +11792,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -12247,7 +11819,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -12275,7 +11846,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -12303,7 +11873,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -12331,7 +11900,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -12359,7 +11927,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -12387,7 +11954,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -12415,7 +11981,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -12443,7 +12008,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -12471,7 +12035,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -12499,7 +12062,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -12527,7 +12089,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -12555,7 +12116,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -12583,7 +12143,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -12611,7 +12170,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -12639,7 +12197,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -12667,7 +12224,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -12695,7 +12251,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -12723,7 +12278,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -12756,7 +12310,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -12784,7 +12337,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -12812,7 +12364,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -12840,7 +12391,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -12868,7 +12418,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -12896,7 +12445,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -12924,7 +12472,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -12952,7 +12499,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -12980,7 +12526,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -13008,7 +12553,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -13036,7 +12580,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -13064,7 +12607,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -13092,7 +12634,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -13120,7 +12661,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -13148,7 +12688,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -13176,7 +12715,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -13204,7 +12742,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -13232,7 +12769,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -13260,7 +12796,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -13288,7 +12823,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -13316,7 +12850,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -13344,7 +12877,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -13372,7 +12904,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -13400,7 +12931,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -13428,7 +12958,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7012
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -13456,7 +12985,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -13484,7 +13012,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -13512,7 +13039,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -13540,7 +13066,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3761
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -13568,7 +13093,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -13596,7 +13120,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -13624,7 +13147,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -13652,7 +13174,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -13680,7 +13201,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -13708,7 +13228,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -13736,7 +13255,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -13764,7 +13282,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -13792,7 +13309,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7000
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -13820,7 +13336,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -13848,7 +13363,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -13876,7 +13390,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3849
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -13904,7 +13417,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -13932,7 +13444,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -13960,7 +13471,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -13988,7 +13498,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -14016,7 +13525,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -14044,7 +13552,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -14072,7 +13579,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -14100,7 +13606,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -14128,7 +13633,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -14161,7 +13665,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -14194,7 +13697,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -14227,7 +13729,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -14255,7 +13756,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -14283,7 +13783,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -14311,7 +13810,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -14339,7 +13837,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -14367,7 +13864,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -14395,7 +13891,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -14423,7 +13918,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -14451,7 +13945,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -14479,7 +13972,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -14507,7 +13999,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -14535,7 +14026,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4200
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -14563,7 +14053,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -14591,7 +14080,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -14619,7 +14107,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1820
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -14647,7 +14134,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -14675,7 +14161,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -14703,7 +14188,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -14731,7 +14215,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -14759,7 +14242,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -14787,7 +14269,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -14815,7 +14296,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -14843,7 +14323,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -14876,7 +14355,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -14909,7 +14387,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -14942,7 +14419,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -14975,7 +14451,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -15008,7 +14483,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -15036,7 +14510,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -15064,7 +14537,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -15092,7 +14564,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -15120,7 +14591,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -15148,7 +14618,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1571
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -15176,7 +14645,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -15204,7 +14672,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -15232,7 +14699,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -15260,7 +14726,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -15288,7 +14753,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -15316,7 +14780,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -15344,7 +14807,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -15372,7 +14834,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -15400,7 +14861,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -15428,7 +14888,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -15456,7 +14915,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -15484,7 +14942,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -15512,7 +14969,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -15540,7 +14996,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -15568,7 +15023,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -15596,7 +15050,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -15624,7 +15077,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -15652,7 +15104,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4952
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -15680,7 +15131,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -15713,7 +15163,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -15746,7 +15195,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -15779,7 +15227,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -15807,7 +15254,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -15835,7 +15281,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -15863,7 +15308,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -15891,7 +15335,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -15919,7 +15362,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -15947,7 +15389,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -15975,7 +15416,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -16003,7 +15443,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -16031,7 +15470,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -16059,7 +15497,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -16087,7 +15524,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -16115,7 +15551,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -16143,7 +15578,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -16171,7 +15605,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -16199,7 +15632,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -16227,7 +15659,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -16255,7 +15686,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -16283,7 +15713,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -16311,7 +15740,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -16339,7 +15767,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -16367,7 +15794,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -16395,7 +15821,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -16423,7 +15848,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -16451,7 +15875,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -16479,7 +15902,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -16507,7 +15929,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5264
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -16535,7 +15956,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -16563,7 +15983,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -16591,7 +16010,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -16619,7 +16037,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -16647,7 +16064,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -16675,7 +16091,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -16703,7 +16118,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -16731,7 +16145,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3474
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -16759,7 +16172,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3492
         },
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Prismatic"
     },
@@ -16788,7 +16200,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3492
         },
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -16817,7 +16228,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3474
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -16845,7 +16255,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3492
         },
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Prismatic"
     },
@@ -16874,7 +16283,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3492
         },
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -16903,7 +16311,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3458
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -16931,7 +16338,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3521
         },
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Prismatic"
     },
@@ -16960,7 +16366,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3521
         },
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -16989,7 +16394,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3458
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -17017,7 +16421,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3521
         },
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Prismatic"
     },
@@ -17046,7 +16449,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3521
         },
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -17075,7 +16477,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -17103,7 +16504,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3478
         },
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Prismatic"
     },
@@ -17132,7 +16532,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3478
         },
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -17161,7 +16560,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -17189,7 +16587,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3478
         },
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Prismatic"
     },
@@ -17218,7 +16615,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3478
         },
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -17247,7 +16643,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -17276,7 +16671,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -17304,7 +16698,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -17332,7 +16725,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Prismatic"
     },
@@ -17361,7 +16753,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -17389,7 +16780,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Prismatic"
     },
@@ -17418,7 +16808,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -17446,7 +16835,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3506
         },
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Prismatic"
     },
@@ -17475,7 +16863,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4493
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -17503,7 +16890,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2899
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -17531,7 +16917,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2899
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -17559,7 +16944,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3404
         },
-        "dropLoc": "",
         "slot": "Wrist",
         "socketType": "Prismatic"
     },
@@ -17588,7 +16972,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4426
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -17616,7 +16999,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4426
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -17644,7 +17026,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4426
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -17672,7 +17053,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2727
         },
-        "dropLoc": "",
         "slot": "Wrist",
         "socketType": "Prismatic"
     },
@@ -17701,7 +17081,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3333
         },
-        "dropLoc": "",
         "slot": "Wrist",
         "socketType": "Prismatic"
     },
@@ -17730,7 +17109,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3333
         },
-        "dropLoc": "",
         "slot": "Wrist",
         "socketType": "Prismatic"
     },
@@ -17759,7 +17137,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -17787,7 +17164,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -17815,7 +17191,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -17843,7 +17218,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -17871,7 +17245,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -17899,7 +17272,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -17927,7 +17299,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -17955,7 +17326,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -17983,7 +17353,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -18011,7 +17380,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -18039,7 +17407,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -18067,7 +17434,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -18095,7 +17461,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -18123,7 +17488,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -18151,7 +17515,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -18179,7 +17542,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2700
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -18207,7 +17569,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -18235,7 +17596,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -18263,7 +17623,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -18291,7 +17650,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -18319,7 +17677,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -18347,7 +17704,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -18375,7 +17731,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -18403,7 +17758,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -18431,7 +17785,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -18459,7 +17812,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -18487,7 +17839,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -18515,7 +17866,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -18543,7 +17893,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -18571,7 +17920,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -18599,7 +17947,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -18627,7 +17974,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -18655,7 +18001,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -18683,7 +18028,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -18711,7 +18055,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -18739,7 +18082,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -18767,7 +18109,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -18795,7 +18136,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -18823,7 +18163,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -18851,7 +18190,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -18879,7 +18217,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -18907,7 +18244,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -18935,7 +18271,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -18963,7 +18298,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -18991,7 +18325,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -19019,7 +18352,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -19047,7 +18379,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -19075,7 +18406,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -19103,7 +18433,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -19131,7 +18460,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -19159,7 +18487,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -19187,7 +18514,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -19215,7 +18541,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -19243,7 +18568,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -19271,7 +18595,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -19299,7 +18622,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -19327,7 +18649,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -19355,7 +18676,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -19383,7 +18703,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -19411,7 +18730,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -19439,7 +18757,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -19467,7 +18784,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10000
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -19495,7 +18811,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -19523,7 +18838,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -19551,7 +18865,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -19579,7 +18892,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -19607,7 +18919,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7500
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -19635,7 +18946,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -19663,7 +18973,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -19691,7 +19000,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -19719,7 +19027,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -19747,7 +19054,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -19775,7 +19081,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -19808,7 +19113,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -19841,7 +19145,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -19869,7 +19172,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -19897,7 +19199,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -19925,7 +19226,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -19953,7 +19253,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -19981,7 +19280,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -20009,7 +19307,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3900
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -20037,7 +19334,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -20065,7 +19361,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -20093,7 +19388,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -20121,7 +19415,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -20149,7 +19442,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -20177,7 +19469,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -20205,7 +19496,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -20233,7 +19523,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -20261,7 +19550,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -20289,7 +19577,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -20317,7 +19604,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -20345,7 +19631,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -20373,7 +19658,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -20401,7 +19685,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -20429,7 +19712,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -20457,7 +19739,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -20485,7 +19766,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -20513,7 +19793,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -20541,7 +19820,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3600
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -20569,7 +19847,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -20597,7 +19874,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -20625,7 +19901,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -20653,7 +19928,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3400
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -20681,7 +19955,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -20709,7 +19982,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -20737,7 +20009,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -20765,7 +20036,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -20793,7 +20063,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -20821,7 +20090,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -20849,7 +20117,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -20877,7 +20144,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -20905,7 +20171,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -20933,7 +20198,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -20961,7 +20225,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -20989,7 +20252,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -21017,7 +20279,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -21045,7 +20306,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -21074,7 +20334,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -21103,7 +20362,6 @@ export const itemDB = [
             "versatility": 3800
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -21132,7 +20390,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -21161,7 +20418,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -21190,7 +20446,6 @@ export const itemDB = [
             "versatility": 3800
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -21219,7 +20474,6 @@ export const itemDB = [
             "versatility": 3000
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -21247,7 +20501,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -21275,7 +20528,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -21303,7 +20555,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -21331,7 +20582,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -21359,7 +20609,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -21387,7 +20636,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -21415,7 +20663,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -21443,7 +20690,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -21471,7 +20717,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -21499,7 +20744,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -21527,7 +20771,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -21555,7 +20798,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -21583,7 +20825,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -21611,7 +20852,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -21639,7 +20879,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -21667,7 +20906,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -21695,7 +20933,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -21723,7 +20960,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -21752,7 +20988,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -21785,7 +21020,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -21813,7 +21047,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -21841,7 +21074,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -21869,7 +21101,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -21897,7 +21128,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -21925,7 +21155,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -21953,7 +21182,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -21981,7 +21209,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -22009,7 +21236,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -22037,7 +21263,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -22065,7 +21290,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -22093,7 +21317,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -22121,7 +21344,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -22149,7 +21371,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -22177,7 +21398,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -22205,7 +21425,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -22233,7 +21452,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -22261,7 +21479,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -22289,7 +21506,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -22317,7 +21533,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -22345,7 +21560,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -22373,7 +21587,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -22401,7 +21614,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -22429,7 +21641,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -22457,7 +21668,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -22485,7 +21695,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -22513,7 +21722,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -22541,7 +21749,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -22569,7 +21776,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -22597,7 +21803,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -22625,7 +21830,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -22653,7 +21857,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -22681,7 +21884,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -22709,7 +21911,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -22737,7 +21938,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -22765,7 +21965,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -22793,7 +21992,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -22822,7 +22020,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -22855,7 +22052,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -22883,7 +22079,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -22911,7 +22106,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -22939,7 +22133,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -22967,7 +22160,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -22995,7 +22187,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -23023,7 +22214,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -23051,7 +22241,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -23079,7 +22268,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -23107,7 +22295,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -23135,7 +22322,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -23163,7 +22349,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -23196,7 +22381,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -23224,7 +22408,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -23252,7 +22435,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -23280,7 +22462,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -23309,7 +22490,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -23342,7 +22522,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -23370,7 +22549,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -23398,7 +22576,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -23426,7 +22603,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -23454,7 +22630,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -23482,7 +22657,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -23510,7 +22684,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -23538,7 +22711,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -23566,7 +22738,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -23594,7 +22765,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -23622,7 +22792,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -23650,7 +22819,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -23683,7 +22851,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -23711,7 +22878,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -23740,7 +22906,6 @@ export const itemDB = [
             "versatility": 6666
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -23773,7 +22938,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -23801,7 +22965,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -23829,7 +22992,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -23857,7 +23019,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -23885,7 +23046,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -23913,7 +23073,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -23941,7 +23100,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -23969,7 +23127,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -23997,7 +23154,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -24025,7 +23181,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -24053,7 +23208,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -24081,7 +23235,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -24109,7 +23262,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -24137,7 +23289,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -24165,7 +23316,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -24193,7 +23343,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -24221,7 +23370,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -24249,7 +23397,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -24277,7 +23424,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -24305,7 +23451,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -24333,7 +23478,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -24361,7 +23505,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -24389,7 +23532,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -24417,7 +23559,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -24445,7 +23586,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -24473,7 +23613,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -24501,7 +23640,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -24529,7 +23667,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -24557,7 +23694,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -24585,7 +23721,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -24613,7 +23748,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -24641,7 +23775,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -24669,7 +23802,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -24697,7 +23829,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -24725,7 +23856,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -24753,7 +23883,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -24781,7 +23910,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -24809,7 +23937,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -24837,7 +23964,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -24865,7 +23991,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -24893,7 +24018,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -24921,7 +24045,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -24949,7 +24072,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -24977,7 +24099,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -25005,7 +24126,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -25033,7 +24153,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -25061,7 +24180,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -25089,7 +24207,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -25117,7 +24234,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -25145,7 +24261,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -25173,7 +24288,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -25201,7 +24315,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -25229,7 +24342,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -25257,7 +24369,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -25285,7 +24396,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -25313,7 +24423,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -25341,7 +24450,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -25369,7 +24477,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -25397,7 +24504,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -25425,7 +24531,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -25453,7 +24558,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -25481,7 +24585,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -25509,7 +24612,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -25537,7 +24639,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -25565,7 +24666,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -25593,7 +24693,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -25621,7 +24720,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -25649,7 +24747,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -25677,7 +24774,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -25705,7 +24801,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -25733,7 +24828,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -25761,7 +24855,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -25789,7 +24882,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -25817,7 +24909,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -25845,7 +24936,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -25873,7 +24963,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -25901,7 +24990,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -25929,7 +25017,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -25957,7 +25044,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -25985,7 +25071,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -26013,7 +25098,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -26041,7 +25125,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -26069,7 +25152,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -26097,7 +25179,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -26126,7 +25207,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -26159,7 +25239,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -26187,7 +25266,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -26215,7 +25293,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -26243,7 +25320,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -26271,7 +25347,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -26299,7 +25374,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -26327,7 +25401,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -26355,7 +25428,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -26383,7 +25455,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -26411,7 +25482,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -26439,7 +25509,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -26467,7 +25536,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -26495,7 +25563,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -26523,7 +25590,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -26556,7 +25622,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -26584,7 +25649,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -26612,7 +25676,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -26640,7 +25703,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -26668,7 +25730,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -26696,7 +25757,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -26724,7 +25784,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -26752,7 +25811,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -26780,7 +25838,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -26808,7 +25865,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -26841,7 +25897,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -26869,7 +25924,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -26897,7 +25951,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -26925,7 +25978,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -26953,7 +26005,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -26981,7 +26032,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -27014,7 +26064,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -27042,7 +26091,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -27070,7 +26118,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -27103,7 +26150,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -27131,7 +26177,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -27159,7 +26204,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -27187,7 +26231,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -27215,7 +26258,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -27243,7 +26285,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -27271,7 +26312,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -27304,7 +26344,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -27332,7 +26371,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -27360,7 +26398,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -27388,7 +26425,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -27416,7 +26452,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -27444,7 +26479,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -27472,7 +26506,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -27500,7 +26533,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -27528,7 +26560,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -27556,7 +26587,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -27584,7 +26614,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -27612,7 +26641,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -27640,7 +26668,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -27668,7 +26695,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -27696,7 +26722,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -27724,7 +26749,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -27752,7 +26776,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -27785,7 +26808,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -27813,7 +26835,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -27841,7 +26862,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -27869,7 +26889,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -27897,7 +26916,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -27925,7 +26943,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -27953,7 +26970,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -27981,7 +26997,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -28009,7 +27024,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -28037,7 +27051,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -28065,7 +27078,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -28098,7 +27110,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -28126,7 +27137,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -28154,7 +27164,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -28182,7 +27191,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -28210,7 +27218,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -28238,7 +27245,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -28266,7 +27272,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -28294,7 +27299,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -28322,7 +27326,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -28350,7 +27353,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -28378,7 +27380,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -28406,7 +27407,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -28434,7 +27434,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -28467,7 +27466,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -28495,7 +27493,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -28523,7 +27520,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -28551,7 +27547,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -28579,7 +27574,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -28607,7 +27601,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -28635,7 +27628,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -28663,7 +27655,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -28691,7 +27682,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -28719,7 +27709,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -28747,7 +27736,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -28775,7 +27763,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -28803,7 +27790,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -28831,7 +27817,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -28859,7 +27844,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -28887,7 +27871,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -28915,7 +27898,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -28943,7 +27925,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -28971,7 +27952,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -28999,7 +27979,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -29027,7 +28006,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -29055,7 +28033,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -29083,7 +28060,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -29111,7 +28087,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -29139,7 +28114,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -29167,7 +28141,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -29195,7 +28168,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -29223,7 +28195,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -29251,7 +28222,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -29279,7 +28249,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -29307,7 +28276,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -29335,7 +28303,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -29363,7 +28330,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -29391,7 +28357,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -29419,7 +28384,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -29447,7 +28411,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -29475,7 +28438,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -29503,7 +28465,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -29531,7 +28492,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -29559,7 +28519,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -29587,7 +28546,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -29615,7 +28573,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -29643,7 +28600,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -29671,7 +28627,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -29699,7 +28654,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -29727,7 +28681,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -29755,7 +28708,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -29783,7 +28735,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -29811,7 +28762,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -29839,7 +28789,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -29867,7 +28816,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -29895,7 +28843,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -29923,7 +28870,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -29951,7 +28897,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -29979,7 +28924,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -30007,7 +28951,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -30035,7 +28978,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -30063,7 +29005,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -30091,7 +29032,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -30119,7 +29059,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -30147,7 +29086,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -30175,7 +29113,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -30203,7 +29140,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -30231,7 +29167,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -30259,7 +29194,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -30287,7 +29221,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -30315,7 +29248,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -30343,7 +29275,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -30371,7 +29302,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -30399,7 +29329,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -30427,7 +29356,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -30455,7 +29383,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -30483,7 +29410,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -30511,7 +29437,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -30539,7 +29464,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -30567,7 +29491,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -30595,7 +29518,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -30623,7 +29545,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -30651,7 +29572,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -30679,7 +29599,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -30707,7 +29626,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -30736,7 +29654,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -30769,7 +29686,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -30797,7 +29713,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -30825,7 +29740,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -30853,7 +29767,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -30881,7 +29794,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -30909,7 +29821,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -30937,7 +29848,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -30965,7 +29875,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -30993,7 +29902,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -31021,7 +29929,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -31049,7 +29956,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -31077,7 +29983,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -31105,7 +30010,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -31133,7 +30037,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -31161,7 +30064,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -31189,7 +30091,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -31217,7 +30118,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -31245,7 +30145,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -31273,7 +30172,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -31301,7 +30199,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -31329,7 +30226,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -31357,7 +30253,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -31385,7 +30280,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -31413,7 +30307,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -31441,7 +30334,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -31476,7 +30368,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -31506,7 +30397,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Prismatic"
     },
@@ -31536,7 +30426,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -31566,7 +30455,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Prismatic"
     },
@@ -31595,7 +30483,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -31623,7 +30510,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -31651,7 +30537,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -31679,7 +30564,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -31707,7 +30591,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -31735,7 +30618,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -31763,7 +30645,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -31791,7 +30672,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -31820,7 +30700,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -31850,7 +30729,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -31880,7 +30758,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -31910,7 +30787,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -31940,7 +30816,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -31970,7 +30845,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -32000,7 +30874,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -32030,7 +30903,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -32060,7 +30932,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Hands",
         "socketType": "Prismatic"
     },
@@ -32090,7 +30961,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -32120,7 +30990,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Hands",
         "socketType": "Prismatic"
     },
@@ -32150,7 +31019,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -32179,7 +31047,6 @@ export const itemDB = [
             "mastery": 2500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -32207,7 +31074,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -32235,7 +31101,6 @@ export const itemDB = [
             "mastery": 2800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -32263,7 +31128,6 @@ export const itemDB = [
             "mastery": 2800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -32291,7 +31155,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2800
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -32319,7 +31182,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -32352,7 +31214,6 @@ export const itemDB = [
             "mastery": 2500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -32380,7 +31241,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -32409,7 +31269,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -32438,7 +31297,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -32467,7 +31325,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Prismatic"
     },
@@ -32496,7 +31353,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Prismatic"
     },
@@ -32525,7 +31381,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Prismatic"
     },
@@ -32554,7 +31409,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -32583,7 +31437,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -32612,7 +31465,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -32641,7 +31493,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -32670,7 +31521,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -32699,7 +31549,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -32728,7 +31577,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -32757,7 +31605,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -32786,7 +31633,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Prismatic"
     },
@@ -32815,7 +31661,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -32844,7 +31689,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -32873,7 +31717,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -32902,7 +31745,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands",
         "socketType": "Prismatic"
     },
@@ -32931,7 +31773,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands",
         "socketType": "Prismatic"
     },
@@ -32960,7 +31801,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands",
         "socketType": "Prismatic"
     },
@@ -32989,7 +31829,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -33018,7 +31857,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -33047,7 +31885,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs",
         "socketType": "Prismatic"
     },
@@ -33076,7 +31913,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -33104,7 +31940,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -33132,7 +31967,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -33160,7 +31994,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -33188,7 +32021,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -33216,7 +32048,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -33244,7 +32075,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -33272,7 +32102,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -33300,7 +32129,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -33328,7 +32156,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -33356,7 +32183,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -33384,7 +32210,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -33412,7 +32237,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -33440,7 +32264,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -33474,7 +32297,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -33508,7 +32330,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -33543,7 +32364,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -33572,7 +32392,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -33600,7 +32419,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -33634,7 +32452,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -33663,7 +32480,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -33692,7 +32508,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -33721,7 +32536,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -33750,7 +32564,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -33779,7 +32592,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -33808,7 +32620,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -33837,7 +32648,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -33866,7 +32676,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -33895,7 +32704,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -33924,7 +32732,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -33953,7 +32760,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -33982,7 +32788,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -34011,7 +32816,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -34040,7 +32844,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -34069,7 +32872,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -34098,7 +32900,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -34127,7 +32928,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -34156,7 +32956,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -34185,7 +32984,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -34214,7 +33012,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -34243,7 +33040,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -34272,7 +33068,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -34301,7 +33096,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -34330,7 +33124,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -34359,7 +33152,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -34388,7 +33180,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -34417,7 +33208,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -34445,7 +33235,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -34473,7 +33262,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -34501,7 +33289,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -34529,7 +33316,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -34557,7 +33343,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -34585,7 +33370,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -34613,7 +33397,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -34641,7 +33424,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -34669,7 +33451,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -34697,7 +33478,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -34730,7 +33510,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -34758,7 +33537,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -34786,7 +33564,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -34814,7 +33591,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -34842,7 +33618,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -34870,7 +33645,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -34898,7 +33672,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -34926,7 +33699,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -34954,7 +33726,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -34982,7 +33753,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2150
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -35010,7 +33780,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -35038,7 +33807,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -35066,7 +33834,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -35094,7 +33861,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -35122,7 +33888,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -35150,7 +33915,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -35178,7 +33942,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -35206,7 +33969,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -35234,7 +33996,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -35262,7 +34023,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -35290,7 +34050,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -35318,7 +34077,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -35346,7 +34104,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -35374,7 +34131,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -35402,7 +34158,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -35430,7 +34185,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -35458,7 +34212,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -35486,7 +34239,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -35514,7 +34266,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -35542,7 +34293,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -35570,7 +34320,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -35598,7 +34347,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -35627,7 +34375,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -35656,7 +34403,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -35685,7 +34431,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -35714,7 +34459,6 @@ export const itemDB = [
             "versatility": 7000
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -35743,7 +34487,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -35777,7 +34520,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -35806,7 +34548,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -35835,7 +34576,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -35864,7 +34604,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -35893,7 +34632,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -35922,7 +34660,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -35951,7 +34688,6 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -35980,7 +34716,6 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -36009,7 +34744,6 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -36038,7 +34772,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -36067,7 +34800,6 @@ export const itemDB = [
             "versatility": 7750
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -36096,7 +34828,6 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -36125,7 +34856,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -36154,7 +34884,6 @@ export const itemDB = [
             "versatility": 8000
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -36183,7 +34912,6 @@ export const itemDB = [
             "versatility": 7000
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -36212,7 +34940,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -36241,7 +34968,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -36270,7 +34996,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -36299,7 +35024,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -36333,7 +35057,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -36362,7 +35085,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -36391,7 +35113,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -36420,7 +35141,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -36449,7 +35169,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -36478,7 +35197,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -36507,7 +35225,6 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -36536,7 +35253,6 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -36565,7 +35281,6 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -36594,7 +35309,6 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -36623,7 +35337,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -36652,7 +35365,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -36680,7 +35392,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -36708,7 +35419,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -36736,7 +35446,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -36764,7 +35473,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -36792,7 +35500,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -36820,7 +35527,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -36849,7 +35555,6 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -36878,7 +35583,6 @@ export const itemDB = [
             "versatility": 4550
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -36907,7 +35611,6 @@ export const itemDB = [
             "versatility": 3800
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -36936,7 +35639,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -36965,7 +35667,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -36994,7 +35695,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -37023,7 +35723,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -37052,7 +35751,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -37081,7 +35779,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -37110,7 +35807,6 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -37139,7 +35835,6 @@ export const itemDB = [
             "versatility": 3800
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -37168,7 +35863,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -37197,7 +35891,6 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -37226,7 +35919,6 @@ export const itemDB = [
             "versatility": 3800
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -37255,7 +35947,6 @@ export const itemDB = [
             "versatility": 4550
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -37284,7 +35975,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -37313,7 +36003,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -37342,7 +36031,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -37371,7 +36059,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -37400,7 +36087,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -37429,7 +36115,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -37458,7 +36143,6 @@ export const itemDB = [
             "versatility": 3500
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -37487,7 +36171,6 @@ export const itemDB = [
             "versatility": 3800
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -37516,7 +36199,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -37544,7 +36226,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -37572,7 +36253,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -37600,7 +36280,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -37628,7 +36307,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -37656,7 +36334,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7750
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -37684,7 +36361,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -37712,7 +36388,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -37740,7 +36415,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -37768,7 +36442,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -37796,7 +36469,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -37824,7 +36496,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -37852,7 +36523,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4700
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -37880,7 +36550,6 @@ export const itemDB = [
             "mastery": 8750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -37908,7 +36577,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -37936,7 +36604,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -37964,7 +36631,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -37992,7 +36658,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -38020,7 +36685,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -38048,7 +36712,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -38081,7 +36744,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -38114,7 +36776,6 @@ export const itemDB = [
             "mastery": 6666,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -38147,7 +36808,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -38180,7 +36840,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -38213,7 +36872,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -38241,7 +36899,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -38269,7 +36926,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -38297,7 +36953,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -38325,7 +36980,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -38353,7 +37007,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -38381,7 +37034,6 @@ export const itemDB = [
             "mastery": 4700,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -38409,7 +37061,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -38437,7 +37088,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -38465,7 +37115,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -38493,7 +37142,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -38521,7 +37169,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -38549,7 +37196,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -38577,7 +37223,6 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -38605,7 +37250,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -38633,7 +37277,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -38661,7 +37304,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -38689,7 +37331,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -38717,7 +37358,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -38745,7 +37385,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -38773,7 +37412,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -38801,7 +37439,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -38829,7 +37466,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -38857,7 +37493,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -38885,7 +37520,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -38913,7 +37547,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -38941,7 +37574,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -38969,7 +37601,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -38997,7 +37628,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -39025,7 +37655,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -39053,7 +37682,6 @@ export const itemDB = [
             "mastery": 8000,
             "versatility": 9500
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -39081,7 +37709,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -39109,7 +37736,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -39137,7 +37763,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -39165,7 +37790,6 @@ export const itemDB = [
             "mastery": 4700,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -39193,7 +37817,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -39221,7 +37844,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -39249,7 +37871,6 @@ export const itemDB = [
             "mastery": 9500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -39277,7 +37898,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -39305,7 +37925,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -39333,7 +37952,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -39361,7 +37979,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -39389,7 +38006,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -39417,7 +38033,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -39445,7 +38060,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -39473,7 +38087,6 @@ export const itemDB = [
             "mastery": 7500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -39501,7 +38114,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -39529,7 +38141,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -39557,7 +38168,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -39585,7 +38195,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -39613,7 +38222,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -39641,7 +38249,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -39669,7 +38276,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -39697,7 +38303,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -39725,7 +38330,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -39753,7 +38357,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -39781,7 +38384,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -39809,7 +38411,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -39837,7 +38438,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -39865,7 +38465,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -39893,7 +38492,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -39921,7 +38519,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -39949,7 +38546,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -39977,7 +38573,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -40005,7 +38600,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -40033,7 +38627,6 @@ export const itemDB = [
             "mastery": 8250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -40061,7 +38654,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -40089,7 +38681,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -40117,7 +38708,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -40145,7 +38735,6 @@ export const itemDB = [
             "mastery": 8750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -40173,7 +38762,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -40201,7 +38789,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -40229,7 +38816,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -40257,7 +38843,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -40285,7 +38870,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -40313,7 +38897,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -40341,7 +38924,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -40369,7 +38951,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -40397,7 +38978,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -40425,7 +39005,6 @@ export const itemDB = [
             "mastery": 4700,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -40453,7 +39032,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -40481,7 +39059,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -40509,7 +39086,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -40537,7 +39113,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -40565,7 +39140,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -40593,7 +39167,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -40621,7 +39194,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -40649,7 +39221,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -40677,7 +39248,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -40705,7 +39275,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -40733,7 +39302,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -40761,7 +39329,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -40789,7 +39356,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -40817,7 +39383,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -40845,7 +39410,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -40873,7 +39437,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -40901,7 +39464,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -40929,7 +39491,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -40957,7 +39518,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -40985,7 +39545,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -41013,7 +39572,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -41041,7 +39599,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -41069,7 +39626,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -41097,7 +39653,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -41125,7 +39680,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -41153,7 +39707,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -41181,7 +39734,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -41209,7 +39761,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -41237,7 +39788,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4700
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -41265,7 +39815,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -41293,7 +39842,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -41321,7 +39869,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -41349,7 +39896,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -41377,7 +39923,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -41405,7 +39950,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -41433,7 +39977,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -41461,7 +40004,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -41489,7 +40031,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -41517,7 +40058,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -41545,7 +40085,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -41573,7 +40112,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -41601,7 +40139,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -41629,7 +40166,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -41657,7 +40193,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -41685,7 +40220,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -41713,7 +40247,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -41741,7 +40274,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -41769,7 +40301,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -41797,7 +40328,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -41825,7 +40355,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -41853,7 +40382,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -41881,7 +40409,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -41909,7 +40436,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -41937,7 +40463,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -41965,7 +40490,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -41993,7 +40517,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -42021,7 +40544,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -42049,7 +40571,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -42077,7 +40598,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -42105,7 +40625,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -42133,7 +40652,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -42161,7 +40679,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -42189,7 +40706,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -42217,7 +40733,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -42245,7 +40760,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -42273,7 +40787,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -42301,7 +40814,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -42329,7 +40841,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -42357,7 +40868,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -42385,7 +40895,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -42413,7 +40922,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -42441,7 +40949,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -42469,7 +40976,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -42497,7 +41003,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -42525,7 +41030,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -42553,7 +41057,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -42581,7 +41084,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -42609,7 +41111,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -42637,7 +41138,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -42665,7 +41165,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -42693,7 +41192,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -42721,7 +41219,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -42749,7 +41246,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -42777,7 +41273,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -42805,7 +41300,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -42833,7 +41327,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -42861,7 +41354,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -42889,7 +41381,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -42917,7 +41408,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -42945,7 +41435,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -42973,7 +41462,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43001,7 +41489,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -43029,7 +41516,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -43057,7 +41543,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -43085,7 +41570,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -43113,7 +41597,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -43141,7 +41624,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -43169,7 +41651,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -43197,7 +41678,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -43225,7 +41705,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -43258,7 +41737,6 @@ export const itemDB = [
             "mastery": 9250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -43286,7 +41764,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -43314,7 +41791,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43342,7 +41818,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43370,7 +41845,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43398,7 +41872,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43426,7 +41899,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43454,7 +41926,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43482,7 +41953,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43510,7 +41980,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43538,7 +42007,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43566,7 +42034,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43594,7 +42061,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43622,7 +42088,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43650,7 +42115,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43678,7 +42142,6 @@ export const itemDB = [
             "mastery": 4200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43706,7 +42169,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43734,7 +42196,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43762,7 +42223,6 @@ export const itemDB = [
             "mastery": 4200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43790,7 +42250,6 @@ export const itemDB = [
             "mastery": 4200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43818,7 +42277,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -43846,7 +42304,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -43874,7 +42331,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -43902,7 +42358,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -43930,7 +42385,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -43958,7 +42412,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -43986,7 +42439,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44014,7 +42466,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44042,7 +42493,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44070,7 +42520,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44098,7 +42547,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44126,7 +42574,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44154,7 +42601,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44182,7 +42628,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44210,7 +42655,6 @@ export const itemDB = [
             "mastery": 4200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44238,7 +42682,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44266,7 +42709,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44294,7 +42736,6 @@ export const itemDB = [
             "mastery": 4200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44322,7 +42763,6 @@ export const itemDB = [
             "mastery": 4200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44350,7 +42790,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44378,7 +42817,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44406,7 +42844,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44434,7 +42871,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44462,7 +42898,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44490,7 +42925,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44518,7 +42952,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44546,7 +42979,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44574,7 +43006,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44602,7 +43033,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44630,7 +43060,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44658,7 +43087,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44686,7 +43114,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44714,7 +43141,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44742,7 +43168,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44770,7 +43195,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44798,7 +43222,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44826,7 +43249,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -44854,7 +43276,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44882,7 +43303,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44910,7 +43330,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44938,7 +43357,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44966,7 +43384,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -44994,7 +43411,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45022,7 +43438,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45050,7 +43465,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45078,7 +43492,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45106,7 +43519,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45134,7 +43546,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45162,7 +43573,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45190,7 +43600,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45218,7 +43627,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45246,7 +43654,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45274,7 +43681,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45302,7 +43708,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45330,7 +43735,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45358,7 +43762,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45386,7 +43789,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45414,7 +43816,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45442,7 +43843,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45470,7 +43870,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45498,7 +43897,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45526,7 +43924,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45554,7 +43951,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45582,7 +43978,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45610,7 +44005,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45638,7 +44032,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45666,7 +44059,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45694,7 +44086,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45722,7 +44113,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45750,7 +44140,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45778,7 +44167,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -45807,7 +44195,6 @@ export const itemDB = [
             "versatility": 3200
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -45836,7 +44223,6 @@ export const itemDB = [
             "versatility": 3200
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -45865,7 +44251,6 @@ export const itemDB = [
             "versatility": 3200
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -45894,7 +44279,6 @@ export const itemDB = [
             "versatility": 3200
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -45923,7 +44307,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -45952,7 +44335,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -45981,7 +44363,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -46010,7 +44391,6 @@ export const itemDB = [
             "versatility": 2000
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -46039,7 +44419,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -46068,7 +44447,6 @@ export const itemDB = [
             "versatility": 3200
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -46097,7 +44475,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -46126,7 +44503,6 @@ export const itemDB = [
             "versatility": 2000
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -46155,7 +44531,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -46184,7 +44559,6 @@ export const itemDB = [
             "versatility": 3200
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -46213,7 +44587,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -46242,7 +44615,6 @@ export const itemDB = [
             "versatility": 15000
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -46271,7 +44643,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -46300,7 +44671,6 @@ export const itemDB = [
             "versatility": 15000
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -46329,7 +44699,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -46358,7 +44727,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -46386,7 +44754,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -46414,7 +44781,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -46442,7 +44808,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -46470,7 +44835,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -46498,7 +44862,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -46526,7 +44889,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -46554,7 +44916,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -46582,7 +44943,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -46610,7 +44970,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -46638,7 +44997,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2600
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -46666,7 +45024,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -46694,7 +45051,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -46722,7 +45078,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -46750,7 +45105,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -46778,7 +45132,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -46806,7 +45159,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 11500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -46834,7 +45186,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4823
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -46862,7 +45213,6 @@ export const itemDB = [
             "mastery": 2303,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -46890,7 +45240,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -46918,7 +45267,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4284
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -46946,7 +45294,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2905
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -46974,7 +45321,6 @@ export const itemDB = [
             "mastery": 4592,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -47002,7 +45348,6 @@ export const itemDB = [
             "mastery": 4354,
             "versatility": 2646
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -47031,7 +45376,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -47060,7 +45404,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -47089,7 +45432,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -47118,7 +45460,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -47147,7 +45488,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -47176,7 +45516,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -47205,7 +45544,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -47234,7 +45572,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -47263,7 +45600,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -47292,7 +45628,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -47321,7 +45656,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -47350,7 +45684,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -47379,7 +45712,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -47408,7 +45740,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -47437,7 +45768,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -47466,7 +45796,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -47495,7 +45824,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -47524,7 +45852,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -47553,7 +45880,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -47582,7 +45908,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -47611,7 +45936,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -47640,7 +45964,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -47669,7 +45992,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -47698,7 +46020,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -47727,7 +46048,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -47756,7 +46076,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -47785,7 +46104,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -47814,7 +46132,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -47843,7 +46160,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -47872,7 +46188,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -47901,7 +46216,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -47930,7 +46244,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -47959,7 +46272,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -47988,7 +46300,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -48017,7 +46328,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -48046,7 +46356,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -48075,7 +46384,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -48104,7 +46412,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -48133,7 +46440,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -48162,7 +46468,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -48191,7 +46496,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -48220,7 +46524,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -48249,7 +46552,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -48278,7 +46580,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -48307,7 +46608,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -48336,7 +46636,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -48365,7 +46664,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -48394,7 +46692,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -48423,7 +46720,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -48452,7 +46748,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -48481,7 +46776,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -48510,7 +46804,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -48539,7 +46832,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -48568,7 +46860,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -48597,7 +46888,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -48626,7 +46916,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -48660,7 +46949,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -48694,7 +46982,6 @@ export const itemDB = [
             "versatility": 12500,
             "unallocated": 5000
         },
-        "dropLoc": "",
         "slot": "Finger",
         "socketType": "Prismatic"
     },
@@ -48724,7 +47011,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 5000
         },
-        "dropLoc": "",
         "slot": "Finger",
         "socketType": "Prismatic"
     },
@@ -48754,7 +47040,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 5000
         },
-        "dropLoc": "",
         "slot": "Finger",
         "socketType": "Prismatic"
     },
@@ -48784,7 +47069,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 5000
         },
-        "dropLoc": "",
         "slot": "Finger",
         "socketType": "Prismatic"
     },
@@ -48813,7 +47097,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10000
         },
-        "dropLoc": "",
         "slot": "Finger",
         "socketType": "Prismatic"
     },
@@ -48842,7 +47125,6 @@ export const itemDB = [
             "mastery": 10000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger",
         "socketType": "Prismatic"
     },
@@ -48871,7 +47153,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger",
         "socketType": "Prismatic"
     },
@@ -48900,7 +47181,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger",
         "socketType": "Prismatic"
     },
@@ -48929,7 +47209,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10000
         },
-        "dropLoc": "",
         "slot": "Neck",
         "socketType": "Prismatic"
     },
@@ -48958,7 +47237,6 @@ export const itemDB = [
             "mastery": 10000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck",
         "socketType": "Prismatic"
     },
@@ -48987,7 +47265,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck",
         "socketType": "Prismatic"
     },
@@ -49016,7 +47293,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck",
         "socketType": "Prismatic"
     },
@@ -49046,7 +47322,6 @@ export const itemDB = [
             "versatility": 12500,
             "unallocated": 5000
         },
-        "dropLoc": "",
         "slot": "Neck",
         "socketType": "Prismatic"
     },
@@ -49076,7 +47351,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 5000
         },
-        "dropLoc": "",
         "slot": "Neck",
         "socketType": "Prismatic"
     },
@@ -49106,7 +47380,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 5000
         },
-        "dropLoc": "",
         "slot": "Neck",
         "socketType": "Prismatic"
     },
@@ -49136,7 +47409,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 5000
         },
-        "dropLoc": "",
         "slot": "Neck",
         "socketType": "Prismatic"
     },
@@ -49166,7 +47438,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -49195,7 +47466,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -49224,7 +47494,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -49253,7 +47522,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -49282,7 +47550,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -49311,7 +47578,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -49340,7 +47606,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -49369,7 +47634,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -49398,7 +47662,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -49427,7 +47690,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -49456,7 +47718,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -49485,7 +47746,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -49514,7 +47774,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -49543,7 +47802,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -49572,7 +47830,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -49601,7 +47858,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -49630,7 +47886,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -49659,7 +47914,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -49688,7 +47942,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -49717,7 +47970,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -49746,7 +47998,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -49775,7 +48026,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -49804,7 +48054,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -49833,7 +48082,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -49862,7 +48110,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -49891,7 +48138,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -49920,7 +48166,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 3500
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -49948,7 +48193,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4200
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -49976,7 +48220,6 @@ export const itemDB = [
             "mastery": 3000,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -50004,7 +48247,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -50032,7 +48274,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -50060,7 +48301,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -50088,7 +48328,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -50116,7 +48355,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -50144,7 +48382,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -50172,7 +48409,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -50200,7 +48436,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -50228,7 +48463,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -50256,7 +48490,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -50284,7 +48517,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -50312,7 +48544,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -50340,7 +48571,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -50368,7 +48598,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -50396,7 +48625,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -50424,7 +48652,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -50452,7 +48679,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -50480,7 +48706,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -50508,7 +48733,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -50536,7 +48760,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -50564,7 +48787,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -50592,7 +48814,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -50620,7 +48841,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -50648,7 +48868,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -50676,7 +48895,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -50704,7 +48922,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -50732,7 +48949,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -50760,7 +48976,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -50788,7 +49003,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -50816,7 +49030,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -50844,7 +49057,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -50872,7 +49084,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -50900,7 +49111,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -50928,7 +49138,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -50956,7 +49165,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -50984,7 +49192,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -51017,7 +49224,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -51046,7 +49252,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -51079,7 +49284,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -51107,7 +49311,6 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -51135,7 +49338,6 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -51163,7 +49365,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -51191,7 +49392,6 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -51219,7 +49419,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -51247,7 +49446,6 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -51275,7 +49473,6 @@ export const itemDB = [
             "mastery": 4750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -51303,7 +49500,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -51331,7 +49527,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -51359,7 +49554,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2250
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -51387,7 +49581,6 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -51415,7 +49608,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -51443,7 +49635,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -51476,7 +49667,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -51510,7 +49700,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -51543,7 +49732,6 @@ export const itemDB = [
             "mastery": 4795,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -51571,7 +49759,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -51599,7 +49786,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -51627,7 +49813,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -51655,7 +49840,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -51683,7 +49867,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -51711,7 +49894,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -51739,7 +49921,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -51767,7 +49948,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -51795,7 +49975,6 @@ export const itemDB = [
             "mastery": 3563,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -51823,7 +50002,6 @@ export const itemDB = [
             "mastery": 3682,
             "versatility": 3318
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -51851,7 +50029,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -51879,7 +50056,6 @@ export const itemDB = [
             "mastery": 3843,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -51907,7 +50083,6 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 4550
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -51935,7 +50110,6 @@ export const itemDB = [
             "mastery": 4746,
             "versatility": 2254
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -51963,7 +50137,6 @@ export const itemDB = [
             "mastery": 4851,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -51991,7 +50164,6 @@ export const itemDB = [
             "mastery": 3409,
             "versatility": 3591
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -52019,7 +50191,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -52047,7 +50218,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -52075,7 +50245,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -52103,7 +50272,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -52131,7 +50299,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -52159,7 +50326,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -52187,7 +50353,6 @@ export const itemDB = [
             "mastery": 4739,
             "versatility": 2261
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -52215,7 +50380,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -52243,7 +50407,6 @@ export const itemDB = [
             "mastery": 4522,
             "versatility": 2478
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -52271,7 +50434,6 @@ export const itemDB = [
             "mastery": 3808,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -52299,7 +50461,6 @@ export const itemDB = [
             "mastery": 3605,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -52327,7 +50488,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2744
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -52355,7 +50515,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4613
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -52383,7 +50542,6 @@ export const itemDB = [
             "mastery": 2695,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -52411,7 +50569,6 @@ export const itemDB = [
             "mastery": 4802,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -52439,7 +50596,6 @@ export const itemDB = [
             "mastery": 3612,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -52467,7 +50623,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -52495,7 +50650,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -52523,7 +50677,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -52551,7 +50704,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -52579,7 +50731,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -52607,7 +50758,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -52635,7 +50785,6 @@ export const itemDB = [
             "mastery": 2485,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -52663,7 +50812,6 @@ export const itemDB = [
             "mastery": 3787,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -52691,7 +50839,6 @@ export const itemDB = [
             "mastery": 2625,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -52719,7 +50866,6 @@ export const itemDB = [
             "mastery": 4053,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -52747,7 +50893,6 @@ export const itemDB = [
             "mastery": 4893,
             "versatility": 2107
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -52775,7 +50920,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3654
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -52803,7 +50947,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3857
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -52831,7 +50974,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2534
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -52859,7 +51001,6 @@ export const itemDB = [
             "mastery": 3528,
             "versatility": 3472
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -52887,7 +51028,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2779
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -52915,7 +51055,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -52943,7 +51082,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -52971,7 +51109,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -52999,7 +51136,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -53027,7 +51163,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -53055,7 +51190,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -53083,7 +51217,6 @@ export const itemDB = [
             "mastery": 4081,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -53111,7 +51244,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4340
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -53139,7 +51271,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2653
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -53167,7 +51298,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -53195,7 +51325,6 @@ export const itemDB = [
             "mastery": 2688,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -53223,7 +51352,6 @@ export const itemDB = [
             "mastery": 2856,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -53251,7 +51379,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3094
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -53279,7 +51406,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3451
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -53307,7 +51433,6 @@ export const itemDB = [
             "mastery": 3325,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -53335,7 +51460,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -53363,7 +51487,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -53396,7 +51519,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -53424,7 +51546,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -53452,7 +51573,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -53480,7 +51600,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -53508,7 +51627,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -53536,7 +51654,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -53564,7 +51681,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -53592,7 +51708,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -53620,7 +51735,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -53649,7 +51763,6 @@ export const itemDB = [
             "mastery": 2800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -53678,7 +51791,6 @@ export const itemDB = [
             "mastery": 4350,
             "versatility": 2650
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -53707,7 +51819,6 @@ export const itemDB = [
             "mastery": 2500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -53736,7 +51847,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4800
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -53765,7 +51875,6 @@ export const itemDB = [
             "mastery": 2350,
             "versatility": 4650
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -53794,7 +51903,6 @@ export const itemDB = [
             "mastery": 4500,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -53823,7 +51931,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -53852,7 +51959,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4350
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -53881,7 +51987,6 @@ export const itemDB = [
             "mastery": 3250,
             "versatility": 3750
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -53910,7 +52015,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "kyrian",
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -53945,7 +52049,6 @@ export const itemDB = [
             }
         ],
         "covenant": "kyrian",
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -53974,7 +52077,6 @@ export const itemDB = [
             "versatility": 4850
         },
         "covenant": "kyrian",
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -54002,7 +52104,6 @@ export const itemDB = [
             "mastery": 7500,
             "versatility": 10000
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -54031,7 +52132,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -54065,7 +52165,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -54098,7 +52197,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -54126,7 +52224,6 @@ export const itemDB = [
             "mastery": 11000,
             "versatility": 6500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -54154,7 +52251,6 @@ export const itemDB = [
             "mastery": 9500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -54182,7 +52278,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -54210,7 +52305,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -54238,7 +52332,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -54266,7 +52359,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -54294,7 +52386,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -54322,7 +52413,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2592
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -54350,7 +52440,6 @@ export const itemDB = [
             "mastery": 3008,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -54378,7 +52467,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2889
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -54406,7 +52494,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -54434,7 +52521,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger",
         "socketType": "Prismatic"
     },
@@ -54463,7 +52549,6 @@ export const itemDB = [
             "mastery": 3694,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -54491,7 +52576,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2796
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -54520,7 +52604,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "kyrian",
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -54548,7 +52631,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -54576,7 +52658,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -54604,7 +52685,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -54632,7 +52712,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -54660,7 +52739,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -54688,7 +52766,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -54716,7 +52793,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -54744,7 +52820,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -54772,7 +52847,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -54800,7 +52874,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -54828,7 +52901,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -54856,7 +52928,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -54884,7 +52955,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -54912,7 +52982,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -54940,7 +53009,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -54968,7 +53036,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -54996,7 +53063,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -55024,7 +53090,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -55052,7 +53117,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -55080,7 +53144,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -55108,7 +53171,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -55136,7 +53198,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -55164,7 +53225,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -55192,7 +53252,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -55220,7 +53279,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -55248,7 +53306,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -55276,7 +53333,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -55304,7 +53360,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -55332,7 +53387,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -55360,7 +53414,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -55388,7 +53441,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -55416,7 +53468,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -55444,7 +53495,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -55472,7 +53522,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -55500,7 +53549,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -55528,7 +53576,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -55556,7 +53603,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -55584,7 +53630,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -55612,7 +53657,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -55640,7 +53684,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -55668,7 +53711,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -55696,7 +53738,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -55724,7 +53765,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -55752,7 +53792,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -55780,7 +53819,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -55808,7 +53846,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -55836,7 +53873,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -55864,7 +53900,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -55892,7 +53927,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -55920,7 +53954,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -55948,7 +53981,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -55976,7 +54008,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -56004,7 +54035,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -56032,7 +54062,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -56060,7 +54089,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -56088,7 +54116,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -56116,7 +54143,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -56144,7 +54170,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -56172,7 +54197,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -56200,7 +54224,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -56228,7 +54251,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -56256,7 +54278,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -56284,7 +54305,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -56312,7 +54332,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -56340,7 +54359,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -56368,7 +54386,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -56396,7 +54413,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -56424,7 +54440,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -56452,7 +54467,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -56480,7 +54494,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -56508,7 +54521,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -56536,7 +54548,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -56564,7 +54575,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -56592,7 +54602,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -56620,7 +54629,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -56648,7 +54656,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -56676,7 +54683,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -56704,7 +54710,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -56732,7 +54737,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -56760,7 +54764,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -56788,7 +54791,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -56816,7 +54818,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -56844,7 +54845,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -56872,7 +54872,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -56900,7 +54899,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -56928,7 +54926,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -56956,7 +54953,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -56984,7 +54980,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -57012,7 +55007,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -57040,7 +55034,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -57068,7 +55061,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -57096,7 +55088,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -57124,7 +55115,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -57152,7 +55142,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -57180,7 +55169,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -57208,7 +55196,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -57236,7 +55223,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -57264,7 +55250,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -57292,7 +55277,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -57320,7 +55304,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -57348,7 +55331,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -57376,7 +55358,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -57404,7 +55385,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -57432,7 +55412,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -57460,7 +55439,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -57488,7 +55466,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -57516,7 +55493,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -57544,7 +55520,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -57572,7 +55547,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -57600,7 +55574,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -57628,7 +55601,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -57656,7 +55628,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -57684,7 +55655,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -57712,7 +55682,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -57740,7 +55709,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -57768,7 +55736,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -57796,7 +55763,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -57824,7 +55790,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -57852,7 +55817,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -57880,7 +55844,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -57908,7 +55871,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -57936,7 +55898,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -57964,7 +55925,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -57992,7 +55952,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -58020,7 +55979,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -58048,7 +56006,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -58076,7 +56033,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -58104,7 +56060,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -58132,7 +56087,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -58160,7 +56114,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -58188,7 +56141,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -58216,7 +56168,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -58244,7 +56195,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -58272,7 +56222,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -58300,7 +56249,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -58328,7 +56276,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -58356,7 +56303,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -58384,7 +56330,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -58412,7 +56357,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -58440,7 +56384,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -58469,7 +56412,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -58498,7 +56440,6 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -58527,7 +56468,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -58556,7 +56496,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -58585,7 +56524,6 @@ export const itemDB = [
             "mastery": 4700,
             "versatility": 2300
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -58614,7 +56552,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4850
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -58643,7 +56580,6 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 4700
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -58672,7 +56608,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -58700,7 +56635,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -58728,7 +56662,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -58756,7 +56689,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -58784,7 +56716,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -58812,7 +56743,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -58840,7 +56770,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -58868,7 +56797,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -58896,7 +56824,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -58924,7 +56851,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -58952,7 +56878,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -58980,7 +56905,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -59008,7 +56932,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -59036,7 +56959,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -59064,7 +56986,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -59092,7 +57013,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -59120,7 +57040,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -59148,7 +57067,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -59176,7 +57094,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -59204,7 +57121,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -59232,7 +57148,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -59260,7 +57175,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -59288,7 +57202,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -59316,7 +57229,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -59344,7 +57256,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -59372,7 +57283,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -59400,7 +57310,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -59428,7 +57337,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -59456,7 +57364,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -59484,7 +57391,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -59512,7 +57418,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -59540,7 +57445,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -59568,7 +57472,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -59596,7 +57499,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -59624,7 +57526,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -59652,7 +57553,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -59680,7 +57580,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -59708,7 +57607,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -59736,7 +57634,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -59764,7 +57661,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -59792,7 +57688,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -59820,7 +57715,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -59848,7 +57742,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -59876,7 +57769,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -59904,7 +57796,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -59932,7 +57823,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -59960,7 +57850,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -59988,7 +57877,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -60016,7 +57904,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -60044,7 +57931,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 9000
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -60072,7 +57958,6 @@ export const itemDB = [
             "mastery": 8250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -60100,7 +57985,6 @@ export const itemDB = [
             "mastery": 9750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -60128,7 +58012,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 8500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -60156,7 +58039,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -60184,7 +58066,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -60212,7 +58093,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -60240,7 +58120,6 @@ export const itemDB = [
             "mastery": 8750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -60268,7 +58147,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -60296,7 +58174,6 @@ export const itemDB = [
             "mastery": 8500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -60324,7 +58201,6 @@ export const itemDB = [
             "mastery": 9750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -60352,7 +58228,6 @@ export const itemDB = [
             "mastery": 7500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -60380,7 +58255,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10000
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -60408,7 +58282,6 @@ export const itemDB = [
             "mastery": 6666,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -60441,7 +58314,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -60474,7 +58346,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -60507,7 +58378,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -60540,7 +58410,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -60573,7 +58442,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -60606,7 +58474,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -60639,7 +58506,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -60672,7 +58538,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -60705,7 +58570,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -60739,7 +58603,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -60773,7 +58636,6 @@ export const itemDB = [
             "versatility": 6666
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -60806,7 +58668,6 @@ export const itemDB = [
             "mastery": 8000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -60834,7 +58695,6 @@ export const itemDB = [
             "mastery": 7750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -60862,7 +58722,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -60890,7 +58749,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -60918,7 +58776,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 8750
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -60946,7 +58803,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -60974,7 +58830,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -61002,7 +58857,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -61030,7 +58884,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -61058,7 +58911,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -61092,7 +58944,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -61126,7 +58977,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -61160,7 +59010,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -61194,7 +59043,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -61228,7 +59076,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -61262,7 +59109,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -61296,7 +59142,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -61330,7 +59175,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -61364,7 +59208,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -61398,7 +59241,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -61432,7 +59274,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -61466,7 +59307,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -61500,7 +59340,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -61534,7 +59373,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -61568,7 +59406,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -61602,7 +59439,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -61636,7 +59472,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -61670,7 +59505,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -61704,7 +59538,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -61738,7 +59571,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -61772,7 +59604,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -61806,7 +59637,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -61840,7 +59670,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -61874,7 +59703,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -61908,7 +59736,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -61942,7 +59769,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -61976,7 +59802,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -62010,7 +59835,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -62044,7 +59868,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -62078,7 +59901,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -62112,7 +59934,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -62146,7 +59967,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -62180,7 +60000,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -62214,7 +60033,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -62250,7 +60068,6 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -62289,7 +60106,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -62323,7 +60139,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -62357,7 +60172,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -62391,7 +60205,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -62425,7 +60238,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -62459,7 +60271,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -62493,7 +60304,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -62527,7 +60337,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -62561,7 +60370,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -62595,7 +60403,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -62629,7 +60436,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -62663,7 +60469,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -62697,7 +60502,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -62731,7 +60535,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -62765,7 +60568,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -62799,7 +60601,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -62833,7 +60634,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -62867,7 +60667,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -62901,7 +60700,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -62935,7 +60733,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -62969,7 +60766,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -63003,7 +60799,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -63037,7 +60832,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -63071,7 +60865,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -63105,7 +60898,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -63139,7 +60931,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -63173,7 +60964,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -63207,7 +60997,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -63241,7 +61030,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -63275,7 +61063,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -63309,7 +61096,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -63343,7 +61129,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -63377,7 +61162,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -63411,7 +61195,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -63445,7 +61228,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -63481,7 +61263,6 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -63520,7 +61301,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -63548,7 +61328,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -63581,7 +61360,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -63614,7 +61392,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -63649,7 +61426,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -63677,7 +61453,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -63705,7 +61480,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -63733,7 +61507,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -63761,7 +61534,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -63789,7 +61561,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -63817,7 +61588,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -63845,7 +61615,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -63873,7 +61642,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -63901,7 +61669,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -63929,7 +61696,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -63957,7 +61723,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -63985,7 +61750,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -64013,7 +61777,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -64041,7 +61804,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -64069,7 +61831,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -64097,7 +61858,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -64125,7 +61885,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -64153,7 +61912,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -64181,7 +61939,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -64209,7 +61966,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -64237,7 +61993,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -64265,7 +62020,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -64293,7 +62047,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -64321,7 +62074,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -64349,7 +62101,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -64377,7 +62128,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -64405,7 +62155,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -64433,7 +62182,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -64461,7 +62209,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -64489,7 +62236,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -64517,7 +62263,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -64545,7 +62290,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -64573,7 +62317,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -64601,7 +62344,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -64629,7 +62371,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -64657,7 +62398,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -64685,7 +62425,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -64713,7 +62452,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -64741,7 +62479,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -64769,7 +62506,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -64797,7 +62533,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -64825,7 +62560,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -64853,7 +62587,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -64881,7 +62614,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -64909,7 +62641,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -64937,7 +62668,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -64965,7 +62695,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -64993,7 +62722,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -65021,7 +62749,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -65049,7 +62776,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -65077,7 +62803,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -65105,7 +62830,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -65133,7 +62857,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -65161,7 +62884,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -65189,7 +62911,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -65217,7 +62938,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -65245,7 +62965,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -65273,7 +62992,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -65301,7 +63019,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -65329,7 +63046,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -65357,7 +63073,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -65385,7 +63100,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -65413,7 +63127,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -65441,7 +63154,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -65469,7 +63181,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -65497,7 +63208,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -65525,7 +63235,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -65553,7 +63262,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -65581,7 +63289,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -65609,7 +63316,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -65637,7 +63343,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -65665,7 +63370,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -65693,7 +63397,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -65721,7 +63424,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -65749,7 +63451,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -65777,7 +63478,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -65806,7 +63506,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -65835,7 +63534,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -65864,7 +63562,6 @@ export const itemDB = [
             "mastery": 3250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -65893,7 +63590,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -65922,7 +63618,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -65951,7 +63646,6 @@ export const itemDB = [
             "mastery": 4500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -65980,7 +63674,6 @@ export const itemDB = [
             "mastery": 4650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -66009,7 +63702,6 @@ export const itemDB = [
             "mastery": 2650,
             "versatility": 4350
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -66038,7 +63730,6 @@ export const itemDB = [
             "mastery": 2950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -66066,7 +63757,6 @@ export const itemDB = [
             "mastery": 11000,
             "versatility": 6500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -66094,7 +63784,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -66122,7 +63811,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -66155,7 +63843,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -66188,7 +63875,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -66221,7 +63907,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -66254,7 +63939,6 @@ export const itemDB = [
             "mastery": 11000,
             "versatility": 6500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -66282,7 +63966,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -66310,7 +63993,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -66338,7 +64020,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -66366,7 +64047,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -66394,7 +64074,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -66422,7 +64101,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -66450,7 +64128,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -66478,7 +64155,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -66506,7 +64182,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -66534,7 +64209,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -66563,7 +64237,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -66596,7 +64269,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -66624,7 +64296,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -66652,7 +64323,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -66680,7 +64350,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -66708,7 +64377,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -66736,7 +64404,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -66764,7 +64431,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -66792,7 +64458,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -66820,7 +64485,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -66848,7 +64512,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -66876,7 +64539,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -66904,7 +64566,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -66932,7 +64593,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -66960,7 +64620,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -66988,7 +64647,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -67016,7 +64674,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -67044,7 +64701,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -67072,7 +64728,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -67100,7 +64755,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -67128,7 +64782,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -67156,7 +64809,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -67184,7 +64836,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -67212,7 +64863,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -67240,7 +64890,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -67268,7 +64917,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -67296,7 +64944,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -67324,7 +64971,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -67352,7 +64998,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -67380,7 +65025,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -67408,7 +65052,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -67436,7 +65079,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -67464,7 +65106,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -67492,7 +65133,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -67520,7 +65160,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -67548,7 +65187,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -67576,7 +65214,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -67604,7 +65241,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -67632,7 +65268,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -67665,7 +65300,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -67694,7 +65328,6 @@ export const itemDB = [
             "versatility": 2450
         },
         "covenant": "kyrian",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -67729,7 +65362,6 @@ export const itemDB = [
             }
         ],
         "covenant": "kyrian",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -67758,7 +65390,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "kyrian",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -67793,7 +65424,6 @@ export const itemDB = [
             }
         ],
         "covenant": "kyrian",
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -67822,7 +65452,6 @@ export const itemDB = [
             "versatility": 2150
         },
         "covenant": "kyrian",
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -67850,7 +65479,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -67878,7 +65506,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -67906,7 +65533,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -67934,7 +65560,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -67962,7 +65587,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -67990,7 +65614,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -68018,7 +65641,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -68046,7 +65668,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -68074,7 +65695,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -68102,7 +65722,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -68130,7 +65749,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -68158,7 +65776,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -68186,7 +65803,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -68214,7 +65830,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -68242,7 +65857,6 @@ export const itemDB = [
             "mastery": 9250,
             "versatility": 8250
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -68271,7 +65885,6 @@ export const itemDB = [
             "mastery": 4650,
             "versatility": 2350
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -68300,7 +65913,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2650
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -68329,7 +65941,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -68358,7 +65969,6 @@ export const itemDB = [
             "mastery": 2350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -68387,7 +65997,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -68416,7 +66025,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -68445,7 +66053,6 @@ export const itemDB = [
             "mastery": 4800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -68474,7 +66081,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -68503,7 +66109,6 @@ export const itemDB = [
             "mastery": 3100,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -68537,7 +66142,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -68571,7 +66175,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -68605,7 +66208,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -68639,7 +66241,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -68673,7 +66274,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -68707,7 +66307,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -68741,7 +66340,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -68775,7 +66373,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -68809,7 +66406,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -68843,7 +66439,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -68877,7 +66472,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -68911,7 +66505,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -68945,7 +66538,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -68979,7 +66571,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -69013,7 +66604,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -69047,7 +66637,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -69081,7 +66670,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -69115,7 +66703,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -69149,7 +66736,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -69183,7 +66769,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -69217,7 +66802,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -69251,7 +66835,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -69285,7 +66868,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -69319,7 +66901,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -69353,7 +66934,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -69387,7 +66967,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -69421,7 +67000,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -69455,7 +67033,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -69489,7 +67066,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -69523,7 +67099,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -69557,7 +67132,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -69591,7 +67165,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -69625,7 +67198,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -69659,7 +67231,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -69694,7 +67265,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -69733,7 +67303,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -69767,7 +67336,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -69801,7 +67369,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -69836,7 +67403,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -69875,7 +67441,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -69909,7 +67474,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -69943,7 +67507,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -69977,7 +67540,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -70011,7 +67573,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -70045,7 +67606,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -70079,7 +67639,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -70113,7 +67672,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -70147,7 +67705,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -70181,7 +67738,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -70215,7 +67771,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -70249,7 +67804,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -70283,7 +67837,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -70317,7 +67870,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -70351,7 +67903,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -70385,7 +67936,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -70419,7 +67969,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -70453,7 +68002,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -70487,7 +68035,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -70521,7 +68068,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -70555,7 +68101,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -70589,7 +68134,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -70623,7 +68167,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -70657,7 +68200,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -70691,7 +68233,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -70725,7 +68266,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -70759,7 +68299,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -70793,7 +68332,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -70827,7 +68365,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -70861,7 +68398,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -70895,7 +68431,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -70929,7 +68464,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -70963,7 +68497,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -70997,7 +68530,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -71031,7 +68563,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -71066,7 +68597,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -71105,7 +68635,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -71139,7 +68668,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -71173,7 +68701,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -71208,7 +68735,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -71247,7 +68773,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -71281,7 +68806,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -71315,7 +68839,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -71349,7 +68872,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -71383,7 +68905,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -71421,7 +68942,6 @@ export const itemDB = [
                 "encounterId": 2402
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -71459,7 +68979,6 @@ export const itemDB = [
                 "encounterId": 2400
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -71497,7 +69016,6 @@ export const itemDB = [
                 "encounterId": 2405
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -71535,7 +69053,6 @@ export const itemDB = [
                 "encounterId": 2400
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -71573,7 +69090,6 @@ export const itemDB = [
                 "encounterId": 2402
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -71611,7 +69127,6 @@ export const itemDB = [
                 "encounterId": 2400
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -71649,7 +69164,6 @@ export const itemDB = [
                 "encounterId": 2402
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -71687,7 +69201,6 @@ export const itemDB = [
                 "encounterId": 2400
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -71725,7 +69238,6 @@ export const itemDB = [
                 "encounterId": 2405
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -71763,7 +69275,6 @@ export const itemDB = [
                 "encounterId": 2400
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -71801,7 +69312,6 @@ export const itemDB = [
                 "encounterId": 2405
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -71839,7 +69349,6 @@ export const itemDB = [
                 "encounterId": 2405
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -71877,7 +69386,6 @@ export const itemDB = [
                 "encounterId": 2405
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -71915,7 +69423,6 @@ export const itemDB = [
                 "encounterId": 2400
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -71953,7 +69460,6 @@ export const itemDB = [
                 "encounterId": 2402
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -71991,7 +69497,6 @@ export const itemDB = [
                 "encounterId": 2402
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -72029,7 +69534,6 @@ export const itemDB = [
                 "encounterId": 2402
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -72067,7 +69571,6 @@ export const itemDB = [
                 "encounterId": 2400
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -72122,7 +69625,6 @@ export const itemDB = [
                 "encounterId": 2400
             }
         ],
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -72160,7 +69662,6 @@ export const itemDB = [
                 "encounterId": 2405
             }
         ],
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -72198,7 +69699,6 @@ export const itemDB = [
                 "encounterId": 2405
             }
         ],
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -72236,7 +69736,6 @@ export const itemDB = [
                 "encounterId": 2395
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -72274,7 +69773,6 @@ export const itemDB = [
                 "encounterId": 2395
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -72312,7 +69810,6 @@ export const itemDB = [
                 "encounterId": 2395
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -72350,7 +69847,6 @@ export const itemDB = [
                 "encounterId": 2395
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -72388,7 +69884,6 @@ export const itemDB = [
                 "encounterId": 2395
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -72426,7 +69921,6 @@ export const itemDB = [
                 "encounterId": 2391
             }
         ],
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -72464,7 +69958,6 @@ export const itemDB = [
                 "encounterId": 2391
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -72502,7 +69995,6 @@ export const itemDB = [
                 "encounterId": 2391
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -72540,7 +70032,6 @@ export const itemDB = [
                 "encounterId": 2391
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -72578,7 +70069,6 @@ export const itemDB = [
                 "encounterId": 2391
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -72616,7 +70106,6 @@ export const itemDB = [
                 "encounterId": 2392
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -72654,7 +70143,6 @@ export const itemDB = [
                 "encounterId": 2392
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -72692,7 +70180,6 @@ export const itemDB = [
                 "encounterId": 2392
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -72730,7 +70217,6 @@ export const itemDB = [
                 "encounterId": 2392
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -72768,7 +70254,6 @@ export const itemDB = [
                 "encounterId": 2392
             }
         ],
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -72806,7 +70291,6 @@ export const itemDB = [
                 "encounterId": 2419
             }
         ],
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -72844,7 +70328,6 @@ export const itemDB = [
                 "encounterId": 2404
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -72882,7 +70365,6 @@ export const itemDB = [
                 "encounterId": 2419
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -72920,7 +70402,6 @@ export const itemDB = [
                 "encounterId": 2404
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -72958,7 +70439,6 @@ export const itemDB = [
                 "encounterId": 2403
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -72996,7 +70476,6 @@ export const itemDB = [
                 "encounterId": 2419
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -73034,7 +70513,6 @@ export const itemDB = [
                 "encounterId": 2404
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -73072,7 +70550,6 @@ export const itemDB = [
                 "encounterId": 2419
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -73110,7 +70587,6 @@ export const itemDB = [
                 "encounterId": 2403
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -73148,7 +70624,6 @@ export const itemDB = [
                 "encounterId": 2404
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -73186,7 +70661,6 @@ export const itemDB = [
                 "encounterId": 2403
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -73224,7 +70698,6 @@ export const itemDB = [
                 "encounterId": 2404
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -73267,7 +70740,6 @@ export const itemDB = [
                 "encounterId": 2392
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -73310,7 +70782,6 @@ export const itemDB = [
                 "encounterId": 2419
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -73348,7 +70819,6 @@ export const itemDB = [
                 "encounterId": 2404
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -73386,7 +70856,6 @@ export const itemDB = [
                 "encounterId": 2403
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -73424,7 +70893,6 @@ export const itemDB = [
                 "encounterId": 2396
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -73462,7 +70930,6 @@ export const itemDB = [
                 "encounterId": 2396
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -73500,7 +70967,6 @@ export const itemDB = [
                 "encounterId": 2396
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -73538,7 +71004,6 @@ export const itemDB = [
                 "encounterId": 2396
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -73576,7 +71041,6 @@ export const itemDB = [
                 "encounterId": 2396
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -73614,7 +71078,6 @@ export const itemDB = [
                 "encounterId": 2396
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -73669,7 +71132,6 @@ export const itemDB = [
                 "encounterId": 2390
             }
         ],
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -73707,7 +71169,6 @@ export const itemDB = [
                 "encounterId": 2389
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -73745,7 +71206,6 @@ export const itemDB = [
                 "encounterId": 2401
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -73783,7 +71243,6 @@ export const itemDB = [
                 "encounterId": 2390
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -73821,7 +71280,6 @@ export const itemDB = [
                 "encounterId": 2397
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -73859,7 +71317,6 @@ export const itemDB = [
                 "encounterId": 2389
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -73897,7 +71354,6 @@ export const itemDB = [
                 "encounterId": 2417
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -73935,7 +71391,6 @@ export const itemDB = [
                 "encounterId": 2401
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -73973,7 +71428,6 @@ export const itemDB = [
                 "encounterId": 2397
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -74011,7 +71465,6 @@ export const itemDB = [
                 "encounterId": 2397
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -74049,7 +71502,6 @@ export const itemDB = [
                 "encounterId": 2390
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -74087,7 +71539,6 @@ export const itemDB = [
                 "encounterId": 2417
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -74125,7 +71576,6 @@ export const itemDB = [
                 "encounterId": 2397
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -74163,7 +71613,6 @@ export const itemDB = [
                 "encounterId": 2417
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -74201,7 +71650,6 @@ export const itemDB = [
                 "encounterId": 2389
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -74239,7 +71687,6 @@ export const itemDB = [
                 "encounterId": 2401
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -74277,7 +71724,6 @@ export const itemDB = [
                 "encounterId": 2390
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -74316,7 +71762,6 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -74371,7 +71816,7 @@ export const itemDB = [
                 "encounterId": 2397
             }
         ],
-        "dropLoc": "",
+        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -74426,7 +71871,6 @@ export const itemDB = [
                 "encounterId": 2387
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -74464,7 +71908,6 @@ export const itemDB = [
                 "encounterId": 2406
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -74502,7 +71945,6 @@ export const itemDB = [
                 "encounterId": 2411
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -74540,7 +71982,6 @@ export const itemDB = [
                 "encounterId": 2387
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -74578,7 +72019,6 @@ export const itemDB = [
                 "encounterId": 2413
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -74616,7 +72056,6 @@ export const itemDB = [
                 "encounterId": 2406
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -74654,7 +72093,6 @@ export const itemDB = [
                 "encounterId": 2406
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -74692,7 +72130,6 @@ export const itemDB = [
                 "encounterId": 2387
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -74730,7 +72167,6 @@ export const itemDB = [
                 "encounterId": 2413
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -74768,7 +72204,6 @@ export const itemDB = [
                 "encounterId": 2411
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -74806,7 +72241,6 @@ export const itemDB = [
                 "encounterId": 2411
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -74844,7 +72278,6 @@ export const itemDB = [
                 "encounterId": 2413
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -74882,7 +72315,6 @@ export const itemDB = [
                 "encounterId": 2413
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -74921,7 +72353,6 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -74976,7 +72407,6 @@ export const itemDB = [
                 "encounterId": 2406
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -75014,7 +72444,6 @@ export const itemDB = [
                 "encounterId": 2411
             }
         ],
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -75052,7 +72481,6 @@ export const itemDB = [
                 "encounterId": 2413
             }
         ],
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -75090,7 +72518,6 @@ export const itemDB = [
                 "encounterId": 2406
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -75128,7 +72555,6 @@ export const itemDB = [
                 "encounterId": 2413
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -75166,7 +72592,6 @@ export const itemDB = [
                 "encounterId": 2411
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -75204,7 +72629,6 @@ export const itemDB = [
                 "encounterId": 2387
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -75242,7 +72666,6 @@ export const itemDB = [
                 "encounterId": 2388
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -75280,7 +72703,6 @@ export const itemDB = [
                 "encounterId": 2388
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -75318,7 +72740,6 @@ export const itemDB = [
                 "encounterId": 2415
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -75356,7 +72777,6 @@ export const itemDB = [
                 "encounterId": 2421
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -75394,7 +72814,6 @@ export const itemDB = [
                 "encounterId": 2407
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -75432,7 +72851,6 @@ export const itemDB = [
                 "encounterId": 2407
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -75470,7 +72888,6 @@ export const itemDB = [
                 "encounterId": 2421
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -75508,7 +72925,6 @@ export const itemDB = [
                 "encounterId": 2421
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -75546,7 +72962,6 @@ export const itemDB = [
                 "encounterId": 2415
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -75584,7 +72999,6 @@ export const itemDB = [
                 "encounterId": 2388
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -75622,7 +73036,6 @@ export const itemDB = [
                 "encounterId": 2415
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -75660,7 +73073,6 @@ export const itemDB = [
                 "encounterId": 2388
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -75698,7 +73110,6 @@ export const itemDB = [
                 "encounterId": 2421
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -75736,7 +73147,6 @@ export const itemDB = [
                 "encounterId": 2388
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -75775,7 +73185,6 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -75830,7 +73239,7 @@ export const itemDB = [
                 "encounterId": 2421
             }
         ],
-        "dropLoc": "",
+        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -75885,7 +73294,6 @@ export const itemDB = [
                 "encounterId": 2415
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -75923,7 +73331,6 @@ export const itemDB = [
                 "encounterId": 2421
             }
         ],
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -75961,7 +73368,6 @@ export const itemDB = [
                 "encounterId": 2407
             }
         ],
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -75999,7 +73405,6 @@ export const itemDB = [
                 "encounterId": 2407
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -76037,7 +73442,6 @@ export const itemDB = [
                 "encounterId": 2415
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -76075,7 +73479,6 @@ export const itemDB = [
                 "encounterId": 2407
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -76113,7 +73516,6 @@ export const itemDB = [
                 "encounterId": 2417
             }
         ],
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -76151,7 +73553,6 @@ export const itemDB = [
                 "encounterId": 2417
             }
         ],
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -76189,7 +73590,6 @@ export const itemDB = [
                 "encounterId": 2401
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -76227,7 +73627,6 @@ export const itemDB = [
                 "encounterId": 2389
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -76265,7 +73664,6 @@ export const itemDB = [
                 "encounterId": 2397
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -76303,7 +73701,6 @@ export const itemDB = [
                 "encounterId": 2417
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -76332,7 +73729,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 8750
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -76361,7 +73757,6 @@ export const itemDB = [
             "versatility": 0,
             "unallocated": 8750
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -76399,7 +73794,6 @@ export const itemDB = [
                 "encounterId": 2423
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -76437,7 +73831,6 @@ export const itemDB = [
                 "encounterId": 2423
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -76475,7 +73868,6 @@ export const itemDB = [
                 "encounterId": 2423
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -76513,7 +73905,6 @@ export const itemDB = [
                 "encounterId": 2423
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -76551,7 +73942,6 @@ export const itemDB = [
                 "encounterId": 2423
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -76579,7 +73969,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -76607,7 +73996,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -76635,7 +74023,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -76663,7 +74050,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -76691,7 +74077,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -76719,7 +74104,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -76747,7 +74131,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -76782,7 +74165,6 @@ export const itemDB = [
             }
         ],
         "covenant": "kyrian",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -76811,7 +74193,6 @@ export const itemDB = [
             "versatility": 4550
         },
         "covenant": "kyrian",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -76840,7 +74221,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "kyrian",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -76878,7 +74258,6 @@ export const itemDB = [
                 "encounterId": 2408
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -76916,7 +74295,6 @@ export const itemDB = [
                 "encounterId": 2408
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -76954,7 +74332,6 @@ export const itemDB = [
                 "encounterId": 2408
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -76992,7 +74369,6 @@ export const itemDB = [
                 "encounterId": 2408
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -77020,7 +74396,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -77058,7 +74433,6 @@ export const itemDB = [
                 "encounterId": 2409
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -77096,7 +74470,6 @@ export const itemDB = [
                 "encounterId": 2409
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -77134,7 +74507,6 @@ export const itemDB = [
                 "encounterId": 2409
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -77172,7 +74544,6 @@ export const itemDB = [
                 "encounterId": 2409
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -77210,7 +74581,6 @@ export const itemDB = [
                 "encounterId": 2409
             }
         ],
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -77248,7 +74618,6 @@ export const itemDB = [
                 "encounterId": 2398
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -77286,7 +74655,6 @@ export const itemDB = [
                 "encounterId": 2398
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -77324,7 +74692,6 @@ export const itemDB = [
                 "encounterId": 2398
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -77362,7 +74729,6 @@ export const itemDB = [
                 "encounterId": 2398
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -77400,7 +74766,6 @@ export const itemDB = [
                 "encounterId": 2398
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -77439,7 +74804,6 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -77494,7 +74858,6 @@ export const itemDB = [
                 "encounterId": 2410
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -77532,7 +74895,6 @@ export const itemDB = [
                 "encounterId": 2410
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -77570,7 +74932,6 @@ export const itemDB = [
                 "encounterId": 2410
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -77608,7 +74969,6 @@ export const itemDB = [
                 "encounterId": 2410
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -77646,7 +75006,6 @@ export const itemDB = [
                 "encounterId": 2410
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -77674,7 +75033,6 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -77702,7 +75060,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -77730,7 +75087,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -77758,7 +75114,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -77787,7 +75142,6 @@ export const itemDB = [
             "versatility": 2450
         },
         "covenant": "night_fae",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -77822,7 +75176,6 @@ export const itemDB = [
             }
         ],
         "covenant": "night_fae",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -77851,7 +75204,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "night_fae",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -77879,7 +75231,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -77907,7 +75258,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -77935,7 +75285,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -77964,7 +75313,6 @@ export const itemDB = [
             "versatility": 2150
         },
         "covenant": "night_fae",
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -77999,7 +75347,6 @@ export const itemDB = [
             }
         ],
         "covenant": "night_fae",
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -78028,7 +75375,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "night_fae",
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -78056,7 +75402,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -78084,7 +75429,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -78112,7 +75456,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -78140,7 +75483,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -78168,7 +75510,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -78196,7 +75537,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -78231,7 +75571,6 @@ export const itemDB = [
             }
         ],
         "covenant": "night_fae",
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -78260,7 +75599,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "night_fae",
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -78289,7 +75627,6 @@ export const itemDB = [
             "versatility": 4850
         },
         "covenant": "night_fae",
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -78317,7 +75654,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -78346,7 +75682,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4850
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -78375,7 +75710,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2150
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -78403,7 +75737,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -78431,7 +75764,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -78459,7 +75791,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -78487,7 +75818,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -78516,7 +75846,6 @@ export const itemDB = [
             "mastery": 5000,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -78544,7 +75873,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -78572,7 +75900,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -78600,7 +75927,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -78628,7 +75954,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -78656,7 +75981,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -78684,7 +76008,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -78712,7 +76035,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -78740,7 +76062,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -78769,7 +76090,6 @@ export const itemDB = [
             "mastery": 4850,
             "versatility": 2150
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -78798,7 +76118,6 @@ export const itemDB = [
             "mastery": 2000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -78827,7 +76146,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2150
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -78856,7 +76174,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -78885,7 +76202,6 @@ export const itemDB = [
             "mastery": 5000,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -78914,7 +76230,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4700
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -78943,7 +76258,6 @@ export const itemDB = [
             "mastery": 2000,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -78972,7 +76286,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -79001,7 +76314,6 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -79030,7 +76342,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -79058,7 +76369,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -79086,7 +76396,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -79114,7 +76423,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -79142,7 +76450,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -79170,7 +76477,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -79198,7 +76504,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -79226,7 +76531,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -79254,7 +76558,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -79282,7 +76585,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -79310,7 +76612,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -79339,7 +76640,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -79368,7 +76668,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -79397,7 +76696,6 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -79426,7 +76724,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2000
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -79455,7 +76752,6 @@ export const itemDB = [
             "mastery": 4700,
             "versatility": 2300
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -79484,7 +76780,6 @@ export const itemDB = [
             "mastery": 5000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -79513,7 +76808,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4850
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -79542,7 +76836,6 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 4700
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -79570,7 +76863,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -79598,7 +76890,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -79626,7 +76917,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -79654,7 +76944,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -79682,7 +76971,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -79710,7 +76998,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -79738,7 +77025,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -79766,7 +77052,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -79794,7 +77079,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -79822,7 +77106,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -79850,7 +77133,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -79879,7 +77161,6 @@ export const itemDB = [
             "mastery": 4800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -79908,7 +77189,6 @@ export const itemDB = [
             "mastery": 2950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -79937,7 +77217,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -79966,7 +77245,6 @@ export const itemDB = [
             "mastery": 2200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -79995,7 +77273,6 @@ export const itemDB = [
             "mastery": 4800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -80024,7 +77301,6 @@ export const itemDB = [
             "mastery": 2350,
             "versatility": 4650
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -80053,7 +77329,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -80082,7 +77357,6 @@ export const itemDB = [
             "mastery": 2350,
             "versatility": 4650
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -80111,7 +77385,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4500
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -80139,7 +77412,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -80167,7 +77439,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -80195,7 +77466,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -80223,7 +77493,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -80252,7 +77521,6 @@ export const itemDB = [
             "versatility": 4550
         },
         "covenant": "night_fae",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -80280,7 +77548,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2950
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -80309,7 +77576,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "night_fae",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -80344,7 +77610,6 @@ export const itemDB = [
             }
         ],
         "covenant": "night_fae",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -80372,7 +77637,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2800
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -80407,7 +77671,6 @@ export const itemDB = [
             }
         ],
         "covenant": "night_fae",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -80436,7 +77699,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "night_fae",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -80465,7 +77727,6 @@ export const itemDB = [
             "versatility": 2450
         },
         "covenant": "night_fae",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -80503,7 +77764,6 @@ export const itemDB = [
                 "encounterId": 2412
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -80541,7 +77801,6 @@ export const itemDB = [
                 "encounterId": 2412
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -80579,7 +77838,6 @@ export const itemDB = [
                 "encounterId": 2399
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -80617,7 +77875,6 @@ export const itemDB = [
                 "encounterId": 2399
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -80655,7 +77912,6 @@ export const itemDB = [
                 "encounterId": 2416
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -80693,7 +77949,6 @@ export const itemDB = [
                 "encounterId": 2399
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -80731,7 +77986,6 @@ export const itemDB = [
                 "encounterId": 2416
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -80769,7 +78023,6 @@ export const itemDB = [
                 "encounterId": 2414
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -80807,7 +78060,6 @@ export const itemDB = [
                 "encounterId": 2414
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -80845,7 +78097,6 @@ export const itemDB = [
                 "encounterId": 2414
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -80883,7 +78134,6 @@ export const itemDB = [
                 "encounterId": 2412
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -80921,7 +78171,6 @@ export const itemDB = [
                 "encounterId": 2399
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -80959,7 +78208,6 @@ export const itemDB = [
                 "encounterId": 2416
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -80997,7 +78245,6 @@ export const itemDB = [
                 "encounterId": 2416
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -81035,7 +78282,6 @@ export const itemDB = [
                 "encounterId": 2414
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -81073,7 +78319,6 @@ export const itemDB = [
                 "encounterId": 2412
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -81111,7 +78356,6 @@ export const itemDB = [
                 "encounterId": 2399
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -81150,7 +78394,6 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -81193,7 +78436,6 @@ export const itemDB = [
                 "encounterId": 2412
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -81248,7 +78490,6 @@ export const itemDB = [
                 "encounterId": 2412
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -81276,7 +78517,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -81304,7 +78544,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -81332,7 +78571,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -81360,7 +78598,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -81388,7 +78625,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -81416,7 +78652,6 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -81444,7 +78679,6 @@ export const itemDB = [
             "mastery": 6000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -81472,7 +78706,6 @@ export const itemDB = [
             "mastery": 11500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -81500,7 +78733,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6000
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -81528,7 +78760,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -81556,7 +78787,6 @@ export const itemDB = [
             "mastery": 6000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -81584,7 +78814,6 @@ export const itemDB = [
             "mastery": 11500,
             "versatility": 6000
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -81612,7 +78841,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 11500
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -81640,7 +78868,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -81668,7 +78895,6 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -81696,7 +78922,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2600
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -81724,7 +78949,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -81752,7 +78976,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -81780,7 +79003,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -81808,7 +79030,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -81836,7 +79057,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2600
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -81864,7 +79084,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -81892,7 +79111,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -81920,7 +79138,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -81948,7 +79165,6 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -81982,119 +79198,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
-        "slot": "Back"
-    },
-    {
-        "id": 180425,
-        "name": "9.0 PvP - PvP Reward - Accessory - Cloak - 02",
-        "names": {
-            "cn": "",
-            "en": "9.0 PvP - PvP Reward - Accessory - Cloak - 02",
-            "ru": "9.0 PvP - PvP Reward - Accessory - Cloak - 02",
-            "es": "",
-            "br": "9.0 JxJ - Recompensa de JxJ - Acessório - Manto - 02",
-            "kr": "",
-            "fr": "9.0 PvP - PvP Reward - Accessory - Cloak - 02",
-            "de": "9.0 PvP - PvP Reward - Accessory - Cloak - 02"
-        },
-        "icon": "inv_cape_90pvp_d_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "itemLevel": 155,
-        "stats": {
-            "intellect": 5259,
-            "stamina": 7889,
-            "haste": 3500,
-            "crit": 0,
-            "mastery": 3500,
-            "versatility": 0
-        },
-        "dropLoc": "",
-        "slot": "Back"
-    },
-    {
-        "id": 180426,
-        "name": "9.0 PvP - PvP Reward - Accessory - Cloak - 03",
-        "names": {
-            "cn": "",
-            "en": "9.0 PvP - PvP Reward - Accessory - Cloak - 03",
-            "ru": "9.0 PvP - PvP Reward - Accessory - Cloak - 03",
-            "es": "",
-            "br": "9.0 JxJ - Recompensa de JxJ - Acessório - Manto - 03",
-            "kr": "",
-            "fr": "9.0 PvP - PvP Reward - Accessory - Cloak - 03",
-            "de": "9.0 PvP - PvP Reward - Accessory - Cloak - 03"
-        },
-        "icon": "inv_cape_90pvp_d_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "itemLevel": 155,
-        "stats": {
-            "intellect": 5259,
-            "stamina": 7889,
-            "haste": 3500,
-            "crit": 0,
-            "mastery": 3500,
-            "versatility": 0
-        },
-        "dropLoc": "",
-        "slot": "Back"
-    },
-    {
-        "id": 180427,
-        "name": "9.0 PvP - PvP Reward - Accessory - Cloak - 04",
-        "names": {
-            "cn": "",
-            "en": "9.0 PvP - PvP Reward - Accessory - Cloak - 04",
-            "ru": "9.0 PvP - PvP Reward - Accessory - Cloak - 04",
-            "es": "",
-            "br": "9.0 JxJ - Recompensa de JxJ - Acessório - Manto - 04",
-            "kr": "",
-            "fr": "9.0 PvP - PvP Reward - Accessory - Cloak - 04",
-            "de": "9.0 PvP - PvP Reward - Accessory - Cloak - 04"
-        },
-        "icon": "inv_cape_90pvp_d_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "itemLevel": 155,
-        "stats": {
-            "intellect": 5259,
-            "stamina": 7889,
-            "haste": 3500,
-            "crit": 0,
-            "mastery": 3500,
-            "versatility": 0
-        },
-        "dropLoc": "",
-        "slot": "Back"
-    },
-    {
-        "id": 180428,
-        "name": "9.0 PvP - PvP Reward - Accessory - Cloak - 05",
-        "names": {
-            "cn": "",
-            "en": "9.0 PvP - PvP Reward - Accessory - Cloak - 05",
-            "ru": "9.0 PvP - PvP Reward - Accessory - Cloak - 05",
-            "es": "",
-            "br": "9.0 JxJ - Recompensa de JxJ - Acessório - Manto - 05",
-            "kr": "",
-            "fr": "9.0 PvP - PvP Reward - Accessory - Cloak - 05",
-            "de": "9.0 PvP - PvP Reward - Accessory - Cloak - 05"
-        },
-        "icon": "inv_cape_90pvp_d_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "itemLevel": 155,
-        "stats": {
-            "intellect": 5259,
-            "stamina": 7889,
-            "haste": 3500,
-            "crit": 0,
-            "mastery": 3500,
-            "versatility": 0
-        },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -82122,7 +79225,6 @@ export const itemDB = [
             "mastery": 4100,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -82150,7 +79252,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -82178,7 +79279,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -82206,7 +79306,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -82234,7 +79333,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -82262,7 +79360,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -82290,7 +79387,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -82318,7 +79414,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -82346,7 +79441,6 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -82374,7 +79468,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -82402,7 +79495,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -82430,7 +79522,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -82458,7 +79549,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -82486,7 +79576,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -82514,7 +79603,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -82542,7 +79630,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -82570,7 +79657,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -82598,7 +79684,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -82626,7 +79711,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -82654,7 +79738,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -82682,7 +79765,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -82710,7 +79792,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -82738,7 +79819,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -82766,7 +79846,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -82794,7 +79873,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -82822,7 +79900,6 @@ export const itemDB = [
             "mastery": 8750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -82850,7 +79927,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -82878,7 +79954,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -82907,7 +79982,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -82936,7 +80010,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -82965,7 +80038,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -82994,7 +80066,6 @@ export const itemDB = [
             "mastery": 4850,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -83023,7 +80094,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -83052,7 +80122,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -83081,7 +80150,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -83110,7 +80178,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -83139,7 +80206,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -83168,7 +80234,6 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -83197,7 +80262,6 @@ export const itemDB = [
             "mastery": 2150,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -83226,7 +80290,6 @@ export const itemDB = [
             "mastery": 4850,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -83255,7 +80318,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -83284,7 +80346,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -83313,7 +80374,6 @@ export const itemDB = [
             "mastery": 2000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -83342,7 +80402,6 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -83371,7 +80430,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -83400,7 +80458,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -83429,7 +80486,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -83458,7 +80514,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -83487,7 +80542,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -83516,7 +80570,6 @@ export const itemDB = [
             "mastery": 4850,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -83545,7 +80598,6 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -83574,7 +80626,6 @@ export const itemDB = [
             "mastery": 2000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -83603,7 +80654,6 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -83632,7 +80682,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -83661,7 +80710,6 @@ export const itemDB = [
             "mastery": 2150,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -83690,7 +80738,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -83719,7 +80766,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -83748,7 +80794,6 @@ export const itemDB = [
             "mastery": 4850,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -83777,7 +80822,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -83806,7 +80850,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -83835,7 +80878,6 @@ export const itemDB = [
             "mastery": 4100,
             "versatility": 2900
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -83864,7 +80906,6 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -83893,7 +80934,6 @@ export const itemDB = [
             "mastery": 2300,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -83922,7 +80962,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -83950,7 +80989,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -83978,7 +81016,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -84006,7 +81043,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -84034,7 +81070,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -84062,7 +81097,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -84090,7 +81124,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -84118,7 +81151,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -84146,7 +81178,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -84174,7 +81205,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -84202,7 +81232,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -84230,7 +81259,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -84258,7 +81286,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -84286,7 +81313,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -84314,7 +81340,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -84342,7 +81367,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -84370,7 +81394,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -84398,7 +81421,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -84427,7 +81449,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -84455,7 +81476,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -84483,7 +81503,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -84511,7 +81530,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -84539,7 +81557,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -84567,7 +81584,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -84595,7 +81611,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -84623,7 +81638,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -84651,7 +81665,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -84679,7 +81692,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -84707,7 +81719,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -84735,7 +81746,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -84763,7 +81773,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -84791,7 +81800,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -84819,7 +81827,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -84847,7 +81854,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -84875,7 +81881,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -84903,7 +81908,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -84931,7 +81935,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -84959,7 +81962,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 8500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -84987,7 +81989,6 @@ export const itemDB = [
             "mastery": 8000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -85015,7 +82016,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -85043,7 +82043,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -85071,7 +82070,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -85106,7 +82104,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -85139,7 +82136,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -85179,7 +82175,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -85213,7 +82208,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -85247,7 +82241,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -85281,7 +82274,6 @@ export const itemDB = [
             "versatility": 6666
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -85314,7 +82306,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -85342,7 +82333,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -85370,7 +82360,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -85398,7 +82387,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -85426,7 +82414,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -85454,7 +82441,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -85482,7 +82468,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -85510,7 +82495,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -85538,7 +82522,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -85566,7 +82549,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -85594,7 +82576,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -85622,7 +82603,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -85650,7 +82630,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -85678,7 +82657,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -85706,7 +82684,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -85734,7 +82711,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -85762,7 +82738,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -85790,7 +82765,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -85818,7 +82792,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -85846,7 +82819,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -85874,7 +82846,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -85902,7 +82873,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -85930,7 +82900,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -85958,7 +82927,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -85986,7 +82954,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -86014,7 +82981,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -86042,7 +83008,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -86070,7 +83035,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -86098,7 +83062,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -86126,7 +83089,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -86154,7 +83116,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -86182,7 +83143,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -86210,7 +83170,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -86238,7 +83197,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -86266,7 +83224,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -86294,7 +83251,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -86323,7 +83279,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -86356,7 +83311,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -86390,13 +83344,17 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
             "name": "Flame of Battle"
         },
-        "levelRange": []
+        "levelRange": [
+            194,
+            200,
+            207,
+            213
+        ]
     },
     {
         "id": 181502,
@@ -86423,7 +83381,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -86456,7 +83413,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -86489,7 +83445,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -86517,7 +83472,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -86545,7 +83499,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -86573,7 +83526,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -86601,7 +83553,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -86629,7 +83580,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -86657,7 +83607,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -86685,7 +83634,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -86713,7 +83661,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -86741,7 +83688,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -86769,7 +83715,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -86797,7 +83742,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -86825,7 +83769,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -86853,7 +83796,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -86881,7 +83823,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -86909,7 +83850,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -86937,7 +83877,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -86965,7 +83904,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -86993,7 +83931,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -87021,7 +83958,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -87049,7 +83985,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -87077,7 +84012,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -87105,7 +84039,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -87133,7 +84066,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -87161,7 +84093,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -87189,7 +84120,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -87217,7 +84147,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -87245,7 +84174,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -87273,7 +84201,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -87301,7 +84228,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -87329,7 +84255,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -87357,7 +84282,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -87385,7 +84309,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -87413,7 +84336,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -87441,7 +84363,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -87469,7 +84390,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 9750
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -87497,7 +84417,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 9250
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -87525,7 +84444,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -87553,7 +84471,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -87581,7 +84498,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -87609,7 +84525,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -87637,7 +84552,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -87665,7 +84579,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -87693,7 +84606,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -87721,7 +84633,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -87749,7 +84660,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -87777,7 +84687,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -87805,7 +84714,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -87833,7 +84741,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -87861,7 +84768,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -87889,7 +84795,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -87917,7 +84822,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -87945,7 +84849,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -87973,7 +84876,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -88001,7 +84903,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -88029,7 +84930,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -88057,7 +84957,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -88085,7 +84984,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -88113,7 +85011,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -88141,7 +85038,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -88169,7 +85065,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -88197,7 +85092,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -88225,7 +85119,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -88253,7 +85146,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -88281,7 +85173,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -88309,7 +85200,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -88337,7 +85227,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -88365,7 +85254,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -88393,7 +85281,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -88421,7 +85308,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -88449,7 +85335,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -88477,7 +85362,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -88505,7 +85389,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -88533,7 +85416,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -88561,7 +85443,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -88589,7 +85470,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -88617,7 +85497,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -88645,7 +85524,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -88673,7 +85551,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -88701,7 +85578,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -88729,7 +85605,6 @@ export const itemDB = [
             "mastery": 9250,
             "versatility": 8250
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -88757,7 +85632,6 @@ export const itemDB = [
             "mastery": 10000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -88785,7 +85659,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -88813,7 +85686,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -88841,7 +85713,6 @@ export const itemDB = [
             "mastery": 9750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -88876,7 +85747,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -88910,7 +85780,6 @@ export const itemDB = [
             "mastery": 5000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -88938,7 +85807,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -88967,7 +85835,6 @@ export const itemDB = [
             "mastery": 4700,
             "versatility": 2300
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -88996,7 +85863,6 @@ export const itemDB = [
             "mastery": 2150,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -89025,7 +85891,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2300
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -89054,7 +85919,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -89083,7 +85947,6 @@ export const itemDB = [
             "mastery": 4850,
             "versatility": 2150
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -89112,7 +85975,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5000
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -89141,7 +86003,6 @@ export const itemDB = [
             "mastery": 2150,
             "versatility": 4850
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -89170,7 +86031,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -89198,7 +86058,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -89226,7 +86085,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -89254,7 +86112,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -89282,7 +86139,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -89310,7 +86166,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -89338,7 +86193,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -89366,7 +86220,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -89394,7 +86247,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -89422,7 +86274,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -89451,7 +86302,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -89479,7 +86329,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -89507,7 +86356,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -89535,7 +86383,6 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -89564,7 +86411,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -89593,7 +86439,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -89622,7 +86467,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -89651,7 +86495,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -89680,7 +86523,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -89709,7 +86551,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -89738,7 +86579,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -89767,7 +86607,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -89796,7 +86635,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -89825,7 +86663,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -89854,7 +86691,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -89883,7 +86719,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -89912,7 +86747,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -89941,7 +86775,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -89970,7 +86803,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -89999,7 +86831,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -90028,7 +86859,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -90057,7 +86887,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -90086,7 +86915,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -90115,7 +86943,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -90144,7 +86971,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -90173,7 +86999,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -90202,7 +87027,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -90231,7 +87055,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -90260,7 +87083,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -90289,7 +87111,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -90318,7 +87139,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -90347,7 +87167,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -90376,7 +87195,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -90405,7 +87223,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -90434,7 +87251,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -90463,7 +87279,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -90492,7 +87307,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -90521,7 +87335,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -90550,7 +87363,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -90579,7 +87391,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -90607,7 +87418,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -90635,7 +87445,6 @@ export const itemDB = [
             "mastery": 2250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -90664,7 +87473,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "venthyr",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -90693,7 +87501,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "venthyr",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -90722,7 +87529,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "venthyr",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -90751,7 +87557,6 @@ export const itemDB = [
             "versatility": 4850
         },
         "covenant": "venthyr",
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -90780,7 +87585,6 @@ export const itemDB = [
             "versatility": 2150
         },
         "covenant": "venthyr",
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -90815,7 +87619,6 @@ export const itemDB = [
             }
         ],
         "covenant": "venthyr",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -90850,7 +87653,6 @@ export const itemDB = [
             }
         ],
         "covenant": "venthyr",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -90885,7 +87687,6 @@ export const itemDB = [
             }
         ],
         "covenant": "venthyr",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -90920,7 +87721,6 @@ export const itemDB = [
             }
         ],
         "covenant": "venthyr",
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -90955,7 +87755,6 @@ export const itemDB = [
             }
         ],
         "covenant": "venthyr",
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -90984,7 +87783,6 @@ export const itemDB = [
             "versatility": 2450
         },
         "covenant": "venthyr",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -91013,7 +87811,6 @@ export const itemDB = [
             "versatility": 4550
         },
         "covenant": "venthyr",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -91042,7 +87839,6 @@ export const itemDB = [
             "versatility": 2450
         },
         "covenant": "venthyr",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -91071,7 +87867,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "venthyr",
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -91100,7 +87895,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "venthyr",
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -91129,7 +87923,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -91162,7 +87955,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -91195,7 +87987,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -91228,7 +88019,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -91261,7 +88051,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -91294,7 +88083,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -91322,7 +88110,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -91350,7 +88137,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -91378,7 +88164,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -91406,7 +88191,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -91434,7 +88218,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -91462,7 +88245,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -91490,7 +88272,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -91518,7 +88299,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -91552,7 +88332,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -91581,7 +88360,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -91610,7 +88388,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 2600
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -91639,7 +88416,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -91668,7 +88444,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -91697,7 +88472,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -91726,7 +88500,6 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -91754,7 +88527,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -91782,7 +88554,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -91810,7 +88581,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -91838,7 +88608,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -91872,7 +88641,6 @@ export const itemDB = [
                 "encounterId": 2393
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -91906,7 +88674,6 @@ export const itemDB = [
                 "encounterId": 2422
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -91940,7 +88707,6 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -91974,7 +88740,6 @@ export const itemDB = [
                 "encounterId": 2393
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -92008,7 +88773,6 @@ export const itemDB = [
                 "encounterId": 2424
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -92042,7 +88806,6 @@ export const itemDB = [
                 "encounterId": 2394
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -92076,7 +88839,6 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -92110,7 +88872,6 @@ export const itemDB = [
                 "encounterId": 2426
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -92144,7 +88905,6 @@ export const itemDB = [
                 "encounterId": 2394
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -92178,7 +88938,6 @@ export const itemDB = [
                 "encounterId": 2420
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -92212,7 +88971,6 @@ export const itemDB = [
                 "encounterId": 2422
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -92246,7 +89004,6 @@ export const itemDB = [
                 "encounterId": 2418
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -92280,7 +89037,6 @@ export const itemDB = [
                 "encounterId": 2429
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -92314,7 +89070,6 @@ export const itemDB = [
                 "encounterId": 2426
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -92348,7 +89103,6 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -92382,7 +89136,6 @@ export const itemDB = [
                 "encounterId": 2425
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -92416,7 +89169,6 @@ export const itemDB = [
                 "encounterId": 2428
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -92450,7 +89202,6 @@ export const itemDB = [
                 "encounterId": 2393
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -92484,7 +89235,6 @@ export const itemDB = [
                 "encounterId": 2428
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -92518,7 +89268,6 @@ export const itemDB = [
                 "encounterId": 2429
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -92552,7 +89301,6 @@ export const itemDB = [
                 "encounterId": 2429
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -92586,7 +89334,6 @@ export const itemDB = [
                 "encounterId": 2424
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -92620,7 +89367,6 @@ export const itemDB = [
                 "encounterId": 2425
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -92654,7 +89400,6 @@ export const itemDB = [
                 "encounterId": 2394
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -92688,7 +89433,6 @@ export const itemDB = [
                 "encounterId": 2428
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -92722,7 +89466,6 @@ export const itemDB = [
                 "encounterId": 2428
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -92756,7 +89499,6 @@ export const itemDB = [
                 "encounterId": 2425
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -92790,7 +89532,6 @@ export const itemDB = [
                 "encounterId": 2424
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -92824,7 +89565,6 @@ export const itemDB = [
                 "encounterId": 2418
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -92858,7 +89598,6 @@ export const itemDB = [
                 "encounterId": 2394
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -92892,7 +89631,6 @@ export const itemDB = [
                 "encounterId": 2394
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -92926,7 +89664,6 @@ export const itemDB = [
                 "encounterId": 2422
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -92960,7 +89697,6 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -92994,7 +89730,6 @@ export const itemDB = [
                 "encounterId": 2428
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -93028,7 +89763,6 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -93062,7 +89796,6 @@ export const itemDB = [
                 "encounterId": 2426
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -93096,7 +89829,6 @@ export const itemDB = [
                 "encounterId": 2418
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -93130,7 +89862,6 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -93164,7 +89895,6 @@ export const itemDB = [
                 "encounterId": 2426
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -93198,7 +89928,6 @@ export const itemDB = [
                 "encounterId": 2420
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -93232,7 +89961,6 @@ export const itemDB = [
                 "encounterId": 2394
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -93266,7 +89994,6 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -93300,7 +90027,6 @@ export const itemDB = [
                 "encounterId": 2429
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -93334,7 +90060,6 @@ export const itemDB = [
                 "encounterId": 2418
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -93368,7 +90093,6 @@ export const itemDB = [
                 "encounterId": 2424
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -93402,7 +90126,6 @@ export const itemDB = [
                 "encounterId": 2420
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -93436,7 +90159,6 @@ export const itemDB = [
                 "encounterId": 2394
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -93470,7 +90192,6 @@ export const itemDB = [
                 "encounterId": 2426
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -93504,7 +90225,6 @@ export const itemDB = [
                 "encounterId": 2428
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -93538,7 +90258,6 @@ export const itemDB = [
                 "encounterId": 2422
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -93572,7 +90291,6 @@ export const itemDB = [
                 "encounterId": 2420
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -93606,7 +90324,6 @@ export const itemDB = [
                 "encounterId": 2393
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -93640,7 +90357,6 @@ export const itemDB = [
                 "encounterId": 2428
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -93674,7 +90390,6 @@ export const itemDB = [
                 "encounterId": 2425
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -93708,7 +90423,6 @@ export const itemDB = [
                 "encounterId": 2426
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -93742,7 +90456,6 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -93776,7 +90489,6 @@ export const itemDB = [
                 "encounterId": 2425
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -93810,7 +90522,6 @@ export const itemDB = [
                 "encounterId": 2422
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -93844,7 +90555,6 @@ export const itemDB = [
                 "encounterId": 2393
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -93878,7 +90588,6 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -93912,7 +90621,6 @@ export const itemDB = [
                 "encounterId": 2424
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -93946,7 +90654,6 @@ export const itemDB = [
                 "encounterId": 2420
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -93980,7 +90687,6 @@ export const itemDB = [
                 "encounterId": 2418
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -94014,7 +90720,6 @@ export const itemDB = [
                 "encounterId": 2426
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -94048,7 +90753,6 @@ export const itemDB = [
                 "encounterId": 2429
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -94076,7 +90780,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -94104,7 +90807,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -94132,7 +90834,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -94160,7 +90861,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -94188,7 +90888,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -94216,7 +90915,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -94244,7 +90942,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -94272,7 +90969,6 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -94300,7 +90996,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -94328,7 +91023,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -94362,7 +91056,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -94397,7 +91090,6 @@ export const itemDB = [
             }
         ],
         "covenant": "necrolord",
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -94432,7 +91124,6 @@ export const itemDB = [
             }
         ],
         "covenant": "necrolord",
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -94467,7 +91158,6 @@ export const itemDB = [
             }
         ],
         "covenant": "necrolord",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -94502,7 +91192,6 @@ export const itemDB = [
             }
         ],
         "covenant": "necrolord",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -94530,7 +91219,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -94559,7 +91247,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -94588,7 +91275,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -94617,7 +91303,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -94646,7 +91331,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -94675,7 +91359,6 @@ export const itemDB = [
             "versatility": 4250
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -94704,7 +91387,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -94733,7 +91415,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -94762,7 +91443,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -94791,7 +91471,6 @@ export const itemDB = [
             "versatility": 2250
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -94820,7 +91499,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -94849,7 +91527,6 @@ export const itemDB = [
             "versatility": 4250
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -94878,7 +91555,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -94907,7 +91583,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -94936,7 +91611,6 @@ export const itemDB = [
             "versatility": 2625
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -94965,7 +91639,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -94994,7 +91667,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -95023,7 +91695,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -95052,7 +91723,6 @@ export const itemDB = [
             "versatility": 2250
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -95081,7 +91751,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -95110,7 +91779,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -95139,7 +91807,6 @@ export const itemDB = [
             "versatility": 4250
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -95168,7 +91835,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -95197,7 +91863,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -95226,7 +91891,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -95255,7 +91919,6 @@ export const itemDB = [
             "versatility": 2750
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -95284,7 +91947,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -95313,7 +91975,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -95342,7 +92003,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -95371,7 +92031,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -95400,7 +92059,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -95429,7 +92087,6 @@ export const itemDB = [
             "versatility": 4750
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -95458,7 +92115,6 @@ export const itemDB = [
             "versatility": 4750
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -95487,7 +92143,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -95516,7 +92171,6 @@ export const itemDB = [
             "versatility": 2375
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -95545,7 +92199,6 @@ export const itemDB = [
             "versatility": 2300
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -95574,7 +92227,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -95603,7 +92255,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -95632,7 +92283,6 @@ export const itemDB = [
             "versatility": 4500
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -95661,7 +92311,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -95690,7 +92339,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -95719,7 +92367,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -95748,7 +92395,6 @@ export const itemDB = [
             "versatility": 2250
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -95777,7 +92423,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -95806,7 +92451,6 @@ export const itemDB = [
             "versatility": 4750
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -95835,7 +92479,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -95864,7 +92507,6 @@ export const itemDB = [
             "versatility": 4000
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -95893,7 +92535,6 @@ export const itemDB = [
             "versatility": 4750
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -95922,7 +92563,6 @@ export const itemDB = [
             "versatility": 4750
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -95951,7 +92591,6 @@ export const itemDB = [
             "versatility": 2600
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -95980,7 +92619,6 @@ export const itemDB = [
             "versatility": 2000
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -96009,7 +92647,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -96038,7 +92675,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -96067,7 +92703,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -96096,7 +92731,6 @@ export const itemDB = [
             "versatility": 2750
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -96125,7 +92759,6 @@ export const itemDB = [
             "versatility": 4250
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -96154,7 +92787,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -96183,7 +92815,6 @@ export const itemDB = [
             "versatility": 4250
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -96212,7 +92843,6 @@ export const itemDB = [
             "versatility": 2300
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -96241,7 +92871,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -96270,7 +92899,6 @@ export const itemDB = [
             "versatility": 4750
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -96299,7 +92927,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -96328,7 +92955,6 @@ export const itemDB = [
             "versatility": 2875
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -96357,7 +92983,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -96386,7 +93011,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -96415,7 +93039,6 @@ export const itemDB = [
             "versatility": 2250
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -96444,7 +93067,6 @@ export const itemDB = [
             "versatility": 4125
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -96473,7 +93095,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -96502,7 +93123,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -96531,7 +93151,6 @@ export const itemDB = [
             "versatility": 4750
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -96560,7 +93179,6 @@ export const itemDB = [
             "versatility": 2625
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -96589,7 +93207,6 @@ export const itemDB = [
             "versatility": 2600
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -96618,7 +93235,6 @@ export const itemDB = [
             "versatility": 2000
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -96646,7 +93262,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -96674,7 +93289,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -96702,7 +93316,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 2600
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -96730,7 +93343,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -96758,7 +93370,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -96786,7 +93397,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -96814,7 +93424,6 @@ export const itemDB = [
             "mastery": 3250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -96842,7 +93451,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -96870,7 +93478,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -96898,7 +93505,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -96926,7 +93532,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -96954,7 +93559,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -96982,7 +93586,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -97010,7 +93613,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -97038,7 +93640,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -97066,7 +93667,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -97094,7 +93694,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -97122,7 +93721,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 1750
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -97150,7 +93748,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -97178,7 +93775,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -97206,7 +93802,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -97234,7 +93829,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -97262,7 +93856,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -97295,7 +93888,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -97323,7 +93915,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -97351,7 +93942,6 @@ export const itemDB = [
             "mastery": 4500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -97379,7 +93969,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -97407,7 +93996,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -97435,7 +94023,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -97463,7 +94050,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -97491,7 +94077,6 @@ export const itemDB = [
             "mastery": 2500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -97519,7 +94104,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -97547,7 +94131,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -97575,7 +94158,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -97603,7 +94185,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -97631,7 +94212,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -97659,7 +94239,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -97687,7 +94266,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -97715,7 +94293,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -97743,7 +94320,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -97771,7 +94347,6 @@ export const itemDB = [
             "mastery": 1750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -97799,7 +94374,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 15000
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -97827,7 +94401,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -97855,7 +94428,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -97883,7 +94455,6 @@ export const itemDB = [
             "mastery": 5250,
             "versatility": 12250
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -97911,7 +94482,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -97939,7 +94509,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -97967,7 +94536,6 @@ export const itemDB = [
             "mastery": 2000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -97995,7 +94563,6 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -98023,7 +94590,6 @@ export const itemDB = [
             "mastery": 3250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -98051,7 +94617,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12250
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -98079,7 +94644,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -98107,7 +94671,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -98135,7 +94698,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -98163,7 +94725,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -98191,7 +94752,6 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -98219,7 +94779,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -98247,7 +94806,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -98275,7 +94833,6 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -98303,7 +94860,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -98331,7 +94887,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -98359,7 +94914,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -98387,7 +94941,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -98416,7 +94969,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -98445,7 +94997,6 @@ export const itemDB = [
             "versatility": 4250
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -98474,7 +95025,6 @@ export const itemDB = [
             "versatility": 2750
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -98503,7 +95053,6 @@ export const itemDB = [
             "versatility": 5000
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -98532,7 +95081,6 @@ export const itemDB = [
             "versatility": 3250
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -98561,7 +95109,6 @@ export const itemDB = [
             "versatility": 2000
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -98590,7 +95137,6 @@ export const itemDB = [
             "versatility": 4000
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -98619,7 +95165,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -98648,7 +95193,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -98677,7 +95221,6 @@ export const itemDB = [
             "versatility": 2750
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -98706,7 +95249,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -98735,7 +95277,6 @@ export const itemDB = [
             "versatility": 4500
         },
         "faction": "alliance",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -98764,7 +95305,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -98793,7 +95333,6 @@ export const itemDB = [
             "versatility": 4250
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -98822,7 +95361,6 @@ export const itemDB = [
             "versatility": 2750
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -98851,7 +95389,6 @@ export const itemDB = [
             "versatility": 5000
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -98880,7 +95417,6 @@ export const itemDB = [
             "versatility": 3250
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -98909,7 +95445,6 @@ export const itemDB = [
             "versatility": 2000
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -98938,7 +95473,6 @@ export const itemDB = [
             "versatility": 4000
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -98967,7 +95501,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -98996,7 +95529,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -99025,7 +95557,6 @@ export const itemDB = [
             "versatility": 2750
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -99054,7 +95585,6 @@ export const itemDB = [
             "versatility": 0
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -99083,7 +95613,6 @@ export const itemDB = [
             "versatility": 4500
         },
         "faction": "horde",
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -99111,7 +95640,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -99145,7 +95673,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -99178,7 +95705,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -99211,7 +95737,6 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -99239,7 +95764,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -99267,7 +95791,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2300
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -99295,7 +95818,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2300
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -99329,7 +95851,6 @@ export const itemDB = [
                 "encounterId": 2422
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -99369,14 +95890,12 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
             "name": "Tuft of Smoldering Plumage"
         },
-        "levelRange": [
-        ]
+        "levelRange": []
     },
     {
         "id": 184021,
@@ -99410,7 +95929,6 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -99449,7 +95967,6 @@ export const itemDB = [
                 "encounterId": 2428
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -99489,7 +96006,6 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -99528,18 +96044,12 @@ export const itemDB = [
                 "encounterId": 2424
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
             "name": "Cabalist's Hymnal"
         },
-        "levelRange": [
-            194,
-            207,
-            220,
-            233
-        ]
+        "levelRange": []
     },
     {
         "id": 184029,
@@ -99573,7 +96083,6 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -99613,7 +96122,6 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -99653,7 +96161,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -99693,7 +96200,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -99733,7 +96239,6 @@ export const itemDB = [
                 "encounterId": -14
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -99767,7 +96272,6 @@ export const itemDB = [
             "mastery": 12000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -99796,7 +96300,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 11250
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -99825,7 +96328,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -99854,7 +96356,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12250
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -99888,7 +96389,6 @@ export const itemDB = [
                 "encounterId": 2430
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -99922,7 +96422,6 @@ export const itemDB = [
                 "encounterId": 2432
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -99956,7 +96455,6 @@ export const itemDB = [
                 "encounterId": 2432
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -99990,7 +96488,6 @@ export const itemDB = [
                 "encounterId": 2431
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -100024,7 +96521,6 @@ export const itemDB = [
                 "encounterId": 2432
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -100058,7 +96554,6 @@ export const itemDB = [
                 "encounterId": 2433
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -100092,7 +96587,6 @@ export const itemDB = [
                 "encounterId": 2433
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -100126,7 +96620,6 @@ export const itemDB = [
                 "encounterId": 2430
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -100160,7 +96653,6 @@ export const itemDB = [
                 "encounterId": 2431
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -100194,7 +96686,6 @@ export const itemDB = [
                 "encounterId": 2433
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -100228,7 +96719,6 @@ export const itemDB = [
                 "encounterId": 2431
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -100262,7 +96752,6 @@ export const itemDB = [
                 "encounterId": 2430
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -100296,7 +96785,6 @@ export const itemDB = [
                 "encounterId": 2433
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -100330,7 +96818,6 @@ export const itemDB = [
                 "encounterId": 2432
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -100364,7 +96851,6 @@ export const itemDB = [
                 "encounterId": 2430
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -100398,7 +96884,6 @@ export const itemDB = [
                 "encounterId": 2431
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -100432,7 +96917,6 @@ export const itemDB = [
                 "encounterId": 2430
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -100466,7 +96950,6 @@ export const itemDB = [
                 "encounterId": 2432
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -100500,7 +96983,6 @@ export const itemDB = [
                 "encounterId": 2431
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -100534,7 +97016,6 @@ export const itemDB = [
                 "encounterId": 2433
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -100562,7 +97043,6 @@ export const itemDB = [
             "mastery": 6000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -100596,7 +97076,6 @@ export const itemDB = [
                 "encounterId": 2430
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -100630,7 +97109,6 @@ export const itemDB = [
                 "encounterId": 2433
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -100664,7 +97142,6 @@ export const itemDB = [
                 "encounterId": 2432
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -100698,7 +97175,6 @@ export const itemDB = [
                 "encounterId": 2431
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -100726,7 +97202,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -100754,7 +97229,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -100782,7 +97256,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -100810,7 +97283,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10250
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -100838,7 +97310,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -100866,7 +97337,6 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -100894,7 +97364,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -100922,7 +97391,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -100950,7 +97418,6 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -100978,7 +97445,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -101006,7 +97472,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -101035,7 +97500,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "necrolord",
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -101064,7 +97528,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "necrolord",
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -101093,7 +97556,6 @@ export const itemDB = [
             "versatility": 2450
         },
         "covenant": "necrolord",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -101122,7 +97584,6 @@ export const itemDB = [
             "versatility": 4550
         },
         "covenant": "necrolord",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -101151,7 +97612,6 @@ export const itemDB = [
             "versatility": 2450
         },
         "covenant": "necrolord",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -101180,7 +97640,6 @@ export const itemDB = [
             "versatility": 4850
         },
         "covenant": "necrolord",
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -101209,7 +97668,6 @@ export const itemDB = [
             "versatility": 2150
         },
         "covenant": "necrolord",
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -101238,7 +97696,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "necrolord",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -101267,7 +97724,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "necrolord",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -101296,7 +97752,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "necrolord",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -101325,7 +97780,6 @@ export const itemDB = [
             "versatility": 0
         },
         "covenant": "kyrian",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -101354,7 +97808,6 @@ export const itemDB = [
             "versatility": 2450
         },
         "covenant": "kyrian",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -101382,7 +97835,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -101415,7 +97867,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -101443,7 +97894,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -101471,7 +97921,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -101499,7 +97948,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -101527,7 +97975,6 @@ export const itemDB = [
             "mastery": 4100,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -101555,7 +98002,6 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -101583,7 +98029,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -101611,7 +98056,6 @@ export const itemDB = [
             "mastery": 6750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -101639,7 +98083,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -101667,7 +98110,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -101695,7 +98137,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -101723,7 +98164,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -101751,7 +98191,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -101785,7 +98224,6 @@ export const itemDB = [
                 "encounterId": -15
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -101813,7 +98251,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -101841,7 +98278,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -101869,7 +98305,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -101897,7 +98332,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -101925,7 +98359,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -101953,7 +98386,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -101981,7 +98413,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -102009,7 +98440,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -102037,7 +98467,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -102065,7 +98494,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -102093,7 +98521,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -102121,7 +98548,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -102149,7 +98575,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -102177,7 +98602,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -102205,7 +98629,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3500
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -102240,7 +98663,6 @@ export const itemDB = [
             }
         ],
         "covenant": "kyrian",
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -102275,7 +98697,6 @@ export const itemDB = [
             }
         ],
         "covenant": "necrolord",
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -102303,7 +98724,6 @@ export const itemDB = [
             "mastery": 3100,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -102331,7 +98751,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3300
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -102359,7 +98778,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -102387,7 +98805,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3000
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -102415,7 +98832,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -102443,7 +98859,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -102471,7 +98886,6 @@ export const itemDB = [
             "mastery": 4100,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -102499,7 +98913,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -102527,7 +98940,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -102555,7 +98967,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -102583,7 +98994,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -102611,7 +99021,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -102639,7 +99048,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -102667,7 +99075,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -102695,7 +99102,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -102723,7 +99129,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -102751,7 +99156,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -102779,7 +99183,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3850
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -102807,7 +99210,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3850
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -102835,7 +99237,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3850
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -102863,7 +99264,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3850
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -102891,7 +99291,6 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -102919,7 +99318,6 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -102947,7 +99345,6 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -102975,7 +99372,6 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -103003,7 +99399,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3150
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -103031,7 +99426,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3150
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -103059,7 +99453,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3150
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -103087,7 +99480,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3150
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -103115,7 +99507,6 @@ export const itemDB = [
             "mastery": 3850,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -103143,7 +99534,6 @@ export const itemDB = [
             "mastery": 3850,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -103171,7 +99561,6 @@ export const itemDB = [
             "mastery": 3850,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -103199,7 +99588,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3150
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -103227,7 +99615,6 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -103255,7 +99642,6 @@ export const itemDB = [
             "mastery": 3850,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -103283,7 +99669,6 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -103311,7 +99696,6 @@ export const itemDB = [
             "mastery": 9250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -103339,7 +99723,6 @@ export const itemDB = [
             "mastery": 3850,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -103367,7 +99750,6 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -103395,7 +99777,6 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -103423,7 +99804,6 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -103451,7 +99831,6 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -103479,7 +99858,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3850
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -103507,7 +99885,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3850
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -103535,7 +99912,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3850
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -103563,7 +99939,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3850
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -103591,7 +99966,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -103619,7 +99993,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 8250
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -103647,7 +100020,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -103675,7 +100047,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -103703,7 +100074,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -103737,7 +100107,6 @@ export const itemDB = [
                 "encounterId": -17
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -103765,7 +100134,6 @@ export const itemDB = [
             "mastery": 4500,
             "versatility": 2500
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -103793,7 +100161,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -103821,7 +100188,6 @@ export const itemDB = [
             "mastery": 2500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -103849,7 +100215,6 @@ export const itemDB = [
             "mastery": 15000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -103877,7 +100242,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10750
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -103905,7 +100269,6 @@ export const itemDB = [
             "mastery": 4200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -103933,7 +100296,6 @@ export const itemDB = [
             "mastery": 3900,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -103961,7 +100323,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -103989,7 +100350,6 @@ export const itemDB = [
             "mastery": 4000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -104017,7 +100377,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -104045,7 +100404,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -104073,7 +100431,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4000
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -104101,7 +100458,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -104129,7 +100485,6 @@ export const itemDB = [
             "mastery": 3900,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -104157,7 +100512,6 @@ export const itemDB = [
             "mastery": 2500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -104185,7 +100539,6 @@ export const itemDB = [
             "mastery": 4300,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -104213,7 +100566,6 @@ export const itemDB = [
             "mastery": 2800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -104241,7 +100593,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3900
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -104269,7 +100620,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3100
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -104297,7 +100647,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -104330,7 +100679,6 @@ export const itemDB = [
             "mastery": 2800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -104358,7 +100706,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4200
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -104386,7 +100733,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -104419,7 +100765,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -104453,7 +100798,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -104487,13 +100831,17 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
             "name": "Instructor's Divine Bell"
         },
-        "levelRange": [194, 200, 207, 213]
+        "levelRange": [
+            194,
+            200,
+            207,
+            213
+        ]
     },
     {
         "id": 184873,
@@ -104520,7 +100868,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -104553,7 +100900,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4700
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -104581,7 +100927,6 @@ export const itemDB = [
             "mastery": 2825,
             "versatility": 4175
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -104609,7 +100954,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -104637,7 +100981,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -104665,7 +101008,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -104693,7 +101035,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -104721,7 +101062,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -104749,7 +101089,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -104777,7 +101116,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4025
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -104805,7 +101143,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -104833,7 +101170,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -104861,7 +101197,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -104889,7 +101224,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -104917,7 +101251,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -104945,7 +101278,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -104973,7 +101305,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -105001,7 +101332,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -105029,7 +101359,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -105057,7 +101386,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -105085,7 +101413,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -105113,7 +101440,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -105141,7 +101467,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -105169,7 +101494,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -105197,7 +101521,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -105225,7 +101548,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -105253,7 +101575,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -105281,7 +101602,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -105309,7 +101629,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -105337,7 +101656,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -105365,7 +101683,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -105393,7 +101710,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 11000
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -105421,7 +101737,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -105449,7 +101764,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4150
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -105477,7 +101791,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -105505,7 +101818,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4150
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -105535,7 +101847,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -105568,7 +101879,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10750
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -105596,7 +101906,6 @@ export const itemDB = [
             "mastery": 2175,
             "versatility": 4825
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -105624,7 +101933,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -105652,7 +101960,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -105680,7 +101987,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -105708,7 +102014,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -105736,7 +102041,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -105764,7 +102068,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -105792,7 +102095,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4675
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -105820,7 +102122,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -105848,7 +102149,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -105876,7 +102176,6 @@ export const itemDB = [
             "mastery": 2350,
             "versatility": 4650
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -105904,7 +102203,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -105932,7 +102230,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -105960,7 +102257,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -105988,7 +102284,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -106016,7 +102311,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -106044,7 +102338,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -106072,7 +102365,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -106100,7 +102392,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -106128,7 +102419,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -106156,7 +102446,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -106184,7 +102473,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -106212,7 +102500,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -106240,7 +102527,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -106268,7 +102554,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -106296,7 +102581,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -106324,7 +102608,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -106352,7 +102635,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -106380,7 +102662,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -106408,7 +102689,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12000
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -106436,7 +102716,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -106464,7 +102743,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -106492,7 +102770,6 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 4450
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -106520,7 +102797,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -106550,7 +102826,6 @@ export const itemDB = [
             "versatility": 0
         },
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -106592,7 +102867,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 13500
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -106620,7 +102894,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4800
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -106648,7 +102921,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -106676,7 +102948,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -106704,7 +102975,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -106732,7 +103002,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -106760,7 +103029,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -106788,7 +103056,6 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -106816,7 +103083,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -106844,7 +103110,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4150
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -106872,7 +103137,6 @@ export const itemDB = [
             "mastery": 2825,
             "versatility": 4175
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -106900,7 +103164,6 @@ export const itemDB = [
             "mastery": 3275,
             "versatility": 3725
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -106928,7 +103191,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -106956,7 +103218,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -106984,7 +103245,6 @@ export const itemDB = [
             "mastery": 2975,
             "versatility": 4025
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -107012,7 +103272,6 @@ export const itemDB = [
             "mastery": 3275,
             "versatility": 3725
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -107040,7 +103299,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -107068,7 +103326,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4025
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -107096,7 +103353,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -107124,7 +103380,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -107152,7 +103407,6 @@ export const itemDB = [
             "mastery": 3275,
             "versatility": 3725
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -107180,7 +103434,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -107208,7 +103461,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -107236,7 +103488,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -107264,7 +103515,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -107292,7 +103542,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -107320,7 +103569,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -107348,7 +103596,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -107376,7 +103623,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -107404,7 +103650,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -107432,7 +103677,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -107460,7 +103704,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -107488,7 +103731,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -107516,7 +103758,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -107544,7 +103785,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -107572,7 +103812,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -107600,7 +103839,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -107629,7 +103867,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -107662,7 +103899,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10250
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -107690,7 +103926,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -107718,7 +103953,6 @@ export const itemDB = [
             "mastery": 8000,
             "versatility": 9500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -107747,7 +103981,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -107780,7 +104013,6 @@ export const itemDB = [
             "mastery": 7750,
             "versatility": 9750
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -107808,7 +104040,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -107836,7 +104067,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -107864,7 +104094,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -107892,7 +104121,6 @@ export const itemDB = [
             "mastery": 2475,
             "versatility": 4525
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -107920,7 +104148,6 @@ export const itemDB = [
             "mastery": 2250,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -107948,7 +104175,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -107976,7 +104202,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -108004,7 +104229,6 @@ export const itemDB = [
             "mastery": 2100,
             "versatility": 4900
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -108032,7 +104256,6 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 4450
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -108060,7 +104283,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -108088,7 +104310,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -108116,7 +104337,6 @@ export const itemDB = [
             "mastery": 2325,
             "versatility": 4675
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -108144,7 +104364,6 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 4450
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -108172,7 +104391,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -108200,7 +104418,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4675
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -108228,7 +104445,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -108256,7 +104472,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -108284,7 +104499,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -108312,7 +104526,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -108340,7 +104553,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -108368,7 +104580,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -108396,7 +104607,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -108424,7 +104634,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -108452,7 +104661,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -108480,7 +104688,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -108508,7 +104715,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -108536,7 +104742,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -108564,7 +104769,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -108592,7 +104796,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -108620,7 +104823,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12000
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -108648,7 +104850,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -108676,7 +104877,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -108704,7 +104904,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -108732,7 +104931,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -108761,7 +104959,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -108803,7 +105000,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 13500
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -108831,7 +105027,6 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 4450
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -108859,7 +105054,6 @@ export const itemDB = [
             "mastery": 5500,
             "versatility": 12000
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -108888,7 +105082,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -108921,7 +105114,6 @@ export const itemDB = [
             "mastery": 4000,
             "versatility": 13500
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -108949,7 +105141,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -108977,7 +105168,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -109005,7 +105195,6 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 3850
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -109033,7 +105222,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4050
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -109061,7 +105249,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -109089,7 +105276,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -109118,7 +105304,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -109152,7 +105337,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -109186,7 +105370,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -109219,7 +105402,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -109248,7 +105430,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -109282,7 +105463,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -109316,7 +105496,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -109349,7 +105528,6 @@ export const itemDB = [
             "mastery": 4650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -109377,7 +105555,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -109411,7 +105588,6 @@ export const itemDB = [
                 "encounterId": 2449
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -109445,7 +105621,6 @@ export const itemDB = [
                 "encounterId": 2448
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -109479,7 +105654,6 @@ export const itemDB = [
                 "encounterId": 2451
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -109513,7 +105687,6 @@ export const itemDB = [
                 "encounterId": 2455
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -109547,7 +105720,6 @@ export const itemDB = [
                 "encounterId": 2455
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -109581,7 +105753,6 @@ export const itemDB = [
                 "encounterId": 2451
             }
         ],
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -109615,7 +105786,6 @@ export const itemDB = [
                 "encounterId": 2436
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -109649,7 +105819,6 @@ export const itemDB = [
                 "encounterId": 2448
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -109683,7 +105852,6 @@ export const itemDB = [
                 "encounterId": 2452
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -109717,7 +105885,6 @@ export const itemDB = [
                 "encounterId": 2448
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -109751,7 +105918,6 @@ export const itemDB = [
                 "encounterId": 2437
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -109785,7 +105951,6 @@ export const itemDB = [
                 "encounterId": 2454
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -109819,7 +105984,6 @@ export const itemDB = [
                 "encounterId": 2437
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -109853,7 +106017,6 @@ export const itemDB = [
                 "encounterId": 2454
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -109887,7 +106050,6 @@ export const itemDB = [
                 "encounterId": 2449
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -109921,7 +106083,6 @@ export const itemDB = [
                 "encounterId": 2449
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -109955,7 +106116,6 @@ export const itemDB = [
                 "encounterId": 2449
             }
         ],
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -109989,7 +106149,6 @@ export const itemDB = [
                 "encounterId": 2451
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -110023,7 +106182,6 @@ export const itemDB = [
                 "encounterId": 2455
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -110057,7 +106215,6 @@ export const itemDB = [
                 "encounterId": 2451
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -110091,7 +106248,6 @@ export const itemDB = [
                 "encounterId": 2455
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -110125,7 +106281,6 @@ export const itemDB = [
                 "encounterId": 2452
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -110159,7 +106314,6 @@ export const itemDB = [
                 "encounterId": 2448
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -110193,7 +106347,6 @@ export const itemDB = [
                 "encounterId": 2452
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -110227,7 +106380,6 @@ export const itemDB = [
                 "encounterId": 2448
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -110261,7 +106413,6 @@ export const itemDB = [
                 "encounterId": 2452
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -110295,7 +106446,6 @@ export const itemDB = [
                 "encounterId": 2436
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -110329,7 +106479,6 @@ export const itemDB = [
                 "encounterId": 2436
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -110363,7 +106512,6 @@ export const itemDB = [
                 "encounterId": 2454
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -110397,7 +106545,6 @@ export const itemDB = [
                 "encounterId": 2436
             }
         ],
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -110431,7 +106578,6 @@ export const itemDB = [
                 "encounterId": 2452
             }
         ],
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -110465,7 +106611,6 @@ export const itemDB = [
                 "encounterId": 2455
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -110499,7 +106644,6 @@ export const itemDB = [
                 "encounterId": 2454
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -110533,7 +106677,6 @@ export const itemDB = [
                 "encounterId": 2437
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -110567,7 +106710,6 @@ export const itemDB = [
                 "encounterId": 2437
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -110601,7 +106743,6 @@ export const itemDB = [
                 "encounterId": 2436
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -110635,7 +106776,6 @@ export const itemDB = [
                 "encounterId": 2455
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -110677,7 +106817,6 @@ export const itemDB = [
                 "encounterId": 2449
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -110711,7 +106850,6 @@ export const itemDB = [
                 "encounterId": 2454
             }
         ],
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -110745,7 +106883,6 @@ export const itemDB = [
                 "encounterId": 2455
             }
         ],
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -110779,7 +106916,6 @@ export const itemDB = [
                 "encounterId": 2454
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -110813,7 +106949,6 @@ export const itemDB = [
                 "encounterId": 2449
             }
         ],
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -110847,7 +106982,6 @@ export const itemDB = [
                 "encounterId": 2452
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -110881,7 +107015,6 @@ export const itemDB = [
                 "encounterId": 2451
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -110915,7 +107048,6 @@ export const itemDB = [
                 "encounterId": 2436
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -110954,7 +107086,6 @@ export const itemDB = [
                 "encounterId": 2436
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -110996,7 +107127,6 @@ export const itemDB = [
                 "encounterId": 2436
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -111029,7 +107159,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -111057,7 +107186,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -111085,7 +107213,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -111113,7 +107240,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -111141,7 +107267,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -111169,7 +107294,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -111197,7 +107321,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -111225,7 +107348,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -111253,7 +107375,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -111281,7 +107402,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -111309,7 +107429,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -111337,7 +107456,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -111365,7 +107483,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -111393,7 +107510,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -111421,7 +107537,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -111449,7 +107564,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -111477,7 +107591,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -111505,7 +107618,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -111533,7 +107645,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -111561,7 +107672,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -111589,7 +107699,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -111617,7 +107726,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -111645,7 +107753,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -111673,7 +107780,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -111701,7 +107807,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -111729,7 +107834,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -111757,7 +107861,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -111785,7 +107888,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -111813,7 +107915,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -111841,7 +107942,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -111869,7 +107969,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -111897,7 +107996,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -111925,7 +108023,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -111953,7 +108050,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -111981,7 +108077,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -112009,7 +108104,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -112037,7 +108131,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -112065,7 +108158,6 @@ export const itemDB = [
             "mastery": 8000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -112093,7 +108185,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -112121,7 +108212,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -112149,7 +108239,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 9500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -112177,7 +108266,6 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -112205,7 +108293,6 @@ export const itemDB = [
             "mastery": 9000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -112233,7 +108320,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7750
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -112261,7 +108347,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7750
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -112289,7 +108374,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -112317,7 +108401,6 @@ export const itemDB = [
             "mastery": 9250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck",
         "effect": {
             "type": "special",
@@ -112349,7 +108432,6 @@ export const itemDB = [
             "mastery": 9250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck",
         "effect": {
             "type": "special",
@@ -112381,7 +108463,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2600
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -112409,7 +108490,6 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -112437,7 +108517,6 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -112465,7 +108544,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -112493,7 +108571,6 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -112521,7 +108598,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -112549,7 +108625,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -112577,7 +108652,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -112605,7 +108679,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -112633,7 +108706,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -112661,7 +108733,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -112689,7 +108760,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -112717,7 +108787,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -112745,7 +108814,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -112773,7 +108841,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -112801,7 +108868,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -112829,7 +108895,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -112857,7 +108922,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -112885,7 +108949,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -112913,7 +108976,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -112941,7 +109003,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -112969,7 +109030,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -112997,7 +109057,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -113025,7 +109084,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -113053,7 +109111,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -113081,7 +109138,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -113109,7 +109165,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -113137,7 +109192,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -113165,7 +109219,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -113193,7 +109246,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -113221,7 +109273,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -113249,7 +109300,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -113277,7 +109327,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -113305,7 +109354,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -113333,7 +109381,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -113361,7 +109408,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -113389,7 +109435,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -113417,7 +109462,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -113445,7 +109489,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -113473,7 +109516,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -113501,7 +109543,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -113529,7 +109570,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -113557,7 +109597,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -113585,7 +109624,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -113625,7 +109663,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -113653,7 +109690,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 2600
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -113681,7 +109717,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -113709,7 +109744,6 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -113737,7 +109771,6 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -113765,7 +109798,6 @@ export const itemDB = [
             "mastery": 4100,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -113793,7 +109825,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 2600
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -113821,7 +109852,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2600
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -113849,7 +109879,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -113877,7 +109906,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -113905,7 +109933,6 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -113933,7 +109960,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -113961,7 +109987,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -113989,7 +110014,6 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -114017,7 +110041,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -114045,7 +110068,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -114073,7 +110095,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -114101,7 +110122,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -114129,7 +110149,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -114157,7 +110176,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -114185,7 +110203,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -114213,7 +110230,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2600
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -114241,7 +110257,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -114269,7 +110284,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -114297,7 +110311,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -114325,7 +110338,6 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -114353,7 +110365,6 @@ export const itemDB = [
             "mastery": 4100,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -114381,7 +110392,6 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -114409,7 +110419,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -114437,7 +110446,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -114465,7 +110473,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -114493,7 +110500,6 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -114521,7 +110527,6 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -114549,7 +110554,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -114577,7 +110581,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -114605,7 +110608,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -114633,7 +110635,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -114661,7 +110662,6 @@ export const itemDB = [
             "mastery": 10500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -114695,7 +110695,6 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -114729,7 +110728,6 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "dropLoc": "",
         "slot": "Chest",
         "socketType": "Domination"
     },
@@ -114764,7 +110762,6 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist",
         "socketType": "Domination"
     },
@@ -114799,7 +110796,6 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Domination"
     },
@@ -114834,7 +110830,6 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -114868,7 +110863,6 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder",
         "socketType": "Domination"
     },
@@ -114903,7 +110897,6 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "dropLoc": "",
         "slot": "Head",
         "socketType": "Domination"
     },
@@ -114938,7 +110931,6 @@ export const itemDB = [
                 "encounterId": 2442
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -114972,7 +110964,6 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -115006,7 +110997,6 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -115040,7 +111030,6 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -115074,7 +111063,6 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "dropLoc": "",
         "slot": "Head",
         "socketType": "Domination"
     },
@@ -115109,7 +111097,6 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -115143,7 +111130,6 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -115177,7 +111163,6 @@ export const itemDB = [
                 "encounterId": 2442
             }
         ],
-        "dropLoc": "",
         "slot": "Hands",
         "socketType": "Domination"
     },
@@ -115212,7 +111197,6 @@ export const itemDB = [
                 "encounterId": 2442
             }
         ],
-        "dropLoc": "",
         "slot": "Chest",
         "socketType": "Domination"
     },
@@ -115247,7 +111231,6 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -115281,7 +111264,6 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder",
         "socketType": "Domination"
     },
@@ -115316,7 +111298,6 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Domination"
     },
@@ -115351,7 +111332,6 @@ export const itemDB = [
                 "encounterId": 2442
             }
         ],
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Domination"
     },
@@ -115386,7 +111366,6 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -115420,7 +111399,6 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "dropLoc": "",
         "slot": "Chest",
         "socketType": "Domination"
     },
@@ -115455,7 +111433,6 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "dropLoc": "",
         "slot": "Head",
         "socketType": "Domination"
     },
@@ -115490,7 +111467,6 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder",
         "socketType": "Domination"
     },
@@ -115525,7 +111501,6 @@ export const itemDB = [
                 "encounterId": 2442
             }
         ],
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Domination"
     },
@@ -115560,7 +111535,6 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -115594,7 +111568,6 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -115628,7 +111601,6 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "dropLoc": "",
         "slot": "Hands",
         "socketType": "Domination"
     },
@@ -115663,7 +111635,6 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "dropLoc": "",
         "slot": "Chest",
         "socketType": "Domination"
     },
@@ -115698,7 +111669,6 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -115732,7 +111702,6 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder",
         "socketType": "Domination"
     },
@@ -115767,7 +111736,6 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "dropLoc": "",
         "slot": "Head",
         "socketType": "Domination"
     },
@@ -115802,7 +111770,6 @@ export const itemDB = [
                 "encounterId": 2442
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist",
         "socketType": "Domination"
     },
@@ -115837,7 +111804,6 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -115871,7 +111837,6 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -115905,7 +111870,6 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -115939,7 +111903,6 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "dropLoc": "",
         "slot": "Chest",
         "socketType": "Domination"
     },
@@ -115974,7 +111937,6 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist",
         "socketType": "Domination"
     },
@@ -116009,7 +111971,6 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Domination"
     },
@@ -116044,7 +112005,6 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -116078,7 +112038,6 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder",
         "socketType": "Domination"
     },
@@ -116113,7 +112072,6 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "dropLoc": "",
         "slot": "Head",
         "socketType": "Domination"
     },
@@ -116148,7 +112106,6 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -116182,7 +112139,6 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "dropLoc": "",
         "slot": "Head",
         "socketType": "Domination"
     },
@@ -116217,7 +112173,6 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -116251,7 +112206,6 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -116285,7 +112239,6 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "dropLoc": "",
         "slot": "Hands",
         "socketType": "Domination"
     },
@@ -116320,7 +112273,6 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "dropLoc": "",
         "slot": "Chest",
         "socketType": "Domination"
     },
@@ -116355,7 +112307,6 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -116389,7 +112340,6 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder",
         "socketType": "Domination"
     },
@@ -116424,7 +112374,6 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Domination"
     },
@@ -116459,7 +112408,6 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Domination"
     },
@@ -116494,7 +112442,6 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -116528,7 +112475,6 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "dropLoc": "",
         "slot": "Chest",
         "socketType": "Domination"
     },
@@ -116563,7 +112509,6 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "dropLoc": "",
         "slot": "Head",
         "socketType": "Domination"
     },
@@ -116598,7 +112543,6 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder",
         "socketType": "Domination"
     },
@@ -116633,7 +112577,6 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Domination"
     },
@@ -116668,7 +112611,6 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -116702,7 +112644,6 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -116736,7 +112677,6 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "dropLoc": "",
         "slot": "Hands",
         "socketType": "Domination"
     },
@@ -116771,7 +112711,6 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "dropLoc": "",
         "slot": "Chest",
         "socketType": "Domination"
     },
@@ -116806,7 +112745,6 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -116840,7 +112778,6 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "dropLoc": "",
         "slot": "Shoulder",
         "socketType": "Domination"
     },
@@ -116875,7 +112812,6 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "dropLoc": "",
         "slot": "Head",
         "socketType": "Domination"
     },
@@ -116910,7 +112846,6 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist",
         "socketType": "Domination"
     },
@@ -116945,7 +112880,6 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -116979,7 +112913,6 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -117013,7 +112946,6 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -117047,7 +112979,6 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -117081,7 +113012,6 @@ export const itemDB = [
                 "encounterId": 999
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -117115,7 +113045,6 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -117149,7 +113078,6 @@ export const itemDB = [
                 "encounterId": 999
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -117183,7 +113111,6 @@ export const itemDB = [
                 "encounterId": 999
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -117217,7 +113144,6 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -117251,7 +113177,6 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -117285,7 +113210,6 @@ export const itemDB = [
                 "encounterId": 999
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -117319,7 +113243,6 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "dropLoc": "",
         "slot": "Feet",
         "socketType": "Domination"
     },
@@ -117354,7 +113277,6 @@ export const itemDB = [
                 "encounterId": -16
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -117388,7 +113310,6 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -117422,7 +113343,6 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -117456,7 +113376,6 @@ export const itemDB = [
                 "encounterId": 999
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -117490,7 +113409,6 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -117524,7 +113442,6 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "dropLoc": "",
         "slot": "Hands",
         "socketType": "Domination"
     },
@@ -117559,7 +113476,6 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -117593,7 +113509,6 @@ export const itemDB = [
                 "encounterId": 999
             }
         ],
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -117627,7 +113542,6 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -117661,7 +113575,6 @@ export const itemDB = [
                 "encounterId": -16
             }
         ],
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -117695,7 +113608,6 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -117729,7 +113641,6 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -117763,7 +113674,6 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -117797,7 +113707,6 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -117831,7 +113740,6 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -117865,7 +113773,6 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -117899,7 +113806,6 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -117933,7 +113839,6 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -117967,7 +113872,6 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -118001,7 +113905,6 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -118035,7 +113938,6 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -118069,7 +113971,6 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -118103,7 +114004,6 @@ export const itemDB = [
                 "encounterId": 2446
             }
         ],
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -118137,7 +114037,6 @@ export const itemDB = [
                 "encounterId": 2441
             }
         ],
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -118171,7 +114070,6 @@ export const itemDB = [
                 "encounterId": 2442
             }
         ],
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -118205,7 +114103,6 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -118239,13 +114136,17 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
             "name": "Forbidden Necromantic Tome"
         },
-        "levelRange": [220, 233, 246, 259]
+        "levelRange": [
+            220,
+            233,
+            246,
+            259
+        ]
     },
     {
         "id": 186422,
@@ -118278,7 +114179,6 @@ export const itemDB = [
                 "encounterId": 2435
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -118317,7 +114217,6 @@ export const itemDB = [
                 "encounterId": 2442
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -118361,7 +114260,7 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "dropLoc": "",
+        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -118406,7 +114305,6 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -118450,7 +114348,6 @@ export const itemDB = [
                 "encounterId": 2445
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -118490,7 +114387,6 @@ export const itemDB = [
             }
         ],
         "onUseTrinket": true,
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -118529,7 +114425,6 @@ export const itemDB = [
                 "encounterId": 2447
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -118573,7 +114468,6 @@ export const itemDB = [
                 "encounterId": 2440
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -118611,7 +114505,6 @@ export const itemDB = [
             "mastery": 11000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -118639,7 +114532,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -118667,7 +114559,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -118695,7 +114586,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7000
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -118723,7 +114613,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -118751,7 +114640,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -118779,7 +114667,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7000
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -118807,7 +114694,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -118835,7 +114721,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -118863,7 +114748,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -118891,7 +114775,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -118919,7 +114802,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -118947,7 +114829,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2600
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -118975,7 +114856,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -119003,7 +114883,6 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -119031,7 +114910,6 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -119059,7 +114937,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -119087,7 +114964,6 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -119115,7 +114991,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -119143,7 +115018,6 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -119171,7 +115045,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -119199,7 +115072,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -119227,7 +115099,6 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -119255,7 +115126,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2900
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -119283,7 +115153,6 @@ export const itemDB = [
             "mastery": 2750,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -119311,7 +115180,6 @@ export const itemDB = [
             "mastery": 5250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -119339,7 +115207,6 @@ export const itemDB = [
             "mastery": 4100,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -119367,7 +115234,6 @@ export const itemDB = [
             "mastery": 5750,
             "versatility": 11750
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -119395,7 +115261,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -119423,7 +115288,6 @@ export const itemDB = [
             "mastery": 6500,
             "versatility": 11000
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -119451,7 +115315,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -119479,7 +115342,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -119507,7 +115369,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -119535,7 +115396,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -119563,7 +115423,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -119591,7 +115450,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -119619,7 +115477,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -119647,7 +115504,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -119675,7 +115531,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -119703,7 +115558,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -119731,7 +115585,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -119759,7 +115612,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -119787,7 +115639,6 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -119815,7 +115666,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -119843,7 +115693,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -119871,7 +115720,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -119899,7 +115747,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -119927,7 +115774,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -119955,7 +115801,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -119983,7 +115828,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -120011,7 +115855,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -120039,7 +115882,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -120067,7 +115909,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -120095,7 +115936,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -120123,7 +115963,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -120151,7 +115990,6 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -120179,7 +116017,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -120207,7 +116044,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -120235,7 +116071,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -120263,7 +116098,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -120291,7 +116125,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -120319,7 +116152,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -120347,7 +116179,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -120375,7 +116206,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -120403,7 +116233,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -120431,7 +116260,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -120459,7 +116287,6 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -120487,7 +116314,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -120516,7 +116342,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -120549,7 +116374,6 @@ export const itemDB = [
             "mastery": 9500,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -120577,7 +116401,6 @@ export const itemDB = [
             "mastery": 7000,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -120605,7 +116428,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 2600
         },
-        "dropLoc": "",
         "slot": "Shield"
     },
     {
@@ -120633,7 +116455,6 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Offhand"
     },
     {
@@ -120661,7 +116482,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "1H Weapon"
     },
     {
@@ -120689,7 +116509,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "2H Weapon"
     },
     {
@@ -120717,7 +116536,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -120745,7 +116563,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -120773,7 +116590,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2600
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -120801,7 +116617,6 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 4550
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -120829,7 +116644,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -120857,7 +116671,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2750
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -120885,7 +116698,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -120913,7 +116725,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -120941,7 +116752,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -120969,7 +116779,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -120997,7 +116806,6 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -121025,7 +116833,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -121053,7 +116860,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -121081,7 +116887,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -121109,7 +116914,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 2600
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -121137,7 +116941,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -121165,7 +116968,6 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -121193,7 +116995,6 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 4550
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -121221,7 +117022,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -121249,7 +117049,6 @@ export const itemDB = [
             "mastery": 4100,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -121277,7 +117076,6 @@ export const itemDB = [
             "mastery": 4250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Head"
     },
     {
@@ -121305,7 +117103,6 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -121333,7 +117130,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Feet"
     },
     {
@@ -121361,7 +117157,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2450
         },
-        "dropLoc": "",
         "slot": "Hands"
     },
     {
@@ -121389,7 +117184,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Legs"
     },
     {
@@ -121417,7 +117211,6 @@ export const itemDB = [
             "mastery": 2450,
             "versatility": 4550
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -121445,7 +117238,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "dropLoc": "",
         "slot": "Waist"
     },
     {
@@ -121473,7 +117265,6 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Wrist"
     },
     {
@@ -121501,7 +117292,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Chest"
     },
     {
@@ -121529,7 +117319,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -121557,7 +117346,6 @@ export const itemDB = [
             "mastery": 4400,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Shoulder"
     },
     {
@@ -121585,7 +117373,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 5250
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -121613,7 +117400,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12500
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -121641,7 +117427,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4550
         },
-        "dropLoc": "",
         "slot": "Back"
     },
     {
@@ -121669,7 +117454,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 11000
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -121697,7 +117481,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck"
     },
     {
@@ -121725,7 +117508,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Finger"
     },
     {
@@ -121759,13 +117541,12 @@ export const itemDB = [
                 "encounterId": 2456
             }
         ],
-        "dropLoc": "",
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
             "name": "Soul Cage Fragment"
         },
-        "levelRange": [233]
+        "levelRange": []
     },
     {
         "id": 187534,
@@ -121792,7 +117573,6 @@ export const itemDB = [
             "mastery": 2050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Domination"
     },
@@ -121821,7 +117601,6 @@ export const itemDB = [
             "mastery": 2270,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Domination"
     },
@@ -121850,7 +117629,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2160
         },
-        "dropLoc": "",
         "slot": "Hands",
         "socketType": "Domination"
     },
@@ -121879,7 +117657,6 @@ export const itemDB = [
             "mastery": 2270,
             "versatility": 4730
         },
-        "dropLoc": "",
         "slot": "Hands",
         "socketType": "Domination"
     },
@@ -121908,7 +117685,6 @@ export const itemDB = [
             "mastery": 2270,
             "versatility": 4730
         },
-        "dropLoc": "",
         "slot": "Hands",
         "socketType": "Domination"
     },
@@ -121937,7 +117713,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 2160
         },
-        "dropLoc": "",
         "slot": "Hands",
         "socketType": "Domination"
     },
@@ -121966,7 +117741,6 @@ export const itemDB = [
             "mastery": 2270,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Domination"
     },
@@ -121995,7 +117769,6 @@ export const itemDB = [
             "mastery": 2050,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Waist",
         "socketType": "Domination"
     },
@@ -122024,11 +117797,4461 @@ export const itemDB = [
             "mastery": 9250,
             "versatility": 0
         },
-        "dropLoc": "",
         "slot": "Neck",
         "effect": {
             "type": "special",
             "name": "Passable Credentials"
+        }
+    },
+    {
+        "id": 10001,
+        "name": "Maraad's Dying Breath (Finger)",
+        "names": {
+            "cn": "",
+            "en": "Maraad's Dying Breath (Finger)",
+            "ru": "Maraad's Dying Breath (Finger)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Maraad's Dying Breath (Finger)",
+            "de": "Maraad's Dying Breath (Finger)"
+        },
+        "slot": "Finger",
+        "icon": "inv_jewelcrafting_90_maxlvlring_red",
+        "baseSlotID": 178926,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Maraad's Dying Breath"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10002,
+        "name": "Maraad's Dying Breath (Chest)",
+        "names": {
+            "cn": "",
+            "en": "Maraad's Dying Breath (Chest)",
+            "ru": "Maraad's Dying Breath (Chest)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Maraad's Dying Breath (Chest)",
+            "de": "Maraad's Dying Breath (Chest)"
+        },
+        "slot": "Chest",
+        "icon": "inv_chest_plate_mawraid_d_01",
+        "baseSlotID": 171412,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Maraad's Dying Breath"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10003,
+        "name": "Shock Barrier (Legs)",
+        "names": {
+            "cn": "",
+            "en": "Shock Barrier (Legs)",
+            "ru": "Shock Barrier (Legs)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Shock Barrier (Legs)",
+            "de": "Shock Barrier (Legs)"
+        },
+        "slot": "Legs",
+        "icon": "inv_pant_plate_mawraid_d_01",
+        "baseSlotID": 171416,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Shock Barrier"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10004,
+        "name": "Shock Barrier (Feet)",
+        "names": {
+            "cn": "",
+            "en": "Shock Barrier (Feet)",
+            "ru": "Shock Barrier (Feet)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Shock Barrier (Feet)",
+            "de": "Shock Barrier (Feet)"
+        },
+        "slot": "Feet",
+        "icon": "inv_boot_plate_mawraidmythic_d_01",
+        "baseSlotID": 171413,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Shock Barrier"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10005,
+        "name": "Shadowbreaker, Dawn of the Sun (Shoulder)",
+        "names": {
+            "cn": "",
+            "en": "Shadowbreaker, Dawn of the Sun (Shoulder)",
+            "ru": "Shadowbreaker, Dawn of the Sun (Shoulder)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Shadowbreaker, Dawn of the Sun (Shoulder)",
+            "de": "Shadowbreaker, Dawn of the Sun (Shoulder)"
+        },
+        "slot": "Shoulder",
+        "icon": "inv_shoulder_plate_mawraidmythic_d_01",
+        "baseSlotID": 171417,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Shadowbreaker, Dawn of the Sun"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10006,
+        "name": "Shadowbreaker, Dawn of the Sun (Waist)",
+        "names": {
+            "cn": "",
+            "en": "Shadowbreaker, Dawn of the Sun (Waist)",
+            "ru": "Shadowbreaker, Dawn of the Sun (Waist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Shadowbreaker, Dawn of the Sun (Waist)",
+            "de": "Shadowbreaker, Dawn of the Sun (Waist)"
+        },
+        "slot": "Waist",
+        "icon": "inv_belt_plate_mawraidmythic_d_01",
+        "baseSlotID": 171418,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Shadowbreaker, Dawn of the Sun"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10007,
+        "name": "Shadowbreaker, Dawn of the Sun (Hands)",
+        "names": {
+            "cn": "",
+            "en": "Shadowbreaker, Dawn of the Sun (Hands)",
+            "ru": "Shadowbreaker, Dawn of the Sun (Hands)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Shadowbreaker, Dawn of the Sun (Hands)",
+            "de": "Shadowbreaker, Dawn of the Sun (Hands)"
+        },
+        "slot": "Hands",
+        "icon": "inv_glove_plate_mawraidmythic_d_01",
+        "baseSlotID": 171414,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Shadowbreaker, Dawn of the Sun"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10008,
+        "name": "Inflorescence of the Sunwell (Feet)",
+        "names": {
+            "cn": "",
+            "en": "Inflorescence of the Sunwell (Feet)",
+            "ru": "Inflorescence of the Sunwell (Feet)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Inflorescence of the Sunwell (Feet)",
+            "de": "Inflorescence of the Sunwell (Feet)"
+        },
+        "slot": "Feet",
+        "icon": "inv_boot_plate_mawraidmythic_d_01",
+        "baseSlotID": 171413,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Inflorescence of the Sunwell"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10009,
+        "name": "Inflorescence of the Sunwell (Back)",
+        "names": {
+            "cn": "",
+            "en": "Inflorescence of the Sunwell (Back)",
+            "ru": "Inflorescence of the Sunwell (Back)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Inflorescence of the Sunwell (Back)",
+            "de": "Inflorescence of the Sunwell (Back)"
+        },
+        "slot": "Back",
+        "icon": "inv_cloth_mawraid_d_01_cape",
+        "baseSlotID": 173242,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Inflorescence of the Sunwell"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10010,
+        "name": "Of Dusk and Dawn (Head)",
+        "names": {
+            "cn": "",
+            "en": "Of Dusk and Dawn (Head)",
+            "ru": "Of Dusk and Dawn (Head)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Of Dusk and Dawn (Head)",
+            "de": "Of Dusk and Dawn (Head)"
+        },
+        "slot": "Head",
+        "icon": "inv_helm_plate_mawraidmythic_d_01",
+        "baseSlotID": 171415,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Of Dusk and Dawn"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10011,
+        "name": "Of Dusk and Dawn (Neck)",
+        "names": {
+            "cn": "",
+            "en": "Of Dusk and Dawn (Neck)",
+            "ru": "Of Dusk and Dawn (Neck)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Of Dusk and Dawn (Neck)",
+            "de": "Of Dusk and Dawn (Neck)"
+        },
+        "slot": "Neck",
+        "icon": "inv_jewelcrafting_90_maxlvlneck_red",
+        "baseSlotID": 178927,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Of Dusk and Dawn"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10012,
+        "name": "Of Dusk and Dawn (Shoulder)",
+        "names": {
+            "cn": "",
+            "en": "Of Dusk and Dawn (Shoulder)",
+            "ru": "Of Dusk and Dawn (Shoulder)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Of Dusk and Dawn (Shoulder)",
+            "de": "Of Dusk and Dawn (Shoulder)"
+        },
+        "slot": "Shoulder",
+        "icon": "inv_shoulder_plate_mawraidmythic_d_01",
+        "baseSlotID": 171417,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Of Dusk and Dawn"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10013,
+        "name": "Relentless Inquisitor (Legs)",
+        "names": {
+            "cn": "",
+            "en": "Relentless Inquisitor (Legs)",
+            "ru": "Relentless Inquisitor (Legs)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Relentless Inquisitor (Legs)",
+            "de": "Relentless Inquisitor (Legs)"
+        },
+        "slot": "Legs",
+        "icon": "inv_pant_plate_mawraid_d_01",
+        "baseSlotID": 171416,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Relentless Inquisitor"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10014,
+        "name": "Relentless Inquisitor (Back)",
+        "names": {
+            "cn": "",
+            "en": "Relentless Inquisitor (Back)",
+            "ru": "Relentless Inquisitor (Back)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Relentless Inquisitor (Back)",
+            "de": "Relentless Inquisitor (Back)"
+        },
+        "slot": "Back",
+        "icon": "inv_cloth_mawraid_d_01_cape",
+        "baseSlotID": 173242,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Relentless Inquisitor"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10015,
+        "name": "The Mad Paragon (Waist)",
+        "names": {
+            "cn": "",
+            "en": "The Mad Paragon (Waist)",
+            "ru": "The Mad Paragon (Waist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "The Mad Paragon (Waist)",
+            "de": "The Mad Paragon (Waist)"
+        },
+        "slot": "Waist",
+        "icon": "inv_belt_plate_mawraidmythic_d_01",
+        "baseSlotID": 171418,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "The Mad Paragon"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10016,
+        "name": "The Mad Paragon (Feet)",
+        "names": {
+            "cn": "",
+            "en": "The Mad Paragon (Feet)",
+            "ru": "The Mad Paragon (Feet)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "The Mad Paragon (Feet)",
+            "de": "The Mad Paragon (Feet)"
+        },
+        "slot": "Feet",
+        "icon": "inv_boot_plate_mawraidmythic_d_01",
+        "baseSlotID": 171413,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "The Mad Paragon"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10017,
+        "name": "Radiant Embers (Wrist)",
+        "names": {
+            "cn": "",
+            "en": "Radiant Embers (Wrist)",
+            "ru": "Radiant Embers (Wrist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Radiant Embers (Wrist)",
+            "de": "Radiant Embers (Wrist)"
+        },
+        "slot": "Wrist",
+        "icon": "inv_bracer_plate_mawraid_d_01",
+        "baseSlotID": 171419,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Radiant Embers"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10018,
+        "name": "Radiant Embers (Hands)",
+        "names": {
+            "cn": "",
+            "en": "Radiant Embers (Hands)",
+            "ru": "Radiant Embers (Hands)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Radiant Embers (Hands)",
+            "de": "Radiant Embers (Hands)"
+        },
+        "slot": "Hands",
+        "icon": "inv_glove_plate_mawraidmythic_d_01",
+        "baseSlotID": 171414,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Radiant Embers"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10019,
+        "name": "Radiant Embers (Back)",
+        "names": {
+            "cn": "",
+            "en": "Radiant Embers (Back)",
+            "ru": "Radiant Embers (Back)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Radiant Embers (Back)",
+            "de": "Radiant Embers (Back)"
+        },
+        "slot": "Back",
+        "icon": "inv_cloth_mawraid_d_01_cape",
+        "baseSlotID": 173242,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Radiant Embers"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10020,
+        "name": "Duty-Bound Gavel (Head)",
+        "names": {
+            "cn": "",
+            "en": "Duty-Bound Gavel (Head)",
+            "ru": "Duty-Bound Gavel (Head)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Duty-Bound Gavel (Head)",
+            "de": "Duty-Bound Gavel (Head)"
+        },
+        "slot": "Head",
+        "icon": "inv_helm_plate_mawraidmythic_d_01",
+        "baseSlotID": 171415,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Duty-Bound Gavel"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10021,
+        "name": "Duty-Bound Gavel (Shoulder)",
+        "names": {
+            "cn": "",
+            "en": "Duty-Bound Gavel (Shoulder)",
+            "ru": "Duty-Bound Gavel (Shoulder)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Duty-Bound Gavel (Shoulder)",
+            "de": "Duty-Bound Gavel (Shoulder)"
+        },
+        "slot": "Shoulder",
+        "icon": "inv_shoulder_plate_mawraidmythic_d_01",
+        "baseSlotID": 171417,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Duty-Bound Gavel"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10022,
+        "name": "Duty-Bound Gavel (Finger)",
+        "names": {
+            "cn": "",
+            "en": "Duty-Bound Gavel (Finger)",
+            "ru": "Duty-Bound Gavel (Finger)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Duty-Bound Gavel (Finger)",
+            "de": "Duty-Bound Gavel (Finger)"
+        },
+        "slot": "Finger",
+        "icon": "inv_jewelcrafting_90_maxlvlring_red",
+        "baseSlotID": 178926,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Duty-Bound Gavel"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10023,
+        "name": "Seasons of Plenty (Legs)",
+        "names": {
+            "cn": "",
+            "en": "Seasons of Plenty (Legs)",
+            "ru": "Seasons of Plenty (Legs)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Seasons of Plenty (Legs)",
+            "de": "Seasons of Plenty (Legs)"
+        },
+        "slot": "Legs",
+        "icon": "inv_pant_plate_mawraid_d_01",
+        "baseSlotID": 171416,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Seasons of Plenty"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10024,
+        "name": "Seasons of Plenty (Feet)",
+        "names": {
+            "cn": "",
+            "en": "Seasons of Plenty (Feet)",
+            "ru": "Seasons of Plenty (Feet)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Seasons of Plenty (Feet)",
+            "de": "Seasons of Plenty (Feet)"
+        },
+        "slot": "Feet",
+        "icon": "inv_boot_plate_mawraidmythic_d_01",
+        "baseSlotID": 171413,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Seasons of Plenty"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10025,
+        "name": "Divine Resonance (Chest)",
+        "names": {
+            "cn": "",
+            "en": "Divine Resonance (Chest)",
+            "ru": "Divine Resonance (Chest)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Divine Resonance (Chest)",
+            "de": "Divine Resonance (Chest)"
+        },
+        "slot": "Chest",
+        "icon": "inv_chest_plate_mawraid_d_01",
+        "baseSlotID": 171412,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Divine Resonance"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10026,
+        "name": "Divine Resonance (Waist)",
+        "names": {
+            "cn": "",
+            "en": "Divine Resonance (Waist)",
+            "ru": "Divine Resonance (Waist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Divine Resonance (Waist)",
+            "de": "Divine Resonance (Waist)"
+        },
+        "slot": "Waist",
+        "icon": "inv_belt_plate_mawraidmythic_d_01",
+        "baseSlotID": 171418,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Paladin"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Divine Resonance"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10027,
+        "name": "The Dark Titan's Lesson (Neck)",
+        "names": {
+            "cn": "",
+            "en": "The Dark Titan's Lesson (Neck)",
+            "ru": "The Dark Titan's Lesson (Neck)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "The Dark Titan's Lesson (Neck)",
+            "de": "The Dark Titan's Lesson (Neck)"
+        },
+        "slot": "Neck",
+        "icon": "inv_jewelcrafting_90_maxlvlneck_red",
+        "baseSlotID": 178927,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "The Dark Titan's Lesson"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10028,
+        "name": "The Dark Titan's Lesson (Back)",
+        "names": {
+            "cn": "",
+            "en": "The Dark Titan's Lesson (Back)",
+            "ru": "The Dark Titan's Lesson (Back)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "The Dark Titan's Lesson (Back)",
+            "de": "The Dark Titan's Lesson (Back)"
+        },
+        "slot": "Back",
+        "icon": "inv_cloth_mawraid_d_01_cape",
+        "baseSlotID": 173242,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "The Dark Titan's Lesson"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10029,
+        "name": "Verdant Infusion (Shoulder)",
+        "names": {
+            "cn": "",
+            "en": "Verdant Infusion (Shoulder)",
+            "ru": "Verdant Infusion (Shoulder)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Verdant Infusion (Shoulder)",
+            "de": "Verdant Infusion (Shoulder)"
+        },
+        "slot": "Shoulder",
+        "icon": "inv_shoulder_leather_mawraid_d_01",
+        "baseSlotID": 172319,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Verdant Infusion"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10030,
+        "name": "Verdant Infusion (Hands)",
+        "names": {
+            "cn": "",
+            "en": "Verdant Infusion (Hands)",
+            "ru": "Verdant Infusion (Hands)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Verdant Infusion (Hands)",
+            "de": "Verdant Infusion (Hands)"
+        },
+        "slot": "Hands",
+        "icon": "inv_glove_leather_mawraid_d_01",
+        "baseSlotID": 172316,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Verdant Infusion"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10031,
+        "name": "Verdant Infusion (Back)",
+        "names": {
+            "cn": "",
+            "en": "Verdant Infusion (Back)",
+            "ru": "Verdant Infusion (Back)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Verdant Infusion (Back)",
+            "de": "Verdant Infusion (Back)"
+        },
+        "slot": "Back",
+        "icon": "inv_cloth_mawraid_d_01_cape",
+        "baseSlotID": 173242,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Verdant Infusion"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10032,
+        "name": "Vision of Unending Growth (Head)",
+        "names": {
+            "cn": "",
+            "en": "Vision of Unending Growth (Head)",
+            "ru": "Vision of Unending Growth (Head)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Vision of Unending Growth (Head)",
+            "de": "Vision of Unending Growth (Head)"
+        },
+        "slot": "Head",
+        "icon": "inv_helm_leather_mawraid_d_01",
+        "baseSlotID": 172317,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Vision of Unending Growth"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10033,
+        "name": "Vision of Unending Growth (Legs)",
+        "names": {
+            "cn": "",
+            "en": "Vision of Unending Growth (Legs)",
+            "ru": "Vision of Unending Growth (Legs)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Vision of Unending Growth (Legs)",
+            "de": "Vision of Unending Growth (Legs)"
+        },
+        "slot": "Legs",
+        "icon": "inv_pant_leather_mawraid_d_01",
+        "baseSlotID": 172318,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Vision of Unending Growth"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10034,
+        "name": "Vision of Unending Growth (Feet)",
+        "names": {
+            "cn": "",
+            "en": "Vision of Unending Growth (Feet)",
+            "ru": "Vision of Unending Growth (Feet)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Vision of Unending Growth (Feet)",
+            "de": "Vision of Unending Growth (Feet)"
+        },
+        "slot": "Feet",
+        "icon": "inv_boot_leather_mawraid_d_01",
+        "baseSlotID": 172315,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Vision of Unending Growth"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10035,
+        "name": "Draught of Deep Focus (Neck)",
+        "names": {
+            "cn": "",
+            "en": "Draught of Deep Focus (Neck)",
+            "ru": "Draught of Deep Focus (Neck)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Draught of Deep Focus (Neck)",
+            "de": "Draught of Deep Focus (Neck)"
+        },
+        "slot": "Neck",
+        "icon": "inv_jewelcrafting_90_maxlvlneck_red",
+        "baseSlotID": 178927,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Draught of Deep Focus"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10036,
+        "name": "Draught of Deep Focus (Chest)",
+        "names": {
+            "cn": "",
+            "en": "Draught of Deep Focus (Chest)",
+            "ru": "Draught of Deep Focus (Chest)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Draught of Deep Focus (Chest)",
+            "de": "Draught of Deep Focus (Chest)"
+        },
+        "slot": "Chest",
+        "icon": "inv_chest_leather_mawraid_d_01",
+        "baseSlotID": 172314,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Draught of Deep Focus"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10037,
+        "name": "Lycara's Fleeting Grasp (Waist)",
+        "names": {
+            "cn": "",
+            "en": "Lycara's Fleeting Grasp (Waist)",
+            "ru": "Lycara's Fleeting Grasp (Waist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Lycara's Fleeting Grasp (Waist)",
+            "de": "Lycara's Fleeting Grasp (Waist)"
+        },
+        "slot": "Waist",
+        "icon": "inv_belt_leather_mawraid_d_01",
+        "baseSlotID": 172320,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Lycara's Fleeting Grasp"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10038,
+        "name": "Lycara's Fleeting Grasp (Feet)",
+        "names": {
+            "cn": "",
+            "en": "Lycara's Fleeting Grasp (Feet)",
+            "ru": "Lycara's Fleeting Grasp (Feet)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Lycara's Fleeting Grasp (Feet)",
+            "de": "Lycara's Fleeting Grasp (Feet)"
+        },
+        "slot": "Feet",
+        "icon": "inv_boot_leather_mawraid_d_01",
+        "baseSlotID": 172315,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Lycara's Fleeting Grasp"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10039,
+        "name": "Memory of the Mother Tree (Legs)",
+        "names": {
+            "cn": "",
+            "en": "Memory of the Mother Tree (Legs)",
+            "ru": "Memory of the Mother Tree (Legs)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Memory of the Mother Tree (Legs)",
+            "de": "Memory of the Mother Tree (Legs)"
+        },
+        "slot": "Legs",
+        "icon": "inv_pant_leather_mawraid_d_01",
+        "baseSlotID": 172318,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Memory of the Mother Tree"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10040,
+        "name": "Memory of the Mother Tree (Wrist)",
+        "names": {
+            "cn": "",
+            "en": "Memory of the Mother Tree (Wrist)",
+            "ru": "Memory of the Mother Tree (Wrist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Memory of the Mother Tree (Wrist)",
+            "de": "Memory of the Mother Tree (Wrist)"
+        },
+        "slot": "Wrist",
+        "icon": "inv_mail_mawraid_d_01_bracer",
+        "baseSlotID": 172321,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Memory of the Mother Tree"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10041,
+        "name": "Locust Swarm (Chest)",
+        "names": {
+            "cn": "",
+            "en": "Locust Swarm (Chest)",
+            "ru": "Locust Swarm (Chest)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Locust Swarm (Chest)",
+            "de": "Locust Swarm (Chest)"
+        },
+        "slot": "Chest",
+        "icon": "inv_chest_leather_mawraid_d_01",
+        "baseSlotID": 172314,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Locust Swarm"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10042,
+        "name": "Locust Swarm (Wrist)",
+        "names": {
+            "cn": "",
+            "en": "Locust Swarm (Wrist)",
+            "ru": "Locust Swarm (Wrist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Locust Swarm (Wrist)",
+            "de": "Locust Swarm (Wrist)"
+        },
+        "slot": "Wrist",
+        "icon": "inv_mail_mawraid_d_01_bracer",
+        "baseSlotID": 172321,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Locust Swarm"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10043,
+        "name": "Kindred Affinity (Neck)",
+        "names": {
+            "cn": "",
+            "en": "Kindred Affinity (Neck)",
+            "ru": "Kindred Affinity (Neck)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Kindred Affinity (Neck)",
+            "de": "Kindred Affinity (Neck)"
+        },
+        "slot": "Neck",
+        "icon": "inv_jewelcrafting_90_maxlvlneck_red",
+        "baseSlotID": 178927,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Kindred Affinity"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10044,
+        "name": "Kindred Affinity (Shoulder)",
+        "names": {
+            "cn": "",
+            "en": "Kindred Affinity (Shoulder)",
+            "ru": "Kindred Affinity (Shoulder)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Kindred Affinity (Shoulder)",
+            "de": "Kindred Affinity (Shoulder)"
+        },
+        "slot": "Shoulder",
+        "icon": "inv_shoulder_leather_mawraid_d_01",
+        "baseSlotID": 172319,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Kindred Affinity"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10045,
+        "name": "Sinful Hysteria (Waist)",
+        "names": {
+            "cn": "",
+            "en": "Sinful Hysteria (Waist)",
+            "ru": "Sinful Hysteria (Waist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Sinful Hysteria (Waist)",
+            "de": "Sinful Hysteria (Waist)"
+        },
+        "slot": "Waist",
+        "icon": "inv_belt_leather_mawraid_d_01",
+        "baseSlotID": 172320,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Sinful Hysteria"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10046,
+        "name": "Sinful Hysteria (Hands)",
+        "names": {
+            "cn": "",
+            "en": "Sinful Hysteria (Hands)",
+            "ru": "Sinful Hysteria (Hands)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Sinful Hysteria (Hands)",
+            "de": "Sinful Hysteria (Hands)"
+        },
+        "slot": "Hands",
+        "icon": "inv_glove_leather_mawraid_d_01",
+        "baseSlotID": 172316,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Sinful Hysteria"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10047,
+        "name": "Celestial Spirits (Legs)",
+        "names": {
+            "cn": "",
+            "en": "Celestial Spirits (Legs)",
+            "ru": "Celestial Spirits (Legs)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Celestial Spirits (Legs)",
+            "de": "Celestial Spirits (Legs)"
+        },
+        "slot": "Legs",
+        "icon": "inv_pant_leather_mawraid_d_01",
+        "baseSlotID": 172318,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Celestial Spirits"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10048,
+        "name": "Celestial Spirits (Feet)",
+        "names": {
+            "cn": "",
+            "en": "Celestial Spirits (Feet)",
+            "ru": "Celestial Spirits (Feet)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Celestial Spirits (Feet)",
+            "de": "Celestial Spirits (Feet)"
+        },
+        "slot": "Feet",
+        "icon": "inv_boot_leather_mawraid_d_01",
+        "baseSlotID": 172315,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Druid"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Celestial Spirits"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10049,
+        "name": "The Penitent One (Back)",
+        "names": {
+            "cn": "",
+            "en": "The Penitent One (Back)",
+            "ru": "The Penitent One (Back)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "The Penitent One (Back)",
+            "de": "The Penitent One (Back)"
+        },
+        "slot": "Back",
+        "icon": "inv_cloth_mawraid_d_01_cape",
+        "baseSlotID": 173242,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "The Penitent One"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10050,
+        "name": "The Penitent One (Feet)",
+        "names": {
+            "cn": "",
+            "en": "The Penitent One (Feet)",
+            "ru": "The Penitent One (Feet)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "The Penitent One (Feet)",
+            "de": "The Penitent One (Feet)"
+        },
+        "slot": "Feet",
+        "icon": "inv_cloth_mawraid_d_01_boot",
+        "baseSlotID": 173243,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "The Penitent One"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10051,
+        "name": "Crystalline Reflection (Shoulder)",
+        "names": {
+            "cn": "",
+            "en": "Crystalline Reflection (Shoulder)",
+            "ru": "Crystalline Reflection (Shoulder)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Crystalline Reflection (Shoulder)",
+            "de": "Crystalline Reflection (Shoulder)"
+        },
+        "slot": "Shoulder",
+        "icon": "inv_cloth_mawraid_d_01_shoulder",
+        "baseSlotID": 173247,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Crystalline Reflection"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10052,
+        "name": "Crystalline Reflection (Hands)",
+        "names": {
+            "cn": "",
+            "en": "Crystalline Reflection (Hands)",
+            "ru": "Crystalline Reflection (Hands)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Crystalline Reflection (Hands)",
+            "de": "Crystalline Reflection (Hands)"
+        },
+        "slot": "Hands",
+        "icon": "inv_cloth_mawraid_d_01_glove",
+        "baseSlotID": 173244,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Crystalline Reflection"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10053,
+        "name": "Kiss of Death (Legs)",
+        "names": {
+            "cn": "",
+            "en": "Kiss of Death (Legs)",
+            "ru": "Kiss of Death (Legs)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Kiss of Death (Legs)",
+            "de": "Kiss of Death (Legs)"
+        },
+        "slot": "Legs",
+        "icon": "inv_cloth_mawraid_d_01_pant",
+        "baseSlotID": 173246,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Kiss of Death"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10054,
+        "name": "Kiss of Death (Feet)",
+        "names": {
+            "cn": "",
+            "en": "Kiss of Death (Feet)",
+            "ru": "Kiss of Death (Feet)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Kiss of Death (Feet)",
+            "de": "Kiss of Death (Feet)"
+        },
+        "slot": "Feet",
+        "icon": "inv_cloth_mawraid_d_01_boot",
+        "baseSlotID": 173243,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Kiss of Death"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10055,
+        "name": "Clarity of Mind (Chest)",
+        "names": {
+            "cn": "",
+            "en": "Clarity of Mind (Chest)",
+            "ru": "Clarity of Mind (Chest)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Clarity of Mind (Chest)",
+            "de": "Clarity of Mind (Chest)"
+        },
+        "slot": "Chest",
+        "icon": "inv_cloth_mawraid_d_01_robe",
+        "baseSlotID": 173241,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Clarity of Mind"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10056,
+        "name": "Clarity of Mind (Finger)",
+        "names": {
+            "cn": "",
+            "en": "Clarity of Mind (Finger)",
+            "ru": "Clarity of Mind (Finger)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Clarity of Mind (Finger)",
+            "de": "Clarity of Mind (Finger)"
+        },
+        "slot": "Finger",
+        "icon": "inv_jewelcrafting_90_maxlvlring_red",
+        "baseSlotID": 178926,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Clarity of Mind"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10057,
+        "name": "Twins of the Sun Priestess (Head)",
+        "names": {
+            "cn": "",
+            "en": "Twins of the Sun Priestess (Head)",
+            "ru": "Twins of the Sun Priestess (Head)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Twins of the Sun Priestess (Head)",
+            "de": "Twins of the Sun Priestess (Head)"
+        },
+        "slot": "Head",
+        "icon": "inv_cloth_mawraid_d_01_helm",
+        "baseSlotID": 173245,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest",
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Twins of the Sun Priestess"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10058,
+        "name": "Twins of the Sun Priestess (Neck)",
+        "names": {
+            "cn": "",
+            "en": "Twins of the Sun Priestess (Neck)",
+            "ru": "Twins of the Sun Priestess (Neck)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Twins of the Sun Priestess (Neck)",
+            "de": "Twins of the Sun Priestess (Neck)"
+        },
+        "slot": "Neck",
+        "icon": "inv_jewelcrafting_90_maxlvlneck_red",
+        "baseSlotID": 178927,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest",
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Twins of the Sun Priestess"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10059,
+        "name": "Twins of the Sun Priestess (Shoulder)",
+        "names": {
+            "cn": "",
+            "en": "Twins of the Sun Priestess (Shoulder)",
+            "ru": "Twins of the Sun Priestess (Shoulder)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Twins of the Sun Priestess (Shoulder)",
+            "de": "Twins of the Sun Priestess (Shoulder)"
+        },
+        "slot": "Shoulder",
+        "icon": "inv_cloth_mawraid_d_01_shoulder",
+        "baseSlotID": 173247,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest",
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Twins of the Sun Priestess"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10060,
+        "name": "Cauterizing Shadows (Waist)",
+        "names": {
+            "cn": "",
+            "en": "Cauterizing Shadows (Waist)",
+            "ru": "Cauterizing Shadows (Waist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Cauterizing Shadows (Waist)",
+            "de": "Cauterizing Shadows (Waist)"
+        },
+        "slot": "Waist",
+        "icon": "inv_cloth_mawraid_d_01_belt",
+        "baseSlotID": 173248,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest",
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Cauterizing Shadows"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10061,
+        "name": "Cauterizing Shadows (Feet)",
+        "names": {
+            "cn": "",
+            "en": "Cauterizing Shadows (Feet)",
+            "ru": "Cauterizing Shadows (Feet)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Cauterizing Shadows (Feet)",
+            "de": "Cauterizing Shadows (Feet)"
+        },
+        "slot": "Feet",
+        "icon": "inv_cloth_mawraid_d_01_boot",
+        "baseSlotID": 173243,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest",
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Cauterizing Shadows"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10062,
+        "name": "Sphere's Harmony (Legs)",
+        "names": {
+            "cn": "",
+            "en": "Sphere's Harmony (Legs)",
+            "ru": "Sphere's Harmony (Legs)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Sphere's Harmony (Legs)",
+            "de": "Sphere's Harmony (Legs)"
+        },
+        "slot": "Legs",
+        "icon": "inv_cloth_mawraid_d_01_pant",
+        "baseSlotID": 173246,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest",
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Sphere's Harmony"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10063,
+        "name": "Sphere's Harmony (Feet)",
+        "names": {
+            "cn": "",
+            "en": "Sphere's Harmony (Feet)",
+            "ru": "Sphere's Harmony (Feet)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Sphere's Harmony (Feet)",
+            "de": "Sphere's Harmony (Feet)"
+        },
+        "slot": "Feet",
+        "icon": "inv_cloth_mawraid_d_01_boot",
+        "baseSlotID": 173243,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest",
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Sphere's Harmony"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10064,
+        "name": "Shadow Word: Manipulation (Neck)",
+        "names": {
+            "cn": "",
+            "en": "Shadow Word: Manipulation (Neck)",
+            "ru": "Shadow Word: Manipulation (Neck)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Shadow Word: Manipulation (Neck)",
+            "de": "Shadow Word: Manipulation (Neck)"
+        },
+        "slot": "Neck",
+        "icon": "inv_jewelcrafting_90_maxlvlneck_red",
+        "baseSlotID": 178927,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest",
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Shadow Word: Manipulation"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10065,
+        "name": "Shadow Word: Manipulation (Wrist)",
+        "names": {
+            "cn": "",
+            "en": "Shadow Word: Manipulation (Wrist)",
+            "ru": "Shadow Word: Manipulation (Wrist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Shadow Word: Manipulation (Wrist)",
+            "de": "Shadow Word: Manipulation (Wrist)"
+        },
+        "slot": "Wrist",
+        "icon": "inv_cloth_mawraid_d_01_bracer",
+        "baseSlotID": 173249,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest",
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Shadow Word: Manipulation"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10066,
+        "name": "Pallid Command (Finger)",
+        "names": {
+            "cn": "",
+            "en": "Pallid Command (Finger)",
+            "ru": "Pallid Command (Finger)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Pallid Command (Finger)",
+            "de": "Pallid Command (Finger)"
+        },
+        "slot": "Finger",
+        "icon": "inv_jewelcrafting_90_maxlvlring_red",
+        "baseSlotID": 178926,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest",
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Pallid Command"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10067,
+        "name": "Pallid Command (Feet)",
+        "names": {
+            "cn": "",
+            "en": "Pallid Command (Feet)",
+            "ru": "Pallid Command (Feet)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Pallid Command (Feet)",
+            "de": "Pallid Command (Feet)"
+        },
+        "slot": "Feet",
+        "icon": "inv_cloth_mawraid_d_01_boot",
+        "baseSlotID": 173243,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Discipline Priest",
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Pallid Command"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10068,
+        "name": "Harmonious Apparatus (Finger)",
+        "names": {
+            "cn": "",
+            "en": "Harmonious Apparatus (Finger)",
+            "ru": "Harmonious Apparatus (Finger)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Harmonious Apparatus (Finger)",
+            "de": "Harmonious Apparatus (Finger)"
+        },
+        "slot": "Finger",
+        "icon": "inv_jewelcrafting_90_maxlvlring_red",
+        "baseSlotID": 178926,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Harmonious Apparatus"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10069,
+        "name": "Harmonious Apparatus (Shoulder)",
+        "names": {
+            "cn": "",
+            "en": "Harmonious Apparatus (Shoulder)",
+            "ru": "Harmonious Apparatus (Shoulder)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Harmonious Apparatus (Shoulder)",
+            "de": "Harmonious Apparatus (Shoulder)"
+        },
+        "slot": "Shoulder",
+        "icon": "inv_cloth_mawraid_d_01_shoulder",
+        "baseSlotID": 173247,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Harmonious Apparatus"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10070,
+        "name": "Flash Concentration (Neck)",
+        "names": {
+            "cn": "",
+            "en": "Flash Concentration (Neck)",
+            "ru": "Flash Concentration (Neck)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Flash Concentration (Neck)",
+            "de": "Flash Concentration (Neck)"
+        },
+        "slot": "Neck",
+        "icon": "inv_jewelcrafting_90_maxlvlneck_red",
+        "baseSlotID": 178927,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Flash Concentration"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10071,
+        "name": "Flash Concentration (Wrist)",
+        "names": {
+            "cn": "",
+            "en": "Flash Concentration (Wrist)",
+            "ru": "Flash Concentration (Wrist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Flash Concentration (Wrist)",
+            "de": "Flash Concentration (Wrist)"
+        },
+        "slot": "Wrist",
+        "icon": "inv_cloth_mawraid_d_01_bracer",
+        "baseSlotID": 173249,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Flash Concentration"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10072,
+        "name": "Divine Image (Head)",
+        "names": {
+            "cn": "",
+            "en": "Divine Image (Head)",
+            "ru": "Divine Image (Head)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Divine Image (Head)",
+            "de": "Divine Image (Head)"
+        },
+        "slot": "Head",
+        "icon": "inv_cloth_mawraid_d_01_helm",
+        "baseSlotID": 173245,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Divine Image"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10073,
+        "name": "Divine Image (Waist)",
+        "names": {
+            "cn": "",
+            "en": "Divine Image (Waist)",
+            "ru": "Divine Image (Waist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Divine Image (Waist)",
+            "de": "Divine Image (Waist)"
+        },
+        "slot": "Waist",
+        "icon": "inv_cloth_mawraid_d_01_belt",
+        "baseSlotID": 173248,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Divine Image"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10074,
+        "name": "Divine Image (Back)",
+        "names": {
+            "cn": "",
+            "en": "Divine Image (Back)",
+            "ru": "Divine Image (Back)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Divine Image (Back)",
+            "de": "Divine Image (Back)"
+        },
+        "slot": "Back",
+        "icon": "inv_cloth_mawraid_d_01_cape",
+        "baseSlotID": 173242,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Divine Image"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10075,
+        "name": "Harmonious Apparatus (Finger)",
+        "names": {
+            "cn": "",
+            "en": "Harmonious Apparatus (Finger)",
+            "ru": "Harmonious Apparatus (Finger)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Harmonious Apparatus (Finger)",
+            "de": "Harmonious Apparatus (Finger)"
+        },
+        "slot": "Finger",
+        "icon": "inv_jewelcrafting_90_maxlvlring_red",
+        "baseSlotID": 178926,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Harmonious Apparatus"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10076,
+        "name": "Harmonious Apparatus (Shoulder)",
+        "names": {
+            "cn": "",
+            "en": "Harmonious Apparatus (Shoulder)",
+            "ru": "Harmonious Apparatus (Shoulder)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Harmonious Apparatus (Shoulder)",
+            "de": "Harmonious Apparatus (Shoulder)"
+        },
+        "slot": "Shoulder",
+        "icon": "inv_cloth_mawraid_d_01_shoulder",
+        "baseSlotID": 173247,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Harmonious Apparatus"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10077,
+        "name": "X'anshi, Return of Archbishop Benedictus (Legs)",
+        "names": {
+            "cn": "",
+            "en": "X'anshi, Return of Archbishop Benedictus (Legs)",
+            "ru": "X'anshi, Return of Archbishop Benedictus (Legs)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "X'anshi, Return of Archbishop Benedictus (Legs)",
+            "de": "X'anshi, Return of Archbishop Benedictus (Legs)"
+        },
+        "slot": "Legs",
+        "icon": "inv_cloth_mawraid_d_01_pant",
+        "baseSlotID": 173246,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "X'anshi, Return of Archbishop Benedictus"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10078,
+        "name": "X'anshi, Return of Archbishop Benedictus (Back)",
+        "names": {
+            "cn": "",
+            "en": "X'anshi, Return of Archbishop Benedictus (Back)",
+            "ru": "X'anshi, Return of Archbishop Benedictus (Back)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "X'anshi, Return of Archbishop Benedictus (Back)",
+            "de": "X'anshi, Return of Archbishop Benedictus (Back)"
+        },
+        "slot": "Back",
+        "icon": "inv_cloth_mawraid_d_01_cape",
+        "baseSlotID": 173242,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Holy Priest"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "X'anshi, Return of Archbishop Benedictus"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10079,
+        "name": "Primal Tide Core (Head)",
+        "names": {
+            "cn": "",
+            "en": "Primal Tide Core (Head)",
+            "ru": "Primal Tide Core (Head)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Primal Tide Core (Head)",
+            "de": "Primal Tide Core (Head)"
+        },
+        "slot": "Head",
+        "icon": "inv_mail_mawraid_d_01_helm",
+        "baseSlotID": 172325,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Primal Tide Core"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10080,
+        "name": "Primal Tide Core (Hands)",
+        "names": {
+            "cn": "",
+            "en": "Primal Tide Core (Hands)",
+            "ru": "Primal Tide Core (Hands)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Primal Tide Core (Hands)",
+            "de": "Primal Tide Core (Hands)"
+        },
+        "slot": "Hands",
+        "icon": "inv_mail_mawraid_d_01_glove",
+        "baseSlotID": 172324,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Primal Tide Core"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10081,
+        "name": "Jonat's Natural Focus (Waist)",
+        "names": {
+            "cn": "",
+            "en": "Jonat's Natural Focus (Waist)",
+            "ru": "Jonat's Natural Focus (Waist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Jonat's Natural Focus (Waist)",
+            "de": "Jonat's Natural Focus (Waist)"
+        },
+        "slot": "Waist",
+        "icon": "inv_mail_mawraid_d_01_buckle",
+        "baseSlotID": 172328,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Jonat's Natural Focus"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10082,
+        "name": "Jonat's Natural Focus (Legs)",
+        "names": {
+            "cn": "",
+            "en": "Jonat's Natural Focus (Legs)",
+            "ru": "Jonat's Natural Focus (Legs)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Jonat's Natural Focus (Legs)",
+            "de": "Jonat's Natural Focus (Legs)"
+        },
+        "slot": "Legs",
+        "icon": "inv_mail_mawraid_d_01_pants",
+        "baseSlotID": 172326,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Jonat's Natural Focus"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10083,
+        "name": "Spiritwalker's Tidal Totem (Legs)",
+        "names": {
+            "cn": "",
+            "en": "Spiritwalker's Tidal Totem (Legs)",
+            "ru": "Spiritwalker's Tidal Totem (Legs)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Spiritwalker's Tidal Totem (Legs)",
+            "de": "Spiritwalker's Tidal Totem (Legs)"
+        },
+        "slot": "Legs",
+        "icon": "inv_mail_mawraid_d_01_pants",
+        "baseSlotID": 172326,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Spiritwalker's Tidal Totem"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10084,
+        "name": "Spiritwalker's Tidal Totem (Back)",
+        "names": {
+            "cn": "",
+            "en": "Spiritwalker's Tidal Totem (Back)",
+            "ru": "Spiritwalker's Tidal Totem (Back)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Spiritwalker's Tidal Totem (Back)",
+            "de": "Spiritwalker's Tidal Totem (Back)"
+        },
+        "slot": "Back",
+        "icon": "inv_cloth_mawraid_d_01_cape",
+        "baseSlotID": 173242,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Spiritwalker's Tidal Totem"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10085,
+        "name": "Earthen Harmony (Chest)",
+        "names": {
+            "cn": "",
+            "en": "Earthen Harmony (Chest)",
+            "ru": "Earthen Harmony (Chest)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Earthen Harmony (Chest)",
+            "de": "Earthen Harmony (Chest)"
+        },
+        "slot": "Chest",
+        "icon": "inv_mail_mawraid_d_01_chest",
+        "baseSlotID": 172322,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Earthen Harmony"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10086,
+        "name": "Earthen Harmony (Back)",
+        "names": {
+            "cn": "",
+            "en": "Earthen Harmony (Back)",
+            "ru": "Earthen Harmony (Back)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Earthen Harmony (Back)",
+            "de": "Earthen Harmony (Back)"
+        },
+        "slot": "Back",
+        "icon": "inv_cloth_mawraid_d_01_cape",
+        "baseSlotID": 173242,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Earthen Harmony"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10087,
+        "name": "Ancestral Reminder (Wrist)",
+        "names": {
+            "cn": "",
+            "en": "Ancestral Reminder (Wrist)",
+            "ru": "Ancestral Reminder (Wrist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Ancestral Reminder (Wrist)",
+            "de": "Ancestral Reminder (Wrist)"
+        },
+        "slot": "Wrist",
+        "icon": "inv_mail_mawraid_d_01_bracer",
+        "baseSlotID": 172329,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Ancestral Reminder"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10088,
+        "name": "Ancestral Reminder (Finger)",
+        "names": {
+            "cn": "",
+            "en": "Ancestral Reminder (Finger)",
+            "ru": "Ancestral Reminder (Finger)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Ancestral Reminder (Finger)",
+            "de": "Ancestral Reminder (Finger)"
+        },
+        "slot": "Finger",
+        "icon": "inv_jewelcrafting_90_maxlvlring_red",
+        "baseSlotID": 178926,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Ancestral Reminder"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10089,
+        "name": "Deeptremor Stone (Waist)",
+        "names": {
+            "cn": "",
+            "en": "Deeptremor Stone (Waist)",
+            "ru": "Deeptremor Stone (Waist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Deeptremor Stone (Waist)",
+            "de": "Deeptremor Stone (Waist)"
+        },
+        "slot": "Waist",
+        "icon": "inv_mail_mawraid_d_01_buckle",
+        "baseSlotID": 172328,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Deeptremor Stone"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10090,
+        "name": "Deeptremor Stone (Feet)",
+        "names": {
+            "cn": "",
+            "en": "Deeptremor Stone (Feet)",
+            "ru": "Deeptremor Stone (Feet)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Deeptremor Stone (Feet)",
+            "de": "Deeptremor Stone (Feet)"
+        },
+        "slot": "Feet",
+        "icon": "inv_mail_mawraid_d_01_boots",
+        "baseSlotID": 172323,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Deeptremor Stone"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10091,
+        "name": "Deeptremor Stone (Finger)",
+        "names": {
+            "cn": "",
+            "en": "Deeptremor Stone (Finger)",
+            "ru": "Deeptremor Stone (Finger)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Deeptremor Stone (Finger)",
+            "de": "Deeptremor Stone (Finger)"
+        },
+        "slot": "Finger",
+        "icon": "inv_jewelcrafting_90_maxlvlring_red",
+        "baseSlotID": 178926,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Deeptremor Stone"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10092,
+        "name": "Deeply Rooted Elements (Head)",
+        "names": {
+            "cn": "",
+            "en": "Deeply Rooted Elements (Head)",
+            "ru": "Deeply Rooted Elements (Head)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Deeply Rooted Elements (Head)",
+            "de": "Deeply Rooted Elements (Head)"
+        },
+        "slot": "Head",
+        "icon": "inv_mail_mawraid_d_01_helm",
+        "baseSlotID": 172325,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Deeply Rooted Elements"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10093,
+        "name": "Deeply Rooted Elements (Shoulder)",
+        "names": {
+            "cn": "",
+            "en": "Deeply Rooted Elements (Shoulder)",
+            "ru": "Deeply Rooted Elements (Shoulder)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Deeply Rooted Elements (Shoulder)",
+            "de": "Deeply Rooted Elements (Shoulder)"
+        },
+        "slot": "Shoulder",
+        "icon": "inv_mail_mawraid_d_01_shoulder",
+        "baseSlotID": 172327,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Deeply Rooted Elements"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10094,
+        "name": "Deeply Rooted Elements (Wrist)",
+        "names": {
+            "cn": "",
+            "en": "Deeply Rooted Elements (Wrist)",
+            "ru": "Deeply Rooted Elements (Wrist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Deeply Rooted Elements (Wrist)",
+            "de": "Deeply Rooted Elements (Wrist)"
+        },
+        "slot": "Wrist",
+        "icon": "inv_mail_mawraid_d_01_bracer",
+        "baseSlotID": 172329,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Deeply Rooted Elements"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10095,
+        "name": "Seeds of Rampant Growth (Head)",
+        "names": {
+            "cn": "",
+            "en": "Seeds of Rampant Growth (Head)",
+            "ru": "Seeds of Rampant Growth (Head)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Seeds of Rampant Growth (Head)",
+            "de": "Seeds of Rampant Growth (Head)"
+        },
+        "slot": "Head",
+        "icon": "inv_mail_mawraid_d_01_helm",
+        "baseSlotID": 172325,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Seeds of Rampant Growth"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10096,
+        "name": "Seeds of Rampant Growth (Hands)",
+        "names": {
+            "cn": "",
+            "en": "Seeds of Rampant Growth (Hands)",
+            "ru": "Seeds of Rampant Growth (Hands)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Seeds of Rampant Growth (Hands)",
+            "de": "Seeds of Rampant Growth (Hands)"
+        },
+        "slot": "Hands",
+        "icon": "inv_mail_mawraid_d_01_glove",
+        "baseSlotID": 172324,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Seeds of Rampant Growth"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10097,
+        "name": "Elemental Conduit (Chest)",
+        "names": {
+            "cn": "",
+            "en": "Elemental Conduit (Chest)",
+            "ru": "Elemental Conduit (Chest)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Elemental Conduit (Chest)",
+            "de": "Elemental Conduit (Chest)"
+        },
+        "slot": "Chest",
+        "icon": "inv_mail_mawraid_d_01_chest",
+        "baseSlotID": 172322,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Elemental Conduit"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10098,
+        "name": "Elemental Conduit (Wrist)",
+        "names": {
+            "cn": "",
+            "en": "Elemental Conduit (Wrist)",
+            "ru": "Elemental Conduit (Wrist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Elemental Conduit (Wrist)",
+            "de": "Elemental Conduit (Wrist)"
+        },
+        "slot": "Wrist",
+        "icon": "inv_mail_mawraid_d_01_bracer",
+        "baseSlotID": 172329,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Elemental Conduit"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10099,
+        "name": "Raging Vesper Vortex (Legs)",
+        "names": {
+            "cn": "",
+            "en": "Raging Vesper Vortex (Legs)",
+            "ru": "Raging Vesper Vortex (Legs)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Raging Vesper Vortex (Legs)",
+            "de": "Raging Vesper Vortex (Legs)"
+        },
+        "slot": "Legs",
+        "icon": "inv_mail_mawraid_d_01_pants",
+        "baseSlotID": 172326,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Raging Vesper Vortex"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10100,
+        "name": "Raging Vesper Vortex (Feet)",
+        "names": {
+            "cn": "",
+            "en": "Raging Vesper Vortex (Feet)",
+            "ru": "Raging Vesper Vortex (Feet)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Raging Vesper Vortex (Feet)",
+            "de": "Raging Vesper Vortex (Feet)"
+        },
+        "slot": "Feet",
+        "icon": "inv_mail_mawraid_d_01_boots",
+        "baseSlotID": 172323,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Restoration Shaman"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Raging Vesper Vortex"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10101,
+        "name": "Ancient Teachings of the Monastery (Wrist)",
+        "names": {
+            "cn": "",
+            "en": "Ancient Teachings of the Monastery (Wrist)",
+            "ru": "Ancient Teachings of the Monastery (Wrist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Ancient Teachings of the Monastery (Wrist)",
+            "de": "Ancient Teachings of the Monastery (Wrist)"
+        },
+        "slot": "Wrist",
+        "icon": "inv_mail_mawraid_d_01_bracer",
+        "baseSlotID": 172321,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Ancient Teachings of the Monastery"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10102,
+        "name": "Ancient Teachings of the Monastery (Hands)",
+        "names": {
+            "cn": "",
+            "en": "Ancient Teachings of the Monastery (Hands)",
+            "ru": "Ancient Teachings of the Monastery (Hands)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Ancient Teachings of the Monastery (Hands)",
+            "de": "Ancient Teachings of the Monastery (Hands)"
+        },
+        "slot": "Hands",
+        "icon": "inv_glove_leather_mawraid_d_01",
+        "baseSlotID": 172316,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Ancient Teachings of the Monastery"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10103,
+        "name": "Yu'lon's Whisper (Shoulder)",
+        "names": {
+            "cn": "",
+            "en": "Yu'lon's Whisper (Shoulder)",
+            "ru": "Yu'lon's Whisper (Shoulder)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Yu'lon's Whisper (Shoulder)",
+            "de": "Yu'lon's Whisper (Shoulder)"
+        },
+        "slot": "Shoulder",
+        "icon": "inv_shoulder_leather_mawraid_d_01",
+        "baseSlotID": 172319,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Yu'lon's Whisper"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10104,
+        "name": "Yu'lon's Whisper (Finger)",
+        "names": {
+            "cn": "",
+            "en": "Yu'lon's Whisper (Finger)",
+            "ru": "Yu'lon's Whisper (Finger)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Yu'lon's Whisper (Finger)",
+            "de": "Yu'lon's Whisper (Finger)"
+        },
+        "slot": "Finger",
+        "icon": "inv_jewelcrafting_90_maxlvlring_red",
+        "baseSlotID": 178926,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Yu'lon's Whisper"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10105,
+        "name": "Clouded Focus (Neck)",
+        "names": {
+            "cn": "",
+            "en": "Clouded Focus (Neck)",
+            "ru": "Clouded Focus (Neck)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Clouded Focus (Neck)",
+            "de": "Clouded Focus (Neck)"
+        },
+        "slot": "Neck",
+        "icon": "inv_jewelcrafting_90_maxlvlneck_red",
+        "baseSlotID": 178927,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Clouded Focus"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10106,
+        "name": "Clouded Focus (Wrist)",
+        "names": {
+            "cn": "",
+            "en": "Clouded Focus (Wrist)",
+            "ru": "Clouded Focus (Wrist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Clouded Focus (Wrist)",
+            "de": "Clouded Focus (Wrist)"
+        },
+        "slot": "Wrist",
+        "icon": "inv_mail_mawraid_d_01_bracer",
+        "baseSlotID": 172321,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Clouded Focus"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10107,
+        "name": "Tear of Morning (Head)",
+        "names": {
+            "cn": "",
+            "en": "Tear of Morning (Head)",
+            "ru": "Tear of Morning (Head)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Tear of Morning (Head)",
+            "de": "Tear of Morning (Head)"
+        },
+        "slot": "Head",
+        "icon": "inv_helm_leather_mawraid_d_01",
+        "baseSlotID": 172317,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Tear of Morning"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10108,
+        "name": "Tear of Morning (Waist)",
+        "names": {
+            "cn": "",
+            "en": "Tear of Morning (Waist)",
+            "ru": "Tear of Morning (Waist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Tear of Morning (Waist)",
+            "de": "Tear of Morning (Waist)"
+        },
+        "slot": "Waist",
+        "icon": "inv_belt_leather_mawraid_d_01",
+        "baseSlotID": 172320,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Tear of Morning"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10109,
+        "name": "Invoker's Delight (Head)",
+        "names": {
+            "cn": "",
+            "en": "Invoker's Delight (Head)",
+            "ru": "Invoker's Delight (Head)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Invoker's Delight (Head)",
+            "de": "Invoker's Delight (Head)"
+        },
+        "slot": "Head",
+        "icon": "inv_helm_leather_mawraid_d_01",
+        "baseSlotID": 172317,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Invoker's Delight"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10110,
+        "name": "Invoker's Delight (Shoulder)",
+        "names": {
+            "cn": "",
+            "en": "Invoker's Delight (Shoulder)",
+            "ru": "Invoker's Delight (Shoulder)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Invoker's Delight (Shoulder)",
+            "de": "Invoker's Delight (Shoulder)"
+        },
+        "slot": "Shoulder",
+        "icon": "inv_shoulder_leather_mawraid_d_01",
+        "baseSlotID": 172319,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Invoker's Delight"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10111,
+        "name": "Invoker's Delight (Back)",
+        "names": {
+            "cn": "",
+            "en": "Invoker's Delight (Back)",
+            "ru": "Invoker's Delight (Back)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Invoker's Delight (Back)",
+            "de": "Invoker's Delight (Back)"
+        },
+        "slot": "Back",
+        "icon": "inv_cloth_mawraid_d_01_cape",
+        "baseSlotID": 173242,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Invoker's Delight"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10112,
+        "name": "Bountiful Brew (Neck)",
+        "names": {
+            "cn": "",
+            "en": "Bountiful Brew (Neck)",
+            "ru": "Bountiful Brew (Neck)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Bountiful Brew (Neck)",
+            "de": "Bountiful Brew (Neck)"
+        },
+        "slot": "Neck",
+        "icon": "inv_jewelcrafting_90_maxlvlneck_red",
+        "baseSlotID": 178927,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Bountiful Brew"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        }
+    },
+    {
+        "id": 10113,
+        "name": "Bountiful Brew (Shoulder)",
+        "names": {
+            "cn": "",
+            "en": "Bountiful Brew (Shoulder)",
+            "ru": "Bountiful Brew (Shoulder)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Bountiful Brew (Shoulder)",
+            "de": "Bountiful Brew (Shoulder)"
+        },
+        "slot": "Shoulder",
+        "icon": "inv_shoulder_leather_mawraid_d_01",
+        "baseSlotID": 172319,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Bountiful Brew"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10114,
+        "name": "Bountiful Brew (Chest)",
+        "names": {
+            "cn": "",
+            "en": "Bountiful Brew (Chest)",
+            "ru": "Bountiful Brew (Chest)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Bountiful Brew (Chest)",
+            "de": "Bountiful Brew (Chest)"
+        },
+        "slot": "Chest",
+        "icon": "inv_chest_leather_mawraid_d_01",
+        "baseSlotID": 172314,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Bountiful Brew"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10115,
+        "name": "Call to Arms (Legs)",
+        "names": {
+            "cn": "",
+            "en": "Call to Arms (Legs)",
+            "ru": "Call to Arms (Legs)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Call to Arms (Legs)",
+            "de": "Call to Arms (Legs)"
+        },
+        "slot": "Legs",
+        "icon": "inv_pant_leather_mawraid_d_01",
+        "baseSlotID": 172318,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Call to Arms"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10116,
+        "name": "Call to Arms (Feet)",
+        "names": {
+            "cn": "",
+            "en": "Call to Arms (Feet)",
+            "ru": "Call to Arms (Feet)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Call to Arms (Feet)",
+            "de": "Call to Arms (Feet)"
+        },
+        "slot": "Feet",
+        "icon": "inv_boot_leather_mawraid_d_01",
+        "baseSlotID": 172315,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Call to Arms"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10117,
+        "name": "Faeline Harmony (Waist)",
+        "names": {
+            "cn": "",
+            "en": "Faeline Harmony (Waist)",
+            "ru": "Faeline Harmony (Waist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Faeline Harmony (Waist)",
+            "de": "Faeline Harmony (Waist)"
+        },
+        "slot": "Waist",
+        "icon": "inv_belt_leather_mawraid_d_01",
+        "baseSlotID": 172320,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Faeline Harmony"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10118,
+        "name": "Faeline Harmony (Hands)",
+        "names": {
+            "cn": "",
+            "en": "Faeline Harmony (Hands)",
+            "ru": "Faeline Harmony (Hands)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Faeline Harmony (Hands)",
+            "de": "Faeline Harmony (Hands)"
+        },
+        "slot": "Hands",
+        "icon": "inv_glove_leather_mawraid_d_01",
+        "baseSlotID": 172316,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Faeline Harmony"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10119,
+        "name": "Sinister Teachings (Wrist)",
+        "names": {
+            "cn": "",
+            "en": "Sinister Teachings (Wrist)",
+            "ru": "Sinister Teachings (Wrist)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Sinister Teachings (Wrist)",
+            "de": "Sinister Teachings (Wrist)"
+        },
+        "slot": "Wrist",
+        "icon": "inv_mail_mawraid_d_01_bracer",
+        "baseSlotID": 172321,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Sinister Teachings"
+        },
+        "stats": {
+            "intellect": 5259,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        }
+    },
+    {
+        "id": 10120,
+        "name": "Sinister Teachings (Finger)",
+        "names": {
+            "cn": "",
+            "en": "Sinister Teachings (Finger)",
+            "ru": "Sinister Teachings (Finger)",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "Sinister Teachings (Finger)",
+            "de": "Sinister Teachings (Finger)"
+        },
+        "slot": "Finger",
+        "icon": "inv_jewelcrafting_90_maxlvlring_red",
+        "baseSlotID": 178926,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 262,
+        "shadowlandsLegendary": true,
+        "classReq": [
+            "Mistweaver Monk"
+        ],
+        "effect": {
+            "type": "spec legendary",
+            "name": "Sinister Teachings"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
         }
     }
 ]

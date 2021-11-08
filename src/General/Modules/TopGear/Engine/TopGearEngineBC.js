@@ -1,15 +1,15 @@
-import ItemSet from "./ItemSet";
+import ItemSet from "../ItemSet";
 import TopGearResult from "./TopGearResult";
-import Item from "../Player/Item";
+import Item from "../../Player/Item";
 import React, { useState, useEffect } from "react";
-import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../../Engine/STAT";
-import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
+import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../../../Engine/STAT";
+import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 
-import { gemGear, getGemStatLoadout } from "./GemUtilities";
-import { convertPPMToUptime } from "../../../Retail/Engine/EffectFormulas/EffectUtilities";
-import BCPlayer from "../Player/BCPlayer";
-import CastModel from "../Player/CastModel";
-import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngine"
+import { gemGear, getGemStatLoadout } from "../Utilities/GemUtilities";
+import { convertPPMToUptime } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
+import BCPlayer from "../../Player/BCPlayer";
+import CastModel from "../../Player/CastModel";
+import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine"
 import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction } from "./TopGearEngineShared"
 import { getItemSet } from "BurningCrusade/Databases/ItemSetsDB"
 import { createBuilderStatusReporter } from "typescript";

@@ -133,7 +133,7 @@ export default function WelcomeDialog(props) {
   };
 
   return (
-    <Dialog maxWidth={page === 1 ? "md" : "xs"} fullWidth={true} open={open} BackdropProps={{style: {backgroundColor: 'rgba(82,82,82,0.9)'}}}>
+    <Dialog maxWidth={page === 1 ? "md" : "xs"} fullWidth={true} open={open} BackdropProps={{ style: { backgroundColor: "rgba(82,82,82,0.9)" } }}>
       {page === 1 ? (
         /* ---------------------------------------------------------------------------------------------- */
         /*                              Page 1 - Welcome & GameType Selection                             */
@@ -230,15 +230,15 @@ export default function WelcomeDialog(props) {
                     .map((key, i) => (
                       <MenuItem key={i} value={key} style={{ color: classColoursJS(key) }}>
                         <div style={{ display: "inline-flex" }}>
-                        {classIcons(key, {
-                          height: 20,
-                          width: 20,
-                          margin: "0px 5px 0px 5px",
-                          verticalAlign: "middle",
-                          borderRadius: 4,
-                          border: "1px solid rgba(255, 255, 255, 0.12)",
-                        })}
-                        {t("Classes." + key)}
+                          {classIcons(key, {
+                            height: 20,
+                            width: 20,
+                            margin: "0px 5px 0px 5px",
+                            verticalAlign: "middle",
+                            borderRadius: 4,
+                            border: "1px solid rgba(255, 255, 255, 0.12)",
+                          })}
+                          {t("Classes." + key)}
                         </div>
                       </MenuItem>
                     ))
@@ -266,25 +266,36 @@ export default function WelcomeDialog(props) {
                 </Select>
               </FormControl>
             </Grid>
-            {gameType == "Retail" ? <Grid item xs={12}>
-              <FormControl disabled={healClass === "" ? true : false} className={classes.formControl} variant="outlined" size="small" label={t("Covenant")}>
-                <InputLabel id="NewCovSelector">{t("Covenant")}</InputLabel>
-                <Select label={t("Covenant")} value={selectedCovenant} onChange={handleChangeCovenant} MenuProps={menuStyle}>
-                  {healClass === ""
-                    ? ""
-                    : ["kyrian", "necrolord", "night_fae", "venthyr"]
-                        .map((key, i) => (
-                          <MenuItem key={i} value={key}>
-                            <div style={{ display: "inline-flex" }}>
-                              {covenantIcons(key, 20, 20)}
-                              {t(key)}
-                            </div>
-                          </MenuItem>
-                        ))
-                        .map((item, i) => [item, <Divider key={i} />])}
-                </Select>
-              </FormControl>
-            </Grid> : ""}
+            {gameType == "Retail" ? (
+              <Grid item xs={12}>
+                <FormControl disabled={healClass === "" ? true : false} className={classes.formControl} variant="outlined" size="small" label={t("Covenant")}>
+                  <InputLabel id="NewCovSelector">{t("Covenant")}</InputLabel>
+                  <Select label={t("Covenant")} value={selectedCovenant} onChange={handleChangeCovenant} MenuProps={menuStyle}>
+                    {healClass === ""
+                      ? ""
+                      : ["kyrian", "necrolord", "night_fae", "venthyr"]
+                          .map((key, i) => (
+                            <MenuItem key={i} value={key}>
+                              <div style={{ display: "inline-flex" }}>
+                                {covenantIcons(key, {
+                                  height: 20,
+                                  width: 20,
+                                  margin: "0px 5px 0px 5px",
+                                  verticalAlign: "middle",
+                                  borderRadius: "4px",
+                                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                                })}
+                                {t(key)}
+                              </div>
+                            </MenuItem>
+                          ))
+                          .map((item, i) => [item, <Divider key={i} />])}
+                  </Select>
+                </FormControl>
+              </Grid>
+            ) : (
+              ""
+            )}
           </Grid>
         </DialogContent>
       ) : (
@@ -305,7 +316,7 @@ export default function WelcomeDialog(props) {
             <Button
               onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace, gameType, selectedCovenant)}
               color="primary"
-              disabled={(selectedRace === "" || (selectedCovenant === "" && gameType == "Retail")) ? true : false}
+              disabled={selectedRace === "" || (selectedCovenant === "" && gameType == "Retail") ? true : false}
               variant="outlined"
             >
               {t("Add")}

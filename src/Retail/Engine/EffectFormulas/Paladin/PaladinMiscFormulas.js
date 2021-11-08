@@ -131,13 +131,14 @@ export function getPaladinCovAbility(soulbindName, player, contentType, specialS
   } else if (["Marileth", "Emeni", "Heirmir"].includes(soulbindName)) {
     // Vanquishers Hammer (Necrolord)
     const HPSFreeWordOfGlory = player.getSingleCast(IDWORDOFGLORY, contentType);
+    const HPSLightOfDawn = player.getSingleCast(IDWORDOFGLORY, contentType) * 0.25;
     const HPSFreeHolyPower = getOneHolyPower(player, contentType);
 
     if ("extraSpells" in specialSettings) {
-      bonus_stats.hps = (HPSFreeWordOfGlory) / 30 + (HPSFreeHolyPower + HPSFreeWordOfGlory) / player.getFightLength(contentType);
+      bonus_stats.hps = (HPSFreeWordOfGlory + HPSLightOfDawn) / 30 + (HPSFreeHolyPower + HPSFreeWordOfGlory) / player.getFightLength(contentType);
     }
     else {
-      bonus_stats.HPS = (HPSFreeWordOfGlory + HPSFreeHolyPower) / 30;
+      bonus_stats.HPS = (HPSFreeWordOfGlory + HPSFreeHolyPower + HPSLightOfDawn) / 30;
     }
     
   }

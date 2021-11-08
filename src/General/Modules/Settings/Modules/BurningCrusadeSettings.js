@@ -26,8 +26,26 @@ const menuStyle = {
   getContentAnchorEl: null,
 };
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(14),
+    marginRight: 4,
+  },
+  secondaryHeading: {
+    fontSize: theme.typography.pxToRem(15),
+    color: theme.palette.text.secondary,
+  },
+  select: {
+    fontSize: theme.typography.pxToRem(16),
+  },
+}));
+
 export default function BurningCrusadeSettings(props) {
   const { t } = useTranslation();
+  const classes = useStyles();
   // const playerSpec = props.player.getSpec();
 
   /* ------------------------------------------ Setting 0 ----------------------------------------- */
@@ -61,7 +79,6 @@ export default function BurningCrusadeSettings(props) {
   const updateAutoEnchantItems = (value) => {
     props.editSettings("autoEnchant", value);
     setAutoEnchantItems(value);
-
   };
   const updateGemRarity = (value) => {
     props.editSettings("gemRarity", value);
@@ -71,177 +88,182 @@ export default function BurningCrusadeSettings(props) {
     setSettingValue5();
   };
 
-  // const options = [
-  //   { value: true, label: "Yes" },
-  //   { value: false, label: "No" },
-  // ];
-
-  /* ----------------------------------------- Free State ----------------------------------------- */
-  // const [value3, setValue3] = useState(5);
-  /* ----------------------------------------- Free State ----------------------------------------- */
-  // const [value4, setValue4] = useState(5);
-  /* ----------------------------------------- Free State ----------------------------------------- */
-  // const [value5, setValue5] = useState(5);
-
   return (
-    <Grid container spacing={1} direction="row" justify="space-evenly">
+    <Grid container spacing={2} direction="row">
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                            Setting 0                                            */
       /* ---------------------------------------------------------------------------------------------- */}
-      <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-        <Grid container spacing={0} style={{ padding: "0px 8px" }}>
-          <Grid item xs={12}>
-            <div style={{ display: "inline-flex" }}>
-              <Typography color="primary" style={{ marginRight: 4 }} noWrap>
-                {t("Settings.BurningCrusade.Setting0Title")}
-              </Typography>
-              <Tooltip title={<Typography align="center" variant="body2">{t("Settings.BurningCrusade.Setting0Tooltip")}</Typography>} placement="top-start">
-                <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
-              </Tooltip>
-            </div>
-          </Grid>
-          <Grid item xs={12}>
-          <FormControl variant="outlined" size="small" fullWidth>
-              <Select labelId="slots" value={manaProfile} onChange={(e) => updateManaProfile(e.target.value)} MenuProps={menuStyle}>
-                <MenuItem id="spiritShell" value={"Max Healing"} style={{ justifyContent: "center" }}>
-                  {"Max Healing"}
-                </MenuItem>
-                <MenuItem id="evangelism" value={"Standard"} style={{ justifyContent: "center" }}>
-                  {"Standard"}
-                </MenuItem>
-                <MenuItem id="evangelism" value={"Conservative"} style={{ justifyContent: "center" }}>
-                  {"Conservative"}
-                </MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-        </Grid>
+      <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+        <Tooltip
+          title={
+            <Typography align="center" variant="body2">
+              {t("Settings.BurningCrusade.Setting0Tooltip")}
+            </Typography>
+          }
+          placement="top-start"
+        >
+          <TextField
+            label={t("Settings.BurningCrusade.Setting0Title")}
+            labelId="slots"
+            variant="outlined"
+            size="small"
+            SelectProps={{ MenuProps: menuStyle, className: classes.select }}
+            InputProps={{ variant: "outlined" }}
+            fullWidth
+            select
+            value={manaProfile}
+            onChange={(e) => updateManaProfile(e.target.value)}
+            MenuProps={menuStyle}
+            style={{ textAlign: "center", minWidth: 140 }}
+          >
+            <MenuItem id="spiritShell" value={"Max Healing"} style={{ justifyContent: "center" }}>
+              {"Max Healing"}
+            </MenuItem>
+            <MenuItem id="evangelism" value={"Standard"} style={{ justifyContent: "center" }}>
+              {"Standard"}
+            </MenuItem>
+            <MenuItem id="evangelism" value={"Conservative"} style={{ justifyContent: "center" }}>
+              {"Conservative"}
+            </MenuItem>
+          </TextField>
+        </Tooltip>
       </Grid>
-      {/*<Divider orientation="vertical" flexItem /> */ }
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                            Setting 1                                            */
       /* ---------------------------------------------------------------------------------------------- */}
-      <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-        <Grid container spacing={0} style={{ padding: "0px 8px" }}>
-          <Grid item xs={12}>
-            <div style={{ display: "inline-flex" }}>
-              <Typography color="primary" style={{ marginRight: 4 }} noWrap>
-                {t("Settings.BurningCrusade.Setting1Title")}
-              </Typography>
-              <Tooltip title={<Typography align="center" variant="body2">{t("Settings.BurningCrusade.Setting1Tooltip")}</Typography>} placement="top-start">
-                <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
-              </Tooltip>
-            </div>
-          </Grid>
-          <Grid item xs={12}>
-            <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
-              <Select labelId="groupValue" value={raidBuffs} onChange={(e) => updateRaidBuffs(e.target.value)} MenuProps={menuStyle}>
-                <MenuItem value={true} style={{ justifyContent: "center" }}>
-                  {t("Yes")}
-                </MenuItem>
-                <MenuItem value={false} style={{ justifyContent: "center" }}>
-                  {t("No")}
-                </MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-        </Grid>
+      <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+        <Tooltip
+          title={
+            <Typography align="center" variant="body2">
+              {t("Settings.BurningCrusade.Setting1Tooltip")}
+            </Typography>
+          }
+          placement="top-start"
+        >
+          <TextField
+            label={t("Settings.BurningCrusade.Setting1Title")}
+            SelectProps={{ MenuProps: menuStyle, className: classes.select }}
+            InputProps={{ variant: "outlined" }}
+            select
+            variant="outlined"
+            size="small"
+            fullWidth
+            labelId="groupValue"
+            value={raidBuffs}
+            onChange={(e) => updateRaidBuffs(e.target.value)}
+            MenuProps={menuStyle}
+            style={{ textAlign: "center", minWidth: 140 }}
+          >
+            <MenuItem value={true} style={{ justifyContent: "center" }}>
+              {t("Yes")}
+            </MenuItem>
+            <MenuItem value={false} style={{ justifyContent: "center" }}>
+              {t("No")}
+            </MenuItem>
+          </TextField>
+        </Tooltip>
       </Grid>
-      {/*<Divider orientation="vertical" flexItem /> */ }
+      {/*<Divider orientation="vertical" flexItem /> */}
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                            Setting 2                                            */
       /* ---------------------------------------------------------------------------------------------- */}
-      <Grid item xs={12} sm={4} md={4} lg={3} xl={3}>
-        <Grid container spacing={0} style={{ padding: "0px 8px" }}>
-          <Grid item xs={12}>
-            <div style={{ display: "inline-flex" }}>
-              <Typography color="primary" style={{ marginRight: 4 }} noWrap>
-                {t("Settings.BurningCrusade.Setting2Title")}
-              </Typography>
-              <Tooltip title={<Typography align="center" variant="body2">{t("Settings.BurningCrusade.Setting2Tooltip")}</Typography>} placement="top-start">
-                <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
-              </Tooltip>
-            </div>
-          </Grid>
-          <Grid item xs={12}>
-            <FormControl variant="outlined" size="small" fullWidth>
-              <Select labelId="slots" value={metaGem} onChange={(e) => updateMetaGem(e.target.value)} MenuProps={menuStyle}>
-                <MenuItem id="spiritShell" value={"Bracing Earthstorm Diamond"} style={{ justifyContent: "center" }}>
-                  {"Bracing Earthstorm Diamond"}
-                </MenuItem>
-                <MenuItem id="evangelism" value={"Insightful Earthstorm Diamond"} style={{ justifyContent: "center" }}>
-                  {"Insightful Earthstorm Diamond"}
-                </MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-        </Grid>
+      <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+        <Tooltip
+          title={
+            <Typography align="center" variant="body2">
+              {t("Settings.BurningCrusade.Setting2Tooltip")}
+            </Typography>
+          }
+          placement="top-start"
+        >
+          <TextField
+            label={t("Settings.BurningCrusade.Setting2Title")}
+            labelId="slots"
+            SelectProps={{ MenuProps: menuStyle, className: classes.select }}
+            InputProps={{ variant: "outlined" }}
+            select
+            variant="outlined"
+            size="small"
+            fullWidth
+            value={metaGem}
+            onChange={(e) => updateMetaGem(e.target.value)}
+            MenuProps={menuStyle}
+          >
+            <MenuItem id="spiritShell" value={"Bracing Earthstorm Diamond"} style={{ justifyContent: "center" }}>
+              {"Bracing Earthstorm Diamond"}
+            </MenuItem>
+            <MenuItem id="evangelism" value={"Insightful Earthstorm Diamond"} style={{ justifyContent: "center" }}>
+              {"Insightful Earthstorm Diamond"}
+            </MenuItem>
+          </TextField>
+        </Tooltip>
       </Grid>
-      {/*<Divider orientation="vertical" flexItem /> */ }
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                            Setting 3                                            */
       /* ---------------------------------------------------------------------------------------------- */}
-      <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-        <Grid container spacing={0} style={{ padding: "0px 8px" }}>
-          <Grid item xs={12}>
-            <div style={{ display: "inline-flex" }}>
-              <Typography color="primary" style={{ marginRight: 4 }} noWrap>
-                {t("Settings.BurningCrusade.Setting3Title")}
-              </Typography>
-              <Tooltip title={<Typography align="center" variant="body2">{t("Settings.BurningCrusade.Setting3Tooltip")}</Typography>} placement="top-start">
-                <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
-              </Tooltip>
-            </div>
-          </Grid>
-          <Grid item xs={12}>
-            <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
-              <Select labelId="groupValue" value={autoEnchantItems} onChange={(e) => updateAutoEnchantItems(e.target.value)} MenuProps={menuStyle}>
-                <MenuItem value={true} style={{ justifyContent: "center" }}>
-                  {"Yes"}
-                </MenuItem>
-                <MenuItem value={false} style={{ justifyContent: "center" }}>
-                  {"No"}
-                </MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-        </Grid>
+      <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+        <TextField
+          label={t("Settings.BurningCrusade.Setting3Title")}
+          labelId="groupValue"
+          SelectProps={{ MenuProps: menuStyle, className: classes.select }}
+          InputProps={{ variant: "outlined" }}
+          select
+          variant="outlined"
+          size="small"
+          fullWidth
+          value={autoEnchantItems}
+          onChange={(e) => updateAutoEnchantItems(e.target.value)}
+          MenuProps={menuStyle}
+          style={{ textAlign: "center", minWidth: 160 }}
+        >
+          <MenuItem value={true} style={{ justifyContent: "center" }}>
+            {"Yes"}
+          </MenuItem>
+          <MenuItem value={false} style={{ justifyContent: "center" }}>
+            {"No"}
+          </MenuItem>
+        </TextField>
       </Grid>
-      {/*<Divider orientation="vertical" flexItem /> */ }
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                            Setting 4                                           */
       /* ---------------------------------------------------------------------------------------------- */}
-      <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-        <Grid container spacing={0} style={{ padding: "0px 8px" }}>
-          <Grid item xs={12}>
-          <div style={{ display: "inline-flex" }}>
-            <Tooltip title={<Typography align="center" variant="body2">{t("Settings.BurningCrusade.Setting4Tooltip")}</Typography>} placement="top-start">
-              <Typography color="primary">{t("Settings.BurningCrusade.Setting4Title")}</Typography>
-            </Tooltip>
-            <Tooltip title={<Typography align="center" variant="body2">{t("Settings.BurningCrusade.Setting4Tooltip")}</Typography>} placement="top-start">
-                <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
-              </Tooltip>
-          </div>
-          </Grid>
-          <Grid item xs={12}>
-            <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
-                <Select labelId="groupValue" value={gemRarity} onChange={(e) => updateGemRarity(e.target.value)} MenuProps={menuStyle}>
-                <MenuItem value={"none"} style={{ justifyContent: "center" }}>
-                    {"No Gems"}
-                  </MenuItem>
-                  <MenuItem value={"basic"} style={{ justifyContent: "center" }}>
-                    {"Honor Hold"}
-                  </MenuItem>
-                  <MenuItem value={"rare"} style={{ justifyContent: "center" }}>
-                    {"Rare (Blue)"}
-                  </MenuItem>
-                  <MenuItem value={"epic"} style={{ justifyContent: "center" }}>
-                    {"Epic (Purple)"}
-                  </MenuItem>
-                </Select>
-              </FormControl>
-          </Grid>
-        </Grid>
+      <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+        <Tooltip
+          title={
+            <Typography align="center" variant="body2">
+              {t("Settings.BurningCrusade.Setting4Tooltip")}
+            </Typography>
+          }
+          placement="top-start"
+        >
+          <TextField
+            label={t("Settings.BurningCrusade.Setting4Title")}
+            labelId="groupValue"
+            SelectProps={{ MenuProps: menuStyle, className: classes.select }}
+            InputProps={{ variant: "outlined" }}
+            select
+            variant="outlined"
+            size="small"
+            fullWidth
+            value={gemRarity}
+            onChange={(e) => updateGemRarity(e.target.value)}
+            MenuProps={menuStyle}
+            style={{ textAlign: "center", minWidth: 140 }}
+          >
+            <MenuItem value={"none"} style={{ justifyContent: "center" }}>
+              {"No Gems"}
+            </MenuItem>
+            <MenuItem value={"basic"} style={{ justifyContent: "center" }}>
+              {"Honor Hold"}
+            </MenuItem>
+            <MenuItem value={"rare"} style={{ justifyContent: "center" }}>
+              {"Rare (Blue)"}
+            </MenuItem>
+            <MenuItem value={"epic"} style={{ justifyContent: "center" }}>
+              {"Epic (Purple)"}
+            </MenuItem>
+          </TextField>
+        </Tooltip>
       </Grid>
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                            Setting 5                                            */
@@ -270,6 +292,6 @@ export default function BurningCrusadeSettings(props) {
           </Grid>
         </Grid>
       </Grid>*/}
-      </Grid> 
+    </Grid>
   );
 }
