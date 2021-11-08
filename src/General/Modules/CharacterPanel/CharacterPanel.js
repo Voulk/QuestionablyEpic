@@ -142,7 +142,7 @@ export default function CharacterPanel(props) {
 
   return (
     // disabled errortooltip until properly implemented
-    <ErrorTooltip title={errorMessage} open={simcStatus === "Invalid"} placement="bottom-end">
+    //<ErrorTooltip title={errorMessage} open={simcStatus === "Invalid"} placement="bottom-end">
       <Paper elevation={0} className={check(simcStatus)}>
         <div style={{ padding: "8px 8px 8px 8px" }}>
           <Grid container direction="row" justifyContent="space-between" spacing={1}>
@@ -445,6 +445,6 @@ export default function CharacterPanel(props) {
           </Grid>
         </div>
       </Paper>
-    </ErrorTooltip>
+    //</ErrorTooltip>
   );
 }
