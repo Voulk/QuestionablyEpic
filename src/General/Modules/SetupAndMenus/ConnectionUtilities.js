@@ -95,6 +95,79 @@ export async function apiGetPlayerImage(player) {
   }
 }
 
+export async function apiGetPlayerAvatar(player) {
+  if (player !== undefined) {
+    let region = player.region.toLowerCase();
+    let name = player.charName.toLowerCase();
+    let realm = player.realm.toLowerCase().replace(" ", "-");
+    let urlReturned = "";
+    let fetchUrl = "https://questionablyepic.com/api/getplayeravatar.php?pregion=" + region + "&pname=" + encodeURIComponent(name) + "&prealm=" + realm;
+    await fetch(fetchUrl)
+      .then((res) => res.text())
+      .then((response) => {
+        urlReturned = response.toString();
+      })
+      .catch((err) => console.log(err));
+    return urlReturned;
+  } else {
+    return "";
+  }
+}
+
+// cache image function version
+export async function apiGetPlayerAvatar2(region, charName, realm, spec) {
+  if (region !== undefined || charName !== undefined || realm !== undefined) {
+    let newRegion = region.toLowerCase();
+    let newName = charName.toLowerCase();
+    let newRealm = realm.toLowerCase().replace(" ", "-");
+    let urlReturned = "";
+    let fetchUrl = "https://questionablyepic.com/api/getplayeravatar.php?pregion=" + newRegion + "&pname=" + encodeURIComponent(newName) + "&prealm=" + newRealm;
+    await fetch(fetchUrl)
+      .then((res) => res.text())
+      .then((response) => {
+        urlReturned = response;
+        if (urlReturned !== "") {
+          var res = document.createElement("link");
+          res.rel = "preload";
+          res.as = "image";
+          res.href = urlReturned;
+          document.head.appendChild(res);
+        }
+      })
+      .catch((err) => console.log(err));
+    return urlReturned;
+  } else {
+    return "";
+  }
+}
+
+// cache image function version
+export async function apiGetPlayerImage2(region, charName, realm) {
+  if (region !== undefined || charName !== undefined || realm !== undefined) {
+    let newRegion = region.toLowerCase();
+    let newName = charName.toLowerCase();
+    let newRealm = realm.toLowerCase().replace(" ", "-");
+    let urlReturned = "";
+    let fetchUrl = "https://questionablyepic.com/api/getplayerimage.php?pregion=" + newRegion + "&pname=" + encodeURIComponent(newName) + "&prealm=" + newRealm;
+    await fetch(fetchUrl)
+      .then((res) => res.text())
+      .then((response) => {
+        urlReturned = response;
+        if (urlReturned !== "") {
+          var res = document.createElement("link");
+          res.rel = "preload";
+          res.as = "image";
+          res.href = urlReturned;
+          document.head.appendChild(res);
+        }
+      })
+      .catch((err) => console.log(err));
+    return urlReturned;
+  } else {
+    return "";
+  }
+}
+
 /* ---------------------------------------------------------------------------------------------- */
 /*                          Sends Errors to QE API for Dev error checking                         */
 /* ---------------------------------------------------------------------------------------------- */

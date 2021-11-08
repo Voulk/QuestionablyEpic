@@ -1,5 +1,5 @@
 import React from "react";
-import { Accordion, AccordionSummary, AccordionDetails, Button, Dialog, DialogActions, DialogContent, DialogTitle, Divider, Grid, Typography } from "@material-ui/core";
+import { Accordion, AccordionSummary, AccordionDetails, Button, Dialog, DialogActions, DialogContent, DialogTitle, Divider, Grid, Typography, Link } from "@material-ui/core";
 import { changeLog } from "./Log";
 import { makeStyles } from "@material-ui/core/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -13,12 +13,11 @@ const useStyles = makeStyles((theme) => ({
   buttonStyle: {
     [theme.breakpoints.down("xs")]: {
       fontSize: 12,
-      maxWidth: 300
+      maxWidth: 300,
     },
     [theme.breakpoints.up("xs")]: {
       fontSize: 12,
       textTransform: "none",
-      
     },
   },
 }));
@@ -39,12 +38,10 @@ export default function Changelog() {
   };
 
   return (
-    <div style={{ color: "Whitesmoke", marginLeft: "auto", marginRight: "auto", marginBottom: 5, marginTop: 20, textAlign: "center" }}>
-      <Button className={classes.buttonStyle} onClick={handleClickOpen("paper")}>
-        {/* ----------------- The first entry in Log.js is used as the latest version for the below. The latest update must always be at the top of that array ----------------  */}
-        {/* //TODO translate the Click text */}
-        QE Live {changeLog[0].version} {t("Changelog.Update")} {changeLog[0].update}. {t("Changelog.LastUpdated")} {changeLog[0].date}. Click to see what's changed.
-      </Button>
+    <div>
+      <Link component="button" variant="subtitle2" style={{ color: "white" }} onClick={handleClickOpen("paper")} underline="none">
+        {t("Changelog.Header")}
+      </Link>
       <Dialog open={open} onClose={handleClose} scroll={scroll} aria-labelledby="scroll-dialog-title" aria-describedby="scroll-dialog-description" maxWidth="md" fullWidth>
         <DialogTitle disableTypography align="center" id="scroll-dialog-title">
           <Typography color="primary" variant="h4">
@@ -52,7 +49,7 @@ export default function Changelog() {
           </Typography>
         </DialogTitle>
         <DialogContent dividers={scroll === "paper"}>
-          {changeLog.map((key, i) => (
+          {changeLog.slice(0, 5).map((key, i) => (
             <Accordion elevation={0} style={{ backgroundColor: "rgb(82, 82, 82)" }} key={i}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
                 <Typography className={classes.heading}>

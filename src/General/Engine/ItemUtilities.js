@@ -5,6 +5,7 @@ import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
 import { getEffectValue } from "../../Retail/Engine/EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
+import { bonus_IDs } from "Retail/Engine/BonusIDs"
 import { translatedStat, STATDIMINISHINGRETURNS } from "./STAT";
 import Item from "../Modules/Player/Item";
 // import { useTranslation } from "react-i18next";
@@ -115,6 +116,34 @@ export function getValidWeaponTypes(spec, slot) {
   }
 }
 
+export function getValidWeaponTypesBySpec(spec) {
+  switch (spec) {
+    case SPEC.RESTODRUID:
+      return [4, 5, 6, 10, 13, 15];
+    case SPEC.MISTWEAVERMONK:
+      return [0, 4, 6, 7, 10, 13];
+    case SPEC.HOLYPALADIN:
+      return [0, 1, 4, 5, 6, 7, 8];
+
+    case SPEC.RESTOSHAMAN:
+      return [0, 1, 4, 5, 10, 13, 15];
+    case SPEC.HOLYPRIEST:
+      return [4, 10, 15, 19];
+    case SPEC.DISCPRIEST:
+      return [4, 10, 15, 19];
+    case "Holy Paladin BC":
+      return [0, 1, 4, 5, 6, 7, 8];
+    case "Restoration Druid BC":
+      return [4, 5, 6, 10, 13, 15];
+    case "Restoration Shaman BC":
+      return [0, 1, 4, 5, 6, 10, 13, 15];
+    case "Holy Priest BC":
+      return [4, 10, 15, 19];
+    default:
+      return [-1, 0];
+  }
+}
+
 export function filterBCItemListBySource(itemList, sourceInstance, sourceBoss) {
   let temp = itemList.filter(function (item) {
     return (item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0);
@@ -210,22 +239,24 @@ export function getItem(id, gameType = "Retail") {
 }
 
 
+
 export function applyDiminishingReturns(stats) {
   //console.log("Stats Pre-DR" + JSON.stringify(stats));
-  
+  const diminishedStats = JSON.parse(JSON.stringify(stats));
   for (const [key, value] of Object.entries(stats)) {
     if (["crit", "haste", "mastery", "versatility", "leech"].includes(key)) {
 
       const DRBreakpoints = STATDIMINISHINGRETURNS[key.toUpperCase()];
   
-      const baseStat = stats[key];
+      const baseStat = diminishedStats[key];
       for (var j = 0; j < DRBreakpoints.length; j++) {
-        stats[key] -= Math.max((baseStat - DRBreakpoints[j]) * 0.1, 0);
+        diminishedStats[key] -= Math.max((baseStat - DRBreakpoints[j]) * 0.1, 0);
       }
     } 
   }
+  //console.log("Stats Post-DR" + JSON.stringify(diminishedStats));
     
-  return stats;
+  return diminishedStats;
 }
 
 // This function grabs a selected prop from the currently selected item database.
@@ -429,6 +460,18 @@ export function getDomGemEffect(id) {
   });
   if (temp.length > 0 && "effect" in temp[0]) return temp[0].effect;
   else return "";
+}
+
+export function getLegendaryID(tag) {
+  let legendaryID = 0;
+  for (const prop in bonus_IDs) {
+    const entry = bonus_IDs[prop];
+
+    if ('effect' in entry && entry.effect !== null && 'spell' in entry.effect) {
+        if (entry.effect.spell.name === tag) legendaryID = prop;
+    }   
+  }
+  return legendaryID;
 }
 
 

@@ -12,6 +12,7 @@ import {
   checkItemExists,
   getItemSlot,
   socketItem,
+  getLegendaryID
 } from "./ItemUtilities";
 import SPEC from "../Engine/SPECS";
 import each from "jest-each";
@@ -231,3 +232,12 @@ describe("socketItem", () => {
 
   // Add new tests
 });
+
+describe("GetLegendaryID func", () => {
+  test("Sinister Teachings", () => {
+    const legendaryID = getLegendaryID("Sinister Teachings");
+    expect(legendaryID).toEqual("7726");
+
+  })
+
+})

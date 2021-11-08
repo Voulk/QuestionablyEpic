@@ -7,16 +7,15 @@ import AddNewChar from "./CharacterModules/CharacterCreator";
 import { makeStyles } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
 import ArrowForward from "@material-ui/icons/ArrowForward";
-import HallOfFame from "../HallOfFame/HallOfFame";
 import { Grid, Button, Typography, Tooltip } from "@material-ui/core";
 import MessageOfTheDay from "./MessageOftheDay";
 import ArticleCard from "../ArticleCards/ArcticleCard";
-import Changelog from "../ChangeLog/Changelog";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import { useSelector } from "react-redux";
 import GameTypeSwitch from "./GameTypeToggle";
 import WelcomeDialog from "../Welcome/Welcome";
 import ls from "local-storage";
+import QEFooter from "./Footer/QEFooter";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -105,7 +104,7 @@ export default function QEMainMenu(props) {
   };
 
   /* -------------------- Character Creation Dialog States -------------------- */
-  const welcomeOpen = (ls.get("welcomeMessage") === null && characterCountAll === 0) ? true : false
+  const welcomeOpen = ls.get("welcomeMessage") === null && characterCountAll === 0 ? true : false;
   // const handleClickOpen = () => {
   //   setOpen(true);
   // };
@@ -142,9 +141,11 @@ export default function QEMainMenu(props) {
               {patron ? t("MainMenu.PatronThanks") : t("MainMenu.PatronInvite")}
             </Button>
           </Grid>
-          {<Grid item xs={12}>
-            <MessageOfTheDay gameType={gameType} /> 
-          </Grid>}
+          {
+            <Grid item xs={12}>
+              <MessageOfTheDay gameType={gameType} />
+            </Grid>
+          }
 
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.
@@ -222,11 +223,14 @@ export default function QEMainMenu(props) {
         ) : (
           ""
         )}
-        <Changelog />
-        <HallOfFame />
 
-        <WelcomeDialog welcomeOpen={welcomeOpen}  allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} />
+        <WelcomeDialog welcomeOpen={welcomeOpen} allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} />
       </div>
+
+      {/* ---------------------------------------------------------------------------------------------- */
+      /*                                             Footer                                             */
+      /* ----------------------------------------------------------------------------------------------  */}
+      <QEFooter />
     </div>
   );
 }

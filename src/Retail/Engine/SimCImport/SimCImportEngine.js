@@ -34,42 +34,47 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
     let linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : lines.length;
     let vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : linkedItems;
 
+    
+
     // We only use the covenant variable to expand weapon tokens. Setting a default is a better approach than showing none if it's missing,
     // given the weapons and offhands are near identical anyway.
     const covenantLine = lines.filter((x) => x.includes("covenant"));
     const covenant = covenantLine.length > 0 ? covenantLine[0].split("=")[1].toLowerCase() : "venthyr";
 
-    //player.setCovenant(covenant);
+    processAllLines(player, contentType, covenant, lines, linkedItems, vaultItems)
+    player.setCovenant(covenant);
 
-    for (var i = 8; i < lines.length; i++) {
-      let line = lines[i];
-      let type = i > vaultItems && i < linkedItems ? "Vault" : "Regular";
-      // If our line doesn't include an item ID, skip it.
-      if (line.includes("id=")) {
-        if (line.includes("unknown")) {
-          processToken(line, player, contentType, type, covenant);
-        } else {
-          const item = processItem(line, player, contentType, type)
-          if (item) player.addActiveItem(item);
-        }
-      }
-
-      /* ------------------- If line includes "conduits_available" then process line ------------------ */
-      if (line.includes("conduits_available")) {
-        processConduits(line, player);
-      }
-
-      /* ------------------------ If line includes "renown=" then process line ------------------------ */
-      if (line.includes("renown=")) {
-        processRenown(line, player);
-      }
-    }
-
-    //if (player.getSpec() === "Discipline Priest") adjustStatWeights(player, contentType); // Holding off for now.
     snackHandler();
     closeDialog();
     clearSimCInput("");
   }
+}
+
+export function processAllLines(player, contentType, covenant, lines, linkedItems, vaultItems) {
+  for (var i = 8; i < lines.length; i++) {
+    let line = lines[i];
+    let type = i > vaultItems && i < linkedItems ? "Vault" : "Regular";
+    // If our line doesn't include an item ID, skip it.
+    if (line.includes("id=")) {
+      if (line.includes("unknown")) {
+        processToken(line, player, contentType, type, covenant);
+      } else {
+        const item = processItem(line, player, contentType, type)
+        if (item) player.addActiveItem(item);
+      }
+    }
+
+    /* ------------------- If line includes "conduits_available" then process line ------------------ */
+    if (line.includes("conduits_available")) {
+      processConduits(line, player);
+    }
+
+    /* ------------------------ If line includes "renown=" then process line ------------------------ */
+    if (line.includes("renown=")) {
+      processRenown(line, player);
+    }
+  }
+  player.updatePlayerStats(); 
 }
 
 // A simC string is valid if it fulfills the following conditions:
@@ -428,87 +433,4 @@ function checkDefaultSocket(id) {
     return socketType == "Prismatic";
   }
   else return 0;
-}
-
-// Currently being trialled as Discipline only.
-function adjustStatWeights(player, contentType) {
-  let equippedSet = new ItemSet(0, player.getEquippedItems(true), 0);
-
-  equippedSet = equippedSet.compileStats();
-
-  let stats = equippedSet.setStats;
-  stats.intellect = 1650;
-
-  // These are stat weights with 0 of each stat on top of the default profile.
-  let base_weights = {
-    haste: 0.4,
-    mastery: 0.39,
-    versatility: 0.4,
-    crit: 0.42,
-    leech: 0.23,
-  };
-
-  let scaling = {
-    haste: 1,
-    mastery: 0.72,
-    versatility: 0.99,
-    intellect: 0.991,
-    crit: 0.968,
-    leech: 0.31,
-  };
-
-  let new_weights = {};
-
-  const baselineScore =
-    stats.intellect *
-    scaling.intellect *
-    (1 + (stats.crit / 35 / 100) * scaling.crit) *
-    (1 + (stats.haste / 33 / 100) * scaling.haste) *
-    (1 + (stats.mastery / 27.9 / 100) * scaling.mastery) *
-    (1 + (stats.versatility / 40 / 100) * scaling.versatility);
-
-  const intScore =
-    ((10 + stats.intellect) *
-      scaling.intellect *
-      (1 + (stats.crit / 35 / 100) * scaling.crit) *
-      (1 + (stats.haste / 33 / 100) * scaling.haste) *
-      (1 + (stats.mastery / 27.9 / 100) * scaling.mastery) *
-      (1 + (stats.versatility / 40 / 100) * scaling.versatility) -
-      baselineScore) /
-    10;
-
-  /*(((((stats.intellect) * scaling.intellect) * (1 + ((5 + stats.crit) / 35 / 100 * scaling.crit)) * 
-                          (1 + (stats.haste / 33 / 100 * scaling.haste)) * (1 + (stats.mastery / 27.9 / 100 * scaling.mastery)) * 
-                          (1 + stats.versatility / 40 / 100 * scaling.versatility))) - baselineScore) / 5 / intScore;         */
-
-  //new_weights.intellect = ((100 + stats.intellect * percent_scaling.intellect) * (1 + (stats.crit / 35) * (1 + (stats.haste / 33)))
-
-  for (const [stat, value] of Object.entries(base_weights)) {
-    new_weights[stat] = getSecWeight(stats, scaling, baselineScore, intScore, stat);
-  }
-  new_weights.leech = base_weights.leech;
-
-  //console.log(JSON.stringify(base_weights));
-
-  //console.log(JSON.stringify(new_weights));
-
-  player.setStatWeights(new_weights, contentType);
-}
-
-function getSecWeight(baseStats, scaling, baselineScore, intScore, statName) {
-  let stats = { ...baseStats };
-  stats[statName] += 5;
-
-  const newWeight =
-    (stats.intellect *
-      scaling.intellect *
-      (1 + (stats.crit / 35 / 100) * scaling.crit) *
-      (1 + (stats.haste / 33 / 100) * scaling.haste) *
-      (1 + (stats.mastery / 27.9 / 100) * scaling.mastery) *
-      (1 + (stats.versatility / 40 / 100) * scaling.versatility) -
-      baselineScore) /
-    5 /
-    intScore;
-
-  return Math.round(1000 * newWeight) / 1000;
 }
