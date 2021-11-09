@@ -12,11 +12,11 @@ const list = [
 export default function FooterLinks(props) {
   return (
     <div>
-      {list.map((key) => [
-        <Link style={{ color: "white" }} variant="subtitle2" href={key.link} target="_blank" rel="noopener" underline="none">
+      {list.map((key, i) => [
+        <Link key={"link" + i} style={{ color: "white" }} variant="subtitle2" href={key.link} target="_blank" rel="noopener" underline="none">
           {key.text}
         </Link>,
-        <br />,
+        <br key={"break" + i} />,
       ])}
     </div>
   );
