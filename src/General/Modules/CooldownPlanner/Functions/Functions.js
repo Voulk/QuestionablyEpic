@@ -67,7 +67,6 @@ export function reduceTimestampshealth(array, playersInRaid) {
     return acc;
   }, {});
 
-  console.log(Object.entries(timestampSum));
   let newArrayOfObjects = [];
   Object.entries(timestampSum).map((key) => newArrayOfObjects.push(key[1]));
   return newArrayOfObjects;
@@ -252,7 +251,6 @@ export async function importCharacterIds(starttime, endtime, reportid) {
     .catch(function (error) {
       console.log(error);
     });
-  console.log(ids);
   return ids;
 }
 
@@ -639,7 +637,6 @@ export async function importRaidHealth(starttime, endtime, reportid) {
       });
 
       const fightDurationInSeconds = moment(endtime - starttime).startOf("second");
-      console.log(fightDurationInSeconds);
       for (let i = 0; i <= fightDurationInSeconds; i += 1000) {
         entities.forEach((series) => {
           series.data[i] = series.data[i] !== undefined ? series.data[i] : series.lastValue;

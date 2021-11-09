@@ -73,7 +73,6 @@ export default function ImportPlanDialog(props) {
 
     for (var i = 0; i < lines.length; i++) {
       let line = lines[i];
-      console.log();
       /* ------------------------- If line includes "Boss=" then process line ------------------------- */
       if (line.includes("Boss=")) {
         importedBoss = parseInt(line.split("Boss=")[1]);

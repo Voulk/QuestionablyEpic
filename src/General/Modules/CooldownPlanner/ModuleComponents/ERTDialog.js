@@ -17,8 +17,6 @@ export default function ExportERTDialog(props) {
     setOpen(false);
   };
 
-  console.log(props.ertListTimeNoIcons);
-
   const menuStyle = {
     style: { marginTop: 5 },
     MenuListProps: {
@@ -48,13 +46,11 @@ export default function ExportERTDialog(props) {
       })
       .map((key, i) => key.ID);
     let currentBoss = t("BossNames." + bossID);
-    console.log(currentBoss);
     let newString = "|cffffff00" + currentBoss + " - " + planName + "|r";
     switch (ertType) {
       case "Time - No Icons":
         data = ertListTimeNoIcons;
         data.map((key) => (newString = newString.concat("\n", key.ert)));
-        console.log(newString);
         return newString;
       case "Time - Icons":
         data = ertListTimeIcons;
