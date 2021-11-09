@@ -14,7 +14,7 @@ import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
 
 class Player {
-  constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail", getImages = true) {
+  constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
     this.spec = specName;
     this.charName = playerName;
     this.charID = charID;
@@ -28,18 +28,6 @@ class Player {
     this.uniqueHash = getUnique();
     this.charImageURL = "";
     this.charAvatarURL = "";
-
-    /* ------------------------------------- Fetch Player Images ------------------------------------ */
-    // if getImgages is true then we call the API functions to fetch the players ImageSearch. This is so we can let the Top Gear engine recreate the player without running these unneccasarily
-    if (getImages === true) {
-      apiGetPlayerImage2(this.region, this.charName, this.realm).then((res) => {
-        this.charImageURL = res;
-      });
-
-      apiGetPlayerAvatar2(this.region, this.charName, this.realm, this.spec).then((res) => {
-        this.charAvatarURL = res;
-      });
-    }
 
     if (gameType === "Retail") {
       this.setupDefaults(specName);
@@ -101,6 +89,16 @@ class Player {
     Dungeon: {},
     DefaultWeights: true,
   };
+
+  setPlayerAvatars = () => {
+    apiGetPlayerImage2(this.region, this.charName, this.realm).then((res) => {
+      this.charImageURL = res;
+    });
+
+    apiGetPlayerAvatar2(this.region, this.charName, this.realm, this.spec).then((res) => {
+      this.charAvatarURL = res;
+    });
+  }
 
   editChar = (contentType, name, realm, region, race, weights) => {
     this.charName = name;
