@@ -483,9 +483,12 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
 
     // Setup any ramp settings or special effects that need to be taken into account.
     const rampSettings = {"Pelagos": true};
-    itemSet.onUseTrinkets.forEach(trinket => {
-      rampSettings[trinket.name] = getTrinketValue(trinket.name, trinket.level);
-    });
+    if (onUseTrinkets !== null && onUseTrinkets.length > 0) {
+      itemSet.onUseTrinkets.forEach(trinket => {
+        rampSettings[trinket.name] = getTrinketValue(trinket.name, trinket.level);
+      });
+    }
+
     if (itemSet.setLegendary === "Clarity of Mind") rampSettings['Clarity of Mind'] = true;
 
     // Perform our ramp, and then add it to our sets expected HPS. Our set's stats are included here which means we don't need to score them later in the function.

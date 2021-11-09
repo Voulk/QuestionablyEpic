@@ -153,6 +153,7 @@ export async function apiGetPlayerImage2(region, charName, realm) {
       .then((res) => res.text())
       .then((response) => {
         urlReturned = response;
+        
         if (urlReturned !== "") {
           var res = document.createElement("link");
           res.rel = "preload";
