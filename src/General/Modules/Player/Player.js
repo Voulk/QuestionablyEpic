@@ -13,7 +13,6 @@ import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
 
-
 class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
     this.spec = specName;
@@ -29,14 +28,6 @@ class Player {
     this.uniqueHash = getUnique();
     this.charImageURL = "";
     this.charAvatarURL = "";
-
-    apiGetPlayerImage2(this.region, this.charName, this.realm).then((res) => {
-      this.charImageURL = res;
-    });
-
-    apiGetPlayerAvatar2(this.region, this.charName, this.realm, this.spec).then((res) => {
-      this.charAvatarURL = res;
-    });
 
     if (gameType === "Retail") {
       this.setupDefaults(specName);
@@ -98,6 +89,16 @@ class Player {
     Dungeon: {},
     DefaultWeights: true,
   };
+
+  setPlayerAvatars = () => {
+    apiGetPlayerImage2(this.region, this.charName, this.realm).then((res) => {
+      this.charImageURL = res;
+    });
+
+    apiGetPlayerAvatar2(this.region, this.charName, this.realm, this.spec).then((res) => {
+      this.charAvatarURL = res;
+    });
+  }
 
   editChar = (contentType, name, realm, region, race, weights) => {
     this.charName = name;
@@ -440,7 +441,7 @@ class Player {
       this.getActiveModel("Raid").updateStatWeights(stats, "Raid");
       this.getActiveModel("Raid").setRampInfo(stats);
     }
-  }
+  };
 
   setModelID = (id, contentType) => {
     if ((contentType === "Raid" || contentType === "Dungeon") && id < this.castModels.length) {
@@ -656,7 +657,6 @@ class Player {
         stamina: 1900,
       };
       //this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable
-
     } else if (spec === SPEC.HOLYPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
