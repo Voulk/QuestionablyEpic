@@ -248,7 +248,7 @@ class CastModel {
         crit: 0.44,
         mastery: 0.42,
         versatility: 0.43,
-        leech: 0.25
+        leech: 0.59
     }
 
     let scaling = {

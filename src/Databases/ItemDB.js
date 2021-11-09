@@ -20987,7 +20987,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -22019,7 +22018,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -22489,7 +22487,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -22905,7 +22902,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -25206,7 +25202,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -29653,7 +29648,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -46915,7 +46909,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -49251,7 +49244,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -49699,7 +49691,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -58602,7 +58593,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -58635,7 +58625,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -64236,7 +64225,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -71816,7 +71804,6 @@ export const itemDB = [
                 "encounterId": 2397
             }
         ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -72352,7 +72339,6 @@ export const itemDB = [
                 "encounterId": 2411
             }
         ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -73184,7 +73170,6 @@ export const itemDB = [
                 "encounterId": 2415
             }
         ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -73239,7 +73224,6 @@ export const itemDB = [
                 "encounterId": 2421
             }
         ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -82207,7 +82191,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -82240,7 +82223,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -82273,7 +82255,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 6666
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -83278,7 +83259,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -87922,7 +87902,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -95889,7 +95868,6 @@ export const itemDB = [
                 "encounterId": 2422
             }
         ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -95928,7 +95906,6 @@ export const itemDB = [
                 "encounterId": 2418
             }
         ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -96082,7 +96059,6 @@ export const itemDB = [
                 "encounterId": 2424
             }
         ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -96121,7 +96097,6 @@ export const itemDB = [
                 "encounterId": 2424
             }
         ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -100797,7 +100772,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -114260,7 +114234,6 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -114386,7 +114359,6 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",

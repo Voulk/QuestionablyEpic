@@ -9,7 +9,7 @@ import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine"
 import { getDomGemEffect, applyDiminishingReturns } from "General/Engine/ItemUtilities"
-
+import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEffectFormulas"
 import { runCastSequence, allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { buildBestDomSet } from "../Utilities/DominationGemUtilities"
@@ -460,8 +460,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   for (var x = 0; x < itemSet.effectList.length; x++) {
     const effect = itemSet.effectList[x];
     if (player.spec !== "Discipline Priest" || 
-        (player.spec === "Discipline Priest" && !effect.onUse && effect.type !== "spec legendary") ||
-        contentType === "Dungeon") {
+        (player.spec === "Discipline Priest" && !effect.onUse && effect.type !== "spec legendary") || contentType === "Dungeon") {
+        
         effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats));
     }
   }
@@ -477,11 +477,18 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // Further documentation is included in the DiscPriestRamps files.
   if (player.spec === "Discipline Priest" && contentType === "Raid") {
     // Setup ramp cast sequences
-    const boonSeq = buildRamp('Boon', 10, itemSet.onUseTrinkets, setStats.haste, ['Rapture']);
-    const fiendSeq = buildRamp('Fiend', 10, itemSet.onUseTrinkets, setStats.haste, ['Rapture']);
+    const onUseTrinkets = itemSet.onUseTrinkets.map(trinket => trinket.name)
+    const boonSeq = buildRamp('Boon', 10, onUseTrinkets, setStats.haste, ['Rapture']);
+    const fiendSeq = buildRamp('Fiend', 10, onUseTrinkets, setStats.haste, ['Rapture']);
 
     // Setup any ramp settings or special effects that need to be taken into account.
     const rampSettings = {"Pelagos": true};
+    if (onUseTrinkets !== null && onUseTrinkets.length > 0) {
+      itemSet.onUseTrinkets.forEach(trinket => {
+        rampSettings[trinket.name] = getTrinketValue(trinket.name, trinket.level);
+      });
+    }
+
     if (itemSet.setLegendary === "Clarity of Mind") rampSettings['Clarity of Mind'] = true;
 
     // Perform our ramp, and then add it to our sets expected HPS. Our set's stats are included here which means we don't need to score them later in the function.
