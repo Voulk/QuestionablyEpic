@@ -2,15 +2,24 @@
 
 
 export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []) => {
+    const onUse = {
+        "Fiend": "",
+        "Boon": "",
+    }
+    if (trinkets.includes("Flame of Battle")) { onUse.Fiend = "Flame of Battle"; onUse.Boon = "Flame of Battle"; }
+    if (trinkets.includes("Instructor's Divine Bell")) { onUse.Fiend = "Instructor's Divine Bell"; onUse.Boon = "Instructor's Divine Bell";}
     
+    if (trinkets.includes("Soulletting Ruby")) onUse.Boon = "Soulletting Ruby";
+    else if (trinkets.includes("Shadowed Orb of Torment")) onUse.Boon = "Shadowed Orb of Torment";
+
     let sequence = ['Purge the Wicked']
     
-    if (trinkets.includes("Shadowed Orb")) sequence.push("Shadowed Orb");
+    if (trinkets.includes("Shadowed Orb of Torment") && onUse[type] === "Shadowed Orb of Torment") sequence.push("Shadowed Orb");
     if (specialSpells.includes("Rapture")) {sequence.push('Rapture'); applicators -= 1 };
     for (var x = 0; x < applicators; x++) {
         sequence.push('Power Word: Shield');
     }
-    if (trinkets.includes("Soulletting Ruby")) sequence.push("Soulletting Ruby");
+    if (trinkets.includes("Soulletting Ruby") && onUse[type] === "Soulletting Ruby") sequence.push("Soulletting Ruby");
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
     
@@ -18,7 +27,7 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
         sequence.push('Evangelism');
         sequence.push('Boon of the Ascended');
         sequence.push('Ascended Blast');
-        if (trinkets.includes("Flame of Battle")) sequence.push("Flame of Battle");
+        if (trinkets.includes("Flame of Battle") && onUse[type] === "Flame of Battle") sequence.push("Flame of Battle");
         sequence.push('Schism');
         const hastePerc = 1 + haste / 32 / 100;
         let boonDuration = 10 - (1.5 * 2 / hastePerc) + (1.5 / hastePerc);
@@ -26,7 +35,7 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
 
         for (var i = 0; i < Math.floor(boonDuration / boonPackage); i++) {
             sequence.push('Ascended Blast');
-            if (trinkets.includes("Instructor's Divine Bell") && i === 0) sequence.push("Instructor's Divine Bell");
+            if (trinkets.includes("Instructor's Divine Bell") && i === 0 && onUse[type] === "Instructor's Divine Bell") sequence.push("Instructor's Divine Bell");
             sequence.push('Ascended Nova');
             sequence.push('Ascended Nova');
         }
@@ -55,8 +64,8 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
     else if (type === "Fiend") {
         sequence.push('Evangelism');
         sequence.push('Shadowfiend');
-        if (trinkets.includes("Instructor's Divine Bell")) sequence.push("Instructor's Divine Bell");
-        if (trinkets.includes("Flame of Battle")) sequence.push("Flame of Battle");
+        if (trinkets.includes("Instructor's Divine Bell") && onUse[type] === "Instructor's Divine Bell") sequence.push("Instructor's Divine Bell");
+        if (trinkets.includes("Flame of Battle") && onUse[type] === "Flame of Battle") sequence.push("Flame of Battle");
         sequence.push('Schism');
         sequence.push('Mind Blast');
         sequence.push('Power Word: Solace');
@@ -83,7 +92,6 @@ export const buildRamp = (type, applicators, trinkets, haste, specialSpells = []
         }
     }
 
-    //console.log(sequence);
     return sequence;
     
 };

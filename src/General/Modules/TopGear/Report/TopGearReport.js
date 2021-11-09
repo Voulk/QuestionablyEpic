@@ -272,7 +272,7 @@ function TopGearReport(props) {
                                         </Grid>
                                         <Grid item xs={12}>
                                           <Typography variant="caption" align="left">
-                                            {"Playstyle: " + props.player.getActiveModel(props.contentType).modelName}
+                                            {"Playstyle: " + props.player.getActiveModel(contentType).modelName}
                                           </Typography>
                                         </Grid>
                                       </Grid>

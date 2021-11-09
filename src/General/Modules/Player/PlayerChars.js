@@ -34,6 +34,7 @@ class PlayerChars {
           if (player.covenant) newChar.setCovenant(player.covenant);
           else newChar.setDefaultCovenant(player.spec);
           if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
+          if (player.spec === "Discipline Priest") newChar.getActiveModel("Raid").setRampInfo(newChar.activeStats, [])
           if (player.renown > 0) newChar.updateRenownLevel(player.renown);
           if (player.dominationGemRanks) newChar.setDominationRanks(player.dominationGemRanks);
           charArray.push(newChar);

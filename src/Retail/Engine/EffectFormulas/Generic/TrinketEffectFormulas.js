@@ -22,6 +22,21 @@ export function getDiminishedValue(statID, procValue, baseStat) {
   return Math.round(procValue - (totalStat - currentStat));
 }
 
+export function getTrinketValue(trinketName, itemLevel) {
+  let activeTrinket = trinket_data.find((trinket) => trinket.name === trinketName);
+  if (trinketName === "Soulletting Ruby") {
+    const effect = activeTrinket.effects[0];
+    const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * effect.multiplier;
+    return trinketValue;
+  }
+  else {
+    const effect = activeTrinket.effects[0];
+    const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
+    return trinketValue;
+
+  }
+}
+
 export function getHighestStat(stats) {
   let max = "";
   let maxValue = -1;
@@ -52,7 +67,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     /* ---------------------------------------------------------------------------------------------- */
     /*                                         Error Handling                                         */
     /* ---------------------------------------------------------------------------------------------- */
-    console.log("no trinket found");
+    //console.log("no trinket found");
     return bonus_stats;
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -203,7 +218,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
       const boonSeq = buildRamp('Boon', 10, ["Soulletting Ruby"], setStats.haste, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, ['Rapture']);
       const rubyRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Soulletting Ruby": critValue}, {});
-
+      
       bonus_stats.hps = bonus_stats.hps + (rubyRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - crit_effect.discOverhealing);
 
     }
@@ -634,7 +649,6 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
 
     /* ------- Hastes impact on the trinket PPM is included in the secondary multiplier below. ------ */
     bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / 60) * effect.ppm * player.getStatMultiplier("NOMAST");
-    console.log(bonus_stats.hps);
     //
   }
  else if (
@@ -664,7 +678,7 @@ else if (
     bonus_stats.hps = getMasteryAddition(player.getInt(), mastery, player.getStatPerc("Crit"), player.getStatPerc("Vers")) * gusts / effect.cooldown;
   }
   else if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
-    const boonSeq = buildRamp('Boon', 10, ["Shadowed Orb"], setStats.haste, ['Rapture']);
+    const boonSeq = buildRamp('Boon', 10, ["Shadowed Orb of Torment"], setStats.haste, ['Rapture']);
     const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, ['Rapture']);
     const orbRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Shadowed Orb": trinketValue}, {});
 

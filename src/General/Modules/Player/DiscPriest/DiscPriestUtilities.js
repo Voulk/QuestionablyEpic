@@ -74,6 +74,5 @@ export const genStatWeights = (activeStats, base) => {
     console.log(hasteWeights);
     console.log(average(hasteWeights));
     */
-    console.log(statWeights);
     return statWeights;
 }

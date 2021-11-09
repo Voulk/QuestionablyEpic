@@ -111,7 +111,7 @@ class ItemSet {
       if (item.setID) {
         this.sets[item.setID] = (item.setID in this.sets) ? this.sets[item.setID] + 1 : 1;
       }
-      if (item.onUse) this.onUseTrinkets.push(item.effect.name);
+      if (item.onUse) this.onUseTrinkets.push({name: item.effect.name, level: item.level});
         
 
       if (item.effect !== "") {

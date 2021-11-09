@@ -35,7 +35,6 @@ const useStyles = makeStyles({
 export default function ItemCardReport(props) {
   const classes = useStyles();
   const item = props.item;
-  console.log(item);
   const enchants = props.enchants;
   const { i18n } = useTranslation();
   const gameType = useSelector((state) => state.gameType);
