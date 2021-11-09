@@ -67,7 +67,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     /* ---------------------------------------------------------------------------------------------- */
     /*                                         Error Handling                                         */
     /* ---------------------------------------------------------------------------------------------- */
-    console.log("no trinket found");
+    //console.log("no trinket found");
     return bonus_stats;
   } else if (
     /* ---------------------------------------------------------------------------------------------- */

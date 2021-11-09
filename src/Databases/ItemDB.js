@@ -73239,7 +73239,6 @@ export const itemDB = [
                 "encounterId": 2421
             }
         ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -114260,7 +114259,6 @@ export const itemDB = [
                 "encounterId": 2439
             }
         ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -114386,7 +114384,6 @@ export const itemDB = [
                 "encounterId": 2443
             }
         ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
