@@ -337,7 +337,6 @@ export default function CharCards(props) {
     }
     return min + ":" + sec;
   };
-  console.log(props.char.charAvatarURL);
   return (
     /* -------------------------------------------------------------------------- */
     /*                      Character Card for the main menu                      */
