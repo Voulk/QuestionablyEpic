@@ -1,6 +1,6 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Grid, Divider, Paper, AppBar, Tabs, Tab, Box } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
+import { Typography, Grid, Divider, Paper, AppBar, Tabs, Tab, Box } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
@@ -125,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   header: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
@@ -196,34 +196,54 @@ export default function RaidGearContainer(props) {
     const firstDifficulty = difficulties[0];
     const secondDifficulty = difficulties.length === 2 ? difficulties[1] : -1;
 
-    return (
-      encounterDB[1193]
-        //.filter((key) => key === raidID)
-        .map((key, i) => (
-          <Grid item xs={12} key={"bossContainer-" + i} style={{ padding: "4px 0px" }}>
-            <Paper style={{ backgroundColor: "#191c23", padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
-              <Grid container spacing={2} justify="center" alignItems="flex-start">
-                <Grid item style={{ alignSelf: "center" }}>
-                  <div
-                    style={{
-                      width: 175,
-                      height: 181,
-                      paddingLeft: 8,
-                      backgroundImage: `url(${UpgradeFinderBossImages(key)})`,
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "center 60%",
-                      backgroundSize: "auto 100%",
-                    }}
-                    className="container-UpgradeCards"
-                  >
-                    <Typography variant="h6" style={{width: "100%" }} className="centered-UpgradeCards">
-                      {t("BossNames." + key)}
+    return encounterDB[1193]
+      //.filter((key) => key === raidID)
+      .map((key, i) => (
+        <Grid item xs={12} key={"bossContainer-" + i} style={{ padding: "4px 0px" }}>
+          <Paper style={{ backgroundColor: "#191c23", padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
+            <Grid container spacing={2} justifyContent="center" alignItems="flex-start">
+              <Grid item style={{ alignSelf: "center" }}>
+                <div
+                  style={{
+                    width: 175,
+                    height: 181,
+                    paddingLeft: 8,
+                    backgroundImage: `url(${UpgradeFinderBossImages(key)})`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center 60%",
+                    backgroundSize: "auto 100%",
+                  }}
+                  className="container-UpgradeCards"
+                >
+                  <Typography variant="h6" style={{width: "100%" }} className="centered-UpgradeCards">
+                    {t("BossNames." + key)}
+                  </Typography>
+                </div>
+              </Grid>
+              <Divider orientation="vertical" flexItem style={{ marginRight: 4 }} />
+              <Grid item xs={12} sm container direction="column" spacing={1}>
+                <Grid item xs={12} container spacing={1}>
+                  <Grid item xs={12}>
+                    <Typography
+                      variant="h6"
+                      color="primary"
+                      align="center"
+                      style={{
+                        backgroundColor: "#35383e",
+                        borderRadius: 4,
+                      }}
+                    >
+                      {getDifficultyName(firstDifficulty)}
                     </Typography>
-                  </div>
+                  </Grid>
+
+                  {[...filterItemListBySource(itemList, 1193, key, getDifficultyBaseLevel(firstDifficulty))].map((item, index) => (
+                    <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
+                  ))}
                 </Grid>
-                <Divider orientation="vertical" flexItem style={{ marginRight: 4 }} />
-                <Grid item xs={12} sm container direction="column" spacing={1}>
-                  <Grid item xs={12} container spacing={1}>
+
+                {secondDifficulty !== -1 ? (
+                  <Grid item xs={12} sm container spacing={1}>
                     <Grid item xs={12}>
                       <Typography
                         variant="h6"
@@ -234,44 +254,22 @@ export default function RaidGearContainer(props) {
                           borderRadius: 4,
                         }}
                       >
-                        {getDifficultyName(firstDifficulty)}
+                        {getDifficultyName(secondDifficulty)}
                       </Typography>
                     </Grid>
 
-                    {[...filterItemListBySource(itemList, 1193, key, getDifficultyBaseLevel(firstDifficulty))].map((item, index) => (
+                    {[...filterItemListBySource(itemList, 1193, key, getDifficultyBaseLevel(secondDifficulty))].map((item, index) => (
                       <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                     ))}
                   </Grid>
-
-                  {secondDifficulty !== -1 ? (
-                    <Grid item xs={12} sm container spacing={1}>
-                      <Grid item xs={12}>
-                        <Typography
-                          variant="h6"
-                          color="primary"
-                          align="center"
-                          style={{
-                            backgroundColor: "#35383e",
-                            borderRadius: 4,
-                          }}
-                        >
-                          {getDifficultyName(secondDifficulty)}
-                        </Typography>
-                      </Grid>
-
-                      {[...filterItemListBySource(itemList, 1193, key, getDifficultyBaseLevel(secondDifficulty))].map((item, index) => (
-                        <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
-                      ))}
-                    </Grid>
-                  ) : (
-                    ""
-                  )}
-                </Grid>
+                ) : (
+                  ""
+                )}
               </Grid>
-            </Paper>
-          </Grid>
-        ))
-    );
+            </Grid>
+          </Paper>
+        </Grid>
+      ));
   };
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -357,7 +355,7 @@ export default function RaidGearContainer(props) {
                   .map((key, i) => (
                     <Grid item xs={12} key={"bossContainer-" + i} style={{ padding: "4px 0px" }}>
                       <Paper style={{ backgroundColor: "#191c23", padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
-                        <Grid container spacing={2} justify="center" alignItems="flex-start">
+                        <Grid container spacing={2} justifyContent="center" alignItems="flex-start">
                           <Grid item style={{ alignSelf: "center" }}>
                             <div
                               style={{

@@ -1,10 +1,10 @@
 import React, { forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar } from "material-table";
 //prettier-ignore
-import { AddBox, ArrowDownward, Check, ChevronLeft, ChevronRight, Clear, DeleteOutline, Edit, FilterList, FirstPage, LastPage, Remove, SaveAlt, Search, ViewColumn } from "@material-ui/icons";
-import { Select, TextField, InputLabel, FormControl, Paper } from "@material-ui/core";
-import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import { makeStyles } from "@material-ui/core/styles";
+import { AddBox, ArrowDownward, Check, ChevronLeft, ChevronRight, Clear, DeleteOutline, Edit, FilterList, FirstPage, LastPage, Remove, SaveAlt, Search, ViewColumn } from "@mui/icons-material";
+import { Select, TextField, InputLabel, FormControl, Paper, adaptV4Theme } from "@mui/material";
+import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
+import makeStyles from '@mui/styles/makeStyles';
 import classIcons from "../Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { classMenus } from "../Menus/ClassMenuItems";
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const themeCooldownTable = createMuiTheme({
+const themeCooldownTable = createTheme(adaptV4Theme({
   overrides: {
     MuiTableCell: {
       root: {
@@ -51,11 +51,11 @@ const themeCooldownTable = createMuiTheme({
     },
   },
   palette: {
-    type: "dark",
+    mode: "dark",
     primary: { main: "#d3bc47" },
     secondary: { main: "#e0e0e0" },
   },
-});
+}));
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -125,20 +125,22 @@ export default function HealTeam() {
         </div>
       ),
       editComponent: (props) => (
-        <ThemeProvider theme={themeCooldownTable}>
-          <FormControl className={classes.formControl} size="small" variant="outlined" style={{ marginTop: 6 }}>
-            <InputLabel id="HealerClassSelector">{t("Class")}</InputLabel>
-            <Select
-              label={t("Class")}
-              value={props.value}
-              onChange={(e) => {
-                props.onChange(e.target.value);
-              }}
-            >
-              {classMenus}
-            </Select>
-          </FormControl>
-        </ThemeProvider>
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={themeCooldownTable}>
+            <FormControl className={classes.formControl} size="small" variant="outlined" style={{ marginTop: 6 }}>
+              <InputLabel id="HealerClassSelector">{t("Class")}</InputLabel>
+              <Select
+                label={t("Class")}
+                value={props.value}
+                onChange={(e) => {
+                  props.onChange(e.target.value);
+                }}
+              >
+                {classMenus}
+              </Select>
+            </FormControl>
+          </ThemeProvider>
+        </StyledEngineProvider>
       ),
     },
 
@@ -176,91 +178,93 @@ export default function HealTeam() {
   };
 
   return (
-    <ThemeProvider theme={themeCooldownTable}>
-      <MaterialTable
-        icons={tableIcons}
-        title={t("CooldownPlanner.TableLabels.HealTeamHeader")}
-        columns={columns}
-        data={data}
-        style={{
-          padding: 10,
-        }}
-        options={{
-          search: false,
-          showTitle: true,
-          headerStyle: {
-            border: "1px solid #c8b054",
-            padding: "0px 8px 0px 8px",
-            backgroundColor: "#c8b054",
-            color: "#000",
-          },
-          rowStyle: (rowData, index) => {
-            if (index % 2) {
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={themeCooldownTable}>
+        <MaterialTable
+          icons={tableIcons}
+          title={t("CooldownPlanner.TableLabels.HealTeamHeader")}
+          columns={columns}
+          data={data}
+          style={{
+            padding: 10,
+          }}
+          options={{
+            search: false,
+            showTitle: true,
+            headerStyle: {
+              border: "1px solid #c8b054",
+              padding: "0px 8px 0px 8px",
+              backgroundColor: "#c8b054",
+              color: "#000",
+            },
+            rowStyle: (rowData, index) => {
+              if (index % 2) {
+                return {
+                  backgroundColor: "#515151",
+                  borderBottom: "1px solid #515151",
+                  borderLeft: "1px solid #515151",
+                  borderRight: "1px solid #515151",
+                };
+              }
               return {
-                backgroundColor: "#515151",
                 borderBottom: "1px solid #515151",
                 borderLeft: "1px solid #515151",
                 borderRight: "1px solid #515151",
               };
-            }
-            return {
+            },
+            searchFieldStyle: {
               borderBottom: "1px solid #515151",
-              borderLeft: "1px solid #515151",
-              borderRight: "1px solid #515151",
-            };
-          },
-          searchFieldStyle: {
-            borderBottom: "1px solid #515151",
-            color: "#ffffff",
-          },
-          actionCellStyle: {
-            borderBottom: "1px solid #515151",
-          },
-          actionsColumnIndex: 7,
-          paging: false,
-        }}
-        components={{
-          Container: (props) => <Paper {...props} elevation={0} />,
-          Toolbar: (props) => (
-            <div style={{ marginBottom: 8 }}>
-              <MTableToolbar {...props} />
-            </div>
-          ),
-        }}
-        localization={curLang()}
-        editable={{
-          onRowAdd: (newData) =>
-            new Promise((resolve, reject) => {
-              setTimeout(() => {
-                setData([...data, newData]);
-                updateStorage([...data, newData]);
-                resolve();
-              }, 1000);
-            }),
-          onRowUpdate: (newData, oldData) =>
-            new Promise((resolve, reject) => {
-              setTimeout(() => {
-                const dataUpdate = [...data];
-                const index = oldData.tableData.id;
-                dataUpdate[index] = newData;
-                setData([...dataUpdate]);
-                updateStorage([...dataUpdate]);
-                resolve();
-              }, 1000);
-            }),
-          onRowDelete: (oldData) =>
-            new Promise((resolve, reject) => {
-              setTimeout(() => {
-                const dataDelete = [...data];
-                const index = oldData.tableData.id;
-                dataDelete.splice(index, 1);
-                setData([...dataDelete]);
-                updateStorage([...dataDelete]);
-                resolve();
-              }, 1000);
-            }),
-        }}
-      />
-    </ThemeProvider>
+              color: "#ffffff",
+            },
+            actionCellStyle: {
+              borderBottom: "1px solid #515151",
+            },
+            actionsColumnIndex: 7,
+            paging: false,
+          }}
+          components={{
+            Container: (props) => <Paper {...props} elevation={0} />,
+            Toolbar: (props) => (
+              <div style={{ marginBottom: 8 }}>
+                <MTableToolbar {...props} />
+              </div>
+            ),
+          }}
+          localization={curLang()}
+          editable={{
+            onRowAdd: (newData) =>
+              new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  setData([...data, newData]);
+                  updateStorage([...data, newData]);
+                  resolve();
+                }, 1000);
+              }),
+            onRowUpdate: (newData, oldData) =>
+              new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  const dataUpdate = [...data];
+                  const index = oldData.tableData.id;
+                  dataUpdate[index] = newData;
+                  setData([...dataUpdate]);
+                  updateStorage([...dataUpdate]);
+                  resolve();
+                }, 1000);
+              }),
+            onRowDelete: (oldData) =>
+              new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  const dataDelete = [...data];
+                  const index = oldData.tableData.id;
+                  dataDelete.splice(index, 1);
+                  setData([...dataDelete]);
+                  updateStorage([...dataDelete]);
+                  resolve();
+                }, 1000);
+              }),
+          }}
+        />
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }

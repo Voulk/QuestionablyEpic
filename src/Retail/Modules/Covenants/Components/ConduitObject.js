@@ -1,8 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "../Covenants.css";
-import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardActionArea, Typography, Grid, Divider } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
+import { Card, CardActionArea, Typography, Grid, Divider } from "@mui/material";
 import { conduitDB } from "Databases/ConduitDB";
 
 const useStyles = makeStyles({ root: { padding: 0, height: 26 } });
@@ -60,7 +60,7 @@ export default function ConduitObject(props) {
     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
       <Card className={classes.root} variant="outlined">
         <CardActionArea disabled={false} onClick={conduitClicked} onContextMenu={(e) => conduitRightClicked(e)}>
-          <Grid container display="inline-flex" wrap="nowrap" justify="space-between" style={{ maxHeight: 26 }}>
+          <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between" style={{ maxHeight: 26 }}>
             <Grid item xs="auto">
               {/* -------------------------------- Image for the Conduit + Ilvl + WHTooltip --------------------------------  */}
               <div className="container">
@@ -84,7 +84,7 @@ export default function ConduitObject(props) {
               </div>
             </Grid>
             <Divider orientation="vertical" flexItem />
-            <Grid container wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
+            <Grid container wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
               <Grid item xs={10} display="inline">
                 <Typography
                   wrap="nowrap"

@@ -1,6 +1,6 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Typography } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
+import { Grid, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import HallOfFame from "General/Modules/HallOfFame/HallOfFame";
 import Changelog from "General/Modules/ChangeLog/Changelog";
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
   },
   subRoot: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('sm')]: {
       margin: "auto",
       width: "85%",
     },
@@ -42,7 +42,7 @@ export default function QEFooter(props) {
   return (
     <div className={classes.root}>
       <div className={classes.subRoot}>
-        <Grid container spacing={1} justify="space-between">
+        <Grid container spacing={1} justifyContent="space-between">
           {/* ---------------------------------------------------------------------------------------------- */
           /*                                         Left Side Links                                        */
           /* ----------------------------------------------------------------------------------------------  */}

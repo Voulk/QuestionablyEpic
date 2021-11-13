@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { makeStyles } from "@material-ui/core/styles";
-import { Button, Tabs, Tab, Box, AppBar, Typography, Grid } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
+import { Button, Tabs, Tab, Box, AppBar, Typography, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { getDifferentialByID } from "../../Engine/ItemUtilities";
@@ -126,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "auto 100%",
   },
   header: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('sm')]: {
       marginTop: 120,
       margin: "auto",
       width: "90%",

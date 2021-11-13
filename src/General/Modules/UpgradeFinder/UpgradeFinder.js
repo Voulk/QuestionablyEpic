@@ -2,8 +2,9 @@ import UpgradeFinderFront from "./UpgradeFinderFront";
 import UpgradeFinderResults from "./UpgradeFinderResults";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import React, { useState, useEffect } from "react";
-import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
-import { Paper, Grid, Typography, Button } from "@material-ui/core";
+import { createTheme } from "@mui/material/styles";
+import makeStyles from '@mui/styles/makeStyles';
+import { Paper, Grid, Typography, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import ReactGA from "react-ga";
 

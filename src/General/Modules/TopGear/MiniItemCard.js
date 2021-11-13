@@ -1,13 +1,13 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardContent, Typography, Grid, Divider, IconButton } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
+import { Card, CardContent, Typography, Grid, Divider, IconButton } from "@mui/material";
 import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemIcon } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
-import DeleteIcon from "@material-ui/icons/Delete";
+import DeleteIcon from "@mui/icons-material/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActionArea from "@mui/material/CardActionArea";
 import { dominationGemDB } from "../../../Databases/DominationGemDB";
 
 const useStyles = makeStyles({
@@ -91,7 +91,7 @@ export default function ItemCard(props) {
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <Card className={item.active && isVault ? classes.selectedVault : item.active ? classes.selected : isVault ? classes.vault : classes.root} elevation={0} variant="outlined">
         <CardActionArea onClick={activateItemCard}>
-          <Grid container display="inline-flex" wrap="nowrap" justify="space-between">
+          <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
             <Grid item xs="auto">
               <CardContent
                 style={{
@@ -120,8 +120,8 @@ export default function ItemCard(props) {
             </Grid>
             <Divider orientation="vertical" flexItem />
             <CardContent style={{ padding: 4, width: "100%" }}>
-              <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
-                <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
+              <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
+                <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={11} display="inline">
                     <Typography variant="subtitle2" wrap="nowrap" display="inline" align="left" style={{ color: itemQuality }}>
                       {itemName}
@@ -129,7 +129,7 @@ export default function ItemCard(props) {
                   </Grid>
                 </Grid>
                 <Divider />
-                <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
+                <Grid item container display="inline" direction="row" xs="auto" justifyContent="space-between">
                   <Grid item xs={11}>
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px" }}>
                       {item.domGemID !== 0 && gameType === "Retail" ? (

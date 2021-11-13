@@ -1,6 +1,6 @@
 import React from "react";
 // import { getSoulbindFormula } from "../../Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
-import { Menu, MenuItem, Paper } from "@material-ui/core";
+import { Menu, MenuItem, Paper } from "@mui/material";
 import { getConduitName, filterConduits, getCovenant } from "../CovenantUtilities";
 import { useTranslation } from "react-i18next";
 import { getEstimatedHPS } from "../CovenantUtilities";

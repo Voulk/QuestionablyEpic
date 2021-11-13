@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import CharCards from "./CharacterModules/CharacterCards";
 import AddNewChar from "./CharacterModules/CharacterCreator";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from '@mui/styles/makeStyles';
 import ReactGA from "react-ga";
-import ArrowForward from "@material-ui/icons/ArrowForward";
-import { Grid, Button, Typography, Tooltip } from "@material-ui/core";
+import ArrowForward from "@mui/icons-material/ArrowForward";
+import { Grid, Button, Typography, Tooltip } from "@mui/material";
 import MessageOfTheDay from "./MessageOftheDay";
 import ArticleCard from "../ArticleCards/ArcticleCard";
-import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { useSelector } from "react-redux";
 import GameTypeSwitch from "./GameTypeToggle";
 import WelcomeDialog from "../Welcome/Welcome";
@@ -19,7 +19,7 @@ import QEFooter from "./Footer/QEFooter";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('sm')]: {
       margin: "auto",
       width: "85%",
       justifyContent: "center",

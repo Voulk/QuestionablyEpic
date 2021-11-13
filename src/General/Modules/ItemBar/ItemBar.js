@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ReactGA from "react-ga";
 import { useTranslation } from "react-i18next";
-import { makeStyles } from "@material-ui/core/styles";
-import { InputLabel, MenuItem, FormControl, Select, Button, Grid, Paper, Typography, Divider, Snackbar, TextField, Popover } from "@material-ui/core";
-import { Autocomplete } from "@material-ui/lab";
-import MuiAlert from "@material-ui/lab/Alert";
+import makeStyles from '@mui/styles/makeStyles';
+import { InputLabel, MenuItem, FormControl, Select, Button, Grid, Paper, Typography, Divider, Snackbar, TextField, Popover } from "@mui/material";
+import { Autocomplete } from '@mui/material';
+import MuiAlert from '@mui/material/Alert';
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
 import BCItem from "../Player/BCItem";
@@ -246,7 +246,7 @@ export default function ItemBar(props) {
         id="itemBarMainGridContainer"
         container
         direction="row"
-        justify="center"
+        justifyContent="center"
         alignItems="center"
         spacing={1}
         style={{
@@ -278,7 +278,7 @@ export default function ItemBar(props) {
               options={itemDropdown}
               openOnFocus={true}
               getOptionLabel={(option) => option.label}
-              getOptionSelected={(option, value) => option.label === value.label}
+              isOptionEqualToValue={(option, value) => option.label === value.label}
               inputValue={inputValue}
               onInputChange={handleInputChange}
               freeSolo

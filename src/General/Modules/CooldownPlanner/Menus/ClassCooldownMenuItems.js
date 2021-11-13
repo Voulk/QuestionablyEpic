@@ -1,6 +1,6 @@
 import React from "react";
 import { Translation } from "react-i18next";
-import { MenuItem, Divider } from "@material-ui/core";
+import { MenuItem, Divider } from "@mui/material";
 import AuraMasteryIcon from "Images/Classes/Paladin/Specialisation/Holy/Icons/AuraMastery.jpg";
 import AvengingWrathIcon from "Images/Classes/Paladin/Specialisation/Holy/Icons/AvengingWrath.jpg";
 import DivineHymnIcon from "Images/Classes/Priest/Specialisation/Holy/Icons/DivineHymn.jpg";

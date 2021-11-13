@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { Typography, Paper, Divider, Grid, Accordion, AccordionSummary, AccordionDetails, makeStyles } from "@material-ui/core";
+import {
+  Typography,
+  Paper,
+  Divider,
+  Grid,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+} from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
 import classicons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons.js";
 import talentIcons from "../../CooldownPlanner/Functions/IconFunctions/TalentIcons";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import { useTranslation } from "react-i18next";
 // import { getItemIcon } from "../../../Engine/ItemUtilities";
 import "./HealerCardInfo.css";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { STATPERONEPERCENT } from "../../../Engine/STAT";
 
 const useStyles = makeStyles((theme) => ({
@@ -101,7 +110,7 @@ export default function HealerInfoCards(props) {
             </AccordionSummary>
             <Divider style={{ marginTop: 4 }} />
             <AccordionDetails style={{ padding: 0 }}>
-              <Grid container justify="center" style={{ margin: 4 }} spacing={1}>
+              <Grid container justifyContent="center" style={{ margin: 4 }} spacing={1}>
                 <Grid
                   item
                   xs={4}

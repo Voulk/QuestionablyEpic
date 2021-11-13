@@ -1,4 +1,4 @@
-import { ContactSupportOutlined } from "@material-ui/icons";
+import { ContactSupportOutlined } from "@mui/icons-material";
 import { consoleSandbox } from "@sentry/utils";
 import { runCastSequence, allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "./DiscRampGen";

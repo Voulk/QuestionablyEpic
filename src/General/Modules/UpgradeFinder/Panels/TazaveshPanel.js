@@ -1,6 +1,6 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Grid, Divider, Paper } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
+import { Typography, Grid, Divider, Paper } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";

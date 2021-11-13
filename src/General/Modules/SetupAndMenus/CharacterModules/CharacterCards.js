@@ -2,13 +2,42 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 //prettier-ignore
-import {Accordion, AccordionSummary, AccordionDetails, Paper, Box, Button, Card, CardContent, CardActionArea, Divider, IconButton, Typography, Avatar, Grid, TextField, Dialog, DialogContent, DialogActions, Tabs, Tab, Tooltip, Select, MenuItem, FormControl, InputLabel } from "@material-ui/core";
-import { createMuiTheme, makeStyles, ThemeProvider, withStyles } from "@material-ui/core/styles";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import SettingsIcon from "@material-ui/icons/Settings";
-import Autocomplete from "@material-ui/lab/Autocomplete";
-import ClearIcon from "@material-ui/icons/Clear";
-import { red } from "@material-ui/core/colors";
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Paper,
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardActionArea,
+  Divider,
+  IconButton,
+  Typography,
+  Avatar,
+  Grid,
+  TextField,
+  Dialog,
+  DialogContent,
+  DialogActions,
+  Tabs,
+  Tab,
+  Tooltip,
+  Select,
+  MenuItem,
+  FormControl,
+  InputLabel,
+  adaptV4Theme,
+} from "@mui/material";
+import { createTheme, ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
+import makeStyles from '@mui/styles/makeStyles';
+import withStyles from '@mui/styles/withStyles';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import SettingsIcon from "@mui/icons-material/Settings";
+import Autocomplete from '@mui/material/Autocomplete';
+import ClearIcon from "@mui/icons-material/Clear";
+import { red } from "@mui/material/colors";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions.js";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
@@ -95,11 +124,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const deleteTheme = createMuiTheme({
+const deleteTheme = createTheme(adaptV4Theme({
   palette: {
     primary: red,
   },
-});
+}));
 
 TabPanel.propTypes = {
   children: PropTypes.node,
@@ -568,8 +597,8 @@ export default function CharCards(props) {
                     {/* -------------------------------------------------------------------------- */
                     /*                            Character Stats Panel                           */
                     /* -------------------------------------------------------------------------- */}
-                    <Grid item xs={12} container direction="row" justify="center" alignItems="center" spacing={1}>
-                      <Grid item xs={12} container direction="row" justify="center" alignItems="center">
+                    <Grid item xs={12} container direction="row" justifyContent="center" alignItems="center" spacing={1}>
+                      <Grid item xs={12} container direction="row" justifyContent="center" alignItems="center">
                         <Grid item xs={12}>
                           <Typography variant="h6" align="center" noWrap color="primary">
                             {t("CharacterCreator.StatWeights")}
@@ -901,11 +930,13 @@ export default function CharCards(props) {
             }}
           >
             {/* ------------------------------ Delete Button -----------------------------  */}
-            <ThemeProvider theme={deleteTheme}>
-              <Button onClick={handleDelete} color="primary" variant="outlined">
-                {t("CharacterCreator.DeleteCharacter")}
-              </Button>
-            </ThemeProvider>
+            <StyledEngineProvider injectFirst>
+              <ThemeProvider theme={deleteTheme}>
+                <Button onClick={handleDelete} color="primary" variant="outlined">
+                  {t("CharacterCreator.DeleteCharacter")}
+                </Button>
+              </ThemeProvider>
+            </StyledEngineProvider>
 
             {/* ---------------------- Default Button (Reset Stats) ----------------------  */}
             <div>

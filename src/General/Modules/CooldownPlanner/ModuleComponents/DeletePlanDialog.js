@@ -1,8 +1,18 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Grid, Typography } from "@material-ui/core";
-import { red } from "@material-ui/core/colors";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import {
+  Button,
+  TextField,
+  DialogContent,
+  DialogTitle,
+  Dialog,
+  DialogActions,
+  Grid,
+  Typography,
+  adaptV4Theme,
+} from "@mui/material";
+import { red } from "@mui/material/colors";
+import { createTheme, ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
 
 AddPlanDialog.propTypes = {
   handleAddPlanDialogClose: PropTypes.func.isRequired,
@@ -10,11 +20,11 @@ AddPlanDialog.propTypes = {
   enteredPlanName: PropTypes.string.isRequired,
 };
 
-const deleteTheme = createMuiTheme({
+const deleteTheme = createTheme(adaptV4Theme({
   palette: {
     primary: red,
   },
-});
+}));
 
 export default function AddPlanDialog(props) {
   const { handleDeletePlanDialogClose, currentPlan, openDeletePlanDialog, cooldownObject, currentBoss, setCurrentPlan, setData } = props;
@@ -43,18 +53,20 @@ export default function AddPlanDialog(props) {
         <TextField variant="outlined" fullWidth id="standard-required" label="Type 'Delete' to confirm" defaultValue="" value={deleteChecker} onChange={deleteCheck} />
       </DialogContent>
       <DialogActions>
-        <ThemeProvider theme={deleteTheme}>
-          <Button
-            key={"deletePlanButton"}
-            variant="contained"
-            color="primary"
-            onClick={(e) => deletePlan(currentPlan, currentBoss)}
-            size="small"
-            disabled={deleteChecker === "Delete" || deleteChecker === "delete" ? false : true}
-          >
-            Delete Plan
-          </Button>
-        </ThemeProvider>
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={deleteTheme}>
+            <Button
+              key={"deletePlanButton"}
+              variant="contained"
+              color="primary"
+              onClick={(e) => deletePlan(currentPlan, currentBoss)}
+              size="small"
+              disabled={deleteChecker === "Delete" || deleteChecker === "delete" ? false : true}
+            >
+              Delete Plan
+            </Button>
+          </ThemeProvider>
+        </StyledEngineProvider>
       </DialogActions>
     </Dialog>
   );

@@ -1,7 +1,8 @@
 import React from "react";
-import { Button, ClickAwayListener, Dialog, Grow, MenuItem, MenuList, Paper, Popper, Tooltip } from "@material-ui/core";
-import MuiDialogContent from "@material-ui/core/DialogContent";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { Button, ClickAwayListener, Dialog, Grow, MenuItem, MenuList, Paper, Popper, Tooltip } from "@mui/material";
+import MuiDialogContent from "@mui/material/DialogContent";
+import makeStyles from '@mui/styles/makeStyles';
+import withStyles from '@mui/styles/withStyles';
 import { useTranslation } from "react-i18next";
 import BnetIcon from "Images/QeAssets/BattleNetIcon.png";
 import { QELogin } from "./QELogin";

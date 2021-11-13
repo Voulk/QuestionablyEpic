@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ReactGA from "react-ga";
 import { useTranslation } from "react-i18next";
-import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Typography, Divider, Snackbar } from "@material-ui/core";
-import MuiAlert from "@material-ui/lab/Alert";
+import makeStyles from '@mui/styles/makeStyles';
+import { Grid, Typography, Divider, Snackbar } from "@mui/material";
+import MuiAlert from '@mui/material/Alert';
 import "../SetupAndMenus/QEMainMenu.css";
 import "./QuickCompare.css";
 import { buildWepCombos } from "../../Engine/ItemUtilities";
@@ -18,7 +18,7 @@ import CharacterPanel from "../CharacterPanel/CharacterPanel";
 
 const useStyles = makeStyles((theme) => ({
   header: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('sm')]: {
       margin: "auto",
       width: "90%",
       justifyContent: "center",
@@ -139,7 +139,7 @@ export default function QuickCompare(props) {
 
   return (
     <div className={classes.header}>
-      <Grid container spacing={1} justify="center">
+      <Grid container spacing={1} justifyContent="center">
         {/* -------------------------------------------------------------------------- */
         /*                         Quick Compare Title Header                         */
         /* -------------------------------------------------------------------------- */}

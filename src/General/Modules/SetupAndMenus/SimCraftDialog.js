@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip, Typography, Link } from "@material-ui/core";
+import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip, Typography, Link } from "@mui/material";
 import { runSimC } from "../../../Retail/Engine/SimCImport/SimCImportEngine";
 import { runBCSimC } from "../../../BurningCrusade/Engine/SimCImport/SimCImportEngineBC";
 // import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript";

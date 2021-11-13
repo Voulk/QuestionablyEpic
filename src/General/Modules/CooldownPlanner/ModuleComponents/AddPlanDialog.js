@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Divider, Paper, Select, Grid, Typography } from "@material-ui/core";
+import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Divider, Paper, Select, Grid, Typography } from "@mui/material";
 
 AddPlanDialog.propTypes = {
   handleAddPlanDialogClose: PropTypes.func.isRequired,

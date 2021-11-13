@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider, ListSubheader, MenuItem } from "@material-ui/core";
+import { Divider, ListSubheader, MenuItem } from "@mui/material";
 import HolyPaladinIcon from "Images/Classes/Paladin/Specialisation/Holy/Icons/HolyPaladin.jpg";
 import DiscPriestIcon from "Images/Classes/Priest/Specialisation/Discipline/Icons/DisciplinePriest.jpg";
 import HolyPriestIcon from "Images/Classes/Priest/Specialisation/Holy/Icons/HolyPriest.jpg";

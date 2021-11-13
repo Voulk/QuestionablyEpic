@@ -1,8 +1,8 @@
 import React from "react";
-import { Checkbox, FormControlLabel } from "@material-ui/core/Checkbox";
-import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { Checkbox, FormControlLabel } from "@mui/material/Checkbox";
+import { ThemeProvider, StyledEngineProvider, createTheme, adaptV4Theme } from "@mui/material/styles";
 
-const theme = createMuiTheme({
+const theme = createTheme(adaptV4Theme({
   overrides: {
     MuiTypography: {
       body1: {
@@ -11,11 +11,11 @@ const theme = createMuiTheme({
     },
   },
   palette: {
-    type: "dark",
+    mode: "dark",
     primary: { main: "#d3bc47" },
     secondary: { main: "#e0e0e0" },
   },
-});
+}));
 
 export default function Checkboxes(props) {
   const [checked, setChecked] = React.useState(true);
@@ -27,13 +27,15 @@ export default function Checkboxes(props) {
 
   return (
     <div>
-      <ThemeProvider theme={theme}>
-        <FormControlLabel
-          style={{ color: "white" }}
-          control={<Checkbox checked={checked} onChange={handleChange} size="small" style={{ padding: "4px" }} inputProps={{ "aria-label": "checkbox" }} />}
-          label={props.label}
-        />
-      </ThemeProvider>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>
+          <FormControlLabel
+            style={{ color: "white" }}
+            control={<Checkbox checked={checked} onChange={handleChange} size="small" style={{ padding: "4px" }} inputProps={{ "aria-label": "checkbox" }} />}
+            label={props.label}
+          />
+        </ThemeProvider>
+      </StyledEngineProvider>
     </div>
   );
 }

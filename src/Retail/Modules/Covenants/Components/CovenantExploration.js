@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { makeStyles } from "@material-ui/core/styles";
-import { Tabs, Tab, Box, AppBar, Grid, Paper, Typography, TextField, Tooltip } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
+import { Tabs, Tab, Box, AppBar, Grid, Paper, Typography, TextField, Tooltip } from "@mui/material";
 import { soulbindDB, soulbindConnectors } from "Databases/SoulbindDB";
 import SoulbindNode from "./SoulbindNode";
 import ConduitObject from "./ConduitObject";
@@ -89,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "0px 4px 0px 0px",
   },
   header: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('sm')]: {
       margin: "auto",
       width: "85%",
       justifyContent: "center",
@@ -205,7 +205,7 @@ export default function CovenantExploration(props) {
 
   return (
     <div className={classes.header}>
-      <Grid container spacing={1} justify="center">
+      <Grid container spacing={1} justifyContent="center">
         {/* ---------------------------------------- Module Header ---------------------------------------  */}
         <Grid item xs={12}>
           <Typography variant="h4" align="center" style={{ padding: "10px 10px 0px 10px" }} color="primary">
@@ -564,7 +564,7 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
       /* ----------------------------------------------------------------------------------------------  */}
       <Grid container>
         <div id="conduits" className={classes.conduits}>
-          <Grid container direction="column" justify="space-between" alignItems="center" style={{ height: "100%" }}>
+          <Grid container direction="column" justifyContent="space-between" alignItems="center" style={{ height: "100%" }}>
             <Grid
               container
               id="conduitChoices"

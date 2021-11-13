@@ -4,7 +4,7 @@ import chroma from "chroma-js";
 import "./Chart.css";
 import moment from "moment";
 import i18n from "i18next";
-import { Paper } from "@material-ui/core";
+import { Paper } from "@mui/material";
 
 class Chart extends Component {
   constructor(props) {

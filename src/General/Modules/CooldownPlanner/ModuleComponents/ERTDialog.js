@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Button, TextField, Dialog, Grid, Divider, DialogActions, DialogContent, DialogTitle, Tooltip, Typography, FormControl, InputLabel, Select, MenuItem, Paper } from "@material-ui/core";
+import { Button, TextField, Dialog, Grid, Divider, DialogActions, DialogContent, DialogTitle, Tooltip, Typography, FormControl, InputLabel, Select, MenuItem, Paper } from "@mui/material";
 import { bossList } from "../Data/CooldownPlannerBossList";
 
 export default function ExportERTDialog(props) {
@@ -80,7 +80,7 @@ export default function ExportERTDialog(props) {
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
         <DialogTitle id="ert-dialog-title">
-          <Grid container direction="row" justify="space-between">
+          <Grid container direction="row" justifyContent="space-between">
             <Grid item>
               <Typography variant="h6" color="primary">
                 Note Export

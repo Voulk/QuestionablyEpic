@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardActions, CardContent, Divider, Grid, Typography } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
+import { Card, CardActions, CardContent, Divider, Grid, Typography } from "@mui/material";
 import { legendaryImages } from "./LegendaryIcons";
 import { legendaryNameTranslator } from "./LegendaryTranslations";
 
@@ -99,7 +99,7 @@ export default function LegendaryObject(props) {
           </div>
           {/* ---------------------------- Divider to seperate header from body ---------------------------- */}
           <Divider style={{ marginTop: 4 }} />
-          <Grid container direction="row" justify="space-between" alignItems="center" style={{ height: 110 }}>
+          <Grid container direction="row" justifyContent="space-between" alignItems="center" style={{ height: 110 }}>
             <Grid item xs={12}>
               <CardContent style={{ padding: 0 }}>
                 {/* -------------------------------- Legendary Effect Description -------------------------------- */}

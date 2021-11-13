@@ -1,8 +1,8 @@
 import React from "react";
-import { FormGroup, FormControlLabel, Switch } from "@material-ui/core";
-import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { FormGroup, FormControlLabel, Switch, adaptV4Theme } from "@mui/material";
+import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
 
-const theme = createMuiTheme({
+const theme = createTheme(adaptV4Theme({
   overrides: {
     MuiTypography: {
       body1: {
@@ -11,11 +11,11 @@ const theme = createMuiTheme({
     },
   },
   palette: {
-    type: "dark",
+    mode: "dark",
     primary: { main: "#d3bc47" },
     secondary: { main: "#e0e0e0" },
   },
-});
+}));
 
 export default function SwitchLabels(props) {
   const [checked, setChecked] = React.useState(true);
@@ -25,14 +25,16 @@ export default function SwitchLabels(props) {
     props.check(event.target.checked);
   };
   return (
-    <ThemeProvider theme={theme}>
-      <FormGroup row>
-        <FormControlLabel
-          control={<Switch checked={checked} onChange={handleChange} name="checkedA" size="small" disabled={props.disabled} />}
-          label={props.label}
-          labelPlacement="top"
-        />
-      </FormGroup>
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <FormGroup row>
+          <FormControlLabel
+            control={<Switch checked={checked} onChange={handleChange} name="checkedA" size="small" disabled={props.disabled} />}
+            label={props.label}
+            labelPlacement="top"
+          />
+        </FormGroup>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }

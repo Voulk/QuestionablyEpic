@@ -1,10 +1,10 @@
 import React from "react";
-import ToggleButton from "@material-ui/lab/ToggleButton";
-import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { useTranslation } from "react-i18next";
-import { Tooltip, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import green from "@material-ui/core/colors/green";
+import { Tooltip, Typography } from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
+import { green } from '@mui/material/colors';
 
 const useStyles = makeStyles((theme) => ({
   selected: {

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Paper, Typography, Grid, Tooltip, Select, MenuItem } from "@material-ui/core";
+import { Paper, Typography, Grid, Tooltip, Select, MenuItem } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Item from "../Player/Item";
 import BCItem from "../Player/BCItem";
@@ -8,20 +8,20 @@ import VerticalChart from "./Charts/VerticalChart";
 import BCChart from "./Charts/BCChart";
 import HelpText from "../SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from '@mui/styles/makeStyles';
 import ReactGA from "react-ga";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import userSettings from "../Settings/SettingsObject";
 // import MetricToggle from "Retail/Modules/DominationGemAnalysis/MetricToggle";
 import SourceToggle from "./SourceToggle";
-import ToggleButton from "@material-ui/lab/ToggleButton";
-import VisibilityIcon from "@material-ui/icons/Visibility";
+import ToggleButton from '@mui/material/ToggleButton';
+import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
-import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('sm')]: {
       margin: "auto",
       width: "85%",
       justifyContent: "space-between",
@@ -367,10 +367,10 @@ export default function TrinketAnalysis(props) {
           ""
         )} */}
         <Grid item xs={12}>
-          <Grid container spacing={0} justify="center">
+          <Grid container spacing={0} justifyContent="center">
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                <Grid container spacing={1} direction="row" justify="flex-end" alignItems="center">
+                <Grid container spacing={1} direction="row" justifyContent="flex-end" alignItems="center">
                   <Grid item>
                     <div style={{ padding: "8px 0px 8px 8px" }}>
                       <Tooltip
@@ -404,7 +404,7 @@ export default function TrinketAnalysis(props) {
           </Grid>
         </Grid>
         {gameType === "Retail" ? (
-          <Grid item xs={12} container spacing={0} direction="row" justify="flex-end">
+          <Grid item xs={12} container spacing={0} direction="row" justifyContent="flex-end">
             {/* <Grid item>
               <Select key={"themeSelector"} labelId="themeSelectorID" variant="outlined" value={theme} onChange={(e) => setTheme(e.target.value)} MenuProps={menuStyle} label={"Cooldowns Shown"}>
                 {availableThemes.map((key) => (

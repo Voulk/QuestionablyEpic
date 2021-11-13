@@ -1,9 +1,9 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Accordion, AccordionDetails, AccordionSummary, Typography, Divider } from "@material-ui/core";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import makeStyles from '@mui/styles/makeStyles';
+import { Accordion, AccordionDetails, AccordionSummary, Typography, Divider } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useTranslation } from "react-i18next";
-import SettingsIcon from "@material-ui/icons/Settings";
+import SettingsIcon from "@mui/icons-material/Settings";
 import RetailSettings from "./Modules/RetailSettings";
 import BurningCrusadeSettings from "./Modules/BurningCrusadeSettings";
 import { useSelector } from "react-redux";

@@ -1,7 +1,7 @@
 import React from "react";
-import Snackbar from "@material-ui/core/Snackbar";
-import MuiAlert from "@material-ui/lab/Alert";
-import { makeStyles } from "@material-ui/core/styles";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from '@mui/material/Alert';
+import makeStyles from '@mui/styles/makeStyles';
 import { useTranslation } from "react-i18next";
 
 function Alert(props) {

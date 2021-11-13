@@ -1,10 +1,10 @@
 import React from "react";
-import { Button, Grow, MenuItem, MenuList, Paper, Popper, Tooltip, Divider } from "@material-ui/core";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import { makeStyles } from "@material-ui/core/styles";
+import { Button, Grow, MenuItem, MenuList, Paper, Popper, Tooltip, Divider } from "@mui/material";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import makeStyles from '@mui/styles/makeStyles';
 import { useTranslation } from "react-i18next";
 import ls from "local-storage";
-import LanguageIcon from "@material-ui/icons/Language";
+import LanguageIcon from "@mui/icons-material/Language";
 
 const useStyles = makeStyles((theme) => ({
   root: {

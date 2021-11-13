@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Typography, Collapse, CircularProgress, Grid, Dialog, Divider, Paper, Grow, FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
+import { Typography, Collapse, CircularProgress, Grid, Dialog, Divider, Paper, Grow, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 import LogLinkInput from "../../SystemTools/LogImport/LogLinkInput";
 import Chart from "./Chart/Chart";
 import Example from "./Components/DTPSBarChart";
@@ -15,7 +15,7 @@ import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
 import ExternalTimeline from "./Components/ExternalTimelineTable";
 import EnemyCastsTimeline from "./Components/EnemyCasts";
 import Cooldowns from "../CooldownPlanner/CooldownObject/CooldownObject";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from '@mui/styles/makeStyles';
 class FightAnalysis extends Component {
   constructor() {
     super();
@@ -206,7 +206,7 @@ class FightAnalysis extends Component {
                 <Grid
                   container
                   spacing={1}
-                  justify="space-between"
+                  justifyContent="space-between"
                   style={{
                     // display: "inline-flex",
 
@@ -231,7 +231,7 @@ class FightAnalysis extends Component {
               item
               container
               direction="row"
-              justify="flex-start"
+              justifyContent="flex-start"
               alignItems="flex-start"
               spacing={1}
               style={{
@@ -307,7 +307,7 @@ class FightAnalysis extends Component {
                             width: "100%",
                           }}
                         >
-                          <Grid container direction="row" justify="space-evenly" alignItems="center">
+                          <Grid container direction="row" justifyContent="space-evenly" alignItems="center">
                             {/* TODO: Translate */}
                             <Grid item>
                               <FormControl style={{ width: 200 }} variant="outlined" size="small">
@@ -400,7 +400,7 @@ class FightAnalysis extends Component {
               {/* ----------------------------- Grid Container for the log details ----------------------------- */}
               {/* ---------------- Cooldown / External Timeline / Healer Info Cards / DTPS by ability --------------- */}
               <Grid item container>
-                <Grid item container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
+                <Grid item container direction="row" justifyContent="flex-start" alignItems="flex-start" spacing={1}>
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                     Cooldown Usage Timeline                                     */
                   /* ----------------------------------------------------------------------------------------------  */}

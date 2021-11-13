@@ -1,11 +1,11 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Paper, Grid, Typography, Button } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
+import { Paper, Grid, Typography, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import HelpText from "../SetupAndMenus/HelpText";
 import UpgradeFinderSlider from "./Slider";
-import ToggleButton from "@material-ui/lab/ToggleButton";
-import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Settings from "../Settings/Settings";
 import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   header: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('sm')]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
@@ -355,7 +355,7 @@ export default function UpgradeFinderFront(props) {
           <Grid item xs={12}>
             <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
               <div style={{ padding: 8 }}>
-                <Grid container justify="center" spacing={1}>
+                <Grid container justifyContent="center" spacing={1}>
                   <Grid item xs={12}>
                     <Typography color="primary" align="center" variant="h5">
                       {t("UpgradeFinderFront.RaidDifficultyHeader")}
@@ -366,7 +366,7 @@ export default function UpgradeFinderFront(props) {
                   </Grid>
                 </Grid>
 
-                <Grid container justify="center" spacing={1}>
+                <Grid container justifyContent="center" spacing={1}>
                   {raidDifficulty.map((key, i) => (
                     <Grid item xs="auto" key={i}>
                       <ToggleButton
@@ -404,7 +404,7 @@ export default function UpgradeFinderFront(props) {
           <Grid item xs={12}>
             <Paper elevation={0} style={{ textAlign: "center", width: "80%", margin: "auto" }}>
               <div style={{ padding: 8 }}>
-                <Grid container justify="center" spacing={1}>
+                <Grid container justifyContent="center" spacing={1}>
                   <Grid item xs={12}>
                     <Typography color="primary" align="center" variant="h5">
                       {t("UpgradeFinderFront.MythicPlusHeader")}
@@ -436,7 +436,7 @@ export default function UpgradeFinderFront(props) {
           <Grid item xs={12}>
             <Paper elevation={0} style={{ textAlign: "center", width: "80%", margin: "auto" }}>
               <div style={{ padding: 8 }}>
-                <Grid container justify="center" spacing={1}>
+                <Grid container justifyContent="center" spacing={1}>
                   <Grid item xs={12}>
                     <Typography color="primary" align="center" variant="h5">
                       {t("Dungeon")}
@@ -447,7 +447,7 @@ export default function UpgradeFinderFront(props) {
                   </Grid>
                 </Grid>
 
-                <Grid container justify="center" spacing={1}>
+                <Grid container justifyContent="center" spacing={1}>
                   <ToggleButtonGroup value={dungeonBC} exclusive onChange={handleContent} aria-label="contentToggle" size="large">
                     <ToggleButton style={{ padding: "15px 30px" }} value="Normal" aria-label="dungeonLabel">
                       {/* <Tooltip title={t("QeHeader.Tooltip.ChangeToDungeon")} arrow> */}
@@ -493,7 +493,7 @@ export default function UpgradeFinderFront(props) {
         <Grid item xs={12}>
           <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
             <div style={{ padding: 8 }}>
-              <Grid container justify="center" spacing={1}>
+              <Grid container justifyContent="center" spacing={1}>
                 <Grid item xs={12}>
                   <Typography color="primary" align="center" variant="h5">
                     {t("UpgradeFinderFront.PvPHeader")}
@@ -504,7 +504,7 @@ export default function UpgradeFinderFront(props) {
                 </Grid>
               </Grid>
 
-              <Grid container justify="center" spacing={1} style={{ marginTop: "10px 10px 0px 10px" }}>
+              <Grid container justifyContent="center" spacing={1} style={{ marginTop: "10px 10px 0px 10px" }}>
                 <Grid item style={{ textAlign: "center" }} xs={12}>
                   <UpgradeFinderSlider
                     className={classes.slider}

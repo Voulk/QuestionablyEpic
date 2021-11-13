@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@material-ui/core/";
+import { Button } from "@mui/material/";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 

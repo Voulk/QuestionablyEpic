@@ -1,6 +1,7 @@
 import React from "react";
-import { makeStyles, createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import { Grid, Slider } from "@material-ui/core";
+import { createTheme, ThemeProvider, StyledEngineProvider, adaptV4Theme } from "@mui/material/styles";
+import makeStyles from '@mui/styles/makeStyles';
+import { Grid, Slider } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
@@ -11,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const theme = createMuiTheme({
+const theme = createTheme(adaptV4Theme({
   overrides: {
     MuiSlider: {
       markLabel: {
@@ -25,7 +26,7 @@ const theme = createMuiTheme({
       },
     },
   },
-});
+}));
 
 export default function UpgradeFinderSlider(props) {
   const classes = useStyles();
@@ -40,21 +41,23 @@ export default function UpgradeFinderSlider(props) {
   }
   return (
     <Grid item xs={12}>
-      <ThemeProvider theme={theme}>
-        <Slider
-          className={classes.slider}
-          style={props.style}
-          defaultValue={props.defaultValue}
-          valueLabelFormat={valueLabelFormat}
-          getAriaValueText={valuetext}
-          aria-labelledby="discrete-slider-restrict"
-          step={props.step}
-          valueLabelDisplay="off"
-          marks={props.marks}
-          max={props.max}
-          onChangeCommitted={props.change}
-        />
-      </ThemeProvider>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>
+          <Slider
+            className={classes.slider}
+            style={props.style}
+            defaultValue={props.defaultValue}
+            valueLabelFormat={valueLabelFormat}
+            getAriaValueText={valuetext}
+            aria-labelledby="discrete-slider-restrict"
+            step={props.step}
+            valueLabelDisplay="off"
+            marks={props.marks}
+            max={props.max}
+            onChangeCommitted={props.change}
+          />
+        </ThemeProvider>
+      </StyledEngineProvider>
     </Grid>
   );
 }

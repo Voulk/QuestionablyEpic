@@ -1,8 +1,8 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from '@mui/styles/makeStyles';
 import logo from "Images/QeAssets/QELogo.png";
-import { Button, Box, Dialog, DialogActions, DialogContent, Typography, Grid, DialogTitle, TextField, FormControl, InputLabel, Select, MenuItem, Divider } from "@material-ui/core";
-import Autocomplete from "@material-ui/lab/Autocomplete";
+import { Button, Box, Dialog, DialogActions, DialogContent, Typography, Grid, DialogTitle, TextField, FormControl, InputLabel, Select, MenuItem, Divider } from "@mui/material";
+import Autocomplete from '@mui/material/Autocomplete';
 import ls from "local-storage";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "../SetupAndMenus/Header/LanguageButton";

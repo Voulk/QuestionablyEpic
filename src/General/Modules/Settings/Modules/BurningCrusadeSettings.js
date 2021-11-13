@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { MenuItem, Grid, FormControl, Select, Typography, Divider, TextField, Tooltip } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
+import { MenuItem, Grid, FormControl, Select, Typography, Divider, TextField, Tooltip } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { setBounds } from "../../../Engine/CONSTRAINTS";
-import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 const menuStyle = {
   style: { marginTop: 5 },

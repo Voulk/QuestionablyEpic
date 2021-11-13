@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, InputLabel, FormControl, Select, MenuItem, Typography, Tooltip } from "@material-ui/core";
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, InputLabel, FormControl, Select, MenuItem, Typography, Tooltip } from "@mui/material";
 import LogLinkInput from "../../../SystemTools/LogImport/LogLinkInput";
 import { warcraftLogReportID, logDifficulty, importSummaryData, importDamageLogData } from "../../CooldownPlanner/Functions/Functions";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
@@ -263,7 +263,7 @@ export default function QELogImport(props) {
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm" fullWidth={true}>
         <DialogTitle id="form-dialog-title">{t("InsertLog.InsertLogHeader")}</DialogTitle>
         <DialogContent>
-          <Grid container direction="row" spacing={1} justify="space-between">
+          <Grid container direction="row" spacing={1} justifyContent="space-between">
             <Grid item xs={12}>
               <LogLinkInput changed={reportidHandler} reportid={reportId} styleProps={{ fullWidth: true }} />
             </Grid>
