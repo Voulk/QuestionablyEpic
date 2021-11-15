@@ -3,10 +3,10 @@ import { consoleSandbox } from "@sentry/utils";
 import { runCastSequence, allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "./DiscRampGen";
 
-export const getRampData = (playerStats, playerTrinkets) => {
+export const getRampData = (playerStats, playerTrinkets, playstyle) => {
     const rampTime = 180;
-    const boonSeq = buildRamp('Boon', 10, [], playerStats.haste, ['Rapture'])
-    const fiendSeq = buildRamp('Fiend', 10, [], playerStats.haste, ['Rapture'])
+    const boonSeq = buildRamp('Boon', 10, [], playerStats.haste, ['Rapture'], playstyle)
+    const fiendSeq = buildRamp('Fiend', 10, [], playerStats.haste, ['Rapture'], playstyle)
     const discBaseline = allRamps(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": false, "Pelagos": false}, {});
     const baselineAdj = allRamps(boonSeq, fiendSeq, playerStats, {"DefaultLoadout": true}, {});
     const clarityOfMind = allRamps(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": true, "Pelagos": false}, {});
