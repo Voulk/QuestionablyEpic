@@ -18,6 +18,7 @@
  */
 export const buildRamp = (type, applicators, trinkets, haste, playstyle, specialSpells = []) => {
     const trinketList = buildTrinkets(trinkets);
+    console.log(type + " " + playstyle);
     if (type === "Mini") {
         return buildMiniRamp(applicators, trinkets, specialSpells, playstyle);
     }
@@ -31,6 +32,9 @@ export const buildRamp = (type, applicators, trinkets, haste, playstyle, special
         else if (playstyle === "Kyrian Spirit Shell") {
             return buildBoonShellRamp(applicators, trinketList['Boon'], haste, specialSpells);
         }
+    }
+    else {
+        console.error("Invalid Ramp");
     }
 }
 
@@ -78,6 +82,7 @@ export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle) =
     sequence.push('PenanceTick');
 
     for (var i = 0; i < 10; i++) {
+        // The number of smites here is adjustable but also not very important outside of DPS metrics. 
         sequence.push('Smite');
     }
     return sequence;
@@ -96,11 +101,14 @@ export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle) =
 
     let sequence = ['Purge the Wicked']
     
+    // Shadowed Orb lasts a very long time so if we're using it we're safe to use it at the start of our ramp (or before).
     if (trinket === "Shadowed Orb of Torment") sequence.push("Shadowed Orb");
     if (specialSpells.includes("Rapture")) {sequence.push('Rapture'); applicators -= 1 };
     for (var x = 0; x < applicators; x++) {
+        // Power Word: Shield can also be swapped out for Shadow Mend on non-Rapture ramps.
         sequence.push('Power Word: Shield');
     }
+    // Note for Ruby that this is the time we expect to get the buff, NOT the time we cast it.
     if (trinket === "Soulletting Ruby") sequence.push("Soulletting Ruby");
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
@@ -108,17 +116,18 @@ export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle) =
 
     sequence.push('Evangelism');
     sequence.push('Shadowfiend');
+    // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     if (trinket === "Instructor's Divine Bell") sequence.push("Instructor's Divine Bell");
     if (trinket === "Flame of Battle") sequence.push("Flame of Battle");
     sequence.push('Schism');
     sequence.push('Mind Blast');
     sequence.push('Power Word: Solace');
-    //sequence.push('Penance');
     sequence.push('PenanceTick');
     sequence.push('PenanceTick');
     sequence.push('PenanceTick');
 
-    for (var i = 0; i < 15; i++) {
+    for (var i = 0; i < 12; i++) {
+        // The number of smites here is adjustable but also not very important outside of DPS metrics. 
         sequence.push('Smite');
     }
     return sequence;
@@ -176,12 +185,10 @@ export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = 
         sequence.push('Ascended Nova');
     }
 
-    // These are low value post-ramp smites but should still be included.
-    for (var i = 0; i < 8; i++) {
+    // These are low value post-ramp smites but should still be included. The number of them is configurable but of low importance outside of DPS metrics.
+    for (var i = 0; i < 10; i++) {
         sequence.push('Smite');
     }
-       
-    console.log(sequence);
     return sequence;
     
 };
