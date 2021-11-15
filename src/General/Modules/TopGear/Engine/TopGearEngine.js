@@ -512,6 +512,14 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
 
   if (player.spec === "Discipline Priest" && contentType === "Raid") setStats = compileStats(setStats, mergedEffectStats);
 
+  // Double on-use adjustment
+  // This is not a perfect representation of the cost of wearing two on-use trinkets as Paladin and Disc,
+  // but from a practical viewpoint it achieves the objective. It could be replaced with something more
+  // mathematically comprehensive in future. Disc Priest will be swapped to the new tech very soon.
+  if ((player.spec === "Holy Paladin") && "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
+    hardScore -= 37;
+  }
+
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
