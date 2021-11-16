@@ -45765,6 +45765,34 @@ export const itemDB = [
         "slot": "Waist"
     },
     {
+        "id": 172249,
+        "name": "Desolate Scale Armguards",
+        "names": {
+            "cn": "",
+            "en": "Desolate Scale Armguards",
+            "ru": "Боевые наручи из могильной чешуи",
+            "es": "Guardabrazos de escamas desoladas",
+            "br": "Guarda-braços de Escama Desolada",
+            "kr": "",
+            "fr": "Garde-bras en écailles désolées",
+            "de": "Gramschuppenarmschützer"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_bracer",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 100,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "slot": "Wrist"
+    },
+    {
         "id": 172250,
         "name": "Shadebound Vest",
         "names": {
@@ -46941,7 +46969,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -52033,12 +52060,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4700
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "kyrian",
         "slot": "Shield"
     },
@@ -58927,12 +58948,6 @@ export const itemDB = [
             "mastery": 2825,
             "versatility": 4175
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Head"
     },
     {
@@ -58960,12 +58975,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Back"
     },
     {
@@ -58993,12 +59002,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Chest"
     },
     {
@@ -59026,12 +59029,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Chest"
     },
     {
@@ -59059,12 +59056,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Chest"
     },
     {
@@ -59092,12 +59083,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Chest"
     },
     {
@@ -59125,12 +59110,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Feet"
     },
     {
@@ -59158,12 +59137,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4025
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Feet"
     },
     {
@@ -59191,12 +59164,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Feet"
     },
     {
@@ -59224,12 +59191,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Feet"
     },
     {
@@ -59257,12 +59218,6 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Hands"
     },
     {
@@ -59290,12 +59245,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Hands"
     },
     {
@@ -59323,12 +59272,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Hands"
     },
     {
@@ -59356,12 +59299,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Hands"
     },
     {
@@ -59389,12 +59326,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Head"
     },
     {
@@ -59422,12 +59353,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Head"
     },
     {
@@ -59455,12 +59380,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Head"
     },
     {
@@ -59488,12 +59407,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Legs"
     },
     {
@@ -59521,12 +59434,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Legs"
     },
     {
@@ -59554,12 +59461,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Legs"
     },
     {
@@ -59587,12 +59488,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Legs"
     },
     {
@@ -59620,12 +59515,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Shoulder"
     },
     {
@@ -59653,12 +59542,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Shoulder"
     },
     {
@@ -59686,12 +59569,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Shoulder"
     },
     {
@@ -59719,12 +59596,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Shoulder"
     },
     {
@@ -59752,12 +59623,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Waist"
     },
     {
@@ -59785,12 +59650,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Waist"
     },
     {
@@ -59818,12 +59677,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Waist"
     },
     {
@@ -59851,12 +59704,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Waist"
     },
     {
@@ -59884,12 +59731,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 11000
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Finger"
     },
     {
@@ -59917,12 +59758,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Wrist"
     },
     {
@@ -59950,12 +59785,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4150
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Wrist"
     },
     {
@@ -59983,12 +59812,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Wrist"
     },
     {
@@ -60016,12 +59839,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4150
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Wrist"
     },
     {
@@ -60050,13 +59867,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -60089,12 +59899,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10750
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Neck"
     },
     {
@@ -60122,12 +59926,6 @@ export const itemDB = [
             "mastery": 2175,
             "versatility": 4825
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Head"
     },
     {
@@ -60155,12 +59953,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Back"
     },
     {
@@ -60188,12 +59980,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Chest"
     },
     {
@@ -60221,12 +60007,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Chest"
     },
     {
@@ -60254,12 +60034,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Chest"
     },
     {
@@ -60287,12 +60061,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Chest"
     },
     {
@@ -60320,12 +60088,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Feet"
     },
     {
@@ -60353,12 +60115,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4675
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Feet"
     },
     {
@@ -60386,12 +60142,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Feet"
     },
     {
@@ -60419,12 +60169,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Feet"
     },
     {
@@ -60452,12 +60196,6 @@ export const itemDB = [
             "mastery": 2350,
             "versatility": 4650
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Hands"
     },
     {
@@ -60485,12 +60223,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Hands"
     },
     {
@@ -60518,12 +60250,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Hands"
     },
     {
@@ -60551,12 +60277,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Hands"
     },
     {
@@ -60584,12 +60304,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Head"
     },
     {
@@ -60617,12 +60331,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Head"
     },
     {
@@ -60650,12 +60358,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Head"
     },
     {
@@ -60683,12 +60385,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Legs"
     },
     {
@@ -60716,12 +60412,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Legs"
     },
     {
@@ -60749,12 +60439,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Legs"
     },
     {
@@ -60782,12 +60466,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Legs"
     },
     {
@@ -60815,12 +60493,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Shoulder"
     },
     {
@@ -60848,12 +60520,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Shoulder"
     },
     {
@@ -60881,12 +60547,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Shoulder"
     },
     {
@@ -60914,12 +60574,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Shoulder"
     },
     {
@@ -60947,12 +60601,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Waist"
     },
     {
@@ -60980,12 +60628,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Waist"
     },
     {
@@ -61013,12 +60655,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Waist"
     },
     {
@@ -61046,12 +60682,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Waist"
     },
     {
@@ -61079,12 +60709,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12000
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Finger"
     },
     {
@@ -61112,12 +60736,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Wrist"
     },
     {
@@ -61145,12 +60763,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Wrist"
     },
     {
@@ -61178,12 +60790,6 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 4450
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Wrist"
     },
     {
@@ -61211,12 +60817,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Wrist"
     },
     {
@@ -61245,13 +60845,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -61284,12 +60877,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 13500
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Neck"
     },
     {
@@ -65343,12 +64930,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4800
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "kyrian",
         "slot": "1H Weapon"
     },
@@ -65405,12 +64986,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "kyrian",
         "slot": "Offhand"
     },
@@ -66124,12 +65699,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Head"
     },
     {
@@ -66157,12 +65726,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Back"
     },
     {
@@ -66190,12 +65753,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Chest"
     },
     {
@@ -66223,12 +65780,6 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Chest"
     },
     {
@@ -66256,12 +65807,6 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 4100
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Chest"
     },
     {
@@ -66289,12 +65834,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Chest"
     },
     {
@@ -66322,12 +65861,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4150
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Feet"
     },
     {
@@ -66355,12 +65888,6 @@ export const itemDB = [
             "mastery": 2825,
             "versatility": 4175
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Feet"
     },
     {
@@ -66388,12 +65915,6 @@ export const itemDB = [
             "mastery": 3275,
             "versatility": 3725
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Feet"
     },
     {
@@ -66421,12 +65942,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Feet"
     },
     {
@@ -66454,12 +65969,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Hands"
     },
     {
@@ -66487,12 +65996,6 @@ export const itemDB = [
             "mastery": 2975,
             "versatility": 4025
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Hands"
     },
     {
@@ -66520,12 +66023,6 @@ export const itemDB = [
             "mastery": 3275,
             "versatility": 3725
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Hands"
     },
     {
@@ -66553,12 +66050,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Hands"
     },
     {
@@ -66586,12 +66077,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4025
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Head"
     },
     {
@@ -66619,12 +66104,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Head"
     },
     {
@@ -66652,12 +66131,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Head"
     },
     {
@@ -66685,12 +66158,6 @@ export const itemDB = [
             "mastery": 3275,
             "versatility": 3725
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Legs"
     },
     {
@@ -66718,12 +66185,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Legs"
     },
     {
@@ -66751,12 +66212,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Legs"
     },
     {
@@ -66784,12 +66239,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Legs"
     },
     {
@@ -66817,12 +66266,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Shoulder"
     },
     {
@@ -66850,12 +66293,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Shoulder"
     },
     {
@@ -66883,12 +66320,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Shoulder"
     },
     {
@@ -66916,12 +66347,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Shoulder"
     },
     {
@@ -66949,12 +66374,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Waist"
     },
     {
@@ -66982,12 +66401,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Waist"
     },
     {
@@ -67015,12 +66428,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Waist"
     },
     {
@@ -67048,12 +66455,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Waist"
     },
     {
@@ -67081,12 +66482,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10500
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Finger"
     },
     {
@@ -67114,12 +66509,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Wrist"
     },
     {
@@ -67147,12 +66536,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Wrist"
     },
     {
@@ -67180,12 +66563,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Wrist"
     },
     {
@@ -67213,12 +66590,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Wrist"
     },
     {
@@ -67247,12 +66618,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -67285,12 +66650,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10250
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Neck"
     },
     {
@@ -67318,12 +66677,6 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Back"
     },
     {
@@ -67351,12 +66704,6 @@ export const itemDB = [
             "mastery": 8000,
             "versatility": 9500
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Finger"
     },
     {
@@ -67385,12 +66732,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -67423,12 +66764,6 @@ export const itemDB = [
             "mastery": 7750,
             "versatility": 9750
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Neck"
     },
     {
@@ -67456,12 +66791,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Head"
     },
     {
@@ -67489,12 +66818,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Back"
     },
     {
@@ -67522,12 +66845,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Chest"
     },
     {
@@ -67555,12 +66872,6 @@ export const itemDB = [
             "mastery": 2475,
             "versatility": 4525
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Chest"
     },
     {
@@ -67588,12 +66899,6 @@ export const itemDB = [
             "mastery": 2250,
             "versatility": 4750
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Chest"
     },
     {
@@ -67621,12 +66926,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Chest"
     },
     {
@@ -67654,12 +66953,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Feet"
     },
     {
@@ -67687,12 +66980,6 @@ export const itemDB = [
             "mastery": 2100,
             "versatility": 4900
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Feet"
     },
     {
@@ -67720,12 +67007,6 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 4450
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Feet"
     },
     {
@@ -67753,12 +67034,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Feet"
     },
     {
@@ -67786,12 +67061,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Hands"
     },
     {
@@ -67819,12 +67088,6 @@ export const itemDB = [
             "mastery": 2325,
             "versatility": 4675
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Hands"
     },
     {
@@ -67852,12 +67115,6 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 4450
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Hands"
     },
     {
@@ -67885,12 +67142,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Hands"
     },
     {
@@ -67918,12 +67169,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4675
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Head"
     },
     {
@@ -67951,12 +67196,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Head"
     },
     {
@@ -67984,12 +67223,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Head"
     },
     {
@@ -68017,12 +67250,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Legs"
     },
     {
@@ -68050,12 +67277,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Legs"
     },
     {
@@ -68083,12 +67304,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Legs"
     },
     {
@@ -68116,12 +67331,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Legs"
     },
     {
@@ -68149,12 +67358,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Shoulder"
     },
     {
@@ -68182,12 +67385,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Shoulder"
     },
     {
@@ -68215,12 +67412,6 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Shoulder"
     },
     {
@@ -68248,12 +67439,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Shoulder"
     },
     {
@@ -68281,12 +67466,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Waist"
     },
     {
@@ -68314,12 +67493,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Waist"
     },
     {
@@ -68347,12 +67520,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Waist"
     },
     {
@@ -68380,12 +67547,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Waist"
     },
     {
@@ -68413,12 +67574,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12000
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Finger"
     },
     {
@@ -68446,12 +67601,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Wrist"
     },
     {
@@ -68479,12 +67628,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Wrist"
     },
     {
@@ -68512,12 +67655,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Wrist"
     },
     {
@@ -68545,12 +67682,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Wrist"
     },
     {
@@ -68579,12 +67710,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -68617,12 +67742,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 13500
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Neck"
     },
     {
@@ -68650,12 +67769,6 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 4450
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Back"
     },
     {
@@ -68683,12 +67796,6 @@ export const itemDB = [
             "mastery": 5500,
             "versatility": 12000
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Finger"
     },
     {
@@ -68717,12 +67824,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -68755,12 +67856,6 @@ export const itemDB = [
             "mastery": 4000,
             "versatility": 13500
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Neck"
     },
     {
@@ -68788,12 +67883,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "2H Weapon"
     },
     {
@@ -68821,12 +67910,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Offhand"
     },
     {
@@ -68854,12 +67937,6 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 3850
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "1H Weapon"
     },
     {
@@ -68887,12 +67964,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4050
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Shield"
     },
     {
@@ -74142,12 +73213,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "kyrian",
         "slot": "2H Weapon"
     },
@@ -75153,12 +74218,6 @@ export const itemDB = [
             "mastery": 2500,
             "versatility": 4500
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "night_fae",
         "slot": "1H Weapon"
     },
@@ -75324,12 +74383,6 @@ export const itemDB = [
             "mastery": 2100,
             "versatility": 4900
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "night_fae",
         "slot": "Offhand"
     },
@@ -75548,12 +74601,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4700
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "night_fae",
         "slot": "Shield"
     },
@@ -77587,12 +76634,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "night_fae",
         "slot": "2H Weapon"
     },
@@ -77648,12 +76689,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4950
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "night_fae",
         "slot": "1H Weapon"
     },
@@ -78377,7 +77412,6 @@ export const itemDB = [
                 "encounterId": 2414
             }
         ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -79176,12 +78210,6 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Back"
     },
     {
@@ -82082,12 +81110,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -82153,12 +81175,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -85721,12 +84737,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -87592,12 +86602,6 @@ export const itemDB = [
             "mastery": 2500,
             "versatility": 4500
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "venthyr",
         "slot": "1H Weapon"
     },
@@ -87626,12 +86630,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "venthyr",
         "slot": "2H Weapon"
     },
@@ -87660,12 +86658,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4800
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "venthyr",
         "slot": "1H Weapon"
     },
@@ -87694,12 +86686,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4700
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "venthyr",
         "slot": "Shield"
     },
@@ -87728,12 +86714,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "venthyr",
         "slot": "Offhand"
     },
@@ -91029,12 +90009,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "1H Weapon"
     },
     {
@@ -91062,12 +90036,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4700
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "necrolord",
         "slot": "Shield"
     },
@@ -91096,12 +90064,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "necrolord",
         "slot": "Offhand"
     },
@@ -91130,12 +90092,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "necrolord",
         "slot": "1H Weapon"
     },
@@ -91164,12 +90120,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4800
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "necrolord",
         "slot": "1H Weapon"
     },
@@ -95651,7 +94601,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -95982,7 +94931,6 @@ export const itemDB = [
                 "encounterId": 2426
             }
         ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -96130,12 +95078,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -96169,12 +95111,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -96208,12 +95144,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "sources": [
-            {
-                "instanceId": -16,
-                "encounterId": -14
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -98193,12 +97123,6 @@ export const itemDB = [
             "mastery": 4650,
             "versatility": 0
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "slot": "Back"
     },
     {
@@ -98631,12 +97555,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "kyrian",
         "slot": "1H Weapon"
     },
@@ -98665,12 +97583,6 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
-        "sources": [
-            {
-                "instanceId": -17,
-                "encounterId": -15
-            }
-        ],
         "covenant": "necrolord",
         "slot": "2H Weapon"
     },
@@ -100874,6 +99786,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4700
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Shield"
     },
     {
@@ -100901,6 +99819,12 @@ export const itemDB = [
             "mastery": 2825,
             "versatility": 4175
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -100928,6 +99852,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Back"
     },
     {
@@ -100955,6 +99885,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -100982,6 +99918,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -101009,6 +99951,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -101036,6 +99984,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -101063,6 +100017,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -101090,6 +100050,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4025
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -101117,6 +100083,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -101144,6 +100116,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -101171,6 +100149,12 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -101198,6 +100182,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -101225,6 +100215,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -101252,6 +100248,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -101279,6 +100281,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -101306,6 +100314,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -101333,6 +100347,12 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -101360,6 +100380,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -101387,6 +100413,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -101414,6 +100446,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -101441,6 +100479,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -101468,6 +100512,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -101495,6 +100545,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -101522,6 +100578,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -101549,6 +100611,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -101576,6 +100644,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -101603,6 +100677,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -101630,6 +100710,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -101657,6 +100743,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4250
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -101684,6 +100776,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 11000
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Finger"
     },
     {
@@ -101711,6 +100809,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -101738,6 +100842,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4150
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -101765,6 +100875,12 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -101792,6 +100908,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4150
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -101820,7 +100942,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -101853,6 +100980,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10750
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Neck"
     },
     {
@@ -101880,6 +101013,12 @@ export const itemDB = [
             "mastery": 2175,
             "versatility": 4825
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -101907,6 +101046,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Back"
     },
     {
@@ -101934,6 +101079,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -101961,6 +101112,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -101988,6 +101145,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -102015,6 +101178,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -102042,6 +101211,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -102069,6 +101244,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4675
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -102096,6 +101277,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -102123,6 +101310,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -102150,6 +101343,12 @@ export const itemDB = [
             "mastery": 2350,
             "versatility": 4650
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -102177,6 +101376,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -102204,6 +101409,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -102231,6 +101442,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -102258,6 +101475,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -102285,6 +101508,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -102312,6 +101541,12 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -102339,6 +101574,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -102366,6 +101607,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -102393,6 +101640,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -102420,6 +101673,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -102447,6 +101706,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -102474,6 +101739,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -102501,6 +101772,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -102528,6 +101805,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -102555,6 +101838,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -102582,6 +101871,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -102609,6 +101904,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -102636,6 +101937,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -102663,6 +101970,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12000
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Finger"
     },
     {
@@ -102690,6 +102003,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -102717,6 +102036,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -102744,6 +102069,12 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 4450
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -102771,6 +102102,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -102799,7 +102136,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
-        "onUseTrinket": true,
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -102841,6 +102183,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 13500
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Neck"
     },
     {
@@ -102868,6 +102216,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4800
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "1H Weapon"
     },
     {
@@ -102895,6 +102249,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Offhand"
     },
     {
@@ -102922,6 +102282,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -102949,6 +102315,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Back"
     },
     {
@@ -102976,6 +102348,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -103003,6 +102381,12 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -103030,6 +102414,12 @@ export const itemDB = [
             "mastery": 2900,
             "versatility": 4100
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -103057,6 +102447,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -103084,6 +102480,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4150
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -103111,6 +102513,12 @@ export const itemDB = [
             "mastery": 2825,
             "versatility": 4175
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -103138,6 +102546,12 @@ export const itemDB = [
             "mastery": 3275,
             "versatility": 3725
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -103165,6 +102579,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -103192,6 +102612,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -103219,6 +102645,12 @@ export const itemDB = [
             "mastery": 2975,
             "versatility": 4025
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -103246,6 +102678,12 @@ export const itemDB = [
             "mastery": 3275,
             "versatility": 3725
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -103273,6 +102711,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -103300,6 +102744,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4025
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -103327,6 +102777,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4100
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -103354,6 +102810,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -103381,6 +102843,12 @@ export const itemDB = [
             "mastery": 3275,
             "versatility": 3725
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -103408,6 +102876,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -103435,6 +102909,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -103462,6 +102942,12 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -103489,6 +102975,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -103516,6 +103008,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -103543,6 +103041,12 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -103570,6 +103074,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -103597,6 +103107,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -103624,6 +103140,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -103651,6 +103173,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -103678,6 +103206,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -103705,6 +103239,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10500
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Finger"
     },
     {
@@ -103732,6 +103272,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -103759,6 +103305,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -103786,6 +103338,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3725
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -103813,6 +103371,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3875
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -103841,6 +103405,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -103873,6 +103443,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 10250
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Neck"
     },
     {
@@ -103900,6 +103476,12 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 3650
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Back"
     },
     {
@@ -103927,6 +103509,12 @@ export const itemDB = [
             "mastery": 8000,
             "versatility": 9500
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Finger"
     },
     {
@@ -103955,6 +103543,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -103987,6 +103581,12 @@ export const itemDB = [
             "mastery": 7750,
             "versatility": 9750
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Neck"
     },
     {
@@ -104014,6 +103614,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -104041,6 +103647,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Back"
     },
     {
@@ -104068,6 +103680,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -104095,6 +103713,12 @@ export const itemDB = [
             "mastery": 2475,
             "versatility": 4525
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -104122,6 +103746,12 @@ export const itemDB = [
             "mastery": 2250,
             "versatility": 4750
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -104149,6 +103779,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -104176,6 +103812,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4825
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -104203,6 +103845,12 @@ export const itemDB = [
             "mastery": 2100,
             "versatility": 4900
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -104230,6 +103878,12 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 4450
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -104257,6 +103911,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -104284,6 +103944,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4900
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -104311,6 +103977,12 @@ export const itemDB = [
             "mastery": 2325,
             "versatility": 4675
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -104338,6 +104010,12 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 4450
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -104365,6 +104043,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -104392,6 +104076,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4675
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -104419,6 +104109,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4750
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -104446,6 +104142,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -104473,6 +104175,12 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -104500,6 +104208,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -104527,6 +104241,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -104554,6 +104274,12 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -104581,6 +104307,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -104608,6 +104340,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4650
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -104635,6 +104373,12 @@ export const itemDB = [
             "mastery": 2600,
             "versatility": 4400
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -104662,6 +104406,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -104689,6 +104439,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -104716,6 +104472,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -104743,6 +104505,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -104770,6 +104538,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4600
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -104797,6 +104571,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 12000
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Finger"
     },
     {
@@ -104824,6 +104604,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -104851,6 +104637,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -104878,6 +104670,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -104905,6 +104703,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4525
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -104933,6 +104737,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -104974,6 +104784,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 13500
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Neck"
     },
     {
@@ -105001,6 +104817,12 @@ export const itemDB = [
             "mastery": 2550,
             "versatility": 4450
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Back"
     },
     {
@@ -105028,6 +104850,12 @@ export const itemDB = [
             "mastery": 5500,
             "versatility": 12000
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Finger"
     },
     {
@@ -105056,6 +104884,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -105088,6 +104922,12 @@ export const itemDB = [
             "mastery": 4000,
             "versatility": 13500
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Neck"
     },
     {
@@ -105115,6 +104955,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "2H Weapon"
     },
     {
@@ -105142,6 +104988,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4175
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Offhand"
     },
     {
@@ -105169,6 +105021,12 @@ export const itemDB = [
             "mastery": 3150,
             "versatility": 3850
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "1H Weapon"
     },
     {
@@ -105196,6 +105054,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4050
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Shield"
     },
     {
@@ -105223,6 +105087,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4450
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "2H Weapon"
     },
     {
@@ -105250,6 +105120,12 @@ export const itemDB = [
             "mastery": 3500,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Back"
     },
     {
@@ -105278,6 +105154,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -105311,6 +105193,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -105344,6 +105232,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -105376,6 +105270,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3750
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "1H Weapon"
     },
     {
@@ -105404,6 +105304,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -105437,6 +105343,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -105470,6 +105382,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -16,
+                "encounterId": -14
+            }
+        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -105502,6 +105420,12 @@ export const itemDB = [
             "mastery": 4650,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Back"
     },
     {
@@ -105529,6 +105453,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 4400
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "1H Weapon"
     },
     {
@@ -107160,6 +107090,12 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -107187,6 +107123,12 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -107214,6 +107156,12 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -107241,6 +107189,12 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -107268,6 +107222,12 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 3050
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -107295,6 +107255,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -107322,6 +107288,12 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -107349,6 +107321,12 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -107376,6 +107354,12 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -107403,6 +107387,12 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -107430,6 +107420,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -107457,6 +107453,12 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -107484,6 +107486,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -107511,6 +107519,12 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -107538,6 +107552,12 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -107565,6 +107585,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -107592,6 +107618,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -107619,6 +107651,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -107646,6 +107684,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -107673,6 +107717,12 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -107700,6 +107750,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -107727,6 +107783,12 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -107754,6 +107816,12 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -107781,6 +107849,12 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -107808,6 +107882,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -107835,6 +107915,12 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -107862,6 +107948,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -107889,6 +107981,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -107916,6 +108014,12 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -107943,6 +108047,12 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -107970,6 +108080,12 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -107997,6 +108113,12 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -108024,6 +108146,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Shield"
     },
     {
@@ -108051,6 +108179,12 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Offhand"
     },
     {
@@ -108078,6 +108212,12 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "1H Weapon"
     },
     {
@@ -108105,6 +108245,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 7500
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Finger"
     },
     {
@@ -108132,6 +108278,12 @@ export const itemDB = [
             "mastery": 8000,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Finger"
     },
     {
@@ -108159,6 +108311,12 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "1H Weapon"
     },
     {
@@ -108186,6 +108344,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "2H Weapon"
     },
     {
@@ -108213,6 +108377,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 9500
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Finger"
     },
     {
@@ -108240,6 +108410,12 @@ export const itemDB = [
             "mastery": 4550,
             "versatility": 2450
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Back"
     },
     {
@@ -108267,6 +108443,12 @@ export const itemDB = [
             "mastery": 9000,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Finger"
     },
     {
@@ -109598,6 +109780,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -114277,7 +114465,6 @@ export const itemDB = [
                 "encounterId": 2444
             }
         ],
-        "onUseTrinket": true,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -114670,15 +114857,15 @@ export const itemDB = [
     },
     {
         "id": 186475,
-        "name": "Hellstiched Mantle",
+        "name": "Hellstitched Mantle",
         "names": {
             "cn": "",
-            "en": "Hellstiched Mantle",
+            "en": "Hellstitched Mantle",
             "ru": "Клепаное оплечье преисподней",
             "es": "Manto con costuras infernales",
             "br": "Dragonas de Costura Infernal",
             "kr": "",
-            "fr": "Mantelet à suture-infernale",
+            "fr": "Mantelet à suture infernale",
             "de": "Höllengenähte Mantelung"
         },
         "icon": "inv_shoulder_23",
@@ -115287,6 +115474,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3050
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -115314,6 +115507,12 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -115341,6 +115540,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -115368,6 +115573,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -115395,6 +115606,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -115422,6 +115639,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -115449,6 +115672,12 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -115476,6 +115705,12 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -115503,6 +115738,12 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -115530,6 +115771,12 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -115557,6 +115804,12 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -115584,6 +115837,12 @@ export const itemDB = [
             "mastery": 3200,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -115611,6 +115870,12 @@ export const itemDB = [
             "mastery": 3650,
             "versatility": 3350
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -115638,6 +115903,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -115665,6 +115936,12 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -115692,6 +115969,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -115719,6 +116002,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3800
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -115746,6 +116035,12 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -115773,6 +116068,12 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 3950
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -115800,6 +116101,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -115827,6 +116134,12 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -115854,6 +116167,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -115881,6 +116200,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Head"
     },
     {
@@ -115908,6 +116233,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -115935,6 +116266,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3950
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Feet"
     },
     {
@@ -115962,6 +116299,12 @@ export const itemDB = [
             "mastery": 3950,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Hands"
     },
     {
@@ -115989,6 +116332,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Legs"
     },
     {
@@ -116016,6 +116365,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -116043,6 +116398,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3200
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Waist"
     },
     {
@@ -116070,6 +116431,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Wrist"
     },
     {
@@ -116097,6 +116464,12 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Chest"
     },
     {
@@ -116124,6 +116497,12 @@ export const itemDB = [
             "mastery": 3350,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Shoulder"
     },
     {
@@ -116151,6 +116530,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3350
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Shield"
     },
     {
@@ -116178,6 +116563,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Offhand"
     },
     {
@@ -116205,6 +116596,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 3650
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "1H Weapon"
     },
     {
@@ -116232,6 +116629,12 @@ export const itemDB = [
             "mastery": 3050,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "1H Weapon"
     },
     {
@@ -116259,6 +116662,12 @@ export const itemDB = [
             "mastery": 3800,
             "versatility": 3200
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "2H Weapon"
     },
     {
@@ -116286,6 +116695,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -18,
+                "encounterId": -18
+            }
+        ],
         "slot": "Back"
     },
     {
@@ -116314,6 +116729,12 @@ export const itemDB = [
             "mastery": 0,
             "versatility": 0
         },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -117774,6 +118195,4419 @@ export const itemDB = [
             "type": "special",
             "name": "Passable Credentials"
         }
+    },
+    {
+        "id": 187563,
+        "name": "Suramar Guard's Shield",
+        "names": {
+            "cn": "",
+            "en": "Suramar Guard's Shield",
+            "ru": "Щит сурамарского стражника",
+            "es": "Escudo de guardia de Suramar",
+            "br": "Escudo da Guarda de Suramar",
+            "kr": "",
+            "fr": "Bouclier de garde de Suramar",
+            "de": "Schild der Wache von Suramar"
+        },
+        "icon": "inv_shield_1h_silverhand_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 164,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "slot": "Shield"
+    },
+    {
+        "id": 187564,
+        "name": "Nightborne Arcshield",
+        "names": {
+            "cn": "",
+            "en": "Nightborne Arcshield",
+            "ru": "Дуговой щит ночнорожденных",
+            "es": "Escudo arqueado Nocheterna",
+            "br": "Arquiescudo dos Filhos da Noite",
+            "kr": "",
+            "fr": "Arquebouclier sacrenuit",
+            "de": "Arkusschild der Nachtgeborenen"
+        },
+        "icon": "ability_mage_shattershield",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 164,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3950,
+            "versatility": 3050
+        },
+        "slot": "Shield"
+    },
+    {
+        "id": 187566,
+        "name": "Arcsmasher",
+        "names": {
+            "cn": "",
+            "en": "Arcsmasher",
+            "ru": "Дуговой крушитель",
+            "es": "Machacadora de arcos",
+            "br": "Esmaga-arcos",
+            "kr": "",
+            "fr": "Arquepilon",
+            "de": "Arkuszerkracher"
+        },
+        "icon": "inv_mace_41",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 164,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4250,
+            "mastery": 0,
+            "versatility": 2750
+        },
+        "slot": "WeaponMainHand"
+    },
+    {
+        "id": 187578,
+        "name": "Warpcaster's Staff",
+        "names": {
+            "cn": "",
+            "en": "Warpcaster's Staff",
+            "ru": "Посох исказителя",
+            "es": "Bastón de taumaturgo de distorsión",
+            "br": "Cajado do Evocador Dimensional",
+            "kr": "",
+            "fr": "Bâton d’invocateur dimensionnel",
+            "de": "Stab des Warpwirkers"
+        },
+        "icon": "inv_staff_2h_draenorchallenge_d_01",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 164,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 0,
+            "versatility": 3200
+        },
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 187579,
+        "name": "Nar'thalas Ceremonial Tunic",
+        "names": {
+            "cn": "",
+            "en": "Nar'thalas Ceremonial Tunic",
+            "ru": "Нар'таласская церемониальная туника",
+            "es": "Guerrera ceremonial de Nar'thalas",
+            "br": "Túnica Cerimonial de Nar'thalas",
+            "kr": "",
+            "fr": "Tunique cérémonielle de Nar’thalas",
+            "de": "Zeremonielle Tunika von Nar'thalas"
+        },
+        "icon": "inv_chest_cloth_legiondungeon_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 164,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 2000,
+            "versatility": 0
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 187580,
+        "name": "Nar'thalas Ceremonial Legwraps",
+        "names": {
+            "cn": "",
+            "en": "Nar'thalas Ceremonial Legwraps",
+            "ru": "Нар'таласские церемониальные бриджи",
+            "es": "Ataduras ceremoniales de Nar'thalas",
+            "br": "Culotes Cerimoniais de Nar'thalas",
+            "kr": "",
+            "fr": "Jambards cérémoniels de Nar’thalas",
+            "de": "Zeremonielle Beinwickel von Nar'thalas"
+        },
+        "icon": "inv_pant_cloth_legiondungeon_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 164,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2000,
+            "versatility": 5000
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 187581,
+        "name": "Nar'thalas Scrollmantle",
+        "names": {
+            "cn": "",
+            "en": "Nar'thalas Scrollmantle",
+            "ru": "Нар'таласское оплечье",
+            "es": "Manto de pergamino de Nar'thalas",
+            "br": "Manto Pergamoide de Nar'thalas",
+            "kr": "",
+            "fr": "Parchemante de Nar’thalas",
+            "de": "Schriftrollenmantelung von Nar'thalas"
+        },
+        "icon": "inv_shoulder_cloth_legiondungeon_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 164,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 2000,
+            "versatility": 0
+        },
+        "slot": "Shoulder"
+    },
+    {
+        "id": 187582,
+        "name": "Thorignir Heartguard",
+        "names": {
+            "cn": "",
+            "en": "Thorignir Heartguard",
+            "ru": "Нагрудник из шкуры торигнира",
+            "es": "Guardacorazón de Thorignir",
+            "br": "Guarda do Coração Thorignir",
+            "kr": "",
+            "fr": "Cataphracte thorignir",
+            "de": "Herzschutz der Thorignir"
+        },
+        "icon": "inv_chest_leather_legiondungeon_c_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 164,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 187583,
+        "name": "Thorignir Breeches",
+        "names": {
+            "cn": "",
+            "en": "Thorignir Breeches",
+            "ru": "Штаны из шкуры торигнира",
+            "es": "Calzones de Thorignir",
+            "br": "Calções Thorignir",
+            "kr": "",
+            "fr": "Braies thorignirs",
+            "de": "Bundhosen der Thorignir"
+        },
+        "icon": "inv_pant_leather_legiondungeon_c_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 164,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2750,
+            "crit": 4250,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 187584,
+        "name": "Thorignir Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Thorignir Spaulders",
+            "ru": "Наплеч из шкуры торигнира",
+            "es": "Bufas de Thorignir",
+            "br": "Espaldares Thorignir",
+            "kr": "",
+            "fr": "Spallières thorignirs",
+            "de": "Schiftung der Thorignir"
+        },
+        "icon": "inv_shoulder_leather_legiondungeon_c_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 164,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4100,
+            "crit": 0,
+            "mastery": 2900,
+            "versatility": 0
+        },
+        "slot": "Shoulder"
+    },
+    {
+        "id": 187585,
+        "name": "Leyguard Cuirass",
+        "names": {
+            "cn": "",
+            "en": "Leyguard Cuirass",
+            "ru": "Кираса стража силовых линий",
+            "es": "Loriga guardialey",
+            "br": "Corselete da Guarda do Meridiano",
+            "kr": "",
+            "fr": "Cuirasse de garde tellurique",
+            "de": "Kürass der Leywache"
+        },
+        "icon": "inv_chest_mail_legionendgame_c_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 164,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 187586,
+        "name": "Leyguard Greaves",
+        "names": {
+            "cn": "",
+            "en": "Leyguard Greaves",
+            "ru": "Наголенники стража силовых линий",
+            "es": "Grebas guardialey",
+            "br": "Grevas da Guarda do Meridiano",
+            "kr": "",
+            "fr": "Grèves de garde tellurique",
+            "de": "Beinschützer der Leywache"
+        },
+        "icon": "inv_pants_mail_legionendgame_c_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 164,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 187587,
+        "name": "Leyguard Mantle",
+        "names": {
+            "cn": "",
+            "en": "Leyguard Mantle",
+            "ru": "Оплечье стража силовых линий",
+            "es": "Manto guardialey",
+            "br": "Dragonas da Guarda do Meridiano",
+            "kr": "",
+            "fr": "Mantelet de garde tellurique",
+            "de": "Mantelung der Leywache"
+        },
+        "icon": "inv_shoulder_mail_legionendgame_c_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 164,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "slot": "Shoulder"
+    },
+    {
+        "id": 187588,
+        "name": "Black Rook Elite Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Black Rook Elite Chestguard",
+            "ru": "Нагрудный доспех элитного бойца Черной Ладьи",
+            "es": "Coselete de élite de Grajo Negro",
+            "br": "Couraça de Elite do Corvo Negro",
+            "kr": "",
+            "fr": "Corselet d’élite du Freux",
+            "de": "Brustschutz der Rabenwehrelite"
+        },
+        "icon": "inv_chest_plate_lordravencrest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 164,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4400,
+            "crit": 0,
+            "mastery": 2600,
+            "versatility": 0
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 187589,
+        "name": "Black Rook Elite Legguards",
+        "names": {
+            "cn": "",
+            "en": "Black Rook Elite Legguards",
+            "ru": "Набедренники элитного бойца Черной Ладьи",
+            "es": "Musleras de élite de Grajo Negro",
+            "br": "Guarda-pernas de Elite do Corvo Negro",
+            "kr": "",
+            "fr": "Garde-jambes d’élite du Freux",
+            "de": "Beinschützer der Rabenwehrelite"
+        },
+        "icon": "inv_pant_plate_lordravencrest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 164,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2600,
+            "mastery": 0,
+            "versatility": 4400
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 187590,
+        "name": "Black Rook Elite Shoulderplates",
+        "names": {
+            "cn": "",
+            "en": "Black Rook Elite Shoulderplates",
+            "ru": "Наплечные пластины элитного бойца Черной Ладьи",
+            "es": "Hombreras de élite de Grajo Negro",
+            "br": "Placa d'Ombros de Elite do Corvo Negro",
+            "kr": "",
+            "fr": "Plaques d’épaule d’élite du Freux",
+            "de": "Schulterplatten der Rabenwehrelite"
+        },
+        "icon": "inv_shoulder_plate_lordravencrest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 164,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4400,
+            "mastery": 2600,
+            "versatility": 0
+        },
+        "slot": "Shoulder"
+    },
+    {
+        "id": 188291,
+        "name": "Moon-Touched Bands",
+        "names": {
+            "cn": "",
+            "en": "Moon-Touched Bands",
+            "ru": "Поручи лунного касания",
+            "es": "Braciles tocados por la luna",
+            "br": "Embraces Tocados pela Lua",
+            "kr": "",
+            "fr": "Poignets touchés par la lune",
+            "de": "Mondberührte Bänder"
+        },
+        "icon": "inv_bracer_08",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3550,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3450
+        },
+        "slot": "Wrist"
+    },
+    {
+        "id": 188292,
+        "name": "Embroidered Cape of Mysteries",
+        "names": {
+            "cn": "",
+            "en": "Embroidered Cape of Mysteries",
+            "ru": "Вышитая накидка тайн",
+            "es": "Manteo bordado de misterios",
+            "br": "Capa Bordada dos Mistérios",
+            "kr": "",
+            "fr": "Cape des mystères brodée",
+            "de": "Besticktes Cape der Mysterien"
+        },
+        "icon": "inv_misc_cape_18",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3000
+        },
+        "slot": "Back"
+    },
+    {
+        "id": 188293,
+        "name": "Bloodlord Legplates",
+        "names": {
+            "cn": "",
+            "en": "Bloodlord Legplates",
+            "ru": "Ножные латы Повелителя Крови",
+            "es": "Quijotes de señor de sangre",
+            "br": "Coxotes do Sangrelorde",
+            "kr": "",
+            "fr": "Cuissards de seigneur sanglant",
+            "de": "Beinplatten des Blutfürsten"
+        },
+        "icon": "inv_pants_plate_02",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 3800,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 188294,
+        "name": "Mage-Collar of the Firestorm",
+        "names": {
+            "cn": "",
+            "en": "Mage-Collar of the Firestorm",
+            "ru": "Магический ошейник огненной бури",
+            "es": "Alzacuellos de mago de tormenta de Fuego",
+            "br": "Gola de Mago da Tempestade de Fogo",
+            "kr": "",
+            "fr": "Magecol de la tempête de feu",
+            "de": "Magierkragen des Feuersturms"
+        },
+        "icon": "inv_helmet_34",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 3350
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188295,
+        "name": "Virtue Bearer's Vambraces",
+        "names": {
+            "cn": "",
+            "en": "Virtue Bearer's Vambraces",
+            "ru": "Тяжелые наручи несущего добродетели",
+            "es": "Avambrazos de portador de virtud",
+            "br": "Avambraços do Portador da Virtude",
+            "kr": "",
+            "fr": "Protège-bras du porteur de vertus",
+            "de": "Unterarmschienen des Ehrenträgers"
+        },
+        "icon": "inv_bracer_13",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "slot": "Wrist"
+    },
+    {
+        "id": 188297,
+        "name": "Signet of Repose",
+        "names": {
+            "cn": "",
+            "en": "Signet of Repose",
+            "ru": "Перстень доверия",
+            "es": "Sello de reposo",
+            "br": "Sinete do Repouso",
+            "kr": "",
+            "fr": "Chevalière de repos",
+            "de": "Siegel der Erholung"
+        },
+        "icon": "inv_jewelry_ring_59",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 8250,
+            "mastery": 0,
+            "versatility": 9250
+        },
+        "slot": "Finger"
+    },
+    {
+        "id": 188298,
+        "name": "Moonchild Leggings",
+        "names": {
+            "cn": "",
+            "en": "Moonchild Leggings",
+            "ru": "Поножи лунного ребенка",
+            "es": "Leotardos de hijo de la luna",
+            "br": "Perneiras Filho da Lua",
+            "kr": "",
+            "fr": "Jambières de l’enfant lunaire",
+            "de": "Gamaschen des Mondkinds"
+        },
+        "icon": "inv_pants_cloth_12",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 188299,
+        "name": "Emerald Eye Bracer",
+        "names": {
+            "cn": "",
+            "en": "Emerald Eye Bracer",
+            "ru": "Наручи изумрудного ока",
+            "es": "Sortija de ojo de esmeralda",
+            "br": "Braçadeiras Olho de Esmeralda",
+            "kr": "",
+            "fr": "Brassards de l’œil d’émeraude",
+            "de": "Armschienen des Smaragdauges"
+        },
+        "icon": "inv_bracer_16",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Wrist"
+    },
+    {
+        "id": 188300,
+        "name": "Soldier's Dog Tags",
+        "names": {
+            "cn": "",
+            "en": "Soldier's Dog Tags",
+            "ru": "Солдатский жетон",
+            "es": "Placas de soldado",
+            "br": "Placa de Identificação do Soldado",
+            "kr": "",
+            "fr": "Plaque d’identification de soldat",
+            "de": "Hundemarken des Soldaten"
+        },
+        "icon": "inv_jewelry_necklace_39",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 7500,
+            "crit": 10000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Neck"
+    },
+    {
+        "id": 188301,
+        "name": "Doomplate Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Doomplate Gauntlets",
+            "ru": "Рукавицы роковой брони",
+            "es": "Guanteletes de placas malditas",
+            "br": "Manoplas de Placas da Ruína",
+            "kr": "",
+            "fr": "Gantelets de plaques funestes",
+            "de": "Verdammnisplattenstulpen"
+        },
+        "icon": "inv_gauntlets_29",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3850,
+            "crit": 3150,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Hands"
+    },
+    {
+        "id": 188302,
+        "name": "Ruby Helm of the Just",
+        "names": {
+            "cn": "",
+            "en": "Ruby Helm of the Just",
+            "ru": "Рубиновый шлем состязания",
+            "es": "Yelmo de rubí del justo",
+            "br": "Elmo de Rubi dos Justos",
+            "kr": "",
+            "fr": "Heaume de rubis du juste",
+            "de": "Rubinhelm des Gerechten"
+        },
+        "icon": "inv_helmet_12",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2700,
+            "crit": 4300,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188303,
+        "name": "Robe of Effervescent Light",
+        "names": {
+            "cn": "",
+            "en": "Robe of Effervescent Light",
+            "ru": "Одеяние искрометного света",
+            "es": "Toga de Luz efervescente",
+            "br": "Veste da Luz Efervescente",
+            "kr": "",
+            "fr": "Robe de la lumière effervescente",
+            "de": "Robe des Lichtwirbels"
+        },
+        "icon": "inv_chest_cloth_38",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2700,
+            "mastery": 0,
+            "versatility": 4300
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 188305,
+        "name": "The Willbreaker",
+        "names": {
+            "cn": "",
+            "en": "The Willbreaker",
+            "ru": "Сокрушительница воли",
+            "es": "La Quebrantadora de voluntades",
+            "br": "A Sobrepujante",
+            "kr": "",
+            "fr": "La Brise-vœux",
+            "de": "Der Willenbrecher"
+        },
+        "icon": "inv_sword_01",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 188306,
+        "name": "Leggings of the Unrepentant",
+        "names": {
+            "cn": "",
+            "en": "Leggings of the Unrepentant",
+            "ru": "Поножи нераскаявшегося",
+            "es": "Leotardos del impenitente",
+            "br": "Perneiras dos Impenitentes",
+            "kr": "",
+            "fr": "Jambières de l’impénitent",
+            "de": "Gamaschen des Reuelosen"
+        },
+        "icon": "inv_pants_leather_12",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4000,
+            "crit": 3000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 188307,
+        "name": "Bloodsworn Warboots",
+        "names": {
+            "cn": "",
+            "en": "Bloodsworn Warboots",
+            "ru": "Боевые сапоги клятвы крови",
+            "es": "Botas de guerra Jurasangre",
+            "br": "Coturnos Jurassangue",
+            "kr": "",
+            "fr": "Bottes de guerre de Ligessang",
+            "de": "Kriegsstiefel des Blutschwurs"
+        },
+        "icon": "inv_boots_chain_04",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2650,
+            "crit": 4350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Feet"
+    },
+    {
+        "id": 188308,
+        "name": "Embroidered Spellpyre Boots",
+        "names": {
+            "cn": "",
+            "en": "Embroidered Spellpyre Boots",
+            "ru": "Вышитые сапоги огня",
+            "es": "Botas pirahechizo bordadas",
+            "br": "Botas Bordadas da Pira dos Feitiços",
+            "kr": "",
+            "fr": "Bottes du bûcher-sorcier brodées",
+            "de": "Bestickte Stiefel des Zauberfeuers"
+        },
+        "icon": "inv_boots_cloth_06",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Feet"
+    },
+    {
+        "id": 188309,
+        "name": "Icon of Unyielding Courage",
+        "names": {
+            "cn": "",
+            "en": "Icon of Unyielding Courage",
+            "ru": "Хоругвь непреклонной отваги",
+            "es": "Icono de coraje implacable",
+            "br": "Ícone da Coragem Obstinada",
+            "kr": "",
+            "fr": "Icône du courage inflexible",
+            "de": "Ikone des unerschütterlichen Mutes"
+        },
+        "icon": "inv_brd_banner",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 6250,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Icon of Unyielding Courage"
+        },
+        "levelRange": []
+    },
+    {
+        "id": 188310,
+        "name": "Wastewalker Tunic",
+        "names": {
+            "cn": "",
+            "en": "Wastewalker Tunic",
+            "ru": "Мундир странника пустошей",
+            "es": "Guerrera de transitayermos",
+            "br": "Túnica do Ermâmbulo",
+            "kr": "",
+            "fr": "Tunique de marchefriche",
+            "de": "Ödniswandlertunika"
+        },
+        "icon": "inv_chest_chain_17",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 188311,
+        "name": "Eaglecrest Warboots",
+        "names": {
+            "cn": "",
+            "en": "Eaglecrest Warboots",
+            "ru": "Боевые сапоги орлиного герба",
+            "es": "Botas de guerra de Cumbre del Águila",
+            "br": "Coturnos Penacho da Águia",
+            "kr": "",
+            "fr": "Bottes de guerre de la crête de l’aigle",
+            "de": "Adlerkronenkriegsstiefel"
+        },
+        "icon": "inv_boots_plate_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3267,
+            "mastery": 0,
+            "versatility": 3733
+        },
+        "slot": "Feet"
+    },
+    {
+        "id": 188312,
+        "name": "Wave-Crest Striders",
+        "names": {
+            "cn": "",
+            "en": "Wave-Crest Striders",
+            "ru": "Сапоги гребней волн",
+            "es": "Zancos de blasón de las olas",
+            "br": "Botas Crista da Onda",
+            "kr": "",
+            "fr": "Cuissardes cimes-des-vagues",
+            "de": "Schreiter des Wellenwappens"
+        },
+        "icon": "inv_boots_chain_06",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2600,
+            "mastery": 0,
+            "versatility": 4400
+        },
+        "slot": "Feet"
+    },
+    {
+        "id": 188313,
+        "name": "Talisman of the Breaker",
+        "names": {
+            "cn": "",
+            "en": "Talisman of the Breaker",
+            "ru": "Талисман дробителя",
+            "es": "Dije del rompedor",
+            "br": "Talismã dos Sobrepujantes",
+            "kr": "",
+            "fr": "Talisman du Briseur",
+            "de": "Talisman des Zerstörers"
+        },
+        "icon": "ability_hunter_mastermarksman",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 8900,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Neck"
+    },
+    {
+        "id": 188314,
+        "name": "Mantle of Shadowy Embrace",
+        "names": {
+            "cn": "",
+            "en": "Mantle of Shadowy Embrace",
+            "ru": "Мантия объятий тьмы",
+            "es": "Manto del abrazo de las sombras",
+            "br": "Dragonas do Abraço Sombrio",
+            "kr": "",
+            "fr": "Mantelet de l’étreinte ombreuse",
+            "de": "Mantel der schattenhaften Umarmung"
+        },
+        "icon": "inv_shoulder_25",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4150,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2850
+        },
+        "slot": "Shoulder"
+    },
+    {
+        "id": 188333,
+        "name": "Girdle of Living Flame",
+        "names": {
+            "cn": "",
+            "en": "Girdle of Living Flame",
+            "ru": "Ремень живого жара",
+            "es": "Faja de llama viva",
+            "br": "Cinturão da Chama Viva",
+            "kr": "",
+            "fr": "Ceinturon de la flamme vivante",
+            "de": "Gurt der lebenden Flamme"
+        },
+        "icon": "inv_belt_09",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3700,
+            "crit": 3300,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Waist"
+    },
+    {
+        "id": 188334,
+        "name": "Hungarhide Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Hungarhide Gauntlets",
+            "ru": "Рукавицы из шкуры Хундры",
+            "es": "Guanteletes de pellejo de Panthambre",
+            "br": "Manoplas de Couro do Comelodo",
+            "kr": "",
+            "fr": "Gantelets en peau de Hungar",
+            "de": "Hungarbalgstulpen"
+        },
+        "icon": "inv_gauntlets_11",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2500,
+            "crit": 4500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Hands"
+    },
+    {
+        "id": 188335,
+        "name": "Arcanium Signet Bands",
+        "names": {
+            "cn": "",
+            "en": "Arcanium Signet Bands",
+            "ru": "Поручи чародейской печати",
+            "es": "Brazales del Arcanium",
+            "br": "Braçadeira-sinete Arcanium",
+            "kr": "",
+            "fr": "Poignets au sceau de l’Arcanium",
+            "de": "Arkaniumsiegelbänder"
+        },
+        "icon": "inv_bracer_19",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4350,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2650
+        },
+        "slot": "Wrist"
+    },
+    {
+        "id": 188337,
+        "name": "Cassock of the Loyal",
+        "names": {
+            "cn": "",
+            "en": "Cassock of the Loyal",
+            "ru": "Ряса верного",
+            "es": "Sotana del fiel",
+            "br": "Sotaina dos Leais",
+            "kr": "",
+            "fr": "Soutane du fidèle",
+            "de": "Soutane des Ergebenen"
+        },
+        "icon": "inv_chest_cloth_59",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4000,
+            "mastery": 0,
+            "versatility": 3000
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 188338,
+        "name": "Girdle of Gallantry",
+        "names": {
+            "cn": "",
+            "en": "Girdle of Gallantry",
+            "ru": "Ремень галантности",
+            "es": "Faja de galantería",
+            "br": "Cinturão de Galanteria",
+            "kr": "",
+            "fr": "Ceinturon de galanterie",
+            "de": "Gurt des Edelmuts"
+        },
+        "icon": "inv_belt_29",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2850,
+            "crit": 4150,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Waist"
+    },
+    {
+        "id": 188340,
+        "name": "Hydra-Fang Necklace",
+        "names": {
+            "cn": "",
+            "en": "Hydra-Fang Necklace",
+            "ru": "Ожерелье из клыков гидры",
+            "es": "Collar de colmillo de hidra",
+            "br": "Colar de Dentes de Hidra",
+            "kr": "",
+            "fr": "Collier croc-d’hydre",
+            "de": "Hydrazahnhalskette"
+        },
+        "icon": "inv_jewelry_necklace_34",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 8300,
+            "crit": 9200,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Neck"
+    },
+    {
+        "id": 188341,
+        "name": "Headdress of the Tides",
+        "names": {
+            "cn": "",
+            "en": "Headdress of the Tides",
+            "ru": "Головной убор приливов",
+            "es": "Ornato de las mareas",
+            "br": "Diadema das Marés",
+            "kr": "",
+            "fr": "Coiffure des marées",
+            "de": "Kopfputz der Gezeiten"
+        },
+        "icon": "inv_helmet_19",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188342,
+        "name": "Dunewind Sash",
+        "names": {
+            "cn": "",
+            "en": "Dunewind Sash",
+            "ru": "Кушак барханного ветра",
+            "es": "Fajín de viento de las dunas",
+            "br": "Faixa Dunavento",
+            "kr": "",
+            "fr": "Ceinture du vent des dunes",
+            "de": "Dünenwindschärpe"
+        },
+        "icon": "inv_belt_24",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3700,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3300
+        },
+        "slot": "Waist"
+    },
+    {
+        "id": 188343,
+        "name": "Ring of the Shadow Deeps",
+        "names": {
+            "cn": "",
+            "en": "Ring of the Shadow Deeps",
+            "ru": "Кольцо бездны теней",
+            "es": "Anillo de profundidades sombrías",
+            "br": "Anel das Profundezas Sombrias",
+            "kr": "",
+            "fr": "Anneau des profondeurs de l’Ombre",
+            "de": "Ring der Schattentiefe"
+        },
+        "icon": "inv_jewelry_ring_ahnqiraj_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 8600,
+            "crit": 8900,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Finger"
+    },
+    {
+        "id": 188344,
+        "name": "Weathered Band of the Swamplord",
+        "names": {
+            "cn": "",
+            "en": "Weathered Band of the Swamplord",
+            "ru": "Видавшее виды кольцо болотного лорда",
+            "es": "Sortija de señor de pantano deteriorada",
+            "br": "Anel Desgastado do Senhor do Pântano",
+            "kr": "",
+            "fr": "Bague défraîchie du seigneur des marais",
+            "de": "Verwittertes Band des Sumpffürsten"
+        },
+        "icon": "inv_jewelry_ring_44",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 8850,
+            "mastery": 0,
+            "versatility": 8650
+        },
+        "slot": "Finger"
+    },
+    {
+        "id": 188345,
+        "name": "Crown of the Forest Lord",
+        "names": {
+            "cn": "",
+            "en": "Crown of the Forest Lord",
+            "ru": "Корона лесного властелина",
+            "es": "Corona del Señor del Bosque",
+            "br": "Coroa do Senhor da Floresta",
+            "kr": "",
+            "fr": "Couronne du seigneur de la forêt",
+            "de": "Krone des Waldfürsten"
+        },
+        "icon": "inv_helmet_17",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2700,
+            "mastery": 0,
+            "versatility": 4300
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188346,
+        "name": "Hands of the Sun",
+        "names": {
+            "cn": "",
+            "en": "Hands of the Sun",
+            "ru": "Краги солнца",
+            "es": "Manos del Sol",
+            "br": "Mãos do Sol",
+            "kr": "",
+            "fr": "Mains du soleil",
+            "de": "Hände der Sonne"
+        },
+        "icon": "inv_gauntlets_19",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4350,
+            "mastery": 0,
+            "versatility": 2650
+        },
+        "slot": "Hands"
+    },
+    {
+        "id": 188347,
+        "name": "Armwraps of Disdain",
+        "names": {
+            "cn": "",
+            "en": "Armwraps of Disdain",
+            "ru": "Наручные обмотки презрения",
+            "es": "Brazaletes de desdén",
+            "br": "Braceletes do Escárnio",
+            "kr": "",
+            "fr": "Couvre-bras du Dédain",
+            "de": "Armwickel der Verachtung"
+        },
+        "icon": "inv_bracer_07",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "slot": "Wrist"
+    },
+    {
+        "id": 188348,
+        "name": "Swampstone Necklace",
+        "names": {
+            "cn": "",
+            "en": "Swampstone Necklace",
+            "ru": "Ожерелье болотного камня",
+            "es": "Collar de piedra de pantano",
+            "br": "Colar de Pantanita",
+            "kr": "",
+            "fr": "Collier de pierres de marais",
+            "de": "Sumpfsteinhalskette"
+        },
+        "icon": "inv_jewelry_necklace_29",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 7500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 10000
+        },
+        "slot": "Neck"
+    },
+    {
+        "id": 188350,
+        "name": "Oracle Belt of Timeless Mystery",
+        "names": {
+            "cn": "",
+            "en": "Oracle Belt of Timeless Mystery",
+            "ru": "Пояс вневременной тайны оракула",
+            "es": "Cinturón oráculo de misterio intemporal",
+            "br": "Cinturão Oracular do Mistério Atemporal",
+            "kr": "",
+            "fr": "Ceinture d’oracle du mystère intemporel",
+            "de": "Orakelgürtel des zeitlosen Geheimnisses"
+        },
+        "icon": "inv_belt_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2300,
+            "mastery": 0,
+            "versatility": 4700
+        },
+        "slot": "Waist"
+    },
+    {
+        "id": 188353,
+        "name": "Doomplate Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Doomplate Shoulderguards",
+            "ru": "Наплечные щитки роковой брони",
+            "es": "Guardahombros de placas malditas",
+            "br": "Guarda-ombros de Placas da Ruína",
+            "kr": "",
+            "fr": "Garde-épaules de plaques funestes",
+            "de": "Verdammnisplattenschulterschutz"
+        },
+        "icon": "inv_shoulder_26",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4200,
+            "mastery": 0,
+            "versatility": 2800
+        },
+        "slot": "Shoulder"
+    },
+    {
+        "id": 188354,
+        "name": "Stormshield of Renewal",
+        "names": {
+            "cn": "",
+            "en": "Stormshield of Renewal",
+            "ru": "Щит обновления",
+            "es": "Escudo de tormenta de renovación",
+            "br": "Escudo Tonante de Renovação",
+            "kr": "",
+            "fr": "Pare-tempête du renouveau",
+            "de": "Sturmschild der Erneuerung"
+        },
+        "icon": "inv_shield_34",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4700,
+            "crit": 2300,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Shield"
+    },
+    {
+        "id": 188355,
+        "name": "Barbaric Legstraps",
+        "names": {
+            "cn": "",
+            "en": "Barbaric Legstraps",
+            "ru": "Варварские ножные ремни",
+            "es": "Pantalones bárbaros",
+            "br": "Cinturão Barbaresco",
+            "kr": "",
+            "fr": "Cnémides de traqueur noir",
+            "de": "Barbarische Beinriemen"
+        },
+        "icon": "inv_pants_leather_06",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4150,
+            "crit": 2850,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 188356,
+        "name": "Bone Chain Necklace",
+        "names": {
+            "cn": "",
+            "en": "Bone Chain Necklace",
+            "ru": "Костяное ожерелье-цепь",
+            "es": "Collar de cadena de huesos",
+            "br": "Fieira de Ossos",
+            "kr": "",
+            "fr": "Chaînette d’osselets",
+            "de": "Knochengliederhalskette"
+        },
+        "icon": "inv_jewelry_necklace_04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 9800,
+            "mastery": 0,
+            "versatility": 7700
+        },
+        "slot": "Neck"
+    },
+    {
+        "id": 188357,
+        "name": "Ring of Fabled Hope",
+        "names": {
+            "cn": "",
+            "en": "Ring of Fabled Hope",
+            "ru": "Кольцо легендарной надежды",
+            "es": "Anillo de esperanza legendaria",
+            "br": "Anel da Fabulosa Esperança",
+            "kr": "",
+            "fr": "Anneau de l’espoir fabuleux",
+            "de": "Ring der erdichteten Hoffnung"
+        },
+        "icon": "inv_jewelry_ring_31",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 7500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 10000
+        },
+        "slot": "Finger"
+    },
+    {
+        "id": 188358,
+        "name": "Demonfang Ritual Helm",
+        "names": {
+            "cn": "",
+            "en": "Demonfang Ritual Helm",
+            "ru": "Ритуальный шлем демонического клыка",
+            "es": "Yelmo ritual de diente de demonio",
+            "br": "Elmo Ritual de Presas Demoníacas",
+            "kr": "",
+            "fr": "Heaume rituel croc-de-démon",
+            "de": "Ritualhelm der Dämonenfänge"
+        },
+        "icon": "inv_helmet_72",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4000,
+            "crit": 3000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188359,
+        "name": "Alembic of Infernal Power",
+        "names": {
+            "cn": "",
+            "en": "Alembic of Infernal Power",
+            "ru": "Перегонный куб мощи преисподней",
+            "es": "Alambique de poder infernal",
+            "br": "Alambique de Poder Infernal",
+            "kr": "",
+            "fr": "Alambic de puissance infernale",
+            "de": "Alembik der höllischen Macht"
+        },
+        "icon": "inv_potion_130",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 6875
+        },
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Alembic of Infernal Power"
+        },
+        "levelRange": []
+    },
+    {
+        "id": 188360,
+        "name": "Mana-Etched Pantaloons",
+        "names": {
+            "cn": "",
+            "en": "Mana-Etched Pantaloons",
+            "ru": "Пропитанные маной кюлоты",
+            "es": "Bombachos con grabados de maná",
+            "br": "Pantalonas Gravadas com Mana",
+            "kr": "",
+            "fr": "Culotte gravée au mana",
+            "de": "Managetränkte Pantalons"
+        },
+        "icon": "inv_pants_cloth_17",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2900,
+            "crit": 4100,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 188361,
+        "name": "Savage Mask of the Lynx Lord",
+        "names": {
+            "cn": "",
+            "en": "Savage Mask of the Lynx Lord",
+            "ru": "Ужасная маска лорда рысей",
+            "es": "Máscara indómita del señor lince",
+            "br": "Máscara Selvagem do Senhor dos Linces",
+            "kr": "",
+            "fr": "Masque sauvage du seigneur lynx",
+            "de": "Wilde Maske des Luchsfürsten"
+        },
+        "icon": "inv_helmet_73",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4600,
+            "crit": 2400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188362,
+        "name": "Barkchip Boots",
+        "names": {
+            "cn": "",
+            "en": "Barkchip Boots",
+            "ru": "Сапоги щепы",
+            "es": "Botas de astillas de corteza",
+            "br": "Botas de Lasca de Tronco",
+            "kr": "",
+            "fr": "Bottes en lamelles d’écorce",
+            "de": "Borkensplitterstiefel"
+        },
+        "icon": "inv_boots_chain_05",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4450,
+            "crit": 2550,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Feet"
+    },
+    {
+        "id": 188363,
+        "name": "The Black Stalk",
+        "names": {
+            "cn": "",
+            "en": "The Black Stalk",
+            "ru": "Черный Стебель",
+            "es": "El tallo negro",
+            "br": "Bastão Preto",
+            "kr": "",
+            "fr": "Le Traque-noir",
+            "de": "Stab der Schattenmutter"
+        },
+        "icon": "inv_wand_1h_stratholme_d_01",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 2800,
+            "crit": 4800,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 188364,
+        "name": "Stormsong Kilt",
+        "names": {
+            "cn": "",
+            "en": "Stormsong Kilt",
+            "ru": "Килт песни бури",
+            "es": "Falda de canto de tormenta",
+            "br": "Kilt dos Trovamare",
+            "kr": "",
+            "fr": "Kilt de chant des tempêtes",
+            "de": "Kilt des Sturmgesangs"
+        },
+        "icon": "inv_pants_leather_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3550,
+            "mastery": 0,
+            "versatility": 3450
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 188365,
+        "name": "Eye of the Stalker",
+        "names": {
+            "cn": "",
+            "en": "Eye of the Stalker",
+            "ru": "Глаз Охотницы",
+            "es": "Ojo de la acechadora",
+            "br": "Olho do Espreitador",
+            "kr": "",
+            "fr": "Œil du traqueur",
+            "de": "Auge des Pirschers"
+        },
+        "icon": "inv_jewelry_ring_45",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 8000,
+            "crit": 9500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Finger"
+    },
+    {
+        "id": 188366,
+        "name": "Spaulders of the Righteous",
+        "names": {
+            "cn": "",
+            "en": "Spaulders of the Righteous",
+            "ru": "Наплеч праведника",
+            "es": "Bufas del honrado",
+            "br": "Espaldares dos Íntegros",
+            "kr": "",
+            "fr": "Spallières du vertueux",
+            "de": "Schiftung des Rechtschaffenen"
+        },
+        "icon": "inv_shoulder_10",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2800,
+            "mastery": 0,
+            "versatility": 4200
+        },
+        "slot": "Shoulder"
+    },
+    {
+        "id": 188367,
+        "name": "Beast Lord Cuirass",
+        "names": {
+            "cn": "",
+            "en": "Beast Lord Cuirass",
+            "ru": "Панцирь владыки зверей",
+            "es": "Loriga de señor de bestias",
+            "br": "Corselete do Senhor das Feras",
+            "kr": "",
+            "fr": "Thorax de seigneur des bêtes",
+            "de": "Kürass des Wildtierfürsten"
+        },
+        "icon": "inv_chest_chain_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2350,
+            "crit": 4650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 188368,
+        "name": "Incanter's Robe",
+        "names": {
+            "cn": "",
+            "en": "Incanter's Robe",
+            "ru": "Одеяние ведуна",
+            "es": "Toga de embrujamiento",
+            "br": "Veste do Sortílego",
+            "kr": "",
+            "fr": "Robe d’incantateur",
+            "de": "Robe des Beschwörens"
+        },
+        "icon": "inv_chest_cloth_25",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2400,
+            "mastery": 0,
+            "versatility": 4600
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 188369,
+        "name": "Sarannis' Mystic Sheen",
+        "names": {
+            "cn": "",
+            "en": "Sarannis' Mystic Sheen",
+            "ru": "Мистический блеск Сараннис",
+            "es": "Brillo místico de Sarannis",
+            "br": "Brilho Místico de Sarannis",
+            "kr": "",
+            "fr": "Brillance mystique de Sarannis",
+            "de": "Sarannis' mystischer Glanz"
+        },
+        "icon": "inv_misc_cape_naxxramas_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3800
+        },
+        "slot": "Back"
+    },
+    {
+        "id": 188370,
+        "name": "Prismatic Mittens of Mending",
+        "names": {
+            "cn": "",
+            "en": "Prismatic Mittens of Mending",
+            "ru": "Радужные полуперчатки лечения",
+            "es": "Mitones de curación centelleantes",
+            "br": "Mitenes Prismáticas de Recomposição",
+            "kr": "",
+            "fr": "Mitaines de guérison prismatiques",
+            "de": "Prismatische Fäustlinge der Heilung"
+        },
+        "icon": "inv_gauntlets_16",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3250,
+            "mastery": 0,
+            "versatility": 3750
+        },
+        "slot": "Hands"
+    },
+    {
+        "id": 188371,
+        "name": "Towering Mantle of the Hunt",
+        "names": {
+            "cn": "",
+            "en": "Towering Mantle of the Hunt",
+            "ru": "Вздымающаяся мантия погони",
+            "es": "Manto imponente de la caza",
+            "br": "Dragonas Monumentais da Caça",
+            "kr": "",
+            "fr": "Manteau imposant de la chasse",
+            "de": "Überragende Mantelung der Jagd"
+        },
+        "icon": "inv_shoulder_11",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3750,
+            "crit": 3250,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Shoulder"
+    },
+    {
+        "id": 188374,
+        "name": "Aegis of the Sunbird",
+        "names": {
+            "cn": "",
+            "en": "Aegis of the Sunbird",
+            "ru": "Эгида солнечной птицы",
+            "es": "Égida del ave solar",
+            "br": "Égide da Solave",
+            "kr": "",
+            "fr": "Égide de l’oiseau-soleil",
+            "de": "Aegis des Sonnenvogels"
+        },
+        "icon": "inv_shield_35",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2500,
+            "mastery": 0,
+            "versatility": 4500
+        },
+        "slot": "Shield"
+    },
+    {
+        "id": 188375,
+        "name": "Energis Armwraps",
+        "names": {
+            "cn": "",
+            "en": "Energis Armwraps",
+            "ru": "Наручи энергии",
+            "es": "Brazaletes de Energis",
+            "br": "Braceleiras Energis",
+            "kr": "",
+            "fr": "Couvre-bras d’Energis",
+            "de": "Energisarmwickel"
+        },
+        "icon": "inv_gauntlets_19",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3900,
+            "crit": 3100,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Hands"
+    },
+    {
+        "id": 188376,
+        "name": "Obsidian Clodstompers",
+        "names": {
+            "cn": "",
+            "en": "Obsidian Clodstompers",
+            "ru": "Обсидиановые тяжелоступы",
+            "es": "Pisabarros de obsidiana",
+            "br": "Pisaterras Obsidianas",
+            "kr": "",
+            "fr": "Écrase-boue en obsidienne",
+            "de": "Obsidianstampfer"
+        },
+        "icon": "inv_boots_plate_06",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3200
+        },
+        "slot": "Feet"
+    },
+    {
+        "id": 188377,
+        "name": "Enchanted Thorium Torque",
+        "names": {
+            "cn": "",
+            "en": "Enchanted Thorium Torque",
+            "ru": "Заколдованное ториевое ожерелье",
+            "es": "Torques de torio encantado",
+            "br": "Torque de Tório Encantado",
+            "kr": "",
+            "fr": "Torque en thorium enchanté",
+            "de": "Verzauberter Thoriumhalsreif"
+        },
+        "icon": "inv_jewelry_ring_ahnqiraj_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 7500,
+            "mastery": 0,
+            "versatility": 10000
+        },
+        "slot": "Neck"
+    },
+    {
+        "id": 188378,
+        "name": "Runed Dagger of Solace",
+        "names": {
+            "cn": "",
+            "en": "Runed Dagger of Solace",
+            "ru": "Рунический кинжал утешения",
+            "es": "Daga rúnica de consuelo",
+            "br": "Adaga Rúnica do Consolo",
+            "kr": "",
+            "fr": "Dague runique de réconfort",
+            "de": "Runenverzierter Dolch des Trosts"
+        },
+        "icon": "inv_weapon_shortblade_52",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 2150,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4850
+        },
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 188379,
+        "name": "Ring of Umbral Doom",
+        "names": {
+            "cn": "",
+            "en": "Ring of Umbral Doom",
+            "ru": "Кольцо мрачной судьбы",
+            "es": "Anillo de fatalidad umbría",
+            "br": "Anel da Ruína Umbralina",
+            "kr": "",
+            "fr": "Anneau du destin ombreux",
+            "de": "Ring des schattenhaften Schicksals"
+        },
+        "icon": "inv_jewelry_ring_16",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 8700,
+            "crit": 8800,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Finger"
+    },
+    {
+        "id": 188380,
+        "name": "Gauntlets of Cruel Intention",
+        "names": {
+            "cn": "",
+            "en": "Gauntlets of Cruel Intention",
+            "ru": "Рукавицы жестоких намерений",
+            "es": "Guanteletes de intención cruel",
+            "br": "Manoplas da Intenção Cruel",
+            "kr": "",
+            "fr": "Gantelets de l’intention cruelle",
+            "de": "Stulpen der grausamen Absicht"
+        },
+        "icon": "inv_gauntlets_26",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4350,
+            "mastery": 0,
+            "versatility": 2650
+        },
+        "slot": "Hands"
+    },
+    {
+        "id": 188382,
+        "name": "Arcane Netherband",
+        "names": {
+            "cn": "",
+            "en": "Arcane Netherband",
+            "ru": "Чародейское кольцо Пустоты",
+            "es": "Sortija abisal Arcana",
+            "br": "Elo Etéreo Arcano",
+            "kr": "",
+            "fr": "Bague arcanique du Néant",
+            "de": "Arkanes Netherband"
+        },
+        "icon": "inv_jewelry_ring_62",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 9500,
+            "crit": 8000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Finger"
+    },
+    {
+        "id": 188383,
+        "name": "Mithril-Bark Cloak",
+        "names": {
+            "cn": "",
+            "en": "Mithril-Bark Cloak",
+            "ru": "Мифриловый плащ",
+            "es": "Capa de corteza de mitril",
+            "br": "Manto de Córtex-de-mithril",
+            "kr": "",
+            "fr": "Cape en écorce-mithril",
+            "de": "Mithrilborkenumhang"
+        },
+        "icon": "inv_misc_cape_09",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "slot": "Back"
+    },
+    {
+        "id": 188384,
+        "name": "Devil-Stitched Leggings",
+        "names": {
+            "cn": "",
+            "en": "Devil-Stitched Leggings",
+            "ru": "Прошитые демоном поножи",
+            "es": "Leotardos cosidos por el diablo",
+            "br": "Perneiras Costuradas pelo Diabo",
+            "kr": "",
+            "fr": "Jambières à couture diabolique",
+            "de": "Teufelsnahtgamaschen"
+        },
+        "icon": "inv_pants_cloth_14",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2950,
+            "mastery": 0,
+            "versatility": 4050
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 188385,
+        "name": "Boots of the Shifting Sands",
+        "names": {
+            "cn": "",
+            "en": "Boots of the Shifting Sands",
+            "ru": "Сапоги зыбучих песков",
+            "es": "Botas del Mar de Dunas",
+            "br": "Botas das Areias Cambiantes",
+            "kr": "",
+            "fr": "Bottes des Sables changeants",
+            "de": "Stiefel der Sandstürme"
+        },
+        "icon": "inv_boots_05",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4500,
+            "mastery": 0,
+            "versatility": 2500
+        },
+        "slot": "Feet"
+    },
+    {
+        "id": 188386,
+        "name": "Mantle of Autumn",
+        "names": {
+            "cn": "",
+            "en": "Mantle of Autumn",
+            "ru": "Мантия осени",
+            "es": "Manto de otoño",
+            "br": "Dragonas de Outono",
+            "kr": "",
+            "fr": "Mantelet de l’automne",
+            "de": "Herbstmantelung"
+        },
+        "icon": "inv_shoulder_18",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2650,
+            "mastery": 0,
+            "versatility": 4350
+        },
+        "slot": "Shoulder"
+    },
+    {
+        "id": 188387,
+        "name": "Warpstaff of Arcanum",
+        "names": {
+            "cn": "",
+            "en": "Warpstaff of Arcanum",
+            "ru": "Кривой посох тайны",
+            "es": "Bastón de distorsión de arcanum",
+            "br": "Cajado Dimensional do Arcano",
+            "kr": "",
+            "fr": "Bâton dimensionnel de l’Arcanum",
+            "de": "Arkanumwarpstab"
+        },
+        "icon": "inv_staff_47",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 2750,
+            "crit": 4250,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 188388,
+        "name": "Warp Infused Drape",
+        "names": {
+            "cn": "",
+            "en": "Warp Infused Drape",
+            "ru": "Покоробленная пелерина",
+            "es": "Toga infundida de distorsión",
+            "br": "Clâmide Infusa em Dimensão",
+            "kr": "",
+            "fr": "Drapé intradimensionnel",
+            "de": "Warperfülltes Tuch"
+        },
+        "icon": "inv_chest_cloth_29",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 188389,
+        "name": "Jagged Bark Pendant",
+        "names": {
+            "cn": "",
+            "en": "Jagged Bark Pendant",
+            "ru": "Подвеска из шершавой коры",
+            "es": "Colgante de corteza dentado",
+            "br": "Pingente de Córtex Serrilhado",
+            "kr": "",
+            "fr": "Pendentif dentelé en écorce",
+            "de": "Gezackter Borkenanhänger"
+        },
+        "icon": "inv_jewelry_necklace_17",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 7900,
+            "crit": 9600,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Neck"
+    },
+    {
+        "id": 188391,
+        "name": "Warpscale Leggings",
+        "names": {
+            "cn": "",
+            "en": "Warpscale Leggings",
+            "ru": "Поножи из покоробленной чешуи",
+            "es": "Leotardos de escamas de distorsión",
+            "br": "Perneiras de Escama Dimensional",
+            "kr": "",
+            "fr": "Jambières en écailles dimensionnelles",
+            "de": "Warpschuppengamaschen"
+        },
+        "icon": "inv_pants_mail_21",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2950,
+            "mastery": 0,
+            "versatility": 4050
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 188392,
+        "name": "Moonglade Cowl",
+        "names": {
+            "cn": "",
+            "en": "Moonglade Cowl",
+            "ru": "Клобук Лунной поляны",
+            "es": "Capucha de Claro de la Luna",
+            "br": "Capucho da Clareira da Lua",
+            "kr": "",
+            "fr": "Capuche de Reflet-de-Lune",
+            "de": "Gugel der Mondlichtung"
+        },
+        "icon": "inv_helmet_15",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2600,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4400
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188393,
+        "name": "Tidefury Helm",
+        "names": {
+            "cn": "",
+            "en": "Tidefury Helm",
+            "ru": "Шлем яростного прилива",
+            "es": "Yelmo de Furiamarea",
+            "br": "Elmo da Fúria das Marés",
+            "kr": "",
+            "fr": "Heaume du mascaret",
+            "de": "Helm des Gezeitensturms"
+        },
+        "icon": "inv_helmet_19",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4450,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2550
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188394,
+        "name": "Warhelm of the Bold",
+        "names": {
+            "cn": "",
+            "en": "Warhelm of the Bold",
+            "ru": "Боевой шлем могучего",
+            "es": "Yelmo de guerra del osado",
+            "br": "Elmo Bélico dos Audazes",
+            "kr": "",
+            "fr": "Heaume de guerre de l’audacieux",
+            "de": "Kriegshelm des Wagemutigen"
+        },
+        "icon": "inv_helmet_20",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 3350
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188397,
+        "name": "Netherfury Cape",
+        "names": {
+            "cn": "",
+            "en": "Netherfury Cape",
+            "ru": "Накидка ярости пустоты",
+            "es": "Manteo de furia abisal",
+            "br": "Capa da Fúria Etérea",
+            "kr": "",
+            "fr": "Cape de la Furie du Néant",
+            "de": "Netherzorncape"
+        },
+        "icon": "inv_misc_cape_02",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4500,
+            "mastery": 0,
+            "versatility": 2500
+        },
+        "slot": "Back"
+    },
+    {
+        "id": 188398,
+        "name": "Boots of Ethereal Manipulation",
+        "names": {
+            "cn": "",
+            "en": "Boots of Ethereal Manipulation",
+            "ru": "Сапоги управления астралом",
+            "es": "Botas de manipulación etérea",
+            "br": "Botas da Manipulação Etérea",
+            "kr": "",
+            "fr": "Bottes de manipulation éthérée",
+            "de": "Stiefel der astralen Manipulation"
+        },
+        "icon": "inv_boots_cloth_06",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2550,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4450
+        },
+        "slot": "Feet"
+    },
+    {
+        "id": 188399,
+        "name": "Boots of the Endless Hunt",
+        "names": {
+            "cn": "",
+            "en": "Boots of the Endless Hunt",
+            "ru": "Сапоги бесконечной погони",
+            "es": "Botas de la caza sin fin",
+            "br": "Botas da Caça sem Fim",
+            "kr": "",
+            "fr": "Bottes de la chasse sans fin",
+            "de": "Stiefel der endlosen Jagd"
+        },
+        "icon": "inv_boots_chain_05",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2750,
+            "crit": 4250,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Feet"
+    },
+    {
+        "id": 188401,
+        "name": "Gauntlets of Dissension",
+        "names": {
+            "cn": "",
+            "en": "Gauntlets of Dissension",
+            "ru": "Рукавицы распри",
+            "es": "Guanteletes de disensión",
+            "br": "Manoplas da Dissensão",
+            "kr": "",
+            "fr": "Gantelets de la dissension",
+            "de": "Stulpen der Zwietracht"
+        },
+        "icon": "inv_gauntlets_26",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3400,
+            "mastery": 0,
+            "versatility": 3600
+        },
+        "slot": "Hands"
+    },
+    {
+        "id": 188411,
+        "name": "Facade Shield of Glyphs",
+        "names": {
+            "cn": "",
+            "en": "Facade Shield of Glyphs",
+            "ru": "Покрытый письменами штурмовой щит",
+            "es": "Escudo de fachada de glifos",
+            "br": "Escudo de Fachada de Glifos",
+            "kr": "",
+            "fr": "Bouclier-façade des glyphes",
+            "de": "Fassadenschild der Glyphen"
+        },
+        "icon": "inv_shield_51",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "slot": "Shield"
+    },
+    {
+        "id": 188412,
+        "name": "Golden Limb Bands",
+        "names": {
+            "cn": "",
+            "en": "Golden Limb Bands",
+            "ru": "Золотые поручи",
+            "es": "Braciles de extremidad dorados",
+            "br": "Embraces de Ramos Dourados",
+            "kr": "",
+            "fr": "Poignets de la branche dorée",
+            "de": "Goldene Gliedmaßenbänder"
+        },
+        "icon": "inv_bracer_19",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4800,
+            "mastery": 0,
+            "versatility": 2200
+        },
+        "slot": "Wrist"
+    },
+    {
+        "id": 188413,
+        "name": "Stone-Worn Footwraps",
+        "names": {
+            "cn": "",
+            "en": "Stone-Worn Footwraps",
+            "ru": "Скальные туфли",
+            "es": "Borceguíes ajados por la piedra",
+            "br": "Palmilhas Gastas pelas Pedras",
+            "kr": "",
+            "fr": "Bottillons usés par les pierres",
+            "de": "Steingeplagte Fußlappen"
+        },
+        "icon": "inv_boots_cloth_09",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4700,
+            "mastery": 0,
+            "versatility": 2300
+        },
+        "slot": "Feet"
+    },
+    {
+        "id": 188414,
+        "name": "Custodian's Chestpiece",
+        "names": {
+            "cn": "",
+            "en": "Custodian's Chestpiece",
+            "ru": "Нагрудник коменданта",
+            "es": "Pechera de custodiador",
+            "br": "Peito d'Armas do Custódio",
+            "kr": "",
+            "fr": "Plastron de protecteur",
+            "de": "Brustharnisch des Bewahrers"
+        },
+        "icon": "inv_chest_leather_03",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 188416,
+        "name": "Hollowed Mandible Legplates",
+        "names": {
+            "cn": "",
+            "en": "Hollowed Mandible Legplates",
+            "ru": "Ножные латы из полых жвал",
+            "es": "Quijotes de mandíbula vaciada",
+            "br": "Coxotes de Mandíbulas Ocas",
+            "kr": "",
+            "fr": "Cuissards en mandibules creusées",
+            "de": "Hohle Unterkieferbeinplatten"
+        },
+        "icon": "inv_pants_mail_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4200,
+            "crit": 2800,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 188417,
+        "name": "Egg Sac Robes",
+        "names": {
+            "cn": "",
+            "en": "Egg Sac Robes",
+            "ru": "Оболочка яйца",
+            "es": "Togas de saco de huevos",
+            "br": "Vestes com Estampa de Ovos",
+            "kr": "",
+            "fr": "Robe du cocon d’œufs",
+            "de": "Eierkokonroben"
+        },
+        "icon": "inv_chest_cloth_63",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4200,
+            "crit": 2800,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 188418,
+        "name": "Grotto Mist Gloves",
+        "names": {
+            "cn": "",
+            "en": "Grotto Mist Gloves",
+            "ru": "Перчатки Туманного грота",
+            "es": "Guantes de niebla de gruta",
+            "br": "Luvas do Grotão Nebuloso",
+            "kr": "",
+            "fr": "Gants de la grotte brumeuse",
+            "de": "Grottennebelhandschuhe"
+        },
+        "icon": "inv_gauntlets_18",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "slot": "Hands"
+    },
+    {
+        "id": 188419,
+        "name": "Ring of the Traitor King",
+        "names": {
+            "cn": "",
+            "en": "Ring of the Traitor King",
+            "ru": "Кольцо короля-предателя",
+            "es": "Anillo del rey traidor",
+            "br": "Anel do Rei Traidor",
+            "kr": "",
+            "fr": "Anneau du roi traître",
+            "de": "Ring des Verräterkönigs"
+        },
+        "icon": "inv_jewelry_ring_39",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 7000,
+            "crit": 10500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Finger"
+    },
+    {
+        "id": 188421,
+        "name": "Insect Vestments",
+        "names": {
+            "cn": "",
+            "en": "Insect Vestments",
+            "ru": "Одежды салаги",
+            "es": "Vestimentas de insecto",
+            "br": "Vestimenta Insetífera",
+            "kr": "",
+            "fr": "Habit insectoïde",
+            "de": "Insektengewänder"
+        },
+        "icon": "inv_chest_cloth_15",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4300,
+            "crit": 2700,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 188422,
+        "name": "Chitin Shell Greathelm",
+        "names": {
+            "cn": "",
+            "en": "Chitin Shell Greathelm",
+            "ru": "Большой шлем из хитинового панциря",
+            "es": "Gran yelmo de concha de quitina",
+            "br": "Grande Elmo de Casca de Quitina",
+            "kr": "",
+            "fr": "Grand heaume en coquille de chitine",
+            "de": "Großhelm aus Chitinplatten"
+        },
+        "icon": "inv_helmet_110",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2950,
+            "crit": 4050,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188423,
+        "name": "Rod of the Fallen Monarch",
+        "names": {
+            "cn": "",
+            "en": "Rod of the Fallen Monarch",
+            "ru": "Жезл падшего монарха",
+            "es": "Vara del monarca caído",
+            "br": "Bastão do Monarca Caído",
+            "kr": "",
+            "fr": "Bâtonnet du monarque déchu",
+            "de": "Stab des gefallenen Monarchen"
+        },
+        "icon": "inv_wand_06",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 188424,
+        "name": "Flamebeard's Bracers",
+        "names": {
+            "cn": "",
+            "en": "Flamebeard's Bracers",
+            "ru": "Наручи Жароборода",
+            "es": "Brazales de Barballamas",
+            "br": "Braçadeiras de Barbachama",
+            "kr": "",
+            "fr": "Brassards de Flammebarbe",
+            "de": "Flammenbarts Armschienen"
+        },
+        "icon": "inv_bracer_07",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2050,
+            "crit": 4950,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Wrist"
+    },
+    {
+        "id": 188425,
+        "name": "Ancient Aligned Girdle",
+        "names": {
+            "cn": "",
+            "en": "Ancient Aligned Girdle",
+            "ru": "Древний подтянутый ремень",
+            "es": "Faja alineada antigua",
+            "br": "Cinturão Alinhado Antigo",
+            "kr": "",
+            "fr": "Ceinturon ancien aligné",
+            "de": "Uralter Richtgurt"
+        },
+        "icon": "inv_belt_34",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "slot": "Waist"
+    },
+    {
+        "id": 188426,
+        "name": "Sash of the Servant",
+        "names": {
+            "cn": "",
+            "en": "Sash of the Servant",
+            "ru": "Кушак служителя",
+            "es": "Fajín del sirviente",
+            "br": "Faixa do Serviçal",
+            "kr": "",
+            "fr": "Écharpe du serviteur",
+            "de": "Schärpe des Dieners"
+        },
+        "icon": "inv_belt_10",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "slot": "Waist"
+    },
+    {
+        "id": 188429,
+        "name": "Keleseth's Blade of Evocation",
+        "names": {
+            "cn": "",
+            "en": "Keleseth's Blade of Evocation",
+            "ru": "Дающий силу клинок Келесета",
+            "es": "Hoja de evocación de Keleseth",
+            "br": "Lâmina da Evocação de Keleseth",
+            "kr": "",
+            "fr": "Lame d’évocation de Keleseth",
+            "de": "Keleseths Klinge der Hervorrufung"
+        },
+        "icon": "inv_weapon_shortblade_46",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 33,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 188430,
+        "name": "Dragon Stabler's Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Dragon Stabler's Gauntlets",
+            "ru": "Рукавицы убийцы драконов",
+            "es": "Guanteletes de caballeriza de dragones",
+            "br": "Manoplas do Cavalariço de Dragões",
+            "kr": "",
+            "fr": "Gantelets de dragonnier",
+            "de": "Stulpen des Drachenstallmeisters"
+        },
+        "icon": "inv_gauntlets_10",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 33,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4400,
+            "mastery": 0,
+            "versatility": 2600
+        },
+        "slot": "Hands"
+    },
+    {
+        "id": 188431,
+        "name": "Reinforced Velvet Helm",
+        "names": {
+            "cn": "",
+            "en": "Reinforced Velvet Helm",
+            "ru": "Укрепленный бархатный шлем",
+            "es": "Yelmo de terciopelo reforzado",
+            "br": "Elmo de Veludo Reforçado",
+            "kr": "",
+            "fr": "Heaume renforcé en velours",
+            "de": "Verstärkter Samthelm"
+        },
+        "icon": "inv_helmet_107",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 33,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2600,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4400
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188433,
+        "name": "Chestplate of the Northern Lights",
+        "names": {
+            "cn": "",
+            "en": "Chestplate of the Northern Lights",
+            "ru": "Бригантина северного сияния",
+            "es": "Peto de la aurora boreal",
+            "br": "Guarda-peito da Aurora Boreal",
+            "kr": "",
+            "fr": "Pansière des aurores boréales",
+            "de": "Brustplatte des Polarlichts"
+        },
+        "icon": "inv_chest_chain_15",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 33,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2300,
+            "mastery": 0,
+            "versatility": 4700
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 188434,
+        "name": "Skarvald's Dragonskin Habergeon",
+        "names": {
+            "cn": "",
+            "en": "Skarvald's Dragonskin Habergeon",
+            "ru": "Драконья кольчуга Скарвальда",
+            "es": "Cota de piel de dragón de Skarvald",
+            "br": "Cota de Malha de Pele de Dragão do Skarvald",
+            "kr": "",
+            "fr": "Haubergeon de Skarvald en peau de dragon",
+            "de": "Skarvalds Drachenhautringkragen"
+        },
+        "icon": "inv_chest_leather_08",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 33,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4050,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2950
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 188436,
+        "name": "Holistic Patchwork Breeches",
+        "names": {
+            "cn": "",
+            "en": "Holistic Patchwork Breeches",
+            "ru": "Цельношитые кожаные брюки",
+            "es": "Calzones de retales holísticos",
+            "br": "Calções Holísticos Remendados",
+            "kr": "",
+            "fr": "Braies holistiques en patchwork",
+            "de": "Flickwerkbundhose des Holismus"
+        },
+        "icon": "inv_pants_leather_13",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 33,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 188437,
+        "name": "Overlaid Chain Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Overlaid Chain Spaulders",
+            "ru": "Верхний плетеный наплеч",
+            "es": "Bufas recubiertas de anillas",
+            "br": "Espaldares Revestidos Encadeados",
+            "kr": "",
+            "fr": "Spallières en anneaux recouverts",
+            "de": "Überzogene Kettenschiftung"
+        },
+        "icon": "inv_shoulder_77",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 33,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3050
+        },
+        "slot": "Shoulder"
+    },
+    {
+        "id": 188438,
+        "name": "Wand of the San'layn",
+        "names": {
+            "cn": "",
+            "en": "Wand of the San'layn",
+            "ru": "Жезл сан'лейн",
+            "es": "Varita de los San'layn",
+            "br": "Varinha dos San'layn",
+            "kr": "",
+            "fr": "Baguette du San’layn",
+            "de": "Zauberstab der San'layn"
+        },
+        "icon": "inv_wand_18",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 2600,
+            "crit": 4400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 188439,
+        "name": "Strategist's Belt",
+        "names": {
+            "cn": "",
+            "en": "Strategist's Belt",
+            "ru": "Пояс стратега",
+            "es": "Cinturón de estratega",
+            "br": "Cinto do Estrategista",
+            "kr": "",
+            "fr": "Ceinture de stratège",
+            "de": "Strategengürtel"
+        },
+        "icon": "inv_belt_28",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "slot": "Waist"
+    },
+    {
+        "id": 188441,
+        "name": "Battlemap Hide Helm",
+        "names": {
+            "cn": "",
+            "en": "Battlemap Hide Helm",
+            "ru": "Кожаный шлем с картой битвы",
+            "es": "Yelmo de pellejo de mapa de batalla",
+            "br": "Elmo de Pelego com Mapa de Batalha",
+            "kr": "",
+            "fr": "Heaume de la carte de bataille en peau",
+            "de": "Balghelm der Kriegspläne"
+        },
+        "icon": "inv_helmet_104",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 0,
+            "versatility": 3950
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188443,
+        "name": "Helmet of the Constructor",
+        "names": {
+            "cn": "",
+            "en": "Helmet of the Constructor",
+            "ru": "Шлем конструктора",
+            "es": "Casco del Constructor",
+            "br": "Capacete do Construtor",
+            "kr": "",
+            "fr": "Casque du constructeur",
+            "de": "Helm des Konstrukteurs"
+        },
+        "icon": "inv_helmet_130",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2800,
+            "crit": 4200,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188444,
+        "name": "Bindings of the Tunneler",
+        "names": {
+            "cn": "",
+            "en": "Bindings of the Tunneler",
+            "ru": "Наручники проходчика",
+            "es": "Ataduras del tunelador",
+            "br": "Braceletes do Escavador",
+            "kr": "",
+            "fr": "Manchettes du tunnelier",
+            "de": "Bindungen des Tunnelgräbers"
+        },
+        "icon": "inv_bracer_07",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 0,
+            "versatility": 3950
+        },
+        "slot": "Wrist"
+    },
+    {
+        "id": 188445,
+        "name": "Dalronn's Jerkin",
+        "names": {
+            "cn": "",
+            "en": "Dalronn's Jerkin",
+            "ru": "Доспех Далронна",
+            "es": "Chaleco de Dalronn",
+            "br": "Gibão de Dalronn",
+            "kr": "",
+            "fr": "Pourpoint de Dalronn",
+            "de": "Dalronns Wams"
+        },
+        "icon": "inv_chest_chain_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2150,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4850
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 188446,
+        "name": "Unsmashable Heavy Band",
+        "names": {
+            "cn": "",
+            "en": "Unsmashable Heavy Band",
+            "ru": "Несокрушимое тяжелое кольцо",
+            "es": "Sortija pesada indestructible",
+            "br": "Elo Pesado Indestrutível",
+            "kr": "",
+            "fr": "Bague lourde indestructible",
+            "de": "Schweres unzerstörbares Band"
+        },
+        "icon": "inv_jewelry_ring_ahnqiraj_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 8600,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 8900
+        },
+        "slot": "Finger"
+    },
+    {
+        "id": 188447,
+        "name": "Plunderer's Helmet",
+        "names": {
+            "cn": "",
+            "en": "Plunderer's Helmet",
+            "ru": "Шлем расхитителя",
+            "es": "Casco de desvalijador",
+            "br": "Capacete do Saqueador",
+            "kr": "",
+            "fr": "Casque du pilleur",
+            "de": "Helm des Brandschatzers"
+        },
+        "icon": "inv_helmet_121",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4300,
+            "crit": 2700,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188448,
+        "name": "Breeches of the Caller",
+        "names": {
+            "cn": "",
+            "en": "Breeches of the Caller",
+            "ru": "Брюки призывателя",
+            "es": "Calzones del clamor",
+            "br": "Calções do Invocador",
+            "kr": "",
+            "fr": "Braies de l’implorateur",
+            "de": "Bundhosen der Ruferin"
+        },
+        "icon": "inv_pants_cloth_14",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 188451,
+        "name": "Annhylde's Ring",
+        "names": {
+            "cn": "",
+            "en": "Annhylde's Ring",
+            "ru": "Кольцо Аннгильды",
+            "es": "Anillo de Annhylde",
+            "br": "Anel de Annhylde",
+            "kr": "",
+            "fr": "Anneau d’Annhylde",
+            "de": "Annhyldes Ring"
+        },
+        "icon": "inv_jewelry_ring_79",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 10000,
+            "crit": 7500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Finger"
+    },
+    {
+        "id": 188452,
+        "name": "Staggering Legplates",
+        "names": {
+            "cn": "",
+            "en": "Staggering Legplates",
+            "ru": "Несравненные ножные латы",
+            "es": "Quijotes pasmantes",
+            "br": "Coxotes Atordoantes",
+            "kr": "",
+            "fr": "Cuissards ahurissants",
+            "de": "Wuchtige Beinplatten"
+        },
+        "icon": "inv_pants_plate_02",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2300,
+            "crit": 4700,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 188453,
+        "name": "Sharp-Barbed Leather Belt",
+        "names": {
+            "cn": "",
+            "en": "Sharp-Barbed Leather Belt",
+            "ru": "Колючий кожаный пояс",
+            "es": "Cinturón de cuero con púas afiladas",
+            "br": "Cinto de Couro Farpado",
+            "kr": "",
+            "fr": "Ceinture à barbelures tranchantes en cuir",
+            "de": "Spitzstacheliger Ledergürtel"
+        },
+        "icon": "inv_belt_24",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3600,
+            "crit": 3400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Waist"
+    },
+    {
+        "id": 188456,
+        "name": "Minister's Number One Legplates",
+        "names": {
+            "cn": "",
+            "en": "Minister's Number One Legplates",
+            "ru": "Любимые ножные латы министра",
+            "es": "Quijotes principales del secretario",
+            "br": "Perneiras do Síndico do Ritmo",
+            "kr": "",
+            "fr": "Cuissards numéro un du pasteur",
+            "de": "Beinplatten des Königs von Maj Orc'ah"
+        },
+        "icon": "inv_pants_plate_34",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 188457,
+        "name": "Bewildering Shoulderpads",
+        "names": {
+            "cn": "",
+            "en": "Bewildering Shoulderpads",
+            "ru": "Ошеломляющие наплечные пластины",
+            "es": "Hombreras desconcertantes",
+            "br": "Ombreiras do Desencanto Universal",
+            "kr": "",
+            "fr": "Protège-épaules stupéfiants",
+            "de": "Nur geklaute Schulterpolster"
+        },
+        "icon": "inv_shoulder_115",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3250,
+            "crit": 3750,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Shoulder"
+    },
+    {
+        "id": 188458,
+        "name": "Robes of the Cheating Heart",
+        "names": {
+            "cn": "",
+            "en": "Robes of the Cheating Heart",
+            "ru": "Одеяния лукавящего сердца",
+            "es": "Togas del corazón tramposo",
+            "br": "Vestes da Paixão Antiga",
+            "kr": "",
+            "fr": "Robe du cœur trompeur",
+            "de": "Wildecker Herzroben"
+        },
+        "icon": "inv_chest_leather_23",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3700,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3300
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 188459,
+        "name": "Seven Stormy Mornings",
+        "names": {
+            "cn": "",
+            "en": "Seven Stormy Mornings",
+            "ru": "Семь хмурых зорь",
+            "es": "Siete mañanas tormentosas",
+            "br": "Descobridoras dos Sete Mares",
+            "kr": "",
+            "fr": "Sept matins orageux",
+            "de": "Beinharte Armschienen"
+        },
+        "icon": "inv_bracer_31b",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3150,
+            "crit": 3850,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Wrist"
+    },
+    {
+        "id": 188460,
+        "name": "Cold Sweat Grips",
+        "names": {
+            "cn": "",
+            "en": "Cold Sweat Grips",
+            "ru": "Захваты леденящего испуга",
+            "es": "Mandiletes de sudores fríos",
+            "br": "Guantes Racionais",
+            "kr": "",
+            "fr": "Poignes de sueurs froides",
+            "de": "Völlig losgelöste Griffe"
+        },
+        "icon": "inv_gauntlets_51",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 3200,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Hands"
+    },
+    {
+        "id": 188462,
+        "name": "Blood Boil Lancet",
+        "names": {
+            "cn": "",
+            "en": "Blood Boil Lancet",
+            "ru": "Ланцет вскипания крови",
+            "es": "Lanceta hierve sangre",
+            "br": "Lanceta Ferve-sangue",
+            "kr": "",
+            "fr": "Lancette bout-sang",
+            "de": "Lanzette des siedenden Bluts"
+        },
+        "icon": "inv_staff_83",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3700,
+            "mastery": 0,
+            "versatility": 3300
+        },
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 188463,
+        "name": "Lost Reliquary Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Lost Reliquary Chestguard",
+            "ru": "Нагрудный доспех затерянного реликвария",
+            "es": "Coselete del relicario perdido",
+            "br": "Couraça do Relicário Perdido",
+            "kr": "",
+            "fr": "Corselet du reliquaire perdu",
+            "de": "Verlorener Reliquiarbrustschutz"
+        },
+        "icon": "inv_chest_plate23",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 188464,
+        "name": "Accursed Crawling Cape",
+        "names": {
+            "cn": "",
+            "en": "Accursed Crawling Cape",
+            "ru": "Проклятая измятая накидка",
+            "es": "Manteo trepador detestable",
+            "br": "Capa Rastejante Amaldiçoada",
+            "kr": "",
+            "fr": "Cape rampante maudite",
+            "de": "Verfluchtes Kriechercape"
+        },
+        "icon": "inv_misc_cape_20",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Back"
+    },
+    {
+        "id": 188466,
+        "name": "Legplates of Frozen Granite",
+        "names": {
+            "cn": "",
+            "en": "Legplates of Frozen Granite",
+            "ru": "Ножные латы из ледяного гранита",
+            "es": "Quijotes de granito helados",
+            "br": "Coxotes de Granito Congelado",
+            "kr": "",
+            "fr": "Cuissards de granit gelé",
+            "de": "Beinplatten aus gefrorenem Granit"
+        },
+        "icon": "inv_pants_plate_34",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 188467,
+        "name": "Sollerets of Suffering",
+        "names": {
+            "cn": "",
+            "en": "Sollerets of Suffering",
+            "ru": "Солереты страданий",
+            "es": "Zapatos herrados de sufrimiento",
+            "br": "Escarpes do Sofrimento",
+            "kr": "",
+            "fr": "Solerets de souffrance",
+            "de": "Fußharnisch des Leidens"
+        },
+        "icon": "inv_boots_plate_15",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3200
+        },
+        "slot": "Feet"
+    },
+    {
+        "id": 188468,
+        "name": "Essence of Anger",
+        "names": {
+            "cn": "",
+            "en": "Essence of Anger",
+            "ru": "Воплощение гнева",
+            "es": "Esencia de inquina",
+            "br": "Essência da Ira",
+            "kr": "",
+            "fr": "Essence de colère",
+            "de": "Essenz des Zorns"
+        },
+        "icon": "inv_belt_67",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3150,
+            "crit": 3850,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Waist"
+    },
+    {
+        "id": 188469,
+        "name": "Brace Guards of the Starless Night",
+        "names": {
+            "cn": "",
+            "en": "Brace Guards of the Starless Night",
+            "ru": "Нарукавники беззвездной ночи",
+            "es": "Guardabrazo de la noche sin estrellas",
+            "br": "Braçadeiras da Noite sem Estrelas",
+            "kr": "",
+            "fr": "Garde-bras de la nuit sans étoiles",
+            "de": "Armschutz der sternenlosen Nacht"
+        },
+        "icon": "inv_bracer_49",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Wrist"
+    },
+    {
+        "id": 188470,
+        "name": "Soul Screaming Boots",
+        "names": {
+            "cn": "",
+            "en": "Soul Screaming Boots",
+            "ru": "Сапоги кричащих душ",
+            "es": "Botas gritadoras de almas",
+            "br": "Botas das Almas Berrantes",
+            "kr": "",
+            "fr": "Bottes d’âme hurlante",
+            "de": "Stiefel der kreischenden Seelen"
+        },
+        "icon": "inv_boots_chain_11",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3100,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3900
+        },
+        "slot": "Feet"
+    },
+    {
+        "id": 188471,
+        "name": "Coil of Missing Gems",
+        "names": {
+            "cn": "",
+            "en": "Coil of Missing Gems",
+            "ru": "Ожерелье из пропавших камней",
+            "es": "Espiral de gemas perdidas",
+            "br": "Colar de Gemas Perdidas",
+            "kr": "",
+            "fr": "Sautoir des gemmes manquantes",
+            "de": "Umwindung der fehlenden Edelsteine"
+        },
+        "icon": "inv_jewelry_necklace_45",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 8500,
+            "crit": 9000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Neck"
+    },
+    {
+        "id": 188472,
+        "name": "Spiteful Signet",
+        "names": {
+            "cn": "",
+            "en": "Spiteful Signet",
+            "ru": "Перстень злорадства",
+            "es": "Sello malicioso",
+            "br": "Sinete Odioso",
+            "kr": "",
+            "fr": "Chevalière malveillante",
+            "de": "Boshaftes Siegel"
+        },
+        "icon": "inv_jewelry_ring_44",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 8600,
+            "mastery": 0,
+            "versatility": 8900
+        },
+        "slot": "Finger"
+    },
+    {
+        "id": 188474,
+        "name": "Very Fashionable Shoulders",
+        "names": {
+            "cn": "",
+            "en": "Very Fashionable Shoulders",
+            "ru": "Очень модные наплечники",
+            "es": "Sobrehombros a la última moda",
+            "br": "Omoplatas Estáile pro Baile",
+            "kr": "",
+            "fr": "Épaulières super tendance",
+            "de": "Schulterstücke mit Sahne"
+        },
+        "icon": "inv_shoulder_118",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3300,
+            "crit": 3700,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Shoulder"
+    },
+    {
+        "id": 188475,
+        "name": "Weeping Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Weeping Gauntlets",
+            "ru": "Рукавицы плача",
+            "es": "Guanteletes de llanto",
+            "br": "Manoplas do Caminho do Bem",
+            "kr": "",
+            "fr": "Gantelets des larmes",
+            "de": "Stulpen des goldenen Reiters"
+        },
+        "icon": "inv_gauntlets_85",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 3050,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Hands"
+    },
+    {
+        "id": 188476,
+        "name": "Love's Prisoner",
+        "names": {
+            "cn": "",
+            "en": "Love's Prisoner",
+            "ru": "Узник любви",
+            "es": "Prisionero del amor",
+            "br": "Trilha do Coração",
+            "kr": "",
+            "fr": "Prisonnier de l’amour",
+            "de": "Halskette des Ma-Ma-Ma-Märchenprinzen"
+        },
+        "icon": "inv_spiritshard_02",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 7000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 10500
+        },
+        "slot": "Neck"
+    },
+    {
+        "id": 188477,
+        "name": "Eyes of Bewilderment",
+        "names": {
+            "cn": "",
+            "en": "Eyes of Bewilderment",
+            "ru": "Искреннее недоумение",
+            "es": "Ojos de desconcierto",
+            "br": "Olhos de Dar Motivo",
+            "kr": "",
+            "fr": "Yeux de perplexité",
+            "de": "Nur geklauter Helm"
+        },
+        "icon": "inv_helmet_157",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2250,
+            "crit": 4750,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188478,
+        "name": "Needle-Encrusted Scorpion",
+        "names": {
+            "cn": "",
+            "en": "Needle-Encrusted Scorpion",
+            "ru": "Покрытый иглами скорпион",
+            "es": "Escorpión incrustado de agujas",
+            "br": "Escorpião Incrustado de Agulhas",
+            "kr": "",
+            "fr": "Scorpion incrusté d’aiguilles",
+            "de": "Nadelüberzogener Skorpion"
+        },
+        "icon": "inv_qirajidol_onyx",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 6706,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Needle-Encrusted Scorpion"
+        },
+        "levelRange": []
+    },
+    {
+        "id": 188480,
+        "name": "Frayed Scoundrel's Cap",
+        "names": {
+            "cn": "",
+            "en": "Frayed Scoundrel's Cap",
+            "ru": "Изношенная шапка негодяя",
+            "es": "Almete deshilachado de canalla",
+            "br": "Casquete Puído do Patife",
+            "kr": "",
+            "fr": "Casque râpé de crapule",
+            "de": "Ausgefranste Kappe des Schufts"
+        },
+        "icon": "inv_helmet_153",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2900,
+            "crit": 4100,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188481,
+        "name": "Black Spire Sabatons",
+        "names": {
+            "cn": "",
+            "en": "Black Spire Sabatons",
+            "ru": "Башмаки черного шпиля",
+            "es": "Escarpes de aguja negra",
+            "br": "Escarpes Pontas Negras",
+            "kr": "",
+            "fr": "Solerets de la flèche noire",
+            "de": "Sabatons der schwarzen Spitze"
+        },
+        "icon": "inv_boots_plate_15",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4150,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2850
+        },
+        "slot": "Feet"
+    },
+    {
+        "id": 188482,
+        "name": "Pauldrons of the Souleater",
+        "names": {
+            "cn": "",
+            "en": "Pauldrons of the Souleater",
+            "ru": "Наплечье пожирателя душ",
+            "es": "Espaldares del Devoraalmas",
+            "br": "Brafoneiras do Devoralmas",
+            "kr": "",
+            "fr": "Espauliers du mangeur-d’âmes",
+            "de": "Schulterstücke des Seelenfressers"
+        },
+        "icon": "inv_shoulder_121",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3250,
+            "crit": 3750,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Shoulder"
+    },
+    {
+        "id": 188483,
+        "name": "Essence of Suffering",
+        "names": {
+            "cn": "",
+            "en": "Essence of Suffering",
+            "ru": "Воплощение страдания",
+            "es": "Esencia de sufrimiento",
+            "br": "Essência do Sofrimento",
+            "kr": "",
+            "fr": "Essence de souffrance",
+            "de": "Essenz des Leidens"
+        },
+        "icon": "inv_bracer_31",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3150,
+            "crit": 3850,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Wrist"
+    },
+    {
+        "id": 188484,
+        "name": "Seethe",
+        "names": {
+            "cn": "",
+            "en": "Seethe",
+            "ru": "Бешенство",
+            "es": "Hervor",
+            "br": "Ebulição",
+            "kr": "",
+            "fr": "Bouillant de rage",
+            "de": "Sieder"
+        },
+        "icon": "inv_sword_120",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 3600,
+            "crit": 3400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 188485,
+        "name": "Arcane Loops of Anger",
+        "names": {
+            "cn": "",
+            "en": "Arcane Loops of Anger",
+            "ru": "Чародейский кулон злости",
+            "es": "Anillos Arcanos de inquina",
+            "br": "Argolas Arcanas da Raiva",
+            "kr": "",
+            "fr": "Jonc arcanique de colère",
+            "de": "Arkane Ringe des Zorns"
+        },
+        "icon": "inv_jewelry_necklace_39",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 8750,
+            "mastery": 0,
+            "versatility": 8750
+        },
+        "slot": "Neck"
+    },
+    {
+        "id": 188486,
+        "name": "Essence of Desire",
+        "names": {
+            "cn": "",
+            "en": "Essence of Desire",
+            "ru": "Воплощение мечты",
+            "es": "Esencia de deseo",
+            "br": "Essência do Desejo",
+            "kr": "",
+            "fr": "Essence de désir",
+            "de": "Essenz des Begehrens"
+        },
+        "icon": "inv_gauntlets_25",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3300,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3700
+        },
+        "slot": "Hands"
+    },
+    {
+        "id": 188487,
+        "name": "Mord'rethar Robes",
+        "names": {
+            "cn": "",
+            "en": "Mord'rethar Robes",
+            "ru": "Одеяния Морд'ретара",
+            "es": "Togas de Mord'rethar",
+            "br": "Vestes de Mord'rethar",
+            "kr": "",
+            "fr": "Robe de Mord’rethar",
+            "de": "Roben von Mord'rethar"
+        },
+        "icon": "inv_chest_cloth_48",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3100,
+            "mastery": 0,
+            "versatility": 3900
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 188488,
+        "name": "Helm of the Spirit Shock",
+        "names": {
+            "cn": "",
+            "en": "Helm of the Spirit Shock",
+            "ru": "Шлем удара духа",
+            "es": "Yelmo de Choque de espíritu",
+            "br": "Elmo do Choque Espiritual",
+            "kr": "",
+            "fr": "Heaume de choc spirituel",
+            "de": "Helm des Geistschocks"
+        },
+        "icon": "inv_helmet_157",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Head"
+    },
+    {
+        "id": 188489,
+        "name": "Recovered Reliquary Boots",
+        "names": {
+            "cn": "",
+            "en": "Recovered Reliquary Boots",
+            "ru": "Сапоги восстановленной гробницы",
+            "es": "Botas de relicario recuperado",
+            "br": "Botas Relicárias Recuperadas",
+            "kr": "",
+            "fr": "Bottes de reliquaire de récupération",
+            "de": "Zurückerlangte Reliquiarstiefel"
+        },
+        "icon": "inv_boots_plate_15",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "slot": "Feet"
+    },
+    {
+        "id": 188660,
+        "name": "Unchained Gladiator's Barrier",
+        "names": {
+            "cn": "",
+            "en": "Unchained Gladiator's Barrier",
+            "ru": "Барьер освобожденного гладиатора",
+            "es": "Barrera de Gladiador desencadenado",
+            "br": "Barreira do Gladiador Desacorrentado",
+            "kr": "",
+            "fr": "Barrière du gladiateur déchaîné",
+            "de": "Barriere des entfesselten Gladiators"
+        },
+        "icon": "inv_shield_1h_mawraid_d_02",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 200,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3050,
+            "versatility": 3950
+        },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
+        "slot": "Shield"
+    },
+    {
+        "id": 188661,
+        "name": "Unchained Gladiator's Gavel",
+        "names": {
+            "cn": "",
+            "en": "Unchained Gladiator's Gavel",
+            "ru": "Молот освобожденного гладиатора",
+            "es": "Mazo de Gladiador desencadenado",
+            "br": "Martelete do Gladiador Desacorrentado",
+            "kr": "",
+            "fr": "Martelet du gladiateur déchaîné",
+            "de": "Hammer des entfesselten Gladiators"
+        },
+        "icon": "inv_mace_1h_mawraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 200,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3200,
+            "versatility": 3800
+        },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 188663,
+        "name": "Unchained Gladiator's Focus Staff",
+        "names": {
+            "cn": "",
+            "en": "Unchained Gladiator's Focus Staff",
+            "ru": "Фокусирующий посох освобожденного гладиатора",
+            "es": "Bastón de enfoque de Gladiador desencadenado",
+            "br": "Cajado de Concentração do Gladiador Desacorrentado",
+            "kr": "",
+            "fr": "Bâton de focalisation du gladiateur déchaîné",
+            "de": "Fokusstab des entfesselten Gladiators"
+        },
+        "icon": "inv_staff_2h_mawraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 200,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3050,
+            "versatility": 3950
+        },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 188664,
+        "name": "Unchained Gladiator's Mageblade",
+        "names": {
+            "cn": "",
+            "en": "Unchained Gladiator's Mageblade",
+            "ru": "Магический клинок освобожденного гладиатора",
+            "es": "Hoja de mago de Gladiador desencadenado",
+            "br": "Magespada do Gladiador Desacorrentado",
+            "kr": "",
+            "fr": "Magelame du gladiateur déchaîné",
+            "de": "Magierklinge des entfesselten Gladiators"
+        },
+        "icon": "inv_sword_1h_mawraid_d_02",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "itemLevel": 200,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2900,
+            "versatility": 4100
+        },
+        "sources": [
+            {
+                "instanceId": -17,
+                "encounterId": -15
+            }
+        ],
+        "slot": "1H Weapon"
     },
     {
         "id": 10001,
