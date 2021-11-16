@@ -34428,5 +34428,10 @@ export const bonus_IDs = {
   "7756": {
     "id": 7756,
     "tag": "Timewarped"
-  }
+  },
+  "7883": {
+    "id": 7883,
+    "ilevel": "5 @plvl 1 - 220 @plvl 220",
+    "curveId": 28749
+  },
 }

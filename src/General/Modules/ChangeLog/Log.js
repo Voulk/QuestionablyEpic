@@ -10,6 +10,15 @@
 export const changeLog = [
   {
     version: "9.1.5 / 2.5.2",
+    update: 2,
+    date: "16 November",
+    changes: [
+      "Added Doomwalker anniversary gear.",
+      "Added a few missing PVP items to the item DB.",
+    ],
+  },
+  {
+    version: "9.1.5 / 2.5.2",
     update: 1,
     date: "7 November",
     changes: [
