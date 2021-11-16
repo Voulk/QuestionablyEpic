@@ -7,7 +7,7 @@ export default function MessageOfTheDay(props) {
   const messageOfTheDay = {
     "Retail": [
       "Disc module revamped. Please report any suspicious results over the next few days.",
-      "Substantial app-wide update. Check the changelog for details!"
+      "Doomwalker Loot added."
   ],
   "BurningCrusade": ["Enjoy SSC / TK!"]
   }
