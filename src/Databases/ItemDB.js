@@ -114687,9 +114687,9 @@ export const itemDB = [
             "intellect": 5259,
             "stamina": 7889,
             "haste": 0,
-            "crit": 0,
+            "crit": 4000,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 3000
         },
         "slot": "Neck"
     },
@@ -114740,10 +114740,10 @@ export const itemDB = [
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 0,
+            "haste": 2750,
             "crit": 0,
             "mastery": 0,
-            "versatility": 7000
+            "versatility": 4250
         },
         "slot": "Legs"
     },
@@ -114794,10 +114794,10 @@ export const itemDB = [
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 0,
+            "haste": 2350,
             "crit": 0,
             "mastery": 0,
-            "versatility": 7000
+            "versatility": 4650
         },
         "slot": "Head"
     },
@@ -114821,10 +114821,10 @@ export const itemDB = [
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 0,
+            "haste": 2850,
             "crit": 0,
             "mastery": 0,
-            "versatility": 7000
+            "versatility": 4150
         },
         "slot": "Head"
     },
@@ -114875,10 +114875,10 @@ export const itemDB = [
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 7000,
+            "haste": 4500,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 2500
         },
         "slot": "Shoulder"
     },
@@ -114929,8 +114929,8 @@ export const itemDB = [
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 0,
-            "crit": 7000,
+            "haste": 2150,
+            "crit": 4850,
             "mastery": 0,
             "versatility": 0
         },
@@ -121391,6 +121391,32 @@ export const itemDB = [
             "versatility": 2000
         },
         "slot": "Waist"
+    },
+    {
+        "id": 30729,
+        "name": "Black-Iron Battlecloak",
+        "names": {
+            "de": "Schwarzeisenkampfumhang",
+            "en": "Black-Iron Battlecloak",
+            "es": "Capa de batalla de hierro negro",
+            "fr": "Cape de bataille fer-noir",
+            "it": "Mantello da Battaglia di Ferro Nero",
+            "pt": "Capote de Batalha Ferro-preto",
+            "ru": "Боевой плащ холодного железа"
+          },
+        "icon": "inv_misc_cape_20",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 32,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2500,
+            "crit": 4500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "slot": "Back"
     },
     {
         "id": 188441,
