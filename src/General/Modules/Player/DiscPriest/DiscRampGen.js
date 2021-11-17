@@ -18,20 +18,29 @@
  */
 export const buildRamp = (type, applicators, trinkets, haste, playstyle, specialSpells = []) => {
     const trinketList = buildTrinkets(trinkets);
-    console.log(type + " " + playstyle);
     if (type === "Mini") {
         return buildMiniRamp(applicators, trinkets, specialSpells, playstyle);
     }
     else if (type === "Fiend") {
+        // Build a sequence for a Fiend ramp. See it's function for more information.
         return buildFiendRamp(applicators, trinketList['Fiend'], specialSpells, playstyle);
     }
     else if (type === "Boon") {
+        // TODO: Rename Boon to "Primary" since we'll actually include both types of primary ramp here. 
+        // Mindgames ramps will of course occur much more frequently than Boon ramps. 
         if (playstyle === "Kyrian Evangelism") {
             return buildBoonEvangRamp(applicators, trinketList['Boon'], haste, specialSpells);
         }
         else if (playstyle === "Kyrian Spirit Shell") {
             return buildBoonShellRamp(applicators, trinketList['Boon'], haste, specialSpells);
         }
+        else if (playstyle === "Venthyr Evangelism") { // Coming soon
+            //return buildMindgamesRamp(applicators, trinketList['Boon'], haste, specialSpells);
+        }
+        else if (playstyle === "Venthyr Spirit Shell") { // Coming soon
+            //return buildMindgamesRamp(applicators, trinketList['Boon'], haste, specialSpells);
+        }
+        // If there was a desire or a need to add specializations for Night Fae or Necrolord then they could be added here. 
     }
     else {
         console.error("Invalid Ramp");
