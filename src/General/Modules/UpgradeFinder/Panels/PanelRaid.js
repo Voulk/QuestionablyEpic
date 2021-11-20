@@ -125,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   header: {
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",

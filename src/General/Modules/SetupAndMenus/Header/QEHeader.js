@@ -19,18 +19,18 @@ import { useTheme } from '@mui/material/styles';
 
 const useStyles = makeStyles((theme) => ({
   qeLogo: {
-    [theme.breakpoints.down('lg')]: {
+    [theme.breakpoints.down('xl')]: {
       marginTop: "5px",
       marginBottom: "-5px",
     },
   },
   headerButtons: {
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       marginBottom: "5px",
     },
   },
   headerMargins:{
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       marginLeft: "4%", marginRight: "4%"
     },
     [theme.breakpoints.up("sm")]: {
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 export default function QEHeader(props) {
   const { t } = useTranslation();
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down('md'));
+  const matches = useMediaQuery(theme.breakpoints.down('lg'));
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const gameType = useSelector((state) => state.gameType);

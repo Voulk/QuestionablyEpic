@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Grid, Paper, Typography, Divider, Tooltip, useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@mui/material/styles";
+import makeStyles from '@mui/styles/makeStyles';
+import { Grid, Paper, Typography, Divider, Tooltip, useMediaQuery } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
@@ -71,8 +72,8 @@ const specImages = {
 export default function CharacterPanel(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const xsBreakpoint = useMediaQuery(theme.breakpoints.down("xs"));
-  const smBreakpoint = useMediaQuery(theme.breakpoints.down("sm"));
+  const xsBreakpoint = useMediaQuery(theme.breakpoints.down('sm'));
+  const smBreakpoint = useMediaQuery(theme.breakpoints.down('md'));
   const { t, i18n } = useTranslation();
   const playerStats = props.player.getActiveStats();
   const [backgroundImage, setBackgroundImage] = useState("");

@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import MaterialTable, { MTableToolbar } from "material-table";
+import MaterialTable, { MTableToolbar } from "@material-table/core";
 import {ArrowDownward, Clear, Search} from "@mui/icons-material";
 import { ThemeProvider, StyledEngineProvider, createTheme, adaptV4Theme } from "@mui/material/styles";
 import abilityIcons from "../../CooldownPlanner/Functions/IconFunctions/AbilityIcons.js";

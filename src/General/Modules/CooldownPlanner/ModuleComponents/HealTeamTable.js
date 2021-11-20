@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from "react";
-import MaterialTable, { MTableToolbar } from "material-table";
+import MaterialTable, { MTableToolbar } from "@material-table/core";
 //prettier-ignore
 import { AddBox, ArrowDownward, Check, ChevronLeft, ChevronRight, Clear, DeleteOutline, Edit, FilterList, FirstPage, LastPage, Remove, SaveAlt, Search, ViewColumn } from "@mui/icons-material";
 import { Select, TextField, InputLabel, FormControl, Paper, adaptV4Theme } from "@mui/material";

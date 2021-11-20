@@ -1,8 +1,8 @@
 import React from "react";
-import ToggleButton from "@material-ui/lab/ToggleButton";
-import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { useTranslation } from "react-i18next";
-import { Tooltip, Typography } from "@material-ui/core";
+import { Tooltip, Typography } from "@mui/material";
 
 export default function MetricToggle(props) {
   const metric = props.metric

@@ -1,19 +1,19 @@
 import React, { useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from '@mui/styles/makeStyles';
 import "../../../General/Modules/SetupAndMenus/QEMainMenu";
 import LegendaryObject from "./LegendaryObject";
 import "./Legendaries.css";
 import { useTranslation } from "react-i18next";
 import { getEffectValue } from "../../Engine/EffectFormulas/EffectEngine";
 import ReactGA from "react-ga";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import userSettings from "General/Modules/Settings/SettingsObject";
 import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
 
 const useStyles = makeStyles((theme) => ({
   header: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('sm')]: {
       margin: "auto",
       width: "85%",
       justifyContent: "space-between",

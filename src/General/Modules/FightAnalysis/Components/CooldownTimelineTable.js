@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import MaterialTable, { MTableToolbar } from "material-table";
+import MaterialTable, { MTableToolbar } from "@material-table/core";
 import { ArrowDownward, Clear, Search } from "@mui/icons-material";
 import moment from "moment";
 import { Divider, Paper, adaptV4Theme } from "@mui/material";

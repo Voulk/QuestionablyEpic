@@ -126,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "auto 100%",
   },
   header: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       marginTop: 120,
       margin: "auto",
       width: "90%",

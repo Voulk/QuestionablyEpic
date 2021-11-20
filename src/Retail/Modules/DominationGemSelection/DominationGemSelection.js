@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { MenuItem, Grid, FormControl, Select, Typography, Divider, TextField, Tooltip, InputLabel } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
+import { MenuItem, Grid, FormControl, Select, Typography, Divider, TextField, Tooltip, InputLabel } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { setBounds } from "General/Engine/CONSTRAINTS";
-import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { dominationGemDB } from "Databases/DominationGemDB";
 import { getGemIcon } from "General/Engine/ItemUtilities";
 
@@ -163,7 +163,7 @@ export default function DominationGemSelection(props) {
   };
 
   return (
-    <Grid container spacing={1} justify="center" direction="row" style={{ width: "100%" }}>
+    <Grid container spacing={1} justifyContent="center" direction="row" style={{ width: "100%" }}>
       {dominationGems.map((key) => (
         <Grid item xs={4} sm={4} md={4} lg={4} xl={4}>
           <Grid container spacing={0}>

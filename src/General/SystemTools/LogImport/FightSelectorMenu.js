@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import moment from "moment";
-import { Divider, MenuItem } from "@material-ui/core";
+import { Divider, MenuItem } from "@mui/material";
 import bossIcons from "../../Modules/CooldownPlanner/Functions/IconFunctions/BossIcons";
 import { fightDuration, logDifficulty } from "../../Modules/CooldownPlanner/Functions/Functions";
 import { bossList } from "../../Modules/CooldownPlanner/Data/CooldownPlannerBossList";

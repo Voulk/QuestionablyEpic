@@ -10,7 +10,7 @@ import HelpText from "../SetupAndMenus/HelpText";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       margin: "auto",
       width: "85%",
       justifyContent: "center",

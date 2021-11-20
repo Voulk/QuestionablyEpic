@@ -19,7 +19,7 @@ import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
 import TopGear from "General/Modules/TopGear/TopGear";
 import ErrorBoundary from "General/SystemTools/ErrorLogging/ErrorBoundary";
-import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider, StyledEngineProvider, createTheme, adaptV4Theme } from "@mui/material/styles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ls from "local-storage";
@@ -32,31 +32,7 @@ import { dbCheckPatron, dbGetArticleList } from "General/Modules/SetupAndMenus/C
 import ReactGA from "react-ga";
 // import HolyDiver from "General/Modules/CooldownPlanner/ModuleComponents/CooldownPlannerModule";
 
-const theme = createMuiTheme({
-  palette: {
-    type: "dark",
-    primary: { main: "#F2BF59" },
-    secondary: { main: "#525252" },
-  },
-  overrides: {
-    MuiAccordionSummary: {
-      root: {
-        minHeight: 36,
-        height: 36,
-        "&$expanded": {
-          minHeight: 36,
-          height: 36,
-        },
-      },
-      content: {
-        margin: "0px 0px",
-        "&$expanded": {
-          margin: "0px 0px",
-        },
-      },
-    },
-  },
-});
+
 
 process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
 
@@ -320,112 +296,124 @@ class App extends Component {
     return (
       <ErrorBoundary>
         <Router basename={process.env.REACT_APP_HOMEPAGE}>
-          <ThemeProvider theme={theme}>
-            <div className="App" style={{ marginTop: 96 }}>
-              <QEHeader
-                logFunc={this.userLogout}
-                patronStatus={this.state.patronStatus}
-                playerTag={this.state.playerBattleTag}
-                setRegion={this.setRegion}
-                player={activePlayer}
-                simcSnack={this.handleSimCSnackOpen}
-                logImportSnack={this.handleLogSnackOpen}
-                allChars={allChars}
-              />
 
-              {/* --------------------------- Char Added Snackbar -------------------------- */}
-              <QESnackbar open={this.state.charSnackState} onClose={this.handleCharSnackClose} severity="success" message="Snackbars.CharAddSuccess" />
-              {/* -------------------------- Char Updated Snackbar ------------------------- */}
-              <QESnackbar open={this.state.charUpdateState} onClose={this.handleCharUpdateSnackClose} severity="success" message="Snackbars.CharUpdateSuccess" />
-              {/* ------------------------- Login Success Snackbar ------------------------- */}
-              <QESnackbar open={this.state.loginSnackState} onClose={this.handleLoginClose} severity="success" message="Snackbars.LoginSuccess" />
-              {/* -------------------------- SimC Success Snackbar ------------------------- */}
-              <QESnackbar open={this.state.simcSnackState} onClose={this.handleSimCSnackClose} severity="success" anchorOrigin={{ vertical, horizontal }} message="Snackbars.SimCImportSuccess" />
-              {/* ----------------------- Log Import Success Snackbar ---------------------- */}
-              <QESnackbar open={this.state.logImportSnackState} onClose={this.handleLogSnackClose} severity="success" message="Snackbars.LogImportSuccess" />
-              {/* ---------------------- Email Import Success Snackbar --------------------- */}
-              <QESnackbar open={this.state.emailSnackState} onClose={this.handleEmailSnackClose} severity="success" message="Snackbars.EmailUpdateSuccess" />
-              {/* ------------------- Email Error Import Success Snackbar ------------------ */}
-              <QESnackbar open={this.state.emailSnackErrorState} onClose={this.handleEmailErrorSnackClose} severity="error" message="Snackbars.EmailError" />
+              <div className="App" style={{ marginTop: 96 }}>
+                <QEHeader
+                  logFunc={this.userLogout}
+                  patronStatus={this.state.patronStatus}
+                  playerTag={this.state.playerBattleTag}
+                  setRegion={this.setRegion}
+                  player={activePlayer}
+                  simcSnack={this.handleSimCSnackOpen}
+                  logImportSnack={this.handleLogSnackOpen}
+                  allChars={allChars}
+                />
 
-              {/* -------------------------------------------------------------------------- */
-              /*                               Module Routing                               */
-              /* -------------------------------------------------------------------------- */}
-              <Switch>
-                <Route
-                  exact
-                  path="/"
-                  render={() => (
-                    <QEMainMenu
-                      allChars={allChars}
-                      charUpdate={this.updatePlayerChars}
-                      singleUpdate={this.updatePlayerChar}
-                      player={activePlayer}
-                      charAddedSnack={this.handleCharSnackOpen}
-                      charUpdatedSnack={this.handleCharUpdateSnackOpen}
-                      patronStatus={this.state.patronStatus}
-                      delChar={this.deletePlayerChar}
-                      articleList={this.state.articleList}
-                    />
-                  )}
-                />
-                <Route path="/fightAnalysis" render={() => <FightAnalysis />} />
-                <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule />} />
-                <Route path="/holydiver" render={() => <TestingPage />} />
-                <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} />} />
-                <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} />} />
-                <Route
-                  path="/topgear"
-                  render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} />}
-                />
-                <Route
-                  path="/legendaries"
-                  render={() => (
-                    <LegendaryCompare player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
-                  )}
-                />
-                <Route
-                  path="/trinkets"
-                  render={() => (
-                    <TrinketAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
-                  )}
-                />
-                <Route
-                  path="/dominationgems"
-                  render={() => (
-                    <DominationAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
-                  )}
-                />
-                <Route
-                  path="/soulbinds"
-                  render={() => (
-                    <CovenantExploration player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
-                  )}
-                />
-                <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
-                <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
-                <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />
-                <Route path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} simcSnack={this.handleSimCSnackOpen} allChars={allChars} singleUpdate={this.updatePlayerChar} />} />
+                {/* --------------------------- Char Added Snackbar -------------------------- */}
+                <QESnackbar open={this.state.charSnackState} onClose={this.handleCharSnackClose} severity="success" message="Snackbars.CharAddSuccess" />
+                {/* -------------------------- Char Updated Snackbar ------------------------- */}
+                <QESnackbar open={this.state.charUpdateState} onClose={this.handleCharUpdateSnackClose} severity="success" message="Snackbars.CharUpdateSuccess" />
+                {/* ------------------------- Login Success Snackbar ------------------------- */}
+                <QESnackbar open={this.state.loginSnackState} onClose={this.handleLoginClose} severity="success" message="Snackbars.LoginSuccess" />
+                {/* -------------------------- SimC Success Snackbar ------------------------- */}
+                <QESnackbar open={this.state.simcSnackState} onClose={this.handleSimCSnackClose} severity="success" anchorOrigin={{ vertical, horizontal }} message="Snackbars.SimCImportSuccess" />
+                {/* ----------------------- Log Import Success Snackbar ---------------------- */}
+                <QESnackbar open={this.state.logImportSnackState} onClose={this.handleLogSnackClose} severity="success" message="Snackbars.LogImportSuccess" />
+                {/* ---------------------- Email Import Success Snackbar --------------------- */}
+                <QESnackbar open={this.state.emailSnackState} onClose={this.handleEmailSnackClose} severity="success" message="Snackbars.EmailUpdateSuccess" />
+                {/* ------------------- Email Error Import Success Snackbar ------------------ */}
+                <QESnackbar open={this.state.emailSnackErrorState} onClose={this.handleEmailErrorSnackClose} severity="error" message="Snackbars.EmailError" />
 
-                {/* ---------------------------------------------------------------------------------------------- */
-                /*                                         Classic Routes                                          */
-                /* ----------------------------------------------------------------------------------------------  */}
-                <Route path="/TierSets/" render={() => <TierSets player={activePlayer} />} />
-                <Route
-                  path="/profile/"
-                  render={() => (
-                    <QEProfile
-                      setEmail={this.setEmail}
-                      playerTag={this.state.playerBattleTag}
-                      patronStatus={this.state.patronStatus}
-                      emailSnack={this.handleEmailSnackOpen}
-                      emailSnackError={this.handleEmailErrorSnackOpen}
-                    />
-                  )}
-                />
-              </Switch>
-            </div>
-          </ThemeProvider>
+                {/* -------------------------------------------------------------------------- */
+                /*                               Module Routing                               */
+                /* -------------------------------------------------------------------------- */}
+                <Switch>
+                  <Route
+                    exact
+                    path="/"
+                    render={() => (
+                      <QEMainMenu
+                        allChars={allChars}
+                        charUpdate={this.updatePlayerChars}
+                        singleUpdate={this.updatePlayerChar}
+                        player={activePlayer}
+                        charAddedSnack={this.handleCharSnackOpen}
+                        charUpdatedSnack={this.handleCharUpdateSnackOpen}
+                        patronStatus={this.state.patronStatus}
+                        delChar={this.deletePlayerChar}
+                        articleList={this.state.articleList}
+                      />
+                    )}
+                  />
+                  <Route path="/fightAnalysis" render={() => <FightAnalysis />} />
+                  <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule />} />
+                  <Route path="/holydiver" render={() => <TestingPage />} />
+                  <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} />} />
+                  <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} />} />
+                  <Route
+                    path="/topgear"
+                    render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} />}
+                  />
+                  <Route
+                    path="/legendaries"
+                    render={() => (
+                      <LegendaryCompare player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
+                    )}
+                  />
+                  <Route
+                    path="/trinkets"
+                    render={() => (
+                      <TrinketAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
+                    )}
+                  />
+                  <Route
+                    path="/dominationgems"
+                    render={() => (
+                      <DominationAnalysis
+                        player={activePlayer}
+                        updatePlayerChar={this.updatePlayerChar}
+                        singleUpdate={this.updatePlayerChar}
+                        allChars={allChars}
+                        simcSnack={this.handleSimCSnackOpen}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/soulbinds"
+                    render={() => (
+                      <CovenantExploration
+                        player={activePlayer}
+                        updatePlayerChar={this.updatePlayerChar}
+                        singleUpdate={this.updatePlayerChar}
+                        allChars={allChars}
+                        simcSnack={this.handleSimCSnackOpen}
+                      />
+                    )}
+                  />
+                  <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
+                  <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
+                  <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />
+                  <Route path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} simcSnack={this.handleSimCSnackOpen} allChars={allChars} singleUpdate={this.updatePlayerChar} />} />
+
+                  {/* ---------------------------------------------------------------------------------------------- */
+                  /*                                         Classic Routes                                          */
+                  /* ----------------------------------------------------------------------------------------------  */}
+                  <Route path="/TierSets/" render={() => <TierSets player={activePlayer} />} />
+                  <Route
+                    path="/profile/"
+                    render={() => (
+                      <QEProfile
+                        setEmail={this.setEmail}
+                        playerTag={this.state.playerBattleTag}
+                        patronStatus={this.state.patronStatus}
+                        emailSnack={this.handleEmailSnackOpen}
+                        emailSnackError={this.handleEmailErrorSnackOpen}
+                      />
+                    )}
+                  />
+                </Switch>
+              </div>
+
         </Router>
       </ErrorBoundary>
     );

@@ -1,23 +1,10 @@
 import React, { useEffect, forwardRef, useState } from "react";
-import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "material-table";
+import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "@material-table/core";
 import ClassCooldownMenuItems from "../Menus/ClassCooldownMenuItems";
 import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search } from "@mui/icons-material";
-import {
-  Button,
-  TextField,
-  InputLabel,
-  FormControl,
-  Grow,
-  MenuItem,
-  Divider,
-  Paper,
-  Select,
-  Grid,
-  Typography,
-  adaptV4Theme,
-} from "@mui/material";
+import { Button, TextField, InputLabel, FormControl, Grow, MenuItem, Divider, Paper, Select, Grid, Typography, adaptV4Theme } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import moment from "moment";
 import { healerCooldownsDetailed, raidList } from "../Data/Data";
 import { bossList } from "../Data/CooldownPlannerBossList";
@@ -60,62 +47,68 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const deleteTheme = createTheme(adaptV4Theme({
-  palette: {
-    primary: red,
-  },
-}));
+const deleteTheme = createTheme(
+  adaptV4Theme({
+    palette: {
+      primary: red,
+    },
+  }),
+);
 
-const themeCooldownTable = createTheme(adaptV4Theme({
-  overrides: {
-    MuiTableCell: {
-      root: {
-        padding: "2px 2px 2px 2px",
-        borderBottom: "1px solid #595959",
+const themeCooldownTable = createTheme(
+  adaptV4Theme({
+    overrides: {
+      MuiTableCell: {
+        root: {
+          padding: "2px 2px 2px 2px",
+          borderBottom: "1px solid #595959",
+        },
       },
-    },
-    MuiIconButton: {
-      root: {
-        padding: "4px",
+      MuiIconButton: {
+        root: {
+          padding: "4px",
+        },
       },
-    },
-    MuiToolbar: {
-      root: { color: "#345" },
-      regular: {
-        minHeight: 0,
-        "@media (min-width: 600px)": {
-          minHeight: "0px",
+      MuiToolbar: {
+        root: { color: "#345" },
+        regular: {
+          minHeight: 0,
+          "@media (min-width: 600px)": {
+            minHeight: "0px",
+          },
+        },
+      },
+      MuiInputBase: {
+        root: {
+          fontSize: 12,
         },
       },
     },
-    MuiInputBase: {
-      root: {
-        fontSize: 12,
-      },
+    palette: {
+      mode: "dark",
+      primary: { main: "#d3bc47" },
+      secondary: { main: "#e0e0e0" },
     },
-  },
-  palette: {
-    mode: "dark",
-    primary: { main: "#d3bc47" },
-    secondary: { main: "#e0e0e0" },
-  },
-}));
+  }),
+);
 
-const selectMenu = createTheme(adaptV4Theme({
-  overrides: {
-    MuiSelect: { selectMenu: { height: 20 } },
-    MuiInputBase: {
-      root: {
-        fontSize: 12,
+const selectMenu = createTheme(
+  adaptV4Theme({
+    overrides: {
+      MuiSelect: { selectMenu: { height: 20 } },
+      MuiInputBase: {
+        root: {
+          fontSize: 12,
+        },
       },
     },
-  },
-  palette: {
-    mode: "dark",
-    primary: { main: "#d3bc47" },
-    secondary: { main: "#e0e0e0" },
-  },
-}));
+    palette: {
+      mode: "dark",
+      primary: { main: "#d3bc47" },
+      secondary: { main: "#e0e0e0" },
+    },
+  }),
+);
 
 const menuStyle = {
   style: { marginTop: 5 },
@@ -138,26 +131,28 @@ const menuStyle = {
   getContentAnchorEl: null,
 };
 
-const SearchFieldOverride = createTheme(adaptV4Theme({
-  overrides: {
-    MuiOutlinedInput: {
-      input: { padding: 10 },
-    },
-    MuiToolbar: {
-      regular: {
-        minHeight: 0,
-        "@media (min-width: 600px)": {
-          minHeight: "0px",
+const SearchFieldOverride = createTheme(
+  adaptV4Theme({
+    overrides: {
+      MuiOutlinedInput: {
+        input: { padding: 10 },
+      },
+      MuiToolbar: {
+        regular: {
+          minHeight: 0,
+          "@media (min-width: 600px)": {
+            minHeight: "0px",
+          },
         },
       },
     },
-  },
-  palette: {
-    mode: "dark",
-    primary: { main: "#d3bc47" },
-    secondary: { main: "#e0e0e0" },
-  },
-}));
+    palette: {
+      mode: "dark",
+      primary: { main: "#d3bc47" },
+      secondary: { main: "#e0e0e0" },
+    },
+  }),
+);
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -1708,7 +1703,13 @@ export default function CooldownPlanner(props) {
           }}
         />
 
-        <AddPlanDialog openAddPlanDialog={openAddPlanDialog} handleAddPlanDialogClose={handleAddPlanDialogClose} cooldownObject={cooldownObject} currentBoss={currentBoss} loadPlanData={loadPlanData} />
+        <AddPlanDialog
+          openAddPlanDialog={openAddPlanDialog}
+          handleAddPlanDialogClose={handleAddPlanDialogClose}
+          cooldownObject={cooldownObject}
+          currentBoss={currentBoss}
+          loadPlanData={loadPlanData}
+        />
 
         <DeletePlanDialog
           openDeletePlanDialog={openDeletePlanDialog}

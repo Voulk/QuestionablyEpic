@@ -6,7 +6,7 @@ import ls from "local-storage";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       margin: "auto",
       width: "80%",
       justifyContent: "center",

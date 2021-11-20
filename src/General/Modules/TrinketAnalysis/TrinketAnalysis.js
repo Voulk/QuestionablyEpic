@@ -21,7 +21,7 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       margin: "auto",
       width: "85%",
       justifyContent: "space-between",

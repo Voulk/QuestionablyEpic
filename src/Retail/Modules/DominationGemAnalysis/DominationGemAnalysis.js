@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import { Paper, Typography, Grid } from "@material-ui/core";
+import { Paper, Typography, Grid } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreItem, getTranslatedItemName, getItemDB } from "General/Engine/ItemUtilities";
 import DomChart from "./DominationGemChart";
 import HelpText from "../../../General/Modules/SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from '@mui/styles/makeStyles';
 import ReactGA from "react-ga";
 import { dominationGemDB } from "Databases/DominationGemDB";
 import { getDominationGemEffect } from "Retail/Engine/EffectFormulas/Generic/GenericEffectFormulas";
@@ -19,7 +19,7 @@ import userSettings from "General/Modules/Settings/SettingsObject";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('sm')]: {
       margin: "auto",
       width: "85%",
       justifyContent: "space-between",
@@ -166,7 +166,7 @@ export default function DominationAnalysis(props) {
         </Grid> */}
         <Grid item xs={12}>
           <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-            <Grid container spacing={1} justify="center">
+            <Grid container spacing={1} justifyContent="center">
               <Grid item xs={12}>
                 <MetricToggle metric={metric} setMetric={setMetric} />
               </Grid>

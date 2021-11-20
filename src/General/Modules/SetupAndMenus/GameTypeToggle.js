@@ -10,7 +10,7 @@ import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       minWidth: 175,
       padding: 4,
       opacity: 0.3,
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     /* ----------------------------------- Unselected button style ---------------------------------- */
     /* ------------------------------------ Selected button style ----------------------------------- */
     "&.MuiToggleButton-root.Mui-selected": {
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('md')]: {
         minWidth: 175,
         padding: 4,
         opacity: 1,

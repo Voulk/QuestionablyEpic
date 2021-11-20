@@ -18,7 +18,7 @@ import CharacterPanel from "../CharacterPanel/CharacterPanel";
 
 const useStyles = makeStyles((theme) => ({
   header: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       margin: "auto",
       width: "90%",
       justifyContent: "center",

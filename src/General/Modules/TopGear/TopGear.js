@@ -37,11 +37,11 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   header: {
-    [theme.breakpoints.down('md')]: {},
+    [theme.breakpoints.down('lg')]: {},
     [theme.breakpoints.up("md")]: {},
   },
   root: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       margin: "auto",
       width: "90%",
       justifyContent: "center",

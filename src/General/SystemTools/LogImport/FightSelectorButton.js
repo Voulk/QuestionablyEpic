@@ -1,6 +1,6 @@
 import React from "react";
 import LogImport from "./FightSelectorMenu";
-import { Button, Menu, Fade } from "@material-ui/core";
+import { Button, Menu, Fade } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 export default function FightSelectorButton(props) {

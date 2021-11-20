@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   header: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",

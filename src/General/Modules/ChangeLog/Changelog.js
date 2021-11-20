@@ -1,8 +1,8 @@
 import React from "react";
-import { Accordion, AccordionSummary, AccordionDetails, Button, Dialog, DialogActions, DialogContent, DialogTitle, Divider, Grid, Typography, Link } from "@material-ui/core";
+import { Accordion, AccordionSummary, AccordionDetails, Button, Dialog, DialogActions, DialogContent, DialogTitle, Divider, Grid, Typography, Link } from "@mui/material";
 import { changeLog } from "./Log";
-import { makeStyles } from "@material-ui/core/styles";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import makeStyles from '@mui/styles/makeStyles';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: theme.typography.fontWeightRegular,
   },
   buttonStyle: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('md')]: {
       fontSize: 12,
       maxWidth: 300,
     },
@@ -43,7 +43,7 @@ export default function Changelog() {
         {t("Changelog.Header")}
       </Link>
       <Dialog open={open} onClose={handleClose} scroll={scroll} aria-labelledby="scroll-dialog-title" aria-describedby="scroll-dialog-description" maxWidth="md" fullWidth>
-        <DialogTitle disableTypography align="center" id="scroll-dialog-title">
+        <DialogTitle align="center" id="scroll-dialog-title">
           <Typography color="primary" variant="h4">
             {t("Changelog.Header")}
           </Typography>

@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
   },
   subRoot: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       margin: "auto",
       width: "85%",
     },
