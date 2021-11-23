@@ -15,24 +15,25 @@ export const theme = createTheme(
           // Name of the slot
           root: {
             // Some CSS
-            fontSize: "1rem",
             backgroundColor: "#424242",
+            backgroundImage: null,
           },
         },
       },
+      MuiAppBar: { styleOverrides: { root: { backgroundImage: null } } },
       MuiAccordionSummary: {
         styleOverrides: {
           root: {
             minHeight: 36,
             height: 36,
-            "&$expanded": {
+            "&.Mui-expanded": {
               minHeight: 36,
               height: 36,
             },
           },
           content: {
             margin: "0px 0px",
-            "&$expanded": {
+            "&.Mui-expanded": {
               margin: "0px 0px",
             },
           },

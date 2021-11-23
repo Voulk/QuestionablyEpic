@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "@mui/material/styles";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { Grid, Paper, Typography, Divider, Tooltip, useMediaQuery } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
@@ -14,11 +14,6 @@ import ErrorTooltip from "./ErrorTooltip";
 import { classTranslator } from "General/Functions/CommonFunctions";
 
 const useStyles = makeStyles(() => ({
-  slider: {
-    width: "90%",
-    margin: "0px 20px 35px 20px",
-    textAlign: "center",
-  },
   simcerror: {
     borderColor: "red",
     borderWidth: "2px",
@@ -72,8 +67,8 @@ const specImages = {
 export default function CharacterPanel(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const xsBreakpoint = useMediaQuery(theme.breakpoints.down('sm'));
-  const smBreakpoint = useMediaQuery(theme.breakpoints.down('md'));
+  const xsBreakpoint = useMediaQuery(theme.breakpoints.down("sm"));
+  const smBreakpoint = useMediaQuery(theme.breakpoints.down("md"));
   const { t, i18n } = useTranslation();
   const playerStats = props.player.getActiveStats();
   const [backgroundImage, setBackgroundImage] = useState("");
@@ -145,7 +140,7 @@ export default function CharacterPanel(props) {
     // disabled errortooltip until properly implemented
     //<ErrorTooltip title={errorMessage} open={simcStatus === "Invalid"} placement="bottom-end">
     <Paper elevation={0} className={check(simcStatus)}>
-      <div style={{ padding: "8px 8px 8px 8px" }}>
+      <div style={{ margin: "8px 8px 8px 8px", paddingBottom: 8 }}>
         <Grid container direction="row" justifyContent="space-between" spacing={1}>
           {/* ---------------------------------------------------------------------------------------------- */
           /*                                         Character Image                                         */
