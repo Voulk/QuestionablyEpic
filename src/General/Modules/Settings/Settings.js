@@ -20,7 +20,8 @@ const useStyles = makeStyles((theme) => ({
   details: {
     alignItems: "center",
     padding: 0,
-    marginTop: 5,
+    marginTop: 8,
+    marginBottom: 8,
   },
   column: {
     // flexBasis: "33.33%",

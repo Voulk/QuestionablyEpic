@@ -1,4 +1,4 @@
-import { createTheme, adaptV4Theme } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme(
   //   adaptV4Theme
@@ -7,6 +7,9 @@ export const theme = createTheme(
       mode: "dark",
       primary: { main: "#F2BF59" },
       secondary: { main: "#525252" },
+      background: { paper: "#424242", default: "#121212" },
+      white: { main: "#fff", contrastText: "#000" },
+      black: { main: "#000", contrastText: "#fff" },
     },
     components: {
       // Name of the component
@@ -15,12 +18,12 @@ export const theme = createTheme(
           // Name of the slot
           root: {
             // Some CSS
-            backgroundColor: "#424242",
-            backgroundImage: null,
+            // backgroundColor: "#424242",
+            backgroundImage: "unset", // Disables MUI5's new elevation gradients
           },
         },
       },
-      MuiAppBar: { styleOverrides: { root: { backgroundImage: null } } },
+      // MuiAppBar: { styleOverrides: { root: { backgroundImage: "unset" } } },
       MuiAccordionSummary: {
         styleOverrides: {
           root: {

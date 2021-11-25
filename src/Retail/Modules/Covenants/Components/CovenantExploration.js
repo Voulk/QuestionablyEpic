@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { Tabs, Tab, Box, AppBar, Grid, Paper, Typography, TextField, Tooltip } from "@mui/material";
 import { soulbindDB, soulbindConnectors } from "Databases/SoulbindDB";
 import SoulbindNode from "./SoulbindNode";
@@ -16,6 +16,7 @@ import { useSelector } from "react-redux";
 import { CONSTRAINTS } from "../../../../General/Engine/CONSTRAINTS";
 import userSettings from "General/Modules/Settings/SettingsObject";
 import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
+import { styled } from "@mui/material/styles";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
   return (
@@ -24,6 +25,13 @@ function TabPanel(props) {
     </div>
   );
 }
+
+const StyledTab = styled(Tab)(({ theme }) => ({
+  "& .MuiTab-root": {
+    // margin: theme.spacing(0.5),
+    padding: "8px",
+  },
+}));
 
 TabPanel.propTypes = {
   children: PropTypes.node,
@@ -53,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "auto",
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
-    maxWidth: 1014,
+    maxWidth: 1022,
     borderRadius: "4px 4px 4px 4px",
     marginBottom: 60,
   },
@@ -77,19 +85,23 @@ const useStyles = makeStyles((theme) => ({
   kyrianHeaderStyle: {
     backgroundImage: `url(${require("Images/BastionHeader.png").default})`,
     borderRadius: "4px 0px 0px 0px",
+    padding: 8,
   },
   nightFaeHeaderStyle: {
     backgroundImage: `url(${require("Images/NightFaeHeader.png").default})`,
+    padding: 8,
   },
   venthyrHeaderStyle: {
     backgroundImage: `url(${require("Images/VenthyrHeader.png").default})`,
+    padding: 8,
   },
   necrolordHeaderStyle: {
     backgroundImage: `url(${require("Images/NecroHeader.png").default})`,
     borderRadius: "0px 4px 0px 0px",
+    padding: 8,
   },
   header: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down("sm")]: {
       margin: "auto",
       width: "85%",
       justifyContent: "center",
@@ -564,14 +576,15 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
       /* ----------------------------------------------------------------------------------------------  */}
       <Grid container>
         <div id="conduits" className={classes.conduits}>
-          <Grid container direction="column" justifyContent="space-between" alignItems="center" style={{ height: "100%" }}>
+          <Grid container direction="column" justifyContent="space-between" alignItems="center" style={{ height: "100%", width: "100%", paddingRight: 8 }}>
             <Grid
               container
               id="conduitChoices"
               spacing={1}
               style={{
                 margin: 1,
-                maxWidth: 245,
+
+                // maxWidth: 245,
               }}
             >
               <Grid item xs={12}>
@@ -664,7 +677,6 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
               spacing={1}
               style={{
                 margin: 1,
-                maxWidth: 245,
               }}
             >
               <SoulbindStatPanel hps={estimatedHPS} covAbility={covAbility} stats={statSums} />

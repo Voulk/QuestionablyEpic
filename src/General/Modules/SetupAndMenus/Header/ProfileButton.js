@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, ClickAwayListener, Dialog, Grow, MenuItem, MenuList, Paper, Popper, Tooltip } from "@mui/material";
 import MuiDialogContent from "@mui/material/DialogContent";
-import makeStyles from '@mui/styles/makeStyles';
-import withStyles from '@mui/styles/withStyles';
+import makeStyles from "@mui/styles/makeStyles";
+import withStyles from "@mui/styles/withStyles";
 import { useTranslation } from "react-i18next";
 import BnetIcon from "Images/QeAssets/BattleNetIcon.png";
 import { QELogin } from "./QELogin";
@@ -82,7 +82,7 @@ export default function ProfileSelector(props) {
       return (
         <div>
           <Tooltip title={t("QeHeader.Tooltip.Login")} arrow>
-            <Button variant="outlined" onClick={handleDialogOpen}>
+            <Button variant="outlined" onClick={handleDialogOpen} color={"white"}>
               {t("Login")}
             </Button>
           </Tooltip>
@@ -95,7 +95,7 @@ export default function ProfileSelector(props) {
       );
     } else {
       return (
-        <Button variant="outlined" ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle} onMouseOver={handleHoverOpen}>
+        <Button variant="outlined" color={"white"} ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle} onMouseOver={handleHoverOpen}>
           <img src={BnetIcon} width="24px" height="24px" alt="" />
           {props.name}
         </Button>

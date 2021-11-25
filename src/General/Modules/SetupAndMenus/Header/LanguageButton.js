@@ -1,10 +1,11 @@
 import React from "react";
 import { Button, Grow, MenuItem, MenuList, Paper, Popper, Tooltip, Divider } from "@mui/material";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { useTranslation } from "react-i18next";
 import ls from "local-storage";
 import LanguageIcon from "@mui/icons-material/Language";
+import { styled } from "@mui/material/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,8 +57,8 @@ export default function LanguageSelector() {
     <div className={classes.root}>
       <div>
         <Tooltip title={t("QeHeader.Tooltip.Language")} arrow>
-          <Button variant="outlined" ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle}>
-            <LanguageIcon style={{ marginRight: 4 }} />
+          <Button color={"white"} variant="outlined" ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle}>
+            <LanguageIcon color={"white"} style={{ marginRight: 4 }} />
             {currentLanguage}
           </Button>
         </Tooltip>

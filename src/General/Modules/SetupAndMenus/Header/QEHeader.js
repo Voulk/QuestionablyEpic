@@ -8,35 +8,36 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import SimCraftInput from "../SimCraftDialog";
 import QELogImport from "./QELogImport";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import CharacterHeaderButton from "./CharacterHeader";
 import ContentSwitch from "./ContentToggle";
 import { useSelector } from "react-redux";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from '@mui/material/styles';
+import { useTheme } from "@mui/material/styles";
 
 // import ReactGA from "react-ga";n
 
 const useStyles = makeStyles((theme) => ({
   qeLogo: {
-    [theme.breakpoints.down('xl')]: {
+    [theme.breakpoints.down("xl")]: {
       marginTop: "5px",
       marginBottom: "-5px",
     },
   },
   headerButtons: {
-    [theme.breakpoints.down('lg')]: {
+    [theme.breakpoints.down("lg")]: {
       marginBottom: "5px",
     },
   },
-  headerMargins:{
-    [theme.breakpoints.down('lg')]: {
-      marginLeft: "4%", marginRight: "4%"
+  headerMargins: {
+    [theme.breakpoints.down("lg")]: {
+      marginLeft: "4%",
+      marginRight: "4%",
     },
     [theme.breakpoints.up("sm")]: {
-      marginLeft: "8%", marginRight: "8%"
+      marginLeft: "8%",
+      marginRight: "8%",
     },
-
   },
   popover: {
     pointerEvents: "none",
@@ -49,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
 export default function QEHeader(props) {
   const { t } = useTranslation();
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down('lg'));
+  const matches = useMediaQuery(theme.breakpoints.down("lg"));
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const gameType = useSelector((state) => state.gameType);
@@ -111,7 +112,15 @@ export default function QEHeader(props) {
               {/* ---------------------------------------------------------------------------------------------- */
               /*                                     Menu Buttons Container                                      */
               /* ----------------------------------------------------------------------------------------------  */}
-              <Grid container direction="row" justifyContent="center" alignItems="center" spacing={1} wrap={(matches && gameType === "Retail")  ? "" : "nowrap"} style={{ paddingLeft: 10, paddingRight: 10 }}>
+              <Grid
+                container
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+                spacing={1}
+                wrap={matches && gameType === "Retail" ? "" : "nowrap"}
+                style={{ paddingLeft: 10, paddingRight: 10 }}
+              >
                 {(props.allChars && props.allChars.allChar.length) > 0 ? (
                   <Grid item item xs={gameType === "Retail" ? 6 : "auto"} sm="auto">
                     <CharacterHeaderButton player={props.pl} allChars={props.allChars} />
@@ -134,7 +143,14 @@ export default function QEHeader(props) {
                   ""
                 )}
                 <Grid item>
-                  <SimCraftInput variant="outlined" buttonLabel={t("SimCInput.SimCHeaderButtonLabel" + gameType)} player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
+                  <SimCraftInput
+                    colour={"white"}
+                    variant="outlined"
+                    buttonLabel={t("SimCInput.SimCHeaderButtonLabel" + gameType)}
+                    player={props.player}
+                    simcSnack={props.simcSnack}
+                    allChars={props.allChars}
+                  />
                 </Grid>
                 <Grid item>
                   <ProfileSelector name={playerName} component={Link} to={linkTarget} logFunc={props.logFunc} setRegion={props.setRegion} />

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ReactGA from "react-ga";
 import { useTranslation } from "react-i18next";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { InputLabel, MenuItem, FormControl, Select, Button, Grid, Paper, Typography, Divider, Snackbar, TextField, Popover } from "@mui/material";
-import { Autocomplete } from '@mui/material';
-import MuiAlert from '@mui/material/Alert';
+import { Autocomplete } from "@mui/material";
+import MuiAlert from "@mui/material/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
 import BCItem from "../Player/BCItem";
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: "noWrap",
   },
   title: {
-    padding: "6px 8px",
+    // padding: "8px 8px",
     paddingLeft: 16,
     fontSize: theme.typography.pxToRem(15),
   },
@@ -80,14 +80,14 @@ export default function ItemBar(props) {
 
     db.filter(
       (key) =>
-        (!('classReq' in key) || (key.classReq.includes(spec))) && (
-        key.slot === "Back" ||
-        (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
-        key.slot === "Holdable" ||
-        key.slot === "Offhand" ||
-        key.slot === "Shield" ||
-        (key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
-        (key.itemClass === 2 && spec === "Holy Priest BC")), // Wands
+        (!("classReq" in key) || key.classReq.includes(spec)) &&
+        (key.slot === "Back" ||
+          (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
+          key.slot === "Holdable" ||
+          key.slot === "Offhand" ||
+          key.slot === "Shield" ||
+          (key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
+          (key.itemClass === 2 && spec === "Holy Priest BC")), // Wands
     ).map((key) => newItemList.push({ value: key.id, label: key.names[currentLanguage] }));
 
     newItemList.sort((a, b) => (a.label > b.label ? 1 : -1));
@@ -129,38 +129,34 @@ export default function ItemBar(props) {
     }
     let player = props.player;
     let item = "";
-    
+
     if (gameType === "Retail") {
-      const itemSlot = getItemProp(itemID, "slot", gameType)
+      const itemSlot = getItemProp(itemID, "slot", gameType);
 
       if (itemID < 20000) {
         // Item is a legendary and gets special handling.
-        const missiveStats = missives.toLowerCase().replace(/ /g,'').split("/");
+        const missiveStats = missives.toLowerCase().replace(/ /g, "").split("/");
         let itemAllocations = getItemAllocations(itemID, missiveStats);
 
         item = new Item(itemID, itemName, itemSlot, itemSocket, itemTertiary, 0, itemLevel, "");
         item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, "");
         item.uniqueEquip = "legendary";
         let bonusString = getLegendaryID(item.effect.name);
-        if (missives.includes("Haste")) bonusString += ":6649"
-        if (missives.includes("Mastery")) bonusString += ":6648"
-        if (missives.includes("Crit")) bonusString += ":6647"
-        if (missives.includes("Versatility")) bonusString += ":6650"
-        if (['Finger', 'Head', 'Neck', 'Wrist', 'Waist'].includes(itemSlot)) {
+        if (missives.includes("Haste")) bonusString += ":6649";
+        if (missives.includes("Mastery")) bonusString += ":6648";
+        if (missives.includes("Crit")) bonusString += ":6647";
+        if (missives.includes("Versatility")) bonusString += ":6650";
+        if (["Finger", "Head", "Neck", "Wrist", "Waist"].includes(itemSlot)) {
           item.socket = true;
           bonusString += ":6935";
         }
 
         item.bonusIDS = bonusString;
         item.id = getItemProp(itemID, "baseSlotID", "Retail");
-
-      }
-      else {
+      } else {
         item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "");
         item.setDominationGem(dominationSocket);
       }
-
-
     } else {
       // Burning Crusade
       item = new BCItem(itemID, itemName, getItemProp(itemID, "slot", gameType), "");
@@ -241,7 +237,16 @@ export default function ItemBar(props) {
       .map((key) => key.socketType)[0] === "Domination";
 
   return (
-    <Paper id="itemBarPaper" elevation={0} style={{ width: "80%", margin: "auto" }}>
+    <Paper
+      id="itemBarPaper"
+      elevation={0}
+      style={{
+        width: "80%",
+        marginLeft: "auto",
+        marginRight: "auto",
+        paddingTop: 8,
+      }}
+    >
       <Grid
         id="itemBarMainGridContainer"
         container

@@ -255,6 +255,7 @@ export default function QELogImport(props) {
           onClick={handleClickOpen}
           disabled={characterCount === 0}
           variant="outlined"
+          color={"white"}
           //disabled={true}
         >
           {t("QeHeader.InsertLogLabel")}
@@ -283,8 +284,8 @@ export default function QELogImport(props) {
                   <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
                   <Select value={selectValue} label={t("Name")} labelId="HealerSelector" onChange={(e) => playerSelectedHandler(e.target.value)} MenuProps={menuStyle}>
                     {healerData.map((key, i) => (
-                      <MenuItem key={i} value={key.name} >
-                        <div style={{color:classColoursJS(key.type)}}>{key.name}</div>
+                      <MenuItem key={i} value={key.name}>
+                        <div style={{ color: classColoursJS(key.type) }}>{key.name}</div>
                       </MenuItem>
                     ))}
                   </Select>

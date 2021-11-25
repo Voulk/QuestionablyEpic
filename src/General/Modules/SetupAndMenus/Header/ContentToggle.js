@@ -1,11 +1,40 @@
 import React from "react";
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { toggleContent } from "../../../../Redux/Actions";
 import { useTranslation } from "react-i18next";
 import { Tooltip, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
+
+const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
+  "& .MuiToggleButtonGroup-grouped": {
+    // margin: theme.spacing(0.5),
+    border: "1px solid rgb(255, 255, 255, 0.5)",
+    "&:hover": {
+      // background: "#f00",
+      border: "1px solid rgb(255, 255, 255, 1)",
+    },
+    "&.Mui-selected": {
+      // background: "#F2BF59",
+      border: "1px solid rgb(255, 255, 255, 0.5)",
+      "&:hover": {
+        // background: "#f00",
+        border: "1px solid rgb(255, 255, 255, 1)",
+      },
+    },
+    // "&.Mui-disabled": {
+    //   // border: "1px solid #fff",
+    // },
+    // "&:not(:first-of-type)": {
+    //   // borderRadius: theme.shape.borderRadius,
+    // },
+    // "&:first-of-type": {
+    //   // borderRadius: theme.shape.borderRadius,
+    // },
+  },
+}));
 
 /* ---------------------------------------------------------------------------------------------- */
 /*                 Toggle Button to swap content used by the app (Dungeon or Raid)                */
@@ -26,11 +55,11 @@ export default function ContentSwitch() {
   };
 
   return (
-    <ToggleButtonGroup value={contentType} exclusive onChange={handleContent} aria-label="contentToggle" size="small">
+    <StyledToggleButtonGroup color="white" value={contentType} exclusive onChange={handleContent} aria-label="contentToggle" size="small">
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                         Dungeon Button                                         */
       /* ----------------------------------------------------------------------------------------------  */}
-      <ToggleButton style={{ padding: 5 }} value="Dungeon" aria-label="dungeonLabel">
+      <ToggleButton color="white" style={{ padding: 5 }} value="Dungeon" aria-label="dungeonLabel">
         <Tooltip title={t("QeHeader.Tooltip.ChangeToDungeon")} arrow>
           <div style={{ display: "inline-flex" }}>
             {/* ---------------------------------------- Keystone Icon ---------------------------------------  */}
@@ -47,7 +76,7 @@ export default function ContentSwitch() {
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                           Raid Button                                          */
       /* ----------------------------------------------------------------------------------------------  */}
-      <ToggleButton style={{ padding: "5px 7px" }} value="Raid" aria-label="raidLabel">
+      <ToggleButton color="white" style={{ padding: "5px 7px" }} value="Raid" aria-label="raidLabel">
         <Tooltip title={t("QeHeader.Tooltip.ChangeToRaid")} arrow>
           <div style={{ display: "inline-flex" }}>
             {/* -------------------------------------- Current Raid Icon -------------------------------------  */}
@@ -60,6 +89,6 @@ export default function ContentSwitch() {
           </div>
         </Tooltip>
       </ToggleButton>
-    </ToggleButtonGroup>
+    </StyledToggleButtonGroup>
   );
 }
