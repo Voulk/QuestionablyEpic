@@ -14,11 +14,11 @@ import {
 import { red } from "@mui/material/colors";
 import { createTheme, ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
 
-AddPlanDialog.propTypes = {
-  handleAddPlanDialogClose: PropTypes.func.isRequired,
-  openAddPlanDialog: PropTypes.bool.isRequired,
-  enteredPlanName: PropTypes.string.isRequired,
-};
+// AddPlanDialog.propTypes = {
+//   handleAddPlanDialogClose: PropTypes.func.isRequired,
+//   openAddPlanDialog: PropTypes.bool.isRequired,
+//   enteredPlanName: PropTypes.string.isRequired,
+// };
 
 const deleteTheme = createTheme(adaptV4Theme({
   palette: {

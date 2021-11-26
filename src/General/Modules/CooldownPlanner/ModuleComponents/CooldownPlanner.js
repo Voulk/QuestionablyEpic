@@ -47,29 +47,47 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const deleteTheme = createTheme(
-  adaptV4Theme({
-    palette: {
-      primary: red,
-    },
-  }),
-);
+const deleteTheme = createTheme({
+  palette: {
+    primary: red,
+  },
+});
 
-const themeCooldownTable = createTheme(
-  adaptV4Theme({
-    overrides: {
-      MuiTableCell: {
+const themeCooldownTable = createTheme({
+  palette: {
+    mode: "dark",
+    primary: { main: "#d3bc47" },
+    secondary: { main: "#e0e0e0" },
+  },
+  components: {
+    // Name of the component
+    MuiPaper: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          backgroundColor: "#424242",
+          // backgroundImage: "unset", // Disables MUI5's new elevation gradients
+        },
+      },
+    },
+    MuiTableCell: {
+      styleOverrides: {
         root: {
           padding: "2px 2px 2px 2px",
           borderBottom: "1px solid #595959",
         },
       },
-      MuiIconButton: {
+    },
+    MuiIconButton: {
+      styleOverrides: {
         root: {
           padding: "4px",
         },
       },
-      MuiToolbar: {
+    },
+    MuiToolbar: {
+      styleOverrides: {
         root: { color: "#345" },
         regular: {
           minHeight: 0,
@@ -78,19 +96,16 @@ const themeCooldownTable = createTheme(
           },
         },
       },
-      MuiInputBase: {
+    },
+    MuiInputBase: {
+      styleOverrides: {
         root: {
           fontSize: 12,
         },
       },
     },
-    palette: {
-      mode: "dark",
-      primary: { main: "#d3bc47" },
-      secondary: { main: "#e0e0e0" },
-    },
-  }),
-);
+  },
+});
 
 const selectMenu = createTheme(
   adaptV4Theme({
@@ -294,7 +309,7 @@ export default function CooldownPlanner(props) {
             },
           }}
           value={props.value}
-          style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
+          style={{ whiteSpace: "nowrap", width: "100%" }}
           onChange={(e) => props.onChange(e.target.value)}
         />
       ),
@@ -1416,7 +1431,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       editComponent: (props) => (
         <TextField
-          style={{ width: "100%", marginTop: 6 }}
+          style={{ width: "100%" }}
           size="small"
           InputProps={{
             classes: {
@@ -1510,16 +1525,16 @@ export default function CooldownPlanner(props) {
             Body: (props) =>
               /* ------------------------ If no boss selected then hide the Table Body ------------------------ */
               currentBoss === "" ? null : (
-                <Grow in={currentBoss === "" ? false : true} style={{ transformOrigin: "0 0 0" }} {...((currentBoss === "" ? false : true) ? { timeout: "auto" } : {})}>
-                  <MTableBody {...props} />
-                </Grow>
+                // <Grow in={currentBoss === "" ? false : true} style={{ transformOrigin: "0 0 0" }} {...((currentBoss === "" ? false : true) ? { timeout: "auto" } : {})}>
+                <MTableBody {...props} />
+                // </Grow>
               ),
             Header: (props) =>
               /* ----------------------- If no Boss Selected then hide the Table Header ----------------------- */
               currentBoss === "" ? null : (
-                <Grow in={currentBoss === "" ? false : true} style={{ transformOrigin: "0 0 0" }} {...((currentBoss === "" ? false : true) ? { timeout: "auto" } : {})}>
-                  <MTableHeader {...props} />
-                </Grow>
+                // <Grow in={currentBoss === "" ? false : true} style={{ transformOrigin: "0 0 0" }} {...((currentBoss === "" ? false : true) ? { timeout: "auto" } : {})}>
+                <MTableHeader {...props} />
+                // </Grow>
               ),
             Toolbar: (props) => (
               /* ----------------------- Grid Container for the Toolbar for the Table ------------------------ */
