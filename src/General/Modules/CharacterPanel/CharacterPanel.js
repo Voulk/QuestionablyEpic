@@ -325,7 +325,7 @@ export default function CharacterPanel(props) {
                   /* ----------------------------- Characters Active (Equipped) Items -----------------------------  */
                   // Map currently equipped items with wowhead tooltips
                 }
-                <Grid item container xs justifyContent="center" spacing={1} alignItems="center">
+                <Grid item container xs justifyContent="flex-start" spacing={1} alignItems="center">
                   {props.player.activeItems.length > 0 ? (
                     props.player.activeItems
                       .filter((key) => key.isEquipped === true)

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { MenuItem, Grid, FormControl, Select, Typography, Divider, TextField, Tooltip, InputLabel } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { setBounds } from "General/Engine/CONSTRAINTS";
@@ -167,26 +167,6 @@ export default function DominationGemSelection(props) {
       {dominationGems.map((key) => (
         <Grid item xs={4} sm={4} md={4} lg={4} xl={4}>
           <Grid container spacing={0}>
-            {/* --------------------------- Title for each selector if ever needed ---------------------------  */}
-
-            {/* <Grid item xs={12}>
-              <div style={{ display: "inline-flex" }}>
-                <Typography color="primary" style={{ marginRight: 4 }} noWrap>
-                  {dominationGemDB.filter((filter) => filter.effect.name === key && filter.effect.rank === 0).map((key) => key.name[currentLanguage])}
-                </Typography>
-                <Tooltip
-                  title={
-                    <Typography align="center" variant="body2">
-                      Icon Tooltip
-                    </Typography>
-                  }
-                  placement="top-start"
-                >
-                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
-                </Tooltip>
-              </div>
-            </Grid> */}
-
             <Grid item xs={12}>
               {/* ------------------------------------ Domination Delection ------------------------------------  */}
               <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>

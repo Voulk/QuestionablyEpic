@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import "../SetupAndMenus/QEMainMenu.css";
 import ReactGA from "react-ga";
 import "./../QuickCompare/QuickCompare.css";
@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 // import { testTrinkets } from "../Engine/EffectFormulas/Generic/TrinketEffectFormulas";
 import { apiSendTopGearSet } from "../SetupAndMenus/ConnectionUtilities";
 import { Button, Grid, Typography, Divider, Snackbar } from "@mui/material";
-import MuiAlert from '@mui/material/Alert';
+import MuiAlert from "@mui/material/Alert";
 import { buildWepCombos } from "../../Engine/ItemUtilities";
 import MiniItemCard from "./MiniItemCard";
 //import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
@@ -37,11 +37,11 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   header: {
-    [theme.breakpoints.down('lg')]: {},
+    [theme.breakpoints.down("lg")]: {},
     [theme.breakpoints.up("md")]: {},
   },
   root: {
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down("md")]: {
       margin: "auto",
       width: "90%",
       justifyContent: "center",
@@ -170,6 +170,7 @@ export default function TopGear(props) {
 
   const unleashTopGear = () => {
     /* ----------------------- Call to the Top Gear Engine. Lock the app down. ---------------------- */
+    console.log("unleashed");
     if (checkTopGearValid) {
       setBtnActive(false);
       const currentLanguage = i18n.language;
@@ -178,14 +179,21 @@ export default function TopGear(props) {
       const baseHPS = props.player.getHPS(contentType);
       const strippedPlayer = JSON.parse(JSON.stringify(props.player));
       const strippedCastModel = JSON.parse(JSON.stringify(props.player.getActiveModel(contentType)));
-
+      console.log("valid");
       if (gameType === "Retail") {
+        console.log("1");
         const worker = require("workerize-loader!./Engine/TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
         let instance = new worker();
+        console.log("2");
         instance.runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
+          console.log("3");
           apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
+          console.log("4");
           props.setTopResult(result);
+          console.log("5");
           history.push("/report/");
+          console.log("6");
+          console.log("worked");
         });
       } else {
         const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
