@@ -42,6 +42,19 @@ export const theme = createTheme(
           },
         },
       },
+      MuiSlider: {
+        styleOverrides: {
+          markLabel: {
+            width: 70,
+            whiteSpace: "normal",
+            textAlign: "center",
+            color: "#fff",
+          },
+          markLabelActive: {
+            color: "#F2BF59",
+          },
+        },
+      },
     },
   },
 );

@@ -673,10 +673,11 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
             </Grid>
             {/* --------------------------------------- Stat Panel Grid -------------------------------------- */}
             <Grid
+              item
               container
-              spacing={1}
               style={{
-                margin: 1,
+                marginBottom: 8,
+                paddingLeft: "8px",
               }}
             >
               <SoulbindStatPanel hps={estimatedHPS} covAbility={covAbility} stats={statSums} />

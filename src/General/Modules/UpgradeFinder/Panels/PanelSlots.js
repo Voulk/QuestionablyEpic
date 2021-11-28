@@ -1,5 +1,5 @@
 import React from "react";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { Typography, Grid } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
@@ -9,13 +9,13 @@ import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import withStyles from '@mui/styles/withStyles';
+import withStyles from "@mui/styles/withStyles";
 
 function filterItemListBySlot(itemList, slot) {
   const excludedInstance = [748, 749, 750, 751, 321, 752];
-  
+
   let temp = itemList.filter(function (item) {
-    if ("source" in item && !(excludedInstance.includes(item.source.instanceId)) && item.source.encounterId !== 249) {
+    if ("source" in item && !excludedInstance.includes(item.source.instanceId) && item.source.encounterId !== 249) {
       if (slot === "AllMainhands") {
         return item.slot === "1H Weapon" || item.slot === "2H Weapon";
       } else if (slot === "Offhands") {
@@ -23,11 +23,10 @@ function filterItemListBySlot(itemList, slot) {
       } else {
         return item.slot === slot;
       }
-    }
-    else {
+    } else {
       return false;
-    };
-    });
+    }
+  });
 
   return temp;
 }
@@ -71,7 +70,7 @@ export default function SlotsContainer(props) {
   const { t } = useTranslation();
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
-  
+
   itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
 
   const slotList = [
@@ -117,11 +116,10 @@ export default function SlotsContainer(props) {
     return slotList.map((key, i) => (
       <Accordion elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
-          <img src={iconReturn(key.slot, props.player.spec)} height={30} width={30} style={{ marginRight: 6, borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
+          <img src={iconReturn(key.slot, props.player.spec)} height={30} width={30} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
           <Typography align="center" variant="h6" noWrap color="primary">
             {t("slotNames." + key.label)} -{" "}
-            {[...filterItemListBySlot(itemList, key.slot)].map((item, index) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length}{" "}
-            Upgrades
+            {[...filterItemListBySlot(itemList, key.slot)].map((item, index) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades
           </Typography>
         </AccordionSummary>
         <AccordionDetails style={{ backgroundColor: "#191c23" }}>
@@ -138,7 +136,7 @@ export default function SlotsContainer(props) {
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
-        <Grid item xs={12} style={{ padding: "4px 0px" }}>
+        <Grid item xs={12}>
           {contentGenerator(props.type)}
         </Grid>
       </Grid>

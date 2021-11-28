@@ -1,5 +1,5 @@
 import React from "react";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { Typography, Grid, Divider, Paper } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
@@ -42,20 +42,20 @@ export default function PvPGearContainer(props) {
 
   const contentGenerator = () => {
     return encounterDB[2].map((key, i) => (
-      <Grid item xs={12} key={"pvpContainer-" + i} style={{ padding: "4px 0px" }}>
-        <Paper style={{ backgroundColor: "#191c23", padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
-          <Grid container spacing={2}>
+      <Grid item xs={12} key={"pvpContainer-" + i}>
+        <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
+          <Grid container>
             <Grid item>
-              <div style={{ width: 181, paddingLeft: 10 }} className="container-UpgradeCards">
+              <div style={{ width: 181 }} className="container-UpgradeCards">
                 <img src={pvpIcons[key]} style={{ borderRadius: 4 }} />
                 <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
                   {t("PvPCurrency." + key)}
                 </Typography>
               </div>
             </Grid>
-            <Divider orientation="vertical" flexItem style={{ marginRight: 4 }} />
+            <Divider orientation="vertical" flexItem />
 
-            <Grid item xs={12} sm container spacing={1} style={{ marginRight: 6 }}>
+            <Grid item xs={12} sm container spacing={1} style={{ padding: 8 }}>
               {[...filterItemListBySource(itemList, key, 0, getPVPItemLevel(key, difficulty), difficulty)].map((item, index) => (
                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
               ))}
