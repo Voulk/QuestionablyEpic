@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from "react";
-import {
-  Typography,
-  Paper,
-  Divider,
-  Grid,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-} from "@mui/material";
-import makeStyles from '@mui/styles/makeStyles';
+import { Typography, Paper, Divider, Grid, Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+import makeStyles from "@mui/styles/makeStyles";
 import classicons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons.js";
 import talentIcons from "../../CooldownPlanner/Functions/IconFunctions/TalentIcons";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
@@ -109,8 +101,8 @@ export default function HealerInfoCards(props) {
               </Typography>
             </AccordionSummary>
             <Divider style={{ marginTop: 4 }} />
-            <AccordionDetails style={{ padding: 0 }}>
-              <Grid container justifyContent="center" style={{ margin: 4 }} spacing={1}>
+            <AccordionDetails style={{ padding: 8 }}>
+              <Grid container justifyContent="center" spacing={1}>
                 <Grid
                   item
                   xs={4}

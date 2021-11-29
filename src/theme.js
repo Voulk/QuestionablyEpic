@@ -18,12 +18,25 @@ export const theme = createTheme(
           // Name of the slot
           root: {
             // Some CSS
-            // backgroundColor: "#424242",
             backgroundImage: "unset", // Disables MUI5's new elevation gradients
           },
         },
       },
       // MuiAppBar: { styleOverrides: { root: { backgroundImage: "unset" } } },
+      MuiToolbar: {
+        styleOverrides: {
+          root: {
+            padding: "4px 4px 4px 4px",
+            color: "#c8b054",
+          },
+          regular: {
+            minHeight: 0,
+            "@media (min-width: 600px)": {
+              minHeight: "0px",
+            },
+          },
+        },
+      },
       MuiAccordionSummary: {
         styleOverrides: {
           root: {
