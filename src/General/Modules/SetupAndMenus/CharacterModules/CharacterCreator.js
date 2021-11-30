@@ -1,12 +1,12 @@
 import React from "react";
 //prettier-ignore
-import { Avatar, Button, Card, CardActionArea, CardContent, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, Typography, MenuItem, TextField, Select, Grid, Divider } from "@mui/material";
-import makeStyles from '@mui/styles/makeStyles';
+import { Avatar, Button, Card, CardActionArea, CardContent, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, Typography, MenuItem, TextField, Select, Grid } from "@mui/material";
+import makeStyles from "@mui/styles/makeStyles";
 import { useTranslation } from "react-i18next";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import { covenantIcons } from "../../CooldownPlanner/Functions/CovenantFunctions";
-import Autocomplete from '@mui/material/Autocomplete';
+import Autocomplete from "@mui/material/Autocomplete";
 import { bcClassRaceList, classRaceList } from "../../CooldownPlanner/Data/Data";
 import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
@@ -135,7 +135,7 @@ export default function AddNewChar(props) {
   return (
     <Grid item xs={12} sm={6} md={6} lg={6} xl={4}>
       <CardActionArea onClick={handleClickOpen}>
-        <Card className={classes.root} variant="outlined" raised={true}>
+        <Card className={classes.root} variant="outlined">
           <Avatar variant="square" alt="" className={classes.large} src={addBtn} />
           <div className={classes.details}>
             <CardContent className={classes.content} style={{ paddingBottom: 0 }}>
@@ -159,13 +159,11 @@ export default function AddNewChar(props) {
                 <FormControl className={classes.formRegion} variant="outlined" size="small" disabled={charName === "" ? true : false} label={t("Region")}>
                   <InputLabel id="NewClassSelector">{t("Region")}</InputLabel>
                   <Select label={t("Region")} value={regions} onChange={handleChangeRegion} MenuProps={menuStyle}>
-                    {Object.values(region)
-                      .map((key, i) => (
-                        <MenuItem key={"region" + i} value={key}>
-                          {key}
-                        </MenuItem>
-                      ))
-                      .map((item, i) => [item, <Divider key={i} />])}
+                    {Object.values(region).map((key, i) => (
+                      <MenuItem key={"region" + i} value={key}>
+                        {key}
+                      </MenuItem>
+                    ))}
                   </Select>
                 </FormControl>
               </Grid>
@@ -208,8 +206,7 @@ export default function AddNewChar(props) {
                           {t("Classes." + key)}
                         </div>
                       </MenuItem>
-                    ))
-                    .map((item, i) => [item, <Divider key={i} />])}
+                    ))}
                 </Select>
               </FormControl>
             </Grid>
@@ -219,16 +216,14 @@ export default function AddNewChar(props) {
                 <Select label={t("Select Race")} value={selectedRace} onChange={handleChangeRace} MenuProps={menuStyle}>
                   {healClass === ""
                     ? ""
-                    : availableClasses[healClass.toString()].races
-                        .map((key, i) => (
-                          <MenuItem key={"race" + i} value={key}>
-                            <div style={{ display: "inline-flex" }}>
-                              {raceIcons(key)}
-                              {t(key)}
-                            </div>
-                          </MenuItem>
-                        ))
-                        .map((item, i) => [item, <Divider key={i} />])}
+                    : availableClasses[healClass.toString()].races.map((key, i) => (
+                        <MenuItem key={"race" + i} value={key}>
+                          <div style={{ display: "inline-flex" }}>
+                            {raceIcons(key)}
+                            {t(key)}
+                          </div>
+                        </MenuItem>
+                      ))}
                 </Select>
               </FormControl>
             </Grid>
@@ -239,23 +234,21 @@ export default function AddNewChar(props) {
                   <Select label={t("Covenant")} value={selectedCovenant} onChange={handleChangeCovenant} MenuProps={menuStyle}>
                     {healClass === ""
                       ? ""
-                      : ["kyrian", "necrolord", "night_fae", "venthyr"]
-                          .map((key, i) => (
-                            <MenuItem key={"covenant" + i} value={key}>
-                              <div style={{ display: "inline-flex" }}>
-                                {covenantIcons(key, {
-                                  height: 26,
-                                  width: 26,
-                                  margin: "0px 5px 0px 5px",
-                                  verticalAlign: "middle",
-                                  borderRadius: "4px",
-                                  border: "1px solid rgba(255, 255, 255, 0.12)",
-                                })}
-                                {t(key)}
-                              </div>
-                            </MenuItem>
-                          ))
-                          .map((item, i) => [item, <Divider key={"covDiv" + i} />])}
+                      : ["kyrian", "necrolord", "night_fae", "venthyr"].map((key, i) => (
+                          <MenuItem key={"covenant" + i} value={key}>
+                            <div style={{ display: "inline-flex" }}>
+                              {covenantIcons(key, {
+                                height: 26,
+                                width: 26,
+                                margin: "0px 5px 0px 5px",
+                                verticalAlign: "middle",
+                                borderRadius: "4px",
+                                border: "1px solid rgba(255, 255, 255, 0.12)",
+                              })}
+                              {t(key)}
+                            </div>
+                          </MenuItem>
+                        ))}
                   </Select>
                 </FormControl>
               </Grid>

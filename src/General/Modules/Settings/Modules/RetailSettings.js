@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import makeStyles from '@mui/styles/makeStyles';
-import { MenuItem, Grid, FormControl, Select, Typography, Divider, TextField, Tooltip, InputLabel } from "@mui/material";
+import makeStyles from "@mui/styles/makeStyles";
+import { MenuItem, Grid, FormControl, Select, Typography, TextField, Tooltip, InputLabel } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { setBounds } from "../../../Engine/CONSTRAINTS";
 import { getGemIcon } from "../../../Engine/ItemUtilities";
@@ -53,8 +53,9 @@ export default function RetailSettings(props) {
   /*                                             States                                             */
   /* ---------------------------------------------------------------------------------------------- */
 
+  // TODO: Delete hymnal?
   /* ---------------------------------------- Hymnal State ---------------------------------------- */
-  const [hymnalValue, setHymnalValue] = useState(props.userSettings.hymnalAllies);
+  // const [hymnalValue, setHymnalValue] = useState(props.userSettings.hymnalAllies);
 
   /* -------------------------------------- Group Value State ------------------------------------- */
   const [groupValue, setgroupValue] = useState(props.userSettings.includeGroupBenefits);
@@ -70,10 +71,11 @@ export default function RetailSettings(props) {
 
   const specBuilds = props.player.getAllModels(props.contentType);
 
-  const updateHymnal = (value) => {
-    props.editSettings("hymnalAllies", setBounds(value, 0, 4));
-    setHymnalValue(setBounds(value, 0, 4));
-  };
+  // TODO: Delete hymnal?
+  // const updateHymnal = (value) => {
+  //   props.editSettings("hymnalAllies", setBounds(value, 0, 4));
+  //   setHymnalValue(setBounds(value, 0, 4));
+  // };
 
   const updateGroupValue = (value) => {
     props.editSettings("includeGroupBenefits", value);
@@ -99,6 +101,7 @@ export default function RetailSettings(props) {
 
   return (
     <Grid container spacing={2} direction="row">
+      {/* TODO: Delete hymnal? */}
       {/* ------------------------- Cabalist's Hymnal Item ------------------------- */}
 
       {/* {props.hymnalShow === true ? (
@@ -159,7 +162,6 @@ export default function RetailSettings(props) {
           >
             <TextField
               label={t("Settings.Retail.Setting1Title")}
-              labelId="alliedBuffInputLabel"
               value={groupValue}
               onChange={(e) => updateGroupValue(e.target.value)}
               SelectProps={{ MenuProps: menuStyle, className: classes.select }}
@@ -195,7 +197,6 @@ export default function RetailSettings(props) {
         >
           <TextField
             className={classes.select}
-            labelId="slots"
             SelectProps={{ MenuProps: menuStyle, className: classes.select }}
             InputProps={{ variant: "outlined" }}
             select
@@ -204,12 +205,11 @@ export default function RetailSettings(props) {
             fullWidth
             value={props.player.activeModelID[props.contentType]}
             onChange={(e) => updateSpecBuild(e.target.value)}
-            MenuProps={menuStyle}
             label={t("Settings.Retail.Setting5Title")}
             style={{ textAlign: "center", minWidth: 120 }}
           >
             {specBuilds.map((key, i) => (
-              <MenuItem id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
+              <MenuItem key={"playstyle" + i} id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
                 {key.modelName}
               </MenuItem>
             ))}
@@ -229,7 +229,6 @@ export default function RetailSettings(props) {
           >
             <TextField
               className={classes.select}
-              labelId="groupValue"
               value={autoSocketValue}
               SelectProps={{ MenuProps: menuStyle, className: classes.select }}
               InputProps={{ variant: "outlined" }}
@@ -238,7 +237,6 @@ export default function RetailSettings(props) {
               size="small"
               fullWidth
               onChange={(e) => updateAutoSocketValue(e.target.value)}
-              MenuProps={menuStyle}
               label={t("Settings.Retail.Setting3Title")}
               style={{ textAlign: "center", minWidth: 120 }}
             >
@@ -268,7 +266,6 @@ export default function RetailSettings(props) {
             label={t("Settings.Retail.Setting4Title")}
             className={classes.select}
             key={"DominationSocket"}
-            labelId="DominationSocket"
             SelectProps={{ MenuProps: menuStyle, className: classes.select }}
             InputProps={{ variant: "outlined" }}
             select
@@ -277,7 +274,6 @@ export default function RetailSettings(props) {
             fullWidth
             value={replaceDomGems}
             onChange={(e) => updateReplaceDomGems(e.target.value)}
-            MenuProps={menuStyle}
             label={t("Settings.Retail.Setting4Title")}
             style={{ textAlign: "center", minWidth: 200 }}
           >

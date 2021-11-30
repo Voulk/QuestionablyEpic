@@ -95,27 +95,23 @@ export default function ExportERTDialog(props) {
                       <MenuItem key={"ert1"} value={"Time - No Icons"}>
                         Time - No Icons
                       </MenuItem>
-                      <Divider />
                       <MenuItem key={"ert2"} value={"Time - Icons"}>
                         Time - Icons
                       </MenuItem>
-                      <Divider />
                       <MenuItem key={"ert3"} value={"Boss Ability - No Icons"}>
                         Boss Ability - No Icons
                       </MenuItem>
-                      <Divider />
                       <MenuItem key={"ert4"} value={"Boss Ability - Icons"}>
                         Boss Ability - Icons
                       </MenuItem>
-                      {/* <Divider />
+                      {/* 
                         <MenuItem key={"ert5"} value={"Notes - Icons"}>
                           Notes - Icons
                         </MenuItem>
-                        <Divider />
                         <MenuItem key={"ert6"} value={"Notes - No Icons"}>
                           Notes - No Icons
                         </MenuItem>
-                        <Divider /> */}
+                        */}
                     </Select>
                   </FormControl>
                 </Grid>

@@ -2,7 +2,7 @@ import React, { useEffect, forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "@material-table/core";
 import ClassCooldownMenuItems from "../Menus/ClassCooldownMenuItems";
 import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search } from "@mui/icons-material";
-import { Button, TextField, InputLabel, FormControl, Grow, MenuItem, Divider, Paper, Select, Grid, Typography, adaptV4Theme } from "@mui/material";
+import { Button, TextField, InputLabel, FormControl, Grow, MenuItem, Paper, Select, Grid, Typography, adaptV4Theme } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
 import makeStyles from "@mui/styles/makeStyles";
 import moment from "moment";
@@ -374,8 +374,7 @@ export default function CooldownPlanner(props) {
                       </a>
                       {t("CooldownPlanner.BossAbilities." + key.guid)}
                     </MenuItem>
-                  ))
-                  .map((key, i) => [key, <Divider key={i} />])}
+                  ))}
               </Select>
             </FormControl>
           </ThemeProvider>
@@ -486,17 +485,14 @@ export default function CooldownPlanner(props) {
                 MenuProps={menuStyle}
               >
                 {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
-                {ls
-                  .get("healerInfo")
-                  .map((key, i) => (
-                    <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
-                      <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
-                        {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
-                        {key.name}
-                      </div>
-                    </MenuItem>
-                  ))
-                  .map((key, i) => [key, <Divider key={i} />])}
+                {ls.get("healerInfo").map((key, i) => (
+                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                    <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
+                      {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
+                      {key.name}
+                    </div>
+                  </MenuItem>
+                ))}
                 ,
                 <MenuItem key={"remove"} value={""}>
                   {/* // TODO Translate */}
@@ -694,17 +690,14 @@ export default function CooldownPlanner(props) {
                 MenuProps={menuStyle}
               >
                 {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
-                {ls
-                  .get("healerInfo")
-                  .map((key, i) => (
-                    <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
-                      <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
-                        {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
-                        {key.name}
-                      </div>
-                    </MenuItem>
-                  ))
-                  .map((key, i) => [key, <Divider key={i} />])}
+                {ls.get("healerInfo").map((key, i) => (
+                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                    <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
+                      {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
+                      {key.name}
+                    </div>
+                  </MenuItem>
+                ))}
                 ,
                 <MenuItem key={"remove"} value={""}>
                   {/* // TODO: Translate */}
@@ -904,17 +897,14 @@ export default function CooldownPlanner(props) {
                 MenuProps={menuStyle}
               >
                 {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
-                {ls
-                  .get("healerInfo")
-                  .map((key, i) => (
-                    <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
-                      <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
-                        {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
-                        {key.name}
-                      </div>
-                    </MenuItem>
-                  ))
-                  .map((key, i) => [key, <Divider key={i} />])}
+                {ls.get("healerInfo").map((key, i) => (
+                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
+                    <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
+                      {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
+                      {key.name}
+                    </div>
+                  </MenuItem>
+                ))}
                 ,
                 <MenuItem key={"remove"} value={""}>
                   Remove
@@ -1110,17 +1100,14 @@ export default function CooldownPlanner(props) {
                 MenuProps={menuStyle}
               >
                 {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
-                {ls
-                  .get("healerInfo")
-                  .map((key, i) => (
-                    <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
-                      <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
-                        {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
-                        {key.name}
-                      </div>
-                    </MenuItem>
-                  ))
-                  .map((key, i) => [key, <Divider key={i} />])}
+                {ls.get("healerInfo").map((key, i) => (
+                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                    <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
+                      {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
+                      {key.name}
+                    </div>
+                  </MenuItem>
+                ))}
                 ,
                 <MenuItem key={"remove"} value={""}>
                   Remove
@@ -1315,17 +1302,14 @@ export default function CooldownPlanner(props) {
                 MenuProps={menuStyle}
               >
                 {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
-                {ls
-                  .get("healerInfo")
-                  .map((key, i) => (
-                    <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
-                      <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
-                        {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
-                        {key.name}
-                      </div>
-                    </MenuItem>
-                  ))
-                  .map((key, i) => [key, <Divider key={i} />])}
+                {ls.get("healerInfo").map((key, i) => (
+                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
+                    <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
+                      {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
+                      {key.name}
+                    </div>
+                  </MenuItem>
+                ))}
                 ,
                 <MenuItem key={"remove"} value={""}>
                   Remove
@@ -1573,7 +1557,7 @@ export default function CooldownPlanner(props) {
                               {key.raidName}
                             </MenuItem>
                           ))
-                          .map((key, i) => [key, <Divider key={i} />])}
+                          }
                       </Select>
                     </FormControl>
                   </Grid> */}
@@ -1591,8 +1575,7 @@ export default function CooldownPlanner(props) {
                               {bossIcons(key.DungeonEncounterID)}
                               {t("BossNames." + key.ID)}
                             </MenuItem>
-                          ))
-                          .map((key, i) => [key, <Divider key={i} />])}
+                          ))}
                       </Select>
                     </FormControl>
                   </Grid>

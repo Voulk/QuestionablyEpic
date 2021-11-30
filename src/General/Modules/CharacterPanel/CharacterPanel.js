@@ -277,8 +277,8 @@ export default function CharacterPanel(props) {
                         </Grid>
                         {Object.keys(playerStats)
                           .filter((filterOut) => filterOut !== "stamina" && filterOut !== "hps" && filterOut !== "dps" && filterOut !== "leech")
-                          .map((key) => (
-                            <Grid item xs={4} sm="auto">
+                          .map((key, i) => (
+                            <Grid item xs={4} sm="auto" key={"stat" + i}>
                               <Typography style={{ fontSize: 11, lineHeight: 1 }}>{t(capitalizeFirstLetter(key)) + ": " + playerStats[key]}</Typography>
                             </Grid>
                           ))}

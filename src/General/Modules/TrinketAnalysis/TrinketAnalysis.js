@@ -8,20 +8,20 @@ import VerticalChart from "./Charts/VerticalChart";
 import BCChart from "./Charts/BCChart";
 import HelpText from "../SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import userSettings from "../Settings/SettingsObject";
 // import MetricToggle from "Retail/Modules/DominationGemAnalysis/MetricToggle";
 import SourceToggle from "./SourceToggle";
-import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButton from "@mui/material/ToggleButton";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down("md")]: {
       margin: "auto",
       width: "85%",
       justifyContent: "space-between",
@@ -405,13 +405,6 @@ export default function TrinketAnalysis(props) {
         </Grid>
         {gameType === "Retail" ? (
           <Grid item xs={12} container spacing={0} direction="row" justifyContent="flex-end">
-            {/* <Grid item>
-              <Select key={"themeSelector"} labelId="themeSelectorID" variant="outlined" value={theme} onChange={(e) => setTheme(e.target.value)} MenuProps={menuStyle} label={"Cooldowns Shown"}>
-                {availableThemes.map((key) => (
-                  <MenuItem value={key}>{key}</MenuItem>
-                ))}
-              </Select>
-            </Grid> */}
             <Grid item>
               <Tooltip title={"Alternate Theme"} arrow>
                 <ToggleButton

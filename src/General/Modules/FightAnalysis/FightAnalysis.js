@@ -8,14 +8,12 @@ import LoadingOverlay from "react-loading-overlay";
 import CooldownTimeline from "./Components/CooldownTimelineTable";
 import { fightDuration, warcraftLogReportID, logDifficulty } from "../CooldownPlanner/Functions/Functions";
 import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
-import SwitchLabels from "../CooldownPlanner/BasicComponents/Switch";
 import HealerInfoTable from "./Components/HealerInfoCards";
 import updatechartdata from "./Engine/LogImportEngine.js";
 import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
 import ExternalTimeline from "./Components/ExternalTimelineTable";
 import EnemyCastsTimeline from "./Components/EnemyCasts";
 import Cooldowns from "../CooldownPlanner/CooldownObject/CooldownObject";
-import makeStyles from '@mui/styles/makeStyles';
 class FightAnalysis extends Component {
   constructor() {
     super();

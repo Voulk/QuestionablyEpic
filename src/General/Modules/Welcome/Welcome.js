@@ -1,8 +1,8 @@
 import React from "react";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import logo from "Images/QeAssets/QELogo.png";
-import { Button, Box, Dialog, DialogActions, DialogContent, Typography, Grid, DialogTitle, TextField, FormControl, InputLabel, Select, MenuItem, Divider } from "@mui/material";
-import Autocomplete from '@mui/material/Autocomplete';
+import { Button, Box, Dialog, DialogActions, DialogContent, Typography, Grid, DialogTitle, TextField, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import Autocomplete from "@mui/material/Autocomplete";
 import ls from "local-storage";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "../SetupAndMenus/Header/LanguageButton";
@@ -190,13 +190,11 @@ export default function WelcomeDialog(props) {
                 <FormControl className={classes.formRegion} variant="outlined" size="small" disabled={charName === "" ? true : false} label={t("Region")}>
                   <InputLabel id="NewClassSelector">{t("Region")}</InputLabel>
                   <Select label={t("Region")} value={regions} onChange={handleChangeRegion} MenuProps={menuStyle}>
-                    {Object.values(region)
-                      .map((key, i) => (
-                        <MenuItem key={i} value={key}>
-                          {key}
-                        </MenuItem>
-                      ))
-                      .map((item, i) => [item, <Divider key={i} />])}
+                    {Object.values(region).map((key, i) => (
+                      <MenuItem key={i} value={key}>
+                        {key}
+                      </MenuItem>
+                    ))}
                   </Select>
                 </FormControl>
               </Grid>
@@ -241,8 +239,7 @@ export default function WelcomeDialog(props) {
                           {t("Classes." + key)}
                         </div>
                       </MenuItem>
-                    ))
-                    .map((item, i) => [item, <Divider key={i} />])}
+                    ))}
                 </Select>
               </FormControl>
             </Grid>
@@ -253,16 +250,14 @@ export default function WelcomeDialog(props) {
                 <Select label={t("Select Race")} value={selectedRace} onChange={handleChangeRace} MenuProps={menuStyle}>
                   {healClass === ""
                     ? ""
-                    : availableClasses[healClass.toString()].races
-                        .map((key, i) => (
-                          <MenuItem key={i} value={key}>
-                            <div style={{ display: "inline-flex" }}>
-                              {raceIcons(key)}
-                              {t(key)}
-                            </div>
-                          </MenuItem>
-                        ))
-                        .map((item, i) => [item, <Divider key={i} />])}
+                    : availableClasses[healClass.toString()].races.map((key, i) => (
+                        <MenuItem key={i} value={key}>
+                          <div style={{ display: "inline-flex" }}>
+                            {raceIcons(key)}
+                            {t(key)}
+                          </div>
+                        </MenuItem>
+                      ))}
                 </Select>
               </FormControl>
             </Grid>
@@ -273,23 +268,21 @@ export default function WelcomeDialog(props) {
                   <Select label={t("Covenant")} value={selectedCovenant} onChange={handleChangeCovenant} MenuProps={menuStyle}>
                     {healClass === ""
                       ? ""
-                      : ["kyrian", "necrolord", "night_fae", "venthyr"]
-                          .map((key, i) => (
-                            <MenuItem key={i} value={key}>
-                              <div style={{ display: "inline-flex" }}>
-                                {covenantIcons(key, {
-                                  height: 20,
-                                  width: 20,
-                                  margin: "0px 5px 0px 5px",
-                                  verticalAlign: "middle",
-                                  borderRadius: "4px",
-                                  border: "1px solid rgba(255, 255, 255, 0.12)",
-                                })}
-                                {t(key)}
-                              </div>
-                            </MenuItem>
-                          ))
-                          .map((item, i) => [item, <Divider key={i} />])}
+                      : ["kyrian", "necrolord", "night_fae", "venthyr"].map((key, i) => (
+                          <MenuItem key={i} value={key}>
+                            <div style={{ display: "inline-flex" }}>
+                              {covenantIcons(key, {
+                                height: 20,
+                                width: 20,
+                                margin: "0px 5px 0px 5px",
+                                verticalAlign: "middle",
+                                borderRadius: "4px",
+                                border: "1px solid rgba(255, 255, 255, 0.12)",
+                              })}
+                              {t(key)}
+                            </div>
+                          </MenuItem>
+                        ))}
                   </Select>
                 </FormControl>
               </Grid>

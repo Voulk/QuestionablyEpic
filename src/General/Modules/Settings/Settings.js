@@ -65,7 +65,6 @@ export default function Settings(props) {
             <Typography className={classes.heading}>{t("Settings.SettingsTitle")}</Typography>
           </div>
         </AccordionSummary>
-        {/* <Divider variant="middle" /> */}
         <AccordionDetails className={classes.details}>
           {/* ---- If gameType = "Retail" show Retail Settings, otherwise show Burning Crusade Settings ---- */}
           {gameType === "Retail" ? (

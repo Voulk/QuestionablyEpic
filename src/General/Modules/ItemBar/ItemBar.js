@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactGA from "react-ga";
 import { useTranslation } from "react-i18next";
 import makeStyles from "@mui/styles/makeStyles";
-import { InputLabel, MenuItem, FormControl, Select, Button, Grid, Paper, Typography, Divider, Snackbar, TextField, Popover } from "@mui/material";
+import { InputLabel, MenuItem, FormControl, Select, Button, Grid, Paper, Typography, Divider, Snackbar, TextField, Popover, Box } from "@mui/material";
 import { Autocomplete } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
@@ -50,12 +50,11 @@ const menuStyle = {
     vertical: "top",
     horizontal: "left",
   },
-  getContentAnchorEl: null,
 };
 
-function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 export default function ItemBar(props) {
   const contentType = useSelector((state) => state.contentType);
@@ -289,6 +288,14 @@ export default function ItemBar(props) {
               freeSolo
               style={{ width: "100%" }}
               renderInput={(params) => <TextField {...params} label={t("QuickCompare.ItemName")} variant="outlined" />}
+              // TODO: Fix option key error
+              // renderOption={(props, option) => {
+              //   return (
+              //     <Box component="li" {...props} key={option.id}>
+              //       {option.name}
+              //     </Box>
+              //   );
+              // }}
               ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4, paddingTop: 0, paddingBottom: 0 } }}
               open={openAuto}
               onOpen={handleOpen}
@@ -307,18 +314,17 @@ export default function ItemBar(props) {
               <InputLabel id="itemLevelSelectLabel">{t("QuickCompare.ItemLevel")}</InputLabel>
               <Select
                 key={"itemLevelSelect"}
-                labelId="itemLevelSelectLabelId"
+                labelId="itemLevelSelectLabel"
                 value={itemLevel}
                 onChange={(e) => itemLevelChanged(e.target.value)}
                 MenuProps={menuStyle}
                 label={t("QuickCompare.ItemLevel")}
               >
-                {legendaryItemLevels.map((key) => [
+                {legendaryItemLevels.map((key) => (
                   <MenuItem key={key} label={key} value={key}>
                     {key}
-                  </MenuItem>,
-                  <Divider key={key + "divider"} />,
-                ])}
+                  </MenuItem>
+                ))}
               </Select>
             </FormControl>
           ) : (
@@ -352,14 +358,13 @@ export default function ItemBar(props) {
           isItemShadowlandsLegendary === true ? (
             <Grid item>
               <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
-                <InputLabel id="missiveSelectionLabel">{t("QuickCompare.Missives")}</InputLabel>
+                <InputLabel id="missiveSelection">{t("QuickCompare.Missives")}</InputLabel>
                 <Select key={"missiveSelection"} labelId="missiveSelection" value={missives} onChange={itemMissivesChanged} MenuProps={menuStyle} label={t("QuickCompare.Missives")}>
-                  {legendaryStats.map((key) => [
+                  {legendaryStats.map((key) => (
                     <MenuItem key={key} label={t(key)} value={key}>
                       {t(key)}
-                    </MenuItem>,
-                    <Divider key={key + "divider"} />,
-                  ])}
+                    </MenuItem>
+                  ))}
                 </Select>
               </FormControl>
             </Grid>
@@ -376,7 +381,7 @@ export default function ItemBar(props) {
                   style={{ width: t("QuickCompare.DominationSocket").length > 10 ? 160 : 140 }}
                   disabled={itemLevel !== "" && isItemDomination ? false : true}
                 >
-                  <InputLabel id="itemtertiary">{t("QuickCompare.DominationSocket")}</InputLabel>
+                  <InputLabel id="DominationSocket">{t("QuickCompare.DominationSocket")}</InputLabel>
                   <Select
                     key={"DominationSocket"}
                     labelId="DominationSocket"
@@ -387,7 +392,7 @@ export default function ItemBar(props) {
                   >
                     {dominationGemDB
                       .filter((filter) => filter.type !== "Set Bonus")
-                      .map((key, i) => [
+                      .map((key, i) => (
                         <MenuItem key={key.gemID} label={key.name[currentLanguage]} value={key.gemID}>
                           <a data-wowhead={"item=" + key.gemID}>
                             <img
@@ -404,9 +409,8 @@ export default function ItemBar(props) {
                             />
                           </a>
                           {key.name[currentLanguage] + " " + "[" + (key.effect.rank + 1) + "]"}
-                        </MenuItem>,
-                        <Divider key={i} />,
-                      ])}
+                        </MenuItem>
+                      ))}
                   </Select>
                 </FormControl>
               </Grid>
@@ -421,17 +425,12 @@ export default function ItemBar(props) {
               <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
                 <InputLabel id="itemsocket">{t("QuickCompare.Socket")}</InputLabel>
                 <Select key={"sockets"} labelId="itemsocket" value={itemSocket} onChange={itemSocketChanged} MenuProps={menuStyle} label={t("QuickCompare.Socket")}>
-                  {[
-                    <MenuItem key={1} label={t("Yes")} value={true}>
-                      {t("Yes")}
-                    </MenuItem>,
-                    <Divider key={2} />,
-                    ,
-                    <MenuItem key={3} label={t("No")} value={false}>
-                      {t("No")}
-                    </MenuItem>,
-                    <Divider key={4} />,
-                  ]}
+                  <MenuItem key={1} label={t("Yes")} value={true}>
+                    {t("Yes")}
+                  </MenuItem>
+                  <MenuItem key={3} label={t("No")} value={false}>
+                    {t("No")}
+                  </MenuItem>
                 </Select>
               </FormControl>
             </Grid>
@@ -455,26 +454,15 @@ export default function ItemBar(props) {
             >
               <InputLabel id="itemtertiary">{t("QuickCompare.Tertiary")}</InputLabel>
               <Select key={"TertiarySelect"} labelId="itemtertiary" value={itemTertiary} onChange={itemTertiaryChanged} MenuProps={menuStyle} label={t("QuickCompare.Tertiary")}>
-                {[
-                  <MenuItem key={"LeechItem"} label={t("Leech")} value={"Leech"}>
-                    {t("Leech")}
-                  </MenuItem>,
-                  <Divider key={1} />,
-                ]}
-                ,
-                {[
-                  <MenuItem key={"AvoidanceItem"} label={t("Avoidance")} value={"Avoidance"}>
-                    {t("Avoidance")}
-                  </MenuItem>,
-                  <Divider key={2} />,
-                ]}
-                ,
-                {[
-                  <MenuItem key={"NoneItem"} label={t("None")} value={"None"} onClick={""}>
-                    {t("None")}
-                  </MenuItem>,
-                  <Divider key={3} />,
-                ]}
+                <MenuItem key={"LeechItem"} label={t("Leech")} value={"Leech"}>
+                  {t("Leech")}
+                </MenuItem>
+                <MenuItem key={"AvoidanceItem"} label={t("Avoidance")} value={"Avoidance"}>
+                  {t("Avoidance")}
+                </MenuItem>
+                <MenuItem key={"NoneItem"} label={t("None")} value={"None"} onClick={""}>
+                  {t("None")}
+                </MenuItem>
               </Select>
             </FormControl>
           </Grid>

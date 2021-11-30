@@ -1,12 +1,5 @@
-
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Divider, Paper, Select, Grid, Typography } from "@mui/material";
-
-// AddPlanDialog.propTypes = {
-//   handleAddPlanDialogClose: PropTypes.func.isRequired,
-//   openAddPlanDialog: PropTypes.bool.isRequired,
-// };
+import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions } from "@mui/material";
 
 export default function AddPlanDialog(props) {
   const { handleAddPlanDialogClose, openAddPlanDialog, cooldownObject, currentBoss, loadPlanData } = props;

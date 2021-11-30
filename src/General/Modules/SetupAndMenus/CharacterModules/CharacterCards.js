@@ -31,11 +31,11 @@ import {
   adaptV4Theme,
 } from "@mui/material";
 import { createTheme, ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
-import makeStyles from '@mui/styles/makeStyles';
-import withStyles from '@mui/styles/withStyles';
+import makeStyles from "@mui/styles/makeStyles";
+import withStyles from "@mui/styles/withStyles";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SettingsIcon from "@mui/icons-material/Settings";
-import Autocomplete from '@mui/material/Autocomplete';
+import Autocomplete from "@mui/material/Autocomplete";
 import ClearIcon from "@mui/icons-material/Clear";
 import { red } from "@mui/material/colors";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions.js";
@@ -124,11 +124,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const deleteTheme = createTheme(adaptV4Theme({
-  palette: {
-    primary: red,
-  },
-}));
+const deleteTheme = createTheme(
+  adaptV4Theme({
+    palette: {
+      primary: red,
+    },
+  }),
+);
 
 TabPanel.propTypes = {
   children: PropTypes.node,
@@ -372,7 +374,7 @@ export default function CharCards(props) {
     /* -------------------------------------------------------------------------- */
     <Grid item xs={12} sm={6} md={6} lg={6} xl={4}>
       <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : null}>
-        <Card className={rootClassName} variant="outlined" raised={true}>
+        <Card className={rootClassName} variant="outlined">
           <Avatar src={props.char.charAvatarURL === "" ? specImages[props.char.spec].default : props.char.charAvatarURL} variant="square" alt="" className={classes.large} />
           <Divider orientation="vertical" flexItem />
           <div className={classes.details}>
@@ -532,16 +534,14 @@ export default function CharCards(props) {
                         <FormControl variant="outlined" fullWidth size="small" label={t("Class")} disabled={true}>
                           <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
                           <Select label={t("Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
-                            {Object.getOwnPropertyNames(availableClasses)
-                              .map((key, i) => (
-                                <MenuItem key={"charCardClass" + i} value={key}>
-                                  <div style={{ display: "inline-flex" }}>
-                                    {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
-                                    {t("Classes." + key)}
-                                  </div>
-                                </MenuItem>
-                              ))
-                              .map((menuItems, i) => [menuItems, <Divider key={i} />])}
+                            {Object.getOwnPropertyNames(availableClasses).map((key, i) => (
+                              <MenuItem key={"charCardClass" + i} value={key}>
+                                <div style={{ display: "inline-flex" }}>
+                                  {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
+                                  {t("Classes." + key)}
+                                </div>
+                              </MenuItem>
+                            ))}
                           </Select>
                         </FormControl>
                       </Grid>
@@ -552,16 +552,14 @@ export default function CharCards(props) {
                           <Select value={selectedRace} onChange={handleChangeRace} label={t("Race")} MenuProps={menuStyle}>
                             {healClass === ""
                               ? ""
-                              : availableClasses[healClass.toString()].races
-                                  .map((key, i) => (
-                                    <MenuItem key={"charCardRace" + i} value={key}>
-                                      <div style={{ display: "inline-flex" }}>
-                                        {raceIcons(key)}
-                                        {t(key)}
-                                      </div>
-                                    </MenuItem>
-                                  ))
-                                  .map((menuItems, i) => [menuItems, <Divider key={i} />])}
+                              : availableClasses[healClass.toString()].races.map((key, i) => (
+                                  <MenuItem key={"charCardRace" + i} value={key}>
+                                    <div style={{ display: "inline-flex" }}>
+                                      {raceIcons(key)}
+                                      {t(key)}
+                                    </div>
+                                  </MenuItem>
+                                ))}
                           </Select>
                         </FormControl>
                       </Grid>
@@ -572,23 +570,21 @@ export default function CharCards(props) {
                           <Select value={selectedCovenant} onChange={handleChangeCovenant} label={t("Covenant")} MenuProps={menuStyle}>
                             {healClass === ""
                               ? ""
-                              : ["kyrian", "venthyr", "necrolord", "night_fae"]
-                                  .map((key, i) => (
-                                    <MenuItem key={"charChardCovenant" + i} value={key}>
-                                      <div style={{ display: "inline-flex" }}>
-                                        {covenantIcons(key, {
-                                          height: 20,
-                                          width: 20,
-                                          margin: "0px 5px 0px 5px",
-                                          verticalAlign: "middle",
-                                          borderRadius: 4,
-                                          border: "1px solid rgba(255, 255, 255, 0.12)",
-                                        })}
-                                        {t(key)}
-                                      </div>
-                                    </MenuItem>
-                                  ))
-                                  .map((menuItems, i) => [menuItems, <Divider key={i} />])}
+                              : ["kyrian", "venthyr", "necrolord", "night_fae"].map((key, i) => (
+                                  <MenuItem key={"charChardCovenant" + i} value={key}>
+                                    <div style={{ display: "inline-flex" }}>
+                                      {covenantIcons(key, {
+                                        height: 20,
+                                        width: 20,
+                                        margin: "0px 5px 0px 5px",
+                                        verticalAlign: "middle",
+                                        borderRadius: 4,
+                                        border: "1px solid rgba(255, 255, 255, 0.12)",
+                                      })}
+                                      {t(key)}
+                                    </div>
+                                  </MenuItem>
+                                ))}
                           </Select>
                         </FormControl>
                       </Grid>

@@ -164,8 +164,8 @@ export default function DominationGemSelection(props) {
 
   return (
     <Grid container spacing={1} justifyContent="center" direction="row" style={{ width: "100%" }}>
-      {dominationGems.map((key) => (
-        <Grid item xs={4} sm={4} md={4} lg={4} xl={4}>
+      {dominationGems.map((key, i) => (
+        <Grid key={key + i} item xs={4} sm={4} md={4} lg={4} xl={4}>
           <Grid container spacing={0}>
             <Grid item xs={12}>
               {/* ------------------------------------ Domination Delection ------------------------------------  */}
@@ -184,11 +184,10 @@ export default function DominationGemSelection(props) {
                       </div>
                     </div>
                   </MenuItem>
-                  <Divider />
                   {dominationGemDB
                     .filter((filter) => filter.effect.name === key)
-                    .map((key) => (
-                      <MenuItem value={key.effect.rank} style={{ justifyContent: "left", fontSize: 14 }}>
+                    .map((key, i) => (
+                      <MenuItem key={key.name + i} value={key.effect.rank} style={{ justifyContent: "left", fontSize: 14 }}>
                         <a data-wowhead={"item=" + key.gemID}>
                           <img
                             style={{
@@ -205,9 +204,7 @@ export default function DominationGemSelection(props) {
                         </a>
                         {key.name[currentLanguage] + " " + "(" + (key.effect.rank + 1) + ")"}
                       </MenuItem>
-                    ))
-                    /* ------------------------------ Map the Menu Item with a Divider ------------------------------ */
-                    .map((menuItem) => [menuItem, <Divider />])}
+                    ))}
                 </Select>
               </FormControl>
             </Grid>

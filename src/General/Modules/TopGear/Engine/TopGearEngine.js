@@ -96,6 +96,7 @@ function autoGemVault(itemList, userSettings) {
  * @returns A Top Gear result which includes the best set, and how close various alternatives are.
  */
 export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
+  console.log("hey we at top gear");
   // == Setup Player & Cast Model ==
   // Create player / cast model objects in this thread based on data from the player character & player model.
   const newPlayer = setupPlayer(player, contentType, castModel);
@@ -147,6 +148,8 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   } else {
     let result = new TopGearResult(itemSets[0], differentials, contentType);
     result.itemsCompared = itemSets.length;
+    console.log("hey we got a result yo");
+    console.log(result);
     return result;
   }
 }

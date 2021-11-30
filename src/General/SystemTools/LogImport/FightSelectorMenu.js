@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import moment from "moment";
-import { Divider, MenuItem } from "@mui/material";
+import { MenuItem } from "@mui/material";
 import bossIcons from "../../Modules/CooldownPlanner/Functions/IconFunctions/BossIcons";
 import { fightDuration, logDifficulty } from "../../Modules/CooldownPlanner/Functions/Functions";
 import { bossList } from "../../Modules/CooldownPlanner/Data/CooldownPlannerBossList";
@@ -32,30 +32,21 @@ class LogImport extends Component {
 
   whichWipe = (fight, list) => {
     return fight.kill ? "" : list[fight.boss + fight.difficulty].indexOf(fight) + 1;
-  }
+  };
 
   formatName = (fight, list) => {
-    const start = logDifficulty(fight.difficulty) + 
-    " " +
-    fight.name +
-    " - " +
-    moment(fightDuration(fight.end_time, fight.start_time)).format("mm:ss") +
-    " - ";
+    const start = logDifficulty(fight.difficulty) + " " + fight.name + " - " + moment(fightDuration(fight.end_time, fight.start_time)).format("mm:ss") + " - ";
 
     let end = this.killwipe(fight.kill);
     let styleColor = "#00ff1a";
 
     //this is very hacky due ot the fact killwipe already checks that...
-    if(!fight.kill){
-      end += this.whichWipe(fight, list) +
-      (fight.kill ? "" :
-      " - " +
-      fight.bossPercentage / 100 +
-      "%");
+    if (!fight.kill) {
+      end += this.whichWipe(fight, list) + (fight.kill ? "" : " - " + fight.bossPercentage / 100 + "%");
       styleColor = "";
     }
 
-    return <div style={{color: styleColor}}>{start + end}</div>;
+    return <div style={{ color: styleColor }}>{start + end}</div>;
   };
 
   render(props) {
@@ -68,48 +59,45 @@ class LogImport extends Component {
       );
     }
 
-    // Split up fights for indexing 
+    // Split up fights for indexing
     // limit fights on what we want to prevent bad fights? idk options man
     // const filteredFights = fights.filter(fight => bossList.find(boss => fight.boss === boss.id));
-    const filteredFights = fights.filter((name) => name.boss !== 0)
+    const filteredFights = fights.filter((name) => name.boss !== 0);
 
     // now we map (i dislike this klunkyness but hey sucks don't it)
     const fightsMapped = {};
-    filteredFights.forEach(fight => 
-      fightsMapped[fight.boss + fight.difficulty] ?
-      fightsMapped[fight.boss + fight.difficulty].push(fight) :
-      fightsMapped[fight.boss + fight.difficulty] = [fight]);
+    filteredFights.forEach((fight) =>
+      fightsMapped[fight.boss + fight.difficulty] ? fightsMapped[fight.boss + fight.difficulty].push(fight) : (fightsMapped[fight.boss + fight.difficulty] = [fight]),
+    );
 
-    let menuItems = filteredFights
-      .map((fight, i) => (
-        <MenuItem
-          key={i}
-          onClick={() => {
-            this.props.clicker([
-              fight.start_time,
-              fight.end_time,
-              fight.name,
-              moment(fightDuration(fight.end_time, fight.start_time)).format("mm:ss"),
-              this.killwipe(fight.kill) + this.whichWipe(fight, fightsMapped),
-              fight.boss,
-              fight.difficulty,
-              fight.keystoneLevel,
-              fight.zoneID ||
-                bossList
-                  .filter((obj) => {
-                    return obj.id === fight.boss;
-                  })
-                  .map((obj) => obj.zoneID),
-            ]);
-            this.props.close();
-            this.props.update(fight.start_time, fight.end_time, this.state.reportid);
-          }}
-        >
-          {bossIcons(fight.boss)}
-          {this.formatName(fight, fightsMapped)}
-        </MenuItem>
-      ))
-      .map((key, i) => [key, <Divider key={i + 200} />]);
+    let menuItems = filteredFights.map((fight, i) => (
+      <MenuItem
+        key={i}
+        onClick={() => {
+          this.props.clicker([
+            fight.start_time,
+            fight.end_time,
+            fight.name,
+            moment(fightDuration(fight.end_time, fight.start_time)).format("mm:ss"),
+            this.killwipe(fight.kill) + this.whichWipe(fight, fightsMapped),
+            fight.boss,
+            fight.difficulty,
+            fight.keystoneLevel,
+            fight.zoneID ||
+              bossList
+                .filter((obj) => {
+                  return obj.id === fight.boss;
+                })
+                .map((obj) => obj.zoneID),
+          ]);
+          this.props.close();
+          this.props.update(fight.start_time, fight.end_time, this.state.reportid);
+        }}
+      >
+        {bossIcons(fight.boss)}
+        {this.formatName(fight, fightsMapped)}
+      </MenuItem>
+    ));
     return menuItems;
   }
 }

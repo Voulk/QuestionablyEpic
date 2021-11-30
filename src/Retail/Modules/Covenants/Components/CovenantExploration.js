@@ -306,6 +306,7 @@ export default function CovenantExploration(props) {
                   aria-label="Vertical tabs example"
                   className={classes.tabs}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+                  style={{ minWidth: 162 }}
                 >
                   {/* ----------------------------------------- Pelagos Tab ----------------------------------------  */}
                   <Tab
@@ -357,6 +358,7 @@ export default function CovenantExploration(props) {
                   aria-label="Vertical tabs example"
                   className={classes.tabs}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+                  style={{ minWidth: 162 }}
                 >
                   {/* ------------------------------------------ Niya Tab ------------------------------------------ */}
                   <Tab
@@ -408,6 +410,7 @@ export default function CovenantExploration(props) {
                   aria-label="Vertical tabs example"
                   className={classes.tabs}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+                  style={{ minWidth: 162 }}
                 >
                   {/* ----------------------------------------- Nadjia Tab ----------------------------------------- */}
                   <Tab
@@ -461,6 +464,7 @@ export default function CovenantExploration(props) {
                   aria-label="Vertical tabs example"
                   className={classes.tabs}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+                  style={{ minWidth: 162 }}
                 >
                   {/* ---------------------------------------- Marileth Tab ----------------------------------------  */}
                   <Tab
