@@ -148,126 +148,22 @@ export default function TrinketAnalysis(props) {
       /* ---------------------------------------- World Bosses ---------------------------------------- */
     ];
 
+
+
     /* ---------------------------------------------------------------------------------------------- */
     /*                                   The Rest & Raids & Dungeons                                  */
     /* ---------------------------------------------------------------------------------------------- */
     if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Dungeons") === true) {
       results = array;
     }
-
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                 The Rest & Raids / NO DUNGEONS                                 */
-    /* ---------------------------------------------------------------------------------------------- */
-    if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Dungeons") === false) {
+    else {
       results = array.filter((item) => {
-        if (
-          /* -------------------------------- World Quests / Other Sources -------------------------------- */
-          item["sources"] === undefined ||
-          shadowlandsTheRest.includes(item["sources"][0]["instanceId"]) ||
-          /* -------------------------------------------- Raids ------------------------------------------- */
-          shadowlandsRaids.includes(item["sources"][0]["instanceId"])
-        ) {
-          return true;
-        } else {
-          return false;
-        }
-      });
+        return (item["sources"] === undefined && sources.includes("The Rest")) ||
+                (shadowlandsTheRest.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
+                (shadowlandsRaids.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
+                (shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) && sources.includes("Dungeons")) })
     }
-
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                 The Rest & Dungeons / NO RAIDS                                 */
-    /* ---------------------------------------------------------------------------------------------- */
-    if (sources.includes("The Rest") === true && sources.includes("Raids") === false && sources.includes("Dungeons") === true) {
-      results = array.filter((item) => {
-        if (
-          /* -------------------------------- World Quests / Other Sources -------------------------------- */
-          item["sources"] === undefined ||
-          shadowlandsTheRest.includes(item["sources"][0]["instanceId"]) ||
-          /* ------------------------------------------ Dungeons ------------------------------------------ */
-          shadowlandsDungeons.includes(item["sources"][0]["instanceId"])
-        ) {
-          return true;
-        } else {
-          return false;
-        }
-      });
-    }
-
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                 Dungeons & Raids / NO THE REST                                 */
-    /* ---------------------------------------------------------------------------------------------- */
-    if (sources.includes("The Rest") === false && sources.includes("Raids") === true && sources.includes("Dungeons") === true) {
-      results = array.filter((item) => {
-        if (item["sources"] === undefined) {
-          return false;
-        } else {
-          if (
-            /* ------------------------------------------ Dungeons ------------------------------------------ */
-            shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) ||
-            /* -------------------------------------------- Raids ------------------------------------------- */
-            shadowlandsRaids.includes(item["sources"][0]["instanceId"])
-          ) {
-            return true;
-          } else {
-            return false;
-          }
-        }
-      });
-    }
-
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                          Dungeons Only                                         */
-    /* ---------------------------------------------------------------------------------------------- */
-    if (sources.includes("The Rest") === false && sources.includes("Raids") === false && sources.includes("Dungeons") === true) {
-      results = array.filter((item) => {
-        if (item["sources"] === undefined) {
-          return false;
-        } else {
-          if (
-            /* ------------------------------------------ Dungeons ------------------------------------------ */
-            shadowlandsDungeons.includes(item["sources"][0]["instanceId"])
-          ) {
-            return true;
-          } else {
-            return false;
-          }
-        }
-      });
-    }
-
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                           Raids Only                                           */
-    /* ---------------------------------------------------------------------------------------------- */
-    if (sources.includes("The Rest") === false && sources.includes("Raids") === true && sources.includes("Dungeons") === false) {
-      results = array.filter((item) => {
-        if (item["sources"] === undefined) {
-          return false;
-        } else {
-          if (shadowlandsRaids.includes(item["sources"][0]["instanceId"])) {
-            return true;
-          } else {
-            return false;
-          }
-        }
-      });
-    }
-
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                          The Rest Only                                         */
-    /* ---------------------------------------------------------------------------------------------- */
-    if (sources.includes("The Rest") === true && sources.includes("Raids") === false && sources.includes("Dungeons") === false) {
-      results = array.filter((item) => {
-        if (item["sources"] === undefined) {
-          return true;
-        } else {
-          if (shadowlandsTheRest.includes(item["sources"][0]["instanceId"])) {
-            return true;
-          } else {
-            return false;
-          }
-        }
-      });
-    }
+    
     return results;
   };
 
