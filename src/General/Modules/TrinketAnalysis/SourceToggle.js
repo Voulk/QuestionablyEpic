@@ -55,14 +55,15 @@ export default function SourceToggle(props) {
         </Tooltip>
       </ToggleButton>
 
-      {/* <ToggleButton disabled style={{ padding: 5 }} value="Legion Timewalking" aria-label="legionTimewalking" classes={{ selected: classes.selected }}>
-        <Tooltip title={"Legion"} arrow>
+
+      <ToggleButton style={{ padding: 5 }} value="LegionTimewalking" aria-label="legionTimewalking" classes={{ selected: classes.selected }}>
+        <Tooltip title={"Legion Timewalking"} arrow>
           <div style={{ display: "inline-flex" }}>
-            <img style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4 }} src={require("Images/Resources/worldQuest.png").default} alt={"World Quests"} />
+            <img style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4 }} src={require("Images/Resources/worldQuest.png").default} alt={"Legion"} />
             <Typography variant="button">{"Legion"}</Typography>
           </div>
         </Tooltip>
-      </ToggleButton> */}
+      </ToggleButton>
 
       <ToggleButton style={{ padding: 5 }} value="The Rest" aria-label="hpsLabel" classes={{ selected: classes.selected }}>
         <Tooltip title={"The Rest"} arrow>

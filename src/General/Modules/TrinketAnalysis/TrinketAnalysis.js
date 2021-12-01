@@ -117,7 +117,7 @@ export default function TrinketAnalysis(props) {
     "The Rest",
     "Raids",
     "Dungeons",
-    // "Legion Timewalking"
+    "LegionTimewalking"
   ]);
   const [theme, setTheme] = React.useState(false);
 
@@ -140,6 +140,9 @@ export default function TrinketAnalysis(props) {
       /* ------------------------------------------ Tazavesh ------------------------------------------ */
       1194,
     ];
+    const legionTimewalking = [
+      -24
+    ];
     const shadowlandsTheRest = [
       1192,
       -18,
@@ -153,15 +156,19 @@ export default function TrinketAnalysis(props) {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                   The Rest & Raids & Dungeons                                  */
     /* ---------------------------------------------------------------------------------------------- */
-    if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Dungeons") === true) {
+    if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Dungeons") === true && sources.includes("LegionTimewalking") === true) {
       results = array;
     }
     else {
       results = array.filter((item) => {
         return (item["sources"] === undefined && sources.includes("The Rest")) ||
+                (item["sources"] && (
                 (shadowlandsTheRest.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
                 (shadowlandsRaids.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
-                (shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) && sources.includes("Dungeons")) })
+                (shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) && sources.includes("Dungeons")) ||
+                (legionTimewalking.includes(item["sources"][0]["instanceId"]) && sources.includes("LegionTimewalking"))))
+              
+              })
     }
     
     return results;
@@ -185,7 +192,6 @@ export default function TrinketAnalysis(props) {
   const helpBlurb = [t("TrinketAnalysis.HelpText")];
   const helpText = [
     "The graph is generic to your spec and content type. You can get results accurate to your character in the Top Gear module.",
-    "World Quest trinkets coming very soon.",
     "This is a sampling of available trinkets only. You can add ones that aren't on the list in Top Gear.",
   ];
   const classes = useStyles();

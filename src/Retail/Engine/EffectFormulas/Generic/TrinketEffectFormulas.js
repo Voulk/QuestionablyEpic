@@ -752,8 +752,6 @@ else if (
   */
   let effect = activeTrinket.effects[0];
 
-  console.log("Uptime: " + convertPPMToUptime(effect.ppm, effect.duration))
-  console.log("One stack: " + getProcessedValue(effect.coefficient, effect.table, itemLevel));
   bonus_stats.haste = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration) * effect.stacks;
   //
 } 
@@ -778,7 +776,6 @@ else if (
   let effect = activeTrinket.effects[0];
   const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
   const expectedPPM = effect.ppm * player.getStatPerc("Haste");
-  console.log(itemLevel + ": " + getProcessedValue(effect.coefficient, effect.table, itemLevel));
 
   bonus_stats.hps = (oneHeal * expectedPPM * effect.targets * player.getStatMultiplier("CRITVERS") / 60);
   //
