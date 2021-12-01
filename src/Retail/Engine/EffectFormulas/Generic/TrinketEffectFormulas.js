@@ -752,6 +752,8 @@ else if (
   */
   let effect = activeTrinket.effects[0];
 
+  console.log("Uptime: " + convertPPMToUptime(effect.ppm, effect.duration))
+  console.log("One stack: " + getProcessedValue(effect.coefficient, effect.table, itemLevel));
   bonus_stats.haste = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration) * effect.stacks;
   //
 } 

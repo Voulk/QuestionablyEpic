@@ -987,9 +987,9 @@ export const trinket_data = [
       {
         coefficient: 1.41699, // 1.41699
         table: -1,
-        efficiency: { Raid: 0.85, Dungeon: 0.5 }, // 
+        efficiency: { Raid: 0.56, Dungeon: 0.35 }, // 
         ppm: 4,
-        targets: 5,
+        targets: 5, // This can hit a maximum of 5 targets, but the radius is very small so will vary per fight.
         ticks: 6,
       },
     ],
@@ -1006,9 +1006,9 @@ export const trinket_data = [
       {
         coefficient: 50.56973,
         table: -9, // -8 in spell data
-        efficiency: { Raid: 0.8, Dungeon: 0.5 }, // 
+        efficiency: { Raid: 0.65, Dungeon: 0.45 }, // 
         ppm: 3,
-        targets: 4,
+        targets: 3.8, // The trinket attempts to hit 4 targets, but in logs it often comes up slightly short of this.
 
       },
     ],
