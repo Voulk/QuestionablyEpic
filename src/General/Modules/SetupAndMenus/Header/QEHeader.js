@@ -33,10 +33,12 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("lg")]: {
       marginLeft: "4%",
       marginRight: "4%",
+      minHeight: 56,
     },
     [theme.breakpoints.up("sm")]: {
       marginLeft: "8%",
       marginRight: "8%",
+      minHeight: 56,
     },
   },
   popover: {
@@ -79,6 +81,7 @@ export default function QEHeader(props) {
     "Basic Edition": "#FFFFFF",
   };
 
+  // box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
   return (
     <div style={{ backgroundColor: "#353535" }}>
       <AppBar position="fixed" color="inherit">
