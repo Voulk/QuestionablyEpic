@@ -8,6 +8,8 @@ import { getEffectValue } from "../../Engine/EffectFormulas/EffectEngine";
 import ReactGA from "react-ga";
 import { Grid, Typography } from "@material-ui/core";
 import { useSelector } from "react-redux";
+import userSettings from "General/Modules/Settings/SettingsObject";
+import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -198,9 +200,13 @@ export default function LegendaryCompare(props) {
   fillLegendaries(legendaryList, props.player.spec, props.player, contentType);
   sortLegendaries(legendaryList);
 
+  const editSettings = (setting, newValue) => {
+    userSettings[setting] = newValue;
+  };
+
   return (
     <div className={classes.header}>
-      <Grid item container spacing={1} direction="row">
+      <Grid item container spacing={2} direction="row">
         {/* ---------------------------------------- Module Title ---------------------------------------- */}
         <Grid item xs={12}>
           <Typography color="primary" variant="h4" align="center" style={{ paddingBottom: 4 }}>
@@ -208,9 +214,20 @@ export default function LegendaryCompare(props) {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Typography color="primary" variant="subtitle2" align="center" style={{ paddingBottom: 12 }}>
-            {"Current Playstyle selected: " + props.player.getActiveModel(contentType).modelName + " - " + contentType}
-          </Typography>
+          <div style={{ width: "80%", margin: "auto" }}>
+            <CharacterPanel
+              player={props.player}
+              simcSnack={props.simcSnack}
+              allChars={props.allChars}
+              contentType={contentType}
+              userSettings={userSettings}
+              editSettings={editSettings}
+              singleUpdate={props.singleUpdate}
+              hymnalShow={true}
+              groupBuffShow={true}
+              autoSocket={true}
+            />
+          </div>
         </Grid>
         {/* ------------------------------ Map the Legendary list into Cards ----------------------------- */}
         <Grid item container spacing={1} direction="row">
@@ -219,6 +236,7 @@ export default function LegendaryCompare(props) {
           ))}
         </Grid>
       </Grid>
+      <div style={{ height: 100 }} />
     </div>
   );
 }

@@ -9,6 +9,29 @@
 
 export const changeLog = [
   {
+    version: "9.1.5 / 2.5.2",
+    update: 2,
+    date: "16 November",
+    changes: [
+      "Added Doomwalker anniversary gear.",
+      "Added a few missing PVP items to the item DB.",
+    ],
+  },
+  {
+    version: "9.1.5 / 2.5.2",
+    update: 1,
+    date: "7 November",
+    changes: [
+      "Discipline Priest overhaul. Conduit / legendary information added.",
+      "New Character panel incorporating old settings and SimC import panels.",
+      "Recommended Slots added to prominent legendaries",
+      "Legendaries can now be added manually with whichever Missives you want.",
+      "Added a new Footer to the main menu to get back to the main QE site.",
+      "Items can now be added manually without specifying a slot first.",
+      "Top Gear & Trinket Analysis visual revamps.",
+    ],
+  },
+  {
     version: "9.1 / 2.5.2",
     update: 26,
     date: "29th September",

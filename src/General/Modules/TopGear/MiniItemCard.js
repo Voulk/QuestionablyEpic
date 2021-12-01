@@ -60,26 +60,6 @@ export default function ItemCard(props) {
   const itemQuality = item.getQualityColor();
   const deleteActive = item.offhandID === 0;
 
-  // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
-  /*
-  const itemQuality = (itemLevel, itemID) => {
-    if (gameType !== "Retail") {
-      const quality = getItemProp(itemID, "quality", gameType)
-      if (quality === 5) return "#ff8000";
-      else if (quality === 4) return "#a73fee";
-      else if (quality === 3) return "#328CE3";
-      else if (quality === 2) return "#1eff00";
-      else return "#ffffff";
-    }
-    else {
-      if (isLegendary) return "#ff8000";
-      else if (itemLevel >= 183) return "#a73fee";
-      else if (itemLevel >= 120) return "#328CE3";
-      else return "#1eff00";
-    }
-  };
-  */
-
   const activateItemCard = () => {
     props.activateItem(item.uniqueHash, item.active);
   };

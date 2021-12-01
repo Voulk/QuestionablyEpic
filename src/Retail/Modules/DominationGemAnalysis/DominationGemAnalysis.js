@@ -10,6 +10,8 @@ import ReactGA from "react-ga";
 import { dominationGemDB } from "Databases/DominationGemDB";
 import { getDominationGemEffect } from "Retail/Engine/EffectFormulas/Generic/GenericEffectFormulas";
 import MetricToggle from "./MetricToggle";
+import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
+import userSettings from "General/Modules/Settings/SettingsObject";
 // import Settings from "../Settings/Settings";
 // import userSettings from "../Settings/SettingsObject";
 
@@ -111,6 +113,10 @@ export default function DominationAnalysis(props) {
   const helpText = [t("DominationSocketAnalysis.HelpText")];
   const classes = useStyles();
 
+  const editSettings = (setting, newValue) => {
+    userSettings[setting] = newValue;
+  };
+
   let activeGems = [];
 
   for (var i = 0; i < db.length; i++) {
@@ -138,27 +144,37 @@ export default function DominationAnalysis(props) {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Typography color="primary" variant="subtitle2" align="center" style={{ paddingBottom: 8 }}>
-            {"Current Playstyle selected: " + props.player.getActiveModel(contentType).modelName + " - " + contentType}
-          </Typography>
+          <HelpText blurb={helpText} expanded={true} />
         </Grid>
         <Grid item xs={12}>
-          <HelpText text={helpText} />
+          <CharacterPanel
+            player={props.player}
+            simcSnack={props.simcSnack}
+            allChars={props.allChars}
+            contentType={contentType}
+            userSettings={userSettings}
+            editSettings={editSettings}
+            singleUpdate={props.singleUpdate}
+            hymnalShow={true}
+            groupBuffShow={true}
+            autoSocket={true}
+          />
         </Grid>
-        <Grid item xs={12}>
-          <MetricToggle metric={metric} setMetric={setMetric} />
-        </Grid>
+
         {/* <Grid item xs={12}>
           <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} />
         </Grid> */}
         <Grid item xs={12}>
-          <Grid container spacing={1} justify="center">
-            <Grid item xs={12}>
-              <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                {<DomChart data={activeGems} db={db} />}
-              </Paper>
+          <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
+            <Grid container spacing={1} justify="center">
+              <Grid item xs={12}>
+                <MetricToggle metric={metric} setMetric={setMetric} />
+              </Grid>
+              <Grid item xs={12}>
+                <DomChart data={activeGems} db={db} />
+              </Grid>
             </Grid>
-          </Grid>
+          </Paper>
         </Grid>
       </Grid>
     </div>

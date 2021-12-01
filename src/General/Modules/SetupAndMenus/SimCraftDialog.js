@@ -40,6 +40,7 @@ export default function SimCraftInput(props) {
           onClick={handleClickOpen}
           disabled={characterCount === 0}
           variant={buttonVariant}
+          fullWidth
         >
           {props.buttonLabel}
         </Button>

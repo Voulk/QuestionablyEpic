@@ -17,7 +17,7 @@ export default function MetricToggle(props) {
 
   // TODO: Localise Tooltips?
   return (
-    <ToggleButtonGroup value={metric} exclusive onChange={handleContent} aria-label="contentToggle" size="small">
+    <ToggleButtonGroup value={metric} exclusive onChange={handleContent} aria-label="contentToggle" size="small" style={{ padding: 8 }}>
       <ToggleButton style={{ padding: 5, width: 70 }} value="hps" aria-label="hpsLabel">
         <Tooltip title={"HPS"} arrow>
           <div style={{ display: "inline-flex" }}>

@@ -68,9 +68,10 @@
     "Error": "Error",
     "Burning Crusade": "Burning Crusade",
     "Shadowlands": "Shadowlands",
+    "Filter": "Filter",
 
     "Changelog": {
-      "Header": "Changelog",
+      "Header": "Журнализация изменений проекта",
       "Version": "Version",
       "Update": "Update",
       "LastUpdated": "Last Updated",
@@ -347,7 +348,9 @@
       "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300",
       "ItemAdded": "Предмет добавлен!",
       "ItemDeleted": "Предмет удалён!",
-      "DominationSocket": "Domination"
+      "DominationSocket": "Domination",
+      "Missives": "Missives",
+      "ItemBarTitle": "Add Items (Optional)"
     },
 
     "Races": {
@@ -669,6 +672,8 @@
       "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. World quest trinkets and settings panel coming soon."
     },
 
+    "SourceToggle": { "FilterTooltip": "You can filter the graph by toggling these buttons" },
+    
     "DominationSocketAnalysis": {
       "Header": "Domination Socket Analysis",
       "HelpText": "This is a quick way to see how strong Domination Gems are for your character. These are still being tuned and results could change."

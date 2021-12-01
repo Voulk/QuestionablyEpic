@@ -34,8 +34,10 @@ class PlayerChars {
           if (player.covenant) newChar.setCovenant(player.covenant);
           else newChar.setDefaultCovenant(player.spec);
           if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
+          if (player.spec === "Discipline Priest") newChar.getActiveModel("Raid").setRampInfo(newChar.activeStats, [])
           if (player.renown > 0) newChar.updateRenownLevel(player.renown);
           if (player.dominationGemRanks) newChar.setDominationRanks(player.dominationGemRanks);
+          newChar.setPlayerAvatars();
           charArray.push(newChar);
         }
         
@@ -113,6 +115,7 @@ class PlayerChars {
     else {
       let newChar = new Player(name, spec, this.allChar.length, region, realm, race)
       if (covenant !== "") newChar.setCovenant(covenant);
+      newChar.setPlayerAvatars();
       this.allChar.push(newChar);
     }
     

@@ -136,7 +136,6 @@ class Chart extends Component {
   };
 
   render() {
-    // console.log(this.props.unmitigated)
     // Shortens long numbers i.e 1000000 will be 1M
     const DataFormater = (number) => {
       if (number > 1000000000) {

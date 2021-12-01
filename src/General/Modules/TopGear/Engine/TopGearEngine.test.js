@@ -1,6 +1,6 @@
 import { mergeBonusStats, buildBestDomSet } from "./TopGearEngine";
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities"
-import Player from '../Player/Player';
+import Player from '../../Player/Player';
 import { processItem } from "Retail/Engine/SimCImport/SimCImportEngine"
 import { buildWepCombos } from "General/Engine/ItemUtilities"
 import { runTopGear } from "./TopGearEngine";
@@ -20,6 +20,20 @@ describe("Test Stat DRs", () => {
         expect(stats.crit).toEqual(1185);
     });
 
+    test("Expanded Test - Haste way above DR", () => {
+
+        let stats = {
+            crit: 80,
+            haste: 1845,
+            versatility: 200,
+            mastery: 600,
+            leech: 0,
+        }
+        stats = applyDiminishingReturns(stats);
+
+        expect(Math.round(stats.haste)).toEqual(1688);
+    });
+
     test("Leech DR", () => {
 
         let stats = {
@@ -31,7 +45,21 @@ describe("Test Stat DRs", () => {
         }
         stats = applyDiminishingReturns(stats);
 
-        expect(stats.leech).toEqual(310);
+        expect(stats.leech).toEqual(306);
+    });
+
+    test("Leech DR test 2", () => {
+
+        let stats = {
+            crit: 300,
+            haste: 400,
+            versatility: 200,
+            mastery: 600,
+            leech: 437,
+        }
+        stats = applyDiminishingReturns(stats);
+
+        expect(Math.round(stats.leech)).toEqual(364);
     });
 });
 

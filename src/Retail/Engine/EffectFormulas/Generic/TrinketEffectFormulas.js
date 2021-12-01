@@ -4,6 +4,8 @@ import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
 import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
 import { getMasteryAddition } from "../Monk/MistweaverMiscFormulas"
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
+import { runCastSequence, allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 // import { STAT } from "../../../../General/Engine/STAT";
 import SPEC from "../../../../General/Engine/SPECS";
@@ -18,6 +20,21 @@ export function getDiminishedValue(statID, procValue, baseStat) {
   }
 
   return Math.round(procValue - (totalStat - currentStat));
+}
+
+export function getTrinketValue(trinketName, itemLevel) {
+  let activeTrinket = trinket_data.find((trinket) => trinket.name === trinketName);
+  if (trinketName === "Soulletting Ruby") {
+    const effect = activeTrinket.effects[0];
+    const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * effect.multiplier;
+    return trinketValue;
+  }
+  else {
+    const effect = activeTrinket.effects[0];
+    const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
+    return trinketValue;
+
+  }
 }
 
 export function getHighestStat(stats) {
@@ -50,7 +67,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     /* ---------------------------------------------------------------------------------------------- */
     /*                                         Error Handling                                         */
     /* ---------------------------------------------------------------------------------------------- */
-    console.log("no trinket found");
+    //console.log("no trinket found");
     return bonus_stats;
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -192,12 +209,18 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
   ) {
     let heal_effect = activeTrinket.effects[1];
     let crit_effect = activeTrinket.effects[0];
+    const critValue = getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.multiplier;
 
     bonus_stats.hps = (getProcessedValue(heal_effect.coefficient, heal_effect.table, itemLevel, heal_effect.efficiency) / heal_effect.cooldown) * player.getStatMultiplier("CRITVERS");
     
-    if (player.getSpec() === "Discipline Priest") {
-      bonus_stats.crit = (getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.duration * crit_effect.multiplier) / 180;
-      bonus_stats.crit *= castModel.getSpecialQuery("threeMinutes", "cooldownMult");
+    if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
+      // 
+      const boonSeq = buildRamp('Boon', 10, ["Soulletting Ruby"], setStats.haste, castModel.modelName, ['Rapture']);
+      const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, castModel.modelName, ['Rapture']);
+      const rubyRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Soulletting Ruby": critValue}, {});
+      
+      bonus_stats.hps = bonus_stats.hps + (rubyRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - crit_effect.discOverhealing);
+
     }
     else {
       bonus_stats.crit = (getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.duration * crit_effect.multiplier) / 120;
@@ -318,8 +341,19 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     effectName === "Flame of Battle"
   ) {
     let effect = activeTrinket.effects[0];
+    const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
 
-    bonus_stats.versatility = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
+    if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
+      const boonSeq = buildRamp('Boon', 10, ["Flame of Battle"], setStats.haste, castModel.modelName, ['Rapture']);
+      const fiendSeq = buildRamp('Fiend', 10, ["Flame of Battle"], setStats.haste, castModel.modelName, ['Rapture']);
+      const flameRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Flame of Battle": trinketValue}, {});
+      bonus_stats.hps = (flameRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
+    }
+    else {
+      bonus_stats.versatility = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
+    }
+
+    
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -361,12 +395,24 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     /*                                    Instructor's Divine Bell                                    */
     /* ---------------------------------------------------------------------------------------------- */
     effectName === "Instructor's Divine Bell"
+    
   ) {
-    // Test
-    let effect = activeTrinket.effects[0];
+    const effect = activeTrinket.effects[0];
+    const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
+    if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
+      const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell"], setStats.haste, castModel.modelName, ['Rapture']);
+      const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell"], setStats.haste, castModel.modelName, ['Rapture']);
+      const bellRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Instructor's Divine Bell": trinketValue}, {});
+      //console.log("Adding X HPS: " + (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing));
+      bonus_stats.hps = (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
+    }
+    else {
+      bonus_stats.mastery = (trinketValue * effect.duration) / effect.cooldown;
+      bonus_stats.mastery *= castModel.getSpecialQuery("ninetySeconds", "cooldownMult");
+    }
+    
 
-    bonus_stats.mastery = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
-    bonus_stats.mastery *= castModel.getSpecialQuery("ninetySeconds", "cooldownMult");
+
 
     // We need a better way to model interaction with spec cooldowns.
     //
@@ -623,12 +669,20 @@ else if (
   effectName === "Shadowed Orb of Torment"
 ) {
   const effect = activeTrinket.effects[0];
+  const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
 
   if (player.getSpec() === "Mistweaver Monk") {
     // Average mastery value is a poor approximation for Mistweaver who are likely to combine the trinket with a higher than normal stream of mastery events.
     const mastery = getProcessedValue(effect.coefficient, effect.table, itemLevel);
     const gusts = (contentType === "Raid") ? 41 : 22;
     bonus_stats.hps = getMasteryAddition(player.getInt(), mastery, player.getStatPerc("Crit"), player.getStatPerc("Vers")) * gusts / effect.cooldown;
+  }
+  else if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
+    const boonSeq = buildRamp('Boon', 10, ["Shadowed Orb of Torment"], setStats.haste, castModel.modelName, ['Rapture']);
+    const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, castModel.modelName, ['Rapture']);
+    const orbRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Shadowed Orb": trinketValue}, {});
+
+    bonus_stats.hps = (orbRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
   }
   else {
     const expectedEfficiency = 0.87; // Shadowed Orb is easy to mess up, but full value should be guaranteed in most cases.

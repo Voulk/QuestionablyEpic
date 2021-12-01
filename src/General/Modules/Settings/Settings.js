@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
+    marginRight: 4,
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
@@ -27,7 +28,8 @@ const useStyles = makeStyles((theme) => ({
   },
   details: {
     alignItems: "center",
-    padding: 8,
+    padding: 0,
+    marginTop: 5
   },
   column: {
     // flexBasis: "33.33%",
@@ -75,18 +77,26 @@ export default function Settings(props) {
 
   return (
     <div className={classes.root}>
-      <Accordion defaultExpanded={true} disabled={false} elevation={0}>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
+      <Accordion defaultExpanded={false} disabled={false} elevation={0}>
+        <AccordionSummary style={{ padding: 0 }} expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
           <div className={classes.column}>
-            <SettingsIcon style={{ marginRight: 4 }} />
+            <SettingsIcon style={{ marginRight: 4, width: 22, height: 22 }} />
             <Typography className={classes.heading}>{t("Settings.SettingsTitle")}</Typography>
           </div>
+          
         </AccordionSummary>
-        <Divider variant="middle" />
+        {/* <Divider variant="middle" /> */}
         <AccordionDetails className={classes.details}>
           {/* ---- If gameType = "Retail" show Retail Settings, otherwise show Burning Crusade Settings ---- */}
           {gameType === "Retail" ? (
-            <RetailSettings player={props.player} contentType={props.contentType} userSettings={props.userSettings} editSettings={props.editSettings} singleUpdate={props.singleUpdate} {...retailSettingsShown} />
+            <RetailSettings
+              player={props.player}
+              contentType={props.contentType}
+              userSettings={props.userSettings}
+              editSettings={props.editSettings}
+              singleUpdate={props.singleUpdate}
+              {...retailSettingsShown}
+            />
           ) : (
             <BurningCrusadeSettings player={props.player} userSettings={props.userSettings} editSettings={props.editSettings} {...burningCrusadeSettingsShown} />
           )}

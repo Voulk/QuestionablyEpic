@@ -55,7 +55,6 @@ export default class BCChart extends PureComponent {
 
     let arr = [];
     let cleanedArray = [];
-    console.log(data);
     Object.entries(data)
       .map((key) => key[1])
       .map((map2) => {
@@ -93,7 +92,7 @@ export default class BCChart extends PureComponent {
           data={cleanedArray}
           layout="vertical"
           margin={{
-            top: 20,
+            top: -15,
             right: 40,
             bottom: 20,
             left: 250,

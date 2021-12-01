@@ -2,7 +2,7 @@ import moment from "moment";
 import axios from "axios";
 import { damageExclusions, healerCooldownsDetailed } from "../Data/Data";
 import { externalsDB } from "../../../../Databases/ExternalsDB";
-
+import chroma from "chroma-js";
 // import i18n from "i18next";
 
 // Returns Seconds from 0 to Loglength
@@ -67,7 +67,6 @@ export function reduceTimestampshealth(array, playersInRaid) {
     return acc;
   }, {});
 
-  console.log(Object.entries(timestampSum));
   let newArrayOfObjects = [];
   Object.entries(timestampSum).map((key) => newArrayOfObjects.push(key[1]));
   return newArrayOfObjects;
@@ -252,7 +251,6 @@ export async function importCharacterIds(starttime, endtime, reportid) {
     .catch(function (error) {
       console.log(error);
     });
-  console.log(ids);
   return ids;
 }
 
@@ -586,6 +584,10 @@ export async function importSummaryData(starttime, endtime, reportid) {
   return summary;
 }
 
+export function colorGenerator(brewerCode, numberOfColours) {
+  return chroma.scale(brewerCode).colors(numberOfColours);
+}
+
 export async function importRaidHealth(starttime, endtime, reportid) {
   const APIdamagetaken = "https://www.warcraftlogs.com:443/v1/report/tables/resources/";
   const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
@@ -635,7 +637,6 @@ export async function importRaidHealth(starttime, endtime, reportid) {
       });
 
       const fightDurationInSeconds = moment(endtime - starttime).startOf("second");
-      console.log(fightDurationInSeconds);
       for (let i = 0; i <= fightDurationInSeconds; i += 1000) {
         entities.forEach((series) => {
           series.data[i] = series.data[i] !== undefined ? series.data[i] : series.lastValue;

@@ -9,7 +9,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Vision of Unending Growth",
-          slot: "Head, Feet or Legs",
+          slot: "Head, Feet, Legs (recommended)",
           desc: "Rejuvenation has a 2.5% chance to create a new Rejuvenation on a nearby target on tick.",
           droploc: "Torghast, Fracture Chambers, Layer 3+",
         },
@@ -79,7 +79,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Verdant Infusion",
-          slot: "Shoulders, Hands or Back",
+          slot: "Shoulders, Hands, Cape (recommended)",
           desc: "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 10s.",
           droploc: "Oranomonos, World Boss",
         },
@@ -149,7 +149,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Memory of the Mother Tree",
-          slot: "Legs or Wrist",
+          slot: "Legs (recommended), Wrist",
           desc: "Wild Growth has a 40% chance to cause your next Rejuv or Regrowth to apply to 3 additional allies.",
           droploc: "Lady Invera Darkvein, Castle Nathria",
         },
@@ -264,8 +264,8 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Kindred Affinity",
-          slot: "Neck or Shoulders",
-          desc: "You and your Kindred Spirit each gain a 8% secondary stat buff based on their Covenant. This bonus is doubled while the bond is Empowered.",
+          slot: "Neck, Shoulders (recommended)",
+          desc: "You and your Kindred Spirit each gain an 8% secondary stat buff based on their Covenant. This bonus is doubled while the bond is Empowered.",
           droploc: "Kyrian Renown 48",
           covenant: "Kyrian",
         },
@@ -350,7 +350,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Unbridled Swarm",
-          slot: "Chest or Wrist",
+          slot: "Chest, Wrist (recommended)",
           desc: "Adaptive Swarm has a 60% chance to split into two Swarms each time it jumps.",
           droploc: "Necrolord Renown 48",
           covenant: "Necrolord",
@@ -393,7 +393,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Celestial Spirits",
-          slot: "Legs or Feet",
+          slot: "Feet, Legs (recommended)",
           desc: "The cooldown of Convoke the Spirits is halved to one minute, but the number of spells only reduced by 25% (to 9 from 12).  Convoke the Spirits has an increased chance to cast Flourish.",
           droploc: "Night Fae Renown 48",
           covenant: "Night Fae",
@@ -437,7 +437,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Of Dusk and Dawn",
-          slot: "Head or Shoulders",
+          slot: "Head, Shoulders, Neck (recommended)",
           desc: "When you reach 5 Holy Power, gain 6% damage and healing for 12 seconds. When you reach 0 Holy Power, gain 4% DR for 12 seconds.",
           droploc: "Stone Legion Generals, Castle Nathria",
         },
@@ -580,7 +580,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Maraad's Dying Breath",
-          slot: "Chest or Finger",
+          slot: "Chest, Finger (recommended)",
           desc: "Light of Dawn causes your next Light of the Martyr to also heal your Beacon of Light. Each ally hit by LoD increases Light of the Martyr healing by 10%.",
           droploc: "Grand Proctor Beryllia, Sanguine Depths",
         },
@@ -656,7 +656,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Shock Barrier",
-          slot: "Legs or Feet",
+          slot: "Legs (recommended), Feet",
           desc: "Holy Shock protects the target for 18 seconds, absorbing 20% of it's healing every 6s. Maximum of 5 targets protected at a time.",
           droploc: "Torghast, Coldheart Interstitia, Layer 3+",
         },
@@ -693,7 +693,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "The Mad Paragon",
-          slot: "Waist or Feet",
+          slot: "Waist (recommended), Feet",
           desc: "Hammer of Wrath deals 30% additional damage and extends the duration of Wings by 1s.",
           droploc: "The Great Vault",
         },
@@ -803,7 +803,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Divine Resonance",
-          slot: "Legs or Back",
+          slot: "Cape, Legs (recommended)",
           desc: "After casting Divine Toll, you instantly cast Holy Shock every 5 sec. This effect lasts 30 sec.",
           droploc: "Kyrian",
           covenant: "Kyrian",
@@ -844,7 +844,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Duty-Bound Gavel",
-          slot: "Head, Shoulder, Finger",
+          slot: "Head, Shoulder, Finger (recommended)",
           desc: "Vanquisher's Hammer gains 1 additional charge. An additional cast of Word of Glory will automatically trigger Light of Dawn",
           droploc: "Necrolord",
           covenant: "Necrolord",
@@ -970,7 +970,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Clarity of Mind",
-          slot: "Chest or Finger",
+          slot: "Chest, Finger (recommended)",
           desc: "Spirit Shell increases the duration of active atonements by 3s and reduces mana costs by 30%. During Rapture, PW:S costs 20% less mana and applies 6s longer atonements.",
           droploc: "Sludgefist, Castle Nathria",
         },
@@ -1005,7 +1005,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Crystalline Reflection",
-          slot: "Shoulder or Hands",
+          slot: "Shoulder, Hands",
           desc: "Power Word Shield instantly heals the target for 42% SP, and reflects 20% of damage absorbed.",
           droploc: "Margrave Stradama, Plaguefall",
         },
@@ -1040,7 +1040,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Kiss of Death",
-          slot: "Legs or Feet",
+          slot: "Legs, Feet",
           desc: "Reduces Shadow Word: Death's cooldown by 8s and causes it's damage to trigger atonement when used on targets below 20% health.",
           droploc: "Torghast, Mort'regar, Layer 3+",
         },
@@ -1077,7 +1077,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "The Penitent One",
-          slot: "Feet or Back",
+          slot: "Feet, Back",
           desc: "Power Word: Radiance has a 60% chance to cause your next Penance to be free and fire 3 extra bolts.",
           droploc: "Torghast, The Soulforges, Layer 3+",
         },
@@ -1112,7 +1112,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Cauterizing Shadows",
-          slot: "Waist or Feet",
+          slot: "Waist, Feet",
           desc: "When Shadow Word: Pain expires on a target, 3 allies within 30 yards of the target are healed.",
           droploc: "Mordretha, Theater of Pain",
         },
@@ -1147,7 +1147,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Measured Contemplation",
-          slot: "Neck or Chest",
+          slot: "Neck, Chest",
           desc: "Every 15s that you do not cast Flash Heal / Shadow Mend, the healing of your next Flash Heal / Shadow Mend is increased by 50%. Stacks four times.",
           droploc: "The Great Vault",
         },
@@ -1183,7 +1183,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Twins of the Sun Priestess",
-          slot: "Head or Shoulder",
+          slot: "Head, Shoulder, Neck (recommended)",
           desc: "Power Infusion also grants you 100% of its effects when used on an ally.",
           droploc: "Stone Legion Generals, Castle Nathria",
         },
@@ -1410,8 +1410,8 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Spheres' Harmony",
-          slot: "Shoulder, Legs",
-          desc: "Boon of the Ascended's cooldown is reduced by 2 seconds, up to 60 sec, for each stack of Boon of the Ascended consumed by Ascended Eruption.",
+          slot: "Shoulder, Legs (recommended)",
+          desc: "Boon of the Ascended's cooldown is reduced by 3 seconds, up to 60 sec, for each stack of Boon of the Ascended consumed by Ascended Eruption.",
           droploc: "Kyrian",
           covenant: "Kyrian",
         },
@@ -1452,7 +1452,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
           en: {
             name: "Pallid Command",
             slot: "Feet, Finger",
-            desc: "Casting Unholy Nova summons a Brooding Cleric that gains 2% additional damage and healing each time an enemy affected by Unholy Transfusion is damaged by an ally, up to 100%. The Brooding Cleric serves you for 20 sec, healing an ally for (40% of Spell power).",
+            desc: "Casting Unholy Nova summons a Brooding Cleric that gains 2% additional healing each time an enemy affected by Unholy Transfusion is damaged by an ally, up to 100%. The Brooding Cleric heals allies for 20 seconds.",
             droploc: "Necrolord",
             covenant: "Necrolord",
           },
@@ -1534,7 +1534,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
               en: {
                 name: "Shadow Word: Manipulation",
                 slot: "Neck, Wrist",
-                desc: "Mindgames lasts an additional 3 sec and reverses an additional 10% damage or healing. When Mindgames can no longer reverse healing or damage, gain 3% Critical Strike for each second remaining for 10 sec.",
+                desc: "Mindgames lasts an additional 3 sec and reverses an additional 10% damage or healing. When Mindgames can no longer reverse healing or damage, gain 5% Critical Strike for each second remaining for 10 sec.",
                 droploc: "Venthyr",
                 covenant: "Venthyr",
               },
@@ -1577,7 +1577,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Earthen Harmony",
-          slot: "Chest or Back",
+          slot: "Chest, Back (recommended)",
           desc: "Earth Shield healing is increased by 150% if your earth shield target is below 75% health, and healing wave adds a stack of Earth Shield to your target.",
           droploc: "General Kaal, Sanguine Depths",
         },
@@ -1650,7 +1650,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Primal Tide Core",
-          slot: "Head or Hands",
+          slot: "Head, Hands (recommended)",
           desc: "Every 4 casts of Riptide also applies Riptide to another friendly target near your Riptide target.",
           droploc: "Torghast, The Soulforges, Layer 3+",
         },
@@ -1793,7 +1793,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Spiritwalker's Tidal Totem",
-          slot: "Legs or Back",
+          slot: "Legs (recommended), Back",
           desc: "After using Mana Tide Totem, the cast time of Healing Wave and Chain Heal is reduced by 50% and the mana cost by 25% for 10s.",
           droploc: "Huntsman Altimor, Castle Nathria",
         },
@@ -1836,7 +1836,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
         legendaryDetails = {
           en: {
             name: "Raging Vesper Vortex",
-            slot: "Legs, Feet",
+            slot: "Feet, Legs (recommended)",
             desc: "When 3 charges of Vesper Totem are consumed, Vesper Totem will radiate a 15 yd burst of (200% of Spell power) Arcane damage and (220% of Spell power) healing.",
             droploc: "Kyrian Renown 48",
             covenant: "Kyrian",
@@ -2041,7 +2041,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Invoker's Delight",
-          slot: "Head or Shoulder",
+          slot: "Head, Shoulder, Cape (recommended)",
           desc: "You gain 33% haste for 20 sec after summoning your Celestial.",
           droploc: "Stone Legion Generals, Castle Nathria",
         },
@@ -2076,7 +2076,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Ancient Teachings of the Monastery",
-          slot: "Wrist or Hands",
+          slot: "Wrist (recommended), Hands",
           desc: "After casting Essence Font, your Tiger Palm, Blackout Kick, and Rising Sun Kick heal an injured ally within 20 yards for 250% of the damage done. Lasts 15 sec.",
           droploc: "Devos, Spires of Ascension",
         },
@@ -2114,7 +2114,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Yu'lon's Whisper",
-          slot: "Shoulder or Finger",
+          slot: "Shoulder, Finger (recommended)",
           desc: "Activating Thunder Focus Tea causes you to exhale the breath of Yu'lon, healing up to 6 allies within 15 yards over 2 sec.",
           droploc: "Torghast, Fracture Chambers, Layer 3+",
         },
@@ -2189,7 +2189,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       legendaryDetails = {
         en: {
           name: "Tear of Morning",
-          slot: "Head or Waist",
+          slot: "Head, Waist (recommended)",
           desc:
             "Casting Vivify or Enveloping Mist on a target with Renewing Mist has a 10% chance to spread the Renewing Mist to another target. Your Vivify healing through Renewing Mist is increased by 20% and your Enveloping Mist also heals allies with Renewing Mist for 20% of its healing.",
           droploc: "Sludgefist, Castle Nathria",
@@ -2235,7 +2235,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
         legendaryDetails = {
           en: {
             name: "Call to Arms",
-            slot: "Legs, Feet",
+            slot: "Feet, Legs (recommended)",
             desc: "Weapons of Order calls forth Chi-Ji, the Red Crane / Yu'lon, the Jade Serpent to assist you for 12 sec.",
             droploc: "Kyrian Renown 48",
             covenant: "Kyrian",
@@ -2355,7 +2355,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
               legendaryDetails = {
                 en: {
                   name: "Sinister Teachings",
-                  slot: "Wrist, Finger",
+                  slot: "Wrist, Finger (recommended)",
                   desc: "Fallen Order summons 1 additional adept for 24 sec. While you have an active adept, your abilities that critically hit reduce the cooldown of Fallen Order by 5 sec.",
                   droploc: "Venthyr Renown 48",
                   covenant: "Venthyr",

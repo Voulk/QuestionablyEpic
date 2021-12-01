@@ -216,6 +216,7 @@ export const trinket_data = [
         multiplier: 1.62, // This assumes your average boss health is just under 50% which feels like a fair average.
         efficiency: 0.92, // Ruby is a tough trinket to maximise and it's average use case is far below it's maximum.
         cooldown: 120,
+        discOverhealing: 0.325,
       },
       {
         /* ------------------------ Healing portion when the spirit reaches you. ------------------------ */
@@ -393,6 +394,7 @@ export const trinket_data = [
         table: -7,
         duration: 9,
         cooldown: 90,
+        discOverhealing: 0.265,
       },
     ],
   },
@@ -410,6 +412,7 @@ export const trinket_data = [
         table: -1,
         duration: 12,
         cooldown: 90,
+        discOverhealing: 0.25,
       },
     ],
   },
@@ -873,6 +876,7 @@ export const trinket_data = [
         table: -7,
         duration: 40,
         cooldown: 120,
+        discOverhealing: 0.35,
       },
     ],
   },

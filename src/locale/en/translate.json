@@ -70,6 +70,7 @@
     "Error": "Error",
     "Burning Crusade": "Burning Crusade",
     "Shadowlands": "Shadowlands",
+    "Filter": "Filter",
 
     "Changelog": {
       "Header": "Changelog",
@@ -450,7 +451,9 @@
       "ItemErrorMsg": "Item Not Added. Ilvl Cap exceeded.",
       "ItemAdded": "Item Added!",
       "ItemDeleted": "Item Deleted!",
-      "DominationSocket": "Domination"
+      "DominationSocket": "Domination",
+      "Missives": "Missives",
+      "ItemBarTitle": "Add Items (Optional)"
     },
 
     "Races": {
@@ -812,6 +815,8 @@
       "Header": "Trinket Analysis",
       "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing."
     },
+
+    "SourceToggle": { "FilterTooltip": "You can filter the graph by toggling these buttons" },
 
     "DominationSocketAnalysis": {
       "Header": "Domination Socket Analysis",
