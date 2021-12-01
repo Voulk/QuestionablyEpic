@@ -283,11 +283,14 @@ export default function QELogImport(props) {
                 <FormControl variant="outlined" size="small" fullWidth disabled={currentBossID === "" ? true : false}>
                   <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
                   <Select value={selectValue} label={t("Name")} labelId="HealerSelector" onChange={(e) => playerSelectedHandler(e.target.value)} MenuProps={menuStyle}>
-                    {healerData.map((key, i) => (
-                      <MenuItem key={i} value={key.name}>
-                        <div style={{ color: classColoursJS(key.type) }}>{key.name}</div>
-                      </MenuItem>
-                    ))}
+                    {healerData.map((key, i) => {
+                      let lastItem = i + 1 === arr.length ? false : true;
+                      return (
+                        <MenuItem didiver={lastItem} key={i} value={key.name}>
+                          <div style={{ color: classColoursJS(key.type) }}>{key.name}</div>
+                        </MenuItem>
+                      );
+                    })}
                   </Select>
                 </FormControl>
               </Grid>

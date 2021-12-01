@@ -190,11 +190,14 @@ export default function WelcomeDialog(props) {
                 <FormControl className={classes.formRegion} variant="outlined" size="small" disabled={charName === "" ? true : false} label={t("Region")}>
                   <InputLabel id="NewClassSelector">{t("Region")}</InputLabel>
                   <Select label={t("Region")} value={regions} onChange={handleChangeRegion} MenuProps={menuStyle}>
-                    {Object.values(region).map((key, i) => (
-                      <MenuItem key={i} value={key}>
-                        {key}
-                      </MenuItem>
-                    ))}
+                    {Object.values(region).map((key, i) => {
+                      let lastItem = i + 1 === arr.length ? false : true;
+                      return (
+                        <MenuItem didiver={lastItem} key={i} value={key}>
+                          {key}
+                        </MenuItem>
+                      );
+                    })}
                   </Select>
                 </FormControl>
               </Grid>
@@ -225,21 +228,24 @@ export default function WelcomeDialog(props) {
                 <Select label={t("Select Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
                   {Object.getOwnPropertyNames(availableClasses)
                     .filter((filter) => gameType === availableClasses[filter].gameType)
-                    .map((key, i) => (
-                      <MenuItem key={i} value={key} style={{ color: classColoursJS(key) }}>
-                        <div style={{ display: "inline-flex" }}>
-                          {classIcons(key, {
-                            height: 20,
-                            width: 20,
-                            margin: "0px 5px 0px 5px",
-                            verticalAlign: "middle",
-                            borderRadius: 4,
-                            border: "1px solid rgba(255, 255, 255, 0.12)",
-                          })}
-                          {t("Classes." + key)}
-                        </div>
-                      </MenuItem>
-                    ))}
+                    .map((key, i) => {
+                      let lastItem = i + 1 === arr.length ? false : true;
+                      return (
+                        <MenuItem didiver={lastItem} key={i} value={key} style={{ color: classColoursJS(key) }}>
+                          <div style={{ display: "inline-flex" }}>
+                            {classIcons(key, {
+                              height: 20,
+                              width: 20,
+                              margin: "0px 5px 0px 5px",
+                              verticalAlign: "middle",
+                              borderRadius: 4,
+                              border: "1px solid rgba(255, 255, 255, 0.12)",
+                            })}
+                            {t("Classes." + key)}
+                          </div>
+                        </MenuItem>
+                      );
+                    })}
                 </Select>
               </FormControl>
             </Grid>
@@ -250,14 +256,17 @@ export default function WelcomeDialog(props) {
                 <Select label={t("Select Race")} value={selectedRace} onChange={handleChangeRace} MenuProps={menuStyle}>
                   {healClass === ""
                     ? ""
-                    : availableClasses[healClass.toString()].races.map((key, i) => (
-                        <MenuItem key={i} value={key}>
-                          <div style={{ display: "inline-flex" }}>
-                            {raceIcons(key)}
-                            {t(key)}
-                          </div>
-                        </MenuItem>
-                      ))}
+                    : availableClasses[healClass.toString()].races.map((key, i) => {
+                        let lastItem = i + 1 === arr.length ? false : true;
+                        return (
+                          <MenuItem didiver={lastItem} key={i} value={key}>
+                            <div style={{ display: "inline-flex" }}>
+                              {raceIcons(key)}
+                              {t(key)}
+                            </div>
+                          </MenuItem>
+                        );
+                      })}
                 </Select>
               </FormControl>
             </Grid>
@@ -268,21 +277,24 @@ export default function WelcomeDialog(props) {
                   <Select label={t("Covenant")} value={selectedCovenant} onChange={handleChangeCovenant} MenuProps={menuStyle}>
                     {healClass === ""
                       ? ""
-                      : ["kyrian", "necrolord", "night_fae", "venthyr"].map((key, i) => (
-                          <MenuItem key={i} value={key}>
-                            <div style={{ display: "inline-flex" }}>
-                              {covenantIcons(key, {
-                                height: 20,
-                                width: 20,
-                                margin: "0px 5px 0px 5px",
-                                verticalAlign: "middle",
-                                borderRadius: "4px",
-                                border: "1px solid rgba(255, 255, 255, 0.12)",
-                              })}
-                              {t(key)}
-                            </div>
-                          </MenuItem>
-                        ))}
+                      : ["kyrian", "necrolord", "night_fae", "venthyr"].map((key, i) => {
+                          let lastItem = i + 1 === arr.length ? false : true;
+                          return (
+                            <MenuItem didiver={lastItem} key={i} value={key}>
+                              <div style={{ display: "inline-flex" }}>
+                                {covenantIcons(key, {
+                                  height: 20,
+                                  width: 20,
+                                  margin: "0px 5px 0px 5px",
+                                  verticalAlign: "middle",
+                                  borderRadius: "4px",
+                                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                                })}
+                                {t(key)}
+                              </div>
+                            </MenuItem>
+                          );
+                        })}
                   </Select>
                 </FormControl>
               </Grid>

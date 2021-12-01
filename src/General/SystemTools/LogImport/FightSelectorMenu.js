@@ -70,34 +70,38 @@ class LogImport extends Component {
       fightsMapped[fight.boss + fight.difficulty] ? fightsMapped[fight.boss + fight.difficulty].push(fight) : (fightsMapped[fight.boss + fight.difficulty] = [fight]),
     );
 
-    let menuItems = filteredFights.map((fight, i) => (
-      <MenuItem
-        key={i}
-        onClick={() => {
-          this.props.clicker([
-            fight.start_time,
-            fight.end_time,
-            fight.name,
-            moment(fightDuration(fight.end_time, fight.start_time)).format("mm:ss"),
-            this.killwipe(fight.kill) + this.whichWipe(fight, fightsMapped),
-            fight.boss,
-            fight.difficulty,
-            fight.keystoneLevel,
-            fight.zoneID ||
-              bossList
-                .filter((obj) => {
-                  return obj.id === fight.boss;
-                })
-                .map((obj) => obj.zoneID),
-          ]);
-          this.props.close();
-          this.props.update(fight.start_time, fight.end_time, this.state.reportid);
-        }}
-      >
-        {bossIcons(fight.boss)}
-        {this.formatName(fight, fightsMapped)}
-      </MenuItem>
-    ));
+    let menuItems = filteredFights.map((fight, i, arr) => {
+      let lastItem = i + 1 === arr.length ? false : true;
+      return (
+        <MenuItem
+          didiver={lastItem}
+          key={i}
+          onClick={() => {
+            this.props.clicker([
+              fight.start_time,
+              fight.end_time,
+              fight.name,
+              moment(fightDuration(fight.end_time, fight.start_time)).format("mm:ss"),
+              this.killwipe(fight.kill) + this.whichWipe(fight, fightsMapped),
+              fight.boss,
+              fight.difficulty,
+              fight.keystoneLevel,
+              fight.zoneID ||
+                bossList
+                  .filter((obj) => {
+                    return obj.id === fight.boss;
+                  })
+                  .map((obj) => obj.zoneID),
+            ]);
+            this.props.close();
+            this.props.update(fight.start_time, fight.end_time, this.state.reportid);
+          }}
+        >
+          {bossIcons(fight.boss)}
+          {this.formatName(fight, fightsMapped)}
+        </MenuItem>
+      );
+    });
     return menuItems;
   }
 }

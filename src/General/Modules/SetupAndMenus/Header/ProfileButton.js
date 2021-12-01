@@ -128,7 +128,7 @@ export default function ProfileSelector(props) {
                       paddingBottom: 0,
                     }}
                   >
-                    <MenuItem onClick={(e) => handleClose(e)} component={props.component} to={props.to}>
+                    <MenuItem divider onClick={(e) => handleClose(e)} component={props.component} to={props.to}>
                       Account
                     </MenuItem>
                     <MenuItem onClick={(e) => handleLogout(e)}>Logout</MenuItem>

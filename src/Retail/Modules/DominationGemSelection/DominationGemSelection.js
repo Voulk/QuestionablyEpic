@@ -175,7 +175,7 @@ export default function DominationGemSelection(props) {
                   // Map the Domination DB filtered by the gem provided from the original mapping
                   //  in to a menu item for each rank for the select 
                   */}
-                  <MenuItem value={-1} style={{ justifyContent: "left", fontSize: 14, width: "100%" }}>
+                  <MenuItem divider value={-1} style={{ justifyContent: "left", fontSize: 14, width: "100%" }}>
                     <div style={{ height: 22, verticalAlign: "middle" }}>
                       <div>
                         {dominationGemDB.filter((filter) => filter.effect.name === key && filter.effect.rank === 0).map((key) => key.name[currentLanguage]) +
@@ -186,25 +186,28 @@ export default function DominationGemSelection(props) {
                   </MenuItem>
                   {dominationGemDB
                     .filter((filter) => filter.effect.name === key)
-                    .map((key, i) => (
-                      <MenuItem key={key.name + i} value={key.effect.rank} style={{ justifyContent: "left", fontSize: 14 }}>
-                        <a data-wowhead={"item=" + key.gemID}>
-                          <img
-                            style={{
-                              height: 20,
-                              width: 20,
-                              margin: "0px 5px 0px 0px",
-                              verticalAlign: "middle",
-                              borderRadius: 4,
-                              border: "1px solid rgba(255, 255, 255, 0.12)",
-                            }}
-                            src={getGemIcon(key.gemID)}
-                            alt={key.name[currentLanguage]}
-                          />
-                        </a>
-                        {key.name[currentLanguage] + " " + "(" + (key.effect.rank + 1) + ")"}
-                      </MenuItem>
-                    ))}
+                    .map((key, i, arr) => {
+                      let lastItem = i + 1 === arr.length ? false : true;
+                      return (
+                        <MenuItem divider={lastItem} key={key.name + i} value={key.effect.rank} style={{ justifyContent: "left", fontSize: 14 }}>
+                          <a data-wowhead={"item=" + key.gemID}>
+                            <img
+                              style={{
+                                height: 20,
+                                width: 20,
+                                margin: "0px 5px 0px 0px",
+                                verticalAlign: "middle",
+                                borderRadius: 4,
+                                border: "1px solid rgba(255, 255, 255, 0.12)",
+                              }}
+                              src={getGemIcon(key.gemID)}
+                              alt={key.name[currentLanguage]}
+                            />
+                          </a>
+                          {key.name[currentLanguage] + " " + "(" + (key.effect.rank + 1) + ")"}
+                        </MenuItem>
+                      );
+                    })}
                 </Select>
               </FormControl>
             </Grid>

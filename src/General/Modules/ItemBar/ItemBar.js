@@ -320,11 +320,14 @@ export default function ItemBar(props) {
                 MenuProps={menuStyle}
                 label={t("QuickCompare.ItemLevel")}
               >
-                {legendaryItemLevels.map((key) => (
-                  <MenuItem key={key} label={key} value={key}>
-                    {key}
-                  </MenuItem>
-                ))}
+                {legendaryItemLevels.map((key, i, arr) => {
+                  let lastItem = i + 1 === arr.length ? false : true;
+                  return (
+                    <MenuItem divider={lastItem} key={key} label={key} value={key}>
+                      {key}
+                    </MenuItem>
+                  );
+                })}
               </Select>
             </FormControl>
           ) : (
@@ -360,11 +363,14 @@ export default function ItemBar(props) {
               <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
                 <InputLabel id="missiveSelection">{t("QuickCompare.Missives")}</InputLabel>
                 <Select key={"missiveSelection"} labelId="missiveSelection" value={missives} onChange={itemMissivesChanged} MenuProps={menuStyle} label={t("QuickCompare.Missives")}>
-                  {legendaryStats.map((key) => (
-                    <MenuItem key={key} label={t(key)} value={key}>
-                      {t(key)}
-                    </MenuItem>
-                  ))}
+                  {legendaryStats.map((key, i, arr) => {
+                    let lastItem = i + 1 === arr.length ? false : true;
+                    return (
+                      <MenuItem divider={lastItem} key={key} label={t(key)} value={key}>
+                        {t(key)}
+                      </MenuItem>
+                    );
+                  })}
                 </Select>
               </FormControl>
             </Grid>
@@ -392,25 +398,28 @@ export default function ItemBar(props) {
                   >
                     {dominationGemDB
                       .filter((filter) => filter.type !== "Set Bonus")
-                      .map((key, i) => (
-                        <MenuItem key={key.gemID} label={key.name[currentLanguage]} value={key.gemID}>
-                          <a data-wowhead={"item=" + key.gemID}>
-                            <img
-                              style={{
-                                height: 20,
-                                width: 20,
-                                margin: "0px 5px 0px 0px",
-                                verticalAlign: "middle",
-                                borderRadius: 4,
-                                border: "1px solid rgba(255, 255, 255, 0.12)",
-                              }}
-                              src={process.env.PUBLIC_URL + "/Images/Icons/" + key.icon + ".jpg"}
-                              alt={key.name[currentLanguage]}
-                            />
-                          </a>
-                          {key.name[currentLanguage] + " " + "[" + (key.effect.rank + 1) + "]"}
-                        </MenuItem>
-                      ))}
+                      .map((key, i) => {
+                        let lastItem = i + 1 === arr.length ? false : true;
+                        return (
+                          <MenuItem divider={lastItem} key={key.gemID} label={key.name[currentLanguage]} value={key.gemID}>
+                            <a data-wowhead={"item=" + key.gemID}>
+                              <img
+                                style={{
+                                  height: 20,
+                                  width: 20,
+                                  margin: "0px 5px 0px 0px",
+                                  verticalAlign: "middle",
+                                  borderRadius: 4,
+                                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                                }}
+                                src={process.env.PUBLIC_URL + "/Images/Icons/" + key.icon + ".jpg"}
+                                alt={key.name[currentLanguage]}
+                              />
+                            </a>
+                            {key.name[currentLanguage] + " " + "[" + (key.effect.rank + 1) + "]"}
+                          </MenuItem>
+                        );
+                      })}
                   </Select>
                 </FormControl>
               </Grid>
@@ -425,7 +434,7 @@ export default function ItemBar(props) {
               <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
                 <InputLabel id="itemsocket">{t("QuickCompare.Socket")}</InputLabel>
                 <Select key={"sockets"} labelId="itemsocket" value={itemSocket} onChange={itemSocketChanged} MenuProps={menuStyle} label={t("QuickCompare.Socket")}>
-                  <MenuItem key={1} label={t("Yes")} value={true}>
+                  <MenuItem divider key={1} label={t("Yes")} value={true}>
                     {t("Yes")}
                   </MenuItem>
                   <MenuItem key={3} label={t("No")} value={false}>
@@ -454,10 +463,10 @@ export default function ItemBar(props) {
             >
               <InputLabel id="itemtertiary">{t("QuickCompare.Tertiary")}</InputLabel>
               <Select key={"TertiarySelect"} labelId="itemtertiary" value={itemTertiary} onChange={itemTertiaryChanged} MenuProps={menuStyle} label={t("QuickCompare.Tertiary")}>
-                <MenuItem key={"LeechItem"} label={t("Leech")} value={"Leech"}>
+                <MenuItem divider key={"LeechItem"} label={t("Leech")} value={"Leech"}>
                   {t("Leech")}
                 </MenuItem>
-                <MenuItem key={"AvoidanceItem"} label={t("Avoidance")} value={"Avoidance"}>
+                <MenuItem divider key={"AvoidanceItem"} label={t("Avoidance")} value={"Avoidance"}>
                   {t("Avoidance")}
                 </MenuItem>
                 <MenuItem key={"NoneItem"} label={t("None")} value={"None"} onClick={""}>

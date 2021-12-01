@@ -360,21 +360,24 @@ export default function CooldownPlanner(props) {
                   .filter((obj) => {
                     return obj.bossID === currentBoss && obj.cooldownPlannerActive === true;
                   })
-                  .map((key, i) => (
-                    <MenuItem key={i} value={key.guid}>
-                      <a data-wowhead={"spell=" + key.guid + "&domain=" + currentLanguage}>
-                        {bossAbilityIcons(key.guid, {
-                          height: 20,
-                          width: 20,
-                          margin: "0px 4px 0px 0px",
-                          verticalAlign: "middle",
-                          border: "1px solid #595959",
-                          borderRadius: 4,
-                        })}
-                      </a>
-                      {t("CooldownPlanner.BossAbilities." + key.guid)}
-                    </MenuItem>
-                  ))}
+                  .map((key, i, arr) => {
+                    let lastItem = i + 1 === arr.length ? false : true;
+                    return (
+                      <MenuItem didiver={lastItem} key={i} value={key.guid}>
+                        <a data-wowhead={"spell=" + key.guid + "&domain=" + currentLanguage}>
+                          {bossAbilityIcons(key.guid, {
+                            height: 20,
+                            width: 20,
+                            margin: "0px 4px 0px 0px",
+                            verticalAlign: "middle",
+                            border: "1px solid #595959",
+                            borderRadius: 4,
+                          })}
+                        </a>
+                        {t("CooldownPlanner.BossAbilities." + key.guid)}
+                      </MenuItem>
+                    );
+                  })}
               </Select>
             </FormControl>
           </ThemeProvider>
@@ -486,7 +489,7 @@ export default function CooldownPlanner(props) {
               >
                 {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
                 {ls.get("healerInfo").map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                  <MenuItem divider style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
                     <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
                       {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                       {key.name}
@@ -691,7 +694,7 @@ export default function CooldownPlanner(props) {
               >
                 {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
                 {ls.get("healerInfo").map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                  <MenuItem divider style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
                     <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
                       {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                       {key.name}
@@ -898,7 +901,7 @@ export default function CooldownPlanner(props) {
               >
                 {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
                 {ls.get("healerInfo").map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
+                  <MenuItem divider style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
                     <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
                       {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                       {key.name}
@@ -1101,7 +1104,7 @@ export default function CooldownPlanner(props) {
               >
                 {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
                 {ls.get("healerInfo").map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                  <MenuItem divider style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
                     <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
                       {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                       {key.name}
@@ -1303,7 +1306,7 @@ export default function CooldownPlanner(props) {
               >
                 {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
                 {ls.get("healerInfo").map((key, i) => (
-                  <MenuItem style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
+                  <MenuItem divider style={{ color: classColoursJS(key.class), display: "inline-flex" }} key={i} value={key.name}>
                     <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
                       {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                       {key.name}
@@ -1552,7 +1555,7 @@ export default function CooldownPlanner(props) {
                         MenuProps={menuStyle}
                       >
                         {rl
-                          .map((key, i) => (
+                          .map((key, i, arr) => (
                             <MenuItem key={"RS" + i} value={key.zoneID}>
                               {key.raidName}
                             </MenuItem>
@@ -1570,12 +1573,15 @@ export default function CooldownPlanner(props) {
                           .filter((obj) => {
                             return obj.zoneID === currentRaid;
                           })
-                          .map((key, i) => (
-                            <MenuItem key={"BS" + i} value={key.DungeonEncounterID}>
-                              {bossIcons(key.DungeonEncounterID)}
-                              {t("BossNames." + key.ID)}
-                            </MenuItem>
-                          ))}
+                          .map((key, i, arr) => {
+                            let lastItem = i + 1 === arr.length ? false : true;
+                            return (
+                              <MenuItem divider={lastItem} key={"BS" + i} value={key.DungeonEncounterID}>
+                                {bossIcons(key.DungeonEncounterID)}
+                                {t("BossNames." + key.ID)}
+                              </MenuItem>
+                            );
+                          })}
                       </Select>
                     </FormControl>
                   </Grid>
@@ -1586,9 +1592,14 @@ export default function CooldownPlanner(props) {
                     <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small" disabled={currentBoss === "" ? true : false}>
                       <InputLabel id="RaidSelector">{t("Select Plan")}</InputLabel>
                       <Select labelId="RaidSelector" label={t("Select Plan")} value={currentPlan} onChange={(e) => loadPlanData(currentBoss, e.target.value)}>
-                        {getBossPlanNames(currentBoss).map((key) => (
-                          <MenuItem value={key}>{key}</MenuItem>
-                        ))}
+                        {getBossPlanNames(currentBoss).map((key, i, arr) => {
+                          let lastItem = i + 1 === arr.length ? false : true;
+                          return (
+                            <MenuItem divider={lastItem} value={key}>
+                              {key}
+                            </MenuItem>
+                          );
+                        })}
                       </Select>
                     </FormControl>
                   </Grid>

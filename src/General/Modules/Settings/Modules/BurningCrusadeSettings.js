@@ -116,10 +116,10 @@ export default function BurningCrusadeSettings(props) {
             MenuProps={menuStyle}
             style={{ textAlign: "center", minWidth: 140 }}
           >
-            <MenuItem id="spiritShell" value={"Max Healing"} style={{ justifyContent: "center" }}>
+            <MenuItem divider id="spiritShell" value={"Max Healing"} style={{ justifyContent: "center" }}>
               {"Max Healing"}
             </MenuItem>
-            <MenuItem id="evangelism" value={"Standard"} style={{ justifyContent: "center" }}>
+            <MenuItem divider id="evangelism" value={"Standard"} style={{ justifyContent: "center" }}>
               {"Standard"}
             </MenuItem>
             <MenuItem id="evangelism" value={"Conservative"} style={{ justifyContent: "center" }}>
@@ -154,7 +154,7 @@ export default function BurningCrusadeSettings(props) {
             MenuProps={menuStyle}
             style={{ textAlign: "center", minWidth: 140 }}
           >
-            <MenuItem value={true} style={{ justifyContent: "center" }}>
+            <MenuItem divider value={true} style={{ justifyContent: "center" }}>
               {t("Yes")}
             </MenuItem>
             <MenuItem value={false} style={{ justifyContent: "center" }}>
@@ -189,7 +189,7 @@ export default function BurningCrusadeSettings(props) {
             onChange={(e) => updateMetaGem(e.target.value)}
             MenuProps={menuStyle}
           >
-            <MenuItem id="spiritShell" value={"Bracing Earthstorm Diamond"} style={{ justifyContent: "center" }}>
+            <MenuItem divider id="spiritShell" value={"Bracing Earthstorm Diamond"} style={{ justifyContent: "center" }}>
               {"Bracing Earthstorm Diamond"}
             </MenuItem>
             <MenuItem id="evangelism" value={"Insightful Earthstorm Diamond"} style={{ justifyContent: "center" }}>
@@ -216,7 +216,7 @@ export default function BurningCrusadeSettings(props) {
           MenuProps={menuStyle}
           style={{ textAlign: "center", minWidth: 160 }}
         >
-          <MenuItem value={true} style={{ justifyContent: "center" }}>
+          <MenuItem divider value={true} style={{ justifyContent: "center" }}>
             {"Yes"}
           </MenuItem>
           <MenuItem value={false} style={{ justifyContent: "center" }}>
@@ -250,13 +250,13 @@ export default function BurningCrusadeSettings(props) {
             MenuProps={menuStyle}
             style={{ textAlign: "center", minWidth: 140 }}
           >
-            <MenuItem value={"none"} style={{ justifyContent: "center" }}>
+            <MenuItem divider value={"none"} style={{ justifyContent: "center" }}>
               {"No Gems"}
             </MenuItem>
-            <MenuItem value={"basic"} style={{ justifyContent: "center" }}>
+            <MenuItem divider value={"basic"} style={{ justifyContent: "center" }}>
               {"Honor Hold"}
             </MenuItem>
-            <MenuItem value={"rare"} style={{ justifyContent: "center" }}>
+            <MenuItem divider value={"rare"} style={{ justifyContent: "center" }}>
               {"Rare (Blue)"}
             </MenuItem>
             <MenuItem value={"epic"} style={{ justifyContent: "center" }}>

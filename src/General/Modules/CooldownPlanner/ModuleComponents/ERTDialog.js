@@ -92,23 +92,23 @@ export default function ExportERTDialog(props) {
                   <FormControl style={{ minWidth: 200 }} variant="outlined" size="small">
                     <InputLabel id="ertFormat">{t("CooldownPlanner.TableLabels.TypeSelector")}</InputLabel>
                     <Select labelId="ertFormatSelector" value={ertType} onChange={(e) => setErtType(e.target.value)} label={t("CooldownPlanner.TableLabels.TypeSelector")} MenuProps={menuStyle}>
-                      <MenuItem key={"ert1"} value={"Time - No Icons"}>
+                      <MenuItem divider key={"ert1"} value={"Time - No Icons"}>
                         Time - No Icons
                       </MenuItem>
-                      <MenuItem key={"ert2"} value={"Time - Icons"}>
+                      <MenuItem divider key={"ert2"} value={"Time - Icons"}>
                         Time - Icons
                       </MenuItem>
-                      <MenuItem key={"ert3"} value={"Boss Ability - No Icons"}>
+                      <MenuItem divider key={"ert3"} value={"Boss Ability - No Icons"}>
                         Boss Ability - No Icons
                       </MenuItem>
-                      <MenuItem key={"ert4"} value={"Boss Ability - Icons"}>
+                      <MenuItem divider key={"ert4"} value={"Boss Ability - Icons"}>
                         Boss Ability - Icons
                       </MenuItem>
                       {/* 
-                        <MenuItem key={"ert5"} value={"Notes - Icons"}>
+                        <MenuItem divider key={"ert5"} value={"Notes - Icons"}>
                           Notes - Icons
                         </MenuItem>
-                        <MenuItem key={"ert6"} value={"Notes - No Icons"}>
+                        <MenuItem divider key={"ert6"} value={"Notes - No Icons"}>
                           Notes - No Icons
                         </MenuItem>
                         */}

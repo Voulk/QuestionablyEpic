@@ -174,7 +174,7 @@ export default function SoulbindNode(props) {
   const player = props.player;
   //let stat_bonus = trait.bonus_stats;
   const enhanced = props.player.getRenownLevel() >= trait.enhanced;
-  let stat_bonus = {}
+  let stat_bonus = {};
   if (!trait.slotted_id || trait.slotted_id == -1) stat_bonus = trait.bonus_stats;
   else stat_bonus = getConduitFormula(trait.slotted_id, player, props.contentType, player.getConduitLevel(trait.slotted_id), enhanced);
 
@@ -315,25 +315,28 @@ export default function SoulbindNode(props) {
           ) : (
             ""
           )}
-          {conduitCollection.map((conduit, i) => (
-            <MenuItem key={i} style={{ padding: "5px 10px" }} dense={true} onClick={() => setConduit(conduit.id)}>
-              <img
-                alt=""
-                width={24}
-                height={24}
-                src={conduit.icon}
-                style={{
-                  borderRadius: 3,
-                  borderWidth: "1px",
-                  borderStyle: "solid",
-                  borderColor: itemQuality("Uncommon"),
-                  padding: 0,
-                  marginRight: 5,
-                }}
-              />
-              {conduit.name}
-            </MenuItem>
-          ))}
+          {conduitCollection.map((conduit, i, arr) => {
+            let lastItem = i + 1 === arr.length ? false : true;
+            return (
+              <MenuItem didiver={lastItem} key={i} style={{ padding: "5px 10px" }} dense={true} onClick={() => setConduit(conduit.id)}>
+                <img
+                  alt=""
+                  width={24}
+                  height={24}
+                  src={conduit.icon}
+                  style={{
+                    borderRadius: 3,
+                    borderWidth: "1px",
+                    borderStyle: "solid",
+                    borderColor: itemQuality("Uncommon"),
+                    padding: 0,
+                    marginRight: 5,
+                  }}
+                />
+                {conduit.name}
+              </MenuItem>
+            );
+          })}
         </Menu>
       ) : (
         ""

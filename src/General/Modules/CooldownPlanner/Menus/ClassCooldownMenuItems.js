@@ -28,7 +28,7 @@ export default function ClassCooldownMenuItems(props) {
   // Paladin Cooldowns
   if (props === "HolyPaladin") {
     return [
-      <MenuItem value={31821} key={1}>
+      <MenuItem divider value={31821} key={1}>
         <a data-wowhead="spell=31821">
           <img
             style={{
@@ -43,7 +43,7 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         <Translation>{(t) => t("CooldownPlanner.ClassAbilities.31821")}</Translation>
       </MenuItem>,
-      <MenuItem value={31884} key={2}>
+      <MenuItem divider value={31884} key={2}>
         <a data-wowhead="spell=31884">
           <img
             style={{
@@ -58,7 +58,7 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         <Translation>{(t) => t("CooldownPlanner.ClassAbilities.31884")}</Translation>
       </MenuItem>,
-      <MenuItem value={316958} key={21}>
+      <MenuItem divider={false} value={316958} key={21}>
         <a data-wowhead="spell=316958">
           <img
             style={{
@@ -78,7 +78,7 @@ export default function ClassCooldownMenuItems(props) {
   // Restoration Druid
   if (props === "RestorationDruid") {
     return [
-      <MenuItem value={740} key={3}>
+      <MenuItem divider value={740} key={3}>
         <a data-wowhead="spell=740">
           <img
             style={{
@@ -93,7 +93,7 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         <Translation>{(t) => t("CooldownPlanner.ClassAbilities.740")}</Translation>
       </MenuItem>,
-      <MenuItem value={33891} key={4}>
+      <MenuItem divider value={33891} key={4}>
         <a data-wowhead="spell=33891">
           <img
             style={{
@@ -108,7 +108,7 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         <Translation>{(t) => t("CooldownPlanner.ClassAbilities.33891")}</Translation>
       </MenuItem>,
-      <MenuItem value={323764} key={100}>
+      <MenuItem divider value={323764} key={100}>
         <a data-wowhead="spell=323764">
           <img
             style={{
@@ -123,7 +123,7 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         <Translation>{(t) => t("CooldownPlanner.ClassAbilities.323764")}</Translation>
       </MenuItem>,
-      <MenuItem value={197721} key={100}>
+      <MenuItem divider={false} value={197721} key={100}>
         <a data-wowhead="spell=197721">
           <img
             style={{
@@ -143,7 +143,7 @@ export default function ClassCooldownMenuItems(props) {
   // Holy Priest
   if (props === "HolyPriest") {
     return [
-      <MenuItem value={265202} key={5}>
+      <MenuItem divider value={265202} key={5}>
         <a data-wowhead="spell=265202">
           <img
             style={{
@@ -158,7 +158,7 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         <Translation>{(t) => t("CooldownPlanner.ClassAbilities.265202")}</Translation>
       </MenuItem>,
-      <MenuItem value={64843} key={6}>
+      <MenuItem divider={false} value={64843} key={6}>
         <a data-wowhead="spell=64843">
           <img
             style={{
@@ -178,7 +178,7 @@ export default function ClassCooldownMenuItems(props) {
   // Discipline Priest
   if (props === "DisciplinePriest") {
     return [
-      <MenuItem value={246287} key={8}>
+      <MenuItem divider value={246287} key={8}>
         <a data-wowhead="spell=246287">
           <img
             style={{
@@ -193,7 +193,7 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         <Translation>{(t) => t("CooldownPlanner.ClassAbilities.246287")}</Translation>
       </MenuItem>,
-      <MenuItem value={62618} key={7}>
+      <MenuItem divider value={62618} key={7}>
         <a data-wowhead="spell=62618">
           <img
             style={{
@@ -208,7 +208,7 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         <Translation>{(t) => t("CooldownPlanner.ClassAbilities.62618")}</Translation>
       </MenuItem>,
-      <MenuItem value={109964} key={7}>
+      <MenuItem divider={false} value={109964} key={7}>
         <a data-wowhead="spell=109964">
           <img
             style={{
@@ -228,7 +228,7 @@ export default function ClassCooldownMenuItems(props) {
   // Restoration Shaman
   if (props === "RestorationShaman") {
     return [
-      <MenuItem value={108280} key={9}>
+      <MenuItem divider value={108280} key={9}>
         <a data-wowhead="spell=108280">
           <img
             style={{
@@ -243,7 +243,7 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         <Translation>{(t) => t("CooldownPlanner.ClassAbilities.108280")}</Translation>
       </MenuItem>,
-      <MenuItem value={98008} key={10}>
+      <MenuItem divider value={98008} key={10}>
         <a data-wowhead="spell=98008">
           <img
             style={{
@@ -258,7 +258,7 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         <Translation>{(t) => t("CooldownPlanner.ClassAbilities.98008")}</Translation>
       </MenuItem>,
-      <MenuItem value={207399} key={10}>
+      <MenuItem divider={false} value={207399} key={10}>
         <a data-wowhead="spell=207399">
           <img
             style={{

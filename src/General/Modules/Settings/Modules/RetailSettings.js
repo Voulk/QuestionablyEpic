@@ -172,7 +172,7 @@ export default function RetailSettings(props) {
               fullWidth
               style={{ textAlign: "center", minWidth: 120 }}
             >
-              <MenuItem value={true} style={{ justifyContent: "center" }}>
+              <MenuItem divider value={true} style={{ justifyContent: "center" }}>
                 {t("Yes")}
               </MenuItem>
               <MenuItem value={false} style={{ justifyContent: "center" }}>
@@ -208,11 +208,14 @@ export default function RetailSettings(props) {
             label={t("Settings.Retail.Setting5Title")}
             style={{ textAlign: "center", minWidth: 120 }}
           >
-            {specBuilds.map((key, i) => (
-              <MenuItem key={"playstyle" + i} id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
-                {key.modelName}
-              </MenuItem>
-            ))}
+            {specBuilds.map((key, i, arr) => {
+              let lastItem = i + 1 === arr.length ? false : true;
+              return (
+                <MenuItem divider={lastItem} key={"playstyle" + i} id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
+                  {key.modelName}
+                </MenuItem>
+              );
+            })}
           </TextField>
         </Tooltip>
       </Grid>
@@ -240,7 +243,7 @@ export default function RetailSettings(props) {
               label={t("Settings.Retail.Setting3Title")}
               style={{ textAlign: "center", minWidth: 120 }}
             >
-              <MenuItem value={true} style={{ justifyContent: "center" }}>
+              <MenuItem divider value={true} style={{ justifyContent: "center" }}>
                 {t("Yes")}
               </MenuItem>
               <MenuItem value={false} style={{ justifyContent: "center" }}>
@@ -277,7 +280,7 @@ export default function RetailSettings(props) {
             label={t("Settings.Retail.Setting4Title")}
             style={{ textAlign: "center", minWidth: 200 }}
           >
-            <MenuItem value={true} style={{ justifyContent: "center" }}>
+            <MenuItem divider value={true} style={{ justifyContent: "center" }}>
               {t("Yes")}
             </MenuItem>
             <MenuItem value={false} style={{ justifyContent: "center" }}>

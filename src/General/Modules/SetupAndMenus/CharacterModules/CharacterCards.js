@@ -499,11 +499,14 @@ export default function CharCards(props) {
                         <FormControl variant="outlined" size="small" fullWidth label={t("Region")} disabled={true}>
                           <InputLabel id="ClassSelector">{t("Region")}</InputLabel>
                           <Select value={region} onChange={handleChangeRegion} label={t("Region")} MenuProps={menuStyle}>
-                            {Object.values(regions).map((key, i) => (
-                              <MenuItem key={"charCardRegion" + i} value={key}>
-                                {key}
-                              </MenuItem>
-                            ))}
+                            {Object.values(regions).map((key, i, arr) => {
+                              let lastItem = i + 1 === arr.length ? false : true;
+                              return (
+                                <MenuItem divider={lastItem} key={"charCardRegion" + i} value={key}>
+                                  {key}
+                                </MenuItem>
+                              );
+                            })}
                           </Select>
                         </FormControl>
                       </Grid>
@@ -534,14 +537,17 @@ export default function CharCards(props) {
                         <FormControl variant="outlined" fullWidth size="small" label={t("Class")} disabled={true}>
                           <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
                           <Select label={t("Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
-                            {Object.getOwnPropertyNames(availableClasses).map((key, i) => (
-                              <MenuItem key={"charCardClass" + i} value={key}>
-                                <div style={{ display: "inline-flex" }}>
-                                  {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
-                                  {t("Classes." + key)}
-                                </div>
-                              </MenuItem>
-                            ))}
+                            {Object.getOwnPropertyNames(availableClasses).map((key, i, arr) => {
+                              let lastItem = i + 1 === arr.length ? false : true;
+                              return (
+                                <MenuItem divider={lastItem} key={"charCardClass" + i} value={key}>
+                                  <div style={{ display: "inline-flex" }}>
+                                    {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
+                                    {t("Classes." + key)}
+                                  </div>
+                                </MenuItem>
+                              );
+                            })}
                           </Select>
                         </FormControl>
                       </Grid>
@@ -552,14 +558,17 @@ export default function CharCards(props) {
                           <Select value={selectedRace} onChange={handleChangeRace} label={t("Race")} MenuProps={menuStyle}>
                             {healClass === ""
                               ? ""
-                              : availableClasses[healClass.toString()].races.map((key, i) => (
-                                  <MenuItem key={"charCardRace" + i} value={key}>
-                                    <div style={{ display: "inline-flex" }}>
-                                      {raceIcons(key)}
-                                      {t(key)}
-                                    </div>
-                                  </MenuItem>
-                                ))}
+                              : availableClasses[healClass.toString()].races.map((key, i, arr) => {
+                                  let lastItem = i + 1 === arr.length ? false : true;
+                                  return (
+                                    <MenuItem divider={lastItem} key={"charCardRace" + i} value={key}>
+                                      <div style={{ display: "inline-flex" }}>
+                                        {raceIcons(key)}
+                                        {t(key)}
+                                      </div>
+                                    </MenuItem>
+                                  );
+                                })}
                           </Select>
                         </FormControl>
                       </Grid>
@@ -570,21 +579,24 @@ export default function CharCards(props) {
                           <Select value={selectedCovenant} onChange={handleChangeCovenant} label={t("Covenant")} MenuProps={menuStyle}>
                             {healClass === ""
                               ? ""
-                              : ["kyrian", "venthyr", "necrolord", "night_fae"].map((key, i) => (
-                                  <MenuItem key={"charChardCovenant" + i} value={key}>
-                                    <div style={{ display: "inline-flex" }}>
-                                      {covenantIcons(key, {
-                                        height: 20,
-                                        width: 20,
-                                        margin: "0px 5px 0px 5px",
-                                        verticalAlign: "middle",
-                                        borderRadius: 4,
-                                        border: "1px solid rgba(255, 255, 255, 0.12)",
-                                      })}
-                                      {t(key)}
-                                    </div>
-                                  </MenuItem>
-                                ))}
+                              : ["kyrian", "venthyr", "necrolord", "night_fae"].map((key, i, arr) => {
+                                  let lastItem = i + 1 === arr.length ? false : true;
+                                  return (
+                                    <MenuItem divider={lastItem} key={"charChardCovenant" + i} value={key}>
+                                      <div style={{ display: "inline-flex" }}>
+                                        {covenantIcons(key, {
+                                          height: 20,
+                                          width: 20,
+                                          margin: "0px 5px 0px 5px",
+                                          verticalAlign: "middle",
+                                          borderRadius: 4,
+                                          border: "1px solid rgba(255, 255, 255, 0.12)",
+                                        })}
+                                        {t(key)}
+                                      </div>
+                                    </MenuItem>
+                                  );
+                                })}
                           </Select>
                         </FormControl>
                       </Grid>
@@ -743,7 +755,6 @@ export default function CharCards(props) {
                 /* -------------------------------------------------------------------------- */}
                 {gameType === "Retail" ? (
                   <Grid container spacing={1}>
-                    {/* map here */}
                     <Grid item xs={12} container>
                       {/* ------------------------------- Logs Header ------------------------------ */}
                       <Grid item xs={12}>

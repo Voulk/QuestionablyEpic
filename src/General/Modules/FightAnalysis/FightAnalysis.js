@@ -318,7 +318,9 @@ class FightAnalysis extends Component {
                                   MenuProps={menuStyle}
                                   label={"Cooldowns Shown"}
                                 >
-                                  <MenuItem value={true}>Log Cooldowns</MenuItem>
+                                  <MenuItem divider value={true}>
+                                    Log Cooldowns
+                                  </MenuItem>
                                   <MenuItem value={false}>Custom Cooldowns</MenuItem>
                                 </Select>
                               </FormControl>
@@ -335,7 +337,9 @@ class FightAnalysis extends Component {
                                   MenuProps={menuStyle}
                                   label={"Damage Type"}
                                 >
-                                  <MenuItem value={true}>Unmitigated Damage</MenuItem>
+                                  <MenuItem divider value={true}>
+                                    Unmitigated Damage
+                                  </MenuItem>
                                   <MenuItem value={false}>Mitigated Damage</MenuItem>
                                 </Select>
                               </FormControl>
@@ -351,7 +355,16 @@ class FightAnalysis extends Component {
                                   MenuProps={menuStyle}
                                   label={"Custom Cooldowns"}
                                 >
-                                  {this.state.currentBossID === null ? "" : this.getBossPlanNames(this.state.currentBossID).map((key) => <MenuItem value={key}>{key}</MenuItem>)}
+                                  {this.state.currentBossID === null
+                                    ? ""
+                                    : this.getBossPlanNames(this.state.currentBossID).map((key) => {
+                                        let lastItem = i + 1 === arr.length ? false : true;
+                                        return (
+                                          <MenuItem divider={lastItem} value={key}>
+                                            {key}
+                                          </MenuItem>
+                                        );
+                                      })}
                                 </Select>
                               </FormControl>
                             </Grid>
