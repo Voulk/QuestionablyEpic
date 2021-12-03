@@ -28,7 +28,6 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
-  adaptV4Theme,
 } from "@mui/material";
 import { createTheme, ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
 import makeStyles from "@mui/styles/makeStyles";
@@ -124,13 +123,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const deleteTheme = createTheme(
-  adaptV4Theme({
-    palette: {
-      primary: red,
-    },
-  }),
-);
+const deleteTheme = createTheme({
+  palette: {
+    primary: red,
+  },
+});
 
 TabPanel.propTypes = {
   children: PropTypes.node,

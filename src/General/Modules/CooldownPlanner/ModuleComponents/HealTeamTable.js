@@ -2,9 +2,9 @@ import React, { forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar } from "@material-table/core";
 //prettier-ignore
 import { AddBox, ArrowDownward, Check, ChevronLeft, ChevronRight, Clear, DeleteOutline, Edit, FilterList, FirstPage, LastPage, Remove, SaveAlt, Search, ViewColumn } from "@mui/icons-material";
-import { Select, TextField, InputLabel, FormControl, Paper, adaptV4Theme } from "@mui/material";
+import { Select, TextField, InputLabel, FormControl, Paper } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import classIcons from "../Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { classMenus } from "../Menus/ClassMenuItems";
@@ -25,28 +25,36 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const themeCooldownTable = createTheme(adaptV4Theme({
-  overrides: {
+const themeCooldownTable = createTheme({
+  components: {
     MuiTableCell: {
-      root: {
-        padding: "4px 4px 4px 4px",
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          padding: "4px 4px 4px 4px",
+        },
       },
     },
     MuiIconButton: {
-      root: {
-        padding: "4px",
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          padding: "4px",
+        },
       },
     },
     MuiToolbar: {
-      regular: {
-        "@media (min-width: 600px)": {
-          minHeight: "0px",
+      styleOverrides: {
+        regular: {
+          "@media (min-width: 600px)": {
+            minHeight: "0px",
+          },
+          minHeight: 0,
         },
-        minHeight: 0,
-      },
-      root: {
-        padding: "4px 4px 4px 4px",
-        color: "#c8b054",
+        root: {
+          padding: "4px 4px 4px 4px",
+          color: "#c8b054",
+        },
       },
     },
   },
@@ -55,7 +63,7 @@ const themeCooldownTable = createTheme(adaptV4Theme({
     primary: { main: "#d3bc47" },
     secondary: { main: "#e0e0e0" },
   },
-}));
+});
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),

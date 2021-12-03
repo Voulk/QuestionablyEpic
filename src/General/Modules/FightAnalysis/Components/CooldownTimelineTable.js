@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import MaterialTable, { MTableToolbar } from "@material-table/core";
 import { ArrowDownward, Clear, Search } from "@mui/icons-material";
 import moment from "moment";
-import { Divider, Paper, adaptV4Theme } from "@mui/material";
+import { Divider, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import abilityIcons from "../../CooldownPlanner/Functions/IconFunctions/AbilityIcons.js";
 import { localizationFR } from "locale/fr/TableLocale";

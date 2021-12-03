@@ -2,7 +2,7 @@ import React, { useEffect, forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "@material-table/core";
 import ClassCooldownMenuItems from "../Menus/ClassCooldownMenuItems";
 import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search } from "@mui/icons-material";
-import { Button, TextField, InputLabel, FormControl, Grow, MenuItem, Paper, Select, Grid, Typography, adaptV4Theme } from "@mui/material";
+import { Button, TextField, InputLabel, FormControl, Grow, MenuItem, Paper, Select, Grid, Typography } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
 import makeStyles from "@mui/styles/makeStyles";
 import moment from "moment";
@@ -46,6 +46,8 @@ const useStyles = makeStyles(() => ({
     },
   },
 }));
+
+// TODO: Rework the belolw themes
 
 const deleteTheme = createTheme({
   palette: {
@@ -107,23 +109,23 @@ const themeCooldownTable = createTheme({
   },
 });
 
-const selectMenu = createTheme(
-  adaptV4Theme({
-    overrides: {
-      MuiSelect: { selectMenu: { height: 20 } },
-      MuiInputBase: {
+const selectMenu = createTheme({
+  components: {
+    MuiSelect: { styleOverrides: { selectMenu: { height: 20 } } },
+    MuiInputBase: {
+      styleOverrides: {
         root: {
           fontSize: 12,
         },
       },
     },
-    palette: {
-      mode: "dark",
-      primary: { main: "#d3bc47" },
-      secondary: { main: "#e0e0e0" },
-    },
-  }),
-);
+  },
+  palette: {
+    mode: "dark",
+    primary: { main: "#d3bc47" },
+    secondary: { main: "#e0e0e0" },
+  },
+});
 
 const menuStyle = {
   style: { marginTop: 5 },
@@ -146,13 +148,15 @@ const menuStyle = {
   getContentAnchorEl: null,
 };
 
-const SearchFieldOverride = createTheme(
-  adaptV4Theme({
-    overrides: {
-      MuiOutlinedInput: {
+const SearchFieldOverride = createTheme({
+  components: {
+    MuiOutlinedInput: {
+      styleOverrides: {
         input: { padding: 10 },
       },
-      MuiToolbar: {
+    },
+    MuiToolbar: {
+      styleOverrides: {
         regular: {
           minHeight: 0,
           "@media (min-width: 600px)": {
@@ -161,13 +165,13 @@ const SearchFieldOverride = createTheme(
         },
       },
     },
-    palette: {
-      mode: "dark",
-      primary: { main: "#d3bc47" },
-      secondary: { main: "#e0e0e0" },
-    },
-  }),
-);
+  },
+  palette: {
+    mode: "dark",
+    primary: { main: "#d3bc47" },
+    secondary: { main: "#e0e0e0" },
+  },
+});
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),

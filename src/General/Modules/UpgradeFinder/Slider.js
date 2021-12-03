@@ -1,8 +1,6 @@
 import React from "react";
-import { createTheme, ThemeProvider, StyledEngineProvider, adaptV4Theme } from "@mui/material/styles";
 import makeStyles from "@mui/styles/makeStyles";
 import { Grid, Slider } from "@mui/material";
-import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -14,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function UpgradeFinderSlider(props) {
   const classes = useStyles();
-  // const { t, i18n } = useTranslation();
 
   function valuetext(value) {
     return `${value}`;

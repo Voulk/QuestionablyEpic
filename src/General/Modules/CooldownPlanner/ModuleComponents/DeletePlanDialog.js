@@ -1,30 +1,14 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import {
-  Button,
-  TextField,
-  DialogContent,
-  DialogTitle,
-  Dialog,
-  DialogActions,
-  Grid,
-  Typography,
-  adaptV4Theme,
-} from "@mui/material";
+import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Grid, Typography } from "@mui/material";
 import { red } from "@mui/material/colors";
 import { createTheme, ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
 
-// AddPlanDialog.propTypes = {
-//   handleAddPlanDialogClose: PropTypes.func.isRequired,
-//   openAddPlanDialog: PropTypes.bool.isRequired,
-//   enteredPlanName: PropTypes.string.isRequired,
-// };
-
-const deleteTheme = createTheme(adaptV4Theme({
+const deleteTheme = createTheme({
   palette: {
     primary: red,
   },
-}));
+});
 
 export default function AddPlanDialog(props) {
   const { handleDeletePlanDialogClose, currentPlan, openDeletePlanDialog, cooldownObject, currentBoss, setCurrentPlan, setData } = props;
@@ -43,7 +27,7 @@ export default function AddPlanDialog(props) {
     setCurrentPlan("");
     handleDeletePlanDialogClose(true);
     setdeleteChecker("");
-    setData([])
+    setData([]);
   };
 
   return (

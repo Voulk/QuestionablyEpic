@@ -25,7 +25,6 @@ const menuStyle = {
     vertical: "top",
     horizontal: "left",
   },
-  getContentAnchorEl: null,
 };
 
 export default function DominationGemSelection(props) {
