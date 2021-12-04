@@ -241,8 +241,8 @@ export default function QELogImport(props) {
         </Button>
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm" fullWidth={true}>
-        <DialogTitle id="form-dialog-title">{t("InsertLog.InsertLogHeader")}</DialogTitle>
-        <DialogContent>
+        <DialogTitle id="form-dialog-title" style={{paddingBottom: 8}}>{t("InsertLog.InsertLogHeader")}</DialogTitle>
+        <DialogContent style={{paddingTop: 8}}>
           <Grid container direction="row" spacing={1} justifyContent="space-between">
             <Grid item xs={12}>
               <LogLinkInput changed={reportidHandler} reportid={reportId} styleProps={{ fullWidth: true }} />
