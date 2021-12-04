@@ -1,31 +1,9 @@
 import React, { useState, useEffect } from "react";
-import makeStyles from "@mui/styles/makeStyles";
-import { MenuItem, Grid, FormControl, Select, Typography, Divider, TextField, Tooltip, InputLabel } from "@mui/material";
+import { MenuItem, Grid, FormControl, Select } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { setBounds } from "General/Engine/CONSTRAINTS";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { dominationGemDB } from "Databases/DominationGemDB";
 import { getGemIcon } from "General/Engine/ItemUtilities";
-
-const menuStyle = {
-  style: { marginTop: 5 },
-  MenuListProps: {
-    style: { paddingTop: 0, paddingBottom: 0 },
-  },
-  PaperProps: {
-    style: {
-      border: "1px solid rgba(255, 255, 255, 0.23)",
-    },
-  },
-  anchorOrigin: {
-    vertical: "bottom",
-    horizontal: "left",
-  },
-  transformOrigin: {
-    vertical: "top",
-    horizontal: "left",
-  },
-};
 
 export default function DominationGemSelection(props) {
   const { t, i18n } = useTranslation();
@@ -169,7 +147,7 @@ export default function DominationGemSelection(props) {
             <Grid item xs={12}>
               {/* ------------------------------------ Domination Delection ------------------------------------  */}
               <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
-                <Select labelId="groupValue" value={getDomGemvalue(key)} onChange={(e) => setDomGemState(key, e.target.value)} MenuProps={menuStyle} style={{ fontSize: 14, minHeight: 22 }}>
+                <Select labelId="groupValue" value={getDomGemvalue(key)} onChange={(e) => setDomGemState(key, e.target.value)} style={{ fontSize: 14, minHeight: 22 }}>
                   {/* 
                   // Map the Domination DB filtered by the gem provided from the original mapping
                   //  in to a menu item for each rank for the select 

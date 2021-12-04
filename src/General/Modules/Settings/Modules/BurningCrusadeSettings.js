@@ -1,30 +1,8 @@
 import React, { useState } from "react";
-import makeStyles from '@mui/styles/makeStyles';
-import { MenuItem, Grid, FormControl, Select, Typography, Divider, TextField, Tooltip } from "@mui/material";
+import makeStyles from "@mui/styles/makeStyles";
+import { MenuItem, Grid, Typography, TextField, Tooltip } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { setBounds } from "../../../Engine/CONSTRAINTS";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-
-const menuStyle = {
-  style: { marginTop: 5 },
-  MenuListProps: {
-    style: { paddingTop: 0, paddingBottom: 0 },
-  },
-  PaperProps: {
-    style: {
-      border: "1px solid rgba(255, 255, 255, 0.23)",
-    },
-  },
-  anchorOrigin: {
-    vertical: "bottom",
-    horizontal: "left",
-  },
-  transformOrigin: {
-    vertical: "top",
-    horizontal: "left",
-  },
-  getContentAnchorEl: null,
-};
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -107,13 +85,11 @@ export default function BurningCrusadeSettings(props) {
             labelId="slots"
             variant="outlined"
             size="small"
-            SelectProps={{ MenuProps: menuStyle, className: classes.select }}
             InputProps={{ variant: "outlined" }}
             fullWidth
             select
             value={manaProfile}
             onChange={(e) => updateManaProfile(e.target.value)}
-            MenuProps={menuStyle}
             style={{ textAlign: "center", minWidth: 140 }}
           >
             <MenuItem divider id="spiritShell" value={"Max Healing"} style={{ justifyContent: "center" }}>
@@ -142,7 +118,6 @@ export default function BurningCrusadeSettings(props) {
         >
           <TextField
             label={t("Settings.BurningCrusade.Setting1Title")}
-            SelectProps={{ MenuProps: menuStyle, className: classes.select }}
             InputProps={{ variant: "outlined" }}
             select
             variant="outlined"
@@ -151,7 +126,6 @@ export default function BurningCrusadeSettings(props) {
             labelId="groupValue"
             value={raidBuffs}
             onChange={(e) => updateRaidBuffs(e.target.value)}
-            MenuProps={menuStyle}
             style={{ textAlign: "center", minWidth: 140 }}
           >
             <MenuItem divider value={true} style={{ justifyContent: "center" }}>
@@ -179,7 +153,6 @@ export default function BurningCrusadeSettings(props) {
           <TextField
             label={t("Settings.BurningCrusade.Setting2Title")}
             labelId="slots"
-            SelectProps={{ MenuProps: menuStyle, className: classes.select }}
             InputProps={{ variant: "outlined" }}
             select
             variant="outlined"
@@ -187,7 +160,6 @@ export default function BurningCrusadeSettings(props) {
             fullWidth
             value={metaGem}
             onChange={(e) => updateMetaGem(e.target.value)}
-            MenuProps={menuStyle}
           >
             <MenuItem divider id="spiritShell" value={"Bracing Earthstorm Diamond"} style={{ justifyContent: "center" }}>
               {"Bracing Earthstorm Diamond"}
@@ -205,7 +177,6 @@ export default function BurningCrusadeSettings(props) {
         <TextField
           label={t("Settings.BurningCrusade.Setting3Title")}
           labelId="groupValue"
-          SelectProps={{ MenuProps: menuStyle, className: classes.select }}
           InputProps={{ variant: "outlined" }}
           select
           variant="outlined"
@@ -213,7 +184,6 @@ export default function BurningCrusadeSettings(props) {
           fullWidth
           value={autoEnchantItems}
           onChange={(e) => updateAutoEnchantItems(e.target.value)}
-          MenuProps={menuStyle}
           style={{ textAlign: "center", minWidth: 160 }}
         >
           <MenuItem divider value={true} style={{ justifyContent: "center" }}>
@@ -239,7 +209,6 @@ export default function BurningCrusadeSettings(props) {
           <TextField
             label={t("Settings.BurningCrusade.Setting4Title")}
             labelId="groupValue"
-            SelectProps={{ MenuProps: menuStyle, className: classes.select }}
             InputProps={{ variant: "outlined" }}
             select
             variant="outlined"
@@ -247,7 +216,6 @@ export default function BurningCrusadeSettings(props) {
             fullWidth
             value={gemRarity}
             onChange={(e) => updateGemRarity(e.target.value)}
-            MenuProps={menuStyle}
             style={{ textAlign: "center", minWidth: 140 }}
           >
             <MenuItem divider value={"none"} style={{ justifyContent: "center" }}>

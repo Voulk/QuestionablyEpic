@@ -9,27 +9,6 @@ import FightSelectorButton from "../../../SystemTools/LogImport/FightSelectorBut
 import bossIcons from "../../CooldownPlanner/Functions/IconFunctions/BossIcons";
 import { convertLogSpellOutput, convertLogStatOutput } from "../../Player/PlayerUtilities";
 
-const menuStyle = {
-  style: { marginTop: 5 },
-  MenuListProps: {
-    style: { paddingTop: 0, paddingBottom: 0 },
-  },
-  PaperProps: {
-    style: {
-      border: "1px solid rgba(255, 255, 255, 0.23)",
-    },
-  },
-  anchorOrigin: {
-    vertical: "bottom",
-    horizontal: "left",
-  },
-  transformOrigin: {
-    vertical: "top",
-    horizontal: "left",
-  },
-  getContentAnchorEl: null,
-};
-
 export default function QELogImport(props) {
   const { t, i18n } = useTranslation();
   const [open, setOpen] = React.useState(false);
@@ -282,11 +261,11 @@ export default function QELogImport(props) {
               <Grid item xs={12}>
                 <FormControl variant="outlined" size="small" fullWidth disabled={currentBossID === "" ? true : false}>
                   <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
-                  <Select value={selectValue} label={t("Name")} labelId="HealerSelector" onChange={(e) => playerSelectedHandler(e.target.value)} MenuProps={menuStyle}>
-                    {healerData.map((key, i) => {
+                  <Select value={selectValue} label={t("Name")} labelId="HealerSelector" onChange={(e) => playerSelectedHandler(e.target.value)}>
+                    {healerData.map((key, i, arr) => {
                       let lastItem = i + 1 === arr.length ? false : true;
                       return (
-                        <MenuItem didiver={lastItem} key={i} value={key.name}>
+                        <MenuItem divider={lastItem} key={i} value={key.name}>
                           <div style={{ color: classColoursJS(key.type) }}>{key.name}</div>
                         </MenuItem>
                       );

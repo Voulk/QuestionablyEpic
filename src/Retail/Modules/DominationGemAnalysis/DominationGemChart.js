@@ -1,4 +1,4 @@
-import React, { PureComponent, useState } from "react";
+import React, { PureComponent } from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip, Cell } from "recharts";
 // import chroma from "chroma-js";
 import { getGemIcon, getTranslatedDominationGem } from "General/Engine/ItemUtilities";
@@ -155,10 +155,10 @@ export default class DomChart extends PureComponent {
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
           {/* -------------------- Here we map a bar for each rank provided to the chart -------------------  */}
           {ranks.map((rank, i) => (
-            <Bar dataKey={rank} fill={barColours[ranks.length - i]} stackId="a">
+            <Bar key={"bar" + rank + i} dataKey={rank} fill={barColours[ranks.length - i]} stackId="a">
               {/* ------------------------------------ Hover effect for bar ------------------------------------  */}
               {data.map((entry, index) => (
-                <Cell fill={this.state.focusBar === index || this.state.mouseLeave ? barColours[ranks.length - i] : chroma(barColours[ranks.length - i]).alpha(0.2)} />
+                <Cell key={"cell" + index} fill={this.state.focusBar === index || this.state.mouseLeave ? barColours[ranks.length - i] : chroma(barColours[ranks.length - i]).alpha(0.2)} />
               ))}
             </Bar>
           ))}

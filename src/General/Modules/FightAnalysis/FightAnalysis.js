@@ -158,27 +158,6 @@ class FightAnalysis extends Component {
     /* ------------------------------------ Data Loading Spinner ------------------------------------ */
     let spinnershow = this.state.loadingcheck;
 
-    const menuStyle = {
-      style: { marginTop: 5 },
-      MenuListProps: {
-        style: { paddingTop: 0, paddingBottom: 0 },
-      },
-      PaperProps: {
-        style: {
-          border: "1px solid rgba(255, 255, 255, 0.23)",
-        },
-      },
-      anchorOrigin: {
-        vertical: "bottom",
-        horizontal: "left",
-      },
-      transformOrigin: {
-        vertical: "top",
-        horizontal: "left",
-      },
-      getContentAnchorEl: null,
-    };
-
     return (
       <div
         style={{
@@ -315,7 +294,6 @@ class FightAnalysis extends Component {
                                   labelId="cooldownsShown"
                                   value={this.state.customCooldownsOnChart}
                                   onChange={(e) => this.customCooldownsOnChart(e.target.value)}
-                                  MenuProps={menuStyle}
                                   label={"Cooldowns Shown"}
                                 >
                                   <MenuItem divider value={true}>
@@ -329,14 +307,7 @@ class FightAnalysis extends Component {
                               {/* TODO: Translate */}
                               <FormControl style={{ width: 200 }} variant="outlined" size="small">
                                 <InputLabel id="itemsocket">Custom Cooldowns</InputLabel>
-                                <Select
-                                  key={"damageType"}
-                                  labelId="damageType"
-                                  value={this.state.chartData}
-                                  onChange={(e) => this.changeDataSet(e.target.value)}
-                                  MenuProps={menuStyle}
-                                  label={"Damage Type"}
-                                >
+                                <Select key={"damageType"} labelId="damageType" value={this.state.chartData} onChange={(e) => this.changeDataSet(e.target.value)} label={"Damage Type"}>
                                   <MenuItem divider value={true}>
                                     Unmitigated Damage
                                   </MenuItem>
@@ -352,12 +323,11 @@ class FightAnalysis extends Component {
                                   labelId="itemsocket"
                                   value={this.state.customPlanSelected}
                                   onChange={(e) => this.handleCustomPlanChange(e.target.value, this.state.currentBossID)}
-                                  MenuProps={menuStyle}
                                   label={"Custom Cooldowns"}
                                 >
                                   {this.state.currentBossID === null
                                     ? ""
-                                    : this.getBossPlanNames(this.state.currentBossID).map((key) => {
+                                    : this.getBossPlanNames(this.state.currentBossID).map((key, i, arr) => {
                                         let lastItem = i + 1 === arr.length ? false : true;
                                         return (
                                           <MenuItem divider={lastItem} value={key}>

@@ -127,27 +127,6 @@ const selectMenu = createTheme({
   },
 });
 
-const menuStyle = {
-  style: { marginTop: 5 },
-  MenuListProps: {
-    style: { paddingTop: 0, paddingBottom: 0 },
-  },
-  PaperProps: {
-    style: {
-      border: "1px solid #6c6c6c",
-    },
-  },
-  anchorOrigin: {
-    vertical: "bottom",
-    horizontal: "left",
-  },
-  transformOrigin: {
-    vertical: "top",
-    horizontal: "left",
-  },
-  getContentAnchorEl: null,
-};
-
 const SearchFieldOverride = createTheme({
   components: {
     MuiOutlinedInput: {
@@ -358,7 +337,6 @@ export default function CooldownPlanner(props) {
                 onChange={(e) => {
                   props.onChange(e.target.value);
                 }}
-                MenuProps={menuStyle}
               >
                 {bossAbilities
                   .filter((obj) => {
@@ -367,7 +345,7 @@ export default function CooldownPlanner(props) {
                   .map((key, i, arr) => {
                     let lastItem = i + 1 === arr.length ? false : true;
                     return (
-                      <MenuItem didiver={lastItem} key={i} value={key.guid}>
+                      <MenuItem divider={lastItem} key={i} value={key.guid}>
                         <a data-wowhead={"spell=" + key.guid + "&domain=" + currentLanguage}>
                           {bossAbilityIcons(key.guid, {
                             height: 20,
@@ -489,7 +467,6 @@ export default function CooldownPlanner(props) {
                   /* --------------------------------------- Update the data -------------------------------------- */
                   props.onRowDataChange(data);
                 }}
-                MenuProps={menuStyle}
               >
                 {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
                 {ls.get("healerInfo").map((key, i) => (
@@ -583,7 +560,6 @@ export default function CooldownPlanner(props) {
                   onChange={(e) => {
                     props.onChange(e.target.value);
                   }}
-                  MenuProps={menuStyle}
                 >
                   {ClassCooldownMenuItems(data.class) || []}
                 </Select>
@@ -694,7 +670,6 @@ export default function CooldownPlanner(props) {
                   /* --------------------------------------- Update the data -------------------------------------- */
                   props.onRowDataChange(data);
                 }}
-                MenuProps={menuStyle}
               >
                 {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
                 {ls.get("healerInfo").map((key, i) => (
@@ -790,7 +765,6 @@ export default function CooldownPlanner(props) {
                   onChange={(e) => {
                     props.onChange(e.target.value);
                   }}
-                  MenuProps={menuStyle}
                 >
                   {ClassCooldownMenuItems(data.class1) || []}
                 </Select>
@@ -901,7 +875,6 @@ export default function CooldownPlanner(props) {
                   /* --------------------------------------- Update the data -------------------------------------- */
                   props.onRowDataChange(data);
                 }}
-                MenuProps={menuStyle}
               >
                 {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
                 {ls.get("healerInfo").map((key, i) => (
@@ -993,7 +966,6 @@ export default function CooldownPlanner(props) {
                   onChange={(e) => {
                     props.onChange(e.target.value);
                   }}
-                  MenuProps={menuStyle}
                 >
                   {ClassCooldownMenuItems(data.class2) || []}
                 </Select>
@@ -1104,7 +1076,6 @@ export default function CooldownPlanner(props) {
                   /* --------------------------------------- Update the data -------------------------------------- */
                   props.onRowDataChange(data);
                 }}
-                MenuProps={menuStyle}
               >
                 {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
                 {ls.get("healerInfo").map((key, i) => (
@@ -1195,7 +1166,6 @@ export default function CooldownPlanner(props) {
                   onChange={(e) => {
                     props.onChange(e.target.value);
                   }}
-                  MenuProps={menuStyle}
                 >
                   {ClassCooldownMenuItems(data.class3) || []}
                 </Select>
@@ -1306,7 +1276,6 @@ export default function CooldownPlanner(props) {
                   /* --------------------------------------- Update the data -------------------------------------- */
                   props.onRowDataChange(data);
                 }}
-                MenuProps={menuStyle}
               >
                 {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
                 {ls.get("healerInfo").map((key, i) => (
@@ -1399,7 +1368,6 @@ export default function CooldownPlanner(props) {
                   onChange={(e) => {
                     props.onChange(e.target.value);
                   }}
-                  MenuProps={menuStyle}
                 >
                   {ClassCooldownMenuItems(data.class4) || []}
                 </Select>
@@ -1556,7 +1524,6 @@ export default function CooldownPlanner(props) {
                         value={currentRaid}
                         onChange={(e) => setCurrentRaid(e.target.value)}
                         label={t("CooldownPlanner.TableLabels.RaidSelectorLabel")}
-                        MenuProps={menuStyle}
                       >
                         {rl
                           .map((key, i, arr) => (
@@ -1572,7 +1539,7 @@ export default function CooldownPlanner(props) {
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small" disabled={currentRaid === "" ? true : false}>
                       <InputLabel id="BossSelector">{t("CooldownPlanner.TableLabels.BossSelectorLabel")}</InputLabel>
-                      <Select labelId="BossSelector" value={currentBoss} onChange={(e) => changeBoss(e.target.value)} label={t("CooldownPlanner.TableLabels.BossSelectorLabel")} MenuProps={menuStyle}>
+                      <Select labelId="BossSelector" value={currentBoss} onChange={(e) => changeBoss(e.target.value)} label={t("CooldownPlanner.TableLabels.BossSelectorLabel")}>
                         {bossList
                           .filter((obj) => {
                             return obj.zoneID === currentRaid;

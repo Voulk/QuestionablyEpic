@@ -32,26 +32,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const menuStyle = {
-  style: { marginTop: 5 },
-  MenuListProps: {
-    style: { paddingTop: 0, paddingBottom: 0 },
-  },
-  PaperProps: {
-    style: {
-      border: "1px solid rgba(255, 255, 255, 0.23)",
-    },
-  },
-  anchorOrigin: {
-    vertical: "bottom",
-    horizontal: "left",
-  },
-  transformOrigin: {
-    vertical: "top",
-    horizontal: "left",
-  },
-};
-
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -312,14 +292,7 @@ export default function ItemBar(props) {
           {isItemShadowlandsLegendary ? (
             <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemID === "" || gameType !== "Retail" ? true : false}>
               <InputLabel id="itemLevelSelectLabel">{t("QuickCompare.ItemLevel")}</InputLabel>
-              <Select
-                key={"itemLevelSelect"}
-                labelId="itemLevelSelectLabel"
-                value={itemLevel}
-                onChange={(e) => itemLevelChanged(e.target.value)}
-                MenuProps={menuStyle}
-                label={t("QuickCompare.ItemLevel")}
-              >
+              <Select key={"itemLevelSelect"} labelId="itemLevelSelectLabel" value={itemLevel} onChange={(e) => itemLevelChanged(e.target.value)} label={t("QuickCompare.ItemLevel")}>
                 {legendaryItemLevels.map((key, i, arr) => {
                   let lastItem = i + 1 === arr.length ? false : true;
                   return (
@@ -362,7 +335,7 @@ export default function ItemBar(props) {
             <Grid item>
               <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
                 <InputLabel id="missiveSelection">{t("QuickCompare.Missives")}</InputLabel>
-                <Select key={"missiveSelection"} labelId="missiveSelection" value={missives} onChange={itemMissivesChanged} MenuProps={menuStyle} label={t("QuickCompare.Missives")}>
+                <Select key={"missiveSelection"} labelId="missiveSelection" value={missives} onChange={itemMissivesChanged} label={t("QuickCompare.Missives")}>
                   {legendaryStats.map((key, i, arr) => {
                     let lastItem = i + 1 === arr.length ? false : true;
                     return (
@@ -388,17 +361,10 @@ export default function ItemBar(props) {
                   disabled={itemLevel !== "" && isItemDomination ? false : true}
                 >
                   <InputLabel id="DominationSocket">{t("QuickCompare.DominationSocket")}</InputLabel>
-                  <Select
-                    key={"DominationSocket"}
-                    labelId="DominationSocket"
-                    value={dominationSocket}
-                    onChange={itemDominationChanged}
-                    MenuProps={menuStyle}
-                    label={t("QuickCompare.DominationSocket")}
-                  >
+                  <Select key={"DominationSocket"} labelId="DominationSocket" value={dominationSocket} onChange={itemDominationChanged} label={t("QuickCompare.DominationSocket")}>
                     {dominationGemDB
                       .filter((filter) => filter.type !== "Set Bonus")
-                      .map((key, i) => {
+                      .map((key, i, arr) => {
                         let lastItem = i + 1 === arr.length ? false : true;
                         return (
                           <MenuItem divider={lastItem} key={key.gemID} label={key.name[currentLanguage]} value={key.gemID}>
@@ -433,7 +399,7 @@ export default function ItemBar(props) {
             <Grid item>
               <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
                 <InputLabel id="itemsocket">{t("QuickCompare.Socket")}</InputLabel>
-                <Select key={"sockets"} labelId="itemsocket" value={itemSocket} onChange={itemSocketChanged} MenuProps={menuStyle} label={t("QuickCompare.Socket")}>
+                <Select key={"sockets"} labelId="itemsocket" value={itemSocket} onChange={itemSocketChanged} label={t("QuickCompare.Socket")}>
                   <MenuItem divider key={1} label={t("Yes")} value={true}>
                     {t("Yes")}
                   </MenuItem>
@@ -462,7 +428,7 @@ export default function ItemBar(props) {
               disabled={itemLevel === "" || isItemShadowlandsLegendary === true ? true : false}
             >
               <InputLabel id="itemtertiary">{t("QuickCompare.Tertiary")}</InputLabel>
-              <Select key={"TertiarySelect"} labelId="itemtertiary" value={itemTertiary} onChange={itemTertiaryChanged} MenuProps={menuStyle} label={t("QuickCompare.Tertiary")}>
+              <Select key={"TertiarySelect"} labelId="itemtertiary" value={itemTertiary} onChange={itemTertiaryChanged} label={t("QuickCompare.Tertiary")}>
                 <MenuItem divider key={"LeechItem"} label={t("Leech")} value={"Leech"}>
                   {t("Leech")}
                 </MenuItem>

@@ -43,27 +43,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const menuStyle = {
-  style: { marginTop: 5 },
-  MenuListProps: {
-    style: { paddingTop: 0, paddingBottom: 0 },
-  },
-  PaperProps: {
-    style: {
-      border: "1px solid rgba(255, 255, 255, 0.23)",
-    },
-  },
-  anchorOrigin: {
-    vertical: "bottom",
-    horizontal: "left",
-  },
-  transformOrigin: {
-    vertical: "top",
-    horizontal: "left",
-  },
-  getContentAnchorEl: null,
-};
-
 export default function WelcomeDialog(props) {
   const classes = useStyles();
   const { t } = useTranslation();
@@ -189,11 +168,11 @@ export default function WelcomeDialog(props) {
               <Grid item xs={4}>
                 <FormControl className={classes.formRegion} variant="outlined" size="small" disabled={charName === "" ? true : false} label={t("Region")}>
                   <InputLabel id="NewClassSelector">{t("Region")}</InputLabel>
-                  <Select label={t("Region")} value={regions} onChange={handleChangeRegion} MenuProps={menuStyle}>
-                    {Object.values(region).map((key, i) => {
+                  <Select label={t("Region")} value={regions} onChange={handleChangeRegion}>
+                    {Object.values(region).map((key, i, arr) => {
                       let lastItem = i + 1 === arr.length ? false : true;
                       return (
-                        <MenuItem didiver={lastItem} key={i} value={key}>
+                        <MenuItem divider={lastItem} key={i} value={key}>
                           {key}
                         </MenuItem>
                       );
@@ -225,13 +204,13 @@ export default function WelcomeDialog(props) {
             <Grid item xs={12}>
               <FormControl className={classes.formControl} variant="outlined" size="small" disabled={regions === "" ? true : false} label={t("Select Class")}>
                 <InputLabel id="NewClassSelector">{t("Select Class")}</InputLabel>
-                <Select label={t("Select Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
+                <Select label={t("Select Class")} value={healClass} onChange={handleChangeSpec}>
                   {Object.getOwnPropertyNames(availableClasses)
                     .filter((filter) => gameType === availableClasses[filter].gameType)
-                    .map((key, i) => {
+                    .map((key, i, arr) => {
                       let lastItem = i + 1 === arr.length ? false : true;
                       return (
-                        <MenuItem didiver={lastItem} key={i} value={key} style={{ color: classColoursJS(key) }}>
+                        <MenuItem divider={lastItem} key={i} value={key} style={{ color: classColoursJS(key) }}>
                           <div style={{ display: "inline-flex" }}>
                             {classIcons(key, {
                               height: 20,
@@ -253,13 +232,13 @@ export default function WelcomeDialog(props) {
             <Grid item xs={12}>
               <FormControl disabled={healClass === "" ? true : false} className={classes.formControl} variant="outlined" size="small" label={t("Select Race")}>
                 <InputLabel id="NewRaceSelector">{t("Select Race")}</InputLabel>
-                <Select label={t("Select Race")} value={selectedRace} onChange={handleChangeRace} MenuProps={menuStyle}>
+                <Select label={t("Select Race")} value={selectedRace} onChange={handleChangeRace}>
                   {healClass === ""
                     ? ""
-                    : availableClasses[healClass.toString()].races.map((key, i) => {
+                    : availableClasses[healClass.toString()].races.map((key, i, arr) => {
                         let lastItem = i + 1 === arr.length ? false : true;
                         return (
-                          <MenuItem didiver={lastItem} key={i} value={key}>
+                          <MenuItem divider={lastItem} key={i} value={key}>
                             <div style={{ display: "inline-flex" }}>
                               {raceIcons(key)}
                               {t(key)}
@@ -274,13 +253,13 @@ export default function WelcomeDialog(props) {
               <Grid item xs={12}>
                 <FormControl disabled={healClass === "" ? true : false} className={classes.formControl} variant="outlined" size="small" label={t("Covenant")}>
                   <InputLabel id="NewCovSelector">{t("Covenant")}</InputLabel>
-                  <Select label={t("Covenant")} value={selectedCovenant} onChange={handleChangeCovenant} MenuProps={menuStyle}>
+                  <Select label={t("Covenant")} value={selectedCovenant} onChange={handleChangeCovenant}>
                     {healClass === ""
                       ? ""
-                      : ["kyrian", "necrolord", "night_fae", "venthyr"].map((key, i) => {
+                      : ["kyrian", "necrolord", "night_fae", "venthyr"].map((key, i, arr) => {
                           let lastItem = i + 1 === arr.length ? false : true;
                           return (
-                            <MenuItem didiver={lastItem} key={i} value={key}>
+                            <MenuItem divider={lastItem} key={i} value={key}>
                               <div style={{ display: "inline-flex" }}>
                                 {covenantIcons(key, {
                                   height: 20,

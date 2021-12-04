@@ -86,7 +86,6 @@ const menuStyle = {
     vertical: "top",
     horizontal: "left",
   },
-  getContentAnchorEl: null,
 };
 
 /* ---------------------------- Returns Item Quality colour from prop --------------------------- */
@@ -303,7 +302,6 @@ export default function SoulbindNode(props) {
           style={menuStyle}
           anchorEl={anchorEl}
           keepMounted
-          getContentAnchorEl={null}
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
@@ -318,7 +316,7 @@ export default function SoulbindNode(props) {
           {conduitCollection.map((conduit, i, arr) => {
             let lastItem = i + 1 === arr.length ? false : true;
             return (
-              <MenuItem didiver={lastItem} key={i} style={{ padding: "5px 10px" }} dense={true} onClick={() => setConduit(conduit.id)}>
+              <MenuItem divider={lastItem} key={i} style={{ padding: "5px 10px" }} dense={true} onClick={() => setConduit(conduit.id)}>
                 <img
                   alt=""
                   width={24}

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Paper, Typography, Grid, Tooltip, Select, MenuItem } from "@mui/material";
+import { Paper, Typography, Grid, Tooltip } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Item from "../Player/Item";
 import BCItem from "../Player/BCItem";
@@ -17,7 +17,6 @@ import SourceToggle from "./SourceToggle";
 import ToggleButton from "@mui/material/ToggleButton";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,27 +50,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const menuStyle = {
-  style: { marginTop: 5 },
-  MenuListProps: {
-    style: { paddingTop: 0, paddingBottom: 0 },
-  },
-  PaperProps: {
-    style: {
-      border: "1px solid rgba(255, 255, 255, 0.23)",
-    },
-  },
-  anchorOrigin: {
-    vertical: "bottom",
-    horizontal: "left",
-  },
-  transformOrigin: {
-    vertical: "top",
-    horizontal: "left",
-  },
-  getContentAnchorEl: null,
-};
-
 const getTrinketAtItemLevel = (id, itemLevel, player, contentType, gameType) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
   let itemAllocations = getItemAllocations(id);
@@ -102,10 +80,6 @@ const getHighestTrinketScore = (db, trinket, gameType) => {
   return trinket["i" + highestLevel];
 };
 
-// const editSettings = (setting, newValue) => {
-//   userSettings[setting] = newValue;
-// };
-
 export default function TrinketAnalysis(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
@@ -120,8 +94,6 @@ export default function TrinketAnalysis(props) {
     // "Legion Timewalking"
   ]);
   const [theme, setTheme] = React.useState(false);
-
-  // const availableThemes = ["candidate1", "candidate2", "candidate3", "candidate4", "candidate5", "candidate6", "candidate7", "IBM", "wong", "candidate10", "candidate11", "candidate12", "candidate13"];
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                    Trinket Source Filtering                                    */
@@ -332,11 +304,6 @@ export default function TrinketAnalysis(props) {
           </Typography>
         </Grid>
 
-        {/* <Grid item xs={12}>
-          <Typography color="primary" variant="subtitle2" align="center" style={{ paddingBottom: 8 }}>
-            {"Current Playstyle selected: " + props.player.getActiveModel(contentType).modelName + " - " + contentType}
-          </Typography>
-        </Grid> */}
         <Grid item xs={12}>
           <HelpText blurb={helpBlurb} text={helpText} expanded={false} />
         </Grid>
@@ -354,18 +321,7 @@ export default function TrinketAnalysis(props) {
             autoSocket={true}
           />
         </Grid>
-        {/* <Grid item xs={12}>
-          <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} />
-        </Grid> */}
-        {/* {gameType === "Retail" ? (
-          <Grid item xs={12}>
-            <Grid item>
-              <MetricToggle metric={metric} setMetric={setMetric} />
-            </Grid>
-          </Grid>
-        ) : (
-          ""
-        )} */}
+
         <Grid item xs={12}>
           <Grid container spacing={0} justifyContent="center">
             <Grid item xs={12}>

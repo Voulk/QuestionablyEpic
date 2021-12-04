@@ -74,7 +74,7 @@ class LogImport extends Component {
       let lastItem = i + 1 === arr.length ? false : true;
       return (
         <MenuItem
-          didiver={lastItem}
+          divider={lastItem}
           key={i}
           onClick={() => {
             this.props.clicker([

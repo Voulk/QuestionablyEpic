@@ -5,27 +5,6 @@ import { useTranslation } from "react-i18next";
 import { setBounds } from "../../../Engine/CONSTRAINTS";
 import { getGemIcon } from "../../../Engine/ItemUtilities";
 
-const menuStyle = {
-  style: { marginTop: 5 },
-  MenuListProps: {
-    style: { paddingTop: 0, paddingBottom: 0 },
-  },
-  PaperProps: {
-    style: {
-      border: "1px solid rgba(255, 255, 255, 0.23)",
-    },
-  },
-  anchorOrigin: {
-    vertical: "bottom",
-    horizontal: "left",
-  },
-  transformOrigin: {
-    vertical: "top",
-    horizontal: "left",
-  },
-  getContentAnchorEl: null,
-};
-
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -37,9 +16,6 @@ const useStyles = makeStyles((theme) => ({
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
-  },
-  select: {
-    fontSize: theme.typography.pxToRem(16),
   },
 }));
 
@@ -164,7 +140,6 @@ export default function RetailSettings(props) {
               label={t("Settings.Retail.Setting1Title")}
               value={groupValue}
               onChange={(e) => updateGroupValue(e.target.value)}
-              SelectProps={{ MenuProps: menuStyle, className: classes.select }}
               InputProps={{ variant: "outlined" }}
               select
               variant="outlined"
@@ -197,7 +172,6 @@ export default function RetailSettings(props) {
         >
           <TextField
             className={classes.select}
-            SelectProps={{ MenuProps: menuStyle, className: classes.select }}
             InputProps={{ variant: "outlined" }}
             select
             variant="outlined"
@@ -233,7 +207,6 @@ export default function RetailSettings(props) {
             <TextField
               className={classes.select}
               value={autoSocketValue}
-              SelectProps={{ MenuProps: menuStyle, className: classes.select }}
               InputProps={{ variant: "outlined" }}
               select
               variant="outlined"
@@ -269,7 +242,6 @@ export default function RetailSettings(props) {
             label={t("Settings.Retail.Setting4Title")}
             className={classes.select}
             key={"DominationSocket"}
-            SelectProps={{ MenuProps: menuStyle, className: classes.select }}
             InputProps={{ variant: "outlined" }}
             select
             variant="outlined"

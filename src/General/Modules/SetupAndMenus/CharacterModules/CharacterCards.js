@@ -171,25 +171,6 @@ const CharTab = withStyles((theme) => ({
   },
   selected: {},
 }))((props) => <Tab {...props} />);
-const menuStyle = {
-  MenuListProps: {
-    style: { paddingTop: 0, paddingBottom: 0 },
-  },
-  PaperProps: {
-    style: {
-      border: "1px solid rgba(255, 255, 255, 0.23)",
-    },
-  },
-  anchorOrigin: {
-    vertical: "bottom",
-    horizontal: "left",
-  },
-  transformOrigin: {
-    vertical: "top",
-    horizontal: "left",
-  },
-  getContentAnchorEl: null,
-};
 
 export default function CharCards(props) {
   const classes = useStyles();
@@ -495,7 +476,7 @@ export default function CharCards(props) {
                       <Grid item xs={3}>
                         <FormControl variant="outlined" size="small" fullWidth label={t("Region")} disabled={true}>
                           <InputLabel id="ClassSelector">{t("Region")}</InputLabel>
-                          <Select value={region} onChange={handleChangeRegion} label={t("Region")} MenuProps={menuStyle}>
+                          <Select value={region} onChange={handleChangeRegion} label={t("Region")}>
                             {Object.values(regions).map((key, i, arr) => {
                               let lastItem = i + 1 === arr.length ? false : true;
                               return (
@@ -533,7 +514,7 @@ export default function CharCards(props) {
                       <Grid item xs={12}>
                         <FormControl variant="outlined" fullWidth size="small" label={t("Class")} disabled={true}>
                           <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
-                          <Select label={t("Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
+                          <Select label={t("Class")} value={healClass} onChange={handleChangeSpec}>
                             {Object.getOwnPropertyNames(availableClasses).map((key, i, arr) => {
                               let lastItem = i + 1 === arr.length ? false : true;
                               return (
@@ -552,7 +533,7 @@ export default function CharCards(props) {
                       <Grid item xs={12}>
                         <FormControl disabled={healClass === "" ? true : false} fullWidth variant="outlined" size="small" label={t("Race")}>
                           <InputLabel id="RaceSelector">{t("Race")}</InputLabel>
-                          <Select value={selectedRace} onChange={handleChangeRace} label={t("Race")} MenuProps={menuStyle}>
+                          <Select value={selectedRace} onChange={handleChangeRace} label={t("Race")}>
                             {healClass === ""
                               ? ""
                               : availableClasses[healClass.toString()].races.map((key, i, arr) => {
@@ -573,7 +554,7 @@ export default function CharCards(props) {
                       <Grid item xs={12}>
                         <FormControl disabled={healClass === "" ? true : false} fullWidth variant="outlined" size="small" label={t("Covenant")}>
                           <InputLabel id="CovSelector">{t("Covenant")}</InputLabel>
-                          <Select value={selectedCovenant} onChange={handleChangeCovenant} label={t("Covenant")} MenuProps={menuStyle}>
+                          <Select value={selectedCovenant} onChange={handleChangeCovenant} label={t("Covenant")}>
                             {healClass === ""
                               ? ""
                               : ["kyrian", "venthyr", "necrolord", "night_fae"].map((key, i, arr) => {

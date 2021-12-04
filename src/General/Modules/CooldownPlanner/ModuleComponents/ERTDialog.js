@@ -17,27 +17,6 @@ export default function ExportERTDialog(props) {
     setOpen(false);
   };
 
-  const menuStyle = {
-    style: { marginTop: 5 },
-    MenuListProps: {
-      style: { paddingTop: 0, paddingBottom: 0 },
-    },
-    PaperProps: {
-      style: {
-        border: "1px solid rgba(255, 255, 255, 0.23)",
-      },
-    },
-    anchorOrigin: {
-      vertical: "bottom",
-      horizontal: "left",
-    },
-    transformOrigin: {
-      vertical: "top",
-      horizontal: "left",
-    },
-    getContentAnchorEl: null,
-  };
-
   const ertFormat = (ertType) => {
     let data = "";
     const bossID = bossList
@@ -91,7 +70,7 @@ export default function ExportERTDialog(props) {
                 <Grid item xs="auto">
                   <FormControl style={{ minWidth: 200 }} variant="outlined" size="small">
                     <InputLabel id="ertFormat">{t("CooldownPlanner.TableLabels.TypeSelector")}</InputLabel>
-                    <Select labelId="ertFormatSelector" value={ertType} onChange={(e) => setErtType(e.target.value)} label={t("CooldownPlanner.TableLabels.TypeSelector")} MenuProps={menuStyle}>
+                    <Select labelId="ertFormatSelector" value={ertType} onChange={(e) => setErtType(e.target.value)} label={t("CooldownPlanner.TableLabels.TypeSelector")}>
                       <MenuItem divider key={"ert1"} value={"Time - No Icons"}>
                         Time - No Icons
                       </MenuItem>

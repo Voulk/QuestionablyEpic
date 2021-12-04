@@ -1,25 +1,20 @@
 import React, { useEffect } from "react";
 import { Paper, Typography, Grid } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreItem, getTranslatedItemName, getItemDB } from "General/Engine/ItemUtilities";
 import DomChart from "./DominationGemChart";
 import HelpText from "../../../General/Modules/SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
 import { dominationGemDB } from "Databases/DominationGemDB";
 import { getDominationGemEffect } from "Retail/Engine/EffectFormulas/Generic/GenericEffectFormulas";
 import MetricToggle from "./MetricToggle";
 import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
 import userSettings from "General/Modules/Settings/SettingsObject";
-// import Settings from "../Settings/Settings";
-// import userSettings from "../Settings/SettingsObject";
-
-// [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down("sm")]: {
       margin: "auto",
       width: "85%",
       justifyContent: "space-between",
@@ -94,10 +89,6 @@ const getHighestTrinketScore = (db, trinket, gameType) => {
   return trinket["i" + highestLevel];
 };
 
-// const editSettings = (setting, newValue) => {
-//   userSettings[setting] = newValue;
-// };
-
 export default function DominationAnalysis(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
@@ -106,8 +97,6 @@ export default function DominationAnalysis(props) {
   const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
   const [metric, setMetric] = React.useState("hps");
-
-  //const itemLevels = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
 
   const db = dominationGemDB.filter((gem) => gem.effect.rank === 0);
   const helpText = [t("DominationSocketAnalysis.HelpText")];
@@ -134,7 +123,6 @@ export default function DominationAnalysis(props) {
 
   activeGems.sort((a, b) => (getHighestDomScore(a) < getHighestDomScore(b) ? 1 : -1));
 
-  //console.log(activeGems);
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
@@ -161,11 +149,8 @@ export default function DominationAnalysis(props) {
           />
         </Grid>
 
-        {/* <Grid item xs={12}>
-          <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} />
-        </Grid> */}
         <Grid item xs={12}>
-          <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
+          <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} variant="outlined">
             <Grid container spacing={1} justifyContent="center">
               <Grid item xs={12}>
                 <MetricToggle metric={metric} setMetric={setMetric} />
