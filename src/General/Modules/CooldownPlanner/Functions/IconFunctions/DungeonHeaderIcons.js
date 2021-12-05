@@ -8,6 +8,13 @@ import ToP from "../../../../../Images/MythicPlus/TheaterOfPain/TheaterOfPainAG.
 import SoA from "../../../../../Images/MythicPlus/SpiresOfAscension/SpiresOfAscensionAG.jpg";
 import DoS from "../../../../../Images/MythicPlus/DeOtherSide/DeOtherSideAG.jpg";
 import TtVM from "../../../../../Images/MythicPlus/TazaveshTheVeiledMarket/TazaveshTheVeiledMarket.jpg";
+/* ------------------------------------- Legion Timewalking ------------------------------------- */
+import CoS from "../../../../../Images/MythicPlus/LegionTimewalking/CourtOfStars.jpg";
+import BRH from "../../../../../Images/MythicPlus/LegionTimewalking/BlackrookHold.jpg";
+import NL from "../../../../../Images/MythicPlus/LegionTimewalking/NeltharionsLair.jpg";
+import DHT from "../../../../../Images/MythicPlus/LegionTimewalking/DarkheartThicket.jpg";
+import VotW from "../../../../../Images/MythicPlus/LegionTimewalking/VaultOfTheWardens.jpg";
+import EoA from "../../../../../Images/MythicPlus/LegionTimewalking/EyeOfAzshara.jpg";
 
 import AuchindounDungeons from "../../../../../Images/BurningCrusade/Dungeons/AuchindounDungeons.jpg";
 import CavernsOfTimeDungeons from "../../../../../Images/BurningCrusade/Dungeons/CavernsOfTimeDungeons.jpg";
@@ -58,6 +65,35 @@ export default function DungeonHeaderIcons(props) {
   /* --------------------------------- Tazavesh the Veiled Market --------------------------------- */
   if (props === 13577 || props === 1194) {
     source = TtVM;
+  }
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                       Legion Timewalking                                       */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* --------------------------------------- Court of Stars --------------------------------------- */
+  if (props === 800) {
+    source = CoS;
+  }
+  /* -------------------------------------- Neltharion's Lair ------------------------------------- */
+  if (props === 767) {
+    source = NL;
+  }
+  /* -------------------------------------- Darkheart Thicket ------------------------------------- */
+  if (props === 762) {
+    source = DHT;
+  }
+  /* --------------------------------------- Black Rook Hold -------------------------------------- */
+  if (props === 740) {
+    source = BRH;
+  }
+  /* --------------------------------------- Eye of Azshara --------------------------------------- */
+  if (props === 716) {
+    source = EoA;
+  }
+  /* ------------------------------------ Vault of the Wardens ------------------------------------ */
+  if (props === 707) {
+    source = VotW;
   }
 
   /* ---------------------------------------------------------------------------------------------- */

@@ -742,6 +742,54 @@ else if (
   bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.averageStacks[player.getSpec()];
   //
 }
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                Flask of the Solemn Night                                       */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Flask of the Solemn Night"
+) {
+  /*
+  */
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.haste = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration) * effect.stacks;
+  //
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                          Bottled Hurricane                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Bottled Hurricane"
+) {
+  let effect = activeTrinket.effects[0];
+  const oneCloud = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType]) * effect.ticks
+
+  bonus_stats.hps = (oneCloud * effect.ppm * effect.targets * player.getStatMultiplier("CRITVERS") / 60);
+  //
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                   Concave Reflecting Lens                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Concave Reflecting Lens"
+) {
+  let effect = activeTrinket.effects[0];
+  const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
+  const expectedPPM = effect.ppm * player.getStatPerc("Haste");
+
+  bonus_stats.hps = (oneHeal * expectedPPM * effect.targets * player.getStatMultiplier("CRITVERS") / 60);
+  //
+} else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                Amalgam's Seventh Spine                                         */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Amalgam's Seventh Spine"
+) {
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm) / 60;
+  //
+}
   else {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        No Trinkets Found                                       */

@@ -299,3 +299,101 @@ describe("Spiritual Alchemy Stone Data Check", () => {
         expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
     });
 });
+
+describe("Flask of the Solemn Night Data Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Flask of the Solemn Night");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${226}  | ${58}
+    ${200}  | ${50}
+    ${184}  | ${45}
+    // add new test cases here
+    `.test("Flask of the Solemn Night Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+    
+        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
+    });
+});
+
+describe("Bottled Hurricane Data Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Bottled Hurricane");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${226}  | ${267}
+    ${200}  | ${193}
+    ${184}  | ${156}
+    // add new test cases here
+    `.test("Bottled Hurricane Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+    
+        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
+    });
+});
+
+describe("Concave Reflecting Lens Data Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Concave Reflecting Lens");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${246}  | ${2545}
+    ${226}  | ${2076}
+    ${200}  | ${1593}
+    ${184}  | ${1353}
+    // add new test cases here
+    `.test("Concave Reflecting Lens Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+    
+        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
+    });
+});
+
+describe("Amalgam's Seventh Spine Data Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Amalgam's Seventh Spine");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${246}  | ${181}
+    ${226}  | ${134} // 135 in-game.
+    ${200}  | ${89}
+    ${184}  | ${68}
+    // add new test cases here
+    `.test("Amalgam's Seventh Spine Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+    
+        expect(Math.round(getProcessedValue(effect.coefficient, effect.table, level))).toBe(expectedResult);
+    });
+});
+
+describe("Infernal Writ Data Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Infernal Writ");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${226}  | ${40} 
+    ${200}  | ${35}
+    ${184}  | ${31}
+    // add new test cases here
+    `.test("Infernal Writ Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+    
+        expect(Math.round(getProcessedValue(effect.coefficient, effect.table, level))).toBe(expectedResult);
+    });
+});
+
+describe("Moonlit Prism Data Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Moonlit Prism");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${226}  | ${24} 
+    ${200}  | ${19}
+    ${184}  | ${16}
+    // add new test cases here
+    `.test("Moonlit Prism Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+    
+        expect(Math.round(getProcessedValue(effect.coefficient, effect.table, level))).toBe(expectedResult);
+    });
+});
