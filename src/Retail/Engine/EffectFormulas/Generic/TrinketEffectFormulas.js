@@ -790,6 +790,28 @@ else if (
   bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm) / 60;
   //
 }
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                           Moonlit Prism                                        */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Moonlit Prism"
+) {
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * (effect.averageStacks * player.getStatPerc("Haste")) * effect.duration / effect.cooldown;
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                          Infernal Writ                                         */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Infernal Writ"
+) {
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm[player.getSpec()], effect.duration) * effect.averageStacks;
+  //
+}
   else {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        No Trinkets Found                                       */
