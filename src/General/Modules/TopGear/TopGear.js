@@ -170,7 +170,6 @@ export default function TopGear(props) {
 
   const unleashTopGear = () => {
     /* ----------------------- Call to the Top Gear Engine. Lock the app down. ---------------------- */
-    console.log("unleashed");
     if (checkTopGearValid) {
       setBtnActive(false);
       const currentLanguage = i18n.language;
@@ -179,21 +178,13 @@ export default function TopGear(props) {
       const baseHPS = props.player.getHPS(contentType);
       const strippedPlayer = JSON.parse(JSON.stringify(props.player));
       const strippedCastModel = JSON.parse(JSON.stringify(props.player.getActiveModel(contentType)));
-      console.log("valid");
       if (gameType === "Retail") {
-        console.log("1");
         const worker = require("workerize-loader!./Engine/TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
         let instance = new worker();
-        console.log("2");
         instance.runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
-          console.log("3");
           apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
-          console.log("4");
           props.setTopResult(result);
-          console.log("5");
           history.push("/report/");
-          console.log("6");
-          console.log("worked");
         });
       } else {
         const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
