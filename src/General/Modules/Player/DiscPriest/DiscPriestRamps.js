@@ -11,8 +11,7 @@ const discSettings = {
 // This function automatically casts a full set of ramps. It's easier than having functions call ramps individually and then sum them.
 export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
     
-    const miniSeq = buildRamp('Mini', 6, [], stats.haste, [])
-
+    const miniSeq = buildRamp('Mini', 6, [], stats.haste, "Kyrian Evangelism", [])
     const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
     const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
     const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
@@ -295,8 +294,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
                 if (reporting) console.log(getTime(t) + " " + " Purge Tick: " + damageVal * damMultiplier + ". Buffs: " + JSON.stringify(activeBuffs) + " to " + activeAtonements);
             }
-
-            
 
         }
 

@@ -80,8 +80,8 @@ describe("Evang Cast Sequence", () => {
         stamina: 0,
 }
     
-    const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell"], activeStats.haste, ['Rapture'])
-    const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell"], activeStats.haste, ['Rapture'])
+    const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell"], activeStats.haste, "Kyrian Evangelism", ['Rapture'])
+    const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell"], activeStats.haste, "Kyrian Evangelism", ['Rapture'])
 
 
     test("Legendaries & Soulbinds", () => {

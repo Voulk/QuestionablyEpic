@@ -274,6 +274,7 @@ export function processItem(line, player, contentType, type) {
 
         if (bonus_id == 6706) itemLevel = 92 + (dropLevel - 50) * 6;
         else if (bonus_id == 6707) itemLevel = 84 + (dropLevel - 50) * 6;
+        else if (bonus_id === 7883) itemLevel = 220; // Doomwalker Loot.
         else if (bonus_id == 6908) {
           // This curve is a little painful since the item level only increases every 3 levels and not by a set amount.
           // We can probably make the code more efficient later but this is otherwise correct.
