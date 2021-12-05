@@ -1,10 +1,10 @@
 import React from "react";
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { useTranslation } from "react-i18next";
 import { Tooltip, Typography } from "@mui/material";
-import makeStyles from '@mui/styles/makeStyles';
-import { green } from '@mui/material/colors';
+import makeStyles from "@mui/styles/makeStyles";
+import { green } from "@mui/material/colors";
 
 const useStyles = makeStyles((theme) => ({
   selected: {
@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SourceToggle(props) {
-  const metric = props.metric;
-  const setMetric = props.setMetric;
+  const sources = props.sources;
+  const setSources = props.setSources;
   const classes = useStyles();
   const { t } = useTranslation();
   const handleContent = (event, content) => {
@@ -32,7 +32,7 @@ export default function SourceToggle(props) {
 
   // TODO: Localise Tooltips?
   return (
-    <ToggleButtonGroup value={metric} onChange={setMetric} aria-label="contentToggle" size="small" style={{ padding: 8 }}>
+    <ToggleButtonGroup value={sources} onChange={setSources} aria-label="contentToggle" size="small" style={{ padding: 8 }}>
       <ToggleButton style={{ padding: 5 }} value="Raids" aria-label="dpsLabel" classes={{ selected: classes.selected }}>
         <Tooltip title={"Raids"} arrow>
           <div style={{ display: "inline-flex" }}>
@@ -54,7 +54,6 @@ export default function SourceToggle(props) {
           </div>
         </Tooltip>
       </ToggleButton>
-
 
       <ToggleButton style={{ padding: 5 }} value="LegionTimewalking" aria-label="legionTimewalking" classes={{ selected: classes.selected }}>
         <Tooltip title={"Legion Timewalking"} arrow>

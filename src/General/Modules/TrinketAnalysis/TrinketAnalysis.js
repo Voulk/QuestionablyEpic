@@ -12,7 +12,6 @@ import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import userSettings from "../Settings/SettingsObject";
-// import MetricToggle from "Retail/Modules/DominationGemAnalysis/MetricToggle";
 import SourceToggle from "./SourceToggle";
 import ToggleButton from "@mui/material/ToggleButton";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -86,13 +85,7 @@ export default function TrinketAnalysis(props) {
   }, []);
 
   const { t } = useTranslation();
-  const [metric, setMetric] = React.useState("hps");
-  const [sources, setSources] = React.useState(() => [
-    "The Rest",
-    "Raids",
-    "Dungeons",
-    "LegionTimewalking"
-  ]);
+  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "LegionTimewalking"]);
   const [theme, setTheme] = React.useState(false);
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -101,48 +94,40 @@ export default function TrinketAnalysis(props) {
   const sourceHandler = (array, sources) => {
     let results = [];
     const shadowlandsRaids = [
-      /* --------------------------------------- Castle Nathria --------------------------------------- */
-      1190,
-      /* ------------------------------------ Sanctum of Domination ----------------------------------- */
-      1193,
+      1190, // Castle Nathria
+      1193, // Sanctum of Domination
     ];
     const shadowlandsDungeons = [
-      /* -------------------------------------- General Dungeons -------------------------------------- */
-      -1,
-      /* ------------------------------------------ Tazavesh ------------------------------------------ */
-      1194,
+      -1, // General Dungeons
+      1194, // Tazavesh
     ];
     const legionTimewalking = [
-      -24
+      -24, // Legion Timewalking
     ];
     const shadowlandsTheRest = [
-      1192,
-      -18,
-      -17,
-      //undefined
-      /* ---------------------------------------- World Bosses ---------------------------------------- */
+      1192, // World Bosses
+      -18, // PVP
+      -17, // PVP
     ];
-
-
 
     /* ---------------------------------------------------------------------------------------------- */
     /*                                   The Rest & Raids & Dungeons                                  */
     /* ---------------------------------------------------------------------------------------------- */
     if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Dungeons") === true && sources.includes("LegionTimewalking") === true) {
       results = array;
-    }
-    else {
+    } else {
       results = array.filter((item) => {
-        return (item["sources"] === undefined && sources.includes("The Rest")) ||
-                (item["sources"] && (
-                (shadowlandsTheRest.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
-                (shadowlandsRaids.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
-                (shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) && sources.includes("Dungeons")) ||
-                (legionTimewalking.includes(item["sources"][0]["instanceId"]) && sources.includes("LegionTimewalking"))))
-              
-              })
+        return (
+          (item["sources"] === undefined && sources.includes("The Rest")) ||
+          (item["sources"] &&
+            ((shadowlandsTheRest.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
+              (shadowlandsRaids.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
+              (shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) && sources.includes("Dungeons")) ||
+              (legionTimewalking.includes(item["sources"][0]["instanceId"]) && sources.includes("LegionTimewalking"))))
+        );
+      });
     }
-    
+
     return results;
   };
 
@@ -247,7 +232,7 @@ export default function TrinketAnalysis(props) {
                     </div>
                   </Grid>
                   <Grid item>
-                    <SourceToggle metric={sources} setMetric={handleSource} />
+                    <SourceToggle sources={sources} setSources={handleSource} />
                   </Grid>
                   {gameType === "Retail" ? (
                     <Grid item xs={12}>
