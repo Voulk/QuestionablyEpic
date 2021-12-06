@@ -141,7 +141,13 @@ export default function TrinketAnalysis(props) {
       1194,
     ];
     const legionTimewalking = [
-      -24
+      -24,
+      707, // Vault of the Wardens
+      716, // Eye of Azshara
+      740, // Black Rook Hold
+      762, // Darkheart Thicket
+      767, // Neltharion's Lair
+      800, // Court of Stars
     ];
     const shadowlandsTheRest = [
       1192,
@@ -150,7 +156,7 @@ export default function TrinketAnalysis(props) {
       //undefined
       /* ---------------------------------------- World Bosses ---------------------------------------- */
     ];
-
+    console.log(sources)
 
 
     /* ---------------------------------------------------------------------------------------------- */
@@ -165,8 +171,8 @@ export default function TrinketAnalysis(props) {
                 (item["sources"] && (
                 (shadowlandsTheRest.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
                 (shadowlandsRaids.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
-                (shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) && sources.includes("Dungeons")) ||
-                (legionTimewalking.includes(item["sources"][0]["instanceId"]) && sources.includes("LegionTimewalking"))))
+                (shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) && (!legionTimewalking.includes(item["sources"][0]["encounterId"])) && sources.includes("Dungeons")) ||
+                (legionTimewalking.includes(item["sources"][0]["encounterId"]) && sources.includes("LegionTimewalking"))))
               
               })
     }
