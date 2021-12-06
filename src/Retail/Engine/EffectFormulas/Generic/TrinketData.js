@@ -1006,7 +1006,7 @@ export const trinket_data = [
       {
         coefficient: 50.56973,
         table: -9, // -8 in spell data
-        efficiency: { Raid: 0.65, Dungeon: 0.45 }, // 
+        efficiency: { Raid: 0.63, Dungeon: 0.41 }, // 
         ppm: 3,
         targets: 3.8, // The trinket attempts to hit 4 targets, but in logs it often comes up slightly short of this.
 
