@@ -1032,7 +1032,7 @@ export const trinket_data = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
-    /*                                     Amalgam's Seventh Spine                                    */
+    /*                                             Infernal Writ                                      */
     /* ---------------------------------------------------------------------------------------------- */
     /* 
 
@@ -1042,8 +1042,9 @@ export const trinket_data = [
       {
         coefficient: 0.199557,
         table: -7, 
-        ppm: 3,
-        stacks: 1, // TODO
+        duration: 20,
+        ppm: { "Restoration Druid": 0.55, "Discipline Priest": 0.7, "Holy Paladin": 0.1, "Mistweaver Monk": 0, "Restoration Shaman": 0.55, "Holy Priest": 0.55 }, // Baseline: 0.7
+        averageStacks: 10.5, 
       },
     ],
   },
@@ -1059,8 +1060,11 @@ export const trinket_data = [
       {
         coefficient: 0.15733,
         table: -1, 
-        ppm: 3,
-        stacks: 1, // TODO
+        duration: 20,
+        cooldown: 90,
+        averageStacks: 7.5, 
+        // This could be much more closely valued by considering each individual specs casting cadence. Given the low availability and power of the trinket,
+        // this is not yet implemented but could be. Notably haste IS included.
       },
     ],
   },

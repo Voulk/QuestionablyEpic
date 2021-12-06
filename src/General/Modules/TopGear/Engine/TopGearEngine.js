@@ -42,6 +42,7 @@ function setupPlayer(player, contentType, castModel) {
   newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
   newPlayer.dominationGemRanks = player.dominationGemRanks;
+  newPlayer.activeModelID = player.activeModelID;
 
   return newPlayer;
 }
