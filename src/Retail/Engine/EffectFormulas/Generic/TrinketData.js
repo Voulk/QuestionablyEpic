@@ -985,7 +985,7 @@ export const trinket_data = [
     name: "Bottled Hurricane",
     effects: [
       {
-        coefficient: 1.41699, // 1.41699
+        coefficient: 1.41699,
         table: -1,
         efficiency: { Raid: 0.56, Dungeon: 0.35 }, // 
         ppm: 4,

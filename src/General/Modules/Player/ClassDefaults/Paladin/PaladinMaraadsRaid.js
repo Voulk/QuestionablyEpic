@@ -38,7 +38,7 @@ export const paladinMaraadsSpellData = (contentType) => {
         OneManaHealing: 1.9,
         CastsPerMinute: 27,
         cooldownMult: {
-          oneMinute: 1.75,
+          oneMinute: 1.2,
           ninetySeconds: 1,
           twoMinutes: 1.39,
           twoMinutesOrb: 1.31,
@@ -51,9 +51,9 @@ export const paladinMaraadsSpellData = (contentType) => {
         OneManaHealing: 0.7,
         CastsPerMinute: 30,
         cooldownMult: {
-          oneMinute: 1.76,
+          oneMinute: 1.2,
           ninetySeconds: 1,
-          twoMinutes: 1.2,
+          twoMinutes: 1.24,
           twoMinutesOrb: 1.1,
           threeMinutes: 1,
         },
