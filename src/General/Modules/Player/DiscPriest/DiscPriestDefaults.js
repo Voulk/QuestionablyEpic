@@ -15,7 +15,7 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
-      OneManaHealing: 3.4,
+      OneManaHealing: 6.1,
       CastsPerMinute: 36,
       cooldownMult: {
         oneMinute: 1,

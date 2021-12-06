@@ -37,7 +37,7 @@ export default function SourceToggle(props) {
         <Tooltip title={"Raids"} arrow>
           <div style={{ display: "inline-flex" }}>
             <img
-              style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4 }}
+              style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
               src={require("Images/achievement_raid_torghastraid.jpg").default}
               alt={"Raids"}
             />
@@ -49,20 +49,24 @@ export default function SourceToggle(props) {
       <ToggleButton style={{ padding: 5 }} value="Dungeons" aria-label="dpsLabel" classes={{ selected: classes.selected }}>
         <Tooltip title={"Dungeons"} arrow>
           <div style={{ display: "inline-flex" }}>
-            <img style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4 }} src={require("Images/inv_relics_hourglass.jpg").default} alt={"Dungeons"} />
+            <img style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} src={require("Images/inv_relics_hourglass.jpg").default} alt={"Dungeons"} />
             <Typography variant="button">{"Dungeons"}</Typography>
           </div>
         </Tooltip>
       </ToggleButton>
 
-      {/* <ToggleButton disabled style={{ padding: 5 }} value="Legion Timewalking" aria-label="legionTimewalking" classes={{ selected: classes.selected }}>
-        <Tooltip title={"Legion"} arrow>
+      <ToggleButton style={{ padding: 5 }} value="LegionTimewalking" aria-label="legionTimewalking" classes={{ selected: classes.selected }}>
+        <Tooltip title={"Legion Timewalking"} arrow>
           <div style={{ display: "inline-flex" }}>
-            <img style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4 }} src={require("Images/Resources/worldQuest.png").default} alt={"World Quests"} />
+            <img
+              style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
+              src={require("Images/Resources/inv_legionadventure.jpg").default}
+              alt={"Legion"}
+            />
             <Typography variant="button">{"Legion"}</Typography>
           </div>
         </Tooltip>
-      </ToggleButton> */}
+      </ToggleButton>
 
       <ToggleButton style={{ padding: 5 }} value="The Rest" aria-label="hpsLabel" classes={{ selected: classes.selected }}>
         <Tooltip title={"The Rest"} arrow>
