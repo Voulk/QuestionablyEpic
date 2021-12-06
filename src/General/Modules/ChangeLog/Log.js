@@ -10,6 +10,16 @@
 export const changeLog = [
   {
     version: "9.1.5 / 2.5.2",
+    update: 3,
+    date: "6 December",
+    changes: [
+      "Added Legion Timewalking gear.",
+      "Added a Legion Timewalking section to the Upgrade Finder.",
+      "Revamped how stat DR is calculated on trinkets, offering more accuracy in special cases like Flask of the Solemn Night."
+    ],
+  },
+  {
+    version: "9.1.5 / 2.5.2",
     update: 2,
     date: "16 November",
     changes: [
