@@ -337,7 +337,6 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
 
     const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
     const trinketValue = getDiminishedValue(playerBestSecondary, trinketRaw, setStats[playerBestSecondary])
-    console.log("Raw: " + trinketRaw + " / " + trinketValue)
 
     bonus_stats[playerBestSecondary] = ((trinketValue * effect.duration) / effect.cooldown) * (1 - failureChance);
     bonus_stats[playerBestSecondary] *= castModel.getSpecialQuery("threeMinutes", "cooldownMult");
@@ -745,7 +744,10 @@ else if (
 ) {
   let effect = activeTrinket.effects[0];
 
-  bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+  const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
+  const trinketValue = getDiminishedValue('Crit', trinketRaw, setStats.crit)
+
+  bonus_stats.crit = trinketValue * convertPPMToUptime(effect.ppm, effect.duration);
   //
 }
 else if (
