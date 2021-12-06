@@ -25,6 +25,20 @@ export default function LegionTimewalkingGearContainer(props) {
   const itemDifferentials = props.itemDifferentials;
   const difficulty = props.playerSettings.dungeon;
   const gameType = useSelector((state) => state.gameType);
+
+  const imagePosition = (dungeon) => {
+    switch (dungeon) {
+      case 716:
+        // Eye of Azshara
+        return "100% 60%";
+      case 707:
+        // Vault of the VaultOfTheWardens
+        return "0% 60%";
+      default:
+        return "center 60%";
+    }
+  };
+
   const contentGenerator = () => {
     return encounterDB[3].map((key, i) => (
       <Grid item xs={12} key={"LegionTimewalkingContainer-" + i}>
@@ -37,7 +51,7 @@ export default function LegionTimewalkingGearContainer(props) {
                   height: "100%",
                   backgroundImage: `url(${DungeonHeaderIcons(key)})`,
                   backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center 60%",
+                  backgroundPosition: imagePosition(key),
                   backgroundSize: "auto 100%",
                 }}
                 className="container-UpgradeCards"
