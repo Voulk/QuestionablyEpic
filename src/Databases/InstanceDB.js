@@ -173,6 +173,13 @@ export const encounterDB = {
     1187, //"Theater of Pain",
     1188, //"De Other Side",
     1189, //"Sanguine Depths",
+
+    707, // Vault of the Wardens
+    716, // Eye of Azshara
+    740, // Black Rook Hold
+    762, // Darkheart Thicket
+    767, // Neltharion's Lair
+    800, // Court of Stars
   ],
   /* ---------------------------------- Tazavesh, The Vieled City --------------------------------- */
   1194: [
