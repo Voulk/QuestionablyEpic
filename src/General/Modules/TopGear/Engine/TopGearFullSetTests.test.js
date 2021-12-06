@@ -74,7 +74,7 @@ describe("Top Gear full test", () => {
         expect(trinkets.filter(trinket => trinket.effect.name === "Instructor's Divine Bell").length).toEqual(1);
         expect(trinkets.filter(trinket => trinket.effect.name === "Titanic Ocular Gland").length).toEqual(1);
         expect(result.itemSet.domSockets).toEqual(5);
-        console.log(result);
+        //console.log(result);
     })
 
 })

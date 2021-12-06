@@ -316,6 +316,7 @@ describe("Flask of the Solemn Night Data Check", () => {
     });
 });
 
+/*
 describe("Bottled Hurricane Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = trinket_data.find((trinket) => trinket.name === "Bottled Hurricane");
@@ -330,7 +331,7 @@ describe("Bottled Hurricane Data Check", () => {
     
         expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
     });
-});
+}); */
 
 describe("Concave Reflecting Lens Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
