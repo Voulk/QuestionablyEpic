@@ -251,7 +251,14 @@ export default function UpgradeFinderResults(props) {
                 {/* Mythic Plus */}
                 <Tab className={classes.mythicPlusHeaderStyle} label={t("UpgradeFinder.MythicPlus")} {...a11yProps(1)} />
                 {/* Legion Timewalking */}
-                <Tab className={classes.LegionTimewalkingStyle} label={t("UpgradeFinder.LegionTimewalking")} {...a11yProps(2)} />
+                <Tab
+                  className={classes.LegionTimewalkingStyle}
+                  label={
+                    //t("UpgradeFinder.LegionTimewalking")
+                    "Legion"
+                  }
+                  {...a11yProps(2)}
+                />
                 {/* Tazavesh */}
                 <Tab className={classes.tazaveshStyle} label={t("DungeonNames.1194")} {...a11yProps(3)} />
                 {/* PVP */}
