@@ -42,6 +42,7 @@ function setupPlayer(player, contentType, castModel) {
   newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
   newPlayer.dominationGemRanks = player.dominationGemRanks;
+  newPlayer.activeModelID = player.activeModelID;
 
   return newPlayer;
 }
@@ -454,8 +455,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   if (player.spec === "Discipline Priest" && contentType === "Raid") {
     // Setup ramp cast sequences
     const onUseTrinkets = itemSet.onUseTrinkets.map((trinket) => trinket.name);
-    const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, ["Rapture"]);
-    const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, ["Rapture"]);
+    const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, castModel.modelName, ["Rapture"]);
+    const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, castModel.modelName, ["Rapture"]);
 
     // Setup any ramp settings or special effects that need to be taken into account.
     const rampSettings = { Pelagos: true };

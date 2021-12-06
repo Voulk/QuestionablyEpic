@@ -954,9 +954,119 @@ export const trinket_data = [
         coefficient: 0.337095, 
         table: -7,
         duration: 15,
-        averageStacks: {"Restoration Druid": 0.6, "Holy Paladin": 0.4, "Mistweaver Monk": 0, "Restoration Shaman": 0.65, "Holy Priest": 0.6, "Discipline Priest": 1.6},
+        averageStacks: {"Restoration Druid": 0.6, "Holy Paladin": 0.4, "Mistweaver Monk": 0, "Restoration Shaman": 0.65, "Holy Priest": 0.6, "Discipline Priest": 1.55},
         // The average stacks value is correct, but should be rewritten to include the formula in the code.
         ppm: 5,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Flask of Solemn Night                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    name: "Flask of the Solemn Night",
+    effects: [
+      {
+        coefficient: 0.286493,
+        table: -7,
+        duration: 10,
+        stacks: 15, // You start with 20, lose 1 every second and end with 10 for an average of 15.
+        ppm: 1,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Bottled Hurricane                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    Bottled Hurricane is notable for being the only trinket on the list with an approximate coefficient instead of a 100% correct one.
+    None of the currently in-use curves match, however the investigation is ongoing. The result is that the trinket is correctly evaluated at high item levels
+    and slightly undervalued at low levels.
+    */
+    name: "Bottled Hurricane",
+    effects: [
+      {
+        coefficient: 4.1271, // 1.41699
+        table: -8, // -1
+        efficiency: { Raid: 0.49, Dungeon: 0.35 }, // 
+        ppm: 4,
+        targets: 5, // This can hit a maximum of 5 targets, but the radius is very small so will vary per fight.
+        ticks: 6,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Concave Reflecting Lens                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+
+    */
+    name: "Concave Reflecting Lens",
+    effects: [
+      {
+        coefficient: 50.56973,
+        table: -9, // -8 in spell data
+        efficiency: { Raid: 0.63, Dungeon: 0.41 }, // 
+        ppm: 3,
+        targets: 3.8, // The trinket attempts to hit 4 targets, but in logs it often comes up slightly short of this.
+
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Amalgam's Seventh Spine                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+
+    */
+    name: "Amalgam's Seventh Spine",
+    effects: [
+      {
+        coefficient: 2.07913,
+        table: -8, 
+        ppm: 6, // TODO: Refine. 
+
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                             Infernal Writ                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+
+    */
+    name: "Infernal Writ",
+    effects: [
+      {
+        coefficient: 0.199557,
+        table: -7, 
+        duration: 20,
+        ppm: { "Restoration Druid": 0.5, "Discipline Priest": 0.7, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 0.5, "Holy Priest": 0.5 }, // Baseline: 0.7
+        averageStacks: 10.5, 
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                            Moonlit Prism                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+
+    */
+    name: "Moonlit Prism",
+    effects: [
+      {
+        coefficient: 0.15733,
+        table: -1, 
+        duration: 20,
+        cooldown: 90,
+        averageStacks: 7.5, 
+        // This could be much more closely valued by considering each individual specs casting cadence. Given the low availability and power of the trinket,
+        // this is not yet implemented but could be. Notably haste IS included.
       },
     ],
   },

@@ -144,8 +144,9 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     let effect = activeTrinket.effects[0];
     let playerBestSecondary = player.getHighestStatWeight(contentType, ["versatility"]); // Exclude Vers since there isn't a Vers version.
     //console.log("Changeling " + itemLevel + ". : " + getProcessedValue(effect.coefficient, effect.table, itemLevel));
-
-    bonus_stats[playerBestSecondary] = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+    const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
+    const trinketValue = getDiminishedValue(playerBestSecondary, trinketRaw, setStats[playerBestSecondary])
+    bonus_stats[playerBestSecondary] = trinketValue * convertPPMToUptime(effect.ppm, effect.duration);
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -215,15 +216,18 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     
     if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
       // 
-      const boonSeq = buildRamp('Boon', 10, ["Soulletting Ruby"], setStats.haste, ['Rapture']);
-      const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, ['Rapture']);
+      const boonSeq = buildRamp('Boon', 10, ["Soulletting Ruby"], setStats.haste, castModel.modelName, ['Rapture']);
+      const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, castModel.modelName, ['Rapture']);
       const rubyRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Soulletting Ruby": critValue}, {});
       
       bonus_stats.hps = bonus_stats.hps + (rubyRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - crit_effect.discOverhealing);
 
     }
     else {
-      bonus_stats.crit = (getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.duration * crit_effect.multiplier) / 120;
+      const trinketRaw = getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.multiplier
+      const trinketValue = getDiminishedValue('Crit', trinketRaw, setStats.crit)
+
+      bonus_stats.crit = (trinketValue * crit_effect.duration) / 120;
       bonus_stats.crit *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
     }
     
@@ -327,10 +331,14 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     effectName === "Inscrutable Quantum Device"
   ) {
     const effect = activeTrinket.effects[0];
-    const playerBestSecondary = player.getHighestStatWeight(contentType, ["versatility"]); // Exclude Vers since there isn't a Vers version.
-    const failureChance = (contentType === "Raid" ? 0.34 : 0.12);
 
-    bonus_stats[playerBestSecondary] = ((getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown) * (1 - failureChance);
+    const playerBestSecondary = player.getHighestStatWeight(contentType, ["versatility"]); // Exclude Vers since there isn't a Vers version.
+    const failureChance = (contentType === "Raid" ? 0.26 : 0.12);
+
+    const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
+    const trinketValue = getDiminishedValue(playerBestSecondary, trinketRaw, setStats[playerBestSecondary])
+
+    bonus_stats[playerBestSecondary] = ((trinketValue * effect.duration) / effect.cooldown) * (1 - failureChance);
     bonus_stats[playerBestSecondary] *= castModel.getSpecialQuery("threeMinutes", "cooldownMult");
     // TODO: power reduced because of the chance something interferes. This needs to be much much better and I'll fix it up this week.
     //
@@ -344,8 +352,8 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
 
     if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
-      const boonSeq = buildRamp('Boon', 10, ["Flame of Battle"], setStats.haste, ['Rapture']);
-      const fiendSeq = buildRamp('Fiend', 10, ["Flame of Battle"], setStats.haste, ['Rapture']);
+      const boonSeq = buildRamp('Boon', 10, ["Flame of Battle"], setStats.haste, castModel.modelName, ['Rapture']);
+      const fiendSeq = buildRamp('Fiend', 10, ["Flame of Battle"], setStats.haste, castModel.modelName, ['Rapture']);
       const flameRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Flame of Battle": trinketValue}, {});
       bonus_stats.hps = (flameRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
     }
@@ -400,8 +408,8 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     const effect = activeTrinket.effects[0];
     const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
     if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
-      const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell"], setStats.haste, ['Rapture']);
-      const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell"], setStats.haste, ['Rapture']);
+      const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell"], setStats.haste, castModel.modelName, ['Rapture']);
+      const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell"], setStats.haste, castModel.modelName, ['Rapture']);
       const bellRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Instructor's Divine Bell": trinketValue}, {});
       //console.log("Adding X HPS: " + (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing));
       bonus_stats.hps = (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
@@ -620,11 +628,13 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
   ) {
     // Titanic Ocular Gland increases your highest secondary by X. 
     let effect = activeTrinket.effects[0];
-    const statValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
-    const uptime = effect.uptime;
-    const itemSetHighestSecondary = getHighestStat(setStats);
 
-    bonus_stats[itemSetHighestSecondary] = statValue * uptime - statValue * (1 - uptime);
+    const itemSetHighestSecondary = getHighestStat(setStats);
+    const statRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel);
+    const statValue = getDiminishedValue(itemSetHighestSecondary, statRaw, setStats[itemSetHighestSecondary])
+    const uptime = effect.uptime;
+
+    bonus_stats[itemSetHighestSecondary] = statValue * uptime - statRaw * (1 - uptime);
     //
   }   
   else if (
@@ -678,15 +688,18 @@ else if (
     bonus_stats.hps = getMasteryAddition(player.getInt(), mastery, player.getStatPerc("Crit"), player.getStatPerc("Vers")) * gusts / effect.cooldown;
   }
   else if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
-    const boonSeq = buildRamp('Boon', 10, ["Shadowed Orb of Torment"], setStats.haste, ['Rapture']);
-    const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, ['Rapture']);
+    const boonSeq = buildRamp('Boon', 10, ["Shadowed Orb of Torment"], setStats.haste, castModel.modelName, ['Rapture']);
+    const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, castModel.modelName, ['Rapture']);
     const orbRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Shadowed Orb": trinketValue}, {});
 
     bonus_stats.hps = (orbRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
   }
   else {
-    const expectedEfficiency = 0.87; // Shadowed Orb is easy to mess up, but full value should be guaranteed in most cases.
-    bonus_stats.mastery = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown * expectedEfficiency;
+    const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
+    const trinketValue = getDiminishedValue('Mastery', trinketRaw, setStats.mastery)
+
+    const expectedEfficiency = 0.89; // Shadowed Orb is easy to mess up, but full value should be guaranteed in most cases.
+    bonus_stats.mastery = (trinketValue * effect.duration) / effect.cooldown * expectedEfficiency;
     bonus_stats.mastery *= castModel.getSpecialQuery("twoMinutesOrb", "cooldownMult");;
   }
 
@@ -702,9 +715,12 @@ else if (
   const hasteEffect = activeTrinket.effects[1];
   const meteor = 1 + healEffect.targets[contentType] * healEffect.meteor;
 
+  const hasteRaw = getProcessedValue(hasteEffect.coefficient, hasteEffect.table, itemLevel)
+  const hasteValue = getDiminishedValue('Haste', hasteRaw, setStats.haste)
+
   /* ------- Hastes impact on the trinket PPM is included in the secondary multiplier below. ------ */
   bonus_stats.hps = (getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel, healEffect.efficiency) / 60) * meteor * healEffect.ppm * player.getStatMultiplier("CRITVERS");
-  bonus_stats.haste = getProcessedValue(hasteEffect.coefficient, hasteEffect.table, itemLevel) * convertPPMToUptime(hasteEffect.ppm, hasteEffect.duration);
+  bonus_stats.haste = hasteValue * convertPPMToUptime(hasteEffect.ppm, hasteEffect.duration);
 
 } else if (
   /* ---------------------------------------------------------------------------------------------- */
@@ -728,7 +744,10 @@ else if (
 ) {
   let effect = activeTrinket.effects[0];
 
-  bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+  const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
+  const trinketValue = getDiminishedValue('Crit', trinketRaw, setStats.crit)
+
+  bonus_stats.crit = trinketValue * convertPPMToUptime(effect.ppm, effect.duration);
   //
 }
 else if (
@@ -740,6 +759,87 @@ else if (
   let effect = activeTrinket.effects[0];
 
   bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.averageStacks[player.getSpec()];
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                Flask of the Solemn Night                                       */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Flask of the Solemn Night"
+) {
+  /*
+  */
+  let effect = activeTrinket.effects[0];
+
+  // trinketRaw represents a single stack of the buff.
+  const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
+  let trinketSum = 0
+  // Add raw values for stacks 10 through 19.
+  for (var i = 10; i <= 19; i++) {
+    // We're going to adjust each stack individually for diminishing returns. 
+    // The more stacks we have, the harder we'll be hit.
+    let adjVal = getDiminishedValue('Haste', trinketRaw * i, setStats.haste)
+    trinketSum += adjVal
+  }
+  // Take an average of our stacks. Note that the trinket decreases from 19 to 10, NOT to 0.
+  bonus_stats.haste = (trinketSum / 10) * convertPPMToUptime(effect.ppm, effect.duration);
+  //
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                          Bottled Hurricane                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Bottled Hurricane"
+) {
+  let effect = activeTrinket.effects[0];
+  const oneCloud = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType]) * effect.ticks
+
+  bonus_stats.hps = (oneCloud * effect.ppm * effect.targets * player.getStatMultiplier("CRITVERS") / 60);
+  //
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                   Concave Reflecting Lens                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Concave Reflecting Lens"
+) {
+  let effect = activeTrinket.effects[0];
+  const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
+  const expectedPPM = effect.ppm * player.getStatPerc("Haste");
+
+  bonus_stats.hps = (oneHeal * expectedPPM * effect.targets * player.getStatMultiplier("CRITVERS") / 60);
+  //
+} else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                Amalgam's Seventh Spine                                         */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Amalgam's Seventh Spine"
+) {
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm) / 60;
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                           Moonlit Prism                                        */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Moonlit Prism"
+) {
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * (effect.averageStacks * player.getStatPerc("Haste")) * effect.duration / effect.cooldown;
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                          Infernal Writ                                         */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Infernal Writ"
+) {
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm[player.getSpec()], effect.duration) * effect.averageStacks;
   //
 }
   else {
