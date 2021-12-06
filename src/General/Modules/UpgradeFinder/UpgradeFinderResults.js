@@ -251,7 +251,7 @@ export default function UpgradeFinderResults(props) {
               className={classes.LegionTimewalkingStyle}
               label={
                 //t("UpgradeFinder.LegionTimewalking")
-                Legion
+                "Legion"
               }
               {...a11yProps(2)}
             />
