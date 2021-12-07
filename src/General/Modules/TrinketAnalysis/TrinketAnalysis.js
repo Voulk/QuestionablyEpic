@@ -222,24 +222,32 @@ export default function TrinketAnalysis(props) {
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
                 <Grid container spacing={1} direction="row" justifyContent="flex-end" alignItems="center">
-                  <Grid item>
-                    <div style={{ padding: "8px 0px 8px 8px" }}>
-                      <Tooltip
-                        title={
-                          <Typography align="center" variant="body2">
-                            {t("SourceToggle.FilterTooltip")}
-                          </Typography>
-                        }
-                        style={{ marginTop: -5 }}
-                        placement="top-start"
-                      >
-                        <Typography variant="h6">{t("Filter")}:</Typography>
-                      </Tooltip>
-                    </div>
-                  </Grid>
-                  <Grid item>
-                    <SourceToggle sources={sources} setSources={handleSource} />
-                  </Grid>
+                  {gameType === "Retail" ? (
+                    <Grid item>
+                      <div style={{ padding: "8px 0px 8px 8px" }}>
+                        <Tooltip
+                          title={
+                            <Typography align="center" variant="body2">
+                              {t("SourceToggle.FilterTooltip")}
+                            </Typography>
+                          }
+                          style={{ marginTop: -5 }}
+                          placement="top-start"
+                        >
+                          <Typography variant="h6">{t("Filter")}:</Typography>
+                        </Tooltip>
+                      </div>
+                    </Grid>
+                  ) : (
+                    ""
+                  )}
+                  {gameType === "Retail" ? (
+                    <Grid item>
+                      <SourceToggle sources={sources} setSources={handleSource} />
+                    </Grid>
+                  ) : (
+                    ""
+                  )}
                   {gameType === "Retail" ? (
                     <Grid item xs={12}>
                       <VerticalChart data={activeTrinkets} db={finalDB} theme={themeSelection(theme ? "candidate2" : "candidate7")} />

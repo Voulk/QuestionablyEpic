@@ -381,26 +381,10 @@ export default function RaidGearContainer(props) {
                                   </div>
                                 </Grid>
                                 <Divider orientation="vertical" flexItem />
-                                <Grid item xs={12} sm container direction="column" style={{ padding: 8 }}>
-                                  <Grid item xs={12} container spacing={1}>
-                                    <Grid item xs={12}>
-                                      <Typography
-                                        variant="h6"
-                                        color="primary"
-                                        align="center"
-                                        style={{
-                                          backgroundColor: "#35383e",
-                                          borderRadius: 4,
-                                        }}
-                                      >
-                                        {/* {getDifficultyName(firstDifficulty)} */}
-                                      </Typography>
-                                    </Grid>
-
-                                    {[...filterBCItemListBySource(itemList, raidID, key)].map((item, index) => (
-                                      <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
-                                    ))}
-                                  </Grid>
+                                <Grid item xs={12} sm container style={{ padding: 8 }} spacing={1}>
+                                  {[...filterBCItemListBySource(itemList, raidID, key)].map((item, index) => (
+                                    <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
+                                  ))}
                                 </Grid>
                               </Grid>
                             </Paper>
