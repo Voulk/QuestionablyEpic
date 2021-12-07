@@ -113,12 +113,7 @@ export default function TrinketAnalysis(props) {
 
   const { t } = useTranslation();
   const [metric, setMetric] = React.useState("hps");
-  const [sources, setSources] = React.useState(() => [
-    "The Rest",
-    "Raids",
-    "Dungeons",
-    "LegionTimewalking"
-  ]);
+  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "LegionTimewalking"]);
   const [theme, setTheme] = React.useState(false);
 
   // const availableThemes = ["candidate1", "candidate2", "candidate3", "candidate4", "candidate5", "candidate6", "candidate7", "IBM", "wong", "candidate10", "candidate11", "candidate12", "candidate13"];
@@ -157,25 +152,24 @@ export default function TrinketAnalysis(props) {
       /* ---------------------------------------- World Bosses ---------------------------------------- */
     ];
 
-
     /* ---------------------------------------------------------------------------------------------- */
     /*                                   The Rest & Raids & Dungeons                                  */
     /* ---------------------------------------------------------------------------------------------- */
     if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Dungeons") === true && sources.includes("LegionTimewalking") === true) {
       results = array;
-    }
-    else {
+    } else {
       results = array.filter((item) => {
-        return (item["sources"] === undefined && sources.includes("The Rest")) ||
-                (item["sources"] && (
-                (shadowlandsTheRest.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
-                (shadowlandsRaids.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
-                (shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) && (!legionTimewalking.includes(item["sources"][0]["encounterId"])) && sources.includes("Dungeons")) ||
-                (legionTimewalking.includes(item["sources"][0]["encounterId"]) && sources.includes("LegionTimewalking"))))
-              
-              })
+        return (
+          (item["sources"] === undefined && sources.includes("The Rest")) ||
+          (item["sources"] &&
+            ((shadowlandsTheRest.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
+              (shadowlandsRaids.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
+              (shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) && !legionTimewalking.includes(item["sources"][0]["encounterId"]) && sources.includes("Dungeons")) ||
+              (legionTimewalking.includes(item["sources"][0]["encounterId"]) && sources.includes("LegionTimewalking"))))
+        );
+      });
     }
-    
+
     return results;
   };
 
@@ -280,24 +274,32 @@ export default function TrinketAnalysis(props) {
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
                 <Grid container spacing={1} direction="row" justify="flex-end" alignItems="center">
-                  <Grid item>
-                    <div style={{ padding: "8px 0px 8px 8px" }}>
-                      <Tooltip
-                        title={
-                          <Typography align="center" variant="body2">
-                            {t("SourceToggle.FilterTooltip")}
-                          </Typography>
-                        }
-                        style={{ marginTop: -5 }}
-                        placement="top-start"
-                      >
-                        <Typography variant="h6">{t("Filter")}:</Typography>
-                      </Tooltip>
-                    </div>
-                  </Grid>
-                  <Grid item>
-                    <SourceToggle metric={sources} setMetric={handleSource} />
-                  </Grid>
+                  {gameType === "Retail" ? (
+                    <Grid item>
+                      <div style={{ padding: "8px 0px 8px 8px" }}>
+                        <Tooltip
+                          title={
+                            <Typography align="center" variant="body2">
+                              {t("SourceToggle.FilterTooltip")}
+                            </Typography>
+                          }
+                          style={{ marginTop: -5 }}
+                          placement="top-start"
+                        >
+                          <Typography variant="h6">{t("Filter")}:</Typography>
+                        </Tooltip>
+                      </div>
+                    </Grid>
+                  ) : (
+                    ""
+                  )}
+                  {gameType === "Retail" ? (
+                    <Grid item>
+                      <SourceToggle metric={sources} setMetric={handleSource} />
+                    </Grid>
+                  ) : (
+                    ""
+                  )}
                   {gameType === "Retail" ? (
                     <Grid item xs={12}>
                       <VerticalChart data={activeTrinkets} db={finalDB} theme={themeSelection(theme ? "candidate2" : "candidate7")} />
