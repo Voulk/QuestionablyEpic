@@ -92,7 +92,7 @@ export default class BCChart extends PureComponent {
           data={cleanedArray}
           layout="vertical"
           margin={{
-            top: -15,
+            top: 20,
             right: 40,
             bottom: 20,
             left: 250,
