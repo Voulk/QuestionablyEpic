@@ -645,9 +645,13 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
   ) {
     let effect = activeTrinket.effects[0];
     const allyEffect = activeTrinket.effects[1];
-    const playerBestSecondary = player.getHighestStatWeight(contentType);
 
-    bonus_stats[playerBestSecondary] = getProcessedValue(effect.coefficient, effect.table, itemLevel) + getProcessedValue(allyEffect.coefficient, allyEffect.table, itemLevel);
+    const playerBestSecondary = player.getHighestStatWeight(contentType);
+    const statRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel);
+    const statValue = getDiminishedValue(playerBestSecondary, statRaw, setStats[playerBestSecondary])
+
+
+    bonus_stats[playerBestSecondary] = statValue //+ getProcessedValue(allyEffect.coefficient, allyEffect.table, itemLevel);
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -829,6 +833,7 @@ else if (
   let effect = activeTrinket.effects[0];
 
   bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * (effect.averageStacks * player.getStatPerc("Haste")) * effect.duration / effect.cooldown;
+  bonus_stats.intellect *= castModel.getSpecialQuery("ninetySeconds", "cooldownMult");
   //
 }
 else if (

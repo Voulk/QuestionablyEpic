@@ -312,7 +312,7 @@ export default function CharacterPanel(props) {
             {xsBreakpoint ? (
               ""
             ) : (
-              <Grid item xs={12} style={{ padding: "0px 4px" }}>
+              <Grid item xs={12} style={{ padding: "4px 0px 0px 4px" }}>
                 <Divider style={{ align: "center" }} />
               </Grid>
             )}
@@ -320,7 +320,7 @@ export default function CharacterPanel(props) {
             {xsBreakpoint ? (
               ""
             ) : (
-              <Grid item sm container justifyContent="flex-start" spacing={0}>
+              <Grid item sm container justifyContent="flex-start" spacing={0} style={{ padding: "4px 0px 0px 8px" }}>
                 {
                   /* ----------------------------- Characters Active (Equipped) Items -----------------------------  */
                   // Map currently equipped items with wowhead tooltips

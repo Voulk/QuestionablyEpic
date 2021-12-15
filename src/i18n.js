@@ -3,9 +3,9 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 import XHR from "i18next-xhr-backend";
 import languageEN from "./locale/en/translate.json";
-import languageCH from "./locale/ch/translate.json";
+// import languageCH from "./locale/ch/translate.json";
 import languageRU from "./locale/ru/translate.json";
-import languageFR from "./locale/fr/translate.json";
+// import languageFR from "./locale/fr/translate.json";
 import languageDE from "./locale/de/translate.json";
 import ls from "local-storage";
 

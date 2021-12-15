@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MenuItem, Grid, FormControl, Select } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { setBounds } from "General/Engine/CONSTRAINTS";
+// import { setBounds } from "General/Engine/CONSTRAINTS";
 import { dominationGemDB } from "Databases/DominationGemDB";
 import { getGemIcon } from "General/Engine/ItemUtilities";
 

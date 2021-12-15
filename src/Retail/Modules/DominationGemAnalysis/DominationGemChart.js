@@ -47,7 +47,7 @@ export default class DomChart extends PureComponent {
   render() {
     const currentLanguage = i18n.language;
     const data = this.props.data;
-    const db = this.props.db;
+    // const db = this.props.db;
 
     let arr = [];
     let cleanedArray = [];

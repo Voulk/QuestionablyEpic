@@ -6,8 +6,6 @@ import HelpText from "../SetupAndMenus/HelpText";
 import UpgradeFinderSlider from "./Slider";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import Settings from "../Settings/Settings";
-import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
 import { runUpgradeFinderBC } from "./UpgradeFinderEngineBC";
 // import { useHistory } from "react-router-dom";
@@ -97,7 +95,7 @@ const PvPRating = [
 /* ---------------------------------------------------------------------------------------------- */
 
 /* ---------------------------- Burning Crusade Dungeon Difficulties ---------------------------- */
-const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
+// const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
 
 export default function UpgradeFinderFront(props) {
   const classes = useStyles();
@@ -530,7 +528,7 @@ export default function UpgradeFinderFront(props) {
             flexDirection: "row",
             justifyContent: "space-evenly",
             alignItems: "center",
-            padding: 8
+            padding: 8,
           }}
         >
           <div>

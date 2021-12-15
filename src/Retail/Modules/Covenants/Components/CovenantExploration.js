@@ -16,7 +16,7 @@ import { useSelector } from "react-redux";
 import { CONSTRAINTS } from "../../../../General/Engine/CONSTRAINTS";
 import userSettings from "General/Modules/Settings/SettingsObject";
 import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
-import { styled } from "@mui/material/styles";
+// import { styled } from "@mui/material/styles";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
   return (
@@ -26,12 +26,12 @@ function TabPanel(props) {
   );
 }
 
-const StyledTab = styled(Tab)(({ theme }) => ({
-  "& .MuiTab-root": {
-    // margin: theme.spacing(0.5),
-    padding: "8px",
-  },
-}));
+// const StyledTab = styled(Tab)(({ theme }) => ({
+//   "& .MuiTab-root": {
+//     // margin: theme.spacing(0.5),
+//     padding: "8px",
+//   },
+// }));
 
 TabPanel.propTypes = {
   children: PropTypes.node,
@@ -527,10 +527,6 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
   let statSums = sumSelectedStats(soulbindName, soulbindState);
   let estimatedHPS = getEstimatedHPS(statSums, player, contentType);
   let covAbility = getEstimatedHPS(getCovAbility(soulbindName, player, contentType));
-
-  const updateRenown = (value) => {
-    setRenownValue(value);
-  };
 
   return (
     <Grid id="soulbind" container direction="row" style={{ display: "flex", flexWrap: "nowrap" }}>

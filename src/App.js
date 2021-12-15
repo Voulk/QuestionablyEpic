@@ -26,10 +26,7 @@ import QESnackbar from "General/Modules/CooldownPlanner/BasicComponents/QESnackB
 import TestingPage from "General/Modules/CooldownPlanner/TestingLandingPage";
 // import { createBrowserHistory } from "history"; // not used TODO: remove?
 import { dbCheckPatron, dbGetArticleList } from "General/Modules/SetupAndMenus/ConnectionUtilities.js";
-
 import ReactGA from "react-ga";
-import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
-import { theme } from "./theme";
 
 process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
 
@@ -292,8 +289,6 @@ class App extends Component {
 
     return (
       <ErrorBoundary>
-      {/*<StyledEngineProvider injectFirst> */}
-      <ThemeProvider theme={theme}>
         <Router basename={process.env.REACT_APP_HOMEPAGE}>
           <div className="App" style={{ marginTop: 96 }}>
             <QEHeader
@@ -400,10 +395,7 @@ class App extends Component {
             </Switch>
           </div>
         </Router>
-      </ThemeProvider>
-    {/*</StyledEngineProvider>*/}
-    </ErrorBoundary>
-
+      </ErrorBoundary>
     );
   }
 }

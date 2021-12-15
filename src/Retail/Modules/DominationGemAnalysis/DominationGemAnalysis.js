@@ -76,19 +76,6 @@ const getHighestDomScore = (gem) => {
   else return gem.r1;
 };
 
-const getHighestTrinketScore = (db, trinket, gameType) => {
-  const trinketID = trinket.id;
-
-  let temp = db.filter(function (item) {
-    return item.id === trinketID;
-  });
-
-  const item = temp[0];
-  const highestLevel = item.levelRange[item.levelRange.length - 1];
-
-  return trinket["i" + highestLevel];
-};
-
 export default function DominationAnalysis(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
