@@ -204,7 +204,14 @@ export default function TopGear(props) {
         instance.runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
           //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
           props.setTopResult(result);
+          instance.terminate();
           history.push("/report/");
+        }).catch(err => {
+          // If top gear crashes for any reason, log the error and then terminate the worker.
+          reportError("", "BC Top Gear Crash", err, itemList.length);
+          setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
+          instance.terminate();
+          setBtnActive(true)
         });
       }
     } else {
