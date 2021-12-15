@@ -1,13 +1,13 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import logo from "Images/QeAssets/QELogo.png";
-import { Button, Box, Dialog, DialogActions, DialogContent, Typography, Grid, DialogTitle, TextField, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import { Button, Dialog, DialogActions, DialogContent, Typography, Grid, DialogTitle, TextField, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 import Autocomplete from "@mui/material/Autocomplete";
 import ls from "local-storage";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "../SetupAndMenus/Header/LanguageButton";
 import GameTypeSwitch from "../SetupAndMenus/GameTypeToggle";
-import { bcClassRaceList, classRaceList } from "../CooldownPlanner/Data/Data";
+import { classRaceList } from "../CooldownPlanner/Data/Data";
 import { serverDB, serverDBBurningCrusade } from "../../../Databases/ServerDB";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import { useSelector } from "react-redux";
@@ -15,7 +15,7 @@ import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import { covenantIcons } from "../CooldownPlanner/Functions/CovenantFunctions";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   formControl: {
     whiteSpace: "nowrap",
     width: "100%",

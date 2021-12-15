@@ -3,7 +3,7 @@ import React from "react";
 import { Menu, MenuItem, Paper } from "@mui/material";
 import { getConduitName, filterConduits, getCovenant } from "../CovenantUtilities";
 import { useTranslation } from "react-i18next";
-import { getEstimatedHPS } from "../CovenantUtilities";
+// import { getEstimatedHPS } from "../CovenantUtilities";
 import { getConduitFormula } from "../../../Engine/EffectFormulas/EffectEngine";
 
 /* ---------------------------------------------------------------------------------------------- */
