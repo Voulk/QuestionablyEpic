@@ -185,11 +185,17 @@ export default function TopGear(props) {
         let instance = new worker();
 
           instance.runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
+            // If top gear completes successfully, log a successful run, terminate the worker and then press on to the Report.
             apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
             props.setTopResult(result);
+            instance.terminate();
             history.push("/report/");
           }).catch(err => {
+            // If top gear crashes for any reason, log the error and then terminate the worker.
             reportError("", "Top Gear Crash", err, itemList.length);
+            setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
+            instance.terminate();
+            setBtnActive(true)
           });
 
       } else {
