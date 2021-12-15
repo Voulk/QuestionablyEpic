@@ -292,8 +292,6 @@ class App extends Component {
 
     return (
       <ErrorBoundary>
-      {/*<StyledEngineProvider injectFirst> */}
-      <ThemeProvider theme={theme}>
         <Router basename={process.env.REACT_APP_HOMEPAGE}>
           <div className="App" style={{ marginTop: 96 }}>
             <QEHeader
@@ -400,10 +398,7 @@ class App extends Component {
             </Switch>
           </div>
         </Router>
-      </ThemeProvider>
-    {/*</StyledEngineProvider>*/}
-    </ErrorBoundary>
-
+      </ErrorBoundary>
     );
   }
 }

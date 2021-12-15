@@ -10,8 +10,8 @@ import { createStore } from "redux";
 import rootReducer from "./Redux/Reducers/RootReducer";
 import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
-//import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
-//import { theme } from "./theme";
+import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
+import { theme } from "./theme";
 
 const store = createStore(rootReducer, /* preloadedState, */ window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
@@ -29,7 +29,11 @@ Sentry.init({
 ReactDOM.render(
   <Provider store={store}>
     <I18nextProvider i18n={i18n}>
-      <App />
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
+      </StyledEngineProvider>
     </I18nextProvider>
   </Provider>,
 
