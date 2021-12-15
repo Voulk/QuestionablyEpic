@@ -10,6 +10,15 @@
 export const changeLog = [
   {
     version: "9.1.5 / 2.5.2",
+    update: 4,
+    date: "12 December",
+    changes: [
+      "DR is now applied to So'leah's Secret Technique correctly.",
+      "Moonlit Prism is now combined with spec cooldowns where applicable."
+    ],
+  },
+  {
+    version: "9.1.5 / 2.5.2",
     update: 3,
     date: "6 December",
     changes: [

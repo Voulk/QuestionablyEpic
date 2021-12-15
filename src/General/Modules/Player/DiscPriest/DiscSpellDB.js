@@ -256,6 +256,16 @@ export const DISCSPELLS = {
         stat: "crit",
         value: 900, // Trinket values are replaced by the value on the specific version of the trinket.
     }],
+    "Moonlit Prism": [{
+        type: "buff",
+        castTime: 0, // While this has a 2s cast time, it can be used well before our ramp starts which means it functionally does not cost us cast time.
+        cost: 0,
+        cooldown: 90,
+        buffDuration: 20,
+        buffType: 'stats',
+        stat: "intellect",
+        value: 25, // Trinket values are replaced by the value on the specific version of the trinket.
+    }],
     "Boon of the Ascended": [{
         type: "buff",
         castTime: 1.5,
