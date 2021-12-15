@@ -181,11 +181,11 @@ export default function TopGear(props) {
       if (gameType === "Retail") {
         const worker = require("workerize-loader!./Engine/TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
         let instance = new worker();
-        /*instance.runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
+        instance.runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
           apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
           props.setTopResult(result);
           history.push("/report/");
-        }); */
+        });
       } else {
         const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
         let instance = new worker();
