@@ -76,7 +76,7 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const TOPGEARCAP = 31; // TODO
+const TOPGEARCAP = 32; // TODO
 
 export default function TopGear(props) {
   const { t, i18n } = useTranslation();
