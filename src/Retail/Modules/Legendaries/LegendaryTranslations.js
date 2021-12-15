@@ -394,14 +394,16 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
         en: {
           name: "Celestial Spirits",
           slot: "Feet, Legs (recommended)",
-          desc: "The cooldown of Convoke the Spirits is halved to one minute, but the number of spells only reduced by 25% (to 9 from 12).  Convoke the Spirits has an increased chance to cast Flourish.",
+          desc:
+            "The cooldown of Convoke the Spirits is halved to one minute, but the number of spells only reduced by 25% (to 9 from 12).  Convoke the Spirits has an increased chance to cast Flourish.",
           droploc: "Night Fae Renown 48",
           covenant: "Night Fae",
         },
         de: {
           name: "Himmlische Geister",
           slot: "Legs, Feet",
-          desc: "Verringert die Abklingzeit von 'Konvokation der Geister' um 50% und die Dauer um 25%. 'Konvokation der Geister' hat eine erhöhte Chance, einen außergewöhnlichen Zauber oder eine außergewöhnliche Fähigkeit einzusetzen.",
+          desc:
+            "Verringert die Abklingzeit von 'Konvokation der Geister' um 50% und die Dauer um 25%. 'Konvokation der Geister' hat eine erhöhte Chance, einen außergewöhnlichen Zauber oder eine außergewöhnliche Fähigkeit einzusetzen.",
           droploc: "",
           covenant: "Night Fae",
         },
@@ -720,41 +722,6 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
           slot: "腰部、脚",
           desc: "愤怒之锤造成的伤害提高30%，并会使复仇之怒的持续时间延长1秒。",
           droploc: "任务：宏伟宝库",
-        },
-      };
-      break;
-
-    case "Relentless Inquisitor":
-      legendaryDetails = {
-        en: {
-          name: "Relentless Inquisitor (Retribution)",
-          slot: "Legs or Back",
-          desc: "Spending Holy Power grants you 1% haste per finisher for 12 sec, stacking up to 5 times.",
-          droploc: "Torghast, The Upper Reaches, Layer 3+",
-        },
-        de: {
-          name: "Unnachgiebiger Inquisitor",
-          slot: "Beine, Rücken",
-          desc: "Beim Verbrauch von Heiliger Kraft wird Euer Tempo pro Finishing-Move für 12 sec um 1% erhöht. Bis zu 5-mal stapelbar.",
-          droploc: "Die Oberen Ebenen, Ebene 3+",
-        },
-        fr: {
-          name: "Inquisiteur implacable",
-          slot: "Jambes, Dos",
-          desc: "Dépenser de la puissance sacrée augmente la Hâte de 1% par coup de grâce asséné pendant 12 sec. Cumulable jusqu’à 5 fois.",
-          droploc: "Étages supérieurs, échelon 3 ou plus",
-        },
-        ru: {
-          name: "Непреклонный инквизитор",
-          slot: "Ноги, Спина",
-          desc: "Когда вы расходуете энергию Света, ваша скорость повышается на 1% за каждый смертельный удар. Время действия – 12 sec. Эффект суммируется до 5 раз.",
-          droploc: "Верхний ярус, этаж 3+",
-        },
-        ch: {
-          name: "无情审讯",
-          slot: "腿部、背部",
-          desc: "使用终结技时每消耗一点神圣能量，就会使你的急速提高1%，持续12 sec，最多可叠加5次。",
-          droploc: "上层区域，难度3+",
         },
       };
       break;
@@ -1446,128 +1413,131 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       };
       break;
 
-      /* ------------------------------------------ Necrolord ----------------------------------------- */
-      case "Pallid Command":
-        legendaryDetails = {
-          en: {
-            name: "Pallid Command",
-            slot: "Feet, Finger",
-            desc: "Casting Unholy Nova summons a Brooding Cleric that gains 2% additional healing each time an enemy affected by Unholy Transfusion is damaged by an ally, up to 100%. The Brooding Cleric heals allies for 20 seconds.",
-            droploc: "Necrolord",
-            covenant: "Necrolord",
-          },
-          de: {
-            name: "",
-            slot: "",
-            desc: "",
-            droploc: "",
-            covenant: "Necrolord",
-          },
-          fr: {
-            name: "",
-            slot: "",
-            desc: "",
-            droploc: "",
-            covenant: "Necrolord",
-          },
-          ru: {
-            name: "",
-            slot: "",
-            desc: "",
-            droploc: "",
-            covenant: "Necrolord",
-          },
-          ch: {
-            name: "",
-            slot: "",
-            desc: "",
-            droploc: "",
-            covenant: "Necrolord",
-          },
-        };
-        break;
+    /* ------------------------------------------ Necrolord ----------------------------------------- */
+    case "Pallid Command":
+      legendaryDetails = {
+        en: {
+          name: "Pallid Command",
+          slot: "Feet, Finger",
+          desc:
+            "Casting Unholy Nova summons a Brooding Cleric that gains 2% additional healing each time an enemy affected by Unholy Transfusion is damaged by an ally, up to 100%. The Brooding Cleric heals allies for 20 seconds.",
+          droploc: "Necrolord",
+          covenant: "Necrolord",
+        },
+        de: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Necrolord",
+        },
+        fr: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Necrolord",
+        },
+        ru: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Necrolord",
+        },
+        ch: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Necrolord",
+        },
+      };
+      break;
 
-        /* ------------------------------------------ Night Fae ----------------------------------------- */
-        case "Bwonsamdi's Pact":
-          legendaryDetails = {
-            en: {
-              name: "Bwonsamdi's Pact",
-              slot: "Head, Waist, Hands",
-              desc: "Enter a pact with the Death Loa, calling forth a haunted mask that lingers on a target until Fae Guardians ends. Haunted Mask: Copies the benefit of the current faerie on its target. Follows your Direct Mask.",
-              droploc: "Night Fae",
-              covenant: "Night Fae",
-            },
-            de: {
-              name: "",
-              slot: "",
-              desc: "",
-              droploc: "",
-              covenant: "Night Fae",
-            },
-            fr: {
-              name: "",
-              slot: "",
-              desc: "",
-              droploc: "",
-              covenant: "Night Fae",
-            },
-            ru: {
-              name: "",
-              slot: "",
-              desc: "",
-              droploc: "",
-              covenant: "Night Fae",
-            },
-            ch: {
-              name: "",
-              slot: "",
-              desc: "",
-              droploc: "",
-              covenant: "Night Fae",
-            },
-          };
-          break;
+    /* ------------------------------------------ Night Fae ----------------------------------------- */
+    case "Bwonsamdi's Pact":
+      legendaryDetails = {
+        en: {
+          name: "Bwonsamdi's Pact",
+          slot: "Head, Waist, Hands",
+          desc:
+            "Enter a pact with the Death Loa, calling forth a haunted mask that lingers on a target until Fae Guardians ends. Haunted Mask: Copies the benefit of the current faerie on its target. Follows your Direct Mask.",
+          droploc: "Night Fae",
+          covenant: "Night Fae",
+        },
+        de: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Night Fae",
+        },
+        fr: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Night Fae",
+        },
+        ru: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Night Fae",
+        },
+        ch: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Night Fae",
+        },
+      };
+      break;
 
-          /* ------------------------------------------- Venthyr ------------------------------------------ */
-          case "Shadow Word: Manipulation":
-            legendaryDetails = {
-              en: {
-                name: "Shadow Word: Manipulation",
-                slot: "Neck, Wrist",
-                desc: "Mindgames lasts an additional 3 sec and reverses an additional 10% damage or healing. When Mindgames can no longer reverse healing or damage, gain 5% Critical Strike for each second remaining for 10 sec.",
-                droploc: "Venthyr",
-                covenant: "Venthyr",
-              },
-              de: {
-                name: "",
-                slot: "",
-                desc: "",
-                droploc: "",
-                covenant: "Venthyr",
-              },
-              fr: {
-                name: "",
-                slot: "",
-                desc: "",
-                droploc: "",
-                covenant: "Venthyr",
-              },
-              ru: {
-                name: "",
-                slot: "",
-                desc: "",
-                droploc: "",
-                covenant: "Venthyr",
-              },
-              ch: {
-                name: "",
-                slot: "",
-                desc: "",
-                droploc: "",
-                covenant: "Venthyr",
-              },
-            };
-            break;
+    /* ------------------------------------------- Venthyr ------------------------------------------ */
+    case "Shadow Word: Manipulation":
+      legendaryDetails = {
+        en: {
+          name: "Shadow Word: Manipulation",
+          slot: "Neck, Wrist",
+          desc:
+            "Mindgames lasts an additional 3 sec and reverses an additional 10% damage or healing. When Mindgames can no longer reverse healing or damage, gain 5% Critical Strike for each second remaining for 10 sec.",
+          droploc: "Venthyr",
+          covenant: "Venthyr",
+        },
+        de: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Venthyr",
+        },
+        fr: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Venthyr",
+        },
+        ru: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Venthyr",
+        },
+        ch: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Venthyr",
+        },
+      };
+      break;
 
     /* ---------------------------------------------------------------------------------------------- */
     /*                                             Shaman                                             */
@@ -1826,174 +1796,174 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       };
       break;
 
-      /* ---------------------------------------------------------------------------------------------- */
-      /*                                     9.1 Shaman Legendaries                                     */
-      /* ---------------------------------------------------------------------------------------------- */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     9.1 Shaman Legendaries                                     */
+    /* ---------------------------------------------------------------------------------------------- */
 
-      /* ------------------------------------------- Kyrian ------------------------------------------- */
+    /* ------------------------------------------- Kyrian ------------------------------------------- */
 
-      case "Raging Vesper Vortex":
-        legendaryDetails = {
-          en: {
-            name: "Raging Vesper Vortex",
-            slot: "Feet, Legs (recommended)",
-            desc: "When 3 charges of Vesper Totem are consumed, Vesper Totem will radiate a 15 yd burst of (200% of Spell power) Arcane damage and (220% of Spell power) healing.",
-            droploc: "Kyrian Renown 48",
-            covenant: "Kyrian",
-          },
-          de: {
-            name: "",
-            slot: "",
-            desc: "",
-            droploc: "",
-            covenant: "Kyrian",
-          },
-          fr: {
-            name: "",
-            slot: "",
-            desc: "",
-            droploc: "",
-            covenant: "Kyrian",
-          },
-          ru: {
-            name: "",
-            slot: "",
-            desc: "",
-            droploc: "",
-            covenant: "Kyrian",
-          },
-          ch: {
-            name: "",
-            slot: "",
-            desc: "",
-            droploc: "",
-            covenant: "Kyrian",
-          },
-        };
-        break;
+    case "Raging Vesper Vortex":
+      legendaryDetails = {
+        en: {
+          name: "Raging Vesper Vortex",
+          slot: "Feet, Legs (recommended)",
+          desc: "When 3 charges of Vesper Totem are consumed, Vesper Totem will radiate a 15 yd burst of (200% of Spell power) Arcane damage and (220% of Spell power) healing.",
+          droploc: "Kyrian Renown 48",
+          covenant: "Kyrian",
+        },
+        de: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Kyrian",
+        },
+        fr: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Kyrian",
+        },
+        ru: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Kyrian",
+        },
+        ch: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Kyrian",
+        },
+      };
+      break;
 
-        /* ------------------------------------------ Night Fae ----------------------------------------- */
-        case "Seeds of Rampant Growth":
-          legendaryDetails = {
-            en: {
-              name: "Seeds of Rampant Growth",
-              slot: "Head, Hands",
-              desc: "Each pulse of Fae Transfusion's damage effect reduces the cooldown of Feral Spirit by 7.0 sec and increases your critical strike chance by 3% for 15 sec.",
-              droploc: "Night Fae Renown 48",
-              covenant: "Night Fae",
-            },
-            de: {
-              name: "",
-              slot: "",
-              desc: "",
-              droploc: "",
-              covenant: "Night Fae",
-            },
-            fr: {
-              name: "",
-              slot: "",
-              desc: "",
-              droploc: "",
-              covenant: "Night Fae",
-            },
-            ru: {
-              name: "",
-              slot: "",
-              desc: "",
-              droploc: "",
-              covenant: "Night Fae",
-            },
-            ch: {
-              name: "",
-              slot: "",
-              desc: "",
-              droploc: "",
-              covenant: "Night Fae",
-            },
-          };
-          break;
+    /* ------------------------------------------ Night Fae ----------------------------------------- */
+    case "Seeds of Rampant Growth":
+      legendaryDetails = {
+        en: {
+          name: "Seeds of Rampant Growth",
+          slot: "Head, Hands",
+          desc: "Each pulse of Fae Transfusion's damage effect reduces the cooldown of Feral Spirit by 7.0 sec and increases your critical strike chance by 3% for 15 sec.",
+          droploc: "Night Fae Renown 48",
+          covenant: "Night Fae",
+        },
+        de: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Night Fae",
+        },
+        fr: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Night Fae",
+        },
+        ru: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Night Fae",
+        },
+        ch: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Night Fae",
+        },
+      };
+      break;
 
-          /* ------------------------------------------ Necrolord ----------------------------------------- */
-          case "Splintered Elements":
-            legendaryDetails = {
-              en: {
-                name: "Splintered Elements",
-                slot: "Neck, Waist",
-                desc: "Each additional Lightning Bolt generated by Primordial Wave increases your Haste by 5% for 10 sec.",
-                droploc: "Necrolord Renown 48",
-                covenant: "Necrolord",
-              },
-              de: {
-                name: "",
-                slot: "",
-                desc: "",
-                droploc: "",
-                covenant: "Necrolord",
-              },
-              fr: {
-                name: "",
-                slot: "",
-                desc: "",
-                droploc: "",
-                covenant: "Necrolord",
-              },
-              ru: {
-                name: "",
-                slot: "",
-                desc: "",
-                droploc: "",
-                covenant: "Necrolord",
-              },
-              ch: {
-                name: "",
-                slot: "",
-                desc: "",
-                droploc: "",
-                covenant: "Necrolord",
-              },
-            };
-            break;
+    /* ------------------------------------------ Necrolord ----------------------------------------- */
+    case "Splintered Elements":
+      legendaryDetails = {
+        en: {
+          name: "Splintered Elements",
+          slot: "Neck, Waist",
+          desc: "Each additional Lightning Bolt generated by Primordial Wave increases your Haste by 5% for 10 sec.",
+          droploc: "Necrolord Renown 48",
+          covenant: "Necrolord",
+        },
+        de: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Necrolord",
+        },
+        fr: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Necrolord",
+        },
+        ru: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Necrolord",
+        },
+        ch: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Necrolord",
+        },
+      };
+      break;
 
-            /* ------------------------------------------- Venthyr ------------------------------------------ */
-            case "Elemental Conduit":
-              legendaryDetails = {
-                en: {
-                  name: "Elemental Conduit",
-                  slot: "Chest, Wrist",
-                  desc: "Up to 5 friendly targets healed by Chain Harvest have Riptide applied to them. Up to 5 enemy targets damaged by Chain Harvest have Flame Shock applied to them.",
-                  droploc: "Venthyr Renown 48",
-                  covenant: "Venthyr",
-                },
-                de: {
-                  name: "",
-                  slot: "",
-                  desc: "",
-                  droploc: "",
-                  covenant: "Venthyr",
-                },
-                fr: {
-                  name: "",
-                  slot: "",
-                  desc: "",
-                  droploc: "",
-                  covenant: "Venthyr",
-                },
-                ru: {
-                  name: "",
-                  slot: "",
-                  desc: "",
-                  droploc: "",
-                  covenant: "Venthyr",
-                },
-                ch: {
-                  name: "",
-                  slot: "",
-                  desc: "",
-                  droploc: "",
-                  covenant: "Venthyr",
-                },
-              };
-              break;
+    /* ------------------------------------------- Venthyr ------------------------------------------ */
+    case "Elemental Conduit":
+      legendaryDetails = {
+        en: {
+          name: "Elemental Conduit",
+          slot: "Chest, Wrist",
+          desc: "Up to 5 friendly targets healed by Chain Harvest have Riptide applied to them. Up to 5 enemy targets damaged by Chain Harvest have Flame Shock applied to them.",
+          droploc: "Venthyr Renown 48",
+          covenant: "Venthyr",
+        },
+        de: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Venthyr",
+        },
+        fr: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Venthyr",
+        },
+        ru: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Venthyr",
+        },
+        ch: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Venthyr",
+        },
+      };
+      break;
     /* ---------------------------------------------------------------------------------------------- */
     /*                                              Monk                                              */
     /* ---------------------------------------------------------------------------------------------- */
@@ -2225,174 +2195,172 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
       };
       break;
 
-      /* ---------------------------------------------------------------------------------------------- */
-      /*                                      9.1 Monk Legendaries                                      */
-      /* ---------------------------------------------------------------------------------------------- */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      9.1 Monk Legendaries                                      */
+    /* ---------------------------------------------------------------------------------------------- */
 
-      /* ------------------------------------------- Kyrian ------------------------------------------- */
+    /* ------------------------------------------- Kyrian ------------------------------------------- */
 
-      case "Call to Arms":
-        legendaryDetails = {
-          en: {
-            name: "Call to Arms",
-            slot: "Feet, Legs (recommended)",
-            desc: "Weapons of Order calls forth Chi-Ji, the Red Crane / Yu'lon, the Jade Serpent to assist you for 12 sec.",
-            droploc: "Kyrian Renown 48",
-            covenant: "Kyrian",
-          },
-          de: {
-            name: "",
-            slot: "",
-            desc: "",
-            droploc: "",
-            covenant: "Kyrian",
-          },
-          fr: {
-            name: "",
-            slot: "",
-            desc: "",
-            droploc: "",
-            covenant: "Kyrian",
-          },
-          ru: {
-            name: "",
-            slot: "",
-            desc: "",
-            droploc: "",
-            covenant: "Kyrian",
-          },
-          ch: {
-            name: "",
-            slot: "",
-            desc: "",
-            droploc: "",
-            covenant: "Kyrian",
-          },
-        };
-        break;
+    case "Call to Arms":
+      legendaryDetails = {
+        en: {
+          name: "Call to Arms",
+          slot: "Feet, Legs (recommended)",
+          desc: "Weapons of Order calls forth Chi-Ji, the Red Crane / Yu'lon, the Jade Serpent to assist you for 12 sec.",
+          droploc: "Kyrian Renown 48",
+          covenant: "Kyrian",
+        },
+        de: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Kyrian",
+        },
+        fr: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Kyrian",
+        },
+        ru: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Kyrian",
+        },
+        ch: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Kyrian",
+        },
+      };
+      break;
 
-        case "Bountiful Brew":
-          legendaryDetails = {
-            en: {
-              name: "Bountiful Brew",
-              slot: "Neck, Shoulder, Chest",
-              desc: "Your abilities have a low chance to cast Bonedust Brew at your target's location (1.25 procs / min).",
-              droploc: "Necrolord Renown 48",
-              covenant: "Necrolord",
-            },
-            de: {
-              name: "",
-              slot: "",
-              desc: "",
-              droploc: "",
-              covenant: "Necrolord",
-            },
-            fr: {
-              name: "",
-              slot: "",
-              desc: "",
-              droploc: "",
-              covenant: "Necrolord",
-            },
-            ru: {
-              name: "",
-              slot: "",
-              desc: "",
-              droploc: "",
-              covenant: "Necrolord",
-            },
-            ch: {
-              name: "",
-              slot: "",
-              desc: "",
-              droploc: "",
-              covenant: "Necrolord",
-            },
-          };
-          break;
+    case "Bountiful Brew":
+      legendaryDetails = {
+        en: {
+          name: "Bountiful Brew",
+          slot: "Neck, Shoulder, Chest",
+          desc: "Your abilities have a low chance to cast Bonedust Brew at your target's location (1.25 procs / min).",
+          droploc: "Necrolord Renown 48",
+          covenant: "Necrolord",
+        },
+        de: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Necrolord",
+        },
+        fr: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Necrolord",
+        },
+        ru: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Necrolord",
+        },
+        ch: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Necrolord",
+        },
+      };
+      break;
 
-          case "Faeline Harmony":
-            legendaryDetails = {
-              en: {
-                name: "Faeline Harmony",
-                slot: "Waist, Hands",
-                desc: "Your abilities reset Faeline Stomp 100% more often. Enemies and allies hit by Faeline Stomp are affected by Fae Exposure, increasing your damage and healing against them by 8% for 10 sec.",
-                droploc: "Night Fae Renown 48",
-                covenant: "Night Fae",
-              },
-              de: {
-                name: "",
-                slot: "",
-                desc: "",
-                droploc: "",
-                covenant: "Night Fae",
-              },
-              fr: {
-                name: "",
-                slot: "",
-                desc: "",
-                droploc: "",
-                covenant: "Night Fae",
-              },
-              ru: {
-                name: "",
-                slot: "",
-                desc: "",
-                droploc: "",
-                covenant: "Night Fae",
-              },
-              ch: {
-                name: "",
-                slot: "",
-                desc: "",
-                droploc: "",
-                covenant: "Night Fae",
-              },
-            };
-            break;
+    case "Faeline Harmony":
+      legendaryDetails = {
+        en: {
+          name: "Faeline Harmony",
+          slot: "Waist, Hands",
+          desc:
+            "Your abilities reset Faeline Stomp 100% more often. Enemies and allies hit by Faeline Stomp are affected by Fae Exposure, increasing your damage and healing against them by 8% for 10 sec.",
+          droploc: "Night Fae Renown 48",
+          covenant: "Night Fae",
+        },
+        de: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Night Fae",
+        },
+        fr: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Night Fae",
+        },
+        ru: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Night Fae",
+        },
+        ch: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Night Fae",
+        },
+      };
+      break;
 
-            case "Sinister Teachings":
-              legendaryDetails = {
-                en: {
-                  name: "Sinister Teachings",
-                  slot: "Wrist, Finger (recommended)",
-                  desc: "Fallen Order summons 1 additional adept for 24 sec. While you have an active adept, your abilities that critically hit reduce the cooldown of Fallen Order by 5 sec.",
-                  droploc: "Venthyr Renown 48",
-                  covenant: "Venthyr",
-                },
-                de: {
-                  name: "",
-                  slot: "",
-                  desc: "",
-                  droploc: "",
-                  covenant: "Venthyr",
-                },
-                fr: {
-                  name: "",
-                  slot: "",
-                  desc: "",
-                  droploc: "",
-                  covenant: "Venthyr",
-                },
-                ru: {
-                  name: "",
-                  slot: "",
-                  desc: "",
-                  droploc: "",
-                  covenant: "Venthyr",
-                },
-                ch: {
-                  name: "",
-                  slot: "",
-                  desc: "",
-                  droploc: "",
-                  covenant: "Venthyr",
-                },
-              };
-              break;
-  
-
-
+    case "Sinister Teachings":
+      legendaryDetails = {
+        en: {
+          name: "Sinister Teachings",
+          slot: "Wrist, Finger (recommended)",
+          desc: "Fallen Order summons 1 additional adept for 24 sec. While you have an active adept, your abilities that critically hit reduce the cooldown of Fallen Order by 5 sec.",
+          droploc: "Venthyr Renown 48",
+          covenant: "Venthyr",
+        },
+        de: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Venthyr",
+        },
+        fr: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Venthyr",
+        },
+        ru: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Venthyr",
+        },
+        ch: {
+          name: "",
+          slot: "",
+          desc: "",
+          droploc: "",
+          covenant: "Venthyr",
+        },
+      };
+      break;
 
     case "Vitality Sacrifice":
       legendaryDetails = {

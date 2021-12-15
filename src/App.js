@@ -26,10 +26,7 @@ import QESnackbar from "General/Modules/CooldownPlanner/BasicComponents/QESnackB
 import TestingPage from "General/Modules/CooldownPlanner/TestingLandingPage";
 // import { createBrowserHistory } from "history"; // not used TODO: remove?
 import { dbCheckPatron, dbGetArticleList } from "General/Modules/SetupAndMenus/ConnectionUtilities.js";
-
 import ReactGA from "react-ga";
-import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
-import { theme } from "./theme";
 
 process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
 
