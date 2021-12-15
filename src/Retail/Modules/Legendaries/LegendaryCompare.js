@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import "../../../General/Modules/SetupAndMenus/QEMainMenu";
 import LegendaryObject from "./LegendaryObject";
 import "./Legendaries.css";
@@ -13,7 +13,7 @@ import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
 
 const useStyles = makeStyles((theme) => ({
   header: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down("sm")]: {
       margin: "auto",
       width: "85%",
       justifyContent: "space-between",
@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "space-between",
       display: "block",
       marginTop: "120px",
-      marginTop: 120,
     },
     [theme.breakpoints.up("lg")]: {
       margin: "auto",
