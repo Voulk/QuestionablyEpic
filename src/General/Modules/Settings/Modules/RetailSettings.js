@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import makeStyles from "@mui/styles/makeStyles";
-import { MenuItem, Grid, FormControl, Select, Typography, TextField, Tooltip, InputLabel } from "@mui/material";
+import { MenuItem, Grid, Typography, TextField, Tooltip,  } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { setBounds } from "../../../Engine/CONSTRAINTS";
-import { getGemIcon } from "../../../Engine/ItemUtilities";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function RetailSettings(props) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   // const currentLanguage = i18n.language;
   const classes = useStyles();
   // const playerSpec = props.player.getSpec();
@@ -249,7 +248,6 @@ export default function RetailSettings(props) {
             fullWidth
             value={replaceDomGems}
             onChange={(e) => updateReplaceDomGems(e.target.value)}
-            label={t("Settings.Retail.Setting4Title")}
             style={{ textAlign: "center", minWidth: 200 }}
           >
             <MenuItem divider value={true} style={{ justifyContent: "center" }}>

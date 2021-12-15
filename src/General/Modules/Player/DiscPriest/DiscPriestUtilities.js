@@ -1,5 +1,5 @@
 
-import { runCastSequence, allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "./DiscRampGen";
 
 export const getRampData = (playerStats, playerTrinkets, playstyle) => {
@@ -29,7 +29,7 @@ export const getRampData = (playerStats, playerTrinkets, playstyle) => {
 
 }
 
-export const genStatWeights = (activeStats, base) => {
+export const genStatWeights = (activeStats) => {
     // Weights
     const boonSeq = buildRamp('Boon', 10, [], activeStats.haste, ['Rapture'])
     const fiendSeq = buildRamp('Fiend', 10, [], activeStats.haste, ['Rapture'])

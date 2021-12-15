@@ -6,7 +6,7 @@ import { convertPPMToUptime } from "../../../../Retail/Engine/EffectFormulas/Eff
 import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
-import { getDomGemEffect, applyDiminishingReturns } from "General/Engine/ItemUtilities";
+import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEffectFormulas";
 import { allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
@@ -57,24 +57,6 @@ function autoSocketItems(itemList) {
     let item = itemList[i];
     if (["Finger", "Head", "Neck", "Wrist", "Waist"].includes(item.slot) && !item.hasDomSocket) {
       item.socket = true;
-    }
-  }
-
-  return itemList;
-}
-
-/**
- * @deprecated This is no longer in use with the new Dom Shard settings in-app.
- */
-function autoGemVault(itemList, userSettings) {
-  for (var i = 0; i < itemList.length; i++) {
-    let item = itemList[i];
-    if (item.vaultItem && item.hasDomSocket && userSettings.vaultDomGem !== "") {
-      //item.setDominationGem(userSettings.vaultDomGem);
-      const gemID = userSettings.vaultDomGem;
-      item.domGemID = gemID;
-      item.effect = getDomGemEffect(gemID);
-      item.gemString = gemID;
     }
   }
 
@@ -133,8 +115,8 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   // and so on if they are already close in strength.
   let differentials = [];
   let primeSet = itemSets[0];
-  for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials + 1, itemSets.length); i++) {
-    differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer, contentType));
+  for (var k = 1; k < Math.min(CONSTRAINTS.Shared.topGearDifferentials + 1, itemSets.length); k++) {
+    differentials.push(buildDifferential(itemSets[k], primeSet, newPlayer, contentType));
   }
 
   // == Return sets ==
@@ -329,7 +311,7 @@ function pruneItems(itemSets) {
 function sumScore(obj) {
   var sum = 0;
   for (var el in obj) {
-    if (obj.hasOwnProperty(el)) {
+    if (obj.hasOwnProperty(el)) { // eslint-disable-line
       sum += parseFloat(obj[el]);
     }
   }
@@ -611,6 +593,7 @@ const deepCopyFunction = (inObject) => {
  * @param {*} castModel
  * @returns
  */
+/*
 function evalSetOld(itemSet, player, contentType, baseHPS, userSettings, castModel) {
   let builtSet = itemSet.compileStats("Retail", userSettings); // This adds together the stats of each item in the set.
   let setStats = builtSet.setStats;
@@ -722,3 +705,4 @@ function evalSetOld(itemSet, player, contentType, baseHPS, userSettings, castMod
   builtSet.enchantBreakdown = enchants;
   return builtSet; // Temp
 }
+ */
