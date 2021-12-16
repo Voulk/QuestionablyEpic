@@ -40,14 +40,13 @@ import { red } from "@mui/material/colors";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions.js";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
-import { classRaceList, bcClassRaceList } from "../../CooldownPlanner/Data/Data";
+import { classRaceList } from "../../CooldownPlanner/Data/Data";
 import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
 import LogDetailsTable from "./CharacterLogDetailsTable";
 import { STAT } from "../../../Engine/STAT";
 import { apiGetPlayerImage } from "../ConnectionUtilities";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
-import { setConstantValue } from "typescript";
 import { covenantIcons } from "../../CooldownPlanner/Functions/CovenantFunctions";
 import { classTranslator } from "General/Functions/CommonFunctions";
 
@@ -195,7 +194,6 @@ export default function CharCards(props) {
   const [leech, setLeech] = React.useState(player.getStatWeight(contentType, STAT.LEECH));
   const [server, setServer] = React.useState(player.realm);
   const [backgroundImage, setBackgroundImage] = useState("");
-  const [avatar, setAvatar] = useState("");
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
@@ -231,9 +229,6 @@ export default function CharCards(props) {
   };
   const handleChangeRegion = (event) => {
     setRegion(event.target.value);
-  };
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
   };
 
   /* -------------------------------------------------------------------------- */

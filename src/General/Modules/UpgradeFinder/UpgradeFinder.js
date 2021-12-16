@@ -1,11 +1,6 @@
+import React, { useEffect } from "react";
 import UpgradeFinderFront from "./UpgradeFinderFront";
 import UpgradeFinderResults from "./UpgradeFinderResults";
-import UpgradeFinderResult from "./UpgradeFinderResult";
-import React, { useState, useEffect } from "react";
-import { createTheme } from "@mui/material/styles";
-import makeStyles from '@mui/styles/makeStyles';
-import { Paper, Grid, Typography, Button } from "@mui/material";
-import { useTranslation } from "react-i18next";
 import ReactGA from "react-ga";
 
 export function UpgradeFinder(props) {
@@ -34,8 +29,7 @@ export function UpgradeFinder(props) {
   const setBCDungeonDifficulty = (event, difficulty) => {
     if (difficulty === "Heroic") {
       setPlayerSettings({ ...playerSettings, dungeon: 1 });
-    }
-    else {
+    } else {
       setPlayerSettings({ ...playerSettings, dungeon: 0 });
     }
   };

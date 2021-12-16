@@ -1,30 +1,9 @@
 import React, { useState } from "react";
-import makeStyles from "@mui/styles/makeStyles";
 import { MenuItem, Grid, Typography, TextField, Tooltip } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { setBounds } from "../../../Engine/CONSTRAINTS";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(14),
-    marginRight: 4,
-  },
-  secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary,
-  },
-  select: {
-    fontSize: theme.typography.pxToRem(16),
-  },
-}));
 
 export default function BurningCrusadeSettings(props) {
   const { t } = useTranslation();
-  const classes = useStyles();
-  // const playerSpec = props.player.getSpec();
 
   /* ------------------------------------------ Setting 0 ----------------------------------------- */
   const [manaProfile, setManaProfile] = useState("Standard");
@@ -36,11 +15,6 @@ export default function BurningCrusadeSettings(props) {
   const [autoEnchantItems, setAutoEnchantItems] = useState(true);
   /* ------------------------------------------ Setting 4 ----------------------------------------- */
   const [gemRarity, setGemRarity] = useState("rare");
-  /* ------------------------------------------ Setting 5 ----------------------------------------- */
-  const [settingValue5, setSettingValue5] = useState("");
-
-  /* -------------------------------------- Auto-Socket State ------------------------------------- */
-  const [autoSocketValue, setAutoSocketValue] = useState(props.userSettings.autoSocket);
 
   const updateManaProfile = (value) => {
     props.editSettings("manaProfile", value);
@@ -61,9 +35,6 @@ export default function BurningCrusadeSettings(props) {
   const updateGemRarity = (value) => {
     props.editSettings("gemRarity", value);
     setGemRarity(value);
-  };
-  const updateSetting5 = (value) => {
-    setSettingValue5();
   };
 
   return (
@@ -233,33 +204,6 @@ export default function BurningCrusadeSettings(props) {
           </TextField>
         </Tooltip>
       </Grid>
-      {/* ---------------------------------------------------------------------------------------------- */
-      /*                                            Setting 5                                            */
-      /* ---------------------------------------------------------------------------------------------- */}
-
-      {/*}
-      <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
-        <Grid container spacing={1} style={{ paddingLeft: 8 }}>
-          <Grid item xs={12}>
-            <Tooltip title={<Typography align="center" variant="body2">{t("Settings.BurningCrusade.Setting5Tooltip")}</Typography>} placement="top-start">
-              <Typography color="primary">{t("Settings.BurningCrusade.Setting5Title")}</Typography>
-            </Tooltip>
-            <Tooltip title={<Typography align="center" variant="body2">{t("Settings.BurningCrusade.Setting5Tooltip")}</Typography>} placement="top-start">
-                <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
-              </Tooltip>
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              id="AlliesNumber"
-              value={settingValue5}
-              onChange={(e) => setSettingValue5(e.target.value)}
-              variant="outlined"
-              size="small"
-              type="number"
-            />
-          </Grid>
-        </Grid>
-      </Grid>*/}
     </Grid>
   );
 }

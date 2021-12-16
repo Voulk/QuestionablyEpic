@@ -49,12 +49,12 @@ class LogImport extends Component {
     return <div style={{ color: styleColor }}>{start + end}</div>;
   };
 
-  render(props) {
+  render() {
     const { fights } = this.state;
     if (this.state.reportid === null) {
       return (
         <MenuItem key={99} value="Fight">
-          "No Report Loaded"
+          No Report Loaded
         </MenuItem>
       );
     }
