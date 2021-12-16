@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const getTrinketAtItemLevel = (id, itemLevel, player, contentType, gameType) => {
+const getTrinketAtItemLevel = (id, itemLevel, player, contentType) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
   let itemAllocations = getItemAllocations(id);
   item.stats = calcStatsAtLevel(itemLevel, "Trinket", itemAllocations, "");
@@ -66,7 +66,7 @@ const getBCTrinketScore = (id, player) => {
   return item.softScore;
 };
 
-const getHighestTrinketScore = (db, trinket, gameType) => {
+const getHighestTrinketScore = (db, trinket) => {
   const trinketID = trinket.id;
 
   let temp = db.filter(function (item) {

@@ -1,5 +1,5 @@
 import React from "react";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider } from "@mui/material";
 import { getTranslatedItemName, getItemIcon } from "../../../Engine/ItemUtilities";
 import "./ItemUpgrade.css";
@@ -45,7 +45,6 @@ export default function ItemCard(props) {
   const item = props.item;
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
   const itemDifferential = props.itemDifferential;
   const hasDom = item.hasDomSocket;
@@ -82,8 +81,7 @@ export default function ItemCard(props) {
     /* ------------------------------ Dungeon Name ------------------------------ */
     if (item.source.instanceId === -1) {
       return t("DungeonNames." + item.source.encounterId);
-    }
-    else if (item.source.instanceId === 1194) {
+    } else if (item.source.instanceId === 1194) {
       return t("BossNames.Tazavesh." + item.source.encounterId) + " (Tazavesh)";
     }
     /* ----------------------------- Raid Boss Name ----------------------------- */
@@ -109,10 +107,10 @@ export default function ItemCard(props) {
     if (item.source.instanceId === -17 || item.source.encounterId === -17) {
       return t("PvPCurrency.-17");
     }
-        /* -------------------------------- TBC Badge Gear -------------------------------- */
-        if (item.source.instanceId === -4) {
-          return t("BadgeGear");
-        }
+    /* -------------------------------- TBC Badge Gear -------------------------------- */
+    if (item.source.instanceId === -4) {
+      return t("BadgeGear");
+    }
   };
 
   return (

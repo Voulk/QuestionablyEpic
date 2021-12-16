@@ -8,7 +8,6 @@ import { useTranslation } from "react-i18next";
 import { filterItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { itemLevels } from "../../../../Databases/itemLevelsDB";
-import { useSelector } from "react-redux";
 
 const useStyles = makeStyles(() => ({
   root: {

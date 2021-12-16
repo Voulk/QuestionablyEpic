@@ -1,11 +1,9 @@
 import React, { PureComponent } from "react";
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip, Cell } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip } from "recharts";
 // import chroma from "chroma-js";
 import { getItemIcon, getTranslatedItemName } from "../../../Engine/ItemUtilities";
 import "./VerticalChart.css";
 import i18n from "i18next";
-import chroma from "chroma-js";
-import { colorGenerator } from "../../CooldownPlanner/Functions/Functions";
 
 const getLevelDiff = (trinketName, db, ilvl, map2) => {
   /* ---------- Check if item exists at item level. If not, return 0. --------- */
@@ -56,7 +54,6 @@ export default class VerticalChart extends PureComponent {
     const currentLanguage = i18n.language;
     const data = this.props.data;
     const db = this.props.db;
-    const alternateColour = this.props.alternateColour;
     /* ------------------------- Ilvls to Show on Chart & Colour Generation ------------------------- */
     const iLvls = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
 

@@ -1,30 +1,8 @@
 import React, { PureComponent } from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip } from "recharts";
-// import chroma from "chroma-js";
 import { getItemIcon, getTranslatedItemName } from "../../../Engine/ItemUtilities";
 import "./VerticalChart.css";
 import i18n from "i18next";
-
-const getLevelDiff = (trinketName, db, ilvl, map2) => {
-  /* ---------- Check if item exists at item level. If not, return 0. --------- */
-  let temp = db.filter(function (item) {
-    return item.name === trinketName;
-  });
-
-  const item = temp[0];
-  const pos = item.levelRange.indexOf(ilvl);
-  const previousLevel = item.levelRange[pos - 1];
-
-  /* ----------- Return item score - the previous item levels score. ---------- */
-  if (pos > 0) {
-    // added a or 0 to handle NANs
-    return map2["i" + ilvl] - map2["i" + previousLevel] || 0;
-  } else if (pos == 0) {
-    return map2["i" + ilvl];
-  } else {
-    return 0;
-  }
-};
 
 /* ------------------------ Cleans Zeros from Objects ----------------------- */
 const cleanZerosFromArray = (obj) => {
@@ -51,7 +29,6 @@ export default class BCChart extends PureComponent {
   render() {
     const currentLanguage = i18n.language;
     const data = this.props.data;
-    const db = this.props.db;
 
     let arr = [];
     let cleanedArray = [];
