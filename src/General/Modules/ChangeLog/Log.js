@@ -10,8 +10,18 @@
 export const changeLog = [
   {
     version: "9.1.5 / 2.5.2",
+    update: 5,
+    date: "16 December (Minor update)",
+    changes: [
+      "Added better error handling to Top Gear to help diagnose very rare crashes.",
+      "Paladin (Dungeon): Reduced the expected proc rate of Flask of Solemn Night.",
+      "Top Gear item limit increased to 32."
+    ],
+  },
+  {
+    version: "9.1.5 / 2.5.2",
     update: 4,
-    date: "12 December",
+    date: "12 December (Minor update)",
     changes: [
       "DR is now applied to So'leah's Secret Technique correctly.",
       "Moonlit Prism is now combined with spec cooldowns where applicable."
@@ -20,7 +30,7 @@ export const changeLog = [
   {
     version: "9.1.5 / 2.5.2",
     update: 3,
-    date: "6 December",
+    date: "6 December (Major update)",
     changes: [
       "Added Legion Timewalking gear.",
       "Added a Legion Timewalking section to the Upgrade Finder.",
@@ -30,7 +40,7 @@ export const changeLog = [
   {
     version: "9.1.5 / 2.5.2",
     update: 2,
-    date: "16 November",
+    date: "16 November (Minor update)",
     changes: [
       "Added Doomwalker anniversary gear.",
       "Added a few missing PVP items to the item DB.",
@@ -39,7 +49,7 @@ export const changeLog = [
   {
     version: "9.1.5 / 2.5.2",
     update: 1,
-    date: "7 November",
+    date: "7 November (Major update)",
     changes: [
       "Discipline Priest overhaul. Conduit / legendary information added.",
       "New Character panel incorporating old settings and SimC import panels.",
