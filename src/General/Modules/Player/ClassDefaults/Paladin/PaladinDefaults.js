@@ -83,7 +83,7 @@ export const paladinVenthyrStatWeights = (contentType) => {
     intellect: 1,
     haste: 0.45,
     crit: 0.37,
-    mastery: 0.24,
+    mastery: 0,
     versatility: 0.43,
     leech: 0.38,
     defaults: true,

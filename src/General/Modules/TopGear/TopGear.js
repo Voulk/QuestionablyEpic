@@ -19,6 +19,7 @@ import { useSelector } from "react-redux";
 import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems";
 import ItemBar from "../ItemBar/ItemBar";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
+import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -75,7 +76,7 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const TOPGEARCAP = 31; // TODO
+const TOPGEARCAP = 32; // TODO
 
 export default function TopGear(props) {
   const { t, i18n } = useTranslation();
@@ -182,18 +183,35 @@ export default function TopGear(props) {
       if (gameType === "Retail") {
         const worker = require("workerize-loader!./Engine/TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
         let instance = new worker();
-        instance.runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
-          apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
-          props.setTopResult(result);
-          history.push("/report/");
-        });
+
+          instance.runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
+            // If top gear completes successfully, log a successful run, terminate the worker and then press on to the Report.
+            apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
+            props.setTopResult(result);
+            instance.terminate();
+            history.push("/report/");
+          }).catch(err => {
+            // If top gear crashes for any reason, log the error and then terminate the worker.
+            reportError("", "Top Gear Crash", err, itemList.length);
+            setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
+            instance.terminate();
+            setBtnActive(true)
+          });
+
       } else {
         const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
         let instance = new worker();
         instance.runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
           //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
           props.setTopResult(result);
+          instance.terminate();
           history.push("/report/");
+        }).catch(err => {
+          // If top gear crashes for any reason, log the error and then terminate the worker.
+          reportError("", "BC Top Gear Crash", err, itemList.length);
+          setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
+          instance.terminate();
+          setBtnActive(true)
         });
       }
     } else {

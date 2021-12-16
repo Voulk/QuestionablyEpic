@@ -81,7 +81,7 @@ export const paladinKyrianStatWeights = (contentType) => {
     intellect: 1,
     haste: 0.44,
     crit: 0.37,
-    mastery: 0.29,
+    mastery: 0.25,
     versatility: 0.43,
     leech: 0.38,
     defaults: true,
