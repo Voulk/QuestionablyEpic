@@ -5,10 +5,8 @@ import ItemUpgradeCard from "./ItemUpgradeCard";
 import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, filterBCItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
+import { filterItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { encounterDB } from "../../../../Databases/InstanceDB";
-import { itemLevels } from "../../../../Databases/itemLevelsDB";
-import { useSelector } from "react-redux";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -23,8 +21,6 @@ export default function TazaveshGearContainer(props) {
   const { t } = useTranslation();
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
-  const difficulty = props.playerSettings.dungeon;
-  const gameType = useSelector((state) => state.gameType);
   const contentGenerator = () => {
     return encounterDB[1194].map((key, i) => (
       <Grid item xs={12} key={"mythicContainer-" + i}>

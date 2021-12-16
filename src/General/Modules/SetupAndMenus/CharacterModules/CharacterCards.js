@@ -179,7 +179,6 @@ export default function CharCards(props) {
 
   const [tabvalue, setTabValue] = React.useState(0);
 
-  const [value, setValue] = React.useState(0);
   const [region, setRegion] = React.useState(player.region);
   const [open, setOpen] = React.useState(false);
   const [charName, setCharName] = React.useState(player.charName);

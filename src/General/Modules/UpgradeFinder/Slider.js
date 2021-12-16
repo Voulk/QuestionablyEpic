@@ -2,7 +2,7 @@ import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Grid, Slider } from "@mui/material";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   slider: {
     width: "90%",
     margin: "0px 20px 35px 20px",
