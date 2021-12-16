@@ -58,7 +58,7 @@ const AccordionSummary = withStyles({
   expanded: {},
 })(MuiAccordionSummary);
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     width: "100%",
     padding: "8px 5px",
@@ -112,14 +112,14 @@ export default function SlotsContainer(props) {
     }
   };
 
-  const contentGenerator = (type) => {
+  const contentGenerator = () => {
     return slotList.map((key, i) => (
-      <Accordion elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+      <Accordion key={t("slotNames." + key.label) + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
           <img src={iconReturn(key.slot, props.player.spec)} height={30} width={30} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
           <Typography align="center" variant="h6" noWrap color="primary">
             {t("slotNames." + key.label)} -{" "}
-            {[...filterItemListBySlot(itemList, key.slot)].map((item, index) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades
+            {[...filterItemListBySlot(itemList, key.slot)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades
           </Typography>
         </AccordionSummary>
         <AccordionDetails style={{ backgroundColor: "#191c23" }}>
@@ -137,7 +137,7 @@ export default function SlotsContainer(props) {
     <div className={classes.root}>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          {contentGenerator(props.type)}
+          {contentGenerator()}
         </Grid>
       </Grid>
     </div>

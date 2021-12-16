@@ -148,16 +148,12 @@ const getDifficultyName = (difficulty) => {
   switch (difficulty) {
     case 0:
       return "LFR";
-      break;
     case 1:
       return "Normal";
-      break;
     case 2:
       return "Heroic";
-      break;
     case 3:
       return "Mythic";
-      break;
   }
 };
 
@@ -165,22 +161,18 @@ const getDifficultyBaseLevel = (difficulty) => {
   switch (difficulty) {
     case 0:
       return 213;
-      break;
     case 1:
       return 226;
-      break;
     case 2:
       return 239;
-      break;
     case 3:
       return 252;
-      break;
   }
 };
 
 export default function RaidGearContainer(props) {
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
   const gameType = useSelector((state) => state.gameType);
@@ -189,7 +181,7 @@ export default function RaidGearContainer(props) {
   /*                                           Shadowlands                                          */
   /* ---------------------------------------------------------------------------------------------- */
 
-  const contentGenerator = (items) => {
+  const contentGenerator = () => {
     // Raid Panel
     const difficulties = props.playerSettings.raid;
     difficulties.sort().reverse();
@@ -278,7 +270,7 @@ export default function RaidGearContainer(props) {
   /*                                         Burning Crusade                                        */
   /* ---------------------------------------------------------------------------------------------- */
 
-  const contentGeneratorBC = (items) => {
+  const contentGeneratorBC = () => {
     // Raid Panel
 
     const burningCrusadeList = [745, 746, 748, 749, 750, 751, 321, 752];
@@ -353,7 +345,7 @@ export default function RaidGearContainer(props) {
 
             <Grid item xs={12}>
               {burningCrusadeList.map((raidID, index) => (
-                <TabPanel value={tabvalue} index={index}>
+                <TabPanel key={"panel" + index} value={tabvalue} index={index}>
                   <div className={classes.panel}>
                     <Grid container spacing={1}>
                       {/* <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}

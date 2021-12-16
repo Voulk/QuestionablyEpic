@@ -5,7 +5,7 @@ import ItemUpgradeCard from "./ItemUpgradeCard";
 import DungeonHeaderIcons from "../../CooldownPlanner/Functions/IconFunctions/DungeonHeaderIcons";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, filterBCItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
+import { filterItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { itemLevels } from "../../../../Databases/itemLevelsDB";
 import { useSelector } from "react-redux";
@@ -24,7 +24,6 @@ export default function LegionTimewalkingGearContainer(props) {
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
   const difficulty = props.playerSettings.dungeon;
-  const gameType = useSelector((state) => state.gameType);
 
   const imagePosition = (dungeon) => {
     switch (dungeon) {

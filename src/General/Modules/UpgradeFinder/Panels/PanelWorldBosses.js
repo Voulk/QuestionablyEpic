@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { filterItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     width: "100%",
     marginTop: 4,
@@ -18,11 +18,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function WorldBossGearContainer(props) {
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
 
-  const contentGenerator = (type) => {
+  const contentGenerator = () => {
     return encounterDB[1192].map((key, i) => (
       <Grid item xs={12} key={"worldBossContainer-" + i}>
         <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>

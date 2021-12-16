@@ -144,7 +144,7 @@ export default function HallOfFame() {
                 <Grid container spacing={2} direction="row" justifyContent="flex-start" alignItems="center" style={nameContainerStyle}>
                   {names
                     .filter((key) => key.tier === "Gold")
-                    .map((key) => (
+                    .map((key, i) => (
                       <Grid item xs={4} key={"G" + i}>
                         <Typography
                           style={{
