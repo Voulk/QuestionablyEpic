@@ -10,7 +10,7 @@ import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import Settings from "../Settings/Settings";
 import { covenantIcons, covenantColours } from "../CooldownPlanner/Functions/CovenantFunctions";
-import ErrorTooltip from "./ErrorTooltip";
+// import ErrorTooltip from "./ErrorTooltip";
 import { classTranslator } from "General/Functions/CommonFunctions";
 
 const useStyles = makeStyles(() => ({
@@ -25,7 +25,6 @@ const useStyles = makeStyles(() => ({
     borderStyle: "None",
     width: "80%",
     margin: "auto",
-    width: "80%",
   },
 }));
 
@@ -119,22 +118,22 @@ export default function CharacterPanel(props) {
     borderRadius: 4,
   };
 
-  const errorMessage = (
-    <div>
-      There is a problem with your import, please check the following:
-      <br />
-      If your character is wearing the correct items:
-      <br />
-      <span>• Weapon / Off Hands</span>
-      <br />
-      <span>• Helm / Neck / Chest / Wrist / Hands / Belt / Legs / Boots / Rings </span>
-      <br />
-      <span>• Trinkets</span>
-      <br />
-      <br />
-      Make sure that all your items with a primary stat are Intellect based, and not Strength or Agility.
-    </div>
-  );
+  // const errorMessage = (
+  //   <div>
+  //     There is a problem with your import, please check the following:
+  //     <br />
+  //     If your character is wearing the correct items:
+  //     <br />
+  //     <span>• Weapon / Off Hands</span>
+  //     <br />
+  //     <span>• Helm / Neck / Chest / Wrist / Hands / Belt / Legs / Boots / Rings </span>
+  //     <br />
+  //     <span>• Trinkets</span>
+  //     <br />
+  //     <br />
+  //     Make sure that all your items with a primary stat are Intellect based, and not Strength or Agility.
+  //   </div>
+  // );
 
   return (
     // disabled errortooltip until properly implemented
@@ -348,9 +347,9 @@ export default function CharacterPanel(props) {
                         </Grid>
                       ))
                   ) : (
-                    <Grid item key={i}>
+                    <Grid item>
                       {/* // TODO: Localize this */}
-                      <Typography variant="body2">Import your gear with a SimC string via the "Import Gear" button above.</Typography>
+                      <Typography variant="body2">Import your gear with a SimC string via the `&ldquo;`Import Gear`&ldquo;` button above.</Typography>
                     </Grid>
                   )}
                 </Grid>
@@ -406,9 +405,9 @@ export default function CharacterPanel(props) {
                         </Grid>
                       ))
                   ) : (
-                    <Grid item key={i}>
+                    <Grid item >
                       {/* // TODO: Localize this */}
-                      <Typography variant="body2">Import your gear with a SimC string via the "Import Gear" button above.</Typography>
+                      <Typography variant="body2">Import your gear with a SimC string via the `&ldquo;`Import Gear`&ldquo;` button above.</Typography>
                     </Grid>
                   )}
                 </Grid>
