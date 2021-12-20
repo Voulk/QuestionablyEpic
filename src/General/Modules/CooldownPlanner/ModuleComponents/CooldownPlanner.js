@@ -27,6 +27,7 @@ import { red } from "@mui/material/colors";
 import ExportPlanDialog from "./ExportPlanDialog";
 import ImportPlanDialog from "./ImportPlanDialog";
 import ExportERTDialog from "./ERTDialog";
+import HealerSelector from "./HealerSelector";
 
 const useStyles = makeStyles(() => ({
   formControl: {
@@ -442,52 +443,7 @@ export default function CooldownPlanner(props) {
       /* ------------------------ Renders the healer name outside of Edit Mode. ----------------------- */
       render: (rowData) => <div style={{ color: classColoursJS(rowData.class), display: "inline-flex" }}>{rowData.name}</div>,
       /* ---------- Component for name selection when the table is in edit mode. ---------- */
-      editComponent: (props) => (
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={selectMenu}>
-            <FormControl className={classes.formControl} size="small">
-              <TextField
-                value={props.value}
-                select
-                label={t("Name")}
-                labelId="HealerSelector"
-                onChange={(e) => {
-                  /* ------------------------------ Spread the rows data for updating ----------------------------- */
-                  let data = { ...props.rowData };
-                  /* -------------------- Set the name of the row to the selected from dropdown ------------------- */
-                  data.name = e.target.value;
-                  /* --------------------- Update the class from the healerinfo local storage --------------------- */
-                  data.class = ls
-                    .get("healerInfo")
-                    .filter((obj) => {
-                      return obj.name === e.target.value;
-                    })
-                    .map((obj) => obj.class)
-                    .toString();
-                  /* ------------------------------- Reset the cooldown for the row ------------------------------- */
-                  data.Cooldown = undefined;
-                  /* --------------------------------------- Update the data -------------------------------------- */
-                  props.onRowDataChange(data);
-                }}
-              >
-                {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
-                {ls.get("healerInfo").map((key, i) => (
-                  <MenuItem divider style={{ color: classColoursJS(key.class) }} key={key.name} value={key.name}>
-                    <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
-                      {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
-                      {key.name}
-                    </div>
-                  </MenuItem>
-                ))}
-                <MenuItem key={"remove"} value={""}>
-                  {/* // TODO Translate */}
-                  Remove
-                </MenuItem>
-              </TextField>
-            </FormControl>
-          </ThemeProvider>
-        </StyledEngineProvider>
-      ),
+      editComponent: (props) => HealerSelector(props),
     },
     /* ------- Class column. This is generated from the selected healer from the Name column. ------- */
     {
@@ -645,51 +601,7 @@ export default function CooldownPlanner(props) {
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
       render: (rowData) => <div style={{ color: classColoursJS(rowData.class1), display: "inline-flex" }}>{rowData.name1}</div>,
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
-      editComponent: (props) => (
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={selectMenu}>
-            <FormControl className={classes.formControl} size="small">
-              <Select
-                value={props.value}
-                label={t("Name")}
-                labelId="HealerSelector"
-                onChange={(e) => {
-                  /* ------------------------------ Spread the rows data for updating ----------------------------- */
-                  let data = { ...props.rowData };
-                  /* -------------------- Set the name of the row to the selected from dropdown ------------------- */
-                  data.name1 = e.target.value;
-                  /* --------------------- Update the class from the healerinfo local storage --------------------- */
-                  data.class1 = ls
-                    .get("healerInfo")
-                    .filter((obj) => {
-                      return obj.name === e.target.value;
-                    })
-                    .map((obj) => obj.class)
-                    .toString();
-                  /* ------------------------------- Reset the cooldown for the row ------------------------------- */
-                  data.Cooldown1 = undefined;
-                  /* --------------------------------------- Update the data -------------------------------------- */
-                  props.onRowDataChange(data);
-                }}
-              >
-                {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
-                {ls.get("healerInfo").map((key, i) => (
-                  <MenuItem divider style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
-                    <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
-                      {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
-                      {key.name}
-                    </div>
-                  </MenuItem>
-                ))}
-                <MenuItem key={"remove"} value={""}>
-                  {/* // TODO: Translate */}
-                  Remove
-                </MenuItem>
-              </Select>
-            </FormControl>
-          </ThemeProvider>
-        </StyledEngineProvider>
-      ),
+      editComponent: (props, i) => HealerSelector(props, i),
     },
 
     {
