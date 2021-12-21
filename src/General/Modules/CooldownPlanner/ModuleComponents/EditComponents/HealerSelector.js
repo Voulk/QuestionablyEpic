@@ -2,8 +2,8 @@ import React from "react";
 import { TextField, MenuItem } from "@mui/material";
 import ls from "local-storage";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
-import { classColoursJS } from "../Functions/ClassColourFunctions";
-import classIcons from "../Functions/IconFunctions/ClassIcons";
+import { classColoursJS } from "../../Functions/ClassColourFunctions";
+import classIcons from "../../Functions/IconFunctions/ClassIcons";
 import { useTranslation } from "react-i18next";
 
 const selectMenu = createTheme({
@@ -33,8 +33,7 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
         <TextField
           value={props.value}
           select
-          label={t("Name")}
-          labelId="HealerSelector"
+          sx={{ lineHeight: "normal", width: "100%" }}
           size="small"
           onChange={(e) => {
             /* ------------------------------ Spread the rows data for updating ----------------------------- */

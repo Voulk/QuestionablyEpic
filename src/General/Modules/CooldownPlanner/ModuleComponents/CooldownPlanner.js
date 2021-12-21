@@ -1,6 +1,5 @@
 import React, { useEffect, forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "@material-table/core";
-import ClassCooldownMenuItems from "../Menus/ClassCooldownMenuItems";
 import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search } from "@mui/icons-material";
 import { Button, TextField, InputLabel, FormControl, Grow, MenuItem, Paper, Select, Grid, Typography } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
@@ -8,14 +7,12 @@ import makeStyles from "@mui/styles/makeStyles";
 import moment from "moment";
 import { healerCooldownsDetailed, raidList } from "../Data/Data";
 import { bossList } from "../Data/CooldownPlannerBossList";
-import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { useTranslation } from "react-i18next";
 import { localizationFR } from "locale/fr/TableLocale";
 import { localizationEN } from "locale/en/TableLocale";
 import { localizationRU } from "locale/ru/TableLocale";
 import { localizationCH } from "locale/ch/TableLocale";
-import abilityIcons from "../Functions/IconFunctions/AbilityIcons";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
 import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
 import classIcons from "../Functions/IconFunctions/ClassIcons";
@@ -27,7 +24,11 @@ import { red } from "@mui/material/colors";
 import ExportPlanDialog from "./ExportPlanDialog";
 import ImportPlanDialog from "./ImportPlanDialog";
 import ExportERTDialog from "./ERTDialog";
-import HealerSelector from "./HealerSelector";
+import HealerSelector from "./EditComponents/HealerSelector";
+import BossAbilitySelector from "./EditComponents/BossAbilitySelector";
+import CooldownSelector from "./EditComponents/CooldownSelector";
+import CastTextField from "./EditComponents/CastTextField";
+import CooldownRender from "./RenderComponents/CooldownRender";
 
 const useStyles = makeStyles(() => ({
   formControl: {
@@ -330,44 +331,7 @@ export default function CooldownPlanner(props) {
           </Typography>
         </div>
       ),
-      editComponent: (props) => (
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={selectMenu}>
-            <FormControl className={classes.formControl} size="small">
-              <Select
-                value={props.value}
-                labelId="BossAbilitySelector"
-                onChange={(e) => {
-                  props.onChange(e.target.value);
-                }}
-              >
-                {bossAbilities
-                  .filter((obj) => {
-                    return obj.bossID === currentBoss && obj.cooldownPlannerActive === true;
-                  })
-                  .map((key, i, arr) => {
-                    let lastItem = i + 1 === arr.length ? false : true;
-                    return (
-                      <MenuItem divider={lastItem} key={i} value={key.guid}>
-                        <a data-wowhead={"spell=" + key.guid + "&domain=" + currentLanguage}>
-                          {bossAbilityIcons(key.guid, {
-                            height: 20,
-                            width: 20,
-                            margin: "0px 4px 0px 0px",
-                            verticalAlign: "middle",
-                            border: "1px solid #595959",
-                            borderRadius: 4,
-                          })}
-                        </a>
-                        {t("CooldownPlanner.BossAbilities." + key.guid)}
-                      </MenuItem>
-                    );
-                  })}
-              </Select>
-            </FormControl>
-          </ThemeProvider>
-        </StyledEngineProvider>
-      ),
+      editComponent: (props) => BossAbilitySelector(props, currentBoss),
     },
 
     /* -------------------------------------------------------------------------- */
@@ -390,25 +354,7 @@ export default function CooldownPlanner(props) {
       // Times currently must be entered in the 00:00 format.
       // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
       // This can probably be handled a lot better than how it handled currently.
-      editComponent: (props) => (
-        <TextField
-          error={RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value) || props.value === undefined ? false : true}
-          inputProps={{
-            pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
-          }}
-          InputProps={{
-            classes: {
-              input: classes.textFieldFontSize,
-            },
-          }}
-          size="small"
-          id="standard-basic"
-          placeholder="00:00"
-          value={props.value}
-          style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
-          onChange={(e) => props.onChange(e.target.value)}
-        />
-      ),
+      editComponent: (props) => CastTextField(props),
     },
     {
       /* ----- Render only, should the user when the cooldown will be available again to be used. ----- */
@@ -487,45 +433,9 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
-      render: (rowData) => (
-        <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
-          <div>
-            {abilityIcons(rowData.Cooldown, {
-              height: 30,
-              width: 30,
-              margin: "0px 4px 0px 0px",
-              verticalAlign: "middle",
-              border: "1px solid #595959",
-              borderRadius: 4,
-            })}
-          </div>
-          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
-            {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown)}
-          </Typography>
-        </div>
-      ),
+      render: (rowData) => CooldownRender(rowData, "Cooldown"),
       /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
-      editComponent: (props, rowData) => {
-        let data = { ...props.rowData };
-        return (
-          <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={selectMenu}>
-              <FormControl className={classes.formControl} size="small">
-                <Select
-                  value={rowData.Cooldown || props.value}
-                  labelId="HealerAbilitySelector"
-                  label={t("Cooldown")}
-                  onChange={(e) => {
-                    props.onChange(e.target.value);
-                  }}
-                >
-                  {ClassCooldownMenuItems(data.class) || []}
-                </Select>
-              </FormControl>
-            </ThemeProvider>
-          </StyledEngineProvider>
-        );
-      },
+      editComponent: (props, rowData) => CooldownSelector(props, rowData, "Cooldown", "class"),
     },
 
     /* -------------------------------------------------------------------------- */
@@ -548,25 +458,7 @@ export default function CooldownPlanner(props) {
       // Times currently must be entered in the 00:00 format.
       // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
       // This can probably be handled a lot better than how it handled currently.
-      editComponent: (props) => (
-        <TextField
-          error={RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value) || props.value === undefined ? false : true}
-          inputProps={{
-            pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
-          }}
-          InputProps={{
-            classes: {
-              input: classes.textFieldFontSize,
-            },
-          }}
-          size="small"
-          id="standard-basic"
-          placeholder="00:00"
-          value={props.value}
-          style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
-          onChange={(e) => props.onChange(e.target.value)}
-        />
-      ),
+      editComponent: (props) => CastTextField(props),
     },
     {
       /* ----- Render only, should the user when the cooldown will be available again to be used. ----- */
@@ -647,45 +539,9 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
-      render: (rowData) => (
-        <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
-          <div>
-            {abilityIcons(rowData.Cooldown1, {
-              height: 30,
-              width: 30,
-              margin: "0px 4px 0px 0px",
-              verticalAlign: "middle",
-              border: "1px solid #595959",
-              borderRadius: 4,
-            })}
-          </div>
-          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
-            {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown1)}
-          </Typography>
-        </div>
-      ),
+      render: (rowData) => CooldownRender(rowData, "Cooldown1"),
       /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
-      editComponent: (props, rowData) => {
-        let data = { ...props.rowData };
-        return (
-          <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={selectMenu}>
-              <FormControl className={classes.formControl} size="small">
-                <Select
-                  value={rowData.Cooldown1 || props.value}
-                  labelId="HealerAbilitySelector"
-                  label={t("Cooldown")}
-                  onChange={(e) => {
-                    props.onChange(e.target.value);
-                  }}
-                >
-                  {ClassCooldownMenuItems(data.class1) || []}
-                </Select>
-              </FormControl>
-            </ThemeProvider>
-          </StyledEngineProvider>
-        );
-      },
+      editComponent: (props, rowData) => CooldownSelector(props, rowData, "Cooldown1", "class1"),
     },
 
     /* -------------------------------------------------------------------------- */
@@ -708,25 +564,7 @@ export default function CooldownPlanner(props) {
       // Times currently must be entered in the 00:00 format.
       // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
       // This can probably be handled a lot better than how it handled currently.
-      editComponent: (props) => (
-        <TextField
-          error={RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value) || props.value === undefined ? false : true}
-          inputProps={{
-            pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
-          }}
-          InputProps={{
-            classes: {
-              input: classes.textFieldFontSize,
-            },
-          }}
-          size="small"
-          id="standard-basic"
-          placeholder="00:00"
-          value={props.value}
-          style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
-          onChange={(e) => props.onChange(e.target.value)}
-        />
-      ),
+      editComponent: (props) => CastTextField(props),
     },
     {
       /* ----- Render only, should the user when the cooldown will be available again to be used. ----- */
@@ -803,45 +641,9 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
-      render: (rowData) => (
-        <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
-          <div>
-            {abilityIcons(rowData.Cooldown2, {
-              height: 30,
-              width: 30,
-              margin: "0px 4px 0px 0px",
-              verticalAlign: "middle",
-              border: "1px solid #595959",
-              borderRadius: 4,
-            })}
-          </div>
-          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
-            {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown2)}
-          </Typography>
-        </div>
-      ),
+      render: (rowData) => CooldownRender(rowData, "Cooldown2"),
       /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
-      editComponent: (props, rowData) => {
-        let data = { ...props.rowData };
-        return (
-          <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={selectMenu}>
-              <FormControl className={classes.formControl} size="small">
-                <Select
-                  value={rowData.Cooldown2 || props.value}
-                  labelId="HealerAbilitySelector"
-                  label={t("Cooldown")}
-                  onChange={(e) => {
-                    props.onChange(e.target.value);
-                  }}
-                >
-                  {ClassCooldownMenuItems(data.class2) || []}
-                </Select>
-              </FormControl>
-            </ThemeProvider>
-          </StyledEngineProvider>
-        );
-      },
+      editComponent: (props, rowData) => CooldownSelector(props, rowData, "Cooldown2", "class2"),
     },
 
     /* -------------------------------------------------------------------------- */
@@ -864,25 +666,7 @@ export default function CooldownPlanner(props) {
       // Times currently must be entered in the 00:00 format.
       // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
       // This can probably be handled a lot better than how it handled currently.
-      editComponent: (props) => (
-        <TextField
-          error={RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value) || props.value === undefined ? false : true}
-          inputProps={{
-            pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
-          }}
-          InputProps={{
-            classes: {
-              input: classes.textFieldFontSize,
-            },
-          }}
-          size="small"
-          id="standard-basic"
-          placeholder="00:00"
-          value={props.value}
-          style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
-          onChange={(e) => props.onChange(e.target.value)}
-        />
-      ),
+      editComponent: (props) => CastTextField(props),
     },
     {
       /* ----- Render only, should the user when the cooldown will be available again to be used. ----- */
@@ -958,45 +742,9 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
-      render: (rowData) => (
-        <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
-          <div>
-            {abilityIcons(rowData.Cooldown3, {
-              height: 30,
-              width: 30,
-              margin: "0px 4px 0px 0px",
-              verticalAlign: "middle",
-              border: "1px solid #595959",
-              borderRadius: 4,
-            })}
-          </div>
-          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
-            {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown3)}
-          </Typography>
-        </div>
-      ),
+      render: (rowData) => CooldownRender(rowData, "Cooldown3"),
       /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
-      editComponent: (props, rowData) => {
-        let data = { ...props.rowData };
-        return (
-          <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={selectMenu}>
-              <FormControl className={classes.formControl} size="small">
-                <Select
-                  value={rowData.Cooldown3 || props.value}
-                  labelId="HealerAbilitySelector"
-                  label={t("Cooldown")}
-                  onChange={(e) => {
-                    props.onChange(e.target.value);
-                  }}
-                >
-                  {ClassCooldownMenuItems(data.class3) || []}
-                </Select>
-              </FormControl>
-            </ThemeProvider>
-          </StyledEngineProvider>
-        );
-      },
+      editComponent: (props, rowData) => CooldownSelector(props, rowData, "Cooldown3", "class3"),
     },
 
     /* -------------------------------------------------------------------------- */
@@ -1019,25 +767,7 @@ export default function CooldownPlanner(props) {
       // Times currently must be entered in the 00:00 format.
       // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
       // This can probably be handled a lot better than how it handled currently.
-      editComponent: (props) => (
-        <TextField
-          error={RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value) || props.value === undefined ? false : true}
-          inputProps={{
-            pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
-          }}
-          InputProps={{
-            classes: {
-              input: classes.textFieldFontSize,
-            },
-          }}
-          size="small"
-          id="standard-basic"
-          placeholder="00:00"
-          value={props.value}
-          style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
-          onChange={(e) => props.onChange(e.target.value)}
-        />
-      ),
+      editComponent: (props) => CastTextField(props),
     },
     {
       /* ----- Render only, should the user when the cooldown will be available again to be used. ----- */
@@ -1115,45 +845,9 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
-      render: (rowData) => (
-        <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
-          <div>
-            {abilityIcons(rowData.Cooldown4, {
-              height: 30,
-              width: 30,
-              margin: "0px 4px 0px 0px",
-              verticalAlign: "middle",
-              border: "1px solid #595959",
-              borderRadius: 4,
-            })}
-          </div>
-          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
-            {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown4)}
-          </Typography>
-        </div>
-      ),
+      render: (rowData) => CooldownRender(rowData, "Cooldown4"),
       /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
-      editComponent: (props, rowData) => {
-        let data = { ...props.rowData };
-        return (
-          <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={selectMenu}>
-              <FormControl className={classes.formControl} size="small">
-                <Select
-                  value={rowData.Cooldown4 || props.value}
-                  labelId="HealerAbilitySelector"
-                  label={t("Cooldown")}
-                  onChange={(e) => {
-                    props.onChange(e.target.value);
-                  }}
-                >
-                  {ClassCooldownMenuItems(data.class4) || []}
-                </Select>
-              </FormControl>
-            </ThemeProvider>
-          </StyledEngineProvider>
-        );
-      },
+      editComponent: (props, rowData) => CooldownSelector(props, rowData, "Cooldown4", "class4"),
     },
 
     {
