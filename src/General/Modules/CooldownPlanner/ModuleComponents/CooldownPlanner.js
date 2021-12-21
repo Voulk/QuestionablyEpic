@@ -1153,6 +1153,21 @@ export default function CooldownPlanner(props) {
                     resolve();
                   }, 1000);
                 }),
+              onBulkUpdate: (changes) =>
+                new Promise((resolve, reject) => {
+                  setTimeout(() => {
+                    const dataUpdate = [...data];
+
+                    for (var key in changes) {
+                      if (changes.hasOwnProperty(key)) {
+                        dataUpdate[key] = changes[key].newData;
+                      }
+                    }
+                    setData([...dataUpdate]);
+                    updateStorage(currentBoss, currentPlan, [...dataUpdate]);
+                    resolve();
+                  }, 1000);
+                }),
             }}
           />
 
