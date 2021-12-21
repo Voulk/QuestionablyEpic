@@ -30,7 +30,7 @@ export default function CooldownSelector(props, rowData, cooldown, nameClass) {
       <ThemeProvider theme={selectMenu}>
         <TextField
           select
-          value={rowData[cooldown] || props.value}
+          value={rowData[cooldown] || props.value || ""}
           sx={{ lineHeight: "normal", width: "100%" }}
           size="small"
           onChange={(e) => {

@@ -31,7 +31,7 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={selectMenu}>
         <TextField
-          value={props.value}
+          value={props.value || ""}
           select
           sx={{ lineHeight: "normal", width: "100%" }}
           size="small"

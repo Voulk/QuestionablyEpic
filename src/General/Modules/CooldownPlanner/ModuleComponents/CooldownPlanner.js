@@ -1039,7 +1039,7 @@ export default function CooldownPlanner(props) {
                           {getBossPlanNames(currentBoss).map((key, i, arr) => {
                             let lastItem = i + 1 === arr.length ? false : true;
                             return (
-                              <MenuItem divider={lastItem} value={key}>
+                              <MenuItem key={key} divider={lastItem} value={key}>
                                 {key}
                               </MenuItem>
                             );
@@ -1157,7 +1157,7 @@ export default function CooldownPlanner(props) {
                 new Promise((resolve, reject) => {
                   setTimeout(() => {
                     const dataUpdate = [...data];
-
+                    console.log(changes);
                     for (var key in changes) {
                       if (changes.hasOwnProperty(key)) {
                         dataUpdate[key] = changes[key].newData;

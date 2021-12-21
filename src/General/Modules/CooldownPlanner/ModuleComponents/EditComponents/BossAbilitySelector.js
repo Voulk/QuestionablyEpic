@@ -31,7 +31,7 @@ export default function BossAbilitySelector(props, currentBoss) {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={selectMenu}>
         <TextField
-          value={props.value}
+          value={props.value || ""}
           size="small"
           select
           sx={{ lineHeight: "normal", width: "100%" }}
