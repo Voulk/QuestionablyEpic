@@ -24,7 +24,7 @@ const selectMenu = createTheme({
   },
 });
 
-export default function HealerSelector(props, i) {
+export default function HealerSelector(props, name, nameClass, cooldown) {
   const { t, i18n } = useTranslation();
 
   return (
@@ -40,9 +40,9 @@ export default function HealerSelector(props, i) {
             /* ------------------------------ Spread the rows data for updating ----------------------------- */
             let data = { ...props.rowData };
             /* -------------------- Set the name of the row to the selected from dropdown ------------------- */
-            data.name = e.target.value;
+            data[name] = e.target.value;
             /* --------------------- Update the class from the healerinfo local storage --------------------- */
-            data.class = ls
+            data[nameClass] = ls
               .get("healerInfo")
               .filter((obj) => {
                 return obj.name === e.target.value;
@@ -50,7 +50,7 @@ export default function HealerSelector(props, i) {
               .map((obj) => obj.class)
               .toString();
             /* ------------------------------- Reset the cooldown for the row ------------------------------- */
-            data.Cooldown = undefined;
+            data[cooldown] = undefined;
             /* --------------------------------------- Update the data -------------------------------------- */
             props.onRowDataChange(data);
           }}
