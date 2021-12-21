@@ -769,7 +769,7 @@
       "HelpTextRetail": "Top Gear lets you compare every possible combination of your selected gear at once!",
       "HelpTextBurningCrusade": "Top Gear lets you compare every possible combination of your selected gear at once!",
       "ItemsHereMessage": "Your items will go here after you import, then hit 'Go' once happy with your selection.",
-      "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have a valid weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each.",
+      "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have an intellect weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each.",
       "GoMsg": "Go!",
       "SelectedItems": "Selected Items",
       "BackToGearSelection": "Back to Gear Selection",
