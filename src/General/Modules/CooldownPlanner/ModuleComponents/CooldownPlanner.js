@@ -29,6 +29,7 @@ import BossAbilitySelector from "./EditComponents/BossAbilitySelector";
 import CooldownSelector from "./EditComponents/CooldownSelector";
 import CastTextField from "./EditComponents/CastTextField";
 import CooldownRender from "./RenderComponents/CooldownRender";
+import { CooldownPlannerTheme } from "./Styles/CooldownPlannerTheme";
 
 const useStyles = makeStyles(() => ({
   formControl: {
@@ -54,104 +55,6 @@ const useStyles = makeStyles(() => ({
 const deleteTheme = createTheme({
   palette: {
     primary: red,
-  },
-});
-
-const themeCooldownTable = createTheme({
-  palette: {
-    mode: "dark",
-    primary: { main: "#d3bc47" },
-    secondary: { main: "#e0e0e0" },
-  },
-  components: {
-    // Name of the component
-    MuiPaper: {
-      styleOverrides: {
-        // Name of the slot
-        root: {
-          // Some CSS
-          backgroundColor: "#424242",
-          // backgroundImage: "unset", // Disables MUI5's new elevation gradients
-        },
-      },
-    },
-    MuiTableCell: {
-      styleOverrides: {
-        root: {
-          padding: "4px",
-          borderBottom: "1px solid #595959",
-        },
-      },
-    },
-    MuiIconButton: {
-      styleOverrides: {
-        root: {
-          padding: "4px",
-        },
-      },
-    },
-    MuiToolbar: {
-      styleOverrides: {
-        root: { color: "#345" },
-        regular: {
-          minHeight: 0,
-          "@media (min-width: 600px)": {
-            minHeight: "0px",
-          },
-        },
-      },
-    },
-    MuiInputBase: {
-      styleOverrides: {
-        root: {
-          fontSize: 12,
-        },
-      },
-    },
-  },
-});
-
-const selectMenu = createTheme({
-  components: {
-    MuiSelect: { styleOverrides: { selectMenu: { height: 20 } } },
-    MuiTextField: { styleOverrides: { selectMenu: { height: 20 } } },
-    MuiInputBase: {
-      styleOverrides: {
-        root: {
-          fontSize: 12,
-        },
-      },
-    },
-  },
-  palette: {
-    mode: "dark",
-    primary: { main: "#d3bc47" },
-    secondary: { main: "#e0e0e0" },
-  },
-});
-
-const SearchFieldOverride = createTheme({
-  components: {
-    MuiOutlinedInput: {
-      styleOverrides: {
-        input: { padding: 10 },
-      },
-    },
-    MuiToolbar: {
-      styleOverrides: {
-        regular: {
-          minHeight: 0,
-          "@media (min-width: 600px)": {
-            minHeight: "0px",
-          },
-        },
-      },
-    },
-  },
-  palette: {
-    mode: "dark",
-    primary: { main: "#d3bc47" },
-    secondary: { main: "#e0e0e0" },
   },
 });
 
@@ -213,8 +116,8 @@ export default function CooldownPlanner(props) {
   // Only bosses for Sanctum will be shown in the drop down
   const [currentRaid, setCurrentRaid] = useState(2450);
   const [currentBoss, setCurrentBoss] = useState(2423);
-  const [currentPlan, setCurrentPlan] = useState("");
-  const [data, setData] = useState([]);
+  const [currentPlan, setCurrentPlan] = useState("default");
+  const [data, setData] = useState(cooldownObject.getCooldowns(currentBoss)["default"]);
 
   const getBossPlanNames = (boss) => {
     return Object.keys(cooldownObject.getCooldowns(boss));
@@ -270,7 +173,7 @@ export default function CooldownPlanner(props) {
       /* --- The Cast Time Column. This is where the time the user expects the cooldown to be cast. --- */
       title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
       field: "time",
-      width: "1%",
+      width: "4%",
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid #595959",
@@ -898,7 +801,7 @@ export default function CooldownPlanner(props) {
 
   return (
     <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={themeCooldownTable}>
+      <ThemeProvider theme={CooldownPlannerTheme}>
         <div>
           <MaterialTable
             icons={tableIcons}
@@ -1010,42 +913,52 @@ export default function CooldownPlanner(props) {
                   </Grid> */}
                     {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
                     <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                      <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small" disabled={currentRaid === "" ? true : false}>
-                        <InputLabel id="BossSelector">{t("CooldownPlanner.TableLabels.BossSelectorLabel")}</InputLabel>
-                        <Select labelId="BossSelector" value={currentBoss} onChange={(e) => changeBoss(e.target.value)} label={t("CooldownPlanner.TableLabels.BossSelectorLabel")}>
-                          {bossList
-                            .filter((obj) => {
-                              return obj.zoneID === currentRaid;
-                            })
-                            .map((key, i, arr) => {
-                              let lastItem = i + 1 === arr.length ? false : true;
-                              return (
-                                <MenuItem divider={lastItem} key={"BS" + i} value={key.DungeonEncounterID}>
-                                  {bossIcons(key.DungeonEncounterID)}
-                                  {t("BossNames." + key.ID)}
-                                </MenuItem>
-                              );
-                            })}
-                        </Select>
-                      </FormControl>
+                      <TextField
+                        sx={{ minWidth: 200, width: "100%" }}
+                        size="small"
+                        select
+                        value={currentBoss}
+                        onChange={(e) => changeBoss(e.target.value)}
+                        // label={t("CooldownPlanner.TableLabels.BossSelectorLabel")}
+                        disabled={currentRaid === "" ? true : false}
+                      >
+                        {bossList
+                          .filter((obj) => {
+                            return obj.zoneID === currentRaid;
+                          })
+                          .map((key, i, arr) => {
+                            let lastItem = i + 1 === arr.length ? false : true;
+                            return (
+                              <MenuItem divider={lastItem} key={"BS" + i} value={key.DungeonEncounterID}>
+                                {bossIcons(key.DungeonEncounterID)}
+                                {t("BossNames." + key.ID)}
+                              </MenuItem>
+                            );
+                          })}
+                      </TextField>
                     </Grid>
 
                     {/* ----------------------------------- Plan Selection Dropdown ---------------------------------- */}
 
                     <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                      <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small" disabled={currentBoss === "" ? true : false}>
-                        <InputLabel id="RaidSelector">{t("Select Plan")}</InputLabel>
-                        <Select labelId="RaidSelector" label={t("Select Plan")} value={currentPlan} onChange={(e) => loadPlanData(currentBoss, e.target.value)}>
-                          {getBossPlanNames(currentBoss).map((key, i, arr) => {
-                            let lastItem = i + 1 === arr.length ? false : true;
-                            return (
-                              <MenuItem key={key} divider={lastItem} value={key}>
-                                {key}
-                              </MenuItem>
-                            );
-                          })}
-                        </Select>
-                      </FormControl>
+                      <TextField
+                        sx={{ minWidth: 200, width: "100%" }}
+                        select
+                        id="RaidSelector"
+                        placeholder={t("Select Plan")}
+                        value={currentPlan}
+                        onChange={(e) => loadPlanData(currentBoss, e.target.value)}
+                        disabled={currentBoss === "" ? true : false}
+                      >
+                        {getBossPlanNames(currentBoss).map((key, i, arr) => {
+                          let lastItem = i + 1 === arr.length ? false : true;
+                          return (
+                            <MenuItem key={key} divider={lastItem} value={key}>
+                              {key}
+                            </MenuItem>
+                          );
+                        })}
+                      </TextField>
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
@@ -1098,13 +1011,7 @@ export default function CooldownPlanner(props) {
                     </Grid>
                   </Grid>
                   <Grid item xs={12} sm={6} md={12} lg={6} xl={3}>
-                    {currentBoss === "" ? null : (
-                      <StyledEngineProvider injectFirst>
-                        <ThemeProvider theme={SearchFieldOverride}>
-                          <MTableToolbar {...props} />
-                        </ThemeProvider>
-                      </StyledEngineProvider>
-                    )}
+                    {currentBoss === "" ? null : <MTableToolbar {...props} />}
                   </Grid>
                 </Grid>
               ),
