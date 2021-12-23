@@ -14,6 +14,7 @@ import { localizationEN } from "locale/en/TableLocale";
 import { localizationRU } from "locale/ru/TableLocale";
 import { localizationCH } from "locale/ch/TableLocale";
 import ls from "local-storage";
+import { CooldownPlannerTheme } from "./Styles/CooldownPlannerTheme";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -24,46 +25,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
   },
 }));
-
-const themeCooldownTable = createTheme({
-  components: {
-    MuiTableCell: {
-      styleOverrides: {
-        // Name of the slot
-        root: {
-          padding: "4px 4px 4px 4px",
-        },
-      },
-    },
-    MuiIconButton: {
-      styleOverrides: {
-        // Name of the slot
-        root: {
-          padding: "4px",
-        },
-      },
-    },
-    MuiToolbar: {
-      styleOverrides: {
-        regular: {
-          "@media (min-width: 600px)": {
-            minHeight: "0px",
-          },
-          minHeight: 0,
-        },
-        root: {
-          padding: "4px 4px 4px 4px",
-          color: "#c8b054",
-        },
-      },
-    },
-  },
-  palette: {
-    mode: "dark",
-    primary: { main: "#d3bc47" },
-    secondary: { main: "#e0e0e0" },
-  },
-});
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -104,14 +65,11 @@ export default function HealTeam() {
       editComponent: (props) => (
         <TextField
           size="small"
-          variant="outlined"
           id="standard-basic"
-          label={t("Name")}
           value={props.value}
-          style={{
+          sx={{
             whiteSpace: "nowrap",
             width: "100%",
-            marginTop: 6,
           }}
           onChange={(e) => props.onChange(e.target.value)}
         />
@@ -133,22 +91,17 @@ export default function HealTeam() {
         </div>
       ),
       editComponent: (props) => (
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={themeCooldownTable}>
-            <FormControl className={classes.formControl} size="small" variant="outlined" style={{ marginTop: 6 }}>
-              <InputLabel id="HealerClassSelector">{t("Class")}</InputLabel>
-              <Select
-                label={t("Class")}
-                value={props.value}
-                onChange={(e) => {
-                  props.onChange(e.target.value);
-                }}
-              >
-                {classMenus}
-              </Select>
-            </FormControl>
-          </ThemeProvider>
-        </StyledEngineProvider>
+        <TextField
+          select
+          value={props.value}
+          onChange={(e) => {
+            props.onChange(e.target.value);
+          }}
+          size="small"
+          sx={{ whiteSpace: "nowrap", width: "100%" }}
+        >
+          {classMenus}
+        </TextField>
       ),
     },
 
@@ -159,9 +112,7 @@ export default function HealTeam() {
       cellStyle: {
         whiteSpace: "nowrap",
       },
-      editComponent: (props) => (
-        <TextField variant="outlined" size="small" id="standard-basic" label="Notes" value={props.value} style={{ width: "100%", marginTop: 6 }} onChange={(e) => props.onChange(e.target.value)} />
-      ),
+      editComponent: (props) => <TextField size="small" id="standard-basic" value={props.value} sx={{ width: "100%" }} onChange={(e) => props.onChange(e.target.value)} />,
     },
   ];
 
@@ -187,7 +138,7 @@ export default function HealTeam() {
 
   return (
     <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={themeCooldownTable}>
+      <ThemeProvider theme={CooldownPlannerTheme}>
         <MaterialTable
           icons={tableIcons}
           title={t("CooldownPlanner.TableLabels.HealTeamHeader")}
@@ -212,12 +163,14 @@ export default function HealTeam() {
                   borderBottom: "1px solid #515151",
                   borderLeft: "1px solid #515151",
                   borderRight: "1px solid #515151",
+                  height: 30,
                 };
               }
               return {
                 borderBottom: "1px solid #515151",
                 borderLeft: "1px solid #515151",
                 borderRight: "1px solid #515151",
+                height: 30,
               };
             },
             searchFieldStyle: {
@@ -267,6 +220,20 @@ export default function HealTeam() {
                   dataDelete.splice(index, 1);
                   setData([...dataDelete]);
                   updateStorage([...dataDelete]);
+                  resolve();
+                }, 1000);
+              }),
+            onBulkUpdate: (changes) =>
+              new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  const dataUpdate = [...data];
+                  for (var key in changes) {
+                    if (changes.hasOwnProperty(key)) {
+                      dataUpdate[key] = changes[key].newData;
+                    }
+                  }
+                  setData([...dataUpdate]);
+                  updateStorage([...dataUpdate]);
                   resolve();
                 }, 1000);
               }),

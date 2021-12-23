@@ -14,7 +14,23 @@ export const CooldownPlannerTheme = createTheme({
         root: {
           // Some CSS
           backgroundColor: "#424242",
-          // backgroundImage: "unset", // Disables MUI5's new elevation gradients
+          backgroundImage: "unset", // Disables MUI5's new elevation gradients
+        },
+      },
+    },
+    MuiListSubheader: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#343434",
+          lineHeight: "36px",
+        },
+      },
+    },
+    MuiList: {
+      styleOverrides: {
+        root: {
+          paddingTop: 0,
+          paddingBottom: 0,
         },
       },
     },

@@ -33,7 +33,7 @@ export default function AddPlanDialog(props) {
     <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openDeletePlanDialog}>
       <DialogTitle id="simple-dialog-title">Are you sure you want to delete the current plan?</DialogTitle>
       <DialogContent>
-        <TextField variant="outlined" fullWidth id="standard-required" label="Type 'Delete' to confirm" defaultValue="" value={deleteChecker} onChange={deleteCheck} />
+        <TextField sx={{ paddingTop: "4px" }} variant="outlined" fullWidth id="standard-required" placeholder="Type 'Delete' to confirm" defaultValue="" value={deleteChecker} onChange={deleteCheck} />
       </DialogContent>
       <DialogActions>
         <StyledEngineProvider injectFirst>

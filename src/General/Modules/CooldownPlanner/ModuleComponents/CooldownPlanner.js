@@ -802,97 +802,96 @@ export default function CooldownPlanner(props) {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={CooldownPlannerTheme}>
-        <div>
-          <MaterialTable
-            icons={tableIcons}
-            columns={columns}
-            data={data}
-            style={{
-              padding: 10,
-            }}
-            /* ---------------------- Option to make cell editable by clicking on cell ---------------------- */
-            /* ------------------- Not currently Implemented, Code here for future options ------------------ */
-            // cellEditable={{
-            //   onCellEditApproved: (newValue, oldValue, rowData, columnDef) => {
-            //     return new Promise((resolve, reject) => {
-            //       console.log('newValue: ' + newValue);
-            //       setTimeout(resolve, 1000);
-            //     });
-            //   }
-            // }}
-            options={{
-              showTitle: false,
-              sorting: false,
-              searchFieldVariant: "outlined",
-              headerStyle: {
-                border: "1px solid #6c6c6c",
-                padding: "0px 8px 0px 8px",
-                backgroundColor: "#6c6c6c",
-                color: "#fff",
-                whiteSpace: "nowrap",
-                textAlign: "center",
-              },
-              /* --------------------------- Alternating Row Colour is defined here --------------------------- */
-              rowStyle: (rowData, index) => {
-                if (index % 2) {
-                  return {
-                    height: 30,
-                    backgroundColor: "#515151",
-                    border: "1px solid #595959",
-                  };
-                }
+        <MaterialTable
+          icons={tableIcons}
+          columns={columns}
+          data={data}
+          style={{
+            padding: 10,
+          }}
+          /* ---------------------- Option to make cell editable by clicking on cell ---------------------- */
+          /* ------------------- Not currently Implemented, Code here for future options ------------------ */
+          // cellEditable={{
+          //   onCellEditApproved: (newValue, oldValue, rowData, columnDef) => {
+          //     return new Promise((resolve, reject) => {
+          //       console.log('newValue: ' + newValue);
+          //       setTimeout(resolve, 1000);
+          //     });
+          //   }
+          // }}
+          options={{
+            showTitle: false,
+            sorting: false,
+            searchFieldVariant: "outlined",
+            headerStyle: {
+              border: "1px solid #6c6c6c",
+              padding: "0px 8px 0px 8px",
+              backgroundColor: "#6c6c6c",
+              color: "#fff",
+              whiteSpace: "nowrap",
+              textAlign: "center",
+            },
+            /* --------------------------- Alternating Row Colour is defined here --------------------------- */
+            rowStyle: (rowData, index) => {
+              if (index % 2) {
                 return {
                   height: 30,
+                  backgroundColor: "#515151",
                   border: "1px solid #595959",
                 };
-              },
-              actionCellStyle: {
-                borderBottom: "1px solid #595959",
-              },
-              actionsColumnIndex: 24,
-              paging: false,
-            }}
-            /* ------- In built table text is localized via this function and the TableLocale.js files ------ */
-            localization={curLang()}
-            /* --------------------------------- Customized Table Components -------------------------------- */
-            components={{
-              Container: (props) => <Paper {...props} elevation={0} />,
-              Body: (props) =>
-                /* ------------------------ If no boss selected then hide the Table Body ------------------------ */
-                currentBoss === "" ? null : (
-                  // <Grow in={currentBoss === "" ? false : true} style={{ transformOrigin: "0 0 0" }} {...((currentBoss === "" ? false : true) ? { timeout: "auto" } : {})}>
-                  <MTableBody {...props} />
-                  // </Grow>
-                ),
-              Header: (props) =>
-                /* ----------------------- If no Boss Selected then hide the Table Header ----------------------- */
-                currentBoss === "" ? null : (
-                  // <Grow in={currentBoss === "" ? false : true} style={{ transformOrigin: "0 0 0" }} {...((currentBoss === "" ? false : true) ? { timeout: "auto" } : {})}>
-                  <MTableHeader {...props} />
-                  // </Grow>
-                ),
-              Toolbar: (props) => (
-                /* ----------------------- Grid Container for the Toolbar for the Table ------------------------ */
-                <Grid
-                  container
-                  spacing={1}
-                  direction="row"
-                  justifyContent="space-between"
-                  style={{
-                    marginBottom: (currentBoss === "" ? false : true) ? 5 : 0,
-                  }}
-                >
-                  {/* ------------------- Container for the Heal Team / ERT & Raid/Boss/Plan Selection ------------------- */}
-                  <Grid item container spacing={1} xs={12} sm={12} md={12} lg={6} xl={9} alignItems="center">
-                    {/* ------------------------ Heal Team Button (Activates the Dialog Popup) ----------------------- */}
-                    <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                      <Button variant="outlined" style={{ height: 40, width: "100%", whiteSpace: "nowrap" }} color="primary" onClick={() => healTeamDialogOpen()}>
-                        {/* // TODO: Translate */}
-                        Heal Team
-                      </Button>
-                    </Grid>
-                    {/* ---------------------------------- Raid Selection Drop Down ---------------------------------- */}
-                    {/* <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+              }
+              return {
+                height: 30,
+                border: "1px solid #595959",
+              };
+            },
+            actionCellStyle: {
+              borderBottom: "1px solid #595959",
+            },
+            actionsColumnIndex: 24,
+            paging: false,
+          }}
+          /* ------- In built table text is localized via this function and the TableLocale.js files ------ */
+          localization={curLang()}
+          /* --------------------------------- Customized Table Components -------------------------------- */
+          components={{
+            Container: (props) => <Paper {...props} elevation={0} />,
+            Body: (props) =>
+              /* ------------------------ If no boss selected then hide the Table Body ------------------------ */
+              currentBoss === "" ? null : (
+                // <Grow in={currentBoss === "" ? false : true} style={{ transformOrigin: "0 0 0" }} {...((currentBoss === "" ? false : true) ? { timeout: "auto" } : {})}>
+                <MTableBody {...props} />
+                // </Grow>
+              ),
+            Header: (props) =>
+              /* ----------------------- If no Boss Selected then hide the Table Header ----------------------- */
+              currentBoss === "" ? null : (
+                // <Grow in={currentBoss === "" ? false : true} style={{ transformOrigin: "0 0 0" }} {...((currentBoss === "" ? false : true) ? { timeout: "auto" } : {})}>
+                <MTableHeader {...props} />
+                // </Grow>
+              ),
+            Toolbar: (props) => (
+              /* ----------------------- Grid Container for the Toolbar for the Table ------------------------ */
+              <Grid
+                container
+                spacing={1}
+                direction="row"
+                justifyContent="space-between"
+                style={{
+                  marginBottom: (currentBoss === "" ? false : true) ? 5 : 0,
+                }}
+              >
+                {/* ------------------- Container for the Heal Team / ERT & Raid/Boss/Plan Selection ------------------- */}
+                <Grid item container spacing={1} xs={12} sm={12} md={12} lg={6} xl={9} alignItems="center">
+                  {/* ------------------------ Heal Team Button (Activates the Dialog Popup) ----------------------- */}
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <Button variant="outlined" style={{ height: 40, width: "100%", whiteSpace: "nowrap" }} color="primary" onClick={() => healTeamDialogOpen()}>
+                      {/* // TODO: Translate */}
+                      Heal Team
+                    </Button>
+                  </Grid>
+                  {/* ---------------------------------- Raid Selection Drop Down ---------------------------------- */}
+                  {/* <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small">
                       <InputLabel id="RaidSelector">{t("CooldownPlanner.TableLabels.RaidSelectorLabel")}</InputLabel>
                       <Select
@@ -911,191 +910,182 @@ export default function CooldownPlanner(props) {
                       </Select>
                     </FormControl>
                   </Grid> */}
-                    {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
-                    <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                      <TextField
-                        sx={{ minWidth: 200, width: "100%" }}
-                        size="small"
-                        select
-                        value={currentBoss}
-                        onChange={(e) => changeBoss(e.target.value)}
-                        // label={t("CooldownPlanner.TableLabels.BossSelectorLabel")}
-                        disabled={currentRaid === "" ? true : false}
-                      >
-                        {bossList
-                          .filter((obj) => {
-                            return obj.zoneID === currentRaid;
-                          })
-                          .map((key, i, arr) => {
-                            let lastItem = i + 1 === arr.length ? false : true;
-                            return (
-                              <MenuItem divider={lastItem} key={"BS" + i} value={key.DungeonEncounterID}>
-                                {bossIcons(key.DungeonEncounterID)}
-                                {t("BossNames." + key.ID)}
-                              </MenuItem>
-                            );
-                          })}
-                      </TextField>
-                    </Grid>
-
-                    {/* ----------------------------------- Plan Selection Dropdown ---------------------------------- */}
-
-                    <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                      <TextField
-                        sx={{ minWidth: 200, width: "100%" }}
-                        select
-                        id="RaidSelector"
-                        placeholder={t("Select Plan")}
-                        value={currentPlan}
-                        onChange={(e) => loadPlanData(currentBoss, e.target.value)}
-                        disabled={currentBoss === "" ? true : false}
-                      >
-                        {getBossPlanNames(currentBoss).map((key, i, arr) => {
+                  {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <TextField
+                      sx={{ minWidth: 200, width: "100%" }}
+                      size="small"
+                      select
+                      value={currentBoss}
+                      onChange={(e) => changeBoss(e.target.value)}
+                      // label={t("CooldownPlanner.TableLabels.BossSelectorLabel")}
+                      disabled={currentRaid === "" ? true : false}
+                    >
+                      {bossList
+                        .filter((obj) => {
+                          return obj.zoneID === currentRaid;
+                        })
+                        .map((key, i, arr) => {
                           let lastItem = i + 1 === arr.length ? false : true;
                           return (
-                            <MenuItem key={key} divider={lastItem} value={key}>
-                              {key}
+                            <MenuItem divider={lastItem} key={"BS" + i} value={key.DungeonEncounterID}>
+                              {bossIcons(key.DungeonEncounterID)}
+                              {t("BossNames." + key.ID)}
                             </MenuItem>
                           );
                         })}
-                      </TextField>
-                    </Grid>
-
-                    <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                      <Button key={8} variant="contained" color="primary" onClick={handleAddPlanDialogClickOpen} size="small">
-                        Add
-                      </Button>
-                    </Grid>
-
-                    <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                      <StyledEngineProvider injectFirst>
-                        <ThemeProvider theme={deleteTheme}>
-                          <Button
-                            key={8}
-                            variant="contained"
-                            color="primary"
-                            onClick={handleDeletePlanDialogClickOpen}
-                            size="small"
-                            disabled={currentPlan === "" || currentPlan === "default" ? true : false}
-                          >
-                            Delete
-                          </Button>
-                        </ThemeProvider>
-                      </StyledEngineProvider>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                      <ImportPlanDialog variant="outlined" disableElevation={true} buttonLabel="Import" color="primary" cooldownObject={cooldownObject} loadPlanData={loadPlanData} />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                      <ExportPlanDialog variant="outlined" disableElevation={true} buttonLabel="Export" data={data} color="primary" boss={currentBoss} planName={currentPlan} plan={data} />
-                    </Grid>
-
-                    {/* ----------------------------- ERT Note Button (Opens ERT Dialog) ----------------------------- */}
-
-                    <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                      <ExportERTDialog
-                        variant="outlined"
-                        disableElevation={true}
-                        disabled={currentPlan === "" ? true : false}
-                        buttonLabel="Note Export"
-                        color="primary"
-                        ertListTimeNoIcons={ertListTimeNoIcons}
-                        ertListBossAbility={ertListBossAbility}
-                        ertListAbilityNoTimeIconsAll={ertListAbilityNoTimeIconsAll}
-                        ertListTimeIcons={ertListTimeIcons}
-                        ertListNoteIcons={ertListNoteIcons}
-                        ertListNoteNoIcons={ertListNoteNoIcons}
-                        boss={currentBoss}
-                        planName={currentPlan}
-                      />
-                    </Grid>
+                    </TextField>
                   </Grid>
-                  <Grid item xs={12} sm={6} md={12} lg={6} xl={3}>
-                    {currentBoss === "" ? null : <MTableToolbar {...props} />}
+
+                  {/* ----------------------------------- Plan Selection Dropdown ---------------------------------- */}
+
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <TextField
+                      sx={{ minWidth: 200, width: "100%" }}
+                      select
+                      id="RaidSelector"
+                      placeholder={t("Select Plan")}
+                      value={currentPlan}
+                      onChange={(e) => loadPlanData(currentBoss, e.target.value)}
+                      disabled={currentBoss === "" ? true : false}
+                    >
+                      {getBossPlanNames(currentBoss).map((key, i, arr) => {
+                        let lastItem = i + 1 === arr.length ? false : true;
+                        return (
+                          <MenuItem key={key} divider={lastItem} value={key}>
+                            {key}
+                          </MenuItem>
+                        );
+                      })}
+                    </TextField>
+                  </Grid>
+
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <Button key={8} variant="outlined" color="primary" onClick={handleAddPlanDialogClickOpen} >
+                      Add Plan
+                    </Button>
+                  </Grid>
+
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <StyledEngineProvider injectFirst>
+                      <ThemeProvider theme={deleteTheme}>
+                        <Button key={8} variant="outlined" color="primary" onClick={handleDeletePlanDialogClickOpen}  disabled={currentPlan === "" || currentPlan === "default" ? true : false}>
+                          Delete Plan
+                        </Button>
+                      </ThemeProvider>
+                    </StyledEngineProvider>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <ImportPlanDialog variant="outlined" disableElevation={true} buttonLabel="Import" color="primary" cooldownObject={cooldownObject} loadPlanData={loadPlanData} />
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <ExportPlanDialog variant="outlined" disableElevation={true} buttonLabel="Export" data={data} color="primary" boss={currentBoss} planName={currentPlan} plan={data} />
+                  </Grid>
+
+                  {/* ----------------------------- ERT Note Button (Opens ERT Dialog) ----------------------------- */}
+
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <ExportERTDialog
+                      variant="outlined"
+                      disableElevation={true}
+                      disabled={currentPlan === "" ? true : false}
+                      buttonLabel="Note Export"
+                      color="primary"
+                      ertListTimeNoIcons={ertListTimeNoIcons}
+                      ertListBossAbility={ertListBossAbility}
+                      ertListAbilityNoTimeIconsAll={ertListAbilityNoTimeIconsAll}
+                      ertListTimeIcons={ertListTimeIcons}
+                      ertListNoteIcons={ertListNoteIcons}
+                      ertListNoteNoIcons={ertListNoteNoIcons}
+                      boss={currentBoss}
+                      planName={currentPlan}
+                    />
                   </Grid>
                 </Grid>
-              ),
-            }}
-            /* ------------------- These are how the table updates its data from edit mode ------------------ */
-            editable={{
-              onRowAdd: (newData) =>
-                new Promise((resolve, reject) => {
-                  setTimeout(() => {
-                    /* ------------------ Spread Current Data and the New Data into updated Object (Sorted) ------------------ */
-                    setData([...data, newData].sort((a, b) => (a.time > b.time ? 1 : -1)));
-                    resolve();
-                    /* ------------------------------------ Update local storage ------------------------------------ */
-                    updateStorage(currentBoss, currentPlan, [...data, newData]);
-                  }, 1000);
-                }),
-              onRowUpdate: (newData, oldData) =>
-                new Promise((resolve, reject) => {
-                  setTimeout(() => {
-                    /* --------------------------- Spread Current Data to update row data --------------------------- */
-                    const dataUpdate = [...data];
-                    /* -------------------------- Set index as the old datas ID for updated ------------------------- */
-                    const index = oldData.tableData.id;
-                    /* -------------------- Set the Updated Data as the old datas id replacing it ------------------- */
-                    dataUpdate[index] = newData;
-                    /* ---------------------------------- Set Updated Data (Sorted) --------------------------------- */
-                    setData([...dataUpdate].sort((a, b) => (a.time > b.time ? 1 : -1)));
-                    /* ------------------------------------ Update local storage ------------------------------------ */
-                    updateStorage(currentBoss, currentPlan, [...dataUpdate]);
-                    resolve();
-                  }, 1000);
-                }),
-              onRowDelete: (oldData) =>
-                new Promise((resolve, reject) => {
-                  setTimeout(() => {
-                    /* ------------------------------------- Spread current data ------------------------------------ */
-                    const dataDelete = [...data];
-                    /* -------------------------- Set index as the old datas ID for deletion ------------------------- */
-                    const index = oldData.tableData.id;
-                    /* --------------------------------------- Delete Row Data -------------------------------------- */
-                    dataDelete.splice(index, 1);
-                    /* -------------------------- Set the New Data without the spliced row -------------------------- */
-                    setData([...dataDelete].sort((a, b) => (a.time > b.time ? 1 : -1)));
-                    /* ------------------------------------ Update local storage ------------------------------------ */
-                    updateStorage(currentBoss, currentPlan, [...dataDelete]);
-                    resolve();
-                  }, 1000);
-                }),
-              onBulkUpdate: (changes) =>
-                new Promise((resolve, reject) => {
-                  setTimeout(() => {
-                    const dataUpdate = [...data];
-                    console.log(changes);
-                    for (var key in changes) {
-                      if (changes.hasOwnProperty(key)) {
-                        dataUpdate[key] = changes[key].newData;
-                      }
+                <Grid item xs={12} sm={6} md={12} lg={6} xl={3}>
+                  {currentBoss === "" ? null : <MTableToolbar {...props} />}
+                </Grid>
+              </Grid>
+            ),
+          }}
+          /* ------------------- These are how the table updates its data from edit mode ------------------ */
+          editable={{
+            onRowAdd: (newData) =>
+              new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  /* ------------------ Spread Current Data and the New Data into updated Object (Sorted) ------------------ */
+                  setData([...data, newData].sort((a, b) => (a.time > b.time ? 1 : -1)));
+                  resolve();
+                  /* ------------------------------------ Update local storage ------------------------------------ */
+                  updateStorage(currentBoss, currentPlan, [...data, newData]);
+                }, 1000);
+              }),
+            onRowUpdate: (newData, oldData) =>
+              new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  /* --------------------------- Spread Current Data to update row data --------------------------- */
+                  const dataUpdate = [...data];
+                  /* -------------------------- Set index as the old datas ID for updated ------------------------- */
+                  const index = oldData.tableData.id;
+                  /* -------------------- Set the Updated Data as the old datas id replacing it ------------------- */
+                  dataUpdate[index] = newData;
+                  /* ---------------------------------- Set Updated Data (Sorted) --------------------------------- */
+                  setData([...dataUpdate].sort((a, b) => (a.time > b.time ? 1 : -1)));
+                  /* ------------------------------------ Update local storage ------------------------------------ */
+                  updateStorage(currentBoss, currentPlan, [...dataUpdate]);
+                  resolve();
+                }, 1000);
+              }),
+            onRowDelete: (oldData) =>
+              new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  /* ------------------------------------- Spread current data ------------------------------------ */
+                  const dataDelete = [...data];
+                  /* -------------------------- Set index as the old datas ID for deletion ------------------------- */
+                  const index = oldData.tableData.id;
+                  /* --------------------------------------- Delete Row Data -------------------------------------- */
+                  dataDelete.splice(index, 1);
+                  /* -------------------------- Set the New Data without the spliced row -------------------------- */
+                  setData([...dataDelete].sort((a, b) => (a.time > b.time ? 1 : -1)));
+                  /* ------------------------------------ Update local storage ------------------------------------ */
+                  updateStorage(currentBoss, currentPlan, [...dataDelete]);
+                  resolve();
+                }, 1000);
+              }),
+            onBulkUpdate: (changes) =>
+              new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  const dataUpdate = [...data];
+                  for (var key in changes) {
+                    if (changes.hasOwnProperty(key)) {
+                      dataUpdate[key] = changes[key].newData;
                     }
-                    setData([...dataUpdate]);
-                    updateStorage(currentBoss, currentPlan, [...dataUpdate]);
-                    resolve();
-                  }, 1000);
-                }),
-            }}
-          />
+                  }
+                  setData([...dataUpdate]);
+                  updateStorage(currentBoss, currentPlan, [...dataUpdate]);
+                  resolve();
+                }, 1000);
+              }),
+          }}
+        />
 
-          <AddPlanDialog
-            openAddPlanDialog={openAddPlanDialog}
-            handleAddPlanDialogClose={handleAddPlanDialogClose}
-            cooldownObject={cooldownObject}
-            currentBoss={currentBoss}
-            loadPlanData={loadPlanData}
-          />
+        <AddPlanDialog
+          openAddPlanDialog={openAddPlanDialog}
+          handleAddPlanDialogClose={handleAddPlanDialogClose}
+          cooldownObject={cooldownObject}
+          currentBoss={currentBoss}
+          loadPlanData={loadPlanData}
+        />
 
-          <DeletePlanDialog
-            openDeletePlanDialog={openDeletePlanDialog}
-            handleDeletePlanDialogClose={handleDeletePlanDialogClose}
-            currentPlan={currentPlan}
-            setCurrentPlan={setCurrentPlan}
-            setData={setData}
-            cooldownObject={cooldownObject}
-            currentBoss={currentBoss}
-          />
-        </div>
+        <DeletePlanDialog
+          openDeletePlanDialog={openDeletePlanDialog}
+          handleDeletePlanDialogClose={handleDeletePlanDialogClose}
+          currentPlan={currentPlan}
+          setCurrentPlan={setCurrentPlan}
+          setData={setData}
+          cooldownObject={cooldownObject}
+          currentBoss={currentBoss}
+        />
       </ThemeProvider>
     </StyledEngineProvider>
   );

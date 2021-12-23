@@ -104,8 +104,8 @@ export default function ImportPlanDialog(props) {
         </Button>
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
-        <DialogTitle id="simc-dialog-title">Import Plan</DialogTitle>
-        <DialogContent style={{ height: 400 }}>
+        <DialogTitle color="primary" id="simc-dialog-title">Import Plan</DialogTitle>
+        <DialogContent>
           <TextField
             autoFocus
             multiline={true}
@@ -113,9 +113,8 @@ export default function ImportPlanDialog(props) {
             helperText={error ? errorMessage : ""}
             margin="dense"
             id="simcentry"
-            label={"Import"}
             fullWidth
-            style={{ height: "100%" }}
+            sx={{ height: "100%" }}
             variant="outlined"
             onChange={(e) => checkForQEString(e.target.value)}
             // onKeyPress={(e) => {
