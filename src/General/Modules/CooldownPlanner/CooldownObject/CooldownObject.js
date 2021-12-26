@@ -7,7 +7,7 @@ class Cooldowns {
     this.cooldowns = JSON.parse(ls.get("cooldownPlans")) || [{ default: { default: [] } }];
 
     if (Object.entries(this.cooldowns[0]).length === 1) {
-      bossList.filter((filter) => filter.zoneID === 2450).map((map) => Object.assign(this.cooldowns[0], { [map.DungeonEncounterID]: { default: [] } }));
+      bossList.filter((filter) => filter.zoneID === 2450 || filter.zoneID === 2481).map((map) => Object.assign(this.cooldowns[0], { [map.DungeonEncounterID]: { default: [] } }));
       //   raidList.map((key) => {
       //     bossList.filter((filter) => filter.zoneID === 2450).map((map) => Object.assign(this.cooldowns[0][key.zoneID], { ["default"]: { 1: [] }}));
       //   });
@@ -45,7 +45,7 @@ class Cooldowns {
   importPlan = (boss, planName, importedPlanObject) => {
     Object.assign(this.cooldowns[0][boss], { [planName]: importedPlanObject });
     ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
-  }
+  };
 
   updateCooldownPlan = (boss, plan, cooldowns) => {
     this.cooldowns[0][boss][plan] = cooldowns;

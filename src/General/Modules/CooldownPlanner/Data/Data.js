@@ -435,6 +435,7 @@ export const raidList = [
   // { id: 0, zoneID: 2217, raidName: "Ny’alotha" },
   { id: 0, zoneID: 2296, raidName: "Castle Nathria" },
   { id: 1, zoneID: 2450, raidName: "Sanctum of Domination" },
+  { id: 3, zoneID: 2481, raidName: "Sepulcher of the First Ones" },
 ];
 
 
