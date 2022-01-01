@@ -349,7 +349,7 @@ export default function CharacterPanel(props) {
                   ) : (
                     <Grid item>
                       {/* // TODO: Localize this */}
-                      <Typography variant="body2">Import your gear with a SimC string via the `&ldquo;`Import Gear`&ldquo;` button above.</Typography>
+                      <Typography variant="body2">Import your gear with a SimC string via the &ldquo;Import Gear&ldquo; button above.</Typography>
                     </Grid>
                   )}
                 </Grid>
@@ -405,9 +405,9 @@ export default function CharacterPanel(props) {
                         </Grid>
                       ))
                   ) : (
-                    <Grid item >
+                    <Grid item>
                       {/* // TODO: Localize this */}
-                      <Typography variant="body2">Import your gear with a SimC string via the `&ldquo;`Import Gear`&ldquo;` button above.</Typography>
+                      <Typography variant="body2">Import your gear with a SimC string via the &ldquo;Import Gear&ldquo; button above.</Typography>
                     </Grid>
                   )}
                 </Grid>
