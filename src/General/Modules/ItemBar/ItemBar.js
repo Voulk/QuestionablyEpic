@@ -69,12 +69,19 @@ export default function ItemBar(props) {
           (key.itemClass === 2 && spec === "Holy Priest BC")), // Wands
     ).map((key) => newItemList.push({ value: key.id, label: key.names[currentLanguage] }));
 
+    newItemList = newItemList.reduce((unique, o) => {
+      if(!unique.some(obj => obj.label === o.label)) {
+        unique.push(o);
+      }
+      return unique;
+    },[]);
+
     newItemList.sort((a, b) => (a.label > b.label ? 1 : -1));
+    
     return newItemList;
   };
-
+ 
   const [itemDropdown, setItemDropdown] = useState(fillItems("", props.player.spec)); // Filled later based on item slot and armor type.
-
   /* ------------------------------ Define State ----------------------------- */
   const [itemLevel, setItemLevel] = useState("");
   const [itemID, setItemID] = useState("");
@@ -262,7 +269,7 @@ export default function ItemBar(props) {
               options={itemDropdown}
               openOnFocus={true}
               getOptionLabel={(option) => option.label}
-              isOptionEqualToValue={(option, value) => option.label === value.label}
+              isOptionEqualToValue={(option, value) => option.value === value.value}
               inputValue={inputValue}
               onInputChange={handleInputChange}
               freeSolo
