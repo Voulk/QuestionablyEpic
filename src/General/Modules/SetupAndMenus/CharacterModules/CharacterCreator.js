@@ -49,8 +49,8 @@ const useStyles = makeStyles((theme) => ({
     padding: "5px",
   },
   large: {
-    width: "60px",
-    height: "60px",
+    width: "51px",
+    height: "51px",
   },
   option: {
     borderBottom: "1px solid rgba(255, 255, 255, 0.23)",

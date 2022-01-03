@@ -106,8 +106,8 @@ const useStyles = makeStyles((theme) => ({
     padding: "0px",
   },
   large: {
-    width: "60px",
-    height: "60px",
+    width: "51px",
+    height: "51px",
   },
   tabRoot: {
     flexGrow: 1,
@@ -345,82 +345,77 @@ export default function CharCards(props) {
     /*                      Character Card for the main menu                      */
     /* -------------------------------------------------------------------------- */
     <Grid item xs={12} sm={6} md={6} lg={6} xl={4}>
-      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : null}>
-        <Card className={rootClassName} variant="outlined">
-          <Avatar src={props.char.charAvatarURL === "" ? specImages[props.char.spec].default : props.char.charAvatarURL} variant="square" alt="" className={classes.large} />
-          <Divider orientation="vertical" flexItem />
-          <div className={classes.details}>
-            <CardContent className={classes.content} style={{ paddingBottom: 0 }}>
-              <Grid container style={{ marginTop: 1 }} spacing={1}>
-                {/* ------------------------ Character name and Realm ------------------------ */}
-                <Grid item xs={10}>
-                  <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec), display: "inline-flex" }}>
-                    {props.name}
-                    <Tooltip title={t(classTranslator(spec))} style={{ color: classColoursJS(spec) }} placement="top">
-                      {/* ----------------------------------------- Class Icon -----------------------------------------  */}
-                      {classIcons(spec, {
-                        height: 20,
-                        width: 20,
-                        margin: "0px 0px 0px 5px",
-                        verticalAlign: "middle",
-                        borderRadius: 4,
-                        border: "1px solid rgba(255, 255, 255, 0.12)",
-                      })}
-                    </Tooltip>
-                    {/* ---------------------------------------- Covenant Icon ---------------------------------------  */}
-                    {gameType === "Retail" ? (
-                      <Tooltip title={t(covenant)} style={{ color: classColoursJS(spec) }} placement="top">
-                        {covenantIcons(covenant, {
+      <div style={{ position: "relative" }}>
+        {gameType === "Retail" ? (
+          <Tooltip title={t("Edit")}>
+            <IconButton style={{ position: "absolute", right: 0, top: 2, zIndex: 1 }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
+              <SettingsIcon fontSize="small" />
+            </IconButton>
+          </Tooltip>
+        ) : (
+          <Tooltip title={t("Delete")}>
+            <IconButton style={{ position: "absolute", right: 0, top: 5, zIndex: 1, color: "red" }} onClick={(e) => handleDelete(e)} aria-label="settings" size="small">
+              <ClearIcon fontSize="small" />
+            </IconButton>
+          </Tooltip>
+        )}
+
+        <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : null}>
+          <Card className={rootClassName} variant="outlined">
+            <Avatar src={props.char.charAvatarURL === "" ? specImages[props.char.spec].default : props.char.charAvatarURL} variant="square" alt="" className={classes.large} />
+            <Divider orientation="vertical" flexItem />
+            <div className={classes.details}>
+              <CardContent className={classes.content} style={{ paddingBottom: 0 }}>
+                <Grid container style={{ marginTop: 1 }} spacing={0.5}>
+                  {/* ------------------------ Character name and Realm ------------------------ */}
+                  <Grid item xs={10}>
+                    <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec), display: "inline-flex" }}>
+                      {props.name}
+                      <Tooltip title={t(classTranslator(spec))} style={{ color: classColoursJS(spec) }} placement="top">
+                        {/* ----------------------------------------- Class Icon -----------------------------------------  */}
+                        {classIcons(spec, {
                           height: 20,
                           width: 20,
-                          margin: "0px 5px 0px 5px",
+                          margin: "0px 0px 0px 5px",
                           verticalAlign: "middle",
                           borderRadius: 4,
                           border: "1px solid rgba(255, 255, 255, 0.12)",
                         })}
                       </Tooltip>
-                    ) : (
-                      ""
-                    )}
-                  </Typography>
+                      {/* ---------------------------------------- Covenant Icon ---------------------------------------  */}
+                      {gameType === "Retail" ? (
+                        <Tooltip title={t(covenant)} style={{ color: classColoursJS(spec) }} placement="top">
+                          {covenantIcons(covenant, {
+                            height: 20,
+                            width: 20,
+                            margin: "0px 5px 0px 5px",
+                            verticalAlign: "middle",
+                            borderRadius: 4,
+                            border: "1px solid rgba(255, 255, 255, 0.12)",
+                          })}
+                        </Tooltip>
+                      ) : (
+                        ""
+                      )}
+                    </Typography>
+                  </Grid>
+                  {/* ---- Settings Button - More apparent for users how to edit characters ---- */}
+                  <Grid item container spacing={0}>
+                    <Grid item xs={12}>
+                      <Divider />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <Typography variant="caption" style={{ fontSize: 11 }}>
+                        {player.getRealmString()}
+                      </Typography>
+                    </Grid>
+                  </Grid>
                 </Grid>
-                {/* ---- Settings Button - More apparent for users how to edit characters ---- */}
-                {gameType === "Retail" ? (
-                  <Grid item xs={2}>
-                    <Tooltip title={t("Edit")}>
-                      <IconButton style={{ float: "right", top: -4 }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
-                        <SettingsIcon fontSize="small" />
-                      </IconButton>
-                    </Tooltip>
-                  </Grid>
-                ) : (
-                  <Grid item xs={2}>
-                    <Tooltip title={t("Delete")}>
-                      <IconButton style={{ float: "right", top: -4, color: "red" }} onClick={(e) => handleDelete(e)} aria-label="settings" size="small">
-                        <ClearIcon fontSize="small" />
-                      </IconButton>
-                    </Tooltip>
-                  </Grid>
-                )}
-              </Grid>
-              <Grid item xs={12}>
-                <Divider />
-              </Grid>
-              <Grid item xs={12}>
-                <Typography variant="caption" style={{ fontSize: 11 }}>
-                  {player.getRealmString()}
-                </Typography>
-              </Grid>
-
-              {/* ------------------------------ Class & Icon ------------------------------ */}
-              {/* <Typography style={{ color: classColoursJS(spec), marginTop: 2 }}>
-                {t(classTranslator(spec))}
-                {classIcons(spec, { height: 16, width: 16, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
-              </Typography>  */}
-            </CardContent>
-          </div>
-        </Card>
-      </CardActionArea>
+              </CardContent>
+            </div>
+          </Card>
+        </CardActionArea>
+      </div>
 
       {/* -------------------------------------------------------------------------- */
       /*                                Dialog Popup                                */
