@@ -9,7 +9,7 @@ import { localizationFR } from "locale/fr/TableLocale";
 import { localizationEN } from "locale/en/TableLocale";
 import { localizationRU } from "locale/ru/TableLocale";
 import { localizationCH } from "locale/ch/TableLocale";
-import { healerCooldownsDetailed } from "../../CooldownPlanner/Data/Data.js";
+import { healerCooldownsDetailed } from "../../CooldownPlanner/Data/CooldownDB.js";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 

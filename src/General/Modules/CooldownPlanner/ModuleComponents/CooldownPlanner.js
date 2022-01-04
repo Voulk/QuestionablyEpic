@@ -5,7 +5,7 @@ import { Button, TextField, InputLabel, FormControl, Grow, MenuItem, Paper, Sele
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
 import makeStyles from "@mui/styles/makeStyles";
 import moment from "moment";
-import { healerCooldownsDetailed, raidList } from "../Data/Data";
+import { healerCooldownsDetailed } from "../Data/CooldownDB";
 import { bossList } from "../Data/CooldownPlannerBossList";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { useTranslation } from "react-i18next";
