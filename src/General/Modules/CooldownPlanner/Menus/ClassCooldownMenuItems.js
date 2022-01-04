@@ -21,6 +21,7 @@ import ConvokeTheSpiritsIcon from "Images/Classes/Druid/CovenantAbilities/Convok
 import FlourishIcon from "Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/FlourishIcon.jpg";
 import AncestralProtectionIcon from "Images/Classes/Shaman/Specialisation/Restoration/Icons/Talents/AncestralProtectionTotemIcon.jpg";
 import AshenHallowIcon from "Images/Classes/Paladin/CovenantAbilities/AshenHallow.jpg";
+import InvokeYulon from "Images/Classes/Monk/Specialisation/Mistweaver/Icons/InvokeYulon.jpg";
 
 // TODO this should be converted to a map at some point
 
@@ -292,6 +293,21 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>{(t) => t("CooldownPlanner.ClassAbilities.115310")}</Translation>
+      </MenuItem>,
+      <MenuItem value={322118} key={322118}>
+        <a data-wowhead="spell=322118">
+          <img
+            style={{
+              height: 20,
+              width: 20,
+              margin: "0px 5px 0px 5px",
+              verticalAlign: "middle",
+            }}
+            src={InvokeYulon}
+            alt="Invoke Yu'lon, the Jade Serpent"
+          />
+        </a>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.322118")}</Translation>
       </MenuItem>,
     ];
   }

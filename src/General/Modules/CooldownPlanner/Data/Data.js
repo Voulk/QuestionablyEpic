@@ -210,6 +210,12 @@ export const healerCooldownsDetailed = [
     duration: 1,
     cooldown: 180,
   },
+  {
+    name: "Invoke Yu'lon, the Jade Serpent",
+    guid: 322118,
+    duration: 25,
+    cooldown: 180,
+  },
   // --------------Covenant Abilities---------------
   // {
   //   name: "Weapons of Order",
@@ -438,7 +444,6 @@ export const raidList = [
   { id: 3, zoneID: 2481, raidName: "Sepulcher of the First Ones" },
 ];
 
-
 export const dungeonList = [
   {
     name: "Halls of Atonement",
@@ -628,12 +633,7 @@ export const classRaceList = {
 
   /* --------------------------------------- Burning Crusade -------------------------------------- */
   "Restoration Shaman BC": {
-    races: [
-      "Races.Draenei",
-      "Races.Orc",
-      "Races.Tauren",
-      "Races.Troll",
-    ],
+    races: ["Races.Draenei", "Races.Orc", "Races.Tauren", "Races.Troll"],
     gameType: "BurningCrusade",
   },
 
