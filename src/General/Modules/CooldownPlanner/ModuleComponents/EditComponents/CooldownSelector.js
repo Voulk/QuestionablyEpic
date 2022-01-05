@@ -6,7 +6,34 @@ import ClassCooldownMenuItems from "../../Menus/ClassCooldownMenuItems";
 
 const selectMenu = createTheme({
   components: {
-    MuiTextField: { styleOverrides: { selectMenu: { height: 20 } } },
+    MuiTextField: {
+      defaultProps: {
+        // The props to change the default for.
+        SelectProps: {
+          MenuProps: {
+            style: { marginTop: 5 },
+            MenuListProps: {
+              style: { paddingTop: 0, paddingBottom: 0 },
+            },
+            PaperProps: {
+              style: {
+                border: "1px solid rgba(255, 255, 255, 0.23)",
+              },
+            },
+            anchorOrigin: {
+              vertical: "bottom",
+              horizontal: "left",
+            },
+            transformOrigin: {
+              vertical: "top",
+              horizontal: "left",
+            },
+          },
+          fontSize: "16px",
+        },
+      },
+      styleOverrides: { selectMenu: { height: 20 } },
+    },
     MuiInputBase: {
       styleOverrides: {
         root: {

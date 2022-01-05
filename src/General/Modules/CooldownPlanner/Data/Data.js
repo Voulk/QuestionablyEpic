@@ -45,8 +45,6 @@ export const damageExclusions = [
   345211,
 ];
 
-
-
 export const bossIds = [
   {
     id: 2327,

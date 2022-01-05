@@ -48,6 +48,7 @@ import BlessingOfProtection from "Images/Classes/Paladin/Specialisation/Holy/Ico
 import BlessingOfFreedom from "Images/Classes/Paladin/Specialisation/Holy/Icons/spell_holy_sealofvalor.jpg";
 import LayOnHands from "Images/Classes/Paladin/Specialisation/Holy/Icons/spell_holy_layonhands.jpg";
 import TigersLust from "Images/Classes/Monk/Specialisation/Mistweaver/Icons/ability_monk_tigerslust.jpg";
+import InvokeYulon from "Images/Classes/Monk/Specialisation/Mistweaver/Icons/InvokeYulon.jpg";
 
 // Should probably work this off GUID
 
@@ -236,6 +237,12 @@ export default function abilityIcons(props, style) {
     source = RevivalIcon;
     alt = "Revival";
   }
+  if (props === 322118) {
+    spell = "spell=322118";
+    source = InvokeYulon;
+    alt = "Invoke Yu'lon, the Jade Serpent";
+  }
+
   // Monk Covenant Abilities
   if (props === 310454) {
     spell = "spell=310454";
