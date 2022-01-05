@@ -7,7 +7,7 @@ import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import { covenantIcons } from "../../CooldownPlanner/Functions/CovenantFunctions";
 import Autocomplete from "@mui/material/Autocomplete";
-import { bcClassRaceList, classRaceList } from "../../CooldownPlanner/Data/Data";
+import { classRaceDB } from "../../../../Databases/ClassRaceDB";
 import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import { useSelector } from "react-redux";
@@ -61,7 +61,7 @@ export default function AddNewChar(props) {
   const { t } = useTranslation();
   const classes = useStyles();
   const gameType = useSelector((state) => state.gameType);
-  const availableClasses = classRaceList;
+  const availableClasses = classRaceDB;
   const [open, setOpen] = React.useState(false);
   const [healClass, setHealClass] = React.useState("");
   const [charName, setCharName] = React.useState("");

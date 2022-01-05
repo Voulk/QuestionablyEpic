@@ -7,7 +7,7 @@ import ls from "local-storage";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "../SetupAndMenus/Header/LanguageButton";
 import GameTypeSwitch from "../SetupAndMenus/GameTypeToggle";
-import { classRaceList } from "../CooldownPlanner/Data/Data";
+import { classRaceDB } from "../../../Databases/ClassRaceDB";
 import { serverDB, serverDBBurningCrusade } from "../../../Databases/ServerDB";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import { useSelector } from "react-redux";
@@ -47,7 +47,7 @@ export default function WelcomeDialog(props) {
   const classes = useStyles();
   const { t } = useTranslation();
   const gameType = useSelector((state) => state.gameType);
-  const availableClasses = classRaceList;
+  const availableClasses = classRaceDB;
   const [open, setOpen] = React.useState(props.welcomeOpen);
   const [page, setPage] = React.useState(1);
   const [healClass, setHealClass] = React.useState("");

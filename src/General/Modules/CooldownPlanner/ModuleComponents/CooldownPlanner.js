@@ -5,7 +5,7 @@ import { Button, TextField, InputLabel, FormControl, Grow, MenuItem, Paper, Sele
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
 import makeStyles from "@mui/styles/makeStyles";
 import moment from "moment";
-import { healerCooldownsDetailed } from "../Data/CooldownDB";
+import { cooldownDB } from "../Data/CooldownDB";
 import { bossList } from "../Data/CooldownPlannerBossList";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { useTranslation } from "react-i18next";
@@ -151,7 +151,7 @@ export default function CooldownPlanner(props) {
     let time = moment(castTime, "mm:ss")
       /* ---------- Filter the CD array to get the Cooldown time and add it to the cast time --------- */
       .add(
-        healerCooldownsDetailed
+        cooldownDB
           .filter((obj) => {
             return obj.guid === cooldown;
           })

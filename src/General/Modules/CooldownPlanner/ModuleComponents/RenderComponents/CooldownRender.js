@@ -2,14 +2,14 @@ import React from "react";
 import { Typography } from "@mui/material";
 import abilityIcons from "../../Functions/IconFunctions/AbilityIcons";
 import { useTranslation } from "react-i18next";
-import { healerCooldownsDetailed } from "../../Data/CooldownDB";
+import { cooldownDB } from "../../Data/CooldownDB";
 
 export default function CastTextField(rowData, cooldown) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
   const getTranslatedSpellName = (spellID) => {
-    let spellName = healerCooldownsDetailed
+    let spellName = cooldownDB
       .filter((obj) => {
         return obj.guid === spellID;
       })

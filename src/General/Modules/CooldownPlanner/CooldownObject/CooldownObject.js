@@ -1,5 +1,4 @@
 import { bossList } from "../Data/CooldownPlannerBossList";
-import { raidList } from "../Data/Data";
 import ls from "local-storage";
 
 class Cooldowns {
@@ -8,10 +7,6 @@ class Cooldowns {
 
     if (Object.entries(this.cooldowns[0]).length === 1) {
       bossList.filter((filter) => filter.zoneID === 2450 || filter.zoneID === 2481).map((map) => Object.assign(this.cooldowns[0], { [map.DungeonEncounterID]: { default: [] } }));
-      //   raidList.map((key) => {
-      //     bossList.filter((filter) => filter.zoneID === 2450).map((map) => Object.assign(this.cooldowns[0][key.zoneID], { ["default"]: { 1: [] }}));
-      //   });
-
       this.updateCooldownsAll(this.cooldowns);
     }
   }

@@ -40,7 +40,7 @@ import { red } from "@mui/material/colors";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions.js";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
-import { classRaceList } from "../../CooldownPlanner/Data/Data";
+import { classRaceDB } from "../../../../Databases/ClassRaceDB";
 import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
 import LogDetailsTable from "./CharacterLogDetailsTable";
 import { STAT } from "../../../Engine/STAT";
@@ -323,7 +323,7 @@ export default function CharCards(props) {
   const covenant = props.char.covenant;
   const gameType = useSelector((state) => state.gameType);
   const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade;
-  const availableClasses = classRaceList;
+  const availableClasses = classRaceDB;
 
   /* ------------------------ Active Character Styling ------------------------ */
   const rootClassName = classes.root + " " + (props.isActive ? classes.activeChar : "");
