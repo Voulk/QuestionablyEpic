@@ -29,6 +29,11 @@ export default function CastTextField(rowData, cooldown) {
     return icon;
   };
 
+  /* -------------------------------- Handles no cooldowns entered -------------------------------- */
+  if (rowData[cooldown] === "" || rowData[cooldown] === undefined) {
+    return null;
+  }
+
   return (
     <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
       <a data-wowhead={"spell=" + rowData[cooldown]}>
