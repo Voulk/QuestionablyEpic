@@ -4,6 +4,7 @@ export const cooldownDB = [
   /* ---------------------------------------------------------------------------------------------- */
   /* --------------------------------------- Base Abilities --------------------------------------- */
   {
+    // Avenging Wrath
     name: {
       en: "Avenging Wrath",
       fr: "Courroux vengeur",
@@ -12,10 +13,14 @@ export const cooldownDB = [
       ch: "复仇之怒",
     },
     guid: 31884,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_holy_avenginewrath.jpg").default,
     duration: 20,
     cooldown: 120,
+    class: "HolyPaladin",
+    cdPlannerMenuActive: true,
   },
   {
+    // Aura Mastery
     name: {
       en: "Aura Mastery",
       fr: "Maîtrise des auras",
@@ -24,8 +29,11 @@ export const cooldownDB = [
       ch: "光环掌握",
     },
     guid: 31821,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_holy_auramastery.jpg").default,
     duration: 8,
     cooldown: 180,
+    class: "HolyPaladin",
+    cdPlannerMenuActive: true,
   },
   /* ------------------------------------- Covenant Abilities ------------------------------------- */
   {
@@ -37,8 +45,11 @@ export const cooldownDB = [
       cn: "圣洁鸣钟",
     },
     guid: 304971,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_bastion_paladin.jpg").default,
     duration: 1,
     cooldown: 60,
+    class: "HolyPaladin",
+    cdPlannerMenuActive: false,
   },
   {
     name: {
@@ -49,8 +60,11 @@ export const cooldownDB = [
       cn: "红烬圣土",
     },
     guid: 316958,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_revendreth_paladin.jpg").default,
     duration: 30,
     cooldown: 240,
+    class: "HolyPaladin",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -61,8 +75,11 @@ export const cooldownDB = [
       cn: "征服者之锤",
     },
     guid: 328204,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_maldraxxus_paladin.jpg").default,
     duration: 1,
     cooldown: 30,
+    class: "HolyPaladin",
+    cdPlannerMenuActive: false,
   },
   {
     name: {
@@ -73,8 +90,11 @@ export const cooldownDB = [
       cn: "四季祝福",
     },
     guid: 328278,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_ardenweald_paladin_autumn.jpg").default,
     duration: 1,
     cooldown: 30,
+    class: "HolyPaladin",
+    cdPlannerMenuActive: false,
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Priest                                             */
@@ -89,8 +109,11 @@ export const cooldownDB = [
       cn: "真言术：障",
     },
     guid: 62618,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_holy_powerwordbarrier.jpg").default,
     duration: 10,
     cooldown: 180,
+    class: "DisciplinePriest",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -101,8 +124,11 @@ export const cooldownDB = [
       cn: "福音",
     },
     guid: 246287,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_holy_divineillumination.jpg").default,
     duration: 6,
     cooldown: 90,
+    class: "DisciplinePriest",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -113,8 +139,11 @@ export const cooldownDB = [
       cn: "神圣赞美诗",
     },
     guid: 64843,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_holy_divinehymn.jpg").default,
     duration: 8,
     cooldown: 180,
+    class: "HolyPriest",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -125,8 +154,11 @@ export const cooldownDB = [
       cn: "圣言术：赎",
     },
     guid: 265202,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_priest_archangel.jpg").default,
     duration: 1,
     cooldown: 720,
+    class: "HolyPriest",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -137,8 +169,11 @@ export const cooldownDB = [
       cn: "全神贯注",
     },
     guid: 47536,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_holy_rapture.jpg").default,
     duration: 8,
     cooldown: 90,
+    class: "DisciplinePriest",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -149,8 +184,11 @@ export const cooldownDB = [
       cn: "灵魂护壳",
     },
     guid: 109964,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_shaman_astralshift.jpg").default,
     duration: 10,
     cooldown: 60,
+    class: "DisciplinePriest",
+    cdPlannerMenuActive: true,
   },
   /* ------------------------------------- Covenant Abilities ------------------------------------- */
   {
@@ -162,8 +200,11 @@ export const cooldownDB = [
       cn: "晋升者之赐",
     },
     guid: 325013,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_bastion_priest.jpg").default,
     duration: 10,
     cooldown: 180,
+    class: "Priest",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -174,8 +215,11 @@ export const cooldownDB = [
       cn: "控心术",
     },
     guid: 323673,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_revendreth_priest.jpg").default,
     duration: 5,
     cooldown: 45,
+    class: "Priest",
+    cdPlannerMenuActive: false,
   },
   {
     name: {
@@ -186,8 +230,11 @@ export const cooldownDB = [
       cn: "邪恶新星",
     },
     guid: 324724,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_maldraxxus_priest.jpg").default,
     duration: 15,
     cooldown: 60,
+    class: "Priest",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -198,8 +245,11 @@ export const cooldownDB = [
       cn: "法夜守护者",
     },
     guid: 327661,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_ardenweald_priest.jpg").default,
     duraton: 1,
     cooldown: 90,
+    class: "Priest",
+    cdPlannerMenuActive: false,
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Druid                                             */
@@ -214,8 +264,11 @@ export const cooldownDB = [
       cn: "化身：生命之树",
     },
     guid: 33891,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_druid_improvedtreeform.jpg").default,
     duration: 30,
     cooldown: 180,
+    class: "RestorationDruid",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -226,9 +279,11 @@ export const cooldownDB = [
       cn: "宁静",
     },
     guid: 740,
-    icon: "spell_nature_tranquility",
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_nature_tranquility.jpg").default,
     duration: 8,
     cooldown: 180,
+    class: "RestorationDruid",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -239,9 +294,11 @@ export const cooldownDB = [
       cn: "繁盛",
     },
     guid: 197721,
-    icon: "spell_druid_wildburst",
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_druid_wildburst.jpg").default,
     duration: 8,
     cooldown: 90,
+    class: "RestorationDruid",
+    cdPlannerMenuActive: true,
   },
   /* ------------------------------------- Covenant Abilities ------------------------------------- */
   {
@@ -253,8 +310,11 @@ export const cooldownDB = [
       cn: "志趣相投",
     },
     guid: 326434,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_bastion_druid.jpg").default,
     duration: 10,
     cooldown: 60,
+    class: "RestorationDruid",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -265,8 +325,11 @@ export const cooldownDB = [
       cn: "饕餮狂乱",
     },
     guid: 323546,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_revendreth_druid.jpg").default,
     duration: 20,
     cooldown: 180,
+    class: "RestorationDruid",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -277,8 +340,11 @@ export const cooldownDB = [
       cn: "激变蜂群",
     },
     guid: 325727,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_maldraxxus_druid.jpg").default,
     duration: 12,
     cooldown: 25,
+    class: "RestorationDruid",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -289,9 +355,11 @@ export const cooldownDB = [
       cn: "万灵之召",
     },
     guid: 323764,
-    icon: "ability_ardenweald_druid",
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_ardenweald_druid.jpg").default,
     duration: 4,
     cooldown: 120,
+    class: "RestorationDruid",
+    cdPlannerMenuActive: true,
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Monk                                              */
@@ -306,8 +374,11 @@ export const cooldownDB = [
       cn: "还魂术",
     },
     guid: 115310,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_monk_revival.jpg").default,
     duration: 1,
     cooldown: 180,
+    class: "MistweaverMonk",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -318,9 +389,11 @@ export const cooldownDB = [
       cn: "青龙下凡",
     },
     guid: 322118,
-    icon: "ability_monk_dragonkick",
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_monk_dragonkick.jpg").default,
     duration: 25,
     cooldown: 180,
+    class: "MistweaverMonk",
+    cdPlannerMenuActive: true,
   },
   /* ------------------------------------- Covenant Abilities ------------------------------------- */
   {
@@ -332,9 +405,11 @@ export const cooldownDB = [
       cn: "精序兵戈",
     },
     guid: 310454,
-    icon: "ability_bastion_monk",
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_bastion_monk.jpg").default,
     duration: 30,
     cooldown: 120,
+    class: "MistweaverMonk",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -345,9 +420,11 @@ export const cooldownDB = [
       cn: "陨落僧众",
     },
     guid: 326860,
-    icon: "ability_revendreth_monk",
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_revendreth_monk.jpg").default,
     duration: 24,
     cooldown: 180,
+    class: "MistweaverMonk",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -358,9 +435,11 @@ export const cooldownDB = [
       cn: "骨尘酒",
     },
     guid: 325216,
-    icon: "ability_maldraxxus_monk",
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_maldraxxus_monk.jpg").default,
     duration: 10,
     cooldown: 60,
+    class: "MistweaverMonk",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -371,9 +450,11 @@ export const cooldownDB = [
       cn: "妖魂踏",
     },
     guid: 327104,
-    icon: "ability_ardenweald_monk",
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_ardenweald_monk.jpg").default,
     duration: 30,
     cooldown: 30,
+    class: "MistweaverMonk",
+    cdPlannerMenuActive: true,
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Shaman                                             */
@@ -388,9 +469,11 @@ export const cooldownDB = [
       cn: "治疗之潮图腾",
     },
     guid: 108280,
-    icon: "ability_shaman_healingtide",
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_shaman_healingtide.jpg").default,
     duration: 10,
     cooldown: 180,
+    class: "RestorationShaman",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -401,9 +484,11 @@ export const cooldownDB = [
       cn: "灵魂链接图腾",
     },
     guid: 98008,
-    icon: "spell_shaman_spiritlink",
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_shaman_spiritlink.jpg").default,
     duration: 6,
     cooldown: 180,
+    class: "RestorationShaman",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -414,9 +499,11 @@ export const cooldownDB = [
       cn: "先祖护佑图腾",
     },
     guid: 207399,
-    icon: "spell_nature_reincarnation",
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_nature_reincarnation.jpg").default,
     duration: 30,
     cooldown: 300,
+    class: "RestorationShaman",
+    cdPlannerMenuActive: true,
   },
   /* ------------------------------------- Covenant Abilities ------------------------------------- */
   {
@@ -428,9 +515,11 @@ export const cooldownDB = [
       cn: "暮钟图腾",
     },
     guid: 324386,
-    icon: "ability_bastion_shaman",
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_bastion_shaman.jpg").default,
     duration: 30,
     cooldown: 60,
+    class: "RestorationShaman",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -441,9 +530,11 @@ export const cooldownDB = [
       cn: "收割链",
     },
     guid: 320674,
-    icon: "ability_revendreth_shaman",
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_revendreth_shaman.jpg").default,
     duration: 1,
     cooldown: 90,
+    class: "RestorationShaman",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -454,9 +545,11 @@ export const cooldownDB = [
       cn: "始源之潮",
     },
     guid: 326059,
-    icon: "ability_maldraxxus_shaman",
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_maldraxxus_shaman.jpg").default,
     duration: 1,
     cooldown: 45,
+    class: "RestorationShaman",
+    cdPlannerMenuActive: true,
   },
   {
     name: {
@@ -467,9 +560,11 @@ export const cooldownDB = [
       cn: "法夜输灵",
     },
     guid: 328923,
-    icon: "ability_ardenweald_shaman",
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_ardenweald_shaman.jpg").default,
     duration: 3,
     cooldown: 120,
+    class: "RestorationShaman",
+    cdPlannerMenuActive: true,
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -484,9 +579,11 @@ export const cooldownDB = [
       cn: "黑暗",
     },
     guid: 196718,
-    icon: "ability_demonhunter_darkness",
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_demonhunter_darkness.jpg").default,
     duration: 8,
     cooldown: 180,
+    class: "HavocDemonHunter",
+    cdPlannerMenuActive: true,
   },
 
   {
@@ -498,9 +595,11 @@ export const cooldownDB = [
       cn: "集结呐喊",
     },
     guid: 97462,
-    icon: "ability_warrior_rallyingcry",
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_warrior_rallyingcry.jpg").default,
     duration: 10,
     cooldown: 180,
+    class: "Warrior",
+    cdPlannerMenuActive: true,
   },
 
   {
@@ -512,9 +611,11 @@ export const cooldownDB = [
       ru: "Объятия вампира",
       cn: "吸血鬼的拥抱",
     },
-    icon: "spell_shadow_unsummonbuilding",
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_shadow_unsummonbuilding.jpg").default,
     duration: 15,
     cooldown: 120,
+    class: "ShadowPriest",
+    cdPlannerMenuActive: true,
   },
 
   {
@@ -526,8 +627,10 @@ export const cooldownDB = [
       ru: "Зона антимагии",
       cn: "反魔法领域",
     },
-    icon: "spell_deathknight_antimagiczone",
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_deathknight_antimagiczone.jpg").default,
     duration: 10,
     cooldown: 120,
+    class: "DeathKnight",
+    cdPlannerMenuActive: true,
   },
 ];
