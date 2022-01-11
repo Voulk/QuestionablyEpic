@@ -1,7 +1,9 @@
 import { runCastSequence, allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
-export const getDiscPriestLegendary = (effectName, player, contentType) => {
+
+
+export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
   let result = 0.0;
   let name = effectName;
   let bonus_stats = {};
@@ -9,6 +11,16 @@ export const getDiscPriestLegendary = (effectName, player, contentType) => {
   /*
 
     */
+  // Tier Sets
+  if (name === "Disc T27-2") {
+    // Discipline Sepulcher tier set 2pc
+    
+  }
+  else if (name === "Disc T27-4") {
+    // Discipline Sepulcher tier set 4pc
+
+  }
+
   if (name === "Clarity of Mind") {
     bonus_stats.hps = player.getRampID('clarityOfMind', contentType);
     //bonus_stats.hps = (contentType === "Raid" ? 1000 : 0);

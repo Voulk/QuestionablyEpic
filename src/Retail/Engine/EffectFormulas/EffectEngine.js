@@ -1,10 +1,10 @@
 import { getGenericEffect, getDominationGemEffect } from "./Generic/GenericEffectFormulas";
-import { getDruidLegendary } from "./Druid/DruidLegendaryFormulas";
-import { getDiscPriestLegendary } from "./Priest/DiscPriestLegendaryFormulas";
-import { getHolyPriestLegendary } from "./Priest/HolyPriestLegendaryFormulas";
-import { getMonkLegendary } from "./Monk/MonkLegendaryFormulas";
-import { getShamanLegendary } from "./Shaman/ShamanLegendaryFormulas";
-import { getPaladinLegendary } from "./Paladin/PaladinLegendaryFormulas";
+import { getDruidSpecEffect } from "./Druid/DruidSpecEffects";
+import { getDiscPriestSpecEffect } from "./Priest/DiscPriestSpecEffects";
+import { getHolyPriestSpecEffect } from "./Priest/HolyPriestSpecEffects";
+import { getMonkSpecEffect } from "./Monk/MonkSpecEffects";
+import { getShamanSpecEffect } from "./Shaman/ShamanSpecEffects";
+import { getPaladinSpecEffect } from "./Paladin/PaladinSpecEffects";
 import { getGenericLegendary } from "./Generic/GenericLegendaryFormulas";
 import { getTrinketEffect} from "./Generic/TrinketEffectFormulas";
 import { getTrinketEffectBC} from "BurningCrusade/Engine/EffectFormulas/Generic/TrinketEffectFormulasBC"
@@ -42,38 +42,49 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   // Can either be a Spec Legendary, Trinket, or a special item effect like those found back in Crucible of Storms or the legendary BFA cloak.
   if (gameType === "Retail") {
     if (effect.type === "special") {
+      // A special effect is one that appears on an item slot where an effect isn't usually expected.
+      // This includes stuff like Drape of Shame that adds a crit bonus to a cape slot.
+      // Does NOT include trinkets, legendaries, set bonuses etc.
       bonus_stats = getGenericEffect(effectName, player, contentType, itemLevel);
     } 
     else if (effect.type === "domination gem") {
-      const effectRank = effect.rank;
-      bonus_stats = getDominationGemEffect(effectName, player, contentType, effectRank);
+      // Domination gems don't work in patch 9.2 content and no longer need to be calculated.
+      return {}
+
+      //const effectRank = effect.rank;
+      //bonus_stats = getDominationGemEffect(effectName, player, contentType, effectRank);
     }
-    else if (effectType === "spec legendary") {
+    // == Class specific effects ==
+    // These can be single-slot effects like Legendaries, or entire set bonuses.
+    // For tier sets, 2pc and 4c should be calculated separately, but the 4pc can include the 2pc in it's valuation if 
+    // there's synergy.
+    else if (effectType === "set bonus" || effectType === "spec legendary") {
       switch (player.spec) {
         case "Discipline Priest":
-          bonus_stats = getDiscPriestLegendary(effectName, player, contentType);
+          bonus_stats = getDiscPriestSpecEffect(effectName, player, contentType);
           break;
         case "Restoration Druid":
-          bonus_stats = getDruidLegendary(effectName, player, contentType);
+          bonus_stats = getDruidSpecEffect(effectName, player, contentType);
           break;
         case "Holy Priest":
-          bonus_stats = getHolyPriestLegendary(effectName, player, contentType);
+          bonus_stats = getHolyPriestSpecEffect(effectName, player, contentType);
           break;
         case "Holy Paladin":
-          bonus_stats = getPaladinLegendary(effectName, player, contentType);
+          bonus_stats = getPaladinSpecEffect(effectName, player, contentType);
           break;
         case "Mistweaver Monk":
-          bonus_stats = getMonkLegendary(effectName, player, contentType);
+          bonus_stats = getMonkSpecEffect(effectName, player, contentType);
           break;
         case "Restoration Shaman":
-          bonus_stats = getShamanLegendary(effectName, player, contentType);
+          bonus_stats = getShamanSpecEffect(effectName, player, contentType);
           break;
         default:
           break;
-        // Call error
       }
     } 
     else if (effectType === "generic legendary") {
+      // Generic legendaries are items wearable by all specs.
+      // These have very limited support currently since they're not very strong.
       bonus_stats = getGenericLegendary(effectName, player, castModel, contentType, userSettings);
     } 
     else if (effectType === "trinket") {

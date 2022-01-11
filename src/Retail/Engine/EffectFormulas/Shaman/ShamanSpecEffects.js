@@ -9,7 +9,7 @@ const IDCHAINHEAL = 85222;
 const IDHEALINGWAVE = 82326;
 const IDHEALINGSURGE = 20473;
 
-export const getShamanLegendary = (effectName, player, contentType) => {
+export const getShamanSpecEffect = (effectName, player, contentType) => {
   const bonusStats = {};
   bonusStats.hps = -1;
 

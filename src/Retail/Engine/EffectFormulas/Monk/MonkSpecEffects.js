@@ -8,7 +8,7 @@ const ID_CHI_JI_GOM = 343819;
 const ID_SOOTHING_BREATH = 343737;
 const ID_ENVELOPING_BREATH_ID = 325209;
 
-export const getMonkLegendary = (effectName, player, contentType) => {
+export const getMonkSpecEffect = (effectName, player, contentType) => {
   let result = 0.0;
   let name = effectName;
   let bonus_stats = {};

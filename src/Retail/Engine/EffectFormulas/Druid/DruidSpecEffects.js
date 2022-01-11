@@ -1,6 +1,6 @@
 import { processDruidRawHealing } from "./DruidMiscFormulas";
 
-export const getDruidLegendary = (effectName, player, contentType) => {
+export const getDruidSpecEffect = (effectName, player, contentType) => {
   // These are going to be moved to a proper file soon.
   const IDREJUV = 774;
   const IDLIFEBLOOM = 33763;

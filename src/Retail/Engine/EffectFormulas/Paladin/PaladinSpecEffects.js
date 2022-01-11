@@ -9,18 +9,25 @@ const IDSHOCKBARRIER = 337824;
 const IDWORDOFGLORY = 85673;
 const IDMARTYR = 183998;
 
-export const getPaladinLegendary = (effectName, player, contentType) => {
+export const getPaladinSpecEffect = (effectName, player, contentType) => {
   let result = 0.0;
   let bonus_stats = {};
   let name = effectName;
 
-  if (name === "Maraad's Dying Breath" || name === "Maraads Dying Breath") {
+  // Tier Sets
+  if (name === "HPaladin T27-2") {
+    // Holy Paladin Sepulcher tier set 2pc
+    
+  }
+  else if (name === "Hpaladin T27-4") {
+    // Holy Paladin Sepulcher tier set 4pc
+
+  }
+
+  else if (name === "Maraad's Dying Breath" || name === "Maraads Dying Breath") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                      Maraads Dying Breath                                      */
     /* ---------------------------------------------------------------------------------------------- */
-    /*
-    Maraads is yet to be implemented, but will be soon.
-    */
       const legendaryBonus = 0.1;
       const averageStacks = 4.9;
       const backlashDamage = 0.25; 
