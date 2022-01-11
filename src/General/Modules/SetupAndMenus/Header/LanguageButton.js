@@ -5,7 +5,17 @@ import makeStyles from "@mui/styles/makeStyles";
 import { useTranslation } from "react-i18next";
 import ls from "local-storage";
 import LanguageIcon from "@mui/icons-material/Language";
-import { styled } from "@mui/material/styles";
+import { styled } from "@mui/system";
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  color: "white",
+  border: "1px solid #ffffff3b",
+  "&:hover": {
+    color: "white",
+    border: "1px solid #ffffff3b",
+    backgroundColor: "rgb(255, 255, 255, 0.08)",
+  },
+}));
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,10 +67,10 @@ export default function LanguageSelector() {
     <div className={classes.root}>
       <div>
         <Tooltip title={t("QeHeader.Tooltip.Language")} arrow>
-          <Button color={"white"} variant="outlined" ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle}>
+          <StyledButton color={"white"} variant="outlined" ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle}>
             <LanguageIcon color={"white"} style={{ marginRight: 4 }} />
             {currentLanguage}
-          </Button>
+          </StyledButton>
         </Tooltip>
         <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (

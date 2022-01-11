@@ -10,29 +10,10 @@ import { styled } from "@mui/material/styles";
 
 const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
   "& .MuiToggleButtonGroup-grouped": {
-    // margin: theme.spacing(0.5),
-    border: "1px solid rgb(255, 255, 255, 0.5)",
-    "&:hover": {
-      // background: "#f00",
-      border: "1px solid rgb(255, 255, 255, 1)",
-    },
+    color: "rgb(255,255,255,0.38)",
     "&.Mui-selected": {
-      // background: "#F2BF59",
-      border: "1px solid rgb(255, 255, 255, 0.5)",
-      "&:hover": {
-        // background: "#f00",
-        border: "1px solid rgb(255, 255, 255, 1)",
-      },
+      color: "#fff",
     },
-    // "&.Mui-disabled": {
-    //   // border: "1px solid #fff",
-    // },
-    // "&:not(:first-of-type)": {
-    //   // borderRadius: theme.shape.borderRadius,
-    // },
-    // "&:first-of-type": {
-    //   // borderRadius: theme.shape.borderRadius,
-    // },
   },
 }));
 
@@ -55,11 +36,11 @@ export default function ContentSwitch() {
   };
 
   return (
-    <StyledToggleButtonGroup color="white" value={contentType} exclusive onChange={handleContent} aria-label="contentToggle" size="small">
+    <StyledToggleButtonGroup value={contentType} exclusive onChange={handleContent} aria-label="contentToggle" size="small">
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                         Dungeon Button                                         */
       /* ----------------------------------------------------------------------------------------------  */}
-      <ToggleButton color="white" style={{ padding: 5 }} value="Dungeon" aria-label="dungeonLabel">
+      <ToggleButton style={{ padding: 5 }} value="Dungeon" aria-label="dungeonLabel">
         <Tooltip title={t("QeHeader.Tooltip.ChangeToDungeon")} arrow>
           <div style={{ display: "inline-flex" }}>
             {/* ---------------------------------------- Keystone Icon ---------------------------------------  */}
@@ -76,7 +57,7 @@ export default function ContentSwitch() {
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                           Raid Button                                          */
       /* ----------------------------------------------------------------------------------------------  */}
-      <ToggleButton color="white" style={{ padding: "5px 7px" }} value="Raid" aria-label="raidLabel">
+      <ToggleButton style={{ padding: "5px 7px" }} value="Raid" aria-label="raidLabel">
         <Tooltip title={t("QeHeader.Tooltip.ChangeToRaid")} arrow>
           <div style={{ display: "inline-flex" }}>
             {/* -------------------------------------- Current Raid Icon -------------------------------------  */}

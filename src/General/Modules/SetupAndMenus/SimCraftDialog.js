@@ -5,6 +5,17 @@ import { runSimC } from "../../../Retail/Engine/SimCImport/SimCImportEngine";
 import { runBCSimC } from "../../../BurningCrusade/Engine/SimCImport/SimCImportEngineBC";
 // import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript";
 import { useSelector } from "react-redux";
+import { styled } from "@mui/system";
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  color: "white",
+  border: "1px solid #ffffff3b",
+  "&:hover": {
+    color: "white",
+    border: "1px solid #ffffff3b",
+    backgroundColor: "rgb(255, 255, 255, 0.08)",
+  },
+}));
 
 export default function SimCraftInput(props) {
   const { t } = useTranslation();
@@ -31,7 +42,7 @@ export default function SimCraftInput(props) {
   return (
     <div>
       <Tooltip title={t("QeHeader.Tooltip." + gameType + "SimC")} arrow>
-        <Button
+        <StyledButton
           disableElevation={props.disableElevation}
           // style={{ whiteSpace: "nowrap" }}
           color={props.colour}
@@ -42,7 +53,7 @@ export default function SimCraftInput(props) {
           fullWidth
         >
           {props.buttonLabel}
-        </Button>
+        </StyledButton>
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
         <DialogTitle id="simc-dialog-title">{t("SimCInput.SimCDialogueTitle" + gameType)}</DialogTitle>

@@ -8,6 +8,17 @@ import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunct
 import FightSelectorButton from "../../../SystemTools/LogImport/FightSelectorButton";
 import bossIcons from "../../CooldownPlanner/Functions/IconFunctions/BossIcons";
 import { convertLogSpellOutput, convertLogStatOutput } from "../../Player/PlayerUtilities";
+import { styled } from "@mui/system";
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  color: "white",
+  border: "1px solid #ffffff3b",
+  "&:hover": {
+    color: "white",
+    border: "1px solid #ffffff3b",
+    backgroundColor: "rgb(255, 255, 255, 0.08)",
+  },
+}));
 
 export default function QELogImport(props) {
   const { t, i18n } = useTranslation();
@@ -229,20 +240,22 @@ export default function QELogImport(props) {
   return (
     <div>
       <Tooltip title={t("QeHeader.Tooltip.InsertLog")} arrow>
-        <Button
+        <StyledButton
           style={{ whiteSpace: "nowrap" }}
           onClick={handleClickOpen}
           disabled={characterCount === 0}
           variant="outlined"
-          color={"white"}
+          color={"secondary"}
           //disabled={true}
         >
           {t("QeHeader.InsertLogLabel")}
-        </Button>
+        </StyledButton>
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm" fullWidth={true}>
-        <DialogTitle id="form-dialog-title" style={{paddingBottom: 8}}>{t("InsertLog.InsertLogHeader")}</DialogTitle>
-        <DialogContent style={{paddingTop: 8}}>
+        <DialogTitle id="form-dialog-title" style={{ paddingBottom: 8 }}>
+          {t("InsertLog.InsertLogHeader")}
+        </DialogTitle>
+        <DialogContent style={{ paddingTop: 8 }}>
           <Grid container direction="row" spacing={1} justifyContent="space-between">
             <Grid item xs={12}>
               <LogLinkInput changed={reportidHandler} reportid={reportId} styleProps={{ fullWidth: true }} />

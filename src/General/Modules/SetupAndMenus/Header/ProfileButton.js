@@ -6,6 +6,17 @@ import withStyles from "@mui/styles/withStyles";
 import { useTranslation } from "react-i18next";
 import BnetIcon from "Images/QeAssets/BattleNetIcon.png";
 import { QELogin } from "./QELogin";
+import { styled } from "@mui/system";
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  color: "white",
+  border: "1px solid #ffffff3b",
+  "&:hover": {
+    color: "white",
+    border: "1px solid #ffffff3b",
+    backgroundColor: "rgb(255, 255, 255, 0.08)",
+  },
+}));
 
 const DialogContent = withStyles((theme) => ({
   root: {
@@ -82,9 +93,9 @@ export default function ProfileSelector(props) {
       return (
         <div>
           <Tooltip title={t("QeHeader.Tooltip.Login")} arrow>
-            <Button variant="outlined" onClick={handleDialogOpen} color={"white"}>
+            <StyledButton variant="outlined" onClick={handleDialogOpen} color={"white"}>
               {t("Login")}
-            </Button>
+            </StyledButton>
           </Tooltip>
           <Dialog onClose={handleCloseDialog} aria-labelledby="customized-dialog-title" open={opendialog}>
             <DialogContent>
@@ -95,10 +106,10 @@ export default function ProfileSelector(props) {
       );
     } else {
       return (
-        <Button variant="outlined" color={"white"} ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle} onMouseOver={handleHoverOpen}>
+        <StyledButton variant="outlined" color={"white"} ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle} onMouseOver={handleHoverOpen}>
           <img src={BnetIcon} width="24px" height="24px" alt="" />
           {props.name}
-        </Button>
+        </StyledButton>
       );
     }
   }
