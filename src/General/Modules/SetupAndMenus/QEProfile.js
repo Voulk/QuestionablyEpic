@@ -1,12 +1,12 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Button, Typography, TextField, Paper } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
+import { Grid, Button, Typography, TextField, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import ls from "local-storage";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('lg')]: {
       margin: "auto",
       width: "80%",
       justifyContent: "center",
@@ -88,7 +88,7 @@ export default function QEProfile(props) {
             <Typography variant="h6" gutterBottom color="primary">
               {t("QeProfile.EmailMsg")}
             </Typography>
-            <Grid container direction="row" justify="flex-start" alignItems="center" spacing={1} wrap="nowrap">
+            <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} wrap="nowrap">
               <Grid item xs={11}>
                 <TextField
                   id="outlined-basic"

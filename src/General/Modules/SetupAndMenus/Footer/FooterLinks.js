@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "@material-ui/core";
+import { Link } from "@mui/material";
 
 const list = [
   { text: "Guides", link: "https://questionablyepic.com" },

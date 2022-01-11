@@ -14,8 +14,6 @@ export const legendaryImages = {
 
   /* ----------------------------- Paladin Legendary Images ----------------------------- */
   "Of Dusk and Dawn": require("Images/Legendaries/FromDuskTillDawn.jpg"),
-  "Divine Resonance": require("Images/Legendaries/FromDuskTillDawn.jpg"),
-  "Duty-Bound Gavel": require("Images/Legendaries/FromDuskTillDawn.jpg"),
   "Vanguards Momentum": require("Images/Legendaries/VanguardsMomentum.jpg"),
   "The Magistrates Judgment": require("Images/Legendaries/TheMagistratesJudgment.jpg"),
   "Inflorescence of the Sunwell": require("Images/Legendaries/InflorescenceOfTheSunwell.jpg"),

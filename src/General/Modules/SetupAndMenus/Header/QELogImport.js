@@ -1,34 +1,24 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, InputLabel, FormControl, Select, MenuItem, Typography, Tooltip } from "@material-ui/core";
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, InputLabel, FormControl, Select, MenuItem, Typography, Tooltip } from "@mui/material";
 import LogLinkInput from "../../../SystemTools/LogImport/LogLinkInput";
 import { warcraftLogReportID, logDifficulty, importSummaryData, importDamageLogData } from "../../CooldownPlanner/Functions/Functions";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import FightSelectorButton from "../../../SystemTools/LogImport/FightSelectorButton";
 import bossIcons from "../../CooldownPlanner/Functions/IconFunctions/BossIcons";
 import { convertLogSpellOutput, convertLogStatOutput } from "../../Player/PlayerUtilities";
+import { styled } from "@mui/system";
 
-const menuStyle = {
-  style: { marginTop: 5 },
-  MenuListProps: {
-    style: { paddingTop: 0, paddingBottom: 0 },
+const StyledButton = styled(Button)(({ theme }) => ({
+  color: "white",
+  border: "1px solid #ffffff3b",
+  "&:hover": {
+    color: "white",
+    border: "1px solid #ffffff3b",
+    backgroundColor: "rgb(255, 255, 255, 0.08)",
   },
-  PaperProps: {
-    style: {
-      border: "1px solid rgba(255, 255, 255, 0.23)",
-    },
-  },
-  anchorOrigin: {
-    vertical: "bottom",
-    horizontal: "left",
-  },
-  transformOrigin: {
-    vertical: "top",
-    horizontal: "left",
-  },
-  getContentAnchorEl: null,
-};
+}));
 
 export default function QELogImport(props) {
   const { t, i18n } = useTranslation();
@@ -250,20 +240,23 @@ export default function QELogImport(props) {
   return (
     <div>
       <Tooltip title={t("QeHeader.Tooltip.InsertLog")} arrow>
-        <Button
+        <StyledButton
           style={{ whiteSpace: "nowrap" }}
           onClick={handleClickOpen}
           disabled={characterCount === 0}
           variant="outlined"
+          color={"secondary"}
           //disabled={true}
         >
           {t("QeHeader.InsertLogLabel")}
-        </Button>
+        </StyledButton>
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm" fullWidth={true}>
-        <DialogTitle id="form-dialog-title">{t("InsertLog.InsertLogHeader")}</DialogTitle>
-        <DialogContent>
-          <Grid container direction="row" spacing={1} justify="space-between">
+        <DialogTitle id="form-dialog-title" style={{ paddingBottom: 8 }}>
+          {t("InsertLog.InsertLogHeader")}
+        </DialogTitle>
+        <DialogContent style={{ paddingTop: 8 }}>
+          <Grid container direction="row" spacing={1} justifyContent="space-between">
             <Grid item xs={12}>
               <LogLinkInput changed={reportidHandler} reportid={reportId} styleProps={{ fullWidth: true }} />
             </Grid>
@@ -281,12 +274,15 @@ export default function QELogImport(props) {
               <Grid item xs={12}>
                 <FormControl variant="outlined" size="small" fullWidth disabled={currentBossID === "" ? true : false}>
                   <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
-                  <Select value={selectValue} label={t("Name")} labelId="HealerSelector" onChange={(e) => playerSelectedHandler(e.target.value)} MenuProps={menuStyle}>
-                    {healerData.map((key, i) => (
-                      <MenuItem key={i} value={key.name} >
-                        <div style={{color:classColoursJS(key.type)}}>{key.name}</div>
-                      </MenuItem>
-                    ))}
+                  <Select value={selectValue} label={t("Name")} labelId="HealerSelector" onChange={(e) => playerSelectedHandler(e.target.value)}>
+                    {healerData.map((key, i, arr) => {
+                      let lastItem = i + 1 === arr.length ? false : true;
+                      return (
+                        <MenuItem divider={lastItem} key={i} value={key.name}>
+                          <div style={{ color: classColoursJS(key.type) }}>{key.name}</div>
+                        </MenuItem>
+                      );
+                    })}
                   </Select>
                 </FormControl>
               </Grid>

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from "@mui/styles/makeStyles";
 import "../SetupAndMenus/QEMainMenu.css";
 import ReactGA from "react-ga";
 import "./../QuickCompare/QuickCompare.css";
 import { useTranslation } from "react-i18next";
 // import { testTrinkets } from "../Engine/EffectFormulas/Generic/TrinketEffectFormulas";
 import { apiSendTopGearSet } from "../SetupAndMenus/ConnectionUtilities";
-import { Button, Grid, Typography, Divider, Snackbar } from "@material-ui/core";
-import MuiAlert from "@material-ui/lab/Alert";
+import { Button, Grid, Typography, Divider, Snackbar } from "@mui/material";
+import MuiAlert from "@mui/material/Alert";
 import { buildWepCombos } from "../../Engine/ItemUtilities";
 import MiniItemCard from "./MiniItemCard";
 //import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
@@ -38,11 +38,11 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   header: {
-    [theme.breakpoints.down("sm")]: {},
+    [theme.breakpoints.down("lg")]: {},
     [theme.breakpoints.up("md")]: {},
   },
   root: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("md")]: {
       margin: "auto",
       width: "90%",
       justifyContent: "center",
@@ -179,7 +179,6 @@ export default function TopGear(props) {
       const baseHPS = props.player.getHPS(contentType);
       const strippedPlayer = JSON.parse(JSON.stringify(props.player));
       const strippedCastModel = JSON.parse(JSON.stringify(props.player.getActiveModel(contentType)));
-
       if (gameType === "Retail") {
         const worker = require("workerize-loader!./Engine/TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
         let instance = new worker();
@@ -266,7 +265,7 @@ export default function TopGear(props) {
   if (gameType === "BurningCrusade") slotList.push({ label: t("slotNames.relics"), slotName: "Relics & Wands" });
   return (
     <div className={classes.root}>
-      <Grid container spacing={1} justify="center">
+      <Grid container spacing={1} justifyContent="center">
         <Grid item xs={12}>
           <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
             {t("TopGear.Title")}

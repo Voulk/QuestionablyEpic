@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardActions, CardContent, Divider, Grid, Typography } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
+import { Card, CardActions, CardContent, Divider, Grid, Typography } from "@mui/material";
 // import { legendaryImages } from "./LegendaryIcons";
 
 const useStyles = makeStyles({
@@ -66,10 +66,10 @@ export default function TierObject(props) {
           </div>
           {/* ---------------------------- Divider to seperate header from body ---------------------------- */}
           <Divider style={{ marginBottom: 6 }} />
-          <Grid container spacing={1} direction="row" justify="space-between" alignItems="center" style={{ height: 110 }}>
+          <Grid container spacing={1} direction="row" justifyContent="space-between" alignItems="center" style={{ height: 110 }}>
             <Grid item xs={12} style={{ marginTop: 4 }}>
               {/* --------------------------------------- Set Icons --------------------------------------- */}
-              <Grid container spacing={1} direction="row" justify="center" alignItems="center">
+              <Grid container spacing={1} direction="row" justifyContent="center" alignItems="center">
                 {Object.keys(set.slots)
                   .filter((filter) => set.slots[filter].id > 0)
                   .map((key, i) => (

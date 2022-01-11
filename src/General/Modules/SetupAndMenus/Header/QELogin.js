@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Grid } from "@material-ui/core";
+import { Button, Grid } from "@mui/material";
 import { useHistory, useLocation } from "react-router-dom";
 import BattleNetLogo from "Images/QeAssets/BattleNetLogo.png";
 
@@ -22,7 +22,7 @@ export function QELogin(props) {
   return (
     <div>
       <img src={BattleNetLogo} style={{ borderRadius: "4px" }} alt="BattleNet" />
-      <Grid container direction="row" justify="space-evenly" alignItems="center" wrap="nowrap">
+      <Grid container direction="row" justifyContent="space-evenly" alignItems="center" wrap="nowrap">
         <Grid item xs={4}>
           <Button variant="contained" color="primary" style={btnStyle} onClick={() => handleClick("us")}>
             US

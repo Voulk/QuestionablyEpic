@@ -1,5 +1,5 @@
 import React from "react";
-import TextField from "@material-ui/core/TextField";
+import TextField from "@mui/material/TextField";
 import { useTranslation } from "react-i18next";
 
 export default function LogLinkInput(props) {

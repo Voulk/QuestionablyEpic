@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Button, TextField, Dialog, Grid, Divider, DialogActions, DialogContent, DialogTitle, Tooltip, Typography, FormControl, InputLabel, Select, MenuItem, Paper } from "@material-ui/core";
+import { Button, TextField, Dialog, Grid, Divider, DialogActions, DialogContent, DialogTitle, Tooltip, Typography, FormControl, InputLabel, Select, MenuItem, Paper } from "@mui/material";
 import { bossList } from "../Data/CooldownPlannerBossList";
 
 export default function ExportERTDialog(props) {
@@ -15,27 +15,6 @@ export default function ExportERTDialog(props) {
 
   const handleClose = () => {
     setOpen(false);
-  };
-
-  const menuStyle = {
-    style: { marginTop: 5 },
-    MenuListProps: {
-      style: { paddingTop: 0, paddingBottom: 0 },
-    },
-    PaperProps: {
-      style: {
-        border: "1px solid rgba(255, 255, 255, 0.23)",
-      },
-    },
-    anchorOrigin: {
-      vertical: "bottom",
-      horizontal: "left",
-    },
-    transformOrigin: {
-      vertical: "top",
-      horizontal: "left",
-    },
-    getContentAnchorEl: null,
   };
 
   const ertFormat = (ertType) => {
@@ -80,7 +59,7 @@ export default function ExportERTDialog(props) {
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
         <DialogTitle id="ert-dialog-title">
-          <Grid container direction="row" justify="space-between">
+          <Grid container direction="row" justifyContent="space-between">
             <Grid item>
               <Typography variant="h6" color="primary">
                 Note Export
@@ -91,31 +70,27 @@ export default function ExportERTDialog(props) {
                 <Grid item xs="auto">
                   <FormControl style={{ minWidth: 200 }} variant="outlined" size="small">
                     <InputLabel id="ertFormat">{t("CooldownPlanner.TableLabels.TypeSelector")}</InputLabel>
-                    <Select labelId="ertFormatSelector" value={ertType} onChange={(e) => setErtType(e.target.value)} label={t("CooldownPlanner.TableLabels.TypeSelector")} MenuProps={menuStyle}>
-                      <MenuItem key={"ert1"} value={"Time - No Icons"}>
+                    <Select labelId="ertFormatSelector" value={ertType} onChange={(e) => setErtType(e.target.value)} label={t("CooldownPlanner.TableLabels.TypeSelector")}>
+                      <MenuItem divider key={"ert1"} value={"Time - No Icons"}>
                         Time - No Icons
                       </MenuItem>
-                      <Divider />
-                      <MenuItem key={"ert2"} value={"Time - Icons"}>
+                      <MenuItem divider key={"ert2"} value={"Time - Icons"}>
                         Time - Icons
                       </MenuItem>
-                      <Divider />
-                      <MenuItem key={"ert3"} value={"Boss Ability - No Icons"}>
+                      <MenuItem divider key={"ert3"} value={"Boss Ability - No Icons"}>
                         Boss Ability - No Icons
                       </MenuItem>
-                      <Divider />
-                      <MenuItem key={"ert4"} value={"Boss Ability - Icons"}>
+                      <MenuItem divider key={"ert4"} value={"Boss Ability - Icons"}>
                         Boss Ability - Icons
                       </MenuItem>
-                      {/* <Divider />
-                        <MenuItem key={"ert5"} value={"Notes - Icons"}>
+                      {/* 
+                        <MenuItem divider key={"ert5"} value={"Notes - Icons"}>
                           Notes - Icons
                         </MenuItem>
-                        <Divider />
-                        <MenuItem key={"ert6"} value={"Notes - No Icons"}>
+                        <MenuItem divider key={"ert6"} value={"Notes - No Icons"}>
                           Notes - No Icons
                         </MenuItem>
-                        <Divider /> */}
+                        */}
                     </Select>
                   </FormControl>
                 </Grid>

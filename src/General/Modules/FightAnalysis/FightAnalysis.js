@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Typography, Collapse, CircularProgress, Grid, Dialog, Divider, Paper, Grow, FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
+import { Typography, Collapse, CircularProgress, Grid, Dialog, Divider, Paper, Grow, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 import LogLinkInput from "../../SystemTools/LogImport/LogLinkInput";
 import Chart from "./Chart/Chart";
 import Example from "./Components/DTPSBarChart";
@@ -8,14 +8,12 @@ import LoadingOverlay from "react-loading-overlay";
 import CooldownTimeline from "./Components/CooldownTimelineTable";
 import { fightDuration, warcraftLogReportID, logDifficulty } from "../CooldownPlanner/Functions/Functions";
 import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
-import SwitchLabels from "../CooldownPlanner/BasicComponents/Switch";
 import HealerInfoTable from "./Components/HealerInfoCards";
 import updatechartdata from "./Engine/LogImportEngine.js";
 import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
 import ExternalTimeline from "./Components/ExternalTimelineTable";
 import EnemyCastsTimeline from "./Components/EnemyCasts";
 import Cooldowns from "../CooldownPlanner/CooldownObject/CooldownObject";
-import { makeStyles } from "@material-ui/core/styles";
 class FightAnalysis extends Component {
   constructor() {
     super();
@@ -160,27 +158,6 @@ class FightAnalysis extends Component {
     /* ------------------------------------ Data Loading Spinner ------------------------------------ */
     let spinnershow = this.state.loadingcheck;
 
-    const menuStyle = {
-      style: { marginTop: 5 },
-      MenuListProps: {
-        style: { paddingTop: 0, paddingBottom: 0 },
-      },
-      PaperProps: {
-        style: {
-          border: "1px solid rgba(255, 255, 255, 0.23)",
-        },
-      },
-      anchorOrigin: {
-        vertical: "bottom",
-        horizontal: "left",
-      },
-      transformOrigin: {
-        vertical: "top",
-        horizontal: "left",
-      },
-      getContentAnchorEl: null,
-    };
-
     return (
       <div
         style={{
@@ -206,7 +183,7 @@ class FightAnalysis extends Component {
                 <Grid
                   container
                   spacing={1}
-                  justify="space-between"
+                  justifyContent="space-between"
                   style={{
                     // display: "inline-flex",
 
@@ -231,7 +208,7 @@ class FightAnalysis extends Component {
               item
               container
               direction="row"
-              justify="flex-start"
+              justifyContent="flex-start"
               alignItems="flex-start"
               spacing={1}
               style={{
@@ -307,7 +284,7 @@ class FightAnalysis extends Component {
                             width: "100%",
                           }}
                         >
-                          <Grid container direction="row" justify="space-evenly" alignItems="center">
+                          <Grid container direction="row" justifyContent="space-evenly" alignItems="center">
                             {/* TODO: Translate */}
                             <Grid item>
                               <FormControl style={{ width: 200 }} variant="outlined" size="small">
@@ -317,10 +294,11 @@ class FightAnalysis extends Component {
                                   labelId="cooldownsShown"
                                   value={this.state.customCooldownsOnChart}
                                   onChange={(e) => this.customCooldownsOnChart(e.target.value)}
-                                  MenuProps={menuStyle}
                                   label={"Cooldowns Shown"}
                                 >
-                                  <MenuItem value={true}>Log Cooldowns</MenuItem>
+                                  <MenuItem divider value={true}>
+                                    Log Cooldowns
+                                  </MenuItem>
                                   <MenuItem value={false}>Custom Cooldowns</MenuItem>
                                 </Select>
                               </FormControl>
@@ -329,15 +307,10 @@ class FightAnalysis extends Component {
                               {/* TODO: Translate */}
                               <FormControl style={{ width: 200 }} variant="outlined" size="small">
                                 <InputLabel id="itemsocket">Custom Cooldowns</InputLabel>
-                                <Select
-                                  key={"damageType"}
-                                  labelId="damageType"
-                                  value={this.state.chartData}
-                                  onChange={(e) => this.changeDataSet(e.target.value)}
-                                  MenuProps={menuStyle}
-                                  label={"Damage Type"}
-                                >
-                                  <MenuItem value={true}>Unmitigated Damage</MenuItem>
+                                <Select key={"damageType"} labelId="damageType" value={this.state.chartData} onChange={(e) => this.changeDataSet(e.target.value)} label={"Damage Type"}>
+                                  <MenuItem divider value={true}>
+                                    Unmitigated Damage
+                                  </MenuItem>
                                   <MenuItem value={false}>Mitigated Damage</MenuItem>
                                 </Select>
                               </FormControl>
@@ -350,10 +323,18 @@ class FightAnalysis extends Component {
                                   labelId="itemsocket"
                                   value={this.state.customPlanSelected}
                                   onChange={(e) => this.handleCustomPlanChange(e.target.value, this.state.currentBossID)}
-                                  MenuProps={menuStyle}
                                   label={"Custom Cooldowns"}
                                 >
-                                  {this.state.currentBossID === null ? "" : this.getBossPlanNames(this.state.currentBossID).map((key) => <MenuItem value={key}>{key}</MenuItem>)}
+                                  {this.state.currentBossID === null
+                                    ? ""
+                                    : this.getBossPlanNames(this.state.currentBossID).map((key, i, arr) => {
+                                        let lastItem = i + 1 === arr.length ? false : true;
+                                        return (
+                                          <MenuItem divider={lastItem} value={key}>
+                                            {key}
+                                          </MenuItem>
+                                        );
+                                      })}
                                 </Select>
                               </FormControl>
                             </Grid>
@@ -400,7 +381,7 @@ class FightAnalysis extends Component {
               {/* ----------------------------- Grid Container for the log details ----------------------------- */}
               {/* ---------------- Cooldown / External Timeline / Healer Info Cards / DTPS by ability --------------- */}
               <Grid item container>
-                <Grid item container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
+                <Grid item container direction="row" justifyContent="flex-start" alignItems="flex-start" spacing={1}>
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                     Cooldown Usage Timeline                                     */
                   /* ----------------------------------------------------------------------------------------------  */}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Grid, Paper, Typography, Divider, Tooltip, useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@mui/material/styles";
+import makeStyles from "@mui/styles/makeStyles";
+import { Grid, Paper, Typography, Divider, Tooltip, useMediaQuery } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
@@ -9,15 +10,10 @@ import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import Settings from "../Settings/Settings";
 import { covenantIcons, covenantColours } from "../CooldownPlanner/Functions/CovenantFunctions";
-import ErrorTooltip from "./ErrorTooltip";
+// import ErrorTooltip from "./ErrorTooltip";
 import { classTranslator } from "General/Functions/CommonFunctions";
 
 const useStyles = makeStyles(() => ({
-  slider: {
-    width: "90%",
-    margin: "0px 20px 35px 20px",
-    textAlign: "center",
-  },
   simcerror: {
     borderColor: "red",
     borderWidth: "2px",
@@ -29,7 +25,6 @@ const useStyles = makeStyles(() => ({
     borderStyle: "None",
     width: "80%",
     margin: "auto",
-    width: "80%",
   },
 }));
 
@@ -71,8 +66,8 @@ const specImages = {
 export default function CharacterPanel(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const xsBreakpoint = useMediaQuery(theme.breakpoints.down("xs"));
-  const smBreakpoint = useMediaQuery(theme.breakpoints.down("sm"));
+  const xsBreakpoint = useMediaQuery(theme.breakpoints.down("sm"));
+  const smBreakpoint = useMediaQuery(theme.breakpoints.down("md"));
   const { t, i18n } = useTranslation();
   const playerStats = props.player.getActiveStats();
   const [backgroundImage, setBackgroundImage] = useState("");
@@ -123,28 +118,33 @@ export default function CharacterPanel(props) {
     borderRadius: 4,
   };
 
-  const errorMessage = (
-    <div>
-      There is a problem with your import, please check the following:
-      <br />
-      If your character is wearing the correct items:
-      <br />
-      <span>• Weapon / Off Hands</span>
-      <br />
-      <span>• Helm / Neck / Chest / Wrist / Hands / Belt / Legs / Boots / Rings </span>
-      <br />
-      <span>• Trinkets</span>
-      <br />
-      <br />
-      Make sure that all your items with a primary stat are Intellect based, and not Strength or Agility.
-    </div>
-  );
+  // const errorMessage = (
+  //   <div>
+  //     There is a problem with your import, please check the following:
+  //     <br />
+  //     If your character is wearing the correct items:
+  //     <br />
+  //     <span>• Weapon / Off Hands</span>
+  //     <br />
+  //     <span>• Helm / Neck / Chest / Wrist / Hands / Belt / Legs / Boots / Rings </span>
+  //     <br />
+  //     <span>• Trinkets</span>
+  //     <br />
+  //     <br />
+  //     Make sure that all your items with a primary stat are Intellect based, and not Strength or Agility.
+  //   </div>
+  // );
 
   return (
     // disabled errortooltip until properly implemented
     //<ErrorTooltip title={errorMessage} open={simcStatus === "Invalid"} placement="bottom-end">
     <Paper elevation={0} className={check(simcStatus)}>
-      <div style={{ padding: "8px 8px 8px 8px" }}>
+      <div
+        style={{
+          margin: "8px 8px 0px 8px",
+          //  paddingBottom: 8
+        }}
+      >
         <Grid container direction="row" justifyContent="space-between" spacing={1}>
           {/* ---------------------------------------------------------------------------------------------- */
           /*                                         Character Image                                         */
@@ -276,8 +276,8 @@ export default function CharacterPanel(props) {
                         </Grid>
                         {Object.keys(playerStats)
                           .filter((filterOut) => filterOut !== "stamina" && filterOut !== "hps" && filterOut !== "dps" && filterOut !== "leech")
-                          .map((key) => (
-                            <Grid item xs={4} sm="auto">
+                          .map((key, i) => (
+                            <Grid item xs={4} sm="auto" key={"stat" + i}>
                               <Typography style={{ fontSize: 11, lineHeight: 1 }}>{t(capitalizeFirstLetter(key)) + ": " + playerStats[key]}</Typography>
                             </Grid>
                           ))}
@@ -311,7 +311,7 @@ export default function CharacterPanel(props) {
             {xsBreakpoint ? (
               ""
             ) : (
-              <Grid item xs={12} style={{ padding: "0px 4px" }}>
+              <Grid item xs={12} style={{ padding: "4px 0px 0px 4px" }}>
                 <Divider style={{ align: "center" }} />
               </Grid>
             )}
@@ -319,12 +319,12 @@ export default function CharacterPanel(props) {
             {xsBreakpoint ? (
               ""
             ) : (
-              <Grid item sm container justifyContent="flex-start" spacing={0}>
+              <Grid item sm container justifyContent="flex-start" spacing={0} style={{ padding: "4px 0px 0px 8px" }}>
                 {
                   /* ----------------------------- Characters Active (Equipped) Items -----------------------------  */
                   // Map currently equipped items with wowhead tooltips
                 }
-                <Grid item container xs justifyContent="center" spacing={1} alignItems="center">
+                <Grid item container xs justifyContent="flex-start" spacing={1} alignItems="center">
                   {props.player.activeItems.length > 0 ? (
                     props.player.activeItems
                       .filter((key) => key.isEquipped === true)
@@ -347,9 +347,9 @@ export default function CharacterPanel(props) {
                         </Grid>
                       ))
                   ) : (
-                    <Grid item key={i}>
+                    <Grid item>
                       {/* // TODO: Localize this */}
-                      <Typography variant="body2">Import your gear with a SimC string via the "Import Gear" button above.</Typography>
+                      <Typography variant="body2">Import your gear with a SimC string via the &ldquo;Import Gear&ldquo; button above.</Typography>
                     </Grid>
                   )}
                 </Grid>
@@ -405,9 +405,9 @@ export default function CharacterPanel(props) {
                         </Grid>
                       ))
                   ) : (
-                    <Grid item key={i}>
+                    <Grid item>
                       {/* // TODO: Localize this */}
-                      <Typography variant="body2">Import your gear with a SimC string via the "Import Gear" button above.</Typography>
+                      <Typography variant="body2">Import your gear with a SimC string via the &ldquo;Import Gear&ldquo; button above.</Typography>
                     </Grid>
                   )}
                 </Grid>

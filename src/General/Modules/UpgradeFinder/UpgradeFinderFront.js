@@ -1,13 +1,11 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Paper, Grid, Typography, Button } from "@material-ui/core";
+import makeStyles from "@mui/styles/makeStyles";
+import { Paper, Grid, Typography, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import HelpText from "../SetupAndMenus/HelpText";
 import UpgradeFinderSlider from "./Slider";
-import ToggleButton from "@material-ui/lab/ToggleButton";
-import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
-import Settings from "../Settings/Settings";
-import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
 import { runUpgradeFinderBC } from "./UpgradeFinderEngineBC";
 // import { useHistory } from "react-router-dom";
@@ -39,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   header: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("md")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
@@ -97,7 +95,7 @@ const PvPRating = [
 /* ---------------------------------------------------------------------------------------------- */
 
 /* ---------------------------- Burning Crusade Dungeon Difficulties ---------------------------- */
-const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
+// const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
 
 export default function UpgradeFinderFront(props) {
   const classes = useStyles();
@@ -262,8 +260,7 @@ export default function UpgradeFinderFront(props) {
   const [dungeonBC, setDungeonBC] = React.useState("Heroic");
 
   const handleContent = (event, content) => {
-    if (content === null) {
-    } else {
+    if (content !== null) {
       setDungeonBC(content);
       props.setBCDungeonDifficulty(event, content);
     }
@@ -355,7 +352,7 @@ export default function UpgradeFinderFront(props) {
           <Grid item xs={12}>
             <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
               <div style={{ padding: 8 }}>
-                <Grid container justify="center" spacing={1}>
+                <Grid container justifyContent="center" spacing={1}>
                   <Grid item xs={12}>
                     <Typography color="primary" align="center" variant="h5">
                       {t("UpgradeFinderFront.RaidDifficultyHeader")}
@@ -366,7 +363,7 @@ export default function UpgradeFinderFront(props) {
                   </Grid>
                 </Grid>
 
-                <Grid container justify="center" spacing={1}>
+                <Grid container justifyContent="center" spacing={1}>
                   {raidDifficulty.map((key, i) => (
                     <Grid item xs="auto" key={i}>
                       <ToggleButton
@@ -404,7 +401,7 @@ export default function UpgradeFinderFront(props) {
           <Grid item xs={12}>
             <Paper elevation={0} style={{ textAlign: "center", width: "80%", margin: "auto" }}>
               <div style={{ padding: 8 }}>
-                <Grid container justify="center" spacing={1}>
+                <Grid container justifyContent="center" spacing={1}>
                   <Grid item xs={12}>
                     <Typography color="primary" align="center" variant="h5">
                       {t("UpgradeFinderFront.MythicPlusHeader")}
@@ -436,7 +433,7 @@ export default function UpgradeFinderFront(props) {
           <Grid item xs={12}>
             <Paper elevation={0} style={{ textAlign: "center", width: "80%", margin: "auto" }}>
               <div style={{ padding: 8 }}>
-                <Grid container justify="center" spacing={1}>
+                <Grid container justifyContent="center" spacing={1}>
                   <Grid item xs={12}>
                     <Typography color="primary" align="center" variant="h5">
                       {t("Dungeon")}
@@ -447,43 +444,20 @@ export default function UpgradeFinderFront(props) {
                   </Grid>
                 </Grid>
 
-                <Grid container justify="center" spacing={1}>
+                <Grid item container justifyContent="center">
                   <ToggleButtonGroup value={dungeonBC} exclusive onChange={handleContent} aria-label="contentToggle" size="large">
                     <ToggleButton style={{ padding: "15px 30px" }} value="Normal" aria-label="dungeonLabel">
-                      {/* <Tooltip title={t("QeHeader.Tooltip.ChangeToDungeon")} arrow> */}
                       <div style={{ display: "inline-flex" }}>
                         <Typography variant="button">{t("RaidDifficulty.Normal")}</Typography>
                       </div>
-                      {/* </Tooltip> */}
                     </ToggleButton>
 
                     <ToggleButton style={{ padding: "15px 30px" }} value="Heroic" aria-label="raidLabel">
-                      {/* <Tooltip title={t("QeHeader.Tooltip.ChangeToRaid")} arrow> */}
                       <div style={{ display: "inline-flex" }}>
                         <Typography variant="button">{t("RaidDifficulty.Heroic")}</Typography>
                       </div>
-                      {/* </Tooltip> */}
                     </ToggleButton>
                   </ToggleButtonGroup>
-                  {/* {burningCrusadeDungeonDifficulty.map((key, i) => (
-                  <Grid item xs="auto" key={i}>
-                    <ToggleButton
-                      classes={{
-                        root: classes.red,
-                        selected: classes.selectedRed,
-                      }}
-                      value="check"
-                      selected={props.playerSettings.raid.includes(i)}
-                      style={{ width: 180, height: 45 }}
-                      // onChange={() => {
-                      //   // setsPvE[i](!selectsPvE[i]);
-                      //   props.setRaidDifficulty(i);
-                      // }}
-                    >
-                      {t("RaidDifficulty." + key)}
-                    </ToggleButton>
-                  </Grid>
-                ))} */}
                 </Grid>
               </div>
             </Paper>
@@ -493,7 +467,7 @@ export default function UpgradeFinderFront(props) {
         <Grid item xs={12}>
           <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
             <div style={{ padding: 8 }}>
-              <Grid container justify="center" spacing={1}>
+              <Grid container justifyContent="center" spacing={1}>
                 <Grid item xs={12}>
                   <Typography color="primary" align="center" variant="h5">
                     {t("UpgradeFinderFront.PvPHeader")}
@@ -504,7 +478,7 @@ export default function UpgradeFinderFront(props) {
                 </Grid>
               </Grid>
 
-              <Grid container justify="center" spacing={1} style={{ marginTop: "10px 10px 0px 10px" }}>
+              <Grid container justifyContent="center" spacing={1} style={{ marginTop: "10px 10px 0px 10px" }}>
                 <Grid item style={{ textAlign: "center" }} xs={12}>
                   <UpgradeFinderSlider
                     className={classes.slider}
@@ -553,13 +527,11 @@ export default function UpgradeFinderFront(props) {
             flexDirection: "row",
             justifyContent: "space-evenly",
             alignItems: "center",
+            padding: 8,
           }}
         >
           <div>
-            <Typography variant="subtitle2" align="center" style={{ padding: "5px 10px 5px 10px" }} color="primary">
-              {/* {errorMessage} */}
-            </Typography>
-            <Button variant="contained" color="secondary" align="center" style={{ height: "68%", width: "180px" }} disabled={!getUpgradeFinderReady(props.player)} onClick={unleashUpgradeFinder}>
+            <Button variant="contained" color="primary" align="center" style={{ height: "68%", width: "180px" }} disabled={!getUpgradeFinderReady(props.player)} onClick={unleashUpgradeFinder}>
               {t("TopGear.GoMsg")}
             </Button>
           </div>

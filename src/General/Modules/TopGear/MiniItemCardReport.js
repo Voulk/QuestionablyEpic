@@ -1,6 +1,6 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardContent, CardActionArea, Typography, Grid, Divider } from "@material-ui/core";
+import makeStyles from "@mui/styles/makeStyles";
+import { Card, CardContent, CardActionArea, Typography, Grid, Divider } from "@mui/material";
 import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemIcon } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 import hasteSocket from "../../../Images/Resources/hasteSocket.jpg";
@@ -108,7 +108,7 @@ export default function ItemCardReport(props) {
         style={{ backgroundColor: "rgba(34, 34, 34, 0.52)" }}
       >
         <CardActionArea disabled={false}>
-          <Grid container display="inline-flex" wrap="nowrap" justify="space-between">
+          <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
             <Grid item xs="auto">
               <CardContent
                 style={{
@@ -137,8 +137,8 @@ export default function ItemCardReport(props) {
             </Grid>
             <Divider orientation="vertical" flexItem />
             <CardContent style={{ padding: 2, width: "100%" }}>
-              <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
-                <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
+              <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
+                <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={12} display="inline">
                     <Typography variant="subtitle2" wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel, item.id) }}>
                       {itemName}
@@ -146,8 +146,8 @@ export default function ItemCardReport(props) {
                   </Grid>
                 </Grid>
                 <Divider />
-                <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
-                  <Grid item xs={12} style={{ display: "contents" }}>
+                <Grid item container direction="row" xs={12} justifyContent="space-between">
+                  <Grid item>
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
                       {"domGemID" in item && item.domGemID !== 0 ? (
                         <a data-wowhead={"item=" + item.domGemID + "&domain=" + currentLanguage}>
@@ -169,8 +169,8 @@ export default function ItemCardReport(props) {
                       )}
                       {socket} {statString} {tertiary} {isVault ? " / Vault" : ""}
                     </Typography>
-                    {enchantCheck(item)}
                   </Grid>
+                  <Grid item>{enchantCheck(item)}</Grid>
                 </Grid>
               </Grid>
             </CardContent>

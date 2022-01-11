@@ -1,12 +1,12 @@
 import React from "react";
-import ToggleButton from "@material-ui/lab/ToggleButton";
-import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
-import { useTranslation } from "react-i18next";
-import { Tooltip, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import green from "@material-ui/core/colors/green";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+// import { useTranslation } from "react-i18next";
+import { Tooltip, Typography } from "@mui/material";
+import makeStyles from "@mui/styles/makeStyles";
+import { green } from "@mui/material/colors";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   selected: {
     "&&": {
       backgroundColor: green[900],
@@ -19,20 +19,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SourceToggle(props) {
-  const metric = props.metric;
-  const setMetric = props.setMetric;
+  const sources = props.sources;
+  const setSources = props.setSources;
   const classes = useStyles();
-  const { t } = useTranslation();
-  const handleContent = (event, content) => {
-    if (content === null) {
-    } else {
-      setMetric(content);
-    }
-  };
+  // const { t } = useTranslation();
 
   // TODO: Localise Tooltips?
   return (
-    <ToggleButtonGroup value={metric} onChange={setMetric} aria-label="contentToggle" size="small" style={{ padding: 8 }}>
+    <ToggleButtonGroup value={sources} onChange={setSources} aria-label="contentToggle" size="small" style={{ padding: 8 }}>
       <ToggleButton style={{ padding: 5 }} value="Raids" aria-label="dpsLabel" classes={{ selected: classes.selected }}>
         <Tooltip title={"Raids"} arrow>
           <div style={{ display: "inline-flex" }}>
@@ -49,7 +43,11 @@ export default function SourceToggle(props) {
       <ToggleButton style={{ padding: 5 }} value="Dungeons" aria-label="dpsLabel" classes={{ selected: classes.selected }}>
         <Tooltip title={"Dungeons"} arrow>
           <div style={{ display: "inline-flex" }}>
-            <img style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} src={require("Images/inv_relics_hourglass.jpg").default} alt={"Dungeons"} />
+            <img
+              style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
+              src={require("Images/inv_relics_hourglass.jpg").default}
+              alt={"Dungeons"}
+            />
             <Typography variant="button">{"Dungeons"}</Typography>
           </div>
         </Tooltip>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip, Typography } from "@material-ui/core";
+import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip, Typography } from "@mui/material";
 
 export default function ExportPlanDialog(props) {
   // const { t } = useTranslation();
@@ -32,9 +32,10 @@ export default function ExportPlanDialog(props) {
         </Button>
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
-        <DialogTitle id="simc-dialog-title">{"Export Plan"}</DialogTitle>
-        <DialogContent> Paste your cooldown string here</DialogContent>
-        <DialogContent style={{ height: 300 }}>
+        <DialogTitle color="primary" id="simc-dialog-title">
+          Export Plan
+        </DialogTitle>
+        <DialogContent >
           <TextField
             autoFocus
             multiline={true}
@@ -42,8 +43,7 @@ export default function ExportPlanDialog(props) {
             id="exportPlanID"
             // label={"Paste your plan string here"}
             fullWidth
-            style={{ height: "100%" }}
-            variant="outlined"
+            sx={{ height: "100%" }}
             value={exportPlanEngine(planName, data, boss)}
           />
         </DialogContent>

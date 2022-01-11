@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Typography, Grid, Dialog } from "@material-ui/core";
+import { Typography, Grid, Dialog } from "@mui/material";
 import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
 import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
 import ertEngine from "../FightAnalysis/Engine/ERTEngine";
@@ -43,7 +43,7 @@ class CooldownPlannerModule extends Component {
           marginTop: 32,
         }}
       >
-        <div style={{ margin: "20px 5% 20px 5%" }}>
+        <div style={{ margin: "20px 3% 20px 3%" }}>
           {/* ---------------------------------------------------------------------------------------------- */
           /*                                  Main Grid for the Component                                   */
           /* ---------------------------------------------------------------------------------------------- */}
@@ -56,7 +56,7 @@ class CooldownPlannerModule extends Component {
             </Grid>
 
             {/* ----------------- Grid Container for the Heal Team Table and Cooldown Planner ---------------- */}
-            <Grid item container direction="row" justify="flex-start" alignItems="flex-start" spacing={1} margin={4}>
+            <Grid item container direction="row" justifyContent="flex-start" alignItems="flex-start" spacing={1}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12} padding={1}>
                 <CooldownPlanner
                   update={this.ertEngine}

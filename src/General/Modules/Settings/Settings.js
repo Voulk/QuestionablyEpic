@@ -1,9 +1,9 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Accordion, AccordionDetails, AccordionSummary, Typography, Divider } from "@material-ui/core";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import makeStyles from "@mui/styles/makeStyles";
+import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useTranslation } from "react-i18next";
-import SettingsIcon from "@material-ui/icons/Settings";
+import SettingsIcon from "@mui/icons-material/Settings";
 import RetailSettings from "./Modules/RetailSettings";
 import BurningCrusadeSettings from "./Modules/BurningCrusadeSettings";
 import { useSelector } from "react-redux";
@@ -17,34 +17,15 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     marginRight: 4,
   },
-  secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary,
-  },
-  icon: {
-    verticalAlign: "bottom",
-    height: 20,
-    width: 20,
-  },
   details: {
     alignItems: "center",
     padding: 0,
-    marginTop: 5
+    marginTop: 8,
+    marginBottom: 8,
   },
   column: {
     // flexBasis: "33.33%",
     display: "inline-flex",
-  },
-  helper: {
-    borderLeft: `2px solid ${theme.palette.divider}`,
-    padding: theme.spacing(1, 2),
-  },
-  link: {
-    color: theme.palette.primary.main,
-    textDecoration: "none",
-    "&:hover": {
-      textDecoration: "underline",
-    },
   },
 }));
 
@@ -83,9 +64,7 @@ export default function Settings(props) {
             <SettingsIcon style={{ marginRight: 4, width: 22, height: 22 }} />
             <Typography className={classes.heading}>{t("Settings.SettingsTitle")}</Typography>
           </div>
-          
         </AccordionSummary>
-        {/* <Divider variant="middle" /> */}
         <AccordionDetails className={classes.details}>
           {/* ---- If gameType = "Retail" show Retail Settings, otherwise show Burning Crusade Settings ---- */}
           {gameType === "Retail" ? (

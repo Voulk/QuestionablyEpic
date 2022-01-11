@@ -1,13 +1,13 @@
 import React from "react";
 //prettier-ignore
-import { Avatar, Button, Card, CardActionArea, CardContent, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, Typography, MenuItem, TextField, Select, Grid, Divider } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Avatar, Button, Card, CardActionArea, CardContent, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, Typography, MenuItem, TextField, Select, Grid } from "@mui/material";
+import makeStyles from "@mui/styles/makeStyles";
 import { useTranslation } from "react-i18next";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import { covenantIcons } from "../../CooldownPlanner/Functions/CovenantFunctions";
-import Autocomplete from "@material-ui/lab/Autocomplete";
-import { bcClassRaceList, classRaceList } from "../../CooldownPlanner/Data/Data";
+import Autocomplete from "@mui/material/Autocomplete";
+import { classRaceDB } from "../../../../Databases/ClassRaceDB";
 import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import { useSelector } from "react-redux";
@@ -49,40 +49,19 @@ const useStyles = makeStyles((theme) => ({
     padding: "5px",
   },
   large: {
-    width: "60px",
-    height: "60px",
+    width: "51px",
+    height: "51px",
   },
   option: {
     borderBottom: "1px solid rgba(255, 255, 255, 0.23)",
   },
 }));
 
-const menuStyle = {
-  style: { marginTop: 5 },
-  MenuListProps: {
-    style: { paddingTop: 0, paddingBottom: 0 },
-  },
-  PaperProps: {
-    style: {
-      border: "1px solid rgba(255, 255, 255, 0.23)",
-    },
-  },
-  anchorOrigin: {
-    vertical: "bottom",
-    horizontal: "left",
-  },
-  transformOrigin: {
-    vertical: "top",
-    horizontal: "left",
-  },
-  getContentAnchorEl: null,
-};
-
 export default function AddNewChar(props) {
   const { t } = useTranslation();
   const classes = useStyles();
   const gameType = useSelector((state) => state.gameType);
-  const availableClasses = classRaceList;
+  const availableClasses = classRaceDB;
   const [open, setOpen] = React.useState(false);
   const [healClass, setHealClass] = React.useState("");
   const [charName, setCharName] = React.useState("");
@@ -135,7 +114,7 @@ export default function AddNewChar(props) {
   return (
     <Grid item xs={12} sm={6} md={6} lg={6} xl={4}>
       <CardActionArea onClick={handleClickOpen}>
-        <Card className={classes.root} variant="outlined" raised={true}>
+        <Card className={classes.root} variant="outlined">
           <Avatar variant="square" alt="" className={classes.large} src={addBtn} />
           <div className={classes.details}>
             <CardContent className={classes.content} style={{ paddingBottom: 0 }}>
@@ -158,14 +137,15 @@ export default function AddNewChar(props) {
               <Grid item xs={4}>
                 <FormControl className={classes.formRegion} variant="outlined" size="small" disabled={charName === "" ? true : false} label={t("Region")}>
                   <InputLabel id="NewClassSelector">{t("Region")}</InputLabel>
-                  <Select label={t("Region")} value={regions} onChange={handleChangeRegion} MenuProps={menuStyle}>
-                    {Object.values(region)
-                      .map((key, i) => (
-                        <MenuItem key={"region" + i} value={key}>
+                  <Select label={t("Region")} value={regions} onChange={handleChangeRegion}>
+                    {Object.values(region).map((key, i, arr) => {
+                      let lastItem = i + 1 === arr.length ? false : true;
+                      return (
+                        <MenuItem divider={lastItem} key={"region" + i} value={key}>
                           {key}
                         </MenuItem>
-                      ))
-                      .map((item, i) => [item, <Divider key={i} />])}
+                      );
+                    })}
                   </Select>
                 </FormControl>
               </Grid>
@@ -191,44 +171,47 @@ export default function AddNewChar(props) {
             <Grid item xs={12}>
               <FormControl className={classes.formControl} variant="outlined" size="small" disabled={regions === "" ? true : false} label={t("Select Class")}>
                 <InputLabel id="NewClassSelector">{t("Select Class")}</InputLabel>
-                <Select label={t("Select Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
+                <Select label={t("Select Class")} value={healClass} onChange={handleChangeSpec}>
                   {Object.getOwnPropertyNames(availableClasses)
                     .filter((filter) => gameType === availableClasses[filter].gameType)
-                    .map((key, i) => (
-                      <MenuItem key={"class" + i} value={key} style={{ color: classColoursJS(key) }}>
-                        <div style={{ display: "inline-flex" }}>
-                          {classIcons(key, {
-                            height: 20,
-                            width: 20,
-                            margin: "0px 5px 0px 5px",
-                            verticalAlign: "middle",
-                            borderRadius: 4,
-                            border: "1px solid rgba(255, 255, 255, 0.12)",
-                          })}
-                          {t("Classes." + key)}
-                        </div>
-                      </MenuItem>
-                    ))
-                    .map((item, i) => [item, <Divider key={i} />])}
+                    .map((key, i, arr) => {
+                      let lastItem = i + 1 === arr.length ? false : true;
+                      return (
+                        <MenuItem divider={lastItem} key={"class" + i} value={key} style={{ color: classColoursJS(key) }}>
+                          <div style={{ display: "inline-flex" }}>
+                            {classIcons(key, {
+                              height: 20,
+                              width: 20,
+                              margin: "0px 5px 0px 5px",
+                              verticalAlign: "middle",
+                              borderRadius: 4,
+                              border: "1px solid rgba(255, 255, 255, 0.12)",
+                            })}
+                            {t("Classes." + key)}
+                          </div>
+                        </MenuItem>
+                      );
+                    })}
                 </Select>
               </FormControl>
             </Grid>
             <Grid item xs={12}>
               <FormControl disabled={healClass === "" ? true : false} className={classes.formControl} variant="outlined" size="small" label={t("Select Race")}>
                 <InputLabel id="NewRaceSelector">{t("Select Race")}</InputLabel>
-                <Select label={t("Select Race")} value={selectedRace} onChange={handleChangeRace} MenuProps={menuStyle}>
+                <Select label={t("Select Race")} value={selectedRace} onChange={handleChangeRace}>
                   {healClass === ""
                     ? ""
-                    : availableClasses[healClass.toString()].races
-                        .map((key, i) => (
-                          <MenuItem key={"race" + i} value={key}>
+                    : availableClasses[healClass.toString()].races.map((key, i, arr) => {
+                        let lastItem = i + 1 === arr.length ? false : true;
+                        return (
+                          <MenuItem divider={lastItem} key={"race" + i} value={key}>
                             <div style={{ display: "inline-flex" }}>
                               {raceIcons(key)}
                               {t(key)}
                             </div>
                           </MenuItem>
-                        ))
-                        .map((item, i) => [item, <Divider key={i} />])}
+                        );
+                      })}
                 </Select>
               </FormControl>
             </Grid>
@@ -236,12 +219,13 @@ export default function AddNewChar(props) {
               <Grid item xs={12}>
                 <FormControl disabled={healClass === "" ? true : false} className={classes.formControl} variant="outlined" size="small" label={t("Covenant")}>
                   <InputLabel id="NewCovSelector">{t("Covenant")}</InputLabel>
-                  <Select label={t("Covenant")} value={selectedCovenant} onChange={handleChangeCovenant} MenuProps={menuStyle}>
+                  <Select label={t("Covenant")} value={selectedCovenant} onChange={handleChangeCovenant}>
                     {healClass === ""
                       ? ""
-                      : ["kyrian", "necrolord", "night_fae", "venthyr"]
-                          .map((key, i) => (
-                            <MenuItem key={"covenant" + i} value={key}>
+                      : ["kyrian", "necrolord", "night_fae", "venthyr"].map((key, i, arr) => {
+                          let lastItem = i + 1 === arr.length ? false : true;
+                          return (
+                            <MenuItem divider={lastItem} key={"covenant" + i} value={key}>
                               <div style={{ display: "inline-flex" }}>
                                 {covenantIcons(key, {
                                   height: 26,
@@ -254,8 +238,8 @@ export default function AddNewChar(props) {
                                 {t(key)}
                               </div>
                             </MenuItem>
-                          ))
-                          .map((item, i) => [item, <Divider key={"covDiv" + i} />])}
+                          );
+                        })}
                   </Select>
                 </FormControl>
               </Grid>

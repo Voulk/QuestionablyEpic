@@ -1,10 +1,21 @@
 import React from "react";
-import { Button, Grow, MenuItem, MenuList, Paper, Popper, Tooltip, Divider } from "@material-ui/core";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import { makeStyles } from "@material-ui/core/styles";
+import { Button, Grow, MenuItem, MenuList, Paper, Popper, Tooltip, Divider } from "@mui/material";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import makeStyles from "@mui/styles/makeStyles";
 import { useTranslation } from "react-i18next";
 import ls from "local-storage";
-import LanguageIcon from "@material-ui/icons/Language";
+import LanguageIcon from "@mui/icons-material/Language";
+import { styled } from "@mui/system";
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  color: "white",
+  border: "1px solid #ffffff3b",
+  "&:hover": {
+    color: "white",
+    border: "1px solid #ffffff3b",
+    backgroundColor: "rgb(255, 255, 255, 0.08)",
+  },
+}));
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,10 +67,10 @@ export default function LanguageSelector() {
     <div className={classes.root}>
       <div>
         <Tooltip title={t("QeHeader.Tooltip.Language")} arrow>
-          <Button variant="outlined" ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle}>
-            <LanguageIcon style={{ marginRight: 4 }} />
+          <StyledButton color={"white"} variant="outlined" ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle}>
+            <LanguageIcon color={"white"} style={{ marginRight: 4 }} />
             {currentLanguage}
-          </Button>
+          </StyledButton>
         </Tooltip>
         <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
@@ -82,14 +93,22 @@ export default function LanguageSelector() {
                       paddingBottom: 0,
                     }}
                   >
-                    {/* <MenuItem onClick={(e) => handleClose(e, "cn")}>简体中文</MenuItem>
-                    <Divider /> */}
-                    <MenuItem onClick={(e) => handleClose(e, "en")}>English</MenuItem>
-                    <Divider />
-                    {/* <MenuItem onClick={(e) => handleClose(e, "fr")}>Français</MenuItem>
-                    <Divider /> */}
-                    {/**/} <MenuItem onClick={(e) => handleClose(e, "ru")}>Русский</MenuItem>
-                    <Divider />
+                    {/* 
+                    <MenuItem divider onClick={(e) => handleClose(e, "cn")}>
+                      简体中文
+                    </MenuItem>
+                     */}
+                    <MenuItem divider onClick={(e) => handleClose(e, "en")}>
+                      English
+                    </MenuItem>
+                    {/* 
+                    <MenuItem divider onClick={(e) => handleClose(e, "fr")}>
+                      Français
+                    </MenuItem>
+                    */}
+                    <MenuItem divider onClick={(e) => handleClose(e, "ru")}>
+                      Русский
+                    </MenuItem>
                     <MenuItem onClick={(e) => handleClose(e, "de")}>Deutsch</MenuItem>
                   </MenuList>
                 </ClickAwayListener>

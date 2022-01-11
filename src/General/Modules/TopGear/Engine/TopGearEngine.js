@@ -1,16 +1,14 @@
 import ItemSet from "../ItemSet";
 import TopGearResult from "./TopGearResult";
-import Item from "../../Player/Item";
-import React, { useState, useEffect } from "react";
-import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../../../Engine/STAT";
+import { STATPERONEPERCENT, BASESTAT } from "../../../Engine/STAT";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 import { convertPPMToUptime } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
 import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
-import { getDomGemEffect, applyDiminishingReturns } from "General/Engine/ItemUtilities";
+import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEffectFormulas";
-import { runCastSequence, allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { buildBestDomSet } from "../Utilities/DominationGemUtilities";
 
@@ -66,24 +64,6 @@ function autoSocketItems(itemList) {
 }
 
 /**
- * @deprecated This is no longer in use with the new Dom Shard settings in-app.
- */
-function autoGemVault(itemList, userSettings) {
-  for (var i = 0; i < itemList.length; i++) {
-    let item = itemList[i];
-    if (item.vaultItem && item.hasDomSocket && userSettings.vaultDomGem !== "") {
-      //item.setDominationGem(userSettings.vaultDomGem);
-      const gemID = userSettings.vaultDomGem;
-      item.domGemID = gemID;
-      item.effect = getDomGemEffect(gemID);
-      item.gemString = gemID;
-    }
-  }
-
-  return itemList;
-}
-
-/**
  * This is our core Top Gear function. It puts together valid sets, then calls for them to be scored.
  *
  * @param {*} rawItemList A raw list of items. This is usually all of the items a player has selected.
@@ -97,6 +77,7 @@ function autoGemVault(itemList, userSettings) {
  * @returns A Top Gear result which includes the best set, and how close various alternatives are.
  */
 export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
+  console.log("Running Top Gear")
   // == Setup Player & Cast Model ==
   // Create player / cast model objects in this thread based on data from the player character & player model.
   const newPlayer = setupPlayer(player, contentType, castModel);
@@ -134,8 +115,8 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   // and so on if they are already close in strength.
   let differentials = [];
   let primeSet = itemSets[0];
-  for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials + 1, itemSets.length); i++) {
-    differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer, contentType));
+  for (var k = 1; k < Math.min(CONSTRAINTS.Shared.topGearDifferentials + 1, itemSets.length); k++) {
+    differentials.push(buildDifferential(itemSets[k], primeSet, newPlayer, contentType));
   }
 
   // == Return sets ==
@@ -330,7 +311,7 @@ function pruneItems(itemSets) {
 function sumScore(obj) {
   var sum = 0;
   for (var el in obj) {
-    if (obj.hasOwnProperty(el)) {
+    if (obj.hasOwnProperty(el)) { // eslint-disable-line
       sum += parseFloat(obj[el]);
     }
   }
@@ -612,6 +593,7 @@ const deepCopyFunction = (inObject) => {
  * @param {*} castModel
  * @returns
  */
+/*
 function evalSetOld(itemSet, player, contentType, baseHPS, userSettings, castModel) {
   let builtSet = itemSet.compileStats("Retail", userSettings); // This adds together the stats of each item in the set.
   let setStats = builtSet.setStats;
@@ -723,3 +705,4 @@ function evalSetOld(itemSet, player, contentType, baseHPS, userSettings, castMod
   builtSet.enchantBreakdown = enchants;
   return builtSet; // Temp
 }
+ */

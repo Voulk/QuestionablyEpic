@@ -1,6 +1,6 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardContent, Typography, Grid, Divider } from "@material-ui/core";
+import makeStyles from "@mui/styles/makeStyles";
+import { Card, CardContent, Typography, Grid, Divider } from "@mui/material";
 import { getTranslatedItemName, getItemIcon } from "../../../Engine/ItemUtilities";
 import "./ItemUpgrade.css";
 import { useTranslation } from "react-i18next";
@@ -45,7 +45,6 @@ export default function ItemCard(props) {
   const item = props.item;
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
   const itemDifferential = props.itemDifferential;
   const hasDom = item.hasDomSocket;
@@ -82,8 +81,7 @@ export default function ItemCard(props) {
     /* ------------------------------ Dungeon Name ------------------------------ */
     if (item.source.instanceId === -1) {
       return t("DungeonNames." + item.source.encounterId);
-    }
-    else if (item.source.instanceId === 1194) {
+    } else if (item.source.instanceId === 1194) {
       return t("BossNames.Tazavesh." + item.source.encounterId) + " (Tazavesh)";
     }
     /* ----------------------------- Raid Boss Name ----------------------------- */
@@ -109,16 +107,16 @@ export default function ItemCard(props) {
     if (item.source.instanceId === -17 || item.source.encounterId === -17) {
       return t("PvPCurrency.-17");
     }
-        /* -------------------------------- TBC Badge Gear -------------------------------- */
-        if (item.source.instanceId === -4) {
-          return t("BadgeGear");
-        }
+    /* -------------------------------- TBC Badge Gear -------------------------------- */
+    if (item.source.instanceId === -4) {
+      return t("BadgeGear");
+    }
   };
 
   return (
     <Grid item xs={12} sm={12} md={12} lg={6} xl={4}>
       <Card className={itemDifferential == 0 ? classes.downgrade : hasDom ? classes.dom : classes.root} variant="outlined">
-        <Grid container display="inline-flex" wrap="nowrap" justify="space-between">
+        <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
           <Grid item xs="auto">
             <CardContent
               style={{
@@ -147,8 +145,8 @@ export default function ItemCard(props) {
           </Grid>
           <Divider orientation="vertical" flexItem />
           <CardContent style={{ padding: 4, width: "100%" }}>
-            <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
-              <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
+            <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
+              <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                 <Grid item xs={10} display="inline">
                   <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" display="inline" align="left" style={{ color: itemQuality }}>
                     {itemName}

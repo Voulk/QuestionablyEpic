@@ -1,10 +1,22 @@
 import React from "react";
-import { Button, ClickAwayListener, Dialog, Grow, MenuItem, MenuList, Paper, Popper, Tooltip } from "@material-ui/core";
-import MuiDialogContent from "@material-ui/core/DialogContent";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { Button, ClickAwayListener, Dialog, Grow, MenuItem, MenuList, Paper, Popper, Tooltip } from "@mui/material";
+import MuiDialogContent from "@mui/material/DialogContent";
+import makeStyles from "@mui/styles/makeStyles";
+import withStyles from "@mui/styles/withStyles";
 import { useTranslation } from "react-i18next";
 import BnetIcon from "Images/QeAssets/BattleNetIcon.png";
 import { QELogin } from "./QELogin";
+import { styled } from "@mui/system";
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  color: "white",
+  border: "1px solid #ffffff3b",
+  "&:hover": {
+    color: "white",
+    border: "1px solid #ffffff3b",
+    backgroundColor: "rgb(255, 255, 255, 0.08)",
+  },
+}));
 
 const DialogContent = withStyles((theme) => ({
   root: {
@@ -81,9 +93,9 @@ export default function ProfileSelector(props) {
       return (
         <div>
           <Tooltip title={t("QeHeader.Tooltip.Login")} arrow>
-            <Button variant="outlined" onClick={handleDialogOpen}>
+            <StyledButton variant="outlined" onClick={handleDialogOpen} color={"white"}>
               {t("Login")}
-            </Button>
+            </StyledButton>
           </Tooltip>
           <Dialog onClose={handleCloseDialog} aria-labelledby="customized-dialog-title" open={opendialog}>
             <DialogContent>
@@ -94,10 +106,10 @@ export default function ProfileSelector(props) {
       );
     } else {
       return (
-        <Button variant="outlined" ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle} onMouseOver={handleHoverOpen}>
+        <StyledButton variant="outlined" color={"white"} ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle} onMouseOver={handleHoverOpen}>
           <img src={BnetIcon} width="24px" height="24px" alt="" />
           {props.name}
-        </Button>
+        </StyledButton>
       );
     }
   }
@@ -127,7 +139,7 @@ export default function ProfileSelector(props) {
                       paddingBottom: 0,
                     }}
                   >
-                    <MenuItem onClick={(e) => handleClose(e)} component={props.component} to={props.to}>
+                    <MenuItem divider onClick={(e) => handleClose(e)} component={props.component} to={props.to}>
                       Account
                     </MenuItem>
                     <MenuItem onClick={(e) => handleLogout(e)}>Logout</MenuItem>

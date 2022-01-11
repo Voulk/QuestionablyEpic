@@ -11,6 +11,7 @@ import rootReducer from "./Redux/Reducers/RootReducer";
 import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
 
+
 const store = createStore(rootReducer, /* preloadedState, */ window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 Sentry.init({
@@ -30,6 +31,7 @@ ReactDOM.render(
       <App />
     </I18nextProvider>
   </Provider>,
+
   document.getElementById("root"),
 );
 unregister();

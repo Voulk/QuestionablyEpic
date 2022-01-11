@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { makeStyles } from "@material-ui/core/styles";
-import { Tabs, Tab, Box, AppBar, Grid, Paper, Typography, TextField, Tooltip } from "@material-ui/core";
+import makeStyles from "@mui/styles/makeStyles";
+import { Tabs, Tab, Box, AppBar, Grid, Paper, Typography, TextField, Tooltip } from "@mui/material";
 import { soulbindDB, soulbindConnectors } from "Databases/SoulbindDB";
 import SoulbindNode from "./SoulbindNode";
 import ConduitObject from "./ConduitObject";
@@ -16,6 +16,7 @@ import { useSelector } from "react-redux";
 import { CONSTRAINTS } from "../../../../General/Engine/CONSTRAINTS";
 import userSettings from "General/Modules/Settings/SettingsObject";
 import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
+// import { styled } from "@mui/material/styles";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
   return (
@@ -24,6 +25,13 @@ function TabPanel(props) {
     </div>
   );
 }
+
+// const StyledTab = styled(Tab)(({ theme }) => ({
+//   "& .MuiTab-root": {
+//     // margin: theme.spacing(0.5),
+//     padding: "8px",
+//   },
+// }));
 
 TabPanel.propTypes = {
   children: PropTypes.node,
@@ -53,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "auto",
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
-    maxWidth: 1014,
+    maxWidth: 1022,
     borderRadius: "4px 4px 4px 4px",
     marginBottom: 60,
   },
@@ -77,19 +85,23 @@ const useStyles = makeStyles((theme) => ({
   kyrianHeaderStyle: {
     backgroundImage: `url(${require("Images/BastionHeader.png").default})`,
     borderRadius: "4px 0px 0px 0px",
+    padding: 8,
   },
   nightFaeHeaderStyle: {
     backgroundImage: `url(${require("Images/NightFaeHeader.png").default})`,
+    padding: 8,
   },
   venthyrHeaderStyle: {
     backgroundImage: `url(${require("Images/VenthyrHeader.png").default})`,
+    padding: 8,
   },
   necrolordHeaderStyle: {
     backgroundImage: `url(${require("Images/NecroHeader.png").default})`,
     borderRadius: "0px 4px 0px 0px",
+    padding: 8,
   },
   header: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       margin: "auto",
       width: "85%",
       justifyContent: "center",
@@ -205,7 +217,7 @@ export default function CovenantExploration(props) {
 
   return (
     <div className={classes.header}>
-      <Grid container spacing={1} justify="center">
+      <Grid container spacing={1} justifyContent="center">
         {/* ---------------------------------------- Module Header ---------------------------------------  */}
         <Grid item xs={12}>
           <Typography variant="h4" align="center" style={{ padding: "10px 10px 0px 10px" }} color="primary">
@@ -294,6 +306,7 @@ export default function CovenantExploration(props) {
                   aria-label="Vertical tabs example"
                   className={classes.tabs}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+                  style={{ minWidth: 162 }}
                 >
                   {/* ----------------------------------------- Pelagos Tab ----------------------------------------  */}
                   <Tab
@@ -345,6 +358,7 @@ export default function CovenantExploration(props) {
                   aria-label="Vertical tabs example"
                   className={classes.tabs}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+                  style={{ minWidth: 162 }}
                 >
                   {/* ------------------------------------------ Niya Tab ------------------------------------------ */}
                   <Tab
@@ -396,6 +410,7 @@ export default function CovenantExploration(props) {
                   aria-label="Vertical tabs example"
                   className={classes.tabs}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+                  style={{ minWidth: 162 }}
                 >
                   {/* ----------------------------------------- Nadjia Tab ----------------------------------------- */}
                   <Tab
@@ -449,6 +464,7 @@ export default function CovenantExploration(props) {
                   aria-label="Vertical tabs example"
                   className={classes.tabs}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+                  style={{ minWidth: 162 }}
                 >
                   {/* ---------------------------------------- Marileth Tab ----------------------------------------  */}
                   <Tab
@@ -512,10 +528,6 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
   let estimatedHPS = getEstimatedHPS(statSums, player, contentType);
   let covAbility = getEstimatedHPS(getCovAbility(soulbindName, player, contentType));
 
-  const updateRenown = (value) => {
-    setRenownValue(value);
-  };
-
   return (
     <Grid id="soulbind" container direction="row" style={{ display: "flex", flexWrap: "nowrap" }}>
       <Grid item>
@@ -564,14 +576,15 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
       /* ----------------------------------------------------------------------------------------------  */}
       <Grid container>
         <div id="conduits" className={classes.conduits}>
-          <Grid container direction="column" justify="space-between" alignItems="center" style={{ height: "100%" }}>
+          <Grid container direction="column" justifyContent="space-between" alignItems="center" style={{ height: "100%", width: "100%", paddingRight: 8 }}>
             <Grid
               container
               id="conduitChoices"
               spacing={1}
               style={{
                 margin: 1,
-                maxWidth: 245,
+
+                // maxWidth: 245,
               }}
             >
               <Grid item xs={12}>
@@ -660,11 +673,11 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
             </Grid>
             {/* --------------------------------------- Stat Panel Grid -------------------------------------- */}
             <Grid
+              item
               container
-              spacing={1}
               style={{
-                margin: 1,
-                maxWidth: 245,
+                marginBottom: 8,
+                paddingLeft: "8px",
               }}
             >
               <SoulbindStatPanel hps={estimatedHPS} covAbility={covAbility} stats={statSums} />
