@@ -1,5 +1,5 @@
 import React from "react";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, CardActionArea, Typography, Grid, Divider } from "@mui/material";
 import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemIcon } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
@@ -146,8 +146,8 @@ export default function ItemCardReport(props) {
                   </Grid>
                 </Grid>
                 <Divider />
-                <Grid item container display="inline" direction="row" xs="auto" justifyContent="space-between">
-                  <Grid item xs={12} style={{ display: "contents" }}>
+                <Grid item container direction="row" xs={12} justifyContent="space-between">
+                  <Grid item>
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
                       {"domGemID" in item && item.domGemID !== 0 ? (
                         <a data-wowhead={"item=" + item.domGemID + "&domain=" + currentLanguage}>
@@ -169,8 +169,8 @@ export default function ItemCardReport(props) {
                       )}
                       {socket} {statString} {tertiary} {isVault ? " / Vault" : ""}
                     </Typography>
-                    {enchantCheck(item)}
                   </Grid>
+                  <Grid item>{enchantCheck(item)}</Grid>
                 </Grid>
               </Grid>
             </CardContent>
