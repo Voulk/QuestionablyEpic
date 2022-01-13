@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardActions, CardContent, Divider, Grid, Typography } from "@material-ui/core";
+import makeStyles from "@mui/styles/makeStyles";
+import { Card, CardActions, CardContent, Divider, Grid, Typography } from "@mui/material";
 import { legendaryImages } from "./LegendaryIcons";
 import { legendaryNameTranslator } from "./LegendaryTranslations";
 
@@ -23,7 +23,7 @@ export default function LegendaryObject(props) {
   // Item Provided to Component
   const item = props.item;
   // Player Data
-  const player = props.player;
+  // const player = props.player;
   // HPS String - if > 5 then Round the items effectiveHPS else return "Coming Soon"
   const hpsString = item.effectiveHPS > 5 ? Math.round(item.effectiveHPS) : "Coming Soon";
   // DPS String - Round effectiveDPS as string, add 3 spaces of padding to the start of the string
@@ -73,33 +73,34 @@ export default function LegendaryObject(props) {
                 }}
               >
                 {legendaryDataObject.name}
-                {covenantSigils[legendaryDataObject.covenant] !== undefined ? (
-                  <img height={40} style={{ float: "right", position: "absolute", marginTop: -7, marginLeft: 16 }} src={covenantSigils[legendaryDataObject.covenant]} alt={t("Covenants." + legendaryDataObject.covenant)} />
-                ) : (
-                  ""
-                )}
               </Typography>
               {/* -------------------------------- Slots available to Legendary -------------------------------- */}
               <Typography variant="caption">{legendaryDataObject.slot}</Typography>
             </div>
-
-            {/* --------------------------------------- Legendary Icon --------------------------------------- */}
-            <img
-              height={40}
-              width={40}
-              src={legendaryImages[item.name].default}
-              alt=""
-              style={{
-                borderRadius: 4,
-                borderWidth: "1px",
-                borderStyle: "solid",
-                borderColor: "#ff8000",
-              }}
-            />
+            <div>
+              {covenantSigils[legendaryDataObject.covenant] !== undefined ? (
+                <img height={40} style={{ marginTop: -7 }} src={covenantSigils[legendaryDataObject.covenant]} alt={t("Covenants." + legendaryDataObject.covenant)} />
+              ) : (
+                ""
+              )}
+              {/* --------------------------------------- Legendary Icon --------------------------------------- */}
+              <img
+                height={40}
+                width={40}
+                src={legendaryImages[item.name].default}
+                alt=""
+                style={{
+                  borderRadius: 4,
+                  borderWidth: "1px",
+                  borderStyle: "solid",
+                  borderColor: "#ff8000",
+                }}
+              />
+            </div>
           </div>
           {/* ---------------------------- Divider to seperate header from body ---------------------------- */}
           <Divider style={{ marginTop: 4 }} />
-          <Grid container direction="row" justify="space-between" alignItems="center" style={{ height: 110 }}>
+          <Grid container direction="row" justifyContent="space-between" alignItems="center" style={{ height: 110 }}>
             <Grid item xs={12}>
               <CardContent style={{ padding: 0 }}>
                 {/* -------------------------------- Legendary Effect Description -------------------------------- */}

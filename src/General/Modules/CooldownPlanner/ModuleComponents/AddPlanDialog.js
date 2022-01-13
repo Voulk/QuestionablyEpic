@@ -1,12 +1,5 @@
-
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Divider, Paper, Select, Grid, Typography } from "@material-ui/core";
-
-AddPlanDialog.propTypes = {
-  handleAddPlanDialogClose: PropTypes.func.isRequired,
-  openAddPlanDialog: PropTypes.bool.isRequired,
-};
+import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions } from "@mui/material";
 
 export default function AddPlanDialog(props) {
   const { handleAddPlanDialogClose, openAddPlanDialog, cooldownObject, currentBoss, loadPlanData } = props;
@@ -31,7 +24,7 @@ export default function AddPlanDialog(props) {
   };
 
   return (
-    <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="sm" fullWidth style={{ padding: 30 }}>
+    <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="sm" fullWidth>
       <DialogTitle id="simple-dialog-title">Enter Plan Name</DialogTitle>
       <DialogContent>
         <TextField
@@ -39,10 +32,10 @@ export default function AddPlanDialog(props) {
           helperText={duplicatePlanNameCheck ? "Duplicate plan name detected, please choose another." : ""}
           fullWidth
           variant="outlined"
-          label="Enter Plan Name"
           defaultValue=""
           value={planName}
           onChange={onChangeNewPlanName}
+          sx={{ marginTop: "4px" }}
         />
       </DialogContent>
       <DialogActions>

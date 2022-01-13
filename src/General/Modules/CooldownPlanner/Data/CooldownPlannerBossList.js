@@ -1,16 +1,5 @@
 export const bossList = [
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                            Nyalotha                                            */
-  /* ---------------------------------------------------------------------------------------------- */
-
-  {
-    DungeonEncounterID: 2344,
-    ID: 2375,
-    name: "N'zoth",
-    zoneID: 2217,
-  },
-
-  /* ---------------------------------------------------------------------------------------------- */
   /*                                         Castle Nathria                                         */
   /* ---------------------------------------------------------------------------------------------- */
 
@@ -138,5 +127,76 @@ export const bossList = [
     ID: 2441,
     name: "Sylvanas Windrunner",
     zoneID: 2450,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                   Sepulcher of the First Ones                                  */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  {
+    DungeonEncounterID: 2512,
+    ID: 2458,
+    name: "Vigilant Guardian",
+    zoneID: 2481,
+  },
+  {
+    DungeonEncounterID: 2542,
+    ID: 2465,
+    name: "Skolex, the Insatiable Ravener",
+    zoneID: 2481,
+  },
+  {
+    DungeonEncounterID: 2553,
+    ID: 2470,
+    name: "Artificer Xy'mox",
+    zoneID: 2481,
+  },
+  {
+    DungeonEncounterID: 2540,
+    ID: 2459,
+    name: "Dausegne, the Fallen Oracle",
+    zoneID: 2481,
+  },
+  {
+    DungeonEncounterID: 2544,
+    ID: 2460,
+    name: "Prototype Pantheon",
+    zoneID: 2481,
+  },
+  {
+    DungeonEncounterID: 2539,
+    ID: 2461,
+    name: "Lihuvim, Principal Architect",
+    zoneID: 2481,
+  },
+  {
+    DungeonEncounterID: 2529,
+    ID: 2463,
+    name: "Halondrus the Reclaimer",
+    zoneID: 2481,
+  },
+  {
+    DungeonEncounterID: 2546,
+    ID: 2469,
+    name: "Anduin Wrynn",
+    zoneID: 2481,
+  },
+  {
+    DungeonEncounterID: 2543,
+    ID: 2457,
+    name: "Lords of Dread",
+    zoneID: 2481,
+  },
+  {
+    DungeonEncounterID: 2549,
+    ID: 2467,
+    name: "Rygelon",
+    zoneID: 2481,
+  },
+  {
+    DungeonEncounterID: 2537,
+    ID: 2464,
+    name: "The Jailer, Zovaal	",
+    zoneID: 2481,
   },
 ];

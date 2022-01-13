@@ -4,7 +4,7 @@ import TopSetStatsPanel from "./TopSetStatsPanel";
 // import { testList, differentialsTest } from "./TestData";
 import { apiGetPlayerImage } from "../../SetupAndMenus/ConnectionUtilities";
 import { useTranslation } from "react-i18next";
-import { Button, Paper, Typography, Divider, Grid, Tooltip } from "@material-ui/core";
+import { Button, Paper, Typography, Divider, Grid, Tooltip } from "@mui/material";
 import { Link } from "react-router-dom";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
@@ -193,14 +193,14 @@ function TopGearReport(props) {
                     {/* ---------------------------------------------------------------------------------------------- */
                     /*                                           Stat Panel                                           */
                     /* ---------------------------------------------------------------------------------------------- */}
-                    <Grid container spacing={1} direction="row" justify="space-between">
+                    <Grid container spacing={1} direction="row" justifyContent="space-between">
                       <Grid item xs={4} style={{ paddingBottom: 8 }}>
-                        <Grid container justify="flex-start">
+                        <Grid container justifyContent="flex-start">
                           <TopSetStatsPanel statList={statList} spec={props.player.spec} currentLanguage={currentLanguage} gameType={gameType} />
                         </Grid>
                       </Grid>
                       <Grid item xs={4} style={{ paddingBottom: 8, alignSelf: "flex-end" }}>
-                        <Grid container justify="flex-end">
+                        <Grid container justifyContent="flex-end">
                           <Paper
                             elevation={0}
                             style={{

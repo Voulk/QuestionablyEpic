@@ -1,6 +1,6 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Paper, Typography, Divider } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
+import { Grid, Paper, Typography, Divider } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
@@ -68,8 +68,8 @@ export default function UpgradeFinderSimC(props) {
   return (
     <Grid item xs={12}>
       <Paper elevation={0} className={check(simcStatus)} style={{ padding: 10 }}>
-        <Grid container justify="space-between" spacing={1}>
-          <Grid item xs={12} sm={12} md={12} lg={5} xl={5} alignItems="center" container justify="center" spacing={1}>
+        <Grid container justifyContent="space-between" spacing={1}>
+          <Grid item xs={12} sm={12} md={12} lg={5} xl={5} alignItems="center" container justifyContent="center" spacing={1}>
             <Grid item xs={12} sm={12} md={12} lg={12} xl={8}>
               <Typography color="primary" align="center" variant="h5">
                 {t(simcString)}
@@ -91,7 +91,7 @@ export default function UpgradeFinderSimC(props) {
           <Grid item>
             <Divider orientation="vertical" flexItem style={{ height: "100%" }} />
           </Grid>
-          <Grid item container xs={12} sm={12} md={12} lg={7} xl={7} alignItems="center"  justify="center" spacing={1}>
+          <Grid item container xs={12} sm={12} md={12} lg={7} xl={7} alignItems="center"  justifyContent="center" spacing={1}>
             <Grid item xs={12} sm={12} md={12} lg={12} xl={2}>
               <Typography color="primary" align="center" variant="h5">
                 {t("Equipped")}:
@@ -99,7 +99,7 @@ export default function UpgradeFinderSimC(props) {
             </Grid>
 
             <Grid item xs={12} sm={12} md={12} lg={12} xl={10}>
-              <Grid container justify="center">
+              <Grid container justifyContent="center">
                 {props.player.activeItems
                   .filter((key) => key.isEquipped === true)
                   .map((key, i) => (

@@ -1,36 +1,13 @@
 import React, { forwardRef } from "react";
-import MaterialTable, { MTableToolbar } from "material-table";
-import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import MaterialTable, { MTableToolbar } from "@material-table/core";
 import abilityIcons from "../../CooldownPlanner/Functions/IconFunctions/AbilityIcons.js";
 import { localizationFR } from "locale/fr/TableLocale";
 import { localizationEN } from "locale/en/TableLocale";
 import { localizationRU } from "locale/ru/TableLocale";
 import { localizationCH } from "locale/ch/TableLocale";
-import { Divider, Paper } from "@material-ui/core";
+import { Divider, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { ArrowDownward, ChevronRight, FilterList } from "@material-ui/icons";
-
-const theme = createMuiTheme({
-  overrides: {
-    MuiToolbar: {
-      regular: {
-        minHeight: 0,
-        "@media (min-width: 600px)": {
-          minHeight: "0px",
-        },
-      },
-      root: {
-        padding: "4px 4px 4px 4px",
-        color: "#c8b054",
-      },
-    },
-  },
-  palette: {
-    type: "dark",
-    primary: { main: "#d3bc47" },
-    secondary: { main: "#e0e0e0" },
-  },
-});
+import { ArrowDownward, ChevronRight, FilterList } from "@mui/icons-material";
 
 const tableIcons = {
   SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -55,125 +32,123 @@ export default function EnemyCastsTimeline(props) {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <MaterialTable
-        icons={tableIcons}
-        columns={[
-          {
-            title: t("Enemy"),
-            field: "name",
-            cellStyle: {
-              whiteSpace: "nowrap",
-              padding: "2px 0px",
-              fontSize: 14,
-            },
-            headerStyle: {
-              fontSize: 14,
-            },
-            defaultGroupOrder: 0,
+    <MaterialTable
+      icons={tableIcons}
+      columns={[
+        {
+          title: t("Enemy"),
+          field: "name",
+          cellStyle: {
+            whiteSpace: "nowrap",
+            padding: "2px 0px",
+            fontSize: 14,
           },
-          {
-            title: t("Ability"),
-            field: "ability",
-            cellStyle: {
-              whiteSpace: "nowrap",
-              padding: "2px 8px",
-              fontSize: 14,
-            },
-            headerStyle: {
-              fontSize: 14,
-            },
-            render: (rowData) => (
-              <div>
-                {abilityIcons(rowData.guid, {
-                  height: 20,
-                  width: 20,
-                  padding: "0px 5px 0px 5px",
-                  verticalAlign: "middle",
-                })}
-                {rowData.ability}
-              </div>
-            ),
+          headerStyle: {
+            fontSize: 14,
           },
-          {
-            title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
-            field: "timestamp",
-            width: "2%",
-            cellStyle: {
-              whiteSpace: "nowrap",
-              padding: "2px 8px",
-              fontSize: 14,
-            },
-            headerStyle: {
-              fontSize: 14,
-            },
-            filtering: false,
+          defaultGroupOrder: 0,
+        },
+        {
+          title: t("Ability"),
+          field: "ability",
+          cellStyle: {
+            whiteSpace: "nowrap",
+            padding: "2px 8px",
+            fontSize: 14,
           },
-          {
-            field: "id",
-            hidden: true,
+          headerStyle: {
+            fontSize: 14,
           },
-        ]}
-        title={t("CooldownPlanner.Headers.EnemyCastTimeline")}
-        icons={tableIcons}
-        header={true}
-        data={props.data}
-        style={{
-          color: "#ffffff",
-          fontSize: "0.8 rem",
-          whiteSpace: "nowrap",
-          padding: 8,
-        }}
-        localization={curLang()}
-        components={{
-          Container: (props) => <Paper {...props} elevation={0} />,
-          Toolbar: (props) => (
-            <div style={{ marginBottom: 8 }}>
-              <MTableToolbar {...props} />
-              <Divider />
+          render: (rowData) => (
+            <div>
+              {abilityIcons(rowData.guid, {
+                height: 20,
+                width: 20,
+                padding: "0px 5px 0px 5px",
+                verticalAlign: "middle",
+              })}
+              {rowData.ability}
             </div>
           ),
-        }}
-        options={{
-          showTitle: true,
-          toolbar: true,
-          header: true,
-          search: false,
-          searchFieldVariant: "outlined",
-          filtering: false,
-          headerStyle: {
-            border: "1px solid #c8b054",
-            padding: "0px 8px 0px 8px",
-            backgroundColor: "#c8b054",
-            color: "#000",
+        },
+        {
+          title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
+          field: "timestamp",
+          width: "2%",
+          cellStyle: {
+            whiteSpace: "nowrap",
+            padding: "2px 8px",
+            fontSize: 14,
           },
-          rowStyle: (rowData, index) => {
-            if (index % 2) {
-              return {
-                backgroundColor: "#535353",
-                borderBottom: "1px solid #515151",
-                borderLeft: "1px solid #515151",
-                borderRight: "1px solid #515151",
-              };
-            }
+          headerStyle: {
+            fontSize: 14,
+          },
+          filtering: false,
+        },
+        {
+          field: "id",
+          hidden: true,
+        },
+      ]}
+      title={t("CooldownPlanner.Headers.EnemyCastTimeline")}
+      icons={tableIcons}
+      header={true}
+      data={props.data}
+      style={{
+        color: "#ffffff",
+        fontSize: "0.8 rem",
+        whiteSpace: "nowrap",
+        padding: 8,
+      }}
+      localization={curLang()}
+      components={{
+        Container: (props) => <Paper {...props} elevation={0} />,
+        Toolbar: (props) => (
+          <div style={{ marginBottom: 8 }}>
+            <MTableToolbar {...props} />
+            <Divider />
+          </div>
+        ),
+      }}
+      options={{
+        showTitle: true,
+        toolbar: true,
+        header: true,
+        search: false,
+        searchFieldVariant: "outlined",
+        filtering: false,
+        headerStyle: {
+          border: "1px solid #c8b054",
+          padding: "0px 8px 0px 8px",
+          backgroundColor: "#c8b054",
+          color: "#000",
+        },
+        rowStyle: (rowData, index) => {
+          if (index % 2) {
             return {
+              backgroundColor: "#535353",
               borderBottom: "1px solid #515151",
               borderLeft: "1px solid #515151",
               borderRight: "1px solid #515151",
             };
-          },
-          searchFieldStyle: {
-            borderBottom: "1px solid #6d6d6d",
-            color: "#ffffff",
-          },
-          actionsCellStyle: {
-            borderBottom: "1px solid #6d6d6d",
-            padding: 0,
-          },
-          actionsColumnIndex: 6,
-          paging: false,
-        }}
-      />
-    </ThemeProvider>
+          }
+          return {
+            borderBottom: "1px solid #515151",
+            borderLeft: "1px solid #515151",
+            borderRight: "1px solid #515151",
+          };
+        },
+        searchFieldStyle: {
+          borderBottom: "1px solid #6d6d6d",
+          color: "#ffffff",
+        },
+        actionsCellStyle: {
+          borderBottom: "1px solid #6d6d6d",
+          padding: 0,
+        },
+        actionsColumnIndex: 6,
+        paging: false,
+      }}
+    />
   );
 }

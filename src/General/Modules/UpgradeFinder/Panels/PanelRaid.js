@@ -1,6 +1,6 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Grid, Divider, Paper, AppBar, Tabs, Tab, Box } from "@material-ui/core";
+import makeStyles from "@mui/styles/makeStyles";
+import { Typography, Grid, Divider, Paper, AppBar, Tabs, Tab, Box } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
@@ -125,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   header: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("lg")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
@@ -148,16 +148,12 @@ const getDifficultyName = (difficulty) => {
   switch (difficulty) {
     case 0:
       return "LFR";
-      break;
     case 1:
       return "Normal";
-      break;
     case 2:
       return "Heroic";
-      break;
     case 3:
       return "Mythic";
-      break;
   }
 };
 
@@ -165,22 +161,18 @@ const getDifficultyBaseLevel = (difficulty) => {
   switch (difficulty) {
     case 0:
       return 213;
-      break;
     case 1:
       return 226;
-      break;
     case 2:
       return 239;
-      break;
     case 3:
       return 252;
-      break;
   }
 };
 
 export default function RaidGearContainer(props) {
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
   const gameType = useSelector((state) => state.gameType);
@@ -189,7 +181,7 @@ export default function RaidGearContainer(props) {
   /*                                           Shadowlands                                          */
   /* ---------------------------------------------------------------------------------------------- */
 
-  const contentGenerator = (items) => {
+  const contentGenerator = () => {
     // Raid Panel
     const difficulties = props.playerSettings.raid;
     difficulties.sort().reverse();
@@ -200,9 +192,9 @@ export default function RaidGearContainer(props) {
       encounterDB[1193]
         //.filter((key) => key === raidID)
         .map((key, i) => (
-          <Grid item xs={12} key={"bossContainer-" + i} style={{ padding: "4px 0px" }}>
-            <Paper style={{ backgroundColor: "#191c23", padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
-              <Grid container spacing={2} justify="center" alignItems="flex-start">
+          <Grid item xs={12} key={"bossContainer-" + i}>
+            <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
+              <Grid container justifyContent="center" alignItems="flex-start">
                 <Grid item style={{ alignSelf: "center" }}>
                   <div
                     style={{
@@ -216,13 +208,13 @@ export default function RaidGearContainer(props) {
                     }}
                     className="container-UpgradeCards"
                   >
-                    <Typography variant="h6" style={{width: "100%" }} className="centered-UpgradeCards">
+                    <Typography variant="h6" style={{ width: "100%" }} className="centered-UpgradeCards">
                       {t("BossNames." + key)}
                     </Typography>
                   </div>
                 </Grid>
-                <Divider orientation="vertical" flexItem style={{ marginRight: 4 }} />
-                <Grid item xs={12} sm container direction="column" spacing={1}>
+                <Divider orientation="vertical" flexItem />
+                <Grid item xs={12} sm container direction="column" style={{ padding: 8 }} spacing={1}>
                   <Grid item xs={12} container spacing={1}>
                     <Grid item xs={12}>
                       <Typography
@@ -278,7 +270,7 @@ export default function RaidGearContainer(props) {
   /*                                         Burning Crusade                                        */
   /* ---------------------------------------------------------------------------------------------- */
 
-  const contentGeneratorBC = (items) => {
+  const contentGeneratorBC = () => {
     // Raid Panel
 
     const burningCrusadeList = [745, 746, 748, 749, 750, 751, 321, 752];
@@ -311,102 +303,93 @@ export default function RaidGearContainer(props) {
     };
 
     return (
-      <div className={classes.header}>
-        <AppBar
-          position="static"
-          style={{
-            backgroundColor: "#000",
-            borderRadius: "4px 4px 4px 4px",
-          }}
-          elevation={1}
-        >
-          <Tabs
-            value={tabvalue}
-            onChange={handleTabChange}
-            aria-label="simple tabs example"
-            variant="fullWidth"
-            style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
-            TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
-          >
-            {/* ------------------------------------------ Karazhan ------------------------------------------ */}
-            <Tab className={classes.karazhanHeaderStyle} label={t("BurningCrusade.Raids.745")} {...a11yProps(0)} />
-            {/* ---------------------------------------- Gruul's Lair ---------------------------------------- */}
-            <Tab className={classes.gruulsHeaderStyle} label={t("BurningCrusade.Raids.746")} {...a11yProps(1)} />
-            {/* ------------------------------------ Serpentshrine Cavern ------------------------------------ */}
-            <Tab className={classes.serpentshringHeaderStyle} label={t("BurningCrusade.Raids.748")} {...a11yProps(2)} />
-            {/* ---------------------------------------- Tempest Keep ---------------------------------------- */}
-            <Tab className={classes.tempestKeepHeaderStyle} label={t("BurningCrusade.Raids.749")} {...a11yProps(3)} />
-            {/* --------------------------------- The Battle for Mount Hyjal --------------------------------- */}
-            <Tab className={classes.mountHyjalHeaderStyle} label={t("BurningCrusade.Raids.750")} {...a11yProps(4)} />
-            {/* ---------------------------------------- Black Temple ---------------------------------------- */}
-            <Tab className={classes.blackTempleHeaderStyle} label={t("BurningCrusade.Raids.751")} {...a11yProps(5)} />
-            {/* ------------------------------------------ Zul'Aman ------------------------------------------ */}
-            <Tab className={classes.zulamanHeaderStyle} label={t("BurningCrusade.Raids.321")} {...a11yProps(6)} />
-            {/* --------------------------------------- Sunwell Plateau -------------------------------------- */}
-            <Tab className={classes.sunwellHeaderStyle} label={t("BurningCrusade.Raids.752")} {...a11yProps(7)} />
-          </Tabs>
-        </AppBar>
+      <Grid item xs={12}>
+        <div className={classes.header}>
+          <Grid item container spacing={1}>
+            <Grid item xs={12}>
+              <AppBar
+                position="static"
+                style={{
+                  backgroundColor: "#000",
+                  borderRadius: "4px 4px 4px 4px",
+                }}
+                elevation={1}
+              >
+                <Tabs
+                  value={tabvalue}
+                  onChange={handleTabChange}
+                  aria-label="simple tabs example"
+                  variant="fullWidth"
+                  style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
+                  TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+                >
+                  {/* ------------------------------------------ Karazhan ------------------------------------------ */}
+                  <Tab className={classes.karazhanHeaderStyle} label={t("BurningCrusade.Raids.745")} {...a11yProps(0)} />
+                  {/* ---------------------------------------- Gruul's Lair ---------------------------------------- */}
+                  <Tab className={classes.gruulsHeaderStyle} label={t("BurningCrusade.Raids.746")} {...a11yProps(1)} />
+                  {/* ------------------------------------ Serpentshrine Cavern ------------------------------------ */}
+                  <Tab className={classes.serpentshringHeaderStyle} label={t("BurningCrusade.Raids.748")} {...a11yProps(2)} />
+                  {/* ---------------------------------------- Tempest Keep ---------------------------------------- */}
+                  <Tab className={classes.tempestKeepHeaderStyle} label={t("BurningCrusade.Raids.749")} {...a11yProps(3)} />
+                  {/* --------------------------------- The Battle for Mount Hyjal --------------------------------- */}
+                  <Tab className={classes.mountHyjalHeaderStyle} label={t("BurningCrusade.Raids.750")} {...a11yProps(4)} />
+                  {/* ---------------------------------------- Black Temple ---------------------------------------- */}
+                  <Tab className={classes.blackTempleHeaderStyle} label={t("BurningCrusade.Raids.751")} {...a11yProps(5)} />
+                  {/* ------------------------------------------ Zul'Aman ------------------------------------------ */}
+                  <Tab className={classes.zulamanHeaderStyle} label={t("BurningCrusade.Raids.321")} {...a11yProps(6)} />
+                  {/* --------------------------------------- Sunwell Plateau -------------------------------------- */}
+                  <Tab className={classes.sunwellHeaderStyle} label={t("BurningCrusade.Raids.752")} {...a11yProps(7)} />
+                </Tabs>
+              </AppBar>
+            </Grid>
 
-        {burningCrusadeList.map((raidID, index) => (
-          <TabPanel value={tabvalue} index={index}>
-            <div className={classes.panel}>
-              <Grid container>
-                {/* <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}
-                {encounterDB[raidID]
-                  //filter((key) => key === raidID)
-                  .map((key, i) => (
-                    <Grid item xs={12} key={"bossContainer-" + i} style={{ padding: "4px 0px" }}>
-                      <Paper style={{ backgroundColor: "#191c23", padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
-                        <Grid container spacing={2} justify="center" alignItems="flex-start">
-                          <Grid item style={{ alignSelf: "center" }}>
-                            <div
-                              style={{
-                                width: 175,
-                                height: 181,
-                                paddingLeft: 8,
-                                backgroundImage: `url(${UpgradeFinderBossImages(key)})`,
-                                backgroundRepeat: "no-repeat",
-                                backgroundPosition: "center 60%",
-                                backgroundSize: "auto 100%",
-                              }}
-                              className="container-UpgradeCards"
-                            >
-                              <Typography variant="button" noWrap className="centered-UpgradeCards">
-                                {t("BurningCrusade.BossNames." + key)}
-                              </Typography>
-                            </div>
-                          </Grid>
-                          <Divider orientation="vertical" flexItem style={{ marginRight: 4 }} />
-                          <Grid item xs={12} sm container direction="column" spacing={1}>
-                            <Grid item xs={12} container spacing={1}>
-                              <Grid item xs={12}>
-                                <Typography
-                                  variant="h6"
-                                  color="primary"
-                                  align="center"
-                                  style={{
-                                    backgroundColor: "#35383e",
-                                    borderRadius: 4,
-                                  }}
-                                >
-                                  {/* {getDifficultyName(firstDifficulty)} */}
-                                </Typography>
+            <Grid item xs={12}>
+              {burningCrusadeList.map((raidID, index) => (
+                <TabPanel key={"panel" + index} value={tabvalue} index={index}>
+                  <div className={classes.panel}>
+                    <Grid container spacing={1}>
+                      {/* <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}
+                      {encounterDB[raidID]
+                        //filter((key) => key === raidID)
+                        .map((key, i) => (
+                          <Grid item xs={12} key={"bossContainer-" + i}>
+                            <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
+                              <Grid container justifyContent="center" alignItems="flex-start">
+                                <Grid item style={{ alignSelf: "center" }}>
+                                  <div
+                                    style={{
+                                      width: 175,
+                                      height: 181,
+                                      backgroundImage: `url(${UpgradeFinderBossImages(key)})`,
+                                      backgroundRepeat: "no-repeat",
+                                      backgroundPosition: "center 60%",
+                                      backgroundSize: "auto 100%",
+                                    }}
+                                    className="container-UpgradeCards"
+                                  >
+                                    <Typography variant="button" noWrap className="centered-UpgradeCards">
+                                      {t("BurningCrusade.BossNames." + key)}
+                                    </Typography>
+                                  </div>
+                                </Grid>
+                                <Divider orientation="vertical" flexItem />
+                                <Grid item xs={12} sm container style={{ padding: 8 }} spacing={1}>
+                                  {[...filterBCItemListBySource(itemList, raidID, key)].map((item, index) => (
+                                    <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
+                                  ))}
+                                </Grid>
                               </Grid>
-
-                              {[...filterBCItemListBySource(itemList, raidID, key)].map((item, index) => (
-                                <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
-                              ))}
-                            </Grid>
+                            </Paper>
                           </Grid>
-                        </Grid>
-                      </Paper>
+                        ))}
                     </Grid>
-                  ))}
-              </Grid>
-            </div>
-          </TabPanel>
-        ))}
-      </div>
+                  </div>
+                </TabPanel>
+              ))}
+            </Grid>
+          </Grid>
+        </div>
+      </Grid>
     );
   };
 

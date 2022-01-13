@@ -1,32 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { MenuItem, Grid, FormControl, Select, Typography, Divider, TextField, Tooltip, InputLabel } from "@material-ui/core";
+import { MenuItem, Grid, FormControl, Select } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { setBounds } from "General/Engine/CONSTRAINTS";
-import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
+// import { setBounds } from "General/Engine/CONSTRAINTS";
 import { dominationGemDB } from "Databases/DominationGemDB";
 import { getGemIcon } from "General/Engine/ItemUtilities";
-
-const menuStyle = {
-  style: { marginTop: 5 },
-  MenuListProps: {
-    style: { paddingTop: 0, paddingBottom: 0 },
-  },
-  PaperProps: {
-    style: {
-      border: "1px solid rgba(255, 255, 255, 0.23)",
-    },
-  },
-  anchorOrigin: {
-    vertical: "bottom",
-    horizontal: "left",
-  },
-  transformOrigin: {
-    vertical: "top",
-    horizontal: "left",
-  },
-  getContentAnchorEl: null,
-};
 
 export default function DominationGemSelection(props) {
   const { t, i18n } = useTranslation();
@@ -163,39 +140,19 @@ export default function DominationGemSelection(props) {
   };
 
   return (
-    <Grid container spacing={1} justify="center" direction="row" style={{ width: "100%" }}>
-      {dominationGems.map((key) => (
-        <Grid item xs={4} sm={4} md={4} lg={4} xl={4}>
+    <Grid container spacing={1} justifyContent="center" direction="row" style={{ width: "100%" }}>
+      {dominationGems.map((key, i) => (
+        <Grid key={key + i} item xs={4} sm={4} md={4} lg={4} xl={4}>
           <Grid container spacing={0}>
-            {/* --------------------------- Title for each selector if ever needed ---------------------------  */}
-
-            {/* <Grid item xs={12}>
-              <div style={{ display: "inline-flex" }}>
-                <Typography color="primary" style={{ marginRight: 4 }} noWrap>
-                  {dominationGemDB.filter((filter) => filter.effect.name === key && filter.effect.rank === 0).map((key) => key.name[currentLanguage])}
-                </Typography>
-                <Tooltip
-                  title={
-                    <Typography align="center" variant="body2">
-                      Icon Tooltip
-                    </Typography>
-                  }
-                  placement="top-start"
-                >
-                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
-                </Tooltip>
-              </div>
-            </Grid> */}
-
             <Grid item xs={12}>
               {/* ------------------------------------ Domination Delection ------------------------------------  */}
               <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
-                <Select labelId="groupValue" value={getDomGemvalue(key)} onChange={(e) => setDomGemState(key, e.target.value)} MenuProps={menuStyle} style={{ fontSize: 14, minHeight: 22 }}>
+                <Select labelId="groupValue" value={getDomGemvalue(key)} onChange={(e) => setDomGemState(key, e.target.value)} style={{ fontSize: 14, minHeight: 22 }}>
                   {/* 
                   // Map the Domination DB filtered by the gem provided from the original mapping
                   //  in to a menu item for each rank for the select 
                   */}
-                  <MenuItem value={-1} style={{ justifyContent: "left", fontSize: 14, width: "100%" }}>
+                  <MenuItem divider value={-1} style={{ justifyContent: "left", fontSize: 14, width: "100%" }}>
                     <div style={{ height: 22, verticalAlign: "middle" }}>
                       <div>
                         {dominationGemDB.filter((filter) => filter.effect.name === key && filter.effect.rank === 0).map((key) => key.name[currentLanguage]) +
@@ -204,30 +161,30 @@ export default function DominationGemSelection(props) {
                       </div>
                     </div>
                   </MenuItem>
-                  <Divider />
                   {dominationGemDB
                     .filter((filter) => filter.effect.name === key)
-                    .map((key) => (
-                      <MenuItem value={key.effect.rank} style={{ justifyContent: "left", fontSize: 14 }}>
-                        <a data-wowhead={"item=" + key.gemID}>
-                          <img
-                            style={{
-                              height: 20,
-                              width: 20,
-                              margin: "0px 5px 0px 0px",
-                              verticalAlign: "middle",
-                              borderRadius: 4,
-                              border: "1px solid rgba(255, 255, 255, 0.12)",
-                            }}
-                            src={getGemIcon(key.gemID)}
-                            alt={key.name[currentLanguage]}
-                          />
-                        </a>
-                        {key.name[currentLanguage] + " " + "(" + (key.effect.rank + 1) + ")"}
-                      </MenuItem>
-                    ))
-                    /* ------------------------------ Map the Menu Item with a Divider ------------------------------ */
-                    .map((menuItem) => [menuItem, <Divider />])}
+                    .map((key, i, arr) => {
+                      let lastItem = i + 1 === arr.length ? false : true;
+                      return (
+                        <MenuItem divider={lastItem} key={key.name + i} value={key.effect.rank} style={{ justifyContent: "left", fontSize: 14 }}>
+                          <a data-wowhead={"item=" + key.gemID}>
+                            <img
+                              style={{
+                                height: 20,
+                                width: 20,
+                                margin: "0px 5px 0px 0px",
+                                verticalAlign: "middle",
+                                borderRadius: 4,
+                                border: "1px solid rgba(255, 255, 255, 0.12)",
+                              }}
+                              src={getGemIcon(key.gemID)}
+                              alt={key.name[currentLanguage]}
+                            />
+                          </a>
+                          {key.name[currentLanguage] + " " + "(" + (key.effect.rank + 1) + ")"}
+                        </MenuItem>
+                      );
+                    })}
                 </Select>
               </FormControl>
             </Grid>

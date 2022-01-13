@@ -1,30 +1,8 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { MenuItem, Grid, FormControl, Select, Typography, Divider, TextField, Tooltip, InputLabel } from "@material-ui/core";
+import makeStyles from "@mui/styles/makeStyles";
+import { MenuItem, Grid, Typography, TextField, Tooltip,  } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { setBounds } from "../../../Engine/CONSTRAINTS";
-import { getGemIcon } from "../../../Engine/ItemUtilities";
 
-const menuStyle = {
-  style: { marginTop: 5 },
-  MenuListProps: {
-    style: { paddingTop: 0, paddingBottom: 0 },
-  },
-  PaperProps: {
-    style: {
-      border: "1px solid rgba(255, 255, 255, 0.23)",
-    },
-  },
-  anchorOrigin: {
-    vertical: "bottom",
-    horizontal: "left",
-  },
-  transformOrigin: {
-    vertical: "top",
-    horizontal: "left",
-  },
-  getContentAnchorEl: null,
-};
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,13 +16,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
   },
-  select: {
-    fontSize: theme.typography.pxToRem(16),
-  },
 }));
 
 export default function RetailSettings(props) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   // const currentLanguage = i18n.language;
   const classes = useStyles();
   // const playerSpec = props.player.getSpec();
@@ -53,8 +28,9 @@ export default function RetailSettings(props) {
   /*                                             States                                             */
   /* ---------------------------------------------------------------------------------------------- */
 
+  // TODO: Delete hymnal?
   /* ---------------------------------------- Hymnal State ---------------------------------------- */
-  const [hymnalValue, setHymnalValue] = useState(props.userSettings.hymnalAllies);
+  // const [hymnalValue, setHymnalValue] = useState(props.userSettings.hymnalAllies);
 
   /* -------------------------------------- Group Value State ------------------------------------- */
   const [groupValue, setgroupValue] = useState(props.userSettings.includeGroupBenefits);
@@ -70,10 +46,11 @@ export default function RetailSettings(props) {
 
   const specBuilds = props.player.getAllModels(props.contentType);
 
-  const updateHymnal = (value) => {
-    props.editSettings("hymnalAllies", setBounds(value, 0, 4));
-    setHymnalValue(setBounds(value, 0, 4));
-  };
+  // TODO: Delete hymnal?
+  // const updateHymnal = (value) => {
+  //   props.editSettings("hymnalAllies", setBounds(value, 0, 4));
+  //   setHymnalValue(setBounds(value, 0, 4));
+  // };
 
   const updateGroupValue = (value) => {
     props.editSettings("includeGroupBenefits", value);
@@ -99,6 +76,7 @@ export default function RetailSettings(props) {
 
   return (
     <Grid container spacing={2} direction="row">
+      {/* TODO: Delete hymnal? */}
       {/* ------------------------- Cabalist's Hymnal Item ------------------------- */}
 
       {/* {props.hymnalShow === true ? (
@@ -159,10 +137,8 @@ export default function RetailSettings(props) {
           >
             <TextField
               label={t("Settings.Retail.Setting1Title")}
-              labelId="alliedBuffInputLabel"
               value={groupValue}
               onChange={(e) => updateGroupValue(e.target.value)}
-              SelectProps={{ MenuProps: menuStyle, className: classes.select }}
               InputProps={{ variant: "outlined" }}
               select
               variant="outlined"
@@ -170,7 +146,7 @@ export default function RetailSettings(props) {
               fullWidth
               style={{ textAlign: "center", minWidth: 120 }}
             >
-              <MenuItem value={true} style={{ justifyContent: "center" }}>
+              <MenuItem divider value={true} style={{ justifyContent: "center" }}>
                 {t("Yes")}
               </MenuItem>
               <MenuItem value={false} style={{ justifyContent: "center" }}>
@@ -195,8 +171,6 @@ export default function RetailSettings(props) {
         >
           <TextField
             className={classes.select}
-            labelId="slots"
-            SelectProps={{ MenuProps: menuStyle, className: classes.select }}
             InputProps={{ variant: "outlined" }}
             select
             variant="outlined"
@@ -204,15 +178,17 @@ export default function RetailSettings(props) {
             fullWidth
             value={props.player.activeModelID[props.contentType]}
             onChange={(e) => updateSpecBuild(e.target.value)}
-            MenuProps={menuStyle}
             label={t("Settings.Retail.Setting5Title")}
             style={{ textAlign: "center", minWidth: 120 }}
           >
-            {specBuilds.map((key, i) => (
-              <MenuItem id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
-                {key.modelName}
-              </MenuItem>
-            ))}
+            {specBuilds.map((key, i, arr) => {
+              let lastItem = i + 1 === arr.length ? false : true;
+              return (
+                <MenuItem divider={lastItem} key={"playstyle" + i} id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
+                  {key.modelName}
+                </MenuItem>
+              );
+            })}
           </TextField>
         </Tooltip>
       </Grid>
@@ -229,20 +205,17 @@ export default function RetailSettings(props) {
           >
             <TextField
               className={classes.select}
-              labelId="groupValue"
               value={autoSocketValue}
-              SelectProps={{ MenuProps: menuStyle, className: classes.select }}
               InputProps={{ variant: "outlined" }}
               select
               variant="outlined"
               size="small"
               fullWidth
               onChange={(e) => updateAutoSocketValue(e.target.value)}
-              MenuProps={menuStyle}
               label={t("Settings.Retail.Setting3Title")}
               style={{ textAlign: "center", minWidth: 120 }}
             >
-              <MenuItem value={true} style={{ justifyContent: "center" }}>
+              <MenuItem divider value={true} style={{ justifyContent: "center" }}>
                 {t("Yes")}
               </MenuItem>
               <MenuItem value={false} style={{ justifyContent: "center" }}>
@@ -268,8 +241,6 @@ export default function RetailSettings(props) {
             label={t("Settings.Retail.Setting4Title")}
             className={classes.select}
             key={"DominationSocket"}
-            labelId="DominationSocket"
-            SelectProps={{ MenuProps: menuStyle, className: classes.select }}
             InputProps={{ variant: "outlined" }}
             select
             variant="outlined"
@@ -277,11 +248,9 @@ export default function RetailSettings(props) {
             fullWidth
             value={replaceDomGems}
             onChange={(e) => updateReplaceDomGems(e.target.value)}
-            MenuProps={menuStyle}
-            label={t("Settings.Retail.Setting4Title")}
             style={{ textAlign: "center", minWidth: 200 }}
           >
-            <MenuItem value={true} style={{ justifyContent: "center" }}>
+            <MenuItem divider value={true} style={{ justifyContent: "center" }}>
               {t("Yes")}
             </MenuItem>
             <MenuItem value={false} style={{ justifyContent: "center" }}>

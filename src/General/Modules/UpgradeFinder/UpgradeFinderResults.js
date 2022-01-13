@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { makeStyles } from "@material-ui/core/styles";
-import { Button, Tabs, Tab, Box, AppBar, Typography, Grid } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import makeStyles from "@mui/styles/makeStyles";
+import { Button, Tabs, Tab, Box, AppBar, Typography, Grid } from "@mui/material";
+// import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { getDifferentialByID } from "../../Engine/ItemUtilities";
 import MythicPlusGearContainer from "./Panels/PanelMythicPlus";
@@ -138,8 +138,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "auto 100%",
   },
   header: {
-    [theme.breakpoints.down("xs")]: {
-      marginTop: 120,
+    [theme.breakpoints.down("md")]: {
       margin: "auto",
       width: "90%",
       justifyContent: "center",
@@ -218,134 +217,154 @@ export default function UpgradeFinderResults(props) {
   const upgradeFinderResultsRetail = () => {
     return (
       <div className={classes.header}>
-        <div>
-          <Button color="primary" variant="outlined" onClick={() => returnToSetup()} style={{ position: "absolute" }}>
-            {t("UpgradeFinder.BackButton")}
-          </Button>
-          <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>
-            {t("UpgradeFinder.Header") + " - " + result.contentType}
-          </Typography>
-        </div>
-        <AppBar
-          position="static"
-          style={{
-            backgroundColor: "#000",
-            borderRadius: "4px 4px 4px 4px",
-          }}
-          elevation={1}
-        >
-          <Tabs
-            value={tabvalue}
-            onChange={handleTabChange}
-            aria-label="simple tabs example"
-            variant="fullWidth"
-            style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
-            TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
-          >
-            {/* Raid */}
-            <Tab className={classes.raidHeaderStyle} label={t("UpgradeFinder.CurrentRaid")} {...a11yProps(0)} />
-            {/* Mythic Plus */}
-            <Tab className={classes.mythicPlusHeaderStyle} label={t("UpgradeFinder.MythicPlus")} {...a11yProps(1)} />
-            {/* Legion Timewalking */}
-            <Tab
-              className={classes.LegionTimewalkingStyle}
-              label={
-                //t("UpgradeFinder.LegionTimewalking")
-                "Legion"
-              }
-              {...a11yProps(2)}
-            />
-            {/* Tazavesh */}
-            <Tab className={classes.tazaveshStyle} label={t("DungeonNames.1194")} {...a11yProps(3)} />
-            {/* PVP */}
-            <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(4)} />
-            {/* World Bosses */}
-            <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(5)} />
-            {/* Slots */}
-            <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(6)} />
-          </Tabs>
-        </AppBar>
+        <Grid container spacing={0}>
+          <Grid item xs={12}>
+            <div>
+              <Button color="primary" variant="outlined" onClick={() => returnToSetup()} style={{ position: "absolute" }}>
+                {t("UpgradeFinder.BackButton")}
+              </Button>
+              <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>
+                {t("UpgradeFinder.Header") + " - " + result.contentType}
+              </Typography>
+            </div>
+          </Grid>
+          <Grid item xs={12}>
+            <AppBar
+              position="static"
+              style={{
+                backgroundColor: "#000",
+                borderRadius: "4px 4px 4px 4px",
+              }}
+              elevation={1}
+            >
+              <Tabs
+                value={tabvalue}
+                onChange={handleTabChange}
+                aria-label="simple tabs example"
+                variant="fullWidth"
+                style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
+                TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+              >
+                {/* Raid */}
+                <Tab className={classes.raidHeaderStyle} label={t("UpgradeFinder.CurrentRaid")} {...a11yProps(0)} />
+                {/* Mythic Plus */}
+                <Tab className={classes.mythicPlusHeaderStyle} label={t("UpgradeFinder.MythicPlus")} {...a11yProps(1)} />
+                {/* Legion Timewalking */}
+                <Tab
+                  className={classes.LegionTimewalkingStyle}
+                  label={
+                    //t("UpgradeFinder.LegionTimewalking")
+                    "Legion"
+                  }
+                  {...a11yProps(2)}
+                />
+                {/* Tazavesh */}
+                <Tab className={classes.tazaveshStyle} label={t("DungeonNames.1194")} {...a11yProps(3)} />
+                {/* PVP */}
+                <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(4)} />
+                {/* World Bosses */}
+                <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(5)} />
+                {/* Slots */}
+                <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(6)} />
+              </Tabs>
+            </AppBar>
+          </Grid>
 
-        {/* Raid */}
-        <TabPanel value={tabvalue} index={0}>
-          <div className={classes.panel}>
-            <Grid container>
-              <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
-            </Grid>
-          </div>
-        </TabPanel>
+          {/* Raid */}
+          <Grid item xs={12}>
+            <TabPanel value={tabvalue} index={0}>
+              <div className={classes.panel}>
+                <Grid container>
+                  <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+                </Grid>
+              </div>
+            </TabPanel>
+          </Grid>
 
-        {/* Mythic Plus */}
-        <TabPanel value={tabvalue} index={1}>
-          <div className={classes.panel}>
-            <Grid container>
-              <MythicPlusGearContainer
-                setDungeonDifficulty={props.setDungeonDifficulty}
-                player={props.player}
-                itemList={itemList}
-                itemDifferentials={itemDifferentials}
-                playerSettings={props.playerSettings}
-              />
-            </Grid>
-          </div>
-        </TabPanel>
+          {/* Mythic Plus */}
+          <Grid item xs={12}>
+            <TabPanel value={tabvalue} index={1}>
+              <div className={classes.panel}>
+                <Grid container>
+                  <MythicPlusGearContainer
+                    setDungeonDifficulty={props.setDungeonDifficulty}
+                    player={props.player}
+                    itemList={itemList}
+                    itemDifferentials={itemDifferentials}
+                    playerSettings={props.playerSettings}
+                  />
+                </Grid>
+              </div>
+            </TabPanel>
+          </Grid>
 
-        {/* Legion Timewalking */}
-        <TabPanel value={tabvalue} index={2}>
-          <div className={classes.panel}>
-            <Grid container>
-              <LegionTimewalking
-                setDungeonDifficulty={props.setDungeonDifficulty}
-                player={props.player}
-                itemList={itemList}
-                itemDifferentials={itemDifferentials}
-                playerSettings={props.playerSettings}
-              />
-            </Grid>
-          </div>
-        </TabPanel>
+          {/* Legion Timewalking */}
+          <Grid item xs={12}>
+            <TabPanel value={tabvalue} index={2}>
+              <div className={classes.panel}>
+                <Grid container>
+                  <LegionTimewalking
+                    setDungeonDifficulty={props.setDungeonDifficulty}
+                    player={props.player}
+                    itemList={itemList}
+                    itemDifferentials={itemDifferentials}
+                    playerSettings={props.playerSettings}
+                  />
+                </Grid>
+              </div>
+            </TabPanel>
+          </Grid>
 
-        {/* Tazavesh */}
-        <TabPanel value={tabvalue} index={3}>
-          <div className={classes.panel}>
-            <Grid container>
-              <TazaveshGearContainer
-                setDungeonDifficulty={props.setDungeonDifficulty}
-                player={props.player}
-                itemList={itemList}
-                itemDifferentials={itemDifferentials}
-                playerSettings={props.playerSettings}
-              />
-            </Grid>
-          </div>
-        </TabPanel>
+          {/* Tazavesh */}
+          <Grid item xs={12}>
+            <TabPanel value={tabvalue} index={3}>
+              <div className={classes.panel}>
+                <Grid container>
+                  <TazaveshGearContainer
+                    setDungeonDifficulty={props.setDungeonDifficulty}
+                    player={props.player}
+                    itemList={itemList}
+                    itemDifferentials={itemDifferentials}
+                    playerSettings={props.playerSettings}
+                  />
+                </Grid>
+              </div>
+            </TabPanel>
+          </Grid>
 
-        {/* PVP */}
-        <TabPanel value={tabvalue} index={4}>
-          <div className={classes.panel}>
-            <Grid container>
-              <PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
-            </Grid>
-          </div>
-        </TabPanel>
+          {/* PVP */}
+          <Grid item xs={12}>
+            <TabPanel value={tabvalue} index={4}>
+              <div className={classes.panel}>
+                <Grid container>
+                  <PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+                </Grid>
+              </div>
+            </TabPanel>
+          </Grid>
 
-        {/* World Bosses */}
-        <TabPanel value={tabvalue} index={5}>
-          <div className={classes.panel}>
-            <Grid container>
-              <WorldBossGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
-            </Grid>
-          </div>
-        </TabPanel>
+          {/* World Bosses */}
+          <Grid item xs={12}>
+            <TabPanel value={tabvalue} index={5}>
+              <div className={classes.panel}>
+                <Grid container>
+                  <WorldBossGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+                </Grid>
+              </div>
+            </TabPanel>
+          </Grid>
 
-        {/* Slots */}
-        <TabPanel value={tabvalue} index={6}>
-          <div className={classes.panel}>
-            <Grid container>
-              <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
-            </Grid>
-          </div>
-        </TabPanel>
+          {/* Slots */}
+          <Grid item xs={12}>
+            <TabPanel value={tabvalue} index={6}>
+              <div className={classes.panel}>
+                <Grid container>
+                  <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+                </Grid>
+              </div>
+            </TabPanel>
+          </Grid>
+        </Grid>
       </div>
     );
   };
@@ -353,74 +372,84 @@ export default function UpgradeFinderResults(props) {
   const upgradeFinderResultsBC = () => {
     return (
       <div className={classes.header}>
-        <div>
-          <Button color="primary" variant="outlined" onClick={() => returnToSetup()} style={{ position: "absolute" }}>
-            {t("UpgradeFinder.BackButton")}
-          </Button>
-          <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>
-            {t("UpgradeFinder.Header")}
-          </Typography>
-        </div>
-        <AppBar
-          position="static"
-          style={{
-            backgroundColor: "#000",
-            borderRadius: "4px 4px 4px 4px",
-          }}
-          elevation={1}
-        >
-          <Tabs
-            value={tabvalue}
-            onChange={handleTabChange}
-            aria-label="simple tabs example"
-            variant="fullWidth"
-            style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
-            TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
-          >
-            {/* -------------------------------------------- Raid -------------------------------------------- */}
-            <Tab className={classes.raidBCHeaderStyle} label={t("Raids")} {...a11yProps(0)} />
-            {/* ------------------------------------------- Dungeon ------------------------------------------ */}
-            <Tab className={classes.dungeonBCPlusHeaderStyle} label={t("Dungeons")} {...a11yProps(1)} />
-            {/* --------------------------------------------- PVP -------------------------------------------- */}
-            <Tab className={classes.pvpBCHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(2)} />
-            {/* -------------------------------------------- Slots ------------------------------------------- */}
-            <Tab className={classes.slotsBCHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(3)} />
-          </Tabs>
-        </AppBar>
+        <Grid container spacing={0}>
+          <Grid item xs={12}>
+            <div>
+              <Button color="primary" variant="outlined" onClick={() => returnToSetup()} style={{ position: "absolute" }}>
+                {t("UpgradeFinder.BackButton")}
+              </Button>
+              <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>
+                {t("UpgradeFinder.Header")}
+              </Typography>
+            </div>
+          </Grid>
+          <Grid item xs={12}>
+            <AppBar
+              position="static"
+              style={{
+                backgroundColor: "#000",
+                borderRadius: "4px 4px 4px 4px",
+              }}
+              elevation={1}
+            >
+              <Tabs
+                value={tabvalue}
+                onChange={handleTabChange}
+                aria-label="simple tabs example"
+                variant="fullWidth"
+                style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
+                TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+              >
+                {/* -------------------------------------------- Raid -------------------------------------------- */}
+                <Tab className={classes.raidBCHeaderStyle} label={t("Raids")} {...a11yProps(0)} />
+                {/* ------------------------------------------- Dungeon ------------------------------------------ */}
+                <Tab className={classes.dungeonBCPlusHeaderStyle} label={t("Dungeons")} {...a11yProps(1)} />
+                {/* --------------------------------------------- PVP -------------------------------------------- */}
+                <Tab className={classes.pvpBCHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(2)} />
+                {/* -------------------------------------------- Slots ------------------------------------------- */}
+                <Tab className={classes.slotsBCHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(3)} />
+              </Tabs>
+            </AppBar>
+          </Grid>
+          {/* Raid */}
+          <Grid item xs={12}>
+            <TabPanel value={tabvalue} index={0}>
+              <div className={classes.panel}>
+                <Grid container>
+                  <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+                </Grid>
+              </div>
+            </TabPanel>
+          </Grid>
 
-        {/* Raid */}
-        <TabPanel value={tabvalue} index={0}>
-          <div className={classes.panel}>
-            <Grid container>
-              <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
-            </Grid>
-          </div>
-        </TabPanel>
+          {/* Mythic Plus */}
+          <Grid item xs={12}>
+            <TabPanel value={tabvalue} index={1}>
+              <div className={classes.panel}>
+                <Grid container>
+                  <MythicPlusGearContainer
+                    setDungeonDifficulty={props.setDungeonDifficulty}
+                    player={props.player}
+                    itemList={itemList}
+                    itemDifferentials={itemDifferentials}
+                    playerSettings={props.playerSettings}
+                  />
+                </Grid>
+              </div>
+            </TabPanel>
+          </Grid>
 
-        {/* Mythic Plus */}
-        <TabPanel value={tabvalue} index={1}>
-          <div className={classes.panel}>
-            <Grid container>
-              <MythicPlusGearContainer
-                setDungeonDifficulty={props.setDungeonDifficulty}
-                player={props.player}
-                itemList={itemList}
-                itemDifferentials={itemDifferentials}
-                playerSettings={props.playerSettings}
-              />
-            </Grid>
-          </div>
-        </TabPanel>
+          {/* PVP */}
+          <Grid item xs={12}>
+            <TabPanel value={tabvalue} index={2}>
+              <div className={classes.panel}>
+                <Grid container>{/*<PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}</Grid>
+              </div>
+            </TabPanel>
+          </Grid>
 
-        {/* PVP */}
-        <TabPanel value={tabvalue} index={2}>
-          <div className={classes.panel}>
-            <Grid container>{/*<PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}</Grid>
-          </div>
-        </TabPanel>
-
-        {/* World Bosses */}
-        {/* <TabPanel value={tabvalue} index={3}>
+          {/* World Bosses */}
+          {/* <TabPanel value={tabvalue} index={3}>
           <div className={classes.panel}>
             <Grid container>
               <WorldBossGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
@@ -428,14 +457,17 @@ export default function UpgradeFinderResults(props) {
           </div>
         </TabPanel> */}
 
-        {/* Slots */}
-        <TabPanel value={tabvalue} index={3}>
-          <div className={classes.panel}>
-            <Grid container>
-              <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
-            </Grid>
-          </div>
-        </TabPanel>
+          {/* Slots */}
+          <Grid item xs={12}>
+            <TabPanel value={tabvalue} index={3}>
+              <div className={classes.panel}>
+                <Grid container>
+                  <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+                </Grid>
+              </div>
+            </TabPanel>
+          </Grid>
+        </Grid>
       </div>
     );
   };

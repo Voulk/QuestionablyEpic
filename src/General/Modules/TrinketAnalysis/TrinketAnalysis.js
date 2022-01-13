@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Paper, Typography, Grid, Tooltip, Select, MenuItem } from "@material-ui/core";
+import { Paper, Typography, Grid, Tooltip } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Item from "../Player/Item";
 import BCItem from "../Player/BCItem";
@@ -8,20 +8,18 @@ import VerticalChart from "./Charts/VerticalChart";
 import BCChart from "./Charts/BCChart";
 import HelpText from "../SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import userSettings from "../Settings/SettingsObject";
-// import MetricToggle from "Retail/Modules/DominationGemAnalysis/MetricToggle";
 import SourceToggle from "./SourceToggle";
-import ToggleButton from "@material-ui/lab/ToggleButton";
-import VisibilityIcon from "@material-ui/icons/Visibility";
+import ToggleButton from "@mui/material/ToggleButton";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
-import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("md")]: {
       margin: "auto",
       width: "85%",
       justifyContent: "space-between",
@@ -51,28 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const menuStyle = {
-  style: { marginTop: 5 },
-  MenuListProps: {
-    style: { paddingTop: 0, paddingBottom: 0 },
-  },
-  PaperProps: {
-    style: {
-      border: "1px solid rgba(255, 255, 255, 0.23)",
-    },
-  },
-  anchorOrigin: {
-    vertical: "bottom",
-    horizontal: "left",
-  },
-  transformOrigin: {
-    vertical: "top",
-    horizontal: "left",
-  },
-  getContentAnchorEl: null,
-};
-
-const getTrinketAtItemLevel = (id, itemLevel, player, contentType, gameType) => {
+const getTrinketAtItemLevel = (id, itemLevel, player, contentType) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
   let itemAllocations = getItemAllocations(id);
   item.stats = calcStatsAtLevel(itemLevel, "Trinket", itemAllocations, "");
@@ -89,7 +66,7 @@ const getBCTrinketScore = (id, player) => {
   return item.softScore;
 };
 
-const getHighestTrinketScore = (db, trinket, gameType) => {
+const getHighestTrinketScore = (db, trinket) => {
   const trinketID = trinket.id;
 
   let temp = db.filter(function (item) {
@@ -102,21 +79,14 @@ const getHighestTrinketScore = (db, trinket, gameType) => {
   return trinket["i" + highestLevel];
 };
 
-// const editSettings = (setting, newValue) => {
-//   userSettings[setting] = newValue;
-// };
-
 export default function TrinketAnalysis(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
   const { t } = useTranslation();
-  const [metric, setMetric] = React.useState("hps");
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "LegionTimewalking"]);
   const [theme, setTheme] = React.useState(false);
-
-  // const availableThemes = ["candidate1", "candidate2", "candidate3", "candidate4", "candidate5", "candidate6", "candidate7", "IBM", "wong", "candidate10", "candidate11", "candidate12", "candidate13"];
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                    Trinket Source Filtering                                    */
@@ -124,19 +94,15 @@ export default function TrinketAnalysis(props) {
   const sourceHandler = (array, sources) => {
     let results = [];
     const shadowlandsRaids = [
-      /* --------------------------------------- Castle Nathria --------------------------------------- */
-      1190,
-      /* ------------------------------------ Sanctum of Domination ----------------------------------- */
-      1193,
+      1190, // Castle Nathria
+      1193, // Sanctum of Domination
     ];
     const shadowlandsDungeons = [
-      /* -------------------------------------- General Dungeons -------------------------------------- */
-      -1,
-      /* ------------------------------------------ Tazavesh ------------------------------------------ */
-      1194,
+      -1, // General Dungeons
+      1194, // Tazavesh
     ];
     const legionTimewalking = [
-      -24,
+      -24, // Legion Timewalking
       707, // Vault of the Wardens
       716, // Eye of Azshara
       740, // Black Rook Hold
@@ -145,11 +111,9 @@ export default function TrinketAnalysis(props) {
       800, // Court of Stars
     ];
     const shadowlandsTheRest = [
-      1192,
-      -18,
-      -17,
-      //undefined
-      /* ---------------------------------------- World Bosses ---------------------------------------- */
+      1192, // World Bosses
+      -18, // PVP
+      -17, // PVP
     ];
 
     /* ---------------------------------------------------------------------------------------------- */
@@ -235,11 +199,6 @@ export default function TrinketAnalysis(props) {
           </Typography>
         </Grid>
 
-        {/* <Grid item xs={12}>
-          <Typography color="primary" variant="subtitle2" align="center" style={{ paddingBottom: 8 }}>
-            {"Current Playstyle selected: " + props.player.getActiveModel(contentType).modelName + " - " + contentType}
-          </Typography>
-        </Grid> */}
         <Grid item xs={12}>
           <HelpText blurb={helpBlurb} text={helpText} expanded={false} />
         </Grid>
@@ -257,23 +216,12 @@ export default function TrinketAnalysis(props) {
             autoSocket={true}
           />
         </Grid>
-        {/* <Grid item xs={12}>
-          <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} />
-        </Grid> */}
-        {/* {gameType === "Retail" ? (
-          <Grid item xs={12}>
-            <Grid item>
-              <MetricToggle metric={metric} setMetric={setMetric} />
-            </Grid>
-          </Grid>
-        ) : (
-          ""
-        )} */}
+
         <Grid item xs={12}>
-          <Grid container spacing={0} justify="center">
+          <Grid container spacing={0} justifyContent="center">
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                <Grid container spacing={1} direction="row" justify="flex-end" alignItems="center">
+                <Grid container spacing={1} direction="row" justifyContent="flex-end" alignItems="center">
                   {gameType === "Retail" ? (
                     <Grid item>
                       <div style={{ padding: "8px 0px 8px 8px" }}>
@@ -295,7 +243,7 @@ export default function TrinketAnalysis(props) {
                   )}
                   {gameType === "Retail" ? (
                     <Grid item>
-                      <SourceToggle metric={sources} setMetric={handleSource} />
+                      <SourceToggle sources={sources} setSources={handleSource} />
                     </Grid>
                   ) : (
                     ""
@@ -315,14 +263,7 @@ export default function TrinketAnalysis(props) {
           </Grid>
         </Grid>
         {gameType === "Retail" ? (
-          <Grid item xs={12} container spacing={0} direction="row" justify="flex-end">
-            {/* <Grid item>
-              <Select key={"themeSelector"} labelId="themeSelectorID" variant="outlined" value={theme} onChange={(e) => setTheme(e.target.value)} MenuProps={menuStyle} label={"Cooldowns Shown"}>
-                {availableThemes.map((key) => (
-                  <MenuItem value={key}>{key}</MenuItem>
-                ))}
-              </Select>
-            </Grid> */}
+          <Grid item xs={12} container spacing={0} direction="row" justifyContent="flex-end">
             <Grid item>
               <Tooltip title={"Alternate Theme"} arrow>
                 <ToggleButton

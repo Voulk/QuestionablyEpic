@@ -1,11 +1,21 @@
 import React from "react";
-import ToggleButton from "@material-ui/lab/ToggleButton";
-import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { toggleContent } from "../../../../Redux/Actions";
 import { useTranslation } from "react-i18next";
-import { Tooltip, Typography } from "@material-ui/core";
+import { Tooltip, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
+
+const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
+  "& .MuiToggleButtonGroup-grouped": {
+    color: "rgb(255,255,255,0.38)",
+    "&.Mui-selected": {
+      color: "#fff",
+    },
+  },
+}));
 
 /* ---------------------------------------------------------------------------------------------- */
 /*                 Toggle Button to swap content used by the app (Dungeon or Raid)                */
@@ -26,7 +36,7 @@ export default function ContentSwitch() {
   };
 
   return (
-    <ToggleButtonGroup value={contentType} exclusive onChange={handleContent} aria-label="contentToggle" size="small">
+    <StyledToggleButtonGroup value={contentType} exclusive onChange={handleContent} aria-label="contentToggle" size="small">
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                         Dungeon Button                                         */
       /* ----------------------------------------------------------------------------------------------  */}
@@ -60,6 +70,6 @@ export default function ContentSwitch() {
           </div>
         </Tooltip>
       </ToggleButton>
-    </ToggleButtonGroup>
+    </StyledToggleButtonGroup>
   );
 }

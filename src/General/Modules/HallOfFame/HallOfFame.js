@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { AppBar, Dialog, DialogContent, Typography, Grid, Divider, Paper, Link } from "@material-ui/core";
+import { AppBar, Dialog, DialogContent, Typography, Grid, Divider, Paper, Link } from "@mui/material";
 import { dbGetHallOfFame } from "General/Modules/SetupAndMenus/ConnectionUtilities";
 
 export default function HallOfFame() {
@@ -62,7 +62,7 @@ export default function HallOfFame() {
         /*               Dialog Content containing the grid components for each patron tier               */
         /* ----------------------------------------------------------------------------------------------  */}
         <DialogContent style={{ minHeight: 400 }}>
-          <Grid container spacing={2} direction="row" justify="flex-start" alignItems="center">
+          <Grid container spacing={2} direction="row" justifyContent="flex-start" alignItems="center">
             {/* ---------------------------------------------------------------------------------------------- */
             /*                                           Rolls Royce                                          */
             /* ----------------------------------------------------------------------------------------------  */}
@@ -75,7 +75,7 @@ export default function HallOfFame() {
                 </AppBar>
 
                 {/* ---------------------------------------- Patron Names ---------------------------------------- */}
-                <Grid container spacing={2} direction="row" justify="flex-start" alignItems="center" style={nameContainerStyle}>
+                <Grid container spacing={2} direction="row" justifyContent="flex-start" alignItems="center" style={nameContainerStyle}>
                   {names
                     .filter((key) => key.tier === "Rolls Royce")
                     .map((key, i) => (
@@ -108,7 +108,7 @@ export default function HallOfFame() {
                 </AppBar>
 
                 {/* ---------------------------------------- Patron Names ---------------------------------------- */}
-                <Grid container spacing={2} direction="row" justify="flex-start" alignItems="center" style={nameContainerStyle}>
+                <Grid container spacing={2} direction="row" justifyContent="flex-start" alignItems="center" style={nameContainerStyle}>
                   {names
                     .filter((key) => key.tier === "Diamond")
                     .map((key, i) => (
@@ -141,10 +141,10 @@ export default function HallOfFame() {
                 </AppBar>
 
                 {/* ---------------------------------------- Patron Names ---------------------------------------- */}
-                <Grid container spacing={2} direction="row" justify="flex-start" alignItems="center" style={nameContainerStyle}>
+                <Grid container spacing={2} direction="row" justifyContent="flex-start" alignItems="center" style={nameContainerStyle}>
                   {names
                     .filter((key) => key.tier === "Gold")
-                    .map((key) => (
+                    .map((key, i) => (
                       <Grid item xs={4} key={"G" + i}>
                         <Typography
                           style={{

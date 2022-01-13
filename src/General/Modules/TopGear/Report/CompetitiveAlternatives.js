@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Paper, Typography, Divider, Grid } from "@material-ui/core";
+import { Paper, Typography, Divider, Grid } from "@mui/material";
 import { getItemIcon, getItemProp } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
 
@@ -89,7 +89,7 @@ function CompetitiveAlternatives(props) {
                           </Grid>
                         ))}
                       </Grid>
-                      <Grid item container justify="flex-end" xs={2}>
+                      <Grid item container justifyContent="flex-end" xs={2}>
                         <Grid item xs={12}>
                           <Typography
                             variant="caption" // h6 formerly

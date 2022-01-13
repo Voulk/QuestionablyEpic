@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
-import { Divider, Paper, Typography } from "@material-ui/core";
+import { Divider, Paper, Typography } from "@mui/material";
 export default class Example extends PureComponent {
   constructor(props) {
     super();

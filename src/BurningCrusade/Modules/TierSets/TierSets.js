@@ -1,33 +1,33 @@
 // This module will be focused on BC mostly, Until Retail reintroduces tier sets
 
 import React, { useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from '@mui/styles/makeStyles';
 import "../../../General/Modules/SetupAndMenus/QEMainMenu";
 import TierObject from "./TierObject";
 import { useTranslation } from "react-i18next";
 import ReactGA from "react-ga";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@mui/material";
 // import { useSelector } from "react-redux";
 import { tierSets } from "../../Databases/TierSetsDB";
 import HelpText from "../../../General/Modules/SetupAndMenus/HelpText";
 
 const useStyles = makeStyles((theme) => ({
   header: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       margin: "auto",
       width: "70%",
       justifyContent: "space-between",
       display: "block",
       marginTop: "120px",
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down('lg')]: {
       margin: "auto",
       width: "70%",
       justifyContent: "space-between",
       display: "block",
       marginTop: "120px",
     },
-    [theme.breakpoints.down("lg")]: {
+    [theme.breakpoints.down('xl')]: {
       margin: "auto",
       width: "70%",
       justifyContent: "space-between",

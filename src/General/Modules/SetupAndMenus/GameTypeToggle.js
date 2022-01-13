@@ -1,16 +1,16 @@
 import React from "react";
-import ToggleButton from "@material-ui/lab/ToggleButton";
-import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { toggleGameType } from "../../../Redux/Actions";
 import { useTranslation } from "react-i18next";
-import { Tooltip, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Tooltip, Typography } from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('md')]: {
       minWidth: 175,
       padding: 4,
       opacity: 0.3,
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     /* ----------------------------------- Unselected button style ---------------------------------- */
     /* ------------------------------------ Selected button style ----------------------------------- */
     "&.MuiToggleButton-root.Mui-selected": {
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down('md')]: {
         minWidth: 175,
         padding: 4,
         opacity: 1,

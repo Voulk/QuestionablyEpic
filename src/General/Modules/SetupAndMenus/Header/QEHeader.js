@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Button, Typography, Tooltip, Grid } from "@material-ui/core";
+import { AppBar, Toolbar, Button, Typography, Tooltip, Grid } from "@mui/material";
 import logo from "Images/QeAssets/QELogo.png";
 import "../QEMainMenu.css";
 import LanguageSelector from "./LanguageButton";
@@ -8,35 +8,38 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import SimCraftInput from "../SimCraftDialog";
 import QELogImport from "./QELogImport";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from "@mui/styles/makeStyles";
 import CharacterHeaderButton from "./CharacterHeader";
 import ContentSwitch from "./ContentToggle";
 import { useSelector } from "react-redux";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 
 // import ReactGA from "react-ga";n
 
 const useStyles = makeStyles((theme) => ({
   qeLogo: {
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("xl")]: {
       marginTop: "5px",
       marginBottom: "-5px",
     },
   },
   headerButtons: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("lg")]: {
       marginBottom: "5px",
     },
   },
-  headerMargins:{
-    [theme.breakpoints.down("sm")]: {
-      marginLeft: "4%", marginRight: "4%"
+  headerMargins: {
+    [theme.breakpoints.down("lg")]: {
+      marginLeft: "4%",
+      marginRight: "4%",
+      minHeight: 56,
     },
     [theme.breakpoints.up("sm")]: {
-      marginLeft: "8%", marginRight: "8%"
+      marginLeft: "8%",
+      marginRight: "8%",
+      minHeight: 56,
     },
-
   },
   popover: {
     pointerEvents: "none",
@@ -49,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
 export default function QEHeader(props) {
   const { t } = useTranslation();
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down("sm"));
+  const matches = useMediaQuery(theme.breakpoints.down("lg"));
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const gameType = useSelector((state) => state.gameType);
@@ -78,11 +81,12 @@ export default function QEHeader(props) {
     "Basic Edition": "#FFFFFF",
   };
 
+  // box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
   return (
     <div style={{ backgroundColor: "#353535" }}>
       <AppBar position="fixed" color="inherit">
         <Toolbar className={classes.headerMargins}>
-          <Grid container direction="row" spacing={0} justify="space-between" alignItems="center">
+          <Grid container direction="row" spacing={0} justifyContent="space-between" alignItems="center">
             <Grid item xs={12} sm={12} md={3} lg={3} xl={6} align="center">
               {/* ---------------------------------------------------------------------------------------------- */
               /*                                         Logo Container                                          */
@@ -111,7 +115,15 @@ export default function QEHeader(props) {
               {/* ---------------------------------------------------------------------------------------------- */
               /*                                     Menu Buttons Container                                      */
               /* ----------------------------------------------------------------------------------------------  */}
-              <Grid container direction="row" justify="center" alignItems="center" spacing={1} wrap={(matches && gameType === "Retail")  ? "" : "nowrap"} style={{ paddingLeft: 10, paddingRight: 10 }}>
+              <Grid
+                container
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+                spacing={1}
+                wrap={matches && gameType === "Retail" ? "" : "nowrap"}
+                style={{ paddingLeft: 10, paddingRight: 10 }}
+              >
                 {(props.allChars && props.allChars.allChar.length) > 0 ? (
                   <Grid item item xs={gameType === "Retail" ? 6 : "auto"} sm="auto">
                     <CharacterHeaderButton player={props.pl} allChars={props.allChars} />
@@ -134,7 +146,14 @@ export default function QEHeader(props) {
                   ""
                 )}
                 <Grid item>
-                  <SimCraftInput variant="outlined" buttonLabel={t("SimCInput.SimCHeaderButtonLabel" + gameType)} player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
+                  <SimCraftInput
+                    colour={"white"}
+                    variant="outlined"
+                    buttonLabel={t("SimCInput.SimCHeaderButtonLabel" + gameType)}
+                    player={props.player}
+                    simcSnack={props.simcSnack}
+                    allChars={props.allChars}
+                  />
                 </Grid>
                 <Grid item>
                   <ProfileSelector name={playerName} component={Link} to={linkTarget} logFunc={props.logFunc} setRegion={props.setRegion} />

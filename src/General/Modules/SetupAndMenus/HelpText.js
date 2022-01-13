@@ -1,9 +1,9 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Accordion, AccordionDetails, AccordionSummary, Typography, Divider, Grid } from "@material-ui/core";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import makeStyles from '@mui/styles/makeStyles';
+import { Accordion, AccordionDetails, AccordionSummary, Typography, Divider, Grid } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useTranslation } from "react-i18next";
-import HelpIcon from "@material-ui/icons/Help";
+import HelpIcon from "@mui/icons-material/Help";
 
 const useStyles = makeStyles((theme) => ({
   root: {

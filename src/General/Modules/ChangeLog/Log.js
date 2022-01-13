@@ -10,6 +10,15 @@
 export const changeLog = [
   {
     version: "9.1.5 / 2.5.2",
+    update: 6,
+    date: "10 January (Code update)",
+    changes: [
+      "Several large codebase changes in preparation for 9.2.",
+      "200 ilvl crafted items should now import at the correct level.",
+    ],
+  },
+  {
+    version: "9.1.5 / 2.5.2",
     update: 5,
     date: "16 December (Minor update)",
     changes: [

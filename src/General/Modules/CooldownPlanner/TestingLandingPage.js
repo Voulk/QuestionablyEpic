@@ -2,15 +2,15 @@ import React, { useEffect } from "react";
 // import "./QEMainMenu.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { makeStyles } from "@material-ui/core/styles";
-import ArrowForward from "@material-ui/icons/ArrowForward";
-import { Grid, Button, Typography, Tooltip } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
+import ArrowForward from "@mui/icons-material/ArrowForward";
+import { Grid, Button, Typography, Tooltip } from "@mui/material";
 import { useSelector } from "react-redux";
 import HelpText from "../SetupAndMenus/HelpText";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('md')]: {
       margin: "auto",
       width: "85%",
       justifyContent: "center",

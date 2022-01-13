@@ -2,24 +2,51 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 //prettier-ignore
-import {Accordion, AccordionSummary, AccordionDetails, Paper, Box, Button, Card, CardContent, CardActionArea, Divider, IconButton, Typography, Avatar, Grid, TextField, Dialog, DialogContent, DialogActions, Tabs, Tab, Tooltip, Select, MenuItem, FormControl, InputLabel } from "@material-ui/core";
-import { createMuiTheme, makeStyles, ThemeProvider, withStyles } from "@material-ui/core/styles";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import SettingsIcon from "@material-ui/icons/Settings";
-import Autocomplete from "@material-ui/lab/Autocomplete";
-import ClearIcon from "@material-ui/icons/Clear";
-import { red } from "@material-ui/core/colors";
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Paper,
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardActionArea,
+  Divider,
+  IconButton,
+  Typography,
+  Avatar,
+  Grid,
+  TextField,
+  Dialog,
+  DialogContent,
+  DialogActions,
+  Tabs,
+  Tab,
+  Tooltip,
+  Select,
+  MenuItem,
+  FormControl,
+  InputLabel,
+} from "@mui/material";
+import { createTheme, ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
+import makeStyles from "@mui/styles/makeStyles";
+import withStyles from "@mui/styles/withStyles";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import SettingsIcon from "@mui/icons-material/Settings";
+import Autocomplete from "@mui/material/Autocomplete";
+import ClearIcon from "@mui/icons-material/Clear";
+import { red } from "@mui/material/colors";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions.js";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
-import { classRaceList, bcClassRaceList } from "../../CooldownPlanner/Data/Data";
+import { classRaceDB } from "../../../../Databases/ClassRaceDB";
 import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
 import LogDetailsTable from "./CharacterLogDetailsTable";
 import { STAT } from "../../../Engine/STAT";
 import { apiGetPlayerImage } from "../ConnectionUtilities";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
-import { setConstantValue } from "typescript";
 import { covenantIcons } from "../../CooldownPlanner/Functions/CovenantFunctions";
 import { classTranslator } from "General/Functions/CommonFunctions";
 
@@ -69,8 +96,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     width: "100%",
-    marginTop: 5,
-    marginBottom: 5,
+    // marginTop: 5,
+    // marginBottom: 5,
     marginLeft: 5,
     marginRight: 5,
   },
@@ -79,8 +106,8 @@ const useStyles = makeStyles((theme) => ({
     padding: "0px",
   },
   large: {
-    width: "60px",
-    height: "60px",
+    width: "51px",
+    height: "51px",
   },
   tabRoot: {
     flexGrow: 1,
@@ -95,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const deleteTheme = createMuiTheme({
+const deleteTheme = createTheme({
   palette: {
     primary: red,
   },
@@ -143,25 +170,6 @@ const CharTab = withStyles((theme) => ({
   },
   selected: {},
 }))((props) => <Tab {...props} />);
-const menuStyle = {
-  MenuListProps: {
-    style: { paddingTop: 0, paddingBottom: 0 },
-  },
-  PaperProps: {
-    style: {
-      border: "1px solid rgba(255, 255, 255, 0.23)",
-    },
-  },
-  anchorOrigin: {
-    vertical: "bottom",
-    horizontal: "left",
-  },
-  transformOrigin: {
-    vertical: "top",
-    horizontal: "left",
-  },
-  getContentAnchorEl: null,
-};
 
 export default function CharCards(props) {
   const classes = useStyles();
@@ -171,7 +179,6 @@ export default function CharCards(props) {
 
   const [tabvalue, setTabValue] = React.useState(0);
 
-  const [value, setValue] = React.useState(0);
   const [region, setRegion] = React.useState(player.region);
   const [open, setOpen] = React.useState(false);
   const [charName, setCharName] = React.useState(player.charName);
@@ -186,7 +193,6 @@ export default function CharCards(props) {
   const [leech, setLeech] = React.useState(player.getStatWeight(contentType, STAT.LEECH));
   const [server, setServer] = React.useState(player.realm);
   const [backgroundImage, setBackgroundImage] = useState("");
-  const [avatar, setAvatar] = useState("");
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
@@ -222,9 +228,6 @@ export default function CharCards(props) {
   };
   const handleChangeRegion = (event) => {
     setRegion(event.target.value);
-  };
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
   };
 
   /* -------------------------------------------------------------------------- */
@@ -320,7 +323,7 @@ export default function CharCards(props) {
   const covenant = props.char.covenant;
   const gameType = useSelector((state) => state.gameType);
   const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade;
-  const availableClasses = classRaceList;
+  const availableClasses = classRaceDB;
 
   /* ------------------------ Active Character Styling ------------------------ */
   const rootClassName = classes.root + " " + (props.isActive ? classes.activeChar : "");
@@ -342,82 +345,77 @@ export default function CharCards(props) {
     /*                      Character Card for the main menu                      */
     /* -------------------------------------------------------------------------- */
     <Grid item xs={12} sm={6} md={6} lg={6} xl={4}>
-      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : null}>
-        <Card className={rootClassName} variant="outlined" raised={true}>
-          <Avatar src={props.char.charAvatarURL === "" ? specImages[props.char.spec].default : props.char.charAvatarURL} variant="square" alt="" className={classes.large} />
-          <Divider orientation="vertical" flexItem />
-          <div className={classes.details}>
-            <CardContent className={classes.content} style={{ paddingBottom: 0 }}>
-              <Grid container style={{ marginTop: 1 }} spacing={1}>
-                {/* ------------------------ Character name and Realm ------------------------ */}
-                <Grid item xs={10}>
-                  <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec), display: "inline-flex" }}>
-                    {props.name}
-                    <Tooltip title={t(classTranslator(spec))} style={{ color: classColoursJS(spec) }} placement="top">
-                      {/* ----------------------------------------- Class Icon -----------------------------------------  */}
-                      {classIcons(spec, {
-                        height: 20,
-                        width: 20,
-                        margin: "0px 0px 0px 5px",
-                        verticalAlign: "middle",
-                        borderRadius: 4,
-                        border: "1px solid rgba(255, 255, 255, 0.12)",
-                      })}
-                    </Tooltip>
-                    {/* ---------------------------------------- Covenant Icon ---------------------------------------  */}
-                    {gameType === "Retail" ? (
-                      <Tooltip title={t(covenant)} style={{ color: classColoursJS(spec) }} placement="top">
-                        {covenantIcons(covenant, {
+      <div style={{ position: "relative" }}>
+        {gameType === "Retail" ? (
+          <Tooltip title={t("Edit")}>
+            <IconButton style={{ position: "absolute", right: 0, top: 2, zIndex: 1 }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
+              <SettingsIcon fontSize="small" />
+            </IconButton>
+          </Tooltip>
+        ) : (
+          <Tooltip title={t("Delete")}>
+            <IconButton style={{ position: "absolute", right: 0, top: 5, zIndex: 1, color: "red" }} onClick={(e) => handleDelete(e)} aria-label="settings" size="small">
+              <ClearIcon fontSize="small" />
+            </IconButton>
+          </Tooltip>
+        )}
+
+        <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : null}>
+          <Card className={rootClassName} variant="outlined">
+            <Avatar src={props.char.charAvatarURL === "" ? specImages[props.char.spec].default : props.char.charAvatarURL} variant="square" alt="" className={classes.large} />
+            <Divider orientation="vertical" flexItem />
+            <div className={classes.details}>
+              <CardContent className={classes.content} style={{ paddingBottom: 0 }}>
+                <Grid container style={{ marginTop: 1 }} spacing={0.5}>
+                  {/* ------------------------ Character name and Realm ------------------------ */}
+                  <Grid item xs={10}>
+                    <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec), display: "inline-flex" }}>
+                      {props.name}
+                      <Tooltip title={t(classTranslator(spec))} style={{ color: classColoursJS(spec) }} placement="top">
+                        {/* ----------------------------------------- Class Icon -----------------------------------------  */}
+                        {classIcons(spec, {
                           height: 20,
                           width: 20,
-                          margin: "0px 5px 0px 5px",
+                          margin: "0px 0px 0px 5px",
                           verticalAlign: "middle",
                           borderRadius: 4,
                           border: "1px solid rgba(255, 255, 255, 0.12)",
                         })}
                       </Tooltip>
-                    ) : (
-                      ""
-                    )}
-                  </Typography>
+                      {/* ---------------------------------------- Covenant Icon ---------------------------------------  */}
+                      {gameType === "Retail" ? (
+                        <Tooltip title={t(covenant)} style={{ color: classColoursJS(spec) }} placement="top">
+                          {covenantIcons(covenant, {
+                            height: 20,
+                            width: 20,
+                            margin: "0px 5px 0px 5px",
+                            verticalAlign: "middle",
+                            borderRadius: 4,
+                            border: "1px solid rgba(255, 255, 255, 0.12)",
+                          })}
+                        </Tooltip>
+                      ) : (
+                        ""
+                      )}
+                    </Typography>
+                  </Grid>
+                  {/* ---- Settings Button - More apparent for users how to edit characters ---- */}
+                  <Grid item container spacing={0}>
+                    <Grid item xs={12}>
+                      <Divider />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <Typography variant="caption" style={{ fontSize: 11 }}>
+                        {player.getRealmString()}
+                      </Typography>
+                    </Grid>
+                  </Grid>
                 </Grid>
-                {/* ---- Settings Button - More apparent for users how to edit characters ---- */}
-                {gameType === "Retail" ? (
-                  <Grid item xs={2}>
-                    <Tooltip title={t("Edit")}>
-                      <IconButton style={{ float: "right", top: -4 }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
-                        <SettingsIcon fontSize="small" />
-                      </IconButton>
-                    </Tooltip>
-                  </Grid>
-                ) : (
-                  <Grid item xs={2}>
-                    <Tooltip title={t("Delete")}>
-                      <IconButton style={{ float: "right", top: -4, color: "red" }} onClick={(e) => handleDelete(e)} aria-label="settings" size="small">
-                        <ClearIcon fontSize="small" />
-                      </IconButton>
-                    </Tooltip>
-                  </Grid>
-                )}
-              </Grid>
-              <Grid item xs={12}>
-                <Divider />
-              </Grid>
-              <Grid item xs={12}>
-                <Typography variant="caption" style={{ fontSize: 11 }}>
-                  {player.getRealmString()}
-                </Typography>
-              </Grid>
-
-              {/* ------------------------------ Class & Icon ------------------------------ */}
-              {/* <Typography style={{ color: classColoursJS(spec), marginTop: 2 }}>
-                {t(classTranslator(spec))}
-                {classIcons(spec, { height: 16, width: 16, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
-              </Typography>  */}
-            </CardContent>
-          </div>
-        </Card>
-      </CardActionArea>
+              </CardContent>
+            </div>
+          </Card>
+        </CardActionArea>
+      </div>
 
       {/* -------------------------------------------------------------------------- */
       /*                                Dialog Popup                                */
@@ -467,12 +465,15 @@ export default function CharCards(props) {
                       <Grid item xs={3}>
                         <FormControl variant="outlined" size="small" fullWidth label={t("Region")} disabled={true}>
                           <InputLabel id="ClassSelector">{t("Region")}</InputLabel>
-                          <Select value={region} onChange={handleChangeRegion} label={t("Region")} MenuProps={menuStyle}>
-                            {Object.values(regions).map((key, i) => (
-                              <MenuItem key={"charCardRegion" + i} value={key}>
-                                {key}
-                              </MenuItem>
-                            ))}
+                          <Select value={region} onChange={handleChangeRegion} label={t("Region")}>
+                            {Object.values(regions).map((key, i, arr) => {
+                              let lastItem = i + 1 === arr.length ? false : true;
+                              return (
+                                <MenuItem divider={lastItem} key={"charCardRegion" + i} value={key}>
+                                  {key}
+                                </MenuItem>
+                              );
+                            })}
                           </Select>
                         </FormControl>
                       </Grid>
@@ -502,17 +503,18 @@ export default function CharCards(props) {
                       <Grid item xs={12}>
                         <FormControl variant="outlined" fullWidth size="small" label={t("Class")} disabled={true}>
                           <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
-                          <Select label={t("Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
-                            {Object.getOwnPropertyNames(availableClasses)
-                              .map((key, i) => (
-                                <MenuItem key={"charCardClass" + i} value={key}>
+                          <Select label={t("Class")} value={healClass} onChange={handleChangeSpec}>
+                            {Object.getOwnPropertyNames(availableClasses).map((key, i, arr) => {
+                              let lastItem = i + 1 === arr.length ? false : true;
+                              return (
+                                <MenuItem divider={lastItem} key={"charCardClass" + i} value={key}>
                                   <div style={{ display: "inline-flex" }}>
                                     {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
                                     {t("Classes." + key)}
                                   </div>
                                 </MenuItem>
-                              ))
-                              .map((menuItems, i) => [menuItems, <Divider key={i} />])}
+                              );
+                            })}
                           </Select>
                         </FormControl>
                       </Grid>
@@ -520,19 +522,20 @@ export default function CharCards(props) {
                       <Grid item xs={12}>
                         <FormControl disabled={healClass === "" ? true : false} fullWidth variant="outlined" size="small" label={t("Race")}>
                           <InputLabel id="RaceSelector">{t("Race")}</InputLabel>
-                          <Select value={selectedRace} onChange={handleChangeRace} label={t("Race")} MenuProps={menuStyle}>
+                          <Select value={selectedRace} onChange={handleChangeRace} label={t("Race")}>
                             {healClass === ""
                               ? ""
-                              : availableClasses[healClass.toString()].races
-                                  .map((key, i) => (
-                                    <MenuItem key={"charCardRace" + i} value={key}>
+                              : availableClasses[healClass.toString()].races.map((key, i, arr) => {
+                                  let lastItem = i + 1 === arr.length ? false : true;
+                                  return (
+                                    <MenuItem divider={lastItem} key={"charCardRace" + i} value={key}>
                                       <div style={{ display: "inline-flex" }}>
                                         {raceIcons(key)}
                                         {t(key)}
                                       </div>
                                     </MenuItem>
-                                  ))
-                                  .map((menuItems, i) => [menuItems, <Divider key={i} />])}
+                                  );
+                                })}
                           </Select>
                         </FormControl>
                       </Grid>
@@ -540,12 +543,13 @@ export default function CharCards(props) {
                       <Grid item xs={12}>
                         <FormControl disabled={healClass === "" ? true : false} fullWidth variant="outlined" size="small" label={t("Covenant")}>
                           <InputLabel id="CovSelector">{t("Covenant")}</InputLabel>
-                          <Select value={selectedCovenant} onChange={handleChangeCovenant} label={t("Covenant")} MenuProps={menuStyle}>
+                          <Select value={selectedCovenant} onChange={handleChangeCovenant} label={t("Covenant")}>
                             {healClass === ""
                               ? ""
-                              : ["kyrian", "venthyr", "necrolord", "night_fae"]
-                                  .map((key, i) => (
-                                    <MenuItem key={"charChardCovenant" + i} value={key}>
+                              : ["kyrian", "venthyr", "necrolord", "night_fae"].map((key, i, arr) => {
+                                  let lastItem = i + 1 === arr.length ? false : true;
+                                  return (
+                                    <MenuItem divider={lastItem} key={"charChardCovenant" + i} value={key}>
                                       <div style={{ display: "inline-flex" }}>
                                         {covenantIcons(key, {
                                           height: 20,
@@ -558,8 +562,8 @@ export default function CharCards(props) {
                                         {t(key)}
                                       </div>
                                     </MenuItem>
-                                  ))
-                                  .map((menuItems, i) => [menuItems, <Divider key={i} />])}
+                                  );
+                                })}
                           </Select>
                         </FormControl>
                       </Grid>
@@ -568,8 +572,8 @@ export default function CharCards(props) {
                     {/* -------------------------------------------------------------------------- */
                     /*                            Character Stats Panel                           */
                     /* -------------------------------------------------------------------------- */}
-                    <Grid item xs={12} container direction="row" justify="center" alignItems="center" spacing={1}>
-                      <Grid item xs={12} container direction="row" justify="center" alignItems="center">
+                    <Grid item xs={12} container direction="row" justifyContent="center" alignItems="center" spacing={1}>
+                      <Grid item xs={12} container direction="row" justifyContent="center" alignItems="center">
                         <Grid item xs={12}>
                           <Typography variant="h6" align="center" noWrap color="primary">
                             {t("CharacterCreator.StatWeights")}
@@ -718,7 +722,6 @@ export default function CharCards(props) {
                 /* -------------------------------------------------------------------------- */}
                 {gameType === "Retail" ? (
                   <Grid container spacing={1}>
-                    {/* map here */}
                     <Grid item xs={12} container>
                       {/* ------------------------------- Logs Header ------------------------------ */}
                       <Grid item xs={12}>
@@ -901,11 +904,13 @@ export default function CharCards(props) {
             }}
           >
             {/* ------------------------------ Delete Button -----------------------------  */}
-            <ThemeProvider theme={deleteTheme}>
-              <Button onClick={handleDelete} color="primary" variant="outlined">
-                {t("CharacterCreator.DeleteCharacter")}
-              </Button>
-            </ThemeProvider>
+            <StyledEngineProvider injectFirst>
+              <ThemeProvider theme={deleteTheme}>
+                <Button onClick={handleDelete} color="primary" variant="outlined">
+                  {t("CharacterCreator.DeleteCharacter")}
+                </Button>
+              </ThemeProvider>
+            </StyledEngineProvider>
 
             {/* ---------------------- Default Button (Reset Stats) ----------------------  */}
             <div>

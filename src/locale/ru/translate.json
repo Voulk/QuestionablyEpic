@@ -189,6 +189,7 @@
         "207399": "Тотем защиты Предков",
         "MistweaverMonkComment": "Mistweaver Monk Class Cooldowns",
         "115310": "Восстановление сил",
+        "322118": "Призыв Юй-лун, Нефритовой Змеи",
         "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
         "196718": "Мрак",
         "WarriorComment": "Warrior Cooldowns",
@@ -673,7 +674,7 @@
     },
 
     "SourceToggle": { "FilterTooltip": "You can filter the graph by toggling these buttons" },
-    
+
     "DominationSocketAnalysis": {
       "Header": "Domination Socket Analysis",
       "HelpText": "This is a quick way to see how strong Domination Gems are for your character. These are still being tuned and results could change."

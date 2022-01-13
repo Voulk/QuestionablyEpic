@@ -1,6 +1,7 @@
 import moment from "moment";
 import axios from "axios";
-import { damageExclusions, healerCooldownsDetailed } from "../Data/Data";
+import { spellExclusions } from "../Data/SpellExclusions";
+import { cooldownDB } from "../Data/CooldownDB";
 import { externalsDB } from "../../../../Databases/ExternalsDB";
 import chroma from "chroma-js";
 // import i18n from "i18next";
@@ -79,7 +80,7 @@ export function fightDuration(time1, time2) {
 
 /* -- Creates Timestamps for each second of duration of an active Cooldown -- */
 export function durationmaker(ability, originalTimestamp, abilityname, endtime) {
-  let duration = healerCooldownsDetailed
+  let duration = cooldownDB
     .filter((obj) => {
       return obj.guid === ability;
     })
@@ -296,7 +297,7 @@ export async function importDamageLogData(starttime, endtime, reportid) {
       damage = Object.keys(result.data.events)
         .filter(
           (key) =>
-            damageExclusions.includes(result.data.events[key].ability.guid) === false &&
+            spellExclusions.includes(result.data.events[key].ability.guid) === false &&
             // Has to Have unmitigatedAmount
             result.data.events[key].unmitigatedAmount,
         )
@@ -317,7 +318,7 @@ export async function importDamageLogData(starttime, endtime, reportid) {
             Object.keys(result.data.events)
               .filter(
                 (key) =>
-                  damageExclusions.includes(result.data.events[key].ability.guid) === false &&
+                  spellExclusions.includes(result.data.events[key].ability.guid) === false &&
                   // Has to Have unmitigatedAmount
                   result.data.events[key].unmitigatedAmount,
               )
@@ -349,9 +350,10 @@ export async function importCastsLogData(starttime, endtime, reportid, healerID)
       cooldowns = Object.keys(result.data.events)
         .filter(
           (key) =>
-            healerCooldownsDetailed.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
+            cooldownDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
             // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
-            (result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" : result.data.events[key].type === "cast") &&
+            // result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" :
+            result.data.events[key].type === "cast" &&
             healerID.includes(result.data.events[key].sourceID),
         )
         .map((key) => result.data.events[key]);
@@ -371,9 +373,10 @@ export async function importCastsLogData(starttime, endtime, reportid, healerID)
             Object.keys(result.data.events)
               .filter(
                 (key) =>
-                  healerCooldownsDetailed.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
+                  cooldownDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
                   // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
-                  (result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" : result.data.events[key].type === "cast") &&
+                  //(result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" :
+                  result.data.events[key].type === "cast" &&
                   healerID.includes(result.data.events[key].sourceID),
               )
               .map((key) => result.data.events[key]),
@@ -449,7 +452,8 @@ export async function importExternalCastsLogData(starttime, endtime, reportid, h
           (key) =>
             externalsDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
             // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
-            (result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" : result.data.events[key].type === "cast") &&
+            //(result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" :
+            result.data.events[key].type === "cast" &&
             healerID.includes(result.data.events[key].sourceID),
         )
         .map((key) => result.data.events[key]);
@@ -471,7 +475,8 @@ export async function importExternalCastsLogData(starttime, endtime, reportid, h
                 (key) =>
                   externalsDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
                   // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
-                  (result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" : result.data.events[key].type === "cast") &&
+                  // (result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" :
+                  result.data.events[key].type === "cast" &&
                   healerID.includes(result.data.events[key].sourceID),
               )
               .map((key) => result.data.events[key]),
