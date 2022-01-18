@@ -65,10 +65,8 @@ const tableIcons = {
 };
 
 export default function CooldownPlanner(props) {
-  const classes = useStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const healers = ls.get("healerInfo");
 
   const cooldownObject = new Cooldowns();
   const healTeamDialogOpen = props.healTeamDialogOpen;
@@ -543,18 +541,10 @@ export default function CooldownPlanner(props) {
             Container: (props) => <Paper {...props} elevation={0} />,
             Body: (props) =>
               /* ------------------------ If no boss selected then hide the Table Body ------------------------ */
-              currentBoss === "" ? null : (
-                // <Grow in={currentBoss === "" ? false : true} style={{ transformOrigin: "0 0 0" }} {...((currentBoss === "" ? false : true) ? { timeout: "auto" } : {})}>
-                <MTableBody {...props} />
-                // </Grow>
-              ),
+              currentBoss === "" ? null : <MTableBody {...props} />,
             Header: (props) =>
               /* ----------------------- If no Boss Selected then hide the Table Header ----------------------- */
-              currentBoss === "" ? null : (
-                // <Grow in={currentBoss === "" ? false : true} style={{ transformOrigin: "0 0 0" }} {...((currentBoss === "" ? false : true) ? { timeout: "auto" } : {})}>
-                <MTableHeader {...props} />
-                // </Grow>
-              ),
+              currentBoss === "" ? null : <MTableHeader {...props} />,
             Toolbar: (props) => (
               /* ----------------------- Grid Container for the Toolbar for the Table ------------------------ */
               <Grid
@@ -597,15 +587,7 @@ export default function CooldownPlanner(props) {
                   </Grid> */}
                   {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <TextField
-                      sx={{ minWidth: 200, width: "100%" }}
-                      size="small"
-                      select
-                      value={currentBoss}
-                      onChange={(e) => changeBoss(e.target.value)}
-                      // label={t("CooldownPlanner.TableLabels.BossSelectorLabel")}
-                      disabled={currentRaid === "" ? true : false}
-                    >
+                    <TextField sx={{ minWidth: 200, width: "100%" }} size="small" select value={currentBoss} onChange={(e) => changeBoss(e.target.value)} disabled={currentRaid === "" ? true : false}>
                       {bossList
                         .filter((obj) => {
                           return obj.zoneID === currentRaid;
@@ -644,13 +626,14 @@ export default function CooldownPlanner(props) {
                       })}
                     </TextField>
                   </Grid>
-
+                  {/* // TODO: Localize */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <Button key={8} variant="outlined" color="primary" onClick={handleAddPlanDialogClickOpen}>
                       Add Plan
                     </Button>
                   </Grid>
 
+                  {/* // TODO: Localize & fix need for theme here */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <StyledEngineProvider injectFirst>
                       <ThemeProvider theme={deleteTheme}>
