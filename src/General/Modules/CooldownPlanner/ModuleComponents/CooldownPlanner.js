@@ -3,7 +3,6 @@ import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "@materia
 import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search } from "@mui/icons-material";
 import { Button, TextField, MenuItem, Paper, Grid } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
-import makeStyles from "@mui/styles/makeStyles";
 import { bossList } from "../Data/CooldownPlannerBossList";
 import { useTranslation } from "react-i18next";
 import { localizationFR } from "locale/fr/TableLocale";
@@ -30,26 +29,6 @@ import CooldownTimeRender from "./RenderComponents/CooldownTImeRender";
 import NoteEdit from "./EditComponents/NoteEdit";
 import { CooldownPlannerTheme, deleteTheme } from "./Styles/CooldownPlannerTheme";
 import { TableStyles } from "./Styles/TableStyles";
-
-const useStyles = makeStyles(() => ({
-  formControl: {
-    // whiteSpace: "nowrap",
-    lineHeight: "normal",
-    width: "100%",
-  },
-  textFieldFontSize: {
-    fontSize: 12,
-    textAlign: "center",
-  },
-
-  selectFontSize: {
-    MuiInputBase: {
-      root: {
-        fontSize: 12,
-      },
-    },
-  },
-}));
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
