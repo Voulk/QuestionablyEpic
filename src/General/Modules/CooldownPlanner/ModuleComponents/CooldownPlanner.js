@@ -11,7 +11,6 @@ import { localizationEN } from "locale/en/TableLocale";
 import { localizationRU } from "locale/ru/TableLocale";
 import { localizationCH } from "locale/ch/TableLocale";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
-import ls from "local-storage";
 import Cooldowns from "../CooldownObject/CooldownObject";
 import AddPlanDialog from "./AddPlanDialog";
 import DeletePlanDialog from "./DeletePlanDialog";

@@ -3,9 +3,9 @@ import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { classColoursJS } from "../../Functions/ClassColourFunctions";
 
-export default function RenderName(rowData, name, characterClass) {
+export default function NameRender(rowData, name, characterClass) {
   /* -------------------------------- Handles no name defined -------------------------------- */
-  if (rowData.name === "" || rowData.name === undefined) {
+  if (rowData[name] === "" || rowData[name] === undefined) {
     return null;
   }
 
