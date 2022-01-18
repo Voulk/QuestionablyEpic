@@ -29,7 +29,7 @@ export default function CastTextField(rowData, cooldown) {
     return icon;
   };
 
-  /* -------------------------------- Handles no cooldowns entered -------------------------------- */
+  /* -------------------------------- Handles no cooldowns defined -------------------------------- */
   if (rowData[cooldown] === "" || rowData[cooldown] === undefined) {
     return null;
   }
@@ -43,7 +43,15 @@ export default function CastTextField(rowData, cooldown) {
           alt={getTranslatedSpellName(rowData[cooldown])}
         />
       </a>
-      <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
+      <Typography
+        align="center"
+        style={{
+          fontSize: 12,
+          lineHeight: "normal",
+          textAlign: "center",
+          // width: "100%",
+        }}
+      >
         {getTranslatedSpellName(rowData[cooldown])}
       </Typography>
     </div>

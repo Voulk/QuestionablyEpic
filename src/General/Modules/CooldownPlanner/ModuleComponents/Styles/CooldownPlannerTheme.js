@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material/styles";
+import { red } from "@mui/material/colors";
 
 export const CooldownPlannerTheme = createTheme({
   palette: {
@@ -82,5 +83,11 @@ export const CooldownPlannerTheme = createTheme({
         },
       },
     },
+  },
+});
+
+export const deleteTheme = createTheme({
+  palette: {
+    primary: red,
   },
 });
