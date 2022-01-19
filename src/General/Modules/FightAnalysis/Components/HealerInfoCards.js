@@ -5,7 +5,6 @@ import classicons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons
 import talentIcons from "../../CooldownPlanner/Functions/IconFunctions/TalentIcons";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import { useTranslation } from "react-i18next";
-// import { getItemIcon } from "../../../Engine/ItemUtilities";
 import "./HealerCardInfo.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { STATPERONEPERCENT } from "../../../Engine/STAT";

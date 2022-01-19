@@ -5,10 +5,7 @@ import { Button, TextField, MenuItem, Paper, Grid } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
 import { bossList } from "../Data/CooldownPlannerBossList";
 import { useTranslation } from "react-i18next";
-import { localizationFR } from "locale/fr/TableLocale";
-import { localizationEN } from "locale/en/TableLocale";
-import { localizationRU } from "locale/ru/TableLocale";
-import { localizationCH } from "locale/ch/TableLocale";
+import { getTableLocale } from "locale/GetTableLocale";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
 import Cooldowns from "../CooldownObject/CooldownObject";
 import AddPlanDialog from "./AddPlanDialog";
@@ -447,19 +444,6 @@ export default function CooldownPlanner(props) {
     props.update(data);
   }, [data]);
 
-  /* ------- Sets the localization of the table based on the users selected language in i18 ------- */
-  let curLang = () => {
-    if (currentLanguage === "en") {
-      return localizationEN;
-    } else if (currentLanguage === "ru") {
-      return localizationRU;
-    } else if (currentLanguage === "ch") {
-      return localizationCH;
-    } else if (currentLanguage === "fr") {
-      return localizationFR;
-    }
-  };
-
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={CooldownPlannerTheme}>
@@ -513,7 +497,7 @@ export default function CooldownPlanner(props) {
             paging: false,
           }}
           /* ------- In built table text is localized via this function and the TableLocale.js files ------ */
-          localization={curLang()}
+          localization={getTableLocale()}
           /* --------------------------------- Customized Table Components -------------------------------- */
           components={{
             Container: (props) => <Paper {...props} elevation={0} />,

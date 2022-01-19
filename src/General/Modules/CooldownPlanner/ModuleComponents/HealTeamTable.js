@@ -2,29 +2,15 @@ import React, { forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar } from "@material-table/core";
 //prettier-ignore
 import { AddBox, ArrowDownward, Check, ChevronLeft, ChevronRight, Clear, DeleteOutline, Edit, FilterList, FirstPage, LastPage, Remove, SaveAlt, Search, ViewColumn } from "@mui/icons-material";
-import { Select, TextField, InputLabel, FormControl, Paper } from "@mui/material";
+import { TextField, Paper } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
-import makeStyles from "@mui/styles/makeStyles";
 import classIcons from "../Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { classMenus } from "../Menus/ClassMenuItems";
 import { useTranslation } from "react-i18next";
-import { localizationFR } from "locale/fr/TableLocale";
-import { localizationEN } from "locale/en/TableLocale";
-import { localizationRU } from "locale/ru/TableLocale";
-import { localizationCH } from "locale/ch/TableLocale";
+import { getTableLocale } from "locale/GetTableLocale";
 import ls from "local-storage";
 import { CooldownPlannerTheme } from "./Styles/CooldownPlannerTheme";
-
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    whiteSpace: "nowrap",
-    width: "100%",
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-}));
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -47,9 +33,7 @@ const tableIcons = {
 };
 
 export default function HealTeam() {
-  const classes = useStyles();
-  const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.language;
+  const { t } = useTranslation();
 
   let columns = [
     /* ------------------------------------- Healer Name Column ------------------------------------- */
@@ -191,7 +175,7 @@ export default function HealTeam() {
               </div>
             ),
           }}
-          localization={curLang()}
+          localization={getTableLocale()}
           editable={{
             onRowAdd: (newData) =>
               new Promise((resolve, reject) => {
