@@ -3,7 +3,7 @@ import MaterialTable, { MTableToolbar } from "@material-table/core";
 //prettier-ignore
 import { AddBox, ArrowDownward, Check, ChevronLeft, ChevronRight, Clear, DeleteOutline, Edit, FilterList, FirstPage, LastPage, Remove, SaveAlt, Search, ViewColumn } from "@mui/icons-material";
 import { TextField, Paper } from "@mui/material";
-import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
 import classIcons from "../Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { classMenus } from "../Menus/ClassMenuItems";
@@ -105,19 +105,6 @@ export default function HealTeam() {
   /* ---------------------------------- Update the Local Storage ---------------------------------- */
   let updateStorage = (props) => {
     ls.set("healerInfo", props);
-  };
-
-  /* --------------------------- Current Language for Table localization -------------------------- */
-  let curLang = () => {
-    if (currentLanguage === "en") {
-      return localizationEN;
-    } else if (currentLanguage === "ru") {
-      return localizationRU;
-    } else if (currentLanguage === "ch") {
-      return localizationCH;
-    } else if (currentLanguage === "fr") {
-      return localizationFR;
-    }
   };
 
   return (
