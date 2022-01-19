@@ -234,7 +234,7 @@ class App extends Component {
   /* ----------------------------- Logout Handler ----------------------------- */
   userLogout() {
     // Do other stuff later.
-    this.setState({ playerLoginID: 0 });
+    this.setState({ playerLoginID: 0 }); 
     this.setState({ playerBattleTag: "" });
     ls.remove("id");
     ls.remove("btag");
