@@ -69,14 +69,16 @@ export const MONKSPELLS = {
             console.log("Running Faeline Stomp") 
         }
     }],
-    "Smite": [{
-        type: "damage",
-        castTime: 1.5,
-        cost: 200,
-        coeff: 0.497025, // 0.47 x 1.5 (smite rank 2) x 0.75 (smite aura nerf) x 0.94 (disc aura nerf)
-        cooldown: 0,
-        atoneOverheal: 0.15,
-        secondaries: ['crit', 'vers'],
+    "Renewing Mist": [{
+        type: "hot",
+        castTime: 0,
+        cost: 900,
+        coeff: 2.25, // 
+        tickRate: 2,
+        duration: 20,
+        cooldown: 9,
+        overheal: 0.07,
+        secondaries: ['crit', 'vers'], // + Haste
     }],
     "Schism": [{
         type: "damage",
