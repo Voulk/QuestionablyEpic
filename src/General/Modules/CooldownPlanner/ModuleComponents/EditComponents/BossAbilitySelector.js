@@ -84,7 +84,10 @@ export default function BossAbilitySelector(props, currentBoss) {
                       borderRadius: 4,
                     })}
                   </a>
-                  {t("CooldownPlanner.BossAbilities." + key.guid)}
+                  {
+                    // if no translation use english
+                    key.name[currentLanguage] === "" ? key.name["en"] : key.name[currentLanguage]
+                  }
                 </MenuItem>
               );
             })}
