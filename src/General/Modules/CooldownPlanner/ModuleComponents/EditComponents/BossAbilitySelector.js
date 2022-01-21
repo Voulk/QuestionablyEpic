@@ -66,16 +66,16 @@ export default function BossAbilitySelector(props, currentBoss) {
             props.onChange(e.target.value);
           }}
         >
-          {bossAbilities
+          {bossAbilities[currentBoss]
             .filter((obj) => {
-              return obj.bossID === currentBoss && obj.cooldownPlannerActive === true;
+              return obj.cooldownPlannerActive === true;
             })
             .map((key, i, arr) => {
               let lastItem = i + 1 === arr.length ? false : true;
               return (
                 <MenuItem divider={lastItem} key={i} value={key.guid}>
                   <a data-wowhead={"spell=" + key.guid + "&domain=" + currentLanguage}>
-                    {bossAbilityIcons(key.guid, {
+                    {bossAbilityIcons(key.guid, currentBoss, {
                       height: 20,
                       width: 20,
                       margin: "0px 4px 0px 0px",
