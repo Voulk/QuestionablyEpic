@@ -14,6 +14,7 @@ export const bossList = [
       de: "Der Tarragrue",
     },
     zoneID: 2450,
+    icon: require("Images/Bosses/SanctumOfDomination/TheTarragrue/Icons/achievement_raid_torghast_tarragrue.jpg").default,
   },
   {
     DungeonEncounterID: 2433,
@@ -26,6 +27,7 @@ export const bossList = [
       de: "Das Auge des Kerkermeisters",
     },
     zoneID: 2450,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/achievement_raid_torghast_theeyeofthejailer.jpg").default,
   },
   {
     DungeonEncounterID: 2429,
@@ -38,6 +40,7 @@ export const bossList = [
       de: "Die Neun",
     },
     zoneID: 2450,
+    icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/achievement_raid_torghast_thenine.jpg").default,
   },
   {
     DungeonEncounterID: 2432,
@@ -50,6 +53,7 @@ export const bossList = [
       de: "Überrest von Ner'zhul",
     },
     zoneID: 2450,
+    icon: require("Images/Bosses/SanctumOfDomination/RemnantOfNerzhul/Icons/achievement_raid_torghast_shadowscourge_prisonofnerzhul.jpg").default,
   },
   {
     DungeonEncounterID: 2434,
@@ -62,6 +66,7 @@ export const bossList = [
       de: "Seelenfetzer Dormazain",
     },
     zoneID: 2450,
+    icon: require("Images/Bosses/SanctumOfDomination/SoulrenderDormazain/Icons/achievement_raid_torghast_soulrenderdormazain.jpg").default,
   },
   {
     DungeonEncounterID: 2430,
@@ -74,6 +79,7 @@ export const bossList = [
       de: "Leidensschmied Raznal",
     },
     zoneID: 2450,
+    icon: require("Images/Bosses/SanctumOfDomination/PainsmithRaznal/Icons/achievement_raid_torghast_painsmithraznal.jpg").default,
   },
   {
     DungeonEncounterID: 2436,
@@ -86,6 +92,7 @@ export const bossList = [
       de: "Wächter der Ersten",
     },
     zoneID: 2450,
+    icon: require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/Icons/achievement_raid_torghast_guardianofthefirstones.jpg").default,
   },
   {
     DungeonEncounterID: 2431,
@@ -98,6 +105,7 @@ export const bossList = [
       de: "Fatescribe Roh-Kalo",
     },
     zoneID: 2450,
+    icon: require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/Icons/achievement_raid_torghast_fatescriberoh-talo.jpg").default,
   },
   {
     DungeonEncounterID: 2422,
@@ -110,6 +118,7 @@ export const bossList = [
       de: "Kel'Thuzad",
     },
     zoneID: 2450,
+    icon: require("Images/Bosses/SanctumOfDomination/Kelthuzad/Icons/achievement_raid_torghast_kel-thuzad.jpg").default,
   },
   {
     DungeonEncounterID: 2435,
@@ -122,6 +131,7 @@ export const bossList = [
       de: "Sylvanas Windläufer",
     },
     zoneID: 2450,
+    icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/achievement_raid_torghast_sylvanaswindrunner.jpg").default,
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -139,6 +149,7 @@ export const bossList = [
       de: "Aufmerksamer Wächter",
     },
     zoneID: 2481,
+    icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_progenitor_defensewall_boss.jpg").default,
   },
   {
     DungeonEncounterID: 2542,
@@ -151,6 +162,7 @@ export const bossList = [
       de: "Skolex, der unersättliche Räuber",
     },
     zoneID: 2481,
+    icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_progenium_devourer_worm.jpg").default,
   },
   {
     DungeonEncounterID: 2553,
@@ -163,6 +175,7 @@ export const bossList = [
       de: "Konstrukteur Xy'mox",
     },
     zoneID: 2481,
+    icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_broker_incursion.jpg").default,
   },
   {
     DungeonEncounterID: 2540,
@@ -175,6 +188,7 @@ export const bossList = [
       de: "Dausegne, das gefallene Orakel",
     },
     zoneID: 2481,
+    icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_dominated_progenitor_bot.jpg").default,
   },
   {
     DungeonEncounterID: 2544,
@@ -187,6 +201,7 @@ export const bossList = [
       de: "Prototypenpantheon",
     },
     zoneID: 2481,
+    icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_proto_primus.jpg").default,
   },
   {
     DungeonEncounterID: 2539,
@@ -199,6 +214,7 @@ export const bossList = [
       de: "Lihuvim, der oberste Architekt",
     },
     zoneID: 2481,
+    icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_terrestrial_keeper.jpg").default,
   },
   {
     DungeonEncounterID: 2529,
@@ -211,6 +227,7 @@ export const bossList = [
       de: "Halondrus der Rückgewinner",
     },
     zoneID: 2481,
+    icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_progenium_keeper.jpg").default,
   },
   {
     DungeonEncounterID: 2546,
@@ -223,6 +240,7 @@ export const bossList = [
       de: "Anduin Wrynn",
     },
     zoneID: 2481,
+    icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_anduin.jpg").default,
   },
   {
     DungeonEncounterID: 2543,
@@ -235,6 +253,7 @@ export const bossList = [
       de: "Lords des Schreckens",
     },
     zoneID: 2481,
+    icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_dreadlord_duo.jpg").default,
   },
   {
     DungeonEncounterID: 2549,
@@ -247,6 +266,7 @@ export const bossList = [
       de: "Rygelon",
     },
     zoneID: 2481,
+    icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_dominated_constellar.jpg").default,
   },
   {
     DungeonEncounterID: 2537,
@@ -259,5 +279,6 @@ export const bossList = [
       de: "Zovaal, der Kerkermeister",
     },
     zoneID: 2481,
+    icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_jailer.jpg").default,
   },
 ];
