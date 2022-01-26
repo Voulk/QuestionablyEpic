@@ -19,6 +19,11 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
 
   } else if (effectName === "Effect2") {
   }
+  else if (effectName === "Genesis Lathe") {
+    const effectValue = getProcessedValue(119.5423, -8, itemLevel) * player.getStatPerc("Versatility")
+    console.log(effectValue) 
+    bonus_stats.hps = effectValue/40 * 0.9;
+  }
 
   return bonus_stats;
 }
