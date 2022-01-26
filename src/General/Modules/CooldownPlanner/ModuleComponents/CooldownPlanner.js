@@ -132,7 +132,7 @@ export default function CooldownPlanner(props) {
       width: "8%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
-      render: (rowData) => BossAbilityRender(rowData),
+      render: (rowData) => BossAbilityRender(rowData, currentBoss),
       editComponent: (props) => BossAbilitySelector(props, currentBoss),
     },
 
@@ -528,25 +528,23 @@ export default function CooldownPlanner(props) {
                     </Button>
                   </Grid>
                   {/* ---------------------------------- Raid Selection Drop Down ---------------------------------- */}
-                  {/* <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small">
-                      <InputLabel id="RaidSelector">{t("CooldownPlanner.TableLabels.RaidSelectorLabel")}</InputLabel>
-                      <Select
-                        labelId="RaidSelector"
-                        value={currentRaid}
-                        onChange={(e) => setCurrentRaid(e.target.value)}
-                        label={t("CooldownPlanner.TableLabels.RaidSelectorLabel")}
-                      >
-                        {rl
-                          .map((key, i, arr) => (
-                            <MenuItem key={"RS" + i} value={key.zoneID}>
-                              {key.raidName}
-                            </MenuItem>
-                          ))
-                          }
-                      </Select>
-                    </FormControl>
-                  </Grid> */}
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <TextField
+                      labelId="RaidSelector"
+                      select
+                      value={currentRaid}
+                      onChange={(e) => setCurrentRaid(e.target.value)}
+                      label={t("CooldownPlanner.TableLabels.RaidSelectorLabel")}
+                      size="small"
+                      sx={{ minWidth: 200, width: "100%" }}
+                    >
+                      {[2450, 2481].map((key, i, arr) => (
+                        <MenuItem key={"RS" + i} value={key}>
+                          {key}
+                        </MenuItem>
+                      ))}
+                    </TextField>
+                  </Grid>
                   {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <TextField sx={{ minWidth: 200, width: "100%" }} size="small" select value={currentBoss} onChange={(e) => changeBoss(e.target.value)} disabled={currentRaid === "" ? true : false}>
@@ -559,7 +557,7 @@ export default function CooldownPlanner(props) {
                           return (
                             <MenuItem divider={lastItem} key={"BS" + i} value={key.DungeonEncounterID}>
                               {bossIcons(key.DungeonEncounterID)}
-                              {t("BossNames." + key.ID)}
+                              {key.name[currentLanguage]}
                             </MenuItem>
                           );
                         })}
