@@ -5,9 +5,8 @@ import bossAbilityIcons from "../../Functions/IconFunctions/BossAbilityIcons";
 import { bossAbilities } from "../../Data/CooldownPlannerBossAbilityList";
 
 const iconStyle = {
-  height: 30,
-  width: 30,
-  margin: "0px 4px 0px 0px",
+  height: 22,
+  width: 22,
   verticalAlign: "middle",
   border: "1px solid #595959",
   borderRadius: 4,

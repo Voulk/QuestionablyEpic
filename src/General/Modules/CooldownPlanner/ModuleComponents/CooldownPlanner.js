@@ -162,7 +162,7 @@ export default function CooldownPlanner(props) {
     {
       title: t("Name") + " 1",
       field: "name",
-      width: "6%",
+      width: "5%",
       cellStyle: TableStyles.cellStyle.thinRightBorder,
       headerStyle: TableStyles.headerStyle,
       /* ------------------------ Renders the healer name outside of Edit Mode. ----------------------- */
@@ -186,7 +186,7 @@ export default function CooldownPlanner(props) {
       /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
       title: t("Cooldown") + " 1",
       field: "Cooldown",
-      width: "8%",
+      width: "9%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
@@ -221,7 +221,7 @@ export default function CooldownPlanner(props) {
     {
       title: t("Name 2"),
       field: "name1",
-      width: "6%",
+      width: "5%",
       cellStyle: TableStyles.cellStyle.thinRightBorder,
       headerStyle: TableStyles.headerStyle,
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
@@ -245,7 +245,7 @@ export default function CooldownPlanner(props) {
       /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
       title: t("Cooldown") + " 2",
       field: "Cooldown1",
-      width: "8%",
+      width: "9%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
@@ -280,7 +280,7 @@ export default function CooldownPlanner(props) {
     {
       title: t("Name") + " 3",
       field: "name2",
-      width: "6%",
+      width: "5%",
       cellStyle: TableStyles.cellStyle.thinRightBorder,
       headerStyle: TableStyles.headerStyle,
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
@@ -303,7 +303,7 @@ export default function CooldownPlanner(props) {
       /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
       title: t("Cooldown") + " 3",
       field: "Cooldown2",
-      width: "8%",
+      width: "9%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
@@ -338,7 +338,7 @@ export default function CooldownPlanner(props) {
     {
       title: t("Name") + " 4",
       field: "name3",
-      width: "6%",
+      width: "5%",
       cellStyle: TableStyles.cellStyle.thinRightBorder,
       headerStyle: TableStyles.headerStyle,
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
@@ -361,7 +361,7 @@ export default function CooldownPlanner(props) {
       /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
       title: t("Cooldown") + " 4",
       field: "Cooldown3",
-      width: "8%",
+      width: "9%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
@@ -396,7 +396,7 @@ export default function CooldownPlanner(props) {
     {
       title: t("Name") + " 5",
       field: "name4",
-      width: "6%",
+      width: "5%",
       cellStyle: TableStyles.cellStyle.thinRightBorder,
       headerStyle: TableStyles.headerStyle,
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
@@ -419,7 +419,7 @@ export default function CooldownPlanner(props) {
       /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
       title: t("Cooldown") + " 5",
       field: "Cooldown4",
-      width: "8%",
+      width: "9%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
@@ -565,7 +565,6 @@ export default function CooldownPlanner(props) {
                   </Grid>
 
                   {/* ----------------------------------- Plan Selection Dropdown ---------------------------------- */}
-
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <TextField
                       sx={{ minWidth: 200, width: "100%" }}
@@ -611,7 +610,6 @@ export default function CooldownPlanner(props) {
                   </Grid>
 
                   {/* ----------------------------- ERT Note Button (Opens ERT Dialog) ----------------------------- */}
-
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <ExportERTDialog
                       variant="outlined"
