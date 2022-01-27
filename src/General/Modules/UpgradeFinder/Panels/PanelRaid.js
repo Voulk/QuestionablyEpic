@@ -189,32 +189,37 @@ export default function RaidGearContainer(props) {
     const secondDifficulty = difficulties.length === 2 ? difficulties[1] : -1;
 
     return (
-      encounterDB[1193]
+      encounterDB[1195]
         //.filter((key) => key === raidID)
         .map((key, i) => (
           <Grid item xs={12} key={"bossContainer-" + i}>
             <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
-              <Grid container justifyContent="center" alignItems="flex-start">
-                <Grid item style={{ alignSelf: "center" }}>
+              <Grid container>
+                <Grid item xs={12} sm="auto">
                   <div
                     style={{
                       width: 175,
-                      height: 181,
+                      height: "100%",
                       paddingLeft: 8,
-                      backgroundImage: `url(${UpgradeFinderBossImages(key)})`,
+                      // background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))", `url(${require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesBackground.png").default})`,
+                      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${
+                        require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesBackground.png").default
+                      })`,
                       backgroundRepeat: "no-repeat",
                       backgroundPosition: "center 60%",
                       backgroundSize: "auto 100%",
+                      // backgroundColor: "rgba(0,0,0,0.5)",
                     }}
                     className="container-UpgradeCards"
                   >
+                    <img src={UpgradeFinderBossImages(key)} style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", maxHeight: "90%", maxWidth: "90%" }} />
                     <Typography variant="h6" style={{ width: "100%" }} className="centered-UpgradeCards">
                       {t("BossNames." + key)}
                     </Typography>
                   </div>
                 </Grid>
                 <Divider orientation="vertical" flexItem />
-                <Grid item xs={12} sm container direction="column" style={{ padding: 8 }} spacing={1}>
+                <Grid item xs={12} sm container direction="row" style={{ padding: 8 }} spacing={1}>
                   <Grid item xs={12} container spacing={1}>
                     <Grid item xs={12}>
                       <Typography
