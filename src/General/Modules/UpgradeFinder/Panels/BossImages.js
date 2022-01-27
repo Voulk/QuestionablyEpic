@@ -29,27 +29,27 @@ export default function UpgradeFinderBossImages(props, gameType, other) {
       /* ---------------------------------------------------------------------------------------------- */
       /*                                   Sepulcher of the First Ones                                  */
       /* ---------------------------------------------------------------------------------------------- */
-      case 2435: // Vigilant Guardian
+      case 2458: // Vigilant Guardian
         return require("Images/Bosses/SepulcherOfTheFirstOnes/VigilantGuardian.png").default;
-      case 2442: // Skolex, the Insatiable Ravener
+      case 2465: // Skolex, the Insatiable Ravener
         return require("Images/Bosses/SepulcherOfTheFirstOnes/Skolex.png").default;
-      case 2439: // Artificer Xy'mox
+      case 2470: // Artificer Xy'mox
         return require("Images/Bosses/SepulcherOfTheFirstOnes/Xymox.png").default;
-      case 2439: // Prototype Pantheon
+      case 2460: // Prototype Pantheon
         return require("Images/Bosses/SepulcherOfTheFirstOnes/ProtoTypePantheon.png").default;
-      case 2444: // Dausegne, the Fallen Oracle
+      case 2459: // Dausegne, the Fallen Oracle
         return require("Images/Bosses/SepulcherOfTheFirstOnes/Dausegne.png").default;
-      case 2445: // Lihuvim, Principle Architect
+      case 2461: // Lihuvim, Principle Architect
         return require("Images/Bosses/SepulcherOfTheFirstOnes/Lihuvim.png").default;
-      case 2443: // Halondrus the Reclaimer
+      case 2463: // Halondrus the Reclaimer
         return require("Images/Bosses/SepulcherOfTheFirstOnes/Halondrus.png").default;
-      case 2446: // Anduin Wrynn
+      case 2469: // Anduin Wrynn
         return require("Images/Bosses/SepulcherOfTheFirstOnes/Anduin.png").default;
-      case 2447: // Lords of Dread
+      case 2457: // Lords of Dread
         return require("Images/Bosses/SepulcherOfTheFirstOnes/LordsOfDread.png").default;
-      case 2440: // Rygelon
+      case 2467: // Rygelon
         return require("Images/Bosses/SepulcherOfTheFirstOnes/Rygelon.png").default;
-      case 2441: // The Jailer
+      case 2464: // The Jailer
         return require("Images/Bosses/SepulcherOfTheFirstOnes/Jailer.png").default;
       case 999: // Bind on Equips
         return require("Images/Bosses/BOE.png").default;

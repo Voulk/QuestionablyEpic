@@ -189,7 +189,7 @@ export default function RaidGearContainer(props) {
     const secondDifficulty = difficulties.length === 2 ? difficulties[1] : -1;
 
     return (
-      encounterDB[1193]
+      encounterDB[1195]
         //.filter((key) => key === raidID)
         .map((key, i) => (
           <Grid item xs={12} key={"bossContainer-" + i}>

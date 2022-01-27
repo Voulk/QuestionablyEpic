@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     borderRight: `1px solid ${theme.palette.divider}`,
   },
   raidHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/Bosses/SanctumOfDomination/SanctumArt.png").default})`,
+    backgroundImage: `url(${require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesHeader.png").default})`,
     borderRadius: "4px 0px 0px 4px",
     // whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
@@ -258,14 +258,12 @@ export default function UpgradeFinderResults(props) {
                   }
                   {...a11yProps(2)}
                 />
-                {/* Tazavesh */}
-                <Tab className={classes.tazaveshStyle} label={t("DungeonNames.1194")} {...a11yProps(3)} />
                 {/* PVP */}
-                <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(4)} />
+                <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(3)} />
                 {/* World Bosses */}
-                <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(5)} />
+                <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(4)} />
                 {/* Slots */}
-                <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(6)} />
+                <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(5)} />
               </Tabs>
             </AppBar>
           </Grid>
@@ -315,26 +313,9 @@ export default function UpgradeFinderResults(props) {
             </TabPanel>
           </Grid>
 
-          {/* Tazavesh */}
-          <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={3}>
-              <div className={classes.panel}>
-                <Grid container>
-                  <TazaveshGearContainer
-                    setDungeonDifficulty={props.setDungeonDifficulty}
-                    player={props.player}
-                    itemList={itemList}
-                    itemDifferentials={itemDifferentials}
-                    playerSettings={props.playerSettings}
-                  />
-                </Grid>
-              </div>
-            </TabPanel>
-          </Grid>
-
           {/* PVP */}
           <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={4}>
+            <TabPanel value={tabvalue} index={3}>
               <div className={classes.panel}>
                 <Grid container>
                   <PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
@@ -345,7 +326,7 @@ export default function UpgradeFinderResults(props) {
 
           {/* World Bosses */}
           <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={5}>
+            <TabPanel value={tabvalue} index={4}>
               <div className={classes.panel}>
                 <Grid container>
                   <WorldBossGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
@@ -356,7 +337,7 @@ export default function UpgradeFinderResults(props) {
 
           {/* Slots */}
           <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={6}>
+            <TabPanel value={tabvalue} index={5}>
               <div className={classes.panel}>
                 <Grid container>
                   <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
