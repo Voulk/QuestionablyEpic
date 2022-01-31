@@ -998,19 +998,6 @@ export const bossAbilities = {
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_missile.jpg").default,
     },
     {
-      // https://ptr.wowhead.com/spell=363399/encroaching-dominion
-      name: {
-        en: "Encroaching Dominion",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 363399,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/trade_engineering.jpg").default,
-    },
-    {
       // https://ptr.wowhead.com/spell=360964/staggering-barrage
       name: {
         en: "Staggering Barrage",
@@ -1051,13 +1038,537 @@ export const bossAbilities = {
     },
   ],
   /* ------------------------------------- Prototype Pantheon ------------------------------------- */
-  2544: [],
+  2544: [
+    {
+      // https://ptr.wowhead.com/spell=361607/burden-of-sin
+      name: {
+        en: "Burden of Sin",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 361607,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_artifact_powerofthedarkside.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=365041/windswept-wings
+      name: {
+        en: "Windswept Wings",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 365041,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_icon_wing06b.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=361579/withering-nova
+      name: {
+        en: "Withering Nova",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 361579,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animaardenweald_debuff.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=365269/humbling-strikes
+      name: {
+        en: "Humbling Strikes",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 365269,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_bastion_druid.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=361305/wild-stampede
+      name: {
+        en: "Wild Stampede",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 361305,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_druid_wildcharge.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=361498/withering
+      name: {
+        en: "Withering",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 361498,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_ardenweald_mage.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=362383/anima-bolt
+      name: {
+        en: "Anima Bolt",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 362383,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animaardenweald_missile.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=360618/necrosis
+      name: {
+        en: "Necrosis",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 360618,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_misc_bone_humanskull_01.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=362352/pinned
+      name: {
+        en: "Pinned",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 362352,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_staff_2h_progenitorraid_d_03.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=361689/wracking-pain
+      name: {
+        en: "Wracking Pain",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 361689,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animarevendreth_wave.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=361788/hand-of-destruction
+      name: {
+        en: "Hand of Destruction",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 361788,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shadow_unholystrength.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=364867/sinful-projection
+      name: {
+        en: "Sinful Projection",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 364867,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_revendreth_shaman.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=360259/gloom-bolt
+      name: {
+        en: "Sinful Projection",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 360259,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_necro_voodooblast.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=366232/animastorm
+      name: {
+        en: "Animastorm",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 366232,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animaardenweald_nova.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=360700/runecarvers-deathtouch
+      name: {
+        en: "Runecarver's Deathtouch",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 360700,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_necro_deathsdoor.jpg").default,
+    },
+  ],
   /* -------------------------------- Lihuvim, Principal Architect -------------------------------- */
-  2539: [],
+  2539: [
+    {
+      // https://ptr.wowhead.com/spell=363538/protoform-radiance
+      name: {
+        en: "Protoform Radiance",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 363538,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_nova.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=363088/cosmic-shift
+      name: {
+        en: "Cosmic Shift",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 363088,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_areadenial.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=363681/deconstructing-blast
+      name: {
+        en: "Deconstructing Blast",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 363681,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_progenitor_protoformsynthesis.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=365307/sentry-fire
+      name: {
+        en: "Sentry Fire",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 365307,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_missile.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=360159/unstable-mote
+      name: {
+        en: "Unstable Mote",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 360159,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_orb2.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=363795/deconstructing-energy
+      name: {
+        en: "Deconstructing Energy",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 363795,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_progenitor_protoformsynthesis.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=363018/protoform-cascade
+      name: {
+        en: "Protoform Cascade",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 363018,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_nova.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=364330/detonation
+      name: {
+        en: "Detonation",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 364330,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_areadenial.jpg").default,
+    },
+  ],
   /* ----------------------------------- Halondrus the Reclaimer ---------------------------------- */
-  2529: [],
+  2529: [
+    {
+      // https://ptr.wowhead.com/spell=362130/quaking-steps
+      name: {
+        en: "Quaking Steps",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 362130,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_misc_volatileearth.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=363416/fractal-energy
+      name: {
+        en: "Fractal Energy",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 363416,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_debuff.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=361677/earthbreaker-missiles
+      name: {
+        en: "Earthbreaker Missiles",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 361677,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_orb.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=365297/crushing-prism
+      name: {
+        en: "Crushing Prism",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 365297,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_progenitor_runevessel.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=362056/detonation
+      name: {
+        en: "Crushing Prism",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 362056,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_nova.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=362610/reclamation-form
+      name: {
+        en: "Reclamation Form",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 362610,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shaman_earthquake.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=359720/lightshatter-beam
+      name: {
+        en: "Lightshatter Beam",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 359720,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_beam.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=359233/lance
+      name: {
+        en: "Lance",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 359233,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_missile.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=365975/ephemeral-burst
+      name: {
+        en: "Ephemeral Burst",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 365975,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_broker_orb.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=361002/ephemeral-fissure
+      name: {
+        en: "Ephemeral Fissure",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 361002,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_enchant_dustvision.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=362025/aftershock
+      name: {
+        en: "Aftershock",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 362025,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_nature_earthquake.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=367082/subterranean-scan
+      name: {
+        en: "Subterranean Scan",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 367082,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_sandexplosion.jpg").default,
+    },
+  ],
   /* ---------------------------------------- Anduin Wrynn ---------------------------------------- */
-  2546: [],
+  2546: [
+    {
+      // https://ptr.wowhead.com/spell=361816/hopebreaker
+      name: {
+        en: "Hopebreaker",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 361816,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_debuff.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=366849/domination-word-pain
+      name: {
+        en: "Domination Word: Pain",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 361816,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shadow_shadowwordpain.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=365024/wicked-star
+      name: {
+        en: "Wicked Star",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 365024,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_priest_divinestar_shadow2.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=365853/befouled-eruption
+      name: {
+        en: "Befouled Eruption",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 365853,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_buff.jpg").default,
+    },
+    {
+      // https://ptr.wowhead.com/spell=362407/kingsmourne-hungers
+      name: {
+        en: "Kingsmourne Hungers",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: 362407,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_deathknight_hungeringruneblade.jpg").default,
+    },
+  ],
   /* --------------------------------------- Lords of Dread --------------------------------------- */
   2543: [],
   /* ------------------------------------------- Rygelon ------------------------------------------ */
@@ -1065,17 +1576,3 @@ export const bossAbilities = {
   /* ------------------------------------- The Jailer, Zovaal ------------------------------------- */
   2537: [],
 };
-
-// {
-//   // https://ptr.wowhead.com/spell=366692/refracted-blast
-//   name: {
-//     en: "Refracted Blast",
-//     cn: "",
-//     fr: "",
-//     ru: "",
-//     de: "",
-//   },
-//   guid: 366692,
-//   cooldownPlannerActive: true,
-//   icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/sha_ability_mage_firestarter_nightmare.jpg").default,
-// },
