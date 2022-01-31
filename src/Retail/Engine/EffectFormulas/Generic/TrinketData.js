@@ -1086,6 +1086,71 @@ export const trinket_data = [
       },
     ],
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Auxillary Attendant Chime                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // Activates a robot that applies an absorb for X every second for 10s. 
+    name: "Auxillary Attendant Chime", 
+    effects: [
+      {
+        coefficient: 0,
+        table: -0, 
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Reclaimer's Intensity Core                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    // On-use mana trinket. When the robot it summons dies, heal 5 allies for X over 10 seconds.
+    name: "Reclaimer's Intensity Core", 
+    effects: [
+      {
+        coefficient: 0,
+        table: -0, 
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Scars of Fraternal Strife                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // Jailer trinket. Effects unknown
+    name: "Scars of Fraternal Strife", 
+    effects: [
+      {
+        coefficient: 0,
+        table: -0, 
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        The First Sigil                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    // Signature ability reset and a massive vers buff on a 5 minute cooldown.
+    name: "The First Sigil", 
+    effects: [
+      {
+        coefficient: 0,
+        table: -0, 
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        The Lion's Roar                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    // 20% DR up to an absorb cap on a long cooldown. Cooldown is reduced by critical heals using the ppm system.
+    name: "The Lion's Roar", 
+    effects: [
+      {
+        coefficient: 0,
+        table: -0, 
+      },
+    ],
+  },
 ];
 
 /* ------------------------------------------- Unused ------------------------------------------- */
