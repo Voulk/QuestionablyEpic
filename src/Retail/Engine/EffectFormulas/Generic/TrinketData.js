@@ -1076,13 +1076,13 @@ export const trinket_data = [
     /*                                     Elegy of the Eternals                                      */
     /* ---------------------------------------------------------------------------------------------- */
     // This is a flat stat trinket that gives a bonus to allies in group.
-    // NYI
+    // This is currently heavily overbudget, or has a mechanic to it we're not yet aware of or able to test. 
     name: "Elegy of the Eternals", 
     effects: [
       {
-        coefficient: 0,
-        table: -7, 
-        averageStacks: 7.5, 
+        coefficient: 7.700482,
+        table: -8, // -9 but is currently using our -8. Should be -7.
+        sharedAmount: 0.1,
       },
     ],
   },
@@ -1091,11 +1091,17 @@ export const trinket_data = [
     /*                                 Auxillary Attendant Chime                                      */
     /* ---------------------------------------------------------------------------------------------- */
     // Activates a robot that applies an absorb for X every second for 10s. 
-    name: "Auxillary Attendant Chime", 
+    // This appears to scale with haste, but it'll need to be tested for a partial tick when it ends. 
+    // If not, it'll have varying levels of ticks based on your haste. 
+    name: "Auxillary Attendant Charm", 
     effects: [
       {
-        coefficient: 0,
-        table: -0, 
+        coefficient: 7.700482,
+        table: -8, // -9
+        ppm: 1.5,
+        efficiency: 1,
+        duration: 10,
+        tickRate: 1,
       },
     ],
   },
@@ -1133,8 +1139,10 @@ export const trinket_data = [
     name: "The First Sigil", 
     effects: [
       {
-        coefficient: 0,
-        table: -0, 
+        coefficient: 7.700482,
+        table: -8, // -9 
+        duration: 15,
+        cooldown: 300,
       },
     ],
   },
@@ -1146,8 +1154,11 @@ export const trinket_data = [
     name: "The Lion's Roar", 
     effects: [
       {
-        coefficient: 0,
-        table: -0, 
+        coefficient: 1075.665,
+        table: -8, // -9
+        ppm: 10,
+        baseCooldown: 600,
+        cdrPerProc: 3
       },
     ],
   },

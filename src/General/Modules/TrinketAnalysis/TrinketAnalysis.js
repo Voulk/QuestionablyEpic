@@ -85,7 +85,7 @@ export default function TrinketAnalysis(props) {
   }, []);
 
   const { t } = useTranslation();
-  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "LegionTimewalking"]);
+  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -143,7 +143,7 @@ export default function TrinketAnalysis(props) {
     }
   };
   const contentType = useSelector((state) => state.contentType);
-  const itemLevels = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
+  const itemLevels = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259, 265, 278];
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
     (key) =>
