@@ -26,6 +26,8 @@ import CooldownTimeRender from "./RenderComponents/CooldownTImeRender";
 import NoteEdit from "./EditComponents/NoteEdit";
 import { CooldownPlannerTheme, deleteTheme } from "./Styles/CooldownPlannerTheme";
 import { TableStyles } from "./Styles/TableStyles";
+import { cooldownDB } from "../Data/CooldownDB";
+import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -132,6 +134,14 @@ export default function CooldownPlanner(props) {
       width: "8%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
+      // Search function for abilities as they are stores as numbers. Works for all languages
+      customFilterAndSearch: (term, rowData) => {
+        let searchedTerm = bossAbilities[currentBoss]
+          .filter((object) => object.guid === rowData.bossAbility)
+          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
+          .flat();
+        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
+      },
       render: (rowData) => BossAbilityRender(rowData, currentBoss),
       editComponent: (props) => BossAbilitySelector(props, currentBoss),
     },
@@ -189,6 +199,14 @@ export default function CooldownPlanner(props) {
       width: "9%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
+      // Search function for abilities as they are stores as numbers. Works for all languages
+      customFilterAndSearch: (term, rowData) => {
+        let searchedTerm = cooldownDB
+          .filter((object) => object.guid === rowData.Cooldown)
+          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
+          .flat();
+        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
+      },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => CooldownRender(rowData, "Cooldown"),
       /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
@@ -248,6 +266,14 @@ export default function CooldownPlanner(props) {
       width: "9%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
+      // Search function for abilities as they are stores as numbers. Works for all languages
+      customFilterAndSearch: (term, rowData) => {
+        let searchedTerm = cooldownDB
+          .filter((object) => object.guid === rowData.Cooldown1)
+          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
+          .flat();
+        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
+      },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => CooldownRender(rowData, "Cooldown1"),
       /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
@@ -306,6 +332,14 @@ export default function CooldownPlanner(props) {
       width: "9%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
+      // Search function for abilities as they are stores as numbers. Works for all languages
+      customFilterAndSearch: (term, rowData) => {
+        let searchedTerm = cooldownDB
+          .filter((object) => object.guid === rowData.Cooldown2)
+          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
+          .flat();
+        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
+      },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => CooldownRender(rowData, "Cooldown2"),
       /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
@@ -364,6 +398,14 @@ export default function CooldownPlanner(props) {
       width: "9%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
+      // Search function for abilities as they are stores as numbers. Works for all languages
+      customFilterAndSearch: (term, rowData) => {
+        let searchedTerm = cooldownDB
+          .filter((object) => object.guid === rowData.Cooldown3)
+          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
+          .flat();
+        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
+      },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => CooldownRender(rowData, "Cooldown3"),
       /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
@@ -422,6 +464,14 @@ export default function CooldownPlanner(props) {
       width: "9%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
+      // Search function for abilities as they are stores as numbers. Works for all languages
+      customFilterAndSearch: (term, rowData) => {
+        let searchedTerm = cooldownDB
+          .filter((object) => object.guid === rowData.Cooldown4)
+          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
+          .flat();
+        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
+      },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => CooldownRender(rowData, "Cooldown4"),
       /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
