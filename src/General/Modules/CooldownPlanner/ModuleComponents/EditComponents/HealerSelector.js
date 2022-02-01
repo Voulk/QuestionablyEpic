@@ -85,7 +85,7 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
           {ls.get("healerInfo").map((key, i) => (
             <MenuItem divider style={{ color: classColoursJS(key.class) }} key={key.name} value={key.name}>
               <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
-                {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
+                {classIcons(key.class, { height: 20, width: 20, margin: "0px 5px 0px 0px", verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 })}
                 {key.name}
               </div>
             </MenuItem>
