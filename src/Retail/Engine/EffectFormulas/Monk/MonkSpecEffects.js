@@ -15,8 +15,12 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
 
   // Tier Sets
   if (name === "Mistweaver T28-2") {
-    // Holy Paladin Sepulcher tier set 2pc
-    bonus_stats.hps = 9999
+    // Mistweaver Monk Sepulcher tier set 2pc
+    bonus_stats.hps = 0
+  }
+  if (name === "Mistweaver T28-4") {
+    // Mistweaver Monk Sepulcher tier set 2pc
+    bonus_stats.hps = 0
   }
 
   else if (name === "Ancient Teachings of the Monastery") {
