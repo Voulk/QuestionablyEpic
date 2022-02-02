@@ -18,7 +18,7 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
     // Mistweaver Monk Sepulcher tier set 2pc
     bonus_stats.hps = 0
   }
-  if (name === "Mistweaver T28-4") {
+  else if (name === "Mistweaver T28-4") {
     // Mistweaver Monk Sepulcher tier set 2pc
     bonus_stats.hps = 0
   }

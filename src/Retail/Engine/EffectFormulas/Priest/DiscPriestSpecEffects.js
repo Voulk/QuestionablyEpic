@@ -12,16 +12,16 @@ export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
 
     */
   // Tier Sets
-  if (name === "Disc T27-2") {
+  if (name === "Disc T28-2") {
     // Discipline Sepulcher tier set 2pc
     
   }
-  else if (name === "Disc T27-4") {
+  else if (name === "Disc T28-4") {
     // Discipline Sepulcher tier set 4pc
 
   }
 
-  if (name === "Clarity of Mind") {
+  else if (name === "Clarity of Mind") {
     bonus_stats.hps = player.getRampID('clarityOfMind', contentType);
     //bonus_stats.hps = (contentType === "Raid" ? 1000 : 0);
 

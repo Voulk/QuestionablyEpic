@@ -11,9 +11,17 @@ const IDHEALINGSURGE = 20473;
 
 export const getShamanSpecEffect = (effectName, player, contentType) => {
   const bonusStats = {};
-  bonusStats.hps = -1;
 
-  if (effectName === PRIMAL_TIDE_CORE) {
+  // Tier Sets
+  if (effectName === "Shaman T28-2") {
+    // 
+    bonus_stats.hps = 0
+  }
+  else if (effectName === "Shaman T28-4") {
+    // 
+    bonus_stats.hps = 0
+  }
+  else if (effectName === PRIMAL_TIDE_CORE) {
     /**
      * every x riptides apply a new riptide to someone
      * if somebody already has ptc

@@ -11,11 +11,21 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
   let name = effectName;
 
+
+  // Tier Sets
+  if (name === "Druid T28-2") {
+    // 
+    bonus_stats.hps = 0
+  }
+  else if (name === "Druid T28-4") {
+    // 
+    bonus_stats.hps = 0
+  }
   /*
     The rejuv spreading legendary can best be expressed as a percentage increase to our rejuv healing. 
     TODO: When accepting log input we will eventually have to take into account those already wearing it since it changes our formula slightly.
     */
-  if (name === "Vision of Unending Growth") {
+  else if (name === "Vision of Unending Growth") {
     let rejuvHealingHPS = player.getSpellHPS(IDREJUV, contentType);
     let baseTicks = 1 + 5 * player.getStatPerc("Haste");
     let expectedTicksWithLegendary = baseTicks / (1 - 0.025 * baseTicks);
