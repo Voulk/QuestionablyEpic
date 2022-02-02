@@ -9,21 +9,19 @@ const ID_SOOTHING_BREATH = 343737;
 const ID_ENVELOPING_BREATH_ID = 325209;
 
 export const getMonkSpecEffect = (effectName, player, contentType) => {
-  let result = 0.0;
-  let name = effectName;
   let bonus_stats = {};
 
   // Tier Sets
-  if (name === "Mistweaver T28-2") {
+  if (effectName === "Mistweaver T28-2") {
     // Mistweaver Monk Sepulcher tier set 2pc
     bonus_stats.hps = 0
   }
-  else if (name === "Mistweaver T28-4") {
+  else if (effectName === "Mistweaver T28-4") {
     // Mistweaver Monk Sepulcher tier set 2pc
     bonus_stats.hps = 0
   }
 
-  else if (name === "Ancient Teachings of the Monastery") {
+  else if (effectName === "Ancient Teachings of the Monastery") {
     const essenceFontCPM = player.getSpellCPM(ID_ESSENCE_FONT, contentType);
     const dpsDuringDuration = 1250; // this is a 75% parse
     const multiplier = 2.5;
@@ -31,10 +29,10 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
     const expectedOverhealing = 0.3;
     
     bonus_stats.hps = buffUptime * multiplier * dpsDuringDuration * (1 - expectedOverhealing);
-  } else if (name === "Clouded Focus") {
+  } else if (effectName === "Clouded Focus") {
     // Do Math
     bonus_stats.hps = 0;
-  } else if (name === "Tear of Morning") {
+  } else if (effectName === "Tear of Morning") {
     const vivify = {
       cpm: player.getSpellCPM(ID_VIVIFY, contentType),
       hps: player.getSpellHPS(ID_VIVIFY, contentType),
@@ -55,7 +53,7 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
 
     bonus_stats.hps = HPSRem + HPSViv + HPSEnv;
     
-  } else if (name === "Yu'lon's Whisper") {
+  } else if (effectName === "Yu'lon's Whisper") {
     const thunderFocusTeaCPM = 1.8;
     const yulonSP = 1.8;
     const yulonExpectedOverhealing = 0.22;
@@ -63,7 +61,7 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
     const yulonOneHeal = yulonSP * player.getStatMultiplier("CRITVERS") * player.activeStats.intellect * (1 - yulonExpectedOverhealing);
 
     bonus_stats.hps = (yulonOneHeal * yulonTargets[contentType] * thunderFocusTeaCPM) / 60;
-  } else if (name === "Invoker's Delight") {
+  } else if (effectName === "Invoker's Delight") {
     // This is an attempt to model the extra casts you get in the Celestial window against it's mana cost.
     // It is an imperfect, but solid formula for a legendary that really only should be used in niche situations.
 
@@ -73,7 +71,7 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
 
     bonus_stats.hps = (celestialHPS - celestialManaCostPerSecond * player.getSpecialQuery("OneManaHealing", contentType)) * celestialUptime * 0.33;
 
-  } else if (name === "Sinister Teachings") {
+  } else if (effectName === "Sinister Teachings") {
 
     // Since SiT is the standard playstyle and conduit power is also tied to it
     // SiT math has been moved to a different file in order to keep the code DRY
@@ -81,7 +79,7 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
 
     bonus_stats.hps = netHPS;
 
-  } else if (name === "Call to Arms"){
+  } else if (effectName === "Call to Arms"){
     const envbHealing = player.getSpellHPS(ID_ENVELOPING_BREATH_ID, contentType);
     const celestialDuration = .5;
     const hotDuration = .5;
@@ -99,13 +97,13 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
     const chijiGOMHealing = player.getSpellHPS(ID_CHI_JI_GOM, contentType) * celestialDuration;
     
     bonus_stats.hps = ctaEnvbHealing + healingDueToBoost + chijiGOMHealing;
-  } else if(name === "Faeline Harmony") {
+  } else if(effectName === "Faeline Harmony") {
     //TODO this should be rougly 2x the stomps and 2x the ef healing from stomp (all queryable)
     //TODO also look at logs find up time on 8% healing buff accross the raid
     //TODO multiply that by hps zzz
 
     bonus_stats.hps = -1;
-  } else if (name === "Bountiful Brew") {
+  } else if (effectName === "Bountiful Brew") {
     //TODO just take bdb healing and bdb gust and do a nice * 1.5 
     //TODO figure out emeni healing boost since bb did proc soulbinds last time i checked
 
