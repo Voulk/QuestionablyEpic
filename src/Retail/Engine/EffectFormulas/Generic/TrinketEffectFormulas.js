@@ -9,6 +9,7 @@ import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 // import { STAT } from "../../../../General/Engine/STAT";
 import SPEC from "../../../../General/Engine/SPECS";
+import { duration } from "moment";
 
 export function getDiminishedValue(statID, procValue, baseStat) {
   const DRBreakpoints = STATDIMINISHINGRETURNS[statID.toUpperCase()];
@@ -849,6 +850,65 @@ else if (
   let effect = activeTrinket.effects[0];
 
   bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm[player.getSpec()], effect.duration) * effect.averageStacks;
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                          Infernal Writ                                         */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "The Lion's Roar"
+) {
+  let effect = activeTrinket.effects[0];
+
+  const expectedUsesMin = 1 / effect.baseCooldown * 60 + (effect.ppm * effect.cdrPerProc / effect.baseCooldown);
+
+  bonus_stats.hps = getProcessedValue(effect.coefficient, effect.table, itemLevel) * expectedUsesMin / 60;
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                          Infernal Writ                                         */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Elegy of the Eternals"
+) {
+  let effect = activeTrinket.effects[0];
+
+    // Titanic Ocular Gland increases your highest secondary by X. 
+    const itemSetHighestSecondary = getHighestStat(setStats);
+    const statRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel);
+    const statValue = getDiminishedValue(itemSetHighestSecondary, statRaw, setStats[itemSetHighestSecondary])
+
+    bonus_stats[itemSetHighestSecondary] = statValue;
+
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                  Auxillary Attendant Charm                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Auxillary Attendant Charm"
+) {
+  let effect = activeTrinket.effects[0];
+  const oneProc = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * (effect.duration / effect.tickRate * player.getStatPerc("Haste"))
+  console.log(oneProc);
+  bonus_stats.hps = (oneProc * effect.ppm * player.getStatPerc("Versatility") / 60);
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                          The First Sigil                                       */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "The First Sigil"
+) {
+  let effect = activeTrinket.effects[0];
+
+  const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
+  const trinketValue = getDiminishedValue('Versatility', trinketRaw, setStats.crit)
+
+  bonus_stats.versatility = (trinketValue * effect.duration) / effect.cooldown;
+  //bonus_stats.versatility *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
+
+  
   //
 }
   else {

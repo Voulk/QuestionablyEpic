@@ -85,7 +85,7 @@ export default function TrinketAnalysis(props) {
   }, []);
 
   const { t } = useTranslation();
-  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "LegionTimewalking"]);
+  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -96,6 +96,7 @@ export default function TrinketAnalysis(props) {
     const shadowlandsRaids = [
       1190, // Castle Nathria
       1193, // Sanctum of Domination
+      1195, // Sepulcher
     ];
     const shadowlandsDungeons = [
       -1, // General Dungeons
@@ -143,7 +144,7 @@ export default function TrinketAnalysis(props) {
     }
   };
   const contentType = useSelector((state) => state.contentType);
-  const itemLevels = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
+  const itemLevels = [200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259, 265, 272, 278];
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
     (key) =>
@@ -189,6 +190,7 @@ export default function TrinketAnalysis(props) {
   } else {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, gameType) < getHighestTrinketScore(finalDB, b, gameType) ? 1 : -1));
   }
+
 
   return (
     <div className={classes.root}>
