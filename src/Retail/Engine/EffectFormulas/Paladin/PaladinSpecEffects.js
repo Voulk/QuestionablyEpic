@@ -15,11 +15,11 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
   let name = effectName;
 
   // Tier Sets
-  if (name === "HPaladin T27-2") {
+  if (name === "HPaladin T28-2") {
     // Holy Paladin Sepulcher tier set 2pc
     
   }
-  else if (name === "Hpaladin T27-4") {
+  else if (name === "Hpaladin T28-4") {
     // Holy Paladin Sepulcher tier set 4pc
 
   }

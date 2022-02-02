@@ -13,7 +13,13 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
   let name = effectName;
   let bonus_stats = {};
 
-  if (name === "Ancient Teachings of the Monastery") {
+  // Tier Sets
+  if (name === "Mistweaver T28-2") {
+    // Holy Paladin Sepulcher tier set 2pc
+    bonus_stats.hps = 9999
+  }
+
+  else if (name === "Ancient Teachings of the Monastery") {
     const essenceFontCPM = player.getSpellCPM(ID_ESSENCE_FONT, contentType);
     const dpsDuringDuration = 1250; // this is a 75% parse
     const multiplier = 2.5;

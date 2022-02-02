@@ -11,6 +11,7 @@ import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEff
 import { allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { buildBestDomSet } from "../Utilities/DominationGemUtilities";
+import { getItemSet } from "BurningCrusade/Databases/ItemSetsDBRetail.js";
 
 /**
  * == Top Gear Engine ==
@@ -368,6 +369,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   let builtSet = itemSet.compileStats("Retail", userSettings);
   let setStats = builtSet.setStats;
   let gearStats = dupObject(setStats);
+  const setBonuses = builtSet.sets;
   let enchantStats = {};
   let evalStats = {};
   let hardScore = 0;
@@ -394,6 +396,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     leech: castModel.baseStatWeights["leech"],
   };
 
+
+
   // == Enchants and gems ==
   const enchants = enchantItems(bonus_stats, setStats.intellect, castModel);
 
@@ -416,9 +420,18 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // Each effect returns an object containing which stats it offers. Specific details on each effect can be found in the TrinketData, EffectData and EffectEngine files.
   // -- Disc note: On use trinkets and legendaries and handled further down in the ramps section. --
   let effectStats = [];
+  let effectList = [...itemSet.effectList];
+  // == Set Bonuses ==
+  // --- Item Set Bonuses ---
+  for (const set in setBonuses) {
+    if (setBonuses[set] > 1) {
+      effectList = effectList.concat(getItemSet(set, setBonuses[set]));
+    }
+  }
+
   //effectStats.push(bonus_stats);
-  for (var x = 0; x < itemSet.effectList.length; x++) {
-    const effect = itemSet.effectList[x];
+  for (var x = 0; x < effectList.length; x++) {
+    const effect = effectList[x];
     if (player.spec !== "Discipline Priest" || (player.spec === "Discipline Priest" && !effect.onUse && effect.type !== "spec legendary") || contentType === "Dungeon") {
       effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats));
     }
