@@ -1,3 +1,5 @@
+import { runHeal } from "./MonkSpellSequence";
+
 
 // This is the Mistweaver spell database. 
 // It contains information on every spell used in a ramp. Each spell is an array which means you can include multiple effects to code spells like Mindblast. 
@@ -119,6 +121,31 @@ export const MONKSPELLS = {
                 const buff = activeBuffs.filter(buff => buff.name === "Teachings of the Monastery")[0]
                 buff.stacks = Math.min(buff.stacks + 1, 3);
             }
+        }
+    }],
+    "Rising Sun Kick": [{
+        type: "damage",
+        damageType: "physical",
+        castTime: 0,
+        cost: 0,
+        coeff: 2.4446, // 1.438 x 1.7 (RSK Rank 2)
+        aura: 1.04, // AP -> SP conversion.
+        cooldown: 0,
+        secondaries: ['crit', 'vers'],
+    },
+    {
+        type: "special",
+        runFunc: (state) => {
+            // Rising Mist
+
+            // Apply heal to allies with ReM, EF or Enveloping Mist.
+            // ReM and EF can be double counted here, slightly inflating value.
+            // The addition of target markers in the buff list would solve this but isn't high priority.
+            const spell = { type: "heal", coeff: 0.28, overheal: 0.15, secondaries: ['crit', 'vers'], targets: 1} // TODO: Targets
+            runHeal(state, spell, "Rising Mist")
+
+            // Extend ReM, EF and Enveloping Mist HoTs. Mark down the extension 
+
         }
     }],
     "Penance": [{
