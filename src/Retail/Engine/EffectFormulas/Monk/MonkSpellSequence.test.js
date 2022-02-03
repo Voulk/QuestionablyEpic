@@ -12,14 +12,14 @@ describe("Test Sequences", () => {
     } */
     const activeStats = {
         intellect: 1,
-        haste: 0,
+        haste: 400,
         crit: 0,
         mastery: 0,
         versatility: 0,
         stamina: 0,
     }
 
-    const sequence = ["Renewing Mist", "Refreshing Jade Wind"];
+    const sequence = ["Refreshing Jade Wind"];
 
     test("Legendaries & Soulbinds", () => {
         runCastSequence(sequence, activeStats, {}, {});

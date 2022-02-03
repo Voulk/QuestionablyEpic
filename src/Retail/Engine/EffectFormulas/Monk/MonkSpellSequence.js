@@ -270,7 +270,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             healBuffs.forEach((buff) => {
             
                 const spell = buff.attSpell;
-                console.log(t + ": RJW Tick");
+                console.log(t + ": HoT Ticks");
                 let currentStats = {...stats};
                 currentStats = getCurrentStats(currentStats, activeBuffs)
     
@@ -279,7 +279,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.overheal) * healingMult * targetMult;
     
                 healing[buff.name] = (healing[buff.name] || 0) + healingVal; 
-                buff.next = buff.next + buff.tickRate;
+                buff.next = buff.next + (buff.tickRate / getHaste(currentStats));
     
             });
             activeBuffs = activeBuffs.filter(function (buff) {return t < buff.expiration});
@@ -398,8 +398,11 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                         activeBuffs.push({name: spellName, expiration: t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
                     }
                     else if (spell.buffType === "heal") {
-                        activeBuffs.push({name: spellName, expiration: t + spell.buffDuration, buffType: "heal", attSpell: spell,
-                            tickRate: spell.tickRate, next: t + spell.tickRate})
+                        const newBuff = {name: spellName, buffType: "heal", attSpell: spell,
+                            tickRate: spell.tickRate, next: t + (spell.tickRate / getHaste(currentStats))}
+                        newBuff['expiration'] = spell.hastedDuration ? t + (spell.buffDuration / getHaste(currentStats)) : t + spell.buffDuration
+                        console.log("Duration: " + newBuff['expiration']);
+                        activeBuffs.push(newBuff)
                     }
                     else {
                         activeBuffs.push({name: spellName, expiration: t + spell.castTime + spell.buffDuration});

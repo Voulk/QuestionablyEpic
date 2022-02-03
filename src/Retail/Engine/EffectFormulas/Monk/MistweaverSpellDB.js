@@ -76,7 +76,7 @@ export const MONKSPELLS = {
         cost: 900,
         coeff: 2.25, // 
         tickRate: 2,
-        duration: 20,
+        buffDuration: 20,
         cooldown: 9,
         overheal: 0.07,
         secondaries: ['crit', 'vers'], // + Haste
@@ -89,6 +89,7 @@ export const MONKSPELLS = {
         coeff: 0.116,
         tickRate: 0.75,
         buffDuration: 9,
+        hastedDuration: true,
         targets: 6,
         overheal: 0.4,
         secondaries: ['crit', 'vers'],
