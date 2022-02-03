@@ -19,7 +19,7 @@ describe("Test Sequences", () => {
         stamina: 0,
     }
 
-    const sequence = ["Refreshing Jade Wind"];
+    const sequence = ["Vivify", "Tiger Palm", "Tiger Palm"];
 
     test("Legendaries & Soulbinds", () => {
         runCastSequence(sequence, activeStats, {}, {});

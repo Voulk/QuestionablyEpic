@@ -401,7 +401,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                         const newBuff = {name: spellName, buffType: "heal", attSpell: spell,
                             tickRate: spell.tickRate, next: t + (spell.tickRate / getHaste(currentStats))}
                         newBuff['expiration'] = spell.hastedDuration ? t + (spell.buffDuration / getHaste(currentStats)) : t + spell.buffDuration
-                        console.log("Duration: " + newBuff['expiration']);
+
                         activeBuffs.push(newBuff)
                     }
                     else {
@@ -409,7 +409,9 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     }
                 }
                 else if (spell.type === "special") {
-                    state = spell.runFunc(state);
+                    
+                    spell.runFunc(state);
+                    console.log(state);
                 }
    
                 // This represents the next timestamp we are able to cast a spell. This is equal to whatever is higher of a spells cast time or the GCD.

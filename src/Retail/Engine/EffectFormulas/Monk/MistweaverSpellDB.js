@@ -94,6 +94,33 @@ export const MONKSPELLS = {
         overheal: 0.4,
         secondaries: ['crit', 'vers'],
     }],
+    "Tiger Palm": [{
+        type: "damage",
+        damageType: "physical",
+        castTime: 0,
+        cost: 0,
+        coeff: 0.27027, // 0.47 x 1.5 (smite rank 2) x 0.75 (smite aura nerf) x 0.94 (disc aura nerf)
+        aura: 1,
+        cooldown: 0,
+        secondaries: ['crit', 'vers'],
+    },
+    {
+        type: "special",
+        runFunc: (state) => {
+            // Apply 5 special Essence Font hots. These stack with existing EF hots.
+            const activeBuffs = state.activeBuffs;
+            const teachingsStacks = activeBuffs.filter(function (buff) {return buff.name === "Teachings of the Monastery"}).length;
+            if (teachingsStacks === 0) {
+                // Add buff
+                activeBuffs.push({name: "Teachings of the Monastery", buffType: "special", stacks: 1, expiration: 20})
+            }
+            else {
+                // Add stack of buff.
+                const buff = activeBuffs.filter(buff => buff.name === "Teachings of the Monastery")[0]
+                buff.stacks = Math.min(buff.stacks + 1, 3);
+            }
+        }
+    }],
     "Penance": [{
         type: "special",
         castTime: 0, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
