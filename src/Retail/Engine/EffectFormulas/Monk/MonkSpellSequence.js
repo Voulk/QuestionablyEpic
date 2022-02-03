@@ -241,6 +241,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits) => {
  */
 export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     console.log("Running cast sequence");
+
     let state = {activeBuffs: [],
                 hotApp: []}
 
@@ -258,10 +259,32 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     //const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, conduits);
     const spells = deepCopyFunction(MONKSPELLS)
     const seq = [...sequence];
-    const sequenceLength = 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 15; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const reporting = true; // A flag to report our sequences to console. Used for testing. 
-    console.log(seq);
+
     for (var t = 0; t < sequenceLength; t += 0.01) {
+
+        const healBuffs = activeBuffs.filter(function (buff) {return buff.buffType === "heal" && t >= buff.next})
+
+        if (healBuffs.length > 0) {
+            healBuffs.forEach((buff) => {
+            
+                const spell = buff.attSpell;
+                console.log(t + ": RJW Tick");
+                let currentStats = {...stats};
+                currentStats = getCurrentStats(currentStats, activeBuffs)
+    
+                const healingMult = getHealingMult(activeBuffs, t, buff.name, boonOfTheAscended, conduits); 
+                const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets || 1;
+                const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.overheal) * healingMult * targetMult;
+    
+                healing[buff.name] = (healing[buff.name] || 0) + healingVal; 
+                buff.next = buff.next + buff.tickRate;
+    
+            });
+            activeBuffs = activeBuffs.filter(function (buff) {return t < buff.expiration});
+        }
+
 
         // Check for and execute a purge the wicked tick if required.
         if (purgeTicks.length > 0 && t > purgeTicks[0]) {
@@ -319,8 +342,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
         if ((t > nextSpell && seq.length > 0))  {
             const spellName = seq.shift();
             const fullSpell = spells[spellName];
-            console.log("Casting: " + JSON.stringify(fullSpell))
-            console.log("Spell Name: " + spellName)
 
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
@@ -351,7 +372,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     const healingMult = getHealingMult(activeBuffs, t, spellName, boonOfTheAscended, conduits); 
                     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets || 1;
                     const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.overheal) * healingMult * targetMult;
-                    console.log(healingVal)
                     healing[spellName] = (healing[spellName] || 0) + healingVal; 
 
                 }
@@ -377,6 +397,10 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     if (spell.buffType === "stats") {
                         activeBuffs.push({name: spellName, expiration: t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
                     }
+                    else if (spell.buffType === "heal") {
+                        activeBuffs.push({name: spellName, expiration: t + spell.buffDuration, buffType: "heal", attSpell: spell,
+                            tickRate: spell.tickRate, next: t + spell.tickRate})
+                    }
                     else {
                         activeBuffs.push({name: spellName, expiration: t + spell.castTime + spell.buffDuration});
                     }
@@ -386,7 +410,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 }
    
                 // This represents the next timestamp we are able to cast a spell. This is equal to whatever is higher of a spells cast time or the GCD.
-                nextSpell += (spell.castTime / getHaste(currentStats));
+                nextSpell += spell.castTime > 0 ? (spell.castTime / getHaste(currentStats)) : 1.5 / getHaste(currentStats);
             });   
         }
     }

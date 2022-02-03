@@ -11,15 +11,15 @@ describe("Test Sequences", () => {
             stamina: 1900,
     } */
     const activeStats = {
-        intellect: 2050,
-        haste: 88,
-        crit: 650,
-        mastery: 400,
-        versatility: 400,
+        intellect: 1,
+        haste: 0,
+        crit: 0,
+        mastery: 0,
+        versatility: 0,
         stamina: 0,
     }
 
-    const sequence = ["Vivify", "Vivify", "Faeline Stomp"];
+    const sequence = ["Renewing Mist", "Refreshing Jade Wind"];
 
     test("Legendaries & Soulbinds", () => {
         runCastSequence(sequence, activeStats, {}, {});

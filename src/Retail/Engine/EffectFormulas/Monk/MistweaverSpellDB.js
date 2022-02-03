@@ -70,7 +70,8 @@ export const MONKSPELLS = {
         }
     }],
     "Renewing Mist": [{
-        type: "hot",
+        type: "buff",
+        buffType: "heal",
         castTime: 0,
         cost: 900,
         coeff: 2.25, // 
@@ -80,13 +81,16 @@ export const MONKSPELLS = {
         overheal: 0.07,
         secondaries: ['crit', 'vers'], // + Haste
     }],
-    "Schism": [{
-        type: "damage",
-        castTime: 1.5,
+    "Refreshing Jade Wind": [{
+        type: "buff",
+        buffType: "heal",
+        castTime: 0,
         cost: 0,
-        coeff: 1.41,
+        coeff: 0.116,
+        tickRate: 0.75,
         buffDuration: 9,
-        atoneOverheal: 0.25,
+        targets: 6,
+        overheal: 0.4,
         secondaries: ['crit', 'vers'],
     }],
     "Penance": [{
