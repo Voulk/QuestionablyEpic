@@ -141,8 +141,10 @@ export const MONKSPELLS = {
             // Apply heal to allies with ReM, EF or Enveloping Mist.
             // ReM and EF can be double counted here, slightly inflating value.
             // The addition of target markers in the buff list would solve this but isn't high priority.
-            const spell = { type: "heal", coeff: 0.28, overheal: 0.15, secondaries: ['crit', 'vers'], targets: 1} // TODO: Targets
-            runHeal(state, spell, "Rising Mist")
+            const rmHots = ["Renewing Mist", "Essence Font", "Enveloping Mist"]
+            const targetCount = state.activeBuffs.filter(function (buff) {return rmHots.includes(buff.name)}).length
+            const spell = { type: "heal", coeff: 0.28, overheal: 0.15, secondaries: ['crit', 'vers'], targets: targetCount} 
+            if (targetCount > 0) runHeal(state, spell, "Rising Mist")
 
             // Extend ReM, EF and Enveloping Mist HoTs. Mark down the extension 
 

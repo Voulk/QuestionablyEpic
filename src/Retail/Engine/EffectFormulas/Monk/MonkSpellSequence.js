@@ -269,7 +269,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
 
-        const healBuffs = activeBuffs.filter(function (buff) {return buff.buffType === "heal" && t >= buff.next})
+        const healBuffs = state.activeBuffs.filter(function (buff) {return buff.buffType === "heal" && state.t >= buff.next})
 
         if (healBuffs.length > 0) {
             healBuffs.forEach((buff) => {
@@ -277,8 +277,8 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 const spell = buff.attSpell;
 
                 let currentStats = {...stats};
-                currentStats = getCurrentStats(currentStats, activeBuffs)
-                runHeal(state, spell, spellName)
+                state.currentStats = getCurrentStats(currentStats, activeBuffs)
+                runHeal(state, spell, buff.name)
 
                 buff.next = buff.next + (buff.tickRate / getHaste(currentStats));
     
@@ -379,17 +379,17 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 // We'll track what kind of buff, and when it expires.
                 else if (spell.type === "buff") {
                     if (spell.buffType === "stats") {
-                        activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
+                        state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
                     }
                     else if (spell.buffType === "heal") {
                         const newBuff = {name: spellName, buffType: "heal", attSpell: spell,
                             tickRate: spell.tickRate, next: state.t + (spell.tickRate / getHaste(currentStats))}
                         newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
 
-                        activeBuffs.push(newBuff)
+                        state.activeBuffs.push(newBuff)
                     }
                     else {
-                        activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
+                        state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
                     }
                 }
                 else if (spell.type === "special") {
