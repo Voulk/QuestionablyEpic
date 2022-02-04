@@ -210,6 +210,12 @@ export const runHeal = (state, spell, spellName) => {
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
 
     if (checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
+        if (spellName == "Gust of Mists") {
+            const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
+            bonusMasteryProc.coeff += (0.42 * 1.04);
+            runHeal(state, bonusMasteryProc, "Gust of Mists (Bonedust Brew)");
+        }
+
         // Run duplicate heal.
         const bonedustHealing = healingVal * 0.5 * 0.704 // 268 conduit
         state.healingDone['Bonedust Brew'] = (state.healingDone['Bonedust Brew'] || 0) + bonedustHealing;
