@@ -89,7 +89,7 @@ const getCurrentStats = (statArray, buffs) => {
 }
 
 
-const getHaste = (stats) => {
+export const getHaste = (stats) => {
     return 1 + stats.haste / 32 / 100;
 }
 
@@ -258,15 +258,22 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
 
-        const healBuffs = state.activeBuffs.filter(function (buff) {return buff.buffType === "heal" && state.t >= buff.next})
+        const healBuffs = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "function") && state.t >= buff.next})
         
         if (healBuffs.length > 0) {
             healBuffs.forEach((buff) => {
-            
-                const spell = buff.attSpell;
                 let currentStats = {...stats};
                 state.currentStats = getCurrentStats(currentStats, activeBuffs)
-                runHeal(state, spell, buff.name)
+
+                if (buff.buffType === "heal") {
+                    const spell = buff.attSpell;
+                    runHeal(state, spell, buff.name)
+                }
+                else if (buff.buffType === "function") {
+                    const func = buff.attFunction;
+                    func(state);
+                }
+
 
                 buff.next = buff.next + (buff.tickRate / getHaste(currentStats));
 
@@ -365,6 +372,13 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     }
                     else if (spell.buffType === "heal") {
                         const newBuff = {name: spellName, buffType: "heal", attSpell: spell,
+                            tickRate: spell.tickRate, next: state.t + (spell.tickRate / getHaste(currentStats))}
+                        newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
+
+                        state.activeBuffs.push(newBuff)
+                    }
+                    else if (spell.buffType === "function") {
+                        const newBuff = {name: spellName, buffType: "function", attFunction: spell.function,
                             tickRate: spell.tickRate, next: state.t + (spell.tickRate / getHaste(currentStats))}
                         newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
 

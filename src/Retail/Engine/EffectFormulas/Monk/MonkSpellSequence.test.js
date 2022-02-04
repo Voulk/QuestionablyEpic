@@ -19,7 +19,7 @@ describe("Test Sequences", () => {
         stamina: 0,
     }
 
-    const sequence = ["Renewing Mist", "Renewing Mist", "Vivify"];
+    const sequence = ["Essence Font"];
 
     test("Legendaries & Soulbinds", () => {
         runCastSequence(sequence, activeStats, {}, {});

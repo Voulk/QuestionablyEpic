@@ -1,5 +1,5 @@
 import { buildDifferential } from "General/Modules/TopGear/Engine/TopGearEngineShared";
-import { runHeal } from "./MonkSpellSequence";
+import { runHeal, getHaste } from "./MonkSpellSequence";
 
 
 // This is the Mistweaver spell database. 
@@ -125,6 +125,30 @@ export const MONKSPELLS = {
         targets: 6,
         overheal: 0.4,
         secondaries: ['crit', 'vers'],
+    }],
+    "Essence Font": [{
+        type: "buff",
+        buffType: "function",
+        castTime: 3,
+        cost: 7.2,
+        tickRate: 0.1667,
+        buffDuration: 3,
+        hastedDuration: true,
+        function: function (state) {
+            // Essence Font Heal
+            const efDirect = { type: "heal", coeff: 0.472, overheal: 0.15, secondaries: ['crit', 'vers'], targets: 1}
+            runHeal(state, efDirect, "Essence Font")
+
+            // Essence Font HoT
+            const efHot = { type: "heal", coeff: 0.042, overheal: 0.3, secondaries: ['crit', 'vers'], duration: 8}
+            const newBuff = {name: "Essence Font (HoT)", buffType: "heal", attSpell: efHot,
+                tickRate: 2, next: state.t + (2 / getHaste(state.currentStats))}
+            newBuff['expiration'] = state.t + efHot.duration
+
+            state.activeBuffs.push(newBuff)
+
+
+        }
     }],
     "Tiger Palm": [{
         type: "damage",
