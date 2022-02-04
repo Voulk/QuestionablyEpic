@@ -17,14 +17,6 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
     return boonRamp + fiendRamp + miniRamp * 2;
 }
 
-/**  Extend all active atonements by @extension seconds. This is triggered by Evanglism / Spirit Shell. */
-const extendActiveAtonements = (atoneApp, timer, extension) => {
-    atoneApp.forEach((application, i, array) => {
-        if (application >= timer) {
-            array[i] = application + extension;
-        };
-    });
-}
 
 /** A spells damage multiplier. It's base damage is directly multiplied by anything the function returns.
  * @schism 25% damage buff to primary target if Schism debuff is active.
@@ -35,7 +27,7 @@ const extendActiveAtonements = (atoneApp, timer, extension) => {
 const getDamMult = (buffs, activeAtones, t, spellName, boonStacks, conduits) => {
     const sins = {0: 1.12, 1: 1.12, 2: 1.1, 3: 1.08, 4: 1.07, 5: 1.06, 6: 1.05, 7: 1.05, 8: 1.04, 9: 1.04, 10: 1.03}
     const schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.25 : 1; 
-    let mult = (activeAtones > 10 ? 1.03 : sins[activeAtones]) * schism
+    let mult = (activeAtones > 10 ? 1 : 1)
     if (discSettings.chaosBrand) mult = mult * 1.05;
     if (spellName === "Ascended Eruption") {
         if (conduits['Courageous Ascension']) mult = mult * (1 + boonStacks * 0.04);
@@ -231,6 +223,13 @@ export const runHeal = (state, spell, spellName) => {
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets || 1;
     const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.overheal) * healingMult * targetMult;
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
+
+    if (checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
+        // Run duplicate heal.
+        console.log("Bonedust Detected");
+        const bonedustHealing = healingVal * 0.5 * 0.704 // 268 conduit
+        state.healingDone['Bonedust Brew'] = (state.healingDone['Bonedust Brew'] || 0) + bonedustHealing;
+    }
 }
 
 /**
@@ -246,7 +245,7 @@ export const runHeal = (state, spell, spellName) => {
 export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     console.log("Running cast sequence");
 
-    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: {}}
+    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: {}, manaSpent: 0}
 
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
 
@@ -268,11 +267,12 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
 
         const healBuffs = state.activeBuffs.filter(function (buff) {return buff.buffType === "heal" && state.t >= buff.next})
-
+        
         if (healBuffs.length > 0) {
             healBuffs.forEach((buff) => {
             
                 const spell = buff.attSpell;
+                console.log(state.activeBuffs)
 
                 let currentStats = {...stats};
                 state.currentStats = getCurrentStats(currentStats, activeBuffs)
@@ -323,6 +323,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
         if ((state.t > nextSpell && seq.length > 0))  {
             const spellName = seq.shift();
             const fullSpell = spells[spellName];
+            state.manaSpent += fullSpell[0].cost;
 
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
@@ -334,7 +335,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             // and the absorb effect).
             fullSpell.forEach(spell => {
                 
-
                 // The spell is an atonement applicator. Add atonement expiry time to our array.
                 // The spell data will tell us whether to apply atonement at the start or end of the cast.
                 if (spell.atonement) {
@@ -349,13 +349,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 // The spell has a healing component. Add it's effective healing.
                 // Power Word: Shield is included as a heal, since there is no functional difference for the purpose of this calculation.
                 if (spell.type === 'heal') {
-                    
-                    /*
-                    const healingMult = getHealingMult(activeBuffs, t, spellName, conduits); 
-                    const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets || 1;
-                    const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.overheal) * healingMult * targetMult;
-                    healing[spellName] = (healing[spellName] || 0) + healingVal; 
-                    */
                     runHeal(state, spell, spellName)
                 }
                 
@@ -388,13 +381,12 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                         state.activeBuffs.push(newBuff)
                     }
                     else {
-                        state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
+                        state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration});
                     }
                 }
                 else if (spell.type === "special") {
                     
                     spell.runFunc(state);
-                    console.log(state);
                 }
    
                 // This represents the next timestamp we are able to cast a spell. This is equal to whatever is higher of a spells cast time or the GCD.
@@ -409,6 +401,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     console.log(state.healingDone);
     console.log(damageBreakdown);
+    console.log("Mana Spent: " + state.manaSpent * 50000 / 100)
     return sumValues(state.healingDone)
 
 }

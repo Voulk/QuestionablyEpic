@@ -30,7 +30,7 @@ export const MONKSPELLS = {
     "Vivify": [{
         type: "heal",
         castTime: 1.5,
-        cost: 1900,
+        cost: 3.8, // Mana cost as a percent. 
         coeff: 1.41,
         overheal: 0.15,
         secondaries: ['crit', 'vers'],
@@ -51,7 +51,7 @@ export const MONKSPELLS = {
     "Faeline Stomp": [{
         type: "damage",
         castTime: 0,
-        cost: 2000,
+        cost: 4.0,
         coeff: 0.416, // 0.4 * 1.04
         targets: 5,
         cooldown: 30,
@@ -76,19 +76,30 @@ export const MONKSPELLS = {
         type: "buff",
         buffType: "heal",
         castTime: 0,
-        cost: 900,
-        coeff: 2.25, // 
+        cost: 1.8,
+        coeff: 0.225, // 
         tickRate: 2,
         buffDuration: 20,
         cooldown: 9,
         overheal: 0.07,
         secondaries: ['crit', 'vers'], // + Haste
     }],
+    "Enveloping Mist": [{
+        type: "buff",
+        buffType: "heal",
+        castTime: 2,
+        cost: 5.6,
+        coeff: 0.6, // 
+        tickRate: 2,
+        buffDuration: 6,
+        overheal: 0.35,
+        secondaries: ['crit', 'vers'], // + Haste
+    }],
     "Refreshing Jade Wind": [{
         type: "buff",
         buffType: "heal",
         castTime: 0,
-        cost: 0,
+        cost: 3.5,
         coeff: 0.116,
         tickRate: 0.75,
         buffDuration: 9,
@@ -128,7 +139,7 @@ export const MONKSPELLS = {
         type: "damage",
         damageType: "physical",
         castTime: 0,
-        cost: 0,
+        cost: 1.5,
         coeff: 2.4446, // 1.438 x 1.7 (RSK Rank 2)
         aura: 1.04, // AP -> SP conversion.
         cooldown: 0,
@@ -157,167 +168,19 @@ export const MONKSPELLS = {
                     buff.durationExtended = 1;
                 }
                 if (buff.durationExtended <= 2) {
-                    buff.expiration = buff.expiration + 4;
+                    buff.expiration = buff.expiration + risingMistExtension;
                 }
             })
-
         }
     }],
-    "Penance": [{
-        type: "special",
-        castTime: 0, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
-        cost: 800,
-        coeff: 1.128, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
-        bolts: 3,
-        atoneOverheal: 0.2,
-        secondaries: ['crit', 'vers'],
-    }],
-    "PenanceTick": [{
-        type: "damage",
-        castTime: 0.66, // This will still be dynamically adjusted at runtime.
-        cost: 0,
-        coeff: 0.376,
-        atoneOverheal: 0.2,
-        secondaries: ['crit', 'vers'],
-    }],
-    "Ascended Blast": 
-        [{
-        type: "damage",
-        castTime: 1.5,
-        cost: 0,
-        coeff: 1.68,
-        aura: 1,
-        secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.3,
-        },
-        {
-            type: "heal",
-            castTime: 0,
-            coeff: 2.15,
-            aura: 1,
-            targets: 1,
-            secondaries: ['crit', 'vers', 'mastery'],
-            overheal: 0.6,
-        }],
-    "Ascended Nova": 
-        [{
-        type: "damage",
-        castTime: 1,
-        cost: 0,
-        coeff: 0.7,
-        aura: 1,
-        secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.15,
-        },
-        {
-            type: "heal",
-            castTime: 0,
-            coeff: 0.24,
-            aura: 1,
-            targets: 6,
-            secondaries: ['crit', 'vers', 'mastery'],
-            overheal: 0.3,
-        }],
-    "Ascended Eruption": 
-        [{
-        type: "damage",
-        castTime: 0,
-        cost: 0,
-        coeff: 1.68,
-        aura: 1,
-        secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.6,
-        },
-        {
-            type: "heal",
-            castTime: 0,
-            coeff: 2.15,
-            aura: 1,
-            targets: 20,
-            secondaries: ['crit', 'vers'],
-            tags: ['sqrt'],
-            overheal: 0.6,
-        }],
-    "Power Word: Shield": [{
-        type: "heal",
-        castTime: 1.5,
-        cost: 1550,
-        coeff: 1.65,
-        aura: 1,
-        cooldown: 0,
-        atonement: 15,
-        atonementPos: 'start',
-        targets: 1,
-        secondaries: ['crit', 'vers'],
-        overheal: 0,
-    }],
-    "Rapture": [{
-        type: "heal",
-        castTime: 1.5,
-        cost: 1550,
-        coeff: 1.65 * 3,
-        cooldown: 0,
-        atonement: 15,
-        atonementPos: 'start',
-        targets: 1,
-        secondaries: ['crit', 'vers'],
-        overheal: 0,
-    },
-    {
+    "Bonedust Brew": [{
         type: "buff",
+        buffType: "special",
         castTime: 0,
         cost: 0,
-        cooldown: 90,
-        buffDuration: 8,
-    }],
-    "Power Word: Radiance": [{
-        type: "heal",
-        castTime: 2,
-        cost: 3250,
-        coeff: 1.05,
-        aura: 1,
         targets: 5,
-        cooldown: 20,
-        atonement: 9,
-        atonementPos: 'end',
-        secondaries: ['crit', 'vers'],
-        overheal: 0.35,
-    }],
-    "Purge the Wicked": [{
-        type: "damage",
-        castTime: 1.5,
-        cost: 900,
-        coeff: 0.21,
-        aura: 1,
-        secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.1,
-        dot: {
-            tickRate: 2,
-            coeff: 0.12,
-            aura: 1,
-            duration: 26, // 20 x 1.3
-        }
-    }],
-    "Shadowfiend": [{
-        type: "",
-        castTime: 1.5,
-        cost: 900,
-        coeff: 0.13,
-        aura: 1,
-        secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.2,
-        dot: {
-            tickRate: 1.5,
-            coeff: 0.46,
-            duration: 15,
-        }
-    }],
-    "Evangelism": [{
-        type: "atonementExtension",
-        castTime: 1.5,
-        cost: 0,
-        coeff: 0,
-        extension: 6,
+        buffDuration: 10,
+        cooldown: 60,
     }],
     "Instructor's Divine Bell": [{
         type: "buff",

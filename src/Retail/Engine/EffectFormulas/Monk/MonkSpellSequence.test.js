@@ -11,7 +11,7 @@ describe("Test Sequences", () => {
             stamina: 1900,
     } */
     const activeStats = {
-        intellect: 1,
+        intellect: 2000,
         haste: 400,
         crit: 0,
         mastery: 0,
@@ -19,7 +19,7 @@ describe("Test Sequences", () => {
         stamina: 0,
     }
 
-    const sequence = ["Renewing Mist", "Rising Sun Kick"];
+    const sequence = ["Bonedust Brew", "Renewing Mist"];
 
     test("Legendaries & Soulbinds", () => {
         runCastSequence(sequence, activeStats, {}, {});
