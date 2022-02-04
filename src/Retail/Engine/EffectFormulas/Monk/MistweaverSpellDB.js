@@ -27,6 +27,14 @@ import { runHeal } from "./MonkSpellSequence";
 
 // Spell coefficients combine a spells base coefficient with any relevant auras that might impact the spell. 
 export const MONKSPELLS = {
+    "Gust of Mists": [{
+        type: "heal",
+        castTime: 0,
+        cost: 0, // Mana cost as a percent. 
+        coeff: 0.1,
+        overheal: 0.15,
+        secondaries: ['mastery'],
+    }],
     "Vivify": [{
         type: "heal",
         castTime: 1.5,

@@ -56,22 +56,6 @@ const checkBuffActive = (buffs, buffName) => {
     return buffs.filter(function (buff) {return buff.name === buffName}).length > 0;
 }
 
-/**
- * The number of atonements currently active. These are stored separately from regular buffs for speed and to separate them from buffs on the active player.
- * @param atoneApp An array storing our atonement expiry times.
- * @param timer The current time
- * @returns Number of active atonements.
- */
-const getActiveAtone = (atoneApp, timer) => {
-    let count = 0;
-    atoneApp.forEach(application => {
-        if (application >= timer) {
-            count++;
-        };
-    });
-    return count;
-}
-
 
 /**
  * Returns a spells stat multiplier based on which stats it scales with.
@@ -81,10 +65,10 @@ const getActiveAtone = (atoneApp, timer) => {
  */
 const getStatMult = (currentStats, stats) => {
     let mult = 1;
-    
+    console.log((1.336 + currentStats['mastery'] / 35 * 4.2 / 100));
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / 40 / 100);
     if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100); // TODO: Re-enable
-    if (stats.includes("mastery")) mult *= (1.108 + currentStats['mastery'] / 25.9259 / 100);
+    if (stats.includes("mastery")) mult *= (1.336 + currentStats['mastery'] / 35 * 4.2 / 100);
     return mult;
 }
 
@@ -218,6 +202,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits) => {
 }
 
 export const runHeal = (state, spell, spellName) => {
+    console.log(spell);
     const currentStats = state.currentStats;
     const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.conduits); 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets || 1;
@@ -226,9 +211,13 @@ export const runHeal = (state, spell, spellName) => {
 
     if (checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
         // Run duplicate heal.
-        console.log("Bonedust Detected");
         const bonedustHealing = healingVal * 0.5 * 0.704 // 268 conduit
         state.healingDone['Bonedust Brew'] = (state.healingDone['Bonedust Brew'] || 0) + bonedustHealing;
+    }
+
+    if (spell.mastery) {
+        const masteryProc = MONKSPELLS['Gust of Mists'][0];
+        runHeal(state, masteryProc, "Gust of Mists")
     }
 }
 
@@ -250,14 +239,12 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
 
     let purgeTicks = []; // Purge tick timestamps
-    let fiendTicks = []; // Fiend "tick" timestamps
     let activeBuffs = []; // Active buffs on our character: includes stat buffs, Boon of the Ascended and so on. 
     let damageBreakdown = {}; // A statistics object that holds a tally of our damage from each spell.
     let healing = {};
     let totalDamage = 0;
     let timer = 0;
     let nextSpell = 0;
-    let boonOfTheAscended = 0; // This variable holds our active Boon of the Ascended stacks. Could be refactored into the activeBuffs array.
     //const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, conduits);
     const spells = deepCopyFunction(MONKSPELLS)
     const seq = [...sequence];
