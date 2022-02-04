@@ -231,8 +231,6 @@ export const runHeal = (state, spell, spellName) => {
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets || 1;
     const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.overheal) * healingMult * targetMult;
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
-
-    console.log(spell)
 }
 
 /**
@@ -264,7 +262,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     //const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, conduits);
     const spells = deepCopyFunction(MONKSPELLS)
     const seq = [...sequence];
-    const sequenceLength = 15; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 32; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const reporting = true; // A flag to report our sequences to console. Used for testing. 
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
@@ -281,9 +279,10 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 runHeal(state, spell, buff.name)
 
                 buff.next = buff.next + (buff.tickRate / getHaste(currentStats));
+                console.log(state.t + ": " + "Healing ReM")
     
             });
-            activeBuffs = activeBuffs.filter(function (buff) {return state.t < buff.expiration});
+            state.activeBuffs = state.activeBuffs.filter(function (buff) {return state.t < buff.expiration});
         }
 
 

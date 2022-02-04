@@ -1,3 +1,4 @@
+import { buildDifferential } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import { runHeal } from "./MonkSpellSequence";
 
 
@@ -137,16 +138,28 @@ export const MONKSPELLS = {
         type: "special",
         runFunc: (state) => {
             // Rising Mist
-
+            const rmHots = ["Renewing Mist", "Essence Font", "Enveloping Mist"]
+            const risingMistExtension = 4;
+            const activeRMBuffs = state.activeBuffs.filter(function (buff) {return rmHots.includes(buff.name)})
             // Apply heal to allies with ReM, EF or Enveloping Mist.
             // ReM and EF can be double counted here, slightly inflating value.
             // The addition of target markers in the buff list would solve this but isn't high priority.
-            const rmHots = ["Renewing Mist", "Essence Font", "Enveloping Mist"]
-            const targetCount = state.activeBuffs.filter(function (buff) {return rmHots.includes(buff.name)}).length
-            const spell = { type: "heal", coeff: 0.28, overheal: 0.15, secondaries: ['crit', 'vers'], targets: targetCount} 
-            if (targetCount > 0) runHeal(state, spell, "Rising Mist")
+            const spell = { type: "heal", coeff: 0.28, overheal: 0.15, secondaries: ['crit', 'vers'], targets: activeRMBuffs.length} 
+            if (activeRMBuffs.length > 0) runHeal(state, spell, "Rising Mist")
 
-            // Extend ReM, EF and Enveloping Mist HoTs. Mark down the extension 
+            // Extend ReM, EF and Enveloping Mist HoTs. Mark down the extension.
+            // TODO: Extensions should be specific to a HoTs base duration. 
+            activeRMBuffs.forEach((buff) => {
+                if ('durationExtended' in buff) {
+                    buff.durationExtended = buff.durationExtended + 1;
+                }
+                else {
+                    buff.durationExtended = 1;
+                }
+                if (buff.durationExtended <= 2) {
+                    buff.expiration = buff.expiration + 4;
+                }
+            })
 
         }
     }],
