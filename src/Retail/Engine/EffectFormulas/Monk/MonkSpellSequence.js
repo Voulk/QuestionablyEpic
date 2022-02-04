@@ -65,7 +65,6 @@ const checkBuffActive = (buffs, buffName) => {
  */
 const getStatMult = (currentStats, stats) => {
     let mult = 1;
-    console.log((1.336 + currentStats['mastery'] / 35 * 4.2 / 100));
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / 40 / 100);
     if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100); // TODO: Re-enable
     if (stats.includes("mastery")) mult *= (1.336 + currentStats['mastery'] / 35 * 4.2 / 100);
@@ -202,12 +201,16 @@ const applyLoadoutEffects = (discSpells, settings, conduits) => {
 }
 
 export const runHeal = (state, spell, spellName) => {
-    console.log(spell);
     const currentStats = state.currentStats;
     const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.conduits); 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets || 1;
     const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.overheal) * healingMult * targetMult;
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
+
+    if (spell.mastery) {
+        const masteryProc = MONKSPELLS['Gust of Mists'][0];
+        runHeal(state, masteryProc, "Gust of Mists")
+    }
 
     if (checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
         if (spellName == "Gust of Mists") {
@@ -221,10 +224,6 @@ export const runHeal = (state, spell, spellName) => {
         state.healingDone['Bonedust Brew'] = (state.healingDone['Bonedust Brew'] || 0) + bonedustHealing;
     }
 
-    if (spell.mastery) {
-        const masteryProc = MONKSPELLS['Gust of Mists'][0];
-        runHeal(state, masteryProc, "Gust of Mists")
-    }
 }
 
 /**
@@ -265,14 +264,12 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             healBuffs.forEach((buff) => {
             
                 const spell = buff.attSpell;
-                console.log(state.activeBuffs)
-
                 let currentStats = {...stats};
                 state.currentStats = getCurrentStats(currentStats, activeBuffs)
                 runHeal(state, spell, buff.name)
 
                 buff.next = buff.next + (buff.tickRate / getHaste(currentStats));
-                console.log(state.t + ": " + "Healing ReM")
+
     
             });
             state.activeBuffs = state.activeBuffs.filter(function (buff) {return state.t < buff.expiration});

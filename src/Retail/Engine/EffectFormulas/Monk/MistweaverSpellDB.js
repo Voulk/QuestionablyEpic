@@ -33,7 +33,7 @@ export const MONKSPELLS = {
         cost: 0, // Mana cost as a percent. 
         coeff: 0.1,
         overheal: 0.15,
-        secondaries: ['mastery'],
+        secondaries: ['mastery', 'crit', 'vers'],
     }],
     "Vivify": [{
         type: "heal",
@@ -53,6 +53,9 @@ export const MONKSPELLS = {
         mastery: false,
         runFunc: function (state) {
             // Heal allies with Renewing Mist.
+            const activeRem = state.activeBuffs.filter(function (buff) {return buff.name === "Renewing Mist"})
+            const spell = { type: "heal", coeff: 1.04, overheal: 0.37, secondaries: ['crit', 'vers'], targets: activeRem.length} 
+            if (activeRem.length > 0) runHeal(state, spell, "Vivify (Cleave)")
         }
     },
     ],
@@ -81,10 +84,17 @@ export const MONKSPELLS = {
         }
     }],
     "Renewing Mist": [{
+        type: "heal",
+        castTime: 0,
+        cost: 1.8, // Mana cost as a percent. 
+        coeff: 0,
+        overheal: 0,
+        secondaries: [],
+        mastery: true
+    },
+    {
         type: "buff",
         buffType: "heal",
-        castTime: 0,
-        cost: 1.8,
         coeff: 0.225, // 
         tickRate: 2,
         buffDuration: 20,
