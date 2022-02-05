@@ -1,5 +1,5 @@
 import { buildDifferential } from "General/Modules/TopGear/Engine/TopGearEngineShared";
-import { runHeal, getHaste } from "./MonkSpellSequence";
+import { runHeal, getHaste, runDamage } from "./MonkSpellSequence";
 
 
 // This is the Mistweaver spell database. 
@@ -155,7 +155,7 @@ export const MONKSPELLS = {
         damageType: "physical",
         castTime: 0,
         cost: 0,
-        coeff: 0.27027, // 0.47 x 1.5 (smite rank 2) x 0.75 (smite aura nerf) x 0.94 (disc aura nerf)
+        coeff: 0.27027, 
         aura: 1,
         cooldown: 0,
         secondaries: ['crit', 'vers'],
@@ -175,6 +175,37 @@ export const MONKSPELLS = {
                 const buff = activeBuffs.filter(buff => buff.name === "Teachings of the Monastery")[0]
                 buff.stacks = Math.min(buff.stacks + 1, 3);
             }
+        }
+    },
+    {
+        type: "special",
+        condition: "Ancient Teachings of the Monastery",
+        runFunc: function (state) {
+            // Heal allies with Renewing Mist.
+            const spell = { type: "heal", coeff: 0.27027 * 1.04 * 2.5, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
+            runHeal(state, spell, "Ancient Teachings of the Monastery")
+        }
+    }],
+    "Blackout Kick": [{
+        type: "special",
+        runFunc: function (state) {
+            // Calculate number of bonus kicks.
+            const teachingsBuff = state.activeBuffs.filter(function (buff) {return buff.name === 'Teachings of the Monastery'});
+            const teachingsStacks = (teachingsBuff[0]['stacks'] || 0) + 1 
+            // For each bonus kick, deal damage and heal via Ancient Teachings if applicable.
+            for (var i = 0; i < teachingsStacks; i++) {
+                // Deal damage
+                const blackoutKick = { type: "damage", coeff: 0.847 * 1.04, secondaries: ['crit', 'vers'], targets: 1} 
+                runDamage(state, blackoutKick, "Blackout Kick")
+
+                // Ancient Teachings if applicable.
+                const spell = { type: "heal", coeff: 0.847 * 1.04 * 2.5, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
+                runHeal(state, spell, "Ancient Teachings of the Monastery")
+
+            }
+
+            // Remove Teachings of the Monastery stacks.
+
         }
     }],
     "Rising Sun Kick": [{
@@ -217,6 +248,7 @@ export const MONKSPELLS = {
     },
     {
         type: "special",
+        condition: "Ancient Teachings of the Monastery",
         runFunc: function (state) {
             // Heal allies with Renewing Mist.
             const spell = { type: "heal", coeff: 2.4446 * 2.5, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 

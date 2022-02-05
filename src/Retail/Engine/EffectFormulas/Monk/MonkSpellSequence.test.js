@@ -19,7 +19,7 @@ describe("Test Sequences", () => {
         stamina: 0,
     }
 
-    const sequence = ["Rising Sun Kick"];
+    const sequence = ["Tiger Palm", "Tiger Palm", "Blackout Kick"];
 
     test("Legendaries & Soulbinds", () => {
         runCastSequence(sequence, activeStats, {}, {});
