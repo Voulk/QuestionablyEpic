@@ -123,24 +123,38 @@ const getTime = (t) => {
  * This function handles all of our effects that might change our spell database before the ramps begin.
  * It includes conduits, legendaries, and some trinket effects.
  * 
- * @param {*} discSpells Our spell database
+ * @param {*} spells Our spell database
  * @param {*} settings Settings including legendaries, trinkets, soulbinds and anything that falls out of any other category.
  * @param {*} conduits The conduits run in the current set.
  * @returns An updated spell database with any of the above changes made.
  */
-const applyLoadoutEffects = (discSpells, settings, conduits) => {
+const applyLoadoutEffects = (spells, settings, conduits) => {
 
     // Default Loadout
     // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout
     // since if we compare trinkets like Bell against an empty loadout it would be very undervalued. This gives a fair appraisal when
     // we don't have full information about a character.
     // As always, Top Gear is able to provide a more complete picture. 
+
     if (settings['DefaultLoadout']) {
-        settings['Clarity of Mind'] = true;
+        //settings['Clarity of Mind'] = true;
         settings['Pelagos'] = true;
-        conduits['Shining Radiance'] = 239;
-        conduits['Rabid Shadows'] = 239;
-        conduits['Courageous Ascension'] = 239;
+        //conduits['Shining Radiance'] = 239;
+        //conduits['Rabid Shadows'] = 239;
+        //conduits['Courageous Ascension'] = 239;
+
+        if (settings['covenant'] === "Necrolord") {
+            settings['soulbind'] = "Emeni"
+        }
+        else if (settings['covenant'] === "Night Fae") {
+            settings['soulbind'] = "Dreamweaver"
+        }
+        else if (settings['covenant'] === "Kyrian") {
+            settings['soulbind'] = "Kleia"
+        }
+        else if (settings['covenant'] === "Venthyr") {
+            settings['soulbind'] = "Theotar"
+        }
         
     }
 
@@ -150,59 +164,60 @@ const applyLoadoutEffects = (discSpells, settings, conduits) => {
     // -- Clarity of Mind --
     // Clarity of Mind adds 6 seconds to the Atonement granted by Power Word: Shield during Rapture. 
     // It's a straightfoward addition.
-    if (settings['Clarity of Mind']) discSpells['Rapture'][0].atonement = 21;
+    if (settings['Clarity of Mind']) spells['Rapture'][0].atonement = 21;
 
     // -- Penitent One --
     // Power Word: Radiance has a chance to make your next Penance free, and fire 3 extra bolts.
     // This is a close estimate, and could be made more accurate by tracking the buff and adding ticks instead of power.
-    if (settings['Penitent One']) discSpells['Penance'][0].coeff = discSpells['PenanceTick'][0].coeff * (0.84 * 2); 
+    if (settings['Penitent One']) spells['Penance'][0].coeff = spells['PenanceTick'][0].coeff * (0.84 * 2); 
     //
 
     // === Soulbinds ===
     // Don't include Conduits here just any relevant soulbind nodes themselves.
     // This section can be expanded with more nodes, particularly those from other covenants.
     // Examples: Combat Meditation, Pointed Courage
-    if (settings['Pelagos']) discSpells['Boon of the Ascended'].push({
+    if (settings['soulbind'] === "Dreamweaver") spells['Faeline Stomp'].push({
         type: "buff",
         castTime: 0,
         cost: 0,
         cooldown: 0,
-        buffType: 'stats',
+        buffType: 'hasteMult',
         stat: 'mastery',
-        value: 315,
-        buffDuration: 30,
+        value: 1.15,
+        buffDuration: 6,
     });
-    if (settings['Kleia']) activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
+    if (settings['soulbind'] === "Kleia") activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
     //
 
     // === Trinkets ===
     // These settings change the stat value prescribed to a given trinket. We call these when adding trinkets so that we can grab their value at a specific item level.
     // When adding a trinket to this section, make sure it has an entry in DiscSpellDB first prescribing the buff duration, cooldown and type of stat.
-    if (settings["Instructor's Divine Bell"]) discSpells["Instructor's Divine Bell"][0].value = settings["Instructor's Divine Bell"];
-    if (settings["Flame of Battle"]) discSpells["Flame of Battle"][0].value = settings["Flame of Battle"];
-    if (settings['Shadowed Orb']) discSpells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
-    if (settings['Soulletting Ruby']) discSpells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
+    if (settings["Instructor's Divine Bell"]) spells["Instructor's Divine Bell"][0].value = settings["Instructor's Divine Bell"];
+    if (settings["Flame of Battle"]) spells["Flame of Battle"][0].value = settings["Flame of Battle"];
+    if (settings['Shadowed Orb']) spells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
+    if (settings['Soulletting Ruby']) spells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
     //
 
     // === Conduits ===
     // These are all scaled based on Conduit rank.
     // You can add whichever conduits you like here, though if it doesn't change your ramp then you might be better calculating it in the conduit formulas file instead.
     // Examples of would be Condensed Anima Sphere.
-    if (conduits['Courageous Ascension']) discSpells['Ascended Blast'][0].coeff *= 1.45; // Blast +40%, Eruption +1% per stack (to 4%)
-    if (conduits['Shining Radiance']) discSpells['Power Word: Radiance'][0].coeff *= 1.64; // +64% radiance healing
-    if (conduits['Rabid Shadows']) discSpells['Shadowfiend'][0].dot.tickRate = discSpells['Shadowfiend'][0].dot.tickRate / 1.342; // Fiends faster tick rate.
+    if (conduits['Courageous Ascension']) spells['Ascended Blast'][0].coeff *= 1.45; // Blast +40%, Eruption +1% per stack (to 4%)
+    if (conduits['Shining Radiance']) spells['Power Word: Radiance'][0].coeff *= 1.64; // +64% radiance healing
+    if (conduits['Rabid Shadows']) spells['Shadowfiend'][0].dot.tickRate = spells['Shadowfiend'][0].dot.tickRate / 1.342; // Fiends faster tick rate.
     if (conduits['Exaltation']) {
-        discSpells['Rapture'][1].buffDuration = 9;
-        discSpells['Rapture'][0].coeff = 1.65 * (1 + 2 * 1.135);
+        spells['Rapture'][1].buffDuration = 9;
+        spells['Rapture'][0].coeff = 1.65 * (1 + 2 * 1.135);
     }
     //
 
-    return discSpells;
+    return spells;
 }
 
 export const runDamage = (state, spell, spellName) => {
     //const activeAtonements = getActiveAtone(atonementApp, t); // Get number of active atonements.
-    const damMultiplier = getDamMult(state.activeBuffs, 0, state.t, spellName, 0, state.conduits); // Get our damage multiplier (Schism, Sins etc);
+    let damMultiplier = getDamMult(state.activeBuffs, 0, state.t, spellName, 0, state.conduits); // Get our damage multiplier (Schism, Sins etc);
+    if ('damageType' in spell && spell.damageType === "physical") damMultiplier *= 0.7;
     const damageVal = getSpellRaw(spell, state.currentStats) * damMultiplier;
 
     state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
@@ -259,19 +274,19 @@ export const runHeal = (state, spell, spellName) => {
 export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     console.log("Running cast sequence");
 
-    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: {}, manaSpent: 0, settings: ["Ancient Teachings of the Monastery"]}
-
+    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: {}, manaSpent: 0, settings: settings, conduits: conduits}
+    console.log(state);
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
 
     let purgeTicks = []; // Purge tick timestamps
     let activeBuffs = []; // Active buffs on our character: includes stat buffs, Boon of the Ascended and so on. 
     let damageBreakdown = {}; // A statistics object that holds a tally of our damage from each spell.
     let healing = {};
-    let totalDamage = 0;
     let timer = 0;
     let nextSpell = 0;
+    
+    const spells = applyLoadoutEffects(deepCopyFunction(MONKSPELLS), state.settings, state.conduits)
     //const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, conduits);
-    const spells = deepCopyFunction(MONKSPELLS)
     const seq = [...sequence];
     const sequenceLength = 32; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const reporting = true; // A flag to report our sequences to console. Used for testing. 

@@ -22,7 +22,7 @@ describe("Test Sequences", () => {
     const sequence = ["Tiger Palm", "Tiger Palm", "Blackout Kick"];
 
     test("Legendaries & Soulbinds", () => {
-        runCastSequence(sequence, activeStats, {}, {});
+        runCastSequence(sequence, activeStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Ancient Teachings of the Monastery"]}, {});
     })
 
 })

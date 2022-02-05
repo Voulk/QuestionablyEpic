@@ -25,6 +25,10 @@ import { runHeal, getHaste, runDamage } from "./MonkSpellSequence";
 // value: stat buff types should also have a value showing how much stat it gives you. When this is variable (like a trinket) then it can be fed into the ramp functions directly and
 // any values displayed in this DB are placeholders only.
 
+const GLOBALMODS = {
+    ARMOR: 0.7 // Raid bosses have a !30% reduction to physical damage through armor. 
+}
+
 // Spell coefficients combine a spells base coefficient with any relevant auras that might impact the spell. 
 export const MONKSPELLS = {
     "Gust of Mists": [{
@@ -182,7 +186,7 @@ export const MONKSPELLS = {
         condition: "Ancient Teachings of the Monastery",
         runFunc: function (state) {
             // Heal allies with Renewing Mist.
-            const spell = { type: "heal", coeff: 0.27027 * 1.04 * 2.5, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
+            const spell = { type: "heal", coeff: 0.27027 * 1.04 * 2.5 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
             runHeal(state, spell, "Ancient Teachings of the Monastery")
         }
     }],
@@ -199,7 +203,7 @@ export const MONKSPELLS = {
                 runDamage(state, blackoutKick, "Blackout Kick")
 
                 // Ancient Teachings if applicable.
-                const spell = { type: "heal", coeff: 0.847 * 1.04 * 2.5, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
+                const spell = { type: "heal", coeff: 0.847 * 1.04 * 2.5 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
                 runHeal(state, spell, "Ancient Teachings of the Monastery")
 
             }
@@ -251,7 +255,7 @@ export const MONKSPELLS = {
         condition: "Ancient Teachings of the Monastery",
         runFunc: function (state) {
             // Heal allies with Renewing Mist.
-            const spell = { type: "heal", coeff: 2.4446 * 2.5, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
+            const spell = { type: "heal", coeff: 2.4446 * 2.5 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
             runHeal(state, spell, "Ancient Teachings of the Monastery")
         }
     },
