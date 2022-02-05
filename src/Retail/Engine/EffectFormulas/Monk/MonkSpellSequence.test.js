@@ -19,7 +19,7 @@ describe("Test Sequences", () => {
         stamina: 0,
     }
 
-    const sequence = ["Tiger Palm", "Tiger Palm", "Blackout Kick"];
+    const sequence = ["Bonedust Brew", "Vivify"];
 
     test("Legendaries & Soulbinds", () => {
         runCastSequence(sequence, activeStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Ancient Teachings of the Monastery"]}, {});

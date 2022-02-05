@@ -84,7 +84,13 @@ const getCurrentStats = (statArray, buffs) => {
         statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
     });
 
-    return applyDiminishingReturns(statArray);
+    statArray = applyDiminishingReturns(statArray);
+    const multBuffs = buffs.filter(function (buff) {return buff.buffType === "statsMult"});
+    multBuffs.forEach(buff => {
+        statArray[buff.stat] = (statArray[buff.stat] || 0) * buff.value;
+        
+    });
+    return statArray;
     //return statArray;
 }
 
@@ -176,18 +182,35 @@ const applyLoadoutEffects = (spells, settings, conduits) => {
     // Don't include Conduits here just any relevant soulbind nodes themselves.
     // This section can be expanded with more nodes, particularly those from other covenants.
     // Examples: Combat Meditation, Pointed Courage
-    if (settings['soulbind'] === "Dreamweaver") spells['Faeline Stomp'].push({
-        type: "buff",
-        castTime: 0,
-        cost: 0,
-        cooldown: 0,
-        buffType: 'hasteMult',
-        stat: 'mastery',
-        value: 1.15,
-        buffDuration: 6,
+    if (settings['soulbind'] === "Dreamweaver") {
+        spells['Faeline Stomp'].push({
+            type: "buff",
+            buffType: "statsMult",
+            castTime: 0,
+            cost: 0,
+            cooldown: 0,
+            buffType: 'hasteMult',
+            stat: 'mastery',
+            value: 1.15,
+            buffDuration: 6,
     });
+        // Chrysalis
+        activeBuffs.push({name: "Empowered Chrysalis", expiration: 999, buffType: "special", value: 0.1});
+        activeBuffs.push({name: "Dream Delver", expiration: 999, buffType: "special", value: 1.03});
+    }
     if (settings['soulbind'] === "Kleia") activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
     //
+
+    if (settings['soulbind'] === "Emeni") {
+        spells['Bonedust Brew'].push({
+            name: "Lead by Example",
+            type: "buff",
+            buffType: 'statsMult',
+            stat: 'intellect',
+            value: 1.13,
+            buffDuration: 13,
+        });
+    }
 
     // === Trinkets ===
     // These settings change the stat value prescribed to a given trinket. We call these when adding trinkets so that we can grab their value at a specific item level.
@@ -275,7 +298,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     console.log("Running cast sequence");
 
     let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: {}, manaSpent: 0, settings: settings, conduits: conduits}
-    console.log(state);
+
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
 
     let purgeTicks = []; // Purge tick timestamps
@@ -286,6 +309,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     let nextSpell = 0;
     
     const spells = applyLoadoutEffects(deepCopyFunction(MONKSPELLS), state.settings, state.conduits)
+
     //const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, conduits);
     const seq = [...sequence];
     const sequenceLength = 32; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
@@ -298,7 +322,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
         if (healBuffs.length > 0) {
             healBuffs.forEach((buff) => {
                 let currentStats = {...stats};
-                state.currentStats = getCurrentStats(currentStats, activeBuffs)
+                state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
 
                 if (buff.buffType === "heal") {
                     const spell = buff.attSpell;
@@ -323,7 +347,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
             let currentStats = {...stats};
-            currentStats = getCurrentStats(currentStats, activeBuffs);
+            currentStats = getCurrentStats(currentStats, state.activeBuffs);
 
             purgeTicks.shift();
             const activeAtonements = getActiveAtone(atonementApp, timer)
@@ -360,7 +384,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
             let currentStats = {...stats};
-            state.currentStats = getCurrentStats(currentStats, activeBuffs);
+            state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
 
             // We'll iterate through the different effects the spell has.
             // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,
@@ -406,8 +430,8 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 // The spell adds a buff to our player.
                 // We'll track what kind of buff, and when it expires.
                 else if (spell.type === "buff") {
-                    if (spell.buffType === "stats") {
-                        state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
+                    if (spell.buffType === "stats" || spell.buffType == "statsMult") {
+                        state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: spell.buffType, value: spell.value, stat: spell.stat});
                     }
                     else if (spell.buffType === "heal") {
                         const newBuff = {name: spellName, buffType: "heal", attSpell: spell,
