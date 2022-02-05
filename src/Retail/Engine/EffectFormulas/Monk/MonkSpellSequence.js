@@ -214,10 +214,17 @@ export const runDamage = (state, spell, spellName) => {
 }
 
 export const runHeal = (state, spell, spellName) => {
+
+    // Pre-heal processing
+    let flatHeal = 0;
+    if (checkBuffActive(state.activeBuffs, "4T28")) {
+        flatHeal = 450;
+    }
+
     const currentStats = state.currentStats;
     const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.conduits); 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets || 1;
-    const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.overheal) * healingMult * targetMult;
+    const healingVal = (getSpellRaw(spell, currentStats) + flatHeal) * (1 - spell.overheal) * healingMult * targetMult;
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
 
     if (spell.mastery) {
