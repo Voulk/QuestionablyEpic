@@ -134,7 +134,7 @@ const getTime = (t) => {
  * @param {*} conduits The conduits run in the current set.
  * @returns An updated spell database with any of the above changes made.
  */
-const applyLoadoutEffects = (spells, settings, conduits) => {
+const applyLoadoutEffects = (spells, settings, conduits, state) => {
 
     // Default Loadout
     // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout
@@ -195,10 +195,10 @@ const applyLoadoutEffects = (spells, settings, conduits) => {
             buffDuration: 6,
     });
         // Chrysalis
-        activeBuffs.push({name: "Empowered Chrysalis", expiration: 999, buffType: "special", value: 0.1});
-        activeBuffs.push({name: "Dream Delver", expiration: 999, buffType: "special", value: 1.03});
+        state.activeBuffs.push({name: "Empowered Chrysalis", expiration: 999, buffType: "special", value: 0.1});
+        state.activeBuffs.push({name: "Dream Delver", expiration: 999, buffType: "special", value: 1.03});
     }
-    if (settings['soulbind'] === "Kleia") activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
+    if (settings['soulbind'] === "Kleia") state.activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
     //
 
     if (settings['soulbind'] === "Emeni") {
@@ -281,6 +281,10 @@ export const runHeal = (state, spell, spellName) => {
         const bonedustHealing = healingVal * 0.5 * 0.704 // 268 conduit
         state.healingDone['Bonedust Brew'] = (state.healingDone['Bonedust Brew'] || 0) + bonedustHealing;
     }
+    if (checkBuffActive(state.activeBuffs, "Empowered Chrysalis")) {
+        const chrysalisSize = (healingVal / (1 - spell.overheal) * spell.overheal * 0.1)
+        state.healingDone['Empowered Chrysalis'] = (state.healingDone['Empowered Chrysalis'] || 0) + chrysalisSize;
+    }
 
 }
 
@@ -308,7 +312,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     let timer = 0;
     let nextSpell = 0;
     
-    const spells = applyLoadoutEffects(deepCopyFunction(MONKSPELLS), state.settings, state.conduits)
+    const spells = applyLoadoutEffects(deepCopyFunction(MONKSPELLS), state.settings, state.conduits, state)
 
     //const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, conduits);
     const seq = [...sequence];

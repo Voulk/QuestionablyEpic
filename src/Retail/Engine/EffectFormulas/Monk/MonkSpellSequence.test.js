@@ -19,10 +19,10 @@ describe("Test Sequences", () => {
         stamina: 0,
     }
 
-    const sequence = ["Bonedust Brew", "Vivify"];
+    const sequence = ["Renewing Mist", "Vivify", "Vivify"];
 
     test("Legendaries & Soulbinds", () => {
-        runCastSequence(sequence, activeStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Ancient Teachings of the Monastery"]}, {});
+        runCastSequence(sequence, activeStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"]}, {});
     })
 
 })
