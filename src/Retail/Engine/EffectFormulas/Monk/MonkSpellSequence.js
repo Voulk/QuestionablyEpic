@@ -89,7 +89,7 @@ const getCurrentStats = (statArray, buffs) => {
 }
 
 
-export const getHaste = (stats) => {
+export const getHaste = (stats) => {  
     return 1 + stats.haste / 32 / 100;
 }
 
@@ -200,6 +200,19 @@ const applyLoadoutEffects = (discSpells, settings, conduits) => {
     return discSpells;
 }
 
+export const runDamage = (state, spell, spellName) => {
+    //const activeAtonements = getActiveAtone(atonementApp, t); // Get number of active atonements.
+    const damMultiplier = getDamMult(state.activeBuffs, 0, state.t, spellName, 0, state.conduits); // Get our damage multiplier (Schism, Sins etc);
+    const damageVal = getSpellRaw(spell, state.currentStats) * damMultiplier;
+
+    state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
+
+    //if (["Blackout Kick", "Tiger Palm", "Rising Sun Kick"].includes(spellName) && state.settings.includes("Ancient Teachings of the Monastery")) {}
+
+
+    //if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs));
+}
+
 export const runHeal = (state, spell, spellName) => {
     const currentStats = state.currentStats;
     const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.conduits); 
@@ -239,7 +252,7 @@ export const runHeal = (state, spell, spellName) => {
 export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     console.log("Running cast sequence");
 
-    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: {}, manaSpent: 0}
+    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: {}, manaSpent: 0, settings: ["Ancient Teachings of the Monastery"]}
 
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
 
@@ -352,6 +365,9 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
                 else if (spell.type === 'damage') {
                     //const activeAtonements = getActiveAtone(atonementApp, t); // Get number of active atonements.
+
+                    runDamage(state, spell, spellName)
+                    /*
                     const damMultiplier = getDamMult(activeBuffs, 0, state.t, spellName, 0, conduits); // Get our damage multiplier (Schism, Sins etc);
                     const damageVal = getSpellRaw(spell, currentStats) * damMultiplier;
                     //const atonementHealing = activeAtonements * damageVal * getAtoneTrans(currentStats.mastery) * (1 - spell.atoneOverheal)
@@ -362,6 +378,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     //healing['atonement'] = (healing['atonement'] || 0) + atonementHealing;
 
                     if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(activeBuffs));
+                    */
                 }
 
                 // The spell adds a buff to our player.
@@ -404,8 +421,9 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     console.log(state.healingDone);
-    console.log(damageBreakdown);
+    console.log(state.damageDone);
     console.log("Mana Spent: " + state.manaSpent * 50000 / 100)
+    console.log("HPS: " + sumValues(state.healingDone) / sequenceLength);
     return sumValues(state.healingDone)
 
 }
