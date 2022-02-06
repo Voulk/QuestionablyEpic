@@ -19,7 +19,7 @@ describe("Test Sequences", () => {
         stamina: 0,
     }
 
-    const sequence = ["Faeline Stomp"];
+    const sequence = ["Essence Font"];
 
     test("Legendaries & Soulbinds", () => {
         runCastSequence(sequence, activeStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {});

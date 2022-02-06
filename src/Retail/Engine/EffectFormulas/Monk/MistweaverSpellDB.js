@@ -155,12 +155,13 @@ export const MONKSPELLS = {
         hastedDuration: true,
         function: function (state) {
             // Essence Font Heal
-            const efDirect = { type: "heal", coeff: 0.472, overheal: 0.15, secondaries: ['crit', 'vers'], targets: 1}
+            const directData = {coeff: 0.472 * (state.settings.misc.includes("2T28") ? 1.05 : 1)}
+            const efDirect = { type: "heal", coeff: directData.coeff, overheal: 0.15, secondaries: ['crit', 'vers'], targets: 1}
             runHeal(state, efDirect, "Essence Font")
 
             // Essence Font HoT
-            const EF = {coeff: 0.042 * (state.settings.misc.includes("2T28") ? 1.05 : 1), duration: 8 + (state.settings.misc.includes("2T28") ? 2 : 0)}
-            const efHot = { type: "heal", coeff: EF.coeff, overheal: 0.3, secondaries: ['crit', 'vers'], duration: EF.duration}
+            const hotData = {coeff: 0.042 * (state.settings.misc.includes("2T28") ? 1.05 : 1), duration: 8 + (state.settings.misc.includes("2T28") ? 2 : 0)}
+            const efHot = { type: "heal", coeff: hotData.coeff, overheal: 0.3, secondaries: ['crit', 'vers'], duration: hotData.duration}
             const newBuff = {name: "Essence Font (HoT)", buffType: "heal", attSpell: efHot,
                 tickRate: 2, next: state.t + (2 / getHaste(state.currentStats))}
             newBuff['expiration'] = state.t + efHot.duration
