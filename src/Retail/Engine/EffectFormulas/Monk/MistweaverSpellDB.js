@@ -125,6 +125,23 @@ export const MONKSPELLS = {
         overheal: 0.35,
         secondaries: ['crit', 'vers'], // + Haste
     }],
+    "Thunder Focus Tea": [{
+        type: "buff",
+        buffType: "special",
+        castTime: 0,
+        offGCD: true,
+        cost: 0,
+        buffDuration: 10,
+    },
+    {
+        type: "special",
+        condition: "4T28",
+        runFunc: function (state) {
+            // 
+            const newBuff = {name: "4T28", buffType: "special", expiration: state.t + 10}
+            state.activeBuffs.push(newBuff)
+        }
+    }],
     "Refreshing Jade Wind": [{
         type: "heal",
         castTime: 0,
@@ -189,7 +206,7 @@ export const MONKSPELLS = {
             const teachingsStacks = activeBuffs.filter(function (buff) {return buff.name === "Teachings of the Monastery"}).length;
             if (teachingsStacks === 0) {
                 // Add buff
-                activeBuffs.push({name: "Teachings of the Monastery", buffType: "special", stacks: 1, expiration: 20})
+                activeBuffs.push({name: "Teachings of the Monastery", buffType: "special", stacks: 1, expiration: 30})
             }
             else {
                 // Add stack of buff.

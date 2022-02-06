@@ -311,13 +311,13 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     let healing = {};
     let timer = 0;
     let nextSpell = 0;
-    let tracker = 0;
+    let tracker = 0; 
     
     const spells = applyLoadoutEffects(deepCopyFunction(MONKSPELLS), state.settings, state.conduits, state)
 
     //const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, conduits);
     const seq = [...sequence];
-    const sequenceLength = 32; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 20; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const reporting = true; // A flag to report our sequences to console. Used for testing. 
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
@@ -438,9 +438,12 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     spell.runFunc(state);
                 }
    
-                // This represents the next timestamp we are able to cast a spell. This is equal to whatever is higher of a spells cast time or the GCD.
-                nextSpell += spell.castTime > 0 ? (spell.castTime / getHaste(currentStats)) : 1.5 / getHaste(currentStats);
+
             });   
+
+            // This represents the next timestamp we are able to cast a spell. This is equal to whatever is higher of a spells cast time or the GCD.
+            nextSpell += fullSpell[0].castTime > 0 ? (fullSpell[0].castTime / getHaste(currentStats)) : 1.5 / getHaste(currentStats);
+            //console.log("Current spell: " + spellName + ". Next spell at: " + nextSpell);
         }
     }
 
