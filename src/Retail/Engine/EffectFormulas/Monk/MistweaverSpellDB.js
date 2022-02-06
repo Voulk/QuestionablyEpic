@@ -303,6 +303,17 @@ export const MONKSPELLS = {
         buffDuration: 10,
         cooldown: 60,
     }],
+    "Mana Tea": [{
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        offGCD: true,
+        cooldown: 90,
+        buffDuration: 10,
+        buffType: 'stats',
+        stat: "manaMod",
+        value: -0.5, // Trinket values are replaced by the value on the specific version of the trinket.
+    }],
     "Instructor's Divine Bell": [{
         type: "buff",
         castTime: 0,

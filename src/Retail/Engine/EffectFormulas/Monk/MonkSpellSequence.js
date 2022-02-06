@@ -387,12 +387,13 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
         if ((state.t > nextSpell && seq.length > 0))  {
             const spellName = seq.shift();
             const fullSpell = spells[spellName];
-            state.manaSpent += fullSpell[0].cost || 0;
+            
 
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
             let currentStats = {...stats};
             state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
+            state.manaSpent += (fullSpell[0].cost * state.currentStats.manaMod) || 0;
 
             // We'll iterate through the different effects the spell has.
             // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,
@@ -446,7 +447,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
             // This represents the next timestamp we are able to cast a spell. This is equal to whatever is higher of a spells cast time or the GCD.
             if (!('offGCD' in fullSpell[0])) nextSpell += fullSpell[0].castTime > 0 ? (fullSpell[0].castTime / getHaste(state.currentStats)) : 1.5 / getHaste(state.currentStats);
-            console.log("Current spell: " + spellName + ". Next spell at: " + nextSpell);
+            //console.log("Current spell: " + spellName + ". Next spell at: " + nextSpell);
         }
     }
 
@@ -455,7 +456,8 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     printHealing(state.healingDone, sumValues, sequenceLength, state.manaSpent * 50000 / 100);
-    console.log(state.damageDone);
+    printDamage(state.damageDone, sumValues, sequenceLength, state.manaSpent * 50000 / 100)
+    //console.log(state.damageDone);
 
     //console.log("Tracker: " + tracker)
     return sumValues(state.healingDone)
@@ -471,7 +473,18 @@ const printHealing = (healingDone, sumValues, duration, manaSpent) => {
     }
     console.log(sources);
     console.log("HPS: " + totalHealing / duration + ". HPM: " + totalHealing / manaSpent)
-    console.log(manaSpent);
+    console.log("Total Mana Spend: " + manaSpent + " (net " + ((duration / 5 * 2000) - manaSpent) + ")");
+}
+
+const printDamage = (damageDone, sumValues, duration, manaSpent) => {
+    const totalDamage = sumValues(damageDone);
+    const sources = {}
+
+    for (const dam in damageDone) {
+        sources[dam] = (Math.round(damageDone[dam]) + " (" + Math.round(damageDone[dam] / totalDamage * 10000)/100 + "%)")
+    }
+    console.log(sources);
+    console.log("DPS: " + totalDamage / duration + ". DPM: " + totalDamage / manaSpent)
 }
 
 // This is a boilerplate function that'll let us clone our spell database to avoid making permanent changes.

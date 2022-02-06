@@ -11,16 +11,17 @@ describe("Test Sequences", () => {
             stamina: 1900,
     } */
     const activeStats = {
-        intellect: 2000,
+        intellect: 2070,
         haste: 700,
         crit: 1100,
         mastery: 85,
         versatility: 410,
-        stamina: 0,
+        stamina: 1000,
+        manaMod: 1,
     }
 
-    const sequence = ["Tiger Palm", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Essence Font", "Thunder Focus Tea", "Faeline Stomp", "Refreshing Jade Wind", "Blackout Kick", "Rising Sun Kick", "Vivify", "Faeline Stomp"];
-    //const sequence = ["Faeline Stomp"]
+    const sequence = ["Tiger Palm", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Mana Tea", "Essence Font", "Thunder Focus Tea", "Faeline Stomp", "Refreshing Jade Wind", "Blackout Kick", "Rising Sun Kick", "Vivify", "Faeline Stomp"];
+    //const sequence = ["Mana Tea", "Vivify", "Tiger Palm"]
     test("Legendaries & Soulbinds", () => {
         runCastSequence(sequence, activeStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {});
     })
