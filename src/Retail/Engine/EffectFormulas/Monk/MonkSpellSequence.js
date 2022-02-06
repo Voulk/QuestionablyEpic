@@ -87,7 +87,9 @@ const getCurrentStats = (statArray, buffs) => {
     statArray = applyDiminishingReturns(statArray);
     const multBuffs = buffs.filter(function (buff) {return buff.buffType === "statsMult"});
     multBuffs.forEach(buff => {
-        statArray[buff.stat] = (statArray[buff.stat] || 0) * buff.value;
+        // Multiplicative Haste buffs need some extra code. 
+        if (buff.stat === "haste") statArray["haste"] = ((statArray[buff.stat] / 32 / 100 + 1 * buff.value)-1) * 32 * 100
+        else statArray[buff.stat] = (statArray[buff.stat] || 0) * buff.value;
         
     });
     return statArray;
@@ -186,11 +188,7 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
         spells['Faeline Stomp'].push({
             type: "buff",
             buffType: "statsMult",
-            castTime: 0,
-            cost: 0,
-            cooldown: 0,
-            buffType: 'hasteMult',
-            stat: 'mastery',
+            stat: 'haste',
             value: 1.15,
             buffDuration: 6,
     });
