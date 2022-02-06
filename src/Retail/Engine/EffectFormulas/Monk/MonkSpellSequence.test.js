@@ -12,17 +12,17 @@ describe("Test Sequences", () => {
     } */
     const activeStats = {
         intellect: 2000,
-        haste: 400,
-        crit: 0,
-        mastery: 0,
-        versatility: 0,
+        haste: 700,
+        crit: 1100,
+        mastery: 85,
+        versatility: 410,
         stamina: 0,
     }
 
-    const sequence = ["Renewing Mist", "Vivify", "Vivify"];
+    const sequence = ["Faeline Stomp"];
 
     test("Legendaries & Soulbinds", () => {
-        runCastSequence(sequence, activeStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"]}, {});
+        runCastSequence(sequence, activeStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {});
     })
 
 })

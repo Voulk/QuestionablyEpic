@@ -77,14 +77,22 @@ export const MONKSPELLS = {
         coeff: 0.91,
         targets: 5,
         castTime: 0,
-        overheal: 0.1,
+        overheal: 0.45,
         secondaries: ['crit', 'vers']
     },
     {
         type: "special",
         runFunc: function (state) {
             // Apply 5 special Essence Font hots. These stack with existing EF hots.
-            console.log("Running Faeline Stomp") 
+            const EF = {coeff: 0.042 * (state.settings.misc.includes("2T28") ? 1.05 : 1), duration: 8 + (state.settings.misc.includes("2T28") ? 2 : 0)}
+            // Essence Font HoT
+            const efHot = { type: "heal", coeff: EF.coeff, overheal: 0.3, secondaries: ['crit', 'vers'], duration: EF.duration}
+            const newBuff = {name: "Essence Font (HoT - Faeline Stomp)", buffType: "heal", attSpell: efHot,
+                tickRate: 2, next: state.t + (2 / getHaste(state.currentStats))}
+            newBuff['expiration'] = state.t + efHot.duration
+
+            for (let i = 0; i < 5; i++) state.activeBuffs.push(newBuff)
+            
         }
     }],
     "Renewing Mist": [{
@@ -118,16 +126,23 @@ export const MONKSPELLS = {
         secondaries: ['crit', 'vers'], // + Haste
     }],
     "Refreshing Jade Wind": [{
-        type: "buff",
-        buffType: "heal",
+        type: "heal",
         castTime: 0,
         cost: 3.5,
+        coeff: 0.116,
+        targets: 6,
+        overheal: 0.2,
+        secondaries: ['crit', 'vers'],
+    },
+    {
+        type: "buff",
+        buffType: "heal",
         coeff: 0.116,
         tickRate: 0.75,
         buffDuration: 9,
         hastedDuration: true,
         targets: 6,
-        overheal: 0.4,
+        overheal: 0.2,
         secondaries: ['crit', 'vers'],
     }],
     "Essence Font": [{
@@ -144,7 +159,8 @@ export const MONKSPELLS = {
             runHeal(state, efDirect, "Essence Font")
 
             // Essence Font HoT
-            const efHot = { type: "heal", coeff: 0.042, overheal: 0.3, secondaries: ['crit', 'vers'], duration: 8}
+            const EF = {coeff: 0.042 * (state.settings.misc.includes("2T28") ? 1.05 : 1), duration: 8 + (state.settings.misc.includes("2T28") ? 2 : 0)}
+            const efHot = { type: "heal", coeff: EF.coeff, overheal: 0.3, secondaries: ['crit', 'vers'], duration: EF.duration}
             const newBuff = {name: "Essence Font (HoT)", buffType: "heal", attSpell: efHot,
                 tickRate: 2, next: state.t + (2 / getHaste(state.currentStats))}
             newBuff['expiration'] = state.t + efHot.duration

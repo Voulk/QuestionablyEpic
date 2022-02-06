@@ -311,6 +311,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     let healing = {};
     let timer = 0;
     let nextSpell = 0;
+    let tracker = 0;
     
     const spells = applyLoadoutEffects(deepCopyFunction(MONKSPELLS), state.settings, state.conduits, state)
 
@@ -383,7 +384,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
         if ((state.t > nextSpell && seq.length > 0))  {
             const spellName = seq.shift();
             const fullSpell = spells[spellName];
-            state.manaSpent += fullSpell[0].cost;
+            state.manaSpent += fullSpell[0].cost || 0;
 
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
@@ -395,17 +396,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             // and the absorb effect).
             fullSpell.forEach(spell => {
                 
-                // The spell is an atonement applicator. Add atonement expiry time to our array.
-                // The spell data will tell us whether to apply atonement at the start or end of the cast.
-                if (spell.atonement) {
-                    for (var i = 0; i < spell.targets; i++) {
-                        let atoneDuration = spell.atonement;
-                        if (settings['Clarity of Mind'] && (spellName === "Power Word: Shield") && checkBuffActive(activeBuffs, "Rapture")) atoneDuration += 6;
-                        if (spell.atonementPos === "start") atonementApp.push(state.t + atoneDuration);
-                        else if (spell.atonementPos === "end") atonementApp.push(state.t + spell.castTime + atoneDuration);
-                    }
-                }
-        
                 // The spell has a healing component. Add it's effective healing.
                 // Power Word: Shield is included as a heal, since there is no functional difference for the purpose of this calculation.
                 if (spell.type === 'heal') {
@@ -417,18 +407,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     //const activeAtonements = getActiveAtone(atonementApp, t); // Get number of active atonements.
 
                     runDamage(state, spell, spellName)
-                    /*
-                    const damMultiplier = getDamMult(activeBuffs, 0, state.t, spellName, 0, conduits); // Get our damage multiplier (Schism, Sins etc);
-                    const damageVal = getSpellRaw(spell, currentStats) * damMultiplier;
-                    //const atonementHealing = activeAtonements * damageVal * getAtoneTrans(currentStats.mastery) * (1 - spell.atoneOverheal)
-
-                    // This is stat tracking, the atonement healing will be returned as part of our result.
-                    totalDamage += damageVal * damMultiplier; // Stats.
-                    damageBreakdown[spellName] = (damageBreakdown[spellName] || 0) + damageVal; // This is just for stat tracking.
-                    //healing['atonement'] = (healing['atonement'] || 0) + atonementHealing;
-
-                    if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(activeBuffs));
-                    */
                 }
 
                 // The spell adds a buff to our player.
@@ -470,12 +448,24 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     // Add up our healing values (including atonement) and return it.
 
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
-    console.log(state.healingDone);
+    printHealing(state.healingDone, sumValues, sequenceLength, state.manaSpent * 50000 / 100);
     console.log(state.damageDone);
-    console.log("Mana Spent: " + state.manaSpent * 50000 / 100)
-    console.log("HPS: " + sumValues(state.healingDone) / sequenceLength);
+
+    //console.log("Tracker: " + tracker)
     return sumValues(state.healingDone)
 
+}
+
+const printHealing = (healingDone, sumValues, duration, manaSpent) => {
+    const totalHealing = sumValues(healingDone);
+    const sources = {}
+
+    for (const heal in healingDone) {
+        sources[heal] = (Math.round(healingDone[heal]) + " (" + Math.round(healingDone[heal] / totalHealing * 10000)/100 + "%)")
+    }
+    console.log(sources);
+    console.log("HPS: " + totalHealing / duration + ". HPM: " + totalHealing / manaSpent)
+    console.log(manaSpent);
 }
 
 // This is a boilerplate function that'll let us clone our spell database to avoid making permanent changes.
