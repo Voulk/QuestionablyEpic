@@ -253,7 +253,10 @@ export const runHeal = (state, spell, spellName) => {
 
     // Pre-heal processing
     let flatHeal = 0;
-    if (checkBuffActive(state.activeBuffs, "4T28")) {
+
+    // == 4T28 ==
+    // Some spells do not benefit from the bonus. It's unknown whether this is intentional.
+    if (checkBuffActive(state.activeBuffs, "4T28") && !["Faeline Stomp", "Ancient Teachings of the Monastery"].includes(spellName)) {
         flatHeal = 450;
     }
 
@@ -341,6 +344,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
     
             });
+            // TODO: Add Partial Ticks.
             state.activeBuffs = state.activeBuffs.filter(function (buff) {return state.t < buff.expiration});
         }
 
