@@ -340,7 +340,8 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 }
 
 
-                buff.next = buff.next + (buff.tickRate / getHaste(currentStats));
+                buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
+                //console.log("Buff next: " + buff.next);
 
     
             });
@@ -363,7 +364,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
             if (purgeTicks.length === 0) {
                 // If this is the last Purge tick, add a partial tick.
-                const partialTickPercentage = ((getHaste(currentStats) - 1) % 0.1) * 10;
+                const partialTickPercentage = ((getHaste(state.currentStats) - 1) % 0.1) * 10;
 
                 damageBreakdown['Purge the Wicked'] = (damageBreakdown['Purge the Wicked'] || 0) + damageVal * damMultiplier * partialTickPercentage;
                 totalDamage += damageVal;
@@ -419,15 +420,15 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     }
                     else if (spell.buffType === "heal") {
                         const newBuff = {name: spellName, buffType: "heal", attSpell: spell,
-                            tickRate: spell.tickRate, next: state.t + (spell.tickRate / getHaste(currentStats))}
+                            tickRate: spell.tickRate, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
                         newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
 
                         state.activeBuffs.push(newBuff)
                     }
                     else if (spell.buffType === "function") {
                         const newBuff = {name: spellName, buffType: "function", attFunction: spell.function,
-                            tickRate: spell.tickRate, next: state.t + (spell.tickRate / getHaste(currentStats))}
-                        newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
+                            tickRate: spell.tickRate, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
+                        newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
 
                         state.activeBuffs.push(newBuff)
                     }
@@ -444,8 +445,8 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             });   
 
             // This represents the next timestamp we are able to cast a spell. This is equal to whatever is higher of a spells cast time or the GCD.
-            nextSpell += fullSpell[0].castTime > 0 ? (fullSpell[0].castTime / getHaste(currentStats)) : 1.5 / getHaste(currentStats);
-            //console.log("Current spell: " + spellName + ". Next spell at: " + nextSpell);
+            if (!('offGCD' in fullSpell[0])) nextSpell += fullSpell[0].castTime > 0 ? (fullSpell[0].castTime / getHaste(state.currentStats)) : 1.5 / getHaste(state.currentStats);
+            console.log("Current spell: " + spellName + ". Next spell at: " + nextSpell);
         }
     }
 
