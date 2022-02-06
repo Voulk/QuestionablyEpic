@@ -303,6 +303,26 @@ export const MONKSPELLS = {
         buffDuration: 10,
         cooldown: 60,
     }],
+    "Chi Burst": [{
+        // Note: Chi Burst is currently coded to apply it's damage & healing immediately. Travel time could be added if necessary but
+        // this is reasonably low priority since fitting the entire cast in the 4pc window is trivial. 
+        type: "damage",
+        castTime: 1,
+        cost: 0,
+        coeff: 0.4784, // SP -> AP mod included.
+        targets: 1,
+        cooldown: 30,
+        secondaries: ['crit', 'vers']
+    },
+    {
+        type: "heal",
+        coeff: 0.98,
+        targets: 8,
+        tags: ['sqrt'],
+        softCap: 6,
+        overheal: 0.48,
+        secondaries: ['crit', 'vers']
+    }],
     "Mana Tea": [{
         type: "buff",
         castTime: 0,

@@ -107,8 +107,9 @@ const getAtoneTrans = (mastery) => {
     return atonementBaseTransfer * (1.108 + mastery / 25.9259 / 100);
 }
 
-const getSqrt = (targets) => {
-    return Math.sqrt(targets);
+const getSqrt = (targets, softCap = 1) => {
+    if (softCap === 1) return Math.sqrt(targets);
+    else return Math.min(Math.sqrt(softCap / targets), 1)
 }
 
 /**
@@ -262,7 +263,7 @@ export const runHeal = (state, spell, spellName) => {
 
     const currentStats = state.currentStats;
     const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.conduits); 
-    const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets || 1;
+    const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.softCap || 1) * spell.targets : spell.targets || 1;
     const healingVal = (getSpellRaw(spell, currentStats) + flatHeal) * (1 - spell.overheal) * healingMult * targetMult;
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
 
