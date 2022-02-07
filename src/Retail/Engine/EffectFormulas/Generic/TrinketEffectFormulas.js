@@ -884,9 +884,9 @@ else if (
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                  Auxillary Attendant Charm                                     */
+  /*                                  Auxillary Attendant Chime                                     */
   /* ---------------------------------------------------------------------------------------------- */
-  effectName === "Auxillary Attendant Charm"
+  effectName === "Auxillary Attendant Chime"
 ) {
   let effect = activeTrinket.effects[0];
   const oneProc = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * (effect.duration / effect.tickRate * player.getStatPerc("Haste"))

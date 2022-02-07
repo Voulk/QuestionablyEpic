@@ -1093,7 +1093,7 @@ export const trinket_data = [
     // Activates a robot that applies an absorb for X every second for 10s. 
     // This appears to scale with haste, but it'll need to be tested for a partial tick when it ends. 
     // If not, it'll have varying levels of ticks based on your haste. 
-    name: "Auxillary Attendant Charm", 
+    name: "Auxillary Attendant Chime", 
     effects: [
       {
         coefficient: 7.700482,
@@ -1139,8 +1139,8 @@ export const trinket_data = [
     name: "The First Sigil", 
     effects: [
       {
-        coefficient: 7.700482,
-        table: -8, // -9 
+        coefficient: 5.122305,
+        table: -7, // -9 
         duration: 15,
         cooldown: 300,
       },
