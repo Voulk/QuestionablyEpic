@@ -41,13 +41,21 @@ const tableIcons = {
   SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />),
 };
 
+// turn debugging (console logging) on/off
+const debug = false;
+
 export default function CooldownPlanner(props) {
+  debug && console.log(" -- Debugging On -> CooldownPlanner.js --");
+  // log provided props
+  // debug && console.log(props);
+
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
   const cooldownObject = new Cooldowns();
   const healTeamDialogOpen = props.healTeamDialogOpen;
 
+  // ERT Objects
   const ertListTimeNoIcons = props.ertListTimeNoIcons;
   const ertListBossAbility = props.ertListBossAbility;
   const ertListAbilityNoTimeIconsAll = props.ertListAbilityNoTimeIconsAll;
@@ -84,9 +92,13 @@ export default function CooldownPlanner(props) {
   /* ---------------- State for Raid shown (Current is Sanctum of Domination 2450) ---------------- */
   // Only bosses for Sanctum will be shown in the drop down
   const [currentRaid, setCurrentRaid] = useState(2450);
+  // debug && console.log(currentRaid);
   const [currentBoss, setCurrentBoss] = useState(2423);
+  // debug && console.log(currentBoss);
   const [currentPlan, setCurrentPlan] = useState("default");
+  // debug && console.log(currentPlan);
   const [data, setData] = useState(cooldownObject.getCooldowns(currentBoss)["default"]);
+  // debug && console.table(data);
 
   const getBossPlanNames = (boss) => {
     return Object.keys(cooldownObject.getCooldowns(boss));
@@ -580,7 +592,7 @@ export default function CooldownPlanner(props) {
                   {/* ---------------------------------- Raid Selection Drop Down ---------------------------------- */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <TextField
-                      labelId="RaidSelector"
+                      id="RaidSelector"
                       select
                       value={currentRaid}
                       onChange={(e) => setCurrentRaid(e.target.value)}
