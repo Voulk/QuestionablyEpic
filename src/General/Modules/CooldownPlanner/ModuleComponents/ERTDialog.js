@@ -70,7 +70,7 @@ export default function ExportERTDialog(props) {
                 <Grid item xs="auto">
                   <FormControl style={{ minWidth: 200 }} variant="outlined" size="small">
                     <InputLabel id="ertFormat">{t("CooldownPlanner.TableLabels.TypeSelector")}</InputLabel>
-                    <Select labelId="ertFormatSelector" value={ertType} onChange={(e) => setErtType(e.target.value)} label={t("CooldownPlanner.TableLabels.TypeSelector")}>
+                    <Select id="ertFormatSelector" value={ertType} onChange={(e) => setErtType(e.target.value)} label={t("CooldownPlanner.TableLabels.TypeSelector")}>
                       <MenuItem divider key={"ert1"} value={"Time - No Icons"}>
                         Time - No Icons
                       </MenuItem>
