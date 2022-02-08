@@ -512,7 +512,7 @@ export default function CooldownPlanner(props) {
         <MaterialTable
           icons={tableIcons}
           columns={columns}
-          data={data}
+          data={data.sort((a, b) => (a.time > b.time && 1) || -1)}
           style={{
             padding: 10,
           }}
@@ -702,10 +702,11 @@ export default function CooldownPlanner(props) {
               new Promise((resolve, reject) => {
                 setTimeout(() => {
                   /* ------------------ Spread Current Data and the New Data into updated Object (Sorted) ------------------ */
-                  setData([...data, newData].sort((a, b) => (a.time > b.time ? 1 : -1)));
-                  resolve();
+                  let updatedData = [...data, newData].sort((a, b) => (a.time > b.time && 1) || -1);
+                  setData(updatedData);
                   /* ------------------------------------ Update local storage ------------------------------------ */
-                  updateStorage(currentBoss, currentPlan, [...data, newData]);
+                  updateStorage(currentBoss, currentPlan, updatedData);
+                  resolve();
                 }, 1000);
               }),
             onRowUpdate: (newData, oldData) =>
@@ -717,10 +718,11 @@ export default function CooldownPlanner(props) {
                   const index = oldData.tableData.id;
                   /* -------------------- Set the Updated Data as the old datas id replacing it ------------------- */
                   dataUpdate[index] = newData;
+                  let updatedData = [...dataUpdate].sort((a, b) => (a.time > b.time && 1) || -1);
                   /* ---------------------------------- Set Updated Data (Sorted) --------------------------------- */
-                  setData([...dataUpdate].sort((a, b) => (a.time > b.time ? 1 : -1)));
+                  setData(updatedData);
                   /* ------------------------------------ Update local storage ------------------------------------ */
-                  updateStorage(currentBoss, currentPlan, [...dataUpdate]);
+                  updateStorage(currentBoss, currentPlan, updatedData);
                   resolve();
                 }, 1000);
               }),
@@ -733,10 +735,12 @@ export default function CooldownPlanner(props) {
                   const index = oldData.tableData.id;
                   /* --------------------------------------- Delete Row Data -------------------------------------- */
                   dataDelete.splice(index, 1);
+
+                  let updatedData = [...dataDelete].sort((a, b) => (a.time > b.time && 1) || -1);
                   /* -------------------------- Set the New Data without the spliced row -------------------------- */
-                  setData([...dataDelete].sort((a, b) => (a.time > b.time ? 1 : -1)));
+                  setData(updatedData);
                   /* ------------------------------------ Update local storage ------------------------------------ */
-                  updateStorage(currentBoss, currentPlan, [...dataDelete]);
+                  updateStorage(currentBoss, currentPlan, updatedData);
                   resolve();
                 }, 1000);
               }),
@@ -749,8 +753,9 @@ export default function CooldownPlanner(props) {
                       dataUpdate[key] = changes[key].newData;
                     }
                   }
-                  setData([...dataUpdate]);
-                  updateStorage(currentBoss, currentPlan, [...dataUpdate]);
+                  let updatedData = [...dataUpdate];
+                  setData(updatedData);
+                  updateStorage(currentBoss, currentPlan, updatedData);
                   resolve();
                 }, 1000);
               }),
