@@ -504,6 +504,7 @@ export const bossAbilities = {
         de: "",
       },
       guid: 360202,
+      difficulty: ["Mythic"],
       cooldownPlannerActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_skyreach_empower.jpg").default,
     },
@@ -1198,7 +1199,7 @@ export const bossAbilities = {
     {
       // https://ptr.wowhead.com/spell=360259/gloom-bolt
       name: {
-        en: "Sinful Projection",
+        en: "Gloom Bolt",
         cn: "",
         fr: "",
         ru: "",
