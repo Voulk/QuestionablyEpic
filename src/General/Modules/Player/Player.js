@@ -601,7 +601,7 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 1800,
+        intellect: 2000,
         haste: 790,
         crit: 480,
         mastery: 200,
@@ -682,10 +682,10 @@ class Player {
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 
       this.activeStats = {
-        intellect: 1800,
-        haste: 400,
-        crit: 690,
-        mastery: 360,
+        intellect: 2000,
+        haste: 520,
+        crit: 950,
+        mastery: 150,
         versatility: 410,
         stamina: 1900,
       };

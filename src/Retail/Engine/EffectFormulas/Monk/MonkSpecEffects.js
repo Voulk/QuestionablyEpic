@@ -15,7 +15,7 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
 
   if (name === "Ancient Teachings of the Monastery") {
     const essenceFontCPM = player.getSpellCPM(ID_ESSENCE_FONT, contentType);
-    const dpsDuringDuration = 1250; // this is a 75% parse
+    const dpsDuringDuration = 1450; // this is a 75% parse
     const multiplier = 2.5;
     const buffUptime = Math.min(1, (12 * essenceFontCPM) / 60); // While the buff lasts 15s, the Essence Font channel lasts 3.
     const expectedOverhealing = 0.3;
