@@ -138,7 +138,7 @@ export const MONKSPELLS = {
         condition: "4T28",
         runFunc: function (state) {
             // 
-            const newBuff = {name: "4T28", buffType: "special", expiration: state.t + 10}
+            const newBuff = {name: "Primordial Mending", buffType: "special", expiration: state.t + 10}
             state.activeBuffs.push(newBuff)
         }
     }],
