@@ -247,7 +247,11 @@ export const runDamage = (state, spell, spellName) => {
 
     state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
 
-    //if (["Blackout Kick", "Tiger Palm", "Rising Sun Kick"].includes(spellName) && state.settings.includes("Ancient Teachings of the Monastery")) {}
+    if (checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
+        // Run duplicate damage.
+        const bonedustDam = damageVal * 0.5 * 0.704 // 268 conduit
+        state.damageDone['Bonedust Brew'] = (state.damageDone['Bonedust Brew'] || 0) + bonedustDam;
+    }
 
 
     //if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs));
@@ -476,6 +480,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     const manaSpent = state.manaSpent * 50000 / 100
     state.hpm = totalHealing / manaSpent;
     state.totalHealing = totalHealing
+    state.totalDamage = sumValues(state.damageDone)
     return state;
 
 }

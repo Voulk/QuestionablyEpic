@@ -29,14 +29,14 @@ describe("Test Sequences", () => {
     test("Legendaries & Soulbinds", () => {
         
         covenants["Base"].push(runCastSequence(baseSequence, activeStats, {"DefaultLoadout": true, "covenant": "None", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
-        console.log("Base: " + covenants["Base"][0].totalHealing + " (HPM: " + covenants["Base"][0].hpm + ")");
+        console.log("Base: " + covenants["Base"][0].totalHealing + " (HPM: " + covenants["Base"][0].hpm + "). Damage: " + covenants["Base"][0].totalDamage);
 
         covenants["Night Fae"].push(runCastSequence(NFsequence, activeStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}));
-        console.log("Night Fae: " + covenants["Night Fae"][0].totalHealing + " (HPM: " + covenants["Night Fae"][0].hpm + ")");
+        console.log("Night Fae: " + covenants["Night Fae"][0].totalHealing + " (HPM: " + covenants["Night Fae"][0].hpm + "). Damage: " + covenants["Night Fae"][0].totalDamage);
 
         covenants["NL"].push(runCastSequence(NLsequence, activeStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}));
         covenants["NL"].push(runCastSequence(baseSequence, activeStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}));
-        console.log("NL: " + (covenants["NL"][0].totalHealing + covenants["NL"][1].totalHealing)/2 + " (HPM: " + (covenants["NL"][0].hpm + covenants["NL"][1].hpm)/2 + ")");
+        console.log("NL: " + (covenants["NL"][0].totalHealing + covenants["NL"][1].totalHealing)/2 + " (HPM: " + (covenants["NL"][0].hpm + covenants["NL"][1].hpm)/2 + "). Damage: " + (covenants["NL"][0].totalDamage+covenants["NL"][1].totalDamage)/2);
         
         //console.log("Necrolord: " + NL / 2);
     
