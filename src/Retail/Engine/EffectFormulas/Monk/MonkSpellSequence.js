@@ -260,7 +260,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 
     // == 4T28 ==
     // Some spells do not benefit from the bonus. It's unknown whether this is intentional.
-    if (checkBuffActive(state.activeBuffs, "4T28") && !["Faeline Stomp", "Ancient Teachings of the Monastery"].includes(spellName)) {
+    if (checkBuffActive(state.activeBuffs, "4T28") && !["Ancient Teachings of the Monastery"].includes(spellName)) {
         flatHeal = 450;
     }
 
@@ -471,8 +471,12 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     //printDamage(state.damageDone, sumValues, sequenceLength, state.manaSpent * 50000 / 100)
 
     //console.log("Tracker: " + tracker)
-    return sumValues(state.healingDone)
-    //return state;
+    //return sumValues(state.healingDone)
+    const totalHealing = sumValues(state.healingDone);
+    const manaSpent = state.manaSpent * 50000 / 100
+    state.hpm = totalHealing / manaSpent;
+    state.totalHealing = totalHealing
+    return state;
 
 }
 
