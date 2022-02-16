@@ -87,7 +87,6 @@ export const MONKSPELLS = {
             const directData = {coeff: 0.472 * (state.settings.misc.includes("2T28") ? 1 : 1)}
             const efDirect = { type: "heal", coeff: directData.coeff, overheal: 0.15, secondaries: ['crit', 'vers'], targets: 1}
             
-
             // Apply 5 special Essence Font hots. These stack with existing EF hots.
             const EF = {coeff: 0.042 * (state.settings.misc.includes("2T28") ? 1.05 : 1), duration: 8 + (state.settings.misc.includes("2T28") ? 2 : 0)}
             // Essence Font HoT
@@ -227,7 +226,7 @@ export const MONKSPELLS = {
         condition: "Ancient Teachings of the Monastery",
         runFunc: function (state) {
             // Heal allies with Renewing Mist.
-            const spell = { type: "heal", coeff: 0.27027 * 1.04 * 2.5 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
+            const spell = { type: "heal", coeff: 0.27027 * 1.04 * 2.5 * 1.05 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
             runHeal(state, spell, "Ancient Teachings of the Monastery")
         }
     }],
@@ -244,7 +243,7 @@ export const MONKSPELLS = {
                 runDamage(state, blackoutKick, "Blackout Kick")
 
                 // Ancient Teachings if applicable.
-                const spell = { type: "heal", coeff: 0.847 * 1.04 * 2.5 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
+                const spell = { type: "heal", coeff: 0.847 * 1.04 * 2.5 * 1.05 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
                 runHeal(state, spell, "Ancient Teachings of the Monastery")
 
             }
@@ -296,7 +295,7 @@ export const MONKSPELLS = {
         condition: "Ancient Teachings of the Monastery",
         runFunc: function (state) {
             // Heal allies with Renewing Mist.
-            const spell = { type: "heal", coeff: 2.4446 * 2.5 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
+            const spell = { type: "heal", coeff: 2.4446 * 2.5 * 1.05 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
             runHeal(state, spell, "Ancient Teachings of the Monastery")
         }
     },

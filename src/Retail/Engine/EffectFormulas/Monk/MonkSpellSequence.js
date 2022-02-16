@@ -25,14 +25,8 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
  * @AscendedEruption A special buff for the Ascended Eruption spell only. The multiplier is equal to 3% (4 with conduit) x the number of Boon stacks accrued.
  */
 const getDamMult = (buffs, activeAtones, t, spellName, boonStacks, conduits) => {
-    const sins = {0: 1.12, 1: 1.12, 2: 1.1, 3: 1.08, 4: 1.07, 5: 1.06, 6: 1.05, 7: 1.05, 8: 1.04, 9: 1.04, 10: 1.03}
-    const schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.25 : 1; 
-    let mult = (activeAtones > 10 ? 1 : 1)
-    if (discSettings.chaosBrand) mult = mult * 1.05;
-    if (spellName === "Ascended Eruption") {
-        if (conduits['Courageous Ascension']) mult = mult * (1 + boonStacks * 0.04);
-        else mult = mult * (1 + boonStacks * 0.03);
-    }
+    let mult = 1.05 // Mystic Touch.
+    if (checkBuffActive(buffs, "Faeline Harmony Inc")) mult * 1.08; 
     return mult; 
 }
 
