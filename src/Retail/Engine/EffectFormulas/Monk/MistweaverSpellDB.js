@@ -83,6 +83,11 @@ export const MONKSPELLS = {
     {
         type: "special",
         runFunc: function (state) {
+                        // Essence Font Heal
+            const directData = {coeff: 0.472 * (state.settings.misc.includes("2T28") ? 1 : 1)}
+            const efDirect = { type: "heal", coeff: directData.coeff, overheal: 0.15, secondaries: ['crit', 'vers'], targets: 1}
+            
+
             // Apply 5 special Essence Font hots. These stack with existing EF hots.
             const EF = {coeff: 0.042 * (state.settings.misc.includes("2T28") ? 1.05 : 1), duration: 8 + (state.settings.misc.includes("2T28") ? 2 : 0)}
             // Essence Font HoT
@@ -91,8 +96,10 @@ export const MONKSPELLS = {
                 tickRate: 2, next: state.t + (2 / getHaste(state.currentStats))}
             newBuff['expiration'] = state.t + efHot.duration
 
-            for (let i = 0; i < 5; i++) state.activeBuffs.push(newBuff)
-            
+            for (let i = 0; i < 5; i++) {
+                runHeal(state, efDirect, "Essence Font")
+                state.activeBuffs.push(newBuff)
+            }
         }
     }],
     "Renewing Mist": [{
@@ -172,7 +179,7 @@ export const MONKSPELLS = {
         hastedDuration: true,
         function: function (state) {
             // Essence Font Heal
-            const directData = {coeff: 0.472 * (state.settings.misc.includes("2T28") ? 1.05 : 1)}
+            const directData = {coeff: 0.472 * (state.settings.misc.includes("2T28") ? 1 : 1)}
             const efDirect = { type: "heal", coeff: directData.coeff, overheal: 0.15, secondaries: ['crit', 'vers'], targets: 1}
             runHeal(state, efDirect, "Essence Font")
 
