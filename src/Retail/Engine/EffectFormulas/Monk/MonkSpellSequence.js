@@ -474,13 +474,11 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     //printHealing(state.healingDone, sumValues, sequenceLength, state.manaSpent * 50000 / 100);
     //printDamage(state.damageDone, sumValues, sequenceLength, state.manaSpent * 50000 / 100)
 
-    //console.log("Tracker: " + tracker)
-    //return sumValues(state.healingDone)
     const totalHealing = sumValues(state.healingDone);
     const manaSpent = state.manaSpent * 50000 / 100
-    state.hpm = totalHealing / manaSpent;
-    state.totalHealing = totalHealing
-    state.totalDamage = sumValues(state.damageDone)
+    state.hpm = Math.round(totalHealing / manaSpent*100)/100; // Round to 2dp
+    state.totalHealing = Math.round(totalHealing)
+    state.totalDamage = Math.round(sumValues(state.damageDone))
     return state;
 
 }
