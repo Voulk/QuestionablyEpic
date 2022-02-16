@@ -235,7 +235,7 @@ export const MONKSPELLS = {
         runFunc: function (state) {
             // Calculate number of bonus kicks.
             const teachingsBuff = state.activeBuffs.filter(function (buff) {return buff.name === 'Teachings of the Monastery'});
-            const teachingsStacks = (teachingsBuff[0]['stacks'] || 0) + 1 
+            const teachingsStacks = (teachingsBuff.length > 0 && teachingsBuff[0]['stacks'] || 0) + 1 
             // For each bonus kick, deal damage and heal via Ancient Teachings if applicable.
             for (var i = 0; i < teachingsStacks; i++) {
                 // Deal damage
