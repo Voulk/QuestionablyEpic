@@ -256,17 +256,19 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 
     // Pre-heal processing
     let flatHeal = 0;
+    let T284pcOverheal = 0;
 
     // == 4T28 ==
     // Some spells do not benefit from the bonus. It's unknown whether this is intentional.
     if (checkBuffActive(state.activeBuffs, "Primordial Mending") && !["Ancient Teachings of the Monastery"].includes(spellName)) {
         flatHeal = 450;
+        T284pcOverheal = 0.05;
     }
 
     const currentStats = state.currentStats;
     const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.conduits); 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.softCap || 1) * spell.targets : spell.targets || 1;
-    const healingVal = (getSpellRaw(spell, currentStats) + flatHeal) * (1 - spell.overheal) * healingMult * targetMult * specialMult;
+    const healingVal = (getSpellRaw(spell, currentStats) + flatHeal) * (1 - spell.overheal - T284pcOverheal) * healingMult * targetMult * specialMult;
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
 
 
@@ -287,7 +289,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
         state.healingDone['Bonedust Brew'] = (state.healingDone['Bonedust Brew'] || 0) + bonedustHealing;
     }
     if (checkBuffActive(state.activeBuffs, "Empowered Chrysalis")) {
-        const chrysalisSize = (healingVal / (1 - spell.overheal) * spell.overheal * 0.1)
+        const chrysalisSize = (healingVal / (1 - spell.overheal - T284pcOverheal) * (spell.overheal + T284pcOverheal) * 0.1)
         state.healingDone['Empowered Chrysalis'] = (state.healingDone['Empowered Chrysalis'] || 0) + chrysalisSize;
     }
 
@@ -321,7 +323,10 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     const spells = applyLoadoutEffects(deepCopyFunction(MONKSPELLS), state.settings, state.conduits, state)
 
     const seq = [...sequence];
-    const sequenceLength = 22; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+
+    // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    // This is the length of time after a sequence begins that the healing is cut off.
+    const sequenceLength = 40; 
     const reporting = true; // A flag to report our sequences to console. Used for testing. 
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
