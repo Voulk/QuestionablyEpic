@@ -77,7 +77,7 @@ export const MONKSPELLS = {
         coeff: 0.91,
         targets: 5,
         castTime: 0,
-        overheal: 0.45,
+        overheal: 0.55,
         secondaries: ['crit', 'vers']
     },
     {
