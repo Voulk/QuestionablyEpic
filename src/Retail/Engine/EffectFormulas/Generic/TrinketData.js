@@ -820,7 +820,7 @@ export const trinket_data = [
     name: "So'leah's Secret Technique",
     effects: [
       {
-        coefficient: 1.540096,
+        coefficient: 1.386087,
         table: -8,
       },
       {
@@ -1080,8 +1080,8 @@ export const trinket_data = [
     name: "Elegy of the Eternals", 
     effects: [
       {
-        coefficient: 7.700482,
-        table: -8, // -9 but is currently using our -8. Should be -7.
+        coefficient: 0.474196,
+        table: -7, // -9 but is currently using our -8. Should be -7.
         sharedAmount: 0.1,
       },
     ],

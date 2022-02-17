@@ -634,7 +634,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     const statRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel);
     const statValue = getDiminishedValue(itemSetHighestSecondary, statRaw, setStats[itemSetHighestSecondary])
     const uptime = effect.uptime;
-
+    console.log("Gland: " + (statValue * uptime - statRaw * (1 - uptime)))
     bonus_stats[itemSetHighestSecondary] = statValue * uptime - statRaw * (1 - uptime);
     //
   }   
@@ -867,7 +867,7 @@ else if (
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                          Infernal Writ                                         */
+  /*                                  Elegy of the Eternals                                         */
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Elegy of the Eternals"
 ) {
@@ -877,8 +877,10 @@ else if (
     const itemSetHighestSecondary = getHighestStat(setStats);
     const statRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel);
     const statValue = getDiminishedValue(itemSetHighestSecondary, statRaw, setStats[itemSetHighestSecondary])
-
+    
+    
     bonus_stats[itemSetHighestSecondary] = statValue;
+
 
   //
 }
@@ -890,7 +892,7 @@ else if (
 ) {
   let effect = activeTrinket.effects[0];
   const oneProc = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * (effect.duration / effect.tickRate * player.getStatPerc("Haste"))
-  console.log(oneProc);
+
   bonus_stats.hps = (oneProc * effect.ppm * player.getStatPerc("Versatility") / 60);
   //
 }
