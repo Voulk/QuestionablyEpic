@@ -257,6 +257,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     // Pre-heal processing
     let flatHeal = 0;
     let T284pcOverheal = 0;
+    let healingMult = 1;
 
     // == 4T28 ==
     // Some spells do not benefit from the bonus. It's unknown whether this is intentional.
@@ -266,11 +267,15 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     }
 
     const currentStats = state.currentStats;
-    const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.conduits); 
+    healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.conduits); 
+    // Healing multiplier of 2pc affects all healing (including 4pc)
+    if (state.settings.misc.includes("2T28") && (spellName === "Essence Font (HoT)" || spellName === "Essence Font (HoT - Faeline Stomp)")) {
+        healingMult *= 1.05;
+    }
+
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.softCap || 1) * spell.targets : spell.targets || 1;
     const healingVal = (getSpellRaw(spell, currentStats) + flatHeal) * (1 - spell.overheal - T284pcOverheal) * healingMult * targetMult * specialMult;
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
-
 
     if (spell.mastery) {
         const masteryProc = MONKSPELLS['Gust of Mists'][0];
