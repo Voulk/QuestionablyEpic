@@ -58,11 +58,28 @@ describe("Test Sequences", () => {
     const NLsequence = ["Refreshing Jade Wind", "Essence Font", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Renewing Mist", "Bonedust Brew", "Thunder Focus Tea", "Refreshing Jade Wind", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Essence Font", "Refreshing Jade Wind", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Blackout Kick", "Renewing Mist", "Rising Sun Kick", "Refreshing Jade Wind"];
     const baseSequence =  ["Refreshing Jade Wind", "Essence Font", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Renewing Mist", "Thunder Focus Tea", "Refreshing Jade Wind", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Essence Font", "Refreshing Jade Wind", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Blackout Kick", "Renewing Mist", "Rising Sun Kick", "Refreshing Jade Wind"];
     
+    // Test to ensure yulon activates envb
+    const YulonTest = ["Invoke Yulon"];
+    const YulonTest2 = ["Enveloping Mist"];
+    const YulonTest3 = ["Invoke Yulon", "Enveloping Mist"];
+
     test("Legendaries & Soulbinds", () => {
         
-        covenants["Base"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "None", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
-        console.log("Base Balanced Stats: " + covenants["Base"][0].totalHealing + " (HPM: " + covenants["Base"][0].hpm + "). 4PC Window: " + covenants["Base"][0].total4pcWindow + " (" + Math.round(covenants["Base"][0].total4pcWindow/covenants["Base"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Base"][0].totalDamage);
+        //covenants["Base"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "None", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
+        //console.log("Base Balanced Stats: " + covenants["Base"][0].totalHealing + " (HPM: " + covenants["Base"][0].hpm + "). 4PC Window: " + covenants["Base"][0].total4pcWindow + " (" + Math.round(covenants["Base"][0].total4pcWindow/covenants["Base"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Base"][0].totalDamage);
+        
+        /* Yulon
+        covenants["Base"].push(runCastSequence(YulonTest, activeStats3, {"DefaultLoadout": true, "covenant": "None", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
+        covenants["Base"].push(runCastSequence(YulonTest2, activeStats3, {"DefaultLoadout": true, "covenant": "None", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
+        covenants["Base"].push(runCastSequence(YulonTest3, activeStats3, {"DefaultLoadout": true, "covenant": "None", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
+        console.log("Yulon: " + covenants["Base"][0].totalHealing + ". Enveloping Mist: " + covenants["Base"][1].totalHealing + ". Total (" + covenants["Base"][0].totalHealing+covenants["Base"][1].totalHealing + "). Yulon + EM: " + covenants["Base"][2].totalHealing);
+        */
 
+        // Basic test
+        covenants["Night Fae"].push(runCastSequence(NFsequence, activeStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}));
+        console.log("NF Crit/Vers: " + covenants["Night Fae"][0].totalHealing + " (HPM: " + covenants["Night Fae"][0].hpm + "). 4PC Window: " + covenants["Night Fae"][0].total4pcWindow + " (" + Math.round(covenants["Night Fae"][0].total4pcWindow/covenants["Night Fae"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Night Fae"][0].totalDamage);
+
+        /*
         // NF 
         covenants["Night Fae"].push(runCastSequence(NFsequence, activeStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}));
         covenants["Night Fae"].push(runCastSequence(NFsequence, activeStats2, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}));
@@ -81,7 +98,7 @@ describe("Test Sequences", () => {
         console.log("NL Crit/Vers: " + (covenants["NL"][0].totalHealing + Math.round(covenants["NL"][1].totalHealing*1.15))/2 + " (HPM: " + (covenants["NL"][0].hpm + Math.round(covenants["NL"][1].hpm*1.15*100)/100)/2 + "). 4PC Window: " + (covenants["NL"][0].total4pcWindow+Math.round(covenants["NL"][1].total4pcWindow*1.15))/2  + " (" + Math.round(((covenants["NL"][0].total4pcWindow+Math.round(covenants["NL"][1].total4pcWindow*1.15))/2)/((covenants["NL"][0].totalHealing + Math.round(covenants["NL"][1].totalHealing*1.15))/2)*1000)/10 + ")%. Damage: " + (covenants["NL"][0].totalDamage+Math.round(covenants["NL"][1].totalDamage*1.15))/2);
         console.log("NL Crit/Haste: " + (covenants["NL"][2].totalHealing + Math.round(covenants["NL"][3].totalHealing*1.15))/2 + " (HPM: " + (covenants["NL"][2].hpm + Math.round(covenants["NL"][3].hpm*1.15*100)/100)/2 + "). 4PC Window: " + (covenants["NL"][2].total4pcWindow+Math.round(covenants["NL"][3].total4pcWindow*1.15))/2  + " (" + Math.round(((covenants["NL"][2].total4pcWindow+Math.round(covenants["NL"][3].total4pcWindow*1.15))/2)/((covenants["NL"][2].totalHealing + Math.round(covenants["NL"][3].totalHealing*1.15))/2)*1000)/10 + ")%. Damage: " + (covenants["NL"][2].totalDamage+Math.round(covenants["NL"][3].totalDamage*1.15))/2);
         console.log("NL Balanced: " + (covenants["NL"][4].totalHealing + Math.round(covenants["NL"][5].totalHealing*1.15))/2 + " (HPM: " + (covenants["NL"][4].hpm + Math.round(covenants["NL"][5].hpm*1.15*100)/100)/2 + "). 4PC Window: " + (covenants["NL"][4].total4pcWindow+Math.round(covenants["NL"][5].total4pcWindow*1.15))/2  + " (" + Math.round(((covenants["NL"][4].total4pcWindow+Math.round(covenants["NL"][5].total4pcWindow*1.15))/2)/((covenants["NL"][4].totalHealing + Math.round(covenants["NL"][5].totalHealing*1.15))/2)*1000)/10 + ")%. Damage: " + (covenants["NL"][4].totalDamage+Math.round(covenants["NL"][5].totalDamage*1.15))/2);
-        
+        */
     })
 
 })
