@@ -249,7 +249,11 @@ export const MONKSPELLS = {
             }
 
             // Remove Teachings of the Monastery stacks.
-            
+            const teachingsStacksBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Teachings of the Monastery"}).length;
+            if (teachingsStacksBuff != 0) {
+                const buff = state.activeBuffs.filter(buff => buff.name === "Teachings of the Monastery")[0]
+                buff.stacks = 0;
+            }
         }
     }],
     "Rising Sun Kick": [{
@@ -294,7 +298,6 @@ export const MONKSPELLS = {
         type: "special",
         condition: "Ancient Teachings of the Monastery",
         runFunc: function (state) {
-            // Heal allies with Renewing Mist.
             const spell = { type: "heal", coeff: 2.4446 * 2.5 * 1.05 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
             runHeal(state, spell, "Ancient Teachings of the Monastery")
         }
