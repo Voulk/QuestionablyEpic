@@ -139,11 +139,34 @@ export const MONKSPELLS = {
         buffType: "heal",
         castTime: 2,
         cost: 5.6,
-        coeff: 0.6, // 
+        coeff: 0.6, 
         tickRate: 2,
         buffDuration: 6,
         overheal: 0.35,
-        secondaries: ['crit', 'vers'], // + Haste
+        secondaries: ['crit', 'vers'] // + Haste
+    },
+    {
+        type: "special",
+        condition: "Celestial Active",
+        runFunc: function (state) {
+            // Cast enveloping breath.
+            const CelestialBuff = state.activeBuffs.filter(buff => buff.name === "Celestial Active").length
+            if (CelestialBuff > 0){
+                const envbHot = { type: "heal", coeff: 0.3, overheal: 0.4, secondaries: ['crit', 'vers'], duration: 6, targets:3.5}
+                const newBuff = {name: "Enveloping Breath", buffType: "heal", attSpell: envbHot,
+                    tickRate: 1, next: state.t + (1 / getHaste(state.currentStats))}
+                newBuff['expiration'] = state.t + envbHot.duration
+
+                state.activeBuffs.push(newBuff)
+            }
+            
+            // Chiji reduced mana cost
+            const chijiBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Chiji Active"});
+            const chijiStacks = (chijiBuff.length > 0 && chijiBuff[0]['stacks'] || 0)            
+            state.manaSpent -= chijiStacks / 3 * 5.6
+        }
+            
+            
     }],
     "Thunder Focus Tea": [{
         type: "buff",
@@ -204,8 +227,6 @@ export const MONKSPELLS = {
             newBuff['expiration'] = state.t + efHot.duration
 
             state.activeBuffs.push(newBuff)
-
-
         }
     }],
     "Tiger Palm": [{
@@ -221,7 +242,7 @@ export const MONKSPELLS = {
     {
         type: "special",
         runFunc: (state) => {
-            // Apply 5 special Essence Font hots. These stack with existing EF hots.
+            // Add stack of TotM
             const activeBuffs = state.activeBuffs;
             const teachingsStacks = activeBuffs.filter(function (buff) {return buff.name === "Teachings of the Monastery"}).length;
             if (teachingsStacks === 0) {
@@ -232,6 +253,7 @@ export const MONKSPELLS = {
                 // Add stack of buff.
                 const buff = activeBuffs.filter(buff => buff.name === "Teachings of the Monastery")[0]
                 buff.stacks = Math.min(buff.stacks + 1, 3);
+                buff.expiration = 20;
             }
         }
     },
@@ -250,6 +272,9 @@ export const MONKSPELLS = {
             // Calculate number of bonus kicks.
             const teachingsBuff = state.activeBuffs.filter(function (buff) {return buff.name === 'Teachings of the Monastery'});
             const teachingsStacks = (teachingsBuff.length > 0 && teachingsBuff[0]['stacks'] || 0) + 1 
+
+            const atotmBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Ancient Teachings of the Monastery"}).length > 0;
+            const chijiBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Chiji Active"}).length > 0;
             // For each bonus kick, deal damage and heal via Ancient Teachings if applicable.
             for (var i = 0; i < teachingsStacks; i++) {
                 // Deal damage
@@ -257,9 +282,32 @@ export const MONKSPELLS = {
                 runDamage(state, blackoutKick, "Blackout Kick")
 
                 // Ancient Teachings if applicable.
-                const spell = { type: "heal", coeff: 0.847 * 1.04 * 2.5 * 1.05 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
-                runHeal(state, spell, "Ancient Teachings of the Monastery")
+                if (atotmBuff) {
+                    const spell = { type: "heal", coeff: 0.847 * 1.04 * 2.5 * 1.05 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
+                    runHeal(state, spell, "Ancient Teachings of the Monastery")
+                }
 
+                // Chiji if applicable 
+                if (chijiBuff)
+                {
+                    const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
+                    bonusMasteryProc.coeff *= 2;
+                    runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
+
+                    // Add stack of Chiji reduced mana cost
+                    const activeBuffs = state.activeBuffs;
+                    const chijiStacks = activeBuffs.filter(function (buff) {return buff.name === "Chiji Stacks"}).length;
+                    if (chijiStacks === 0) {
+                        // Add buff
+                        activeBuffs.push({name: "Chiji Stacks", buffType: "special", stacks: 1, expiration: 20})
+                    }
+                    else {
+                        // Add stack of buff.
+                        const buff = activeBuffs.filter(buff => buff.name === "Chiji Stacks")[0]
+                        buff.stacks = Math.min(buff.stacks + 1, 3);
+                        buff.expiration = 20;
+                    }
+                }
             }
 
             // Remove Teachings of the Monastery stacks.
@@ -316,7 +364,34 @@ export const MONKSPELLS = {
             runHeal(state, spell, "Ancient Teachings of the Monastery")
         }
     },
-],
+    {
+        type: "special",
+        condition: "Chiji Active",
+        runFunc: function (state) {
+            const chijiBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Chiji Active"}).length > 0;
+            if (chijiBuff)
+                {
+                    const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
+                    bonusMasteryProc.coeff *= 2;
+                    runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
+
+                    // Add stack of Chiji reduced mana cost
+                    const activeBuffs = state.activeBuffs;
+                    const chijiStacks = activeBuffs.filter(function (buff) {return buff.name === "Chiji Stacks"}).length;
+                    if (chijiStacks === 0) {
+                        // Add buff
+                        activeBuffs.push({name: "Chiji Stacks", buffType: "special", stacks: 1, expiration: 20})
+                    }
+                    else {
+                        // Add stack of buff.
+                        const buff = activeBuffs.filter(buff => buff.name === "Chiji Stacks")[0]
+                        buff.stacks = Math.min(buff.stacks + 1, 3);
+                        buff.expiration = 20;
+                    }
+                }
+        }
+    },
+    ],
     "Bonedust Brew": [{
         type: "buff",
         buffType: "special",
@@ -367,6 +442,43 @@ export const MONKSPELLS = {
         stat: "mastery",
         value: 668, // Trinket values are replaced by the value on the specific version of the trinket.
     }],
+    "Invoke Yulon": [{ // Invoke Yu'lon, the Jade Serpent
+        type: "buff",
+        buffType: "function",
+        castTime: 0,
+        cost: 5,
+        tickRate: 4.5,
+        buffDuration: 25,
+        cooldown: 180,
+        function: function (state) {
+            // Yu'lon Soothing Breath
+            const SBHot = { type: "heal", coeff: 1.05 * 3, overheal: 0.3, secondaries: ['crit', 'vers'], duration:  4.5, hastedDuration: true}
+            const newBuff = {name: "Soothing Breath (Yulon)", buffType: "heal", attSpell: SBHot, tickRate: 1.5, next: state.t + (1.5 / getHaste(state.currentStats)), hastedDuration: true}
+            newBuff['expiration'] = state.t + SBHot.duration
+            state.activeBuffs.push(newBuff)
+
+            // TODO: Make ongoing heal expire when Yulon ends.
+        }
+    },
+    {
+        // Enveloping Breath activator / Celestial active flag
+        type: "special",
+        runFunc: function (state) {
+            state.activeBuffs.push({name: "Celestial Active", buffType: "special", expiration: state.t + 25})
+            
+        }
+    }],
+    "Invoke Chiji": [{ // Invoke Chi-Ji, the Red Crane
+        type: "special",
+        castTime: 0,
+        cost: 5,
+        cooldown: 180,
+        runFunc: function (state) {
+            // Enveloping Breath activator / Celestial active flag
+            state.activeBuffs.push({name: "Celestial Active", buffType: "special", expiration: state.t + 25})
+            state.activeBuffs.push({name: "Chiji Active", buffType: "special", expiration: state.t + 25})
+        }
+    }]
 }
 
 // TODO
