@@ -244,7 +244,7 @@ export const runDamage = (state, spell, spellName) => {
 
     if (checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
         // Run duplicate damage.
-        const bonedustDam = damageVal * 0.5 * 0.704 // 268 conduit
+        const bonedustDam = damageVal * 0.5 * 0.72 // 268 conduit
         state.damageDone['Bonedust Brew'] = (state.damageDone['Bonedust Brew'] || 0) + bonedustDam;
     }
 
@@ -276,6 +276,9 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.softCap || 1) * spell.targets : spell.targets || 1;
     const healingVal = (getSpellRaw(spell, currentStats) + flatHeal) * (1 - spell.overheal - T284pcOverheal) * healingMult * targetMult * specialMult;
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
+    if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
+        state.T284pcwindow[spellName] = (state.T284pcwindow[spellName] || 0) + healingVal; 
+    }
 
     if (spell.mastery) {
         const masteryProc = MONKSPELLS['Gust of Mists'][0];
@@ -290,12 +293,22 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
         }
 
         // Run duplicate heal.
-        const bonedustHealing = healingVal * 0.5 * 0.704 // 268 conduit
+        // 278 conduit (252 in enhanced slot)
+        // Hits 75% of raid (based on painsmith logs)
+        const bonedustHealing = healingVal * 0.5 * 0.72 * 0.75
         state.healingDone['Bonedust Brew'] = (state.healingDone['Bonedust Brew'] || 0) + bonedustHealing;
+
+        if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
+            state.T284pcwindow['Bonedust Brew'] = (state.T284pcwindow['Bonedust Brew'] || 0) + bonedustHealing; 
+        }
     }
     if (checkBuffActive(state.activeBuffs, "Empowered Chrysalis")) {
         const chrysalisSize = (healingVal / (1 - spell.overheal - T284pcOverheal) * (spell.overheal + T284pcOverheal) * 0.1)
         state.healingDone['Empowered Chrysalis'] = (state.healingDone['Empowered Chrysalis'] || 0) + chrysalisSize;
+
+        if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
+            state.T284pcwindow['Empowered Chrysalis'] = (state.T284pcwindow['Empowered Chrysalis'] || 0) + chrysalisSize; 
+        }
     }
 
 }
@@ -313,7 +326,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     //console.log("Running cast sequence");
 
-    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: {}, manaSpent: 0, settings: settings, conduits: conduits}
+    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: {}, manaSpent: 0, settings: settings, conduits: conduits, T284pcwindow: {}}
 
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
 
@@ -486,6 +499,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     const manaSpent = state.manaSpent * 50000 / 100
     state.hpm = Math.round(totalHealing / manaSpent*100)/100; // Round to 2dp
     state.totalHealing = Math.round(totalHealing)
+    state.total4pcWindow = Math.round(sumValues(state.T284pcwindow))
     state.totalDamage = Math.round(sumValues(state.damageDone))
     return state;
 
