@@ -99,8 +99,22 @@ export const MONKSPELLS = {
                 runHeal(state, efDirect, "Essence Font")
                 state.activeBuffs.push(newBuff)
             }
+
+            // Support Faeline Harmony, always on
+            // TODO: Implement properly :)
+            const newBuffFLH = {name: "Faeline Harmony Inc", buffType: "special", expiration: state.t + 10}
+            state.activeBuffs.push(newBuffFLH)
         }
-    }],
+    }/*,
+    {
+        FLH Condition WIP
+        type: "special",
+        //condition: "Faeline Harmony",
+        runFunc: function (state) {
+            const newBuff = {name: "Faeline Harmony Inc", buffType: "special", expiration: state.t + 10}
+            state.activeBuffs.push(newBuff)
+        }
+    }*/],
     "Renewing Mist": [{
         type: "heal",
         castTime: 0,

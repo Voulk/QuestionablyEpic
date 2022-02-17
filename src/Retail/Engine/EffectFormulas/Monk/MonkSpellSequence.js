@@ -40,7 +40,7 @@ const getHealingMult = (buffs, t, spellName, conduits) => {
 
     // FLS buffs 5 targets. We'll take the average healing increase. This is likely a slight underestimation since your RJW and FLS targets will line up closely. On the other
     // hand FLS likes to hit pets sometimes so it should be fair. 
-    if (checkBuffActive(buffs, "Faeline Harmony Inc")) mult * (0.08 * 5 / 20 + 1); 
+    if (checkBuffActive(buffs, "Faeline Harmony Inc")) mult *= (0.08 * 5 / 20) + 1; 
     
     return mult;
 }
