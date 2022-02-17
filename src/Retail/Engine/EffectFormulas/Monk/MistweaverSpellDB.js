@@ -249,7 +249,7 @@ export const MONKSPELLS = {
             }
 
             // Remove Teachings of the Monastery stacks.
-
+            
         }
     }],
     "Rising Sun Kick": [{
@@ -266,7 +266,7 @@ export const MONKSPELLS = {
         type: "special",
         runFunc: (state) => {
             // Rising Mist
-            const rmHots = ["Renewing Mist", "Essence Font (HoT)", "Enveloping Mist"]
+            const rmHots = ["Renewing Mist", "Essence Font (HoT)", "Enveloping Mist", "Essence Font (HoT - Faeline Stomp)"]
             const risingMistExtension = 4;
             const activeRMBuffs = state.activeBuffs.filter(function (buff) {return rmHots.includes(buff.name)})
             // Apply heal to allies with ReM, EF or Enveloping Mist.
