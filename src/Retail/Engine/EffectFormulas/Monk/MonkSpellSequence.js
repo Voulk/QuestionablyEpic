@@ -208,6 +208,7 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
         });
     }
 
+
     // === Trinkets ===
     // These settings change the stat value prescribed to a given trinket. We call these when adding trinkets so that we can grab their value at a specific item level.
     // When adding a trinket to this section, make sure it has an entry in DiscSpellDB first prescribing the buff duration, cooldown and type of stat.
@@ -464,7 +465,10 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
     // Add up our healing values (including atonement) and return it.
 
-    const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
+    const sumValues = obj => {
+        if (Object.values(obj).length > 0) return Object.values(obj).reduce((a, b) => a + b);
+        else return 0;
+    }
     //printHealing(state.healingDone, sumValues, sequenceLength, state.manaSpent * 50000 / 100);
     //printDamage(state.damageDone, sumValues, sequenceLength, state.manaSpent * 50000 / 100)
 
