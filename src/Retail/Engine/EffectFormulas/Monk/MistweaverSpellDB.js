@@ -213,8 +213,8 @@ export const MONKSPELLS = {
         damageType: "physical",
         castTime: 0,
         cost: 0,
-        coeff: 0.27027, 
-        aura: 1,
+        coeff: 0.297297, // 0.27027 * 1.1  (SP * MW Monk core passive)
+        aura: 1.04, // AP -> SP conversion.
         cooldown: 0,
         secondaries: ['crit', 'vers'],
     },
@@ -240,7 +240,7 @@ export const MONKSPELLS = {
         condition: "Ancient Teachings of the Monastery",
         runFunc: function (state) {
             // Heal allies with Renewing Mist.
-            const spell = { type: "heal", coeff: 0.27027 * 1.04 * 2.5 * 1.05 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
+            const spell = { type: "heal", coeff: 0.297297 * 1.04 * 2.5 * 1.05 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
             runHeal(state, spell, "Ancient Teachings of the Monastery")
         }
     }],
@@ -275,7 +275,7 @@ export const MONKSPELLS = {
         damageType: "physical",
         castTime: 0,
         cost: 1.5,
-        coeff: 2.4446, // 1.438 x 1.7 (RSK Rank 2)
+        coeff: 2.151248, // 1.438 x 1.7 * 0.88 (RSK Rank 2, MW Monk core passive)
         aura: 1.04, // AP -> SP conversion.
         cooldown: 0,
         secondaries: ['crit', 'vers'],
@@ -312,7 +312,7 @@ export const MONKSPELLS = {
         type: "special",
         condition: "Ancient Teachings of the Monastery",
         runFunc: function (state) {
-            const spell = { type: "heal", coeff: 2.4446 * 2.5 * 1.05 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
+            const spell = { type: "heal", coeff: 2.151248 * 2.5 * 1.05 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
             runHeal(state, spell, "Ancient Teachings of the Monastery")
         }
     },
