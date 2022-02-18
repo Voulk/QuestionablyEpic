@@ -30,8 +30,6 @@ export default function CopyPlanDialog(props) {
     setNewPlanName("");
   };
 
-  console.log(planName);
-
   return (
     <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openCopyPlanDialog} maxWidth="xs" fullWidth>
       <DialogTitle id="simple-dialog-title">Copy Plan</DialogTitle>
