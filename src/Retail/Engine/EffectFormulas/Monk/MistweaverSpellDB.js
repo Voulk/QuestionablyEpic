@@ -181,8 +181,11 @@ export const MONKSPELLS = {
         condition: "4T28",
         runFunc: function (state) {
             // 
-            const newBuff = {name: "Primordial Mending", buffType: "special", expiration: state.t + 10}
-            state.activeBuffs.push(newBuff)
+            if (state.settings.misc.includes("4T28"))
+            {
+                const newBuff = {name: "Primordial Mending", buffType: "special", expiration: state.t + 10}
+                state.activeBuffs.push(newBuff)
+            }
         }
     }],
     "Refreshing Jade Wind": [{

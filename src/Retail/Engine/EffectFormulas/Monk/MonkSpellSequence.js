@@ -41,6 +41,23 @@ const getHealingMult = (buffs, t, spellName, conduits) => {
     // FLS buffs 5 targets. We'll take the average healing increase. This is likely a slight underestimation since your RJW and FLS targets will line up closely. On the other
     // hand FLS likes to hit pets sometimes so it should be fair. 
     if (checkBuffActive(buffs, "Faeline Harmony Inc")) mult *= (0.08 * 5 / 20) + 1; 
+
+    // Enveloping mist and breath healing increase
+    if (spellName != "Faeline Stomp")
+    {
+        if (checkBuffActive(buffs, "Enveloping Mist"))
+        {
+            const EnvelopingMistCount = buffs.filter(function (buff) {return buff.name === "Enveloping Mist"}).length;
+            mult *= 1 + 0.3 * EnvelopingMistCount / 20;
+        }
+
+        // This currently multiplies the healing value by 3.5 due to number of targets hit per buff
+        if (checkBuffActive(buffs, "Enveloping Breath"))
+        {
+            const EnvelopingBreathCount = buffs.filter(function (buff) {return buff.name === "Enveloping Breath"}).length;
+            mult *= 1 + 0.1 * EnvelopingBreathCount / 20 * 3.5;
+        }
+    }
     
     return mult;
 }
