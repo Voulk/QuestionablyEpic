@@ -478,6 +478,26 @@ export const MONKSPELLS = {
             state.activeBuffs.push({name: "Celestial Active", buffType: "special", expiration: state.t + 25})
             state.activeBuffs.push({name: "Chiji Active", buffType: "special", expiration: state.t + 25})
         }
+    }], 
+    "Revival":[{
+        type: "heal",
+        castTime: 0,
+        cost: 4.374, // Mana cost as a percent. 
+        coeff: 2.83,
+        overheal: 0.35,
+        targets: 20,
+        secondaries: ['crit', 'vers']
+    }, 
+    {
+        type: "special",
+        runFunc: function (state) {
+
+            const masteryProc = MONKSPELLS['Gust of Mists'][0];
+            for (var i = 0; i < 20; i++)
+            {
+                runHeal(state, masteryProc, "Gust of Mists (Revival)")
+            }
+        }
     }]
 }
 

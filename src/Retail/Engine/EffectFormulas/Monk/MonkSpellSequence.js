@@ -283,6 +283,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     if (spell.mastery) {
         const masteryProc = MONKSPELLS['Gust of Mists'][0];
         runHeal(state, masteryProc, "Gust of Mists")
+
     }
 
     if (checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
@@ -294,8 +295,9 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 
         // Run duplicate heal.
         // 278 conduit (252 in enhanced slot)
-        // Hits 75% of raid (based on painsmith logs)
-        const bonedustHealing = healingVal * 0.5 * 0.72 * 0.75
+        // Hits 75% of raid
+        // 40% overhealing (conservative, logs range from 35->70, most above 50)
+        const bonedustHealing = healingVal * 0.5 * 0.72 * 0.75 * 0.6
         state.healingDone['Bonedust Brew'] = (state.healingDone['Bonedust Brew'] || 0) + bonedustHealing;
 
         if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
