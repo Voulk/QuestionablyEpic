@@ -273,14 +273,14 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 
     // Pre-heal processing
     let flatHeal = 0;
-    let T284pcOverheal = 0;
+    let T284pcOverhealMultiplier = 1;
     let healingMult = 1;
 
     // == 4T28 ==
     // Some spells do not benefit from the bonus. It's unknown whether this is intentional.
     if (checkBuffActive(state.activeBuffs, "Primordial Mending") && !["Ancient Teachings of the Monastery"].includes(spellName)) {
         flatHeal = 450;
-        T284pcOverheal = 0.05;
+        T284pcOverhealMultiplier = 1.05;
     }
 
     const currentStats = state.currentStats;
@@ -291,7 +291,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     }
 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.softCap || 1) * spell.targets : spell.targets || 1;
-    const healingVal = (getSpellRaw(spell, currentStats) + flatHeal) * (1 - spell.overheal - T284pcOverheal) * healingMult * targetMult * specialMult;
+    const healingVal = (getSpellRaw(spell, currentStats) + flatHeal) * (1 - spell.overheal * T284pcOverhealMultiplier) * healingMult * targetMult * specialMult;
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
     if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
         state.T284pcwindow[spellName] = (state.T284pcwindow[spellName] || 0) + healingVal; 
@@ -313,8 +313,9 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
         // Run duplicate heal.
         // 278 conduit (252 in enhanced slot)
         // Hits 75% of raid
-        // 40% overhealing (conservative, logs range from 35->70, most above 50)
-        const bonedustHealing = healingVal * 0.5 * 0.72 * 0.75 * 0.6
+        // 40% overhealing (conservative, logs range from 35->70, most above 50) - removed this, made it scale with the spells overheal instead
+        // This causes a "double dip" in the spell overheal but that's accurate with how BDB works
+        const bonedustHealing = healingVal * 0.5 * 0.72 * 0.75 * (1 - spell.overheal)
         state.healingDone['Bonedust Brew'] = (state.healingDone['Bonedust Brew'] || 0) + bonedustHealing;
 
         if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
@@ -322,7 +323,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
         }
     }
     if (checkBuffActive(state.activeBuffs, "Empowered Chrysalis")) {
-        const chrysalisSize = (healingVal / (1 - spell.overheal - T284pcOverheal) * (spell.overheal + T284pcOverheal) * 0.1)
+        const chrysalisSize = (healingVal / (1 - spell.overheal * T284pcOverhealMultiplier) * (spell.overheal * T284pcOverhealMultiplier) * 0.1)
         state.healingDone['Empowered Chrysalis'] = (state.healingDone['Empowered Chrysalis'] || 0) + chrysalisSize;
 
         if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
