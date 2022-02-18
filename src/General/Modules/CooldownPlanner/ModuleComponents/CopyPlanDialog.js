@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Typography, Grid, MenuItem } from "@mui/material";
 
-export default function AddPlanDialog(props) {
+export default function CopyPlanDialog(props) {
   const { handleCopyPlanDialogClose, openCopyPlanDialog, cooldownObject, currentBoss, loadPlanData, currentPlan } = props;
   const [planName, setPlanName] = useState(currentPlan);
   const [newPlanName, setNewPlanName] = useState("");
@@ -66,7 +66,7 @@ export default function AddPlanDialog(props) {
       </DialogContent>
       <DialogActions>
         <Button key={8} variant="contained" color="primary" onClick={(e) => copyPlan(planName, currentBoss, newPlanName)} size="small" disabled={duplicatePlanNameCheck || newPlanName === ""}>
-          Add Plan
+          Copy Plan
         </Button>
       </DialogActions>
     </Dialog>

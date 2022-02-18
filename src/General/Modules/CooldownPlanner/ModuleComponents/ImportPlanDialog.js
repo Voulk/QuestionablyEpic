@@ -104,7 +104,9 @@ export default function ImportPlanDialog(props) {
         </Button>
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
-        <DialogTitle color="primary" id="simc-dialog-title">Import Plan</DialogTitle>
+        <DialogTitle color="primary" id="simc-dialog-title">
+          Import Plan
+        </DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
@@ -129,7 +131,7 @@ export default function ImportPlanDialog(props) {
           <Button onClick={handleClose} color="primary" variant="outlined">
             {t("Cancel")}
           </Button>
-          <Button onClick={handleSubmit} color="primary" variant="outlined" disabled={disableButton}>
+          <Button onClick={handleSubmit} color="primary" variant="outlined" disabled={disableButton || importedPlanString === ""}>
             {t("Submit")}
           </Button>
         </DialogActions>

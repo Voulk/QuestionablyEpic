@@ -24,7 +24,7 @@ export default function AddPlanDialog(props) {
   };
 
   return (
-    <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="sm" fullWidth>
+    <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="xs" fullWidth>
       <DialogTitle id="simple-dialog-title">Enter Plan Name</DialogTitle>
       <DialogContent>
         <TextField
@@ -39,7 +39,7 @@ export default function AddPlanDialog(props) {
         />
       </DialogContent>
       <DialogActions>
-        <Button key={8} variant="contained" color="primary" onClick={(e) => addPlan(planName, currentBoss)} size="small" disabled={duplicatePlanNameCheck}>
+        <Button key={8} variant="contained" color="primary" onClick={(e) => addPlan(planName, currentBoss)} size="small" disabled={duplicatePlanNameCheck || planName === ""}>
           Add Plan
         </Button>
       </DialogActions>
