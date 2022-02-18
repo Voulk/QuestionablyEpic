@@ -9,6 +9,7 @@ import { getTableLocale } from "locale/GetTableLocale";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
 import Cooldowns from "../CooldownObject/CooldownObject";
 import AddPlanDialog from "./AddPlanDialog";
+import CopyPlanDialog from "./CopyPlanDialog";
 import DeletePlanDialog from "./DeletePlanDialog";
 import ExportPlanDialog from "./ExportPlanDialog";
 import ImportPlanDialog from "./ImportPlanDialog";
@@ -74,6 +75,19 @@ export default function CooldownPlanner(props) {
 
   const handleAddPlanDialogClose = (value) => {
     setOpenAddPlanDialog(false);
+  };
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                            Copy Plan                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+  const [openCopyPlanDialog, setOpenCopyPlanDialog] = React.useState(false);
+
+  const handleCopyPlanDialogClickOpen = () => {
+    setOpenCopyPlanDialog(true);
+  };
+
+  const handleCopyPlanDialogClose = (value) => {
+    setOpenCopyPlanDialog(false);
   };
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -654,6 +668,13 @@ export default function CooldownPlanner(props) {
                     </Button>
                   </Grid>
 
+                  {/* // TODO: Localize */}
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <Button key={8} variant="outlined" color="primary" onClick={handleCopyPlanDialogClickOpen}>
+                      Copy Plan
+                    </Button>
+                  </Grid>
+
                   {/* // TODO: Localize & fix need for theme here */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <StyledEngineProvider injectFirst>
@@ -765,6 +786,15 @@ export default function CooldownPlanner(props) {
         <AddPlanDialog
           openAddPlanDialog={openAddPlanDialog}
           handleAddPlanDialogClose={handleAddPlanDialogClose}
+          cooldownObject={cooldownObject}
+          currentBoss={currentBoss}
+          loadPlanData={loadPlanData}
+        />
+
+        <CopyPlanDialog
+          currentPlan={currentPlan}
+          openCopyPlanDialog={openCopyPlanDialog}
+          handleCopyPlanDialogClose={handleCopyPlanDialogClose}
           cooldownObject={cooldownObject}
           currentBoss={currentBoss}
           loadPlanData={loadPlanData}
