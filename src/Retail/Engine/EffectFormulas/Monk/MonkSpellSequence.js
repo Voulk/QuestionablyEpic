@@ -221,7 +221,7 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
             buffType: 'statsMult',
             stat: 'intellect',
             value: 1.13,
-            buffDuration: 13,
+            buffDuration: 10,
         });
     }
 

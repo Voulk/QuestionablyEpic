@@ -71,7 +71,7 @@ export const getSiTHPS = (player, contentType) => {
   const longClone = getLongCloneHealing(player);
 
   const baseCooldown = 180;
-  const effectiveCD = contentType == "Raid" ? 60 : 64;
+  const effectiveCD = contentType == "Raid" ? 120 : 128;
 
   const hpsDueToCDR = foHealing / effectiveCD - foHealing / baseCooldown;
   const hpsDueToLongClone = longClone / effectiveCD;

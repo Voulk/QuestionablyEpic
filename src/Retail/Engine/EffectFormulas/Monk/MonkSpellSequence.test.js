@@ -1,6 +1,9 @@
 const { runCastSequence } = require("Retail/Engine/EffectFormulas/Monk/MonkSpellSequence.js");
+import { getSiTHPS, applyConduit, getFOHealing } from "./FallenOrderFormulas";
+import Player from "General/Modules/Player/Player";
 
 describe("Test Sequences", () => {
+    
     //const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
     /*player.activeStats = {
             intellect: 1974,
@@ -10,6 +13,7 @@ describe("Test Sequences", () => {
             versatility: 528,
             stamina: 1900,
     } */
+
     const activeStats = { // NF Stats
         intellect: 2370,
         haste: 410,
@@ -50,6 +54,12 @@ describe("Test Sequences", () => {
         manaMod: 1,
     }
 
+    const player = new Player("Mock", "Mistweaver Monk", 99, "NA", "Stonemaul", "Night Elf");
+    player.activeStats = pretierStats;
+    const player4pc = new Player("Mock", "Mistweaver Monk", 99, "NA", "Stonemaul", "Night Elf");
+    player4pc.activeStats = activeStats3;
+
+
     let covenants = {"Base": [], "NL": [], "Night Fae": [], "Venth": [], "VenthPre": [], "NFPre": [], "NLPre": []} 
 
     //const NFsequenceOld = ["Faeline Stomp", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Essence Font", "Thunder Focus Tea", "Faeline Stomp", "Refreshing Jade Wind", "Blackout Kick", "Rising Sun Kick", "Chi Burst", "Faeline Stomp"];
@@ -63,7 +73,7 @@ describe("Test Sequences", () => {
     // 47% chance to have FLS off CD at mentioned cast points.
     const NFsequence = ["Essence Font", "Rising Sun Kick", "Faeline Stomp", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Renewing Mist", "Faeline Stomp", "Thunder Focus Tea", "Refreshing Jade Wind", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Blackout Kick", "Faeline Stomp", "Blackout Kick", "Refreshing Jade Wind", "Essence Font", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Faeline Stomp", "Blackout Kick", "Refreshing Jade Wind", "Renewing Mist", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Blackout Kick", "Tiger Palm", "Blackout Kick"];
     // 0.8 HPM lost with no reset just before 4pc, not much
-    const NFsequenceNoFLSReset = ["Essence Font", "Rising Sun Kick", "Faeline Stomp", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Renewing Mist", "Thunder Focus Tea", "Refreshing Jade Wind", "Rising Sun Kick", "Faeline Stomp", "Rising Sun Kick", "Blackout Kick", "Chi Burst", "Blackout Kick", "Refreshing Jade Wind", "Essence Font", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Blackout Kick", "Refreshing Jade Wind", "Faeline Stomp", "Renewing Mist", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Blackout Kick"];
+    const NFsequencePreTier = ["Essence Font", "Rising Sun Kick", "Faeline Stomp", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Renewing Mist", "Thunder Focus Tea", "Refreshing Jade Wind", "Rising Sun Kick", "Faeline Stomp", "Rising Sun Kick", "Blackout Kick", "Chi Burst", "Blackout Kick", "Refreshing Jade Wind", "Essence Font", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Blackout Kick", "Refreshing Jade Wind", "Faeline Stomp", "Renewing Mist", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Blackout Kick"];
     
     const NLsequence = ["Refreshing Jade Wind", "Essence Font", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Renewing Mist", "Bonedust Brew", "Thunder Focus Tea", "Refreshing Jade Wind", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Essence Font", "Refreshing Jade Wind", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Blackout Kick", "Renewing Mist", "Rising Sun Kick", "Refreshing Jade Wind"];
     const baseSequence =  ["Refreshing Jade Wind", "Essence Font", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Renewing Mist", "Thunder Focus Tea", "Refreshing Jade Wind", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Essence Font", "Refreshing Jade Wind", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Blackout Kick", "Renewing Mist", "Rising Sun Kick", "Refreshing Jade Wind"];
@@ -89,17 +99,16 @@ describe("Test Sequences", () => {
 
         // 0 tier - sequence won't be optimized but gives rough idea
         // Venth
-        covenants["VenthPre"].push(runCastSequence(baseSequence, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}))
-        covenants["VenthPre"].push(runCastSequence(YulonVenth, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}))
-        covenants["VenthPre"].push(runCastSequence(RevivalVenth, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}))
+        covenants["VenthPre"].push(runCastSequence(baseSequence, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Sinister Teachings"], "misc": []}, {}))
+        covenants["VenthPre"].push(runCastSequence(YulonVenth, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Sinister Teachings"], "misc": []}, {}))
+        covenants["VenthPre"].push(runCastSequence(RevivalVenth, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Sinister Teachings"], "misc": []}, {}))
         console.log("PreTier Venth: " + covenants["VenthPre"][0].totalHealing + " (HPM: " + covenants["VenthPre"][0].hpm + "). Damage: " + covenants["VenthPre"][0].totalDamage+ "\n" +
         "Venth Yulon: " + covenants["VenthPre"][1].totalHealing + " (HPM: " + covenants["VenthPre"][1].hpm + "). Damage: " + covenants["VenthPre"][1].totalDamage + "\n" +
         "Venth Revival: " + covenants["VenthPre"][2].totalHealing + "\n" +
-        "HPS over 8m fight: " + Math.round((covenants["VenthPre"][0].totalHealing/30*14 + covenants["VenthPre"][1].totalHealing/16*2 + covenants["VenthPre"][2].totalHealing/3*3)/19*100)/100 + " - assuming 2 yulon, 3 revival (not including FO)");
-        // Sequences work at balanced stats
+        "HPS over 8m fight: " + Math.round(((covenants["VenthPre"][0].totalHealing/30*14 + covenants["VenthPre"][1].totalHealing/16*2 + covenants["VenthPre"][2].totalHealing/3*3)/19 + getSiTHPS(player4pc))*100)/100 + " - assuming 2 yulon, 3 revival");
 
         // NF - Manually removed FLH extra heal.
-        covenants["NFPre"].push(runCastSequence(NFsequenceNoFLSReset, pretierStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
+        covenants["NFPre"].push(runCastSequence(NFsequencePreTier, pretierStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
         covenants["NFPre"].push(runCastSequence(YulonNFPre2leg, pretierStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
         covenants["NFPre"].push(runCastSequence(RevivalNF, pretierStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
         console.log("PreTier NF: " + covenants["NFPre"][0].totalHealing*0.98 + " (HPM: " + covenants["NFPre"][0].hpm*0.98 + "). Damage: " + covenants["NFPre"][0].totalDamage*0.92 + "\n" +
@@ -109,7 +118,6 @@ describe("Test Sequences", () => {
         // Haste bonus affects NF the most, sequence is much quicker - needed to make a longer sequence to accurately collect HPM
 
         // NL
-        // Multiplied by 1.15 to simulate 2nd legendary
         covenants["NLPre"].push(runCastSequence(NLsequence, pretierStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
         covenants["NLPre"].push(runCastSequence(baseSequence, pretierStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
         covenants["NLPre"].push(runCastSequence(NLsequence, pretierStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
@@ -124,18 +132,18 @@ describe("Test Sequences", () => {
         "NL Yulon: " + covenants["NLPre"][6].totalHealing + " (HPM: " + covenants["NLPre"][6].hpm + "). Damage: " + covenants["NLPre"][6].totalDamage + "\n" +
         "NL Revival: " + covenants["NLPre"][7].totalHealing + "\n" +
         "HPS over 8m fight: " + Math.round((covenants["NLPre"][4].totalHealing/30*5 + covenants["NLPre"][5].totalHealing/30*9 + covenants["NLPre"][6].totalHealing/13*2 + covenants["NLPre"][7].totalHealing/3*3)/19*100)/100 + " - assuming 2 yulon, 3 revival (using bdb for yulon + revival)");
-        // Lowered number of guarenteed BDB 4pc to factor that that would be used on yulon
+        // Lowered number of BDB sequences to factor that that would be used on yulon
     
         // 4pc, 2 legendary
         // Venth
+        const venth4pcfobonushps = 450 * 4 * 2.33 * ((8 / (2 / (1 / 1.21))) + (8 / (1 / 1.21))); // Very rough calc
         covenants["Venth"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
         covenants["Venth"].push(runCastSequence(YulonVenth, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
         covenants["Venth"].push(runCastSequence(RevivalVenth, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
         console.log("4pc Venth: " + covenants["Venth"][0].totalHealing + " (HPM: " + covenants["Venth"][0].hpm + "). 4PC Window: " + covenants["Venth"][0].total4pcWindow + " (" + Math.round(covenants["Venth"][0].total4pcWindow/covenants["Venth"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Venth"][0].totalDamage+ "\n" +
         "Venth Yulon: " + covenants["Venth"][1].totalHealing + " (HPM: " + covenants["Venth"][1].hpm + "). 4PC Window: " + covenants["Venth"][1].total4pcWindow + " (" + Math.round(covenants["Venth"][1].total4pcWindow/covenants["Venth"][1].totalHealing*1000)/10 + ")%. Damage: " + covenants["Venth"][1].totalDamage + "\n" +
         "Venth Revival: " + covenants["Venth"][2].totalHealing + "\n" +
-        "HPS over 8m fight: " + Math.round((covenants["Venth"][0].totalHealing/30*14 + covenants["Venth"][1].totalHealing/16*2 + covenants["Venth"][2].totalHealing/3*3)/19*100)/100 + " - assuming 2 yulon, 3 revival (not including FO)");
-        // Sequences work at balanced stats
+        "HPS over 8m fight: " + Math.round(((covenants["Venth"][0].totalHealing/30*14 + covenants["Venth"][1].totalHealing/16*2 + covenants["Venth"][2].totalHealing/3*3)/19 + getSiTHPS(player4pc) + venth4pcfobonushps)*100)/100 + " - assuming 2 yulon, 3 revival");
 
         // NF
         covenants["Night Fae"].push(runCastSequence(NFsequence, activeStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}));
