@@ -127,18 +127,12 @@ describe("Test Sequences", () => {
         // NL
         covenants["NLPre"].push(runCastSequence(NLsequence, pretierStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
         covenants["NLPre"].push(runCastSequence(baseSequence, pretierStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
-        covenants["NLPre"].push(runCastSequence(NLsequence, pretierStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
-        covenants["NLPre"].push(runCastSequence(baseSequence, pretierStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
-        covenants["NLPre"].push(runCastSequence(NLsequence, pretierStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
-        covenants["NLPre"].push(runCastSequence(baseSequence, pretierStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
         covenants["NLPre"].push(runCastSequence(YulonNL, pretierStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
         covenants["NLPre"].push(runCastSequence(RevivalNL, pretierStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
-        console.log("PreTier NL Crit/Vers: " + (covenants["NLPre"][0].totalHealing + Math.round(covenants["NLPre"][1].totalHealing*1.15))/2 + " (HPM: " + Math.round((covenants["NLPre"][0].hpm + covenants["NLPre"][1].hpm)/2*100)/100 + ") Damage: " + (covenants["NLPre"][0].totalDamage+Math.round(covenants["NLPre"][1].totalDamage))/2 + "\n" +
-        "NL Crit/Haste: " + (covenants["NLPre"][2].totalHealing + Math.round(covenants["NLPre"][3].totalHealing))/2 + " (HPM: " + Math.round((covenants["NLPre"][2].hpm + covenants["NLPre"][3].hpm)/2*100)/100 + "). Damage: " + (covenants["NLPre"][2].totalDamage+Math.round(covenants["NLPre"][3].totalDamage))/2 + "\n\n Balanced seems best stats: \n" +
-        "NL Balanced: " + (covenants["NLPre"][4].totalHealing + Math.round(covenants["NLPre"][5].totalHealing))/2 + " (HPM: " + Math.round((covenants["NLPre"][4].hpm + covenants["NLPre"][5].hpm)/2*100)/100 + "). Damage: " + (covenants["NLPre"][4].totalDamage+Math.round(covenants["NLPre"][5].totalDamage))/2 + "\n" +
-        "NL Yulon: " + covenants["NLPre"][6].totalHealing + " (HPM: " + covenants["NLPre"][6].hpm + "). Damage: " + covenants["NLPre"][6].totalDamage + "\n" +
-        "NL Revival: " + covenants["NLPre"][7].totalHealing + "\n" +
-        "HPS over 8m fight: " + Math.round((covenants["NLPre"][4].totalHealing/30*5 + covenants["NLPre"][5].totalHealing/30*9 + covenants["NLPre"][6].totalHealing/22*2 + covenants["NLPre"][7].totalHealing/4*3)/19*100)/100 + " - assuming 2 yulon, 3 revival (using bdb for yulon + revival)");
+        console.log("PreTier NL: " + (covenants["NLPre"][0].totalHealing + Math.round(covenants["NLPre"][1].totalHealing))/2 + " (HPM: " + Math.round((covenants["NLPre"][0].hpm + covenants["NLPre"][1].hpm)/2*100)/100 + "). Damage: " + (covenants["NLPre"][0].totalDamage+Math.round(covenants["NLPre"][1].totalDamage))/2 + "\n" +
+        "NL Yulon: " + covenants["NLPre"][2].totalHealing + " (HPM: " + covenants["NLPre"][2].hpm + "). Damage: " + covenants["NLPre"][2].totalDamage + "\n" +
+        "NL Revival: " + covenants["NLPre"][3].totalHealing + "\n" +
+        "HPS over 8m fight: " + Math.round((covenants["NLPre"][0].totalHealing/30*5 + covenants["NLPre"][1].totalHealing/30*9 + covenants["NLPre"][2].totalHealing/22*2 + covenants["NLPre"][3].totalHealing/4*3)/19*100)/100 + " - assuming 2 yulon, 3 revival (using bdb for yulon + revival)");
         // Lowered number of BDB sequences to factor that that would be used on yulon
     
         // 4pc, 2 legendary
