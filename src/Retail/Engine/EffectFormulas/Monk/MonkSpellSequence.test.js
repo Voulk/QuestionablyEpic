@@ -136,7 +136,9 @@ describe("Test Sequences", () => {
     
         // 4pc, 2 legendary
         // Venth
-        const venth4pcfobonushps = 450 * 4 * 2.33 * ((8 / (2 / (1 / 1.21))) + (8 / (1 / 1.21))); // Very rough calc
+        // Very rough calc, 4 uses for FO
+        // Base heal * overheal * number of casts * clones active avg * env heal * soom heal / number of casts
+        const venth4pcfobonushps = 450 * 0.5 * 4 * 2.33 * ((8 / (2 / (1 / 1.21))) + (8 / (1 / 1.21))) / 4; 
         covenants["Venth"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
         covenants["Venth"].push(runCastSequence(YulonVenth, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
         covenants["Venth"].push(runCastSequence(RevivalVenth, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))

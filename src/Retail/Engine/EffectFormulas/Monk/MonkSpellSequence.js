@@ -322,6 +322,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
             state.T284pcwindow['Bonedust Brew'] = (state.T284pcwindow['Bonedust Brew'] || 0) + bonedustHealing; 
         }
     }
+    
     if (checkBuffActive(state.activeBuffs, "Empowered Chrysalis")) {
         const chrysalisSize = (healingVal / (1 - spell.overheal * T284pcOverhealMultiplier) * (spell.overheal * T284pcOverhealMultiplier) * 0.1)
         state.healingDone['Empowered Chrysalis'] = (state.healingDone['Empowered Chrysalis'] || 0) + chrysalisSize;
@@ -330,7 +331,6 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
             state.T284pcwindow['Empowered Chrysalis'] = (state.T284pcwindow['Empowered Chrysalis'] || 0) + chrysalisSize; 
         }
     }
-
 }
 
 /**
