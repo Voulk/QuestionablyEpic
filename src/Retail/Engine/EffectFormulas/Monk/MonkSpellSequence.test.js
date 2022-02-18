@@ -99,14 +99,21 @@ describe("Test Sequences", () => {
 
         // 0 tier - sequence won't be optimized but gives rough idea
         // Venth
+        const token = 1.04;
+        const teatime = 1.03;
         covenants["VenthPre"].push(runCastSequence(baseSequence, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Sinister Teachings"], "misc": []}, {}))
         covenants["VenthPre"].push(runCastSequence(YulonVenth, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Sinister Teachings"], "misc": []}, {}))
         covenants["VenthPre"].push(runCastSequence(RevivalVenth, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Sinister Teachings"], "misc": []}, {}))
-        console.log("PreTier Venth: " + covenants["VenthPre"][0].totalHealing + " (HPM: " + covenants["VenthPre"][0].hpm + "). Damage: " + covenants["VenthPre"][0].totalDamage+ "\n" +
-        "Venth Yulon: " + covenants["VenthPre"][1].totalHealing + " (HPM: " + covenants["VenthPre"][1].hpm + "). Damage: " + covenants["VenthPre"][1].totalDamage + "\n" +
-        "Venth Revival: " + covenants["VenthPre"][2].totalHealing + "\n" +
-        "HPS over 8m fight: " + Math.round(((covenants["VenthPre"][0].totalHealing/30*14 + covenants["VenthPre"][1].totalHealing/16*2 + covenants["VenthPre"][2].totalHealing/3*3)/19 + getSiTHPS(player4pc))*100)/100 + " - assuming 2 yulon, 3 revival");
+        covenants["VenthPre"].push(runCastSequence(baseSequence, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}))
+        covenants["VenthPre"].push(runCastSequence(YulonVenth, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}))
+        covenants["VenthPre"].push(runCastSequence(RevivalVenth, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}))
+        console.log("PreTier Venth: " + Math.round(token * teatime * covenants["VenthPre"][0].totalHealing) + " (HPM: " + Math.round(token * teatime * covenants["VenthPre"][0].hpm * 100)/100 + "). Damage: " + Math.round(teatime * covenants["VenthPre"][0].totalDamage * 100)/100+ "\n" +
+        "Venth Yulon: " + Math.round(token * teatime * covenants["VenthPre"][1].totalHealing) + " (HPM: " + Math.round(token * teatime * covenants["VenthPre"][1].hpm * 100)/100 + "). Damage: " + Math.round(teatime * covenants["VenthPre"][1].totalDamage * 100)/100 + "\n" +
+        "Venth Revival: " + Math.round(teatime * covenants["VenthPre"][2].totalHealing) + "\n" +
+        "HPS over 8m fight (SiT): " + Math.round(token * teatime * ((covenants["VenthPre"][0].totalHealing/30*14 + covenants["VenthPre"][1].totalHealing/16*2 + covenants["VenthPre"][2].totalHealing/3*3)/19 + getSiTHPS(player))*100)/100 + " - assuming 2 yulon, 3 revival" + "\n" +
+        "HPS over 8m fight (AtotM): " + Math.round(token * teatime * ((covenants["VenthPre"][3].totalHealing/30*14 + covenants["VenthPre"][4].totalHealing/16*2 + covenants["VenthPre"][5].totalHealing/3*3)/19 + getFOHealing(player)*3/480)*100)/100 + " - assuming 2 yulon, 3 revival");
 
+        
         // NF - Manually removed FLH extra heal.
         covenants["NFPre"].push(runCastSequence(NFsequencePreTier, pretierStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
         covenants["NFPre"].push(runCastSequence(YulonNFPre2leg, pretierStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}));
@@ -139,13 +146,13 @@ describe("Test Sequences", () => {
         // Very rough calc, 4 uses for FO
         // Base heal * overheal * number of casts * clones active avg * env heal * soom heal / number of casts
         const venth4pcfobonushps = 450 * 0.5 * 4 * 2.33 * ((8 / (2 / (1 / 1.21))) + (8 / (1 / 1.21))) / 4; 
-        covenants["Venth"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
-        covenants["Venth"].push(runCastSequence(YulonVenth, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
-        covenants["Venth"].push(runCastSequence(RevivalVenth, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
-        console.log("4pc Venth: " + covenants["Venth"][0].totalHealing + " (HPM: " + covenants["Venth"][0].hpm + "). 4PC Window: " + covenants["Venth"][0].total4pcWindow + " (" + Math.round(covenants["Venth"][0].total4pcWindow/covenants["Venth"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Venth"][0].totalDamage+ "\n" +
-        "Venth Yulon: " + covenants["Venth"][1].totalHealing + " (HPM: " + covenants["Venth"][1].hpm + "). 4PC Window: " + covenants["Venth"][1].total4pcWindow + " (" + Math.round(covenants["Venth"][1].total4pcWindow/covenants["Venth"][1].totalHealing*1000)/10 + ")%. Damage: " + covenants["Venth"][1].totalDamage + "\n" +
-        "Venth Revival: " + covenants["Venth"][2].totalHealing + "\n" +
-        "HPS over 8m fight: " + Math.round(((covenants["Venth"][0].totalHealing/30*14 + covenants["Venth"][1].totalHealing/16*2 + covenants["Venth"][2].totalHealing/3*3)/19 + getSiTHPS(player4pc) + venth4pcfobonushps)*100)/100 + " - assuming 2 yulon, 3 revival");
+        covenants["Venth"].push(runCastSequence(baseSequence, activeStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
+        covenants["Venth"].push(runCastSequence(YulonVenth, activeStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
+        covenants["Venth"].push(runCastSequence(RevivalVenth, activeStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
+        console.log("4pc Venth: " + Math.round(token * teatime * covenants["Venth"][0].totalHealing * 100)/100 + " (HPM: " + Math.round(token * teatime * covenants["Venth"][0].hpm * 100)/100 + "). 4PC Window: " + Math.round(token * teatime * covenants["Venth"][0].total4pcWindow * 100)/100 + " (" + Math.round(covenants["Venth"][0].total4pcWindow/covenants["Venth"][0].totalHealing*1000)/10 + ")%. Damage: " + Math.round(token * teatime * covenants["Venth"][0].totalDamage * 100)/100 + "\n" +
+        "Venth Yulon: " + Math.round(token * teatime * covenants["Venth"][1].totalHealing * 100)/100 + " (HPM: " + Math.round(token * teatime * covenants["Venth"][1].hpm * 100)/100 + "). 4PC Window: " + Math.round(token * teatime * covenants["Venth"][1].total4pcWindow * 100)/100 + " (" + Math.round(covenants["Venth"][1].total4pcWindow/covenants["Venth"][1].totalHealing*1000)/10 + ")%. Damage: " + Math.round(token * teatime * covenants["Venth"][1].totalDamage * 100)/100 + "\n" +
+        "Venth Revival: " + Math.round(teatime * covenants["Venth"][2].totalHealing * 100)/100 + "\n" +
+        "HPS over 8m fight: " + Math.round(token * teatime * ((covenants["Venth"][0].totalHealing/30*14 + covenants["Venth"][1].totalHealing/16*2 + covenants["Venth"][2].totalHealing/3*3)/19 + getSiTHPS(player4pc) + venth4pcfobonushps)*100)/100 + " - assuming 2 yulon, 3 revival");
 
         // NF
         covenants["Night Fae"].push(runCastSequence(NFsequence, activeStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}));
