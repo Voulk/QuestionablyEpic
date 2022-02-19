@@ -30,8 +30,11 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
 
 export function getDominationGemEffect(effectName, player, contentType, rank) {
   let bonus_stats = {};
-  let activeEffect = effectData.find((effect) => effect.name === effectName);
+  //let activeEffect = effectData.find((effect) => effect.name === effectName);
 
+  return bonus_stats;
+
+  /*
   if (effectName === "Shard of Zed") {
     const effect = activeEffect.effects[0];
     const expectedOverhealing = 0.5;
@@ -127,7 +130,7 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
     const uptime = effect.uptime;
     bonus_stats.dps = damageIncrease * player.getDPS(contentType) * uptime / 100 / 100; // Divided by 10,000 effectively.
 
-  }
+  } */
 
 
   return bonus_stats;

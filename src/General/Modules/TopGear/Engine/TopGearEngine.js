@@ -39,7 +39,7 @@ function setupPlayer(player, contentType, castModel) {
   let newPlayer = new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights, "Retail");
   newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
-  newPlayer.dominationGemRanks = player.dominationGemRanks;
+  //newPlayer.dominationGemRanks = player.dominationGemRanks;
   newPlayer.activeModelID = player.activeModelID;
 
   return newPlayer;
@@ -98,7 +98,7 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
 
   // == Evaluate Sets ==
-  // We'll explain this more in the evalSet function header but we assign each set a score that includes stats, effects, domination gems and more.
+  // We'll explain this more in the evalSet function header but we assign each set a score that includes stats, effects and more.
   for (var i = 0; i < itemSets.length; i++) {
     itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel);
   }
@@ -409,7 +409,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
 
   // == Domination Gems ==
   // This function compares every set of possible domination gems, and sockets whichever is best. You can read more about it by navigating to the function itself.
-  if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
+  // Domination Gems are defunct in 9.2. Thank goodness.
+  //if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
 
   // == Effects ==
   // Effects include stuff like trinkets, legendaries, domination gems, tier sets (one day) and so on.
