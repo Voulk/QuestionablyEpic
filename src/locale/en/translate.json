@@ -121,7 +121,7 @@
       "CopyPlanDialog": { "NewPlanTitle": "New Plan Name", "SelectPlanTitle": "Select plan to copy", "CopyButton": "Copy", "CopyButtonTooltip": "Copy a plan under a new name" },
       "DeletePlanDialog": { "DeleteButton": "Delete" },
       "ExportPlanDialog": { "ExportButtonLabel": "Export", "ExportPlanTitle": "Export Plan" },
-      "NoteExportDialog": { "NoteExportButton": "Note Export" },
+      "NoteExportDialog": { "NoteExportButton": "Note Export", "NoteExportTooltip": "Export your plan into a note format" },
       "Classes": {
         "undefined": "",
         "HolyPaladin": "Holy Paladin",
