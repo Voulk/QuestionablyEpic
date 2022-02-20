@@ -164,9 +164,8 @@ describe("Test Sequences", () => {
         "Kyrian HPS: " + kyrianhps + " HPM: " + kyrianhpm + " DPS: " + kyriandps + " (2 yulon, 3 revival, 4 WoO)");
 
         // Venth
-        // Very rough calc, 4 uses for FO
-        // Base heal * overheal * clones active avg * env heal count * soom heal count
-        const venth4pcfobonuspercast = 450 * 0.5 * 2.33 * ((8 / (2 / (1 / 1.21))) + (8 / (1 / 1.21))); 
+        // Base heal * overheal * clones active avg * env heal count * soom heal count * conduit * vers * crit
+        const venth4pcfobonuspercast = 450 * 0.5 * 2.33 * ((8 / (2 / (1 / 1.21))) + (8 / (1 / 1.21))) * 1.9 * player.getStatMultiplier("CRITVERS", player.activeStats); 
         covenants["Venth"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}, 14))
         covenants["Venth"].push(runCastSequence(YulonBase, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
         covenants["Venth"].push(runCastSequence(RevivalBase, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))

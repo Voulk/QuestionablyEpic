@@ -321,7 +321,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     }
 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.softCap || 1) * spell.targets : spell.targets || 1;
-    const healingVal = (getSpellRaw(spell, currentStats) + flatHeal) * (1 - spell.overheal * T284pcOverhealMultiplier) * healingMult * targetMult * specialMult;
+    const healingVal = (getSpellRaw(spell, currentStats) + flatHeal * getStatMult(currentStats, ['crit', 'vers'])) * (1 - spell.overheal * T284pcOverhealMultiplier) * healingMult * targetMult * specialMult;
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
     if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
         state.T284pcwindow[spellName] = (state.T284pcwindow[spellName] || 0) + healingVal; 
