@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Typography, Grid, Dialog } from "@mui/material";
 import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
 import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
-import ertEngine from "../FightAnalysis/Engine/ERTEngine";
+import ertEngine from "./ModuleComponents/Engine/ERTEngine";
 
 class CooldownPlannerModule extends Component {
   constructor() {

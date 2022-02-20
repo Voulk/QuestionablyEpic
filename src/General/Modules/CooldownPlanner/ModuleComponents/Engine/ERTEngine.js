@@ -1,4 +1,4 @@
-import { classColoursERT } from "../../CooldownPlanner/Functions/ClassColourFunctions";
+import { classColoursERT } from "../../Functions/ClassColourFunctions";
 import i18n from "i18next";
 
 /*=============================================
@@ -14,6 +14,8 @@ const debug = false;
 
 export default function ertEngine(tableData) {
   debug && console.log(" -- Debugging On -> ERTEngine.js --");
+
+  const seperator = " - ";
   // log provided props
   // debug && console.table(tableData);
 
@@ -25,10 +27,10 @@ export default function ertEngine(tableData) {
     .map((key) => {
       let time = "{time:" + key.time + "}";
       let option0 = classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown);
-      let option1 = key.name1 === "" || key.name1 === undefined ? "" : ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1);
-      let option2 = key.name2 === "" || key.name2 === undefined ? "" : ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2);
-      let option3 = key.name3 === "" || key.name3 === undefined ? "" : ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3);
-      let option4 = key.name4 === "" || key.name4 === undefined ? "" : ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4);
+      let option1 = key.name1 === "" || key.name1 === undefined ? "" : seperator + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1);
+      let option2 = key.name2 === "" || key.name2 === undefined ? "" : seperator + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2);
+      let option3 = key.name3 === "" || key.name3 === undefined ? "" : seperator + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3);
+      let option4 = key.name4 === "" || key.name4 === undefined ? "" : seperator + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4);
       return {
         ert: time + " - " + option0 + option1 + option2 + option3 + option4,
         /* --------------------------------- This is for Sorting by Time -------------------------------- */
@@ -87,10 +89,10 @@ export default function ertEngine(tableData) {
     .map((key) => {
       let time = "{time:" + key.time + "}";
       let option0 = classColoursERT(key.class) + key.name + "|r" + "{spell:" + key.Cooldown + "}";
-      let option1 = key.name1 === "" || key.name1 === undefined ? "" : ", " + classColoursERT(key.class1) + key.name1 + "|r" + "{spell:" + key.Cooldown1 + "}";
-      let option2 = key.name2 === "" || key.name2 === undefined ? "" : ", " + classColoursERT(key.class2) + key.name2 + "|r" + "{spell:" + key.Cooldown2 + "}";
-      let option3 = key.name3 === "" || key.name3 === undefined ? "" : ", " + classColoursERT(key.class3) + key.name3 + "|r" + "{spell:" + key.Cooldown3 + "}";
-      let option4 = key.name4 === "" || key.name4 === undefined ? "" : ", " + classColoursERT(key.class4) + key.name4 + "|r" + "{spell:" + key.Cooldown4 + "}";
+      let option1 = key.name1 === "" || key.name1 === undefined ? "" : seperator + classColoursERT(key.class1) + key.name1 + "|r" + "{spell:" + key.Cooldown1 + "}";
+      let option2 = key.name2 === "" || key.name2 === undefined ? "" : seperator + classColoursERT(key.class2) + key.name2 + "|r" + "{spell:" + key.Cooldown2 + "}";
+      let option3 = key.name3 === "" || key.name3 === undefined ? "" : seperator + classColoursERT(key.class3) + key.name3 + "|r" + "{spell:" + key.Cooldown3 + "}";
+      let option4 = key.name4 === "" || key.name4 === undefined ? "" : seperator + classColoursERT(key.class4) + key.name4 + "|r" + "{spell:" + key.Cooldown4 + "}";
 
       return {
         ert: time + " - " + option0 + option1 + option2 + option3 + option4,

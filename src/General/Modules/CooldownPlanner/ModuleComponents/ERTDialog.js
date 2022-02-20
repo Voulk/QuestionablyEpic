@@ -5,7 +5,19 @@ import { bossList } from "../Data/CooldownPlannerBossList";
 
 export default function ExportERTDialog(props) {
   // const { t } = useTranslation();
-  const { variant, disableElevation, buttonLabel, color, ertListTimeNoIcons, ertListTimeIcons, ertListBossAbility, ertListAbilityNoTimeIconsAll, boss, planName, disabled } = props;
+  const {
+    variant,
+    disableElevation,
+    buttonLabel,
+    color,
+    // ertListTimeNoIcons,
+    ertListTimeIcons,
+    //  ertListBossAbility,
+    //  ertListAbilityNoTimeIconsAll,
+    boss,
+    currentPlan,
+    disabled,
+  } = props;
   const [open, setOpen] = React.useState(false);
   const [ertType, setErtType] = React.useState("Time - Icons");
   const { t, i18n } = useTranslation();
@@ -25,36 +37,36 @@ export default function ExportERTDialog(props) {
       })
       .map((key, i) => key.ID);
     let currentBoss = t("BossNames." + bossID);
-    let newString = "|cffffff00" + currentBoss + " - " + planName + "|r";
-    switch (ertType) {
-      case "Time - No Icons":
-        data = ertListTimeNoIcons;
-        data.map((key) => (newString = newString.concat("\n", key.ert)));
-        return newString;
-      case "Time - Icons":
-        data = ertListTimeIcons;
-        data.map((key) => (newString = newString.concat("\n", key.ert)));
-        return newString;
-      case "Boss Ability - No Icons":
-        data = ertListBossAbility;
-        data.map((key) => (newString = newString.concat("\n", key.ert)));
-        return newString;
-      case "Boss Ability - Icons":
-        data = ertListAbilityNoTimeIconsAll;
-        data.map((key) => (newString = newString.concat("\n", key.ert)));
-        return newString;
-      default:
-        data = ertListTimeNoIcons;
-        data.map((key) => (newString = newString.concat("\n", key.ert)));
-        return newString;
-    }
+    let newString = "|cffffff00" + currentBoss + " - " + currentPlan + "|r";
+    // switch (ertType) {
+    //   case "Time - No Icons":
+    //     data = ertListTimeNoIcons;
+    //     data.map((key) => (newString = newString.concat("\n", key.ert)));
+    //     return newString;
+    //   case "Time - Icons":
+    data = ertListTimeIcons;
+    data.map((key) => (newString = newString.concat("\n", key.ert)));
+    return newString;
+    //   case "Boss Ability - No Icons":
+    //     data = ertListBossAbility;
+    //     data.map((key) => (newString = newString.concat("\n", key.ert)));
+    //     return newString;
+    //   case "Boss Ability - Icons":
+    //     data = ertListAbilityNoTimeIconsAll;
+    //     data.map((key) => (newString = newString.concat("\n", key.ert)));
+    //     return newString;
+    //   default:
+    // data = ertListTimeNoIcons;
+    // data.map((key) => (newString = newString.concat("\n", key.ert)));
+    // return newString;
+    // }
   };
 
   return (
     <div>
       <Tooltip title={""} arrow>
-        <Button disableElevation={disableElevation} color={color} style={{ fontSize: "14px" }} onClick={handleClickOpen} variant={variant} disabled={disabled}>
-          {buttonLabel}
+        <Button variant="outlined" disableElevation={true} color="primary" style={{ fontSize: "14px" }} onClick={handleClickOpen} disabled={currentPlan === "" ? true : false}>
+          {t("CooldownPlanner.NoteExportDialog.NoteExportButton")}
         </Button>
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
@@ -62,11 +74,11 @@ export default function ExportERTDialog(props) {
           <Grid container direction="row" justifyContent="space-between">
             <Grid item>
               <Typography variant="h6" color="primary">
-                Note Export
+                {t("CooldownPlanner.NoteExportDialog.NoteExportButton")}
               </Typography>
             </Grid>
             <Grid item>
-              <Grid container spacing={1} alignItems="center">
+              {/* <Grid container spacing={1} alignItems="center">
                 <Grid item xs="auto">
                   <FormControl style={{ minWidth: 200 }} variant="outlined" size="small">
                     <InputLabel id="ertFormat">{t("CooldownPlanner.TableLabels.TypeSelector")}</InputLabel>
@@ -83,33 +95,15 @@ export default function ExportERTDialog(props) {
                       <MenuItem divider key={"ert4"} value={"Boss Ability - Icons"}>
                         Boss Ability - Icons
                       </MenuItem>
-                      {/* 
-                        <MenuItem divider key={"ert5"} value={"Notes - Icons"}>
-                          Notes - Icons
-                        </MenuItem>
-                        <MenuItem divider key={"ert6"} value={"Notes - No Icons"}>
-                          Notes - No Icons
-                        </MenuItem>
-                        */}
                     </Select>
                   </FormControl>
                 </Grid>
-              </Grid>
+              </Grid> */}
             </Grid>
           </Grid>
         </DialogTitle>
         <DialogContent>
-          <TextField
-            autoFocus
-            multiline={true}
-            margin="dense"
-            id="exportPlanID"
-            // label={"Paste your plan string here"}
-            fullWidth
-            style={{ height: "100%" }}
-            variant="outlined"
-            value={ertFormat(ertType)}
-          />
+          <TextField autoFocus multiline={true} margin="dense" id="exportPlanID" fullWidth style={{ height: "100%" }} variant="outlined" value={ertFormat(ertType)} />
         </DialogContent>
       </Dialog>
     </div>

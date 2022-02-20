@@ -116,6 +116,12 @@
     },
 
     "CooldownPlanner": {
+      "DuplicatePlanError": "Duplicate plan name detected, please choose another.",
+      "AddPlanDialog": { "AddButton": "Add", "AddButtonTooltip": "Add a new blank plan", "EnterPlanTitle": "Enter Plan Name" },
+      "CopyPlanDialog": { "NewPlanTitle": "New Plan Name", "SelectPlanTitle": "Select plan to copy", "CopyButton": "Copy", "CopyButtonTooltip": "Copy a plan under a new name" },
+      "DeletePlanDialog": { "DeleteButton": "Delete" },
+      "ExportPlanDialog": { "ExportButtonLabel": "Export", "ExportPlanTitle": "Export Plan" },
+      "NoteExportDialog": { "NoteExportButton": "Note Export" },
       "Classes": {
         "undefined": "",
         "HolyPaladin": "Holy Paladin",

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Typography, Grid, MenuItem } from "@mui/material";
+import { useTranslation } from "react-i18next";
+import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Typography, Grid, MenuItem, Tooltip } from "@mui/material";
 
 export default function CopyPlanDialog(props) {
-  const { handleCopyPlanDialogClose, openCopyPlanDialog, cooldownObject, currentBoss, loadPlanData, currentPlan } = props;
+  const { handleCopyPlanDialogClose, handleCopyPlanDialogClickOpen, openCopyPlanDialog, cooldownObject, currentBoss, loadPlanData, currentPlan } = props;
   const [planName, setPlanName] = useState(currentPlan);
   const [newPlanName, setNewPlanName] = useState("");
   const bossPlans = Object.keys(cooldownObject.getCooldowns(currentBoss));
   const duplicatePlanNameCheck = bossPlans.includes(newPlanName) ? true : false;
+  const { t, i18n } = useTranslation();
 
   // On open/close update the currently open plan
   useEffect(() => {
@@ -31,42 +33,50 @@ export default function CopyPlanDialog(props) {
   };
 
   return (
-    <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openCopyPlanDialog} maxWidth="xs" fullWidth>
-      <DialogTitle id="simple-dialog-title">Copy Plan</DialogTitle>
-      <DialogContent>
-        <Grid container spacing={1} sx={{ marginTop: "4px" }}>
-          <Grid item xs={12}>
-            <Typography variant="subtitle2">Select plan to copy</Typography>
-            <TextField key={currentPlan} select value={planName} onChange={(e) => setPlanName(e.target.value)} fullWidth variant="outlined" size="small">
-              {cooldownObject.getBossPlanNames(currentBoss).map((key, i, arr) => {
-                let lastItem = i + 1 === arr.length ? false : true;
-                return (
-                  <MenuItem divider={lastItem} value={key}>
-                    {key}
-                  </MenuItem>
-                );
-              })}
-            </TextField>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant="subtitle2">New Plan Name</Typography>
-            <TextField
-              error={duplicatePlanNameCheck}
-              helperText={duplicatePlanNameCheck ? "Duplicate plan name detected, please choose another." : ""}
-              fullWidth
-              variant="outlined"
-              defaultValue=""
-              value={newPlanName}
-              onChange={onChangeNewPlanName}
-            />
-          </Grid>
-        </Grid>
-      </DialogContent>
-      <DialogActions>
-        <Button key={8} variant="contained" color="primary" onClick={(e) => copyPlan(planName, currentBoss, newPlanName)} size="small" disabled={duplicatePlanNameCheck || newPlanName === ""}>
-          Copy Plan
+    <div>
+      <Tooltip title={t("CooldownPlanner.CopyPlanDialog.CopyButtonTooltip")} arrow>
+        <Button key={8} variant="outlined" color="primary" onClick={handleCopyPlanDialogClickOpen}>
+          {t("CooldownPlanner.CopyPlanDialog.CopyButton")}
         </Button>
-      </DialogActions>
-    </Dialog>
+      </Tooltip>
+
+      <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openCopyPlanDialog} maxWidth="xs" fullWidth>
+        <DialogTitle id="simple-dialog-title">Copy Plan</DialogTitle>
+        <DialogContent>
+          <Grid container spacing={1} sx={{ marginTop: "4px" }}>
+            <Grid item xs={12}>
+              <Typography variant="subtitle2">{t("CooldownPlanner.CopyPlanDialog.SelectPlanTitle")}</Typography>
+              <TextField key={currentPlan} select value={planName} onChange={(e) => setPlanName(e.target.value)} fullWidth variant="outlined" size="small">
+                {cooldownObject.getBossPlanNames(currentBoss).map((key, i, arr) => {
+                  let lastItem = i + 1 === arr.length ? false : true;
+                  return (
+                    <MenuItem divider={lastItem} value={key}>
+                      {key}
+                    </MenuItem>
+                  );
+                })}
+              </TextField>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography variant="subtitle2">{t("CooldownPlanner.CopyPlanDialog.NewPlanTitle")}</Typography>
+              <TextField
+                error={duplicatePlanNameCheck}
+                helperText={duplicatePlanNameCheck ? t("CooldownPlanner.DuplicatePlanError") : ""}
+                fullWidth
+                variant="outlined"
+                defaultValue=""
+                value={newPlanName}
+                onChange={onChangeNewPlanName}
+              />
+            </Grid>
+          </Grid>
+        </DialogContent>
+        <DialogActions>
+          <Button key={8} variant="contained" color="primary" onClick={(e) => copyPlan(planName, currentBoss, newPlanName)} size="small" disabled={duplicatePlanNameCheck || newPlanName === ""}>
+            {t("CooldownPlanner.CopyPlanDialog.CopyButton")}
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "@material-table/core";
-import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search } from "@mui/icons-material";
+import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search, Tooltip } from "@mui/icons-material";
 import { Button, TextField, MenuItem, Paper, Grid } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
 import { bossList } from "../Data/CooldownPlannerBossList";
@@ -25,7 +25,7 @@ import ClassRender from "./RenderComponents/ClassRender";
 import ClassEditRender from "./EditComponents/ClassEditRender";
 import CooldownTimeRender from "./RenderComponents/CooldownTImeRender";
 import NoteEdit from "./EditComponents/NoteEdit";
-import { CooldownPlannerTheme, deleteTheme } from "./Styles/CooldownPlannerTheme";
+import { CooldownPlannerTheme } from "./Styles/CooldownPlannerTheme";
 import { TableStyles } from "./Styles/TableStyles";
 import { cooldownDB } from "../Data/CooldownDB";
 import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
@@ -663,43 +663,53 @@ export default function CooldownPlanner(props) {
                   </Grid>
                   {/* // TODO: Localize */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <Button key={8} variant="outlined" color="primary" onClick={handleAddPlanDialogClickOpen}>
-                      Add Plan
-                    </Button>
+                    <AddPlanDialog
+                      openAddPlanDialog={openAddPlanDialog}
+                      handleAddPlanDialogClose={handleAddPlanDialogClose}
+                      cooldownObject={cooldownObject}
+                      currentBoss={currentBoss}
+                      loadPlanData={loadPlanData}
+                      handleAddPlanDialogClickOpen={handleAddPlanDialogClickOpen}
+                    />
                   </Grid>
 
                   {/* // TODO: Localize */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <Button key={8} variant="outlined" color="primary" onClick={handleCopyPlanDialogClickOpen}>
-                      Copy Plan
-                    </Button>
+                    <CopyPlanDialog
+                      currentPlan={currentPlan}
+                      openCopyPlanDialog={openCopyPlanDialog}
+                      handleCopyPlanDialogClickOpen={handleCopyPlanDialogClickOpen}
+                      handleCopyPlanDialogClose={handleCopyPlanDialogClose}
+                      cooldownObject={cooldownObject}
+                      currentBoss={currentBoss}
+                      loadPlanData={loadPlanData}
+                    />
                   </Grid>
 
                   {/* // TODO: Localize & fix need for theme here */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <StyledEngineProvider injectFirst>
-                      <ThemeProvider theme={deleteTheme}>
-                        <Button key={8} variant="outlined" color="primary" onClick={handleDeletePlanDialogClickOpen} disabled={currentPlan === "" || currentPlan === "default" ? true : false}>
-                          Delete Plan
-                        </Button>
-                      </ThemeProvider>
-                    </StyledEngineProvider>
+                    <DeletePlanDialog
+                      openDeletePlanDialog={openDeletePlanDialog}
+                      handleDeletePlanDialogClickOpen={handleDeletePlanDialogClickOpen}
+                      handleDeletePlanDialogClose={handleDeletePlanDialogClose}
+                      currentPlan={currentPlan}
+                      setCurrentPlan={setCurrentPlan}
+                      setData={setData}
+                      cooldownObject={cooldownObject}
+                      currentBoss={currentBoss}
+                    />
                   </Grid>
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <ImportPlanDialog variant="outlined" disableElevation={true} buttonLabel="Import" color="primary" cooldownObject={cooldownObject} loadPlanData={loadPlanData} />
                   </Grid>
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <ExportPlanDialog variant="outlined" disableElevation={true} buttonLabel="Export" data={data} color="primary" boss={currentBoss} planName={currentPlan} plan={data} />
+                    <ExportPlanDialog data={data} boss={currentBoss} planName={currentPlan} plan={data} />
                   </Grid>
 
                   {/* ----------------------------- ERT Note Button (Opens ERT Dialog) ----------------------------- */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <ExportERTDialog
-                      variant="outlined"
-                      disableElevation={true}
-                      disabled={currentPlan === "" ? true : false}
-                      buttonLabel="Note Export"
-                      color="primary"
+
                       ertListTimeNoIcons={ertListTimeNoIcons}
                       ertListBossAbility={ertListBossAbility}
                       ertListAbilityNoTimeIconsAll={ertListAbilityNoTimeIconsAll}
@@ -707,7 +717,7 @@ export default function CooldownPlanner(props) {
                       ertListNoteIcons={ertListNoteIcons}
                       ertListNoteNoIcons={ertListNoteNoIcons}
                       boss={currentBoss}
-                      planName={currentPlan}
+                      currentPlan={currentPlan}
                     />
                   </Grid>
                 </Grid>
@@ -781,33 +791,6 @@ export default function CooldownPlanner(props) {
                 }, 1000);
               }),
           }}
-        />
-
-        <AddPlanDialog
-          openAddPlanDialog={openAddPlanDialog}
-          handleAddPlanDialogClose={handleAddPlanDialogClose}
-          cooldownObject={cooldownObject}
-          currentBoss={currentBoss}
-          loadPlanData={loadPlanData}
-        />
-
-        <CopyPlanDialog
-          currentPlan={currentPlan}
-          openCopyPlanDialog={openCopyPlanDialog}
-          handleCopyPlanDialogClose={handleCopyPlanDialogClose}
-          cooldownObject={cooldownObject}
-          currentBoss={currentBoss}
-          loadPlanData={loadPlanData}
-        />
-
-        <DeletePlanDialog
-          openDeletePlanDialog={openDeletePlanDialog}
-          handleDeletePlanDialogClose={handleDeletePlanDialogClose}
-          currentPlan={currentPlan}
-          setCurrentPlan={setCurrentPlan}
-          setData={setData}
-          cooldownObject={cooldownObject}
-          currentBoss={currentBoss}
         />
       </ThemeProvider>
     </StyledEngineProvider>
