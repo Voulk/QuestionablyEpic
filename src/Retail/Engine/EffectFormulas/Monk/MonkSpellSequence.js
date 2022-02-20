@@ -352,6 +352,17 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
             state.T284pcwindow['Bonedust Brew'] = (state.T284pcwindow['Bonedust Brew'] || 0) + bonedustHealing; 
         }
     }
+    else if (state.settings.misc.includes("4T28") && state.settings.covenant === "NL") // Simulate second legendary
+    {
+        const bonedustHealing = healingVal * 0.5 * 0.4 * 1.8 * 0.75 * (1 - spell.overheal) * 0.28 + healingVal * 1.13 * 0.28
+        state.healingDone['Bonedust Brew (Plus Emeni)'] = (state.healingDone['Bonedust Brew (Plus Emeni)'] || 0) + bonedustHealing;
+
+        if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
+            state.T284pcwindow['Bonedust Brew (Plus Emeni)'] = (state.T284pcwindow['Bonedust Brew (Plus Emeni)'] || 0) + bonedustHealing; 
+        }
+    }
+
+    
     
     if (checkBuffActive(state.activeBuffs, "Empowered Chrysalis")) {
         const chrysalisSize = (healingVal / (1 - spell.overheal * T284pcOverhealMultiplier) * (spell.overheal * T284pcOverhealMultiplier) * 0.1)
