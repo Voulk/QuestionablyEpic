@@ -1045,8 +1045,8 @@ export const trinket_data = [
     effects: [
       {
         coefficient: 2.07913,
-        table: -8, 
-        ppm: 6, // TODO: Refine. 
+        table: -8, // -9
+        ppm: { "Restoration Druid": 20.4, "Discipline Priest": 11, "Holy Paladin": 0.09, "Mistweaver Monk": 0.4, "Restoration Shaman": 6.4, "Holy Priest": 8.3 }, // TODO: Refine. 
 
       },
     ],
@@ -1131,9 +1131,25 @@ export const trinket_data = [
     // On-use mana trinket. When the robot it summons dies, heal 5 allies for X over 10 seconds.
     name: "Reclaimer's Intensity Core", 
     effects: [
-      {
-        coefficient: 0,
-        table: -0, 
+      { // Mana on-use
+        coefficient: 2.186952,
+        table: -1,
+        ticks: 10, // The coefficient is for a single tick.
+        cooldown: 150,
+      },
+      { // Healing Effect whenever an automata dies. 
+        // The scaling curve does not match any known spell tables and the trinket is available at just four item level so they are hard coded in for now.
+
+        // The Reclaimer's healing effect procs once every time a nearby automata dies. This does include automata from other players in addition to the players own.
+        // However, they can also be outranged and so if not careful you can even run away from your own. The radius appears to be 30 yards. 
+        // There is a good case to be made that there should be a settings value for automata in raid.
+        coefficient: 0.841136,
+        table: -6, 
+        fixedValues: {239: 186.3, 252: 218, 265: 254.8, 278: 297.4},
+        efficiency: { Raid: 0.52, Dungeon: 0.39 }, // 
+        ppm: 0.4 * 1, // One automata 
+        targets: 5,
+        ticks: 10,
       },
     ],
   },
@@ -1179,6 +1195,24 @@ export const trinket_data = [
         baseCooldown: 600,
         cdrPerProc: 3,
         efficiency: 0.7,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Extract of Prodigious Sands                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+
+    */
+    name: "Extract of Prodigious Sands",
+    effects: [
+      {
+        coefficient: 15.64738,
+        table: -8, // -9 in spell data
+        efficiency: { Raid: 0.7, Dungeon: 0.47 }, // 
+        ppm: 7.5,
+
       },
     ],
   },

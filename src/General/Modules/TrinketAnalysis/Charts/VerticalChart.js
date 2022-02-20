@@ -55,7 +55,6 @@ export default class VerticalChart extends PureComponent {
     const currentLanguage = i18n.language;
     const data = this.props.data;
     const db = this.props.db;
-    console.log(data)
     /* ------------------------- Ilvls to Show on Chart & Colour Generation ------------------------- */
     const iLvls = [200, 207, 213, 220, 226, 233, 239, 246, 252, 259, 262, 265, 272, 278];
 

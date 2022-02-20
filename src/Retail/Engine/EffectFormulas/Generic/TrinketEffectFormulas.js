@@ -656,7 +656,6 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     const statRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel);
     const statValue = getDiminishedValue(itemSetHighestSecondary, statRaw, setStats[itemSetHighestSecondary])
     const uptime = effect.uptime;
-    console.log("Gland: " + (statValue * uptime - statRaw * (1 - uptime)))
     bonus_stats[itemSetHighestSecondary] = statValue * uptime - statRaw * (1 - uptime);
     //
   }   
@@ -847,8 +846,11 @@ else if (
   effectName === "Amalgam's Seventh Spine"
 ) {
   let effect = activeTrinket.effects[0];
-
-  bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm) / 60;
+  console.log(itemLevel + ": " + getProcessedValue(effect.coefficient, effect.table, itemLevel));
+  console.log("Procs per minute: " +  effect.ppm[player.getSpec()]);
+  console.log("Net mana: " + (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm[player.getSpec()]));
+  console.log("One mana healing: " + player.getSpecialQuery("OneManaHealing", contentType));
+  bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm[player.getSpec()]) / 60;
   //
 }
 else if (
@@ -935,6 +937,37 @@ else if (
   
   //
 }
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                Reclaimer's Intensity Core                                      */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Reclaimer's Intensity Core"
+) {
+  const manaEffect = activeTrinket.effects[0];
+  const healEffect = activeTrinket.effects[1];
+  let oneHeal = 0;
+  if ([239, 252, 265, 278].includes(itemLevel)) oneHeal = healEffect.fixedValues[itemLevel] * healEffect.ticks * player.getStatMultiplier("CRITVERS") * healEffect.targets * healEffect.efficiency[contentType];
+  // This else should never be called, but is a failsafe.
+  else oneHeal = healEffect.fixedValues[252] * healEffect.ticks * player.getStatMultiplier("CRITVERS") * healEffect.targets * healEffect.efficiency[contentType];
+
+  //console.log("ILvl: " + itemLevel + ": " + getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel))
+  bonus_stats.mana = (getProcessedValue(manaEffect.coefficient, manaEffect.table, itemLevel) / manaEffect.cooldown);
+  bonus_stats.hps = oneHeal * healEffect.ppm / 60;
+
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                   Extract of Prodigious Sands                                  */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Extract of Prodigious Sands"
+) {
+  let effect = activeTrinket.effects[0];
+  const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
+  const expectedPPM = effect.ppm; //* player.getStatPerc("Haste");
+  bonus_stats.hps = (oneHeal * expectedPPM * player.getStatMultiplier("CRITVERS") / 60);
+  //
+} 
   else {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        No Trinkets Found                                       */
