@@ -20,9 +20,25 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
   } else if (effectName === "Effect2") {
   }
   else if (effectName === "Genesis Lathe") {
-    const effectValue = getProcessedValue(119.5423, -8, itemLevel) * player.getStatPerc("Versatility")
-    //console.log(getProcessedValue(0.436328, -7, itemLevel)) // Tertiary effect
-    bonus_stats.hps = effectValue/40 * 0.9;
+
+    // These can be verified after logs start coming in but are based on frequency of casts. 
+    const ppm = {"Restoration Druid": 1.9, "Holy Paladin": 0.3, "Mistweaver Monk": 0.52, "Restoration Shaman": 1.4, "Holy Priest": 1.85, "Discipline Priest": 1.2}
+    let expectedHPS = 0;
+    // The Name field here is just for if it needs to be tracked but doesn't influence the math.
+    // The effects are similar enough in strength that a different distribution of procs doesn't particularly matter - so long as they are being used.
+    const effects = [{"name": "Absorb", "coefficient": 107.5911, "percProcs": 0.75, "ticks": 1, "secondaries": ["Versatility"]},
+                    {"name": "FlatHeal", "coefficient": 119.5424, "percProcs": 0.1, "ticks": 1, "secondaries": ["Versatility", "Crit"]},
+                    {"name": "Hot", "coefficient": 16.04781, "percProcs": 0.15, "ticks": 5, "secondaries": ["Versatility", "Crit", "Haste"]}]
+
+    for (var i = 0; i < effects.length; i++) {
+      const effect = effects[i];
+      // TODO: Check secondary scaling in effect.
+      const effectValue = getProcessedValue(effect.coefficient, -8, itemLevel) * effect.ticks * player.getStatPerc("Versatility") * player.getStatPerc("Crit") 
+      expectedHPS += (effectValue * effect.percProcs);
+    }
+
+    //console.log(getProcessedValue(0.436328, -7, itemLevel)) // Tertiary effect. Not implemented, likely won't be but it makes up a small portion of the power budget. 
+    bonus_stats.hps = expectedHPS * ppm[player.getSpec()] / 60 * 0.95;
   }
 
   return bonus_stats;

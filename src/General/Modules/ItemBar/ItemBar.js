@@ -141,7 +141,7 @@ export default function ItemBar(props) {
         item.id = getItemProp(itemID, "baseSlotID", "Retail");
       } else {
         item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "");
-        item.setDominationGem(dominationSocket);
+        //item.setDominationGem(dominationSocket);
       }
     } else {
       // Burning Crusade

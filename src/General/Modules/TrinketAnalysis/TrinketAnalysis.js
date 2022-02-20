@@ -144,7 +144,7 @@ export default function TrinketAnalysis(props) {
     }
   };
   const contentType = useSelector((state) => state.contentType);
-  const itemLevels = [200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259, 265, 272, 278];
+  const itemLevels = [200, 207, 213, 220, 226, 233, 239, 246, 252, 259, 262, 265, 272, 278];
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
     (key) =>

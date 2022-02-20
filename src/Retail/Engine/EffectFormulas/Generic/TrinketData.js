@@ -400,6 +400,25 @@ export const trinket_data = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Instructor's Divine Bell                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    A strong on-use with a slightly awkward cooldown for a lot of specs.
+    Value depends heavily on how well your specs mastery interacts with your specs big cooldowns.
+    */
+    name: "Instructor's Divine Bell (new)",
+    effects: [
+      {
+        coefficient: 2.37098,
+        table: -7,
+        duration: 15,
+        cooldown: 90,
+        discOverhealing: 0.265,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                         Flame of Battle                                        */
     /* ---------------------------------------------------------------------------------------------- */
     /*
