@@ -34,9 +34,9 @@ export default function CopyPlanDialog(props) {
 
   return (
     <div>
-      <Tooltip title={t("CooldownPlanner.CopyPlanDialog.CopyButtonTooltip")} arrow>
+      <Tooltip title={t("CooldownPlanner.CopyPlanDialog.ButtonTooltip")} arrow>
         <Button key={8} variant="outlined" color="primary" onClick={handleCopyPlanDialogClickOpen}>
-          {t("CooldownPlanner.CopyPlanDialog.CopyButton")}
+          {t("CooldownPlanner.CopyPlanDialog.ButtonLabel")}
         </Button>
       </Tooltip>
 
@@ -73,7 +73,7 @@ export default function CopyPlanDialog(props) {
         </DialogContent>
         <DialogActions>
           <Button key={8} variant="contained" color="primary" onClick={(e) => copyPlan(planName, currentBoss, newPlanName)} size="small" disabled={duplicatePlanNameCheck || newPlanName === ""}>
-            {t("CooldownPlanner.CopyPlanDialog.CopyButton")}
+            {t("CooldownPlanner.CopyPlanDialog.ButtonLabel")}
           </Button>
         </DialogActions>
       </Dialog>

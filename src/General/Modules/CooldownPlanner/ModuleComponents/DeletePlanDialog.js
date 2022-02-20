@@ -36,20 +36,20 @@ export default function AddPlanDialog(props) {
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={deleteTheme}>
           <Button key={8} variant="outlined" color="primary" onClick={handleDeletePlanDialogClickOpen} disabled={currentPlan === "default" ? true : false}>
-            {t("CooldownPlanner.DeletePlanDialog.DeleteButton")}
+            {t("CooldownPlanner.DeletePlanDialog.ButtonLabel")}
           </Button>
         </ThemeProvider>
       </StyledEngineProvider>
 
       <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openDeletePlanDialog}>
-        <DialogTitle id="simple-dialog-title">Are you sure you want to delete the current plan?</DialogTitle>
+        <DialogTitle id="simple-dialog-title">{t("CooldownPlanner.DeletePlanDialog.HeaderTitle")}</DialogTitle>
         <DialogContent>
           <TextField
             sx={{ paddingTop: "4px" }}
             variant="outlined"
             fullWidth
             id="standard-required"
-            placeholder="Type 'Delete' to confirm"
+            placeholder={t("CooldownPlanner.DeletePlanDialog.PlaceholderText")}
             defaultValue=""
             value={deleteChecker}
             onChange={deleteCheck}
@@ -66,7 +66,7 @@ export default function AddPlanDialog(props) {
                 size="small"
                 disabled={deleteChecker === "Delete" || deleteChecker === "delete" ? false : true}
               >
-                Delete Plan
+                {t("CooldownPlanner.DeletePlanDialog.ButtonLabel")}
               </Button>
             </ThemeProvider>
           </StyledEngineProvider>

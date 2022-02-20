@@ -4,7 +4,7 @@ import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, T
 
 export default function ExportPlanDialog(props) {
   const { t } = useTranslation();
-  const { disableElevation, buttonLabel, data, color, planName, boss } = props;
+  const { data, planName, boss } = props;
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -28,12 +28,12 @@ export default function ExportPlanDialog(props) {
     <div>
       <Tooltip title={""} arrow>
         <Button disableElevation={true} sx={{ fontSize: "14px" }} onClick={handleClickOpen} variant="outlined" color="primary">
-          {t("CooldownPlanner.ExportPlanDialog.ExportButtonLabel")}
+          {t("CooldownPlanner.ExportPlanDialog.ButtonLabel")}
         </Button>
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
         <DialogTitle color="primary" id="simc-dialog-title">
-          {t("CooldownPlanner.ExportPlanDialog.ExportPlanTitle")}
+          {t("CooldownPlanner.ExportPlanDialog.HeaderTitle")}
         </DialogTitle>
         <DialogContent>
           <TextField autoFocus multiline={true} margin="dense" id="exportPlanID" fullWidth sx={{ height: "100%" }} value={exportPlanEngine(planName, data, boss)} />

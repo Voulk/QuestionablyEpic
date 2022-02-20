@@ -27,13 +27,13 @@ export default function AddPlanDialog(props) {
 
   return (
     <div>
-      <Tooltip title={t("CooldownPlanner.AddPlanDialog.AddButtonTooltip")} arrow>
+      <Tooltip title={t("CooldownPlanner.AddPlanDialog.ButtonTooltip")} arrow>
         <Button key={8} variant="outlined" color="primary" onClick={handleAddPlanDialogClickOpen}>
-          {t("CooldownPlanner.AddPlanDialog.AddButton")}
+          {t("CooldownPlanner.AddPlanDialog.ButtonLabel")}
         </Button>
       </Tooltip>
       <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="xs" fullWidth>
-        <DialogTitle id="simple-dialog-title">{t("CooldownPlanner.AddPlanDialog.EnterPlanTitle")}</DialogTitle>
+        <DialogTitle id="simple-dialog-title">{t("CooldownPlanner.AddPlanDialog.HeaderTitle")}</DialogTitle>
         <DialogContent>
           <TextField
             error={duplicatePlanNameCheck}
@@ -48,7 +48,7 @@ export default function AddPlanDialog(props) {
         </DialogContent>
         <DialogActions>
           <Button key={8} variant="contained" color="primary" onClick={(e) => addPlan(planName, currentBoss)} size="small" disabled={duplicatePlanNameCheck || planName === ""}>
-            {t("CooldownPlanner.AddPlanDialog.AddButton")}
+            {t("CooldownPlanner.AddPlanDialog.ButtonLabel")}
           </Button>
         </DialogActions>
       </Dialog>

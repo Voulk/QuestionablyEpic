@@ -504,7 +504,6 @@ export const bossAbilities = {
         de: "",
       },
       guid: 360202,
-      difficulty: ["Mythic"],
       cooldownPlannerActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_skyreach_empower.jpg").default,
     },

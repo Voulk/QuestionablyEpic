@@ -57,12 +57,7 @@ export default function CooldownPlanner(props) {
   const healTeamDialogOpen = props.healTeamDialogOpen;
 
   // ERT Objects
-  const ertListTimeNoIcons = props.ertListTimeNoIcons;
-  const ertListBossAbility = props.ertListBossAbility;
-  const ertListAbilityNoTimeIconsAll = props.ertListAbilityNoTimeIconsAll;
   const ertListTimeIcons = props.ertListTimeIcons;
-  const ertListNoteIcons = props.ertListNoteIcons;
-  const ertListNoteNoIcons = props.ertListNoteNoIcons;
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                            Add Plan                                            */
@@ -530,16 +525,6 @@ export default function CooldownPlanner(props) {
           style={{
             padding: 10,
           }}
-          /* ---------------------- Option to make cell editable by clicking on cell ---------------------- */
-          /* ------------------- Not currently Implemented, Code here for future options ------------------ */
-          // cellEditable={{
-          //   onCellEditApproved: (newValue, oldValue, rowData, columnDef) => {
-          //     return new Promise((resolve, reject) => {
-          //       console.log('newValue: ' + newValue);
-          //       setTimeout(resolve, 1000);
-          //     });
-          //   }
-          // }}
           options={{
             showTitle: false,
             sorting: false,
@@ -661,7 +646,6 @@ export default function CooldownPlanner(props) {
                       })}
                     </TextField>
                   </Grid>
-                  {/* // TODO: Localize */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <AddPlanDialog
                       openAddPlanDialog={openAddPlanDialog}
@@ -673,7 +657,6 @@ export default function CooldownPlanner(props) {
                     />
                   </Grid>
 
-                  {/* // TODO: Localize */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <CopyPlanDialog
                       currentPlan={currentPlan}
@@ -686,7 +669,6 @@ export default function CooldownPlanner(props) {
                     />
                   </Grid>
 
-                  {/* // TODO: Localize & fix need for theme here */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <DeletePlanDialog
                       openDeletePlanDialog={openDeletePlanDialog}
@@ -699,28 +681,20 @@ export default function CooldownPlanner(props) {
                       currentBoss={currentBoss}
                     />
                   </Grid>
+
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <ImportPlanDialog variant="outlined" disableElevation={true} buttonLabel="Import" color="primary" cooldownObject={cooldownObject} loadPlanData={loadPlanData} />
+                    <ImportPlanDialog cooldownObject={cooldownObject} loadPlanData={loadPlanData} />
                   </Grid>
+
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <ExportPlanDialog data={data} boss={currentBoss} planName={currentPlan} plan={data} />
                   </Grid>
 
-                  {/* ----------------------------- ERT Note Button (Opens ERT Dialog) ----------------------------- */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <ExportERTDialog
-
-                      ertListTimeNoIcons={ertListTimeNoIcons}
-                      ertListBossAbility={ertListBossAbility}
-                      ertListAbilityNoTimeIconsAll={ertListAbilityNoTimeIconsAll}
-                      ertListTimeIcons={ertListTimeIcons}
-                      ertListNoteIcons={ertListNoteIcons}
-                      ertListNoteNoIcons={ertListNoteNoIcons}
-                      boss={currentBoss}
-                      currentPlan={currentPlan}
-                    />
+                    <ExportERTDialog ertListTimeIcons={ertListTimeIcons} boss={currentBoss} currentPlan={currentPlan} />
                   </Grid>
                 </Grid>
+
                 <Grid item xs={12} sm={6} md={12} lg={6} xl={3}>
                   {currentBoss === "" ? null : <MTableToolbar {...props} />}
                 </Grid>

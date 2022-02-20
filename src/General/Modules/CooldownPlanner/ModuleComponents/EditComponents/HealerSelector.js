@@ -52,7 +52,7 @@ const selectMenu = createTheme({
 });
 
 export default function HealerSelector(props, name, nameClass, cooldown) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <StyledEngineProvider injectFirst>
@@ -91,8 +91,7 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
             </MenuItem>
           ))}
           <MenuItem key={"remove"} value={""}>
-            {/* // TODO Translate */}
-            Remove
+            {t("Remove")}
           </MenuItem>
         </TextField>
       </ThemeProvider>
