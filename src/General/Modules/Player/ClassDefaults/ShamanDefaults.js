@@ -62,7 +62,7 @@ export const shamanDefaultSpecialQueries = (contentType) => {
   if (contentType === "Raid") {
     specialQueries = {
       HPSOnEarthShield: 456,
-      OneManaHealing: 1.9,
+      OneManaHealing: 1.4,
       CastsPerMinute: 24,
       cooldownMult: {
         oneMinute: 1.1,
