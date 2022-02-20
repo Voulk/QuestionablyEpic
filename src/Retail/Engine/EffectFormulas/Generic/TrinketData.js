@@ -839,12 +839,12 @@ export const trinket_data = [
     name: "So'leah's Secret Technique",
     effects: [
       {
-        coefficient: 1.386087, // Versions of the trinket obtained pre-nerf use a 10% higher coefficient. This version of the trinket is NYI and may not be. 
-        table: -8,
+        coefficient: 0.493954, 
+        table: -7,
       },
       {
-        coefficient: 0.231014,
-        table: -8,
+        coefficient: 0.098791,
+        table: -7,
       }
     ],
   },
@@ -1177,7 +1177,8 @@ export const trinket_data = [
         table: -8, // -9
         ppm: 10,
         baseCooldown: 600,
-        cdrPerProc: 3
+        cdrPerProc: 3,
+        efficiency: 0.7,
       },
     ],
   },

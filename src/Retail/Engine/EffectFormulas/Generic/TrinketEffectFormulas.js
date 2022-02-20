@@ -884,7 +884,7 @@ else if (
 
   const expectedUsesMin = 1 / effect.baseCooldown * 60 + (effect.ppm * effect.cdrPerProc / effect.baseCooldown);
 
-  bonus_stats.hps = getProcessedValue(effect.coefficient, effect.table, itemLevel) * expectedUsesMin / 60;
+  bonus_stats.hps = getProcessedValue(effect.coefficient, effect.table, itemLevel) * expectedUsesMin / 60 * effect.efficiency;
   //
 }
 else if (

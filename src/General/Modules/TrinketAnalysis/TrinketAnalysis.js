@@ -100,7 +100,16 @@ export default function TrinketAnalysis(props) {
     ];
     const shadowlandsDungeons = [
       -1, // General Dungeons
+      1182, // Necrotic Wake,
+      1183, // Plaguefall,
+      1184, // Mists of Tirna Scithe,
+      1185, // Halls of Atonement,
+      1186, // Spires of Ascension,
+      1187, // Theater of Pain,
+      1188, // De Other Side,
+      1189, // Sanguine Depths,
       1194, // Tazavesh
+      
     ];
     const legionTimewalking = [
       -24, // Legion Timewalking
@@ -149,7 +158,7 @@ export default function TrinketAnalysis(props) {
   const trinketDB = getItemDB(gameType).filter(
     (key) =>
       key.slot === "Trinket" &&
-      ((gameType === "BurningCrusade" && "phase" in key && key.phase < 2 && (!("class" in key) || props.player.getSpec().includes(key.class))) || (gameType === "Retail" && key.levelRange.length > 0)),
+      ((gameType === "BurningCrusade" && "phase" in key && (!("class" in key) || props.player.getSpec().includes(key.class))) || (gameType === "Retail" && key.levelRange.length > 0)),
   );
   const filteredTrinketDB = sourceHandler(trinketDB, sources);
 
