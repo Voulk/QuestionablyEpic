@@ -236,7 +236,8 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
         state.activeBuffs.push({name: "Dream Delver", expiration: 999, buffType: "special", value: 1.03});
     }
 
-    if (settings['soulbind'] === "Kleia") state.activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
+    // 385 = 35 * 11% crit (this goes into diminishing returns so probably underestimating)
+    if (settings['soulbind'] === "Kleia") state.activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 385, stat: 'crit'})
 
     if (settings['soulbind'] === "Emeni") {
         spells['Bonedust Brew'].push({
@@ -425,7 +426,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits, runcou
             });  
         }
 
-        const expiringHots = state.activeBuffs.filter(function (buff) {return buff.buffType === "heal" && state.t >= buff.expiration && buff.expiration != false})
+        const expiringHots = state.activeBuffs.filter(function (buff) {return buff.buffType === "heal" && state.t >= buff.expiration})
         expiringHots.forEach(buff => {
             const tickRate = buff.tickRate / getHaste(state.currentStats)
             const partialTickPercentage = (buff.next - state.t) / tickRate;
@@ -433,7 +434,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits, runcou
             runHeal(state, spell, buff.name, partialTickPercentage)
         })
         // Clear slate of old buffs.
-        state.activeBuffs = state.activeBuffs.filter(function (buff) {return state.t < buff.expiration && buff.expiration != false});
+        state.activeBuffs = state.activeBuffs.filter(function (buff) {return state.t < buff.expiration});
 
         // This is a check of the current time stamp against the tick our GCD ends and we can begin our queued spell.
         // It'll also auto-cast Ascended Eruption if Boon expired.

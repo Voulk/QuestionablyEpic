@@ -211,11 +211,10 @@ export const MONKSPELLS = {
         secondaries: ['crit', 'vers'],
     }],
     "Essence Font": [{
-        type: "buff",
-        buffType: "function",
+        type: "special",
         castTime: 3,
         cost: 7.2,
-        function: function (state) {
+        runFunc: function (state) {
             // Essence Font HoT - only goes onto unique targets, this was easiest way to sim
             const hotData = {coeff: 0.042 * (state.settings.misc.includes("2T28") ? 1 : 1), duration: 8 + (state.settings.misc.includes("2T28") ? 2 : 0)}
             const efHot = { type: "heal", coeff: hotData.coeff, overheal: 0.3, secondaries: ['crit', 'vers'], duration: hotData.duration}
@@ -223,7 +222,7 @@ export const MONKSPELLS = {
                 tickRate: 2, next: state.t + (2 / getHaste(state.currentStats))}
             newBuff['expiration'] = state.t + efHot.duration
 
-            for (var t = 0; t < 16; t++)
+            for (var t = 0; t < 16; t++) // 16 avg targets hit
             {
                 state.activeBuffs.push(newBuff)
             }
@@ -360,14 +359,20 @@ export const MONKSPELLS = {
             const rmHots = ["Renewing Mist", "Essence Font (HoT)", "Enveloping Mist", "Essence Font (HoT - Faeline Stomp)"]
             const risingMistExtension = 4;
             const activeRMBuffs = state.activeBuffs.filter(function (buff) {return rmHots.includes(buff.name)})
+            let expectedtargets = 0;
             // Apply heal to allies with ReM, EF or Enveloping Mist.
             // ReM and EF can be double counted here, slightly inflating value.
             // The addition of target markers in the buff list would solve this but isn't high priority.
-            const spell = { type: "heal", coeff: 0.28, overheal: 0.15, secondaries: ['crit', 'vers'], targets: activeRMBuffs.length} 
+            // Capped healed targets at 20 - this reduces RM healing on NF
+            if (activeRMBuffs.length > 20)
+                expectedtargets = 20;
+            else expectedtargets = activeRMBuffs.length;
+
+            const spell = { type: "heal", coeff: 0.28, overheal: 0.15, secondaries: ['crit', 'vers'], targets: expectedtargets} 
+         
             if (activeRMBuffs.length > 0) runHeal(state, spell, "Rising Mist")
 
             // Extend ReM, EF and Enveloping Mist HoTs. Mark down the extension.
-            // TODO: Extensions should be specific to a HoTs base duration. 
             activeRMBuffs.forEach((buff) => {
                 if ('durationExtended' in buff) {
                     buff.durationExtended = buff.durationExtended + 1;
@@ -375,8 +380,14 @@ export const MONKSPELLS = {
                 else {
                     buff.durationExtended = 1;
                 }
-                if (buff.durationExtended <= 2) {
+                if ((buff.name === "Enveloping Mist" || buff.name === "Essence Font (HoT)" || buff.name === "Essence Font (HoT - Faeline Stomp") && buff.durationExtended <= 2) {
                     buff.expiration = buff.expiration + risingMistExtension;
+                }
+                if (buff.name === "Renewing Mist" && buff.durationExtended <= 5) {
+                    buff.expiration = buff.expiration + risingMistExtension;
+                }
+                if ((buff.name === "Essence Font (HoT)" || buff.name === "Essence Font (HoT - Faeline Stomp") && buff.durationExtended <= 3 && state.settings.misc.includes("2T28")) {
+                    buff.expiration = buff.expiration + risingMistExtension / 2;
                 }
             })
         }
@@ -480,8 +491,8 @@ export const MONKSPELLS = {
         cooldown: 180,
         function: function (state) {
             // Yu'lon Soothing Breath
-            const SBHot = { type: "heal", coeff: 1.05 * 3, overheal: 0.3, secondaries: ['crit', 'vers'], duration:  4.5, hastedDuration: true}
-            const newBuff = {name: "Soothing Breath (Yulon)", buffType: "heal", attSpell: SBHot, tickRate: 1.5, next: state.t + (1.5 / getHaste(state.currentStats)), hastedDuration: true}
+            const SBHot = { type: "heal", coeff: 1.05, overheal: 0.3, secondaries: ['crit', 'vers'], duration:  4.5, hastedDuration: true}
+            const newBuff = {name: "Soothing Breath (Yulon)", buffType: "heal", attSpell: SBHot, tickRate: 1.5, next: state.t + (1.5 / getHaste(state.currentStats)), hastedDuration: true, targets: 3}
             newBuff['expiration'] = state.t + SBHot.duration
             state.activeBuffs.push(newBuff)
 
@@ -527,7 +538,7 @@ export const MONKSPELLS = {
             }
         }
     }],
-    "Weapons of Order":[{ // TODO: Implement WoO properly if ever needing to use reset
+    "Weapons of Order":[{ // TODO: Implement WoO properly if ever needing to use reset function
         type: "buff",
         castTime: 0,
         cost: 5,
@@ -536,6 +547,26 @@ export const MONKSPELLS = {
         buffType: 'stats',
         stat: "mastery",
         value: 356.9
+    },
+    {
+        type: "buff",
+        buffType: "function",
+        castTime: 0,
+        cost: 0,
+        tickRate: 4.5,
+        buffDuration: 12,
+        cooldown: 180,
+        function: function (state) {
+            // Yu'lon Soothing Breath
+            const SBHot = { type: "heal", coeff: 1.05, overheal: 0.3, secondaries: ['crit', 'vers'], duration:  4.5, hastedDuration: true}
+            const newBuff = {name: "Soothing Breath (Yulon)", buffType: "heal", attSpell: SBHot, tickRate: 1.5, next: state.t + (1.5 / getHaste(state.currentStats)), hastedDuration: true, targets: 3}
+            newBuff['expiration'] = state.t + SBHot.duration
+            state.activeBuffs.push(newBuff)
+
+            // TODO: Make ongoing heal expire when Yulon ends.
+
+            // TODO: Implement weaker CTA Enveloping breath
+        }
     }]
 }
 
