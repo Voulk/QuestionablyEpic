@@ -100,9 +100,9 @@ export default function CooldownPlanner(props) {
 
   /* ---------------- State for Raid shown (Current is Sanctum of Domination 2450) ---------------- */
   // Only bosses for Sanctum will be shown in the drop down
-  const [currentRaid, setCurrentRaid] = useState(2450);
+  const [currentRaid, setCurrentRaid] = useState(2481);
   // debug && console.log(currentRaid);
-  const [currentBoss, setCurrentBoss] = useState(2423);
+  const [currentBoss, setCurrentBoss] = useState(2512);
   // debug && console.log(currentBoss);
   const [currentPlan, setCurrentPlan] = useState("default");
   // debug && console.log(currentPlan);
@@ -589,7 +589,7 @@ export default function CooldownPlanner(props) {
                     </Button>
                   </Grid>
                   {/* ---------------------------------- Raid Selection Drop Down ---------------------------------- */}
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  {/* <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <TextField
                       id="RaidSelector"
                       select
@@ -605,7 +605,7 @@ export default function CooldownPlanner(props) {
                         </MenuItem>
                       ))}
                     </TextField>
-                  </Grid>
+                  </Grid> */}
                   {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <TextField sx={{ minWidth: 200, width: "100%" }} size="small" select value={currentBoss} onChange={(e) => changeBoss(e.target.value)} disabled={currentRaid === "" ? true : false}>
