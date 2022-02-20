@@ -154,7 +154,7 @@ export const MONKSPELLS = {
             // Cast enveloping breath.
             const CelestialBuff = state.activeBuffs.filter(buff => buff.name === "Celestial Active").length
             if (CelestialBuff > 0){
-                const envbHot = { type: "heal", coeff: 0.3, overheal: 0.4, secondaries: ['crit', 'vers'], duration: 6, targets:3.5}
+                const envbHot = { type: "heal", coeff: 0.3, overheal: 0.4, secondaries: ['crit', 'vers'], duration: 6, targets:3}
                 const newBuff = {name: "Enveloping Breath", buffType: "heal", attSpell: envbHot,
                     tickRate: 1, next: state.t + (1 / getHaste(state.currentStats))}
                 newBuff['expiration'] = state.t + envbHot.duration
@@ -222,7 +222,7 @@ export const MONKSPELLS = {
                 tickRate: 2, next: state.t + (2 / getHaste(state.currentStats))}
             newBuff['expiration'] = state.t + efHot.duration
 
-            for (var t = 0; t < 16; t++) // 16 avg targets hit
+            for (var t = 0; t < 12; t++) // 12 avg targets hit (Abe advised 12 or 13, this dosen't replace existing hots so lowballing)
             {
                 state.activeBuffs.push(newBuff)
             }
@@ -315,7 +315,7 @@ export const MONKSPELLS = {
                 if (chijiBuff)
                 {
                     const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
-                    bonusMasteryProc.coeff *= 2;
+                    runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
                     runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
 
                     // Add stack of Chiji reduced mana cost
@@ -411,7 +411,7 @@ export const MONKSPELLS = {
             if (chijiBuff)
                 {
                     const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
-                    bonusMasteryProc.coeff *= 2;
+                    runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
                     runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
 
                     // Add stack of Chiji reduced mana cost

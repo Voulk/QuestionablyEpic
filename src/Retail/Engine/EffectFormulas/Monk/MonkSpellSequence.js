@@ -251,7 +251,7 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
     }
 
     if (settings['soulbind'] === "Theotar") {
-        state.activeBuffs.push({name: "Token of Appreciation", expiration: 999, buffType: "special", value: 1.04});
+        state.activeBuffs.push({name: "Token of Appreciation", expiration: 999, buffType: "special", value: 1.03});
         state.activeBuffs.push({name: "Tea Time", expiration: 999, buffType: "special", value: 1.03});
     }
 
@@ -345,7 +345,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
         // Hits 75% of raid
         // 40% overhealing (conservative, logs range from 35->70, most above 50) - removed this, made it scale with the spells overheal instead
         // This causes a "double dip" in the spell overheal but that's accurate with how BDB works
-        const bonedustHealing = healingVal * 0.5 * 0.72 * 0.75 * (1 - spell.overheal)
+        const bonedustHealing = healingVal * 0.5 * 0.4 * 1.8 * 0.75 * (1 - spell.overheal)
         state.healingDone['Bonedust Brew'] = (state.healingDone['Bonedust Brew'] || 0) + bonedustHealing;
 
         if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
