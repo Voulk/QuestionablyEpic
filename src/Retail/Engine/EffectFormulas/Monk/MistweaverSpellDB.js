@@ -100,10 +100,12 @@ export const MONKSPELLS = {
                 state.activeBuffs.push(newBuff)
             }
 
-            // Support Faeline Harmony, always on
+            // Support Faeline Harmony, on when 4pc is on
             // TODO: Implement properly :)
-            const newBuffFLH = {name: "Faeline Harmony Inc", buffType: "special", expiration: state.t + 10}
-            state.activeBuffs.push(newBuffFLH)
+            if (state.settings.misc.includes("4T28")) {
+                const newBuffFLH = {name: "Faeline Harmony Inc", buffType: "special", expiration: state.t + 10, value: 1.08}
+                state.activeBuffs.push(newBuffFLH)
+            }
         }
     }/*,
     {
@@ -213,6 +215,31 @@ export const MONKSPELLS = {
         buffType: "function",
         castTime: 3,
         cost: 7.2,
+        function: function (state) {
+            // Essence Font HoT - only goes onto unique targets, this was easiest way to sim
+            const hotData = {coeff: 0.042 * (state.settings.misc.includes("2T28") ? 1 : 1), duration: 8 + (state.settings.misc.includes("2T28") ? 2 : 0)}
+            const efHot = { type: "heal", coeff: hotData.coeff, overheal: 0.3, secondaries: ['crit', 'vers'], duration: hotData.duration}
+            const newBuff = {name: "Essence Font (HoT)", buffType: "heal", attSpell: efHot,
+                tickRate: 2, next: state.t + (2 / getHaste(state.currentStats))}
+            newBuff['expiration'] = state.t + efHot.duration
+
+            for (var t = 0; t < 16; t++)
+            {
+                state.activeBuffs.push(newBuff)
+            }
+
+            // Weapons of Order heal
+            if (state.activeBuffs.filter(function (buff) {return buff.name === "Weapons of Order"}).length > 0)
+            {
+                const spell = { type: "heal", coeff: 0.4, overheal: 0.15, secondaries: ['crit', 'vers'], targets: 6} 
+                runHeal(state, spell, "Weapons of Order")
+                runHeal(state, spell, "Weapons of Order")
+            }
+        }
+    },
+    {
+        type: "buff",
+        buffType: "function",
         tickRate: 0.1667,
         buffDuration: 3,
         hastedDuration: true,
@@ -220,16 +247,7 @@ export const MONKSPELLS = {
             // Essence Font Heal
             const directData = {coeff: 0.472 * (state.settings.misc.includes("2T28") ? 1 : 1)}
             const efDirect = { type: "heal", coeff: directData.coeff, overheal: 0.15, secondaries: ['crit', 'vers'], targets: 1}
-            runHeal(state, efDirect, "Essence Font")
-
-            // Essence Font HoT
-            const hotData = {coeff: 0.042 * (state.settings.misc.includes("2T28") ? 1 : 1), duration: 8 + (state.settings.misc.includes("2T28") ? 2 : 0)}
-            const efHot = { type: "heal", coeff: hotData.coeff, overheal: 0.3, secondaries: ['crit', 'vers'], duration: hotData.duration}
-            const newBuff = {name: "Essence Font (HoT)", buffType: "heal", attSpell: efHot,
-                tickRate: 2, next: state.t + (2 / getHaste(state.currentStats))}
-            newBuff['expiration'] = state.t + efHot.duration
-
-            state.activeBuffs.push(newBuff)
+            runHeal(state, efDirect, "Essence Font")            
         }
     }],
     "Tiger Palm": [{
@@ -264,9 +282,13 @@ export const MONKSPELLS = {
         type: "special",
         condition: "Ancient Teachings of the Monastery",
         runFunc: function (state) {
-            // Heal allies with Renewing Mist.
-            const spell = { type: "heal", coeff: 0.297297 * 1.04 * 2.5 * 1.05 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
-            runHeal(state, spell, "Ancient Teachings of the Monastery")
+            // Checks if AtoTM active
+            
+            if (state.activeBuffs.filter(function (buff) {return buff.name === "Ancient Teachings of the Monastery"}).length > 0)
+            {
+                const spell = { type: "heal", coeff: 0.297297 * 1.04 * 2.5 * 1.05 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
+                runHeal(state, spell, "Ancient Teachings of the Monastery")
+            }
         }
     }],
     "Blackout Kick": [{
@@ -281,7 +303,7 @@ export const MONKSPELLS = {
             // For each bonus kick, deal damage and heal via Ancient Teachings if applicable.
             for (var i = 0; i < teachingsStacks; i++) {
                 // Deal damage
-                const blackoutKick = { type: "damage", coeff: 0.847 * 1.04, secondaries: ['crit', 'vers'], targets: 1} 
+                const blackoutKick = { type: "damage", damageType: "physical", coeff: 0.847 * 1.04, secondaries: ['crit', 'vers'], targets: 1} 
                 runDamage(state, blackoutKick, "Blackout Kick")
 
                 // Ancient Teachings if applicable.
@@ -363,8 +385,11 @@ export const MONKSPELLS = {
         type: "special",
         condition: "Ancient Teachings of the Monastery",
         runFunc: function (state) {
-            const spell = { type: "heal", coeff: 2.151248 * 2.5 * 1.05 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
-            runHeal(state, spell, "Ancient Teachings of the Monastery")
+            if (state.activeBuffs.filter(function (buff) {return buff.name === "Ancient Teachings of the Monastery"}).length > 0)
+            {
+                const spell = { type: "heal", coeff: 2.151248 * 2.5 * 1.05 * GLOBALMODS.ARMOR, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
+                runHeal(state, spell, "Ancient Teachings of the Monastery")
+            }
         }
     },
     {
@@ -501,6 +526,16 @@ export const MONKSPELLS = {
                 runHeal(state, masteryProc, "Gust of Mists (Revival)")
             }
         }
+    }],
+    "Weapons of Order":[{ // TODO: Implement WoO properly if ever needing to use reset
+        type: "buff",
+        castTime: 0,
+        cost: 5,
+        cooldown: 120,
+        buffDuration: 30,
+        buffType: 'stats',
+        stat: "mastery",
+        value: 356.9
     }]
 }
 

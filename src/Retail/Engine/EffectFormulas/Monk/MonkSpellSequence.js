@@ -1,4 +1,5 @@
 // 
+import { strictEqual } from "assert";
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { MONKSPELLS } from "./MistweaverSpellDB";
 
@@ -25,8 +26,23 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
  * @AscendedEruption A special buff for the Ascended Eruption spell only. The multiplier is equal to 3% (4 with conduit) x the number of Boon stacks accrued.
  */
 const getDamMult = (buffs, activeAtones, t, spellName, boonStacks, conduits) => {
-    let mult = 1.05 // Mystic Touch.
-    if (checkBuffActive(buffs, "Faeline Harmony Inc")) mult * 1.08; 
+    let mult = 1
+
+    if (MONKSPELLS[spellName].damageType === "Physical")
+    {
+        mult *= 1.05 // Mystic Touch.
+    }
+
+    const multiplierBuffList = ["Dream Delver", "Tea Time"];
+    multiplierBuffList.forEach(buffName => {
+        if (checkBuffActive(buffs, buffName)) 
+    {
+        mult *= buffs.filter(function (buff) {return buff.name === buffName})[0].value;
+    }
+    });
+
+    if (checkBuffActive(buffs, "Faeline Harmony Inc")) mult *= 1.08;
+
     return mult; 
 }
 
@@ -36,7 +52,15 @@ const getDamMult = (buffs, activeAtones, t, spellName, boonStacks, conduits) => 
  */
 const getHealingMult = (buffs, t, spellName, conduits) => {
     let mult = 1
-    if (checkBuffActive(buffs, "Dream Delver")) mult *= 1.03;
+
+    const multiplierBuffList = ["Dream Delver", "Token of Appreciation", "Tea Time"];
+
+    multiplierBuffList.forEach(buffName => {
+        if (checkBuffActive(buffs, buffName)) 
+    {
+        mult *= buffs.filter(function (buff) {return buff.name === buffName})[0].value;
+    }
+    });
 
     // FLS buffs 5 targets. We'll take the average healing increase. This is likely a slight underestimation since your RJW and FLS targets will line up closely. On the other
     // hand FLS likes to hit pets sometimes so it should be fair. 
@@ -58,7 +82,7 @@ const getHealingMult = (buffs, t, spellName, conduits) => {
             mult *= 1 + 0.1 * EnvelopingBreathCount / 20 * 3.5;
         }
     }
-    
+
     return mult;
 }
 
@@ -161,7 +185,7 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
 
     if (settings['DefaultLoadout']) {
         //settings['Clarity of Mind'] = true;
-        settings['Pelagos'] = true;
+        //settings['Pelagos'] = true;
         //conduits['Shining Radiance'] = 239;
         //conduits['Rabid Shadows'] = 239;
         //conduits['Courageous Ascension'] = 239;
@@ -211,8 +235,8 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
         state.activeBuffs.push({name: "Empowered Chrysalis", expiration: 999, buffType: "special", value: 0.1});
         state.activeBuffs.push({name: "Dream Delver", expiration: 999, buffType: "special", value: 1.03});
     }
+
     if (settings['soulbind'] === "Kleia") state.activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
-    //
 
     if (settings['soulbind'] === "Emeni") {
         spells['Bonedust Brew'].push({
@@ -223,6 +247,11 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
             value: 1.13,
             buffDuration: 10,
         });
+    }
+
+    if (settings['soulbind'] === "Theotar") {
+        state.activeBuffs.push({name: "Token of Appreciation", expiration: 999, buffType: "special", value: 1.04});
+        state.activeBuffs.push({name: "Tea Time", expiration: 999, buffType: "special", value: 1.03});
     }
 
 
@@ -343,28 +372,31 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
  * @param {object} conduits Any conduits we want to include. The conduits object is made up of {ConduitName: ConduitLevel} pairs where the conduit level is an item level rather than a rank.
  * @returns The expected healing of the full ramp.
  */
-export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
+export const runCastSequence = (sequence, stats, settings = {}, conduits, runcount = 1) => {
     //console.log("Running cast sequence");
 
     let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: {}, manaSpent: 0, settings: settings, conduits: conduits, T284pcwindow: {}}
 
-    let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
-
-    let purgeTicks = []; // Purge tick timestamps
-    let activeBuffs = []; // Active buffs on our character: includes stat buffs, Boon of the Ascended and so on. 
-    let damageBreakdown = {}; // A statistics object that holds a tally of our damage from each spell.
-    let healing = {};
-    let timer = 0;
     let nextSpell = 0;
     let tracker = 0; 
     
     const spells = applyLoadoutEffects(deepCopyFunction(MONKSPELLS), state.settings, state.conduits, state)
+    if (state.settings.legendaries.includes("Ancient Teachings of the Monastery"))
+    {
+        state.activeBuffs.push({name: "Ancient Teachings of the Monastery", buffType: "special", expiration: 999});
+    }
 
-    const seq = [...sequence];
+    let seq = [...sequence];
+
+    for (var run = 1; run < runcount; run += 1)
+    {
+        seq = seq.concat(sequence);
+    }
 
     // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     // This is the length of time after a sequence begins that the healing is cut off.
-    const sequenceLength = 40; 
+    let sequenceLength = 40; 
+    sequenceLength *= runcount;
     const reporting = true; // A flag to report our sequences to console. Used for testing. 
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
@@ -393,7 +425,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             });  
         }
 
-        const expiringHots = state.activeBuffs.filter(function (buff) {return buff.buffType === "heal" && state.t >= buff.expiration})
+        const expiringHots = state.activeBuffs.filter(function (buff) {return buff.buffType === "heal" && state.t >= buff.expiration && buff.expiration != false})
         expiringHots.forEach(buff => {
             const tickRate = buff.tickRate / getHaste(state.currentStats)
             const partialTickPercentage = (buff.next - state.t) / tickRate;
@@ -401,40 +433,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             runHeal(state, spell, buff.name, partialTickPercentage)
         })
         // Clear slate of old buffs.
-        state.activeBuffs = state.activeBuffs.filter(function (buff) {return state.t < buff.expiration});
-
-
-        // Check for and execute a purge the wicked tick if required.
-        if (purgeTicks.length > 0 && state.t > purgeTicks[0]) {
-            // Update current stats for this combat tick.
-            // Effectively base stats + any current stat buffs.
-            let currentStats = {...stats};
-            currentStats = getCurrentStats(currentStats, state.activeBuffs);
-
-            purgeTicks.shift();
-            const activeAtonements = getActiveAtone(atonementApp, timer)
-            const damageVal = DISCSPELLS['Purge the Wicked'][0].dot.coeff * currentStats.intellect * getStatMult(currentStats, ['crit', 'vers']);
-            const damMultiplier = getDamMult(activeBuffs, activeAtonements, state.t, conduits)
-
-            if (purgeTicks.length === 0) {
-                // If this is the last Purge tick, add a partial tick.
-                const partialTickPercentage = ((getHaste(state.currentStats) - 1) % 0.1) * 10;
-
-                damageBreakdown['Purge the Wicked'] = (damageBreakdown['Purge the Wicked'] || 0) + damageVal * damMultiplier * partialTickPercentage;
-                totalDamage += damageVal;
-                healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * damMultiplier * getAtoneTrans(currentStats.mastery) * partialTickPercentage;
-
-                if (reporting) console.log(getTime(state.t) + " " + " Purge Tick: " + damageVal * damMultiplier * partialTickPercentage + ". Buffs: " + JSON.stringify(activeBuffs) + " to " + activeAtonements);
-            }
-            else {         
-                damageBreakdown['Purge the Wicked'] = (damageBreakdown['Purge the Wicked'] || 0) + damageVal * damMultiplier;
-                totalDamage += damageVal;
-                healing['atonement'] = (healing['atonement'] || 0) + activeAtonements * damageVal * getAtoneTrans(currentStats.mastery);
-
-                if (reporting) console.log(getTime(state.t) + " " + " Purge Tick: " + damageVal * damMultiplier + ". Buffs: " + JSON.stringify(activeBuffs) + " to " + activeAtonements);
-            }
-
-        }
+        state.activeBuffs = state.activeBuffs.filter(function (buff) {return state.t < buff.expiration && buff.expiration != false});
 
         // This is a check of the current time stamp against the tick our GCD ends and we can begin our queued spell.
         // It'll also auto-cast Ascended Eruption if Boon expired.
@@ -503,6 +502,11 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             if (!('offGCD' in fullSpell[0])) nextSpell += fullSpell[0].castTime > 0 ? (fullSpell[0].castTime / getHaste(state.currentStats)) : 1.5 / getHaste(state.currentStats);
             //console.log("Current spell: " + spellName + ". Next spell at: " + nextSpell);
         }
+
+        // Get the "real time" of the sequence's casts
+        if (seq.length === 0 && state.sequenceLength === undefined) {
+            state.sequenceLength = state.t; 
+        }
     }
 
 
@@ -515,12 +519,19 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     //printHealing(state.healingDone, sumValues, sequenceLength, state.manaSpent * 50000 / 100);
     //printDamage(state.damageDone, sumValues, sequenceLength, state.manaSpent * 50000 / 100)
 
+
     const totalHealing = sumValues(state.healingDone);
+    const totalDamage = sumValues(state.damageDone);
     const manaSpent = state.manaSpent * 50000 / 100
+
+
     state.hpm = Math.round(totalHealing / manaSpent*100)/100; // Round to 2dp
+    state.hps = Math.round(totalHealing / state.sequenceLength * 100)/100;  // Round to 2dp
+    state.dps = Math.round(totalDamage / state.sequenceLength * 100)/100;  // Round to 2dp
+    state.sequenceLength /= runcount;
     state.totalHealing = Math.round(totalHealing)
     state.total4pcWindow = Math.round(sumValues(state.T284pcwindow))
-    state.totalDamage = Math.round(sumValues(state.damageDone))
+    state.totalDamage = Math.round(totalDamage)
     return state;
 
 }
