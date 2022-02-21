@@ -91,7 +91,7 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   //buildWepCombos(player, false, false); // TODO: DEL
 
   const baseHPS = player.getHPS(contentType);
-  userSettings.dominationSockets = "Upgrade Finder";
+  //userSettings.dominationSockets = "Upgrade Finder";
   const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel);
   const baseScore = baseSet.itemSet.hardScore;
 
@@ -109,23 +109,28 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   return result;
 }
 
-function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, slot) {
+function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
   let itemLevel = 0;
-  const instanceID = itemSource.instanceId;
-  const bossID = itemSource.encounterId;
+  const instanceID = itemSource[0].instanceId;
+  const bossID = itemSource[0].encounterId;
+  if (instanceID === 1195) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]]; // 1195 is Sepulcher gear.
 
-  if (instanceID === 1193) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
-  else if (instanceID === 1192 && bossID !== 2456) itemLevel = 207; // The 9.0 world bosses drop 207 gear.
-  else if (instanceID === 1192 && bossID === 2456) itemLevel = 233; // The 9.1 world boss drops 233 gear.
   // World Bosses
-  else if (instanceID === -1) itemLevel = itemLevels.dungeon[playerSettings.dungeon];
+  else if (instanceID === 1192 && bossID === 2456) itemLevel = 233; // The 9.1 world boss drops 233 gear.
+  else if (instanceID === 1192 && bossID === 2468) itemLevel = 259; // The 9.2 world boss drops 259 gear.
+  else if (instanceID === 1192) itemLevel = 207; // The 9.0 world bosses drop 207 gear.
+  
+  else if (itemSource.length > 1 && itemSource[1].instanceId === -1) {
+    itemLevel = itemLevels.dungeon[playerSettings.dungeon];
+  }
+
   else if (instanceID === -16) itemLevel = 203;
   else if (instanceID === -17) {
     // Conquest
     itemLevel = itemLevels.pvp[playerSettings.pvp];
     //if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
   }
-  if (bossID === 2440 || bossID === 2441) itemLevel += 7; // Kel'Thuzad / Sylvanus
+  if (bossID === 2457 || bossID === 2467 || bossID === 2464) itemLevel += 7; // The final three bosses.
 
   return itemLevel;
 }
@@ -152,15 +157,18 @@ function buildItemPossibilities(player, contentType, playerSettings) {
   for (var i = 0; i < itemDB.length; i++) {
     const rawItem = itemDB[i];
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
-      const itemSource = rawItem.sources[0];
+      const itemSources = rawItem.sources;
+      const primarySource = itemSources[0].instanceId
+      const isRaid = (primarySource === 1195)
 
-      if (itemSource.instanceId === 1193) { // Sanctum of Domination
+      if (isRaid) { // Sepulcher
         for (var x = 0; x < playerSettings.raid.length; x++) {
-          const itemLevel = getSetItemLevel(itemSource, playerSettings, x, rawItem.slot);
+          const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.slot);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0]);
           itemPoss.push(item);
         }
       }
+      /*
       else if (itemSource.instanceId === 1194) {
         // Taz. This will be moved to the Mythic+ section in 9.2 but deserves a separate section for now.
         const item226 = buildItem(player, contentType, rawItem, 226, rawItem.sources[0]);
@@ -168,9 +176,15 @@ function buildItemPossibilities(player, contentType, playerSettings) {
 
         const item233 = buildItem(player, contentType, rawItem, 233, rawItem.sources[0]);
         itemPoss.push(item233);
+      }*/
+      else if (itemSources.length > 1 && itemSources[1].instanceId === -1) {
+        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
+        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[1]);
+        console.log("Adding dungeon item2")
+        itemPoss.push(item);
       }
-      else if (itemSource.instanceId !== 1190) { // Exclude Nathria gear.
-        const itemLevel = getSetItemLevel(itemSource, playerSettings, 0, rawItem.slot);
+      else if (primarySource !== 1190 && primarySource !== 1193) { // Exclude Nathria gear.
+        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0]);
 
         itemPoss.push(item);
@@ -183,6 +197,8 @@ function buildItemPossibilities(player, contentType, playerSettings) {
   // --------------------------
   // Take care of Tokens >:(
   // --------------------------
+
+  /*
   for (const [key, value] of Object.entries(tokenDB)) {
     const rawToken = value;
     //  console.log(rawToken);
@@ -205,7 +221,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
         }
       }
     }
-  }
+  } */
 
   //console.log(itemPoss.length);
   return itemPoss; // TODO: Remove Slice. It's just for testing in a smaller environment.

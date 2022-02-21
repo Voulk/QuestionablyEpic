@@ -205,7 +205,7 @@ export default function UpgradeFinderResults(props) {
   const itemDifferentials = result.differentials;
   const gameType = useSelector((state) => state.gameType);
   itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
-
+  console.log(itemList.filter(item => item.slot === "Trinket"));
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
   };
