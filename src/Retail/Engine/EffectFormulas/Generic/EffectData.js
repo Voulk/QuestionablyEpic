@@ -14,6 +14,23 @@ export const effectData = [
         },
       ],
     },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                     Soulwarped Seal of Wrynn                                   */
+      /* ---------------------------------------------------------------------------------------------- */
+      // This has a ppm of 3 in the spell data, however this is it's maximum strength and we don't yet know the minimum (hitting a target at high health).
+      // This almost unavoidably means that the ring will need to be tested in-game to get a reasonable value.
+      // It's a prediction until then.
+      name: "Soulwarped Seal of Wrynn",
+      effects: [
+        {
+            coefficient: 6.252791,
+            duration: 12,
+            ppm: 2, 
+            table: -9
+        },
+      ],
+    },
 
 
 

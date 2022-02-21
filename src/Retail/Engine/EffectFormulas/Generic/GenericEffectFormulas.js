@@ -17,8 +17,12 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
 
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
 
-  } else if (effectName === "Effect2") {
-  }
+  } 
+  else if (effectName === "Soulwarped Seal of Wrynn") {
+    const effect = activeEffect.effects[0];
+    bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+
+  } 
   else if (effectName === "Genesis Lathe") {
 
     // These can be verified after logs start coming in but are based on frequency of casts. 
