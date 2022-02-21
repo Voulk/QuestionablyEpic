@@ -951,7 +951,7 @@ else if (
   else oneHeal = healEffect.fixedValues[252] * healEffect.ticks * player.getStatMultiplier("CRITVERS") * healEffect.targets * healEffect.efficiency[contentType];
 
   //console.log("ILvl: " + itemLevel + ": " + getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel))
-  bonus_stats.mana = (getProcessedValue(manaEffect.coefficient, manaEffect.table, itemLevel) / manaEffect.cooldown);
+  bonus_stats.mana = (Math.floor(getProcessedValue(manaEffect.coefficient, manaEffect.table, itemLevel) * manaEffect.ticks) / manaEffect.cooldown);
   bonus_stats.hps = oneHeal * healEffect.ppm / 60;
 
   //

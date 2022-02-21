@@ -1115,7 +1115,7 @@ export const trinket_data = [
     name: "Auxillary Attendant Chime", 
     effects: [
       {
-        coefficient: 7.700482,
+        coefficient: 10.149235,
         table: -8, // -9
         ppm: 1.5,
         efficiency: 0.9,

@@ -27,9 +27,20 @@ export const effectData = [
             coefficient: 6.252791,
             duration: 12,
             ppm: 2, 
-            table: -9
+            table: -8 // -9
         },
       ],
+    },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                          Genesis Lathe                                         */
+      /* ---------------------------------------------------------------------------------------------- */
+      // The effects are similar enough in strength that a different distribution of procs doesn't particularly matter - so long as they are being used.
+      name: "Genesis Lathe",
+      effects: [
+        {name: "Absorb", coefficient: 92.22098, table: -8, percProcs: 0.75, ticks: 1, secondaries: ["Versatility"]},
+        {name: "FlatHeal", coefficient: 107.5911, table: -8, percProcs: 0.1, ticks: 1, secondaries: ["Versatility", "Crit"]},
+        {name: "Hot", coefficient: 16.04781, table: -8, percProcs: 0.15, ticks: 5, secondaries: ["Versatility", "Crit", "Haste"]}]
     },
 
 

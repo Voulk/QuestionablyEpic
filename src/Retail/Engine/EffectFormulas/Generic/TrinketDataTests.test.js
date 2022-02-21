@@ -398,3 +398,98 @@ describe("Moonlit Prism Data Check", () => {
         expect(Math.round(getProcessedValue(effect.coefficient, effect.table, level))).toBe(expectedResult);
     });
 });
+
+describe("Elegy of the Eternals", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Elegy of the Eternals");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${239}  | ${102} 
+    ${252}  | ${108}
+    ${265}  | ${115}
+    // add new test cases here
+    `.test("Elegy of the Eternals - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+    
+        expect(Math.round(getProcessedValue(effect.coefficient, effect.table, level))).toBe(expectedResult);
+    });
+});
+
+describe("Auxillary Attendant Chime", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Auxillary Attendant Chime");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${239}  | ${800} 
+    ${252}  | ${967}
+    ${265}  | ${1164}
+    // add new test cases here
+    `.test("Auxillary Attendant Chime - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+    
+        expect(Math.round(getProcessedValue(effect.coefficient, effect.table, level))).toBe(expectedResult);
+    });
+});
+
+describe("Reclaimer's Intensity Core", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Reclaimer's Intensity Core");
+    const healEffect = activeTrinket.effects[0];
+    const manaEffect = activeTrinket.effects[0];
+    // The heal value is currently hard coded and so doesn't need to be tested.
+    /*
+    each`
+    level   | expectedResult
+    ${239}  | ${1863} 
+    ${252}  | ${2180}
+    ${265}  | ${2548}
+    // add new test cases here
+    `.test("Reclaimer's Intensity Core (Heal) - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+    
+        expect(Math.round(10*getProcessedValue(healEffect.coefficient, healEffect.table, level))).toBe(expectedResult);
+    }); */
+    // 
+
+    each`
+    level   | expectedResult
+    ${239}  | ${3815} 
+    ${252}  | ${4306}
+    ${265}  | ${4861}
+    ${278}  | ${5487}
+    // add new test cases here
+    `.test("Reclaimer's Intensity Core (Mana) - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(Math.floor(10*getProcessedValue(manaEffect.coefficient, manaEffect.table, level, 1, false))).toBe(expectedResult);
+    }); 
+});
+
+describe("The First Sigil", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "The First Sigil");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${239}  | ${1105} 
+    ${252}  | ${1173}
+    ${265}  | ${1242}
+    // add new test cases here
+    `.test("The First Sigil - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+    
+        expect(Math.round(getProcessedValue(effect.coefficient, effect.table, level))).toBe(expectedResult);
+    });
+});
+
+describe("The Lion's Roar", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "The Lion's Roar");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${239}  | ${84852} 
+    ${252}  | ${102567}
+    ${265}  | ${123438}
+    // add new test cases here
+    `.test("The Lion's Roar - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+    
+        expect(Math.round(getProcessedValue(effect.coefficient, effect.table, level))).toBe(expectedResult);
+    });
+});
