@@ -10,21 +10,19 @@ const IDWORDOFGLORY = 85673;
 const IDMARTYR = 183998;
 
 export const getPaladinSpecEffect = (effectName, player, contentType) => {
-  let result = 0.0;
   let bonus_stats = {};
-  let name = effectName;
 
   // Tier Sets
-  if (name === "HPaladin T27-2") {
+  if (effectName === "HPaladin T28-2") {
     // Holy Paladin Sepulcher tier set 2pc
     
   }
-  else if (name === "Hpaladin T27-4") {
+  else if (effectName === "Hpaladin T28-4") {
     // Holy Paladin Sepulcher tier set 4pc
 
   }
 
-  else if (name === "Maraad's Dying Breath" || name === "Maraads Dying Breath") {
+  else if (effectName === "Maraad's Dying Breath" || effectName === "Maraads Dying Breath") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                      Maraads Dying Breath                                      */
     /* ---------------------------------------------------------------------------------------------- */
@@ -38,7 +36,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
 
       bonus_stats.hps = baseThroughput * (1 + beaconHealing * (1 - beaconOverhealing)) * (1 - backlashDamage);
 
-  } else if (name === "Shock Barrier") {
+  } else if (effectName === "Shock Barrier") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                          Shock Barrier                                         */
     /* ---------------------------------------------------------------------------------------------- */
@@ -52,7 +50,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     const holyShockRawHPS = player.getSpellRawHPS(IDHOLYSHOCK, contentType);
 
     bonus_stats.hps = Math.round(holyShockIncrease * 3 * (1 - wastedShield) * holyShockRawHPS);
-  } else if (name === "Inflorescence of the Sunwell") {
+  } else if (effectName === "Inflorescence of the Sunwell") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                  Inflorescence of the Sunwell                                  */
     /* ---------------------------------------------------------------------------------------------- */
@@ -76,7 +74,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     */
 
     bonus_stats.hps = Math.round((infusionsPerMinute * infusionProcsUsed * (oneHolyLight * (legendaryBonus + (infusionBaseIncrease + legendaryBonus)))) / 60);
-  } else if (name === "Shadowbreaker, Dawn of the Sun") {
+  } else if (effectName === "Shadowbreaker, Dawn of the Sun") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                 Shadowbreaker, Dawn of the Sun                                 */
     /* ---------------------------------------------------------------------------------------------- */
@@ -100,7 +98,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     const HPSWordOfGlory = (buffedWordOfGlories * oneWordOfGloryBonus) / 60;
 
     bonus_stats.hps = Math.round(HPSMasteryBonus + HPSWordOfGlory);
-  } else if (name === "Of Dusk and Dawn") {
+  } else if (effectName === "Of Dusk and Dawn") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        Of Dusk and Dawn                                        */
     /* ---------------------------------------------------------------------------------------------- */
@@ -109,13 +107,13 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
 
     bonus_stats.dps = 0;
     bonus_stats.hps = Math.round(offensiveBuffUptime * legendaryBonus * player.getHPS(contentType));
-  } else if (name === "Vanguards Momentum") {
+  } else if (effectName === "Vanguards Momentum") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                       Vanguards Momentum                                       */
     /* ---------------------------------------------------------------------------------------------- */
     bonus_stats.hps = -1;
 
-  } else if (name === "The Magistrates Judgment") {
+  } else if (effectName === "The Magistrates Judgment") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                    The Magistrates Judgment                                    */
     /* ---------------------------------------------------------------------------------------------- */
@@ -124,14 +122,14 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     const healingOneHolyPower = getOneHolyPower(player, contentType);
 
     bonus_stats.hps = (procChance * judgementCPM * healingOneHolyPower) / 60;
-  } else if (name === "Relentless Inquisitor") {
+  } else if (effectName === "Relentless Inquisitor") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                      Relentless Inquisitor                                     */
     /* ---------------------------------------------------------------------------------------------- */
     const averageStacks = 4.8;
 
     bonus_stats.haste = averageStacks * 33;
-  } else if (name === "The Mad Paragon") {
+  } else if (effectName === "The Mad Paragon") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                         The Mad Paragon                                        */
     /* ---------------------------------------------------------------------------------------------- */
@@ -159,7 +157,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     //let akn = 2.5 / 60; //getAwakeningWingsUptime(player, contentType);
     //let awakening_hps = (akn * wingsEffHealingIncrease + 1 * (1 - akn) );
   }
-  else if (name === "Divine Resonance") {
+  else if (effectName === "Divine Resonance") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        Divine Resonance                                        */
     /* ---------------------------------------------------------------------------------------------- */
@@ -172,7 +170,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
 
 
   }
-  else if (name === "Duty-Bound Gavel") {
+  else if (effectName === "Duty-Bound Gavel") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        Duty-Bound Gavel                                        */
     /* ---------------------------------------------------------------------------------------------- */

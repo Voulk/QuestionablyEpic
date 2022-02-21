@@ -7,15 +7,22 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
   const IDREGROWTH = 8936;
   const IDWILDGROWTH = 48438;
 
-  let result = 0.0;
   let bonus_stats = {};
-  let name = effectName;
 
+  // Tier Sets
+  if (effectName === "Druid T28-2") {
+    // 
+    bonus_stats.hps = 0
+  }
+  else if (effectName === "Druid T28-4") {
+    // 
+    bonus_stats.hps = 0
+  }
   /*
     The rejuv spreading legendary can best be expressed as a percentage increase to our rejuv healing. 
     TODO: When accepting log input we will eventually have to take into account those already wearing it since it changes our formula slightly.
     */
-  if (name === "Vision of Unending Growth") {
+  else if (effectName === "Vision of Unending Growth") {
     let rejuvHealingHPS = player.getSpellHPS(IDREJUV, contentType);
     let baseTicks = 1 + 5 * player.getStatPerc("Haste");
     let expectedTicksWithLegendary = baseTicks / (1 - 0.025 * baseTicks);
@@ -25,7 +32,7 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     // Return result.
     bonus_stats.hps = expectedHPS;
 
-  } else if (name === "Memory of the Mother Tree") {
+  } else if (effectName === "Memory of the Mother Tree") {
     let wildGrowthCPM = player.getSpellCPM(IDWILDGROWTH, contentType);
     let procChance = 0.4;
     let oneRejuv = 0.29 * 6 * player.getStatMultiplier("ALL") * 0.87 * processDruidRawHealing(player, 774);
@@ -33,7 +40,7 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     let freeRejuvsPerMinute = wildGrowthCPM * procChance * 3;
     bonus_stats.hps = Math.round((freeRejuvsPerMinute * oneRejuv) / 60);
 
-  } else if (name === "Verdant Infusion") {
+  } else if (effectName === "Verdant Infusion") {
     /* 
 
     The swiftmend extension legendary can be valued by calculating how much extra healing we can expect out of the HoTs on the swiftmended target. 
@@ -57,7 +64,7 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     spellExtensions.forEach((spell) => (power += ((spell.sp * durationIncrease) / spell.duration) * (1 - expectedOverhealing) * spell.extensionsPerMin));
     bonus_stats.hps = Math.round((power / 60) * player.getStatMultiplier("ALL"));
 
-  } else if (name === "The Dark Titans Lesson" || name === "The Dark Titan's Lesson") {
+  } else if (effectName === "The Dark Titans Lesson" || effectName === "The Dark Titan's Lesson") {
     // Do Math
     const percentClearcastsUsed = 0.8;
     const secondLifebloomUptime = 0.85;
@@ -89,23 +96,23 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
   }
 
   // Consider building in support for the conduit via SimC grab or something similar.
-  else if (name === "Lycaras Fleeting Glimpse") { 
+  else if (effectName === "Lycaras Fleeting Glimpse") { 
     let expectedOverhealing = 0.35; // TODO: placeholder.
     let oneWildGrowth = 0.91 * 6 * player.getInt() * player.getStatMultiplier("ALLSEC") * (1 - expectedOverhealing);
 
     bonus_stats.hps = Math.round((oneWildGrowth * (60 / 45)) / 60);
 
-  } else if (name === "Oath of the Elder Druid") {
+  } else if (effectName === "Oath of the Elder Druid") {
     let legendaryIncrease = 0.75;
     let playerHealth = player.getHealth();
     let yseras = playerHealth * 0.03 * legendaryIncrease;
 
     bonus_stats.hps = Math.round(yseras / 5);
     
-  } else if (name === "Circle of Life and Death") {
+  } else if (effectName === "Circle of Life and Death") {
     bonus_stats.hps = -1;
   }
-  else if (name === "Celestial Spirits") {
+  else if (effectName === "Celestial Spirits") {
     const fightLength = player.getFightLength(contentType)
     const expectedConvokes = fightLength / 60;
     const soulbind = "Niya";

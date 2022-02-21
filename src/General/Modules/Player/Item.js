@@ -17,6 +17,7 @@ class Item {
     this.bonusIDS = bonusIDS || "";
     this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot"), getItemAllocations(id), tertiary);
     this.effect = getItemProp(id, "effect");
+    this.setID = getItemProp(id, "itemSetId");
     this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket") === true);
     if (this.onUse) this.effect['onUse'] = true;
   }
@@ -38,6 +39,7 @@ class Item {
   isEquipped = false;
   source = {};
   onUse = false;
+  setID = 0;
 
   // The stats on the item. These should already be adjusted for item level.
   // HPS is a calculated field. It includes any item effects that provide healing or absorbs.
