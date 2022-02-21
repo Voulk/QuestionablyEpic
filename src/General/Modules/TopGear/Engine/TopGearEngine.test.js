@@ -131,6 +131,10 @@ describe("Top Gear full test", () => {
         expect(setStats.mastery).toEqual(335+11.66*25);
     });
 
+    // TODO: Tier Set Check
+
+
+    /*
     test("Test 1, Disc Priest Dom Gem Check", () => {
         const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
         player.setDominationRanks({
@@ -160,7 +164,7 @@ describe("Top Gear full test", () => {
         expect(chaosBane[0].rank).toEqual(4);
 
         //console.log(gemSetFilter);
-    })
+    }) */
 
 });
 

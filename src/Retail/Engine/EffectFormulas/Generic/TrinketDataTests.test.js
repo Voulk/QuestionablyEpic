@@ -493,3 +493,18 @@ describe("The Lion's Roar", () => {
         expect(Math.round(getProcessedValue(effect.coefficient, effect.table, level))).toBe(expectedResult);
     });
 });
+
+describe("So'leah's Secret Technique", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "So'leah's Secret Technique");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${223}  | ${98} 
+    ${236}  | ${105}
+    // add new test cases here
+    `.test("So'leah's Secret Technique - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+    
+        expect(Math.round(getProcessedValue(effect.coefficient, effect.table, level))).toBe(expectedResult);
+    });
+});

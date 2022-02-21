@@ -170,7 +170,7 @@ class ItemSet {
     this.setStats = setStats;
     //this.baseStats = {...setStats};
     this.setSockets = setSockets;
-    this.domSockets = domSockets;
+    //this.domSockets = domSockets;
     return this;
   }
 
