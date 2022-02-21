@@ -83,11 +83,14 @@ const raidDifficulty = ["Raid Finder", "Normal", "Heroic", "Mythic"];
 
 const PvPRating = [
   { value: 0, label: "Unranked" },
-  { value: 600, label: "Combatant 1400-1599" },
-  { value: 800, label: "Challenger  1600-1799" },
-  { value: 1000, label: "Rival 1800-2099" },
-  { value: 1300, label: "Duelist 2100-2399" },
-  { value: 1600, label: "Elite 2400+" },
+  { value: 600, label: "Combatant I" },
+  { value: 800, label: "Combatant II" },
+  { value: 1000, label: "Challenger I" },
+  { value: 1200, label: "Challenger II" },
+  { value: 1400, label: "Rival I" },
+  { value: 1600, label: "Rival II" },
+  { value: 1800, label: "Duelist 2100+" },
+  { value: 2000, label: "Elite 2400+" },
 ];
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -124,7 +127,7 @@ export default function UpgradeFinderFront(props) {
       value: 0,
       label: (
         <div className={classes.labels}>
-          <div>lvl 184</div>
+          <div>lvl 236</div>
           <div>M 0</div>
         </div>
       ),
@@ -133,7 +136,7 @@ export default function UpgradeFinderFront(props) {
       value: 1,
       label: (
         <div className={classes.labels}>
-          <div>lvl 210</div>
+          <div>lvl 236</div>
           <div>M 2</div>
         </div>
       ),
@@ -142,7 +145,7 @@ export default function UpgradeFinderFront(props) {
       value: 2,
       label: (
         <div className={classes.labels}>
-          <div>lvl 213</div>
+          <div>lvl 239</div>
           <div>M 3</div>
         </div>
       ),
@@ -151,7 +154,7 @@ export default function UpgradeFinderFront(props) {
       value: 3,
       label: (
         <div className={classes.labels}>
-          <div>lvl 216</div>
+          <div>lvl 242</div>
           <div>M 4</div>
         </div>
       ),
@@ -160,7 +163,7 @@ export default function UpgradeFinderFront(props) {
       value: 4,
       label: (
         <div className={classes.labels}>
-          <div>lvl 220</div>
+          <div>lvl 246</div>
           <div>M 5</div>
         </div>
       ),
@@ -169,7 +172,7 @@ export default function UpgradeFinderFront(props) {
       value: 5,
       label: (
         <div className={classes.labels}>
-          <div>lvl 223</div>
+          <div>lvl 249</div>
           <div>M 6-7</div>
         </div>
       ),
@@ -178,7 +181,7 @@ export default function UpgradeFinderFront(props) {
       value: 6,
       label: (
         <div className={classes.labels}>
-          <div>lvl 226</div>
+          <div>lvl 252</div>
           <div>M 8-9</div>
         </div>
       ),
@@ -187,7 +190,7 @@ export default function UpgradeFinderFront(props) {
       value: 7,
       label: (
         <div className={classes.labels}>
-          <div>lvl 229</div>
+          <div>lvl 255</div>
           <div>M 10-11</div>
         </div>
       ),
@@ -196,7 +199,7 @@ export default function UpgradeFinderFront(props) {
       value: 8,
       label: (
         <div className={classes.labels}>
-          <div>lvl 233</div>
+          <div>lvl 259</div>
           <div>M 12-13</div>
         </div>
       ),
@@ -205,7 +208,7 @@ export default function UpgradeFinderFront(props) {
       value: 9,
       label: (
         <div className={classes.labels}>
-          <div>lvl 236</div>
+          <div>lvl 262</div>
           <div>M 14-15</div>
         </div>
       ),
@@ -214,7 +217,7 @@ export default function UpgradeFinderFront(props) {
       value: 10,
       label: (
         <div className={classes.labels}>
-          <div>lvl 239</div>
+          <div>lvl 265</div>
         </div>
       ),
     },
@@ -222,7 +225,7 @@ export default function UpgradeFinderFront(props) {
       value: 11,
       label: (
         <div className={classes.labels}>
-          <div>lvl 242 </div>
+          <div>lvl 268</div>
         </div>
       ),
     },
@@ -230,7 +233,7 @@ export default function UpgradeFinderFront(props) {
       value: 12,
       label: (
         <div className={classes.labels}>
-          <div>lvl 246</div>
+          <div>lvl 272</div>
         </div>
       ),
     },
@@ -238,7 +241,7 @@ export default function UpgradeFinderFront(props) {
       value: 13,
       label: (
         <div className={classes.labels}>
-          <div>lvl 249</div>
+          <div>lvl 275</div>
         </div>
       ),
     },
@@ -246,7 +249,7 @@ export default function UpgradeFinderFront(props) {
       value: 14,
       label: (
         <div className={classes.labels}>
-          <div>lvl 252</div>
+          <div>lvl 278</div>
         </div>
       ),
     },
@@ -487,7 +490,7 @@ export default function UpgradeFinderFront(props) {
                     step={null}
                     valueLabelDisplay="off"
                     marks={PvPRating}
-                    max={1600}
+                    max={2000}
                     change={props.setPVPDifficulty}
                   />
                 </Grid>
