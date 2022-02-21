@@ -21,6 +21,40 @@ describe("Passable Credentials Data Check", () => {
     });
 });
 
+describe("Soulwarped Seal of Wrynn Data Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeEffect = effectData.find((effect) => effect.name === "Soulwarped Seal of Wrynn");
+    const effect = activeEffect.effects[0];
+
+    each`
+    level   | expectedResult
+    ${239}  | ${493}
+    ${252}  | ${596}
+    ${265}  | ${717}
+    // add new test cases here
+    `.test("Soulwarped Seal of Wrynn Data Check Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+  
+        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
+    });
+});
+
+describe("Genesis Lathe Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeEffect = effectData.find((effect) => effect.name === "Genesis Lathe");
+    const effect = activeEffect.effects;
+
+    each`
+    level   | expectedResult
+    ${226}  | ${[5988, 6986, 1042]}
+    // add new test cases here. There aren't any in-game values for it yet so the 226 tester is the only one available. Update when obtainable.
+    `.test("Genesis Lathe Data Check Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        
+        expect(getProcessedValue(effect[0].coefficient, effect[0].table, level)).toBe(expectedResult[0]); // Absorb
+        expect(Math.round(getProcessedValue(effect[1].coefficient, effect[1].table, level, 1, false))).toBe(expectedResult[1]); // Flat Heal
+        expect(getProcessedValue(effect[2].coefficient, effect[2].table, level)).toBe(expectedResult[2]); // HoT
+    });
+});
+
 
 describe("Shard of Zed Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.

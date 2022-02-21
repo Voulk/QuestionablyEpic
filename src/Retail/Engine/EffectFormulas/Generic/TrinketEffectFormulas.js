@@ -412,19 +412,41 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
       const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell"], setStats.haste, castModel.modelName, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell"], setStats.haste, castModel.modelName, ['Rapture']);
       const bellRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Instructor's Divine Bell": trinketValue}, {});
-      //console.log("Adding X HPS: " + (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing));
+      console.log("Adding X HPS (old bell): " + (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing));
       bonus_stats.hps = (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
     }
     else {
       bonus_stats.mastery = (trinketValue * effect.duration) / effect.cooldown;
       bonus_stats.mastery *= castModel.getSpecialQuery("ninetySeconds", "cooldownMult");
-    }
+    } 
     
 
 
 
     // We need a better way to model interaction with spec cooldowns.
     //
+  } else if (
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Instructor's Divine Bell                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    effectName === "Instructor's Divine Bell (new)"
+    
+  ) {
+    const effect = activeTrinket.effects[0];
+    const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
+    if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
+      const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], setStats.haste, castModel.modelName, ['Rapture']);
+      const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell (new)"], setStats.haste, castModel.modelName, ['Rapture']);
+      const bellRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Instructor's Divine Bell (new)": trinketValue}, {});
+      console.log("Adding X HPS (new bell): " + (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing));
+      bonus_stats.hps = (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
+    }
+    else {
+      bonus_stats.mastery = (trinketValue * effect.duration) / effect.cooldown;
+      bonus_stats.mastery *= castModel.getSpecialQuery("ninetySeconds", "cooldownMult");
+    }
+  
+  
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
     /*                                      Consumptive Infusion                                      */
@@ -634,7 +656,6 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     const statRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel);
     const statValue = getDiminishedValue(itemSetHighestSecondary, statRaw, setStats[itemSetHighestSecondary])
     const uptime = effect.uptime;
-
     bonus_stats[itemSetHighestSecondary] = statValue * uptime - statRaw * (1 - uptime);
     //
   }   
@@ -825,8 +846,11 @@ else if (
   effectName === "Amalgam's Seventh Spine"
 ) {
   let effect = activeTrinket.effects[0];
-
-  bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm) / 60;
+  console.log(itemLevel + ": " + getProcessedValue(effect.coefficient, effect.table, itemLevel));
+  console.log("Procs per minute: " +  effect.ppm[player.getSpec()]);
+  console.log("Net mana: " + (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm[player.getSpec()]));
+  console.log("One mana healing: " + player.getSpecialQuery("OneManaHealing", contentType));
+  bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm[player.getSpec()]) / 60;
   //
 }
 else if (
@@ -862,12 +886,12 @@ else if (
 
   const expectedUsesMin = 1 / effect.baseCooldown * 60 + (effect.ppm * effect.cdrPerProc / effect.baseCooldown);
 
-  bonus_stats.hps = getProcessedValue(effect.coefficient, effect.table, itemLevel) * expectedUsesMin / 60;
+  bonus_stats.hps = getProcessedValue(effect.coefficient, effect.table, itemLevel) * expectedUsesMin / 60 * effect.efficiency;
   //
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                          Infernal Writ                                         */
+  /*                                  Elegy of the Eternals                                         */
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Elegy of the Eternals"
 ) {
@@ -877,20 +901,22 @@ else if (
     const itemSetHighestSecondary = getHighestStat(setStats);
     const statRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel);
     const statValue = getDiminishedValue(itemSetHighestSecondary, statRaw, setStats[itemSetHighestSecondary])
-
+    
+    
     bonus_stats[itemSetHighestSecondary] = statValue;
+
 
   //
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                  Auxillary Attendant Charm                                     */
+  /*                                  Auxillary Attendant Chime                                     */
   /* ---------------------------------------------------------------------------------------------- */
-  effectName === "Auxillary Attendant Charm"
+  effectName === "Auxillary Attendant Chime"
 ) {
   let effect = activeTrinket.effects[0];
   const oneProc = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * (effect.duration / effect.tickRate * player.getStatPerc("Haste"))
-  console.log(oneProc);
+
   bonus_stats.hps = (oneProc * effect.ppm * player.getStatPerc("Versatility") / 60);
   //
 }
@@ -911,6 +937,37 @@ else if (
   
   //
 }
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                Reclaimer's Intensity Core                                      */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Reclaimer's Intensity Core"
+) {
+  const manaEffect = activeTrinket.effects[0];
+  const healEffect = activeTrinket.effects[1];
+  let oneHeal = 0;
+  if ([239, 252, 265, 278].includes(itemLevel)) oneHeal = healEffect.fixedValues[itemLevel] * healEffect.ticks * player.getStatMultiplier("CRITVERS") * healEffect.targets * healEffect.efficiency[contentType];
+  // This else should never be called, but is a failsafe.
+  else oneHeal = healEffect.fixedValues[252] * healEffect.ticks * player.getStatMultiplier("CRITVERS") * healEffect.targets * healEffect.efficiency[contentType];
+
+  //console.log("ILvl: " + itemLevel + ": " + getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel))
+  bonus_stats.mana = (Math.floor(getProcessedValue(manaEffect.coefficient, manaEffect.table, itemLevel) * manaEffect.ticks) / manaEffect.cooldown);
+  bonus_stats.hps = oneHeal * healEffect.ppm / 60;
+
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                   Extract of Prodigious Sands                                  */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Extract of Prodigious Sands"
+) {
+  let effect = activeTrinket.effects[0];
+  const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
+  const expectedPPM = effect.ppm; //* player.getStatPerc("Haste");
+  bonus_stats.hps = (oneHeal * expectedPPM * player.getStatMultiplier("CRITVERS") / 60);
+  //
+} 
   else {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        No Trinkets Found                                       */

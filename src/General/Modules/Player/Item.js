@@ -1,4 +1,4 @@
-import { calcStatsAtLevel, getItemAllocations, getItemProp, getDomGemEffect } from "../../Engine/ItemUtilities";
+import { calcStatsAtLevel, getItemAllocations, getItemProp } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
 
 // The Item class represents an active item in the app at a specific item level.
@@ -18,8 +18,6 @@ class Item {
     this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot"), getItemAllocations(id), tertiary);
     this.effect = getItemProp(id, "effect");
     this.setID = getItemProp(id, "itemSetId");
-    this.hasDomSocket = (getItemProp(id, "socketType") === "Domination");
-    this.hasDomSet = (getItemProp(id, "socketType") === "Domination") || (slot === "Legs" && getItemProp(id, "sources")["instanceID"] === 1193);
     this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket") === true);
     if (this.onUse) this.effect['onUse'] = true;
   }
@@ -40,9 +38,6 @@ class Item {
   vaultItem = false;
   isEquipped = false;
   source = {};
-  hasDomSocket = false; // Has a domination socket.
-  hasDomSet = false;  // Has a domination bonus. Leg slots will tick this, but not DomSocket. The rest will tick both.
-  domGemID = 0;
   onUse = false;
   setID = 0;
 
@@ -81,13 +76,6 @@ class Item {
     else if (this.level >= 120) return "#328CE3";
     else return "#1eff00";
 
-  }
-
-  setDominationGem(id) {
-    if (this.hasDomSocket) {
-      this.domGemID = id;
-      //this.effect = getDomGemEffect(id)
-    }
   }
 
   addStats(bonus_stats) {

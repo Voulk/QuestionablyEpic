@@ -9,7 +9,14 @@ import i18n from "i18next";
 // PLease Note that all the 'this.' statements in this file do not actually affect this file.
 // They are refering to the component the function is imported into.
 
+// turn debugging (console logging) on/off
+const debug = false;
+
 export default function ertEngine(tableData) {
+  debug && console.log(" -- Debugging On -> ERTEngine.js --");
+  // log provided props
+  // debug && console.table(tableData);
+
   /* ---------------------------- Map the ERT note from the Table Data ---------------------------- */
 
   /* --------------------------------------- Time + No Icons -------------------------------------- */
@@ -28,6 +35,7 @@ export default function ertEngine(tableData) {
         time: key.time,
       };
     });
+  // debug && console.table(ertNoteTimeNoIcons);
 
   /* ------------------------------------- Ability + No Icons ------------------------------------- */
   const ertNoteAbilityNoIcons = tableData
@@ -49,6 +57,7 @@ export default function ertEngine(tableData) {
         time: key.time,
       };
     });
+  // debug && console.table(ertNoteAbilityNoIcons);
 
   /* ------------------------------------- Ability + Icons All ------------------------------------ */
   const ertNoteAbilityNoTimeIconsAll = tableData
@@ -70,6 +79,7 @@ export default function ertEngine(tableData) {
         time: key.time,
       };
     });
+  // debug && console.table(ertNoteAbilityNoTimeIconsAll);
 
   /* ---------------------------------------- Time + Icons ---------------------------------------- */
   const ertNoteTimeIcons = tableData
@@ -88,6 +98,7 @@ export default function ertEngine(tableData) {
         time: key.time,
       };
     });
+  // debug && console.table(ertNoteTimeIcons);
 
   this.setState({
     ertListTimeNoIcons: ertNoteTimeNoIcons,

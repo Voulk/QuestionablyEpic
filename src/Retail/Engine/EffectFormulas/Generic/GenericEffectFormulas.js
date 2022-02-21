@@ -17,12 +17,32 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
 
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
 
-  } else if (effectName === "Effect2") {
-  }
+  } 
+  else if (effectName === "Soulwarped Seal of Wrynn") {
+    const effect = activeEffect.effects[0];
+    bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+
+  } 
   else if (effectName === "Genesis Lathe") {
-    const effectValue = getProcessedValue(119.5423, -8, itemLevel) * player.getStatPerc("Versatility")
-    //console.log(getProcessedValue(0.436328, -7, itemLevel)) // Tertiary effect
-    bonus_stats.hps = effectValue/40 * 0.9;
+
+    // These can be verified after logs start coming in but are based on frequency of casts. 
+    const ppm = {"Restoration Druid": 1.9, "Holy Paladin": 0.3, "Mistweaver Monk": 0.52, "Restoration Shaman": 1.4, "Holy Priest": 1.85, "Discipline Priest": 1.2}
+    const effects = activeEffect.effects;
+    let expectedHPS = 0;
+    
+    /*const effects = [{"name": "Absorb", "coefficient": 107.5911, "percProcs": 0.75, "ticks": 1, "secondaries": ["Versatility"]},
+                    {"name": "FlatHeal", "coefficient": 119.5424, "percProcs": 0.1, "ticks": 1, "secondaries": ["Versatility", "Crit"]},
+                    {"name": "Hot", "coefficient": 16.04781, "percProcs": 0.15, "ticks": 5, "secondaries": ["Versatility", "Crit", "Haste"]}]
+*/
+    for (var i = 0; i < effects.length; i++) {
+      const effect = effects[i];
+      // TODO: Check secondary scaling in effect.
+      const effectValue = getProcessedValue(effect.coefficient, -8, itemLevel) * effect.ticks * player.getStatPerc("Versatility") * player.getStatPerc("Crit") 
+      expectedHPS += (effectValue * effect.percProcs);
+    }
+
+    //console.log(getProcessedValue(0.436328, -7, itemLevel)) // Tertiary effect. Not implemented, likely won't be but it makes up a small portion of the power budget. 
+    bonus_stats.hps = expectedHPS * ppm[player.getSpec()] / 60 * 0.95;
   }
 
   return bonus_stats;
@@ -30,8 +50,11 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
 
 export function getDominationGemEffect(effectName, player, contentType, rank) {
   let bonus_stats = {};
-  let activeEffect = effectData.find((effect) => effect.name === effectName);
+  //let activeEffect = effectData.find((effect) => effect.name === effectName);
 
+  return bonus_stats;
+
+  /*
   if (effectName === "Shard of Zed") {
     const effect = activeEffect.effects[0];
     const expectedOverhealing = 0.5;
@@ -127,7 +150,7 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
     const uptime = effect.uptime;
     bonus_stats.dps = damageIncrease * player.getDPS(contentType) * uptime / 100 / 100; // Divided by 10,000 effectively.
 
-  }
+  } */
 
 
   return bonus_stats;

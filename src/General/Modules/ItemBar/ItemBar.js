@@ -141,7 +141,7 @@ export default function ItemBar(props) {
         item.id = getItemProp(itemID, "baseSlotID", "Retail");
       } else {
         item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "");
-        item.setDominationGem(dominationSocket);
+        //item.setDominationGem(dominationSocket);
       }
     } else {
       // Burning Crusade
@@ -211,7 +211,7 @@ export default function ItemBar(props) {
   };
   /* ---------------------------------------- Missive Array --------------------------------------- */
   const legendaryStats = ["Haste / Versatility", "Haste / Mastery", "Haste / Crit", "Crit / Mastery", "Crit / Versatility", "Mastery / Versatility"];
-  const legendaryItemLevels = [190, 210, 225, 235, 249, 262];
+  const legendaryItemLevels = [190, 210, 225, 235, 249, 262, 291];
 
   const isItemShadowlandsLegendary = getItemDB("Retail")
     .filter((key) => key.id === itemID)

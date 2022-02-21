@@ -400,6 +400,25 @@ export const trinket_data = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Instructor's Divine Bell                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    A strong on-use with a slightly awkward cooldown for a lot of specs.
+    Value depends heavily on how well your specs mastery interacts with your specs big cooldowns.
+    */
+    name: "Instructor's Divine Bell (new)",
+    effects: [
+      {
+        coefficient: 2.37098,
+        table: -7,
+        duration: 15,
+        cooldown: 90,
+        discOverhealing: 0.265,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                         Flame of Battle                                        */
     /* ---------------------------------------------------------------------------------------------- */
     /*
@@ -820,12 +839,12 @@ export const trinket_data = [
     name: "So'leah's Secret Technique",
     effects: [
       {
-        coefficient: 1.540096,
-        table: -8,
+        coefficient: 0.493954, 
+        table: -7,
       },
       {
-        coefficient: 0.308019,
-        table: -8,
+        coefficient: 0.098791,
+        table: -7,
       }
     ],
   },
@@ -1026,8 +1045,8 @@ export const trinket_data = [
     effects: [
       {
         coefficient: 2.07913,
-        table: -8, 
-        ppm: 6, // TODO: Refine. 
+        table: -8, // -9
+        ppm: { "Restoration Druid": 20.4, "Discipline Priest": 11, "Holy Paladin": 0.09, "Mistweaver Monk": 0.4, "Restoration Shaman": 6.4, "Holy Priest": 8.3 }, // TODO: Refine. 
 
       },
     ],
@@ -1080,8 +1099,8 @@ export const trinket_data = [
     name: "Elegy of the Eternals", 
     effects: [
       {
-        coefficient: 7.700482,
-        table: -8, // -9 but is currently using our -8. Should be -7.
+        coefficient: 0.474196,
+        table: -7, // -9 but is currently using our -8. Should be -7.
         sharedAmount: 0.1,
       },
     ],
@@ -1093,13 +1112,13 @@ export const trinket_data = [
     // Activates a robot that applies an absorb for X every second for 10s. 
     // This appears to scale with haste, but it'll need to be tested for a partial tick when it ends. 
     // If not, it'll have varying levels of ticks based on your haste. 
-    name: "Auxillary Attendant Charm", 
+    name: "Auxillary Attendant Chime", 
     effects: [
       {
-        coefficient: 7.700482,
+        coefficient: 10.149235,
         table: -8, // -9
         ppm: 1.5,
-        efficiency: 1,
+        efficiency: 0.9,
         duration: 10,
         tickRate: 1,
       },
@@ -1112,9 +1131,25 @@ export const trinket_data = [
     // On-use mana trinket. When the robot it summons dies, heal 5 allies for X over 10 seconds.
     name: "Reclaimer's Intensity Core", 
     effects: [
-      {
-        coefficient: 0,
-        table: -0, 
+      { // Mana on-use
+        coefficient: 2.186952,
+        table: -1,
+        ticks: 10, // The coefficient is for a single tick.
+        cooldown: 150,
+      },
+      { // Healing Effect whenever an automata dies. 
+        // The scaling curve does not match any known spell tables and the trinket is available at just four item level so they are hard coded in for now.
+
+        // The Reclaimer's healing effect procs once every time a nearby automata dies. This does include automata from other players in addition to the players own.
+        // However, they can also be outranged and so if not careful you can even run away from your own. The radius appears to be 30 yards. 
+        // There is a good case to be made that there should be a settings value for automata in raid.
+        coefficient: 0.841136,
+        table: -6, 
+        fixedValues: {239: 186.3, 252: 218, 265: 254.8, 278: 297.4},
+        efficiency: { Raid: 0.52, Dungeon: 0.39 }, // 
+        ppm: 0.4 * 1, // One automata 
+        targets: 5,
+        ticks: 10,
       },
     ],
   },
@@ -1139,8 +1174,8 @@ export const trinket_data = [
     name: "The First Sigil", 
     effects: [
       {
-        coefficient: 7.700482,
-        table: -8, // -9 
+        coefficient: 5.122305,
+        table: -7,
         duration: 15,
         cooldown: 300,
       },
@@ -1158,7 +1193,26 @@ export const trinket_data = [
         table: -8, // -9
         ppm: 10,
         baseCooldown: 600,
-        cdrPerProc: 3
+        cdrPerProc: 3,
+        efficiency: 0.7,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Extract of Prodigious Sands                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+
+    */
+    name: "Extract of Prodigious Sands",
+    effects: [
+      {
+        coefficient: 15.64738,
+        table: -8, // -9 in spell data
+        efficiency: { Raid: 0.7, Dungeon: 0.47 }, // 
+        ppm: 7.5,
+
       },
     ],
   },
