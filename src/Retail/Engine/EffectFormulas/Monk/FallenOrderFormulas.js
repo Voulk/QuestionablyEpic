@@ -22,9 +22,9 @@ function conduitScaling(rankOne, requiredRank) {
  * @returns Healing one clone will do
  */
 export const getOneCloneHealing = (player) => {
-  const mult = player.getStatMultiplier("NOMAST") * player.getInt();
+  const mult = player.getStatMultiplier("NOMAST") * player.getInt() * 1.725; // Added conduit scaling here
   const fallenOrderSpells = [
-    {sp: 3.6 * 1.3, castsPerClone: 2}, 
+    {sp: 2.4 * 1.3, castsPerClone: 1}, // Clones very rarely cast 2 enveloping
     // Enveloping Mist. For some reason their env multiplier effects their env healing. They are only supposed to cast 1 EnV per clone, but they sometimes like to cast two instead.
     {sp: 1.04, castsPerClone: 2} // Soothing Mist
   ]
