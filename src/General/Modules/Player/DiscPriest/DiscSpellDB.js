@@ -226,6 +226,16 @@ export const DISCSPELLS = {
         stat: "mastery",
         value: 668, // Trinket values are replaced by the value on the specific version of the trinket.
     }],
+    "Instructor's Divine Bell (new)": [{
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        cooldown: 90,
+        buffDuration: 15,
+        buffType: 'stats',
+        stat: "mastery",
+        value: 450, // Trinket values are replaced by the value on the specific version of the trinket.
+    }],
     "Flame of Battle": [{
         type: "buff",
         castTime: 0,

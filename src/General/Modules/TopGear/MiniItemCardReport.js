@@ -149,7 +149,7 @@ export default function ItemCardReport(props) {
                 <Grid item container direction="row" xs={12} justifyContent="space-between">
                   <Grid item>
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
-                      {"domGemID" in item && item.domGemID !== 0 ? (
+                      {/*"domGemID" in item && item.domGemID !== 0 ? (
                         <a data-wowhead={"item=" + item.domGemID + "&domain=" + currentLanguage}>
                           <img
                             style={{
@@ -166,7 +166,7 @@ export default function ItemCardReport(props) {
                         </a>
                       ) : (
                         ""
-                      )}
+                      )*/}
                       {socket} {statString} {tertiary} {isVault ? " / Vault" : ""}
                     </Typography>
                   </Grid>

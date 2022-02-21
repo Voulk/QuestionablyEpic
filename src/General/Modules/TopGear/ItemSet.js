@@ -92,7 +92,7 @@ class ItemSet {
     //console.log("Compiling Stats for Item List of legnth: " + this.itemList.length);
     let setStats = this.getStartingStats(gameType)
     let setSockets = 0;
-    let domSockets = 0;
+    //let domSockets = 0;
     for (var i = 0; i < this.itemList.length; i++) {
       let item = this.itemList[i];
       for (const [stat, value] of Object.entries(item.stats)) {
@@ -104,7 +104,7 @@ class ItemSet {
       }
 
       if (item.socket) setSockets++;
-      if (item.hasDomSocket) domSockets++;
+      //if (item.hasDomSocket) domSockets++;
       if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
       if (item.effect.type === "spec legendary") this.setLegendary = item.effect.name;
 
@@ -120,13 +120,15 @@ class ItemSet {
         this.effectList.push(effect);
       }
 
+      /*
       if (item.hasDomSocket && !settings.replaceDomGems) {
         // Don't replace dom gems.
         const effect = getDomGemEffect(item.domGemID)
         this.effectList.push(effect);
-      }
+      } */
     }
 
+    /*
     let lowestGemRanks = {
       unholy: 4,
       frost: 4,
@@ -134,6 +136,7 @@ class ItemSet {
     }
 
     // Domination Socket Code
+    // Defunct in 9.2.
 
     // Poll Unholy gems
     const unholyGems = this.effectList.filter(function (effect) {
@@ -162,11 +165,12 @@ class ItemSet {
     else if (frostGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Winds of Winter", "rank": lowestGemRanks.frost})
     else if (bloodGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Blood Link", "rank": lowestGemRanks.blood})
     // -----------------
+    */
 
     this.setStats = setStats;
     //this.baseStats = {...setStats};
     this.setSockets = setSockets;
-    this.domSockets = domSockets;
+    //this.domSockets = domSockets;
     return this;
   }
 

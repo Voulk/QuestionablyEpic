@@ -295,7 +295,7 @@ export default function TopGear(props) {
         {gameType === "Retail" ? (
           <Grid item xs={12}>
             {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
-            <DominationGems player={props.player} singleUpdate={props.singleUpdate} userSettings={userSettings} />
+            {/*<DominationGems player={props.player} singleUpdate={props.singleUpdate} userSettings={userSettings} /> */}
           </Grid>
         ) : (
           ""

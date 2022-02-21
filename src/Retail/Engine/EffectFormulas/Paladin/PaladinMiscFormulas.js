@@ -15,7 +15,7 @@ export function getOneHolyPower(player, contentType) {
 }
 
 export function getWingsHealingInc(critPerc) {
-  return ((critPerc + 0.3) / critPerc) * 1.3;
+  return ((critPerc + 0.2) / critPerc) * 1.2;
 }
 
 export function processPaladinRawHealing(critPerc) {

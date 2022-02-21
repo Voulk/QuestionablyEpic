@@ -234,7 +234,7 @@ class App extends Component {
   /* ----------------------------- Logout Handler ----------------------------- */
   userLogout() {
     // Do other stuff later.
-    this.setState({ playerLoginID: 0 });
+    this.setState({ playerLoginID: 0 }); 
     this.setState({ playerBattleTag: "" });
     ls.remove("id");
     ls.remove("btag");
@@ -363,7 +363,7 @@ class App extends Component {
                       <TrinketAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
                     )}
                   />
-                  <Route
+                  {/*<Route
                     path="/dominationgems"
                     render={() => (
                       <DominationAnalysis
@@ -372,9 +372,9 @@ class App extends Component {
                         singleUpdate={this.updatePlayerChar}
                         allChars={allChars}
                         simcSnack={this.handleSimCSnackOpen}
-                      />
+                    /> 
                     )}
-                  />
+                  />*/}
                   <Route
                     path="/soulbinds"
                     render={() => (
