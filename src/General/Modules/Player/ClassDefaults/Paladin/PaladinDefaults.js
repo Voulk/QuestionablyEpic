@@ -81,9 +81,9 @@ export const paladinVenthyrStatWeights = (contentType) => {
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.45,
-    crit: 0.37,
-    mastery: 0,
+    haste: 0.49,
+    crit: 0.43,
+    mastery: 0.28,
     versatility: 0.43,
     leech: 0.38,
     defaults: true,

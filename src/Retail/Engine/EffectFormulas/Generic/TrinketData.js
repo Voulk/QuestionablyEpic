@@ -1045,9 +1045,8 @@ export const trinket_data = [
     effects: [
       {
         coefficient: 2.07913,
-        table: -8, // -9
-        ppm: { "Restoration Druid": 20.4, "Discipline Priest": 11, "Holy Paladin": 0.09, "Mistweaver Monk": 0.4, "Restoration Shaman": 6.4, "Holy Priest": 8.3 }, // TODO: Refine. 
-
+        table: -8, 
+        ppm: { "Restoration Druid": 19, "Discipline Priest": 10, "Holy Paladin": 0, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.5, "Holy Priest": 9 }, // TODO: Refine. 
       },
     ],
   },

@@ -846,10 +846,7 @@ else if (
   effectName === "Amalgam's Seventh Spine"
 ) {
   let effect = activeTrinket.effects[0];
-  console.log(itemLevel + ": " + getProcessedValue(effect.coefficient, effect.table, itemLevel));
-  console.log("Procs per minute: " +  effect.ppm[player.getSpec()]);
-  console.log("Net mana: " + (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm[player.getSpec()]));
-  console.log("One mana healing: " + player.getSpecialQuery("OneManaHealing", contentType));
+
   bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm[player.getSpec()]) / 60;
   //
 }

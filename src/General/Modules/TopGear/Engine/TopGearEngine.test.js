@@ -4,63 +4,72 @@ import Player from '../../Player/Player';
 import { processItem } from "Retail/Engine/SimCImport/SimCImportEngine"
 import { buildWepCombos } from "General/Engine/ItemUtilities"
 import { runTopGear } from "./TopGearEngine";
+import each from "jest-each";
 
 describe("Test Stat DRs", () => {
-    test("Basic Test - Crit above DR", () => {
+    each`
+        rawHaste | expectedResult
+        ${990}  | ${990}
+        ${1034}  | ${1030}
+        ${1195}  | ${1175}
+        ${1845}  | ${1688}
+        // add new test cases here
 
+    `.test("Checks haste DR at $rawHaste", ({ rawHaste, expectedResult }) => {
         let stats = {
-            crit: 1200,
-            haste: 400,
-            versatility: 200,
-            mastery: 600,
+            crit: 0,
+            haste: rawHaste,
+            versatility: 0,
+            mastery: 0,
             leech: 0,
         }
         stats = applyDiminishingReturns(stats);
+        expect(Math.round(stats.haste)).toBe(expectedResult);
 
-        expect(stats.crit).toEqual(1185);
     });
 
-    test("Expanded Test - Haste way above DR", () => {
+    each`
+        rawMastery | expectedResult
+        ${1050}  | ${1050}
+        ${1636}  | ${1554}
+        // add new test cases here
 
+    `.test("Checks mastery DR at $rawMastery", ({ rawMastery, expectedResult }) => {
         let stats = {
-            crit: 80,
-            haste: 1845,
-            versatility: 200,
-            mastery: 600,
+            crit: 0,
+            haste: 0,
+            versatility: 0,
+            mastery: rawMastery,
             leech: 0,
         }
         stats = applyDiminishingReturns(stats);
+        expect(Math.round(stats.mastery)).toBe(expectedResult);
 
-        expect(Math.round(stats.haste)).toEqual(1688);
     });
 
-    test("Leech DR", () => {
+    each`
+        rawLeech    | expectedResult
+        ${205}  | ${205}
+        ${335}  | ${306}
+        ${362}  | ${322}
+        ${437}  | ${364}
+        ${463}  | ${374}
+        ${477}  | ${380}
+        // add new test cases here
 
-        let stats = {
-            crit: 300,
-            haste: 400,
-            versatility: 200,
-            mastery: 600,
-            leech: 335,
-        }
-        stats = applyDiminishingReturns(stats);
+        `.test("Checks leech DR at $rawLeech", ({ rawLeech, expectedResult }) => {
+            let stats = {
+                crit: 0,
+                haste: 0,
+                versatility: 0,
+                mastery: 0,
+                leech: rawLeech,
+            }
+            stats = applyDiminishingReturns(stats);
+            expect(Math.round(stats.leech)).toBe(expectedResult);
 
-        expect(stats.leech).toEqual(306);
     });
 
-    test("Leech DR test 2", () => {
-
-        let stats = {
-            crit: 300,
-            haste: 400,
-            versatility: 200,
-            mastery: 600,
-            leech: 437,
-        }
-        stats = applyDiminishingReturns(stats);
-
-        expect(Math.round(stats.leech)).toEqual(364);
-    });
 });
 
 describe("MergeBonusStats function", () => {
