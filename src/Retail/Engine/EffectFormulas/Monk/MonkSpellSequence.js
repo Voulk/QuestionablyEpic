@@ -251,8 +251,8 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
     }
 
     if (settings['soulbind'] === "Theotar") {
-        state.activeBuffs.push({name: "Token of Appreciation", expiration: 999, buffType: "special", value: 1.03});
-        state.activeBuffs.push({name: "Tea Time", expiration: 999, buffType: "special", value: 1.03});
+        state.activeBuffs.push({name: "Token of Appreciation", expiration: 999, buffType: "special", value: 1.025}); // 4% is overvalued wwhen factoring in tier and "high HPS sim"
+        state.activeBuffs.push({name: "Tea Time", expiration: 999, buffType: "special", value: 1.025}); // Int doesn't scale with tier so not 3%, other stats scale worse
     }
 
 
@@ -348,8 +348,8 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
         // 278 conduit (in enhanced slot)
         // Hits 75% of raid
         // Logs show 50% overhealing, had it scaled down again with the spells overheal (as any overhealing of the spells makes sense that the duplicated heal can't heal extra)
-        // This causes a "double dip" in the spell overheal but that's accurate with how BDB works, but may be too harsh so removed for now -  * (1 - spell.overheal)
-        const bonedustHealing = healingVal * 0.5 * 0.4 * 1.88 * 0.75
+        // This causes a "double dip" in the spell overheal but that's accurate with how BDB works 
+        const bonedustHealing = healingVal * 0.5 * 0.4 * 1.88 * 0.75 * (1 - spell.overheal)
         state.healingDone['Bonedust Brew'] = (state.healingDone['Bonedust Brew'] || 0) + bonedustHealing;
 
         if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
@@ -358,7 +358,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     }
     else if (state.settings.misc.includes("BB")) // Simulate second legendary
     {
-        const bonedustHealing = healingVal * 0.5 * 0.4 * 1.8 * 0.75 * 0.28 + healingVal * 1.13 * 0.28
+        const bonedustHealing = healingVal * 0.5 * 0.4 * 1.8 * 0.75 * 0.28 * (1 - spell.overheal) + healingVal * 1.13 * 0.28
         state.healingDone['Bonedust Brew (Plus Emeni)'] = (state.healingDone['Bonedust Brew (Plus Emeni)'] || 0) + bonedustHealing;
 
         if (checkBuffActive(state.activeBuffs, "Primordial Mending")){

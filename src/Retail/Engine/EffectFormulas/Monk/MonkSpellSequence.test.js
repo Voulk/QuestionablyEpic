@@ -99,8 +99,8 @@ describe("Test Sequences", () => {
 
     // Venth 4pc bonuses
     // Base heal * overheal * clones active avg * env heal count * soom heal count * conduit * vers * crit
-    const venth4pcfobonuspercast = 450 * 0.5 * 2.33 * ((8 / (2 / (1 / 1.21))) + (8 / (1 / 1.21))) * 1.9 * player.getStatMultiplier("CRITVERS", player4pc.activeStats); 
-    const venth4pcfobonuspercastatotm = 450 * 0.5 * 1.33 * ((8 / (2 / (1 / 1.21))) + (8 / (1 / 1.21))) * 1.9 * player.getStatMultiplier("CRITVERS", player4pc.activeStats); 
+    const venth4pcfobonuspercast = 450 * 0.5 * 2.33 * ((8 / (2 / (1 / 1.21))) + (8 / (1 / 1.21))) * 1.797 * player.getStatMultiplier("CRITVERS", player4pc.activeStats); 
+    const venth4pcfobonuspercastatotm = 450 * 0.5 * 1.33 * ((8 / (2 / (1 / 1.21))) + (8 / (1 / 1.21))) * 1.797 * player.getStatMultiplier("CRITVERS", player4pc.activeStats); 
 
     test("Legendaries & Soulbinds", () => {
         
