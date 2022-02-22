@@ -3,7 +3,7 @@ import { allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "./DiscRampGen";
 
 export const getRampData = (playerStats, playerTrinkets, playstyle) => {
-    console.log(playstyle);
+    //console.log(playstyle);
     const rampTime = 180;
     const boonSeq = buildRamp('Boon', 10, [], playerStats.haste, playstyle, ['Rapture'])
     const fiendSeq = buildRamp('Fiend', 10, [], playerStats.haste, playstyle, ['Rapture'])
