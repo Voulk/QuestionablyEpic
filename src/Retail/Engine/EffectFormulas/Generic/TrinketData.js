@@ -394,7 +394,26 @@ export const trinket_data = [
         table: -7,
         duration: 9,
         cooldown: 90,
-        discOverhealing: 0.265,
+        discOverhealing: 0.15,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Instructor's Divine Bell                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    A strong on-use with a slightly awkward cooldown for a lot of specs.
+    Value depends heavily on how well your specs mastery interacts with your specs big cooldowns.
+    */
+    name: "Instructor's Divine Bell (new)",
+    effects: [
+      {
+        coefficient: 2.37098,
+        table: -7,
+        duration: 15,
+        cooldown: 90,
+        discOverhealing: 0.15,
       },
     ],
   },
@@ -412,7 +431,7 @@ export const trinket_data = [
         table: -1,
         duration: 12,
         cooldown: 90,
-        discOverhealing: 0.25,
+        discOverhealing: 0.2,
       },
     ],
   },
@@ -820,12 +839,12 @@ export const trinket_data = [
     name: "So'leah's Secret Technique",
     effects: [
       {
-        coefficient: 1.540096,
-        table: -8,
+        coefficient: 0.493954, 
+        table: -7,
       },
       {
-        coefficient: 0.308019,
-        table: -8,
+        coefficient: 0.098791,
+        table: -7,
       }
     ],
   },
@@ -1027,8 +1046,7 @@ export const trinket_data = [
       {
         coefficient: 2.07913,
         table: -8, 
-        ppm: 6, // TODO: Refine. 
-
+        ppm: { "Restoration Druid": 19, "Discipline Priest": 10, "Holy Paladin": 0, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.5, "Holy Priest": 9 }, // TODO: Refine. 
       },
     ],
   },
@@ -1067,6 +1085,133 @@ export const trinket_data = [
         averageStacks: 7.5, 
         // This could be much more closely valued by considering each individual specs casting cadence. Given the low availability and power of the trinket,
         // this is not yet implemented but could be. Notably haste IS included.
+      },
+    ],
+  },
+  {
+    // ========================================== 9.2 Trinkets ====================================== */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Elegy of the Eternals                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // This is a flat stat trinket that gives a bonus to allies in group.
+    // This is currently heavily overbudget, or has a mechanic to it we're not yet aware of or able to test. 
+    name: "Elegy of the Eternals", 
+    effects: [
+      {
+        coefficient: 0.474196,
+        table: -7, // -9 but is currently using our -8. Should be -7.
+        sharedAmount: 0.1,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Auxillary Attendant Chime                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // Activates a robot that applies an absorb for X every second for 10s. 
+    // This appears to scale with haste, but it'll need to be tested for a partial tick when it ends. 
+    // If not, it'll have varying levels of ticks based on your haste. 
+    name: "Auxillary Attendant Chime", 
+    effects: [
+      {
+        coefficient: 10.149235,
+        table: -8, // -9
+        ppm: 1.5,
+        efficiency: 0.9,
+        duration: 10,
+        tickRate: 1,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Reclaimer's Intensity Core                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    // On-use mana trinket. When the robot it summons dies, heal 5 allies for X over 10 seconds.
+    name: "Reclaimer's Intensity Core", 
+    effects: [
+      { // Mana on-use
+        coefficient: 2.186952,
+        table: -1,
+        ticks: 10, // The coefficient is for a single tick.
+        cooldown: 150,
+      },
+      { // Healing Effect whenever an automata dies. 
+        // The scaling curve does not match any known spell tables and the trinket is available at just four item level so they are hard coded in for now.
+
+        // The Reclaimer's healing effect procs once every time a nearby automata dies. This does include automata from other players in addition to the players own.
+        // However, they can also be outranged and so if not careful you can even run away from your own. The radius appears to be 30 yards. 
+        // There is a good case to be made that there should be a settings value for automata in raid.
+        coefficient: 0.841136,
+        table: -6, 
+        fixedValues: {239: 186.3, 252: 218, 265: 254.8, 278: 297.4},
+        efficiency: { Raid: 0.52, Dungeon: 0.39 }, // 
+        ppm: 0.4 * 1, // One automata 
+        targets: 5,
+        ticks: 10,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Scars of Fraternal Strife                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // Jailer trinket. Effects unknown
+    name: "Scars of Fraternal Strife", 
+    effects: [
+      {
+        coefficient: 0,
+        table: -0, 
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        The First Sigil                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    // Signature ability reset and a massive vers buff on a 5 minute cooldown.
+    name: "The First Sigil", 
+    effects: [
+      {
+        coefficient: 5.122305,
+        table: -7,
+        duration: 15,
+        cooldown: 300,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        The Lion's Roar                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    // 20% DR up to an absorb cap on a long cooldown. Cooldown is reduced by critical heals using the ppm system.
+    name: "The Lion's Roar", 
+    effects: [
+      {
+        coefficient: 1075.665,
+        table: -8, // -9
+        ppm: 10,
+        baseCooldown: 600,
+        cdrPerProc: 3,
+        efficiency: 0.7,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Extract of Prodigious Sands                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+
+    */
+    name: "Extract of Prodigious Sands",
+    effects: [
+      {
+        coefficient: 15.64738,
+        table: -8, // -9 in spell data
+        efficiency: { Raid: 0.7, Dungeon: 0.47 }, // 
+        ppm: 7.5,
+
       },
     ],
   },

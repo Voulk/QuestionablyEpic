@@ -9,9 +9,23 @@
 
 export const changeLog = [
   {
+    version: "9.2 / 2.5.3",
+    update: 1,
+    date: "22 February (Major Update)",
+    changes: [
+      "All content updated to patch 9.2.",
+      "Added 9.2 trinkets, updated item level on old trinkets.",
+      "Added special effect pieces like Genesis Lathe and Soulwarped Seal of Wrynn.",
+      "Added Tazavesh to Upgrade Finder as a Mythic+ dungeon. Added new world boss.",
+      "Updated spell models to 9.2. They might change further through the week.",
+      "Removed Domination Gear & Effects.",
+      "Various minor visual improvements."
+    ],
+  },
+  {
     version: "9.1.5 / 2.5.2",
     update: 6,
-    date: "10 January (Code update)",
+    date: "10 January (Minor Update)",
     changes: [
       "Several large codebase changes in preparation for 9.2.",
       "200 ilvl crafted items should now import at the correct level.",
@@ -20,7 +34,7 @@ export const changeLog = [
   {
     version: "9.1.5 / 2.5.2",
     update: 5,
-    date: "16 December (Minor update)",
+    date: "16 December (Minor Update)",
     changes: [
       "Added better error handling to Top Gear to help diagnose very rare crashes.",
       "Paladin (Dungeon): Reduced the expected proc rate of Flask of Solemn Night.",
@@ -30,7 +44,7 @@ export const changeLog = [
   {
     version: "9.1.5 / 2.5.2",
     update: 4,
-    date: "12 December (Minor update)",
+    date: "12 December (Minor Update)",
     changes: [
       "DR is now applied to So'leah's Secret Technique correctly.",
       "Moonlit Prism is now combined with spec cooldowns where applicable."
@@ -39,7 +53,7 @@ export const changeLog = [
   {
     version: "9.1.5 / 2.5.2",
     update: 3,
-    date: "6 December (Major update)",
+    date: "6 December (Major Update)",
     changes: [
       "Added Legion Timewalking gear.",
       "Added a Legion Timewalking section to the Upgrade Finder.",
@@ -49,7 +63,7 @@ export const changeLog = [
   {
     version: "9.1.5 / 2.5.2",
     update: 2,
-    date: "16 November (Minor update)",
+    date: "16 November (Minor Update)",
     changes: [
       "Added Doomwalker anniversary gear.",
       "Added a few missing PVP items to the item DB.",
@@ -58,7 +72,7 @@ export const changeLog = [
   {
     version: "9.1.5 / 2.5.2",
     update: 1,
-    date: "7 November (Major update)",
+    date: "7 November (Major Update)",
     changes: [
       "Discipline Priest overhaul. Conduit / legendary information added.",
       "New Character panel incorporating old settings and SimC import panels.",

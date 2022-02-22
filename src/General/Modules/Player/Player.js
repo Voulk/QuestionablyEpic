@@ -382,7 +382,7 @@ class Player {
   updateConduitLevel = (id, newLevel) => {
     for (let i = 0; i < this.activeConduits.length; i++) {
       if (this.activeConduits[i].id === id) {
-        this.activeConduits[i].itemLevel = Math.max(145, Math.min(newLevel, 252));
+        this.activeConduits[i].itemLevel = Math.max(145, Math.min(newLevel, 278));
       }
     }
   };
@@ -601,7 +601,7 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 1800,
+        intellect: 2000,
         haste: 790,
         crit: 480,
         mastery: 200,
@@ -649,11 +649,11 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 1950,
-        haste: 755,
-        crit: 580,
-        mastery: 420,
-        versatility: 400,
+        intellect: 2100,
+        haste: 920,
+        crit: 610,
+        mastery: 220,
+        versatility: 415,
         stamina: 1900,
       };
       //this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable
@@ -682,10 +682,10 @@ class Player {
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 
       this.activeStats = {
-        intellect: 1800,
-        haste: 400,
-        crit: 690,
-        mastery: 360,
+        intellect: 2000,
+        haste: 520,
+        crit: 950,
+        mastery: 150,
         versatility: 410,
         stamina: 1900,
       };

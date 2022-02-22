@@ -141,6 +141,7 @@ export const encounterDB = {
 
   /* ---------------------------------------- World Bosses ---------------------------------------- */
   1192: [
+    2468, // Antros
     2456, // Mor'geth, Tormentor of the Damned (9.1)
     2430, // "Valinor, the Light of Eons",
     2431, // "Mortanis",
@@ -162,7 +163,21 @@ export const encounterDB = {
     2441, // Sylvanas Windrunner
     999, // BoEs,
   ],
-
+  /* --------------------------------- Sepulcher of the First Ones -------------------------------- */
+  1195: [
+    2458, // Vigilant Guardian
+    2465, // Skolex, the Insatiable Ravener
+    2470, // Artificer Xy'mox
+    2460, // Prototype Pantheon
+    2459, // Dausegne, the Fallen Oracle
+    2461, // Lihuvim, Principle Architect
+    2463, // Halondrus the Reclaimer
+    2469, // Anduin Wrynn
+    2457, // Lords of Dread
+    2467, // Rygelon
+    2464, // The Jailer,
+    999, // BoEs
+  ],
   /* ------------------------------------------ Dungeons ------------------------------------------ */
   1: [
     1182, //"Necrotic Wake",
@@ -173,13 +188,9 @@ export const encounterDB = {
     1187, //"Theater of Pain",
     1188, //"De Other Side",
     1189, //"Sanguine Depths",
+    -20, // Tazavesh
+    //1194, // Tazavesh
 
-    707, // Vault of the Wardens
-    716, // Eye of Azshara
-    740, // Black Rook Hold
-    762, // Darkheart Thicket
-    767, // Neltharion's Lair
-    800, // Court of Stars
   ],
   /* ---------------------------------- Tazavesh, The Vieled City --------------------------------- */
   1194: [

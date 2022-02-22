@@ -1,11 +1,8 @@
 import React from "react";
-import { Translation } from "react-i18next";
 import { MenuItem } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 import { cooldownDB } from "../Data/CooldownDB";
-
-// TODO this should be converted to a map at some point
 
 export default function ClassCooldownMenuItems(props) {
   const { t, i18n } = useTranslation();
@@ -36,6 +33,8 @@ export default function ClassCooldownMenuItems(props) {
                 width: 20,
                 margin: "0px 5px 0px 0px",
                 verticalAlign: "middle",
+                border: "1px solid #595959",
+                borderRadius: 4,
               }}
               src={map.icon}
               alt={map.name[currentLanguage]}
