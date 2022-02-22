@@ -157,7 +157,8 @@ export function filterItemListBySource(itemList, sourceInstance, sourceBoss, lev
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
     if (itemEncounter == 2457 || itemEncounter == 2467 || itemEncounter == 2464) expectedItemLevel += 7;
-    if (itemEncounter == 2456) expectedItemLevel = 233;
+    if (itemEncounter == 2456) expectedItemLevel = 233; // Mor'geth
+    if (itemEncounter == 2468) expectedItemLevel = 259; // Antros
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
 
     return item.level == expectedItemLevel && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
