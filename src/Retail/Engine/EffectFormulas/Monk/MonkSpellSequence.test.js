@@ -111,13 +111,13 @@ describe("Test Sequences", () => {
         // 0 tier - sequence won't be optimized but gives rough idea
         console.log("==pretier==");
         // Kyrian 
-        covenants["KyrianPre"].push(runCastSequence(baseSequence, pretierStats, {"DefaultLoadout": true, "covenant": "Kyrian", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}, 14))
+        covenants["KyrianPre"].push(runCastSequence(baseSequence, pretierStats, {"DefaultLoadout": true, "covenant": "Kyrian", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}, 10))
         covenants["KyrianPre"].push(runCastSequence(YulonBase, pretierStats, {"DefaultLoadout": true, "covenant": "Kyrian", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}))
         covenants["KyrianPre"].push(runCastSequence(RevivalBase, pretierStats, {"DefaultLoadout": true, "covenant": "Kyrian", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}))
         covenants["KyrianPre"].push(runCastSequence(kyrianWoOSequence, pretierStats, {"DefaultLoadout": true, "covenant": "Kyrian", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}))
-        const kyrianprehpm = Math.round((covenants["KyrianPre"][0].hpm + covenants["KyrianPre"][1].hpm*2/14 + covenants["KyrianPre"][2].hpm*3/14 + covenants["KyrianPre"][3].hpm*4/14)*100)/100
-        const kyrianprehps = Math.round((covenants["KyrianPre"][0].hps + covenants["KyrianPre"][1].hps*2/14 + covenants["KyrianPre"][2].hps*3/14 + covenants["KyrianPre"][3].hps*4/14)*100)/100
-        const kyrianpredps = Math.round((covenants["KyrianPre"][0].dps + covenants["KyrianPre"][1].dps*2/14 + covenants["KyrianPre"][2].dps*3/14 + covenants["KyrianPre"][3].dps*4/14)*100)/100
+        const kyrianprehpm = Math.round((covenants["KyrianPre"][0].hpm*10/14 + covenants["KyrianPre"][1].hpm*2/14 + covenants["KyrianPre"][2].hpm*3/14 + covenants["KyrianPre"][3].hpm*4/14)*100)/100
+        const kyrianprehps = Math.round((covenants["KyrianPre"][0].hps*10/14 + covenants["KyrianPre"][1].hps*2/14 + covenants["KyrianPre"][2].hps*3/14 + covenants["KyrianPre"][3].hps*4/14)*100)/100
+        const kyrianpredps = Math.round((covenants["KyrianPre"][0].dps*10/14 + covenants["KyrianPre"][1].dps*2/14 + covenants["KyrianPre"][2].dps*3/14 + covenants["KyrianPre"][3].dps*4/14)*100)/100
         console.log("PreTier Kyrian: " + covenants["KyrianPre"][0].totalHealing + " (HPM: " + covenants["KyrianPre"][0].hpm + " | HPS: " + covenants["KyrianPre"][0].hps + "). Damage: " + covenants["KyrianPre"][0].totalDamage + " (DPS: " + covenants["KyrianPre"][0].dps + ") \n" +
         "Kyrian Yulon: " + covenants["KyrianPre"][1].totalHealing + " (HPM: " + covenants["KyrianPre"][1].hpm + " | HPS: " + covenants["KyrianPre"][1].hps + "). Damage: " + covenants["KyrianPre"][1].totalDamage + " (DPS: " + covenants["KyrianPre"][1].dps + ") \n" +
         "Kyrian Revival: " + covenants["KyrianPre"][2].totalHealing + "\n" +
