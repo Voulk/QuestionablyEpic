@@ -10,6 +10,7 @@ import {
   getValidWeaponTypes,
   getItem,
   filterItemListByType,
+  getItemProp
 } from "../../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
@@ -243,17 +244,23 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
 }
 
 function checkItemViable(rawItem, player) {
+  //console.log(rawItem);
   const spec = player.getSpec();
   const acceptableArmorTypes = getValidArmorTypes(spec);
   const acceptableWeaponTypes = getValidWeaponTypes(spec, "Weapons");
   const acceptableOffhands = getValidWeaponTypes(spec, "Offhands");
+  const classRestriction = getItemProp(rawItem.id, "classRestriction")
 
-  return (
-    rawItem.slot === "Back" ||
-    (rawItem.itemClass === 4 && acceptableArmorTypes.includes(rawItem.itemSubClass)) ||
-    ((rawItem.slot === "Holdable" || rawItem.slot === "Offhand" || rawItem.slot === "Shield") && acceptableOffhands.includes(rawItem.itemSubClass)) ||
-    (rawItem.itemClass === 2 && acceptableWeaponTypes.includes(rawItem.itemSubClass))
-  );
+  // Check that the item is wearable by the given class. Could be split into an armor and weapons check for code cleanliness.
+  const slotCheck = rawItem.slot === "Back" ||
+                      (rawItem.itemClass === 4 && acceptableArmorTypes.includes(rawItem.itemSubClass)) ||
+                      ((rawItem.slot === "Holdable" || rawItem.slot === "Offhand" || rawItem.slot === "Shield") && acceptableOffhands.includes(rawItem.itemSubClass)) ||
+                      (rawItem.itemClass === 2 && acceptableWeaponTypes.includes(rawItem.itemSubClass))
+  // If an item has a class restriction, make sure that our spec is included.
+  const classCheck = (classRestriction === "" || classRestriction.includes(spec))
+  //if (rawItem["id"] === 189839) console.log("ANDUIN RING: " + classCheck + "/" + classRestriction);
+  return slotCheck && classCheck;
+
 }
 
 function sumObjectsByKey(...objs) {
