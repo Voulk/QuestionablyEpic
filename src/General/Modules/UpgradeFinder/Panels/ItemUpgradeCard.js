@@ -91,6 +91,9 @@ export default function ItemCard(props) {
     if (item.source.instanceId === 1193 && item.source.encounterId > 0) {
       return t("BossNames." + item.source.encounterId);
     }
+    if (item.source.instanceId === 1195 && item.source.encounterId > 0) {
+      return t("BossNames." + item.source.encounterId);
+    }
     /* -------------------------- BC Bosses ---------------------- */
     if ([745, 746].includes(item.source.instanceId)) {
       return t("BossNames." + item.source.encounterId);
