@@ -57,9 +57,9 @@ export const monkSinSpecialQueries = (contentType) => {
       HPSExpelHarmOnSelf: 0,
       OneManaHealing: 4.2,
       cooldownMult: {
-        oneMinute: 1.22,
+        oneMinute: 1.12,
         ninetySeconds: 1,
-        twoMinutes: 1.29,
+        twoMinutes: 1.48,
         twoMinutesOrb: 1.11,
         threeMinutes: 1.2,
       },
@@ -77,7 +77,7 @@ export const monkSinSpecialQueries = (contentType) => {
       cooldownMult: {
         oneMinute: 1,
         ninetySeconds: 1,
-        twoMinutes: 1,
+        twoMinutes: 1.42,
         twoMinutesOrb: 1,
         threeMinutes: 1,
       },

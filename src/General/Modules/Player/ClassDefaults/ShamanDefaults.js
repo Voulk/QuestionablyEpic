@@ -67,7 +67,7 @@ export const shamanDefaultSpecialQueries = (contentType) => {
       cooldownMult: {
         oneMinute: 1.1,
         ninetySeconds: 1,
-        twoMinutes: 1.1,
+        twoMinutes: 1.15,
         twoMinutesOrb: 1.07,
         threeMinutes: 1.3,
       },

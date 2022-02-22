@@ -32,7 +32,7 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 0,
       CastsPerMinute: 30,
       cooldownMult: {
-        oneMinute: 1.4,
+        oneMinute: 1.9,
         ninetySeconds: 1.0,
         twoMinutes: 1.4,
         twoMinutesOrb: 1,
