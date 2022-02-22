@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Typography, Grid, Dialog } from "@mui/material";
 import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
 import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
-import ertEngine from "../FightAnalysis/Engine/ERTEngine";
+import ertEngine from "./ModuleComponents/Engine/ERTEngine";
 
 class CooldownPlannerModule extends Component {
   constructor() {
@@ -14,12 +14,7 @@ class CooldownPlannerModule extends Component {
 
     /* ---------------------- We set our state for the cooldown Planner Module. --------------------- */
     this.state = {
-      ertListTimeNoIcons: [],
-      ertListBossAbility: [],
-      ertListAbilityNoTimeIconsAll: [],
       ertListTimeIcons: [],
-      ertListNoteIcons: [],
-      ertListNoteNoIcons: [],
       healTeamDialogState: false,
       mitigatedChartDataNoCooldowns: [],
       unmitigatedChartDataNoCooldowns: [],
@@ -64,12 +59,7 @@ class CooldownPlannerModule extends Component {
                   dataUpdateHandler={this.handleChangeDataCooldownPlanner}
                   ertDialogOpen={this.handleERTClickOpen}
                   healTeamDialogOpen={this.handleHealTeamClickOpen}
-                  ertListTimeNoIcons={this.state.ertListTimeNoIcons}
-                  ertListBossAbility={this.state.ertListBossAbility}
-                  ertListAbilityNoTimeIconsAll={this.state.ertListAbilityNoTimeIconsAll}
                   ertListTimeIcons={this.state.ertListTimeIcons}
-                  ertListNoteIcons={this.state.ertListNoteIcons}
-                  ertListNoteNoIcons={this.state.ertListNoteNoIcons}
                 />
               </Grid>
             </Grid>
