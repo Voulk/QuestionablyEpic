@@ -100,9 +100,9 @@ export const MONKSPELLS = {
                 state.activeBuffs.push(newBuff)
             }
 
-            // Support Faeline Harmony, on when 4pc is on
+            // Support Faeline Harmony
             // TODO: Implement properly :)
-            if (state.settings.misc.includes("4T28")) {
+            if (state.settings.misc.includes("FLH")) {
                 const newBuffFLH = {name: "Faeline Harmony Inc", buffType: "special", expiration: state.t + 10, value: 1.08}
                 state.activeBuffs.push(newBuffFLH)
             }
@@ -491,7 +491,7 @@ export const MONKSPELLS = {
         cooldown: 180,
         function: function (state) {
             // Yu'lon Soothing Breath
-            const SBHot = { type: "heal", coeff: 1.05, overheal: 0.3, secondaries: ['crit', 'vers'], duration:  4.5, hastedDuration: true}
+            const SBHot = { type: "heal", coeff: 0.35, overheal: 0.3, secondaries: ['crit', 'vers'], duration:  4.5, hastedDuration: true}
             const newBuff = {name: "Soothing Breath (Yulon)", buffType: "heal", attSpell: SBHot, tickRate: 1.5, next: state.t + (1.5 / getHaste(state.currentStats)), hastedDuration: true, targets: 3}
             newBuff['expiration'] = state.t + SBHot.duration
             state.activeBuffs.push(newBuff)
@@ -558,10 +558,12 @@ export const MONKSPELLS = {
         cooldown: 180,
         function: function (state) {
             // Yu'lon Soothing Breath
-            const SBHot = { type: "heal", coeff: 1.05, overheal: 0.3, secondaries: ['crit', 'vers'], duration:  4.5, hastedDuration: true}
-            const newBuff = {name: "Soothing Breath (Yulon)", buffType: "heal", attSpell: SBHot, tickRate: 1.5, next: state.t + (1.5 / getHaste(state.currentStats)), hastedDuration: true, targets: 3}
-            newBuff['expiration'] = state.t + SBHot.duration
-            state.activeBuffs.push(newBuff)
+            if (state.settings.misc.includes("CTA")) {
+                const SBHot = { type: "heal", coeff: 0.35, overheal: 0.3, secondaries: ['crit', 'vers'], duration:  4.5, hastedDuration: true}
+                const newBuff = {name: "Soothing Breath (Yulon CTA)", buffType: "heal", attSpell: SBHot, tickRate: 1.5, next: state.t + (1.5 / getHaste(state.currentStats)), hastedDuration: true, targets: 3}
+                newBuff['expiration'] = state.t + SBHot.duration
+                state.activeBuffs.push(newBuff)
+            }
 
             // TODO: Make ongoing heal expire when Yulon ends.
 
