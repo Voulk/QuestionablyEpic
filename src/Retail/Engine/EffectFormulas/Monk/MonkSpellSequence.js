@@ -284,7 +284,7 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
 export const runDamage = (state, spell, spellName) => {
     //const activeAtonements = getActiveAtone(atonementApp, t); // Get number of active atonements.
     let damMultiplier = getDamMult(state.activeBuffs, 0, state.t, spellName, 0, state.conduits); // Get our damage multiplier (Schism, Sins etc);
-    if ('damageType' in spell && spell.damageType === "physical") damMultiplier *= 0.7;
+    if ('damageType' in spell && spell.damageType === "physical") damMultiplier *= 0.7
     const damageVal = getSpellRaw(spell, state.currentStats) * damMultiplier;
 
     state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
@@ -294,7 +294,11 @@ export const runDamage = (state, spell, spellName) => {
         const bonedustDam = damageVal * 0.5 * 0.72 // 268 conduit
         state.damageDone['Bonedust Brew'] = (state.damageDone['Bonedust Brew'] || 0) + bonedustDam;
     }
-
+    else if (state.settings.misc.includes("BB")) // Simulate second legendary
+    {
+        const bonedustDam = damageVal * 0.5 * 0.72 * 1.13 * 0.28 // 268 conduit
+        state.damageDone['Bonedust Brew (Plus Emeni)'] = (state.damageDone['Bonedust Brew (Plus Emeni)'] || 0) + bonedustDam;
+    }
 
     //if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs));
 }
@@ -341,20 +345,20 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
         }
 
         // Run duplicate heal.
-        // 278 conduit (252 in enhanced slot)
+        // 278 conduit (in enhanced slot)
         // Hits 75% of raid
-        // 40% overhealing (conservative, logs range from 35->70, most above 50) - removed this, made it scale with the spells overheal instead
-        // This causes a "double dip" in the spell overheal but that's accurate with how BDB works
-        const bonedustHealing = healingVal * 0.5 * 0.4 * 1.8 * 0.75 * (1 - spell.overheal)
+        // Logs show 50% overhealing, had it scaled down again with the spells overheal (as any overhealing of the spells makes sense that the duplicated heal can't heal extra)
+        // This causes a "double dip" in the spell overheal but that's accurate with how BDB works, but may be too harsh so removed for now -  * (1 - spell.overheal)
+        const bonedustHealing = healingVal * 0.5 * 0.4 * 1.88 * 0.75
         state.healingDone['Bonedust Brew'] = (state.healingDone['Bonedust Brew'] || 0) + bonedustHealing;
 
         if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
             state.T284pcwindow['Bonedust Brew'] = (state.T284pcwindow['Bonedust Brew'] || 0) + bonedustHealing; 
         }
     }
-    else if (state.settings.misc.includes("4T28") && state.settings.covenant === "NL") // Simulate second legendary
+    else if (state.settings.misc.includes("BB")) // Simulate second legendary
     {
-        const bonedustHealing = healingVal * 0.5 * 0.4 * 1.8 * 0.75 * (1 - spell.overheal) * 0.28 + healingVal * 1.13 * 0.28
+        const bonedustHealing = healingVal * 0.5 * 0.4 * 1.8 * 0.75 * 0.28 + healingVal * 1.13 * 0.28
         state.healingDone['Bonedust Brew (Plus Emeni)'] = (state.healingDone['Bonedust Brew (Plus Emeni)'] || 0) + bonedustHealing;
 
         if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
