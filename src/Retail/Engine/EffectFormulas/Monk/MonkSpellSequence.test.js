@@ -122,7 +122,7 @@ describe("Test Sequences", () => {
         "Kyrian Yulon: " + covenants["KyrianPre"][1].totalHealing + " (HPM: " + covenants["KyrianPre"][1].hpm + " | HPS: " + covenants["KyrianPre"][1].hps + "). Damage: " + covenants["KyrianPre"][1].totalDamage + " (DPS: " + covenants["KyrianPre"][1].dps + ") \n" +
         "Kyrian Revival: " + covenants["KyrianPre"][2].totalHealing + "\n" +
         "Kyrian WoO: " + covenants["KyrianPre"][3].totalHealing + " (HPM: " + covenants["KyrianPre"][3].hpm + " | HPS: " + covenants["KyrianPre"][3].hps + "). Damage: " + covenants["KyrianPre"][3].totalDamage + " (DPS: " + covenants["KyrianPre"][3].dps + ")" + "\n" +
-        "Kyrian HPS: " + kyrianprehps + " HPM: " + kyrianprehpm + " DPS: " + kyrianpredps + " (2 yulon, 3 revival, 4 WoO)");
+        "Kyrian - HPS: " + kyrianprehps + " HPM: " + kyrianprehpm + " DPS: " + kyrianpredps + " (2 yulon, 3 revival, 4 WoO)");
 
         // Venth - SiT and AtotM
         covenants["VenthPre"].push(runCastSequence(baseSequence, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Sinister Teachings"], "misc": []}, {}, 14))
@@ -158,7 +158,7 @@ describe("Test Sequences", () => {
         console.log("PreTier NF: " + covenants["NFPre"][0].totalHealing + " (HPM: " + covenants["NFPre"][0].hpm + " | HPS: " + covenants["NFPre"][0].hps + "). Damage: " + covenants["NFPre"][0].totalDamage + " (DPS: " + covenants["NFPre"][0].dps + ") \n" +
         "NF Yulon: " + covenants["NFPre"][1].totalHealing + " (HPM: " + covenants["NFPre"][1].hpm + " | HPS: " + covenants["NFPre"][1].hps + "). Damage: " + covenants["NFPre"][1].totalDamage + " (DPS: " + covenants["NFPre"][1].dps + ") \n" +
         "NF Revival: " + covenants["NFPre"][2].totalHealing + "\n" +
-        "NF HPS: " + nfprehps + " HPM: " + nfprehpm + " DPS: " + nfpredps + " (2 yulon, 3 revival)");
+        "NF - HPS: " + nfprehps + " HPM: " + nfprehpm + " DPS: " + nfpredps + " (2 yulon, 3 revival)");
         // Haste bonus affects NF the most, sequence is much quicker - needed to make a longer sequence to accurately collect HPM
 
         // NL
@@ -172,7 +172,7 @@ describe("Test Sequences", () => {
         console.log("PreTier NL: " + Math.round((covenants["NLPre"][0].totalHealing + covenants["NLPre"][1].totalHealing)/2) + " (HPM: " + Math.round((covenants["NLPre"][0].hpm + covenants["NLPre"][1].hpm)/2*100)/100 + " | HPS: " + Math.round((covenants["NLPre"][0].hps + covenants["NLPre"][1].hps)/2*100)/100 + "). Damage: " + Math.round((covenants["NLPre"][0].totalDamage + covenants["NLPre"][1].totalDamage)/2*100)/100 + " (DPS: " + Math.round((covenants["NLPre"][0].dps + covenants["NLPre"][1].dps)/2*100)/100 + ")\n" +
         "NL Yulon: " + covenants["NLPre"][2].totalHealing + " (HPM: " + covenants["NLPre"][2].hpm + " | HPS: " + covenants["NLPre"][2].hps + "). Damage: " + covenants["NLPre"][2].totalDamage + " (DPS: " + covenants["NLPre"][2].dps + ")\n" +
         "NL Revival: " + covenants["NLPre"][3].totalHealing + "\n" +
-        "NL HPS: " + nlprehps + " HPM: " + nlprehpm + " DPS: " + nlpredps + " (2 yulon, 3 revival, balanced stats)");
+        "NL - HPS: " + nlprehps + " HPM: " + nlprehpm + " DPS: " + nlpredps + " (2 yulon, 3 revival, balanced stats)");
     
         // 4pc, 1 legendary
         console.log("==4pc single legendary==");
@@ -188,7 +188,7 @@ describe("Test Sequences", () => {
         "Kyrian Yulon: " + covenants["Kyrian1L"][1].totalHealing + " (HPM: " + covenants["Kyrian1L"][1].hpm + " | HPS: " + covenants["Kyrian1L"][1].hps + "). Damage: " + covenants["Kyrian1L"][1].totalDamage + " (DPS: " + covenants["Kyrian1L"][1].dps + ") \n" +
         "Kyrian Revival: " + covenants["Kyrian1L"][2].totalHealing + "\n" +
         "Kyrian WoO: " + covenants["Kyrian1L"][3].totalHealing + " (HPM: " + covenants["Kyrian1L"][3].hpm + " | HPS: " + covenants["Kyrian1L"][3].hps + "). Damage: " + covenants["Kyrian1L"][3].totalDamage + " (DPS: " + covenants["Kyrian1L"][3].dps + ")\n" +
-        "Kyrian HPS: " + kyrian1lhps + " HPM: " + kyrian1lhpm + " DPS: " + kyrian1ldps + " (2 yulon, 3 revival, 4 WoO)");
+        "Kyrian - HPS: " + kyrian1lhps + " HPM: " + kyrian1lhpm + " DPS: " + kyrian1ldps + " (2 yulon, 3 revival, 4 WoO)");
 
         // Venth
         covenants["Venth1L"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Sinister Teachings"], "misc": ["2T28", "4T28"]}, {}, 14))
@@ -197,22 +197,22 @@ describe("Test Sequences", () => {
         covenants["Venth1L"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}, 14))
         covenants["Venth1L"].push(runCastSequence(YulonBase, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
         covenants["Venth1L"].push(runCastSequence(RevivalBase, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
-        const venth1lhpm = Math.round((covenants["Venth1L"][0].hpm + covenants["Venth1L"][1].hpm*2/14 + covenants["Venth1L"][2].hpm*3/14 + (getFOHealing(player) + getLongCloneHealing(player) + venth4pcfobonuspercast)/2000*4/14)*100)/100
-        const venth1lhps = Math.round((covenants["Venth1L"][0].hps + covenants["Venth1L"][1].hps*2/14 + covenants["Venth1L"][2].hps*3/14 + (venth4pcfobonuspercast + getFOHealing(player) + getLongCloneHealing(player))/24*4/480)*100)/100
+        const venth1lhpm = Math.round((covenants["Venth1L"][0].hpm + covenants["Venth1L"][1].hpm*2/14 + covenants["Venth1L"][2].hpm*3/14 + (getFOHealing(player4pc) + getLongCloneHealing(player4pc) + venth4pcfobonuspercast)/2000*4/14)*100)/100
+        const venth1lhps = Math.round((covenants["Venth1L"][0].hps + covenants["Venth1L"][1].hps*2/14 + covenants["Venth1L"][2].hps*3/14 + (venth4pcfobonuspercast + getFOHealing(player4pc) + getLongCloneHealing(player4pc))/24*4/480)*100)/100
         const venth1ldps = Math.round((covenants["Venth1L"][0].dps + covenants["Venth1L"][1].dps*2/14 + covenants["Venth1L"][2].dps*3/14)*100)/100
-        const venth1latotmhpm = Math.round((covenants["Venth1L"][3].hpm + covenants["Venth1L"][4].hpm*2/14 + covenants["Venth1L"][5].hpm*3/14 + (getFOHealing(player) + venth4pcfobonuspercastatotm)/2000*3/14)*100)/100
-        const venth1latotmhps = Math.round((covenants["Venth1L"][3].hps + covenants["Venth1L"][4].hps*2/14 + covenants["Venth1L"][5].hps*3/14 + (venth4pcfobonuspercastatotm + getFOHealing(player))/24*3/480)*100)/100
+        const venth1latotmhpm = Math.round((covenants["Venth1L"][3].hpm + covenants["Venth1L"][4].hpm*2/14 + covenants["Venth1L"][5].hpm*3/14 + (getFOHealing(player4pc) + venth4pcfobonuspercastatotm)/2000*3/14)*100)/100
+        const venth1latotmhps = Math.round((covenants["Venth1L"][3].hps + covenants["Venth1L"][4].hps*2/14 + covenants["Venth1L"][5].hps*3/14 + (venth4pcfobonuspercastatotm + getFOHealing(player4pc))/24*3/480)*100)/100
         const venth1latotmdps = Math.round((covenants["Venth1L"][3].dps + covenants["Venth1L"][4].dps*2/14 + covenants["Venth1L"][5].dps*3/14)*100)/100
-        console.log("4pc Venth: " + covenants["Venth1L"][0].totalHealing + " (HPM: " + covenants["Venth1L"][0].hpm + " | HPS: " + covenants["Venth1L"][0].hps + "). 4PC Window: " + covenants["Venth1L"][0].total4pcWindow + " (" + Math.round(covenants["Venth1L"][0].total4pcWindow/covenants["Venth1L"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Venth1L"][0].totalDamage + " (DPS: " + covenants["Venth1L"][0].dps + ")\n" +
+        console.log("4pc Venth (SiT): " + covenants["Venth1L"][0].totalHealing + " (HPM: " + covenants["Venth1L"][0].hpm + " | HPS: " + covenants["Venth1L"][0].hps + "). 4PC Window: " + covenants["Venth1L"][0].total4pcWindow + " (" + Math.round(covenants["Venth1L"][0].total4pcWindow/covenants["Venth1L"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Venth1L"][0].totalDamage + " (DPS: " + covenants["Venth1L"][0].dps + ")\n" +
         "Venth Yulon: " + covenants["Venth1L"][1].totalHealing + " (HPM: " + covenants["Venth1L"][1].hpm + " | HPS: " + covenants["Venth1L"][1].hps + "). 4PC Window: " + covenants["Venth1L"][1].total4pcWindow + " (" + Math.round(covenants["Venth1L"][1].total4pcWindow/covenants["Venth1L"][1].totalHealing*1000)/10 + ")%. Damage: " + covenants["Venth1L"][1].totalDamage + " (DPS: " + covenants["Venth1L"][1].dps + ")\n" +
         "Venth Revival: " + covenants["Venth1L"][2].totalHealing + "\n" +
-        "Venth Per-FO: " + Math.round((getFOHealing(player) + venth4pcfobonuspercast)*100)/100 + " (+HPS: " + Math.round((venth4pcfobonuspercast + getFOHealing(player) + getLongCloneHealing(player))/24*100)/100 + ")\n" +
-        "4pc Venth: " + covenants["Venth1L"][0].totalHealing + " (HPM: " + covenants["Venth1L"][0].hpm + " | HPS: " + covenants["Venth1L"][0].hps + "). 4PC Window: " + covenants["Venth1L"][0].total4pcWindow + " (" + Math.round(covenants["Venth1L"][0].total4pcWindow/covenants["Venth1L"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Venth1L"][0].totalDamage + " (DPS: " + covenants["Venth1L"][0].dps + ")\n" +
+        "Venth Per-FO: " + Math.round((getFOHealing(player4pc) + venth4pcfobonuspercast)*100)/100 + " (+HPS: " + Math.round((venth4pcfobonuspercast + getFOHealing(player4pc) + getLongCloneHealing(player4pc))/24*100)/100 + ")\n" +
+        "4pc Venth (AtotM): " + covenants["Venth1L"][0].totalHealing + " (HPM: " + covenants["Venth1L"][0].hpm + " | HPS: " + covenants["Venth1L"][0].hps + "). 4PC Window: " + covenants["Venth1L"][0].total4pcWindow + " (" + Math.round(covenants["Venth1L"][0].total4pcWindow/covenants["Venth1L"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Venth1L"][0].totalDamage + " (DPS: " + covenants["Venth1L"][0].dps + ")\n" +
         "Venth Yulon: " + covenants["Venth1L"][1].totalHealing + " (HPM: " + covenants["Venth1L"][1].hpm + " | HPS: " + covenants["Venth1L"][1].hps + "). 4PC Window: " + covenants["Venth1L"][1].total4pcWindow + " (" + Math.round(covenants["Venth1L"][1].total4pcWindow/covenants["Venth1L"][1].totalHealing*1000)/10 + ")%. Damage: " + covenants["Venth1L"][1].totalDamage + " (DPS: " + covenants["Venth1L"][1].dps + ")\n" +
         "Venth Revival: " + covenants["Venth1L"][2].totalHealing + "\n" +
-        "Venth Per-FO: " + Math.round((getFOHealing(player) + venth4pcfobonuspercastatotm)*100)/100 + " (+HPS: " + Math.round((venth4pcfobonuspercastatotm + getFOHealing(player))/24*100)/100 + ")\n" +
-        "Venth SiT HPS: " + venth1lhps + " HPM: " + venth1lhpm + " DPS: " + venth1ldps + " (2 yulon, 3 revival, 4 FO) \n" +
-        "Venth AtoTM HPS: " + venth1latotmhps + " HPM: " + venth1latotmhpm + " DPS: " + venth1latotmdps + " (2 yulon, 3 revival, 3 FO)");
+        "Venth Per-FO: " + Math.round((getFOHealing(player4pc) + venth4pcfobonuspercastatotm)*100)/100 + " (+HPS: " + Math.round((venth4pcfobonuspercastatotm + getFOHealing(player4pc))/24*100)/100 + ")\n" +
+        "Venth SiT - HPS: " + venth1lhps + " HPM: " + venth1lhpm + " DPS: " + venth1ldps + " (2 yulon, 3 revival, 4 FO) \n" +
+        "Venth AtoTM - HPS: " + venth1latotmhps + " HPM: " + venth1latotmhpm + " DPS: " + venth1latotmdps + " (2 yulon, 3 revival, 3 FO)");
 
         // NF
         covenants["NF1L"].push(runCastSequence(NFsequencePreFLH, activeStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}, 14));
@@ -224,7 +224,7 @@ describe("Test Sequences", () => {
         console.log("4pc Night Fae: " + covenants["NF1L"][0].totalHealing + " (HPM: " + covenants["NF1L"][0].hpm + " | HPS: " + covenants["NF1L"][0].hps + "). 4PC Window: " + covenants["NF1L"][0].total4pcWindow + " (" + Math.round(covenants["NF1L"][0].total4pcWindow/covenants["NF1L"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["NF1L"][0].totalDamage + " (DPS: " + covenants["NF1L"][0].dps + ")\n" +
         "Night Fae Yulon: " +covenants["NF1L"][1].totalHealing + " (HPM: " + covenants["NF1L"][1].hpm + " | HPS: " + covenants["NF1L"][1].hps + "). 4PC Window: " + covenants["NF1L"][1].total4pcWindow + " (" + Math.round(covenants["NF1L"][1].total4pcWindow/covenants["NF1L"][1].totalHealing*1000)/10 + ")%. Damage: " + covenants["NF1L"][1].totalDamage + " (DPS: " + covenants["NF1L"][1].dps + ")\n" +
         "Night Fae Revival: " + covenants["NF1L"][2].totalHealing + "\n" +
-        "Night Fae HPS: " + nf1lhps + " HPM: " + nf1lhpm + " DPS: " + nf1ldps + " (2 yulon, 3 revival)");
+        "Night Fae - HPS: " + nf1lhps + " HPM: " + nf1lhpm + " DPS: " + nf1ldps + " (2 yulon, 3 revival)");
         // Haste bonus affects NF the most, sequence is much quicker - needed to make a longer sequence to accurately collect HPM
 
         // NL   
@@ -245,7 +245,7 @@ describe("Test Sequences", () => {
         "NL Balanced: " + Math.round((covenants["NL1L"][4].totalHealing + covenants["NL1L"][5].totalHealing))/2 + " (HPM: " + Math.round((covenants["NL1L"][4].hpm + covenants["NL1L"][5].hpm)/2*100)/100 + " | HPS: " + Math.round((covenants["NL1L"][4].hps + covenants["NL1L"][5].hps)/2*100)/100 + "). 4PC Window: " + (covenants["NL1L"][4].total4pcWindow+Math.round(covenants["NL1L"][5].total4pcWindow))/2  + " (" + Math.round(((covenants["NL1L"][4].total4pcWindow+Math.round(covenants["NL1L"][5].total4pcWindow))/2)/((covenants["NL1L"][4].totalHealing + Math.round(covenants["NL1L"][5].totalHealing))/2)*1000)/10 + ")%. Damage: " + (covenants["NL1L"][4].totalDamage*1.1+Math.round(covenants["NL1L"][5].totalDamage))/2 + " (DPS: " + Math.round((covenants["NL1L"][4].dps + covenants["NL1L"][5].dps)/2*100)/100 + ")\n" +
         "NL Yulon: " + covenants["NL1L"][6].totalHealing + " (HPM: " + covenants["NL1L"][6].hpm + "). 4PC Window: " + covenants["NL1L"][6].total4pcWindow + " (" + Math.round(covenants["NL1L"][6].total4pcWindow/covenants["NL1L"][6].totalHealing*1000)/10 + ")%. Damage: " + covenants["NL1L"][6].totalDamage + " (DPS: " + covenants["NL1L"][6].dps + ")\n" +
         "NL Revival: " + covenants["NL1L"][7].totalHealing + "\n" +
-        "NL HPS: " + nl1lhps + " HPM: " + nl1lhpm + " DPS: " + nl1ldps + " (2 yulon, 3 revival, balanced stats)");
+        "NL - HPS: " + nl1lhps + " HPM: " + nl1lhpm + " DPS: " + nl1ldps + " (2 yulon, 3 revival, balanced stats)");
 
         // 4pc, 2 legendary
         console.log("==4pc double legendary==");
@@ -261,20 +261,20 @@ describe("Test Sequences", () => {
         "Kyrian Yulon: " + covenants["Kyrian"][1].totalHealing + " (HPM: " + covenants["Kyrian"][1].hpm + " | HPS: " + covenants["Kyrian"][1].hps + "). Damage: " + covenants["Kyrian"][1].totalDamage + " (DPS: " + covenants["Kyrian"][1].dps + ") \n" +
         "Kyrian Revival: " + covenants["Kyrian"][2].totalHealing + "\n" +
         "Kyrian WoO: " + covenants["Kyrian"][3].totalHealing + " (HPM: " + covenants["Kyrian"][3].hpm + " | HPS: " + covenants["Kyrian"][3].hps + "). Damage: " + covenants["Kyrian"][3].totalDamage + " (DPS: " + covenants["Kyrian"][3].dps + ")\n" +
-        "Kyrian HPS: " + kyrianhps + " HPM: " + kyrianhpm + " DPS: " + kyriandps + " (2 yulon, 3 revival, 4 WoO)");
+        "Kyrian - HPS: " + kyrianhps + " HPM: " + kyrianhpm + " DPS: " + kyriandps + " (2 yulon, 3 revival, 4 WoO)");
 
         // Venth
         covenants["Venth"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}, 14))
         covenants["Venth"].push(runCastSequence(YulonBase, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
         covenants["Venth"].push(runCastSequence(RevivalBase, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
-        const venthhpm = Math.round((covenants["Venth"][0].hpm + covenants["Venth"][1].hpm*2/14 + covenants["Venth"][2].hpm*3/14 + (getFOHealing(player) + getLongCloneHealing(player) + venth4pcfobonuspercast)/2000*4/14)*100)/100
-        const venthhps = Math.round((covenants["Venth"][0].hps + covenants["Venth"][1].hps*2/14 + covenants["Venth"][2].hps*3/14 + (venth4pcfobonuspercast + getFOHealing(player) + getLongCloneHealing(player))/24*4/480)*100)/100
+        const venthhpm = Math.round((covenants["Venth"][0].hpm + covenants["Venth"][1].hpm*2/14 + covenants["Venth"][2].hpm*3/14 + (getFOHealing(player4pc) + getLongCloneHealing(player4pc) + venth4pcfobonuspercast)/2000*4/14)*100)/100
+        const venthhps = Math.round((covenants["Venth"][0].hps + covenants["Venth"][1].hps*2/14 + covenants["Venth"][2].hps*3/14 + (venth4pcfobonuspercast + getFOHealing(player4pc) + getLongCloneHealing(player4pc))/24*4/480)*100)/100
         const venthdps = Math.round((covenants["Venth"][0].dps + covenants["Venth"][1].dps*2/14 + covenants["Venth"][2].dps*3/14)*100)/100
         console.log("4pc2leg Venth: " + covenants["Venth"][0].totalHealing + " (HPM: " + covenants["Venth"][0].hpm + " | HPS: " + covenants["Venth"][0].hps + "). 4PC Window: " + covenants["Venth"][0].total4pcWindow + " (" + Math.round(covenants["Venth"][0].total4pcWindow/covenants["Venth"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Venth"][0].totalDamage + " (DPS: " + covenants["Venth"][0].dps + ")\n" +
         "Venth Yulon: " +covenants["Venth"][1].totalHealing + " (HPM: " + covenants["Venth"][1].hpm + " | HPS: " + covenants["Venth"][1].hps + "). 4PC Window: " + covenants["Venth"][1].total4pcWindow + " (" + Math.round(covenants["Venth"][1].total4pcWindow/covenants["Venth"][1].totalHealing*1000)/10 + ")%. Damage: " + covenants["Venth"][1].totalDamage + " (DPS: " + covenants["Venth"][1].dps + ")\n" +
         "Venth Revival: " + covenants["Venth"][2].totalHealing + "\n" +
-        "Venth Per-FO: " + Math.round((getFOHealing(player) + getLongCloneHealing(player) + venth4pcfobonuspercast)*100)/100 + " (+HPS: " + Math.round((venth4pcfobonuspercast + getFOHealing(player) + getLongCloneHealing(player))/24*100)/100 + ")\n" +
-        "Venth HPS: " + venthhps + " HPM: " + venthhpm + " DPS: " + venthdps + " (2 yulon, 3 revival, 4 FO)");
+        "Venth Per-FO: " + Math.round((getFOHealing(player4pc) + getLongCloneHealing(player4pc) + venth4pcfobonuspercast)*100)/100 + " (+HPS: " + Math.round((venth4pcfobonuspercast + getFOHealing(player4pc) + getLongCloneHealing(player4pc))/24*100)/100 + ")\n" +
+        "Venth - HPS: " + venthhps + " HPM: " + venthhpm + " DPS: " + venthdps + " (2 yulon, 3 revival, 4 FO)");
 
         // NF
         covenants["Night Fae"].push(runCastSequence(NFsequence, activeStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28", "FLH"]}, {}, 14));
@@ -286,7 +286,7 @@ describe("Test Sequences", () => {
         console.log("4pc2leg Night Fae: " + covenants["Night Fae"][0].totalHealing + " (HPM: " + covenants["Night Fae"][0].hpm + " | HPS: " + covenants["Night Fae"][0].hps + "). 4PC Window: " + covenants["Night Fae"][0].total4pcWindow + " (" + Math.round(covenants["Night Fae"][0].total4pcWindow/covenants["Night Fae"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Night Fae"][0].totalDamage + " (DPS: " + covenants["Night Fae"][0].dps + ")\n" +
         "Night Fae Yulon: " +covenants["Night Fae"][1].totalHealing + " (HPM: " + covenants["Night Fae"][1].hpm + " | HPS: " + covenants["Night Fae"][1].hps + "). 4PC Window: " + covenants["Night Fae"][1].total4pcWindow + " (" + Math.round(covenants["Night Fae"][1].total4pcWindow/covenants["Night Fae"][1].totalHealing*1000)/10 + ")%. Damage: " + covenants["Night Fae"][1].totalDamage + " (DPS: " + covenants["Night Fae"][1].dps + ")\n" +
         "Night Fae Revival: " + covenants["Night Fae"][2].totalHealing + "\n" +
-        "Night Fae HPS: " + nfhps + " HPM: " + nfhpm + " DPS: " + nfdps + " (2 yulon, 3 revival)");
+        "Night Fae - HPS: " + nfhps + " HPM: " + nfhpm + " DPS: " + nfdps + " (2 yulon, 3 revival)");
         // Haste bonus affects NF the most, sequence is much quicker - needed to make a longer sequence to accurately collect HPM
 
         // NL   
@@ -307,7 +307,7 @@ describe("Test Sequences", () => {
         "4pc2leg NL Balanced: " + Math.round((covenants["NL"][4].totalHealing + covenants["NL"][5].totalHealing))/2 + " (HPM: " + Math.round((covenants["NL"][4].hpm + covenants["NL"][5].hpm)/2*100)/100 + " | HPS: " + Math.round((covenants["NL"][4].hps + covenants["NL"][5].hps)/2*100)/100 + "). 4PC Window: " + (covenants["NL"][4].total4pcWindow+Math.round(covenants["NL"][5].total4pcWindow))/2  + " (" + Math.round(((covenants["NL"][4].total4pcWindow+Math.round(covenants["NL"][5].total4pcWindow))/2)/((covenants["NL"][4].totalHealing + Math.round(covenants["NL"][5].totalHealing))/2)*1000)/10 + ")%. Damage: " + (covenants["NL"][4].totalDamage*1.1+Math.round(covenants["NL"][5].totalDamage))/2 + " (DPS: " + Math.round((covenants["NL"][4].dps + covenants["NL"][5].dps)/2*100)/100 + ")\n" +
         "NL Yulon: " + covenants["NL"][6].totalHealing + " (HPM: " + covenants["NL"][6].hpm + "). 4PC Window: " + covenants["NL"][6].total4pcWindow + " (" + Math.round(covenants["NL"][6].total4pcWindow/covenants["NL"][6].totalHealing*1000)/10 + ")%. Damage: " + covenants["NL"][6].totalDamage + " (DPS: " + covenants["NL"][6].dps + ")\n" +
         "NL Revival: " + covenants["NL"][7].totalHealing + "\n" +
-        "NL HPS: " + nlhps + " HPM: " + nlhpm + " DPS: " + nldps + " (2 yulon, 3 revival, balanced stats)");
+        "NL - HPS: " + nlhps + " HPM: " + nlhpm + " DPS: " + nldps + " (2 yulon, 3 revival, balanced stats)");
         
         console.log("Sequence lengths: " + "\n" + 
         "KyrianPre: " +  covenants["KyrianPre"][0].sequenceLength + "\n" +
