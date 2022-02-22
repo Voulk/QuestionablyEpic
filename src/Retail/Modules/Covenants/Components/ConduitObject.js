@@ -16,7 +16,7 @@ export default function ConduitObject(props) {
   /* --------- Arrow Function to Increase Conduits Ilvl on left click --------- */
   const conduitClicked = () => {
     let oldLevel = props.conduit.itemLevel;
-    let newLevel = oldLevel === 252 ? 145 : oldLevel === 184 ? 200 : oldLevel + 13;
+    let newLevel = oldLevel === 278 ? 145 : oldLevel === 184 ? 200 : oldLevel + 13;
     props.updateConduitLevel(props.conduit.id, newLevel);
   };
 
@@ -24,18 +24,18 @@ export default function ConduitObject(props) {
   const conduitRightClicked = (e) => {
     e.preventDefault();
     let oldLevel = props.conduit.itemLevel;
-    let newLevel = oldLevel === 145 ? 252 : oldLevel === 200 ? 184 : oldLevel - 13;
+    let newLevel = oldLevel === 145 ? 278 : oldLevel === 200 ? 184 : oldLevel - 13;
     props.updateConduitLevel(props.conduit.id, newLevel);
   };
 
   /* ------------ Returns Appropriate Colour for the Ilvl Provided ------------ */
   // Todo Make this an external Function to make this easier to update across modules
   const itemQuality = (itemLevel) => {
-    if (itemLevel >= 226) {
+    if (itemLevel >= 252) {
       return "#ff8000"; // Legendary
-    } else if (itemLevel >= 200) {
+    } else if (itemLevel >= 226) {
       return "#a335ee"; // Epic
-    } else if (itemLevel >= 171) {
+    } else if (itemLevel >= 200) {
       return "#0070dd"; // Rare
     } else if (itemLevel >= 158) {
       return "#1eff00"; // Uncommon

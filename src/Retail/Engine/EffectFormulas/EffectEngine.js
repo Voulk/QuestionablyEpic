@@ -154,7 +154,9 @@ function getConduitRank(itemLevel, enhanced = false) {
     213: 6,
     226: 7,
     239: 8,
-    252: 9
+    252: 9,
+    265: 10,
+    278: 11
   };
 
   if (enhanced) return ranks[itemLevel] + 2
