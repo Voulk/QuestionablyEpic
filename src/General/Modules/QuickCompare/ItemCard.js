@@ -1,5 +1,5 @@
 import React from "react";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton } from "@mui/material";
 import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemIcon } from "../../Engine/ItemUtilities";
 import "./ItemCard.css";
@@ -211,107 +211,107 @@ export default function ItemCard(props) {
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
-      <Card className={item.isEquipped && isVault ? classes.selectedVault : item.isEquipped ? classes.selected : isVault ? classes.vault : classes.root} variant="outlined">
-        <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
-          <Grid item xs="auto">
-            <CardContent
-              style={{
-                padding: "3.5px 3.5px 0.5px 3.5px",
-                display: "inline-flex",
-              }}
-            >
-              <div className="container-ItemCards">
-                <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + gemString + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom}>
-                  <img
-                    alt="img"
-                    width={42}
-                    height={42}
-                    src={getItemIcon(item.id, gameType)}
+      <div style={{ position: "relative" }}>
+        {deleteActive ? (
+          <IconButton style={{ position: "absolute", right: 4, bottom: 2, zIndex: 1, padding: 0 }} onClick={deleteItemCard} aria-label="delete" size="small">
+            <DeleteIcon style={{ color: "#ad2c34" }} fontSize="small" />
+          </IconButton>
+        ) : (
+          ""
+        )}
+
+        <Card className={item.isEquipped && isVault ? classes.selectedVault : item.isEquipped ? classes.selected : isVault ? classes.vault : classes.root} variant="outlined">
+          <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
+            <Grid item xs="auto">
+              <CardContent
+                style={{
+                  padding: "3.5px 3.5px 0.5px 3.5px",
+                  display: "inline-flex",
+                }}
+              >
+                <div className="container-ItemCards">
+                  <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + gemString + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom}>
+                    <img
+                      alt="img"
+                      width={42}
+                      height={42}
+                      src={getItemIcon(item.id, gameType)}
+                      style={{
+                        borderRadius: 4,
+                        borderWidth: "1px",
+                        borderStyle: "solid",
+                        borderColor: itemQuality,
+                      }}
+                    />
+                  </a>
+                  <div className="bottom-right-ItemCards"> {item.level} </div>
+                </div>
+              </CardContent>
+            </Grid>
+            <Divider orientation="vertical" flexItem />
+            <CardContent style={{ padding: 0, width: "100%" }}>
+              <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
+                <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
+                  <Grid item xs={10} display="inline">
+                    <Typography variant="subtitle2" wrap="nowrap" display="inline" align="left" style={{ color: itemQuality, marginLeft: 4 }}>
+                      {itemName}
+                    </Typography>
+                  </Grid>
+                  <Divider orientation="vertical" flexItem />
+                  <Grid
+                    item
+                    xs={2}
                     style={{
-                      borderRadius: 4,
-                      borderWidth: "1px",
-                      borderStyle: "solid",
-                      borderColor: itemQuality,
-                    }}
-                  />
-                </a>
-                <div className="bottom-right-ItemCards"> {item.level} </div>
-              </div>
-            </CardContent>
-          </Grid>
-          <Divider orientation="vertical" flexItem />
-          <CardContent style={{ padding: 0, width: "100%" }}>
-            <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
-              <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
-                <Grid item xs={10} display="inline">
-                  <Typography variant="subtitle2" wrap="nowrap" display="inline" align="left" style={{ color: itemQuality, marginLeft: 4 }}>
-                    {itemName}
-                  </Typography>
-                </Grid>
-                <Divider orientation="vertical" flexItem />
-                <Grid
-                  item
-                  xs={2}
-                  style={{
-                    display: "inline-flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <Typography
-                    variant="subtitle1"
-                    wrap="nowrap"
-                    display="inline"
-                    align="center"
-                    style={{
-                      color: upgradeColor(props.item.softScore),
-                      paddingLeft: "3px",
-                      paddingRight: "3px",
+                      display: "inline-flex",
+                      justifyContent: "center",
                     }}
                   >
-                    {Math.round(props.item.softScore)}
-                  </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      wrap="nowrap"
+                      display="inline"
+                      align="center"
+                      style={{
+                        color: upgradeColor(props.item.softScore),
+                        paddingLeft: "3px",
+                        paddingRight: "3px",
+                      }}
+                    >
+                      {Math.round(props.item.softScore)}
+                    </Typography>
+                  </Grid>
+                </Grid>
+                <Divider />
+                <Grid item container display="inline" direction="row" xs="auto" justifyContent="space-between">
+                  <Grid item xs={12}>
+                    <Typography variant="subtitle2" wrap="nowrap" display="block" style={{ paddingTop: 0, paddingLeft: 4 }} align="left">
+                      {/*props.item.domGemID !== 0 && gameType === "Retail" ? (
+                        <a data-wowhead={"item=" + props.item.domGemID + "&domain=" + wowheadDom}>
+                          <img
+                            style={{
+                              height: 16,
+                              width: 16,
+                              margin: "0px 5px 0px 0px",
+                              verticalAlign: "middle",
+                              borderRadius: 4,
+                              border: "1px solid rgba(255, 255, 255, 0.12)",
+                            }}
+                            src={getGemIcon(props.item.domGemID)}
+                            alt={dominationGemDB.filter((key) => key.id === props.item.domGemID).map((key) => key.name[currentLanguage])[0]}
+                          />
+                        </a>
+                      ) : (
+                        ""
+                      )} */}
+                      {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
+                    </Typography>
+                  </Grid>
                 </Grid>
               </Grid>
-              <Divider />
-              <Grid item container display="inline" direction="row" xs="auto" justifyContent="space-between">
-                <Grid item xs={11}>
-                  <Typography variant="subtitle2" wrap="nowrap" display="block" style={{ paddingTop: 0, paddingLeft: 4 }} align="left">
-                    {props.item.domGemID !== 0 && gameType === "Retail" ? (
-                      <a data-wowhead={"item=" + props.item.domGemID + "&domain=" + wowheadDom}>
-                        <img
-                          style={{
-                            height: 16,
-                            width: 16,
-                            margin: "0px 5px 0px 0px",
-                            verticalAlign: "middle",
-                            borderRadius: 4,
-                            border: "1px solid rgba(255, 255, 255, 0.12)",
-                          }}
-                          src={getGemIcon(props.item.domGemID)}
-                          alt={dominationGemDB.filter((key) => key.id === props.item.domGemID).map((key) => key.name[currentLanguage])[0]}
-                        />
-                      </a>
-                    ) : (
-                      ""
-                    )}
-                    {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
-                  </Typography>
-                </Grid>
-
-                <Grid item xs={1} display="inline-flex" align="center">
-                  {deleteActive ? (
-                    <IconButton onClick={deleteItemCard} style={{ padding: 0 }} aria-label="delete" size="small">
-                      <DeleteIcon style={{ color: "#ad2c34" }} fontSize="small" />
-                    </IconButton>
-                  ) : (
-                    ""
-                  )}
-                </Grid>
-              </Grid>
-            </Grid>
-          </CardContent>
-        </Grid>
-      </Card>
+            </CardContent>
+          </Grid>
+        </Card>
+      </div>
     </Grid>
   );
 }

@@ -62,12 +62,12 @@ export const shamanDefaultSpecialQueries = (contentType) => {
   if (contentType === "Raid") {
     specialQueries = {
       HPSOnEarthShield: 456,
-      OneManaHealing: 1.9,
+      OneManaHealing: 1.4,
       CastsPerMinute: 24,
       cooldownMult: {
         oneMinute: 1.1,
         ninetySeconds: 1,
-        twoMinutes: 1.1,
+        twoMinutes: 1.15,
         twoMinutesOrb: 1.07,
         threeMinutes: 1.3,
       },
@@ -99,18 +99,18 @@ export const shamanDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.36,
-    crit: 0.45,
-    mastery: 0.42,
-    versatility: 0.44,
+    haste: 0.49,
+    crit: 0.6,
+    mastery: 0.52,
+    versatility: 0.59,
     leech: 0.47,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.37,
-    crit: 0.37,
-    mastery: 0.28,
-    versatility: 0.39,
+    haste: 0.59,
+    crit: 0.59,
+    mastery: 0.38,
+    versatility: 0.6,
     leech: 0.24,
   };
 

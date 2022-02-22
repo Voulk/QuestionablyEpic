@@ -59,6 +59,7 @@ const buildTrinkets = (trinkets) => {
     // 1.5 minute CD trinkets. We'll auto-include these in both Evang / Shell ramps. 
     if (trinkets.includes("Flame of Battle")) { onUse.Fiend = "Flame of Battle"; onUse.Boon = "Flame of Battle"; }
     if (trinkets.includes("Instructor's Divine Bell")) { onUse.Fiend = "Instructor's Divine Bell"; onUse.Boon = "Instructor's Divine Bell";}
+    if (trinkets.includes("Instructor's Divine Bell (new)")) { onUse.Fiend = "Instructor's Divine Bell (new)"; onUse.Boon = "Instructor's Divine Bell (new)";}
     
     // 2 minute or longer CD trinkets. These need to be assigned to a specific ramp. If we are wearing two such trinkets at once then assign one to Boon and the other to Fiend. 
     if (trinkets.includes("Soulletting Ruby")) onUse.Boon = "Soulletting Ruby";
@@ -127,6 +128,7 @@ export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle) =
     sequence.push('Shadowfiend');
     // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     if (trinket === "Instructor's Divine Bell") sequence.push("Instructor's Divine Bell");
+    if (trinket === "Instructor's Divine Bell (new)") sequence.push("Instructor's Divine Bell (new)");
     if (trinket === "Flame of Battle") sequence.push("Flame of Battle");
     sequence.push('Schism');
     sequence.push('Mind Blast');
@@ -167,6 +169,7 @@ export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = 
     sequence.push('Boon of the Ascended');
     sequence.push('Ascended Blast');
     if (trinket === "Flame of Battle") sequence.push("Flame of Battle");
+    if (trinket === "Instructor's Divine Bell (new)") sequence.push("Instructor's Divine Bell (new)");
     sequence.push('Schism');
     const hastePerc = 1 + haste / 32 / 100;
     let boonDuration = 10 - (1.5 * 2 / hastePerc) + (1.5 / hastePerc);

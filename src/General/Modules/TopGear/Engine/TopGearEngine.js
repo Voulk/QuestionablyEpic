@@ -11,6 +11,7 @@ import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEff
 import { allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { buildBestDomSet } from "../Utilities/DominationGemUtilities";
+import { getItemSet } from "BurningCrusade/Databases/ItemSetsDBRetail.js";
 
 /**
  * == Top Gear Engine ==
@@ -39,7 +40,7 @@ function setupPlayer(player, contentType, castModel) {
   let newPlayer = new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights, "Retail");
   newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
-  newPlayer.dominationGemRanks = player.dominationGemRanks;
+  //newPlayer.dominationGemRanks = player.dominationGemRanks;
   newPlayer.activeModelID = player.activeModelID;
 
   return newPlayer;
@@ -98,7 +99,7 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
 
   // == Evaluate Sets ==
-  // We'll explain this more in the evalSet function header but we assign each set a score that includes stats, effects, domination gems and more.
+  // We'll explain this more in the evalSet function header but we assign each set a score that includes stats, effects and more.
   for (var i = 0; i < itemSets.length; i++) {
     itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel);
   }
@@ -368,6 +369,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   let builtSet = itemSet.compileStats("Retail", userSettings);
   let setStats = builtSet.setStats;
   let gearStats = dupObject(setStats);
+  const setBonuses = builtSet.sets;
   let enchantStats = {};
   let evalStats = {};
   let hardScore = 0;
@@ -394,6 +396,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     leech: castModel.baseStatWeights["leech"],
   };
 
+
+
   // == Enchants and gems ==
   const enchants = enchantItems(bonus_stats, setStats.intellect, castModel);
 
@@ -409,16 +413,26 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
 
   // == Domination Gems ==
   // This function compares every set of possible domination gems, and sockets whichever is best. You can read more about it by navigating to the function itself.
-  if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
+  // Domination Gems are defunct in 9.2. Thank goodness.
+  //if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
 
   // == Effects ==
   // Effects include stuff like trinkets, legendaries, domination gems, tier sets (one day) and so on.
   // Each effect returns an object containing which stats it offers. Specific details on each effect can be found in the TrinketData, EffectData and EffectEngine files.
   // -- Disc note: On use trinkets and legendaries and handled further down in the ramps section. --
   let effectStats = [];
+  let effectList = [...itemSet.effectList];
+  // == Set Bonuses ==
+  // --- Item Set Bonuses ---
+  for (const set in setBonuses) {
+    if (setBonuses[set] > 1) {
+      effectList = effectList.concat(getItemSet(set, setBonuses[set]));
+    }
+  }
+
   //effectStats.push(bonus_stats);
-  for (var x = 0; x < itemSet.effectList.length; x++) {
-    const effect = itemSet.effectList[x];
+  for (var x = 0; x < effectList.length; x++) {
+    const effect = effectList[x];
     if (player.spec !== "Discipline Priest" || (player.spec === "Discipline Priest" && !effect.onUse && effect.type !== "spec legendary") || contentType === "Dungeon") {
       effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats));
     }

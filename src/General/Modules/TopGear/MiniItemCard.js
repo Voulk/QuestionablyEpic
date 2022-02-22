@@ -132,7 +132,7 @@ export default function ItemCard(props) {
                 <Grid item container xs={12} display="inline-flex" direction="row" justifyContent="space-between" style={{marginTop: 2}}>
                   <Grid item xs={11}>
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginTop: 1 }}>
-                      {item.domGemID !== 0 && gameType === "Retail" ? (
+                      {/*item.domGemID !== 0 && gameType === "Retail" ? (
                         <a data-wowhead={"item=" + item.domGemID + "&domain=" + currentLanguage}>
                           <img
                             style={{
@@ -149,7 +149,7 @@ export default function ItemCard(props) {
                         </a>
                       ) : (
                         ""
-                      )}
+                      )*/}
                       {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
                     </Typography>
                   </Grid>

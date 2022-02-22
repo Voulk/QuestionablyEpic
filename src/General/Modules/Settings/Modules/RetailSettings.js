@@ -228,7 +228,7 @@ export default function RetailSettings(props) {
         ""
       )}
       {/* --------------------------- Domination Socket for Great Vault Items --------------------------  */}
-      <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+      {/*<Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
         <Tooltip
           title={
             <Typography align="center" variant="body2">
@@ -258,7 +258,7 @@ export default function RetailSettings(props) {
             </MenuItem>
           </TextField>
         </Tooltip>
-      </Grid>
+        </Grid>*/}
     </Grid>
   );
 }

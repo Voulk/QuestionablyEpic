@@ -2,10 +2,7 @@ import React, { forwardRef } from "react";
 import MaterialTable, { MTableToolbar } from "@material-table/core";
 import { ArrowDownward, Clear, Search } from "@mui/icons-material";
 import abilityIcons from "../../CooldownPlanner/Functions/IconFunctions/AbilityIcons.js";
-import { localizationFR } from "locale/fr/TableLocale";
-import { localizationEN } from "locale/en/TableLocale";
-import { localizationRU } from "locale/ru/TableLocale";
-import { localizationCH } from "locale/ch/TableLocale";
+import { getTableLocale } from "locale/GetTableLocale";
 import moment from "moment";
 import { externalsDB } from "../../../../Databases/ExternalsDB";
 import { Divider, Paper } from "@mui/material";
@@ -21,20 +18,7 @@ const tableIcons = {
 };
 
 export default function ExternalTimeline(props) {
-  const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.language;
-
-  let curLang = () => {
-    if (currentLanguage === "en") {
-      return localizationEN;
-    } else if (currentLanguage === "ru") {
-      return localizationRU;
-    } else if (currentLanguage === "ch") {
-      return localizationCH;
-    } else if (currentLanguage === "fr") {
-      return localizationFR;
-    }
-  };
+  const { t } = useTranslation();
 
   return (
     <MaterialTable
@@ -162,7 +146,7 @@ export default function ExternalTimeline(props) {
         whiteSpace: "nowrap",
         padding: 8,
       }}
-      localization={curLang()}
+      localization={getTableLocale()}
       components={{
         Container: (props) => <Paper {...props} elevation={0} />,
         Toolbar: (props) => (

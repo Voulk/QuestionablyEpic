@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions } from "@mui/material";
+import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Tooltip } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 export default function AddPlanDialog(props) {
-  const { handleAddPlanDialogClose, openAddPlanDialog, cooldownObject, currentBoss, loadPlanData } = props;
+  const { handleAddPlanDialogClose, handleAddPlanDialogClickOpen, openAddPlanDialog, cooldownObject, currentBoss, loadPlanData } = props;
   const [planName, setPlanName] = useState("");
   const bossPlans = Object.keys(cooldownObject.getCooldowns(currentBoss));
   const duplicatePlanNameCheck = bossPlans.includes(planName) ? true : false;
+  const { t, i18n } = useTranslation();
 
   const handleClose = () => {
     setPlanName("");
@@ -24,25 +26,32 @@ export default function AddPlanDialog(props) {
   };
 
   return (
-    <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="sm" fullWidth>
-      <DialogTitle id="simple-dialog-title">Enter Plan Name</DialogTitle>
-      <DialogContent>
-        <TextField
-          error={duplicatePlanNameCheck}
-          helperText={duplicatePlanNameCheck ? "Duplicate plan name detected, please choose another." : ""}
-          fullWidth
-          variant="outlined"
-          defaultValue=""
-          value={planName}
-          onChange={onChangeNewPlanName}
-          sx={{ marginTop: "4px" }}
-        />
-      </DialogContent>
-      <DialogActions>
-        <Button key={8} variant="contained" color="primary" onClick={(e) => addPlan(planName, currentBoss)} size="small" disabled={duplicatePlanNameCheck}>
-          Add Plan
+    <div>
+      <Tooltip title={t("CooldownPlanner.AddPlanDialog.ButtonTooltip")} arrow>
+        <Button key={8} variant="outlined" color="primary" onClick={handleAddPlanDialogClickOpen}>
+          {t("CooldownPlanner.AddPlanDialog.ButtonLabel")}
         </Button>
-      </DialogActions>
-    </Dialog>
+      </Tooltip>
+      <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="xs" fullWidth>
+        <DialogTitle id="simple-dialog-title">{t("CooldownPlanner.AddPlanDialog.HeaderTitle")}</DialogTitle>
+        <DialogContent>
+          <TextField
+            error={duplicatePlanNameCheck}
+            helperText={duplicatePlanNameCheck ? t("CooldownPlanner.DuplicatePlanError") : ""}
+            fullWidth
+            variant="outlined"
+            defaultValue=""
+            value={planName}
+            onChange={onChangeNewPlanName}
+            sx={{ marginTop: "4px" }}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button key={8} variant="contained" color="primary" onClick={(e) => addPlan(planName, currentBoss)} size="small" disabled={duplicatePlanNameCheck || planName === ""}>
+            {t("CooldownPlanner.AddPlanDialog.ButtonLabel")}
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
   );
 }

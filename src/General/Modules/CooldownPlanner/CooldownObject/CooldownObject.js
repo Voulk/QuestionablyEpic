@@ -19,12 +19,21 @@ class Cooldowns {
     return this.cooldowns[0][bossID];
   };
 
+  getBossPlanNames = (bossID) => {
+    return Object.keys(this.cooldowns[0][bossID]);
+  };
+
   addCooldown = (item) => {
     this.cooldowns.push(item);
   };
 
-  addNewPlan = (item, boss) => {
-    Object.assign(this.cooldowns[0][boss], { [item]: [] });
+  addNewPlan = (planName, boss) => {
+    Object.assign(this.cooldowns[0][boss], { [planName]: [] });
+    ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
+  };
+
+  copyNewPlan = (planName, boss, newPlanName) => {
+    Object.assign(this.cooldowns[0][boss], { [newPlanName]: this.cooldowns[0][boss][planName] });
     ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
   };
 

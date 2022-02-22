@@ -54,6 +54,48 @@ describe("Calc Stats at Level", () => {
     expect(calcStatsAtLevel(level, slot, statAllocations, "")).toEqual(expectedResult);
   });
 
+  test("Soulwarped Seal of Wrynn", () => {
+    const slot = "Finger";
+    const level = 278;
+    const id = 189839;
+    const statAllocations = getItemAllocations(id);
+    const expectedResult = {
+      intellect: 0,
+      stamina: 0,
+      haste: 74,
+      mastery: 0,
+      versatility: 0,
+      crit: 0,
+      leech: 0,
+      hps: 0,
+      dps: 0,
+      bonus_stats: {},
+    };
+
+    expect(calcStatsAtLevel(level, slot, statAllocations, "")).toEqual(expectedResult);
+  });
+
+  test("Worldkiller Iris", () => {
+    const slot = "Finger";
+    const level = 272;
+    const id = 189859;
+    const statAllocations = getItemAllocations(id);
+    const expectedResult = {
+      intellect: 0,
+      stamina: 0,
+      haste: 97,
+      mastery: 97,
+      versatility: 0,
+      crit: 97,
+      leech: 0,
+      hps: 0,
+      dps: 0,
+      bonus_stats: {},
+    };
+
+    expect(calcStatsAtLevel(level, slot, statAllocations, "")).toEqual(expectedResult);
+  });
+
   // This could use more coverage.
 });
 

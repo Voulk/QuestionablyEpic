@@ -9,6 +9,7 @@ import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 // import { STAT } from "../../../../General/Engine/STAT";
 import SPEC from "../../../../General/Engine/SPECS";
+import { duration } from "moment";
 
 export function getDiminishedValue(statID, procValue, baseStat) {
   const DRBreakpoints = STATDIMINISHINGRETURNS[statID.toUpperCase()];
@@ -411,19 +412,41 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
       const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell"], setStats.haste, castModel.modelName, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell"], setStats.haste, castModel.modelName, ['Rapture']);
       const bellRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Instructor's Divine Bell": trinketValue}, {});
-      //console.log("Adding X HPS: " + (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing));
+      console.log("Adding X HPS (old bell): " + (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing));
       bonus_stats.hps = (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
     }
     else {
       bonus_stats.mastery = (trinketValue * effect.duration) / effect.cooldown;
       bonus_stats.mastery *= castModel.getSpecialQuery("ninetySeconds", "cooldownMult");
-    }
+    } 
     
 
 
 
     // We need a better way to model interaction with spec cooldowns.
     //
+  } else if (
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Instructor's Divine Bell                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    effectName === "Instructor's Divine Bell (new)"
+    
+  ) {
+    const effect = activeTrinket.effects[0];
+    const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
+    if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
+      const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], setStats.haste, castModel.modelName, ['Rapture']);
+      const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell (new)"], setStats.haste, castModel.modelName, ['Rapture']);
+      const bellRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Instructor's Divine Bell (new)": trinketValue}, {});
+      console.log("Adding X HPS (new bell): " + (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing));
+      bonus_stats.hps = (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
+    }
+    else {
+      bonus_stats.mastery = (trinketValue * effect.duration) / effect.cooldown;
+      bonus_stats.mastery *= castModel.getSpecialQuery("ninetySeconds", "cooldownMult");
+    }
+  
+  
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
     /*                                      Consumptive Infusion                                      */
@@ -633,7 +656,6 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     const statRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel);
     const statValue = getDiminishedValue(itemSetHighestSecondary, statRaw, setStats[itemSetHighestSecondary])
     const uptime = effect.uptime;
-
     bonus_stats[itemSetHighestSecondary] = statValue * uptime - statRaw * (1 - uptime);
     //
   }   
@@ -825,7 +847,7 @@ else if (
 ) {
   let effect = activeTrinket.effects[0];
 
-  bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm) / 60;
+  bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm[player.getSpec()]) / 60;
   //
 }
 else if (
@@ -851,6 +873,98 @@ else if (
   bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm[player.getSpec()], effect.duration) * effect.averageStacks;
   //
 }
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                          Infernal Writ                                         */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "The Lion's Roar"
+) {
+  let effect = activeTrinket.effects[0];
+
+  const expectedUsesMin = 1 / effect.baseCooldown * 60 + (effect.ppm * effect.cdrPerProc / effect.baseCooldown);
+
+  bonus_stats.hps = getProcessedValue(effect.coefficient, effect.table, itemLevel) * expectedUsesMin / 60 * effect.efficiency;
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                  Elegy of the Eternals                                         */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Elegy of the Eternals"
+) {
+  let effect = activeTrinket.effects[0];
+
+    // Titanic Ocular Gland increases your highest secondary by X. 
+    const itemSetHighestSecondary = getHighestStat(setStats);
+    const statRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel);
+    const statValue = getDiminishedValue(itemSetHighestSecondary, statRaw, setStats[itemSetHighestSecondary])
+    
+    
+    bonus_stats[itemSetHighestSecondary] = statValue;
+
+
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                  Auxillary Attendant Chime                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Auxillary Attendant Chime"
+) {
+  let effect = activeTrinket.effects[0];
+  const oneProc = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * (effect.duration / effect.tickRate * player.getStatPerc("Haste"))
+
+  bonus_stats.hps = (oneProc * effect.ppm * player.getStatPerc("Versatility") / 60);
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                          The First Sigil                                       */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "The First Sigil"
+) {
+  let effect = activeTrinket.effects[0];
+
+  const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
+  const trinketValue = getDiminishedValue('Versatility', trinketRaw, setStats.crit)
+
+  bonus_stats.versatility = (trinketValue * effect.duration) / effect.cooldown;
+  //bonus_stats.versatility *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
+
+  
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                Reclaimer's Intensity Core                                      */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Reclaimer's Intensity Core"
+) {
+  const manaEffect = activeTrinket.effects[0];
+  const healEffect = activeTrinket.effects[1];
+  let oneHeal = 0;
+  if ([239, 252, 265, 278].includes(itemLevel)) oneHeal = healEffect.fixedValues[itemLevel] * healEffect.ticks * player.getStatMultiplier("CRITVERS") * healEffect.targets * healEffect.efficiency[contentType];
+  // This else should never be called, but is a failsafe.
+  else oneHeal = healEffect.fixedValues[252] * healEffect.ticks * player.getStatMultiplier("CRITVERS") * healEffect.targets * healEffect.efficiency[contentType];
+
+  //console.log("ILvl: " + itemLevel + ": " + getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel))
+  bonus_stats.mana = (Math.floor(getProcessedValue(manaEffect.coefficient, manaEffect.table, itemLevel) * manaEffect.ticks) / manaEffect.cooldown);
+  bonus_stats.hps = oneHeal * healEffect.ppm / 60;
+
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                   Extract of Prodigious Sands                                  */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Extract of Prodigious Sands"
+) {
+  let effect = activeTrinket.effects[0];
+  const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
+  const expectedPPM = effect.ppm; //* player.getStatPerc("Haste");
+  bonus_stats.hps = (oneHeal * expectedPPM * player.getStatMultiplier("CRITVERS") / 60);
+  //
+} 
   else {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        No Trinkets Found                                       */

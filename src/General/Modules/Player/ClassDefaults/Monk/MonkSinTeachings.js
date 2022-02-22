@@ -57,9 +57,9 @@ export const monkSinSpecialQueries = (contentType) => {
       HPSExpelHarmOnSelf: 0,
       OneManaHealing: 4.2,
       cooldownMult: {
-        oneMinute: 1.22,
+        oneMinute: 1.12,
         ninetySeconds: 1,
-        twoMinutes: 1.29,
+        twoMinutes: 1.48,
         twoMinutesOrb: 1.11,
         threeMinutes: 1.2,
       },
@@ -77,7 +77,7 @@ export const monkSinSpecialQueries = (contentType) => {
       cooldownMult: {
         oneMinute: 1,
         ninetySeconds: 1,
-        twoMinutes: 1,
+        twoMinutes: 1.42,
         twoMinutesOrb: 1,
         threeMinutes: 1,
       },
@@ -95,19 +95,19 @@ export const monkSinStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.41,
-    crit: 0.6,
-    mastery: 0.36,
-    versatility: 0.41,
-    leech: 0.56,
+    haste: 0.59,
+    crit: 0.67,
+    mastery: 0.31,
+    versatility: 0.59,
+    leech: 0.8,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.42,
-    crit: 0.56,
+    haste: 0.58,
+    crit: 0.66,
     mastery: 0.4,
-    versatility: 0.41,
-    leech: 0.36,
+    versatility: 0.61,
+    leech: 0.46,
   };
 
   return statWeights[contentType];

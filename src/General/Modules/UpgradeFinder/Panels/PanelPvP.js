@@ -30,7 +30,7 @@ const pvpIcons = {
 const itemLevels = {
   raid: [187, 200, 213, 226],
   dungeon: [184, 184, 187, 190, 194, 194, 197, 200, 200, 200, 203, 203, 207, 207, 207, 210],
-  pvp: [220, 226, 233, 240, 246, 246],
+  pvp: [249, 252, 255, 259, 262, 265, 268, 272, 275],
 };
 
 export default function PvPGearContainer(props) {

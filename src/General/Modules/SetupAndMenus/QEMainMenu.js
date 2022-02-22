@@ -70,7 +70,7 @@ export default function QEMainMenu(props) {
           "MainMenu.ExploreCovenants": ["/soulbinds", true, "ExploreCovenants"],
           "MainMenu.LegendaryAnalysis": ["/legendaries", true, "LegendaryAnalysis"],
           "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
-          "MainMenu.DominationAnalysis": ["/dominationgems", true, "DominationAnalysis"],
+          //"MainMenu.DominationAnalysis": ["/dominationgems", false, "DominationAnalysis"],
           "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
           // "MainMenu.FightAnalysis": ["/fightAnalysis", true, "FightAnalysis"],
           "MainMenu.Profile": ["/profile", true, "Profile"],

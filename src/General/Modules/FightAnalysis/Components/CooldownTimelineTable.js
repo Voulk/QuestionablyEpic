@@ -5,10 +5,7 @@ import moment from "moment";
 import { Divider, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import abilityIcons from "../../CooldownPlanner/Functions/IconFunctions/AbilityIcons.js";
-import { localizationFR } from "locale/fr/TableLocale";
-import { localizationEN } from "locale/en/TableLocale";
-import { localizationRU } from "locale/ru/TableLocale";
-import { localizationCH } from "locale/ch/TableLocale";
+import { getTableLocale } from "locale/GetTableLocale";
 import { cooldownDB } from "../../CooldownPlanner/Data/CooldownDB.js";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
@@ -21,20 +18,7 @@ const tableIcons = {
 };
 
 export default function CooldownTimeline(props) {
-  const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.language;
-
-  let curLang = () => {
-    if (currentLanguage === "en") {
-      return localizationEN;
-    } else if (currentLanguage === "ru") {
-      return localizationRU;
-    } else if (currentLanguage === "ch") {
-      return localizationCH;
-    } else if (currentLanguage === "fr") {
-      return localizationFR;
-    }
-  };
+  const { t } = useTranslation();
 
   return (
     <MaterialTable
@@ -135,7 +119,7 @@ export default function CooldownTimeline(props) {
         whiteSpace: "nowrap",
         padding: 8,
       }}
-      localization={curLang()}
+      localization={getTableLocale()}
       components={{
         Container: (props) => <Paper {...props} elevation={0} />,
         Toolbar: (props) => (
