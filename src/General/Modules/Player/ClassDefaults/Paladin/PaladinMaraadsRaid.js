@@ -71,11 +71,11 @@ export const paladinMaraadsSpellData = (contentType) => {
   
     statWeights.Raid = {
       intellect: 1,
-      haste: 0.44,
-      crit: 0.35,
-      mastery: 0.43,
-      versatility: 0.42,
-      leech: 0.77,
+      haste: 0.60,
+      crit: 0.51,
+      mastery: 0.61,
+      versatility: 0.57,
+      leech: 0.98,
       defaults: true,
     };
     statWeights.Dungeon = {
