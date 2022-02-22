@@ -121,9 +121,10 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
   else if (instanceID === 1192 && bossID === 2468) itemLevel = 259; // The 9.2 world boss drops 259 gear.
   else if (instanceID === 1192) itemLevel = 207; // The 9.0 world bosses drop 207 gear.
   
-  else if (itemSource.length > 1 && itemSource[1].instanceId === -1) {
+  else if (instanceID === -1 || (itemSource.length > 1 && itemSource[1].instanceId === -1) || (instanceID === 1194)) {
     itemLevel = itemLevels.dungeon[playerSettings.dungeon];
   }
+
 
   else if (instanceID === -16) itemLevel = 203;
   else if (instanceID === -17) {
@@ -178,10 +179,15 @@ function buildItemPossibilities(player, contentType, playerSettings) {
         const item233 = buildItem(player, contentType, rawItem, 233, rawItem.sources[0]);
         itemPoss.push(item233);
       }*/
-      else if (itemSources.length > 1 && itemSources[1].instanceId === -1) {
+      else if ((itemSources.length > 1 && itemSources[1].instanceId === -1)) {
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[1]);
-        console.log("Adding dungeon item2")
+        itemPoss.push(item);
+      }
+      else if (primarySource === 1194) {
+        // Tazavesh
+        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
+        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[2]);
         itemPoss.push(item);
       }
       else if (primarySource !== 1190 && primarySource !== 1193) { // Exclude Nathria gear.

@@ -188,7 +188,9 @@ export const encounterDB = {
     1187, //"Theater of Pain",
     1188, //"De Other Side",
     1189, //"Sanguine Depths",
-    1194, // Tazavesh
+    -20, // Tazavesh
+    //1194, // Tazavesh
+
   ],
   /* ---------------------------------- Tazavesh, The Vieled City --------------------------------- */
   1194: [
