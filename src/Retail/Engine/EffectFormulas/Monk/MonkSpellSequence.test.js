@@ -78,7 +78,7 @@ describe("Test Sequences", () => {
     // NF 12.42% haste, others 22.7% haste
     // WoO sequence quickly done
     const NFsequence = ["Tiger Palm", "Tiger Palm", "Tiger Palm", "Faeline Stomp", "Essence Font", "Chi Burst", "Faeline Stomp", "Renewing Mist", "Renewing Mist", "Refreshing Jade Wind", "Thunder Focus Tea", "Rising Sun Kick", "Faeline Stomp", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Refreshing Jade Wind", "Essence Font", "Rising Sun Kick", "Blackout Kick", "Faeline Stomp", "Refreshing Jade Wind", "Renewing Mist", "Rising Sun Kick"];
-    const NFsequencePreFLH = ["Essence Font", "Rising Sun Kick", "Faeline Stomp", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Renewing Mist", "Refreshing Jade Wind", "Thunder Focus Tea", "Rising Sun Kick", "Faeline Stomp", "Rising Sun Kick", "Blackout Kick", "Chi Burst", "Refreshing Jade Wind", "Blackout Kick", "Essence Font", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Tiger Palm", "Blackout Kick", "Refreshing Jade Wind"];
+    const NFsequencePreFLH = ["Tiger Palm", "Tiger Palm", "Tiger Palm", "Essence Font", "Faeline Stomp", "Renewing Mist", "Renewing Mist", "Refreshing Jade Wind", "Thunder Focus Tea", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Faeline Stomp", "Blackout Kick", "Tiger Palm", "Refreshing Jade Wind", "Essence Font", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Refreshing Jade Wind", "Rising Sun Kick"];
     const NLsequence = ["Tiger Palm", "Tiger Palm", "Refreshing Jade Wind", "Essence Font", "Tiger Palm", "Renewing Mist", "Renewing Mist", "Refreshing Jade Wind", "Bonedust Brew", "Thunder Focus Tea", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Blackout Kick", "Refreshing Jade Wind", "Essence Font", "Blackout Kick", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Refreshing Jade Wind", "Tiger Palm", "Blackout Kick", "Rising Sun Kick"];
     const baseSequence =  ["Tiger Palm", "Tiger Palm", "Refreshing Jade Wind", "Essence Font", "Tiger Palm", "Renewing Mist", "Renewing Mist", "Refreshing Jade Wind", "Thunder Focus Tea", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Refreshing Jade Wind", "Essence Font", "Blackout Kick", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Refreshing Jade Wind", "Blackout Kick", "Rising Sun Kick"];
     const kyrianWoOSequence =  ["Tiger Palm", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Essence Font", "Weapons of Order", "Essence Font", "Refreshing Jade Wind", "Thunder Focus Tea", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Refreshing Jade Wind", "Blackout Kick", "Essence Font", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Refreshing Jade Wind", "Blackout Kick", "Rising Sun Kick"];
@@ -314,6 +314,7 @@ describe("Test Sequences", () => {
         "VenthPre: " +  covenants["VenthPre"][0].sequenceLength + "\n" +
         "NFPre: " +  covenants["NFPre"][0].sequenceLength + "\n" +
         "NLPre: " +  covenants["NLPre"][0].sequenceLength + "\n" +
+        "NF1L: " +  covenants["NF1L"][0].sequenceLength + "\n" +
         "Kyrian: " +  covenants["Kyrian"][0].sequenceLength + "\n" +
         "Venth: " +  covenants["Venth"][0].sequenceLength + "\n" +
         "NF: " +  covenants["Night Fae"][0].sequenceLength + "\n" +
