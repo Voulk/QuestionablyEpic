@@ -141,6 +141,7 @@ export const encounterDB = {
 
   /* ---------------------------------------- World Bosses ---------------------------------------- */
   1192: [
+    2468, // Antros
     2456, // Mor'geth, Tormentor of the Damned (9.1)
     2430, // "Valinor, the Light of Eons",
     2431, // "Mortanis",

@@ -66,6 +66,8 @@ export default function UpgradeFinderBossImages(props, gameType, other) {
         return require("Images/Bosses/WorldBosses/NurgashUGF.png").default;
       case 2456: // Morgeth
         return require("Images/Bosses/WorldBosses/morgethUGF.png").default;
+      case 2468: // Antros
+        return require("Images/Bosses/WorldBosses/AntrosUGF.png").default;
       /* ---------------------------------------------------------------------------------------------- */
       /*                                            Karazhan                                            */
       /* ---------------------------------------------------------------------------------------------- */
