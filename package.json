@@ -24,7 +24,7 @@
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-xhr-backend": "^3.2.2",
     "local-storage": "^2.0.0",
-    "mkcert": "^1.4.0",
+    "mkcert": "^1.5.0",
     "moment": "^2.29.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
