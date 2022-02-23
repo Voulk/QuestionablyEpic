@@ -56,11 +56,11 @@ export default class VerticalChart extends PureComponent {
     const data = this.props.data;
     const db = this.props.db;
     /* ------------------------- Ilvls to Show on Chart & Colour Generation ------------------------- */
-    const iLvls = [200, 207, 213, 220, 226, 233, 239, 246, 252, 259, 260, 262, 265, 272, 278];
+    const iLvls = [200, 207, 213, 220, 226, 233, 239, 246, 252, 259, 260, 262, 265, 272, 278, 285];
 
     /* ------------------------------------- Visibility of Ilvls ------------------------------------ */
     // (Currently won't work as intended due to how the data is provided, currently the previous ilvl is needed to build the stacked bars)
-    let iLvlsVisible = { 200: true, 207: true, 213: true, 220: true, 226: true, 233: true, 239: true, 246: true, 252: true, 259: true, 260: true, 262: true, 265: true, 272: true, 278: true };
+    let iLvlsVisible = { 200: true, 207: true, 213: true, 220: true, 226: true, 233: true, 239: true, 246: true, 252: true, 259: true, 260: true, 262: true, 265: true, 272: true, 278: true, 285: true };
 
     const barColours = this.props.theme;
 

@@ -746,6 +746,7 @@ else if (
   /* ------- Hastes impact on the trinket PPM is included in the secondary multiplier below. ------ */
   bonus_stats.hps = (getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel, healEffect.efficiency) / 60) * meteor * healEffect.ppm * player.getStatMultiplier("CRITVERS");
   bonus_stats.haste = hasteValue * convertPPMToUptime(hasteEffect.ppm, hasteEffect.duration);
+  console.log(itemLevel + ": " + JSON.stringify(bonus_stats) + " / " + hasteValue)
 
 } else if (
   /* ---------------------------------------------------------------------------------------------- */
@@ -928,6 +929,24 @@ else if (
   const trinketValue = getDiminishedValue('Versatility', trinketRaw, setStats.crit)
 
   bonus_stats.versatility = (trinketValue * effect.duration) / effect.cooldown;
+  //bonus_stats.versatility *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
+
+  
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Grim Eclipse                                       */
+  /* ---------------------------------------------------------------------------------------------- */
+  // The damage portion is not currently evaluated
+  effectName === "Grim Eclipse"
+) {
+  let effect = activeTrinket.effects[0];
+
+  const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
+  const trinketValue = getDiminishedValue('Haste', trinketRaw, setStats.haste)
+
+  bonus_stats.haste = (trinketValue * effect.duration) * effect.runeEfficiency / effect.cooldown;
   //bonus_stats.versatility *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
 
   
