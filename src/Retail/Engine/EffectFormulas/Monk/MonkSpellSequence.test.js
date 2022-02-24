@@ -102,6 +102,10 @@ describe("Test Sequences", () => {
     // This is still accurate if you use TFT at start of 4pc window
     const venth4pcfobonuspercast = 450 * 0.5 * 2.33 * ((8 / (1 / 1.21)) + (8 / (1 / 1.21))) * 1.797 * player.getStatMultiplier("CRITVERS", player4pc.activeStats); 
     const venth4pcfobonuspercastatotm = 450 * 0.5 * 1.33 * ((8 / (1 / 1.21)) + (8 / (1 / 1.21))) * 1.797 * player.getStatMultiplier("CRITVERS", player4pc.activeStats); 
+    const fallenOrderhpm = (getFOHealing(player) + getLongCloneHealing(player))/1000;
+    const fallenOrderhpmShort = getFOHealing(player) / 1000
+    const fallenOrderhpm4pc = (getFOHealing(player4pc) + getLongCloneHealing(player4pc) + venth4pcfobonuspercast)/1000;
+    const fallenOrderhpmShort4pc = (getFOHealing(player4pc) + venth4pcfobonuspercastatotm) / 1000
 
     test("Legendaries & Soulbinds", () => {
         
@@ -134,13 +138,11 @@ describe("Test Sequences", () => {
         covenants["VenthPre"].push(runCastSequence(RevivalBase, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}))
         
         
-        const fallenOrderhpm = (getFOHealing(player) + getLongCloneHealing(player))/1000;
-        const fallenOrderhpmShort = getFOHealing(player) / 1000
-        const venthprehpm = Math.round((covenants["VenthPre"][0].hpm*14 + covenants["VenthPre"][1].hpm*2 + covenants["VenthPre"][2].hpm*3 + fallenOrderhpm * 4)/23)
+        const venthprehpm = Math.round((covenants["VenthPre"][0].hpm*14 + covenants["VenthPre"][1].hpm*2 + covenants["VenthPre"][2].hpm*3 + fallenOrderhpm * 4)/23*100)/100
         const venthprehps = Math.round(((covenants["VenthPre"][0].hps*14 + covenants["VenthPre"][1].hps*2 + covenants["VenthPre"][2].hps*3)/19 + (getFOHealing(player) + getLongCloneHealing(player))/24*4/480)*100)/100
         const venthpredps = Math.round((covenants["VenthPre"][0].dps*14 + covenants["VenthPre"][1].dps*2 + covenants["VenthPre"][2].dps*3)/19*100)/100
         
-        const venthpreatotmhpm = Math.round((covenants["VenthPre"][3].hpm*14 + covenants["VenthPre"][4].hpm*2 + covenants["VenthPre"][5].hpm*3 + fallenOrderhpmShort * 3)/22)
+        const venthpreatotmhpm = Math.round((covenants["VenthPre"][3].hpm*14 + covenants["VenthPre"][4].hpm*2 + covenants["VenthPre"][5].hpm*3 + fallenOrderhpmShort * 3)/22*100)/100
         const venthpreatotmhps = Math.round(((covenants["VenthPre"][3].hps*14 + covenants["VenthPre"][4].hps*2 + covenants["VenthPre"][5].hps*3)/19 + (getFOHealing(player))/24*3/480)*100)/100
         const venthpreatotmdps = Math.round((covenants["VenthPre"][3].dps*14 + covenants["VenthPre"][4].dps*2 + covenants["VenthPre"][5].dps*3)/19*100)/100
         console.log("PreTier Venth (SiT): " + covenants["VenthPre"][0].totalHealing + " (HPM : " + covenants["VenthPre"][0].hpm + " | HPS: " + covenants["VenthPre"][0].hps + "). Damage: " + covenants["VenthPre"][0].totalDamage + " (DPS: " + covenants["VenthPre"][0].dps + ")\n" +
@@ -203,10 +205,10 @@ describe("Test Sequences", () => {
         covenants["Venth1L"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}, 14))
         covenants["Venth1L"].push(runCastSequence(YulonBase, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
         covenants["Venth1L"].push(runCastSequence(RevivalBase, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
-        const venth1lhpm = Math.round(((covenants["Venth1L"][0].hpm*14 + covenants["Venth1L"][1].hpm*2 + covenants["Venth1L"][2].hpm*3)/19 + (getFOHealing(player4pc) + getLongCloneHealing(player4pc) + venth4pcfobonuspercast)/2000*4)*100/2)/100
+        const venth1lhpm = Math.round((covenants["Venth1L"][0].hpm*14 + covenants["Venth1L"][1].hpm*2 + covenants["Venth1L"][2].hpm*3 + fallenOrderhpm4pc*4)/22*100)/100
         const venth1lhps = Math.round(((covenants["Venth1L"][0].hps*14 + covenants["Venth1L"][1].hps*2 + covenants["Venth1L"][2].hps*3)/19 + (venth4pcfobonuspercast + getFOHealing(player4pc) + getLongCloneHealing(player4pc))*4/480)*100)/100
         const venth1ldps = Math.round((covenants["Venth1L"][0].dps*14 + covenants["Venth1L"][1].dps*2 + covenants["Venth1L"][2].dps*3)/19*100)/100
-        const venth1latotmhpm = Math.round(((covenants["Venth1L"][3].hpm*14 + covenants["Venth1L"][4].hpm*2 + covenants["Venth1L"][5].hpm*3)/19 + (getFOHealing(player4pc) + venth4pcfobonuspercastatotm)/2000*3)*100/2)/100
+        const venth1latotmhpm = Math.round((covenants["Venth1L"][3].hpm*14 + covenants["Venth1L"][4].hpm*2 + covenants["Venth1L"][5].hpm*3 + fallenOrderhpmShort4pc*3)/22*100)/100
         const venth1latotmhps = Math.round(((covenants["Venth1L"][3].hps*14 + covenants["Venth1L"][4].hps*2 + covenants["Venth1L"][5].hps*3)/19 + (venth4pcfobonuspercastatotm + getFOHealing(player4pc))/24*3/480)*100)/100
         const venth1latotmdps = Math.round((covenants["Venth1L"][3].dps*14 + covenants["Venth1L"][4].dps*2 + covenants["Venth1L"][5].dps*3)/19*100)/100
         console.log("4pc Venth (SiT): " + covenants["Venth1L"][0].totalHealing + " (HPM: " + covenants["Venth1L"][0].hpm + " | HPS: " + covenants["Venth1L"][0].hps + "). 4PC Window: " + covenants["Venth1L"][0].total4pcWindow + " (" + Math.round(covenants["Venth1L"][0].total4pcWindow/covenants["Venth1L"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Venth1L"][0].totalDamage + " (DPS: " + covenants["Venth1L"][0].dps + ")\n" +
@@ -284,7 +286,7 @@ describe("Test Sequences", () => {
         covenants["Venth"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}, 14))
         covenants["Venth"].push(runCastSequence(YulonBase, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
         covenants["Venth"].push(runCastSequence(RevivalBase, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
-        const venthhpm = Math.round(((covenants["Venth"][0].hpm*14 + covenants["Venth"][1].hpm*2 + covenants["Venth"][2].hpm*3)/19 + (getFOHealing(player4pc) + getLongCloneHealing(player4pc) + venth4pcfobonuspercast)/2000*4)*100/2)/100
+        const venthhpm = Math.round((covenants["Venth"][0].hpm*14 + covenants["Venth"][1].hpm*2 + covenants["Venth"][2].hpm*3 + fallenOrderhpm4pc*4)/22*100)/100
         const venthhps = Math.round(((covenants["Venth"][0].hps*14 + covenants["Venth"][1].hps*2 + covenants["Venth"][2].hps*3)/19 + (venth4pcfobonuspercast + getFOHealing(player4pc) + getLongCloneHealing(player4pc))*4/480)*100)/100
         const venthdps = Math.round((covenants["Venth"][0].dps*14 + covenants["Venth"][1].dps*2 + covenants["Venth"][2].dps*3)/19*100)/100
         console.log("4pc2leg Venth: " + covenants["Venth"][0].totalHealing + " (HPM: " + covenants["Venth"][0].hpm + " | HPS: " + covenants["Venth"][0].hps + "). 4PC Window: " + covenants["Venth"][0].total4pcWindow + " (" + Math.round(covenants["Venth"][0].total4pcWindow/covenants["Venth"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Venth"][0].totalDamage + " (DPS: " + covenants["Venth"][0].dps + ")\n" +
