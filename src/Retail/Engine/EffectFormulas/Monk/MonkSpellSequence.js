@@ -352,7 +352,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
         // Hits 75% of raid
         // Logs show 50% overhealing, had it scaled down again with the spells overheal (as any overhealing of the spells makes sense that the duplicated heal can't heal extra)
         // This causes a "double dip" in the spell overheal but that's accurate with how BDB works 
-        let bonedustHealing = healingVal * 0.5 * 0.4 * 1.88 * (1 - spell.overheal)
+        let bonedustHealing = healingVal * 0.5 * 0.4 * 1.88
 
         if (state.settings.misc.includes("BDB40"))
         {
@@ -381,7 +381,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     {
         // Hits 75% of predicted hits
         const emenibonus = healingValEmeniBonus * (0.13 * convertPPMToUptime(1.5, 10));
-        let bonedustHealing = (healingVal + emenibonus) * 0.5 * 0.4 * 1.8 * 0.75 * 0.256 * (1 - spell.overheal) 
+        let bonedustHealing = (healingVal + emenibonus) * 0.5 * 0.4 * 1.8 * 0.75 * 0.256
 
         if (state.settings.misc.includes("BDB40"))
         {
