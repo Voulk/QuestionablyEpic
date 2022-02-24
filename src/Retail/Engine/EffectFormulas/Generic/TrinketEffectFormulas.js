@@ -127,7 +127,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
   ) {
     let dam_effect = activeTrinket.effects[0];
     let int_effect = activeTrinket.effects[1];
-
+    //console.log("AHHHHHHH: " + convertPPMToUptime(1.5, 10))
     bonus_stats.dps = (getProcessedValue(dam_effect.coefficient, dam_effect.table, itemLevel) / dam_effect.cooldown) * player.getStatMultiplier("CRITVERS");
     bonus_stats.intellect = (getProcessedValue(int_effect.coefficient, int_effect.table, itemLevel, int_effect.efficiency) * int_effect.duration) / int_effect.cooldown;
     //

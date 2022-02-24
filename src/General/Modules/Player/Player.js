@@ -422,7 +422,7 @@ class Player {
   getActiveModel = (contentType) => {
     if (this.castModels[this.activeModelID[contentType]]) return this.castModels[this.activeModelID[contentType]];
     else {
-      reportError(this, "Player", "Invalid Cast Model", contentType);
+      reportError(this, "Player", "Invalid Cast Model", this.getSpec());
       return this.castModels[0];
     }
   };
