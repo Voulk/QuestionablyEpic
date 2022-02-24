@@ -135,15 +135,8 @@ const getCurrentStats = (statArray, buffs) => {
     //return statArray;
 }
 
-
 export const getHaste = (stats) => {  
     return 1 + stats.haste / 32 / 100;
-}
-
-// Current atonement transfer rate.
-const getAtoneTrans = (mastery) => {
-    const atonementBaseTransfer = 0.5;
-    return atonementBaseTransfer * (1.108 + mastery / 25.9259 / 100);
 }
 
 const getSqrt = (targets, softCap = 1) => {

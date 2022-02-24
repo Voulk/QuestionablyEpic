@@ -132,10 +132,15 @@ describe("Test Sequences", () => {
         covenants["VenthPre"].push(runCastSequence(baseSequence, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}, 14))
         covenants["VenthPre"].push(runCastSequence(YulonBase, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}))
         covenants["VenthPre"].push(runCastSequence(RevivalBase, pretierStats, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Ancient Teachings of the Monastery"], "misc": []}, {}))
-        const venthprehpm = Math.round(((covenants["VenthPre"][0].hpm*14 + covenants["VenthPre"][1].hpm*2 + covenants["VenthPre"][2].hpm*3)/19 + (getFOHealing(player) + getLongCloneHealing(player))/2000*4)*100/2)/100
+        
+        
+        const fallenOrderhpm = (getFOHealing(player) + getLongCloneHealing(player))/1000;
+        const fallenOrderhpmShort = getFOHealing(player) / 1000
+        const venthprehpm = Math.round((covenants["VenthPre"][0].hpm*14 + covenants["VenthPre"][1].hpm*2 + covenants["VenthPre"][2].hpm*3 + fallenOrderhpm * 4)/23)
         const venthprehps = Math.round(((covenants["VenthPre"][0].hps*14 + covenants["VenthPre"][1].hps*2 + covenants["VenthPre"][2].hps*3)/19 + (getFOHealing(player) + getLongCloneHealing(player))/24*4/480)*100)/100
         const venthpredps = Math.round((covenants["VenthPre"][0].dps*14 + covenants["VenthPre"][1].dps*2 + covenants["VenthPre"][2].dps*3)/19*100)/100
-        const venthpreatotmhpm = Math.round(((covenants["VenthPre"][3].hpm*14 + covenants["VenthPre"][4].hpm*2 + covenants["VenthPre"][5].hpm*3)/19 + (getFOHealing(player))/2000*3)*100/2)/100
+        
+        const venthpreatotmhpm = Math.round((covenants["VenthPre"][3].hpm*14 + covenants["VenthPre"][4].hpm*2 + covenants["VenthPre"][5].hpm*3 + fallenOrderhpmShort * 3)/22)
         const venthpreatotmhps = Math.round(((covenants["VenthPre"][3].hps*14 + covenants["VenthPre"][4].hps*2 + covenants["VenthPre"][5].hps*3)/19 + (getFOHealing(player))/24*3/480)*100)/100
         const venthpreatotmdps = Math.round((covenants["VenthPre"][3].dps*14 + covenants["VenthPre"][4].dps*2 + covenants["VenthPre"][5].dps*3)/19*100)/100
         console.log("PreTier Venth (SiT): " + covenants["VenthPre"][0].totalHealing + " (HPM : " + covenants["VenthPre"][0].hpm + " | HPS: " + covenants["VenthPre"][0].hps + "). Damage: " + covenants["VenthPre"][0].totalDamage + " (DPS: " + covenants["VenthPre"][0].dps + ")\n" +
