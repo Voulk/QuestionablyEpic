@@ -22,9 +22,9 @@ function conduitScaling(rankOne, requiredRank) {
  * @returns Healing one clone will do
  */
 export const getOneCloneHealing = (player) => {
-  const mult = player.getStatMultiplier("NOMAST") * player.getInt();
+  const mult = player.getStatMultiplier("NOMAST") * player.getInt() * 1.725; // Added conduit scaling here
   const fallenOrderSpells = [
-    {sp: 3.6 * 1.4 * (7/6), castsPerClone: 2}, 
+    {sp: 3.6 * 1.3, castsPerClone: 1}, // Clones very rarely cast 2 enveloping
     // Enveloping Mist. For some reason their env multiplier effects their env healing. They are only supposed to cast 1 EnV per clone, but they sometimes like to cast two instead.
     {sp: 1.04, castsPerClone: 2} // Soothing Mist
   ]
@@ -55,9 +55,19 @@ export const getFOHealing = (player) => {
  * @returns Total healing from the longer clone
  */
 export const getLongCloneHealing = (player) => {
-  const normalClone = getOneCloneHealing(player);
-  const longCloneDuration = 24 / 8; // easy ratios
-  return normalClone * longCloneDuration;
+  const mult = player.getStatMultiplier("NOMAST") * player.getInt() * 1.725; // Added conduit scaling here
+  const fallenOrderSpells = [
+    {sp: 3.6 * 1.3, castsPerClone: 1}, // Clones capped at 1 enveloping cast
+    // Enveloping Mist. For some reason their env multiplier effects their env healing. They are only supposed to cast 1 EnV per clone, but they sometimes like to cast two instead.
+    {sp: 1.04, castsPerClone: 6} // Soothing Mist
+  ]
+
+  const overhealing = .5; // 50% overheal which is typical
+
+  let healingFromClone = 0;
+  fallenOrderSpells.forEach(spell => (healingFromClone += (spell.sp * spell.castsPerClone * mult) * (1 - overhealing)));
+
+  return healingFromClone;
 }
 
 /**
@@ -71,7 +81,7 @@ export const getSiTHPS = (player, contentType) => {
   const longClone = getLongCloneHealing(player);
 
   const baseCooldown = 180;
-  const effectiveCD = contentType == "Raid" ? 60 : 64;
+  const effectiveCD = contentType == "Raid" ? 120 : 128;
 
   const hpsDueToCDR = foHealing / effectiveCD - foHealing / baseCooldown;
   const hpsDueToLongClone = longClone / effectiveCD;
