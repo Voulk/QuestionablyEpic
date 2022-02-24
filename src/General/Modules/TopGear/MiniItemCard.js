@@ -68,6 +68,16 @@ export default function ItemCard(props) {
     props.delete(item.uniqueHash);
   };
 
+  const tertiaryStyle = (tertiary) => {
+    if (tertiary === "Leech") {
+      return "lime";
+    } else if (tertiary === "Avoidance") {
+      return "khaki";
+    } else {
+      return "#fff";
+    }
+  };
+
   let itemName = "";
   let isVault = item.vaultItem;
   // const deleteActive = item.offhandID === 0;
@@ -85,7 +95,8 @@ export default function ItemCard(props) {
     </div>
   ) : null;
 
-  const tertiary = "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
+  const tertiary =
+    "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}> {props.item.tertiary} </div> : null;
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
@@ -119,38 +130,22 @@ export default function ItemCard(props) {
               </CardContent>
             </Grid>
             <Divider orientation="vertical" flexItem />
-            <CardContent style={{ padding: 4, width: "100%" }}>
-              <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
-                {/* <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}> */}
+            <CardContent style={{ padding: 0, width: "100%" }}>
+              <Grid item container direction="column" justifyContent="space-around" xs="auto">
                 <Grid item xs={12} display="inline">
-                  <Typography variant="subtitle2" wrap="nowrap" display="inline" align="left" style={{ color: itemQuality, lineHeight: 1.4 }}>
-                    {itemName}
+                  <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px" }}>
+                    <div style={{ color: itemQuality, lineHeight: tertiary ? "normal" : 1.57 }}>{itemName}</div>
+                    <div style={{ display: "inline" }}>
+                      {tertiary !== "" ? tertiary : ""}
+                      {isVault ? <div style={{ fontSize: 10, lineHeight: 1 }}> {" / " + t("itemTags.greatvault")}</div> : ""}
+                    </div>
                   </Typography>
                 </Grid>
-                {/* </Grid> */}
                 <Divider />
-                <Grid item container xs={12} display="inline-flex" direction="row" justifyContent="space-between" style={{marginTop: 2}}>
+                <Grid item container xs={12} display="inline-flex" direction="row" justifyContent="space-between" style={{ marginTop: 2 }}>
                   <Grid item xs={11}>
-                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginTop: 1 }}>
-                      {/*item.domGemID !== 0 && gameType === "Retail" ? (
-                        <a data-wowhead={"item=" + item.domGemID + "&domain=" + currentLanguage}>
-                          <img
-                            style={{
-                              height: 16,
-                              width: 16,
-                              // margin: "0px 5px 0px 0px",
-                              verticalAlign: "middle",
-                              borderRadius: 4,
-                              border: "1px solid rgba(255, 255, 255, 0.12)",
-                            }}
-                            src={process.env.PUBLIC_URL + "/Images/Icons/" + dominationGemDB.filter((key) => key.gemID === item.domGemID).map((key) => key.icon)[0] + ".jpg"}
-                            alt={dominationGemDB.filter((key) => key.id === item.domGemID).map((key) => key.name[currentLanguage])[0]}
-                          />
-                        </a>
-                      ) : (
-                        ""
-                      )*/}
-                      {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
+                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginTop: 1, marginLeft: 4 }}>
+                      {socket} {statString}
                     </Typography>
                   </Grid>
                   <Grid item xs={1} align="center">

@@ -57,22 +57,15 @@ export default function ItemCard(props) {
   const gameType = useSelector((state) => state.gameType);
   const itemQuality = item.getQualityColor();
 
-  /*
-  const itemQuality = (itemLevel, itemID) => {
-    if (gameType !== "Retail") {
-      const quality = getItemProp(itemID, "quality", gameType)
-      if (quality === 5) return "#ff8000";
-      else if (quality === 4) return "#a73fee";
-      else if (quality === 3) return "#328CE3";
-      else if (quality === 2) return "#1eff00";
-      else return "#ffffff";
+  const tertiaryStyle = (tertiary) => {
+    if (tertiary === "Leech") {
+      return "lime";
+    } else if (tertiary === "Avoidance") {
+      return "khaki";
     } else {
-      if (isLegendary) return "#ff8000";
-      else if (itemLevel >= 183) return "#a73fee";
-      else if (itemLevel >= 120) return "#328CE3";
-      else return "#1eff00";
+      return "#fff";
     }
-  }; */
+  };
 
   const deleteItemCard = () => {
     props.delete(item.uniqueHash);
@@ -109,7 +102,8 @@ export default function ItemCard(props) {
     </div>
   ) : null;
 
-  const tertiary = "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
+  const tertiary =
+    "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}> {props.item.tertiary} </div> : null;
 
   // If item.offHandID > 0 then return this card which handles the double names + stats
   if (item.offhandID > 0) {
@@ -153,7 +147,8 @@ export default function ItemCard(props) {
                       clipPath: "polygon(0 0, 0% 100%, 100% 0)",
                     }}
                   />
-                  <div className="bottom-right-ItemCards"> {item.level} </div>
+                  <div className="top-left-ItemCards-QC">{item.mainHandLevel}</div>
+                  <div className="bottom-right-ItemCards-QC">{item.offHandLevel}</div>
                 </div>
               </CardContent>
             </Grid>
@@ -162,11 +157,12 @@ export default function ItemCard(props) {
               <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
                 <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={10} display="inline">
-                    <Typography variant="subtitle2" wrap="nowrap" style={{ display: "inline-flex", marginLeft: 4 }} align="left">
-                      <div style={{ color: itemQuality }}>{itemName}</div>
+                    <Typography variant="subtitle2" wrap="nowrap" style={{ display: "block", marginLeft: 4 }} align="left">
+                      <div style={{ color: itemQuality, lineHeight: item.mainHandTertiary ? "normal" : 1.57 }}>{itemName}</div>
 
-                      <div style={{ paddingLeft: 6 }}>{" - " + item.mainHandLevel}</div>
-                      {item.mainHandTertiary !== "" ? <div style={{ paddingLeft: 6 }}>{item.mainHandTertiary}</div> : ""}
+                      {/* <div style={{ paddingLeft: 6 }}>{" - " + item.mainHandLevel}</div> */}
+
+                      {item.mainHandTertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(item.mainHandTertiary) }}>{item.mainHandTertiary}</div> : ""}
                     </Typography>
                   </Grid>
                   <Divider orientation="vertical" flexItem />
@@ -195,10 +191,10 @@ export default function ItemCard(props) {
                 </Grid>
                 <Divider />
                 <Grid item xs={10}>
-                  <Typography variant="subtitle2" wrap="nowrap" style={{ display: "inline-flex", marginLeft: 4 }} align="left">
-                    <div style={{ color: itemQuality }}>{itemName2}</div>
-                    <div style={{ paddingLeft: 6 }}>{" - " + item.offHandLevel}</div>
-                    {item.offHandTertiary !== "" ? <div style={{ paddingLeft: 6 }}>{item.offHandTertiary}</div> : ""}
+                  <Typography variant="subtitle2" wrap="nowrap" style={{ display: "block", marginLeft: 4 }} align="left">
+                    <div style={{ color: itemQuality, lineHeight: item.offHandTertiary ? "normal" : 1.57 }}>{itemName2}</div>
+
+                    {item.offHandTertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(item.offHandTertiary) }}>{item.offHandTertiary}</div> : ""}
                   </Typography>
                 </Grid>
               </Grid>
@@ -244,7 +240,7 @@ export default function ItemCard(props) {
                       }}
                     />
                   </a>
-                  <div className="bottom-right-ItemCards"> {item.level} </div>
+                  <div className="bottom-right-ItemCards-QC"> {item.level} </div>
                 </div>
               </CardContent>
             </Grid>
@@ -253,8 +249,12 @@ export default function ItemCard(props) {
               <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
                 <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={10} display="inline">
-                    <Typography variant="subtitle2" wrap="nowrap" display="inline" align="left" style={{ color: itemQuality, marginLeft: 4 }}>
-                      {itemName}
+                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4 }}>
+                      <div style={{ color: itemQuality, lineHeight: tertiary ? "normal" : 1.57 }}>{itemName}</div>
+                      <div style={{ display: "inline" }}>
+                        {tertiary !== "" ? tertiary : ""}
+                        {isVault ? <div style={{ fontSize: 10 }}> {" / " + t("itemTags.greatvault")}</div> : ""}
+                      </div>
                     </Typography>
                   </Grid>
                   <Divider orientation="vertical" flexItem />
@@ -285,25 +285,7 @@ export default function ItemCard(props) {
                 <Grid item container display="inline" direction="row" xs="auto" justifyContent="space-between">
                   <Grid item xs={12}>
                     <Typography variant="subtitle2" wrap="nowrap" display="block" style={{ paddingTop: 0, paddingLeft: 4 }} align="left">
-                      {/*props.item.domGemID !== 0 && gameType === "Retail" ? (
-                        <a data-wowhead={"item=" + props.item.domGemID + "&domain=" + wowheadDom}>
-                          <img
-                            style={{
-                              height: 16,
-                              width: 16,
-                              margin: "0px 5px 0px 0px",
-                              verticalAlign: "middle",
-                              borderRadius: 4,
-                              border: "1px solid rgba(255, 255, 255, 0.12)",
-                            }}
-                            src={getGemIcon(props.item.domGemID)}
-                            alt={dominationGemDB.filter((key) => key.id === props.item.domGemID).map((key) => key.name[currentLanguage])[0]}
-                          />
-                        </a>
-                      ) : (
-                        ""
-                      )} */}
-                      {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
+                      {socket} {statString}
                     </Typography>
                   </Grid>
                 </Grid>
