@@ -2,6 +2,7 @@
 import { strictEqual } from "assert";
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { MONKSPELLS } from "./MistweaverSpellDB";
+import { convertPPMToUptime } from "Retail/Engine/EffectFormulas/EffectUtilities"
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
@@ -296,8 +297,9 @@ export const runDamage = (state, spell, spellName) => {
     }
     else if (state.settings.misc.includes("BB")) // Simulate second legendary
     {
-        const bonedustDam = damageVal * 0.5 * 0.72 * 1.13 * 0.28 // 268 conduit
-        state.damageDone['Bonedust Brew (Plus Emeni)'] = (state.damageDone['Bonedust Brew (Plus Emeni)'] || 0) + bonedustDam;
+        const emenibonus = damageVal * (0.13 * convertPPMToUptime(1.5, 10));
+        const bonedustDam = (damageVal + emenibonus) * 0.5 * 0.4 * 1.88 * 0.256 // 268 conduit
+        state.damageDone['Bonedust Brew (Plus Emeni)'] = (state.damageDone['Bonedust Brew (Plus Emeni)'] || 0) + bonedustDam + emenibonus;
     }
 
     //if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs));
@@ -326,6 +328,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.softCap || 1) * spell.targets : spell.targets || 1;
     const healingVal = (getSpellRaw(spell, currentStats) + flatHeal * getStatMult(currentStats, ['crit', 'vers'])) * (1 - spell.overheal * T284pcOverhealMultiplier) * healingMult * targetMult * specialMult;
+    const healingValEmeniBonus = (getSpellRaw(spell, currentStats) * getStatMult(currentStats, ['crit', 'vers'])) * (1 - spell.overheal * T284pcOverhealMultiplier) * healingMult * targetMult * specialMult;
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
     if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
         state.T284pcwindow[spellName] = (state.T284pcwindow[spellName] || 0) + healingVal; 
@@ -349,7 +352,25 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
         // Hits 75% of raid
         // Logs show 50% overhealing, had it scaled down again with the spells overheal (as any overhealing of the spells makes sense that the duplicated heal can't heal extra)
         // This causes a "double dip" in the spell overheal but that's accurate with how BDB works 
-        const bonedustHealing = healingVal * 0.5 * 0.4 * 1.88 * 0.75 * (1 - spell.overheal)
+        let bonedustHealing = healingVal * 0.5 * 0.4 * 1.88 * (1 - spell.overheal)
+
+        if (state.settings.misc.includes("BDB40"))
+        {
+            bonedustHealing *= 0.4;
+        }
+        else if (state.settings.misc.includes("BDB60"))
+        {
+            bonedustHealing *= 0.6;
+        }
+        else if (state.settings.misc.includes("BDB90"))
+        {
+            bonedustHealing *= 0.9;
+        }
+        else
+        {   // 75% raid hit by default
+            bonedustHealing *= 0.75;
+        }
+
         state.healingDone['Bonedust Brew'] = (state.healingDone['Bonedust Brew'] || 0) + bonedustHealing;
 
         if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
@@ -358,11 +379,33 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     }
     else if (state.settings.misc.includes("BB")) // Simulate second legendary
     {
-        const bonedustHealing = healingVal * 0.5 * 0.4 * 1.8 * 0.75 * 0.28 * (1 - spell.overheal) + healingVal * 1.13 * 0.28
-        state.healingDone['Bonedust Brew (Plus Emeni)'] = (state.healingDone['Bonedust Brew (Plus Emeni)'] || 0) + bonedustHealing;
+        // Hits 75% of predicted hits
+        const emenibonus = healingValEmeniBonus * (0.13 * convertPPMToUptime(1.5, 10));
+        let bonedustHealing = (healingVal + emenibonus) * 0.5 * 0.4 * 1.8 * 0.75 * 0.256 * (1 - spell.overheal) 
+
+        if (state.settings.misc.includes("BDB40"))
+        {
+            bonedustHealing *= 0.4;
+        }
+        else if (state.settings.misc.includes("BDB60"))
+        {
+            bonedustHealing *= 0.6;
+        }
+        else if (state.settings.misc.includes("BDB90"))
+        {
+            bonedustHealing *= 0.9;
+        }
+        else
+        {   // 75% raid hit by default
+            bonedustHealing *= 0.75;
+        }
+
+        state.healingDone['Bonedust Brew (Bountiful Brew)'] = (state.healingDone['Bonedust Brew (Bountiful Brew)'] || 0) + bonedustHealing;
+        state.healingDone['Emeni (Bountiful Brew)'] = (state.healingDone['Emeni (Bountiful Brew)'] || 0) + emenibonus;
 
         if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
-            state.T284pcwindow['Bonedust Brew (Plus Emeni)'] = (state.T284pcwindow['Bonedust Brew (Plus Emeni)'] || 0) + bonedustHealing; 
+            state.T284pcwindow['Bonedust Brew (Bountiful Brew)'] = (state.T284pcwindow['Bonedust Brew (Bountiful Brew)'] || 0) + bonedustHealing;
+            state.T284pcwindow['Emeni (Bountiful Brew)'] = (state.T284pcwindow['Emeni (Bountiful Brew)'] || 0) + emenibonus;
         }
     }
 

@@ -24,7 +24,7 @@ function conduitScaling(rankOne, requiredRank) {
 export const getOneCloneHealing = (player) => {
   const mult = player.getStatMultiplier("NOMAST") * player.getInt() * 1.725; // Added conduit scaling here
   const fallenOrderSpells = [
-    {sp: 2.4 * 1.3, castsPerClone: 1}, // Clones very rarely cast 2 enveloping
+    {sp: 3.6 * 1.3, castsPerClone: 1}, // Clones very rarely cast 2 enveloping
     // Enveloping Mist. For some reason their env multiplier effects their env healing. They are only supposed to cast 1 EnV per clone, but they sometimes like to cast two instead.
     {sp: 1.04, castsPerClone: 2} // Soothing Mist
   ]
@@ -55,9 +55,19 @@ export const getFOHealing = (player) => {
  * @returns Total healing from the longer clone
  */
 export const getLongCloneHealing = (player) => {
-  const normalClone = getOneCloneHealing(player);
-  const longCloneDuration = 24 / 8; // easy ratios
-  return normalClone * longCloneDuration;
+  const mult = player.getStatMultiplier("NOMAST") * player.getInt() * 1.725; // Added conduit scaling here
+  const fallenOrderSpells = [
+    {sp: 3.6 * 1.3, castsPerClone: 1}, // Clones capped at 1 enveloping cast
+    // Enveloping Mist. For some reason their env multiplier effects their env healing. They are only supposed to cast 1 EnV per clone, but they sometimes like to cast two instead.
+    {sp: 1.04, castsPerClone: 6} // Soothing Mist
+  ]
+
+  const overhealing = .5; // 50% overheal which is typical
+
+  let healingFromClone = 0;
+  fallenOrderSpells.forEach(spell => (healingFromClone += (spell.sp * spell.castsPerClone * mult) * (1 - overhealing)));
+
+  return healingFromClone;
 }
 
 /**
