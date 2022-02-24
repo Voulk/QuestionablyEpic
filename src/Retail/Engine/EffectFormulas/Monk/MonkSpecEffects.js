@@ -1,4 +1,5 @@
 import { getSiTHPS, applyConduit } from "./FallenOrderFormulas";
+import { convertPPMToUptime } from "Retail/Engine/EffectFormulas/EffectUtilities"
 
 const ID_VIVIFY = 116670;
 const ID_RENEWING_MIST = 119611;
@@ -50,9 +51,14 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
     const yulonSP = 1.8;
     const yulonExpectedOverhealing = 0.22;
     const yulonTargets = { Raid: 5.9, Dungeon: 3.2 };
-    const yulonOneHeal = yulonSP * player.getStatMultiplier("CRITVERS") * player.activeStats.intellect * (1 - yulonExpectedOverhealing);
+    const yulonOneHeal = yulonSP * player.activeStats.intellect * player.getStatMultiplier("CRITVERS")  * (1 - yulonExpectedOverhealing);
 
-    bonus_stats.hps = (yulonOneHeal * yulonTargets[contentType] * thunderFocusTeaCPM) / 60;
+    // TODO: Add toggle for 4pc
+    const t284pcsethealing = 450 * player.getStatMultiplier("CRITVERS")  * (1 - yulonExpectedOverhealing);
+    //const total4pchealing = t284pcsethealing * 2 * yulonTargets[contentType] * thunderFocusTeaCPM;
+    const total4pchealing = 0;
+
+    bonus_stats.hps = ((yulonOneHeal * yulonTargets[contentType] * thunderFocusTeaCPM) + total4pchealing) / 60;
   } else if (name === "Invoker's Delight") {
     // This is an attempt to model the extra casts you get in the Celestial window against it's mana cost.
     // It is an imperfect, but solid formula for a legendary that really only should be used in niche situations.
@@ -67,8 +73,8 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
 
     // Since SiT is the standard playstyle and conduit power is also tied to it
     // SiT math has been moved to a different file in order to keep the code DRY
-    const netHPS = applyConduit(getSiTHPS(player, contentType), 8);
-
+    const netHPS = applyConduit(getSiTHPS(player, contentType), 11);
+    
     bonus_stats.hps = netHPS;
 
   } else if (name === "Call to Arms"){
@@ -96,10 +102,12 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
 
     bonus_stats.hps = -1;
   } else if (name === "Bountiful Brew") {
-    //TODO just take bdb healing and bdb gust and do a nice * 1.5 
-    //TODO figure out emeni healing boost since bb did proc soulbinds last time i checked
+    //TODO apply conduit
 
-   bonus_stats.hps = -1; 
+    // 88% conduit, 25.6% uptime, 75% raid hit
+    const emenibonus = player.getHPS() * (0.13 * convertPPMToUptime(1.5, 10));
+    const bonedustDam = (player.getHPS() + emenibonus) * 0.5 * 0.4 * 1.88 * 0.256 * 0.75
+    bonus_stats.hps = bonedustDam + emenibonus; 
   }else {
     bonus_stats.hps = -1;
   }

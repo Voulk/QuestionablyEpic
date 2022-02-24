@@ -2246,7 +2246,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
         en: {
           name: "Bountiful Brew",
           slot: "Neck, Shoulder, Chest",
-          desc: "Your abilities have a low chance to cast Bonedust Brew at your target's location (1.25 procs / min).",
+          desc: "Your abilities have a low chance to cast Bonedust Brew at your target's location (1.5 procs / min).",
           droploc: "Necrolord Renown 48",
           covenant: "Necrolord",
         },
