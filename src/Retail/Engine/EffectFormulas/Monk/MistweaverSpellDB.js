@@ -96,7 +96,7 @@ export const MONKSPELLS = {
             newBuff['expiration'] = state.t + efHot.duration
 
             for (let i = 0; i < 5; i++) {
-                runHeal(state, efDirect, "Essence Font")
+                runHeal(state, efDirect, "Essence Font (Faeline Stomp)")
                 state.activeBuffs.push(newBuff)
             }
 
