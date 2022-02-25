@@ -63,6 +63,18 @@ const getHealingMult = (buffs, t, spellName, conduits) => {
     }
     });
 
+    // Apply Jade Bond conduit
+    if (spellName === "Gusts of Mists (Chiji)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Soothing Breath (CTA Yulon)" || spellName === "Soothing Breath (Yulon)")
+    {
+        mult *= 1.125;
+    }
+
+    // Apply Resplendant Mist conduit
+    if (spellName === "Gust of Mists" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)" || spellName === "Gust of Mists (Essence Font)" || spellName === "Gust of Mists (Bonedust Brew)")
+    {
+        mult *= 1 + 0.3 * 1;
+    }
+
     // FLS buffs 5 targets. We'll take the average healing increase. This is likely a slight underestimation since your RJW and FLS targets will line up closely. On the other
     // hand FLS likes to hit pets sometimes so it should be fair. 
     if (checkBuffActive(buffs, "Faeline Harmony Inc")) mult *= (0.08 * 5 / 20) + 1; 
@@ -203,7 +215,7 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
 
     // -- Invoker's Delight --
     // 33% haste for 20s when summoning celestial
-    if (settings['legendaries'] === "Invoker's Delight") 
+    if (settings['legendaries'].includes("Invoker's Delight")) 
     {
         spells['Invoke Chiji'].push({
             type: "buff",
@@ -239,8 +251,8 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
         state.activeBuffs.push({name: "Dream Delver", expiration: 999, buffType: "special", value: 1.03});
     }
 
-    if (settings['soulbind'] === "Palegos") {
-        spells['Combat Meditation'].push({
+    if (settings['soulbind'] === "Pelagos") {
+        spells['Weapons of Order'].push({
             name: "Combat Meditation",
             type: "buff",
             buffType: 'stats',
@@ -249,7 +261,7 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
             buffDuration: 32,
         });
 
-        state.activeBuffs.push({name: "Newfound Resolve", expiration: 999, buffType: "statsMult", value: convertPPMToUptime(1/1.5, 15), stat: 'intellect'});
+        state.activeBuffs.push({name: "Newfound Resolve", expiration: 999, buffType: "statsMult", value: 1 + convertPPMToUptime(1/1.5, 15), stat: 'intellect'});
     }
     
     // 385 = 35 * 11% crit (this goes into diminishing returns so probably underestimating)
@@ -352,11 +364,20 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     if (spell.mastery) {
         const masteryProc = MONKSPELLS['Gust of Mists'][0];
         runHeal(state, masteryProc, "Gust of Mists")
+    }
 
+    // EF Mastery duplication
+    const efHots = ["Essence Font (HoT)", "Essence Font (HoT - Faeline Stomp)"]
+    const activeEFBuffs = state.activeBuffs.filter(function (buff) {return efHots.includes(buff.name)})
+    if (activeEFBuffs.length > 0 && (spellName === "Gust of Mists" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)"))
+    {
+        const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
+        bonusMasteryProc.coeff *= activeEFBuffs.length / 20;
+        runHeal(state, bonusMasteryProc, "Gust of Mists (Essence Font)");
     }
 
     if (checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
-        if (spellName == "Gust of Mists") {
+        if (spellName === "Gust of Mists" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)") {
             const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
             bonusMasteryProc.coeff += (0.42 * 1.04);
             runHeal(state, bonusMasteryProc, "Gust of Mists (Bonedust Brew)");

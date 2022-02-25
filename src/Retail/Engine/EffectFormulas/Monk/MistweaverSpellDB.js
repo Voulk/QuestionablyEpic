@@ -299,6 +299,8 @@ export const MONKSPELLS = {
 
             const atotmBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Ancient Teachings of the Monastery"}).length > 0;
             const chijiBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Chiji Active"}).length > 0;
+            const CTAchijiBuff = state.activeBuffs.filter(function (buff) {return buff.name === "CTA Chiji Active"}).length > 0;
+
             // For each bonus kick, deal damage and heal via Ancient Teachings if applicable.
             for (var i = 0; i < teachingsStacks; i++) {
                 // Deal damage
@@ -317,7 +319,17 @@ export const MONKSPELLS = {
                     const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
                     runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
                     runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
+                }
 
+                if (CTAchijiBuff)
+                {
+                    const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
+                    runHeal(state, bonusMasteryProc, "Gust of Mists (CTA Chiji)");
+                    runHeal(state, bonusMasteryProc, "Gust of Mists (CTA Chiji)");
+                }
+
+                if (chijiBuff || CTAchijiBuff)
+                {
                     // Add stack of Chiji reduced mana cost
                     const activeBuffs = state.activeBuffs;
                     const chijiStacks = activeBuffs.filter(function (buff) {return buff.name === "Chiji Stacks"}).length;

@@ -95,7 +95,7 @@ describe("Test Sequences", () => {
     
     // Chiji testing
     const kyrianchijibaseSequence =  ["Tiger Palm", "Tiger Palm", "Essence Font", "Tiger Palm", "Renewing Mist", "Renewing Mist", "Thunder Focus Tea", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Essence Font", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Blackout Kick", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Blackout Kick"];
-    const kyrianChijiSequence =  ["Tiger Palm", "Tiger Palm", "Tiger Palm", "Invoke Chiji", "Weapons of Order", "Blackout Kick", "Rising Sun Kick", "Blackout Kick", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Essence Font", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Tiger Palm", "Blackout Kick"]
+    const kyrianChijiSequence =  ["Tiger Palm", "Tiger Palm", "Tiger Palm", "Essence Font", "Invoke Chiji", "Weapons of Order", "Blackout Kick", "Rising Sun Kick", "Blackout Kick", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Essence Font", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Tiger Palm", "Blackout Kick"]
     
     // Found that using throughput boost after 2 envm is more healing for both cov
     //const YulonNF = ["Essence Font", "Faeline Stomp", "Invoke Yulon", "Enveloping Mist", "Enveloping Mist", "Enveloping Mist", "Enveloping Mist", "Thunder Focus Tea", "Rising Sun Kick", "Faeline Stomp", "Rising Sun Kick", "Enveloping Mist", "Enveloping Mist", "Enveloping Mist", "Enveloping Mist", "Chi Burst" ];
@@ -138,7 +138,7 @@ describe("Test Sequences", () => {
         "Kyrian Chiji (2m): " + covenants["KyrianPre"][1].totalHealing + " (HPM: " + covenants["KyrianPre"][1].hpm + " | HPS: " + covenants["KyrianPre"][1].hps + "). Damage: " + covenants["KyrianPre"][1].totalDamage + " (DPS: " + covenants["KyrianPre"][1].dps + ") \n" +
         "Kyrian Revival: " + covenants["KyrianPre"][2].totalHealing + "\n" +
         "Kyrian - HPS: " + kyrianprehps + " HPM: " + kyrianprehpm + " DPS: " + kyrianpredps + " (4 chiji (Woo pair), 3 revival)" + "\n" +
-        "Sequence lengths - base " + covenants["KyrianPre"][0].sequenceLength + " | chiji: " + covenants["KyrianPre"][2].sequenceLength);
+        "Sequence lengths - base " + covenants["KyrianPre"][0].sequenceLength + " | chiji: " + covenants["KyrianPre"][1].sequenceLength);
 /*
         // 0 tier - sequence won't be optimized but gives rough idea
         console.log("==pretier==");
