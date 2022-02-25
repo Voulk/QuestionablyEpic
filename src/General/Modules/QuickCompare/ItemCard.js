@@ -97,8 +97,8 @@ export default function ItemCard(props) {
   }
 
   const socket = props.item.socket ? (
-    <div style={{ display: "inline" }}>
-      <img src={socketImage} width={14} height={14} style={{ verticalAlign: "middle" }} alt="Socket" />{" "}
+    <div style={{ display: "inline", verticalAlign: "middle", marginRight: 4, marginTop: 2 }}>
+      <img src={socketImage} width={15} height={15} alt="Socket" />{" "}
     </div>
   ) : null;
 
@@ -159,9 +159,6 @@ export default function ItemCard(props) {
                   <Grid item xs={10} display="inline">
                     <Typography variant="subtitle2" wrap="nowrap" style={{ display: "block", marginLeft: 4 }} align="left">
                       <div style={{ color: itemQuality, lineHeight: item.mainHandTertiary ? "normal" : 1.57 }}>{itemName}</div>
-
-                      {/* <div style={{ paddingLeft: 6 }}>{" - " + item.mainHandLevel}</div> */}
-
                       {item.mainHandTertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(item.mainHandTertiary) }}>{item.mainHandTertiary}</div> : ""}
                     </Typography>
                   </Grid>
@@ -193,7 +190,6 @@ export default function ItemCard(props) {
                 <Grid item xs={10}>
                   <Typography variant="subtitle2" wrap="nowrap" style={{ display: "block", marginLeft: 4 }} align="left">
                     <div style={{ color: itemQuality, lineHeight: item.offHandTertiary ? "normal" : 1.57 }}>{itemName2}</div>
-
                     {item.offHandTertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(item.offHandTertiary) }}>{item.offHandTertiary}</div> : ""}
                   </Typography>
                 </Grid>
@@ -221,7 +217,7 @@ export default function ItemCard(props) {
             <Grid item xs="auto">
               <CardContent
                 style={{
-                  padding: "3.5px 3.5px 0.5px 3.5px",
+                  padding: "2px 2px 0px 2px",
                   display: "inline-flex",
                 }}
               >
@@ -250,7 +246,7 @@ export default function ItemCard(props) {
                 <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={10} display="inline">
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4 }}>
-                      <div style={{ color: itemQuality, lineHeight: tertiary ? "normal" : 1.57 }}>{itemName}</div>
+                      <div style={{ color: itemQuality, lineHeight: tertiary || isVault ? "normal" : 1.57 }}>{itemName}</div>
                       <div style={{ display: "inline" }}>
                         {tertiary !== "" ? tertiary : ""}
                         {isVault ? <div style={{ fontSize: 10 }}> {" / " + t("itemTags.greatvault")}</div> : ""}
@@ -284,9 +280,18 @@ export default function ItemCard(props) {
                 <Divider />
                 <Grid item container display="inline" direction="row" xs="auto" justifyContent="space-between">
                   <Grid item xs={12}>
-                    <Typography variant="subtitle2" wrap="nowrap" display="block" style={{ paddingTop: 0, paddingLeft: 4 }} align="left">
-                      {socket} {statString}
-                    </Typography>
+                    <div style={{ display: "inline-flex", paddingLeft: 4 }}>
+                      {socket}
+                      <Typography
+                        variant="subtitle2"
+                        wrap="nowrap"
+                        display="block"
+                        style={{ fontSize: "12px", paddingTop: 0, marginTop: tertiary || isVault ? 3 : 1, lineHeight: tertiary || isVault ? "normal" : "" }}
+                        align="left"
+                      >
+                        {statString}
+                      </Typography>
+                    </div>
                   </Grid>
                 </Grid>
               </Grid>
