@@ -89,14 +89,14 @@ export default function ItemCard(props) {
     else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
   }
 
+  const tertiary =
+    "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}> {props.item.tertiary} </div> : null;
+
   const socket = props.item.socket ? (
-    <div style={{ display: "inline", verticalAlign: "middle", marginTop: 2 }}>
+    <div style={{ display: "inline", verticalAlign: "middle", marginTop: tertiary || isVault ? 0 : 2, marginRight: 4 }}>
       <img src={socketImage} width={15} height={15} alt="Socket" />
     </div>
   ) : null;
-
-  const tertiary =
-    "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}> {props.item.tertiary} </div> : null;
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
@@ -154,14 +154,14 @@ export default function ItemCard(props) {
                   <Divider />
                   <Grid item container xs={12} display="inline-flex" direction="row" justifyContent="space-between" style={{ marginTop: 2 }}>
                     <Grid item xs={11}>
-                      <div style={{ display: "inline-flex", paddingLeft: 4 }}>
+                      <div style={{ display: "inline-flex", marginLeft: 4 }}>
                         {socket}
                         <Typography
                           variant="subtitle2"
                           wrap="nowrap"
                           display="block"
                           align="left"
-                          style={{ fontSize: "12px", marginTop: tertiary || isVault ? 0 : 1, marginLeft: 4, lineHeight: tertiary || isVault ? "normal" : "" }}
+                          style={{ fontSize: "12px", marginTop: tertiary || isVault ? 0 : 1, lineHeight: tertiary || isVault ? "normal" : "" }}
                         >
                           {statString}
                         </Typography>

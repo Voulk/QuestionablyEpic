@@ -280,7 +280,7 @@ export default function ItemCard(props) {
                 <Divider />
                 <Grid item container display="inline" direction="row" xs="auto" justifyContent="space-between">
                   <Grid item xs={12}>
-                    <div style={{ display: "inline-flex", paddingLeft: 4 }}>
+                    <div style={{ display: "inline-flex", marginLeft: 4 }}>
                       {socket}
                       <Typography
                         variant="subtitle2"
