@@ -196,22 +196,31 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
         else if (settings['covenant'] === "Venthyr") {
             settings['soulbind'] = "Theotar"
         }
-        
     }
 
     // === Legendaries ===
     // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
 
-    // -- Clarity of Mind --
-    // Clarity of Mind adds 6 seconds to the Atonement granted by Power Word: Shield during Rapture. 
-    // It's a straightfoward addition.
-    if (settings['Clarity of Mind']) spells['Rapture'][0].atonement = 21;
+    // -- Invoker's Delight --
+    // 33% haste for 20s when summoning celestial
+    if (settings['legendaries'] === "Invoker's Delight") 
+    {
+        spells['Invoke Chiji'].push({
+            type: "buff",
+            buffType: "statsMult",
+            stat: 'haste',
+            value: 1.33,
+            buffDuration: 20,
+        });
 
-    // -- Penitent One --
-    // Power Word: Radiance has a chance to make your next Penance free, and fire 3 extra bolts.
-    // This is a close estimate, and could be made more accurate by tracking the buff and adding ticks instead of power.
-    if (settings['Penitent One']) spells['Penance'][0].coeff = spells['PenanceTick'][0].coeff * (0.84 * 2); 
-    //
+        spells['Invoke Yulon'].push({
+            type: "buff",
+            buffType: "statsMult",
+            stat: 'haste',
+            value: 1.33,
+            buffDuration: 20,
+        });
+    }
 
     // === Soulbinds ===
     // Don't include Conduits here just any relevant soulbind nodes themselves.
@@ -230,6 +239,19 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
         state.activeBuffs.push({name: "Dream Delver", expiration: 999, buffType: "special", value: 1.03});
     }
 
+    if (settings['soulbind'] === "Palegos") {
+        spells['Combat Meditation'].push({
+            name: "Combat Meditation",
+            type: "buff",
+            buffType: 'stats',
+            stat: 'mastery',
+            value: 315,
+            buffDuration: 32,
+        });
+
+        state.activeBuffs.push({name: "Newfound Resolve", expiration: 999, buffType: "statsMult", value: convertPPMToUptime(1/1.5, 15), stat: 'intellect'});
+    }
+    
     // 385 = 35 * 11% crit (this goes into diminishing returns so probably underestimating)
     if (settings['soulbind'] === "Kleia") state.activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 385, stat: 'crit'})
 
@@ -372,6 +394,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     }
     else if (state.settings.misc.includes("BB")) // Simulate second legendary
     {
+        const emenigroupbonus = (0.8 * convertPPMToUptime(1.5, 10));
         // Hits 75% of predicted hits
         const emenibonus = healingValEmeniBonus * (0.13 * convertPPMToUptime(1.5, 10));
         let bonedustHealing = (healingVal + emenibonus) * 0.5 * 0.4 * 1.8 * 0.75 * 0.256
@@ -395,6 +418,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 
         state.healingDone['Bonedust Brew (Bountiful Brew)'] = (state.healingDone['Bonedust Brew (Bountiful Brew)'] || 0) + bonedustHealing;
         state.healingDone['Emeni (Bountiful Brew)'] = (state.healingDone['Emeni (Bountiful Brew)'] || 0) + emenibonus;
+        state.healingDone['Emeni Group bonus'] = (state.healingDone['Emeni (Bountiful Brew)'] || 0) + emenibonus;
 
         if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
             state.T284pcwindow['Bonedust Brew (Bountiful Brew)'] = (state.T284pcwindow['Bonedust Brew (Bountiful Brew)'] || 0) + bonedustHealing;

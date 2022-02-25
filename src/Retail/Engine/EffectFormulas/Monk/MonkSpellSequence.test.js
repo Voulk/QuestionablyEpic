@@ -43,6 +43,16 @@ describe("Test Sequences", () => {
         stamina: 1000,
         manaMod: 1,
     }
+
+    const activeStatsPalegosTest = { // Palegos test stats
+        intellect: 2370,
+        haste: 750,
+        crit: 750,
+        mastery: 750,
+        versatility: 85,
+        stamina: 1000,
+        manaMod: 1,
+    }
     
     const pretierStats = { // Pretier/leg stats
         intellect: 2070,
@@ -83,6 +93,10 @@ describe("Test Sequences", () => {
     const baseSequence =  ["Tiger Palm", "Tiger Palm", "Refreshing Jade Wind", "Essence Font", "Tiger Palm", "Renewing Mist", "Renewing Mist", "Refreshing Jade Wind", "Thunder Focus Tea", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Refreshing Jade Wind", "Essence Font", "Blackout Kick", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Refreshing Jade Wind", "Blackout Kick", "Rising Sun Kick"];
     const kyrianWoOSequence =  ["Tiger Palm", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Essence Font", "Weapons of Order", "Essence Font", "Refreshing Jade Wind", "Thunder Focus Tea", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Refreshing Jade Wind", "Blackout Kick", "Essence Font", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Refreshing Jade Wind", "Blackout Kick", "Rising Sun Kick"];
     
+    // Chiji testing
+    const kyrianchijibaseSequence =  ["Tiger Palm", "Tiger Palm", "Essence Font", "Tiger Palm", "Renewing Mist", "Renewing Mist", "Thunder Focus Tea", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Essence Font", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Blackout Kick", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Blackout Kick"];
+    const kyrianChijiSequence =  ["Tiger Palm", "Tiger Palm", "Tiger Palm", "Invoke Chiji", "Weapons of Order", "Blackout Kick", "Rising Sun Kick", "Blackout Kick", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Essence Font", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Tiger Palm", "Blackout Kick"]
+    
     // Found that using throughput boost after 2 envm is more healing for both cov
     //const YulonNF = ["Essence Font", "Faeline Stomp", "Invoke Yulon", "Enveloping Mist", "Enveloping Mist", "Enveloping Mist", "Enveloping Mist", "Thunder Focus Tea", "Rising Sun Kick", "Faeline Stomp", "Rising Sun Kick", "Enveloping Mist", "Enveloping Mist", "Enveloping Mist", "Enveloping Mist", "Chi Burst" ];
     const YulonNF = ["Essence Font", "Invoke Yulon", "Mana Tea", "Enveloping Mist", "Enveloping Mist", "Faeline Stomp", "Thunder Focus Tea", "Rising Sun Kick", "Enveloping Mist", "Rising Sun Kick", "Enveloping Mist", "Enveloping Mist", "Faeline Stomp", "Enveloping Mist", "Enveloping Mist", "Chi Burst" ];
@@ -113,6 +127,19 @@ describe("Test Sequences", () => {
         //covenants["Base"].push(runCastSequence(revivaltest, activeStats3, {"DefaultLoadout": true, "covenant": "None", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
         //console.log("Base: " + covenants["Base"][0].totalHealing + " (HPM: " + covenants["Base"][0].hpm + "). 4PC Window: " + covenants["Base"][0].total4pcWindow + " (" + Math.round(covenants["Base"][0].total4pcWindow/covenants["Base"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Base"][0].totalDamage);
 
+        // Kyrian Chiji Test
+        covenants["KyrianPre"].push(runCastSequence(kyrianchijibaseSequence, activeStatsPalegosTest, {"DefaultLoadout": false, "soulbind": "Pelagos", "covenant": "Kyrian", "legendaries": ["Invoker's Delight"], "misc": ["2T28", "4T28", "CTA", "Chiji"]}, {}, 12))
+        covenants["KyrianPre"].push(runCastSequence(kyrianChijiSequence, activeStatsPalegosTest, {"DefaultLoadout": false, "soulbind": "Pelagos", "covenant": "Kyrian", "legendaries": ["Invoker's Delight"], "misc": ["2T28", "4T28", "CTA", "Chiji"]}, {}))
+        covenants["KyrianPre"].push(runCastSequence(RevivalBase, activeStatsPalegosTest, {"DefaultLoadout": false, "soulbind": "Pelagos", "covenant": "Kyrian", "legendaries": ["Invoker's Delight"], "misc": ["2T28", "4T28", "CTA", "Chiji"]}, {}))
+        const kyrianprehpm = Math.round((covenants["KyrianPre"][0].hpm*12 + covenants["KyrianPre"][1].hpm*4 + covenants["KyrianPre"][2].hpm*3)/19*100)/100
+        const kyrianprehps = Math.round((covenants["KyrianPre"][0].hps*12 + covenants["KyrianPre"][1].hps*4 + covenants["KyrianPre"][2].hps*3)/19*100)/100
+        const kyrianpredps = Math.round((covenants["KyrianPre"][0].dps*12 + covenants["KyrianPre"][1].dps*4 + covenants["KyrianPre"][2].dps*3)/19*100)/100
+        console.log("PreTier Kyrian: " + covenants["KyrianPre"][0].totalHealing + " (HPM: " + covenants["KyrianPre"][0].hpm + " | HPS: " + covenants["KyrianPre"][0].hps + "). Damage: " + covenants["KyrianPre"][0].totalDamage + " (DPS: " + covenants["KyrianPre"][0].dps + ") \n" +
+        "Kyrian Chiji (2m): " + covenants["KyrianPre"][1].totalHealing + " (HPM: " + covenants["KyrianPre"][1].hpm + " | HPS: " + covenants["KyrianPre"][1].hps + "). Damage: " + covenants["KyrianPre"][1].totalDamage + " (DPS: " + covenants["KyrianPre"][1].dps + ") \n" +
+        "Kyrian Revival: " + covenants["KyrianPre"][2].totalHealing + "\n" +
+        "Kyrian - HPS: " + kyrianprehps + " HPM: " + kyrianprehpm + " DPS: " + kyrianpredps + " (4 chiji (Woo pair), 3 revival)" + "\n" +
+        "Sequence lengths - base " + covenants["KyrianPre"][0].sequenceLength + " | chiji: " + covenants["KyrianPre"][2].sequenceLength);
+/*
         // 0 tier - sequence won't be optimized but gives rough idea
         console.log("==pretier==");
         // Kyrian 
@@ -421,8 +448,8 @@ describe("Test Sequences", () => {
         "Kyrian Yulon: " +  covenants["Kyrian"][1].sequenceLength + "\n" +
         "Kyrian WoO: " +  covenants["Kyrian"][3].sequenceLength + "\n" +
         "Venth Yulon: " +  covenants["Venth"][1].sequenceLength + "\n" +
-        "NF Yulon: " +  covenants["Night Fae"][1].sequenceLength
-        );
+        "NF Yulon: " +  covenants["Night Fae"][1].sequenceLength);
+        */
     })
 
 })
