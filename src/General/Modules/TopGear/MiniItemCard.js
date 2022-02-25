@@ -90,7 +90,7 @@ export default function ItemCard(props) {
   }
 
   const socket = props.item.socket ? (
-    <div style={{ display: "inline", verticalAlign: "middle" }}>
+    <div style={{ display: "inline", verticalAlign: "middle", marginTop: 2 }}>
       <img src={socketImage} width={15} height={15} alt="Socket" />
     </div>
   ) : null;
@@ -154,15 +154,18 @@ export default function ItemCard(props) {
                   <Divider />
                   <Grid item container xs={12} display="inline-flex" direction="row" justifyContent="space-between" style={{ marginTop: 2 }}>
                     <Grid item xs={11}>
-                      <Typography
-                        variant="subtitle2"
-                        wrap="nowrap"
-                        display="block"
-                        align="left"
-                        style={{ fontSize: "12px", marginTop: tertiary || isVault ? 0 : 1, marginLeft: 4, lineHeight: tertiary || isVault ? "normal" : "" }}
-                      >
-                        {socket} {statString}
-                      </Typography>
+                      <div style={{ display: "inline-flex", paddingLeft: 4 }}>
+                        {socket}
+                        <Typography
+                          variant="subtitle2"
+                          wrap="nowrap"
+                          display="block"
+                          align="left"
+                          style={{ fontSize: "12px", marginTop: tertiary || isVault ? 0 : 1, marginLeft: 4, lineHeight: tertiary || isVault ? "normal" : "" }}
+                        >
+                          {statString}
+                        </Typography>
+                      </div>
                     </Grid>
                   </Grid>
                 </Grid>
