@@ -109,7 +109,6 @@ export default function TrinketAnalysis(props) {
       1188, // De Other Side,
       1189, // Sanguine Depths,
       1194, // Tazavesh
-      
     ];
     const legionTimewalking = [
       -24, // Legion Timewalking
@@ -199,7 +198,6 @@ export default function TrinketAnalysis(props) {
   } else {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, gameType) < getHighestTrinketScore(finalDB, b, gameType) ? 1 : -1));
   }
-
 
   return (
     <div className={classes.root}>
@@ -293,6 +291,7 @@ export default function TrinketAnalysis(props) {
           ""
         )}
       </Grid>
+      <div style={{ height: 400 }} />
     </div>
   );
 }
