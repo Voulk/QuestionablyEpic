@@ -216,7 +216,7 @@ export const trinket_data = [
         multiplier: 1.62, // This assumes your average boss health is just under 50% which feels like a fair average.
         efficiency: 0.92, // Ruby is a tough trinket to maximise and it's average use case is far below it's maximum.
         cooldown: 120,
-        discOverhealing: 0.325,
+        discOverhealing: 0.37,
       },
       {
         /* ------------------------ Healing portion when the spirit reaches you. ------------------------ */
@@ -394,7 +394,7 @@ export const trinket_data = [
         table: -7,
         duration: 9,
         cooldown: 90,
-        discOverhealing: 0.15,
+        discOverhealing: 0.11,
       },
     ],
   },
@@ -428,10 +428,10 @@ export const trinket_data = [
     effects: [
       {
         coefficient: 2.955178,
-        table: -1,
+        table: -7,
         duration: 12,
         cooldown: 90,
-        discOverhealing: 0.2,
+        discOverhealing: 0.12,
       },
     ],
   },
@@ -1109,8 +1109,8 @@ export const trinket_data = [
     /*                                 Auxillary Attendant Chime                                      */
     /* ---------------------------------------------------------------------------------------------- */
     // Activates a robot that applies an absorb for X every second for 10s. 
-    // This appears to scale with haste, but it'll need to be tested for a partial tick when it ends. 
-    // If not, it'll have varying levels of ticks based on your haste. 
+    // This appears to scale with haste, but haste scaling is disabled until it can be checked on live servers since it was not available to test.
+    // Check for partial tick also.
     name: "Auxillary Attendant Chime", 
     effects: [
       {

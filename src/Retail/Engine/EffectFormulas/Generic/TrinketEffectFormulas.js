@@ -212,7 +212,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     let heal_effect = activeTrinket.effects[1];
     let crit_effect = activeTrinket.effects[0];
     const critValue = getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.multiplier;
-
+    //console.log(itemLevel + ": " + critValue)
     bonus_stats.hps = (getProcessedValue(heal_effect.coefficient, heal_effect.table, itemLevel, heal_effect.efficiency) / heal_effect.cooldown) * player.getStatMultiplier("CRITVERS");
     
     if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
@@ -221,6 +221,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
       const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, castModel.modelName, ['Rapture']);
       const rubyRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Soulletting Ruby": critValue}, {});
       
+      console.log("Base: " + player.getRampID('baselineAdj', contentType));
       bonus_stats.hps = bonus_stats.hps + (rubyRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - crit_effect.discOverhealing);
 
     }
@@ -356,7 +357,10 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
       const boonSeq = buildRamp('Boon', 10, ["Flame of Battle"], setStats.haste, castModel.modelName, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, ["Flame of Battle"], setStats.haste, castModel.modelName, ['Rapture']);
       const flameRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Flame of Battle": trinketValue}, {});
+
+      
       bonus_stats.hps = (flameRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
+      console.log(itemLevel + " HPS: " + bonus_stats.hps)
     }
     else {
       bonus_stats.versatility = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
@@ -912,9 +916,10 @@ else if (
   effectName === "Auxillary Attendant Chime"
 ) {
   let effect = activeTrinket.effects[0];
-  const oneProc = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * (effect.duration / effect.tickRate * player.getStatPerc("Haste"))
+  const oneProc = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * (effect.duration / effect.tickRate) //* player.getStatPerc("Haste"))
 
   bonus_stats.hps = (oneProc * effect.ppm * player.getStatPerc("Versatility") / 60);
+  console.log("Chime: " + itemLevel + " " + bonus_stats.hps)
   //
 }
 else if (
