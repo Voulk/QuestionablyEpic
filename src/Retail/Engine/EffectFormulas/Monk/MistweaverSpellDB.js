@@ -170,7 +170,7 @@ export const MONKSPELLS = {
             
             
     }],
-    "Thunder Focus Tea": [{
+    "Thunder Focus Tea": [{ // TFT
         type: "buff",
         buffType: "special",
         castTime: 0,
@@ -187,6 +187,25 @@ export const MONKSPELLS = {
             {
                 const newBuff = {name: "Primordial Mending", buffType: "special", expiration: state.t + 10}
                 state.activeBuffs.push(newBuff)
+            }
+        }
+    },
+    {
+        type: "special",
+        condition: "Yulon's Whisper",
+        runFunc: function (state) {
+            if (state.settings['legendaries'].includes("Yulon's Whisper"))
+            {
+                const spell = {name: "Yulon's Whisper", 
+                type: "heal", 
+                coeff: 0.6, 
+                overheal: 0.45, 
+                secondaries: ['crit', 'vers'], 
+                targets: 6}
+
+                runHeal(state, spell, "Yulon's Whisper (Initial)")
+                runHeal(state, spell, "Yulon's Whisper")
+                runHeal(state, spell, "Yulon's Whisper")
             }
         }
     }],
@@ -586,7 +605,7 @@ export const MONKSPELLS = {
             if (state.settings.misc.includes("CTA") && !state.settings.misc.includes("Chiji")) 
             {
                 const SBHot = { type: "heal", coeff: 0.35, overheal: 0.3, secondaries: ['crit', 'vers'], duration:  4.5, hastedDuration: true}
-                const newBuff = {name: "Soothing Breath (Yulon CTA)", buffType: "heal", attSpell: SBHot, tickRate: 1.5, next: state.t + (1.5 / getHaste(state.currentStats)), hastedDuration: true, targets: 3}
+                const newBuff = {name: "Soothing Breath (CTA Yulon)", buffType: "heal", attSpell: SBHot, tickRate: 1.5, next: state.t + (1.5 / getHaste(state.currentStats)), hastedDuration: true, targets: 3}
                 newBuff['expiration'] = state.t + SBHot.duration
                 state.activeBuffs.push(newBuff)
             }

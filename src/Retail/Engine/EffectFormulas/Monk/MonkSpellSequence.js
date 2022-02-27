@@ -70,7 +70,7 @@ const getHealingMult = (buffs, t, spellName, conduits) => {
     }
 
     // Apply Resplendant Mist conduit
-    if (spellName === "Gust of Mists" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)" || spellName === "Gust of Mists (Essence Font)" || spellName === "Gust of Mists (Bonedust Brew)")
+    if (spellName === "Gust of Mists" || spellName === "Gust of Mists (Revival)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)" || spellName === "Gust of Mists (Essence Font)" || spellName === "Gust of Mists (Bonedust Brew)")
     {
         mult *= 1 + 0.3 * 1;
     }
@@ -335,18 +335,25 @@ export const runDamage = (state, spell, spellName) => {
 export const runHeal = (state, spell, spellName, specialMult = 1) => {
 
     // Pre-heal processing
+    const currentStats = state.currentStats;
     let flatHeal = 0;
     let T284pcOverhealMultiplier = 1;
     let healingMult = 1;
+    let bonedustBrewGusts = 0;
 
     // == 4T28 ==
     // Some spells do not benefit from the bonus. It's unknown whether this is intentional.
-    if (checkBuffActive(state.activeBuffs, "Primordial Mending") && !["Ancient Teachings of the Monastery"].includes(spellName)) {
+    if (checkBuffActive(state.activeBuffs, "Primordial Mending") && !["Ancient Teachings of the Monastery"].includes(spellName) && !["Yulon's Whisper (Initial)"].includes(spellName)) {
         flatHeal = 450;
         T284pcOverhealMultiplier = 1.05;
     }
 
-    const currentStats = state.currentStats;
+    // Add Bonedust Brew additional mastery healing
+    if (spellName === "Gust of Mists (Bonedust Brew)")
+    {
+        bonedustBrewGusts = (0.42 * 1.04) * getStatMult(currentStats, ['crit', 'vers']) * currentStats.intellect;
+    }
+    
     healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.conduits); 
     // Healing multiplier of 2pc affects all healing (including 4pc)
     if (state.settings.misc.includes("2T28") && (spellName === "Essence Font (HoT)" || spellName === "Essence Font (HoT - Faeline Stomp)")) {
@@ -354,7 +361,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     }
 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.softCap || 1) * spell.targets : spell.targets || 1;
-    const healingVal = (getSpellRaw(spell, currentStats) + flatHeal * getStatMult(currentStats, ['crit', 'vers'])) * (1 - spell.overheal * T284pcOverhealMultiplier) * healingMult * targetMult * specialMult;
+    const healingVal = (getSpellRaw(spell, currentStats) + bonedustBrewGusts + flatHeal * getStatMult(currentStats, ['crit', 'vers'])) * (1 - spell.overheal * T284pcOverhealMultiplier) * healingMult * targetMult * specialMult;
     const healingValEmeniBonus = (getSpellRaw(spell, currentStats) * getStatMult(currentStats, ['crit', 'vers'])) * (1 - spell.overheal * T284pcOverhealMultiplier) * healingMult * targetMult * specialMult;
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
     if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
@@ -369,17 +376,18 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     // EF Mastery duplication
     const efHots = ["Essence Font (HoT)", "Essence Font (HoT - Faeline Stomp)"]
     const activeEFBuffs = state.activeBuffs.filter(function (buff) {return efHots.includes(buff.name)})
-    if (activeEFBuffs.length > 0 && (spellName === "Gust of Mists" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)"))
+    if (activeEFBuffs.length > 0 && (spellName === "Gust of Mists" || spellName === "Gust of Mists (Revival)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)"))
     {
         const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
-        bonusMasteryProc.coeff *= activeEFBuffs.length / 20;
+        let multi = activeEFBuffs.length / 20;
+        if (multi > 1) multi = 1;
+        bonusMasteryProc.coeff *= multi;
         runHeal(state, bonusMasteryProc, "Gust of Mists (Essence Font)");
     }
 
     if (checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
-        if (spellName === "Gust of Mists" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)") {
+        if (spellName === "Gust of Mists" || spellName === "Gust of Mists (Revival)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)") {
             const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
-            bonusMasteryProc.coeff += (0.42 * 1.04);
             runHeal(state, bonusMasteryProc, "Gust of Mists (Bonedust Brew)");
         }
 
@@ -615,7 +623,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits, runcou
     }
     //printHealing(state.healingDone, sumValues, sequenceLength, state.manaSpent * 50000 / 100);
     //printDamage(state.damageDone, sumValues, sequenceLength, state.manaSpent * 50000 / 100)
-
 
     const totalHealing = sumValues(state.healingDone);
     const totalDamage = sumValues(state.damageDone);

@@ -134,11 +134,149 @@ describe("Test Sequences", () => {
         const kyrianprehpm = Math.round((covenants["KyrianPre"][0].hpm*12 + covenants["KyrianPre"][1].hpm*4 + covenants["KyrianPre"][2].hpm*3)/19*100)/100
         const kyrianprehps = Math.round((covenants["KyrianPre"][0].hps*12 + covenants["KyrianPre"][1].hps*4 + covenants["KyrianPre"][2].hps*3)/19*100)/100
         const kyrianpredps = Math.round((covenants["KyrianPre"][0].dps*12 + covenants["KyrianPre"][1].dps*4 + covenants["KyrianPre"][2].dps*3)/19*100)/100
-        console.log("PreTier Kyrian: " + covenants["KyrianPre"][0].totalHealing + " (HPM: " + covenants["KyrianPre"][0].hpm + " | HPS: " + covenants["KyrianPre"][0].hps + "). Damage: " + covenants["KyrianPre"][0].totalDamage + " (DPS: " + covenants["KyrianPre"][0].dps + ") \n" +
+        console.log("Kyrian Chiji Secret Tech: " + covenants["KyrianPre"][0].totalHealing + " (HPM: " + covenants["KyrianPre"][0].hpm + " | HPS: " + covenants["KyrianPre"][0].hps + "). Damage: " + covenants["KyrianPre"][0].totalDamage + " (DPS: " + covenants["KyrianPre"][0].dps + ") \n" +
         "Kyrian Chiji (2m): " + covenants["KyrianPre"][1].totalHealing + " (HPM: " + covenants["KyrianPre"][1].hpm + " | HPS: " + covenants["KyrianPre"][1].hps + "). Damage: " + covenants["KyrianPre"][1].totalDamage + " (DPS: " + covenants["KyrianPre"][1].dps + ") \n" +
         "Kyrian Revival: " + covenants["KyrianPre"][2].totalHealing + "\n" +
         "Kyrian - HPS: " + kyrianprehps + " HPM: " + kyrianprehpm + " DPS: " + kyrianpredps + " (4 chiji (Woo pair), 3 revival)" + "\n" +
         "Sequence lengths - base " + covenants["KyrianPre"][0].sequenceLength + " | chiji: " + covenants["KyrianPre"][1].sequenceLength);
+
+        // Yulon's Whisper test
+        covenants["Kyrian"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Kyrian", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "CTA"]}, {}, 10))
+        covenants["Kyrian"].push(runCastSequence(YulonBase, activeStats3, {"DefaultLoadout": true, "covenant": "Kyrian", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "CTA"]}, {}))
+        covenants["Kyrian"].push(runCastSequence(RevivalKyrian, activeStats3, {"DefaultLoadout": true, "covenant": "Kyrian", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "CTA"]}, {}))
+        covenants["Kyrian"].push(runCastSequence(kyrianWoOSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Kyrian", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "CTA"]}, {}))
+        const kyrianhpm = Math.round((covenants["Kyrian"][0].hpm*10 + covenants["Kyrian"][1].hpm*2 + covenants["Kyrian"][2].hpm*3 + covenants["Kyrian"][3].hpm*4)/19*100)/100
+        const kyrianhps = Math.round((covenants["Kyrian"][0].hps*10 + covenants["Kyrian"][1].hps*2 + covenants["Kyrian"][2].hps*3 + covenants["Kyrian"][3].hps*4)/19*100)/100
+        const kyriandps = Math.round((covenants["Kyrian"][0].dps*10 + covenants["Kyrian"][1].dps*2 + covenants["Kyrian"][2].dps*3 + covenants["Kyrian"][3].dps*4)/19*100)/100
+        console.log("4pc2leg Yulon's Whisper Kyrian: " + covenants["Kyrian"][0].totalHealing + " (HPM: " + covenants["Kyrian"][0].hpm + " | HPS: " + covenants["Kyrian"][0].hps + "). Damage: " + covenants["Kyrian"][0].totalDamage + " (DPS: " + covenants["Kyrian"][0].dps + ") \n" +
+        "Kyrian Yulon: " + covenants["Kyrian"][1].totalHealing + " (HPM: " + covenants["Kyrian"][1].hpm + " | HPS: " + covenants["Kyrian"][1].hps + "). Damage: " + covenants["Kyrian"][1].totalDamage + " (DPS: " + covenants["Kyrian"][1].dps + ") \n" +
+        "Kyrian Revival: " + covenants["Kyrian"][2].totalHealing + "\n" +
+        "Kyrian WoO: " + covenants["Kyrian"][3].totalHealing + " (HPM: " + covenants["Kyrian"][3].hpm + " | HPS: " + covenants["Kyrian"][3].hps + "). Damage: " + covenants["Kyrian"][3].totalDamage + " (DPS: " + covenants["Kyrian"][3].dps + ")\n" +
+        "Kyrian - HPS: " + kyrianhps + " HPM: " + kyrianhpm + " DPS: " + kyriandps + " (2 yulon, 3 revival, 4 WoO)");
+
+        // Venth
+        covenants["Venth"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28"]}, {}, 14))
+        covenants["Venth"].push(runCastSequence(YulonBase, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28"]}, {}))
+        covenants["Venth"].push(runCastSequence(RevivalBase, activeStats3, {"DefaultLoadout": true, "covenant": "Venthyr", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28"]}, {}))
+        const venthhpm = Math.round((covenants["Venth"][0].hpm*14 + covenants["Venth"][1].hpm*2 + covenants["Venth"][2].hpm*3 + fallenOrderhpm4pc*4)/22*100)/100
+        const venthhps = Math.round(((covenants["Venth"][0].hps*14 + covenants["Venth"][1].hps*2 + covenants["Venth"][2].hps*3)/19 + (venth4pcfobonuspercast + getFOHealing(player4pc) + getLongCloneHealing(player4pc))*4/480)*100)/100
+        const venthdps = Math.round((covenants["Venth"][0].dps*14 + covenants["Venth"][1].dps*2 + covenants["Venth"][2].dps*3)/19*100)/100
+        console.log("4pc2leg Venth: " + covenants["Venth"][0].totalHealing + " (HPM: " + covenants["Venth"][0].hpm + " | HPS: " + covenants["Venth"][0].hps + "). 4PC Window: " + covenants["Venth"][0].total4pcWindow + " (" + Math.round(covenants["Venth"][0].total4pcWindow/covenants["Venth"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Venth"][0].totalDamage + " (DPS: " + covenants["Venth"][0].dps + ")\n" +
+        "Venth Yulon: " +covenants["Venth"][1].totalHealing + " (HPM: " + covenants["Venth"][1].hpm + " | HPS: " + covenants["Venth"][1].hps + "). 4PC Window: " + covenants["Venth"][1].total4pcWindow + " (" + Math.round(covenants["Venth"][1].total4pcWindow/covenants["Venth"][1].totalHealing*1000)/10 + ")%. Damage: " + covenants["Venth"][1].totalDamage + " (DPS: " + covenants["Venth"][1].dps + ")\n" +
+        "Venth Revival: " + covenants["Venth"][2].totalHealing + "\n" +
+        "Venth Per-FO: " + Math.round((getFOHealing(player4pc) + getLongCloneHealing(player4pc) + venth4pcfobonuspercast)*100)/100 + " (+HPS: " + Math.round((venth4pcfobonuspercast + getFOHealing(player4pc) + getLongCloneHealing(player4pc))/24*100)/100 + ")\n" +
+        "Venth - HPS: " + venthhps + " HPM: " + venthhpm + " DPS: " + venthdps + " (2 yulon, 3 revival, 4 FO)");
+
+        // NF
+        covenants["Night Fae"].push(runCastSequence(NFsequence, activeStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "FLH"]}, {}, 14));
+        covenants["Night Fae"].push(runCastSequence(YulonNF, activeStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "FLH"]}, {}));
+        covenants["Night Fae"].push(runCastSequence(RevivalNF, activeStats, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "FLH"]}, {}));
+        const nfhpm = Math.round((covenants["Night Fae"][0].hpm*14 + covenants["Night Fae"][1].hpm*2 + covenants["Night Fae"][2].hpm*3)/19*100)/100
+        const nfhps = Math.round((covenants["Night Fae"][0].hps*14 + covenants["Night Fae"][1].hps*2 + covenants["Night Fae"][2].hps*3)/19*100)/100
+        const nfdps = Math.round((covenants["Night Fae"][0].dps*14 + covenants["Night Fae"][1].dps*2 + covenants["Night Fae"][2].dps*3)/19*100)/100
+        console.log("4pc2leg Yulon's Whisper Night Fae Crit/vers: " + covenants["Night Fae"][0].totalHealing + " (HPM: " + covenants["Night Fae"][0].hpm + " | HPS: " + covenants["Night Fae"][0].hps + "). 4PC Window: " + covenants["Night Fae"][0].total4pcWindow + " (" + Math.round(covenants["Night Fae"][0].total4pcWindow/covenants["Night Fae"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Night Fae"][0].totalDamage + " (DPS: " + covenants["Night Fae"][0].dps + ")\n" +
+        "Night Fae Yulon: " + covenants["Night Fae"][1].totalHealing + " (HPM: " + covenants["Night Fae"][1].hpm + " | HPS: " + covenants["Night Fae"][1].hps + "). 4PC Window: " + covenants["Night Fae"][1].total4pcWindow + " (" + Math.round(covenants["Night Fae"][1].total4pcWindow/covenants["Night Fae"][1].totalHealing*1000)/10 + ")%. Damage: " + covenants["Night Fae"][1].totalDamage + " (DPS: " + covenants["Night Fae"][1].dps + ")\n" +
+        "Night Fae Revival: " + covenants["Night Fae"][2].totalHealing + "\n" +
+        "Night Fae - HPS: " + nfhps + " HPM: " + nfhpm + " DPS: " + nfdps + " (2 yulon, 3 revival)");
+        // Haste bonus affects NF the most, sequence is much quicker - needed to make a longer sequence to accurately collect HPM
+
+        covenants["Night Fae"].push(runCastSequence(NFsequence, activeStats3, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "FLH"]}, {}, 14));
+        covenants["Night Fae"].push(runCastSequence(YulonNF, activeStats3, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "FLH"]}, {}));
+        covenants["Night Fae"].push(runCastSequence(RevivalNF, activeStats3, {"DefaultLoadout": true, "covenant": "Night Fae", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "FLH"]}, {}));
+        const nfhpm2 = Math.round((covenants["Night Fae"][3].hpm*14 + covenants["Night Fae"][4].hpm*2 + covenants["Night Fae"][5].hpm*3)/19*100)/100
+        const nfhps2 = Math.round((covenants["Night Fae"][3].hps*14 + covenants["Night Fae"][4].hps*2 + covenants["Night Fae"][5].hps*3)/19*100)/100
+        const nfdps2 = Math.round((covenants["Night Fae"][3].dps*14 + covenants["Night Fae"][4].dps*2 + covenants["Night Fae"][5].dps*3)/19*100)/100
+        console.log("4pc2leg Yulon's Whisper Night Fae Balanced: " + covenants["Night Fae"][3].totalHealing + " (HPM: " + covenants["Night Fae"][3].hpm + " | HPS: " + covenants["Night Fae"][3].hps + "). 4PC Window: " + covenants["Night Fae"][3].total4pcWindow + " (" + Math.round(covenants["Night Fae"][3].total4pcWindow/covenants["Night Fae"][3].totalHealing*1000)/10 + ")%. Damage: " + covenants["Night Fae"][3].totalDamage + " (DPS: " + covenants["Night Fae"][3].dps + ")\n" +
+        "Night Fae Yulon: " + covenants["Night Fae"][4].totalHealing + " (HPM: " + covenants["Night Fae"][4].hpm + " | HPS: " + covenants["Night Fae"][4].hps + "). 4PC Window: " + covenants["Night Fae"][4].total4pcWindow + " (" + Math.round(covenants["Night Fae"][4].total4pcWindow/covenants["Night Fae"][4].totalHealing*1000)/10 + ")%. Damage: " + covenants["Night Fae"][4].totalDamage + " (DPS: " + covenants["Night Fae"][4].dps + ")\n" +
+        "Night Fae Revival: " + covenants["Night Fae"][5].totalHealing + "\n" +
+        "Night Fae - HPS: " + nfhps2 + " HPM: " + nfhpm2 + " DPS: " + nfdps2 + " (2 yulon, 3 revival)");
+
+        // NL   
+        // Lowered number of guarenteed BDB casts to factor that that would be used on yulon
+        covenants["NL"].push(runCastSequence(NLsequence, activeStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BB"]}, {}, 5));
+        covenants["NL"].push(runCastSequence(baseSequence, activeStats, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BB"]}, {}, 9));
+        covenants["NL"].push(runCastSequence(NLsequence, activeStats2, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BB"]}, {}, 5));
+        covenants["NL"].push(runCastSequence(baseSequence, activeStats2, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BB"]}, {}, 9));
+        covenants["NL"].push(runCastSequence(NLsequence, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BB"]}, {}, 5));
+        covenants["NL"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BB"]}, {}, 9));
+        covenants["NL"].push(runCastSequence(YulonNL, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BB"]}, {}));
+        covenants["NL"].push(runCastSequence(RevivalNL, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BB"]}, {}));
+        const nlhpm = Math.round((covenants["NL"][4].hpm*5  + covenants["NL"][5].hpm*9  + covenants["NL"][6].hpm*2  + covenants["NL"][7].hpm*3)/19*100)/100
+        const nlhps = Math.round((covenants["NL"][4].hps*5 + covenants["NL"][5].hps*9  + covenants["NL"][6].hps*2  + covenants["NL"][7].hps*3)/19*100)/100
+        const nldps = Math.round((covenants["NL"][4].dps*5 + covenants["NL"][5].dps*9  + covenants["NL"][6].dps*2  + covenants["NL"][7].dps*3)/19*100)/100
+        
+        // Stack % hit - single legendary
+        covenants["NL40"].push(runCastSequence(NLsequence, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB40"]}, {}, 5));
+        covenants["NL40"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB40"]}, {}, 9));
+        covenants["NL40"].push(runCastSequence(YulonNL, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB40"]}, {}));
+        covenants["NL40"].push(runCastSequence(RevivalNL, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB40"]}, {}));
+        const nl40hpm = Math.round((covenants["NL40"][0].hpm*5  + covenants["NL40"][1].hpm*9  + covenants["NL40"][2].hpm*2  + covenants["NL40"][3].hpm*3)/19*100)/100
+        const nl40hps = Math.round((covenants["NL40"][0].hps*5 + covenants["NL40"][1].hps*9  + covenants["NL40"][2].hps*2  + covenants["NL40"][3].hps*3)/19*100)/100
+        const nl40dps = Math.round((covenants["NL40"][0].dps*5 + covenants["NL40"][1].dps*9  + covenants["NL40"][2].dps*2  + covenants["NL40"][3].dps*3)/19*100)/100
+
+        covenants["NL60"].push(runCastSequence(NLsequence, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB60"]}, {}, 5));
+        covenants["NL60"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB60"]}, {}, 9));
+        covenants["NL60"].push(runCastSequence(YulonNL, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB60"]}, {}));
+        covenants["NL60"].push(runCastSequence(RevivalNL, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB60"]}, {}));
+        const NL60hpm = Math.round((covenants["NL60"][0].hpm*5  + covenants["NL60"][1].hpm*9  + covenants["NL60"][2].hpm*2  + covenants["NL60"][3].hpm*3)/19*100)/100
+        const NL60hps = Math.round((covenants["NL60"][0].hps*5 + covenants["NL60"][1].hps*9  + covenants["NL60"][2].hps*2  + covenants["NL60"][3].hps*3)/19*100)/100
+        const NL60dps = Math.round((covenants["NL60"][0].dps*5 + covenants["NL60"][1].dps*9  + covenants["NL60"][2].dps*2  + covenants["NL60"][3].dps*3)/19*100)/100
+
+        covenants["NL90"].push(runCastSequence(NLsequence, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB90"]}, {}, 5));
+        covenants["NL90"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB90"]}, {}, 9));
+        covenants["NL90"].push(runCastSequence(YulonNL, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB90"]}, {}));
+        covenants["NL90"].push(runCastSequence(RevivalNL, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB90"]}, {}));
+        const NL90hpm = Math.round((covenants["NL90"][0].hpm*5  + covenants["NL90"][1].hpm*9  + covenants["NL90"][2].hpm*2  + covenants["NL90"][3].hpm*3)/19*100)/100
+        const NL90hps = Math.round((covenants["NL90"][0].hps*5 + covenants["NL90"][1].hps*9  + covenants["NL90"][2].hps*2  + covenants["NL90"][3].hps*3)/19*100)/100
+        const NL90dps = Math.round((covenants["NL90"][0].dps*5 + covenants["NL90"][1].dps*9  + covenants["NL90"][2].dps*2  + covenants["NL90"][3].dps*3)/19*100)/100
+        
+        // Stack % hit - double legendary
+        covenants["2NL40"].push(runCastSequence(NLsequence, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB40", "BB"]}, {}, 5));
+        covenants["2NL40"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB40", "BB"]}, {}, 9));
+        covenants["2NL40"].push(runCastSequence(YulonNL, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB40", "BB"]}, {}));
+        covenants["2NL40"].push(runCastSequence(RevivalNL, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB40", "BB"]}, {}));
+        const nl240hpm = Math.round((covenants["2NL40"][0].hpm*5  + covenants["2NL40"][1].hpm*9  + covenants["2NL40"][2].hpm*2  + covenants["2NL40"][3].hpm*3)/19*100)/100
+        const nl240hps = Math.round((covenants["2NL40"][0].hps*5 + covenants["2NL40"][1].hps*9  + covenants["2NL40"][2].hps*2  + covenants["2NL40"][3].hps*3)/19*100)/100
+        const nl240dps = Math.round((covenants["2NL40"][0].dps*5 + covenants["2NL40"][1].dps*9  + covenants["2NL40"][2].dps*2  + covenants["2NL40"][3].dps*3)/19*100)/100
+
+        covenants["2NL60"].push(runCastSequence(NLsequence, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB60", "BB"]}, {}, 5));
+        covenants["2NL60"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB60", "BB"]}, {}, 9));
+        covenants["2NL60"].push(runCastSequence(YulonNL, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB60", "BB"]}, {}));
+        covenants["2NL60"].push(runCastSequence(RevivalNL, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB60", "BB"]}, {}));
+        const NL260hpm = Math.round((covenants["2NL60"][0].hpm*5  + covenants["2NL60"][1].hpm*9  + covenants["2NL60"][2].hpm*2  + covenants["2NL60"][3].hpm*3)/19*100)/100
+        const NL260hps = Math.round((covenants["2NL60"][0].hps*5 + covenants["2NL60"][1].hps*9  + covenants["2NL60"][2].hps*2  + covenants["2NL60"][3].hps*3)/19*100)/100
+        const NL260dps = Math.round((covenants["2NL60"][0].dps*5 + covenants["2NL60"][1].dps*9  + covenants["2NL60"][2].dps*2  + covenants["2NL60"][3].dps*3)/19*100)/100
+
+        covenants["2NL90"].push(runCastSequence(NLsequence, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB90", "BB"]}, {}, 5));
+        covenants["2NL90"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB90", "BB"]}, {}, 9));
+        covenants["2NL90"].push(runCastSequence(YulonNL, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB90", "BB"]}, {}));
+        covenants["2NL90"].push(runCastSequence(RevivalNL, activeStats3, {"DefaultLoadout": true, "covenant": "Necrolord", "legendaries": ["Yulon's Whisper"], "misc": ["2T28", "4T28", "BDB90", "BB"]}, {}));
+        const NL290hpm = Math.round((covenants["2NL90"][0].hpm*5  + covenants["2NL90"][1].hpm*9  + covenants["2NL90"][2].hpm*2  + covenants["2NL90"][3].hpm*3)/19*100)/100
+        const NL290hps = Math.round((covenants["2NL90"][0].hps*5 + covenants["2NL90"][1].hps*9  + covenants["2NL90"][2].hps*2  + covenants["2NL90"][3].hps*3)/19*100)/100
+        const NL290dps = Math.round((covenants["2NL90"][0].dps*5 + covenants["2NL90"][1].dps*9  + covenants["2NL90"][2].dps*2  + covenants["2NL90"][3].dps*3)/19*100)/100
+        
+        // NL output
+        // Note burst = 1m CD guarenteed
+        console.log("4pc2leg Yulon's Whisper NL Crit/Vers: " + Math.round((covenants["NL"][0].totalHealing + covenants["NL"][1].totalHealing)) + " (HPM: " + Math.round((covenants["NL"][0].hpm + covenants["NL"][1].hpm)/2*100)/100 + " | HPS: " + Math.round((covenants["NL"][0].hps + covenants["NL"][1].hps)/2*100)/100 + "). 4PC Window: " + (covenants["NL"][0].total4pcWindow+Math.round(covenants["NL"][1].total4pcWindow))  + " (" + Math.round(((covenants["NL"][0].total4pcWindow+Math.round(covenants["NL"][1].total4pcWindow)))/((covenants["NL"][0].totalHealing + Math.round(covenants["NL"][1].totalHealing)))*1000)/10 + ")%. Damage: " + (covenants["NL"][0].totalDamage*1.1+Math.round(covenants["NL"][1].totalDamage)) + " (DPS: " + Math.round((covenants["NL"][0].dps + covenants["NL"][1].dps)/2*100)/100 + ")\n" +
+        "4pc2leg NL Crit/Haste: " + Math.round((covenants["NL"][2].totalHealing + covenants["NL"][3].totalHealing)) + " (HPM: " + Math.round((covenants["NL"][2].hpm + covenants["NL"][3].hpm)/2*100)/100 + " | HPS: " + Math.round((covenants["NL"][2].hps + covenants["NL"][3].hps)/2*100)/100 + "). 4PC Window: " + (covenants["NL"][2].total4pcWindow+Math.round(covenants["NL"][3].total4pcWindow))  + " (" + Math.round(((covenants["NL"][2].total4pcWindow+Math.round(covenants["NL"][3].total4pcWindow))/2)/((covenants["NL"][2].totalHealing + Math.round(covenants["NL"][3].totalHealing))/2)*1000)/10 + ")%. Damage: " + (covenants["NL"][2].totalDamage*1.1+Math.round(covenants["NL"][3].totalDamage)) + " (DPS: " + Math.round((covenants["NL"][2].dps + covenants["NL"][3].dps)/2*100)/100 + ")\n\nBalanced seems best stats: \n" +
+        "4pc2leg NL Balanced: " + Math.round((covenants["NL"][4].totalHealing + covenants["NL"][5].totalHealing)) + " (HPM: " + Math.round((covenants["NL"][4].hpm + covenants["NL"][5].hpm)/2*100)/100 + " | HPS: " + Math.round((covenants["NL"][4].hps + covenants["NL"][5].hps)/2*100)/100 + "). 4PC Window: " + (covenants["NL"][4].total4pcWindow+Math.round(covenants["NL"][5].total4pcWindow))  + " (" + Math.round(((covenants["NL"][4].total4pcWindow+Math.round(covenants["NL"][5].total4pcWindow))/2)/((covenants["NL"][4].totalHealing + Math.round(covenants["NL"][5].totalHealing))/2)*1000)/10 + ")%. Damage: " + (covenants["NL"][4].totalDamage*1.1+Math.round(covenants["NL"][5].totalDamage)) + " (DPS: " + Math.round((covenants["NL"][4].dps + covenants["NL"][5].dps)/2*100)/100 + ")\n" +
+        "NL Yulon: " + covenants["NL"][6].totalHealing + " (HPM: " + covenants["NL"][6].hpm + "). 4PC Window: " + covenants["NL"][6].total4pcWindow + " (" + Math.round(covenants["NL"][6].total4pcWindow/covenants["NL"][6].totalHealing*1000)/10 + ")%. Damage: " + covenants["NL"][6].totalDamage + " (DPS: " + covenants["NL"][6].dps + ")\n" +
+        "NL Revival: " + covenants["NL"][7].totalHealing + "\n" +
+        "NL - HPS: " + nlhps + " HPM: " + nlhpm + " DPS: " + nldps + " (2 yulon, 3 revival, balanced stats)" + "\n\n" + 
+        "NL40 burst vs Venth 4pc: (" + Math.round((covenants["NL40"][0].total4pcWindow/5)/(covenants["Venth"][0].total4pcWindow/14)*1000)/100 + "%) " + covenants["NL40"][0].total4pcWindow/5 + " vs " + covenants["Venth"][0].total4pcWindow/14 + "\n" +
+        "NL60 burst vs Venth 4pc: (" + Math.round((covenants["NL60"][0].total4pcWindow/5)/(covenants["Venth"][0].total4pcWindow/14)*1000)/100 + "%) " + covenants["NL60"][0].total4pcWindow/5 + " vs " + covenants["Venth"][0].total4pcWindow/14 + "\n" +
+        "NL75 burst vs Venth 4pc: (" + Math.round((covenants["NL"][4].total4pcWindow/5)/(covenants["Venth"][0].total4pcWindow/14)*1000)/100 + "%) " + covenants["NL"][4].total4pcWindow/5 + " vs " + covenants["Venth"][0].total4pcWindow/14 + "\n" +
+        "NL90 burst vs Venth 4pc: (" + Math.round((covenants["NL90"][0].total4pcWindow/5)/(covenants["Venth"][0].total4pcWindow/14)*1000)/100 + "%) " + covenants["NL90"][0].total4pcWindow/5 + " vs " + covenants["Venth"][0].total4pcWindow/14 + "\n\n" +
+        "NL40 burst vs Night Fae 4pc: (" + Math.round((covenants["NL40"][0].total4pcWindow/5)/(covenants["Night Fae"][0].total4pcWindow/14)*1000)/100 + "%) " + covenants["NL40"][0].total4pcWindow/5 + " vs " + covenants["Night Fae"][0].total4pcWindow/14 + "\n" +
+        "NL60 burst vs Night Fae 4pc: (" + Math.round((covenants["NL60"][0].total4pcWindow/5)/(covenants["Night Fae"][0].total4pcWindow/14)*1000)/100 + "%) " + covenants["NL60"][0].total4pcWindow/5 + " vs " + covenants["Night Fae"][0].total4pcWindow/14 + "\n" +
+        "NL75 burst vs Night Fae 4pc: (" + Math.round((covenants["NL"][4].total4pcWindow/5)/(covenants["Night Fae"][0].total4pcWindow/14)*1000)/100 + "%) " + covenants["NL"][4].total4pcWindow/5 + " vs " + covenants["Night Fae"][0].total4pcWindow/14 + "\n" +
+        "NL90 burst vs Night Fae 4pc: (" + Math.round((covenants["NL90"][0].total4pcWindow/5)/(covenants["Night Fae"][0].total4pcWindow/14)*1000)/100 + "%) " + covenants["NL90"][0].total4pcWindow/5 + " vs " + covenants["Night Fae"][0].total4pcWindow/14 + "\n\n" +
+        "Stack scaling: \n Single legendary: NL40 - HPS: " + nl40hps + " HPM: " + nl40hpm + " DPS: " + nl40dps + "\n" +
+        "NL60 - HPS: " + NL60hps + " HPM: " + NL60hpm + " DPS: " + NL60dps + "\n" +
+        "NL90 - HPS: " + NL90hps + " HPM: " + NL90hpm + " DPS: " + NL90dps + "\n" +
+        "Double legendary: NL40 - HPS: " + nl240hps + " HPM: " + nl240hpm + " DPS: " + nl240dps + "\n" +
+        "NL60 - HPS: " + NL260hps + " HPM: " + NL260hpm + " DPS: " + NL260dps + "\n" +
+        "NL90 - HPS: " + NL290hps + " HPM: " + NL290hpm + " DPS: " + NL290dps);
 /*
         // 0 tier - sequence won't be optimized but gives rough idea
         console.log("==pretier==");
