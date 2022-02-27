@@ -210,7 +210,7 @@ export const trinket_data = [
     effects: [
       {
         /* ------------------------------ Crit buff portion of the trinket. ----------------------------- */
-        coefficient: 2.269577,
+        coefficient: 2.269577 * 0.85, // This represents the upcoming 15% nerf. When the change is live the coefficient itself can be updated instead. 
         table: -7,
         duration: 16,
         multiplier: 1.62, // This assumes your average boss health is just under 50% which feels like a fair average.
