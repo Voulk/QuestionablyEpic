@@ -35,8 +35,8 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
     const renewingMist = {
       // might want to bump this up since people should be averaging more than 2.9
       avgStacks: 3.5, // Can be closely modelled as VivifyHits / VivifyCasts - 1
-      oneSpread: player.getSingleCast(ID_RENEWING_MIST, contentType) / 2,
-    }; // ReMs spread at their current duration, which means we only get half of a ReM per spread on average.
+      oneSpread: player.getSingleCast(ID_RENEWING_MIST, contentType) / 1.5,
+    }; // ReMs spread at their current duration, assume targets are picked based on ReM duration slightly.
 
     const HPSRem = (vivify.percentOnRemTargets * renewingMist.oneSpread * vivify.cpm) / 60;
     const vivifyCleaveRatio = (0.738 * renewingMist.avgStacks) / (0.738 * renewingMist.avgStacks + 1);

@@ -63,6 +63,18 @@ const getHealingMult = (buffs, t, spellName, conduits) => {
     }
     });
 
+    // Apply Jade Bond conduit
+    if (spellName === "Gusts of Mists (Chiji)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Soothing Breath (CTA Yulon)" || spellName === "Soothing Breath (Yulon)")
+    {
+        mult *= 1.125;
+    }
+
+    // Apply Resplendant Mist conduit
+    if (spellName === "Gust of Mists" || spellName === "Gust of Mists (Revival)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)" || spellName === "Gust of Mists (Essence Font)" || spellName === "Gust of Mists (Bonedust Brew)")
+    {
+        mult *= 1 + 0.3 * 1;
+    }
+
     // FLS buffs 5 targets. We'll take the average healing increase. This is likely a slight underestimation since your RJW and FLS targets will line up closely. On the other
     // hand FLS likes to hit pets sometimes so it should be fair. 
     if (checkBuffActive(buffs, "Faeline Harmony Inc")) mult *= (0.08 * 5 / 20) + 1; 
@@ -196,22 +208,31 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
         else if (settings['covenant'] === "Venthyr") {
             settings['soulbind'] = "Theotar"
         }
-        
     }
 
     // === Legendaries ===
     // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
 
-    // -- Clarity of Mind --
-    // Clarity of Mind adds 6 seconds to the Atonement granted by Power Word: Shield during Rapture. 
-    // It's a straightfoward addition.
-    if (settings['Clarity of Mind']) spells['Rapture'][0].atonement = 21;
+    // -- Invoker's Delight --
+    // 33% haste for 20s when summoning celestial
+    if (settings['legendaries'].includes("Invoker's Delight")) 
+    {
+        spells['Invoke Chiji'].push({
+            type: "buff",
+            buffType: "statsMult",
+            stat: 'haste',
+            value: 1.33,
+            buffDuration: 20,
+        });
 
-    // -- Penitent One --
-    // Power Word: Radiance has a chance to make your next Penance free, and fire 3 extra bolts.
-    // This is a close estimate, and could be made more accurate by tracking the buff and adding ticks instead of power.
-    if (settings['Penitent One']) spells['Penance'][0].coeff = spells['PenanceTick'][0].coeff * (0.84 * 2); 
-    //
+        spells['Invoke Yulon'].push({
+            type: "buff",
+            buffType: "statsMult",
+            stat: 'haste',
+            value: 1.33,
+            buffDuration: 20,
+        });
+    }
 
     // === Soulbinds ===
     // Don't include Conduits here just any relevant soulbind nodes themselves.
@@ -230,6 +251,19 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
         state.activeBuffs.push({name: "Dream Delver", expiration: 999, buffType: "special", value: 1.03});
     }
 
+    if (settings['soulbind'] === "Pelagos") {
+        spells['Weapons of Order'].push({
+            name: "Combat Meditation",
+            type: "buff",
+            buffType: 'stats',
+            stat: 'mastery',
+            value: 315,
+            buffDuration: 32,
+        });
+
+        state.activeBuffs.push({name: "Newfound Resolve", expiration: 999, buffType: "statsMult", value: 1 + convertPPMToUptime(1/1.5, 15), stat: 'intellect'});
+    }
+    
     // 385 = 35 * 11% crit (this goes into diminishing returns so probably underestimating)
     if (settings['soulbind'] === "Kleia") state.activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 385, stat: 'crit'})
 
@@ -301,18 +335,25 @@ export const runDamage = (state, spell, spellName) => {
 export const runHeal = (state, spell, spellName, specialMult = 1) => {
 
     // Pre-heal processing
+    const currentStats = state.currentStats;
     let flatHeal = 0;
     let T284pcOverhealMultiplier = 1;
     let healingMult = 1;
+    let bonedustBrewGusts = 0;
 
     // == 4T28 ==
     // Some spells do not benefit from the bonus. It's unknown whether this is intentional.
-    if (checkBuffActive(state.activeBuffs, "Primordial Mending") && !["Ancient Teachings of the Monastery"].includes(spellName)) {
+    if (checkBuffActive(state.activeBuffs, "Primordial Mending") && !["Ancient Teachings of the Monastery"].includes(spellName) && !["Yulon's Whisper (Initial)"].includes(spellName)) {
         flatHeal = 450;
         T284pcOverhealMultiplier = 1.05;
     }
 
-    const currentStats = state.currentStats;
+    // Add Bonedust Brew additional mastery healing
+    if (spellName === "Gust of Mists (Bonedust Brew)")
+    {
+        bonedustBrewGusts = (0.42 * 1.04) * getStatMult(currentStats, ['crit', 'vers']) * currentStats.intellect;
+    }
+    
     healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.conduits); 
     // Healing multiplier of 2pc affects all healing (including 4pc)
     if (state.settings.misc.includes("2T28") && (spellName === "Essence Font (HoT)" || spellName === "Essence Font (HoT - Faeline Stomp)")) {
@@ -320,7 +361,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     }
 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.softCap || 1) * spell.targets : spell.targets || 1;
-    const healingVal = (getSpellRaw(spell, currentStats) + flatHeal * getStatMult(currentStats, ['crit', 'vers'])) * (1 - spell.overheal * T284pcOverhealMultiplier) * healingMult * targetMult * specialMult;
+    const healingVal = (getSpellRaw(spell, currentStats) + bonedustBrewGusts + flatHeal * getStatMult(currentStats, ['crit', 'vers'])) * (1 - spell.overheal * T284pcOverhealMultiplier) * healingMult * targetMult * specialMult;
     const healingValEmeniBonus = (getSpellRaw(spell, currentStats) * getStatMult(currentStats, ['crit', 'vers'])) * (1 - spell.overheal * T284pcOverhealMultiplier) * healingMult * targetMult * specialMult;
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
     if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
@@ -330,13 +371,23 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     if (spell.mastery) {
         const masteryProc = MONKSPELLS['Gust of Mists'][0];
         runHeal(state, masteryProc, "Gust of Mists")
+    }
 
+    // EF Mastery duplication
+    const efHots = ["Essence Font (HoT)", "Essence Font (HoT - Faeline Stomp)"]
+    const activeEFBuffs = state.activeBuffs.filter(function (buff) {return efHots.includes(buff.name)})
+    if (activeEFBuffs.length > 0 && (spellName === "Gust of Mists" || spellName === "Gust of Mists (Revival)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)"))
+    {
+        const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
+        let multi = activeEFBuffs.length / 20;
+        if (multi > 1) multi = 1;
+        bonusMasteryProc.coeff *= multi;
+        runHeal(state, bonusMasteryProc, "Gust of Mists (Essence Font)");
     }
 
     if (checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
-        if (spellName == "Gust of Mists") {
+        if (spellName === "Gust of Mists" || spellName === "Gust of Mists (Revival)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)") {
             const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
-            bonusMasteryProc.coeff += (0.42 * 1.04);
             runHeal(state, bonusMasteryProc, "Gust of Mists (Bonedust Brew)");
         }
 
@@ -372,6 +423,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     }
     else if (state.settings.misc.includes("BB")) // Simulate second legendary
     {
+        const emenigroupbonus = (0.8 * convertPPMToUptime(1.5, 10));
         // Hits 75% of predicted hits
         const emenibonus = healingValEmeniBonus * (0.13 * convertPPMToUptime(1.5, 10));
         let bonedustHealing = (healingVal + emenibonus) * 0.5 * 0.4 * 1.8 * 0.75 * 0.256
@@ -395,6 +447,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 
         state.healingDone['Bonedust Brew (Bountiful Brew)'] = (state.healingDone['Bonedust Brew (Bountiful Brew)'] || 0) + bonedustHealing;
         state.healingDone['Emeni (Bountiful Brew)'] = (state.healingDone['Emeni (Bountiful Brew)'] || 0) + emenibonus;
+        state.healingDone['Emeni Group bonus'] = (state.healingDone['Emeni (Bountiful Brew)'] || 0) + emenibonus;
 
         if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
             state.T284pcwindow['Bonedust Brew (Bountiful Brew)'] = (state.T284pcwindow['Bonedust Brew (Bountiful Brew)'] || 0) + bonedustHealing;
@@ -570,7 +623,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits, runcou
     }
     //printHealing(state.healingDone, sumValues, sequenceLength, state.manaSpent * 50000 / 100);
     //printDamage(state.damageDone, sumValues, sequenceLength, state.manaSpent * 50000 / 100)
-
 
     const totalHealing = sumValues(state.healingDone);
     const totalDamage = sumValues(state.damageDone);

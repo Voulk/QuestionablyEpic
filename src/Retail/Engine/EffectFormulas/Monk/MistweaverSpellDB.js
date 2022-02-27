@@ -170,7 +170,7 @@ export const MONKSPELLS = {
             
             
     }],
-    "Thunder Focus Tea": [{
+    "Thunder Focus Tea": [{ // TFT
         type: "buff",
         buffType: "special",
         castTime: 0,
@@ -187,6 +187,25 @@ export const MONKSPELLS = {
             {
                 const newBuff = {name: "Primordial Mending", buffType: "special", expiration: state.t + 10}
                 state.activeBuffs.push(newBuff)
+            }
+        }
+    },
+    {
+        type: "special",
+        condition: "Yulon's Whisper",
+        runFunc: function (state) {
+            if (state.settings['legendaries'].includes("Yulon's Whisper"))
+            {
+                const spell = {name: "Yulon's Whisper", 
+                type: "heal", 
+                coeff: 0.6, 
+                overheal: 0.45, 
+                secondaries: ['crit', 'vers'], 
+                targets: 6}
+
+                runHeal(state, spell, "Yulon's Whisper (Initial)")
+                runHeal(state, spell, "Yulon's Whisper")
+                runHeal(state, spell, "Yulon's Whisper")
             }
         }
     }],
@@ -299,6 +318,8 @@ export const MONKSPELLS = {
 
             const atotmBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Ancient Teachings of the Monastery"}).length > 0;
             const chijiBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Chiji Active"}).length > 0;
+            const CTAchijiBuff = state.activeBuffs.filter(function (buff) {return buff.name === "CTA Chiji Active"}).length > 0;
+
             // For each bonus kick, deal damage and heal via Ancient Teachings if applicable.
             for (var i = 0; i < teachingsStacks; i++) {
                 // Deal damage
@@ -317,7 +338,17 @@ export const MONKSPELLS = {
                     const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
                     runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
                     runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
+                }
 
+                if (CTAchijiBuff)
+                {
+                    const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
+                    runHeal(state, bonusMasteryProc, "Gust of Mists (CTA Chiji)");
+                    runHeal(state, bonusMasteryProc, "Gust of Mists (CTA Chiji)");
+                }
+
+                if (chijiBuff || CTAchijiBuff)
+                {
                     // Add stack of Chiji reduced mana cost
                     const activeBuffs = state.activeBuffs;
                     const chijiStacks = activeBuffs.filter(function (buff) {return buff.name === "Chiji Stacks"}).length;
@@ -408,26 +439,39 @@ export const MONKSPELLS = {
         condition: "Chiji Active",
         runFunc: function (state) {
             const chijiBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Chiji Active"}).length > 0;
-            if (chijiBuff)
+            const CTAchijiBuff = state.activeBuffs.filter(function (buff) {return buff.name === "CTA Chiji Active"}).length > 0;
+            if (chijiBuff || CTAchijiBuff)
+            {
+                // Gusts healing from Chi-ji
+                if (chijiBuff)
                 {
                     const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
                     runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
                     runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
-
-                    // Add stack of Chiji reduced mana cost
-                    const activeBuffs = state.activeBuffs;
-                    const chijiStacks = activeBuffs.filter(function (buff) {return buff.name === "Chiji Stacks"}).length;
-                    if (chijiStacks === 0) {
-                        // Add buff
-                        activeBuffs.push({name: "Chiji Stacks", buffType: "special", stacks: 1, expiration: 20})
-                    }
-                    else {
-                        // Add stack of buff.
-                        const buff = activeBuffs.filter(buff => buff.name === "Chiji Stacks")[0]
-                        buff.stacks = Math.min(buff.stacks + 1, 3);
-                        buff.expiration = 20;
-                    }
                 }
+
+                // Gusts healing from CTA Chi-ji
+                if (CTAchijiBuff) // Does CTA + Chiji active give double stacks?
+                {
+                    const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
+                    runHeal(state, bonusMasteryProc, "Gust of Mists (CTA Chiji)");
+                    runHeal(state, bonusMasteryProc, "Gust of Mists (CTA Chiji)");
+                }
+
+                // Add stack of Chiji reduced mana cost
+                const activeBuffs = state.activeBuffs;
+                const chijiStacks = activeBuffs.filter(function (buff) {return buff.name === "Chiji Stacks"}).length;
+                if (chijiStacks === 0) {
+                    // Add buff
+                    activeBuffs.push({name: "Chiji Stacks", buffType: "special", stacks: 1, expiration: 20})
+                }
+                else {
+                    // Add stack of buff.
+                    const buff = activeBuffs.filter(buff => buff.name === "Chiji Stacks")[0]
+                    buff.stacks = Math.min(buff.stacks + 1, 3);
+                    buff.expiration = 20;
+                }
+            }
         }
     },
     ],
@@ -558,9 +602,10 @@ export const MONKSPELLS = {
         cooldown: 180,
         function: function (state) {
             // Yu'lon Soothing Breath
-            if (state.settings.misc.includes("CTA")) {
+            if (state.settings.misc.includes("CTA") && !state.settings.misc.includes("Chiji")) 
+            {
                 const SBHot = { type: "heal", coeff: 0.35, overheal: 0.3, secondaries: ['crit', 'vers'], duration:  4.5, hastedDuration: true}
-                const newBuff = {name: "Soothing Breath (Yulon CTA)", buffType: "heal", attSpell: SBHot, tickRate: 1.5, next: state.t + (1.5 / getHaste(state.currentStats)), hastedDuration: true, targets: 3}
+                const newBuff = {name: "Soothing Breath (CTA Yulon)", buffType: "heal", attSpell: SBHot, tickRate: 1.5, next: state.t + (1.5 / getHaste(state.currentStats)), hastedDuration: true, targets: 3}
                 newBuff['expiration'] = state.t + SBHot.duration
                 state.activeBuffs.push(newBuff)
             }
@@ -568,6 +613,21 @@ export const MONKSPELLS = {
             // TODO: Make ongoing heal expire when Yulon ends.
 
             // TODO: Implement weaker CTA Enveloping breath
+        }
+    ,
+        type: "special",
+        runFunc: function (state) {
+            if (state.settings.misc.includes("CTA"))
+            {
+                state.activeBuffs.push({name: "CTA Celestial Active", buffType: "special", expiration: state.t + 12})
+
+                if (state.settings.misc.includes("Chiji"))
+                {
+                state.activeBuffs.push({name: "CTA Chiji Active", buffType: "special", expiration: state.t + 12})
+                }
+            }
+            
+            
         }
     }]
 }
