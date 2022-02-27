@@ -498,10 +498,10 @@ export const bossAbilities = {
       // https://ptr.wowhead.com/spell=360202/spike-of-creation
       name: {
         en: "Spike of Creation",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
+        cn: "造物尖刺",
+        fr: "Pic de création",
+        ru: "Шип творения",
+        de: "Spitze der Schöpfung",
       },
       guid: 360202,
       cooldownPlannerActive: true,
@@ -517,17 +517,17 @@ export const bossAbilities = {
         de: "",
       },
       guid: 366943,
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_progenitor_defensewall_boss.jpg").default,
     },
     {
       // https://ptr.wowhead.com/spell=360409/exposed-core
       name: {
         en: "Exposed Core",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
+        cn: "暴露的核心",
+        fr: "Noyau exposé",
+        ru: "Обнаженный сердечник",
+        de: "Freigelegter Kern",
       },
       guid: 360409,
       cooldownPlannerActive: true,
@@ -543,7 +543,7 @@ export const bossAbilities = {
         de: "",
       },
       guid: 366393,
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_enchant_essencecosmicgreater.jpg").default,
     },
     {
@@ -556,7 +556,7 @@ export const bossAbilities = {
         de: "",
       },
       guid: 364447,
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_holy_harmundeadaura.jpg").default,
     },
     {
@@ -569,7 +569,7 @@ export const bossAbilities = {
         de: "",
       },
       guid: 364845,
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_progenitor_defensewall_boss.jpg").default,
     },
     {
@@ -582,7 +582,7 @@ export const bossAbilities = {
         de: "",
       },
       guid: 360999,
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/sha_ability_mage_firestarter_nightmare.jpg").default,
     },
     {
@@ -595,7 +595,7 @@ export const bossAbilities = {
         de: "",
       },
       guid: 360257,
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/sha_ability_mage_firestarter_nightmare.jpg").default,
     },
     {
@@ -608,7 +608,7 @@ export const bossAbilities = {
         de: "",
       },
       guid: 367571,
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_holy_searinglight.jpg").default,
     },
     {
@@ -621,7 +621,7 @@ export const bossAbilities = {
         de: "",
       },
       guid: 360162,
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_fire_ragnaros_splittingblow.jpg").default,
     },
     {
@@ -634,7 +634,7 @@ export const bossAbilities = {
         de: "",
       },
       guid: 360458,
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_gizmo_khoriumpowercore.jpg").default,
     },
     {
@@ -647,8 +647,21 @@ export const bossAbilities = {
         de: "",
       },
       guid: 366692,
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/sha_ability_mage_firestarter_nightmare.jpg").default,
+    },
+    {
+      // https://www.wowhead.com/spell=364963/core-overload
+      name: {
+        en: "Core Overload",
+        cn: "核心过载",
+        fr: "Surcharge de noyau",
+        ru: "Перегрузка источника питания",
+        de: "Kernüberladung",
+      },
+      guid: 364963,
+      cooldownPlannerActive: false,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_fire_selfdestruct.jpg").default,
     },
   ],
   /* ------------------------------- Skolex, the Insatiable Ravener ------------------------------- */
