@@ -33,6 +33,22 @@ export const effectData = [
     },
     {
       /* ---------------------------------------------------------------------------------------------- */
+      /*                                           Sepulcher's Savior                                   */
+      /* ---------------------------------------------------------------------------------------------- */
+      // This is primarily a tank offhand that can also be used by Shaman / Paladin healers. 
+      // It trades secondary stats for heal and damage procs on a 1.5 minute cooldown.
+      // The damage effect is NYI but can be quite easily.
+      name: "Sepulcher's Savior",
+      effects: [
+        {
+            coefficient: 231.3687,
+            cooldown: 180,
+            table: -8 // -9
+        },
+      ],
+    },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
       /*                                          Genesis Lathe                                         */
       /* ---------------------------------------------------------------------------------------------- */
       // The effects are similar enough in strength that a different distribution of procs doesn't particularly matter - so long as they are being used.

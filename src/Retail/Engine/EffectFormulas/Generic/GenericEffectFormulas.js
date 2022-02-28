@@ -23,8 +23,9 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
 
   } 
-  else if (effectName === "") {
-
+  else if (effectName === "Sepulcher's Savior") {
+    const effect = activeEffect.effects[0];
+    bonus_stats.hps = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("versatility") / effect.cooldown;
 
   } 
   else if (effectName === "Genesis Lathe") {
