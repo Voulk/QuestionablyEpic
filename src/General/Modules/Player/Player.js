@@ -620,11 +620,11 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Venthyr Maraads", 3));
 
       this.activeStats = {
-        intellect: 1800,
+        intellect: 2000,
         haste: 800,
         crit: 240,
-        mastery: 550,
-        versatility: 340,
+        mastery: 650,
+        versatility: 380,
         stamina: 1900,
       };
     } else if (spec === SPEC.RESTOSHAMAN) {
@@ -651,9 +651,9 @@ class Player {
       this.activeStats = {
         intellect: 2150,
         haste: 940,
-        crit: 710,
-        mastery: 220,
-        versatility: 415,
+        crit: 650, 
+        mastery: 220, 
+        versatility: 415, 
         stamina: 1900,
       };
       //this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable
