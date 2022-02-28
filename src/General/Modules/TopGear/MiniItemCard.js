@@ -90,7 +90,7 @@ export default function ItemCard(props) {
   }
 
   const tertiary =
-    "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}> {props.item.tertiary} </div> : null;
+    "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}>{t(props.item.tertiary)}</div> : null;
 
   const socket = props.item.socket ? (
     <div style={{ display: "inline", verticalAlign: "middle", marginTop: tertiary || isVault ? 0 : 2, marginRight: 4 }}>
@@ -145,9 +145,10 @@ export default function ItemCard(props) {
                   <Grid item xs={12} display="inline">
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px" }}>
                       <div style={{ color: itemQuality, lineHeight: tertiary ? "normal" : 1.57 }}>{itemName}</div>
-                      <div style={{ display: "inline" }}>
-                        {tertiary !== "" ? tertiary : ""}
-                        {isVault ? <div style={{ fontSize: 10, lineHeight: 1 }}> {" / " + t("itemTags.greatvault")}</div> : ""}
+                      <div style={{ display: "flex" }}>
+                        {tertiary}
+                        {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                        {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
                       </div>
                     </Typography>
                   </Grid>

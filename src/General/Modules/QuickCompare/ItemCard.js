@@ -103,7 +103,7 @@ export default function ItemCard(props) {
   ) : null;
 
   const tertiary =
-    "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}> {props.item.tertiary} </div> : null;
+    "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}>{t(props.item.tertiary)}</div> : null;
 
   // If item.offHandID > 0 then return this card which handles the double names + stats
   if (item.offhandID > 0) {
@@ -246,10 +246,11 @@ export default function ItemCard(props) {
                 <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={10} display="inline">
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4 }}>
-                      <div style={{ color: itemQuality, lineHeight: tertiary || isVault ? "normal" : 1.57 }}>{itemName}</div>
-                      <div style={{ display: "inline" }}>
-                        {tertiary !== "" ? tertiary : ""}
-                        {isVault ? <div style={{ fontSize: 10 }}> {" / " + t("itemTags.greatvault")}</div> : ""}
+                      <div style={{ color: itemQuality, lineHeight: tertiary || isVault ? "normal" : 1.57, fontSize: itemName.length >= 35 ? 12 : 14 }}>{itemName}</div>
+                      <div style={{ display: "flex" }}>
+                        {tertiary}
+                        {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                        {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
                       </div>
                     </Typography>
                   </Grid>
