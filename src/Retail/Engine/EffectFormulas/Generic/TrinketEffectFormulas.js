@@ -352,15 +352,12 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
   ) {
     let effect = activeTrinket.effects[0];
     const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
-
     if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
       const boonSeq = buildRamp('Boon', 10, ["Flame of Battle"], setStats.haste, castModel.modelName, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, ["Flame of Battle"], setStats.haste, castModel.modelName, ['Rapture']);
       const flameRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Flame of Battle": trinketValue}, {});
 
-      
       bonus_stats.hps = (flameRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
-      console.log(itemLevel + " HPS: " + bonus_stats.hps)
     }
     else {
       bonus_stats.versatility = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
