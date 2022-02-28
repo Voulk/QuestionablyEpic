@@ -287,7 +287,7 @@ export default function HealerInfoCards(props) {
                           }}
                         >
                           {key.soulbindConduits.map((conduit, i) => (
-                            <a data-wowhead={"spell=" + conduit.guid + "&domain=" + currentLanguage} key={i}>
+                            <a data-wowhead={"spell=" + conduit.guid + "&domain=" + currentLanguage + "&ilvl=" + conduit.total} key={i}>
                               <div className="container-healerCards">
                                 <img
                                   style={{

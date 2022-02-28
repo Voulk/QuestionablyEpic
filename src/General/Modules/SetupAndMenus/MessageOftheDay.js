@@ -8,8 +8,7 @@ export default function MessageOfTheDay(props) {
     "Retail": [
       "Patch 9.2 now live! More information in the changelog.",
       "Blizzard continue to make many hotfixes a day.",
-      "Expect results to shift in response."
-
+      "Bell and Ruby nerfs are in. First Class nerf is not."
   ],
   "BurningCrusade": ["Enjoy MH / BT!"]
   }

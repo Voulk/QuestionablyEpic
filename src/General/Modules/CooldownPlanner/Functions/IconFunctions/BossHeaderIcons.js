@@ -1,134 +1,119 @@
 import React from "react";
-// Castle Nathria
-// import ArtificerHeader from "Images/Bosses/CastleNathria/ArtificerXymox/ArtificerXymoxEJ.png";
-// import CouncilHeader from "Images/Bosses/CastleNathria/TheCouncilOfBlood/TheCouncilOfBloodEJ.png";
-// import HungeringDestroyerHeader from "Images/Bosses/CastleNathria/HungeringDestroyer/HungeringDestroyerEJ.png";
-// import HuntsmanAltimorHeader from "Images/Bosses/CastleNathria/HuntsmanAltimor/HuntsmanAltimorEJ.png";
-// import SunKingsSalvationHeader from "Images/Bosses/CastleNathria/SunKingsSalvation/SunKingsSalvationEJ.png";
-// import LadyInervaDarkveinHeader from "Images/Bosses/CastleNathria/LadyInervaDarkvein/LadyInervaDarkveinEJ.png";
-// import ShriekwingHeader from "Images/Bosses/CastleNathria/Shriekwing/ShriekwingEJ.png";
-// import SireDenathriusHeader from "Images/Bosses/CastleNathria/SireDenathrius/SireDenathriusEJ.png";
-// import SludgefistHeader from "Images/Bosses/CastleNathria/Sludgefist/SludgefistEJ.png";
-// import StonebornGeneralsHeader from "Images/Bosses/CastleNathria/StoneLegionGenerals/StoneLegionGeneralsEJ.png";
-
-// World Bosses
-import ValinorHeader from "Images/Bosses/WorldBosses/valinor.png";
-import MortanisHeader from "Images/Bosses/WorldBosses/mortanis.png";
-import OranomonosHeader from "Images/Bosses/WorldBosses/oranomonos.png";
-import NurgashHeader from "Images/Bosses/WorldBosses/nurgash.png";
-
-import SylvanusIcon from "Images/Bosses/SanctumOfDomination/SylvanusWindrunner/SylvanusEJ.png";
-import SoulrenderDormazainIcon from "Images/Bosses/SanctumOfDomination/SoulrenderDormazain/UI-EJ-BOSS-SoulrenderDormazain.png";
-import TheTarragrueIcon from "Images/Bosses/SanctumOfDomination/TheTarragrue/UI-EJ-BOSS-Tarragrue.png";
-import TheEyeOfTheJailerIcon from "Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/UI-EJ-BOSS-EyeoftheJailer.png";
-import TheNineIcon from "Images/Bosses/SanctumOfDomination/TheNine/UI-EJ-BOSS-TheNine.png";
-import FatescribeRohtaloIcon from "Images/Bosses/SanctumOfDomination/FatescribeRohKalo/UI-EJ-BOSS-FatescribeRoh-Talo.png";
-import GuardianOfTheFirstOnesIcon from "Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/UI-EJ-BOSS-GuardianoftheFirstOnes.png";
-import KelThuzadIcon from "Images/Bosses/SanctumOfDomination/Kelthuzad/UI-EJ-BOSS-KelThuzadShadowlands.png";
-import PainsmithRaznalIcon from "Images/Bosses/SanctumOfDomination/PainsmithRaznal/UI-EJ-BOSS-PainsmithRaznal.png";
-import RemnantOfNerzhulIcon from "Images/Bosses/SanctumOfDomination/RemnantOfNerzhul/UI-EJ-BOSS-RemnantofNerzhul.png";
 
 export default function bossHeaders(props, style) {
   let source = "";
 
-  // // Castle Nathria
-  // // Broker Curator
-  // if (props === 2405) {
-  //   source = ArtificerHeader;
-  // }
-  // // Huntsman Altimor
-  // if (props === 2418) {
-  //   source = HuntsmanAltimorHeader;
-  // }
-  // // Hungering Destroyer
-  // if (props === 2383) {
-  //   source = HungeringDestroyerHeader;
-  // }
-  // // Lady Inerva Darkvein
-  // if (props === 2406) {
-  //   source = LadyInervaDarkveinHeader;
-  // }
-  // // The Council of Blood
-  // if (props === 2412) {
-  //   source = CouncilHeader;
-  // }
-  // // Sire Denathrius
-  // if (props === 2407) {
-  //   source = SireDenathriusHeader;
-  // }
-  // // Stone Legion Generals
-  // if (props === 2417) {
-  //   source = StonebornGeneralsHeader;
-  // }
-  // // Shriekwing
-  // if (props === 2398) {
-  //   source = ShriekwingHeader;
-  // }
-  // // Sludgefist
-  // if (props === 2399) {
-  //   source = SludgefistHeader;
-  // }
-  // // Kael'thas
-  // if (props === 2402) {
-  //   source = SunKingsSalvationHeader;
-  // }
-
   // World Bosses
   // Valinor
   if (props === 167524 || props === 2430) {
-    source = ValinorHeader;
+    source = require("Images/Bosses/WorldBosses/valinor.png").default;
   }
   // Mortanis
   if (props === 173104 || props === 2431) {
-    source = MortanisHeader;
+    source = require("Images/Bosses/WorldBosses/mortanis.png").default;
   }
   // Oranomonos
   if (props === 167527 || props === 2432) {
-    source = OranomonosHeader;
+    source = require("Images/Bosses/WorldBosses/oranomonos.png").default;
   }
   // Nurgash
   if (props === 167526 || props === 2433) {
-    source = NurgashHeader;
+    source = require("Images/Bosses/WorldBosses/nurgash.png").default;
   }
 
   if (props === 2423) {
-    source = TheTarragrueIcon;
+    source = require("Images/Bosses/SanctumOfDomination/TheTarragrue/UI-EJ-BOSS-Tarragrue.png").default;
   }
 
   if (props === 2433) {
-    source = TheEyeOfTheJailerIcon;
+    source = require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/UI-EJ-BOSS-EyeoftheJailer.png").default;
   }
 
   if (props === 2429) {
-    source = TheNineIcon;
+    source = require("Images/Bosses/SanctumOfDomination/TheNine/UI-EJ-BOSS-TheNine.png").default;
   }
 
   if (props === 2432) {
-    source = RemnantOfNerzhulIcon;
+    source = require("Images/Bosses/SanctumOfDomination/RemnantOfNerzhul/UI-EJ-BOSS-RemnantofNerzhul.png").default;
   }
 
   if (props === 2434) {
-    source = SoulrenderDormazainIcon;
+    source = require("Images/Bosses/SanctumOfDomination/SoulrenderDormazain/UI-EJ-BOSS-SoulrenderDormazain.png").default;
   }
 
   if (props === 2430) {
-    source = PainsmithRaznalIcon;
+    source = require("Images/Bosses/SanctumOfDomination/PainsmithRaznal/UI-EJ-BOSS-PainsmithRaznal.png").default;
   }
 
   if (props === 2436) {
-    source = GuardianOfTheFirstOnesIcon;
+    source = require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/UI-EJ-BOSS-GuardianoftheFirstOnes.png").default;
   }
 
   if (props === 2431) {
-    source = FatescribeRohtaloIcon;
+    source = require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/UI-EJ-BOSS-FatescribeRoh-Talo.png").default;
   }
 
   if (props === 2422) {
-    source = KelThuzadIcon;
+    source = require("Images/Bosses/SanctumOfDomination/Kelthuzad/UI-EJ-BOSS-KelThuzadShadowlands.png").default;
   }
 
   if (props === 2435) {
-    source = SylvanusIcon;
+    source = require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/SylvanusEJ.png").default;
+  }
+
+  // Vigilant Guardian
+  if (props === 2512) {
+    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-VigilantGuardian.png").default;
+  }
+
+  // Skolex, the Insatiable Ravener
+  if (props === 2542) {
+    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-Skolex.png").default;
+  }
+
+  // Artificer Xy'mox
+  if (props === 2553) {
+    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-ArtificerXymox_Sepulcher.png").default;
+  }
+
+  // Dausegne, the Fallen Oracle
+  if (props === 2540) {
+    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-Dausegne.png").default;
+  }
+
+  // Prototype Pantheon
+  if (props === 2544) {
+    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-PrototypePantheon.png").default;
+  }
+
+  // Lihuvim, Principal Architect
+  if (props === 2539) {
+    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-Lihuvim.png").default;
+  }
+
+  // Halondrus the Reclaimer
+  if (props === 2529) {
+    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-Halondrus.png").default;
+  }
+
+  // Anduin Wrynn
+  if (props === 2546) {
+    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-AnduinShadowlands.png").default;
+  }
+
+  // Lords of Dread
+  if (props === 2543) {
+    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-LordsOfDread.png").default;
+  }
+
+  // Rygelon
+  if (props === 2549) {
+    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-Rygelon.png").default;
+  }
+
+  // The Jailer, Zovaal
+  if (props === 2537) {
+    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-Jailer.png").default;
   }
 
   return <img style={{ ...style }} src={source} alt={props} />;

@@ -288,7 +288,7 @@ class FightAnalysis extends Component {
                             {/* TODO: Translate */}
                             <Grid item>
                               <FormControl style={{ width: 200 }} variant="outlined" size="small">
-                                <InputLabel id="itemsocket">Custom Cooldowns</InputLabel>
+                                <InputLabel id="cooldownsShown">Custom Cooldowns</InputLabel>
                                 <Select
                                   key={"cooldownsShown"}
                                   labelId="cooldownsShown"
@@ -306,7 +306,7 @@ class FightAnalysis extends Component {
                             <Grid item>
                               {/* TODO: Translate */}
                               <FormControl style={{ width: 200 }} variant="outlined" size="small">
-                                <InputLabel id="itemsocket">Custom Cooldowns</InputLabel>
+                                <InputLabel id="damageType">Damage Type</InputLabel>
                                 <Select key={"damageType"} labelId="damageType" value={this.state.chartData} onChange={(e) => this.changeDataSet(e.target.value)} label={"Damage Type"}>
                                   <MenuItem divider value={true}>
                                     Unmitigated Damage
@@ -317,10 +317,10 @@ class FightAnalysis extends Component {
                             </Grid>
                             <Grid item>
                               <FormControl style={{ width: 200 }} variant="outlined" size="small">
-                                <InputLabel id="itemsocket">Custom Cooldowns</InputLabel>
+                                <InputLabel id="Plans">Plans</InputLabel>
                                 <Select
                                   key={"sockets"}
-                                  labelId="itemsocket"
+                                  labelId="Plans"
                                   value={this.state.customPlanSelected}
                                   onChange={(e) => this.handleCustomPlanChange(e.target.value, this.state.currentBossID)}
                                   label={"Custom Cooldowns"}

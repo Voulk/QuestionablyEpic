@@ -12,10 +12,13 @@
 }
 
 /* Top left text */
-.top-left-ItemCards {
+.top-left-ItemCards-QC {
   position: absolute;
-  top: 8px;
-  left: 16px;
+  top: 4px;
+  left: 4px;
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: 1px 1px 4px black;
 }
 
 /* Top right text */
@@ -26,12 +29,12 @@
 }
 
 /* Bottom right text */
-.bottom-right-ItemCards {
+.bottom-right-ItemCards-QC {
   position: absolute;
   bottom: 4px;
   right: 4px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 12px;
   text-shadow: 1px 1px 4px black;
 }
 
