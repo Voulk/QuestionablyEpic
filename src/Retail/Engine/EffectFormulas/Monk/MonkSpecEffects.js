@@ -67,7 +67,7 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
     const total4pchealing = 0;
 
     bonus_stats.hps = ((yulonOneHeal * yulonTargets[contentType] * thunderFocusTeaCPM) + total4pchealing) / 60;
-  } else if (name === "Invoker's Delight") {
+  } else if (effectName === "Invoker's Delight") {
     // This is an attempt to model the extra casts you get in the Celestial window against it's mana cost.
     // It is an imperfect, but solid formula for a legendary that really only should be used in niche situations.
 
@@ -109,12 +109,18 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
     //TODO multiply that by hps zzz
 
     bonus_stats.hps = -1;
-  } else if (name === "Bountiful Brew") {
+  } else if (effectName === "Bountiful Brew") {
     //TODO apply conduit
 
     // 88% conduit, 25.6% uptime, 75% raid hit
     const emenibonus = player.getHPS() * (0.13 * convertPPMToUptime(1.5, 10));
-    const bonedustDam = (player.getHPS() + emenibonus) * 0.5 * 0.4 * 1.88 * 0.256 * 0.75
+    const effectData = {
+      dupChance: 0.5,
+      dupAmount: 0.4 * 1.88, // Includes conduit
+      percRaidHit: 0.56,
+      expectedUptime: 0.256,
+    }
+    const bonedustDam = (player.getHPS() + emenibonus) * effectData.dupChance * effectData.dupAmount * effectData.expectedUptime * effectData.percRaidHit;
     bonus_stats.hps = bonedustDam + emenibonus; 
   }else {
     bonus_stats.hps = -1;
