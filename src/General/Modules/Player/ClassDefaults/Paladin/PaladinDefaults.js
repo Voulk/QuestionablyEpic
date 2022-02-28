@@ -41,8 +41,8 @@ export const paladinVenthyrSpecialQueries = (contentType) => {
       cooldownMult: {
         oneMinute: 1,
         ninetySeconds: 1,
-        twoMinutes: 1.39,
-        twoMinutesOrb: 1.31,
+        twoMinutes: 1.28,
+        twoMinutesOrb: 1.24,
         threeMinutes: 1,
       },
       HoldYourGroundUptime: 0.4
