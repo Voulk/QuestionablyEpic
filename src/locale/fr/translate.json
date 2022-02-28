@@ -1,27 +1,27 @@
 {
   "translations": {
     "CharacterCreator": {
-      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.FR",
-      "DeleteCharacter": "Delete CharacterFR",
-      "CreateChar": "Create New CharacterFR",
+      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.",
+      "DeleteCharacter": "Delete Character",
+      "CreateChar": "Create New Character",
       "AddChar": "Ajouter un personnage",
-      "CharName": "Character NameFR",
+      "CharName": "Character Name",
       "ServerName": "Server Name",
       "CharacterInfo": "Character Information",
       "StatWeights": "Stat Weights",
       "SavedLogs": {
         "TabHeader": "Saved Logs(Coming Soon)",
         "Header": "Current Log",
-        "Report": "ReportFR",
-        "Boss": "BossFR",
-        "FightLength": "Fight LengthFR",
-        "HPS": "HPSFR",
-        "RawHPS": "Raw HPSFR",
+        "Report": "Report",
+        "Boss": "Boss",
+        "FightLength": "Fight Length",
+        "HPS": "HPS",
+        "RawHPS": "Raw HPS",
         "ResetToDefaults": "Reset to Defaults"
       }
     },
 
-    "_Comments1": "Common Words - All these need translating stillFR",
+    "_Comments1": "Common Words - All these need translating still",
     "Login": "Connexion",
     "Name": "Nom",
     "Class": "Classe",
@@ -29,33 +29,33 @@
     "Raid": "Raid",
     "Dungeon": "Donjon",
     "Cancel": "Annuler",
-    "Submit": "SubmitFR",
+    "Submit": "Submit",
     "Save": "Sauvegarder",
-    "Delete": "DeleteFR",
+    "Delete": "Delete",
     "Intellect": "Intelligence",
     "Crit": "Score de crit",
     "Haste": "Hâte",
     "Mastery": "Maîtrise",
     "Versatility": "Versatilité",
-    "Leech": "LeechFR",
-    "Region": "RegionFR",
-    "Race": "RaceFR",
-    "Select Class": "Select ClassFR",
-    "Select Race": "Select RaceFR",
+    "Leech": "Leech",
+    "Region": "Region",
+    "Race": "Race",
+    "Select Class": "Select Class",
+    "Select Race": "Select Race",
     "HowToUse": "Comment-faire",
     "Yes": "Oui",
     "No": "Non",
-    "None": "NoneFR",
-    "Add": "AddFR",
+    "None": "None",
+    "Add": "Add",
     "Avoidance": "Avoidance",
     "Source": "Source",
-    "Default": "DefaultFR",
-    "Remove": "RemoveFR",
+    "Default": "Default",
+    "Remove": "Remove",
     "HPS": "HPS",
-    "Casts": "CastsFR",
-    "Healing": "HealingFR",
-    "Overhealing": " OverhealingFR",
-    "Account": "AccountFR",
+    "Casts": "Casts",
+    "Healing": "Healing",
+    "Overhealing": " Overhealing",
+    "Account": "Account",
     "Email": "Email",
     "Battletag": "Battletag",
     "Edit": "Edit",
@@ -67,89 +67,89 @@
 
     "Changelog": {
       "Header": "Changelog",
-      "Version": "VersionFR",
-      "Update": "UpdateFR",
-      "LastUpdated": "Last UpdatedFR",
-      "Date": "DateFR"
+      "Version": "Version",
+      "Update": "Update",
+      "LastUpdated": "Last Updated",
+      "Date": "Date"
     },
 
     "PatreonTiers": {
-      "RollsRoyce": "Rolls RoyceFR",
-      "Diamond": "DiamondFR",
-      "Gold": "GoldFR"
+      "RollsRoyce": "Rolls Royce",
+      "Diamond": "Diamond",
+      "Gold": "Gold"
     },
 
     "Classes": {
       "undefined": "",
-      "HolyPaladin": "Holy PaladinFR",
-      "Holy Paladin": "Holy PaladinFR",
-      "DisciplinePriest": "Discipline PriestFR",
-      "Discipline Priest": "Discipline PriestFR",
-      "RestorationDruid": "Restoration DruidFR",
-      "Restoration Druid": "Restoration DruidFR",
-      "HavocDemonHunter": "Havoc Demon HunterFR",
-      "Havoc Demon Hunter": "Havoc Demon HunterFR",
-      "Warrior": "WarriorFR",
-      "HolyPriest": "Holy PriestFR",
-      "Holy Priest": "Holy PriestFR",
-      "MistweaverMonk": "Mistweaver MonkFR",
-      "Mistweaver Monk": "Mistweaver MonkFR",
-      "RestorationShaman": "Restoration ShamanFR",
-      "Restoration Shaman": "Restoration ShamanFR",
-      "DeathKnight": "Death KnightFR",
-      "Death Knight": "Death KnightFR",
-      "ShadowPriest": "Shadow PriestFR",
-      "Shadow Priest": "Shadow PriestFR",
+      "HolyPaladin": "Holy Paladin",
+      "Holy Paladin": "Holy Paladin",
+      "DisciplinePriest": "Discipline Priest",
+      "Discipline Priest": "Discipline Priest",
+      "RestorationDruid": "Restoration Druid",
+      "Restoration Druid": "Restoration Druid",
+      "HavocDemonHunter": "Havoc Demon Hunter",
+      "Havoc Demon Hunter": "Havoc Demon Hunter",
+      "Warrior": "Warrior",
+      "HolyPriest": "Holy Priest",
+      "Holy Priest": "Holy Priest",
+      "MistweaverMonk": "Mistweaver Monk",
+      "Mistweaver Monk": "Mistweaver Monk",
+      "RestorationShaman": "Restoration Shaman",
+      "Restoration Shaman": "Restoration Shaman",
+      "DeathKnight": "Death Knight",
+      "Death Knight": "Death Knight",
+      "ShadowPriest": "Shadow Priest",
+      "Shadow Priest": "Shadow Priest",
       "Burning Crusade Class Names": "-----------------",
-      "Holy Paladin BC": "Holy PaladinFR",
-      "Restoration Druid BC": "Restoration DruidFR",
-      "Holy Priest BC": "Holy PriestFR",
-      "Restoration Shaman BC": "Restoration ShamanFR"
+      "Holy Paladin BC": "Holy Paladin",
+      "Restoration Druid BC": "Restoration Druid",
+      "Holy Priest BC": "Holy Priest",
+      "Restoration Shaman BC": "Restoration Shaman"
     },
 
     "CooldownPlanner": {
       "Classes": {
         "undefined": "",
-        "HolyPaladin": "Holy PaladinFR",
-        "DisciplinePriest": "Discipline PriestFR",
-        "RestorationDruid": "Restoration DruidFR",
-        "HavocDemonHunter": "Havoc Demon HunterFR",
-        "Warrior": "WarriorFR",
-        "HolyPriest": "Holy PriestFR",
-        "MistweaverMonk": "Mistweaver MonkFR",
-        "RestorationShaman": "Restoration ShamanFR",
-        "DeathKnight": "Death KnightFR",
-        "ShadowPriest": "Shadow PriestFR"
+        "HolyPaladin": "Holy Paladin",
+        "DisciplinePriest": "Discipline Priest",
+        "RestorationDruid": "Restoration Druid",
+        "HavocDemonHunter": "Havoc Demon Hunter",
+        "Warrior": "Warrior",
+        "HolyPriest": "Holy Priest",
+        "MistweaverMonk": "Mistweaver Monk",
+        "RestorationShaman": "Restoration Shaman",
+        "DeathKnight": "Death Knight",
+        "ShadowPriest": "Shadow Priest"
       },
       "ChartLabels": {
         "_Comments1": "Translations for HD Charts",
-        "UnmitigatedDamageLabel": "Unmitigated DamageFR",
-        "MitigatedDamageLabel": "MitigatedFR"
+        "UnmitigatedDamageLabel": "Unmitigated Damage",
+        "MitigatedDamageLabel": "Mitigated"
       },
       "Headers": {
-        "CooldownTimeline": "Cooldown TimelineFR",
-        "ExternalTimeline": "External TimelineFR",
-        "EnemyCastTimeline": "Enemy Cast TimelineFR"
+        "CooldownTimeline": "Cooldown Timeline",
+        "ExternalTimeline": "External Timeline",
+        "EnemyCastTimeline": "Enemy Cast Timeline"
       },
       "TableLabels": {
         "_Comments1": "Translations for HD Tables",
-        "RaidSelectorLabel": "Select RaidFR",
-        "BossSelectorLabel": "Select BossFR",
-        "CastTimeLabel": "Cast TimeFR",
-        "BossAbilityLabel": "Boss AbilityFR",
-        "NotesLabel": "NotesFR",
-        "OffCooldownLabel": "Off CooldownFR",
-        "HealTeamHeader": "Heal TeamFR",
-        "TypeSelector": "FormatsFR"
+        "RaidSelectorLabel": "Select Raid",
+        "BossSelectorLabel": "Select Boss",
+        "CastTimeLabel": "Cast Time",
+        "BossAbilityLabel": "Boss Ability",
+        "NotesLabel": "Notes",
+        "OffCooldownLabel": "Off Cooldown",
+        "HealTeamHeader": "Heal Team",
+        "TypeSelector": "Formats"
       },
       "UserInputs": {
         "_Comments1": "Translations for the User Input Components",
-        "Loglink": "Paste WarcraftLog Link HereFR",
-        "fightButtonLabel": "Select FightFR"
+        "Loglink": "Paste WarcraftLog Link Here",
+        "fightButtonLabel": "Select Fight"
       },
       "HealerCards": {
         "_Comments1": "Translations for the Accordian for Healer Info",
-        "StatsHeading": "StatsFR",
+        "StatsHeading": "Stats",
         "Item Level": "ilvl",
         "Crit": "Score de crit",
         "Haste": "Hâte",
@@ -214,7 +214,7 @@
       "effect": "Effet"
     },
 
-    "LegendaryCompare": { "Title": "Legendaries at a GlanceFR" },
+    "LegendaryCompare": { "Title": "Legendaries at a Glance" },
 
     "MainMenu": {
       "PatronInvite": "Vous aimez l'application? Vous pouvez montrer votre support sur Patreon!",
@@ -237,13 +237,13 @@
         "HelpText": ""
       },
       "Tooltips": {
-        "TopGear": "Find your best gear setFR",
-        "QuickCompare": "Compare Items for each slotFR.",
-        "ExploreCovenants": "Explore Soulbinds for each covenantFR.",
-        "LegendaryAnalysis": "Find your best legendary power and where to get itFR",
-        "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logsFR",
-        "Profile": "Edit your detailsFR",
-        "UpgradeFinder": "Find your next piece of gear!FR"
+        "TopGear": "Find your best gear set",
+        "QuickCompare": "Compare Items for each slot.",
+        "ExploreCovenants": "Explore Soulbinds for each covenant.",
+        "LegendaryAnalysis": "Find your best legendary power and where to get it",
+        "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
+        "Profile": "Edit your details",
+        "UpgradeFinder": "Find your next piece of gear!"
       }
     },
 
@@ -253,22 +253,22 @@
       "Tooltip": {
         "ChangeToRaid": "Changer pour le contenu de Raid",
         "ChangeToDungeon": "Changer pour le contenu de Donjon",
-        "InsertLog": "Insert a log to increase accuracyFR.",
-        "SimC": "Insert a SimC string to import your gearFR.",
-        "Login": "Login to your Battle.net AccountFR",
-        "Language": "Change LanguageFR",
-        "Home": "Main MenuFR"
+        "InsertLog": "Insert a log to increase accuracy.",
+        "SimC": "Insert a SimC string to import your gear.",
+        "Login": "Login to your Battle.net Account",
+        "Language": "Change Language",
+        "Home": "Main Menu"
       }
     },
 
     "QeProfile": {
       "EmailMsg": "Entrez/Changez votre courriel pour lier avec Patreon",
-      "NoEmail": "No Email EnteredFR",
-      "QeTier": "QE Live TierFR",
-      "ProfileHeader": "Profile InformationFR",
-      "EditionAffix": "EditionFR",
-      "StandardEdition": "Standard EditionFR",
-      "NoBattleTag": "No Battlenet Account LinkedFR"
+      "NoEmail": "No Email Entered",
+      "QeTier": "QE Live Tier",
+      "ProfileHeader": "Profile Information",
+      "EditionAffix": "Edition",
+      "StandardEdition": "Standard Edition",
+      "NoBattleTag": "No Battlenet Account Linked"
     },
 
     "QuickCompare": {
@@ -277,12 +277,12 @@
       "ItemLevel": "Niveau de la pièce",
       "Socket": "Socket",
       "Tertiary": "Stats Tertiaire",
-      "AddButton": "AddFR",
+      "AddButton": "Add",
       "Title": "Comparaison rapide d'équipement",
       "HelpText": "La fonction 'Comparaison rapide d'équipement' vous permets de comparer vos pièces individuellement. Vous pouvez ajouter des équipements manuellement en utilisant le menu déroulant ci-dessus ou via l'importation de vos données SimC. Le pointage est automatiquement affiché dans le coin supérieur droit en jaune, et les équipements sont ensuite triés en commençant par la pièce ayant le meilleur pointage.",
-      "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300FR",
-      "ItemAdded": "Item Added!FR",
-      "ItemDeleted": "Item Deleted!FR",
+      "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300",
+      "ItemAdded": "Item Added!",
+      "ItemDeleted": "Item Deleted!",
       "DominationSocket": "Domination",
       "Missives": "Missives",
       "ItemBarTitle": "Add Items (Optional)"
@@ -405,9 +405,9 @@
     },
 
     "SimCInput": {
-      "SimCStringLabel": "SimC StringFR",
+      "SimCStringLabel": "SimC String",
       "SimCHeaderButtonLabel": "SimC",
-      "SimCDialogueTitle": "Paste Your SimC StringFR"
+      "SimCDialogueTitle": "Paste Your SimC String"
     },
 
     "slotNames": {
