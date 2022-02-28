@@ -63,7 +63,7 @@ export default function DungeonHeaderIcons(props) {
     source = DoS;
   }
   /* --------------------------------- Tazavesh the Veiled Market --------------------------------- */
-  if (props === 13577 || props === 1194) {
+  if (props === 13577 || props === 1194 || props === -20) {
     source = TtVM;
   }
 
