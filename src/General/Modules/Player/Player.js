@@ -422,7 +422,7 @@ class Player {
   getActiveModel = (contentType) => {
     if (this.castModels[this.activeModelID[contentType]]) return this.castModels[this.activeModelID[contentType]];
     else {
-      reportError(this, "Player", "Invalid Cast Model", contentType);
+      reportError(this, "Player", "Invalid Cast Model", this.getSpec());
       return this.castModels[0];
     }
   };
@@ -649,9 +649,9 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 2100,
-        haste: 920,
-        crit: 610,
+        intellect: 2150,
+        haste: 940,
+        crit: 710,
         mastery: 220,
         versatility: 415,
         stamina: 1900,

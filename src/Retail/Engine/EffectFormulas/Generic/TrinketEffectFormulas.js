@@ -127,7 +127,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
   ) {
     let dam_effect = activeTrinket.effects[0];
     let int_effect = activeTrinket.effects[1];
-
+    //console.log("AHHHHHHH: " + convertPPMToUptime(1.5, 10))
     bonus_stats.dps = (getProcessedValue(dam_effect.coefficient, dam_effect.table, itemLevel) / dam_effect.cooldown) * player.getStatMultiplier("CRITVERS");
     bonus_stats.intellect = (getProcessedValue(int_effect.coefficient, int_effect.table, itemLevel, int_effect.efficiency) * int_effect.duration) / int_effect.cooldown;
     //
@@ -212,7 +212,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     let heal_effect = activeTrinket.effects[1];
     let crit_effect = activeTrinket.effects[0];
     const critValue = getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.multiplier;
-
+    //console.log(itemLevel + ": " + critValue)
     bonus_stats.hps = (getProcessedValue(heal_effect.coefficient, heal_effect.table, itemLevel, heal_effect.efficiency) / heal_effect.cooldown) * player.getStatMultiplier("CRITVERS");
     
     if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
@@ -221,6 +221,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
       const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, castModel.modelName, ['Rapture']);
       const rubyRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Soulletting Ruby": critValue}, {});
       
+      console.log("Base: " + player.getRampID('baselineAdj', contentType));
       bonus_stats.hps = bonus_stats.hps + (rubyRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - crit_effect.discOverhealing);
 
     }
@@ -351,11 +352,11 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
   ) {
     let effect = activeTrinket.effects[0];
     const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
-
     if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
       const boonSeq = buildRamp('Boon', 10, ["Flame of Battle"], setStats.haste, castModel.modelName, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, ["Flame of Battle"], setStats.haste, castModel.modelName, ['Rapture']);
       const flameRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Flame of Battle": trinketValue}, {});
+
       bonus_stats.hps = (flameRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
     }
     else {
@@ -746,6 +747,7 @@ else if (
   /* ------- Hastes impact on the trinket PPM is included in the secondary multiplier below. ------ */
   bonus_stats.hps = (getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel, healEffect.efficiency) / 60) * meteor * healEffect.ppm * player.getStatMultiplier("CRITVERS");
   bonus_stats.haste = hasteValue * convertPPMToUptime(hasteEffect.ppm, hasteEffect.duration);
+  //console.log(itemLevel + ": " + JSON.stringify(bonus_stats) + " / " + hasteValue)
 
 } else if (
   /* ---------------------------------------------------------------------------------------------- */
@@ -911,7 +913,7 @@ else if (
   effectName === "Auxillary Attendant Chime"
 ) {
   let effect = activeTrinket.effects[0];
-  const oneProc = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * (effect.duration / effect.tickRate * player.getStatPerc("Haste"))
+  const oneProc = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * (effect.duration / effect.tickRate) //* player.getStatPerc("Haste"))
 
   bonus_stats.hps = (oneProc * effect.ppm * player.getStatPerc("Versatility") / 60);
   //
@@ -928,6 +930,24 @@ else if (
   const trinketValue = getDiminishedValue('Versatility', trinketRaw, setStats.crit)
 
   bonus_stats.versatility = (trinketValue * effect.duration) / effect.cooldown;
+  //bonus_stats.versatility *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
+
+  
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Grim Eclipse                                       */
+  /* ---------------------------------------------------------------------------------------------- */
+  // The damage portion is not currently evaluated
+  effectName === "Grim Eclipse"
+) {
+  let effect = activeTrinket.effects[0];
+
+  const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
+  const trinketValue = getDiminishedValue('Haste', trinketRaw, setStats.haste)
+
+  bonus_stats.haste = (trinketValue * effect.duration) * effect.runeEfficiency / effect.cooldown;
   //bonus_stats.versatility *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
 
   
