@@ -1,3 +1,4 @@
+
 export const bonus_IDs = {
   "1": {
     "id": 1,
@@ -7766,12 +7767,12 @@ export const bonus_IDs = {
   },
   "582": {
     "id": 582,
-    "ilevel": "2 @plvl 1 - 58 @plvl 58",
+    "ilevel": "2 @plvl 1 - 146 @plvl 146",
     "curveId": 956
   },
   "583": {
     "id": 583,
-    "ilevel": "2 @plvl 1 - 58 @plvl 58",
+    "ilevel": "2 @plvl 1 - 146 @plvl 146",
     "curveId": 956
   },
   "584": {
@@ -11493,7 +11494,7 @@ export const bonus_IDs = {
   "1826": {
     "id": 1826,
     "quality": 3,
-    "previewlevel": 825
+    "previewlevel": 0
   },
   "2829": {
     "id": 2829,
@@ -15060,7 +15061,7 @@ export const bonus_IDs = {
   },
   "3592": {
     "id": 3592,
-    "ilevel": "2 @plvl 1 - 58 @plvl 58",
+    "ilevel": "2 @plvl 1 - 146 @plvl 146",
     "curveId": 956
   },
   "3593": {
@@ -15164,17 +15165,17 @@ export const bonus_IDs = {
   },
   "3615": {
     "id": 3615,
-    "ilevel": "3 @plvl 1 - 59 @plvl 59",
+    "ilevel": "3 @plvl 1 - 147 @plvl 147",
     "curveId": 959
   },
   "3616": {
     "id": 3616,
-    "ilevel": "5 @plvl 1 - 61 @plvl 61",
+    "ilevel": "5 @plvl 1 - 149 @plvl 149",
     "curveId": 961
   },
   "3617": {
     "id": 3617,
-    "ilevel": "4 @plvl 1 - 60 @plvl 60",
+    "ilevel": "4 @plvl 1 - 148 @plvl 148",
     "curveId": 960
   },
   "3618": {
@@ -19319,17 +19320,17 @@ export const bonus_IDs = {
   "4985": {
     "id": 4985,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "4986": {
     "id": 4986,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "4987": {
     "id": 4987,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "4988": {
     "id": 4988,
@@ -19363,35 +19364,35 @@ export const bonus_IDs = {
   "4994": {
     "id": 4994,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 144
   },
   "4995": {
     "id": 4995,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "4996": {
     "id": 4996,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 144
   },
   "4997": {
     "id": 4997,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "4998": {
     "id": 4998,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 144
   },
   "4999": {
     "id": 4999,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "5000": {
     "id": 5000,
@@ -19700,50 +19701,50 @@ export const bonus_IDs = {
   "5068": {
     "id": 5068,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "5069": {
     "id": 5069,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 169
   },
   "5070": {
     "id": 5070,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "5071": {
     "id": 5071,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "5072": {
     "id": 5072,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 172
   },
   "5073": {
     "id": 5073,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "5074": {
     "id": 5074,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "5075": {
     "id": 5075,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 172
   },
   "5076": {
     "id": 5076,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "5077": {
     "id": 5077,
@@ -19797,19 +19798,19 @@ export const bonus_IDs = {
   "5086": {
     "id": 5086,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 145
   },
   "5087": {
     "id": 5087,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 145
   },
   "5088": {
     "id": 5088,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 145
   },
   "5089": {
@@ -19832,19 +19833,19 @@ export const bonus_IDs = {
   "5092": {
     "id": 5092,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 171
   },
   "5093": {
     "id": 5093,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 170
   },
   "5094": {
     "id": 5094,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 171
   },
   "5095": {
@@ -19867,13 +19868,13 @@ export const bonus_IDs = {
   "5098": {
     "id": 5098,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 143
   },
   "5099": {
     "id": 5099,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 143
   },
   "5100": {
@@ -19884,7 +19885,7 @@ export const bonus_IDs = {
   "5101": {
     "id": 5101,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 143
   },
   "5102": {
@@ -19902,19 +19903,19 @@ export const bonus_IDs = {
   "5104": {
     "id": 5104,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 173
   },
   "5105": {
     "id": 5105,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 168
   },
   "5106": {
     "id": 5106,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 173
   },
   "5107": {
@@ -20058,32 +20059,32 @@ export const bonus_IDs = {
   "5178": {
     "id": 5178,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "5179": {
     "id": 5179,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "5183": {
     "id": 5183,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "5184": {
     "id": 5184,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "5188": {
     "id": 5188,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "5189": {
     "id": 5189,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "5193": {
     "id": 5193,
@@ -20112,17 +20113,17 @@ export const bonus_IDs = {
   "5208": {
     "id": 5208,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "5213": {
     "id": 5213,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "5218": {
     "id": 5218,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "5223": {
     "id": 5223,
@@ -20192,55 +20193,55 @@ export const bonus_IDs = {
   "5263": {
     "id": 5263,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 145
   },
   "5264": {
     "id": 5264,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 144
   },
   "5265": {
     "id": 5265,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 143
   },
   "5266": {
     "id": 5266,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 170
   },
   "5267": {
     "id": 5267,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 169
   },
   "5268": {
     "id": 5268,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 168
   },
   "5269": {
     "id": 5269,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 170
   },
   "5270": {
     "id": 5270,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 169
   },
   "5271": {
     "id": 5271,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 168
   },
   "5272": {
@@ -20282,17 +20283,17 @@ export const bonus_IDs = {
   "5278": {
     "id": 5278,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "5279": {
     "id": 5279,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "5280": {
     "id": 5280,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "5281": {
     "id": 5281,
@@ -20307,70 +20308,70 @@ export const bonus_IDs = {
   "5283": {
     "id": 5283,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "5284": {
     "id": 5284,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 170
   },
   "5285": {
     "id": 5285,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 169
   },
   "5286": {
     "id": 5286,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 168
   },
   "5287": {
     "id": 5287,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "5288": {
     "id": 5288,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 171
   },
   "5289": {
     "id": 5289,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 172
   },
   "5290": {
     "id": 5290,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 173
   },
   "5291": {
     "id": 5291,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "5292": {
     "id": 5292,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 171
   },
   "5293": {
     "id": 5293,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 172
   },
   "5294": {
     "id": 5294,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 173
   },
   "5295": {
@@ -20441,71 +20442,71 @@ export const bonus_IDs = {
   "5310": {
     "id": 5310,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 224
   },
   "5311": {
     "id": 5311,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 226
   },
   "5312": {
     "id": 5312,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 225
   },
   "5313": {
     "id": 5313,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "5314": {
     "id": 5314,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 238
   },
   "5315": {
     "id": 5315,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 237
   },
   "5316": {
     "id": 5316,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 236
   },
   "5317": {
     "id": 5317,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "5318": {
     "id": 5318,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 238
   },
   "5319": {
     "id": 5319,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 237
   },
   "5320": {
     "id": 5320,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 236
   },
   "5321": {
     "id": 5321,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "5322": {
     "id": 5322,
@@ -20561,19 +20562,19 @@ export const bonus_IDs = {
   "5331": {
     "id": 5331,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 227
   },
   "5332": {
     "id": 5332,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 224
   },
   "5333": {
     "id": 5333,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 224
   },
   "5334": {
@@ -20596,19 +20597,19 @@ export const bonus_IDs = {
   "5337": {
     "id": 5337,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 229
   },
   "5338": {
     "id": 5338,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 226
   },
   "5339": {
     "id": 5339,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 226
   },
   "5340": {
@@ -20631,19 +20632,19 @@ export const bonus_IDs = {
   "5343": {
     "id": 5343,
     "quality": 4,
-    "tag": "Combatant",
+    "tag": "Combatant I",
     "azerite_tier_unlock_id": 228
   },
   "5344": {
     "id": 5344,
     "quality": 4,
-    "tag": "Challenger",
+    "tag": "Challenger I",
     "azerite_tier_unlock_id": 225
   },
   "5345": {
     "id": 5345,
     "quality": 4,
-    "tag": "Rival",
+    "tag": "Rival I",
     "azerite_tier_unlock_id": 225
   },
   "5346": {
@@ -20665,17 +20666,17 @@ export const bonus_IDs = {
   "5349": {
     "id": 5349,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "5350": {
     "id": 5350,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "5351": {
     "id": 5351,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "5352": {
     "id": 5352,
@@ -20694,17 +20695,17 @@ export const bonus_IDs = {
   "5367": {
     "id": 5367,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "5368": {
     "id": 5368,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "5369": {
     "id": 5369,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "5370": {
     "id": 5370,
@@ -21040,17 +21041,17 @@ export const bonus_IDs = {
   "5453": {
     "id": 5453,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "5454": {
     "id": 5454,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "5455": {
     "id": 5455,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "5456": {
     "id": 5456,
@@ -21065,17 +21066,17 @@ export const bonus_IDs = {
   "5458": {
     "id": 5458,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "5459": {
     "id": 5459,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "5460": {
     "id": 5460,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "5461": {
     "id": 5461,
@@ -22989,22 +22990,22 @@ export const bonus_IDs = {
   },
   "5805": {
     "id": 5805,
-    "ilevel": "2 @plvl 1 - 58 @plvl 58",
+    "ilevel": "2 @plvl 1 - 146 @plvl 146",
     "curveId": 956
   },
   "5806": {
     "id": 5806,
-    "ilevel": "4 @plvl 1 - 60 @plvl 60",
+    "ilevel": "4 @plvl 1 - 148 @plvl 148",
     "curveId": 960
   },
   "5807": {
     "id": 5807,
-    "ilevel": "3 @plvl 1 - 59 @plvl 59",
+    "ilevel": "3 @plvl 1 - 147 @plvl 147",
     "curveId": 959
   },
   "5808": {
     "id": 5808,
-    "ilevel": "5 @plvl 1 - 61 @plvl 61",
+    "ilevel": "5 @plvl 1 - 149 @plvl 149",
     "curveId": 961
   },
   "5814": {
@@ -23013,7 +23014,7 @@ export const bonus_IDs = {
   },
   "5817": {
     "id": 5817,
-    "ilevel": "4 @plvl 1 - 60 @plvl 60",
+    "ilevel": "4 @plvl 1 - 148 @plvl 148",
     "curveId": 1690
   },
   "5821": {
@@ -23022,30 +23023,30 @@ export const bonus_IDs = {
   },
   "5822": {
     "id": 5822,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "5825": {
     "id": 5825,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "5826": {
     "id": 5826,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "5830": {
     "id": 5830,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "5831": {
     "id": 5831,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "5834": {
     "id": 5834,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "5835": {
     "id": 5835,
@@ -25155,30 +25156,30 @@ export const bonus_IDs = {
   },
   "6325": {
     "id": 6325,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "6328": {
     "id": 6328,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "6329": {
     "id": 6329,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "6332": {
     "id": 6332,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "6333": {
     "id": 6333,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "6336": {
     "id": 6336,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "6337": {
     "id": 6337,
@@ -25262,7 +25263,7 @@ export const bonus_IDs = {
   "6361": {
     "id": 6361,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "6363": {
     "id": 6363,
@@ -25270,47 +25271,47 @@ export const bonus_IDs = {
   },
   "6364": {
     "id": 6364,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "6365": {
     "id": 6365,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "6366": {
     "id": 6366,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "6367": {
     "id": 6367,
     "quality": 4,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "6368": {
     "id": 6368,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "6369": {
     "id": 6369,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "6370": {
     "id": 6370,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "6371": {
     "id": 6371,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "6372": {
     "id": 6372,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "6373": {
     "id": 6373,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "6374": {
     "id": 6374,
@@ -25328,7 +25329,7 @@ export const bonus_IDs = {
   "6377": {
     "id": 6377,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "6378": {
     "id": 6378,
@@ -26591,12 +26592,12 @@ export const bonus_IDs = {
   "6517": {
     "id": 6517,
     "quality": 4,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "6518": {
     "id": 6518,
     "quality": 4,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "6519": {
     "id": 6519,
@@ -26610,7 +26611,7 @@ export const bonus_IDs = {
   },
   "6521": {
     "id": 6521,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "6522": {
     "id": 6522,
@@ -28021,15 +28022,15 @@ export const bonus_IDs = {
   },
   "6618": {
     "id": 6618,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "6619": {
     "id": 6619,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "6620": {
     "id": 6620,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "6621": {
     "id": 6621,
@@ -28049,15 +28050,15 @@ export const bonus_IDs = {
   },
   "6625": {
     "id": 6625,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "6626": {
     "id": 6626,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "6627": {
     "id": 6627,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "6628": {
     "id": 6628,
@@ -28069,15 +28070,15 @@ export const bonus_IDs = {
   },
   "6631": {
     "id": 6631,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "6632": {
     "id": 6632,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "6633": {
     "id": 6633,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "6634": {
     "id": 6634,
@@ -28093,15 +28094,15 @@ export const bonus_IDs = {
   },
   "6639": {
     "id": 6639,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "6640": {
     "id": 6640,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "6641": {
     "id": 6641,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "6642": {
     "id": 6642,
@@ -31270,7 +31271,7 @@ export const bonus_IDs = {
       "base": "Fel Bombardier",
       "slots": {
         "head": "Fel Enflamed Helm",
-        "neck": "Fel Bombadier Pendant",
+        "neck": "Fel Bombardier Pendant",
         "shoulder": "Fel Bombardier's Shoulderguards"
       }
     }
@@ -31777,7 +31778,10 @@ export const bonus_IDs = {
   },
   "7083": {
     "id": 7083,
-    "effect": null,
+    "effect": {
+      "id": 0,
+      "index": 0
+    },
     "quality": 5
   },
   "7084": {
@@ -32561,15 +32565,15 @@ export const bonus_IDs = {
   },
   "7132": {
     "id": 7132,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "7133": {
     "id": 7133,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "7134": {
     "id": 7134,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "7135": {
     "id": 7135,
@@ -32585,15 +32589,15 @@ export const bonus_IDs = {
   },
   "7139": {
     "id": 7139,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "7140": {
     "id": 7140,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "7141": {
     "id": 7141,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "7142": {
     "id": 7142,
@@ -32958,15 +32962,15 @@ export const bonus_IDs = {
   },
   "7226": {
     "id": 7226,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "7227": {
     "id": 7227,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "7228": {
     "id": 7228,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "7229": {
     "id": 7229,
@@ -33034,15 +33038,15 @@ export const bonus_IDs = {
   },
   "7306": {
     "id": 7306,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "7307": {
     "id": 7307,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "7308": {
     "id": 7308,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "7309": {
     "id": 7309,
@@ -33058,15 +33062,15 @@ export const bonus_IDs = {
   },
   "7312": {
     "id": 7312,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "7313": {
     "id": 7313,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "7314": {
     "id": 7314,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "7315": {
     "id": 7315,
@@ -33082,15 +33086,15 @@ export const bonus_IDs = {
   },
   "7318": {
     "id": 7318,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "7319": {
     "id": 7319,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "7320": {
     "id": 7320,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "7321": {
     "id": 7321,
@@ -33106,15 +33110,15 @@ export const bonus_IDs = {
   },
   "7324": {
     "id": 7324,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "7325": {
     "id": 7325,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "7326": {
     "id": 7326,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "7327": {
     "id": 7327,
@@ -33130,15 +33134,15 @@ export const bonus_IDs = {
   },
   "7330": {
     "id": 7330,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "7331": {
     "id": 7331,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "7332": {
     "id": 7332,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "7333": {
     "id": 7333,
@@ -33154,15 +33158,15 @@ export const bonus_IDs = {
   },
   "7336": {
     "id": 7336,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "7337": {
     "id": 7337,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "7338": {
     "id": 7338,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "7339": {
     "id": 7339,
@@ -33178,15 +33182,15 @@ export const bonus_IDs = {
   },
   "7342": {
     "id": 7342,
-    "tag": "Combatant"
+    "tag": "Combatant I"
   },
   "7343": {
     "id": 7343,
-    "tag": "Challenger"
+    "tag": "Challenger I"
   },
   "7344": {
     "id": 7344,
-    "tag": "Rival"
+    "tag": "Rival I"
   },
   "7345": {
     "id": 7345,
@@ -33207,6 +33211,10 @@ export const bonus_IDs = {
     "id": 7359,
     "tag": "Mythic"
   },
+  "7448": {
+    "id": 7448,
+    "item_limit_category": 347
+  },
   "7452": {
     "id": 7452,
     "ilevel": "160 @plvl 1 - 160 @plvl 160",
@@ -33223,7 +33231,7 @@ export const bonus_IDs = {
       "id": 138570,
       "index": 0,
       "spell": {
-        "id": 353447,
+        "id": 364754,
         "name": "Abomination's Frenzy",
         "icon": "warlock_curse_shadow_aura"
       }
@@ -33241,7 +33249,8 @@ export const bonus_IDs = {
   "7461": {
     "id": 7461,
     "ilevel": "230 @plvl 0 - 230 @plvl 230",
-    "curveId": 25832
+    "curveId": 25832,
+    "item_limit_category": 481
   },
   "7464": {
     "id": 7464,
@@ -33262,7 +33271,7 @@ export const bonus_IDs = {
       "id": 138709,
       "index": 0,
       "spell": {
-        "id": 353882,
+        "id": 364755,
         "name": "Rampant Transference",
         "icon": "ability_ardenweald_deathknight"
       }
@@ -33282,7 +33291,7 @@ export const bonus_IDs = {
       "id": 138714,
       "index": 0,
       "spell": {
-        "id": 353822,
+        "id": 364748,
         "name": "Final Sentence",
         "icon": "ability_bastion_deathknight"
       }
@@ -33303,7 +33312,7 @@ export const bonus_IDs = {
       "id": 138715,
       "index": 0,
       "spell": {
-        "id": 353699,
+        "id": 364752,
         "name": "Insatiable Hunger",
         "icon": "spell_animarevendreth_groundstate"
       }
@@ -33323,7 +33332,7 @@ export const bonus_IDs = {
       "id": 138719,
       "index": 0,
       "spell": {
-        "id": 353577,
+        "id": 364934,
         "name": "Glory",
         "icon": "ability_maldraxxus_warrior"
       }
@@ -33343,7 +33352,7 @@ export const bonus_IDs = {
       "id": 138722,
       "index": 0,
       "spell": {
-        "id": 354131,
+        "id": 364933,
         "name": "Sinful Surge",
         "icon": "ability_revendreth_warrior"
       }
@@ -33364,7 +33373,7 @@ export const bonus_IDs = {
       "id": 138726,
       "index": 0,
       "spell": {
-        "id": 354161,
+        "id": 364931,
         "name": "Nature's Fury",
         "icon": "ability_ardenweald_warrior"
       }
@@ -33380,7 +33389,7 @@ export const bonus_IDs = {
       "id": 138727,
       "index": 0,
       "spell": {
-        "id": 354123,
+        "id": 364818,
         "name": "Unbridled Swarm",
         "icon": "ability_maldraxxus_druid"
       }
@@ -33400,7 +33409,7 @@ export const bonus_IDs = {
       "id": 138734,
       "index": 0,
       "spell": {
-        "id": 354186,
+        "id": 364853,
         "name": "Harmonic Echo",
         "icon": "ability_bastion_mage"
       }
@@ -33416,7 +33425,7 @@ export const bonus_IDs = {
       "id": 138729,
       "index": 0,
       "spell": {
-        "id": 354109,
+        "id": 364816,
         "name": "Sinful Hysteria",
         "icon": "ability_revendreth_druid"
       }
@@ -33436,7 +33445,7 @@ export const bonus_IDs = {
       "id": 138747,
       "index": 0,
       "spell": {
-        "id": 354294,
+        "id": 364855,
         "name": "Death's Fathom",
         "icon": "ability_maldraxxus_mage"
       }
@@ -33452,7 +33461,7 @@ export const bonus_IDs = {
       "id": 138750,
       "index": 0,
       "spell": {
-        "id": 354333,
+        "id": 364854,
         "name": "Sinful Delight",
         "icon": "ability_revendreth_mage"
       }
@@ -33468,7 +33477,7 @@ export const bonus_IDs = {
       "id": 138742,
       "index": 0,
       "spell": {
-        "id": 354115,
+        "id": 364815,
         "name": "Kindred Affinity",
         "icon": "ability_bastion_druid"
       }
@@ -33488,7 +33497,7 @@ export const bonus_IDs = {
       "id": 138802,
       "index": 0,
       "spell": {
-        "id": 354473,
+        "id": 364928,
         "name": "Toxic Onslaught",
         "icon": "ability_ardenweald_rogue"
       }
@@ -33498,13 +33507,181 @@ export const bonus_IDs = {
       "base": "Toxic Onslaught"
     }
   },
+  "7528": {
+    "id": 7528,
+    "tag": "Unranked"
+  },
+  "7529": {
+    "id": 7529,
+    "tag": "Combatant II"
+  },
+  "7530": {
+    "id": 7530,
+    "tag": "Challenger II"
+  },
+  "7531": {
+    "id": 7531,
+    "tag": "Rival II"
+  },
+  "7532": {
+    "id": 7532,
+    "tag": "Elite"
+  },
+  "7533": {
+    "id": 7533,
+    "tag": "Duelist"
+  },
+  "7534": {
+    "id": 7534,
+    "tag": "Unranked"
+  },
+  "7535": {
+    "id": 7535,
+    "tag": "Combatant II"
+  },
+  "7536": {
+    "id": 7536,
+    "tag": "Challenger II"
+  },
+  "7537": {
+    "id": 7537,
+    "tag": "Rival II"
+  },
+  "7538": {
+    "id": 7538,
+    "tag": "Elite"
+  },
+  "7539": {
+    "id": 7539,
+    "tag": "Duelist"
+  },
+  "7540": {
+    "id": 7540,
+    "tag": "Unranked"
+  },
+  "7541": {
+    "id": 7541,
+    "tag": "Combatant II"
+  },
+  "7542": {
+    "id": 7542,
+    "tag": "Challenger II"
+  },
+  "7543": {
+    "id": 7543,
+    "tag": "Rival II"
+  },
+  "7544": {
+    "id": 7544,
+    "tag": "Elite"
+  },
+  "7545": {
+    "id": 7545,
+    "tag": "Duelist"
+  },
+  "7546": {
+    "id": 7546,
+    "tag": "Unranked"
+  },
+  "7547": {
+    "id": 7547,
+    "tag": "Combatant II"
+  },
+  "7548": {
+    "id": 7548,
+    "tag": "Challenger II"
+  },
+  "7549": {
+    "id": 7549,
+    "tag": "Rival II"
+  },
+  "7550": {
+    "id": 7550,
+    "tag": "Elite"
+  },
+  "7551": {
+    "id": 7551,
+    "tag": "Duelist"
+  },
+  "7552": {
+    "id": 7552,
+    "tag": "Unranked"
+  },
+  "7553": {
+    "id": 7553,
+    "tag": "Combatant II"
+  },
+  "7554": {
+    "id": 7554,
+    "tag": "Challenger II"
+  },
+  "7555": {
+    "id": 7555,
+    "tag": "Rival II"
+  },
+  "7556": {
+    "id": 7556,
+    "tag": "Elite"
+  },
+  "7557": {
+    "id": 7557,
+    "tag": "Duelist"
+  },
+  "7558": {
+    "id": 7558,
+    "tag": "Unranked"
+  },
+  "7559": {
+    "id": 7559,
+    "tag": "Combatant II"
+  },
+  "7560": {
+    "id": 7560,
+    "tag": "Challenger II"
+  },
+  "7561": {
+    "id": 7561,
+    "tag": "Rival II"
+  },
+  "7562": {
+    "id": 7562,
+    "tag": "Elite"
+  },
+  "7563": {
+    "id": 7563,
+    "tag": "Duelist"
+  },
+  "7564": {
+    "id": 7564,
+    "tag": "Unranked"
+  },
+  "7565": {
+    "id": 7565,
+    "tag": "Combatant II"
+  },
+  "7566": {
+    "id": 7566,
+    "tag": "Challenger II"
+  },
+  "7567": {
+    "id": 7567,
+    "tag": "Rival II"
+  },
+  "7568": {
+    "id": 7568,
+    "tag": "Elite"
+  },
+  "7569": {
+    "id": 7569,
+    "tag": "Duelist"
+  },
   "7570": {
     "id": 7570,
     "effect": {
       "id": 139098,
       "index": 0,
       "spell": {
-        "id": 354647,
+        "id": 364736,
         "name": "Splintered Elements",
         "icon": "spell_nature_elementalprecision_1"
       }
@@ -33524,7 +33701,7 @@ export const bonus_IDs = {
       "id": 138799,
       "index": 0,
       "spell": {
-        "id": 354118,
+        "id": 364819,
         "name": "Celestial Spirits",
         "icon": "ability_ardenweald_druid"
       }
@@ -33544,7 +33721,7 @@ export const bonus_IDs = {
       "id": 138819,
       "index": 0,
       "spell": {
-        "id": 354703,
+        "id": 364927,
         "name": "Obedience",
         "icon": "ability_revendreth_rogue"
       }
@@ -33560,7 +33737,7 @@ export const bonus_IDs = {
       "id": 138822,
       "index": 0,
       "spell": {
-        "id": 354731,
+        "id": 364926,
         "name": "Deathspike",
         "icon": "ability_maldraxxus_rogue"
       }
@@ -33580,7 +33757,7 @@ export const bonus_IDs = {
       "id": 138842,
       "index": 0,
       "spell": {
-        "id": 354837,
+        "id": 364925,
         "name": "Resounding Clarity",
         "icon": "ability_bastion_rogue"
       }
@@ -33594,13 +33771,17 @@ export const bonus_IDs = {
       }
     }
   },
+  "7580": {
+    "id": 7580,
+    "socket": 1
+  },
   "7679": {
     "id": 7679,
     "effect": {
       "id": 138976,
       "index": 0,
       "spell": {
-        "id": 355098,
+        "id": 364724,
         "name": "Divine Resonance",
         "icon": "ability_bastion_paladin"
       }
@@ -33620,7 +33801,7 @@ export const bonus_IDs = {
       "id": 138985,
       "index": 0,
       "spell": {
-        "id": 355099,
+        "id": 364719,
         "name": "Duty-Bound Gavel",
         "icon": "ability_maldraxxus_paladin"
       }
@@ -33641,7 +33822,7 @@ export const bonus_IDs = {
       "id": 138992,
       "index": 0,
       "spell": {
-        "id": 355886,
+        "id": 364827,
         "name": "Agony Gaze",
         "icon": "ability_revendreth_demonhunter"
       }
@@ -33657,7 +33838,7 @@ export const bonus_IDs = {
       "id": 138995,
       "index": 0,
       "spell": {
-        "id": 355890,
+        "id": 364825,
         "name": "Blazing Slaughter",
         "icon": "ability_ardenweald_demonhunter"
       }
@@ -33678,7 +33859,7 @@ export const bonus_IDs = {
       "id": 138998,
       "index": 0,
       "spell": {
-        "id": 355893,
+        "id": 364828,
         "name": "Blind Faith",
         "icon": "ability_bastion_demonhunter"
       }
@@ -33694,7 +33875,7 @@ export const bonus_IDs = {
       "id": 139005,
       "index": 0,
       "spell": {
-        "id": 355996,
+        "id": 364826,
         "name": "Demonic Oath",
         "icon": "ability_maldraxxus_demonhunter"
       }
@@ -33710,7 +33891,7 @@ export const bonus_IDs = {
       "id": 139008,
       "index": 0,
       "spell": {
-        "id": 355447,
+        "id": 364722,
         "name": "Radiant Embers",
         "icon": "ability_revendreth_paladin"
       }
@@ -33731,7 +33912,7 @@ export const bonus_IDs = {
       "id": 138983,
       "index": 0,
       "spell": {
-        "id": 355100,
+        "id": 364715,
         "name": "Seasons of Plenty",
         "icon": "ability_ardenweald_paladin_winter"
       }
@@ -33751,7 +33932,7 @@ export const bonus_IDs = {
       "id": 139044,
       "index": 0,
       "spell": {
-        "id": 356391,
+        "id": 364915,
         "name": "Bwonsamdi's Pact",
         "icon": "ability_ardenweald_priest"
       }
@@ -33772,7 +33953,7 @@ export const bonus_IDs = {
       "id": 139043,
       "index": 0,
       "spell": {
-        "id": 356392,
+        "id": 364914,
         "name": "Shadow Word: Manipulation",
         "icon": "ability_revendreth_priest"
       }
@@ -33821,7 +34002,7 @@ export const bonus_IDs = {
       "id": 139070,
       "index": 0,
       "spell": {
-        "id": 356592,
+        "id": 364860,
         "name": "Bountiful Brew",
         "icon": "ability_maldraxxus_monk"
       }
@@ -33841,7 +34022,7 @@ export const bonus_IDs = {
       "id": 139201,
       "index": 0,
       "spell": {
-        "id": 356218,
+        "id": 364735,
         "name": "Seeds of Rampant Growth",
         "icon": "spell_lifegivingseed"
       }
@@ -33857,7 +34038,7 @@ export const bonus_IDs = {
       "id": 139202,
       "index": 0,
       "spell": {
-        "id": 356250,
+        "id": 364734,
         "name": "Elemental Conduit",
         "icon": "spell_animarevendreth_beam"
       }
@@ -33877,7 +34058,7 @@ export const bonus_IDs = {
       "id": 139203,
       "index": 0,
       "spell": {
-        "id": 356254,
+        "id": 364937,
         "name": "Languishing Soul Detritus",
         "icon": "ability_warlock_soulswap"
       }
@@ -33893,7 +34074,7 @@ export const bonus_IDs = {
       "id": 139199,
       "index": 0,
       "spell": {
-        "id": 356344,
+        "id": 364936,
         "name": "Shard of Annihilation",
         "icon": "inv_enchanting_wod_crystalshard"
       }
@@ -33913,7 +34094,7 @@ export const bonus_IDs = {
       "id": 139204,
       "index": 0,
       "spell": {
-        "id": 356362,
+        "id": 364935,
         "name": "Decaying Soul Satchel",
         "icon": "spell_misc_zandalari_council_soulswap"
       }
@@ -33933,7 +34114,7 @@ export const bonus_IDs = {
       "id": 139205,
       "index": 0,
       "spell": {
-        "id": 356259,
+        "id": 364938,
         "name": "Contained Perpetual Explosion",
         "icon": "ability_revendreth_warlock"
       }
@@ -33954,7 +34135,7 @@ export const bonus_IDs = {
       "id": 139206,
       "index": 0,
       "spell": {
-        "id": 356262,
+        "id": 364739,
         "name": "Pact of the Soulstalkers",
         "icon": "ability_bastion_hunter"
       }
@@ -33974,7 +34155,7 @@ export const bonus_IDs = {
       "id": 139207,
       "index": 0,
       "spell": {
-        "id": 356264,
+        "id": 364741,
         "name": "Bag of Munitions",
         "icon": "spell_animamaldraxxus_groundstate"
       }
@@ -33994,7 +34175,7 @@ export const bonus_IDs = {
       "id": 139208,
       "index": 0,
       "spell": {
-        "id": 356375,
+        "id": 364742,
         "name": "Fragments of the Elder Antlers",
         "icon": "trade_archaeology_antleredcloakclasp"
       }
@@ -34013,7 +34194,7 @@ export const bonus_IDs = {
       "id": 139211,
       "index": 0,
       "spell": {
-        "id": 356618,
+        "id": 364740,
         "name": "Pouch of Razor Fragments",
         "icon": "ability_hunter_razorwire"
       }
@@ -34033,7 +34214,7 @@ export const bonus_IDs = {
       "id": 139088,
       "index": 0,
       "spell": {
-        "id": 356684,
+        "id": 364858,
         "name": "Call to Arms",
         "icon": "ability_bastion_monk"
       }
@@ -34073,7 +34254,7 @@ export const bonus_IDs = {
       "id": 139095,
       "index": 0,
       "spell": {
-        "id": 356705,
+        "id": 364861,
         "name": "Faeline Harmony",
         "icon": "ability_ardenweald_monk"
       }
@@ -34093,7 +34274,7 @@ export const bonus_IDs = {
       "id": 139212,
       "index": 0,
       "spell": {
-        "id": 356789,
+        "id": 364733,
         "name": "Raging Vesper Vortex",
         "icon": "ability_bastion_shaman"
       }
@@ -34149,7 +34330,7 @@ export const bonus_IDs = {
       "id": 139111,
       "index": 0,
       "spell": {
-        "id": 356818,
+        "id": 364859,
         "name": "Sinister Teachings",
         "icon": "ability_revendreth_monk"
       }
@@ -34169,7 +34350,7 @@ export const bonus_IDs = {
       "id": 139114,
       "index": 0,
       "spell": {
-        "id": 356877,
+        "id": 364856,
         "name": "Heart of the Fae",
         "icon": "ability_ardenweald_mage"
       }
@@ -34185,7 +34366,7 @@ export const bonus_IDs = {
       "id": 139046,
       "index": 0,
       "spell": {
-        "id": 356395,
+        "id": 364913,
         "name": "Spheres' Harmony",
         "icon": "ability_bastion_priest"
       }
@@ -34205,7 +34386,7 @@ export const bonus_IDs = {
       "id": 139042,
       "index": 0,
       "spell": {
-        "id": 356390,
+        "id": 364916,
         "name": "Pallid Command",
         "icon": "ability_maldraxxus_priest"
       }
@@ -34225,7 +34406,7 @@ export const bonus_IDs = {
       "id": 139244,
       "index": 0,
       "spell": {
-        "id": 357996,
+        "id": 364930,
         "name": "Elysian Might",
         "icon": "ability_bastion_warrior"
       }
@@ -34425,13 +34606,2554 @@ export const bonus_IDs = {
       }
     }
   },
+  "7749": {
+    "id": 7749,
+    "tag": "Mythic"
+  },
   "7756": {
     "id": 7756,
     "tag": "Timewarped"
+  },
+  "7859": {
+    "id": 7859,
+    "tag": "Combatant II"
+  },
+  "7860": {
+    "id": 7860,
+    "tag": "Challenger II"
+  },
+  "7861": {
+    "id": 7861,
+    "tag": "Rival II"
+  },
+  "7862": {
+    "id": 7862,
+    "tag": "Combatant II"
+  },
+  "7863": {
+    "id": 7863,
+    "tag": "Challenger II"
+  },
+  "7864": {
+    "id": 7864,
+    "tag": "Rival II"
+  },
+  "7865": {
+    "id": 7865,
+    "tag": "Combatant II"
+  },
+  "7866": {
+    "id": 7866,
+    "tag": "Challenger II"
+  },
+  "7867": {
+    "id": 7867,
+    "tag": "Rival II"
+  },
+  "7868": {
+    "id": 7868,
+    "tag": "Combatant II"
+  },
+  "7869": {
+    "id": 7869,
+    "tag": "Challenger II"
+  },
+  "7870": {
+    "id": 7870,
+    "tag": "Rival II"
+  },
+  "7871": {
+    "id": 7871,
+    "tag": "Combatant II"
+  },
+  "7872": {
+    "id": 7872,
+    "tag": "Challenger II"
+  },
+  "7873": {
+    "id": 7873,
+    "tag": "Rival II"
+  },
+  "7874": {
+    "id": 7874,
+    "tag": "Combatant II"
+  },
+  "7875": {
+    "id": 7875,
+    "tag": "Challenger II"
+  },
+  "7876": {
+    "id": 7876,
+    "tag": "Rival II"
+  },
+  "7877": {
+    "id": 7877,
+    "tag": "Combatant II"
+  },
+  "7878": {
+    "id": 7878,
+    "tag": "Challenger II"
+  },
+  "7879": {
+    "id": 7879,
+    "tag": "Rival II"
+  },
+  "7880": {
+    "id": 7880,
+    "ilevel": "233 @plvl 0 - 233 @plvl 233",
+    "curveId": 28743,
+    "quality": 4
+  },
+  "7881": {
+    "id": 7881,
+    "ilevel": "262 @plvl 0 - 262 @plvl 262",
+    "curveId": 28744,
+    "item_limit_category": 481,
+    "quality": 4
   },
   "7883": {
     "id": 7883,
     "ilevel": "5 @plvl 1 - 220 @plvl 220",
     "curveId": 28749
   },
+  "7885": {
+    "id": 7885,
+    "tag": "Shadowlands recipes for rare (blue) and better armor."
+  },
+  "7886": {
+    "id": 7886,
+    "effect": {
+      "id": 139450,
+      "index": 0,
+      "spell": {
+        "id": 361020,
+        "name": "Cosmic Protoweave",
+        "icon": "inv_enchant_optionalreagent_01"
+      }
+    },
+    "rawStats": [
+      {
+        "stat": 63,
+        "amount": 3500,
+        "name": "Avoidance"
+      }
+    ],
+    "stats": "100% Avoidance [0.3500]"
+  },
+  "7887": {
+    "id": 7887,
+    "effect": {
+      "id": 139451,
+      "index": 0,
+      "spell": {
+        "id": 360046,
+        "name": "Infusion: Corpse Purification",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "7888": {
+    "id": 7888,
+    "effect": {
+      "id": 139452,
+      "index": 0,
+      "spell": {
+        "id": 360072,
+        "name": "Magically Regulated Automa Core",
+        "icon": "inv_enchant_optionalreagent_02"
+      }
+    }
+  },
+  "7890": {
+    "id": 7890,
+    "ilevel": "95 @plvl 45 - 158 @plvl 158",
+    "curveId": 16668,
+    "quality": 4
+  },
+  "7891": {
+    "id": 7891,
+    "effect": {
+      "id": 139525,
+      "index": 0,
+      "spell": {
+        "id": 360975,
+        "name": "Pure-Air Sail Extensions",
+        "icon": "spell_frost_arcticwinds"
+      }
+    }
+  },
+  "7892": {
+    "id": 7892,
+    "effect": {
+      "id": 139566,
+      "index": 0,
+      "spell": {
+        "id": 361287,
+        "name": "Erratic Genesis Matrix",
+        "icon": "spell_progenitor_buff"
+      }
+    }
+  },
+  "7893": {
+    "id": 7893,
+    "tag": "Combatant I"
+  },
+  "7894": {
+    "id": 7894,
+    "tag": "Challenger I"
+  },
+  "7895": {
+    "id": 7895,
+    "tag": "Rival I"
+  },
+  "7896": {
+    "id": 7896,
+    "tag": "Combatant I"
+  },
+  "7897": {
+    "id": 7897,
+    "tag": "Challenger I"
+  },
+  "7898": {
+    "id": 7898,
+    "tag": "Rival I"
+  },
+  "7899": {
+    "id": 7899,
+    "tag": "Combatant I"
+  },
+  "7900": {
+    "id": 7900,
+    "tag": "Challenger I"
+  },
+  "7901": {
+    "id": 7901,
+    "tag": "Rival I"
+  },
+  "7902": {
+    "id": 7902,
+    "tag": "Combatant I"
+  },
+  "7903": {
+    "id": 7903,
+    "tag": "Challenger I"
+  },
+  "7904": {
+    "id": 7904,
+    "tag": "Rival I"
+  },
+  "7905": {
+    "id": 7905,
+    "tag": "Combatant I"
+  },
+  "7906": {
+    "id": 7906,
+    "tag": "Challenger I"
+  },
+  "7907": {
+    "id": 7907,
+    "tag": "Rival I"
+  },
+  "7908": {
+    "id": 7908,
+    "tag": "Combatant I"
+  },
+  "7909": {
+    "id": 7909,
+    "tag": "Challenger I"
+  },
+  "7910": {
+    "id": 7910,
+    "tag": "Rival I"
+  },
+  "7911": {
+    "id": 7911,
+    "tag": "Combatant I"
+  },
+  "7912": {
+    "id": 7912,
+    "tag": "Challenger I"
+  },
+  "7913": {
+    "id": 7913,
+    "tag": "Rival I"
+  },
+  "7914": {
+    "id": 7914,
+    "effect": {
+      "id": 140518,
+      "index": 0,
+      "spell": {
+        "id": 368212,
+        "name": "Devourer Essence Stone",
+        "icon": "spell_frost_frost"
+      }
+    }
+  },
+  "7915": {
+    "id": 7915,
+    "ilevel": "3 @plvl 1 - 210 @plvl 210",
+    "curveId": 29158,
+    "quality": 3,
+    "tag": "Timewarped"
+  },
+  "7916": {
+    "id": 7916,
+    "ilevel": "5 @plvl 1 - 190 @plvl 190",
+    "curveId": 29159,
+    "tag": "Timewarped"
+  },
+  "7917": {
+    "id": 7917,
+    "effect": {
+      "id": 139539,
+      "index": 0,
+      "spell": {
+        "id": 361118,
+        "name": "Sustaining Armor Polish",
+        "icon": "inv_alchemy_crystalvial"
+      }
+    }
+  },
+  "7919": {
+    "id": 7919,
+    "tag": "Korthia"
+  },
+  "7920": {
+    "id": 7920,
+    "ilevel": "2 @plvl 1 - 146 @plvl 146",
+    "curveId": 956
+  },
+  "7921": {
+    "id": 7921,
+    "ilevel": "3 @plvl 1 - 147 @plvl 147",
+    "curveId": 959
+  },
+  "7922": {
+    "id": 7922,
+    "ilevel": "5 @plvl 1 - 149 @plvl 149",
+    "curveId": 961
+  },
+  "7923": {
+    "id": 7923,
+    "ilevel": "4 @plvl 1 - 148 @plvl 148",
+    "curveId": 960
+  },
+  "7924": {
+    "id": 7924,
+    "ilevel": "4 @plvl 1 - 148 @plvl 148",
+    "curveId": 1690
+  },
+  "7925": {
+    "id": 7925,
+    "name_override": {
+      "base": "Sustaining"
+    }
+  },
+  "7926": {
+    "id": 7926,
+    "tag": "Fated"
+  },
+  "7932": {
+    "id": 7932,
+    "effect": {
+      "id": 139830,
+      "index": 0,
+      "spell": {
+        "id": 363328,
+        "name": "Dimensional Translators",
+        "icon": "trade_engineering"
+      }
+    },
+    "item_limit_category": 492
+  },
+  "7933": {
+    "id": 7933,
+    "effect": {
+      "id": 139831,
+      "index": 0,
+      "spell": {
+        "id": 363329,
+        "name": "Raw Speed",
+        "icon": "trade_engineering"
+      }
+    },
+    "item_limit_category": 492
+  },
+  "7934": {
+    "id": 7934,
+    "effect": {
+      "id": 139832,
+      "index": 0,
+      "spell": {
+        "id": 363330,
+        "name": "Autorecreation",
+        "icon": "spell_progenitor_buff"
+      }
+    },
+    "item_limit_category": 492
+  },
+  "7945": {
+    "id": 7945,
+    "effect": {
+      "id": 139981,
+      "index": 0,
+      "spell": {
+        "id": 364086,
+        "name": "Strip Advantage",
+        "icon": "trade_engineering"
+      }
+    },
+    "item_limit_category": 493
+  },
+  "7946": {
+    "id": 7946,
+    "effect": {
+      "id": 139982,
+      "index": 0,
+      "spell": {
+        "id": 364087,
+        "name": "Cosmic Boom",
+        "icon": "trade_engineering"
+      }
+    },
+    "item_limit_category": 493
+  },
+  "7947": {
+    "id": 7947,
+    "effect": {
+      "id": 140087,
+      "index": 0,
+      "spell": {
+        "id": 364999,
+        "name": "Crystallized",
+        "icon": "trade_engineering"
+      }
+    },
+    "item_limit_category": 493,
+    "socket": 1
+  },
+  "7955": {
+    "id": 7955,
+    "effect": {
+      "id": 140058,
+      "index": 0,
+      "spell": {
+        "id": 364480,
+        "name": "Zereth Vision",
+        "icon": "trade_engineering"
+      }
+    },
+    "item_limit_category": 494
+  },
+  "7956": {
+    "id": 7956,
+    "effect": {
+      "id": 140057,
+      "index": 0,
+      "spell": {
+        "id": 364478,
+        "name": "Treasurefinder",
+        "icon": "trade_engineering"
+      }
+    },
+    "item_limit_category": 494
+  },
+  "7957": {
+    "id": 7957,
+    "effect": {
+      "id": 140056,
+      "index": 0,
+      "spell": {
+        "id": 364477,
+        "name": "Pocopoc Resonance",
+        "icon": "trade_engineering"
+      }
+    },
+    "item_limit_category": 494
+  },
+  "7960": {
+    "id": 7960,
+    "effect": {
+      "id": 140133,
+      "index": 0,
+      "spell": {
+        "id": 365457,
+        "name": "Ephemera Harmonizing Stone",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "7985": {
+    "id": 7985,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4850,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 2150,
+        "name": "Vers"
+      }
+    ],
+    "stats": "69% Crit [0.4850], 31% Vers [0.2150]",
+    "name": "of the Quickblade"
+  },
+  "7986": {
+    "id": 7986,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4700,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 2300,
+        "name": "Vers"
+      }
+    ],
+    "stats": "67% Crit [0.4700], 33% Vers [0.2300]",
+    "name": "of the Quickblade"
+  },
+  "7987": {
+    "id": 7987,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4550,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 2450,
+        "name": "Vers"
+      }
+    ],
+    "stats": "65% Crit [0.4550], 35% Vers [0.2450]",
+    "name": "of the Quickblade"
+  },
+  "7988": {
+    "id": 7988,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4400,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 2600,
+        "name": "Vers"
+      }
+    ],
+    "stats": "63% Crit [0.4400], 37% Vers [0.2600]",
+    "name": "of the Quickblade"
+  },
+  "7989": {
+    "id": 7989,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4250,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 2750,
+        "name": "Vers"
+      }
+    ],
+    "stats": "61% Crit [0.4250], 39% Vers [0.2750]",
+    "name": "of the Quickblade"
+  },
+  "7990": {
+    "id": 7990,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4100,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 2900,
+        "name": "Vers"
+      }
+    ],
+    "stats": "59% Crit [0.4100], 41% Vers [0.2900]",
+    "name": "of the Quickblade"
+  },
+  "7991": {
+    "id": 7991,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3950,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 3050,
+        "name": "Vers"
+      }
+    ],
+    "stats": "56% Crit [0.3950], 44% Vers [0.3050]",
+    "name": "of the Quickblade"
+  },
+  "7992": {
+    "id": 7992,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3800,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 3200,
+        "name": "Vers"
+      }
+    ],
+    "stats": "54% Crit [0.3800], 46% Vers [0.3200]",
+    "name": "of the Quickblade"
+  },
+  "7993": {
+    "id": 7993,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3650,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 3350,
+        "name": "Vers"
+      }
+    ],
+    "stats": "52% Crit [0.3650], 48% Vers [0.3350]",
+    "name": "of the Quickblade"
+  },
+  "7994": {
+    "id": 7994,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3350,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 3650,
+        "name": "Vers"
+      }
+    ],
+    "stats": "48% Crit [0.3350], 52% Vers [0.3650]",
+    "name": "of the Quickblade"
+  },
+  "7995": {
+    "id": 7995,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3200,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 3800,
+        "name": "Vers"
+      }
+    ],
+    "stats": "46% Crit [0.3200], 54% Vers [0.3800]",
+    "name": "of the Quickblade"
+  },
+  "7996": {
+    "id": 7996,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3050,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 3950,
+        "name": "Vers"
+      }
+    ],
+    "stats": "44% Crit [0.3050], 56% Vers [0.3950]",
+    "name": "of the Quickblade"
+  },
+  "7997": {
+    "id": 7997,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2900,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 4100,
+        "name": "Vers"
+      }
+    ],
+    "stats": "41% Crit [0.2900], 59% Vers [0.4100]",
+    "name": "of the Quickblade"
+  },
+  "7998": {
+    "id": 7998,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2750,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 4250,
+        "name": "Vers"
+      }
+    ],
+    "stats": "39% Crit [0.2750], 61% Vers [0.4250]",
+    "name": "of the Quickblade"
+  },
+  "7999": {
+    "id": 7999,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2600,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 4400,
+        "name": "Vers"
+      }
+    ],
+    "stats": "37% Crit [0.2600], 63% Vers [0.4400]",
+    "name": "of the Quickblade"
+  },
+  "8000": {
+    "id": 8000,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2450,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 4550,
+        "name": "Vers"
+      }
+    ],
+    "stats": "35% Crit [0.2450], 65% Vers [0.4550]",
+    "name": "of the Quickblade"
+  },
+  "8001": {
+    "id": 8001,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2300,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 4700,
+        "name": "Vers"
+      }
+    ],
+    "stats": "33% Crit [0.2300], 67% Vers [0.4700]",
+    "name": "of the Quickblade"
+  },
+  "8002": {
+    "id": 8002,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2150,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 4850,
+        "name": "Vers"
+      }
+    ],
+    "stats": "31% Crit [0.2150], 69% Vers [0.4850]",
+    "name": "of the Quickblade"
+  },
+  "8003": {
+    "id": 8003,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4850,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 2150,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "69% Crit [0.4850], 31% Mastery [0.2150]",
+    "name": "of the Peerless"
+  },
+  "8004": {
+    "id": 8004,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4700,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 2300,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "67% Crit [0.4700], 33% Mastery [0.2300]",
+    "name": "of the Peerless"
+  },
+  "8005": {
+    "id": 8005,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4550,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 2450,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "65% Crit [0.4550], 35% Mastery [0.2450]",
+    "name": "of the Peerless"
+  },
+  "8006": {
+    "id": 8006,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4400,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 2600,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "63% Crit [0.4400], 37% Mastery [0.2600]",
+    "name": "of the Peerless"
+  },
+  "8007": {
+    "id": 8007,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4250,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 2750,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "61% Crit [0.4250], 39% Mastery [0.2750]",
+    "name": "of the Peerless"
+  },
+  "8008": {
+    "id": 8008,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4100,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 2900,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "59% Crit [0.4100], 41% Mastery [0.2900]",
+    "name": "of the Peerless"
+  },
+  "8009": {
+    "id": 8009,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3950,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 3050,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "56% Crit [0.3950], 44% Mastery [0.3050]",
+    "name": "of the Peerless"
+  },
+  "8010": {
+    "id": 8010,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3800,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 3200,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "54% Crit [0.3800], 46% Mastery [0.3200]",
+    "name": "of the Peerless"
+  },
+  "8011": {
+    "id": 8011,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3650,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 3350,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "52% Crit [0.3650], 48% Mastery [0.3350]",
+    "name": "of the Peerless"
+  },
+  "8012": {
+    "id": 8012,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3350,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 3650,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "48% Crit [0.3350], 52% Mastery [0.3650]",
+    "name": "of the Peerless"
+  },
+  "8013": {
+    "id": 8013,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3200,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 3800,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "46% Crit [0.3200], 54% Mastery [0.3800]",
+    "name": "of the Peerless"
+  },
+  "8014": {
+    "id": 8014,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3050,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 3950,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "44% Crit [0.3050], 56% Mastery [0.3950]",
+    "name": "of the Peerless"
+  },
+  "8015": {
+    "id": 8015,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2900,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 4100,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "41% Crit [0.2900], 59% Mastery [0.4100]",
+    "name": "of the Peerless"
+  },
+  "8016": {
+    "id": 8016,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2750,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 4250,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "39% Crit [0.2750], 61% Mastery [0.4250]",
+    "name": "of the Peerless"
+  },
+  "8017": {
+    "id": 8017,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2600,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 4400,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "37% Crit [0.2600], 63% Mastery [0.4400]",
+    "name": "of the Peerless"
+  },
+  "8018": {
+    "id": 8018,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2450,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 4550,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "35% Crit [0.2450], 65% Mastery [0.4550]",
+    "name": "of the Peerless"
+  },
+  "8019": {
+    "id": 8019,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2300,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 4700,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "33% Crit [0.2300], 67% Mastery [0.4700]",
+    "name": "of the Peerless"
+  },
+  "8020": {
+    "id": 8020,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2150,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 4850,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "31% Crit [0.2150], 69% Mastery [0.4850]",
+    "name": "of the Peerless"
+  },
+  "8021": {
+    "id": 8021,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4850,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 2150,
+        "name": "Haste"
+      }
+    ],
+    "stats": "69% Crit [0.4850], 31% Haste [0.2150]",
+    "name": "of the Fireflash"
+  },
+  "8022": {
+    "id": 8022,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4700,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 2300,
+        "name": "Haste"
+      }
+    ],
+    "stats": "67% Crit [0.4700], 33% Haste [0.2300]",
+    "name": "of the Fireflash"
+  },
+  "8023": {
+    "id": 8023,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4550,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 2450,
+        "name": "Haste"
+      }
+    ],
+    "stats": "65% Crit [0.4550], 35% Haste [0.2450]",
+    "name": "of the Fireflash"
+  },
+  "8024": {
+    "id": 8024,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4400,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 2600,
+        "name": "Haste"
+      }
+    ],
+    "stats": "63% Crit [0.4400], 37% Haste [0.2600]",
+    "name": "of the Fireflash"
+  },
+  "8025": {
+    "id": 8025,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4250,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 2750,
+        "name": "Haste"
+      }
+    ],
+    "stats": "61% Crit [0.4250], 39% Haste [0.2750]",
+    "name": "of the Fireflash"
+  },
+  "8026": {
+    "id": 8026,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4100,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 2900,
+        "name": "Haste"
+      }
+    ],
+    "stats": "59% Crit [0.4100], 41% Haste [0.2900]",
+    "name": "of the Fireflash"
+  },
+  "8027": {
+    "id": 8027,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3950,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 3050,
+        "name": "Haste"
+      }
+    ],
+    "stats": "56% Crit [0.3950], 44% Haste [0.3050]",
+    "name": "of the Fireflash"
+  },
+  "8028": {
+    "id": 8028,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3800,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 3200,
+        "name": "Haste"
+      }
+    ],
+    "stats": "54% Crit [0.3800], 46% Haste [0.3200]",
+    "name": "of the Fireflash"
+  },
+  "8029": {
+    "id": 8029,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3650,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 3350,
+        "name": "Haste"
+      }
+    ],
+    "stats": "52% Crit [0.3650], 48% Haste [0.3350]",
+    "name": "of the Fireflash"
+  },
+  "8030": {
+    "id": 8030,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3350,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 3650,
+        "name": "Haste"
+      }
+    ],
+    "stats": "48% Crit [0.3350], 52% Haste [0.3650]",
+    "name": "of the Fireflash"
+  },
+  "8031": {
+    "id": 8031,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3200,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 3800,
+        "name": "Haste"
+      }
+    ],
+    "stats": "46% Crit [0.3200], 54% Haste [0.3800]",
+    "name": "of the Fireflash"
+  },
+  "8032": {
+    "id": 8032,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3050,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 3950,
+        "name": "Haste"
+      }
+    ],
+    "stats": "44% Crit [0.3050], 56% Haste [0.3950]",
+    "name": "of the Fireflash"
+  },
+  "8033": {
+    "id": 8033,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2900,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 4100,
+        "name": "Haste"
+      }
+    ],
+    "stats": "41% Crit [0.2900], 59% Haste [0.4100]",
+    "name": "of the Fireflash"
+  },
+  "8034": {
+    "id": 8034,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2750,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 4250,
+        "name": "Haste"
+      }
+    ],
+    "stats": "39% Crit [0.2750], 61% Haste [0.4250]",
+    "name": "of the Fireflash"
+  },
+  "8035": {
+    "id": 8035,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2600,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 4400,
+        "name": "Haste"
+      }
+    ],
+    "stats": "37% Crit [0.2600], 63% Haste [0.4400]",
+    "name": "of the Fireflash"
+  },
+  "8036": {
+    "id": 8036,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2450,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 4550,
+        "name": "Haste"
+      }
+    ],
+    "stats": "35% Crit [0.2450], 65% Haste [0.4550]",
+    "name": "of the Fireflash"
+  },
+  "8037": {
+    "id": 8037,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2300,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 4700,
+        "name": "Haste"
+      }
+    ],
+    "stats": "33% Crit [0.2300], 67% Haste [0.4700]",
+    "name": "of the Fireflash"
+  },
+  "8038": {
+    "id": 8038,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2150,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 4850,
+        "name": "Haste"
+      }
+    ],
+    "stats": "31% Crit [0.2150], 69% Haste [0.4850]",
+    "name": "of the Fireflash"
+  },
+  "8039": {
+    "id": 8039,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 4850,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 2150,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "69% Haste [0.4850], 31% Mastery [0.2150]",
+    "name": "of the Feverflare"
+  },
+  "8040": {
+    "id": 8040,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 4700,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 2300,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "67% Haste [0.4700], 33% Mastery [0.2300]",
+    "name": "of the Feverflare"
+  },
+  "8041": {
+    "id": 8041,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 4550,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 2450,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "65% Haste [0.4550], 35% Mastery [0.2450]",
+    "name": "of the Feverflare"
+  },
+  "8042": {
+    "id": 8042,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 4400,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 2600,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "63% Haste [0.4400], 37% Mastery [0.2600]",
+    "name": "of the Feverflare"
+  },
+  "8043": {
+    "id": 8043,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 4250,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 2750,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "61% Haste [0.4250], 39% Mastery [0.2750]",
+    "name": "of the Feverflare"
+  },
+  "8044": {
+    "id": 8044,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 4100,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 2900,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "59% Haste [0.4100], 41% Mastery [0.2900]",
+    "name": "of the Feverflare"
+  },
+  "8045": {
+    "id": 8045,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3950,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 3050,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "56% Haste [0.3950], 44% Mastery [0.3050]",
+    "name": "of the Feverflare"
+  },
+  "8046": {
+    "id": 8046,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3800,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 3200,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "54% Haste [0.3800], 46% Mastery [0.3200]",
+    "name": "of the Feverflare"
+  },
+  "8047": {
+    "id": 8047,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3650,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 3350,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "52% Haste [0.3650], 48% Mastery [0.3350]",
+    "name": "of the Feverflare"
+  },
+  "8048": {
+    "id": 8048,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3350,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 3650,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "48% Haste [0.3350], 52% Mastery [0.3650]",
+    "name": "of the Feverflare"
+  },
+  "8049": {
+    "id": 8049,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3200,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 3800,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "46% Haste [0.3200], 54% Mastery [0.3800]",
+    "name": "of the Feverflare"
+  },
+  "8050": {
+    "id": 8050,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3050,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 3950,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "44% Haste [0.3050], 56% Mastery [0.3950]",
+    "name": "of the Feverflare"
+  },
+  "8051": {
+    "id": 8051,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2900,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 4100,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "41% Haste [0.2900], 59% Mastery [0.4100]",
+    "name": "of the Feverflare"
+  },
+  "8052": {
+    "id": 8052,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2750,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 4250,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "39% Haste [0.2750], 61% Mastery [0.4250]",
+    "name": "of the Feverflare"
+  },
+  "8053": {
+    "id": 8053,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2600,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 4400,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "37% Haste [0.2600], 63% Mastery [0.4400]",
+    "name": "of the Feverflare"
+  },
+  "8054": {
+    "id": 8054,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2450,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 4550,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "35% Haste [0.2450], 65% Mastery [0.4550]",
+    "name": "of the Feverflare"
+  },
+  "8055": {
+    "id": 8055,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2300,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 4700,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "33% Haste [0.2300], 67% Mastery [0.4700]",
+    "name": "of the Feverflare"
+  },
+  "8056": {
+    "id": 8056,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2150,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 4850,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "31% Haste [0.2150], 69% Mastery [0.4850]",
+    "name": "of the Feverflare"
+  },
+  "8057": {
+    "id": 8057,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 4850,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 2150,
+        "name": "Vers"
+      }
+    ],
+    "stats": "69% Haste [0.4850], 31% Vers [0.2150]",
+    "name": "of the Aurora"
+  },
+  "8058": {
+    "id": 8058,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 4700,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 2300,
+        "name": "Vers"
+      }
+    ],
+    "stats": "67% Haste [0.4700], 33% Vers [0.2300]",
+    "name": "of the Aurora"
+  },
+  "8059": {
+    "id": 8059,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 4550,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 2450,
+        "name": "Vers"
+      }
+    ],
+    "stats": "65% Haste [0.4550], 35% Vers [0.2450]",
+    "name": "of the Aurora"
+  },
+  "8060": {
+    "id": 8060,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 4400,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 2600,
+        "name": "Vers"
+      }
+    ],
+    "stats": "63% Haste [0.4400], 37% Vers [0.2600]",
+    "name": "of the Aurora"
+  },
+  "8061": {
+    "id": 8061,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 4250,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 2750,
+        "name": "Vers"
+      }
+    ],
+    "stats": "61% Haste [0.4250], 39% Vers [0.2750]",
+    "name": "of the Aurora"
+  },
+  "8062": {
+    "id": 8062,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 4100,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 2900,
+        "name": "Vers"
+      }
+    ],
+    "stats": "59% Haste [0.4100], 41% Vers [0.2900]",
+    "name": "of the Aurora"
+  },
+  "8063": {
+    "id": 8063,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3950,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 3050,
+        "name": "Vers"
+      }
+    ],
+    "stats": "56% Haste [0.3950], 44% Vers [0.3050]",
+    "name": "of the Aurora"
+  },
+  "8064": {
+    "id": 8064,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3800,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 3200,
+        "name": "Vers"
+      }
+    ],
+    "stats": "54% Haste [0.3800], 46% Vers [0.3200]",
+    "name": "of the Aurora"
+  },
+  "8065": {
+    "id": 8065,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3650,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 3350,
+        "name": "Vers"
+      }
+    ],
+    "stats": "52% Haste [0.3650], 48% Vers [0.3350]",
+    "name": "of the Aurora"
+  },
+  "8066": {
+    "id": 8066,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3350,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 3650,
+        "name": "Vers"
+      }
+    ],
+    "stats": "48% Haste [0.3350], 52% Vers [0.3650]",
+    "name": "of the Aurora"
+  },
+  "8067": {
+    "id": 8067,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3200,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 3800,
+        "name": "Vers"
+      }
+    ],
+    "stats": "46% Haste [0.3200], 54% Vers [0.3800]",
+    "name": "of the Aurora"
+  },
+  "8068": {
+    "id": 8068,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3050,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 3950,
+        "name": "Vers"
+      }
+    ],
+    "stats": "44% Haste [0.3050], 56% Vers [0.3950]",
+    "name": "of the Aurora"
+  },
+  "8069": {
+    "id": 8069,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2900,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 4100,
+        "name": "Vers"
+      }
+    ],
+    "stats": "41% Haste [0.2900], 59% Vers [0.4100]",
+    "name": "of the Aurora"
+  },
+  "8070": {
+    "id": 8070,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2750,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 4250,
+        "name": "Vers"
+      }
+    ],
+    "stats": "39% Haste [0.2750], 61% Vers [0.4250]",
+    "name": "of the Aurora"
+  },
+  "8071": {
+    "id": 8071,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2600,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 4400,
+        "name": "Vers"
+      }
+    ],
+    "stats": "37% Haste [0.2600], 63% Vers [0.4400]",
+    "name": "of the Aurora"
+  },
+  "8072": {
+    "id": 8072,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2450,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 4550,
+        "name": "Vers"
+      }
+    ],
+    "stats": "35% Haste [0.2450], 65% Vers [0.4550]",
+    "name": "of the Aurora"
+  },
+  "8073": {
+    "id": 8073,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2300,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 4700,
+        "name": "Vers"
+      }
+    ],
+    "stats": "33% Haste [0.2300], 67% Vers [0.4700]",
+    "name": "of the Aurora"
+  },
+  "8074": {
+    "id": 8074,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2150,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 4850,
+        "name": "Vers"
+      }
+    ],
+    "stats": "31% Haste [0.2150], 69% Vers [0.4850]",
+    "name": "of the Aurora"
+  },
+  "8075": {
+    "id": 8075,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 4850,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 2150,
+        "name": "Vers"
+      }
+    ],
+    "stats": "69% Mastery [0.4850], 31% Vers [0.2150]",
+    "name": "of the Harmonious"
+  },
+  "8076": {
+    "id": 8076,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 4700,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 2300,
+        "name": "Vers"
+      }
+    ],
+    "stats": "67% Mastery [0.4700], 33% Vers [0.2300]",
+    "name": "of the Harmonious"
+  },
+  "8077": {
+    "id": 8077,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 4550,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 2450,
+        "name": "Vers"
+      }
+    ],
+    "stats": "65% Mastery [0.4550], 35% Vers [0.2450]",
+    "name": "of the Harmonious"
+  },
+  "8078": {
+    "id": 8078,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 4400,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 2600,
+        "name": "Vers"
+      }
+    ],
+    "stats": "63% Mastery [0.4400], 37% Vers [0.2600]",
+    "name": "of the Harmonious"
+  },
+  "8079": {
+    "id": 8079,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 4250,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 2750,
+        "name": "Vers"
+      }
+    ],
+    "stats": "61% Mastery [0.4250], 39% Vers [0.2750]",
+    "name": "of the Harmonious"
+  },
+  "8080": {
+    "id": 8080,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 4100,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 2900,
+        "name": "Vers"
+      }
+    ],
+    "stats": "59% Mastery [0.4100], 41% Vers [0.2900]",
+    "name": "of the Harmonious"
+  },
+  "8081": {
+    "id": 8081,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 3950,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 3050,
+        "name": "Vers"
+      }
+    ],
+    "stats": "56% Mastery [0.3950], 44% Vers [0.3050]",
+    "name": "of the Harmonious"
+  },
+  "8082": {
+    "id": 8082,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 3800,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 3200,
+        "name": "Vers"
+      }
+    ],
+    "stats": "54% Mastery [0.3800], 46% Vers [0.3200]",
+    "name": "of the Harmonious"
+  },
+  "8083": {
+    "id": 8083,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 3650,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 3350,
+        "name": "Vers"
+      }
+    ],
+    "stats": "52% Mastery [0.3650], 48% Vers [0.3350]",
+    "name": "of the Harmonious"
+  },
+  "8084": {
+    "id": 8084,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 3350,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 3650,
+        "name": "Vers"
+      }
+    ],
+    "stats": "48% Mastery [0.3350], 52% Vers [0.3650]",
+    "name": "of the Harmonious"
+  },
+  "8085": {
+    "id": 8085,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 3200,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 3800,
+        "name": "Vers"
+      }
+    ],
+    "stats": "46% Mastery [0.3200], 54% Vers [0.3800]",
+    "name": "of the Harmonious"
+  },
+  "8086": {
+    "id": 8086,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 3050,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 3950,
+        "name": "Vers"
+      }
+    ],
+    "stats": "44% Mastery [0.3050], 56% Vers [0.3950]",
+    "name": "of the Harmonious"
+  },
+  "8087": {
+    "id": 8087,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 2900,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 4100,
+        "name": "Vers"
+      }
+    ],
+    "stats": "41% Mastery [0.2900], 59% Vers [0.4100]",
+    "name": "of the Harmonious"
+  },
+  "8088": {
+    "id": 8088,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 2750,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 4250,
+        "name": "Vers"
+      }
+    ],
+    "stats": "39% Mastery [0.2750], 61% Vers [0.4250]",
+    "name": "of the Harmonious"
+  },
+  "8089": {
+    "id": 8089,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 2600,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 4400,
+        "name": "Vers"
+      }
+    ],
+    "stats": "37% Mastery [0.2600], 63% Vers [0.4400]",
+    "name": "of the Harmonious"
+  },
+  "8090": {
+    "id": 8090,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 2450,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 4550,
+        "name": "Vers"
+      }
+    ],
+    "stats": "35% Mastery [0.2450], 65% Vers [0.4550]",
+    "name": "of the Harmonious"
+  },
+  "8091": {
+    "id": 8091,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 2300,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 4700,
+        "name": "Vers"
+      }
+    ],
+    "stats": "33% Mastery [0.2300], 67% Vers [0.4700]",
+    "name": "of the Harmonious"
+  },
+  "8092": {
+    "id": 8092,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 2150,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 4850,
+        "name": "Vers"
+      }
+    ],
+    "stats": "31% Mastery [0.2150], 69% Vers [0.4850]",
+    "name": "of the Harmonious"
+  },
+  "8093": {
+    "id": 8093,
+    "quality": 4
+  },
+  "8108": {
+    "id": 8108,
+    "quality": 3
+  },
+  "8119": {
+    "id": 8119,
+    "effect": {
+      "id": 140407,
+      "index": 0,
+      "spell": {
+        "id": 364758,
+        "name": "Unity",
+        "icon": "achievement_mythicdungeons_shadowlands"
+      }
+    },
+    "quality": 5,
+    "name_override": {
+      "base": "Unity"
+    },
+    "item_limit_category": 496
+  },
+  "8120": {
+    "id": 8120,
+    "effect": {
+      "id": 140408,
+      "index": 0,
+      "spell": {
+        "id": 364824,
+        "name": "Unity",
+        "icon": "achievement_mythicdungeons_shadowlands"
+      }
+    },
+    "quality": 5,
+    "name_override": {
+      "base": "Unity"
+    },
+    "item_limit_category": 496
+  },
+  "8121": {
+    "id": 8121,
+    "effect": {
+      "id": 140409,
+      "index": 0,
+      "spell": {
+        "id": 364814,
+        "name": "Unity",
+        "icon": "achievement_mythicdungeons_shadowlands"
+      }
+    },
+    "quality": 5,
+    "name_override": {
+      "base": "Unity"
+    },
+    "item_limit_category": 496
+  },
+  "8122": {
+    "id": 8122,
+    "effect": {
+      "id": 140410,
+      "index": 0,
+      "spell": {
+        "id": 364743,
+        "name": "Unity",
+        "icon": "achievement_mythicdungeons_shadowlands"
+      }
+    },
+    "quality": 5,
+    "name_override": {
+      "base": "Unity"
+    },
+    "item_limit_category": 496
+  },
+  "8123": {
+    "id": 8123,
+    "effect": {
+      "id": 140411,
+      "index": 0,
+      "spell": {
+        "id": 364852,
+        "name": "Unity",
+        "icon": "achievement_mythicdungeons_shadowlands"
+      }
+    },
+    "quality": 5,
+    "name_override": {
+      "base": "Unity"
+    },
+    "item_limit_category": 496
+  },
+  "8124": {
+    "id": 8124,
+    "effect": {
+      "id": 140412,
+      "index": 0,
+      "spell": {
+        "id": 364857,
+        "name": "Unity",
+        "icon": "achievement_mythicdungeons_shadowlands"
+      }
+    },
+    "quality": 5,
+    "name_override": {
+      "base": "Unity"
+    },
+    "item_limit_category": 496
+  },
+  "8125": {
+    "id": 8125,
+    "effect": {
+      "id": 140413,
+      "index": 0,
+      "spell": {
+        "id": 364642,
+        "name": "Unity",
+        "icon": "achievement_mythicdungeons_shadowlands"
+      }
+    },
+    "quality": 5,
+    "name_override": {
+      "base": "Unity"
+    },
+    "item_limit_category": 496
+  },
+  "8126": {
+    "id": 8126,
+    "effect": {
+      "id": 140414,
+      "index": 0,
+      "spell": {
+        "id": 364911,
+        "name": "Unity",
+        "icon": "achievement_mythicdungeons_shadowlands"
+      }
+    },
+    "quality": 5,
+    "name_override": {
+      "base": "Unity"
+    },
+    "item_limit_category": 496
+  },
+  "8127": {
+    "id": 8127,
+    "effect": {
+      "id": 140415,
+      "index": 0,
+      "spell": {
+        "id": 364922,
+        "name": "Unity",
+        "icon": "achievement_mythicdungeons_shadowlands"
+      }
+    },
+    "quality": 5,
+    "name_override": {
+      "base": "Unity"
+    },
+    "item_limit_category": 496
+  },
+  "8128": {
+    "id": 8128,
+    "effect": {
+      "id": 140416,
+      "index": 0,
+      "spell": {
+        "id": 364738,
+        "name": "Unity",
+        "icon": "achievement_mythicdungeons_shadowlands"
+      }
+    },
+    "quality": 5,
+    "name_override": {
+      "base": "Unity"
+    },
+    "item_limit_category": 496
+  },
+  "8129": {
+    "id": 8129,
+    "effect": {
+      "id": 140417,
+      "index": 0,
+      "spell": {
+        "id": 364939,
+        "name": "Unity",
+        "icon": "achievement_mythicdungeons_shadowlands"
+      }
+    },
+    "quality": 5,
+    "name_override": {
+      "base": "Unity"
+    },
+    "item_limit_category": 496
+  },
+  "8130": {
+    "id": 8130,
+    "effect": {
+      "id": 140418,
+      "index": 0,
+      "spell": {
+        "id": 364929,
+        "name": "Unity",
+        "icon": "achievement_mythicdungeons_shadowlands"
+      }
+    },
+    "quality": 5,
+    "name_override": {
+      "base": "Unity"
+    },
+    "item_limit_category": 496
+  },
+  "8142": {
+    "id": 8142,
+    "quality": 4
+  },
+  "8143": {
+    "id": 8143,
+    "quality": 3
+  },
+  "8144": {
+    "id": 8144,
+    "quality": 3
+  },
+  "8145": {
+    "id": 8145,
+    "quality": 3
+  },
+  "8148": {
+    "id": 8148,
+    "quality": 4
+  },
+  "8157": {
+    "id": 8157,
+    "previewlevel": 0
+  }
 }
