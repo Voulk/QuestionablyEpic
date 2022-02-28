@@ -39,8 +39,8 @@ export const paladinKyrianSpecialQueries = (contentType) => {
       cooldownMult: {
         oneMinute: 1,
         ninetySeconds: 1,
-        twoMinutes: 1.39,
-        twoMinutesOrb: 1.31,
+        twoMinutes: 1.14,
+        twoMinutesOrb: 1.14,
         threeMinutes: 1,
       },
       HoldYourGroundUptime: 0.4

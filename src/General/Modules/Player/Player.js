@@ -632,11 +632,11 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 1800,
+        intellect: 2000,
         haste: 125,
-        crit: 590,
-        mastery: 200,
-        versatility: 370,
+        crit: 790,
+        mastery: 220,
+        versatility: 570,
         stamina: 1900,
       };
       /*
@@ -661,7 +661,7 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 1800,
+        intellect: 2000,
         haste: 125,
         crit: 475,
         mastery: 470,
