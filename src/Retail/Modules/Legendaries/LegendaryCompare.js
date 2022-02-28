@@ -68,7 +68,6 @@ const createLegendary = (legendary, container, spec, player, contentType) => {
   lego.effectiveHPS = convertToHPS(lego.bonus_stats, player, contentType);
   lego.effectiveDPS = "dps" in lego.bonus_stats ? lego.bonus_stats.dps : 0;
   lego.id = legendary.id;
-  console.log(legendary.covenant);
   lego.covenant = legendary.covenant;
 
   container.push(lego);
