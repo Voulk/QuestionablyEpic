@@ -68,6 +68,16 @@ export default function ItemCard(props) {
     props.delete(item.uniqueHash);
   };
 
+  const tertiaryStyle = (tertiary) => {
+    if (tertiary === "Leech") {
+      return "lime";
+    } else if (tertiary === "Avoidance") {
+      return "khaki";
+    } else {
+      return "#fff";
+    }
+  };
+
   let itemName = "";
   let isVault = item.vaultItem;
   // const deleteActive = item.offhandID === 0;
@@ -79,97 +89,92 @@ export default function ItemCard(props) {
     else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
   }
 
+  const tertiary =
+    "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}>{t(props.item.tertiary)}</div> : null;
+
   const socket = props.item.socket ? (
-    <div style={{ display: "inline" }}>
-      <img src={socketImage} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />{" "}
+    <div style={{ display: "inline", verticalAlign: "middle", marginTop: tertiary || isVault ? 0 : 2, marginRight: 4 }}>
+      <img src={socketImage} width={15} height={15} alt="Socket" />
     </div>
   ) : null;
 
-  const tertiary = "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
-
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
-      <Card className={item.active && isVault ? classes.selectedVault : item.active ? classes.selected : isVault ? classes.vault : classes.root} elevation={0} variant="outlined">
-        <CardActionArea onClick={activateItemCard}>
-          <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
-            <Grid item xs="auto">
-              <CardContent
-                style={{
-                  padding: "2px 2px 0px 2px",
-                  display: "inline-flex",
-                }}
-              >
-                <div className="container-MiniItemCards">
-                  <a data-wowhead={item.slot === "Trinket" ? "item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage : ""}>
-                    <img
-                      alt="img"
-                      width={44}
-                      height={44}
-                      src={getItemIcon(item.id, gameType)}
-                      style={{
-                        borderRadius: 4,
-                        borderWidth: "1px",
-                        borderStyle: "solid",
-                        borderColor: itemQuality,
-                      }}
-                    />
-                  </a>
-                  <div className="bottom-right-ItemCards"> {item.level} </div>
-                </div>
-              </CardContent>
-            </Grid>
-            <Divider orientation="vertical" flexItem />
-            <CardContent style={{ padding: 4, width: "100%" }}>
-              <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
-                {/* <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}> */}
-                <Grid item xs={12} display="inline">
-                  <Typography variant="subtitle2" wrap="nowrap" display="inline" align="left" style={{ color: itemQuality, lineHeight: 1.4 }}>
-                    {itemName}
-                  </Typography>
-                </Grid>
-                {/* </Grid> */}
-                <Divider />
-                <Grid item container xs={12} display="inline-flex" direction="row" justifyContent="space-between" style={{marginTop: 2}}>
-                  <Grid item xs={11}>
-                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginTop: 1 }}>
-                      {/*item.domGemID !== 0 && gameType === "Retail" ? (
-                        <a data-wowhead={"item=" + item.domGemID + "&domain=" + currentLanguage}>
-                          <img
-                            style={{
-                              height: 16,
-                              width: 16,
-                              // margin: "0px 5px 0px 0px",
-                              verticalAlign: "middle",
-                              borderRadius: 4,
-                              border: "1px solid rgba(255, 255, 255, 0.12)",
-                            }}
-                            src={process.env.PUBLIC_URL + "/Images/Icons/" + dominationGemDB.filter((key) => key.gemID === item.domGemID).map((key) => key.icon)[0] + ".jpg"}
-                            alt={dominationGemDB.filter((key) => key.id === item.domGemID).map((key) => key.name[currentLanguage])[0]}
-                          />
-                        </a>
-                      ) : (
-                        ""
-                      )*/}
-                      {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
+      <div style={{ position: "relative" }}>
+        {deleteActive ? (
+          <div>
+            <IconButton onClick={deleteItemCard} style={{ position: "absolute", right: 4, bottom: 2, zIndex: 1, padding: 0 }} aria-label="delete" size="small">
+              <DeleteIcon style={{ color: "#ad2c34" }} fontSize="small" />
+            </IconButton>
+          </div>
+        ) : (
+          ""
+        )}
+        <Card className={item.active && isVault ? classes.selectedVault : item.active ? classes.selected : isVault ? classes.vault : classes.root} elevation={0} variant="outlined">
+          <CardActionArea onClick={activateItemCard}>
+            <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
+              <Grid item xs="auto">
+                <CardContent
+                  style={{
+                    padding: "2px 2px 0px 2px",
+                    display: "inline-flex",
+                  }}
+                >
+                  <div className="container-MiniItemCards">
+                    <a data-wowhead={item.slot === "Trinket" ? "item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage : ""}>
+                      <img
+                        alt="img"
+                        width={44}
+                        height={44}
+                        src={getItemIcon(item.id, gameType)}
+                        style={{
+                          borderRadius: 4,
+                          borderWidth: "1px",
+                          borderStyle: "solid",
+                          borderColor: itemQuality,
+                        }}
+                      />
+                    </a>
+                    <div className="bottom-right-ItemCards"> {item.level} </div>
+                  </div>
+                </CardContent>
+              </Grid>
+              <Divider orientation="vertical" flexItem />
+              <CardContent style={{ padding: 0, width: "100%" }}>
+                <Grid item container direction="column" justifyContent="space-around" xs="auto">
+                  <Grid item xs={12} display="inline">
+                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px" }}>
+                      <div style={{ color: itemQuality, lineHeight: tertiary ? "normal" : 1.57 }}>{itemName}</div>
+                      <div style={{ display: "flex" }}>
+                        {tertiary}
+                        {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                        {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
+                      </div>
                     </Typography>
                   </Grid>
-                  <Grid item xs={1} align="center">
-                    {deleteActive ? (
-                      <div>
-                        <IconButton onClick={deleteItemCard} style={{ padding: 0 }} aria-label="delete" size="small">
-                          <DeleteIcon style={{ color: "#ad2c34" }} fontSize="small" />
-                        </IconButton>
+                  <Divider />
+                  <Grid item container xs={12} display="inline-flex" direction="row" justifyContent="space-between" style={{ marginTop: 2 }}>
+                    <Grid item xs={11}>
+                      <div style={{ display: "inline-flex", marginLeft: 4 }}>
+                        {socket}
+                        <Typography
+                          variant="subtitle2"
+                          wrap="nowrap"
+                          display="block"
+                          align="left"
+                          style={{ fontSize: "12px", marginTop: tertiary || isVault ? 0 : 1, lineHeight: tertiary || isVault ? "normal" : "" }}
+                        >
+                          {statString}
+                        </Typography>
                       </div>
-                    ) : (
-                      ""
-                    )}
+                    </Grid>
                   </Grid>
                 </Grid>
-              </Grid>
-            </CardContent>
-          </Grid>
-        </CardActionArea>
-      </Card>
+              </CardContent>
+            </Grid>
+          </CardActionArea>
+        </Card>
+      </div>
     </Grid>
   );
 }

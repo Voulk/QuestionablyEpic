@@ -9,7 +9,6 @@ import masterySocket from "../../../Images/Resources/masterySocket.jpg";
 import versSocket from "../../../Images/Resources/versSocket.jpg";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { dominationGemDB } from "../../../Databases/DominationGemDB";
 
 const useStyles = makeStyles({
   root: {
@@ -36,7 +35,7 @@ export default function ItemCardReport(props) {
   const classes = useStyles();
   const item = props.item;
   const enchants = props.enchants;
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const gameType = useSelector((state) => state.gameType);
 
   const currentLanguage = i18n.language;
@@ -98,7 +97,18 @@ export default function ItemCardReport(props) {
     return null;
   };
 
-  const tertiary = "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
+  const tertiaryStyle = (tertiary) => {
+    if (tertiary === "Leech") {
+      return "lime";
+    } else if (tertiary === "Avoidance") {
+      return "khaki";
+    } else {
+      return "#fff";
+    }
+  };
+
+  const tertiary =
+    "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}>{t(props.item.tertiary)}</div> : null;
 
   return (
     <Grid item xs={12}>
@@ -140,8 +150,13 @@ export default function ItemCardReport(props) {
               <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
                 <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={12} display="inline">
-                    <Typography variant="subtitle2" wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel, item.id) }}>
-                      {itemName}
+                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px" }}>
+                      <div style={{ color: itemQuality(itemLevel, item.id), lineHeight: tertiary ? "normal" : 1.57 }}>{itemName}</div>
+                      <div style={{ display: "flex" }}>
+                        {tertiary}
+                        {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                        {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
+                      </div>
                     </Typography>
                   </Grid>
                 </Grid>
@@ -149,25 +164,7 @@ export default function ItemCardReport(props) {
                 <Grid item container direction="row" xs={12} justifyContent="space-between">
                   <Grid item>
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
-                      {/*"domGemID" in item && item.domGemID !== 0 ? (
-                        <a data-wowhead={"item=" + item.domGemID + "&domain=" + currentLanguage}>
-                          <img
-                            style={{
-                              height: 16,
-                              width: 16,
-                              margin: "0px 0px 0px 0px",
-                              verticalAlign: "middle",
-                              borderRadius: 4,
-                              border: "1px solid rgba(255, 255, 255, 0.12)",
-                            }}
-                            src={getGemIcon(item.domGemID)}
-                            alt={dominationGemDB.filter((key) => key.id === item.domGemID).map((key) => key.name[currentLanguage])[0]}
-                          />
-                        </a>
-                      ) : (
-                        ""
-                      )*/}
-                      {socket} {statString} {tertiary} {isVault ? " / Vault" : ""}
+                      {socket} {statString}
                     </Typography>
                   </Grid>
                   <Grid item>{enchantCheck(item)}</Grid>
