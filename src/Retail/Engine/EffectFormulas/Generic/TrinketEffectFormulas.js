@@ -916,7 +916,6 @@ else if (
   const oneProc = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * (effect.duration / effect.tickRate) //* player.getStatPerc("Haste"))
 
   bonus_stats.hps = (oneProc * effect.ppm * player.getStatPerc("Versatility") / 60);
-  console.log("Chime: " + itemLevel + " " + bonus_stats.hps)
   //
 }
 else if (

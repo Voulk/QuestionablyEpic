@@ -121,11 +121,12 @@ export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle) =
     if (trinket === "Soulletting Ruby") sequence.push("Soulletting Ruby");
     if (trinket === "Instructor's Divine Bell") sequence.push("Instructor's Divine Bell");
     if (trinket === "Instructor's Divine Bell (new)") sequence.push("Instructor's Divine Bell (new)");
+    
     sequence.push('Shadowfiend');
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
-    sequence.push('Evangelism');
     if (trinket === "Flame of Battle") sequence.push("Flame of Battle");
+    sequence.push('Evangelism');
     
     // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     sequence.push('Schism');
@@ -171,19 +172,19 @@ export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = 
     if (trinket === "Soulletting Ruby") sequence.push("Soulletting Ruby");
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
-    
+    if (trinket === "Instructor's Divine Bell (new)") sequence.push("Instructor's Divine Bell (new)");
     sequence.push('Evangelism');
     sequence.push('Boon of the Ascended');
-    sequence.push('Ascended Blast');
     if (trinket === "Flame of Battle") sequence.push("Flame of Battle");
-    if (trinket === "Instructor's Divine Bell (new)") sequence.push("Instructor's Divine Bell (new)");
+    sequence.push('Ascended Blast');
+    
     sequence.push('Schism');
     const hastePerc = 1 + haste / 32 / 100;
     let boonDuration = 10 - (1.5 * 2 / hastePerc) + (1.5 / hastePerc);
     const boonPackage = (1.5 + 1 + 1) / hastePerc;
     for (var i = 0; i < Math.floor(boonDuration / boonPackage); i++) {
         sequence.push('Ascended Blast');
-        if (trinket === "Instructor's Divine Bell" && i === 0) sequence.push("Instructor's Divine Bell");
+        //if (trinket === "Instructor's Divine Bell" && i === 0) sequence.push("Instructor's Divine Bell");
         sequence.push('Ascended Nova');
         sequence.push('Ascended Nova');
     }
