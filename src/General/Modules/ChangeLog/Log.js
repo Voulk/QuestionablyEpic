@@ -14,6 +14,7 @@ export const changeLog = [
     date: "28 February (Minor Update)",
     changes: [
       "In-game hotfix: Reclaimer's Intensity Core rebalanced.",
+      "In-game hotfix: First Class haste bonus nerfed by about ~75%.",
       "Bugfix: 262 crafted items should now import at the correct item level.",
       "Bugfix: Stats should once again DR correctly in Top Gear."
     ],

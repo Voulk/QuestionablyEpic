@@ -919,8 +919,8 @@ export const trinket_data = [
       },
       {
         /* --------------------------------------- Haste Portion --------------------------------------- */
-        coefficient: 3.8125,
-        table: -8,
+        coefficient: 0.405042, // Previously 3.8125 @ -9.
+        table: -7,
         ppm: 3,
         duration: 9,
       },

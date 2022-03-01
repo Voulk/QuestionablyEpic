@@ -24,9 +24,9 @@ export const effectData = [
       name: "Soulwarped Seal of Wrynn",
       effects: [
         {
-            coefficient: 6.252791,
+            coefficient: 0.739246,
             duration: 12,
-            ppm: 2, 
+            ppm: 10, // 20 in spell data. Verify with in-game logs. 
             table: -8 // -9
         },
       ],
