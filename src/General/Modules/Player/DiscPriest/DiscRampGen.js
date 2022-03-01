@@ -64,7 +64,6 @@ const buildTrinkets = (trinkets) => {
     // 2 minute or longer CD trinkets. These need to be assigned to a specific ramp. If we are wearing two such trinkets at once then assign one to Boon and the other to Fiend. 
     if (trinkets.includes("Soulletting Ruby")) onUse.Boon = "Soulletting Ruby";
     else if (trinkets.includes("Shadowed Orb of Torment")) onUse.Boon = "Shadowed Orb of Torment";
-
     return onUse;
 }
 
@@ -120,27 +119,36 @@ export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle) =
     }
     // Note for Ruby that this is the time we expect to get the buff, NOT the time we cast it.
     if (trinket === "Soulletting Ruby") sequence.push("Soulletting Ruby");
-    sequence.push('Power Word: Radiance');
-    sequence.push('Power Word: Radiance');
-
-
-    sequence.push('Evangelism');
-    sequence.push('Shadowfiend');
-    // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     if (trinket === "Instructor's Divine Bell") sequence.push("Instructor's Divine Bell");
     if (trinket === "Instructor's Divine Bell (new)") sequence.push("Instructor's Divine Bell (new)");
+    
+    sequence.push('Shadowfiend');
+    sequence.push('Power Word: Radiance');
+    sequence.push('Power Word: Radiance');
     if (trinket === "Flame of Battle") sequence.push("Flame of Battle");
+    sequence.push('Evangelism');
+    
+    // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     sequence.push('Schism');
+    sequence.push('PenanceTick');
+    sequence.push('PenanceTick');
+    sequence.push('PenanceTick');
     sequence.push('Mind Blast');
     sequence.push('Power Word: Solace');
-    sequence.push('PenanceTick');
-    sequence.push('PenanceTick');
-    sequence.push('PenanceTick');
 
-    for (var i = 0; i < 12; i++) {
+    for (var i = 0; i < 3; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
         sequence.push('Smite');
     }
+    sequence.push('PenanceTick');
+    sequence.push('PenanceTick');
+    sequence.push('PenanceTick');
+
+    for (var i = 0; i < 8; i++) {
+        // The number of smites here is adjustable but also not very important outside of DPS metrics. 
+        sequence.push('Smite');
+    }
+
     return sequence;
 }
 
@@ -164,20 +172,19 @@ export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = 
     if (trinket === "Soulletting Ruby") sequence.push("Soulletting Ruby");
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
-    
+    if (trinket === "Instructor's Divine Bell (new)") sequence.push("Instructor's Divine Bell (new)");
     sequence.push('Evangelism');
     sequence.push('Boon of the Ascended');
-    sequence.push('Ascended Blast');
     if (trinket === "Flame of Battle") sequence.push("Flame of Battle");
-    if (trinket === "Instructor's Divine Bell (new)") sequence.push("Instructor's Divine Bell (new)");
+    sequence.push('Ascended Blast');
+    
     sequence.push('Schism');
     const hastePerc = 1 + haste / 32 / 100;
     let boonDuration = 10 - (1.5 * 2 / hastePerc) + (1.5 / hastePerc);
     const boonPackage = (1.5 + 1 + 1) / hastePerc;
-
     for (var i = 0; i < Math.floor(boonDuration / boonPackage); i++) {
         sequence.push('Ascended Blast');
-        if (trinket === "Instructor's Divine Bell" && i === 0) sequence.push("Instructor's Divine Bell");
+        //if (trinket === "Instructor's Divine Bell" && i === 0) sequence.push("Instructor's Divine Bell");
         sequence.push('Ascended Nova');
         sequence.push('Ascended Nova');
     }

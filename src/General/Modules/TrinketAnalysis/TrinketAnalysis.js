@@ -109,7 +109,6 @@ export default function TrinketAnalysis(props) {
       1188, // De Other Side,
       1189, // Sanguine Depths,
       1194, // Tazavesh
-      
     ];
     const legionTimewalking = [
       -24, // Legion Timewalking
@@ -153,7 +152,7 @@ export default function TrinketAnalysis(props) {
     }
   };
   const contentType = useSelector((state) => state.contentType);
-  const itemLevels = [200, 207, 213, 220, 226, 233, 239, 246, 252, 259, 260, 262, 265, 272, 278];
+  const itemLevels = [200, 207, 213, 220, 226, 233, 239, 246, 252, 259, 262, 265, 272, 278, 285];
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
     (key) =>
@@ -199,7 +198,6 @@ export default function TrinketAnalysis(props) {
   } else {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, gameType) < getHighestTrinketScore(finalDB, b, gameType) ? 1 : -1));
   }
-
 
   return (
     <div className={classes.root}>
@@ -293,6 +291,7 @@ export default function TrinketAnalysis(props) {
           ""
         )}
       </Grid>
+      <div style={{ height: 400 }} />
     </div>
   );
 }

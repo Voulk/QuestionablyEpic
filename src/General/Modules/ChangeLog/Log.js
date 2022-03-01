@@ -10,6 +10,20 @@
 export const changeLog = [
   {
     version: "9.2 / 2.5.3",
+    update: 2,
+    date: "28 February (Major Update)",
+    changes: [
+      "Included the Bell and Ruby nerfs.",
+      "Capped World Quest trinkets at 213 item level.",
+      "Added raid BoEs.",
+      "Fixed a few items appearing in the wrong slot.",
+      "Updated MW legendary formulas.",
+      "Removed 278 PVP category since they cap at 275.",
+      "UI: Updated Item Cards."
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
     update: 1,
     date: "22 February (Major Update)",
     changes: [
