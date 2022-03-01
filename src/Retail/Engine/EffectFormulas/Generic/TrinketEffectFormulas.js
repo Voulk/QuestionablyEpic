@@ -9,7 +9,6 @@ import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 // import { STAT } from "../../../../General/Engine/STAT";
 import SPEC from "../../../../General/Engine/SPECS";
-import { duration } from "moment";
 
 export function getDiminishedValue(statID, procValue, baseStat) {
   const DRBreakpoints = STATDIMINISHINGRETURNS[statID.toUpperCase()];

@@ -55,6 +55,7 @@ describe("Test Stat DRs", () => {
         ${437}  | ${364}
         ${463}  | ${374}
         ${477}  | ${380}
+        ${489}  | ${385}
         // add new test cases here
 
         `.test("Checks leech DR at $rawLeech", ({ rawLeech, expectedResult }) => {
