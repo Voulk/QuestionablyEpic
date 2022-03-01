@@ -24,9 +24,25 @@ export const effectData = [
       name: "Soulwarped Seal of Wrynn",
       effects: [
         {
-            coefficient: 6.252791,
+            coefficient: 0.739246,
             duration: 12,
-            ppm: 2, 
+            ppm: 10, // 20 in spell data. Verify with in-game logs. 
+            table: -8 // -9
+        },
+      ],
+    },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                           Sepulcher's Savior                                   */
+      /* ---------------------------------------------------------------------------------------------- */
+      // This is primarily a tank offhand that can also be used by Shaman / Paladin healers. 
+      // It trades secondary stats for heal and damage procs on a 1.5 minute cooldown.
+      // The damage effect is NYI but can be quite easily.
+      name: "Sepulcher's Savior",
+      effects: [
+        {
+            coefficient: 231.3687,
+            cooldown: 180,
             table: -8 // -9
         },
       ],

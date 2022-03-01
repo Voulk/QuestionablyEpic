@@ -179,8 +179,8 @@ describe("First Class Healing Distributor", () => {
     const effect2 = activeTrinket.effects[1];
     each`
     level    | expectedResult
-    ${233}  | ${275}
-    ${226}  | ${247}
+    ${223}  | ${80}
+    ${236}  | ${86}
     // add new test cases here
     `.test("First Class Healing Distributor Haste Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
@@ -452,13 +452,14 @@ describe("Reclaimer's Intensity Core", () => {
 
     each`
     level   | expectedResult
-    ${239}  | ${3815} 
-    ${252}  | ${4306}
-    ${265}  | ${4861}
-    ${278}  | ${5487}
+    ${239}  | ${282} 
+    ${252}  | ${319}
+    ${265}  | ${360}
+    ${278}  | ${406}
     // add new test cases here
     `.test("Reclaimer's Intensity Core (Mana) - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(Math.floor(10*getProcessedValue(manaEffect.coefficient, manaEffect.table, level, 1, false))).toBe(expectedResult);
+        //expect(Math.floor(10*getProcessedValue(manaEffect.coefficient, manaEffect.table, level, 1, false))).toBe(expectedResult);
+        expect(Math.round(10*getProcessedValue(manaEffect.coefficient, manaEffect.table, level, 1, false))).toBe(expectedResult);
     }); 
 });
 
