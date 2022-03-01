@@ -1046,7 +1046,7 @@ export const trinket_data = [
       {
         coefficient: 2.07913,
         table: -8, 
-        ppm: { "Restoration Druid": 19, "Discipline Priest": 10, "Holy Paladin": 0, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.5, "Holy Priest": 9 }, // TODO: Refine. 
+        ppm: { "Restoration Druid": 20, "Discipline Priest": 10, "Holy Paladin": 0, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.5, "Holy Priest": 9 }, // TODO: Refine. 
       },
     ],
   },
@@ -1131,10 +1131,10 @@ export const trinket_data = [
     name: "Reclaimer's Intensity Core", 
     effects: [
       { // Mana on-use
-        coefficient: 2.186952,
+        coefficient: 0.161757,
         table: -1,
         ticks: 10, // The coefficient is for a single tick.
-        cooldown: 150,
+        cooldown: 90,
       },
       { // Healing Effect whenever an automata dies. 
         // The scaling curve does not match any known spell tables and the trinket is available at just four item level so they are hard coded in for now.
@@ -1142,13 +1142,13 @@ export const trinket_data = [
         // The Reclaimer's healing effect procs once every time a nearby automata dies. This does include automata from other players in addition to the players own.
         // However, they can also be outranged and so if not careful you can even run away from your own. The radius appears to be 30 yards. 
         // There is a good case to be made that there should be a settings value for automata in raid.
-        coefficient: 0.841136,
+        coefficient: 0.530562,
         table: -6, 
-        fixedValues: {239: 186.3, 252: 218, 265: 254.8, 278: 297.4},
+        fixedValues: {239: 3526, 252: 4126, 265: 4822, 278: 5627},
         efficiency: { Raid: 0.52, Dungeon: 0.39 }, // 
-        ppm: 0.4 * 1, // One automata 
+        ppm: 0.667 * 1, // One automata 
         targets: 5,
-        ticks: 10,
+        ticks: 1, // This ticks 30 times, but the fixed values are over it's entire duration.
       },
     ],
   },

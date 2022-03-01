@@ -220,7 +220,6 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
       const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, castModel.modelName, ['Rapture']);
       const rubyRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Soulletting Ruby": critValue}, {});
       
-      console.log("Base: " + player.getRampID('baselineAdj', contentType));
       bonus_stats.hps = bonus_stats.hps + (rubyRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - crit_effect.discOverhealing);
 
     }
@@ -968,6 +967,7 @@ else if (
   //console.log("ILvl: " + itemLevel + ": " + getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel))
   bonus_stats.mana = (Math.floor(getProcessedValue(manaEffect.coefficient, manaEffect.table, itemLevel) * manaEffect.ticks) / manaEffect.cooldown);
   bonus_stats.hps = oneHeal * healEffect.ppm / 60;
+
 
   //
 }

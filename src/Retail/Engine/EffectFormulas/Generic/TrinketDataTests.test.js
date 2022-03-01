@@ -452,10 +452,10 @@ describe("Reclaimer's Intensity Core", () => {
 
     each`
     level   | expectedResult
-    ${239}  | ${3815} 
-    ${252}  | ${4306}
-    ${265}  | ${4861}
-    ${278}  | ${5487}
+    ${239}  | ${282} 
+    ${252}  | ${319}
+    ${265}  | ${360}
+    ${278}  | ${406}
     // add new test cases here
     `.test("Reclaimer's Intensity Core (Mana) - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(Math.floor(10*getProcessedValue(manaEffect.coefficient, manaEffect.table, level, 1, false))).toBe(expectedResult);
