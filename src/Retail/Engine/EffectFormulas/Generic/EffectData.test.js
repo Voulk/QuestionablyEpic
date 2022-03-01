@@ -28,9 +28,9 @@ describe("Soulwarped Seal of Wrynn Data Check", () => {
 
     each`
     level   | expectedResult
-    ${239}  | ${493}
-    ${252}  | ${596}
-    ${265}  | ${717}
+    ${239}  | ${58}
+    ${252}  | ${70}
+    ${265}  | ${84}
     // add new test cases here
     `.test("Soulwarped Seal of Wrynn Data Check Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   

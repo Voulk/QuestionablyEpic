@@ -57,12 +57,12 @@ export const druidDefaultSpecialQueries = (contentType) => {
   if (contentType === "Raid") {
     specialQueries = {
       ConvokeChannelHPS: 480,
-      OneManaHealing: 6.8,
+      OneManaHealing: 8.2,
       CastsPerMinute: 32, // ONLY tracks spells with a mana cost.
       cooldownMult: {
         oneMinute: 1.32,
         ninetySeconds: 1.12,
-        twoMinutes: 1.46,
+        twoMinutes: 1.51,
         twoMinutesOrb: 1.1,
         threeMinutes: 1.2,
       },
