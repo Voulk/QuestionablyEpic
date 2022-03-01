@@ -478,11 +478,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // DR on trinket procs and such are calculated in their effect formulas, so that we can DR them at their proc value, rather than their average value.
   // Disc Note: Disc DR on base stats is already included in the ramp modules and doesn't need to be reapplied here.
   if (!(player.spec === "Discipline Priest" && contentType === "Raid")) {
-    console.log("Pre DR");
-    console.log(setStats.leech);
     setStats = applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
-    console.log("Post DR")
-    console.log(setStats.leech);
 
     // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats.
     adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;

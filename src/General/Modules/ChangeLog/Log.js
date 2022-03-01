@@ -10,6 +10,16 @@
 export const changeLog = [
   {
     version: "9.2 / 2.5.3",
+    update: 3,
+    date: "28 February (Minor Update)",
+    changes: [
+      "In-game hotfix: Reclaimer's Intensity Core rebalanced.",
+      "Bugfix: 262 crafted items should now import at the correct item level.",
+      "Bugfix: Stats should once again DR correctly in Top Gear."
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
     update: 2,
     date: "28 February (Major Update)",
     changes: [
