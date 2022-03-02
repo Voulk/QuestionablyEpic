@@ -246,6 +246,23 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
 }
 
+export const runDamage = (state, spell, spellName, atonementApp) => {
+
+    const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
+    const damMultiplier = getDamMult(state.activeBuffs, activeAtonements, state.t, spellName, state.boonOfTheAscended, state.conduits); // Get our damage multiplier (Schism, Sins etc);
+    const damageVal = getSpellRaw(spell, state.currentStats) * damMultiplier;
+    const atonementHealing = activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * (1 - spell.atoneOverheal)
+
+    // This is stat tracking, the atonement healing will be returned as part of our result.
+    //totalDamage += damageVal * damMultiplier; // Stats.
+    state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
+    state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
+
+    //if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
+
+    //if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs));
+}
+
 /**
  * Run a full cast sequence. This is where most of the work happens. It runs through a short ramp cycle in order to compare the impact of different trinkets, soulbinds, stat loadouts,
  * talent configurations and more. Any effects missing can be easily included where necessary or desired.
@@ -266,7 +283,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     let purgeTicks = []; // Purge tick timestamps
     let fiendTicks = []; // Fiend "tick" timestamps
     //let activeBuffs = []; // Active buffs on our character: includes stat buffs, Boon of the Ascended and so on. 
-    let damageBreakdown = {}; // A statistics object that holds a tally of our damage from each spell.
+    //let damageBreakdown = {}; // A statistics object that holds a tally of our damage from each spell.
     //let healing = {};
     let totalDamage = 0;
     let timer = 0;
@@ -301,14 +318,14 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 // If this is the last Purge tick, add a partial tick.
                 const partialTickPercentage = ((getHaste(currentStats) - 1) % 0.1) * 10;
 
-                damageBreakdown['Purge the Wicked'] = (damageBreakdown['Purge the Wicked'] || 0) + damageVal * damMultiplier * partialTickPercentage;
+                state.damageDone['Purge the Wicked'] = (state.damageDone['Purge the Wicked'] || 0) + damageVal * damMultiplier * partialTickPercentage;
                 totalDamage += damageVal;
                 state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + activeAtonements * damageVal * damMultiplier * getAtoneTrans(currentStats.mastery) * partialTickPercentage;
 
                 if (reporting) console.log(getTime(state.t) + " " + " Purge Tick: " + damageVal * damMultiplier * partialTickPercentage + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
             }
             else {         
-                damageBreakdown['Purge the Wicked'] = (damageBreakdown['Purge the Wicked'] || 0) + damageVal * damMultiplier;
+                state.damageDone['Purge the Wicked'] = (state.damageDone['Purge the Wicked'] || 0) + damageVal * damMultiplier;
                 totalDamage += damageVal;
                 state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + activeAtonements * damageVal * getAtoneTrans(currentStats.mastery);
 
@@ -329,7 +346,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             const activeAtonements = getActiveAtone(atonementApp, timer)
             const damageVal = DISCSPELLS['Shadowfiend'][0].dot.coeff * currentStats.intellect * getStatMult(currentStats, ['crit', 'vers']);
             const damMultiplier = getDamMult(state.activeBuffs, activeAtonements, state.t, conduits)
-            damageBreakdown['Shadowfiend'] = (damageBreakdown['Shadowfiend'] || 0) + damageVal * damMultiplier;
+            state.damageDone['Shadowfiend'] = (state.damageDone['Shadowfiend'] || 0) + damageVal * damMultiplier;
             totalDamage += damageVal;
             state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + activeAtonements * damageVal * getAtoneTrans(currentStats.mastery);
 
@@ -380,6 +397,9 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 
                 // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
                 else if (spell.type === 'damage') {
+                    runDamage(state, spell, spellName, atonementApp)
+
+                    /*
                     const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
                     const damMultiplier = getDamMult(state.activeBuffs, activeAtonements, state.t, spellName, state.boonOfTheAscended, conduits); // Get our damage multiplier (Schism, Sins etc);
                     const damageVal = getSpellRaw(spell, currentStats) * damMultiplier;
@@ -391,6 +411,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
 
                     if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
+                    */
                 }
 
                 // The spell extends atonements already active. This is specific to Evanglism. 
