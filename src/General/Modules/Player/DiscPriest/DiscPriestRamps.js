@@ -238,18 +238,12 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 
     // Pre-heal processing
     const currentStats = state.currentStats;
-    let flatHeal = 0;
-    let T284pcOverhealMultiplier = 1;
-    let healingMult = 1;
-    let bonedustBrewGusts = 0;
 
-
-    healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.conduits); 
-
-    const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.softCap || 1) * spell.targets : spell.targets || 1;
-    const healingVal = (getSpellRaw(spell, currentStats) + bonedustBrewGusts + flatHeal * getStatMult(currentStats, ['crit', 'vers'])) * (1 - spell.overheal) * healingMult * targetMult * specialMult;
-    state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
-
+    const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.boonOfTheAscended, state.conduits); 
+    const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets;
+    const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.overheal) * healingMult * targetMult;
+    
+    state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
 }
 
 /**
@@ -264,7 +258,9 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
  */
 export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     //console.log("Running cast sequence");
-    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: {}, manaSpent: 0, settings: settings, conduits: conduits, T284pcwindow: {}}
+    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: conduits, manaSpent: 0, settings: settings, 
+                    conduits: conduits, T284pcwindow: {}, boonOfTheAscended: 0}
+    // Boon of the Ascended holds our active Boon of the Ascended stacks. This should be refactored into our buffs array.
 
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let purgeTicks = []; // Purge tick timestamps
@@ -275,7 +271,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     let totalDamage = 0;
     let timer = 0;
     let nextSpell = 0;
-    let boonOfTheAscended = 0; // This variable holds our active Boon of the Ascended stacks. Could be refactored into the activeBuffs array.
+    //let boonOfTheAscended = 0; 
     const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, conduits);
     const seq = [...sequence];
     const sequenceLength = 45; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
@@ -349,7 +345,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
             let currentStats = {...stats};
-            currentStats = getCurrentStats(currentStats, state.activeBuffs);
+            state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
 
             // We'll iterate through the different effects the spell has.
             // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,
@@ -370,18 +366,22 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 // The spell has a healing component. Add it's effective healing.
                 // Power Word: Shield is included as a heal, since there is no functional difference for the purpose of this calculation.
                 if (spell.type === 'heal') {
+
+                    runHeal(state, spell, spellName)
+                    /*
                     const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, boonOfTheAscended, conduits); 
                     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets;
                     const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.overheal) * healingMult * targetMult;
                     
-                    state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
+                    state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
+                    */ 
 
                 }
                 
                 // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
                 else if (spell.type === 'damage') {
                     const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
-                    const damMultiplier = getDamMult(state.activeBuffs, activeAtonements, state.t, spellName, boonOfTheAscended, conduits); // Get our damage multiplier (Schism, Sins etc);
+                    const damMultiplier = getDamMult(state.activeBuffs, activeAtonements, state.t, spellName, state.boonOfTheAscended, conduits); // Get our damage multiplier (Schism, Sins etc);
                     const damageVal = getSpellRaw(spell, currentStats) * damMultiplier;
                     const atonementHealing = activeAtonements * damageVal * getAtoneTrans(currentStats.mastery) * (1 - spell.atoneOverheal)
 
@@ -440,10 +440,10 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
                 // Add boon stacks.
                 else if (spellName === "Ascended Blast") {
-                    boonOfTheAscended += 5 / 2;
+                    state.boonOfTheAscended += 5 / 2;
                 }
                 else if (spellName === "Ascended Nova") {
-                    boonOfTheAscended += 1 / 2;
+                    state.boonOfTheAscended += 1 / 2;
                 }
                 
                 // This represents the next timestamp we are able to cast a spell. This is equal to whatever is higher of a spells cast time or the GCD.
