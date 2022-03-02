@@ -10,8 +10,19 @@
 export const changeLog = [
   {
     version: "9.2 / 2.5.3",
+    update: 4,
+    date: "1 March (Major Update)",
+    changes: [
+      "Added Mists of Pandaria Timewalking items.",
+      "Added a WIP value to Sinister Teachings post-buff. To be refined with logs.",
+      "Anduin ring should now show the correct secondary stats.",
+      "Various minor visual fixes."
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
     update: 3,
-    date: "28 February (Minor Update)",
+    date: "1 March (Minor Update)",
     changes: [
       "In-game hotfix: Reclaimer's Intensity Core rebalanced.",
       "In-game hotfix: First Class haste bonus nerfed by about ~75%.",
