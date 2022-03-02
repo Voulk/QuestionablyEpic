@@ -11,10 +11,12 @@ export const changeLog = [
   {
     version: "9.2 / 2.5.3",
     update: 4,
-    date: "1 March (Minor Update)",
+    date: "1 March (Major Update)",
     changes: [
+      "Added Mists of Pandaria Timewalking items.",
+      "Added a WIP value to Sinister Teachings post-buff. To be refined with logs.",
       "Anduin ring should now show the correct secondary stats.",
-      "Various minor visual-only fixes."
+      "Various minor visual fixes."
     ],
   },
   {
