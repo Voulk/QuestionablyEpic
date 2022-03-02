@@ -3,7 +3,7 @@ export const monkDefaultSpellData = (contentType) => {
   if (contentType === "Raid") {
     spellList = {
       196725: { cpm: 52.31, avgcast: 1742.69, hps: 1515.74, overhealing: 0.14 }, //Refreshing Jade Wind
-      191840: { cpm: 2.49, avgcast: 33582.63, hps: 1316.39, overhealing: 0.27 }, // Essence Font
+      191840: { cpm: 3.5, avgcast: 33582.63, hps: 1316.39, overhealing: 0.27 }, // Essence Font
       325209: { cpm: 0, avgcast: 0, hps: 1076.62, overhealing: 0.48 }, // Enveloping Breath
       115310: { cpm: 0.31, avgcast: 168141.11, hps: 878.24, overhealing: 0.35 }, // Revival
       119611: { cpm: 5.41, avgcast: 6911.81, hps: 623.78, overhealing: 0.35 }, // Renewing Mist

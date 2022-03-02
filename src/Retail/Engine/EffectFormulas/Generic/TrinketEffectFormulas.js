@@ -566,6 +566,17 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     bonus_stats.haste = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
     //
   }
+  else if (
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Show of Faith                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    effectName === "Price of Progress"
+  ) {
+    let effect = activeTrinket.effects[0];
+
+    bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm) / 60;
+    //
+  }
 
   /* ------------------------------------- Firelands Trinkets ------------------------------------- */
   //prettier-ignore

@@ -7,8 +7,8 @@ export default function MessageOfTheDay(props) {
   const messageOfTheDay = {
     "Retail": [
       "Patch 9.2 now live! More information in the changelog.",
+      "First Class Healing Dist nerf is in.",
       "Blizzard continue to make many hotfixes a day.",
-      "Bell and Ruby nerfs are in. First Class nerf is not."
   ],
   "BurningCrusade": ["Enjoy MH / BT!"]
   }
