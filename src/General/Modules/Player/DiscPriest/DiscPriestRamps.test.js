@@ -87,17 +87,17 @@ describe("Evang Cast Sequence", () => {
     test("Legendaries & Soulbinds", () => {
 
         const startTime = performance.now()
-        const baseline = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": false, "Pelagos": false}, {});
+        const baseline = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": false, "Pelagos": false, "Power of the Dark Side": true}, {});
 
         const endTime = performance.now()
 
         console.log(`Call to doSomething took ${endTime - startTime} milliseconds`)
         console.log("Baseline: " + baseline);
 
-        const clarityOfMind = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": true, "Pelagos": false}, {});
+        const clarityOfMind = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": true, "Pelagos": false, "Power of the Dark Side": true}, {});
         console.log("CoM: " + clarityOfMind);
-        const pelagos = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": false, "Pelagos": true}, {});
-        const rabidShadows = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": false, "Pelagos": false}, {"Rabid Shadows": 226});
+        const pelagos = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": false, "Pelagos": true, "Power of the Dark Side": true}, {});
+        const rabidShadows = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": false, "Pelagos": false, "Power of the Dark Side": true}, {"Rabid Shadows": 226});
 
         // These are extremely simple checks to make sure our legendaries and soulbinds are having some net impact on our result.
         // They're not specific on their value, but will fail if any portion of the ramp isn't working correctly.

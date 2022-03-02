@@ -28,6 +28,11 @@ const extendActiveAtonements = (atoneApp, timer, extension) => {
     });
 }
 
+// Removes a stack of a buff, and removes the buff entirely if it's down to 0 or doesn't have a stack mechanic.
+const removeBuffStack = (buffs, buffName) => {
+
+}
+
 /** A spells damage multiplier. It's base damage is directly multiplied by anything the function returns.
  * @schism 25% damage buff to primary target if Schism debuff is active.
  * @sins A 3-12% damage buff depending on number of active atonements.
@@ -39,6 +44,14 @@ const getDamMult = (buffs, activeAtones, t, spellName, boonStacks, conduits) => 
     const schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.25 : 1; 
     let mult = (activeAtones > 10 ? 1.03 : sins[activeAtones]) * schism
     if (discSettings.chaosBrand) mult = mult * 1.05;
+    if (spellName === "PenanceTick") {
+        if (checkBuffActive(buffs, "Power of the Dark Side")) {
+            const potdsMult = buffs.filter(function (buff) {return buff.name === "Power of the Dark Side"})[0];
+            mult = mult * potdsMult.value;
+            //if (potdsMult.stacks <= 1) buffs = buffs.
+            
+        }
+    }
     if (spellName === "Ascended Eruption") {
         if (conduits['Courageous Ascension']) mult = mult * (1 + boonStacks * 0.04);
         else mult = mult * (1 + boonStacks * 0.03);
@@ -161,7 +174,7 @@ const getTime = (t) => {
  * @param {*} conduits The conduits run in the current set.
  * @returns An updated spell database with any of the above changes made.
  */
-const applyLoadoutEffects = (discSpells, settings, conduits) => {
+const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
 
     // Default Loadout
     // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout
@@ -205,13 +218,30 @@ const applyLoadoutEffects = (discSpells, settings, conduits) => {
         value: 315,
         buffDuration: 30,
     });
-    if (settings['Kleia']) activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
+    if (settings['Kleia']) state.activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
+    if (settings['4T28']) {
+        // If player has 4T28, then hook Power of the Dark Side into Power Word Radiance.
+        discSpells['Power Word: Radiance'].push({
+            name: "Power of the Dark Side",
+            type: "buff",
+            buffType: "special",
+            value: 1.95,
+            buffDuration: 20,
+        });
+    }
+    else {
+        // If player doesn't have 4T28, then we might still opt to start them with a PotDS proc on major ramps since the chance of it being active is extremely high.
+        // This is unnecessary with 4pc since we'll always have a PotDS proc during our sequences due to Radiance always coming before Penance.
+        if (settings['Power of the Dark Side']) state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: 1.5})
+    }
+    
+    
     //
 
     // === Trinkets ===
     // These settings change the stat value prescribed to a given trinket. We call these when adding trinkets so that we can grab their value at a specific item level.
     // When adding a trinket to this section, make sure it has an entry in DiscSpellDB first prescribing the buff duration, cooldown and type of stat.
-    if (settings["Instructor's Divine Bell"]) discSpells["Instructor's Divine Bell"][0].value = settings["Instructor's Divine Bell"];
+    //if (settings["Instructor's Divine Bell"]) discSpells["Instructor's Divine Bell"][0].value = settings["Instructor's Divine Bell"];
     if (settings["Instructor's Divine Bell (new)"]) discSpells["Instructor's Divine Bell (new)"][0].value = settings["Instructor's Divine Bell (new)"];
     if (settings["Flame of Battle"]) discSpells["Flame of Battle"][0].value = settings["Flame of Battle"];
     if (settings['Shadowed Orb']) discSpells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
@@ -259,7 +289,6 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
     state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
 
     //if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
-
     //if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs));
 }
 
@@ -289,7 +318,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     let timer = 0;
     let nextSpell = 0;
     //let boonOfTheAscended = 0; 
-    const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, conduits);
+    const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, conduits, state);
     const seq = [...sequence];
     const sequenceLength = 45; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const reporting = false; // A flag to report our sequences to console. Used for testing. 
