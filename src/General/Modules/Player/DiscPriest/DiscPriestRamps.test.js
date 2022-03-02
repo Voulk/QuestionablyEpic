@@ -92,9 +92,10 @@ describe("Evang Cast Sequence", () => {
         const endTime = performance.now()
 
         console.log(`Call to doSomething took ${endTime - startTime} milliseconds`)
-        //console.log("Baseline: " + baseline);
+        console.log("Baseline: " + baseline);
 
         const clarityOfMind = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": true, "Pelagos": false}, {});
+        console.log("CoM: " + clarityOfMind);
         const pelagos = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": false, "Pelagos": true}, {});
         const rabidShadows = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": false, "Pelagos": false}, {"Rabid Shadows": 226});
 
