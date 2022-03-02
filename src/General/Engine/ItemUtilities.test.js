@@ -62,8 +62,8 @@ describe("Calc Stats at Level", () => {
     const expectedResult = {
       intellect: 0,
       stamina: 0,
-      haste: 74,
-      mastery: 0,
+      haste: 225,
+      mastery: 74,
       versatility: 0,
       crit: 0,
       leech: 0,
