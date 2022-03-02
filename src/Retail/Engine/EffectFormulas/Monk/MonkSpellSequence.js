@@ -276,7 +276,7 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
             buffDuration: 32,
         });
 
-        state.activeBuffs.push({name: "Newfound Resolve", expiration: 999, buffType: "statsMult", value: 1 + convertPPMToUptime(1/1.5, 15), stat: 'intellect'});
+        state.activeBuffs.push({name: "Newfound Resolve", expiration: 999, buffType: "statsMult", value: 1 + convertPPMToUptime(1/1.5, 15) * 0.1, stat: 'intellect'});
     }
     
     // 385 = 35 * 11% crit (this goes into diminishing returns so probably underestimating)
