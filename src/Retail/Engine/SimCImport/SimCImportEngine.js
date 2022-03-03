@@ -270,7 +270,7 @@ export function processItem(line, player, contentType, type) {
       } else if (bonus_id === "41") {
         itemTertiary = "Leech";
       } 
-      else if (bonus_id === "7886") {
+      else if (bonus_id === "7886" && itemID !== 171323) { // This is a temporary measure to stop them from overwriting the Alch Stone effect. TODO.
         // Cosmic Protoweave
         itemEffect = {
           type: "special",
@@ -278,7 +278,7 @@ export function processItem(line, player, contentType, type) {
           level: itemLevel,
         };
       }
-      else if (bonus_id === "7960") {
+      else if (bonus_id === "7960" && itemID !== 171323) { // This is a temporary measure to stop them from overwriting the Alch Stone effect. TODO.) {
         // Cosmic Protoweave
         itemEffect = {
           type: "special",
