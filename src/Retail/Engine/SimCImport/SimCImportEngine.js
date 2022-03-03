@@ -328,9 +328,11 @@ export function processItem(line, player, contentType, type) {
         else if (bonus_id == 7239) itemLevel = 181;
         else if (bonus_id == 7464) itemLevel = 184; // Timewalking WoD
         else if (bonus_id == 7240 || bonus_id == 7183) itemLevel = 200;
+        else if (bonus_id == 7915) itemLevel = 210; // Timewalking MoP
         else if (bonus_id == 7241) itemLevel = 180;
         else if (bonus_id == 7461) itemLevel = 230;
         else if (bonus_id == 7881) itemLevel = 262;
+
       } else if ("name_override" in idPayload) {
         // Legendaries
 
