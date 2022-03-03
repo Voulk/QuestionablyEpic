@@ -10,8 +10,18 @@
 export const changeLog = [
   {
     version: "9.2 / 2.5.3",
+    update: 5,
+    date: "3rd March (Major Update)",
+    changes: [
+      "Added support for Origin - A BoE cape with variable stats.",
+      "Added support for the Cosmic Protoweave & Ephemera Harmonizing Stone crafted effects.",
+      "Bugfix: 262 Crafted items will now import with the correct number of stats.",
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
     update: 4,
-    date: "1 March (Major Update)",
+    date: "1st March (Major Update)",
     changes: [
       "Added Mists of Pandaria Timewalking items.",
       "Added a WIP value to Sinister Teachings post-buff. To be refined with logs.",
@@ -22,7 +32,7 @@ export const changeLog = [
   {
     version: "9.2 / 2.5.3",
     update: 3,
-    date: "1 March (Minor Update)",
+    date: "1st March (Minor Update)",
     changes: [
       "In-game hotfix: Reclaimer's Intensity Core rebalanced.",
       "In-game hotfix: First Class haste bonus nerfed by about ~75%.",
@@ -33,7 +43,7 @@ export const changeLog = [
   {
     version: "9.2 / 2.5.3",
     update: 2,
-    date: "28 February (Major Update)",
+    date: "28th February (Major Update)",
     changes: [
       "Included the Bell and Ruby nerfs.",
       "Capped World Quest trinkets at 213 item level.",
@@ -47,7 +57,7 @@ export const changeLog = [
   {
     version: "9.2 / 2.5.3",
     update: 1,
-    date: "22 February (Major Update)",
+    date: "22nd February (Major Update)",
     changes: [
       "All content updated to patch 9.2.",
       "Added 9.2 trinkets, updated item level on old trinkets.",
@@ -61,7 +71,7 @@ export const changeLog = [
   {
     version: "9.1.5 / 2.5.2",
     update: 6,
-    date: "10 January (Minor Update)",
+    date: "10th January (Minor Update)",
     changes: [
       "Several large codebase changes in preparation for 9.2.",
       "200 ilvl crafted items should now import at the correct level.",
