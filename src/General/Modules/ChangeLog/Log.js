@@ -16,6 +16,7 @@ export const changeLog = [
       "Added support for Origin - A BoE cape with variable stats.",
       "Added support for the Cosmic Protoweave & Ephemera Harmonizing Stone crafted effects.",
       "Bugfix: 262 Crafted items will now import with the correct number of stats.",
+      "Bugfix: Pandaria items should now import at the correct item level.",
     ],
   },
   {
