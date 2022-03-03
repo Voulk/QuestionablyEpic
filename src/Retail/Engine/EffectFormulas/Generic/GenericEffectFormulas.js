@@ -28,6 +28,14 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
     bonus_stats.hps = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("versatility") / effect.cooldown;
 
   } 
+  else if (effectName === "Cosmic Protoweave") {
+    const effect = activeEffect.effects[0];
+    bonus_stats.hps = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * player.getStatPerc("haste") * player.getStatPerc("versatility") * player.getStatPerc("crit") * effect.ppm / 60;
+  }
+  else if (effectName === "Ephemera Harmonizing Stone") {
+    const effect = activeEffect.effects[0];
+    bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * convertPPMToUptime(effect.ppm, effect.duration);
+  } 
   else if (effectName === "Genesis Lathe") {
 
     // These can be verified after logs start coming in but are based on frequency of casts. 
