@@ -46,9 +46,9 @@ const getDamMult = (buffs, activeAtones, t, spellName, boonStacks, conduits) => 
     if (discSettings.chaosBrand) mult = mult * 1.05;
     if (spellName === "PenanceTick") {
         if (checkBuffActive(buffs, "Power of the Dark Side")) {
-            const potdsMult = buffs.filter(function (buff) {return buff.name === "Power of the Dark Side"})[0];
-            mult = mult * potdsMult.value;
-            //if (potdsMult.stacks <= 1) buffs = buffs.
+            const potdsMult = buffs.filter(function (buff) {return buff.name === "Power of the Dark Side"})[0].value;
+            mult = mult * potdsMult;
+            removeBuffStack(buffs, "Power of the Dark Side")
             
         }
     }
