@@ -55,6 +55,51 @@ describe("Genesis Lathe Check", () => {
     });
 });
 
+describe("Cosmic Protoweave Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeEffect = effectData.find((effect) => effect.name === "Cosmic Protoweave");
+    const effect = activeEffect.effects[0];
+
+    each`
+    level   | expectedResult
+    ${262}  | ${1367}
+    // add new test cases here.
+    `.test("Cosmic Protoweave Data Check Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        
+        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult); // Absorb
+    });
+});
+
+describe("Ephemera Harmonizing Stone Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeEffect = effectData.find((effect) => effect.name === "Ephemera Harmonizing Stone");
+    const effect = activeEffect.effects[0];
+
+    each`
+    level   | expectedResult
+    ${262}  | ${41}
+    // add new test cases here.
+    `.test("Ephemera Harmonizing Stone Data Check Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        
+        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult); // Absorb
+    });
+});
+
+describe("Magically Regulated Automa Core Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeEffect = effectData.find((effect) => effect.name === "Magically Regulated Automa Core");
+    const effect = activeEffect.effects[0];
+
+    each`
+    level   | expectedResult
+    ${262}  | ${479}
+    // add new test cases here.
+    `.test("Magically Regulated Automa Core Data Check Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        
+        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult); // Absorb
+    });
+});
+
 
 describe("Shard of Zed Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.

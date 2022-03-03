@@ -49,6 +49,52 @@ export const effectData = [
     },
     {
       /* ---------------------------------------------------------------------------------------------- */
+      /*                                           Cosmic Protoweave                                    */
+      /* ---------------------------------------------------------------------------------------------- */
+      name: "Cosmic Protoweave",
+      effects: [
+        {
+            coefficient: 12.42858,
+            efficiency: 0.6,
+            ppm: 1.5,
+            table: -8 // -9
+        },
+      ],
+    },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                 Magically Regulated Automa Core                                */
+      /* ---------------------------------------------------------------------------------------------- */
+      name: "Magically Regulated Automa Core",
+      // TODO: Check log average targets.
+      effects: [
+        {
+            coefficient: 4.358473,
+            efficiency: 0.72,
+            targets: 1,
+            ppm: 1.5,
+            table: -8 // -9
+        },
+      ],
+    },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                     Ephemera Harmonizing Stone                                  */
+      /* ---------------------------------------------------------------------------------------------- */
+      // Int proc
+      name: "Ephemera Harmonizing Stone",
+      effects: [
+        {
+            coefficient: 0.194108,
+            duration: 15,
+            ppm: 1, 
+            table: -1,
+            efficiency: 0.35
+        },
+      ],
+    },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
       /*                                          Genesis Lathe                                         */
       /* ---------------------------------------------------------------------------------------------- */
       // The effects are similar enough in strength that a different distribution of procs doesn't particularly matter - so long as they are being used.

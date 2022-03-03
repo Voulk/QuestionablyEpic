@@ -224,6 +224,7 @@ export function processItem(line, player, contentType, type) {
   let bonusIDS = "";
   let domGemID = 0;
   let uniqueTag = "";
+  let specialAllocations = {}
   
 
   // Build out our item information.
@@ -268,7 +269,33 @@ export function processItem(line, player, contentType, type) {
         //console.log("Socket found on item: " + itemID)
       } else if (bonus_id === "41") {
         itemTertiary = "Leech";
-      } else if ("curveId" in idPayload) {
+      } 
+      else if (bonus_id === "7886") {
+        // Cosmic Protoweave
+        itemEffect = {
+          type: "special",
+          name: "Cosmic Protoweave",
+          level: itemLevel,
+        };
+      }
+      else if (bonus_id === "7960") {
+        // Cosmic Protoweave
+        itemEffect = {
+          type: "special",
+          name: "Ephemera Harmonizing Stone",
+          level: itemLevel,
+        };
+      }
+      else if ("rawStats" in idPayload) {
+        idPayload["rawStats"].forEach(stat => {
+          if (['Haste', 'Crit', 'Vers', 'Mastery', 'Intellect'].includes(stat['name'])) {
+            let statName = stat['name'].toLowerCase();
+            if (statName === "vers") statName = "versatility"; // Pain
+            specialAllocations[statName] = stat['amount'];
+          }
+        });
+      }
+      else if ("curveId" in idPayload) {
         let curve = idPayload["curveId"];
         //console.log("CURVE: " + bonus_id);
 
@@ -301,9 +328,11 @@ export function processItem(line, player, contentType, type) {
         else if (bonus_id == 7239) itemLevel = 181;
         else if (bonus_id == 7464) itemLevel = 184; // Timewalking WoD
         else if (bonus_id == 7240 || bonus_id == 7183) itemLevel = 200;
+        else if (bonus_id == 7915) itemLevel = 210; // Timewalking MoP
         else if (bonus_id == 7241) itemLevel = 180;
         else if (bonus_id == 7461) itemLevel = 230;
         else if (bonus_id == 7881) itemLevel = 262;
+
       } else if ("name_override" in idPayload) {
         // Legendaries
 
@@ -314,6 +343,15 @@ export function processItem(line, player, contentType, type) {
         };
         //console.log("Legendary detected" + JSON.stringify(itemEffect));
       }
+      // This can be readded when we have better data on it. I'm not confident in target count or possible sqrt scaling.
+      /*if (bonus_id === 7888) {
+        // Cosmic Protoweave
+        itemEffect = {
+          type: "special",
+          name: "Magically Regulated Automa Core",
+          level: itemLevel,
+        };
+      } */
     }
     // Missives.
     // Missives are on every legendary, and are annoyingly also on some crafted items.
@@ -335,8 +373,8 @@ export function processItem(line, player, contentType, type) {
       missiveStats.push("versatility");
       craftedStats = "";
     }
-
-    if (bonus_id === "7461") uniqueTag = "crafted";
+    if (bonus_id === "7881") uniqueTag = "crafted";
+    
   }
   if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
   if (levelOverride !== 0) itemLevel = Math.min(499, levelOverride);
@@ -355,8 +393,7 @@ export function processItem(line, player, contentType, type) {
 
   // Add the new item to our characters item collection.
   if (itemLevel > 60 && itemID !== 0 && getItem(itemID) !== "") {
-    let itemAllocations = getItemAllocations(itemID, missiveStats);
-
+    let itemAllocations = Object.keys(specialAllocations).length > 0 ? specialAllocations : getItemAllocations(itemID, missiveStats);
     let item = new Item(itemID, "", itemSlot, itemSocket || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel, bonusIDS);
     item.vaultItem = type === "Vault";
     item.active = itemEquipped || item.vaultItem;
@@ -372,11 +409,8 @@ export function processItem(line, player, contentType, type) {
     else item.uniqueEquip = uniqueTag;
     item.softScore = scoreItem(item, player, contentType);
 
-    //console.log("Adding Item: " + item.id + " in slot: " + itemSlot);
     return item;
-    //player.addActiveItem(item);
   } else {
-    //console.log("Item Level out of range: " + itemLevel);
     return null
   }
 }
@@ -394,25 +428,29 @@ function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) 
   let bonus_stats = {};
 
   if (["Chest", "Head", "Legs"].includes(slot)) {
-    if (itemLevel >= 230) allocation = 72;
+    if (itemLevel >= 262) allocation = 84;
+    else if (itemLevel >= 230) allocation = 72;
     else if (itemLevel >= 168) allocation = 50;
     else if (itemLevel >= 151) allocation = 40;
     else if (itemLevel >= 129) allocation = 24;
 
   } else if (["Shoulder", "Waist", "Hands", "Feet"].includes(slot)) {
-    if (itemLevel >= 230) allocation = 54;
+    if (itemLevel >= 262) allocation = 63;
+    else if (itemLevel >= 230) allocation = 54;
     else if (itemLevel >= 168) allocation = 37;
     else if (itemLevel >= 151) allocation = 29;
     else if (itemLevel >= 129) allocation = 18;
 
   } else if (["Back", "Wrist"].includes(slot)) {
-    if (itemLevel >= 230) allocation = 41;
+    if (itemLevel >= 262) allocation = 47;
+    else if (itemLevel >= 230) allocation = 41;
     else if (itemLevel >= 168) allocation = 29;
     else if (itemLevel >= 151) allocation = 22;
     else if (itemLevel >= 129) allocation = 12;
 
   } else if (["Neck", "Finger"].includes(slot)) {
-    if (itemLevel >= 230) allocation = 63;
+    if (itemLevel >= 262) allocation = 78;
+    else if (itemLevel >= 230) allocation = 63;
     else if (itemLevel >= 168) allocation = 34;
     else if (itemLevel >= 151) allocation = 29;
     else if (itemLevel >= 117) allocation = 24;

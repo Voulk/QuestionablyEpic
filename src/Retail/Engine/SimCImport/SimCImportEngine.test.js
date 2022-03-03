@@ -107,6 +107,18 @@ describe("Test Regular Items", () => {
         const item = processItem(line, player, contentType, type)
         expect(item.effect).toEqual({type: "special", name: "Passable Credentials"});
     });
+    test("Origin BoE Cape - Of the Aurora", () => {
+        const line = "back=,id=190334,enchant_id=6204,bonus_id=7189/8072/8133/8138/1472/6646";
+        const item = processItem(line, player, contentType, type)
+        expect(item.stats.versatility).toEqual(59);
+        expect(item.stats.haste).toEqual(32);
+    });
+    test("Origin BoE Cape - Of the Harmonious", () => {
+        const line = "back=,id=190334,enchant_id=6204,bonus_id=7189/6652/8085/8133/8138/1472/6646";
+        const item = processItem(line, player, contentType, type)
+        expect(item.stats.versatility).toEqual(49);
+        expect(item.stats.mastery).toEqual(41);
+    });
 
 });
 
@@ -121,7 +133,7 @@ describe("Test Crafted Items", () => {
         expect(item.level).toEqual(230);
         expect(item.stats.mastery).toEqual(63);
         expect(item.socket).toEqual(true);
-        expect(item.uniqueEquip).toEqual("crafted");
+        //expect(item.uniqueEquip).toEqual("crafted");
     });
 
     test("Quick Oxxein Ring - Missive Version", () => {
@@ -131,6 +143,15 @@ describe("Test Crafted Items", () => {
         expect(item.stats.versatility).toEqual(63);
         expect(item.stats.mastery).toEqual(0);
         expect(item.socket).toEqual(true);
+        //expect(item.uniqueEquip).toEqual("crafted");
+    });
+
+    test("Shadowsteel Sabatons", () => {
+        const line = "feet=,id=171443,bonus_id=6893/7881,drop_level=60,crafted_stats=32/40";
+        const item = processItem(line, player, contentType, type)
+        expect(item.level).toEqual(262);
+        expect(item.stats.versatility).toEqual(63);
+        expect(item.stats.crit).toEqual(63);
         expect(item.uniqueEquip).toEqual("crafted");
     });
 
