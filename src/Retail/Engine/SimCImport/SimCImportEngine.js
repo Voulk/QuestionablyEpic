@@ -270,6 +270,22 @@ export function processItem(line, player, contentType, type) {
       } else if (bonus_id === "41") {
         itemTertiary = "Leech";
       } 
+      else if (bonus_id === "7886") {
+        // Cosmic Protoweave
+        itemEffect = {
+          type: "special",
+          name: "Cosmic Protoweave",
+          level: itemLevel,
+        };
+      }
+      else if (bonus_id === "7960") {
+        // Cosmic Protoweave
+        itemEffect = {
+          type: "special",
+          name: "Ephemera Harmonizing Stone",
+          level: itemLevel,
+        };
+      }
       else if ("rawStats" in idPayload) {
         idPayload["rawStats"].forEach(stat => {
           if (['Haste', 'Crit', 'Vers', 'Mastery', 'Intellect'].includes(stat['name'])) {
@@ -325,6 +341,15 @@ export function processItem(line, player, contentType, type) {
         };
         //console.log("Legendary detected" + JSON.stringify(itemEffect));
       }
+      // This can be readded when we have better data on it. I'm not confident in target count or possible sqrt scaling.
+      /*if (bonus_id === 7888) {
+        // Cosmic Protoweave
+        itemEffect = {
+          type: "special",
+          name: "Magically Regulated Automa Core",
+          level: itemLevel,
+        };
+      } */
     }
     // Missives.
     // Missives are on every legendary, and are annoyingly also on some crafted items.
