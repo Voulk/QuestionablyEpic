@@ -373,9 +373,6 @@ export function processItem(line, player, contentType, type) {
       missiveStats.push("versatility");
       craftedStats = "";
     }
-    // Special crafted gear.
-    
-
     if (bonus_id === "7881") uniqueTag = "crafted";
     
   }
