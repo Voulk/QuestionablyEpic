@@ -14,12 +14,36 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
 
   // Tier Sets
   if (effectName === "Shaman T28-2") {
-    // 
-    bonus_stats.hps = 0
+    // Crit heals give a stacking +2% crit buff to your next Chain Heal cast. 
+
+    // Model Method #1
+    // This can be modelled as a percentage increase to Chain Heal HPS in general (avg stacks on cast x avg value of the crit inc) which is effective but
+    // has the weakness of showing little to no increase on pre-2pc logs or on poorly played logs in general.
+
+    // Model Method #2
+    // An alternative is to just grab the raw increase of including a new chain heal a few times a minute. This has less reliance on the inserted log being good.
+    // We will assume here that very little (sub 10%) of our Chain Heal stacks go to waste.
+
+    const oneChainHeal = 5.3193 * player.getInt() * player.getStatMultiplier("CRITVERS") * 0.96 * 0.8;
+    // 5.3193 is the final coefficient including bounces. 
+    // 0.96 includes the Chain Heal aura nerf. 
+    // 0.8 includes an expected 20% overheal on all chain heal healing. This is a conservative estimate in most cases.
+
+    const avgHealingPerStack = oneChainHeal * 0.02; 
+    // Note that this should be independent of our crit chance, so long as we spend before we would otherwise cap.
+    // Remember that 99->100% crit on a spell should be of equal absolute value as 5-6%.
+    
+    const stacksPerMin = 260 * (player.getStatPerc("Crit") - 1); 
+    // This is equal to the raw quantity of crits per minute.
+    // We can refine this more with bulk log data or from using a players log data directly.
+
+    const wastage = 0.15 // It's very easy to waste stacks here and we should account for that.
+
+    bonusStats.hps = avgHealingPerStack * stacksPerMin * (1 - wastage) / 60;
   }
   else if (effectName === "Shaman T28-4") {
     // 
-    bonus_stats.hps = 0
+    bonusStats.hps = 0
   }
   else if (effectName === PRIMAL_TIDE_CORE) {
     /**
