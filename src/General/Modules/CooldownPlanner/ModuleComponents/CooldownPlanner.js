@@ -43,7 +43,7 @@ const tableIcons = {
 };
 
 // turn debugging (console logging) on/off
-const debug = true;
+const debug = false;
 
 export default function CooldownPlanner(props) {
   debug && console.log(" -- Debugging On -> CooldownPlanner.js --");
@@ -108,7 +108,6 @@ export default function CooldownPlanner(props) {
   const [currentPlan, setCurrentPlan] = useState("default");
   // debug && console.log(currentPlan);
   const [data, setData] = useState(cooldownObject.getCooldowns(currentBoss, currentDifficulty)["default"]);
-  debug && console.table(cooldownObject.getCooldowns(currentBoss, currentDifficulty));
 
   const getBossPlanNames = (boss, currentDif) => {
     return Object.keys(cooldownObject.getCooldowns(boss, currentDif));
@@ -128,8 +127,8 @@ export default function CooldownPlanner(props) {
   };
 
   /* --------------------- Updates the plan in cooldownObject in local storage -------------------- */
-  const updateStorage = (boss, plan, currentData) => {
-    cooldownObject.updateCooldownPlan(boss, plan, currentData);
+  const updateStorage = (boss, plan, currentData, currentDif) => {
+    cooldownObject.updateCooldownPlan(boss, plan, currentData, currentDif);
   };
 
   /* -------------------------------------- Changes the Boss -------------------------------------- */
@@ -750,7 +749,7 @@ export default function CooldownPlanner(props) {
                   let updatedData = [...data, newData].sort((a, b) => (a.time > b.time && 1) || -1);
                   setData(updatedData);
                   /* ------------------------------------ Update local storage ------------------------------------ */
-                  updateStorage(currentBoss, currentPlan, updatedData);
+                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty);
                   resolve();
                 }, 1000);
               }),
@@ -767,7 +766,7 @@ export default function CooldownPlanner(props) {
                   /* ---------------------------------- Set Updated Data (Sorted) --------------------------------- */
                   setData(updatedData);
                   /* ------------------------------------ Update local storage ------------------------------------ */
-                  updateStorage(currentBoss, currentPlan, updatedData);
+                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty);
                   resolve();
                 }, 1000);
               }),
@@ -785,7 +784,7 @@ export default function CooldownPlanner(props) {
                   /* -------------------------- Set the New Data without the spliced row -------------------------- */
                   setData(updatedData);
                   /* ------------------------------------ Update local storage ------------------------------------ */
-                  updateStorage(currentBoss, currentPlan, updatedData);
+                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty);
                   resolve();
                 }, 1000);
               }),
@@ -800,7 +799,7 @@ export default function CooldownPlanner(props) {
                   }
                   let updatedData = [...dataUpdate];
                   setData(updatedData);
-                  updateStorage(currentBoss, currentPlan, updatedData);
+                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty);
                   resolve();
                 }, 1000);
               }),

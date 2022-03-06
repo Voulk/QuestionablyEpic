@@ -46,7 +46,6 @@ export default function ImportPlanDialog(props) {
     let importDifficulty = "";
 
     var lines = importedString.split("\n");
-    console.log(lines);
 
     for (var i = 0; i < lines.length; i++) {
       let line = lines[i];
@@ -82,7 +81,6 @@ export default function ImportPlanDialog(props) {
     let importDifficulty = "";
 
     var lines = importedString.split("\n");
-    console.log(lines);
 
     for (var i = 0; i < lines.length; i++) {
       let line = lines[i];
