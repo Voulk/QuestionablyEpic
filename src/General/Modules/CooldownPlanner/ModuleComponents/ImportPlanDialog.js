@@ -43,8 +43,10 @@ export default function ImportPlanDialog(props) {
   const checkForDuplicatePlan = (importedString) => {
     let importedBoss = "";
     let importPlanName = "";
+    let importDifficulty = "";
 
     var lines = importedString.split("\n");
+    console.log(lines);
 
     for (var i = 0; i < lines.length; i++) {
       let line = lines[i];
@@ -56,10 +58,14 @@ export default function ImportPlanDialog(props) {
       if (line.includes("PlanName=")) {
         importPlanName = line.split("PlanName=")[1];
       }
+
+      if (line.includes("Difficulty=")) {
+        importDifficulty = line.split("Difficulty=")[1];
+      }
     }
 
     /* ---------------------- Retreive the list of plans for the imported boss ---------------------- */
-    const bossPlans = Object.keys(cooldownObject.getCooldowns(importedBoss));
+    const bossPlans = Object.keys(cooldownObject.getCooldowns(importedBoss, importDifficulty));
     /* ---------------------------- Check if the plan name exists already --------------------------- */
     const duplicatePlanNameCheck = bossPlans.includes(importPlanName) ? true : false;
     // Set Warning if duplicate detected
@@ -73,8 +79,10 @@ export default function ImportPlanDialog(props) {
     let importedPlan = "";
     let importedBoss = "";
     let importPlanName = "";
+    let importDifficulty = "";
 
     var lines = importedString.split("\n");
+    console.log(lines);
 
     for (var i = 0; i < lines.length; i++) {
       let line = lines[i];
@@ -87,12 +95,16 @@ export default function ImportPlanDialog(props) {
       if (line.includes("PlanName=")) {
         importPlanName = line.split("PlanName=")[1];
       }
+
+      if (line.includes("Difficulty=")) {
+        importDifficulty = line.split("Difficulty=")[1];
+      }
     }
     /* ---------------- Split the imported plan object from the string and parse it. ---------------- */
     importedPlan = JSON.parse(importedString.split("Plan=")[1]);
 
-    cooldownObject.importPlan(importedBoss, importPlanName, importedPlan);
-    loadPlanData(importedBoss, importPlanName);
+    cooldownObject.importPlan(importedBoss, importPlanName, importedPlan, importDifficulty);
+    loadPlanData(importedBoss, importPlanName, importDifficulty);
   };
 
   const handleSubmit = () => {

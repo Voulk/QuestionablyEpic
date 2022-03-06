@@ -3,10 +3,10 @@ import { useTranslation } from "react-i18next";
 import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Typography, Grid, MenuItem, Tooltip } from "@mui/material";
 
 export default function CopyPlanDialog(props) {
-  const { handleCopyPlanDialogClose, handleCopyPlanDialogClickOpen, openCopyPlanDialog, cooldownObject, currentBoss, loadPlanData, currentPlan } = props;
+  const { handleCopyPlanDialogClose, handleCopyPlanDialogClickOpen, openCopyPlanDialog, cooldownObject, currentBoss, loadPlanData, currentPlan, currentDifficulty } = props;
   const [planName, setPlanName] = useState(currentPlan);
   const [newPlanName, setNewPlanName] = useState("");
-  const bossPlans = Object.keys(cooldownObject.getCooldowns(currentBoss));
+  const bossPlans = Object.keys(cooldownObject.getCooldowns(currentBoss, currentDifficulty));
   const duplicatePlanNameCheck = bossPlans.includes(newPlanName) ? true : false;
   const { t, i18n } = useTranslation();
 
@@ -24,9 +24,9 @@ export default function CopyPlanDialog(props) {
     setNewPlanName(event.target.value);
   };
 
-  const copyPlan = (planName, boss, newPlan) => {
-    cooldownObject.copyNewPlan(planName, boss, newPlan);
-    loadPlanData(boss, newPlan);
+  const copyPlan = (planName, boss, newPlan, currentDif) => {
+    cooldownObject.copyNewPlan(planName, boss, newPlan, currentDif);
+    loadPlanData(boss, newPlan, currentDif);
     handleCopyPlanDialogClose(true);
     setPlanName("");
     setNewPlanName("");
@@ -47,7 +47,7 @@ export default function CopyPlanDialog(props) {
             <Grid item xs={12}>
               <Typography variant="subtitle2">{t("CooldownPlanner.CopyPlanDialog.SelectPlanTitle")}</Typography>
               <TextField key={currentPlan} select value={planName} onChange={(e) => setPlanName(e.target.value)} fullWidth variant="outlined" size="small">
-                {cooldownObject.getBossPlanNames(currentBoss).map((key, i, arr) => {
+                {cooldownObject.getBossPlanNames(currentBoss, currentDifficulty).map((key, i, arr) => {
                   let lastItem = i + 1 === arr.length ? false : true;
                   return (
                     <MenuItem divider={lastItem} value={key}>
@@ -72,7 +72,14 @@ export default function CopyPlanDialog(props) {
           </Grid>
         </DialogContent>
         <DialogActions>
-          <Button key={8} variant="contained" color="primary" onClick={(e) => copyPlan(planName, currentBoss, newPlanName)} size="small" disabled={duplicatePlanNameCheck || newPlanName === ""}>
+          <Button
+            key={8}
+            variant="contained"
+            color="primary"
+            onClick={(e) => copyPlan(planName, currentBoss, newPlanName, currentDifficulty)}
+            size="small"
+            disabled={duplicatePlanNameCheck || newPlanName === ""}
+          >
             {t("CooldownPlanner.CopyPlanDialog.ButtonLabel")}
           </Button>
         </DialogActions>

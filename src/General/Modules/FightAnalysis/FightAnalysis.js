@@ -142,7 +142,7 @@ class FightAnalysis extends Component {
 
   handleCustomPlanChange = (plan, currentBossID) => {
     /* ------------------------------- Get List of Plans for the boss ------------------------------- */
-    const bossCooldowns = this.state.cooldownObject.getCooldowns(currentBossID);
+    const bossCooldowns = this.state.cooldownObject.getCooldowns(currentBossID, this.state.currentDifficulty);
     /* --------------------------------------- Set the lected --------------------------------------- */
     const planCooldowns = bossCooldowns[plan];
 
@@ -151,7 +151,7 @@ class FightAnalysis extends Component {
   };
 
   getBossPlanNames = (boss) => {
-    return Object.keys(this.state.cooldownObject.getCooldowns(boss));
+    return Object.keys(this.state.cooldownObject.getCooldowns(boss, this.state.currentDifficulty));
   };
 
   render() {
