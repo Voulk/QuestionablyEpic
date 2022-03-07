@@ -15,7 +15,7 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
   // Tier Sets
   if (effectName === "Mistweaver T28-2") {
     // Mistweaver Monk Sepulcher tier set 2pc
-    // -- This is a draft formula and it can be improved upon a lot. --
+    // -- This is a draft formula and it can be improved upon. --
 
     // NOTE: The extra hot duration afforded by the 2pc will be buffed by the 4pc. That should be included in the 4pc formula, NOT the 2pc formula. That way we can
     // avoid double dipping.
@@ -35,11 +35,11 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
     // Mistweaver Monk Sepulcher tier set 2pc
     // -- This is a draft formula. --
     // We can also sequence this directly if necessary, but the numbers here are already heavily based around that model.
-    const singleEvent = 0; // The amount of healing from a single 4pc proc.
-    const avgEvents = 0; // Average number of healing events in a 4pc window.
-    const covMulti = {"night_fae": 0, "venthyr": 0, "necrolord": 0, "kyrian": 0}; // The average multiplier to the 4pc window for the chosen covenant. This is a combination of logs and spell sequencing. 
+    const singleEvent = 450 * player.getStatMultiplier("CRITVERS"); // The amount of healing from a single 4pc proc.
+    const avgEvents = 90 * player.getStatPerc("Haste"); // Average number of healing events in a 4pc window.
+    const covMulti = {"night_fae": 1, "venthyr": 1, "necrolord": 1, "kyrian": 1}; // The average multiplier to the 4pc window for the chosen covenant. This is a combination of logs and spell sequencing. 
 
-    bonus_stats.hps = singleEvent * avgEvents * covMulti[player.getCovenant()]
+    bonus_stats.hps = singleEvent * avgEvents * covMulti[player.getCovenant()] / 60
   }
 
   else if (effectName === "Ancient Teachings of the Monastery") {

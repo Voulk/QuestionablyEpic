@@ -5,12 +5,12 @@ import { getMonkSpecEffect } from "Retail/Engine/EffectFormulas/Monk/MonkSpecEff
 import { getPaladinSpecEffect } from "Retail/Engine/EffectFormulas/Paladin/PaladinSpecEffects"
 
 describe("Shaman", () => {
-    const player = new Player("Voulk", "Restoration Shaman", 99, "NA", "Stonemaul", "Night Elf");
+    const player = new Player("Voulk", "Holy Paladin", 99, "NA", "Stonemaul", "Night Elf");
     const contentType = "Raid";
     const type = "Regular";
 
     test("pc", () => {
-        getShamanSpecEffect("Shaman T28-4", player, contentType)
+        getPaladinSpecEffect("Hpaladin T28-4", player, contentType)
 
     })
 

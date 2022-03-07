@@ -48,7 +48,22 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
   }
   else if (effectName === "Hpaladin T28-4") {
     // Holy Paladin Sepulcher tier set 4pc
+    // This should be an accurate formula, though it's a little bit of a drag and could almost certainly be simplified to half as many lines.
+    const expectedProcsPerMinute = 4.8 * player.getSpellCPM(IDLIGHTOFDAWN, contentType) * 2 * 0.5; // LoD targets x LoD CPM x 2 x 0.5 
+    const wingsThroughputInc = getWingsHealingInc(player.getStatPerc("Crit")); // 
+    const effectiveWingsCD = 120 - (expectedProcsPerMinute*2);
+    const preExpectedWingsUptime = getAwakeningWingsUptime(player, contentType, 10);
+    const postExpectedWingsUptime = getAwakeningWingsUptime(player, contentType, (20 / effectiveWingsCD * 60))
 
+    const preThroughput = preExpectedWingsUptime * wingsThroughputInc + (1 - preExpectedWingsUptime);
+    const postThroughput = postExpectedWingsUptime * wingsThroughputInc + (1 - postExpectedWingsUptime);
+
+    const expectedWingsUptimeInc = postThroughput - preThroughput;
+    
+    //console.log(expectedWingsUptimeInc);
+    //console.log(player.getHPS(contentType) * expectedWingsUptimeInc);
+
+    bonus_stats.hps = player.getHPS(contentType) * expectedWingsUptimeInc;
   }
 
   else if (effectName === "Maraad's Dying Breath" || effectName === "Maraads Dying Breath") {
