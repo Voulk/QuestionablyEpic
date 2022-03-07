@@ -1,3 +1,5 @@
+import { consoleSandbox } from "@sentry/utils";
+
 const PRIMAL_TIDE_CORE = "Primal Tide Core";
 const SPIRITWALKERS_TIDAL_TOTEM = "Spiritwalker's Tidal Totem";
 const EARTHEN_HARMONY = "Earthen Harmony";
@@ -42,8 +44,21 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     bonusStats.hps = avgHealingPerStack * stacksPerMin * (1 - wastage) / 60;
   }
   else if (effectName === "Shaman T28-4") {
-    // 
-    bonusStats.hps = 0
+    // Free chain heals
+    // We'll include chain heals at a standard crit rate since stacks are already accounted for in the 2pc formula.
+    const freeChainHealsPerMinute = 2 + 0.5 + 0.33 + 0.33; // Stream / Cloudburst + HTT + MTT + SLT. Includes average CDR on HTT.
+    const oneChainHeal =  player.getStatMultiplier("ALL") * 5.3193 * 0.75; // 25% expected overhealing. Fine tune with logs.
+    const hpsFreeChainHeal = oneChainHeal * freeChainHealsPerMinute;
+
+    // Cooldown reduction portion
+    // It might take a little bit of time to see how players best use this since there's a little bit of flexibility.
+    // We'll focus our formula mostly on Healing Tide Totem CDR but this formula could easily be updated or even split via the
+    // breakdown of how often each totem benefits.
+    const oneHealingTide = player.getStatMultiplier("ALL") * 0.35 * 5 * 20 * 0.75; // With HTT large range it should be no issue hitting all 20 people.
+    const cooldownRedPerMin = (player.getSpellCPM(1064, contentType) + freeChainHealsPerMinute) * 4 * player.getStatPerc("Crit");// chain heal CPM x targets x modifiedCritChance
+    const hpsFreeTotems = oneHealingTide * (2 / 180 * cooldownRedPerMin) / 60;
+
+    bonusStats.hps = hpsFreeChainHeal / 60 + hpsFreeTotems;
   }
   else if (effectName === PRIMAL_TIDE_CORE) {
     /**
