@@ -427,6 +427,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   for (const set in setBonuses) {
     if (setBonuses[set] > 1) {
       effectList = effectList.concat(getItemSet(set, setBonuses[set]));
+      console.log("Adding set bonus");
     }
   }
 
@@ -519,6 +520,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
+  itemSet.effectList = effectList;
   return builtSet;
 }
 

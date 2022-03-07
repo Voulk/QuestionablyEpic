@@ -7,6 +7,31 @@ import { applyDiminishingReturns, buildWepCombos } from "General/Engine/ItemUtil
 import { runTopGear } from "./TopGearEngine";
 
 const discSet = 
+
+
+describe("Top Gear full test", () => {
+    test("Test 1, Disc full gear Check", () => {
+        const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
+        var lines = discSet.split("\n");
+
+
+        processAllLines(player, "Raid", "kyrian", lines, -1, -1)
+
+        const wepCombos = buildWepCombos(player, true);
+        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
+
+        const itemList = result.itemSet.itemList;
+        const trinkets = itemList.filter(item => item.slot === "Trinket")
+
+        // Our trinket selection was a 203 Divine Bell, 252 Gland, 252 Shadowed Orb, and 246 Tome. 
+        // Our expected result would be Bell / Gland. 
+        expect(trinkets.filter(trinket => trinket.effect.name === "Instructor's Divine Bell (new)").length).toEqual(1);
+        expect(trinkets.filter(trinket => trinket.effect.name === "Titanic Ocular Gland").length).toEqual(1);
+        //console.log(result);
+    })
+
+})
+
 `
 # Voulkpriest - Discipline - 2021-11-03 10:29 - US/Stonemaul
 # SimC Addon 9.1.0-01
@@ -54,27 +79,3 @@ off_hand=,id=186418,bonus_id=7187/6652/1498/6646
 # Titanic Ocular Gland (226)
 # trinket1=,id=186423,bonus_id=7189/41/1472/6646
 `
-
-describe("Top Gear full test", () => {
-    test("Test 1, Disc full gear Check", () => {
-        const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
-        var lines = discSet.split("\n");
-
-
-        processAllLines(player, "Raid", "kyrian", lines, -1, -1)
-
-        const wepCombos = buildWepCombos(player, true);
-        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
-
-        const itemList = result.itemSet.itemList;
-        const trinkets = itemList.filter(item => item.slot === "Trinket")
-
-        // Our trinket selection was a 203 Divine Bell, 252 Gland, 252 Shadowed Orb, and 246 Tome. 
-        // Our expected result would be Bell / Gland. 
-        console.log(trinkets);
-        expect(trinkets.filter(trinket => trinket.effect.name === "Instructor's Divine Bell (new)").length).toEqual(1);
-        expect(trinkets.filter(trinket => trinket.effect.name === "Titanic Ocular Gland").length).toEqual(1);
-        //console.log(result);
-    })
-
-})
