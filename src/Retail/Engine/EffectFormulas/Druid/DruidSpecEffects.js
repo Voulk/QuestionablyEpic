@@ -12,10 +12,25 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
   // Tier Sets
   if (effectName === "Druid T28-2") {
     // 
+    const bloomHPS = 0.208 * player.getStatMultiplier("ALL") / 8 * 0.65; // The shown healing is over 8 seconds so we'll divide it by 8 to get a per second amount.
+    const expectedUptimePerPlayer = player.getSpellCPM(IDREJUV, contentType) * 15 / 20 / 60; // CPM x Duration / Raid Size
+    const healPortionHPS = bloomHPS * expectedUptimePerPlayer * 20;
+
+    console.log(bloomHPS);
+    console.log(expectedUptimePerPlayer);
+    console.log("HPS: " + healPortionHPS * expectedUptimePerPlayer * 20);
+    const masteryStackValue = 0;
+
     bonus_stats.hps = 0
   }
   else if (effectName === "Druid T28-4") {
-    // 
+    // This is too simple a formula, but can be revised with proper log data.
+    const hpsDuringBurstWindow = 0;
+    const extraWGHealing = 0; // The extra healing from 2 additional WG targets a minute.
+    const auraHealingIncrease = 0; // The extra healing from 15% additional healing
+    const rejuvHealingIncrease = 0; // The extra healing from the large rejuv buff.
+    const healingIncrease = 0;
+
     bonus_stats.hps = 0
   }
   /*
