@@ -92,7 +92,7 @@ export default function ItemCard(props) {
   const tertiary =
     "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}>{t(props.item.tertiary)}</div> : null;
 
-  const tier = props.item.setID !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
+  const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
 
   const socket = props.item.socket ? (
     <div style={{ display: "inline", verticalAlign: "middle", marginTop: tertiary || isVault || tier ? 0 : 2, marginRight: 4 }}>
