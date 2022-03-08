@@ -133,14 +133,14 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
     //TODO apply conduit
 
     // 88% conduit, 25.6% uptime, 75% raid hit
-    const emenibonus = player.getHPS() * (0.13 * convertPPMToUptime(1.5, 10));
+    const emenibonus = player.getHPS(contentType) * (0.13 * convertPPMToUptime(1.5, 10));
     const effectData = {
       dupChance: 0.5,
       dupAmount: 0.4 * 1.88, // Includes conduit
       percRaidHit: 0.56,
       expectedUptime: 0.256,
     }
-    const bonedustDam = (player.getHPS() + emenibonus) * effectData.dupChance * effectData.dupAmount * effectData.expectedUptime * effectData.percRaidHit;
+    const bonedustDam = (player.getHPS(contentType) + emenibonus) * effectData.dupChance * effectData.dupAmount * effectData.expectedUptime * effectData.percRaidHit;
     bonus_stats.hps = bonedustDam + emenibonus; 
   }else {
     bonus_stats.hps = -1;

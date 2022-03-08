@@ -10,6 +10,16 @@
 export const changeLog = [
   {
     version: "9.2 / 2.5.3",
+    update: 6,
+    date: "7th March (Major Update)",
+    changes: [
+      "Added tier set effect formulas.",
+      "Added world quest trinket: Symbol of the Raptura.",
+      "Some minor fixes to item drop location data.",
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
     update: 5,
     date: "3rd March (Major Update)",
     changes: [

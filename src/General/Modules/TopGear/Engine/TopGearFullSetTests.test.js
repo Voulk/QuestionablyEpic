@@ -6,8 +6,6 @@ import { applyDiminishingReturns, buildWepCombos } from "General/Engine/ItemUtil
 
 import { runTopGear } from "./TopGearEngine";
 
-const discSet = 
-
 
 describe("Top Gear full test", () => {
     test("Test 1, Disc full gear Check", () => {
@@ -32,7 +30,7 @@ describe("Top Gear full test", () => {
 
 })
 
-`
+const discSet = `
 # Voulkpriest - Discipline - 2021-11-03 10:29 - US/Stonemaul
 # SimC Addon 9.1.0-01
 # Requires SimulationCraft 910-01 or newer

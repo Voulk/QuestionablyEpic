@@ -12,15 +12,18 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
   // Tier Sets
   if (effectName === "Druid T28-2") {
     // 
-    const bloomHPS = 0.208 * player.getStatMultiplier("ALL") / 8 * 0.6; // The shown healing is over 8 seconds so we'll divide it by 8 to get a per second amount.
+    const masteryMult = 1 + (player.getStatPerc("Mastery") - 1) * 2.6 // Avg Hots (high rejuv uptime + the hot itself + various other)
+    const bloomHPS = 0.208 * player.getStatMultiplier("NOMAST") * player.getInt() * masteryMult / 8 * 0.78; // The shown healing is over 8 seconds so we'll divide it by 8 to get a per second amount.
     const expectedUptimePerPlayer = player.getSpellCPM(IDREJUV, contentType) * 15 / 20 / 60; // CPM x Duration / Raid Size
     // This is technically the expected uptime of REJUV however the Druid 2pc follows it almost precisely despite a shorter duration. 
-
     const healPortionHPS = bloomHPS * expectedUptimePerPlayer * 20;
 
-    const masteryStackValue = 0; // TODO;
+    const masteryStackValue = (player.getStatPerc("Mastery") - 1) * expectedUptimePerPlayer * player.getHPS(contentType);
+    // This needs to be expanded by multiplying only the HPS that doesn't already come from mastery, that is, we're interested in how much the mastery stack 
+    // is adding which is additive with pre-existing stacks. 
 
     bonus_stats.hps = healPortionHPS + masteryStackValue;
+    console.log(bonus_stats.hps)
   }
   else if (effectName === "Druid T28-4") {
     // This is too simple a formula, but can be revised with proper log data.
@@ -118,7 +121,7 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
 
   } else if (effectName === "Oath of the Elder Druid") {
     let legendaryIncrease = 0.75;
-    let playerHealth = player.getHealth();
+    let playerHealth = player.getHealth(contentType);
     let yseras = playerHealth * 0.03 * legendaryIncrease;
 
     bonus_stats.hps = Math.round(yseras / 5);
