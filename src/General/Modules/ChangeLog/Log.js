@@ -11,7 +11,7 @@ export const changeLog = [
   {
     version: "9.2 / 2.5.3",
     update: 6,
-    date: "7th March (Major Update)",
+    date: "7th March",
     changes: [
       "Added tier set effect formulas.",
       "Added world quest trinket: Symbol of the Raptura.",
@@ -21,7 +21,7 @@ export const changeLog = [
   {
     version: "9.2 / 2.5.3",
     update: 5,
-    date: "3rd March (Major Update)",
+    date: "3rd March",
     changes: [
       "Added support for Origin - A BoE cape with variable stats.",
       "Added support for the Cosmic Protoweave & Ephemera Harmonizing Stone crafted effects.",
