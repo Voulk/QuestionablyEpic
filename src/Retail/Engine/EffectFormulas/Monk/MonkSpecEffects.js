@@ -15,11 +15,31 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
   // Tier Sets
   if (effectName === "Mistweaver T28-2") {
     // Mistweaver Monk Sepulcher tier set 2pc
-    bonus_stats.hps = 0
+    // -- This is a draft formula and it can be improved upon. --
+
+    // NOTE: The extra hot duration afforded by the 2pc will be buffed by the 4pc. That should be included in the 4pc formula, NOT the 2pc formula. That way we can
+    // avoid double dipping.
+    const essenceFontCPM = player.getSpellCPM(191840, contentType) // EF Casts per minute.
+    const extraHoT = 0.042 * 2 * 1.05 * player.getStatMultiplier("CRITVERS") * player.getStatPerc("Haste") * player.getInt();  
+    const hotIncrease = 0.042 * 4 * 0.05 * player.getStatMultiplier("CRITVERS") * player.getStatPerc("Haste") * player.getInt();
+    // Coefficient x num Ticks x 5% multi x avgHots per EF 
+    // We automatically include Rising Mist in the calculation
+    const expectedOverhealing = 0.24;
+
+    const additionalGusts = 0; // The additional Gust of Mists afforded by the extra 2/4s of HoT uptime. This is of low value.    
+
+    bonus_stats.hps = ((hotIncrease + extraHoT) * essenceFontCPM * 14 * (1 - expectedOverhealing)) / 60;
+
   }
   else if (effectName === "Mistweaver T28-4") {
     // Mistweaver Monk Sepulcher tier set 2pc
-    bonus_stats.hps = 0
+    // -- This is a draft formula. --
+    // We can also sequence this directly if necessary, but the numbers here are already heavily based around that model.
+    const singleEvent = 450 * player.getStatMultiplier("CRITVERS"); // The amount of healing from a single 4pc proc.
+    const avgEvents = 90 * player.getStatPerc("Haste"); // Average number of healing events in a 4pc window.
+    const covMulti = {"night_fae": 1, "venthyr": 1, "necrolord": 1, "kyrian": 1}; // The average multiplier to the 4pc window for the chosen covenant. This is a combination of logs and spell sequencing. 
+
+    bonus_stats.hps = singleEvent * avgEvents * covMulti[player.getCovenant()] / 60
   }
 
   else if (effectName === "Ancient Teachings of the Monastery") {
@@ -113,14 +133,14 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
     //TODO apply conduit
 
     // 88% conduit, 25.6% uptime, 75% raid hit
-    const emenibonus = player.getHPS() * (0.13 * convertPPMToUptime(1.5, 10));
+    const emenibonus = player.getHPS(contentType) * (0.13 * convertPPMToUptime(1.5, 10));
     const effectData = {
       dupChance: 0.5,
       dupAmount: 0.4 * 1.88, // Includes conduit
       percRaidHit: 0.56,
       expectedUptime: 0.256,
     }
-    const bonedustDam = (player.getHPS() + emenibonus) * effectData.dupChance * effectData.dupAmount * effectData.expectedUptime * effectData.percRaidHit;
+    const bonedustDam = (player.getHPS(contentType) + emenibonus) * effectData.dupChance * effectData.dupAmount * effectData.expectedUptime * effectData.percRaidHit;
     bonus_stats.hps = bonedustDam + emenibonus; 
   }else {
     bonus_stats.hps = -1;
