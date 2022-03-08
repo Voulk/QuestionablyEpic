@@ -107,6 +107,8 @@ export default function ItemCardReport(props) {
     }
   };
 
+  const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
+
   const tertiary =
     "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}>{t(props.item.tertiary)}</div> : null;
 
@@ -151,11 +153,13 @@ export default function ItemCardReport(props) {
                 <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={12} display="inline">
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px" }}>
-                      <div style={{ color: itemQuality(itemLevel, item.id), lineHeight: tertiary ? "normal" : 1.57 }}>{itemName}</div>
+                      <div style={{ color: itemQuality(itemLevel, item.id), lineHeight: tertiary || isVault || tier ? "normal" : 1.57 }}>{itemName}</div>
                       <div style={{ display: "flex" }}>
                         {tertiary}
                         {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
                         {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
+                        {(tertiary && tier) || (isVault && tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                        {tier}
                       </div>
                     </Typography>
                   </Grid>
