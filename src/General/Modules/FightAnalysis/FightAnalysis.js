@@ -397,9 +397,9 @@ class FightAnalysis extends Component {
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                           DTPS Graph                                            */
                   /* ----------------------------------------------------------------------------------------------  */}
-                  <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
+                  {/* <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
                     <Example dataToShow={this.state.chartData} mitigated={this.state.summedMitigationDamagePerSecond} unmitigated={this.state.summedUnmitigatedDamagePerSecond} />
-                  </Grid>
+                  </Grid> */}
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                    Healer Information Cards                                     */
                   /* ----------------------------------------------------------------------------------------------  */}
@@ -417,9 +417,9 @@ class FightAnalysis extends Component {
 
                   {/* ------------------------------------ Enemy Casts Timeline ------------------------------------ */}
                   {/* --- Not sure if this will be used, but it shows the enemies casts and when might be useful ---  */}
-                  <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
+                  {/* <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
                     <EnemyCastsTimeline data={this.state.enemyCastsTimelineData} />
-                  </Grid>
+                  </Grid> */}
                 </Grid>
               </Grid>
               <Grid item xs={12} style={{ height: 350 }} />
