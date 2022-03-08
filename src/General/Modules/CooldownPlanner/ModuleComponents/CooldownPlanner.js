@@ -735,13 +735,15 @@ export default function CooldownPlanner(props) {
                 </Grid>
 
                 <Grid item xs={12} sm={6} md={12} lg={6} xl={3}>
-                  {currentBoss === "" ? null : <MTableToolbar {...props} />}
+                  {currentBoss === "" || currentPlan === "default" ? null : <MTableToolbar {...props} />}
                 </Grid>
               </Grid>
             ),
           }}
           /* ------------------- These are how the table updates its data from edit mode ------------------ */
           editable={{
+            isEditHidden: (rowData) => currentPlan === "default",
+            isDeleteHidden: (rowData) => currentPlan === "default",
             onRowAdd: (newData) =>
               new Promise((resolve, reject) => {
                 setTimeout(() => {
