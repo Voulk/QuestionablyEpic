@@ -23,7 +23,6 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     // is adding which is additive with pre-existing stacks. 
 
     bonus_stats.hps = healPortionHPS + masteryStackValue;
-    console.log(bonus_stats.hps)
   }
   else if (effectName === "Druid T28-4") {
     // This is too simple a formula, but can be revised with proper log data.
