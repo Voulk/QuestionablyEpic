@@ -92,12 +92,15 @@ export default function ItemCard(props) {
   const tertiary =
     "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}>{t(props.item.tertiary)}</div> : null;
 
+  const tier = props.item.setID !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
+
   const socket = props.item.socket ? (
-    <div style={{ display: "inline", verticalAlign: "middle", marginTop: tertiary || isVault ? 0 : 2, marginRight: 4 }}>
+    <div style={{ display: "inline", verticalAlign: "middle", marginTop: tertiary || isVault || tier ? 0 : 2, marginRight: 4 }}>
       <img src={socketImage} width={15} height={15} alt="Socket" />
     </div>
   ) : null;
 
+  console.log(props.item.setID);
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <div style={{ position: "relative" }}>
@@ -144,11 +147,13 @@ export default function ItemCard(props) {
                 <Grid item container direction="column" justifyContent="space-around" xs="auto">
                   <Grid item xs={12} display="inline">
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px" }}>
-                      <div style={{ color: itemQuality, lineHeight: tertiary ? "normal" : 1.57 }}>{itemName}</div>
+                      <div style={{ color: itemQuality, lineHeight: tertiary || isVault || tier ? "normal" : 1.57 }}>{itemName}</div>
                       <div style={{ display: "flex" }}>
                         {tertiary}
                         {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
                         {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
+                        {(tertiary && tier) || (isVault && tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                        {tier}
                       </div>
                     </Typography>
                   </Grid>
