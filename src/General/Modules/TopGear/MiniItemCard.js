@@ -100,7 +100,6 @@ export default function ItemCard(props) {
     </div>
   ) : null;
 
-  console.log(props.item.setID);
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <div style={{ position: "relative" }}>
