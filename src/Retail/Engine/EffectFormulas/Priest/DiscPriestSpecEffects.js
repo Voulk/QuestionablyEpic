@@ -6,11 +6,21 @@ export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
   // Tier Sets
-  if (effectName === "Disc T28-2") {
+  if (effectName === "DPriest T28-2") {
+    console.log("DPriest 2pc")
     // Discipline Sepulcher tier set 2pc
+    // This set has multiple issues. It stacks to two but both are consumed at the same time, it doesn't make Power Word: Shield free which means it's
+    // bad during Rapture and the overall mana savings are rather dubious at best. 
+    const procSpellsPerMin = 14; // TODO: Add log pull.
+    const percProcsConsumed = 0.66; 
+    const manaPerProc = 1750;
+    const procChance = 0.15;
+
+    bonus_stats.mana = procSpellsPerMin * percProcsConsumed * manaPerProc * procChance / 60
+    console.log(bonus_stats.mana);
     
   }
-  else if (effectName === "Disc T28-4") {
+  else if (effectName === "DPriest T28-2") {
     // Discipline Sepulcher tier set 4pc
 
   }
