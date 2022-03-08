@@ -38,6 +38,20 @@ describe("Badge of Ferocity Data Check", () => {
     });
 });
 
+describe("Symbol of the Raptora Data", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Symbol of the Raptora");
+    const effect = activeTrinket.effects[0];
+    each`
+    level    | expectedResult
+    ${236}  | ${167}
+    // add new test cases here
+    `.test("Symbol of the Raptora Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+  
+        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
+    });
+});
+
 describe("Unbound Changeling Data Tests", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = trinket_data.find((trinket) => trinket.name === "Unbound Changeling");

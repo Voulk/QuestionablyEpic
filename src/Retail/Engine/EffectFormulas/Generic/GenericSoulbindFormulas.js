@@ -105,7 +105,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* --------------------------------------- Cleansing Rites -------------------------------------- */
     effectID === 329784
   ) {
-    let health_pool = player.getHealth();
+    let health_pool = player.getHealth(contentType);
 
     bonus_stats.HPS = (health_pool * 0.1) / player.getFightLength(contentType);
   } else if (
@@ -255,7 +255,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     effectID === 352502
   ) {
     const expectedPPM = 0.67 // 1 minute ICD, high proc chance because 80% is a high threshold. 
-    const playerHealth = player.getHealth();
+    const playerHealth = player.getHealth(contentType);
     bonus_stats.HPS = expectedPPM * playerHealth * 0.2 / 60;
   } else if (
     /* ---------------------------------------- Bonded Hearts --------------------------------------- */

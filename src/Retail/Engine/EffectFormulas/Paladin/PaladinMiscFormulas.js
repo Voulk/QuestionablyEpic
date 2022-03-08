@@ -29,10 +29,10 @@ export function processPaladinRawHealing(critPerc) {
 }
 
 // Credit: Betsujin
-export function getAwakeningWingsUptime(player, contentType) {
+export function getAwakeningWingsUptime(player, contentType, wings = 10) {
   let _cpm = 29; // Holy power generated / min
 
-  let basewings = 10.0;
+  let basewings = wings;
   let awakeningseconds = 10.0;
   let spenders = _cpm / 3.0;
   let dpprocs = spenders * 0.15;

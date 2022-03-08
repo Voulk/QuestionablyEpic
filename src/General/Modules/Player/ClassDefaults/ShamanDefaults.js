@@ -10,7 +10,7 @@ export const shamanDefaultSpellData = (contentType) => {
       108280: { cpm: 0.32, avgcast: 153509.64, hps: 809.93, overhealing: 0.48 }, // Healing Tide Totem
       198838: { cpm: 0.86, avgcast: 45491.99, hps: 652.06, overhealing: 0 }, // Earthen Wall Totem
       114083: { cpm: 0, avgcast: 0, hps: 376.65, overhealing: 0.48 }, // Restorative Mists
-      85222: { cpm: 1.12, avgcast: 17707.14, hps: 340.07, overhealing: 0.11 }, // Chain Heal
+      1064: { cpm: 4.6, avgcast: 17707.14, hps: 340.07, overhealing: 0.11 }, // Chain Heal
       73685: { cpm: 2.51, avgcast: 5801.98, hps: 244.09, overhealing: 0.13 }, // Unleash Life
       20473: { cpm: 0.98, avgcast: 10982.28, hps: 177.17, overhealing: 0.16 }, // Healing Surge
       974: { cpm: 0.96, avgcast: 10973.11, hps: 167.69, overhealing: 0.1 }, // Earth Shield
