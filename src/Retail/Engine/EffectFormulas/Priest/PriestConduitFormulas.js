@@ -19,7 +19,7 @@ export const getPriestConduit = (conduitID, player, contentType, conduitLevel) =
   // Pain Transformation
   else if (conduitID === 337786) {
     const painSuppCPM = 0.27 // Move to Model. TODO.
-    const healSize = discConduits('Pain Transformation', conduitLevel) * player.getHealth();
+    const healSize = discConduits('Pain Transformation', conduitLevel) * player.getHealth(contentType);
     const expectedOverhealing = 0.52; // Pain suppression is best used pre-emptively, meaning this conduit only really gets any value when used in a panic to cover a mistake.
     // It is not good.
 

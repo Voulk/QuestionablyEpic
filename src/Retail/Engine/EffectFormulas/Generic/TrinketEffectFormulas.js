@@ -783,6 +783,19 @@ else if (
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
+  /*                                   Symbol of the Raptora                                        */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Symbol of the Raptora"
+) {
+  let effect = activeTrinket.effects[0];
+
+  const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
+
+  bonus_stats.intellect = trinketRaw * convertPPMToUptime(effect.ppm, effect.duration);
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
   /*                                   Forbidden Necromantic Tome                                   */
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Forbidden Necromantic Tome"

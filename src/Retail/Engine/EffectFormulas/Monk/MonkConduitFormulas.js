@@ -152,7 +152,7 @@ export const getMonkConduit = (conduitID, player, contentType, conduitLevel) => 
   // Fortifying Ingredients
   else if (conduitID === 336853) {
     const conduitPower = conduitScaling(FORTIFYING_INGREDIENTS, conduitLevel);
-    const maxHP = player.getHealth();
+    const maxHP = player.getHealth(contentType);
     const versPercent = 1 + player.activeStats.versatility / 40 / 100;
 
     const shield = maxHP * versPercent * conduitPower;

@@ -2,7 +2,7 @@ export const druidDefaultSpellData = (contentType) => {
   let spellList = {};
   if (contentType === "Raid") {
     spellList = {
-      774: { cpm: 16.6, avgcast: 7440, hps: 2520, overhealing: 0.26 }, // Rejuv
+      774: { cpm: 21, avgcast: 7440, hps: 2520, overhealing: 0.26 }, // Rejuv
       48438: { cpm: 2.86, avgcast: 34640, hps: 2202, overhealing: 0.22 }, // Wild Growth
       157982: { cpm: 1.3, avgcast: 32974, hps: 853, overhealing: 0.36 }, // Tranquility
       8936: { cpm: 3.8, avgcast: 10814, hps: 815, overhealing: 0.18, hits: 12 }, // Regrowth
