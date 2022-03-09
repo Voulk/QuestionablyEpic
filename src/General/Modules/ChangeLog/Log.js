@@ -15,6 +15,7 @@ export const changeLog = [
     changes: [
       "Added Disc Priest 2pc.",
       "Added a label for Tier Pieces to make your collection easier to manage",
+      "MW 2pc now includes additional Rising Mist healing (A ~5% increase in value).",
       "Bugfix: Orange Mageweave Shirt will no longer import as a Disc legendary.",
       "Bugfix: Origin will now import with the correct amount of intellect.",
       "Bugfix: Top Gear will now account for all sources of bonus mana."
