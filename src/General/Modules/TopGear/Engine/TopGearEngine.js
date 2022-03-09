@@ -523,6 +523,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
   itemSet.effectList = effectList;
+  
   return builtSet;
 }
 
