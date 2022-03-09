@@ -51,8 +51,9 @@ const getDamMult = (buffs, activeAtones, t, spellName, boonStacks, conduits) => 
  * @powerwordshield Gets a 200% buff if Rapture is active (modified by Exaltation if taken)
  * @ascendedEruption The healing portion also gets a buff based on number of boon stacks on expiry.
  */
-const getHealingMult = (buffs, t, spellName, conduits) => {
+const getHealingMult = (state, spellName, conduits) => {
     let mult = 1
+    const buffs = state.activeBuffs;
 
     const multiplierBuffList = ["Dream Delver", "Token of Appreciation", "Tea Time"];
 
@@ -63,8 +64,13 @@ const getHealingMult = (buffs, t, spellName, conduits) => {
     }
     });
 
+    // Healing multiplier of 2pc affects all healing (including 4pc)
+    if (state.settings.misc.includes("2T28") && (spellName === "Essence Font (HoT)" || spellName === "Essence Font (HoT - Faeline Stomp)")) {
+        mult *= 1.05;
+    }
+
     // Apply Jade Bond conduit
-    if (spellName === "Gusts of Mists (Chiji)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Soothing Breath (CTA Yulon)" || spellName === "Soothing Breath (Yulon)")
+    if (spellName === "Gust of Mists (Chiji)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Soothing Breath (CTA Yulon)" || spellName === "Soothing Breath (Yulon)")
     {
         mult *= 1.125;
     }
@@ -75,12 +81,21 @@ const getHealingMult = (buffs, t, spellName, conduits) => {
         mult *= 1 + 0.3 * 1;
     }
 
+    if (spellName === "Gust of Mists (Essence Font)")
+    {
+        const efHots = ["Essence Font (HoT)", "Essence Font (HoT - Faeline Stomp)"]
+        const activeEFBuffs = state.activeBuffs.filter(function (buff) {return efHots.includes(buff.name)})
+        let multi = activeEFBuffs.length / 20;
+        if (multi > 1) multi = 1;
+        mult *= multi;
+    }
+
     // FLS buffs 5 targets. We'll take the average healing increase. This is likely a slight underestimation since your RJW and FLS targets will line up closely. On the other
     // hand FLS likes to hit pets sometimes so it should be fair. 
     if (checkBuffActive(buffs, "Faeline Harmony Inc")) mult *= (0.08 * 5 / 20) + 1; 
 
     // Enveloping mist and breath healing increase
-    if (spellName != "Faeline Stomp")
+    if (spellName != "Faeline Stomp" && spellName != "Enveloping Mist" && spellName != "Enveloping Breath")
     {
         if (checkBuffActive(buffs, "Enveloping Mist"))
         {
@@ -261,7 +276,7 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
             buffDuration: 32,
         });
 
-        state.activeBuffs.push({name: "Newfound Resolve", expiration: 999, buffType: "statsMult", value: 1 + convertPPMToUptime(1/1.5, 15), stat: 'intellect'});
+        state.activeBuffs.push({name: "Newfound Resolve", expiration: 999, buffType: "statsMult", value: 1 + convertPPMToUptime(1/1.5, 15) * 0.1, stat: 'intellect'});
     }
     
     // 385 = 35 * 11% crit (this goes into diminishing returns so probably underestimating)
@@ -339,7 +354,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     let flatHeal = 0;
     let T284pcOverhealMultiplier = 1;
     let healingMult = 1;
-    let bonedustBrewGusts = 0;
+    let bonedustBrewGust = 0;
 
     // == 4T28 ==
     // Some spells do not benefit from the bonus. It's unknown whether this is intentional.
@@ -351,18 +366,13 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     // Add Bonedust Brew additional mastery healing
     if (spellName === "Gust of Mists (Bonedust Brew)")
     {
-        bonedustBrewGusts = (0.42 * 1.04) * getStatMult(currentStats, ['crit', 'vers']) * currentStats.intellect;
+        bonedustBrewGust = (0.42 * 1.04) * getStatMult(currentStats, ['crit', 'vers']) * currentStats.intellect;
     }
     
-    healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.conduits); 
-    // Healing multiplier of 2pc affects all healing (including 4pc)
-    if (state.settings.misc.includes("2T28") && (spellName === "Essence Font (HoT)" || spellName === "Essence Font (HoT - Faeline Stomp)")) {
-        healingMult *= 1.05;
-    }
+    healingMult = getHealingMult(state, spellName, state.conduits); 
 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.softCap || 1) * spell.targets : spell.targets || 1;
-    const healingVal = (getSpellRaw(spell, currentStats) + bonedustBrewGusts + flatHeal * getStatMult(currentStats, ['crit', 'vers'])) * (1 - spell.overheal * T284pcOverhealMultiplier) * healingMult * targetMult * specialMult;
-    const healingValEmeniBonus = (getSpellRaw(spell, currentStats) * getStatMult(currentStats, ['crit', 'vers'])) * (1 - spell.overheal * T284pcOverhealMultiplier) * healingMult * targetMult * specialMult;
+    const healingVal = (getSpellRaw(spell, currentStats) + bonedustBrewGust + flatHeal * getStatMult(currentStats,  ['crit', 'vers'])) * (1 - spell.overheal * T284pcOverhealMultiplier) * healingMult * targetMult * specialMult;
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
     if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
         state.T284pcwindow[spellName] = (state.T284pcwindow[spellName] || 0) + healingVal; 
@@ -379,9 +389,6 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     if (activeEFBuffs.length > 0 && (spellName === "Gust of Mists" || spellName === "Gust of Mists (Revival)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)"))
     {
         const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
-        let multi = activeEFBuffs.length / 20;
-        if (multi > 1) multi = 1;
-        bonusMasteryProc.coeff *= multi;
         runHeal(state, bonusMasteryProc, "Gust of Mists (Essence Font)");
     }
 
@@ -425,7 +432,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     {
         const emenigroupbonus = (0.8 * convertPPMToUptime(1.5, 10));
         // Hits 75% of predicted hits
-        const emenibonus = healingValEmeniBonus * (0.13 * convertPPMToUptime(1.5, 10));
+        const emenibonus = healingVal * (0.13 * convertPPMToUptime(1.5, 10));
         let bonedustHealing = (healingVal + emenibonus) * 0.5 * 0.4 * 1.8 * 0.75 * 0.256
 
         if (state.settings.misc.includes("BDB40"))

@@ -93,6 +93,7 @@ describe("MergeBonusStats function", () => {
             mastery: 0,
             versatility: 0,
             leech: 0,
+            mana: 0,
             dps: 0
         }
 

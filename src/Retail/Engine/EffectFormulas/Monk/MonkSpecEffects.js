@@ -23,13 +23,14 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
     const extraHoT = 0.042 * 2 * 1.05 * player.getStatMultiplier("CRITVERS") * player.getStatPerc("Haste") * player.getInt();  
     const hotIncrease = 0.042 * 4 * 0.05 * player.getStatMultiplier("CRITVERS") * player.getStatPerc("Haste") * player.getInt();
     // Coefficient x num Ticks x 5% multi x avgHots per EF 
-    // We automatically include Rising Mist in the calculation
+    // We automatically include the Rising Mist extension in the calculation
     const expectedOverhealing = 0.24;
 
+    const oneRisingMist = 0.28 * player.getStatMultiplier("CRITVERS") * player.getInt() * 0.7; // 30% expected overhealing. Reasonably conservative.
+    const risingMistDirect = oneRisingMist * essenceFontCPM * (1); // The additional healing from Rising Mist. We model this as 1 extra RM hit per Essence Font cast.
     const additionalGusts = 0; // The additional Gust of Mists afforded by the extra 2/4s of HoT uptime. This is of low value.    
-
-    bonus_stats.hps = ((hotIncrease + extraHoT) * essenceFontCPM * 14 * (1 - expectedOverhealing)) / 60;
-
+    
+    bonus_stats.hps = (((hotIncrease + extraHoT) * essenceFontCPM * 14 * (1 - expectedOverhealing))+risingMistDirect+additionalGusts) / 60;
   }
   else if (effectName === "Mistweaver T28-4") {
     // Mistweaver Monk Sepulcher tier set 2pc

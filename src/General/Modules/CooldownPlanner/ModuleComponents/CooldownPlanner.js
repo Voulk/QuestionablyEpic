@@ -103,36 +103,42 @@ export default function CooldownPlanner(props) {
   const [currentRaid, setCurrentRaid] = useState(2481);
   // debug && console.log(currentRaid);
   const [currentBoss, setCurrentBoss] = useState(2512);
+  const [currentDifficulty, setDifficulty] = useState("Mythic");
   // debug && console.log(currentBoss);
   const [currentPlan, setCurrentPlan] = useState("default");
   // debug && console.log(currentPlan);
-  const [data, setData] = useState(cooldownObject.getCooldowns(currentBoss)["default"]);
-  // debug && console.table(data);
+  const [data, setData] = useState(cooldownObject.getCooldowns(currentBoss, currentDifficulty)["default"]);
 
-  const getBossPlanNames = (boss) => {
-    return Object.keys(cooldownObject.getCooldowns(boss));
+  const getBossPlanNames = (boss, currentDif) => {
+    return Object.keys(cooldownObject.getCooldowns(boss, currentDif));
   };
 
   /* ------------------------------- Loads relevant plan into table ------------------------------- */
-  const loadPlanData = (currentBoss, newPlan) => {
+  const loadPlanData = (currentBoss, newPlan, currentDif) => {
     setCurrentBoss(currentBoss);
     setCurrentPlan(newPlan);
 
     /* ------------------------------- Get List of Plans for the boss ------------------------------- */
-    const bossCooldowns = cooldownObject.getCooldowns(currentBoss);
+    const bossCooldowns = cooldownObject.getCooldowns(currentBoss, currentDif);
     /* --------------------------------------- Set the lected --------------------------------------- */
     const planCooldowns = bossCooldowns[newPlan];
+    setDifficulty(currentDif);
     setData(planCooldowns);
   };
 
   /* --------------------- Updates the plan in cooldownObject in local storage -------------------- */
-  const updateStorage = (boss, plan, currentData) => {
-    cooldownObject.updateCooldownPlan(boss, plan, currentData);
+  const updateStorage = (boss, plan, currentData, currentDif) => {
+    cooldownObject.updateCooldownPlan(boss, plan, currentData, currentDif);
   };
 
   /* -------------------------------------- Changes the Boss -------------------------------------- */
-  const changeBoss = (newBoss) => {
-    loadPlanData(newBoss, "default");
+  const changeBoss = (newBoss, currentDif) => {
+    loadPlanData(newBoss, "default", currentDif);
+  };
+
+  const changeDifficulty = (newBoss, currentDif) => {
+    setDifficulty(currentDif);
+    loadPlanData(newBoss, "default", currentDif);
   };
 
   let columns = [
@@ -608,7 +614,14 @@ export default function CooldownPlanner(props) {
                   </Grid> */}
                   {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <TextField sx={{ minWidth: 200, width: "100%" }} size="small" select value={currentBoss} onChange={(e) => changeBoss(e.target.value)} disabled={currentRaid === "" ? true : false}>
+                    <TextField
+                      sx={{ minWidth: 100, width: "100%" }}
+                      size="small"
+                      select
+                      value={currentBoss}
+                      onChange={(e) => changeBoss(e.target.value, currentDifficulty)}
+                      disabled={currentRaid === "" ? true : false}
+                    >
                       {bossList
                         .filter((obj) => {
                           return obj.zoneID === currentRaid;
@@ -625,18 +638,18 @@ export default function CooldownPlanner(props) {
                     </TextField>
                   </Grid>
 
-                  {/* ----------------------------------- Plan Selection Dropdown ---------------------------------- */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <TextField
-                      sx={{ minWidth: 200, width: "100%" }}
+                      sx={{ minWidth: 100, width: "100%" }}
                       select
-                      id="RaidSelector"
-                      placeholder={t("Select Plan")}
-                      value={currentPlan}
-                      onChange={(e) => loadPlanData(currentBoss, e.target.value)}
+                      id="DifficultySelector"
+                      placeholder={t("Difficulty")}
+                      value={currentDifficulty}
+                      onChange={(e) => changeDifficulty(currentBoss, e.target.value)}
                       disabled={currentBoss === "" ? true : false}
                     >
-                      {getBossPlanNames(currentBoss).map((key, i, arr) => {
+                      w
+                      {["Heroic", "Mythic"].map((key, i, arr) => {
                         let lastItem = i + 1 === arr.length ? false : true;
                         return (
                           <MenuItem key={key} divider={lastItem} value={key}>
@@ -646,12 +659,36 @@ export default function CooldownPlanner(props) {
                       })}
                     </TextField>
                   </Grid>
+
+                  {/* ----------------------------------- Plan Selection Dropdown ---------------------------------- */}
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <TextField
+                      sx={{ minWidth: 100, width: "100%" }}
+                      select
+                      id="RaidSelector"
+                      placeholder={t("Plan")}
+                      value={currentPlan}
+                      onChange={(e) => loadPlanData(currentBoss, e.target.value, currentDifficulty)}
+                      disabled={currentBoss === "" ? true : false}
+                    >
+                      {getBossPlanNames(currentBoss, currentDifficulty).map((key, i, arr) => {
+                        let lastItem = i + 1 === arr.length ? false : true;
+                        return (
+                          <MenuItem key={key} divider={lastItem} value={key}>
+                            {key}
+                          </MenuItem>
+                        );
+                      })}
+                    </TextField>
+                  </Grid>
+
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <AddPlanDialog
                       openAddPlanDialog={openAddPlanDialog}
                       handleAddPlanDialogClose={handleAddPlanDialogClose}
                       cooldownObject={cooldownObject}
                       currentBoss={currentBoss}
+                      currentDifficulty={currentDifficulty}
                       loadPlanData={loadPlanData}
                       handleAddPlanDialogClickOpen={handleAddPlanDialogClickOpen}
                     />
@@ -665,6 +702,7 @@ export default function CooldownPlanner(props) {
                       handleCopyPlanDialogClose={handleCopyPlanDialogClose}
                       cooldownObject={cooldownObject}
                       currentBoss={currentBoss}
+                      currentDifficulty={currentDifficulty}
                       loadPlanData={loadPlanData}
                     />
                   </Grid>
@@ -679,6 +717,7 @@ export default function CooldownPlanner(props) {
                       setData={setData}
                       cooldownObject={cooldownObject}
                       currentBoss={currentBoss}
+                      currentDifficulty={currentDifficulty}
                     />
                   </Grid>
 
@@ -687,7 +726,7 @@ export default function CooldownPlanner(props) {
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <ExportPlanDialog data={data} boss={currentBoss} planName={currentPlan} plan={data} />
+                    <ExportPlanDialog data={data} boss={currentBoss} planName={currentPlan} plan={data} currentDifficulty={currentDifficulty} />
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
@@ -696,13 +735,15 @@ export default function CooldownPlanner(props) {
                 </Grid>
 
                 <Grid item xs={12} sm={6} md={12} lg={6} xl={3}>
-                  {currentBoss === "" ? null : <MTableToolbar {...props} />}
+                  {currentBoss === "" || currentPlan === "default" ? null : <MTableToolbar {...props} />}
                 </Grid>
               </Grid>
             ),
           }}
           /* ------------------- These are how the table updates its data from edit mode ------------------ */
           editable={{
+            isEditHidden: (rowData) => currentPlan === "default",
+            isDeleteHidden: (rowData) => currentPlan === "default",
             onRowAdd: (newData) =>
               new Promise((resolve, reject) => {
                 setTimeout(() => {
@@ -710,7 +751,7 @@ export default function CooldownPlanner(props) {
                   let updatedData = [...data, newData].sort((a, b) => (a.time > b.time && 1) || -1);
                   setData(updatedData);
                   /* ------------------------------------ Update local storage ------------------------------------ */
-                  updateStorage(currentBoss, currentPlan, updatedData);
+                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty);
                   resolve();
                 }, 1000);
               }),
@@ -727,7 +768,7 @@ export default function CooldownPlanner(props) {
                   /* ---------------------------------- Set Updated Data (Sorted) --------------------------------- */
                   setData(updatedData);
                   /* ------------------------------------ Update local storage ------------------------------------ */
-                  updateStorage(currentBoss, currentPlan, updatedData);
+                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty);
                   resolve();
                 }, 1000);
               }),
@@ -745,7 +786,7 @@ export default function CooldownPlanner(props) {
                   /* -------------------------- Set the New Data without the spliced row -------------------------- */
                   setData(updatedData);
                   /* ------------------------------------ Update local storage ------------------------------------ */
-                  updateStorage(currentBoss, currentPlan, updatedData);
+                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty);
                   resolve();
                 }, 1000);
               }),
@@ -760,7 +801,7 @@ export default function CooldownPlanner(props) {
                   }
                   let updatedData = [...dataUpdate];
                   setData(updatedData);
-                  updateStorage(currentBoss, currentPlan, updatedData);
+                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty);
                   resolve();
                 }, 1000);
               }),
