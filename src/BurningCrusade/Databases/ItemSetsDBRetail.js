@@ -1,9 +1,9 @@
 
 
-export function getItemSet(id, pieces) {
+export function getItemSet(id, pieces, spec) {
     let effects = [];
     let temp = itemSets.filter(function (set) {
-      return set.id === parseInt(id);
+      return set.id === parseInt(id) && set.class === spec;
     });
     if (temp.length > 0) {
       for (const [bonus, effectid] of Object.entries(temp[0].setBonuses)) {

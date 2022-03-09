@@ -78,7 +78,7 @@ function autoSocketItems(itemList) {
  * @returns A Top Gear result which includes the best set, and how close various alternatives are.
  */
 export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
-  console.log("Running Top Gear")
+  //console.log("Running Top Gear")
   // == Setup Player & Cast Model ==
   // Create player / cast model objects in this thread based on data from the player character & player model.
   const newPlayer = setupPlayer(player, contentType, castModel);
@@ -417,7 +417,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   //if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
 
   // == Effects ==
-  // Effects include stuff like trinkets, legendaries, domination gems, tier sets (one day) and so on.
+  // Effects include stuff like trinkets, legendaries, domination gems, tier sets and so on.
   // Each effect returns an object containing which stats it offers. Specific details on each effect can be found in the TrinketData, EffectData and EffectEngine files.
   // -- Disc note: On use trinkets and legendaries and handled further down in the ramps section. --
   let effectStats = [];
@@ -426,8 +426,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // --- Item Set Bonuses ---
   for (const set in setBonuses) {
     if (setBonuses[set] > 1) {
-      effectList = effectList.concat(getItemSet(set, setBonuses[set]));
-      console.log("Adding set bonus");
+      effectList = effectList.concat(getItemSet(set, setBonuses[set], player.getSpec()));
     }
   }
 
@@ -440,7 +439,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   }
 
   const mergedEffectStats = mergeBonusStats(effectStats);
-
   // == Apply same set int bonus ==
   // 5% int boost for wearing the same items.
   // The system doesn't actually allow you to add items of different armor types so this is always on.
@@ -500,7 +498,11 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     } else if (stat === "dps") {
       if (contentType === "Dungeon") hardScore += (evalStats[stat] / baseHPS) * player.activeStats.intellect;
       else continue;
-    } else {
+    } 
+    else if (stat === "mana") {
+      hardScore += evalStats[stat] * player.getSpecialQuery("OneManaHealing", contentType) / player.getHPS(contentType) * player.activeStats.intellect
+    }
+    else {
       hardScore += evalStats[stat] * adjusted_weights[stat];
     }
   }
@@ -521,6 +523,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
   itemSet.effectList = effectList;
+  
   return builtSet;
 }
 
@@ -542,6 +545,7 @@ export function mergeBonusStats(stats) {
     leech: mergeStat(stats, "leech"),
     hps: mergeStat(stats, "hps") + mergeStat(stats, "HPS"),
     dps: mergeStat(stats, "dps"),
+    mana: mergeStat(stats, "mana"),
   };
 
   return val;

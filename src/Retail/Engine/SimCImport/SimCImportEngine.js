@@ -393,7 +393,8 @@ export function processItem(line, player, contentType, type) {
 
   // Add the new item to our characters item collection.
   if (itemLevel > 60 && itemID !== 0 && getItem(itemID) !== "") {
-    let itemAllocations = Object.keys(specialAllocations).length > 0 ? specialAllocations : getItemAllocations(itemID, missiveStats);
+    let itemAllocations = getItemAllocations(itemID, missiveStats);
+    itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
     let item = new Item(itemID, "", itemSlot, itemSocket || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel, bonusIDS);
     item.vaultItem = type === "Vault";
     item.active = itemEquipped || item.vaultItem;
@@ -461,6 +462,15 @@ function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) 
     bonus_stats[stat_ids[stat]] = allocation;
   });
   return bonus_stats;
+}
+
+// Compiles stats & bonus stats into one array to which we can then apply DR etc.
+function compileStats(stats, bonus_stats) {
+  for (var stat in stats) {
+    stats[stat] += stat in bonus_stats ? bonus_stats[stat] : 0;
+  }
+
+  return stats;
 }
 
 function checkDefaultSocket(id) {
