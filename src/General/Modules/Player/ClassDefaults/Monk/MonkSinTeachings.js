@@ -3,7 +3,7 @@ export const monkSinSpellData = (contentType) => {
   if (contentType === "Raid") {
     spellList = {
       196725: { cpm: 52.31, avgcast: 1742.69, hps: 1515.74, overhealing: 0.14 }, //Refreshing Jade Wind
-      191840: { cpm: 2.49, avgcast: 33582.63, hps: 1316.39, overhealing: 0.27 }, // Essence Font
+      191840: { cpm: 3.49, avgcast: 33582.63, hps: 1316.39, overhealing: 0.27 }, // Essence Font
       325209: { cpm: 0, avgcast: 0, hps: 1076.62, overhealing: 0.48 }, // Enveloping Breath
       115310: { cpm: 0.31, avgcast: 168141.11, hps: 878.24, overhealing: 0.35 }, // Revival
       119611: { cpm: 5.41, avgcast: 6911.81, hps: 623.78, overhealing: 0.35 }, // Renewing Mist
@@ -28,7 +28,7 @@ export const monkSinSpellData = (contentType) => {
     };
   } else if (contentType === "Dungeon") {
     spellList = {
-      191840: { cpm: 2.49, avgcast: 33582.63, hps: 1316.39, overhealing: 0.27 }, // Essence Font
+      191840: { cpm: 2.46, avgcast: 33582.63, hps: 1316.39, overhealing: 0.27 }, // Essence Font
       325209: { cpm: 0, avgcast: 0, hps: 1076.62, overhealing: 0.48 }, // Enveloping Breath
       115310: { cpm: 0.31, avgcast: 168141.11, hps: 878.24, overhealing: 0.35 }, // Revival
       119611: { cpm: 5.41, avgcast: 6911.81, hps: 623.78, overhealing: 0.35 }, // Renewing Mist
@@ -57,9 +57,9 @@ export const monkSinSpecialQueries = (contentType) => {
       HPSExpelHarmOnSelf: 0,
       OneManaHealing: 4.2,
       cooldownMult: {
-        oneMinute: 1.22,
+        oneMinute: 1.12,
         ninetySeconds: 1,
-        twoMinutes: 1.29,
+        twoMinutes: 1.48,
         twoMinutesOrb: 1.11,
         threeMinutes: 1.2,
       },
@@ -77,7 +77,7 @@ export const monkSinSpecialQueries = (contentType) => {
       cooldownMult: {
         oneMinute: 1,
         ninetySeconds: 1,
-        twoMinutes: 1,
+        twoMinutes: 1.42,
         twoMinutesOrb: 1,
         threeMinutes: 1,
       },
@@ -95,19 +95,19 @@ export const monkSinStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.41,
-    crit: 0.6,
-    mastery: 0.36,
-    versatility: 0.41,
-    leech: 0.56,
+    haste: 0.59,
+    crit: 0.66,
+    mastery: 0.31,
+    versatility: 0.59,
+    leech: 0.8,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.42,
-    crit: 0.56,
+    haste: 0.58,
+    crit: 0.66,
     mastery: 0.4,
-    versatility: 0.41,
-    leech: 0.36,
+    versatility: 0.61,
+    leech: 0.46,
   };
 
   return statWeights[contentType];

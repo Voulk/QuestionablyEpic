@@ -2,30 +2,31 @@ import { runCastSequence, allRamps } from "General/Modules/Player/DiscPriest/Dis
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 
-
 export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
-  let result = 0.0;
-  let name = effectName;
   let bonus_stats = {};
 
-  /*
-
-    */
   // Tier Sets
-  if (name === "Disc T27-2") {
+  if (effectName === "DPriest T28-2") {
     // Discipline Sepulcher tier set 2pc
+    // This set has multiple issues. It stacks to two but both are consumed at the same time, it doesn't make Power Word: Shield free which means it's
+    // bad during Rapture and the overall mana savings are rather dubious at best. 
+    const procSpellsPerMin = 14; // TODO: Add log pull.
+    const percProcsConsumed = 0.66; 
+    const manaPerProc = 1750;
+    const procChance = 0.15;
     
+    bonus_stats.mana = procSpellsPerMin * percProcsConsumed * manaPerProc * procChance / 60
   }
-  else if (name === "Disc T27-4") {
+  else if (effectName === "DPriest T28-2") {
     // Discipline Sepulcher tier set 4pc
 
   }
 
-  if (name === "Clarity of Mind") {
+  else if (effectName === "Clarity of Mind") {
     bonus_stats.hps = player.getRampID('clarityOfMind', contentType);
     //bonus_stats.hps = (contentType === "Raid" ? 1000 : 0);
 
-  } else if (name === "Crystalline Reflection") {
+  } else if (effectName === "Crystalline Reflection") {
     // Crystalline Reflection
     // - Reflection damage doesn't proc atonement.
     // - Scales with: Intellect, Crit, Vers
@@ -35,11 +36,11 @@ export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
 
     bonus_stats.hps = reflectionSP * shieldCPM * (1 - expectedOverhealing) * player.getInt() * player.getStatMultiplier("CRITVERS") / 60;
     // Do Math
-  } else if (name === "Kiss of Death") {
+  } else if (effectName === "Kiss of Death") {
     // Do Math
-  } else if (name === "The Penitent One") {
+  } else if (effectName === "The Penitent One") {
     bonus_stats.hps = player.getRampID('penitentOne', contentType);
-  } else if (name === "Cauterizing Shadows") {
+  } else if (effectName === "Cauterizing Shadows") {
     // Cauterizing Shadows
     // - Scales with: Intellect, Crit, Vers
     const data = {
@@ -51,9 +52,9 @@ export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
 
     bonus_stats.hps = data.ppm * data.sp * data.targets * (1 - data.expectedOverhealing) * player.getInt() * player.getStatMultiplier("CRITVERS") / 60;
 
-  } else if (name === "Measured Contemplation") {
-  } else if (name === "Twins of the Sun Priestess") {
-  } else if (name === "Vault of Heavens") {
+  } else if (effectName === "Measured Contemplation") {
+  } else if (effectName === "Twins of the Sun Priestess") {
+  } else if (effectName === "Vault of Heavens") {
   } else {
     bonus_stats.HPS = 0;
     bonus_stats.HPS = 0;

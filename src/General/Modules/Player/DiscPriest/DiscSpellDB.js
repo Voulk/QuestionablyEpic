@@ -30,7 +30,7 @@ export const DISCSPELLS = {
         cost: 1250,
         coeff: 0.744642, // 0.9792 x 0.809 (Mind Blast aura) x 0.94 (Disc aura)
         cooldown: 15,
-        atoneOverheal: 0.2,
+        atoneOverheal: 0.15,
         secondaries: ['crit', 'vers']
     }],
     "Power Word: Solace": [{
@@ -39,7 +39,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 0.752,
         cooldown: 15,
-        atoneOverheal: 0.2,
+        atoneOverheal: 0.17,
         secondaries: ['crit', 'vers']
     }],
     "Smite": [{
@@ -57,7 +57,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 1.41,
         buffDuration: 9,
-        atoneOverheal: 0.25,
+        atoneOverheal: 0.15,
         secondaries: ['crit', 'vers'],
     }],
     "Penance": [{
@@ -66,7 +66,7 @@ export const DISCSPELLS = {
         cost: 800,
         coeff: 1.128, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
-        atoneOverheal: 0.2,
+        atoneOverheal: 0.18,
         secondaries: ['crit', 'vers'],
     }],
     "PenanceTick": [{
@@ -74,7 +74,7 @@ export const DISCSPELLS = {
         castTime: 0.66, // This will still be dynamically adjusted at runtime.
         cost: 0,
         coeff: 0.376,
-        atoneOverheal: 0.2,
+        atoneOverheal: 0.18,
         secondaries: ['crit', 'vers'],
     }],
     "Ascended Blast": 
@@ -85,7 +85,7 @@ export const DISCSPELLS = {
         coeff: 1.68,
         aura: 1,
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.3,
+        atoneOverheal: 0.16,
         },
         {
             type: "heal",
@@ -94,7 +94,7 @@ export const DISCSPELLS = {
             aura: 1,
             targets: 1,
             secondaries: ['crit', 'vers', 'mastery'],
-            overheal: 0.6,
+            overheal: 0.4,
         }],
     "Ascended Nova": 
         [{
@@ -104,7 +104,7 @@ export const DISCSPELLS = {
         coeff: 0.7,
         aura: 1,
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.15,
+        atoneOverheal: 0.12,
         },
         {
             type: "heal",
@@ -123,7 +123,7 @@ export const DISCSPELLS = {
         coeff: 1.68,
         aura: 1,
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.6,
+        atoneOverheal: 0.2,
         },
         {
             type: "heal",
@@ -133,7 +133,7 @@ export const DISCSPELLS = {
             targets: 20,
             secondaries: ['crit', 'vers'],
             tags: ['sqrt'],
-            overheal: 0.6,
+            overheal: 0.3,
         }],
     "Power Word: Shield": [{
         type: "heal",
@@ -178,7 +178,7 @@ export const DISCSPELLS = {
         atonement: 9,
         atonementPos: 'end',
         secondaries: ['crit', 'vers'],
-        overheal: 0.35,
+        overheal: 0.3,
     }],
     "Purge the Wicked": [{
         type: "damage",
@@ -202,7 +202,7 @@ export const DISCSPELLS = {
         coeff: 0.13,
         aura: 1,
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.2,
+        atoneOverheal: 0.13,
         dot: {
             tickRate: 1.5,
             coeff: 0.46,
@@ -225,6 +225,16 @@ export const DISCSPELLS = {
         buffType: 'stats',
         stat: "mastery",
         value: 668, // Trinket values are replaced by the value on the specific version of the trinket.
+    }],
+    "Instructor's Divine Bell (new)": [{
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        cooldown: 90,
+        buffDuration: 15,
+        buffType: 'stats',
+        stat: "mastery",
+        value: 450, // Trinket values are replaced by the value on the specific version of the trinket.
     }],
     "Flame of Battle": [{
         type: "buff",

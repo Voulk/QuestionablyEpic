@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip, Typography } from "@mui/material";
 
 export default function ExportPlanDialog(props) {
-  // const { t } = useTranslation();
-  const { variant, disableElevation, buttonLabel, data, color, planName, boss } = props;
+  const { t } = useTranslation();
+  const { data, planName, boss, currentDifficulty } = props;
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -19,7 +19,24 @@ export default function ExportPlanDialog(props) {
 
     let stringifiedPLan = JSON.stringify(plan);
 
-    exportString = "# QE Cooldown Planner" + "\n" + "# Version=0.9" + "\n" + "# Boss=" + boss + "\n" + "# PlanName=" + planName + "\n" + "# " + "Plan=" + "\n" + stringifiedPLan;
+    exportString =
+      "# QE Cooldown Planner" +
+      "\n" +
+      "# Version=0.9" +
+      "\n" +
+      "# Boss=" +
+      boss +
+      "\n" +
+      "# Difficulty=" +
+      currentDifficulty +
+      "\n" +
+      "# PlanName=" +
+      planName +
+      "\n" +
+      "# " +
+      "Plan=" +
+      "\n" +
+      stringifiedPLan;
 
     return exportString;
   }
@@ -27,25 +44,16 @@ export default function ExportPlanDialog(props) {
   return (
     <div>
       <Tooltip title={""} arrow>
-        <Button disableElevation={disableElevation} color={color} style={{ fontSize: "14px" }} onClick={handleClickOpen} variant={variant}>
-          {buttonLabel}
+        <Button disableElevation={true} sx={{ fontSize: "14px" }} onClick={handleClickOpen} variant="outlined" color="primary">
+          {t("CooldownPlanner.ExportPlanDialog.ButtonLabel")}
         </Button>
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
         <DialogTitle color="primary" id="simc-dialog-title">
-          Export Plan
+          {t("CooldownPlanner.ExportPlanDialog.HeaderTitle")}
         </DialogTitle>
-        <DialogContent >
-          <TextField
-            autoFocus
-            multiline={true}
-            margin="dense"
-            id="exportPlanID"
-            // label={"Paste your plan string here"}
-            fullWidth
-            sx={{ height: "100%" }}
-            value={exportPlanEngine(planName, data, boss)}
-          />
+        <DialogContent>
+          <TextField autoFocus multiline={true} margin="dense" id="exportPlanID" fullWidth sx={{ height: "100%" }} value={exportPlanEngine(planName, data, boss)} />
         </DialogContent>
       </Dialog>
     </div>

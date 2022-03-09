@@ -1,3 +1,5 @@
+import { consoleSandbox } from "@sentry/utils";
+
 const PRIMAL_TIDE_CORE = "Primal Tide Core";
 const SPIRITWALKERS_TIDAL_TOTEM = "Spiritwalker's Tidal Totem";
 const EARTHEN_HARMONY = "Earthen Harmony";
@@ -11,9 +13,54 @@ const IDHEALINGSURGE = 20473;
 
 export const getShamanSpecEffect = (effectName, player, contentType) => {
   const bonusStats = {};
-  bonusStats.hps = -1;
 
-  if (effectName === PRIMAL_TIDE_CORE) {
+  // Tier Sets
+  if (effectName === "Shaman T28-2") {
+    // Crit heals give a stacking +2% crit buff to your next Chain Heal cast. 
+
+    // Model Method #1
+    // This can be modelled as a percentage increase to Chain Heal HPS in general (avg stacks on cast x avg value of the crit inc) which is effective but
+    // has the weakness of showing little to no increase on pre-2pc logs or on poorly played logs in general.
+
+    // Model Method #2
+    // An alternative is to just grab the raw increase of including a new chain heal a few times a minute. This has less reliance on the inserted log being good.
+    // We will assume here that very little (sub 10%) of our Chain Heal stacks go to waste.
+
+    const oneChainHeal = 5.3193 * player.getInt() * player.getStatMultiplier("CRITVERS") * 0.96 * 0.8;
+    // 5.3193 is the final coefficient including bounces. 
+    // 0.96 includes the Chain Heal aura nerf. 
+    // 0.8 includes an expected 20% overheal on all chain heal healing. This is a conservative estimate in most cases.
+
+    const avgHealingPerStack = oneChainHeal * 0.02; 
+    // Note that this should be independent of our crit chance, so long as we spend before we would otherwise cap.
+    // Remember that 99->100% crit on a spell should be of equal absolute value as 5-6%.
+    
+    const stacksPerMin = 260 * (player.getStatPerc("Crit") - 1); 
+    // This is equal to the raw quantity of crits per minute.
+    // We can refine this more with bulk log data or from using a players log data directly.
+
+    const wastage = 0.15 // It's very easy to waste stacks here and we should account for that.
+
+    bonusStats.hps = avgHealingPerStack * stacksPerMin * (1 - wastage) / 60;
+  }
+  else if (effectName === "Shaman T28-4") {
+    // Free chain heals
+    // We'll include chain heals at a standard crit rate since stacks are already accounted for in the 2pc formula.
+    const freeChainHealsPerMinute = 2 + 0.5 + 0.33 + 0.33; // Stream / Cloudburst + HTT + MTT + SLT. Includes average CDR on HTT.
+    const oneChainHeal =  player.getStatMultiplier("ALL") * 5.3193 * 0.75; // 25% expected overhealing. Fine tune with logs.
+    const hpsFreeChainHeal = oneChainHeal * freeChainHealsPerMinute;
+
+    // Cooldown reduction portion
+    // It might take a little bit of time to see how players best use this since there's a little bit of flexibility.
+    // We'll focus our formula mostly on Healing Tide Totem CDR but this formula could easily be updated or even split via the
+    // breakdown of how often each totem benefits.
+    const oneHealingTide = player.getStatMultiplier("ALL") * 0.35 * 5 * 20 * 0.75; // With HTT large range it should be no issue hitting all 20 people.
+    const cooldownRedPerMin = (player.getSpellCPM(1064, contentType) + freeChainHealsPerMinute) * 4 * player.getStatPerc("Crit");// chain heal CPM x targets x modifiedCritChance
+    const hpsFreeTotems = oneHealingTide * (2 / 180 * cooldownRedPerMin) / 60;
+
+    bonusStats.hps = hpsFreeChainHeal / 60 + hpsFreeTotems;
+  }
+  else if (effectName === PRIMAL_TIDE_CORE) {
     /**
      * every x riptides apply a new riptide to someone
      * if somebody already has ptc

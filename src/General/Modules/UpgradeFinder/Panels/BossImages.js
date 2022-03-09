@@ -1,331 +1,204 @@
 export default function UpgradeFinderBossImages(props, gameType, other) {
   if (other === 1194) {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                            Tazavesh                                            */
+    /* ---------------------------------------------------------------------------------------------- */
     switch (props) {
-      /* ------------------------------------ Zo'phex the Sentinel ------------------------------------ */
-      case 2437:
+      case 2437: // Zo'phex the Sentinel
         return require("Images/MythicPlus/TazaveshTheVeiledMarket/zophex.png").default;
-
-      /* ------------------------------------- The Grand Menagerie ------------------------------------ */
-      case 2454:
+      case 2454: // The Grand Menagerie
         return require("Images/MythicPlus/TazaveshTheVeiledMarket/menagerie.png").default;
-
-      /* --------------------------------------- Mailroom Mayhem -------------------------------------- */
-      case 2436:
+      case 2436: // Mailroom Mayhem
         return require("Images/MythicPlus/TazaveshTheVeiledMarket/postmaster.png").default;
-
-      /* ---------------------------------------- Myza's Oasis ---------------------------------------- */
-      case 2452:
+      case 2452: // Myza's Oasis
         return require("Images/MythicPlus/TazaveshTheVeiledMarket/oasis.png").default;
-      /* ------------------------------------------- So'azmi ------------------------------------------ */
-      case 2451:
+      case 2451: // So'azmi
         return require("Images/MythicPlus/TazaveshTheVeiledMarket/soazmi.png").default;
-      /* ------------------------------------------ Hylbrande ----------------------------------------- */
-      case 2448:
+      case 2448: // Hylbrande
         return require("Images/MythicPlus/TazaveshTheVeiledMarket/hylbrande.png").default;
-
-      /* ------------------------------------- Timecap'n Hooktail ------------------------------------- */
-      case 2449:
+      case 2449: // Timecap'n Hooktail
         return require("Images/MythicPlus/TazaveshTheVeiledMarket/timecapn.png").default;
-
-      /* ------------------------------------------- So'leah ------------------------------------------ */
-      case 2455:
+      case 2455: // So'leah
         return require("Images/MythicPlus/TazaveshTheVeiledMarket/soleah.png").default;
-
       default:
+        // Error Checking
         return "Error: Boss Missing :(";
     }
   } else {
     switch (props) {
       /* ---------------------------------------------------------------------------------------------- */
-      /*                                      Sanctum of Domination                                     */
+      /*                                   Sepulcher of the First Ones                                  */
       /* ---------------------------------------------------------------------------------------------- */
-      /* ---------------------------------------- The Tarragrue --------------------------------------- */
-      case 2435:
-        return require("Images/Bosses/SanctumOfDomination/TheTarragrue/TarragrueUF.png").default;
-
-      /* ------------------------------------ The Eye of the Jailer ----------------------------------- */
-      case 2442:
-        return require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/EyeoftheJailer.png").default;
-
-      /* ------------------------------------------ The Nine ------------------------------------------ */
-      case 2439:
-        return require("Images/Bosses/SanctumOfDomination/TheNine/TheNine.png").default;
-
-      /* ------------------------------------- Remnant of Ner'zhul ------------------------------------ */
-      case 2444:
-        return require("Images/Bosses/SanctumOfDomination/RemnantOfNerzhul/RemnantOfNerzhulUF.png").default;
-
-      /* ------------------------------------ Soulrender Dormazain ------------------------------------ */
-      case 2445:
-        return require("Images/Bosses/SanctumOfDomination/SoulrenderDormazain/SoulrenderDormazain.png").default;
-
-      /* -------------------------------------- Painsmith Raznal -------------------------------------- */
-      case 2443:
-        return require("Images/Bosses/SanctumOfDomination/PainsmithRaznal/PainsmithRaznalUF.png").default;
-
-      /* --------------------------------- Guardian of the First Ones --------------------------------- */
-      case 2446:
-        return require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/GuardianOfTheFirstOnesUF.png").default;
-
-      /* ------------------------------------- Fatescribe Roh-Kalo ------------------------------------ */
-      case 2447:
-        return require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/FatescribeRohKaloUF.png").default;
-
-      /* ----------------------------------------- Kel'Thuzad ----------------------------------------- */
-      case 2440:
-        return require("Images/Bosses/SanctumOfDomination/Kelthuzad/KelthuzadUF.png").default;
-
-      /* ------------------------------------- Sylvanas Windrunner ------------------------------------ */
-      case 2441:
-        return require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/SylvanusWindrunnerUF.png").default;
-
-      /* ---------------------------------------------------------------------------------------------- */
-      /*                                         Castle Nathria                                         */
-      /* ---------------------------------------------------------------------------------------------- */
-      /* --------------------------------------- Broker Curator --------------------------------------- */
-      case 2418:
-        return require("Images/Bosses/CastleNathria/ArtificerXymox/Artificer.png").default;
-      /* -------------------------------------- Huntsman Altimor -------------------------------------- */
-      case 2429:
-        return require("Images/Bosses/CastleNathria/HuntsmanAltimor/HuntsmanAltimor.png").default;
-      /* ------------------------------------- Hungering Destroyer ------------------------------------ */
-      case 2428:
-        return require("Images/Bosses/CastleNathria/HungeringDestroyer/Hungering.png").default;
-      /* ------------------------------------ Lady Inerva Darkvein ------------------------------------ */
-      case 2420:
-        return require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Darkvein.png").default;
-      /* ------------------------------------ The Council of Blood ------------------------------------ */
-      case 2426:
-        return require("Images/Bosses/CastleNathria/TheCouncilOfBlood/Council.png").default;
-      /* --------------------------------------- Sire Denathrius -------------------------------------- */
-      case 2424:
-        return require("Images/Bosses/CastleNathria/SireDenathrius/Denathrius.png").default;
-      /* ------------------------------------ Stone Legion Generals ----------------------------------- */
-      case 2425:
-        return require("Images/Bosses/CastleNathria/StoneLegionGenerals/StoneLegion.png").default;
-      /* ----------------------------------------- Shriekwing ----------------------------------------- */
-      case 2393:
-        return require("Images/Bosses/CastleNathria/Shriekwing/Shriekwing.png").default;
-      /* ----------------------------------------- Sludgefist ----------------------------------------- */
-      case 2394:
-        return require("Images/Bosses/CastleNathria/Sludgefist/Sludgefist.png").default;
-      /* ------------------------------------------ Kael'thas ----------------------------------------- */
-      case 2422:
-        return require("Images/Bosses/CastleNathria/SunKingsSalvation/SunKing.png").default;
-      /* --------------------------------------- Bind on Equips --------------------------------------- */
-      case 999:
+      case 2458: // Vigilant Guardian
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/VigilantGuardian.png").default;
+      case 2465: // Skolex, the Insatiable Ravener
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/Skolex.png").default;
+      case 2470: // Artificer Xy'mox
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/Xymox.png").default;
+      case 2460: // Prototype Pantheon
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/ProtoTypePantheon.png").default;
+      case 2459: // Dausegne, the Fallen Oracle
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/Dausegne.png").default;
+      case 2461: // Lihuvim, Principle Architect
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/Lihuvim.png").default;
+      case 2463: // Halondrus the Reclaimer
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/Halondrus.png").default;
+      case 2469: // Anduin Wrynn
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/Anduin.png").default;
+      case 2457: // Lords of Dread
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/LordsOfDread.png").default;
+      case 2467: // Rygelon
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/Rygelon.png").default;
+      case 2464: // The Jailer
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/Jailer.png").default;
+      case 999: // Bind on Equips
         return require("Images/Bosses/BOE.png").default;
       /* ---------------------------------------------------------------------------------------------- */
       /*                                          World Bosses                                          */
       /* ---------------------------------------------------------------------------------------------- */
-      /* ------------------------------------------- Valinor ------------------------------------------ */
-      case 2430:
+      case 2430: // Valinor
         return require("Images/Bosses/WorldBosses/ValinorUGF.png").default;
-      /* ------------------------------------------ Mortanis ------------------------------------------ */
-      case 2431:
+      case 2431: // Mortanis
         return require("Images/Bosses/WorldBosses/MortanisUGF.png").default;
-      /* ----------------------------------------- Oranomonos ----------------------------------------- */
-      case 2432:
+      case 2432: // Oranomonos
         return require("Images/Bosses/WorldBosses/OranomonosUGF.png").default;
-      /* ------------------------------------------- Nurgash ------------------------------------------ */
-      case 2433:
+      case 2433: // Nurgash
         return require("Images/Bosses/WorldBosses/NurgashUGF.png").default;
-
-      case 2456:
+      case 2456: // Morgeth
         return require("Images/Bosses/WorldBosses/morgethUGF.png").default;
-
+      case 2468: // Antros
+        return require("Images/Bosses/WorldBosses/AntrosUGF.png").default;
       /* ---------------------------------------------------------------------------------------------- */
       /*                                            Karazhan                                            */
       /* ---------------------------------------------------------------------------------------------- */
-      /* -------------------------------------- Servant Quarters -------------------------------------- */
-      case 1552:
+      case 1552: // Servant Quarters
         return require("Images/BurningCrusade/Raid/Karazhan/ServantQuarters.png").default;
-      /* ------------------------------------ Attumen The Huntsman ------------------------------------ */
-      case 652:
+      case 652: // Attumen The Huntsman
         return require("Images/BurningCrusade/Raid/Karazhan/AttumenTheHuntsman.png").default;
-      /* ------------------------------------------- Moroes ------------------------------------------- */
-      case 653:
+      case 653: // Moroes
         return require("Images/BurningCrusade/Raid/Karazhan/Moroes.png").default;
-      /* -------------------------------------- Maiden of Virtue -------------------------------------- */
-      case 654:
+      case 654: // Maiden of Virtue
         return require("Images/BurningCrusade/Raid/Karazhan/Maiden.png").default;
-      /* ----------------------------------------- Opera Event ---------------------------------------- */
-      case 655:
+      case 655: // Opera Event
         return require("Images/BurningCrusade/Raid/Karazhan/Opera.png").default;
-      /* ------------------------------------------- Curator ------------------------------------------ */
-      case 656:
+      case 656: // Curator
         return require("Images/BurningCrusade/Raid/Karazhan/Curator.png").default;
-      /* ----------------------------------------- Netherspite ---------------------------------------- */
-      case 659:
+      case 659: // Netherspite
         return require("Images/BurningCrusade/Raid/Karazhan/Netherspite.png").default;
-      /* -------------------------------------- Prince Malchezaar ------------------------------------- */
-      case 661:
+      case 661: // Prince Malchezaar
         return require("Images/BurningCrusade/Raid/Karazhan/PrinceMalchezaar.png").default;
-      /* ----------------------------------------- Chess Event ---------------------------------------- */
-      case 660:
+      case 660: // Chess Event
         return require("Images/BurningCrusade/Raid/Karazhan/ChessEvent.png").default;
-      /* ------------------------------------------- Illhoof ------------------------------------------ */
-      case 658:
+      case 658: // Illhoof
         return require("Images/BurningCrusade/Raid/Karazhan/Illhoof.png").default;
-      /* ---------------------------------------- Shade of Aran --------------------------------------- */
-      case 657:
+      case 657: // Shade of Aran
         return require("Images/BurningCrusade/Raid/Karazhan/ShadeofAran.png").default;
-      /* ------------------------------------------ Nightbane ----------------------------------------- */
-      case 662:
+      case 662: // Nightbane
         return require("Images/BurningCrusade/Raid/Karazhan/Nightbane.png").default;
-
       /* ---------------------------------------------------------------------------------------------- */
       /*                                          Gruul's Lair                                          */
       /* ---------------------------------------------------------------------------------------------- */
-      /* -------------------------------------- High King Maulgar ------------------------------------- */
-      case 649:
+      case 649: // High King Maulgar
         return require("Images/BurningCrusade/Raid/GruulsLair/HighKingMaulgar.png").default;
-      /* -------------------------------------------- Gruul ------------------------------------------- */
-      case 650:
+      case 650: // Gruul
         return require("Images/BurningCrusade/Raid/GruulsLair/Gruul.png").default;
-
       /* ---------------------------------------------------------------------------------------------- */
       /*                                       Magtheridon's Lair                                       */
       /* ---------------------------------------------------------------------------------------------- */
-      case 651:
+      case 651: // Magtheridon
         return require("Images/BurningCrusade/Raid/MagtheridonsLair/MagtheridonsLair.png").default;
-      /* ----------------------------------------- Magtheridon ---------------------------------------- */
-
       /* ---------------------------------------------------------------------------------------------- */
       /*                                          Tempest Keep                                          */
       /* ---------------------------------------------------------------------------------------------- */
-      /* -------------------------------------------- Al'ar ------------------------------------------- */
-      case 730:
+      case 730: // Al'ar
         return require("Images/BurningCrusade/Raid/TempestKeep/Alar.png").default;
-      /* ----------------------------------------- Void Reaver ---------------------------------------- */
-      case 731:
+      case 731: // Void Reaver
         return require("Images/BurningCrusade/Raid/TempestKeep/VoidReaver.png").default;
-      /* ---------------------------------- High Astromancer Solarian --------------------------------- */
-      case 732:
+      case 732: // High Astromancer Solarian
         return require("Images/BurningCrusade/Raid/TempestKeep/HighAstromancerSolarian.png").default;
-      /* ---------------------------------- High Astromancer Solarian --------------------------------- */
-      case 733:
+      case 733: // High Astromancer Solarian
         return require("Images/BurningCrusade/Raid/TempestKeep/KaelthasSunstrider.png").default;
-
       /* ---------------------------------------------------------------------------------------------- */
       /*                                      Serpentshrine Cavern                                      */
       /* ---------------------------------------------------------------------------------------------- */
-      /* ------------------------------------ Hydross the Unstable ------------------------------------ */
-      case 623:
+      case 623: // Hydross the Unstable
         return require("Images/BurningCrusade/Raid/SerpentshrineCavern/HydrosstheUnstable.png").default;
-      /* -------------------------------------- The Lurker Below -------------------------------------- */
-      case 624:
+      case 624: // The Lurker Below
         return require("Images/BurningCrusade/Raid/SerpentshrineCavern/TheLurkerBelow.png").default;
-      /* ------------------------------------- Leotheras the Blind ------------------------------------ */
-      case 625:
+      case 625: // Leotheras the Blind
         return require("Images/BurningCrusade/Raid/SerpentshrineCavern/LeotherastheBlind.png").default;
-      /* ----------------------------------- Fathom Lord Karathress ----------------------------------- */
-      case 626:
+      case 626: // Fathom Lord Karathress
         return require("Images/BurningCrusade/Raid/SerpentshrineCavern/FathomLordKarathress.png").default;
-      /* ------------------------------------- Morogrim Tidewalker ------------------------------------ */
-      case 627:
+      case 627: // Morogrim Tidewalker
         return require("Images/BurningCrusade/Raid/SerpentshrineCavern/MorogrimTidewalker.png").default;
-      /* ----------------------------------------- Lady Vashj ----------------------------------------- */
-      case 628:
+      case 628: // Lady Vashj
         return require("Images/BurningCrusade/Raid/SerpentshrineCavern/LadyVashj.png").default;
-
       /* ---------------------------------------------------------------------------------------------- */
       /*                                     Battle for Mount Hyjal                                     */
       /* ---------------------------------------------------------------------------------------------- */
-      /* -------------------------------------- Rage Winterchill -------------------------------------- */
-      case 618:
+      case 618: // Rage Winterchill
         return require("Images/BurningCrusade/Raid/TheBattleforMountHyjal/RageWinterchill.png").default;
-      /* ------------------------------------------ Anetheron ----------------------------------------- */
-      case 619:
+      case 619: // Anetheron
         return require("Images/BurningCrusade/Raid/TheBattleforMountHyjal/Anetheron.png").default;
-      /* ------------------------------------------ Kaz'rogal ----------------------------------------- */
-      case 620:
+      case 620: // Kaz'rogal
         return require("Images/BurningCrusade/Raid/TheBattleforMountHyjal/Kazrogal.png").default;
-      /* ------------------------------------------- Azgalor ------------------------------------------ */
-      case 621:
+      case 621: // Azgalor
         return require("Images/BurningCrusade/Raid/TheBattleforMountHyjal/Azgalor.png").default;
-      /* ----------------------------------------- Archimonde ----------------------------------------- */
-      case 622:
+      case 622: // Archimonde
         return require("Images/BurningCrusade/Raid/TheBattleforMountHyjal/Archimonde.png").default;
-
       /* ---------------------------------------------------------------------------------------------- */
       /*                                          Black Temple                                          */
       /* ---------------------------------------------------------------------------------------------- */
-
-      /* ----------------------------------- High Warlord Naj'entus ----------------------------------- */
-      case 601:
+      case 601: // High Warlord Naj'entus
         return require("Images/BurningCrusade/Raid/BlackTemple/HighWarlordNajentus.png").default;
-      /* ------------------------------------------ Supremus ------------------------------------------ */
-      case 602:
+      case 602: // Supremus
         return require("Images/BurningCrusade/Raid/BlackTemple/Supremus.png").default;
-      /* --------------------------------------- Shade of Akama --------------------------------------- */
-      case 603:
+      case 603: // Shade of Akama
         return require("Images/BurningCrusade/Raid/BlackTemple/ShadeofAkama.png").default;
-      /* --------------------------------------- Teron Gorefiend -------------------------------------- */
-      case 604:
+      case 604: // Teron Gorefiend
         return require("Images/BurningCrusade/Raid/BlackTemple/TeronGorefiend.png").default;
-      /* -------------------------------------- Gurtogg Bloodboil ------------------------------------- */
-      case 605:
+      case 605: // Gurtogg Bloodboil
         return require("Images/BurningCrusade/Raid/BlackTemple/GurtoggBloodboil.png").default;
-      /* ------------------------------------- Reliquary of Souls ------------------------------------- */
-      case 606:
+      case 606: // Reliquary of Souls
         return require("Images/BurningCrusade/Raid/BlackTemple/ReliquaryoftheLost.png").default;
-      /* --------------------------------------- Mother Shahraz --------------------------------------- */
-      case 607:
+      case 607: // Mother Shahraz
         return require("Images/BurningCrusade/Raid/BlackTemple/MotherShahraz.png").default;
-      /* ------------------------------------ The Illidari Council ------------------------------------ */
-      case 608:
+      case 608: // The Illidari Council
         return require("Images/BurningCrusade/Raid/BlackTemple/IllidariCouncil.png").default;
-      /* -------------------------------------- Illidan Stormrage ------------------------------------- */
-      case 609:
+      case 609: // Illidan Stormrage
         return require("Images/BurningCrusade/Raid/BlackTemple/IllidanStormrage.png").default;
-
       /* ---------------------------------------------------------------------------------------------- */
       /*                                            Zul'Aman                                            */
       /* ---------------------------------------------------------------------------------------------- */
-      /* ------------------------------------------ Akil'zon ------------------------------------------ */
-      case 1189:
+      case 1189: // Akil'zon
         return require("Images/BurningCrusade/Raid/Zulaman/Akilzon.png").default;
-      /* ------------------------------------------ Nalorakk ------------------------------------------ */
-      case 1190:
+      case 1190: // Nalorakk
         return require("Images/BurningCrusade/Raid/Zulaman/Nalorakk.png").default;
-      /* ------------------------------------------ Jan'alai ------------------------------------------ */
-      case 1191:
+      case 1191: // Jan'alai
         return require("Images/BurningCrusade/Raid/Zulaman/Janalai.png").default;
-      /* ------------------------------------------- Halazzi ------------------------------------------ */
-      case 1192:
+      case 1192: // Halazzi
         return require("Images/BurningCrusade/Raid/Zulaman/Halazzi.png").default;
-      /* ------------------------------------- Hex Lord Malacrass ------------------------------------- */
-      case 1193:
+      case 1193: // Hex Lord Malacrass
         return require("Images/BurningCrusade/Raid/Zulaman/HexLordMalacrass.png").default;
-      // , //
-      /* ------------------------------------------- Zul'jin ------------------------------------------ */
-      case 1194:
+      case 1194: // Zul'jin
         return require("Images/BurningCrusade/Raid/Zulaman/Zuljin.png").default;
-
       /* ---------------------------------------------------------------------------------------------- */
       /*                                         Sunwell Plateau                                        */
       /* ---------------------------------------------------------------------------------------------- */
-      /* ------------------------------------------ Kalecgos ------------------------------------------ */
-      case 724:
+      case 724: // Kalecgos
         return require("Images/BurningCrusade/Raid/SunwellPlateau/Kalecgos.png").default;
-      /* ------------------------------------------ Brutallus ----------------------------------------- */
-      case 725:
+      case 725: // Brutallus
         return require("Images/BurningCrusade/Raid/SunwellPlateau/Brutallus.png").default;
-      /* ------------------------------------------- Felmyst ------------------------------------------ */
-      case 726:
+      case 726: // Felmyst
         return require("Images/BurningCrusade/Raid/SunwellPlateau/Felmyst.png").default;
-      /* -------------------------------------- The Eredar Twins -------------------------------------- */
-      case 727:
+      case 727: // The Eredar Twins
         return require("Images/BurningCrusade/Raid/SunwellPlateau/EredarTwins.png").default;
-      /* -------------------------------------------- M'uru ------------------------------------------- */
-      case 728:
+      case 728: // M'uru
         return require("Images/BurningCrusade/Raid/SunwellPlateau/Muru.png").default;
-      /* ----------------------------------------- Kil'jaeden ----------------------------------------- */
-      case 729:
+      case 729: // Kil'jaeden
         return require("Images/BurningCrusade/Raid/SunwellPlateau/KilJaeden.png").default;
-
       default:
+        // Error Checking
         return "Error: Boss Missing :(";
     }
   }

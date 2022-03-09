@@ -37,7 +37,6 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   let bonus_stats = {};
   const effectName = effect.name;
   const effectType = effect.type;
-
   // ----- Retail Effect -----
   // Can either be a Spec Legendary, Trinket, or a special item effect like those found back in Crucible of Storms or the legendary BFA cloak.
   if (gameType === "Retail") {
@@ -155,7 +154,9 @@ function getConduitRank(itemLevel, enhanced = false) {
     213: 6,
     226: 7,
     239: 8,
-    252: 9
+    252: 9,
+    265: 10,
+    278: 11
   };
 
   if (enhanced) return ranks[itemLevel] + 2
@@ -179,7 +180,7 @@ export function getConduitFormula(effectID, player, contentType, itemLevel = 145
     const percHealing = (0.25 + conduitRank * 0.025) / 100 * 10;
     const ppm = 60 / 10 * 0.85; // Condensed Anima Sphere notably does not proc off a significant number of abilities.
     const expectedOverhealing = 0.27;
-    bonus_stats.HPS = percHealing * ppm * (1 - expectedOverhealing) * player.getHealth() / 60;
+    bonus_stats.HPS = percHealing * ppm * (1 - expectedOverhealing) * player.getHealth(contentType) / 60;
   }
   else {
     switch (player.spec) {

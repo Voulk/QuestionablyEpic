@@ -2,7 +2,7 @@ export const druidDefaultSpellData = (contentType) => {
   let spellList = {};
   if (contentType === "Raid") {
     spellList = {
-      774: { cpm: 16.6, avgcast: 7440, hps: 2520, overhealing: 0.26 }, // Rejuv
+      774: { cpm: 21, avgcast: 7440, hps: 2520, overhealing: 0.26 }, // Rejuv
       48438: { cpm: 2.86, avgcast: 34640, hps: 2202, overhealing: 0.22 }, // Wild Growth
       157982: { cpm: 1.3, avgcast: 32974, hps: 853, overhealing: 0.36 }, // Tranquility
       8936: { cpm: 3.8, avgcast: 10814, hps: 815, overhealing: 0.18, hits: 12 }, // Regrowth
@@ -32,20 +32,20 @@ export const druidDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.47,
-    crit: 0.42,
-    mastery: 0.41,
-    versatility: 0.41,
-    leech: 0.61,
+    haste: 0.65,
+    crit: 0.59,
+    mastery: 0.62,
+    versatility: 0.58,
+    leech: 0.81,
     defaults: true,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.45,
-    crit: 0.4,
-    mastery: 0.34,
-    versatility: 0.41,
-    leech: 0.28,
+    haste: 0.64,
+    crit: 0.62,
+    mastery: 0.48,
+    versatility: 0.62,
+    leech: 0.38,
     defaults: true,
   };
 
@@ -57,13 +57,13 @@ export const druidDefaultSpecialQueries = (contentType) => {
   if (contentType === "Raid") {
     specialQueries = {
       ConvokeChannelHPS: 480,
-      OneManaHealing: 6.8,
+      OneManaHealing: 8.2,
       CastsPerMinute: 32, // ONLY tracks spells with a mana cost.
       cooldownMult: {
-        oneMinute: 1.25,
-        ninetySeconds: 1.15,
-        twoMinutes: 1.42,
-        twoMinutesOrb: 1.22,
+        oneMinute: 1.32,
+        ninetySeconds: 1.12,
+        twoMinutes: 1.51,
+        twoMinutesOrb: 1.1,
         threeMinutes: 1.2,
       },
       HoldYourGroundUptime: 0.8

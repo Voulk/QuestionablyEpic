@@ -41,8 +41,8 @@ export const paladinVenthyrSpecialQueries = (contentType) => {
       cooldownMult: {
         oneMinute: 1,
         ninetySeconds: 1,
-        twoMinutes: 1.39,
-        twoMinutesOrb: 1.31,
+        twoMinutes: 1.28,
+        twoMinutesOrb: 1.24,
         threeMinutes: 1,
       },
       HoldYourGroundUptime: 0.4
@@ -72,20 +72,20 @@ export const paladinVenthyrStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.45,
-    crit: 0.34,
-    mastery: 0.44,
-    versatility: 0.41,
-    leech: 0.57,
+    haste: 0.61,
+    crit: 0.51,
+    mastery: 0.605,
+    versatility: 0.55,
+    leech: 0.8,
     defaults: true,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.45,
-    crit: 0.37,
-    mastery: 0,
-    versatility: 0.43,
-    leech: 0.38,
+    haste: 0.59,
+    crit: 0.55,
+    mastery: 0.34,
+    versatility: 0.58,
+    leech: 0.52,
     defaults: true,
   };
 

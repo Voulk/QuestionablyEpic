@@ -4,7 +4,7 @@ import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, T
 
 export default function ImportPlanDialog(props) {
   const { t } = useTranslation();
-  const { variant, disableElevation, buttonLabel, color, cooldownObject, loadPlanData } = props;
+  const { cooldownObject, loadPlanData } = props;
   const [open, setOpen] = React.useState(false);
   const [importedPlanString, setImportedPlanString] = React.useState("");
   const [error, setError] = React.useState(false);
@@ -24,12 +24,16 @@ export default function ImportPlanDialog(props) {
   const checkForQEString = (importedString) => {
     var lines = importedString.split("\n");
     if (lines[0] !== "# QE Cooldown Planner") {
+      // if header line is missing set error message
       setError(true);
-      setErrorMessage("There's something wrong with the string :(");
+      setErrorMessage(t("CooldownPlanner.ImportPlanDialog.Errors.HeaderError"));
       setDisableButton(true);
     } else {
+      // If header line is there set no errors
       lines[0] === "# QE Cooldown Planner" ? setError(false) : setError(true);
-      error ? setErrorMessage("There's something wrong with the string :(") : "";
+      // Generic error handling set error as string error
+      error ? setErrorMessage(t("CooldownPlanner.ImportPlanDialog.Errors.StringError")) : "";
+      // if no error check for duplicate plan names
       error ? "" : checkForDuplicatePlan(importedString);
       error ? setDisableButton(true) : setDisableButton(false);
     }
@@ -39,6 +43,7 @@ export default function ImportPlanDialog(props) {
   const checkForDuplicatePlan = (importedString) => {
     let importedBoss = "";
     let importPlanName = "";
+    let importDifficulty = "";
 
     var lines = importedString.split("\n");
 
@@ -52,13 +57,18 @@ export default function ImportPlanDialog(props) {
       if (line.includes("PlanName=")) {
         importPlanName = line.split("PlanName=")[1];
       }
+
+      if (line.includes("Difficulty=")) {
+        importDifficulty = line.split("Difficulty=")[1];
+      }
     }
 
     /* ---------------------- Retreive the list of plans for the imported boss ---------------------- */
-    const bossPlans = Object.keys(cooldownObject.getCooldowns(importedBoss));
+    const bossPlans = Object.keys(cooldownObject.getCooldowns(importedBoss, importDifficulty));
     /* ---------------------------- Check if the plan name exists already --------------------------- */
     const duplicatePlanNameCheck = bossPlans.includes(importPlanName) ? true : false;
-    duplicatePlanNameCheck ? setErrorMessage("Duplicate plan name detected, Importing this plan will overwrite it with this import!") : "";
+    // Set Warning if duplicate detected
+    duplicatePlanNameCheck ? setErrorMessage(t("CooldownPlanner.ImportPlanDialog.Errors.DuplicatePlanWarning")) : "";
     setError(duplicatePlanNameCheck);
     setImportedPlanString(importedString);
   };
@@ -68,6 +78,7 @@ export default function ImportPlanDialog(props) {
     let importedPlan = "";
     let importedBoss = "";
     let importPlanName = "";
+    let importDifficulty = "";
 
     var lines = importedString.split("\n");
 
@@ -82,12 +93,16 @@ export default function ImportPlanDialog(props) {
       if (line.includes("PlanName=")) {
         importPlanName = line.split("PlanName=")[1];
       }
+
+      if (line.includes("Difficulty=")) {
+        importDifficulty = line.split("Difficulty=")[1];
+      }
     }
     /* ---------------- Split the imported plan object from the string and parse it. ---------------- */
     importedPlan = JSON.parse(importedString.split("Plan=")[1]);
 
-    cooldownObject.importPlan(importedBoss, importPlanName, importedPlan);
-    loadPlanData(importedBoss, importPlanName);
+    cooldownObject.importPlan(importedBoss, importPlanName, importedPlan, importDifficulty);
+    loadPlanData(importedBoss, importPlanName, importDifficulty);
   };
 
   const handleSubmit = () => {
@@ -99,12 +114,14 @@ export default function ImportPlanDialog(props) {
   return (
     <div>
       <Tooltip title={""} arrow>
-        <Button disableElevation={disableElevation} color={color} style={{ fontSize: "14px" }} onClick={handleClickOpen} variant={variant}>
-          {buttonLabel}
+        <Button variant="outlined" disableElevation={true} color="primary" sx={{ fontSize: "14px" }} onClick={handleClickOpen}>
+          {t("CooldownPlanner.ImportPlanDialog.ButtonLabel")}
         </Button>
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
-        <DialogTitle color="primary" id="simc-dialog-title">Import Plan</DialogTitle>
+        <DialogTitle color="primary" id="simc-dialog-title">
+          {t("CooldownPlanner.ImportPlanDialog.HeaderTitle")}
+        </DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
@@ -117,19 +134,13 @@ export default function ImportPlanDialog(props) {
             sx={{ height: "100%" }}
             variant="outlined"
             onChange={(e) => checkForQEString(e.target.value)}
-            // onKeyPress={(e) => {
-            //   if (e.key === "Enter") {
-            //     e.preventDefault();
-            //     handleSubmit();
-            //   }
-            // }}
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary" variant="outlined">
             {t("Cancel")}
           </Button>
-          <Button onClick={handleSubmit} color="primary" variant="outlined" disabled={disableButton}>
+          <Button onClick={handleSubmit} color="primary" variant="outlined" disabled={disableButton || importedPlanString === ""}>
             {t("Submit")}
           </Button>
         </DialogActions>

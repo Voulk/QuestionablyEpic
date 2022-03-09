@@ -10,21 +10,63 @@ const IDWORDOFGLORY = 85673;
 const IDMARTYR = 183998;
 
 export const getPaladinSpecEffect = (effectName, player, contentType) => {
-  let result = 0.0;
   let bonus_stats = {};
-  let name = effectName;
 
   // Tier Sets
-  if (name === "HPaladin T27-2") {
+  if (effectName === "HPaladin T28-2") {
     // Holy Paladin Sepulcher tier set 2pc
+    // Casting Word of Glory causes your next Light of Dawn to heal for 50% more and cast twice. Cannot occur more often than once per 30 sec.
+    // This is an INCREDIBLY strong 2pc bonus.
+    
+    let freeCasts = {lightOfDawn: 0, wordOfGlory: 0}
+
+    if (player.getCovenant() === "necrolord") {
+      // Necrolord
+      // Without 2pc you would cast two Word of Glories (each proccing a free LoD at 1.25x power). 2 WoG, 2.5 LoD.
+      // With 2pc you would cast two Word of Glories again. The first is worth 3.75x Free LoDs (1.87 x 2) and the second is 1.25x free LoDs.
+      // The total gain is 2.5 Light of Dawn casts. Slightly more valuable than for other covenants.
+      freeCasts.lightOfDawn = 2.5;
+    }
+    else {
+      // Venthyr / Kyrian
+      // Without 2pc you would cast Light of Dawn twice over two spenders.
+      // with 2pc you would cast one Word of Glory and two Light of Dawns at +50% power. 
+      // This is a net gain of 1x Word of Glory and 1x Light of Dawn.
+      freeCasts.lightOfDawn = 1;
+      freeCasts.wordOfGlory = 1;
+    }
+
+    // Calculate value of the free casts.
+    const oneWordOfGlory = player.getStatMultiplier("ALL") * 3.15 * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.7;
+    const oneLightOfDawn = player.getStatMultiplier("ALL") * 1.05 * 5 * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.6;
+    // Notably our overhealing here is higher than usual.
+
+    bonus_stats.hps = (freeCasts.lightOfDawn * oneLightOfDawn + freeCasts.wordOfGlory * oneWordOfGlory) / 33;
+    // The bonus can be procced every 30s but in practice it will be slightly rarer.
+
     
   }
-  else if (name === "Hpaladin T27-4") {
+  else if (effectName === "Hpaladin T28-4") {
     // Holy Paladin Sepulcher tier set 4pc
+    // This should be an accurate formula, though it's a little bit of a drag and could almost certainly be simplified to half as many lines.
+    const expectedProcsPerMinute = 4.8 * player.getSpellCPM(IDLIGHTOFDAWN, contentType) * 2 * 0.5; // LoD targets x LoD CPM x 2 x 0.5 
+    const wingsThroughputInc = getWingsHealingInc(player.getStatPerc("Crit")); // 
+    const effectiveWingsCD = 120 - (expectedProcsPerMinute*2);
+    const preExpectedWingsUptime = getAwakeningWingsUptime(player, contentType, 10);
+    const postExpectedWingsUptime = getAwakeningWingsUptime(player, contentType, (20 / effectiveWingsCD * 60))
 
+    const preThroughput = preExpectedWingsUptime * wingsThroughputInc + (1 - preExpectedWingsUptime);
+    const postThroughput = postExpectedWingsUptime * wingsThroughputInc + (1 - postExpectedWingsUptime);
+
+    const expectedWingsUptimeInc = postThroughput - preThroughput;
+    
+    //console.log(expectedWingsUptimeInc);
+    //console.log(player.getHPS(contentType) * expectedWingsUptimeInc);
+
+    bonus_stats.hps = player.getHPS(contentType) * expectedWingsUptimeInc;
   }
 
-  else if (name === "Maraad's Dying Breath" || name === "Maraads Dying Breath") {
+  else if (effectName === "Maraad's Dying Breath" || effectName === "Maraads Dying Breath") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                      Maraads Dying Breath                                      */
     /* ---------------------------------------------------------------------------------------------- */
@@ -38,7 +80,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
 
       bonus_stats.hps = baseThroughput * (1 + beaconHealing * (1 - beaconOverhealing)) * (1 - backlashDamage);
 
-  } else if (name === "Shock Barrier") {
+  } else if (effectName === "Shock Barrier") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                          Shock Barrier                                         */
     /* ---------------------------------------------------------------------------------------------- */
@@ -52,7 +94,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     const holyShockRawHPS = player.getSpellRawHPS(IDHOLYSHOCK, contentType);
 
     bonus_stats.hps = Math.round(holyShockIncrease * 3 * (1 - wastedShield) * holyShockRawHPS);
-  } else if (name === "Inflorescence of the Sunwell") {
+  } else if (effectName === "Inflorescence of the Sunwell") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                  Inflorescence of the Sunwell                                  */
     /* ---------------------------------------------------------------------------------------------- */
@@ -76,7 +118,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     */
 
     bonus_stats.hps = Math.round((infusionsPerMinute * infusionProcsUsed * (oneHolyLight * (legendaryBonus + (infusionBaseIncrease + legendaryBonus)))) / 60);
-  } else if (name === "Shadowbreaker, Dawn of the Sun") {
+  } else if (effectName === "Shadowbreaker, Dawn of the Sun") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                 Shadowbreaker, Dawn of the Sun                                 */
     /* ---------------------------------------------------------------------------------------------- */
@@ -100,7 +142,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     const HPSWordOfGlory = (buffedWordOfGlories * oneWordOfGloryBonus) / 60;
 
     bonus_stats.hps = Math.round(HPSMasteryBonus + HPSWordOfGlory);
-  } else if (name === "Of Dusk and Dawn") {
+  } else if (effectName === "Of Dusk and Dawn") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        Of Dusk and Dawn                                        */
     /* ---------------------------------------------------------------------------------------------- */
@@ -109,13 +151,13 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
 
     bonus_stats.dps = 0;
     bonus_stats.hps = Math.round(offensiveBuffUptime * legendaryBonus * player.getHPS(contentType));
-  } else if (name === "Vanguards Momentum") {
+  } else if (effectName === "Vanguards Momentum") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                       Vanguards Momentum                                       */
     /* ---------------------------------------------------------------------------------------------- */
     bonus_stats.hps = -1;
 
-  } else if (name === "The Magistrates Judgment") {
+  } else if (effectName === "The Magistrates Judgment") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                    The Magistrates Judgment                                    */
     /* ---------------------------------------------------------------------------------------------- */
@@ -124,14 +166,14 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     const healingOneHolyPower = getOneHolyPower(player, contentType);
 
     bonus_stats.hps = (procChance * judgementCPM * healingOneHolyPower) / 60;
-  } else if (name === "Relentless Inquisitor") {
+  } else if (effectName === "Relentless Inquisitor") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                      Relentless Inquisitor                                     */
     /* ---------------------------------------------------------------------------------------------- */
     const averageStacks = 4.8;
 
     bonus_stats.haste = averageStacks * 33;
-  } else if (name === "The Mad Paragon") {
+  } else if (effectName === "The Mad Paragon") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                         The Mad Paragon                                        */
     /* ---------------------------------------------------------------------------------------------- */
@@ -159,7 +201,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     //let akn = 2.5 / 60; //getAwakeningWingsUptime(player, contentType);
     //let awakening_hps = (akn * wingsEffHealingIncrease + 1 * (1 - akn) );
   }
-  else if (name === "Divine Resonance") {
+  else if (effectName === "Divine Resonance") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        Divine Resonance                                        */
     /* ---------------------------------------------------------------------------------------------- */
@@ -172,7 +214,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
 
 
   }
-  else if (name === "Duty-Bound Gavel") {
+  else if (effectName === "Duty-Bound Gavel") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        Duty-Bound Gavel                                        */
     /* ---------------------------------------------------------------------------------------------- */

@@ -382,7 +382,7 @@ class Player {
   updateConduitLevel = (id, newLevel) => {
     for (let i = 0; i < this.activeConduits.length; i++) {
       if (this.activeConduits[i].id === id) {
-        this.activeConduits[i].itemLevel = Math.max(145, Math.min(newLevel, 252));
+        this.activeConduits[i].itemLevel = Math.max(145, Math.min(newLevel, 278));
       }
     }
   };
@@ -422,7 +422,7 @@ class Player {
   getActiveModel = (contentType) => {
     if (this.castModels[this.activeModelID[contentType]]) return this.castModels[this.activeModelID[contentType]];
     else {
-      reportError(this, "Player", "Invalid Cast Model", contentType);
+      reportError(this, "Player", "Invalid Cast Model", this.getSpec());
       return this.castModels[0];
     }
   };
@@ -601,7 +601,7 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 1800,
+        intellect: 2000,
         haste: 790,
         crit: 480,
         mastery: 200,
@@ -620,11 +620,11 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Venthyr Maraads", 3));
 
       this.activeStats = {
-        intellect: 1800,
+        intellect: 2000,
         haste: 800,
         crit: 240,
-        mastery: 550,
-        versatility: 340,
+        mastery: 650,
+        versatility: 380,
         stamina: 1900,
       };
     } else if (spec === SPEC.RESTOSHAMAN) {
@@ -632,11 +632,11 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 1800,
+        intellect: 2000,
         haste: 125,
-        crit: 590,
-        mastery: 200,
-        versatility: 370,
+        crit: 790,
+        mastery: 220,
+        versatility: 570,
         stamina: 1900,
       };
       /*
@@ -649,11 +649,11 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 1950,
-        haste: 755,
-        crit: 580,
-        mastery: 420,
-        versatility: 400,
+        intellect: 2150,
+        haste: 940,
+        crit: 650, 
+        mastery: 220, 
+        versatility: 415, 
         stamina: 1900,
       };
       //this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable
@@ -661,7 +661,7 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 1800,
+        intellect: 2000,
         haste: 125,
         crit: 475,
         mastery: 470,
@@ -682,11 +682,11 @@ class Player {
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 
       this.activeStats = {
-        intellect: 1800,
-        haste: 400,
-        crit: 690,
-        mastery: 360,
-        versatility: 410,
+        intellect: 2000,
+        haste: 620,
+        crit: 860,
+        mastery: 120,
+        versatility: 510,
         stamina: 1900,
       };
       /*

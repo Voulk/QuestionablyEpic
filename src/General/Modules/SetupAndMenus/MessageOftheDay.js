@@ -6,10 +6,11 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "Disc module revamped. Please report any suspicious results over the next few days.",
-      "Doomwalker Loot added."
+      "Patch 9.2 now live! More information in the changelog.",
+      "First Class Healing Dist was heavily nerfed!",
+      "Expect further changes through the week.",
   ],
-  "BurningCrusade": ["Enjoy SSC / TK!"]
+  "BurningCrusade": ["Enjoy MH / BT!"]
   }
 ;
 

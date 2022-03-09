@@ -10,7 +10,7 @@ export const shamanDefaultSpellData = (contentType) => {
       108280: { cpm: 0.32, avgcast: 153509.64, hps: 809.93, overhealing: 0.48 }, // Healing Tide Totem
       198838: { cpm: 0.86, avgcast: 45491.99, hps: 652.06, overhealing: 0 }, // Earthen Wall Totem
       114083: { cpm: 0, avgcast: 0, hps: 376.65, overhealing: 0.48 }, // Restorative Mists
-      85222: { cpm: 1.12, avgcast: 17707.14, hps: 340.07, overhealing: 0.11 }, // Chain Heal
+      1064: { cpm: 4.6, avgcast: 17707.14, hps: 340.07, overhealing: 0.11 }, // Chain Heal
       73685: { cpm: 2.51, avgcast: 5801.98, hps: 244.09, overhealing: 0.13 }, // Unleash Life
       20473: { cpm: 0.98, avgcast: 10982.28, hps: 177.17, overhealing: 0.16 }, // Healing Surge
       974: { cpm: 0.96, avgcast: 10973.11, hps: 167.69, overhealing: 0.1 }, // Earth Shield
@@ -62,14 +62,14 @@ export const shamanDefaultSpecialQueries = (contentType) => {
   if (contentType === "Raid") {
     specialQueries = {
       HPSOnEarthShield: 456,
-      OneManaHealing: 1.9,
+      OneManaHealing: 1.2,
       CastsPerMinute: 24,
       cooldownMult: {
         oneMinute: 1.1,
         ninetySeconds: 1,
-        twoMinutes: 1.1,
-        twoMinutesOrb: 1.07,
-        threeMinutes: 1.3,
+        twoMinutes: 1.18,
+        twoMinutesOrb: 1.06,
+        threeMinutes: 1.25,
       },
       HoldYourGroundUptime: 0.8
     };
@@ -99,18 +99,18 @@ export const shamanDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.36,
-    crit: 0.45,
-    mastery: 0.42,
-    versatility: 0.44,
+    haste: 0.49,
+    crit: 0.6,
+    mastery: 0.52,
+    versatility: 0.59,
     leech: 0.47,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.37,
-    crit: 0.37,
-    mastery: 0.28,
-    versatility: 0.39,
+    haste: 0.59,
+    crit: 0.59,
+    mastery: 0.38,
+    versatility: 0.6,
     leech: 0.24,
   };
 

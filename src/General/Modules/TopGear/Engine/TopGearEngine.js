@@ -11,6 +11,7 @@ import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEff
 import { allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { buildBestDomSet } from "../Utilities/DominationGemUtilities";
+import { getItemSet } from "BurningCrusade/Databases/ItemSetsDBRetail.js";
 
 /**
  * == Top Gear Engine ==
@@ -21,8 +22,8 @@ import { buildBestDomSet } from "../Utilities/DominationGemUtilities";
  */
 
 const softSlice = 3000;
-const DR_CONST = 0.00474669230769231;
-const DR_CONSTLEECH = 0.04322569230769231;
+const DR_CONST = 0.00497669230769231;
+const DR_CONSTLEECH = 0.04522569230769231;
 
 // This is just a timer function. We might eventually just move it to a timeUtility file for better re-use.
 export function expensive(time) {
@@ -39,7 +40,7 @@ function setupPlayer(player, contentType, castModel) {
   let newPlayer = new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights, "Retail");
   newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
-  newPlayer.dominationGemRanks = player.dominationGemRanks;
+  //newPlayer.dominationGemRanks = player.dominationGemRanks;
   newPlayer.activeModelID = player.activeModelID;
 
   return newPlayer;
@@ -77,7 +78,7 @@ function autoSocketItems(itemList) {
  * @returns A Top Gear result which includes the best set, and how close various alternatives are.
  */
 export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
-  console.log("Running Top Gear")
+  //console.log("Running Top Gear")
   // == Setup Player & Cast Model ==
   // Create player / cast model objects in this thread based on data from the player character & player model.
   const newPlayer = setupPlayer(player, contentType, castModel);
@@ -98,7 +99,7 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
 
   // == Evaluate Sets ==
-  // We'll explain this more in the evalSet function header but we assign each set a score that includes stats, effects, domination gems and more.
+  // We'll explain this more in the evalSet function header but we assign each set a score that includes stats, effects and more.
   for (var i = 0; i < itemSets.length; i++) {
     itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel);
   }
@@ -368,6 +369,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   let builtSet = itemSet.compileStats("Retail", userSettings);
   let setStats = builtSet.setStats;
   let gearStats = dupObject(setStats);
+  const setBonuses = builtSet.sets;
   let enchantStats = {};
   let evalStats = {};
   let hardScore = 0;
@@ -394,6 +396,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     leech: castModel.baseStatWeights["leech"],
   };
 
+
+
   // == Enchants and gems ==
   const enchants = enchantItems(bonus_stats, setStats.intellect, castModel);
 
@@ -409,23 +413,32 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
 
   // == Domination Gems ==
   // This function compares every set of possible domination gems, and sockets whichever is best. You can read more about it by navigating to the function itself.
-  if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
+  // Domination Gems are defunct in 9.2. Thank goodness.
+  //if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
 
   // == Effects ==
-  // Effects include stuff like trinkets, legendaries, domination gems, tier sets (one day) and so on.
+  // Effects include stuff like trinkets, legendaries, domination gems, tier sets and so on.
   // Each effect returns an object containing which stats it offers. Specific details on each effect can be found in the TrinketData, EffectData and EffectEngine files.
   // -- Disc note: On use trinkets and legendaries and handled further down in the ramps section. --
   let effectStats = [];
+  let effectList = [...itemSet.effectList];
+  // == Set Bonuses ==
+  // --- Item Set Bonuses ---
+  for (const set in setBonuses) {
+    if (setBonuses[set] > 1) {
+      effectList = effectList.concat(getItemSet(set, setBonuses[set], player.getSpec()));
+    }
+  }
+
   //effectStats.push(bonus_stats);
-  for (var x = 0; x < itemSet.effectList.length; x++) {
-    const effect = itemSet.effectList[x];
+  for (var x = 0; x < effectList.length; x++) {
+    const effect = effectList[x];
     if (player.spec !== "Discipline Priest" || (player.spec === "Discipline Priest" && !effect.onUse && effect.type !== "spec legendary") || contentType === "Dungeon") {
       effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats));
     }
   }
 
   const mergedEffectStats = mergeBonusStats(effectStats);
-
   // == Apply same set int bonus ==
   // 5% int boost for wearing the same items.
   // The system doesn't actually allow you to add items of different armor types so this is always on.
@@ -464,7 +477,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // DR on trinket procs and such are calculated in their effect formulas, so that we can DR them at their proc value, rather than their average value.
   // Disc Note: Disc DR on base stats is already included in the ramp modules and doesn't need to be reapplied here.
   if (!(player.spec === "Discipline Priest" && contentType === "Raid")) {
-    applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
+    setStats = applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
 
     // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats.
     adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;
@@ -485,7 +498,11 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     } else if (stat === "dps") {
       if (contentType === "Dungeon") hardScore += (evalStats[stat] / baseHPS) * player.activeStats.intellect;
       else continue;
-    } else {
+    } 
+    else if (stat === "mana") {
+      hardScore += evalStats[stat] * player.getSpecialQuery("OneManaHealing", contentType) / player.getHPS(contentType) * player.activeStats.intellect
+    }
+    else {
       hardScore += evalStats[stat] * adjusted_weights[stat];
     }
   }
@@ -498,13 +515,15 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // This is not a perfect representation of the cost of wearing two on-use trinkets as Paladin and Disc,
   // but from a practical viewpoint it achieves the objective. It could be replaced with something more
   // mathematically comprehensive in future. Disc Priest will be swapped to the new tech very soon.
-  if ((player.spec === "Holy Paladin") && "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
-    hardScore -= 37;
+  if ((player.spec === "Holy Paladin" || player.spec === "Restoration Shaman" || player.spec === "Holy Priest") && "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
+    hardScore -= 48;
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
+  itemSet.effectList = effectList;
+  
   return builtSet;
 }
 
@@ -526,6 +545,7 @@ export function mergeBonusStats(stats) {
     leech: mergeStat(stats, "leech"),
     hps: mergeStat(stats, "hps") + mergeStat(stats, "HPS"),
     dps: mergeStat(stats, "dps"),
+    mana: mergeStat(stats, "mana"),
   };
 
   return val;

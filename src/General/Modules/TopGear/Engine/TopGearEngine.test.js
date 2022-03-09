@@ -4,63 +4,73 @@ import Player from '../../Player/Player';
 import { processItem } from "Retail/Engine/SimCImport/SimCImportEngine"
 import { buildWepCombos } from "General/Engine/ItemUtilities"
 import { runTopGear } from "./TopGearEngine";
+import each from "jest-each";
 
 describe("Test Stat DRs", () => {
-    test("Basic Test - Crit above DR", () => {
+    each`
+        rawHaste | expectedResult
+        ${990}  | ${990}
+        ${1034}  | ${1030}
+        ${1195}  | ${1175}
+        ${1845}  | ${1688}
+        // add new test cases here
 
+    `.test("Checks haste DR at $rawHaste", ({ rawHaste, expectedResult }) => {
         let stats = {
-            crit: 1200,
-            haste: 400,
-            versatility: 200,
-            mastery: 600,
+            crit: 0,
+            haste: rawHaste,
+            versatility: 0,
+            mastery: 0,
             leech: 0,
         }
         stats = applyDiminishingReturns(stats);
+        expect(Math.round(stats.haste)).toBe(expectedResult);
 
-        expect(stats.crit).toEqual(1185);
     });
 
-    test("Expanded Test - Haste way above DR", () => {
+    each`
+        rawMastery | expectedResult
+        ${1050}  | ${1050}
+        ${1636}  | ${1554}
+        // add new test cases here
 
+    `.test("Checks mastery DR at $rawMastery", ({ rawMastery, expectedResult }) => {
         let stats = {
-            crit: 80,
-            haste: 1845,
-            versatility: 200,
-            mastery: 600,
+            crit: 0,
+            haste: 0,
+            versatility: 0,
+            mastery: rawMastery,
             leech: 0,
         }
         stats = applyDiminishingReturns(stats);
+        expect(Math.round(stats.mastery)).toBe(expectedResult);
 
-        expect(Math.round(stats.haste)).toEqual(1688);
     });
 
-    test("Leech DR", () => {
+    each`
+        rawLeech    | expectedResult
+        ${205}  | ${205}
+        ${335}  | ${306}
+        ${362}  | ${322}
+        ${437}  | ${364}
+        ${463}  | ${374}
+        ${477}  | ${380}
+        ${489}  | ${385}
+        // add new test cases here
 
-        let stats = {
-            crit: 300,
-            haste: 400,
-            versatility: 200,
-            mastery: 600,
-            leech: 335,
-        }
-        stats = applyDiminishingReturns(stats);
+        `.test("Checks leech DR at $rawLeech", ({ rawLeech, expectedResult }) => {
+            let stats = {
+                crit: 0,
+                haste: 0,
+                versatility: 0,
+                mastery: 0,
+                leech: rawLeech,
+            }
+            stats = applyDiminishingReturns(stats);
+            expect(Math.round(stats.leech)).toBe(expectedResult);
 
-        expect(stats.leech).toEqual(306);
     });
 
-    test("Leech DR test 2", () => {
-
-        let stats = {
-            crit: 300,
-            haste: 400,
-            versatility: 200,
-            mastery: 600,
-            leech: 437,
-        }
-        stats = applyDiminishingReturns(stats);
-
-        expect(Math.round(stats.leech)).toEqual(364);
-    });
 });
 
 describe("MergeBonusStats function", () => {
@@ -83,6 +93,7 @@ describe("MergeBonusStats function", () => {
             mastery: 0,
             versatility: 0,
             leech: 0,
+            mana: 0,
             dps: 0
         }
 
@@ -131,6 +142,29 @@ describe("Top Gear full test", () => {
         expect(setStats.mastery).toEqual(335+11.66*25);
     });
 
+
+    // TODO: Tier Set Check
+    test("Test 1, Resto Druid Tier Check", () => {
+        const player = new Player("Mock31", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+
+        var lines = testDruidSetTier.split("\n");
+
+        for (var line = 0; line < lines.length; line++) {
+            const item = processItem(lines[line], player, "Raid", "Regular")
+            if (item) player.addActiveItem(item);
+
+        }
+        //console.log(player.activeItems);
+        const wepCombos = buildWepCombos(player, true);
+        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
+        const setEffects = result.itemSet.effectList;
+
+        expect(setEffects.filter(effect => effect.name === "Druid T28-2").length).toEqual(1);
+        expect(setEffects.filter(effect => effect.name === "Druid T28-4").length).toEqual(1);
+
+    });
+
+    /*
     test("Test 1, Disc Priest Dom Gem Check", () => {
         const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
         player.setDominationRanks({
@@ -160,7 +194,7 @@ describe("Top Gear full test", () => {
         expect(chaosBane[0].rank).toEqual(4);
 
         //console.log(gemSetFilter);
-    })
+    }) */
 
 });
 
@@ -217,4 +251,23 @@ finger2=,id=178736,enchant_id=6166,bonus_id=6807/6652/7194/1498/6646
 trinket1=,id=178809,bonus_id=6806/6652/1485/4785
 trinket2=,id=178298,bonus_id=6784/1485/6616
 main_hand=,id=178714,enchant_id=6229,bonus_id=6807/6652/1498/6646
+`
+
+const testDruidSetTier = `
+head=,id=188847,bonus_id=7189/6652/7578/8151/1472/6646
+neck=,id=178827,bonus_id=7384/7359/6652/7193/1524/6646
+shoulder=,id=188851,bonus_id=6652
+back=,id=181704,enchant_id=6204,bonus_id=6652/1472/5891/6646
+chest=,id=188849,bonus_id=6652
+wrist=,id=188850,bonus_id=6652/7578
+hands=,id=188853,bonus_id=6652
+waist=,id=188852,bonus_id=7189/6652/7578/1472/6646
+legs=,id=188848,bonus_id=6652
+feet=,id=181406,bonus_id=6652/1472/5891/6646
+finger1=,id=178869,enchant_id=6166,bonus_id=7389/7359/6652/7193/1540/6646
+finger2=,id=178824,enchant_id=6166,bonus_id=7383/7359/6652/7193/1521/6646
+trinket1=,id=188263,bonus_id=7189/6652/1498/6646
+trinket2=,id=185818,bonus_id=7595/7359/6652/1527/6646
+main_hand=,id=189754,bonus_id=7189/6652/1498/6646
+off_hand=,id=178478,bonus_id=7145/1472/6616
 `

@@ -1,6 +1,6 @@
 import React, { useEffect, forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "@material-table/core";
-import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search } from "@mui/icons-material";
+import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search, Tooltip } from "@mui/icons-material";
 import { Button, TextField, MenuItem, Paper, Grid } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
 import { bossList } from "../Data/CooldownPlannerBossList";
@@ -9,6 +9,7 @@ import { getTableLocale } from "locale/GetTableLocale";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
 import Cooldowns from "../CooldownObject/CooldownObject";
 import AddPlanDialog from "./AddPlanDialog";
+import CopyPlanDialog from "./CopyPlanDialog";
 import DeletePlanDialog from "./DeletePlanDialog";
 import ExportPlanDialog from "./ExportPlanDialog";
 import ImportPlanDialog from "./ImportPlanDialog";
@@ -24,8 +25,10 @@ import ClassRender from "./RenderComponents/ClassRender";
 import ClassEditRender from "./EditComponents/ClassEditRender";
 import CooldownTimeRender from "./RenderComponents/CooldownTImeRender";
 import NoteEdit from "./EditComponents/NoteEdit";
-import { CooldownPlannerTheme, deleteTheme } from "./Styles/CooldownPlannerTheme";
+import { CooldownPlannerTheme } from "./Styles/CooldownPlannerTheme";
 import { TableStyles } from "./Styles/TableStyles";
+import { cooldownDB } from "../Data/CooldownDB";
+import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -39,19 +42,22 @@ const tableIcons = {
   SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />),
 };
 
+// turn debugging (console logging) on/off
+const debug = false;
+
 export default function CooldownPlanner(props) {
+  debug && console.log(" -- Debugging On -> CooldownPlanner.js --");
+  // log provided props
+  // debug && console.log(props);
+
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
   const cooldownObject = new Cooldowns();
   const healTeamDialogOpen = props.healTeamDialogOpen;
 
-  const ertListTimeNoIcons = props.ertListTimeNoIcons;
-  const ertListBossAbility = props.ertListBossAbility;
-  const ertListAbilityNoTimeIconsAll = props.ertListAbilityNoTimeIconsAll;
+  // ERT Objects
   const ertListTimeIcons = props.ertListTimeIcons;
-  const ertListNoteIcons = props.ertListNoteIcons;
-  const ertListNoteNoIcons = props.ertListNoteNoIcons;
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                            Add Plan                                            */
@@ -64,6 +70,19 @@ export default function CooldownPlanner(props) {
 
   const handleAddPlanDialogClose = (value) => {
     setOpenAddPlanDialog(false);
+  };
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                            Copy Plan                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+  const [openCopyPlanDialog, setOpenCopyPlanDialog] = React.useState(false);
+
+  const handleCopyPlanDialogClickOpen = () => {
+    setOpenCopyPlanDialog(true);
+  };
+
+  const handleCopyPlanDialogClose = (value) => {
+    setOpenCopyPlanDialog(false);
   };
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -81,35 +100,45 @@ export default function CooldownPlanner(props) {
 
   /* ---------------- State for Raid shown (Current is Sanctum of Domination 2450) ---------------- */
   // Only bosses for Sanctum will be shown in the drop down
-  const [currentRaid, setCurrentRaid] = useState(2450);
-  const [currentBoss, setCurrentBoss] = useState(2423);
+  const [currentRaid, setCurrentRaid] = useState(2481);
+  // debug && console.log(currentRaid);
+  const [currentBoss, setCurrentBoss] = useState(2512);
+  const [currentDifficulty, setDifficulty] = useState("Mythic");
+  // debug && console.log(currentBoss);
   const [currentPlan, setCurrentPlan] = useState("default");
-  const [data, setData] = useState(cooldownObject.getCooldowns(currentBoss)["default"]);
+  // debug && console.log(currentPlan);
+  const [data, setData] = useState(cooldownObject.getCooldowns(currentBoss, currentDifficulty)["default"]);
 
-  const getBossPlanNames = (boss) => {
-    return Object.keys(cooldownObject.getCooldowns(boss));
+  const getBossPlanNames = (boss, currentDif) => {
+    return Object.keys(cooldownObject.getCooldowns(boss, currentDif));
   };
 
   /* ------------------------------- Loads relevant plan into table ------------------------------- */
-  const loadPlanData = (currentBoss, newPlan) => {
+  const loadPlanData = (currentBoss, newPlan, currentDif) => {
     setCurrentBoss(currentBoss);
     setCurrentPlan(newPlan);
 
     /* ------------------------------- Get List of Plans for the boss ------------------------------- */
-    const bossCooldowns = cooldownObject.getCooldowns(currentBoss);
+    const bossCooldowns = cooldownObject.getCooldowns(currentBoss, currentDif);
     /* --------------------------------------- Set the lected --------------------------------------- */
     const planCooldowns = bossCooldowns[newPlan];
+    setDifficulty(currentDif);
     setData(planCooldowns);
   };
 
   /* --------------------- Updates the plan in cooldownObject in local storage -------------------- */
-  const updateStorage = (boss, plan, currentData) => {
-    cooldownObject.updateCooldownPlan(boss, plan, currentData);
+  const updateStorage = (boss, plan, currentData, currentDif) => {
+    cooldownObject.updateCooldownPlan(boss, plan, currentData, currentDif);
   };
 
   /* -------------------------------------- Changes the Boss -------------------------------------- */
-  const changeBoss = (newBoss) => {
-    loadPlanData(newBoss, "default");
+  const changeBoss = (newBoss, currentDif) => {
+    loadPlanData(newBoss, "default", currentDif);
+  };
+
+  const changeDifficulty = (newBoss, currentDif) => {
+    setDifficulty(currentDif);
+    loadPlanData(newBoss, "default", currentDif);
   };
 
   let columns = [
@@ -132,7 +161,15 @@ export default function CooldownPlanner(props) {
       width: "8%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
-      render: (rowData) => BossAbilityRender(rowData),
+      // Search function for abilities as they are stores as numbers. Works for all languages
+      customFilterAndSearch: (term, rowData) => {
+        let searchedTerm = bossAbilities[currentBoss]
+          .filter((object) => object.guid === rowData.bossAbility)
+          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
+          .flat();
+        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
+      },
+      render: (rowData) => BossAbilityRender(rowData, currentBoss),
       editComponent: (props) => BossAbilitySelector(props, currentBoss),
     },
 
@@ -162,7 +199,7 @@ export default function CooldownPlanner(props) {
     {
       title: t("Name") + " 1",
       field: "name",
-      width: "6%",
+      width: "5%",
       cellStyle: TableStyles.cellStyle.thinRightBorder,
       headerStyle: TableStyles.headerStyle,
       /* ------------------------ Renders the healer name outside of Edit Mode. ----------------------- */
@@ -186,9 +223,17 @@ export default function CooldownPlanner(props) {
       /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
       title: t("Cooldown") + " 1",
       field: "Cooldown",
-      width: "8%",
+      width: "9%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
+      // Search function for abilities as they are stores as numbers. Works for all languages
+      customFilterAndSearch: (term, rowData) => {
+        let searchedTerm = cooldownDB
+          .filter((object) => object.guid === rowData.Cooldown)
+          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
+          .flat();
+        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
+      },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => CooldownRender(rowData, "Cooldown"),
       /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
@@ -221,7 +266,7 @@ export default function CooldownPlanner(props) {
     {
       title: t("Name 2"),
       field: "name1",
-      width: "6%",
+      width: "5%",
       cellStyle: TableStyles.cellStyle.thinRightBorder,
       headerStyle: TableStyles.headerStyle,
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
@@ -245,9 +290,17 @@ export default function CooldownPlanner(props) {
       /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
       title: t("Cooldown") + " 2",
       field: "Cooldown1",
-      width: "8%",
+      width: "9%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
+      // Search function for abilities as they are stores as numbers. Works for all languages
+      customFilterAndSearch: (term, rowData) => {
+        let searchedTerm = cooldownDB
+          .filter((object) => object.guid === rowData.Cooldown1)
+          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
+          .flat();
+        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
+      },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => CooldownRender(rowData, "Cooldown1"),
       /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
@@ -280,7 +333,7 @@ export default function CooldownPlanner(props) {
     {
       title: t("Name") + " 3",
       field: "name2",
-      width: "6%",
+      width: "5%",
       cellStyle: TableStyles.cellStyle.thinRightBorder,
       headerStyle: TableStyles.headerStyle,
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
@@ -303,9 +356,17 @@ export default function CooldownPlanner(props) {
       /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
       title: t("Cooldown") + " 3",
       field: "Cooldown2",
-      width: "8%",
+      width: "9%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
+      // Search function for abilities as they are stores as numbers. Works for all languages
+      customFilterAndSearch: (term, rowData) => {
+        let searchedTerm = cooldownDB
+          .filter((object) => object.guid === rowData.Cooldown2)
+          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
+          .flat();
+        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
+      },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => CooldownRender(rowData, "Cooldown2"),
       /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
@@ -338,7 +399,7 @@ export default function CooldownPlanner(props) {
     {
       title: t("Name") + " 4",
       field: "name3",
-      width: "6%",
+      width: "5%",
       cellStyle: TableStyles.cellStyle.thinRightBorder,
       headerStyle: TableStyles.headerStyle,
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
@@ -361,9 +422,17 @@ export default function CooldownPlanner(props) {
       /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
       title: t("Cooldown") + " 4",
       field: "Cooldown3",
-      width: "8%",
+      width: "9%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
+      // Search function for abilities as they are stores as numbers. Works for all languages
+      customFilterAndSearch: (term, rowData) => {
+        let searchedTerm = cooldownDB
+          .filter((object) => object.guid === rowData.Cooldown3)
+          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
+          .flat();
+        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
+      },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => CooldownRender(rowData, "Cooldown3"),
       /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
@@ -396,7 +465,7 @@ export default function CooldownPlanner(props) {
     {
       title: t("Name") + " 5",
       field: "name4",
-      width: "6%",
+      width: "5%",
       cellStyle: TableStyles.cellStyle.thinRightBorder,
       headerStyle: TableStyles.headerStyle,
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
@@ -419,9 +488,17 @@ export default function CooldownPlanner(props) {
       /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
       title: t("Cooldown") + " 5",
       field: "Cooldown4",
-      width: "8%",
+      width: "9%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
+      // Search function for abilities as they are stores as numbers. Works for all languages
+      customFilterAndSearch: (term, rowData) => {
+        let searchedTerm = cooldownDB
+          .filter((object) => object.guid === rowData.Cooldown4)
+          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
+          .flat();
+        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
+      },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => CooldownRender(rowData, "Cooldown4"),
       /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
@@ -450,20 +527,10 @@ export default function CooldownPlanner(props) {
         <MaterialTable
           icons={tableIcons}
           columns={columns}
-          data={data}
+          data={data.sort((a, b) => (a.time > b.time && 1) || -1)}
           style={{
             padding: 10,
           }}
-          /* ---------------------- Option to make cell editable by clicking on cell ---------------------- */
-          /* ------------------- Not currently Implemented, Code here for future options ------------------ */
-          // cellEditable={{
-          //   onCellEditApproved: (newValue, oldValue, rowData, columnDef) => {
-          //     return new Promise((resolve, reject) => {
-          //       console.log('newValue: ' + newValue);
-          //       setTimeout(resolve, 1000);
-          //     });
-          //   }
-          // }}
           options={{
             showTitle: false,
             sorting: false,
@@ -529,27 +596,32 @@ export default function CooldownPlanner(props) {
                   </Grid>
                   {/* ---------------------------------- Raid Selection Drop Down ---------------------------------- */}
                   {/* <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small">
-                      <InputLabel id="RaidSelector">{t("CooldownPlanner.TableLabels.RaidSelectorLabel")}</InputLabel>
-                      <Select
-                        labelId="RaidSelector"
-                        value={currentRaid}
-                        onChange={(e) => setCurrentRaid(e.target.value)}
-                        label={t("CooldownPlanner.TableLabels.RaidSelectorLabel")}
-                      >
-                        {rl
-                          .map((key, i, arr) => (
-                            <MenuItem key={"RS" + i} value={key.zoneID}>
-                              {key.raidName}
-                            </MenuItem>
-                          ))
-                          }
-                      </Select>
-                    </FormControl>
+                    <TextField
+                      id="RaidSelector"
+                      select
+                      value={currentRaid}
+                      onChange={(e) => setCurrentRaid(e.target.value)}
+                      label={t("CooldownPlanner.TableLabels.RaidSelectorLabel")}
+                      size="small"
+                      sx={{ minWidth: 200, width: "100%" }}
+                    >
+                      {[2450, 2481].map((key, i, arr) => (
+                        <MenuItem key={"RS" + i} value={key}>
+                          {key}
+                        </MenuItem>
+                      ))}
+                    </TextField>
                   </Grid> */}
                   {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <TextField sx={{ minWidth: 200, width: "100%" }} size="small" select value={currentBoss} onChange={(e) => changeBoss(e.target.value)} disabled={currentRaid === "" ? true : false}>
+                    <TextField
+                      sx={{ minWidth: 100, width: "100%" }}
+                      size="small"
+                      select
+                      value={currentBoss}
+                      onChange={(e) => changeBoss(e.target.value, currentDifficulty)}
+                      disabled={currentRaid === "" ? true : false}
+                    >
                       {bossList
                         .filter((obj) => {
                           return obj.zoneID === currentRaid;
@@ -559,26 +631,25 @@ export default function CooldownPlanner(props) {
                           return (
                             <MenuItem divider={lastItem} key={"BS" + i} value={key.DungeonEncounterID}>
                               {bossIcons(key.DungeonEncounterID)}
-                              {t("BossNames." + key.ID)}
+                              {key.name[currentLanguage]}
                             </MenuItem>
                           );
                         })}
                     </TextField>
                   </Grid>
 
-                  {/* ----------------------------------- Plan Selection Dropdown ---------------------------------- */}
-
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <TextField
-                      sx={{ minWidth: 200, width: "100%" }}
+                      sx={{ minWidth: 100, width: "100%" }}
                       select
-                      id="RaidSelector"
-                      placeholder={t("Select Plan")}
-                      value={currentPlan}
-                      onChange={(e) => loadPlanData(currentBoss, e.target.value)}
+                      id="DifficultySelector"
+                      placeholder={t("Difficulty")}
+                      value={currentDifficulty}
+                      onChange={(e) => changeDifficulty(currentBoss, e.target.value)}
                       disabled={currentBoss === "" ? true : false}
                     >
-                      {getBossPlanNames(currentBoss).map((key, i, arr) => {
+                      w
+                      {["Heroic", "Mythic"].map((key, i, arr) => {
                         let lastItem = i + 1 === arr.length ? false : true;
                         return (
                           <MenuItem key={key} divider={lastItem} value={key}>
@@ -588,66 +659,100 @@ export default function CooldownPlanner(props) {
                       })}
                     </TextField>
                   </Grid>
-                  {/* // TODO: Localize */}
+
+                  {/* ----------------------------------- Plan Selection Dropdown ---------------------------------- */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <Button key={8} variant="outlined" color="primary" onClick={handleAddPlanDialogClickOpen}>
-                      Add Plan
-                    </Button>
+                    <TextField
+                      sx={{ minWidth: 100, width: "100%" }}
+                      select
+                      id="RaidSelector"
+                      placeholder={t("Plan")}
+                      value={currentPlan}
+                      onChange={(e) => loadPlanData(currentBoss, e.target.value, currentDifficulty)}
+                      disabled={currentBoss === "" ? true : false}
+                    >
+                      {getBossPlanNames(currentBoss, currentDifficulty).map((key, i, arr) => {
+                        let lastItem = i + 1 === arr.length ? false : true;
+                        return (
+                          <MenuItem key={key} divider={lastItem} value={key}>
+                            {key}
+                          </MenuItem>
+                        );
+                      })}
+                    </TextField>
                   </Grid>
 
-                  {/* // TODO: Localize & fix need for theme here */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <StyledEngineProvider injectFirst>
-                      <ThemeProvider theme={deleteTheme}>
-                        <Button key={8} variant="outlined" color="primary" onClick={handleDeletePlanDialogClickOpen} disabled={currentPlan === "" || currentPlan === "default" ? true : false}>
-                          Delete Plan
-                        </Button>
-                      </ThemeProvider>
-                    </StyledEngineProvider>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <ImportPlanDialog variant="outlined" disableElevation={true} buttonLabel="Import" color="primary" cooldownObject={cooldownObject} loadPlanData={loadPlanData} />
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <ExportPlanDialog variant="outlined" disableElevation={true} buttonLabel="Export" data={data} color="primary" boss={currentBoss} planName={currentPlan} plan={data} />
-                  </Grid>
-
-                  {/* ----------------------------- ERT Note Button (Opens ERT Dialog) ----------------------------- */}
-
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <ExportERTDialog
-                      variant="outlined"
-                      disableElevation={true}
-                      disabled={currentPlan === "" ? true : false}
-                      buttonLabel="Note Export"
-                      color="primary"
-                      ertListTimeNoIcons={ertListTimeNoIcons}
-                      ertListBossAbility={ertListBossAbility}
-                      ertListAbilityNoTimeIconsAll={ertListAbilityNoTimeIconsAll}
-                      ertListTimeIcons={ertListTimeIcons}
-                      ertListNoteIcons={ertListNoteIcons}
-                      ertListNoteNoIcons={ertListNoteNoIcons}
-                      boss={currentBoss}
-                      planName={currentPlan}
+                    <AddPlanDialog
+                      openAddPlanDialog={openAddPlanDialog}
+                      handleAddPlanDialogClose={handleAddPlanDialogClose}
+                      cooldownObject={cooldownObject}
+                      currentBoss={currentBoss}
+                      currentDifficulty={currentDifficulty}
+                      loadPlanData={loadPlanData}
+                      handleAddPlanDialogClickOpen={handleAddPlanDialogClickOpen}
                     />
                   </Grid>
+
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <CopyPlanDialog
+                      currentPlan={currentPlan}
+                      openCopyPlanDialog={openCopyPlanDialog}
+                      handleCopyPlanDialogClickOpen={handleCopyPlanDialogClickOpen}
+                      handleCopyPlanDialogClose={handleCopyPlanDialogClose}
+                      cooldownObject={cooldownObject}
+                      currentBoss={currentBoss}
+                      currentDifficulty={currentDifficulty}
+                      loadPlanData={loadPlanData}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <DeletePlanDialog
+                      openDeletePlanDialog={openDeletePlanDialog}
+                      handleDeletePlanDialogClickOpen={handleDeletePlanDialogClickOpen}
+                      handleDeletePlanDialogClose={handleDeletePlanDialogClose}
+                      currentPlan={currentPlan}
+                      setCurrentPlan={setCurrentPlan}
+                      setData={setData}
+                      cooldownObject={cooldownObject}
+                      currentBoss={currentBoss}
+                      currentDifficulty={currentDifficulty}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <ImportPlanDialog cooldownObject={cooldownObject} loadPlanData={loadPlanData} />
+                  </Grid>
+
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <ExportPlanDialog data={data} boss={currentBoss} planName={currentPlan} plan={data} currentDifficulty={currentDifficulty} />
+                  </Grid>
+
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <ExportERTDialog ertListTimeIcons={ertListTimeIcons} boss={currentBoss} currentPlan={currentPlan} />
+                  </Grid>
                 </Grid>
+
                 <Grid item xs={12} sm={6} md={12} lg={6} xl={3}>
-                  {currentBoss === "" ? null : <MTableToolbar {...props} />}
+                  {currentBoss === "" || currentPlan === "default" ? null : <MTableToolbar {...props} />}
                 </Grid>
               </Grid>
             ),
           }}
           /* ------------------- These are how the table updates its data from edit mode ------------------ */
           editable={{
+            isEditHidden: (rowData) => currentPlan === "default",
+            isDeleteHidden: (rowData) => currentPlan === "default",
             onRowAdd: (newData) =>
               new Promise((resolve, reject) => {
                 setTimeout(() => {
                   /* ------------------ Spread Current Data and the New Data into updated Object (Sorted) ------------------ */
-                  setData([...data, newData].sort((a, b) => (a.time > b.time ? 1 : -1)));
-                  resolve();
+                  let updatedData = [...data, newData].sort((a, b) => (a.time > b.time && 1) || -1);
+                  setData(updatedData);
                   /* ------------------------------------ Update local storage ------------------------------------ */
-                  updateStorage(currentBoss, currentPlan, [...data, newData]);
+                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty);
+                  resolve();
                 }, 1000);
               }),
             onRowUpdate: (newData, oldData) =>
@@ -659,10 +764,11 @@ export default function CooldownPlanner(props) {
                   const index = oldData.tableData.id;
                   /* -------------------- Set the Updated Data as the old datas id replacing it ------------------- */
                   dataUpdate[index] = newData;
+                  let updatedData = [...dataUpdate].sort((a, b) => (a.time > b.time && 1) || -1);
                   /* ---------------------------------- Set Updated Data (Sorted) --------------------------------- */
-                  setData([...dataUpdate].sort((a, b) => (a.time > b.time ? 1 : -1)));
+                  setData(updatedData);
                   /* ------------------------------------ Update local storage ------------------------------------ */
-                  updateStorage(currentBoss, currentPlan, [...dataUpdate]);
+                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty);
                   resolve();
                 }, 1000);
               }),
@@ -675,10 +781,12 @@ export default function CooldownPlanner(props) {
                   const index = oldData.tableData.id;
                   /* --------------------------------------- Delete Row Data -------------------------------------- */
                   dataDelete.splice(index, 1);
+
+                  let updatedData = [...dataDelete].sort((a, b) => (a.time > b.time && 1) || -1);
                   /* -------------------------- Set the New Data without the spliced row -------------------------- */
-                  setData([...dataDelete].sort((a, b) => (a.time > b.time ? 1 : -1)));
+                  setData(updatedData);
                   /* ------------------------------------ Update local storage ------------------------------------ */
-                  updateStorage(currentBoss, currentPlan, [...dataDelete]);
+                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty);
                   resolve();
                 }, 1000);
               }),
@@ -691,30 +799,13 @@ export default function CooldownPlanner(props) {
                       dataUpdate[key] = changes[key].newData;
                     }
                   }
-                  setData([...dataUpdate]);
-                  updateStorage(currentBoss, currentPlan, [...dataUpdate]);
+                  let updatedData = [...dataUpdate];
+                  setData(updatedData);
+                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty);
                   resolve();
                 }, 1000);
               }),
           }}
-        />
-
-        <AddPlanDialog
-          openAddPlanDialog={openAddPlanDialog}
-          handleAddPlanDialogClose={handleAddPlanDialogClose}
-          cooldownObject={cooldownObject}
-          currentBoss={currentBoss}
-          loadPlanData={loadPlanData}
-        />
-
-        <DeletePlanDialog
-          openDeletePlanDialog={openDeletePlanDialog}
-          handleDeletePlanDialogClose={handleDeletePlanDialogClose}
-          currentPlan={currentPlan}
-          setCurrentPlan={setCurrentPlan}
-          setData={setData}
-          cooldownObject={cooldownObject}
-          currentBoss={currentBoss}
         />
       </ThemeProvider>
     </StyledEngineProvider>

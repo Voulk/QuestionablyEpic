@@ -14,6 +14,96 @@ export const effectData = [
         },
       ],
     },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                     Soulwarped Seal of Wrynn                                   */
+      /* ---------------------------------------------------------------------------------------------- */
+      // This has a ppm of 3 in the spell data, however this is it's maximum strength and we don't yet know the minimum (hitting a target at high health).
+      // This almost unavoidably means that the ring will need to be tested in-game to get a reasonable value.
+      // It's a prediction until then.
+      name: "Soulwarped Seal of Wrynn",
+      effects: [
+        {
+            coefficient: 0.739246,
+            duration: 12,
+            ppm: 10, // 20 in spell data. Verify with in-game logs. 
+            table: -8 // -9
+        },
+      ],
+    },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                           Sepulcher's Savior                                   */
+      /* ---------------------------------------------------------------------------------------------- */
+      // This is primarily a tank offhand that can also be used by Shaman / Paladin healers. 
+      // It trades secondary stats for heal and damage procs on a 1.5 minute cooldown.
+      // The damage effect is NYI but can be quite easily.
+      name: "Sepulcher's Savior",
+      effects: [
+        {
+            coefficient: 231.3687,
+            cooldown: 180,
+            table: -8 // -9
+        },
+      ],
+    },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                           Cosmic Protoweave                                    */
+      /* ---------------------------------------------------------------------------------------------- */
+      name: "Cosmic Protoweave",
+      effects: [
+        {
+            coefficient: 12.42858,
+            efficiency: 0.6,
+            ppm: 1.5,
+            table: -8 // -9
+        },
+      ],
+    },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                 Magically Regulated Automa Core                                */
+      /* ---------------------------------------------------------------------------------------------- */
+      name: "Magically Regulated Automa Core",
+      // TODO: Check log average targets.
+      effects: [
+        {
+            coefficient: 4.358473,
+            efficiency: 0.72,
+            targets: 1,
+            ppm: 1.5,
+            table: -8 // -9
+        },
+      ],
+    },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                     Ephemera Harmonizing Stone                                  */
+      /* ---------------------------------------------------------------------------------------------- */
+      // Int proc
+      name: "Ephemera Harmonizing Stone",
+      effects: [
+        {
+            coefficient: 0.194108,
+            duration: 15,
+            ppm: 1, 
+            table: -1,
+            efficiency: 0.35
+        },
+      ],
+    },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                          Genesis Lathe                                         */
+      /* ---------------------------------------------------------------------------------------------- */
+      // The effects are similar enough in strength that a different distribution of procs doesn't particularly matter - so long as they are being used.
+      name: "Genesis Lathe",
+      effects: [
+        {name: "Absorb", coefficient: 92.22098, table: -8, percProcs: 0.75, ticks: 1, secondaries: ["Versatility"]},
+        {name: "FlatHeal", coefficient: 107.5911, table: -8, percProcs: 0.1, ticks: 1, secondaries: ["Versatility", "Crit"]},
+        {name: "Hot", coefficient: 16.04781, table: -8, percProcs: 0.15, ticks: 5, secondaries: ["Versatility", "Crit", "Haste"]}]
+    },
 
 
 

@@ -210,13 +210,13 @@ export const trinket_data = [
     effects: [
       {
         /* ------------------------------ Crit buff portion of the trinket. ----------------------------- */
-        coefficient: 2.269577,
+        coefficient: 2.269577 * 0.85, // This represents the upcoming 15% nerf. When the change is live the coefficient itself can be updated instead. 
         table: -7,
         duration: 16,
         multiplier: 1.62, // This assumes your average boss health is just under 50% which feels like a fair average.
         efficiency: 0.92, // Ruby is a tough trinket to maximise and it's average use case is far below it's maximum.
         cooldown: 120,
-        discOverhealing: 0.325,
+        discOverhealing: 0.37,
       },
       {
         /* ------------------------ Healing portion when the spirit reaches you. ------------------------ */
@@ -394,7 +394,26 @@ export const trinket_data = [
         table: -7,
         duration: 9,
         cooldown: 90,
-        discOverhealing: 0.265,
+        discOverhealing: 0.11,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Instructor's Divine Bell                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    A strong on-use with a slightly awkward cooldown for a lot of specs.
+    Value depends heavily on how well your specs mastery interacts with your specs big cooldowns.
+    */
+    name: "Instructor's Divine Bell (new)",
+    effects: [
+      {
+        coefficient: 2.37098,
+        table: -7,
+        duration: 15,
+        cooldown: 90,
+        discOverhealing: 0.15,
       },
     ],
   },
@@ -409,10 +428,10 @@ export const trinket_data = [
     effects: [
       {
         coefficient: 2.955178,
-        table: -1,
+        table: -7,
         duration: 12,
         cooldown: 90,
-        discOverhealing: 0.25,
+        discOverhealing: 0.12,
       },
     ],
   },
@@ -695,6 +714,22 @@ export const trinket_data = [
       },
     ],
   },
+  { // Pandaria
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Price of Progress                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+
+    */
+    name: "Price of Progress",
+    effects: [
+      {
+        coefficient: 12.92661, // 8.996611 pre-nerf
+        table: -7,
+        ppm: 1,
+      },
+    ],
+  },
 
   /* ------------------------------- Firelands Timewalking Trinkets ------------------------------- */
 
@@ -820,12 +855,12 @@ export const trinket_data = [
     name: "So'leah's Secret Technique",
     effects: [
       {
-        coefficient: 1.540096,
-        table: -8,
+        coefficient: 0.493954, 
+        table: -7,
       },
       {
-        coefficient: 0.308019,
-        table: -8,
+        coefficient: 0.098791,
+        table: -7,
       }
     ],
   },
@@ -900,8 +935,8 @@ export const trinket_data = [
       },
       {
         /* --------------------------------------- Haste Portion --------------------------------------- */
-        coefficient: 3.8125,
-        table: -8,
+        coefficient: 0.405042, // Previously 3.8125 @ -9.
+        table: -7,
         ppm: 3,
         duration: 9,
       },
@@ -1027,8 +1062,7 @@ export const trinket_data = [
       {
         coefficient: 2.07913,
         table: -8, 
-        ppm: 6, // TODO: Refine. 
-
+        ppm: { "Restoration Druid": 20, "Discipline Priest": 10, "Holy Paladin": 0, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.5, "Holy Priest": 9 }, // TODO: Refine. 
       },
     ],
   },
@@ -1076,13 +1110,156 @@ export const trinket_data = [
     /*                                     Elegy of the Eternals                                      */
     /* ---------------------------------------------------------------------------------------------- */
     // This is a flat stat trinket that gives a bonus to allies in group.
-    // NYI
+    // This is currently heavily overbudget, or has a mechanic to it we're not yet aware of or able to test. 
     name: "Elegy of the Eternals", 
     effects: [
       {
+        coefficient: 0.474196,
+        table: -7, // -9 but is currently using our -8. Should be -7.
+        sharedAmount: 0.1,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Auxillary Attendant Chime                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // Activates a robot that applies an absorb for X every second for 10s. 
+    // This appears to scale with haste, but haste scaling is disabled until it can be checked on live servers since it was not available to test.
+    // Check for partial tick also.
+    name: "Auxillary Attendant Chime", 
+    effects: [
+      {
+        coefficient: 10.149235,
+        table: -8, // -9
+        ppm: 1.5,
+        efficiency: 0.87,
+        duration: 10,
+        tickRate: 1,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Reclaimer's Intensity Core                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    // On-use mana trinket. When the robot it summons dies, heal 5 allies for X over 10 seconds.
+    name: "Reclaimer's Intensity Core", 
+    effects: [
+      { // Mana on-use
+        coefficient: 0.161757,
+        table: -1,
+        ticks: 10, // The coefficient is for a single tick.
+        cooldown: 90,
+      },
+      { // Healing Effect whenever an automata dies. 
+        // The scaling curve does not match any known spell tables and the trinket is available at just four item level so they are hard coded in for now.
+
+        // The Reclaimer's healing effect procs once every time a nearby automata dies. This does include automata from other players in addition to the players own.
+        // However, they can also be outranged and so if not careful you can even run away from your own. The radius appears to be 30 yards. 
+        // There is a good case to be made that there should be a settings value for automata in raid.
+        coefficient: 0.530562,
+        table: -6, 
+        fixedValues: {239: 3526, 252: 4126, 265: 4822, 278: 5627},
+        efficiency: { Raid: 0.52, Dungeon: 0.39 }, // 
+        ppm: 0.667 * 1, // One automata 
+        targets: 5,
+        ticks: 1, // This ticks 30 times, but the fixed values are over it's entire duration.
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Scars of Fraternal Strife                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // Jailer trinket. Effects unknown
+    name: "Scars of Fraternal Strife", 
+    effects: [
+      {
         coefficient: 0,
-        table: -7, 
-        averageStacks: 7.5, 
+        table: -0, 
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        The First Sigil                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    // Signature ability reset and a massive vers buff on a 5 minute cooldown.
+    name: "The First Sigil", 
+    effects: [
+      {
+        coefficient: 5.122305,
+        table: -7,
+        duration: 15,
+        cooldown: 300,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        The Lion's Roar                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    // 20% DR up to an absorb cap on a long cooldown. Cooldown is reduced by critical heals using the ppm system.
+    name: "The Lion's Roar", 
+    effects: [
+      {
+        coefficient: 1075.665,
+        table: -8, // -9
+        ppm: 10,
+        baseCooldown: 600,
+        cdrPerProc: 3,
+        efficiency: 0.7,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Extract of Prodigious Sands                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+
+    */
+    name: "Extract of Prodigious Sands",
+    effects: [
+      {
+        coefficient: 15.64738,
+        table: -8, // -9 in spell data
+        efficiency: { Raid: 0.7, Dungeon: 0.47 }, // 
+        ppm: 7.5,
+
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Symbol of the Raptora                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+
+    */
+    name: "Symbol of the Raptora",
+    effects: [
+      {
+        coefficient: 3.676471,
+        table: -9, // -8 in spell data
+        duration: 18,
+        ppm: 2,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                           Grim Eclipse                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    name: "Grim Eclipse",
+    effects: [
+      {
+        coefficient: 2.252431,
+        table: -7,
+        duration: 10,
+        runeEfficiency: 0.8,
+        cooldown: 120,
       },
     ],
   },

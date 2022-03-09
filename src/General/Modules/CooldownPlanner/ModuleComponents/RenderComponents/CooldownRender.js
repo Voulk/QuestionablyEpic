@@ -35,10 +35,10 @@ export default function CastTextField(rowData, cooldown) {
   }
 
   return (
-    <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+    <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%", textAlign: "center" }}>
       <a data-wowhead={"spell=" + rowData[cooldown]}>
         <img
-          style={{ height: 30, width: 30, margin: "0px 4px 0px 0px", verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 }}
+          style={{ height: 22, width: 22, verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 }}
           src={getSpellIcon(rowData[cooldown])}
           alt={getTranslatedSpellName(rowData[cooldown])}
         />
@@ -48,8 +48,7 @@ export default function CastTextField(rowData, cooldown) {
         style={{
           fontSize: 12,
           lineHeight: "normal",
-          textAlign: "center",
-          // width: "100%",
+          width: "100%",
         }}
       >
         {getTranslatedSpellName(rowData[cooldown])}

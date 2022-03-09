@@ -142,7 +142,7 @@ class FightAnalysis extends Component {
 
   handleCustomPlanChange = (plan, currentBossID) => {
     /* ------------------------------- Get List of Plans for the boss ------------------------------- */
-    const bossCooldowns = this.state.cooldownObject.getCooldowns(currentBossID);
+    const bossCooldowns = this.state.cooldownObject.getCooldowns(currentBossID, this.state.currentDifficulty);
     /* --------------------------------------- Set the lected --------------------------------------- */
     const planCooldowns = bossCooldowns[plan];
 
@@ -151,7 +151,7 @@ class FightAnalysis extends Component {
   };
 
   getBossPlanNames = (boss) => {
-    return Object.keys(this.state.cooldownObject.getCooldowns(boss));
+    return Object.keys(this.state.cooldownObject.getCooldowns(boss, this.state.currentDifficulty));
   };
 
   render() {
@@ -288,7 +288,7 @@ class FightAnalysis extends Component {
                             {/* TODO: Translate */}
                             <Grid item>
                               <FormControl style={{ width: 200 }} variant="outlined" size="small">
-                                <InputLabel id="itemsocket">Custom Cooldowns</InputLabel>
+                                <InputLabel id="cooldownsShown">Custom Cooldowns</InputLabel>
                                 <Select
                                   key={"cooldownsShown"}
                                   labelId="cooldownsShown"
@@ -306,7 +306,7 @@ class FightAnalysis extends Component {
                             <Grid item>
                               {/* TODO: Translate */}
                               <FormControl style={{ width: 200 }} variant="outlined" size="small">
-                                <InputLabel id="itemsocket">Custom Cooldowns</InputLabel>
+                                <InputLabel id="damageType">Damage Type</InputLabel>
                                 <Select key={"damageType"} labelId="damageType" value={this.state.chartData} onChange={(e) => this.changeDataSet(e.target.value)} label={"Damage Type"}>
                                   <MenuItem divider value={true}>
                                     Unmitigated Damage
@@ -317,10 +317,10 @@ class FightAnalysis extends Component {
                             </Grid>
                             <Grid item>
                               <FormControl style={{ width: 200 }} variant="outlined" size="small">
-                                <InputLabel id="itemsocket">Custom Cooldowns</InputLabel>
+                                <InputLabel id="Plans">Plans</InputLabel>
                                 <Select
                                   key={"sockets"}
-                                  labelId="itemsocket"
+                                  labelId="Plans"
                                   value={this.state.customPlanSelected}
                                   onChange={(e) => this.handleCustomPlanChange(e.target.value, this.state.currentBossID)}
                                   label={"Custom Cooldowns"}
@@ -397,9 +397,9 @@ class FightAnalysis extends Component {
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                           DTPS Graph                                            */
                   /* ----------------------------------------------------------------------------------------------  */}
-                  <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
+                  {/* <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
                     <Example dataToShow={this.state.chartData} mitigated={this.state.summedMitigationDamagePerSecond} unmitigated={this.state.summedUnmitigatedDamagePerSecond} />
-                  </Grid>
+                  </Grid> */}
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                    Healer Information Cards                                     */
                   /* ----------------------------------------------------------------------------------------------  */}
@@ -417,9 +417,9 @@ class FightAnalysis extends Component {
 
                   {/* ------------------------------------ Enemy Casts Timeline ------------------------------------ */}
                   {/* --- Not sure if this will be used, but it shows the enemies casts and when might be useful ---  */}
-                  <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
+                  {/* <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
                     <EnemyCastsTimeline data={this.state.enemyCastsTimelineData} />
-                  </Grid>
+                  </Grid> */}
                 </Grid>
               </Grid>
               <Grid item xs={12} style={{ height: 350 }} />
