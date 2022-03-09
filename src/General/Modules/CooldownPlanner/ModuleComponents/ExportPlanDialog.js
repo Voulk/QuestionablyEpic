@@ -4,7 +4,7 @@ import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, T
 
 export default function ExportPlanDialog(props) {
   const { t } = useTranslation();
-  const { data, planName, boss } = props;
+  const { data, planName, boss, currentDifficulty } = props;
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -19,7 +19,24 @@ export default function ExportPlanDialog(props) {
 
     let stringifiedPLan = JSON.stringify(plan);
 
-    exportString = "# QE Cooldown Planner" + "\n" + "# Version=0.9" + "\n" + "# Boss=" + boss + "\n" + "# PlanName=" + planName + "\n" + "# " + "Plan=" + "\n" + stringifiedPLan;
+    exportString =
+      "# QE Cooldown Planner" +
+      "\n" +
+      "# Version=0.9" +
+      "\n" +
+      "# Boss=" +
+      boss +
+      "\n" +
+      "# Difficulty=" +
+      currentDifficulty +
+      "\n" +
+      "# PlanName=" +
+      planName +
+      "\n" +
+      "# " +
+      "Plan=" +
+      "\n" +
+      stringifiedPLan;
 
     return exportString;
   }

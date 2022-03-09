@@ -3,9 +3,9 @@ import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, T
 import { useTranslation } from "react-i18next";
 
 export default function AddPlanDialog(props) {
-  const { handleAddPlanDialogClose, handleAddPlanDialogClickOpen, openAddPlanDialog, cooldownObject, currentBoss, loadPlanData } = props;
+  const { handleAddPlanDialogClose, handleAddPlanDialogClickOpen, openAddPlanDialog, cooldownObject, currentBoss, loadPlanData, currentDifficulty } = props;
   const [planName, setPlanName] = useState("");
-  const bossPlans = Object.keys(cooldownObject.getCooldowns(currentBoss));
+  const bossPlans = Object.keys(cooldownObject.getCooldowns(currentBoss, currentDifficulty));
   const duplicatePlanNameCheck = bossPlans.includes(planName) ? true : false;
   const { t, i18n } = useTranslation();
 
@@ -18,9 +18,9 @@ export default function AddPlanDialog(props) {
     setPlanName(event.target.value);
   };
 
-  const addPlan = (planName, boss) => {
-    cooldownObject.addNewPlan(planName, boss);
-    loadPlanData(boss, planName);
+  const addPlan = (planName, boss, currentDif) => {
+    cooldownObject.addNewPlan(planName, boss, currentDif);
+    loadPlanData(boss, planName, currentDif);
     handleAddPlanDialogClose(true);
     setPlanName("");
   };
@@ -47,7 +47,7 @@ export default function AddPlanDialog(props) {
           />
         </DialogContent>
         <DialogActions>
-          <Button key={8} variant="contained" color="primary" onClick={(e) => addPlan(planName, currentBoss)} size="small" disabled={duplicatePlanNameCheck || planName === ""}>
+          <Button key={8} variant="contained" color="primary" onClick={(e) => addPlan(planName, currentBoss, currentDifficulty)} size="small" disabled={duplicatePlanNameCheck || planName === ""}>
             {t("CooldownPlanner.AddPlanDialog.ButtonLabel")}
           </Button>
         </DialogActions>

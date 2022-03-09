@@ -11,7 +11,7 @@ const deleteTheme = createTheme({
 });
 
 export default function AddPlanDialog(props) {
-  const { handleDeletePlanDialogClose, handleDeletePlanDialogClickOpen, currentPlan, openDeletePlanDialog, cooldownObject, currentBoss, setCurrentPlan, setData } = props;
+  const { handleDeletePlanDialogClose, handleDeletePlanDialogClickOpen, currentPlan, openDeletePlanDialog, cooldownObject, currentBoss, setCurrentPlan, setData, currentDifficulty } = props;
   const [deleteChecker, setdeleteChecker] = useState("");
   const { t, i18n } = useTranslation();
 
@@ -23,8 +23,8 @@ export default function AddPlanDialog(props) {
     setdeleteChecker(event.target.value);
   };
 
-  const deletePlan = (planName, boss) => {
-    cooldownObject.deletePlan(planName, boss);
+  const deletePlan = (planName, boss, currentDif) => {
+    cooldownObject.deletePlan(planName, boss, currentDif);
     setCurrentPlan("");
     handleDeletePlanDialogClose(true);
     setdeleteChecker("");
@@ -62,7 +62,7 @@ export default function AddPlanDialog(props) {
                 key={"deletePlanButton"}
                 variant="contained"
                 color="primary"
-                onClick={(e) => deletePlan(currentPlan, currentBoss)}
+                onClick={(e) => deletePlan(currentPlan, currentBoss, currentDifficulty)}
                 size="small"
                 disabled={deleteChecker === "Delete" || deleteChecker === "delete" ? false : true}
               >
