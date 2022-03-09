@@ -417,7 +417,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   //if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
 
   // == Effects ==
-  // Effects include stuff like trinkets, legendaries, domination gems, tier sets (one day) and so on.
+  // Effects include stuff like trinkets, legendaries, domination gems, tier sets and so on.
   // Each effect returns an object containing which stats it offers. Specific details on each effect can be found in the TrinketData, EffectData and EffectEngine files.
   // -- Disc note: On use trinkets and legendaries and handled further down in the ramps section. --
   let effectStats = [];
