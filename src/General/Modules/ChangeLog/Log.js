@@ -10,6 +10,15 @@
 export const changeLog = [
   {
     version: "9.2 / 2.5.3",
+    update: 8,
+    date: "10th March (Minor Update)",
+    changes: [
+      "Added effect formulas for Antumbra, Shadow of the Cosmos.",
+      "Bugfix: Paladin tier sets should now be correctly accounted for again",
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
     update: 7,
     date: "9th March (Minor Update)",
     changes: [
