@@ -103,7 +103,7 @@ export const effectData = [
         {
             coefficient: 0.039516,
             duration: 15,
-            avgStacks: 12.5, // 
+            avgStacks: 12.9, // Disc only 
             table: -7,
         },
       ],

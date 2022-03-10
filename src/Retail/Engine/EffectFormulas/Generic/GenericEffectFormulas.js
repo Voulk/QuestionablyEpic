@@ -18,6 +18,20 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
 
   } 
+  else if (effectName === "Antumbra, Shadow of the Cosmos") {
+    const effect = activeEffect.effects[0];
+
+    if (player.getSpec() === "Discipline Priest") {
+      
+      bonus_stats.versatility = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.avgStacks;
+    }
+    else {
+      bonus_stats.versatility = getProcessedValue(effect.coefficient, effect.table, itemLevel) * (effect.avgStacks * 0.7); 
+      // This needs more analysis around holding stacks. A 30% penalty is almost certainly too harsh.
+    }
+    
+
+  } 
   else if (effectName === "Soulwarped Seal of Wrynn") {
     const effect = activeEffect.effects[0];
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
@@ -39,7 +53,7 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
   else if (effectName === "Genesis Lathe") {
 
     // These can be verified after logs start coming in but are based on frequency of casts. 
-    const ppm = {"Restoration Druid": 1.9, "Holy Paladin": 0.3, "Mistweaver Monk": 0.52, "Restoration Shaman": 1.4, "Holy Priest": 1.85, "Discipline Priest": 1.2}
+    const ppm = {"Restoration Druid": 1.9, "Holy Paladin": 0.3, "Mistweaver Monk": 0.52, "Restoration Shaman": 1.4, "Holy Priest": 1.85, "Discipline Priest": 1.08}
     const effects = activeEffect.effects;
     let expectedHPS = 0;
     
