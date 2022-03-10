@@ -6,9 +6,8 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "Patch 9.2 now live! More information in the changelog.",
-      "First Class Healing Dist was heavily nerfed!",
-      "Expect further changes through the week.",
+      "Raiders should prioritize Tier from the Great Vault.",
+      "Holy Priest Tier & Legendary support coming soon."
   ],
   "BurningCrusade": ["Enjoy MH / BT!"]
   }
