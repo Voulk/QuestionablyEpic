@@ -13,7 +13,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
   // Tier Sets
-  if (effectName === "HPaladin T28-2") {
+  if (effectName === "Paladin T28-2") {
     // Holy Paladin Sepulcher tier set 2pc
     // Casting Word of Glory causes your next Light of Dawn to heal for 50% more and cast twice. Cannot occur more often than once per 30 sec.
     // This is an INCREDIBLY strong 2pc bonus.
@@ -46,7 +46,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
 
     
   }
-  else if (effectName === "Hpaladin T28-4") {
+  else if (effectName === "Paladin T28-4") {
     // Holy Paladin Sepulcher tier set 4pc
     // This should be an accurate formula, though it's a little bit of a drag and could almost certainly be simplified to half as many lines.
     const expectedProcsPerMinute = 4.8 * player.getSpellCPM(IDLIGHTOFDAWN, contentType) * 2 * 0.5; // LoD targets x LoD CPM x 2 x 0.5 
