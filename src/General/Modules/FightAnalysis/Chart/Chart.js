@@ -121,16 +121,16 @@ class Chart extends Component {
   };
 
   data2Show = (dataToShow, cooldownsToShow) => {
-    if (dataToShow === true && cooldownsToShow === true) {
+    if (dataToShow === "unmitigated" && cooldownsToShow === "log") {
       return this.props.unmitigated;
     }
-    if (dataToShow === true && cooldownsToShow === false) {
+    if (dataToShow === "unmitigated" && cooldownsToShow === "user") {
       return this.props.unmitigatedCooldowns;
     }
-    if (dataToShow === false && cooldownsToShow === true) {
+    if (dataToShow === "mitigated" && cooldownsToShow === "log") {
       return this.props.mitigated;
     }
-    if (dataToShow === false && cooldownsToShow === false) {
+    if (dataToShow === "mitigated" && cooldownsToShow === "user") {
       return this.props.mitigatedCooldowns;
     }
   };
@@ -169,7 +169,7 @@ class Chart extends Component {
               stroke="#f5f5f5"
               tickFormatter={DataFormater}
               label={{
-                value: this.props.dataToShow === true ? i18n.t("CooldownPlanner.ChartLabels.UnmitigatedDamageLabel") : i18n.t("CooldownPlanner.ChartLabels.MitigatedDamageLabel"),
+                value: this.props.dataToShow === "unmitigated" ? i18n.t("CooldownPlanner.ChartLabels.UnmitigatedDamageLabel") : i18n.t("CooldownPlanner.ChartLabels.MitigatedDamageLabel"),
                 angle: -90,
                 fill: "#f5f5f5",
                 fontWeight: "bold",
@@ -201,7 +201,7 @@ class Chart extends Component {
               }}
               labelFormatter={(timeStr) => moment(timeStr).format("mm:ss")}
             />
-            {this.drawAreas(this.props.cooldownsToShow === true ? this.props.cooldown : this.props.customCooldowns)}
+            {this.drawAreas(this.props.cooldownsToShow === "log" ? this.props.cooldown : this.props.customCooldowns)}
             <Line yAxisId="3" type="monotone" dataKey="Raid Health" stroke="#FF0000" dot={false} />
           </ComposedChart>
         </ResponsiveContainer>

@@ -4,25 +4,25 @@ import { defaultPlans } from "./DefaultPlans";
 
 class Cooldowns {
   constructor(plan) {
-    this.cooldowns = JSON.parse(ls.get("cooldownPlans")) || [];
+    this.cooldowns = JSON.parse(ls.get("cooldownPlans")) || {};
 
-    if (Object.entries(this.cooldowns[0]).length === 1) {
-      bossList.filter((filter) => filter.zoneID === 2481).map((map) => Object.assign(this.cooldowns[0], { [map.DungeonEncounterID]: this.defaultTimeGenerator(map.DungeonEncounterID) }));
+    if (Object.entries(this.cooldowns).length === 0) {
+      bossList.filter((filter) => filter.zoneID === 2481).map((map) => Object.assign(this.cooldowns, { [map.DungeonEncounterID]: this.defaultTimeGenerator(map.DungeonEncounterID) }));
       this.updateCooldownsAll(this.cooldowns);
     }
 
     // Generate New Default on Load
-    if (Object.entries(this.cooldowns[0]).length > 1) {
+    if (Object.entries(this.cooldowns).length > 0) {
       bossList
         .filter((filter) => filter.zoneID === 2481)
-        .map((map) => Object.assign(this.cooldowns[0][map.DungeonEncounterID]["Heroic"]["default"], this.defaultTimeGenerator(map.DungeonEncounterID)["Heroic"]["default"]));
+        .map((map) => Object.assign(this.cooldowns[map.DungeonEncounterID]["Heroic"]["default"], this.defaultTimeGenerator(map.DungeonEncounterID)["Heroic"]["default"]));
       bossList
         .filter((filter) => filter.zoneID === 2481)
-        .map((map) => Object.assign(this.cooldowns[0][map.DungeonEncounterID]["Mythic"]["default"], this.defaultTimeGenerator(map.DungeonEncounterID)["Mythic"]["default"]));
+        .map((map) => Object.assign(this.cooldowns[map.DungeonEncounterID]["Mythic"]["default"], this.defaultTimeGenerator(map.DungeonEncounterID)["Mythic"]["default"]));
       this.updateCooldownsAll(this.cooldowns);
     }
 
-    // bossList.filter((filter) => filter.zoneID === 2481).map((map) => Object.assign(this.cooldowns[0], { [map.DungeonEncounterID]: this.defaultTimeGenerator(map.DungeonEncounterID) }));
+    // bossList.filter((filter) => filter.zoneID === 2481).map((map) => Object.assign(this.cooldowns, { [map.DungeonEncounterID]: this.defaultTimeGenerator(map.DungeonEncounterID) }));
     // this.updateCooldownsAll(this.cooldowns);
   }
 
@@ -31,11 +31,11 @@ class Cooldowns {
   };
 
   getCooldowns = (bossID, difficulty) => {
-    return this.cooldowns[0][bossID][difficulty];
+    return this.cooldowns[bossID][difficulty];
   };
 
   getBossPlanNames = (bossID, difficulty) => {
-    return Object.keys(this.cooldowns[0][bossID][difficulty]);
+    return Object.keys(this.cooldowns[bossID][difficulty]);
   };
 
   addCooldown = (item) => {
@@ -43,18 +43,18 @@ class Cooldowns {
   };
 
   addNewPlan = (planName, boss, difficulty) => {
-    Object.assign(this.cooldowns[0][boss][difficulty], { [planName]: [] });
+    Object.assign(this.cooldowns[boss][difficulty], { [planName]: [] });
     ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
   };
 
   copyNewPlan = (planName, boss, newPlanName, difficulty) => {
-    Object.assign(this.cooldowns[0][boss][difficulty], { [newPlanName]: this.cooldowns[0][boss][difficulty][planName] });
+    Object.assign(this.cooldowns[boss][difficulty], { [newPlanName]: this.cooldowns[boss][difficulty][planName] });
     ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
   };
   f;
 
   deletePlan = (planName, boss, difficulty) => {
-    delete this.cooldowns[0][boss][difficulty][planName];
+    delete this.cooldowns[boss][difficulty][planName];
     ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
   };
 
@@ -63,12 +63,12 @@ class Cooldowns {
   };
 
   importPlan = (boss, planName, importedPlanObject, difficulty) => {
-    Object.assign(this.cooldowns[0][boss][difficulty], { [planName]: importedPlanObject });
+    Object.assign(this.cooldowns[boss][difficulty], { [planName]: importedPlanObject });
     ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
   };
 
   updateCooldownPlan = (boss, plan, cooldowns, difficulty) => {
-    this.cooldowns[0][boss][difficulty][plan] = cooldowns;
+    this.cooldowns[boss][difficulty][plan] = cooldowns;
     ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
   };
 
