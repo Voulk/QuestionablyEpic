@@ -1764,33 +1764,33 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
         en: {
           name: "Spiritwalker's Tidal Totem",
           slot: "Legs (recommended), Back",
-          desc: "After using Mana Tide Totem, the cast time of Healing Wave and Chain Heal is reduced by 50% and the mana cost by 25% for 10s.",
+          desc: "After using Mana Tide Totem, the cast time of Healing Wave and Chain Heal is reduced by 50% and the mana cost by 40% for 10s.",
           droploc: "Huntsman Altimor, Castle Nathria",
         },
         de: {
           name: "Gezeitentotem des Geistwandlers",
           slot: "Beine, Rücken",
           desc:
-            "Nach dem Aufstellen Eures Totems der Manaflut wird die Zauberzeit von 'Welle der Heilung' und 'Kettenheilung' um 50% verringert und die Manakosten von 'Kettenheilung' und 'Welle der Heilung' werden um 25% verringert. Hält 10 sec lang an.",
+            "Nach dem Aufstellen Eures Totems der Manaflut wird die Zauberzeit von 'Welle der Heilung' und 'Kettenheilung' um 50% verringert und die Manakosten von 'Kettenheilung' und 'Welle der Heilung' werden um 40% verringert. Hält 10 sec lang an.",
           droploc: "Jäger Altimor",
         },
         fr: {
           name: "Totem des marées du marcheur des esprits",
           slot: "Jambes, Dos",
-          desc: "Après utilisation de Totem de vague de mana, le temps d’incantation de Vague de soins et Salve de guérison est réduit de 50%, et leur coût en mana est réduit de 25% pendant 10 sec.",
+          desc: "Après utilisation de Totem de vague de mana, le temps d’incantation de Vague de soins et Salve de guérison est réduit de 50%, et leur coût en mana est réduit de 40% pendant 10 sec.",
           droploc: "Altimor le Veneur",
         },
         ru: {
           name: "Тотем волн духостранника",
           slot: "Ноги, Спина",
           desc:
-            "Когда вы призываете тотем прилива маны, время применения 'Волны исцеления' и 'Цепного исцеления' сокращается на 50%, а затраты маны на применение 'Цепного исцеления' и 'Волны исцеления' снижаются на 25%. Время действия – 10 sec.",
+            "Когда вы призываете тотем прилива маны, время применения 'Волны исцеления' и 'Цепного исцеления' сокращается на 50%, а затраты маны на применение 'Цепного исцеления' и 'Волны исцеления' снижаются на 40%. Время действия – 10 sec.",
           droploc: "ловчий Альтимор",
         },
         ch: {
           name: "灵魂行者的潮汐图腾",
           slot: "腿部、背部",
-          desc: "使用法力之潮图腾后，治疗波和治疗链的施法时间缩短50%，法力值消耗减少25%，持续10 sec。",
+          desc: "使用法力之潮图腾后，治疗波和治疗链的施法时间缩短50%，法力值消耗减少40%，持续10 sec。",
           droploc: "猎手阿尔迪莫",
         },
       };

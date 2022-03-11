@@ -9,9 +9,10 @@ const JONATS = "Jonat's Natural Focus";
 
 const debug = false;
 
-const IDCHAINHEAL = 85222;
-const IDHEALINGWAVE = 82326;
-const IDHEALINGSURGE = 20473;
+const IDCHAINHEAL = 1064;
+const IDHEALINGWAVE = 77472;
+const IDHEALINGSURGE = 8004;
+const IDPRIMORDIALWAVE = 327163;
 
 export const getShamanSpecEffect = (effectName, player, contentType) => {
   const bonusStats = {};
@@ -50,6 +51,8 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     // We'll include chain heals at a standard crit rate since stacks are already accounted for in the 2pc formula.
     const freeChainHealsPerMinute = 2 + 0.5 + 0.33 + 0.33; // Stream / Cloudburst + HTT + MTT + SLT. Includes average CDR on HTT.
     const oneChainHeal =  player.getStatMultiplier("ALL") * 5.3193 * 0.75; // 25% expected overhealing. Fine tune with logs.
+    const classPassive = 0.96; // Class aura
+    oneChainHeal *= classPassive;
     const hpsFreeChainHeal = oneChainHeal * freeChainHealsPerMinute;
 
     // Cooldown reduction portion
@@ -57,7 +60,7 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     // We'll focus our formula mostly on Healing Tide Totem CDR but this formula could easily be updated or even split via the
     // breakdown of how often each totem benefits.
     const oneHealingTide = player.getStatMultiplier("ALL") * 0.35 * 5 * 20 * 0.75; // With HTT large range it should be no issue hitting all 20 people.
-    const cooldownRedPerMin = (player.getSpellCPM(1064, contentType) + freeChainHealsPerMinute) * 4 * player.getStatPerc("Crit");// chain heal CPM x targets x modifiedCritChance
+    const cooldownRedPerMin = (player.getSpellCPM(IDCHAINHEAL, contentType) + freeChainHealsPerMinute) * 4 * player.getStatPerc("Crit");// chain heal CPM x targets x modifiedCritChance
     const hpsFreeTotems = oneHealingTide * (2 / 180 * cooldownRedPerMin) / 60;
 
     bonusStats.hps = hpsFreeChainHeal / 60 + hpsFreeTotems;
@@ -85,24 +88,24 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
   } else if (effectName === SPIRITWALKERS_TIDAL_TOTEM) {
     /**
      * every mtt use gain 10 seconds of quicker chhw casts
-     * missing: mana saved
      */
-    // const mttCasts = player.getSpellCasts("Mana Tide Totem", contentType);
-    //const chHPS = player.getSingleCast("Chain Heal", contentType) / player.getFightLength();
-    //console.log(SPIRITWALKERS_TIDAL_TOTEM, mttCasts, gain, possibleCasts);
-    const gain = 2.5 / 1.5 - 1; // tooltip says double but you hit the GCD wall
+    //const gain = 2.5 / 1.5 - 1; // tooltip says double but you hit the GCD wall
     const buffDuration = 9;
-    const castDuration = 2.5 / player.getStatPerc("Haste");
+    const castDuration = 1.5 / player.getStatPerc("Haste");
     const possibleCasts = Math.ceil(buffDuration / castDuration);
-    const chHeal = 5.3 * player.getStatMultiplier("NOHASTE");
-    bonusStats.hps = (possibleCasts * (chHeal * gain)) / 180;
+    const chHeal = 5.3193 * player.getStatMultiplier("NOHASTE");
+    const classPassive = 0.96;
+    // Scale window throughput by the increased mana efficiency to factor that you wouldn't be casting these CH originally
+    const manaEfficency = 0.6; 
+
+    bonusStats.hps = (possibleCasts * chHeal * manaEfficency * classPassive) / 180;
   } else if (effectName === EARTHEN_HARMONY) {
     /**
      * if earth shield target is below 75%, earth shield heals 150% more
      */
-    const thisSpellpower = 0.438 * 1.5;
-    const assumedEfficiency = 0.4;
-    bonusStats.hps = (thisSpellpower * player.getStatMultiplier("NOHASTE") * (player.getFightLength(contentType) / 3) * assumedEfficiency) / player.getFightLength(contentType);
+    const oneEarthenHarmonyProc = 0.438 * 1.5;
+    const assumedEfficiency = contentType == "Raid" ? 0.1 : 0.3; // Percentage of activations that are below HP threshold
+    bonusStats.hps = oneEarthenHarmonyProc * player.getStatMultiplier("NOHASTE") * assumedEfficiency / 3;
   } else if (effectName === JONATS) {
     /**
      * hw hs buff the heal of your next ch by x%, stacking up to 5
@@ -110,17 +113,43 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
 
     // TODO: Implement an expected casts
     const chHPS = player.getSpellHPS(IDCHAINHEAL, contentType);
-    const triggerCasts = player.getSpellCasts(IDHEALINGWAVE, contentType) + player.getSpellCasts(IDHEALINGSURGE, contentType);
-    const chCasts = player.getSpellCasts(IDCHAINHEAL, contentType);
+    let triggerCasts = 0;
+    if (player.getSpellCasts(IDHEALINGWAVE, contentType)) triggerCasts += player.getSpellCasts(IDHEALINGWAVE, contentType);
+    if (player.getSpellCasts(IDHEALINGSURGE, contentType)) triggerCasts += player.getSpellCasts(IDHEALINGSURGE, contentType);
     
-    // This still says coming soon, I'm assuming one of the values above is not a number.
-    if (chCasts > 0 && triggerCasts > 0 && chHPS > 0) {
-      const ratio = Math.min(Math.max(triggerCasts / chCasts, 0.01), 5);
-      //debug && console.log(JONATS, chHPS, triggerCasts, chCasts, ratio);
-      bonusStats.hps = chHPS * (ratio / 10); // Was 5, should be 10 - if ratio of chain heal to healing wave is 5 to 1, increase by 50%
-    } else {
-      bonusStats.hps = 0; 
+    // Calculate number of bonus riptides and healing wave casts from Primordial Wave
+    if (player.getCovenant() === "necrolord"){
+      const pwavePerMinute = (60 / 45) * 1.34; // TODO: Implement conduit properly, currently this is just 278
+      const avgRiptides = 4;
+      let waveCasts = 0; 
+      
+      if (player.getSpellCasts(IDPRIMORDIALWAVE, contentType)) waveCasts = player.getSpellCasts(IDPRIMORDIALWAVE, contentType);
+        
+      if (pwavePerMinute > waveCasts) {
+        triggerCasts += pwavePerMinute * avgRiptides;
+      } else {
+        triggerCasts += player.getSpellCasts(IDPRIMORDIALWAVE, contentType) * avgRiptides;
+      }
     }
+    
+
+    const chCasts = player.getSpellCasts(IDCHAINHEAL, contentType);
+    const ratio = Math.min(Math.max(triggerCasts / chCasts, 0.01), 5);
+    
+    // If neither are true return 0;
+    bonusStats.hps = 0;
+
+    // TODO: Support Deluge, assuming unleash life.
+    const chainMultiplier = 1 + 0.7 + 0.49 + 0.343; // TODO: Support High Tide
+    const unleashLifeMulti = 1.35; 
+    const oneChainHeal = 2.1 * player.getStatMultiplier("NOHASTE") * chainMultiplier * unleashLifeMulti; 
+    // Assume all stacks are used
+    bonusStats.hps = (triggerCasts * 0.1 * oneChainHeal) / player.getFightLength(contentType);
+
+    // If somehow this is bigger than the above, show it.
+    if (bonusStats.hps < chHPS * (ratio / 10)) {
+      bonusStats.hps = chHPS * (ratio / 10); 
+    } 
   } else if (effectName === "Elemental Conduit") {
     // Apply riptide to 5 targets every time you Chain Harvest
     const chPerMinute = 60 / (90 - (6 * 5 * (1 - player.getStatPerc("Crit") + 0.15))); // TODO: Implement conduit properly, currently this is just 278
