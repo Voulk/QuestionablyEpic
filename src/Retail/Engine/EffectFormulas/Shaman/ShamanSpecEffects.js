@@ -178,11 +178,15 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
   } else if (effectName === "Seeds of Rampant Growth") {
     const targets = contentType == "Raid" ? 20 : 5;
     const httHealing = 0.35 * player.getStatMultiplier("ALL") * 5; // Ticks every 2 seconds, scaled by haste
+    // Heavy Rainfall in raid
+    // Assume not quite perfect casts / a bit of overhealing
+    // SP * targets * hits * casts * multi * bonus
+    const rainHealing = contentType == "Raid" ? 0.265 * 6 * 5 * 2 * player.getStatMultiplier("ALL") * 1.25 : 0; 
 
     const baseCooldown = 144; // Factoring conduit - 36 seconds
     const effectiveCD = 144 - (7 * 5);
 
-    const hpsDueToCDR = (httHealing * targets) / effectiveCD - (httHealing * targets) / baseCooldown;
+    const hpsDueToCDR = ((httHealing * targets) + rainHealing) / effectiveCD - ((httHealing * targets) + rainHealing) / baseCooldown;
     const hpsDueToCrit = player.getHPS() * convertPPMToUptime(60 / effectiveCD, 15) * 7 * 0.04;
 
     bonusStats.hps = hpsDueToCDR * 0.6 + hpsDueToCrit; // Overhealing factor
