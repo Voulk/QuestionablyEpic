@@ -1930,7 +1930,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
         en: {
           name: "Elemental Conduit",
           slot: "Chest, Wrist",
-          desc: "Up to 5 friendly targets healed by Chain Harvest have Riptide applied to them. Up to 5 enemy targets damaged by Chain Harvest have Flame Shock applied to them.",
+          desc: "Up to 5 friendly targets healed by Chain Harvest have Riptide applied to them. Up to 5 enemy targets damaged by Chain Harvest have Flame Shock applied to them. Flame Shock critical strikes reduce the cooldown of Chain Harvest by 1.0 sec.",
           droploc: "Venthyr Renown 48",
           covenant: "Venthyr",
         },

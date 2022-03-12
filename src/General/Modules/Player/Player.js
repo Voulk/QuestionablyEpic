@@ -358,8 +358,8 @@ class Player {
       // Returns a multiplier that includes raw intellect.
       mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Versatility") * this.getStatPerc("Mastery") * this.activeStats.intellect;
     } else if (flag === "NOHASTE") {
-      // Returns a multiplier that includes raw intellect.
-      mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Versatility") * this.getStatPerc("Mastery") * this.activeStats.intellect;
+      // Returns a multiplier that includes secondaries excluding haste, and raw intellect.
+      mult = this.getStatPerc("Crit") * this.getStatPerc("Versatility") * this.getStatPerc("Mastery") * this.activeStats.intellect;
     } else if (flag === "ALLSEC") {
       // Returns a multiplier that includes all secondaries but NOT intellect.
       mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Versatility") * this.getStatPerc("Mastery");
@@ -367,7 +367,7 @@ class Player {
       // Returns a multiplier of Haste / Vers / Crit.
       mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Versatility");
     } else if (flag === "CRITVERS") {
-      // Returns a multiplier that includes raw intellect.
+      // Returns a multiplier of Vers / Crit.
       mult = this.getStatPerc("Crit") * this.getStatPerc("Versatility");
     } else {
       // Our multiplier consists of whatever is in the stat list array.

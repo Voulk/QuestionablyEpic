@@ -151,10 +151,30 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
       bonusStats.hps = chHPS * (ratio / 10); 
     } 
   } else if (effectName === "Elemental Conduit") {
-    // Apply riptide to 5 targets every time you Chain Harvest
-    const chPerMinute = 60 / (90 - (6 * 5 * (1 - player.getStatPerc("Crit") + 0.15))); // TODO: Implement conduit properly, currently this is just 278
-    const oneRiptide = 1.7 * player.getStatMultiplier("NOHASTE") + (18 / 3) * 0.22 * player.getStatMultiplier("ALL"); // todo torrent
-    bonusStats.hps = (oneRiptide * 0.96 * chPerMinute * 5) / 60; // Added spec aura -4%
+    // Up to 5 friendly targets healed by Chain Harvest will have Riptide cast on them. Up to 5 enemy targets damaged by Chain Harvest will have Flame Shock cast on them. 
+    // Flame Shock critical strikes reduce the cooldown of Chain Harvest by 1.0 sec.
+    const targets = contentType == "Raid" ? 6 : 8;
+    const chCooldown = 90 - (targets * 5 * (player.getStatPerc("Crit") + 0.15 - 1)); // TODO: Implement conduit properly, currently this is just 278
+
+    const flameshockUptime = 0.65; // TODO: Get better log data, probably higher in dungeons, but then targets might be lower in dungeons too.
+    const flameshockCDR = 2 / player.getStatPerc("Haste") * (player.getStatPerc("Crit") - 1) * flameshockUptime; // CDR per second
+    const flameshockTargets = contentType == "Raid" ? 1 : 5;
+
+    // Get effective CD
+    let effectiveCD = chCooldown;
+    for (var i = 0; i < flameshockTargets; i += 1)
+    {
+      effectiveCD -= flameshockCDR * effectiveCD;
+    }
+    effectiveCD = (effectiveCD + chCooldown) / 2;
+
+    // One cast, includes core passive
+    const shamanCorePassive = 0.96; // Same multi for both Riptide and Chain Harvest
+    const oneChainHarvest = 3.15 * player.getStatMultiplier("NOHASTE") * 5 * shamanCorePassive; // todo Unleash life
+    const hpsDueToCDR = oneChainHarvest / effectiveCD - oneChainHarvest / chCooldown;
+    
+    const oneRiptide = 1.7 * player.getStatMultiplier("NOHASTE") + (18 / 3) * 0.22 * player.getStatMultiplier("ALL")  * shamanCorePassive; // todo torrent
+    bonusStats.hps = (oneRiptide * 5 / effectiveCD) + hpsDueToCDR; 
   } else if (effectName === "Raging Vesper Vortex") {
     // Heal when 3 charges used, healing is spread between targets so shouldn't be wasted.
     const vtPerMinute = 60 / 60;
