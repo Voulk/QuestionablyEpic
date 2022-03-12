@@ -156,12 +156,13 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     const targets = contentType == "Raid" ? 6 : 8;
     const chCooldown = 90 - (targets * 5 * (player.getStatPerc("Crit") + 0.15 - 1)); // TODO: Implement conduit properly, currently this is just 278
 
-    const flameshockUptime = 0.65; // TODO: Get better log data, probably higher in dungeons, but then targets might be lower in dungeons too.
+    const flameshockUptime = contentType == "Raid" ? 0.7 : 0.95; // TODO: Get better log data
     const flameshockCDR = 2 / player.getStatPerc("Haste") * (player.getStatPerc("Crit") - 1) * flameshockUptime; // CDR per second
-    const flameshockTargets = contentType == "Raid" ? 1 : 5;
+    const fsDungeonAppliedCHCDR = contentType == "Raid" ? 0 : flameshockCDR * 18 * 5;
+    const flameshockTargets = contentType == "Raid" ? 1 : 2; // Can apply up to 3 normally, but typically will be less
 
     // Get effective CD
-    let effectiveCD = chCooldown;
+    let effectiveCD = chCooldown - fsDungeonAppliedCHCDR;
     for (var i = 0; i < flameshockTargets; i += 1)
     {
       effectiveCD -= flameshockCDR * effectiveCD;
@@ -174,7 +175,10 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     const hpsDueToCDR = oneChainHarvest / effectiveCD - oneChainHarvest / chCooldown;
     
     const oneRiptide = 1.7 * player.getStatMultiplier("NOHASTE") + (18 / 3) * 0.22 * player.getStatMultiplier("ALL")  * shamanCorePassive; // todo torrent
-    bonusStats.hps = (oneRiptide * 5 / effectiveCD) + hpsDueToCDR; 
+    // Dungeons overridden hots. 
+    const activeRiptideHeal = (((18 + 12 + 6) - 5.4 * 3) / 3) * 0.22 * player.getStatMultiplier("ALL")  * shamanCorePassive;
+    const rtLostHeal = contentType == "Raid" ? 3 / 20 * activeRiptideHeal : activeRiptideHeal; 
+    bonusStats.hps = (oneRiptide * 5 / effectiveCD) + hpsDueToCDR - rtLostHeal / effectiveCD; 
   } else if (effectName === "Raging Vesper Vortex") {
     // Heal when 3 charges used, healing is spread between targets so shouldn't be wasted.
     const vtPerMinute = 60 / 60;
