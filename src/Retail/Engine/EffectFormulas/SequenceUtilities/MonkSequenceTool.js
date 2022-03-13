@@ -41,11 +41,13 @@ getHealingMult (state, spell) {
  * @param {object} spellDB The spell being cast. Spell data is pulled from relevant class DB. 
  * @returns The updated state.
  */
-applyClassEffects (state, legendaries = []) {
+applyLoadout (state, player) {
+    super.applyLoadout(state, player);
+
     // == Legendaries ==
     // -- Invoker's Delight --
     // 33% haste for 20s when summoning celestial
-    if (legendaries.includes("Invoker's Delight")) 
+    if (state.settings.legendaries.includes("Invoker's Delight")) 
     {
         spellDB['Invoke Chiji'].push({
             type: "buff",
@@ -66,12 +68,46 @@ applyClassEffects (state, legendaries = []) {
 
     // -- Ancient Teachings of the Monastery (AtotM) --
     // Apply a buff that is then checked against when running sequence
-    if (legendaries.includes("Ancient Teachings of the Monastery"))
+    if (state.settings.legendaries.includes("Ancient Teachings of the Monastery"))
     {
-        state.activeBuffs.push({name: "Ancient Teachings of the Monastery", buffType: "special", expiration: 999});
+        state.activeBuffs.push({name: "Ancient Teachings of the Monastery", buffType: "special", expiration: false});
     }
 
-    return state;
+    // == Soulbinds ==
+    // Apply monk specific factors
+    switch(state.settings.soulbind) {
+        case ("Emeni"):
+            spells['Bonedust Brew'].push({
+                name: "Lead by Example",
+                type: "buff",
+                buffType: 'statsMult',
+                stat: 'intellect',
+                value: 1.13,
+                buffDuration: 10,
+            });
+            break;
+        case ("Dreamweaver"):
+            spells['Faeline Stomp'].push({
+                type: "buff",
+                buffType: "statsMult",
+                stat: 'haste',
+                value: 1.15,
+                buffDuration: 6,
+            });
+            break;
+        case ("Pelagos"):
+            spells['Weapons of Order'].push({
+                name: "Combat Meditation",
+                type: "buff",
+                buffType: 'stats',
+                stat: 'mastery',
+                value: 315,
+                buffDuration: 32,
+            });
+            break;
+        default: 
+            // If only there was an option of no cov..
+    }
 }
 
 // -------------------------------------------------------

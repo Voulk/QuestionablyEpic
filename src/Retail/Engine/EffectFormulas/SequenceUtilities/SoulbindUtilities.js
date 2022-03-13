@@ -2,12 +2,12 @@
  * This function handles all of our effects that might change our spell database before the ramps begin.
  * It includes conduits, legendaries, and some trinket effects.
  * 
- * @param {*} spells Our spell database
- * @param {*} soulbind Settings including legendaries, trinkets, soulbinds and anything that falls out of any other category.
  * @param {object} state The state for tracking information, includes the spec
+ * @param {*} spellDB Our spell database
+ * @param {*} soulbind Settings including legendaries, trinkets, soulbinds and anything that falls out of any other category.
  * @returns An updated spell database with any of the above changes made.
  */
-export const applySoulbind = (spells, soulbind, state) => {
+export const applyBaseSoulbind = (state, sequenceTool, soulbind) => {
     switch(soulbind) {
         case ("Dreamweaver"):
             // Field of Blossoms

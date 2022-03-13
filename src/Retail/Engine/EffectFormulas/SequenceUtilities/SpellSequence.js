@@ -46,19 +46,25 @@ export const startSequence = (sequenceSettings = {}, playerInfo = null, spec = "
     // Setup sequenceTool based on spec.
     switch(player.spec) {
         case ("Holy Paladin"):
+            notImplemented();
             break;
         case ("Restoration Druid"):
+            notImplemented();
             break;
         case ("Restoration Shaman"):
+            notImplemented();
             break;
         case ("Mistweaver Monk"):
             sequenceTool = new MonkSequenceTool();
             break;
         case ("Discipline Priest"):
+            notImplemented();
             break;
         case ("Holy Priest"):
+            notImplemented();
             break;
         default: 
+            notImplemented();
             // Return an error.
     }
 
@@ -106,12 +112,20 @@ const getCurrentStats = (statArray, buffs) => {
     });
 
     statArray = applyDiminishingReturns(statArray);
+
+    // Multiplicative buffs
     const multBuffs = buffs.filter(function (buff) {return buff.buffType === "statsMult"});
     multBuffs.forEach(buff => {
         // Multiplicative Haste buffs need some extra code. 
         if (buff.stat === "haste") statArray["haste"] = ((statArray[buff.stat] / 32 / 100 + 1 * buff.value)-1) * 32 * 100
         else statArray[buff.stat] = (statArray[buff.stat] || 0) * buff.value;
         
+    });
+
+    // Additive buffs, eg 0.15 crit
+    const rawBuffs = buffs.filter(function (buff) {return buff.buffType === "statsRaw"});
+    rawBuffs.forEach(buff => {
+        statArray[buff.stat] += buff.value;
     });
 
     return statArray;
@@ -250,7 +264,7 @@ export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) =
         })
 
         // Clear slate of old buffs.
-        state.activeBuffs = state.activeBuffs.filter(function (buff) {return state.t < buff.expiration});
+        state.activeBuffs = state.activeBuffs.filter(function (buff) {return state.t < buff.expiration || buff.expiration === false});
 
         // This is a check of the current time stamp against the tick our GCD ends and we can begin our queued spell.
         // It'll also auto-cast Ascended Eruption if Boon expired.
@@ -315,8 +329,6 @@ export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) =
                     
                     spell.runFunc(state);
                 }
-   
-
             });   
 
             // This represents the next timestamp we are able to cast a spell. This is equal to whatever is higher of a spells cast time or the GCD.

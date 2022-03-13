@@ -109,25 +109,25 @@ checkBuffActive (buffs, buffName) {
  * @returns An updated state
  */
  applyLoadout (state, player) {
-    /*switch(soulbind) {
+    switch(state.settings.soulbind) {
         case ("Dreamweaver"):
-            state.activeBuffs.push({name: "Empowered Chrysalis", expiration: 999, buffType: "special", value: 0.1});
-            state.activeBuffs.push({name: "Dream Delver", expiration: 999, buffType: "special", value: 1.03});
+            state.activeBuffs.push({name: "Empowered Chrysalis", expiration: false, buffType: "special", value: 0.15}); // 15% overhealing
+            state.activeBuffs.push({name: "Dream Delver", expiration: false, buffType: "special", value: 1.03});
             break;
-        case ("Restoration Druid"):
+        case ("Theotar"):
+            state.activeBuffs.push({name: "Token of Appreciation", expiration: false, buffType: "special", value: 1.025}); // 4% is overvalued wwhen factoring in tier and "high HPS sim"
+            state.activeBuffs.push({name: "Tea Time", expiration: false, buffType: "special", value: 1.025}); // Int doesn't scale with tier so not 3%, other stats scale worse
             break;
-        case ("Restoration Shaman"):
+        case ("Kleia"):
+            state.activeBuffs.push({name: "Pointed Courage", expiration: false, buffType: "statsRaw", value: 0.06, stat: 'crit'});
+            state.activeBuffs.push({name: "Light the Path", expiration: false, buffType: "statsRaw", value: 0.05, stat: 'crit'});
             break;
-        case ("Mistweaver Monk"):
-            spellDB = MONKSPELLS;
-            break;
-        case ("Discipline Priest"):
-            break;
-        case ("Holy Priest"):
+        case ("Pelagos"):
+            state.activeBuffs.push({name: "Newfound Resolve", expiration: false, buffType: "statsMult", value: 1 + convertPPMToUptime(1/1.5, 15) * 0.1, stat: 'intellect'});
             break;
         default: 
-            // Return an error.
-    }*/
+            // If only there was an option of no cov..
+    }
 }
 
 /**
@@ -189,6 +189,6 @@ getReport (state, sequenceSettings) {
     state.totalHealing = Math.round(totalHealing)
     state.totalDamage = Math.round(totalDamage)
 
-    return "Test log: " + state.hpm;
+    return "Test log: " + totalHealing;
 }
 }
