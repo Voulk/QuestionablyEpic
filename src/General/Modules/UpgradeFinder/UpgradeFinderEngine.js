@@ -114,7 +114,7 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
   let itemLevel = 0;
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
-  if (instanceID === 1195) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]]; // 1195 is Sepulcher gear.
+  if (instanceID === 1195 || instanceID === -22) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]]; // 1195 is Sepulcher gear.
 
   // World Bosses
   else if (instanceID === 1192 && bossID === 2456) itemLevel = 233; // The 9.1 world boss drops 233 gear.
@@ -160,7 +160,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
       const itemSources = rawItem.sources;
       const primarySource = itemSources[0].instanceId
-      const isRaid = (primarySource === 1195)
+      const isRaid = (primarySource === 1195 || primarySource === -22)
 
       if (isRaid) { // Sepulcher
         for (var x = 0; x < playerSettings.raid.length; x++) {
@@ -191,7 +191,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[2]);
         itemPoss.push(item);
       } */
-      else if (primarySource !== 1190 && primarySource !== 1193) { // Exclude Nathria gear.
+      else if (primarySource !== 1190 && primarySource !== 1193 && primarySource !== -18) { // Exclude Nathria gear.
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0]);
 

@@ -106,6 +106,10 @@ export default function ItemCard(props) {
     if (item.source.instanceId === -16 || item.source.encounterId === -16) {
       return t("PvPCurrency.-16");
     }
+    /* ----------------------- Creation Catalyst --------------------------------- */
+    if (item.source.instanceId === -22) {
+      return t("CreationCatalyst");
+    }
     /* -------------------------------- Conquest -------------------------------- */
     if (item.source.instanceId === -17 || item.source.encounterId === -17) {
       return t("PvPCurrency.-17");

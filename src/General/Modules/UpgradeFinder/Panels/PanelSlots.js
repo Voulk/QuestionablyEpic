@@ -68,10 +68,13 @@ const useStyles = makeStyles(() => ({
 export default function SlotsContainer(props) {
   const classes = useStyles();
   const { t } = useTranslation();
-  const itemList = props.itemList;
+  let itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
 
   itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
+
+  // Filter out Legion TW items outside of Legion TW week.
+  itemList = itemList.filter(item => !([707, 716, 740, 762, 767, 800].includes(item.source.encounterId)))
 
   const slotList = [
     { slot: "Head", label: "head" },
