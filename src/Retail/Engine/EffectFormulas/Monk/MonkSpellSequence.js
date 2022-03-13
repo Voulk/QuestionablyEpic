@@ -634,7 +634,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits, runcou
     const totalHealing = sumValues(state.healingDone);
     const totalDamage = sumValues(state.damageDone);
     const manaSpent = state.manaSpent * 50000 / 100
-
+    console.log(state.healingDone);
 
     state.hpm = Math.round(totalHealing / manaSpent*100)/100; // Round to 2dp
     state.hps = Math.round(totalHealing / state.sequenceLength * 100)/100;  // Round to 2dp

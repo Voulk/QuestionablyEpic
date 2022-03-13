@@ -134,10 +134,10 @@ describe("Test Sequences", () => {
         sequenceSettings.soulbind = "Kleia";
         sequenceSettings.legendaries = ["Ancient Teachings of the Monastery"];
         sequenceSettings.misc = ["2T28"];
-        covenants["Base"].push(startSequence(sequenceSettings, player, "Mistweaver Monk", activeStats3));
+        covenants["Base"].push(startSequence(sequenceSettings, "Mistweaver Monk", activeStats3));
+        console.log(covenants["Base"][0].report);
         covenants["Kyrian"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Kyrian", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28"]}, {}))
-
-        console.log(covenants["Base"][0].report + " |||| " + covenants["Kyrian"][0].totalHealing);
+        console.log(covenants["Kyrian"][0].totalHealing);
         /*
         //covenants["Base"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "None", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
         //covenants["Base"].push(runCastSequence(revivaltest, activeStats3, {"DefaultLoadout": true, "covenant": "None", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))

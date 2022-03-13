@@ -286,13 +286,13 @@ export const MONKSPELLS = {
             const teachingsStacks = activeBuffs.filter(function (buff) {return buff.name === "Teachings of the Monastery"}).length;
             if (teachingsStacks === 0) {
                 // Add buff
-                activeBuffs.push({name: "Teachings of the Monastery", buffType: "special", stacks: 1, expiration: 30})
+                activeBuffs.push({name: "Teachings of the Monastery", buffType: "special", stacks: 1, expiration: state.t + 20})
             }
             else {
                 // Add stack of buff.
                 const buff = activeBuffs.filter(buff => buff.name === "Teachings of the Monastery")[0]
                 buff.stacks = Math.min(buff.stacks + 1, 3);
-                buff.expiration = 20;
+                buff.expiration = state.t + 20;
             }
         }
     },
@@ -354,13 +354,13 @@ export const MONKSPELLS = {
                     const chijiStacks = activeBuffs.filter(function (buff) {return buff.name === "Chiji Stacks"}).length;
                     if (chijiStacks === 0) {
                         // Add buff
-                        activeBuffs.push({name: "Chiji Stacks", buffType: "special", stacks: 1, expiration: 20})
+                        activeBuffs.push({name: "Chiji Stacks", buffType: "special", stacks: 1, expiration: state.t + 20})
                     }
                     else {
                         // Add stack of buff.
                         const buff = activeBuffs.filter(buff => buff.name === "Chiji Stacks")[0]
                         buff.stacks = Math.min(buff.stacks + 1, 3);
-                        buff.expiration = 20;
+                        buff.expiration = state.t + 20;
                     }
                 }
             }
@@ -463,13 +463,13 @@ export const MONKSPELLS = {
                 const chijiStacks = activeBuffs.filter(function (buff) {return buff.name === "Chiji Stacks"}).length;
                 if (chijiStacks === 0) {
                     // Add buff
-                    activeBuffs.push({name: "Chiji Stacks", buffType: "special", stacks: 1, expiration: 20})
+                    activeBuffs.push({name: "Chiji Stacks", buffType: "special", stacks: 1, expiration: state.t + 20})
                 }
                 else {
                     // Add stack of buff.
                     const buff = activeBuffs.filter(buff => buff.name === "Chiji Stacks")[0]
                     buff.stacks = Math.min(buff.stacks + 1, 3);
-                    buff.expiration = 20;
+                    buff.expiration = state.t + 20;
                 }
             }
         }

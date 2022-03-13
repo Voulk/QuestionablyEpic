@@ -11,7 +11,6 @@ import Player from "General/Modules/Player/Player";
 
 // Import tool for each class
 import MonkSequenceTool from "./MonkSequenceTool";
-import { MONKSPELLS } from "../Monk/MistweaverSpellDB";
 
 var sequenceTool = null;
 
@@ -24,27 +23,14 @@ var sequenceTool = null;
  * @param {object} playerInfo Player info to be initialized when starting the sequence.
  * @param {object} spec Spec in plain text, if no player provided.
 */
-export const startSequence = (sequenceSettings = {}, playerInfo = null, spec = "NONE", stats = {}) => {
-    // Get player info from required log
-    let player = playerInfo; 
+export const startSequence = (sequenceSettings = {}, spec = "NONE", stats = {}) => {
     let extraSpellDB = null;
 
     // Process sequence settings
     if (sequenceSettings.runCount == null) sequenceSettings.runCount = 1;
 
-    // Else setup default player
-    if (player == null) {
-        player = new Player("Test", spec, 99, "NA", "Stonemaul", "Night Elf");
-        if (stats.length() > 0)
-        {
-            player.activeStats = stats;
-        }
-        if (sequenceSettings.trinket1) player.addActiveItem(sequenceSettings.trinket1);
-        if (sequenceSettings.trinket2) player.addActiveItem(sequenceSettings.trinket2);
-    }   
-
     // Setup sequenceTool based on spec.
-    switch(player.spec) {
+    switch(spec) {
         case ("Holy Paladin"):
             notImplemented();
             break;
@@ -69,19 +55,19 @@ export const startSequence = (sequenceSettings = {}, playerInfo = null, spec = "
     }
 
     // Setup the state defaults
-    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: sequenceSettings}
+    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: sequenceSettings, tierHealingDone: {}}
 
     // Setup initial info based on soulbind, trinkets
-    sequenceTool.applyLoadout(state, player);
+    state = sequenceTool.applyLoadout(state);
+
     //player.getActiveItems("Trinket").forEach(trinket => {
     //    sequenceTool.applyTrinkets(state, trinket);
     //});
-    //sequenceTool.applyClassEffects(state);
     //sequenceTool.applyConduits(state);
 
     // Once all relevant setup is completed, then iterate through sequence as required
     if (sequenceSettings.presetSequence) {
-        runFixedCastSequence(state, player.activeStats, sequenceSettings.presetSequence); // Run a preset set of spells, suitable for Disc ramp for example
+        state = runFixedCastSequence(state, stats, sequenceSettings.presetSequence); // Run a preset set of spells, suitable for Disc ramp for example
     }
     else {
         //runDynamicSequence(sequenceSettings) // TODO: Implement
@@ -125,7 +111,10 @@ const getCurrentStats = (statArray, buffs) => {
     // Additive buffs, eg 0.15 crit
     const rawBuffs = buffs.filter(function (buff) {return buff.buffType === "statsRaw"});
     rawBuffs.forEach(buff => {
-        statArray[buff.stat] += buff.value;
+        if (buff.stat === "haste") statArray[buff.stat] += buff.value * 32; // This shouldn't be used but for completion.. potentially this should be merged in and other formulas used within the above
+        if (buff.stat === "crit") statArray[buff.stat] += buff.value * 35;
+        if (buff.stat === "versatility") statArray[buff.stat] += buff.value * 40; 
+        if (buff.stat === "mastery") statArray[buff.stat] += buff.value * sequenceTool.getMasteryScaling();
     });
 
     return statArray;
@@ -143,7 +132,7 @@ const getCurrentStats = (statArray, buffs) => {
 
 /**
  * Get haste multiplier
- * @param {object} stats The current stats of the sim
+ * @param {object} stats The current stats of the sim - this is after diminishing returns applied
  * @returns Haste multi (1.x)
  */
 export const getHaste = (stats) => {  
@@ -188,20 +177,23 @@ export const runDamage = (state, spell) => {
 
 /**
  * Get a spells healing.
- * @param {object} state The state for tracking information 
- * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
+ * @param {} state The state for tracking information 
+ * @param {} spell The spell being cast. Spell data is pulled from relevant class DB. 
+ * @param {} spellName The identifier for the spell
+ * @param {} specialMult Special multiplier, for partial ticks
  */
- export const runHeal = (state, spell) => {    
+ export const runHeal = (state, spell, spellName, specialMult = 1) => {    
     // Multipliers, including covenant, conduit, tier etc
     // Additions, eg flat healing (Monk T28 4pc) 
-    const healingMult = sequenceTool.getHealingMult(state, spell);
-    const healingAddition = sequenceTool.getHealingAddition(state, spell);
+    const healingMult = sequenceTool.getHealingMult(state, spell, spellName);
+    const healingAddition = sequenceTool.getHealingAddition(state, spell, spellName);
 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.softCap || 1) * spell.targets : spell.targets || 1;
-    const healingVal = (getSpellRaw(spell, state.currentStats) + healingAddition) * (1 - spell.overheal) * healingMult * targetMult;
+    const healingVal = (getSpellRaw(spell, state.currentStats) + healingAddition) * (1 - spell.overheal) * healingMult * targetMult * specialMult;
+    state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
 
     // Run class specific heal processing
-    sequenceTool.getSpecialHealing(state, spell, healingVal);
+    sequenceTool.getSpecialHealing(state, spell, spellName, healingVal);
 }
 
 /**
@@ -232,7 +224,8 @@ export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) =
         
         if (healBuffs.length > 0) {
             healBuffs.forEach((buff) => {
-                state.currentStats = getCurrentStats(baseStats, state.activeBuffs)
+                let currentStats = {...baseStats};
+                state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
 
                 if (buff.buffType === "heal") {
                     const spell = buff.attSpell;
@@ -248,7 +241,7 @@ export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) =
         }
 
         // Handle removing of expiring hots
-        const expiringHots = state.activeBuffs.filter(function (buff) {return buff.buffType === "heal" && state.t >= buff.expiration})
+        const expiringHots = state.activeBuffs.filter(function (buff) {return buff.buffType === "heal" && state.t >= buff.expiration && buff.expiration != false})
         expiringHots.forEach(buff => {
             const tickRate = buff.tickRate / getHaste(state.currentStats)
             const partialTickPercentage = (buff.next - state.t) / tickRate;
@@ -257,7 +250,7 @@ export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) =
         })
 
         // Handle activating any effects that end on expiry (Eg Lifebloom)
-        const expiringActivation = state.activeBuffs.filter(function (buff) {return buff.buffType === "expiry" && state.t >= buff.expiration})
+        const expiringActivation = state.activeBuffs.filter(function (buff) {return buff.buffType === "expiry" && state.t >= buff.expiration && buff.expiration != false})
         expiringActivation.forEach(buff => {
             const func = buff.attFunction;
             func(state);
@@ -274,7 +267,8 @@ export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) =
             
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
-            state.currentStats = getCurrentStats(baseStats, state.activeBuffs);
+            let currentStats = {...baseStats};
+            state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
             state.manaSpent += (fullSpell[0].cost * state.currentStats.manaMod) || 0;
 
             // We'll iterate through the different effects the spell has.
@@ -367,26 +361,7 @@ const printDamage = (damageDone, sumValues, duration, manaSpent) => {
     }
     console.log(sources);
     console.log("DPS: " + totalDamage / duration + ". DPM: " + totalDamage / manaSpent)
-}
+}*/
 
-// This is a boilerplate function that'll let us clone our spell database to avoid making permanent changes.
-const deepCopyFunction = (inObject) => {
-    let outObject, value, key;
-  
-    if (typeof inObject !== "object" || inObject === null) {
-      return inObject; // Return the value if inObject is not an object
-    }
-  
-    // Create an array or object to hold the values
-    outObject = Array.isArray(inObject) ? [] : {};
-  
-    for (key in inObject) {
-      value = inObject[key];
-  
-      // Recursively (deep) copy for nested objects, including arrays
-      outObject[key] = deepCopyFunction(value);
-    }
-  
-    return outObject;
-  };*/
+
 

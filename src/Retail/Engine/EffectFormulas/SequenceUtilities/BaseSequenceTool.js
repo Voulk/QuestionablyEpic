@@ -1,12 +1,13 @@
 // Import trinket DB
 //import { TRINKETSDB } from "../Monk/MistweaverSpellDB";
+import { runHeal } from "./SpellSequence";
 
 // Defines all the functions the sequencer uses and all global modifiers
 // This is only for functions that can change based on the class.
 export default class BaseSequenceTool {
 constructor(spellDB = null) { 
     // Set the spellDB for the sequencing tool
-    this.spellDB = spellDB;
+    this.spellDB = this.deepCopyFunction(spellDB);
 }
 
 // -------------------------------------------------------
@@ -17,8 +18,18 @@ constructor(spellDB = null) {
  * @param {object} state The state for tracking information 
  * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
  */
-getHealingMult(state, spell) {
+getHealingMult(state, spell, spellName) {
     let mult = 1;
+
+    const multiplierBuffList = ["Dream Delver", "Token of Appreciation", "Tea Time"];
+
+    multiplierBuffList.forEach(buffName => {
+        if (this.checkBuffActive(state.activeBuffs, buffName)) 
+    {
+        mult *= state.activeBuffs.filter(function (buff) {return buff.name === buffName})[0].value;
+    }
+    });
+
     return mult;
 }
 
@@ -26,7 +37,7 @@ getHealingMult(state, spell) {
  * @param {object} state The state for tracking information 
  * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
  */
-getHealingAddition (state, spell) {
+getHealingAddition (state, spell, spellName) {
     let addition = 0;
     return addition;
 }
@@ -36,9 +47,11 @@ getHealingAddition (state, spell) {
  * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
  * @param {object} value The precalculated healing of the related spell.
  */
-getSpecialHealing (state, spell, value) {
-    // Call specific functions based on the spec
-    // Done within inherited classes.
+getSpecialHealing (state, spell, spellName, value) {
+    if (this.checkBuffActive(state.activeBuffs, "Empowered Chrysalis")) {
+        const chrysalisSize = (value / (1 - spell.overheal) * spell.overheal * 0.1)
+        state.healingDone['Empowered Chrysalis'] = (state.healingDone['Empowered Chrysalis'] || 0) + chrysalisSize;
+    }
 }
 
 // -------------------------------------------------------
@@ -49,7 +62,7 @@ getSpecialHealing (state, spell, value) {
  * @param {object} state The state for tracking information 
  * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
 */
-getDamMult (state, spell) {
+getDamMult (state, spell, spellName) {
     let mult = 1;
     return mult;
 }
@@ -58,7 +71,7 @@ getDamMult (state, spell) {
  * @param {object} state The state for tracking information 
  * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
 */
-getDamAddition (state, spell) {
+getDamAddition (state, spell, spellName) {
     let addition = 0;
     return addition;
 }
@@ -68,7 +81,7 @@ getDamAddition (state, spell) {
  * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
  * @param {object} value The precalculated damage of the related spell. 
  */
-getSpecialDamage (state, spell, value) {
+getSpecialDamage (state, spell, spellName, value) {
     
 }
 
@@ -105,22 +118,22 @@ checkBuffActive (buffs, buffName) {
  * This function handles all specific updates regarded to specific soulbinds.
  * 
  * @param {object} state The state for tracking information, includes the spec
- * @param {*} player The player's info, should have soulbinds, legendaries, etc
  * @returns An updated state
  */
- applyLoadout (state, player) {
+applyLoadout (state) {
     switch(state.settings.soulbind) {
         case ("Dreamweaver"):
             state.activeBuffs.push({name: "Empowered Chrysalis", expiration: false, buffType: "special", value: 0.15}); // 15% overhealing
             state.activeBuffs.push({name: "Dream Delver", expiration: false, buffType: "special", value: 1.03});
             break;
-        case ("Theotar"):
+        case ("Theotar"): // TODO: Apply token as hps value instead
             state.activeBuffs.push({name: "Token of Appreciation", expiration: false, buffType: "special", value: 1.025}); // 4% is overvalued wwhen factoring in tier and "high HPS sim"
             state.activeBuffs.push({name: "Tea Time", expiration: false, buffType: "special", value: 1.025}); // Int doesn't scale with tier so not 3%, other stats scale worse
             break;
         case ("Kleia"):
-            state.activeBuffs.push({name: "Pointed Courage", expiration: false, buffType: "statsRaw", value: 0.06, stat: 'crit'});
-            state.activeBuffs.push({name: "Light the Path", expiration: false, buffType: "statsRaw", value: 0.05, stat: 'crit'});
+            //state.activeBuffs.push({name: "Pointed Courage", expiration: false, buffType: "statsRaw", value: 6, stat: 'crit'});
+            //state.activeBuffs.push({name: "Light the Path", expiration: false, buffType: "statsRaw", value: 5, stat: 'crit'});
+            state.activeBuffs.push({name: "Kleia", expiration: false, buffType: "stats", value: 385, stat: 'crit'});
             break;
         case ("Pelagos"):
             state.activeBuffs.push({name: "Newfound Resolve", expiration: false, buffType: "statsMult", value: 1 + convertPPMToUptime(1/1.5, 15) * 0.1, stat: 'intellect'});
@@ -128,14 +141,7 @@ checkBuffActive (buffs, buffName) {
         default: 
             // If only there was an option of no cov..
     }
-}
 
-/**
- * Updates the state to apply any persistant effects. 
- * @param {object} state The state for tracking information 
- * @returns The updated state.
- */
-applyClassEffects (state) {
     return state;
 }
 
@@ -155,16 +161,8 @@ modifySpellDB (spellName, modifier) {
     this.spellDB.concat(extraSpellDB);
 }
 
-/**
- * Get the covenant ability name, used to modify spellDB
- * @param {object} covenant The covenant in question
- */
-getCovenantAbilityName (covenant) {
-    return "NONE";
-}
-
 // -------------------------------------------------------
-// ----         Spell damage calc section         --------
+// ----         Reporting                         --------
 // -------------------------------------------------------
 /**
  * Get the report of summarized info
@@ -172,13 +170,9 @@ getCovenantAbilityName (covenant) {
  * @returns The text report
  */
 getReport (state, sequenceSettings) {
-    const sumValues = obj => {
-        if (Object.values(obj).length > 0) return Object.values(obj).reduce((a, b) => a + b);
-        else return 0;
-    }
     // TODO: Move this into reporting function
-    const totalHealing = sumValues(state.healingDone);
-    const totalDamage = sumValues(state.damageDone);
+    const totalHealing = this.sumValues(state.healingDone);
+    const totalDamage = this.sumValues(state.damageDone);
     const manaSpent = state.manaSpent * 50000 / 100
 
 
@@ -189,6 +183,35 @@ getReport (state, sequenceSettings) {
     state.totalHealing = Math.round(totalHealing)
     state.totalDamage = Math.round(totalDamage)
 
+    console.log(state.healingDone);
     return "Test log: " + totalHealing;
 }
+
+// Returns summed value
+sumValues (obj) {
+    if (Object.values(obj).length > 0) return Object.values(obj).reduce((a, b) => a + b);
+    else return 0;
+}
+
+// This is a boilerplate function that'll let us clone our spell database to avoid making permanent changes.
+deepCopyFunction = (inObject) => {
+    let outObject, value, key;
+  
+    if (typeof inObject !== "object" || inObject === null) {
+      return inObject; // Return the value if inObject is not an object
+    }
+  
+    // Create an array or object to hold the values
+    outObject = Array.isArray(inObject) ? [] : {};
+  
+    for (key in inObject) {
+      value = inObject[key];
+  
+      // Recursively (deep) copy for nested objects, including arrays
+      outObject[key] = this.deepCopyFunction(value);
+    }
+  
+    return outObject;
+  };
+
 }
