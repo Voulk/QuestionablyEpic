@@ -78,6 +78,10 @@ class Item {
 
   }
 
+  isTierPiece() {
+    return this.setID !== "" && this.slot !== "Trinket"
+  }
+
   addStats(bonus_stats) {
     for (var stat in this.stats) {
       if (stat in bonus_stats) {

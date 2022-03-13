@@ -10,6 +10,40 @@
 export const changeLog = [
   {
     version: "9.2 / 2.5.3",
+    update: 9,
+    date: "13th March",
+    changes: [
+      "Upgrade Finder: A number of missing items will now show up including tier pieces.",
+      "Upgrade Finder: Tazavesh now split into two dungeons.",
+      "Upgrade Finder: Legion items will no longer clog up the slot-by-slot lists.",
+      "Upgrade Finder: Tier pieces will now highlight in yellow to make them easier to spot.",
+      "Renamed a bunch of modules to make them easier to understand.",
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
+    update: 8,
+    date: "10th March (Minor Update)",
+    changes: [
+      "Added effect formulas for Antumbra, Shadow of the Cosmos.",
+      "Bugfix: Paladin tier sets should now be correctly accounted for again",
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
+    update: 7,
+    date: "9th March (Minor Update)",
+    changes: [
+      "Added Disc Priest 2pc.",
+      "Added a label for Tier Pieces to make your collection easier to manage",
+      "MW 2pc now includes additional Rising Mist healing (A ~5% increase in value).",
+      "Bugfix: Orange Mageweave Shirt will no longer import as a Disc legendary.",
+      "Bugfix: Origin will now import with the correct amount of intellect.",
+      "Bugfix: Top Gear will now account for all sources of bonus mana."
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
     update: 6,
     date: "7th March",
     changes: [

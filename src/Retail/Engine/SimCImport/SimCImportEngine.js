@@ -1,4 +1,4 @@
-import { itemDB, tokenDB } from "../../../Databases/ItemDB";
+import { itemDB } from "../../../Databases/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
 import { conduitDB, conduitRanks } from "../../../Databases/ConduitDB";
 import { dominationGemDB } from "../../../Databases/DominationGemDB";
@@ -57,7 +57,7 @@ export function processAllLines(player, contentType, covenant, lines, linkedItem
     // If our line doesn't include an item ID, skip it.
     if (line.includes("id=")) {
       if (line.includes("unknown")) {
-        processToken(line, player, contentType, type, covenant);
+        //processToken(line, player, contentType, type, covenant);
       } else {
         const item = processItem(line, player, contentType, type)
         if (item) player.addActiveItem(item);
@@ -164,7 +164,7 @@ function processToken(line, player, contentType, type, covenant) {
     else if (info.includes("id=")) tokenID = parseInt(info.split("=")[1]);
   }
   // console.log("Creating Token with level" + tokenLevel + ", and ID: " + tokenID);
-  let token = tokenDB[tokenID.toString()];
+  let token = [] //tokenDB[tokenID.toString()];
   tokenLevel = token.itemLevel;
   tokenSlot = token.slotType;
   // Loop through bonus IDs until we find the item level one. Set Token Item Level.
@@ -393,7 +393,8 @@ export function processItem(line, player, contentType, type) {
 
   // Add the new item to our characters item collection.
   if (itemLevel > 60 && itemID !== 0 && getItem(itemID) !== "") {
-    let itemAllocations = Object.keys(specialAllocations).length > 0 ? specialAllocations : getItemAllocations(itemID, missiveStats);
+    let itemAllocations = getItemAllocations(itemID, missiveStats);
+    itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
     let item = new Item(itemID, "", itemSlot, itemSocket || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel, bonusIDS);
     item.vaultItem = type === "Vault";
     item.active = itemEquipped || item.vaultItem;
@@ -461,6 +462,15 @@ function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) 
     bonus_stats[stat_ids[stat]] = allocation;
   });
   return bonus_stats;
+}
+
+// Compiles stats & bonus stats into one array to which we can then apply DR etc.
+function compileStats(stats, bonus_stats) {
+  for (var stat in stats) {
+    stats[stat] += stat in bonus_stats ? bonus_stats[stat] : 0;
+  }
+
+  return stats;
 }
 
 function checkDefaultSocket(id) {

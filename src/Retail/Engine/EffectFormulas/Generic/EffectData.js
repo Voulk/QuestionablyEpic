@@ -95,6 +95,21 @@ export const effectData = [
     },
     {
       /* ---------------------------------------------------------------------------------------------- */
+      /*                                Antumbra (Singularity Supreme)                                  */
+      /* ---------------------------------------------------------------------------------------------- */
+      // Int proc
+      name: "Antumbra, Shadow of the Cosmos",
+      effects: [
+        {
+            coefficient: 0.039516,
+            duration: 15,
+            avgStacks: 12.9, // Disc only 
+            table: -7,
+        },
+      ],
+    },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
       /*                                          Genesis Lathe                                         */
       /* ---------------------------------------------------------------------------------------------- */
       // The effects are similar enough in strength that a different distribution of procs doesn't particularly matter - so long as they are being used.

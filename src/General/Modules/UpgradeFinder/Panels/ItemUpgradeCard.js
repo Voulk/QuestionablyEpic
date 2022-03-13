@@ -11,9 +11,9 @@ const useStyles = makeStyles({
     minWidth: 250,
   },
   dom: {
-    borderColor: "#05d102",
+    borderColor: "#CEB600",
     //backgroundColor: "#515751",
-    borderStyle: "solid",
+    borderStyle: "dashed",
     minWidth: 250,
   },
   downgrade: {
@@ -47,7 +47,7 @@ export default function ItemCard(props) {
   const currentLanguage = i18n.language;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
   const itemDifferential = props.itemDifferential;
-  const hasDom = item.hasDomSocket;
+  const hasDom = item.isTierPiece();
   const gameType = useSelector((state) => state.gameType);
   const wowheadDomain = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
 
@@ -105,6 +105,10 @@ export default function ItemCard(props) {
     /* ---------------------------------- Honor --------------------------------- */
     if (item.source.instanceId === -16 || item.source.encounterId === -16) {
       return t("PvPCurrency.-16");
+    }
+    /* ----------------------- Creation Catalyst --------------------------------- */
+    if (item.source.instanceId === -22) {
+      return t("CreationCatalyst");
     }
     /* -------------------------------- Conquest -------------------------------- */
     if (item.source.instanceId === -17 || item.source.encounterId === -17) {

@@ -64,7 +64,7 @@ class FightAnalysis extends Component {
       /* --- Whether a log has been supplied to the module, hides the chart and data tables if false -- */
       logSupplied: false,
       /* ----------------------------------- Show Cooldowns on Chart ---------------------------------- */
-      customCooldownsOnChart: false,
+      customCooldownsOnChart: "log",
       currentFighttime: null,
       killOrWipe: null,
       showname: false,
@@ -73,7 +73,7 @@ class FightAnalysis extends Component {
       legenddata: [],
       uniqueArrayGuid: [],
       mitigatedChartData: [],
-      chartData: true,
+      chartData: "mitigated",
 
       summedUnmitigatedDamagePerSecond: [],
       /* --------------------------------------- Raid Difficulty -------------------------------------- */
@@ -101,7 +101,7 @@ class FightAnalysis extends Component {
       nextpage: info[0],
       boss: info[2],
       logSupplied: true,
-      customCooldownsOnChart: true,
+      customCooldownsOnChart: "log",
       currentFighttime: info[3],
       killOrWipe: info[4],
       currentBossID: info[5],
@@ -142,7 +142,7 @@ class FightAnalysis extends Component {
 
   handleCustomPlanChange = (plan, currentBossID) => {
     /* ------------------------------- Get List of Plans for the boss ------------------------------- */
-    const bossCooldowns = this.state.cooldownObject.getCooldowns(currentBossID);
+    const bossCooldowns = this.state.cooldownObject.getCooldowns(currentBossID, this.state.currentDifficulty);
     /* --------------------------------------- Set the lected --------------------------------------- */
     const planCooldowns = bossCooldowns[plan];
 
@@ -151,7 +151,7 @@ class FightAnalysis extends Component {
   };
 
   getBossPlanNames = (boss) => {
-    return Object.keys(this.state.cooldownObject.getCooldowns(boss));
+    return Object.keys(this.state.cooldownObject.getCooldowns(boss, this.state.currentDifficulty));
   };
 
   render() {
@@ -296,10 +296,10 @@ class FightAnalysis extends Component {
                                   onChange={(e) => this.customCooldownsOnChart(e.target.value)}
                                   label={"Cooldowns Shown"}
                                 >
-                                  <MenuItem divider value={true}>
+                                  <MenuItem divider value={"log"}>
                                     Log Cooldowns
                                   </MenuItem>
-                                  <MenuItem value={false}>Custom Cooldowns</MenuItem>
+                                  <MenuItem value={"user"}>Custom Cooldowns</MenuItem>
                                 </Select>
                               </FormControl>
                             </Grid>
@@ -308,10 +308,10 @@ class FightAnalysis extends Component {
                               <FormControl style={{ width: 200 }} variant="outlined" size="small">
                                 <InputLabel id="damageType">Damage Type</InputLabel>
                                 <Select key={"damageType"} labelId="damageType" value={this.state.chartData} onChange={(e) => this.changeDataSet(e.target.value)} label={"Damage Type"}>
-                                  <MenuItem divider value={true}>
-                                    Unmitigated Damage
+                                  <MenuItem divider value={"mitigated"}>
+                                    Mitigated Damage
                                   </MenuItem>
-                                  <MenuItem value={false}>Mitigated Damage</MenuItem>
+                                  <MenuItem value={"unmitigated"}>Unmitigated Damage</MenuItem>
                                 </Select>
                               </FormControl>
                             </Grid>
@@ -385,26 +385,26 @@ class FightAnalysis extends Component {
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                     Cooldown Usage Timeline                                     */
                   /* ----------------------------------------------------------------------------------------------  */}
-                  <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
+                  <Grid item xs={12} sm={12} md={12} lg={6} xl={4} padding={1}>
                     <CooldownTimeline data={this.state.Updateddatacasts} />
                   </Grid>
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                     External Usage Timeline                                     */
                   /* ----------------------------------------------------------------------------------------------  */}
-                  <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
+                  <Grid item xs={12} sm={12} md={12} lg={6} xl={4} padding={1}>
                     <ExternalTimeline data={this.state.externalUsageTimelineData} />
                   </Grid>
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                           DTPS Graph                                            */
                   /* ----------------------------------------------------------------------------------------------  */}
-                  <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
+                  {/* <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
                     <Example dataToShow={this.state.chartData} mitigated={this.state.summedMitigationDamagePerSecond} unmitigated={this.state.summedUnmitigatedDamagePerSecond} />
-                  </Grid>
+                  </Grid> */}
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                    Healer Information Cards                                     */
                   /* ----------------------------------------------------------------------------------------------  */}
                   {/* ------------------------------- Stats / Talents / Soulbinds Etc ------------------------------ */}
-                  <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
+                  <Grid item xs={12} sm={12} md={12} lg={6} xl={4} padding={1}>
                     <Paper style={{ padding: 8, marginBottom: 8 }} elevation={0}>
                       <Typography variant="h6" color="primary" style={{ padding: "4px 8px 4px 24px" }}>
                         {/* TODO: Translate */}
@@ -417,9 +417,9 @@ class FightAnalysis extends Component {
 
                   {/* ------------------------------------ Enemy Casts Timeline ------------------------------------ */}
                   {/* --- Not sure if this will be used, but it shows the enemies casts and when might be useful ---  */}
-                  <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
+                  {/* <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
                     <EnemyCastsTimeline data={this.state.enemyCastsTimelineData} />
-                  </Grid>
+                  </Grid> */}
                 </Grid>
               </Grid>
               <Grid item xs={12} style={{ height: 350 }} />

@@ -66,6 +66,10 @@ export default function DungeonHeaderIcons(props) {
   if (props === 13577 || props === 1194 || props === -20) {
     source = TtVM;
   }
+  /* --------------------------------- Tazavesh the Veiled Market Part II --------------------------------- */
+  if (props === 13577 || props === -21) {
+    source = TtVM;
+  }
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                       Legion Timewalking                                       */
