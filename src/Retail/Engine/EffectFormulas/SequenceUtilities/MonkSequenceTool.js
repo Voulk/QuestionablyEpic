@@ -1,11 +1,10 @@
 // Import spell DB
 import { MONKSPELLS } from "../Monk/MistweaverSpellDB";
+import BaseSequenceTool from "./BaseSequenceTool";
 
-export class MonkSequenceTool extends BaseSequenceTool {
+export default class MonkSequenceTool extends BaseSequenceTool {
 constructor() { 
-    
-    // Set the spellDB for the sequencing tool
-    this.spellDB = MONKSPELLS;
+    super(MONKSPELLS); 
 }
 
 // -------------------------------------------------------
@@ -18,8 +17,8 @@ constructor() {
  * @param {*} stats The secondary stats a spell scales with. Pulled from it's SpellDB entry.
  * @returns An effective multiplier. For a spell that scales with both crit and vers this would just be crit x vers.
  */
- static getStatMult = (currentStats, stats) => {
-    let mult = super().getStatMult(currentStats, stats);
+static getStatMult = (currentStats, stats) => {
+    let mult = super.getStatMult(currentStats, stats);
     if (stats.includes("mastery")) mult *= (1.336 + currentStats['mastery'] / 35 * 4.2 / 100);
     return mult;
 }
@@ -33,11 +32,11 @@ constructor() {
  * @param {object} spellDB The spell being cast. Spell data is pulled from relevant class DB. 
  * @returns The updated state.
  */
-applyClassEffects = (state) => {
+applyClassEffects = (state, legendaries = []) => {
     // == Legendaries ==
     // -- Invoker's Delight --
     // 33% haste for 20s when summoning celestial
-    if (settings['legendaries'].includes("Invoker's Delight")) 
+    if (legendaries.includes("Invoker's Delight")) 
     {
         spellDB['Invoke Chiji'].push({
             type: "buff",
@@ -54,6 +53,13 @@ applyClassEffects = (state) => {
             value: 1.33,
             buffDuration: 20,
         });
+    }
+
+    // -- Ancient Teachings of the Monastery (AtotM) --
+    // Apply a buff that is then checked against when running sequence
+    if (legendaries.includes("Ancient Teachings of the Monastery"))
+    {
+        state.activeBuffs.push({name: "Ancient Teachings of the Monastery", buffType: "special", expiration: 999});
     }
 
     return state;

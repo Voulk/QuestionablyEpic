@@ -1,19 +1,21 @@
 const { runCastSequence } = require("Retail/Engine/EffectFormulas/Monk/MonkSpellSequence.js");
+import { startSequence } from "../SequenceUtilities/SpellSequence";
+
 import { getSiTHPS, applyConduit, getFOHealing, getLongCloneHealing } from "./FallenOrderFormulas";
 import Player from "General/Modules/Player/Player";
 
 
 describe("Test Sequences", () => {
-    
-    //const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
-    /*player.activeStats = {
+    /*
+    const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
+    player.activeStats = {
             intellect: 1974,
             haste: 869,
             crit: 445,
             mastery: 451,
             versatility: 528,
             stamina: 1900,
-    } 
+    } */
 
     const activeStats = { // NF Stats
         intellect: 2370,
@@ -121,14 +123,20 @@ describe("Test Sequences", () => {
     const fallenOrderhpmShort = getFOHealing(player) / 1000
     const fallenOrderhpm4pc = (getFOHealing(player4pc) + getLongCloneHealing(player4pc) + venth4pcfobonuspercast)/1000;
     const fallenOrderhpmShort4pc = (getFOHealing(player4pc) + venth4pcfobonuspercastatotm) / 1000
-*/
-
+/*
     test("Legendaries & Soulbinds", () => {
         expect(true).toEqual(true);
-    });
-    /*
+    });*/
+    
     test("Legendaries & Soulbinds", () => {
-        
+        const sequenceSettings = {};
+        sequenceSettings.presetSequence = baseSequence;
+        covenants["Base"].push(startSequence(sequenceSettings, player, "Mistweaver Monk", activeStats3));
+        console.log(covenants["Base"][0].report);
+        //console.log("Base: " + covenants["Base"][0].totalHealing + " (HPM: " + covenants["Base"][0].hpm + "). 4PC Window: " + covenants["Base"][0].total4pcWindow + " (" + Math.round(covenants["Base"][0].total4pcWindow/covenants["Base"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Base"][0].totalDamage);
+
+
+        /*
         //covenants["Base"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "None", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
         //covenants["Base"].push(runCastSequence(revivaltest, activeStats3, {"DefaultLoadout": true, "covenant": "None", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
         //console.log("Base: " + covenants["Base"][0].totalHealing + " (HPM: " + covenants["Base"][0].hpm + "). 4PC Window: " + covenants["Base"][0].total4pcWindow + " (" + Math.round(covenants["Base"][0].total4pcWindow/covenants["Base"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Base"][0].totalDamage);
@@ -596,4 +604,5 @@ describe("Test Sequences", () => {
         
     }) */
 
+})
 })

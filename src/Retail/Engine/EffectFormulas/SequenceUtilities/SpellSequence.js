@@ -22,10 +22,13 @@ var sequenceTool = null;
  * @param {object} playerInfo Player info to be initialized when starting the sequence.
  * @param {object} spec Spec in plain text, if no player provided.
 */
-const startSequence = (sequenceSettings = {}, playerInfo = null, spec = "NONE", stats = {}) => {
+export const startSequence = (sequenceSettings = {}, playerInfo = null, spec = "NONE", stats = {}) => {
     // Get player info from required log
     let player = playerInfo; 
     let extraSpellDB = null;
+
+    // Process sequence settings
+    if (sequenceSettings.runCount == null) sequenceSettings.runCount = 1;
 
     // Else setup default player
     if (player === null) {
@@ -58,25 +61,26 @@ const startSequence = (sequenceSettings = {}, playerInfo = null, spec = "NONE", 
     }
 
     // Setup the state defaults
-    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: {}, manaSpent: 0, settings: settings, conduits: conduits, T284pcwindow: {}}
+    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0}
 
     // Setup initial info based on soulbind, trinkets
     sequenceTool.applyBaseSoulbind(state, player.soulbind);
-    player.getActiveItems("Trinket").forEach(trinket => {
-        sequenceTool.applyTrinkets(state, trinket);
-    });
-    sequenceTool.applyClassEffects(state, spellDB);
+    //player.getActiveItems("Trinket").forEach(trinket => {
+    //    sequenceTool.applyTrinkets(state, trinket);
+    //});
+    //sequenceTool.applyClassEffects(state);
+    //sequenceTool.applyConduits(state);
 
     // Once all relevant setup is completed, then iterate through sequence as required
     if (sequenceSettings.presetSequence) {
         runFixedCastSequence(state, sequenceSettings.presetSequence, player.activeStats); // Run a preset set of spells, suitable for Disc ramp for example
     }
     else {
-        runDynamicSequence(sequenceSettings)
+        //runDynamicSequence(sequenceSettings) // TODO: Implement
     }
 
     // Reporting, allows us to get different output for each class as required.
-    state.report = sequenceTool.getReport(sequenceSettings);
+    state.report = sequenceTool.getReport(state, sequenceSettings);
 
     // Return the state
     return state;
@@ -166,22 +170,16 @@ export const runDamage = (state, spell) => {
 
 /**
  * Run a full cast sequence. This is where most of the work happens. It runs through a short ramp cycle in order to compare the impact of different trinkets, soulbinds, stat loadouts,
- * talent configurations and more. Any effects missing can be easily included where necessary or desired.
+ * talent configurations and more. Any effects missing can be easily included where necessary or desired. 
+ * @param {} state The state information
+ * @param {} baseStats The players unbuffed stats
  * @param {} sequence A sequence of spells representing a ramp. Note that in two ramp cycles like alternating Fiend / Boon this function will cover one of the two (and can be run a second
  * time for the other).
- * @param {*} settings Any special settings. We can include soulbinds, legendaries and more here. Trinkets should be included in the cast sequence itself and conduits are handled below.
- * @param {object} conduits Any conduits we want to include. The conduits object is made up of {ConduitName: ConduitLevel} pairs where the conduit level is an item level rather than a rank.
  * @returns The expected healing of the full ramp.
  */
-export const runFixedCastSequence = (state, baseStats, sequence, settings = {}, conduits, runcount = 1) => {
-    //console.log("Running cast sequence");
-
-    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: {}, manaSpent: 0, settings: settings, conduits: conduits, T284pcwindow: {}}
-
-    let nextSpell = 0;
-    let tracker = 0; 
-    
-    let seq = [...sequence];
+export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) => {
+    // Let sequence repeat, for use with sustained healing
+    let seq = sequence;
 
     for (var run = 1; run < runcount; run += 1)
     {
@@ -190,12 +188,11 @@ export const runFixedCastSequence = (state, baseStats, sequence, settings = {}, 
 
     // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     // This is the length of time after a sequence begins that the healing is cut off.
+    let nextSpell = 0;    
     let sequenceLength = 40; 
     sequenceLength *= runcount;
-    const reporting = true; // A flag to report our sequences to console. Used for testing. 
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
-
         const healBuffs = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "function") && state.t >= buff.next})
         
         if (healBuffs.length > 0) {
@@ -211,14 +208,11 @@ export const runFixedCastSequence = (state, baseStats, sequence, settings = {}, 
                     func(state);
                 }
 
-
                 buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
-                //console.log("Buff next: " + buff.next);
-
-    
             });  
         }
 
+        // Handle removing of expiring hots
         const expiringHots = state.activeBuffs.filter(function (buff) {return buff.buffType === "heal" && state.t >= buff.expiration})
         expiringHots.forEach(buff => {
             const tickRate = buff.tickRate / getHaste(state.currentStats)
@@ -226,6 +220,14 @@ export const runFixedCastSequence = (state, baseStats, sequence, settings = {}, 
             const spell = buff.attSpell;
             runHeal(state, spell, buff.name, partialTickPercentage)
         })
+
+        // Handle activating any effects that end on expiry (Eg Lifebloom)
+        const expiringActivation = state.activeBuffs.filter(function (buff) {return buff.buffType === "expiry" && state.t >= buff.expiration})
+        expiringActivation.forEach(buff => {
+            const func = buff.attFunction;
+            func(state);
+        })
+
         // Clear slate of old buffs.
         state.activeBuffs = state.activeBuffs.filter(function (buff) {return state.t < buff.expiration});
 
@@ -233,9 +235,8 @@ export const runFixedCastSequence = (state, baseStats, sequence, settings = {}, 
         // It'll also auto-cast Ascended Eruption if Boon expired.
         if ((state.t > nextSpell && seq.length > 0))  {
             const spellName = seq.shift();
-            const fullSpell = sequenceTool.spells[spellName];
+            const fullSpell = sequenceTool.spellDB[spellName];
             
-
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
             state.currentStats = getCurrentStats(baseStats, state.activeBuffs);
@@ -279,6 +280,12 @@ export const runFixedCastSequence = (state, baseStats, sequence, settings = {}, 
 
                         state.activeBuffs.push(newBuff)
                     }
+                    else if (spell.buffType === "expiry") {
+                        const newBuff = {name: spellName, expiration: state.t + spell.buffDuration, buffType: "expiry"};
+                        newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
+
+                        state.activeBuffs.push(newBuff)
+                    }
                     else {
                         state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration});
                     }
@@ -293,7 +300,7 @@ export const runFixedCastSequence = (state, baseStats, sequence, settings = {}, 
 
             // This represents the next timestamp we are able to cast a spell. This is equal to whatever is higher of a spells cast time or the GCD.
             if (!('offGCD' in fullSpell[0])) nextSpell += fullSpell[0].castTime > 0 ? (fullSpell[0].castTime / getHaste(state.currentStats)) : 1.5 / getHaste(state.currentStats);
-            //console.log("Current spell: " + spellName + ". Next spell at: " + nextSpell);
+
         }
 
         // Get the "real time" of the sequence's casts
@@ -302,30 +309,7 @@ export const runFixedCastSequence = (state, baseStats, sequence, settings = {}, 
         }
     }
 
-
-    // Add up our healing values (including atonement) and return it.
-
-    const sumValues = obj => {
-        if (Object.values(obj).length > 0) return Object.values(obj).reduce((a, b) => a + b);
-        else return 0;
-    }
-    //printHealing(state.healingDone, sumValues, sequenceLength, state.manaSpent * 50000 / 100);
-    //printDamage(state.damageDone, sumValues, sequenceLength, state.manaSpent * 50000 / 100)
-
-    const totalHealing = sumValues(state.healingDone);
-    const totalDamage = sumValues(state.damageDone);
-    const manaSpent = state.manaSpent * 50000 / 100
-
-
-    state.hpm = Math.round(totalHealing / manaSpent*100)/100; // Round to 2dp
-    state.hps = Math.round(totalHealing / state.sequenceLength * 100)/100;  // Round to 2dp
-    state.dps = Math.round(totalDamage / state.sequenceLength * 100)/100;  // Round to 2dp
-    state.sequenceLength /= runcount;
-    state.totalHealing = Math.round(totalHealing)
-    state.total4pcWindow = Math.round(sumValues(state.T284pcwindow))
-    state.totalDamage = Math.round(totalDamage)
     return state;
-
 }
 
 /*
