@@ -215,7 +215,7 @@ export const runDamage = (state, spell) => {
  */
 export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) => {
     // Let sequence repeat, for use with sustained healing
-    let seq = sequence;
+    let seq = [...sequence];
     for (var run = 1; run < runcount; run += 1)
     {
         seq = seq.concat(sequence);

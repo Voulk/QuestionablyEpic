@@ -136,8 +136,7 @@ describe("Test Sequences", () => {
         sequenceSettings.misc = ["2T28"];
         covenants["Base"].push(startSequence(sequenceSettings, player, "Mistweaver Monk", activeStats3));
         covenants["Kyrian"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Kyrian", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28"]}, {}))
-        
-        
+
         console.log(covenants["Base"][0].report + " |||| " + covenants["Kyrian"][0].totalHealing);
         /*
         //covenants["Base"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "None", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28", "4T28"]}, {}))
