@@ -1,4 +1,4 @@
-import { itemDB, tokenDB } from "../../../Databases/ItemDB";
+import { itemDB } from "../../../Databases/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
 import { conduitDB, conduitRanks } from "../../../Databases/ConduitDB";
 import { dominationGemDB } from "../../../Databases/DominationGemDB";
@@ -57,7 +57,7 @@ export function processAllLines(player, contentType, covenant, lines, linkedItem
     // If our line doesn't include an item ID, skip it.
     if (line.includes("id=")) {
       if (line.includes("unknown")) {
-        processToken(line, player, contentType, type, covenant);
+        //processToken(line, player, contentType, type, covenant);
       } else {
         const item = processItem(line, player, contentType, type)
         if (item) player.addActiveItem(item);
@@ -164,7 +164,7 @@ function processToken(line, player, contentType, type, covenant) {
     else if (info.includes("id=")) tokenID = parseInt(info.split("=")[1]);
   }
   // console.log("Creating Token with level" + tokenLevel + ", and ID: " + tokenID);
-  let token = tokenDB[tokenID.toString()];
+  let token = [] //tokenDB[tokenID.toString()];
   tokenLevel = token.itemLevel;
   tokenSlot = token.slotType;
   // Loop through bonus IDs until we find the item level one. Set Token Item Level.

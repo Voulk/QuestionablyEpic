@@ -266,12 +266,11 @@
       "PatronThanks": "Thank you so much for your support!",
       "TopGear": "Top Gear",
       "UpgradeFinder": "Upgrade Finder (Beta)",
-      "QuickCompare": "Gear Quick Compare",
-      "ExploreCovenants": "Explore Covenants",
-      "LegendaryAnalysis": "Legendary Analysis",
-      "TrinketAnalysis": "Trinket Analysis",
+      "QuickCompare": "Item Quick Compare",
+      "ExploreCovenants": "Covenants & Conduits",
+      "LegendaryAnalysis": "Legendary Breakdown",
+      "TrinketAnalysis": "Trinkets",
       "DominationAnalysis": "Domination Analysis (Beta)",
-      "GreatVault": "The Great Vault (Coming Soon)",
       "CooldownPlanner": "Cooldown Planner (Coming Soon)",
       "Profile": "Profile",
       "CharHeader": "Characters",
@@ -429,7 +428,7 @@
       "650": "Gruul the Dragonkiller",
       "651": "Magtheridon"
     },
-
+    "CreationCatalyst": "Creation Catalyst",
     "DungeonNames": {
       "12831": "Halls of Atonement",
       "13334": "Mists of Tirna Scithe",
@@ -450,7 +449,9 @@
       "1188": "De Other Side",
       "1186": "Spires of Ascension",
       "1194": "Tazavesh, the Veiled Market",
-      "-20": "Tazavesh, the Veiled Market",
+      "-20": "Tazavesh: Streets of Wonder",
+      "-21": "Tazavesh: So'leah's Gambit",
+
 
       "707": "Vault of the Wardens",
       "716": "Eye of Azshara",
