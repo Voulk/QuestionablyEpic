@@ -9,11 +9,15 @@ constructor(spellDB = null) {
     this.spellDB = spellDB;
 }
 
+// -------------------------------------------------------
+// ----         Spell healing calc section        --------
+// -------------------------------------------------------
+
 /** A healing spells healing multiplier. It's base healing is directly multiplied by whatever the function returns.
  * @param {object} state The state for tracking information 
  * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
  */
-static getHealingMult = (state, spell) => {
+getHealingMult(state, spell) {
     let mult = 1;
     return mult;
 }
@@ -22,9 +26,9 @@ static getHealingMult = (state, spell) => {
  * @param {object} state The state for tracking information 
  * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
  */
-static getHealingAddition = (state, spell) => {
-    let mult = 1;
-    return mult;
+getHealingAddition (state, spell) {
+    let addition = 0;
+    return addition;
 }
 
 /** Special healing to be done based on the initial heal, eg Monk Mastery, Bonedust Brew
@@ -32,7 +36,7 @@ static getHealingAddition = (state, spell) => {
  * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
  * @param {object} value The precalculated healing of the related spell.
  */
-static getSpecialHealing = (state, spell, value) => {
+getSpecialHealing (state, spell, value) {
     // Call specific functions based on the spec
     // Done within inherited classes.
 }
@@ -45,7 +49,7 @@ static getSpecialHealing = (state, spell, value) => {
  * @param {object} state The state for tracking information 
  * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
 */
-static getDamMult = (state, spell) => {
+getDamMult (state, spell) {
     let mult = 1;
     return mult;
 }
@@ -54,9 +58,9 @@ static getDamMult = (state, spell) => {
  * @param {object} state The state for tracking information 
  * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
 */
-static getDamAddition = (state, spell) => {
-    let mult = 1;
-    return mult;
+getDamAddition (state, spell) {
+    let addition = 0;
+    return addition;
 }
 
 /** Special damage to be done based on the initial heal, eg Monk Bonedust Brew
@@ -64,7 +68,7 @@ static getDamAddition = (state, spell) => {
  * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
  * @param {object} value The precalculated damage of the related spell. 
  */
-static getSpecialDamage = (state, spell, value) => {
+getSpecialDamage (state, spell, value) {
     
 }
 
@@ -78,12 +82,20 @@ static getSpecialDamage = (state, spell, value) => {
  * @param {*} stats The secondary stats a spell scales with. Pulled from it's SpellDB entry.
  * @returns An effective multiplier. For a spell that scales with both crit and vers this would just be crit x vers.
  */
-static getStatMult = (currentStats, stats) => {
+getStatMult (currentStats, stats) {
     let mult = 1;
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / 40 / 100);
     if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100);
     // Mastery calculated within each class
     return mult;
+}
+
+/** Check if a specific buff is active. Buffs are removed when they expire so this is active buffs only.
+ * @param buffs An array of buff objects.
+ * @param buffName The name of the buff we're searching for.
+ */
+checkBuffActive (buffs, buffName) {
+    return buffs.filter(function (buff) {return buff.name === buffName}).length > 0;
 }
 
 // -------------------------------------------------------
@@ -93,25 +105,12 @@ static getStatMult = (currentStats, stats) => {
  * This function handles all specific updates regarded to specific soulbinds.
  * 
  * @param {object} state The state for tracking information, includes the spec
- * @param {*} soulbind Settings including legendaries, trinkets, soulbinds and anything that falls out of any other category.
+ * @param {*} player The player's info, should have soulbinds, legendaries, etc
  * @returns An updated state
  */
- applyBaseSoulbind = (state, soulbind) => {
-    switch(soulbind) {
+ applyLoadout (state, player) {
+    /*switch(soulbind) {
         case ("Dreamweaver"):
-            // Field of Blossoms
-            switch(state.spec) {
-                case ("Mistweaver Monk"):
-                    spells['Faeline Stomp'].push({
-                        type: "buff",
-                        buffType: "statsMult",
-                        stat: 'haste',
-                        value: 1.15,
-                        buffDuration: 6,
-                    });
-                break;
-            }
-
             state.activeBuffs.push({name: "Empowered Chrysalis", expiration: 999, buffType: "special", value: 0.1});
             state.activeBuffs.push({name: "Dream Delver", expiration: 999, buffType: "special", value: 1.03});
             break;
@@ -128,7 +127,7 @@ static getStatMult = (currentStats, stats) => {
             break;
         default: 
             // Return an error.
-    }
+    }*/
 }
 
 /**
@@ -136,7 +135,7 @@ static getStatMult = (currentStats, stats) => {
  * @param {object} state The state for tracking information 
  * @returns The updated state.
  */
-applyClassEffects = (state) => {
+applyClassEffects (state) {
     return state;
 }
 
@@ -144,7 +143,7 @@ applyClassEffects = (state) => {
  * Updates the spellDB to include any new spells. Eg Trinkets.
  * @param {object} extraSpellDB Any additional spells to be added to the main spellDB
  */
-addToSpellDB = (extraSpellDB) => {
+addToSpellDB (extraSpellDB) {
     this.spellDB.concat(extraSpellDB);
 }
 
@@ -152,7 +151,7 @@ addToSpellDB = (extraSpellDB) => {
  * Updates the spellDB to include any new spells. Eg Trinkets.
  * @param {object} extraSpellDB Any additional spells to be added to the main spellDB
  */
-modifySpellDB = (spellName, modifier) => {
+modifySpellDB (spellName, modifier) {
     this.spellDB.concat(extraSpellDB);
 }
 
@@ -160,7 +159,7 @@ modifySpellDB = (spellName, modifier) => {
  * Get the covenant ability name, used to modify spellDB
  * @param {object} covenant The covenant in question
  */
-getCovenantAbilityName = (covenant) => {
+getCovenantAbilityName (covenant) {
     return "NONE";
 }
 
@@ -172,7 +171,7 @@ getCovenantAbilityName = (covenant) => {
  * @param {object} sequenceSettings Settings provided to the sequence
  * @returns The text report
  */
-getReport = (state, sequenceSettings) => {
+getReport (state, sequenceSettings) {
     const sumValues = obj => {
         if (Object.values(obj).length > 0) return Object.values(obj).reduce((a, b) => a + b);
         else return 0;
@@ -191,4 +190,5 @@ getReport = (state, sequenceSettings) => {
     state.totalDamage = Math.round(totalDamage)
 
     return "Test log: " + state.hpm;
-}}
+}
+}

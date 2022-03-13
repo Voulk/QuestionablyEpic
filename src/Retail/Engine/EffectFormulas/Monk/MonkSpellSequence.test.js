@@ -131,6 +131,8 @@ describe("Test Sequences", () => {
     test("Legendaries & Soulbinds", () => {
         const sequenceSettings = {};
         sequenceSettings.presetSequence = baseSequence;
+        sequenceSettings.legendaries = ["Ancient Teachings of the Monastery"];
+        sequenceSettings.misc = ["2T28"];
         covenants["Base"].push(startSequence(sequenceSettings, player, "Mistweaver Monk", activeStats3));
         console.log(covenants["Base"][0].report);
         //console.log("Base: " + covenants["Base"][0].totalHealing + " (HPM: " + covenants["Base"][0].hpm + "). 4PC Window: " + covenants["Base"][0].total4pcWindow + " (" + Math.round(covenants["Base"][0].total4pcWindow/covenants["Base"][0].totalHealing*1000)/10 + ")%. Damage: " + covenants["Base"][0].totalDamage);

@@ -1,5 +1,6 @@
 // General tools
 import { convertPPMToUptime } from "Retail/Engine/EffectFormulas/EffectUtilities"
+import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import Player from "General/Modules/Player/Player";
 
 // import { applyPassiveTrinkets, applyActiveTrinkets } from "./Trinket";
@@ -10,6 +11,7 @@ import Player from "General/Modules/Player/Player";
 
 // Import tool for each class
 import MonkSequenceTool from "./MonkSequenceTool";
+import { MONKSPELLS } from "../Monk/MistweaverSpellDB";
 
 var sequenceTool = null;
 
@@ -31,7 +33,7 @@ export const startSequence = (sequenceSettings = {}, playerInfo = null, spec = "
     if (sequenceSettings.runCount == null) sequenceSettings.runCount = 1;
 
     // Else setup default player
-    if (player === null) {
+    if (player == null) {
         player = new Player("Test", spec, 99, "NA", "Stonemaul", "Night Elf");
         if (stats.length() > 0)
         {
@@ -61,10 +63,10 @@ export const startSequence = (sequenceSettings = {}, playerInfo = null, spec = "
     }
 
     // Setup the state defaults
-    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0}
+    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: sequenceSettings}
 
     // Setup initial info based on soulbind, trinkets
-    sequenceTool.applyBaseSoulbind(state, player.soulbind);
+    sequenceTool.applyLoadout(state, player);
     //player.getActiveItems("Trinket").forEach(trinket => {
     //    sequenceTool.applyTrinkets(state, trinket);
     //});
@@ -73,7 +75,7 @@ export const startSequence = (sequenceSettings = {}, playerInfo = null, spec = "
 
     // Once all relevant setup is completed, then iterate through sequence as required
     if (sequenceSettings.presetSequence) {
-        runFixedCastSequence(state, sequenceSettings.presetSequence, player.activeStats); // Run a preset set of spells, suitable for Disc ramp for example
+        runFixedCastSequence(state, player.activeStats, sequenceSettings.presetSequence); // Run a preset set of spells, suitable for Disc ramp for example
     }
     else {
         //runDynamicSequence(sequenceSettings) // TODO: Implement
@@ -125,6 +127,26 @@ const getCurrentStats = (statArray, buffs) => {
     return spell.coeff * currentStats.intellect * sequenceTool.getStatMult(currentStats, spell.secondaries); // Multiply our spell coefficient by int and secondaries.
 }
 
+/**
+ * Get haste multiplier
+ * @param {object} stats The current stats of the sim
+ * @returns Haste multi (1.x)
+ */
+export const getHaste = (stats) => {  
+    return 1 + stats.haste / 32 / 100;
+}
+
+/**
+ * Get squareroot scaling
+ * @param {object} targets The targets of the spell
+ * @param {object} softCap The spell softcap
+ * @returns Multiplier
+ */
+const getSqrt = (targets, softCap = 1) => {
+    if (softCap === 1) return Math.sqrt(targets);
+    else return Math.min(Math.sqrt(softCap / targets), 1)
+}
+
 // -------------------------------------------------------
 // ----         Sequencing processes              --------
 // -------------------------------------------------------
@@ -158,8 +180,8 @@ export const runDamage = (state, spell) => {
  export const runHeal = (state, spell) => {    
     // Multipliers, including covenant, conduit, tier etc
     // Additions, eg flat healing (Monk T28 4pc) 
-    const healingMult = getHealingMult(state, spell);
-    const healingAddition = getHealingAddition(state, spell);
+    const healingMult = sequenceTool.getHealingMult(state, spell);
+    const healingAddition = sequenceTool.getHealingAddition(state, spell);
 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.softCap || 1) * spell.targets : spell.targets || 1;
     const healingVal = (getSpellRaw(spell, state.currentStats) + healingAddition) * (1 - spell.overheal) * healingMult * targetMult;
@@ -180,7 +202,6 @@ export const runDamage = (state, spell) => {
 export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) => {
     // Let sequence repeat, for use with sustained healing
     let seq = sequence;
-
     for (var run = 1; run < runcount; run += 1)
     {
         seq = seq.concat(sequence);
@@ -269,7 +290,7 @@ export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) =
                     else if (spell.buffType === "heal") {
                         const newBuff = {name: spellName, buffType: "heal", attSpell: spell,
                             tickRate: spell.tickRate, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
-                        newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
+                        newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
 
                         state.activeBuffs.push(newBuff)
                     }

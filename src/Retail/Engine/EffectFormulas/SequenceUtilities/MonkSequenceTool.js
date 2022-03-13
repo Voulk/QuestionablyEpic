@@ -17,9 +17,18 @@ constructor() {
  * @param {*} stats The secondary stats a spell scales with. Pulled from it's SpellDB entry.
  * @returns An effective multiplier. For a spell that scales with both crit and vers this would just be crit x vers.
  */
-static getStatMult = (currentStats, stats) => {
+static getStatMult (currentStats, stats) {
     let mult = super.getStatMult(currentStats, stats);
     if (stats.includes("mastery")) mult *= (1.336 + currentStats['mastery'] / 35 * 4.2 / 100);
+    return mult;
+}
+
+/** A healing spells healing multiplier. It's base healing is directly multiplied by whatever the function returns.
+ * @param {object} state The state for tracking information 
+ * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
+ */
+getHealingMult (state, spell) {
+    let mult = super.getHealingMult(state, spell);
     return mult;
 }
 
@@ -32,7 +41,7 @@ static getStatMult = (currentStats, stats) => {
  * @param {object} spellDB The spell being cast. Spell data is pulled from relevant class DB. 
  * @returns The updated state.
  */
-applyClassEffects = (state, legendaries = []) => {
+applyClassEffects (state, legendaries = []) {
     // == Legendaries ==
     // -- Invoker's Delight --
     // 33% haste for 20s when summoning celestial
@@ -75,11 +84,11 @@ applyClassEffects = (state, legendaries = []) => {
  * @param {object} value The value of the spell, either damage or healing.
  * @returns The added Bonedust Brew value
  */
-applyBonedustBrew = (state, value) => {
+applyBonedustBrew (state, value) {
     let bonedustBonus = 0; 
     let emenibonus = 0;
     
-    if (checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
+    if (super.checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
         // Run duplicate damage.
         bonedustBonus = value * 0.5 * 0.72 // 268 conduit
         state.damageDone['Bonedust Brew'] = (state.damageDone['Bonedust Brew'] || 0) + bonedustBonus;
