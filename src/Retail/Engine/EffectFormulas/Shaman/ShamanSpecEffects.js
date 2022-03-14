@@ -89,8 +89,7 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     /**
      * every mtt use gain 10 seconds of quicker chhw casts
      */
-    //const gain = 2.5 / 1.5 - 1; // tooltip says double but you hit the GCD wall
-    const buffDuration = 9;
+    const buffDuration = 10 - 1.5 / player.getStatPerc("Haste");
     const castDuration = 1.5 / player.getStatPerc("Haste");
     const possibleCasts = Math.ceil(buffDuration / castDuration);
     const chHeal = 5.3193 * player.getStatMultiplier("NOHASTE");
@@ -188,8 +187,8 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     bonusStats.hps = (healing * vtPerMinute) / 60
   } else if (effectName === "Deeply Rooted Elements") {
     // Casting Riptide has a 7% chance to activate Ascendance for 6 seconds.
-    const rtPerMinute = 60 / 7; // todo echo
-    const expectedOverheal = 0.8; // 20% overheal factor
+    const rtPerMinute = 60 / 6; // Echo default talent
+    const expectedOverheal = 0.7; // 30% overheal/wastage factor
 
     bonusStats.hps = player.getHPS() * convertPPMToUptime(rtPerMinute * 0.07, 6) * expectedOverheal;
   } else if (effectName === "Splintered Elements") {
@@ -204,8 +203,9 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     const httHealing = 0.35 * player.getStatMultiplier("ALL") * 5; // Ticks every 2 seconds, scaled by haste
     // Heavy Rainfall in raid
     // Assume not quite perfect casts / a bit of overhealing
-    // SP * targets * hits * casts * multi * bonus
-    const rainHealing = contentType == "Raid" ? 0.265 * 6 * 5 * 2 * player.getStatMultiplier("ALL") * 1.25 : 0; 
+    // SP * targets * hits * casts * multi * conduitbonus
+    const rainAvgTargets = contentType == "Raid" ? 6 : 4;
+    const rainHealing = 0.265 * rainAvgTargets * 5 * 2 * player.getStatMultiplier("ALL") * 1.25; 
 
     const baseCooldown = 144; // Factoring conduit - 36 seconds
     const effectiveCD = 144 - (7 * 5);
