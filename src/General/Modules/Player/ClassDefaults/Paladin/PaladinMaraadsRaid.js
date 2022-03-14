@@ -40,8 +40,8 @@ export const paladinMaraadsSpellData = (contentType) => {
         cooldownMult: {
           oneMinute: 1.2,
           ninetySeconds: 1,
-          twoMinutes: 1.39,
-          twoMinutesOrb: 1.31,
+          twoMinutes: 1.26,
+          twoMinutesOrb: 1.24,
           threeMinutes: 1,
         },
         HoldYourGroundUptime: 0.4
@@ -71,9 +71,9 @@ export const paladinMaraadsSpellData = (contentType) => {
   
     statWeights.Raid = {
       intellect: 1,
-      haste: 0.60,
+      haste: 0.61,
       crit: 0.51,
-      mastery: 0.61,
+      mastery: 0.60,
       versatility: 0.57,
       leech: 0.98,
       defaults: true,

@@ -23,6 +23,10 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
 
   } 
+  else if (effectName === "") {
+
+
+  } 
   else if (effectName === "Genesis Lathe") {
 
     // These can be verified after logs start coming in but are based on frequency of casts. 
@@ -30,10 +34,6 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
     const effects = activeEffect.effects;
     let expectedHPS = 0;
     
-    /*const effects = [{"name": "Absorb", "coefficient": 107.5911, "percProcs": 0.75, "ticks": 1, "secondaries": ["Versatility"]},
-                    {"name": "FlatHeal", "coefficient": 119.5424, "percProcs": 0.1, "ticks": 1, "secondaries": ["Versatility", "Crit"]},
-                    {"name": "Hot", "coefficient": 16.04781, "percProcs": 0.15, "ticks": 5, "secondaries": ["Versatility", "Crit", "Haste"]}]
-*/
     for (var i = 0; i < effects.length; i++) {
       const effect = effects[i];
       // TODO: Check secondary scaling in effect.

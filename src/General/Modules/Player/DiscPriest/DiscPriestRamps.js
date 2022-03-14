@@ -15,6 +15,7 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
     const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
     const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
     const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
+
     return boonRamp + fiendRamp + miniRamp * 2;
 }
 
