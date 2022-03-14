@@ -30,7 +30,22 @@ const extendActiveAtonements = (atoneApp, timer, extension) => {
 
 // Removes a stack of a buff, and removes the buff entirely if it's down to 0 or doesn't have a stack mechanic.
 const removeBuffStack = (buffs, buffName) => {
+    const buff = buffs.filter(buff => buff.name === buffName)[0]
+    const buffStacks = buff.stacks || 0;
 
+    if (buffStacks === 1) {
+        // Remove the buff
+        buffs = buffs.filter(buff => buff.name !== buffName);
+    }
+    else if (buffStacks >= 1) {
+        // The player has more than 1 stack of the buff. Remove one and leave the buff.
+        const activeBuff = buffs.filter(buff => buff.name === buffName)[0];
+        activeBuff.stacks = activeBuff.stacks - 1;
+    }
+    else {
+        // The player doesn't have the buff at all.
+    }
+    return buffs;
 }
 
 /** A spells damage multiplier. It's base damage is directly multiplied by anything the function returns.
@@ -39,7 +54,7 @@ const removeBuffStack = (buffs, buffName) => {
  * @chaosbrand A 5% damage buff if we have Chaos Brand enabled in Disc Settings.
  * @AscendedEruption A special buff for the Ascended Eruption spell only. The multiplier is equal to 3% (4 with conduit) x the number of Boon stacks accrued.
  */
-const getDamMult = (buffs, activeAtones, t, spellName, boonStacks, conduits) => {
+const getDamMult = (state, buffs, activeAtones, t, spellName, boonStacks, conduits) => {
     const sins = {0: 1.12, 1: 1.12, 2: 1.1, 3: 1.08, 4: 1.07, 5: 1.06, 6: 1.05, 7: 1.05, 8: 1.04, 9: 1.04, 10: 1.03}
     const schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.25 : 1; 
     let mult = (activeAtones > 10 ? 1.03 : sins[activeAtones]) * schism
@@ -48,8 +63,7 @@ const getDamMult = (buffs, activeAtones, t, spellName, boonStacks, conduits) => 
         if (checkBuffActive(buffs, "Power of the Dark Side")) {
             const potdsMult = buffs.filter(function (buff) {return buff.name === "Power of the Dark Side"})[0].value;
             mult = mult * potdsMult;
-            removeBuffStack(buffs, "Power of the Dark Side")
-            
+            state.activeBuffs = removeBuffStack(state.activeBuffs, "Power of the Dark Side")
         }
     }
     if (spellName === "Ascended Eruption") {
@@ -221,18 +235,22 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
     if (settings['Kleia']) state.activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
     if (settings['4T28']) {
         // If player has 4T28, then hook Power of the Dark Side into Power Word Radiance.
+        
         discSpells['Power Word: Radiance'].push({
             name: "Power of the Dark Side",
             type: "buff",
             buffType: "special",
             value: 1.95,
             buffDuration: 20,
+            castTime: 0,
+            stacks: 3,
         });
+
     }
     else {
         // If player doesn't have 4T28, then we might still opt to start them with a PotDS proc on major ramps since the chance of it being active is extremely high.
         // This is unnecessary with 4pc since we'll always have a PotDS proc during our sequences due to Radiance always coming before Penance.
-        if (settings['Power of the Dark Side']) state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: 1.5})
+        if (settings['Power of the Dark Side']) state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: 1.5, stacks: 3})
     }
     
     
@@ -274,12 +292,13 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.overheal) * healingMult * targetMult;
     
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
+
 }
 
 export const runDamage = (state, spell, spellName, atonementApp) => {
 
     const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
-    const damMultiplier = getDamMult(state.activeBuffs, activeAtonements, state.t, spellName, state.boonOfTheAscended, state.conduits); // Get our damage multiplier (Schism, Sins etc);
+    const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, spellName, state.boonOfTheAscended, state.conduits); // Get our damage multiplier (Schism, Sins etc);
     const damageVal = getSpellRaw(spell, state.currentStats) * damMultiplier;
     const atonementHealing = activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * (1 - spell.atoneOverheal)
 
@@ -288,7 +307,7 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
     state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
 
-    //if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
+    //if (state.reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
     //if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs));
 }
 
@@ -305,7 +324,7 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
 export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     //console.log("Running cast sequence");
     let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: conduits, manaSpent: 0, settings: settings, 
-                    conduits: conduits, T284pcwindow: {}, boonOfTheAscended: 0}
+                    conduits: conduits, boonOfTheAscended: 0, reporting: true}
     // Boon of the Ascended holds our active Boon of the Ascended stacks. This should be refactored into our buffs array.
 
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
@@ -341,7 +360,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             purgeTicks.shift();
             const activeAtonements = getActiveAtone(atonementApp, timer)
             const damageVal = DISCSPELLS['Purge the Wicked'][0].dot.coeff * currentStats.intellect * getStatMult(currentStats, ['crit', 'vers']);
-            const damMultiplier = getDamMult(state.activeBuffs, activeAtonements, state.t, conduits)
+            const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, conduits)
 
             if (purgeTicks.length === 0) {
                 // If this is the last Purge tick, add a partial tick.
@@ -374,7 +393,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             fiendTicks.shift();
             const activeAtonements = getActiveAtone(atonementApp, timer)
             const damageVal = DISCSPELLS['Shadowfiend'][0].dot.coeff * currentStats.intellect * getStatMult(currentStats, ['crit', 'vers']);
-            const damMultiplier = getDamMult(state.activeBuffs, activeAtonements, state.t, conduits)
+            const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, conduits)
             state.damageDone['Shadowfiend'] = (state.damageDone['Shadowfiend'] || 0) + damageVal * damMultiplier;
             totalDamage += damageVal;
             state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + activeAtonements * damageVal * getAtoneTrans(currentStats.mastery);
@@ -397,7 +416,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,
             // and the absorb effect).
             fullSpell.forEach(spell => {
-
+                //console.log(spellName + "(" + state.t + "): " + JSON.stringify(state));
                 // The spell is an atonement applicator. Add atonement expiry time to our array.
                 // The spell data will tell us whether to apply atonement at the start or end of the cast.
                 if (spell.atonement) {
@@ -406,6 +425,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                         if (settings['Clarity of Mind'] && (spellName === "Power Word: Shield") && checkBuffActive(state.activeBuffs, "Rapture")) atoneDuration += 6;
                         if (spell.atonementPos === "start") atonementApp.push(state.t + atoneDuration);
                         else if (spell.atonementPos === "end") atonementApp.push(state.t + spell.castTime + atoneDuration);
+
                     }
                 }
         
@@ -454,6 +474,18 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     if (spell.buffType === "stats") {
                         state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
                     }
+                    else if (spell.buffType === "special") {
+                        
+                        // Check if buff already exists, if it does add a stack.
+                        const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
+
+                        if (buffStacks === 0) state.activeBuffs.push({name: spell.name, expiration: state.t + spell.castTime + spell.buffDuration, buffType: "special", value: spell.value, stacks: spell.stacks});
+                        else {
+                            const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
+                            buff.stacks += 1;
+
+                        }
+                    }     
                     else {
                         state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
                     }
@@ -506,7 +538,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     // Add up our healing values (including atonement) and return it.
 
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
-    //console.log(healing);
+    console.log(state.healingDone);
     return sumValues(state.healingDone)
 
 }
