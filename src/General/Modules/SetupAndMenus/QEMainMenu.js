@@ -170,7 +170,7 @@ export default function QEMainMenu(props) {
                 <ArrowForward style={{ paddingRight: 32 }} />
                 <div style={{ display: "block" }}>
                   <div style={{ lineHeight: 1.4 }}>{t(key).toUpperCase()}</div>
-                  <Typography color="white.main" sx={{ fontSize: 11, lineHeight: 1.1 }}>
+                  <Typography color="white.main" sx={{ fontSize: 10.5, lineHeight: 1.1 }}>
                     {t("MainMenu.Tooltips." + mainMenuOptions[key][2])}
                   </Typography>
                 </div>
