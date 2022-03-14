@@ -515,8 +515,8 @@ describe("So'leah's Secret Technique", () => {
     const effect = activeTrinket.effects[0];
     each`
     level   | expectedResult
-    ${223}  | ${98} 
-    ${236}  | ${105}
+    ${223}  | ${88} 
+    ${236}  | ${94}
     // add new test cases here
     `.test("So'leah's Secret Technique - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
     
