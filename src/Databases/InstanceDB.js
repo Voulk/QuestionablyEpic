@@ -189,6 +189,7 @@ export const encounterDB = {
     1188, //"De Other Side",
     1189, //"Sanguine Depths",
     -20, // Tazavesh
+    -21, // Tazavesh 2
     //1194, // Tazavesh
 
   ],

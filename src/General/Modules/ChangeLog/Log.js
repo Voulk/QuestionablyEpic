@@ -10,6 +10,18 @@
 export const changeLog = [
   {
     version: "9.2 / 2.5.3",
+    update: 9,
+    date: "13th March",
+    changes: [
+      "Upgrade Finder: A number of missing items will now show up including tier pieces.",
+      "Upgrade Finder: Tazavesh now split into two dungeons.",
+      "Upgrade Finder: Legion items will no longer clog up the slot-by-slot lists.",
+      "Upgrade Finder: Tier pieces will now highlight in yellow to make them easier to spot.",
+      "Renamed a bunch of modules to make them easier to understand.",
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
     update: 8,
     date: "10th March (Minor Update)",
     changes: [
