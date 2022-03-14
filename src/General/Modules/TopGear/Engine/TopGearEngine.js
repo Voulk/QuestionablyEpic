@@ -447,13 +447,20 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
   if (player.spec === "Discipline Priest" && contentType === "Raid") {
-    // Setup ramp cast sequences
-    const onUseTrinkets = itemSet.onUseTrinkets.map((trinket) => trinket.name);
-    const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, castModel.modelName, ["Rapture"]);
-    const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, castModel.modelName, ["Rapture"]);
 
     // Setup any ramp settings or special effects that need to be taken into account.
-    const rampSettings = { Pelagos: true };
+    let rampSettings = { Pelagos: true };
+    let specialSpells = ["Rapture"];
+    // Setup ramp cast sequences
+    const onUseTrinkets = itemSet.onUseTrinkets.map((trinket) => trinket.name);
+    if (effectList.filter(effect => effect.name === "DPriest T28-4").length > 0) {
+      // We are wearing 4pc and should add it to both Ramp Settings (to include the PotDS buff) and specialSpells (to alter our cast sequences).
+      rampSettings["4T28"] = true; 
+      specialSpells.push("4T28");
+    }
+    const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
+    const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
+
     if (onUseTrinkets !== null && onUseTrinkets.length > 0) {
       itemSet.onUseTrinkets.forEach((trinket) => {
         rampSettings[trinket.name] = getTrinketValue(trinket.name, trinket.level);

@@ -90,7 +90,15 @@ export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle) =
     sequence.push('PenanceTick');
     sequence.push('PenanceTick');
 
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 4; i++) {
+        // The number of smites here is adjustable but also not very important outside of DPS metrics. 
+        sequence.push('Smite');
+    }
+    sequence.push('PenanceTick');
+    sequence.push('PenanceTick');
+    sequence.push('PenanceTick');
+
+    for (var i = 0; i < 6; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
         sequence.push('Smite');
     }
@@ -179,9 +187,20 @@ export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = 
     sequence.push('Ascended Blast');
     
     sequence.push('Schism');
+
     const hastePerc = 1 + haste / 32 / 100;
     let boonDuration = 10 - (1.5 * 2 / hastePerc) + (1.5 / hastePerc);
     const boonPackage = (1.5 + 1 + 1) / hastePerc;
+
+    if (specialSpells.includes("4T28")) {
+        // If we have 4pc, Penance after our second Blast instead of double Nova.
+        sequence.push('Ascended Blast');
+        sequence.push('PenanceTick');
+        sequence.push('PenanceTick');
+        sequence.push('PenanceTick');
+        boonDuration -= (1.5 + 2) / hastePerc;
+    }
+
     for (var i = 0; i < Math.floor(boonDuration / boonPackage); i++) {
         sequence.push('Ascended Blast');
         //if (trinket === "Instructor's Divine Bell" && i === 0) sequence.push("Instructor's Divine Bell");

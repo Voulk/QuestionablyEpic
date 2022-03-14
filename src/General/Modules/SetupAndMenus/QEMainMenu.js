@@ -157,7 +157,7 @@ export default function QEMainMenu(props) {
                 color="secondary"
                 style={{
                   width: "100%",
-                  height: "55px",
+                  height: "60px",
                   whiteSpace: "nowrap",
                   justifyContent: "left",
                   paddingLeft: "32px",
