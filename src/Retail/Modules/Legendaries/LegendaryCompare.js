@@ -242,7 +242,7 @@ export default function LegendaryCompare(props) {
         <Grid item container spacing={1} direction="row">
           <Grid item xs={12}>
             <Typography color="primary" variant="h5" align="center" style={{ paddingBottom: 4 }}>
-              {t("Covenant")}
+              {t("CovLegendaries")}
             </Typography>
           </Grid>
           {legendaryList
