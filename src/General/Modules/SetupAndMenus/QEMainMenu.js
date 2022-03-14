@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import CharCards from "./CharacterModules/CharacterCards";
 import AddNewChar from "./CharacterModules/CharacterCreator";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import { Grid, Button, Typography, Tooltip } from "@mui/material";
@@ -19,7 +19,7 @@ import QEFooter from "./Footer/QEFooter";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down("md")]: {
       margin: "auto",
       width: "85%",
       justifyContent: "center",
@@ -150,27 +150,31 @@ export default function QEMainMenu(props) {
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={index}>
-              <Tooltip title={t("MainMenu.Tooltips." + mainMenuOptions[key][2])} placement={oddEven(index)} arrow>
-                <Button
-                  key={index}
-                  variant="contained"
-                  disabled={!mainMenuOptions[key][1] || characterCount === 0}
-                  color="secondary"
-                  style={{
-                    width: "100%",
-                    height: "55px",
-                    whiteSpace: "nowrap",
-                    justifyContent: "left",
-                    paddingLeft: "32px",
-                    color: mainMenuOptions[key][1] && characterCount > 0 ? "#F2BF59" : "#9c9c9c",
-                  }}
-                  component={Link}
-                  to={mainMenuOptions[key][0]}
-                >
-                  <ArrowForward style={{ paddingRight: 32 }} />
-                  {t(key)}
-                </Button>
-              </Tooltip>
+              <Button
+                key={index}
+                variant="contained"
+                disabled={!mainMenuOptions[key][1] || characterCount === 0}
+                color="secondary"
+                style={{
+                  width: "100%",
+                  height: "55px",
+                  whiteSpace: "nowrap",
+                  justifyContent: "left",
+                  paddingLeft: "32px",
+                  textTransform: "none",
+                  color: mainMenuOptions[key][1] && characterCount > 0 ? "#F2BF59" : "#9c9c9c",
+                }}
+                component={Link}
+                to={mainMenuOptions[key][0]}
+              >
+                <ArrowForward style={{ paddingRight: 32 }} />
+                <div style={{ display: "block" }}>
+                  <div style={{ lineHeight: 1.4 }}>{t(key).toUpperCase()}</div>
+                  <Typography color="white.main" sx={{ fontSize: 10.5, lineHeight: 1.1 }}>
+                    {t("MainMenu.Tooltips." + mainMenuOptions[key][2])}
+                  </Typography>
+                </div>
+              </Button>
             </Grid>
           ))}
         </Grid>
