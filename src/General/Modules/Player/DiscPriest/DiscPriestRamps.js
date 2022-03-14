@@ -538,7 +538,6 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     // Add up our healing values (including atonement) and return it.
 
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
-    console.log(state.healingDone);
     return sumValues(state.healingDone)
 
 }
