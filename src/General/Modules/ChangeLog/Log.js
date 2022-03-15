@@ -11,13 +11,18 @@ export const changeLog = [
   {
     version: "9.2 / 2.5.3",
     update: 9,
-    date: "13th March",
+    date: "14th March (Major)",
     changes: [
+      "Soleah's Secret Technique: Nerfed in-game. Values now match.",
+      "Main Menu revamp. Hopefully this is more accessible to people new to the app.",
+      "Multiple modules renamed to be less verbose.",
+      "Disc Priest / Resto Druid: Added formulas for 4pc bonuses.",
+      "Renamed a bunch of modules to make them easier to understand.",
+      "Legendary card revamps: Covenant legendaries now displayed separately. Moved text into tooltip.",
       "Upgrade Finder: A number of missing items will now show up including tier pieces.",
       "Upgrade Finder: Tazavesh now split into two dungeons.",
       "Upgrade Finder: Legion items will no longer clog up the slot-by-slot lists.",
-      "Upgrade Finder: Tier pieces will now highlight in yellow to make them easier to spot.",
-      "Renamed a bunch of modules to make them easier to understand.",
+      "Upgrade Finder: Tier pieces will now highlight in yellow to make them easier to spot."
     ],
   },
   {
