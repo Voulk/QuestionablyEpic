@@ -1316,7 +1316,6 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
           covenant: "Kyrian",
         },
       };
-      F;
       break;
 
     /* ------------------------------------------ Night Fae ----------------------------------------- */
