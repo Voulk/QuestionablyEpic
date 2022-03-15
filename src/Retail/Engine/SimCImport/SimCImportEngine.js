@@ -332,6 +332,7 @@ export function processItem(line, player, contentType, type) {
         else if (bonus_id == 7241) itemLevel = 180;
         else if (bonus_id == 7461) itemLevel = 230;
         else if (bonus_id == 7881) itemLevel = 262;
+        else if (bonus_id == 7880) itemLevel = 233;
 
       } else if ("name_override" in idPayload) {
         // Legendaries
@@ -437,6 +438,7 @@ function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) 
 
   } else if (["Shoulder", "Waist", "Hands", "Feet"].includes(slot)) {
     if (itemLevel >= 262) allocation = 63;
+    else if (itemLevel >= 233) allocation = 55;
     else if (itemLevel >= 230) allocation = 54;
     else if (itemLevel >= 168) allocation = 37;
     else if (itemLevel >= 151) allocation = 29;
