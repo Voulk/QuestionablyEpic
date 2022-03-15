@@ -15,6 +15,7 @@ import {
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
 import { itemLevels } from "../../../Databases/itemLevelsDB";
+
 /*
 The core Upgrade Finder loop is as follows:
 - Run the players current gear set through our evaluation function to get a baseline score.
@@ -245,7 +246,10 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
 
   const newScore = newTGSet.itemSet.hardScore;
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.
-  const differential = Math.round((10000 * (newScore - baseScore)) / baseScore) / 100;
+  let differential = 0;
+
+  if (userSettings.upFinderToggle === "hps") differential = Math.round((newScore - baseScore) / baseScore * baseHPS);
+  else differential = (newScore - baseScore) / baseScore;
 
   return { item: item.id, level: item.level, score: differential };
 }
