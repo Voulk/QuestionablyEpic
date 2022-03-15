@@ -58,6 +58,7 @@ describe("Unbound Changeling Data Tests", () => {
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
+    ${236}  | ${373}
     ${226}  | ${340}
     ${210}  | ${292}
     ${207}  | ${284}
@@ -139,17 +140,17 @@ describe("Scrawled Word of Recall", () => {
     });
 });
 
-/* There is currently no way to verify the post-buff specifics, so this test has been disabled until servers go live.
+// There is currently no way to verify the post-buff specifics, so this test has been disabled until servers go live.
+/*
 describe("Shadowed Orb of Torment", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = trinket_data.find((trinket) => trinket.name === "Shadowed Orb of Torment");
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
-    ${252}  | ${304}
-    ${239}  | ${286}
-    ${226}  | ${268}
-    ${213}  | ${251}
+    ${252}  | ${489}
+    ${239}  | ${460}
+    ${226}  | ${432}
     // add new test cases here
     `.test("Shadowed Orb of Torment Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
@@ -163,10 +164,9 @@ describe("Titanic Ocular Gland", () => {
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
-    ${252}  | ${127}
-    ${239}  | ${119}
-    ${226}  | ${112}
-    ${213}  | ${104}
+    ${252}  | ${132}
+    ${239}  | ${124}
+    ${226}  | ${117}
     // add new test cases here
     `.test("Shadowed Orb of Torment Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
@@ -181,8 +181,10 @@ describe("First Class Healing Distributor", () => {
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
+    ${236}  | ${1655}
     ${233}  | ${1583}
     ${226}  | ${1424}
+    ${223}  | ${1361}
     // add new test cases here
     `.test("First Class Healing Distributor Heal Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
