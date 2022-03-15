@@ -65,6 +65,7 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits, repo
         console.log("Total Healing: " + Math.round(rampResult.totalHealing));
         console.log("Legendaries used: Clarity of Mind");
         console.log("Conduits used: " + JSON.stringify(conduits));
+        console.log("On use Trinkets used: " + " Instructor's Divine Bell (213 ilvl, ~20% expected overhealing)")
         console.log("Post-DR passive stat breakdown: " + JSON.stringify(stats));
         rampResult.ramps.forEach(ramp => {
             console.log("Ramp Name: " + ramp.tag + " (" + Math.round(ramp.totalHealing) + " healing)");
