@@ -4,7 +4,7 @@ import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
 import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
 import { getMasteryAddition } from "../Monk/MistweaverMiscFormulas"
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { runCastSequence, allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { runCastSequence, allRamps, allRampsHealing } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 // import { STAT } from "../../../../General/Engine/STAT";
@@ -215,7 +215,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
       // 
       const boonSeq = buildRamp('Boon', 10, ["Soulletting Ruby"], setStats.haste, castModel.modelName, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, castModel.modelName, ['Rapture']);
-      const rubyRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Soulletting Ruby": critValue}, {});
+      const rubyRamps = allRampsHealing(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Soulletting Ruby": critValue}, {});
       
       bonus_stats.hps = bonus_stats.hps + (rubyRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - crit_effect.discOverhealing);
 
@@ -350,7 +350,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
       const boonSeq = buildRamp('Boon', 10, ["Flame of Battle"], setStats.haste, castModel.modelName, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, ["Flame of Battle"], setStats.haste, castModel.modelName, ['Rapture']);
-      const flameRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Flame of Battle": trinketValue}, {});
+      const flameRamps = allRampsHealing(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Flame of Battle": trinketValue}, {});
 
       bonus_stats.hps = (flameRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
     }
@@ -407,7 +407,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
       const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell"], setStats.haste, castModel.modelName, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell"], setStats.haste, castModel.modelName, ['Rapture']);
-      const bellRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Instructor's Divine Bell": trinketValue}, {});
+      const bellRamps = allRampsHealing(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Instructor's Divine Bell": trinketValue}, {});
       bonus_stats.hps = (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
     }
     else {
@@ -432,7 +432,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
       const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], setStats.haste, castModel.modelName, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell (new)"], setStats.haste, castModel.modelName, ['Rapture']);
-      const bellRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Instructor's Divine Bell (new)": trinketValue}, {});
+      const bellRamps = allRampsHealing(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Instructor's Divine Bell (new)": trinketValue}, {});
       bonus_stats.hps = (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
     }
     else {
@@ -721,7 +721,7 @@ else if (
   else if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
     const boonSeq = buildRamp('Boon', 10, ["Shadowed Orb of Torment"], setStats.haste, castModel.modelName, ['Rapture']);
     const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, castModel.modelName, ['Rapture']);
-    const orbRamps = allRamps(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Shadowed Orb": trinketValue}, {});
+    const orbRamps = allRampsHealing(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Shadowed Orb": trinketValue}, {});
 
     bonus_stats.hps = (orbRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
   }

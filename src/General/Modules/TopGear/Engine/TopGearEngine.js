@@ -8,7 +8,7 @@ import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEffectFormulas";
-import { allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { allRamps, allRampsHealing } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { buildBestDomSet } from "../Utilities/DominationGemUtilities";
 import { getItemSet } from "BurningCrusade/Databases/ItemSetsDBRetail.js";
@@ -471,7 +471,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
 
     // Perform our ramp, and then add it to our sets expected HPS. Our set's stats are included here which means we don't need to score them later in the function.
     // The ramp sequence also includes any diminishing returns.
-    const setRamp = allRamps(boonSeq, fiendSeq, setStats, rampSettings, { "Courageous Ascension": 239, "Rabid Shadows": 239 });
+    const setRamp = allRampsHealing(boonSeq, fiendSeq, setStats, rampSettings, { "Courageous Ascension": 239, "Rabid Shadows": 239 });
     setStats.hps += setRamp / 180;
 
     evalStats = JSON.parse(JSON.stringify(mergedEffectStats));

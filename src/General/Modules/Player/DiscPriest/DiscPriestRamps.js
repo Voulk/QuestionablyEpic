@@ -2,21 +2,80 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { DISCSPELLS } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
+import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
     chaosBrand: true
 }
 
+
+// This is a very simple function that just condenses our ramp function down. 
+const rampShortener = (seq) => {
+    let shortRamp = [];
+    let lastValue = "";
+    let lastCount = 1;
+
+    for (var i = 0; i < seq.length; i++) {
+        const currentValue = seq[i];
+        if (currentValue === lastValue) {
+            lastCount += 1;
+        }
+        else {
+            if (lastValue !== "") {
+                if (lastCount === 1) shortRamp.push(lastValue);
+                else shortRamp.push(lastValue + " x" + lastCount);
+            }
+            
+            lastCount = 1;
+        }
+        lastValue = currentValue;
+    }
+    shortRamp.push(lastValue + " x" + lastCount);
+    return shortRamp
+}
+
+
+export const allRampsHealing = (boonSeq, fiendSeq, stats, settings = {}, conduits, reporting = false) => {
+    const rampResult = allRamps(boonSeq, fiendSeq, stats, settings, conduits, reporting);
+
+    if (rampResult.totalHealing > 0) return rampResult.totalHealing;
+    else {
+        reportError("", "DiscRamp", "Total Healing is 0", rampResult.totalHealing || 0)
+        return 0;
+    }
+}
+
 // This function automatically casts a full set of ramps. It's easier than having functions call ramps individually and then sum them.
-export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
-    
+export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits, reporting) => {
+    let rampResult = {totalHealing: 0, ramps: []}
     const miniSeq = buildRamp('Mini', 6, [], stats.haste, "Kyrian Evangelism", [])
     const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
     const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
     const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
 
-    return boonRamp + fiendRamp + miniRamp * 2;
+    rampResult.totalHealing = boonRamp.totalHealing + fiendRamp.totalHealing + miniRamp.totalHealing * 2;
+
+    if (reporting) {
+        rampResult.ramps.push({"tag": "Boon Ramp", "sequence": boonSeq, "totalHealing": boonRamp.totalHealing});
+        rampResult.ramps.push({"tag": "Fiend Ramp", "sequence": fiendSeq, "totalHealing": fiendRamp.totalHealing});
+        rampResult.ramps.push({"tag": "Mini Ramp", "sequence": miniSeq, "totalHealing": fiendRamp.totalHealing});
+     
+        console.log("== Set Ramp Information == ")
+        console.log("Total Healing: " + Math.round(rampResult.totalHealing));
+        console.log("Legendaries used: Clarity of Mind");
+        console.log("Conduits used: " + JSON.stringify(conduits));
+        console.log("Post-DR passive stat breakdown: " + JSON.stringify(stats));
+        rampResult.ramps.forEach(ramp => {
+            console.log("Ramp Name: " + ramp.tag + " (" + Math.round(ramp.totalHealing) + " healing)");
+            console.log("Pre-ramp conditions: " + "[Power of the Dark Side, Purge the Wicked, Pelagos]");
+            console.log(rampShortener(ramp.sequence));
+    })}
+
+
+    //console.log(JSON.stringify(rampResult));
+
+    return rampResult; //boonRamp + fiendRamp + miniRamp * 2;
 }
 
 /**  Extend all active atonements by @extension seconds. This is triggered by Evanglism / Spirit Shell. */
@@ -538,7 +597,8 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     // Add up our healing values (including atonement) and return it.
 
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
-    return sumValues(state.healingDone)
+    state.totalHealing = sumValues(state.healingDone);
+    return state;//sumValues(state.healingDone)
 
 }
 

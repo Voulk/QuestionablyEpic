@@ -1,4 +1,4 @@
-import { runCastSequence, allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { runCastSequence, allRamps, allRampsHealing } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 

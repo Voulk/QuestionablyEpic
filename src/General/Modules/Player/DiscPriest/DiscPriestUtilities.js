@@ -1,5 +1,5 @@
 
-import { allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { allRamps, allRampsHealing } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "./DiscRampGen";
 
 export const getRampData = (playerStats, playerTrinkets, playstyle) => {
@@ -7,13 +7,13 @@ export const getRampData = (playerStats, playerTrinkets, playstyle) => {
     const rampTime = 180;
     const boonSeq = buildRamp('Boon', 10, [], playerStats.haste, playstyle, ['Rapture'])
     const fiendSeq = buildRamp('Fiend', 10, [], playerStats.haste, playstyle, ['Rapture'])
-    const discBaseline = allRamps(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": false, "Pelagos": false}, {});
-    const baselineAdj = allRamps(boonSeq, fiendSeq, playerStats, {"DefaultLoadout": true}, {});
-    const clarityOfMind = allRamps(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": true, "Pelagos": false}, {});
-    const exaltation = allRamps(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": false, "Pelagos": false}, {"Exaltation": 226});
-    const rabidShadows = allRamps(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": false, "Pelagos": false}, {"Rabid Shadows": 226});
-    const courAscension = allRamps(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": false, "Pelagos": false}, {"Courageous Ascension": 226});
-    const penitentOne = allRamps(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": false, "Pelagos": false, "Penitent One": true}, {});
+    const discBaseline = allRampsHealing(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": false, "Pelagos": false}, {});
+    const baselineAdj = allRampsHealing(boonSeq, fiendSeq, playerStats, {"DefaultLoadout": true}, {});
+    const clarityOfMind = allRampsHealing(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": true, "Pelagos": false}, {});
+    const exaltation = allRampsHealing(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": false, "Pelagos": false}, {"Exaltation": 226});
+    const rabidShadows = allRampsHealing(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": false, "Pelagos": false}, {"Rabid Shadows": 226});
+    const courAscension = allRampsHealing(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": false, "Pelagos": false}, {"Courageous Ascension": 226});
+    const penitentOne = allRampsHealing(boonSeq, fiendSeq, playerStats, {"Clarity of Mind": false, "Pelagos": false, "Penitent One": true}, {});
 
     const rampData = {
         baseline: discBaseline,
@@ -33,7 +33,7 @@ export const genStatWeights = (activeStats) => {
     // Weights
     const boonSeq = buildRamp('Boon', 10, [], activeStats.haste, ['Rapture'])
     const fiendSeq = buildRamp('Fiend', 10, [], activeStats.haste, ['Rapture'])
-    const baseline = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": true, "Pelagos": true}, {"Rabid Shadows": 226, "Courageous Ascension": 226, "Shining Radiance": 226});
+    const baseline = allRampsHealing(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": true, "Pelagos": true}, {"Rabid Shadows": 226, "Courageous Ascension": 226, "Shining Radiance": 226});
     const baselineRampTime = (180+(180 / (1 + activeStats.haste / 33 / 100)))/2
     const baselineHPS = baseline / baselineRampTime;
     
