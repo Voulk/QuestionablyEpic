@@ -355,8 +355,7 @@ track4pc (state, spellName, value) {
 // -------------------------------------------------------
 // ----         Universal                         --------
 // -------------------------------------------------------
-applyTrinkets (state) {
-    return super.applyTrinkets(state);
-    }
+
+
 
 }

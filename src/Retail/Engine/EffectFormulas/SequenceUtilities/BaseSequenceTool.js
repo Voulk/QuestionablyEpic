@@ -2,6 +2,8 @@
 //import { TRINKETSDB } from "../Monk/MistweaverSpellDB";
 import { convertPPMToUptime } from "../EffectUtilities";
 import { runHeal } from "./SpellSequence";
+import { TRINKETDB } from "./TrinketDB";
+import { trinket_data } from "../Generic/TrinketData";
 
 // Defines all the functions the sequencer uses and all global modifiers
 // This is only for functions that can change based on the class.
@@ -9,6 +11,7 @@ export default class BaseSequenceTool {
 constructor(spellDB = null) { 
     // Set the spellDB for the sequencing tool
     this.spellDB = this.deepCopyFunction(spellDB);
+    this.trinketDB = this.deepCopyFunction(TRINKETDB);
 }
 
 // -------------------------------------------------------
@@ -143,6 +146,8 @@ applyLoadout (state) {
             // If only there was an option of no cov..
     }
 
+    state = this.applyTrinkets(state);
+
     return state;
 }
 
@@ -158,30 +163,19 @@ addToSpellDB (extraSpellDB) {
  * Updates the spellDB to include required trinkets
  * @param {object} trinket Trinket info as provided by the state settings
  */
- addTrinketToSpellDB (trinket, trinketNumber = 1) {
-    // TODO: Find more elegant way to do this.
-    if (trinketNumber === 1) {
-    this.spellDB.push({"Trinket1": [{
-        type: "buff",
-        castTime: 0,
-        cost: 0,
-        cooldown: trinket.cooldown,
-        buffDuration: trinket.duration,
-        buffType: trinket.type,
-        stat: trinket.stat,
-        value: trinket.value,
-    }]})
-    } else {
-        this.spellDB.push({"Trinket": [{
-            type: "buff",
-            castTime: 0,
-            cost: 0,
-            cooldown: trinket.cooldown,
-            buffDuration: trinket.duration,
-            buffType: trinket.type,
-            stat: trinket.stat,
-            value: trinket.value, 
-        }]})
+addTrinketToSpellDB (trinket) {
+    for(var j = 0; j < trinket_data.length; j++) {
+        if (trinket_data[j].name === trinket.name) { // Get the index of the trinket data
+            this.spellDB[trinket.name] = this.trinketDB[trinket.name];
+
+            for(var i = 0; i < this.trinketDB[trinket.name].length; i++) { // Iterate through all elements of the TrinketDB
+                if (trinket_data[j].effects[i].coefficient) {
+                    this.spellDB[trinket.name][i].value = trinket_data[j].effects[i].coefficient * trinket.ilvl; // If there is a coefficient, scale it by ilvl
+                }
+            };
+            
+            return;
+        }
     }
 }
 
@@ -194,11 +188,9 @@ applyTrinkets (state) {
     const trinket1 = state.settings.trinket1;
     const trinket2 = state.settings.trinket2;
 
-    // TODO: Look up comparable trinket, get PPM / other scaling from there
-    // In the end will just be providing trinket name + ilvl and this will search for active or passive trinket, and add as required.
     if (trinket1) {
-        if (trinket1.active) {
-            this.addTrinketToSpellDB(trinket1, 1);
+        if (TRINKETDB[trinket1.name]) {
+            this.addTrinketToSpellDB(trinket1);
         } else {
             let trinket = {name: trinket1.name, expiration: false, buffType: trinket1.type, value: trinket1.value, stat: trinket1.stat};  
             if (trinket1.ppm) trinket.value *= convertPPMToUptime(trinket1.ppm, trinket1.duration); 
@@ -207,8 +199,8 @@ applyTrinkets (state) {
     }
 
     if (trinket2) {
-        if (trinket2.active) {
-            this.addTrinketToSpellDB(trinket2, 2);
+        if (TRINKETDB[trinket2.name]) {
+            this.addTrinketToSpellDB(trinket2);
         } else {
             let trinket = {name: trinket2.name, expiration: false, buffType: trinket2.type, value: trinket2.value, stat: trinket2.stat};  
             if (trinket2.ppm) trinket.value *= convertPPMToUptime(trinket2.ppm, trinket2.duration); 
@@ -241,7 +233,7 @@ getReport (state, sequenceSettings) {
     state.totalHealing = Math.round(totalHealing)
     state.totalDamage = Math.round(totalDamage)
 
-    console.log(state.healingDone);
+    //console.log(state.healingDone);
     return "Test log: " + totalHealing;
 }
 

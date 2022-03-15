@@ -59,7 +59,7 @@ export const startSequence = (sequenceSettings = {}, spec = "NONE", stats = {}) 
 
     // Setup initial info based on soulbind, trinkets
     state = sequenceTool.applyLoadout(state);
-    state = sequenceTool.applyTrinkets(state);
+    
     //player.getActiveItems("Trinket").forEach(trinket => {
     //    sequenceTool.applyTrinkets(state, trinket);
     //});
