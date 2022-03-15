@@ -1133,7 +1133,7 @@ export const trinket_data = [
         coefficient: 10.149235,
         table: -8, // -9
         ppm: 1.5,
-        efficiency: 0.82,
+        efficiency: 0.74,
         duration: 10,
         tickRate: 1,
       },
