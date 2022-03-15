@@ -1,5 +1,6 @@
 // Import trinket DB
 //import { TRINKETSDB } from "../Monk/MistweaverSpellDB";
+import { convertPPMToUptime } from "../EffectUtilities";
 import { runHeal } from "./SpellSequence";
 
 // Defines all the functions the sequencer uses and all global modifiers
@@ -146,19 +147,76 @@ applyLoadout (state) {
 }
 
 /**
- * Updates the spellDB to include any new spells. Eg Trinkets.
+ * Updates the spellDB to include any new spells (if there is some shared spells?)
  * @param {object} extraSpellDB Any additional spells to be added to the main spellDB
  */
 addToSpellDB (extraSpellDB) {
-    this.spellDB.concat(extraSpellDB);
+    this.spellDB.push(extraSpellDB);
 }
 
 /**
- * Updates the spellDB to include any new spells. Eg Trinkets.
- * @param {object} extraSpellDB Any additional spells to be added to the main spellDB
+ * Updates the spellDB to include required trinkets
+ * @param {object} trinket Trinket info as provided by the state settings
  */
-modifySpellDB (spellName, modifier) {
-    this.spellDB.concat(extraSpellDB);
+ addTrinketToSpellDB (trinket, trinketNumber = 1) {
+    // TODO: Find more elegant way to do this.
+    if (trinketNumber === 1) {
+    this.spellDB.push({"Trinket1": [{
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        cooldown: trinket.cooldown,
+        buffDuration: trinket.duration,
+        buffType: trinket.type,
+        stat: trinket.stat,
+        value: trinket.value,
+    }]})
+    } else {
+        this.spellDB.push({"Trinket": [{
+            type: "buff",
+            castTime: 0,
+            cost: 0,
+            cooldown: trinket.cooldown,
+            buffDuration: trinket.duration,
+            buffType: trinket.type,
+            stat: trinket.stat,
+            value: trinket.value, 
+        }]})
+    }
+}
+
+/**
+ * Updates the spellDB and state to include required trinkets
+ * @param {object} state The state to take settings
+ * @returns The updated state
+ */
+applyTrinkets (state) {
+    const trinket1 = state.settings.trinket1;
+    const trinket2 = state.settings.trinket2;
+
+    // TODO: Look up comparable trinket, get PPM / other scaling from there
+    // In the end will just be providing trinket name + ilvl and this will search for active or passive trinket, and add as required.
+    if (trinket1) {
+        if (trinket1.active) {
+            this.addTrinketToSpellDB(trinket1, 1);
+        } else {
+            let trinket = {name: trinket1.name, expiration: false, buffType: trinket1.type, value: trinket1.value, stat: trinket1.stat};  
+            if (trinket1.ppm) trinket.value *= convertPPMToUptime(trinket1.ppm, trinket1.duration); 
+            state.activeBuffs.push(trinket);
+        }
+    }
+
+    if (trinket2) {
+        if (trinket2.active) {
+            this.addTrinketToSpellDB(trinket2, 2);
+        } else {
+            let trinket = {name: trinket2.name, expiration: false, buffType: trinket2.type, value: trinket2.value, stat: trinket2.stat};  
+            if (trinket2.ppm) trinket.value *= convertPPMToUptime(trinket2.ppm, trinket2.duration); 
+            state.activeBuffs.push(trinket);
+        }
+    }
+
+    return state;
 }
 
 // -------------------------------------------------------

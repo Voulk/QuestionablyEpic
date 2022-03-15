@@ -134,6 +134,9 @@ describe("Test Sequences", () => {
         sequenceSettings.soulbind = "Kleia";
         sequenceSettings.legendaries = ["Ancient Teachings of the Monastery"];
         sequenceSettings.misc = ["2T28"];
+        const trinket = {name: "Test", active: false, type: "stats", value: 10000, stat: "crit"};
+        sequenceSettings.trinket1 = trinket;
+
         covenants["Base"].push(startSequence(sequenceSettings, "Mistweaver Monk", activeStats3));
         console.log(covenants["Base"][0].report);
         covenants["Kyrian"].push(runCastSequence(baseSequence, activeStats3, {"DefaultLoadout": true, "covenant": "Kyrian", "legendaries": ["Ancient Teachings of the Monastery"], "misc": ["2T28"]}, {}))

@@ -226,7 +226,7 @@ applyLoadout (state) {
     // Apply monk specific factors
     switch(state.settings.soulbind) {
         case ("Emeni"):
-            spells['Bonedust Brew'].push({
+            spellDB['Bonedust Brew'].push({
                 name: "Lead by Example",
                 type: "buff",
                 buffType: 'statsMult',
@@ -236,7 +236,7 @@ applyLoadout (state) {
             });
             break;
         case ("Dreamweaver"):
-            spells['Faeline Stomp'].push({
+            spellDB['Faeline Stomp'].push({
                 type: "buff",
                 buffType: "statsMult",
                 stat: 'haste',
@@ -245,7 +245,7 @@ applyLoadout (state) {
             });
             break;
         case ("Pelagos"):
-            spells['Weapons of Order'].push({
+            spellDB['Weapons of Order'].push({
                 name: "Combat Meditation",
                 type: "buff",
                 buffType: 'stats',
@@ -352,5 +352,11 @@ track4pc (state, spellName, value) {
     }
 }
 
+// -------------------------------------------------------
+// ----         Universal                         --------
+// -------------------------------------------------------
+applyTrinkets (state) {
+    return super.applyTrinkets(state);
+    }
 
 }
