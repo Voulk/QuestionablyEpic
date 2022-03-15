@@ -855,11 +855,11 @@ export const trinket_data = [
     name: "So'leah's Secret Technique",
     effects: [
       {
-        coefficient: 0.493954, 
+        coefficient: 0.444559, 
         table: -7,
       },
       {
-        coefficient: 0.098791,
+        coefficient: 0.074093,
         table: -7,
       }
     ],
@@ -1133,7 +1133,7 @@ export const trinket_data = [
         coefficient: 10.149235,
         table: -8, // -9
         ppm: 1.5,
-        efficiency: 0.87,
+        efficiency: 0.74,
         duration: 10,
         tickRate: 1,
       },

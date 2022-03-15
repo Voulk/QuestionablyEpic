@@ -7,7 +7,8 @@ export default function MessageOfTheDay(props) {
   const messageOfTheDay = {
     "Retail": [
       "Raiders should prioritize Tier from the Great Vault.",
-      "Holy Priest Tier & Legendary support coming soon."
+      "Holy Priest Tier & Legendary support coming soon.",
+      "So'leah's hotfix nerfed in-game, and the change is live in QEL.",
   ],
   "BurningCrusade": ["Enjoy MH / BT!"]
   }

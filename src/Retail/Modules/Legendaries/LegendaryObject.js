@@ -8,7 +8,7 @@ import { legendaryNameTranslator } from "./LegendaryTranslations";
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    minHeight: 200,
+    // minHeight: 200,
     borderColor: "goldenrod",
   },
   content: { height: 150 },
@@ -53,82 +53,73 @@ export default function LegendaryObject(props) {
 
     <Grid item xs={12} sm={6} md={6} lg={4} xl={3}>
       <Card className={classes.root} variant="outlined">
-        <CardContent className={classes.content}>
+        <CardContent sx={{ padding: "8px" }}>
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
             }}
           >
-            <div style={{ alignSelf: "center" }}>
-              {/* --------------------------------------- Legendary Name --------------------------------------- */}
-              <Typography
-                color="primary"
-                variant="h6"
-                component="h2"
-                style={{
-                  fontSize: "0.9rem",
-                  alignSelf: "center",
-                  lineHeight: 1,
-                }}
-              >
-                {legendaryDataObject.name}
-              </Typography>
-              {/* -------------------------------- Slots available to Legendary -------------------------------- */}
-              <Typography variant="caption">{legendaryDataObject.slot}</Typography>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "start",
+              }}
+            >
+              <div style={{ display: "inline" }}>
+                {/* --------------------------------------- Legendary Icon --------------------------------------- */}
+                <a data-wowhead={"spell=" + item.id + "&domain=" + currentLanguage}>
+                  <img
+                    height={40}
+                    width={40}
+                    src={legendaryImages[item.name].default}
+                    alt=""
+                    style={{
+                      borderRadius: 4,
+                      borderWidth: "1px",
+                      borderStyle: "solid",
+                      borderColor: "#ff8000",
+                      marginRight: 8,
+                    }}
+                  />
+                </a>
+              </div>
+
+              <div style={{ alignSelf: "center" }}>
+                {/* --------------------------------------- Legendary Name --------------------------------------- */}
+                <Typography
+                  color="primary"
+                  variant="h6"
+                  component="h2"
+                  style={{
+                    fontSize: "0.9rem",
+                    alignSelf: "center",
+                    lineHeight: 1,
+                  }}
+                >
+                  {legendaryDataObject.name}
+                </Typography>
+                {/* -------------------------------- Slots available to Legendary -------------------------------- */}
+                <Typography variant="caption">{legendaryDataObject.slot}</Typography>
+              </div>
             </div>
-            <div>
-              {covenantSigils[legendaryDataObject.covenant] !== undefined ? (
-                <img height={40} style={{ marginTop: -7 }} src={covenantSigils[legendaryDataObject.covenant]} alt={t("Covenants." + legendaryDataObject.covenant)} />
-              ) : (
-                ""
-              )}
-              {/* --------------------------------------- Legendary Icon --------------------------------------- */}
-              <img
-                height={40}
-                width={40}
-                src={legendaryImages[item.name].default}
-                alt=""
-                style={{
-                  borderRadius: 4,
-                  borderWidth: "1px",
-                  borderStyle: "solid",
-                  borderColor: "#ff8000",
-                }}
-              />
-            </div>
+            {covenantSigils[legendaryDataObject.covenant] !== undefined ? (
+              <img height={40} style={{ marginTop: -7 }} src={covenantSigils[legendaryDataObject.covenant]} alt={t("Covenants." + legendaryDataObject.covenant)} />
+            ) : (
+              ""
+            )}
           </div>
           {/* ---------------------------- Divider to seperate header from body ---------------------------- */}
-          <Divider style={{ marginTop: 4 }} />
-          <Grid container direction="row" justifyContent="space-between" alignItems="center" style={{ height: 110 }}>
-            <Grid item xs={12}>
-              <CardContent style={{ padding: 0 }}>
-                {/* -------------------------------- Legendary Effect Description -------------------------------- */}
-                <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
-                  {legendaryDataObject.desc}
-                </Typography>
-              </CardContent>
-            </Grid>
-            <Grid item xs={12}>
-              <CardContent style={{ padding: 0, height: 20 }}>
-                {/* -------------------------------------- HPS / DPS Scores -------------------------------------- */}
-                <Typography align="center" variant="caption" component="p" style={{ lineHeight: 1.1, fontSize: "16px" }}>
-                  {t("HPS")}: {hpsString}
-                  <br />
-                  {dpsString !== "" ? dpsString : ""}
-                  <br />
-                </Typography>
-              </CardContent>
-            </Grid>
-          </Grid>
         </CardContent>
         {/* ------------------------ Divider to seperate body from Drop location. ------------------------ */}
         <Divider />
         <CardActions>
           {/* ----------------------------------- Legendary drop location ---------------------------------- */}
-          <Typography variant="caption" component="p" style={{ padding: "0px 8px" }}>
-            {t("Source")}: {legendaryDataObject.droploc}
-          </Typography>
+          <Grid container direction="row" justifyContent="space-between" alignItems="center">
+            <Grid item xs={12}>
+              <div style={{ textAlign: "center", lineHeight: 1.1, fontSize: "16px", width: "100%" }}>{t("HPS") + ": " + hpsString + (dpsString !== "" ? " " + t("DPS") + ": " + dpsString : "")}</div>
+            </Grid>
+          </Grid>
         </CardActions>
       </Card>
     </Grid>
