@@ -170,12 +170,14 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
 
     // One cast, includes core passive
     const shamanCorePassive = 0.96; // Same multi for both Riptide and Chain Harvest
-    const oneChainHarvest = 3.15 * player.getStatMultiplier("NOHASTE") * 5 * shamanCorePassive; // todo Unleash life
+    const chOverheal = 0.65;
+    const oneChainHarvest = 3.15 * player.getStatMultiplier("NOHASTE") * 5 * shamanCorePassive * chOverheal; // todo Unleash life
     const hpsDueToCDR = oneChainHarvest / effectiveCD - oneChainHarvest / chCooldown;
     
-    const oneRiptide = 1.7 * player.getStatMultiplier("NOHASTE") + (18 / 3) * 0.22 * player.getStatMultiplier("ALL")  * shamanCorePassive; // todo torrent
+    const rtOverheal = 0.75;
+    const oneRiptide = 1.7 * player.getStatMultiplier("NOHASTE") * chOverheal * shamanCorePassive + (18 / 3) * 0.22 * player.getStatMultiplier("ALL") * shamanCorePassive * rtOverheal; // todo torrent
     // Dungeons overridden hots. 
-    const activeRiptideHeal = (((18 + 12 + 6) - 5.4 * 3) / 3) * 0.22 * player.getStatMultiplier("ALL")  * shamanCorePassive;
+    const activeRiptideHeal = (((18 + 12 + 6) - 5.4 * 3) / 3) * 0.22 * player.getStatMultiplier("ALL") * shamanCorePassive;
     const rtLostHeal = contentType == "Raid" ? 3 / 20 * activeRiptideHeal : activeRiptideHeal; 
     bonusStats.hps = (oneRiptide * 5 / effectiveCD) + hpsDueToCDR - rtLostHeal / effectiveCD; 
   } else if (effectName === "Raging Vesper Vortex") {
