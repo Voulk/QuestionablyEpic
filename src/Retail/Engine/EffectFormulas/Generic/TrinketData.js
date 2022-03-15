@@ -1243,6 +1243,8 @@ export const trinket_data = [
       {
         coefficient: 3.676471,
         table: -9, // -8 in spell data
+        buffType: "stats",
+        stat: 'crit',
         duration: 18,
         ppm: 2,
       },

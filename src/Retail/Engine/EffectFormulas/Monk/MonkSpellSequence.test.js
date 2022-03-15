@@ -93,7 +93,7 @@ describe("Test Sequences", () => {
     const NFsequence = ["Tiger Palm", "Tiger Palm", "Tiger Palm", "Faeline Stomp", "Essence Font", "Chi Burst", "Faeline Stomp", "Renewing Mist", "Renewing Mist", "Refreshing Jade Wind", "Thunder Focus Tea", "Rising Sun Kick", "Faeline Stomp", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Refreshing Jade Wind", "Essence Font", "Rising Sun Kick", "Blackout Kick", "Faeline Stomp", "Refreshing Jade Wind", "Renewing Mist", "Rising Sun Kick"];
     const NFsequencePreFLH = ["Tiger Palm", "Tiger Palm", "Tiger Palm", "Essence Font", "Faeline Stomp", "Renewing Mist", "Renewing Mist", "Refreshing Jade Wind", "Thunder Focus Tea", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Faeline Stomp", "Blackout Kick", "Tiger Palm", "Refreshing Jade Wind", "Essence Font", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Blackout Kick", "Refreshing Jade Wind", "Rising Sun Kick"];
     const NLsequence = ["Tiger Palm", "Tiger Palm", "Refreshing Jade Wind", "Essence Font", "Tiger Palm", "Renewing Mist", "Renewing Mist", "Refreshing Jade Wind", "Bonedust Brew", "Thunder Focus Tea", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Blackout Kick", "Refreshing Jade Wind", "Essence Font", "Blackout Kick", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Refreshing Jade Wind", "Tiger Palm", "Blackout Kick", "Rising Sun Kick"];
-    const baseSequence =  ["Soulletting Ruby", "Tiger Palm", "Tiger Palm", "Refreshing Jade Wind", "Essence Font", "Tiger Palm", "Renewing Mist", "Renewing Mist", "Refreshing Jade Wind", "Thunder Focus Tea", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Refreshing Jade Wind", "Essence Font", "Blackout Kick", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Refreshing Jade Wind", "Blackout Kick", "Rising Sun Kick"];
+    const baseSequence =  ["Tiger Palm", "Tiger Palm", "Refreshing Jade Wind", "Essence Font", "Tiger Palm", "Renewing Mist", "Renewing Mist", "Refreshing Jade Wind", "Thunder Focus Tea", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Refreshing Jade Wind", "Essence Font", "Blackout Kick", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Refreshing Jade Wind", "Blackout Kick", "Rising Sun Kick"];
     const kyrianWoOSequence =  ["Tiger Palm", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Essence Font", "Weapons of Order", "Essence Font", "Refreshing Jade Wind", "Thunder Focus Tea", "Rising Sun Kick", "Chi Burst", "Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Refreshing Jade Wind", "Blackout Kick", "Essence Font", "Rising Sun Kick", "Tiger Palm", "Tiger Palm", "Renewing Mist", "Refreshing Jade Wind", "Blackout Kick", "Rising Sun Kick"];
     
     // Chiji testing
@@ -134,7 +134,8 @@ describe("Test Sequences", () => {
         sequenceSettings.soulbind = "Kleia";
         sequenceSettings.legendaries = ["Ancient Teachings of the Monastery"];
         sequenceSettings.misc = ["2T28"];
-        const trinket = {name: "Soulletting Ruby", ilvl: 5000};
+        //const trinket = {name: "Soulletting Ruby", ilvl: 5000}; 
+        const trinket = {name: "Symbol of the Raptora", ilvl: 5000}; 
         sequenceSettings.trinket1 = trinket;
 
         covenants["Base"].push(startSequence(sequenceSettings, "Mistweaver Monk", activeStats3));

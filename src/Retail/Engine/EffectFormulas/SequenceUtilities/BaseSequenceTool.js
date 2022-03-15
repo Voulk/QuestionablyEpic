@@ -169,9 +169,10 @@ addTrinketToSpellDB (trinket) {
             this.spellDB[trinket.name] = this.trinketDB[trinket.name];
 
             for(var i = 0; i < this.trinketDB[trinket.name].length; i++) { // Iterate through all elements of the TrinketDB
-                if (trinket_data[j].effects[i].coefficient) {
-                    this.spellDB[trinket.name][i].value = trinket_data[j].effects[i].coefficient * trinket.ilvl; // If there is a coefficient, scale it by ilvl
-                }
+                // If there is a coefficient, scale it by ilvl                
+                if (trinket_data[j].effects[i].coefficient) this.spellDB[trinket.name][i].value = trinket_data[j].effects[i].coefficient * trinket.ilvl; 
+                if (trinket_data[j].effects[i].multiplier) this.spellDB[trinket.name][i].value *= trinket_data[j].effects[i].multiplier;
+                if (trinket_data[j].effects[i].efficiency) this.spellDB[trinket.name][i].value *= trinket_data[j].effects[i].efficiency;
             };
             
             return;
@@ -192,9 +193,13 @@ applyTrinkets (state) {
         if (TRINKETDB[trinket1.name]) {
             this.addTrinketToSpellDB(trinket1);
         } else {
-            let trinket = {name: trinket1.name, expiration: false, buffType: trinket1.type, value: trinket1.value, stat: trinket1.stat};  
-            if (trinket1.ppm) trinket.value *= convertPPMToUptime(trinket1.ppm, trinket1.duration); 
-            state.activeBuffs.push(trinket);
+            for(var i = 0; i < trinket_data.length; i++) {
+                if (trinket_data[i].name === trinket1.name) {
+                    let trinket = {name: trinket1.name, expiration: false, buffType: trinket_data[i].effects[0].buffType, value: trinket_data[i].effects[0].coefficient * trinket1.ilvl, stat: trinket_data[i].effects[0].stat};  
+                    if (trinket_data[i].effects[0].ppm) trinket.value *= convertPPMToUptime(trinket_data[i].effects[0].ppm, trinket_data[i].effects[0].duration); 
+                    state.activeBuffs.push(trinket);
+                }
+            }
         }
     }
 
