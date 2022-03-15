@@ -77,13 +77,13 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     const rtPerMinute = 60 / 7; // todo echo
     const rtOverheal = 0.75;
 
-    bonusStats.hps = (oneRiptide * 0.96 * rtPerMinute * 0.25 * rtOverheal) / 60; // Added spec aura -4%
+    bonusStats.hps = (oneRiptide * 0.96 * rtPerMinute / 3 * rtOverheal) / 60; // Added spec aura -4%
 
     // Calculate number of bonus riptides and healing wave heal from Primordial Wave
     if (player.getCovenant() === "necrolord"){
       const pwavePerMinute = (60 / 45) * 1.34; // TODO: Implement conduit properly, currently this is just 278
       const bonusHealingWaveValue = HEALING_WAVE_COPY_SP * pwavePerMinute * 0.25 * 0.6; // 40% overheal on extra healing waves
-      bonusStats.hps = (oneRiptide * 0.96 * (rtPerMinute + pwavePerMinute) * 0.25 + bonusHealingWaveValue) / 60; // Added spec aura -4%
+      bonusStats.hps = (oneRiptide * 0.96 * (rtPerMinute + pwavePerMinute) / 3 + bonusHealingWaveValue) / 60; // Added spec aura -4%
     }
   } else if (effectName === SPIRITWALKERS_TIDAL_TOTEM) {
     /**
