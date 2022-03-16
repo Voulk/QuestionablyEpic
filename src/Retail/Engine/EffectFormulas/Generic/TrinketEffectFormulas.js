@@ -372,6 +372,25 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Gemstone of Prismatic Brilliance                                 */
+    /* ---------------------------------------------------------------------------------------------- */
+    effectName === "Gemstone of Prismatic Brilliance"
+  ) {
+    let effect = activeTrinket.effects[0];
+
+    const totalBonusStat = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration * effect.ppm / 60;
+    // Proc munching is a rarity here since procs can both be up at once. For that reason we'll instead use a more standard duration x ppm / 60 formula.
+
+    // TODO: Apply DR to each proc.
+
+    bonus_stats.haste = totalBonusStat / 4;
+    bonus_stats.crit = totalBonusStat / 4;
+    bonus_stats.mastery = totalBonusStat / 4;
+    bonus_stats.versatility = totalBonusStat / 4;
+    //
+  } 
+  else if (
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                  Book-Borrower Identification                                  */
     /* ---------------------------------------------------------------------------------------------- */
     effectName === "Book-Borrower Identification"
