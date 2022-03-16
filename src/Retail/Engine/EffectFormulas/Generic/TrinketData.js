@@ -16,7 +16,12 @@ export const trinket_data = [
         cooldown: 120,
         targets: { Raid: 5, Dungeon: 3.1 }, // Remember that this is only used for the meteor effect.
         ticks: 3,
+        meteorType: "split",
         meteor: 0.15,
+        duration: 12,
+        initialTick: true,
+        tickRate: 4, 
+        secondaries: ['vers'],
       },
     ],
   },

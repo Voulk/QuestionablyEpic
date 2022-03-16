@@ -28,29 +28,30 @@ export const startSequence = (sequenceSettings = {}, spec = "NONE", stats = {}) 
 
     // Process sequence settings
     if (sequenceSettings.runCount == null) sequenceSettings.runCount = 1;
+    if (sequenceSettings.contentType == null) sequenceSettings.contentType = "Raid";
 
     // Setup sequenceTool based on spec.
     switch(spec) {
         case ("Holy Paladin"):
-            notImplemented();
+            throw {name : "NotImplementedError", message : "Holy Paladin sequence tool not set or implemented"};
             break;
         case ("Restoration Druid"):
-            notImplemented();
+            throw {name : "NotImplementedError", message : "Restoration Druid sequence tool not set or implemented"};
             break;
         case ("Restoration Shaman"):
-            notImplemented();
+            throw {name : "NotImplementedError", message : "Restoration Shaman sequence tool not set or implemented"};
             break;
         case ("Mistweaver Monk"):
             sequenceTool = new MonkSequenceTool();
             break;
         case ("Discipline Priest"):
-            notImplemented();
+            throw {name : "NotImplementedError", message : "Discipline Priest sequence tool not set or implemented"};
             break;
         case ("Holy Priest"):
-            notImplemented();
+            throw {name : "NotImplementedError", message : "Holy Priest sequence tool not set or implemented"};
             break;
         default: 
-            notImplemented();
+            throw {name : "NotImplementedError", message : "No spec or incorrect spec, supplied: " + spec};
             // Return an error.
     }
 
@@ -295,8 +296,15 @@ export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) =
                     if (spell.buffType === "stats" || spell.buffType == "statsMult") {
                         state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: spell.buffType, value: spell.value, stat: spell.stat});
                     }
-                    else if (spell.buffType === "heal") {
-                        const newBuff = {name: spellName, buffType: "heal", attSpell: spell,
+                    else if (spell.buffType === "heal" || spell.buffType === "damage") {
+                        
+                        // Simple initial tick implementation
+                        if (spell.initialTick) {
+                            if (spell.buffType === "heal") runHeal(state, spell, spellName);
+                            if (spell.buffType === "damage") runDamage(state, spell, spellName);
+                        }
+
+                        const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
                             tickRate: spell.tickRate, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
                         newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
 

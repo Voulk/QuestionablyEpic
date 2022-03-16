@@ -209,19 +209,12 @@ export const MONKSPELLS = {
             }
         }
     }],
-    "Refreshing Jade Wind": [{
-        type: "heal",
-        castTime: 0,
-        cost: 3.5,
-        coeff: 0.116,
-        targets: 6,
-        overheal: 0.2,
-        secondaries: ['crit', 'vers'],
-    },
+    "Refreshing Jade Wind": [
     {
         type: "buff",
         buffType: "heal",
         coeff: 0.116,
+        initialTick: true,
         tickRate: 0.75,
         buffDuration: 9,
         hastedDuration: true,
