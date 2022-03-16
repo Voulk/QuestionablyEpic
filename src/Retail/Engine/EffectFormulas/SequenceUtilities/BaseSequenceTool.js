@@ -163,21 +163,81 @@ addToSpellDB (extraSpellDB) {
  * Updates the spellDB to include required trinkets
  * @param {object} trinket Trinket info as provided by the state settings
  */
-addTrinketToSpellDB (trinket) {
-    for(var j = 0; j < trinket_data.length; j++) {
-        if (trinket_data[j].name === trinket.name) { // Get the index of the trinket data
-            this.spellDB[trinket.name] = this.trinketDB[trinket.name];
+addTrinketToSpellDB (trinket, trinketEffect) {
+    let value = trinketEffect.coefficient * trinket.ilvl;
+    if (trinketEffect.multiplier) value *= trinketEffect.multiplier;
+    if (trinketEffect.efficiency) value *= trinketEffect.efficiency;
+    let newTrinket = null;
 
-            for(var i = 0; i < this.trinketDB[trinket.name].length; i++) { // Iterate through all elements of the TrinketDB
-                // If there is a coefficient, scale it by ilvl                
-                if (trinket_data[j].effects[i].coefficient) this.spellDB[trinket.name][i].value = trinket_data[j].effects[i].coefficient * trinket.ilvl; 
-                if (trinket_data[j].effects[i].multiplier) this.spellDB[trinket.name][i].value *= trinket_data[j].effects[i].multiplier;
-                if (trinket_data[j].effects[i].efficiency) this.spellDB[trinket.name][i].value *= trinket_data[j].effects[i].efficiency;
-            };
-            
-            return;
+    if(!this.spellDB[trinket.name]){
+        if(trinketEffect.type === "stats") { // Handle stats - don't think there is stat multi or raw stats?
+            newTrinket = { "Trinket": [{
+                type: "buff",
+                castTime: 0, 
+                cost: 0,
+                cooldown: trinketEffect.cooldown,
+                buffDuration: trinketEffect.duration,
+                buffType: trinketEffect.type,
+                stat: trinketEffect.stat,
+                value: value, // Trinket values are replaced by the value on the specific version of the trinket.
+            }],};
+        } else if (trinketEffect.type === "heal" || trinketEffect.type === "damage") { // TODO: Add all this info to all the trinkets / do full trinket pass.
+            newTrinket = { "Trinket": [{
+                type: trinketEffect.type,
+                damageType: trinketEffect.damageType, 
+                castTime: 0, 
+                cost: 0,
+                cooldown: trinketEffect.cooldown,
+                buffDuration: trinketEffect.duration,
+                tickRate: trinketEffect.tickRate,
+                hastedDuration: trinketEffect.hastedDuration,
+                buffType: trinketEffect.type,
+                stat: trinketEffect.stat,
+                targets: trinketEffect.targets,
+                value: value, // Trinket values are replaced by the value on the specific version of the trinket.
+                overheal: trinketEffect.overheal ? trinketEffect.overheal : 0,
+                secondaries: trinketEffect.secondaries
+            }],};
+        } else {
+            NotImplmented(); // Not sure if there are other trinkets that will need to be caught. 
+        }
+
+        this.spellDB[trinket.name] = newTrinket["Trinket"];
+    } else { // Same as the above just pushing instead of creating new trinket.
+        if(trinketEffect.type === "stats") { // Handle stats - don't think there is stat multi or raw stats?
+            newTrinket = { "Trinket": [{
+                type: "buff",
+                castTime: 0, 
+                cost: 0,
+                cooldown: trinketEffect.cooldown,
+                buffDuration: trinketEffect.duration,
+                buffType: trinketEffect.type,
+                stat: trinketEffect.stat,
+                value: value, // Trinket values are replaced by the value on the specific version of the trinket.
+            }],};
+        } else if (trinketEffect.type === "heal" || trinketEffect.type === "damage") { // TODO: Add all this info to all the trinkets / do full trinket pass.
+            newTrinket = { "Trinket": [{
+                type: trinketEffect.type,
+                damageType: trinketEffect.damageType, 
+                castTime: 0, 
+                cost: 0,
+                cooldown: trinketEffect.cooldown,
+                buffDuration: trinketEffect.duration,
+                tickRate: trinketEffect.tickRate,
+                hastedDuration: trinketEffect.hastedDuration,
+                buffType: trinketEffect.type,
+                stat: trinketEffect.stat,
+                targets: trinketEffect.targets,
+                value: value, // Trinket values are replaced by the value on the specific version of the trinket.
+                overheal: trinketEffect.overheal ? trinketEffect.overheal : 0,
+                secondaries: trinketEffect.secondaries
+            }],};
+        } else {
+            NotImplmented(); // Not sure if there are other trinkets that will need to be caught. 
         }
     }
+
+    return;
 }
 
 /**
@@ -190,26 +250,36 @@ applyTrinkets (state) {
     const trinket2 = state.settings.trinket2;
 
     if (trinket1) {
-        if (TRINKETDB[trinket1.name]) {
-            this.addTrinketToSpellDB(trinket1);
-        } else {
-            for(var i = 0; i < trinket_data.length; i++) {
-                if (trinket_data[i].name === trinket1.name) {
-                    let trinket = {name: trinket1.name, expiration: false, buffType: trinket_data[i].effects[0].buffType, value: trinket_data[i].effects[0].coefficient * trinket1.ilvl, stat: trinket_data[i].effects[0].stat};  
-                    if (trinket_data[i].effects[0].ppm) trinket.value *= convertPPMToUptime(trinket_data[i].effects[0].ppm, trinket_data[i].effects[0].duration); 
-                    state.activeBuffs.push(trinket);
-                }
+        //if (TRINKETDB[trinket1.name]) this.addTrinketToSpellDB(trinket1); // Handle active sections
+        
+        for(var i = 0; i < trinket_data.length; i++) { // Handle passive sections
+            if (trinket_data[i].name === trinket1.name) {
+                trinket_data[i].effects.forEach(effect => {
+                    if (effect.cooldown) // This is an on-use trinket effect
+                    {
+                        this.addTrinketToSpellDB(state.settings.trinket1, effect);
+                    } else if (effect.ppm) // This is a passive trinket effect
+                    {
+
+                    } 
+                })
+/*
+                let trinket = {name: trinket1.name, expiration: false, buffType: trinket_data[i].effects[0].buffType, value: trinket_data[i].effects[0].coefficient * trinket1.ilvl, stat: trinket_data[i].effects[0].stat};  
+                if (trinket_data[i].effects[0].ppm) trinket.value *= convertPPMToUptime(trinket_data[i].effects[0].ppm, trinket_data[i].effects[0].duration); 
+                state.activeBuffs.push(trinket);*/
             }
         }
     }
 
     if (trinket2) {
-        if (TRINKETDB[trinket2.name]) {
-            this.addTrinketToSpellDB(trinket2);
-        } else {
-            let trinket = {name: trinket2.name, expiration: false, buffType: trinket2.type, value: trinket2.value, stat: trinket2.stat};  
-            if (trinket2.ppm) trinket.value *= convertPPMToUptime(trinket2.ppm, trinket2.duration); 
-            state.activeBuffs.push(trinket);
+        if (TRINKETDB[trinket2.name]) this.addTrinketToSpellDB(trinket2); // Handle active sections
+        
+        for(var i = 0; i < trinket_data.length; i++) { // Handle passive sections
+            if (trinket_data[i].name === trinket2.name) {
+                let trinket = {name: trinket2.name, expiration: false, buffType: trinket_data[i].effects[0].buffType, value: trinket_data[i].effects[0].coefficient * trinket2.ilvl, stat: trinket_data[i].effects[0].stat};  
+                if (trinket_data[i].effects[0].ppm) trinket.value *= convertPPMToUptime(trinket_data[i].effects[0].ppm, trinket_data[i].effects[0].duration); 
+                state.activeBuffs.push(trinket);
+            }
         }
     }
 

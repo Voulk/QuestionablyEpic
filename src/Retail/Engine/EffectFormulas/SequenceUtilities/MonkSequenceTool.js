@@ -187,7 +187,6 @@ getSpecialDamage (state, spell, spellName, value) {
 /**
  * Updates the state to apply any persistant effects. 
  * @param {object} state The state for tracking information 
- * @param {object} spellDB The spell being cast. Spell data is pulled from relevant class DB. 
  * @returns The updated state.
  */
 applyLoadout (state) {
@@ -198,7 +197,7 @@ applyLoadout (state) {
     // 33% haste for 20s when summoning celestial
     if (state.settings.legendaries.includes("Invoker's Delight")) 
     {
-        spellDB['Invoke Chiji'].push({
+        this.spellDB['Invoke Chiji'].push({
             type: "buff",
             buffType: "statsMult",
             stat: 'haste',
@@ -206,7 +205,7 @@ applyLoadout (state) {
             buffDuration: 20,
         });
 
-        spellDB['Invoke Yulon'].push({
+        this.spellDB['Invoke Yulon'].push({
             type: "buff",
             buffType: "statsMult",
             stat: 'haste',
@@ -226,7 +225,7 @@ applyLoadout (state) {
     // Apply monk specific factors
     switch(state.settings.soulbind) {
         case ("Emeni"):
-            spellDB['Bonedust Brew'].push({
+            this.spellDB['Bonedust Brew'].push({
                 name: "Lead by Example",
                 type: "buff",
                 buffType: 'statsMult',
@@ -236,7 +235,7 @@ applyLoadout (state) {
             });
             break;
         case ("Dreamweaver"):
-            spellDB['Faeline Stomp'].push({
+            this.spellDB['Faeline Stomp'].push({
                 type: "buff",
                 buffType: "statsMult",
                 stat: 'haste',
@@ -245,7 +244,7 @@ applyLoadout (state) {
             });
             break;
         case ("Pelagos"):
-            spellDB['Weapons of Order'].push({
+            this.spellDB['Weapons of Order'].push({
                 name: "Combat Meditation",
                 type: "buff",
                 buffType: 'stats',

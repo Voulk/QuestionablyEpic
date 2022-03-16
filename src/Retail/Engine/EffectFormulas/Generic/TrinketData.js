@@ -216,6 +216,8 @@ export const trinket_data = [
         multiplier: 1.62, // This assumes your average boss health is just under 50% which feels like a fair average.
         efficiency: 0.92, // Ruby is a tough trinket to maximise and it's average use case is far below it's maximum.
         cooldown: 120,
+        type: "stats",
+        stat: 'crit',
         discOverhealing: 0.37,
       },
       {
@@ -1243,8 +1245,8 @@ export const trinket_data = [
       {
         coefficient: 3.676471,
         table: -9, // -8 in spell data
-        buffType: "stats",
-        stat: 'crit',
+        type: "stats",
+        stat: 'int',
         duration: 18,
         ppm: 2,
       },
