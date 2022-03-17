@@ -244,6 +244,51 @@ export function getUnityEffect(player) {
     }
   }
   else if (player.getSpec() === "Holy Paladin") {
-
+    switch (player.getCovenant()) {
+      case "necrolord":
+        return "Duty-Bound Gavel"
+      case "night_fae":
+        return "Seasons of Plenty"
+      case "venthyr":
+        return "Radiant Embers"
+      case "kyrian":
+        return "Divine Resonance"
+    }
+  }
+  else if (player.getSpec() === "Holy Priest" || player.getSpec() === "Discipline Priest") {
+    switch (player.getCovenant()) {
+      case "necrolord":
+        return "Pallid Command"
+      case "night_fae":
+        return "Bwonsamdi's Pact"
+      case "venthyr":
+        return "Shadow Word: Manipulation"
+      case "kyrian":
+        return "Sphere's Harmony"
+    }
+  }
+  else if (player.getSpec() === "Mistweaver Monk") {
+    switch (player.getCovenant()) {
+      case "necrolord":
+        return "Bountiful Brew"
+      case "night_fae":
+        return "Faeline Harmony"
+      case "venthyr":
+        return "Sinister Teachings"
+      case "kyrian":
+        return "Call to Arms"
+    }
+  }
+  else if (player.getSpec() === "Restoration Shaman") {
+    switch (player.getCovenant()) {
+      case "necrolord":
+        return "Splintered Elements"
+      case "night_fae":
+        return "Seeds of Rampant Growth"
+      case "venthyr":
+        return "Elemental Conduit"
+      case "kyrian":
+        return "Raging Vesper Vortex"
+    }
   }
 }
