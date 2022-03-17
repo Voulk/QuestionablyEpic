@@ -35,8 +35,8 @@ import { getGenericSet } from "BurningCrusade/Engine/EffectFormulas/Generic/Gene
 // This allows each spec to work on spec-specific calculations without a need to interact with the other specs.
 export function getEffectValue(effect, player, castModel, contentType, itemLevel = 0, userSettings, gameType = "Retail", setStats = {}) {
   let bonus_stats = {};
-  const effectName = effect.name;
-  const effectType = effect.type;
+  let effectName = effect.name;
+  let effectType = effect.type;
   // ----- Retail Effect -----
   // Can either be a Spec Legendary, Trinket, or a special item effect like those found back in Crucible of Storms or the legendary BFA cloak.
   if (gameType === "Retail") {

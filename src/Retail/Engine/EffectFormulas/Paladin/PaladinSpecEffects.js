@@ -209,7 +209,6 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
       numCopies: 3,
       copyStrength: 0.5,
     };
-  
     bonus_stats = getPaladinCovAbility("Pelagos", player, contentType, specialSettings);
 
 
