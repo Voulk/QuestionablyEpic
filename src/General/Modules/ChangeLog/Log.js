@@ -18,7 +18,8 @@ export const changeLog = [
       "New Trinket: Gemstone of Prismatic Brilliance.",
       "Added an option to show Upgrade Finder results in HPS instead of % gains.",
       "Bugfix: Upgrade Finder PVP items will now display at the correct item level.",
-      "Bugfix: Manually added legendaries will once again have secondary stats."
+      "Bugfix: Manually added legendaries will once again have secondary stats.",
+      "Bugfix: Burning Crusade items should once again import."
     ],
   },
   {
