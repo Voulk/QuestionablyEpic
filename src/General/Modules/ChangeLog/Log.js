@@ -10,6 +10,19 @@
 export const changeLog = [
   {
     version: "9.2 / 2.5.3",
+    update: 10,
+    date: "17th March",
+    changes: [
+      "Added support for the Unity special legendary in all modules.",
+      "Added manual Unity entry in any slot.",
+      "New Trinket: Gemstone of Prismatic Brilliance.",
+      "Added an option to show Upgrade Finder results in HPS instead of % gains.",
+      "Bugfix: Upgrade Finder PVP items will now display at the correct item level.",
+      "Bugfix: Manually added legendaries will once again have secondary stats."
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
     update: 9,
     date: "14th March (Major)",
     changes: [
