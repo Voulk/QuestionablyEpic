@@ -41,7 +41,7 @@ export default function ItemCardReport(props) {
   const currentLanguage = i18n.language;
   const statString = gameType === "BurningCrusade" ? "" : buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level;
-  const isLegendary = "effect" in item && item.effect.type === "spec legendary";
+  const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
   const socketImg = {
     haste: hasteSocket,
     crit: critSocket,
