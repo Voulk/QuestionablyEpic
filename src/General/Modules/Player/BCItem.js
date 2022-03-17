@@ -48,6 +48,10 @@ class BCItem {
     return id + "" + (Math.floor(Math.random() * 100000) + 1).toString();
   }
 
+  isTierPiece() {
+    return false
+  }
+
   getQualityColor() {
     const quality = getItemProp(this.id, "quality", "BurningCrusade")
     if (quality === 5) return "#ff8000";
