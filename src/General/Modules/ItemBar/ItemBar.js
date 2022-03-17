@@ -119,7 +119,7 @@ export default function ItemBar(props) {
     if (gameType === "Retail") {
       const itemSlot = getItemProp(itemID, "slot", gameType);
 
-      if (itemID < 20000) {
+      if (itemID > 990001) {
         // Item is a legendary and gets special handling.
         const missiveStats = missives.toLowerCase().replace(/ /g, "").split("/");
         let itemAllocations = getItemAllocations(itemID, missiveStats);

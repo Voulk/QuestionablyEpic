@@ -40,6 +40,10 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   // ----- Retail Effect -----
   // Can either be a Spec Legendary, Trinket, or a special item effect like those found back in Crucible of Storms or the legendary BFA cloak.
   if (gameType === "Retail") {
+    if (effectType === "unity") {
+      effectType = 'spec legendary'
+      effectName = getUnityEffect(player);
+    }
     if (effect.type === "special") {
       // A special effect is one that appears on an item slot where an effect isn't usually expected.
       // This includes stuff like Drape of Shame that adds a crit bonus to a cape slot.
@@ -221,4 +225,25 @@ export function getCovAbility(soulbindName, player, contentType) {
   }
 
   return bonus_stats;
+}
+
+
+export function getUnityEffect(player) {
+  // Returns an effect name for a players given covenant so that Unity calls the correct formula.
+  if (player.getSpec() === "Restoration Druid") {
+    // -- Resto Druid Covenant Legendaries -- 
+    switch (player.getCovenant()) {
+      case "necrolord":
+        return "Locust Swarm"
+      case "night_fae":
+        return "Celestial Spirits"
+      case "venthyr":
+        return "Sinful Hysteria"
+      case "kyrian":
+        return "Kindred Affinity"
+    }
+  }
+  else if (player.getSpec() === "Holy Paladin") {
+
+  }
 }
