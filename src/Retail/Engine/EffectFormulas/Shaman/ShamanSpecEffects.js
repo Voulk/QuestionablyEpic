@@ -59,7 +59,8 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     // It might take a little bit of time to see how players best use this since there's a little bit of flexibility.
     // We'll focus our formula mostly on Healing Tide Totem CDR but this formula could easily be updated or even split via the
     // breakdown of how often each totem benefits.
-    const oneHealingTide = player.getStatMultiplier("ALL") * 0.35 * 5 * 20 * 0.75; // With HTT large range it should be no issue hitting all 20 people.
+    const httTargets = contentType == "Raid" ? 20 : 5; // With HTT large range it should be no issue hitting all 20 people.
+    const oneHealingTide = player.getStatMultiplier("ALL") * 0.35 * 5 * httTargets * 0.75; 
     const cooldownRedPerMin = (player.getSpellCPM(IDCHAINHEAL, contentType) + freeChainHealsPerMinute) * 4 * player.getStatPerc("Crit");// chain heal CPM x targets x modifiedCritChance
     const hpsFreeTotems = oneHealingTide * (2 / 180 * cooldownRedPerMin) / 60;
 
@@ -74,17 +75,40 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     // const rtHPS = player.getSpellHPS("Riptide", contentType);
     // bonusStats.hps = rtHPS * 0.25;
     const oneRiptide = 1.7 * player.getStatMultiplier("NOHASTE") + (18 / 3) * 0.22 * player.getStatMultiplier("ALL"); // todo torrent
-    const rtPerMinute = 60 / 7; // todo echo
+    const rtPerMinute = 60 / 7; // Echo default talent, assume a little lost for bad play / downtime
     const rtOverheal = 0.75;
+    const shamanCorePassive = 0.96; // Added spec aura -4%
 
-    bonusStats.hps = (oneRiptide * 0.96 * rtPerMinute / 3 * rtOverheal) / 60; // Added spec aura -4%
+    bonusStats.hps = (oneRiptide * shamanCorePassive * rtPerMinute / 3 * rtOverheal) / 60;
 
     // Calculate number of bonus riptides and healing wave heal from Primordial Wave
     if (player.getCovenant() === "necrolord"){
       const pwavePerMinute = (60 / 45) * 1.34; // TODO: Implement conduit properly, currently this is just 278
       const bonusHealingWaveValue = HEALING_WAVE_COPY_SP * pwavePerMinute * 0.25 * 0.6; // 40% overheal on extra healing waves
-      bonusStats.hps = (oneRiptide * 0.96 * (rtPerMinute + pwavePerMinute) / 3 + bonusHealingWaveValue) / 60; // Added spec aura -4%
+      bonusStats.hps = (oneRiptide * shamanCorePassive * (rtPerMinute + pwavePerMinute) / 3 + bonusHealingWaveValue) / 60; 
     }
+
+    /* Support Venth double legendary
+    if (player.getCovenant() === "venthyr") {
+      const targets = contentType == "Raid" ? 6 : 8;
+      const chCooldown = 90 - (targets * 5 * (player.getStatPerc("Crit") + 0.15 - 1)); // TODO: Implement conduit properly, currently this is just 278
+  
+      const flameshockUptime = contentType == "Raid" ? 0.7 : 0.95; // TODO: Get better log data
+      const flameshockCDR = 2 / player.getStatPerc("Haste") * (player.getStatPerc("Crit") - 1) * flameshockUptime; // CDR per second
+      const fsDungeonAppliedCHCDR = contentType == "Raid" ? 0 : flameshockCDR * 18 * 5;
+      const flameshockTargets = contentType == "Raid" ? 1 : 2; // Can apply up to 3 normally, but typically will be less
+  
+      // Get effective CD
+      let effectiveCD = chCooldown - fsDungeonAppliedCHCDR;
+      for (var i = 0; i < flameshockTargets; i += 1)
+      {
+        effectiveCD -= flameshockCDR * effectiveCD;
+      }
+      effectiveCD = (effectiveCD + chCooldown) / 2;
+
+      const venthLegoRTPM = 60 / chCooldown * 5; 
+      bonusStats.hps = (oneRiptide * shamanCorePassive * (rtPerMinute + venthLegoRTPM)  / 3 * rtOverheal) / 60;
+    } */
   } else if (effectName === SPIRITWALKERS_TIDAL_TOTEM) {
     /**
      * every mtt use gain 10 seconds of quicker chhw casts
@@ -97,7 +121,30 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     // Scale window throughput by the increased mana efficiency to factor that you wouldn't be casting these CH originally
     const manaEfficency = 0.6; 
 
-    bonusStats.hps = (possibleCasts * chHeal * manaEfficency * classPassive) / 180;
+    /* 4pc Calcs 
+    const freeChainHealsPerMinute = 2 + 0.5 + 0.33 + 0.33;
+    const affectedTotemsOnCD = 2; // Div 2 to factor this + HTT being used only
+    const cooldownRedPerMin = (player.getSpellCPM(IDCHAINHEAL, contentType) + freeChainHealsPerMinute) * 4 * player.getStatPerc("Crit") / affectedTotemsOnCD; 
+    const mttCooldown = 180 - (cooldownRedPerMin * 3) - (possibleCasts * 4 * player.getStatPerc("Crit") / affectedTotemsOnCD); 
+    */
+    const mttCooldown = 180; // Replace with above for 4pc
+
+    bonusStats.hps = (possibleCasts * chHeal * manaEfficency * classPassive) / mttCooldown;
+
+    // Compared to the HPS of that time you'll be casting chain heals, and factor the reduced cost
+    const comparedHPS = ((possibleCasts * chHeal * classPassive * (1 / manaEfficency)) - (player.getHPS() * buffDuration)) / mttCooldown
+    if (comparedHPS > bonusStats.hps) bonusStats.hps = comparedHPS;
+
+    /* Bonus 4pc CDR calc
+    let httCooldown = 180;
+    if (player.getCovenant() === "night_fae") httCooldown = 180 - (7 * 5) * 180 / (120 - 36);
+
+    const httTargets = contentType == "Raid" ? 20 : 5;
+    const oneHealingTide = player.getStatMultiplier("ALL") * 0.35 * 5 * httTargets * 0.75; 
+    const cooldownRedPerMTT = possibleCasts * 4 * player.getStatPerc("Crit"); 
+    const hpsFreeTotems = (bonusStats.hps + oneHealingTide / httCooldown) / 2 * 2 * cooldownRedPerMTT / mttCooldown; // Assume CDR either going to this or to HTT
+    bonusStats.hps += hpsFreeTotems;
+    */
   } else if (effectName === EARTHEN_HARMONY) {
     /**
      * if earth shield target is below 75%, earth shield heals 150% more
@@ -130,7 +177,6 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
         triggerCasts += player.getSpellCasts(IDPRIMORDIALWAVE, contentType) * avgRiptides;
       }
     }
-    
 
     const chCasts = player.getSpellCasts(IDCHAINHEAL, contentType);
     const ratio = Math.min(Math.max(triggerCasts / chCasts, 0.01), 5);
@@ -182,6 +228,7 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     bonusStats.hps = (oneRiptide * 5 / effectiveCD) + hpsDueToCDR - rtLostHeal / effectiveCD; 
   } else if (effectName === "Raging Vesper Vortex") {
     // Heal when 3 charges used, healing is spread between targets so shouldn't be wasted.
+    // TODO: Implement 4pc
     const vtPerMinute = 60 / 60;
     const classPassive = 0.96;
     const healing = 1.1 * player.getStatMultiplier("NOHASTE") * 2 * classPassive; // Assume you use both damage and healing charges
@@ -189,7 +236,7 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     bonusStats.hps = (healing * vtPerMinute) / 60
   } else if (effectName === "Deeply Rooted Elements") {
     // Casting Riptide has a 7% chance to activate Ascendance for 6 seconds.
-    const rtPerMinute = 60 / 6; // Echo default talent
+    const rtPerMinute = 60 / 7; // Echo default talent, assume a little lost for bad play / holding 2 charges to proc
     const expectedOverheal = 0.7; // 30% overheal/wastage factor
 
     bonusStats.hps = player.getHPS() * convertPPMToUptime(rtPerMinute * 0.07, 6) * expectedOverheal;
@@ -209,8 +256,8 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     const rainAvgTargets = contentType == "Raid" ? 6 : 4;
     const rainHealing = 0.265 * rainAvgTargets * 5 * 2 * player.getStatMultiplier("ALL") * 1.25; 
 
-    const baseCooldown = 144; // Factoring conduit - 36 seconds
-    const effectiveCD = 144 - (7 * 5);
+    const baseCooldown = 180; 
+    const effectiveCD = 180 - (7 * 5) * 180 / (120 - 36); // Factoring conduit - 36 seconds
 
     const hpsDueToCDR = ((httHealing * targets) + rainHealing) / effectiveCD - ((httHealing * targets) + rainHealing) / baseCooldown;
     const hpsDueToCrit = player.getHPS() * convertPPMToUptime(60 / effectiveCD, 15) * 7 * 0.04;
