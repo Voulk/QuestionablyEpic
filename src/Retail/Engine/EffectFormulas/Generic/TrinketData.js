@@ -1,5 +1,3 @@
-import PlayerChars from "General/Modules/Player/PlayerChars";
-
 export const trinket_data = [
   {
     /* ---------------------------------------------------------------------------------------------- */
