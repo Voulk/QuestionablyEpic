@@ -7,12 +7,13 @@ import { trinket_data } from "../Generic/TrinketData";
 // Defines all the functions the sequencer uses and all global modifiers
 // This is only for functions that can change based on the class.
 export default class BaseSequenceTool {
-constructor(spellDB = null, player = null, talents = {}, conduits = {}) { 
+constructor(state, spellDB = null, player = null, talents = {}, conduits = [], conduitInfo = {}) { 
     // Set the spellDB for the sequencing tool
     this.spellDB = this.deepCopyFunction(spellDB);
     this.player = player; // This is to use player functions, like default stat weights
     this.talents = talents; // Talents and conduits applied here to cover anything that may affect non-class specific things.
-    this.conduits = conduits;
+    this.conduits = this.setupConduits(state, conduitInfo, conduits);
+    this.applyLoadout(state);
 }
 
 // -------------------------------------------------------
@@ -113,6 +114,31 @@ spendMana (state, spell) {
     return manaSpent;
 }
 
+/** Add the conduit info to the conduits list
+ * @param {*} conduitInfo The info for a class' conduits
+ * @param {*} conduits The list of desired conduits
+ * @returns Returns the list of active conduits and effects
+ */
+ setupConduits (state, conduitInfo, conduits) {
+    conduits.forEach(conduit => {
+        if (conduitInfo[conduit.name]) {
+            conduitInfo[conduit][0].value = conduitInfo[conduit][0].base + conduitInfo[conduit][0].coeff * state.settings.conduitsRank;
+        } 
+    });    
+
+    return conduitInfo; 
+ }
+
+/** Get the conduit's value
+ * @param {*} conduitName The conduit's name
+ * @param {*} secondaryValue To get secondary value
+ * @returns Returns the added multiplier for the value eg 0.05
+ */
+ getConduitMult(conduitName, secondaryValue = false) {
+    if (secondaryValue) return this.conduits[conduitName][0].secondaryValue;
+    return this.conduits[conduitName][0].value;
+ }
+
 // -------------------------------------------------------
 // ----         Stats information section         --------
 // -------------------------------------------------------
@@ -166,9 +192,9 @@ applyLoadout (state) {
             state.activeBuffs.push({name: "Tea Time", expiration: false, buffType: "statsMult", value: 1.03, stat: "int"}); // Int doesn't scale with tier so not 3%, other stats scale worse
             break;
         case ("Kleia"):
-            //state.activeBuffs.push({name: "Pointed Courage", expiration: false, buffType: "statsRaw", value: 6, stat: 'crit'});
-            //state.activeBuffs.push({name: "Light the Path", expiration: false, buffType: "statsRaw", value: 5, stat: 'crit'});
-            state.activeBuffs.push({name: "Kleia", expiration: false, buffType: "stats", value: 385, stat: 'crit'});
+            state.activeBuffs.push({name: "Pointed Courage", expiration: false, buffType: "statsRaw", value: 6, stat: 'crit'});
+            state.activeBuffs.push({name: "Light the Path", expiration: false, buffType: "statsRaw", value: 5, stat: 'crit'});
+            // state.activeBuffs.push({name: "Kleia", expiration: false, buffType: "stats", value: 385, stat: 'crit'});
             break;
         case ("Pelagos"):
             state.activeBuffs.push({name: "Newfound Resolve", expiration: false, buffType: "statsMult", value: 1 + convertPPMToUptime(1/1.5, 15) * 0.1, stat: 'intellect'});

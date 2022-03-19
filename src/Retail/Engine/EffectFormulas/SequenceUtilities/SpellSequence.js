@@ -15,11 +15,14 @@ var sequenceTool = null;
  * @param {object} sequenceSettings Settings provided when starting sequence
  * @param {object} spec Spec in plain text, if no player provided.
  * @param {object} stats Base stats provided
+ * @param {} talents List of talents
+ * @param {} conduits List of conduits
 */
-export const startSequence = (sequenceSettings = {}, spec = "NONE", stats = {}, talents, conduits) => {
+export const startSequence = (sequenceSettings = {}, spec = "NONE", stats = {}, talents = [], conduits = []) => {
     // Process sequence settings
     if (sequenceSettings.runCount == null) sequenceSettings.runCount = 1;
     if (sequenceSettings.contentType == null) sequenceSettings.contentType = "Raid";
+    if (sequenceSettings.conduitsRank == null) sequenceSettings.conduitsRank = 13; // TODO: Get player conduits / talents from log
     let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: sequenceSettings, tierHealingDone: {}}
 
     // Setup sequenceTool based on spec.
@@ -34,7 +37,7 @@ export const startSequence = (sequenceSettings = {}, spec = "NONE", stats = {}, 
             throw {name : "NotImplementedError", message : "Restoration Shaman sequence tool not set or implemented"};
             break;
         case ("Mistweaver Monk"):
-            sequenceTool = new MonkSequenceTool(talents, conduits); // TODO: Get player conduits / talents from log
+            sequenceTool = new MonkSequenceTool(state, talents, conduits); 
             break;
         case ("Discipline Priest"):
             if (sequenceSettings.chaosBrand != false) state.settings.chaosBrand = true;
@@ -47,9 +50,6 @@ export const startSequence = (sequenceSettings = {}, spec = "NONE", stats = {}, 
             throw {name : "NotImplementedError", message : "No spec or incorrect spec, supplied: " + spec};
             // Return an error.
     }
-
-    // Setup initial info based on spec requirements
-    state = sequenceTool.applyLoadout(state);
     
     // Once all relevant setup is completed, then iterate through sequence as required
     if (sequenceSettings.presetSequence) {
@@ -94,7 +94,8 @@ const getCurrentStats = (statArray, buffs) => {
         
     });
 
-    // Additive buffs, eg 0.15 crit
+    // Additive buffs, eg 15 crit
+    // Raw stats are listed as flat numbers for ease of use
     const rawBuffs = buffs.filter(function (buff) {return buff.buffType === "statsRaw"});
     rawBuffs.forEach(buff => {
         if (buff.stat === "haste") statArray[buff.stat] += buff.value * 32; // This shouldn't be used but for completion.. potentially this should be merged in and other formulas used within the above

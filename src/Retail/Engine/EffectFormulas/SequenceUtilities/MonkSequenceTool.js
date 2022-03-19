@@ -6,11 +6,28 @@ import Player from "General/Modules/Player/Player";
 
 // Default talents
 const defaultTalents = ["Chi Burst", "Chi Torpedo", "Mana Tea", "Ring of Peace", "Diffuse Magic", "Refreshing Jade Wind", "Rising Mist"];
-const defaultConduits = [];
+const defaultConduits = ["Mind Blast"];
+const monkConduits = { // Secondaries are listed just to ensure the values are easy to modify if they somehow change and once this is removed conduits don't have any effect
+    "Adaptive Armor Fragment": [{value: 0, base: 0.018, coeff: 0.002, secondaryValue: 1/2}], // Uptime
+    "Condensed Anima Sphere": [{value: 0, base: 0.0225, coeff: 0.0025, secondaryValue: 6}],  // PPM
+    "Jade Bond": [{value: 0, base: 0.057, coeff: 0.006, secondaryValue: 0.3}],               // CDR
+    "Rising Sun Revival": [{value: 0, base: 0.112, coeff: 0.13, secondaryValue: 1}],         // RSK CDR, x10 for duration
+    "Nourishing Chi": [{value: 0, base: 0.169, coeff: 0.19, secondaryValue: 6}],             // Duration
+    "Resplendent Mist": [{value: 0, base: 0.45, coeff: 0.05, secondaryValue: 0.3}],          // Multiplier 
+    "Strike with Clarity": [{value: 0, base: 4.725, coeff: 0.525, secondaryValue: 5}],       // Duration
+    "Bone Marrow Hops": [{value: 0, base: 0.36, coeff: 0.04, secondaryValue: 2.5}],          // CDR
+    "Way of the Fae": [{value: 0, base: 0.189, coeff: 0.21, secondaryValue: 5}],             // Target cap
+    "Imbued Reflections": [{value: 0, base: 0.327, coeff: 0.36, secondaryValue: 0}],         // None
+    "Fortifying Ingredients": [{value: 0, base: 0.108, coeff: 0.12, secondaryValue: 15}],    // Duration
+    "Harm Denial": [{value: 0, base: 0.225, coeff: 0.25, secondaryValue: 0}],                // None
+    "Grounding Breath": [{value: 0, base: 0.132, coeff: 0.018, secondaryValue: 0.3}],        // Mana return chance (no cooldown factored here)
+    "Dizzying Tumble": [{value: 0, base: 0.057, coeff: 0.006, secondaryValue: 5}],           // Duration
+    // Not mentioned / 0 effect : Lingering Numbness, Swift Transference, Tumbling Technique
+};
 
 export default class MonkSequenceTool extends BaseSequenceTool {
-constructor(talents, conduits) { 
-    super(MONKSPELLS, new Player("Mock", "Mistweaver Monk", 99, "NA", "Stonemaul", "Night Elf"), talents ? talents : defaultTalents, conduits ? conduits : defaultConduits); 
+constructor(state, talents, conduits) { 
+    super(state, MONKSPELLS, new Player("Mock", "Mistweaver Monk", 99, "NA", "Stonemaul", "Night Elf"), talents ? talents : defaultTalents, conduits ? conduits : defaultConduits, monkConduits); 
 }
 
 // -------------------------------------------------------
@@ -28,7 +45,6 @@ getStatMult (currentStats, stats) {
     if (stats.includes("mastery")) mult *= (1.336 + currentStats['mastery'] * this.getMasteryScaling() / 100);
     return mult;
 }
-
 
 /**
  * @returns Returns per point mastery scaling
@@ -54,15 +70,15 @@ getMasteryScaling() {
     }
 
     // Apply Jade Bond conduit
-    if (spellName === "Gust of Mists (Chiji)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Soothing Breath (CTA Yulon)" || spellName === "Soothing Breath (Yulon)")
-    {
-        mult *= 1.125;
+    if (spellName === "Gust of Mists (Chiji)" || spellName === "Gust of Mists (CTA Chiji)" 
+        || spellName === "Soothing Breath (CTA Yulon)" || spellName === "Soothing Breath (Yulon)") {        
+        mult *= 1 + super.getConduitMult("Jade Bond");
     }
 
-    // Apply Resplendant Mist conduit
+    // Apply Resplendent Mist conduit
     if (spellName === "Gust of Mists" || spellName === "Gust of Mists (Revival)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)" || spellName === "Gust of Mists (Essence Font)" || spellName === "Gust of Mists (Bonedust Brew)")
     {
-        mult *= 1 + 0.3 * 1;
+        mult *= 1 + super.getConduitMult("Resplendent Mist") * super.getConduitMult("Resplendent Mist", true);
     }
 
     if (spellName === "Gust of Mists (Essence Font)")
@@ -202,7 +218,7 @@ applyLoadout (state) {
     // 33% haste for 20s when summoning celestial
     if (state.settings.legendaries.includes("Invoker's Delight")) 
     {
-        this.spellDB['Invoke Chiji'].push({
+        super.spellDB['Invoke Chiji'].push({
             type: "buff",
             buffType: "statsMult",
             stat: 'haste',
@@ -210,7 +226,7 @@ applyLoadout (state) {
             buffDuration: 20,
         });
 
-        this.spellDB['Invoke Yulon'].push({
+        super.spellDB['Invoke Yulon'].push({
             type: "buff",
             buffType: "statsMult",
             stat: 'haste',
@@ -282,21 +298,21 @@ applyBonedustBrew (state, spellName, value, healing = false) {
     let emenibonus = 0;
     let emenigroupbonus = 0;
     let targetMult = 0.75;
-    const conduitMult = 1.88;
+    const conduitMult = 1 + super.getConduitMult('Bone Marrow Hops'); 
     
     if (!healing)
     {
         if (super.checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
             // Run duplicate damage.
             emenigroupbonus = value * 0.08 * 15 / 19 * 2; // Approximating throughput increase for hitting non-healers
-            bonedustBonus = value * 0.5 * 0.4 * conduitMult;  // 268 conduit
+            bonedustBonus = value * 0.5 * 0.4 * conduitMult; 
             state.damageDone['Bonedust Brew'] = (state.damageDone['Bonedust Brew'] || 0) + bonedustBonus;
             state.damageDone['Emeni Group bonus'] = (state.damageDone['Emeni Group bonus'] || 0) + emenigroupbonus;
         }
         else if (state.settings.misc.includes("BB")) { // Simulate second legendary
             emenigroupbonus = value * (0.08 * convertPPMToUptime(1.5, 10)) * 15 / 19 * 2; // Approximating throughput increase for hitting non-healers
             emenibonus = value * (0.13 * convertPPMToUptime(1.5, 10));
-            bonedustBonus = (value + emenibonus) * 0.5 * 0.4 * conduitMult * 0.256 * 0.75; // 268 conduit
+            bonedustBonus = (value + emenibonus) * 0.5 * 0.4 * conduitMult * 0.256 * 0.75;
             state.damageDone['Bonedust Brew (Bountiful Brew)'] = (state.damageDone['Bonedust Brew (Bountiful Brew)'] || 0) + bonedustHealing;
             state.damageDone['Emeni (Bountiful Brew)'] = (state.damageDone['Emeni (Bountiful Brew)'] || 0) + emenibonus;
             state.damageDone['Emeni Group bonus'] = (state.damageDone['Emeni Group bonus'] || 0) + emenigroupbonus;
@@ -315,14 +331,14 @@ applyBonedustBrew (state, spellName, value, healing = false) {
         if (super.checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
             // Run duplicate damage.
             emenigroupbonus = value * 0.08 * 4 / 19; // Approximating throughput increase for hitting healers
-            bonedustBonus = value * 0.5 * 0.4 * conduitMult * targetMult;  // 268 conduit
+            bonedustBonus = value * 0.5 * 0.4 * conduitMult * targetMult; 
             state.damageDone['Bonedust Brew'] = (state.damageDone['Bonedust Brew'] || 0) + bonedustBonus;
             state.damageDone['Emeni Group bonus'] = (state.damageDone['Emeni Group bonus'] || 0) + emenigroupbonus;
         }
         else if (state.settings.misc.includes("BB")) { // Simulate second legendary
             emenigroupbonus = value * (0.08 * convertPPMToUptime(1.5, 10)) * 4 / 19; // Approximating throughput increase for hitting healers
             emenibonus = value * (0.13 * convertPPMToUptime(1.5, 10));
-            bonedustBonus = (value + emenibonus) * 0.5 * 0.4 * conduitMult * targetMult * 0.256 * 0.75; // 268 conduit
+            bonedustBonus = (value + emenibonus) * 0.5 * 0.4 * conduitMult * targetMult * 0.256 * 0.75;
             state.damageDone['Bonedust Brew (Bountiful Brew)'] = (state.damageDone['Bonedust Brew (Bountiful Brew)'] || 0) + bonedustHealing;
             state.damageDone['Emeni (Bountiful Brew)'] = (state.damageDone['Emeni (Bountiful Brew)'] || 0) + emenibonus;
             state.damageDone['Emeni Group bonus'] = (state.damageDone['Emeni Group bonus'] || 0) + emenigroupbonus;
