@@ -4,9 +4,13 @@ import { runHeal } from "./SpellSequence"; // TODO: Find out if there is a way t
 import BaseSequenceTool from "./BaseSequenceTool";
 import Player from "General/Modules/Player/Player";
 
+// Default talents
+const defaultTalents = ["Chi Burst", "Chi Torpedo", "Mana Tea", "Ring of Peace", "Diffuse Magic", "Refreshing Jade Wind", "Rising Mist"];
+const defaultConduits = [];
+
 export default class MonkSequenceTool extends BaseSequenceTool {
-constructor() { 
-    super(MONKSPELLS, new Player("Mock", "Mistweaver Monk", 99, "NA", "Stonemaul", "Night Elf")); 
+constructor(talents, conduits) { 
+    super(MONKSPELLS, new Player("Mock", "Mistweaver Monk", 99, "NA", "Stonemaul", "Night Elf"), talents ? talents : defaultTalents, conduits ? conduits : defaultConduits); 
 }
 
 // -------------------------------------------------------
@@ -146,7 +150,7 @@ getSpecialHealing (state, spell, spellName, value) {
     // Just track 4pc value, healing done in base sequence.
     // This can be done more comprehensively by iterating through each healing value change then passing to function
     if (super.checkBuffActive(state.activeBuffs, "Empowered Chrysalis")) {
-        const chrysalisSize = (healingVal / (1 - spell.overheal) * spell.overheal * 0.1)
+        const chrysalisSize = (value / (1 - spell.overheal) * spell.overheal * 0.1)
         this.track4pc(state, 'Empowered Chrysalis', chrysalisSize);
     }
 }

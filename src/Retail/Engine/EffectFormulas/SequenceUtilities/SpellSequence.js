@@ -2,12 +2,6 @@
 import { convertPPMToUptime } from "Retail/Engine/EffectFormulas/EffectUtilities"
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 
-// import { applyPassiveTrinkets, applyActiveTrinkets } from "./Trinket";
-
-// Import all non-class spell DBs for use
-///// Trinket spell DB
-///// Covenant spell DB
-
 // Import tool for each class
 import MonkSequenceTool from "./MonkSequenceTool";
 
@@ -22,12 +16,11 @@ var sequenceTool = null;
  * @param {object} spec Spec in plain text, if no player provided.
  * @param {object} stats Base stats provided
 */
-export const startSequence = (sequenceSettings = {}, spec = "NONE", stats = {}) => {
-    let extraSpellDB = null;
-
+export const startSequence = (sequenceSettings = {}, spec = "NONE", stats = {}, talents, conduits) => {
     // Process sequence settings
     if (sequenceSettings.runCount == null) sequenceSettings.runCount = 1;
     if (sequenceSettings.contentType == null) sequenceSettings.contentType = "Raid";
+    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: sequenceSettings, tierHealingDone: {}}
 
     // Setup sequenceTool based on spec.
     switch(spec) {
@@ -41,9 +34,10 @@ export const startSequence = (sequenceSettings = {}, spec = "NONE", stats = {}) 
             throw {name : "NotImplementedError", message : "Restoration Shaman sequence tool not set or implemented"};
             break;
         case ("Mistweaver Monk"):
-            sequenceTool = new MonkSequenceTool();
+            sequenceTool = new MonkSequenceTool(talents, conduits); // TODO: Get player conduits / talents from log
             break;
         case ("Discipline Priest"):
+            if (sequenceSettings.chaosBrand != false) state.settings.chaosBrand = true;
             throw {name : "NotImplementedError", message : "Discipline Priest sequence tool not set or implemented"};
             break;
         case ("Holy Priest"):
@@ -54,17 +48,9 @@ export const startSequence = (sequenceSettings = {}, spec = "NONE", stats = {}) 
             // Return an error.
     }
 
-    // Setup the state defaults
-    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: sequenceSettings, tierHealingDone: {}}
-
-    // Setup initial info based on soulbind, trinkets
+    // Setup initial info based on spec requirements
     state = sequenceTool.applyLoadout(state);
     
-    //player.getActiveItems("Trinket").forEach(trinket => {
-    //    sequenceTool.applyTrinkets(state, trinket);
-    //});
-    //sequenceTool.applyConduits(state);
-
     // Once all relevant setup is completed, then iterate through sequence as required
     if (sequenceSettings.presetSequence) {
         state = runFixedCastSequence(state, stats, sequenceSettings.presetSequence); // Run a preset set of spells, suitable for Disc ramp for example

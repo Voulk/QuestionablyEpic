@@ -2,18 +2,17 @@
 //import { TRINKETSDB } from "../Monk/MistweaverSpellDB";
 import { convertPPMToUptime } from "../EffectUtilities";
 import { runHeal } from "./SpellSequence";
-import { TRINKETDB } from "./TrinketDB";
 import { trinket_data } from "../Generic/TrinketData";
-import Player from "General/Modules/Player/Player";
 
 // Defines all the functions the sequencer uses and all global modifiers
 // This is only for functions that can change based on the class.
 export default class BaseSequenceTool {
-constructor(spellDB = null, player = null) { 
+constructor(spellDB = null, player = null, talents = {}, conduits = {}) { 
     // Set the spellDB for the sequencing tool
     this.spellDB = this.deepCopyFunction(spellDB);
-    this.trinketDB = this.deepCopyFunction(TRINKETDB);
     this.player = player; // This is to use player functions, like default stat weights
+    this.talents = talents; // Talents and conduits applied here to cover anything that may affect non-class specific things.
+    this.conduits = conduits;
 }
 
 // -------------------------------------------------------
@@ -311,7 +310,7 @@ addTrinketToSpellDB (state, trinket, trinketEffect) {
                 cooldown: trinketEffect.cooldown,
             }],};
         } else if (trinketEffect.type === "special") {
-            if (trinket.name === "Manabound Mirror") this.spellDB[trinket.name][0].value = value;            
+            if (trinket.name === "Manabound Mirror") this.spellDB[trinket.name][0].value = value; // Raw healing for manabound is in second part of trinket data      
         } else {
             throw {name : "NotImplementedError", message : "Trinket type not covered or trinket not implemented"};  // Not sure if there are other trinkets that will need to be caught. 
         }
