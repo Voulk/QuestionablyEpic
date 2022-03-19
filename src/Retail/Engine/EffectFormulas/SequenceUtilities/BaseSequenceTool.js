@@ -4,14 +4,16 @@ import { convertPPMToUptime } from "../EffectUtilities";
 import { runHeal } from "./SpellSequence";
 import { TRINKETDB } from "./TrinketDB";
 import { trinket_data } from "../Generic/TrinketData";
+import Player from "General/Modules/Player/Player";
 
 // Defines all the functions the sequencer uses and all global modifiers
 // This is only for functions that can change based on the class.
 export default class BaseSequenceTool {
-constructor(spellDB = null) { 
+constructor(spellDB = null, player = null) { 
     // Set the spellDB for the sequencing tool
     this.spellDB = this.deepCopyFunction(spellDB);
     this.trinketDB = this.deepCopyFunction(TRINKETDB);
+    this.player = player; // This is to use player functions, like default stat weights
 }
 
 // -------------------------------------------------------
@@ -90,6 +92,29 @@ getSpecialDamage (state, spell, spellName, value) {
 }
 
 // -------------------------------------------------------
+// ----         Special functions required        --------
+// -------------------------------------------------------
+
+/** Spend mana, this handles specific functions that scale off of that value
+ * @param {object} state The state for tracking information 
+ * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
+ * @returns The mana spent by the spell
+ */
+spendMana (state, spell) {
+    const manaSpent = (spell[0].cost * state.currentStats.manaMod) || 0;
+
+    // Track mana for Manabound Mirror.
+    const manaboundMirrorBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Manabound Mirror"}).length;
+    if (manaboundMirrorBuff != 0) {
+        const buff = state.activeBuffs.filter(buff => buff.name === "Manabound Mirror")[0]
+        buff.stacks += manaSpent * buff.coefficient;
+        if (buff.stacks > buff.coefficient * 10) buff.stacks = buff.coefficient * 10;
+    }
+
+    return manaSpent;
+}
+
+// -------------------------------------------------------
 // ----         Stats information section         --------
 // -------------------------------------------------------
 
@@ -130,9 +155,16 @@ applyLoadout (state) {
             state.activeBuffs.push({name: "Empowered Chrysalis", expiration: false, buffType: "special", value: 0.15}); // 15% overhealing
             state.activeBuffs.push({name: "Dream Delver", expiration: false, buffType: "special", value: 1.03});
             break;
-        case ("Theotar"): // TODO: Apply token as hps value instead
-            state.activeBuffs.push({name: "Token of Appreciation", expiration: false, buffType: "special", value: 1.025}); // 4% is overvalued wwhen factoring in tier and "high HPS sim"
-            state.activeBuffs.push({name: "Tea Time", expiration: false, buffType: "special", value: 1.025}); // Int doesn't scale with tier so not 3%, other stats scale worse
+        case ("Theotar"): 
+            // Add token healing
+            const tokenHeal = { type: "heal", coeff: 1.5 * 1.04, overheal: 0.05, secondaries: ['vers'], targets: 4};
+            const tickRate = 20;
+            const newBuff = {name: "Token of Appreciation", buffType: "heal", attSpell: tokenHeal,
+                tickRate: tickRate, next: state.t + tickRate}
+            newBuff['expiration'] = false;
+            state.activeBuffs.push(newBuff);
+            
+            state.activeBuffs.push({name: "Tea Time", expiration: false, buffType: "statsMult", value: 1.03, stat: "int"}); // Int doesn't scale with tier so not 3%, other stats scale worse
             break;
         case ("Kleia"):
             //state.activeBuffs.push({name: "Pointed Courage", expiration: false, buffType: "statsRaw", value: 6, stat: 'crit'});
@@ -159,6 +191,10 @@ addToSpellDB (extraSpellDB) {
     this.spellDB.push(extraSpellDB);
 }
 
+// -------------------------------------------------------
+// ----         Trinkets section                  --------
+// -------------------------------------------------------
+
 /**
  * Updates the spellDB to include required trinkets
  * @param {object} trinket Trinket info as provided by the state settings
@@ -167,7 +203,7 @@ addTrinketToSpellDB (state, trinket, trinketEffect) {
     let value = trinketEffect.coefficient * trinket.ilvl;
     if (trinketEffect.multiplier) value *= trinketEffect.multiplier;
     if (trinketEffect.efficiency) value *= trinketEffect.efficiency;
-    if (trinketEffect.meteor && trinketEffect.meteorType === "split") value = (value + trinketEffect.targets[state.sequenceSettings.contentType] * trinketEffect.meteor) / trinketEffect.targets;
+    if (trinketEffect.meteor && trinketEffect.aoeMult === "meteor") value = (value + trinketEffect.targets[state.sequenceSettings.contentType] * trinketEffect.meteor) / trinketEffect.targets;
     let newTrinket = null;
 
     if(!this.spellDB[trinket.name]){
@@ -185,6 +221,7 @@ addTrinketToSpellDB (state, trinket, trinketEffect) {
             }],};
         } else if (trinketEffect.type === "heal" || trinketEffect.type === "damage") { // TODO: Add all this info to all the trinkets / do full trinket pass.
             newTrinket = { "Trinket": [{
+                trinket: true, // Allows us to prevent certain healing multipliers being applied
                 type: trinketEffect.type,
                 damageType: trinketEffect.damageType, 
                 castTime: 0, 
@@ -194,15 +231,40 @@ addTrinketToSpellDB (state, trinket, trinketEffect) {
                 buffDuration: trinketEffect.duration,
                 tickRate: trinketEffect.tickRate,
                 hastedDuration: trinketEffect.hastedDuration,
-                buffType: trinketEffect.type,
-                stat: trinketEffect.stat,
                 targets: trinketEffect.targets,
                 value: value, // Trinket values are replaced by the value on the specific version of the trinket.
                 overheal: trinketEffect.overheal ? trinketEffect.overheal : 0,
                 secondaries: trinketEffect.secondaries
             }],};
-        } else if (trinketEffect.type === "manarestore") {
-            // TODO: Implement some code here
+        } else if (trinketEffect.type === "manareturn") {
+            newTrinket = { "Trinket": [{
+                type: "manareturn",
+                castTime: 0, 
+                cost: -value,
+                offGCD: true,
+                cooldown: trinketEffect.cooldown,
+            }],};
+        } else if (trinketEffect.type === "special") {
+            if (trinket.name === "Manabound Mirror") {
+                newTrinket = { "Trinket": [{
+                    trinket: true, // Allows us to prevent certain healing multipliers being applied
+                    type: "heal",
+                    castTime: 0, 
+                    cost: 0,
+                    offGCD: true,
+                    cooldown: 60,
+                    value: 0, // Trinket values are replaced by the value on the specific version of the trinket.
+                    secondaries: ['crit', 'vers']
+                }],
+                    type: "special", 
+                    runFunc: function (state) {
+                        const buff = state.activeBuffs.filter(buff => buff.name === "Manabound Mirror")[0]
+                        const spell = { trinket: true, type: "heal", value: buff.stacks, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
+                        runHeal(state, spell, "Manabound Mirror")
+                    }};
+                
+                state.activeBuffs.push({name: "Manabound Mirror", expiration: false, buffType: "special", value: 0, coefficient: trinketEffect.coefficient * trinket.ilvl});
+            }
         } else {
             throw {name : "NotImplementedError", message : "Trinket type not covered or trinket not implemented"};  // Not sure if there are other trinkets that will need to be caught. 
         }
@@ -240,8 +302,16 @@ addTrinketToSpellDB (state, trinket, trinketEffect) {
                 overheal: trinketEffect.overheal ? trinketEffect.overheal : 0,
                 secondaries: trinketEffect.secondaries
             }],};
-        } else if (trinketEffect.type === "manarestore") {
-            // TODO: Implement some code here
+        } else if (trinketEffect.type === "manareturn") {
+            newTrinket = { "Trinket": [{
+                type: "manareturn",
+                castTime: 0, 
+                cost: -value,
+                offGCD: true,
+                cooldown: trinketEffect.cooldown,
+            }],};
+        } else if (trinketEffect.type === "special") {
+            if (trinket.name === "Manabound Mirror") this.spellDB[trinket.name][0].value = value;            
         } else {
             throw {name : "NotImplementedError", message : "Trinket type not covered or trinket not implemented"};  // Not sure if there are other trinkets that will need to be caught. 
         }
@@ -250,6 +320,42 @@ addTrinketToSpellDB (state, trinket, trinketEffect) {
     return;
 }
 
+
+/**
+ * Updates the state to apply passive trinket buffs
+ * @param {object} trinket Trinket info as provided by the state settings
+ */
+ addPassiveTrinket (state, trinket, trinketEffect) {
+    let value = trinketEffect.coefficient * trinket.ilvl;
+
+    if (trinketEffect.type === "stats") {
+        if (trinketEffect.multiplier && trinket.name != "Cabalist's Hymnal") value *= trinketEffect.multiplier;
+        if (trinketEffect.efficiency) value *= trinketEffect.efficiency;
+        if (trinketEffect.meteor && trinketEffect.aoeMult === "meteor") value = (value + trinketEffect.targets[state.sequenceSettings.contentType] * trinketEffect.meteor) / trinketEffect.targets;
+        
+        let newTrinket = {name: trinket.name, expiration: false, buffType: "stats", value: value, stat: trinketEffect.stat};  
+        if (newTrinket.stat === "highestWeight") newTrinket.stat = this.player.getHighestStatWeight(contentType, trinketEffect.exclude);
+        // TODO: Implement highestStat dynamically
+        if (newTrinket.stat === "highest") newTrinket.stat = this.player.getHighestStatWeight(contentType, trinketEffect.exclude);
+
+        newTrinket.value *= convertPPMToUptime(trinketEffect.ppm, trinketEffect.duration); 
+        state.activeBuffs.push(newTrinket);
+    } else if (trinketEffect.type === "heal" || trinketEffect.type === "damage") {
+        const trinketHeal = { type: trinketEffect.type, value: value, overheal: 1 - trinketEffect.efficiency, secondaries: trinketEffect.secondaries, targets: trinketEffect.targets};
+        if (trinketEffect.type === "damage") trinketHeal.value *= trinketEffect.efficiency;
+        const tickRate = trinketEffect.hastedPPM ? trinketEffect.ppm * getHaste(state.currentStats) / 60 : trinketEffect.ppm / 60;
+
+        const newBuff = {name: trinket.name, buffType: trinketEffect.type, attSpell: trinketHeal,
+            tickRate: tickRate, next: state.t + (tickRate / getHaste(state.currentStats))}
+        newBuff['expiration'] = false;
+
+        state.activeBuffs.push(newBuff);
+    }
+
+    return state;
+ }
+
+                    
 /**
  * Updates the spellDB and state to include required trinkets
  * @param {object} state The state to take settings
@@ -258,39 +364,54 @@ addTrinketToSpellDB (state, trinket, trinketEffect) {
 applyTrinkets (state) {
     const trinket1 = state.settings.trinket1;
     const trinket2 = state.settings.trinket2;
+    let trinketFound = false;
+
+    // Catch trinkets that aren't implemented / won't be easily implemented.
+    // Also trinkets that aren't worth implementing right now
+    const notImplemented = ["Consumptive Infusion", "Spark of Hope", "Price of Progress", "Jaws of Defeat", "Necromantic Focus", "Scrawled Word of Recall", "Reclaimer's Intensity Core", "Scars of Fraternal Strife", "The Lion's Roar"];
+    const manareturnTrinkets = ["Show of Faith", "Memento of Tyrande", "Amalgam's Seventh Spine"]; // Passive mana returns
+    if(trinket1.name === "Eye of the Broodmother" || trinket1.name === "So'leah's Secret Technique") throw {name : "NotImplementedError", message : "Include " + trinket1.name + " effect as a passive int bonus."};  
+    if(notImplemented.includes(trinket1.name)) throw {name : "NotImplementedError", message : trinket1.name + " not implemented due to complexity / unique effect."};  
+    if(notImplemented.includes(trinket2.name)) throw {name : "NotImplementedError", message : trinket2.name + " not implemented due to complexity / unique effect."};  
+    if(manareturnTrinkets.includes(trinket1.name)) throw {name : "NotImplementedError", message : "Passive ManaRestore trinkets (" + trinket1.name + ") not yet implemented."};  
+    if(manareturnTrinkets.includes(trinket2.name)) throw {name : "NotImplementedError", message : "Passive ManaRestore trinkets (" + trinket2.name + ") not yet implemented."};  
+
 
     if (trinket1) {        
         for(var i = 0; i < trinket_data.length; i++) { // Handle passive sections
             if (trinket_data[i].name === trinket1.name) {
+                trinketFound = true;
                 trinket_data[i].effects.forEach(effect => {
                     if (effect.cooldown) { // This is an on-use trinket effect
                         this.addTrinketToSpellDB(state, state.settings.trinket1, effect);
                     } else if (effect.ppm) { // This is a passive trinket effect
-                        let trinket = {name: trinket1.name, expiration: false, buffType: trinket_data[i].effects[0].type, value: trinket_data[i].effects[0].coefficient * trinket1.ilvl, stat: trinket_data[i].effects[0].stat};  
-                        if (trinket_data[i].effects[0].ppm) trinket.value *= convertPPMToUptime(trinket_data[i].effects[0].ppm, trinket_data[i].effects[0].duration); 
-                        state.activeBuffs.push(trinket);
+                        state = this.addPassiveTrinket(state, state.settings.trinket1, effect);
                     } 
                 })
-
             }
+            break;
         }
+
+        if(!trinketFound) throw {name : "NotImplementedError", message : trinket1.name + " not implemented or wrong name."}; 
     }
 
+    trinketFound = false;
     if (trinket2) {        
         for(var i = 0; i < trinket_data.length; i++) { // Handle passive sections
             if (trinket_data[i].name === trinket2.name) {
+                trinketFound = true;
                 trinket_data[i].effects.forEach(effect => {
                     if (effect.cooldown) { // This is an on-use trinket effect
                         this.addTrinketToSpellDB(state, state.settings.trinket2, effect);
                     } else if (effect.ppm) { // This is a passive trinket effect
-                        let trinket = {name: trinket2.name, expiration: false, buffType: trinket_data[i].effects[0].type, value: trinket_data[i].effects[0].coefficient * trinket2.ilvl, stat: trinket_data[i].effects[0].stat};  
-                        if (trinket_data[i].effects[0].ppm) trinket.value *= convertPPMToUptime(trinket_data[i].effects[0].ppm, trinket_data[i].effects[0].duration); 
-                        state.activeBuffs.push(trinket);
+                        state = this.addPassiveTrinket(state, state.settings.trinket1, effect);
                     } 
                 })
-
+                break;
             }
         }
+
+        if(!trinketFound) throw {name : "NotImplementedError", message : trinket2.name + " not implemented or wrong name."}; 
     }
 
     return state;

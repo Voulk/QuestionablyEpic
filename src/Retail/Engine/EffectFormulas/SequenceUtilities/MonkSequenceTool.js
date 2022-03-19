@@ -2,10 +2,11 @@
 import { MONKSPELLS } from "../Monk/MistweaverSpellDB";
 import { runHeal } from "./SpellSequence"; // TODO: Find out if there is a way to import this as part of importing base sequence tool.
 import BaseSequenceTool from "./BaseSequenceTool";
+import Player from "General/Modules/Player/Player";
 
 export default class MonkSequenceTool extends BaseSequenceTool {
 constructor() { 
-    super(MONKSPELLS); 
+    super(MONKSPELLS, new Player("Mock", "Mistweaver Monk", 99, "NA", "Stonemaul", "Night Elf")); 
 }
 
 // -------------------------------------------------------

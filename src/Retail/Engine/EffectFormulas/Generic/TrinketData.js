@@ -1,3 +1,5 @@
+import PlayerChars from "General/Modules/Player/PlayerChars";
+
 export const trinket_data = [
   {
     /* ---------------------------------------------------------------------------------------------- */
@@ -15,12 +17,12 @@ export const trinket_data = [
         efficiency: 0.81,
         cooldown: 120,
         targets: { Raid: 5, Dungeon: 3.1 }, // Remember that this is only used for the meteor effect.
-        ticks: 3,
-        meteorType: "split",
+        ticks: 3, // To be removed with 10.0
+        aoeMult: "meteor",
         meteor: 0.15,
         duration: 12,
+        tickRate: 4,
         initialTick: true,
-        tickRate: 4, 
         secondaries: ['vers'],
       },
     ],
@@ -42,6 +44,9 @@ export const trinket_data = [
         coefficient: 71.74138,
         table: -8,
         cooldown: 90,
+        type: "damage", 
+        damageType: "shadow",
+        secondaries: ['crit', 'vers'],
       },
       {
         /* -------------------------------------- Intellect portion ------------------------------------- */
@@ -50,6 +55,8 @@ export const trinket_data = [
         expectedEfficiency: 0.75, // This is the percentage of the time you're able to stand in the puddle.
         duration: 15,
         cooldown: 90,
+        type: "stats",
+        stat: 'int',
       },
     ],
   },
@@ -70,13 +77,15 @@ export const trinket_data = [
         /* --------- This is the coefficient for the portion that scales with mana expenditure. --------- */
         coefficient: 12.82759,
         table: -8,
+        type: "special",
       },
       {
         /*  This is the portion for the direct heal, and also includes cooldown and efficiency information for the entire trinket.  */
         coefficient: 80.17241,
         table: -8,
         cooldown: 60,
-        efficiency: {Raid: 0.58, Dungeon: 0.7}
+        efficiency: {Raid: 0.58, Dungeon: 0.7}, 
+        type: "special",
       },
     ],
   },
@@ -95,6 +104,8 @@ export const trinket_data = [
         table: -8,
         efficiency: { Raid: 0.48, Dungeon: 0.38 }, // You do often need to sit on the cooldown for a bit since it always starts a new deck with an Ace.
         cooldown: 90,
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
     ],
   },
@@ -114,6 +125,9 @@ export const trinket_data = [
         table: -1,
         duration: 12,
         ppm: 1.5,
+        type: "stats", 
+        stat: "highestWeight",
+        exclude: ['versatility'], // Stat evaluated on implementation
       },
     ],
   },
@@ -130,6 +144,8 @@ export const trinket_data = [
         stacks: 2, // You get 10s of one stack, 10 of two, then 10 of three.
         multiplier: 0.05, // Every ally that wears it in your party gives a 5% increase. Available in Top Gear and Upgrade Finder through the settings menu.
         ppm: 1,
+        type: "stats", 
+        stat: 'versatility',
       },
     ],
   },
@@ -145,6 +161,8 @@ export const trinket_data = [
         duration: 21, // You get a 20 second duration every time you touch a new Spirit. They each live about 5 seconds.
         stacks: 2.5, // You should be able to hit all four pretty reliably, but will spend some time with lower than four stacks as you meet each.
         cooldown: 90,
+        type: "stats", 
+        stat: "haste",
       },
     ],
   },
@@ -163,6 +181,8 @@ export const trinket_data = [
         table: -8,
         efficiency: 0.37, // This represents proccing a little over a third of the uses.
         cooldown: 30,
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
     ],
   },
@@ -179,6 +199,8 @@ export const trinket_data = [
         efficiency: 0.45,
         targets: { Raid: 5, Dungeon: 3.1 }, // Up to four allies do benefit from standing with you. Not included in the score for now.
         cooldown: 150,
+        type: "stats", 
+        stat: "crit",
       },
     ],
   },
@@ -198,6 +220,8 @@ export const trinket_data = [
         table: -8,
         efficiency: 0.88,
         cooldown: 90,
+        type: "heal", 
+        secondaries: ['vers'], // Doesn't scale with secondaries?
       },
     ],
   },
@@ -231,6 +255,8 @@ export const trinket_data = [
         table: -8,
         efficiency: 0.26, // This has a very low efficiency on average since you are mostly interested in the crit buff and will pop it before damage goes out.
         cooldown: 120,
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
     ],
   },
@@ -249,6 +275,8 @@ export const trinket_data = [
         duration: 12,
         multiplier: 1,
         cooldown: 120,
+        type: "stats",
+        stat: 'haste',
       },
     ],
   },
@@ -268,7 +296,10 @@ export const trinket_data = [
         coefficient: 57.12069,
         table: -8,
         ppm: 2,
+        hastedPPM: true,
         efficiency: 0.8,
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
     ],
   },
@@ -289,6 +320,9 @@ export const trinket_data = [
         targets: 5,
         efficiency: 0.65,
         ppm: 1,
+        hastedPPM: true, 
+        type: "stats",
+        stat: 'versatility'
       },
       {
         /* ---------------------------------------- Heal portion ---------------------------------------- */
@@ -296,6 +330,9 @@ export const trinket_data = [
         table: -8,
         efficiency: 0.64, // These are unlikely to overheal, but players have to run over them so some might naturally expire. Full health players can also waste them.
         ppm: 1,
+        hastedPPM: true, 
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
     ],
   },
@@ -313,6 +350,8 @@ export const trinket_data = [
         table: -1,
         duration: 15,
         ppm: 1,
+        type: "stats",
+        stat: 'int'
       },
     ],
   },
@@ -330,6 +369,8 @@ export const trinket_data = [
         table: -1,
         duration: 20,
         ppm: 1.5,
+        type: "stats",
+        stat: 'int'
       },
     ],
   },
@@ -349,6 +390,8 @@ export const trinket_data = [
         table: -1,
         duration: 15,
         cooldown: 60,
+        type: "stats",
+        stat: 'int'
       },
     ],
   },
@@ -369,6 +412,8 @@ export const trinket_data = [
         stacks: 5,
         duration: 15,
         cooldown: 180,
+        type: "stats",
+        stat: 'int'
       },
     ],
   },
@@ -383,6 +428,10 @@ export const trinket_data = [
         table: -7,
         duration: 20,
         cooldown: 180,
+        efficiency: { Raid: 0.74, Dungeon: 0.88 }, 
+        type: "stats",
+        stat: "highestWeight",
+        exclude: ['versatility'],
       },
     ],
   },
@@ -402,6 +451,8 @@ export const trinket_data = [
         duration: 9,
         cooldown: 90,
         discOverhealing: 0.11,
+        type: "stats",
+        stat: "mastery",
       },
     ],
   },
@@ -421,6 +472,8 @@ export const trinket_data = [
         duration: 15,
         cooldown: 90,
         discOverhealing: 0.15,
+        type: "stats",
+        stat: "mastery",
       },
     ],
   },
@@ -439,6 +492,8 @@ export const trinket_data = [
         duration: 12,
         cooldown: 90,
         discOverhealing: 0.12,
+        type: "stats",
+        stat: 'versatility',
       },
     ],
   },
@@ -456,6 +511,8 @@ export const trinket_data = [
         table: -1,
         duration: 15,
         ppm: 1.5,
+        type: "stats",
+        stat: 'int',
       },
     ],
   },
@@ -473,6 +530,8 @@ export const trinket_data = [
         table: -1,
         duration: 12,
         ppm: 2,
+        type: "stats",
+        stat: 'mastery',
       },
     ],
   },
@@ -493,12 +552,21 @@ export const trinket_data = [
         table: -8,
         efficiency: 0.35, // Falls off when the target falls below 35% health. Efficiency in this case is the HoT uptime x the HoT overhealing.
         totalTicks: 40, // 120 / 3. It also scales with Haste.
+        tickRate: 3,
+        duration: 120, 
+        ppm: 20, // Implemented as passive trinket for ease of use
+        hastedPPM: true,
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
       {
         /* --------------------------------------- Absorb Portion --------------------------------------- */
         coefficient: 249.431,
         table: -8,
         efficiency: 0.85, // It's incredibly likely that your priority target will drop below 35% over a two minute period.
+        ppm: 0.5, // Implemented as ppm trinket for ease of use
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
     ],
   },
@@ -542,6 +610,8 @@ export const trinket_data = [
         table: -8,
         efficiency: { Raid: 0.47, Dungeon: 0.86 }, // Includes the 25% multiplier as the target gets lower.
         cooldown: 120,
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
     ],
   },
@@ -565,6 +635,8 @@ export const trinket_data = [
         table: -7,
         duration: 10,
         ppm: { "Restoration Druid": 1.2, "Discipline Priest": 1.5, "Holy Paladin": 1.5, "Mistweaver Monk": 1.4, "Restoration Shaman": 1.2, "Holy Priest": 1.2 },
+        type: "stats",
+        stat: 'haste',
       },
     ],
   },
@@ -582,6 +654,8 @@ export const trinket_data = [
         table: -7,
         duration: 20,
         cooldown: 120,
+        type: "stats",
+        stat: 'crit',
       },
     ],
   },
@@ -616,6 +690,8 @@ export const trinket_data = [
         table: -1,
         duration: 10,
         ppm: { "Restoration Druid": 1.1, "Discipline Priest": 1.25, "Holy Paladin": 1.25, "Mistweaver Monk": 1.2, "Restoration Shaman": 1.1, "Holy Priest": 1.1 },
+        type: "stats",
+        stat: 'int',
       },
     ],
   },
@@ -633,6 +709,8 @@ export const trinket_data = [
         table: -1,
         duration: 20,
         cooldown: 120,
+        type: "stats",
+        stat: 'int',
       },
     ],
   },
@@ -650,6 +728,8 @@ export const trinket_data = [
         table: -1,
         duration: 10,
         ppm: 2,
+        type: "stats",
+        stat: 'int',
       },
     ],
   },
@@ -667,6 +747,8 @@ export const trinket_data = [
         table: -7,
         duration: 20,
         cooldown: 120,
+        type: "stats",
+        stat: 'haste',
       },
     ],
   },
@@ -684,6 +766,8 @@ export const trinket_data = [
         table: -1,
         duration: 15,
         ppm: 2,
+        type: "stats",
+        stat: 'int',
       },
     ],
   },
@@ -702,6 +786,7 @@ export const trinket_data = [
         coefficient: 1.59735, // 8.996611 pre-nerf
         table: -7,
         ppm: 2,
+        type: "manareturn",
       },
     ],
   },
@@ -751,6 +836,8 @@ export const trinket_data = [
         table: -8,
         ppm: 1.08, // 45s ICD, 10% proc chance on heal. This assumes we proc it very quickly. Log data not readily available given the trinkets rarity.
         efficiency: 0.9,
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
     ],
   },
@@ -815,6 +902,8 @@ export const trinket_data = [
         duration: 20,
         multiplier: 1,
         cooldown: 120,
+        type: "stats",
+        stat: 'haste',
       },
     ],
   },
@@ -833,6 +922,8 @@ export const trinket_data = [
         table: -1,
         duration: 15,
         ppm: 2,
+        type: "stats",
+        stat: 'int',
       },
     ],
   },
@@ -849,6 +940,8 @@ export const trinket_data = [
         coefficient: 0.555215 * 1.04,
         table: -7,
         uptime: 0.92,
+        type: "stats",
+        stat: 'highest',
       },
     ],
   },
@@ -864,6 +957,8 @@ export const trinket_data = [
       {
         coefficient: 0.493954, 
         table: -7,
+        type: "stats",
+        stat: 'highestWeight',
       },
       {
         coefficient: 0.098791,
@@ -884,7 +979,10 @@ export const trinket_data = [
         coefficient: 19.57812,
         table: -8,
         ppm: 6,
+        hastedPPM: true,
         efficiency: 0.76,
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
     ],
   },
@@ -901,7 +999,9 @@ export const trinket_data = [
         coefficient: 83.59375,
         table: -8,
         ppm: 2,
-        efficiency: 0.35, // 
+        efficiency: 0.35,
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
     ],
   },
@@ -919,6 +1019,8 @@ export const trinket_data = [
         duration: 40,
         cooldown: 120,
         discOverhealing: 0.35,
+        type: "stats",
+        stat: 'mastery',
       },
     ],
   },
@@ -937,8 +1039,12 @@ export const trinket_data = [
         table: -8,
         efficiency: 0.4, // The expected overhealing on this trinket is very high.
         ppm: 3,
+        hastedPPM: true,
         targets: { Raid: 4.2, Dungeon: 2.9 }, // 8 yard range
+        aoeMult: "meteor",
         meteor: 0.15,
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
       {
         /* --------------------------------------- Haste Portion --------------------------------------- */
@@ -946,6 +1052,8 @@ export const trinket_data = [
         table: -7,
         ppm: 3,
         duration: 9,
+        type: "stats",
+        stat: 'haste',
       },
     ],
   },
@@ -980,6 +1088,8 @@ export const trinket_data = [
         table: -7,
         duration: 20,
         ppm: 2,
+        type: "stats",
+        stat: 'crit',
       },
     ],
   },
@@ -998,7 +1108,10 @@ export const trinket_data = [
         duration: 15,
         averageStacks: {"Restoration Druid": 0.6, "Holy Paladin": 0.4, "Mistweaver Monk": 0, "Restoration Shaman": 0.65, "Holy Priest": 0.6, "Discipline Priest": 1.55},
         // The average stacks value is correct, but should be rewritten to include the formula in the code.
+        efficiency: {"Restoration Druid": 0.6, "Holy Paladin": 0.4, "Mistweaver Monk": 0, "Restoration Shaman": 0.65, "Holy Priest": 0.6, "Discipline Priest": 1.55},
         ppm: 5,
+        type: "stats",
+        stat: 'crit',
       },
     ],
   },
@@ -1013,7 +1126,10 @@ export const trinket_data = [
         table: -7,
         duration: 10,
         stacks: 15, // You start with 20, lose 1 every second and end with 10 for an average of 15.
+        efficiency: 15, 
         ppm: 1,
+        type: "stats",
+        stat: 'haste',
       },
     ],
   },
@@ -1035,6 +1151,8 @@ export const trinket_data = [
         ppm: 4,
         targets: 5, // This can hit a maximum of 5 targets, but the radius is very small so will vary per fight.
         ticks: 6,
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
     ],
   },
@@ -1052,8 +1170,10 @@ export const trinket_data = [
         table: -9, // -8 in spell data
         efficiency: { Raid: 0.63, Dungeon: 0.41 }, // 
         ppm: 3,
+        hastedPPM: true,
         targets: 3.8, // The trinket attempts to hit 4 targets, but in logs it often comes up slightly short of this.
-
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
     ],
   },
@@ -1088,6 +1208,8 @@ export const trinket_data = [
         duration: 20,
         ppm: { "Restoration Druid": 0.5, "Discipline Priest": 0.7, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 0.5, "Holy Priest": 0.5 }, // Baseline: 0.7
         averageStacks: 10.5, 
+        type: "stats",
+        stat: 'crit',
       },
     ],
   },
@@ -1106,6 +1228,9 @@ export const trinket_data = [
         duration: 20,
         cooldown: 90,
         averageStacks: 7.5, 
+        efficiency: 7.5, // Simple implementation for sims, same as avgStacks above, can be removed once sim knows to stack trinket.
+        type: "stats",
+        stat: 'int',
         // This could be much more closely valued by considering each individual specs casting cadence. Given the low availability and power of the trinket,
         // this is not yet implemented but could be. Notably haste IS included.
       },
@@ -1123,7 +1248,9 @@ export const trinket_data = [
       {
         coefficient: 0.474196,
         table: -7, // -9 but is currently using our -8. Should be -7.
-        sharedAmount: 0.1,
+        sharedAmount: 0.1,        
+        type: "stats",
+        stat: 'highest',
       },
     ],
   },
@@ -1143,6 +1270,8 @@ export const trinket_data = [
         efficiency: 0.87,
         duration: 10,
         tickRate: 1,
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
     ],
   },
@@ -1158,6 +1287,7 @@ export const trinket_data = [
         table: -1,
         ticks: 10, // The coefficient is for a single tick.
         cooldown: 90,
+        type: "manareturn"
       },
       { // Healing Effect whenever an automata dies. 
         // The scaling curve does not match any known spell tables and the trinket is available at just four item level so they are hard coded in for now.
@@ -1172,6 +1302,8 @@ export const trinket_data = [
         ppm: 0.667 * 1, // One automata 
         targets: 5,
         ticks: 1, // This ticks 30 times, but the fixed values are over it's entire duration.
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
     ],
   },
@@ -1199,7 +1331,9 @@ export const trinket_data = [
         coefficient: 5.122305,
         table: -7,
         duration: 15,
-        cooldown: 300,
+        cooldown: 300,  
+        type: "stats",
+        stat: 'versatility',
       },
     ],
   },
@@ -1217,6 +1351,8 @@ export const trinket_data = [
         baseCooldown: 600,
         cdrPerProc: 3,
         efficiency: 0.7,
+        type: "heal", 
+        secondaries: [],
       },
     ],
   },
@@ -1234,7 +1370,8 @@ export const trinket_data = [
         table: -8, // -9 in spell data
         efficiency: { Raid: 0.7, Dungeon: 0.47 }, // 
         ppm: 7.5,
-
+        type: "heal", 
+        secondaries: ['crit', 'vers'],
       },
     ],
   },
@@ -1250,10 +1387,10 @@ export const trinket_data = [
       {
         coefficient: 3.676471,
         table: -9, // -8 in spell data
-        type: "stats",
-        stat: 'int',
         duration: 18,
         ppm: 2,
+        type: "stats",
+        stat: 'int',
       },
     ],
   },
@@ -1269,6 +1406,8 @@ export const trinket_data = [
         duration: 10,
         runeEfficiency: 0.8,
         cooldown: 120,
+        type: "stats",
+        stat: 'haste',
       },
     ],
   },
@@ -1285,4 +1424,10 @@ export const trinket_data = [
 //   DURATION_BASED: "duration-based",
 //   METEOR: "meteor", // The meteor effect increases a trinkets value by X based on targets hit up to Y. X should be represented as 'multiplier' and Y as the 'cap'.
 //   TICKS: "ticks",
-// };
+/*
+aoeMult
+- Full (no reduction)
+- sqrt (sqrt reduction, will need an extra field to specify when sqrt scaling begins)
+- Split (Z damage split between Y targets)
+- Meteor (Z x W*X split between Y targets)
+*/ 

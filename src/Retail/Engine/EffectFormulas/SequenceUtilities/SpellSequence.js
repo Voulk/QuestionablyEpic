@@ -1,7 +1,6 @@
 // General tools
 import { convertPPMToUptime } from "Retail/Engine/EffectFormulas/EffectUtilities"
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-import Player from "General/Modules/Player/Player";
 
 // import { applyPassiveTrinkets, applyActiveTrinkets } from "./Trinket";
 
@@ -20,8 +19,8 @@ var sequenceTool = null;
 
 /** Sets up the player info, state and spellDB to use.
  * @param {object} sequenceSettings Settings provided when starting sequence
- * @param {object} playerInfo Player info to be initialized when starting the sequence.
  * @param {object} spec Spec in plain text, if no player provided.
+ * @param {object} stats Base stats provided
 */
 export const startSequence = (sequenceSettings = {}, spec = "NONE", stats = {}) => {
     let extraSpellDB = null;
@@ -128,7 +127,9 @@ const getCurrentStats = (statArray, buffs) => {
  * @returns The raw damage or healing of the spell.
  */
  export const getSpellRaw = (spell, currentStats) => {
-    return spell.coeff * currentStats.intellect * sequenceTool.getStatMult(currentStats, spell.secondaries); // Multiply our spell coefficient by int and secondaries.
+    if (spell.coeff) return spell.coeff * currentStats.intellect * sequenceTool.getStatMult(currentStats, spell.secondaries); // Multiply our spell coefficient by int and secondaries.
+    else if (spell.value) return spell.value * sequenceTool.getStatMult(currentStats, spell.secondaries); // Spells with a value instead of a coefficient aren't scaled by int, notably trinkets
+    else throw {name : "NotImplementedError", message : "Invalid spell supplied"};  // Not sure if there are other trinkets that will need to be caught. 
 }
 
 /**
@@ -270,7 +271,7 @@ export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) =
             // Effectively base stats + any current stat buffs.
             let currentStats = {...baseStats};
             state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
-            state.manaSpent += (fullSpell[0].cost * state.currentStats.manaMod) || 0;
+            state.manaSpent += sequenceTool.spendMana(state, fullSpell);
 
             // We'll iterate through the different effects the spell has.
             // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,
