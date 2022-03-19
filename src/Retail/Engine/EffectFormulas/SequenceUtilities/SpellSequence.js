@@ -129,7 +129,7 @@ const getCurrentStats = (statArray, buffs) => {
  export const getSpellRaw = (spell, currentStats) => {
     if (spell.coeff) return spell.coeff * currentStats.intellect * sequenceTool.getStatMult(currentStats, spell.secondaries); // Multiply our spell coefficient by int and secondaries.
     else if (spell.value) return spell.value * sequenceTool.getStatMult(currentStats, spell.secondaries); // Spells with a value instead of a coefficient aren't scaled by int, notably trinkets
-    else throw {name : "NotImplementedError", message : "Invalid spell supplied"};  // Not sure if there are other trinkets that will need to be caught. 
+    else return null;
 }
 
 /**

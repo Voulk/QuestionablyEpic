@@ -330,12 +330,11 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     const effect = activeTrinket.effects[0];
 
     const playerBestSecondary = player.getHighestStatWeight(contentType, ["versatility"]); // Exclude Vers since there isn't a Vers version.
-    const failureChance = (contentType === "Raid" ? 0.26 : 0.12);
 
     const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
     const trinketValue = getDiminishedValue(playerBestSecondary, trinketRaw, setStats[playerBestSecondary])
 
-    bonus_stats[playerBestSecondary] = ((trinketValue * effect.duration) / effect.cooldown) * (1 - failureChance);
+    bonus_stats[playerBestSecondary] = ((trinketValue * effect.duration) / effect.cooldown) * effect.efficiency;
     bonus_stats[playerBestSecondary] *= castModel.getSpecialQuery("threeMinutes", "cooldownMult");
     // TODO: power reduced because of the chance something interferes. This needs to be much much better and I'll fix it up this week.
     //

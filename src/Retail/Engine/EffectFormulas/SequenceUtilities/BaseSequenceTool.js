@@ -260,7 +260,7 @@ addTrinketToSpellDB (state, trinket, trinketEffect) {
                     runFunc: function (state) {
                         const buff = state.activeBuffs.filter(buff => buff.name === "Manabound Mirror")[0]
                         const spell = { trinket: true, type: "heal", value: buff.stacks, overheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
-                        runHeal(state, spell, "Manabound Mirror")
+                        runHeal(state, spell, "Manabound Mirror");
                     }};
                 
                 state.activeBuffs.push({name: "Manabound Mirror", expiration: false, buffType: "special", value: 0, coefficient: trinketEffect.coefficient * trinket.ilvl});
@@ -306,7 +306,7 @@ addTrinketToSpellDB (state, trinket, trinketEffect) {
             newTrinket = { "Trinket": [{
                 type: "manareturn",
                 castTime: 0, 
-                cost: -value,
+                cost: trinketEffect.duration > 0 ? trinketEffect.duration * -value : -value,
                 offGCD: true,
                 cooldown: trinketEffect.cooldown,
             }],};
@@ -365,18 +365,8 @@ applyTrinkets (state) {
     const trinket1 = state.settings.trinket1;
     const trinket2 = state.settings.trinket2;
     let trinketFound = false;
-
-    // Catch trinkets that aren't implemented / won't be easily implemented.
-    // Also trinkets that aren't worth implementing right now
-    const notImplemented = ["Consumptive Infusion", "Spark of Hope", "Price of Progress", "Jaws of Defeat", "Necromantic Focus", "Scrawled Word of Recall", "Reclaimer's Intensity Core", "Scars of Fraternal Strife", "The Lion's Roar"];
-    const manareturnTrinkets = ["Show of Faith", "Memento of Tyrande", "Amalgam's Seventh Spine"]; // Passive mana returns
-    if(trinket1.name === "Eye of the Broodmother" || trinket1.name === "So'leah's Secret Technique") throw {name : "NotImplementedError", message : "Include " + trinket1.name + " effect as a passive int bonus."};  
-    if(notImplemented.includes(trinket1.name)) throw {name : "NotImplementedError", message : trinket1.name + " not implemented due to complexity / unique effect."};  
-    if(notImplemented.includes(trinket2.name)) throw {name : "NotImplementedError", message : trinket2.name + " not implemented due to complexity / unique effect."};  
-    if(manareturnTrinkets.includes(trinket1.name)) throw {name : "NotImplementedError", message : "Passive ManaRestore trinkets (" + trinket1.name + ") not yet implemented."};  
-    if(manareturnTrinkets.includes(trinket2.name)) throw {name : "NotImplementedError", message : "Passive ManaRestore trinkets (" + trinket2.name + ") not yet implemented."};  
-
-
+    this.checkNotImplementedTrinkets(trinket1, trinket2);
+    
     if (trinket1) {        
         for(var i = 0; i < trinket_data.length; i++) { // Handle passive sections
             if (trinket_data[i].name === trinket1.name) {
@@ -387,9 +377,9 @@ applyTrinkets (state) {
                     } else if (effect.ppm) { // This is a passive trinket effect
                         state = this.addPassiveTrinket(state, state.settings.trinket1, effect);
                     } 
-                })
+                });
+                break;
             }
-            break;
         }
 
         if(!trinketFound) throw {name : "NotImplementedError", message : trinket1.name + " not implemented or wrong name."}; 
@@ -406,7 +396,7 @@ applyTrinkets (state) {
                     } else if (effect.ppm) { // This is a passive trinket effect
                         state = this.addPassiveTrinket(state, state.settings.trinket1, effect);
                     } 
-                })
+                });
                 break;
             }
         }
@@ -415,6 +405,24 @@ applyTrinkets (state) {
     }
 
     return state;
+}
+
+// Catch trinkets that aren't implemented / won't be easily implemented.
+// Also trinkets that aren't worth implementing right now
+checkNotImplementedTrinkets(trinket1, trinket2) {
+    const notImplemented = ["Consumptive Infusion", "Spark of Hope", "Price of Progress", "Jaws of Defeat", "Necromantic Focus", "Scrawled Word of Recall", "Reclaimer's Intensity Core", "Scars of Fraternal Strife", "The Lion's Roar"];
+    const manareturnTrinkets = ["Show of Faith", "Memento of Tyrande", "Amalgam's Seventh Spine"]; // Passive mana returns
+    if (trinket1) {
+        if(trinket1.name === "Eye of the Broodmother" || trinket1.name === "So'leah's Secret Technique") throw {name : "NotImplementedError", message : "Include " + trinket1.name + "'s effect as a passive int bonus."};  
+        if(notImplemented.includes(trinket1.name)) throw {name : "NotImplementedError", message : trinket1.name + " not implemented due to complexity / unique effect."};  
+        if(manareturnTrinkets.includes(trinket1.name)) throw {name : "NotImplementedError", message : "Passive ManaRestore trinkets (" + trinket1.name + ") not yet implemented."};  
+    }
+
+    if (trinket2) {
+        if(trinket2.name === "Eye of the Broodmother" || trinket2.name === "So'leah's Secret Technique") throw {name : "NotImplementedError", message : "Include " + trinket2.name + "'s effect as a passive int bonus."};  
+        if(notImplemented.includes(trinket2.name)) throw {name : "NotImplementedError", message : trinket2.name + " not implemented due to complexity / unique effect."};  
+        if(manareturnTrinkets.includes(trinket2.name)) throw {name : "NotImplementedError", message : "Passive ManaRestore trinkets (" + trinket2.name + ") not yet implemented."};  
+    }
 }
 
 // -------------------------------------------------------
