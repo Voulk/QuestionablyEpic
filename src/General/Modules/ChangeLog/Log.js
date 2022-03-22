@@ -10,8 +10,16 @@
 export const changeLog = [
   {
     version: "9.2 / 2.5.3",
+    update: 11,
+    date: "22nd March (Bugfix)",
+    changes: [
+      "Bugfix: SimC imported Unity items should now have the correct item restriction attached.",
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
     update: 10,
-    date: "17th March",
+    date: "17th March (Major)",
     changes: [
       "Added support for the Unity special legendary in all modules.",
       "Added manual Unity entry in any slot.",
