@@ -9,8 +9,14 @@ export const defaultPlans = {
     },
     Mythic: {
       default: [
-        { time: "00:15", bossAbility: 360409 },
-        { time: "00:30", bossAbility: 360409 },
+        { time: "01:55", bossAbility: 360409 },
+        { time: "03:40", bossAbility: 360409 },
+        { time: "04:40", bossAbility: 364845 },
+        { time: "05:20", bossAbility: 364845 },
+        { time: "06:00", bossAbility: 364845 },
+        { time: "06:30", bossAbility: 364963 },
+        { time: "07:00", bossAbility: 364963 },
+        { time: "07:30", bossAbility: 364963 },
       ],
     },
   },

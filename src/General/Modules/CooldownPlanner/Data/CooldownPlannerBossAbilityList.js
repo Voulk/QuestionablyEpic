@@ -667,147 +667,42 @@ export const bossAbilities = {
   /* ------------------------------- Skolex, the Insatiable Ravener ------------------------------- */
   2542: [
     {
-      // https://ptr.wowhead.com/spell=359778/ephemera-dust
       name: {
-        en: "Ephemera Dust",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
+        en: "Retch",
+        cn: "呕吐",
+        fr: "Vomissure",
+        ru: "Срыгивание",
+        de: "Würgen",
       },
-      guid: 359778,
+      guid: 360448,
       cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_debuff.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=359976/riftmaw
-      name: {
-        en: "Riftmaw",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 359976,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_netherportal.jpg").default,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_nature_acid_01.jpg").default,
     },
     {
       // https://ptr.wowhead.com/spell=359829/dust-flail
       name: {
         en: "Dust Flail",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
+        cn: "尘土抽击",
+        fr: "Fléau de poussière",
+        ru: "Пыльное молотилово",
+        de: "Staubflegel",
       },
       guid: 359829,
       cooldownPlannerActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_butcher_whirl.jpg").default,
     },
     {
-      // https://ptr.wowhead.com/spell=359913/wormhole-jaws
-      name: {
-        en: "Wormhole Jaws",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 359913,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_devourersmallmount.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=364522/devouring-blood
-      name: {
-        en: "Devouring Blood",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 364522,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_yorsahj_bloodboil_blue.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=359904/dust-blast
-      name: {
-        en: "Dust Blast",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 359904,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_sandbolt.jpg").default,
-    },
-    {
       // https://ptr.wowhead.com/spell=364893/ravening-burrow
       name: {
         en: "Ravening Burrow",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
+        cn: "暴食潜地",
+        fr: "Fouissage vorace",
+        ru: "Голодное погружение",
+        de: "Gefräßiges Eingraben",
       },
       guid: 364893,
       cooldownPlannerActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_soulburst.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=366078/collapsing-emptiness
-      name: {
-        en: "Collapsing Emptiness",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 366078,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_deathknight_frozencenter.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=359980/rend
-      name: {
-        en: "Rend",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 359980,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_sword_2h_artifactsoulrend_d_06.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=366070/volatile-residue
-      name: {
-        en: "Volatile Residue",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 366070,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_fire_blueflamestrike.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=367486/dust-wave
-      name: {
-        en: "Dust Wave",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 367486,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_areadenial.jpg").default,
     },
   ],
   /* -------------------------------------- Artificer Xy'mox -------------------------------------- */
@@ -826,19 +721,6 @@ export const bossAbilities = {
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_broker_nova.jpg").default,
     },
     {
-      // https://ptr.wowhead.com/spell=363114/genesis-supernova
-      name: {
-        en: "Genesis Supernova",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 363114,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_nova.jpg").default,
-    },
-    {
       // https://ptr.wowhead.com/spell=362835/glyph-of-relocation
       name: {
         en: "Glyph of Relocation",
@@ -852,69 +734,52 @@ export const bossAbilities = {
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_axe_2h_broker_c_01.jpg").default,
     },
     {
-      // https://ptr.wowhead.com/spell=363413/genesis-rings
       name: {
-        en: "Genesis Rings",
+        en: "Intermission",
         cn: "",
         fr: "",
         ru: "",
         de: "",
       },
-      guid: 363413,
+      guid: "",
       cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_areadenial.jpg").default,
+      icon: "",
     },
     {
-      // https://ptr.wowhead.com/spell=364373/gunship-barrage
       name: {
-        en: "Gunship Barrage",
+        en: "Phase 1",
         cn: "",
         fr: "",
         ru: "",
         de: "",
       },
-      guid: 364373,
+      guid: "Phase 1",
       cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_broker_missile.jpg").default,
+      icon: "",
     },
     {
-      // https://ptr.wowhead.com/spell=364030/debilitating-ray
       name: {
-        en: "Debilitating Ray",
+        en: "Phase 2",
         cn: "",
         fr: "",
         ru: "",
         de: "",
       },
-      guid: 364030,
+      guid: "Phase 2",
       cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_broker_beam.jpg").default,
+      icon: "",
     },
     {
-      // https://ptr.wowhead.com/spell=362882/stasis-trap
       name: {
-        en: "Stasis Trap",
+        en: "Phase 3",
         cn: "",
         fr: "",
         ru: "",
         de: "",
       },
-      guid: 362882,
+      guid: "Phase 3",
       cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_broker_buff.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=364670/dimensional-tear
-      name: {
-        en: "Dimensional Tear",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 364670,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_socererking_arcanewrath.jpg").default,
+      icon: "",
     },
   ],
   2540: [
@@ -946,19 +811,6 @@ export const bossAbilities = {
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_areadenial.jpg").default,
     },
     {
-      // https://ptr.wowhead.com/spell=361966/infused-strikes
-      name: {
-        en: "Infused Strikes",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 361966,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_debuff.jpg").default,
-    },
-    {
       // https://ptr.wowhead.com/spell=361967/unleashed-infusion
       name: {
         en: "Unleashed Infusion",
@@ -972,45 +824,6 @@ export const bossAbilities = {
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_nova.jpg").default,
     },
     {
-      // https://ptr.wowhead.com/spell=361225/encroaching-dominion
-      name: {
-        en: "Encroaching Dominion",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 361225,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_broker_nova.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=363607/domination-bolt
-      name: {
-        en: "Domination Bolt",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 363607,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_missile.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=361418/obliteration-arc
-      name: {
-        en: "Obliteration Arc",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 361418,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_missile.jpg").default,
-    },
-    {
       // https://ptr.wowhead.com/spell=360964/staggering-barrage
       name: {
         en: "Staggering Barrage",
@@ -1020,32 +833,6 @@ export const bossAbilities = {
         de: "",
       },
       guid: 360964,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_beam.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=366423/disintegration-nova
-      name: {
-        en: "Disintegration Nova",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 366423,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_areadenial.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=360982/staggering-barrage
-      name: {
-        en: "Staggering Barrage",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 360982,
       cooldownPlannerActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_beam.jpg").default,
     },
@@ -1246,6 +1033,42 @@ export const bossAbilities = {
       guid: 360700,
       cooldownPlannerActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_necro_deathsdoor.jpg").default,
+    },
+    {
+      name: {
+        en: "Phase 1",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: "Phase 1",
+      cooldownPlannerActive: true,
+      icon: "",
+    },
+    {
+      name: {
+        en: "Phase 2",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: "Phase 2",
+      cooldownPlannerActive: true,
+      icon: "",
+    },
+    {
+      name: {
+        en: "Phase 3",
+        cn: "",
+        fr: "",
+        ru: "",
+        de: "",
+      },
+      guid: "Phase 3",
+      cooldownPlannerActive: true,
+      icon: "",
     },
   ],
   /* -------------------------------- Lihuvim, Principal Architect -------------------------------- */
