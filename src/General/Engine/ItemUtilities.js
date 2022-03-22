@@ -312,8 +312,6 @@ export function getItemAllocations(id, missiveStats = []) {
       }
     }
   }
-  console.log(statArray);
-  console.log(missiveStats);
 
   if (item !== "") return statArray;
   else return 0;
