@@ -335,13 +335,25 @@ export function processItem(line, player, contentType, type) {
         else if (bonus_id == 7880) itemLevel = 233;
 
       } else if ("name_override" in idPayload) {
+
+        if ("base" in idPayload.name_override && idPayload.name_override.base === "Unity") {
+          // Unity
+          itemEffect = {
+            type: "unity",
+            name: "Unity",
+            level: 0, // Irrelevant to legendaries.
+          };
+        }
+        else {
+          itemEffect = {
+            type: "spec legendary",
+            name: idPayload["name_override"]["base"],
+            level: 0, // Irrelevant to legendaries.
+          };
+        }
         // Legendaries
 
-        itemEffect = {
-          type: "spec legendary",
-          name: idPayload["name_override"]["base"],
-          level: 0, // Irrelevant to legendaries.
-        };
+
         //console.log("Legendary detected" + JSON.stringify(itemEffect));
       }
       // This can be readded when we have better data on it. I'm not confident in target count or possible sqrt scaling.
@@ -407,6 +419,7 @@ export function processItem(line, player, contentType, type) {
     item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");
     //item.domGemID = parseInt(domGemID);
     if (item.effect.type && item.effect.type === "spec legendary") item.uniqueEquip = "legendary";
+    else if (item.effect.type && item.effect.type === "unity") item.uniqueEquip = "unity";
     else if (item.vaultItem) item.uniqueEquip = "vault";
     else item.uniqueEquip = uniqueTag;
     item.softScore = scoreItem(item, player, contentType);
