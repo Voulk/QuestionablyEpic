@@ -280,7 +280,7 @@ function buildDifferential(itemSet, primeSet, player, contentType) {
   let differentials = {
     items: [],
     scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
-    rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore) / player.getInt(contentType)) * player.getHPS(contentType)),
+    rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore) / primeSet.hardScore) * player.getHPS(contentType)),
   };
 
   for (var x = 0; x < primeList.length; x++) {

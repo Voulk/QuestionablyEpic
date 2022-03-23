@@ -180,7 +180,7 @@ export default function ItemCard(props) {
                       paddingRight: "3px",
                     }}
                   >
-                    {"+" + itemDifferential + "%"}
+                    {itemDifferential > 0 && itemDifferential < 0.1 ? "+" + Math.round(10000*itemDifferential) / 100 + "%" : "+" + itemDifferential}
                   </Typography>
                 </Grid>
               </Grid>

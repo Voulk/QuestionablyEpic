@@ -7,6 +7,7 @@ const userSettings = {
     dominationSockets: "auto",
     vaultDomGem: "none",
     replaceDomGems: true,
+    upFinderToggle: "percent",
 
     manaProfile: "Standard",
     raidBuffs: false,

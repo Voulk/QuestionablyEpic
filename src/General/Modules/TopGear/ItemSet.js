@@ -177,13 +177,15 @@ class ItemSet {
   verifySet() {
     // Verifies that the set is possible.
     if (this.uniques["legendary"] && this.uniques["legendary"] > 1) {
-      //this.softScore = -1
+      return false;
+    } else if (this.uniques["unity"] && this.uniques["unity"] > 1) {
 
       return false;
-    } else if (this.uniques["vault"] && this.uniques["vault"] > 1) {
-
+    } 
+    else if (this.uniques["vault"] && this.uniques["vault"] > 1) {
       return false;
-    } else if (this.uniques["crafted"] && this.uniques["crafted"] > 1) {
+    }
+    else if (this.uniques["crafted"] && this.uniques["crafted"] > 1) {
 
       return false;
     }

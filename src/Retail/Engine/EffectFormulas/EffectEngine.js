@@ -35,11 +35,15 @@ import { getGenericSet } from "BurningCrusade/Engine/EffectFormulas/Generic/Gene
 // This allows each spec to work on spec-specific calculations without a need to interact with the other specs.
 export function getEffectValue(effect, player, castModel, contentType, itemLevel = 0, userSettings, gameType = "Retail", setStats = {}) {
   let bonus_stats = {};
-  const effectName = effect.name;
-  const effectType = effect.type;
+  let effectName = effect.name;
+  let effectType = effect.type;
   // ----- Retail Effect -----
   // Can either be a Spec Legendary, Trinket, or a special item effect like those found back in Crucible of Storms or the legendary BFA cloak.
   if (gameType === "Retail") {
+    if (effectType === "unity") {
+      effectType = 'spec legendary'
+      effectName = getUnityEffect(player);
+    }
     if (effect.type === "special") {
       // A special effect is one that appears on an item slot where an effect isn't usually expected.
       // This includes stuff like Drape of Shame that adds a crit bonus to a cape slot.
@@ -221,4 +225,70 @@ export function getCovAbility(soulbindName, player, contentType) {
   }
 
   return bonus_stats;
+}
+
+
+export function getUnityEffect(player) {
+  // Returns an effect name for a players given covenant so that Unity calls the correct formula.
+  if (player.getSpec() === "Restoration Druid") {
+    // -- Resto Druid Covenant Legendaries -- 
+    switch (player.getCovenant()) {
+      case "necrolord":
+        return "Locust Swarm"
+      case "night_fae":
+        return "Celestial Spirits"
+      case "venthyr":
+        return "Sinful Hysteria"
+      case "kyrian":
+        return "Kindred Affinity"
+    }
+  }
+  else if (player.getSpec() === "Holy Paladin") {
+    switch (player.getCovenant()) {
+      case "necrolord":
+        return "Duty-Bound Gavel"
+      case "night_fae":
+        return "Seasons of Plenty"
+      case "venthyr":
+        return "Radiant Embers"
+      case "kyrian":
+        return "Divine Resonance"
+    }
+  }
+  else if (player.getSpec() === "Holy Priest" || player.getSpec() === "Discipline Priest") {
+    switch (player.getCovenant()) {
+      case "necrolord":
+        return "Pallid Command"
+      case "night_fae":
+        return "Bwonsamdi's Pact"
+      case "venthyr":
+        return "Shadow Word: Manipulation"
+      case "kyrian":
+        return "Sphere's Harmony"
+    }
+  }
+  else if (player.getSpec() === "Mistweaver Monk") {
+    switch (player.getCovenant()) {
+      case "necrolord":
+        return "Bountiful Brew"
+      case "night_fae":
+        return "Faeline Harmony"
+      case "venthyr":
+        return "Sinister Teachings"
+      case "kyrian":
+        return "Call to Arms"
+    }
+  }
+  else if (player.getSpec() === "Restoration Shaman") {
+    switch (player.getCovenant()) {
+      case "necrolord":
+        return "Splintered Elements"
+      case "night_fae":
+        return "Seeds of Rampant Growth"
+      case "venthyr":
+        return "Elemental Conduit"
+      case "kyrian":
+        return "Raging Vesper Vortex"
+    }
+  }
 }

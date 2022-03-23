@@ -275,9 +275,7 @@ export default function UpgradeFinderFront(props) {
   const setsPvE = [setSelectedRaidFinder, setSelectedNormal, setSelectedHeroic, setSelectedMythic];
 
   const editSettings = (setting, newValue) => {
-    //console.log("Updating Settings" + setting + ". " + newValue);
     userSettings[setting] = newValue;
-    //console.log("Settings: " + JSON.stringify(userSettings));
   };
 
   const unleashUpgradeFinder = () => {
