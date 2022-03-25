@@ -28,11 +28,9 @@ export default function BossAbilityRender(rowData, bossID) {
     .toString();
 
   return (
-    <div style={{ minWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
-      <div>
-        <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage}>{bossAbilityIcons(rowData.bossAbility, bossID, iconStyle)}</a>
-      </div>
-      <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
+    <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
+      <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage}>{bossAbilityIcons(rowData.bossAbility, bossID, iconStyle)}</a>
+      <Typography align="left" style={{ fontSize: 12, lineHeight: "normal", width: "100%", marginLeft: 8 }}>
         {translatedName}
       </Typography>
     </div>

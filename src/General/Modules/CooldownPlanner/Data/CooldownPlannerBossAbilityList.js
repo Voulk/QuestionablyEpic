@@ -508,19 +508,6 @@ export const bossAbilities = {
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_skyreach_empower.jpg").default,
     },
     {
-      // https://ptr.wowhead.com/spell=366943/radioactive-core
-      name: {
-        en: "Radioactive Core",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 366943,
-      cooldownPlannerActive: false,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_progenitor_defensewall_boss.jpg").default,
-    },
-    {
       // https://ptr.wowhead.com/spell=360409/exposed-core
       name: {
         en: "Exposed Core",
@@ -534,32 +521,6 @@ export const bossAbilities = {
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_radientazeritecore.jpg").default,
     },
     {
-      // https://ptr.wowhead.com/spell=366393/searing-ablation
-      name: {
-        en: "Searing Ablation",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 366393,
-      cooldownPlannerActive: false,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_enchant_essencecosmicgreater.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=364447/dissonance
-      name: {
-        en: "Dissonance",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 364447,
-      cooldownPlannerActive: false,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_holy_harmundeadaura.jpg").default,
-    },
-    {
       // https://ptr.wowhead.com/spell=364845/fractured-core
       name: {
         en: "Fractured Core",
@@ -569,86 +530,8 @@ export const bossAbilities = {
         de: "",
       },
       guid: 364845,
-      cooldownPlannerActive: false,
+      cooldownPlannerActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_progenitor_defensewall_boss.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=360999/wave-of-disintegration
-      name: {
-        en: "Wave of Disintegration",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 360999,
-      cooldownPlannerActive: false,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/sha_ability_mage_firestarter_nightmare.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=360257/split-resolution
-      name: {
-        en: "Split Resolution",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 360257,
-      cooldownPlannerActive: false,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/sha_ability_mage_firestarter_nightmare.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=367571/sear
-      name: {
-        en: "Sear",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 367571,
-      cooldownPlannerActive: false,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_holy_searinglight.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=360162/split-resolution
-      name: {
-        en: "Split Resolution",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 360162,
-      cooldownPlannerActive: false,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_fire_ragnaros_splittingblow.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=360458/unstable-core
-      name: {
-        en: "Unstable Core",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 360458,
-      cooldownPlannerActive: false,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_gizmo_khoriumpowercore.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=366692/refracted-blast
-      name: {
-        en: "Refracted Blast",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 366692,
-      cooldownPlannerActive: false,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/sha_ability_mage_firestarter_nightmare.jpg").default,
     },
     {
       // https://www.wowhead.com/spell=364963/core-overload
@@ -734,6 +617,19 @@ export const bossAbilities = {
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_axe_2h_broker_c_01.jpg").default,
     },
     {
+      // https://www.wowhead.com/spell=363139/decipher-relic
+      name: {
+        en: "Decipher Relic",
+        cn: "破解圣物",
+        fr: "Déchiffrage de relique",
+        ru: "Расшифровка реликвии",
+        de: "Relikt dechiffrieren",
+      },
+      guid: 363139,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_relics_warpring.jpg").default,
+    },
+    {
       name: {
         en: "Intermission",
         cn: "",
@@ -741,7 +637,7 @@ export const bossAbilities = {
         ru: "",
         de: "",
       },
-      guid: "",
+      guid: "Intermission",
       cooldownPlannerActive: true,
       icon: "",
     },
