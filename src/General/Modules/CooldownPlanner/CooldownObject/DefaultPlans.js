@@ -87,7 +87,27 @@ export const defaultPlans = {
       ],
     },
     Mythic: {
-      default: [],
+      default: [
+        { time: "00:20", bossAbility: 362850 }, // Hyperlight Sparknova
+        { time: "00:40", bossAbility: 362835 }, // Glyph of Relocation
+        { time: "00:53", bossAbility: 362850 }, // Hyperlight Sparknova
+        { time: "01:12", bossAbility: 363139 }, // Decipher Relic
+        { time: "02:08", bossAbility: 362850 }, // Hyperlight Sparknova
+        { time: "02:29", bossAbility: 362835 }, // Glyph of Relocation
+        { time: "02:41", bossAbility: 362850 }, // Hyperlight Sparknova
+        { time: "03:11", bossAbility: 362850 }, // Hyperlight Sparknova
+        { time: "03:11", bossAbility: 362835 }, // Glyph of Relocation
+        { time: "03:33", bossAbility: 363139 }, // Decipher Relic
+        { time: "04:25", bossAbility: 362850 }, // Hyperlight Sparknova
+        { time: "04:46", bossAbility: 362835 }, // Glyph of Relocation
+        { time: "04:55", bossAbility: 362850 }, // Hyperlight Sparknova
+        { time: "05:18", bossAbility: 363139 }, // Decipher Relic
+        { time: "05:39", bossAbility: 362850 }, // Hyperlight Sparknova
+        { time: "06:03", bossAbility: 362835 }, // Glyph of Relocation
+        { time: "06:12", bossAbility: 362850 }, // Hyperlight Sparknova
+        { time: "06:46", bossAbility: 362850 }, // Hyperlight Sparknova
+        { time: "06:48", bossAbility: 362835 }, // Glyph of Relocation
+      ],
     },
   },
 
@@ -170,17 +190,65 @@ export const defaultPlans = {
   // Lihuvim, Principal Architect
   2539: {
     Heroic: {
-      default: [],
+      default: [
+        { time: "00:15", bossAbility: 360159 }, // Unstable Mote
+        { time: "00:39", bossAbility: 363088 }, // Cosmic Shift
+        { time: "00:51", bossAbility: 363130 }, // Synthesize
+        { time: "01:07", bossAbility: 361200 }, // Realignment
+        { time: "01:52", bossAbility: 360159 }, // Unstable Mote
+        { time: "02:10", bossAbility: 363088 }, // Cosmic Shift
+        { time: "02:36", bossAbility: 360159 }, // Unstable Mote
+        { time: "02:54", bossAbility: 363088 }, // Cosmic Shift
+        { time: "03:12", bossAbility: 363130 }, // Synthesize
+        { time: "03:28", bossAbility: 361200 }, // Realignment
+        { time: "04:16", bossAbility: 360159 }, // Unstable Mote
+        { time: "04:33", bossAbility: 363088 }, // Cosmic Shift
+      ],
     },
+    // TODO: Lihuvim Mythic
     Mythic: {
-      default: [],
+      default: [
+        { time: "00:15", bossAbility: 360159 }, // Unstable Mote
+        { time: "00:39", bossAbility: 363088 }, // Cosmic Shift
+        { time: "00:51", bossAbility: 363130 }, // Synthesize
+        { time: "01:07", bossAbility: 361200 }, // Realignment
+        { time: "01:52", bossAbility: 360159 }, // Unstable Mote
+        { time: "02:10", bossAbility: 363088 }, // Cosmic Shift
+        { time: "02:36", bossAbility: 360159 }, // Unstable Mote
+        { time: "02:54", bossAbility: 363088 }, // Cosmic Shift
+        { time: "03:12", bossAbility: 363130 }, // Synthesize
+        { time: "03:28", bossAbility: 361200 }, // Realignment
+        { time: "04:16", bossAbility: 360159 }, // Unstable Mote
+        { time: "04:33", bossAbility: 363088 }, // Cosmic Shift
+      ],
     },
   },
 
   // Halondrus the Reclaimer
   2529: {
     Heroic: {
-      default: [],
+      default: [
+        { time: "00:46", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "01:05", bossAbility: 360115 }, // Reclaim
+        { time: "01:32", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "01:54", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "02:12", bossAbility: 362056 }, // Shatter
+        { time: "02:20", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "02:34", bossAbility: 362056 }, // Shatter
+        { time: "02:57", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "03:23", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "03:49", bossAbility: 360115 }, // Reclaim
+        { time: "04:18", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "04:35", bossAbility: 362056 }, // Shatter
+        { time: "04:37", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "04:59", bossAbility: 362056 }, // Shatter
+        { time: "05:03", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "05:17", bossAbility: 362056 }, // Shatter
+        { time: "05:49", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "06:14", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "06:52", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "07:04", bossAbility: 361676 }, // Earthbreaker Missiles
+      ],
     },
     Mythic: {
       default: [],

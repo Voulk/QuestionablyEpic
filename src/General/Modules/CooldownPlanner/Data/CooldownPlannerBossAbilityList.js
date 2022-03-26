@@ -1073,6 +1073,30 @@ export const bossAbilities = {
       cooldownPlannerActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_areadenial.jpg").default,
     },
+    {
+      name: {
+        en: "Synthesize",
+        cn: "合成",
+        fr: "Synthétiser",
+        ru: "Синтез",
+        de: "Synthetisieren",
+      },
+      guid: 363130,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_beam.jpg").default,
+    },
+    {
+      name: {
+        en: "Realignment",
+        cn: "重新排列",
+        fr: "Réalignement",
+        ru: "Реструктуризация",
+        de: "Neuausrichtung",
+      },
+      guid: 361200,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_buff.jpg").default,
+    },
   ],
   /* ----------------------------------- Halondrus the Reclaimer ---------------------------------- */
   2529: [
@@ -1103,7 +1127,6 @@ export const bossAbilities = {
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_debuff.jpg").default,
     },
     {
-      // https://ptr.wowhead.com/spell=361677/earthbreaker-missiles
       name: {
         en: "Earthbreaker Missiles",
         cn: "",
@@ -1111,9 +1134,9 @@ export const bossAbilities = {
         ru: "",
         de: "",
       },
-      guid: 361677,
+      guid: 361676,
       cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_orb.jpg").default,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_misc_missilesmallcluster_yellow.jpg").default,
     },
     {
       // https://ptr.wowhead.com/spell=365297/crushing-prism
@@ -1231,6 +1254,30 @@ export const bossAbilities = {
       guid: 367082,
       cooldownPlannerActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_sandexplosion.jpg").default,
+    },
+    {
+      name: {
+        en: "Reclaim",
+        cn: "回收",
+        fr: "Réappropriation",
+        ru: "Сбор",
+        de: "Zurückgewinnen",
+      },
+      guid: 360115,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_skyreach_wind.jpg").default,
+    },
+    {
+      name: {
+        en: "Shatter",
+        cn: "粉碎",
+        fr: "Désintégration",
+        ru: "Раскалывание",
+        de: "Zerschmettern",
+      },
+      guid: 362056,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_nova.jpg").default,
     },
   ],
   /* ---------------------------------------- Anduin Wrynn ---------------------------------------- */

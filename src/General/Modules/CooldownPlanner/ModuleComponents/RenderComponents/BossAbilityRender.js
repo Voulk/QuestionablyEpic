@@ -30,7 +30,7 @@ export default function BossAbilityRender(rowData, bossID) {
   return (
     <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
       <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage}>{bossAbilityIcons(rowData.bossAbility, bossID, iconStyle)}</a>
-      <Typography align="left" style={{ fontSize: 12, lineHeight: "normal", width: "100%", marginLeft: 8 }}>
+      <Typography align="left" style={{ fontSize: 12, lineHeight: "normal", width: "100%", marginLeft: 8 }} noWrap>
         {translatedName}
       </Typography>
     </div>

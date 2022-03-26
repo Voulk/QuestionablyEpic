@@ -158,7 +158,7 @@ export default function CooldownPlanner(props) {
       /* ----------- Here the user can select which boss ability the cooldown should cover. ----------- */
       title: t("CooldownPlanner.TableLabels.BossAbilityLabel"),
       field: "bossAbility",
-      width: "8%",
+      width: "6%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
       // Search function for abilities as they are stores as numbers. Works for all languages
