@@ -1260,36 +1260,47 @@ export const bossAbilities = {
       // https://ptr.wowhead.com/spell=361816/hopebreaker
       name: {
         en: "Hopebreaker",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
+        cn: "灭愿者",
+        fr: "Brisespoir",
+        ru: "Сокрушитель надежды",
+        de: "Hoffnungsbrecher",
       },
       guid: 361816,
       cooldownPlannerActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_debuff.jpg").default,
     },
     {
-      // https://ptr.wowhead.com/spell=365853/befouled-eruption
       name: {
-        en: "Befouled Eruption",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
+        en: "Empowered Hopebreaker",
+        cn: "强化灭愿者",
+        fr: "Brisespoir renforcé",
+        ru: "Усиленный сокрушитель надежды",
+        de: "Ermächtigter Hoffnungsbrecher",
       },
-      guid: 365853,
+      guid: 365805,
       cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_buff.jpg").default,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_sword_1h_artifactruneblade_d_01.jpg").default,
+    },
+    {
+      name: {
+        en: "Befouled Barrier",
+        cn: "亵渎屏障",
+        fr: "Barrière souillée",
+        ru: "Оскверненная преграда",
+        de: "Besudelte Barriere",
+      },
+      guid: 365295,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_soulbarrier.jpg").default,
     },
     {
       // https://ptr.wowhead.com/spell=362407/kingsmourne-hungers
       name: {
         en: "Kingsmourne Hungers",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
+        cn: "王之哀伤饿了",
+        fr: "Faim de Deuilleroi",
+        ru: "Королевская Скорбь жаждет крови",
+        de: "Königsgram hungert",
       },
       guid: 362407,
       cooldownPlannerActive: true,
@@ -1297,9 +1308,59 @@ export const bossAbilities = {
     },
   ],
   /* --------------------------------------- Lords of Dread --------------------------------------- */
-  2543: [],
+  2543: [
+    {
+      name: {
+        en: "Swarm of Decay",
+        cn: "凋零虫群",
+        fr: "Essaim de décomposition",
+        ru: "Рой разложения",
+        de: "Schwarm des Verfalls",
+      },
+      guid: 360300,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_nature_naturetouchdecay.jpg").default,
+    },
+    {
+      name: {
+        en: "Infiltration of Dread",
+        cn: "恐惧潜入",
+        fr: "Infiltration d’effroi",
+        ru: "Лазутчики ужаса",
+        de: "Infiltration des Schreckens",
+      },
+      guid: 360717,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_rogue_dirtydeeds.jpg").default,
+    },
+    {
+      name: {
+        en: "Manifest Shadows",
+        cn: "暗影具现",
+        fr: "Manifestation d’ombres",
+        ru: "Появление теней",
+        de: "Schatten manifestieren",
+      },
+      guid: 361913,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_warlock_everlastingaffliction.jpg").default,
+    },
+  ],
   /* ------------------------------------------- Rygelon ------------------------------------------ */
-  2549: [],
+  2549: [
+    {
+      name: {
+        en: "Stellar Decay",
+        cn: "星辰凋零",
+        fr: "Décomposition stellaire",
+        ru: "Звездное разложение",
+        de: "Stellarer Verfall",
+      },
+      guid: 364381,
+      cooldownPlannerActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_soulbombdebufflarge.jpg").default,
+    },
+  ],
   /* ------------------------------------- The Jailer, Zovaal ------------------------------------- */
   2537: [],
 };

@@ -258,7 +258,28 @@ export const defaultPlans = {
   // Anduin Wrynn
   2546: {
     Heroic: {
-      default: [],
+      default: [
+        { time: "00:06", bossAbility: 361816 }, // Hopebreaker
+        { time: "00:20", bossAbility: 365295 }, // Befouled Barrier
+        { time: "00:38", bossAbility: 361816 }, // Hopebreaker
+        { time: "00:50", bossAbility: 362407 }, // Kingsmourne Hungers
+        { time: "01:06", bossAbility: 361816 }, // Hopebreaker
+        { time: "01:12", bossAbility: 365295 }, // Befouled Barrier
+        { time: "01:36", bossAbility: 361816 }, // Hopebreaker
+        { time: "01:50", bossAbility: 362407 }, // Kingsmourne Hungers
+        { time: "01:59", bossAbility: 365295 }, // Befouled Barrier
+        { time: "02:06", bossAbility: 361816 }, // Hopebreaker
+        { time: "04:13", bossAbility: 361816 }, // Hopebreaker
+        { time: "04:38", bossAbility: 361816 }, // Hopebreaker
+        { time: "04:52", bossAbility: 362407 }, // Kingsmourne Hungers
+        { time: "05:11", bossAbility: 361816 }, // Hopebreaker
+        { time: "05:21", bossAbility: 365295 }, // Befouled Barrier
+        { time: "05:40", bossAbility: 361816 }, // Hopebreaker
+        { time: "05:52", bossAbility: 362407 }, // Kingsmourne Hungers
+        { time: "06:08", bossAbility: 365295 }, // Befouled Barrier
+        { time: "06:09", bossAbility: 361816 }, // Hopebreaker
+        { time: "07:26", bossAbility: 365805 }, // Empowered Hopebreaker
+      ],
     },
     Mythic: {
       default: [],
@@ -268,7 +289,19 @@ export const defaultPlans = {
   // Lords of Dread
   2543: {
     Heroic: {
-      default: [],
+      default: [
+        { time: "00:15", bossAbility: 361913 }, // Manifest Shadows
+        { time: "00:54", bossAbility: 360300 }, // Swarm of Decay
+        { time: "01:27", bossAbility: 361913 }, // Manifest Shadows
+        { time: "02:07", bossAbility: 360717 }, // Infiltration of Dread
+        { time: "02:39", bossAbility: 361913 }, // Manifest Shadows
+        { time: "03:20", bossAbility: 360300 }, // Swarm of Decay
+        { time: "03:52", bossAbility: 361913 }, // Manifest Shadows
+        { time: "04:32", bossAbility: 360717 }, // Infiltration of Dread
+        { time: "05:10", bossAbility: 361913 }, // Manifest Shadows
+        { time: "05:52", bossAbility: 360300 }, // Swarm of Decay
+        { time: "06:24", bossAbility: 361913 }, // Manifest Shadows
+      ],
     },
     Mythic: {
       default: [],
@@ -278,7 +311,12 @@ export const defaultPlans = {
   // Rygelon
   2549: {
     Heroic: {
-      default: [],
+      default: [
+        { time: "01:12", bossAbility: 364381 }, // Stellar Decay
+        { time: "01:28", bossAbility: 364381 }, // Stellar Decay
+        { time: "02:58", bossAbility: 364381 }, // Stellar Decay
+        { time: "03:14", bossAbility: 364381 }, // Stellar Decay
+      ],
     },
     Mythic: {
       default: [],
