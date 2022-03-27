@@ -12,11 +12,30 @@ const iconStyle = {
   borderRadius: 4,
 };
 
-export default function BossAbilityRender(rowData, bossID) {
+export default function BossAbilityRender(rowData, bossID, difficulty) {
   /* -------------------------------- Handles no defined bossAbility -------------------------------- */
   if (rowData.bossAbility === "" || rowData.bossAbility === undefined) {
     return null;
   }
+
+  const raidDifficulty = (rDifficulty) => {
+    let raidDif = 16;
+    switch (rDifficulty) {
+      case "Mythic":
+        raidDif = 16;
+        break;
+      case "Heroic":
+        raidDif = 15;
+        break;
+      case "Normal":
+        raidDif = 14;
+        break;
+      default:
+        raidDif = 16;
+        break;
+    }
+    return raidDif;
+  };
 
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -29,7 +48,7 @@ export default function BossAbilityRender(rowData, bossID) {
 
   return (
     <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
-      <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage}>{bossAbilityIcons(rowData.bossAbility, bossID, iconStyle)}</a>
+      <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage + "&dd=" + raidDifficulty(difficulty)}>{bossAbilityIcons(rowData.bossAbility, bossID, iconStyle)}</a>
       <Typography align="left" style={{ fontSize: 12, lineHeight: "normal", width: "100%", marginLeft: 8 }} noWrap>
         {translatedName}
       </Typography>

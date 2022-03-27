@@ -1139,32 +1139,6 @@ export const bossAbilities = {
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_misc_missilesmallcluster_yellow.jpg").default,
     },
     {
-      // https://ptr.wowhead.com/spell=365297/crushing-prism
-      name: {
-        en: "Crushing Prism",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 365297,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_progenitor_runevessel.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=362056/detonation
-      name: {
-        en: "Crushing Prism",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 362056,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_nova.jpg").default,
-    },
-    {
       // https://ptr.wowhead.com/spell=362610/reclamation-form
       name: {
         en: "Reclamation Form",
@@ -1294,32 +1268,6 @@ export const bossAbilities = {
       guid: 361816,
       cooldownPlannerActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_debuff.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=366849/domination-word-pain
-      name: {
-        en: "Domination Word: Pain",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 361816,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shadow_shadowwordpain.jpg").default,
-    },
-    {
-      // https://ptr.wowhead.com/spell=365024/wicked-star
-      name: {
-        en: "Wicked Star",
-        cn: "",
-        fr: "",
-        ru: "",
-        de: "",
-      },
-      guid: 365024,
-      cooldownPlannerActive: true,
-      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_priest_divinestar_shadow2.jpg").default,
     },
     {
       // https://ptr.wowhead.com/spell=365853/befouled-eruption

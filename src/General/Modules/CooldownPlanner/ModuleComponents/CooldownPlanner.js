@@ -169,8 +169,8 @@ export default function CooldownPlanner(props) {
           .flat();
         return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
       },
-      render: (rowData) => BossAbilityRender(rowData, currentBoss),
-      editComponent: (props) => BossAbilitySelector(props, currentBoss),
+      render: (rowData) => BossAbilityRender(rowData, currentBoss, currentDifficulty),
+      editComponent: (props) => BossAbilitySelector(props, currentBoss, currentDifficulty),
     },
 
     /* -------------------------------------------------------------------------- */

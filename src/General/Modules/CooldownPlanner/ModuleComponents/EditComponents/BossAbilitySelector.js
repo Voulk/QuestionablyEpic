@@ -50,9 +50,28 @@ const selectMenu = createTheme({
   },
 });
 
-export default function BossAbilitySelector(props, currentBoss) {
+export default function BossAbilitySelector(props, currentBoss, difficulty) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+
+  const raidDifficulty = (rDifficulty) => {
+    let raidDif = 16;
+    switch (rDifficulty) {
+      case "Mythic":
+        raidDif = 16;
+        break;
+      case "Heroic":
+        raidDif = 15;
+        break;
+      case "Normal":
+        raidDif = 14;
+        break;
+      default:
+        raidDif = 16;
+        break;
+    }
+    return raidDif;
+  };
 
   return (
     <StyledEngineProvider injectFirst>
@@ -74,7 +93,7 @@ export default function BossAbilitySelector(props, currentBoss) {
               let lastItem = i + 1 === arr.length ? false : true;
               return (
                 <MenuItem divider={lastItem} key={i} value={key.guid}>
-                  <a data-wowhead={"spell=" + key.guid + "&domain=" + currentLanguage}>
+                  <a data-wowhead={"spell=" + key.guid + "&domain=" + currentLanguage + "&dd=" + raidDifficulty(difficulty)}>
                     {bossAbilityIcons(key.guid, currentBoss, {
                       height: 20,
                       width: 20,
