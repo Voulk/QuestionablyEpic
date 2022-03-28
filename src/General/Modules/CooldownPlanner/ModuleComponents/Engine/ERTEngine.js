@@ -38,7 +38,7 @@ export default function ertEngine(tableData, bossID, lang) {
       let option4 = key.name4 === "" || key.name4 === undefined ? "" : seperator + classColoursERT(key.class4) + key.name4 + "|r" + "{spell:" + key.Cooldown4 + "}";
 
       return {
-        ert: time + " " + translatedName + " - " + option0 + option1 + option2 + option3 + option4,
+        ert: time + translatedName + " - " + option0 + option1 + option2 + option3 + option4,
         /* --------------------------------- This is for Sorting by Time -------------------------------- */
         time: key.time,
       };
