@@ -36,13 +36,19 @@ export const defaultPlans = {
         { time: "00:55", bossAbility: 359829 }, // Dust Flail
         { time: "01:12", bossAbility: 359829 }, // Dust Flail
         { time: "01:29", bossAbility: 359829 }, // Dust Flail
-        { time: "01:40", bossAbility: 364893 }, // Ravening Burrow
-        { time: "01:47", bossAbility: 359829 }, // Dust Flail
-        { time: "02:09", bossAbility: 359829 }, // Dust Flail
-        { time: "02:26", bossAbility: 359829 }, // Dust Flail
-        { time: "02:43", bossAbility: 359829 }, // Dust Flail
-        { time: "02:54", bossAbility: 364893 }, // Ravening Burrow
-        { time: "03:02", bossAbility: 359829 }, // Dust Flail
+        { time: "01:48", bossAbility: 364893 }, // Ravening Burrow
+        { time: "01:55", bossAbility: 359829 }, // Dust Flail
+        { time: "02:13", bossAbility: 359829 }, // Dust Flail
+        { time: "02:30", bossAbility: 359829 }, // Dust Flail
+        { time: "02:47", bossAbility: 359829 }, // Dust Flail
+        { time: "03:04", bossAbility: 359829 }, // Dust Flail
+        { time: "03:21", bossAbility: 359829 }, // Dust Flail
+        { time: "03:40", bossAbility: 364893 }, // Ravening Burrow
+        { time: "03:47", bossAbility: 359829 }, // Dust Flail
+        { time: "04:05", bossAbility: 359829 }, // Dust Flail
+        { time: "04:22", bossAbility: 359829 }, // Dust Flail
+        { time: "04:39", bossAbility: 359829 }, // Dust Flail
+        { time: "04:56", bossAbility: 359829 }, // Dust Flail
       ],
     },
     Mythic: {
@@ -51,22 +57,26 @@ export const defaultPlans = {
         { time: "00:21", bossAbility: 359829 }, // Dust Flail
         { time: "00:38", bossAbility: 359829 }, // Dust Flail
         { time: "00:55", bossAbility: 359829 }, // Dust Flail
-        { time: "01:12", bossAbility: 359829 }, // Dust Flail
-        { time: "01:29", bossAbility: 359829 }, // Dust Flail
-        { time: "01:40", bossAbility: 364893 }, // Ravening Burrow
-        { time: "01:47", bossAbility: 359829 }, // Dust Flail
-        { time: "02:12", bossAbility: 359829 }, // Dust Flail
-        { time: "02:29", bossAbility: 359829 }, // Dust Flail
-        { time: "02:46", bossAbility: 359829 }, // Dust Flail
-        { time: "02:54", bossAbility: 364893 }, // Ravening Burrow
-        { time: "03:05", bossAbility: 359829 }, // Dust Flail
-        { time: "03:30", bossAbility: 359829 }, // Dust Flail
-        { time: "04:04", bossAbility: 359829 }, // Dust Flail
-        { time: "04:13", bossAbility: 364893 }, // Ravening Burrow
-        { time: "04:22", bossAbility: 359829 }, // Dust Flail
-        { time: "04:47", bossAbility: 359829 }, // Dust Flail
+        { time: "01:08", bossAbility: 364893 }, // Ravening Burrow
+        { time: "01:16", bossAbility: 359829 }, // Dust Flail
+        { time: "01:36", bossAbility: 359829 }, // Dust Flail
+        { time: "01:53", bossAbility: 359829 }, // Dust Flail
+        { time: "02:10", bossAbility: 359829 }, // Dust Flail
+        { time: "02:22", bossAbility: 364893 }, // Ravening Burrow
+        { time: "02:30", bossAbility: 359829 }, // Dust Flail
+        { time: "02:52", bossAbility: 359829 }, // Dust Flail
+        { time: "03:09", bossAbility: 359829 }, // Dust Flail
+        { time: "03:26", bossAbility: 359829 }, // Dust Flail
+        { time: "03:39", bossAbility: 364893 }, // Ravening Burrow
+        { time: "03:46", bossAbility: 359829 }, // Dust Flail
+        { time: "04:08", bossAbility: 359829 }, // Dust Flail
+        { time: "04:25", bossAbility: 359829 }, // Dust Flail
+        { time: "04:42", bossAbility: 359829 }, // Dust Flail
+        { time: "04:56", bossAbility: 364893 }, // Ravening Burrow
         { time: "05:04", bossAbility: 359829 }, // Dust Flail
-        { time: "05:21", bossAbility: 359829 }, // Dust Flail
+        { time: "05:23", bossAbility: 359829 }, // Dust Flail
+        { time: "05:40", bossAbility: 359829 }, // Dust Flail
+        { time: "05:57", bossAbility: 359829 }, // Dust Flail
       ],
     },
   },
@@ -180,10 +190,34 @@ export const defaultPlans = {
   // Prototype Pantheon
   2544: {
     Heroic: {
-      default: [],
+      default: [
+        { time: "00:50", bossAbility: 360636 }, // Runecarver's Deathtouch
+        { time: "00:59", bossAbility: 364941 }, // Windswept Wings
+        { time: "02:04", bossAbility: 361568 }, // Withering Seeds
+        { time: "03:10", bossAbility: 361788 }, // Hand of Destruction
+        { time: "04:03", bossAbility: 361568 }, // Withering Seeds
+        { time: "04:35", bossAbility: 364941 }, // Windswept Wings
+        { time: "05:20", bossAbility: 361568 }, // Withering Seeds
+        { time: "05:33", bossAbility: 361788 }, // Hand of Destruction
+        { time: "05:53", bossAbility: 360636 }, // Runecarver's Deathtouch
+        { time: "05:58", bossAbility: 364941 }, // Windswept Wings
+      ],
     },
     Mythic: {
-      default: [],
+      default: [
+        { time: "00:43", bossAbility: 360636 }, // Runecarver's Deathtouch
+        { time: "00:52", bossAbility: 364941 }, // Windswept Wings
+        { time: "02:00", bossAbility: 361568 }, // Withering Seeds
+        { time: "03:13", bossAbility: 361788 }, // Hand of Destruction
+        { time: "03:50", bossAbility: 361568 }, // Withering Seeds
+        { time: "04:27", bossAbility: 361568 }, // Withering Seeds
+        { time: "04:59", bossAbility: 364941 }, // Windswept Wings
+        { time: "05:44", bossAbility: 361568 }, // Withering Seeds
+        { time: "06:04", bossAbility: 361788 }, // Hand of Destruction
+        { time: "06:18", bossAbility: 360636 }, // Runecarver's Deathtouch
+        { time: "06:22", bossAbility: 364941 }, // Windswept Wings
+        { time: "06:53", bossAbility: 361568 }, // Withering Seeds
+      ],
     },
   },
 
@@ -192,34 +226,47 @@ export const defaultPlans = {
     Heroic: {
       default: [
         { time: "00:15", bossAbility: 360159 }, // Unstable Mote
-        { time: "00:39", bossAbility: 363088 }, // Cosmic Shift
-        { time: "00:51", bossAbility: 363130 }, // Synthesize
-        { time: "01:07", bossAbility: 361200 }, // Realignment
-        { time: "01:52", bossAbility: 360159 }, // Unstable Mote
-        { time: "02:10", bossAbility: 363088 }, // Cosmic Shift
-        { time: "02:36", bossAbility: 360159 }, // Unstable Mote
-        { time: "02:54", bossAbility: 363088 }, // Cosmic Shift
-        { time: "03:12", bossAbility: 363130 }, // Synthesize
-        { time: "03:28", bossAbility: 361200 }, // Realignment
-        { time: "04:16", bossAbility: 360159 }, // Unstable Mote
-        { time: "04:33", bossAbility: 363088 }, // Cosmic Shift
+        { time: "00:33", bossAbility: 363088 }, // Cosmic Shift
+        { time: "00:48", bossAbility: 363130 }, // Synthesize
+        { time: "01:05", bossAbility: 361200 }, // Realignment
+        { time: "01:49", bossAbility: 360159 }, // Unstable Mote
+        { time: "02:07", bossAbility: 363088 }, // Cosmic Shift
+        { time: "02:33", bossAbility: 360159 }, // Unstable Mote
+        { time: "02:51", bossAbility: 363088 }, // Cosmic Shift
+        { time: "03:09", bossAbility: 363130 }, // Synthesize
+        { time: "03:26", bossAbility: 361200 }, // Realignment
+        { time: "04:10", bossAbility: 360159 }, // Unstable Mote
+        { time: "04:28", bossAbility: 363088 }, // Cosmic Shift
+        { time: "04:54", bossAbility: 360159 }, // Unstable Mote
+        { time: "05:12", bossAbility: 363088 }, // Cosmic Shift
+        { time: "05:30", bossAbility: 363130 }, // Synthesize
+        { time: "05:47", bossAbility: 361200 }, // Realignment
+        { time: "06:31", bossAbility: 360159 }, // Unstable Mote
       ],
     },
-    // TODO: Lihuvim Mythic
     Mythic: {
       default: [
         { time: "00:15", bossAbility: 360159 }, // Unstable Mote
-        { time: "00:39", bossAbility: 363088 }, // Cosmic Shift
-        { time: "00:51", bossAbility: 363130 }, // Synthesize
-        { time: "01:07", bossAbility: 361200 }, // Realignment
-        { time: "01:52", bossAbility: 360159 }, // Unstable Mote
-        { time: "02:10", bossAbility: 363088 }, // Cosmic Shift
-        { time: "02:36", bossAbility: 360159 }, // Unstable Mote
-        { time: "02:54", bossAbility: 363088 }, // Cosmic Shift
-        { time: "03:12", bossAbility: 363130 }, // Synthesize
-        { time: "03:28", bossAbility: 361200 }, // Realignment
-        { time: "04:16", bossAbility: 360159 }, // Unstable Mote
-        { time: "04:33", bossAbility: 363088 }, // Cosmic Shift
+        { time: "00:30", bossAbility: 363130 }, // Synthesize
+        { time: "00:47", bossAbility: 361200 }, // Realignment
+        { time: "01:31", bossAbility: 360159 }, // Unstable Mote
+        { time: "01:49", bossAbility: 363088 }, // Cosmic Shift
+        { time: "02:15", bossAbility: 360159 }, // Unstable Mote
+        { time: "02:33", bossAbility: 363088 }, // Cosmic Shift
+        { time: "02:51", bossAbility: 363130 }, // Synthesize
+        { time: "03:08", bossAbility: 361200 }, // Realignment
+        { time: "03:52", bossAbility: 360159 }, // Unstable Mote
+        { time: "04:11", bossAbility: 363088 }, // Cosmic Shift
+        { time: "04:36", bossAbility: 360159 }, // Unstable Mote
+        { time: "04:54", bossAbility: 363088 }, // Cosmic Shift
+        { time: "05:13", bossAbility: 363130 }, // Synthesize
+        { time: "06:13", bossAbility: 360159 }, // Unstable Mote
+        { time: "06:32", bossAbility: 363088 }, // Cosmic Shift
+        { time: "06:57", bossAbility: 360159 }, // Unstable Mote
+        { time: "07:15", bossAbility: 363088 }, // Cosmic Shift
+        { time: "07:34", bossAbility: 363130 }, // Synthesize
+        { time: "07:50", bossAbility: 361200 }, // Realignment
+        { time: "08:35", bossAbility: 360159 }, // Unstable Mote
       ],
     },
   },
@@ -230,28 +277,59 @@ export const defaultPlans = {
       default: [
         { time: "00:46", bossAbility: 361676 }, // Earthbreaker Missiles
         { time: "01:05", bossAbility: 360115 }, // Reclaim
-        { time: "01:32", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "01:54", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "02:12", bossAbility: 362056 }, // Shatter
-        { time: "02:20", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "02:34", bossAbility: 362056 }, // Shatter
-        { time: "02:57", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "03:23", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "03:49", bossAbility: 360115 }, // Reclaim
-        { time: "04:18", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "04:35", bossAbility: 362056 }, // Shatter
-        { time: "04:37", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "04:59", bossAbility: 362056 }, // Shatter
-        { time: "05:03", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "05:17", bossAbility: 362056 }, // Shatter
-        { time: "05:49", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "06:14", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "06:52", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "07:04", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "01:27", bossAbility: 359235 }, // Relocation Form
+        { time: "01:38", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "01:57", bossAbility: 362056 }, // Shatter
+        { time: "02:04", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "02:19", bossAbility: 362056 }, // Shatter
+        { time: "02:29", bossAbility: 359235 }, // Reclamation Form
+        { time: "02:42", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "03:09", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "03:35", bossAbility: 360115 }, // Reclaim
+        { time: "04:00", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "04:09", bossAbility: 359235 }, // Relocation Form
+        { time: "04:17", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "04:33", bossAbility: 362056 }, // Shatter
+        { time: "04:35", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "04:57", bossAbility: 362056 }, // Shatter
+        { time: "05:01", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "05:15", bossAbility: 362056 }, // Shatter
+        { time: "05:35", bossAbility: 359235 }, // Reclamation Form
+        { time: "05:48", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "06:13", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "06:49", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "07:02", bossAbility: 361676 }, // Earthbreaker Missiles
       ],
     },
     Mythic: {
-      default: [],
+      default: [
+        { time: "00:12", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "00:39", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "01:05", bossAbility: 360115 }, // Reclaim
+        { time: "01:34", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "02:00", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "02:14", bossAbility: 359235 }, // Relocation Form
+        { time: "02:26", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "02:44", bossAbility: 362056 }, // Shatter
+        { time: "02:52", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "03:06", bossAbility: 362056 }, // Shatter
+        { time: "03:17", bossAbility: 359235 }, // Reclamation Form
+        { time: "03:30", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "03:57", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "04:22", bossAbility: 360115 }, // Reclaim
+        { time: "04:46", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "05:10", bossAbility: 359235 }, // Relocation Form
+        { time: "05:17", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "05:34", bossAbility: 362056 }, // Shatter
+        { time: "05:35", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "05:57", bossAbility: 362056 }, // Shatter
+        { time: "06:01", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "06:16", bossAbility: 362056 }, // Shatter
+        { time: "06:35", bossAbility: 359235 }, // Reclamation Form
+        { time: "06:48", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "07:13", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "07:49", bossAbility: 361676 }, // Earthbreaker Missiles
+      ],
     },
   },
 
@@ -260,25 +338,29 @@ export const defaultPlans = {
     Heroic: {
       default: [
         { time: "00:06", bossAbility: 361816 }, // Hopebreaker
-        { time: "00:20", bossAbility: 365295 }, // Befouled Barrier
+        { time: "00:19", bossAbility: 365295 }, // Befouled Barrier
         { time: "00:38", bossAbility: 361816 }, // Hopebreaker
         { time: "00:50", bossAbility: 362407 }, // Kingsmourne Hungers
         { time: "01:06", bossAbility: 361816 }, // Hopebreaker
-        { time: "01:12", bossAbility: 365295 }, // Befouled Barrier
+        { time: "01:11", bossAbility: 365295 }, // Befouled Barrier
         { time: "01:36", bossAbility: 361816 }, // Hopebreaker
         { time: "01:50", bossAbility: 362407 }, // Kingsmourne Hungers
         { time: "01:59", bossAbility: 365295 }, // Befouled Barrier
         { time: "02:06", bossAbility: 361816 }, // Hopebreaker
-        { time: "04:13", bossAbility: 361816 }, // Hopebreaker
-        { time: "04:38", bossAbility: 361816 }, // Hopebreaker
-        { time: "04:52", bossAbility: 362407 }, // Kingsmourne Hungers
-        { time: "05:11", bossAbility: 361816 }, // Hopebreaker
-        { time: "05:21", bossAbility: 365295 }, // Befouled Barrier
-        { time: "05:40", bossAbility: 361816 }, // Hopebreaker
-        { time: "05:52", bossAbility: 362407 }, // Kingsmourne Hungers
-        { time: "06:08", bossAbility: 365295 }, // Befouled Barrier
-        { time: "06:09", bossAbility: 361816 }, // Hopebreaker
-        { time: "07:26", bossAbility: 365805 }, // Empowered Hopebreaker
+        { time: "02:45", bossAbility: 362545 }, // Remorseless Winter
+        { time: "04:14", bossAbility: 361816 }, // Hopebreaker
+        { time: "04:39", bossAbility: 361816 }, // Hopebreaker
+        { time: "04:54", bossAbility: 362407 }, // Kingsmourne Hungers
+        { time: "05:12", bossAbility: 361816 }, // Hopebreaker
+        { time: "05:22", bossAbility: 365295 }, // Befouled Barrier
+        { time: "05:41", bossAbility: 361816 }, // Hopebreaker
+        { time: "05:54", bossAbility: 362407 }, // Kingsmourne Hungers
+        { time: "06:09", bossAbility: 365295 }, // Befouled Barrier
+        { time: "06:10", bossAbility: 361816 }, // Hopebreaker
+        { time: "06:46", bossAbility: 362545 }, // Remorseless Winter
+        { time: "08:17", bossAbility: 365805 }, // Empowered Hopebreaker
+        { time: "09:16", bossAbility: 365805 }, // Empowered Hopebreaker
+        { time: "10:15", bossAbility: 365805 }, // Empowered Hopebreaker
       ],
     },
     Mythic: {
@@ -292,15 +374,19 @@ export const defaultPlans = {
       default: [
         { time: "00:15", bossAbility: 361913 }, // Manifest Shadows
         { time: "00:54", bossAbility: 360300 }, // Swarm of Decay
-        { time: "01:27", bossAbility: 361913 }, // Manifest Shadows
+        { time: "01:26", bossAbility: 361913 }, // Manifest Shadows
         { time: "02:07", bossAbility: 360717 }, // Infiltration of Dread
-        { time: "02:39", bossAbility: 361913 }, // Manifest Shadows
-        { time: "03:20", bossAbility: 360300 }, // Swarm of Decay
-        { time: "03:52", bossAbility: 361913 }, // Manifest Shadows
+        { time: "02:29", bossAbility: 361913 }, // Manifest Shadows
+        { time: "03:10", bossAbility: 360300 }, // Swarm of Decay
+        { time: "03:43", bossAbility: 361913 }, // Manifest Shadows
         { time: "04:32", bossAbility: 360717 }, // Infiltration of Dread
-        { time: "05:10", bossAbility: 361913 }, // Manifest Shadows
-        { time: "05:52", bossAbility: 360300 }, // Swarm of Decay
-        { time: "06:24", bossAbility: 361913 }, // Manifest Shadows
+        { time: "04:46", bossAbility: 361913 }, // Manifest Shadows
+        { time: "05:27", bossAbility: 360300 }, // Swarm of Decay
+        { time: "06:00", bossAbility: 361913 }, // Manifest Shadows
+        { time: "06:40", bossAbility: 360717 }, // Infiltration of Dread
+        { time: "07:04", bossAbility: 361913 }, // Manifest Shadows
+        { time: "07:45", bossAbility: 360300 }, // Swarm of Decay
+        { time: "08:18", bossAbility: 361913 }, // Manifest Shadows
       ],
     },
     Mythic: {
@@ -312,10 +398,20 @@ export const defaultPlans = {
   2549: {
     Heroic: {
       default: [
+        { time: "00:10", bossAbility: 362275 }, // Celestial Collapse
+        { time: "00:31", bossAbility: 362275 }, // Celestial Collapse
         { time: "01:12", bossAbility: 364381 }, // Stellar Decay
         { time: "01:28", bossAbility: 364381 }, // Stellar Decay
+        { time: "01:58", bossAbility: 362275 }, // Celestial Collapse
+        { time: "02:18", bossAbility: 362275 }, // Celestial Collapse
         { time: "02:58", bossAbility: 364381 }, // Stellar Decay
         { time: "03:14", bossAbility: 364381 }, // Stellar Decay
+        { time: "03:44", bossAbility: 362275 }, // Celestial Collapse
+        { time: "04:05", bossAbility: 362275 }, // Celestial Collapse
+        { time: "04:47", bossAbility: 364381 }, // Stellar Decay
+        { time: "05:02", bossAbility: 364381 }, // Stellar Decay
+        { time: "05:31", bossAbility: 362275 }, // Celestial Collapse
+        { time: "05:51", bossAbility: 362275 }, // Celestial Collapse
       ],
     },
     Mythic: {
@@ -326,7 +422,34 @@ export const defaultPlans = {
   // The Jailer, Zovaal
   2537: {
     Heroic: {
-      default: [],
+      default: [
+        { time: "00:11", bossAbility: 365436 }, // Torment
+        { time: "00:46", bossAbility: 362617 }, // Oppression
+        { time: "01:03", bossAbility: 365436 }, // Torment
+        { time: "01:34", bossAbility: 362617 }, // Oppression
+        { time: "01:48", bossAbility: 365436 }, // Torment
+        { time: "02:23", bossAbility: 362617 }, // Oppression
+        { time: "02:35", bossAbility: 365436 }, // Torment
+        { time: "03:10", bossAbility: 365436 }, // Torment
+        { time: "03:26", bossAbility: 365436 }, // Torment
+        { time: "03:17", bossAbility: 360562 }, // Decimator
+        { time: "03:58", bossAbility: 360562 }, // Decimator
+        { time: "04:01", bossAbility: 365436 }, // Torment
+        { time: "04:33", bossAbility: 360562 }, // Decimator
+        { time: "05:03", bossAbility: 365436 }, // Torment
+        { time: "05:18", bossAbility: 360562 }, // Decimator
+        { time: "05:32", bossAbility: 365436 }, // Torment
+        { time: "05:59", bossAbility: 360562 }, // Decimator
+        { time: "06:02", bossAbility: 365436 }, // Torment
+        { time: "06:43", bossAbility: 360562 }, // Decimator
+        { time: "07:02", bossAbility: 365033 }, // Desolation
+        { time: "07:21", bossAbility: 360562 }, // Decimator
+        { time: "08:02", bossAbility: 365033 }, // Desolation
+        { time: "08:08", bossAbility: 360562 }, // Decimator
+        { time: "08:41", bossAbility: 360562 }, // Decimator
+        { time: "09:06", bossAbility: 365033 }, // Desolation
+        { time: "09:21", bossAbility: 360562 }, // Decimator
+      ],
     },
     Mythic: {
       default: [],
