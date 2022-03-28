@@ -518,7 +518,7 @@ export default function CooldownPlanner(props) {
   /* ------------- When the currently loaded data is updated the props.update function ------------ */
   /* ------------- passed from the cooldown planner module will update the state also. ------------ */
   useEffect(() => {
-    props.update(data);
+    props.update(data, currentBoss, currentLanguage);
   }, [data]);
 
   return (
