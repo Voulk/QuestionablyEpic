@@ -624,7 +624,7 @@ export default function talentIcons(props) {
     source = SurgeOfLightIcon;
     alt = "Surge of Light";
   }
-  if (props === 32546) {
+  if (props === 368275) {
     source = BindingHealIcon;
     alt = "Binding Heal";
   }
