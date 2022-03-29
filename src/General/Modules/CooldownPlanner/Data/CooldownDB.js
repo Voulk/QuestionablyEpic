@@ -236,21 +236,6 @@ export const cooldownDB = [
     class: "Priest",
     cdPlannerMenuActive: true,
   },
-  {
-    name: {
-      en: "Fae Guardians",
-      fr: "Gardiens faë",
-      de: "Faewächter",
-      ru: "Волшебные стражи",
-      cn: "法夜守护者",
-    },
-    guid: 327661,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_ardenweald_priest.jpg").default,
-    duraton: 1,
-    cooldown: 90,
-    class: "Priest",
-    cdPlannerMenuActive: false,
-  },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Druid                                             */
   /* ---------------------------------------------------------------------------------------------- */

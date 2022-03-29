@@ -158,7 +158,7 @@ export default function CooldownPlanner(props) {
       /* ----------- Here the user can select which boss ability the cooldown should cover. ----------- */
       title: t("CooldownPlanner.TableLabels.BossAbilityLabel"),
       field: "bossAbility",
-      width: "8%",
+      width: "6%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
       // Search function for abilities as they are stores as numbers. Works for all languages
@@ -169,8 +169,8 @@ export default function CooldownPlanner(props) {
           .flat();
         return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
       },
-      render: (rowData) => BossAbilityRender(rowData, currentBoss),
-      editComponent: (props) => BossAbilitySelector(props, currentBoss),
+      render: (rowData) => BossAbilityRender(rowData, currentBoss, currentDifficulty),
+      editComponent: (props) => BossAbilitySelector(props, currentBoss, currentDifficulty),
     },
 
     /* -------------------------------------------------------------------------- */
@@ -518,7 +518,7 @@ export default function CooldownPlanner(props) {
   /* ------------- When the currently loaded data is updated the props.update function ------------ */
   /* ------------- passed from the cooldown planner module will update the state also. ------------ */
   useEffect(() => {
-    props.update(data);
+    props.update(data, currentBoss, currentLanguage);
   }, [data]);
 
   return (
