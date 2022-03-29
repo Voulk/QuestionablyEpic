@@ -134,7 +134,7 @@ describe("Test Sequences", () => {
         sequenceSettings.soulbind = "Kleia";
         sequenceSettings.legendaries = ["Ancient Teachings of the Monastery"];
         sequenceSettings.misc = ["2T28"];
-        const trinket = {name: "Soulletting Ruby", ilvl: 5000}; 
+        const trinket = {name: "Soulletting Ruby", ilvl: 268}; 
         //const trinket = {name: "Symbol of the Raptora", ilvl: 5000}; 
         sequenceSettings.trinket1 = trinket;
 

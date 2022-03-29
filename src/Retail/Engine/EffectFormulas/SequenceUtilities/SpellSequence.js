@@ -148,20 +148,17 @@ const getSqrt = (targets, softCap = 1) => {
  * @param {object} state The state for tracking information 
  * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
  */
-export const runDamage = (state, spell) => {
-    let damMultiplier = sequenceTool.getDamMult(state, spell); // Get our damage multiplier (Schism, Sins etc);
-    let damAddition = sequenceTool.getDamAddition(state, spell);
-
-    // Apply armor to sim
-    // TODO: Scale differently for dungeons
-    if ('damageType' in spell && spell.damageType === "physical") damMultiplier *= 0.7
-    const damageVal = (getSpellRaw(spell, state.currentStats) + damAddition) * damMultiplier;
+export const runDamage = (state, spell, spellName, partialTickPercentage = 1) => {
+    let damMultiplier = sequenceTool.getDamMult(state, spell, spellName); // Get our damage multiplier (Schism, Sins etc);
+    let damAddition = sequenceTool.getDamAddition(state, spell, spellName);
 
     // Calculate the damage done
+    if ('damageType' in spell && spell.damageType === "physical") damMultiplier *= 0.7
+    const damageVal = (getSpellRaw(spell, state.currentStats) + damAddition) * damMultiplier * partialTickPercentage;
     state.damageDone[spell.name] = (state.damageDone[spell.name] || 0) + damageVal; 
 
     // This will handle atonement for Disc also
-    sequenceTool.getSpecialDamage(state, spell, damageVal);
+    sequenceTool.getSpecialDamage(state, spell, spellName, damageVal);
 }
 
 /**
@@ -171,14 +168,14 @@ export const runDamage = (state, spell) => {
  * @param {} spellName The identifier for the spell
  * @param {} specialMult Special multiplier, for partial ticks
  */
- export const runHeal = (state, spell, spellName, specialMult = 1) => {    
+ export const runHeal = (state, spell, spellName, partialTickPercentage = 1) => {    
     // Multipliers, including covenant, conduit, tier etc
     // Additions, eg flat healing (Monk T28 4pc) 
     const healingMult = sequenceTool.getHealingMult(state, spell, spellName);
     const healingAddition = sequenceTool.getHealingAddition(state, spell, spellName);
 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.softCap || 1) * spell.targets : spell.targets || 1;
-    const healingVal = (getSpellRaw(spell, state.currentStats) + healingAddition) * (1 - spell.overheal) * healingMult * targetMult * specialMult;
+    const healingVal = (getSpellRaw(spell, state.currentStats) + healingAddition) * (1 - spell.overheal) * healingMult * targetMult * partialTickPercentage;
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
 
     // Run class specific heal processing
@@ -209,20 +206,22 @@ export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) =
     sequenceLength *= runcount;
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
-        const healBuffs = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "function") && state.t >= buff.next})
+        const tickingBuffs = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType === "function") && state.t >= buff.next})
         
-        if (healBuffs.length > 0) {
-            healBuffs.forEach((buff) => {
+        if (tickingBuffs.length > 0) {
+            tickingBuffs.forEach((buff) => {
                 let currentStats = {...baseStats};
                 state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
 
                 if (buff.buffType === "heal") {
                     const spell = buff.attSpell;
-                    runHeal(state, spell, buff.name)
-                }
-                else if (buff.buffType === "function") {
+                    runHeal(state, spell, buff.name);
+                } else if (buff.buffType === "damage") {
+                    const spell = buff.attSpell;
+                    runDamage(state, spell, buff.name);
+                } else if (buff.buffType === "function") {
                     const func = buff.attFunction;
-                    func(state);
+                    func(state, sequenceTool);
                 }
 
                 buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
@@ -238,11 +237,20 @@ export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) =
             runHeal(state, spell, buff.name, partialTickPercentage)
         })
 
+        // Handle removing of expiring dots
+        const expiringDots = state.activeBuffs.filter(function (buff) {return buff.buffType === "damage" && state.t >= buff.expiration && buff.expiration != false})
+        expiringDots.forEach(buff => {
+            const tickRate = buff.tickRate / getHaste(state.currentStats)
+            const partialTickPercentage = (buff.next - state.t) / tickRate;
+            const spell = buff.attSpell;
+            runDamage(state, spell, buff.name, partialTickPercentage)
+        })
+
         // Handle activating any effects that end on expiry (Eg Lifebloom)
         const expiringActivation = state.activeBuffs.filter(function (buff) {return buff.buffType === "expiry" && state.t >= buff.expiration && buff.expiration != false})
         expiringActivation.forEach(buff => {
             const func = buff.attFunction;
-            func(state);
+            func(state, sequenceTool);
         })
 
         // Clear slate of old buffs.
@@ -269,15 +277,11 @@ export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) =
                 // Power Word: Shield is included as a heal, since there is no functional difference for the purpose of this calculation.
                 if (spell.type === 'heal') {
                     runHeal(state, spell, spellName)
-                }
-                
+                }                
                 // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
                 else if (spell.type === 'damage') {
-                    //const activeAtonements = getActiveAtone(atonementApp, t); // Get number of active atonements.
-
                     runDamage(state, spell, spellName)
                 }
-
                 // The spell adds a buff to our player.
                 // We'll track what kind of buff, and when it expires.
                 else if (spell.type === "buff") {
@@ -315,8 +319,9 @@ export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) =
                         state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration});
                     }
                 }
+
+                // Handle other effects that aren't buffs, damage or healing
                 else if (spell.type === "special") {
-                    
                     spell.runFunc(state);
                 }
             });   
@@ -333,6 +338,27 @@ export const runFixedCastSequence = (state, baseStats, sequence, runcount = 1) =
     }
 
     return state;
+}
+
+/** Check if a specific buff is active. Buffs are removed when they expire so this is active buffs only.
+ * @param buffs An array of buff objects.
+ * @param buffName The name of the buff we're searching for.
+ */
+export const checkBuffActive = (buffs, buffName) => {
+    return buffs.filter(function (buff) {return buff.name === buffName}).length > 0;
+}
+
+/** Check if a specific buff is active. Buffs are removed when they expire so this is active buffs only.
+ * @param buffs An array of buff objects.
+ * @param buffName The name of the buff(s) we're searching for.
+ * @returns The array of buffs with that name, else false if the buff does not exist.
+ */
+export const getBuffs = (buffs, buffName) => {
+    if (checkBuffActive(buffs, buffName)) {
+        return buffs.filter(buff => buff.name === buffName);
+    } else {
+        return false;
+    }
 }
 
 /*

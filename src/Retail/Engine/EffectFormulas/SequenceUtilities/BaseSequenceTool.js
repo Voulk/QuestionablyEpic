@@ -3,6 +3,8 @@
 import { convertPPMToUptime } from "../EffectUtilities";
 import { runHeal } from "./SpellSequence";
 import { trinket_data } from "../Generic/TrinketData";
+import { getProcessedValue } from "../EffectUtilities";
+import { checkBuffActive, getBuffs } from "./SpellSequence";
 
 // Defines all the functions the sequencer uses and all global modifiers
 // This is only for functions that can change based on the class.
@@ -30,7 +32,7 @@ getHealingMult(state, spell, spellName) {
     const multiplierBuffList = ["Dream Delver", "Token of Appreciation", "Tea Time"];
 
     multiplierBuffList.forEach(buffName => {
-        if (this.checkBuffActive(state.activeBuffs, buffName)) 
+        if (checkBuffActive(state.activeBuffs, buffName)) 
     {
         mult *= state.activeBuffs.filter(function (buff) {return buff.name === buffName})[0].value;
     }
@@ -54,7 +56,7 @@ getHealingAddition (state, spell, spellName) {
  * @param {object} value The precalculated healing of the related spell.
  */
 getSpecialHealing (state, spell, spellName, value) {
-    if (this.checkBuffActive(state.activeBuffs, "Empowered Chrysalis")) {
+    if (checkBuffActive(state.activeBuffs, "Empowered Chrysalis")) {
         const chrysalisSize = (value / (1 - spell.overheal) * spell.overheal * 0.1)
         state.healingDone['Empowered Chrysalis'] = (state.healingDone['Empowered Chrysalis'] || 0) + chrysalisSize;
     }
@@ -134,10 +136,10 @@ spendMana (state, spell) {
  * @param {*} secondaryValue To get secondary value
  * @returns Returns the added multiplier for the value eg 0.05
  */
- getConduitMult(conduitName, secondaryValue = false) {
-    if (secondaryValue) return this.conduits[conduitName][0].secondaryValue;
-    return this.conduits[conduitName][0].value;
- }
+getConduitMult(conduitName, secondaryValue = false) {
+   if (secondaryValue) return this.conduits[conduitName][0].secondaryValue;
+   return this.conduits[conduitName][0].value;
+}
 
 // -------------------------------------------------------
 // ----         Stats information section         --------
@@ -155,14 +157,6 @@ getStatMult (currentStats, stats) {
     if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100);
     // Mastery calculated within each class
     return mult;
-}
-
-/** Check if a specific buff is active. Buffs are removed when they expire so this is active buffs only.
- * @param buffs An array of buff objects.
- * @param buffName The name of the buff we're searching for.
- */
-checkBuffActive (buffs, buffName) {
-    return buffs.filter(function (buff) {return buff.name === buffName}).length > 0;
 }
 
 // -------------------------------------------------------
@@ -216,6 +210,14 @@ addToSpellDB (extraSpellDB) {
     this.spellDB.push(extraSpellDB);
 }
 
+/**
+ * Check if the character has the selected talent
+ * @param {string} talentName The name of the talent to check
+ */
+hasTalent(talentName) {
+    return this.talents.includes(talentName);
+}
+
 // -------------------------------------------------------
 // ----         Trinkets section                  --------
 // -------------------------------------------------------
@@ -225,7 +227,7 @@ addToSpellDB (extraSpellDB) {
  * @param {object} trinket Trinket info as provided by the state settings
  */
 addTrinketToSpellDB (state, trinket, trinketEffect) {
-    let value = trinketEffect.coefficient * trinket.ilvl;
+    let value = getProcessedValue(trinketEffect.coefficient, trinketEffect.table, trinket.ilvl);
     if (trinketEffect.multiplier) value *= trinketEffect.multiplier;
     if (trinketEffect.efficiency) value *= trinketEffect.efficiency;
     if (trinketEffect.meteor && trinketEffect.aoeMult === "meteor") value = (value + trinketEffect.targets[state.sequenceSettings.contentType] * trinketEffect.meteor) / trinketEffect.targets;
@@ -351,7 +353,7 @@ addTrinketToSpellDB (state, trinket, trinketEffect) {
  * @param {object} trinket Trinket info as provided by the state settings
  */
  addPassiveTrinket (state, trinket, trinketEffect) {
-    let value = trinketEffect.coefficient * trinket.ilvl;
+    let value = getProcessedValue(trinketEffect.coefficient, trinketEffect.table, trinket.ilvl);
 
     if (trinketEffect.type === "stats") {
         if (trinketEffect.multiplier && trinket.name != "Cabalist's Hymnal") value *= trinketEffect.multiplier;

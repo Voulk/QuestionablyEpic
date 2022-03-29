@@ -3,6 +3,7 @@ import { MONKSPELLS } from "../Monk/MistweaverSpellDB";
 import { runHeal } from "./SpellSequence"; // TODO: Find out if there is a way to import this as part of importing base sequence tool.
 import BaseSequenceTool from "./BaseSequenceTool";
 import Player from "General/Modules/Player/Player";
+import { checkBuffActive, getBuffs } from "./SpellSequence";
 
 // Default talents
 const defaultTalents = ["Chi Burst", "Chi Torpedo", "Mana Tea", "Ring of Peace", "Diffuse Magic", "Refreshing Jade Wind", "Rising Mist"];
@@ -42,7 +43,7 @@ constructor(state, talents, conduits) {
  */
 getStatMult (currentStats, stats) {
     let mult = super.getStatMult(currentStats, stats);
-    if (stats.includes("mastery")) mult *= (1.336 + currentStats['mastery'] * this.getMasteryScaling() / 100);
+    if (stats.includes("mastery")) mult *= 1.336 + currentStats['mastery'] * this.getMasteryScaling();
     return mult;
 }
 
@@ -50,7 +51,7 @@ getStatMult (currentStats, stats) {
  * @returns Returns per point mastery scaling
  */
 getMasteryScaling() {
-    return 1 / 35 * 4.2;
+    return 1 / 35 * 4.2 / 100;
 }
 
 // -------------------------------------------------------
@@ -62,7 +63,7 @@ getMasteryScaling() {
  * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
  */
  getHealingMult(state, spell, spellName) {
-    let mult = super.getHealingMult(state, spell);
+    let mult = super.getHealingMult(state, spell, spellName);
 
     // Healing multiplier of 2pc affects all healing (including 4pc)
     if (state.settings.misc.includes("2T28") && (spellName === "Essence Font (HoT)" || spellName === "Essence Font (HoT - Faeline Stomp)")) {
@@ -92,19 +93,19 @@ getMasteryScaling() {
 
     // FLS buffs 5 targets. We'll take the average healing increase. This is likely a slight underestimation since your RJW and FLS targets will line up closely. On the other
     // hand FLS likes to hit pets sometimes so it should be fair. 
-    if (super.checkBuffActive(state.activeBuffs, "Faeline Harmony Inc")) mult *= (0.08 * 5 / 20) + 1; 
+    if (checkBuffActive(state.activeBuffs, "Faeline Harmony Inc")) mult *= (0.08 * 5 / 20) + 1; 
 
     // Enveloping mist and breath healing increase
     if (spellName != "Faeline Stomp" && spellName != "Enveloping Mist" && spellName != "Enveloping Breath")
     {
-        if (super.checkBuffActive(state.activeBuffs, "Enveloping Mist"))
+        if (checkBuffActive(state.activeBuffs, "Enveloping Mist"))
         {
             const EnvelopingMistCount = state.activeBuffs.filter(function (buff) {return buff.name === "Enveloping Mist"}).length;
             mult *= 1 + 0.3 * EnvelopingMistCount / 20;
         }
 
         // This currently multiplies the healing value by 3.5 due to number of targets hit per buff
-        if (super.checkBuffActive(state.activeBuffs, "Enveloping Breath"))
+        if (checkBuffActive(state.activeBuffs, "Enveloping Breath"))
         {
             const EnvelopingBreathCount = state.activeBuffs.filter(function (buff) {return buff.name === "Enveloping Breath"}).length;
             mult *= 1 + 0.1 * EnvelopingBreathCount / 20 * 3.5;
@@ -119,11 +120,11 @@ getMasteryScaling() {
  * @param {object} spell The spell being cast. Spell data is pulled from relevant class DB. 
  */
 getHealingAddition (state, spell, spellName) {
-    let addition = super.getHealingAddition(state, spell);
+    let addition = super.getHealingAddition(state, spell, spellName);
 
     // == 4T28 ==
     // Some spells do not benefit from the bonus. It's unknown whether this is intentional.
-    if (super.checkBuffActive(state.activeBuffs, "Primordial Mending") && !["Ancient Teachings of the Monastery"].includes(spellName) && !["Yulon's Whisper (Initial)"].includes(spellName)) {
+    if (checkBuffActive(state.activeBuffs, "Primordial Mending") && !["Ancient Teachings of the Monastery"].includes(spellName) && !["Yulon's Whisper (Initial)"].includes(spellName)) {
         addition += 450 * this.getStatMult(currentStats,  ['crit', 'vers']);
     }
 
@@ -143,7 +144,7 @@ getHealingAddition (state, spell, spellName) {
  */
 getSpecialHealing (state, spell, spellName, value) {
     // Track the 4pc value, run after run heal so doesn't need to be done again for mastery etc
-    super.getSpecialHealing (state, spell, value);
+    super.getSpecialHealing (state, spell, spellName, value);
     this.track4pc(state, spellName, value);
 
     if (spell.mastery) {
@@ -165,7 +166,7 @@ getSpecialHealing (state, spell, spellName, value) {
 
     // Just track 4pc value, healing done in base sequence.
     // This can be done more comprehensively by iterating through each healing value change then passing to function
-    if (super.checkBuffActive(state.activeBuffs, "Empowered Chrysalis")) {
+    if (checkBuffActive(state.activeBuffs, "Empowered Chrysalis")) {
         const chrysalisSize = (value / (1 - spell.overheal) * spell.overheal * 0.1)
         this.track4pc(state, 'Empowered Chrysalis', chrysalisSize);
     }
@@ -282,7 +283,7 @@ applyLoadout (state) {
 }
 
 // -------------------------------------------------------
-// ----          Special addition tools           --------
+// ----          Special class functions          --------
 // -------------------------------------------------------
 
 /**
@@ -302,7 +303,7 @@ applyBonedustBrew (state, spellName, value, healing = false) {
     
     if (!healing)
     {
-        if (super.checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
+        if (checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
             // Run duplicate damage.
             emenigroupbonus = value * 0.08 * 15 / 19 * 2; // Approximating throughput increase for hitting non-healers
             bonedustBonus = value * 0.5 * 0.4 * conduitMult; 
@@ -328,7 +329,7 @@ applyBonedustBrew (state, spellName, value, healing = false) {
         else if (state.settings.misc.includes("BDB60")) targetMult = 0.6;
         else if (state.settings.misc.includes("BDB90")) targetMult = 0.9;
 
-        if (super.checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
+        if (checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
             // Run duplicate damage.
             emenigroupbonus = value * 0.08 * 4 / 19; // Approximating throughput increase for hitting healers
             bonedustBonus = value * 0.5 * 0.4 * conduitMult * targetMult; 
@@ -367,7 +368,7 @@ getReport (state, sequenceSettings) {
  * @param {} value Healing amount
  */
 track4pc (state, spellName, value) {
-    if (super.checkBuffActive(state.activeBuffs, "Primordial Mending")){
+    if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
         state.tierHealingDone[spellName] = (state.tierHealingDone[spellName] || 0) + value; 
     }
 }
