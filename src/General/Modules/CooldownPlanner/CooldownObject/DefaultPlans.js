@@ -423,31 +423,52 @@ export const defaultPlans = {
   2537: {
     Heroic: {
       default: [
+        // Phase 1
         { time: "00:11", bossAbility: 365436 }, // Torment
-        { time: "00:46", bossAbility: 362617 }, // Oppression
+        { time: "00:31", bossAbility: 363893 }, // Martyrdom
+        { time: "00:40", bossAbility: 362631 }, // Chains of Oppression
+        // { time: "00:46", bossAbility: 362617 }, // Oppression
         { time: "01:03", bossAbility: 365436 }, // Torment
-        { time: "01:34", bossAbility: 362617 }, // Oppression
+        { time: "01:11", bossAbility: 363893 }, // Martyrdom
+        { time: "01:28", bossAbility: 362631 }, // Chains of Oppression
+        // { time: "01:34", bossAbility: 362617 }, // Oppression
         { time: "01:48", bossAbility: 365436 }, // Torment
-        { time: "02:23", bossAbility: 362617 }, // Oppression
+        { time: "02:03", bossAbility: 363893 }, // Martyrdom
+        { time: "02:17", bossAbility: 362631 }, // Chains of Oppression
+        // { time: "02:23", bossAbility: 362617 }, // Oppression
         { time: "02:35", bossAbility: 365436 }, // Torment
+        { time: "02:42", bossAbility: 363893 }, // Martyrdom
+        // Phase 2
+        { time: "03:09", bossAbility: 360373 }, // Unholy Attunement
         { time: "03:10", bossAbility: 365436 }, // Torment
         { time: "03:26", bossAbility: 365436 }, // Torment
         { time: "03:17", bossAbility: 360562 }, // Decimator
+        { time: "03:54", bossAbility: 360373 }, // Unholy Attunement
         { time: "03:58", bossAbility: 360562 }, // Decimator
         { time: "04:01", bossAbility: 365436 }, // Torment
         { time: "04:33", bossAbility: 360562 }, // Decimator
+        { time: "04:39", bossAbility: 360373 }, // Unholy Attunement
         { time: "05:03", bossAbility: 365436 }, // Torment
         { time: "05:18", bossAbility: 360562 }, // Decimator
+        { time: "05:24", bossAbility: 360373 }, // Unholy Attunement
         { time: "05:32", bossAbility: 365436 }, // Torment
         { time: "05:59", bossAbility: 360562 }, // Decimator
         { time: "06:02", bossAbility: 365436 }, // Torment
+        { time: "06:06", bossAbility: 360373 }, // Unholy Attunement
         { time: "06:43", bossAbility: 360562 }, // Decimator
+        // Phase 3
+        { time: "06:53", bossAbility: 365212 }, // Chains of Anguish
         { time: "07:02", bossAbility: 365033 }, // Desolation
         { time: "07:21", bossAbility: 360562 }, // Decimator
+        { time: "07:32", bossAbility: 365153 }, // Dominating Will
+        { time: "07:48", bossAbility: 365212 }, // Chains of Anguish
         { time: "08:02", bossAbility: 365033 }, // Desolation
         { time: "08:08", bossAbility: 360562 }, // Decimator
+        { time: "08:31", bossAbility: 365212 }, // Chains of Anguish
         { time: "08:41", bossAbility: 360562 }, // Decimator
+        { time: "08:51", bossAbility: 365153 }, // Dominating Will
         { time: "09:06", bossAbility: 365033 }, // Desolation
+        { time: "09:14", bossAbility: 365212 }, // Chains of Anguish
         { time: "09:21", bossAbility: 360562 }, // Decimator
       ],
     },
