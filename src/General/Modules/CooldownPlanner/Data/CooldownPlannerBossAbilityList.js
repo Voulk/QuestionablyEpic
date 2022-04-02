@@ -982,6 +982,54 @@ export const bossAbilities = {
       cooldownPlannerActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_paladin_toweroflight.jpg").default,
     },
+    {
+      name: {
+        en: "Phase 1",
+        cn: "Phase 1",
+        fr: "Phase 1",
+        ru: "Phase 1",
+        de: "Phase 1",
+      },
+      guid: "Phase 1",
+      cooldownPlannerActive: true,
+      icon: "",
+    },
+    {
+      name: {
+        en: "Phase 2",
+        cn: "Phase 2",
+        fr: "Phase 2",
+        ru: "Phase 2",
+        de: "Phase 2",
+      },
+      guid: "Phase 2",
+      cooldownPlannerActive: true,
+      icon: "",
+    },
+    {
+      name: {
+        en: "Phase 3",
+        cn: "Phase 3",
+        fr: "Phase 3",
+        ru: "Phase 3",
+        de: "Phase 3",
+      },
+      guid: "Phase 3",
+      cooldownPlannerActive: true,
+      icon: "",
+    },
+    {
+      name: {
+        en: "Intermission",
+        cn: "Intermission",
+        fr: "Intermission",
+        ru: "Intermission",
+        de: "Intermission",
+      },
+      guid: "Intermission",
+      cooldownPlannerActive: true,
+      icon: "",
+    },
   ],
   /* --------------------------------------- Lords of Dread --------------------------------------- */
   2543: [

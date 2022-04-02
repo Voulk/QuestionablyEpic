@@ -337,7 +337,7 @@ export const defaultPlans = {
   2546: {
     Heroic: {
       default: [
-        // Phase 1
+        { time: "00:00", bossAbility: "Phase 1" }, // Phase 1
         { time: "00:06", bossAbility: 361816 }, // Hopebreaker
         { time: "00:19", bossAbility: 365295 }, // Befouled Barrier
         { time: "00:38", bossAbility: 361816 }, // Hopebreaker
@@ -349,10 +349,10 @@ export const defaultPlans = {
         { time: "01:59", bossAbility: 365295 }, // Befouled Barrier
         { time: "02:06", bossAbility: 361816 }, // Hopebreaker
 
-        // Intermission
-        { time: "02:45", bossAbility: 362545 }, // Remorseless Winter
+        { time: "02:45", bossAbility: "Intermission" }, // Intermission
+        { time: "02:51", bossAbility: 362545 }, // Remorseless Winter
 
-        // Phase 2
+        { time: "03:58", bossAbility: "Phase 2" }, // Phase 2
         { time: "04:14", bossAbility: 361816 }, // Hopebreaker
         { time: "04:39", bossAbility: 361816 }, // Hopebreaker
         { time: "04:54", bossAbility: 362407 }, // Kingsmourne Hungers
@@ -363,10 +363,10 @@ export const defaultPlans = {
         { time: "06:09", bossAbility: 365295 }, // Befouled Barrier
         { time: "06:10", bossAbility: 361816 }, // Hopebreaker
 
-        // Intermission
-        { time: "06:46", bossAbility: 362545 }, // Remorseless Winter
+        { time: "06:46", bossAbility: "Intermission" }, // Intermission
+        { time: "06:55", bossAbility: 362545 }, // Remorseless Winter
 
-        // Phase 3
+        { time: "08:05", bossAbility: "Phase 3" }, // Phase 3
         { time: "08:17", bossAbility: 365805 }, // Empowered Hopebreaker
         { time: "08:30", bossAbility: 368428 }, // Purging Light
         { time: "08:40", bossAbility: 368428 }, // Purging Light
@@ -380,7 +380,7 @@ export const defaultPlans = {
     },
     Mythic: {
       default: [
-        // Phase 1
+        { time: "00:00", bossAbility: "Phase 1" }, // Phase 1
         { time: "00:06", bossAbility: 361816 }, // Hopebreaker
         { time: "00:19", bossAbility: 365295 }, // Befouled Barrier
         { time: "00:38", bossAbility: 361816 }, // Hopebreaker
@@ -391,10 +391,11 @@ export const defaultPlans = {
         { time: "01:50", bossAbility: 362407 }, // Kingsmourne Hungers
         { time: "01:59", bossAbility: 365295 }, // Befouled Barrier
         { time: "02:06", bossAbility: 361816 }, // Hopebreaker
-        // Intermission
+
+        { time: "02:45", bossAbility: "Intermission" }, // Intermission
         { time: "02:52", bossAbility: 362545 }, // Remorseless Winter
 
-        // Phase 2
+        { time: "04:08", bossAbility: "Phase 2" }, // Phase 2
         { time: "04:23", bossAbility: 361816 }, // Hopebreaker
         { time: "04:48", bossAbility: 361816 }, // Hopebreaker
         { time: "05:02", bossAbility: 362407 }, // Kingsmourne Hungers
@@ -404,10 +405,11 @@ export const defaultPlans = {
         { time: "06:02", bossAbility: 362407 }, // Kingsmourne Hungers
         { time: "06:17", bossAbility: 365295 }, // Befouled Barrier
         { time: "06:19", bossAbility: 361816 }, // Hopebreaker
-        // Intermission
-        { time: "07:07", bossAbility: 362545 }, // Remorseless Winter
 
-        // Phase 3
+        { time: "07:00", bossAbility: "Intermission" }, // Intermission
+        { time: "07:10", bossAbility: 362545 }, // Remorseless Winter
+
+        { time: "08:26", bossAbility: "Phase 3" }, // Phase 3
         { time: "08:39", bossAbility: 365805 }, // Empowered Hopebreaker
         { time: "08:52", bossAbility: 368428 }, // Purging Light
         { time: "09:02", bossAbility: 368428 }, // Purging Light
