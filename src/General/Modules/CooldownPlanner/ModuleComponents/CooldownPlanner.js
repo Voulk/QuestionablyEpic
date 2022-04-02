@@ -545,15 +545,29 @@ export default function CooldownPlanner(props) {
             },
             /* --------------------------- Alternating Row Colour is defined here --------------------------- */
             rowStyle: (rowData, index) => {
+              if (
+                rowData.bossAbility === "Phase 1" ||
+                rowData.bossAbility === "Phase 2" ||
+                rowData.bossAbility === "Phase 3" ||
+                rowData.bossAbility === "Phase 4" ||
+                rowData.bossAbility === "Intermission"
+              ) {
+                return {
+                  height: 28,
+                  backgroundColor: "#359166",
+                  border: "1px solid #359166",
+                };
+              }
+
               if (index % 2) {
                 return {
-                  height: 30,
+                  height: 28,
                   backgroundColor: "#515151",
                   border: "1px solid #595959",
                 };
               }
               return {
-                height: 30,
+                height: 28,
                 border: "1px solid #595959",
               };
             },
