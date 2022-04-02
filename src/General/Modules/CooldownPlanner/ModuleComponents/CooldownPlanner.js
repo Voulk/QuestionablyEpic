@@ -545,15 +545,29 @@ export default function CooldownPlanner(props) {
             },
             /* --------------------------- Alternating Row Colour is defined here --------------------------- */
             rowStyle: (rowData, index) => {
+              if (
+                rowData.bossAbility === "Phase 1" ||
+                rowData.bossAbility === "Phase 2" ||
+                rowData.bossAbility === "Phase 3" ||
+                rowData.bossAbility === "Phase 4" ||
+                rowData.bossAbility === "Intermission"
+              ) {
+                return {
+                  height: 28,
+                  backgroundColor: "#359166",
+                  border: "1px solid #359166",
+                };
+              }
+
               if (index % 2) {
                 return {
-                  height: 30,
+                  height: 28,
                   backgroundColor: "#515151",
                   border: "1px solid #595959",
                 };
               }
               return {
-                height: 30,
+                height: 28,
                 border: "1px solid #595959",
               };
             },
@@ -591,7 +605,7 @@ export default function CooldownPlanner(props) {
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <Button variant="outlined" style={{ height: 40, width: "100%", whiteSpace: "nowrap" }} color="primary" onClick={() => healTeamDialogOpen()}>
                       {/* // TODO: Translate */}
-                      Heal Team
+                      Roster
                     </Button>
                   </Grid>
                   {/* ---------------------------------- Raid Selection Drop Down ---------------------------------- */}
