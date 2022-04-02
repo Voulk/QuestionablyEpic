@@ -149,7 +149,7 @@
         "BossAbilityLabel": "Boss Ability",
         "NotesLabel": "Notes",
         "OffCooldownLabel": "Off-CD",
-        "HealTeamHeader": "Heal Team",
+        "HealTeamHeader": "Roster",
         "TypeSelector": "Formats"
       },
       "UserInputs": {

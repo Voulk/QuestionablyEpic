@@ -605,7 +605,7 @@ export default function CooldownPlanner(props) {
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <Button variant="outlined" style={{ height: 40, width: "100%", whiteSpace: "nowrap" }} color="primary" onClick={() => healTeamDialogOpen()}>
                       {/* // TODO: Translate */}
-                      Heal Team
+                      Roster
                     </Button>
                   </Grid>
                   {/* ---------------------------------- Raid Selection Drop Down ---------------------------------- */}
