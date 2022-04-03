@@ -618,4 +618,36 @@ export const cooldownDB = [
     class: "DeathKnight",
     cdPlannerMenuActive: true,
   },
+
+  {
+    guid: "Potion/Healthstone",
+    name: {
+      en: "Potion/Healthstone",
+      fr: "Potion/Healthstone",
+      de: "Potion/Healthstone",
+      ru: "Potion/Healthstone",
+      cn: "Potion/Healthstone",
+    },
+    icon: require("Images/CooldownPlanner/SpellIcons/trade_alchemy_potionb5.jpg").default,
+    duration: 1,
+    // cooldown: 120,
+    class: "",
+    cdPlannerMenuActive: true,
+  },
+
+  {
+    guid: "Personals",
+    name: {
+      en: "Personals",
+      fr: "Personals",
+      de: "Personals",
+      ru: "Personals",
+      cn: "Personals",
+    },
+    icon: require("Images/CooldownPlanner/SpellIcons/inv_shield_30.jpg").default,
+    duration: 1,
+    // cooldown: 120,
+    class: "",
+    cdPlannerMenuActive: true,
+  },
 ];
