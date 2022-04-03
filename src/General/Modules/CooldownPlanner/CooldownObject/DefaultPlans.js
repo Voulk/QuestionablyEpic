@@ -275,19 +275,23 @@ export const defaultPlans = {
   2529: {
     Heroic: {
       default: [
+        { time: "00:00", bossAbility: "Phase 1" }, // Phase 1
         { time: "00:46", bossAbility: 361676 }, // Earthbreaker Missiles
         { time: "01:05", bossAbility: 360115 }, // Reclaim
-        { time: "01:27", bossAbility: 359235 }, // Relocation Form
+        { time: "01:27", bossAbility: 359236 }, // Relocation Form
+        { time: "01:28", bossAbility: "Intermission" }, // Intermission
         { time: "01:38", bossAbility: 361676 }, // Earthbreaker Missiles
         { time: "01:57", bossAbility: 362056 }, // Shatter
         { time: "02:04", bossAbility: 361676 }, // Earthbreaker Missiles
         { time: "02:19", bossAbility: 362056 }, // Shatter
         { time: "02:29", bossAbility: 359235 }, // Reclamation Form
+        { time: "02:30", bossAbility: "Phase 2" }, // Phase 2
         { time: "02:42", bossAbility: 361676 }, // Earthbreaker Missiles
         { time: "03:09", bossAbility: 361676 }, // Earthbreaker Missiles
         { time: "03:35", bossAbility: 360115 }, // Reclaim
         { time: "04:00", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "04:09", bossAbility: 359235 }, // Relocation Form
+        { time: "04:09", bossAbility: 359236 }, // Relocation Form
+        { time: "04:10", bossAbility: "Intermission" }, // Intermission
         { time: "04:17", bossAbility: 361676 }, // Earthbreaker Missiles
         { time: "04:33", bossAbility: 362056 }, // Shatter
         { time: "04:35", bossAbility: 361676 }, // Earthbreaker Missiles
@@ -295,40 +299,56 @@ export const defaultPlans = {
         { time: "05:01", bossAbility: 361676 }, // Earthbreaker Missiles
         { time: "05:15", bossAbility: 362056 }, // Shatter
         { time: "05:35", bossAbility: 359235 }, // Reclamation Form
+        { time: "05:36", bossAbility: "Phase 3" }, // Phase 3
+        { time: "05:43", bossAbility: 368529 }, // Eternity Overdrive
         { time: "05:48", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "06:03", bossAbility: 368529 }, // Eternity Overdrive
         { time: "06:13", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "06:23", bossAbility: 368529 }, // Eternity Overdrive
+        { time: "06:43", bossAbility: 368529 }, // Eternity Overdrive
         { time: "06:49", bossAbility: 361676 }, // Earthbreaker Missiles
         { time: "07:02", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "07:03", bossAbility: 368529 }, // Eternity Overdrive
       ],
     },
     Mythic: {
       default: [
+        { time: "00:00", bossAbility: "Phase 1" }, // Phase 1
         { time: "00:12", bossAbility: 361676 }, // Earthbreaker Missiles
         { time: "00:39", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "01:05", bossAbility: 360115 }, // Reclaim
-        { time: "01:34", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "02:00", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "02:14", bossAbility: 359235 }, // Relocation Form
-        { time: "02:26", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "02:44", bossAbility: 362056 }, // Shatter
-        { time: "02:52", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "03:06", bossAbility: 362056 }, // Shatter
-        { time: "03:17", bossAbility: 359235 }, // Reclamation Form
-        { time: "03:30", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "03:57", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "04:22", bossAbility: 360115 }, // Reclaim
-        { time: "04:46", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "05:10", bossAbility: 359235 }, // Relocation Form
-        { time: "05:17", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "05:34", bossAbility: 362056 }, // Shatter
-        { time: "05:35", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "05:57", bossAbility: 362056 }, // Shatter
-        { time: "06:01", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "06:16", bossAbility: 362056 }, // Shatter
-        { time: "06:35", bossAbility: 359235 }, // Reclamation Form
-        { time: "06:48", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "07:13", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "07:49", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "01:06", bossAbility: 360115 }, // Reclaim
+        { time: "01:32", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "02:02", bossAbility: 359236 }, // Relocation Form
+        { time: "02:03", bossAbility: "Intermission" }, // Intermission
+        { time: "02:10", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "02:29", bossAbility: 362056 }, // Shatter
+        { time: "02:36", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "02:51", bossAbility: 362056 }, // Shatter
+        { time: "03:01", bossAbility: 359235 }, // Reclamation Form
+        { time: "03:02", bossAbility: "Phase 2" }, // Phase 2
+        { time: "03:14", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "03:41", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "04:07", bossAbility: 359235 }, // Relocation Form
+        { time: "04:33", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "05:00", bossAbility: 359236 }, // Relocation Form
+        { time: "05:01", bossAbility: "Intermission" }, // Intermission
+        { time: "05:08", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "05:24", bossAbility: 362056 }, // Shatter
+        { time: "05:26", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "05:48", bossAbility: 362056 }, // Shatter
+        { time: "05:52", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "06:06", bossAbility: 362056 }, // Shatter
+        { time: "06:25", bossAbility: 359235 }, // Reclamation Form
+        { time: "06:26", bossAbility: "Phase 3" }, // Phase 3
+        { time: "06:33", bossAbility: 368529 }, // Eternity Overdrive
+        { time: "06:38", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "06:53", bossAbility: 368529 }, // Eternity Overdrive
+        { time: "07:03", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "07:13", bossAbility: 368529 }, // Eternity Overdrive
+        { time: "07:33", bossAbility: 368529 }, // Eternity Overdrive
+        { time: "07:40", bossAbility: 361676 }, // Earthbreaker Missiles
+        { time: "07:53", bossAbility: 368529 }, // Eternity Overdrive
+        { time: "08:13", bossAbility: 368529 }, // Eternity Overdrive
       ],
     },
   },
