@@ -3,6 +3,11 @@ import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import bossAbilityIcons from "../../Functions/IconFunctions/BossAbilityIcons";
 import { bossAbilities } from "../../Data/CooldownPlannerBossAbilityList";
+import TimerIcon from "@mui/icons-material/Timer";
+import LooksOneIcon from "@mui/icons-material/LooksOne";
+import LooksTwoIcon from "@mui/icons-material/LooksTwo";
+import Looks3Icon from "@mui/icons-material/Looks3";
+import Looks4Icon from "@mui/icons-material/Looks4";
 
 const iconStyle = {
   height: 22,
@@ -46,9 +51,26 @@ export default function BossAbilityRender(rowData, bossID, difficulty) {
     .map((obj) => obj.name[currentLanguage])
     .toString();
 
+  const icon = (bossAbility, bossID, iconStyle) => {
+    switch (bossAbility) {
+      case "Phase 1":
+        return <LooksOneIcon fontSize="small" sx={{ verticalAlign: "middle" }} />;
+      case "Phase 2":
+        return <LooksTwoIcon fontSize="small" sx={{ verticalAlign: "middle" }} />;
+      case "Phase 3":
+        return <Looks3Icon fontSize="small" sx={{ verticalAlign: "middle" }} />;
+      case "Phase 3":
+        return <Looks4Icon fontSize="small" sx={{ verticalAlign: "middle" }} />;
+      case "Intermission":
+        return <TimerIcon fontSize="small" sx={{ verticalAlign: "middle" }} />;
+      default:
+        return bossAbilityIcons(bossAbility, bossID, iconStyle);
+    }
+  };
+
   return (
     <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
-      <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage + "&dd=" + raidDifficulty(difficulty)}>{bossAbilityIcons(rowData.bossAbility, bossID, iconStyle)}</a>
+      <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage + "&dd=" + raidDifficulty(difficulty)}>{icon(rowData.bossAbility, bossID, iconStyle)}</a>
       <Typography align="left" style={{ fontSize: 12, lineHeight: "normal", width: "100%", marginLeft: 8 }} noWrap>
         {translatedName}
       </Typography>
