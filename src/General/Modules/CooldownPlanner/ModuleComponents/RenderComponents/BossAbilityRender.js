@@ -60,7 +60,7 @@ export default function BossAbilityRender(rowData, bossID, difficulty) {
       case "Phase 3":
         return <Looks3Icon fontSize="small" sx={{ verticalAlign: "middle" }} />;
       case "Phase 3":
-        return <LooksOneIcon fontSize="small" sx={{ verticalAlign: "middle" }} />;
+        return <Looks4Icon fontSize="small" sx={{ verticalAlign: "middle" }} />;
       case "Intermission":
         return <TimerIcon fontSize="small" sx={{ verticalAlign: "middle" }} />;
       default:
