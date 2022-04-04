@@ -205,6 +205,8 @@
       },
       "ClassAbilities": {
         "NoCD": "No Cooldown",
+        "Potion/Healthstone": "Potion/Healthstone",
+        "Personals": "Personals",
         "undefined": "",
         "HolyPaladinComment": "Holy Paladin Class Cooldowns",
         "31821": "Aura Mastery",

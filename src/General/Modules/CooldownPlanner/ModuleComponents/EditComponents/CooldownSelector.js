@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, MenuItem } from "@mui/material";
+import { TextField } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import ClassCooldownMenuItems from "../../Menus/ClassCooldownMenuItems";
@@ -64,40 +64,7 @@ export default function CooldownSelector(props, rowData, cooldown, nameClass) {
             props.onChange(e.target.value);
           }}
         >
-          {data[nameClass]
-            ? ClassCooldownMenuItems(data[nameClass])
-            : [
-                <MenuItem divider={true} value={"Potion/Healthstone"} key={"Potion/Healthstone"}>
-                  <img
-                    style={{
-                      height: 20,
-                      width: 20,
-                      margin: "0px 5px 0px 0px",
-                      verticalAlign: "middle",
-                      border: "1px solid #595959",
-                      borderRadius: 4,
-                    }}
-                    src={require("Images/CooldownPlanner/SpellIcons/trade_alchemy_potionb5.jpg").default}
-                    alt={"Potion/Healthstone"}
-                  />
-                  Potion/Healthstone
-                </MenuItem>,
-                <MenuItem divider={false} value={"Personals"} key={"Personals"}>
-                  <img
-                    style={{
-                      height: 20,
-                      width: 20,
-                      margin: "0px 5px 0px 0px",
-                      verticalAlign: "middle",
-                      border: "1px solid #595959",
-                      borderRadius: 4,
-                    }}
-                    src={require("Images/CooldownPlanner/SpellIcons/inv_shield_30.jpg").default}
-                    alt={"Personals"}
-                  />
-                  Personals
-                </MenuItem>,
-              ]}
+          {ClassCooldownMenuItems(data[nameClass]) || []}
         </TextField>
       </ThemeProvider>
     </StyledEngineProvider>

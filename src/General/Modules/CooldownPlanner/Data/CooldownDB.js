@@ -650,4 +650,19 @@ export const cooldownDB = [
     class: "",
     cdPlannerMenuActive: true,
   },
+  {
+    guid: "",
+    name: {
+      en: "Remove",
+      fr: "Remove",
+      de: "Remove",
+      ru: "Remove",
+      cn: "Remove",
+    },
+    icon: "",
+    // duration: 1,
+    // cooldown: 120,
+    class: "",
+    cdPlannerMenuActive: true,
+  },
 ];
