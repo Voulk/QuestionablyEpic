@@ -3,7 +3,7 @@ import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, T
 import { useTranslation } from "react-i18next";
 
 export default function AddPlanDialog(props) {
-  const { handleAddPlanDialogClose, handleAddPlanDialogClickOpen, openAddPlanDialog, cooldownObject, currentBoss, loadPlanData, currentDifficulty } = props;
+  const { handleAddPlanDialogClose, handleAddPlanDialogClickOpen, openAddPlanDialog, cooldownObject, currentBoss, loadPlanData, currentDifficulty, disabledCheck } = props;
   const [planName, setPlanName] = useState("");
   const bossPlans = Object.keys(cooldownObject.getCooldowns(currentBoss, currentDifficulty));
   const duplicatePlanNameCheck = bossPlans.includes(planName) ? true : false;
@@ -28,7 +28,7 @@ export default function AddPlanDialog(props) {
   return (
     <div>
       <Tooltip title={t("CooldownPlanner.AddPlanDialog.ButtonTooltip")} arrow>
-        <Button key={8} variant="outlined" color="primary" onClick={handleAddPlanDialogClickOpen}>
+        <Button key={8} variant="outlined" color="primary" onClick={handleAddPlanDialogClickOpen} disabled={disabledCheck}>
           {t("CooldownPlanner.AddPlanDialog.ButtonLabel")}
         </Button>
       </Tooltip>
