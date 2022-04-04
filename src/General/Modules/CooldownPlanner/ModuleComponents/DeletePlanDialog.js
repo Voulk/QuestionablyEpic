@@ -11,7 +11,18 @@ const deleteTheme = createTheme({
 });
 
 export default function AddPlanDialog(props) {
-  const { handleDeletePlanDialogClose, handleDeletePlanDialogClickOpen, currentPlan, openDeletePlanDialog, cooldownObject, currentBoss, setCurrentPlan, setData, currentDifficulty } = props;
+  const {
+    handleDeletePlanDialogClose,
+    handleDeletePlanDialogClickOpen,
+    currentPlan,
+    openDeletePlanDialog,
+    cooldownObject,
+    currentBoss,
+    setCurrentPlan,
+    setData,
+    currentDifficulty,
+    disabledCheck,
+  } = props;
   const [deleteChecker, setdeleteChecker] = useState("");
   const { t, i18n } = useTranslation();
 
@@ -35,7 +46,7 @@ export default function AddPlanDialog(props) {
     <div>
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={deleteTheme}>
-          <Button key={8} variant="outlined" color="primary" onClick={handleDeletePlanDialogClickOpen} disabled={currentPlan === "default" ? true : false}>
+          <Button key={8} variant="outlined" color="primary" onClick={handleDeletePlanDialogClickOpen} disabled={currentPlan === "default" || disabledCheck ? true : false}>
             {t("CooldownPlanner.DeletePlanDialog.ButtonLabel")}
           </Button>
         </ThemeProvider>

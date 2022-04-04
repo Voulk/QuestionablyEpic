@@ -114,7 +114,7 @@ export default function ImportPlanDialog(props) {
   return (
     <div>
       <Tooltip title={""} arrow>
-        <Button variant="outlined" disableElevation={true} color="primary" sx={{ fontSize: "14px" }} onClick={handleClickOpen}>
+        <Button variant="outlined" disableElevation={true} color="primary" sx={{ fontSize: "14px" }} onClick={handleClickOpen} disabled={props.disabledCheck}>
           {t("CooldownPlanner.ImportPlanDialog.ButtonLabel")}
         </Button>
       </Tooltip>

@@ -55,13 +55,14 @@ class CooldownPlannerModule extends Component {
           /* ---------------------------------------------------------------------------------------------- */}
           <Grid container spacing={1}>
             <Grid item xs={12}>
-              <HelpText text={helpText} blurb={helpBlurb} expanded={true} />
-            </Grid>
-            <Grid item xs={12}>
               <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
                 {/* // TODO Translate */}
                 Cooldown Planner
               </Typography>
+            </Grid>
+
+            <Grid item xs={12}>
+              <HelpText text={helpText} blurb={helpBlurb} expanded={true} />
             </Grid>
 
             {/* ----------------- Grid Container for the Heal Team Table and Cooldown Planner ---------------- */}

@@ -4,7 +4,7 @@ import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, T
 
 export default function ExportPlanDialog(props) {
   const { t } = useTranslation();
-  const { data, planName, boss, currentDifficulty } = props;
+  const { data, planName, boss, currentDifficulty, disabledCheck } = props;
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -44,7 +44,7 @@ export default function ExportPlanDialog(props) {
   return (
     <div>
       <Tooltip title={""} arrow>
-        <Button disableElevation={true} sx={{ fontSize: "14px" }} onClick={handleClickOpen} variant="outlined" color="primary">
+        <Button disableElevation={true} sx={{ fontSize: "14px" }} onClick={handleClickOpen} variant="outlined" color="primary" disabled={disabledCheck}>
           {t("CooldownPlanner.ExportPlanDialog.ButtonLabel")}
         </Button>
       </Tooltip>
