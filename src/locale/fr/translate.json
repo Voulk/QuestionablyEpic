@@ -161,6 +161,8 @@
       },
       "ClassAbilities": {
         "NoCD": "No Cooldown",
+        "Potion/Healthstone": "Potion/Healthstone",
+        "Personals": "Personals",
         "undefined": "",
         "HolyPaladinComment": "Holy Paladin Class Cooldowns",
         "RestorationDruidComment": "Restoration Druid Class Cooldowns",
