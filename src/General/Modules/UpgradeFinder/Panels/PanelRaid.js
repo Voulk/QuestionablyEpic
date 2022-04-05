@@ -241,7 +241,7 @@ export default function RaidGearContainer(props) {
                   </Grid>
 
                   {secondDifficulty !== -1 ? (
-                    <Grid item xs={12} sm container spacing={1}>
+                    <Grid item xs={12} container spacing={1}>
                       <Grid item xs={12}>
                         <Typography
                           variant="h6"

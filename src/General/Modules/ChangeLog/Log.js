@@ -10,6 +10,17 @@
 export const changeLog = [
   {
     version: "9.2 / 2.5.3",
+    update: 12,
+    date: "5th April",
+    changes: [
+      "New Trinket: Scars of Fraternal Strife.",
+      "Revamped Sinister Teachings stat priorities based on new bugs found in-game.",
+      "Added 272 versions of Amalgam's / Flask in prep for Legion timewalking next week.",
+      "Added tooltips to Top Gear gems for a non-visual description."
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
     update: 11,
     date: "22nd March (Bugfix)",
     changes: [

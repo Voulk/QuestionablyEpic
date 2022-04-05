@@ -139,7 +139,7 @@
         "BossAbilityLabel": "Boss Ability",
         "NotesLabel": "Notes",
         "OffCooldownLabel": "Off Cooldown",
-        "HealTeamHeader": "Heal Team",
+        "HealTeamHeader": "Roster",
         "TypeSelector": "Formats"
       },
       "UserInputs": {
@@ -161,6 +161,8 @@
       },
       "ClassAbilities": {
         "NoCD": "No Cooldown",
+        "Potion/Healthstone": "Potion/Healthstone",
+        "Personals": "Personals",
         "undefined": "",
         "HolyPaladinComment": "Holy Paladin Class Cooldowns",
         "RestorationDruidComment": "Restoration Druid Class Cooldowns",
