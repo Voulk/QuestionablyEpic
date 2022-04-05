@@ -525,6 +525,12 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   if ((player.spec === "Holy Paladin" || player.spec === "Restoration Shaman" || player.spec === "Holy Priest") && "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
     hardScore -= 48;
   }
+  // Fallen Order has a bug whereby having more than ~33% haste causes clones to behave irresponsibly and the average casts per clone drops heavily.
+  // A more precise formula could be offered by deducting the healing loss from the set. Instead this is a rather rougher patch which should automatically exclude
+  // any sets over the breakpoint. 
+  if (player.spec === "Mistweaver Monk" && setStats.haste > 1120) {
+    hardScore -= 200;
+  }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;

@@ -6,9 +6,8 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "Raiders should prioritize Tier from the Great Vault.",
+      "Great Vault: Make sure you consider tier & catalyst opportunities.",
       "Holy Priest Tier & Legendary support coming soon.",
-      "So'leah's hotfix nerfed in-game, and the change is live in QEL.",
   ],
   "BurningCrusade": ["Enjoy MH / BT!"]
   }

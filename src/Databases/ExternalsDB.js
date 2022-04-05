@@ -134,4 +134,19 @@ export const externalsDB = [
     icon: "spell_holy_painsupression",
     cooldown: 180,
   },
+  {
+    name: {
+      en: "Fae Guardians",
+      fr: "Gardiens faë",
+      de: "Faewächter",
+      ru: "Волшебные стражи",
+      cn: "法夜守护者",
+    },
+    guid: 327661,
+    icon: "ability_ardenweald_priest",
+    duraton: 1,
+    cooldown: 90,
+    // class: "Priest",
+    // cdPlannerMenuActive: false,
+  },
 ];

@@ -29,6 +29,7 @@ import { CooldownPlannerTheme } from "./Styles/CooldownPlannerTheme";
 import { TableStyles } from "./Styles/TableStyles";
 import { cooldownDB } from "../Data/CooldownDB";
 import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
+import ls from "local-storage";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -158,7 +159,7 @@ export default function CooldownPlanner(props) {
       /* ----------- Here the user can select which boss ability the cooldown should cover. ----------- */
       title: t("CooldownPlanner.TableLabels.BossAbilityLabel"),
       field: "bossAbility",
-      width: "8%",
+      width: "6%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
       // Search function for abilities as they are stores as numbers. Works for all languages
@@ -169,8 +170,8 @@ export default function CooldownPlanner(props) {
           .flat();
         return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
       },
-      render: (rowData) => BossAbilityRender(rowData, currentBoss),
-      editComponent: (props) => BossAbilitySelector(props, currentBoss),
+      render: (rowData) => BossAbilityRender(rowData, currentBoss, currentDifficulty),
+      editComponent: (props) => BossAbilitySelector(props, currentBoss, currentDifficulty),
     },
 
     /* -------------------------------------------------------------------------- */
@@ -518,8 +519,10 @@ export default function CooldownPlanner(props) {
   /* ------------- When the currently loaded data is updated the props.update function ------------ */
   /* ------------- passed from the cooldown planner module will update the state also. ------------ */
   useEffect(() => {
-    props.update(data);
+    props.update(data, currentBoss, currentLanguage);
   }, [data]);
+
+  const RosterCheck = ls.get("healerInfo") === null ? true : ls.get("healerInfo").length === 0 ? true : false;
 
   return (
     <StyledEngineProvider injectFirst>
@@ -545,15 +548,29 @@ export default function CooldownPlanner(props) {
             },
             /* --------------------------- Alternating Row Colour is defined here --------------------------- */
             rowStyle: (rowData, index) => {
+              if (
+                rowData.bossAbility === "Phase 1" ||
+                rowData.bossAbility === "Phase 2" ||
+                rowData.bossAbility === "Phase 3" ||
+                rowData.bossAbility === "Phase 4" ||
+                rowData.bossAbility === "Intermission"
+              ) {
+                return {
+                  height: 28,
+                  backgroundColor: "#359166",
+                  border: "1px solid #359166",
+                };
+              }
+
               if (index % 2) {
                 return {
-                  height: 30,
+                  height: 28,
                   backgroundColor: "#515151",
                   border: "1px solid #595959",
                 };
               }
               return {
-                height: 30,
+                height: 28,
                 border: "1px solid #595959",
               };
             },
@@ -591,7 +608,7 @@ export default function CooldownPlanner(props) {
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <Button variant="outlined" style={{ height: 40, width: "100%", whiteSpace: "nowrap" }} color="primary" onClick={() => healTeamDialogOpen()}>
                       {/* // TODO: Translate */}
-                      Heal Team
+                      Roster
                     </Button>
                   </Grid>
                   {/* ---------------------------------- Raid Selection Drop Down ---------------------------------- */}
@@ -614,14 +631,7 @@ export default function CooldownPlanner(props) {
                   </Grid> */}
                   {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <TextField
-                      sx={{ minWidth: 100, width: "100%" }}
-                      size="small"
-                      select
-                      value={currentBoss}
-                      onChange={(e) => changeBoss(e.target.value, currentDifficulty)}
-                      disabled={currentRaid === "" ? true : false}
-                    >
+                    <TextField sx={{ minWidth: 100, width: "100%" }} size="small" select value={currentBoss} onChange={(e) => changeBoss(e.target.value, currentDifficulty)} disabled={RosterCheck}>
                       {bossList
                         .filter((obj) => {
                           return obj.zoneID === currentRaid;
@@ -646,9 +656,8 @@ export default function CooldownPlanner(props) {
                       placeholder={t("Difficulty")}
                       value={currentDifficulty}
                       onChange={(e) => changeDifficulty(currentBoss, e.target.value)}
-                      disabled={currentBoss === "" ? true : false}
+                      disabled={currentBoss === "" || RosterCheck ? true : false}
                     >
-                      w
                       {["Heroic", "Mythic"].map((key, i, arr) => {
                         let lastItem = i + 1 === arr.length ? false : true;
                         return (
@@ -669,7 +678,7 @@ export default function CooldownPlanner(props) {
                       placeholder={t("Plan")}
                       value={currentPlan}
                       onChange={(e) => loadPlanData(currentBoss, e.target.value, currentDifficulty)}
-                      disabled={currentBoss === "" ? true : false}
+                      disabled={currentBoss === "" || RosterCheck ? true : false}
                     >
                       {getBossPlanNames(currentBoss, currentDifficulty).map((key, i, arr) => {
                         let lastItem = i + 1 === arr.length ? false : true;
@@ -691,6 +700,7 @@ export default function CooldownPlanner(props) {
                       currentDifficulty={currentDifficulty}
                       loadPlanData={loadPlanData}
                       handleAddPlanDialogClickOpen={handleAddPlanDialogClickOpen}
+                      disabledCheck={RosterCheck}
                     />
                   </Grid>
 
@@ -704,6 +714,7 @@ export default function CooldownPlanner(props) {
                       currentBoss={currentBoss}
                       currentDifficulty={currentDifficulty}
                       loadPlanData={loadPlanData}
+                      disabledCheck={RosterCheck}
                     />
                   </Grid>
 
@@ -718,19 +729,20 @@ export default function CooldownPlanner(props) {
                       cooldownObject={cooldownObject}
                       currentBoss={currentBoss}
                       currentDifficulty={currentDifficulty}
+                      disabledCheck={RosterCheck}
                     />
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <ImportPlanDialog cooldownObject={cooldownObject} loadPlanData={loadPlanData} />
+                    <ImportPlanDialog cooldownObject={cooldownObject} loadPlanData={loadPlanData} disabledCheck={RosterCheck} />
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <ExportPlanDialog data={data} boss={currentBoss} planName={currentPlan} plan={data} currentDifficulty={currentDifficulty} />
+                    <ExportPlanDialog data={data} boss={currentBoss} planName={currentPlan} plan={data} currentDifficulty={currentDifficulty} disabledCheck={RosterCheck} />
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <ExportERTDialog ertListTimeIcons={ertListTimeIcons} boss={currentBoss} currentPlan={currentPlan} />
+                    <ExportERTDialog ertListTimeIcons={ertListTimeIcons} boss={currentBoss} currentPlan={currentPlan} disabledCheck={RosterCheck} />
                   </Grid>
                 </Grid>
 

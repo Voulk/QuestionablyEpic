@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Typography, Grid, MenuItem, Tooltip } from "@mui/material";
 
 export default function CopyPlanDialog(props) {
-  const { handleCopyPlanDialogClose, handleCopyPlanDialogClickOpen, openCopyPlanDialog, cooldownObject, currentBoss, loadPlanData, currentPlan, currentDifficulty } = props;
+  const { handleCopyPlanDialogClose, handleCopyPlanDialogClickOpen, openCopyPlanDialog, cooldownObject, currentBoss, loadPlanData, currentPlan, currentDifficulty, disabledCheck } = props;
   const [planName, setPlanName] = useState(currentPlan);
   const [newPlanName, setNewPlanName] = useState("");
   const bossPlans = Object.keys(cooldownObject.getCooldowns(currentBoss, currentDifficulty));
@@ -35,7 +35,7 @@ export default function CopyPlanDialog(props) {
   return (
     <div>
       <Tooltip title={t("CooldownPlanner.CopyPlanDialog.ButtonTooltip")} arrow>
-        <Button key={8} variant="outlined" color="primary" onClick={handleCopyPlanDialogClickOpen}>
+        <Button key={8} variant="outlined" color="primary" onClick={handleCopyPlanDialogClickOpen} disabled={disabledCheck}>
           {t("CooldownPlanner.CopyPlanDialog.ButtonLabel")}
         </Button>
       </Tooltip>

@@ -60,7 +60,7 @@ const AccordionSummary = withStyles({
 
 const useStyles = makeStyles(() => ({
   root: {
-    width: "100%",
+    // width: "100%",
     padding: "8px 5px",
   },
 }));
@@ -74,7 +74,7 @@ export default function SlotsContainer(props) {
   itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
 
   // Filter out Legion TW items outside of Legion TW week.
-  itemList = itemList.filter(item => item.level > 100 && !([707, 716, 740, 762, 767, 800].includes(item.source.encounterId)))
+  itemList = itemList.filter((item) => item.level > 100 && ![707, 716, 740, 762, 767, 800].includes(item.source.encounterId));
 
   const slotList = [
     { slot: "Head", label: "head" },
@@ -126,7 +126,7 @@ export default function SlotsContainer(props) {
           </Typography>
         </AccordionSummary>
         <AccordionDetails style={{ backgroundColor: "#191c23" }}>
-          <Grid xs={12} sm container spacing={1}>
+          <Grid xs={12} container spacing={1}>
             {[...filterItemListBySlot(itemList, key.slot)].map((item, index) => (
               <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={true} />
             ))}

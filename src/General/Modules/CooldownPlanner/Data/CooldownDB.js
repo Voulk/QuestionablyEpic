@@ -236,21 +236,6 @@ export const cooldownDB = [
     class: "Priest",
     cdPlannerMenuActive: true,
   },
-  {
-    name: {
-      en: "Fae Guardians",
-      fr: "Gardiens faë",
-      de: "Faewächter",
-      ru: "Волшебные стражи",
-      cn: "法夜守护者",
-    },
-    guid: 327661,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_ardenweald_priest.jpg").default,
-    duraton: 1,
-    cooldown: 90,
-    class: "Priest",
-    cdPlannerMenuActive: false,
-  },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Druid                                             */
   /* ---------------------------------------------------------------------------------------------- */
@@ -631,6 +616,53 @@ export const cooldownDB = [
     duration: 10,
     cooldown: 120,
     class: "DeathKnight",
+    cdPlannerMenuActive: true,
+  },
+
+  {
+    guid: "Potion/Healthstone",
+    name: {
+      en: "Potion/Healthstone",
+      fr: "Potion/Healthstone",
+      de: "Potion/Healthstone",
+      ru: "Potion/Healthstone",
+      cn: "Potion/Healthstone",
+    },
+    icon: require("Images/CooldownPlanner/SpellIcons/trade_alchemy_potionb5.jpg").default,
+    duration: 1,
+    // cooldown: 120,
+    class: "",
+    cdPlannerMenuActive: true,
+  },
+
+  {
+    guid: "Personals",
+    name: {
+      en: "Personals",
+      fr: "Personals",
+      de: "Personals",
+      ru: "Personals",
+      cn: "Personals",
+    },
+    icon: require("Images/CooldownPlanner/SpellIcons/inv_shield_30.jpg").default,
+    duration: 1,
+    // cooldown: 120,
+    class: "",
+    cdPlannerMenuActive: true,
+  },
+  {
+    guid: "",
+    name: {
+      en: "Remove",
+      fr: "Remove",
+      de: "Remove",
+      ru: "Remove",
+      cn: "Remove",
+    },
+    icon: "",
+    // duration: 1,
+    // cooldown: 120,
+    class: "",
     cdPlannerMenuActive: true,
   },
 ];
