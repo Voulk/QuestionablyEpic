@@ -1,6 +1,6 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
-import { Card, CardContent, CardActionArea, Typography, Grid, Divider } from "@mui/material";
+import { Card, CardContent, CardActionArea, Typography, Grid, Divider, Tooltip } from "@mui/material";
 import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemIcon } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 import hasteSocket from "../../../Images/Resources/hasteSocket.jpg";
@@ -31,10 +31,15 @@ const useStyles = makeStyles({
   },
 });
 
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 export default function ItemCardReport(props) {
   const classes = useStyles();
   const item = props.item;
   const enchants = props.enchants;
+  console.log(enchants);
   const { t, i18n } = useTranslation();
   const gameType = useSelector((state) => state.gameType);
 
@@ -80,7 +85,9 @@ export default function ItemCardReport(props) {
 
   const socket = props.item.socket ? (
     <div style={{ display: "inline" }}>
-      <img src={socketImage} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />{" "}
+      <Tooltip title={t(capitalizeFirstLetter(enchants["Gems"]))} arrow>
+        <img src={socketImage} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+      </Tooltip>
     </div>
   ) : null;
 
@@ -107,7 +114,7 @@ export default function ItemCardReport(props) {
     }
   };
 
-  const tier = (props.item.setID !== "" && props.item.slot !== "Trinket") ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
+  const tier = props.item.setID !== "" && props.item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
 
   const tertiary =
     "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}>{t(props.item.tertiary)}</div> : null;
