@@ -862,8 +862,8 @@ else if (
   // Take an average of our stacks. Note that the trinket decreases from 19 to 10, NOT to 0.
   bonus_stats.haste = (trinketSum / 10) * convertPPMToUptime(effect.ppm, effect.duration);
 
-  // Flask of the Solemn Night only procs off healing spells, and after thorough log analysis it underperforms reasonably highly for Holy Paladin in Mythic+.
-  if (player.spec === "Holy Paladin" && contentType === "Dungeon") bonus_stats.haste *= 0.75
+  // Flask of the Solemn Night only procs off healing spells, and after thorough log analysis it underperforms reasonably highly for Holy Paladin.
+  if (player.spec === "Holy Paladin") bonus_stats.haste *= 0.75
   //
 } 
 else if (
