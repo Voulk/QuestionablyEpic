@@ -328,7 +328,7 @@ export const defaultPlans = {
         { time: "03:02", bossAbility: "Phase 2" }, // Phase 2
         { time: "03:14", bossAbility: 361676 }, // Earthbreaker Missiles
         { time: "03:41", bossAbility: 361676 }, // Earthbreaker Missiles
-        { time: "04:07", bossAbility: 359235 }, // Relocation Form
+        { time: "04:07", bossAbility: 360115 }, // Reclaim
         { time: "04:33", bossAbility: 361676 }, // Earthbreaker Missiles
         { time: "05:00", bossAbility: 359236 }, // Relocation Form
         { time: "05:01", bossAbility: "Intermission" }, // Intermission
