@@ -81,14 +81,16 @@ describe("Evang Cast Sequence", () => {
 }
     
     const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Kyrian Evangelism", ['Rapture'])
-    const boon4pc = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Kyrian Evangelism", ['Rapture', "4T28"])
+    //const boon4pc = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Kyrian Evangelism", ['Rapture', "4T28"])
     const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Kyrian Evangelism", ['Rapture'])
 
+    const evangSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Venthyr Evangelism", ['Rapture'])
+    console.log(evangSeq)
 
     test("Legendaries & Soulbinds", () => {
 
         const startTime = performance.now()
-        const baseline = allRampsHealing(boonSeq, fiendSeq, activeStats, {"4T28": false, "Clarity of Mind": false, "Pelagos": false, "Power of the Dark Side": true}, {"Rabid Shadows": 252, "Shining Radiance": 252, "Courageous Ascension": 252});
+        const baseline = allRamps(evangSeq, fiendSeq, activeStats, {"4T28": false, "Clarity of Mind": false, "Pelagos": false, "Power of the Dark Side": true}, {"Rabid Shadows": 252, "Shining Radiance": 252, "Courageous Ascension": 252}, true);
         //const baseline = runCastSequence(fiendSeq, activeStats, {"4T28": true, "Clarity of Mind": false, "Pelagos": false, "Power of the Dark Side": true}, {});
         const endTime = performance.now()
 

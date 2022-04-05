@@ -35,7 +35,7 @@ export const buildRamp = (type, applicators, trinkets, haste, playstyle, special
             return buildBoonShellRamp(applicators, trinketList['Boon'], haste, specialSpells);
         }
         else if (playstyle === "Venthyr Evangelism") { // Coming soon
-            //return buildMindgamesRamp(applicators, trinketList['Boon'], haste, specialSpells);
+            return buildMindgamesRamp(applicators, trinketList['Boon'], specialSpells);
         }
         else if (playstyle === "Venthyr Spirit Shell") { // Coming soon
             //return buildMindgamesRamp(applicators, trinketList['Boon'], haste, specialSpells);
@@ -230,3 +230,58 @@ export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = 
     return sequence;
     
 };
+
+/**
+ * Generates a Fiend ramp sequence. Also includes Mindgames if Venthyr. 
+ * 
+ * @param {*} applicators Number of single target atonement applicators. Default is 10 but configurable. 
+ * @param {*} trinket The specific trinket we'd like to combine with our Fiend ramp. Note that a name is fine here. We don't need ilvl information since we'll pull that later.
+ * @param {*} specialSpells Any special spells we'd like to include in the ramp like Rapture. 
+ * @param {*} playstyle Options: Kyrian Evangelism, Kyrian Spirit Shell, Venthyr Evanglism (coming soon), Venthyr Spirit Shell (coming soon).
+ * @returns Returns a sequence of spells representing a Shadowfiend ramp.
+ */
+ export const buildMindgamesRamp = (applicators, trinket, specialSpells, playstyle) => {
+
+    let sequence = ['Purge the Wicked']
+    
+    // Shadowed Orb lasts a very long time so if we're using it we're safe to use it at the start of our ramp (or before).
+    if (trinket === "Shadowed Orb of Torment") sequence.push("Shadowed Orb");
+    if (specialSpells.includes("Rapture")) {sequence.push('Rapture'); applicators -= 1 };
+    for (var x = 0; x < applicators; x++) {
+        // Power Word: Shield can also be swapped out for Shadow Mend on non-Rapture ramps.
+        sequence.push('Power Word: Shield');
+    }
+    // Note for Ruby that this is the time we expect to get the buff, NOT the time we cast it.
+    if (trinket === "Soulletting Ruby") sequence.push("Soulletting Ruby");
+    if (trinket === "Instructor's Divine Bell") sequence.push("Instructor's Divine Bell");
+    if (trinket === "Instructor's Divine Bell (new)") sequence.push("Instructor's Divine Bell (new)");
+    
+    sequence.push('Power Word: Radiance');
+    sequence.push('Power Word: Radiance');
+    if (trinket === "Flame of Battle") sequence.push("Flame of Battle");
+    sequence.push('Evangelism');
+    
+    // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
+    sequence.push('Schism');
+    sequence.push('Mindgames')
+    sequence.push('PenanceTick');
+    sequence.push('PenanceTick');
+    sequence.push('PenanceTick');
+    sequence.push('Mind Blast');
+    sequence.push('Power Word: Solace');
+
+    for (var i = 0; i < 3; i++) {
+        // The number of smites here is adjustable but also not very important outside of DPS metrics. 
+        sequence.push('Smite');
+    }
+    sequence.push('PenanceTick');
+    sequence.push('PenanceTick');
+    sequence.push('PenanceTick');
+
+    for (var i = 0; i < 8; i++) {
+        // The number of smites here is adjustable but also not very important outside of DPS metrics. 
+        sequence.push('Smite');
+    }
+
+    return sequence;
+}
