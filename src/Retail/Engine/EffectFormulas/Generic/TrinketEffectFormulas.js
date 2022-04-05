@@ -390,6 +390,21 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
   } 
   else if (
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Scars of Fraternal Strife                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    effectName === "Scars of Fraternal Strife"
+  ) {
+    let effect = activeTrinket.effects[0];
+
+    const runeStats = getProcessedValue(effect.coefficient, effect.table, itemLevel);
+
+    bonus_stats.haste = runeStats;
+    bonus_stats.crit = runeStats;
+    bonus_stats.versatility = runeStats;
+    //
+  } 
+  else if (
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                  Book-Borrower Identification                                  */
     /* ---------------------------------------------------------------------------------------------- */
     effectName === "Book-Borrower Identification"
