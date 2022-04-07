@@ -49,7 +49,6 @@ export const allRampsHealing = (boonSeq, fiendSeq, stats, settings = {}, conduit
 // This function automatically casts a full set of ramps. It's easier than having functions call ramps individually and then sum them.
 export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits, reporting) => {
 
-    
     let rampResult = {totalHealing: 0, ramps: []}
     const miniSeq = buildRamp('Mini', 6, [], stats.haste, settings.playstyle || "", [])
     const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);

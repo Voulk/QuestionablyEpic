@@ -84,6 +84,7 @@ export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle) =
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
     sequence.push('Schism');
+    if (playstyle.includes("Venthyr")) sequence.push("Mindgames");
     sequence.push('Mind Blast');
     sequence.push('Power Word: Solace');
     sequence.push('PenanceTick');
@@ -115,7 +116,6 @@ export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle) =
  * @returns Returns a sequence of spells representing a Shadowfiend ramp.
  */
 export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle) => {
-
     let sequence = ['Purge the Wicked']
     
     // Shadowed Orb lasts a very long time so if we're using it we're safe to use it at the start of our ramp (or before).
@@ -138,6 +138,7 @@ export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle) =
     
     // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     sequence.push('Schism');
+    if (playstyle.includes("Venthyr")) sequence.push('Mindgames');
     sequence.push('PenanceTick');
     sequence.push('PenanceTick');
     sequence.push('PenanceTick');
