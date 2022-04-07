@@ -701,6 +701,9 @@ export default function CooldownPlanner(props) {
                       loadPlanData={loadPlanData}
                       handleAddPlanDialogClickOpen={handleAddPlanDialogClickOpen}
                       disabledCheck={RosterCheck}
+                      changeDifficulty={changeDifficulty}
+                      currentRaid={currentRaid}
+                      changeBoss={changeBoss}
                     />
                   </Grid>
 
