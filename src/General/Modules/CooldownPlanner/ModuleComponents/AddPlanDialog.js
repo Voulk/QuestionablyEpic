@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Tooltip, Grid, MenuItem } from "@mui/material";
+import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Tooltip, Grid, MenuItem, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { bossList } from "../Data/CooldownPlannerBossList";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
@@ -41,6 +41,12 @@ export default function AddPlanDialog(props) {
     setPlanName("");
   };
 
+  const [planType, setPlanType] = React.useState("default");
+
+  const newPlanType = (event, newPlanType) => {
+    setPlanType(newPlanType);
+  };
+
   return (
     <div>
       <Tooltip title={t("CooldownPlanner.AddPlanDialog.ButtonTooltip")} arrow>
@@ -51,7 +57,7 @@ export default function AddPlanDialog(props) {
       <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="xs" fullWidth>
         <DialogTitle id="simple-dialog-title">{t("CooldownPlanner.AddPlanDialog.HeaderTitle")}</DialogTitle>
         <DialogContent>
-          <Grid item container spacing={1} xl={12} alignItems="center">
+          <Grid item container spacing={1} xl={12} alignItems="center" sx={{ marginTop: "1px" }}>
             <Grid item xl={12}>
               <TextField sx={{ minWidth: 100, width: "100%" }} size="small" select value={currentBoss} onChange={(e) => changeBoss(e.target.value, currentDifficulty)}>
                 {bossList
@@ -69,25 +75,33 @@ export default function AddPlanDialog(props) {
                   })}
               </TextField>
             </Grid>
+            <Grid item xl={12}>
+              <Typography align="center">Difficulty</Typography>
+            </Grid>
 
             <Grid item xl={12}>
-              <TextField
-                sx={{ minWidth: 100, width: "100%" }}
-                select
-                id="DifficultySelector"
-                placeholder={t("Difficulty")}
-                value={currentDifficulty}
-                onChange={(e) => changeDifficulty(currentBoss, e.target.value)}
-              >
-                {["Heroic", "Mythic"].map((key, i, arr) => {
-                  let lastItem = i + 1 === arr.length ? false : true;
-                  return (
-                    <MenuItem key={key} divider={lastItem} value={key}>
-                      {key}
-                    </MenuItem>
-                  );
-                })}
-              </TextField>
+              <ToggleButtonGroup value={currentDifficulty} exclusive onChange={(e) => changeDifficulty(currentBoss, e.target.value)} aria-label="text alignment" fullWidth>
+                <ToggleButton value="Heroic" aria-label="Heroic">
+                  Heroic
+                </ToggleButton>
+                <ToggleButton value="Mythic" aria-label="Mythic">
+                  Mythic
+                </ToggleButton>
+              </ToggleButtonGroup>
+            </Grid>
+            <Grid item xl={12}>
+              <Typography align="center">New Plan Type</Typography>
+            </Grid>
+            <Grid item xl={12}>
+              <ToggleButtonGroup value={planType} exclusive onChange={newPlanType} aria-label="PlanTypeToggle" fullWidth>
+                <ToggleButton value="BlankPlan" aria-label="BlankPlan">
+                  Blank Plan
+                </ToggleButton>
+
+                <ToggleButton value="default" aria-label="Default">
+                  Default
+                </ToggleButton>
+              </ToggleButtonGroup>
             </Grid>
             <Grid item xl={12}>
               <TextField
