@@ -162,6 +162,21 @@ export const cooldownDB = [
   },
   {
     name: {
+      en: "Symbol of Hope",
+      fr: "Symbole d’espoir",
+      de: "Symbol der Hoffnung",
+      ru: "Символ надежды",
+      cn: "希望象征",
+    },
+    guid: 64901,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_holy_symbolofhope.jpg").default,
+    duration: 4,
+    cooldown: 180,
+    class: "HolyPriest",
+    cdPlannerMenuActive: true,
+  },
+  {
+    name: {
       en: "Rapture",
       fr: "Extase",
       de: "Euphorie",
@@ -346,6 +361,7 @@ export const cooldownDB = [
     class: "RestorationDruid",
     cdPlannerMenuActive: true,
   },
+
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Monk                                              */
   /* ---------------------------------------------------------------------------------------------- */
@@ -616,6 +632,23 @@ export const cooldownDB = [
     duration: 10,
     cooldown: 120,
     class: "DeathKnight",
+    cdPlannerMenuActive: true,
+  },
+  // TODO: Apply Utilities
+  {
+    name: {
+      en: "Stampeding Roar",
+      fr: "Ruée rugissante",
+      de: "Anstachelndes Gebrüll",
+      ru: "Тревожный рев",
+      cn: "狂奔怒吼",
+    },
+    guid: 77764,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_druid_stampedingroar_cat.jpg").default,
+    duration: 8,
+    cooldown: 120,
+    class: "RestorationDruid",
+    type: "utility",
     cdPlannerMenuActive: true,
   },
 

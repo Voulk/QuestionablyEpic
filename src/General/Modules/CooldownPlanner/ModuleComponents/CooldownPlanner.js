@@ -1,7 +1,7 @@
 import React, { useEffect, forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "@material-table/core";
 import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search, Tooltip } from "@mui/icons-material";
-import { Button, TextField, MenuItem, Paper, Grid } from "@mui/material";
+import { Button, TextField, MenuItem, Paper, Grid, FormControl, InputLabel } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
 import { bossList } from "../Data/CooldownPlannerBossList";
 import { useTranslation } from "react-i18next";
@@ -106,9 +106,9 @@ export default function CooldownPlanner(props) {
   const [currentBoss, setCurrentBoss] = useState(2512);
   const [currentDifficulty, setDifficulty] = useState("Mythic");
   // debug && console.log(currentBoss);
-  const [currentPlan, setCurrentPlan] = useState("default");
+  const [currentPlan, setCurrentPlan] = useState("");
   // debug && console.log(currentPlan);
-  const [data, setData] = useState(cooldownObject.getCooldowns(currentBoss, currentDifficulty)["default"]);
+  const [data, setData] = useState([]);
 
   const getBossPlanNames = (boss, currentDif) => {
     return Object.keys(cooldownObject.getCooldowns(boss, currentDif));
@@ -134,12 +134,15 @@ export default function CooldownPlanner(props) {
 
   /* -------------------------------------- Changes the Boss -------------------------------------- */
   const changeBoss = (newBoss, currentDif) => {
-    loadPlanData(newBoss, "default", currentDif);
+    setCurrentBoss(newBoss);
+    setCurrentPlan("");
+    setData([]);
   };
 
   const changeDifficulty = (newBoss, currentDif) => {
     setDifficulty(currentDif);
-    loadPlanData(newBoss, "default", currentDif);
+    setCurrentPlan("");
+    setData([]);
   };
 
   let columns = [
@@ -530,7 +533,7 @@ export default function CooldownPlanner(props) {
         <MaterialTable
           icons={tableIcons}
           columns={columns}
-          data={data.sort((a, b) => (a.time > b.time && 1) || -1)}
+          data={data === [] ? data : data.sort((a, b) => (a.time > b.time && 1) || -1)}
           style={{
             padding: 10,
           }}
@@ -631,7 +634,16 @@ export default function CooldownPlanner(props) {
                   </Grid> */}
                   {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <TextField sx={{ minWidth: 100, width: "100%" }} size="small" select value={currentBoss} onChange={(e) => changeBoss(e.target.value, currentDifficulty)} disabled={RosterCheck}>
+                    <TextField
+                      sx={{ minWidth: 100, width: "100%" }}
+                      label={t("Boss")}
+                      select
+                      value={currentBoss}
+                      placeholder={"Boss"}
+                      onChange={(e) => changeBoss(e.target.value, currentDifficulty)}
+                      disabled={RosterCheck}
+                      size="small"
+                    >
                       {bossList
                         .filter((obj) => {
                           return obj.zoneID === currentRaid;
@@ -650,13 +662,15 @@ export default function CooldownPlanner(props) {
 
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <TextField
-                      sx={{ minWidth: 100, width: "100%" }}
+                      sx={{ minWidth: 150, width: "100%" }}
                       select
+                      label={t("Difficulty")}
                       id="DifficultySelector"
                       placeholder={t("Difficulty")}
                       value={currentDifficulty}
                       onChange={(e) => changeDifficulty(currentBoss, e.target.value)}
                       disabled={currentBoss === "" || RosterCheck ? true : false}
+                      size="small"
                     >
                       {["Heroic", "Mythic"].map((key, i, arr) => {
                         let lastItem = i + 1 === arr.length ? false : true;
@@ -674,20 +688,24 @@ export default function CooldownPlanner(props) {
                     <TextField
                       sx={{ minWidth: 100, width: "100%" }}
                       select
-                      id="RaidSelector"
-                      placeholder={t("Plan")}
+                      label={t("Plan")}
+                      id="PlanSelector"
+                      // placeholder={t("Plan")}
                       value={currentPlan}
                       onChange={(e) => loadPlanData(currentBoss, e.target.value, currentDifficulty)}
-                      disabled={currentBoss === "" || RosterCheck ? true : false}
+                      disabled={currentBoss === "" || RosterCheck ? true : false || getBossPlanNames(currentBoss, currentDifficulty).length === 1}
+                      size="small"
                     >
-                      {getBossPlanNames(currentBoss, currentDifficulty).map((key, i, arr) => {
-                        let lastItem = i + 1 === arr.length ? false : true;
-                        return (
-                          <MenuItem key={key} divider={lastItem} value={key}>
-                            {key}
-                          </MenuItem>
-                        );
-                      })}
+                      {getBossPlanNames(currentBoss, currentDifficulty)
+                        .filter((key) => key !== "default")
+                        .map((key, i, arr) => {
+                          let lastItem = i + 1 === arr.length ? false : true;
+                          return (
+                            <MenuItem key={key} divider={lastItem} value={key}>
+                              {key}
+                            </MenuItem>
+                          );
+                        })}
                     </TextField>
                   </Grid>
 

@@ -5,20 +5,9 @@ import { bossList } from "../Data/CooldownPlannerBossList";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
 
 export default function AddPlanDialog(props) {
-  const {
-    handleAddPlanDialogClose,
-    handleAddPlanDialogClickOpen,
-    openAddPlanDialog,
-    cooldownObject,
-    currentBoss,
-    loadPlanData,
-    currentDifficulty,
-    disabledCheck,
-    changeDifficulty,
-    changeBoss,
-    currentRaid,
-  } = props;
+  const { handleAddPlanDialogClose, handleAddPlanDialogClickOpen, openAddPlanDialog, cooldownObject, currentBoss, loadPlanData, currentDifficulty, disabledCheck, changeBoss, currentRaid } = props;
   const [planName, setPlanName] = useState("");
+  const [difficulty, setDifficulty] = useState(currentDifficulty);
   const bossPlans = Object.keys(cooldownObject.getCooldowns(currentBoss, currentDifficulty));
   const duplicatePlanNameCheck = bossPlans.includes(planName) ? true : false;
   const { t, i18n } = useTranslation();
@@ -41,7 +30,15 @@ export default function AddPlanDialog(props) {
     setPlanName("");
   };
 
+  const copyPlan = (planName, boss, newPlan, currentDif) => {
+    cooldownObject.copyNewPlan(planName, boss, newPlan, currentDif);
+    loadPlanData(boss, newPlan, currentDif);
+    handleAddPlanDialogClose(true);
+    setPlanName("");
+  };
+
   const [planType, setPlanType] = React.useState("default");
+  const [boss, setBoss] = useState(currentBoss);
 
   const newPlanType = (event, newPlanType) => {
     setPlanType(newPlanType);
@@ -50,16 +47,21 @@ export default function AddPlanDialog(props) {
   return (
     <div>
       <Tooltip title={t("CooldownPlanner.AddPlanDialog.ButtonTooltip")} arrow>
-        <Button key={8} variant="outlined" color="primary" onClick={handleAddPlanDialogClickOpen} disabled={disabledCheck}>
-          {t("CooldownPlanner.AddPlanDialog.ButtonLabel")}
-        </Button>
+        <span>
+          <Button key={8} variant="outlined" color="primary" onClick={handleAddPlanDialogClickOpen} disabled={disabledCheck}>
+            {t("CooldownPlanner.AddPlanDialog.ButtonLabel")}
+          </Button>
+        </span>
       </Tooltip>
       <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="xs" fullWidth>
-        <DialogTitle id="simple-dialog-title">{t("CooldownPlanner.AddPlanDialog.HeaderTitle")}</DialogTitle>
+        <DialogTitle id="simple-dialog-title">Create New Plan</DialogTitle>
         <DialogContent>
           <Grid item container spacing={1} xl={12} alignItems="center" sx={{ marginTop: "1px" }}>
             <Grid item xl={12}>
-              <TextField sx={{ minWidth: 100, width: "100%" }} size="small" select value={currentBoss} onChange={(e) => changeBoss(e.target.value, currentDifficulty)}>
+              <Typography align="center">Boss</Typography>
+            </Grid>
+            <Grid item xl={12}>
+              <TextField sx={{ minWidth: 100, width: "100%" }} size="small" select value={boss} onChange={(e) => setBoss(e.target.value, currentDifficulty)}>
                 {bossList
                   .filter((obj) => {
                     return obj.zoneID === currentRaid;
@@ -80,7 +82,7 @@ export default function AddPlanDialog(props) {
             </Grid>
 
             <Grid item xl={12}>
-              <ToggleButtonGroup value={currentDifficulty} exclusive onChange={(e) => changeDifficulty(currentBoss, e.target.value)} aria-label="text alignment" fullWidth>
+              <ToggleButtonGroup value={difficulty} exclusive onChange={(e) => setDifficulty(e.target.value)} aria-label="text alignment" fullWidth>
                 <ToggleButton value="Heroic" aria-label="Heroic">
                   Heroic
                 </ToggleButton>
@@ -90,7 +92,7 @@ export default function AddPlanDialog(props) {
               </ToggleButtonGroup>
             </Grid>
             <Grid item xl={12}>
-              <Typography align="center">New Plan Type</Typography>
+              <Typography align="center">Plan Type</Typography>
             </Grid>
             <Grid item xl={12}>
               <ToggleButtonGroup value={planType} exclusive onChange={newPlanType} aria-label="PlanTypeToggle" fullWidth>
@@ -102,6 +104,9 @@ export default function AddPlanDialog(props) {
                   Default
                 </ToggleButton>
               </ToggleButtonGroup>
+            </Grid>
+            <Grid item xl={12}>
+              <Typography align="center">New Plan Name</Typography>
             </Grid>
             <Grid item xl={12}>
               <TextField
@@ -118,7 +123,14 @@ export default function AddPlanDialog(props) {
           </Grid>
         </DialogContent>
         <DialogActions>
-          <Button key={8} variant="contained" color="primary" onClick={(e) => addPlan(planName, currentBoss, currentDifficulty)} size="small" disabled={duplicatePlanNameCheck || planName === ""}>
+          <Button
+            key={8}
+            variant="contained"
+            color="primary"
+            onClick={(e) => (planType === "default" ? copyPlan("default", boss, planName, difficulty) : addPlan(planName, boss, difficulty))}
+            size="small"
+            disabled={duplicatePlanNameCheck || planName === ""}
+          >
             {t("CooldownPlanner.AddPlanDialog.ButtonLabel")}
           </Button>
         </DialogActions>
