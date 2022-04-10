@@ -210,8 +210,6 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
       copyStrength: 0.5,
     };
     bonus_stats = getPaladinCovAbility("Pelagos", player, contentType, specialSettings);
-
-
   }
   else if (effectName === "Duty-Bound Gavel") {
     /* ---------------------------------------------------------------------------------------------- */
