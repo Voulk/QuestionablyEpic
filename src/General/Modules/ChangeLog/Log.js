@@ -10,6 +10,16 @@
 export const changeLog = [
   {
     version: "9.2 / 2.5.3",
+    update: 13,
+    date: "10th April",
+    changes: [
+      "Added Necrolord Paladin",
+      "Bugfix: Sets with Unity on a ring slot + a regular legendary also on a ring should no longer fail to create a set using both.",
+      "Bugfix: Fixed a bug where Unity could call the wrong formula if you were playing an unconventional covenant.",
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
     update: 12,
     date: "5th April",
     changes: [

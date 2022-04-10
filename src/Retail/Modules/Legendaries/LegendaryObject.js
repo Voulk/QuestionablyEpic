@@ -25,7 +25,7 @@ export default function LegendaryObject(props) {
   // Player Data
   // const player = props.player;
   // HPS String - if > 5 then Round the items effectiveHPS else return "Coming Soon"
-  const hpsString = item.effectiveHPS > 5 ? Math.round(item.effectiveHPS) : "Coming Soon";
+  const hpsString = item.effectiveHPS > 5 ? Math.round(item.effectiveHPS) : item.effectiveHPS == -3 ? "Different Cov" : "Coming Soon";
   // DPS String - Round effectiveDPS as string, add 3 spaces of padding to the start of the string
   const paddedDPS = Math.round(item.effectiveDPS).toString().padStart(3);
   // If the dps string is greater than 5, return DPS: paddedDPS else nothing

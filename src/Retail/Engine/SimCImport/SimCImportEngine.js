@@ -419,7 +419,10 @@ export function processItem(line, player, contentType, type) {
     item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");
     //item.domGemID = parseInt(domGemID);
     if (item.effect.type && item.effect.type === "spec legendary") item.uniqueEquip = "legendary";
-    else if (item.effect.type && item.effect.type === "unity") item.uniqueEquip = "unity";
+    else if (item.effect.type && item.effect.type === "unity") {
+      item.uniqueEquip = "unity";
+      //item.id = 1044011
+    }
     else if (item.vaultItem) item.uniqueEquip = "vault";
     else item.uniqueEquip = uniqueTag;
     item.softScore = scoreItem(item, player, contentType);
