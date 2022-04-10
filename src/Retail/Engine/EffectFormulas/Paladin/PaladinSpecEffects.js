@@ -209,7 +209,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
       numCopies: 3,
       copyStrength: 0.5,
     };
-    if (player.getModelName(contentType).includes("Kyrian") || (player.getModelName(contentType) === "Default" && player.getCov() === "Kyrian")) {    
+    if (player.getModelName(contentType).includes("Kyrian") || (player.getModelName(contentType) === "Default" && player.getCovenant() === "kyrian")) {    
       bonus_stats = getPaladinCovAbility("Pelagos", player, contentType, specialSettings);
     }
     else {
@@ -226,7 +226,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
       extraSpells: 1,
       extraCharge: 1,
     };
-    if (player.getModelName(contentType) === "Necrolord Default" || (player.getModelName(contentType) === "Default" && player.getCov() === "Necrolord")) {
+    if (player.getModelName(contentType) === "Necrolord Default" || (player.getModelName(contentType) === "Default" && player.getCovenant() === "necrolord")) {
       bonus_stats = getPaladinCovAbility("Emeni", player, contentType, specialSettings);
     }
     else {
@@ -244,7 +244,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
       extraCharge: 1,
     };
 
-    if (player.getModelName(contentType).includes("Venthyr") || (player.getModelName(contentType) === "Default" && player.getCov() === "Venthyr")) {    
+    if (player.getModelName(contentType).includes("Venthyr") || (player.getModelName(contentType) === "Default" && player.getCovenant() === "venthyr")) {    
       bonus_stats = getPaladinCovAbility("Theotar", player, contentType, specialSettings);
       bonus_stats.hps = (bonus_stats.hps * 0.5) || 0;
     }
