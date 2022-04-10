@@ -75,7 +75,7 @@ export default function ertEngine(tableData, bossID, lang) {
             : key.Cooldown3 === "Potion/Healthstone"
             ? space + "Potion/Healthstone" + "{spell:105683}"
             : ""
-          : seperspaceator + classColoursERT(key.class3) + key.name3 + "|r" + "{spell:" + key.Cooldown3 + "}";
+          : space + classColoursERT(key.class3) + key.name3 + "|r" + "{spell:" + key.Cooldown3 + "}";
 
       let option4 =
         key.name4 === "" || key.name4 === undefined
