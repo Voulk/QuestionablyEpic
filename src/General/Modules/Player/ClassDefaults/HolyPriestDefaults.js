@@ -15,7 +15,7 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
-      OneManaHealing: 3.5,
+      OneManaHealing: 7.1,
       CastsPerMinute: 28,
       cooldownMult: {
         oneMinute: 1,

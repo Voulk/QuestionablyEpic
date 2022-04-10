@@ -124,6 +124,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     /* ---------------------------------------------------------------------------------------------- */
     const baseHealingInc = processPaladinRawHealing(player.getStatPerc("Crit"));
     const lightOfDawnCPM = player.getSpellCPM(IDLIGHTOFDAWN, contentType);
+    const wordOfGloryCPM = player.getSpellCPM(IDWORDOFGLORY, contentType);
     const lightOfDawnTargets = contentType === "Raid" ? 4.9 : 3.1;
     let lightOfDawnUptime = Math.min(1, (lightOfDawnCPM * 8) / 60); // Technically doesn't account for the slight possible loss from casting LoD twice in a short period.
     let averageMasteryEff = player.getStatPerc("Mastery"); // TODO: Improve with logs data.
@@ -133,12 +134,12 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     const HPSMasteryBonus = player.getHPS(contentType) * mastDiff * lightOfDawnUptime * percentHealingToHitTargets;
 
     /* -------------------------------- Calculate Word of Glory bonus ------------------------------- */
-    const buffedWordOfGlories = lightOfDawnCPM;
+    const buffedWordOfGlories = wordOfGloryCPM;
     const oneWordOfGlory = player.getStatMultiplier("ALL") * 3.15 * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.92;
-    const oneLightOfDawn = player.getStatMultiplier("ALL") * 1.05 * lightOfDawnTargets * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.78;
+    //const oneLightOfDawn = player.getStatMultiplier("ALL") * 1.05 * lightOfDawnTargets * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.78;
 
     const wordOfGloryMasteryCoeff = (1 + (player.getStatPerc("Mastery") - 1) * 1.5) / player.getStatPerc("Mastery");
-    const oneWordOfGloryBonus = Math.max(0, oneWordOfGlory * wordOfGloryMasteryCoeff - oneLightOfDawn);
+    const oneWordOfGloryBonus = Math.max(0, oneWordOfGlory * wordOfGloryMasteryCoeff - oneWordOfGlory);
     const HPSWordOfGlory = (buffedWordOfGlories * oneWordOfGloryBonus) / 60;
 
     bonus_stats.hps = Math.round(HPSMasteryBonus + HPSWordOfGlory);

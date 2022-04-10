@@ -632,10 +632,10 @@ class Player {
 
       this.activeStats = {
         intellect: 2000,
-        haste: 800,
-        crit: 240,
-        mastery: 650,
-        versatility: 380,
+        haste: 850,
+        crit: 280,
+        mastery: 900,
+        versatility: 520,
         stamina: 1900,
       };
     } else if (spec === SPEC.RESTOSHAMAN) {
