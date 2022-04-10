@@ -447,6 +447,13 @@ class Player {
     if ((contentType === "Raid" || contentType === "Dungeon") && id < this.castModels.length) {
       // Check that it's a valid ID.
       this.activeModelID[contentType] = id;
+
+      // Paladin
+      if (this.spec === "Holy Paladin") {
+        if (this.getActiveModel(contentType).modelName.includes("Venthyr")) this.setCovenant("venthyr");
+        else if (this.getActiveModel(contentType).modelName.includes("Necrolord")) this.setCovenant("necrolord");
+        else if (this.getActiveModel(contentType).modelName.includes("Kyrian")) this.setCovenant("kyrian");
+      }
     } else {
       // This is a critical error that could crash the app so we'll reset models to defaults
       this.activeModelID["Raid"] = 0;
