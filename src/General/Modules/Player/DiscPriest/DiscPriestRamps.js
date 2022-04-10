@@ -273,6 +273,17 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
     // It's a straightfoward addition.
     if (settings['Clarity of Mind']) discSpells['Rapture'][0].atonement = 21;
 
+    if (settings['Shadow Word: Manipulation']) discSpells['Mindgames'].push({ // TODO
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        cooldown: 0,
+        buffType: 'stats',
+        stat: 'mastery',
+        value: 315,
+        buffDuration: 30,
+    });
+
     // -- Penitent One --
     // Power Word: Radiance has a chance to make your next Penance free, and fire 3 extra bolts.
     // This is a close estimate, and could be made more accurate by tracking the buff and adding ticks instead of power.
