@@ -651,6 +651,22 @@ export const cooldownDB = [
     type: "utility",
     cdPlannerMenuActive: true,
   },
+  {
+    name: {
+      en: "Stampeding Roar",
+      fr: "Ruée rugissante",
+      de: "Anstachelndes Gebrüll",
+      ru: "Тревожный рев",
+      cn: "狂奔怒吼",
+    },
+    guid: 77764,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_druid_stampedingroar_cat.jpg").default,
+    duration: 8,
+    cooldown: 120,
+    class: "Druid",
+    type: "utility",
+    cdPlannerMenuActive: true,
+  },
 
   {
     guid: "Potion/Healthstone",

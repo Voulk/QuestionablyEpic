@@ -58,7 +58,7 @@ export default function CooldownSelector(props, rowData, cooldown, nameClass) {
         <TextField
           select
           value={rowData[cooldown] || props.value || ""}
-          sx={{ lineHeight: "normal", width: "100%" }}
+          sx={{ lineHeight: "normal", width: "100%", textAlign: "left" }}
           size="small"
           onChange={(e) => {
             props.onChange(e.target.value);

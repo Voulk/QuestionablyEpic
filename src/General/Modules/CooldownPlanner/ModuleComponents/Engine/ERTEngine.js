@@ -16,6 +16,14 @@ export default function ertEngine(tableData, bossID, lang) {
   debug && console.log(" -- Debugging On -> ERTEngine.js --");
   const seperator = " - ";
   const space = " ";
+
+  const abilityArr = [
+    ...bossAbilities[bossID]
+      .filter((obj) => {
+        return obj.cooldownPlannerActive === true;
+      })
+      .map((key, i, arr) => key.guid),
+  ];
   // log provided props
   // debug && console.table(tableData);
 
@@ -26,21 +34,23 @@ export default function ertEngine(tableData, bossID, lang) {
     .filter((key) => key.bossAbility !== undefined)
     .map((key) => {
       let time = "{time:" + key.time + "}";
-      let translatedName = bossAbilities[bossID]
-        .filter((obj) => {
-          return obj.guid === key.bossAbility;
-        })
-        .map((obj) => obj.name[lang])
-        .toString();
+      let translatedName = abilityArr.includes(key.bossAbility)
+        ? bossAbilities[bossID]
+            .filter((obj) => {
+              return obj.guid === key.bossAbility;
+            })
+            .map((obj) => obj.name[lang])
+            .toString()
+        : key.bossAbility;
 
       let option0 =
         key.name === "" || key.name === undefined
           ? key.Cooldown === "" || key.Cooldown === undefined
             ? ""
             : key.Cooldown === "Personals"
-            ? "Personals" + "{spell:160955}"
+            ? "{everyone}Personals" + "{spell:160955}"
             : key.Cooldown === "Potion/Healthstone"
-            ? "Potion/Healthstone" + "{spell:105683}"
+            ? "{everyone}Potion/Healthstone" + "{spell:105683}"
             : ""
           : classColoursERT(key.class) + key.name + "|r" + "{spell:" + key.Cooldown + "}";
 
@@ -49,9 +59,9 @@ export default function ertEngine(tableData, bossID, lang) {
           ? key.Cooldown1 === "" || key.Cooldown1 === undefined
             ? ""
             : key.Cooldown1 === "Personals"
-            ? space + "Personals" + "{spell:160955}"
+            ? space + "{everyone}Personals" + "{spell:160955}"
             : key.Cooldown1 === "Potion/Healthstone"
-            ? space + "Potion/Healthstone" + "{spell:105683}"
+            ? space + "{everyone}Potion/Healthstone" + "{spell:105683}"
             : ""
           : space + classColoursERT(key.class1) + key.name1 + "|r" + "{spell:" + key.Cooldown1 + "}";
 
@@ -60,9 +70,9 @@ export default function ertEngine(tableData, bossID, lang) {
           ? key.Cooldown2 === "" || key.Cooldown2 === undefined
             ? ""
             : key.Cooldown2 === "Personals"
-            ? space + "Personals" + "{spell:160955}"
+            ? space + "{everyone}Personals" + "{spell:160955}"
             : key.Cooldown2 === "Potion/Healthstone"
-            ? space + "Potion/Healthstone" + "{spell:105683}"
+            ? space + "{everyone}Potion/Healthstone" + "{spell:105683}"
             : ""
           : space + classColoursERT(key.class2) + key.name2 + "|r" + "{spell:" + key.Cooldown2 + "}";
 
@@ -71,9 +81,9 @@ export default function ertEngine(tableData, bossID, lang) {
           ? key.Cooldown3 === "" || key.Cooldown3 === undefined
             ? ""
             : key.Cooldown3 === "Personals"
-            ? space + "Personals" + "{spell:160955}"
+            ? space + "{everyone}Personals" + "{spell:160955}"
             : key.Cooldown3 === "Potion/Healthstone"
-            ? space + "Potion/Healthstone" + "{spell:105683}"
+            ? space + "{everyone}Potion/Healthstone" + "{spell:105683}"
             : ""
           : space + classColoursERT(key.class3) + key.name3 + "|r" + "{spell:" + key.Cooldown3 + "}";
 
@@ -82,9 +92,9 @@ export default function ertEngine(tableData, bossID, lang) {
           ? key.Cooldown4 === "" || key.Cooldown4 === undefined
             ? ""
             : key.Cooldown4 === "Personals"
-            ? space + "Personals" + "{spell:160955}"
+            ? space + "{everyone}Personals" + "{spell:160955}"
             : key.Cooldown4 === "Potion/Healthstone"
-            ? space + "Potion/Healthstone" + "{spell:105683}"
+            ? space + "{everyone}Potion/Healthstone" + "{spell:105683}"
             : ""
           : space + classColoursERT(key.class4) + key.name4 + "|r" + "{spell:" + key.Cooldown4 + "}";
 

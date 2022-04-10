@@ -23,6 +23,14 @@ export default function BossAbilityRender(rowData, bossID, difficulty) {
     return null;
   }
 
+  const abilityArr = [
+    ...bossAbilities[bossID]
+      .filter((obj) => {
+        return obj.cooldownPlannerActive === true;
+      })
+      .map((key, i, arr) => key.guid),
+  ];
+
   const raidDifficulty = (rDifficulty) => {
     let raidDif = 16;
     switch (rDifficulty) {
@@ -70,10 +78,18 @@ export default function BossAbilityRender(rowData, bossID, difficulty) {
 
   return (
     <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
-      <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage + "&dd=" + raidDifficulty(difficulty)}>{icon(rowData.bossAbility, bossID, iconStyle)}</a>
-      <Typography align="left" style={{ fontSize: 12, lineHeight: "normal", width: "100%", marginLeft: 8 }} noWrap>
-        {translatedName}
-      </Typography>
+      {abilityArr.includes(rowData.bossAbility) ? (
+        <div style={{ display: "contents", verticalAlign: "middle" }}>
+          <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage + "&dd=" + raidDifficulty(difficulty)}>{icon(rowData.bossAbility, bossID, iconStyle)}</a>
+          <Typography align="left" style={{ fontSize: 12, lineHeight: "normal", width: "100%", marginLeft: 8 }} noWrap>
+            {translatedName}
+          </Typography>
+        </div>
+      ) : (
+        <Typography align="left" style={{ fontSize: 12, lineHeight: "normal", width: "100%", marginLeft: 8 }} noWrap>
+          {rowData.bossAbility}
+        </Typography>
+      )}
     </div>
   );
 }

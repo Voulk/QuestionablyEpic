@@ -551,6 +551,7 @@ export default function CooldownPlanner(props) {
             },
             /* --------------------------- Alternating Row Colour is defined here --------------------------- */
             rowStyle: (rowData, index) => {
+              console.log(rowData);
               if (
                 rowData.bossAbility === "Phase 1" ||
                 rowData.bossAbility === "Phase 2" ||

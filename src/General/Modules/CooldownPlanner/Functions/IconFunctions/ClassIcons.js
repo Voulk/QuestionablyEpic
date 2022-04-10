@@ -13,6 +13,7 @@ import RogueIcon from "Images/Classes/Rogue/Icons/RogueIcon.jpg";
 import WarlockIcon from "Images/Classes/Warlock/Icons/WarlockIcon.jpg";
 import MageIcon from "Images/Classes/Mage/Icons/MageIcon.jpg";
 import HunterIcon from "Images/Classes/Hunter/Icons/HunterIcon.jpg";
+import DruidIcon from "Images/Classes/Druid/classicon_druid.jpg";
 
 export default function classIcons(props, style) {
   let src = "";
@@ -25,9 +26,15 @@ export default function classIcons(props, style) {
   }
 
   // Restoration Druid
-  if (props === "RestorationDruid" || props === "Restoration Druid" || props === "Druid-Restoration" || props === "Druid" || props === "Restoration Druid BC") {
+  if (props === "RestorationDruid" || props === "Restoration Druid" || props === "Druid-Restoration" || props === "Restoration Druid BC") {
     src = RestorationDruidIcon;
     alt = "Restoration Druid";
+  }
+
+  // Restoration Druid
+  if (props === "Druid") {
+    src = DruidIcon;
+    alt = "Druid";
   }
 
   // Holy Priest

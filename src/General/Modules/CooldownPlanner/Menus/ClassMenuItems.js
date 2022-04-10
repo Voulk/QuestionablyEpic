@@ -5,6 +5,7 @@ import DiscPriestIcon from "Images/Classes/Priest/Specialisation/Discipline/Icon
 import HolyPriestIcon from "Images/Classes/Priest/Specialisation/Holy/Icons/HolyPriest.jpg";
 import MistweaverIcon from "Images/Classes/Monk/Specialisation/Mistweaver/Icons/MistWeaverMonk.jpg";
 import RestorationDruidIcon from "Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg";
+import DruidIcon from "Images/Classes/Druid/classicon_druid.jpg";
 import RestorationShamanIcon from "Images/Classes/Shaman/Specialisation/Restoration/Icons/RestorationShaman.jpg";
 import WarriorIcon from "Images/Classes/Warrior/WarriorIcon.jpg";
 import DeathKnightIcon from "Images/Classes/DeathKnight/DeathKnightIcon.jpg";
@@ -131,6 +132,19 @@ export const classMenus = [
       alt="Death Knight"
     />
     <Translation>{(t) => t("CooldownPlanner.Classes.DeathKnight")}</Translation>
+  </MenuItem>,
+  <MenuItem divider style={{ color: "#FFFFFF" }} value={"Druid"} key="Druid">
+    <img
+      style={{
+        height: 20,
+        width: 20,
+        padding: "0px 5px 0px 5px",
+        verticalAlign: "middle",
+      }}
+      src={DruidIcon}
+      alt="Druid"
+    />
+    <Translation>{(t) => t("CooldownPlanner.Classes.Druid")}</Translation>
   </MenuItem>,
   <MenuItem divider={false} style={{ color: "#FFFFFF" }} value={"ShadowPriest"} key="ShadowPriest">
     <img
