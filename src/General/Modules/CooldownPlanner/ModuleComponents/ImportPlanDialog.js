@@ -112,8 +112,6 @@ export default function ImportPlanDialog(props) {
     const planStringPosition = importedString.split("Plan=")[1].search("# Roster");
     importedPlan = JSON.parse(importedString.split("Plan=")[1].slice(0, planStringPosition));
 
-    console.log();
-
     if (checked === true) {
       importedRoster = JSON.parse(importedString.split("Roster=")[1]);
 

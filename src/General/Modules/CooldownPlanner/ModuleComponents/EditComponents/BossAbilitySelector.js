@@ -114,8 +114,6 @@ export default function BossAbilitySelector(props, currentBoss, difficulty) {
     }
   };
 
-  console.log(abilityArr);
-
   const resetText = () => {
     props.onChange("");
     setCustom(false);
@@ -150,7 +148,6 @@ export default function BossAbilitySelector(props, currentBoss, difficulty) {
           }
           sx={{ lineHeight: "normal", width: "100%", textAlign: "left" }}
           onChange={(e) => {
-            console.log(e.target.value);
             if (e.target.value === "custom") {
               props.onChange("");
             } else {
@@ -158,7 +155,6 @@ export default function BossAbilitySelector(props, currentBoss, difficulty) {
             }
           }}
         >
-          {console.log(abilityArr.includes(props.value) === true ? true : false || custom === false ? true : false)}
           {(abilityArr.includes(props.value) === true ? true : false || custom === false)
             ? [
                 bossAbilities[currentBoss]

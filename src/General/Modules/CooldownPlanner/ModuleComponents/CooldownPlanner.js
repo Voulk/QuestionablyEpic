@@ -276,7 +276,7 @@ export default function CooldownPlanner(props) {
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
       render: (rowData) => NameRender(rowData, "name1", "class1"),
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
-      editComponent: (props, i) => HealerSelector(props, "name1", "class1", "cooldown1"),
+      editComponent: (props, i) => HealerSelector(props, "name1", "class1", "Cooldown1"),
     },
     {
       title: t("Class"),
@@ -343,7 +343,7 @@ export default function CooldownPlanner(props) {
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
       render: (rowData) => NameRender(rowData, "name2", "class2"),
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
-      editComponent: (props, i) => HealerSelector(props, "name2", "class2", "cooldown2"),
+      editComponent: (props, i) => HealerSelector(props, "name2", "class2", "Cooldown2"),
     },
     {
       title: t("Class"),
@@ -409,7 +409,7 @@ export default function CooldownPlanner(props) {
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
       render: (rowData) => NameRender(rowData, "name3", "class3"),
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
-      editComponent: (props, i) => HealerSelector(props, "name3", "class3", "cooldown3"),
+      editComponent: (props, i) => HealerSelector(props, "name3", "class3", "Cooldown3"),
     },
     {
       title: t("Class"),
@@ -475,7 +475,7 @@ export default function CooldownPlanner(props) {
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
       render: (rowData) => NameRender(rowData, "name4", "class4"),
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
-      editComponent: (props, i) => HealerSelector(props, "name4", "class4", "cooldown4"),
+      editComponent: (props, i) => HealerSelector(props, "name4", "class4", "Cooldown4"),
     },
     {
       title: t("Class"),
@@ -551,7 +551,6 @@ export default function CooldownPlanner(props) {
             },
             /* --------------------------- Alternating Row Colour is defined here --------------------------- */
             rowStyle: (rowData, index) => {
-              console.log(rowData);
               if (
                 rowData.bossAbility === "Phase 1" ||
                 rowData.bossAbility === "Phase 2" ||

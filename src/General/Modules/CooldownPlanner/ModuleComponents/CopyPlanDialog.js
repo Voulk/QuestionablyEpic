@@ -10,8 +10,6 @@ export default function CopyPlanDialog(props) {
   const duplicatePlanNameCheck = bossPlans.includes(newPlanName) ? true : false;
   const { t, i18n } = useTranslation();
 
-  console.log(bossPlans);
-
   // On open/close update the currently open plan
   useEffect(() => {
     setPlanName(currentPlan);
