@@ -72,9 +72,9 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     /* ---------------------------------------------------------------------------------------------- */
       const legendaryBonus = 0.1;
       const averageStacks = 4.9;
-      const backlashDamage = 0.25; 
-      const beaconHealing = 0.7;
-      const beaconOverhealing = 0.6;
+      const backlashDamage = 0.2; 
+      const beaconHealing = 0.8;
+      const beaconOverhealing = 0.4;
 
       const baseThroughput = legendaryBonus * averageStacks * player.getSpellHPS(IDMARTYR, contentType);
 
@@ -162,7 +162,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     /*                                    The Magistrates Judgment                                    */
     /* ---------------------------------------------------------------------------------------------- */
     const procChance = 0.6;
-    const judgementCPM = 4.1;
+    const judgementCPM = 2.4;
     const healingOneHolyPower = getOneHolyPower(player, contentType);
 
     bonus_stats.hps = (procChance * judgementCPM * healingOneHolyPower) / 60;
@@ -209,7 +209,14 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
       numCopies: 3,
       copyStrength: 0.5,
     };
-    bonus_stats = getPaladinCovAbility("Pelagos", player, contentType, specialSettings);
+    if (player.getModelName(contentType).includes("Kyrian") || (player.getModelName(contentType) === "Default" && player.getCov() === "Kyrian")) {    
+      bonus_stats = getPaladinCovAbility("Pelagos", player, contentType, specialSettings);
+    }
+    else {
+      bonus_stats.hps = -3;
+      return bonus_stats;
+    }
+    
   }
   else if (effectName === "Duty-Bound Gavel") {
     /* ---------------------------------------------------------------------------------------------- */
@@ -219,8 +226,14 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
       extraSpells: 1,
       extraCharge: 1,
     };
-    
-    bonus_stats = getPaladinCovAbility("Emeni", player, contentType, specialSettings);
+    if (player.getModelName(contentType) === "Necrolord Default" || (player.getModelName(contentType) === "Default" && player.getCov() === "Necrolord")) {
+      bonus_stats = getPaladinCovAbility("Emeni", player, contentType, specialSettings);
+    }
+    else {
+      bonus_stats.hps = -3;
+      return bonus_stats;
+    }
+      
   }
   else if (effectName === "Radiant Embers") {
     /* ---------------------------------------------------------------------------------------------- */
@@ -230,9 +243,16 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
       extraSpells: 1,
       extraCharge: 1,
     };
-    
-    bonus_stats = getPaladinCovAbility("Theotar", player, contentType, specialSettings);
-    bonus_stats.hps = (bonus_stats.hps * 0.5) || 0;
+
+    if (player.getModelName(contentType).includes("Venthyr") || (player.getModelName(contentType) === "Default" && player.getCov() === "Venthyr")) {    
+      bonus_stats = getPaladinCovAbility("Theotar", player, contentType, specialSettings);
+      bonus_stats.hps = (bonus_stats.hps * 0.5) || 0;
+    }
+    else {
+      bonus_stats.hps = -3;
+      return bonus_stats;
+    }
+
   }
 
   // Consider building in support for the conduit via SimC grab or something similar.

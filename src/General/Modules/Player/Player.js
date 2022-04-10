@@ -468,6 +468,9 @@ class Player {
   getHPS = (contentType) => {
     return this.getActiveModel(contentType).getFightInfo("hps");
   };
+  getModelName = (contentType) => {
+    return this.getActiveModel(contentType).modelName;
+  };
   getDPS = (contentType) => {
     return this.getActiveModel(contentType).getFightInfo("dps");
   };
@@ -618,6 +621,7 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.castModels.push(new CastModel(spec, "Raid", "Venthyr Default", 2));
       this.castModels.push(new CastModel(spec, "Raid", "Venthyr Maraads", 3));
+      this.castModels.push(new CastModel(spec, "Raid", "Necrolord Default", 4));
 
       this.activeStats = {
         intellect: 2000,

@@ -7,7 +7,10 @@ const IDWORDOFGLORY = 85673;
 // Returns the expected healing of the player getting one Holy Power.
 export function getOneHolyPower(player, contentType) {
   const isDP = true;
-  const oneLoD = Math.round(player.getSingleCast(IDLIGHTOFDAWN, contentType));
+
+  const oneLoD = player.getStatMultiplier("ALL") * 1.05 * 5 * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.6;
+  //const oneLoD = Math.round(player.getSingleCast(IDLIGHTOFDAWN, contentType));
+
   const divinePurposeBonus = oneLoD * 0.15 * 1.2; 
 
   //console.log("One LoD: " + oneLoD + ". DP Bonus: " + divinePurposeBonus);
@@ -136,11 +139,13 @@ export function getPaladinCovAbility(soulbindName, player, contentType, specialS
 
   } else if (["Marileth", "Emeni", "Heirmir"].includes(soulbindName)) {
     // Vanquishers Hammer (Necrolord)
+    // Includes 2pc bonus
     const HPSFreeWordOfGlory = player.getSingleCast(IDWORDOFGLORY, contentType);
-    const HPSLightOfDawn = player.getSingleCast(IDWORDOFGLORY, contentType) * 0.25;
+    const HPSLightOfDawn = player.getSingleCast(IDWORDOFGLORY, contentType) * 2 * 1.5 * 0.25;
     const HPSFreeHolyPower = getOneHolyPower(player, contentType);
 
     if ("extraSpells" in specialSettings) {
+      // Duty-bound Gavel
       bonus_stats.hps = (HPSFreeWordOfGlory + HPSLightOfDawn) / 30 + (HPSFreeHolyPower + HPSFreeWordOfGlory) / player.getFightLength(contentType);
     }
     else {
