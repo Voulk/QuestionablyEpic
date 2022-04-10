@@ -44,8 +44,8 @@ export const paladinNecrolordSpellData = (contentType) => {
         cooldownMult: {
           oneMinute: 1.2,
           ninetySeconds: 1.1,
-          twoMinutes: 1.14,
-          twoMinutesOrb: 1.14,
+          twoMinutes: 1.12,
+          twoMinutesOrb: 1.12,
           threeMinutes: 1,
         },
         HoldYourGroundUptime: 0.4
