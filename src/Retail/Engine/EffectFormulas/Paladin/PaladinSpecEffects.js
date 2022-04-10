@@ -224,6 +224,18 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     
     bonus_stats = getPaladinCovAbility("Emeni", player, contentType, specialSettings);
   }
+  else if (effectName === "Radiant Embers") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Radiant Embers                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    const specialSettings = {
+      extraSpells: 1,
+      extraCharge: 1,
+    };
+    
+    bonus_stats = getPaladinCovAbility("Theotar", player, contentType, specialSettings);
+    bonus_stats.hps = (bonus_stats.hps * 0.5) || 0;
+  }
 
   // Consider building in support for the conduit via SimC grab or something similar.
   else {
