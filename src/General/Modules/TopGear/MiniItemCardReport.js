@@ -39,7 +39,6 @@ export default function ItemCardReport(props) {
   const classes = useStyles();
   const item = props.item;
   const enchants = props.enchants;
-  console.log(enchants);
   const { t, i18n } = useTranslation();
   const gameType = useSelector((state) => state.gameType);
 

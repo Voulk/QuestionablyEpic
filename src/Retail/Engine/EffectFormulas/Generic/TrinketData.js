@@ -1094,7 +1094,7 @@ export const trinket_data = [
       {
         coefficient: 2.07913,
         table: -8, 
-        ppm: { "Restoration Druid": 20, "Discipline Priest": 10, "Holy Paladin": 0, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.5, "Holy Priest": 9 }, // TODO: Refine. 
+        ppm: { "Restoration Druid": 20, "Discipline Priest": 10, "Holy Paladin": 0, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.5, "Holy Priest": 11 }, // TODO: Refine. 
       },
     ],
   },
@@ -1292,6 +1292,21 @@ export const trinket_data = [
         duration: 10,
         runeEfficiency: 0.8,
         cooldown: 120,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                           Resonant Reservoir                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    name: "Resonant Reservoir",
+    effects: [
+      {
+        coefficient: 7.700482,
+        table: -9,
+        duration: 6,
+        avgStacks: 2,
+        cooldown: 90,
       },
     ],
   },

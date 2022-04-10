@@ -526,7 +526,7 @@ export const bossAbilities = {
         de: "Kernüberladung",
       },
       guid: 364963,
-      cooldownPlannerActive: false,
+      cooldownPlannerActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_fire_selfdestruct.jpg").default,
     },
   ],

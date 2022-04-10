@@ -124,7 +124,8 @@
         "MistweaverMonk": "Mistweaver Monk",
         "RestorationShaman": "Restoration Shaman",
         "DeathKnight": "Death Knight",
-        "ShadowPriest": "Shadow Priest"
+        "ShadowPriest": "Shadow Priest",
+        "Druid": "Друид"
       },
       "ChartLabels": {
         "_Comments1": "Translations for HD Charts",

@@ -4,6 +4,7 @@ import { druidDefaultSpecialQueries, druidDefaultSpellData, druidDefaultStatWeig
 import { paladinVenthyrSpecialQueries, paladinVenthyrSpellData, paladinVenthyrStatWeights } from "./ClassDefaults/Paladin/PaladinDefaults";
 import { paladinKyrianSpecialQueries, paladinKyrianSpellData, paladinKyrianStatWeights } from "./ClassDefaults/Paladin/PaladinKyrian";
 import { paladinMaraadsSpellData, paladinMaraadsSpecialQueries, paladinMaraadsStatWeights } from "./ClassDefaults/Paladin/PaladinMaraadsRaid";
+import { paladinNecrolordSpellData, paladinNecrolordSpecialQueries, paladinNecrolordStatWeights } from "./ClassDefaults/Paladin/PaladinNecrolord";
 import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
 import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { monkSinSpecialQueries, monkSinSpellData, monkSinStatWeights } from "./ClassDefaults/Monk/MonkSinTeachings";
@@ -99,6 +100,13 @@ class CastModel {
         spellList = paladinVenthyrSpellData(contentType);
         specialQueries = paladinVenthyrSpecialQueries(contentType);
         this.baseStatWeights = paladinVenthyrStatWeights("Raid");
+        this.fightInfo.dps = 2100;
+      }
+      else if (modelID === "Necrolord Default") {
+        this.modelName = "Necrolord Default";
+        spellList = paladinNecrolordSpellData(contentType);
+        specialQueries = paladinNecrolordSpecialQueries(contentType);
+        this.baseStatWeights = paladinNecrolordStatWeights("Raid");
         this.fightInfo.dps = 2100;
       }
       else if (modelID === "Default") { // Dungeon

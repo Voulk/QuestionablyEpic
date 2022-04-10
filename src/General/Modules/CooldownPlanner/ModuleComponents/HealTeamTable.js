@@ -50,6 +50,7 @@ export default function HealTeam() {
         <TextField
           size="small"
           id="standard-basic"
+          required
           value={props.value}
           sx={{
             whiteSpace: "nowrap",
@@ -78,6 +79,7 @@ export default function HealTeam() {
         <TextField
           select
           value={props.value}
+          disabled={props.rowData.name === undefined || props.rowData.name === ""}
           onChange={(e) => {
             props.onChange(e.target.value);
           }}
