@@ -129,7 +129,8 @@
         "DeathKnight": "Death Knight",
         "Death Knight": "Death Knight",
         "ShadowPriest": "Shadow Priest",
-        "Shadow Priest": "Shadow Priest"
+        "Shadow Priest": "Shadow Priest",
+        "Druid": "德鲁伊"
       },
       "ChartLabels": {
         "_Comments1": "Translations for HD Charts",

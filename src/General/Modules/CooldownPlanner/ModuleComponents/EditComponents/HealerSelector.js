@@ -5,6 +5,7 @@ import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/
 import { classColoursJS } from "../../Functions/ClassColourFunctions";
 import classIcons from "../../Functions/IconFunctions/ClassIcons";
 import { useTranslation } from "react-i18next";
+import ClearIcon from "@mui/icons-material/Clear";
 
 const selectMenu = createTheme({
   components: {
@@ -91,6 +92,7 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
             </MenuItem>
           ))}
           <MenuItem key={"remove"} value={""}>
+            <ClearIcon sx={{ color: "#ad2c34", margin: "0px 4px 0px 0px" }} fontSize="small" />
             {t("Remove")}
           </MenuItem>
         </TextField>

@@ -16,7 +16,6 @@ export default function chartCooldownUpdater(tableData) {
   let unmitigatedChartDataNoCooldowns = [];
   let mitigatedChartDataNoCooldowns = [];
   let pushedArray = [];
-  console.log(tableData)
 
   /* --------- Push Each Cooldown in the table to a new array in "Name - Cooldown" format --------- */
 
@@ -70,7 +69,6 @@ export default function chartCooldownUpdater(tableData) {
       abilityname: key.name + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
     }))
     .map((key) => {
-      console.log(key.timestamp);
       customCooldownDurations.push(
         durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
       );
