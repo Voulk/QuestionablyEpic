@@ -221,7 +221,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
       extraSpells: 1,
       extraCharge: 1,
     };
-  
+    
     bonus_stats = getPaladinCovAbility("Emeni", player, contentType, specialSettings);
   }
 
