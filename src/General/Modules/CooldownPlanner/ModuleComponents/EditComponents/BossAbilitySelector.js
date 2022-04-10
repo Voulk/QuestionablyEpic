@@ -76,7 +76,7 @@ export default function BossAbilitySelector(props, currentBoss, difficulty) {
       })
       .map((key, i, arr) => key.guid),
   ];
-  const [custom, setCustom] = React.useState(abilityArr.includes(props.value) ? false : true);
+  const [custom, setCustom] = React.useState(props.value === "" || props.value === undefined ? false : abilityArr.includes(props.value) ? false : true);
 
   const raidDifficulty = (rDifficulty) => {
     let raidDif = 16;
