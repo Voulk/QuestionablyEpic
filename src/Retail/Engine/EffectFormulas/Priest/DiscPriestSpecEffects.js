@@ -53,6 +53,14 @@ export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
     bonus_stats.hps = data.ppm * data.sp * data.targets * (1 - data.expectedOverhealing) * player.getInt() * player.getStatMultiplier("CRITVERS") / 60;
 
   } else if (effectName === "Measured Contemplation") {
+      // This is awful for all raiding scenarios. 
+      const oneShadowmend = 3.2 * player.getInt() * player.getStatMultiplier("CRITVERS");
+      const expectedOverhealing = 0.1;
+      const effectiveppm = 1.6; // It is reasonably rare that we ever go 15 seconds between Shadowmend csats to begin with.
+
+      bonus_stats.hps = oneShadowmend * effectiveppm * 0.5 / 60 * (1 - expectedOverhealing);
+
+
   } else if (effectName === "Twins of the Sun Priestess") {
   } else if (effectName === "Vault of Heavens") {
   } else {

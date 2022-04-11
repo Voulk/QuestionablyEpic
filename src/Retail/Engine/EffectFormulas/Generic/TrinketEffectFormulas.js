@@ -215,7 +215,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
       // 
       const boonSeq = buildRamp('Boon', 10, ["Soulletting Ruby"], setStats.haste, castModel.modelName, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, castModel.modelName, ['Rapture']);
-      const rubyRamps = allRampsHealing(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Soulletting Ruby": critValue}, {});
+      const rubyRamps = allRampsHealing(boonSeq, fiendSeq, setStats, {"playstyle": castModel.modelName, "DefaultLoadout": true, "Soulletting Ruby": critValue}, {});
       
       bonus_stats.hps = bonus_stats.hps + (rubyRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - crit_effect.discOverhealing);
 
@@ -350,7 +350,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
       const boonSeq = buildRamp('Boon', 10, ["Flame of Battle"], setStats.haste, castModel.modelName, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, ["Flame of Battle"], setStats.haste, castModel.modelName, ['Rapture']);
-      const flameRamps = allRampsHealing(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Flame of Battle": trinketValue}, {});
+      const flameRamps = allRampsHealing(boonSeq, fiendSeq, setStats, {"playstyle": castModel.modelName, "DefaultLoadout": true, "Flame of Battle": trinketValue}, {});
 
       bonus_stats.hps = (flameRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
     }
@@ -440,7 +440,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
       const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell"], setStats.haste, castModel.modelName, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell"], setStats.haste, castModel.modelName, ['Rapture']);
-      const bellRamps = allRampsHealing(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Instructor's Divine Bell": trinketValue}, {});
+      const bellRamps = allRampsHealing(boonSeq, fiendSeq, setStats, {"playstyle": castModel.modelName, "DefaultLoadout": true, "Instructor's Divine Bell": trinketValue}, {});
       bonus_stats.hps = (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
     }
     else {
@@ -465,8 +465,9 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
       const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], setStats.haste, castModel.modelName, ['Rapture']);
       const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell (new)"], setStats.haste, castModel.modelName, ['Rapture']);
-      const bellRamps = allRampsHealing(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Instructor's Divine Bell (new)": trinketValue}, {});
+      const bellRamps = allRampsHealing(boonSeq, fiendSeq, setStats, {"playstyle": castModel.modelName, "DefaultLoadout": true, "Instructor's Divine Bell (new)": trinketValue}, {});
       bonus_stats.hps = (bellRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
+
     }
     else {
       bonus_stats.mastery = (trinketValue * effect.duration) / effect.cooldown;
@@ -754,7 +755,7 @@ else if (
   else if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
     const boonSeq = buildRamp('Boon', 10, ["Shadowed Orb of Torment"], setStats.haste, castModel.modelName, ['Rapture']);
     const fiendSeq = buildRamp('Fiend', 10, [], setStats.haste, castModel.modelName, ['Rapture']);
-    const orbRamps = allRampsHealing(boonSeq, fiendSeq, setStats, {"DefaultLoadout": true, "Shadowed Orb": trinketValue}, {});
+    const orbRamps = allRampsHealing(boonSeq, fiendSeq, setStats, {"playstyle": castModel.modelName, "DefaultLoadout": true, "Shadowed Orb": trinketValue}, {});
 
     bonus_stats.hps = (orbRamps - player.getRampID('baselineAdj', contentType)) / 180 * (1 - effect.discOverhealing);
   }
@@ -967,6 +968,7 @@ else if (
   const oneProc = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * (effect.duration / effect.tickRate) //* player.getStatPerc("Haste"))
 
   bonus_stats.hps = (oneProc * effect.ppm * player.getStatPerc("Versatility") / 60);
+  console.log("Aux: " + bonus_stats.hps);
   //
 }
 else if (

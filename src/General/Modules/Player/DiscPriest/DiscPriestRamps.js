@@ -280,14 +280,14 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
         cooldown: 0,
         buffType: 'stats',
         stat: 'mastery',
-        value: 315,
-        buffDuration: 30,
+        value: 0,
+        buffDuration: 3,
     });
 
     // -- Penitent One --
     // Power Word: Radiance has a chance to make your next Penance free, and fire 3 extra bolts.
     // This is a close estimate, and could be made more accurate by tracking the buff and adding ticks instead of power.
-    if (settings['Penitent One']) discSpells['Penance'][0].coeff = discSpells['PenanceTick'][0].coeff * (0.84 * 2); 
+    if (settings['Penitent One']) discSpells['PenanceTick'][0].coeff = discSpells['PenanceTick'][0].coeff * (0.84 * 2); 
     //
 
     // === Soulbinds ===

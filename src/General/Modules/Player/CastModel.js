@@ -63,9 +63,9 @@ class CastModel {
 
   setDefaults = (spec, contentType, modelID) => {
     this.fightInfo = {
-      hps: 11000,
-      rawhps: 12940,
-      dps: 1000,
+      hps: 12500,
+      rawhps: 14940,
+      dps: 1200,
       fightLength: 340,
       reportID: "Default",
       bossName: "Default",
@@ -152,6 +152,13 @@ class CastModel {
     } else if (spec === SPEC.DISCPRIEST) {
       if (modelID === "Kyrian Evangelism") {
         this.modelName = "Kyrian Evangelism";
+        spellList = discPriestDefaultSpellData(contentType);
+        specialQueries = discPriestDefaultSpecialQueries(contentType);
+        this.baseStatWeights = discPriestDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
+      }
+      else if (modelID === "Venthyr Evangelism") {
+        this.modelName = "Venthyr Evangelism";
         spellList = discPriestDefaultSpellData(contentType);
         specialQueries = discPriestDefaultSpecialQueries(contentType);
         this.baseStatWeights = discPriestDefaultStatWeights(contentType);

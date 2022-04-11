@@ -454,6 +454,9 @@ class Player {
         else if (this.getActiveModel(contentType).modelName.includes("Necrolord")) this.setCovenant("necrolord");
         else if (this.getActiveModel(contentType).modelName.includes("Kyrian")) this.setCovenant("kyrian");
       }
+      else if (this.spec === "Discipline Priest") {
+        this.getActiveModel("Raid").setRampInfo(this.activeStats);
+      }
     } else {
       // This is a critical error that could crash the app so we'll reset models to defaults
       this.activeModelID["Raid"] = 0;
@@ -658,9 +661,10 @@ class Player {
     } else if (spec === SPEC.DISCPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Kyrian Evangelism", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
+      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Evangelism", 2));
 
       this.activeStats = {
-        intellect: 2150,
+        intellect: 2250,
         haste: 940,
         crit: 650, 
         mastery: 220, 
