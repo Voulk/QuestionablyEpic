@@ -25,7 +25,6 @@ export function getGemStatLoadout(socketsAvailable, socketedPieces, socketedColo
           }
       }
     }
-    //console.log(bonus_stats);
     return bonus_stats;
 }
 

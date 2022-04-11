@@ -34,15 +34,12 @@ export function buildWepCombosUF(player, itemList) {
   let off_hands = filterItemListByType(itemList, "Offhands");
   let two_handers = filterItemListByType(itemList, "2H Weapon");
 
-  //console.log("MH: " + main_hands.length + ". OH: " + off_hands.length + ". 2H: " + two_handers.length);
 
   for (let i = 0; i < main_hands.length; i++) {
     // Some say j is the best variable for a nested loop, but are they right?
     let main_hand = main_hands[i];
     for (let k = 0; k < off_hands.length; k++) {
       let off_hand = off_hands[k];
-
-      //console.log("Wep Loop" + i + "/" + k + ". " + main_hand.level + ". " + off_hand.level);
 
       if (main_hand.vaultItem && off_hand.vaultItem) {
         // If both main hand and off hand are vault items, then we can't make a combination out of them.
@@ -64,7 +61,7 @@ export function buildWepCombosUF(player, itemList) {
 
         item.softScore = main_hand.softScore + off_hand.softScore;
         item.offhandID = off_hand.id;
-        //console.log("COMBO: " + main_hand.level + " - " + off_hand.level + ". Combined: " + item.level);
+
         wep_list.push(item);
       }
     }
@@ -75,7 +72,7 @@ export function buildWepCombosUF(player, itemList) {
   }
 
   wep_list.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
-  //console.log(JSON.stringify(wep_list));
+
   return wep_list.slice(0, 9);
 }
 
@@ -102,7 +99,6 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   }
 
   const result = new UpgradeFinderResult(itemPoss, completedItemList, contentType);
-  //console.log(result);
   // console.log("=== Upgrade Finder Finished ===");
   apiSendUpgradeFinder(player, contentType);
 
@@ -199,7 +195,6 @@ function buildItemPossibilities(player, contentType, playerSettings) {
     }
   }
 
-  // console.log("Tokens: " + Object.keys(tokenDB).length);
 
   // --------------------------
   // Take care of Tokens >:(
@@ -208,10 +203,8 @@ function buildItemPossibilities(player, contentType, playerSettings) {
   /*
   for (const [key, value] of Object.entries(tokenDB)) {
     const rawToken = value;
-    //  console.log(rawToken);
 
     if ("encounterId" in rawToken && rawToken.specs.includes(player.getSpec())) {
-      // console.log("Player Covenant: " + player.getCovenant());
       const newItemIDs = rawToken[player.getCovenant()];
       const itemSource = { instanceId: 1190, encounterId: rawToken.encounterId };
 
@@ -222,7 +215,6 @@ function buildItemPossibilities(player, contentType, playerSettings) {
           if (checkItemViable(rawItem, player)) {
             const itemLevel = getSetItemLevel(itemSource, playerSettings, x, rawItem.slot);
             const item = buildItem(player, contentType, rawItem, itemLevel, itemSource);
-            //console.log(item);
             itemPoss.push(item);
           }
         }
@@ -230,7 +222,6 @@ function buildItemPossibilities(player, contentType, playerSettings) {
     }
   } */
 
-  //console.log(itemPoss.length);
   return itemPoss; // TODO: Remove Slice. It's just for testing in a smaller environment.
 }
 
@@ -238,7 +229,6 @@ function buildItemPossibilities(player, contentType, playerSettings) {
 function processItem(item, baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
   let newItemList = [...baseItemList];
   newItemList.push(item);
-  //console.log(player);
   const wepList = buildWepCombosUF(player, newItemList);
   const newTGSet = runTopGear(newItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel);
 
@@ -253,7 +243,6 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
 }
 
 function checkItemViable(rawItem, player) {
-  //console.log(rawItem);
   const spec = player.getSpec();
   const acceptableArmorTypes = getValidArmorTypes(spec);
   const acceptableWeaponTypes = getValidWeaponTypes(spec, "Weapons");

@@ -135,7 +135,6 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
     bonus_stats.hps = baseThroughput * (1 - effect.expectedOverhealing);
     bonus_stats.dps = baseThroughput * player.getStatPerc("Crit"); // Winds of Winter critting doesn't appear to funnel back to it's absorb but further analysis is required.
 
-    //console.log("Crit Healing Perc: " + critHealingPerc + ". Player Crit: " + playerCrit + ". EffThroughput: " + effectiveThroughput);
     
   }
   else if (effectName === "Chaos Bane" && contentType === "Raid") {

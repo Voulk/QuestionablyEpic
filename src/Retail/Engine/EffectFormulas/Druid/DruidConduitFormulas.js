@@ -45,7 +45,6 @@ export const getDruidConduit = (conduitID, player, contentType, conduitLevel) =>
     let wildGrowthHPS = player.getSpellHPS(48438, contentType);
 
     let wildGrowthPercentIncrease = trait_bonus * 0.26;
-    //console.log(wildGrowthHPS);
     bonus_stats.HPS = wildGrowthHPS * wildGrowthPercentIncrease;
   }
 
