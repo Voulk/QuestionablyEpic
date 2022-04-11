@@ -43,7 +43,6 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
     if (effectType === "unity") {
       effectType = 'spec legendary'
       effectName = getUnityEffect(player);
-      console.log("Unity: " + effectName);
     }
     if (effect.type === "special") {
       // A special effect is one that appears on an item slot where an effect isn't usually expected.

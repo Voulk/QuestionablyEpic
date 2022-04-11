@@ -91,7 +91,6 @@ export function buildBestDomSet(itemSet, player, castModel, contentType, slots) 
         // Unholy Set
         score += setScores['Unholy']
         }
-        //console.log(results[x] + ": " + score);
         
         scores.push({"set": results[x], "score": score});
     }
