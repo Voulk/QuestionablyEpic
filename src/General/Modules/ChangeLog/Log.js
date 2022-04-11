@@ -10,6 +10,14 @@
 export const changeLog = [
   {
     version: "9.2 / 2.5.3",
+    update: 14,
+    date: "11th April",
+    changes: [
+      "Strength and agility items will no longer show in Upgrade Finder.",
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
     update: 13,
     date: "10th April",
     changes: [

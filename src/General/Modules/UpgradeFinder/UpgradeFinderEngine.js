@@ -81,8 +81,6 @@ export function buildWepCombosUF(player, itemList) {
 
 export function runUpgradeFinder(player, contentType, currentLanguage, playerSettings, userSettings) {
   // TEMP VARIABLES
-  //const playerSettings = {raid: 3, dungeon: 15, pvp: 4};
-  //
 
   const completedItemList = [];
 
@@ -267,11 +265,14 @@ function checkItemViable(rawItem, player) {
                       (rawItem.itemClass === 4 && acceptableArmorTypes.includes(rawItem.itemSubClass)) ||
                       ((rawItem.slot === "Holdable" || rawItem.slot === "Offhand" || rawItem.slot === "Shield") && acceptableOffhands.includes(rawItem.itemSubClass)) ||
                       (rawItem.itemClass === 2 && acceptableWeaponTypes.includes(rawItem.itemSubClass))
+  
   // If an item has a class restriction, make sure that our spec is included.
   const classCheck = (classRestriction === "" || classRestriction.includes(spec))
-  //if (rawItem["id"] === 189839) console.log("ANDUIN RING: " + classCheck + "/" + classRestriction);
-  return slotCheck && classCheck;
 
+  // Strength / agi items appear in the database, but shouldn't appear in the Upgrade Finder since they are just clutter. 
+  const statCheck = !('offspecItem' in rawItem); // We'll exclude any agi / str gear from our results since these will never be upgrades. 
+
+  return slotCheck && classCheck && statCheck;
 }
 
 function sumObjectsByKey(...objs) {
