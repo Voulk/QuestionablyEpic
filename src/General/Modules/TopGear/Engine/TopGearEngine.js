@@ -42,6 +42,7 @@ function setupPlayer(player, contentType, castModel) {
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
   //newPlayer.dominationGemRanks = player.dominationGemRanks;
   newPlayer.activeModelID = player.activeModelID;
+  newPlayer.covenant = player.covenant;
 
   return newPlayer;
 }
@@ -225,7 +226,11 @@ function createSets(itemList, rawWepCombos, spec) {
                           for (var finger2 = 1; finger2 < slotLengths.Finger; finger2++) {
                             softScore.finger2 = splitItems.Finger[finger2].softScore;
 
-                            if (splitItems.Finger[finger].id !== splitItems.Finger[finger2].id && finger < finger2) {
+                            // Auto-delete sets that have matching ring IDs, unless one of the IDs is Shadowghast Ring in which case we'll allow it.
+                            if (finger < finger2 && 
+                                ((splitItems.Finger[finger].id !== splitItems.Finger[finger2].id) ||
+                                (splitItems.Finger[finger].id === 178926 || splitItems.Finger[finger2].id === 178926))) {
+
                               for (var trinket = 0; trinket < slotLengths.Trinket - 1; trinket++) {
                                 softScore.trinket = splitItems.Trinket[trinket].softScore;
 
@@ -280,7 +285,7 @@ function buildDifferential(itemSet, primeSet, player, contentType) {
   let differentials = {
     items: [],
     scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
-    rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore) / player.getInt(contentType)) * player.getHPS(contentType)),
+    rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore) / primeSet.hardScore) * player.getHPS(contentType)),
   };
 
   for (var x = 0; x < primeList.length; x++) {
@@ -447,13 +452,20 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
   if (player.spec === "Discipline Priest" && contentType === "Raid") {
-    // Setup ramp cast sequences
-    const onUseTrinkets = itemSet.onUseTrinkets.map((trinket) => trinket.name);
-    const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, castModel.modelName, ["Rapture"]);
-    const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, castModel.modelName, ["Rapture"]);
 
     // Setup any ramp settings or special effects that need to be taken into account.
-    const rampSettings = { Pelagos: true };
+    let rampSettings = { Pelagos: true };
+    let specialSpells = ["Rapture"];
+    // Setup ramp cast sequences
+    const onUseTrinkets = itemSet.onUseTrinkets.map((trinket) => trinket.name);
+    if (effectList.filter(effect => effect.name === "DPriest T28-4").length > 0) {
+      // We are wearing 4pc and should add it to both Ramp Settings (to include the PotDS buff) and specialSpells (to alter our cast sequences).
+      rampSettings["4T28"] = true; 
+      specialSpells.push("4T28");
+    }
+    const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
+    const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
+
     if (onUseTrinkets !== null && onUseTrinkets.length > 0) {
       itemSet.onUseTrinkets.forEach((trinket) => {
         rampSettings[trinket.name] = getTrinketValue(trinket.name, trinket.level);
@@ -517,6 +529,12 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // mathematically comprehensive in future. Disc Priest will be swapped to the new tech very soon.
   if ((player.spec === "Holy Paladin" || player.spec === "Restoration Shaman" || player.spec === "Holy Priest") && "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
     hardScore -= 48;
+  }
+  // Fallen Order has a bug whereby having more than ~33% haste causes clones to behave irresponsibly and the average casts per clone drops heavily.
+  // A more precise formula could be offered by deducting the healing loss from the set. Instead this is a rather rougher patch which should automatically exclude
+  // any sets over the breakpoint. 
+  if (player.spec === "Mistweaver Monk" && setStats.haste > 1120) {
+    hardScore -= 200;
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;

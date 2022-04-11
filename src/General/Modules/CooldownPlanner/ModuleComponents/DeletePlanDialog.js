@@ -11,7 +11,18 @@ const deleteTheme = createTheme({
 });
 
 export default function AddPlanDialog(props) {
-  const { handleDeletePlanDialogClose, handleDeletePlanDialogClickOpen, currentPlan, openDeletePlanDialog, cooldownObject, currentBoss, setCurrentPlan, setData, currentDifficulty } = props;
+  const {
+    handleDeletePlanDialogClose,
+    handleDeletePlanDialogClickOpen,
+    currentPlan,
+    openDeletePlanDialog,
+    cooldownObject,
+    currentBoss,
+    setCurrentPlan,
+    setData,
+    currentDifficulty,
+    disabledCheck,
+  } = props;
   const [deleteChecker, setdeleteChecker] = useState("");
   const { t, i18n } = useTranslation();
 
@@ -33,13 +44,13 @@ export default function AddPlanDialog(props) {
 
   return (
     <div>
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={deleteTheme}>
-          <Button key={8} variant="outlined" color="primary" onClick={handleDeletePlanDialogClickOpen} disabled={currentPlan === "default" ? true : false}>
+      {/* <StyledEngineProvider injectFirst> */}
+        {/* <ThemeProvider theme={deleteTheme}> */}
+          <Button key={8} variant="outlined" color="delete" onClick={handleDeletePlanDialogClickOpen} disabled={currentPlan === "default" || disabledCheck ? true : false || currentPlan === ""}>
             {t("CooldownPlanner.DeletePlanDialog.ButtonLabel")}
           </Button>
-        </ThemeProvider>
-      </StyledEngineProvider>
+        {/* </ThemeProvider> */}
+      {/* </StyledEngineProvider> */}
 
       <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openDeletePlanDialog}>
         <DialogTitle id="simple-dialog-title">{t("CooldownPlanner.DeletePlanDialog.HeaderTitle")}</DialogTitle>
@@ -56,20 +67,20 @@ export default function AddPlanDialog(props) {
           />
         </DialogContent>
         <DialogActions>
-          <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={deleteTheme}>
+          {/* <StyledEngineProvider injectFirst> */}
+            {/* <ThemeProvider theme={deleteTheme}> */}
               <Button
                 key={"deletePlanButton"}
                 variant="contained"
-                color="primary"
+                color="delete"
                 onClick={(e) => deletePlan(currentPlan, currentBoss, currentDifficulty)}
                 size="small"
                 disabled={deleteChecker === "Delete" || deleteChecker === "delete" ? false : true}
               >
                 {t("CooldownPlanner.DeletePlanDialog.ButtonLabel")}
               </Button>
-            </ThemeProvider>
-          </StyledEngineProvider>
+            {/* </ThemeProvider> */}
+          {/* </StyledEngineProvider> */}
         </DialogActions>
       </Dialog>
     </div>

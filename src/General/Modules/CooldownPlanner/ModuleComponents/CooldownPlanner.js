@@ -1,7 +1,7 @@
 import React, { useEffect, forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "@material-table/core";
 import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search, Tooltip } from "@mui/icons-material";
-import { Button, TextField, MenuItem, Paper, Grid } from "@mui/material";
+import { Button, TextField, MenuItem, Paper, Grid, FormControl, InputLabel } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
 import { bossList } from "../Data/CooldownPlannerBossList";
 import { useTranslation } from "react-i18next";
@@ -29,6 +29,7 @@ import { CooldownPlannerTheme } from "./Styles/CooldownPlannerTheme";
 import { TableStyles } from "./Styles/TableStyles";
 import { cooldownDB } from "../Data/CooldownDB";
 import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
+import ls from "local-storage";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -105,9 +106,9 @@ export default function CooldownPlanner(props) {
   const [currentBoss, setCurrentBoss] = useState(2512);
   const [currentDifficulty, setDifficulty] = useState("Mythic");
   // debug && console.log(currentBoss);
-  const [currentPlan, setCurrentPlan] = useState("default");
+  const [currentPlan, setCurrentPlan] = useState("");
   // debug && console.log(currentPlan);
-  const [data, setData] = useState(cooldownObject.getCooldowns(currentBoss, currentDifficulty)["default"]);
+  const [data, setData] = useState([]);
 
   const getBossPlanNames = (boss, currentDif) => {
     return Object.keys(cooldownObject.getCooldowns(boss, currentDif));
@@ -133,12 +134,15 @@ export default function CooldownPlanner(props) {
 
   /* -------------------------------------- Changes the Boss -------------------------------------- */
   const changeBoss = (newBoss, currentDif) => {
-    loadPlanData(newBoss, "default", currentDif);
+    setCurrentBoss(newBoss);
+    setCurrentPlan("");
+    setData([]);
   };
 
   const changeDifficulty = (newBoss, currentDif) => {
     setDifficulty(currentDif);
-    loadPlanData(newBoss, "default", currentDif);
+    setCurrentPlan("");
+    setData([]);
   };
 
   let columns = [
@@ -158,7 +162,7 @@ export default function CooldownPlanner(props) {
       /* ----------- Here the user can select which boss ability the cooldown should cover. ----------- */
       title: t("CooldownPlanner.TableLabels.BossAbilityLabel"),
       field: "bossAbility",
-      width: "8%",
+      width: "6%",
       cellStyle: TableStyles.cellStyle.thickRightBorder,
       headerStyle: TableStyles.headerStyle,
       // Search function for abilities as they are stores as numbers. Works for all languages
@@ -169,8 +173,8 @@ export default function CooldownPlanner(props) {
           .flat();
         return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
       },
-      render: (rowData) => BossAbilityRender(rowData, currentBoss),
-      editComponent: (props) => BossAbilitySelector(props, currentBoss),
+      render: (rowData) => BossAbilityRender(rowData, currentBoss, currentDifficulty),
+      editComponent: (props) => BossAbilitySelector(props, currentBoss, currentDifficulty),
     },
 
     /* -------------------------------------------------------------------------- */
@@ -272,7 +276,7 @@ export default function CooldownPlanner(props) {
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
       render: (rowData) => NameRender(rowData, "name1", "class1"),
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
-      editComponent: (props, i) => HealerSelector(props, "name1", "class1", "cooldown1"),
+      editComponent: (props, i) => HealerSelector(props, "name1", "class1", "Cooldown1"),
     },
     {
       title: t("Class"),
@@ -339,7 +343,7 @@ export default function CooldownPlanner(props) {
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
       render: (rowData) => NameRender(rowData, "name2", "class2"),
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
-      editComponent: (props, i) => HealerSelector(props, "name2", "class2", "cooldown2"),
+      editComponent: (props, i) => HealerSelector(props, "name2", "class2", "Cooldown2"),
     },
     {
       title: t("Class"),
@@ -405,7 +409,7 @@ export default function CooldownPlanner(props) {
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
       render: (rowData) => NameRender(rowData, "name3", "class3"),
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
-      editComponent: (props, i) => HealerSelector(props, "name3", "class3", "cooldown3"),
+      editComponent: (props, i) => HealerSelector(props, "name3", "class3", "Cooldown3"),
     },
     {
       title: t("Class"),
@@ -471,7 +475,7 @@ export default function CooldownPlanner(props) {
       /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
       render: (rowData) => NameRender(rowData, "name4", "class4"),
       /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
-      editComponent: (props, i) => HealerSelector(props, "name4", "class4", "cooldown4"),
+      editComponent: (props, i) => HealerSelector(props, "name4", "class4", "Cooldown4"),
     },
     {
       title: t("Class"),
@@ -518,8 +522,10 @@ export default function CooldownPlanner(props) {
   /* ------------- When the currently loaded data is updated the props.update function ------------ */
   /* ------------- passed from the cooldown planner module will update the state also. ------------ */
   useEffect(() => {
-    props.update(data);
+    props.update(data, currentBoss, currentLanguage);
   }, [data]);
+
+  const RosterCheck = ls.get("healerInfo") === null ? true : ls.get("healerInfo").length === 0 ? true : false;
 
   return (
     <StyledEngineProvider injectFirst>
@@ -527,7 +533,7 @@ export default function CooldownPlanner(props) {
         <MaterialTable
           icons={tableIcons}
           columns={columns}
-          data={data.sort((a, b) => (a.time > b.time && 1) || -1)}
+          data={data === [] ? data : data.sort((a, b) => (a.time > b.time && 1) || -1)}
           style={{
             padding: 10,
           }}
@@ -545,15 +551,29 @@ export default function CooldownPlanner(props) {
             },
             /* --------------------------- Alternating Row Colour is defined here --------------------------- */
             rowStyle: (rowData, index) => {
+              if (
+                rowData.bossAbility === "Phase 1" ||
+                rowData.bossAbility === "Phase 2" ||
+                rowData.bossAbility === "Phase 3" ||
+                rowData.bossAbility === "Phase 4" ||
+                rowData.bossAbility === "Intermission"
+              ) {
+                return {
+                  height: 28,
+                  backgroundColor: "#359166",
+                  border: "1px solid #359166",
+                };
+              }
+
               if (index % 2) {
                 return {
-                  height: 30,
+                  height: 28,
                   backgroundColor: "#515151",
                   border: "1px solid #595959",
                 };
               }
               return {
-                height: 30,
+                height: 28,
                 border: "1px solid #595959",
               };
             },
@@ -591,7 +611,7 @@ export default function CooldownPlanner(props) {
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <Button variant="outlined" style={{ height: 40, width: "100%", whiteSpace: "nowrap" }} color="primary" onClick={() => healTeamDialogOpen()}>
                       {/* // TODO: Translate */}
-                      Heal Team
+                      Roster
                     </Button>
                   </Grid>
                   {/* ---------------------------------- Raid Selection Drop Down ---------------------------------- */}
@@ -616,11 +636,13 @@ export default function CooldownPlanner(props) {
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <TextField
                       sx={{ minWidth: 100, width: "100%" }}
-                      size="small"
+                      label={t("Boss")}
                       select
                       value={currentBoss}
+                      placeholder={"Boss"}
                       onChange={(e) => changeBoss(e.target.value, currentDifficulty)}
-                      disabled={currentRaid === "" ? true : false}
+                      disabled={RosterCheck}
+                      size="small"
                     >
                       {bossList
                         .filter((obj) => {
@@ -642,13 +664,14 @@ export default function CooldownPlanner(props) {
                     <TextField
                       sx={{ minWidth: 100, width: "100%" }}
                       select
+                      label={t("Difficulty")}
                       id="DifficultySelector"
                       placeholder={t("Difficulty")}
                       value={currentDifficulty}
                       onChange={(e) => changeDifficulty(currentBoss, e.target.value)}
-                      disabled={currentBoss === "" ? true : false}
+                      disabled={currentBoss === "" || RosterCheck ? true : false}
+                      size="small"
                     >
-                      w
                       {["Heroic", "Mythic"].map((key, i, arr) => {
                         let lastItem = i + 1 === arr.length ? false : true;
                         return (
@@ -665,20 +688,23 @@ export default function CooldownPlanner(props) {
                     <TextField
                       sx={{ minWidth: 100, width: "100%" }}
                       select
-                      id="RaidSelector"
-                      placeholder={t("Plan")}
+                      label={t("Plan")}
+                      id="PlanSelector"
                       value={currentPlan}
                       onChange={(e) => loadPlanData(currentBoss, e.target.value, currentDifficulty)}
-                      disabled={currentBoss === "" ? true : false}
+                      disabled={currentBoss === "" || RosterCheck ? true : false || getBossPlanNames(currentBoss, currentDifficulty).length === 1}
+                      size="small"
                     >
-                      {getBossPlanNames(currentBoss, currentDifficulty).map((key, i, arr) => {
-                        let lastItem = i + 1 === arr.length ? false : true;
-                        return (
-                          <MenuItem key={key} divider={lastItem} value={key}>
-                            {key}
-                          </MenuItem>
-                        );
-                      })}
+                      {getBossPlanNames(currentBoss, currentDifficulty)
+                        .filter((key) => key !== "default")
+                        .map((key, i, arr) => {
+                          let lastItem = i + 1 === arr.length ? false : true;
+                          return (
+                            <MenuItem key={key} divider={lastItem} value={key}>
+                              {key}
+                            </MenuItem>
+                          );
+                        })}
                     </TextField>
                   </Grid>
 
@@ -691,6 +717,10 @@ export default function CooldownPlanner(props) {
                       currentDifficulty={currentDifficulty}
                       loadPlanData={loadPlanData}
                       handleAddPlanDialogClickOpen={handleAddPlanDialogClickOpen}
+                      disabledCheck={RosterCheck}
+                      changeDifficulty={changeDifficulty}
+                      currentRaid={currentRaid}
+                      changeBoss={changeBoss}
                     />
                   </Grid>
 
@@ -704,6 +734,7 @@ export default function CooldownPlanner(props) {
                       currentBoss={currentBoss}
                       currentDifficulty={currentDifficulty}
                       loadPlanData={loadPlanData}
+                      disabledCheck={RosterCheck}
                     />
                   </Grid>
 
@@ -718,24 +749,25 @@ export default function CooldownPlanner(props) {
                       cooldownObject={cooldownObject}
                       currentBoss={currentBoss}
                       currentDifficulty={currentDifficulty}
+                      disabledCheck={RosterCheck}
                     />
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <ImportPlanDialog cooldownObject={cooldownObject} loadPlanData={loadPlanData} />
+                    <ImportPlanDialog cooldownObject={cooldownObject} loadPlanData={loadPlanData} disabledCheck={RosterCheck} />
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <ExportPlanDialog data={data} boss={currentBoss} planName={currentPlan} plan={data} currentDifficulty={currentDifficulty} />
+                    <ExportPlanDialog data={data} boss={currentBoss} planName={currentPlan} plan={data} currentDifficulty={currentDifficulty} disabledCheck={RosterCheck} currentPlan={currentPlan} />
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <ExportERTDialog ertListTimeIcons={ertListTimeIcons} boss={currentBoss} currentPlan={currentPlan} />
+                    <ExportERTDialog ertListTimeIcons={ertListTimeIcons} boss={currentBoss} currentPlan={currentPlan} disabledCheck={RosterCheck} />
                   </Grid>
                 </Grid>
 
                 <Grid item xs={12} sm={6} md={12} lg={6} xl={3}>
-                  {currentBoss === "" || currentPlan === "default" ? null : <MTableToolbar {...props} />}
+                  {currentBoss === "" || currentPlan === "default" || currentPlan === "" ? null : <MTableToolbar {...props} />}
                 </Grid>
               </Grid>
             ),

@@ -35019,20 +35019,6 @@ export const bonus_IDs = {
     },
     "item_limit_category": 493
   },
-  "7947": {
-    "id": 7947,
-    "effect": {
-      "id": 140087,
-      "index": 0,
-      "spell": {
-        "id": 364999,
-        "name": "Crystallized",
-        "icon": "trade_engineering"
-      }
-    },
-    "item_limit_category": 493,
-    "socket": 1
-  },
   "7955": {
     "id": 7955,
     "effect": {

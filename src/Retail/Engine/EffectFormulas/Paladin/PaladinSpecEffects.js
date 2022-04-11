@@ -13,7 +13,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
   // Tier Sets
-  if (effectName === "HPaladin T28-2") {
+  if (effectName === "Paladin T28-2") {
     // Holy Paladin Sepulcher tier set 2pc
     // Casting Word of Glory causes your next Light of Dawn to heal for 50% more and cast twice. Cannot occur more often than once per 30 sec.
     // This is an INCREDIBLY strong 2pc bonus.
@@ -46,7 +46,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
 
     
   }
-  else if (effectName === "Hpaladin T28-4") {
+  else if (effectName === "Paladin T28-4") {
     // Holy Paladin Sepulcher tier set 4pc
     // This should be an accurate formula, though it's a little bit of a drag and could almost certainly be simplified to half as many lines.
     const expectedProcsPerMinute = 4.8 * player.getSpellCPM(IDLIGHTOFDAWN, contentType) * 2 * 0.5; // LoD targets x LoD CPM x 2 x 0.5 
@@ -72,9 +72,9 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     /* ---------------------------------------------------------------------------------------------- */
       const legendaryBonus = 0.1;
       const averageStacks = 4.9;
-      const backlashDamage = 0.25; 
-      const beaconHealing = 0.7;
-      const beaconOverhealing = 0.6;
+      const backlashDamage = 0.2; 
+      const beaconHealing = 0.8;
+      const beaconOverhealing = 0.4;
 
       const baseThroughput = legendaryBonus * averageStacks * player.getSpellHPS(IDMARTYR, contentType);
 
@@ -124,6 +124,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     /* ---------------------------------------------------------------------------------------------- */
     const baseHealingInc = processPaladinRawHealing(player.getStatPerc("Crit"));
     const lightOfDawnCPM = player.getSpellCPM(IDLIGHTOFDAWN, contentType);
+    const wordOfGloryCPM = player.getSpellCPM(IDWORDOFGLORY, contentType);
     const lightOfDawnTargets = contentType === "Raid" ? 4.9 : 3.1;
     let lightOfDawnUptime = Math.min(1, (lightOfDawnCPM * 8) / 60); // Technically doesn't account for the slight possible loss from casting LoD twice in a short period.
     let averageMasteryEff = player.getStatPerc("Mastery"); // TODO: Improve with logs data.
@@ -133,12 +134,12 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     const HPSMasteryBonus = player.getHPS(contentType) * mastDiff * lightOfDawnUptime * percentHealingToHitTargets;
 
     /* -------------------------------- Calculate Word of Glory bonus ------------------------------- */
-    const buffedWordOfGlories = lightOfDawnCPM;
+    const buffedWordOfGlories = wordOfGloryCPM;
     const oneWordOfGlory = player.getStatMultiplier("ALL") * 3.15 * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.92;
-    const oneLightOfDawn = player.getStatMultiplier("ALL") * 1.05 * lightOfDawnTargets * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.78;
+    //const oneLightOfDawn = player.getStatMultiplier("ALL") * 1.05 * lightOfDawnTargets * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.78;
 
     const wordOfGloryMasteryCoeff = (1 + (player.getStatPerc("Mastery") - 1) * 1.5) / player.getStatPerc("Mastery");
-    const oneWordOfGloryBonus = Math.max(0, oneWordOfGlory * wordOfGloryMasteryCoeff - oneLightOfDawn);
+    const oneWordOfGloryBonus = Math.max(0, oneWordOfGlory * wordOfGloryMasteryCoeff - oneWordOfGlory);
     const HPSWordOfGlory = (buffedWordOfGlories * oneWordOfGloryBonus) / 60;
 
     bonus_stats.hps = Math.round(HPSMasteryBonus + HPSWordOfGlory);
@@ -162,7 +163,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     /*                                    The Magistrates Judgment                                    */
     /* ---------------------------------------------------------------------------------------------- */
     const procChance = 0.6;
-    const judgementCPM = 4.1;
+    const judgementCPM = 2.4;
     const healingOneHolyPower = getOneHolyPower(player, contentType);
 
     bonus_stats.hps = (procChance * judgementCPM * healingOneHolyPower) / 60;
@@ -209,10 +210,14 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
       numCopies: 3,
       copyStrength: 0.5,
     };
-  
-    bonus_stats = getPaladinCovAbility("Pelagos", player, contentType, specialSettings);
-
-
+    if (player.getModelName(contentType).includes("Kyrian") || (player.getModelName(contentType) === "Default" && player.getCovenant() === "kyrian")) {    
+      bonus_stats = getPaladinCovAbility("Pelagos", player, contentType, specialSettings);
+    }
+    else {
+      bonus_stats.hps = -3;
+      return bonus_stats;
+    }
+    
   }
   else if (effectName === "Duty-Bound Gavel") {
     /* ---------------------------------------------------------------------------------------------- */
@@ -222,8 +227,33 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
       extraSpells: 1,
       extraCharge: 1,
     };
-  
-    bonus_stats = getPaladinCovAbility("Emeni", player, contentType, specialSettings);
+    if (player.getModelName(contentType) === "Necrolord Default" || (player.getModelName(contentType) === "Default" && player.getCovenant() === "necrolord")) {
+      bonus_stats = getPaladinCovAbility("Emeni", player, contentType, specialSettings);
+    }
+    else {
+      bonus_stats.hps = -3;
+      return bonus_stats;
+    }
+      
+  }
+  else if (effectName === "Radiant Embers") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Radiant Embers                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    const specialSettings = {
+      extraSpells: 1,
+      extraCharge: 1,
+    };
+
+    if (player.getModelName(contentType).includes("Venthyr") || (player.getModelName(contentType) === "Default" && player.getCovenant() === "venthyr")) {    
+      bonus_stats = getPaladinCovAbility("Theotar", player, contentType, specialSettings);
+      bonus_stats.hps = (bonus_stats.hps * 0.5) || 0;
+    }
+    else {
+      bonus_stats.hps = -3;
+      return bonus_stats;
+    }
+
   }
 
   // Consider building in support for the conduit via SimC grab or something similar.

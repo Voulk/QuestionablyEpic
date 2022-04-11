@@ -447,6 +447,13 @@ class Player {
     if ((contentType === "Raid" || contentType === "Dungeon") && id < this.castModels.length) {
       // Check that it's a valid ID.
       this.activeModelID[contentType] = id;
+
+      // Paladin
+      if (this.spec === "Holy Paladin") {
+        if (this.getActiveModel(contentType).modelName.includes("Venthyr")) this.setCovenant("venthyr");
+        else if (this.getActiveModel(contentType).modelName.includes("Necrolord")) this.setCovenant("necrolord");
+        else if (this.getActiveModel(contentType).modelName.includes("Kyrian")) this.setCovenant("kyrian");
+      }
     } else {
       // This is a critical error that could crash the app so we'll reset models to defaults
       this.activeModelID["Raid"] = 0;
@@ -467,6 +474,9 @@ class Player {
 
   getHPS = (contentType) => {
     return this.getActiveModel(contentType).getFightInfo("hps");
+  };
+  getModelName = (contentType) => {
+    return this.getActiveModel(contentType).modelName;
   };
   getDPS = (contentType) => {
     return this.getActiveModel(contentType).getFightInfo("dps");
@@ -618,13 +628,14 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.castModels.push(new CastModel(spec, "Raid", "Venthyr Default", 2));
       this.castModels.push(new CastModel(spec, "Raid", "Venthyr Maraads", 3));
+      this.castModels.push(new CastModel(spec, "Raid", "Necrolord Default", 4));
 
       this.activeStats = {
         intellect: 2000,
-        haste: 800,
-        crit: 240,
-        mastery: 650,
-        versatility: 380,
+        haste: 850,
+        crit: 280,
+        mastery: 900,
+        versatility: 520,
         stamina: 1900,
       };
     } else if (spec === SPEC.RESTOSHAMAN) {

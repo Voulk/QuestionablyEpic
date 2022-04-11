@@ -124,7 +124,8 @@
         "MistweaverMonk": "Nebelwirker Mönch",
         "RestorationShaman": "Wiederherstellung Schamane",
         "DeathKnight": "Todesritter",
-        "ShadowPriest": "Schattenpriester"
+        "ShadowPriest": "Schattenpriester",
+        "Druid": "Druide"
       },
       "ChartLabels": {
         "_Comments1": "Translations for HD Charts",
@@ -144,7 +145,7 @@
         "BossAbilityLabel": "Boss Ability",
         "NotesLabel": "Notes",
         "OffCooldownLabel": "Off-CD",
-        "HealTeamHeader": "Heal Team",
+        "HealTeamHeader": "Roster",
         "TypeSelector": "Formats"
       },
       "UserInputs": {
@@ -166,6 +167,8 @@
       },
       "ClassAbilities": {
         "NoCD": "No Cooldown",
+        "Potion/Healthstone": "Potion/Healthstone",
+        "Personals": "Personals",
         "undefined": "",
         "HolyPaladinComment": "Holy Paladin Class Cooldowns",
         "31821": "Aura Mastery",

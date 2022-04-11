@@ -41,6 +41,10 @@ export default function RetailSettings(props) {
   /* -------------------------------------- Auto-Socket State ------------------------------------- */
   const [autoSocketValue, setAutoSocketValue] = useState(props.userSettings.autoSocket);
 
+  /* ------------------------------- Upgrade Finder HPS Toggle --------------------------------- */
+  const [upFinderToggle, setupFinderToggle] = useState(props.userSettings.upFinderToggle);
+
+
   /* ----------------------------------- Domination Socket State ---------------------------------- */
   const [replaceDomGems, setReplaceDomGems] = useState(props.userSettings.replaceDomGems);
 
@@ -73,6 +77,14 @@ export default function RetailSettings(props) {
     setSpecBuild(value);
     props.singleUpdate(props.player);
   };
+
+  const updateUpFinderToggle = (value) => {
+    //props.editSettings("vaultDomGem", value)
+    props.editSettings("upFinderToggle", value);
+    setupFinderToggle(value);
+  };
+
+  
 
   return (
     <Grid container spacing={2} direction="row">
@@ -220,6 +232,41 @@ export default function RetailSettings(props) {
               </MenuItem>
               <MenuItem value={false} style={{ justifyContent: "center" }}>
                 {t("No")}
+              </MenuItem>
+            </TextField>
+          </Tooltip>
+        </Grid>
+      ) : (
+        ""
+      )}
+        {/* ------------------------------------- Upgrade Finder HPS ---------------------------------------- */}
+        {props.autoSocket === true ? (
+        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+          <Tooltip
+            title={
+              <Typography align="center" variant="body2">
+                {t("Settings.Retail.Setting4Tooltip")}
+              </Typography>
+            }
+            placement="top-start"
+          >
+            <TextField
+              className={classes.select}
+              value={upFinderToggle}
+              InputProps={{ variant: "outlined" }}
+              select
+              variant="outlined"
+              size="small"
+              fullWidth
+              onChange={(e) => updateUpFinderToggle(e.target.value)}
+              label={t("Settings.Retail.Setting4Title")}
+              style={{ textAlign: "center", minWidth: 120 }}
+            >
+              <MenuItem divider value={'percent'} style={{ justifyContent: "center" }}>
+                {"Show % Upgrade"}
+              </MenuItem>
+              <MenuItem value={'hps'} style={{ justifyContent: "center" }}>
+                {"Show HPS"}
               </MenuItem>
             </TextField>
           </Tooltip>

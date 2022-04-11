@@ -162,6 +162,21 @@ export const cooldownDB = [
   },
   {
     name: {
+      en: "Symbol of Hope",
+      fr: "Symbole d’espoir",
+      de: "Symbol der Hoffnung",
+      ru: "Символ надежды",
+      cn: "希望象征",
+    },
+    guid: 64901,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_holy_symbolofhope.jpg").default,
+    duration: 4,
+    cooldown: 180,
+    class: "HolyPriest",
+    cdPlannerMenuActive: true,
+  },
+  {
+    name: {
       en: "Rapture",
       fr: "Extase",
       de: "Euphorie",
@@ -235,21 +250,6 @@ export const cooldownDB = [
     cooldown: 60,
     class: "Priest",
     cdPlannerMenuActive: true,
-  },
-  {
-    name: {
-      en: "Fae Guardians",
-      fr: "Gardiens faë",
-      de: "Faewächter",
-      ru: "Волшебные стражи",
-      cn: "法夜守护者",
-    },
-    guid: 327661,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_ardenweald_priest.jpg").default,
-    duraton: 1,
-    cooldown: 90,
-    class: "Priest",
-    cdPlannerMenuActive: false,
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Druid                                             */
@@ -361,6 +361,7 @@ export const cooldownDB = [
     class: "RestorationDruid",
     cdPlannerMenuActive: true,
   },
+
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Monk                                              */
   /* ---------------------------------------------------------------------------------------------- */
@@ -631,6 +632,86 @@ export const cooldownDB = [
     duration: 10,
     cooldown: 120,
     class: "DeathKnight",
+    cdPlannerMenuActive: true,
+  },
+  // TODO: Apply Utilities
+  {
+    name: {
+      en: "Stampeding Roar",
+      fr: "Ruée rugissante",
+      de: "Anstachelndes Gebrüll",
+      ru: "Тревожный рев",
+      cn: "狂奔怒吼",
+    },
+    guid: 77764,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_druid_stampedingroar_cat.jpg").default,
+    duration: 8,
+    cooldown: 120,
+    class: "RestorationDruid",
+    type: "utility",
+    cdPlannerMenuActive: true,
+  },
+  {
+    name: {
+      en: "Stampeding Roar",
+      fr: "Ruée rugissante",
+      de: "Anstachelndes Gebrüll",
+      ru: "Тревожный рев",
+      cn: "狂奔怒吼",
+    },
+    guid: 77764,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_druid_stampedingroar_cat.jpg").default,
+    duration: 8,
+    cooldown: 120,
+    class: "Druid",
+    type: "utility",
+    cdPlannerMenuActive: true,
+  },
+
+  {
+    guid: "Potion/Healthstone",
+    name: {
+      en: "Potion/Healthstone",
+      fr: "Potion/Healthstone",
+      de: "Potion/Healthstone",
+      ru: "Potion/Healthstone",
+      cn: "Potion/Healthstone",
+    },
+    icon: require("Images/CooldownPlanner/SpellIcons/trade_alchemy_potionb5.jpg").default,
+    duration: 1,
+    // cooldown: 120,
+    class: "",
+    cdPlannerMenuActive: true,
+  },
+
+  {
+    guid: "Personals",
+    name: {
+      en: "Personals",
+      fr: "Personals",
+      de: "Personals",
+      ru: "Personals",
+      cn: "Personals",
+    },
+    icon: require("Images/CooldownPlanner/SpellIcons/inv_shield_30.jpg").default,
+    duration: 1,
+    // cooldown: 120,
+    class: "",
+    cdPlannerMenuActive: true,
+  },
+  {
+    guid: "",
+    name: {
+      en: "Remove",
+      fr: "Remove",
+      de: "Remove",
+      ru: "Remove",
+      cn: "Remove",
+    },
+    icon: "",
+    // duration: 1,
+    // cooldown: 120,
+    class: "",
     cdPlannerMenuActive: true,
   },
 ];

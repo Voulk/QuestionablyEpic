@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Typography, Grid, MenuItem, Tooltip } from "@mui/material";
 
 export default function CopyPlanDialog(props) {
-  const { handleCopyPlanDialogClose, handleCopyPlanDialogClickOpen, openCopyPlanDialog, cooldownObject, currentBoss, loadPlanData, currentPlan, currentDifficulty } = props;
+  const { handleCopyPlanDialogClose, handleCopyPlanDialogClickOpen, openCopyPlanDialog, cooldownObject, currentBoss, loadPlanData, currentPlan, currentDifficulty, disabledCheck } = props;
   const [planName, setPlanName] = useState(currentPlan);
   const [newPlanName, setNewPlanName] = useState("");
   const bossPlans = Object.keys(cooldownObject.getCooldowns(currentBoss, currentDifficulty));
@@ -35,28 +35,17 @@ export default function CopyPlanDialog(props) {
   return (
     <div>
       <Tooltip title={t("CooldownPlanner.CopyPlanDialog.ButtonTooltip")} arrow>
-        <Button key={8} variant="outlined" color="primary" onClick={handleCopyPlanDialogClickOpen}>
-          {t("CooldownPlanner.CopyPlanDialog.ButtonLabel")}
-        </Button>
+        <span>
+          <Button key={8} variant="outlined" color="primary" onClick={handleCopyPlanDialogClickOpen} disabled={disabledCheck || currentPlan === ""}>
+            {t("CooldownPlanner.CopyPlanDialog.ButtonLabel")}
+          </Button>
+        </span>
       </Tooltip>
 
       <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openCopyPlanDialog} maxWidth="xs" fullWidth>
         <DialogTitle id="simple-dialog-title">Copy Plan</DialogTitle>
         <DialogContent>
           <Grid container spacing={1} sx={{ marginTop: "4px" }}>
-            <Grid item xs={12}>
-              <Typography variant="subtitle2">{t("CooldownPlanner.CopyPlanDialog.SelectPlanTitle")}</Typography>
-              <TextField key={currentPlan} select value={planName} onChange={(e) => setPlanName(e.target.value)} fullWidth variant="outlined" size="small">
-                {cooldownObject.getBossPlanNames(currentBoss, currentDifficulty).map((key, i, arr) => {
-                  let lastItem = i + 1 === arr.length ? false : true;
-                  return (
-                    <MenuItem divider={lastItem} value={key}>
-                      {key}
-                    </MenuItem>
-                  );
-                })}
-              </TextField>
-            </Grid>
             <Grid item xs={12}>
               <Typography variant="subtitle2">{t("CooldownPlanner.CopyPlanDialog.NewPlanTitle")}</Typography>
               <TextField

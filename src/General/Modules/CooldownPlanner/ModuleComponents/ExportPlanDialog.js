@@ -4,7 +4,7 @@ import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, T
 
 export default function ExportPlanDialog(props) {
   const { t } = useTranslation();
-  const { data, planName, boss, currentDifficulty } = props;
+  const { data, planName, boss, currentDifficulty, disabledCheck, currentPlan } = props;
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -14,9 +14,34 @@ export default function ExportPlanDialog(props) {
     setOpen(false);
   };
 
+  const rosterReducer = (plan) => {
+    let roster = [];
+    plan.map((key) => {
+      if (key.name) {
+        roster.push({ name: key.name, class: key.class });
+      }
+      if (key.name1) {
+        roster.push({ name: key.name1, class: key.class1 });
+      }
+      if (key.name2) {
+        roster.push({ name: key.name2, class: key.class2 });
+      }
+      if (key.name3) {
+        roster.push({ name: key.name3, class: key.class3 });
+      }
+      if (key.name4) {
+        roster.push({ name: key.name4, class: key.class4 });
+      }
+    });
+
+    roster = roster.filter((value, index, self) => index === self.findIndex((t) => t.name === value.name && t.class === value.class));
+
+    return roster;
+  };
+
   function exportPlanEngine(planName, plan, boss) {
     let exportString = "";
-
+    let roster = JSON.stringify(rosterReducer(plan));
     let stringifiedPLan = JSON.stringify(plan);
 
     exportString =
@@ -33,10 +58,11 @@ export default function ExportPlanDialog(props) {
       "# PlanName=" +
       planName +
       "\n" +
-      "# " +
-      "Plan=" +
+      "# Plan=" +
+      stringifiedPLan +
       "\n" +
-      stringifiedPLan;
+      "# Roster=" +
+      roster;
 
     return exportString;
   }
@@ -44,7 +70,7 @@ export default function ExportPlanDialog(props) {
   return (
     <div>
       <Tooltip title={""} arrow>
-        <Button disableElevation={true} sx={{ fontSize: "14px" }} onClick={handleClickOpen} variant="outlined" color="primary">
+        <Button disableElevation={true} sx={{ fontSize: "14px" }} onClick={handleClickOpen} variant="outlined" color="primary" disabled={disabledCheck || currentPlan === ""}>
           {t("CooldownPlanner.ExportPlanDialog.ButtonLabel")}
         </Button>
       </Tooltip>

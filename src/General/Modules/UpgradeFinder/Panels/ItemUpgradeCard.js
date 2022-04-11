@@ -1,6 +1,6 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
-import { Card, CardContent, Typography, Grid, Divider } from "@mui/material";
+import { Card, CardContent, Typography, Grid, Divider, Stack } from "@mui/material";
 import { getTranslatedItemName, getItemIcon } from "../../../Engine/ItemUtilities";
 import "./ItemUpgrade.css";
 import { useTranslation } from "react-i18next";
@@ -11,9 +11,9 @@ const useStyles = makeStyles({
     minWidth: 250,
   },
   dom: {
-    borderColor: "#05d102",
+    borderColor: "#CEB600",
     //backgroundColor: "#515751",
-    borderStyle: "solid",
+    borderStyle: "dashed",
     minWidth: 250,
   },
   downgrade: {
@@ -47,7 +47,7 @@ export default function ItemCard(props) {
   const currentLanguage = i18n.language;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
   const itemDifferential = props.itemDifferential;
-  const hasDom = item.hasDomSocket;
+  const hasDom = item.isTierPiece();
   const gameType = useSelector((state) => state.gameType);
   const wowheadDomain = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
 
@@ -106,6 +106,10 @@ export default function ItemCard(props) {
     if (item.source.instanceId === -16 || item.source.encounterId === -16) {
       return t("PvPCurrency.-16");
     }
+    /* ----------------------- Creation Catalyst --------------------------------- */
+    if (item.source.instanceId === -22) {
+      return t("CreationCatalyst");
+    }
     /* -------------------------------- Conquest -------------------------------- */
     if (item.source.instanceId === -17 || item.source.encounterId === -17) {
       return t("PvPCurrency.-17");
@@ -128,11 +132,11 @@ export default function ItemCard(props) {
               }}
             >
               <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&domain=" + wowheadDomain}>
-                <div className="container-ItemCards">
+                <div className="container-ItemCards" style={{ height: props.slotPanel ? 44 : 30 }}>
                   <img
                     alt="img"
-                    width={props.slotPanel ? 54 : 28}
-                    height={props.slotPanel ? 54 : 28}
+                    width={props.slotPanel ? 42 : 28}
+                    height={props.slotPanel ? 42 : 28}
                     src={getItemIcon(item.id, gameType)}
                     style={{
                       borderRadius: 4,
@@ -147,11 +151,17 @@ export default function ItemCard(props) {
             </CardContent>
           </Grid>
           <Divider orientation="vertical" flexItem />
-          <CardContent style={{ padding: 4, width: "100%" }}>
+          <CardContent style={{ padding: 4, width: "100%", alignSelf: "center" }}>
             <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
               <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                 <Grid item xs={10} display="inline">
-                  <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" display="inline" align="left" style={{ color: itemQuality }}>
+                  <Typography
+                    variant={itemName.length > 30 || props.slotPanel ? "subtitle2" : "subtitle1"}
+                    wrap="nowrap"
+                    display="inline"
+                    align="left"
+                    style={{ color: itemQuality, justifyContent: "center" }}
+                  >
                     {itemName}
                   </Typography>
                 </Grid>
@@ -166,7 +176,7 @@ export default function ItemCard(props) {
                   }}
                 >
                   <Typography
-                    variant="subtitle1" // h6 formerly
+                    variant="subtitle2" // h6 formerly // subtitle1 formerly
                     wrap="nowrap"
                     display="inline"
                     align="center"
@@ -174,9 +184,10 @@ export default function ItemCard(props) {
                       color: upgradeColor(itemDifferential),
                       paddingLeft: "3px",
                       paddingRight: "3px",
+                      justifyContent: "center",
                     }}
                   >
-                    {"+" + itemDifferential + "%"}
+                    {itemDifferential > 0 && itemDifferential < 0.1 ? "+" + Math.round(10000 * itemDifferential) / 100 + "%" : "+" + itemDifferential}
                   </Typography>
                 </Grid>
               </Grid>
@@ -184,7 +195,9 @@ export default function ItemCard(props) {
               {props.slotPanel ? (
                 <Grid item xs={12}>
                   <Divider />
-                  <Typography style={{ paddingTop: 4 }}>Source: {sourceName(item)} </Typography>
+                  <Typography variant={props.slotPanel ? "subtitle2" : "subtitle1"} style={{ paddingTop: 4, lineHeight: props.slotPanel ? "normal" : 1.57 }}>
+                    Source: {sourceName(item)}{" "}
+                  </Typography>
                 </Grid>
               ) : (
                 ""

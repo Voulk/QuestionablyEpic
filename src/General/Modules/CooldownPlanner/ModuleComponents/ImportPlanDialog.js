@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip, Typography, Link } from "@mui/material";
+import ls from "local-storage";
+import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip, Typography, Link, Switch, FormControlLabel } from "@mui/material";
 
 export default function ImportPlanDialog(props) {
   const { t } = useTranslation();
@@ -10,6 +11,12 @@ export default function ImportPlanDialog(props) {
   const [error, setError] = React.useState(false);
   const [disableButton, setDisableButton] = React.useState(false);
   const [errorMessage, setErrorMessage] = React.useState("");
+
+  const [checked, setChecked] = React.useState(false);
+
+  const handleRosterImportSwitch = (event) => {
+    setChecked(event.target.checked);
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -79,6 +86,8 @@ export default function ImportPlanDialog(props) {
     let importedBoss = "";
     let importPlanName = "";
     let importDifficulty = "";
+    let importedRoster = "";
+    let currentRoster = ls.get("healerInfo");
 
     var lines = importedString.split("\n");
 
@@ -98,10 +107,22 @@ export default function ImportPlanDialog(props) {
         importDifficulty = line.split("Difficulty=")[1];
       }
     }
+
     /* ---------------- Split the imported plan object from the string and parse it. ---------------- */
-    importedPlan = JSON.parse(importedString.split("Plan=")[1]);
+    const planStringPosition = importedString.split("Plan=")[1].search("# Roster");
+    importedPlan = JSON.parse(importedString.split("Plan=")[1].slice(0, planStringPosition));
+
+    if (checked === true) {
+      importedRoster = JSON.parse(importedString.split("Roster=")[1]);
+
+      var names = new Set(currentRoster.map((d) => d.name));
+      var merged = [...currentRoster, ...importedRoster.filter((d) => !names.has(d.name))];
+
+      ls.set("healerInfo", merged);
+    }
 
     cooldownObject.importPlan(importedBoss, importPlanName, importedPlan, importDifficulty);
+
     loadPlanData(importedBoss, importPlanName, importDifficulty);
   };
 
@@ -114,7 +135,7 @@ export default function ImportPlanDialog(props) {
   return (
     <div>
       <Tooltip title={""} arrow>
-        <Button variant="outlined" disableElevation={true} color="primary" sx={{ fontSize: "14px" }} onClick={handleClickOpen}>
+        <Button variant="outlined" disableElevation={true} color="primary" sx={{ fontSize: "14px" }} onClick={handleClickOpen} disabled={props.disabledCheck}>
           {t("CooldownPlanner.ImportPlanDialog.ButtonLabel")}
         </Button>
       </Tooltip>
@@ -137,6 +158,12 @@ export default function ImportPlanDialog(props) {
           />
         </DialogContent>
         <DialogActions>
+          <FormControlLabel
+            sx={{ marginRight: 1 }}
+            labelPlacement="start"
+            control={<Switch checked={checked} onChange={handleRosterImportSwitch} inputProps={{ "aria-label": "controlled" }} />}
+            label="Import Roster?"
+          />
           <Button onClick={handleClose} color="primary" variant="outlined">
             {t("Cancel")}
           </Button>

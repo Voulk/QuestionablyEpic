@@ -53,16 +53,27 @@ export function UpgradeFinder(props) {
         newRank = 3;
         break;
 
-      case 1300:
+      case 1200:
         newRank = 4;
         break;
 
-      case 1600:
+      case 1400:
         newRank = 5;
+        break;
+      case 1600:
+        newRank = 6;
+        break;
+
+      case 1800:
+        newRank = 7;
+        break;
+
+      case 2000:
+        newRank = 8;
         break;
     }
 
-    if (newRank <= 5 && newRank >= 0) setPlayerSettings({ ...playerSettings, pvp: newRank });
+    if (newRank <= 8 && newRank >= 0) setPlayerSettings({ ...playerSettings, pvp: newRank });
   };
 
   const player = props.player;

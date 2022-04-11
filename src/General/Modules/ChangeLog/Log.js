@@ -10,6 +10,83 @@
 export const changeLog = [
   {
     version: "9.2 / 2.5.3",
+    update: 14,
+    date: "11th April",
+    changes: [
+      "Strength and agility items will no longer show in Upgrade Finder.",
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
+    update: 13,
+    date: "10th April",
+    changes: [
+      "Added Necrolord Paladin",
+      "Bugfix: Sets with Unity on a ring slot + a regular legendary also on a ring should no longer fail to create a set using both.",
+      "Bugfix: Fixed a bug where Unity could call the wrong formula if you were playing an unconventional covenant.",
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
+    update: 12,
+    date: "5th April",
+    changes: [
+      "New Trinket: Scars of Fraternal Strife.",
+      "Revamped Sinister Teachings stat priorities based on new bugs found in-game.",
+      "Added 272 versions of Amalgam's / Flask in prep for Legion timewalking next week.",
+      "Added tooltips to Top Gear gems for a non-visual description."
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
+    update: 11,
+    date: "22nd March (Bugfix)",
+    changes: [
+      "Bugfix: SimC imported Unity items should now have the correct item restriction attached.",
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
+    update: 10,
+    date: "17th March (Major)",
+    changes: [
+      "Added support for the Unity special legendary in all modules.",
+      "Added manual Unity entry in any slot.",
+      "New Trinket: Gemstone of Prismatic Brilliance.",
+      "Added an option to show Upgrade Finder results in HPS instead of % gains.",
+      "Bugfix: Upgrade Finder PVP items will now display at the correct item level.",
+      "Bugfix: Manually added legendaries will once again have secondary stats.",
+      "Bugfix: Burning Crusade items should once again import."
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
+    update: 9,
+    date: "14th March (Major)",
+    changes: [
+      "Soleah's Secret Technique: Nerfed in-game. Values now match.",
+      "Main Menu revamp. Hopefully this is more accessible to people new to the app.",
+      "Multiple modules renamed to be less verbose.",
+      "Disc Priest / Resto Druid: Added formulas for 4pc bonuses.",
+      "Renamed a bunch of modules to make them easier to understand.",
+      "Legendary card revamps: Covenant legendaries now displayed separately. Moved text into tooltip.",
+      "Upgrade Finder: A number of missing items will now show up including tier pieces.",
+      "Upgrade Finder: Tazavesh now split into two dungeons.",
+      "Upgrade Finder: Legion items will no longer clog up the slot-by-slot lists.",
+      "Upgrade Finder: Tier pieces will now highlight in yellow to make them easier to spot."
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
+    update: 8,
+    date: "10th March (Minor Update)",
+    changes: [
+      "Added effect formulas for Antumbra, Shadow of the Cosmos.",
+      "Bugfix: Paladin tier sets should now be correctly accounted for again",
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
     update: 7,
     date: "9th March (Minor Update)",
     changes: [

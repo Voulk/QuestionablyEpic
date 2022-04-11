@@ -372,6 +372,39 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Gemstone of Prismatic Brilliance                                 */
+    /* ---------------------------------------------------------------------------------------------- */
+    effectName === "Gemstone of Prismatic Brilliance"
+  ) {
+    let effect = activeTrinket.effects[0];
+
+    const totalBonusStat = getProcessedValue(effect.coefficient, effect.table, 265) * effect.duration * effect.ppm / 60;
+    // Proc munching is a rarity here since procs can both be up at once. For that reason we'll instead use a more standard duration x ppm / 60 formula.
+    // TODO: Apply DR to each proc.
+
+    bonus_stats.haste = totalBonusStat / 4;
+    bonus_stats.crit = totalBonusStat / 4;
+    bonus_stats.mastery = totalBonusStat / 4;
+    bonus_stats.versatility = totalBonusStat / 4;
+    //
+  } 
+  else if (
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Scars of Fraternal Strife                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    effectName === "Scars of Fraternal Strife"
+  ) {
+    let effect = activeTrinket.effects[0];
+
+    const runeStats = getProcessedValue(effect.coefficient, effect.table, itemLevel);
+
+    bonus_stats.haste = runeStats;
+    bonus_stats.crit = runeStats;
+    bonus_stats.versatility = runeStats;
+    //
+  } 
+  else if (
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                  Book-Borrower Identification                                  */
     /* ---------------------------------------------------------------------------------------------- */
     effectName === "Book-Borrower Identification"
@@ -829,8 +862,9 @@ else if (
   // Take an average of our stacks. Note that the trinket decreases from 19 to 10, NOT to 0.
   bonus_stats.haste = (trinketSum / 10) * convertPPMToUptime(effect.ppm, effect.duration);
 
-  // Flask of the Solemn Night only procs off healing spells, and after thorough log analysis it underperforms reasonably highly for Holy Paladin in Mythic+.
-  if (player.spec === "Holy Paladin" && contentType === "Dungeon") bonus_stats.haste *= 0.75
+  // Flask of the Solemn Night only procs off healing spells, and after thorough log analysis it underperforms reasonably highly for Holy Paladin.
+  // Mistweaver has a different problem whereby Haste procs during Fallen Order can greatly *reduce* their healing. 
+  if (player.spec === "Holy Paladin" || player.spec === "Mistweaver Monk") bonus_stats.haste *= 0.75
   //
 } 
 else if (
@@ -999,6 +1033,18 @@ else if (
   const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
   const expectedPPM = effect.ppm; //* player.getStatPerc("Haste");
   bonus_stats.hps = (oneHeal * expectedPPM * player.getStatMultiplier("CRITVERS") / 60);
+  //
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                      Resonant Reservoir                                        */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Resonant Reservoir"
+) {
+  let effect = activeTrinket.effects[0];
+  //const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
+  
+  bonus_stats.dps = 0;
   //
 } 
   else {

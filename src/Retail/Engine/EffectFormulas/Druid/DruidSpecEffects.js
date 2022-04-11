@@ -26,13 +26,14 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
   }
   else if (effectName === "Druid T28-4") {
     // This is too simple a formula, but can be revised with proper log data.
-    const hpsDuringBurstWindow = 0;
-    const extraWGHealing = 0; // The extra healing from 2 additional WG targets a minute.
-    const auraHealingIncrease = 0; // The extra healing from 15% additional healing
-    const rejuvHealingIncrease = 0; // The extra healing from the large rejuv buff.
-    const healingIncrease = 0;
+    const hpsDuringBurstWindow = 22000;
+    const duration = 9;
+    const rejuvHPSDuringBurstWindow = 8000 * duration;
+    const extraWGHealing = 0.98 * 2 * player.getStatMultiplier("NOMAST") * 1.1 * 0.8; // The extra healing from 2 additional WG targets a minute.
+    const auraHealingIncrease = hpsDuringBurstWindow * 0.15 * duration; // The extra healing from 15% additional healing
+    const rejuvHealingIncrease = (rejuvHPSDuringBurstWindow * 1.15 * 1.5) - rejuvHPSDuringBurstWindow; // The extra healing from the large rejuv buff.
 
-    bonus_stats.hps = 0
+    bonus_stats.hps = (auraHealingIncrease + rejuvHealingIncrease + extraWGHealing) / 60;
   }
   /*
     The rejuv spreading legendary can best be expressed as a percentage increase to our rejuv healing. 

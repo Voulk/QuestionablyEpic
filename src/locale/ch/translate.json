@@ -129,7 +129,8 @@
         "DeathKnight": "Death Knight",
         "Death Knight": "Death Knight",
         "ShadowPriest": "Shadow Priest",
-        "Shadow Priest": "Shadow Priest"
+        "Shadow Priest": "Shadow Priest",
+        "Druid": "德鲁伊"
       },
       "ChartLabels": {
         "_Comments1": "Translations for HD Charts",
@@ -149,7 +150,7 @@
         "BossAbilityLabel": "Boss Ability",
         "NotesLabel": "Notes",
         "OffCooldownLabel": "Off-CD",
-        "HealTeamHeader": "Heal Team",
+        "HealTeamHeader": "Roster",
         "TypeSelector": "Formats"
       },
       "UserInputs": {
@@ -172,6 +173,8 @@
 
       "ClassAbilities": {
         "NoCD": "No Cooldown",
+        "Potion/Healthstone": "Potion/Healthstone",
+        "Personals": "Personals",
         "undefined": "",
         "HolyPaladinComment": "Holy Paladin Class Cooldowns",
         "31821": "光环掌握",

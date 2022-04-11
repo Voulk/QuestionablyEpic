@@ -8,12 +8,12 @@ export default function ClassCooldownMenuItems(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
-  if (props === 0) {
-    return [<MenuItem key={0}> No Class Selected </MenuItem>];
-  }
-
   let menuItems = cooldownDB
     .filter((obj) => {
+      if (props === undefined || props === "" || props === 0) {
+        return obj.class === "" && obj.cdPlannerMenuActive === true;
+      }
+
       if (props === "DisciplinePriest" || props === "HolyPriest") {
         // return spells that are spec only and spells shared by the class
         return (obj.class === props || obj.class === "Priest") && obj.cdPlannerMenuActive === true;
@@ -27,18 +27,22 @@ export default function ClassCooldownMenuItems(props) {
       return (
         <MenuItem divider={lastItem} value={map.guid} key={map.name[currentLanguage]}>
           <a data-wowhead={"spell=" + map.guid}>
-            <img
-              style={{
-                height: 20,
-                width: 20,
-                margin: "0px 5px 0px 0px",
-                verticalAlign: "middle",
-                border: "1px solid #595959",
-                borderRadius: 4,
-              }}
-              src={map.icon}
-              alt={map.name[currentLanguage]}
-            />
+            {map.guid === "" ? (
+              ""
+            ) : (
+              <img
+                style={{
+                  height: 20,
+                  width: 20,
+                  margin: "0px 5px 0px 0px",
+                  verticalAlign: "middle",
+                  border: "1px solid #595959",
+                  borderRadius: 4,
+                }}
+                src={map.icon}
+                alt={map.name[currentLanguage]}
+              />
+            )}
           </a>
           {map.name[currentLanguage]}
         </MenuItem>
