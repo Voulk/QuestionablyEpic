@@ -269,8 +269,11 @@ function checkItemViable(rawItem, player) {
                       (rawItem.itemClass === 2 && acceptableWeaponTypes.includes(rawItem.itemSubClass))
   // If an item has a class restriction, make sure that our spec is included.
   const classCheck = (classRestriction === "" || classRestriction.includes(spec))
-  //if (rawItem["id"] === 189839) console.log("ANDUIN RING: " + classCheck + "/" + classRestriction);
-  return slotCheck && classCheck;
+
+  //const statCheck = 'stats' in rawItem.stats && Object.values(rawItem.stats).reduce((a, b) => a + b, 0) > 0;
+  const statCheck = !('offspecItem' in rawItem); // We'll exclude any agi / str gear from our results since these will never be upgrades. 
+
+  return slotCheck && classCheck && statCheck;
 
 }
 
