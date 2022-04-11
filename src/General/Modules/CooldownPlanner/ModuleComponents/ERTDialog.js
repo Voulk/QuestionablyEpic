@@ -33,10 +33,13 @@ export default function ExportERTDialog(props) {
   return (
     <div>
       <Tooltip title={t("CooldownPlanner.NoteExportDialog.NoteExportTooltip")} arrow>
-        <Button variant="outlined" disableElevation={true} color="primary" style={{ fontSize: "14px" }} onClick={handleClickOpen} disabled={currentPlan === "" || disabledCheck ? true : false}>
-          {t("CooldownPlanner.NoteExportDialog.ButtonLabel")}
-        </Button>
+        <span>
+          <Button variant="outlined" disableElevation={true} color="primary" style={{ fontSize: "14px" }} onClick={handleClickOpen} disabled={currentPlan === "" || disabledCheck ? true : false}>
+            {t("CooldownPlanner.NoteExportDialog.ButtonLabel")}
+          </Button>
+        </span>
       </Tooltip>
+
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
         <DialogTitle id="ert-dialog-title">
           <Grid container direction="row" justifyContent="space-between">

@@ -13,7 +13,7 @@ export default function CastTextField(rowData, cooldown) {
       .filter((obj) => {
         return obj.guid === spellID;
       })
-      .map((obj) => obj.name[currentLanguage])
+      .map((obj) => obj.name[currentLanguage])[0]
       .toString();
 
     return spellName;
@@ -24,7 +24,7 @@ export default function CastTextField(rowData, cooldown) {
       .filter((obj) => {
         return obj.guid === spellID;
       })
-      .map((obj) => obj.icon);
+      .map((obj) => obj.icon)[0];
 
     return icon;
   };

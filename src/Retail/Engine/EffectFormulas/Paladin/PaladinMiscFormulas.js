@@ -7,7 +7,10 @@ const IDWORDOFGLORY = 85673;
 // Returns the expected healing of the player getting one Holy Power.
 export function getOneHolyPower(player, contentType) {
   const isDP = true;
-  const oneLoD = Math.round(player.getSingleCast(IDLIGHTOFDAWN, contentType));
+
+  const oneLoD = player.getStatMultiplier("ALL") * 1.05 * 5 * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.6;
+  //const oneLoD = Math.round(player.getSingleCast(IDLIGHTOFDAWN, contentType));
+
   const divinePurposeBonus = oneLoD * 0.15 * 1.2; 
 
   //console.log("One LoD: " + oneLoD + ". DP Bonus: " + divinePurposeBonus);
@@ -107,13 +110,13 @@ export function getPaladinCovAbility(soulbindName, player, contentType, specialS
     // Ashen Hallow (Venthyr)
 
     // The healing portion
-    const expected_uptime = 0.98;
+    const expected_uptime = 1;
     const average_allies = 18;
     const sqrt_mult = Math.min(Math.sqrt(5 / average_allies), 1); 
     const ashen_tick_sp = 0.42;
     const ashen_ticks = 15 * player.getStatPerc("Haste");
     const wingsMultiplier = (getWingsHealingInc(player.getStatPerc("Crit")) - 1) * 0.66 + 1; // Two thirds of your Ashen will be in the wings window. 
-    const expectedOverhealing = 0.49;
+    const expectedOverhealing = 0.35;
     const rawAshenHealing = ashen_ticks * ashen_tick_sp * sqrt_mult * average_allies * wingsMultiplier * expected_uptime * player.getStatMultiplier("NOHASTE")
     const ashen_healing_portion =  rawAshenHealing * (1 - expectedOverhealing);
 
@@ -126,15 +129,23 @@ export function getPaladinCovAbility(soulbindName, player, contentType, specialS
     const beaconMult = (0.25 * (1 - 0.62));
     const beaconHPS = beaconMult * rawAshenHealing;
 
-    bonus_stats.HPS = (ashen_hammer_portion + ashen_healing_portion + beaconHPS) / 240;
+    if ("extraSpells" in specialSettings) {
+      bonus_stats.hps = (ashen_hammer_portion + ashen_healing_portion + beaconHPS) / 240;
+    }
+    else {
+      bonus_stats.HPS = (ashen_hammer_portion + ashen_healing_portion + beaconHPS) / 240;
+    }
+    
 
   } else if (["Marileth", "Emeni", "Heirmir"].includes(soulbindName)) {
     // Vanquishers Hammer (Necrolord)
+    // Includes 2pc bonus
     const HPSFreeWordOfGlory = player.getSingleCast(IDWORDOFGLORY, contentType);
-    const HPSLightOfDawn = player.getSingleCast(IDWORDOFGLORY, contentType) * 0.25;
+    const HPSLightOfDawn = player.getSingleCast(IDWORDOFGLORY, contentType) * 2 * 1.5 * 0.25;
     const HPSFreeHolyPower = getOneHolyPower(player, contentType);
 
     if ("extraSpells" in specialSettings) {
+      // Duty-bound Gavel
       bonus_stats.hps = (HPSFreeWordOfGlory + HPSLightOfDawn) / 30 + (HPSFreeHolyPower + HPSFreeWordOfGlory) / player.getFightLength(contentType);
     }
     else {

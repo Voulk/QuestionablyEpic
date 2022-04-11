@@ -1035,6 +1035,18 @@ else if (
   bonus_stats.hps = (oneHeal * expectedPPM * player.getStatMultiplier("CRITVERS") / 60);
   //
 } 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                      Resonant Reservoir                                        */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Resonant Reservoir"
+) {
+  let effect = activeTrinket.effects[0];
+  //const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
+  
+  bonus_stats.dps = 0;
+  //
+} 
   else {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        No Trinkets Found                                       */

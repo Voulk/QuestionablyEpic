@@ -6,6 +6,7 @@ export const CooldownPlannerTheme = createTheme({
     mode: "dark",
     primary: { main: "#d3bc47" },
     secondary: { main: "#e0e0e0" },
+    delete: { main: "#FF0000", contrastText: "#fff" },
   },
   components: {
     // Name of the component
