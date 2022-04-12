@@ -8,6 +8,7 @@ import { styled } from "@mui/material/styles";
 const CssTextField = styled(TextField)({
   "& .MuiOutlinedInput-input": {
     textAlign: "center",
+    fontSize: "12px",
   },
 });
 
