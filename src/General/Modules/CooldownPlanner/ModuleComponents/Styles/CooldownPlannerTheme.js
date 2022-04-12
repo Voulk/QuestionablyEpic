@@ -138,16 +138,6 @@ export const CooldownPlannerTheme = createTheme({
       },
     },
   },
-  // MuiInputLabel: {
-  //   styleOverrides: {
-  //     outlined: {
-  //       "&.MuiInputLabel-shrink": {
-  //         fontSize: "2em",
-  //         transform: "translate(14px, -19px) scale(0.75)",
-  //       },
-  //     },
-  //   },
-  // },
 });
 
 export const deleteTheme = createTheme({
