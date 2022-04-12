@@ -66,11 +66,5 @@ export const genStatWeights = (activeStats) => {
         statWeights[stat] = Math.round(10000*(weights[stat] / weights['intellect']))/10000;
     }); 
 
-   /*
-    
-    console.log(hasteResults);
-    console.log(hasteWeights);
-    console.log(average(hasteWeights));
-    */
     return statWeights;
 }

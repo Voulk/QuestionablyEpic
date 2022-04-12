@@ -58,9 +58,9 @@ export default function AddPlanDialog(props) {
         <DialogContent>
           <Grid item container spacing={1} xl={12} alignItems="center" sx={{ marginTop: "1px" }}>
             <Grid item xl={12}>
-              <Typography align="center">Boss</Typography>
-            </Grid>
-            <Grid item xl={12}>
+              <Typography color="primary" align="center">
+                Boss
+              </Typography>
               <TextField sx={{ minWidth: 100, width: "100%" }} size="small" select value={boss} onChange={(e) => setBoss(e.target.value, currentDifficulty)}>
                 {bossList
                   .filter((obj) => {
@@ -77,11 +77,11 @@ export default function AddPlanDialog(props) {
                   })}
               </TextField>
             </Grid>
-            <Grid item xl={12}>
-              <Typography align="center">Difficulty</Typography>
-            </Grid>
 
             <Grid item xl={12}>
+              <Typography color="primary" align="center">
+                Difficulty
+              </Typography>
               <ToggleButtonGroup value={difficulty} exclusive onChange={(e) => setDifficulty(e.target.value)} aria-label="text alignment" fullWidth>
                 <ToggleButton value="Heroic" aria-label="Heroic">
                   Heroic
@@ -92,9 +92,10 @@ export default function AddPlanDialog(props) {
               </ToggleButtonGroup>
             </Grid>
             <Grid item xl={12}>
-              <Typography align="center">Plan Type</Typography>
-            </Grid>
-            <Grid item xl={12}>
+              <Typography color="primary" align="center">
+                Plan Type
+              </Typography>
+
               <ToggleButtonGroup value={planType} exclusive onChange={newPlanType} aria-label="PlanTypeToggle" fullWidth>
                 <ToggleButton value="BlankPlan" aria-label="BlankPlan">
                   Blank Plan
@@ -106,9 +107,10 @@ export default function AddPlanDialog(props) {
               </ToggleButtonGroup>
             </Grid>
             <Grid item xl={12}>
-              <Typography align="center">New Plan Name</Typography>
-            </Grid>
-            <Grid item xl={12}>
+              <Typography color="primary" align="center">
+                New Plan Name
+              </Typography>
+
               <TextField
                 error={duplicatePlanNameCheck}
                 helperText={duplicatePlanNameCheck ? t("CooldownPlanner.DuplicatePlanError") : ""}

@@ -12,7 +12,6 @@ export function processDruidRawHealing(player, spellID) {
     const flourishHealingIncreases = {774: 2};
     const flourishHealingInc = flourishHealingIncreases[spellID] * flourishUptime + (1 - flourishUptime);
 
-    //console.log("Tree: " + treeHealingInc + ". Flourish: " + flourishHealingInc);
     return (treeHealingInc * flourishHealingInc);
   
   }
