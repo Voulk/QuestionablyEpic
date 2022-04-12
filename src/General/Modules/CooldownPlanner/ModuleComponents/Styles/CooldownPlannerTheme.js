@@ -72,6 +72,9 @@ export const CooldownPlannerTheme = createTheme({
     MuiOutlinedInput: {
       styleOverrides: {
         input: { padding: 10 },
+        notchedOutline: {
+          fontSize: "16px",
+        },
       },
     },
     MuiToolbar: {
@@ -131,11 +134,20 @@ export const CooldownPlannerTheme = createTheme({
               horizontal: "left",
             },
           },
-          fontSize: "16px",
         },
       },
     },
   },
+  // MuiInputLabel: {
+  //   styleOverrides: {
+  //     outlined: {
+  //       "&.MuiInputLabel-shrink": {
+  //         fontSize: "2em",
+  //         transform: "translate(14px, -19px) scale(0.75)",
+  //       },
+  //     },
+  //   },
+  // },
 });
 
 export const deleteTheme = createTheme({
