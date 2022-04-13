@@ -6,6 +6,7 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
+      "Amalgam's Seventh Spine has been nerfed!",
       "Great Vault: Make sure you consider tier & catalyst opportunities.",
       "Holy Priest Tier & Legendary support coming soon.",
   ],

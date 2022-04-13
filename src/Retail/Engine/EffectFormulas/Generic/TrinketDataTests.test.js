@@ -373,11 +373,10 @@ describe("Amalgam's Seventh Spine Data Check", () => {
     const effect = activeTrinket.effects[0];
     each`
     level   | expectedResult
-    ${272}  | ${263}
-    ${246}  | ${181}
-    ${226}  | ${134} // 135 in-game.
-    ${200}  | ${89}
-    ${184}  | ${68}
+    ${272}  | ${166} // 263 pre-nerf
+    ${246}  | ${148}
+    ${210}  | ${124}
+
     // add new test cases here
     `.test("Amalgam's Seventh Spine Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
     
