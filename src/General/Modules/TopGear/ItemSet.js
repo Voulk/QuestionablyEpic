@@ -108,6 +108,7 @@ class ItemSet {
       //if (item.hasDomSocket) domSockets++;
       if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
       if (item.effect.type === "spec legendary") this.setLegendary = item.effect.name;
+      if (item.effect.type === "unity") this.unity = true;
 
       if (item.setID) {
         this.sets[item.setID] = (item.setID in this.sets) ? this.sets[item.setID] + 1 : 1;

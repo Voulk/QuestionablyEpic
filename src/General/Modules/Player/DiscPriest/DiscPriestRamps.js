@@ -271,6 +271,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
             settings['Theotar'] = true;
             conduits['Shining Radiance'] = 252;
             conduits['Rabid Shadows'] = 252;
+            conduits['Swift Penitence'] = 252;
             //conduits['Courageous Ascension'] = 252;
         }
 
@@ -337,9 +338,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
         if (settings['Power of the Dark Side']) state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: 1.5, stacks: 3})
     }
     
-    
     //
-
     // === Trinkets ===
     // These settings change the stat value prescribed to a given trinket. We call these when adding trinkets so that we can grab their value at a specific item level.
     // When adding a trinket to this section, make sure it has an entry in DiscSpellDB first prescribing the buff duration, cooldown and type of stat.

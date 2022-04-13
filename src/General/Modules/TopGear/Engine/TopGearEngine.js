@@ -455,7 +455,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   if (player.spec === "Discipline Priest" && contentType === "Raid") {
 
     // Setup any ramp settings or special effects that need to be taken into account.
-    let rampSettings = { Pelagos: true };
+    let rampSettings = { playstyle: castModel.modelName };
     let specialSpells = ["Rapture"];
     // Setup ramp cast sequences
     const onUseTrinkets = itemSet.onUseTrinkets.map((trinket) => trinket.name);
@@ -473,9 +473,18 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
       });
     }
 
+    if (castModel.modelName === "Kyrian Evangelism") {
+      rampSettings['Pelagos'] = true;
+      if (itemSet.unity) rampSettings["Sphere's Harmony"] = true;
+    }
+    else if (castModel.modelName === "Venthyr Evangelism") {
+      rampSettings['Theotar'] = true;
+      if (itemSet.unity) rampSettings["Power Word: Manipulation"] = true;
+    }
+
     if (itemSet.setLegendary === "Clarity of Mind") rampSettings["Clarity of Mind"] = true;
-    if (itemSet.setLegendary === "Power Word: Manipulation") rampSettings["Power Word: Manipulation"] = true;
-    if (itemSet.setLegendary === "The Penitent One") rampSettings["Penitent One"] = true;
+    if (itemSet.setLegendary === "Penitent One") rampSettings["Penitent One"] = true;
+    console.log(JSON.stringify(rampSettings));
 
     // Perform our ramp, and then add it to our sets expected HPS. Our set's stats are included here which means we don't need to score them later in the function.
     // The ramp sequence also includes any diminishing returns.
