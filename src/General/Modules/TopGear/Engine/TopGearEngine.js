@@ -474,6 +474,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     }
 
     if (itemSet.setLegendary === "Clarity of Mind") rampSettings["Clarity of Mind"] = true;
+    if (itemSet.setLegendary === "Power Word: Manipulation") rampSettings["Power Word: Manipulation"] = true;
+    if (itemSet.setLegendary === "The Penitent One") rampSettings["Penitent One"] = true;
 
     // Perform our ramp, and then add it to our sets expected HPS. Our set's stats are included here which means we don't need to score them later in the function.
     // The ramp sequence also includes any diminishing returns.

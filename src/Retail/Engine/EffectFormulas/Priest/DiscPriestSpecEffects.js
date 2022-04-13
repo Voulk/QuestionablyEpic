@@ -26,7 +26,13 @@ export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
     bonus_stats.hps = player.getRampID('clarityOfMind', contentType);
     //bonus_stats.hps = (contentType === "Raid" ? 1000 : 0);
 
-  } else if (effectName === "Crystalline Reflection") {
+  } 
+  else if (effectName === "Shadow Word: Manipulation") {
+    bonus_stats.hps = player.getRampID('shadowWordManip', contentType);
+    //bonus_stats.hps = (contentType === "Raid" ? 1000 : 0);
+
+  }
+  else if (effectName === "Crystalline Reflection") {
     // Crystalline Reflection
     // - Reflection damage doesn't proc atonement.
     // - Scales with: Intellect, Crit, Vers

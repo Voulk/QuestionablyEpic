@@ -9,6 +9,7 @@ export const getRampData = (playerStats, playerTrinkets, playstyle) => {
     const discBaseline = allRampsHealing(boonSeq, fiendSeq, playerStats, {"playstyle": playstyle, "Clarity of Mind": false, "Pelagos": false}, {});
     const baselineAdj = allRampsHealing(boonSeq, fiendSeq, playerStats, {"playstyle": playstyle, "DefaultLoadout": true}, {});
     const clarityOfMind = allRampsHealing(boonSeq, fiendSeq, playerStats, {"playstyle": playstyle, "Clarity of Mind": true, "Pelagos": false}, {});
+    const shadowWordManip = allRampsHealing(boonSeq, fiendSeq, playerStats, {"playstyle": playstyle, "Shadow Word: Manipulation": true, "Pelagos": false}, {});
     const exaltation = allRampsHealing(boonSeq, fiendSeq, playerStats, {"playstyle": playstyle, "Clarity of Mind": false, "Pelagos": false}, {"Exaltation": 226});
     const rabidShadows = allRampsHealing(boonSeq, fiendSeq, playerStats, {"playstyle": playstyle, "Clarity of Mind": false, "Pelagos": false}, {"Rabid Shadows": 226});
     const courAscension = allRampsHealing(boonSeq, fiendSeq, playerStats, {"playstyle": playstyle, "Clarity of Mind": false, "Pelagos": false}, {"Courageous Ascension": 226});
@@ -22,6 +23,7 @@ export const getRampData = (playerStats, playerTrinkets, playstyle) => {
         rabidShadows: (rabidShadows - discBaseline) / rampTime, 
         courAscension: (courAscension - discBaseline) / rampTime, 
         penitentOne: (penitentOne - discBaseline) / rampTime, 
+        shadowWordManip: (shadowWordManip - discBaseline) / rampTime,
     }
     return rampData;
 

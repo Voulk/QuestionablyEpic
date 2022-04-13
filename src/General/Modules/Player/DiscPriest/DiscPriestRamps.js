@@ -257,11 +257,23 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
     // we don't have full information about a character.
     // As always, Top Gear is able to provide a more complete picture. 
     if (settings['DefaultLoadout']) {
-        settings['Clarity of Mind'] = true;
-        settings['Pelagos'] = true;
-        conduits['Shining Radiance'] = 239;
-        conduits['Rabid Shadows'] = 239;
-        conduits['Courageous Ascension'] = 239;
+        if (settings.playstyle === "Kyrian Evangelism") {
+            settings['Clarity of Mind'] = true;
+            settings['Pelagos'] = true;
+            conduits['Shining Radiance'] = 252;
+            conduits['Rabid Shadows'] = 252;
+            conduits['Courageous Ascension'] = 252;
+        }
+        else if (settings.playstyle === "Venthyr Evangelism") {
+            console.log("Adding venthyr defaults");
+            settings['Penitent One'] = true;
+            settings['Shadow Word: Manipulation'] = true;
+            settings['Theotar'] = true;
+            conduits['Shining Radiance'] = 252;
+            conduits['Rabid Shadows'] = 252;
+            //conduits['Courageous Ascension'] = 252;
+        }
+
         
     }
 
@@ -279,9 +291,9 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
         cost: 0,
         cooldown: 0,
         buffType: 'stats',
-        stat: 'mastery',
-        value: 0,
-        buffDuration: 3,
+        stat: 'crit',
+        value: 40 * 35, // This needs to be converted to post-DR stats.
+        buffDuration: 10,
     });
 
     // -- Penitent One --

@@ -455,6 +455,9 @@ class Player {
         else if (this.getActiveModel(contentType).modelName.includes("Kyrian")) this.setCovenant("kyrian");
       }
       else if (this.spec === "Discipline Priest") {
+        if (this.getActiveModel(contentType).modelName.includes("Venthyr")) this.setCovenant("venthyr");
+        else if (this.getActiveModel(contentType).modelName.includes("Kyrian")) this.setCovenant("kyrian");
+
         this.getActiveModel("Raid").setRampInfo(this.activeStats);
       }
     } else {
