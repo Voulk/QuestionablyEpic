@@ -66,6 +66,7 @@ class ItemSet {
         leech: 0,
         hps: 0,
         dps: 0,
+        mana: 0,
       }
       if (this.spec === "Restoration Shaman" || this.spec === "Holy Paladin") stats.intellect = 473;
       else if (this.spec === "Discipline Priest" || this.spec === "Holy Priest" || this.spec === "Restoration Druid") stats.intellect = 450;

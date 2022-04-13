@@ -860,12 +860,8 @@ else if (
   }
 
   // Take an average of our stacks. Note that the trinket decreases from 19 to 10, NOT to 0.
-  bonus_stats.haste = (trinketSum / 10) * convertPPMToUptime(effect.ppm, effect.duration);
+  bonus_stats.haste = (trinketSum / 10) * convertPPMToUptime(effect.ppm, effect.duration) * effect.efficiency[player.spec];
 
-  // Flask of the Solemn Night only procs off healing spells, and after thorough log analysis it underperforms reasonably highly for Holy Paladin.
-  // Mistweaver has a different problem whereby Haste procs during Fallen Order can greatly *reduce* their healing. 
-  if (player.spec === "Holy Paladin" || player.spec === "Mistweaver Monk") bonus_stats.haste *= 0.75
-  //
 } 
 else if (
   /* ---------------------------------------------------------------------------------------------- */

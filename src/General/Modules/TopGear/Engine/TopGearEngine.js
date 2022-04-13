@@ -388,6 +388,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     leech: 0,
     hps: 0,
     dps: 0,
+    mana: 0,
   };
 
   // Our adjusted_weights will be compiled later by dynamically altering our base weights.
