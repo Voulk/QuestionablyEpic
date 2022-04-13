@@ -202,7 +202,8 @@ describe("updatePlayerStats function", () => {
             versatility: 330,
             leech: 109, // 107
             hps: 0,
-            dps: 0
+            dps: 0,
+            mana: 0,
         }
 
         processAllLines(player, "Raid", "night_fae", lines, -1, -1)
@@ -221,7 +222,8 @@ describe("updatePlayerStats function", () => {
             versatility: 313,
             leech: 0,
             hps: 0,
-            dps: 0
+            dps: 0,
+            mana: 0,
         }
 
         processAllLines(player, "Raid", "night_fae", lines, -1, -1)

@@ -1029,14 +1029,31 @@ export const trinket_data = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
-    /*                                     Flask of Solemn Night                                       */
+    /*                                     Flask of Solemn Night                                      */
     /* ---------------------------------------------------------------------------------------------- */
+
+    // This is a bizarre trinket in that the uptime is low but the amount of stats it gives on proc is extremely high. 
+    // In addition to running into stat DR, this can also warp some specs such that you are not able to take advantage of the boost.
+    // Druid: All hots benefit. Trinket is given full value.
+    // Disc: Procs during Boon ramps can be spicy due to Ascended Blasts CDR portion, and this can be a positive. The high variance of the trinket makes it a problematic
+    //       choice for progression on a spec that does most of it's healing in a small window.
+    // Holy Priest: Doesn't gain a large HPM benefit, but procs add a lot of healing through extra Heal casts. The spec also has strong mana options and can often
+    //              take advantage of the extra casts. Procs during downtime add decent damage.
+    // Holy Paladin: Frequently sees lower proc rates than other specs due to the spec having some large gaps between healing events.
+    // Resto Shaman: Has some difficulty making use of the haste in raid, and in M+ there are frequently gaps in healing output. 
+    // Mistweaver Monk: Not viable due to Fallen Order's broken flat haste interactions. Depending on proc timing this can actually be a net loss in healing.
+
+    // Using multipliers on a trinkets strength like this is problematic, since they are not adept at conforming to a given log or scenario and can feel abitrary. 
+    // They are used here since the result is a more accurate depiction of their strength. I am going to hawk logs this week to make sure they are accurate.
+    // 
+    // 
     name: "Flask of the Solemn Night",
     effects: [
       {
         coefficient: 0.286493,
         table: -7,
         duration: 10,
+        efficiency: {"Restoration Druid": 0.88, "Holy Paladin": 0.75, "Mistweaver Monk": 0, "Restoration Shaman": 0.75, "Holy Priest": 0.75, "Discipline Priest": 0.78},
         stacks: 15, // You start with 20, lose 1 every second and end with 10 for an average of 15.
         ppm: 1,
       },
@@ -1056,9 +1073,9 @@ export const trinket_data = [
       {
         coefficient: 4.1271, // 1.41699
         table: -8, // -1
-        efficiency: { Raid: 0.49, Dungeon: 0.35 }, // 
+        efficiency: { Raid: 0.46, Dungeon: 0.27 }, // 
         ppm: 4,
-        targets: 5, // This can hit a maximum of 5 targets, but the radius is very small so will vary per fight.
+        targets: 3.8, // This can hit a maximum of 5 targets, but the radius is very small so will vary per fight.
         ticks: 6,
       },
     ],
@@ -1075,7 +1092,7 @@ export const trinket_data = [
       {
         coefficient: 50.56973,
         table: -9, // -8 in spell data
-        efficiency: { Raid: 0.63, Dungeon: 0.41 }, // 
+        efficiency: { Raid: 0.63, Dungeon: 0.38 }, // 
         ppm: 3,
         targets: 3.8, // The trinket attempts to hit 4 targets, but in logs it often comes up slightly short of this.
 
@@ -1092,9 +1109,9 @@ export const trinket_data = [
     name: "Amalgam's Seventh Spine",
     effects: [
       {
-        coefficient: 2.07913,
-        table: -8, 
-        ppm: { "Restoration Druid": 20, "Discipline Priest": 10, "Holy Paladin": 0, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.5, "Holy Priest": 11 }, // TODO: Refine. 
+        coefficient: 0.6668381, // 2.07913,
+        table: -7, //-8, 
+        ppm: { "Restoration Druid": 20, "Discipline Priest": 15.2, "Holy Paladin": 0, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.5, "Holy Priest": 11 }, // TODO: Refine. 
       },
     ],
   },

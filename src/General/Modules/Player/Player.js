@@ -615,9 +615,9 @@ class Player {
 
       this.activeStats = {
         intellect: 2000,
-        haste: 790,
-        crit: 480,
-        mastery: 200,
+        haste: 890,
+        crit: 460,
+        mastery: 600,
         versatility: 320,
         stamina: 1900,
       };
@@ -676,10 +676,10 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 2000,
-        haste: 125,
-        crit: 475,
-        mastery: 470,
+        intellect: 2100,
+        haste: 424,
+        crit: 770,
+        mastery: 700,
         versatility: 400,
         stamina: 1900,
       };
