@@ -11,9 +11,13 @@ export const changeLog = [
   {
     version: "9.2 / 2.5.3",
     update: 14,
-    date: "11th April",
+    date: "12th April",
     changes: [
       "Strength and agility items will no longer show in Upgrade Finder.",
+      "Added 272 versions of the other Legion TW trinkets.",
+      "Flask of Solemn Night: Adjusted value to more closely reflect what a spec can get out of 1400 haste in a short window.",
+      "Amalgam's Seventh Spine: Updated mana value for Disc Priest.",
+      "Updated the base models HPS to around ~13k now that we're a month into the tier. No impact if you're entering a log.",
     ],
   },
   {
