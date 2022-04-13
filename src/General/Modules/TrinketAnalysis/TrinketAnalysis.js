@@ -85,7 +85,7 @@ export default function TrinketAnalysis(props) {
   }, []);
 
   const { t } = useTranslation();
-  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]); //, "LegionTimewalking"
+  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "LegionTimewalking"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
 
   /* ---------------------------------------------------------------------------------------------- */

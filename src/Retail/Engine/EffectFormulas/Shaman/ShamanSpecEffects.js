@@ -1,4 +1,3 @@
-import { consoleSandbox } from "@sentry/utils";
 
 const PRIMAL_TIDE_CORE = "Primal Tide Core";
 const SPIRITWALKERS_TIDAL_TOTEM = "Spiritwalker's Tidal Totem";

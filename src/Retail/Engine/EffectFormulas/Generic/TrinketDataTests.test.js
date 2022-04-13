@@ -322,6 +322,7 @@ describe("Flask of the Solemn Night Data Check", () => {
     const effect = activeTrinket.effects[0];
     each`
     level   | expectedResult
+    ${272}  | ${71}
     ${226}  | ${58}
     ${200}  | ${50}
     ${184}  | ${45}
@@ -372,10 +373,10 @@ describe("Amalgam's Seventh Spine Data Check", () => {
     const effect = activeTrinket.effects[0];
     each`
     level   | expectedResult
-    ${246}  | ${181}
-    ${226}  | ${134} // 135 in-game.
-    ${200}  | ${89}
-    ${184}  | ${68}
+    ${272}  | ${166} // 263 pre-nerf
+    ${246}  | ${148}
+    ${210}  | ${124}
+
     // add new test cases here
     `.test("Amalgam's Seventh Spine Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
     
@@ -523,5 +524,25 @@ describe("So'leah's Secret Technique", () => {
     `.test("So'leah's Secret Technique - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
     
         expect(Math.round(getProcessedValue(effect.coefficient, effect.table, level))).toBe(expectedResult);
+    });
+});
+
+
+// ====================
+// === DPS Trinkets ===
+// ====================
+describe("Infinitely Divisible Ooze", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Infinitely Divisible Ooze");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${210}  | ${1865} 
+    ${223}  | ${2283}
+    ${236}  | ${2777}
+    // add new test cases here
+    `.test("Infinitely Divisible Ooze - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+    
+        expect(Math.floor(5*getProcessedValue(effect.coefficient, effect.table, level, 1, false))).toBe(expectedResult);
     });
 });

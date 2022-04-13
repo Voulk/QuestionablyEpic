@@ -87,20 +87,6 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
     count = itemSets.length;
 
-
-  //console.log("Count: " + count);
-  // TEST LOOP ONLY FOR CONSOLE PRINTS.
-  /*
-    for (var i = 0; i < itemSets.length; i++) {
-        
-        //console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
-        //itemSets[i].printSet();
-        console.log(itemSets[i]);
-        console.log("====================");
-   
-    }
-    */
-
   for (var i = 0; i < itemSets.length; i++) {
     itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings);
   }
@@ -120,8 +106,6 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer, contentType));
   }
 
-  //console.log(differentials);
-
   //itemSets[0].printSet()
 
   if (itemSets.length === 0) {
@@ -131,7 +115,6 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
   } else {
     let result = new TopGearResult(itemSets[0], differentials);
     result.itemsCompared = count;
-    //console.log(result);
     return result;
   }
 }

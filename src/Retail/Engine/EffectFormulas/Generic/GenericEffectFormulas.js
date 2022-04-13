@@ -53,7 +53,7 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
   else if (effectName === "Genesis Lathe") {
 
     // These can be verified after logs start coming in but are based on frequency of casts. 
-    const ppm = {"Restoration Druid": 1.9, "Holy Paladin": 0.3, "Mistweaver Monk": 0.52, "Restoration Shaman": 1.4, "Holy Priest": 1.85, "Discipline Priest": 1.08}
+    const ppm = {"Restoration Druid": 1.9, "Holy Paladin": 0.3, "Mistweaver Monk": 0.52, "Restoration Shaman": 1.35, "Holy Priest": 1.85, "Discipline Priest": 1.08}
     const effects = activeEffect.effects;
     let expectedHPS = 0;
     
@@ -135,7 +135,6 @@ export function getDominationGemEffect(effectName, player, contentType, rank) {
     bonus_stats.hps = baseThroughput * (1 - effect.expectedOverhealing);
     bonus_stats.dps = baseThroughput * player.getStatPerc("Crit"); // Winds of Winter critting doesn't appear to funnel back to it's absorb but further analysis is required.
 
-    //console.log("Crit Healing Perc: " + critHealingPerc + ". Player Crit: " + playerCrit + ". EffThroughput: " + effectiveThroughput);
     
   }
   else if (effectName === "Chaos Bane" && contentType === "Raid") {

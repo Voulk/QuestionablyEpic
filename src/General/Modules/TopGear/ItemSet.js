@@ -66,6 +66,7 @@ class ItemSet {
         leech: 0,
         hps: 0,
         dps: 0,
+        mana: 0,
       }
       if (this.spec === "Restoration Shaman" || this.spec === "Holy Paladin") stats.intellect = 473;
       else if (this.spec === "Discipline Priest" || this.spec === "Holy Priest" || this.spec === "Restoration Druid") stats.intellect = 450;
@@ -176,7 +177,6 @@ class ItemSet {
 
   verifySet() {
     // Verifies that the set is possible.
-    console.log("UNIQUES: " + JSON.stringify(this.uniques));
     if (this.uniques["legendary"] && this.uniques["legendary"] > 1) {
       return false;
     } else if (this.uniques["unity"] && this.uniques["unity"] > 1) {

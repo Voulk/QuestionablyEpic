@@ -602,7 +602,8 @@ export default function CooldownPlanner(props) {
                 direction="row"
                 justifyContent="space-between"
                 style={{
-                  marginBottom: (currentBoss === "" ? false : true) ? 5 : 0,
+                  marginBottom: (currentBoss === "" ? false : true) ? 7 : 0,
+                  marginTop: (currentBoss === "" ? false : true) ? -6 : 0,
                 }}
               >
                 {/* ------------------- Container for the Heal Team / ERT & Raid/Boss/Plan Selection ------------------- */}
@@ -635,7 +636,8 @@ export default function CooldownPlanner(props) {
                   {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <TextField
-                      sx={{ minWidth: 100, width: "100%" }}
+                      sx={{ minWidth: 100 }}
+                      fullSize
                       label={t("Boss")}
                       select
                       value={currentBoss}
@@ -662,7 +664,8 @@ export default function CooldownPlanner(props) {
 
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <TextField
-                      sx={{ minWidth: 100, width: "100%" }}
+                      sx={{ minWidth: 100 }}
+                      fullSize
                       select
                       label={t("Difficulty")}
                       id="DifficultySelector"
@@ -686,11 +689,13 @@ export default function CooldownPlanner(props) {
                   {/* ----------------------------------- Plan Selection Dropdown ---------------------------------- */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <TextField
-                      sx={{ minWidth: 100, width: "100%" }}
+                      sx={{ minWidth: 100 }}
+                      fullSize
                       select
                       label={t("Plan")}
                       id="PlanSelector"
                       value={currentPlan}
+                      InputLabelProps={{ style: { lineHeight: "normal" } }}
                       onChange={(e) => loadPlanData(currentBoss, e.target.value, currentDifficulty)}
                       disabled={currentBoss === "" || RosterCheck ? true : false || getBossPlanNames(currentBoss, currentDifficulty).length === 1}
                       size="small"

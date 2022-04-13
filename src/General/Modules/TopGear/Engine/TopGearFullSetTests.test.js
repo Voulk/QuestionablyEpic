@@ -25,7 +25,6 @@ describe("Top Gear full test", () => {
         // Our expected result would be Bell / Gland. 
         expect(trinkets.filter(trinket => trinket.effect.name === "Instructor's Divine Bell (new)").length).toEqual(1);
         expect(trinkets.filter(trinket => trinket.effect.name === "Titanic Ocular Gland").length).toEqual(1);
-        //console.log(result);
     })
 
 })
