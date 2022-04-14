@@ -49,7 +49,7 @@ export const allRampsHealing = (boonSeq, fiendSeq, stats, settings = {}, conduit
 // This function automatically casts a full set of ramps. It's easier than having functions call ramps individually and then sum them.
 export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits, reporting) => {
 
-    let rampResult = {totalHealing: 0, ramps: []}
+    let rampResult = {totalHealing: 0, ramps: [], rampSettings: settings}
     const miniSeq = buildRamp('Mini', 6, [], stats.haste, settings.playstyle || "", [])
     const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
     const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
@@ -60,7 +60,7 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits, repo
     if (reporting) {
         rampResult.ramps.push({"tag": "Boon Ramp", "sequence": boonSeq, "totalHealing": boonRamp.totalHealing});
         rampResult.ramps.push({"tag": "Fiend Ramp", "sequence": fiendSeq, "totalHealing": fiendRamp.totalHealing});
-        rampResult.ramps.push({"tag": "Mini Ramp", "sequence": miniSeq, "totalHealing": fiendRamp.totalHealing});
+        rampResult.ramps.push({"tag": "Mini Ramp", "sequence": miniSeq, "totalHealing": miniRamp.totalHealing});
      
         console.log("== Set Ramp Information == ")
         console.log("Total Healing: " + Math.round(rampResult.totalHealing));
