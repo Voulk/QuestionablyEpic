@@ -62,6 +62,7 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits, repo
         rampResult.ramps.push({"tag": "Fiend Ramp", "sequence": fiendSeq, "totalHealing": fiendRamp.totalHealing});
         rampResult.ramps.push({"tag": "Mini Ramp", "sequence": miniSeq, "totalHealing": miniRamp.totalHealing});
      
+        /*
         console.log("== Set Ramp Information == ")
         console.log("Total Healing: " + Math.round(rampResult.totalHealing));
         console.log("Legendaries used: Clarity of Mind");
@@ -72,7 +73,8 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits, repo
             console.log("Ramp Name: " + ramp.tag + " (" + Math.round(ramp.totalHealing) + " healing)");
             console.log("Pre-ramp conditions: " + "[Power of the Dark Side, Purge the Wicked, Pelagos]");
             console.log(rampShortener(ramp.sequence));
-    })}
+            
+    })*/}
 
 
     //console.log(JSON.stringify(rampResult));
@@ -265,7 +267,6 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
             conduits['Courageous Ascension'] = 252;
         }
         else if (settings.playstyle === "Venthyr Evangelism") {
-            console.log("Adding venthyr defaults");
             settings['Penitent One'] = true;
             settings['Shadow Word: Manipulation'] = true;
             settings['Theotar'] = true;

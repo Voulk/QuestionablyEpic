@@ -6,14 +6,18 @@ import { runTopGear, evalDiscRamp } from "General/Modules/TopGear/Engine/TopGear
 import ItemSet from "General/Modules/TopGear/ItemSet";
 
 describe("Top Gear Venthyr tests", () => {
-    const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
+    let player;
     let itemSet;
     let setStats;
+    let wepCombos;
 
     // Import SimC and do some basic setup.
     beforeEach(() => {
+        player =  new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
         player.setModelID(2, "Raid"); // Venthyr Evangelism
-
+        var lines = venthyrDbl.split("\n");
+        processAllLines(player, "Raid", "venthyr", lines, -1, -1)
+        wepCombos = buildWepCombos(player, true);
         setStats = {
             intellect: 2200,
             haste: 950,
@@ -25,7 +29,6 @@ describe("Top Gear Venthyr tests", () => {
             dps: 0,
             mana: 0,
           };
-
       });
 
     test("Test 1, Venthyr legendary check", () => {
@@ -38,11 +41,7 @@ describe("Top Gear Venthyr tests", () => {
         expect(result.rampSettings['Penitent One']).toEqual(true);
     })
 
-    test("Test 2, Top Gear check w/ reporting", () => {
-        var lines = venthyrDbl.split("\n");
-        processAllLines(player, "Raid", "venthyr", lines, -1, -1)
-
-        const wepCombos = buildWepCombos(player, true);
+    test("Test 2, Top Gear legendary check w/ reporting", () => {
         const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"), true)
         const ramp = result.itemSet.report.ramp;
 
@@ -50,6 +49,23 @@ describe("Top Gear Venthyr tests", () => {
         expect(ramp.rampSettings['Penitent One']).toEqual(true);
 
     });
+
+    test("Test 2, Top Gear Mind Games check", () => {
+        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"), true)
+        const ramp = result.itemSet.report.ramp;
+
+        //console.log(ramp);
+
+        ramp.ramps.forEach(rampData => {
+            expect(rampData.sequence.includes('Schism')).toEqual(true);
+            expect(rampData.sequence.includes('Mindgames')).toEqual(true);
+        })
+        //expect(ramp.rampSettings['Shadow Word: Manipulation']).toEqual(true);
+        //expect(ramp.rampSettings['Penitent One']).toEqual(true);
+
+    });
+
+
 })
 
 
