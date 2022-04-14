@@ -57,14 +57,14 @@ describe("Top Gear Venthyr tests", () => {
         //console.log(ramp);
 
         ramp.ramps.forEach(rampData => {
-            expect(rampData.sequence.includes('Schism')).toEqual(true);
-            expect(rampData.sequence.includes('Mindgames')).toEqual(true);
+            expect(rampData.sequence).toContain('Schism');
+            expect(rampData.sequence).toContain('Mindgames');
+            expect(rampData.sequence).not.toContain('Ascended Blast');
         })
         //expect(ramp.rampSettings['Shadow Word: Manipulation']).toEqual(true);
         //expect(ramp.rampSettings['Penitent One']).toEqual(true);
 
     });
-
 
 })
 
