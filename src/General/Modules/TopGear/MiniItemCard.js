@@ -196,7 +196,7 @@ export default function ItemCard(props) {
                     <Grid item xs={11}>
                       <div style={{ display: "inline-flex", marginLeft: 4 }}>
                         {socket}
-                        <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginTop: tertiary || isVault ? 0 : 1, lineHeight: "normal" }}>
+                        <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginTop: 3, lineHeight: "normal" }}>
                           {statString}
                         </Typography>
                       </div>

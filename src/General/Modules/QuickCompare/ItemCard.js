@@ -323,13 +323,7 @@ export default function ItemCard(props) {
                   <Grid item xs={12}>
                     <div style={{ display: "inline-flex", marginLeft: 4, height: 22 }}>
                       {socket}
-                      <Typography
-                        variant="subtitle2"
-                        wrap="nowrap"
-                        display="block"
-                        style={{ fontSize: "12px", paddingTop: 0, marginTop: tertiary || isVault ? 3 : 1, lineHeight: tertiary || isVault || isCatalysable ? "normal" : "" }}
-                        align="left"
-                      >
+                      <Typography variant="subtitle2" wrap="nowrap" display="block" style={{ fontSize: "12px", paddingTop: 0, marginTop: 3, lineHeight: "normal" }} align="left">
                         {statString}
                       </Typography>
                     </div>
