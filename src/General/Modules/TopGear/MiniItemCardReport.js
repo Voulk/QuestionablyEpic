@@ -16,6 +16,13 @@ const useStyles = makeStyles({
     borderColor: "grey",
     borderRadius: "5px",
   },
+  catalyst: {
+    borderColor: "plum",
+    backgroundColor: "#5c4755",
+    borderStyle: "dashed",
+    borderWidth: "1px",
+    minWidth: 210,
+  },
   vault: {
     borderColor: "#0288d1",
     backgroundColor: "#3E4651",
@@ -118,10 +125,13 @@ export default function ItemCardReport(props) {
   const tertiary =
     "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}>{t(props.item.tertiary)}</div> : null;
 
+  const isCatalysable = true;
+  const catalyst = isCatalysable ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
+
   return (
     <Grid item xs={12}>
       <Card
-        className={isVault ? classes.vault : !item.isEquipped && item.slot != "CombinedWeapon" ? classes.notequipped : classes.root}
+        className={isVault ? classes.vault : !item.isEquipped && item.slot != "CombinedWeapon" ? classes.notequipped : catalyst ? classes.catalyst : classes.root}
         elevation={0}
         style={{ backgroundColor: "rgba(34, 34, 34, 0.52)" }}
       >
@@ -138,8 +148,8 @@ export default function ItemCardReport(props) {
                   <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom + gemString}>
                     <img
                       alt="img"
-                      width={38}
-                      height={38}
+                      width={44}
+                      height={44}
                       src={getItemIcon(item.id, gameType)}
                       style={{
                         borderRadius: 4,
@@ -149,7 +159,7 @@ export default function ItemCardReport(props) {
                       }}
                     />
                   </a>
-                  <div className="bottom-right-ItemCards"> {item.level} </div>
+                  <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {item.level} </div>
                 </div>
               </CardContent>
             </Grid>
@@ -159,13 +169,15 @@ export default function ItemCardReport(props) {
                 <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={12} display="inline">
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px" }}>
-                      <div style={{ color: itemQuality(itemLevel, item.id), lineHeight: tertiary || isVault || tier ? "normal" : 1.57 }}>{itemName}</div>
+                      <div style={{ color: itemQuality(itemLevel, item.id), lineHeight: "normal" }}>{itemName}</div>
                       <div style={{ display: "flex" }}>
                         {tertiary}
                         {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
                         {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
                         {(tertiary && tier) || (isVault && tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
                         {tier}
+                        {(tertiary && catalyst) || (isVault && catalyst) || (tier && catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                        {catalyst}
                       </div>
                     </Typography>
                   </Grid>

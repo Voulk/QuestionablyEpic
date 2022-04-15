@@ -1,6 +1,6 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
-import { Card, CardContent, Typography, Grid, Divider, IconButton } from "@mui/material";
+import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } from "@mui/material";
 import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemIcon } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import CardActionArea from "@mui/material/CardActionArea";
 import { dominationGemDB } from "../../../Databases/DominationGemDB";
+import { Difference } from "@mui/icons-material";
 
 const useStyles = makeStyles({
   root: {
@@ -23,6 +24,12 @@ const useStyles = makeStyles({
     borderColor: "Goldenrod",
     backgroundColor: "#494a3d",
     borderWidth: "2px",
+  },
+  catalyst: {
+    borderColor: "plum",
+    backgroundColor: "#5c4755",
+    borderStyle: "dashed",
+    minWidth: 200,
   },
   vault: {
     borderColor: "#0288d1",
@@ -68,6 +75,10 @@ export default function ItemCard(props) {
     props.delete(item.uniqueHash);
   };
 
+  const catalyseItemCard = () => {
+    // props.catalyse(item.uniqueHash);
+  };
+
   const tertiaryStyle = (tertiary) => {
     if (tertiary === "Leech") {
       return "lime";
@@ -100,19 +111,41 @@ export default function ItemCard(props) {
     </div>
   ) : null;
 
+  const isCatalysable = true;
+  const catalyst = isCatalysable ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
+
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <div style={{ position: "relative" }}>
-        {deleteActive ? (
-          <div>
-            <IconButton onClick={deleteItemCard} style={{ position: "absolute", right: 4, bottom: 2, zIndex: 1, padding: 0 }} aria-label="delete" size="small">
-              <DeleteIcon style={{ color: "#ad2c34" }} fontSize="small" />
-            </IconButton>
-          </div>
-        ) : (
-          ""
-        )}
-        <Card className={item.active && isVault ? classes.selectedVault : item.active ? classes.selected : isVault ? classes.vault : classes.root} elevation={0} variant="outlined">
+        <div style={{ position: "absolute", right: 4, bottom: 3, zIndex: 1, padding: 0 }}>
+          <Grid container display="inline-flex" wrap="nowrap" spacing={0}>
+            <Grid item>
+              {isCatalysable ? (
+                <Tooltip arrow title="Catalyse: Create a catalysed version of this item">
+                  <IconButton sx={{ padding: 0 }} onClick={catalyseItemCard} aria-label="catalyse" size="small">
+                    <Difference style={{ color: "plum" }} fontSize="small" />
+                  </IconButton>
+                </Tooltip>
+              ) : (
+                ""
+              )}
+            </Grid>
+            <Grid item>
+              {deleteActive ? (
+                <IconButton sx={{ padding: 0 }} onClick={deleteItemCard} aria-label="delete" size="small">
+                  <DeleteIcon style={{ color: "#ad2c34" }} fontSize="small" />
+                </IconButton>
+              ) : (
+                ""
+              )}
+            </Grid>
+          </Grid>
+        </div>
+        <Card
+          className={item.active && isVault ? classes.selectedVault : item.active ? classes.selected : catalyst ? classes.catalyst : isVault ? classes.vault : classes.root}
+          elevation={0}
+          variant="outlined"
+        >
           <CardActionArea onClick={activateItemCard}>
             <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
               <Grid item xs="auto">
@@ -137,7 +170,7 @@ export default function ItemCard(props) {
                         }}
                       />
                     </a>
-                    <div className="bottom-right-ItemCards"> {item.level} </div>
+                    <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {item.level} </div>
                   </div>
                 </CardContent>
               </Grid>
@@ -146,13 +179,15 @@ export default function ItemCard(props) {
                 <Grid item container direction="column" justifyContent="space-around" xs="auto">
                   <Grid item xs={12} display="inline">
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px" }}>
-                      <div style={{ color: itemQuality, lineHeight: tertiary || isVault || tier ? "normal" : 1.57 }}>{itemName}</div>
+                      <div style={{ color: itemQuality, lineHeight: "normal" }}>{itemName}</div>
                       <div style={{ display: "flex" }}>
                         {tertiary}
                         {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
                         {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
                         {(tertiary && tier) || (isVault && tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
                         {tier}
+                        {(tertiary && catalyst) || (isVault && catalyst) || (tier && catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                        {catalyst}
                       </div>
                     </Typography>
                   </Grid>
@@ -161,13 +196,7 @@ export default function ItemCard(props) {
                     <Grid item xs={11}>
                       <div style={{ display: "inline-flex", marginLeft: 4 }}>
                         {socket}
-                        <Typography
-                          variant="subtitle2"
-                          wrap="nowrap"
-                          display="block"
-                          align="left"
-                          style={{ fontSize: "12px", marginTop: tertiary || isVault ? 0 : 1, lineHeight: tertiary || isVault ? "normal" : "" }}
-                        >
+                        <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginTop: tertiary || isVault ? 0 : 1, lineHeight: "normal" }}>
                           {statString}
                         </Typography>
                       </div>

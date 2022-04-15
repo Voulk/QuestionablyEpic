@@ -22,7 +22,7 @@ const useStyles = makeStyles({
     minWidth: 250,
   },
   catalyst: {
-    borderColor: "hotpink",
+    borderColor: "plum",
     backgroundColor: "#5c4755",
     borderStyle: "dashed",
     minWidth: 250,
@@ -115,7 +115,7 @@ export default function ItemCard(props) {
   ) : null;
 
   const isCatalysable = true;
-  const catalyst = isCatalysable ? <div style={{ fontSize: 10, lineHeight: 1, color: "hotpink" }}>{t("Catalyst")}</div> : null;
+  const catalyst = isCatalysable ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
 
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
 
@@ -221,13 +221,13 @@ export default function ItemCard(props) {
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <div style={{ position: "relative" }}>
-        <div style={{ position: "absolute", right: 4, bottom: 2, zIndex: 1, padding: 0 }}>
+        <div style={{ position: "absolute", right: 4, bottom: 3, zIndex: 1, padding: 0 }}>
           <Grid container display="inline-flex" wrap="nowrap" spacing={0}>
             <Grid item>
-              {deleteActive ? (
+              {isCatalysable ? (
                 <Tooltip arrow title="Catalyse: Create a catalysed version of this item">
                   <IconButton sx={{ padding: 0 }} onClick={catalyseItemCard} aria-label="catalyse" size="small">
-                    <Difference style={{ color: "hotpink" }} fontSize="small" />
+                    <Difference style={{ color: "plum" }} fontSize="small" />
                   </IconButton>
                 </Tooltip>
               ) : (
@@ -261,8 +261,8 @@ export default function ItemCard(props) {
                   <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + gemString + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom}>
                     <img
                       alt="img"
-                      width={42}
-                      height={42}
+                      width={46}
+                      height={46}
                       src={getItemIcon(item.id, gameType)}
                       style={{
                         borderRadius: 4,
@@ -272,7 +272,7 @@ export default function ItemCard(props) {
                       }}
                     />
                   </a>
-                  <div className="bottom-right-ItemCards-QC"> {item.level} </div>
+                  <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {item.level} </div>
                 </div>
               </CardContent>
             </Grid>
@@ -282,7 +282,7 @@ export default function ItemCard(props) {
                 <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={10} display="inline">
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4 }}>
-                      <div style={{ color: itemQuality, lineHeight: tertiary || isVault || tier || catalyst ? "normal" : 1.57, fontSize: itemName.length >= 35 ? 12 : 14 }}>{itemName}</div>
+                      <div style={{ color: itemQuality, lineHeight: tertiary || isVault || tier || catalyst ? "normal" : 1.57, fontSize: itemName.length >= 35 ? 12 : 12 }}>{itemName}</div>
                       <div style={{ display: "flex" }}>
                         {tertiary}
                         {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
@@ -321,7 +321,7 @@ export default function ItemCard(props) {
                 <Divider />
                 <Grid item container display="inline" direction="row" xs="auto" justifyContent="space-between">
                   <Grid item xs={12}>
-                    <div style={{ display: "inline-flex", marginLeft: 4 }}>
+                    <div style={{ display: "inline-flex", marginLeft: 4, height: 22 }}>
                       {socket}
                       <Typography
                         variant="subtitle2"
