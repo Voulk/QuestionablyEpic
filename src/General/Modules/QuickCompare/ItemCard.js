@@ -80,7 +80,7 @@ export default function ItemCard(props) {
   };
 
   const catalyseItemCard = () => {
-    // props.catalyse(item.uniqueHash);
+    props.catalyze(item.uniqueHash);
   };
 
   const upgradeColor = (num) => {
@@ -108,19 +108,19 @@ export default function ItemCard(props) {
     else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
   }
 
-  const socket = props.item.socket ? (
-    <div style={{ display: "inline", verticalAlign: "middle", marginRight: 4, marginTop: 2 }}>
-      <img src={socketImage} width={15} height={15} alt="Socket" />{" "}
-    </div>
-  ) : null;
-
-  const isCatalysable = true;
-  const catalyst = isCatalysable ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
+  const isCatalystItem = item.isCatalystItem;
+  const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
 
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
 
   const tertiary =
     "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}>{t(props.item.tertiary)}</div> : null;
+
+  const socket = props.item.socket ? (
+    <div style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }}>
+      <img src={socketImage} width={15} height={15} alt="Socket" />
+    </div>
+  ) : null;
 
   // If item.offHandID > 0 then return this card which handles the double names + stats
   if (item.offhandID > 0) {
@@ -221,32 +221,28 @@ export default function ItemCard(props) {
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <div style={{ position: "relative" }}>
-        <div style={{ position: "absolute", right: 4, bottom: 3, zIndex: 1, padding: 0 }}>
-          <Grid container display="inline-flex" wrap="nowrap" spacing={0}>
+        <div style={{ position: "absolute", right: 4, bottom: 2, zIndex: 1, padding: 0 }}>
+          <Grid container display="inline-flex" wrap="nowrap" spacing={0} sx={{ verticalAlign: "middle" }}>
             <Grid item>
-              {isCatalysable ? (
+              {isCatalystItem ? null : (
                 <Tooltip arrow title="Catalyse: Create a catalysed version of this item">
                   <IconButton sx={{ padding: 0 }} onClick={catalyseItemCard} aria-label="catalyse" size="small">
-                    <Difference style={{ color: "plum" }} fontSize="small" />
+                    <Difference style={{ color: "plum", fontSize: "18px" }} fontSize="small" />
                   </IconButton>
                 </Tooltip>
-              ) : (
-                ""
               )}
             </Grid>
             <Grid item>
               {deleteActive ? (
                 <IconButton sx={{ padding: 0 }} onClick={deleteItemCard} aria-label="delete" size="small">
-                  <DeleteIcon style={{ color: "#ad2c34" }} fontSize="small" />
+                  <DeleteIcon style={{ color: "#ad2c34", fontSize: "18px" }} fontSize="small" />
                 </IconButton>
-              ) : (
-                ""
-              )}
+              ) : null}
             </Grid>
           </Grid>
         </div>
         <Card
-          className={item.isEquipped && isVault ? classes.selectedVault : item.isEquipped ? classes.selected : catalyst ? classes.catalyst : isVault ? classes.vault : classes.root}
+          className={item.isEquipped && isVault ? classes.selectedVault : item.isEquipped ? classes.selected : isCatalystItem ? classes.catalyst : isVault ? classes.vault : classes.root}
           variant="outlined"
         >
           <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
@@ -281,17 +277,29 @@ export default function ItemCard(props) {
               <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
                 <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={10} display="inline">
-                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4 }}>
-                      <div style={{ color: itemQuality, lineHeight: tertiary || isVault || tier || catalyst ? "normal" : 1.57, fontSize: itemName.length >= 35 ? 12 : 12 }}>{itemName}</div>
-                      <div style={{ display: "flex" }}>
-                        {tertiary}
-                        {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-                        {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
-                        {(tertiary && tier) || (isVault && tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-                        {tier}
-                        {(tertiary && catalyst) || (isVault && catalyst) || (tier && catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-                        {catalyst}
+                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px", height: "27px" }}>
+                      <div
+                        style={{
+                          color: itemQuality,
+                          lineHeight: tertiary || isVault || tier || catalyst ? "normal" : 1.57,
+                          height: "17px",
+                        }}
+                      >
+                        {itemName}
                       </div>
+                      {tertiary || isVault || tier || catalyst ? (
+                        <div style={{ display: "flex" }}>
+                          {tertiary}
+                          {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                          {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
+                          {(tertiary && tier) || (isVault && tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                          {tier}
+                          {(tertiary && catalyst) || (isVault && catalyst) || (tier && catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                          {catalyst}
+                        </div>
+                      ) : (
+                        ""
+                      )}
                     </Typography>
                   </Grid>
                   <Divider orientation="vertical" flexItem />
@@ -319,11 +327,11 @@ export default function ItemCard(props) {
                   </Grid>
                 </Grid>
                 <Divider />
-                <Grid item container display="inline" direction="row" xs="auto" justifyContent="space-between">
-                  <Grid item xs={12}>
-                    <div style={{ display: "inline-flex", marginLeft: 4, height: 22 }}>
+                <Grid item container xs={12} display="inline-flex" direction="row" justifyContent="space-between" style={{ marginTop: 2 }}>
+                  <Grid item xs={11}>
+                    <div style={{ display: "inline-flex", marginLeft: 4, height: 15, verticalAlign: "middle" }}>
                       {socket}
-                      <Typography variant="subtitle2" wrap="nowrap" display="block" style={{ fontSize: "12px", paddingTop: 0, marginTop: 3, lineHeight: "normal" }} align="left">
+                      <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", lineHeight: "normal" }}>
                         {statString}
                       </Typography>
                     </div>

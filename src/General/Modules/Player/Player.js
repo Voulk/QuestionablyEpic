@@ -1,6 +1,7 @@
 import { getAvailableClassConduits } from "../../../Retail/Modules/Covenants/CovenantUtilities";
 import SPEC from "../../Engine/SPECS";
 import STAT from "../../Engine/STAT";
+import Item from "./Item";
 import { scoreItem } from "../../Engine/ItemUtilities";
 import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
@@ -98,7 +99,7 @@ class Player {
     apiGetPlayerAvatar2(this.region, this.charName, this.realm, this.spec).then((res) => {
       this.charAvatarURL = res;
     });
-  }
+  };
 
   editChar = (contentType, name, realm, region, race, weights) => {
     this.charName = name;
@@ -304,6 +305,15 @@ class Player {
       return item;
     });
     this.activeItems = tempArray;
+  };
+
+  catalyzeItem = (unique) => {
+    let tempArray = this.activeItems.filter(function (item) {
+      return item.uniqueHash === unique;
+    });
+    let newItem = new Item(tempArray[0]["id"], tempArray[0]["name"], tempArray[0]["slot"], tempArray[0]["socket"], tempArray[0]["tertiary"], 0, tempArray[0]["level"], tempArray[0]["bonusIDS"]);
+    Object.assign(newItem, { isCatalystItem: true });
+    this.activeItems = this.activeItems.concat(newItem);
   };
 
   sortItems = (container) => {
@@ -662,9 +672,9 @@ class Player {
       this.activeStats = {
         intellect: 2150,
         haste: 940,
-        crit: 650, 
-        mastery: 220, 
-        versatility: 415, 
+        crit: 650,
+        mastery: 220,
+        versatility: 415,
         stamina: 1900,
       };
       //this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable

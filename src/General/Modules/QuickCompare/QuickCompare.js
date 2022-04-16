@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ReactGA from "react-ga";
 import { useTranslation } from "react-i18next";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { Grid, Typography, Divider, Snackbar } from "@mui/material";
-import MuiAlert from '@mui/material/Alert';
+import MuiAlert from "@mui/material/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import "./QuickCompare.css";
 import { buildWepCombos } from "../../Engine/ItemUtilities";
@@ -18,7 +18,7 @@ import CharacterPanel from "../CharacterPanel/CharacterPanel";
 
 const useStyles = makeStyles((theme) => ({
   header: {
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down("md")]: {
       margin: "auto",
       width: "90%",
       justifyContent: "center",
@@ -123,6 +123,13 @@ export default function QuickCompare(props) {
     handleClickDelete();
   };
 
+  const catalyzeItem = (unique) => {
+    let player = props.player;
+    player.catalyzeItem(unique);
+    setItemList([...player.getActiveItems(activeSlot)]);
+    // handleClickDelete();
+  };
+
   /* ---------------------------------------------------------------------------------------------- */
   /*                                       Settings Functions                                       */
   /* ---------------------------------------------------------------------------------------------- */
@@ -196,7 +203,7 @@ export default function QuickCompare(props) {
                   <Divider style={{ marginBottom: 10 }} />
                   <Grid container spacing={1}>
                     {[...props.player.getActiveItems(key.activeItem)].map((item, index) => (
-                      <ItemCard key={index} item={item} delete={deleteItem} />
+                      <ItemCard key={index} item={item} delete={deleteItem} catalyze={catalyzeItem} />
                     ))}
                   </Grid>
                 </Grid>
