@@ -243,12 +243,11 @@ export default function ItemCard(props) {
               <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
                 <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={10} display="inline">
-                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px", height: "27px" }}>
+                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px" }}>
                       <div
                         style={{
                           color: itemQuality,
                           lineHeight: tertiary || isVault || tier || catalyst ? "normal" : 1.57,
-                          height: "17px",
                         }}
                       >
                         {itemName}

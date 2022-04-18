@@ -149,31 +149,55 @@ export default function ItemCard(props) {
               <Divider orientation="vertical" flexItem />
               <CardContent style={{ padding: 0, width: "100%" }}>
                 <Grid item container direction="column" justifyContent="space-around" xs="auto">
-                  <Grid item xs={12} display="inline-flex">
-                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px", height: "27px" }}>
-                      <div
+                  <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
+                    <Grid item xs={11} display="inline">
+                      <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px" }}>
+                        <div
+                          style={{
+                            color: itemQuality,
+                            lineHeight: tertiary || isVault || tier || catalyst ? "normal" : 1.57,
+                          }}
+                        >
+                          {itemName}
+                        </div>
+                        {tertiary || isVault || tier || catalyst ? (
+                          <div style={{ display: "flex" }}>
+                            {tertiary}
+                            {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                            {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
+                            {(tertiary && tier) || (isVault && tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                            {tier}
+                            {(tertiary && catalyst) || (isVault && catalyst) || (tier && catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                            {catalyst}
+                          </div>
+                        ) : (
+                          ""
+                        )}
+                      </Typography>
+                    </Grid>
+                    <Grid
+                      item
+                      xs={1}
+                      style={{
+                        display: "inline-flex",
+                        justifyContent: "center",
+                        visibility: "hidden",
+                      }}
+                    >
+                      <Typography
+                        variant="subtitle1"
+                        wrap="nowrap"
+                        display="inline"
+                        align="center"
                         style={{
-                          color: itemQuality,
-                          lineHeight: tertiary || isVault || tier || catalyst ? "normal" : 1.57,
-                          height: "17px",
+                          color: "#FFDF14",
+                          paddingLeft: "3px",
+                          paddingRight: "3px",
                         }}
                       >
-                        {itemName}
-                      </div>
-                      {tertiary || isVault || tier || catalyst ? (
-                        <div style={{ display: "flex" }}>
-                          {tertiary}
-                          {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-                          {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
-                          {(tertiary && tier) || (isVault && tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-                          {tier}
-                          {(tertiary && catalyst) || (isVault && catalyst) || (tier && catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-                          {catalyst}
-                        </div>
-                      ) : (
                         ""
-                      )}
-                    </Typography>
+                      </Typography>
+                    </Grid>
                   </Grid>
                   <Divider />
                   <Grid item container xs={12} display="inline-flex" direction="row" justifyContent="space-between" style={{ marginTop: 2 }}>
