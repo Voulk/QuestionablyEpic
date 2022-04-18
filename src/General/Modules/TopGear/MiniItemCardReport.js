@@ -1,7 +1,7 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, CardActionArea, Typography, Grid, Divider, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemIcon } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 import hasteSocket from "../../../Images/Resources/hasteSocket.jpg";
 import critSocket from "../../../Images/Resources/critSocket.jpg";
@@ -48,7 +48,6 @@ export default function ItemCardReport(props) {
   const enchants = props.enchants;
   const { t, i18n } = useTranslation();
   const gameType = useSelector((state) => state.gameType);
-
   const currentLanguage = i18n.language;
   const statString = gameType === "BurningCrusade" ? "" : buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level;
@@ -62,6 +61,11 @@ export default function ItemCardReport(props) {
   const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
   const gemString = gameType === "BurningCrusade" ? props.gems : "&gems=" + item.gemString;
   const socketImage = socketImg[enchants["Gems"]];
+  const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
+  const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;
+  const isCatalysable = item.isCatalystItem;
+  const catalyst = isCatalysable ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
+
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
   const itemQuality = (itemLevel, itemID) => {
     if (gameType !== "Retail") {
@@ -82,14 +86,7 @@ export default function ItemCardReport(props) {
   let itemName = "";
   let isVault = item.vaultItem;
 
-  if (item.offhandID > 0) {
-    itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType) + " & " + getTranslatedItemName(item.offhandID, currentLanguage, "", gameType);
-  } else {
-    if (isLegendary) itemName = item.effect.name;
-    else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
-  }
-
-  const socket = props.item.socket ? (
+  const socket = item.socket ? (
     <div style={{ display: "inline" }}>
       <Tooltip title={t(capitalizeFirstLetter(enchants["Gems"]))} arrow>
         <img src={socketImage} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
@@ -106,27 +103,15 @@ export default function ItemCardReport(props) {
       );
       return typo;
     }
-
     return null;
   };
 
-  const tertiaryStyle = (tertiary) => {
-    if (tertiary === "Leech") {
-      return "lime";
-    } else if (tertiary === "Avoidance") {
-      return "khaki";
-    } else {
-      return "#fff";
-    }
-  };
-
-  const tier = props.item.setID !== "" && props.item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
-
-  const tertiary =
-    "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}>{t(props.item.tertiary)}</div> : null;
-
-  const isCatalysable = true;
-  const catalyst = isCatalysable ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
+  if (item.offhandID > 0) {
+    itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType) + " & " + getTranslatedItemName(item.offhandID, currentLanguage, "", gameType);
+  } else {
+    if (isLegendary) itemName = item.effect.name;
+    else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
+  }
 
   return (
     <Grid item xs={12}>

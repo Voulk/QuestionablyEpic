@@ -1,14 +1,12 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemIcon } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
 import "./ItemCard.css";
 import DeleteIcon from "@mui/icons-material/Delete";
-import DifferenceRoundedIcon from "@mui/icons-material/DifferenceRounded";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { dominationGemDB } from "../../../Databases/DominationGemDB";
 import { Difference } from "@mui/icons-material";
 
 const useStyles = makeStyles({
@@ -45,35 +43,32 @@ const useStyles = makeStyles({
     minWidth: 250,
     borderStyle: "dashed",
   },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
 });
 
 export default function ItemCard(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
-  const item = props.item;
   const currentLanguage = i18n.language;
-  //const statString = buildStatString(item.stats, item.effect, currentLanguage);
+  const item = props.item;
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
-  const itemLevel = item.level;
   const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
+  const isCatalystItem = item.isCatalystItem;
   const gameType = useSelector((state) => state.gameType);
   const itemQuality = item.getQualityColor();
-
-  const tertiaryStyle = (tertiary) => {
-    if (tertiary === "Leech") {
-      return "lime";
-    } else if (tertiary === "Avoidance") {
-      return "khaki";
-    } else {
-      return "#fff";
-    }
-  };
+  let itemName = "";
+  let itemName2 = "";
+  let isVault = item.vaultItem;
+  const deleteActive = item.offhandID === 0;
+  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
+  const gemString = gameType === "Retail" && item.gemString ? "&gems=" + item.gemString : "";
+  const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
+  const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
+  const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;
+  const socket = item.socket ? (
+    <div style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }}>
+      <img src={socketImage} width={15} height={15} alt="Socket" />
+    </div>
+  ) : null;
 
   const deleteItemCard = () => {
     props.delete(item.uniqueHash);
@@ -83,23 +78,6 @@ export default function ItemCard(props) {
     props.catalyze(item.uniqueHash);
   };
 
-  const upgradeColor = (num) => {
-    if (num > 0) {
-      return "#FFDF14"; // #60e421
-    } else if (num < 0) {
-      return "#ad2c34";
-    } else {
-      return "#fff";
-    }
-  };
-
-  let itemName = "";
-  let itemName2 = "";
-  let isVault = item.vaultItem;
-  const deleteActive = item.offhandID === 0;
-  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
-  const gemString = gameType === "Retail" && item.gemString ? "&gems=" + item.gemString : "";
-
   if (item.offhandID > 0) {
     itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
     itemName2 = getTranslatedItemName(item.offhandID, currentLanguage, "", gameType);
@@ -107,20 +85,6 @@ export default function ItemCard(props) {
     if (isLegendary) itemName = item.effect.name;
     else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
   }
-
-  const isCatalystItem = item.isCatalystItem;
-  const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
-
-  const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
-
-  const tertiary =
-    "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}>{t(props.item.tertiary)}</div> : null;
-
-  const socket = props.item.socket ? (
-    <div style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }}>
-      <img src={socketImage} width={15} height={15} alt="Socket" />
-    </div>
-  ) : null;
 
   // If item.offHandID > 0 then return this card which handles the double names + stats
   if (item.offhandID > 0) {
@@ -176,7 +140,7 @@ export default function ItemCard(props) {
                   <Grid item xs={10} display="inline">
                     <Typography variant="subtitle2" wrap="nowrap" style={{ display: "block", marginLeft: 4 }} align="left">
                       <div style={{ color: itemQuality, lineHeight: item.mainHandTertiary ? "normal" : 1.57 }}>{itemName}</div>
-                      {item.mainHandTertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(item.mainHandTertiary) }}>{item.mainHandTertiary}</div> : ""}
+                      {item.mainHandTertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{item.mainHandTertiary}</div> : ""}
                     </Typography>
                   </Grid>
                   <Divider orientation="vertical" flexItem />
@@ -194,12 +158,12 @@ export default function ItemCard(props) {
                       display="inline"
                       align="center"
                       style={{
-                        color: upgradeColor(props.item.softScore),
+                        color: "#FFDF14",
                         paddingLeft: "3px",
                         paddingRight: "3px",
                       }}
                     >
-                      {Math.round(props.item.softScore)}
+                      {Math.round(item.softScore)}
                     </Typography>
                   </Grid>
                 </Grid>
@@ -207,7 +171,7 @@ export default function ItemCard(props) {
                 <Grid item xs={10}>
                   <Typography variant="subtitle2" wrap="nowrap" style={{ display: "block", marginLeft: 4 }} align="left">
                     <div style={{ color: itemQuality, lineHeight: item.offHandTertiary ? "normal" : 1.57 }}>{itemName2}</div>
-                    {item.offHandTertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(item.offHandTertiary) }}>{item.offHandTertiary}</div> : ""}
+                    {item.offHandTertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{item.offHandTertiary}</div> : ""}
                   </Typography>
                 </Grid>
               </Grid>
@@ -234,9 +198,11 @@ export default function ItemCard(props) {
             </Grid>
             <Grid item>
               {deleteActive ? (
-                <IconButton sx={{ padding: 0 }} onClick={deleteItemCard} aria-label="delete" size="small">
-                  <DeleteIcon style={{ color: "#ad2c34", fontSize: "18px" }} fontSize="small" />
-                </IconButton>
+                <Tooltip arrow title="Delete: Delete this item.">
+                  <IconButton sx={{ padding: 0 }} onClick={deleteItemCard} aria-label="delete" size="small">
+                    <DeleteIcon style={{ color: "#ad2c34", fontSize: "18px" }} fontSize="small" />
+                  </IconButton>
+                </Tooltip>
               ) : null}
             </Grid>
           </Grid>
@@ -317,12 +283,12 @@ export default function ItemCard(props) {
                       display="inline"
                       align="center"
                       style={{
-                        color: upgradeColor(props.item.softScore),
+                        color: "#FFDF14",
                         paddingLeft: "3px",
                         paddingRight: "3px",
                       }}
                     >
-                      {Math.round(props.item.softScore)}
+                      {Math.round(item.softScore)}
                     </Typography>
                   </Grid>
                 </Grid>

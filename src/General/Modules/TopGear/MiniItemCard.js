@@ -1,14 +1,13 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemIcon } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import CardActionArea from "@mui/material/CardActionArea";
-import { dominationGemDB } from "../../../Databases/DominationGemDB";
 import { Difference } from "@mui/icons-material";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
 
@@ -43,17 +42,6 @@ const useStyles = makeStyles({
     minWidth: 200,
     borderStyle: "dashed",
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
-  title: {
-    fontSize: 12,
-  },
-  pos: {
-    marginBottom: 10,
-  },
 });
 
 export default function ItemCard(props) {
@@ -61,12 +49,22 @@ export default function ItemCard(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const item = props.item;
-  const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level;
+  const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
+  const isCatalystItem = item.isCatalystItem;
   const gameType = useSelector((state) => state.gameType);
   const itemQuality = item.getQualityColor();
   const deleteActive = item.offhandID === 0;
+  const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;
+  const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
+
+  const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
+  const socket = item.socket ? (
+    <div style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }}>
+      <img src={socketImage} width={15} height={15} alt="Socket" />
+    </div>
+  ) : null;
 
   const activateItemCard = () => {
     props.activateItem(item.uniqueHash, item.active);
@@ -80,19 +78,8 @@ export default function ItemCard(props) {
     props.catalyze(item.uniqueHash);
   };
 
-  const tertiaryStyle = (tertiary) => {
-    if (tertiary === "Leech") {
-      return "lime";
-    } else if (tertiary === "Avoidance") {
-      return "khaki";
-    } else {
-      return "#fff";
-    }
-  };
-
   let itemName = "";
   let isVault = item.vaultItem;
-  // const deleteActive = item.offhandID === 0;
 
   if (item.offhandID > 0) {
     itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType) + " & " + getTranslatedItemName(item.offhandID, currentLanguage, "", gameType);
@@ -101,20 +88,6 @@ export default function ItemCard(props) {
     else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
   }
 
-  const tertiary =
-    "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}>{t(props.item.tertiary)}</div> : null;
-
-  const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
-
-  const isCatalystItem = item.isCatalystItem;
-  const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
-
-  const socket = props.item.socket ? (
-    <div style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }}>
-      <img src={socketImage} width={15} height={15} alt="Socket" />
-    </div>
-  ) : null;
-
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <div style={{ position: "relative" }}>
@@ -122,7 +95,7 @@ export default function ItemCard(props) {
           <Grid container display="inline-flex" wrap="nowrap" spacing={0} sx={{ verticalAlign: "middle" }}>
             <Grid item>
               {isCatalystItem ? null : (
-                <Tooltip arrow title="Catalyse: Create a catalysed version of this item">
+                <Tooltip arrow title="Catalyse: Create a catalysed version of this item.">
                   <IconButton sx={{ padding: 0 }} onClick={catalyseItemCard} aria-label="catalyse" size="small">
                     <Difference style={{ color: "plum", fontSize: "18px" }} fontSize="small" />
                   </IconButton>
@@ -131,9 +104,11 @@ export default function ItemCard(props) {
             </Grid>
             <Grid item>
               {deleteActive ? (
-                <IconButton sx={{ padding: 0 }} onClick={deleteItemCard} aria-label="delete" size="small">
-                  <DeleteIcon style={{ color: "#ad2c34", fontSize: "18px" }} fontSize="small" />
-                </IconButton>
+                <Tooltip arrow title="Delete: Delete this item.">
+                  <IconButton sx={{ padding: 0 }} onClick={deleteItemCard} aria-label="delete" size="small">
+                    <DeleteIcon style={{ color: "#ad2c34", fontSize: "18px" }} fontSize="small" />
+                  </IconButton>
+                </Tooltip>
               ) : null}
             </Grid>
           </Grid>
@@ -153,7 +128,7 @@ export default function ItemCard(props) {
                   }}
                 >
                   <div className="container-MiniItemCards">
-                    <a data-wowhead={item.slot === "Trinket" ? "item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage : ""}>
+                    <a data-wowhead={item.slot === "Trinket" ? "item=" + item.id + "&" + "ilvl=" + itemLevel + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage : ""}>
                       <img
                         alt="img"
                         width={44}
@@ -167,7 +142,7 @@ export default function ItemCard(props) {
                         }}
                       />
                     </a>
-                    <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {item.level} </div>
+                    <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {itemLevel} </div>
                   </div>
                 </CardContent>
               </Grid>
