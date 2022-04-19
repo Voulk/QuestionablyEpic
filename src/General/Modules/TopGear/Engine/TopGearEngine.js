@@ -8,7 +8,7 @@ import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEffectFormulas";
-import { allRamps } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { allRamps, allRampsHealing } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { buildBestDomSet } from "../Utilities/DominationGemUtilities";
 import { getItemSet } from "BurningCrusade/Databases/ItemSetsDBRetail.js";
@@ -78,7 +78,7 @@ function autoSocketItems(itemList) {
  * @param {*} castModel
  * @returns A Top Gear result which includes the best set, and how close various alternatives are.
  */
-export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
+export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel, reporting = false) {
   //console.log("Running Top Gear")
   // == Setup Player & Cast Model ==
   // Create player / cast model objects in this thread based on data from the player character & player model.
@@ -102,7 +102,7 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   // == Evaluate Sets ==
   // We'll explain this more in the evalSet function header but we assign each set a score that includes stats, effects and more.
   for (var i = 0; i < itemSets.length; i++) {
-    itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel);
+    itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting);
   }
 
   // == Sort and Prune sets ==
@@ -369,9 +369,10 @@ function dupObject(set) {
  * @param {*} castModel
  * @returns
  */
-function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel) {
+function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel, reporting = false) {
   // == Setup ==
   let builtSet = itemSet.compileStats("Retail", userSettings);
+  let report = {};
   let setStats = builtSet.setStats;
   let gearStats = dupObject(setStats);
   const setBonuses = builtSet.sets;
@@ -454,31 +455,9 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   // Further documentation is included in the DiscPriestRamps files.
   if (player.spec === "Discipline Priest" && contentType === "Raid") {
 
-    // Setup any ramp settings or special effects that need to be taken into account.
-    let rampSettings = { Pelagos: true };
-    let specialSpells = ["Rapture"];
-    // Setup ramp cast sequences
-    const onUseTrinkets = itemSet.onUseTrinkets.map((trinket) => trinket.name);
-    if (effectList.filter(effect => effect.name === "DPriest T28-4").length > 0) {
-      // We are wearing 4pc and should add it to both Ramp Settings (to include the PotDS buff) and specialSpells (to alter our cast sequences).
-      rampSettings["4T28"] = true; 
-      specialSpells.push("4T28");
-    }
-    const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
-    const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
-
-    if (onUseTrinkets !== null && onUseTrinkets.length > 0) {
-      itemSet.onUseTrinkets.forEach((trinket) => {
-        rampSettings[trinket.name] = getTrinketValue(trinket.name, trinket.level);
-      });
-    }
-
-    if (itemSet.setLegendary === "Clarity of Mind") rampSettings["Clarity of Mind"] = true;
-
-    // Perform our ramp, and then add it to our sets expected HPS. Our set's stats are included here which means we don't need to score them later in the function.
-    // The ramp sequence also includes any diminishing returns.
-    const setRamp = allRamps(boonSeq, fiendSeq, setStats, rampSettings, { "Courageous Ascension": 239, "Rabid Shadows": 239 });
-    setStats.hps += setRamp / 180;
+    const setRamp = evalDiscRamp(itemSet, setStats, castModel, effectList, reporting)
+    if (reporting) report.ramp = setRamp;
+    setStats.hps += setRamp.totalHealing / 180;
 
     evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
     evalStats.leech = (setStats.leech || 0) + (mergedEffectStats.leech || 0);
@@ -541,6 +520,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
+  builtSet.report = report;
   itemSet.effectList = effectList;
   
   return builtSet;
@@ -621,6 +601,47 @@ const deepCopyFunction = (inObject) => {
 
   return outObject;
 };
+
+export function evalDiscRamp(itemSet, setStats, castModel, effectList, reporting = false) {
+      // Setup any ramp settings or special effects that need to be taken into account.
+      let rampSettings = { playstyle: castModel.modelName };
+      let specialSpells = ["Rapture"];
+      // Setup ramp cast sequences
+      const onUseTrinkets = itemSet.onUseTrinkets.map((trinket) => trinket.name);
+      if (effectList.filter(effect => effect.name === "DPriest T28-4").length > 0) {
+        // We are wearing 4pc and should add it to both Ramp Settings (to include the PotDS buff) and specialSpells (to alter our cast sequences).
+        rampSettings["4T28"] = true; 
+        specialSpells.push("4T28");
+      }
+      const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
+      const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
+  
+      if (onUseTrinkets !== null && onUseTrinkets.length > 0) {
+        itemSet.onUseTrinkets.forEach((trinket) => {
+          rampSettings[trinket.name] = getTrinketValue(trinket.name, trinket.level);
+        });
+      }
+  
+      if (castModel.modelName === "Kyrian Evangelism") {
+        rampSettings['Pelagos'] = true;
+        if (itemSet.unity) rampSettings["Sphere's Harmony"] = true;
+      }
+      else if (castModel.modelName === "Venthyr Evangelism") {
+        rampSettings['Theotar'] = true;
+        if (itemSet.unity) rampSettings["Shadow Word: Manipulation"] = true;
+      }
+  
+      if (itemSet.setLegendary === "Clarity of Mind") rampSettings["Clarity of Mind"] = true;
+      if (itemSet.setLegendary === "Penitent One") rampSettings["Penitent One"] = true;
+  
+      // Perform our ramp, and then add it to our sets expected HPS. Our set's stats are included here which means we don't need to score them later in the function.
+      // The ramp sequence also includes any diminishing returns.
+      const setRamp = allRamps(boonSeq, fiendSeq, setStats, rampSettings, { "Courageous Ascension": 239, "Rabid Shadows": 239 }, true);
+
+      return setRamp;
+  
+
+}
 
 /**
  * This is our evaluation function. It takes a complete set of gear and assigns it a score based on the sets stats, effects, legendaries and more.

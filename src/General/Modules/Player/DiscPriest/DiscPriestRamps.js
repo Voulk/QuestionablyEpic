@@ -2,21 +2,84 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { DISCSPELLS } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
+import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
     chaosBrand: true
 }
 
+
+// This is a very simple function that just condenses our ramp function down. 
+const rampShortener = (seq) => {
+    let shortRamp = [];
+    let lastValue = "";
+    let lastCount = 1;
+
+    for (var i = 0; i < seq.length; i++) {
+        const currentValue = seq[i];
+        if (currentValue === lastValue) {
+            lastCount += 1;
+        }
+        else {
+            if (lastValue !== "") {
+                if (lastCount === 1) shortRamp.push(lastValue);
+                else shortRamp.push(lastValue + " x" + lastCount);
+            }
+            
+            lastCount = 1;
+        }
+        lastValue = currentValue;
+    }
+    shortRamp.push(lastValue + " x" + lastCount);
+    return shortRamp
+}
+
+
+export const allRampsHealing = (boonSeq, fiendSeq, stats, settings = {}, conduits, reporting = false) => {
+    const rampResult = allRamps(boonSeq, fiendSeq, stats, settings, conduits, reporting);
+
+    if (rampResult.totalHealing > 0) return rampResult.totalHealing;
+    else {
+        reportError("", "DiscRamp", "Total Healing is 0", rampResult.totalHealing || 0)
+        return 0;
+    }
+}
+
 // This function automatically casts a full set of ramps. It's easier than having functions call ramps individually and then sum them.
-export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
-    
-    const miniSeq = buildRamp('Mini', 6, [], stats.haste, "Kyrian Evangelism", [])
+export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits, reporting) => {
+
+    let rampResult = {totalHealing: 0, ramps: [], rampSettings: settings}
+    const miniSeq = buildRamp('Mini', 6, [], stats.haste, settings.playstyle || "", [])
     const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
     const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
     const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
 
-    return boonRamp + fiendRamp + miniRamp * 2;
+    rampResult.totalHealing = boonRamp.totalHealing + fiendRamp.totalHealing + miniRamp.totalHealing * 2;
+
+    if (reporting) {
+        rampResult.ramps.push({"tag": "Boon Ramp", "sequence": boonSeq, "totalHealing": boonRamp.totalHealing});
+        rampResult.ramps.push({"tag": "Fiend Ramp", "sequence": fiendSeq, "totalHealing": fiendRamp.totalHealing});
+        rampResult.ramps.push({"tag": "Mini Ramp", "sequence": miniSeq, "totalHealing": miniRamp.totalHealing});
+     
+        /*
+        console.log("== Set Ramp Information == ")
+        console.log("Total Healing: " + Math.round(rampResult.totalHealing));
+        console.log("Legendaries used: Clarity of Mind");
+        console.log("Conduits used: " + JSON.stringify(conduits));
+        console.log("On use Trinkets used: " + " Instructor's Divine Bell (213 ilvl, ~20% expected overhealing)")
+        console.log("Post-DR passive stat breakdown: " + JSON.stringify(stats));
+        rampResult.ramps.forEach(ramp => {
+            console.log("Ramp Name: " + ramp.tag + " (" + Math.round(ramp.totalHealing) + " healing)");
+            console.log("Pre-ramp conditions: " + "[Power of the Dark Side, Purge the Wicked, Pelagos]");
+            console.log(rampShortener(ramp.sequence));
+            
+    })*/}
+
+
+    //console.log(JSON.stringify(rampResult));
+
+    return rampResult; //boonRamp + fiendRamp + miniRamp * 2;
 }
 
 /**  Extend all active atonements by @extension seconds. This is triggered by Evanglism / Spirit Shell. */
@@ -196,11 +259,23 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
     // we don't have full information about a character.
     // As always, Top Gear is able to provide a more complete picture. 
     if (settings['DefaultLoadout']) {
-        settings['Clarity of Mind'] = true;
-        settings['Pelagos'] = true;
-        conduits['Shining Radiance'] = 239;
-        conduits['Rabid Shadows'] = 239;
-        conduits['Courageous Ascension'] = 239;
+        if (settings.playstyle === "Kyrian Evangelism") {
+            settings['Clarity of Mind'] = true;
+            settings['Pelagos'] = true;
+            conduits['Shining Radiance'] = 252;
+            conduits['Rabid Shadows'] = 252;
+            conduits['Courageous Ascension'] = 252;
+        }
+        else if (settings.playstyle === "Venthyr Evangelism") {
+            settings['Penitent One'] = true;
+            settings['Shadow Word: Manipulation'] = true;
+            settings['Theotar'] = true;
+            conduits['Shining Radiance'] = 252;
+            conduits['Rabid Shadows'] = 252;
+            conduits['Swift Penitence'] = 252;
+            //conduits['Courageous Ascension'] = 252;
+        }
+
         
     }
 
@@ -212,10 +287,21 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
     // It's a straightfoward addition.
     if (settings['Clarity of Mind']) discSpells['Rapture'][0].atonement = 21;
 
+    if (settings['Shadow Word: Manipulation']) discSpells['Mindgames'].push({ // TODO
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        cooldown: 0,
+        buffType: 'stats',
+        stat: 'crit',
+        value: 40 * 35, // This needs to be converted to post-DR stats.
+        buffDuration: 10,
+    });
+
     // -- Penitent One --
     // Power Word: Radiance has a chance to make your next Penance free, and fire 3 extra bolts.
     // This is a close estimate, and could be made more accurate by tracking the buff and adding ticks instead of power.
-    if (settings['Penitent One']) discSpells['Penance'][0].coeff = discSpells['PenanceTick'][0].coeff * (0.84 * 2); 
+    if (settings['Penitent One']) discSpells['PenanceTick'][0].coeff = discSpells['PenanceTick'][0].coeff * (0.84 * 2); 
     //
 
     // === Soulbinds ===
@@ -253,9 +339,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
         if (settings['Power of the Dark Side']) state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: 1.5, stacks: 3})
     }
     
-    
     //
-
     // === Trinkets ===
     // These settings change the stat value prescribed to a given trinket. We call these when adding trinkets so that we can grab their value at a specific item level.
     // When adding a trinket to this section, make sure it has an entry in DiscSpellDB first prescribing the buff duration, cooldown and type of stat.
@@ -538,7 +622,8 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     // Add up our healing values (including atonement) and return it.
 
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
-    return sumValues(state.healingDone)
+    state.totalHealing = sumValues(state.healingDone);
+    return state;//sumValues(state.healingDone)
 
 }
 
