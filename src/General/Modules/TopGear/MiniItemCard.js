@@ -94,13 +94,13 @@ export default function ItemCard(props) {
         <div style={{ position: "absolute", right: 4, bottom: 2, zIndex: 1, padding: 0 }}>
           <Grid container display="inline-flex" wrap="nowrap" spacing={0} sx={{ verticalAlign: "middle" }}>
             <Grid item>
-              {isCatalystItem ? null : (
+              {item.canBeCatalyzed() ? (
                 <Tooltip arrow title="Catalyse: Create a catalysed version of this item.">
                   <IconButton sx={{ padding: 0 }} onClick={catalyseItemCard} aria-label="catalyse" size="small">
                     <Difference style={{ color: "plum", fontSize: "18px" }} fontSize="small" />
                   </IconButton>
                 </Tooltip>
-              )}
+              ) : null}
             </Grid>
             <Grid item>
               {deleteActive ? (
