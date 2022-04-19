@@ -1,6 +1,7 @@
 import { getAvailableClassConduits } from "../../../Retail/Modules/Covenants/CovenantUtilities";
 import SPEC from "../../Engine/SPECS";
 import STAT from "../../Engine/STAT";
+import { itemDB } from "Databases/ItemDB";
 import Item from "./Item";
 import { scoreItem } from "../../Engine/ItemUtilities";
 import { getUnique } from "./PlayerUtilities";
@@ -307,13 +308,29 @@ class Player {
     this.activeItems = tempArray;
   };
 
-  catalyzeItem = (unique) => {
-    let tempArray = this.activeItems.filter(function (item) {
+  catalyzeItem = (item) => {
+    /*let tempArray = this.activeItems.filter(function (item) {
       return item.uniqueHash === unique;
+    }); */
+    const slot = item.slot;
+    const pClass = this.spec;
+    const classTag = {"Holy Priest": "of the Empyrean", "Discipline Priest": "of the Empyrean", "Restoration Druid": "of the Fixed Stars",
+                      "Restoration Shaman": "Theurgic Starspeaker's", "Mistweaver Monk": "of the Grand Upwelling", "Holy Paladin": "Luminous Chevalier's"}
+
+    const temp = itemDB.filter(function (item) {
+      return item.slot === slot && item.name.includes(classTag[pClass]);
     });
-    let newItem = new Item(tempArray[0]["id"], tempArray[0]["name"], tempArray[0]["slot"], tempArray[0]["socket"], tempArray[0]["tertiary"], 0, tempArray[0]["level"], tempArray[0]["bonusIDS"]);
-    Object.assign(newItem, { isCatalystItem: true });
-    this.activeItems = this.activeItems.concat(newItem);
+
+    if (temp.length > 0) {
+      const match = temp[0];
+      const newItem = new Item(match.id, "", slot, item.socket, item.tertiary, 0, item.level, "");
+      Object.assign(newItem, { isCatalystItem: true });
+      this.activeItems = this.activeItems.concat(newItem);
+
+    }
+    else {
+      // We should probably write an error check here.
+    }
   };
 
   sortItems = (container) => {
