@@ -34,12 +34,14 @@ const useStyles = makeStyles({
     //borderColor: "Goldenrod",
     //backgroundColor: "#494a3d",
     borderWidth: "1px",
+    height: 52,
   },
   selectedVault: {
     borderColor: "Goldenrod",
     backgroundColor: "#494a3d",
     minWidth: 250,
     borderStyle: "dashed",
+    height: 52,
   },
 });
 
@@ -93,15 +95,15 @@ export default function ItemCard(props) {
             <Grid item xs="auto">
               <CardContent
                 style={{
-                  padding: "3.5px 3.5px 0.5px 3.5px",
+                  padding: "2px 2px 0px 2px",
                   display: "inline-flex",
                 }}
               >
                 <div className="container-ItemCards">
                   <img
                     alt="img"
-                    width={42}
-                    height={42}
+                    width={46}
+                    height={46}
                     src={getItemIcon(item.offhandID, gameType)}
                     style={{
                       borderRadius: 4,
@@ -111,11 +113,13 @@ export default function ItemCard(props) {
                       position: "absolute",
                     }}
                   />
+                  <div style={{ content: "", position: "absolute", borderTop: "1px solid", borderColor: itemQuality, width: "65.05px", transform: "rotate(135deg)", transformOrigin: "23px 11px" }} />
+
                   <img
                     className="et_pb_image.diagonal-overlay"
                     alt="img"
-                    width={42}
-                    height={42}
+                    width={46}
+                    height={46}
                     src={getItemIcon(item.id, gameType)}
                     style={{
                       borderRadius: 4,
