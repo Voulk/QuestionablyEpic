@@ -75,7 +75,7 @@ export default function ItemCard(props) {
   };
 
   const catalyseItemCard = () => {
-    props.catalyze(item.uniqueHash);
+    props.catalyze(item);
   };
 
   let itemName = "";

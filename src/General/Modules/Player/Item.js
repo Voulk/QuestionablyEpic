@@ -72,7 +72,7 @@ class Item {
   }
 
   canBeCatalyzed() {
-    return !this.isCatalystItem && !this.isLegendary() && ['Chest', 'Shoulder', 'Back', 'Wrist', 'Hands', 'Waist', 'Legs', 'Feet'].includes(this.slot);
+    return !this.isCatalystItem && !this.isLegendary() && ['Head', 'Chest', 'Shoulder', 'Back', 'Wrist', 'Hands', 'Waist', 'Legs', 'Feet'].includes(this.slot);
   }
 
   getQualityColor() {
