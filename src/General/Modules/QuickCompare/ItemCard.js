@@ -12,23 +12,21 @@ import { Difference } from "@mui/icons-material";
 const useStyles = makeStyles({
   root: {
     minWidth: 250,
+    height: 52,
   },
   vault: {
     borderColor: "#0288d1",
     backgroundColor: "#464E5B",
     borderStyle: "dashed",
     minWidth: 250,
+    height: 52,
   },
   catalyst: {
     borderColor: "plum",
     backgroundColor: "#5c4755",
     borderStyle: "dashed",
     minWidth: 250,
-  },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
+    height: 52,
   },
   selected: {
     minWidth: 250,
