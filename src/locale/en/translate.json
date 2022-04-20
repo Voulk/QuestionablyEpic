@@ -582,8 +582,8 @@
         "Setting3TextFieldLabel": "",
         "Setting4Spacer": "--------------------------------------------------------------------",
         "Setting4Tooltip": "You can show Upgrade Finder results as either a % upgrade, or in effective HPS.",
-        "Setting4Title": "Upgrade Finder Display",
-        "Setting4TextFieldLabel": "Upgrade Finder Display",
+        "Setting4Title": "UF: Result Display",
+        "Setting4TextFieldLabel": "Upgrade Finder: Display",
         "Setting5Spacer": "--------------------------------------------------------------------",
         "Setting5Tooltip": "Choose your playstyle",
         "Setting5Title": "Playstyle",
@@ -591,7 +591,11 @@
         "Setting6Spacer": "--------------------------------------------------------------------",
         "Setting6Tooltip": "Select how many Catalyst charges you have. This determines how many Catalyst items Top Gear will be restricted to.",
         "Setting6Title": "Catalyst Limit",
-        "Setting6TextFieldLabel": "Limit"
+        "Setting6TextFieldLabel": "Limit",
+        "Setting7Spacer": "--------------------------------------------------------------------",
+        "Setting7Tooltip": "Turning this on will automatically add Leech to all Upgrade Finder choices.",
+        "Setting7Title": "UF: Leech",
+        "Setting7TextFieldLabel": "Leech"
       },
       "BurningCrusade": {
         "Setting0Spacer": "--------------------------------------------------------------------",

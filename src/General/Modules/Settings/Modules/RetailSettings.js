@@ -44,6 +44,10 @@ export default function RetailSettings(props) {
   /* ------------------------------- Upgrade Finder HPS Toggle --------------------------------- */
   const [upFinderToggle, setupFinderToggle] = useState(props.userSettings.upFinderToggle);
 
+  /* ------------------------------- Upgrade Finder: Leech --------------------------------- */
+  const [upFinderLeech, setupFinderLeech] = useState(props.userSettings.upFinderLeech);
+
+
   /* ----------------------------------- Catalyst Limit State ---------------------------------- */
   const [catalystLimit, setCatalystLimit] = useState(props.userSettings.catalystLimit);
 
@@ -90,6 +94,12 @@ export default function RetailSettings(props) {
     //props.editSettings("vaultDomGem", value)
     props.editSettings("upFinderToggle", value);
     setupFinderToggle(value);
+  };
+
+  const updateUpFinderLeech = (value) => {
+    //props.editSettings("vaultDomGem", value)
+    props.editSettings("upFinderLeech", value);
+    setupFinderLeech(value);
   };
 
   
@@ -275,6 +285,41 @@ export default function RetailSettings(props) {
               </MenuItem>
               <MenuItem value={'hps'} style={{ justifyContent: "center" }}>
                 {"Show HPS"}
+              </MenuItem>
+            </TextField>
+          </Tooltip>
+        </Grid>
+      ) : (
+        ""
+      )}
+      {/* ------------------------------------- Upgrade Finder: Leech ---------------------------------------- */}
+      {props.autoSocket === true ? (
+        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+          <Tooltip
+            title={
+              <Typography align="center" variant="body2">
+                {t("Settings.Retail.Setting7Tooltip")}
+              </Typography>
+            }
+            placement="top-start"
+          >
+            <TextField
+              className={classes.select}
+              value={upFinderLeech}
+              InputProps={{ variant: "outlined" }}
+              select
+              variant="outlined"
+              size="small"
+              fullWidth
+              onChange={(e) => updateUpFinderLeech(e.target.value)}
+              label={t("Settings.Retail.Setting7Title")}
+              style={{ textAlign: "center", minWidth: 120 }}
+            >
+              <MenuItem divider value={true} style={{ justifyContent: "center" }}>
+                {t("Yes")}
+              </MenuItem>
+              <MenuItem value={false} style={{ justifyContent: "center" }}>
+                {t("No")}
               </MenuItem>
             </TextField>
           </Tooltip>
