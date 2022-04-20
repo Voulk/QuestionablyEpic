@@ -154,6 +154,41 @@ export default function RetailSettings(props) {
         ""
       )}  */}
 
+      
+      {/* --------------------------------- Playstyle / Build Selection --------------------------------  */}
+      <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+        <Tooltip
+          title={
+            <Typography align="center" variant="body2">
+              {t("Settings.Retail.Setting5Tooltip")}
+            </Typography>
+          }
+          placement="top-start"
+        >
+          <TextField
+            className={classes.select}
+            InputProps={{ variant: "outlined" }}
+            select
+            variant="outlined"
+            size="small"
+            fullWidth
+            value={props.player.activeModelID[props.contentType]}
+            onChange={(e) => updateSpecBuild(e.target.value)}
+            label={t("Settings.Retail.Setting5Title")}
+            style={{ textAlign: "center", minWidth: 120 }}
+          >
+            {specBuilds.map((key, i, arr) => {
+              let lastItem = i + 1 === arr.length ? false : true;
+              return (
+                <MenuItem divider={lastItem} key={"playstyle" + i} id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
+                  {key.modelName}
+                </MenuItem>
+              );
+            })}
+          </TextField>
+        </Tooltip>
+      </Grid>
+
       {/* ------------------------- Group Buff (Treat Buff as Personal Throughput) ------------------------- */}
       {props.groupBuffShow === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
@@ -189,39 +224,6 @@ export default function RetailSettings(props) {
         ""
       )}
 
-      {/* --------------------------------- Playstyle / Build Selection --------------------------------  */}
-      <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
-        <Tooltip
-          title={
-            <Typography align="center" variant="body2">
-              {t("Settings.Retail.Setting5Tooltip")}
-            </Typography>
-          }
-          placement="top-start"
-        >
-          <TextField
-            className={classes.select}
-            InputProps={{ variant: "outlined" }}
-            select
-            variant="outlined"
-            size="small"
-            fullWidth
-            value={props.player.activeModelID[props.contentType]}
-            onChange={(e) => updateSpecBuild(e.target.value)}
-            label={t("Settings.Retail.Setting5Title")}
-            style={{ textAlign: "center", minWidth: 120 }}
-          >
-            {specBuilds.map((key, i, arr) => {
-              let lastItem = i + 1 === arr.length ? false : true;
-              return (
-                <MenuItem divider={lastItem} key={"playstyle" + i} id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }}>
-                  {key.modelName}
-                </MenuItem>
-              );
-            })}
-          </TextField>
-        </Tooltip>
-      </Grid>
       {/* ----------------------------------------- Auto Socket Items ---------------------------------------- */}
       {props.autoSocket === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>

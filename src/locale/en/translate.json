@@ -564,35 +564,30 @@
     "Settings": {
       "SettingsTitle": "Optional Settings",
       "Retail": {
-        "Setting0Spacer": "--------------------------------------------------------------------",
         "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
         "Setting0Title": "Hymnal Allies",
         "Setting0TextFieldLabel": "Allies",
-        "Setting1Spacer": "--------------------------------------------------------------------",
-        "Setting1Tooltip": "Include group benefit to items that buff the entire party",
+
+        "Setting1Tooltip": "Some items give buffs to allies. If you check this it'll include an estimate of that benefit in an items score.",
         "Setting1Title": "Ally Buffs",
         "Setting1TextFieldLabel": "",
-        "Setting2Spacer": "--------------------------------------------------------------------",
-        "Setting2Tooltip": "Select Discipline Talent",
-        "Setting2Title": "Talent",
-        "Setting2TextFieldLabel": "Talent",
-        "Setting3Spacer": "--------------------------------------------------------------------",
+
         "Setting3Tooltip": "This will automatically add a socket to items that don't have them in compatible slots.",
         "Setting3Title": "Add Sockets",
         "Setting3TextFieldLabel": "",
-        "Setting4Spacer": "--------------------------------------------------------------------",
+
         "Setting4Tooltip": "You can show Upgrade Finder results as either a % upgrade, or in effective HPS.",
         "Setting4Title": "UF: Result Display",
         "Setting4TextFieldLabel": "Upgrade Finder: Display",
-        "Setting5Spacer": "--------------------------------------------------------------------",
+
         "Setting5Tooltip": "Choose your playstyle",
         "Setting5Title": "Playstyle",
         "Setting5TextFieldLabel": "Playstyle",
-        "Setting6Spacer": "--------------------------------------------------------------------",
+
         "Setting6Tooltip": "Select how many Catalyst charges you have. This determines how many Catalyst items Top Gear will be restricted to.",
         "Setting6Title": "Catalyst Limit",
         "Setting6TextFieldLabel": "Limit",
-        "Setting7Spacer": "--------------------------------------------------------------------",
+
         "Setting7Tooltip": "Turning this on will automatically add Leech to all Upgrade Finder choices.",
         "Setting7Title": "UF: Leech",
         "Setting7TextFieldLabel": "Leech"
