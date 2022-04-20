@@ -52,6 +52,10 @@ class BCItem {
     return false
   }
 
+  canBeCatalyzed() {
+    return false;
+  }
+
   getQualityColor() {
     const quality = getItemProp(this.id, "quality", "BurningCrusade")
     if (quality === 5) return "#ff8000";
