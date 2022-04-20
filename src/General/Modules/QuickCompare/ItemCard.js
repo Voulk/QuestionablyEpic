@@ -1,28 +1,32 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
-import { Card, CardContent, Typography, Grid, Divider, IconButton } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemIcon } from "../../Engine/ItemUtilities";
+import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } from "@mui/material";
+import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
 import "./ItemCard.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { dominationGemDB } from "../../../Databases/DominationGemDB";
+import { Difference } from "@mui/icons-material";
 
 const useStyles = makeStyles({
   root: {
     minWidth: 250,
+    height: 52,
   },
   vault: {
     borderColor: "#0288d1",
     backgroundColor: "#464E5B",
     borderStyle: "dashed",
     minWidth: 250,
+    height: 52,
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
+  catalyst: {
+    borderColor: "plum",
+    backgroundColor: "#5c4755",
+    borderStyle: "dashed",
+    minWidth: 250,
+    height: 52,
   },
   selected: {
     minWidth: 250,
@@ -30,63 +34,49 @@ const useStyles = makeStyles({
     //borderColor: "Goldenrod",
     //backgroundColor: "#494a3d",
     borderWidth: "1px",
+    height: 52,
   },
   selectedVault: {
     borderColor: "Goldenrod",
     backgroundColor: "#494a3d",
     minWidth: 250,
     borderStyle: "dashed",
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
+    height: 52,
   },
 });
 
 export default function ItemCard(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
-  const item = props.item;
   const currentLanguage = i18n.language;
-  //const statString = buildStatString(item.stats, item.effect, currentLanguage);
+  const item = props.item;
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
-  const itemLevel = item.level;
   const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
+  const isCatalystItem = item.isCatalystItem;
   const gameType = useSelector((state) => state.gameType);
   const itemQuality = item.getQualityColor();
-
-  const tertiaryStyle = (tertiary) => {
-    if (tertiary === "Leech") {
-      return "lime";
-    } else if (tertiary === "Avoidance") {
-      return "khaki";
-    } else {
-      return "#fff";
-    }
-  };
-
-  const deleteItemCard = () => {
-    props.delete(item.uniqueHash);
-  };
-
-  const upgradeColor = (num) => {
-    if (num > 0) {
-      return "#FFDF14"; // #60e421
-    } else if (num < 0) {
-      return "#ad2c34";
-    } else {
-      return "#fff";
-    }
-  };
-
   let itemName = "";
   let itemName2 = "";
   let isVault = item.vaultItem;
   const deleteActive = item.offhandID === 0;
   const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
   const gemString = gameType === "Retail" && item.gemString ? "&gems=" + item.gemString : "";
+  const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
+  const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
+  const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;
+  const socket = item.socket ? (
+    <div style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }}>
+      <img src={socketImage} width={15} height={15} alt="Socket" />
+    </div>
+  ) : null;
+
+  const deleteItemCard = () => {
+    props.delete(item.uniqueHash);
+  };
+
+  const catalyseItemCard = () => {
+    props.catalyze(item);
+  };
 
   if (item.offhandID > 0) {
     itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
@@ -95,17 +85,6 @@ export default function ItemCard(props) {
     if (isLegendary) itemName = item.effect.name;
     else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
   }
-
-  const socket = props.item.socket ? (
-    <div style={{ display: "inline", verticalAlign: "middle", marginRight: 4, marginTop: 2 }}>
-      <img src={socketImage} width={15} height={15} alt="Socket" />{" "}
-    </div>
-  ) : null;
-
-  const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
-
-  const tertiary =
-    "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}>{t(props.item.tertiary)}</div> : null;
 
   // If item.offHandID > 0 then return this card which handles the double names + stats
   if (item.offhandID > 0) {
@@ -116,15 +95,15 @@ export default function ItemCard(props) {
             <Grid item xs="auto">
               <CardContent
                 style={{
-                  padding: "3.5px 3.5px 0.5px 3.5px",
+                  padding: "2px 2px 0px 2px",
                   display: "inline-flex",
                 }}
               >
                 <div className="container-ItemCards">
                   <img
                     alt="img"
-                    width={42}
-                    height={42}
+                    width={46}
+                    height={46}
                     src={getItemIcon(item.offhandID, gameType)}
                     style={{
                       borderRadius: 4,
@@ -134,11 +113,13 @@ export default function ItemCard(props) {
                       position: "absolute",
                     }}
                   />
+                  <div style={{ content: "", position: "absolute", borderTop: "1px solid", borderColor: itemQuality, width: "65.05px", transform: "rotate(135deg)", transformOrigin: "23px 11px" }} />
+
                   <img
                     className="et_pb_image.diagonal-overlay"
                     alt="img"
-                    width={42}
-                    height={42}
+                    width={46}
+                    height={46}
                     src={getItemIcon(item.id, gameType)}
                     style={{
                       borderRadius: 4,
@@ -161,7 +142,7 @@ export default function ItemCard(props) {
                   <Grid item xs={10} display="inline">
                     <Typography variant="subtitle2" wrap="nowrap" style={{ display: "block", marginLeft: 4 }} align="left">
                       <div style={{ color: itemQuality, lineHeight: item.mainHandTertiary ? "normal" : 1.57 }}>{itemName}</div>
-                      {item.mainHandTertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(item.mainHandTertiary) }}>{item.mainHandTertiary}</div> : ""}
+                      {item.mainHandTertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{item.mainHandTertiary}</div> : ""}
                     </Typography>
                   </Grid>
                   <Divider orientation="vertical" flexItem />
@@ -179,12 +160,12 @@ export default function ItemCard(props) {
                       display="inline"
                       align="center"
                       style={{
-                        color: upgradeColor(props.item.softScore),
+                        color: "#FFDF14",
                         paddingLeft: "3px",
                         paddingRight: "3px",
                       }}
                     >
-                      {Math.round(props.item.softScore)}
+                      {Math.round(item.softScore)}
                     </Typography>
                   </Grid>
                 </Grid>
@@ -192,7 +173,7 @@ export default function ItemCard(props) {
                 <Grid item xs={10}>
                   <Typography variant="subtitle2" wrap="nowrap" style={{ display: "block", marginLeft: 4 }} align="left">
                     <div style={{ color: itemQuality, lineHeight: item.offHandTertiary ? "normal" : 1.57 }}>{itemName2}</div>
-                    {item.offHandTertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(item.offHandTertiary) }}>{item.offHandTertiary}</div> : ""}
+                    {item.offHandTertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{item.offHandTertiary}</div> : ""}
                   </Typography>
                 </Grid>
               </Grid>
@@ -206,15 +187,32 @@ export default function ItemCard(props) {
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <div style={{ position: "relative" }}>
-        {deleteActive ? (
-          <IconButton style={{ position: "absolute", right: 4, bottom: 2, zIndex: 1, padding: 0 }} onClick={deleteItemCard} aria-label="delete" size="small">
-            <DeleteIcon style={{ color: "#ad2c34" }} fontSize="small" />
-          </IconButton>
-        ) : (
-          ""
-        )}
-
-        <Card className={item.isEquipped && isVault ? classes.selectedVault : item.isEquipped ? classes.selected : isVault ? classes.vault : classes.root} variant="outlined">
+        <div style={{ position: "absolute", right: 4, bottom: 2, zIndex: 1, padding: 0 }}>
+          <Grid container display="inline-flex" wrap="nowrap" spacing={0} sx={{ verticalAlign: "middle" }}>
+            <Grid item>
+              {item.canBeCatalyzed() ? (
+                <Tooltip arrow title="Catalyse: Create a catalysed version of this item">
+                  <IconButton sx={{ padding: 0 }} onClick={catalyseItemCard} aria-label="catalyse" size="small">
+                    <Difference style={{ color: "plum", fontSize: "18px" }} fontSize="small" />
+                  </IconButton>
+                </Tooltip>
+              ) : null}
+            </Grid>
+            <Grid item>
+              {deleteActive ? (
+                <Tooltip arrow title="Delete: Delete this item.">
+                  <IconButton sx={{ padding: 0 }} onClick={deleteItemCard} aria-label="delete" size="small">
+                    <DeleteIcon style={{ color: "#ad2c34", fontSize: "18px" }} fontSize="small" />
+                  </IconButton>
+                </Tooltip>
+              ) : null}
+            </Grid>
+          </Grid>
+        </div>
+        <Card
+          className={item.isEquipped && isVault ? classes.selectedVault : item.isEquipped ? classes.selected : isCatalystItem ? classes.catalyst : isVault ? classes.vault : classes.root}
+          variant="outlined"
+        >
           <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
             <Grid item xs="auto">
               <CardContent
@@ -227,8 +225,8 @@ export default function ItemCard(props) {
                   <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + gemString + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom}>
                     <img
                       alt="img"
-                      width={42}
-                      height={42}
+                      width={46}
+                      height={46}
                       src={getItemIcon(item.id, gameType)}
                       style={{
                         borderRadius: 4,
@@ -238,7 +236,7 @@ export default function ItemCard(props) {
                       }}
                     />
                   </a>
-                  <div className="bottom-right-ItemCards-QC"> {item.level} </div>
+                  <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {item.level} </div>
                 </div>
               </CardContent>
             </Grid>
@@ -247,15 +245,28 @@ export default function ItemCard(props) {
               <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
                 <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={10} display="inline">
-                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4 }}>
-                      <div style={{ color: itemQuality, lineHeight: tertiary || isVault || tier ? "normal" : 1.57, fontSize: itemName.length >= 35 ? 12 : 14 }}>{itemName}</div>
-                      <div style={{ display: "flex" }}>
-                        {tertiary}
-                        {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-                        {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
-                        {(tertiary && tier) || (isVault && tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-                        {tier}
+                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px" }}>
+                      <div
+                        style={{
+                          color: itemQuality,
+                          lineHeight: tertiary || isVault || tier || catalyst ? "normal" : 1.57,
+                        }}
+                      >
+                        {itemName}
                       </div>
+                      {tertiary || isVault || tier || catalyst ? (
+                        <div style={{ display: "flex" }}>
+                          {tertiary}
+                          {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                          {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
+                          {(tertiary && tier) || (isVault && tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                          {tier}
+                          {(tertiary && catalyst) || (isVault && catalyst) || (tier && catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                          {catalyst}
+                        </div>
+                      ) : (
+                        ""
+                      )}
                     </Typography>
                   </Grid>
                   <Divider orientation="vertical" flexItem />
@@ -273,27 +284,21 @@ export default function ItemCard(props) {
                       display="inline"
                       align="center"
                       style={{
-                        color: upgradeColor(props.item.softScore),
+                        color: "#FFDF14",
                         paddingLeft: "3px",
                         paddingRight: "3px",
                       }}
                     >
-                      {Math.round(props.item.softScore)}
+                      {Math.round(item.softScore)}
                     </Typography>
                   </Grid>
                 </Grid>
                 <Divider />
-                <Grid item container display="inline" direction="row" xs="auto" justifyContent="space-between">
-                  <Grid item xs={12}>
-                    <div style={{ display: "inline-flex", marginLeft: 4 }}>
+                <Grid item container xs={12} display="inline-flex" direction="row" justifyContent="space-between" style={{ marginTop: 2 }}>
+                  <Grid item xs={11}>
+                    <div style={{ display: "inline-flex", marginLeft: 4, height: 15, verticalAlign: "middle" }}>
                       {socket}
-                      <Typography
-                        variant="subtitle2"
-                        wrap="nowrap"
-                        display="block"
-                        style={{ fontSize: "12px", paddingTop: 0, marginTop: tertiary || isVault ? 3 : 1, lineHeight: tertiary || isVault ? "normal" : "" }}
-                        align="left"
-                      >
+                      <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", lineHeight: "normal" }}>
                         {statString}
                       </Typography>
                     </div>

@@ -20,6 +20,7 @@ class Item {
     this.setID = getItemProp(id, "itemSetId");
     this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket") === true);
     if (this.onUse) this.effect['onUse'] = true;
+
   }
 
   id = 0; // The items ID
@@ -40,6 +41,7 @@ class Item {
   source = {};
   onUse = false;
   setID = 0;
+  //canBeCatalyzed = false;
 
   // The stats on the item. These should already be adjusted for item level.
   // HPS is a calculated field. It includes any item effects that provide healing or absorbs.
@@ -69,6 +71,10 @@ class Item {
     return id + "" + (Math.floor(Math.random() * 100000) + 1).toString();
   }
 
+  canBeCatalyzed() {
+    return !this.isCatalystItem && !this.isLegendary() && ['Head', 'Chest', 'Shoulder', 'Back', 'Wrist', 'Hands', 'Waist', 'Legs', 'Feet'].includes(this.slot);
+  }
+
   getQualityColor() {
     const isLegendary = this.effect.type === "spec legendary" || this.effect.type === "unity";
     if (isLegendary) return "#ff8000";
@@ -76,6 +82,10 @@ class Item {
     else if (this.level >= 120) return "#328CE3";
     else return "#1eff00";
 
+  }
+
+  isLegendary() {
+    return this.effect !== "" && (this.effect.type === "unity" || this.effect.type === "spec legendary");
   }
 
   isTierPiece() {

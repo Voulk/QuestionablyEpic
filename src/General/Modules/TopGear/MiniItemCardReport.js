@@ -1,7 +1,7 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, CardActionArea, Typography, Grid, Divider, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemIcon } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 import hasteSocket from "../../../Images/Resources/hasteSocket.jpg";
 import critSocket from "../../../Images/Resources/critSocket.jpg";
@@ -15,6 +15,13 @@ const useStyles = makeStyles({
     minWidth: 210,
     borderColor: "grey",
     borderRadius: "5px",
+  },
+  catalyst: {
+    borderColor: "plum",
+    backgroundColor: "#5c4755",
+    borderStyle: "dashed",
+    borderWidth: "1px",
+    minWidth: 210,
   },
   vault: {
     borderColor: "#0288d1",
@@ -41,7 +48,6 @@ export default function ItemCardReport(props) {
   const enchants = props.enchants;
   const { t, i18n } = useTranslation();
   const gameType = useSelector((state) => state.gameType);
-
   const currentLanguage = i18n.language;
   const statString = gameType === "BurningCrusade" ? "" : buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level;
@@ -55,6 +61,11 @@ export default function ItemCardReport(props) {
   const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
   const gemString = gameType === "BurningCrusade" ? props.gems : "&gems=" + item.gemString;
   const socketImage = socketImg[enchants["Gems"]];
+  const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
+  const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;
+  const isCatalysable = item.isCatalystItem;
+  const catalyst = isCatalysable ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
+
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
   const itemQuality = (itemLevel, itemID) => {
     if (gameType !== "Retail") {
@@ -75,14 +86,7 @@ export default function ItemCardReport(props) {
   let itemName = "";
   let isVault = item.vaultItem;
 
-  if (item.offhandID > 0) {
-    itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType) + " & " + getTranslatedItemName(item.offhandID, currentLanguage, "", gameType);
-  } else {
-    if (isLegendary) itemName = item.effect.name;
-    else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
-  }
-
-  const socket = props.item.socket ? (
+  const socket = item.socket ? (
     <div style={{ display: "inline" }}>
       <Tooltip title={t(capitalizeFirstLetter(enchants["Gems"]))} arrow>
         <img src={socketImage} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
@@ -99,29 +103,20 @@ export default function ItemCardReport(props) {
       );
       return typo;
     }
-
     return null;
   };
 
-  const tertiaryStyle = (tertiary) => {
-    if (tertiary === "Leech") {
-      return "lime";
-    } else if (tertiary === "Avoidance") {
-      return "khaki";
-    } else {
-      return "#fff";
-    }
-  };
-
-  const tier = props.item.setID !== "" && props.item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
-
-  const tertiary =
-    "tertiary" in props.item && props.item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: tertiaryStyle(props.item.tertiary) }}>{t(props.item.tertiary)}</div> : null;
+  if (item.offhandID > 0) {
+    itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType) + " & " + getTranslatedItemName(item.offhandID, currentLanguage, "", gameType);
+  } else {
+    if (isLegendary) itemName = item.effect.name;
+    else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
+  }
 
   return (
     <Grid item xs={12}>
       <Card
-        className={isVault ? classes.vault : !item.isEquipped && item.slot != "CombinedWeapon" ? classes.notequipped : classes.root}
+        className={isVault ? classes.vault : !item.isEquipped && item.slot != "CombinedWeapon" ? classes.notequipped : catalyst ? classes.catalyst : classes.root}
         elevation={0}
         style={{ backgroundColor: "rgba(34, 34, 34, 0.52)" }}
       >
@@ -138,8 +133,8 @@ export default function ItemCardReport(props) {
                   <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom + gemString}>
                     <img
                       alt="img"
-                      width={38}
-                      height={38}
+                      width={44}
+                      height={44}
                       src={getItemIcon(item.id, gameType)}
                       style={{
                         borderRadius: 4,
@@ -149,7 +144,7 @@ export default function ItemCardReport(props) {
                       }}
                     />
                   </a>
-                  <div className="bottom-right-ItemCards"> {item.level} </div>
+                  <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {item.level} </div>
                 </div>
               </CardContent>
             </Grid>
@@ -159,13 +154,15 @@ export default function ItemCardReport(props) {
                 <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={12} display="inline">
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px" }}>
-                      <div style={{ color: itemQuality(itemLevel, item.id), lineHeight: tertiary || isVault || tier ? "normal" : 1.57 }}>{itemName}</div>
+                      <div style={{ color: itemQuality(itemLevel, item.id), lineHeight: "normal" }}>{itemName}</div>
                       <div style={{ display: "flex" }}>
                         {tertiary}
                         {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
                         {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
                         {(tertiary && tier) || (isVault && tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
                         {tier}
+                        {(tertiary && catalyst) || (isVault && catalyst) || (tier && catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+                        {catalyst}
                       </div>
                     </Typography>
                   </Grid>
