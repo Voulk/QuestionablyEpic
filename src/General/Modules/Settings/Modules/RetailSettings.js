@@ -44,6 +44,9 @@ export default function RetailSettings(props) {
   /* ------------------------------- Upgrade Finder HPS Toggle --------------------------------- */
   const [upFinderToggle, setupFinderToggle] = useState(props.userSettings.upFinderToggle);
 
+  /* ----------------------------------- Catalyst Limit State ---------------------------------- */
+  const [catalystLimit, setCatalystLimit] = useState(props.userSettings.catalystLimit);
+
 
   /* ----------------------------------- Domination Socket State ---------------------------------- */
   const [replaceDomGems, setReplaceDomGems] = useState(props.userSettings.replaceDomGems);
@@ -69,6 +72,11 @@ export default function RetailSettings(props) {
   const updateReplaceDomGems = (value) => {
     props.editSettings("replaceDomGems", value);
     setReplaceDomGems(value);
+  };
+
+  const updateCatalystLimit = (value) => {
+    props.editSettings("catalystLimit", value);
+    setCatalystLimit(value);
   };
 
   const updateSpecBuild = (value) => {
@@ -267,6 +275,53 @@ export default function RetailSettings(props) {
               </MenuItem>
               <MenuItem value={'hps'} style={{ justifyContent: "center" }}>
                 {"Show HPS"}
+              </MenuItem>
+            </TextField>
+          </Tooltip>
+        </Grid>
+      ) : (
+        ""
+      )}
+      {/* ------------------------------------- Catalyst Limit ---------------------------------------- */}
+      {props.autoSocket === true ? (
+        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+          <Tooltip
+            title={
+              <Typography align="center" variant="body2">
+                {t("Settings.Retail.Setting6Tooltip")}
+              </Typography>
+            }
+            placement="top-start"
+          >
+            <TextField
+              className={classes.select}
+              value={catalystLimit}
+              InputProps={{ variant: "outlined" }}
+              select
+              variant="outlined"
+              size="small"
+              fullWidth
+              onChange={(e) => updateCatalystLimit(e.target.value)}
+              label={t("Settings.Retail.Setting6Title")}
+              style={{ textAlign: "center", minWidth: 120 }}
+            >
+              <MenuItem divider value={0} style={{ justifyContent: "center" }}>
+                {'0'}
+              </MenuItem>
+              <MenuItem divider value={1} style={{ justifyContent: "center" }}>
+                {'1'}
+              </MenuItem>
+              <MenuItem divider value={2} style={{ justifyContent: "center" }}>
+                {'2'}
+              </MenuItem>
+              <MenuItem divider value={3} style={{ justifyContent: "center" }}>
+                {'3'}
+              </MenuItem>
+              <MenuItem divider value={4} style={{ justifyContent: "center" }}>
+                {'4'}
+              </MenuItem>
+              <MenuItem divider value={5} style={{ justifyContent: "center" }}>
+                {'5'}
               </MenuItem>
             </TextField>
           </Tooltip>

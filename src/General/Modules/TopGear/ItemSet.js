@@ -107,6 +107,7 @@ class ItemSet {
       if (item.socket) setSockets++;
       //if (item.hasDomSocket) domSockets++;
       if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
+      if (item.isCatalystItem) this.uniques['catalyst'] = (this.uniques['catalyst'] || 0) + 1
       if (item.effect.type === "spec legendary") this.setLegendary = item.effect.name;
       if (item.effect.type === "unity") this.unity = true;
 
@@ -176,7 +177,7 @@ class ItemSet {
     return this;
   }
 
-  verifySet() {
+  verifySet(settings = {}) {
     // Verifies that the set is possible.
     if (this.uniques["legendary"] && this.uniques["legendary"] > 1) {
       return false;
@@ -188,9 +189,11 @@ class ItemSet {
       return false;
     }
     else if (this.uniques["crafted"] && this.uniques["crafted"] > 1) {
-
       return false;
     }
+    else if (this.uniques["catalyst"] && 'catalystLimit' in settings && this.uniques["catalyst"] > settings.catalystLimit) {
+      return false;
+    } 
      else {
       return true;
     }
