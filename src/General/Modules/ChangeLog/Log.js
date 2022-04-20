@@ -16,10 +16,9 @@ export const changeLog = [
       "Venthyr Disc Priest!",
       "Catalyst Converter: Auto convert any item you own into it's catalyst version to see which is the larger upgrade.",
       "New optional Setting: Automatically add Leech to all Upgrade Finder items.",
-      "Added an optional setting to cap the number of post-catalyst items you can fit into a Top Gear set.",
+      "New optional Setting: Auto-cap the number of post-catalyst items you want in your Top Gear sets.",
       "Added a link to the SimC addon page from the import dialog to make it easier for newbies to find.",
-      "Fixed a bug where manually added weapons & offhands could have sockets added to them.",
-
+      "Bugfix: Manually added weapons & offhands can no longer accidentally be socketed by the player.",
     ],
   },
   {
