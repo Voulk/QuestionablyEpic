@@ -13,10 +13,11 @@ export const changeLog = [
     update: 15,
     date: "20th April (Major)",
     changes: [ 
-      "Venthyr Disc Priest.",
+      "Venthyr Disc Priest!",
       "Catalyst Converter: Auto convert any item you own into it's catalyst version to see which is the larger upgrade.",
       "Added an optional setting to cap the number of post-catalyst items you can fit into a Top Gear set.",
-      "Added a link to the SimC addon page from the import dialog to make it easier for newbies to find."
+      "Added a link to the SimC addon page from the import dialog to make it easier for newbies to find.",
+      "Fixed a bug where manually added weapons & offhands could have sockets added to them.",
 
     ],
   },

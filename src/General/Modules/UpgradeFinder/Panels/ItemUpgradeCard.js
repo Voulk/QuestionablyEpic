@@ -120,6 +120,8 @@ export default function ItemCard(props) {
     }
   };
 
+  console.log("Bonus ID: |" + "item=" + item.id + "&" + "ilvl=" + item.level +  "?" + item.bonusIDS + "&domain=" + wowheadDomain);
+
   return (
     <Grid item xs={12} sm={12} md={12} lg={6} xl={4}>
       <Card className={itemDifferential == 0 ? classes.downgrade : hasDom ? classes.dom : classes.root} variant="outlined">
@@ -131,7 +133,7 @@ export default function ItemCard(props) {
                 display: "inline-flex",
               }}
             >
-              <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&domain=" + wowheadDomain}>
+              <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level +  "?bonus=" + item.bonusIDS + "&domain=" + wowheadDomain}>
                 <div className="container-ItemCards" style={{ height: props.slotPanel ? 44 : 30 }}>
                   <img
                     alt="img"
