@@ -537,6 +537,9 @@
       "relics": "Relics & Wands"
     },
 
+    "Catalyst": "Catalyst",
+    "Mana": "Mana",
+
     "Soulbinds": {
       "Header": "Covenant Exploration",
       "PotencyConduit": "Potency Conduit",

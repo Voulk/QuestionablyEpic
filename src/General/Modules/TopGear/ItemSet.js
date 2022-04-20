@@ -178,7 +178,6 @@ class ItemSet {
   }
 
   verifySet(settings = {}) {
-    console.log(JSON.stringify(settings));
     // Verifies that the set is possible.
     if (this.uniques["legendary"] && this.uniques["legendary"] > 1) {
       return false;
