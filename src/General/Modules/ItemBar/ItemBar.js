@@ -87,7 +87,7 @@ export default function ItemBar(props) {
   const [itemID, setItemID] = useState("");
   const [itemName, setItemName] = useState("");
   const [activeSlot, setSlot] = useState("");
-  const [itemSocket, setItemSocket] = useState("");
+  const [itemSocket, setItemSocket] = useState(false);
   const [itemTertiary, setItemTertiary] = useState("");
   const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
   const [inputValue, setInputValue] = useState("");
@@ -159,7 +159,7 @@ export default function ItemBar(props) {
 
     setInputValue("");
     setItemLevel("");
-    setItemSocket("");
+    setItemSocket(false);
     setItemTertiary("");
     setDominationSocket("");
   };
@@ -177,8 +177,8 @@ export default function ItemBar(props) {
 
   const itemLevelChanged = (val) => {
     setItemLevel(val);
-    setItemSocket("");
-    setItemTertiary("");
+    //setItemSocket(false);
+    //setItemTertiary("");
   };
 
   const itemSocketChanged = (event) => {

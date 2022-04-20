@@ -131,7 +131,7 @@ export default function ItemCard(props) {
                 display: "inline-flex",
               }}
             >
-              <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&domain=" + wowheadDomain}>
+              <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level +  "?bonus=" + item.bonusIDS + "&domain=" + wowheadDomain}>
                 <div className="container-ItemCards" style={{ height: props.slotPanel ? 44 : 30 }}>
                   <img
                     alt="img"

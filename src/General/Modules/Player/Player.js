@@ -1,6 +1,8 @@
 import { getAvailableClassConduits } from "../../../Retail/Modules/Covenants/CovenantUtilities";
 import SPEC from "../../Engine/SPECS";
 import STAT from "../../Engine/STAT";
+import { itemDB } from "Databases/ItemDB";
+import Item from "./Item";
 import { scoreItem } from "../../Engine/ItemUtilities";
 import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
@@ -98,7 +100,7 @@ class Player {
     apiGetPlayerAvatar2(this.region, this.charName, this.realm, this.spec).then((res) => {
       this.charAvatarURL = res;
     });
-  }
+  };
 
   editChar = (contentType, name, realm, region, race, weights) => {
     this.charName = name;
@@ -306,6 +308,33 @@ class Player {
     this.activeItems = tempArray;
   };
 
+  catalyzeItem = (item) => {
+    /*let tempArray = this.activeItems.filter(function (item) {
+      return item.uniqueHash === unique;
+    }); */
+    const slot = item.slot;
+    const pClass = this.spec;
+    const classTag = {"Holy Priest": "of the Empyrean", "Discipline Priest": "of the Empyrean", "Restoration Druid": "of the Fixed Stars",
+                      "Restoration Shaman": "Theurgic Starspeaker's", "Mistweaver Monk": "of the Grand Upwelling", "Holy Paladin": "Luminous Chevalier's"}
+
+    const temp = itemDB.filter(function (item) {
+      return item.slot === slot && item.name.includes(classTag[pClass]);
+    });
+
+    if (temp.length > 0) {
+      const match = temp[0];
+      const newItem = new Item(match.id, "", slot, item.socket, item.tertiary, 0, item.level, "");
+      Object.assign(newItem, { isCatalystItem: true });
+      newItem.active = true;
+      if (item.uniqueEquip === "vault") newItem.uniqueEquip = "vault"; newItem.vaultItem = true;
+      this.activeItems = this.activeItems.concat(newItem);
+
+    }
+    else {
+      // We should probably write an error check here.
+    }
+  };
+
   sortItems = (container) => {
     // Current default sorting is by HPS but we could get creative here in future.
     container.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
@@ -453,6 +482,12 @@ class Player {
         if (this.getActiveModel(contentType).modelName.includes("Venthyr")) this.setCovenant("venthyr");
         else if (this.getActiveModel(contentType).modelName.includes("Necrolord")) this.setCovenant("necrolord");
         else if (this.getActiveModel(contentType).modelName.includes("Kyrian")) this.setCovenant("kyrian");
+      }
+      else if (this.spec === "Discipline Priest") {
+        if (this.getActiveModel(contentType).modelName.includes("Venthyr")) this.setCovenant("venthyr");
+        else if (this.getActiveModel(contentType).modelName.includes("Kyrian")) this.setCovenant("kyrian");
+
+        this.getActiveModel("Raid").setRampInfo(this.activeStats);
       }
     } else {
       // This is a critical error that could crash the app so we'll reset models to defaults
@@ -658,13 +693,14 @@ class Player {
     } else if (spec === SPEC.DISCPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Kyrian Evangelism", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
+      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Evangelism", 2));
 
       this.activeStats = {
-        intellect: 2150,
+        intellect: 2250,
         haste: 940,
-        crit: 650, 
-        mastery: 220, 
-        versatility: 415, 
+        crit: 650,
+        mastery: 220,
+        versatility: 415,
         stamina: 1900,
       };
       //this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable

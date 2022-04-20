@@ -51,6 +51,15 @@ export const DISCSPELLS = {
         atoneOverheal: 0.15,
         secondaries: ['crit', 'vers'],
     }],
+    "Mindgames": [{
+        type: "damage",
+        castTime: 1.5,
+        cost: 1000,
+        coeff: 2.397, // 3 x 0.94 (disc aura nerf) x 0.85 (Mindgames specific aura nerf)
+        cooldown: 40,
+        atoneOverheal: 0.15,
+        secondaries: ['crit', 'vers'],
+    }],
     "Schism": [{
         type: "damage",
         castTime: 1.5,

@@ -374,7 +374,7 @@ export function buildWepCombos(player, active = false, equipped = false) {
           main_hand.id,
           "Combined Weapon", // TODO
           "CombinedWeapon",
-          main_hand.socket + off_hand.socket, // Socket
+          false, //main_hand.socket + off_hand.socket, // Socket - Weapons can't actually get sockets so this is always false.
           "", // Tertiary
           0,
           Math.round((main_hand.level + off_hand.level) / 2),

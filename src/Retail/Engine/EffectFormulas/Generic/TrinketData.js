@@ -1147,9 +1147,9 @@ export const trinket_data = [
         table: -1, 
         duration: 20,
         cooldown: 90,
-        averageStacks: 7.5, 
+        averageStacks: 4, 
         // This could be much more closely valued by considering each individual specs casting cadence. Given the low availability and power of the trinket,
-        // this is not yet implemented but could be. Notably haste IS included.
+        // this is not yet implemented but could be. Notably haste IS included though it doesn't proc off healing spells so it isn't good.
       },
     ],
   },

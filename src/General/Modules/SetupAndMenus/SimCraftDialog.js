@@ -26,6 +26,7 @@ export default function SimCraftInput(props) {
   const characterCount = props.allChars.getAllChar().length || 0;
   const buttonVariant = props.variant;
   const gameType = useSelector((state) => state.gameType);
+  const addonLink = gameType === "BurningCrusade" ? "https://www.curseforge.com/wow/addons/qe-live-gear-importer-bc" : "https://www.curseforge.com/wow/addons/simulationcraft"
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -72,14 +73,10 @@ export default function SimCraftInput(props) {
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
         <DialogTitle id="simc-dialog-title">{t("SimCInput.SimCDialogueTitle" + gameType)}</DialogTitle>
-        <DialogContent style={{ height: 400 }}>
-          {gameType === "BurningCrusade" ? (
-            <Link target="_blank" href="https://www.curseforge.com/wow/addons/qe-live-gear-importer-bc">
+        <DialogContent style={{ height: 400}}>
+            <Link target="_blank" href={addonLink}>
               Click here to download the addon from Curse.
             </Link>
-          ) : (
-            ""
-          )}
           <TextField
             autoFocus
             multiline={true}

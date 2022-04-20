@@ -157,6 +157,13 @@ class CastModel {
         this.baseStatWeights = discPriestDefaultStatWeights(contentType);
         this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
       }
+      else if (modelID === "Venthyr Evangelism") {
+        this.modelName = "Venthyr Evangelism";
+        spellList = discPriestDefaultSpellData(contentType);
+        specialQueries = discPriestDefaultSpecialQueries(contentType);
+        this.baseStatWeights = discPriestDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
+      }
       else {
         this.modelName = "Default";
         spellList = discPriestDefaultSpellData(contentType);

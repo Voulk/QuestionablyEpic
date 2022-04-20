@@ -8,6 +8,8 @@ const userSettings = {
     vaultDomGem: "none",
     replaceDomGems: true,
     upFinderToggle: "percent",
+    catalystLimit: 1,
+    upFinderLeech: false,
 
     manaProfile: "Standard",
     raidBuffs: false,

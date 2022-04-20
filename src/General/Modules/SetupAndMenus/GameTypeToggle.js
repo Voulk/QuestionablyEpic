@@ -7,6 +7,7 @@ import { toggleGameType } from "../../../Redux/Actions";
 import { useTranslation } from "react-i18next";
 import { Tooltip, Typography } from "@mui/material";
 import makeStyles from '@mui/styles/makeStyles';
+import { toggleContent } from "Redux/Actions";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -65,6 +66,11 @@ export default function GameTypeSwitch(props) {
       allChars.setLowestChar(gameType)
       charUpdate(allChars);
       dispatch(toggleGameType(gameType));
+      if (gameType === "BurningCrusade") {
+        // If we're on the Burning Crusade setting then automatically update to Raid since there is no dungeon support.
+        dispatch(toggleContent("Raid"))
+      }
+      
 
     }
   };
