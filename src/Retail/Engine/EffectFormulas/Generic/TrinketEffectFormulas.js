@@ -53,7 +53,6 @@ export function getHighestStat(stats) {
     reportError(this, "TrinketEffectFormulas", "No highest stat found: " + JSON.stringify(stats));
     return "haste"; // A default value is returned to stop the app crashing, however this is reported as an error if it were ever to occur.
   }
-  return max;
 }
 
 // TODO: Write proper comments. See Lingering Sunmote for an example.
