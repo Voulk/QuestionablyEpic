@@ -201,7 +201,7 @@ export default function TopGear(props) {
           })
           .catch((err) => {
             // If top gear crashes for any reason, log the error and then terminate the worker.
-            reportError("", "Top Gear Crash", err, itemList.length);
+            reportError("", "Top Gear Crash", err, strippedPlayer.spec);
             setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
             instance.terminate();
             setBtnActive(true);
@@ -219,7 +219,7 @@ export default function TopGear(props) {
           })
           .catch((err) => {
             // If top gear crashes for any reason, log the error and then terminate the worker.
-            reportError("", "BC Top Gear Crash", err, itemList.length);
+            reportError("", "BC Top Gear Crash", err, strippedPlayer.spec);
             setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
             instance.terminate();
             setBtnActive(true);
