@@ -326,7 +326,10 @@ class Player {
       const newItem = new Item(match.id, "", slot, item.socket, item.tertiary, 0, item.level, "");
       Object.assign(newItem, { isCatalystItem: true });
       newItem.active = true;
-      if (item.uniqueEquip === "vault") newItem.uniqueEquip = "vault"; newItem.vaultItem = true;
+      if (item.uniqueEquip === "vault") { 
+        newItem.uniqueEquip = "vault"; 
+        newItem.vaultItem = true ;
+      };
       this.activeItems = this.activeItems.concat(newItem);
 
     }
