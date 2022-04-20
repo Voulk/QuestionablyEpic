@@ -49,7 +49,7 @@ export function buildWepCombosUF(player, itemList) {
           main_hand.id,
           "Combined Weapon", // TODO
           "CombinedWeapon",
-          main_hand.socket + off_hand.socket, // Socket
+          false, // Socket - Not relevant for weapons.
           "", // Tertiary
           0,
           Math.round((main_hand.level + off_hand.level) / 2),
@@ -92,7 +92,7 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel);
   const baseScore = baseSet.itemSet.hardScore;
 
-  const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
+  const itemPoss = buildItemPossibilities(player, contentType, playerSettings, userSettings);
 
   for (var x = 0; x < itemPoss.length; x++) {
     completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, userSettings, castModel));
@@ -131,12 +131,14 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
   return itemLevel;
 }
 
-function buildItem(player, contentType, rawItem, itemLevel, source) {
+function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
   const itemSource = source; //rawItem.sources[0];
   const itemSlot = rawItem.slot;
   const itemID = rawItem.id;
+  const tertiary = settings.upFinderLeech ? "Leech" : ""; // TODO
+  const bonusIDs = settings.upFinderLeech ? "41" : "";
 
-  let item = new Item(itemID, "", itemSlot, false, "", 0, itemLevel, "");
+  let item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);
   //let itemAllocations = getItemAllocations(itemID, []);
   //item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, "");
   //item.level = itemLevel;
@@ -146,7 +148,7 @@ function buildItem(player, contentType, rawItem, itemLevel, source) {
   return item;
 }
 
-function buildItemPossibilities(player, contentType, playerSettings) {
+function buildItemPossibilities(player, contentType, playerSettings, userSettings) {
   let itemPoss = [];
 
   // Grab items.
@@ -160,7 +162,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
       if (isRaid) { // Sepulcher
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.slot);
-          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0]);
+          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
           itemPoss.push(item);
         }
       }
@@ -176,7 +178,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
       else if (primarySource === -1) {
         // Dungeons including Tazavesh
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
-        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0]);
+        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
         itemPoss.push(item);
       }
       /*
@@ -188,7 +190,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
       } */
       else if (primarySource !== 1190 && primarySource !== 1193 && primarySource !== -18) { // Exclude Nathria gear.
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
-        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0]);
+        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
 
         itemPoss.push(item);
       }

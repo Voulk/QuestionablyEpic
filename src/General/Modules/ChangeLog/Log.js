@@ -10,6 +10,19 @@
 export const changeLog = [
   {
     version: "9.2 / 2.5.3",
+    update: 15,
+    date: "20th April (Major)",
+    changes: [ 
+      "Venthyr Disc Priest!",
+      "Catalyst Converter: Auto convert any item you own into it's catalyst version to see which is the larger upgrade.",
+      "New optional Setting: Automatically add Leech to all Upgrade Finder items.",
+      "New optional Setting: Auto-cap the number of post-catalyst items you want in your Top Gear sets.",
+      "Added a link to the SimC addon page from the import dialog to make it easier for newbies to find.",
+      "Bugfix: Manually added weapons & offhands can no longer accidentally be socketed by the player.",
+    ],
+  },
+  {
+    version: "9.2 / 2.5.3",
     update: 14,
     date: "12th April",
     changes: [ 
