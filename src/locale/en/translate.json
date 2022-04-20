@@ -537,6 +537,9 @@
       "relics": "Relics & Wands"
     },
 
+    "Catalyst": "Catalyst",
+    "Mana": "Mana",
+
     "Soulbinds": {
       "Header": "Covenant Exploration",
       "PotencyConduit": "Potency Conduit",
@@ -584,7 +587,11 @@
         "Setting5Spacer": "--------------------------------------------------------------------",
         "Setting5Tooltip": "Choose your playstyle",
         "Setting5Title": "Playstyle",
-        "Setting5TextFieldLabel": "Playstyle"
+        "Setting5TextFieldLabel": "Playstyle",
+        "Setting6Spacer": "--------------------------------------------------------------------",
+        "Setting6Tooltip": "Select how many Catalyst charges you have. This determines how many Catalyst items Top Gear will be restricted to.",
+        "Setting6Title": "Catalyst Limit",
+        "Setting6TextFieldLabel": "Limit"
       },
       "BurningCrusade": {
         "Setting0Spacer": "--------------------------------------------------------------------",

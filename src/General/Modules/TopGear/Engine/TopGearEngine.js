@@ -110,7 +110,7 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   // an impact on results.
   itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
 
-  itemSets = pruneItems(itemSets);
+  itemSets = pruneItems(itemSets, userSettings);
 
   // == Build Differentials (sets similar in strength) ==
   // A differential is a set that wasn't our best but was close. We'll display these beneath our top gear so that a player could choose a higher stamina option, or a trinket they prefer
@@ -306,9 +306,9 @@ function buildDifferential(itemSet, primeSet, player, contentType) {
  * @param {*} itemSets A sorted list of scored sets.
  * @returns A slimmer version of our set list.
  */
-function pruneItems(itemSets) {
+function pruneItems(itemSets, userSettings) {
   let temp = itemSets.filter(function (set) {
-    return set.verifySet();
+    return set.verifySet(userSettings);
   });
 
   return temp.slice(0, softSlice);
