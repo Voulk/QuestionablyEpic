@@ -349,12 +349,7 @@ export async function importCastsLogData(starttime, endtime, reportid, healerID)
     .then((result) => {
       cooldowns = Object.keys(result.data.events)
         .filter(
-          (key) =>
-            cooldownDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
-            // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
-            // result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" :
-            result.data.events[key].type === "cast" &&
-            healerID.includes(result.data.events[key].sourceID),
+          (key) => cooldownDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) && result.data.events[key].type === "cast" && healerID.includes(result.data.events[key].sourceID),
         )
         .map((key) => result.data.events[key]);
       nextpage = result.data.nextPageTimestamp;
@@ -373,11 +368,7 @@ export async function importCastsLogData(starttime, endtime, reportid, healerID)
             Object.keys(result.data.events)
               .filter(
                 (key) =>
-                  cooldownDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
-                  // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
-                  //(result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" :
-                  result.data.events[key].type === "cast" &&
-                  healerID.includes(result.data.events[key].sourceID),
+                  cooldownDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) && result.data.events[key].type === "cast" && healerID.includes(result.data.events[key].sourceID),
               )
               .map((key) => result.data.events[key]),
           );
