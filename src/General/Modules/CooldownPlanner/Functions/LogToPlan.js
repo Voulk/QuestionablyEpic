@@ -65,6 +65,8 @@ export default async function logToPlan(starttime, endtime, reportID) {
     parentId: key.sourceID,
   }));
 
+  console.log(cooldownsTimeline);
+
   console.log(enemyCastsTimeline);
 
   /* ---------- Here we set all the returned data to state in the FightAnalysis Component --------- */
