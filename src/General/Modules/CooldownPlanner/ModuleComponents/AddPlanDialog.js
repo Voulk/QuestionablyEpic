@@ -8,6 +8,7 @@ import { fightDuration, warcraftLogReportID, logDifficulty } from "../../Cooldow
 import LogLinkInput from "General/SystemTools/LogImport/LogLinkInput";
 import FightSelectorButton from "General/SystemTools/LogImport/FightSelectorButton";
 import logToPlan from "../Functions/LogToPlan";
+import LinearWithValueLabel from "../BasicComponents/LinearProgressBar";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -46,6 +47,11 @@ export default function AddPlanDialog(props) {
 
   const [value, setValue] = React.useState(0);
   const [reportid, setReportid] = React.useState(0);
+  const [logData, setLogData] = React.useState({ enemyCasts: [], bossID: 0, difficulty: "", importSuccessful: false });
+  const [logDataLoading, setLogDataLoading] = React.useState(false);
+  const [loadingProgress, setLoadingProgress] = React.useState(0);
+
+  console.log(logData);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -85,6 +91,7 @@ export default function AddPlanDialog(props) {
     setReportid(warcraftLogReportID(event.target.value));
   };
 
+  // not sure if this is used as yet, needed currently for the button selection
   const [logInfo, setLogInfo] = React.useState([
     {
       time: "",
@@ -124,6 +131,19 @@ export default function AddPlanDialog(props) {
         cooldownPlannerCurrentBoss: info[5],
       },
     ]);
+    setLogDataLoading(true);
+  };
+
+  const setLogToPlanData = (starttime, endtime, reportID, bossID, difficulty) => {
+    logToPlan(starttime, endtime, reportID, bossID, difficulty, setLogData, setLoadingProgress);
+  };
+
+  const importPlanToCooldownObject = (planName, boss, difficulty, planData) => {
+    cooldownObject.importLogPlan(planName, boss, difficulty, planData);
+    loadPlanData(boss, planName, difficulty);
+    handleAddPlanDialogClose(true);
+    setLogDataLoading(false);
+    setLoadingProgress(0);
   };
 
   return (
@@ -232,18 +252,21 @@ export default function AddPlanDialog(props) {
               </Grid>
               {/* ----------------------------------- Fight Selection Button ----------------------------------- */}
               <Grid item xs={12}>
-                <FightSelectorButton reportid={reportid} clicky={handler} update={logToPlan} customStyleButton={{ width: "100%" }} />
+                <FightSelectorButton reportid={reportid} clicky={handler} update={setLogToPlanData} customStyleButton={{ width: "100%" }} />
+              </Grid>
+              <Grid item xs={12}>
+                {(logData.importSuccessful === false && logDataLoading === true) || logDataLoading === true ? <LinearWithValueLabel loadingProgress={loadingProgress} /> : ""}
               </Grid>
             </Grid>
           </DialogContent>
           <DialogActions>
             <Button
-              key={8}
+              key={9}
               variant="contained"
               color="primary"
-              onClick={(e) => (planType === "default" ? copyPlan("default", boss, planName, difficulty) : addPlan(planName, boss, difficulty))}
+              onClick={(e) => importPlanToCooldownObject("Test Plan", logData.bossID, logData.difficulty, logData.enemyCasts)}
               size="small"
-              disabled={duplicatePlanNameCheck || planName === ""}
+              disabled={logData.importSuccessful === false}
             >
               {t("CooldownPlanner.AddPlanDialog.ButtonLabel")}
             </Button>

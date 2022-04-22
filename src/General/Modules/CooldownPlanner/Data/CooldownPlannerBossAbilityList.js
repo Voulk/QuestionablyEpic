@@ -491,6 +491,7 @@ export const bossAbilities = {
       },
       guid: 360202,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_skyreach_empower.jpg").default,
     },
     {
@@ -503,6 +504,7 @@ export const bossAbilities = {
       },
       guid: 360409,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_radientazeritecore.jpg").default,
     },
     {
@@ -515,6 +517,7 @@ export const bossAbilities = {
       },
       guid: 364845,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_progenitor_defensewall_boss.jpg").default,
     },
     {
@@ -527,6 +530,7 @@ export const bossAbilities = {
       },
       guid: 364963,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_fire_selfdestruct.jpg").default,
     },
   ],
@@ -542,6 +546,7 @@ export const bossAbilities = {
       },
       guid: 360448,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_nature_acid_01.jpg").default,
     },
     {
@@ -554,6 +559,7 @@ export const bossAbilities = {
       },
       guid: 359829,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_butcher_whirl.jpg").default,
     },
     {
@@ -566,6 +572,7 @@ export const bossAbilities = {
       },
       guid: 364893,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_soulburst.jpg").default,
     },
   ],
@@ -581,6 +588,7 @@ export const bossAbilities = {
       },
       guid: 362850,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_broker_nova.jpg").default,
     },
     {
@@ -593,6 +601,7 @@ export const bossAbilities = {
       },
       guid: 362835,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_axe_2h_broker_c_01.jpg").default,
     },
     {
@@ -605,6 +614,7 @@ export const bossAbilities = {
       },
       guid: 363139,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_relics_warpring.jpg").default,
     },
     {
@@ -617,6 +627,7 @@ export const bossAbilities = {
       },
       guid: "Intermission",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
     {
@@ -629,6 +640,7 @@ export const bossAbilities = {
       },
       guid: "Phase 1",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
     {
@@ -641,6 +653,7 @@ export const bossAbilities = {
       },
       guid: "Phase 2",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
     {
@@ -653,6 +666,7 @@ export const bossAbilities = {
       },
       guid: "Phase 3",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
   ],
@@ -668,6 +682,7 @@ export const bossAbilities = {
       },
       guid: 361722,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_groundstate.jpg").default,
     },
     {
@@ -680,6 +695,7 @@ export const bossAbilities = {
       },
       guid: 365373,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_areadenial.jpg").default,
     },
     {
@@ -692,6 +708,7 @@ export const bossAbilities = {
       },
       guid: 360964,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_beam.jpg").default,
     },
   ],
@@ -707,6 +724,7 @@ export const bossAbilities = {
       },
       guid: 361568,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_ardenweald_mage.jpg").default,
     },
     {
@@ -719,6 +737,7 @@ export const bossAbilities = {
       },
       guid: 364941,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_icon_wing06b.jpg").default,
     },
     {
@@ -731,6 +750,7 @@ export const bossAbilities = {
       },
       guid: 361788,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shadow_unholystrength.jpg").default,
     },
     {
@@ -743,6 +763,7 @@ export const bossAbilities = {
       },
       guid: 360636,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_necro_deathsdoor.jpg").default,
     },
     {
@@ -755,6 +776,7 @@ export const bossAbilities = {
       },
       guid: "Phase 1",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
     {
@@ -767,6 +789,7 @@ export const bossAbilities = {
       },
       guid: "Phase 2",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
     {
@@ -779,6 +802,7 @@ export const bossAbilities = {
       },
       guid: "Phase 3",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
   ],
@@ -794,6 +818,7 @@ export const bossAbilities = {
       },
       guid: 363088,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_areadenial.jpg").default,
     },
     {
@@ -806,6 +831,7 @@ export const bossAbilities = {
       },
       guid: 360159,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_orb2.jpg").default,
     },
     {
@@ -818,6 +844,7 @@ export const bossAbilities = {
       },
       guid: 363130,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_beam.jpg").default,
     },
     {
@@ -830,6 +857,7 @@ export const bossAbilities = {
       },
       guid: 361200,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_buff.jpg").default,
     },
   ],
@@ -845,6 +873,7 @@ export const bossAbilities = {
       },
       guid: 361676,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_misc_missilesmallcluster_yellow.jpg").default,
     },
     {
@@ -857,6 +886,7 @@ export const bossAbilities = {
       },
       guid: 360115,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_skyreach_wind.jpg").default,
     },
     {
@@ -869,6 +899,7 @@ export const bossAbilities = {
       },
       guid: 362056,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_nova.jpg").default,
     },
     {
@@ -881,6 +912,7 @@ export const bossAbilities = {
       },
       guid: 359235,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_progenium_keeper.jpg").default,
     },
     {
@@ -893,6 +925,7 @@ export const bossAbilities = {
       },
       guid: 359236,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_progenitorbotminemount.jpg").default,
     },
     {
@@ -905,6 +938,7 @@ export const bossAbilities = {
       },
       guid: 368529,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_trinket_progenitorraid_01_orange.jpg").default,
     },
 
@@ -918,6 +952,7 @@ export const bossAbilities = {
       },
       guid: "Phase 1",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
     {
@@ -930,6 +965,7 @@ export const bossAbilities = {
       },
       guid: "Phase 2",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
     {
@@ -942,6 +978,7 @@ export const bossAbilities = {
       },
       guid: "Phase 3",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
     {
@@ -954,6 +991,7 @@ export const bossAbilities = {
       },
       guid: "Intermission",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
   ],
@@ -969,6 +1007,7 @@ export const bossAbilities = {
       },
       guid: 361816,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_debuff.jpg").default,
     },
     {
@@ -981,6 +1020,7 @@ export const bossAbilities = {
       },
       guid: 365805,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_sword_1h_artifactruneblade_d_01.jpg").default,
     },
     {
@@ -993,6 +1033,7 @@ export const bossAbilities = {
       },
       guid: 365295,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_soulbarrier.jpg").default,
     },
     {
@@ -1005,6 +1046,7 @@ export const bossAbilities = {
       },
       guid: 362407,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_deathknight_hungeringruneblade.jpg").default,
     },
     {
@@ -1017,6 +1059,7 @@ export const bossAbilities = {
       },
       guid: 365120,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shadow_skull.jpg").default,
     },
     {
@@ -1029,6 +1072,7 @@ export const bossAbilities = {
       },
       guid: 362545,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_deathknight_shroudofwinter.jpg").default,
     },
     {
@@ -1041,6 +1085,7 @@ export const bossAbilities = {
       },
       guid: 368428,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_paladin_toweroflight.jpg").default,
     },
     {
@@ -1053,6 +1098,7 @@ export const bossAbilities = {
       },
       guid: "Phase 1",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
     {
@@ -1065,6 +1111,7 @@ export const bossAbilities = {
       },
       guid: "Phase 2",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
     {
@@ -1077,6 +1124,7 @@ export const bossAbilities = {
       },
       guid: "Phase 3",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
     {
@@ -1089,6 +1137,7 @@ export const bossAbilities = {
       },
       guid: "Intermission",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
   ],
@@ -1104,6 +1153,7 @@ export const bossAbilities = {
       },
       guid: 360300,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_nature_naturetouchdecay.jpg").default,
     },
     {
@@ -1116,6 +1166,7 @@ export const bossAbilities = {
       },
       guid: 360717,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_rogue_dirtydeeds.jpg").default,
     },
     {
@@ -1128,6 +1179,7 @@ export const bossAbilities = {
       },
       guid: 361913,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_warlock_everlastingaffliction.jpg").default,
     },
   ],
@@ -1143,6 +1195,7 @@ export const bossAbilities = {
       },
       guid: 364381,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_soulbombdebufflarge.jpg").default,
     },
     {
@@ -1155,6 +1208,7 @@ export const bossAbilities = {
       },
       guid: 362275,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/creatureportrait_sc_eyeofacherus_02.jpg").default,
     },
   ],
@@ -1170,6 +1224,7 @@ export const bossAbilities = {
       },
       guid: 360562,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_misc_bone_skull_02.jpg").default,
     },
     {
@@ -1182,6 +1237,7 @@ export const bossAbilities = {
       },
       guid: 365436,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_soulcleave2.jpg").default,
     },
     {
@@ -1194,6 +1250,7 @@ export const bossAbilities = {
       },
       guid: 365033,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_missile.jpg").default,
     },
     {
@@ -1206,6 +1263,7 @@ export const bossAbilities = {
       },
       guid: 362617,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_wave.jpg").default,
     },
     {
@@ -1218,6 +1276,7 @@ export const bossAbilities = {
       },
       guid: 362631,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_misc_steelweaponchain.jpg").default,
     },
     {
@@ -1230,6 +1289,7 @@ export const bossAbilities = {
       },
       guid: 363893,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/mace_2h_blacksmithing_d_04_icon.jpg").default,
     },
     {
@@ -1242,6 +1302,7 @@ export const bossAbilities = {
       },
       guid: 360373,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_buff.jpg").default,
     },
     {
@@ -1254,6 +1315,7 @@ export const bossAbilities = {
       },
       guid: 365212,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_infernalchains.jpg").default,
     },
     {
@@ -1266,6 +1328,7 @@ export const bossAbilities = {
       },
       guid: 365153,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shadow_brainwash.jpg").default,
     },
     {
@@ -1278,6 +1341,7 @@ export const bossAbilities = {
       },
       guid: 360378,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/warrior_talent_icon_mastercleaver.jpg").default,
     },
     {
@@ -1290,6 +1354,7 @@ export const bossAbilities = {
       },
       guid: 366377,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shaman_earthquake.jpg").default,
     },
     {
@@ -1302,6 +1367,7 @@ export const bossAbilities = {
       },
       guid: 366776,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_nature_earthquake.jpg").default,
     },
     {
@@ -1314,6 +1380,7 @@ export const bossAbilities = {
       },
       guid: 367051,
       cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shaman_stormearthfire.jpg").default,
     },
     {
@@ -1326,6 +1393,7 @@ export const bossAbilities = {
       },
       guid: "Phase 1",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
     {
@@ -1338,6 +1406,7 @@ export const bossAbilities = {
       },
       guid: "Phase 2",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
     {
@@ -1350,6 +1419,7 @@ export const bossAbilities = {
       },
       guid: "Phase 3",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
     {
@@ -1362,6 +1432,7 @@ export const bossAbilities = {
       },
       guid: "Phase 4",
       cooldownPlannerActive: true,
+      importActive: false,
       icon: "",
     },
   ],
