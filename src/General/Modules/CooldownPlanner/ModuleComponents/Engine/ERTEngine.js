@@ -44,15 +44,15 @@ export default function ertEngine(tableData, bossID, lang) {
         : key.bossAbility;
 
       let option0 =
-        key.name === "" || key.name === undefined
-          ? key.Cooldown === "" || key.Cooldown === undefined
+        key.name0 === "" || key.name0 === undefined
+          ? key.Cooldown0 === "" || key.Cooldown0 === undefined
             ? ""
-            : key.Cooldown === "Personals"
+            : key.Cooldown0 === "Personals"
             ? "{everyone}Personals" + "{spell:160955}"
-            : key.Cooldown === "Potion/Healthstone"
+            : key.Cooldown0 === "Potion/Healthstone"
             ? "{everyone}Potion/Healthstone" + "{spell:105683}"
             : ""
-          : classColoursERT(key.class) + key.name + "|r" + "{spell:" + key.Cooldown + "}";
+          : classColoursERT(key.class0) + key.name0 + "|r" + "{spell:" + key.Cooldown0 + "}";
 
       let option1 =
         key.name1 === "" || key.name1 === undefined
