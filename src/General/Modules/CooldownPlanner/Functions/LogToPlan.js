@@ -28,11 +28,13 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
   const summary = await importSummaryData(starttime, endtime, reportID);
   // Set Progress Bar to 40%
   setLoadingProgress(40);
+  console.log(healers);
   /* --------------------------- Map Healer Data for ID, Name and Class. -------------------------- */
   const healerIDName = healers.map((key) => ({
     id: key.id,
     name: key.name,
     class: key.type,
+    icon: key.icon,
   }));
 
   /* ------------------ Import the log data for Casts for each healer in the log. ----------------- */
@@ -65,7 +67,7 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
       .filter((obj) => {
         return obj.id === key.sourceID;
       })
-      .map((obj) => obj.class)
+      .map((obj) => obj.icon)
       .toString(),
   }));
 
