@@ -7,6 +7,7 @@ import {
   importEnemyCasts,
   importEnemyIds,
   logDifficulty,
+  wclClassConverter,
 } from "../../CooldownPlanner/Functions/Functions";
 import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
 import moment from "moment";
@@ -54,6 +55,8 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
   setLoadingProgress(60);
 
   /* ------------------------- Map cooldown casts for the Timeline Table. ------------------------- */
+  const cooldownTimes = cooldowns.map((key) => moment(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"));
+
   const cooldownsTimeline = cooldowns.map((key) => ({
     guid: key.ability.guid,
     time: moment(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
@@ -63,14 +66,27 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
       })
       .map((obj) => obj.name)
       .toString(),
-    class: healerIDName
-      .filter((obj) => {
-        return obj.id === key.sourceID;
-      })
-      .map((obj) => obj.icon)
-      .toString(),
+    class: wclClassConverter(
+      healerIDName
+        .filter((obj) => {
+          return obj.id === key.sourceID;
+        })
+        .map((obj) => obj.icon)
+        .toString(),
+    ),
   }));
 
+  let newTimeline = cooldownTimes
+    .map((key) => {
+      let newObject = { time: key };
+
+      cooldownsTimeline.filter((filter) => filter.time === key).map((map, i) => Object.assign(newObject, { ["name" + i]: map.name, ["Cooldown" + i]: map.guid, ["class" + i]: map.class }));
+
+      return newObject;
+    })
+    .flat();
+
+  console.log(newTimeline);
   // Set Progress Bar to 70%
   setLoadingProgress(70);
   /* ------------------------- Map enemy casts for the Enemy Timeline Table. ------------------------- */
@@ -95,37 +111,24 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
 
   // Remove any duplicate imports for boss ability and time cast
   enemyCastsTimeline = enemyCastsTimeline.filter((value, index, self) => index === self.findIndex((t) => t.bossAbility === value.bossAbility && t.time === value.time));
+
+  const data = [...newTimeline, ...enemyCastsTimeline]; //...data in question
+  var map = {};
+  data.forEach(function (item) {
+    var id = item.time;
+    if (map[id] === undefined) {
+      map[id] = item;
+    } else {
+      var existing = map[id]; // adding/updating new keys
+      for (var propt in item) {
+        existing[propt] = item[propt];
+      }
+    }
+  });
+  var results = [];
+  Object.keys(map).forEach((k) => results.push(map[k]));
+  console.log(results);
   // Set Progress Bar to Complete
   setLoadingProgress(100);
-  setLogData({ enemyCasts: enemyCastsTimeline, bossID: boss, difficulty: dif, importSuccessful: true });
-
-  /* ---------- Here we set all the returned data to state in the FightAnalysis Component --------- */
-  //   this.setState({
-  //     Updateddatacasts: updateddatacastsTimeline,
-  //     abilityList: uniqueArray,
-  //     cooldownlist: uniqueArrayCD,
-  //     loadingcheck: false,
-  //     healernames: summary.map((key) => ({
-  //       name: key.name,
-  //       icon: key.icon,
-  //       talents: key.combatantInfo.talents,
-  //       soulbindAbilities: key.combatantInfo.artifact,
-  //       soulbindConduits: key.combatantInfo.heartOfAzeroth,
-  //       type: key.type,
-  //       stats: [
-  //         {
-  //           intellect: key.combatantInfo.stats.Intellect.min,
-  //           crit: key.combatantInfo.stats.Crit.min,
-  //           haste: key.combatantInfo.stats.Haste.min,
-  //           mastery: key.combatantInfo.stats.Mastery.min,
-  //           versatility: key.combatantInfo.stats.Versatility.min,
-  //           leech: key.combatantInfo.stats.Leech.min,
-  //           ilvl: key.combatantInfo.stats["Item Level"].min,
-  //         },
-  //       ],
-  //     })),
-  //     currentEndTime: endtime,
-  //     currentStartTime: starttime,
-  //     enemyCastsTimelineData: enemyCastsTimeline,
-  //   });
+  setLogData({ enemyCasts: results, bossID: boss, difficulty: dif, importSuccessful: true });
 }

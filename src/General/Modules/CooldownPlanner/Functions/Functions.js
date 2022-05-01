@@ -667,3 +667,65 @@ export async function importRaidHealth(starttime, endtime, reportid) {
   health2 = reduceTimestampshealth(arr, health.length);
   return health2;
 }
+
+// Potentially just convert the class names in the cooldown planner to match the WCL ones
+export function wclClassConverter(wclClass) {
+  let newClass = "";
+  switch (wclClass) {
+    case "Priest-Holy":
+      newClass = "HolyPriest";
+      break;
+    case "Priest-Discipline":
+      newClass = "DisciplinePriest";
+      break;
+    case "Druid-Restoration":
+      newClass = "RestorationDruid";
+      break;
+    case "Druid-Feral":
+      newClass = "Druid";
+      break;
+    case "Druid-Balance":
+      newClass = "Druid";
+      break;
+    case "Druid-Guardian":
+      newClass = "Druid";
+      break;
+    case "Paladin-Holy":
+      newClass = "HolyPaladin";
+      break;
+    case "Monk-Mistweaver":
+      newClass = "MistweaverMonk";
+      break;
+    case "Shaman-Restoration":
+      newClass = "RestorationShaman";
+      break;
+    case "Warrior-Fury":
+      newClass = "Warrior";
+      break;
+    case "Warrior-Protection":
+      newClass = "Warrior";
+      break;
+    case "Warrior-Arms":
+      newClass = "Warrior";
+      break;
+    case "DeathKnight-Frost":
+      newClass = "DeathKnight";
+      break;
+    case "DeathKnight-Unholy":
+      newClass = "DeathKnight";
+      break;
+    case "DeathKnight-Blood":
+      newClass = "DeathKnight";
+      break;
+    case "Priest-Shadow":
+      newClass = "ShadowPriest";
+      break;
+    case "DemonHunter-Havoc":
+      newClass = "HavocDemonHunter";
+      break;
+    default:
+      newClass = "No Class";
+      break;
+  }
+  return newClass;
+}

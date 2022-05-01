@@ -892,8 +892,8 @@ export const bossAbilities = {
         de: "Windgepeitschte Schwingen",
       },
       guid: 364941,
-      cooldownPlannerActive: false,
-      importActive: false,
+      cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_icon_wing06b.jpg").default,
     },
     {
@@ -905,8 +905,8 @@ export const bossAbilities = {
         de: "Windgepeitschte Schwingen",
       },
       guid: 365041,
-      cooldownPlannerActive: true,
-      importActive: true,
+      cooldownPlannerActive: false,
+      importActive: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_icon_wing06b.jpg").default,
     },
     {
@@ -1201,6 +1201,19 @@ export const bossAbilities = {
         de: "Hoffnungsbrecher",
       },
       guid: 361816,
+      cooldownPlannerActive: false,
+      importActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_debuff.jpg").default,
+    },
+    {
+      name: {
+        en: "Hopebreaker",
+        cn: "灭愿者",
+        fr: "Brisespoir",
+        ru: "Сокрушитель надежды",
+        de: "Hoffnungsbrecher",
+      },
+      guid: 361815,
       cooldownPlannerActive: true,
       importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_debuff.jpg").default,
@@ -1282,6 +1295,19 @@ export const bossAbilities = {
       cooldownPlannerActive: true,
       importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_paladin_toweroflight.jpg").default,
+    },
+    {
+      name: {
+        en: "Hopelessness",
+        cn: "无望",
+        fr: "Abattement",
+        ru: "Безысходность",
+        de: "Hoffnungslosigkeit",
+      },
+      guid: 365958,
+      cooldownPlannerActive: true,
+      importActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_priest_halo_shadow.jpg").default,
     },
     {
       name: {
