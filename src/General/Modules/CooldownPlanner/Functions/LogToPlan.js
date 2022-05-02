@@ -80,7 +80,7 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
     .map((key) => {
       let newObject = { time: key };
 
-      cooldownsTimeline.filter((filter) => filter.time === key).map((map, i) => Object.assign(newObject, { ["name" + i]: map.name, ["Cooldown" + i]: map.guid, ["class" + i]: map.class }));
+      cooldownsTimeline.filter((filter) => filter.time === key).map((map, i) => Object.assign(newObject, { ["name" + i]: map.name, ["cooldown" + i]: map.guid, ["class" + i]: map.class }));
 
       return newObject;
     })
