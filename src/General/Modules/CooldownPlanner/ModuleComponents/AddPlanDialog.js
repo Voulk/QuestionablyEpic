@@ -54,6 +54,7 @@ export default function AddPlanDialog(props) {
   console.log(logData);
 
   const handleChange = (event, newValue) => {
+    setPlanName("");
     setValue(newValue);
   };
 
@@ -112,6 +113,7 @@ export default function AddPlanDialog(props) {
       cooldownPlannerCurrentBoss: 0,
     },
   ]);
+  console.log(logInfo);
 
   const handler = (info) => {
     setLogInfo([
@@ -255,8 +257,35 @@ export default function AddPlanDialog(props) {
                 <FightSelectorButton reportid={reportid} clicky={handler} update={setLogToPlanData} customStyleButton={{ width: "100%" }} />
               </Grid>
               <Grid item xs={12}>
-                {(logData.importSuccessful === false && logDataLoading === true) || logDataLoading === true ? <LinearWithValueLabel loadingProgress={loadingProgress} /> : ""}
+                {(logData.importSuccessful === false && logDataLoading === true) || logDataLoading === true ? (
+                  <div style={{ textAlign: "center" }}>
+                    <div style={{ display: "inline-flex" }}>
+                      {bossIcons(logInfo[0].currentBossID)}
+                      {logInfo[0].boss + " - " + logInfo[0].currentDifficulty + " - " + logInfo[0].currentFighttime}
+                      <div style={{ color: logInfo[0].killOrWipe === "Kill!" ? "#00ff1a" : "", marginLeft: 4 }}>{" - " + logInfo[0].killOrWipe}</div>
+                    </div>
+                    <LinearWithValueLabel loadingProgress={loadingProgress} />
+                  </div>
+                ) : (
+                  ""
+                )}
               </Grid>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography color="primary" align="center">
+                New Plan Name
+              </Typography>
+
+              <TextField
+                error={duplicatePlanNameCheck}
+                helperText={duplicatePlanNameCheck ? t("CooldownPlanner.DuplicatePlanError") : ""}
+                fullWidth
+                variant="outlined"
+                defaultValue=""
+                value={planName}
+                onChange={onChangeNewPlanName}
+                sx={{ marginTop: "4px" }}
+              />
             </Grid>
           </DialogContent>
           <DialogActions>
@@ -264,9 +293,9 @@ export default function AddPlanDialog(props) {
               key={9}
               variant="contained"
               color="primary"
-              onClick={(e) => importPlanToCooldownObject("Test Plan", logData.bossID, logData.difficulty, logData.enemyCasts)}
+              onClick={(e) => importPlanToCooldownObject(planName, logData.bossID, logData.difficulty, logData.enemyCasts)}
               size="small"
-              disabled={logData.importSuccessful === false}
+              disabled={logData.importSuccessful === false || planName === ""}
             >
               {t("CooldownPlanner.AddPlanDialog.ButtonLabel")}
             </Button>
