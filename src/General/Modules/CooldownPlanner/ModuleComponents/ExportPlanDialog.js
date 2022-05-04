@@ -17,8 +17,8 @@ export default function ExportPlanDialog(props) {
   const rosterReducer = (plan) => {
     let roster = [];
     plan.map((key) => {
-      if (key.name) {
-        roster.push({ name: key.name, class: key.class });
+      if (key.name0) {
+        roster.push({ name: key.name0, class: key.class0 });
       }
       if (key.name1) {
         roster.push({ name: key.name1, class: key.class1 });

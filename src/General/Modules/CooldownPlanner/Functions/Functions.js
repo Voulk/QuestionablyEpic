@@ -349,12 +349,7 @@ export async function importCastsLogData(starttime, endtime, reportid, healerID)
     .then((result) => {
       cooldowns = Object.keys(result.data.events)
         .filter(
-          (key) =>
-            cooldownDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
-            // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
-            // result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" :
-            result.data.events[key].type === "cast" &&
-            healerID.includes(result.data.events[key].sourceID),
+          (key) => cooldownDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) && result.data.events[key].type === "cast" && healerID.includes(result.data.events[key].sourceID),
         )
         .map((key) => result.data.events[key]);
       nextpage = result.data.nextPageTimestamp;
@@ -373,11 +368,7 @@ export async function importCastsLogData(starttime, endtime, reportid, healerID)
             Object.keys(result.data.events)
               .filter(
                 (key) =>
-                  cooldownDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
-                  // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
-                  //(result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" :
-                  result.data.events[key].type === "cast" &&
-                  healerID.includes(result.data.events[key].sourceID),
+                  cooldownDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) && result.data.events[key].type === "cast" && healerID.includes(result.data.events[key].sourceID),
               )
               .map((key) => result.data.events[key]),
           );
@@ -675,4 +666,66 @@ export async function importRaidHealth(starttime, endtime, reportid) {
   arr.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
   health2 = reduceTimestampshealth(arr, health.length);
   return health2;
+}
+
+// Potentially just convert the class names in the cooldown planner to match the WCL ones
+export function wclClassConverter(wclClass) {
+  let newClass = "";
+  switch (wclClass) {
+    case "Priest-Holy":
+      newClass = "HolyPriest";
+      break;
+    case "Priest-Discipline":
+      newClass = "DisciplinePriest";
+      break;
+    case "Druid-Restoration":
+      newClass = "RestorationDruid";
+      break;
+    case "Druid-Feral":
+      newClass = "Druid";
+      break;
+    case "Druid-Balance":
+      newClass = "Druid";
+      break;
+    case "Druid-Guardian":
+      newClass = "Druid";
+      break;
+    case "Paladin-Holy":
+      newClass = "HolyPaladin";
+      break;
+    case "Monk-Mistweaver":
+      newClass = "MistweaverMonk";
+      break;
+    case "Shaman-Restoration":
+      newClass = "RestorationShaman";
+      break;
+    case "Warrior-Fury":
+      newClass = "Warrior";
+      break;
+    case "Warrior-Protection":
+      newClass = "Warrior";
+      break;
+    case "Warrior-Arms":
+      newClass = "Warrior";
+      break;
+    case "DeathKnight-Frost":
+      newClass = "DeathKnight";
+      break;
+    case "DeathKnight-Unholy":
+      newClass = "DeathKnight";
+      break;
+    case "DeathKnight-Blood":
+      newClass = "DeathKnight";
+      break;
+    case "Priest-Shadow":
+      newClass = "ShadowPriest";
+      break;
+    case "DemonHunter-Havoc":
+      newClass = "HavocDemonHunter";
+      break;
+    default:
+      newClass = "No Class";
+      break;
+  }
+  return newClass;
 }
