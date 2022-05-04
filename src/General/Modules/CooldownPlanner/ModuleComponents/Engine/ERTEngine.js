@@ -44,59 +44,59 @@ export default function ertEngine(tableData, bossID, lang) {
         : key.bossAbility;
 
       let option0 =
-        key.name === "" || key.name === undefined
-          ? key.Cooldown === "" || key.Cooldown === undefined
+        key.name0 === "" || key.name0 === undefined
+          ? key.cooldown0 === "" || key.cooldown0 === undefined
             ? ""
-            : key.Cooldown === "Personals"
+            : key.cooldown0 === "Personals"
             ? "{everyone}Personals" + "{spell:160955}"
-            : key.Cooldown === "Potion/Healthstone"
+            : key.cooldown0 === "Potion/Healthstone"
             ? "{everyone}Potion/Healthstone" + "{spell:105683}"
             : ""
-          : classColoursERT(key.class) + key.name + "|r" + "{spell:" + key.Cooldown + "}";
+          : classColoursERT(key.class0) + key.name0 + "|r" + "{spell:" + key.cooldown0 + "}";
 
       let option1 =
         key.name1 === "" || key.name1 === undefined
-          ? key.Cooldown1 === "" || key.Cooldown1 === undefined
+          ? key.cooldown1 === "" || key.cooldown1 === undefined
             ? ""
-            : key.Cooldown1 === "Personals"
+            : key.cooldown1 === "Personals"
             ? space + "{everyone}Personals" + "{spell:160955}"
-            : key.Cooldown1 === "Potion/Healthstone"
+            : key.cooldown1 === "Potion/Healthstone"
             ? space + "{everyone}Potion/Healthstone" + "{spell:105683}"
             : ""
-          : space + classColoursERT(key.class1) + key.name1 + "|r" + "{spell:" + key.Cooldown1 + "}";
+          : space + classColoursERT(key.class1) + key.name1 + "|r" + "{spell:" + key.cooldown1 + "}";
 
       let option2 =
         key.name2 === "" || key.name2 === undefined
-          ? key.Cooldown2 === "" || key.Cooldown2 === undefined
+          ? key.cooldown2 === "" || key.cooldown2 === undefined
             ? ""
-            : key.Cooldown2 === "Personals"
+            : key.cooldown2 === "Personals"
             ? space + "{everyone}Personals" + "{spell:160955}"
-            : key.Cooldown2 === "Potion/Healthstone"
+            : key.cooldown2 === "Potion/Healthstone"
             ? space + "{everyone}Potion/Healthstone" + "{spell:105683}"
             : ""
-          : space + classColoursERT(key.class2) + key.name2 + "|r" + "{spell:" + key.Cooldown2 + "}";
+          : space + classColoursERT(key.class2) + key.name2 + "|r" + "{spell:" + key.cooldown2 + "}";
 
       let option3 =
         key.name3 === "" || key.name3 === undefined
-          ? key.Cooldown3 === "" || key.Cooldown3 === undefined
+          ? key.cooldown3 === "" || key.cooldown3 === undefined
             ? ""
-            : key.Cooldown3 === "Personals"
+            : key.cooldown3 === "Personals"
             ? space + "{everyone}Personals" + "{spell:160955}"
-            : key.Cooldown3 === "Potion/Healthstone"
+            : key.cooldown3 === "Potion/Healthstone"
             ? space + "{everyone}Potion/Healthstone" + "{spell:105683}"
             : ""
-          : space + classColoursERT(key.class3) + key.name3 + "|r" + "{spell:" + key.Cooldown3 + "}";
+          : space + classColoursERT(key.class3) + key.name3 + "|r" + "{spell:" + key.cooldown3 + "}";
 
       let option4 =
         key.name4 === "" || key.name4 === undefined
-          ? key.Cooldown4 === "" || key.Cooldown4 === undefined
+          ? key.cooldown4 === "" || key.cooldown4 === undefined
             ? ""
-            : key.Cooldown4 === "Personals"
+            : key.cooldown4 === "Personals"
             ? space + "{everyone}Personals" + "{spell:160955}"
-            : key.Cooldown4 === "Potion/Healthstone"
+            : key.cooldown4 === "Potion/Healthstone"
             ? space + "{everyone}Potion/Healthstone" + "{spell:105683}"
             : ""
-          : space + classColoursERT(key.class4) + key.name4 + "|r" + "{spell:" + key.Cooldown4 + "}";
+          : space + classColoursERT(key.class4) + key.name4 + "|r" + "{spell:" + key.cooldown4 + "}";
 
       return {
         ert: time + translatedName + seperator + option0 + option1 + option2 + option3 + option4,

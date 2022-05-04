@@ -94,7 +94,15 @@ class LogImport extends Component {
                   .map((obj) => obj.zoneID),
             ]);
             this.props.close();
-            this.props.update(fight.start_time, fight.end_time, this.state.reportid);
+            this.props.update(
+              // Used by QELog Import
+              fight.start_time,
+              fight.end_time,
+              this.state.reportid,
+              // Used by Cooldown Plan Log Import
+              fight.boss,
+              fight.difficulty,
+            );
           }}
         >
           {bossIcons(fight.boss)}
