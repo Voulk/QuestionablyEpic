@@ -34,7 +34,14 @@ export default function ExportERTDialog(props) {
     <div>
       <Tooltip title={t("CooldownPlanner.NoteExportDialog.NoteExportTooltip")} arrow>
         <span>
-          <Button variant="outlined" disableElevation={true} color="primary" style={{ fontSize: "14px" }} onClick={handleClickOpen} disabled={currentPlan === "" || disabledCheck ? true : false}>
+          <Button
+            variant="outlined"
+            disableElevation={true}
+            color="primary"
+            style={{ fontSize: "14px", width: "100%" }}
+            onClick={handleClickOpen}
+            disabled={currentPlan === "" || disabledCheck ? true : false}
+          >
             {t("CooldownPlanner.NoteExportDialog.ButtonLabel")}
           </Button>
         </span>

@@ -70,7 +70,7 @@ export default function ExportPlanDialog(props) {
   return (
     <div>
       <Tooltip title={""} arrow>
-        <Button disableElevation={true} sx={{ fontSize: "14px" }} onClick={handleClickOpen} variant="outlined" color="primary" disabled={disabledCheck || currentPlan === ""}>
+        <Button disableElevation={true} sx={{ fontSize: "14px", width: "100%" }} onClick={handleClickOpen} variant="outlined" color="primary" disabled={disabledCheck || currentPlan === ""}>
           {t("CooldownPlanner.ExportPlanDialog.ButtonLabel")}
         </Button>
       </Tooltip>

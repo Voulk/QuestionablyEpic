@@ -36,7 +36,7 @@ export default function CopyPlanDialog(props) {
     <div>
       <Tooltip title={t("CooldownPlanner.CopyPlanDialog.ButtonTooltip")} arrow>
         <span>
-          <Button key={8} variant="outlined" color="primary" onClick={handleCopyPlanDialogClickOpen} disabled={disabledCheck || currentPlan === ""}>
+          <Button key={8} variant="outlined" color="primary" onClick={handleCopyPlanDialogClickOpen} disabled={disabledCheck || currentPlan === ""} sx={{ width: "100%" }}>
             {t("CooldownPlanner.CopyPlanDialog.ButtonLabel")}
           </Button>
         </span>

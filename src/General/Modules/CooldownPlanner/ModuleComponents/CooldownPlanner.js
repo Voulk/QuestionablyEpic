@@ -607,9 +607,9 @@ export default function CooldownPlanner(props) {
                 }}
               >
                 {/* ------------------- Container for the Heal Team / ERT & Raid/Boss/Plan Selection ------------------- */}
-                <Grid item container spacing={1} xs={12} sm={12} md={12} lg={6} xl={9} alignItems="center">
+                <Grid item container spacing={1} xs={12} sm={12} md={8} lg={9} xl={9} alignItems="center">
                   {/* ------------------------ Heal Team Button (Activates the Dialog Popup) ----------------------- */}
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
                     <Button variant="outlined" style={{ height: 40, width: "100%", whiteSpace: "nowrap" }} color="primary" onClick={() => healTeamDialogOpen()}>
                       {/* // TODO: Translate */}
                       Roster
@@ -634,9 +634,9 @@ export default function CooldownPlanner(props) {
                     </TextField>
                   </Grid> */}
                   {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
                     <TextField
-                      sx={{ minWidth: 100 }}
+                      sx={{ minWidth: 100, width: "100%" }}
                       fullSize
                       label={t("Boss")}
                       select
@@ -662,9 +662,9 @@ export default function CooldownPlanner(props) {
                     </TextField>
                   </Grid>
 
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
                     <TextField
-                      sx={{ minWidth: 100 }}
+                      sx={{ minWidth: 100, width: "100%" }}
                       fullSize
                       select
                       label={t("Difficulty")}
@@ -687,9 +687,9 @@ export default function CooldownPlanner(props) {
                   </Grid>
 
                   {/* ----------------------------------- Plan Selection Dropdown ---------------------------------- */}
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
                     <TextField
-                      sx={{ minWidth: 100 }}
+                      sx={{ minWidth: 100, width: "100%" }}
                       fullSize
                       select
                       label={t("Plan")}
@@ -713,7 +713,7 @@ export default function CooldownPlanner(props) {
                     </TextField>
                   </Grid>
 
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
                     <AddPlanDialog
                       openAddPlanDialog={openAddPlanDialog}
                       handleAddPlanDialogClose={handleAddPlanDialogClose}
@@ -729,7 +729,7 @@ export default function CooldownPlanner(props) {
                     />
                   </Grid>
 
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
                     <CopyPlanDialog
                       currentPlan={currentPlan}
                       openCopyPlanDialog={openCopyPlanDialog}
@@ -743,7 +743,7 @@ export default function CooldownPlanner(props) {
                     />
                   </Grid>
 
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
                     <DeletePlanDialog
                       openDeletePlanDialog={openDeletePlanDialog}
                       handleDeletePlanDialogClickOpen={handleDeletePlanDialogClickOpen}
@@ -758,20 +758,20 @@ export default function CooldownPlanner(props) {
                     />
                   </Grid>
 
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
                     <ImportPlanDialog cooldownObject={cooldownObject} loadPlanData={loadPlanData} disabledCheck={RosterCheck} />
                   </Grid>
 
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
                     <ExportPlanDialog data={data} boss={currentBoss} planName={currentPlan} plan={data} currentDifficulty={currentDifficulty} disabledCheck={RosterCheck} currentPlan={currentPlan} />
                   </Grid>
 
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
                     <ExportERTDialog ertListTimeIcons={ertListTimeIcons} boss={currentBoss} currentPlan={currentPlan} disabledCheck={RosterCheck} />
                   </Grid>
                 </Grid>
 
-                <Grid item xs={12} sm={6} md={12} lg={6} xl={3}>
+                <Grid item xs={12} sm={12} md={4} lg={3} xl={3}>
                   {currentBoss === "" || currentPlan === "default" || currentPlan === "" ? null : <MTableToolbar {...props} />}
                 </Grid>
               </Grid>

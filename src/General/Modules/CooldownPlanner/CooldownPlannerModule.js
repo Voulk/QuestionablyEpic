@@ -41,7 +41,7 @@ class CooldownPlannerModule extends Component {
       "Each plan can be exported as an ERT note with the 'Note' button",
       "Advanced Use with Fight Analysis: Any plan you make can replace the cooldowns on an imported log in the fight analysis module by toggling the 'Log Cooldown/Custom Cooldown' dropdown, and selecting a plan from the 'Plans' dropdown, use this to compare your assignments to a logs damage pattern!",
     ];
-    const helpBlurb = "Welcome to the Cooldown Planner. This is still a work in progress so any bugs / feedback is welcome. Use this Form for reporting: https://forms.gle/ZKhqYVsytV9co4yp6";
+    const helpBlurb = "Welcome to the Cooldown Planner. This is still a work in progress so any bugs / feedback is welcome.";
 
     return (
       <div
