@@ -26,7 +26,6 @@ export default function ertEngine(tableData, bossID, lang, setERTData, hideNoCoo
   ];
   // log provided props
   // debug && console.table(tableData);
-  console.log(hideNoCooldownsChecked);
 
   /* ---------------------------- Map the ERT note from the Table Data ---------------------------- */
 

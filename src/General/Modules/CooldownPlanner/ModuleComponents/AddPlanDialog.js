@@ -51,8 +51,6 @@ export default function AddPlanDialog(props) {
   const [logDataLoading, setLogDataLoading] = React.useState(false);
   const [loadingProgress, setLoadingProgress] = React.useState(0);
 
-  console.log(logData);
-
   const handleChange = (event, newValue) => {
     setPlanName("");
     setValue(newValue);
@@ -113,7 +111,6 @@ export default function AddPlanDialog(props) {
       cooldownPlannerCurrentBoss: 0,
     },
   ]);
-  console.log(logInfo);
 
   const handler = (info) => {
     setLogInfo([

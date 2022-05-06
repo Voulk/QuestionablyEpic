@@ -29,7 +29,6 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
   // const summary = await importSummaryData(starttime, endtime, reportID);
   // Set Progress Bar to 40%
   setLoadingProgress(40);
-  console.log(healers);
   /* --------------------------- Map Healer Data for ID, Name and Class. -------------------------- */
   const healerIDName = healers.map((key) => ({
     id: key.id,
@@ -85,7 +84,6 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
     })
     .flat();
 
-  console.log(newTimeline);
   // Set Progress Bar to 70%
   setLoadingProgress(70);
   /* ------------------------- Map enemy casts for the Enemy Timeline Table. ------------------------- */
@@ -104,9 +102,6 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
     }));
   // Set Progress Bar to 80%
   setLoadingProgress(80);
-  console.log(cooldownsTimeline);
-
-  console.log(enemyCastsTimeline);
 
   // Remove any duplicate imports for boss ability and time cast
   enemyCastsTimeline = enemyCastsTimeline.filter((value, index, self) => index === self.findIndex((t) => t.bossAbility === value.bossAbility && t.time === value.time));
@@ -126,7 +121,6 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
   });
   var results = [];
   Object.keys(map).forEach((k) => results.push(map[k]));
-  console.log(results);
   // Set Progress Bar to Complete
   setLoadingProgress(100);
   setLogData({ enemyCasts: results, bossID: boss, difficulty: dif, importSuccessful: true });
