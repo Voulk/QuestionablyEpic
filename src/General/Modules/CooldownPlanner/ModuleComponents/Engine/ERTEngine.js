@@ -31,7 +31,7 @@ export default function ertEngine(tableData, bossID, lang) {
 
   /* ---------------------------------------- Time + Icons ---------------------------------------- */
   const ertNoteTimeIcons = tableData
-    .filter((key) => key.bossAbility !== undefined)
+    // .filter((key) => key.bossAbility !== undefined)
     .map((key) => {
       let time = "{time:" + key.time + "}";
       let translatedName = abilityArr.includes(key.bossAbility)
@@ -99,7 +99,7 @@ export default function ertEngine(tableData, bossID, lang) {
           : space + classColoursERT(key.class4) + key.name4 + "|r" + "{spell:" + key.cooldown4 + "}";
 
       return {
-        ert: time + translatedName + seperator + option0 + option1 + option2 + option3 + option4,
+        ert: time + (key.bossAbility === undefined ? "" : translatedName + seperator) + option0 + option1 + option2 + option3 + option4,
         /* --------------------------------- This is for Sorting by Time -------------------------------- */
         time: key.time,
       };

@@ -55,11 +55,10 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
   setLoadingProgress(60);
 
   /* ------------------------- Map cooldown casts for the Timeline Table. ------------------------- */
-  const cooldownTimes = cooldowns.map((key) => moment(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"));
-
+  const cooldownTimes = cooldowns.map((key) => moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"));
   const cooldownsTimeline = cooldowns.map((key) => ({
     guid: key.ability.guid,
-    time: moment(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
+    time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
     name: healerIDName
       .filter((obj) => {
         return obj.id === key.sourceID;
@@ -101,7 +100,7 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
     )
     .map((key) => ({
       bossAbility: key.ability.guid,
-      time: moment(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
+      time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
     }));
   // Set Progress Bar to 80%
   setLoadingProgress(80);

@@ -11,7 +11,7 @@ export function addMissingTimestamps(loglength) {
   let newarray = [{ timestamp: 0 }];
   let ticks = [];
   let tickcount = 0;
-  let length = moment(loglength).startOf("second") / 1000;
+  let length = moment.utc(loglength).startOf("second") / 1000;
   for (let i = 0; i < length; i++) {
     ticks = ticks.concat(tickcount + 1000);
     tickcount = tickcount + 1000;
@@ -601,7 +601,7 @@ export async function importRaidHealth(starttime, endtime, reportid) {
   //   .then((result) => {
   //     result.data.series
   //       .filter((key) => key.type !== "Pet")
-  //       .map((key) => key.data.map((key2) => health.push({ timestamp: moment(fightDuration(key2[0], starttime)).startOf("second").valueOf(), health: key2[1] })));
+  //       .map((key) => key.data.map((key2) => health.push({ timestamp: moment.utc(fightDuration(key2[0], starttime)).startOf("second").valueOf(), health: key2[1] })));
   //   })
   //   .catch(function (error) {
   //     console.log(error);
@@ -622,7 +622,7 @@ export async function importRaidHealth(starttime, endtime, reportid) {
         };
 
         series.data.forEach((item) => {
-          const milisecondsIntoFight = moment(item[0] - starttime)
+          const milisecondsIntoFight = moment.utc(item[0] - starttime)
             .startOf("second")
             .valueOf();
 
@@ -632,7 +632,7 @@ export async function importRaidHealth(starttime, endtime, reportid) {
         entities.push(newSeries);
       });
 
-      const fightDurationInSeconds = moment(endtime - starttime).startOf("second");
+      const fightDurationInSeconds = moment.utc(endtime - starttime).startOf("second");
       for (let i = 0; i <= fightDurationInSeconds; i += 1000) {
         entities.forEach((series) => {
           series.data[i] = series.data[i] !== undefined ? series.data[i] : series.lastValue;

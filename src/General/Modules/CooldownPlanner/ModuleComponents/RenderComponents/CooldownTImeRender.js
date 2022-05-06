@@ -11,7 +11,7 @@ export default function CooldownTimeRender(rowData, cooldown, cooldownTime) {
   /* --- Function to Show the time Cooldowns will be available again (Currently Column Hidden) --- */
   const timeCheck = (castTime, cooldown) => {
     /* --------------------------- Get get the cast time as "mm:ss" format -------------------------- */
-    let time = moment(castTime, "mm:ss")
+    let time = moment.utc(castTime, "mm:ss")
       /* ---------- Filter the CD array to get the Cooldown time and add it to the cast time --------- */
       .add(
         cooldownDB

@@ -89,7 +89,7 @@ class Chart extends Component {
   customticks = (loglength) => {
     let ticks = [];
     let tickcount = 0;
-    let length = moment(loglength).startOf("second") / 1000;
+    let length = moment.utc(loglength).startOf("second") / 1000;
     for (let i = 0; i < length; i++) {
       ticks = ticks.concat(tickcount + 1000);
       tickcount = tickcount + 1000;
@@ -159,7 +159,7 @@ class Chart extends Component {
               scale="time"
               ticks={this.customticks(this.props.endtime)}
               type="number"
-              tickFormatter={(timeStr) => moment(timeStr).format("mm:ss")}
+              tickFormatter={(timeStr) => moment.utc(timeStr).format("mm:ss")}
               stroke="#f5f5f5"
               domain={[0, this.props.timeend]}
             />
@@ -199,7 +199,7 @@ class Chart extends Component {
                 backgroundColor: "#1b1b1b",
                 border: "1px solid #1b1b1b",
               }}
-              labelFormatter={(timeStr) => moment(timeStr).format("mm:ss")}
+              labelFormatter={(timeStr) => moment.utc(timeStr).format("mm:ss")}
             />
             {this.drawAreas(this.props.cooldownsToShow === "log" ? this.props.cooldown : this.props.customCooldowns)}
             <Line yAxisId="3" type="monotone" dataKey="Raid Health" stroke="#FF0000" dot={false} />

@@ -121,7 +121,7 @@ export default function ExternalTimeline(props) {
           },
           render: (rowData) => (
             <div>
-              {moment(rowData.timestamp, "mm:ss")
+              {moment.utc(rowData.timestamp, "mm:ss")
                 .add(
                   externalsDB
                     .filter((obj) => {

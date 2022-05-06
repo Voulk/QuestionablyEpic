@@ -1,6 +1,25 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Button, TextField, Dialog, Grid, Divider, DialogActions, DialogContent, DialogTitle, Tooltip, Typography, FormControl, InputLabel, Select, MenuItem, Paper } from "@mui/material";
+import {
+  Button,
+  TextField,
+  Dialog,
+  Grid,
+  Divider,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Tooltip,
+  Typography,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  Paper,
+  FormGroup,
+  FormControlLabel,
+  Switch,
+} from "@mui/material";
 import { bossList } from "../Data/CooldownPlannerBossList";
 
 export default function ExportERTDialog(props) {
@@ -50,10 +69,16 @@ export default function ExportERTDialog(props) {
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
         <DialogTitle id="ert-dialog-title">
           <Grid container direction="row" justifyContent="space-between">
-            <Grid item>
+            <Grid item xs={12}>
               <Typography variant="h6" color="primary">
                 {t("CooldownPlanner.NoteExportDialog.HeaderTitle")}
               </Typography>
+            </Grid>
+            <Grid item>
+              <FormGroup row>
+                <FormControlLabel control={<Switch defaultChecked size="small" />} label="Label" />
+                <FormControlLabel disabled control={<Switch size="small" />} label="Disabled" />
+              </FormGroup>
             </Grid>
           </Grid>
         </DialogTitle>

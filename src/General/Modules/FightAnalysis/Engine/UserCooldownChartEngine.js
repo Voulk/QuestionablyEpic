@@ -70,7 +70,7 @@ export default function chartCooldownUpdater(tableData) {
     }))
     .map((key) => {
       customCooldownDurations.push(
-        durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
+        durationmaker(key.ability, key.timestamp, key.abilityname, moment.utc(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
       );
     });
 
@@ -84,7 +84,7 @@ export default function chartCooldownUpdater(tableData) {
     }))
     .map((key) =>
       customCooldownDurations.push(
-        durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
+        durationmaker(key.ability, key.timestamp, key.abilityname, moment.utc(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
       ),
     );
 
@@ -98,7 +98,7 @@ export default function chartCooldownUpdater(tableData) {
     }))
     .map((key) =>
       customCooldownDurations.push(
-        durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
+        durationmaker(key.ability, key.timestamp, key.abilityname, moment.utc(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
       ),
     );
 
@@ -112,7 +112,7 @@ export default function chartCooldownUpdater(tableData) {
     }))
     .map((key) =>
       customCooldownDurations.push(
-        durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
+        durationmaker(key.ability, key.timestamp, key.abilityname, moment.utc(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
       ),
     );
 
@@ -126,7 +126,7 @@ export default function chartCooldownUpdater(tableData) {
     }))
     .map((key) =>
       customCooldownDurations.push(
-        durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
+        durationmaker(key.ability, key.timestamp, key.abilityname, moment.utc(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
       ),
     );
 
