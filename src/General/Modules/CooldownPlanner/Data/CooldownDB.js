@@ -18,6 +18,7 @@ export const cooldownDB = [
     cooldown: 120,
     class: "HolyPaladin",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     // Aura Mastery
@@ -34,6 +35,7 @@ export const cooldownDB = [
     cooldown: 180,
     class: "HolyPaladin",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   /* ------------------------------------- Covenant Abilities ------------------------------------- */
   {
@@ -50,6 +52,7 @@ export const cooldownDB = [
     cooldown: 60,
     class: "HolyPaladin",
     cdPlannerMenuActive: false,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -65,6 +68,7 @@ export const cooldownDB = [
     cooldown: 240,
     class: "HolyPaladin",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -80,6 +84,7 @@ export const cooldownDB = [
     cooldown: 30,
     class: "HolyPaladin",
     cdPlannerMenuActive: false,
+    cdPlannerImport: false,
   },
   {
     name: {
@@ -95,6 +100,7 @@ export const cooldownDB = [
     cooldown: 30,
     class: "HolyPaladin",
     cdPlannerMenuActive: false,
+    cdPlannerImport: false,
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Priest                                             */
@@ -114,6 +120,7 @@ export const cooldownDB = [
     cooldown: 180,
     class: "DisciplinePriest",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -129,6 +136,7 @@ export const cooldownDB = [
     cooldown: 90,
     class: "DisciplinePriest",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -144,6 +152,7 @@ export const cooldownDB = [
     cooldown: 180,
     class: "HolyPriest",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -159,6 +168,7 @@ export const cooldownDB = [
     cooldown: 720,
     class: "HolyPriest",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -174,6 +184,7 @@ export const cooldownDB = [
     cooldown: 180,
     class: "HolyPriest",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -189,6 +200,7 @@ export const cooldownDB = [
     cooldown: 90,
     class: "DisciplinePriest",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -204,6 +216,7 @@ export const cooldownDB = [
     cooldown: 60,
     class: "DisciplinePriest",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   /* ------------------------------------- Covenant Abilities ------------------------------------- */
   {
@@ -220,6 +233,7 @@ export const cooldownDB = [
     cooldown: 180,
     class: "Priest",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -235,6 +249,7 @@ export const cooldownDB = [
     cooldown: 45,
     class: "Priest",
     cdPlannerMenuActive: false,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -250,6 +265,7 @@ export const cooldownDB = [
     cooldown: 60,
     class: "Priest",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Druid                                             */
@@ -269,6 +285,7 @@ export const cooldownDB = [
     cooldown: 180,
     class: "RestorationDruid",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -284,6 +301,7 @@ export const cooldownDB = [
     cooldown: 180,
     class: "RestorationDruid",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -299,6 +317,7 @@ export const cooldownDB = [
     cooldown: 90,
     class: "RestorationDruid",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   /* ------------------------------------- Covenant Abilities ------------------------------------- */
   {
@@ -315,6 +334,7 @@ export const cooldownDB = [
     cooldown: 60,
     class: "RestorationDruid",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -330,6 +350,7 @@ export const cooldownDB = [
     cooldown: 180,
     class: "RestorationDruid",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -345,6 +366,7 @@ export const cooldownDB = [
     cooldown: 25,
     class: "RestorationDruid",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -360,6 +382,7 @@ export const cooldownDB = [
     cooldown: 120,
     class: "RestorationDruid",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -380,6 +403,7 @@ export const cooldownDB = [
     cooldown: 180,
     class: "MistweaverMonk",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -395,6 +419,7 @@ export const cooldownDB = [
     cooldown: 180,
     class: "MistweaverMonk",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   /* ------------------------------------- Covenant Abilities ------------------------------------- */
   {
@@ -411,6 +436,7 @@ export const cooldownDB = [
     cooldown: 120,
     class: "MistweaverMonk",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -426,6 +452,7 @@ export const cooldownDB = [
     cooldown: 180,
     class: "MistweaverMonk",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -441,6 +468,7 @@ export const cooldownDB = [
     cooldown: 60,
     class: "MistweaverMonk",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -456,6 +484,7 @@ export const cooldownDB = [
     cooldown: 30,
     class: "MistweaverMonk",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Shaman                                             */
@@ -475,6 +504,7 @@ export const cooldownDB = [
     cooldown: 180,
     class: "RestorationShaman",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -490,6 +520,7 @@ export const cooldownDB = [
     cooldown: 180,
     class: "RestorationShaman",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -505,6 +536,7 @@ export const cooldownDB = [
     cooldown: 300,
     class: "RestorationShaman",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   /* ------------------------------------- Covenant Abilities ------------------------------------- */
   {
@@ -521,6 +553,7 @@ export const cooldownDB = [
     cooldown: 60,
     class: "RestorationShaman",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -536,6 +569,7 @@ export const cooldownDB = [
     cooldown: 90,
     class: "RestorationShaman",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -551,6 +585,7 @@ export const cooldownDB = [
     cooldown: 45,
     class: "RestorationShaman",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -566,6 +601,7 @@ export const cooldownDB = [
     cooldown: 120,
     class: "RestorationShaman",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -585,6 +621,7 @@ export const cooldownDB = [
     cooldown: 180,
     class: "HavocDemonHunter",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
 
   {
@@ -601,6 +638,7 @@ export const cooldownDB = [
     cooldown: 180,
     class: "Warrior",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
 
   {
@@ -617,6 +655,7 @@ export const cooldownDB = [
     cooldown: 120,
     class: "ShadowPriest",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
 
   {
@@ -633,6 +672,7 @@ export const cooldownDB = [
     cooldown: 120,
     class: "DeathKnight",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   // TODO: Apply Utilities
   {
@@ -650,6 +690,7 @@ export const cooldownDB = [
     class: "RestorationDruid",
     type: "utility",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
   {
     name: {
@@ -666,6 +707,7 @@ export const cooldownDB = [
     class: "Druid",
     type: "utility",
     cdPlannerMenuActive: true,
+    cdPlannerImport: true,
   },
 
   {
@@ -682,6 +724,7 @@ export const cooldownDB = [
     // cooldown: 120,
     class: "",
     cdPlannerMenuActive: true,
+    cdPlannerImport: false,
   },
 
   {
@@ -698,6 +741,7 @@ export const cooldownDB = [
     // cooldown: 120,
     class: "",
     cdPlannerMenuActive: true,
+    cdPlannerImport: false,
   },
   {
     guid: "",
@@ -713,5 +757,6 @@ export const cooldownDB = [
     // cooldown: 120,
     class: "",
     cdPlannerMenuActive: true,
+    cdPlannerImport: false,
   },
 ];

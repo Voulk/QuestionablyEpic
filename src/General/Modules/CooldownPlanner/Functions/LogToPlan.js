@@ -1,7 +1,7 @@
 import {
   fightDuration,
   importHealerLogData,
-  importCastsLogData,
+  importCooldownPlannerCastsLogData,
   importSummaryData,
   importCharacterIds,
   importEnemyCasts,
@@ -19,14 +19,14 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
   // Set Progress Bar to 10%
   setLoadingProgress(10);
   /* ------------------------------ Import Character IDS from the log ----------------------------- */
-  const playerIDs = await importCharacterIds(starttime, endtime, reportID);
+  // const playerIDs = await importCharacterIds(starttime, endtime, reportID);
   // Set Progress Bar to 20%
   setLoadingProgress(20);
   /* -------------------------------- Import Enemy IDS from the log ------------------------------- */
-  const enemyIDs = await importEnemyIds(starttime, endtime, reportID);
+  // const enemyIDs = await importEnemyIds(starttime, endtime, reportID);
   // Set Progress Bar to 30%
   setLoadingProgress(30);
-  const summary = await importSummaryData(starttime, endtime, reportID);
+  // const summary = await importSummaryData(starttime, endtime, reportID);
   // Set Progress Bar to 40%
   setLoadingProgress(40);
   console.log(healers);
@@ -39,7 +39,7 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
   }));
 
   /* ------------------ Import the log data for Casts for each healer in the log. ----------------- */
-  const cooldowns = await importCastsLogData(
+  const cooldowns = await importCooldownPlannerCastsLogData(
     starttime,
     endtime,
     reportID,
