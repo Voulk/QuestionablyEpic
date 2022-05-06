@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import {
   Button,
@@ -18,14 +18,26 @@ import {
   Paper,
   FormGroup,
   FormControlLabel,
-  Switch,
+  Checkbox,
 } from "@mui/material";
 import { bossList } from "../Data/CooldownPlannerBossList";
+import ertEngine from "../ModuleComponents/Engine/ERTEngine";
 
 export default function ExportERTDialog(props) {
-  const { t } = useTranslation();
-  const { ertListTimeIcons, boss, currentPlan, disabledCheck } = props;
+  const { t, i18n } = useTranslation();
+  const { boss, currentPlan, disabledCheck, tableData } = props;
   const [open, setOpen] = React.useState(false);
+  const [hideNoCooldownsChecked, setHideNoCooldownsChecked] = React.useState(false);
+  const [ertData, setERTData] = React.useState([]);
+  const currentLanguage = i18n.language;
+
+  useEffect(() => {
+    ertEngine(tableData, boss, currentLanguage, setERTData, hideNoCooldownsChecked);
+  }, [tableData, hideNoCooldownsChecked]);
+
+  const handleChangeNoCooldownsChecked = (event) => {
+    setHideNoCooldownsChecked(event.target.checked);
+  };
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -44,7 +56,7 @@ export default function ExportERTDialog(props) {
     let currentBoss = t("BossNames." + bossID);
     let newString = "|cffffff00" + currentBoss + " - " + currentPlan + "|r";
 
-    data = ertListTimeIcons;
+    data = ertData;
     data.map((key) => (newString = newString.concat("\n", key.ert)));
     return newString;
   };
@@ -67,7 +79,7 @@ export default function ExportERTDialog(props) {
       </Tooltip>
 
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
-        <DialogTitle id="ert-dialog-title">
+        <DialogTitle id="ert-dialog-title" sx={{ paddingBottom: 0 }}>
           <Grid container direction="row" justifyContent="space-between">
             <Grid item xs={12}>
               <Typography variant="h6" color="primary">
@@ -76,8 +88,7 @@ export default function ExportERTDialog(props) {
             </Grid>
             <Grid item>
               <FormGroup row>
-                <FormControlLabel control={<Switch defaultChecked size="small" />} label="Label" />
-                <FormControlLabel disabled control={<Switch size="small" />} label="Disabled" />
+                <FormControlLabel control={<Checkbox size="small" checked={hideNoCooldownsChecked} onChange={handleChangeNoCooldownsChecked} />} label="Hide lines with no cooldowns?" />
               </FormGroup>
             </Grid>
           </Grid>

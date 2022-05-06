@@ -57,9 +57,6 @@ export default function CooldownPlanner(props) {
   const cooldownObject = new Cooldowns();
   const healTeamDialogOpen = props.healTeamDialogOpen;
 
-  // ERT Objects
-  const ertListTimeIcons = props.ertListTimeIcons;
-
   /* ---------------------------------------------------------------------------------------------- */
   /*                                            Add Plan                                            */
   /* ---------------------------------------------------------------------------------------------- */
@@ -519,12 +516,6 @@ export default function CooldownPlanner(props) {
     },
   ];
 
-  /* ------------- When the currently loaded data is updated the props.update function ------------ */
-  /* ------------- passed from the cooldown planner module will update the state also. ------------ */
-  useEffect(() => {
-    props.update(data, currentBoss, currentLanguage);
-  }, [data]);
-
   const RosterCheck = ls.get("healerInfo") === null ? true : ls.get("healerInfo").length === 0 ? true : false;
 
   return (
@@ -767,7 +758,7 @@ export default function CooldownPlanner(props) {
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
-                    <ExportERTDialog ertListTimeIcons={ertListTimeIcons} boss={currentBoss} currentPlan={currentPlan} disabledCheck={RosterCheck} />
+                    <ExportERTDialog boss={currentBoss} currentPlan={currentPlan} disabledCheck={RosterCheck} update={props.update} tableData={data} />
                   </Grid>
                 </Grid>
 

@@ -12,7 +12,7 @@ import { bossAbilities } from "../../Data/CooldownPlannerBossAbilityList";
 // turn debugging (console logging) on/off
 const debug = false;
 
-export default function ertEngine(tableData, bossID, lang) {
+export default function ertEngine(tableData, bossID, lang, setERTData, hideNoCooldownsChecked) {
   debug && console.log(" -- Debugging On -> ERTEngine.js --");
   const seperator = " - ";
   const space = " ";
@@ -26,12 +26,22 @@ export default function ertEngine(tableData, bossID, lang) {
   ];
   // log provided props
   // debug && console.table(tableData);
+  console.log(hideNoCooldownsChecked);
 
   /* ---------------------------- Map the ERT note from the Table Data ---------------------------- */
 
   /* ---------------------------------------- Time + Icons ---------------------------------------- */
   const ertNoteTimeIcons = tableData
-    // .filter((key) => key.bossAbility !== undefined)
+    .filter((key) => {
+      if (hideNoCooldownsChecked === true) {
+        const check =
+          key.bossAbility !== undefined && key.cooldown0 === undefined && key.cooldown1 === undefined && key.cooldown2 === undefined && key.cooldown3 === undefined && key.cooldown4 === undefined;
+        return !check;
+      }
+      {
+        return true;
+      }
+    })
     .map((key) => {
       let time = "{time:" + key.time + "}";
       let translatedName = abilityArr.includes(key.bossAbility)
@@ -106,7 +116,5 @@ export default function ertEngine(tableData, bossID, lang) {
     });
   // debug && console.table(ertNoteTimeIcons);
 
-  this.setState({
-    ertListTimeIcons: ertNoteTimeIcons,
-  });
+  setERTData(ertNoteTimeIcons);
 }
