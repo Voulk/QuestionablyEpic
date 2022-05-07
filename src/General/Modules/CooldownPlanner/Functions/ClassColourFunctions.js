@@ -2,41 +2,41 @@
 
 export function classColoursERT(props) {
   if (props === "HolyPaladin") {
-    return "|cfff38bb9";
+    return "|cfff38bb9"; // #f38bb9
   }
   if (props === "RestorationDruid") {
-    return "|cfffe7b09";
+    return "|cfffe7b09"; // #fe7b09
   }
   if (props === "HolyPriest") {
-    return "|cffffff00";
+    return "|cffffff00"; // #ffff00
   }
 
   if (props === "ShadowPriest") {
-    return "|cfffefefe";
+    return "|cfffefefe"; // #fefefe
   }
 
   if (props === "DisciplinePriest") {
-    return "|cff808080";
+    return "|cff808080"; // #808080
   }
 
   if (props === "RestorationShaman") {
-    return "|cff006fdc";
+    return "|cff006fdc"; //#006fdc
   }
 
   if (props === "MistweaverMonk") {
-    return "|cff00fe95";
+    return "|cff00fe95"; // #00fe95
   }
 
   if (props === "Warrior") {
-    return "|cffc59a6c";
+    return "|cffc59a6c"; // #c59a6c
   }
 
   if (props === "HavocDemonHunter") {
-    return "|cffa22fc8";
+    return "|cffa22fc8"; // #a22fc8
   }
 
   if (props === "DeathKnight") {
-    return "|cffc31d39";
+    return "|cffc31d39"; // #c31d39
   }
 }
 
