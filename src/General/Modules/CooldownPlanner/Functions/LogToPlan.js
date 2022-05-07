@@ -9,6 +9,7 @@ import {
   logDifficulty,
   wclClassConverter,
 } from "../../CooldownPlanner/Functions/Functions";
+import { cooldownDB } from "../Data/CooldownDB";
 import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
 import moment from "moment";
 
@@ -36,6 +37,18 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
     class: key.type,
     icon: key.icon,
   }));
+
+  // Create list of classes for ability filtering.
+  const classList = healerIDName.map((key) => wclClassConverter(key.icon)).filter((v, i, a) => a.indexOf(v) === i);
+  console.log(classList);
+  // create object for filtering
+  const classAbilityFilterObject = {};
+  // map the default state of imported abilities for the filter switches
+
+  classList.map((key) =>
+    Object.assign(classAbilityFilterObject, { [key]: Object.fromEntries(cooldownDB.filter((filter) => filter.class === key).map((mappedCds) => [[mappedCds.guid], mappedCds.cdPlannerImport])) }),
+  );
+  console.log(classAbilityFilterObject);
 
   /* ------------------ Import the log data for Casts for each healer in the log. ----------------- */
   const cooldowns = await importCooldownPlannerCastsLogData(
@@ -123,5 +136,5 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
   Object.keys(map).forEach((k) => results.push(map[k]));
   // Set Progress Bar to Complete
   setLoadingProgress(100);
-  setLogData({ enemyCasts: results, bossID: boss, difficulty: dif, importSuccessful: true });
+  setLogData({ enemyCasts: results, bossID: boss, difficulty: dif, importSuccessful: true, classList: classList, abilityFilter: classAbilityFilterObject });
 }

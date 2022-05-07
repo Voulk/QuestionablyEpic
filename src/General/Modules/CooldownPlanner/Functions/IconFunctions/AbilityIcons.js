@@ -49,6 +49,8 @@ import BlessingOfFreedom from "Images/Classes/Paladin/Specialisation/Holy/Icons/
 import LayOnHands from "Images/Classes/Paladin/Specialisation/Holy/Icons/spell_holy_layonhands.jpg";
 import TigersLust from "Images/Classes/Monk/Specialisation/Mistweaver/Icons/ability_monk_tigerslust.jpg";
 import InvokeYulon from "Images/Classes/Monk/Specialisation/Mistweaver/Icons/InvokeYulon.jpg";
+import SymbolOfHope from "Images/CooldownPlanner/SpellIcons/spell_holy_symbolofhope.jpg";
+import StampedingRoar from "Images/CooldownPlanner/SpellIcons/spell_druid_stampedingroar_cat.jpg";
 
 // Should probably work this off GUID
 
@@ -106,6 +108,12 @@ export default function abilityIcons(props, style) {
     source = FlourishIcon;
     alt = "Flourish";
   }
+  if (props === 77764) {
+    spell = "spell=77764";
+    source = StampedingRoar;
+    alt = "Stampeding Roar";
+  }
+
   // Druid Covenant Cooldowns
   if (props === 326434) {
     spell = "spell=326434";
@@ -143,6 +151,12 @@ export default function abilityIcons(props, style) {
     spell = "spell=47788";
     source = GuardianSpiritIcon;
     alt = "Guardian Spirit";
+  }
+
+  if (props === 64901) {
+    spell = "spell=64901";
+    source = SymbolOfHope;
+    alt = "Symbol of Hope";
   }
 
   // Discipline Priest

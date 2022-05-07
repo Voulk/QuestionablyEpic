@@ -9,6 +9,7 @@ import LogLinkInput from "General/SystemTools/LogImport/LogLinkInput";
 import FightSelectorButton from "General/SystemTools/LogImport/FightSelectorButton";
 import logToPlan from "../Functions/LogToPlan";
 import LinearWithValueLabel from "../BasicComponents/LinearProgressBar";
+import FilterAccordian from "./FilterAccodian";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -47,7 +48,7 @@ export default function AddPlanDialog(props) {
 
   const [value, setValue] = React.useState(0);
   const [reportid, setReportid] = React.useState(0);
-  const [logData, setLogData] = React.useState({ enemyCasts: [], bossID: 0, difficulty: "", importSuccessful: false });
+  const [logData, setLogData] = React.useState({ enemyCasts: [], bossID: 0, difficulty: "", importSuccessful: false, classList: [], abilityFilter: {} });
   const [logDataLoading, setLogDataLoading] = React.useState(false);
   const [loadingProgress, setLoadingProgress] = React.useState(0);
 
@@ -154,7 +155,7 @@ export default function AddPlanDialog(props) {
           </Button>
         </span>
       </Tooltip>
-      <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="xs" fullWidth>
+      <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth={value === 0 ? "xs" : "md"} fullWidth>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="fullWidth">
           <Tab label="Create New Plan" {...a11yProps(0)} />
           <Tab label="WCL Import" {...a11yProps(1)} />
@@ -288,7 +289,6 @@ export default function AddPlanDialog(props) {
               <Typography color="primary" align="center">
                 New Plan Name
               </Typography>
-
               <TextField
                 error={duplicatePlanNameCheck}
                 helperText={duplicatePlanNameCheck ? t("CooldownPlanner.DuplicatePlanError") : ""}
@@ -299,6 +299,9 @@ export default function AddPlanDialog(props) {
                 onChange={onChangeNewPlanName}
                 sx={{ marginTop: "4px" }}
               />
+            </Grid>
+            <Grid item xs={12}>
+              <FilterAccordian classList={logData.classList} abilityFilter={logData.abilityFilter} />
             </Grid>
           </DialogContent>
           <DialogActions>
