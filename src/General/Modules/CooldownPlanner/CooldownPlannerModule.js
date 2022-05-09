@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Typography, Grid, Dialog } from "@mui/material";
 import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
 import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
-import ertEngine from "./ModuleComponents/Engine/ERTEngine";
 import HelpText from "../SetupAndMenus/HelpText";
 
 class CooldownPlannerModule extends Component {
@@ -10,12 +9,10 @@ class CooldownPlannerModule extends Component {
     super();
     /* ----------------------- We bind the below functions to this Component. ----------------------- */
     // This means these functions can be passed as props to other components and they will return here rather than in the component they are sent to.
-    this.ertEngine = ertEngine.bind(this);
     this.handleHealTeamClickOpen = this.handleHealTeamClickOpen.bind(this);
 
     /* ---------------------- We set our state for the cooldown Planner Module. --------------------- */
     this.state = {
-      ertListTimeIcons: [],
       healTeamDialogState: false,
       mitigatedChartDataNoCooldowns: [],
       unmitigatedChartDataNoCooldowns: [],
@@ -41,7 +38,7 @@ class CooldownPlannerModule extends Component {
       "Each plan can be exported as an ERT note with the 'Note' button",
       "Advanced Use with Fight Analysis: Any plan you make can replace the cooldowns on an imported log in the fight analysis module by toggling the 'Log Cooldown/Custom Cooldown' dropdown, and selecting a plan from the 'Plans' dropdown, use this to compare your assignments to a logs damage pattern!",
     ];
-    const helpBlurb = "Welcome to the Cooldown Planner. This is still a work in progress so any bugs / feedback is welcome. Use this Form for reporting: https://forms.gle/ZKhqYVsytV9co4yp6";
+    const helpBlurb = "Welcome to the Cooldown Planner. This is still a work in progress so any bugs / feedback is welcome.";
 
     return (
       <div
@@ -69,12 +66,10 @@ class CooldownPlannerModule extends Component {
             <Grid item container direction="row" justifyContent="flex-start" alignItems="flex-start" spacing={1}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12} padding={1}>
                 <CooldownPlanner
-                  update={this.ertEngine}
                   cooldownObject={this.state.cooldowns}
                   dataUpdateHandler={this.handleChangeDataCooldownPlanner}
                   ertDialogOpen={this.handleERTClickOpen}
                   healTeamDialogOpen={this.handleHealTeamClickOpen}
-                  ertListTimeIcons={this.state.ertListTimeIcons}
                 />
               </Grid>
             </Grid>

@@ -64,20 +64,24 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
           sx={{ lineHeight: "normal", width: "100%" }}
           size="small"
           onChange={(e) => {
-            /* ------------------------------ Spread the rows data for updating ----------------------------- */
-            let data = { ...props.rowData };
-            /* -------------------- Set the name of the row to the selected from dropdown ------------------- */
-            data[name] = e.target.value;
-            /* --------------------- Update the class from the healerinfo local storage --------------------- */
-            data[nameClass] = ls
+            const newClass = ls
               .get("healerInfo")
               .filter((obj) => {
                 return obj.name === e.target.value;
               })
               .map((obj) => obj.class)
               .toString();
+
+            /* ------------------------------ Spread the rows data for updating ----------------------------- */
+            let data = { ...props.rowData };
+            /* -------------------- Set the name of the row to the selected from dropdown ------------------- */
+            data[name] = e.target.value;
+            /* --------------------- Update the class from the healerinfo local storage --------------------- */
+            data[nameClass] = newClass;
             /* ------------------------------- Reset the cooldown for the row ------------------------------- */
-            data[cooldown] = undefined;
+            if (props.rowData[nameClass] !== newClass) {
+              data[cooldown] = undefined;
+            }
             /* --------------------------------------- Update the data -------------------------------------- */
             props.onRowDataChange(data);
           }}

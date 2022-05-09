@@ -8,7 +8,7 @@ export function classColoursERT(props) {
     return "|cfffe7b09";
   }
   if (props === "HolyPriest") {
-    return "|cfffefefe";
+    return "|cffffff00";
   }
 
   if (props === "ShadowPriest") {
@@ -16,7 +16,7 @@ export function classColoursERT(props) {
   }
 
   if (props === "DisciplinePriest") {
-    return "|cfffefefe";
+    return "|cff808080";
   }
 
   if (props === "RestorationShaman") {

@@ -12,7 +12,7 @@ import { bossAbilities } from "../../Data/CooldownPlannerBossAbilityList";
 // turn debugging (console logging) on/off
 const debug = false;
 
-export default function ertEngine(tableData, bossID, lang) {
+export default function ertEngine(tableData, bossID, lang, setERTData, hideNoCooldownsChecked) {
   debug && console.log(" -- Debugging On -> ERTEngine.js --");
   const seperator = " - ";
   const space = " ";
@@ -20,7 +20,7 @@ export default function ertEngine(tableData, bossID, lang) {
   const abilityArr = [
     ...bossAbilities[bossID]
       .filter((obj) => {
-        return obj.cooldownPlannerActive === true;
+        return obj.cooldownPlannerActive === true || obj.importActive === true;
       })
       .map((key, i, arr) => key.guid),
   ];
@@ -31,7 +31,16 @@ export default function ertEngine(tableData, bossID, lang) {
 
   /* ---------------------------------------- Time + Icons ---------------------------------------- */
   const ertNoteTimeIcons = tableData
-    .filter((key) => key.bossAbility !== undefined)
+    .filter((key) => {
+      if (hideNoCooldownsChecked === true) {
+        const check =
+          key.bossAbility !== undefined && key.cooldown0 === undefined && key.cooldown1 === undefined && key.cooldown2 === undefined && key.cooldown3 === undefined && key.cooldown4 === undefined;
+        return !check;
+      }
+      {
+        return true;
+      }
+    })
     .map((key) => {
       let time = "{time:" + key.time + "}";
       let translatedName = abilityArr.includes(key.bossAbility)
@@ -99,14 +108,12 @@ export default function ertEngine(tableData, bossID, lang) {
           : space + classColoursERT(key.class4) + key.name4 + "|r" + "{spell:" + key.cooldown4 + "}";
 
       return {
-        ert: time + translatedName + seperator + option0 + option1 + option2 + option3 + option4,
+        ert: time + (key.bossAbility === undefined ? "" : translatedName + seperator) + option0 + option1 + option2 + option3 + option4,
         /* --------------------------------- This is for Sorting by Time -------------------------------- */
         time: key.time,
       };
     });
   // debug && console.table(ertNoteTimeIcons);
 
-  this.setState({
-    ertListTimeIcons: ertNoteTimeIcons,
-  });
+  setERTData(ertNoteTimeIcons);
 }

@@ -53,7 +53,6 @@ class Cooldowns {
   };
 
   importLogPlan = (planName, boss, difficulty, planData) => {
-    console.log(planName, boss, difficulty, planData);
     Object.assign(this.cooldowns[boss][difficulty], { [planName]: planData });
     ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
   };

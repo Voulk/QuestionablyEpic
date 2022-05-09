@@ -1,7 +1,7 @@
 import {
   fightDuration,
   importHealerLogData,
-  importCastsLogData,
+  importCooldownPlannerCastsLogData,
   importSummaryData,
   importCharacterIds,
   importEnemyCasts,
@@ -19,17 +19,16 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
   // Set Progress Bar to 10%
   setLoadingProgress(10);
   /* ------------------------------ Import Character IDS from the log ----------------------------- */
-  const playerIDs = await importCharacterIds(starttime, endtime, reportID);
+  // const playerIDs = await importCharacterIds(starttime, endtime, reportID);
   // Set Progress Bar to 20%
   setLoadingProgress(20);
   /* -------------------------------- Import Enemy IDS from the log ------------------------------- */
-  const enemyIDs = await importEnemyIds(starttime, endtime, reportID);
+  // const enemyIDs = await importEnemyIds(starttime, endtime, reportID);
   // Set Progress Bar to 30%
   setLoadingProgress(30);
-  const summary = await importSummaryData(starttime, endtime, reportID);
+  // const summary = await importSummaryData(starttime, endtime, reportID);
   // Set Progress Bar to 40%
   setLoadingProgress(40);
-  console.log(healers);
   /* --------------------------- Map Healer Data for ID, Name and Class. -------------------------- */
   const healerIDName = healers.map((key) => ({
     id: key.id,
@@ -39,7 +38,7 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
   }));
 
   /* ------------------ Import the log data for Casts for each healer in the log. ----------------- */
-  const cooldowns = await importCastsLogData(
+  const cooldowns = await importCooldownPlannerCastsLogData(
     starttime,
     endtime,
     reportID,
@@ -55,11 +54,10 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
   setLoadingProgress(60);
 
   /* ------------------------- Map cooldown casts for the Timeline Table. ------------------------- */
-  const cooldownTimes = cooldowns.map((key) => moment(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"));
-
+  const cooldownTimes = cooldowns.map((key) => moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"));
   const cooldownsTimeline = cooldowns.map((key) => ({
     guid: key.ability.guid,
-    time: moment(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
+    time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
     name: healerIDName
       .filter((obj) => {
         return obj.id === key.sourceID;
@@ -86,7 +84,6 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
     })
     .flat();
 
-  console.log(newTimeline);
   // Set Progress Bar to 70%
   setLoadingProgress(70);
   /* ------------------------- Map enemy casts for the Enemy Timeline Table. ------------------------- */
@@ -101,13 +98,10 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
     )
     .map((key) => ({
       bossAbility: key.ability.guid,
-      time: moment(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
+      time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
     }));
   // Set Progress Bar to 80%
   setLoadingProgress(80);
-  console.log(cooldownsTimeline);
-
-  console.log(enemyCastsTimeline);
 
   // Remove any duplicate imports for boss ability and time cast
   enemyCastsTimeline = enemyCastsTimeline.filter((value, index, self) => index === self.findIndex((t) => t.bossAbility === value.bossAbility && t.time === value.time));
@@ -127,7 +121,6 @@ export default async function logToPlan(starttime, endtime, reportID, boss, logD
   });
   var results = [];
   Object.keys(map).forEach((k) => results.push(map[k]));
-  console.log(results);
   // Set Progress Bar to Complete
   setLoadingProgress(100);
   setLogData({ enemyCasts: results, bossID: boss, difficulty: dif, importSuccessful: true });

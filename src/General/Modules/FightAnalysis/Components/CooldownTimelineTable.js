@@ -95,7 +95,7 @@ export default function CooldownTimeline(props) {
           },
           render: (rowData) => (
             <div>
-              {moment(rowData.timestamp, "mm:ss")
+              {moment.utc(rowData.timestamp, "mm:ss")
                 .add(
                   cooldownDB
                     .filter((obj) => {

@@ -1639,8 +1639,8 @@ export const bossAbilities = {
         de: "Todesurteil",
       },
       guid: 363772,
-      cooldownPlannerActive: false,
-      importActive: false,
+      cooldownPlannerActive: true,
+      importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_deathknight_deathchain.jpg").default,
     },
     {
