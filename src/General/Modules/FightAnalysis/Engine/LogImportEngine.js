@@ -130,7 +130,7 @@ export default async function updatechartdata(starttime, endtime) {
     .map((key) => ({
       ability: key.ability.name,
       guid: key.ability.guid,
-      timestamp: moment(fightDuration(key.timestamp, starttime)).startOf("second").valueOf(),
+      timestamp: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").valueOf(),
       [healerIDName
         .filter((obj) => {
           return obj.id === key.sourceID;
@@ -139,7 +139,7 @@ export default async function updatechartdata(starttime, endtime) {
       " - " +
       key.ability.name]: 1,
     }))
-    .map((key) => healerDurations.push(durationmaker(key.guid, key.timestamp, Object.getOwnPropertyNames(key).slice(3), moment(fightDuration(endtime, starttime)).startOf("second").valueOf())));
+    .map((key) => healerDurations.push(durationmaker(key.guid, key.timestamp, Object.getOwnPropertyNames(key).slice(3), moment.utc(fightDuration(endtime, starttime)).startOf("second").valueOf())));
 
   /* -------------------------- Create Ability List With Guids for legend ------------------------- */
   /* ----------------- Get Unique Objects from Ability list for the custom legend ----------------- */
@@ -157,7 +157,7 @@ export default async function updatechartdata(starttime, endtime) {
   /* - Then converted to start of nearest second otherwise the chart will show each individual ms - */
   /* ------------------- We Don't need to delve that deep into MS for the chart. ------------------ */
   const unmitigatedDamageMap = damage.map((key) => ({
-    timestamp: moment(fightDuration(key.timestamp, starttime)).startOf("second").valueOf(),
+    timestamp: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").valueOf(),
     [key.ability.name]: key.unmitigatedAmount,
   }));
 
@@ -166,7 +166,7 @@ export default async function updatechartdata(starttime, endtime) {
   /* - Then converted to start of nearest second otherwise the chart will show each individual ms - */
   /* ------------------- We Don't need to delve that deep into MS for the chart. ------------------ */
   const mitigatedDamageMap = damage.map((key) => ({
-    timestamp: moment(fightDuration(key.timestamp, starttime)).startOf("second").valueOf(),
+    timestamp: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").valueOf(),
     [key.ability.name]: key.amount,
   }));
 
@@ -174,7 +174,7 @@ export default async function updatechartdata(starttime, endtime) {
   const updateddatacastsTimeline = cooldowns.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
-    timestamp: moment(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
+    timestamp: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
     name: healerIDName
       .filter((obj) => {
         return obj.id === key.sourceID;
@@ -193,7 +193,7 @@ export default async function updatechartdata(starttime, endtime) {
   const updateddatacastsExternalsTimeline = externals.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
-    timestamp: moment(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
+    timestamp: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
     caster: healerIDName
       .filter((obj) => {
         return obj.id === key.sourceID;
@@ -224,7 +224,7 @@ export default async function updatechartdata(starttime, endtime) {
   const enemyCastsTimeline = enemyCasts.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
-    timestamp: moment(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
+    timestamp: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
     name: enemyIDs
       .filter((obj) => {
         return obj.id === key.sourceID;
@@ -239,7 +239,7 @@ export default async function updatechartdata(starttime, endtime) {
   const updateddatacastsExternalTimeline = cooldowns.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
-    timestamp: moment(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
+    timestamp: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
     name: healerIDName
       .filter((obj) => {
         return obj.id === key.sourceID;

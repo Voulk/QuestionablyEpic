@@ -51,17 +51,17 @@ export const CooldownPlannerTheme = createTheme({
         },
       },
     },
-    MuiToolbar: {
-      styleOverrides: {
-        root: { color: "#345" },
-        regular: {
-          minHeight: 0,
-          "@media (min-width: 600px)": {
-            minHeight: "0px",
-          },
-        },
-      },
-    },
+    // MuiToolbar: {
+    //   styleOverrides: {
+    //
+    //     regular: {
+    //       minHeight: 0,
+    //       "@media (min-width: 600px)": {
+    //         minHeight: "0px",
+    //       },
+    //     },
+    //   },
+    // },
     MuiInputBase: {
       styleOverrides: {
         root: {
@@ -79,11 +79,19 @@ export const CooldownPlannerTheme = createTheme({
     },
     MuiToolbar: {
       styleOverrides: {
+        root: {
+          color: "#345",
+          paddingLeft: 0,
+          paddingRight: 0,
+        },
         regular: {
           minHeight: 0,
           "@media (min-width: 600px)": {
             minHeight: "0px",
+            paddingLeft: 0,
+            paddingRight: 0,
           },
+          gutters: { paddingLeft: 0, paddingRight: 0 },
         },
       },
     },

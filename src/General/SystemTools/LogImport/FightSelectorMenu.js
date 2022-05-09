@@ -35,7 +35,7 @@ class LogImport extends Component {
   };
 
   formatName = (fight, list) => {
-    const start = logDifficulty(fight.difficulty) + " " + fight.name + " - " + moment(fightDuration(fight.end_time, fight.start_time)).format("mm:ss") + " - ";
+    const start = logDifficulty(fight.difficulty) + " " + fight.name + " - " + moment.utc(fightDuration(fight.end_time, fight.start_time)).format("mm:ss") + " - ";
 
     let end = this.killwipe(fight.kill);
     let styleColor = "#00ff1a";
@@ -81,7 +81,7 @@ class LogImport extends Component {
               fight.start_time,
               fight.end_time,
               fight.name,
-              moment(fightDuration(fight.end_time, fight.start_time)).format("mm:ss"),
+              moment.utc(fightDuration(fight.end_time, fight.start_time)).format("mm:ss"),
               this.killwipe(fight.kill) + this.whichWipe(fight, fightsMapped),
               fight.boss,
               fight.difficulty,

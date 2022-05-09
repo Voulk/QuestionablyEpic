@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Tooltip, Grid, MenuItem, ToggleButton, ToggleButtonGroup, Typography, Box, Tabs, Tab } from "@mui/material";
+import { Button, TextField, DialogContent, DialogTitle, Dialog, DialogActions, Tooltip, Grid, MenuItem, ToggleButton, ToggleButtonGroup, Typography, Box, Tabs, Tab, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { bossList } from "../Data/CooldownPlannerBossList";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
@@ -15,7 +15,7 @@ function TabPanel(props) {
   return (
     <div role="tabpanel" hidden={value !== index} id={`simple-tabpanel-${index}`} aria-labelledby={`simple-tab-${index}`} {...other}>
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ p: "8px 16px 16px 16px" }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -50,8 +50,6 @@ export default function AddPlanDialog(props) {
   const [logData, setLogData] = React.useState({ enemyCasts: [], bossID: 0, difficulty: "", importSuccessful: false });
   const [logDataLoading, setLogDataLoading] = React.useState(false);
   const [loadingProgress, setLoadingProgress] = React.useState(0);
-
-  console.log(logData);
 
   const handleChange = (event, newValue) => {
     setPlanName("");
@@ -113,7 +111,6 @@ export default function AddPlanDialog(props) {
       cooldownPlannerCurrentBoss: 0,
     },
   ]);
-  console.log(logInfo);
 
   const handler = (info) => {
     setLogInfo([
@@ -152,7 +149,7 @@ export default function AddPlanDialog(props) {
     <div>
       <Tooltip title={t("CooldownPlanner.AddPlanDialog.ButtonTooltip")} arrow>
         <span>
-          <Button key={8} variant="outlined" color="primary" onClick={handleAddPlanDialogClickOpen} disabled={disabledCheck}>
+          <Button key={8} variant="outlined" color="primary" onClick={handleAddPlanDialogClickOpen} disabled={disabledCheck} sx={{ width: "100%" }}>
             {t("CooldownPlanner.AddPlanDialog.ButtonLabel")}
           </Button>
         </span>
@@ -163,7 +160,7 @@ export default function AddPlanDialog(props) {
           <Tab label="WCL Import" {...a11yProps(1)} />
         </Tabs>
         <TabPanel value={value} index={0}>
-          <DialogContent>
+          <DialogContent sx={{ padding: "8px" }}>
             <Grid item container spacing={1} xl={12} alignItems="center" sx={{ marginTop: "1px" }}>
               <Grid item xl={12}>
                 <Typography color="primary" align="center">
@@ -247,14 +244,30 @@ export default function AddPlanDialog(props) {
         </TabPanel>
 
         <TabPanel value={value} index={1}>
-          <DialogContent>
+          <DialogContent sx={{ padding: "16px" }}>
             <Grid item container spacing={1} xl={12} alignItems="center" sx={{ marginTop: "1px" }}>
+              <Grid item xs={12}>
+                <Paper sx={{ backgroundColor: "#5a5a5a", padding: "4px", borderColor: "limegreen", borderWidth: "1px", borderStyle: "Solid" }} elevation={0}>
+                  <Typography variant="subtitle2" sx={{ color: "limegreen", fontSize: "0.85rem" }}>
+                    Import the boss casts and cooldown usage for a given log.
+                  </Typography>
+                  <Typography variant="subtitle2" sx={{ fontSize: "0.75rem" }}>
+                    Currently the import is "Strict" in that exact cast times are imported. In the future there will be an option to assign casts near boss abilities to that ability.
+                  </Typography>
+                </Paper>
+              </Grid>
               <Grid item xs={12}>
                 <LogLinkInput changed={reportidHandler} reportid={reportid} styleProps={{ fullWidth: true }} />
               </Grid>
               {/* ----------------------------------- Fight Selection Button ----------------------------------- */}
               <Grid item xs={12}>
-                <FightSelectorButton reportid={reportid} clicky={handler} update={setLogToPlanData} customStyleButton={{ width: "100%" }} />
+                <FightSelectorButton
+                  reportid={reportid}
+                  clicky={handler}
+                  update={setLogToPlanData}
+                  customStyleButton={{ width: "100%" }}
+                  disabled={reportid === "" || reportid === 0 || reportid === "err" ? true : false}
+                />
               </Grid>
               <Grid item xs={12}>
                 {(logData.importSuccessful === false && logDataLoading === true) || logDataLoading === true ? (
