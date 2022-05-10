@@ -2,6 +2,8 @@
 // These can be things like non-boss damage like Player spells cast while mind controlled,
 // spells that cause the player to take damage like Warlocks Burning Rush/ Mage Cauterize.
 
+// TODO: this can probably be replaced by just filtering the damage imports by a list of boss abilities rather than just removing these
+
 export const spellExclusions = [
   // Melee
   1,

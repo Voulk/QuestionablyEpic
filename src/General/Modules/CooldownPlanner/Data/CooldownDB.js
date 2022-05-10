@@ -265,7 +265,7 @@ export const cooldownDB = [
     cooldown: 60,
     class: "Priest",
     cdPlannerMenuActive: true,
-    cdPlannerImport: true,
+    cdPlannerImport: false,
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Druid                                             */

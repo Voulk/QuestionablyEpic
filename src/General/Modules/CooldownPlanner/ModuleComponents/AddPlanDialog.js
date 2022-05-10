@@ -7,8 +7,9 @@ import PropTypes from "prop-types";
 import { fightDuration, warcraftLogReportID, logDifficulty } from "../../CooldownPlanner/Functions/Functions";
 import LogLinkInput from "General/SystemTools/LogImport/LogLinkInput";
 import FightSelectorButton from "General/SystemTools/LogImport/FightSelectorButton";
-import logToPlan from "../Functions/LogToPlan";
+import importLogData from "../Engine/ImportLogData";
 import LinearWithValueLabel from "../BasicComponents/LinearProgressBar";
+import transformData from "../Engine/TransformData";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -47,9 +48,11 @@ export default function AddPlanDialog(props) {
 
   const [value, setValue] = React.useState(0);
   const [reportid, setReportid] = React.useState(0);
-  const [logData, setLogData] = React.useState({ enemyCasts: [], bossID: 0, difficulty: "", importSuccessful: false });
+  const [logData, setLogData] = React.useState({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false });
   const [logDataLoading, setLogDataLoading] = React.useState(false);
   const [loadingProgress, setLoadingProgress] = React.useState(0);
+
+  console.log(logData);
 
   const handleChange = (event, newValue) => {
     setPlanName("");
@@ -113,6 +116,9 @@ export default function AddPlanDialog(props) {
   ]);
 
   const handler = (info) => {
+    // reset logData state on new selection
+    setLogData({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false });
+    // set data returned from wcl (some useless data here as we are reusing code)
     setLogInfo([
       {
         time: info[0],
@@ -134,13 +140,21 @@ export default function AddPlanDialog(props) {
   };
 
   const setLogToPlanData = (starttime, endtime, reportID, bossID, difficulty) => {
-    logToPlan(starttime, endtime, reportID, bossID, difficulty, setLogData, setLoadingProgress);
+    importLogData(starttime, endtime, reportID, bossID, difficulty, setLogData, setLoadingProgress);
   };
 
-  const importPlanToCooldownObject = (planName, boss, difficulty, planData) => {
-    cooldownObject.importLogPlan(planName, boss, difficulty, planData);
+  const importPlanToCooldownObject = (planName, boss, difficulty) => {
+    const startTime = logInfo[0].time;
+    const enemyCasts = logData.enemyCasts;
+    const healerCasts = logData.healerCasts;
+    const healers = logData.healers;
+    // transform the imported data into plan data
+    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers);
+    cooldownObject.importLogPlan(planName, boss, difficulty, transformedData);
+    // load the imported plan data
     loadPlanData(boss, planName, difficulty);
     handleAddPlanDialogClose(true);
+    // reset the loading bar states
     setLogDataLoading(false);
     setLoadingProgress(0);
   };
@@ -306,7 +320,7 @@ export default function AddPlanDialog(props) {
               key={9}
               variant="contained"
               color="primary"
-              onClick={(e) => importPlanToCooldownObject(planName, logData.bossID, logData.difficulty, logData.enemyCasts)}
+              onClick={(e) => importPlanToCooldownObject(planName, logData.bossID, logData.difficulty)}
               size="small"
               disabled={logData.importSuccessful === false || planName === ""}
             >
