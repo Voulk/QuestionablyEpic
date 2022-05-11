@@ -5,6 +5,7 @@ import {
   //   importCharacterIds,
   importEnemyCasts,
   //   importEnemyIds,
+  importDamageLogDataFiltered,
   logDifficulty,
 } from "../../CooldownPlanner/Functions/Functions";
 
@@ -23,6 +24,9 @@ export default async function importLogData(starttime, endtime, reportID, boss, 
     reportID,
     healers.map((key) => key.id),
   );
+
+  const damageTakenData = await importDamageLogDataFiltered(starttime, endtime, reportID, boss);
+  console.log(damageTakenData);
 
   /* ------------------------------- Import Log data for enemy casts ------------------------------ */
   setLoadingProgress(80);
