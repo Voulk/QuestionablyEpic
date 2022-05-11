@@ -1432,6 +1432,123 @@ export const bossAbilities = {
       importActive: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/creatureportrait_sc_eyeofacherus_02.jpg").default,
     },
+    {
+      name: {
+        en: "Stellar Shroud",
+        cn: "星辰遮蔽",
+        fr: "Suaire stellaire",
+        ru: "Звездный покров",
+        de: "Stellarschleier",
+      },
+      guid: 366379,
+      cooldownPlannerActive: true,
+      importActive: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_frost_wisp.jpg").default,
+    },
+    {
+      name: {
+        en: "Manifest Cosmos",
+        cn: "宇宙具现",
+        fr: "Cosmos manifeste",
+        ru: "Появление космоса",
+        de: "Kosmos manifestieren",
+      },
+      guid: 362390,
+      cooldownPlannerActive: false,
+      importActive: false,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_elemental_primal_mana.jpg").default,
+    },
+    {
+      name: {
+        en: "Dark Eclipse",
+        cn: "黑暗之蚀",
+        fr: "Sombre éclipse",
+        ru: "Полное затмение",
+        de: "Verdunkelung",
+      },
+      guid: 362806,
+      cooldownPlannerActive: false,
+      importActive: false,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_debuff.jpg").default,
+    },
+    {
+      name: {
+        en: "Massive Bang",
+        cn: "大质量爆炸",
+        fr: "Fracas retentissant",
+        ru: "Мощный взрыв",
+        de: "Gewaltiger Knall",
+      },
+      guid: 363533,
+      cooldownPlannerActive: false,
+      importActive: false,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_engineering_90_blackhole.jpg").default,
+    },
+    {
+      name: {
+        en: "Shatter Sphere",
+        cn: "碎裂球体",
+        fr: "Fracasse-sphère",
+        ru: "Раскол сферы",
+        de: "Sphäre zerschmettern",
+      },
+      guid: 364114,
+      cooldownPlannerActive: false,
+      importActive: false,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shadow_focusedpower.jpg").default,
+    },
+    {
+      name: {
+        en: "Corrupted Strikes",
+        cn: "腐蚀重击",
+        fr: "Frappes corrompues",
+        ru: "Оскверненные удары",
+        de: "Verderbte Stöße",
+      },
+      guid: 362184,
+      cooldownPlannerActive: false,
+      importActive: false,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_chaoticimprint_arcane.jpg").default,
+    },
+    {
+      name: {
+        en: "Quasar Radiation",
+        cn: "类星体辐射",
+        fr: "Radiation de quasar",
+        ru: "Излучение квазара",
+        de: "Quasarstrahlung",
+      },
+      guid: 362271,
+      cooldownPlannerActive: false,
+      importActive: false,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_warlock_burningembersblue.jpg").default,
+    },
+    {
+      name: {
+        en: "Burned Out",
+        cn: "烧毁",
+        fr: "Consumée",
+        ru: "Выгорание",
+        de: "Ausgebrannt",
+      },
+      guid: 362271,
+      cooldownPlannerActive: false,
+      importActive: false,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_enchant_voidsphere.jpg").default,
+    },
+    {
+      name: {
+        en: "Gravitational Collapse",
+        cn: "引力坍缩",
+        fr: "Effondrement gravitationnel",
+        ru: "Гравитационный коллапс",
+        de: "Gravitationszusammenbruch",
+      },
+      guid: 364386,
+      cooldownPlannerActive: false,
+      importActive: false,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/sha_spell_warlock_demonsoul.jpg").default,
+    },
   ],
   /* ------------------------------------- The Jailer, Zovaal ------------------------------------- */
   2537: [
@@ -1446,6 +1563,7 @@ export const bossAbilities = {
       guid: 360562,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_misc_bone_skull_02.jpg").default,
     },
     {
@@ -1459,6 +1577,7 @@ export const bossAbilities = {
       guid: 365436,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_soulcleave2.jpg").default,
     },
     {
@@ -1472,6 +1591,7 @@ export const bossAbilities = {
       guid: 365033,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_missile.jpg").default,
     },
     {
@@ -1485,6 +1605,7 @@ export const bossAbilities = {
       guid: 362617,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_wave.jpg").default,
     },
     {
@@ -1498,6 +1619,7 @@ export const bossAbilities = {
       guid: 362631,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_misc_steelweaponchain.jpg").default,
     },
     {
@@ -1511,6 +1633,7 @@ export const bossAbilities = {
       guid: 363893,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/mace_2h_blacksmithing_d_04_icon.jpg").default,
     },
     {
@@ -1524,6 +1647,7 @@ export const bossAbilities = {
       guid: 360373,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_buff.jpg").default,
     },
     {
@@ -1537,6 +1661,7 @@ export const bossAbilities = {
       guid: 365212,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_infernalchains.jpg").default,
     },
     {
@@ -1550,6 +1675,7 @@ export const bossAbilities = {
       guid: 365153,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shadow_brainwash.jpg").default,
     },
     {
@@ -1563,6 +1689,7 @@ export const bossAbilities = {
       guid: 360378,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/warrior_talent_icon_mastercleaver.jpg").default,
     },
     {
@@ -1576,6 +1703,7 @@ export const bossAbilities = {
       guid: 366377,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shaman_earthquake.jpg").default,
     },
     {
@@ -1589,6 +1717,7 @@ export const bossAbilities = {
       guid: 366776,
       cooldownPlannerActive: false,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_nature_earthquake.jpg").default,
     },
     {
@@ -1602,6 +1731,7 @@ export const bossAbilities = {
       guid: 367051,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shaman_stormearthfire.jpg").default,
     },
     {
@@ -1615,6 +1745,7 @@ export const bossAbilities = {
       guid: 368383,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_azeriteempoweredstate.jpg").default,
     },
     {
@@ -1628,6 +1759,7 @@ export const bossAbilities = {
       guid: 363332,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_illidansgrasp.jpg").default,
     },
     {
@@ -1641,6 +1773,7 @@ export const bossAbilities = {
       guid: 363772,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_deathknight_deathchain.jpg").default,
     },
     {
@@ -1654,6 +1787,7 @@ export const bossAbilities = {
       guid: 370071,
       cooldownPlannerActive: false,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_soulcleave2.jpg").default,
     },
     {
@@ -1667,6 +1801,7 @@ export const bossAbilities = {
       guid: 367290,
       cooldownPlannerActive: false,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_buff.jpg").default,
     },
     {
@@ -1680,6 +1815,7 @@ export const bossAbilities = {
       guid: 367851,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_cape_special_domination_c_01.jpg").default,
     },
     {
@@ -1693,6 +1829,7 @@ export const bossAbilities = {
       guid: 367851,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_cape_special_domination_c_01.jpg").default,
     },
     {
@@ -1706,6 +1843,7 @@ export const bossAbilities = {
       guid: 366374,
       cooldownPlannerActive: false,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shaman_earthquake.jpg").default,
     },
     {
@@ -1719,6 +1857,7 @@ export const bossAbilities = {
       guid: 362028,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_cape_special_domination_c_01.jpg").default,
     },
     {
@@ -1732,6 +1871,7 @@ export const bossAbilities = {
       guid: 359809,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_misc_steelweaponchain.jpg").default,
     },
     {
@@ -1745,6 +1885,7 @@ export const bossAbilities = {
       guid: 365147,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_domination_rune10.jpg").default,
     },
     {
@@ -1758,6 +1899,7 @@ export const bossAbilities = {
       guid: 364942,
       cooldownPlannerActive: false,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_misc_bone_skull_02.jpg").default,
     },
     {
@@ -1771,6 +1913,7 @@ export const bossAbilities = {
       guid: 366284,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_domination_rune08.jpg").default,
     },
     {
@@ -1784,6 +1927,7 @@ export const bossAbilities = {
       guid: 365169,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_deathknight_defile.jpg").default,
     },
     {
@@ -1797,6 +1941,7 @@ export const bossAbilities = {
       guid: 366678,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_azeriteempoweredstate.jpg").default,
     },
     {
@@ -1810,6 +1955,7 @@ export const bossAbilities = {
       guid: 365150,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_domination_rune10.jpg").default,
     },
     {
@@ -1823,6 +1969,7 @@ export const bossAbilities = {
       guid: 359856,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_shatteredsouls.jpg").default,
     },
     {
@@ -1836,6 +1983,7 @@ export const bossAbilities = {
       guid: 364138,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_shatteredsouls.jpg").default,
     },
     {
@@ -1849,7 +1997,22 @@ export const bossAbilities = {
       guid: 360279,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_domination_rune09.jpg").default,
+    },
+    {
+      name: {
+        en: "Surging Azerite",
+        cn: "激涌的艾泽里特",
+        fr: "Déferlement d’azérite",
+        ru: "Пульсирующий азерит",
+        de: "Wogendes Azerit",
+      },
+      guid: 366408,
+      cooldownPlannerActive: false,
+      importActive: false,
+      createEvent: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_azerite_essence06.jpg").default,
     },
 
     {
@@ -1863,6 +2026,7 @@ export const bossAbilities = {
       guid: "Phase 1",
       cooldownPlannerActive: true,
       importActive: false,
+      createEvent: false,
       icon: "",
     },
     {
@@ -1876,6 +2040,7 @@ export const bossAbilities = {
       guid: "Phase 2",
       cooldownPlannerActive: true,
       importActive: false,
+      createEvent: false,
       icon: "",
     },
     {
@@ -1889,6 +2054,7 @@ export const bossAbilities = {
       guid: "Phase 3",
       cooldownPlannerActive: true,
       importActive: false,
+      createEvent: false,
       icon: "",
     },
     {
@@ -1902,6 +2068,7 @@ export const bossAbilities = {
       guid: "Phase 4",
       cooldownPlannerActive: true,
       importActive: false,
+      createEvent: false,
       icon: "",
     },
   ],
