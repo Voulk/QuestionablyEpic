@@ -1,9 +1,12 @@
 import { fightDuration, wclClassConverter } from "../../CooldownPlanner/Functions/Functions";
 import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
+import createEvents  from "./CreateEvents";
 import moment from "moment";
 
-export default function transformData(starttime, boss, enemyCasts, healerCasts, healerIDs) {
+export default function transformData(starttime, boss, enemyCasts, healerCasts, healerIDs, difficulty, damageTaken) {
   // map cooldown cast times into array
+
+  createEvents(boss,difficulty, damageTaken)
   const cooldownTimes = healerCasts.map((key) => moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"));
 
   // map the cooldown ids, times, healer names, healer classes

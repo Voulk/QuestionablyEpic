@@ -43,5 +43,5 @@ export default async function importLogData(starttime, endtime, reportID, boss, 
   // const summary = await importSummaryData(starttime, endtime, reportID);
   // Set Progress Bar to 40%
   setLoadingProgress(100);
-  setLogData({ enemyCasts: enemyCasts, healerCasts: healerCasts, healers: healers, bossID: boss, difficulty: dif, importSuccessful: true });
+  setLogData({ enemyCasts: enemyCasts, healerCasts: healerCasts, healers: healers, bossID: boss, difficulty: dif, importSuccessful: true, damageTaken: damageTakenData });
 }

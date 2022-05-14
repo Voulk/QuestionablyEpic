@@ -48,7 +48,7 @@ export default function AddPlanDialog(props) {
 
   const [value, setValue] = React.useState(0);
   const [reportid, setReportid] = React.useState(0);
-  const [logData, setLogData] = React.useState({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false });
+  const [logData, setLogData] = React.useState({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false, damageTaken: [] });
   const [logDataLoading, setLogDataLoading] = React.useState(false);
   const [loadingProgress, setLoadingProgress] = React.useState(0);
 
@@ -148,8 +148,9 @@ export default function AddPlanDialog(props) {
     const enemyCasts = logData.enemyCasts;
     const healerCasts = logData.healerCasts;
     const healers = logData.healers;
+    const damageTaken = logData.damageTaken;
     // transform the imported data into plan data
-    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers);
+    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken);
     cooldownObject.importLogPlan(planName, boss, difficulty, transformedData);
     // load the imported plan data
     loadPlanData(boss, planName, difficulty);
