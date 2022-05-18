@@ -7,12 +7,12 @@ import { getDruidSpecEffect } from "Retail/Engine/EffectFormulas/Druid/DruidSpec
 import { getDiscPriestSpecEffect } from "Retail/Engine/EffectFormulas/Priest/DiscPriestSpecEffects"
 
 describe("Shaman", () => {
-    const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
-    const contentType = "Raid";
+    const player = new Player("Voulk", "Holy Paladin", 99, "NA", "Stonemaul", "Night Elf");
+    const contentType = "Dungeon";
     const type = "Regular";
 
     test("pc", () => {
-        getDruidSpecEffect("Druid T28-4", player, contentType)
+        getPaladinSpecEffect("Paladin T28-4", player, contentType)
 
     })
 
