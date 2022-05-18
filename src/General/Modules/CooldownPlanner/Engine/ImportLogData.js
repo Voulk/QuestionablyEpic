@@ -5,6 +5,7 @@ import {
   //   importCharacterIds,
   importEnemyCasts,
   //   importEnemyIds,
+  importDebuffDataFiltered,
   importDamageLogDataFiltered,
   logDifficulty,
 } from "../../CooldownPlanner/Functions/Functions";
@@ -26,8 +27,10 @@ export default async function importLogData(starttime, endtime, reportID, boss, 
   );
 
   const damageTakenData = await importDamageLogDataFiltered(starttime, endtime, reportID, boss);
-  console.log(damageTakenData);
+  // console.log(damageTakenData);
 
+  const debuffData = await importDebuffDataFiltered(starttime, endtime, reportID, boss);
+  console.log(debuffData);
   /* ------------------------------- Import Log data for enemy casts ------------------------------ */
   setLoadingProgress(80);
   const enemyCasts = await importEnemyCasts(starttime, endtime, reportID);
@@ -43,5 +46,14 @@ export default async function importLogData(starttime, endtime, reportID, boss, 
   // const summary = await importSummaryData(starttime, endtime, reportID);
   // Set Progress Bar to 40%
   setLoadingProgress(100);
-  setLogData({ enemyCasts: enemyCasts, healerCasts: healerCasts, healers: healers, bossID: boss, difficulty: dif, importSuccessful: true, damageTaken: damageTakenData });
+  setLogData({
+    enemyCasts: enemyCasts,
+    healerCasts: healerCasts,
+    healers: healers,
+    bossID: boss,
+    difficulty: dif,
+    importSuccessful: true,
+    damageTaken: damageTakenData,
+    debuffData: debuffData,
+  });
 }

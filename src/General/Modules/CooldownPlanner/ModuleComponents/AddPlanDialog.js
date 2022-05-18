@@ -48,7 +48,7 @@ export default function AddPlanDialog(props) {
 
   const [value, setValue] = React.useState(0);
   const [reportid, setReportid] = React.useState(0);
-  const [logData, setLogData] = React.useState({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false, damageTaken: [] });
+  const [logData, setLogData] = React.useState({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false, damageTaken: [], debuffData: [] });
   const [logDataLoading, setLogDataLoading] = React.useState(false);
   const [loadingProgress, setLoadingProgress] = React.useState(0);
 
@@ -117,7 +117,7 @@ export default function AddPlanDialog(props) {
 
   const handler = (info) => {
     // reset logData state on new selection
-    setLogData({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false });
+    setLogData({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false, damageTaken: [], debuffData: [] });
     // set data returned from wcl (some useless data here as we are reusing code)
     setLogInfo([
       {
