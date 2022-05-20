@@ -149,8 +149,9 @@ export default function AddPlanDialog(props) {
     const healerCasts = logData.healerCasts;
     const healers = logData.healers;
     const damageTaken = logData.damageTaken;
+    const debuffData = logData.debuffData;
     // transform the imported data into plan data
-    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken);
+    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData);
     cooldownObject.importLogPlan(planName, boss, difficulty, transformedData);
     // load the imported plan data
     loadPlanData(boss, planName, difficulty);

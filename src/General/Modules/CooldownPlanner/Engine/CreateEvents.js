@@ -1,6 +1,6 @@
 // Create events that don't have boss cast times i.e surging azerite on Jailer encounter. We pass a damage taken report here and use instances of damage to determine when the ability happens.
 
-export default function createEvents(bossID, difficulty, damageTakenData) {
+export default function createEvents(bossID, difficulty, damageTakenData, debuffs) {
   console.log(damageTakenData);
   console.log(difficulty);
   let returnedEvents = [];
@@ -19,7 +19,6 @@ export default function createEvents(bossID, difficulty, damageTakenData) {
     /*                                            Abilities                                           */
     /* ---------------------------------------------------------------------------------------------- */
     const stellarDecay = 364381;
-
     if (difficulty === "Heroic") {
       // Stellar Decay
 
