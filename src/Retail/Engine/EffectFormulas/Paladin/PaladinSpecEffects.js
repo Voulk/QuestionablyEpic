@@ -60,9 +60,6 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
 
     const expectedWingsUptimeInc = postThroughput - preThroughput;
     
-    //console.log(expectedWingsUptimeInc);
-    //console.log(player.getHPS(contentType) * expectedWingsUptimeInc);
-
     bonus_stats.hps = player.getHPS(contentType) * expectedWingsUptimeInc;
   }
 
