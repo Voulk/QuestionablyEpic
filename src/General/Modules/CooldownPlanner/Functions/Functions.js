@@ -799,22 +799,22 @@ export async function importDamageLogDataFiltered(starttime, endtime, reportid, 
   const END = "&end=";
   const HOSTILITY = "&hostility=0";
 
-  const filter = "&filter=";
+  let filter = "&filter=";
   const bossAbilityList = bossAbilities[bossID].filter((filter) => filter.createEvent === true);
   const filterExpression = bossAbilityList.map((key, i) => {
     if (i !== bossAbilityList.length - 1) {
-      return "ability.id%3D" + key.guid + "%20OR%20";
+      filter = filter.concat("ability.id%3D" + key.guid + "%20OR%20");
     } else {
-      return "ability.id%3D" + key.guid;
+      filter = filter.concat("ability.id%3D" + key.guid);
     }
   });
-  const completeFilter = filter + filterExpression;
+  console.log(filter);
 
   let damage = [];
   let nextpage = 0;
 
   await axios
-    .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + completeFilter + API2)
+    .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + filter + API2)
     .then((result) => {
       damage = Object.keys(result.data.events).map((key) => result.data.events[key]);
       nextpage = result.data.nextPageTimestamp;
@@ -827,7 +827,7 @@ export async function importDamageLogDataFiltered(starttime, endtime, reportid, 
   if (nextpage !== undefined || null) {
     do {
       await axios
-        .get(APIdamagetaken + reportid + START + nextpage + END + endtime + HOSTILITY + completeFilter + API2)
+        .get(APIdamagetaken + reportid + START + nextpage + END + endtime + HOSTILITY + filter + API2)
         .then((result) => {
           damage = damage.concat(Object.keys(result.data.events).map((key) => result.data.events[key]));
           nextpage = result.data.nextPageTimestamp;
@@ -849,22 +849,22 @@ export async function importDebuffDataFiltered(starttime, endtime, reportid, bos
   const END = "&end=";
   const HOSTILITY = "&hostility=0";
 
-  const filter = "&filter=";
+  let filter = "&filter=";
   const bossAbilityList = bossAbilities[bossID].filter((filter) => filter.createEvent === true);
   const filterExpression = bossAbilityList.map((key, i) => {
     if (i !== bossAbilityList.length - 1) {
-      return "ability.id%3D" + key.guid + "%20OR%20";
+      filter = filter.concat("ability.id%3D" + key.guid + "%20OR%20");
     } else {
-      return "ability.id%3D" + key.guid;
+      filter = filter.concat("ability.id%3D" + key.guid);
     }
   });
-  const completeFilter = filter + filterExpression;
+  console.log(filter);
 
   let debuffs = [];
   let nextpage = 0;
 
   await axios
-    .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + completeFilter + API2)
+    .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + filter + API2)
     .then((result) => {
       debuffs = Object.keys(result.data.events).map((key) => result.data.events[key]);
       nextpage = result.data.nextPageTimestamp;
@@ -877,7 +877,7 @@ export async function importDebuffDataFiltered(starttime, endtime, reportid, bos
   if (nextpage !== undefined || null) {
     do {
       await axios
-        .get(APIdamagetaken + reportid + START + nextpage + END + endtime + HOSTILITY + completeFilter + API2)
+        .get(APIdamagetaken + reportid + START + nextpage + END + endtime + HOSTILITY + filter + API2)
         .then((result) => {
           debuffs = debuffs.concat(Object.keys(result.data.events).map((key) => result.data.events[key]));
           nextpage = result.data.nextPageTimestamp;

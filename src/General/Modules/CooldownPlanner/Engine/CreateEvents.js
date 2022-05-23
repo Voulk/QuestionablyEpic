@@ -3,6 +3,7 @@
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs) {
   console.log(damageTakenData);
   console.log(difficulty);
+  console.log(debuffs);
   let returnedEvents = [];
 
   const logGuids = damageTakenData.map((key) => key.ability.guid);
@@ -18,19 +19,19 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
     /* ---------------------------------------------------------------------------------------------- */
     /*                                            Abilities                                           */
     /* ---------------------------------------------------------------------------------------------- */
-    const stellarDecay = 364381;
+    const stellarDecayDamage = 364381;
+    const stellarDecayDebuff = 368524;
     if (difficulty === "Heroic") {
       // Stellar Decay
-
-      if (logGuids.includes(stellarDecay)) {
-        console.log(damageTakenData.filter((filter) => filter.ability.guid === stellarDecay).map((key) => key.ability.guid));
+      if (logGuids.includes(stellarDecayDamage)) {
+        console.log(damageTakenData.filter((filter) => filter.ability.guid === stellarDecayDamage).map((key) => key.ability.guid));
       }
     }
 
     if (difficulty === "Mythic") {
       // Stellar Decay
-      if (logGuids.includes(stellarDecay)) {
-        console.log(damageTakenData.filter((filter) => filter.ability.guid === stellarDecay).map((key) => key.ability.guid));
+      if (logGuids.includes(stellarDecayDamage)) {
+        console.log(damageTakenData.filter((filter) => filter.ability.guid === stellarDecayDamage).map((key) => key.ability.guid));
       }
     }
   }

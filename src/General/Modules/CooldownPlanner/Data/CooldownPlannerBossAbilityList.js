@@ -1417,6 +1417,63 @@ export const bossAbilities = {
       guid: 364381,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_soulbombdebufflarge.jpg").default,
+    },
+    {
+      name: {
+        en: "Stellar Decay",
+        cn: "星辰凋零",
+        fr: "Décomposition stellaire",
+        ru: "Звездное разложение",
+        de: "Stellarer Verfall",
+      },
+      guid: 368525,
+      cooldownPlannerActive: false,
+      importActive: false,
+      createEvent: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_soulbombdebufflarge.jpg").default,
+    },
+    {
+      name: {
+        en: "Stellar Decay",
+        cn: "星辰凋零",
+        fr: "Décomposition stellaire",
+        ru: "Звездное разложение",
+        de: "Stellarer Verfall",
+      },
+      guid: 368524,
+      cooldownPlannerActive: false,
+      importActive: true,
+      createEvent: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_soulbombdebufflarge.jpg").default,
+    },
+    {
+      name: {
+        en: "Stellar Decay",
+        cn: "星辰凋零",
+        fr: "Décomposition stellaire",
+        ru: "Звездное разложение",
+        de: "Stellarer Verfall",
+      },
+      guid: 364267,
+      cooldownPlannerActive: false,
+      importActive: false,
+      createEvent: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_soulbombdebufflarge.jpg").default,
+    },
+    {
+      name: {
+        en: "Stellar Decay",
+        cn: "星辰凋零",
+        fr: "Décomposition stellaire",
+        ru: "Звездное разложение",
+        de: "Stellarer Verfall",
+      },
+      guid: 364382,
+      cooldownPlannerActive: false,
+      importActive: false,
+      createEvent: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_soulbombdebufflarge.jpg").default,
     },
     {
@@ -1430,6 +1487,7 @@ export const bossAbilities = {
       guid: 362275,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/creatureportrait_sc_eyeofacherus_02.jpg").default,
     },
     {
@@ -1443,6 +1501,7 @@ export const bossAbilities = {
       guid: 366379,
       cooldownPlannerActive: true,
       importActive: true,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_frost_wisp.jpg").default,
     },
     {
@@ -1456,6 +1515,7 @@ export const bossAbilities = {
       guid: 362390,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_elemental_primal_mana.jpg").default,
     },
     {
@@ -1469,6 +1529,7 @@ export const bossAbilities = {
       guid: 362806,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_debuff.jpg").default,
     },
     {
@@ -1482,6 +1543,7 @@ export const bossAbilities = {
       guid: 363533,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_engineering_90_blackhole.jpg").default,
     },
     {
@@ -1495,6 +1557,7 @@ export const bossAbilities = {
       guid: 364114,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shadow_focusedpower.jpg").default,
     },
     {
@@ -1508,6 +1571,7 @@ export const bossAbilities = {
       guid: 362184,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_chaoticimprint_arcane.jpg").default,
     },
     {
@@ -1521,6 +1585,7 @@ export const bossAbilities = {
       guid: 362271,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_warlock_burningembersblue.jpg").default,
     },
     {
@@ -1534,6 +1599,7 @@ export const bossAbilities = {
       guid: 362271,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_enchant_voidsphere.jpg").default,
     },
     {
@@ -1547,7 +1613,22 @@ export const bossAbilities = {
       guid: 364386,
       cooldownPlannerActive: false,
       importActive: false,
+      createEvent: false,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/sha_spell_warlock_demonsoul.jpg").default,
+    },
+    {
+      name: {
+        en: "The Singularity",
+        cn: "奇点",
+        fr: "Singularité",
+        ru: "Сингулярность",
+        de: "Die Singularität",
+      },
+      guid: 362207,
+      cooldownPlannerActive: false,
+      importActive: false,
+      createEvent: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_blightorb.jpg").default,
     },
   ],
   /* ------------------------------------- The Jailer, Zovaal ------------------------------------- */
