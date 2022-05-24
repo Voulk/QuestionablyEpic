@@ -25,15 +25,25 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
     // Following on from the 2pc, we can expect ~3.8-4.2 DC procs per minute in most cases. More with good play, less if you're sitting on Holy words a lot.
     // We're going to use these on Heal too to be consistent though Sanc is more HPS when you have enough damaged allies nearby.
     const convPPM = 3.8;
+    const convPercentage = 0.6; // The buffed spell is 60% stronger.
 
-    bonus_stats.hps = getSpellHealing('heal', player, contentType) * convPPM / 60;
-    console.log(bonus_stats);
+    bonus_stats.hps = getSpellHealing('heal', player, contentType) * convPPM * convPercentage / 60;
   }
   else if (effectName === "Flash Concentration") {
     // Flash Concentration is a significant change to our playstyle. The formula below doesn't even begin to capture how and why it is so strong. 
     // QE Live will have stronger tech to handle legendaries like this as we approach Dragonflight, similar to the tech that other specs already have access to.
+    bonus_stats.hps = 800; // TODO: Replace with non-placeholder value. Priority for next build.
 
-    
+  }
+  else if (effectName === "Shadow Word: Manipulation") {
+    // Shadow Word: Manipulation is often used to pump up our major cooldowns. In this case though we will treat it as bonus crit alone. This legendary would be included
+    // in a Holy Priest spec revamp so that we could better analyze it. 
+    bonus_stats.hps = 750; // TODO: Replace with non-placeholder value. Priority for next build.
+  }
+  else if (effectName === "Bwonsamdi's Pact") {
+    // Shadow Word: Manipulation is often used to pump up our major cooldowns. In this case though we will treat it as bonus crit alone. This legendary would be included
+    // in a Holy Priest spec revamp so that we could better analyze it. 
+    bonus_stats.hps = 750; // TODO: Replace with non-placeholder value. Priority for next build.
   }
 
   return bonus_stats;
