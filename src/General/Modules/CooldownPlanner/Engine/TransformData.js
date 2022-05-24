@@ -6,7 +6,7 @@ import moment from "moment";
 export default function transformData(starttime, boss, enemyCasts, healerCasts, healerIDs, difficulty, damageTaken, debuffs) {
   // map cooldown cast times into array
 
-  createEvents(boss, difficulty, damageTaken, debuffs);
+  let generatedEvents = createEvents(boss, difficulty, damageTaken, debuffs, starttime);
   const cooldownTimes = healerCasts.map((key) => moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"));
 
   // map the cooldown ids, times, healer names, healer classes
@@ -53,7 +53,10 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
       bossAbility: key.ability.guid,
       time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
     }));
-
+  // add the generated events to the enemycasts Timeline
+  enemyCastsTimeline = enemyCastsTimeline.concat(generatedEvents);
+  console.log(enemyCastsTimeline);
+  console.log(generatedEvents);
   // Remove any duplicate imports for boss ability and time cast
   enemyCastsTimeline = enemyCastsTimeline.filter((value, index, self) => index === self.findIndex((t) => t.bossAbility === value.bossAbility && t.time === value.time));
 

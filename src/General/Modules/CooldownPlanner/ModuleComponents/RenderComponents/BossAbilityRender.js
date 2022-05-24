@@ -26,7 +26,7 @@ export default function BossAbilityRender(rowData, bossID, difficulty) {
   const abilityArr = [
     ...bossAbilities[bossID]
       .filter((obj) => {
-        return obj.cooldownPlannerActive === true || obj.importActive === true;
+        return obj.cooldownPlannerActive === true || obj.importActive === true || obj.createEvent === true;
       })
       .map((key, i, arr) => key.guid),
   ];
