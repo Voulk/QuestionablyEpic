@@ -5,14 +5,16 @@ import { getMonkSpecEffect } from "Retail/Engine/EffectFormulas/Monk/MonkSpecEff
 import { getPaladinSpecEffect } from "Retail/Engine/EffectFormulas/Paladin/PaladinSpecEffects"
 import { getDruidSpecEffect } from "Retail/Engine/EffectFormulas/Druid/DruidSpecEffects"
 import { getDiscPriestSpecEffect } from "Retail/Engine/EffectFormulas/Priest/DiscPriestSpecEffects"
+import { getHolyPriestSpecEffect } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpecEffects"
 
+// This is a dummy test unit and is not fully functional yet.
 describe("Shaman", () => {
-    const player = new Player("Voulk", "Holy Paladin", 99, "NA", "Stonemaul", "Night Elf");
-    const contentType = "Dungeon";
+    const player = new Player("Voulk", "Holy Priest", 99, "NA", "Stonemaul", "Night Elf");
+    const contentType = "Raid";
     const type = "Regular";
 
     test("pc", () => {
-        getPaladinSpecEffect("Paladin T28-4", player, contentType)
+        getHolyPriestSpecEffect("Flash Concentration", player, contentType)
 
     })
 
