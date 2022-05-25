@@ -32,6 +32,12 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
     
 
   } 
+  else if (effectName === "Antumbra, Shadow of the Cosmos (19)") {
+    const effect = activeEffect.effects[0];
+
+    bonus_stats.versatility = getProcessedValue(effect.coefficient, effect.table, itemLevel) * 19; 
+    
+  } 
   else if (effectName === "Soulwarped Seal of Wrynn") {
     const effect = activeEffect.effects[0];
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
