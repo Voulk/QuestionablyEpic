@@ -3,10 +3,6 @@ import moment from "moment";
 import { fightDuration } from "../../CooldownPlanner/Functions/Functions";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime) {
-  console.log(damageTakenData);
-  console.log(difficulty);
-  console.log(debuffs);
-
   let returnedEvents = [];
 
   const logGuids = damageTakenData.map((key) => key.ability.guid).concat(debuffs.map((key) => key.ability.guid));
@@ -24,10 +20,26 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
       /* --------------------------------------- Ability Events --------------------------------------- */
       // Stellar Decay
       if (logGuids.includes(stellarDecayDebuff)) {
-        const stellarDecayEvents = debuffs.filter((filter) => filter.ability.guid === stellarDecayDebuff);
-        const threshold = 60000;
+        const validationDuration = 10000; // duration in ms to check for
+        const numOfEvents = 4;
+        const stellarDecayEvents = debuffs.filter((filter) => filter.ability.guid === stellarDecayDebuff && filter.type === "applydebuff"); // filter dubuffs to stellar decay
+
+        // Are the next x events within the validationDuration, if not then the event is probably a mistake/outlier and not an indicator of the actual event. can probably be optimised
+        const stellarDecayEventsReduced = stellarDecayEvents.filter((filter, i) => {
+          let validation = [];
+          for (let a = i; a < numOfEvents; a++) {
+            stellarDecayEvents[a].timestamp > filter.timestamp && stellarDecayEvents[a].timestamp < filter.timestamp + validationDuration ? validation.concat(true) : validation.concat(false);
+          }
+          return validation.includes(false) ? false : true;
+        });
+
+        // time until we want to check for the next event. i.e 60 seconds after the 1st event.
+        const threshold = 45000;
+        // time to add to create events after initial event
         const timeBetweenEvents = 8000;
-        let firstEvent = stellarDecayEvents.map((key) => {
+
+        // find the first event
+        let firstEvent = stellarDecayEventsReduced.map((key) => {
           return [
             // Original Event
             { time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: stellarDecayDebuff },
@@ -41,10 +53,11 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
             },
           ];
         })[0];
-        let lastChosen = stellarDecayEvents.map((key) => key.timestamp)[0];
+        // set
+        let lastChosen = stellarDecayEventsReduced.map((key) => key.timestamp)[0];
 
         returnedEvents.concat(firstEvent);
-        stellarDecayEvents.map((key) => {
+        stellarDecayEventsReduced.map((key) => {
           if (key.timestamp > lastChosen + threshold) {
             lastChosen = key.timestamp;
             // Original Event
@@ -66,10 +79,30 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
       /* --------------------------------------- Ability Events --------------------------------------- */
       // Stellar Decay
       if (logGuids.includes(stellarDecayDebuff)) {
-        const stellarDecayEvents = debuffs.filter((filter) => filter.ability.guid === stellarDecayDebuff);
-        const threshold = 60000;
+        const validationDuration = 10000; // duration in ms to check for
+        const numOfEvents = 4;
+        const stellarDecayEvents = debuffs.filter((filter) => filter.ability.guid === stellarDecayDebuff && filter.type === "applydebuff"); // filter dubuffs to stellar decay
+        // Are the next x events within the validationDuration, if not then the event is probably a mistake/outlier and not an indicator of the actual event. can probably be optimised
+        const stellarDecayEventsReduced = stellarDecayEvents.filter((filter, i) => {
+          let validation = [];
+          for (let a = 0; a <= numOfEvents; a++) {
+            if (a + i < stellarDecayEvents.length)
+              stellarDecayEvents[a + i].timestamp >= filter.timestamp && stellarDecayEvents[a + i].timestamp <= filter.timestamp + validationDuration
+                ? validation.push("true")
+                : validation.push("false");
+          }
+          console.log(validation);
+
+          return validation.includes("false") ? false : true;
+        });
+        console.log(stellarDecayEventsReduced);
+        // time until we want to check for the next event. i.e 60 seconds after the 1st event.
+        const threshold = 45000;
+        // time to add to create events after initial event
         const timeBetweenEvents = 8000;
-        let firstEvent = stellarDecayEvents.map((key) => {
+
+        // find the first event
+        let firstEvent = stellarDecayEventsReduced.map((key) => {
           return [
             // Original Event
             { time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: stellarDecayDebuff },
@@ -91,10 +124,11 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
             },
           ];
         })[0];
-        let lastChosen = stellarDecayEvents.map((key) => key.timestamp)[0];
+        // set
+        let lastChosen = stellarDecayEventsReduced.map((key) => key.timestamp)[0];
 
         returnedEvents.concat(firstEvent);
-        stellarDecayEvents.map((key) => {
+        stellarDecayEventsReduced.map((key) => {
           if (key.timestamp > lastChosen + threshold) {
             lastChosen = key.timestamp;
             // Original Event
@@ -144,14 +178,6 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
                 .format("mm:ss"),
               bossAbility: surgingAzerite,
             },
-            // 2nd Simulated Event
-            {
-              time: moment
-                .utc(fightDuration(key.timestamp + timeBetweenEvents * 2, starttime))
-                .startOf("second")
-                .format("mm:ss"),
-              bossAbility: surgingAzerite,
-            },
           ];
         })[0];
         let lastChosen = surgingAzeriteEvents.map((key) => key.timestamp)[0];
@@ -166,14 +192,6 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
             returnedEvents.push({
               time: moment
                 .utc(fightDuration(key.timestamp + timeBetweenEvents, starttime))
-                .startOf("second")
-                .format("mm:ss"),
-              bossAbility: surgingAzerite,
-            });
-            // 2nd Simulated Event
-            returnedEvents.push({
-              time: moment
-                .utc(fightDuration(key.timestamp + timeBetweenEvents * 2, starttime))
                 .startOf("second")
                 .format("mm:ss"),
               bossAbility: surgingAzerite,
@@ -209,8 +227,6 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
       }
     }
   }
-
-  console.log(returnedEvents);
 
   return returnedEvents;
 }
