@@ -1311,6 +1311,20 @@ export const bossAbilities = {
     },
     {
       name: {
+        en: "Return to Kingsmourne",
+        cn: "回归王之哀伤",
+        fr: "Retour à Deuilleroi",
+        ru: "Возвращение к 'Королевской Скорби'",
+        de: "Zu Königsgram zurückkehren",
+      },
+      guid: 363021,
+      cooldownPlannerActive: true,
+      importActive: false,
+      createEvent: true,
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/achievement_dungeon_icecrown_frostmourne.jpg").default,
+    },
+    {
+      name: {
         en: "Phase 1",
         cn: "Phase 1",
         fr: "Phase 1",

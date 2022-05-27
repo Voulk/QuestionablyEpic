@@ -48,7 +48,7 @@ export default function AddPlanDialog(props) {
 
   const [value, setValue] = React.useState(0);
   const [reportid, setReportid] = React.useState(0);
-  const [logData, setLogData] = React.useState({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false, damageTaken: [], debuffData: [] });
+  const [logData, setLogData] = React.useState({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false, damageTaken: [], debuffData: [], enemyHealth: [] });
   const [logDataLoading, setLogDataLoading] = React.useState(false);
   const [loadingProgress, setLoadingProgress] = React.useState(0);
 
@@ -117,7 +117,7 @@ export default function AddPlanDialog(props) {
 
   const handler = (info) => {
     // reset logData state on new selection
-    setLogData({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false, damageTaken: [], debuffData: [] });
+    setLogData({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false, damageTaken: [], debuffData: [], enemyHealth: [] });
     // set data returned from wcl (some useless data here as we are reusing code)
     setLogInfo([
       {
@@ -150,8 +150,9 @@ export default function AddPlanDialog(props) {
     const healers = logData.healers;
     const damageTaken = logData.damageTaken;
     const debuffData = logData.debuffData;
+    const enemyHealth = logData.enemyHealth;
     // transform the imported data into plan data
-    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData);
+    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData, enemyHealth);
     cooldownObject.importLogPlan(planName, boss, difficulty, transformedData);
     // load the imported plan data
     loadPlanData(boss, planName, difficulty);

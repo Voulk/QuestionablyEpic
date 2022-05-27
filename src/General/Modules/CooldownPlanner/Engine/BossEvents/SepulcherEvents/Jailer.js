@@ -1,8 +1,16 @@
 import moment from "moment";
 import { fightDuration } from "General/Modules/CooldownPlanner/Functions/Functions";
 
-export default function createjailerEvents(bossID, difficulty, damageTakenData, debuffs, starttime) {
+export default function createjailerEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth) {
   let jailerEvents = [];
+  const jailerData = enemyHealth["series"].filter((filter) => filter.guid === 180990);
+  const jailerHealthData = Object.entries(jailerData[0]["data"]).map((key) => {
+    return {
+      time: key[1][0],
+      health: key[1][1],
+    };
+  });
+  console.log(jailerHealthData);
   const logGuids = damageTakenData.map((key) => key.ability.guid).concat(debuffs.map((key) => key.ability.guid));
   const surgingAzerite = 366408;
 
@@ -12,6 +20,15 @@ export default function createjailerEvents(bossID, difficulty, damageTakenData, 
     /* ---------------------------------------------------------------------------------------------- */
     difficulty === "Heroic"
   ) {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Phase Changes                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+
+    jailerEvents.push({ time: "00:00", bossAbility: "Phase 1" });
+    const phase2 = jailerHealthData.filter((filter) => filter.health <= 62)[0];
+    jailerEvents.push({ time: moment.utc(fightDuration(phase2.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 2" });
+    const phase3 = jailerHealthData.filter((filter) => filter.health <= 18)[0];
+    jailerEvents.push({ time: moment.utc(fightDuration(phase3.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 3" });
     // Surging Azerite
     if (logGuids.includes(surgingAzerite)) {
       const surgingAzeriteEvents = damageTakenData.filter((filter) => filter.ability.guid === surgingAzerite);
@@ -39,6 +56,17 @@ export default function createjailerEvents(bossID, difficulty, damageTakenData, 
     /* ---------------------------------------------------------------------------------------------- */
     difficulty === "Mythic"
   ) {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Phase Changes                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+
+    jailerEvents.push({ time: "00:00", bossAbility: "Phase 1" });
+    const phase2 = jailerHealthData.filter((filter) => filter.health <= 66)[0];
+    jailerEvents.push({ time: moment.utc(fightDuration(phase2.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 2" });
+    const phase3 = jailerHealthData.filter((filter) => filter.health <= 31)[0];
+    jailerEvents.push({ time: moment.utc(fightDuration(phase3.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 3" });
+    const phase4 = jailerHealthData.filter((filter) => filter.health <= 11)[0];
+    jailerEvents.push({ time: moment.utc(fightDuration(phase4.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 4" });
     /* --------------------------------------- Ability Events --------------------------------------- */
     // Surging Azerite
     if (logGuids.includes(surgingAzerite)) {

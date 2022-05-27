@@ -8,10 +8,14 @@ import {
   importDebuffDataFiltered,
   importDamageLogDataFiltered,
   logDifficulty,
+  importEnemyHealth,
 } from "../../CooldownPlanner/Functions/Functions";
 
 export default async function importLogData(starttime, endtime, reportID, boss, logDif, setLogData, setLoadingProgress) {
   setLoadingProgress(20);
+
+  const enemyHealth = await importEnemyHealth(starttime, endtime, reportID);
+  console.log(enemyHealth);
   const dif = logDifficulty(logDif);
   /* ----------- Import Healer Info from the Logs healing table for each healing class. ----------- */
   setLoadingProgress(40);
@@ -55,5 +59,6 @@ export default async function importLogData(starttime, endtime, reportID, boss, 
     importSuccessful: true,
     damageTaken: damageTakenData,
     debuffData: debuffData,
+    enemyHealth: enemyHealth,
   });
 }
