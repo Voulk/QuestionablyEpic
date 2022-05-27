@@ -66,17 +66,21 @@ export default function createRygelonEvents(bossID, difficulty, damageTakenData,
     /* --------------------------------------- Ability Events --------------------------------------- */
     // Stellar Decay
     if (logGuids.includes(stellarDecayDebuff)) {
-      const validationDuration = 10000; // duration in ms to check for
-      const numOfEvents = 4;
+      const clusterEvents = 3; // Number of events we'd like to see within X seconds of the first debuff.
+      const clusterTimeframe = 5000; // We'll check this amount of time after our first event.
       const stellarDecayEvents = debuffs.filter((filter) => filter.ability.guid === stellarDecayDebuff && filter.type === "applydebuff"); // filter dubuffs to stellar decay
-
-      // Are the next x events within the validationDuration, if not then the event is probably a mistake/outlier and not an indicator of the actual event. can probably be optimised
       const stellarDecayEventsReduced = stellarDecayEvents.filter((filter, i) => {
-        let validation = [];
-        for (let a = i; a < numOfEvents; a++) {
-          stellarDecayEvents[a].timestamp > filter.timestamp && stellarDecayEvents[a].timestamp < filter.timestamp + validationDuration ? validation.concat(true) : validation.concat(false);
+        let entryOk = true;
+        // console.log("First Timestamp: " + filter.timestamp);
+        for (var a = 1; a <= clusterEvents; a++) {
+          if (a + i < stellarDecayEvents.length) {
+            const comparisonTimestamp = stellarDecayEvents[a + i].timestamp;
+            if (comparisonTimestamp < filter.timestamp || comparisonTimestamp >= filter.timestamp + clusterTimeframe) {
+              entryOk = false;
+            }
+          }
         }
-        return validation.includes(false) ? false : true;
+        return entryOk;
       });
 
       // time until we want to check for the next event. i.e 60 seconds after the 1st event.
@@ -85,24 +89,29 @@ export default function createRygelonEvents(bossID, difficulty, damageTakenData,
       const timeBetweenEvents = 8000;
 
       // find the first event
-      let firstEvent = stellarDecayEventsReduced.map((key) => {
-        return [
-          // Original Event
-          { time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: stellarDecayDebuff },
-          // 1st Simulated Event
-          {
-            time: moment
-              .utc(fightDuration(key.timestamp + timeBetweenEvents, starttime))
-              .startOf("second")
-              .format("mm:ss"),
-            bossAbility: stellarDecayDebuff,
-          },
-        ];
-      })[0];
-      // set
-      let lastChosen = stellarDecayEventsReduced.map((key) => key.timestamp)[0];
+      const firstEvent = stellarDecayEventsReduced[0];
+      // Original Event
+      rygelonEvents.push({ time: moment.utc(fightDuration(firstEvent.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: stellarDecayDebuff });
+      // 1st Simulated Event
+      rygelonEvents.push({
+        time: moment
+          .utc(fightDuration(firstEvent.timestamp + timeBetweenEvents, starttime))
+          .startOf("second")
+          .format("mm:ss"),
+        bossAbility: stellarDecayDebuff,
+      });
+      // 2nd Simulated Event
+      rygelonEvents.push({
+        time: moment
+          .utc(fightDuration(firstEvent.timestamp + timeBetweenEvents * 2, starttime))
+          .startOf("second")
+          .format("mm:ss"),
+        bossAbility: stellarDecayDebuff,
+      });
 
-      rygelonEvents.concat(firstEvent);
+      // set
+      let lastChosen = firstEvent.timestamp;
+
       stellarDecayEventsReduced.map((key) => {
         if (key.timestamp > lastChosen + threshold) {
           lastChosen = key.timestamp;
@@ -112,6 +121,14 @@ export default function createRygelonEvents(bossID, difficulty, damageTakenData,
           rygelonEvents.push({
             time: moment
               .utc(fightDuration(key.timestamp + timeBetweenEvents, starttime))
+              .startOf("second")
+              .format("mm:ss"),
+            bossAbility: stellarDecayDebuff,
+          });
+          // 2nd Simulated Event
+          rygelonEvents.push({
+            time: moment
+              .utc(fightDuration(key.timestamp + timeBetweenEvents * 2, starttime))
               .startOf("second")
               .format("mm:ss"),
             bossAbility: stellarDecayDebuff,
@@ -130,8 +147,8 @@ export default function createRygelonEvents(bossID, difficulty, damageTakenData,
     /* --------------------------------------- Ability Events --------------------------------------- */
     // Stellar Decay
     if (logGuids.includes(stellarDecayDebuff)) {
-      const clusterEvents = 4; // Number of events we'd like to see within X seconds of the first debuff.
-      const clusterTimeframe = 3000; // We'll check this amount of time after our first event.
+      const clusterEvents = 3; // Number of events we'd like to see within X seconds of the first debuff.
+      const clusterTimeframe = 5000; // We'll check this amount of time after our first event.
       const stellarDecayEvents = debuffs.filter((filter) => filter.ability.guid === stellarDecayDebuff && filter.type === "applydebuff"); // filter dubuffs to stellar decay
       const stellarDecayEventsReduced = stellarDecayEvents.filter((filter, i) => {
         let entryOk = true;
@@ -139,16 +156,7 @@ export default function createRygelonEvents(bossID, difficulty, damageTakenData,
         for (var a = 1; a <= clusterEvents; a++) {
           if (a + i < stellarDecayEvents.length) {
             const comparisonTimestamp = stellarDecayEvents[a + i].timestamp;
-            if (comparisonTimestamp <= filter.timestamp || comparisonTimestamp >= filter.timestamp + clusterTimeframe) {
-              console.log(
-                "time: " + moment.utc(fightDuration(filter.timestamp, starttime)).startOf("second").format("mm:ss"),
-                "comparisonTime: " + moment.utc(fightDuration(comparisonTimestamp, starttime)).startOf("second").format("mm:ss"),
-                "Cluster Time: " +
-                  moment
-                    .utc(fightDuration(filter.timestamp + clusterTimeframe, starttime))
-                    .startOf("second")
-                    .format("mm:ss"),
-              );
+            if (comparisonTimestamp < filter.timestamp || comparisonTimestamp >= filter.timestamp + clusterTimeframe) {
               entryOk = false;
             }
           }
@@ -156,39 +164,35 @@ export default function createRygelonEvents(bossID, difficulty, damageTakenData,
         return entryOk;
       });
 
-      console.log(stellarDecayEventsReduced);
       // time until we want to check for the next event. i.e 60 seconds after the 1st event.
       const threshold = 45000;
       // time to add to create events after initial event
       const timeBetweenEvents = 8000;
 
       // find the first event
-      let firstEvent = stellarDecayEventsReduced.map((key) => {
-        return [
-          // Original Event
-          { time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: stellarDecayDebuff },
-          // 1st Simulated Event
-          {
-            time: moment
-              .utc(fightDuration(key.timestamp + timeBetweenEvents, starttime))
-              .startOf("second")
-              .format("mm:ss"),
-            bossAbility: stellarDecayDebuff,
-          },
-          // 2nd Simulated Event
-          {
-            time: moment
-              .utc(fightDuration(key.timestamp + timeBetweenEvents * 2, starttime))
-              .startOf("second")
-              .format("mm:ss"),
-            bossAbility: stellarDecayDebuff,
-          },
-        ];
-      })[0];
-      // set
-      let lastChosen = stellarDecayEventsReduced.map((key) => key.timestamp)[0];
+      const firstEvent = stellarDecayEventsReduced[0];
+      // Original Event
+      rygelonEvents.push({ time: moment.utc(fightDuration(firstEvent.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: stellarDecayDebuff });
+      // 1st Simulated Event
+      rygelonEvents.push({
+        time: moment
+          .utc(fightDuration(firstEvent.timestamp + timeBetweenEvents, starttime))
+          .startOf("second")
+          .format("mm:ss"),
+        bossAbility: stellarDecayDebuff,
+      });
+      // 2nd Simulated Event
+      rygelonEvents.push({
+        time: moment
+          .utc(fightDuration(firstEvent.timestamp + timeBetweenEvents * 2, starttime))
+          .startOf("second")
+          .format("mm:ss"),
+        bossAbility: stellarDecayDebuff,
+      });
 
-      rygelonEvents.concat(firstEvent);
+      // set
+      let lastChosen = firstEvent.timestamp;
+
       stellarDecayEventsReduced.map((key) => {
         if (key.timestamp > lastChosen + threshold) {
           lastChosen = key.timestamp;
