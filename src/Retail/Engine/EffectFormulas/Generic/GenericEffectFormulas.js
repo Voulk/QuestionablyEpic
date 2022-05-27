@@ -33,6 +33,7 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
 
   } 
   else if (effectName === "Antumbra, Shadow of the Cosmos (19)") {
+    activeEffect = effectData.find((effect) => effect.name === "Antumbra, Shadow of the Cosmos");
     const effect = activeEffect.effects[0];
 
     bonus_stats.versatility = getProcessedValue(effect.coefficient, effect.table, itemLevel) * 19; 
