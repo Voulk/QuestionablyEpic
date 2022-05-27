@@ -1630,6 +1630,34 @@ export const bossAbilities = {
       createEvent: true,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_blightorb.jpg").default,
     },
+    {
+      name: {
+        en: "Phase 1",
+        cn: "Phase 1",
+        fr: "Phase 1",
+        ru: "Phase 1",
+        de: "Phase 1",
+      },
+      guid: "Phase 1",
+      cooldownPlannerActive: true,
+      importActive: false,
+      createEvent: false,
+      icon: "",
+    },
+    {
+      name: {
+        en: "Phase 2",
+        cn: "Phase 2",
+        fr: "Phase 2",
+        ru: "Phase 2",
+        de: "Phase 2",
+      },
+      guid: "Phase 2",
+      cooldownPlannerActive: true,
+      importActive: false,
+      createEvent: false,
+      icon: "",
+    },
   ],
   /* ------------------------------------- The Jailer, Zovaal ------------------------------------- */
   2537: [
