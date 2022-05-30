@@ -1,7 +1,7 @@
 import moment from "moment";
 import { fightDuration } from "General/Modules/CooldownPlanner/Functions/Functions";
 
-export default function createjailerEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth) {
+export default function createjailerEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData) {
   let jailerEvents = [];
   const jailerData = enemyHealth["series"].filter((filter) => filter.guid === 180990);
   const jailerHealthData = Object.entries(jailerData[0]["data"]).map((key) => {
@@ -65,7 +65,7 @@ export default function createjailerEvents(bossID, difficulty, damageTakenData, 
     jailerEvents.push({ time: moment.utc(fightDuration(phase2.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 2" });
     const phase3 = jailerHealthData.filter((filter) => filter.health <= 31)[0];
     jailerEvents.push({ time: moment.utc(fightDuration(phase3.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 3" });
-    const phase4 = jailerHealthData.filter((filter) => filter.health <= 11)[0];
+    const phase4 = jailerHealthData.filter((filter) => filter.health <= 15)[0];
     jailerEvents.push({ time: moment.utc(fightDuration(phase4.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 4" });
     /* --------------------------------------- Ability Events --------------------------------------- */
     // Surging Azerite

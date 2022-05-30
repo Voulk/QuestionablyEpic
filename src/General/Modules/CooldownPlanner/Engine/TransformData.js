@@ -3,10 +3,9 @@ import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
 import createEvents from "./CreateEvents";
 import moment from "moment";
 
-export default function transformData(starttime, boss, enemyCasts, healerCasts, healerIDs, difficulty, damageTaken, debuffs, enemyHealth) {
+export default function transformData(starttime, boss, enemyCasts, healerCasts, healerIDs, difficulty, damageTaken, debuffs, enemyHealth, buffData) {
   // map cooldown cast times into array
-
-  let generatedEvents = createEvents(boss, difficulty, damageTaken, debuffs, starttime, enemyHealth, enemyCasts);
+  let generatedEvents = createEvents(boss, difficulty, damageTaken, debuffs, starttime, enemyHealth, enemyCasts, buffData);
   const cooldownTimes = healerCasts.map((key) => moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"));
 
   // map the cooldown ids, times, healer names, healer classes
@@ -55,8 +54,6 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
     }));
   // add the generated events to the enemycasts Timeline
   enemyCastsTimeline = enemyCastsTimeline.concat(generatedEvents);
-  console.log(enemyCastsTimeline);
-  console.log(generatedEvents);
   // Remove any duplicate imports for boss ability and time cast
   enemyCastsTimeline = enemyCastsTimeline.filter((value, index, self) => index === self.findIndex((t) => t.bossAbility === value.bossAbility && t.time === value.time));
 

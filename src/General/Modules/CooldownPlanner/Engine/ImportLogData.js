@@ -1,21 +1,22 @@
 import {
   importHealerLogData,
-  importCooldownPlannerCastsLogData,
   //   importSummaryData,
   //   importCharacterIds,
   importEnemyCasts,
   //   importEnemyIds,
-  importDebuffDataFiltered,
-  importDamageLogDataFiltered,
   logDifficulty,
-  importEnemyHealth,
 } from "../../CooldownPlanner/Functions/Functions";
+
+import importEnemyHealth from "./Imports/importEnemyHealth";
+import importDebuffDataFiltered from "./Imports/importDebuffDataFiltered";
+import importDamageLogDataFiltered from "./Imports/importDamageLogDataFiltered";
+import importCasts from "./Imports/importCasts";
+import importEnemyBuffs from "./Imports/importEnemyBuffs";
 
 export default async function importLogData(starttime, endtime, reportID, boss, logDif, setLogData, setLoadingProgress) {
   setLoadingProgress(20);
 
   const enemyHealth = await importEnemyHealth(starttime, endtime, reportID);
-  console.log(enemyHealth);
   const dif = logDifficulty(logDif);
   /* ----------- Import Healer Info from the Logs healing table for each healing class. ----------- */
   setLoadingProgress(40);
@@ -23,7 +24,7 @@ export default async function importLogData(starttime, endtime, reportID, boss, 
 
   /* ------------------ Import the log data for Casts for each healer in the log. ----------------- */
   setLoadingProgress(60);
-  const healerCasts = await importCooldownPlannerCastsLogData(
+  const healerCasts = await importCasts(
     starttime,
     endtime,
     reportID,
@@ -34,7 +35,7 @@ export default async function importLogData(starttime, endtime, reportID, boss, 
   // console.log(damageTakenData);
 
   const debuffData = await importDebuffDataFiltered(starttime, endtime, reportID, boss);
-  console.log(debuffData);
+  const buffData = await importEnemyBuffs(starttime, endtime, reportID, boss);
   /* ------------------------------- Import Log data for enemy casts ------------------------------ */
   setLoadingProgress(80);
   const enemyCasts = await importEnemyCasts(starttime, endtime, reportID);
@@ -60,5 +61,6 @@ export default async function importLogData(starttime, endtime, reportID, boss, 
     damageTaken: damageTakenData,
     debuffData: debuffData,
     enemyHealth: enemyHealth,
+    buffData: buffData,
   });
 }

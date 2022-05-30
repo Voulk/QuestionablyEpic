@@ -5,38 +5,33 @@ import createAnduinEvents from "./BossEvents/SepulcherEvents/Anduin";
 import createVigilantEvents from "./BossEvents/SepulcherEvents/Vigilant";
 import createXymoxEvents from "./BossEvents/SepulcherEvents/Xymox";
 
-export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts) {
+export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData) {
   let returnedEvents = [];
-
+  console.log(buffData);
   const logGuids = damageTakenData.map((key) => key.ability.guid).concat(debuffs.map((key) => key.ability.guid));
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                   Sepulcher of the First Ones                                  */
   /* ---------------------------------------------------------------------------------------------- */
-
+  /* ------------------------------------------ Vigilant ------------------------------------------ */
   if (bossID === 2512) {
-    returnedEvents = createVigilantEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts);
+    returnedEvents = createVigilantEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
   }
-
-  // if (bossID === 2553) {
-  //   returnedEvents = createXymoxEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts);
-  // }
+  /* -------------------------------------------- Xymox ------------------------------------------- */
+  if (bossID === 2553) {
+    returnedEvents = createXymoxEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
+  }
+  /* ------------------------------------------- Anduin ------------------------------------------- */
   if (bossID === 2546) {
-    returnedEvents = createAnduinEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts);
+    returnedEvents = createAnduinEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
   }
-
-  if (
-    /* ------------------------------------------- Rygelon ------------------------------------------- */
-    bossID === 2549
-  ) {
-    returnedEvents = createRygelonEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts);
+  /* ------------------------------------------- Rygelon ------------------------------------------- */
+  if (bossID === 2549) {
+    returnedEvents = createRygelonEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
   }
-
-  if (
-    /* ------------------------------------------- Jailer ------------------------------------------- */
-    bossID === 2537
-  ) {
-    returnedEvents = createjailerEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts);
+  /* ------------------------------------------- Jailer ------------------------------------------- */
+  if (bossID === 2537) {
+    returnedEvents = createjailerEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
   }
 
   return returnedEvents;

@@ -740,6 +740,21 @@ export const bossAbilities = {
     },
     {
       name: {
+        en: "Genesis Bulwark",
+        cn: "源生壁垒",
+        fr: "Rempart de la genèse",
+        ru: "Бастион генезиса",
+        de: "Genesisbollwerk",
+      },
+      guid: 367573,
+      cooldownPlannerActive: false,
+      importActive: false,
+      createEvent: true,
+      type: "buff",
+      icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_progenitor_runevessel.jpg").default,
+    },
+    {
+      name: {
         en: "Intermission",
         cn: "",
         fr: "",

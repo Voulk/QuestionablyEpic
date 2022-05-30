@@ -1,7 +1,7 @@
 import moment from "moment";
 import { fightDuration } from "General/Modules/CooldownPlanner/Functions/Functions";
 
-export default function createXymoxEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth) {
+export default function createXymoxEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData) {
   let events = [];
   const enemyData = enemyHealth["series"].filter((filter) => filter.guid === 183501);
   const enemyHealthData = Object.entries(enemyData[0]["data"]).map((key) => {
@@ -10,7 +10,12 @@ export default function createXymoxEvents(bossID, difficulty, damageTakenData, d
       health: key[1][1],
     };
   });
-  const logGuids = damageTakenData.map((key) => key.ability.guid).concat(debuffs.map((key) => key.ability.guid));
+  const logGuids = damageTakenData
+    .map((key) => key.ability.guid)
+    .concat(debuffs.map((key) => key.ability.guid))
+    .concat(buffData.map((key) => key.ability.guid));
+
+  const genesisBulwark = 367573;
 
   if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -21,20 +26,30 @@ export default function createXymoxEvents(bossID, difficulty, damageTakenData, d
     /* ---------------------------------------------------------------------------------------------- */
     /*                                          Phase Changes                                         */
     /* ---------------------------------------------------------------------------------------------- */
+    // generate end of intermissions
+    if (logGuids.includes(genesisBulwark)) {
+      const genesisBulwarkRemoved = buffData.filter((filter) => filter.ability.guid === genesisBulwark && filter.type === "removebuff");
+      genesisBulwarkRemoved.map((key) =>
+        events.push({
+          time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
+          bossAbility: "Phase 1",
+        }),
+      );
+    }
 
     events.push({ time: "00:00", bossAbility: "Phase 1" });
-    const phase2 = enemyHealthData.filter((filter) => filter.health <= 75)[0];
+    const intermission1 = enemyHealthData.filter((filter) => filter.health <= 75)[0];
     events.push({
       time: moment
-        .utc(fightDuration(phase2.time - 1000, starttime))
+        .utc(fightDuration(intermission1.time - 1000, starttime))
         .startOf("second")
         .format("mm:ss"),
       bossAbility: "Intermission",
     });
-    const phase3 = enemyHealthData.filter((filter) => filter.health <= 50)[0];
+    const intermission2 = enemyHealthData.filter((filter) => filter.health <= 50)[0];
     events.push({
       time: moment
-        .utc(fightDuration(phase3.time - 1000, starttime))
+        .utc(fightDuration(intermission2.time - 1000, starttime))
         .startOf("second")
         .format("mm:ss"),
       bossAbility: "Intermission",
@@ -51,19 +66,30 @@ export default function createXymoxEvents(bossID, difficulty, damageTakenData, d
     /*                                          Phase Changes                                         */
     /* ---------------------------------------------------------------------------------------------- */
 
+    // generate end of intermissions
+    if (logGuids.includes(genesisBulwark)) {
+      const genesisBulwarkRemoved = buffData.filter((filter) => filter.ability.guid === genesisBulwark && filter.type === "removebuff");
+      genesisBulwarkRemoved.map((key) =>
+        events.push({
+          time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
+          bossAbility: "Phase 1",
+        }),
+      );
+    }
+
     events.push({ time: "00:00", bossAbility: "Phase 1" });
-    const phase2 = enemyHealthData.filter((filter) => filter.health <= 75)[0];
+    const intermission1 = enemyHealthData.filter((filter) => filter.health <= 75)[0];
     events.push({
       time: moment
-        .utc(fightDuration(phase2.time - 1000, starttime))
+        .utc(fightDuration(intermission1.time - 1000, starttime))
         .startOf("second")
         .format("mm:ss"),
       bossAbility: "Intermission",
     });
-    const phase3 = enemyHealthData.filter((filter) => filter.health <= 50)[0];
+    const intermission2 = enemyHealthData.filter((filter) => filter.health <= 50)[0];
     events.push({
       time: moment
-        .utc(fightDuration(phase3.time - 1000, starttime))
+        .utc(fightDuration(intermission2.time - 1000, starttime))
         .startOf("second")
         .format("mm:ss"),
       bossAbility: "Intermission",

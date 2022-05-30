@@ -1,7 +1,7 @@
 import moment from "moment";
 import { fightDuration } from "General/Modules/CooldownPlanner/Functions/Functions";
 
-export default function createAnduinEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts) {
+export default function createAnduinEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData) {
   let events = [];
   const enemyData = enemyHealth["series"].filter((filter) => filter.guid === 181954);
   const enemyHealthData = Object.entries(enemyData[0]["data"]).map((key) => {
@@ -28,7 +28,6 @@ export default function createAnduinEvents(bossID, difficulty, damageTakenData, 
         bossAbility: key.ability.guid,
         time: key.timestamp,
       }));
-    console.log(returnKMevents);
 
     events.push({ time: "00:00", bossAbility: "Phase 1" });
     const intermission1 = enemyHealthData.filter((filter) => filter.health <= 62)[0];
@@ -60,7 +59,6 @@ export default function createAnduinEvents(bossID, difficulty, damageTakenData, 
     events.push({ time: "00:00", bossAbility: "Phase 1" });
     const intermission1 = enemyHealthData.filter((filter) => filter.health <= 85)[0];
     events.push({ time: moment.utc(fightDuration(intermission1.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Intermission" });
-    console.log(returnKMevents);
     const phase2 = returnKMevents[0]["time"];
     events.push({ time: moment.utc(fightDuration(phase2, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 2" });
     const intermission2 = enemyHealthData.filter((filter) => filter.health <= 35)[0];

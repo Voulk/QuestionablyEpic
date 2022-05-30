@@ -1,7 +1,7 @@
 import moment from "moment";
 import { fightDuration } from "General/Modules/CooldownPlanner/Functions/Functions";
 
-export default function createRygelonEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth) {
+export default function createRygelonEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData) {
   let rygelonEvents = [];
   const logGuids = damageTakenData.map((key) => key.ability.guid).concat(debuffs.map((key) => key.ability.guid));
   const stellarDecayDebuff = 368524;
