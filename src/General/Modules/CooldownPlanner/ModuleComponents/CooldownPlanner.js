@@ -1,6 +1,6 @@
 import React, { useEffect, forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "@material-table/core";
-import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search, Tooltip } from "@mui/icons-material";
+import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search } from "@mui/icons-material";
 import { Button, TextField, MenuItem, Paper, Grid, FormControl, InputLabel } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
 import { bossList } from "../Data/CooldownPlannerBossList";
@@ -30,6 +30,9 @@ import { TableStyles } from "./Styles/TableStyles";
 import { cooldownDB } from "../Data/CooldownDB";
 import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
 import ls from "local-storage";
+import { styled } from "@mui/material/styles";
+import { green, orange } from "@mui/material/colors";
+import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -50,6 +53,17 @@ export default function CooldownPlanner(props) {
   debug && console.log(" -- Debugging On -> CooldownPlanner.js --");
   // log provided props
   // debug && console.log(props);
+
+  const LightTooltip = styled(({ className, ...props }) => <Tooltip {...props} classes={{ popper: className }} />)(({ theme }) => ({
+    [`& .${tooltipClasses.arrow}`]: {
+      color: green[600],
+    },
+    [`& .${tooltipClasses.tooltip}`]: {
+      backgroundColor: green[600],
+      boxShadow: theme.shadows[1],
+      fontSize: 11,
+    },
+  }));
 
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -601,10 +615,12 @@ export default function CooldownPlanner(props) {
                 <Grid item container spacing={1} xs={12} sm={12} md={8} lg={9} xl={9} alignItems="center">
                   {/* ------------------------ Heal Team Button (Activates the Dialog Popup) ----------------------- */}
                   <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
-                    <Button variant="outlined" style={{ height: 40, width: "100%", whiteSpace: "nowrap" }} color="primary" onClick={() => healTeamDialogOpen()}>
-                      {/* // TODO: Translate */}
-                      Roster
-                    </Button>
+                    <LightTooltip arrow={true} open={RosterCheck} placement="top-start" title="Add to your roster to begin!">
+                      <Button variant="outlined" style={{ height: 40, width: "100%", whiteSpace: "nowrap" }} color="primary" onClick={() => healTeamDialogOpen()}>
+                        {/* // TODO: Translate */}
+                        Roster
+                      </Button>
+                    </LightTooltip>
                   </Grid>
                   {/* ---------------------------------- Raid Selection Drop Down ---------------------------------- */}
                   {/* <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
@@ -628,7 +644,6 @@ export default function CooldownPlanner(props) {
                   <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
                     <TextField
                       sx={{ minWidth: 100, width: "100%" }}
-                      fullSize
                       label={t("Boss")}
                       select
                       value={currentBoss}
@@ -656,7 +671,6 @@ export default function CooldownPlanner(props) {
                   <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
                     <TextField
                       sx={{ minWidth: 100, width: "100%" }}
-                      fullSize
                       select
                       label={t("Difficulty")}
                       id="DifficultySelector"
@@ -681,7 +695,6 @@ export default function CooldownPlanner(props) {
                   <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
                     <TextField
                       sx={{ minWidth: 100, width: "100%" }}
-                      fullSize
                       select
                       label={t("Plan")}
                       id="PlanSelector"
