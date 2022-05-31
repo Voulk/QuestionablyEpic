@@ -32,6 +32,18 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
     
 
   } 
+  else if (effectName === "Antumbra, Shadow of the Cosmos (19)") {
+    activeEffect = effectData.find((effect) => effect.name === "Antumbra, Shadow of the Cosmos");
+    const effect = activeEffect.effects[0];
+
+    if (player.getSpec() === "Discipline Priest") {
+      // Unfortunately Disc is not able to benefit from the 19 stack strategy as their healing requires that they DPS.
+      bonus_stats.versatility = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.avgStacks;
+    }
+    else {
+      bonus_stats.versatility = getProcessedValue(effect.coefficient, effect.table, itemLevel) * 19; 
+    } 
+  } 
   else if (effectName === "Soulwarped Seal of Wrynn") {
     const effect = activeEffect.effects[0];
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
