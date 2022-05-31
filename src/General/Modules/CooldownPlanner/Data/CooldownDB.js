@@ -379,7 +379,7 @@ export const cooldownDB = [
     guid: 323764,
     icon: require("Images/CooldownPlanner/SpellIcons/ability_ardenweald_druid.jpg").default,
     duration: 4,
-    cooldown: 120,
+    cooldown: 60,
     class: "RestorationDruid",
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
