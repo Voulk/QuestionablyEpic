@@ -184,7 +184,7 @@ export default function AddPlanDialog(props) {
       <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="xs" fullWidth>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="fullWidth">
           <Tab label="Create New Plan" {...a11yProps(0)} />
-          <Tab label="WCL Import" {...a11yProps(1)} />
+          <Tab label="Import Plan from WCL" {...a11yProps(1)} />
         </Tabs>
         <TabPanel value={value} index={0}>
           <DialogContent sx={{ padding: "8px" }}>
