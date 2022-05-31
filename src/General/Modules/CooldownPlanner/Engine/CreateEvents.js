@@ -4,6 +4,7 @@ import createjailerEvents from "./BossEvents/SepulcherEvents/Jailer";
 import createAnduinEvents from "./BossEvents/SepulcherEvents/Anduin";
 import createVigilantEvents from "./BossEvents/SepulcherEvents/Vigilant";
 import createXymoxEvents from "./BossEvents/SepulcherEvents/Xymox";
+import createPantheonEvents from "./BossEvents/SepulcherEvents/Pantheon";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData) {
   let returnedEvents = [];
@@ -20,6 +21,10 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
   /* -------------------------------------------- Xymox ------------------------------------------- */
   if (bossID === 2553) {
     returnedEvents = createXymoxEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
+  }
+  /* ------------------------------------------ Pantheon ------------------------------------------ */
+  if (bossID === 2544) {
+    returnedEvents = createPantheonEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
   }
   /* ------------------------------------------- Anduin ------------------------------------------- */
   if (bossID === 2546) {
