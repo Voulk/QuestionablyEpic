@@ -5,6 +5,7 @@ import createAnduinEvents from "./BossEvents/SepulcherEvents/Anduin";
 import createVigilantEvents from "./BossEvents/SepulcherEvents/Vigilant";
 import createXymoxEvents from "./BossEvents/SepulcherEvents/Xymox";
 import createPantheonEvents from "./BossEvents/SepulcherEvents/Pantheon";
+import createDesaugneEvents from "./BossEvents/SepulcherEvents/Desaugne";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData) {
   let returnedEvents = [];
@@ -17,6 +18,10 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
   /* ------------------------------------------ Vigilant ------------------------------------------ */
   if (bossID === 2512) {
     returnedEvents = createVigilantEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
+  }
+
+  if (bossID === 2540) {
+    returnedEvents = createDesaugneEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
   }
   /* -------------------------------------------- Xymox ------------------------------------------- */
   if (bossID === 2553) {
