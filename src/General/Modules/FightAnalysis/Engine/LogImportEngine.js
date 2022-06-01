@@ -2,6 +2,7 @@
 import { addMissingTimestamps, getUniqueObjectsFromArray, reduceTimestamps, fightDuration, importHealerLogData, importDamageLogData, importCastsLogData,
   durationmaker, sumDamage, importSummaryData, importExternalCastsLogData, importCharacterIds, importEnemyCasts, importEnemyIds, importRaidHealth } from "../../CooldownPlanner/Functions/Functions";
 import moment from "moment";
+import { cooldownDB } from "../../CooldownPlanner/Data/CooldownDB";
 
 /* =============================================
    This Function Imports all the Data for the Chart/Log Details
@@ -127,6 +128,12 @@ export default async function updatechartdata(starttime, endtime) {
   /* ---- Map CD Casts with duration function to add extra data for the times the CD is active ---- */
   /* ------------- These are pushed into the new array healerDurations during the map ------------- */
   cooldowns
+    .filter((key) =>
+      cooldownDB
+        .filter((filter) => filter.cdPlannerImport === true)
+        .map((obj) => obj.guid)
+        .includes(key.ability.guid),
+    )
     .map((key) => ({
       ability: key.ability.name,
       guid: key.ability.guid,
@@ -171,23 +178,30 @@ export default async function updatechartdata(starttime, endtime) {
   }));
 
   /* ------------------------- Map cooldown casts for the Timeline Table. ------------------------- */
-  const updateddatacastsTimeline = cooldowns.map((key) => ({
-    ability: key.ability.name,
-    guid: key.ability.guid,
-    timestamp: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
-    name: healerIDName
-      .filter((obj) => {
-        return obj.id === key.sourceID;
-      })
-      .map((obj) => obj.name)
-      .toString(),
-    class: healerIDName
-      .filter((obj) => {
-        return obj.id === key.sourceID;
-      })
-      .map((obj) => obj.class)
-      .toString(),
-  }));
+  const updateddatacastsTimeline = cooldowns
+    .filter((key) =>
+      cooldownDB
+        .filter((filter) => filter.cdPlannerImport === true)
+        .map((obj) => obj.guid)
+        .includes(key.ability.guid),
+    )
+    .map((key) => ({
+      ability: key.ability.name,
+      guid: key.ability.guid,
+      timestamp: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
+      name: healerIDName
+        .filter((obj) => {
+          return obj.id === key.sourceID;
+        })
+        .map((obj) => obj.name)
+        .toString(),
+      class: healerIDName
+        .filter((obj) => {
+          return obj.id === key.sourceID;
+        })
+        .map((obj) => obj.class)
+        .toString(),
+    }));
 
   /* ------------------------- Map cooldown casts for the Timeline Table. ------------------------- */
   const updateddatacastsExternalsTimeline = externals.map((key) => ({
@@ -339,7 +353,7 @@ export default async function updatechartdata(starttime, endtime) {
     /* ------------------ Unmitigated Chart Data - With Cooldowns Used from the log ----------------- */
     unmitigatedChartData: sortedDataUnmitigatedWithCooldowns,
     mitigatedChartData: sortedDataMitigatedDamageWithCooldowns,
-    
+
     Updateddatacasts: updateddatacastsTimeline,
     abilityList: uniqueArray,
     cooldownlist: uniqueArrayCD,

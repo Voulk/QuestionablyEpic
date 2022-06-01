@@ -249,7 +249,7 @@ export const cooldownDB = [
     cooldown: 45,
     class: "Priest",
     cdPlannerMenuActive: false,
-    cdPlannerImport: true,
+    cdPlannerImport: false,
   },
   {
     name: {
