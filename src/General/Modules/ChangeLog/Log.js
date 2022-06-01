@@ -9,6 +9,15 @@
 
 export const changeLog = [
   {
+    version: "9.2 / 2.5.4",
+    update: 16,
+    date: "18th April (Minor)",
+    changes: [ 
+      "Shields will once again appear in the Upgrade Finder for Paladins / Shamans.",
+      "The Paladin 4pc bonus should no longer be heavily undervalued in dungeons.",
+    ],
+  },
+  {
     version: "9.2 / 2.5.3",
     update: 15,
     date: "20th April (Major)",

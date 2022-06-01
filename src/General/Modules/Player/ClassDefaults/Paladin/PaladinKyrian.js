@@ -17,7 +17,7 @@ export const paladinKyrianSpellData = (contentType) => {
     };
   } else if (contentType === "Dungeon") {
     spellList = {
-      225311: { cpm: 1.1, avgcast: 12501, hps: 229, overhealing: 0.29 }, // Light of Dawn
+      225311: { cpm: 8.71, avgcast: 16173, hps: 2575, overhealing: 0.39 }, // Light of Dawn
       85673: { cpm: 5.4, avgcast: 9420, hps: 961, overhealing: 0.18 }, // Word of Glory
       25914: { cpm: 7.94, avgcast: 8242, hps: 1406, overhealing: 0.19 }, // Holy Shock
       337824: { cpm: 0, avgcast: 0, hps: 793, overhealing: 0.21 }, // Shock Barrier
