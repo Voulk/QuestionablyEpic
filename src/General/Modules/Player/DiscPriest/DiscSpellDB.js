@@ -30,7 +30,7 @@ export const DISCSPELLS = {
         cost: 1250,
         coeff: 0.744642, // 0.9792 x 0.809 (Mind Blast aura) x 0.94 (Disc aura)
         cooldown: 15,
-        atoneOverheal: 0.15,
+        atoneOverheal: 0.29,
         secondaries: ['crit', 'vers']
     }],
     "Power Word: Solace": [{
@@ -39,7 +39,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 0.752,
         cooldown: 15,
-        atoneOverheal: 0.17,
+        atoneOverheal: 0.3,
         secondaries: ['crit', 'vers']
     }],
     "Smite": [{
@@ -48,7 +48,7 @@ export const DISCSPELLS = {
         cost: 200,
         coeff: 0.497025, // 0.47 x 1.5 (smite rank 2) x 0.75 (smite aura nerf) x 0.94 (disc aura nerf)
         cooldown: 0,
-        atoneOverheal: 0.15,
+        atoneOverheal: 0.26,
         secondaries: ['crit', 'vers'],
     }],
     "Mindgames": [{
@@ -57,7 +57,7 @@ export const DISCSPELLS = {
         cost: 1000,
         coeff: 2.397, // 3 x 0.94 (disc aura nerf) x 0.85 (Mindgames specific aura nerf)
         cooldown: 40,
-        atoneOverheal: 0.15,
+        atoneOverheal: 0.22,
         secondaries: ['crit', 'vers'],
     }],
     "Schism": [{
@@ -66,7 +66,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 1.41,
         buffDuration: 9,
-        atoneOverheal: 0.15,
+        atoneOverheal: 0.27,
         secondaries: ['crit', 'vers'],
     }],
     "Penance": [{
@@ -75,7 +75,7 @@ export const DISCSPELLS = {
         cost: 800,
         coeff: 1.128, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
-        atoneOverheal: 0.18,
+        atoneOverheal: 0.26,
         secondaries: ['crit', 'vers'],
     }],
     "PenanceTick": [{
@@ -83,7 +83,7 @@ export const DISCSPELLS = {
         castTime: 0.66, // This will still be dynamically adjusted at runtime.
         cost: 0,
         coeff: 0.376,
-        atoneOverheal: 0.18,
+        atoneOverheal: 0.26,
         secondaries: ['crit', 'vers'],
     }],
     "Ascended Blast": 
@@ -94,7 +94,7 @@ export const DISCSPELLS = {
         coeff: 1.68,
         aura: 1,
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.16,
+        atoneOverheal: 0.34,
         },
         {
             type: "heal",
@@ -113,7 +113,7 @@ export const DISCSPELLS = {
         coeff: 0.7,
         aura: 1,
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.12,
+        atoneOverheal: 0.32,
         },
         {
             type: "heal",
@@ -132,7 +132,7 @@ export const DISCSPELLS = {
         coeff: 1.68,
         aura: 1,
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.2,
+        atoneOverheal: 0.42,
         },
         {
             type: "heal",
@@ -196,7 +196,7 @@ export const DISCSPELLS = {
         coeff: 0.21,
         aura: 1,
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.1,
+        atoneOverheal: 0.2,
         dot: {
             tickRate: 2,
             coeff: 0.12,
@@ -211,7 +211,7 @@ export const DISCSPELLS = {
         coeff: 0.13,
         aura: 1,
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.13,
+        atoneOverheal: 0.22,
         dot: {
             tickRate: 1.5,
             coeff: 0.46,

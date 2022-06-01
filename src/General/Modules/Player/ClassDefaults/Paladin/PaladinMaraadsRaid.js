@@ -40,8 +40,8 @@ export const paladinMaraadsSpellData = (contentType) => {
         cooldownMult: {
           oneMinute: 1.2,
           ninetySeconds: 1,
-          twoMinutes: 1.26,
-          twoMinutesOrb: 1.24,
+          twoMinutes: 1.22,
+          twoMinutesOrb: 1.2,
           threeMinutes: 1,
         },
         HoldYourGroundUptime: 0.4
