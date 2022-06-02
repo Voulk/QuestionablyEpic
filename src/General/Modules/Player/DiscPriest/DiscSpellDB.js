@@ -32,6 +32,15 @@ export const DISCSPELLS = {
         cooldown: 15,
         atoneOverheal: 0.29,
         secondaries: ['crit', 'vers']
+    },
+    {
+        type: "heal",
+        castTime: 0,
+        coeff: 3,
+        aura: 1,
+        targets: 1,
+        secondaries: ['vers'],
+        overheal: 0,
     }],
     "Power Word: Solace": [{
         type: "damage",
@@ -144,6 +153,29 @@ export const DISCSPELLS = {
             tags: ['sqrt'],
             overheal: 0.3,
         }],
+    "Divine Star": 
+    // Divine Star deals damage and heals both on the way out and on the way back. 
+    // We won't be modelling the time right now, but this is possible in future when we upgrade the base engine.
+    // Instead we're just doubling the coefficients so that both are taken into account.
+    [{
+    type: "damage",
+    castTime: 1.5,
+    cost: 1000,
+    coeff: 0.56 * 2,
+    aura: 1,
+    secondaries: ['crit', 'vers'],
+    atoneOverheal: 0.2,
+    },
+    {
+        type: "heal",
+        castTime: 0,
+        coeff: 0.7 * 2,
+        aura: 1,
+        targets: 6,
+        secondaries: ['crit', 'vers'],
+        //tags: ['sqrt'],
+        overheal: 0.4,
+    }],
     "Power Word: Shield": [{
         type: "heal",
         castTime: 1.5,

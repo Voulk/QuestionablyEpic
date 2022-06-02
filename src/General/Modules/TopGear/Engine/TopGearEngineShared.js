@@ -74,6 +74,9 @@ export function formatReport(report) {
 
     })
 
+    console.log("Damage Breakdown: " + JSON.stringify(rampData.damageBreakdown));
+    console.log("Healing Breakdown: " + JSON.stringify(rampData.healingBreakdown))
+
     console.log("Note: Penitent One is currently coded as an increase to each Penance tick instead of adding ticks. This is -slightly- less accurate and will be corrected.");
     
     /*

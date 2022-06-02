@@ -35,6 +35,28 @@ const rampShortener = (seq) => {
     return shortRamp
 }
 
+const addBreakdowns = (obj, newObj, miniRamp) => {
+    for (const [key, value] of Object.entries(newObj)) {
+        if (key in obj) {
+            obj[key] = Math.round(value + newObj[key]);
+        }
+        else {
+            obj[key] = Math.round(newObj[key])
+        }
+    }
+
+    for (const [key, value] of Object.entries(miniRamp)) {
+        if (key in obj) {
+            obj[key] = Math.round(value + newObj[key] * 2);
+        }
+        else {
+            obj[key] = Math.round(newObj[key] * 2)
+        }
+    }
+
+    return obj;
+}
+
 
 export const allRampsHealing = (boonSeq, fiendSeq, stats, settings = {}, conduits, reporting = false) => {
     const rampResult = allRamps(boonSeq, fiendSeq, stats, settings, conduits, reporting);
@@ -62,6 +84,10 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits, repo
         rampResult.ramps.push({"tag": "Fiend Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(fiendSeq), "totalHealing": Math.round(fiendRamp.totalHealing)});
         rampResult.ramps.push({"tag": "Mini Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(miniSeq), "totalHealing": Math.round(miniRamp.totalHealing)});
         rampResult.stats = stats;
+
+        rampResult.damageBreakdown = addBreakdowns(boonRamp.damageDone, fiendRamp.damageDone, miniRamp.damageDone);
+        rampResult.healingBreakdown = addBreakdowns(boonRamp.healingDone, fiendRamp.healingDone, miniRamp.healingDone);
+
         //rampResult.conduits = conduits;
         
      

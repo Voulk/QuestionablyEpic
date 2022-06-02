@@ -20,6 +20,7 @@ export const buildRamp = (type, applicators, trinkets, haste, playstyle, special
     const talents = ['Power Word: Solace', 'Divine Star']
     if (talents.includes('Power Word: Solace')) specialSpells.push('Power Word: Solace');
     if (talents.includes('Purge the Wicked')) specialSpells.push('Purge the Wicked');
+    if (talents.includes('Divine Star')) specialSpells.push("Divine Star");
 
     const trinketList = buildTrinkets(trinkets);
     if (type === "Mini") {
@@ -95,21 +96,13 @@ export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle) =
     sequence.push('Mind Blast');
     sequence.push('Power Word: Solace');
     sequence.push('Penance');
-    /*
-    sequence.push('PenanceTick');
-    sequence.push('PenanceTick');
-    sequence.push('PenanceTick'); */
+    if (specialSpells.includes("Divine Star")) sequence.push("Divine Star");
 
     for (var i = 0; i < 4; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
         sequence.push('Smite');
     }
     sequence.push('Penance');
-    /*
-    sequence.push('PenanceTick');
-    sequence.push('PenanceTick');
-    sequence.push('PenanceTick');
-    */
 
     for (var i = 0; i < 6; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
@@ -154,11 +147,8 @@ export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle) =
     sequence.push('Schism');
     if (playstyle.includes("Venthyr")) sequence.push('Mindgames');
     sequence.push('Penance');
-    /*
-    sequence.push('PenanceTick');
-    sequence.push('PenanceTick');
-    sequence.push('PenanceTick'); */
     sequence.push('Mind Blast');
+    if (specialSpells.includes("Divine Star")) sequence.push("Divine Star");
     sequence.push('Power Word: Solace');
 
     for (var i = 0; i < 3; i++) {
@@ -166,10 +156,6 @@ export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle) =
         sequence.push('Smite');
     }
     sequence.push('Penance');
-    /*
-    sequence.push('PenanceTick');
-    sequence.push('PenanceTick');
-    sequence.push('PenanceTick'); */
 
     for (var i = 0; i < 8; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
@@ -288,12 +274,8 @@ export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = 
     // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     sequence.push('Schism');
     sequence.push('Mindgames')
-    /*
-    sequence.push('PenanceTick');
-    sequence.push('PenanceTick');
-    sequence.push('PenanceTick');
-    */
     sequence.push('Penance');
+    if (specialSpells.includes("Divine Star")) sequence.push("Divine Star");
     sequence.push('Mind Blast');
     sequence.push('Power Word: Solace');
 
