@@ -17,6 +17,10 @@
  * @returns The function returns a sequence of spells (which might include trinket uses).
  */
 export const buildRamp = (type, applicators, trinkets, haste, playstyle, specialSpells = []) => {
+    const talents = ['Power Word: Solace', 'Divine Star']
+    if (talents.includes('Power Word: Solace')) specialSpells.push('Power Word: Solace');
+    if (talents.includes('Purge the Wicked')) specialSpells.push('Purge the Wicked');
+
     const trinketList = buildTrinkets(trinkets);
     if (type === "Mini") {
         return buildMiniRamp(applicators, trinkets, specialSpells, playstyle);
@@ -77,7 +81,10 @@ const buildTrinkets = (trinkets) => {
  * @returns Returns a sequence of spells representing a mini ramp.
  */
 export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle) => {
-    let sequence = ['Purge the Wicked']
+    let sequence = [];
+    if (specialSpells.includes('Purge the Wicked')) sequence.push('Purge the Wicked');
+    else sequence.push('Shadow Word: Pain');
+
     for (var x = 0; x < applicators; x++) {
         sequence.push('Power Word: Shield');
     }
@@ -87,17 +94,22 @@ export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle) =
     if (playstyle.includes("Venthyr")) sequence.push("Mindgames");
     sequence.push('Mind Blast');
     sequence.push('Power Word: Solace');
+    sequence.push('Penance');
+    /*
     sequence.push('PenanceTick');
     sequence.push('PenanceTick');
-    sequence.push('PenanceTick');
+    sequence.push('PenanceTick'); */
 
     for (var i = 0; i < 4; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
         sequence.push('Smite');
     }
+    sequence.push('Penance');
+    /*
     sequence.push('PenanceTick');
     sequence.push('PenanceTick');
     sequence.push('PenanceTick');
+    */
 
     for (var i = 0; i < 6; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
@@ -116,7 +128,9 @@ export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle) =
  * @returns Returns a sequence of spells representing a Shadowfiend ramp.
  */
 export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle) => {
-    let sequence = ['Purge the Wicked']
+    let sequence = []
+    if (specialSpells.includes('Purge the Wicked')) sequence.push('Purge the Wicked');
+    else sequence.push('Shadow Word: Pain');
     
     // Shadowed Orb lasts a very long time so if we're using it we're safe to use it at the start of our ramp (or before).
     if (trinket === "Shadowed Orb of Torment") sequence.push("Shadowed Orb");
@@ -139,9 +153,11 @@ export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle) =
     // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     sequence.push('Schism');
     if (playstyle.includes("Venthyr")) sequence.push('Mindgames');
+    sequence.push('Penance');
+    /*
     sequence.push('PenanceTick');
     sequence.push('PenanceTick');
-    sequence.push('PenanceTick');
+    sequence.push('PenanceTick'); */
     sequence.push('Mind Blast');
     sequence.push('Power Word: Solace');
 
@@ -149,9 +165,11 @@ export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle) =
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
         sequence.push('Smite');
     }
+    sequence.push('Penance');
+    /*
     sequence.push('PenanceTick');
     sequence.push('PenanceTick');
-    sequence.push('PenanceTick');
+    sequence.push('PenanceTick'); */
 
     for (var i = 0; i < 8; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
@@ -171,7 +189,9 @@ export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle) =
  * @returns Returns a sequence representing a Boon Evangelism ramp.
  */
 export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = []) => {
-    let sequence = ['Purge the Wicked']
+    let sequence = []
+    if (specialSpells.includes('Purge the Wicked')) sequence.push('Purge the Wicked');
+    else sequence.push('Shadow Word: Pain');
     
     if (trinket === "Shadowed Orb of Torment") sequence.push("Shadowed Orb");
     if (specialSpells.includes("Rapture")) {sequence.push('Rapture'); applicators -= 1 };
@@ -196,9 +216,10 @@ export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = 
     if (specialSpells.includes("4T28")) {
         // If we have 4pc, Penance after our second Blast instead of double Nova.
         sequence.push('Ascended Blast');
-        sequence.push('PenanceTick');
-        sequence.push('PenanceTick');
-        sequence.push('PenanceTick');
+        //sequence.push('PenanceTick');
+        //sequence.push('PenanceTick');
+        //sequence.push('PenanceTick');
+        sequence.push('Penance');
         boonDuration -= (1.5 + 2) / hastePerc;
     }
 
@@ -243,7 +264,9 @@ export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = 
  */
  export const buildMindgamesRamp = (applicators, trinket, specialSpells, playstyle) => {
 
-    let sequence = ['Purge the Wicked']
+    let sequence = []
+    if (specialSpells.includes('Purge the Wicked')) sequence.push('Purge the Wicked');
+    else sequence.push('Shadow Word: Pain');
     
     // Shadowed Orb lasts a very long time so if we're using it we're safe to use it at the start of our ramp (or before).
     if (trinket === "Shadowed Orb of Torment") sequence.push("Shadowed Orb");
@@ -265,9 +288,12 @@ export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = 
     // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     sequence.push('Schism');
     sequence.push('Mindgames')
+    /*
     sequence.push('PenanceTick');
     sequence.push('PenanceTick');
     sequence.push('PenanceTick');
+    */
+    sequence.push('Penance');
     sequence.push('Mind Blast');
     sequence.push('Power Word: Solace');
 
@@ -275,9 +301,12 @@ export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = 
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
         sequence.push('Smite');
     }
+    /*
     sequence.push('PenanceTick');
     sequence.push('PenanceTick');
     sequence.push('PenanceTick');
+    */
+    sequence.push('Penance');
 
     for (var i = 0; i < 8; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 

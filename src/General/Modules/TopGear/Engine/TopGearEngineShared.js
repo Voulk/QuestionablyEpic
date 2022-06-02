@@ -56,7 +56,9 @@ return temp.slice(0, softSlice);
 export function formatReport(report) {
     const rampData = report.ramp;
     const statData = rampData.stats;
+    console.log("This is a developer / TC focused preview of the upcoming report functionality. If there's anything you'd like to see on it please DM me.")
     console.log("== Set Ramp Information == ")
+    console.log("Total Healing Done: " + Math.round(rampData.totalHealing));
     console.log("Settings: " + JSON.stringify(rampData.rampSettings))
     
     for (const [stat, value] of Object.entries(statData)) {
@@ -72,6 +74,8 @@ export function formatReport(report) {
 
     })
 
+    console.log("Note: Penitent One is currently coded as an increase to each Penance tick instead of adding ticks. This is -slightly- less accurate and will be corrected.");
+    
     /*
     console.log("Total Healing: " + Math.round(rampResult.totalHealing));
     console.log("Legendaries used: Clarity of Mind");

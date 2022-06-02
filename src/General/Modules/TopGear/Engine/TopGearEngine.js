@@ -524,8 +524,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   builtSet.enchantBreakdown = enchants;
   builtSet.report = report;
   //
-  formatReport(report);
-  console.log(JSON.stringify(effectList));
+  //if (player.spec() === "Discipline Priest" && contentType === "Raid") formatReport(report);
+  //console.log(JSON.stringify(effectList));
   itemSet.effectList = effectList;
   
   return builtSet;

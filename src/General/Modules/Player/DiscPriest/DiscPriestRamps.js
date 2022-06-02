@@ -96,6 +96,7 @@ const extendActiveAtonements = (atoneApp, timer, extension) => {
 
 // Removes a stack of a buff, and removes the buff entirely if it's down to 0 or doesn't have a stack mechanic.
 const removeBuffStack = (buffs, buffName) => {
+    
     const buff = buffs.filter(buff => buff.name === buffName)[0]
     const buffStacks = buff.stacks || 0;
 
@@ -268,6 +269,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
             conduits['Shining Radiance'] = 252;
             conduits['Rabid Shadows'] = 252;
             conduits['Courageous Ascension'] = 252;
+            settings['4T28'] = true;
         }
         else if (settings.playstyle === "Venthyr Evangelism") {
             settings['Penitent One'] = true;
@@ -276,6 +278,8 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
             conduits['Shining Radiance'] = 252;
             conduits['Rabid Shadows'] = 252;
             conduits['Swift Penitence'] = 252;
+            settings['4T28'] = true;
+            console.log("Loading Defaults");
             //conduits['Courageous Ascension'] = 252;
         }
 
@@ -301,10 +305,6 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
         buffDuration: 10,
     });
 
-    // -- Penitent One --
-    // Power Word: Radiance has a chance to make your next Penance free, and fire 3 extra bolts.
-    // This is a close estimate, and could be made more accurate by tracking the buff and adding ticks instead of power.
-    if (settings['Penitent One']) discSpells['PenanceTick'][0].coeff = discSpells['PenanceTick'][0].coeff * (0.84 * 2); 
     //
 
     // === Soulbinds ===
@@ -322,6 +322,37 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
         buffDuration: 30,
     });
     if (settings['Kleia']) state.activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
+
+    // -- Penitent One --
+    // Power Word: Radiance has a chance to make your next Penance free, and fire 3 extra bolts.
+    // This is a close estimate, and could be made more accurate by tracking the buff and adding ticks instead of power.
+    //if (settings['Penitent One']) discSpells['PenanceTick'][0].coeff = discSpells['PenanceTick'][0].coeff * (0.84 * 2); 
+
+    if (settings['Penitent One']) {
+        // Penitent One is a bit odd in that it is technically a percentage chance rather than a guarantee.
+        // We could roll for the probability on Radiance cast but this is problematic because a weaker set could beat a stronger one
+        // based on stronger rolls during Top Gear.
+        // To get around this, we'll add the ticks always, but lower their strength according to the percentage chance to proc.
+        // On a double radiance then we have an 84% chance to get a proc so we'll multiply our 3 extra Penance ticks by that number.
+
+        // To recap:
+        // Penance without proc: 3 ticks at 100% strength.
+        // Penance with proc: 6 ticks at 100% strength.
+        // Including probability: Penance with proc is 6 ticks at 92% strength (3 + 3 * 0.84)
+        
+        discSpells['Power Word: Radiance'].push({
+            name: "Penitent One",
+            type: "buff",
+            buffType: "special",
+            value: 6,
+            buffDuration: 20,
+            castTime: 0,
+            stacks: 1,
+            canStack: false, 
+        });
+
+    }
+
     if (settings['4T28']) {
         // If player has 4T28, then hook Power of the Dark Side into Power Word Radiance.
         
@@ -332,14 +363,15 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
             value: 1.95,
             buffDuration: 20,
             castTime: 0,
-            stacks: 3,
+            stacks: 1,
+            canStack: true,
         });
 
     }
     else {
         // If player doesn't have 4T28, then we might still opt to start them with a PotDS proc on major ramps since the chance of it being active is extremely high.
         // This is unnecessary with 4pc since we'll always have a PotDS proc during our sequences due to Radiance always coming before Penance.
-        if (settings['Power of the Dark Side']) state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: 1.5, stacks: 3})
+        if (settings['Power of the Dark Side']) state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: 1.5, stacks: 1, canStack: true})
     }
     
     //
@@ -410,13 +442,15 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
  */
 export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     //console.log("Running cast sequence");
+    const dotName = "Shadow Word: Pain";
     let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: conduits, manaSpent: 0, settings: settings, 
                     conduits: conduits, boonOfTheAscended: 0, reporting: true}
     // Boon of the Ascended holds our active Boon of the Ascended stacks. This should be refactored into our buffs array.
 
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
-    let purgeTicks = []; // Purge tick timestamps
+    let purgeTicks = []; // Purge or Shadow Word: Pain tick timestamps
     let fiendTicks = []; // Fiend "tick" timestamps
+
     //let activeBuffs = []; // Active buffs on our character: includes stat buffs, Boon of the Ascended and so on. 
     //let damageBreakdown = {}; // A statistics object that holds a tally of our damage from each spell.
     //let healing = {};
@@ -446,14 +480,14 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
             purgeTicks.shift();
             const activeAtonements = getActiveAtone(atonementApp, timer)
-            const damageVal = DISCSPELLS['Purge the Wicked'][0].dot.coeff * currentStats.intellect * getStatMult(currentStats, ['crit', 'vers']);
+            const damageVal = DISCSPELLS[dotName][0].dot.coeff * currentStats.intellect * getStatMult(currentStats, ['crit', 'vers']);
             const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, conduits)
 
             if (purgeTicks.length === 0) {
                 // If this is the last Purge tick, add a partial tick.
                 const partialTickPercentage = ((getHaste(currentStats) - 1) % 0.1) * 10;
 
-                state.damageDone['Purge the Wicked'] = (state.damageDone['Purge the Wicked'] || 0) + damageVal * damMultiplier * partialTickPercentage;
+                state.damageDone[dotName] = (state.damageDone[dotName] || 0) + damageVal * damMultiplier * partialTickPercentage;
                 totalDamage += damageVal;
                 state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + activeAtonements * damageVal * damMultiplier * getAtoneTrans(currentStats.mastery) * partialTickPercentage;
 
@@ -569,7 +603,8 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                         if (buffStacks === 0) state.activeBuffs.push({name: spell.name, expiration: state.t + spell.castTime + spell.buffDuration, buffType: "special", value: spell.value, stacks: spell.stacks});
                         else {
                             const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
-                            buff.stacks += 1;
+                            if (buff.canStack) buff.stacks += 1;
+                            
 
                         }
                     }     
@@ -613,6 +648,28 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 }
                 else if (spellName === "Ascended Nova") {
                     state.boonOfTheAscended += 1 / 2;
+                }
+                else if (spellName === "Penance") {
+                    //state.boonOfTheAscended += 1 / 2;
+                    if (checkBuffActive(state.activeBuffs, "Penitent One")) {
+                        discSpells['PenanceTick'][0].castTime = 2 / 6;
+                        discSpells['PenanceTick'][0].coeff = 0.376 * 0.92;
+
+                        for (var i = 0; i < 6; i++) {
+                            seq.unshift("PenanceTick");
+                        }
+
+                        removeBuffStack(state.activeBuffs, "Penitent One"); 
+
+
+                    }
+                    else {
+                        discSpells['PenanceTick'][0].castTime = 2 / 3;
+                        discSpells['PenanceTick'][0].coeff = 0.376;
+                        for (var i = 0; i < 3; i++) {
+                            seq.unshift("PenanceTick");
+                        }
+                    }
                 }
                 
                 // This represents the next timestamp we are able to cast a spell. This is equal to whatever is higher of a spells cast time or the GCD.

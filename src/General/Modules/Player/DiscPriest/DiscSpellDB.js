@@ -204,6 +204,21 @@ export const DISCSPELLS = {
             duration: 26, // 20 x 1.3
         }
     }],
+    "Shadow Word: Pain": [{
+        type: "damage",
+        castTime: 1.5,
+        cost: 900,
+        coeff: 0.1292,
+        aura: 1,
+        secondaries: ['crit', 'vers'],
+        atoneOverheal: 0.2,
+        dot: {
+            tickRate: 2,
+            coeff: 0.09588,
+            aura: 1,
+            duration: 15.6, // 12 x 1.3
+        }
+    }],
     "Shadowfiend": [{
         type: "",
         castTime: 1.5,
