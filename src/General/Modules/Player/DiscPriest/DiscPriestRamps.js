@@ -87,7 +87,7 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits, repo
 
         rampResult.damageBreakdown = addBreakdowns(boonRamp.damageDone, fiendRamp.damageDone, miniRamp.damageDone);
         rampResult.healingBreakdown = addBreakdowns(boonRamp.healingDone, fiendRamp.healingDone, miniRamp.healingDone);
-
+        rampResult.manaSpent = boonRamp.manaSpent + fiendRamp.manaSpent + miniRamp.manaSpent * 2;
         //rampResult.conduits = conduits;
         
      
@@ -562,10 +562,12 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             // We'll iterate through the different effects the spell has.
             // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,
             // and the absorb effect).
+            state.manaSpent += fullSpell[0].cost;
             fullSpell.forEach(spell => {
                 //console.log(spellName + "(" + state.t + "): " + JSON.stringify(state));
                 // The spell is an atonement applicator. Add atonement expiry time to our array.
                 // The spell data will tell us whether to apply atonement at the start or end of the cast.
+               
                 if (spell.atonement) {
                     for (var i = 0; i < spell.targets; i++) {
                         let atoneDuration = spell.atonement;
@@ -697,6 +699,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                         }
                     }
                 }
+                
                 
                 // This represents the next timestamp we are able to cast a spell. This is equal to whatever is higher of a spells cast time or the GCD.
                 nextSpell += (spell.castTime / getHaste(currentStats));

@@ -56,28 +56,33 @@ return temp.slice(0, softSlice);
 export function formatReport(report) {
     const rampData = report.ramp;
     const statData = rampData.stats;
-    console.log("This is a developer / TC focused preview of the upcoming report functionality. If there's anything you'd like to see on it please DM me.")
+    console.log("This is a developer / TC focused preview of the upcoming report functionality. If there's anything you'd like to see on it please DM me. The mini-ramp is run twice per cycle.")
     console.log("== Set Ramp Information == ")
-    console.log("Total Healing Done: " + Math.round(rampData.totalHealing));
+    console.log("Total Healing Done: " + Math.round(rampData.totalHealing) + " (" + Math.round(rampData.totalHealing / rampData.manaSpent * 100) / 100 +"hpm)");
     console.log("Settings: " + JSON.stringify(rampData.rampSettings))
+    
     
     for (const [stat, value] of Object.entries(statData)) {
         statData[stat] = Math.round(value);
       }
 
-    console.log("Stats: " + JSON.stringify(statData));
-
+    console.log("Stats (may include proc averages): " + JSON.stringify(statData));
+    console.log("--------------------------")
     rampData.ramps.forEach(ramp => {
-        console.log("Ramp Name: " + ramp.tag + " (" + Math.round(ramp.totalHealing) + " healing)");
+        console.log("=> Ramp Name: " + ramp.tag + " (" + Math.round(ramp.totalHealing) + " healing)");
         console.log("Pre-ramp conditions: " + ramp.prerampConditions);
         console.log(ramp.sequence);
 
     })
 
-    console.log("Damage Breakdown: " + JSON.stringify(rampData.damageBreakdown));
-    console.log("Healing Breakdown: " + JSON.stringify(rampData.healingBreakdown))
+    console.log("--------------------------")
+    console.log("= Total Damage Breakdown =")
+    console.log(JSON.stringify(rampData.damageBreakdown));
+    console.log("= Total Healing Breakdown =")
+    console.log(JSON.stringify(rampData.healingBreakdown));
+    console.log("===============================================")
 
-    console.log("Note: Penitent One is currently coded as an increase to each Penance tick instead of adding ticks. This is -slightly- less accurate and will be corrected.");
+    //console.log("Note: Penitent One is currently coded as an increase to each Penance tick instead of adding ticks. This is -slightly- less accurate and will be corrected.");
     
     /*
     console.log("Total Healing: " + Math.round(rampResult.totalHealing));
