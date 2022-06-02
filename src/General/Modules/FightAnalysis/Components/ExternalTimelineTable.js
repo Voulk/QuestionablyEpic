@@ -111,6 +111,7 @@ export default function ExternalTimeline(props) {
         {
           title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
           width: "2%",
+          hidden: true,
           cellStyle: {
             whiteSpace: "nowrap",
             padding: "2px 8px",
@@ -121,7 +122,8 @@ export default function ExternalTimeline(props) {
           },
           render: (rowData) => (
             <div>
-              {moment.utc(rowData.timestamp, "mm:ss")
+              {moment
+                .utc(rowData.timestamp, "mm:ss")
                 .add(
                   externalsDB
                     .filter((obj) => {
@@ -150,9 +152,8 @@ export default function ExternalTimeline(props) {
       components={{
         Container: (props) => <Paper {...props} elevation={0} />,
         Toolbar: (props) => (
-          <div style={{ marginBottom: 8 }}>
+          <div style={{ marginBottom: 4 }}>
             <MTableToolbar {...props} />
-            <Divider />
           </div>
         ),
       }}

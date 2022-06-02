@@ -249,21 +249,23 @@ export default function HealerInfoCards(props) {
                             justifyContent: "center",
                           }}
                         >
-                          {key.soulbindAbilities.map((ability, i) => (
-                            <a data-wowhead={"spell=" + ability.guid + "&domain=" + currentLanguage} key={i}>
-                              <img
-                                style={{
-                                  height: 30,
-                                  width: 30,
-                                  padding: 4,
-                                  verticalAlign: "middle",
-                                  borderRadius: "4px",
-                                }}
-                                src={process.env.PUBLIC_URL + "/Images/Icons/" + ability.abilityIcon}
-                                alt={"ability" + i}
-                              />
-                            </a>
-                          ))}
+                          {key.soulbindAbilities
+                            .filter((filter) => filter.guid !== 0)
+                            .map((ability, i) => (
+                              <a data-wowhead={"spell=" + ability.guid + "&domain=" + currentLanguage} key={i}>
+                                <img
+                                  style={{
+                                    height: 30,
+                                    width: 30,
+                                    padding: 4,
+                                    verticalAlign: "middle",
+                                    borderRadius: "4px",
+                                  }}
+                                  src={process.env.PUBLIC_URL + "/Images/Icons/" + ability.abilityIcon}
+                                  alt={"ability" + i}
+                                />
+                              </a>
+                            ))}
                         </div>
                       </Grid>
 
