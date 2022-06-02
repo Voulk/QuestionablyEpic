@@ -71,7 +71,7 @@ export function formatReport(report) {
     rampData.ramps.forEach(ramp => {
         console.log("=> Ramp Name: " + ramp.tag + " (" + Math.round(ramp.totalHealing) + " healing)");
         console.log("Pre-ramp conditions: " + ramp.prerampConditions);
-        console.log(ramp.sequence);
+        console.log(JSON.stringify(ramp.sequence));
 
     })
 

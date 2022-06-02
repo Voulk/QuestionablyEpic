@@ -57,7 +57,7 @@ export const DISCSPELLS = {
         cost: 200,
         coeff: 0.497025, // 0.47 x 1.5 (smite rank 2) x 0.75 (smite aura nerf) x 0.94 (disc aura nerf)
         cooldown: 0,
-        atoneOverheal: 0.26,
+        atoneOverheal: 0.28,
         secondaries: ['crit', 'vers'],
     }],
     "Mindgames": [{
@@ -66,7 +66,7 @@ export const DISCSPELLS = {
         cost: 1000,
         coeff: 2.397, // 3 x 0.94 (disc aura nerf) x 0.85 (Mindgames specific aura nerf)
         cooldown: 40,
-        atoneOverheal: 0.22,
+        atoneOverheal: 0.23,
         secondaries: ['crit', 'vers'],
     }],
     "Schism": [{
@@ -75,7 +75,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 1.41,
         buffDuration: 9,
-        atoneOverheal: 0.27,
+        atoneOverheal: 0.28,
         secondaries: ['crit', 'vers'],
     }],
     "Penance": [{
@@ -92,7 +92,7 @@ export const DISCSPELLS = {
         castTime: 0.66, // This will still be dynamically adjusted at runtime.
         cost: 0,
         coeff: 0.376,
-        atoneOverheal: 0.26,
+        atoneOverheal: 0.27,
         secondaries: ['crit', 'vers'],
     }],
     "Ascended Blast": 
@@ -103,7 +103,7 @@ export const DISCSPELLS = {
         coeff: 1.68,
         aura: 1,
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.34,
+        atoneOverheal: 0.36,
         },
         {
             type: "heal",
@@ -116,13 +116,13 @@ export const DISCSPELLS = {
         }],
     "Ascended Nova": 
         [{
-        type: "damage",
-        castTime: 1,
-        cost: 0,
-        coeff: 0.7,
-        aura: 1,
-        secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.32,
+            type: "damage",
+            castTime: 1,
+            cost: 0,
+            coeff: 0.7,
+            aura: 1,
+            secondaries: ['crit', 'vers'],
+            atoneOverheal: 0.34,
         },
         {
             type: "heal",
@@ -135,13 +135,13 @@ export const DISCSPELLS = {
         }],
     "Ascended Eruption": 
         [{
-        type: "damage",
-        castTime: 0,
-        cost: 0,
-        coeff: 1.68,
-        aura: 1,
-        secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.42,
+            type: "damage",
+            castTime: 0,
+            cost: 0,
+            coeff: 1.68,
+            aura: 1,
+            secondaries: ['crit', 'vers'],
+            atoneOverheal: 0.44,
         },
         {
             type: "heal",
@@ -158,13 +158,13 @@ export const DISCSPELLS = {
     // We won't be modelling the time right now, but this is possible in future when we upgrade the base engine.
     // Instead we're just doubling the coefficients so that both are taken into account.
     [{
-    type: "damage",
-    castTime: 1.5,
-    cost: 1000,
-    coeff: 0.56 * 2,
-    aura: 1,
-    secondaries: ['crit', 'vers'],
-    atoneOverheal: 0.2,
+        type: "damage",
+        castTime: 1.5,
+        cost: 1000,
+        coeff: 0.56 * 2,
+        aura: 1,
+        secondaries: ['crit', 'vers'],
+        atoneOverheal: 0.24,
     },
     {
         type: "heal",

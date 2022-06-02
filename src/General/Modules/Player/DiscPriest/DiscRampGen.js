@@ -93,9 +93,10 @@ export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle) =
     sequence.push('Power Word: Radiance');
     sequence.push('Schism');
     if (playstyle.includes("Venthyr")) sequence.push("Mindgames");
+    sequence.push('Penance');
     sequence.push('Mind Blast');
     sequence.push('Power Word: Solace');
-    sequence.push('Penance');
+    
     if (specialSpells.includes("Divine Star")) sequence.push("Divine Star");
 
     for (var i = 0; i < 4; i++) {
