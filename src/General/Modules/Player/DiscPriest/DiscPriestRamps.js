@@ -58,9 +58,12 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits, repo
     rampResult.totalHealing = boonRamp.totalHealing + fiendRamp.totalHealing + miniRamp.totalHealing * 2;
 
     if (reporting) {
-        rampResult.ramps.push({"tag": "Boon Ramp", "sequence": boonSeq, "totalHealing": boonRamp.totalHealing});
-        rampResult.ramps.push({"tag": "Fiend Ramp", "sequence": fiendSeq, "totalHealing": fiendRamp.totalHealing});
-        rampResult.ramps.push({"tag": "Mini Ramp", "sequence": miniSeq, "totalHealing": miniRamp.totalHealing});
+        rampResult.ramps.push({"tag": "Primary Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(boonSeq), "totalHealing": Math.round(boonRamp.totalHealing)});
+        rampResult.ramps.push({"tag": "Fiend Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(fiendSeq), "totalHealing": Math.round(fiendRamp.totalHealing)});
+        rampResult.ramps.push({"tag": "Mini Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(miniSeq), "totalHealing": Math.round(miniRamp.totalHealing)});
+        rampResult.stats = stats;
+        //rampResult.conduits = conduits;
+        
      
         /*
         console.log("== Set Ramp Information == ")

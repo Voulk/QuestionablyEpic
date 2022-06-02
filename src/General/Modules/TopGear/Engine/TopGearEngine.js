@@ -12,6 +12,7 @@ import { allRamps, allRampsHealing } from "General/Modules/Player/DiscPriest/Dis
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { buildBestDomSet } from "../Utilities/DominationGemUtilities";
 import { getItemSet } from "BurningCrusade/Databases/ItemSetsDBRetail.js";
+import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 
 /**
  * == Top Gear Engine ==
@@ -78,7 +79,7 @@ function autoSocketItems(itemList) {
  * @param {*} castModel
  * @returns A Top Gear result which includes the best set, and how close various alternatives are.
  */
-export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel, reporting = false) {
+export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel, reporting = true) {
   //console.log("Running Top Gear")
   // == Setup Player & Cast Model ==
   // Create player / cast model objects in this thread based on data from the player character & player model.
@@ -521,6 +522,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
   builtSet.report = report;
+  //
+  formatReport(report);
   itemSet.effectList = effectList;
   
   return builtSet;

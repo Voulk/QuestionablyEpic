@@ -44,6 +44,43 @@ let temp = itemSets.filter(function (set) {
 
 return temp.slice(0, softSlice);
 }
+
+/*
+{"ramp":{"totalHealing":2679285.3742785756,
+"ramps":[{"tag":"Primary Ramp","pre-ramp conditions":["Power of the Dark Side","Active DoT"],
+"sequence":["Purge the Wicked","Rapture","Power Word: Shield x9","Power Word: Radiance x2","Instructor's Divine Bell (new)","Evangelism","Boon of the Ascended","Ascended Blast","Schism","Ascended Blast","PenanceTick x3","Ascended Blast","Ascended Nova x2","Ascended Blast","Ascended Nova x3","Smite x10"],"totalHealing":1095608},{"tag":"Fiend Ramp","pre-ramp conditions":["Power of the Dark Side","Active DoT"],"sequence":["Purge the Wicked","Rapture","Power Word: Shield x9","Instructor's Divine Bell (new)","Shadowfiend","Power Word: Radiance x2","Evangelism","Schism","PenanceTick x3","Mind Blast","Power Word: Solace","Smite x3","PenanceTick x3","Smite x8"],"totalHealing":922791},{"tag":"Mini Ramp","pre-ramp conditions":["Power of the Dark Side","Active DoT"],"sequence":["Purge the Wicked","Power Word: Shield x6","Power Word: Radiance x2","Schism","Mind Blast","Power Word: Solace","PenanceTick x3","Smite x4","PenanceTick x3","Smite x6"],"totalHealing":330443}],"rampSettings":{"playstyle":"Kyrian Evangelism","4T28":true,"Instructor's Divine Bell (new)":448,"Pelagos":true,"Sphere's Harmony":true,"Penitent One":true},"stats":{"intellect":2346.315679178794,"haste":1071,"crit":826,"mastery":657.044,"versatility":352,"leech":132,"hps":14884.918745992087,"dps":0,"mana":40.425}}}
+*/
+
+// Takes a raw report and prints it in a nicer format.
+
+export function formatReport(report) {
+    const rampData = report.ramp;
+    const statData = rampData.stats;
+    console.log("== Set Ramp Information == ")
+    console.log("Settings: " + JSON.stringify(rampData.rampSettings))
+    
+    for (const [stat, value] of Object.entries(statData)) {
+        statData[stat] = Math.round(value);
+      }
+
+    console.log("Stats: " + JSON.stringify(statData));
+
+    rampData.ramps.forEach(ramp => {
+        console.log("Ramp Name: " + ramp.tag + " (" + Math.round(ramp.totalHealing) + " healing)");
+        console.log("Pre-ramp conditions: " + ramp.prerampConditions);
+        console.log(ramp.sequence);
+
+    })
+
+    /*
+    console.log("Total Healing: " + Math.round(rampResult.totalHealing));
+    console.log("Legendaries used: Clarity of Mind");
+    console.log("Conduits used: " + JSON.stringify(conduits));
+    console.log("On use Trinkets used: " + " Instructor's Divine Bell (213 ilvl, ~20% expected overhealing)")
+    console.log("Post-DR passive stat breakdown: " + JSON.stringify(stats));   
+})*/
+
+}
   
 export function sumScore(obj) {
     var sum = 0;
