@@ -49,6 +49,7 @@ import BlessingOfFreedom from "Images/Classes/Paladin/Specialisation/Holy/Icons/
 import LayOnHands from "Images/Classes/Paladin/Specialisation/Holy/Icons/spell_holy_layonhands.jpg";
 import TigersLust from "Images/Classes/Monk/Specialisation/Mistweaver/Icons/ability_monk_tigerslust.jpg";
 import InvokeYulon from "Images/Classes/Monk/Specialisation/Mistweaver/Icons/InvokeYulon.jpg";
+import SymbolOfHope from "Images/CooldownPlanner/SpellIcons/spell_holy_symbolofhope.jpg";
 
 // Should probably work this off GUID
 
@@ -323,6 +324,11 @@ export default function abilityIcons(props, style) {
     spell = "spell=116841";
     source = TigersLust;
     alt = "Tiger's Lust";
+  }
+  if (props === 64901) {
+    spell = "spell=64901";
+    source = SymbolOfHope;
+    alt = "Symbol of Hope";
   }
 
   if (props === "" || props === undefined) {
