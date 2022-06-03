@@ -11,7 +11,7 @@ export const changeLog = [
   {
     version: "9.2.5 / 2.5.4",
     update: 17,
-    date: "18th April",
+    date: "3 June",
     changes: [ 
       "Holy Priest: Added 2pc & 4pc set bonuses.",
       "Disc Priest: Implemented a few minor missing effects. Updated expected atonement overhealing.",

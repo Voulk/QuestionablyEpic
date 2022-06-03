@@ -7,7 +7,7 @@ export default function MessageOfTheDay(props) {
   const messageOfTheDay = {
     "Retail": [
       "Great Vault: Make sure you consider tier & catalyst opportunities.",
-      "Holy Priest Tier & Legendary support coming soon.",
+      "Holy Priest Legendary support coming soon.",
   ],
   "BurningCrusade": [""]
   }
