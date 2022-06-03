@@ -83,6 +83,7 @@ const buildTrinkets = (trinkets) => {
  */
 export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle) => {
     let sequence = [];
+    
     if (specialSpells.includes('Purge the Wicked')) sequence.push('Purge the Wicked');
     else sequence.push('Shadow Word: Pain');
 
@@ -99,8 +100,8 @@ export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle) =
     
     if (specialSpells.includes("Divine Star")) sequence.push("Divine Star");
 
-    for (var i = 0; i < 4; i++) {
-        // The number of smites here is adjustable but also not very important outside of DPS metrics. 
+    for (var i = 0; i < 3; i++) {
+        // The number of smites here is adjustable but also not very important outside of DPS metrics since most Atonements will have fallen off.
         sequence.push('Smite');
     }
     sequence.push('Penance');
@@ -284,11 +285,6 @@ export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = 
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
         sequence.push('Smite');
     }
-    /*
-    sequence.push('PenanceTick');
-    sequence.push('PenanceTick');
-    sequence.push('PenanceTick');
-    */
     sequence.push('Penance');
 
     for (var i = 0; i < 8; i++) {

@@ -305,7 +305,6 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
             conduits['Rabid Shadows'] = 252;
             conduits['Swift Penitence'] = 252;
             settings['4T28'] = true;
-            console.log("Loading Defaults");
             //conduits['Courageous Ascension'] = 252;
         }
 
@@ -320,6 +319,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
     // It's a straightfoward addition.
     if (settings['Clarity of Mind']) discSpells['Rapture'][0].atonement = 21;
 
+    // -- Shadow Word: Manipulation --
     if (settings['Shadow Word: Manipulation']) discSpells['Mindgames'].push({ // TODO
         type: "buff",
         castTime: 0,
@@ -327,7 +327,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
         cooldown: 0,
         buffType: 'stats',
         stat: 'crit',
-        value: 40 * 35, // This needs to be converted to post-DR stats.
+        value: 45 * 35, // This needs to be converted to post-DR stats.
         buffDuration: 10,
     });
 
@@ -628,12 +628,10 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                         // Check if buff already exists, if it does add a stack.
                         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
 
-                        if (buffStacks === 0) state.activeBuffs.push({name: spell.name, expiration: state.t + spell.castTime + spell.buffDuration, buffType: "special", value: spell.value, stacks: spell.stacks});
+                        if (buffStacks === 0) state.activeBuffs.push({name: spell.name, expiration: state.t + spell.castTime + spell.buffDuration, buffType: "special", value: spell.value, stacks: spell.stacks, canStack: spell.canStack});
                         else {
                             const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
                             if (buff.canStack) buff.stacks += 1;
-                            
-
                         }
                     }     
                     else {
