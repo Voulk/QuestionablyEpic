@@ -9,6 +9,17 @@
 
 export const changeLog = [
   {
+    version: "9.2.5 / 2.5.4",
+    update: 17,
+    date: "18th April",
+    changes: [ 
+      "Holy Priest: Added 2pc & 4pc set bonuses.",
+      "Disc Priest: Implemented a few minor missing effects. Updated expected atonement overhealing.",
+      "Antumbra: Added a separate version that holds at 19 stacks. A common strategy for high HPS logs",
+      "Disc Priest: Added advanced reporting to Top Gear. In Console log for now, but expanded to UI soon."
+    ],
+  },
+  {
     version: "9.2 / 2.5.4",
     update: 16,
     date: "18th April (Minor)",

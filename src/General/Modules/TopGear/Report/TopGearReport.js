@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import { covenantIcons, covenantColours } from "../../CooldownPlanner/Functions/CovenantFunctions";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { classTranslator } from "../../../Functions/CommonFunctions";
+import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 
 function TopGearReport(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
@@ -81,6 +82,8 @@ function TopGearReport(props) {
     gemStats = gameType === "BurningCrusade" && "socketInformation" in topSet ? topSet.socketInformation : "";
     domGems = gameType === "Retail" && "domGemList" in topSet ? topSet.domGemList : "";
     statList = topSet.setStats;
+
+    if (props.player.spec === "Discipline Priest" && contentType === "Raid") formatReport(topSet.report);
 
     if (domGems !== "") {
       let domGemCounter = 0;

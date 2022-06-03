@@ -12,6 +12,7 @@ import { allRamps, allRampsHealing } from "General/Modules/Player/DiscPriest/Dis
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { buildBestDomSet } from "../Utilities/DominationGemUtilities";
 import { getItemSet } from "BurningCrusade/Databases/ItemSetsDBRetail.js";
+import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 
 /**
  * == Top Gear Engine ==
@@ -78,7 +79,7 @@ function autoSocketItems(itemList) {
  * @param {*} castModel
  * @returns A Top Gear result which includes the best set, and how close various alternatives are.
  */
-export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel, reporting = false) {
+export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel, reporting = true) {
   //console.log("Running Top Gear")
   // == Setup Player & Cast Model ==
   // Create player / cast model objects in this thread based on data from the player character & player model.
@@ -508,19 +509,23 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   // but from a practical viewpoint it achieves the objective. It could be replaced with something more
   // mathematically comprehensive in future. Disc Priest will be swapped to the new tech very soon.
   if ((player.spec === "Holy Paladin" || player.spec === "Restoration Shaman" || player.spec === "Holy Priest") && "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
-    hardScore -= 48;
+    hardScore -= 56;
   }
   // Fallen Order has a bug whereby having more than ~33% haste causes clones to behave irresponsibly and the average casts per clone drops heavily.
   // A more precise formula could be offered by deducting the healing loss from the set. Instead this is a rather rougher patch which should automatically exclude
   // any sets over the breakpoint. 
-  if (player.spec === "Mistweaver Monk" && setStats.haste > 1120) {
-    hardScore -= 200;
+  if (player.spec === "Mistweaver Monk") {
+    if (setStats.haste > 1120) hardScore -= 200;
+    else if (setStats.haste < 495) hardScore -= 75;
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
   builtSet.report = report;
+  //
+  //if (player.spec() === "Discipline Priest" && contentType === "Raid") formatReport(report);
+  //console.log(JSON.stringify(effectList));
   itemSet.effectList = effectList;
   
   return builtSet;
