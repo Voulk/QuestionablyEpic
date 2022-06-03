@@ -62,7 +62,6 @@ const getSpellHealing = (spellName, player, contentType) => {
     spellHealing *= 1.15 // Flash Concentration
     spellHealing *= 1.35 // Trail of Light
   }
-  console.log(spellHealing);
   return spellHealing;
 
 
