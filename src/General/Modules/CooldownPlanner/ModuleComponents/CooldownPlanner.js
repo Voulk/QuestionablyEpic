@@ -1,8 +1,8 @@
-import React, { useEffect, forwardRef, useState } from "react";
+import React, { forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "@material-table/core";
 import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search } from "@mui/icons-material";
-import { Button, TextField, MenuItem, Paper, Grid, FormControl, InputLabel } from "@mui/material";
-import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
+import { Button, TextField, MenuItem, Paper, Grid } from "@mui/material";
+import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
 import { bossList } from "../Data/CooldownPlannerBossList";
 import { useTranslation } from "react-i18next";
 import { getTableLocale } from "locale/GetTableLocale";
@@ -14,24 +14,11 @@ import DeletePlanDialog from "./DeletePlanDialog";
 import ExportPlanDialog from "./ExportPlanDialog";
 import ImportPlanDialog from "./ImportPlanDialog";
 import ExportERTDialog from "./ERTDialog";
-import HealerSelector from "./EditComponents/HealerSelector";
-import BossAbilitySelector from "./EditComponents/BossAbilitySelector";
-import CooldownSelector from "./EditComponents/CooldownSelector";
-import CastTextField from "./EditComponents/CastTextField";
-import CooldownRender from "./RenderComponents/CooldownRender";
-import BossAbilityRender from "./RenderComponents/BossAbilityRender";
-import NameRender from "./RenderComponents/NameRender";
-import ClassRender from "./RenderComponents/ClassRender";
-import ClassEditRender from "./EditComponents/ClassEditRender";
-import CooldownTimeRender from "./RenderComponents/CooldownTImeRender";
-import NoteEdit from "./EditComponents/NoteEdit";
+import { generateColumns } from "./Engine/ColumnGenerator";
 import { CooldownPlannerTheme } from "./Styles/CooldownPlannerTheme";
-import { TableStyles } from "./Styles/TableStyles";
-import { cooldownDB } from "../Data/CooldownDB";
-import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
 import ls from "local-storage";
 import { styled } from "@mui/material/styles";
-import { green, orange } from "@mui/material/colors";
+import { green } from "@mui/material/colors";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 
 const tableIcons = {
@@ -51,8 +38,6 @@ const debug = false;
 
 export default function CooldownPlanner(props) {
   debug && console.log(" -- Debugging On -> CooldownPlanner.js --");
-  // log provided props
-  // debug && console.log(props);
 
   const LightTooltip = styled(({ className, ...props }) => <Tooltip {...props} classes={{ popper: className }} />)(({ theme }) => ({
     [`& .${tooltipClasses.arrow}`]: {
@@ -111,14 +96,10 @@ export default function CooldownPlanner(props) {
   };
 
   /* ---------------- State for Raid shown (Current is Sanctum of Domination 2450) ---------------- */
-  // Only bosses for Sanctum will be shown in the drop down
   const [currentRaid, setCurrentRaid] = useState(2481);
-  // debug && console.log(currentRaid);
   const [currentBoss, setCurrentBoss] = useState(2512);
   const [currentDifficulty, setDifficulty] = useState("Mythic");
-  // debug && console.log(currentBoss);
   const [currentPlan, setCurrentPlan] = useState("");
-  // debug && console.log(currentPlan);
   const [data, setData] = useState([]);
 
   const getBossPlanNames = (boss, currentDif) => {
@@ -156,380 +137,7 @@ export default function CooldownPlanner(props) {
     setData([]);
   };
 
-  let columns = [
-    {
-      /* --- The Cast Time Column. This is where the time the user expects the cooldown to be cast. --- */
-      title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
-      field: "time",
-      width: "4%",
-      cellStyle: TableStyles.cellStyle.thinRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      // Times currently must be entered in the 00:00 format.
-      // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
-      // This can probably be handled a lot better than how is handled currently.
-      editComponent: (props) => CastTextField(props),
-    },
-    {
-      /* ----------- Here the user can select which boss ability the cooldown should cover. ----------- */
-      title: t("CooldownPlanner.TableLabels.BossAbilityLabel"),
-      field: "bossAbility",
-      width: "6%",
-      cellStyle: TableStyles.cellStyle.thickRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      // Search function for abilities as they are stores as numbers. Works for all languages
-      customFilterAndSearch: (term, rowData) => {
-        let searchedTerm = bossAbilities[currentBoss]
-          .filter((object) => object.guid === rowData.bossAbility)
-          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
-          .flat();
-        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
-      },
-      render: (rowData) => BossAbilityRender(rowData, currentBoss, currentDifficulty),
-      editComponent: (props) => BossAbilitySelector(props, currentBoss, currentDifficulty),
-    },
-
-    /* -------------------------------------------------------------------------- */
-    /*                               Cooldown Set 0                               */
-    /* -------------------------------------------------------------------------- */
-    {
-      /* --- The Cast Time Column. This is where the time the user expects the cooldown to be cast. --- */
-      title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
-      field: "cooldownTime0",
-      width: "1%",
-      hidden: true,
-      cellStyle: TableStyles.cellStyle.thinRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      // Times must be entered in the 00:00 format.
-      editComponent: (props) => CastTextField(props),
-    },
-    {
-      /* ----- Render only, should the user when the cooldown will be available again to be used. ----- */
-      title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
-      width: "1%",
-      hidden: true,
-      cellStyle: TableStyles.cellStyle.thickRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      render: (rowData) => CooldownTimeRender(rowData, "cooldown0", "cooldownTime0"),
-    },
-    {
-      title: t("Name") + " 1",
-      field: "name0",
-      width: "5%",
-      cellStyle: TableStyles.cellStyle.thinRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      /* ------------------------ Renders the healer name outside of Edit Mode. ----------------------- */
-      render: (rowData) => NameRender(rowData, "name0", "class0"),
-      /* ---------- Component for name selection when the table is in edit mode. ---------- */
-      editComponent: (props) => HealerSelector(props, "name0", "class0", "cooldown0"),
-    },
-    /* ------- Class column. This is generated from the selected healer from the Name column. ------- */
-    {
-      title: t("Class"),
-      field: "class0",
-      hidden: true,
-      cellStyle: TableStyles.cellStyle.thinRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
-      render: (rowData) => ClassRender(rowData, "class0"),
-      /* ----------------------- Shows the selected healers class in edit mode. ----------------------- */
-      editComponent: (props) => ClassEditRender(props, "class0"),
-    },
-    {
-      /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
-      title: t("Cooldown") + " 1",
-      field: "cooldown0",
-      width: "9%",
-      cellStyle: TableStyles.cellStyle.thickRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      // Search function for abilities as they are stores as numbers. Works for all languages
-      customFilterAndSearch: (term, rowData) => {
-        let searchedTerm = cooldownDB
-          .filter((object) => object.guid === rowData.cooldown0)
-          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
-          .flat();
-        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
-      },
-      /* --------------------- Renders the Ability name that was set for this row. -------------------- */
-      render: (rowData) => CooldownRender(rowData, "cooldown0"),
-      /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
-      editComponent: (props, rowData) => CooldownSelector(props, rowData, "cooldown0", "class0"),
-    },
-
-    /* -------------------------------------------------------------------------- */
-    /*                               Cooldown Set 1                               */
-    /* -------------------------------------------------------------------------- */
-    {
-      /* --- The Cast Time Column. This is where the time the user expects the cooldown to be cast. --- */
-      title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
-      field: "cooldownTime1",
-      width: "1%",
-      hidden: true,
-      cellStyle: TableStyles.cellStyle.thinRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      // Times must be entered in the 00:00 format.
-      editComponent: (props) => CastTextField(props),
-    },
-    {
-      /* ----- Render only, should the user when the cooldown will be available again to be used. ----- */
-      title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
-      width: "1%",
-      hidden: true,
-      cellStyle: TableStyles.cellStyle.thickRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      render: (rowData) => CooldownTimeRender(rowData, "cooldown1", "cooldownTime1"),
-    },
-    {
-      title: t("Name 2"),
-      field: "name1",
-      width: "5%",
-      cellStyle: TableStyles.cellStyle.thinRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
-      render: (rowData) => NameRender(rowData, "name1", "class1"),
-      /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
-      editComponent: (props, i) => HealerSelector(props, "name1", "class1", "cooldown1"),
-    },
-    {
-      title: t("Class"),
-      field: "class1",
-      // width: "10%",
-      hidden: true,
-      cellStyle: TableStyles.cellStyle.thinRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
-      render: (rowData) => ClassRender(rowData, "class1"),
-      /* ----------------------- Shows the selected healers class in edit mode. ----------------------- */
-      editComponent: (props) => ClassEditRender(props, "class1"),
-    },
-    {
-      /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
-      title: t("Cooldown") + " 2",
-      field: "cooldown1",
-      width: "9%",
-      cellStyle: TableStyles.cellStyle.thickRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      // Search function for abilities as they are stores as numbers. Works for all languages
-      customFilterAndSearch: (term, rowData) => {
-        let searchedTerm = cooldownDB
-          .filter((object) => object.guid === rowData.cooldown1)
-          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
-          .flat();
-        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
-      },
-      /* --------------------- Renders the Ability name that was set for this row. -------------------- */
-      render: (rowData) => CooldownRender(rowData, "cooldown1"),
-      /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
-      editComponent: (props, rowData) => CooldownSelector(props, rowData, "cooldown1", "class1"),
-    },
-
-    /* -------------------------------------------------------------------------- */
-    /*                               Cooldown Set 2                               */
-    /* -------------------------------------------------------------------------- */
-    {
-      /* --- The Cast Time Column. This is where the time the user expects the cooldown to be cast. --- */
-      title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
-      field: "cooldownTime2",
-      width: "1%",
-      hidden: true,
-      cellStyle: TableStyles.cellStyle.thinRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      // Times must be entered in the 00:00 format.
-      editComponent: (props) => CastTextField(props),
-    },
-    {
-      /* ----- Render only, should the user when the cooldown will be available again to be used. ----- */
-      title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
-      width: "1%",
-      hidden: true,
-      cellStyle: TableStyles.cellStyle.thickRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      render: (rowData) => CooldownTimeRender(rowData, "cooldown2", "cooldownTime2"),
-    },
-    {
-      title: t("Name") + " 3",
-      field: "name2",
-      width: "5%",
-      cellStyle: TableStyles.cellStyle.thinRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
-      render: (rowData) => NameRender(rowData, "name2", "class2"),
-      /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
-      editComponent: (props, i) => HealerSelector(props, "name2", "class2", "cooldown2"),
-    },
-    {
-      title: t("Class"),
-      field: "class2",
-      hidden: true,
-      cellStyle: TableStyles.cellStyle.thinRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
-      render: (rowData) => ClassRender(rowData, "class2"),
-      /* ----------------------- Shows the selected healers class in edit mode. ----------------------- */
-      editComponent: (props) => ClassEditRender(props, "class2"),
-    },
-    {
-      /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
-      title: t("Cooldown") + " 3",
-      field: "cooldown2",
-      width: "9%",
-      cellStyle: TableStyles.cellStyle.thickRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      // Search function for abilities as they are stores as numbers. Works for all languages
-      customFilterAndSearch: (term, rowData) => {
-        let searchedTerm = cooldownDB
-          .filter((object) => object.guid === rowData.cooldown2)
-          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
-          .flat();
-        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
-      },
-      /* --------------------- Renders the Ability name that was set for this row. -------------------- */
-      render: (rowData) => CooldownRender(rowData, "cooldown2"),
-      /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
-      editComponent: (props, rowData) => CooldownSelector(props, rowData, "cooldown2", "class2"),
-    },
-
-    /* -------------------------------------------------------------------------- */
-    /*                               Cooldown Set 4                               */
-    /* -------------------------------------------------------------------------- */
-    {
-      /* --- The Cast Time Column. This is where the time the user expects the cooldown to be cast. --- */
-      title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
-      field: "cooldownTime3",
-      width: "1%",
-      hidden: true,
-      cellStyle: TableStyles.cellStyle.thinRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      // Times must be entered in the 00:00 format.
-      editComponent: (props) => CastTextField(props),
-    },
-    {
-      /* ----- Render only, should the user when the cooldown will be available again to be used. ----- */
-      title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
-      width: "1%",
-      hidden: true,
-      cellStyle: TableStyles.cellStyle.thickRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      render: (rowData) => CooldownTimeRender(rowData, "cooldown3", "cooldownTime3"),
-    },
-    {
-      title: t("Name") + " 4",
-      field: "name3",
-      width: "5%",
-      cellStyle: TableStyles.cellStyle.thinRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
-      render: (rowData) => NameRender(rowData, "name3", "class3"),
-      /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
-      editComponent: (props, i) => HealerSelector(props, "name3", "class3", "cooldown3"),
-    },
-    {
-      title: t("Class"),
-      field: "class3",
-      hidden: true,
-      cellStyle: TableStyles.cellStyle.thinRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
-      render: (rowData) => ClassRender(rowData, "class3"),
-      /* ----------------------- Shows the selected healers class in edit mode. ----------------------- */
-      editComponent: (props) => ClassEditRender(props, "class3"),
-    },
-    {
-      /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
-      title: t("Cooldown") + " 4",
-      field: "cooldown3",
-      width: "9%",
-      cellStyle: TableStyles.cellStyle.thickRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      // Search function for abilities as they are stores as numbers. Works for all languages
-      customFilterAndSearch: (term, rowData) => {
-        let searchedTerm = cooldownDB
-          .filter((object) => object.guid === rowData.cooldown3)
-          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
-          .flat();
-        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
-      },
-      /* --------------------- Renders the Ability name that was set for this row. -------------------- */
-      render: (rowData) => CooldownRender(rowData, "cooldown3"),
-      /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
-      editComponent: (props, rowData) => CooldownSelector(props, rowData, "cooldown3", "class3"),
-    },
-
-    /* -------------------------------------------------------------------------- */
-    /*                               Cooldown Set 5                               */
-    /* -------------------------------------------------------------------------- */
-    {
-      /* --- The Cast Time Column. This is where the time the user expects the cooldown to be cast. --- */
-      title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
-      field: "cooldownTime4",
-      width: "1%",
-      hidden: true,
-      cellStyle: TableStyles.cellStyle.thickRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      // Times must be entered in the 00:00 format.
-      editComponent: (props) => CastTextField(props),
-    },
-    {
-      /* ----- Render only, should the user when the cooldown will be available again to be used. ----- */
-      title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
-      width: "1%",
-      hidden: true,
-      cellStyle: TableStyles.cellStyle.thickRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      render: (rowData) => CooldownTimeRender(rowData, "cooldown4", "cooldownTime4"),
-    },
-    {
-      title: t("Name") + " 5",
-      field: "name4",
-      width: "5%",
-      cellStyle: TableStyles.cellStyle.thinRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
-      render: (rowData) => NameRender(rowData, "name4", "class4"),
-      /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
-      editComponent: (props, i) => HealerSelector(props, "name4", "class4", "cooldown4"),
-    },
-    {
-      title: t("Class"),
-      field: "class4",
-      hidden: true,
-      cellStyle: TableStyles.cellStyle.thinRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
-      render: (rowData) => ClassRender(rowData, "class4"),
-      /* ----------------------- Shows the selected healers class in edit mode. ----------------------- */
-      editComponent: (props) => ClassEditRender(props, "class4"),
-    },
-    {
-      /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
-      title: t("Cooldown") + " 5",
-      field: "cooldown4",
-      width: "9%",
-      cellStyle: TableStyles.cellStyle.thickRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      // Search function for abilities as they are stores as numbers. Works for all languages
-      customFilterAndSearch: (term, rowData) => {
-        let searchedTerm = cooldownDB
-          .filter((object) => object.guid === rowData.cooldown4)
-          .map((array) => Object.values(array["name"]).map((name, i) => name.toLocaleLowerCase()))
-          .flat();
-        return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
-      },
-      /* --------------------- Renders the Ability name that was set for this row. -------------------- */
-      render: (rowData) => CooldownRender(rowData, "cooldown4"),
-      /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
-      editComponent: (props, rowData) => CooldownSelector(props, rowData, "cooldown4", "class4"),
-    },
-
-    {
-      /* -------------- Input Notes for the cooldown. I.e "Use just before this ability" -------------- */
-      title: t("CooldownPlanner.TableLabels.NotesLabel"),
-      field: "notes",
-      cellStyle: TableStyles.cellStyle.thickRightBorder,
-      headerStyle: TableStyles.headerStyle,
-      editComponent: (props) => NoteEdit(props),
-    },
-  ];
-
+  const columns = generateColumns(currentBoss, currentDifficulty);
   const RosterCheck = ls.get("healerInfo") === null ? true : ls.get("healerInfo").length === 0 ? true : false;
 
   return (
