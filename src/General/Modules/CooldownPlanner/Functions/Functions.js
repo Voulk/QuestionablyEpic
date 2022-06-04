@@ -23,13 +23,10 @@ export function addMissingTimestamps(loglength) {
 
 // Returns Unique Objects from an array of Objects
 export function getUniqueObjectsFromArray(arr, comp) {
-  // store the comparison  values in array
-  const unique = arr
+  const unique = arr // store the comparison  values in array
     .map((e) => e[comp])
-    // store the indexes of the unique objects
-    .map((e, i, final) => final.indexOf(e) === i && i)
-    // eliminate the false indexes & return unique objects
-    .filter((e) => arr[e])
+    .map((e, i, final) => final.indexOf(e) === i && i) // store the indexes of the unique objects
+    .filter((e) => arr[e]) // eliminate the false indexes & return unique objects
     .map((e) => arr[e]);
   return unique;
 }

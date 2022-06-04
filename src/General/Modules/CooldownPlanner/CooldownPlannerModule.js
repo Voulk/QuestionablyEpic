@@ -8,7 +8,6 @@ class CooldownPlannerModule extends Component {
   constructor() {
     super();
     /* ----------------------- We bind the below functions to this Component. ----------------------- */
-    // This means these functions can be passed as props to other components and they will return here rather than in the component they are sent to.
     this.handleHealTeamClickOpen = this.handleHealTeamClickOpen.bind(this);
 
     /* ---------------------- We set our state for the cooldown Planner Module. --------------------- */
@@ -45,9 +44,6 @@ class CooldownPlannerModule extends Component {
         }}
       >
         <div style={{ margin: "20px 3% 20px 3%" }}>
-          {/* ---------------------------------------------------------------------------------------------- */
-          /*                                  Main Grid for the Component                                   */
-          /* ---------------------------------------------------------------------------------------------- */}
           <Grid container spacing={1}>
             <Grid item xs={12}>
               <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
@@ -73,7 +69,6 @@ class CooldownPlannerModule extends Component {
             </Grid>
 
             {/* ------------------------------------- Healer Team Dialog ------------------------------------- */}
-            {/* ------------------- This is where you enter your healing team into the app. ------------------ */}
             <Dialog onClose={this.handleHealTeamClose} aria-labelledby="ERT-Dialog" open={this.state.healTeamDialogState} maxWidth="lg" fullWidth PaperProps={{ style: { minWidth: 300 } }}>
               <HealTeam />
             </Dialog>

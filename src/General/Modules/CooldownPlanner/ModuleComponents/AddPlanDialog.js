@@ -164,8 +164,7 @@ export default function AddPlanDialog(props) {
     // transform the imported data into plan data
     let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData, enemyHealth, buffData);
     cooldownObject.importLogPlan(planName, boss, difficulty, transformedData);
-    // load the imported plan data
-    loadPlanData(boss, planName, difficulty);
+    loadPlanData(boss, planName, difficulty); // load the imported plan data
     handleAddPlanDialogClose(true);
     // reset the loading bar states
     setLogDataLoading(false);
@@ -286,7 +285,6 @@ export default function AddPlanDialog(props) {
               <Grid item xs={12}>
                 <LogLinkInput changed={reportidHandler} reportid={reportid} styleProps={{ fullWidth: true }} />
               </Grid>
-              {/* ----------------------------------- Fight Selection Button ----------------------------------- */}
               <Grid item xs={12}>
                 <FightSelectorButton
                   reportid={reportid}

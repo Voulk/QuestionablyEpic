@@ -13,13 +13,10 @@ export default function ClassCooldownMenuItems(props) {
       if (props === undefined || props === "" || props === 0) {
         return obj.class === "" && obj.cdPlannerMenuActive === true;
       }
-
       if (props === "DisciplinePriest" || props === "HolyPriest") {
-        // return spells that are spec only and spells shared by the class
-        return (obj.class === props || obj.class === "Priest") && obj.cdPlannerMenuActive === true;
+        return (obj.class === props || obj.class === "Priest") && obj.cdPlannerMenuActive === true; // return spells that are spec only and spells shared by the class
       } else {
-        // return everything for that class
-        return obj.class === props && obj.cdPlannerMenuActive === true;
+        return obj.class === props && obj.cdPlannerMenuActive === true; // return everything for that class
       }
     })
     .map((map, i, arr) => {

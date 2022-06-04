@@ -11,7 +11,6 @@ const selectMenu = createTheme({
   components: {
     MuiTextField: {
       defaultProps: {
-        // The props to change the default for.
         SelectProps: {
           MenuProps: {
             style: { marginTop: 5 },
@@ -71,30 +70,27 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
               })
               .map((obj) => obj.class)
               .toString();
-
-            /* ------------------------------ Spread the rows data for updating ----------------------------- */
             let data = { ...props.rowData };
-            /* -------------------- Set the name of the row to the selected from dropdown ------------------- */
-            data[name] = e.target.value;
-            /* --------------------- Update the class from the healerinfo local storage --------------------- */
-            data[nameClass] = newClass;
+            data[name] = e.target.value; // Set the name of the row to the selected from dropdown
+            data[nameClass] = newClass; // Update the class from the healerinfo local storage
             /* ------------------------------- Reset the cooldown for the row ------------------------------- */
             if (props.rowData[nameClass] !== newClass) {
               data[cooldown] = undefined;
             }
-            /* --------------------------------------- Update the data -------------------------------------- */
-            props.onRowDataChange(data);
+            props.onRowDataChange(data); // Update the data
           }}
         >
-          {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
-          {ls.get("healerInfo").map((key, i) => (
-            <MenuItem divider style={{ color: classColoursJS(key.class) }} key={key.name} value={key.name}>
-              <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
-                {classIcons(key.class, { height: 20, width: 20, margin: "0px 5px 0px 0px", verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 })}
-                {key.name}
-              </div>
-            </MenuItem>
-          ))}
+          {
+            /* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */
+            ls.get("healerInfo").map((key, i) => (
+              <MenuItem divider style={{ color: classColoursJS(key.class) }} key={key.name} value={key.name}>
+                <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
+                  {classIcons(key.class, { height: 20, width: 20, margin: "0px 5px 0px 0px", verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 })}
+                  {key.name}
+                </div>
+              </MenuItem>
+            ))
+          }
           <MenuItem key={"remove"} value={""}>
             <ClearIcon sx={{ color: "#ad2c34", margin: "0px 4px 0px 0px" }} fontSize="small" />
             {t("Remove")}

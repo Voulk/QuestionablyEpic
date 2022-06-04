@@ -52,55 +52,42 @@ export default function CooldownPlanner(props) {
 
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-
   const cooldownObject = new Cooldowns();
   const healTeamDialogOpen = props.healTeamDialogOpen;
-
-  /* ---------------------------------------------------------------------------------------------- */
-  /*                                            Add Plan                                            */
-  /* ---------------------------------------------------------------------------------------------- */
-  const [openAddPlanDialog, setOpenAddPlanDialog] = React.useState(false);
-
-  const handleAddPlanDialogClickOpen = () => {
-    setOpenAddPlanDialog(true);
-  };
-
-  const handleAddPlanDialogClose = (value) => {
-    setOpenAddPlanDialog(false);
-  };
-
-  /* ---------------------------------------------------------------------------------------------- */
-  /*                                            Copy Plan                                            */
-  /* ---------------------------------------------------------------------------------------------- */
-  const [openCopyPlanDialog, setOpenCopyPlanDialog] = React.useState(false);
-
-  const handleCopyPlanDialogClickOpen = () => {
-    setOpenCopyPlanDialog(true);
-  };
-
-  const handleCopyPlanDialogClose = (value) => {
-    setOpenCopyPlanDialog(false);
-  };
-
-  /* ---------------------------------------------------------------------------------------------- */
-  /*                                           Delete Plan                                          */
-  /* ---------------------------------------------------------------------------------------------- */
-  const [openDeletePlanDialog, setOpenDeletePlanDialog] = React.useState(false);
-
-  const handleDeletePlanDialogClickOpen = () => {
-    setOpenDeletePlanDialog(true);
-  };
-
-  const handleDeletePlanDialogClose = (value) => {
-    setOpenDeletePlanDialog(false);
-  };
-
-  /* ---------------- State for Raid shown (Current is Sanctum of Domination 2450) ---------------- */
+  const RosterCheck = ls.get("healerInfo") === null ? true : ls.get("healerInfo").length === 0 ? true : false;
   const [currentRaid, setCurrentRaid] = useState(2481);
   const [currentBoss, setCurrentBoss] = useState(2512);
   const [currentDifficulty, setDifficulty] = useState("Mythic");
   const [currentPlan, setCurrentPlan] = useState("");
   const [data, setData] = useState([]);
+  const columns = generateColumns(currentBoss, currentDifficulty);
+
+  /* ------------------------------------------ Add Plan ------------------------------------------ */
+  const [openAddPlanDialog, setOpenAddPlanDialog] = React.useState(false);
+  const handleAddPlanDialogClickOpen = () => {
+    setOpenAddPlanDialog(true);
+  };
+  const handleAddPlanDialogClose = (value) => {
+    setOpenAddPlanDialog(false);
+  };
+
+  /* ------------------------------------------ Copy Plan ----------------------------------------- */
+  const [openCopyPlanDialog, setOpenCopyPlanDialog] = React.useState(false);
+  const handleCopyPlanDialogClickOpen = () => {
+    setOpenCopyPlanDialog(true);
+  };
+  const handleCopyPlanDialogClose = (value) => {
+    setOpenCopyPlanDialog(false);
+  };
+
+  /* ----------------------------------------- Delete Plan ---------------------------------------- */
+  const [openDeletePlanDialog, setOpenDeletePlanDialog] = React.useState(false);
+  const handleDeletePlanDialogClickOpen = () => {
+    setOpenDeletePlanDialog(true);
+  };
+  const handleDeletePlanDialogClose = (value) => {
+    setOpenDeletePlanDialog(false);
+  };
 
   const getBossPlanNames = (boss, currentDif) => {
     return Object.keys(cooldownObject.getCooldowns(boss, currentDif));
@@ -110,11 +97,8 @@ export default function CooldownPlanner(props) {
   const loadPlanData = (currentBoss, newPlan, currentDif) => {
     setCurrentBoss(currentBoss);
     setCurrentPlan(newPlan);
-
-    /* ------------------------------- Get List of Plans for the boss ------------------------------- */
-    const bossCooldowns = cooldownObject.getCooldowns(currentBoss, currentDif);
-    /* --------------------------------------- Set the lected --------------------------------------- */
-    const planCooldowns = bossCooldowns[newPlan];
+    const bossCooldowns = cooldownObject.getCooldowns(currentBoss, currentDif); // Get List of Plans for the boss
+    const planCooldowns = bossCooldowns[newPlan]; // selected plan
     setDifficulty(currentDif);
     setData(planCooldowns);
   };
@@ -136,9 +120,6 @@ export default function CooldownPlanner(props) {
     setCurrentPlan("");
     setData([]);
   };
-
-  const columns = generateColumns(currentBoss, currentDifficulty);
-  const RosterCheck = ls.get("healerInfo") === null ? true : ls.get("healerInfo").length === 0 ? true : false;
 
   return (
     <StyledEngineProvider injectFirst>
@@ -196,17 +177,11 @@ export default function CooldownPlanner(props) {
             actionsColumnIndex: 24,
             paging: false,
           }}
-          /* ------- In built table text is localized via this function and the TableLocale.js files ------ */
-          localization={getTableLocale()}
-          /* --------------------------------- Customized Table Components -------------------------------- */
+          localization={getTableLocale()} // In built table text is localized via this function and the TableLocale.js files
           components={{
             Container: (props) => <Paper {...props} elevation={0} />,
-            Body: (props) =>
-              /* ------------------------ If no boss selected then hide the Table Body ------------------------ */
-              currentBoss === "" ? null : <MTableBody {...props} />,
-            Header: (props) =>
-              /* ----------------------- If no Boss Selected then hide the Table Header ----------------------- */
-              currentBoss === "" ? null : <MTableHeader {...props} />,
+            Body: (props) => (currentBoss === "" ? null : <MTableBody {...props} />),
+            Header: (props) => (currentBoss === "" ? null : <MTableHeader {...props} />),
             Toolbar: (props) => (
               /* ----------------------- Grid Container for the Toolbar for the Table ------------------------ */
               <Grid
@@ -396,46 +371,33 @@ export default function CooldownPlanner(props) {
             onRowAdd: (newData) =>
               new Promise((resolve, reject) => {
                 setTimeout(() => {
-                  /* ------------------ Spread Current Data and the New Data into updated Object (Sorted) ------------------ */
                   let updatedData = [...data, newData].sort((a, b) => (a.time > b.time && 1) || -1);
                   setData(updatedData);
-                  /* ------------------------------------ Update local storage ------------------------------------ */
-                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty);
+                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty); // Update local storage
                   resolve();
                 }, 1000);
               }),
             onRowUpdate: (newData, oldData) =>
               new Promise((resolve, reject) => {
                 setTimeout(() => {
-                  /* --------------------------- Spread Current Data to update row data --------------------------- */
-                  const dataUpdate = [...data];
-                  /* -------------------------- Set index as the old datas ID for updated ------------------------- */
-                  const index = oldData.tableData.id;
-                  /* -------------------- Set the Updated Data as the old datas id replacing it ------------------- */
-                  dataUpdate[index] = newData;
+                  const dataUpdate = [...data]; // Spread Current Data to update row data
+                  const index = oldData.tableData.id; // Set index as the old datas ID for updated
+                  dataUpdate[index] = newData; // Set the Updated Data as the old datas id replacing it
                   let updatedData = [...dataUpdate].sort((a, b) => (a.time > b.time && 1) || -1);
-                  /* ---------------------------------- Set Updated Data (Sorted) --------------------------------- */
                   setData(updatedData);
-                  /* ------------------------------------ Update local storage ------------------------------------ */
-                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty);
+                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty); // Update local storage
                   resolve();
                 }, 1000);
               }),
             onRowDelete: (oldData) =>
               new Promise((resolve, reject) => {
                 setTimeout(() => {
-                  /* ------------------------------------- Spread current data ------------------------------------ */
                   const dataDelete = [...data];
-                  /* -------------------------- Set index as the old datas ID for deletion ------------------------- */
-                  const index = oldData.tableData.id;
-                  /* --------------------------------------- Delete Row Data -------------------------------------- */
-                  dataDelete.splice(index, 1);
-
+                  const index = oldData.tableData.id; // Set index as the old datas ID for deletion
+                  dataDelete.splice(index, 1); // Delete Row Data
                   let updatedData = [...dataDelete].sort((a, b) => (a.time > b.time && 1) || -1);
-                  /* -------------------------- Set the New Data without the spliced row -------------------------- */
-                  setData(updatedData);
-                  /* ------------------------------------ Update local storage ------------------------------------ */
-                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty);
+                  setData(updatedData); // Set the New Data without the spliced row
+                  updateStorage(currentBoss, currentPlan, updatedData, currentDifficulty); // Update local storage
                   resolve();
                 }, 1000);
               }),

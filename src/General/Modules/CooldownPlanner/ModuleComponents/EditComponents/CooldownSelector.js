@@ -8,7 +8,6 @@ const selectMenu = createTheme({
   components: {
     MuiTextField: {
       defaultProps: {
-        // The props to change the default for.
         SelectProps: {
           MenuProps: {
             style: { marginTop: 5 },
