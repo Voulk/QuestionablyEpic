@@ -257,9 +257,10 @@ export default function HealerInfoCards(props) {
                                   style={{
                                     height: 30,
                                     width: 30,
-                                    padding: 4,
+                                    margin: 4,
                                     verticalAlign: "middle",
                                     borderRadius: "4px",
+                                    border: "1px solid rgb(89, 89, 89)",
                                   }}
                                   src={process.env.PUBLIC_URL + "/Images/Icons/" + ability.abilityIcon}
                                   alt={"ability" + i}
@@ -295,9 +296,10 @@ export default function HealerInfoCards(props) {
                                   style={{
                                     height: 30,
                                     width: 30,
-                                    padding: 4,
+                                    margin: 4,
                                     verticalAlign: "middle",
                                     borderRadius: "4px",
+                                    border: "1px solid rgb(89, 89, 89)",
                                   }}
                                   src={process.env.PUBLIC_URL + "/Images/Icons/" + conduit.abilityIcon}
                                   alt={"coinduit" + i}
