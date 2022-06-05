@@ -60,7 +60,7 @@ export const talentDB = [
   { name: "Cenarion Ward", guid: 102351, icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/CenarionWardIcon.jpg").default },
   { name: "Tiger Dash", guid: 252216, icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/TigerDashIcon.jpg").default },
   { name: "Renewal", guid: 108238, icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/RenewalIcon.jpg").default },
-  { name: "Wild Charge", guid: 132302, icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/WildChargeIcon.jpg").default },
+  { name: "Wild Charge", guid: 102401, icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/WildChargeIcon.jpg").default },
   { name: "Balance Affinity", guid: 197632, icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/BalanceAffinityIcon.jpg").default },
   { name: "Feral Affinity", guid: 197490, icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/FeralAffinityIcon.jpg").default },
   { name: "Guardian Affinity", guid: 197491, icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/GuardianAffinityIcon.jpg").default },
