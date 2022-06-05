@@ -7,11 +7,12 @@ export default async function importCasts(starttime, endtime, reportid, healerID
   const END = "&end=";
   const HOSTILITY = "&hostility=0";
   const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
+  const translate = "&translate=true";
   let nextpage = 0;
   let cooldowns = [];
 
   await axios
-    .get(APICast + reportid + START + starttime + END + endtime + HOSTILITY + API2)
+    .get(APICast + reportid + START + starttime + END + endtime + HOSTILITY + translate + API2)
     .then((result) => {
       cooldowns = Object.keys(result.data.events)
         .filter(
@@ -34,7 +35,7 @@ export default async function importCasts(starttime, endtime, reportid, healerID
   if (nextpage !== undefined || null) {
     do {
       await axios
-        .get(APICast + reportid + START + nextpage + END + endtime + HOSTILITY + API2)
+        .get(APICast + reportid + START + nextpage + END + endtime + HOSTILITY + translate + API2)
         .then((result) => {
           cooldowns = cooldowns.concat(
             Object.keys(result.data.events)

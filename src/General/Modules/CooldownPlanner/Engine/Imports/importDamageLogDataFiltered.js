@@ -8,23 +8,25 @@ export default async function importDamageLogDataFiltered(starttime, endtime, re
   const START = "?start=";
   const END = "&end=";
   const HOSTILITY = "&hostility=0";
-
+  const translate = "&translate=true";
+  let damage = [];
+  let nextpage = 0;
   let filter = "&filter=";
   const bossAbilityList = bossAbilities[bossID].filter((filter) => filter.createEvent === true);
-  const filterExpression = bossAbilityList.map((key, i) => {
+
+  if (bossAbilityList.length === 0) return damage; // if no abilities then return nothing
+
+  // map abilities into filter string
+  bossAbilityList.map((key, i) => {
     if (i !== bossAbilityList.length - 1) {
       filter = filter.concat("ability.id%3D" + key.guid + "%20OR%20");
     } else {
       filter = filter.concat("ability.id%3D" + key.guid);
     }
   });
-  console.log(filter);
-
-  let damage = [];
-  let nextpage = 0;
 
   await axios
-    .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + filter + API2)
+    .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + (filter === "&filter=" ? "" : filter) + translate + API2)
     .then((result) => {
       damage = Object.keys(result.data.events).map((key) => result.data.events[key]);
       nextpage = result.data.nextPageTimestamp;
@@ -37,7 +39,7 @@ export default async function importDamageLogDataFiltered(starttime, endtime, re
   if (nextpage !== undefined || null) {
     do {
       await axios
-        .get(APIdamagetaken + reportid + START + nextpage + END + endtime + HOSTILITY + filter + API2)
+        .get(APIdamagetaken + reportid + START + nextpage + END + endtime + HOSTILITY + (filter === "&filter=" ? "" : filter) + translate + API2)
         .then((result) => {
           damage = damage.concat(Object.keys(result.data.events).map((key) => result.data.events[key]));
           nextpage = result.data.nextPageTimestamp;
