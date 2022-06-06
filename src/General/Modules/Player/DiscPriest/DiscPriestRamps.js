@@ -417,7 +417,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
     // Examples of would be Condensed Anima Sphere.
     if (conduits['Courageous Ascension']) discSpells['Ascended Blast'][0].coeff *= 1.45; // Blast +40%, Eruption +1% per stack (to 4%)
     if (conduits['Shining Radiance']) discSpells['Power Word: Radiance'][0].coeff *= 1.64; // +64% radiance healing
-    if (conduits['Rabid Shadows']) discSpells['Shadowfiend'][0].dot.tickRate = discSpells['Shadowfiend'][0].dot.tickRate / 1.342; // Fiends faster tick rate.
+    if (conduits['Rabid Shadows']) discSpells['Shadowfiend'][0].tickRate = discSpells['Shadowfiend'][0].tickRate / 1.342; // Fiends faster tick rate.
     if (conduits['Exaltation']) {
         discSpells['Rapture'][1].buffDuration = 9;
         discSpells['Rapture'][0].coeff = 1.65 * (1 + 2 * 1.135);
@@ -452,6 +452,7 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
     state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
 
+    //if (spellName === "Shadowfiend") console.log("Fiend dam: " + damageVal + " @" + state.t);
     //if (state.reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
     //if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs));
 }
@@ -493,60 +494,58 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
         // Step 1: Check buffs and atonement and remove any that have expired.
         // If Boon of the Ascended expires then queue an Ascended Eruption on this tick.
         let ascendedEruption = state.activeBuffs.filter(function (buff) {return buff.expiration < state.t && buff.name === "Boon of the Ascended"}).length > 0;
-        state.activeBuffs = state.activeBuffs.filter(function (buff) {return buff.expiration > state.t});
         atonementApp = atonementApp.filter(function (buff) {return buff > state.t});
         
+        // ---- Heal over time and Damage over time effects ----
+        // HoTs and DoTs are now all handled at once instead of purge / SWP and Fiend both having awkward time arrays like in a previous version.
+        // When we add buffs, we'll also attach a spell to them. The spell should have coefficient information, secondary scaling and so on. 
+        // When it's time for a HoT or DoT to tick (state.t > buff.nextTick) we'll run the attached spell.
+        // Note that while we refer to DoTs and HoTs, this can be used to map any spell that's effect happens over a period of time. 
+        // This includes stuff like Shadow Fiend which effectively *acts* like a DoT even though it is technically not one.
+        // You can also call a function from the buff if you'd like to do something particularly special. You can define the function in the specs SpellDB.
+        const healBuffs = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType === "function") && state.t >= buff.next})
+        if (healBuffs.length > 0) {
+            healBuffs.forEach((buff) => {
+                let currentStats = {...stats};
+                state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
 
-        // Check for and execute a purge the wicked tick if required.
-        if (purgeTicks.length > 0 && state.t > purgeTicks[0]) {
-            // Update current stats for this combat tick.
-            // Effectively base stats + any current stat buffs.
-            let currentStats = {...stats};
-            currentStats = getCurrentStats(currentStats, state.activeBuffs);
+                if (buff.buffType === "heal") {
+                    const spell = buff.attSpell;
+                    runHeal(state, spell, buff.name)
+                }
+                else if (buff.buffType === "damage") {
+                    const spell = buff.attSpell;
 
-            purgeTicks.shift();
-            const activeAtonements = getActiveAtone(atonementApp, timer)
-            const damageVal = DISCSPELLS[dotName][0].dot.coeff * currentStats.intellect * getStatMult(currentStats, ['crit', 'vers']);
-            const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, conduits)
+                    runDamage(state, spell, buff.name, atonementApp)
+                }
+                
+                else if (buff.buffType === "function") {
+                    const func = buff.attFunction;
+                    func(state);
+                } 
 
-            if (purgeTicks.length === 0) {
-                // If this is the last Purge tick, add a partial tick.
-                const partialTickPercentage = ((getHaste(currentStats) - 1) % 0.1) * 10;
+                buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
 
-                state.damageDone[dotName] = (state.damageDone[dotName] || 0) + damageVal * damMultiplier * partialTickPercentage;
-                totalDamage += damageVal;
-                state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + activeAtonements * damageVal * damMultiplier * getAtoneTrans(currentStats.mastery) * partialTickPercentage;
-
-                if (reporting) console.log(getTime(state.t) + " " + " Purge Tick: " + damageVal * damMultiplier * partialTickPercentage + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
-            }
-            else {         
-                state.damageDone['Purge the Wicked'] = (state.damageDone['Purge the Wicked'] || 0) + damageVal * damMultiplier;
-                totalDamage += damageVal;
-                state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + activeAtonements * damageVal * getAtoneTrans(currentStats.mastery);
-
-                if (reporting) console.log(getTime(state.t) + " " + " Purge Tick: " + damageVal * damMultiplier + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
-            }
-
+            });  
         }
 
-        // Check for and execute a Shadow Fiend attack if required.
-        // Fiend / Bender sometimes does very weird stuff in-game. This is a close representation, but not a perfect one.
-        if (fiendTicks.length > 0 && state.t > fiendTicks[0]) {
-            // Update current stats for this combat tick.
-            // Effectively base stats + any current stat buffs.
-            let currentStats = {...stats};
-            currentStats = getCurrentStats(currentStats, state.activeBuffs);
+        // -- Partial Ticks --
+        // When DoTs / HoTs expire, they usually have a partial tick. The size of this depends on how close you are to your next full tick.
+        // If your Shadow Word: Pain ticks every 1.5 seconds and it expires 0.75s away from it's next tick then you will get a partial tick at 50% of the size of a full tick.
+        // Note that some effects do not partially tick (like Fiend), so we'll use the canPartialTick flag to designate which do and don't. 
+        const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage") && state.t >= buff.expiration && buff.canPartialTick})
+        expiringHots.forEach(buff => {
+            const tickRate = buff.tickRate / getHaste(state.currentStats)
+            const partialTickPercentage = (buff.next - state.t) / tickRate;
+            const spell = buff.attSpell;
+            spell.coeff = spell.coeff * partialTickPercentage;
+            
+            if (buff.buffType === "damage") runDamage(state, spell, buff.name, atonementApp);
+            else if (buff.buffType === "healing") runHeal(state, spell, buff.name)
+        })
 
-            fiendTicks.shift();
-            const activeAtonements = getActiveAtone(atonementApp, timer)
-            const damageVal = DISCSPELLS['Shadowfiend'][0].dot.coeff * currentStats.intellect * getStatMult(currentStats, ['crit', 'vers']);
-            const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, conduits)
-            state.damageDone['Shadowfiend'] = (state.damageDone['Shadowfiend'] || 0) + damageVal * damMultiplier;
-            totalDamage += damageVal;
-            state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + activeAtonements * damageVal * getAtoneTrans(currentStats.mastery);
-
-            if (reporting) console.log(getTime(state.t) + " Fiend Tick: " + damageVal * damMultiplier + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
-        }
+        // Remove any buffs that have expired. Note that we call this after we handle partial ticks. 
+        state.activeBuffs = state.activeBuffs.filter(function (buff) {return buff.expiration > state.t});
 
         // This is a check of the current time stamp against the tick our GCD ends and we can begin our queued spell.
         // It'll also auto-cast Ascended Eruption if Boon expired.
@@ -564,10 +563,9 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
             // and the absorb effect).
             state.manaSpent += fullSpell[0].cost;
             fullSpell.forEach(spell => {
-                //console.log(spellName + "(" + state.t + "): " + JSON.stringify(state));
+
                 // The spell is an atonement applicator. Add atonement expiry time to our array.
                 // The spell data will tell us whether to apply atonement at the start or end of the cast.
-               
                 if (spell.atonement) {
                     for (var i = 0; i < spell.targets; i++) {
                         let atoneDuration = spell.atonement;
@@ -581,35 +579,12 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 // The spell has a healing component. Add it's effective healing.
                 // Power Word: Shield is included as a heal, since there is no functional difference for the purpose of this calculation.
                 if (spell.type === 'heal') {
-
                     runHeal(state, spell, spellName)
-                    /*
-                    const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, boonOfTheAscended, conduits); 
-                    const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets;
-                    const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.overheal) * healingMult * targetMult;
-                    
-                    state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
-                    */ 
-
                 }
                 
                 // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
                 else if (spell.type === 'damage') {
                     runDamage(state, spell, spellName, atonementApp)
-
-                    /*
-                    const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
-                    const damMultiplier = getDamMult(state.activeBuffs, activeAtonements, state.t, spellName, state.boonOfTheAscended, conduits); // Get our damage multiplier (Schism, Sins etc);
-                    const damageVal = getSpellRaw(spell, currentStats) * damMultiplier;
-                    const atonementHealing = activeAtonements * damageVal * getAtoneTrans(currentStats.mastery) * (1 - spell.atoneOverheal)
-
-                    // This is stat tracking, the atonement healing will be returned as part of our result.
-                    totalDamage += damageVal * damMultiplier; // Stats.
-                    damageBreakdown[spellName] = (damageBreakdown[spellName] || 0) + damageVal; // This is just for stat tracking.
-                    state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
-
-                    if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
-                    */
                 }
 
                 // The spell extends atonements already active. This is specific to Evanglism. 
@@ -622,6 +597,16 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 else if (spell.type === "buff") {
                     if (spell.buffType === "stats") {
                         state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
+                    }
+                    else if (spell.buffType === "damage" || spell.buffType === "healing") {
+                        
+                        const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
+                            tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
+
+                    newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
+                            
+                    state.activeBuffs.push(newBuff)
+                    //console.log("Adding new buff: " + JSON.stringify(newBuff));
                     }
                     else if (spell.buffType === "special") {
                         
@@ -640,15 +625,21 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 }
 
                 // These are special exceptions where we need to write something special that can't be as easily generalized.
-                if (spellName === "Purge the Wicked") {
+
+                /*
+                if (spellName === dotName) {
+                    
                     const adjustedTickRate = spell.dot.tickRate / getHaste(currentStats);
                     const ticks = spell.dot.duration / adjustedTickRate;
                     for (var k = 1; k <= ticks; k++ ) {
                         purgeTicks.push(state.t + adjustedTickRate * k);
                     }  
                     purgeTicks.push(state.t + spell.dot.duration); // Partial tick.
-                }
-                else if (spellName === "Shadowfiend") {
+                    
+                } */
+
+                
+                if (spellName === "Shadowfiend" && spell.type === "") {
                     const adjustedTickRate = spell.dot.tickRate / getHaste(currentStats);
                     const ticks = spell.dot.duration / adjustedTickRate; // Add Haste.
                     for (var k = 1; k <= ticks; k++ ) {

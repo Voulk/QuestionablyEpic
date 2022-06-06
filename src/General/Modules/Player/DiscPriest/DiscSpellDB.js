@@ -250,8 +250,19 @@ export const DISCSPELLS = {
             aura: 1,
             duration: 15.6, // 12 x 1.3
         }
+    },
+    {
+        castTime: 0,
+        type: "buff",
+        buffType: "damage",
+        coeff: 0.09588, // 
+        tickRate: 2,
+        buffDuration: 15.6,
+        atoneOverheal: 0.07,
+        secondaries: ['crit', 'vers'], // + Haste
+        canPartialTick: true,
     }],
-    "Shadowfiend": [{
+    "Shadowfiend": [/*{
         type: "",
         castTime: 1.5,
         cost: 900,
@@ -264,6 +275,18 @@ export const DISCSPELLS = {
             coeff: 0.46,
             duration: 15,
         }
+    },*/
+    {
+        castTime: 1.5,
+        cost: 900,
+        type: "buff",
+        buffType: "damage",
+        coeff: 0.46, // 
+        tickRate: 1.5,
+        buffDuration: 15,
+        atoneOverheal: 0.22,
+        secondaries: ['crit', 'vers'], // Shadowfiend scales with Haste but the DoT / HoT function will handle that. 
+        canPartialTick: false,
     }],
     "Evangelism": [{
         type: "atonementExtension",
