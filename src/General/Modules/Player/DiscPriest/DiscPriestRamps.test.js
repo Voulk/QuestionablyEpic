@@ -82,10 +82,10 @@ describe("Evang Cast Sequence", () => {
     
     const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Kyrian Evangelism", ['Rapture'])
     //const boon4pc = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Kyrian Evangelism", ['Rapture', "4T28"])
-    const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Kyrian Evangelism", ['Rapture'])
+    const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Venthyr Evangelism", ['Rapture'])
 
     const evangSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Venthyr Evangelism", ['Rapture'])
-    console.log(evangSeq)
+    //console.log(evangSeq)
 
     test("Legendaries & Soulbinds", () => {
 
@@ -94,8 +94,9 @@ describe("Evang Cast Sequence", () => {
         //const baseline = runCastSequence(fiendSeq, activeStats, {"4T28": true, "Clarity of Mind": false, "Pelagos": false, "Power of the Dark Side": true}, {});
         const endTime = performance.now()
 
+        console.log("Total Healing: " + baseline.totalHealing);
         console.log(`Call to doSomething took ${endTime - startTime} milliseconds`)
-        console.log("Baseline: " + baseline);
+        console.log("Baseline: " + JSON.stringify(baseline));
 
         //const clarityOfMind = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": true, "Pelagos": false, "Power of the Dark Side": true}, {});
         //const pelagos = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": false, "Pelagos": true, "Power of the Dark Side": true}, {});
