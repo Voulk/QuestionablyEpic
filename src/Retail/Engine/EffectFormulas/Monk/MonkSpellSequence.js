@@ -154,7 +154,7 @@ const getCurrentStats = (statArray, buffs) => {
     const multBuffs = buffs.filter(function (buff) {return buff.buffType === "statsMult"});
     multBuffs.forEach(buff => {
         // Multiplicative Haste buffs need some extra code. 
-        if (buff.stat === "haste") statArray["haste"] = ((statArray[buff.stat] / 32 / 100 + 1 * buff.value)-1) * 32 * 100
+        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / 32 / 100 + 1) * buff.value)-1) * 32 * 100
         else statArray[buff.stat] = (statArray[buff.stat] || 0) * buff.value;
         
     });

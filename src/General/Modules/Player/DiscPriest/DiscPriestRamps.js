@@ -235,7 +235,19 @@ const getCurrentStats = (statArray, buffs) => {
         statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
     });
 
-    return applyDiminishingReturns(statArray);
+    statArray = applyDiminishingReturns(statArray);
+
+    // Check for percentage stat increases which are applied post-DR.
+    // Examples include Power Infusion and the crit portion of Shadow Word: Manipulation.
+    const multBuffs = buffs.filter(function (buff) {return buff.buffType === "statsMult"});
+    multBuffs.forEach(buff => {
+        
+        // Multiplicative Haste buffs need some extra code as they are increased by the amount of haste you already have.
+        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / 32 / 100 + 1) * buff.value)-1) * 32 * 100
+        else statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
+    });
+
+    return statArray;
     //return statArray;
 }
 
@@ -332,9 +344,9 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
         castTime: 0,
         cost: 0,
         cooldown: 0,
-        buffType: 'stats',
+        buffType: 'statsMult',
         stat: 'crit',
-        value: 45 * 35, // This needs to be converted to post-DR stats.
+        value: 45 * 35, // This is equal to 45% crit, though the stats are applied post DR. 
         buffDuration: 10,
     })
     }; 
@@ -600,13 +612,16 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     if (spell.buffType === "stats") {
                         state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
                     }
+                    else if (spell.buffType === "statsMult") {
+                        state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "statsMult", value: spell.value, stat: spell.stat});
+                    }
                     else if (spell.buffType === "damage" || spell.buffType === "healing") {     
-                    const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
-                        tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
+                        const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
+                            tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
 
-                    newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
-                            
-                    state.activeBuffs.push(newBuff)
+                        newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
+                                
+                        state.activeBuffs.push(newBuff)
 
                     }
                     else if (spell.buffType === "special") {
