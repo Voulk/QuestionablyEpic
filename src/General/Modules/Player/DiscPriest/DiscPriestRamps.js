@@ -329,7 +329,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
         stat: 'crit',
         value: 45 * 35, // This needs to be converted to post-DR stats.
         buffDuration: 10,
-    });
+    }); 
 
     //
 
@@ -452,7 +452,6 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
     state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
 
-    //if (spellName === "Shadowfiend") console.log("Fiend dam: " + damageVal + " @" + state.t);
     //if (state.reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
     //if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs));
 }
@@ -469,31 +468,28 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
  */
 export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
     //console.log("Running cast sequence");
-    const dotName = "Shadow Word: Pain";
     let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: conduits, manaSpent: 0, settings: settings, 
                     conduits: conduits, boonOfTheAscended: 0, reporting: true}
     // Boon of the Ascended holds our active Boon of the Ascended stacks. This should be refactored into our buffs array.
 
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
-    let purgeTicks = []; // Purge or Shadow Word: Pain tick timestamps
-    let fiendTicks = []; // Fiend "tick" timestamps
 
-    //let activeBuffs = []; // Active buffs on our character: includes stat buffs, Boon of the Ascended and so on. 
-    //let damageBreakdown = {}; // A statistics object that holds a tally of our damage from each spell.
-    //let healing = {};
-    let totalDamage = 0;
-    let timer = 0;
     let nextSpell = 0;
     //let boonOfTheAscended = 0; 
     const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, conduits, state);
     const seq = [...sequence];
     const sequenceLength = 45; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
-    const reporting = false; // A flag to report our sequences to console. Used for testing. 
+    const reporting = false; // A flag to report our sequences to console. Used for testing. MOSTLY REPLACED AND NOT WELL MAINTAINED. 
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
-        // Step 1: Check buffs and atonement and remove any that have expired.
-        // If Boon of the Ascended expires then queue an Ascended Eruption on this tick.
+
+        // -- Special Handling: Boon of the Ascended --
+        // Boon is a bit special in that it'll expire after it's duration ends which might not happen perfectly within ticks or spells.
+        // Instead we'll check it's expiration, and queue a special spell if it expires.
+        // TODO: With the new DoT / HoT tech this could be moved to a regular buff and the special handling moved to a function, or at least moved to the expiration section.
         let ascendedEruption = state.activeBuffs.filter(function (buff) {return buff.expiration < state.t && buff.name === "Boon of the Ascended"}).length > 0;
+
+        // Check for any expired atonements. 
         atonementApp = atonementApp.filter(function (buff) {return buff > state.t});
         
         // ---- Heal over time and Damage over time effects ----
@@ -518,14 +514,11 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
                     runDamage(state, spell, buff.name, atonementApp)
                 }
-                
                 else if (buff.buffType === "function") {
                     const func = buff.attFunction;
                     func(state);
                 } 
-
                 buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
-
             });  
         }
 
@@ -598,15 +591,14 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     if (spell.buffType === "stats") {
                         state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
                     }
-                    else if (spell.buffType === "damage" || spell.buffType === "healing") {
-                        
-                        const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
-                            tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
+                    else if (spell.buffType === "damage" || spell.buffType === "healing") {     
+                    const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
+                        tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
 
                     newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
                             
                     state.activeBuffs.push(newBuff)
-                    //console.log("Adding new buff: " + JSON.stringify(newBuff));
+
                     }
                     else if (spell.buffType === "special") {
                         
@@ -626,48 +618,24 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
                 // These are special exceptions where we need to write something special that can't be as easily generalized.
 
-                /*
-                if (spellName === dotName) {
-                    
-                    const adjustedTickRate = spell.dot.tickRate / getHaste(currentStats);
-                    const ticks = spell.dot.duration / adjustedTickRate;
-                    for (var k = 1; k <= ticks; k++ ) {
-                        purgeTicks.push(state.t + adjustedTickRate * k);
-                    }  
-                    purgeTicks.push(state.t + spell.dot.duration); // Partial tick.
-                    
-                } */
-
-                
-                if (spellName === "Shadowfiend" && spell.type === "") {
-                    const adjustedTickRate = spell.dot.tickRate / getHaste(currentStats);
-                    const ticks = spell.dot.duration / adjustedTickRate; // Add Haste.
-                    for (var k = 1; k <= ticks; k++ ) {
-                        fiendTicks.push(state.t + adjustedTickRate * k);
-                    } 
-
-                }
-                /*
-                else if (spellName === "Penance") {
-                    // Add X Penance bolts to the spell queue.
-                    
-                } */
-
-                // TODO: This was written early in the app, but can just be converted to a regular buff effect for code cleanliness.
+                // TODO: Schism was written early in the app, but can just be converted to a regular buff effect for code cleanliness.
                 else if (spellName === "Schism") {
                     // Add the Schism buff. 
                     state.activeBuffs.push({name: "Schism", expiration: state.t + spell.castTime + spell.buffDuration});
                 }
 
                 // Add boon stacks.
+                // TODO: When spell-specific functions are added, these could both be converted to secondary spell effects. 
                 else if (spellName === "Ascended Blast") {
                     state.boonOfTheAscended += 5 / 2;
                 }
                 else if (spellName === "Ascended Nova") {
                     state.boonOfTheAscended += 1 / 2;
                 }
+
+                // Penance will queue either 3 or 6 ticks depending on if we have a Penitent One proc or not. 
+                // These ticks are queued at the front of our array and will take place immediately. 
                 else if (spellName === "Penance") {
-                    //state.boonOfTheAscended += 1 / 2;
                     if (checkBuffActive(state.activeBuffs, "Penitent One")) {
                         discSpells['PenanceTick'][0].castTime = 2 / 6;
                         discSpells['PenanceTick'][0].coeff = 0.376 * 0.92;
@@ -675,10 +643,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                         for (var i = 0; i < 6; i++) {
                             seq.unshift("PenanceTick");
                         }
-
                         removeBuffStack(state.activeBuffs, "Penitent One"); 
-
-
                     }
                     else {
                         discSpells['PenanceTick'][0].castTime = 2 / 3;
@@ -689,8 +654,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     }
                 }
                 
-                
-                // This represents the next timestamp we are able to cast a spell. This is equal to whatever is higher of a spells cast time or the GCD.
+                // Grab the next timestamp we are able to cast our next spell. This is equal to whatever is higher of a spells cast time or the GCD.
                 nextSpell += (spell.castTime / getHaste(currentStats));
             });   
         }
@@ -698,14 +662,15 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
 
 
     // Add up our healing values (including atonement) and return it.
-
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     state.totalHealing = sumValues(state.healingDone);
-    return state;//sumValues(state.healingDone)
+
+    return state;
 
 }
 
 // This is a boilerplate function that'll let us clone our spell database to avoid making permanent changes.
+// We need this to ensure we're always running a clean DB, free from any changes made on previous runs.
 const deepCopyFunction = (inObject) => {
     let outObject, value, key;
   
