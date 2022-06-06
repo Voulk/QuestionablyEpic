@@ -229,12 +229,23 @@ export const DISCSPELLS = {
         aura: 1,
         secondaries: ['crit', 'vers'],
         atoneOverheal: 0.2,
-        dot: {
+        dot: { // Replaced and now unused.
             tickRate: 2,
             coeff: 0.12,
             aura: 1,
             duration: 26, // 20 x 1.3
         }
+    },
+    {
+        castTime: 0,
+        type: "buff",
+        buffType: "damage",
+        coeff: 0.12, // 
+        tickRate: 2,
+        buffDuration: 26,
+        atoneOverheal: 0.2,
+        secondaries: ['crit', 'vers'], // + Haste
+        canPartialTick: true,
     }],
     "Shadow Word: Pain": [{
         type: "damage",
@@ -244,7 +255,7 @@ export const DISCSPELLS = {
         aura: 1,
         secondaries: ['crit', 'vers'],
         atoneOverheal: 0.2,
-        dot: {
+        dot: { // Now unused. Will remove in a few updates. 
             tickRate: 2,
             coeff: 0.09588,
             aura: 1,
