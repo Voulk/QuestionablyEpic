@@ -68,6 +68,15 @@ export const DISCSPELLS = {
         cooldown: 40,
         atoneOverheal: 0.23,
         secondaries: ['crit', 'vers'],
+    },
+    { // This is the absorb / damage reverse portion.
+        type: "heal",
+        castTime: 0,
+        coeff: 9, // This is 4.5 x 2 since the damage is both negated and then the target healed.
+        aura: 1,
+        targets: 1,
+        secondaries: ['vers'],
+        overheal: 0.15, // 
     }],
     "Schism": [{
         type: "damage",
@@ -189,6 +198,8 @@ export const DISCSPELLS = {
         secondaries: ['crit', 'vers'],
         overheal: 0,
     }],
+    // Rapture both buffs Power Word: Shield and adds an absorb to the target that is functionally the same as a buffed Power Word: Shield.
+    // We'll match that in-game behavior here too.
     "Rapture": [{
         type: "heal",
         castTime: 1.5,

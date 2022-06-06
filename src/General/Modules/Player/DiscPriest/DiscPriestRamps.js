@@ -311,8 +311,9 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
         
     }
 
-    // === Legendaries ===
+    // ==== Legendaries ====
     // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
+    // Unity Note: Unity is automatically converted to the legendary it represents and should not have an entry here.
 
     // -- Clarity of Mind --
     // Clarity of Mind adds 6 seconds to the Atonement granted by Power Word: Shield during Rapture. 
@@ -320,7 +321,13 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
     if (settings['Clarity of Mind']) discSpells['Rapture'][0].atonement = 21;
 
     // -- Shadow Word: Manipulation --
-    if (settings['Shadow Word: Manipulation']) discSpells['Mindgames'].push({ // TODO
+    // SWM has two effects. 
+    // -> First, it buffs the healing / absorb portion of the spell by 10%.
+    // -> Secondly, it adds a large crit buff when the absorb is used. This can technically vary from 0->50% but we'll use an average of 45%.
+    if (settings['Shadow Word: Manipulation']) {
+        discSpells['Mindgames'][1].coeff *= 1.1; 
+
+        discSpells['Mindgames'].push({
         type: "buff",
         castTime: 0,
         cost: 0,
@@ -329,31 +336,12 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
         stat: 'crit',
         value: 45 * 35, // This needs to be converted to post-DR stats.
         buffDuration: 10,
-    }); 
-
-    //
-
-    // === Soulbinds ===
-    // Don't include Conduits here just any relevant soulbind nodes themselves.
-    // This section can be expanded with more nodes, particularly those from other covenants.
-    // Examples: Combat Meditation, Pointed Courage
-    if (settings['Pelagos']) discSpells['Boon of the Ascended'].push({
-        type: "buff",
-        castTime: 0,
-        cost: 0,
-        cooldown: 0,
-        buffType: 'stats',
-        stat: 'mastery',
-        value: 315,
-        buffDuration: 30,
-    });
-    if (settings['Kleia']) state.activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
+    })
+    }; 
 
     // -- Penitent One --
     // Power Word: Radiance has a chance to make your next Penance free, and fire 3 extra bolts.
     // This is a close estimate, and could be made more accurate by tracking the buff and adding ticks instead of power.
-    //if (settings['Penitent One']) discSpells['PenanceTick'][0].coeff = discSpells['PenanceTick'][0].coeff * (0.84 * 2); 
-
     if (settings['Penitent One']) {
         // Penitent One is a bit odd in that it is technically a percentage chance rather than a guarantee.
         // We could roll for the probability on Radiance cast but this is problematic because a weaker set could beat a stronger one
@@ -365,7 +353,6 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
         // Penance without proc: 3 ticks at 100% strength.
         // Penance with proc: 6 ticks at 100% strength.
         // Including probability: Penance with proc is 6 ticks at 92% strength (3 + 3 * 0.84)
-        
         discSpells['Power Word: Radiance'].push({
             name: "Penitent One",
             type: "buff",
@@ -379,9 +366,33 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
 
     }
 
+    // ==== Soulbinds ====
+    // Don't include Conduits here just any relevant soulbind nodes themselves.
+    // This section can be expanded with more nodes, particularly those from other covenants.
+    // Examples: Combat Meditation, Pointed Courage
+
+    // --- Combat Meditation ---
+    // Mastery buff on Casting Boon. Pre-DR stat buff.
+    if (settings['Pelagos']) discSpells['Boon of the Ascended'].push({
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        cooldown: 0,
+        buffType: 'stats',
+        stat: 'mastery',
+        value: 315,
+        buffDuration: 30,
+    });
+
+    // --- Pointed Courage --- 
+    // Post-DR crit stat buff that's active at basically all times.
+    // TODO: Convert to Post DR stats.
+    if (settings['Kleia']) state.activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
+
+    // ==== Tier & Other Effects ====
+    // Remember that anything that isn't wired into a ramp can just be calculated normally (like Genesis Lathe for example).
     if (settings['4T28']) {
         // If player has 4T28, then hook Power of the Dark Side into Power Word Radiance.
-        
         discSpells['Power Word: Radiance'].push({
             name: "Power of the Dark Side",
             type: "buff",
@@ -400,8 +411,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
         if (settings['Power of the Dark Side']) state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: 1.5, stacks: 1, canStack: true})
     }
     
-    //
-    // === Trinkets ===
+    // ==== Trinkets ====
     // These settings change the stat value prescribed to a given trinket. We call these when adding trinkets so that we can grab their value at a specific item level.
     // When adding a trinket to this section, make sure it has an entry in DiscSpellDB first prescribing the buff duration, cooldown and type of stat.
     //if (settings["Instructor's Divine Bell"]) discSpells["Instructor's Divine Bell"][0].value = settings["Instructor's Divine Bell"];
@@ -411,7 +421,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
     if (settings['Soulletting Ruby']) discSpells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
     //
 
-    // === Conduits ===
+    // ==== Conduits ====
     // These are all scaled based on Conduit rank.
     // You can add whichever conduits you like here, though if it doesn't change your ramp then you might be better calculating it in the conduit formulas file instead.
     // Examples of would be Condensed Anima Sphere.
@@ -448,7 +458,6 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
     const atonementHealing = activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * (1 - spell.atoneOverheal)
 
     // This is stat tracking, the atonement healing will be returned as part of our result.
-    //totalDamage += damageVal * damMultiplier; // Stats.
     state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
 
