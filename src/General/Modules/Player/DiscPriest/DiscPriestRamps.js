@@ -10,7 +10,7 @@ const discSettings = {
 }
 
 
-// This is a very simple function that just condenses our ramp function down. 
+// This is a very simple function that just condenses our ramp sequence down to make it more human readable in reports. 
 const rampShortener = (seq) => {
     let shortRamp = [];
     let lastValue = "";
@@ -122,7 +122,6 @@ const extendActiveAtonements = (atoneApp, timer, extension) => {
 
 // Removes a stack of a buff, and removes the buff entirely if it's down to 0 or doesn't have a stack mechanic.
 const removeBuffStack = (buffs, buffName) => {
-    
     const buff = buffs.filter(buff => buff.name === buffName)[0]
     const buffStacks = buff.stacks || 0;
 
@@ -137,6 +136,7 @@ const removeBuffStack = (buffs, buffName) => {
     }
     else {
         // The player doesn't have the buff at all.
+        // This is not necessarily an error.
     }
     return buffs;
 }
@@ -224,7 +224,7 @@ const getStatMult = (currentStats, stats) => {
 
 /**
  * Get our players active stats. This is made up of our base stats + any buffs. 
- * Diminishing returns is not in play in this function. It's instead included when we get the stat multiplier itself. 
+ * Diminishing returns is not in play in this function.
  * @param {} statArray Our active stats.
  * @param {*} buffs Our active buffs.
  * @returns 
@@ -241,17 +241,15 @@ const getCurrentStats = (statArray, buffs) => {
     // Examples include Power Infusion and the crit portion of Shadow Word: Manipulation.
     const multBuffs = buffs.filter(function (buff) {return buff.buffType === "statsMult"});
     multBuffs.forEach(buff => {
-        
         // Multiplicative Haste buffs need some extra code as they are increased by the amount of haste you already have.
-        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / 32 / 100 + 1) * buff.value)-1) * 32 * 100
+        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / 32 / 100 + 1) * buff.value)-1) * 32 * 100;
         else statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
     });
 
     return statArray;
-    //return statArray;
 }
 
-
+// Returns the players current haste percentage. 
 const getHaste = (stats) => {
     return 1 + stats.haste / 32 / 100;
 }
@@ -295,7 +293,7 @@ const getTime = (t) => {
  */
 const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
 
-    // Default Loadout
+    // ==== Default Loadout ====
     // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout
     // since if we compare trinkets like Bell against an empty loadout it would be very undervalued. This gives a fair appraisal when
     // we don't have full information about a character.
@@ -317,10 +315,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
             conduits['Rabid Shadows'] = 252;
             conduits['Swift Penitence'] = 252;
             settings['4T28'] = true;
-            //conduits['Courageous Ascension'] = 252;
         }
-
-        
     }
 
     // ==== Legendaries ====
@@ -474,7 +469,6 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
     state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
 
     //if (state.reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
-    //if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs));
 }
 
 /**
