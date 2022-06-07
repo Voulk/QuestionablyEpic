@@ -17,7 +17,7 @@ export default function createDesaugneEvents(bossID, difficulty, damageTakenData
     // Surging Azerite
     if (logGuids.includes(haloID1) || logGuids.includes(haloID2) || logGuids.includes(haloID3)) {
       const disintegrationHaloIDSEvents = enemyCasts.filter((filter) => filter.ability.guid === haloID1 || filter.ability.guid === haloID2 || filter.ability.guid === haloID3);
-      const threshold = 30000;
+      const threshold = 30000; // was: 30k
       events.push(
         disintegrationHaloIDSEvents.map((key) => {
           return { time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: haloID1 };
@@ -46,7 +46,7 @@ export default function createDesaugneEvents(bossID, difficulty, damageTakenData
     if (logGuids.includes(haloID1) || logGuids.includes(haloID2) || logGuids.includes(haloID3)) {
       console.log("success");
       const disintegrationHaloIDSEvents = enemyCasts.filter((filter) => filter.ability.guid === haloID1 || filter.ability.guid === haloID2 || filter.ability.guid === haloID3);
-      const threshold = 20000;
+      const threshold = 20000; // Was: 20k
       events.push(
         disintegrationHaloIDSEvents.map((key) => {
           return { time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: haloID1 };

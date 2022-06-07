@@ -4,6 +4,41 @@ import createEvents from "./CreateEvents";
 import moment from "moment";
 
 export default function transformData(starttime, boss, enemyCasts, healerCasts, healerIDs, difficulty, damageTaken, debuffs, enemyHealth, buffData) {
+
+
+  // We'll convert a list of enemy casts that we're interested in to an array of timestamps.
+  let enemyQuickTimeline = enemyCasts.filter(
+    (filter) =>
+      bossAbilities[boss]
+        .filter((obj) => {
+          return obj.guid === filter.ability.guid;
+        })
+        .map((obj) => obj.importActive)[0],
+  ).map((cast) => cast.timestamp)
+
+
+  const lookBack = 7500; // ms. TODO: refine.
+  const lookForward = 7500; // ms
+  for (var i = 0; i < healerCasts.length; i++) {
+    const entry = healerCasts[i];
+    console.log(entry.timestamp + ": " + entry.ability.guid + " (" + entry.ability.name + ")" + " - source: " + entry.sourceID);
+
+    // For each ability, loop through our enemy casts and if any are within our thresholds, then change our healing timestamp to match the enemy cast. 
+    // We'll look a few seconds ahead too, to catch anyone using their cooldown a few ms before an ability is cast. 
+    for (var j = 0; j < enemyQuickTimeline.length; j++) {
+        const enemyCast = enemyQuickTimeline[j];
+        if ((enemyCast - entry.timestamp) <= lookForward && (enemyCast - entry.timestamp) >= 0) {
+          entry.timestamp = enemyCast;
+          break;
+        }
+        else if ((entry.timestamp - enemyCast) <= lookBack && (entry.timestamp - enemyCast) >= 0) {
+           entry.timestamp = enemyCast;
+           break;
+        }
+    }
+
+  }
+
   // map cooldown cast times into array
   let generatedEvents = createEvents(boss, difficulty, damageTaken, debuffs, starttime, enemyHealth, enemyCasts, buffData);
   const cooldownTimes = healerCasts.map((key) => moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"));
@@ -57,6 +92,8 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
   // Remove any duplicate imports for boss ability and time cast
   enemyCastsTimeline = enemyCastsTimeline.filter((value, index, self) => index === self.findIndex((t) => t.bossAbility === value.bossAbility && t.time === value.time));
 
+
+  console.log(enemyCastsTimeline)
   //   enemyCastsTimeline.map((key) => moment(key.time, "mm:ss").seconds());
 
   // merge the healer and enemy cast arrays of  objects

@@ -9,7 +9,7 @@ import createDesaugneEvents from "./BossEvents/SepulcherEvents/Desaugne";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData) {
   let returnedEvents = [];
-  console.log(buffData);
+
   const logGuids = damageTakenData.map((key) => key.ability.guid).concat(debuffs.map((key) => key.ability.guid));
 
   /* ---------------------------------------------------------------------------------------------- */

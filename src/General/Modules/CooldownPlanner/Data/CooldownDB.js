@@ -584,8 +584,8 @@ export const cooldownDB = [
     duration: 1,
     cooldown: 45,
     class: "RestorationShaman",
-    cdPlannerMenuActive: true,
-    cdPlannerImport: true,
+    cdPlannerMenuActive: false,
+    cdPlannerImport: false,
   },
   {
     name: {
