@@ -1322,7 +1322,8 @@ export const trinket_data = [
         coefficient: 7.700482,
         table: -9,
         duration: 6,
-        avgStacks: 2,
+        avgStacks: 2.5, // avg(1, 2, 3, 4)
+        avgTargets: 4.2,
         cooldown: 90,
       },
     ],

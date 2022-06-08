@@ -1037,10 +1037,11 @@ else if (
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Resonant Reservoir"
 ) {
-  let effect = activeTrinket.effects[0];
+    const effect = activeTrinket.effects[0];
+
   //const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
   
-  bonus_stats.dps = 0;
+    bonus_stats.dps = 0;
   //
 } 
   else {
