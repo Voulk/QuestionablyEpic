@@ -2,6 +2,7 @@ import { fightDuration, wclClassConverter } from "../../CooldownPlanner/Function
 import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
 import createEvents from "./CreateEvents";
 import moment from "moment";
+import smartTransformData from "General/Modules/CooldownPlanner/Engine/SmartTransformData"
 
 export default function transformData(starttime, boss, enemyCasts, healerCasts, healerIDs, difficulty, damageTaken, debuffs, enemyHealth, buffData) {
 
@@ -17,6 +18,7 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
   ).map((cast) => cast.timestamp)
 
 
+  /*
   const lookBack = 7500; // ms. TODO: refine.
   const lookForward = 7500; // ms
   for (var i = 0; i < healerCasts.length; i++) {
@@ -37,14 +39,36 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
         }
     }
 
-  }
+  } */
 
   // map cooldown cast times into array
   let generatedEvents = createEvents(boss, difficulty, damageTaken, debuffs, starttime, enemyHealth, enemyCasts, buffData);
-  const cooldownTimes = healerCasts.map((key) => moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"));
+  
+    // Map enemy ability casts into the plan data model keys i.e bossAbility, time.
+    let enemyCastsTimeline = enemyCasts
+    .filter(
+      (filter) =>
+        bossAbilities[boss]
+          .filter((obj) => {
+            return obj.guid === filter.ability.guid;
+          })
+          .map((obj) => obj.importActive)[0],
+    )
+    .map((key) => ({
+      bossAbility: key.ability.guid,
+      time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
+    }));
+
+  // add the generated events to the enemycasts Timeline
+  enemyCastsTimeline = enemyCastsTimeline.concat(generatedEvents);
+  // Remove any duplicate imports for boss ability and time cast
+  enemyCastsTimeline = enemyCastsTimeline.filter((value, index, self) => index === self.findIndex((t) => t.bossAbility === value.bossAbility && t.time === value.time));
+
+  let cooldownTimes = healerCasts.map((key) => moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"));
+  
 
   // map the cooldown ids, times, healer names, healer classes
-  const cooldownsTimeline = healerCasts.map((key) => ({
+  let cooldownsTimeline = healerCasts.map((key) => ({
     guid: key.ability.guid,
     time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
     name: healerIDs
@@ -63,7 +87,8 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
     ),
   }));
 
-  // map the cooldown data into  a new array of objects, converting the name/class/cooldown into the plan data model keys. i.e name1, cooldown1 etc.
+  
+  // map the cooldown data into a new array of objects, converting the name/class/cooldown into the plan data model keys. i.e name1, cooldown1 etc.
   let newTimeline = cooldownTimes
     .map((key) => {
       let newObject = { time: key };
@@ -73,28 +98,10 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
     })
     .flat();
 
-  // Map enemy ability casts into the plan data model keys i.e bossAbility, time.
-  let enemyCastsTimeline = enemyCasts
-    .filter(
-      (filter) =>
-        bossAbilities[boss]
-          .filter((obj) => {
-            return obj.guid === filter.ability.guid;
-          })
-          .map((obj) => obj.importActive)[0],
-    )
-    .map((key) => ({
-      bossAbility: key.ability.guid,
-      time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
-    }));
-  // add the generated events to the enemycasts Timeline
-  enemyCastsTimeline = enemyCastsTimeline.concat(generatedEvents);
-  // Remove any duplicate imports for boss ability and time cast
-  enemyCastsTimeline = enemyCastsTimeline.filter((value, index, self) => index === self.findIndex((t) => t.bossAbility === value.bossAbility && t.time === value.time));
 
 
-  console.log(enemyCastsTimeline)
   //   enemyCastsTimeline.map((key) => moment(key.time, "mm:ss").seconds());
+  newTimeline = smartTransformData(newTimeline, enemyCastsTimeline);
 
   // merge the healer and enemy cast arrays of  objects
   const data = [...newTimeline, ...enemyCastsTimeline]; //...data in question
