@@ -1320,10 +1320,11 @@ export const trinket_data = [
     effects: [
       {
         coefficient: 7.700482,
-        table: -9,
+        table: -8,
         duration: 6,
         avgStacks: 2.5, // avg(1, 2, 3, 4)
-        avgTargets: 4.2,
+        avgTargets: 4.6,
+        ticks: 3,
         cooldown: 90,
       },
     ],

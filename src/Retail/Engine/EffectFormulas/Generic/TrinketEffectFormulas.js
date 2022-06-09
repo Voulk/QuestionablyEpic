@@ -1037,12 +1037,13 @@ else if (
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Resonant Reservoir"
 ) {
-    const effect = activeTrinket.effects[0];
 
-  //const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
+
+    // Due to a quirk in being a ground effect that adds a DoT, the trinket gains slightly more value than doubling up every stack. That's represented here.
+    bonus_stats.dps = effectValue * effect.avgTargets * effect.avgStacks * effect.ticks * 1.22 / effect.cooldown;
   
-    bonus_stats.dps = 0;
-  //
 } 
   else {
     /* ---------------------------------------------------------------------------------------------- */
