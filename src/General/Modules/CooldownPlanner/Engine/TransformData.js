@@ -2,21 +2,20 @@ import { fightDuration, wclClassConverter } from "../../CooldownPlanner/Function
 import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
 import createEvents from "./CreateEvents";
 import moment from "moment";
-import smartTransformData from "General/Modules/CooldownPlanner/Engine/SmartTransformData"
+import smartTransformData from "General/Modules/CooldownPlanner/Engine/SmartTransformData";
 
 export default function transformData(starttime, boss, enemyCasts, healerCasts, healerIDs, difficulty, damageTaken, debuffs, enemyHealth, buffData) {
-
-
   // We'll convert a list of enemy casts that we're interested in to an array of timestamps.
-  let enemyQuickTimeline = enemyCasts.filter(
-    (filter) =>
-      bossAbilities[boss]
-        .filter((obj) => {
-          return obj.guid === filter.ability.guid;
-        })
-        .map((obj) => obj.importActive)[0],
-  ).map((cast) => cast.timestamp)
-
+  let enemyQuickTimeline = enemyCasts
+    .filter(
+      (filter) =>
+        bossAbilities[boss]
+          .filter((obj) => {
+            return obj.guid === filter.ability.guid;
+          })
+          .map((obj) => obj.importActive)[0],
+    )
+    .map((cast) => cast.timestamp);
 
   /*
   const lookBack = 7500; // ms. TODO: refine.
@@ -41,11 +40,12 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
 
   } */
 
-  // map cooldown cast times into array
+  // Create Events such as Phases, Any spells that don't have logged cast times such as gaining debuffs or damage taken at a certain event.
   let generatedEvents = createEvents(boss, difficulty, damageTaken, debuffs, starttime, enemyHealth, enemyCasts, buffData);
-  
-    // Map enemy ability casts into the plan data model keys i.e bossAbility, time.
-    let enemyCastsTimeline = enemyCasts
+
+  // Map enemy ability casts into objects for the cooldown planner
+  let enemyCastsTimeline = enemyCasts
+    // Filter to only spells we want to import
     .filter(
       (filter) =>
         bossAbilities[boss]
@@ -54,29 +54,34 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
           })
           .map((obj) => obj.importActive)[0],
     )
+    // map the events to our model
+    // i.e { bossAbility: 134566, time: 00:04 }
     .map((key) => ({
       bossAbility: key.ability.guid,
       time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
     }));
 
-  // add the generated events to the enemycasts Timeline
+  // concat the generated events to the enemycasts Timeline
   enemyCastsTimeline = enemyCastsTimeline.concat(generatedEvents);
   // Remove any duplicate imports for boss ability and time cast
   enemyCastsTimeline = enemyCastsTimeline.filter((value, index, self) => index === self.findIndex((t) => t.bossAbility === value.bossAbility && t.time === value.time));
 
+  // create an array of player cast times. We use this to map spells cast at the same time later.
   let cooldownTimes = healerCasts.map((key) => moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"));
-  
+  // i.e [ 00:03, 00:04 ]
 
-  // map the cooldown ids, times, healer names, healer classes
+  // map player casts into objects for us to parse
   let cooldownsTimeline = healerCasts.map((key) => ({
     guid: key.ability.guid,
     time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
+    // return the players name by matching the sourceID in our healerIDs object
     name: healerIDs
       .filter((obj) => {
         return obj.id === key.sourceID;
       })
       .map((obj) => obj.name)
       .toString(),
+    // return the players class by matching the sourceID in our healerIDs object
     class: wclClassConverter(
       healerIDs
         .filter((obj) => {
@@ -86,9 +91,15 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
         .toString(),
     ),
   }));
+  // i.e
+  // [
+  //   { guid: 213214, time: "00:03", name: "Priest1", class: "HolyPriest" },
+  //   { guid: 213215, time: "00:03", name: "Monk1", class: "MistweaverMonk" },
+  //   { guid: 216549, time: "00:04", name: "Priest2", class: "DisciplinePriest" },
+  // ];
 
-  
-  // map the cooldown data into a new array of objects, converting the name/class/cooldown into the plan data model keys. i.e name1, cooldown1 etc.
+  // Using our array of times that player spells were cast, we remap the cooldowns to those times.
+  // Doing this we create our columns for the planner. i.e name0, name1, name 2 cooldown0, cooldown1, cooldown2 etc
   let newTimeline = cooldownTimes
     .map((key) => {
       let newObject = { time: key };
@@ -97,14 +108,18 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
       return newObject;
     })
     .flat();
-
-
+  // i.e
+  // [
+  //   { time: "00:03", name0: "Priest1", cooldown0: 213214, class0: "HolyPriest", name1: "Monk1", cooldown1: 213215, class1: "MistweaverMonk" },
+  //   { time: "00:04", name0: "Priest2", cooldown0: 216549, class0: "DisciplinePriest" },
+  // ];
 
   //   enemyCastsTimeline.map((key) => moment(key.time, "mm:ss").seconds());
   newTimeline = smartTransformData(newTimeline, enemyCastsTimeline);
 
   // merge the healer and enemy cast arrays of  objects
   const data = [...newTimeline, ...enemyCastsTimeline]; //...data in question
+
   // if times match merge the objects
   let map = {};
   data.forEach(function (item) {

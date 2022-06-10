@@ -26,9 +26,9 @@ export default function createjailerEvents(bossID, difficulty, damageTakenData, 
 
     jailerEvents.push({ time: "00:00", bossAbility: "Phase 1" });
     const phase2 = jailerHealthData.filter((filter) => filter.health <= 62)[0];
-    jailerEvents.push({ time: moment.utc(fightDuration(phase2.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 2" });
+    phase2 !== undefined ? jailerEvents.push({ time: moment.utc(fightDuration(phase2.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 2" }) : "";
     const phase3 = jailerHealthData.filter((filter) => filter.health <= 18)[0];
-    jailerEvents.push({ time: moment.utc(fightDuration(phase3.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 3" });
+    phase3 !== undefined ? jailerEvents.push({ time: moment.utc(fightDuration(phase3.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 3" }) : "";
     // Surging Azerite
     if (logGuids.includes(surgingAzerite)) {
       const surgingAzeriteEvents = damageTakenData.filter((filter) => filter.ability.guid === surgingAzerite);
@@ -62,11 +62,11 @@ export default function createjailerEvents(bossID, difficulty, damageTakenData, 
 
     jailerEvents.push({ time: "00:00", bossAbility: "Phase 1" });
     const phase2 = jailerHealthData.filter((filter) => filter.health <= 66)[0];
-    jailerEvents.push({ time: moment.utc(fightDuration(phase2.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 2" });
+    phase2 !== undefined ? jailerEvents.push({ time: moment.utc(fightDuration(phase2.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 2" }) : "";
     const phase3 = jailerHealthData.filter((filter) => filter.health <= 31)[0];
-    jailerEvents.push({ time: moment.utc(fightDuration(phase3.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 3" });
+    phase3 !== undefined ? jailerEvents.push({ time: moment.utc(fightDuration(phase3.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 3" }) : "";
     const phase4 = jailerHealthData.filter((filter) => filter.health <= 15)[0];
-    jailerEvents.push({ time: moment.utc(fightDuration(phase4.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 4" });
+    phase4 !== undefined ? jailerEvents.push({ time: moment.utc(fightDuration(phase4.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 4" }) : "";
     /* --------------------------------------- Ability Events --------------------------------------- */
     // Surging Azerite
     if (logGuids.includes(surgingAzerite)) {
