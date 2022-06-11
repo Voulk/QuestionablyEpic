@@ -8,6 +8,10 @@
 import moment from "moment";
 
 export default function smartTransformData(healerCasts, enemyCasts) {
+  // filter out our Phase events from being assigned to
+  let filteredEnemyCasts = enemyCasts.filter(
+    (filter) => filter.bossAbility !== "Phase 1" && filter.bossAbility !== "Phase 2" && filter.bossAbility !== "Phase 3" && filter.bossAbility !== "Phase 4" && filter.bossAbility !== "Intermission",
+  );
   const lookBack = 7; // ms. TODO: refine.
   const lookForward = 7; // ms
   for (var i = 0; i < healerCasts.length; i++) {
@@ -16,17 +20,9 @@ export default function smartTransformData(healerCasts, enemyCasts) {
 
     // For each ability, loop through our enemy casts and if any are within our thresholds, then change our healing timestamp to match the enemy cast.
     // We'll look a few seconds ahead too, to catch anyone using their cooldown a few ms before an ability is cast.
-    for (var j = 0; j < enemyCasts.length; j++) {
-      const enemyCast = enemyCasts[j];
-      // if (
-      //   enemyCast.bossAbility === "Phase 1" ||
-      //   enemyCast.bossAbility === "Phase 2" ||
-      //   enemyCast.bossAbility === "Phase 3" ||
-      //   enemyCast.bossAbility === "Phase 4" ||
-      //   enemyCast.bossAbility === "Intermission"
-      // ) {
-      //   break;
-      // }
+    for (var j = 0; j < filteredEnemyCasts.length; j++) {
+      const enemyCast = filteredEnemyCasts[j];
+
       const enemyCastTime = parseInt(enemyCast.time.split(":")[0]) * 60 + parseInt(enemyCast.time.split(":")[1]);
 
       if (enemyCastTime - entryCastTime <= lookForward && enemyCastTime - entryCastTime >= 0) {

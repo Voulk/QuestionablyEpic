@@ -41,6 +41,7 @@ export default function AddPlanDialog(props) {
   const { handleAddPlanDialogClose, handleAddPlanDialogClickOpen, openAddPlanDialog, cooldownObject, currentBoss, loadPlanData, currentDifficulty, disabledCheck, changeBoss, currentRaid } = props;
   const [planName, setPlanName] = useState("");
   const [difficulty, setDifficulty] = useState(currentDifficulty);
+  const [importType, setImportType] = useState("Smart");
   const bossPlans = Object.keys(cooldownObject.getCooldowns(currentBoss, currentDifficulty));
   const duplicatePlanNameCheck = bossPlans.includes(planName) ? true : false;
   const { t, i18n } = useTranslation();
@@ -152,7 +153,7 @@ export default function AddPlanDialog(props) {
     importLogData(starttime, endtime, reportID, bossID, difficulty, setLogData, setLoadingProgress);
   };
 
-  const importPlanToCooldownObject = (planName, boss, difficulty) => {
+  const importPlanToCooldownObject = (planName, boss, difficulty, importType) => {
     const startTime = logInfo[0].time;
     const enemyCasts = logData.enemyCasts;
     const healerCasts = logData.healerCasts;
@@ -162,7 +163,7 @@ export default function AddPlanDialog(props) {
     const enemyHealth = logData.enemyHealth;
     const buffData = logData.buffData;
     // transform the imported data into plan data
-    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData, enemyHealth, buffData);
+    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData, enemyHealth, buffData, importType);
     cooldownObject.importLogPlan(planName, boss, difficulty, transformedData);
     loadPlanData(boss, planName, difficulty); // load the imported plan data
     handleAddPlanDialogClose(true);
@@ -309,6 +310,19 @@ export default function AddPlanDialog(props) {
                 )}
               </Grid>
             </Grid>
+            <Grid item xl={12}>
+              <Typography color="primary" align="center">
+                Import Type
+              </Typography>
+              <ToggleButtonGroup value={importType} exclusive onChange={(e) => setImportType(e.target.value)} aria-label="text alignment" fullWidth>
+                <ToggleButton value="Strict" aria-label="Strict">
+                  Strict
+                </ToggleButton>
+                <ToggleButton value="Smart" aria-label="Smart">
+                  Smart
+                </ToggleButton>
+              </ToggleButtonGroup>
+            </Grid>
             <Grid item xs={12}>
               <Typography color="primary" align="center">
                 New Plan Name
@@ -331,7 +345,7 @@ export default function AddPlanDialog(props) {
               key={9}
               variant="contained"
               color="primary"
-              onClick={(e) => importPlanToCooldownObject(planName, logData.bossID, logData.difficulty)}
+              onClick={(e) => importPlanToCooldownObject(planName, logData.bossID, logData.difficulty, importType)}
               size="small"
               disabled={logData.importSuccessful === false || planName === ""}
             >

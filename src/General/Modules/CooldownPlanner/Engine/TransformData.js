@@ -4,7 +4,7 @@ import createEvents from "./CreateEvents";
 import moment from "moment";
 import smartTransformData from "General/Modules/CooldownPlanner/Engine/SmartTransformData";
 
-export default function transformData(starttime, boss, enemyCasts, healerCasts, healerIDs, difficulty, damageTaken, debuffs, enemyHealth, buffData) {
+export default function transformData(starttime, boss, enemyCasts, healerCasts, healerIDs, difficulty, damageTaken, debuffs, enemyHealth, buffData, transformType) {
   // We'll convert a list of enemy casts that we're interested in to an array of timestamps.
   let enemyQuickTimeline = enemyCasts
     .filter(
@@ -16,29 +16,6 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
           .map((obj) => obj.importActive)[0],
     )
     .map((cast) => cast.timestamp);
-
-  /*
-  const lookBack = 7500; // ms. TODO: refine.
-  const lookForward = 7500; // ms
-  for (var i = 0; i < healerCasts.length; i++) {
-    const entry = healerCasts[i];
-    console.log(entry.timestamp + ": " + entry.ability.guid + " (" + entry.ability.name + ")" + " - source: " + entry.sourceID);
-
-    // For each ability, loop through our enemy casts and if any are within our thresholds, then change our healing timestamp to match the enemy cast. 
-    // We'll look a few seconds ahead too, to catch anyone using their cooldown a few ms before an ability is cast. 
-    for (var j = 0; j < enemyQuickTimeline.length; j++) {
-        const enemyCast = enemyQuickTimeline[j];
-        if ((enemyCast - entry.timestamp) <= lookForward && (enemyCast - entry.timestamp) >= 0) {
-          entry.timestamp = enemyCast;
-          break;
-        }
-        else if ((entry.timestamp - enemyCast) <= lookBack && (entry.timestamp - enemyCast) >= 0) {
-           entry.timestamp = enemyCast;
-           break;
-        }
-    }
-
-  } */
 
   // Create Events such as Phases, Any spells that don't have logged cast times such as gaining debuffs or damage taken at a certain event.
   let generatedEvents = createEvents(boss, difficulty, damageTaken, debuffs, starttime, enemyHealth, enemyCasts, buffData);
@@ -100,8 +77,8 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
   // ];
 
   // smart assign cooldown casts to bossAbilities
-  cooldownsTimeline = smartTransformData(cooldownsTimeline, enemyCastsTimeline);
-  
+  transformType === "Smart" ? (cooldownsTimeline = smartTransformData(cooldownsTimeline, enemyCastsTimeline)) : "";
+
   // Using our array of times that player spells were cast, we remap the cooldowns to those times.
   // Doing this we create our columns for the planner. i.e name0, name1, name 2 cooldown0, cooldown1, cooldown2 etc
   let newTimeline = times
@@ -112,7 +89,6 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
       return newObject;
     })
     .flat();
-
   // i.e
   // [
   //   { time: "00:03", name0: "Priest1", cooldown0: 213214, class0: "HolyPriest", name1: "Monk1", cooldown1: 213215, class1: "MistweaverMonk" },
