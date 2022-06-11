@@ -66,8 +66,9 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
   // Remove any duplicate imports for boss ability and time cast
   enemyCastsTimeline = enemyCastsTimeline.filter((value, index, self) => index === self.findIndex((t) => t.bossAbility === value.bossAbility && t.time === value.time));
 
-  // create an array of player cast times. We use this to map spells cast at the same time later.
-  let cooldownTimes = healerCasts.map((key) => moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"));
+  // create an array of player and enemy cast times. We use this to map spells cast at the same time later.
+  let times = healerCasts.map((key) => moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss")).concat(enemyCastsTimeline.map((key) => key.time));
+  times = [...new Set(times)]; // create unique array
   // i.e [ 00:03, 00:04 ]
 
   // map player casts into objects for us to parse
@@ -98,9 +99,12 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
   //   { guid: 216549, time: "00:04", name: "Priest2", class: "DisciplinePriest" },
   // ];
 
+  // smart assign cooldown casts to bossAbilities
+  cooldownsTimeline = smartTransformData(cooldownsTimeline, enemyCastsTimeline);
+  
   // Using our array of times that player spells were cast, we remap the cooldowns to those times.
   // Doing this we create our columns for the planner. i.e name0, name1, name 2 cooldown0, cooldown1, cooldown2 etc
-  let newTimeline = cooldownTimes
+  let newTimeline = times
     .map((key) => {
       let newObject = { time: key };
       cooldownsTimeline.filter((filter) => filter.time === key).map((map, i) => Object.assign(newObject, { ["name" + i]: map.name, ["cooldown" + i]: map.guid, ["class" + i]: map.class }));
@@ -108,18 +112,17 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
       return newObject;
     })
     .flat();
+
   // i.e
   // [
   //   { time: "00:03", name0: "Priest1", cooldown0: 213214, class0: "HolyPriest", name1: "Monk1", cooldown1: 213215, class1: "MistweaverMonk" },
   //   { time: "00:04", name0: "Priest2", cooldown0: 216549, class0: "DisciplinePriest" },
   // ];
 
-  //   enemyCastsTimeline.map((key) => moment(key.time, "mm:ss").seconds());
-  newTimeline = smartTransformData(newTimeline, enemyCastsTimeline);
-
   // merge the healer and enemy cast arrays of  objects
-  const data = [...newTimeline, ...enemyCastsTimeline]; //...data in question
-
+  let data = [...newTimeline, ...enemyCastsTimeline]; //...data in question
+  // filter lines to only have bossAbility or cooldowns, not just time only
+  data = data.filter((filter) => filter.bossAbility || filter.cooldown0 || filter.cooldown1 || filter.cooldown2 || filter.cooldown3 || filter.cooldown4);
   // if times match merge the objects
   let map = {};
   data.forEach(function (item) {
