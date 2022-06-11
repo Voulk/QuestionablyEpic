@@ -39,21 +39,25 @@ export default function createXymoxEvents(bossID, difficulty, damageTakenData, d
 
     events.push({ time: "00:00", bossAbility: "Phase 1" });
     const intermission1 = enemyHealthData.filter((filter) => filter.health <= 75)[0];
-    events.push({
-      time: moment
-        .utc(fightDuration(intermission1.time - 1000, starttime))
-        .startOf("second")
-        .format("mm:ss"),
-      bossAbility: "Intermission",
-    });
+    intermission1 !== undefined
+      ? events.push({
+          time: moment
+            .utc(fightDuration(intermission1.time - 1000, starttime))
+            .startOf("second")
+            .format("mm:ss"),
+          bossAbility: "Intermission",
+        })
+      : "";
     const intermission2 = enemyHealthData.filter((filter) => filter.health <= 50)[0];
-    events.push({
-      time: moment
-        .utc(fightDuration(intermission2.time - 1000, starttime))
-        .startOf("second")
-        .format("mm:ss"),
-      bossAbility: "Intermission",
-    });
+    intermission2 !== undefined
+      ? events.push({
+          time: moment
+            .utc(fightDuration(intermission2.time - 1000, starttime))
+            .startOf("second")
+            .format("mm:ss"),
+          bossAbility: "Intermission",
+        })
+      : "";
   }
 
   if (
@@ -79,21 +83,25 @@ export default function createXymoxEvents(bossID, difficulty, damageTakenData, d
 
     events.push({ time: "00:00", bossAbility: "Phase 1" });
     const intermission1 = enemyHealthData.filter((filter) => filter.health <= 75)[0];
-    events.push({
-      time: moment
-        .utc(fightDuration(intermission1.time - 1000, starttime))
-        .startOf("second")
-        .format("mm:ss"),
-      bossAbility: "Intermission",
-    });
+    intermission1 !== undefined
+      ? events.push({
+          time: moment
+            .utc(fightDuration(intermission1.time - 1000, starttime))
+            .startOf("second")
+            .format("mm:ss"),
+          bossAbility: "Intermission",
+        })
+      : "";
     const intermission2 = enemyHealthData.filter((filter) => filter.health <= 50)[0];
-    events.push({
-      time: moment
-        .utc(fightDuration(intermission2.time - 1000, starttime))
-        .startOf("second")
-        .format("mm:ss"),
-      bossAbility: "Intermission",
-    });
+    intermission2 !== undefined
+      ? events.push({
+          time: moment
+            .utc(fightDuration(intermission2.time - 1000, starttime))
+            .startOf("second")
+            .format("mm:ss"),
+          bossAbility: "Intermission",
+        })
+      : "";
     /* --------------------------------------- Ability Events --------------------------------------- */
   }
 

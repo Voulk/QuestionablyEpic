@@ -10,7 +10,7 @@ export default function createVigilantEvents(bossID, difficulty, damageTakenData
       health: key[1][1],
     };
   });
-  const logGuids = damageTakenData.map((key) => key.ability.guid).concat(debuffs.map((key) => key.ability.guid));
+  // const logGuids = damageTakenData.map((key) => key.ability.guid).concat(debuffs.map((key) => key.ability.guid));
 
   if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -24,21 +24,25 @@ export default function createVigilantEvents(bossID, difficulty, damageTakenData
 
     events.push({ time: "00:00", bossAbility: "Phase 1" });
     const phase2 = enemyHealthData.filter((filter) => filter.health <= 40)[0];
-    events.push({
-      time: moment
-        .utc(fightDuration(phase2.time - 1000, starttime))
-        .startOf("second")
-        .format("mm:ss"),
-      bossAbility: "Phase 2",
-    });
+    phase2 !== undefined
+      ? events.push({
+          time: moment
+            .utc(fightDuration(phase2.time - 1000, starttime))
+            .startOf("second")
+            .format("mm:ss"),
+          bossAbility: "Phase 2",
+        })
+      : "";
     const phase3 = enemyHealthData.filter((filter) => filter.health <= 15)[0];
-    events.push({
-      time: moment
-        .utc(fightDuration(phase3.time - 1000, starttime))
-        .startOf("second")
-        .format("mm:ss"),
-      bossAbility: "Phase 3",
-    });
+    phase3 !== undefined
+      ? events.push({
+          time: moment
+            .utc(fightDuration(phase3.time - 1000, starttime))
+            .startOf("second")
+            .format("mm:ss"),
+          bossAbility: "Phase 3",
+        })
+      : "";
   }
 
   if (
@@ -53,21 +57,25 @@ export default function createVigilantEvents(bossID, difficulty, damageTakenData
 
     events.push({ time: "00:00", bossAbility: "Phase 1" });
     const phase2 = enemyHealthData.filter((filter) => filter.health <= 40)[0];
-    events.push({
-      time: moment
-        .utc(fightDuration(phase2.time - 1000, starttime))
-        .startOf("second")
-        .format("mm:ss"),
-      bossAbility: "Phase 2",
-    });
+    phase2 !== undefined
+      ? events.push({
+          time: moment
+            .utc(fightDuration(phase2.time - 1000, starttime))
+            .startOf("second")
+            .format("mm:ss"),
+          bossAbility: "Phase 2",
+        })
+      : "";
     const phase3 = enemyHealthData.filter((filter) => filter.health <= 15)[0];
-    events.push({
-      time: moment
-        .utc(fightDuration(phase3.time - 1000, starttime))
-        .startOf("second")
-        .format("mm:ss"),
-      bossAbility: "Phase 3",
-    });
+    phase3 !== undefined
+      ? events.push({
+          time: moment
+            .utc(fightDuration(phase3.time - 1000, starttime))
+            .startOf("second")
+            .format("mm:ss"),
+          bossAbility: "Phase 3",
+        })
+      : "";
     /* --------------------------------------- Ability Events --------------------------------------- */
   }
 
