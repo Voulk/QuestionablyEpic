@@ -41,7 +41,7 @@ export default function FightSelectorButton(props) {
           horizontal: "left",
         }}
       >
-        {<LogImport reportid={props.reportid} clicker={props.clicky} update={props.update} close={handleClose} />}
+        {<LogImport reportid={props.reportid} clicker={props.clicky} update={props.update} close={handleClose} cooldownImportFilter={props.cooldownImportFilter} />}
       </Menu>
     </div>
   );

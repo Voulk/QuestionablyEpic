@@ -293,6 +293,7 @@ export default function AddPlanDialog(props) {
                   update={setLogToPlanData}
                   customStyleButton={{ width: "100%" }}
                   disabled={reportid === "" || reportid === 0 || reportid === "err" ? true : false}
+                  cooldownImportFilter={true}
                 />
               </Grid>
               <Grid item xs={12}>
