@@ -278,9 +278,6 @@ export default function AddPlanDialog(props) {
                   <Typography variant="subtitle2" sx={{ color: "limegreen", fontSize: "0.85rem" }}>
                     Import the boss casts and cooldown usage for a given log.
                   </Typography>
-                  <Typography variant="subtitle2" sx={{ fontSize: "0.75rem" }}>
-                    Currently the import is "Strict" in that exact cast times are imported. In the future there will be an option to assign casts near boss abilities to that ability.
-                  </Typography>
                 </Paper>
               </Grid>
               <Grid item xs={12}>
@@ -317,10 +314,15 @@ export default function AddPlanDialog(props) {
               </Typography>
               <ToggleButtonGroup value={importType} exclusive onChange={(e) => setImportType(e.target.value)} aria-label="text alignment" fullWidth>
                 <ToggleButton value="Strict" aria-label="Strict">
-                  Strict
+                  <Tooltip title={"Import log data exactly as abilities were cast"}>
+                    <div>Precise</div>
+                  </Tooltip>
                 </ToggleButton>
+
                 <ToggleButton value="Smart" aria-label="Smart">
-                  Smart
+                  <Tooltip title={"Import log and let QE assign cooldowns to boss abilities"}>
+                    <div>Smart</div>
+                  </Tooltip>
                 </ToggleButton>
               </ToggleButtonGroup>
             </Grid>
