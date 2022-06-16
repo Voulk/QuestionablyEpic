@@ -43,7 +43,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts --max_old_space_size=4096 start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build --max_old_space_size=4096",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

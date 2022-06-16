@@ -101,17 +101,25 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
   data = data.filter((filter) => filter.bossAbility || filter.cooldown0 || filter.cooldown1 || filter.cooldown2 || filter.cooldown3 || filter.cooldown4);
   // if times match merge the objects
   let map = {};
-  data.forEach(function (item) {
-    let id = item.time;
-    if (map[id] === undefined) {
-      map[id] = item;
+
+  // TODO: This function needs to be reworked.
+
+  data.map((object) => {
+    let currentTime = object.time; // "00:01"
+    if (map[currentTime] === undefined) {
+      // if map doesn't contain the time, add that object to the map object with the time as the key
+      // "00:01": {time: "00:01", etc etc}
+      map[currentTime] = object;
+      console.log(map);
     } else {
-      let existing = map[id]; // adding/updating new keys
-      for (let propt in item) {
-        existing[propt] = item[propt];
+      let existing = map[currentTime];
+      // for each prop in the object, add/update it to the mapped time.
+      for (let propt in object) {
+        existing[propt] = object[propt];
       }
     }
   });
+
   let results = [];
   Object.keys(map).forEach((k) => results.push(map[k]));
 
