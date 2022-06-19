@@ -12,8 +12,8 @@ export default function smartTransformData(healerCasts, enemyCasts) {
   let filteredEnemyCasts = enemyCasts.filter(
     (filter) => filter.bossAbility !== "Phase 1" && filter.bossAbility !== "Phase 2" && filter.bossAbility !== "Phase 3" && filter.bossAbility !== "Phase 4" && filter.bossAbility !== "Intermission",
   );
-  const lookBack = 7; // ms. TODO: refine.
-  const lookForward = 7; // ms
+  const lookBack = 5; // ms. TODO: refine.
+  const lookForward = 5; // ms
   for (var i = 0; i < healerCasts.length; i++) {
     let entry = healerCasts[i];
     const entryCastTime = parseInt(entry.time.split(":")[0]) * 60 + parseInt(entry.time.split(":")[1]);

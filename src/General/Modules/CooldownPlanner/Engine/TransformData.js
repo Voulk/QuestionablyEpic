@@ -98,7 +98,20 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
   // merge the healer and enemy cast arrays of  objects
   let data = [...newTimeline, ...enemyCastsTimeline]; //...data in question
   // filter lines to only have bossAbility or cooldowns, not just time only
-  data = data.filter((filter) => filter.bossAbility || filter.cooldown0 || filter.cooldown1 || filter.cooldown2 || filter.cooldown3 || filter.cooldown4);
+  data = data.filter(
+    (filter) =>
+      filter.bossAbility ||
+      filter.cooldown0 ||
+      filter.cooldown1 ||
+      filter.cooldown2 ||
+      filter.cooldown3 ||
+      filter.cooldown4 ||
+      filter.cooldown5 ||
+      filter.cooldown6 ||
+      filter.cooldown7 ||
+      filter.cooldown8 ||
+      filter.cooldown9,
+  );
   // if times match merge the objects
   let map = {};
 
@@ -110,7 +123,6 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
       // if map doesn't contain the time, add that object to the map object with the time as the key
       // "00:01": {time: "00:01", etc etc}
       map[currentTime] = object;
-      console.log(map);
     } else {
       let existing = map[currentTime];
       // for each prop in the object, add/update it to the mapped time.
@@ -122,6 +134,48 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
 
   let results = [];
   Object.keys(map).forEach((k) => results.push(map[k]));
+  let generatedResults = [];
+  results.map((key) => {
+    let newObject = { time: key.time };
+    if (Object.keys(key).includes("cooldown5")) {
+      if (Object.keys(key).includes("bossAbility")) {
+        Object.assign(newObject, { bossAbility: key.bossAbility });
+      }
+      if (Object.keys(key).includes("cooldown5")) {
+        Object.assign(newObject, { cooldown0: key.cooldown5, class0: key.class5, name0: key.name5 });
+        delete key.cooldown5;
+        delete key.class5;
+        delete key.name5;
+      }
+      if (Object.keys(key).includes("cooldown6")) {
+        Object.assign(newObject, { cooldown1: key.cooldown6, class1: key.class6, name1: key.name6 });
+        delete key.cooldown6;
+        delete key.class6;
+        delete key.name6;
+      }
+      if (Object.keys(key).includes("cooldown7")) {
+        Object.assign(newObject, { cooldown2: key.cooldown7, class2: key.class7, name2: key.name7 });
+        delete key.cooldown7;
+        delete key.class7;
+        delete key.name7;
+      }
+      if (Object.keys(key).includes("cooldown8")) {
+        Object.assign(newObject, { cooldown3: key.cooldown8, class3: key.class8, name3: key.name8 });
+        delete key.cooldown8;
+        delete key.class8;
+        delete key.name8;
+      }
+      if (Object.keys(key).includes("cooldown9")) {
+        Object.assign(newObject, { cooldown4: key.cooldown9, class4: key.class9, name4: key.name9 });
+        delete key.cooldown9;
+        delete key.class9;
+        delete key.name9;
+      }
+      generatedResults.push(newObject);
+    }
+  });
+  results.push(generatedResults);
+  results = results.flat();
 
   return results;
 }

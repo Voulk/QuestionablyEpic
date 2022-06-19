@@ -172,6 +172,13 @@ export default function AddPlanDialog(props) {
     setLoadingProgress(0);
   };
 
+  const handleContent = (event, content) => {
+    if (content === null) {
+    } else {
+      setImportType(content);
+    }
+  };
+
   return (
     <div>
       <Tooltip title={t("CooldownPlanner.AddPlanDialog.ButtonTooltip")} arrow>
@@ -312,8 +319,8 @@ export default function AddPlanDialog(props) {
               <Typography color="primary" align="center">
                 Import Type
               </Typography>
-              <ToggleButtonGroup value={importType} exclusive onChange={(e) => setImportType(e.target.value)} aria-label="text alignment" fullWidth>
-                <ToggleButton value="Strict" aria-label="Strict">
+              <ToggleButtonGroup value={importType} exclusive onChange={handleContent} aria-label="text alignment" fullWidth>
+                <ToggleButton value="Precise" aria-label="Precise">
                   <Tooltip title={"Import log data exactly as abilities were cast"}>
                     <div>Precise</div>
                   </Tooltip>

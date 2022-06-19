@@ -10,7 +10,7 @@ export default function createjailerEvents(bossID, difficulty, damageTakenData, 
       health: key[1][1],
     };
   });
-  console.log(jailerHealthData);
+  // console.log(jailerHealthData);
   const logGuids = damageTakenData.map((key) => key.ability.guid).concat(debuffs.map((key) => key.ability.guid));
   const surgingAzerite = 366408;
 
