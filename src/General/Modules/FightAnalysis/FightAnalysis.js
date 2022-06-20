@@ -14,6 +14,7 @@ import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
 import ExternalTimeline from "./Components/ExternalTimelineTable";
 import EnemyCastsTimeline from "./Components/EnemyCasts";
 import Cooldowns from "../CooldownPlanner/CooldownObject/CooldownObject";
+import HelpText from "../SetupAndMenus/HelpText";
 class FightAnalysis extends Component {
   constructor() {
     super();
@@ -158,6 +159,14 @@ class FightAnalysis extends Component {
     /* ------------------------------------ Data Loading Spinner ------------------------------------ */
     let spinnershow = this.state.loadingcheck;
 
+    const helpText = [
+      "Step 1: Start by clicking the Roster button and filling in your team.",
+      // "Step 2: Import a log to use as a template for your cooldowns, or select a boss and difficulty to do it manually.",
+      // "Use the 'Import/Export' Buttons to share plans with your team, or export it to your ERT note with the ERT Note Button.",
+      // "Jump into Fight Analysis to overlay your assigned cooldowns on a log for the fight.",
+    ];
+    const helpBlurb = "Welcome to the Fight Analysis Alpha. All bug reports and feedback welcome.";
+
     return (
       <div
         style={{
@@ -174,6 +183,10 @@ class FightAnalysis extends Component {
                 {/* // TODO Translate */}
                 Fight Analysis
               </Typography>
+            </Grid>
+
+            <Grid item xs={12}>
+              <HelpText text={helpText} blurb={helpBlurb} expanded={true} />
             </Grid>
 
             {/* ----------- Grid Container for the User Input Components, With Paper as the Surface ---------- */}
@@ -406,11 +419,10 @@ class FightAnalysis extends Component {
                   {/* ------------------------------- Stats / Talents / Soulbinds Etc ------------------------------ */}
                   <Grid item xs={12} sm={12} md={12} lg={6} xl={4} padding={1}>
                     <Paper style={{ padding: 8, marginBottom: 8 }} elevation={0}>
-                      <Typography variant="h6" color="primary" style={{ padding: "4px 8px 4px 24px" }}>
+                      <Typography variant="h6" color="primary">
                         {/* TODO: Translate */}
                         Healer Information
                       </Typography>
-                      <Divider />
                     </Paper>
                     <HealerInfoTable heals={this.state.healernames} />
                   </Grid>

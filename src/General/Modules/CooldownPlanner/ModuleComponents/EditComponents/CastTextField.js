@@ -43,8 +43,7 @@ export default function CastTextField(props) {
     return newDate;
   };
 
-  // construct state "value" from provided time string
-  const [value, setValue] = React.useState(constructTime(props.value));
+  const [value, setValue] = React.useState(constructTime(props.value)); // construct state "value" from provided time string
 
   // After checking for errors set state and update table data
   const updateTime = (time) => {
@@ -55,17 +54,13 @@ export default function CastTextField(props) {
       let newDate = new Date();
       newDate.setMinutes(0);
       newDate.setSeconds(0);
-      // update state
-      setValue(newDate);
-      // update table data
+      setValue(newDate); // update state
       let splitTime = newDate.toString().split(" ")[4].split(":");
-      props.onChange(splitTime[1] + ":" + splitTime[2]);
+      props.onChange(splitTime[1] + ":" + splitTime[2]); // update table data
     } else {
-      // update state
-      setValue(time);
-      // update table data
+      setValue(time); // update state
       let splitTime = time.toString().split(" ")[4].split(":");
-      props.onChange(splitTime[1] + ":" + splitTime[2]);
+      props.onChange(splitTime[1] + ":" + splitTime[2]); // update table data
     }
   };
 

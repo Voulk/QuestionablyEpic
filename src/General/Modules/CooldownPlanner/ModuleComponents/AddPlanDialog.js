@@ -7,8 +7,9 @@ import PropTypes from "prop-types";
 import { fightDuration, warcraftLogReportID, logDifficulty } from "../../CooldownPlanner/Functions/Functions";
 import LogLinkInput from "General/SystemTools/LogImport/LogLinkInput";
 import FightSelectorButton from "General/SystemTools/LogImport/FightSelectorButton";
-import logToPlan from "../Functions/LogToPlan";
+import importLogData from "../Engine/ImportLogData";
 import LinearWithValueLabel from "../BasicComponents/LinearProgressBar";
+import transformData from "../Engine/TransformData";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -40,6 +41,7 @@ export default function AddPlanDialog(props) {
   const { handleAddPlanDialogClose, handleAddPlanDialogClickOpen, openAddPlanDialog, cooldownObject, currentBoss, loadPlanData, currentDifficulty, disabledCheck, changeBoss, currentRaid } = props;
   const [planName, setPlanName] = useState("");
   const [difficulty, setDifficulty] = useState(currentDifficulty);
+  const [importType, setImportType] = useState("Smart");
   const bossPlans = Object.keys(cooldownObject.getCooldowns(currentBoss, currentDifficulty));
   const duplicatePlanNameCheck = bossPlans.includes(planName) ? true : false;
   const { t, i18n } = useTranslation();
@@ -47,7 +49,18 @@ export default function AddPlanDialog(props) {
 
   const [value, setValue] = React.useState(0);
   const [reportid, setReportid] = React.useState(0);
-  const [logData, setLogData] = React.useState({ enemyCasts: [], bossID: 0, difficulty: "", importSuccessful: false });
+  const [logData, setLogData] = React.useState({
+    enemyCasts: [],
+    healerCasts: [],
+    healers: [],
+    bossID: 0,
+    difficulty: "",
+    importSuccessful: false,
+    damageTaken: [],
+    debuffData: [],
+    enemyHealth: [],
+    buffData: [],
+  });
   const [logDataLoading, setLogDataLoading] = React.useState(false);
   const [loadingProgress, setLoadingProgress] = React.useState(0);
 
@@ -113,6 +126,9 @@ export default function AddPlanDialog(props) {
   ]);
 
   const handler = (info) => {
+    // reset logData state on new selection
+    setLogData({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false, damageTaken: [], debuffData: [], enemyHealth: [], buffData: [] });
+    // set data returned from wcl (some useless data here as we are reusing code)
     setLogInfo([
       {
         time: info[0],
@@ -134,15 +150,33 @@ export default function AddPlanDialog(props) {
   };
 
   const setLogToPlanData = (starttime, endtime, reportID, bossID, difficulty) => {
-    logToPlan(starttime, endtime, reportID, bossID, difficulty, setLogData, setLoadingProgress);
+    importLogData(starttime, endtime, reportID, bossID, difficulty, setLogData, setLoadingProgress);
   };
 
-  const importPlanToCooldownObject = (planName, boss, difficulty, planData) => {
-    cooldownObject.importLogPlan(planName, boss, difficulty, planData);
-    loadPlanData(boss, planName, difficulty);
+  const importPlanToCooldownObject = (planName, boss, difficulty, importType) => {
+    const startTime = logInfo[0].time;
+    const enemyCasts = logData.enemyCasts;
+    const healerCasts = logData.healerCasts;
+    const healers = logData.healers;
+    const damageTaken = logData.damageTaken;
+    const debuffData = logData.debuffData;
+    const enemyHealth = logData.enemyHealth;
+    const buffData = logData.buffData;
+    // transform the imported data into plan data
+    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData, enemyHealth, buffData, importType);
+    cooldownObject.importLogPlan(planName, boss, difficulty, transformedData);
+    loadPlanData(boss, planName, difficulty); // load the imported plan data
     handleAddPlanDialogClose(true);
+    // reset the loading bar states
     setLogDataLoading(false);
     setLoadingProgress(0);
+  };
+
+  const handleContent = (event, content) => {
+    if (content === null) {
+    } else {
+      setImportType(content);
+    }
   };
 
   return (
@@ -157,7 +191,7 @@ export default function AddPlanDialog(props) {
       <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="xs" fullWidth>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="fullWidth">
           <Tab label="Create New Plan" {...a11yProps(0)} />
-          <Tab label="WCL Import" {...a11yProps(1)} />
+          <Tab label="Import Plan from WCL" {...a11yProps(1)} />
         </Tabs>
         <TabPanel value={value} index={0}>
           <DialogContent sx={{ padding: "8px" }}>
@@ -251,15 +285,11 @@ export default function AddPlanDialog(props) {
                   <Typography variant="subtitle2" sx={{ color: "limegreen", fontSize: "0.85rem" }}>
                     Import the boss casts and cooldown usage for a given log.
                   </Typography>
-                  <Typography variant="subtitle2" sx={{ fontSize: "0.75rem" }}>
-                    Currently the import is "Strict" in that exact cast times are imported. In the future there will be an option to assign casts near boss abilities to that ability.
-                  </Typography>
                 </Paper>
               </Grid>
               <Grid item xs={12}>
                 <LogLinkInput changed={reportidHandler} reportid={reportid} styleProps={{ fullWidth: true }} />
               </Grid>
-              {/* ----------------------------------- Fight Selection Button ----------------------------------- */}
               <Grid item xs={12}>
                 <FightSelectorButton
                   reportid={reportid}
@@ -267,6 +297,7 @@ export default function AddPlanDialog(props) {
                   update={setLogToPlanData}
                   customStyleButton={{ width: "100%" }}
                   disabled={reportid === "" || reportid === 0 || reportid === "err" ? true : false}
+                  cooldownImportFilter={true}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -283,6 +314,24 @@ export default function AddPlanDialog(props) {
                   ""
                 )}
               </Grid>
+            </Grid>
+            <Grid item xl={12}>
+              <Typography color="primary" align="center">
+                Import Type
+              </Typography>
+              <ToggleButtonGroup value={importType} exclusive onChange={handleContent} aria-label="text alignment" fullWidth>
+                <ToggleButton value="Precise" aria-label="Precise">
+                  <Tooltip title={"Import log data exactly as abilities were cast"}>
+                    <div>Precise</div>
+                  </Tooltip>
+                </ToggleButton>
+
+                <ToggleButton value="Smart" aria-label="Smart">
+                  <Tooltip title={"Import log and let QE assign cooldowns to boss abilities"}>
+                    <div>Smart</div>
+                  </Tooltip>
+                </ToggleButton>
+              </ToggleButtonGroup>
             </Grid>
             <Grid item xs={12}>
               <Typography color="primary" align="center">
@@ -306,7 +355,7 @@ export default function AddPlanDialog(props) {
               key={9}
               variant="contained"
               color="primary"
-              onClick={(e) => importPlanToCooldownObject(planName, logData.bossID, logData.difficulty, logData.enemyCasts)}
+              onClick={(e) => importPlanToCooldownObject(planName, logData.bossID, logData.difficulty, importType)}
               size="small"
               disabled={logData.importSuccessful === false || planName === ""}
             >

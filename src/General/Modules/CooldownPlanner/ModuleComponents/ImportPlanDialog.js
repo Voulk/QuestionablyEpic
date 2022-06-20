@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import ls from "local-storage";
-import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip, Typography, Link, Switch, FormControlLabel } from "@mui/material";
+import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip, Switch, FormControlLabel } from "@mui/material";
 
 export default function ImportPlanDialog(props) {
   const { t } = useTranslation();
@@ -36,12 +36,9 @@ export default function ImportPlanDialog(props) {
       setErrorMessage(t("CooldownPlanner.ImportPlanDialog.Errors.HeaderError"));
       setDisableButton(true);
     } else {
-      // If header line is there set no errors
-      lines[0] === "# QE Cooldown Planner" ? setError(false) : setError(true);
-      // Generic error handling set error as string error
-      error ? setErrorMessage(t("CooldownPlanner.ImportPlanDialog.Errors.StringError")) : "";
-      // if no error check for duplicate plan names
-      error ? "" : checkForDuplicatePlan(importedString);
+      lines[0] === "# QE Cooldown Planner" ? setError(false) : setError(true); // If header line is there set no errors
+      error ? setErrorMessage(t("CooldownPlanner.ImportPlanDialog.Errors.StringError")) : ""; // Generic error handling set error as string error
+      error ? "" : checkForDuplicatePlan(importedString); // if no error check for duplicate plan names
       error ? setDisableButton(true) : setDisableButton(false);
     }
   };
@@ -70,10 +67,8 @@ export default function ImportPlanDialog(props) {
       }
     }
 
-    /* ---------------------- Retreive the list of plans for the imported boss ---------------------- */
-    const bossPlans = Object.keys(cooldownObject.getCooldowns(importedBoss, importDifficulty));
-    /* ---------------------------- Check if the plan name exists already --------------------------- */
-    const duplicatePlanNameCheck = bossPlans.includes(importPlanName) ? true : false;
+    const bossPlans = Object.keys(cooldownObject.getCooldowns(importedBoss, importDifficulty)); // Retreive the list of plans for the imported boss
+    const duplicatePlanNameCheck = bossPlans.includes(importPlanName) ? true : false; // Check if the plan name exists already
     // Set Warning if duplicate detected
     duplicatePlanNameCheck ? setErrorMessage(t("CooldownPlanner.ImportPlanDialog.Errors.DuplicatePlanWarning")) : "";
     setError(duplicatePlanNameCheck);
@@ -88,8 +83,7 @@ export default function ImportPlanDialog(props) {
     let importDifficulty = "";
     let importedRoster = "";
     let currentRoster = ls.get("healerInfo");
-
-    var lines = importedString.split("\n");
+    let lines = importedString.split("\n");
 
     for (var i = 0; i < lines.length; i++) {
       let line = lines[i];
@@ -115,8 +109,8 @@ export default function ImportPlanDialog(props) {
     if (checked === true) {
       importedRoster = JSON.parse(importedString.split("Roster=")[1]);
 
-      var names = new Set(currentRoster.map((d) => d.name));
-      var merged = [...currentRoster, ...importedRoster.filter((d) => !names.has(d.name))];
+      let names = new Set(currentRoster.map((d) => d.name));
+      let merged = [...currentRoster, ...importedRoster.filter((d) => !names.has(d.name))];
 
       ls.set("healerInfo", merged);
     }

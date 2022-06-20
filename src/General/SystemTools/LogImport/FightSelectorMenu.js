@@ -62,7 +62,18 @@ class LogImport extends Component {
     // Split up fights for indexing
     // limit fights on what we want to prevent bad fights? idk options man
     // const filteredFights = fights.filter(fight => bossList.find(boss => fight.boss === boss.id));
-    const filteredFights = fights.filter((name) => name.boss !== 0);
+    // filter LFR & Normal logs if cooldownImportFilter === true
+    const filteredFights =
+      this.props.cooldownImportFilter === true ? fights.filter((name) => name.boss !== 0 && name.difficulty !== 1 && name.difficulty !== 2) : fights.filter((name) => name.boss !== 0);
+
+    // show message if log only contains lfr & normal logs (cooldown import only)
+    if (filteredFights.length === 0 && this.props.cooldownImportFilter === true) {
+      return (
+        <MenuItem key={98} value="noValid">
+          No Valid Fights (Only Heroic and Mythic Supported)
+        </MenuItem>
+      );
+    }
 
     // now we map (i dislike this klunkyness but hey sucks don't it)
     const fightsMapped = {};

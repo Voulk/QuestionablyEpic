@@ -8,7 +8,6 @@ class CooldownPlannerModule extends Component {
   constructor() {
     super();
     /* ----------------------- We bind the below functions to this Component. ----------------------- */
-    // This means these functions can be passed as props to other components and they will return here rather than in the component they are sent to.
     this.handleHealTeamClickOpen = this.handleHealTeamClickOpen.bind(this);
 
     /* ---------------------- We set our state for the cooldown Planner Module. --------------------- */
@@ -31,14 +30,12 @@ class CooldownPlannerModule extends Component {
 
   render() {
     const helpText = [
-      "Step 1: Start by clicking the Roster button and fill it out.",
-      "Step 2: Select a boss and difficulty",
-      "Step 3: By default we have provided a default plan for each boss, these can't be edited but can be copied into a new plan for you to edit by clicking 'Copy'. Or you can create your own but clicking on 'Add'",
-      "Plans can be shared with the 'Import/Export' Buttons",
-      "Each plan can be exported as an ERT note with the 'Note' button",
-      "Advanced Use with Fight Analysis: Any plan you make can replace the cooldowns on an imported log in the fight analysis module by toggling the 'Log Cooldown/Custom Cooldown' dropdown, and selecting a plan from the 'Plans' dropdown, use this to compare your assignments to a logs damage pattern!",
+      "Step 1: Start by clicking the Roster button and filling in your team.",
+      "Step 2: Import a log to use as a template for your cooldowns, or select a boss and difficulty to do it manually.",
+      "Use the 'Import/Export' Buttons to share plans with your team, or export it to your ERT note with the ERT Note Button.",
+      "Jump into Fight Analysis to overlay your assigned cooldowns on a log for the fight.",
     ];
-    const helpBlurb = "Welcome to the Cooldown Planner. This is still a work in progress so any bugs / feedback is welcome.";
+    const helpBlurb = "Welcome to the Cooldown Planner Alpha. All bug reports and feedback welcome.";
 
     return (
       <div
@@ -47,9 +44,6 @@ class CooldownPlannerModule extends Component {
         }}
       >
         <div style={{ margin: "20px 3% 20px 3%" }}>
-          {/* ---------------------------------------------------------------------------------------------- */
-          /*                                  Main Grid for the Component                                   */
-          /* ---------------------------------------------------------------------------------------------- */}
           <Grid container spacing={1}>
             <Grid item xs={12}>
               <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
@@ -75,7 +69,6 @@ class CooldownPlannerModule extends Component {
             </Grid>
 
             {/* ------------------------------------- Healer Team Dialog ------------------------------------- */}
-            {/* ------------------- This is where you enter your healing team into the app. ------------------ */}
             <Dialog onClose={this.handleHealTeamClose} aria-labelledby="ERT-Dialog" open={this.state.healTeamDialogState} maxWidth="lg" fullWidth PaperProps={{ style: { minWidth: 300 } }}>
               <HealTeam />
             </Dialog>

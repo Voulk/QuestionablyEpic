@@ -4,6 +4,7 @@ import { spellExclusions } from "../Data/SpellExclusions";
 import { cooldownDB } from "../Data/CooldownDB";
 import { externalsDB } from "../../../../Databases/ExternalsDB";
 import chroma from "chroma-js";
+import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
 // import i18n from "i18next";
 
 // Returns Seconds from 0 to Loglength
@@ -22,13 +23,10 @@ export function addMissingTimestamps(loglength) {
 
 // Returns Unique Objects from an array of Objects
 export function getUniqueObjectsFromArray(arr, comp) {
-  // store the comparison  values in array
-  const unique = arr
+  const unique = arr // store the comparison  values in array
     .map((e) => e[comp])
-    // store the indexes of the unique objects
-    .map((e, i, final) => final.indexOf(e) === i && i)
-    // eliminate the false indexes & return unique objects
-    .filter((e) => arr[e])
+    .map((e, i, final) => final.indexOf(e) === i && i) // store the indexes of the unique objects
+    .filter((e) => arr[e]) // eliminate the false indexes & return unique objects
     .map((e) => arr[e]);
   return unique;
 }
@@ -116,13 +114,14 @@ export async function importHealerLogData(starttime, endtime, reportid) {
   const apiDemonHunter = "&sourceclass=DemonHunter";
   const apiDeathKnight = "&sourceclass=DeathKnight";
   const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
+  const translate = "&translate=true";
   const START = "?start=";
   const END = "&end=";
   let healers = [];
   // Class Casts Import
 
   await axios
-    .get(APIHEALING + reportid + START + starttime + END + endtime + apiMonk + API2)
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiMonk + translate + API2)
     .then((result) => {
       healers = Object.keys(result.data.entries)
         .filter((key) => result.data.entries[key].icon === "Monk-Mistweaver")
@@ -133,7 +132,7 @@ export async function importHealerLogData(starttime, endtime, reportid) {
     });
 
   await axios
-    .get(APIHEALING + reportid + START + starttime + END + endtime + apiPaladin + API2)
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiPaladin + translate + API2)
     .then((result) => {
       healers = healers.concat(
         Object.keys(result.data.entries)
@@ -146,7 +145,7 @@ export async function importHealerLogData(starttime, endtime, reportid) {
     });
 
   await axios
-    .get(APIHEALING + reportid + START + starttime + END + endtime + apiDruid + API2)
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiDruid + translate + API2)
     .then((result) => {
       healers = healers.concat(
         Object.keys(result.data.entries)
@@ -159,7 +158,7 @@ export async function importHealerLogData(starttime, endtime, reportid) {
     });
 
   await axios
-    .get(APIHEALING + reportid + START + starttime + END + endtime + apiPriest + API2)
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiPriest + translate + API2)
     .then((result) => {
       healers = healers.concat(
         Object.keys(result.data.entries)
@@ -176,7 +175,7 @@ export async function importHealerLogData(starttime, endtime, reportid) {
     });
 
   await axios
-    .get(APIHEALING + reportid + START + starttime + END + endtime + apiShaman + API2)
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiShaman + translate + API2)
     .then((result) => {
       healers = healers.concat(
         Object.keys(result.data.entries)
@@ -189,7 +188,7 @@ export async function importHealerLogData(starttime, endtime, reportid) {
     });
 
   await axios
-    .get(APIHEALING + reportid + START + starttime + END + endtime + apiWarrior + API2)
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiWarrior + translate + API2)
     .then((result) => {
       healers = healers.concat(Object.keys(result.data.entries).map((key) => result.data.entries[key]));
     })
@@ -198,7 +197,7 @@ export async function importHealerLogData(starttime, endtime, reportid) {
     });
 
   await axios
-    .get(APIHEALING + reportid + START + starttime + END + endtime + apiDemonHunter + API2)
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiDemonHunter + translate + API2)
     .then((result) => {
       healers = healers.concat(Object.keys(result.data.entries).map((key) => result.data.entries[key]));
     })
@@ -207,7 +206,7 @@ export async function importHealerLogData(starttime, endtime, reportid) {
     });
 
   await axios
-    .get(APIHEALING + reportid + START + starttime + END + endtime + apiDeathKnight + API2)
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiDeathKnight + translate + API2)
     .then((result) => {
       healers = healers.concat(Object.keys(result.data.entries).map((key) => result.data.entries[key]));
     })
@@ -221,7 +220,7 @@ export async function importHealerLogData(starttime, endtime, reportid) {
 // Returns Array of Friendly Information
 export async function importCharacterIds(starttime, endtime, reportid) {
   const WCLLink = "https://www.warcraftlogs.com:443/v1/report/fights/";
-
+  const translate = "&translate=true";
   const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
   const START = "?start=";
   const END = "&end=";
@@ -229,7 +228,7 @@ export async function importCharacterIds(starttime, endtime, reportid) {
   // Class Casts Import
 
   await axios
-    .get(WCLLink + reportid + START + starttime + END + endtime + API2)
+    .get(WCLLink + reportid + START + starttime + END + endtime + translate + API2)
     .then((result) => {
       Object.entries(result.data.friendlies).map((key) =>
         ids.push({
@@ -261,10 +260,11 @@ export async function importEnemyIds(starttime, endtime, reportid) {
   const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
   const START = "?start=";
   const END = "&end=";
+  const translate = "&translate=true";
   let ids = [];
 
   await axios
-    .get(WCLLink + reportid + START + starttime + END + endtime + API2)
+    .get(WCLLink + reportid + START + starttime + END + endtime + translate + API2)
     .then((result) => {
       Object.entries(result.data.enemies).map((key) =>
         ids.push({
@@ -287,12 +287,13 @@ export async function importDamageLogData(starttime, endtime, reportid) {
   const START = "?start=";
   const END = "&end=";
   const HOSTILITY = "&hostility=0";
+  const translate = "&translate=true";
   let damage = [];
   let nextpage = 0;
   // Class Casts Import
 
   await axios
-    .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + API2)
+    .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + translate + API2)
     .then((result) => {
       damage = Object.keys(result.data.events)
         .filter(
@@ -312,7 +313,7 @@ export async function importDamageLogData(starttime, endtime, reportid) {
   if (nextpage !== undefined || null) {
     do {
       await axios
-        .get(APIdamagetaken + reportid + START + nextpage + END + endtime + HOSTILITY + API2)
+        .get(APIdamagetaken + reportid + START + nextpage + END + endtime + HOSTILITY + translate + API2)
         .then((result) => {
           damage = damage.concat(
             Object.keys(result.data.events)
@@ -341,11 +342,12 @@ export async function importCastsLogData(starttime, endtime, reportid, healerID)
   const END = "&end=";
   const HOSTILITY = "&hostility=0";
   const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
+  const translate = "&translate=true";
   let nextpage = 0;
   let cooldowns = [];
 
   await axios
-    .get(APICast + reportid + START + starttime + END + endtime + HOSTILITY + API2)
+    .get(APICast + reportid + START + starttime + END + endtime + HOSTILITY + translate + API2)
     .then((result) => {
       cooldowns = Object.keys(result.data.events)
         .filter(
@@ -362,7 +364,7 @@ export async function importCastsLogData(starttime, endtime, reportid, healerID)
   if (nextpage !== undefined || null) {
     do {
       await axios
-        .get(APICast + reportid + START + nextpage + END + endtime + HOSTILITY + API2)
+        .get(APICast + reportid + START + nextpage + END + endtime + HOSTILITY + translate + API2)
         .then((result) => {
           cooldowns = cooldowns.concat(
             Object.keys(result.data.events)
@@ -389,11 +391,12 @@ export async function importEnemyCasts(starttime, endtime, reportid) {
   const END = "&end=";
   const HOSTILITY = "&hostility=1";
   const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
+  const translate = "&translate=true";
   let nextpage = 0;
   let enemyCasts = [];
 
   await axios
-    .get(APICast + reportid + START + starttime + END + endtime + HOSTILITY + API2)
+    .get(APICast + reportid + START + starttime + END + endtime + HOSTILITY + translate + API2)
     .then((result) => {
       enemyCasts = Object.keys(result.data.events)
         .filter((key) => result.data.events[key].type === "cast")
@@ -408,7 +411,7 @@ export async function importEnemyCasts(starttime, endtime, reportid) {
   if (nextpage !== undefined || null) {
     do {
       await axios
-        .get(APICast + reportid + START + nextpage + END + endtime + HOSTILITY + API2)
+        .get(APICast + reportid + START + nextpage + END + endtime + HOSTILITY + translate + API2)
         .then((result) => {
           enemyCasts = enemyCasts.concat(
             Object.keys(result.data.events)
@@ -432,11 +435,12 @@ export async function importExternalCastsLogData(starttime, endtime, reportid, h
   const END = "&end=";
   const HOSTILITY = "&hostility=0";
   const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
+  const translate = "&translate=true";
   let nextpage = 0;
   let externals = [];
 
   await axios
-    .get(APICast + reportid + START + starttime + END + endtime + HOSTILITY + API2)
+    .get(APICast + reportid + START + starttime + END + endtime + HOSTILITY + translate + API2)
     .then((result) => {
       externals = Object.keys(result.data.events)
         .filter(
@@ -458,7 +462,7 @@ export async function importExternalCastsLogData(starttime, endtime, reportid, h
   if (nextpage !== undefined || null) {
     do {
       await axios
-        .get(APICast + reportid + START + nextpage + END + endtime + HOSTILITY + API2)
+        .get(APICast + reportid + START + nextpage + END + endtime + HOSTILITY + translate + API2)
         .then((result) => {
           externals = externals.concat(
             Object.keys(result.data.events)
@@ -561,11 +565,12 @@ export async function importSummaryData(starttime, endtime, reportid) {
   const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
   const START = "?start=";
   const END = "&end=";
+  const translate = "&translate=true";
   let summary = [];
   // Class Casts Import
 
   await axios
-    .get(APISummary + reportid + START + starttime + END + endtime + API2)
+    .get(APISummary + reportid + START + starttime + END + endtime + translate + API2)
     .then((result) => {
       summary = Object.keys(result.data.playerDetails)
 
@@ -591,6 +596,7 @@ export async function importRaidHealth(starttime, endtime, reportid) {
   const END = "&end=";
   const HOSTILITY = "&hostility=0";
   const ABILITYID = "&abilityid=1000";
+  const translate = "&translate=true";
   let health = [];
   let health2 = [];
   let reducedHealth = [];
@@ -608,7 +614,7 @@ export async function importRaidHealth(starttime, endtime, reportid) {
   //   });
 
   await axios
-    .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + ABILITYID + API2)
+    .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + ABILITYID + translate + API2)
     .then((result) => {
       const data = result.data;
       const players = data.series.filter((key) => key.type !== "Pet");
@@ -729,63 +735,4 @@ export function wclClassConverter(wclClass) {
       break;
   }
   return newClass;
-}
-
-export async function importCooldownPlannerCastsLogData(starttime, endtime, reportid, healerID) {
-  const APICast = "https://www.warcraftlogs.com:443/v1/report/events/casts/";
-  const START = "?start=";
-  const END = "&end=";
-  const HOSTILITY = "&hostility=0";
-  const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
-  let nextpage = 0;
-  let cooldowns = [];
-
-  await axios
-    .get(APICast + reportid + START + starttime + END + endtime + HOSTILITY + API2)
-    .then((result) => {
-      cooldowns = Object.keys(result.data.events)
-        .filter(
-          (key) =>
-            cooldownDB
-              .filter((filter) => filter.cdPlannerImport === true)
-              .map((obj) => obj.guid)
-              .includes(result.data.events[key].ability.guid) &&
-            result.data.events[key].type === "cast" &&
-            healerID.includes(result.data.events[key].sourceID),
-        )
-        .map((key) => result.data.events[key]);
-      nextpage = result.data.nextPageTimestamp;
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  // Loop of the import updating the next page until the next page is undefined (no next page from json return)
-  let i = 0;
-  if (nextpage !== undefined || null) {
-    do {
-      await axios
-        .get(APICast + reportid + START + nextpage + END + endtime + HOSTILITY + API2)
-        .then((result) => {
-          cooldowns = cooldowns.concat(
-            Object.keys(result.data.events)
-              .filter(
-                (key) =>
-                  cooldownDB
-                    .filter((filter) => filter.cdPlannerImport === true)
-                    .map((obj) => obj.guid)
-                    .includes(result.data.events[key].ability.guid) &&
-                  result.data.events[key].type === "cast" &&
-                  healerID.includes(result.data.events[key].sourceID),
-              )
-              .map((key) => result.data.events[key]),
-          );
-          nextpage = result.data.nextPageTimestamp;
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-      i = i + 1;
-    } while (nextpage !== undefined || null);
-  }
-  return cooldowns;
 }
