@@ -120,7 +120,7 @@
       "DuplicatePlanError": "Duplicate plan name detected, please choose another.",
       "AddPlanDialog": {
         "ButtonLabel": "Add",
-        "ButtonTooltip": "Add a new blank plan",
+        "ButtonTooltip": "Add a new plan with a sample log, a set of defaults, or a blank slate.",
         "HeaderTitle": "Enter Plan Name"
       },
       "CopyPlanDialog": {
@@ -131,6 +131,7 @@
       },
       "DeletePlanDialog": {
         "ButtonLabel": "Delete",
+        "ButtonTooltip": "Delete your plan permanently.",
         "HeaderTitle": "Are you sure you want to delete the current plan?",
         "PlaceholderText": "Type 'Delete' to confirm"
       },
@@ -139,9 +140,9 @@
         "HeaderTitle": "Export Plan"
       },
       "NoteExportDialog": {
-        "ButtonLabel": "Note",
+        "ButtonLabel": "MRT Note",
         "HeaderTitle": "Note Export",
-        "NoteExportTooltip": "Export your plan into a note format"
+        "NoteExportTooltip": "Export your plan into a note format compatible with ERT / MRT."
       },
       "ImportPlanDialog": {
         "ButtonLabel": "Import",

@@ -80,7 +80,7 @@ export const CooldownPlannerTheme = createTheme({
     MuiToolbar: {
       styleOverrides: {
         root: {
-          color: "#345",
+          color: "#d3bc47",
           paddingLeft: 0,
           paddingRight: 0,
         },

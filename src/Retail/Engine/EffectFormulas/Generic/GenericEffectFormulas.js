@@ -23,10 +23,10 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
 
     if (player.getSpec() === "Discipline Priest") {
       
-      bonus_stats.versatility = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.avgStacks;
+      bonus_stats.versatility = Math.round(getProcessedValue(effect.coefficient, effect.table, itemLevel, 1, false) * effect.avgStacks);
     }
     else {
-      bonus_stats.versatility = getProcessedValue(effect.coefficient, effect.table, itemLevel) * (effect.avgStacks * 0.7); 
+      bonus_stats.versatility = Math.round(getProcessedValue(effect.coefficient, effect.table, itemLevel, 1, false) * (effect.avgStacks * 0.7)); 
       // This needs more analysis around holding stacks. A 30% penalty is almost certainly too harsh.
     }
     
@@ -38,10 +38,10 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
 
     if (player.getSpec() === "Discipline Priest") {
       // Unfortunately Disc is not able to benefit from the 19 stack strategy as their healing requires that they DPS.
-      bonus_stats.versatility = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.avgStacks;
+      bonus_stats.versatility = Math.round(getProcessedValue(effect.coefficient, effect.table, itemLevel, 1, false) * effect.avgStacks);
     }
     else {
-      bonus_stats.versatility = getProcessedValue(effect.coefficient, effect.table, itemLevel) * 19; 
+      bonus_stats.versatility = Math.round(getProcessedValue(effect.coefficient, effect.table, itemLevel, 1, false) * 19);
     } 
   } 
   else if (effectName === "Soulwarped Seal of Wrynn") {

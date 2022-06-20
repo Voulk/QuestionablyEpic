@@ -249,7 +249,7 @@ export const cooldownDB = [
     cooldown: 45,
     class: "Priest",
     cdPlannerMenuActive: false,
-    cdPlannerImport: true,
+    cdPlannerImport: false,
   },
   {
     name: {
@@ -265,7 +265,7 @@ export const cooldownDB = [
     cooldown: 60,
     class: "Priest",
     cdPlannerMenuActive: true,
-    cdPlannerImport: true,
+    cdPlannerImport: false,
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Druid                                             */
@@ -379,7 +379,7 @@ export const cooldownDB = [
     guid: 323764,
     icon: require("Images/CooldownPlanner/SpellIcons/ability_ardenweald_druid.jpg").default,
     duration: 4,
-    cooldown: 120,
+    cooldown: 60,
     class: "RestorationDruid",
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
@@ -584,8 +584,8 @@ export const cooldownDB = [
     duration: 1,
     cooldown: 45,
     class: "RestorationShaman",
-    cdPlannerMenuActive: true,
-    cdPlannerImport: true,
+    cdPlannerMenuActive: false,
+    cdPlannerImport: false,
   },
   {
     name: {

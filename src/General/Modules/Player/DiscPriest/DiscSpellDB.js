@@ -68,6 +68,15 @@ export const DISCSPELLS = {
         cooldown: 40,
         atoneOverheal: 0.23,
         secondaries: ['crit', 'vers'],
+    },
+    { // This is the absorb / damage reverse portion.
+        type: "heal",
+        castTime: 0,
+        coeff: 9, // This is 4.5 x 2 since the damage is both negated and then the target healed.
+        aura: 1,
+        targets: 1,
+        secondaries: ['vers'],
+        overheal: 0.15, // 
     }],
     "Schism": [{
         type: "damage",
@@ -189,6 +198,8 @@ export const DISCSPELLS = {
         secondaries: ['crit', 'vers'],
         overheal: 0,
     }],
+    // Rapture both buffs Power Word: Shield and adds an absorb to the target that is functionally the same as a buffed Power Word: Shield.
+    // We'll match that in-game behavior here too.
     "Rapture": [{
         type: "heal",
         castTime: 1.5,
@@ -229,12 +240,23 @@ export const DISCSPELLS = {
         aura: 1,
         secondaries: ['crit', 'vers'],
         atoneOverheal: 0.2,
-        dot: {
+        dot: { // Replaced and now unused.
             tickRate: 2,
             coeff: 0.12,
             aura: 1,
             duration: 26, // 20 x 1.3
         }
+    },
+    {
+        castTime: 0,
+        type: "buff",
+        buffType: "damage",
+        coeff: 0.12, // 
+        tickRate: 2,
+        buffDuration: 26,
+        atoneOverheal: 0.2,
+        secondaries: ['crit', 'vers'], // + Haste
+        canPartialTick: true,
     }],
     "Shadow Word: Pain": [{
         type: "damage",
@@ -244,14 +266,25 @@ export const DISCSPELLS = {
         aura: 1,
         secondaries: ['crit', 'vers'],
         atoneOverheal: 0.2,
-        dot: {
+        dot: { // Now unused. Will remove in a few updates. 
             tickRate: 2,
             coeff: 0.09588,
             aura: 1,
             duration: 15.6, // 12 x 1.3
         }
+    },
+    {
+        castTime: 0,
+        type: "buff",
+        buffType: "damage",
+        coeff: 0.09588, // 
+        tickRate: 2,
+        buffDuration: 15.6,
+        atoneOverheal: 0.07,
+        secondaries: ['crit', 'vers'], // + Haste
+        canPartialTick: true,
     }],
-    "Shadowfiend": [{
+    "Shadowfiend": [/*{
         type: "",
         castTime: 1.5,
         cost: 900,
@@ -264,6 +297,18 @@ export const DISCSPELLS = {
             coeff: 0.46,
             duration: 15,
         }
+    },*/
+    {
+        castTime: 1.5,
+        cost: 900,
+        type: "buff",
+        buffType: "damage",
+        coeff: 0.46, // 
+        tickRate: 1.5,
+        buffDuration: 15,
+        atoneOverheal: 0.22,
+        secondaries: ['crit', 'vers'], // Shadowfiend scales with Haste but the DoT / HoT function will handle that. 
+        canPartialTick: false,
     }],
     "Evangelism": [{
         type: "atonementExtension",
