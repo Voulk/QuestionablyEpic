@@ -10,6 +10,17 @@ import i18n from "i18next";
 
 // PLease Note that all the 'this.' statements in this file do not actually affect this file.
 // They are refering to the component the function is imported into.
+const currentLanguage = i18n.language;
+const getTranslatedSpellName = (spellID) => {
+  let spellName = cooldownDB
+    .filter((obj) => {
+      return obj.guid === spellID;
+    })
+    .map((obj) => obj.name[currentLanguage])[0]
+    .toString();
+
+  return spellName;
+};
 
 export default function chartCooldownUpdater(tableData) {
   let customCooldownDurations = [];
@@ -23,35 +34,35 @@ export default function chartCooldownUpdater(tableData) {
   tableData
     .filter((key) => key.cooldown0 !== undefined)
     .map((key) => {
-      pushedArray.push(key.name0 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.cooldown0));
+      pushedArray.push(key.name0 + " - " + getTranslatedSpellName(key.cooldown0));
     });
 
   /* ----------------------------------------- Cooldown 1 ----------------------------------------- */
   tableData
     .filter((key) => key.cooldown1 !== undefined)
     .map((key) => {
-      pushedArray.push(key.name1 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.cooldown1));
+      pushedArray.push(key.name1 + " - " + getTranslatedSpellName(key.cooldown1));
     });
 
   /* ----------------------------------------- Cooldown 2 ----------------------------------------- */
   tableData
     .filter((key) => key.cooldown2 !== undefined)
     .map((key) => {
-      pushedArray.push(key.name2 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.cooldown2));
+      pushedArray.push(key.name2 + " - " + getTranslatedSpellName(key.cooldown2));
     });
 
   /* ----------------------------------------- Cooldown 3 ----------------------------------------- */
   tableData
     .filter((key) => key.cooldown3 !== undefined)
     .map((key) => {
-      pushedArray.push(key.name3 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.cooldown3));
+      pushedArray.push(key.name3 + " - " + getTranslatedSpellName(key.cooldown3));
     });
 
   /* ----------------------------------------- Cooldown 4 ----------------------------------------- */
   tableData
     .filter((key) => key.cooldown4 !== undefined)
     .map((key) => {
-      pushedArray.push(key.name4 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.cooldown4));
+      pushedArray.push(key.name4 + " - " + getTranslatedSpellName(key.cooldown4));
     });
 
   /* -- Create array from a unique list of Healer "Names + Cooldowns" for dataKeys for the Chart. - */
@@ -66,7 +77,7 @@ export default function chartCooldownUpdater(tableData) {
     .map((key) => ({
       ability: key.cooldown0,
       timestamp: moment.duration(key.cooldownTime0 === undefined || key.cooldownTime0 === "" ? "00:" + key.time : "00:" + key.cooldownTime0).asMilliseconds(),
-      abilityname: key.name0 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.cooldown0),
+      abilityname: key.name0 + " - " + getTranslatedSpellName(key.cooldown0),
     }))
     .map((key) => {
       customCooldownDurations.push(
@@ -80,7 +91,7 @@ export default function chartCooldownUpdater(tableData) {
     .map((key) => ({
       ability: key.cooldown1,
       timestamp: moment.duration(key.cooldownTime1 === undefined || key.cooldownTime1 === "" ? "00:" + key.time : "00:" + key.cooldownTime1).asMilliseconds(),
-      abilityname: key.name1 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.cooldown1),
+      abilityname: key.name1 + " - " + getTranslatedSpellName(key.cooldown1),
     }))
     .map((key) =>
       customCooldownDurations.push(
@@ -94,7 +105,7 @@ export default function chartCooldownUpdater(tableData) {
     .map((key) => ({
       ability: key.cooldown2,
       timestamp: moment.duration(key.cooldownTime2 === undefined || key.cooldownTime2 === "" ? "00:" + key.time : "00:" + key.cooldownTime2).asMilliseconds(),
-      abilityname: key.name2 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.cooldown2),
+      abilityname: key.name2 + " - " + getTranslatedSpellName(key.cooldown2),
     }))
     .map((key) =>
       customCooldownDurations.push(
@@ -108,7 +119,7 @@ export default function chartCooldownUpdater(tableData) {
     .map((key) => ({
       ability: key.cooldown3,
       timestamp: moment.duration(key.cooldownTime3 === undefined || key.cooldownTime3 === "" ? "00:" + key.time : "00:" + key.cooldownTime3).asMilliseconds(),
-      abilityname: key.name3 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.cooldown3),
+      abilityname: key.name3 + " - " + getTranslatedSpellName(key.cooldown3),
     }))
     .map((key) =>
       customCooldownDurations.push(
@@ -122,7 +133,7 @@ export default function chartCooldownUpdater(tableData) {
     .map((key) => ({
       ability: key.cooldown4,
       timestamp: moment.duration(key.cooldownTime4 === undefined || key.cooldownTime4 === "" ? "00:" + key.time : "00:" + key.cooldownTime4).asMilliseconds(),
-      abilityname: key.name4 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.cooldown4),
+      abilityname: key.name4 + " - " + getTranslatedSpellName(key.cooldown4),
     }))
     .map((key) =>
       customCooldownDurations.push(
