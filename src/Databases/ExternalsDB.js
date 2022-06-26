@@ -78,6 +78,19 @@ export const externalsDB = [
     icon: "spell_druid_ironbark",
     cooldown: 90,
   },
+  {
+    guid: 29166,
+    name: {
+      en: "Innervate",
+      de: "Anregen",
+      fr: "Innervation",
+      ru: "Озарение",
+      ch: "激活",
+    },
+    wowhead: "https://www.wowhead.com/spell=29166/innervate",
+    icon: "spell_nature_lightning",
+    cooldown: 180,
+  },
 
   {
     guid: 10060,
