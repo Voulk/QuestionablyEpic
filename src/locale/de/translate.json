@@ -286,85 +286,6 @@
       "Zandalari Troll": "Zandalaritroll"
     },
 
-    "BossNames": {
-      "CastleNathria": "CastleNathria",
-      "2393": "Schrillschwinge",
-      "2429": "Jäger Altimor",
-      "2422": "Rettung des Sonnenkönigs",
-      "2418": "Konstrukteur Xy'mox",
-      "2428": "Hungernder Zerstörer",
-      "2420": "Lady Inerva Dunkelader",
-      "2426": "Der Rat des Blutes",
-      "2394": "Schlickfaust",
-      "2425": "Generäle der Steinlegion",
-      "2424": "Graf Denathrius",
-      "999": "BoE Trash Drops",
-      "SanctumOfDomination": "SanctumOfDomination",
-      "2435": "Der Tarragrue",
-      "2442": "Das Auge des Kerkermeisters",
-      "2439": "Die Neun",
-      "2444": "Überrest von Ner'zhul",
-      "2445": "Seelenfetzer Dormazain",
-      "2443": "Leidensschmied Raznal",
-      "2446": "Wächter der Ersten",
-      "2447": "Fatescribe Roh-Kalo",
-      "2440": "Kel'Thuzad",
-      "2441": "Sylvanas Windläufer",
-      "998": "BoE Trash Drops",
-      "SepulcherBosses": "",
-      "2458": "Aufmerksamer Wächter",
-      "2465": "Skolex, der unersättliche Räuber",
-      "2470": "Konstrukteur Xy'mox",
-      "2459": "Dausegne, das gefallene Orakel",
-      "2460": "Prototypenpantheon",
-      "2461": "Lihuvim, der oberste Architekt",
-      "2463": "Halondrus der Rückgewinner",
-      "2469": "Anduin Wrynn",
-      "2457": "Lords des Schreckens",
-      "2467": "Rygelon",
-      "2464": "Zovaal, der Kerkermeister",
-      "Tazavesh Bosses": "",
-      "Tazavesh": {
-        "2437": "Zo'phex der Wächter",
-        "2454": "Die Große Menagerie",
-        "2436": "Postraumfiasko",
-        "2452": "Myzas Oase",
-        "2451": "So'azmi",
-        "2448": "Hylbrand",
-        "2449": "Zeitkäpt'n Hakenschwanz",
-        "2455": "So'leah"
-      }
-    },
-
-    "DungeonNames": {
-      "12831": "Hallen der Sühne",
-      "13334": "Die Nebel von Tirna Scithe",
-      "12916": "Die Nekrotische Schneise",
-      "13228": "Seuchensturz",
-      "12842": "Die Blutigen Tiefen",
-      "12841": "Theater der Schmerzen",
-      "13309": "Die Andre Seite",
-      "12837": "Spitzen des Aufstiegs",
-      "13577": "Tazavesh, der Verhüllte Markt",
-
-      "1182": "Die Nekrotische Schneise",
-      "1183": "Seuchensturz",
-      "1184": "Die Nebel von Tirna Scithe",
-      "1185": "Hallen der Sühne",
-      "1186": "Spitzen des Aufstiegs",
-      "1187": "Theater der Schmerzen",
-      "1188": "Die Andre Seite",
-      "1189": "Die Blutigen Tiefen",
-      "1194": "Tazavesh, der Verhüllte Markt",
-
-      "707": "Das Verlies der Wächterinnen",
-      "716": "Das Auge Azsharas",
-      "740": "Die Rabenwehr",
-      "762": "Das Finsterherzdickicht",
-      "767": "Neltharions Hort",
-      "800": "Der Hof der Sterne"
-    },
-
     "RaidDifficulty": {
       "Raid Finder": "Schlachtzugsbrowser",
       "Normal": "Normal",
@@ -375,15 +296,6 @@
     "PvPCurrency": {
       "Honor": "Ehre",
       "Conquest": "Eroberung"
-    },
-
-    "WorldBosses": {
-      "2430": "Valinor",
-      "2431": "Mortanis",
-      "2432": "Oranomonos",
-      "2433": "Nurgash",
-      "2456": "Mor'geth",
-      "2468": "Antros"
     },
 
     "SimCInput": {
@@ -618,19 +530,6 @@
         "Nadjia": "Nadjia Nebelklinge",
         "Theotar": "Theotar, der Wahnsinnige Herzog",
         "Draven": "General Draven"
-      }
-    },
-    "BurningCrusade": {
-      "Raids": {
-        "745": "",
-        "321": "",
-        "746": "",
-        "747": "Magtheridons Kammer",
-        "748": "",
-        "749": "",
-        "750": "",
-        "751": "",
-        "752": ""
       }
     }
   }

@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import { filterItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { itemLevels } from "../../../../Databases/itemLevelsDB";
+import i18n from "i18next";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -20,6 +21,7 @@ const useStyles = makeStyles(() => ({
 export default function LegionTimewalkingGearContainer(props) {
   const classes = useStyles();
   const { t } = useTranslation();
+  const currentLanguage = i18n.language;
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
   const difficulty = props.playerSettings.dungeon;
@@ -38,7 +40,7 @@ export default function LegionTimewalkingGearContainer(props) {
   };
 
   const contentGenerator = () => {
-    return encounterDB[3].map((key, i) => (
+    return encounterDB[3].bossOrder.map((key, i) => (
       <Grid item xs={12} key={"LegionTimewalkingContainer-" + i}>
         <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
           <Grid container>
@@ -55,7 +57,7 @@ export default function LegionTimewalkingGearContainer(props) {
                 className="container-UpgradeCards"
               >
                 <Typography variant="h6" style={{ width: "100%" }} className="centered-UpgradeCards-Dungeons">
-                  {t("DungeonNames." + key)}
+                  {encounterDB[3][key].name[currentLanguage]}
                 </Typography>
               </div>
             </Grid>

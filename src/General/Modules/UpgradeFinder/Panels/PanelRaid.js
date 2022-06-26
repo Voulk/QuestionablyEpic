@@ -189,9 +189,11 @@ export default function RaidGearContainer(props) {
     difficulties.sort().reverse();
     const firstDifficulty = difficulties[0];
     const secondDifficulty = difficulties.length === 2 ? difficulties[1] : -1;
+    const retailBossList = Array.from(Object.keys(encounterDB[1195].bosses));
+    console.log(retailBossList);
 
     return (
-      encounterDB[1195]
+      encounterDB[1195].bossOrder
         //.filter((key) => key === raidID)
         .map((key, i) => (
           <Grid item xs={12} key={"bossContainer-" + i}>
@@ -214,9 +216,12 @@ export default function RaidGearContainer(props) {
                     }}
                     className="container-UpgradeCards"
                   >
-                    <img src={UpgradeFinderBossImages(key)} style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", maxHeight: "90%", maxWidth: "90%" }} />
+                    <img
+                      src={UpgradeFinderBossImages(parseInt(key))}
+                      style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", maxHeight: "90%", maxWidth: "90%" }}
+                    />
                     <Typography variant="h6" style={{ width: "100%" }} className="centered-UpgradeCards">
-                      {t("BossNames." + key)}
+                      {encounterDB[1195].bosses[key].name[currentLanguage]}
                     </Typography>
                   </div>
                 </Grid>
@@ -356,10 +361,11 @@ export default function RaidGearContainer(props) {
                   <div className={classes.panel}>
                     <Grid container spacing={1}>
                       {/* <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}
-                      {encounterDB[raidID]["bosses"]
+                      {encounterDB[raidID].bossOrder
                         //filter((key) => key === raidID)
                         .map((key, i) => (
                           <Grid item xs={12} key={"bossContainer-" + i}>
+                            {console.log(key)}
                             <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
                               <Grid container justifyContent="center" alignItems="flex-start">
                                 <Grid item style={{ alignSelf: "center" }}>
@@ -367,7 +373,7 @@ export default function RaidGearContainer(props) {
                                     style={{
                                       width: 175,
                                       height: 181,
-                                      backgroundImage: `url(${UpgradeFinderBossImages(key.id)})`,
+                                      backgroundImage: `url(${UpgradeFinderBossImages(parseInt(key))})`,
                                       backgroundRepeat: "no-repeat",
                                       backgroundPosition: "center 60%",
                                       backgroundSize: "auto 100%",
@@ -375,13 +381,13 @@ export default function RaidGearContainer(props) {
                                     className="container-UpgradeCards"
                                   >
                                     <Typography variant="button" noWrap className="centered-UpgradeCards">
-                                      {key.name[currentLanguage]}
+                                      {encounterDB[raidID].bosses[key].name[currentLanguage]}
                                     </Typography>
                                   </div>
                                 </Grid>
                                 <Divider orientation="vertical" flexItem />
                                 <Grid item xs={12} sm container style={{ padding: 8 }} spacing={1}>
-                                  {[...filterBCItemListBySource(itemList, raidID, key.id)].map((item, index) => (
+                                  {[...filterBCItemListBySource(itemList, raidID, parseInt(key))].map((item, index) => (
                                     <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                   ))}
                                 </Grid>

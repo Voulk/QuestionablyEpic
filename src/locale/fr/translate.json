@@ -283,75 +283,6 @@
       "Zandalari Troll": "Troll zandalari"
     },
 
-    "BossNames": {
-      "CastleNathria": "CastleNathria",
-      "2393": "Hurlaile",
-      "2429": "Altimor le Veneur",
-      "2422": "Salut du roi-soleil",
-      "2418": "Artificier Xy’mox",
-      "2428": "Destructeur affamé",
-      "2420": "Dame Inerva Sombreveine",
-      "2426": "Le conseil du Sang",
-      "2394": "Fangepoing",
-      "2425": "Généraux de la Légion de pierre",
-      "2424": "Sire Denathrius",
-      "999": "BoE Trash Drops",
-      "SanctumOfDomination": "SanctumOfDomination",
-      "2435": "Le Naphtrémens",
-      "2442": "L’œil du Geôlier",
-      "2439": "Les Neuf",
-      "2444": "Vestige de Ner'zhul",
-      "2445": "Étripeur d’âme Dormazain",
-      "2443": "Mal-ferrant Raznal",
-      "2446": "Gardien des Fondateurs",
-      "2447": "Fatescribe Roh-Kalo",
-      "2440": "Kel'Thuzad",
-      "2441": "Sylvanas Coursevent",
-      "998": "BoE Trash Drops",
-      "SepulcherBosses": "",
-      "2458": "Gardien vigilant",
-      "2465": "Skolex, l’Insatiable vorace",
-      "2470": "Artificier Xy’mox",
-      "2459": "Dausegne, l’Oracle déchu",
-      "2460": "Panthéon des prototypes",
-      "2461": "Lihuvim, architecte principal",
-      "2463": "Halondrus le Récupérateur",
-      "2469": "Anduin Wrynn",
-      "2457": "Seigneurs de l’effroi",
-      "2467": "Rygelon",
-      "2464": "Zovaal, le Geôlier",
-      "Tazavesh Bosses": "",
-      "Tazavesh": {
-        "2437": "Zo’phex la sentinelle",
-        "2454": "Grandiose Ménagerie",
-        "2436": "Courrier chaotique",
-        "2452": "Oasis d’Au’myza",
-        "2451": "So’azmi",
-        "2448": "Hylbrande",
-        "2449": "Chronocapitaine Harpagone",
-        "2455": "So’leah"
-      }
-    },
-
-    "DungeonNames": {
-      "12831": "Salles de l’Expiation",
-      "13334": "Brumes de Tirna Scithe",
-      "12916": "Sillage nécrotique",
-      "13228": "Malepeste",
-      "12842": "Profondeurs Sanguines",
-      "12841": "Théâtre de la Souffrance",
-      "13309": "L’Autre côté",
-      "12837": "Flèches de l’Ascension",
-      "13577": "Tazavesh, le marché dissimulé",
-
-      "707": "Caveau des Gardiennes",
-      "716": "L’Œil d’Azshara",
-      "740": "Bastion du Freux",
-      "762": "Fourré Sombrecœur",
-      "767": "Repaire de Neltharion",
-      "800": "Cour des Étoiles"
-    },
-
     "RaidDifficulty": {
       "Raid Finder": "",
       "Normal": "",
@@ -362,15 +293,6 @@
     "PvPCurrency": {
       "Honor": "Honneur",
       "Conquest": "Points de conquête"
-    },
-
-    "WorldBosses": {
-      "2430": "Valinor",
-      "2431": "Mortanis",
-      "2432": "Oranomonos",
-      "2433": "Nurgash",
-      "2456": "Mor'geth",
-      "2468": "Antros"
     },
 
     "SimCInput": {
