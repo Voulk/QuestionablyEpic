@@ -603,6 +603,22 @@ export const cooldownDB = [
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
   },
+  {
+    name: {
+      en: "Wind Rush Totem",
+      fr: "Totem de bouffée de vent",
+      de: "Totem des Windsturms",
+      ru: "Тотем ветряного порыва",
+      cn: "狂风图腾",
+    },
+    guid: 192077,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_shaman_windwalktotem.jpg").default,
+    duration: 15,
+    cooldown: 120,
+    class: "RestorationShaman",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: true,
+  },
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                        Utility Cooldowns                                       */
@@ -674,7 +690,6 @@ export const cooldownDB = [
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
   },
-  // TODO: Apply Utilities
   {
     name: {
       en: "Stampeding Roar",
