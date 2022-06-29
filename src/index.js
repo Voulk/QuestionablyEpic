@@ -10,6 +10,7 @@ import { createStore } from "redux";
 import rootReducer from "./Redux/Reducers/RootReducer";
 import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
+import { createRoot } from "react-dom/client";
 
 
 const store = createStore(rootReducer, /* preloadedState, */ window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
@@ -25,6 +26,21 @@ Sentry.init({
   tracesSampleRate: 0.1,
 });
 
+const container = document.getElementById('root');
+const root = createRoot(container);
+const render = () => {
+  root.render(
+    <Provider store={store}>
+      <I18nextProvider i18n={i18n}>
+        <App />
+      </I18nextProvider>
+  </Provider>,
+  );
+};
+
+render();
+
+/*
 ReactDOM.render(
   <Provider store={store}>
     <I18nextProvider i18n={i18n}>
@@ -33,6 +49,6 @@ ReactDOM.render(
   </Provider>,
 
   document.getElementById("root"),
-);
+); */
 unregister();
 //registerServiceWorker();
