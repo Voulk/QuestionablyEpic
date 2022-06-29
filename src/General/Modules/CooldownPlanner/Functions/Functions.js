@@ -5,6 +5,7 @@ import { cooldownDB } from "../Data/CooldownDB";
 import { externalsDB } from "../../../../Databases/ExternalsDB";
 import chroma from "chroma-js";
 import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
+import { filterIDS } from "../../FightAnalysis/Engine/Filters";
 // import i18n from "i18next";
 
 // Returns Seconds from 0 to Loglength
@@ -281,19 +282,29 @@ export async function importEnemyIds(starttime, endtime, reportid) {
   return ids;
 }
 
-export async function importDamageLogData(starttime, endtime, reportid) {
+export async function importDamageLogData(starttime, endtime, reportid, boss) {
   const APIdamagetaken = "https://www.warcraftlogs.com:443/v1/report/events/damage-taken/";
   const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
   const START = "?start=";
   const END = "&end=";
   const HOSTILITY = "&hostility=0";
   const translate = "&translate=true";
+  let filter = "&filter=";
+  const bossIDS = filterIDS[boss];
   let damage = [];
   let nextpage = 0;
-  // Class Casts Import
+
+  // Filter the damage taken source by npc ids
+  bossIDS.map((key, i) => {
+    if (i !== bossIDS.length - 1) {
+      filter = filter.concat("source.id%3D" + key + "%20OR%20");
+    } else {
+      filter = filter.concat("source.id%3D" + key);
+    }
+  });
 
   await axios
-    .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + translate + API2)
+    .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + (filter === "&filter=" ? "" : filter) + translate + API2)
     .then((result) => {
       damage = Object.keys(result.data.events)
         .filter(
@@ -313,7 +324,7 @@ export async function importDamageLogData(starttime, endtime, reportid) {
   if (nextpage !== undefined || null) {
     do {
       await axios
-        .get(APIdamagetaken + reportid + START + nextpage + END + endtime + HOSTILITY + translate + API2)
+        .get(APIdamagetaken + reportid + START + nextpage + END + endtime + HOSTILITY + (filter === "&filter=" ? "" : filter) + translate + API2)
         .then((result) => {
           damage = damage.concat(
             Object.keys(result.data.events)

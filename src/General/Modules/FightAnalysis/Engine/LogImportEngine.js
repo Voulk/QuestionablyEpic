@@ -35,7 +35,7 @@ import { cooldownDB } from "../../CooldownPlanner/Data/CooldownDB";
 /*                                      Chart Update Function                                     */
 /* ---------------------------------------------------------------------------------------------- */
 
-export default async function updatechartdata(starttime, endtime) {
+export default async function updatechartdata(starttime, endtime, reportID, boss) {
   /* -------- Note we are using alot of imported functions Here to save bloat in the Code. -------- */
 
   /* -- Set the Loading State of the loading spinner so that the user knows data is being loaded. - */
@@ -59,13 +59,12 @@ export default async function updatechartdata(starttime, endtime) {
 
   /* -------------------------------- Import Enemy IDS from the log ------------------------------- */
   const enemyIDs = await importEnemyIds(starttime, endtime, this.state.reportid);
-
   /* ---------------------- Import summary Info from the Logs Summary table. ---------------------- */
   /* ------------ This contains our data for Gear, Stats, Conduits, Soulbinds etc etc. ------------ */
   const summary = await importSummaryData(starttime, endtime, this.state.reportid);
 
   /* --------------- Import all the damage-taken from the log for friendly targets. --------------- */
-  const damage = await importDamageLogData(starttime, endtime, this.state.reportid);
+  const damage = await importDamageLogData(starttime, endtime, this.state.reportid, boss);
 
   const health = await importRaidHealth(starttime, endtime, this.state.reportid);
 
