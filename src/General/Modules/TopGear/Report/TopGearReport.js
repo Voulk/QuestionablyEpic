@@ -35,25 +35,25 @@ function TopGearReport(props) {
   const classIcon = () => {
     switch (props.player.spec) {
       case "Holy Paladin":
-        return require("Images/Classes/Paladin/icon-paladin.png").default;
+        return require("Images/Classes/Paladin/icon-paladin.png");
       case "Holy Paladin BC":
-        return require("Images/Classes/Paladin/icon-paladin.png").default;
+        return require("Images/Classes/Paladin/icon-paladin.png");
       case "Restoration Shaman":
-        return require("Images/Classes/Shaman/icon-shaman.png").default;
+        return require("Images/Classes/Shaman/icon-shaman.png");
       case "Restoration Shaman BC":
-        return require("Images/Classes/Shaman/icon-shaman.png").default;
+        return require("Images/Classes/Shaman/icon-shaman.png");
       case "Holy Priest":
-        return require("Images/Classes/Priest/icon-priest.png").default;
+        return require("Images/Classes/Priest/icon-priest.png");
       case "Holy Priest BC":
-        return require("Images/Classes/Priest/icon-priest.png").default;
+        return require("Images/Classes/Priest/icon-priest.png");
       case "Discipline Priest":
-        return require("Images/Classes/Priest/icon-priest.png").default;
+        return require("Images/Classes/Priest/icon-priest.png");
       case "Restoration Druid":
-        return require("Images/Classes/Druid/icon-druid.png").default;
+        return require("Images/Classes/Druid/icon-druid.png");
       case "Restoration Druid BC":
-        return require("Images/Classes/Druid/icon-druid.png").default;
+        return require("Images/Classes/Druid/icon-druid.png");
       case "Mistweaver Monk":
-        return require("Images/Classes/Monk/icon-monk.png").default;
+        return require("Images/Classes/Monk/icon-monk.png");
       default:
         break;
     }

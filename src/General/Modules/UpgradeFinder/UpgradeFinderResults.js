@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     borderRight: `1px solid ${theme.palette.divider}`,
   },
   raidHeaderStyle: {
-    backgroundImage: `url(${require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesHeader.png").default})`,
+    backgroundImage: `url(${require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesHeader.png")})`,
     borderRadius: "4px 0px 0px 4px",
     // whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "auto 100%",
   },
   raidBCHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/BurningCrusade/RaidHeader.jpg").default})`,
+    backgroundImage: `url(${require("../../../Images/BurningCrusade/RaidHeader.jpg")})`,
     borderRadius: "4px 0px 0px 4px",
     whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.1rem",
   },
   mythicPlusHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/Bosses/MythicPlus.png").default})`,
+    backgroundImage: `url(${require("../../../Images/Bosses/MythicPlus.png")})`,
     // whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
     color: "#fff",
@@ -63,14 +63,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "auto 100%",
   },
   dungeonBCPlusHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/BurningCrusade/DungeonHeader.jpg").default})`,
+    backgroundImage: `url(${require("../../../Images/BurningCrusade/DungeonHeader.jpg")})`,
     whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
     color: "#fff",
     fontSize: "1.1rem",
   },
   pvpHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/Bosses/PVPHeader.png").default})`,
+    backgroundImage: `url(${require("../../../Images/Bosses/PVPHeader.png")})`,
     // whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
     color: "#fff",
@@ -80,14 +80,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "auto 100%",
   },
   pvpBCHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/BurningCrusade/PVP/PVPHeader.jpg").default})`,
+    backgroundImage: `url(${require("../../../Images/BurningCrusade/PVP/PVPHeader.jpg")})`,
     whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
     color: "#fff",
     fontSize: "1.1rem",
   },
   worldBossHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/Bosses/WorldBosses.png").default})`,
+    backgroundImage: `url(${require("../../../Images/Bosses/WorldBosses.png")})`,
     // whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
     color: "#fff",
@@ -97,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "auto 100%",
   },
   slotsHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/Bosses/AllSlots.png").default})`,
+    backgroundImage: `url(${require("../../../Images/Bosses/AllSlots.png")})`,
     borderRadius: "0px 4px 4px 0px",
     // whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
@@ -108,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "auto 100%",
   },
   slotsBCHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/BurningCrusade/SlotsHeader.jpg").default})`,
+    backgroundImage: `url(${require("../../../Images/BurningCrusade/SlotsHeader.jpg")})`,
     borderRadius: "0px 4px 4px 0px",
     whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
@@ -116,7 +116,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.1rem",
   },
   tazaveshStyle: {
-    backgroundImage: `url(${require("../../../Images/Bosses/TazaveshHeader.png").default})`,
+    backgroundImage: `url(${require("../../../Images/Bosses/TazaveshHeader.png")})`,
     borderRadius: "0px 4px 4px 0px",
     // whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
@@ -127,7 +127,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "auto 100%",
   },
   LegionTimewalkingStyle: {
-    backgroundImage: `url(${require("../../../Images/MythicPlus/LegionTimewalking/LegionTimeWalkingHeader.png").default})`,
+    backgroundImage: `url(${require("../../../Images/MythicPlus/LegionTimewalking/LegionTimeWalkingHeader.png")})`,
     borderRadius: "0px 4px 4px 0px",
     // whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",

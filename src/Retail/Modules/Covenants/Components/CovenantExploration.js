@@ -83,20 +83,20 @@ const useStyles = makeStyles((theme) => ({
     borderRight: `1px solid ${theme.palette.divider}`,
   },
   kyrianHeaderStyle: {
-    backgroundImage: `url(${require("Images/BastionHeader.png").default})`,
+    backgroundImage: `url(${require("Images/BastionHeader.png")})`,
     borderRadius: "4px 0px 0px 0px",
     padding: 8,
   },
   nightFaeHeaderStyle: {
-    backgroundImage: `url(${require("Images/NightFaeHeader.png").default})`,
+    backgroundImage: `url(${require("Images/NightFaeHeader.png")})`,
     padding: 8,
   },
   venthyrHeaderStyle: {
-    backgroundImage: `url(${require("Images/VenthyrHeader.png").default})`,
+    backgroundImage: `url(${require("Images/VenthyrHeader.png")})`,
     padding: 8,
   },
   necrolordHeaderStyle: {
-    backgroundImage: `url(${require("Images/NecroHeader.png").default})`,
+    backgroundImage: `url(${require("Images/NecroHeader.png")})`,
     borderRadius: "0px 4px 0px 0px",
     padding: 8,
   },

@@ -96,9 +96,9 @@ export default function CharacterPanel(props) {
     async function setImg() {
       let img = "";
       if (gameType === "Retail") {
-        img = currentCharacter.charAvatarURL === "" ? specImages[currentCharacter.spec].default : currentCharacter.charAvatarURL;
+        img = currentCharacter.charAvatarURL === "" ? specImages[currentCharacter.spec] : currentCharacter.charAvatarURL;
       } else {
-        img = `url(${specImages[currentCharacter.spec].default})`;
+        img = `url(${specImages[currentCharacter.spec]})`;
       }
 
       setBackgroundImage(img);

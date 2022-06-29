@@ -12,7 +12,7 @@ import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import { useSelector } from "react-redux";
 
-const addBtn = require("../../../../Images/AddBtn.jpg").default;
+const addBtn = require("../../../../Images/AddBtn.jpg");
 
 const useStyles = makeStyles((theme) => ({
   formControl: {

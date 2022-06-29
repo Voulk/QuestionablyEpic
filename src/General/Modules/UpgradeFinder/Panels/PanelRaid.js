@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 4,
   },
   karazhanHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/Karazhan.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/Karazhan.jpg")})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   gruulsHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/Gruul&Mag.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/Gruul&Mag.jpg")})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   zulamanHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/ZulAman.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/ZulAman.jpg")})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   magtheridonHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/MagtheridonsLair.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/MagtheridonsLair.jpg")})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   serpentshringHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/SerpentshrineCavern.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/SerpentshrineCavern.jpg")})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   tempestKeepHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/TempestKeep.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/TempestKeep.jpg")})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -89,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   mountHyjalHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/MountHyjal.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/MountHyjal.jpg")})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -101,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   blackTempleHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/BlackTemple.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/BlackTemple.jpg")})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -113,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   sunwellHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/SunwellPlateau.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/SunwellPlateau.jpg")})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -201,9 +201,9 @@ export default function RaidGearContainer(props) {
                       width: 175,
                       height: "100%",
                       paddingLeft: 8,
-                      // background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))", `url(${require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesBackground.png").default})`,
+                      // background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))", `url(${require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesBackground.png")})`,
                       backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${
-                        require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesBackground.png").default
+                        require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesBackground.png")
                       })`,
                       backgroundRepeat: "no-repeat",
                       backgroundPosition: "center 60%",

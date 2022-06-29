@@ -23,8 +23,8 @@ const getPVPItemLevel = (sourceID, difficulty) => {
 };
 
 const pvpIcons = {
-  "-16": require("Images/Bosses/HonorIcon.jpg").default,
-  "-17": require("Images/Bosses/HonorIcon.jpg").default,
+  "-16": require("Images/Bosses/HonorIcon.jpg"),
+  "-17": require("Images/Bosses/HonorIcon.jpg"),
 };
 
 const itemLevels = {

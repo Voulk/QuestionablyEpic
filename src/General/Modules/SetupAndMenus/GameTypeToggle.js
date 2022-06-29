@@ -83,7 +83,7 @@ export default function GameTypeSwitch(props) {
       <ToggleButton className={classes.root} value="Retail" aria-label="retailLabel">
         <Tooltip title={t("GameTypeToggle.Retail")} arrow>
           <div style={{ display: "inline-flex" }}>
-            <img src={require("../../../Images/Logos/Logo_Shadowlands.png").default} alt={t("Shadowlands")} />
+            <img src={require("../../../Images/Logos/Logo_Shadowlands.png")} alt={t("Shadowlands")} />
           </div>
         </Tooltip>
       </ToggleButton>
@@ -94,7 +94,7 @@ export default function GameTypeSwitch(props) {
       <ToggleButton className={classes.root} value="BurningCrusade" aria-label="classicLabel">
         <Tooltip title={t("GameTypeToggle.Classic")} arrow>
           <div style={{ display: "inline-flex" }}>
-            <img src={require("../../../Images/Logos/Logo_BurningCrusade.png").default} alt={t("Burning Crusade")} />
+            <img src={require("../../../Images/Logos/Logo_BurningCrusade.png")} alt={t("Burning Crusade")} />
           </div>
         </Tooltip>
       </ToggleButton>
