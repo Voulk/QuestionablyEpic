@@ -22,6 +22,7 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
 /* ---------------------------------------------------------------------------------------------- */
 
 export default function ContentSwitch() {
+  console.log(require("Images/inv_relics_hourglass.jpg"));
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
@@ -46,7 +47,7 @@ export default function ContentSwitch() {
             {/* ---------------------------------------- Keystone Icon ---------------------------------------  */}
             <img
               style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
-              src={require("Images/inv_relics_hourglass.jpg").default}
+              src={require("Images/inv_relics_hourglass.jpg")}
               alt={t("Dungeon")}
             />
             <Typography variant="button">{t("Dungeon")}</Typography>
