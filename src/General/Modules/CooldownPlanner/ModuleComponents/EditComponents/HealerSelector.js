@@ -66,7 +66,7 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
             const newClass = ls
               .get("healerInfo")
               .filter((obj) => {
-                return obj.name === e.target.value;
+                return obj.name === e.target.value.split("|")[0] && obj.class === e.target.value.split("|")[1];
               })
               .map((obj) => obj.class)
               .toString();
@@ -83,7 +83,7 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
           {
             /* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */
             ls.get("healerInfo").map((key, i) => (
-              <MenuItem divider style={{ color: classColoursJS(key.class) }} key={key.name} value={key.name}>
+              <MenuItem divider style={{ color: classColoursJS(key.class) }} key={key.name + i} value={key.name + "|" + key.class}>
                 <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
                   {classIcons(key.class, { height: 20, width: 20, margin: "0px 5px 0px 0px", verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 })}
                   {key.name}
