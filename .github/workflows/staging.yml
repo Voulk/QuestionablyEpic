@@ -31,7 +31,7 @@ jobs:
       run: npm test
 
     - name: Build
-      run: CI=false npm run build
+      run: CI=false env-cmd -f .env npm run build
     
     - name: Sync
       env:
