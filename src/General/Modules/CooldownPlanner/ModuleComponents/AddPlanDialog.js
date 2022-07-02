@@ -4,12 +4,13 @@ import { useTranslation } from "react-i18next";
 import { bossList } from "../Data/CooldownPlannerBossList";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
 import PropTypes from "prop-types";
-import { fightDuration, warcraftLogReportID, logDifficulty } from "../../CooldownPlanner/Functions/Functions";
+import { fightDuration, warcraftLogReportID, logDifficulty, wclClassConverter } from "../../CooldownPlanner/Functions/Functions";
 import LogLinkInput from "General/SystemTools/LogImport/LogLinkInput";
 import FightSelectorButton from "General/SystemTools/LogImport/FightSelectorButton";
 import importLogData from "../Engine/ImportLogData";
 import LinearWithValueLabel from "../BasicComponents/LinearProgressBar";
 import transformData from "../Engine/TransformData";
+import NameChanger from "./NameChanger";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -179,6 +180,8 @@ export default function AddPlanDialog(props) {
     }
   };
 
+  console.log(logData.healers.map((key) => key));
+
   return (
     <div>
       <Tooltip title={t("CooldownPlanner.AddPlanDialog.ButtonTooltip")} arrow>
@@ -333,6 +336,29 @@ export default function AddPlanDialog(props) {
                 </ToggleButton>
               </ToggleButtonGroup>
             </Grid>
+            {console.log(logData.healers)}
+            <Grid item xl={12}>
+              <Typography color="primary" align="center">
+                Replace Healers?
+              </Typography>
+              <Grid container xl={12} spacing={1}>
+                <Grid item container xl={6} direction="row" spacing={1}>
+                  {logData.healers.map((key, i) => (
+                    <Grid item xl={12}>
+                      <NameChanger name={key.name} className={wclClassConverter(key.icon)} type="original" />
+                    </Grid>
+                  ))}
+                </Grid>
+                <Grid item container xl={6} direction="row" spacing={1}>
+                  {logData.healers.map((key) => (
+                    <Grid item xl={12}>
+                      <NameChanger classLock={wclClassConverter(key.icon)} />
+                    </Grid>
+                  ))}
+                </Grid>
+              </Grid>
+            </Grid>
+
             <Grid item xs={12}>
               <Typography color="primary" align="center">
                 New Plan Name
