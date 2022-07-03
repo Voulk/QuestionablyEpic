@@ -1352,7 +1352,20 @@ export const trinket_data = [
         table: -9,
         hits: 12,
         cooldown: 90,
-        efficiency: { Raid: 1, Dungeon: 0.4 }, // 
+        efficiency: { Raid: 0.7, Dungeon: 0.4 }, // 
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Fluctuating Energy                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    name: "Fluctuating Energy",
+    effects: [
+      {
+        coefficient: 4.089027,
+        table: -7,
+        ppm: 2
       },
     ],
   },
