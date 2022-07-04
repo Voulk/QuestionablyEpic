@@ -147,7 +147,7 @@ const removeBuffStack = (buffs, buffName) => {
  * @chaosbrand A 5% damage buff if we have Chaos Brand enabled in Disc Settings.
  * @AscendedEruption A special buff for the Ascended Eruption spell only. The multiplier is equal to 3% (4 with conduit) x the number of Boon stacks accrued.
  */
-const getDamMult = (state, buffs, activeAtones, t, spellName, boonStacks, conduits) => {
+const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
     const sins = {0: 1.12, 1: 1.12, 2: 1.1, 3: 1.08, 4: 1.07, 5: 1.06, 6: 1.05, 7: 1.05, 8: 1.04, 9: 1.04, 10: 1.03}
     const schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.25 : 1; 
     let mult = (activeAtones > 10 ? 1.03 : sins[activeAtones]) * schism
@@ -159,10 +159,6 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, boonStacks, condui
             state.activeBuffs = removeBuffStack(state.activeBuffs, "Power of the Dark Side")
         }
     }
-    if (spellName === "Ascended Eruption") {
-        if (conduits['Courageous Ascension']) mult = mult * (1 + boonStacks * 0.04);
-        else mult = mult * (1 + boonStacks * 0.03);
-    }
     return mult; 
 }
 
@@ -170,14 +166,10 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, boonStacks, condui
  * @powerwordshield Gets a 200% buff if Rapture is active (modified by Exaltation if taken)
  * @ascendedEruption The healing portion also gets a buff based on number of boon stacks on expiry.
  */
-const getHealingMult = (buffs, t, spellName, boonStacks, conduits) => {
+const getHealingMult = (buffs, t, spellName, talents) => {
     if (spellName === "Power Word: Shield" && checkBuffActive(buffs, "Rapture")) {
         if (conduits['Exaltation']) return 1 + 2 * 1.135;
         else return 3;
-    }
-    else if (spellName === "Ascended Eruption") {
-        if (conduits['Courageous Ascension']) return 1 + boonStacks * 0.04;
-        else return 1 + boonStacks * 0.03;
     }
     else return 1;
 }
@@ -217,7 +209,7 @@ const getStatMult = (currentStats, stats) => {
     let mult = 1;
     
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / 40 / 100);
-    if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100); // TODO: Re-enable
+    if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100);
     if (stats.includes("mastery")) mult *= (1.108 + currentStats['mastery'] / 25.9259 / 100);
     return mult;
 }
@@ -288,10 +280,10 @@ const getTime = (t) => {
  * 
  * @param {*} discSpells Our spell database
  * @param {*} settings Settings including legendaries, trinkets, soulbinds and anything that falls out of any other category.
- * @param {*} conduits The conduits run in the current set.
+ * @param {*} talents The talents run in the current set.
  * @returns An updated spell database with any of the above changes made.
  */
-const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
+const applyLoadoutEffects = (discSpells, settings, talents, state) => {
 
     // ==== Default Loadout ====
     // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout
@@ -302,21 +294,19 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
         if (settings.playstyle === "Kyrian Evangelism") {
             settings['Clarity of Mind'] = true;
             settings['Pelagos'] = true;
-            conduits['Shining Radiance'] = 252;
-            conduits['Rabid Shadows'] = 252;
-            conduits['Courageous Ascension'] = 252;
             settings['4T28'] = true;
         }
         else if (settings.playstyle === "Venthyr Evangelism") {
             settings['Penitent One'] = true;
             settings['Shadow Word: Manipulation'] = true;
             settings['Theotar'] = true;
-            conduits['Shining Radiance'] = 252;
-            conduits['Rabid Shadows'] = 252;
-            conduits['Swift Penitence'] = 252;
             settings['4T28'] = true;
         }
     }
+
+    // ==== Talents ====
+    // Not all talents just make base modifications to spells, but those that do can be handled here.
+
 
     // ==== Legendaries ====
     // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
@@ -373,29 +363,6 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
 
     }
 
-    // ==== Soulbinds ====
-    // Don't include Conduits here just any relevant soulbind nodes themselves.
-    // This section can be expanded with more nodes, particularly those from other covenants.
-    // Examples: Combat Meditation, Pointed Courage
-
-    // --- Combat Meditation ---
-    // Mastery buff on Casting Boon. Pre-DR stat buff.
-    if (settings['Pelagos']) discSpells['Boon of the Ascended'].push({
-        type: "buff",
-        castTime: 0,
-        cost: 0,
-        cooldown: 0,
-        buffType: 'stats',
-        stat: 'mastery',
-        value: 315,
-        buffDuration: 30,
-    });
-
-    // --- Pointed Courage --- 
-    // Post-DR crit stat buff that's active at basically all times.
-    // TODO: Convert to Post DR stats.
-    if (settings['Kleia']) state.activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 330, stat: 'crit'})
-
     // ==== Tier & Other Effects ====
     // Remember that anything that isn't wired into a ramp can just be calculated normally (like Genesis Lathe for example).
     if (settings['4T28']) {
@@ -428,19 +395,6 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
     if (settings['Soulletting Ruby']) discSpells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
     //
 
-    // ==== Conduits ====
-    // These are all scaled based on Conduit rank.
-    // You can add whichever conduits you like here, though if it doesn't change your ramp then you might be better calculating it in the conduit formulas file instead.
-    // Examples of would be Condensed Anima Sphere.
-    if (conduits['Courageous Ascension']) discSpells['Ascended Blast'][0].coeff *= 1.45; // Blast +40%, Eruption +1% per stack (to 4%)
-    if (conduits['Shining Radiance']) discSpells['Power Word: Radiance'][0].coeff *= 1.64; // +64% radiance healing
-    if (conduits['Rabid Shadows']) discSpells['Shadowfiend'][0].tickRate = discSpells['Shadowfiend'][0].tickRate / 1.342; // Fiends faster tick rate.
-    if (conduits['Exaltation']) {
-        discSpells['Rapture'][1].buffDuration = 9;
-        discSpells['Rapture'][0].coeff = 1.65 * (1 + 2 * 1.135);
-    }
-    //
-
     return discSpells;
 }
 
@@ -449,7 +403,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     // Pre-heal processing
     const currentStats = state.currentStats;
 
-    const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.boonOfTheAscended, state.conduits); 
+    const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.conduits); 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets;
     const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.overheal) * healingMult * targetMult;
     
@@ -460,7 +414,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 export const runDamage = (state, spell, spellName, atonementApp) => {
 
     const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
-    const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, spellName, state.boonOfTheAscended, state.conduits); // Get our damage multiplier (Schism, Sins etc);
+    const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, spellName, state.conduits); // Get our damage multiplier (Schism, Sins etc);
     const damageVal = getSpellRaw(spell, state.currentStats) * damMultiplier;
     const atonementHealing = activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * (1 - spell.atoneOverheal)
 
@@ -481,34 +435,26 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
  * @param {object} conduits Any conduits we want to include. The conduits object is made up of {ConduitName: ConduitLevel} pairs where the conduit level is an item level rather than a rank.
  * @returns The expected healing of the full ramp.
  */
-export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
+export const runCastSequence = (sequence, stats, talents = {}, settings = {}) => {
     //console.log("Running cast sequence");
-    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, conduits: conduits, manaSpent: 0, settings: settings, 
-                    conduits: conduits, boonOfTheAscended: 0, reporting: true}
-    // Boon of the Ascended holds our active Boon of the Ascended stacks. This should be refactored into our buffs array.
+    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true}
 
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
-
     let nextSpell = 0;
-    //let boonOfTheAscended = 0; 
-    const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, conduits, state);
+
+    // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
+    // Ideally we'll cover as much as we can in here.
+    const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, talents, state);
+
     const seq = [...sequence];
     const sequenceLength = 45; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
-    const reporting = false; // A flag to report our sequences to console. Used for testing. MOSTLY REPLACED AND NOT WELL MAINTAINED. 
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
-
-        // -- Special Handling: Boon of the Ascended --
-        // Boon is a bit special in that it'll expire after it's duration ends which might not happen perfectly within ticks or spells.
-        // Instead we'll check it's expiration, and queue a special spell if it expires.
-        // TODO: With the new DoT / HoT tech this could be moved to a regular buff and the special handling moved to a function, or at least moved to the expiration section.
-        let ascendedEruption = state.activeBuffs.filter(function (buff) {return buff.expiration < state.t && buff.name === "Boon of the Ascended"}).length > 0;
 
         // Check for any expired atonements. 
         atonementApp = atonementApp.filter(function (buff) {return buff > state.t});
         
         // ---- Heal over time and Damage over time effects ----
-        // HoTs and DoTs are now all handled at once instead of purge / SWP and Fiend both having awkward time arrays like in a previous version.
         // When we add buffs, we'll also attach a spell to them. The spell should have coefficient information, secondary scaling and so on. 
         // When it's time for a HoT or DoT to tick (state.t > buff.nextTick) we'll run the attached spell.
         // Note that while we refer to DoTs and HoTs, this can be used to map any spell that's effect happens over a period of time. 
@@ -577,7 +523,7 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                 if (spell.atonement) {
                     for (var i = 0; i < spell.targets; i++) {
                         let atoneDuration = spell.atonement;
-                        if (settings['Clarity of Mind'] && (spellName === "Power Word: Shield") && checkBuffActive(state.activeBuffs, "Rapture")) atoneDuration += 6;
+                        //if (settings['Clarity of Mind'] && (spellName === "Power Word: Shield") && checkBuffActive(state.activeBuffs, "Rapture")) atoneDuration += 6;
                         if (spell.atonementPos === "start") atonementApp.push(state.t + atoneDuration);
                         else if (spell.atonementPos === "end") atonementApp.push(state.t + spell.castTime + atoneDuration);
 
@@ -642,23 +588,17 @@ export const runCastSequence = (sequence, stats, settings = {}, conduits) => {
                     state.activeBuffs.push({name: "Schism", expiration: state.t + spell.castTime + spell.buffDuration});
                 }
 
-                // Add boon stacks.
-                // TODO: When spell-specific functions are added, these could both be converted to secondary spell effects. 
-                else if (spellName === "Ascended Blast") {
-                    state.boonOfTheAscended += 5 / 2;
-                }
-                else if (spellName === "Ascended Nova") {
-                    state.boonOfTheAscended += 1 / 2;
-                }
-
                 // Penance will queue either 3 or 6 ticks depending on if we have a Penitent One proc or not. 
                 // These ticks are queued at the front of our array and will take place immediately. 
-                else if (spellName === "Penance") {
-                    if (checkBuffActive(state.activeBuffs, "Penitent One")) {
-                        discSpells['PenanceTick'][0].castTime = 2 / 6;
-                        discSpells['PenanceTick'][0].coeff = 0.376 * 0.92;
+                // This can be remade to work with any given number of ticks.
 
-                        for (var i = 0; i < 6; i++) {
+                // This mini-section is a bit TODO in general.
+                else if (talents.includes("Castigation")) {
+                    if (checkBuffActive(state.activeBuffs, "Penitent One")) {
+                        discSpells['PenanceTick'][0].castTime = 2 / 4;
+                        discSpells['PenanceTick'][0].coeff = 0.376;
+
+                        for (var i = 0; i < 4; i++) {
                             seq.unshift("PenanceTick");
                         }
                         removeBuffStack(state.activeBuffs, "Penitent One"); 
