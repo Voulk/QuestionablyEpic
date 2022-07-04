@@ -896,6 +896,7 @@ else if (
   let effect = activeTrinket.effects[0];
 
   bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm[player.getSpec()]) / 60;
+
   //
 }
 else if (
@@ -1031,6 +1032,29 @@ else if (
   bonus_stats.hps = (oneHeal * expectedPPM * player.getStatMultiplier("CRITVERS") / 60);
   //
 } 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                            Faith's Crucible                                    */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Faith's Crucible"
+) {
+  let effect = activeTrinket.effects[0];
+  const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
+  
+  bonus_stats.hps = (oneHeal * effect.hits * player.getStatMultiplier("CRITVERS") / effect.cooldown);
+  //
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                     Fluctuating Energy                                         */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Fluctuating Energy"
+) {
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm * player.getStatPerc("Haste")) / 60;
+  //
+}
 else if (
   /* ---------------------------------------------------------------------------------------------- */
   /*                                      Resonant Reservoir                                        */
