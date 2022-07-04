@@ -10,7 +10,8 @@ import FightSelectorButton from "General/SystemTools/LogImport/FightSelectorButt
 import importLogData from "../Engine/ImportLogData";
 import LinearWithValueLabel from "../BasicComponents/LinearProgressBar";
 import transformData from "../Engine/TransformData";
-import NameChanger from "./NameChanger";
+import NameChanger from "./ReplaceNames/NameChanger";
+import ReplaceNames from "./ReplaceNames/ReplaceNames";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -126,6 +127,8 @@ export default function AddPlanDialog(props) {
     },
   ]);
 
+  const [nameObject, setNameObject] = React.useState([]);
+
   const handler = (info) => {
     // reset logData state on new selection
     setLogData({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false, damageTaken: [], debuffData: [], enemyHealth: [], buffData: [] });
@@ -151,7 +154,7 @@ export default function AddPlanDialog(props) {
   };
 
   const setLogToPlanData = (starttime, endtime, reportID, bossID, difficulty) => {
-    importLogData(starttime, endtime, reportID, bossID, difficulty, setLogData, setLoadingProgress);
+    importLogData(starttime, endtime, reportID, bossID, difficulty, setLogData, setLoadingProgress, setNameObject);
   };
 
   const importPlanToCooldownObject = (planName, boss, difficulty, importType) => {
@@ -164,7 +167,7 @@ export default function AddPlanDialog(props) {
     const enemyHealth = logData.enemyHealth;
     const buffData = logData.buffData;
     // transform the imported data into plan data
-    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData, enemyHealth, buffData, importType);
+    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData, enemyHealth, buffData, importType, nameObject);
     cooldownObject.importLogPlan(planName, boss, difficulty, transformedData);
     loadPlanData(boss, planName, difficulty); // load the imported plan data
     handleAddPlanDialogClose(true);
@@ -179,8 +182,6 @@ export default function AddPlanDialog(props) {
       setImportType(content);
     }
   };
-
-  console.log(logData.healers.map((key) => key));
 
   return (
     <div>
@@ -336,29 +337,7 @@ export default function AddPlanDialog(props) {
                 </ToggleButton>
               </ToggleButtonGroup>
             </Grid>
-            {console.log(logData.healers)}
-            <Grid item xl={12}>
-              <Typography color="primary" align="center">
-                Replace Healers?
-              </Typography>
-              <Grid container xl={12} spacing={1}>
-                <Grid item container xl={6} direction="row" spacing={1}>
-                  {logData.healers.map((key, i) => (
-                    <Grid item xl={12}>
-                      <NameChanger name={key.name} className={wclClassConverter(key.icon)} type="original" />
-                    </Grid>
-                  ))}
-                </Grid>
-                <Grid item container xl={6} direction="row" spacing={1}>
-                  {logData.healers.map((key) => (
-                    <Grid item xl={12}>
-                      <NameChanger classLock={wclClassConverter(key.icon)} />
-                    </Grid>
-                  ))}
-                </Grid>
-              </Grid>
-            </Grid>
-
+            <ReplaceNames logData={logData} nameObject={nameObject} setNameObject={setNameObject} />
             <Grid item xs={12}>
               <Typography color="primary" align="center">
                 New Plan Name

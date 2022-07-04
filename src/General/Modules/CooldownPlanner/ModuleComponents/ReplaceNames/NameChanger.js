@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { TextField, MenuItem } from "@mui/material";
 import ls from "local-storage";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
-import { classColoursJS } from "../Functions/ClassColourFunctions";
-import classIcons from "../Functions/IconFunctions/ClassIcons";
+import { classColoursJS } from "../../Functions/ClassColourFunctions";
+import classIcons from "../../Functions/IconFunctions/ClassIcons";
 import { useTranslation } from "react-i18next";
 import ClearIcon from "@mui/icons-material/Clear";
 
@@ -52,11 +52,10 @@ const selectMenu = createTheme({
 });
 
 export default function NameChanger(props) {
-  const { name, className, type, classLock } = props;
+  const { name, className, type, classLock, originalName, setNameState, nameState } = props;
   const { t } = useTranslation();
   const [value, setValue] = useState(name);
   const nameValidation = ls.get("healerInfo").map((key, i) => key.name);
-  console.log(ls.get("healerInfo").filter((filter) => filter.class === classLock).length);
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={selectMenu}>
@@ -67,23 +66,10 @@ export default function NameChanger(props) {
           size="small"
           disabled={type === "original" || (ls.get("healerInfo").filter((filter) => filter.class === classLock).length === 0 && type !== "original")}
           SelectProps={type === "original" ? { IconComponent: null } : ""}
-          //   onChange={(e) => {
-          //     const healerRoster = ls.get("healerInfo");
-          //     const healerNum = parseInt(e.target.value);
-
-          //     const newClass = healerRoster[healerNum].class;
-          //     const newName = healerRoster[healerNum].name;
-
-          //     let data = { ...props.rowData };
-          //     data[name] = newName; // Set the name of the row to the selected from dropdown
-          //     data[nameClass] = newClass; // Update the class from the healerinfo local storage
-          //     setValue(e.target.value);
-          //     /* ------------------------------- Reset the cooldown for the row ------------------------------- */
-          //     if (props.rowData[nameClass] !== newClass) {
-          //       data[cooldown] = undefined;
-          //     }
-          //     props.onRowDataChange(data); // Update the data
-          //   }}
+          onChange={(e) => {
+            setValue(e.target.value);
+            setNameState(nameState, e.target.value, originalName);
+          }}
         >
           {type === "original" ? (
             <MenuItem disabled divider style={{ color: classColoursJS(className) }} key={name + className} value={name}>
@@ -92,8 +78,7 @@ export default function NameChanger(props) {
                 {name}
               </div>
             </MenuItem>
-          ) : /* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */
-          ls.get("healerInfo").filter((filter) => filter.class === classLock).length === 0 ? (
+          ) : ls.get("healerInfo").filter((filter) => filter.class === classLock).length === 0 ? (
             <MenuItem disabled style={{ height: 39 }} key="No Class in Roster" value="No Class in Roster">
               <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>No Class in Roster</div>
             </MenuItem>
@@ -102,7 +87,7 @@ export default function NameChanger(props) {
               .get("healerInfo")
               .filter((filter) => filter.class === classLock)
               .map((key, i) => (
-                <MenuItem divider style={{ color: classColoursJS(key.class), height: 39 }} key={i} value={i}>
+                <MenuItem divider style={{ color: classColoursJS(key.class), height: 39 }} key={i} value={key.name}>
                   <div style={{ display: "inline-flex", alignItems: "center", width: "100%", color: classColoursJS(key.class) }}>
                     {classIcons(key.class, { height: 20, width: 20, margin: "0px 5px 0px 0px", verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 })}
                     {key.name}
