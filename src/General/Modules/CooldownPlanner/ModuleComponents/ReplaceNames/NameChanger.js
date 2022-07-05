@@ -54,8 +54,7 @@ const selectMenu = createTheme({
 export default function NameChanger(props) {
   const { name, className, type, classLock, originalName, setNameState, nameState } = props;
   const { t } = useTranslation();
-  const [value, setValue] = useState(name);
-  const nameValidation = ls.get("healerInfo").map((key, i) => key.name);
+  const [value, setValue] = useState(type === "original" ? name : originalName);
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={selectMenu}>
@@ -67,8 +66,13 @@ export default function NameChanger(props) {
           disabled={type === "original" || (ls.get("healerInfo").filter((filter) => filter.class === classLock).length === 0 && type !== "original")}
           SelectProps={type === "original" ? { IconComponent: null } : ""}
           onChange={(e) => {
-            setValue(e.target.value);
-            setNameState(nameState, e.target.value, originalName);
+            if (e.target.value === "reset") {
+              setValue(originalName);
+              setNameState(nameState, originalName, originalName);
+            } else {
+              setValue(e.target.value);
+              setNameState(nameState, e.target.value, originalName);
+            }
           }}
         >
           {type === "original" ? (
@@ -80,27 +84,38 @@ export default function NameChanger(props) {
             </MenuItem>
           ) : ls.get("healerInfo").filter((filter) => filter.class === classLock).length === 0 ? (
             <MenuItem disabled style={{ height: 39 }} key="No Class in Roster" value="No Class in Roster">
-              <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>No Class in Roster</div>
+              <div style={{ display: "inline-flex", alignItems: "center", width: "100%", height: 22 }}>No Class in Roster</div>
             </MenuItem>
           ) : (
             ls
               .get("healerInfo")
               .filter((filter) => filter.class === classLock)
-              .map((key, i) => (
-                <MenuItem divider style={{ color: classColoursJS(key.class), height: 39 }} key={i} value={key.name}>
-                  <div style={{ display: "inline-flex", alignItems: "center", width: "100%", color: classColoursJS(key.class) }}>
-                    {classIcons(key.class, { height: 20, width: 20, margin: "0px 5px 0px 0px", verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 })}
-                    {key.name}
-                  </div>
-                </MenuItem>
-              ))
+              .map((key, i, arr) => {
+                let lastItem = i + 1 === arr.length ? false : true;
+                return (
+                  <MenuItem divider={lastItem} style={{ color: classColoursJS(key.class), height: 39 }} key={i} value={key.name}>
+                    <div style={{ display: "inline-flex", alignItems: "center", width: "100%", color: classColoursJS(key.class) }}>
+                      {classIcons(key.class, { height: 20, width: 20, margin: "0px 5px 0px 0px", verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 })}
+                      {key.name}
+                    </div>
+                  </MenuItem>
+                );
+              })
           )}
-          {ls.get("healerInfo").filter((filter) => filter.class === classLock).length === 0 ? null : (
-            <MenuItem key={"remove"} value={""}>
+          {ls.get("healerInfo").filter((filter) => filter.class === classLock).length === 0 || value === undefined ? null : (
+            <MenuItem key={"remove"} value={"reset"}>
               <ClearIcon sx={{ color: "#ad2c34", margin: "0px 4px 0px 0px" }} fontSize="small" />
-              {t("Remove")}
+              {t("Reset")}
             </MenuItem>
           )}
+          {type !== "original" && originalName === value ? (
+            <MenuItem style={{ color: classColoursJS(classLock), display: "none" }} key={originalName + classLock} value={originalName}>
+              <div style={{ display: "inline-flex", alignItems: "center", width: "100%", color: classColoursJS(classLock) }}>
+                {classIcons(classLock, { height: 20, width: 20, margin: "0px 5px 0px 0px", verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 })}
+                {originalName}
+              </div>
+            </MenuItem>
+          ) : null}
         </TextField>
       </ThemeProvider>
     </StyledEngineProvider>

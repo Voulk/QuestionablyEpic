@@ -192,13 +192,13 @@ export default function AddPlanDialog(props) {
           </Button>
         </span>
       </Tooltip>
-      <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="xs" fullWidth>
+      <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="xs" fullWidth scroll="body">
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="fullWidth">
           <Tab label="Create New Plan" {...a11yProps(0)} />
           <Tab label="Import Plan from WCL" {...a11yProps(1)} />
         </Tabs>
         <TabPanel value={value} index={0}>
-          <DialogContent sx={{ padding: "8px" }}>
+          <div sx={{ padding: "8px" }}>
             <Grid item container spacing={1} xl={12} alignItems="center" sx={{ marginTop: "1px" }}>
               <Grid item xl={12}>
                 <Typography color="primary" align="center">
@@ -266,7 +266,7 @@ export default function AddPlanDialog(props) {
                 />
               </Grid>
             </Grid>
-          </DialogContent>
+          </div>
           <DialogActions>
             <Button
               key={8}
@@ -282,7 +282,7 @@ export default function AddPlanDialog(props) {
         </TabPanel>
 
         <TabPanel value={value} index={1}>
-          <DialogContent sx={{ padding: "16px" }}>
+          <div sx={{ padding: "16px" }}>
             <Grid item container spacing={1} xl={12} alignItems="center" sx={{ marginTop: "1px" }}>
               <Grid item xs={12}>
                 <Paper sx={{ backgroundColor: "#5a5a5a", padding: "4px", borderColor: "limegreen", borderWidth: "1px", borderStyle: "Solid" }} elevation={0}>
@@ -318,43 +318,44 @@ export default function AddPlanDialog(props) {
                   ""
                 )}
               </Grid>
-            </Grid>
-            <Grid item xl={12}>
-              <Typography color="primary" align="center">
-                Import Type
-              </Typography>
-              <ToggleButtonGroup value={importType} exclusive onChange={handleContent} aria-label="text alignment" fullWidth>
-                <ToggleButton value="Precise" aria-label="Precise">
-                  <Tooltip title={"Import log data exactly as abilities were cast"}>
-                    <div>Precise</div>
-                  </Tooltip>
-                </ToggleButton>
 
-                <ToggleButton value="Smart" aria-label="Smart">
-                  <Tooltip title={"Import log and let QE assign cooldowns to boss abilities"}>
-                    <div>Smart</div>
-                  </Tooltip>
-                </ToggleButton>
-              </ToggleButtonGroup>
-            </Grid>
-            <ReplaceNames logData={logData} nameObject={nameObject} setNameObject={setNameObject} />
-            <Grid item xs={12}>
-              <Typography color="primary" align="center">
-                New Plan Name
-              </Typography>
+              <Grid item xl={12}>
+                <Typography color="primary" align="center">
+                  Import Type
+                </Typography>
+                <ToggleButtonGroup value={importType} exclusive onChange={handleContent} aria-label="text alignment" fullWidth>
+                  <ToggleButton value="Precise" aria-label="Precise">
+                    <Tooltip title={"Import log data exactly as abilities were cast"}>
+                      <div>Precise</div>
+                    </Tooltip>
+                  </ToggleButton>
 
-              <TextField
-                error={duplicatePlanNameCheck}
-                helperText={duplicatePlanNameCheck ? t("CooldownPlanner.DuplicatePlanError") : ""}
-                fullWidth
-                variant="outlined"
-                defaultValue=""
-                value={planName}
-                onChange={onChangeNewPlanName}
-                sx={{ marginTop: "4px" }}
-              />
+                  <ToggleButton value="Smart" aria-label="Smart">
+                    <Tooltip title={"Import log and let QE assign cooldowns to boss abilities"}>
+                      <div>Smart</div>
+                    </Tooltip>
+                  </ToggleButton>
+                </ToggleButtonGroup>
+              </Grid>
+              <ReplaceNames logData={logData} nameObject={nameObject} setNameObject={setNameObject} disabled={loadingProgress !== 100} />
+              <Grid item xs={12}>
+                <Typography color="primary" align="center">
+                  New Plan Name
+                </Typography>
+
+                <TextField
+                  error={duplicatePlanNameCheck}
+                  helperText={duplicatePlanNameCheck ? t("CooldownPlanner.DuplicatePlanError") : ""}
+                  fullWidth
+                  variant="outlined"
+                  defaultValue=""
+                  value={planName}
+                  onChange={onChangeNewPlanName}
+                  sx={{ marginTop: "4px" }}
+                />
+              </Grid>
             </Grid>
-          </DialogContent>
+          </div>
           <DialogActions>
             <Button
               key={9}

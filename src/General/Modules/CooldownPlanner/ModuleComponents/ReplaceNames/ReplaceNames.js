@@ -1,11 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { MenuItem, Grid, FormControl, Select, Typography } from "@mui/material";
+import { MenuItem, Grid, FormControl, Select, Typography, AccordionSummary, AccordionDetails } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { fightDuration, warcraftLogReportID, logDifficulty, wclClassConverter } from "../../../CooldownPlanner/Functions/Functions";
 import NameChanger from "./NameChanger";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import MuiAccordion from "@mui/material/Accordion";
+import { styled } from "@mui/material/styles";
+
+const Accordion = styled((props) => <MuiAccordion disableGutters elevation={0} square {...props} />)(({ theme }) => ({
+  border: `1px solid ${theme.palette.divider}`,
+  borderRadius: 4,
+  "&:not(:last-child)": {
+    borderBottom: 0,
+  },
+  "&:before": {
+    display: "none",
+  },
+}));
 
 export default function ReplaceNames(props) {
-  const { logData, nameObject, setNameObject } = props;
+  const { logData, nameObject, setNameObject, disabled } = props;
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const [name0, setName0] = useState({});
@@ -150,25 +164,29 @@ export default function ReplaceNames(props) {
 
   return (
     <Grid item xl={12}>
-      <Typography color="primary" align="center">
-        Replace Healers?
-      </Typography>
-      <Grid container xl={12} spacing={1}>
-        <Grid item container xl={6} direction="row" spacing={1}>
-          {logData.healers.map((key, i) => (
-            <Grid item xl={12}>
-              <NameChanger name={key.name} className={wclClassConverter(key.icon)} type="original" />
+      <Accordion disabled={disabled}>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+          <Typography align="center">Replace Healers?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Grid container xl={12} spacing={1}>
+            <Grid item container xl={6} direction="row" spacing={1}>
+              {logData.healers.map((key, i) => (
+                <Grid item xl={12}>
+                  <NameChanger name={key.name} className={wclClassConverter(key.icon)} type="original" />
+                </Grid>
+              ))}
             </Grid>
-          ))}
-        </Grid>
-        <Grid item container xl={6} direction="row" spacing={1}>
-          {logData.healers.map((key, i) => (
-            <Grid item xl={12}>
-              <NameChanger classLock={wclClassConverter(key.icon)} setNameState={setNameState} originalName={key.name} nameState={"name" + i} />
+            <Grid item container xl={6} direction="row" spacing={1}>
+              {logData.healers.map((key, i) => (
+                <Grid item xl={12}>
+                  <NameChanger classLock={wclClassConverter(key.icon)} setNameState={setNameState} originalName={key.name} nameState={"name" + i} />
+                </Grid>
+              ))}
             </Grid>
-          ))}
-        </Grid>
-      </Grid>
+          </Grid>
+        </AccordionDetails>
+      </Accordion>
     </Grid>
   );
 }
