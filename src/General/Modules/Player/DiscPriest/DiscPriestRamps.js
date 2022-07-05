@@ -9,6 +9,10 @@ const discSettings = {
     chaosBrand: true
 }
 
+const DISCCONSTANTS = {
+    masteryMod: 1.35,
+}
+
 
 // This is a very simple function that just condenses our ramp sequence down to make it more human readable in reports. 
 const rampShortener = (seq) => {
@@ -307,9 +311,25 @@ const applyLoadoutEffects = (discSpells, settings, talents, state) => {
     // ==== Talents ====
     // Not all talents just make base modifications to spells, but those that do can be handled here.
     if (talents.improvedSmite) discSpells['Smite'][0].coeff *= (1 + 0.25 * talents.improvedSmite);
+    if (talents.rabidShadows) discSpells['Mindbender'][1].tickRate /= (1 + 0.05 * talents.rabidShadows); // Note that Shadowfiend is not buffed since Mindbender is a pre-req.
+    if (talents.puppetMaster) discSpells['Mindbender'].push(
+        // This is technically accurate, but will make implementing Shadowflame Prism a pain. We'll remake it to use the Mindbender's expiry event to remove the buff instead.
+        {
+            type: "buff",
+            castTime: 0,
+            cost: 0,
+            cooldown: 0,
+            buffType: 'statsMult',
+            stat: 'mastery',
+            value: (3 * talents.puppetMaster * 35 * DISCCONSTANTS.masteryMod), // 
+            buffDuration: 12,
+        }
+    );
+
     if (talents.shiningRadiance) discSpells['Power Word: Radiance'][0].coeff *= (1 + 0.1 * talents.shiningRadiance);
     if (talents.indemnity) discSpells['Power Word: Shield'][0].atonement += 2;
     if (talents.solatium) discSpells['Shadow Mend'][0].atonement += 2;
+
 
     // ==== Legendaries ====
     // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.

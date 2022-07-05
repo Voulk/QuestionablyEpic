@@ -88,6 +88,12 @@ describe("Evang Cast Sequence", () => {
     const talents = {
         // Priest class tree
         improvedSmite: 2,
+        mindRestrain: 0,
+        throesOfPain: 0,
+        puppetMaster: 0,
+        improvedShadowfiend: false,
+        mindbender: false,
+        rabidShadows: 0,
 
 
         // Disc spec tree
@@ -119,7 +125,7 @@ describe("Evang Cast Sequence", () => {
         lenience: 0,
         twilightEmpowerment: 0,
         harshDiscipline: false,
-        indemnity: true, // +2s Atonement duration on PW:S
+        indemnity: false, // +2s Atonement duration on PW:S
         lightsWrath: false,
         solatium: false,
         wickedness: false,
@@ -128,20 +134,27 @@ describe("Evang Cast Sequence", () => {
 
     const seq = ["Purge the Wicked", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
                     "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
-                    "Power Word: Radiance", "Power Word: Radiance", "Evangelism", "Schism", "Mindgames", "Penance", "Mind Blast", "Smite", "Smite", "Smite", "Smite"];
+                    "Power Word: Radiance", "Power Word: Radiance", "Evangelism", "Mindbender", "Schism", "Mindgames", "Penance", "Mind Blast", 
+                    "Smite", "Smite", "Smite", "Penance", "Smite", "Smite", "Smite", "Smite"];
     //console.log(evangSeq)
 
 
     test("Test Stuff", () => {
 
         //const baseline = allRamps(evangSeq, fiendSeq, activeStats, {"playstyle": "Venthyr Evangelism", "Power of the Dark Side": true, true);
-        const baseline = runCastSequence(seq, activeStats, {}, talents);
+
+        //console.log("Baseline: " + JSON.stringify(runCastSequence(seq, activeStats, {}, talents)))
+
+        console.log("Baseline: " + runCastSequence(seq, activeStats, {}, talents).totalHealing)
+        console.log("Indemnity: " + runCastSequence(seq, activeStats, {}, {...talents, indemnity: true}).totalHealing)
+        console.log("Puppet Master: " + runCastSequence(seq, activeStats, {}, {...talents, puppetMaster: 2}).totalHealing)
+        console.log("Rabid Shadows: " + runCastSequence(seq, activeStats, {}, {...talents, rabidShadows: 2}).totalHealing)
 
         //runCastSequence(seq, activeStats, settings, conduits);
 
-        console.log("Total Healing: " + baseline.totalHealing);
+        //console.log("Total Healing: " + baseline.totalHealing);
         //console.log(`Call to doSomething took ${endTime - startTime} milliseconds`)
-        console.log("Baseline: " + JSON.stringify(baseline));
+        //console.log("Baseline: " + JSON.stringify(baseline));
 
         //const clarityOfMind = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": true, "Pelagos": false, "Power of the Dark Side": true}, {});
         //const pelagos = allRamps(boonSeq, fiendSeq, activeStats, {"Clarity of Mind": false, "Pelagos": true, "Power of the Dark Side": true}, {});

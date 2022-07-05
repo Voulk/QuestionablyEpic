@@ -284,20 +284,15 @@ export const DISCSPELLS = {
         secondaries: ['crit', 'vers'], // + Haste
         canPartialTick: true,
     }],
-    "Shadowfiend": [/*{
+    "Shadowfiend": [{
         type: "",
         castTime: 1.5,
         cost: 900,
-        coeff: 0.13,
+        coeff: 0.46, // Unused. Change coefficient below instead.
         aura: 1,
         secondaries: ['crit', 'vers'],
         atoneOverheal: 0.22,
-        dot: {
-            tickRate: 1.5,
-            coeff: 0.46,
-            duration: 15,
-        }
-    },*/
+    },
     {
         castTime: 1.5,
         cost: 900,
@@ -306,6 +301,27 @@ export const DISCSPELLS = {
         coeff: 0.46, // 
         tickRate: 1.5,
         buffDuration: 15,
+        atoneOverheal: 0.22,
+        secondaries: ['crit', 'vers'], // Shadowfiend scales with Haste but the DoT / HoT function will handle that. 
+        canPartialTick: false,
+    }],
+    "Mindbender": [{
+        type: "",
+        castTime: 1.5,
+        cost: 900,
+        coeff: 0.34,
+        aura: 1,
+        secondaries: ['crit', 'vers'],
+        atoneOverheal: 0.22,
+    },
+    {
+        castTime: 0,
+        cost: 0,
+        type: "buff",
+        buffType: "damage",
+        coeff: 0.34, // 
+        tickRate: 1.5,
+        buffDuration: 12,
         atoneOverheal: 0.22,
         secondaries: ['crit', 'vers'], // Shadowfiend scales with Haste but the DoT / HoT function will handle that. 
         canPartialTick: false,
