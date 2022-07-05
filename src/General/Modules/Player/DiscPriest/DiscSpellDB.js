@@ -60,6 +60,15 @@ export const DISCSPELLS = {
         atoneOverheal: 0.28,
         secondaries: ['crit', 'vers'],
     }],
+    "Light's Wrath": [{
+        type: "damage",
+        castTime: 2.5,
+        cost: 0,
+        coeff: 1.75, // This is almost definitely incorrect.
+        cooldown: 90,
+        atoneOverheal: 0.33,
+        secondaries: ['crit', 'vers'],
+    }],
     "Mindgames": [{
         type: "damage",
         castTime: 1.5,

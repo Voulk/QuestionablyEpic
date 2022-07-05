@@ -90,6 +90,7 @@ export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle, t
     sequence.push('Penance');
     sequence.push('Mind Blast');
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
+    else sequence.push("Smite");
     if (talents.divineStar) sequence.push("Divine Star");
 
     for (var i = 0; i < 3; i++) {
@@ -115,7 +116,7 @@ export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle, t
  */
 export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle, talents) => {
     let sequence = []
-    
+
     if (talents.purgeTheWicked) sequence.push('Purge the Wicked');
     else sequence.push('Shadow Word: Pain');
     
@@ -126,24 +127,23 @@ export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle, t
         // Power Word: Shield can also be swapped out for Shadow Mend on non-Rapture ramps.
         sequence.push('Power Word: Shield');
     }
-    // Note for Ruby that this is the time we expect to get the buff, NOT the time we cast it.
-    /*
-    if (trinket === "Soulletting Ruby") sequence.push("Soulletting Ruby");
-    if (trinket === "Instructor's Divine Bell") sequence.push("Instructor's Divine Bell");
-    if (trinket === "Instructor's Divine Bell (new)") sequence.push("Instructor's Divine Bell (new)");
-    */
-    sequence.push('Shadowfiend');
+
+    if (talents.mindbender) sequence.push('Mindbender');
+    else sequence.push('Shadowfiend');
+
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
     sequence.push('Evangelism');
     
     // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     sequence.push('Schism');
+    if (talents.lightsWrath) sequence.push("Light's Wrath");
     if (talents.mindgames) sequence.push('Mindgames');
     sequence.push('Penance');
     sequence.push('Mind Blast');
     if (talents.divineStar) sequence.push("Divine Star");
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
+    else sequence.push("Smite");
 
     for (var i = 0; i < 3; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 

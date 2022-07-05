@@ -13,107 +13,179 @@ const DISCCONSTANTS = {
     masteryMod: 1.35,
 }
 
+/**
+ * This function handles all of our effects that might change our spell database before the ramps begin.
+ * It includes conduits, legendaries, and some trinket effects.
+ * 
+ * @param {*} discSpells Our spell database
+ * @param {*} settings Settings including legendaries, trinkets, soulbinds and anything that falls out of any other category.
+ * @param {*} talents The talents run in the current set.
+ * @returns An updated spell database with any of the above changes made.
+ */
+ const applyLoadoutEffects = (discSpells, settings, talents, state) => {
 
-// This is a very simple function that just condenses our ramp sequence down to make it more human readable in reports. 
-const rampShortener = (seq) => {
-    let shortRamp = [];
-    let lastValue = "";
-    let lastCount = 1;
-
-    for (var i = 0; i < seq.length; i++) {
-        const currentValue = seq[i];
-        if (currentValue === lastValue) {
-            lastCount += 1;
+    // ==== Default Loadout ====
+    // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout
+    // since if we compare trinkets like Bell against an empty loadout it would be very undervalued. This gives a fair appraisal when
+    // we don't have full information about a character.
+    // As always, Top Gear is able to provide a more complete picture. 
+    if (settings['DefaultLoadout']) {
+        if (settings.playstyle === "Kyrian Evangelism") {
+            settings['Clarity of Mind'] = true;
+            settings['Pelagos'] = true;
+            settings['4T28'] = true;
         }
-        else {
-            if (lastValue !== "") {
-                if (lastCount === 1) shortRamp.push(lastValue);
-                else shortRamp.push(lastValue + " x" + lastCount);
-            }
-            
-            lastCount = 1;
-        }
-        lastValue = currentValue;
-    }
-    shortRamp.push(lastValue + " x" + lastCount);
-    return shortRamp
-}
-
-const addBreakdowns = (obj, newObj, miniRamp) => {
-    for (const [key, value] of Object.entries(newObj)) {
-        if (key in obj) {
-            obj[key] = Math.round(value + newObj[key]);
-        }
-        else {
-            obj[key] = Math.round(newObj[key])
+        else if (settings.playstyle === "Venthyr Evangelism") {
+            settings['Penitent One'] = true;
+            settings['Shadow Word: Manipulation'] = true;
+            settings['Theotar'] = true;
+            settings['4T28'] = true;
         }
     }
 
-    for (const [key, value] of Object.entries(miniRamp)) {
-        if (key in obj) {
-            obj[key] = Math.round(value + newObj[key] * 2);
+    // ==== Talents ====
+    // Not all talents just make base modifications to spells, but those that do can be handled here.
+    if (talents.improvedSmite) discSpells['Smite'][0].coeff *= (1 + 0.25 * talents.improvedSmite);
+    if (talents.rabidShadows) discSpells['Mindbender'][1].tickRate /= (1 + 0.05 * talents.rabidShadows); // Note that Shadowfiend is not buffed since Mindbender is a pre-req.
+    if (talents.puppetMaster) { discSpells['Mindbender'].push(
+        // This is technically accurate, but will make implementing Shadowflame Prism a pain. We'll remake it to use the Mindbender's expiry event to remove the buff instead.
+        {
+            type: "buff",
+            castTime: 0,
+            cost: 0,
+            cooldown: 0,
+            buffType: 'statsMult',
+            stat: 'mastery',
+            value: (3 * talents.puppetMaster * 35 * DISCCONSTANTS.masteryMod), // 
+            buffDuration: 12,
         }
-        else {
-            obj[key] = Math.round(newObj[key] * 2)
-        }
+    ) };
+
+    if (talents.throesOfPain) {
+        // ASSUMPTION: Throes of Pain should work on both DoTs but let's double check anyway.
+        discSpells['Shadow Word: Pain'][0].coeff *= (1 + 0.1 * talents.throesOfPain);
+        discSpells['Purge the Wicked'][0].coeff *= (1 + 0.1 * talents.throesOfPain);
     }
 
-    return obj;
-}
+    if (talents.swiftPenitence) discSpells['Penance'].push({
+        name: "Swift Penitence",
+        type: "buff",
+        value: 1 + (0.1 * talents.swiftPenitence),
+        castTime: 0,
+        expiration: 999,
+        cost: 0,
+        cooldown: 0,
+        buffType: 'special',
+    })
 
+    // Disc specific talents.
+    // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
 
-export const allRampsHealing = (boonSeq, fiendSeq, stats, settings = {}, conduits, reporting = false) => {
-    const rampResult = allRamps(boonSeq, fiendSeq, stats, settings, conduits, reporting);
+    if (talents.shiningRadiance) discSpells['Power Word: Radiance'][0].coeff *= (1 + 0.1 * talents.shiningRadiance);
+    if (talents.indemnity) discSpells['Power Word: Shield'][0].atonement += 2;
+    if (talents.solatium) discSpells['Shadow Mend'][0].atonement += 2;
+    if (talents.castigation) discSpells['Penance'][0].bolts += 1;
+    if (talents.revelInPurity) {
+        discSpells['Purge the Wicked'][0].coeff *= (1 + 0.1 * talents.revelInPurity);
+        discSpells['Purge the Wicked'][1].coeff *= (1 + 0.1 * talents.revelInPurity);
+    }
+    if (talents.exaltation) {
+        discSpells['Rapture'][0].coeff *= 1.075;
+        discSpells['Rapture'][1].buffDuration += 1;
+    }
+    if (talents.maliciousScission) discSpells['Schism'][1].buffDuration *= 1.5;
+    if (talents.stolenPsyche) discSpells['Mind Blast'][0].atonementBonus = (1 + 0.1 * talents.stolenPsyche);
 
-    if (rampResult.totalHealing > 0) return rampResult.totalHealing;
+    // ==== Legendaries ====
+    // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
+    // Unity Note: Unity is automatically converted to the legendary it represents and should not have an entry here.
+
+    // -- Clarity of Mind --
+    // Clarity of Mind adds 6 seconds to the Atonement granted by Power Word: Shield during Rapture. 
+    // It's a straightfoward addition.
+    if (settings['Clarity of Mind']) discSpells['Rapture'][0].atonement = 21;
+
+    // -- Shadow Word: Manipulation --
+    // SWM has two effects. 
+    // -> First, it buffs the healing / absorb portion of the spell by 10%.
+    // -> Secondly, it adds a large crit buff when the absorb is used. This can technically vary from 0->50% but we'll use an average of 45%.
+    if (settings['Shadow Word: Manipulation']) {
+        discSpells['Mindgames'][1].coeff *= 1.1; 
+
+        discSpells['Mindgames'].push({
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        cooldown: 0,
+        buffType: 'statsMult',
+        stat: 'crit',
+        value: 45 * 35, // This is equal to 45% crit, though the stats are applied post DR. 
+        buffDuration: 10,
+    })
+    }; 
+
+    // -- Penitent One --
+    // Power Word: Radiance has a chance to make your next Penance free, and fire 3 extra bolts.
+    // This is a close estimate, and could be made more accurate by tracking the buff and adding ticks instead of power.
+    if (talents.evenfall2) { // TODO
+        // Penitent One is a bit odd in that it is technically a percentage chance rather than a guarantee.
+        // We could roll for the probability on Radiance cast but this is problematic because a weaker set could beat a stronger one
+        // based on stronger rolls during Top Gear.
+        // To get around this, we'll add the ticks always, but lower their strength according to the percentage chance to proc.
+        // On a double radiance then we have an 84% chance to get a proc so we'll multiply our 3 extra Penance ticks by that number.
+
+        // To recap:
+        // Penance without proc: 3 ticks at 100% strength.
+        // Penance with proc: 6 ticks at 100% strength.
+        // Including probability: Penance with proc is 6 ticks at 92% strength (3 + 3 * 0.84)
+        discSpells['Power Word: Radiance'].push({
+            name: "Penitent One",
+            type: "buff",
+            buffType: "special",
+            value: 6,
+            buffDuration: 20,
+            castTime: 0,
+            stacks: 1,
+            canStack: false, 
+        });
+
+    }
+
+    // ==== Tier & Other Effects ====
+    // Remember that anything that isn't wired into a ramp can just be calculated normally (like Genesis Lathe for example).
+    if (settings['4T28']) {
+        // If player has 4T28, then hook Power of the Dark Side into Power Word Radiance.
+        discSpells['Power Word: Radiance'].push({
+            name: "Power of the Dark Side",
+            type: "buff",
+            buffType: "special",
+            value: 1.95,
+            buffDuration: 20,
+            castTime: 0,
+            stacks: 1,
+            canStack: true,
+        });
+
+    }
     else {
-        reportError("", "DiscRamp", "Total Healing is 0", rampResult.totalHealing || 0)
-        return 0;
+        // If player doesn't have 4T28, then we might still opt to start them with a PotDS proc on major ramps since the chance of it being active is extremely high.
+        // This is unnecessary with 4pc since we'll always have a PotDS proc during our sequences due to Radiance always coming before Penance.
+        if (settings['Power of the Dark Side']) {
+            state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: (1.5 + 0.1 * talents.darkIndulgence), stacks: 1, canStack: true})
+        }   
     }
-}
+    
+    // ==== Trinkets ====
+    // These settings change the stat value prescribed to a given trinket. We call these when adding trinkets so that we can grab their value at a specific item level.
+    // When adding a trinket to this section, make sure it has an entry in DiscSpellDB first prescribing the buff duration, cooldown and type of stat.
+    //if (settings["Instructor's Divine Bell"]) discSpells["Instructor's Divine Bell"][0].value = settings["Instructor's Divine Bell"];
+    if (settings["Instructor's Divine Bell (new)"]) discSpells["Instructor's Divine Bell (new)"][0].value = settings["Instructor's Divine Bell (new)"];
+    if (settings["Flame of Battle"]) discSpells["Flame of Battle"][0].value = settings["Flame of Battle"];
+    if (settings['Shadowed Orb']) discSpells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
+    if (settings['Soulletting Ruby']) discSpells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
+    //
 
-// This function automatically casts a full set of ramps. It's easier than having functions call ramps individually and then sum them.
-// We can probably have it take an array of ramps rather than pre-defined sets.
-export const allRamps = (fiendSeq, stats, settings = {}, talents, reporting = false) => {
-
-    let rampResult = {totalHealing: 0, ramps: [], rampSettings: settings}
-    const miniSeq = buildRamp('Mini', 6, [], stats.haste, settings.playstyle || "", [], talents)
-    const miniRamp = runCastSequence(miniSeq, stats, settings, talents);
-    //const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
-    const fiendRamp = runCastSequence(fiendSeq, stats, settings, talents);
-
-    rampResult.totalHealing = fiendRamp.totalHealing + miniRamp.totalHealing * 2;
-
-    if (reporting) {
-        //rampResult.ramps.push({"tag": "Primary Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(boonSeq), "totalHealing": Math.round(boonRamp.totalHealing)});
-        rampResult.ramps.push({"tag": "Fiend Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(fiendSeq), "totalHealing": Math.round(fiendRamp.totalHealing)});
-        rampResult.ramps.push({"tag": "Mini Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(miniSeq), "totalHealing": Math.round(miniRamp.totalHealing)});
-        rampResult.stats = stats;
-
-        rampResult.damageBreakdown = addBreakdowns(boonRamp.damageDone, fiendRamp.damageDone, miniRamp.damageDone);
-        rampResult.healingBreakdown = addBreakdowns(boonRamp.healingDone, fiendRamp.healingDone, miniRamp.healingDone);
-        rampResult.manaSpent = boonRamp.manaSpent + fiendRamp.manaSpent + miniRamp.manaSpent * 2;
-        //rampResult.conduits = conduits;
-        
-     
-        /*
-        console.log("== Set Ramp Information == ")
-        console.log("Total Healing: " + Math.round(rampResult.totalHealing));
-        console.log("Legendaries used: Clarity of Mind");
-        console.log("Conduits used: " + JSON.stringify(conduits));
-        console.log("On use Trinkets used: " + " Instructor's Divine Bell (213 ilvl, ~20% expected overhealing)")
-        console.log("Post-DR passive stat breakdown: " + JSON.stringify(stats));
-        rampResult.ramps.forEach(ramp => {
-            console.log("Ramp Name: " + ramp.tag + " (" + Math.round(ramp.totalHealing) + " healing)");
-            console.log("Pre-ramp conditions: " + "[Power of the Dark Side, Purge the Wicked, Pelagos]");
-            console.log(rampShortener(ramp.sequence));
-            
-    })*/}
-
-
-    //console.log(JSON.stringify(rampResult));
-
-    return rampResult; //boonRamp + fiendRamp + miniRamp * 2;
+    return discSpells;
 }
 
 /**  Extend all active atonements by @extension seconds. This is triggered by Evanglism / Spirit Shell. */
@@ -154,8 +226,14 @@ const removeBuffStack = (buffs, buffName) => {
  */
 const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
     const sins = {0: 1.12, 1: 1.12, 2: 1.1, 3: 1.08, 4: 1.07, 5: 1.06, 6: 1.05, 7: 1.05, 8: 1.04, 9: 1.04, 10: 1.03}
-    const schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.25 : 1; 
+    let schism = 1;
+
+    if (spellName !== "Mindbender" && spellName !== "Shadowfiend") {
+        schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.25 : 1; 
+    }
+    
     let mult = (activeAtones > 10 ? 1.03 : sins[activeAtones]) * schism
+    //console.log("Spell: " + spellName + ". Mult: " + mult);
     if (discSettings.chaosBrand) mult = mult * 1.05;
     if (spellName === "PenanceTick") {
 
@@ -172,6 +250,10 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
             state.activeBuffs = removeBuffStack(state.activeBuffs, "Swift Penitence")
         }
     }
+    else if (spellName === "Smite" && talents.lessonInHumility) {
+        if (activeAtones >= 3) mult *= (1 + talents.lessonInHumility * 0.1);
+    }
+    else if (spellName === "Light's Wrath") mult *= (1 + 0.1 * activeAtones);
     return mult; 
 }
 
@@ -287,180 +369,6 @@ const getTime = (t) => {
     return Math.round(t*1000)/1000
 }
 
-/**
- * This function handles all of our effects that might change our spell database before the ramps begin.
- * It includes conduits, legendaries, and some trinket effects.
- * 
- * @param {*} discSpells Our spell database
- * @param {*} settings Settings including legendaries, trinkets, soulbinds and anything that falls out of any other category.
- * @param {*} talents The talents run in the current set.
- * @returns An updated spell database with any of the above changes made.
- */
-const applyLoadoutEffects = (discSpells, settings, talents, state) => {
-
-    // ==== Default Loadout ====
-    // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout
-    // since if we compare trinkets like Bell against an empty loadout it would be very undervalued. This gives a fair appraisal when
-    // we don't have full information about a character.
-    // As always, Top Gear is able to provide a more complete picture. 
-    if (settings['DefaultLoadout']) {
-        if (settings.playstyle === "Kyrian Evangelism") {
-            settings['Clarity of Mind'] = true;
-            settings['Pelagos'] = true;
-            settings['4T28'] = true;
-        }
-        else if (settings.playstyle === "Venthyr Evangelism") {
-            settings['Penitent One'] = true;
-            settings['Shadow Word: Manipulation'] = true;
-            settings['Theotar'] = true;
-            settings['4T28'] = true;
-        }
-    }
-
-    // ==== Talents ====
-    // Not all talents just make base modifications to spells, but those that do can be handled here.
-    if (talents.improvedSmite) discSpells['Smite'][0].coeff *= (1 + 0.25 * talents.improvedSmite);
-    if (talents.rabidShadows) discSpells['Mindbender'][1].tickRate /= (1 + 0.05 * talents.rabidShadows); // Note that Shadowfiend is not buffed since Mindbender is a pre-req.
-    if (talents.puppetMaster) { discSpells['Mindbender'].push(
-        // This is technically accurate, but will make implementing Shadowflame Prism a pain. We'll remake it to use the Mindbender's expiry event to remove the buff instead.
-        {
-            type: "buff",
-            castTime: 0,
-            cost: 0,
-            cooldown: 0,
-            buffType: 'statsMult',
-            stat: 'mastery',
-            value: (3 * talents.puppetMaster * 35 * DISCCONSTANTS.masteryMod), // 
-            buffDuration: 12,
-        }
-    ) };
-
-    if (talents.throesOfPain) {
-        // ASSUMPTION: Throes of Pain should work on both DoTs but let's double check anyway.
-        discSpells['Shadow Word: Pain'][0].coeff *= (1 + 0.1 * talents.throesOfPain);
-        discSpells['Purge the Wicked'][0].coeff *= (1 + 0.1 * talents.throesOfPain);
-    }
-
-    if (talents.swiftPenitence) discSpells['Penance'].push({
-        name: "Swift Penitence",
-        type: "buff",
-        value: 1 + (0.1 * talents.swiftPenitence),
-        castTime: 0,
-        expiration: 999,
-        cost: 0,
-        cooldown: 0,
-        buffType: 'special',
-    })
-
-    // Disc specific talents.
-    // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
-
-    if (talents.shiningRadiance) discSpells['Power Word: Radiance'][0].coeff *= (1 + 0.1 * talents.shiningRadiance);
-    if (talents.indemnity) discSpells['Power Word: Shield'][0].atonement += 2;
-    if (talents.solatium) discSpells['Shadow Mend'][0].atonement += 2;
-    if (talents.castigation) discSpells['Penance'][0].bolts += 1;
-    if (talents.revelInPurity) {
-        discSpells['Purge the Wicked'][0].coeff *= (1 + 0.1 * talents.revelInPurity);
-        discSpells['Purge the Wicked'][1].coeff *= (1 + 0.1 * talents.revelInPurity);
-    }
-    if (talents.exaltation) {
-        discSpells['Rapture'][0].coeff *= 1.075;
-        discSpells['Rapture'][1].buffDuration += 1;
-    }
-    if (talents.maliciousScission) discSpells['Schism'][1].buffDuration *= 1.5;
-    
-    // ==== Legendaries ====
-    // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
-    // Unity Note: Unity is automatically converted to the legendary it represents and should not have an entry here.
-
-    // -- Clarity of Mind --
-    // Clarity of Mind adds 6 seconds to the Atonement granted by Power Word: Shield during Rapture. 
-    // It's a straightfoward addition.
-    if (settings['Clarity of Mind']) discSpells['Rapture'][0].atonement = 21;
-
-    // -- Shadow Word: Manipulation --
-    // SWM has two effects. 
-    // -> First, it buffs the healing / absorb portion of the spell by 10%.
-    // -> Secondly, it adds a large crit buff when the absorb is used. This can technically vary from 0->50% but we'll use an average of 45%.
-    if (settings['Shadow Word: Manipulation']) {
-        discSpells['Mindgames'][1].coeff *= 1.1; 
-
-        discSpells['Mindgames'].push({
-        type: "buff",
-        castTime: 0,
-        cost: 0,
-        cooldown: 0,
-        buffType: 'statsMult',
-        stat: 'crit',
-        value: 45 * 35, // This is equal to 45% crit, though the stats are applied post DR. 
-        buffDuration: 10,
-    })
-    }; 
-
-    // -- Penitent One --
-    // Power Word: Radiance has a chance to make your next Penance free, and fire 3 extra bolts.
-    // This is a close estimate, and could be made more accurate by tracking the buff and adding ticks instead of power.
-    if (settings['Penitent One']) {
-        // Penitent One is a bit odd in that it is technically a percentage chance rather than a guarantee.
-        // We could roll for the probability on Radiance cast but this is problematic because a weaker set could beat a stronger one
-        // based on stronger rolls during Top Gear.
-        // To get around this, we'll add the ticks always, but lower their strength according to the percentage chance to proc.
-        // On a double radiance then we have an 84% chance to get a proc so we'll multiply our 3 extra Penance ticks by that number.
-
-        // To recap:
-        // Penance without proc: 3 ticks at 100% strength.
-        // Penance with proc: 6 ticks at 100% strength.
-        // Including probability: Penance with proc is 6 ticks at 92% strength (3 + 3 * 0.84)
-        discSpells['Power Word: Radiance'].push({
-            name: "Penitent One",
-            type: "buff",
-            buffType: "special",
-            value: 6,
-            buffDuration: 20,
-            castTime: 0,
-            stacks: 1,
-            canStack: false, 
-        });
-
-    }
-
-    // ==== Tier & Other Effects ====
-    // Remember that anything that isn't wired into a ramp can just be calculated normally (like Genesis Lathe for example).
-    if (settings['4T28']) {
-        // If player has 4T28, then hook Power of the Dark Side into Power Word Radiance.
-        discSpells['Power Word: Radiance'].push({
-            name: "Power of the Dark Side",
-            type: "buff",
-            buffType: "special",
-            value: 1.95,
-            buffDuration: 20,
-            castTime: 0,
-            stacks: 1,
-            canStack: true,
-        });
-
-    }
-    else {
-        // If player doesn't have 4T28, then we might still opt to start them with a PotDS proc on major ramps since the chance of it being active is extremely high.
-        // This is unnecessary with 4pc since we'll always have a PotDS proc during our sequences due to Radiance always coming before Penance.
-        if (settings['Power of the Dark Side']) {
-            state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: (1.5 + 0.1 * talents.darkIndulgence), stacks: 1, canStack: true})
-        }   
-    }
-    
-    // ==== Trinkets ====
-    // These settings change the stat value prescribed to a given trinket. We call these when adding trinkets so that we can grab their value at a specific item level.
-    // When adding a trinket to this section, make sure it has an entry in DiscSpellDB first prescribing the buff duration, cooldown and type of stat.
-    //if (settings["Instructor's Divine Bell"]) discSpells["Instructor's Divine Bell"][0].value = settings["Instructor's Divine Bell"];
-    if (settings["Instructor's Divine Bell (new)"]) discSpells["Instructor's Divine Bell (new)"][0].value = settings["Instructor's Divine Bell (new)"];
-    if (settings["Flame of Battle"]) discSpells["Flame of Battle"][0].value = settings["Flame of Battle"];
-    if (settings['Shadowed Orb']) discSpells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
-    if (settings['Soulletting Ruby']) discSpells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
-    //
-
-    return discSpells;
-}
-
 export const runHeal = (state, spell, spellName, specialMult = 1) => {
 
     // Pre-heal processing
@@ -479,8 +387,7 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
     const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
     const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, spellName, state.talents); // Get our damage multiplier (Schism, Sins etc);
     const damageVal = getSpellRaw(spell, state.currentStats) * damMultiplier;
-    const atonementHealing = activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * (1 - spell.atoneOverheal)
-
+    const atonementHealing = activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * (1 - spell.atoneOverheal) * (spell.atonementBonus || 1)
     // This is stat tracking, the atonement healing will be returned as part of our result.
     state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
@@ -535,7 +442,6 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                 }
                 else if (buff.buffType === "damage") {
                     const spell = buff.attSpell;
-
                     runDamage(state, spell, buff.name, atonementApp)
                 }
                 else if (buff.buffType === "function") {

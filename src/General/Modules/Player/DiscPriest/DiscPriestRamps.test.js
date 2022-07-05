@@ -1,6 +1,7 @@
 import { Stats } from 'fs';
 import Player from 'General/Modules/Player/Player';
-import { runCastSequence, allRamps, getSpellRaw, allRampsHealing } from "./DiscPriestRamps";
+import { runCastSequence, allRamps, allRampsHealing } from "./DiscRampUtilities";
+import { getSpellRaw } from "./DiscPriestRamps";
 import { genStatWeights } from './DiscPriestUtilities';
 import { buildRamp } from "./DiscRampGen";
 import { DISCSPELLS } from "./DiscSpellDB";
@@ -92,7 +93,7 @@ describe("Evang Cast Sequence", () => {
         throesOfPain: 2,
         puppetMaster: 2,
         improvedShadowfiend: false,
-        mindbender: false,
+        mindbender: true,
         rabidShadows: 0,
 
         mindgames: true,
@@ -111,7 +112,7 @@ describe("Evang Cast Sequence", () => {
         darkIndulgence: 0,
         revelInPurity: 0,
         castigation: 0,
-        rapture: true,
+        rapture: false,
         sinsOfTheMany: 0,
         shadowCovenant: 0,
         embraceShadow: 0,
@@ -132,6 +133,59 @@ describe("Evang Cast Sequence", () => {
         lightsWrath: false,
         solatium: false,
         wickedness: false,
+        stolenPsyche: 0,
+
+    };
+
+    const imprTalents = {
+        // Priest class tree
+        improvedSmite: 2,
+        mindRestrain: 0, // NYI. Requires Alpha. Mind Blast SL absorb just left in for now.
+        throesOfPain: 2,
+        puppetMaster: 2,
+        improvedShadowfiend: true,
+        mindbender: true,
+        rabidShadows: 2,
+
+        mindgames: true,
+
+
+        // Disc spec tree
+        // Tier 1
+        shiningRadiance: 0,
+        shieldDiscipline: false,
+        powerWordSolace: false,
+        maliciousScission: false,
+
+        // Tier 2
+        contrition: 2,
+        purgeTheWicked: true,
+        darkIndulgence: 2,
+        revelInPurity: 0,
+        castigation: 1,
+        rapture: true,
+        sinsOfTheMany: 2,
+        shadowCovenant: 0,
+        embraceShadow: 0,
+        maliciousScission: false,
+        swiftPenitence: 0,
+
+        // Tier 3
+        evangelism: true,
+        spiritShell: false,
+        exaltation: false, // lol
+        divineStar: false,
+        halo: false,
+        evenfall: 0,
+        lessonInHumility: 0,
+        lenience: 0,
+        twilightEmpowerment: 0,
+        harshDiscipline: false,
+        indemnity: false, // +2s Atonement duration on PW:S
+        solatium: false,// +2s Atonement duration on Shadowmend
+        wickedness: false,
+        stolenPsyche: 0,
+        lightsWrath: true,
 
     };
 
@@ -161,6 +215,7 @@ describe("Evang Cast Sequence", () => {
 
         const seq = buildRamp('Primary', 10, [], activeStats.haste, "", [], talents)
         const seq2 = buildRamp('Primary', 10, [], activeStats.haste, "", [], {...talents, purgeTheWicked: true})
+        const seq3 = buildRamp('Primary', 10, [], activeStats.haste, "", [], {...talents, rapture: true})
 
         console.log(seq);
 
@@ -170,7 +225,8 @@ describe("Evang Cast Sequence", () => {
         console.log("Baseline: " + baseline);
 
         print("Indemnity", baseline, allRampsHealing(seq, activeStats, settings, {...talents, indemnity: true}))
-
+        print("Rapture", baseline, allRampsHealing(seq3, activeStats, settings, {...talents, rapture: true}))
+        print("Exaltation & Rapture", baseline, allRampsHealing(seq3, activeStats, settings, {...talents, rapture: true, exaltation: true}))
         print("Shining Radiance", baseline, allRampsHealing(seq, activeStats, settings, {...talents, shiningRadiance: 2}))
         print("Rabid Shadows", baseline, allRampsHealing(seq, activeStats, settings, {...talents, rabidShadows: 2}))
         print("Dark Indul", baseline, allRampsHealing(seq, activeStats, settings, {...talents, darkIndulgence: 2}))
@@ -178,9 +234,19 @@ describe("Evang Cast Sequence", () => {
         print("Castigation", baseline, allRampsHealing(seq, activeStats, settings, {...talents, castigation: true}))
         print("Purge the Wicked", baseline, allRampsHealing(seq2, activeStats, settings, {...talents, purgeTheWicked: true}))
         print("Purge & Revel", baseline, allRampsHealing(seq2, activeStats, settings, {...talents, purgeTheWicked: true, revelInPurity: 2}))
-        print("Exaltation", baseline, allRampsHealing(seq, activeStats, settings, {...talents, exaltation: true}))
+        
+        
         print("Malicious Scission", baseline, allRampsHealing(seq, activeStats, settings, {...talents, maliciousScission: true}))
+        
+        print("Stolen Psyche", baseline, allRampsHealing(seq, activeStats, settings, {...talents, stolenPsyche: 2}))
+        print("Lesson in Humility", baseline, allRampsHealing(seq, activeStats, settings, {...talents, lessonInHumility: 2}))
 
+        print("PtW / Revel / Lesson in Humi / Evenfall / LW / Indem", baseline, allRampsHealing(seq2, activeStats, settings, {...imprTalents, 
+                revelInPurity: 2, purgeTheWicked: true, lessonInHumility: 2, evenfall: 2, indemnity: true}))
+        print("PtW / Swift Pen / Lesson in Humi / Evenfall / LW / Indem", baseline, allRampsHealing(seq2, activeStats, settings, {...imprTalents, 
+                swiftPenitence: 2, purgeTheWicked: true, lessonInHumility: 2, evenfall: 2, indemnity: true}))                                                            
+        
+        //console.log(allRamps(seq, activeStats, settings, {...talents, stolenPsyche: 2}, true))
         //runCastSequence(seq, activeStats, settings, conduits);
 
         //console.log("Total Healing: " + baseline.totalHealing);
