@@ -55,7 +55,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 200,
-        coeff: 0.497025, // 0.47 x 1.5 (smite rank 2) x 0.75 (smite aura nerf) x 0.94 (disc aura nerf)
+        coeff: 0.33135, // 0.75 (smite aura nerf) x 0.94 (disc aura nerf)
         cooldown: 0,
         atoneOverheal: 0.28,
         secondaries: ['crit', 'vers'],

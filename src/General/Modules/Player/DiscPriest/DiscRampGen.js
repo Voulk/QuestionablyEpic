@@ -16,36 +16,32 @@
  * @param {*} specialSpells Special spells are those that can change our ramp in some way. Rapture is the most prominent current example.
  * @returns The function returns a sequence of spells (which might include trinket uses).
  */
-export const buildRamp = (type, applicators, trinkets, haste, playstyle, specialSpells = []) => {
-    const talents = ['Power Word: Solace', 'Divine Star']
+export const buildRamp = (type, applicators, trinkets, haste, playstyle, specialSpells = [], talents) => {
+    //const talents = ['Power Word: Solace', 'Divine Star']
     if (talents.includes('Power Word: Solace')) specialSpells.push('Power Word: Solace');
     if (talents.includes('Purge the Wicked')) specialSpells.push('Purge the Wicked');
     if (talents.includes('Divine Star')) specialSpells.push("Divine Star");
 
     const trinketList = buildTrinkets(trinkets);
     if (type === "Mini") {
-        return buildMiniRamp(applicators, trinkets, specialSpells, playstyle);
+        return buildMiniRamp(applicators, trinkets, specialSpells, playstyle, talents);
     }
-    else if (type === "Fiend") {
-        // Build a sequence for a Fiend ramp. See it's function for more information.
-        return buildFiendRamp(applicators, trinketList['Fiend'], specialSpells, playstyle);
+    else if (type === "Primary") { 
+        // With Boon gone, our primary ramp will generally be with Fiend. 
+        // The particular label doesn't matter all that much since it's just a way to categorize what we're intending to cast. 
+        return buildFiendRamp(applicators, trinketList['Fiend'], specialSpells, playstyle, talents); 
     }
-    else if (type === "Boon") {
-        // TODO: Rename Boon to "Primary" since we'll actually include both types of primary ramp here. 
-        // Mindgames ramps will of course occur much more frequently than Boon ramps. 
-        if (playstyle === "Kyrian Evangelism") {
-            return buildBoonEvangRamp(applicators, trinketList['Boon'], haste, specialSpells);
+    else if (type === "Secondary") {
+        // Our second Evang or Spirit Shell ramp. If we're running Fiend it won't be in here, but Mindbender might.
+        // Change Note: In Shadowlands Fiend was considered a secondary ramp to Boons primary ramp. 
+        if (playstyle === "Evangelism") {
+            return buildBoonEvangRamp(applicators, trinketList['Boon'], haste, specialSpells, talents); 
         }
-        else if (playstyle === "Kyrian Spirit Shell") {
-            return buildBoonShellRamp(applicators, trinketList['Boon'], haste, specialSpells);
+        else if (playstyle === "Spirit Shell") {
+            return buildBoonShellRamp(applicators, trinketList['Boon'], haste, specialSpells, talents); // Spirit Shell NYI.
         }
-        else if (playstyle === "Venthyr Evangelism") { // Coming soon
-            return buildMindgamesRamp(applicators, trinketList['Boon'], specialSpells);
-        }
-        else if (playstyle === "Venthyr Spirit Shell") { // Coming soon
-            //return buildMindgamesRamp(applicators, trinketList['Boon'], haste, specialSpells);
-        }
-        // If there was a desire or a need to add specializations for Night Fae or Necrolord then they could be added here. 
+        // Further ramp types can be added here.
+        
     }
     else {
         console.error("Invalid Ramp");
@@ -81,7 +77,7 @@ const buildTrinkets = (trinkets) => {
  * @param {*} playstyle Our current playstyle. Setting playstyle to Venthyr will include Mindgames in the mini-ramp.
  * @returns Returns a sequence of spells representing a mini ramp.
  */
-export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle) => {
+export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle, talents) => {
     let sequence = [];
     
     if (specialSpells.includes('Purge the Wicked')) sequence.push('Purge the Wicked');

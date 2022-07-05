@@ -306,7 +306,10 @@ const applyLoadoutEffects = (discSpells, settings, talents, state) => {
 
     // ==== Talents ====
     // Not all talents just make base modifications to spells, but those that do can be handled here.
-
+    if (talents.improvedSmite) discSpells['Smite'][0].coeff *= (1 + 0.25 * talents.improvedSmite);
+    if (talents.shiningRadiance) discSpells['Power Word: Radiance'][0].coeff *= (1 + 0.1 * talents.shiningRadiance);
+    if (talents.indemnity) discSpells['Power Word: Shield'][0].atonement += 2;
+    if (talents.solatium) discSpells['Shadow Mend'][0].atonement += 2;
 
     // ==== Legendaries ====
     // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
@@ -435,7 +438,7 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
  * @param {object} conduits Any conduits we want to include. The conduits object is made up of {ConduitName: ConduitLevel} pairs where the conduit level is an item level rather than a rank.
  * @returns The expected healing of the full ramp.
  */
-export const runCastSequence = (sequence, stats, talents = {}, settings = {}) => {
+export const runCastSequence = (sequence, stats, settings = {}, talents = {}) => {
     //console.log("Running cast sequence");
     let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true}
 
@@ -503,8 +506,8 @@ export const runCastSequence = (sequence, stats, talents = {}, settings = {}) =>
 
         // This is a check of the current time stamp against the tick our GCD ends and we can begin our queued spell.
         // It'll also auto-cast Ascended Eruption if Boon expired.
-        if ((state.t > nextSpell && seq.length > 0) || ascendedEruption)  {
-            const spellName = ascendedEruption ? "Ascended Eruption" : seq.shift();
+        if ((state.t > nextSpell && seq.length > 0))  {
+            const spellName = seq.shift();
             const fullSpell = discSpells[spellName];
 
             // Update current stats for this combat tick.
@@ -593,7 +596,7 @@ export const runCastSequence = (sequence, stats, talents = {}, settings = {}) =>
                 // This can be remade to work with any given number of ticks.
 
                 // This mini-section is a bit TODO in general.
-                else if (talents.includes("Castigation")) {
+                else if (talents.castigation) {
                     if (checkBuffActive(state.activeBuffs, "Penitent One")) {
                         discSpells['PenanceTick'][0].castTime = 2 / 4;
                         discSpells['PenanceTick'][0].coeff = 0.376;
