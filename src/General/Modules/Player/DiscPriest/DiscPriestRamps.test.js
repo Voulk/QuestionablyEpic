@@ -88,12 +88,14 @@ describe("Evang Cast Sequence", () => {
     const talents = {
         // Priest class tree
         improvedSmite: 2,
-        mindRestrain: 0,
-        throesOfPain: 0,
-        puppetMaster: 0,
+        mindRestrain: 0, // NYI. Requires Alpha. Mind Blast SL absorb just left in for now.
+        throesOfPain: 2,
+        puppetMaster: 2,
         improvedShadowfiend: false,
         mindbender: false,
         rabidShadows: 0,
+
+        mindgames: true,
 
 
         // Disc spec tree
@@ -109,10 +111,11 @@ describe("Evang Cast Sequence", () => {
         darkIndulgence: 0,
         revelInPurity: 0,
         castigation: 0,
-        rapture: 0,
+        rapture: true,
         sinsOfTheMany: 0,
         shadowCovenant: 0,
         embraceShadow: 0,
+        maliciousScission: false,
 
         // Tier 3
         evangelism: true,
@@ -132,11 +135,22 @@ describe("Evang Cast Sequence", () => {
 
     };
 
-    const seq = ["Purge the Wicked", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
+    /*const seq = ["Shadow Word: Pain", "Rapture", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
                     "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
                     "Power Word: Radiance", "Power Word: Radiance", "Evangelism", "Mindbender", "Schism", "Mindgames", "Penance", "Mind Blast", 
-                    "Smite", "Smite", "Smite", "Penance", "Smite", "Smite", "Smite", "Smite"];
+                    "Smite", "Smite", "Smite", "Penance", "Smite", "Smite", "Smite", "Smite"]; 
+
+    const seq2 = ["Purge the Wicked", "Rapture", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
+        "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
+        "Power Word: Radiance", "Power Word: Radiance", "Evangelism", "Mindbender", "Schism", "Mindgames", "Penance", "Mind Blast", 
+        "Smite", "Smite", "Smite", "Penance", "Smite", "Smite", "Smite", "Smite"];  */
+    //const seq = ["Penance"];
     //console.log(evangSeq)
+
+    const print = (name, base, healing) => {
+        let percInc = Math.round(10000*(healing / base - 1))/100;
+        console.log(name + ": " + healing + " (+" + percInc + "%)")
+    }
 
 
     test("Test Stuff", () => {
@@ -145,10 +159,27 @@ describe("Evang Cast Sequence", () => {
 
         //console.log("Baseline: " + JSON.stringify(runCastSequence(seq, activeStats, {}, talents)))
 
-        console.log("Baseline: " + runCastSequence(seq, activeStats, {}, talents).totalHealing)
-        console.log("Indemnity: " + runCastSequence(seq, activeStats, {}, {...talents, indemnity: true}).totalHealing)
-        console.log("Puppet Master: " + runCastSequence(seq, activeStats, {}, {...talents, puppetMaster: 2}).totalHealing)
-        console.log("Rabid Shadows: " + runCastSequence(seq, activeStats, {}, {...talents, rabidShadows: 2}).totalHealing)
+        const seq = buildRamp('Primary', 10, [], activeStats.haste, "", [], talents)
+        const seq2 = buildRamp('Primary', 10, [], activeStats.haste, "", [], {...talents, purgeTheWicked: true})
+
+        console.log(seq);
+
+        const settings = {'Power of the Dark Side': true}
+        const baseline = allRampsHealing(seq, activeStats, settings, talents)
+        //const baseline = allRamps(runCastSequence(seq, activeStats, settings, talents).totalHealing)
+        console.log("Baseline: " + baseline);
+
+        print("Indemnity", baseline, allRampsHealing(seq, activeStats, settings, {...talents, indemnity: true}))
+
+        print("Shining Radiance", baseline, allRampsHealing(seq, activeStats, settings, {...talents, shiningRadiance: 2}))
+        print("Rabid Shadows", baseline, allRampsHealing(seq, activeStats, settings, {...talents, rabidShadows: 2}))
+        print("Dark Indul", baseline, allRampsHealing(seq, activeStats, settings, {...talents, darkIndulgence: 2}))
+        print("Swift Penitence", baseline, allRampsHealing(seq, activeStats, settings, {...talents, swiftPenitence: 2}))
+        print("Castigation", baseline, allRampsHealing(seq, activeStats, settings, {...talents, castigation: true}))
+        print("Purge the Wicked", baseline, allRampsHealing(seq2, activeStats, settings, {...talents, purgeTheWicked: true}))
+        print("Purge & Revel", baseline, allRampsHealing(seq2, activeStats, settings, {...talents, purgeTheWicked: true, revelInPurity: 2}))
+        print("Exaltation", baseline, allRampsHealing(seq, activeStats, settings, {...talents, exaltation: true}))
+        print("Malicious Scission", baseline, allRampsHealing(seq, activeStats, settings, {...talents, exaltation: true}))
 
         //runCastSequence(seq, activeStats, settings, conduits);
 

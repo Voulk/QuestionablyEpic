@@ -73,18 +73,19 @@ export const allRampsHealing = (boonSeq, fiendSeq, stats, settings = {}, conduit
 }
 
 // This function automatically casts a full set of ramps. It's easier than having functions call ramps individually and then sum them.
-export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits, reporting) => {
+// We can probably have it take an array of ramps rather than pre-defined sets.
+export const allRamps = (fiendSeq, stats, settings = {}, talents, reporting = false) => {
 
     let rampResult = {totalHealing: 0, ramps: [], rampSettings: settings}
-    const miniSeq = buildRamp('Mini', 6, [], stats.haste, settings.playstyle || "", [])
-    const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
-    const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
-    const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
+    const miniSeq = buildRamp('Mini', 6, [], stats.haste, settings.playstyle || "", [], talents)
+    const miniRamp = runCastSequence(miniSeq, stats, settings, talents);
+    //const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
+    const fiendRamp = runCastSequence(fiendSeq, stats, settings, talents);
 
-    rampResult.totalHealing = boonRamp.totalHealing + fiendRamp.totalHealing + miniRamp.totalHealing * 2;
+    rampResult.totalHealing = fiendRamp.totalHealing + miniRamp.totalHealing * 2;
 
     if (reporting) {
-        rampResult.ramps.push({"tag": "Primary Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(boonSeq), "totalHealing": Math.round(boonRamp.totalHealing)});
+        //rampResult.ramps.push({"tag": "Primary Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(boonSeq), "totalHealing": Math.round(boonRamp.totalHealing)});
         rampResult.ramps.push({"tag": "Fiend Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(fiendSeq), "totalHealing": Math.round(fiendRamp.totalHealing)});
         rampResult.ramps.push({"tag": "Mini Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(miniSeq), "totalHealing": Math.round(miniRamp.totalHealing)});
         rampResult.stats = stats;
@@ -157,10 +158,18 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
     let mult = (activeAtones > 10 ? 1.03 : sins[activeAtones]) * schism
     if (discSettings.chaosBrand) mult = mult * 1.05;
     if (spellName === "PenanceTick") {
+
         if (checkBuffActive(buffs, "Power of the Dark Side")) {
             const potdsMult = buffs.filter(function (buff) {return buff.name === "Power of the Dark Side"})[0].value;
             mult = mult * potdsMult;
+           
             state.activeBuffs = removeBuffStack(state.activeBuffs, "Power of the Dark Side")
+        }
+        if (checkBuffActive(buffs, "Swift Penitence")) {
+
+            const spMult = buffs.filter(function (buff) {return buff.name === "Swift Penitence"})[0].value
+            mult = mult * spMult;
+            state.activeBuffs = removeBuffStack(state.activeBuffs, "Swift Penitence")
         }
     }
     return mult; 
@@ -172,7 +181,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
  */
 const getHealingMult = (buffs, t, spellName, talents) => {
     if (spellName === "Power Word: Shield" && checkBuffActive(buffs, "Rapture")) {
-        if (conduits['Exaltation']) return 1 + 2 * 1.135;
+        if (talents.exaltation) return 1 + (2 * 1.075);
         else return 3;
     }
     else return 1;
@@ -312,7 +321,7 @@ const applyLoadoutEffects = (discSpells, settings, talents, state) => {
     // Not all talents just make base modifications to spells, but those that do can be handled here.
     if (talents.improvedSmite) discSpells['Smite'][0].coeff *= (1 + 0.25 * talents.improvedSmite);
     if (talents.rabidShadows) discSpells['Mindbender'][1].tickRate /= (1 + 0.05 * talents.rabidShadows); // Note that Shadowfiend is not buffed since Mindbender is a pre-req.
-    if (talents.puppetMaster) discSpells['Mindbender'].push(
+    if (talents.puppetMaster) { discSpells['Mindbender'].push(
         // This is technically accurate, but will make implementing Shadowflame Prism a pain. We'll remake it to use the Mindbender's expiry event to remove the buff instead.
         {
             type: "buff",
@@ -324,12 +333,40 @@ const applyLoadoutEffects = (discSpells, settings, talents, state) => {
             value: (3 * talents.puppetMaster * 35 * DISCCONSTANTS.masteryMod), // 
             buffDuration: 12,
         }
-    );
+    ) };
+
+    if (talents.throesOfPain) {
+        // ASSUMPTION: Throes of Pain should work on both DoTs but let's double check anyway.
+        discSpells['Shadow Word: Pain'][0].coeff *= (1 + 0.1 * talents.throesOfPain);
+        discSpells['Purge the Wicked'][0].coeff *= (1 + 0.1 * talents.throesOfPain);
+    }
+
+    if (talents.swiftPenitence) discSpells['Penance'].push({
+        name: "Swift Penitence",
+        type: "buff",
+        value: 1 + (0.1 * talents.swiftPenitence),
+        castTime: 0,
+        expiration: 999,
+        cost: 0,
+        cooldown: 0,
+        buffType: 'special',
+    })
+
+    // Disc specific talents.
+    // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
 
     if (talents.shiningRadiance) discSpells['Power Word: Radiance'][0].coeff *= (1 + 0.1 * talents.shiningRadiance);
     if (talents.indemnity) discSpells['Power Word: Shield'][0].atonement += 2;
     if (talents.solatium) discSpells['Shadow Mend'][0].atonement += 2;
-
+    if (talents.castigation) discSpells['Penance'][0].bolts += 1;
+    if (talents.revelInPurity) {
+        discSpells['Purge the Wicked'][0].coeff *= (1 + 0.1 * talents.revelInPurity);
+        discSpells['Purge the Wicked'][1].coeff *= (1 + 0.1 * talents.revelInPurity);
+    }
+    if (talents.exaltation) {
+        discSpells['Rapture'][0].coeff *= 1.075;
+        discSpells['Rapture'][1].buffDuration += 1;
+    }
 
     // ==== Legendaries ====
     // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
@@ -405,7 +442,9 @@ const applyLoadoutEffects = (discSpells, settings, talents, state) => {
     else {
         // If player doesn't have 4T28, then we might still opt to start them with a PotDS proc on major ramps since the chance of it being active is extremely high.
         // This is unnecessary with 4pc since we'll always have a PotDS proc during our sequences due to Radiance always coming before Penance.
-        if (settings['Power of the Dark Side']) state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: 1.5, stacks: 1, canStack: true})
+        if (settings['Power of the Dark Side']) {
+            state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: (1.5 + 0.1 * talents.darkIndulgence), stacks: 1, canStack: true})
+        }   
     }
     
     // ==== Trinkets ====
@@ -426,7 +465,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     // Pre-heal processing
     const currentStats = state.currentStats;
 
-    const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.conduits); 
+    const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.talents); 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets;
     const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.overheal) * healingMult * targetMult;
     
@@ -437,7 +476,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 export const runDamage = (state, spell, spellName, atonementApp) => {
 
     const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
-    const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, spellName, state.conduits); // Get our damage multiplier (Schism, Sins etc);
+    const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, spellName, state.talents); // Get our damage multiplier (Schism, Sins etc);
     const damageVal = getSpellRaw(spell, state.currentStats) * damMultiplier;
     const atonementHealing = activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * (1 - spell.atoneOverheal)
 
@@ -591,10 +630,10 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                         
                         // Check if buff already exists, if it does add a stack.
                         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
-
-                        if (buffStacks === 0) state.activeBuffs.push({name: spell.name, expiration: state.t + spell.castTime + spell.buffDuration, buffType: "special", value: spell.value, stacks: spell.stacks, canStack: spell.canStack});
+                        if (buffStacks === 0) state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, buffType: "special", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack});
                         else {
                             const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
+                            
                             if (buff.canStack) buff.stacks += 1;
                         }
                     }     
@@ -616,7 +655,8 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                 // This can be remade to work with any given number of ticks.
 
                 // This mini-section is a bit TODO in general.
-                else if (talents.castigation) {
+                else if (spellName === "Penance") {
+
                     if (checkBuffActive(state.activeBuffs, "Penitent One")) {
                         discSpells['PenanceTick'][0].castTime = 2 / 4;
                         discSpells['PenanceTick'][0].coeff = 0.376;
@@ -627,17 +667,21 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                         removeBuffStack(state.activeBuffs, "Penitent One"); 
                     }
                     else {
-                        discSpells['PenanceTick'][0].castTime = 2 / 3;
+                    
+                        discSpells['PenanceTick'][0].castTime = 2 / discSpells['Penance'][0].bolts;
                         discSpells['PenanceTick'][0].coeff = 0.376;
-                        for (var i = 0; i < 3; i++) {
+                        for (var i = 0; i < discSpells['Penance'][0].bolts; i++) {
                             seq.unshift("PenanceTick");
                         }
                     }
+
+                    
                 }
                 
                 // Grab the next timestamp we are able to cast our next spell. This is equal to whatever is higher of a spells cast time or the GCD.
-                nextSpell += (spell.castTime / getHaste(currentStats));
+                
             });   
+            nextSpell += (fullSpell[0].castTime / getHaste(currentStats));
         }
     }
 

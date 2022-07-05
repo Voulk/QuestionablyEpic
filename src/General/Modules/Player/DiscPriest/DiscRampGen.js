@@ -18,9 +18,6 @@
  */
 export const buildRamp = (type, applicators, trinkets, haste, playstyle, specialSpells = [], talents) => {
     //const talents = ['Power Word: Solace', 'Divine Star']
-    if (talents.includes('Power Word: Solace')) specialSpells.push('Power Word: Solace');
-    if (talents.includes('Purge the Wicked')) specialSpells.push('Purge the Wicked');
-    if (talents.includes('Divine Star')) specialSpells.push("Divine Star");
 
     const trinketList = buildTrinkets(trinkets);
     if (type === "Mini") {
@@ -80,7 +77,7 @@ const buildTrinkets = (trinkets) => {
 export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle, talents) => {
     let sequence = [];
     
-    if (specialSpells.includes('Purge the Wicked')) sequence.push('Purge the Wicked');
+    if (talents.purgeTheWicked) sequence.push('Purge the Wicked');
     else sequence.push('Shadow Word: Pain');
 
     for (var x = 0; x < applicators; x++) {
@@ -89,15 +86,13 @@ export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle, t
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
     sequence.push('Schism');
-    if (playstyle.includes("Venthyr")) sequence.push("Mindgames");
+    if (talents.mindgames) sequence.push("Mindgames");
     sequence.push('Penance');
     sequence.push('Mind Blast');
-    sequence.push('Power Word: Solace');
-    
-    if (specialSpells.includes("Divine Star")) sequence.push("Divine Star");
+    if (talents.powerWordSolace) sequence.push('Power Word: Solace');
+    if (talents.divineStar) sequence.push("Divine Star");
 
     for (var i = 0; i < 3; i++) {
-        // The number of smites here is adjustable but also not very important outside of DPS metrics since most Atonements will have fallen off.
         sequence.push('Smite');
     }
     sequence.push('Penance');
@@ -118,36 +113,37 @@ export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle, t
  * @param {*} playstyle Options: Kyrian Evangelism, Kyrian Spirit Shell, Venthyr Evanglism (coming soon), Venthyr Spirit Shell (coming soon).
  * @returns Returns a sequence of spells representing a Shadowfiend ramp.
  */
-export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle) => {
+export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle, talents) => {
     let sequence = []
-    if (specialSpells.includes('Purge the Wicked')) sequence.push('Purge the Wicked');
+    
+    if (talents.purgeTheWicked) sequence.push('Purge the Wicked');
     else sequence.push('Shadow Word: Pain');
     
     // Shadowed Orb lasts a very long time so if we're using it we're safe to use it at the start of our ramp (or before).
-    if (trinket === "Shadowed Orb of Torment") sequence.push("Shadowed Orb");
-    if (specialSpells.includes("Rapture")) {sequence.push('Rapture'); applicators -= 1 };
+    //if (trinket === "Shadowed Orb of Torment") sequence.push("Shadowed Orb");
+    if (talents.rapture) {sequence.push('Rapture'); applicators -= 1 };
     for (var x = 0; x < applicators; x++) {
         // Power Word: Shield can also be swapped out for Shadow Mend on non-Rapture ramps.
         sequence.push('Power Word: Shield');
     }
     // Note for Ruby that this is the time we expect to get the buff, NOT the time we cast it.
+    /*
     if (trinket === "Soulletting Ruby") sequence.push("Soulletting Ruby");
     if (trinket === "Instructor's Divine Bell") sequence.push("Instructor's Divine Bell");
     if (trinket === "Instructor's Divine Bell (new)") sequence.push("Instructor's Divine Bell (new)");
-    
+    */
     sequence.push('Shadowfiend');
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
-    if (trinket === "Flame of Battle") sequence.push("Flame of Battle");
     sequence.push('Evangelism');
     
     // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     sequence.push('Schism');
-    if (playstyle.includes("Venthyr")) sequence.push('Mindgames');
+    if (talents.mindgames) sequence.push('Mindgames');
     sequence.push('Penance');
     sequence.push('Mind Blast');
-    if (specialSpells.includes("Divine Star")) sequence.push("Divine Star");
-    sequence.push('Power Word: Solace');
+    if (talents.divineStar) sequence.push("Divine Star");
+    if (talents.powerWordSolace) sequence.push('Power Word: Solace');
 
     for (var i = 0; i < 3; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 

@@ -236,16 +236,10 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 900,
-        coeff: 0.21,
         aura: 1,
+        coeff: 0.21,
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.2,
-        dot: { // Replaced and now unused.
-            tickRate: 2,
-            coeff: 0.12,
-            aura: 1,
-            duration: 26, // 20 x 1.3
-        }
+        atoneOverheal: 0.15,
     },
     {
         castTime: 0,
@@ -254,7 +248,7 @@ export const DISCSPELLS = {
         coeff: 0.12, // 
         tickRate: 2,
         buffDuration: 26,
-        atoneOverheal: 0.2,
+        atoneOverheal: 0.15,
         secondaries: ['crit', 'vers'], // + Haste
         canPartialTick: true,
     }],
@@ -265,13 +259,6 @@ export const DISCSPELLS = {
         coeff: 0.1292,
         aura: 1,
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.2,
-        dot: { // Now unused. Will remove in a few updates. 
-            tickRate: 2,
-            coeff: 0.09588,
-            aura: 1,
-            duration: 15.6, // 12 x 1.3
-        }
     },
     {
         castTime: 0,
@@ -279,8 +266,8 @@ export const DISCSPELLS = {
         buffType: "damage",
         coeff: 0.09588, // 
         tickRate: 2,
-        buffDuration: 15.6,
-        atoneOverheal: 0.07,
+        buffDuration: 20.8,
+        atoneOverheal: 0.15,
         secondaries: ['crit', 'vers'], // + Haste
         canPartialTick: true,
     }],
