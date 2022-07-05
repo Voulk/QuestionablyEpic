@@ -179,7 +179,7 @@ describe("Evang Cast Sequence", () => {
         print("Purge the Wicked", baseline, allRampsHealing(seq2, activeStats, settings, {...talents, purgeTheWicked: true}))
         print("Purge & Revel", baseline, allRampsHealing(seq2, activeStats, settings, {...talents, purgeTheWicked: true, revelInPurity: 2}))
         print("Exaltation", baseline, allRampsHealing(seq, activeStats, settings, {...talents, exaltation: true}))
-        print("Malicious Scission", baseline, allRampsHealing(seq, activeStats, settings, {...talents, exaltation: true}))
+        print("Malicious Scission", baseline, allRampsHealing(seq, activeStats, settings, {...talents, maliciousScission: true}))
 
         //runCastSequence(seq, activeStats, settings, conduits);
 

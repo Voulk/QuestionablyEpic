@@ -367,7 +367,8 @@ const applyLoadoutEffects = (discSpells, settings, talents, state) => {
         discSpells['Rapture'][0].coeff *= 1.075;
         discSpells['Rapture'][1].buffDuration += 1;
     }
-
+    if (talents.maliciousScission) discSpells['Schism'][1].buffDuration *= 1.5;
+    
     // ==== Legendaries ====
     // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
     // Unity Note: Unity is automatically converted to the legendary it represents and should not have an entry here.
@@ -647,7 +648,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                 // TODO: Schism was written early in the app, but can just be converted to a regular buff effect for code cleanliness.
                 else if (spellName === "Schism") {
                     // Add the Schism buff. 
-                    state.activeBuffs.push({name: "Schism", expiration: state.t + spell.castTime + spell.buffDuration});
+                    //state.activeBuffs.push({name: "Schism", expiration: state.t + spell.castTime + spell.buffDuration});
                 }
 
                 // Penance will queue either 3 or 6 ticks depending on if we have a Penitent One proc or not. 

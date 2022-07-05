@@ -86,6 +86,16 @@ export const DISCSPELLS = {
         buffDuration: 9,
         atoneOverheal: 0.28,
         secondaries: ['crit', 'vers'],
+    },
+    {
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        buffDuration: 9,
+        buffType: "special",
+        value: 1.25,
+        name: "Schism",
+        canStack: false,
     }],
     "Penance": [{
         type: "special",
