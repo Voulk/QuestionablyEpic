@@ -198,6 +198,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     let effect = activeTrinket.effects[0];
 
     bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown) * player.getStatPerc("Versatility");
+    console.log("Vial: " + bonus_stats.hps)
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -1045,6 +1046,48 @@ else if (
     bonus_stats.dps = effectValue * effect.avgTargets * effect.avgStacks * effect.ticks * 1.22 / effect.cooldown;
   
 } 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                           Miniscule Mailemental in an Envelope                                 */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Miniscule Mailemental in an Envelope"
+) {
+
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
+
+    bonus_stats.dps = effectValue  * effect.ppm * effect.classMult[player.getSpec()] / 60;
+  
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                    Infinitely Divisible Ooze                                   */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Infinitely Divisible Ooze"
+) {
+
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
+
+    bonus_stats.dps = effectValue  * effect.ppm * effect.hits  / 60;
+    console.log("Ooze: " + bonus_stats.dps);
+  
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                      Oakheart's Gnarled Root                                   */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Oakheart's Gnarled Root"
+) {
+
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
+
+    bonus_stats.dps = effectValue  * effect.ppm * effect.hits  / 60;
+    console.log("Oakheart: " + bonus_stats.dps);
+  
+} 
+
   else {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        No Trinkets Found                                       */

@@ -657,7 +657,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
 
   // Add any bonus DPS. This is valued 1:1 with bonus HPS in dungeons only.
   if (contentType === "Dungeon" && "bonus_stats" in item_stats && "dps" in bonus_stats) {
-    score += (bonus_stats.dps / player.getHPS(contentType)) * player.activeStats.intellect;
+    score += (bonus_stats.dps * 1.5 / player.getHPS(contentType)) * player.activeStats.intellect;
   }
 
   // Add any bonus Mana
