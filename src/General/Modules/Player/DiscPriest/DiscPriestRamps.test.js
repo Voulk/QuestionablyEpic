@@ -129,9 +129,9 @@ describe("Evang Cast Sequence", () => {
         lenience: 0,
         twilightEmpowerment: 0,
         harshDiscipline: false,
-        indemnity: false, // +2s Atonement duration on PW:S
-        lightsWrath: false,
-        solatium: false,
+        indemnity: false, // +2s Atonement duration on PW:S.
+        lightsWrath: true,
+        solatium: false, // +2s Atonement duration on Shadow Mend.
         wickedness: false,
         stolenPsyche: 0,
 

@@ -1,4 +1,5 @@
 import { buildRamp } from "./DiscRampGen";
+import { runCastSequence } from "./DiscPriestRamps";
 
 // This is a very simple function that just condenses our ramp sequence down to make it more human readable in reports. 
 const rampShortener = (seq) => {
@@ -25,6 +26,7 @@ const rampShortener = (seq) => {
     return shortRamp
 }
 
+// This is a reporting function that adds our ramps into one object.
 const addBreakdowns = (obj, newObj, miniRamp) => {
     for (const [key, value] of Object.entries(newObj)) {
         if (key in obj) {
@@ -68,7 +70,7 @@ export const allRamps = (fiendSeq, stats, settings = {}, talents, reporting = fa
     //const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
     const fiendRamp = runCastSequence(fiendSeq, stats, settings, talents);
 
-    rampResult.totalHealing = fiendRamp.totalHealing + miniRamp.totalHealing * 2;
+    rampResult.totalHealing = fiendRamp.totalHealing + miniRamp.totalHealing;
 
     if (reporting) {
         //rampResult.ramps.push({"tag": "Primary Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(boonSeq), "totalHealing": Math.round(boonRamp.totalHealing)});
