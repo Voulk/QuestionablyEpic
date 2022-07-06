@@ -198,7 +198,6 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     let effect = activeTrinket.effects[0];
 
     bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown) * player.getStatPerc("Versatility");
-    console.log("Vial: " + bonus_stats.hps)
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -1070,7 +1069,6 @@ else if (
     const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
 
     bonus_stats.dps = effectValue  * effect.ppm * effect.hits  / 60;
-    console.log("Ooze: " + bonus_stats.dps);
   
 } 
 else if (
@@ -1084,8 +1082,6 @@ else if (
     const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
 
     bonus_stats.dps = effectValue  * effect.ppm * effect.hits  / 60;
-    console.log("Oakheart: " + bonus_stats.dps);
-  
 } 
 
   else {
