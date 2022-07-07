@@ -1067,9 +1067,6 @@ else if (
   bonus_stats.mana = 1738 / player.getFightLength(contentType);
   bonus_stats.versatility = getProcessedValue(versEffect.coefficient, versEffect.table, itemLevel) * versEffect.uptime;
 
-  console.log(getProcessedValue(manaEffect.coefficient, manaEffect.table, itemLevel))
-  
-
   //
 }
 else if (
