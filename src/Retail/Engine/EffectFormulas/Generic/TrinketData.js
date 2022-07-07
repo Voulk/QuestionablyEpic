@@ -1381,7 +1381,7 @@ export const trinket_data = [
         table: -1,
       },
       { // Vers effect
-        coefficient: 0.163438,
+        coefficient: 0.163438 * 2, // The Vers is doubled while the trinket is full.
         table: -7,
         uptime: 0.5,
       },
