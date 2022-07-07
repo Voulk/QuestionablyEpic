@@ -95,7 +95,7 @@ describe("Evang Cast Sequence", () => {
         console.log(name + ": " + healing + " (+" + percInc + "%)")
     }
 
-    const seq = ["Avenging Wrath", "Holy Shock"] 
+    const seq = ["Rest", "Avenging Wrath", "Holy Shock", "Light of Dawn"] 
 
     test("Test Stuff", () => {
 

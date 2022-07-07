@@ -141,7 +141,7 @@ const getActiveAtone = (atoneApp, timer) => {
  */
 const getStatMult = (currentStats, stats, statMods) => {
     let mult = 1;
-    
+
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / 40 / 100);
     if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100 + (statMods['crit'] || 0 )); 
     if (stats.includes("mastery")) mult *= (1+(0.12 + currentStats['mastery'] / 35 * PALACONSTANTS.masteryMod / 100) * PALACONSTANTS.masteryEfficiency) ;
@@ -208,7 +208,7 @@ const getTime = (t) => {
     return Math.round(t*1000)/1000
 }
 
-export const runHeal = (state, spell, spellName, specialMult = 1) => {
+export const runHeal = (state, spell, spellName, compile = true) => {
 
     // Pre-heal processing
     const currentStats = state.currentStats;
@@ -217,21 +217,63 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets;
     const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.expectedOverheal) * healingMult * targetMult;
     
-    state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
+    if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
 
+    return healingVal;
 }
 
-export const runDamage = (state, spell, spellName, atonementApp) => {
+export const runDamage = (state, spell, spellName, atonementApp, compile = true) => {
 
     const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
     const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, spellName, state.talents); // Get our damage multiplier (Schism, Sins etc);
     const damageVal = getSpellRaw(spell, state.currentStats) * damMultiplier;
     const atonementHealing = activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * (1 - spell.atoneOverheal) * (spell.atonementBonus || 1)
     // This is stat tracking, the atonement healing will be returned as part of our result.
-    state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
-    state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
+    if (compile) state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
+    if (compile) state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
 
+    return damageVal;
     //if (state.reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
+}
+
+const canCastSpell = (state, spellDB, spellName) => {
+    const spell = spellDB[spellName][0];
+    return state.t > spell.activeCooldown || !spell.cooldown;
+}
+
+const getSpellHPM = (state, spellDB, spellName) => {
+    
+    const spell = spellDB[spellName][0];
+    const spellHealing = runHeal(state, spell, spellName, false)
+
+    return spellHealing / spell.cost || 0;
+
+}
+
+export const genSpell = (state, spells) => {
+    let spellName = ""
+
+    if (state.holyPower >= 3) {
+        spellName = "Light of Dawn";
+    }
+    else {
+        let possibleCasts = [{name: "Holy Shock", score: 0}, {name: "Flash of Light", score: 0}]
+
+        possibleCasts.forEach(spellData => {
+            if (canCastSpell(state, spells, spellData['name'])) {
+                spellData.score = getSpellHPM(state, spells, spellData['name'])
+            }
+            else {
+                spellData.score = -1;
+            }
+        });
+        possibleCasts.sort((a, b) => (a.score < b.score ? 1 : -1));
+        console.log(possibleCasts);
+        spellName = possibleCasts[0].name;
+    }
+    console.log("Gen: " + spellName + "|");
+    return spellName;
+
 }
 
 // Returns the value of one holy power.
@@ -243,6 +285,10 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
 // - The healing value from our best spender (divided by 3). 
 // - Any extra value we get from casting a spender, like SL Awakening.
 const getOneHolyPower = (state) => {
+
+}
+
+const runSpell = (state, spell) => {
 
 }
 
@@ -259,7 +305,7 @@ const getOneHolyPower = (state) => {
 export const runCastSequence = (sequence, stats, settings = {}, talents = {}) => {
     //console.log("Running cast sequence");
     let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, holyPower: 0, reporting: true}
-
+    const seqType = "Auto" // Auto / Manual.
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0;
 
@@ -269,6 +315,8 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
 
     const seq = [...sequence];
     const sequenceLength = 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+
+    
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
 
@@ -324,18 +372,25 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
         // This is a check of the current time stamp against the tick our GCD ends and we can begin our queued spell.
         // It'll also auto-cast Ascended Eruption if Boon expired.
         if ((state.t > nextSpell && seq.length > 0))  {
-            const spellName = seq.shift();
-            const fullSpell = palaSpells[spellName];
 
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
             let currentStats = {...stats};
             state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
 
+
+            let spellName = "";
+            if (seqType === "Manual") spellName = seq.shift();
+            else spellName = genSpell(state, palaSpells);
+
+            const fullSpell = palaSpells[spellName];
+
+
+
             // We'll iterate through the different effects the spell has.
             // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,
             // and the absorb effect).
-            state.manaSpent += fullSpell[0].cost;
+            state.manaSpent += fullSpell[0].cost || 0;
             fullSpell.forEach(spell => {
 
                 // The spell is an atonement applicator. Add atonement expiry time to our array.
@@ -436,11 +491,13 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                     
                 }
 
-                if (spell.holyPower) state.holyPower += 1;
+                if (spell.holyPower) state.holyPower += spell.holyPower;
+                if (spell.cooldown) spell.activeCooldown = state.t + (spell.cooldown / getHaste(currentStats));
                 
                 // Grab the next timestamp we are able to cast our next spell. This is equal to whatever is higher of a spells cast time or the GCD.
                 
             });   
+            
             nextSpell += (fullSpell[0].castTime / getHaste(currentStats));
         }
     }

@@ -25,17 +25,42 @@
 // Spell coefficients combine a spells base coefficient with any relevant auras that might impact the spell. 
 export const PALASPELLDB = {
     //
-
+    "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
+        type: "",
+        castTime: 1.5,
+        cost: 0,
+    }],
     "Holy Shock": [{
         type: "heal",
         castTime: 1.5,
         cost: 99,
         coeff: 1.55, // Not final
         cooldown: 7.5,
+        activeCooldown: 0,
         expectedOverheal: 0.29,
         holyPower: 1,
         targets: 1,
         statMods: {'crit': 0.3},
+        secondaries: ['crit', 'vers', 'mastery']
+    }],
+    "Flash of Light": [{
+        type: "heal",
+        castTime: 1.5,
+        cost: 99,
+        coeff: 1, // Not final
+        expectedOverheal: 0.14,
+        targets: 1,
+        secondaries: ['crit', 'vers', 'mastery']
+    }],
+    "Light of Dawn": [{
+        type: "heal",
+        castTime: 1.5,
+        cost: 0,
+        coeff: 1.05, // Not final
+        cooldown: 0,
+        expectedOverheal: 0.4,
+        holyPower: -3,
+        targets: 5,
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Avenging Wrath": [{
