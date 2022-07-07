@@ -1056,6 +1056,24 @@ else if (
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
+  /*                                  Ingenious Mana Battery                                        */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Ingenious Mana Battery"
+) {
+  const manaEffect = activeTrinket.effects[0];
+  const versEffect = activeTrinket.effects[1];
+
+  //bonus_stats.mana = getProcessedValue(manaEffect.coefficient, manaEffect.table, itemLevel) / player.getFightLength(contentType);
+  bonus_stats.mana = 1738 / player.getFightLength(contentType);
+  bonus_stats.versatility = getProcessedValue(versEffect.coefficient, versEffect.table, itemLevel) * versEffect.uptime;
+
+  console.log(getProcessedValue(manaEffect.coefficient, manaEffect.table, itemLevel))
+  
+
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
   /*                                      Resonant Reservoir                                        */
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Resonant Reservoir"

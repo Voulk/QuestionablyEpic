@@ -1092,7 +1092,7 @@ export const trinket_data = [
       {
         coefficient: 50.56973,
         table: -9, // -8 in spell data
-        efficiency: { Raid: 0.63, Dungeon: 0.38 }, // 
+        efficiency: { Raid: 0.68, Dungeon: 0.38 }, // 
         ppm: 3,
         targets: 3.8, // The trinket attempts to hit 4 targets, but in logs it often comes up slightly short of this.
 
@@ -1367,6 +1367,23 @@ export const trinket_data = [
         table: -7,
         ppm: 2,
         efficiency: 0.65 // Unfortunately it is extremely difficult to catch all of the mana orbs.
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Ingenious Mana Battery                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    name: "Ingenious Mana Battery",
+    effects: [
+      { // Mana Gain
+        coefficient: 52.68167, // This is currently broken in-game and doesn't scale up. Check again before it goes live.
+        table: -1,
+      },
+      { // Vers effect
+        coefficient: 0.163438,
+        table: -7,
+        uptime: 0.5,
       },
     ],
   },
