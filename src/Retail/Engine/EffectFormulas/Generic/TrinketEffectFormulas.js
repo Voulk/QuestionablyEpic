@@ -1052,7 +1052,7 @@ else if (
 ) {
   let effect = activeTrinket.effects[0];
 
-  bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm * player.getStatPerc("Haste")) / 60;
+  bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm * effect.efficiency * player.getStatPerc("Haste")) / 60;
   //
 }
 else if (

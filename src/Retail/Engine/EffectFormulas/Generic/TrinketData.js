@@ -1053,7 +1053,7 @@ export const trinket_data = [
         coefficient: 0.286493,
         table: -7,
         duration: 10,
-        efficiency: {"Restoration Druid": 0.88, "Holy Paladin": 0.75, "Mistweaver Monk": 0, "Restoration Shaman": 0.75, "Holy Priest": 0.75, "Discipline Priest": 0.78},
+        efficiency: {"Restoration Druid": 0.84, "Holy Paladin": 0.7, "Mistweaver Monk": 0, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
         stacks: 15, // You start with 20, lose 1 every second and end with 10 for an average of 15.
         ppm: 1,
       },
@@ -1365,7 +1365,8 @@ export const trinket_data = [
       {
         coefficient: 4.089027,
         table: -7,
-        ppm: 2
+        ppm: 2,
+        efficiency: 0.65 // Unfortunately it is extremely difficult to catch all of the mana orbs.
       },
     ],
   },
