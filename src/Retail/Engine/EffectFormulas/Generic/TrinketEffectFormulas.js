@@ -951,7 +951,6 @@ else if (
     
     bonus_stats[itemSetHighestSecondary] = statValue;
 
-
   //
 }
 else if (

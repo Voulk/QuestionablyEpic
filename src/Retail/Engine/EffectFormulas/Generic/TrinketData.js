@@ -71,7 +71,7 @@ export const trinket_data = [
         coefficient: 80.17241,
         table: -8,
         cooldown: 60,
-        efficiency: {Raid: 0.58, Dungeon: 0.7}
+        efficiency: {Raid: 0.5, Dungeon: 0.6}
       },
     ],
   },
@@ -1053,7 +1053,7 @@ export const trinket_data = [
         coefficient: 0.286493,
         table: -7,
         duration: 10,
-        efficiency: {"Restoration Druid": 0.84, "Holy Paladin": 0.7, "Mistweaver Monk": 0, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
+        efficiency: {"Restoration Druid": 0.8, "Holy Paladin": 0.67, "Mistweaver Monk": 0, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
         stacks: 15, // You start with 20, lose 1 every second and end with 10 for an average of 15.
         ppm: 1,
       },
