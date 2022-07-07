@@ -18,6 +18,14 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
 
   } 
+  if (effectName === "Drape of Shame") {
+    const effect = 2.05
+    const crit = player.getStatPerc("Crit") + (player.getSpec() === "Holy Paladin" ? 0.16: 0) - 1;
+    const healingIncrease = ((1 - crit) + (crit * effect)) / ((1 - crit) + (crit * 2)) - 1
+
+    bonus_stats.hps = player.getHPS(contentType) * healingIncrease;
+
+  } 
   else if (effectName === "Antumbra, Shadow of the Cosmos") {
     const effect = activeEffect.effects[0];
 
@@ -52,6 +60,14 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
   else if (effectName === "Sepulcher's Savior") {
     const effect = activeEffect.effects[0];
     bonus_stats.hps = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("versatility") / effect.cooldown;
+
+  } 
+  else if (effectName === "Rebooting Bit Band") { // TODO: Split it's proc rate by proc ring.
+    const effect = activeEffect.effects[0];
+    const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel)
+    const ppm = 3.4 // TODO
+
+    bonus_stats.hps =  oneHeal * effect.targets * ppm * player.getStatPerc("versatility") * player.getStatPerc("crit") * (1 - effect.expectedOverhealing) / 60;
 
   } 
   else if (effectName === "Cosmic Protoweave") {
