@@ -102,13 +102,13 @@ export default function NameChanger(props) {
                 );
               })
           )}
-          {ls.get("healerInfo").filter((filter) => filter.class === classLock).length === 0 || value === undefined ? null : (
+          {ls.get("healerInfo").filter((filter) => filter.class === classLock).length === 0 || value === originalName ? null : (
             <MenuItem key={"remove"} value={"reset"}>
               <ClearIcon sx={{ color: "#ad2c34", margin: "0px 4px 0px 0px" }} fontSize="small" />
               {t("Reset")}
             </MenuItem>
           )}
-          {type !== "original" && originalName !== value ? (
+          {type !== "original" && originalName === value ? (
             <MenuItem style={{ color: classColoursJS(classLock), display: "none" }} key={originalName + classLock} value={originalName}>
               <div style={{ display: "inline-flex", alignItems: "center", width: "100%", color: classColoursJS(classLock) }}>
                 {classIcons(classLock, { height: 20, width: 20, margin: "0px 5px 0px 0px", verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 })}

@@ -176,16 +176,12 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
   });
 
   results.push(generatedResults);
-  console.log(results);
-
-  console.log(nameObject.filter((filter) => Object.values(filter)[0] !== Object.keys(filter)[0]).filter((filter2) => filter2 !== {}));
 
   nameObject
     .filter((filter) => Object.values(filter)[0] !== Object.keys(filter)[0])
     .filter((filter2) => filter2 !== {})
     .map((key) =>
       results.map((generatedObject, i) => {
-        console.log(generatedObject);
         Object.keys(generatedObject).includes("name0") && generatedObject.name0 === Object.keys(key)[0] ? (results[i].name0 = Object.values(key)[0]) : "";
         Object.keys(generatedObject).includes("name1") && generatedObject.name1 === Object.keys(key)[0] ? (results[i].name1 = Object.values(key)[0]) : "";
         Object.keys(generatedObject).includes("name2") && generatedObject.name2 === Object.keys(key)[0] ? (results[i].name2 = Object.values(key)[0]) : "";
