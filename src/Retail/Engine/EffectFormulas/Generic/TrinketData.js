@@ -1320,9 +1320,11 @@ export const trinket_data = [
     effects: [
       {
         coefficient: 7.700482,
-        table: -9,
+        table: -8,
         duration: 6,
-        avgStacks: 2,
+        avgStacks: 2.5, // avg(1, 2, 3, 4)
+        avgTargets: 4.6,
+        ticks: 3,
         cooldown: 90,
       },
     ],
@@ -1338,6 +1340,34 @@ export const trinket_data = [
         table: -8,
         hits: 5,
         ppm: 2,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Oakheart's Gnarled Root                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    name: "Oakheart's Gnarled Root",
+    effects: [
+      {
+        coefficient: 16.26412,
+        table: -9,
+        hits: 6,
+        ppm: 2,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                           Miniscule Mailemental in an Envelope                                 */
+    /* ---------------------------------------------------------------------------------------------- */
+    name: "Miniscule Mailemental in an Envelope",
+    effects: [
+      {
+        coefficient: 78.73171,
+        table: -9,
+        ppm: 2.25,
+        classMult: { "Restoration Druid": 1, "Discipline Priest": 1, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 1, "Holy Priest": 1 }
       },
     ],
   },

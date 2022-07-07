@@ -4,7 +4,7 @@ import createEvents from "./CreateEvents";
 import moment from "moment";
 import smartTransformData from "General/Modules/CooldownPlanner/Engine/SmartTransformData";
 
-export default function transformData(starttime, boss, enemyCasts, healerCasts, healerIDs, difficulty, damageTaken, debuffs, enemyHealth, buffData, transformType) {
+export default function transformData(starttime, boss, enemyCasts, healerCasts, healerIDs, difficulty, damageTaken, debuffs, enemyHealth, buffData, transformType, nameObject) {
   // We'll convert a list of enemy casts that we're interested in to an array of timestamps.
   let enemyQuickTimeline = enemyCasts
     .filter(
@@ -174,7 +174,21 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
       generatedResults.push(newObject);
     }
   });
+
   results.push(generatedResults);
+
+  nameObject
+    .filter((filter) => Object.values(filter)[0] !== Object.keys(filter)[0])
+    .filter((filter2) => filter2 !== {})
+    .map((key) =>
+      results.map((generatedObject, i) => {
+        Object.keys(generatedObject).includes("name0") && generatedObject.name0 === Object.keys(key)[0] ? (results[i].name0 = Object.values(key)[0]) : "";
+        Object.keys(generatedObject).includes("name1") && generatedObject.name1 === Object.keys(key)[0] ? (results[i].name1 = Object.values(key)[0]) : "";
+        Object.keys(generatedObject).includes("name2") && generatedObject.name2 === Object.keys(key)[0] ? (results[i].name2 = Object.values(key)[0]) : "";
+        Object.keys(generatedObject).includes("name3") && generatedObject.name3 === Object.keys(key)[0] ? (results[i].name3 = Object.values(key)[0]) : "";
+        Object.keys(generatedObject).includes("name4") && generatedObject.name4 === Object.keys(key)[0] ? (results[i].name4 = Object.values(key)[0]) : "";
+      }),
+    );
   results = results.flat();
 
   return results;

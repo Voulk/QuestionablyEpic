@@ -4,12 +4,14 @@ import { useTranslation } from "react-i18next";
 import { bossList } from "../Data/CooldownPlannerBossList";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
 import PropTypes from "prop-types";
-import { fightDuration, warcraftLogReportID, logDifficulty } from "../../CooldownPlanner/Functions/Functions";
+import { fightDuration, warcraftLogReportID, logDifficulty, wclClassConverter } from "../../CooldownPlanner/Functions/Functions";
 import LogLinkInput from "General/SystemTools/LogImport/LogLinkInput";
 import FightSelectorButton from "General/SystemTools/LogImport/FightSelectorButton";
 import importLogData from "../Engine/ImportLogData";
 import LinearWithValueLabel from "../BasicComponents/LinearProgressBar";
 import transformData from "../Engine/TransformData";
+import NameChanger from "./ReplaceNames/NameChanger";
+import ReplaceNames from "./ReplaceNames/ReplaceNames";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -125,6 +127,8 @@ export default function AddPlanDialog(props) {
     },
   ]);
 
+  const [nameObject, setNameObject] = React.useState([]);
+
   const handler = (info) => {
     // reset logData state on new selection
     setLogData({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false, damageTaken: [], debuffData: [], enemyHealth: [], buffData: [] });
@@ -150,7 +154,7 @@ export default function AddPlanDialog(props) {
   };
 
   const setLogToPlanData = (starttime, endtime, reportID, bossID, difficulty) => {
-    importLogData(starttime, endtime, reportID, bossID, difficulty, setLogData, setLoadingProgress);
+    importLogData(starttime, endtime, reportID, bossID, difficulty, setLogData, setLoadingProgress, setNameObject);
   };
 
   const importPlanToCooldownObject = (planName, boss, difficulty, importType) => {
@@ -163,7 +167,7 @@ export default function AddPlanDialog(props) {
     const enemyHealth = logData.enemyHealth;
     const buffData = logData.buffData;
     // transform the imported data into plan data
-    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData, enemyHealth, buffData, importType);
+    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData, enemyHealth, buffData, importType, nameObject);
     cooldownObject.importLogPlan(planName, boss, difficulty, transformedData);
     loadPlanData(boss, planName, difficulty); // load the imported plan data
     handleAddPlanDialogClose(true);
@@ -188,13 +192,13 @@ export default function AddPlanDialog(props) {
           </Button>
         </span>
       </Tooltip>
-      <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="xs" fullWidth>
+      <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={openAddPlanDialog} maxWidth="xs" fullWidth scroll="body">
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="fullWidth">
           <Tab label="Create New Plan" {...a11yProps(0)} />
           <Tab label="Import Plan from WCL" {...a11yProps(1)} />
         </Tabs>
         <TabPanel value={value} index={0}>
-          <DialogContent sx={{ padding: "8px" }}>
+          <div sx={{ padding: "8px" }}>
             <Grid item container spacing={1} xl={12} alignItems="center" sx={{ marginTop: "1px" }}>
               <Grid item xl={12}>
                 <Typography color="primary" align="center">
@@ -262,7 +266,7 @@ export default function AddPlanDialog(props) {
                 />
               </Grid>
             </Grid>
-          </DialogContent>
+          </div>
           <DialogActions>
             <Button
               key={8}
@@ -278,7 +282,7 @@ export default function AddPlanDialog(props) {
         </TabPanel>
 
         <TabPanel value={value} index={1}>
-          <DialogContent sx={{ padding: "16px" }}>
+          <div sx={{ padding: "16px" }}>
             <Grid item container spacing={1} xl={12} alignItems="center" sx={{ marginTop: "1px" }}>
               <Grid item xs={12}>
                 <Paper sx={{ backgroundColor: "#5a5a5a", padding: "4px", borderColor: "limegreen", borderWidth: "1px", borderStyle: "Solid" }} elevation={0}>
@@ -314,42 +318,44 @@ export default function AddPlanDialog(props) {
                   ""
                 )}
               </Grid>
-            </Grid>
-            <Grid item xl={12}>
-              <Typography color="primary" align="center">
-                Import Type
-              </Typography>
-              <ToggleButtonGroup value={importType} exclusive onChange={handleContent} aria-label="text alignment" fullWidth>
-                <ToggleButton value="Precise" aria-label="Precise">
-                  <Tooltip title={"Import log data exactly as abilities were cast"}>
-                    <div>Precise</div>
-                  </Tooltip>
-                </ToggleButton>
 
-                <ToggleButton value="Smart" aria-label="Smart">
-                  <Tooltip title={"Import log and let QE assign cooldowns to boss abilities"}>
-                    <div>Smart</div>
-                  </Tooltip>
-                </ToggleButton>
-              </ToggleButtonGroup>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography color="primary" align="center">
-                New Plan Name
-              </Typography>
+              <Grid item xl={12}>
+                <Typography color="primary" align="center">
+                  Import Type
+                </Typography>
+                <ToggleButtonGroup value={importType} exclusive onChange={handleContent} aria-label="text alignment" fullWidth>
+                  <ToggleButton value="Precise" aria-label="Precise">
+                    <Tooltip title={"Import log data exactly as abilities were cast"}>
+                      <div>Precise</div>
+                    </Tooltip>
+                  </ToggleButton>
 
-              <TextField
-                error={duplicatePlanNameCheck}
-                helperText={duplicatePlanNameCheck ? t("CooldownPlanner.DuplicatePlanError") : ""}
-                fullWidth
-                variant="outlined"
-                defaultValue=""
-                value={planName}
-                onChange={onChangeNewPlanName}
-                sx={{ marginTop: "4px" }}
-              />
+                  <ToggleButton value="Smart" aria-label="Smart">
+                    <Tooltip title={"Import log and let QE assign cooldowns to boss abilities"}>
+                      <div>Smart</div>
+                    </Tooltip>
+                  </ToggleButton>
+                </ToggleButtonGroup>
+              </Grid>
+              <ReplaceNames logData={logData} nameObject={nameObject} setNameObject={setNameObject} disabled={loadingProgress !== 100} />
+              <Grid item xs={12}>
+                <Typography color="primary" align="center">
+                  New Plan Name
+                </Typography>
+
+                <TextField
+                  error={duplicatePlanNameCheck}
+                  helperText={duplicatePlanNameCheck ? t("CooldownPlanner.DuplicatePlanError") : ""}
+                  fullWidth
+                  variant="outlined"
+                  defaultValue=""
+                  value={planName}
+                  onChange={onChangeNewPlanName}
+                  sx={{ marginTop: "4px" }}
+                />
+              </Grid>
             </Grid>
-          </DialogContent>
+          </div>
           <DialogActions>
             <Button
               key={9}
