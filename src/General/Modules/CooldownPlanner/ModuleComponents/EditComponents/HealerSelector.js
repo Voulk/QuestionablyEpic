@@ -73,6 +73,7 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
             if (e.target.value === "remove") {
               data[name] = ""; // Set the name of the row to the selected from dropdown
               data[nameClass] = ""; // Update the class from the healerinfo local storage
+              data[cooldown] = "";
               setValue("");
             } else {
               const healerRoster = ls.get("healerInfo");
