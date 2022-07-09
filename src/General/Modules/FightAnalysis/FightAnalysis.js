@@ -12,6 +12,7 @@ import HealerInfoTable from "./Components/HealerInfoCards";
 import updatechartdata from "./Engine/LogImportEngine.js";
 import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
 import ExternalTimeline from "./Components/ExternalTimelineTable";
+import DefensiveTimeline from "./Components/DefensiveTimelineTable";
 import EnemyCastsTimeline from "./Components/EnemyCasts";
 import Cooldowns from "../CooldownPlanner/CooldownObject/CooldownObject";
 import HelpText from "../SetupAndMenus/HelpText";
@@ -70,6 +71,7 @@ class FightAnalysis extends Component {
       killOrWipe: null,
       showname: false,
       Updateddatacasts: [],
+      defensiveCasts: [],
       ertshowhide: false,
       legenddata: [],
       uniqueArrayGuid: [],
@@ -401,11 +403,18 @@ class FightAnalysis extends Component {
                   <Grid item xs={12} sm={12} md={12} lg={6} xl={4} padding={1}>
                     <CooldownTimeline data={this.state.Updateddatacasts} />
                   </Grid>
+
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                     External Usage Timeline                                     */
                   /* ----------------------------------------------------------------------------------------------  */}
                   <Grid item xs={12} sm={12} md={12} lg={6} xl={4} padding={1}>
                     <ExternalTimeline data={this.state.externalUsageTimelineData} />
+                  </Grid>
+                  {/* ---------------------------------------------------------------------------------------------- */
+                  /*                                    Defensive Usage Timeline                                    */
+                  /* ---------------------------------------------------------------------------------------------- */}
+                  <Grid item xs={12} sm={12} md={12} lg={6} xl={4} padding={1}>
+                    <DefensiveTimeline data={this.state.defensiveCasts} />
                   </Grid>
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                           DTPS Graph                                            */
