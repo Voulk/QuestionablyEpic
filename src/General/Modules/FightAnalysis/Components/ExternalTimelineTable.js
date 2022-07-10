@@ -51,25 +51,7 @@ export default function ExternalTimeline(props) {
           field: "targetClass",
           hidden: true,
         },
-        {
-          title: t("Target"),
-          field: "target",
-          cellStyle: {
-            whiteSpace: "nowrap",
-            // borderRight: "1px solid rgb(81 81 81)",
-            padding: "2px 0px",
-            fontSize: 14,
-          },
-          headerStyle: {
-            fontSize: 14,
-          },
-          render: (rowData) => (
-            <div style={{ color: classColoursJS(rowData.targetClass), display: "inline-flex" }}>
-              {classIcons(rowData.targetClass, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
-              {rowData.target}
-            </div>
-          ),
-        },
+
         {
           title: t("External"),
           field: "ability",
@@ -91,6 +73,25 @@ export default function ExternalTimeline(props) {
                 verticalAlign: "middle",
               })}
               {rowData.ability}
+            </div>
+          ),
+        },
+        {
+          title: t("Target"),
+          field: "target",
+          cellStyle: {
+            whiteSpace: "nowrap",
+            // borderRight: "1px solid rgb(81 81 81)",
+            padding: "2px 0px",
+            fontSize: 14,
+          },
+          headerStyle: {
+            fontSize: 14,
+          },
+          render: (rowData) => (
+            <div style={{ color: classColoursJS(rowData.targetClass), display: "inline-flex" }}>
+              {classIcons(rowData.targetClass, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
+              {rowData.target}
             </div>
           ),
         },

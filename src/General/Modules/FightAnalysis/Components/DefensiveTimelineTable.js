@@ -39,6 +39,7 @@ export default function DefensiveTimeline(props) {
           },
           render: (rowData) => (
             <div style={{ color: classColoursJS(rowData.class), display: "inline-flex" }}>
+              {console.log(rowData.class)}
               {classIcons(rowData.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
               {rowData.name}
             </div>
@@ -49,7 +50,7 @@ export default function DefensiveTimeline(props) {
           hidden: true,
         },
         {
-          title: t("Cooldown"),
+          title: t("Defensive"),
           field: "ability",
           cellStyle: {
             whiteSpace: "nowrap",
@@ -61,24 +62,26 @@ export default function DefensiveTimeline(props) {
           },
           render: (rowData) => (
             <div style={{ display: "inline" }}>
-              <img
-                style={{
-                  height: 20,
-                  width: 20,
-                  padding: "0px 5px 0px 5px",
-                  verticalAlign: "middle",
-                }}
-                src={defensiveDB
-                  .filter((obj) => {
-                    return obj.guid === rowData.guid;
-                  })
-                  .map((obj) => obj.icon)}
-                alt={defensiveDB
-                  .filter((obj) => {
-                    return obj.guid === rowData.guid;
-                  })
-                  .map((obj) => obj.icon)}
-              />
+              <a data-wowhead={"spell=" + rowData.guid + "&domain=" + currentLanguage}>
+                <img
+                  style={{
+                    height: 20,
+                    width: 20,
+                    padding: "0px 5px 0px 5px",
+                    verticalAlign: "middle",
+                  }}
+                  src={defensiveDB
+                    .filter((obj) => {
+                      return obj.guid === rowData.guid;
+                    })
+                    .map((obj) => obj.icon)}
+                  alt={defensiveDB
+                    .filter((obj) => {
+                      return obj.guid === rowData.guid;
+                    })
+                    .map((obj) => obj.icon)}
+                />
+              </a>
               {defensiveDB
                 .filter((obj) => {
                   return obj.guid === rowData.guid;

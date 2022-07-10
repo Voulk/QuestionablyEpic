@@ -400,22 +400,24 @@ class FightAnalysis extends Component {
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                     Cooldown Usage Timeline                                     */
                   /* ----------------------------------------------------------------------------------------------  */}
-                  <Grid item xs={12} sm={12} md={12} lg={6} xl={4} padding={1}>
-                    <CooldownTimeline data={this.state.Updateddatacasts} />
+                  <Grid item xs={12} sm={12} md={12} lg={6} xl={4} container direction="column" justifyContent="flex-start" spacing={1}>
+                    <Grid item xs={12} padding={1}>
+                      <CooldownTimeline data={this.state.Updateddatacasts} />
+                    </Grid>
+                    {/* ---------------------------------------------------------------------------------------------- */
+                    /*                                    Defensive Usage Timeline                                    */
+                    /* ---------------------------------------------------------------------------------------------- */}
+                    <Grid item xs={12} padding={1}>
+                      <DefensiveTimeline data={this.state.defensiveCasts} />
+                    </Grid>
                   </Grid>
-
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                     External Usage Timeline                                     */
                   /* ----------------------------------------------------------------------------------------------  */}
                   <Grid item xs={12} sm={12} md={12} lg={6} xl={4} padding={1}>
                     <ExternalTimeline data={this.state.externalUsageTimelineData} />
                   </Grid>
-                  {/* ---------------------------------------------------------------------------------------------- */
-                  /*                                    Defensive Usage Timeline                                    */
-                  /* ---------------------------------------------------------------------------------------------- */}
-                  <Grid item xs={12} sm={12} md={12} lg={6} xl={4} padding={1}>
-                    <DefensiveTimeline data={this.state.defensiveCasts} />
-                  </Grid>
+
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                           DTPS Graph                                            */
                   /* ----------------------------------------------------------------------------------------------  */}
