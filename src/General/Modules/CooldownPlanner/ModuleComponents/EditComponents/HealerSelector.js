@@ -69,20 +69,27 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
           sx={{ lineHeight: "normal", width: "100%" }}
           size="small"
           onChange={(e) => {
-            const healerRoster = ls.get("healerInfo");
-            const healerNum = parseInt(e.target.value);
-
-            const newClass = healerRoster[healerNum].class;
-            const newName = healerRoster[healerNum].name;
-
             let data = { ...props.rowData };
-            data[name] = newName; // Set the name of the row to the selected from dropdown
-            data[nameClass] = newClass; // Update the class from the healerinfo local storage
-            setValue(e.target.value);
-            /* ------------------------------- Reset the cooldown for the row ------------------------------- */
-            if (props.rowData[nameClass] !== newClass) {
-              data[cooldown] = undefined;
+            if (e.target.value === "remove") {
+              data[name] = ""; // Set the name of the row to the selected from dropdown
+              data[nameClass] = ""; // Update the class from the healerinfo local storage
+              data[cooldown] = "";
+              setValue("");
+            } else {
+              const healerRoster = ls.get("healerInfo");
+              const healerNum = parseInt(e.target.value);
+              const newClass = healerRoster[healerNum].class || "";
+              const newName = healerRoster[healerNum].name || "";
+
+              data[name] = newName; // Set the name of the row to the selected from dropdown
+              data[nameClass] = newClass; // Update the class from the healerinfo local storage
+              setValue(e.target.value);
+              if (props.rowData[nameClass] !== newClass) {
+                data[cooldown] = undefined;
+              }
             }
+            /* ------------------------------- Reset the cooldown for the row ------------------------------- */
+
             props.onRowDataChange(data); // Update the data
           }}
         >
@@ -105,7 +112,7 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
               </MenuItem>
             ))
           }
-          <MenuItem key={"remove"} value={""}>
+          <MenuItem key={"remove"} value={"remove"}>
             <ClearIcon sx={{ color: "#ad2c34", margin: "0px 4px 0px 0px" }} fontSize="small" />
             {t("Remove")}
           </MenuItem>
