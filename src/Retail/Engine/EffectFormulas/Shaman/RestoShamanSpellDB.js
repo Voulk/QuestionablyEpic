@@ -30,34 +30,16 @@ export const PALASPELLDB = {
         castTime: 1.5,
         cost: 0,
     }],
-    "Holy Shock": [{
+
+    "Healing Surge": [{
         type: "heal",
         castTime: 1.5,
-        cost: 0.16,
-        coeff: 1.55, // Not final
-        cooldown: 7.5,
-        expectedOverheal: 0.29,
-        holyPower: 1,
-        statMods: {'crit': 0.3},
-        secondaries: ['crit', 'vers', 'mastery']
-    }],
-    "Flash of Light": [{
-        type: "heal",
-        castTime: 1.5,
-        cost: 0.22,
-        coeff: 2.02, // Not final
+        cost: 0.24,
+        coeff: 2.48, 
         expectedOverheal: 0.14,
         secondaries: ['crit', 'vers', 'mastery']
     }],
-    "Crusader Strike": [{
-        type: "damage",
-        castTime: 1.5,
-        cost: 0.11,
-        coeff: 0.765, 
-        cooldown: 6,
-        holyPower: 1,
-        secondaries: ['crit', 'vers']
-    }],
+
     "Judgment": [{ // TODO: Judgment also increases the damage of our next HS or CS by 30%, but this is rather trivial. 
         type: "damage",
         castTime: 1.5,
@@ -66,39 +48,6 @@ export const PALASPELLDB = {
         cooldown: 12,
         secondaries: ['crit', 'vers']
     }],
-    "Hammer of Wrath": [{
-        type: "damage",
-        castTime: 1.5,
-        cost: 0,
-        coeff: 1.2, 
-        cooldown: 7.5,
-        hastedCooldown: true,
-        holyPower: 1,
-        secondaries: ['crit', 'vers']
-    }],
-    "Light of Dawn": [{
-        type: "heal",
-        castTime: 1.5,
-        cost: 0,
-        coeff: 1.05, // Not final
-        expectedOverheal: 0.4,
-        holyPower: -3,
-        targets: 5,
-        secondaries: ['crit', 'vers', 'mastery']
-    }],
-    "Avenging Wrath": [{
-        type: "buff",
-        castTime: 0,
-        cost: 0,
-        cooldown: 120,
-        buffType: 'statsMult',
-        stat: 'crit',
-        value: (20 * 35), // 
-        buffDuration: 20,
-    }],
-
-
-    
     "Mind Blast": [{
         type: "damage",
         castTime: 1.5,

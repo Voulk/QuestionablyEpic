@@ -13,6 +13,10 @@ const PALACONSTANTS = {
     masteryMod: 1.5,
     masteryEfficiency: 0.8,
     wingsBuff: 0.2, // Wings is a 20% buff to damage, healing and crit chance.
+    baseMana: 10000,
+    beaconOverhealing: 0.4,
+    auraHealingBuff: 1.06, // Buffs all healing
+    auraDamageBuff: 0.92, 
 }
 
 /**
@@ -84,12 +88,10 @@ const removeBuffStack = (buffs, buffName) => {
  * @AscendedEruption A special buff for the Ascended Eruption spell only. The multiplier is equal to 3% (4 with conduit) x the number of Boon stacks accrued.
  */
 const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
-    let mult = 1
+    let mult = PALACONSTANTS.auraDamageBuff;
     
     mult *= (buffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.2 : 1); 
     
-    
-    //console.log("Spell: " + spellName + ". Mult: " + mult);
     if (discSettings.chaosBrand) mult = mult * 1.05; // TODO: Split into Phys / Magic
 
     return mult; 
@@ -100,7 +102,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
  * @ascendedEruption The healing portion also gets a buff based on number of boon stacks on expiry.
  */
 const getHealingMult = (buffs, t, spellName, talents) => {
-    let mult = 1
+    let mult = PALACONSTANTS.auraHealingBuff;
     
     mult *= (buffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.2 : 1); 
     
@@ -143,7 +145,7 @@ const getStatMult = (currentStats, stats, statMods) => {
     let mult = 1;
 
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / 40 / 100);
-    if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100 + (statMods['crit'] || 0 )); 
+    if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100 + (statMods['crit'] || 0 ));
     if (stats.includes("mastery")) mult *= (1+(0.12 + currentStats['mastery'] / 35 * PALACONSTANTS.masteryMod / 100) * PALACONSTANTS.masteryEfficiency) ;
     return mult;
 }
@@ -212,12 +214,17 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 
     // Pre-heal processing
     const currentStats = state.currentStats;
-
+    let beaconHealing = 0;
     const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.talents); 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets;
     const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.expectedOverheal) * healingMult * targetMult;
     
+    
+    if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.5 * (1 - PALACONSTANTS.beaconOverhealing);
+    else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.35 * 2 * (1 - PALACONSTANTS.beaconOverhealing);
+    
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
+    if (compile) state.healingDone["Beacon of Light"] = (state.healingDone["Beacon of Light"] || 0) + beaconHealing;
 
     return healingVal;
 }
@@ -227,18 +234,25 @@ export const runDamage = (state, spell, spellName, atonementApp, compile = true)
     const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
     const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, spellName, state.talents); // Get our damage multiplier (Schism, Sins etc);
     const damageVal = getSpellRaw(spell, state.currentStats) * damMultiplier;
-    const atonementHealing = activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * (1 - spell.atoneOverheal) * (spell.atonementBonus || 1)
+    
     // This is stat tracking, the atonement healing will be returned as part of our result.
     if (compile) state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
-    if (compile) state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
 
     return damageVal;
     //if (state.reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
 }
 
 const canCastSpell = (state, spellDB, spellName) => {
+    
     const spell = spellDB[spellName][0];
-    return state.t > spell.activeCooldown || !spell.cooldown;
+    let miscReq = true;
+    const holyPowReq = (spell.holyPower + state.holyPower > 0 ) || !spell.holyPower;
+    const cooldownReq = (state.t > spell.activeCooldown) || !spell.cooldown;
+    if (spellName === "Hammer of Wrath") {
+        if (!checkBuffActive(state.activeBuffs, "Avenging Wrath")) miscReq = false;
+    } 
+    //console.log("Checking if can cast: " + spellName + ": " + holyPowReq + cooldownReq)
+    return cooldownReq && holyPowReq && miscReq;
 }
 
 const getSpellHPM = (state, spellDB, spellName) => {
@@ -250,9 +264,14 @@ const getSpellHPM = (state, spellDB, spellName) => {
 
 }
 
+
+
 export const genSpell = (state, spells) => {
     let spellName = ""
 
+    const usableSpells = [...apl].filter(spell => canCastSpell(state, spells, spell));
+
+    /*
     if (state.holyPower >= 3) {
         spellName = "Light of Dawn";
     }
@@ -272,7 +291,8 @@ export const genSpell = (state, spells) => {
         spellName = possibleCasts[0].name;
     }
     console.log("Gen: " + spellName + "|");
-    return spellName;
+    */
+    return usableSpells[0];
 
 }
 
@@ -292,6 +312,9 @@ const runSpell = (state, spell) => {
 
 }
 
+const apl = ["Avenging Wrath", "Light of Dawn", "Holy Shock", "Hammer of Wrath", "Crusader Strike", "Judgment", "Rest"]
+
+
 /**
  * Run a full cast sequence. This is where most of the work happens. It runs through a short ramp cycle in order to compare the impact of different trinkets, soulbinds, stat loadouts,
  * talent configurations and more. Any effects missing can be easily included where necessary or desired.
@@ -304,7 +327,10 @@ const runSpell = (state, spell) => {
  */
 export const runCastSequence = (sequence, stats, settings = {}, talents = {}) => {
     //console.log("Running cast sequence");
-    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, holyPower: 0, reporting: true}
+    let state = {t: 0.01, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, holyPower: 0, 
+                    reporting: true, beacon: "Beacon of Faith"};
+
+    const sequenceLength = 20; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Auto" // Auto / Manual.
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0;
@@ -313,15 +339,20 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
     // Ideally we'll cover as much as we can in here.
     const palaSpells = applyLoadoutEffects(deepCopyFunction(PALASPELLDB), settings, talents, state);
 
-    const seq = [...sequence];
-    const sequenceLength = 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    // Setup mana costs & cooldowns.
+    for (const [key, value] of Object.entries(palaSpells)) {
+        let spell = value[0];
 
-    
+        if (!spell.targets) spell.targets = 1;
+        if (spell.cooldown) spell.activeCooldown = 0;
+        if (spell.cost) spell.cost = spell.cost * PALACONSTANTS.baseMana;
+    }
+
+    const seq = [...sequence];
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
 
         // Check for any expired atonements. 
-        atonementApp = atonementApp.filter(function (buff) {return buff > state.t});
         
         // ---- Heal over time and Damage over time effects ----
         // When we add buffs, we'll also attach a spell to them. The spell should have coefficient information, secondary scaling and so on. 
@@ -384,8 +415,6 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
             else spellName = genSpell(state, palaSpells);
 
             const fullSpell = palaSpells[spellName];
-
-
 
             // We'll iterate through the different effects the spell has.
             // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,
@@ -505,7 +534,11 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
 
     // Add up our healing values (including atonement) and return it.
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
-    state.totalHealing = sumValues(state.healingDone);
+    state.totalDamage = state.damageDone !== {} ? Math.round(sumValues(state.damageDone)) : 0;
+    state.totalHealing = Math.round(sumValues(state.healingDone));
+    state.hps = (state.totalHealing / sequenceLength);
+    state.dps = (state.totalDamage / sequenceLength);
+    state.hpm = (state.totalHealing / state.manaSpent) || 0;
 
     return state;
 
