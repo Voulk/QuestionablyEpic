@@ -1,6 +1,6 @@
 //prettier-ignore
 import { addMissingTimestamps, getUniqueObjectsFromArray, reduceTimestamps, fightDuration, importHealerLogData, importDamageLogData, importCastsLogData,
-  durationmaker, sumDamage, importSummaryData, importExternalCastsLogData, importCharacterIds, importEnemyCasts, importEnemyIds, importRaidHealth } from "../../CooldownPlanner/Functions/Functions";
+  durationmaker, sumDamage, importSummaryData, importExternalCastsLogData, importCharacterIds, importEnemyCasts, importEnemyIds, importRaidHealth, importDefensiveLogData } from "../../CooldownPlanner/Functions/Functions";
 import moment from "moment";
 import { cooldownDB } from "../../CooldownPlanner/Data/CooldownDB";
 
@@ -82,6 +82,8 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
     this.state.reportid,
     healers.map((key) => key.id),
   );
+
+  const defensives = await importDefensiveLogData(starttime, endtime, this.state.reportid);
 
   /* ------------------------- Import Log data for external cooldown casts ------------------------ */
   const externals = await importExternalCastsLogData(
@@ -267,6 +269,25 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
       .toString(),
   }));
 
+  /* ------------------------ Map Defensives casts for the External Timeline ------------------------ */
+  const defensiveCasts = defensives.map((key) => ({
+    ability: key.ability.name,
+    guid: key.ability.guid,
+    timestamp: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
+    name: playerIDs
+      .filter((obj) => {
+        return obj.id === key.sourceID;
+      })
+      .map((obj) => obj.name)
+      .toString(),
+    class: playerIDs
+      .filter((obj) => {
+        return obj.id === key.sourceID;
+      })
+      .map((obj) => obj.class)
+      .toString(),
+  }));
+
   const healthUpdated = health;
 
   /* ----------------------- Flatten the map we just created into an array. ----------------------- */
@@ -354,6 +375,7 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
     mitigatedChartData: sortedDataMitigatedDamageWithCooldowns,
 
     Updateddatacasts: updateddatacastsTimeline,
+    defensiveCasts: defensiveCasts,
     abilityList: uniqueArray,
     cooldownlist: uniqueArrayCD,
     loadingcheck: false,
