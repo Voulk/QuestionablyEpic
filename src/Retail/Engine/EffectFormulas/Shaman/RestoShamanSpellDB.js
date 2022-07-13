@@ -23,7 +23,7 @@
 // any values displayed in this DB are placeholders only.
 
 // Spell coefficients combine a spells base coefficient with any relevant auras that might impact the spell. 
-export const PALASPELLDB = {
+export const SHAMANSPELLDB = {
     //
     "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
         type: "",

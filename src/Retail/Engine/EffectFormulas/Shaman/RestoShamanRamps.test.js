@@ -1,8 +1,5 @@
-import { allRamps, allRampsHealing } from "./HolyPaladinRampUtilities";
-import { getSpellRaw, runCastSequence } from "../Paladin/HolyPaladinRamps";
-import { genStatWeights } from './HolyPaladinUtilities';
-import { buildRamp } from "./HolyPaladinRampGen";
-import { DISCSPELLS } from "./HolyPaladinSpellDB";
+import { getSpellRaw, runCastSequence } from "../Shaman/RestoShamanRamps";
+
 
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
