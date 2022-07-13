@@ -45,7 +45,7 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
 
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / 40 / 100);
     if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100 + (statMods['crit'] || 0 ));
-    if (stats.includes("mastery")) mult *= (1+(0.12 + currentStats['mastery'] / 35 * specConstants.masteryMod / 100) * specConstants.masteryEfficiency) ;
+    if (stats.includes("mastery")) mult *= (1+(specConstants.baseMastery + currentStats['mastery'] / 35 * specConstants.masteryMod / 100) * specConstants.masteryEfficiency) ;
     return mult;
 }
 

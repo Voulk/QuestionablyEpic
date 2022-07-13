@@ -70,10 +70,10 @@ describe("Evang Cast Sequence", () => {
             stamina: 1900,
     } */
     const activeStats = {
-        intellect: 2300,
+        intellect: 1300,
         haste: 900,
         crit: 400,
-        mastery: 850,
+        mastery: 0,
         versatility: 450,
         stamina: 0,
 }
@@ -92,7 +92,7 @@ describe("Evang Cast Sequence", () => {
         console.log(name + ": " + healing + " (+" + percInc + "%)")
     }
 
-    const seq = ["Rest", "Avenging Wrath", "Holy Shock", "Light of Dawn"] 
+    const seq = ["Cloudburst Totem", "Riptide", "Healing Rain"] 
 
     test("Test Stuff", () => {
 

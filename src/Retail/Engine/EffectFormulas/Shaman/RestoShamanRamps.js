@@ -10,12 +10,15 @@ const discSettings = {
 }
 
 const SHAMANCONSTANTS = {
-    masteryMod: 1.5, // NYI
-    masteryEfficiency: 0.65, // 
+    masteryMod: 3, 
+    masteryEfficiency: 0.65, 
+    baseMastery: 0.24,
     baseMana: 10000,
 
-    auraHealingBuff: 1.06, // NYA
-    auraDamageBuff: 0.92, // NYA 
+    CBT: {transferRate: 0.3, expectedOverhealing: 0.25},
+
+    auraHealingBuff: 0.96, 
+    auraDamageBuff: 1.15, 
 }
 
 /**
@@ -94,12 +97,17 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 
     // Pre-heal processing
     const currentStats = state.currentStats;
-    let beaconHealing = 0;
+    let cloudburstActive = checkBuffActive(state.activeBuffs, "Cloudburst Totem");
+    let cloudburstHealing = 0;
     const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.talents); 
-    const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets;
+    const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets) || 1;
     const healingVal = getSpellRaw(spell, currentStats, SHAMANCONSTANTS) * (1 - spell.expectedOverheal) * healingMult * targetMult;
     
+    if (cloudburstActive) cloudburstHealing = healingVal * SHAMANCONSTANTS.CBT.transferRate * (1 - SHAMANCONSTANTS.CBT.expectedOverhealing);
+
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
+    if (compile) state.healingDone['Cloudburst Totem'] = (state.healingDone['Cloudburst Totem'] || 0) + cloudburstHealing;
+    //console.log("Mu: " + healingMult + ". " + getSpellRaw(spell, currentStats, SHAMANCONSTANTS) + ". " + targetMult);
 
     return healingVal;
 }
@@ -170,7 +178,7 @@ export const genSpell = (state, spells) => {
 }
 
 
-const apl = ["Healing Surge", "Rest"]
+const apl = ["Riptide", "Rest"]
 
 /**
  * Run a full cast sequence. This is where most of the work happens. It runs through a short ramp cycle in order to compare the impact of different trinkets, soulbinds, stat loadouts,
@@ -187,14 +195,14 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
     let state = {t: 0.01, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true,};
 
     const sequenceLength = 20; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
-    const seqType = "Auto" // Auto / Manual.
+    const seqType = "Manual" // Auto / Manual.
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0;
 
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
     const shamanSpells = applyLoadoutEffects(deepCopyFunction(SHAMANSPELLDB), settings, talents, state);
-
+    
     // Setup mana costs & cooldowns.
     for (const [key, value] of Object.entries(shamanSpells)) {
         let spell = value[0];
@@ -224,7 +232,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
 
                 if (buff.buffType === "heal") {
                     const spell = buff.attSpell;
-                    runHeal(state, spell, buff.name)
+                    runHeal(state, spell, buff.name + "(hot)")
                 }
                 else if (buff.buffType === "damage") {
                     const spell = buff.attSpell;
@@ -232,7 +240,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                 }
                 else if (buff.buffType === "function") {
                     const func = buff.attFunction;
-                    func(state);
+                    func(state, spell);
                 } 
                 buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
             });  
@@ -250,7 +258,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
             spell.coeff = spell.coeff * partialTickPercentage;
             
             if (buff.buffType === "damage") runDamage(state, spell, buff.name, atonementApp);
-            else if (buff.buffType === "healing") runHeal(state, spell, buff.name)
+            else if (buff.buffType === "healing") runHeal(state, spell, buff.name + "(hot)")
         })
 
         // Remove any buffs that have expired. Note that we call this after we handle partial ticks. 
@@ -288,6 +296,10 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                 else if (spell.type === 'damage') {
                     runDamage(state, spell, spellName, atonementApp)
                 }
+                // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
+                else if (spell.type === 'function') {
+                    spell.runFunc(state, spell);
+                }
 
                 // The spell adds a buff to our player.
                 // We'll track what kind of buff, and when it expires.
@@ -298,12 +310,11 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                     else if (spell.buffType === "statsMult") {
                         state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "statsMult", value: spell.value, stat: spell.stat});
                     }
-                    else if (spell.buffType === "damage" || spell.buffType === "healing") {     
+                    else if (spell.buffType === "damage" || spell.buffType === "heal") {     
                         const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
                             tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
 
-                        newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
-                                
+                        newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration    
                         state.activeBuffs.push(newBuff)
 
                     }
@@ -332,15 +343,18 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                 
             });   
             
-            nextSpell += (fullSpell[0].castTime / getHaste(currentStats));
+            if (fullSpell[0].castTime) nextSpell += (fullSpell[0].castTime / getHaste(currentStats));
+            else console.log("CAST TIME ERROR. Spell: " + spellName);
+            
         }
     }
 
 
     // Add up our healing values (including atonement) and return it.
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
+    state.activeBuffs = [];
     state.totalDamage = Object.keys(state.damageDone).length > 0 ? Math.round(sumValues(state.damageDone)) : 0;
-    state.totalHealing = Math.round(sumValues(state.healingDone));
+    state.totalHealing = Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0;
     state.hps = (state.totalHealing / sequenceLength);
     state.dps = (state.totalDamage / sequenceLength);
     state.hpm = (state.totalHealing / state.manaSpent) || 0;

@@ -1,4 +1,7 @@
 
+import { SpellcheckRounded } from "@mui/icons-material";
+import { runHeal, getHaste, runDamage } from "./RestoShamanRamps";
+
 // This is the Disc spell database. 
 // It contains information on every spell used in a ramp. Each spell is an array which means you can include multiple effects to code spells like Mindblast. 
 // Any errors can be reported on the QE github, or to me directly on discord @Voulk1858.
@@ -39,6 +42,74 @@ export const SHAMANSPELLDB = {
         expectedOverheal: 0.14,
         secondaries: ['crit', 'vers', 'mastery']
     }],
+    "Chain Heal": [{
+        type: "function",
+        castTime: 1.5,
+        cost: 0.3,
+        coeff: 2.1, 
+        targets: 4,
+        bounceReduc: 0.7,
+        expectedOverheal: 0.22,
+        secondaries: ['crit', 'vers', 'mastery'],
+        runFunc: function (state, spell) {
+            let mult = 1;
+            
+            for (let i = 0; i < spell.targets; i++) {
+                const newSpell = { type: "heal", coeff: spell.coeff * mult, expectedOverheal: spell.expectedOverheal, secondaries: ['crit', 'vers', 'mastery'], targets: 1} 
+                runHeal(state, newSpell, "Chain Heal")
+                mult *= spell.bounceReduc;
+            }
+
+        }
+    }],
+    "Riptide": [{
+        type: "heal",
+        castTime: 1.5,
+        cost: 0.08,
+        coeff: 1.7,
+        cooldown: 6,
+        hastedCooldown: false,
+        secondaries: ['crit', 'vers', 'mastery'],
+        expectedOverheal: 0.12,
+    },
+    {
+        type: "buff",
+        buffType: "heal",
+        cost: 0,
+        coeff: 0.22, // 
+        tickRate: 3,
+        buffDuration: 18,
+        expectedOverheal: 0.3,
+        secondaries: ['crit', 'vers', 'mastery'], // + Haste
+        canPartialTick: true,
+    }],
+    "Healing Rain": [
+    {
+        type: "buff",
+        buffType: "heal",
+        cost: 0.216,
+        castTime: 2,
+        coeff: 0.265, 
+        tickRate: 2,
+        cooldown: 10,
+        hastedCooldown: false,
+        buffDuration: 10,
+        targets: 6,
+        expectedOverheal: 0.15,
+        secondaries: ['crit', 'vers', 'mastery'], // + Haste
+        canPartialTick: true,
+    }],
+    "Cloudburst Totem": [
+        {
+            type: "buff",
+            name: "Cloudburst Totem",
+            cost: 0.086,
+            castTime: 1.5,
+            buffType: "special",
+            cooldown: 30,
+            hastedCooldown: false,
+            buffDuration: 15,
+        }],
 
     "Judgment": [{ // TODO: Judgment also increases the damage of our next HS or CS by 30%, but this is rather trivial. 
         type: "damage",
