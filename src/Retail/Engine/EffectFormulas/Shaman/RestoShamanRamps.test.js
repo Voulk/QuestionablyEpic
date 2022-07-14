@@ -92,7 +92,7 @@ describe("Evang Cast Sequence", () => {
         console.log(name + ": " + healing + " (+" + percInc + "%)")
     }
 
-    const seq = ["Cloudburst Totem", "Riptide", "Healing Rain"] 
+    const seq = ["Cloudburst Totem", "Wellspring"] 
 
     test("Test Stuff", () => {
 

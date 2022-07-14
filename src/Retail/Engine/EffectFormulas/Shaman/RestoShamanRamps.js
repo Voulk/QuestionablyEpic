@@ -103,7 +103,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets) || 1;
     const healingVal = getSpellRaw(spell, currentStats, SHAMANCONSTANTS) * (1 - spell.expectedOverheal) * healingMult * targetMult;
     
-    if (cloudburstActive) cloudburstHealing = healingVal * SHAMANCONSTANTS.CBT.transferRate * (1 - SHAMANCONSTANTS.CBT.expectedOverhealing);
+    if (cloudburstActive) cloudburstHealing = (healingVal / (1 - spell.expectedOverheal)) * SHAMANCONSTANTS.CBT.transferRate * (1 - SHAMANCONSTANTS.CBT.expectedOverhealing);
 
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
     if (compile) state.healingDone['Cloudburst Totem'] = (state.healingDone['Cloudburst Totem'] || 0) + cloudburstHealing;

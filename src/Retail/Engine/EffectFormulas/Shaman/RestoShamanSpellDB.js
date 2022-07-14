@@ -42,6 +42,16 @@ export const SHAMANSPELLDB = {
         expectedOverheal: 0.14,
         secondaries: ['crit', 'vers', 'mastery']
     }],
+    "Wellspring": [{
+        type: "heal",
+        castTime: 1.5,
+        cooldown: 20,
+        targets: 6, // Wellspring will technically hit more than 6 targets, but the healing still caps out at 1x hit x 6 (divided by the number of targets hit).
+        cost: 0.2,
+        coeff: 1.9, 
+        expectedOverheal: 0.19,
+        secondaries: ['crit', 'vers', 'mastery']
+    }],
     "Chain Heal": [{
         type: "function",
         castTime: 1.5,
