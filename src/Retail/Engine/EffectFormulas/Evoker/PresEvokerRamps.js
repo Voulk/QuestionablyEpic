@@ -101,8 +101,8 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     const healingVal = getSpellRaw(spell, currentStats, EVOKERCONSTANTS) * (1 - spell.expectedOverheal) * healingMult * targetMult;
     
     //if (cloudburstActive) cloudburstHealing = (healingVal / (1 - spell.expectedOverheal)) * EVOKERCONSTANTS.CBT.transferRate * (1 - EVOKERCONSTANTS.CBT.expectedOverhealing);
-    console.log("V: " + healingVal + ". t:" + targetMult + ". HealingM: " + healingMult);
-    console.log("Raw: " + getSpellRaw(spell, currentStats, EVOKERCONSTANTS))
+    //console.log("V: " + healingVal + ". t:" + targetMult + ". HealingM: " + healingMult);
+    
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
     //if (compile) state.healingDone['Cloudburst Totem'] = (state.healingDone['Cloudburst Totem'] || 0) + cloudburstHealing;
     //console.log("Mu: " + healingMult + ". " + getSpellRaw(spell, currentStats, SHAMANCONSTANTS) + ". " + targetMult);
@@ -196,7 +196,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
     const seqType = "Manual" // Auto / Manual.
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0;
-
+    const startTime = performance.now();
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
     const shamanSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state);
@@ -238,7 +238,6 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                     runDamage(state, spell, buff.name, atonementApp)
                 }
                 else if (buff.buffType === "function") {
-                    console.log("Running buff function");
                     const func = buff.attFunction;
                     const spell = buff.attSpell;
                     func(state, spell);
@@ -319,22 +318,23 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                         state.activeBuffs.push(newBuff)
 
                     }
-                    else if (spell.buffType === "special" || spell.buffType === "function") {
+                    else if (spell.buffType === "function") {
+                        const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
+                            tickRate: spell.tickRate, canPartialTick: spell.canPartialTick || false, 
+                            next: state.t + (spell.tickRate / getHaste(state.currentStats))}
+                         newBuff.attFunction = spell.function;
+                         if (spellName === "Reversion") newBuff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - 0.25)));
+
+                         state.activeBuffs.push(newBuff);
+                    }
+                    else if (spell.buffType === "special") {
                         
                         // Check if buff already exists, if it does add a stack.
                         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
                          
                         if (buffStacks === 0) {
                             const buff = {name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, buffType: spell.buffType, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack}
-                            if (spellName === "Reversion") {
-                                buff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - 0.25)));
-                                buff.tickRate = spell.tickRate;
-                                buff.name = "Reversion"; buff.value = 0; buff.canStack = false;
-                                buff.next = state.t + (spell.tickRate / getHaste(state.currentStats))
-                                buff.attSpell = spell;
-                                buff.attFunction = spell.function;
-                            }
-                            console.log(buff);
+                           
                             state.activeBuffs.push(buff);
                         }
                         else {
@@ -373,6 +373,8 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
     state.dps = (state.totalDamage / sequenceLength);
     state.hpm = (state.totalHealing / state.manaSpent) || 0;
 
+    const endTime = performance.now();
+    console.log(`Call to doSomething took ${endTime - startTime} milliseconds`)
     return state;
 
 }
