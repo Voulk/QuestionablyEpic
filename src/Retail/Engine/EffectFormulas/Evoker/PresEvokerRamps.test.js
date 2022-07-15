@@ -1,5 +1,5 @@
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
-import { EVOKERSPELLDB } from "./PresEvokerSpellDB";
+import { EVOKERSPELLDB, talents } from "./PresEvokerSpellDB";
 
 
 
@@ -79,69 +79,6 @@ describe("Evang Cast Sequence", () => {
         stamina: 0,
 }
     
-    // Old Sequences
-    //const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Kyrian Evangelism", ['Rapture'])
-    //const boon4pc = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Kyrian Evangelism", ['Rapture', "4T28"])
-    //const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Venthyr Evangelism", ['Rapture'])
-    //const evangSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Venthyr Evangelism", ['Rapture'])
-    const talents = {
-        // Class Tree
-        naturalConvergence: false, // Disintegrate channels 20% faster.
-        rescue: true,
-        innateMagic: false, // Essence regens 5% faster (2 charges).
-        enkindled: false, // Living Flame does +5% damage / healing.
-        scarletAdaptation: false, // Store 20% of healing dealt. Offensive living flame consumes it to increase damage dealt. Cap is 6x SP x Vers.
-        cauterizingFlame: false, // Big dispel that also heals.
-        tipTheScales: false, // Your next empowered spell casts instantly. 2 min CD.
-        attunedToTheDream: false, // +2% healing (2 points).
-        draconicLegacy: false, // +2% stamina (2 points).
-        bountifulBloom: false, // Emerald Blossom heals +2 targets.
-        protractedTalons: false, // Azure Strike hits an additional target.
-        lushGrowth: false, // Green spells heal for 5% more (2 points).
-
-
-
-
-        // Spec Tree
-        reversion: true,
-        dreamBreath: true,
-        echo: true,
-
-        temporalCompression: false, // Bronze spells reduce the cast time of your next finisher by 5%. Stacks to 4. 15s duration.
-        essenceBurst: false, // Living Flame has a 20% chance to make your next Essence ability free.
-        rewind: false, // Raid cooldown.
-        spiritbloom: false,
-        lifeGiversFlame: false, // Fire Breath heals a nearby ally for 80% of damage done.
-        timeDilation: false, // ST defensive
-        emeraldCommunion: false, // ST self-heal channel
-        spiritualClarity: false, // Spiritbloom CD reduced by 15s. Choice node with Empath.
-        empath: false, // Spiritbloom increases regen rate by 100% for 10 seconds. Choice node with Spiritual Clarity.
-        flutteringSeedlings: false, // Emerald Blossoms sends out 3 flying seedlings when it bursts, each healing for 90% sp.
-        essenceStrike: false, // Azure Strike has a 15% chance to make your next essence ability free.
-        goldenHour: false, // Reversion instantly heals the target for 15% of the damage they took in the last 5 seconds.
-        temporalAnomaly: false, // Ability.
-        fieldOfDreams: false, // Gain a 30% chance for your fluttering seedlings to grow into a new emerald blossom.
-        lifeforceMender: false, // Living Flame and Fire Breath deal extra damage & healing equal to 1% of your maximum health (3 points).
-        timeLord: false, // Echo replicates an additional 30% healing (3 points).
-        nozdormusTeachings: false, // Temporal Anomaly is instant.
-        temporalDisruption: false, // Anomaly heals for 40% more in 40% less time. (Needs testing).
-        lifebind: false, // Rescue binds you to your ally, causing any healing either partner receives to splash for 40% on the other.
-        callOfYsera: false, // Rescue increases the effectiveness of your next Dream Breath by 40% or Living Flame by 100%.
-        timeOfNeed: false, // Needs testing.
-        sacralEmpowerment: false, // Consuming a full Temporal Compression grants Essence Burst (next essence ability is free). Need to test.
-        exhiliratingBurst: false, // Each time you gain Essence Burst gain +50% crit damage / healing for 8 seconds.
-        groveTender: false, // Dream Breath, Spiritbloom and Emerald Blossom cost 10% less mana.
-        fontOfMagic: false, // Your Empower spells go to 4 (longer cast time).
-        energyLoop: false, // Disintegrate grants 1200 mana over it's duration.
-        renewingBreath: false, // Allies healed by dream breath get a HoT for 10% of the amount over 8 seconds (3 points).
-        gracePeriod: false, // Your healing is increased by 15% on allies with Reversion.
-        timelessMagic: false, // Reversion, Time Dilation, Echo last 2s longer (3 points).
-        dreamFlight: false, 
-        stasis: false,
-        cycleOfLife: false, // Emerald Blossom leaves behind a sprout that absorbs 5% of healing over 10 seconds.
-
-
-    };
 
     const settings = {}
 

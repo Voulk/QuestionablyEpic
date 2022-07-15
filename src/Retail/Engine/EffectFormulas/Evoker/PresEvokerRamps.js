@@ -16,7 +16,7 @@ const EVOKERCONSTANTS = {
     baseMana: 10000,
 
     //CBT: {transferRate: 0.3, expectedOverhealing: 0.25},
-
+    defaultEmpower: 3,
     auraHealingBuff: 1, 
     auraDamageBuff: 1, 
 }
@@ -107,7 +107,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     const healingVal = getSpellRaw(spell, currentStats, EVOKERCONSTANTS) * (1 - spell.expectedOverheal) * healingMult * targetMult;
     
     //if (cloudburstActive) cloudburstHealing = (healingVal / (1 - spell.expectedOverheal)) * EVOKERCONSTANTS.CBT.transferRate * (1 - EVOKERCONSTANTS.CBT.expectedOverhealing);
-    //console.log("V: " + healingVal + ". t:" + targetMult + ". HealingM: " + healingMult);
+    if (spellName === "Dream Flight") console.log("V: " + healingVal + ". t:" + targetMult + ". HealingM: " + healingMult);
     
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
     //if (compile) state.healingDone['Cloudburst Totem'] = (state.healingDone['Cloudburst Totem'] || 0) + cloudburstHealing;
@@ -211,9 +211,18 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
     for (const [key, value] of Object.entries(shamanSpells)) {
         let spell = value[0];
 
+        if (spell.empowered) {
+            spell.castTime = spell.castTime[EVOKERCONSTANTS.defaultEmpower]
+            if (spell.targets && typeof spell.targets === "object") spell.targets = spell.targets[EVOKERCONSTANTS.defaultEmpower];
+            if (spell.coeff && typeof spell.coeff === "object") spell.coeff = spell.coeff[EVOKERCONSTANTS.defaultEmpower];
+            if (spell.cooldown && typeof spell.cooldown === "object") spell.cooldown = spell.cooldown[EVOKERCONSTANTS.defaultEmpower];
+            
+            //console.log(typeof spell.coeff)
+        }
+
         if (!spell.targets) spell.targets = 1;
         if (spell.cooldown) spell.activeCooldown = 0;
-        if (spell.cost) spell.cost = spell.cost * EVOKERCONSTANTS.baseMana;
+        if (spell.cost) spell.cost = spell.cost * EVOKERCONSTANTS.baseMana / 100;
     }
 
     const seq = [...sequence];
