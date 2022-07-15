@@ -1,5 +1,5 @@
 
-import { SpellcheckRounded } from "@mui/icons-material";
+import { BorderHorizontalOutlined, SpellcheckRounded } from "@mui/icons-material";
 import { runHeal, getHaste, runDamage } from "./PresEvokerRamps";
 
 // This is the Disc spell database. 
@@ -36,6 +36,7 @@ export const EVOKERSPELLDB = {
         castTime: 2,
         cost: 0.02,
         coeff: 2.75,
+        expectedOverheal: 0.22,
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Rescue": [{ 
@@ -64,9 +65,10 @@ export const EVOKERSPELLDB = {
         type: "heal",
         castTime: 3.25,
         charged: true,
-        cost: 0,
-        coeff: 0.99,
-        targets: 1, // 
+        cost: 0.045,
+        coeff: 1.85 * 2.5,
+        expectedOverheal: 0.45,
+        targets: 5, // 
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Emerald Blossom": [{
@@ -83,16 +85,27 @@ export const EVOKERSPELLDB = {
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Echo": [{
-        // Cast time, 2 Essence Cost, Single target, Increases next ST healing spell by 70% (technically casts it a second time).
-        // We can model this by assuming your next ST cast will be on the target since it likely will.
+        // Cast time, 2 Essence Cost, Single target, Increases next ST healing spell by 70% (technically casts it a second time so +spell interactions).
         type: "heal",
         castTime: 3.25,
         charged: true,
+        school: "bronze",
         targets: 3,
-        cost: 0,
-        coeff: 0.99,
+        cost: 0.017,
+        coeff: 2 * 0.67, // Aura
+        expectedOverheal: 0.2,
         targets: 1, // 
         secondaries: ['crit', 'vers', 'mastery']
+    },
+    {
+        name: "Echo",
+        type: "buff",
+        value: 0.7,
+        castTime: 0,
+        expiration: 999,
+        cost: 0,
+        cooldown: 0,
+        buffType: 'special',
     }],
     "Reversion": [{
         // Big heal over time effect, extended by crits. 12s base duration, 9s cooldown, crits extend by one tick.
@@ -101,16 +114,14 @@ export const EVOKERSPELLDB = {
         buffType: "function",
         tickRate: 2,
         castTime: 1.5,
-        coeff: 1,
-        manaCost: 0,
+        coeff: 0.57,
+        cost: 0.02,
         buffDuration: 12,
         function: function (state, buff) {
             // Essence Font Heal
             const hotHeal = { type: "heal", coeff: buff.coeff, expectedOverheal: 0.15, secondaries: ['crit', 'vers', 'mastery']}
-            console.log("Healin");
 
             runHeal(state, hotHeal, "Reversion")
-            
             // Roll dice and extend. If RNG is turned off then we can instead calculate expected duration on buff application instead.
             // This can't take into account on-use crit increases though whereas rolling it each time will (but requires more iterations for a proper valuation).
             // NYI
@@ -158,79 +169,6 @@ export const EVOKERSPELLDB = {
 
     // 
 
-
-    "": [
-        {
-            type: "buff",
-            buffType: "heal",
-            cost: 0.216,
-            castTime: 2,
-            coeff: 0.265, 
-            tickRate: 2,
-            cooldown: 10,
-            hastedCooldown: false,
-            buffDuration: 10,
-            targets: 6,
-            expectedOverheal: 0.15,
-            secondaries: ['crit', 'vers', 'mastery'], // + Haste
-            canPartialTick: true,
-    }],
-
-
-    "Healing Rain": [
-    {
-        type: "buff",
-        buffType: "heal",
-        cost: 0.216,
-        castTime: 2,
-        coeff: 0.265, 
-        tickRate: 2,
-        cooldown: 10,
-        hastedCooldown: false,
-        buffDuration: 10,
-        targets: 6,
-        expectedOverheal: 0.15,
-        secondaries: ['crit', 'vers', 'mastery'], // + Haste
-        canPartialTick: true,
-    }],
-    "Cloudburst Totem": [
-        {
-            type: "buff",
-            name: "Cloudburst Totem",
-            cost: 0.086,
-            castTime: 1.5,
-            buffType: "special",
-            cooldown: 30,
-            hastedCooldown: false,
-            buffDuration: 15,
-        }],
-
-    "Judgment": [{ // TODO: Judgment also increases the damage of our next HS or CS by 30%, but this is rather trivial. 
-        type: "damage",
-        castTime: 1.5,
-        cost: 0.03,
-        coeff: 0.634 * 1.5,
-        cooldown: 12,
-        secondaries: ['crit', 'vers']
-    }],
-    "Mind Blast": [{
-        type: "damage",
-        castTime: 1.5,
-        cost: 1250,
-        coeff: 0.744642, // 0.9792 x 0.809 (Mind Blast aura) x 0.94 (Disc aura)
-        cooldown: 15,
-        atoneOverheal: 0.29,
-        secondaries: ['crit', 'vers']
-    },
-    {
-        type: "heal",
-        castTime: 0,
-        coeff: 3,
-        aura: 1,
-        targets: 1,
-        secondaries: ['vers'],
-        overheal: 0,
-    }]
 }
 
 export const discConduits = (conduit, rank) => {

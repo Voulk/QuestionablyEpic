@@ -64,7 +64,7 @@ const EVOKERCONSTANTS = {
  * @AscendedEruption A special buff for the Ascended Eruption spell only. The multiplier is equal to 3% (4 with conduit) x the number of Boon stacks accrued.
  */
 const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
-    let mult = SHAMANCONSTANTS.auraDamageBuff;
+    let mult = EVOKERCONSTANTS.auraDamageBuff;
     
     mult *= (buffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.2 : 1); 
     
@@ -76,8 +76,14 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
  * @powerwordshield Gets a 200% buff if Rapture is active (modified by Exaltation if taken)
  * @ascendedEruption The healing portion also gets a buff based on number of boon stacks on expiry.
  */
-const getHealingMult = (buffs, t, spellName, talents) => {
+const getHealingMult = (state, t, spellName, talents) => {
     let mult = EVOKERCONSTANTS.auraHealingBuff;
+
+    if ((spellName === "Rescue" || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Echo")) {
+        const echoMult = state.activeBuffs.filter(function (buff) {return buff.name === "Echo"})[0].value;
+        state.activeBuffs = removeBuffStack(state.activeBuffs, "Echo");
+        mult = mult * echoMult;
+    }
     
     
     return mult;
@@ -96,7 +102,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     // Pre-heal processing
     const currentStats = state.currentStats;
 
-    const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.talents); 
+    const healingMult = getHealingMult(state, state.t, spellName, state.talents); 
     const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets) || 1;
     const healingVal = getSpellRaw(spell, currentStats, EVOKERCONSTANTS) * (1 - spell.expectedOverheal) * healingMult * targetMult;
     
@@ -112,8 +118,8 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 
 export const runDamage = (state, spell, spellName, atonementApp, compile = true) => {
 
-    const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
-    const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, spellName, state.talents); // Get our damage multiplier (Schism, Sins etc);
+    //const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
+    const damMultiplier = getDamMult(state, state.activeBuffs, 0, state.t, spellName, state.talents); // Get our damage multiplier (Schism, Sins etc);
     const damageVal = getSpellRaw(spell, state.currentStats, EVOKERCONSTANTS) * damMultiplier;
     
     // This is stat tracking, the atonement healing will be returned as part of our result.
