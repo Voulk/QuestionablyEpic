@@ -32,6 +32,7 @@ export const EVOKERSPELLDB = {
     "Living Flame": [{ 
         // Can be used for DPS or Healing. This is the healing version but both can be included either together or separately (the latter might be more efficient).
         type: "heal",
+        school: 'red',
         castTime: 2,
         cost: 2.0,
         coeff: 2.75,
@@ -41,8 +42,9 @@ export const EVOKERSPELLDB = {
     "Rescue": [{ 
         // Single target heal that also moves you to the targets location.
         type: "heal",
+        school: "green",
         castTime: 0,
-        offGCD: false,
+        onGCD: true,
         cost: 3.0,
         coeff: 4.3,
         expectedOverheal: 0.15,
@@ -52,6 +54,7 @@ export const EVOKERSPELLDB = {
         // Spiritbloom is a charge ability that adds a target per charge tier.
         // TODO: Assumption is chained targets are random injured not lowest health or distance based. 
         type: "heal",
+        school: "green",
         castTime: [0.8, 1.6, 2.4, 3.25],
         empowered: true,
         cost: 3.8,
@@ -64,6 +67,7 @@ export const EVOKERSPELLDB = {
     "Dream Breath": [{  
         // Dream Breath heals for more per charge tier and also has a lower cooldown.
         type: "heal",
+        school: "green",
         castTime: [0.8, 1.6, 2.4, 3.25],
         empowered: true,
         cost: 4.5,
@@ -78,7 +82,8 @@ export const EVOKERSPELLDB = {
         // This hooks into a lot of different talents.
         type: "heal",
         castTime: 0,
-        offGCD: false,
+        school: 'green',
+        onGCD: true,
         delay: 2, // The number of seconds before the spell heals.
         targets: 3,
         essence: 3,
@@ -96,9 +101,9 @@ export const EVOKERSPELLDB = {
         // - Stasis Interaction
         type: "heal",
         castTime: 3.25,
-        empowered: true,
         school: "bronze",
         targets: 3,
+        essence: 3,
         cost: 1.7,
         coeff: 2 * 0.67, // Aura
         expectedOverheal: 0.2,
@@ -119,6 +124,7 @@ export const EVOKERSPELLDB = {
         // Talent to increase it's base duration by 6s.
         type: "buff",
         buffType: "function",
+        school: "bronze",
         tickRate: 2,
         castTime: 1.5,
         coeff: 0.57,
@@ -138,8 +144,8 @@ export const EVOKERSPELLDB = {
         // Lasts 8s and heals every 1s within range but it. Heals 3 targets per tick. 6s cooldown.
         // Travels very fast but NYI in Alpha.
         type: "heal",
+        school: "bronze",
         castTime: 1.5,
-        empowered: true,
         duration: 0,
         cooldown: 9,
         cost: 9999,
@@ -151,6 +157,7 @@ export const EVOKERSPELLDB = {
         // Large upfront heal and leaves a 15s HoT on anyone it hits.
         // 1 min cooldown. Travels up to 60 yards. 
         type: "heal",
+        school: "green",
         castTime: 3, // TODO: This one has variance based on how far we travel. 
         cooldown: 60,
         cost: 4.0,
@@ -172,8 +179,9 @@ export const EVOKERSPELLDB = {
     "Azure Strike": [{
         // Two target hit. Instant.
         type: "damage",
+        school: "blue",
         castTime: 0,
-        offGCD: false,
+        onGCD: true,
         cost: 0.9,
         coeff: 0.99,
         targets: 2, // 
@@ -188,6 +196,7 @@ export const EVOKERSPELLDB = {
 
 export const talents = {
     // Class Tree
+    // Some pure utility based talents might not appear.
     naturalConvergence: false, // Disintegrate channels 20% faster.
     rescue: true,
     innateMagic: false, // Essence regens 5% faster (2 charges).

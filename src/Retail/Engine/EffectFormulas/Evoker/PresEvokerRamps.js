@@ -107,11 +107,10 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     const healingVal = getSpellRaw(spell, currentStats, EVOKERCONSTANTS) * (1 - spell.expectedOverheal) * healingMult * targetMult;
     
     //if (cloudburstActive) cloudburstHealing = (healingVal / (1 - spell.expectedOverheal)) * EVOKERCONSTANTS.CBT.transferRate * (1 - EVOKERCONSTANTS.CBT.expectedOverhealing);
-    if (spellName === "Dream Flight") console.log("V: " + healingVal + ". t:" + targetMult + ". HealingM: " + healingMult);
+    //console.log("V: " + healingVal + ". t:" + targetMult + ". HealingM: " + healingMult);
     
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
     //if (compile) state.healingDone['Cloudburst Totem'] = (state.healingDone['Cloudburst Totem'] || 0) + cloudburstHealing;
-    //console.log("Mu: " + healingMult + ". " + getSpellRaw(spell, currentStats, SHAMANCONSTANTS) + ". " + targetMult);
 
     return healingVal;
 }
@@ -372,7 +371,10 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                 
             });   
             
-            if (fullSpell[0].castTime) nextSpell += (fullSpell[0].castTime / getHaste(currentStats));
+            if ('castTime' in fullSpell[0]) {
+                if (fullSpell[0].castTime === 0 && fullSpell.onGCD === true) nextSpell += 1.5 / getHaste(currentStats);
+                else nextSpell += (fullSpell[0].castTime / getHaste(currentStats));
+            }
             else console.log("CAST TIME ERROR. Spell: " + spellName);
             
         }
@@ -389,7 +391,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
     state.hpm = (state.totalHealing / state.manaSpent) || 0;
 
     const endTime = performance.now();
-    console.log(`Call to doSomething took ${endTime - startTime} milliseconds`)
+    //console.log(`Call to doSomething took ${endTime - startTime} milliseconds`)
     return state;
 
 }

@@ -91,14 +91,23 @@ describe("Evang Cast Sequence", () => {
 
     test("Spell HPM", () => {
         const spellList = Object.keys(EVOKERSPELLDB);
-        const spellHPMs = {}
+        const spellHPMs = []
 
         spellList.forEach(spellName => {
             const seq = [spellName];
+            const spellData = {name: spellName}
+            const rawSpell = EVOKERSPELLDB[spellName];
 
             const baseline = runCastSequence(seq, activeStats, settings, talents)
 
-            spellHPMs[spellName] = Math.round(100*baseline.hpm)/100;
+            spellData.healing = Math.round(baseline.totalHealing) || 0;
+            spellData.hpm = Math.round(100*baseline.hpm)/100 || 0;
+
+            if (rawSpell[0].empowered) spellData.name = spellData.name + " (4x EMPOWERED)";
+            if (rawSpell[0].essence) spellData.essenceCost = rawSpell[0].essence;
+            
+
+            spellHPMs.push(spellData);
         })
 
         console.log(spellHPMs);
