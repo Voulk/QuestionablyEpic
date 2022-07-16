@@ -30,7 +30,7 @@ const EVOKERCONSTANTS = {
  * @param {*} talents The talents run in the current set.
  * @returns An updated spell database with any of the above changes made.
  */
- const applyLoadoutEffects = (shamanSpells, settings, talents, state) => {
+ const applyLoadoutEffects = (evokerSpells, settings, talents, state) => {
 
     // ==== Default Loadout ====
     // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout
@@ -44,16 +44,40 @@ const EVOKERCONSTANTS = {
     // ==== Talents ====
     // Not all talents just make base modifications to spells, but those that do can be handled here.
 
-    // Paladin class talents.
+    // Evoker Class Talents
+    if (talents.bountifulBloom) evokerSpells['Emerald Blossom'][0].targets += 2;
+    if (talents.renewingBreath) evokerSpells['Dream Breath'].push({
+        type: "buff",
+        buffType: "heal",
+        tickRate: 2,
+        targets: 5,
+        coeff: evokerSpells['Dream Breath'][0].coeff[EVOKERCONSTANTS.defaultEmpower] / 4,
+        hastedHoT: false,
+        buffDuration: 8,
+        expectedOverheal: 0.52,
+        secondaries: ['crit', 'vers', 'mastery']
+    })
+    if (talents.timelessMagic) evokerSpells['Reversion'][0].buffDuration += (2 * talents.timelessMagic);
+    if (talents.flutteringSeedlings) evokerSpells['Emerald Blossom'].push({
+        // TODO
+        type: "heal",
+        school: "green",
+        castTime: 3, // TODO: This one has variance based on how far we travel. 
+        cooldown: 60,
+        cost: 4.0,
+        coeff: 4,
+        targets: 3, // 
+        expectedOverheal: 0.4,
+        secondaries: ['crit', 'vers', 'mastery']
 
-
-    // Paladin spec talents.
+    })
+    // Evoker Spec Talents
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
 
 
     // ==== Legendaries ====
 
-    return shamanSpells;
+    return evokerSpells;
 }
 
 
@@ -197,7 +221,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
     //console.log("Running cast sequence");
     let state = {t: 0.01, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, essences: 5};
 
-    const sequenceLength = 20; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Manual" // Auto / Manual.
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0;

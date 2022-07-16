@@ -89,7 +89,7 @@ describe("Evang Cast Sequence", () => {
 
     const seq = ["Echo", "Living Flame"] 
 
-    const talents = {...baseTalents}
+    const talents = {...baseTalents, bountifulBloom: true, renewingBreath: true, timelessMagic: 3}
     test("Spell HPM", () => {
         const spellList = Object.keys(EVOKERSPELLDB);
         const spellHPMs = []
