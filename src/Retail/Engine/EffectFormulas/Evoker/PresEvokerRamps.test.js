@@ -1,5 +1,5 @@
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
-import { EVOKERSPELLDB, talents } from "./PresEvokerSpellDB";
+import { EVOKERSPELLDB, baseTalents } from "./PresEvokerSpellDB";
 
 
 
@@ -72,10 +72,10 @@ describe("Evang Cast Sequence", () => {
     } */
     const activeStats = {
         intellect: 2000,
-        haste: 900,
-        crit: 400,
-        mastery: 0,
-        versatility: 450,
+        haste: 600,
+        crit: 600,
+        mastery: 600,
+        versatility: 600,
         stamina: 0,
 }
     
@@ -89,6 +89,7 @@ describe("Evang Cast Sequence", () => {
 
     const seq = ["Echo", "Living Flame"] 
 
+    const talents = {...baseTalents}
     test("Spell HPM", () => {
         const spellList = Object.keys(EVOKERSPELLDB);
         const spellHPMs = []

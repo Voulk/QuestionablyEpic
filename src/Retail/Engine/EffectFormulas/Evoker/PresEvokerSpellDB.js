@@ -194,7 +194,7 @@ export const EVOKERSPELLDB = {
 
 }
 
-export const talents = {
+export const baseTalents = {
     // Class Tree
     // Some pure utility based talents might not appear.
     naturalConvergence: false, // Disintegrate channels 20% faster.
