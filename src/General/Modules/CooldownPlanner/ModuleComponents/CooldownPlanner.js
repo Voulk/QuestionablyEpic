@@ -207,7 +207,7 @@ export default function CooldownPlanner(props) {
                     </LightTooltip>
                   </Grid>
                   {/* ---------------------------------- Raid Selection Drop Down ---------------------------------- */}
-                  {/* <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <TextField
                       id="RaidSelector"
                       select
@@ -235,7 +235,7 @@ export default function CooldownPlanner(props) {
                           );
                         })}
                     </TextField>
-                  </Grid> */}
+                  </Grid>
                   {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
                   <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
                     <TextField
