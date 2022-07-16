@@ -1,6 +1,7 @@
 export const raidDB = [
   {
     ID: 2296,
+    raidID: 1190,
     name: {
       en: "Castle Nathria",
       cn: "纳斯利亚堡",
@@ -13,6 +14,7 @@ export const raidDB = [
   },
   {
     ID: 2450,
+    raidID: 1193,
     name: {
       en: "Sanctum of Domination",
       cn: "统御圣所",
@@ -25,6 +27,7 @@ export const raidDB = [
   },
   {
     ID: 2481,
+    raidID: 1195,
     name: {
       en: "Sepulcher of the First Ones",
       cn: "初诞者圣墓",
