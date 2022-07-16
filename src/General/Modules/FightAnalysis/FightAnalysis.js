@@ -5,13 +5,12 @@ import Chart from "./Chart/Chart";
 import Example from "./Components/DTPSBarChart";
 import FightSelectorButton from "../../SystemTools/LogImport/FightSelectorButton";
 import LoadingOverlay from "react-loading-overlay";
-import CooldownTimeline from "./Components/CooldownTimelineTable";
+import FightAnalysisTable from "./Components/Tables/Table";
 import { fightDuration, warcraftLogReportID, logDifficulty } from "../CooldownPlanner/Functions/Functions";
 import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import HealerInfoTable from "./Components/HealerInfoCards";
 import updatechartdata from "./Engine/LogImportEngine.js";
 import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
-import ExternalTimeline from "./Components/ExternalTimelineTable";
 import EnemyCastsTimeline from "./Components/EnemyCasts";
 import Cooldowns from "../CooldownPlanner/CooldownObject/CooldownObject";
 import HelpText from "../SetupAndMenus/HelpText";
@@ -70,6 +69,7 @@ class FightAnalysis extends Component {
       killOrWipe: null,
       showname: false,
       Updateddatacasts: [],
+      defensiveCasts: [],
       ertshowhide: false,
       legenddata: [],
       uniqueArrayGuid: [],
@@ -398,15 +398,24 @@ class FightAnalysis extends Component {
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                     Cooldown Usage Timeline                                     */
                   /* ----------------------------------------------------------------------------------------------  */}
-                  <Grid item xs={12} sm={12} md={12} lg={6} xl={4} padding={1}>
-                    <CooldownTimeline data={this.state.Updateddatacasts} />
+                  <Grid item xs={12} sm={12} md={12} lg={6} xl={4} container direction="column" justifyContent="flex-start" spacing={1}>
+                    <Grid item xs={12} padding={1}>
+                      <FightAnalysisTable data={this.state.Updateddatacasts} type="cooldown" />
+                    </Grid>
+                    {/* ---------------------------------------------------------------------------------------------- */
+                    /*                                    Defensive Usage Timeline                                    */
+                    /* ---------------------------------------------------------------------------------------------- */}
+                    <Grid item xs={12} padding={1}>
+                      <FightAnalysisTable data={this.state.defensiveCasts} type="defensive" />
+                    </Grid>
                   </Grid>
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                     External Usage Timeline                                     */
                   /* ----------------------------------------------------------------------------------------------  */}
                   <Grid item xs={12} sm={12} md={12} lg={6} xl={4} padding={1}>
-                    <ExternalTimeline data={this.state.externalUsageTimelineData} />
+                    <FightAnalysisTable data={this.state.externalUsageTimelineData} type="external" />
                   </Grid>
+
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                           DTPS Graph                                            */
                   /* ----------------------------------------------------------------------------------------------  */}

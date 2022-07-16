@@ -10,6 +10,16 @@
 export const changeLog = [
   {
     version: "9.2.5 / 2.5.4",
+    update: 20,
+    date: "15 July (Minor)",
+    changes: [ 
+      "Fight Analysis (Alpha): Added a personal defensives panel.",
+      "Added the Circle of Life and Death legendary to manual legendary creation.",
+      "Re-added Auxiliary Attendant Charm to the trinket chart."
+    ],
+  },
+  {
+    version: "9.2.5 / 2.5.4",
     update: 19,
     date: "7 July (Major)",
     changes: [ 
