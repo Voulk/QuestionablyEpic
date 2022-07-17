@@ -102,8 +102,8 @@ export const EVOKERSPELLDB = {
         type: "heal",
         castTime: 3.25,
         school: "bronze",
-        targets: 3,
-        essence: 3,
+        targets: 1,
+        essence: 2,
         cost: 1.7,
         coeff: 2 * 0.67, // Aura
         expectedOverheal: 0.2,
@@ -185,6 +185,30 @@ export const EVOKERSPELLDB = {
         cost: 0.9,
         coeff: 0.99,
         targets: 2, // 
+        secondaries: ['crit', 'vers']
+    }],
+    "Fire Breath": [{
+        // Hits all targets in front of you. Reduced after 5 targets.
+        // Questions:
+        // - Is it sqrt scaling after 5 targets?
+        // - Is the HoT also reduced damage after 5 targets?
+        // - Does Lifegivers Flame also heal for the DoT amount?
+        type: "damage",
+        school: "red",
+        castTime: [0.8, 1.6, 2.4, 3.25],
+        cost: 2.6,
+        coeff: 1.45,
+        targets: 5, // Note that multi-target DPS abilities might be capped by enemyTargets in EVOKERCONST.
+        secondaries: ['crit', 'vers']
+    },
+    {
+        type: "buff",
+        buffType: "damage",
+        tickRate: 2,
+        targets: 5,
+        coeff: 0.35,
+        buffDuration: [4, 8, 12, 16],
+        expectedOverheal: 0.45,
         secondaries: ['crit', 'vers']
     }],
 
