@@ -22,6 +22,7 @@ const EVOKERCONSTANTS = {
     auraDamageBuff: 1, 
 
     enemyTargets: 1, 
+    echoExceptionSpells: ['Echo'], // These are spells that do not consume or otherwise interact with our Echo buff.
 }
 
 /**
@@ -109,11 +110,11 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
 const getHealingMult = (state, t, spellName, talents) => {
     let mult = EVOKERCONSTANTS.auraHealingBuff;
 
-    if ((spellName === "Rescue" || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Echo")) {
+    /*if ((spellName === "Rescue" || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Echo")) {
         const echoMult = state.activeBuffs.filter(function (buff) {return buff.name === "Echo"})[0].value;
         state.activeBuffs = removeBuffStack(state.activeBuffs, "Echo");
         mult = mult * echoMult;
-    }
+    } */
     
     
     return mult;
@@ -331,6 +332,22 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
         if (spell.cost) spell.cost = spell.cost * EVOKERCONSTANTS.baseMana / 100;
     }
 
+    // Create Echo clones.
+    for (const [spellName, spellData] of Object.entries(shamanSpells)) {
+        
+        // Make sure spell can be copied by Echo.
+        // Right now this is almost anything but we'll expect them to make changes later in Alpha.
+        if (!(EVOKERCONSTANTS.echoExceptionSpells.includes(spellName))) {
+            let echoSpell = [...spellData];
+
+            // Make any Echo changes necessary.
+
+            // Save the new spell.
+            shamanSpells[spellName+"(Echo)"] = echoSpell;
+        }
+    }
+
+
     const seq = [...sequence];
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
@@ -408,6 +425,28 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
 
             runSpell(fullSpell, state, spellName);
 
+            // Check if Echo
+            // If we have the Echo buff active, and our current cast is Echo compatible (this will probably change through Alpha) then:
+            // - Recast the echo version of the spell (created at the start of runtime).
+            // - The echo versions of spells are a weird mix of exception cases.
+            if (checkBuffActive(state.activeBuffs, "Echo") &&  !(EVOKERCONSTANTS.echoExceptionSpells.includes(spellName))) {
+                // We have at least one Echo.
+
+                // Check Echo number.
+                const echoNum = 1;
+                console.log("Echoing Spell");
+                for (let j = 0; j < echoNum; j++) {
+                    // Cast the Echo'd version of our spell j times.
+                    
+                    const echoSpell = shamanSpells[spellName + "(Echo)"]
+                    runSpell(echoSpell, state, spellName + "(Echo")
+
+                    state.activeBuffs =  state.activeBuffs.filter(function (buff) {return buff.name !== "Echo"})
+                }
+
+            }
+ 
+
             if ('castTime' in fullSpell[0]) {
                 if (fullSpell[0].castTime === 0 && fullSpell.onGCD === true) nextSpell += 1.5 / getHaste(currentStats);
                 else nextSpell += (fullSpell[0].castTime / getHaste(currentStats));
@@ -423,6 +462,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
     //state.activeBuffs = [];
     state.totalDamage = Object.keys(state.damageDone).length > 0 ? Math.round(sumValues(state.damageDone)) : 0;
     state.totalHealing = Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0;
+    state.talents = {};
     state.hps = (state.totalHealing / sequenceLength);
     state.dps = (state.totalDamage / sequenceLength);
     state.hpm = (state.totalHealing / state.manaSpent) || 0;

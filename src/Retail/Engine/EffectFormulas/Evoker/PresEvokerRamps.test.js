@@ -87,9 +87,11 @@ describe("Evang Cast Sequence", () => {
         console.log(name + ": " + healing + " (+" + percInc + "%)")
     }
 
-    const seq = ["Echo", "Living Flame"] 
+    
 
     const talents = {...baseTalents, bountifulBloom: true, renewingBreath: true, timelessMagic: 3}
+
+    /*
     test("Spell HPM", () => {
         const spellList = Object.keys(EVOKERSPELLDB);
         const spellHPMs = []
@@ -114,6 +116,7 @@ describe("Evang Cast Sequence", () => {
         console.log(spellHPMs);
 
     });
+    */
 
     test("Test Stuff", () => {
 
@@ -121,11 +124,11 @@ describe("Evang Cast Sequence", () => {
 
 
         //console.log(seq);
-
+        const seq = ["Echo", "Spiritbloom"] 
         
-        //const baseline = runCastSequence(seq, activeStats, settings, talents)
+        const baseline = runCastSequence(seq, activeStats, settings, talents)
 
-        //console.log("Baseline: " + JSON.stringify(baseline));
+        console.log("Baseline: " + JSON.stringify(baseline));
         /*
         print("Indemnity", baseline, allRampsHealing(seq, activeStats, settings, {...talents, indemnity: true}))
         print("Rapture", baseline, allRampsHealing(seq3, activeStats, settings, {...talents, rapture: true}))

@@ -55,7 +55,7 @@ export const EVOKERSPELLDB = {
         // TODO: Assumption is chained targets are random injured not lowest health or distance based. 
         type: "heal",
         school: "green",
-        castTime: [0.8, 1.6, 2.4, 3.25],
+        castTime: [1, 1.75, 2.5, 3.25],
         empowered: true,
         cost: 3.8,
         cooldown: 30,
@@ -68,7 +68,7 @@ export const EVOKERSPELLDB = {
         // Dream Breath heals for more per charge tier and also has a lower cooldown.
         type: "heal",
         school: "green",
-        castTime: [0.8, 1.6, 2.4, 3.25],
+        castTime: [1, 1.75, 2.5, 3.25],
         empowered: true,
         cost: 4.5,
         coeff: [1.85 * 2, 1.85 * 2.25, 1.85 * 2.5, 1.85 * 2.75],
@@ -195,7 +195,7 @@ export const EVOKERSPELLDB = {
         // - Does Lifegivers Flame also heal for the DoT amount?
         type: "damage",
         school: "red",
-        castTime: [0.8, 1.6, 2.4, 3.25],
+        castTime: [1, 1.75, 2.5, 3.25],
         cost: 2.6,
         coeff: 1.45,
         targets: 5, // Note that multi-target DPS abilities might be capped by enemyTargets in EVOKERCONST.
