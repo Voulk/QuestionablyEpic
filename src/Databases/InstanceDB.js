@@ -190,6 +190,12 @@ export const encounterDB = {
     -20, // Tazavesh
     -21, // Tazavesh 2
     //1194, // Tazavesh
+    860, // Return to Karazahn Lower
+    860, // Return to Karazahn Upper
+    1178, // Mechagon Lower
+    1178, // Mechagon Upper
+    536, // Grimrail Depot
+    558, // Iron Docks
   ],
   /* ---------------------------------- Tazavesh, The Vieled City --------------------------------- */
   1194: [
