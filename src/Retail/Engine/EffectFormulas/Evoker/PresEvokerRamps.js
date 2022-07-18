@@ -2,7 +2,7 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { EVOKERSPELLDB } from "./PresEvokerSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult } from "../Generic/RampBase";
+import { checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST } from "../Generic/RampBase";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
@@ -23,6 +23,24 @@ const EVOKERCONSTANTS = {
 
     enemyTargets: 1, 
     echoExceptionSpells: ['Echo'], // These are spells that do not consume or otherwise interact with our Echo buff.
+
+    essenceBurstBuff: {
+        name: "Essence Burst",
+        type: "buff",
+        stacks: true,
+        maxStacks: 2,
+        expiration: 999,
+        buffType: 'special',
+    },
+    exhilBurstBuff: {
+        name: "Exhilirating Burst",
+        type: "buff",
+        stacks: false,
+        buffDuration: 8,
+        buffType: 'stats',
+        stat: 'critMult',
+        value: 0.5
+    }
 
 }
 
@@ -78,7 +96,7 @@ const EVOKERCONSTANTS = {
         expectedOverheal: 0.25,
         secondaries: ['crit', 'vers', 'mastery']
     })
-
+    if (talents.essenceBurst) evokerSpells['Living Flame'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.2})
     
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
 
@@ -157,7 +175,6 @@ export const runDamage = (state, spell, spellName, atonementApp, compile = true)
     if (compile) state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
 
     return damageVal;
-    //if (state.reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
 }
 
 const canCastSpell = (state, spellDB, spellName) => {
@@ -169,7 +186,7 @@ const canCastSpell = (state, spellDB, spellName) => {
     if (spellName === "Hammer of Wrath") {
         if (!checkBuffActive(state.activeBuffs, "Avenging Wrath")) miscReq = false;
     } 
-    //console.log("Checking if can cast: " + spellName + ": " + holyPowReq + cooldownReq)
+
     return cooldownReq && holyPowReq && miscReq;
 }
 
@@ -218,6 +235,16 @@ const apl = ["Riptide", "Rest"]
 const runSpell = (fullSpell, state, spellName) => {
     fullSpell.forEach(spell => {
 
+        let canProceed = false
+
+        if (spell.chance) {
+            const roll = Math.random();
+            canProceed = roll <= spell.chance;
+        }
+        else canProceed = true;
+
+
+
         // The spell has a healing component. Add it's effective healing.
         // Power Word: Shield is included as a heal, since there is no functional difference for the purpose of this calculation.
         if (spell.type === 'heal') {
@@ -260,7 +287,23 @@ const runSpell = (fullSpell, state, spellName) => {
                  state.activeBuffs.push(newBuff);
             }
             else if (spell.buffType === "special") {
-                
+
+                if (spell.name === "Essence Burst") {
+                    if (state.talents.exhiliratingBurst) {
+                        // If we're talented into Exhil Burst then also add that buff.
+                        // If we already have an Exhilirating Burst active then we'll just refresh it's duration instead.
+                        // If not, we'll create a new buff.
+                        const activeBuff = state.activeBuffs.filter(function (buff) {return buff.name === spell.name});
+                        const exhilBurst = EVOKERCONSTANTS.exhilBurstBuff;
+                        if (activeBuff.length > 0) activeBuff.expiration = (state.t + exhilBurst.buffDuration);
+                        else {
+                            exhilBurst.expiration = (state.t + exhilBurst.buffDuration);
+                            state.activeBuffs.push(exhilBurst);
+                        }
+
+                    }
+                }
+
                 // Check if buff already exists, if it does add a stack.
                 const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
                  
@@ -274,6 +317,8 @@ const runSpell = (fullSpell, state, spellName) => {
                     
                     if (buff.canStack) buff.stacks += 1;
                 }
+                
+
             }     
             else {
                 state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
@@ -435,7 +480,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
 
                 // Check Echo number.
                 const echoNum = state.activeBuffs.filter(function (buff) {return buff.name === "Echo"}).length;
-                console.log("Echoing Spell" + echoNum);
+
                 for (let j = 0; j < echoNum; j++) {
                     // Cast the Echo'd version of our spell j times.
                     

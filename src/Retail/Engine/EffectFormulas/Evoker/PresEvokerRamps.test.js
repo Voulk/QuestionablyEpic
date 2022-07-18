@@ -130,11 +130,13 @@ describe("Evang Cast Sequence", () => {
         const results = {healingDone: 0, manaSpent: 0};
 
         for (let i = 0; i < iter; i++) {
-            const seq = ["Echo", "Echo", "Spiritbloom"] 
+            const seq = ["Living Flame", "Living Flame", "Living Flame", "Living Flame", "Living Flame", "Living Flame"] 
             const baseline = runCastSequence(seq, activeStats, settings, talents)
 
             results.healingDone += baseline.totalHealing;
             results.manaSpent += baseline.manaSpent;
+
+            console.log(baseline);
 
             //console.log("Baseline: " + JSON.stringify(baseline));
         }

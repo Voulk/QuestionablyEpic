@@ -4,6 +4,7 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 
 
 const GLOBALCONST = {
+    rollRNG: true, // Model RNG through chance. Increases the number of iterations required for accuracy but more accurate than other solutions.
     statPoints: {
         crit: 35,
         mastery: 35,
@@ -56,7 +57,6 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     let mult = 1;
 
     const critChance = 0.05 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
-
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100);
     if (stats.includes("crit")) mult *= (1 + critChance * currentStats['critMult']);
     if (stats.includes("mastery")) mult *= (1+(specConstants.baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency) ;
