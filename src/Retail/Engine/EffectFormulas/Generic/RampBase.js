@@ -2,6 +2,18 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 
 
+
+const GLOBALCONST = {
+    statPoints: {
+        crit: 35,
+        mastery: 35,
+        vers: 40,
+        haste: 33,
+        leech: 21,
+    }
+
+}
+
 // Removes a stack of a buff, and removes the buff entirely if it's down to 0 or doesn't have a stack mechanic.
 export const removeBuffStack = (buffs, buffName) => {
     const buff = buffs.filter(buff => buff.name === buffName)[0]
@@ -43,9 +55,11 @@ export const checkBuffActive = (buffs, buffName) => {
 export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     let mult = 1;
 
-    if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / 40 / 100);
-    if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100 + (statMods['crit'] || 0 ));
-    if (stats.includes("mastery")) mult *= (1+(specConstants.baseMastery + currentStats['mastery'] / 35 * specConstants.masteryMod / 100) * specConstants.masteryEfficiency) ;
+    const critChance = 0.05 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
+
+    if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100);
+    if (stats.includes("crit")) mult *= (1 + critChance * currentStats['critMult']);
+    if (stats.includes("mastery")) mult *= (1+(specConstants.baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency) ;
     return mult;
 }
 

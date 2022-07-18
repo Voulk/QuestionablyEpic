@@ -23,6 +23,7 @@ const EVOKERCONSTANTS = {
 
     enemyTargets: 1, 
     echoExceptionSpells: ['Echo'], // These are spells that do not consume or otherwise interact with our Echo buff.
+
 }
 
 /**
@@ -76,8 +77,8 @@ const EVOKERCONSTANTS = {
         targets: 3, // 
         expectedOverheal: 0.25,
         secondaries: ['crit', 'vers', 'mastery']
-
     })
+
     
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
 
@@ -263,7 +264,7 @@ const runSpell = (fullSpell, state, spellName) => {
                 // Check if buff already exists, if it does add a stack.
                 const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
                  
-                if (buffStacks === 0) {
+                if (!spell.stacks || buffStacks === 0) {
                     const buff = {name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, buffType: spell.buffType, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack}
                    
                     state.activeBuffs.push(buff);
@@ -433,16 +434,18 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                 // We have at least one Echo.
 
                 // Check Echo number.
-                const echoNum = 1;
-                console.log("Echoing Spell");
+                const echoNum = state.activeBuffs.filter(function (buff) {return buff.name === "Echo"}).length;
+                console.log("Echoing Spell" + echoNum);
                 for (let j = 0; j < echoNum; j++) {
                     // Cast the Echo'd version of our spell j times.
                     
                     const echoSpell = shamanSpells[spellName + "(Echo)"]
                     runSpell(echoSpell, state, spellName + "(Echo")
-
-                    state.activeBuffs =  state.activeBuffs.filter(function (buff) {return buff.name !== "Echo"})
+  
                 }
+
+                // Remove all of our Echo buffs.
+                state.activeBuffs =  state.activeBuffs.filter(function (buff) {return buff.name !== "Echo"})
 
             }
  

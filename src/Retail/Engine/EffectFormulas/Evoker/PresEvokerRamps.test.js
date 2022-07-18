@@ -77,6 +77,8 @@ describe("Evang Cast Sequence", () => {
         mastery: 600,
         versatility: 600,
         stamina: 0,
+
+        critMult: 2,
 }
     
 
@@ -124,11 +126,22 @@ describe("Evang Cast Sequence", () => {
 
 
         //console.log(seq);
-        const seq = ["Echo", "Spiritbloom"] 
-        
-        const baseline = runCastSequence(seq, activeStats, settings, talents)
+        const iter = 1;
+        const results = {healingDone: 0, manaSpent: 0};
 
-        console.log("Baseline: " + JSON.stringify(baseline));
+        for (let i = 0; i < iter; i++) {
+            const seq = ["Echo", "Echo", "Spiritbloom"] 
+            const baseline = runCastSequence(seq, activeStats, settings, talents)
+
+            results.healingDone += baseline.totalHealing;
+            results.manaSpent += baseline.manaSpent;
+
+            //console.log("Baseline: " + JSON.stringify(baseline));
+        }
+        
+        console.log(`Healing Done over ${iter} iterations: ` + results.healingDone / iter);
+        
+
         /*
         print("Indemnity", baseline, allRampsHealing(seq, activeStats, settings, {...talents, indemnity: true}))
         print("Rapture", baseline, allRampsHealing(seq3, activeStats, settings, {...talents, rapture: true}))

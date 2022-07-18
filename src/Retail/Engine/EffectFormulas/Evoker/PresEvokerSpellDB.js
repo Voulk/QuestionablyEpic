@@ -114,6 +114,7 @@ export const EVOKERSPELLDB = {
         name: "Echo",
         type: "buff",
         value: 0.7,
+        stacks: false, // Note that we can have Echo out on multiple people at once, just not two on one person.
         castTime: 0,
         expiration: 999,
         cooldown: 0,
