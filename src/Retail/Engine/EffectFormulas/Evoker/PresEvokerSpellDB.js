@@ -138,11 +138,11 @@ export const EVOKERSPELLDB = {
         school: "bronze",
         tickRate: 2,
         castTime: 1.5,
-        coeff: 0.57,
+        coeff: 0.57 * 0.67,
         cost: 2.0,
         buffDuration: 12,
         function: function (state, buff) {
-            const hotHeal = { type: "heal", coeff: buff.coeff, expectedOverheal: 0.15, secondaries: ['crit', 'vers', 'mastery']}
+            const hotHeal = { type: "heal", coeff: buff.coeff, expectedOverheal: 0.2, secondaries: ['crit', 'vers', 'mastery']}
 
             runHeal(state, hotHeal, "Reversion")
             // Roll dice and extend. If RNG is turned off then we can instead calculate expected duration on buff application instead.
@@ -213,6 +213,7 @@ export const EVOKERSPELLDB = {
         // - Is the HoT also reduced damage after 5 targets?
         // - Does Lifegivers Flame also heal for the DoT amount?
         type: "damage",
+        empowered: true,
         school: "red",
         castTime: [1, 1.75, 2.5, 3.25],
         cost: 2.6,

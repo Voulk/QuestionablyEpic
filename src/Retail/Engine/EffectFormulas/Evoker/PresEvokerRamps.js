@@ -26,7 +26,7 @@ const EVOKERCONSTANTS = {
     auraDamageBuff: 1, 
 
     enemyTargets: 1, 
-    echoExceptionSpells: ['Echo', 'Blessing of the Bronze'], // These are spells that do not consume or otherwise interact with our Echo buff.
+    echoExceptionSpells: ['Echo', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D'], // These are spells that do not consume or otherwise interact with our Echo buff.
 
     essenceBurstBuff: {
         name: "Essence Burst",
@@ -158,11 +158,13 @@ const triggerEssenceBurst = (state) => {
 
 
 
+
     // Setup mana costs & cooldowns.
     for (const [key, value] of Object.entries(evokerSpells)) {
         let spell = value[0];
 
         if (spell.empowered) {
+            
             spell.castTime = spell.castTime[EVOKERCONSTANTS.defaultEmpower]
             if (spell.targets && typeof spell.targets === "object") spell.targets = spell.targets[EVOKERCONSTANTS.defaultEmpower];
             if (spell.coeff && typeof spell.coeff === "object") spell.coeff = spell.coeff[EVOKERCONSTANTS.defaultEmpower];
@@ -170,6 +172,7 @@ const triggerEssenceBurst = (state) => {
             
             if (key === "Fire Breath") value[1].buffDuration = value[1].buffDuration[EVOKERCONSTANTS.defaultEmpower];
             //console.log(typeof spell.coeff)
+            
         }
 
         if ('school' in spell && spell.school === "bronze" && talents.temporalCompression) {
@@ -229,6 +232,7 @@ const getHealingMult = (state, t, spellName, talents) => {
         state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
 
     } 
+    if (state.talents.attunedToTheDream) mult *= (1 + state.talents.attunedToTheDream * 0.02)
     
     
     return mult;
@@ -547,7 +551,6 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
 
                 // Check Echo number.
                 const echoNum = state.activeBuffs.filter(function (buff) {return buff.name === "Echo"}).length;
-
                 for (let j = 0; j < echoNum; j++) {
                     // Cast the Echo'd version of our spell j times.
                     
@@ -566,12 +569,14 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                 let castTime = fullSpell[0].castTime;
 
                 if (fullSpell[0].empowered) {
+                    console.log("Empowered Spell")
                     // Empowered spells don't currently scale with haste.
                     if (checkBuffActive(state.activeBuffs, "Temporal Compression")) {
                         const buffStacks = getBuffStacks(state.activeBuffs, "Temporal Compression")
                         castTime *= (1 - 0.05 * buffStacks)
                         if (buffStacks === 4) triggerTemporal(state);
                     }
+
                     nextSpell += castTime; // Add Haste to empowered spells pls Blizzard.
 
                 } 

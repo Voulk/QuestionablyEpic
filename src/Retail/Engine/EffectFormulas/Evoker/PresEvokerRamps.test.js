@@ -92,7 +92,7 @@ describe("Evang Cast Sequence", () => {
     
 
     const talents = {...baseTalents, bountifulBloom: true, renewingBreath: 3, timelessMagic: 3, lifeforceMender: 3, callOfYsera: true, sacralEmpowerment: true,
-                        temporalCompression: true}
+                        temporalCompression: true, lushGrowth: 2, attunedToTheDream: 2, lifeGiversFlame: false}
 
     /*
     test("Spell HPM", () => {
@@ -131,7 +131,7 @@ describe("Evang Cast Sequence", () => {
         const results = {healingDone: 0, manaSpent: 0};
 
         for (let i = 0; i < iter; i++) {
-            const seq = ["Reversion", "Echo", "Echo", "Blessing of the Bronze", "Spiritbloom", "Dream Breath"] 
+            const seq = ["Reversion", "Echo", "Echo", "Echo", "Fire Breath", "Echo", "Echo", "Spiritbloom"] 
             const baseline = runCastSequence(seq, activeStats, settings, talents)
 
             results.healingDone += baseline.totalHealing;
