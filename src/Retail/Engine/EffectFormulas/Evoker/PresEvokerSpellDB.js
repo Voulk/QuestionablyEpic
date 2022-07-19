@@ -268,7 +268,7 @@ export const baseTalents = {
     emeraldCommunion: false, // ST self-heal channel
     spiritualClarity: false, // Spiritbloom CD reduced by 15s. Choice node with Empath.
     empath: false, // Spiritbloom increases regen rate by 100% for 10 seconds. Choice node with Spiritual Clarity.
-    flutteringSeedlings: false, // Emerald Blossoms sends out 3 flying seedlings when it bursts, each healing for 90% sp.
+    flutteringSeedlings: true, // Emerald Blossoms sends out 3 flying seedlings when it bursts, each healing for 90% sp.
     essenceStrike: false, // Azure Strike has a 15% chance to make your next essence ability free.
     goldenHour: false, // Reversion instantly heals the target for 15% of the damage they took in the last 5 seconds.
     temporalAnomaly: false, // Ability.

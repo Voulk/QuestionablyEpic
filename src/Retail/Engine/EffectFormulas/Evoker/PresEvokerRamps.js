@@ -4,6 +4,10 @@ import { EVOKERSPELLDB } from "./PresEvokerSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks } from "../Generic/RampBase";
 
+const addReport = (state, entry) => {
+    if (state.settings.reporting) state.report.push({t: Math.round(100*state.t)/100, e: entry});
+}
+
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
     chaosBrand: true
@@ -55,7 +59,6 @@ const triggerTemporal = (state) => {
 }
 
 const triggerEssenceBurst = (state) => {
-    console.log("TRIGGERED ESSENCE BURST");
     if (state.talents.exhiliratingBurst) {
         // If we're talented into Exhil Burst then also add that buff.
         // If we already have an Exhilirating Burst active then we'll just refresh it's duration instead.
@@ -67,8 +70,16 @@ const triggerEssenceBurst = (state) => {
             exhilBurst.expiration = (state.t + exhilBurst.buffDuration);
             state.activeBuffs.push(exhilBurst);
         }
-
     }
+}
+
+const triggerCycleOfLife = (state, rawHealing) => {
+    // For each flower, add 5% of raw healing to the flower value.
+    const cycleBuffs = state.activeBuffs.filter(buff => buff.name === "Cycle of Life");
+
+    cycleBuffs.forEach(buff => {
+        buff.value += rawHealing * 0.05; 
+    })
 
 }
 
@@ -123,7 +134,12 @@ const triggerEssenceBurst = (state) => {
         targets: 3, // 
         expectedOverheal: 0.25,
         secondaries: ['crit', 'vers', 'mastery']
-    })
+    });
+    if (talents.fieldOfDreams) evokerSpells['Emerald Blossom'].push({
+        type: "castSpell",
+        storedSpell: "Emerald Blossom",
+        chance: 0.3,
+    });
     if (talents.essenceBurst) evokerSpells['Living Flame'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.2})
     if (talents.essenceStrike) evokerSpells['Azure Strike'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.15})
 
@@ -149,15 +165,22 @@ const triggerEssenceBurst = (state) => {
         evokerSpells['Emerald Blossom'].push({
             name: "Cycle of Life",
             type: "buff",
-            stacks: false,
-            expiration: 10,
+            canStack: false,
+            buffDuration: 10,
+            value: 0,
             buffType: 'special',
+            canPartialTick: true,
+            runEndFunc: true,
+            runFunc: function (state, buff) {
+                const heal = {type: "heal",
+                    flatHeal: buff.value,
+                    coeff: 0,
+                    expectedOverheal: 0.22,
+                    secondaries: []}
+                runHeal(state, heal, "Cycle of Life")
+            }
         })
     }
-
-
-
-
 
     // Setup mana costs & cooldowns.
     for (const [key, value] of Object.entries(evokerSpells)) {
@@ -256,9 +279,12 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     const healingVal = getSpellRaw(spell, currentStats, EVOKERCONSTANTS) * (1 - spell.expectedOverheal) * healingMult * targetMult;
     
     //if (cloudburstActive) cloudburstHealing = (healingVal / (1 - spell.expectedOverheal)) * EVOKERCONSTANTS.CBT.transferRate * (1 - EVOKERCONSTANTS.CBT.expectedOverhealing);
-    //console.log("V: " + healingVal + ". t:" + targetMult + ". HealingM: " + healingMult);
+    //console.log(spellName + ": " + healingVal + ". t:" + targetMult + ". HealingM: " + healingMult);
     
+    if (checkBuffActive(state.activeBuffs, "Cycle of Life")) triggerCycleOfLife(state, healingVal / (1 - spell.expectedOverheal));
+
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
+    addReport(state, `${spellName} healed for ${Math.round(healingVal)}`)
     //if (compile) state.healingDone['Cloudburst Totem'] = (state.healingDone['Cloudburst Totem'] || 0) + cloudburstHealing;
 
     return healingVal;
@@ -272,7 +298,7 @@ export const runDamage = (state, spell, spellName, atonementApp, compile = true)
     
     // This is stat tracking, the atonement healing will be returned as part of our result.
     if (compile) state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
-
+    addReport(state, `${spellName} dealt for ${Math.round(damageVal)} damage`)
     return damageVal;
 }
 
@@ -331,7 +357,7 @@ export const genSpell = (state, spells) => {
 
 const apl = ["Riptide", "Rest"]
 
-const runSpell = (fullSpell, state, spellName) => {
+const runSpell = (fullSpell, state, spellName, evokerSpells) => {
     fullSpell.forEach(spell => {
 
         let canProceed = false
@@ -342,87 +368,106 @@ const runSpell = (fullSpell, state, spellName) => {
         }
         else canProceed = true;
 
-
-
-        // The spell has a healing component. Add it's effective healing.
-        // Power Word: Shield is included as a heal, since there is no functional difference for the purpose of this calculation.
-        if (spell.type === 'heal') {
-            runHeal(state, spell, spellName)
-        }
-        
-        // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
-        else if (spell.type === 'damage') {
-            runDamage(state, spell, spellName)
-        }
-        // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
-        else if (spell.type === 'function') {
-            spell.runFunc(state, spell);
-        }
-
-        // The spell adds a buff to our player.
-        // We'll track what kind of buff, and when it expires.
-        else if (spell.type === "buff") {
-            if (spell.buffType === "stats") {
-                state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
+        if (canProceed) {
+            // The spell casts a different spell. 
+            if (spell.type === 'castSpell') {
+                const newSpell = evokerSpells[spell.storedSpell];
+                runSpell(newSpell, state, spell.storedSpell, evokerSpells);
             }
-            else if (spell.buffType === "statsMult") {
-                state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "statsMult", value: spell.value, stat: spell.stat});
+            // The spell has a healing component. Add it's effective healing.
+            // Power Word: Shield is included as a heal, since there is no functional difference for the purpose of this calculation.
+            else if (spell.type === 'heal') {
+                runHeal(state, spell, spellName)
             }
-            else if (spell.buffType === "damage" || spell.buffType === "heal") {     
-                const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
-                    tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
-
-                newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration    
-                state.activeBuffs.push(newBuff)
-
+            
+            
+            // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
+            else if (spell.type === 'damage') {
+                runDamage(state, spell, spellName)
             }
-            else if (spell.buffType === "function") {
-                const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
-                    tickRate: spell.tickRate, canPartialTick: spell.canPartialTick || false, 
-                    next: state.t + (spell.tickRate / getHaste(state.currentStats))}
-                 newBuff.attFunction = spell.function;
-                 if (spellName === "Reversion") newBuff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - 0.25)));
-
-                 state.activeBuffs.push(newBuff);
+            // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
+            else if (spell.type === 'function') {
+                spell.runFunc(state, spell);
             }
-            else if (spell.buffType === "special") {
 
-
-                // Check if buff already exists, if it does add a stack.
-                const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
-
-                if (spell.canStack === false || buffStacks === 0) {
-                    const buff = {name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, buffType: spell.buffType, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack}
-                   
-                    state.activeBuffs.push(buff);
+            // The spell adds a buff to our player.
+            // We'll track what kind of buff, and when it expires.
+            else if (spell.type === "buff") {
+                addReport(state, `Adding buff: ${spell.name}`)
+                if (spell.buffType === "stats") {
+                    state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
                 }
-                else {
-  
-                    const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
+                else if (spell.buffType === "statsMult") {
+                    state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "statsMult", value: spell.value, stat: spell.stat});
+                }
+                else if (spell.buffType === "damage" || spell.buffType === "heal") {     
+                    const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
+                        tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
+
+                    newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration    
+                    state.activeBuffs.push(newBuff)
+
+                }
+                else if (spell.buffType === "function") {
+                    const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
+                        tickRate: spell.tickRate, canPartialTick: spell.canPartialTick || false, 
+                        next: state.t + (spell.tickRate / getHaste(state.currentStats))}
+                    newBuff.attFunction = spell.function;
+                    if (spellName === "Reversion") newBuff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - 0.25)));
+
+                    state.activeBuffs.push(newBuff);
+                }
+                else if (spell.buffType === "special") {
+
+
+                    // Check if buff already exists, if it does add a stack.
+                    const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
+
+                    if (spell.canStack === false || buffStacks === 0) {
+                        const buff = {name: spell.name, expiration: (state.t  + spell.buffDuration) + (spell.castTime || 0), buffType: spell.buffType, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack}
                     
-                    if (buff.canStack) buff.stacks += 1;
-                }
+                        if (spell.name === "Cycle of Life") {
 
-                if (spell.name === "Essence Burst") {
-                    triggerEssenceBurst(state);
-                }
-                
+                            buff.runEndFunc = true;
+                            buff.runFunc = spell.runFunc;
+                            buff.canPartialTick = true;
 
-            }     
-            else {
-                state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
+                        }
+
+                        state.activeBuffs.push(buff);
+                    }
+                    else {
+    
+                        const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
+
+
+                        
+                        if (buff.canStack) buff.stacks += 1;
+                    }
+
+                    if (spell.name === "Essence Burst") {
+                        triggerEssenceBurst(state);
+                    }
+
+                    
+
+                }     
+                else {
+                    state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
+                }
             }
-        }
 
-        // These are special exceptions where we need to write something special that can't be as easily generalized.
+            // These are special exceptions where we need to write something special that can't be as easily generalized.
 
-        if (spell.holyPower) state.holyPower += spell.holyPower;
-        if (spell.cooldown) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats));
+            if (spell.holyPower) state.holyPower += spell.holyPower;
+            if (spell.cooldown) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats));
         
+            }
+
+
+ 
         // Grab the next timestamp we are able to cast our next spell. This is equal to whatever is higher of a spells cast time or the GCD.
-        
     }); 
-
 }
 
 /**
@@ -437,10 +482,11 @@ const runSpell = (fullSpell, state, spellName) => {
  */
 export const runCastSequence = (sequence, stats, settings = {}, talents = {}) => {
     //console.log("Running cast sequence");
-    let state = {t: 0.01, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, essences: 5};
+    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, essences: 5};
 
     const sequenceLength = 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Manual" // Auto / Manual.
+    state.settings.reporting = true;
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0;
     const startTime = performance.now();
@@ -505,15 +551,19 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
         // When DoTs / HoTs expire, they usually have a partial tick. The size of this depends on how close you are to your next full tick.
         // If your Shadow Word: Pain ticks every 1.5 seconds and it expires 0.75s away from it's next tick then you will get a partial tick at 50% of the size of a full tick.
         // Note that some effects do not partially tick (like Fiend), so we'll use the canPartialTick flag to designate which do and don't. 
-        const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage") && state.t >= buff.expiration && buff.canPartialTick})
+        const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.runEndFunc) && state.t >= buff.expiration && buff.canPartialTick})
         expiringHots.forEach(buff => {
-            const tickRate = buff.tickRate / getHaste(state.currentStats)
-            const partialTickPercentage = (buff.next - state.t) / tickRate;
-            const spell = buff.attSpell;
-            spell.coeff = spell.coeff * partialTickPercentage;
-            
-            if (buff.buffType === "damage") runDamage(state, spell, buff.name);
-            else if (buff.buffType === "healing") runHeal(state, spell, buff.name + "(hot)")
+
+            if (buff.buffType === "heal" || buff.buffType === "damage") {
+                const tickRate = buff.tickRate / getHaste(state.currentStats)
+                const partialTickPercentage = (buff.next - state.t) / tickRate;
+                const spell = buff.attSpell;
+                spell.coeff = spell.coeff * partialTickPercentage;
+
+                if (buff.buffType === "damage") runDamage(state, spell, buff.name);
+                else if (buff.buffType === "healing") runHeal(state, spell, buff.name + "(hot)");
+            }
+            else if (buff.runEndFunc) buff.runFunc(state, buff);
         })
 
         // Remove any buffs that have expired. Note that we call this after we handle partial ticks. 
@@ -540,7 +590,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
             // and the absorb effect).
             state.manaSpent += fullSpell[0].cost || 0;
 
-            runSpell(fullSpell, state, spellName);
+            runSpell(fullSpell, state, spellName, shamanSpells);
 
             // Check if Echo
             // If we have the Echo buff active, and our current cast is Echo compatible (this will probably change through Alpha) then:
@@ -555,7 +605,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                     // Cast the Echo'd version of our spell j times.
                     
                     const echoSpell = shamanSpells[spellName + "(Echo)"]
-                    runSpell(echoSpell, state, spellName + "(Echo)")
+                    runSpell(echoSpell, state, spellName + "(Echo)", shamanSpells)
   
                 }
 
@@ -569,7 +619,6 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                 let castTime = fullSpell[0].castTime;
 
                 if (fullSpell[0].empowered) {
-                    console.log("Empowered Spell")
                     // Empowered spells don't currently scale with haste.
                     if (checkBuffActive(state.activeBuffs, "Temporal Compression")) {
                         const buffStacks = getBuffStacks(state.activeBuffs, "Temporal Compression")
