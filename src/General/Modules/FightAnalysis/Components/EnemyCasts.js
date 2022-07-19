@@ -1,6 +1,5 @@
 import React, { forwardRef } from "react";
 import MaterialTable, { MTableToolbar } from "@material-table/core";
-import abilityIcons from "../../CooldownPlanner/Functions/IconFunctions/AbilityIcons.js";
 import { getTableLocale } from "locale/GetTableLocale";
 import { Divider, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
@@ -45,13 +44,13 @@ export default function EnemyCastsTimeline(props) {
           },
           render: (rowData) => (
             <div>
-              {abilityIcons(rowData.guid, {
+              {/* {abilityIcons(rowData.guid, {
                 height: 20,
                 width: 20,
                 padding: "0px 5px 0px 5px",
                 verticalAlign: "middle",
               })}
-              {rowData.ability}
+              {rowData.ability} */}
             </div>
           ),
         },

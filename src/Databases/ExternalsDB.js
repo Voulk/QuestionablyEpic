@@ -9,7 +9,7 @@ export const externalsDB = [
       ch: "守护之魂",
     },
     wowhead: "https://www.wowhead.com/spell=47788/guardian-spirit",
-    icon: "spell_holy_guardianspirit",
+    icon: require("Images/Classes/Priest/Specialisation/Holy/Icons/GuardianSpiritIcon.jpg").default,
     cooldown: 180,
   },
 
@@ -23,7 +23,7 @@ export const externalsDB = [
       ch: "牺牲祝福",
     },
     wowhead: "https://www.wowhead.com/spell=6940/blessing-of-sacrifice",
-    icon: "spell_holy_sealofsacrifice",
+    icon: require("Images/Classes/Paladin/Specialisation/Holy/Icons/BlessingOfSacrifice.jpg").default,
     cooldown: 120,
   },
   {
@@ -36,7 +36,7 @@ export const externalsDB = [
       ch: "保护祝福",
     },
     wowhead: "https://www.wowhead.com/spell=1022/blessing-of-protection",
-    icon: "spell_holy_sealofprotection",
+    icon: require("Images/Classes/Paladin/Specialisation/Holy/Icons/spell_holy_sealofprotection.jpg").default,
     cooldown: 300,
   },
   {
@@ -49,7 +49,7 @@ export const externalsDB = [
       ch: "自由祝福",
     },
     wowhead: "https://www.wowhead.com/spell=1044/blessing-of-freedom",
-    icon: "spell_holy_sealofvalor",
+    icon: require("Images/Classes/Paladin/Specialisation/Holy/Icons/spell_holy_sealofvalor.jpg").default,
     cooldown: 25,
   },
   {
@@ -62,7 +62,7 @@ export const externalsDB = [
       ch: "圣疗术",
     },
     wowhead: "https://www.wowhead.com/spell=633/lay-on-hands",
-    icon: "spell_holy_layonhands",
+    icon: require("Images/Classes/Paladin/Specialisation/Holy/Icons/spell_holy_layonhands.jpg").default,
     cooldown: 600,
   },
   {
@@ -75,8 +75,21 @@ export const externalsDB = [
       ch: "铁木树皮",
     },
     wowhead: "https://www.wowhead.com/spell=102342/ironbark",
-    icon: "spell_druid_ironbark",
+    icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/Ironbark.jpg").default,
     cooldown: 90,
+  },
+  {
+    guid: 29166,
+    name: {
+      en: "Innervate",
+      de: "Anregen",
+      fr: "Innervation",
+      ru: "Озарение",
+      ch: "激活",
+    },
+    wowhead: "https://www.wowhead.com/spell=29166/innervate",
+    icon: require("Images/Classes/Druid/Icons/spell_nature_lightning.jpg").default,
+    cooldown: 180,
   },
 
   {
@@ -89,7 +102,7 @@ export const externalsDB = [
       ch: "能量灌注",
     },
     wowhead: "https://www.wowhead.com/spell=10060/power-infusion",
-    icon: "spell_holy_powerinfusion",
+    icon: require("Images/Classes/Priest/Specialisation/Discipline/Icons/PowerInfusion.jpg").default,
     cooldown: 120,
   },
 
@@ -103,7 +116,7 @@ export const externalsDB = [
       ch: "作茧缚命",
     },
     wowhead: "https://www.wowhead.com/spell=116849/life-cocoon",
-    icon: "ability_monk_chicocoon",
+    icon: require("Images/Classes/Monk/Specialisation/Mistweaver/Icons/LifeCocoon.jpg").default,
     cooldown: 120,
   },
 
@@ -117,7 +130,7 @@ export const externalsDB = [
       ch: "迅如猛虎",
     },
     wowhead: "https://www.wowhead.com/spell=116841/tigers-lust",
-    icon: "ability_monk_tigerslust",
+    icon: require("Images/Classes/Monk/Specialisation/Mistweaver/Icons/ability_monk_tigerslust.jpg").default,
     cooldown: 30,
   },
 
@@ -131,7 +144,7 @@ export const externalsDB = [
       ch: "痛苦压制",
     },
     wowhead: "https://www.wowhead.com/spell=33206/pain-suppression",
-    icon: "spell_holy_painsupression",
+    icon: require("Images/Classes/Priest/Specialisation/Discipline/Icons/PainSupression.jpg").default,
     cooldown: 180,
   },
   {

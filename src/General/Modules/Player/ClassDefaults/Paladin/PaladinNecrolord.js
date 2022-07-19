@@ -75,10 +75,10 @@ export const paladinNecrolordSpellData = (contentType) => {
   
     statWeights.Raid = {
       intellect: 1,
-      haste: 0.61,
+      haste: 0.62,
       crit: 0.51,
-      mastery: 0.6,
-      versatility: 0.57,
+      mastery: 0.61,
+      versatility: 0.56,
       leech: 0.96,
       defaults: true,
     };
@@ -87,7 +87,7 @@ export const paladinNecrolordSpellData = (contentType) => {
       haste: 0.41,
       crit: 0.33,
       mastery: 0.24,
-      versatility: 0.37,
+      versatility: 0.38,
       leech: 0.38,
       defaults: true,
     };
