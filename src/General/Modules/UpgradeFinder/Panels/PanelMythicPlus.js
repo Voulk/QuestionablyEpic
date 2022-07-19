@@ -9,7 +9,6 @@ import { filterItemListBySource, filterBCItemListBySource, getDifferentialByID }
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { itemLevels } from "../../../../Databases/itemLevelsDB";
 import { useSelector } from "react-redux";
-import i18n from "i18next";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -21,7 +20,7 @@ const useStyles = makeStyles(() => ({
 
 export default function MythicPlusGearContainer(props) {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
@@ -29,6 +28,7 @@ export default function MythicPlusGearContainer(props) {
   const gameType = useSelector((state) => state.gameType);
 
   const contentGenerator = () => {
+    console.log(encounterDB);
     return encounterDB["-1"].bossOrder.map((key, i) => (
       <Grid item xs={12} key={"mythicContainer-" + i}>
         {console.log(key)}
@@ -53,7 +53,7 @@ export default function MythicPlusGearContainer(props) {
             </Grid>
             <Divider orientation="vertical" flexItem />
             <Grid item xs={12} sm container spacing={1} style={{ padding: 8 }}>
-              {[...filterItemListBySource(itemList, -1, key, itemLevels.dungeon[difficulty])].map((item, index) => (
+              {[...filterItemListBySource(itemList, "-1", key, itemLevels.dungeon[difficulty])].map((item, index) => (
                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
               ))}
             </Grid>

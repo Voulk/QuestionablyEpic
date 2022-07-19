@@ -1275,6 +1275,60 @@ export const encounterDB = {
         ch: "Tazavesh 2",
       },
     },
+    "-22": {
+      name: {
+        en: "Mechagon Lower",
+        fr: "Mechagon Lower",
+        de: "Mechagon Lower",
+        ru: "Mechagon Lower",
+        ch: "Mechagon Lower",
+      },
+    },
+    "-23": {
+      name: {
+        en: "Mechagon Upper",
+        fr: "Mechagon Upper",
+        de: "Mechagon Upper",
+        ru: "Mechagon Upper",
+        ch: "Mechagon Upper",
+      },
+    },
+    "-24": {
+      name: {
+        en: "Return to Karazahn Lower",
+        fr: "Return to Karazahn Lower",
+        de: "Return to Karazahn Lower",
+        ru: "Return to Karazahn Lower",
+        ch: "Return to Karazahn Lower",
+      },
+    },
+    "-25": {
+      name: {
+        en: "Return to Karazahn Upper",
+        fr: "Return to Karazahn Upper",
+        de: "Return to Karazahn Upper",
+        ru: "Return to Karazahn Upper",
+        ch: "Return to Karazahn Upper",
+      },
+    },
+    536: {
+      name: {
+        en: "Grimrail Depot",
+        fr: "Grimrail Depot",
+        de: "Grimrail Depot",
+        ru: "Grimrail Depot",
+        ch: "Grimrail Depot",
+      },
+    },
+    558: {
+      name: {
+        en: "Iron Docks",
+        fr: "Iron Docks",
+        de: "Iron Docks",
+        ru: "Iron Docks",
+        ch: "Iron Docks",
+      },
+    },
   },
   /* ---------------------------------- Tazavesh, The Vieled City --------------------------------- */
   1194: {
