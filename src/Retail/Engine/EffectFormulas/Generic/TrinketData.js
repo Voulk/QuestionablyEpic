@@ -71,7 +71,7 @@ export const trinket_data = [
         coefficient: 80.17241,
         table: -8,
         cooldown: 60,
-        efficiency: {Raid: 0.58, Dungeon: 0.7}
+        efficiency: {Raid: 0.5, Dungeon: 0.6}
       },
     ],
   },
@@ -1053,7 +1053,7 @@ export const trinket_data = [
         coefficient: 0.286493,
         table: -7,
         duration: 10,
-        efficiency: {"Restoration Druid": 0.88, "Holy Paladin": 0.75, "Mistweaver Monk": 0, "Restoration Shaman": 0.75, "Holy Priest": 0.75, "Discipline Priest": 0.78},
+        efficiency: {"Restoration Druid": 0.8, "Holy Paladin": 0.67, "Mistweaver Monk": 0, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
         stacks: 15, // You start with 20, lose 1 every second and end with 10 for an average of 15.
         ppm: 1,
       },
@@ -1092,7 +1092,7 @@ export const trinket_data = [
       {
         coefficient: 50.56973,
         table: -9, // -8 in spell data
-        efficiency: { Raid: 0.63, Dungeon: 0.38 }, // 
+        efficiency: { Raid: 0.68, Dungeon: 0.38 }, // 
         ppm: 3,
         targets: 3.8, // The trinket attempts to hit 4 targets, but in logs it often comes up slightly short of this.
 
@@ -1354,6 +1354,19 @@ export const trinket_data = [
         table: -9,
         hits: 6,
         ppm: 2,
+      }]},
+    
+    /*                                       Faith's Crucible                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    {
+    name: "Faith's Crucible",
+    effects: [
+      {
+        coefficient: 18.04542,
+        table: -9,
+        hits: 12,
+        cooldown: 90,
+        efficiency: { Raid: 0.7, Dungeon: 0.4 }, // 
       },
     ],
   },
@@ -1368,6 +1381,35 @@ export const trinket_data = [
         table: -9,
         ppm: 2.25,
         classMult: { "Restoration Druid": 1, "Discipline Priest": 1, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 1, "Holy Priest": 1 }
+      }]
+    },
+    /*                                     Fluctuating Energy                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    {
+    name: "Fluctuating Energy",
+    effects: [
+      {
+        coefficient: 4.089027,
+        table: -7,
+        ppm: 2,
+        efficiency: 0.65 // Unfortunately it is extremely difficult to catch all of the mana orbs.
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Ingenious Mana Battery                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    name: "Ingenious Mana Battery",
+    effects: [
+      { // Mana Gain
+        coefficient: 52.68167, // This is currently broken in-game and doesn't scale up. Check again before it goes live.
+        table: -1,
+      },
+      { // Vers effect
+        coefficient: 0.163438 * 2, // The Vers is doubled while the trinket is full.
+        table: -7,
+        uptime: 0.5,
       },
     ],
   },

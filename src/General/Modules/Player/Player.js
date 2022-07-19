@@ -669,10 +669,10 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Necrolord Default", 4));
 
       this.activeStats = {
-        intellect: 2000,
+        intellect: 2300,
         haste: 850,
-        crit: 280,
-        mastery: 900,
+        crit: 400,
+        mastery: 800,
         versatility: 520,
         stamina: 1900,
       };

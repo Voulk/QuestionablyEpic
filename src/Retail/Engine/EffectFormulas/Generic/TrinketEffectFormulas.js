@@ -896,6 +896,7 @@ else if (
   let effect = activeTrinket.effects[0];
 
   bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm[player.getSpec()]) / 60;
+
   //
 }
 else if (
@@ -949,7 +950,6 @@ else if (
     
     
     bonus_stats[itemSetHighestSecondary] = statValue;
-
 
   //
 }
@@ -1031,6 +1031,44 @@ else if (
   bonus_stats.hps = (oneHeal * expectedPPM * player.getStatMultiplier("CRITVERS") / 60);
   //
 } 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                            Faith's Crucible                                    */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Faith's Crucible"
+) {
+  let effect = activeTrinket.effects[0];
+  const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
+  
+  bonus_stats.hps = (oneHeal * effect.hits * player.getStatMultiplier("CRITVERS") / effect.cooldown);
+  //
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                     Fluctuating Energy                                         */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Fluctuating Energy"
+) {
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm * effect.efficiency * player.getStatPerc("Haste")) / 60;
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                  Ingenious Mana Battery                                        */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Ingenious Mana Battery"
+) {
+  const manaEffect = activeTrinket.effects[0];
+  const versEffect = activeTrinket.effects[1];
+
+  //bonus_stats.mana = getProcessedValue(manaEffect.coefficient, manaEffect.table, itemLevel) / player.getFightLength(contentType);
+  bonus_stats.mana = 1738 / player.getFightLength(contentType);
+  bonus_stats.versatility = getProcessedValue(versEffect.coefficient, versEffect.table, itemLevel) * versEffect.uptime;
+
+  //
+}
 else if (
   /* ---------------------------------------------------------------------------------------------- */
   /*                                      Resonant Reservoir                                        */
