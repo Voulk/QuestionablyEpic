@@ -45,6 +45,15 @@ export const checkBuffActive = (buffs, buffName) => {
     return buffs.filter(function (buff) {return buff.name === buffName}).length > 0;
 }
 
+/** Check if a specific buff is active and returns how many stacks of it we have.
+ * @param buffs An array of buff objects.
+ * @param buffName The name of the buff we're searching for.
+ */
+ export const getBuffStacks = (buffs, buffName) => {
+    const buff = buffs.filter(function (buff) {return buff.name === buffName})[0]
+    return buff.stacks || 0;
+}
+
 
 /**
  * Returns a spells stat multiplier based on which stats it scales with.

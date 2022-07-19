@@ -78,7 +78,7 @@ describe("Evang Cast Sequence", () => {
         versatility: 600,
         stamina: 2800,
 
-        critMult: 2,
+        critMult: 1,
 }
     
 
@@ -91,7 +91,8 @@ describe("Evang Cast Sequence", () => {
 
     
 
-    const talents = {...baseTalents, bountifulBloom: true, renewingBreath: true, timelessMagic: 3, lifeforceMender: 3, callOfYsera: true}
+    const talents = {...baseTalents, bountifulBloom: true, renewingBreath: true, timelessMagic: 3, lifeforceMender: 3, callOfYsera: true, sacralEmpowerment: true,
+                        temporalCompression: true}
 
     /*
     test("Spell HPM", () => {
@@ -130,7 +131,7 @@ describe("Evang Cast Sequence", () => {
         const results = {healingDone: 0, manaSpent: 0};
 
         for (let i = 0; i < iter; i++) {
-            const seq = ["Rescue", "Living Flame"] 
+            const seq = ["Reversion", "Echo", "Echo", "Blessing of the Bronze", "Spiritbloom", "Dream Breath"] 
             const baseline = runCastSequence(seq, activeStats, settings, talents)
 
             results.healingDone += baseline.totalHealing;

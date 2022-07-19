@@ -2,7 +2,7 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { EVOKERSPELLDB } from "./PresEvokerSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST } from "../Generic/RampBase";
+import { checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks } from "../Generic/RampBase";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
@@ -21,12 +21,12 @@ const EVOKERCONSTANTS = {
     baseMana: 10000,
 
     //CBT: {transferRate: 0.3, expectedOverhealing: 0.25},
-    defaultEmpower: 3,
+    defaultEmpower: 4,
     auraHealingBuff: 1, 
     auraDamageBuff: 1, 
 
     enemyTargets: 1, 
-    echoExceptionSpells: ['Echo'], // These are spells that do not consume or otherwise interact with our Echo buff.
+    echoExceptionSpells: ['Echo', 'Blessing of the Bronze'], // These are spells that do not consume or otherwise interact with our Echo buff.
 
     essenceBurstBuff: {
         name: "Essence Burst",
@@ -44,6 +44,30 @@ const EVOKERCONSTANTS = {
         buffType: 'stats',
         stat: 'critMult',
         value: 0.5
+    }
+
+}
+
+// Remove Temporal and add Essence Burst if necessary.
+const triggerTemporal = (state) => {
+    if (state.talents.sacralEmpowerment) triggerEssenceBurst(state);
+    state.activeBuffs = state.activeBuffs.filter(buff => buff.name !== "Temporal Compression")
+}
+
+const triggerEssenceBurst = (state) => {
+    console.log("TRIGGERED ESSENCE BURST");
+    if (state.talents.exhiliratingBurst) {
+        // If we're talented into Exhil Burst then also add that buff.
+        // If we already have an Exhilirating Burst active then we'll just refresh it's duration instead.
+        // If not, we'll create a new buff.
+        const activeBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Exhilirating Burst"});
+        const exhilBurst = EVOKERCONSTANTS.exhilBurstBuff;
+        if (activeBuff.length > 0) activeBuff.expiration = (state.t + exhilBurst.buffDuration);
+        else {
+            exhilBurst.expiration = (state.t + exhilBurst.buffDuration);
+            state.activeBuffs.push(exhilBurst);
+        }
+
     }
 
 }
@@ -115,6 +139,57 @@ const EVOKERCONSTANTS = {
         expiration: 999,
         buffType: 'special',
     })
+    if (talents.groveTender) {
+        evokerSpells['Dream Breath'][0].cost *= 0.9;
+        evokerSpells['Spiritbloom'][0].cost *= 0.9;
+        evokerSpells['Emerald Blossom'][0].cost *= 0.9;
+    }
+    if (talents.cycleOfLife) {
+        // This can possibly be handled by just multiplying healing during it's duration like with CBT.
+        evokerSpells['Emerald Blossom'].push({
+            name: "Cycle of Life",
+            type: "buff",
+            stacks: false,
+            expiration: 10,
+            buffType: 'special',
+        })
+    }
+
+
+
+
+    // Setup mana costs & cooldowns.
+    for (const [key, value] of Object.entries(evokerSpells)) {
+        let spell = value[0];
+
+        if (spell.empowered) {
+            spell.castTime = spell.castTime[EVOKERCONSTANTS.defaultEmpower]
+            if (spell.targets && typeof spell.targets === "object") spell.targets = spell.targets[EVOKERCONSTANTS.defaultEmpower];
+            if (spell.coeff && typeof spell.coeff === "object") spell.coeff = spell.coeff[EVOKERCONSTANTS.defaultEmpower];
+            if (spell.cooldown && typeof spell.cooldown === "object") spell.cooldown = spell.cooldown[EVOKERCONSTANTS.defaultEmpower];
+            
+            if (key === "Fire Breath") value[1].buffDuration = value[1].buffDuration[EVOKERCONSTANTS.defaultEmpower];
+            //console.log(typeof spell.coeff)
+        }
+
+        if ('school' in spell && spell.school === "bronze" && talents.temporalCompression) {
+            evokerSpells[key].push({
+                name: "Temporal Compression",
+                type: "buff",
+                canStack: true,
+                stacks: 0,
+                maxStacks: 4,
+                value: 0.05 * talents.temporalCompression,
+                expiration: 999,
+                buffType: 'special',
+            })
+        }
+        if ('school' in spell && spell.school === "green" && talents.lushGrowth) spell.coeff *= (1 + 0.05 * talents.lushGrowth);
+
+        if (!spell.targets) spell.targets = 1;
+        if (spell.cooldown) spell.activeCooldown = 0;
+        if (spell.cost) spell.cost = spell.cost * EVOKERCONSTANTS.baseMana / 100;
+    }
     
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
 
@@ -308,34 +383,24 @@ const runSpell = (fullSpell, state, spellName) => {
             }
             else if (spell.buffType === "special") {
 
-                if (spell.name === "Essence Burst") {
-                    if (state.talents.exhiliratingBurst) {
-                        // If we're talented into Exhil Burst then also add that buff.
-                        // If we already have an Exhilirating Burst active then we'll just refresh it's duration instead.
-                        // If not, we'll create a new buff.
-                        const activeBuff = state.activeBuffs.filter(function (buff) {return buff.name === spell.name});
-                        const exhilBurst = EVOKERCONSTANTS.exhilBurstBuff;
-                        if (activeBuff.length > 0) activeBuff.expiration = (state.t + exhilBurst.buffDuration);
-                        else {
-                            exhilBurst.expiration = (state.t + exhilBurst.buffDuration);
-                            state.activeBuffs.push(exhilBurst);
-                        }
-
-                    }
-                }
 
                 // Check if buff already exists, if it does add a stack.
                 const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
-                 
-                if (!spell.stacks || buffStacks === 0) {
+
+                if (spell.canStack === false || buffStacks === 0) {
                     const buff = {name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, buffType: spell.buffType, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack}
                    
                     state.activeBuffs.push(buff);
                 }
                 else {
+  
                     const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
                     
                     if (buff.canStack) buff.stacks += 1;
+                }
+
+                if (spell.name === "Essence Burst") {
+                    triggerEssenceBurst(state);
                 }
                 
 
@@ -379,24 +444,6 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
     // Ideally we'll cover as much as we can in here.
     const shamanSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats);
     
-    // Setup mana costs & cooldowns.
-    for (const [key, value] of Object.entries(shamanSpells)) {
-        let spell = value[0];
-
-        if (spell.empowered) {
-            spell.castTime = spell.castTime[EVOKERCONSTANTS.defaultEmpower]
-            if (spell.targets && typeof spell.targets === "object") spell.targets = spell.targets[EVOKERCONSTANTS.defaultEmpower];
-            if (spell.coeff && typeof spell.coeff === "object") spell.coeff = spell.coeff[EVOKERCONSTANTS.defaultEmpower];
-            if (spell.cooldown && typeof spell.cooldown === "object") spell.cooldown = spell.cooldown[EVOKERCONSTANTS.defaultEmpower];
-            
-            if (key === "Fire Breath") value[1].buffDuration = value[1].buffDuration[EVOKERCONSTANTS.defaultEmpower];
-            //console.log(typeof spell.coeff)
-        }
-
-        if (!spell.targets) spell.targets = 1;
-        if (spell.cooldown) spell.activeCooldown = 0;
-        if (spell.cost) spell.cost = spell.cost * EVOKERCONSTANTS.baseMana / 100;
-    }
 
     // Create Echo clones.
     for (const [spellName, spellData] of Object.entries(shamanSpells)) {
@@ -505,7 +552,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                     // Cast the Echo'd version of our spell j times.
                     
                     const echoSpell = shamanSpells[spellName + "(Echo)"]
-                    runSpell(echoSpell, state, spellName + "(Echo")
+                    runSpell(echoSpell, state, spellName + "(Echo)")
   
                 }
 
@@ -516,8 +563,21 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
  
 
             if ('castTime' in fullSpell[0]) {
-                if (fullSpell[0].castTime === 0 && fullSpell.onGCD === true) nextSpell += 1.5 / getHaste(currentStats);
-                else nextSpell += (fullSpell[0].castTime / getHaste(currentStats));
+                let castTime = fullSpell[0].castTime;
+
+                if (fullSpell[0].empowered) {
+                    // Empowered spells don't currently scale with haste.
+                    if (checkBuffActive(state.activeBuffs, "Temporal Compression")) {
+                        const buffStacks = getBuffStacks(state.activeBuffs, "Temporal Compression")
+                        castTime *= (1 - 0.05 * buffStacks)
+                        if (buffStacks === 4) triggerTemporal(state);
+                    }
+                    nextSpell += castTime; // Add Haste to empowered spells pls Blizzard.
+
+                } 
+
+                else if (castTime === 0 && fullSpell.onGCD === true) nextSpell += 1.5 / getHaste(currentStats);
+                else nextSpell += (castTime / getHaste(currentStats));
             }
             else console.log("CAST TIME ERROR. Spell: " + spellName);
             

@@ -123,7 +123,8 @@ export const EVOKERSPELLDB = {
         name: "Echo",
         type: "buff",
         value: 0.7,
-        stacks: false, // Note that we can have Echo out on multiple people at once, just not two on one person.
+        stacks: 0, // Note that we can have Echo out on multiple people at once, just not two on one person.
+        canStack: false,
         castTime: 0,
         expiration: 999,
         cooldown: 0,
@@ -162,6 +163,14 @@ export const EVOKERSPELLDB = {
         coeff: 0.99999, // NYI
         targets: 1, // 
         secondaries: ['crit', 'vers', 'mastery']
+    }],
+    "Blessing of the Bronze": [{
+        // Blessing of the Bronze is a short CD buff spell that buffs the raid. It can also be used as a generic Bronze spell for Temporal Compression.
+        type: "rest",
+        school: "bronze",
+        castTime: 1.5,
+        cooldown: 15,
+        cost: 4.0,
     }],
     "Dream Flight": [{
         // Large upfront heal and leaves a 15s HoT on anyone it hits.
