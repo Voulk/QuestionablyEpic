@@ -39,6 +39,15 @@ export const EVOKERSPELLDB = {
         expectedOverheal: 0.22,
         secondaries: ['crit', 'vers', 'mastery']
     }],
+    "Living Flame D": [{ 
+        // This is the DPS version of Living Flame.
+        type: "damage",
+        school: "red",
+        castTime: 2,
+        cost: 2.0,
+        coeff: 2,
+        secondaries: ['crit', 'vers']
+    }],
     "Rescue": [{ 
         // Single target heal that also moves you to the targets location.
         type: "heal",

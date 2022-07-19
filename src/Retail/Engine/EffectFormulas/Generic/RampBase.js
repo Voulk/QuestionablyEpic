@@ -99,6 +99,10 @@ const getSqrt = (targets) => {
     return Math.sqrt(targets);
 }
 
+const getSpellFlat = (spell) => {
+    return ((spell.flatHeal) || 0 + (spell.flatDamage || 0))
+}
+
 /**
  * Get a spells raw damage or healing. This is made up of it's coefficient, our intellect, and any secondary stats it scales with.
  * We'll take care of multipliers like Schism and Sins in another function.
@@ -107,7 +111,7 @@ const getSqrt = (targets) => {
  * @returns The raw damage or healing of the spell.
  */
 export const getSpellRaw = (spell, currentStats, specConstants) => {
-    return spell.coeff * currentStats.intellect * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, specConstants); // Multiply our spell coefficient by int and secondaries.
+    return (getSpellFlat(spell) + spell.coeff * currentStats.intellect) * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, specConstants); // Multiply our spell coefficient by int and secondaries.
 }
 
 

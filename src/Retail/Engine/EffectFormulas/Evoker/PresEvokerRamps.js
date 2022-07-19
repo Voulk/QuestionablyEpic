@@ -9,6 +9,10 @@ const discSettings = {
     chaosBrand: true
 }
 
+const getHealth = (stamina) => {
+    return stamina * 20;
+}
+
 const EVOKERCONSTANTS = {
     
     masteryMod: 1.8, 
@@ -53,7 +57,7 @@ const EVOKERCONSTANTS = {
  * @param {*} talents The talents run in the current set.
  * @returns An updated spell database with any of the above changes made.
  */
- const applyLoadoutEffects = (evokerSpells, settings, talents, state) => {
+ const applyLoadoutEffects = (evokerSpells, settings, talents, state, stats) => {
 
     // ==== Default Loadout ====
     // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout
@@ -97,6 +101,20 @@ const EVOKERCONSTANTS = {
         secondaries: ['crit', 'vers', 'mastery']
     })
     if (talents.essenceBurst) evokerSpells['Living Flame'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.2})
+    if (talents.essenceStrike) evokerSpells['Azure Strike'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.15})
+
+    if (talents.lifeforceMender) {
+        evokerSpells['Living Flame'][0].flatHeal = (getHealth(stats.stamina) * talents.lifeforceMender * 0.01);
+        evokerSpells['Fire Breath'][0].flatDamage = (getHealth(stats.stamina) * talents.lifeforceMender * 0.01);
+        evokerSpells['Living Flame D'][0].flatDamage = (getHealth(stats.stamina) * talents.lifeforceMender * 0.01);
+    }
+    if (talents.callOfYsera) evokerSpells['Rescue'].push({
+        name: "Call of Ysera",
+        type: "buff",
+        stacks: false,
+        expiration: 999,
+        buffType: 'special',
+    })
     
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
 
@@ -129,11 +147,13 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
 const getHealingMult = (state, t, spellName, talents) => {
     let mult = EVOKERCONSTANTS.auraHealingBuff;
 
-    /*if ((spellName === "Rescue" || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Echo")) {
-        const echoMult = state.activeBuffs.filter(function (buff) {return buff.name === "Echo"})[0].value;
-        state.activeBuffs = removeBuffStack(state.activeBuffs, "Echo");
-        mult = mult * echoMult;
-    } */
+    if ((spellName === "Dream Breath" || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Call of Ysera")) {
+        if (spellName === "Dream Breath") mult *= 1.4;
+        if (spellName === "Living Flame" || spellName === "Living Flame D") mult *= 2;
+
+        state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
+
+    } 
     
     
     return mult;
@@ -357,7 +377,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
     const startTime = performance.now();
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
-    const shamanSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state);
+    const shamanSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats);
     
     // Setup mana costs & cooldowns.
     for (const [key, value] of Object.entries(shamanSpells)) {
