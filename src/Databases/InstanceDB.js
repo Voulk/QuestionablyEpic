@@ -179,21 +179,21 @@ export const encounterDB = {
   ],
   /* ------------------------------------------ Dungeons ------------------------------------------ */
   1: [
-    1182, //"Necrotic Wake",
-    1183, //"Plaguefall",
-    1184, //"Mists of Tirna Scithe",
-    1185, //"Halls of Atonement",
-    1186, //"Spires of Ascension",
-    1187, //"Theater of Pain",
-    1188, //"De Other Side",
-    1189, //"Sanguine Depths",
+    // 1182, //"Necrotic Wake",
+    // 1183, //"Plaguefall",
+    // 1184, //"Mists of Tirna Scithe",
+    // 1185, //"Halls of Atonement",
+    // 1186, //"Spires of Ascension",
+    // 1187, //"Theater of Pain",
+    // 1188, //"De Other Side",
+    // 1189, //"Sanguine Depths",
+    // 1194, // Tazavesh
     -20, // Tazavesh
     -21, // Tazavesh 2
-    //1194, // Tazavesh
-    860, // Return to Karazahn Lower
-    860, // Return to Karazahn Upper
-    1178, // Mechagon Lower
-    1178, // Mechagon Upper
+    -22, // 1178, // Mechagon Lower
+    -23, // 1178, // Mechagon Upper
+    -24, // 860, // Return to Karazahn Lower
+    -25, // 860, // Return to Karazahn Upper
     536, // Grimrail Depot
     558, // Iron Docks
   ],
