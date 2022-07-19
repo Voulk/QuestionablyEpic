@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next";
 import { filterItemListBySource, filterBCItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
+import i18n from "i18next";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -234,10 +235,10 @@ const getDifficultyBaseLevel = (difficulty) => {
 export default function RaidGearContainer(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
   const gameType = useSelector((state) => state.gameType);
-  const currentLanguage = i18n.language;
 
   TabPanel.propTypes = {
     children: PropTypes.node,
@@ -288,6 +289,8 @@ export default function RaidGearContainer(props) {
     difficulties.sort().reverse();
     const firstDifficulty = difficulties[0];
     const secondDifficulty = difficulties.length === 2 ? difficulties[1] : -1;
+    const retailBossList = Array.from(Object.keys(encounterDB[1195].bosses));
+    console.log(retailBossList);
 
     return (
       <Grid item xs={12}>
@@ -324,7 +327,7 @@ export default function RaidGearContainer(props) {
                 <TabPanel key={"panel" + index} value={tabvalue} index={index}>
                   <div className={classes.panel}>
                     <Grid container spacing={1}>
-                      {encounterDB[raidID]
+                      {encounterDB[raidID].bossOrder
                         //.filter((key) => key === raidID)
                         .map((key, i) => (
                           <Grid item xs={12} key={"bossContainer-" + i}>
@@ -348,11 +351,11 @@ export default function RaidGearContainer(props) {
                                     className="container-UpgradeCards"
                                   >
                                     <img
-                                      src={UpgradeFinderBossImages(key)}
+                                      src={UpgradeFinderBossImages(parseInt(key))}
                                       style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", maxHeight: "90%", maxWidth: "90%" }}
                                     />
                                     <Typography variant="h6" style={{ width: "100%" }} className="centered-UpgradeCards">
-                                      {t("BossNames." + key)}
+                                      {encounterDB[raidID].bosses[key].name[currentLanguage]}
                                     </Typography>
                                   </div>
                                 </Grid>
@@ -448,21 +451,21 @@ export default function RaidGearContainer(props) {
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
                   {/* ------------------------------------------ Karazhan ------------------------------------------ */}
-                  <Tab className={classes.karazhanHeaderStyle} label={t("BurningCrusade.Raids.745")} {...a11yProps(0)} />
+                  <Tab className={classes.karazhanHeaderStyle} label={encounterDB[745].name[currentLanguage]} {...a11yProps(0)} />
                   {/* ---------------------------------------- Gruul's Lair ---------------------------------------- */}
-                  <Tab className={classes.gruulsHeaderStyle} label={t("BurningCrusade.Raids.746")} {...a11yProps(1)} />
+                  <Tab className={classes.gruulsHeaderStyle} label={encounterDB[746].name[currentLanguage]} {...a11yProps(1)} />
                   {/* ------------------------------------ Serpentshrine Cavern ------------------------------------ */}
-                  <Tab className={classes.serpentshringHeaderStyle} label={t("BurningCrusade.Raids.748")} {...a11yProps(2)} />
+                  <Tab className={classes.serpentshringHeaderStyle} label={encounterDB[748].name[currentLanguage]} {...a11yProps(2)} />
                   {/* ---------------------------------------- Tempest Keep ---------------------------------------- */}
-                  <Tab className={classes.tempestKeepHeaderStyle} label={t("BurningCrusade.Raids.749")} {...a11yProps(3)} />
+                  <Tab className={classes.tempestKeepHeaderStyle} label={encounterDB[749].name[currentLanguage]} {...a11yProps(3)} />
                   {/* --------------------------------- The Battle for Mount Hyjal --------------------------------- */}
-                  <Tab className={classes.mountHyjalHeaderStyle} label={t("BurningCrusade.Raids.750")} {...a11yProps(4)} />
+                  <Tab className={classes.mountHyjalHeaderStyle} label={encounterDB[750].name[currentLanguage]} {...a11yProps(4)} />
                   {/* ---------------------------------------- Black Temple ---------------------------------------- */}
-                  <Tab className={classes.blackTempleHeaderStyle} label={t("BurningCrusade.Raids.751")} {...a11yProps(5)} />
+                  <Tab className={classes.blackTempleHeaderStyle} label={encounterDB[751].name[currentLanguage]} {...a11yProps(5)} />
                   {/* ------------------------------------------ Zul'Aman ------------------------------------------ */}
-                  <Tab className={classes.zulamanHeaderStyle} label={t("BurningCrusade.Raids.321")} {...a11yProps(6)} />
+                  <Tab className={classes.zulamanHeaderStyle} label={encounterDB[321].name[currentLanguage]} {...a11yProps(6)} />
                   {/* --------------------------------------- Sunwell Plateau -------------------------------------- */}
-                  <Tab className={classes.sunwellHeaderStyle} label={t("BurningCrusade.Raids.752")} {...a11yProps(7)} />
+                  <Tab className={classes.sunwellHeaderStyle} label={encounterDB[752].name[currentLanguage]} {...a11yProps(7)} />
                 </Tabs>
               </AppBar>
             </Grid>
@@ -473,10 +476,11 @@ export default function RaidGearContainer(props) {
                   <div className={classes.panel}>
                     <Grid container spacing={1}>
                       {/* <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}
-                      {encounterDB[raidID]
+                      {encounterDB[raidID].bossOrder
                         //filter((key) => key === raidID)
                         .map((key, i) => (
                           <Grid item xs={12} key={"bossContainer-" + i}>
+                            {console.log(key)}
                             <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
                               <Grid container justifyContent="center" alignItems="flex-start">
                                 <Grid item style={{ alignSelf: "center" }}>
@@ -484,7 +488,7 @@ export default function RaidGearContainer(props) {
                                     style={{
                                       width: 175,
                                       height: 181,
-                                      backgroundImage: `url(${UpgradeFinderBossImages(key)})`,
+                                      backgroundImage: `url(${UpgradeFinderBossImages(parseInt(key))})`,
                                       backgroundRepeat: "no-repeat",
                                       backgroundPosition: "center 60%",
                                       backgroundSize: "auto 100%",
@@ -492,13 +496,13 @@ export default function RaidGearContainer(props) {
                                     className="container-UpgradeCards"
                                   >
                                     <Typography variant="button" noWrap className="centered-UpgradeCards">
-                                      {t("BurningCrusade.BossNames." + key)}
+                                      {encounterDB[raidID].bosses[key].name[currentLanguage]}
                                     </Typography>
                                   </div>
                                 </Grid>
                                 <Divider orientation="vertical" flexItem />
                                 <Grid item xs={12} sm container style={{ padding: 8 }} spacing={1}>
-                                  {[...filterBCItemListBySource(itemList, raidID, key)].map((item, index) => (
+                                  {[...filterBCItemListBySource(itemList, raidID, parseInt(key))].map((item, index) => (
                                     <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                   ))}
                                 </Grid>
