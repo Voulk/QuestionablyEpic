@@ -91,7 +91,7 @@ describe("Evang Cast Sequence", () => {
 
     
 
-    const talents = {...baseTalents, bountifulBloom: true, renewingBreath: true, timelessMagic: 3, lifeforceMender: 3, callOfYsera: true, sacralEmpowerment: true,
+    const talents = {...baseTalents, bountifulBloom: true, renewingBreath: 3, timelessMagic: 3, lifeforceMender: 3, callOfYsera: true, sacralEmpowerment: true,
                         temporalCompression: true}
 
     /*

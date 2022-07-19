@@ -21,7 +21,7 @@ const EVOKERCONSTANTS = {
     baseMana: 10000,
 
     //CBT: {transferRate: 0.3, expectedOverhealing: 0.25},
-    defaultEmpower: 4,
+    defaultEmpower: 3,
     auraHealingBuff: 1, 
     auraDamageBuff: 1, 
 
@@ -107,10 +107,10 @@ const triggerEssenceBurst = (state) => {
         buffType: "heal",
         tickRate: 2,
         targets: 5,
-        coeff: evokerSpells['Dream Breath'][0].coeff[EVOKERCONSTANTS.defaultEmpower] / 4,
+        coeff: evokerSpells['Dream Breath'][0].coeff[EVOKERCONSTANTS.defaultEmpower] / 4 * (0.1 * talents.renewingBreath) * (1 + 0.05 * talents.lushGrowth),
         hastedHoT: false,
         buffDuration: 8,
-        expectedOverheal: 0.52,
+        expectedOverheal: 0.45,
         secondaries: ['crit', 'vers', 'mastery']
     })
     if (talents.timelessMagic) evokerSpells['Reversion'][0].buffDuration += (2 * talents.timelessMagic);
