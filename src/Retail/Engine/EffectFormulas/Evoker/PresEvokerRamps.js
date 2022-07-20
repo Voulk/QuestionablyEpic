@@ -68,6 +68,7 @@ const triggerEssenceBurst = (state) => {
         if (activeBuff.length > 0) activeBuff.expiration = (state.t + exhilBurst.buffDuration);
         else {
             exhilBurst.expiration = (state.t + exhilBurst.buffDuration);
+            addReport(state, `Adding buff: Essence Burst`);
             state.activeBuffs.push(exhilBurst);
         }
     }
@@ -87,7 +88,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
  * This function handles all of our effects that might change our spell database before the ramps begin.
  * It includes conduits, legendaries, and some trinket effects.
  * 
- * @param {*} shamanSpells Our spell database
+ * @param {*} evokerSpells Our spell database
  * @param {*} settings Settings including legendaries, trinkets, soulbinds and anything that falls out of any other category.
  * @param {*} talents The talents run in the current set.
  * @returns An updated spell database with any of the above changes made.
@@ -128,6 +129,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
     if (talents.timeLord) evokerSpells['Echo'][1].value += (0.1 * talents.timeLord);
     if (talents.flutteringSeedlings) evokerSpells['Emerald Blossom'].push({
         // TODO
+        name: "Fluttering Seedlings",
         type: "heal",
         school: "green",
         coeff: (0.3 * talents.flutteringSeedlings),
@@ -152,7 +154,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
         name: "Call of Ysera",
         type: "buff",
         stacks: false,
-        expiration: 999,
+        buffDuration: 999,
         buffType: 'special',
     })
     if (talents.groveTender) {
@@ -203,10 +205,10 @@ const triggerCycleOfLife = (state, rawHealing) => {
                 name: "Temporal Compression",
                 type: "buff",
                 canStack: true,
-                stacks: 0,
+                stacks: 1,
                 maxStacks: 4,
                 value: 0.05 * talents.temporalCompression,
-                expiration: 999,
+                buffDuration: 999,
                 buffType: 'special',
             })
         }
@@ -220,7 +222,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
 
 
-    // ==== Legendaries ====
+    // ==== Tier Sets ====
 
     return evokerSpells;
 }
@@ -284,7 +286,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     if (checkBuffActive(state.activeBuffs, "Cycle of Life")) triggerCycleOfLife(state, healingVal / (1 - spell.expectedOverheal));
 
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
-    addReport(state, `${spellName} healed for ${Math.round(healingVal)}`)
+    addReport(state, `${spellName} healed for ${Math.round(healingVal)} (m: ${healingMult})`)
     //if (compile) state.healingDone['Cloudburst Totem'] = (state.healingDone['Cloudburst Totem'] || 0) + cloudburstHealing;
 
     return healingVal;
@@ -371,6 +373,7 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
         if (canProceed) {
             // The spell casts a different spell. 
             if (spell.type === 'castSpell') {
+                addReport(state, `Spell Proc: ${spellName}`)
                 const newSpell = evokerSpells[spell.storedSpell];
                 runSpell(newSpell, state, spell.storedSpell, evokerSpells);
             }
@@ -393,7 +396,7 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
             // The spell adds a buff to our player.
             // We'll track what kind of buff, and when it expires.
             else if (spell.type === "buff") {
-                addReport(state, `Adding buff: ${spell.name}`)
+                addReport(state, `Adding buff: ${spell.name}`);
                 if (spell.buffType === "stats") {
                     state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
                 }
@@ -401,7 +404,7 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                     state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "statsMult", value: spell.value, stat: spell.stat});
                 }
                 else if (spell.buffType === "damage" || spell.buffType === "heal") {     
-                    const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
+                    const newBuff = {name: spell.name, buffType: spell.buffType, attSpell: spell,
                         tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
 
                     newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration    
@@ -418,13 +421,11 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                     state.activeBuffs.push(newBuff);
                 }
                 else if (spell.buffType === "special") {
-
-
                     // Check if buff already exists, if it does add a stack.
                     const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
 
                     if (spell.canStack === false || buffStacks === 0) {
-                        const buff = {name: spell.name, expiration: (state.t  + spell.buffDuration) + (spell.castTime || 0), buffType: spell.buffType, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack}
+                        const buff = {name: spell.name, expiration: (state.t  + spell.buffDuration) + (spell.castTime || 0), buffType: spell.buffType, value: spell.value, stacks: 1, canStack: spell.canStack}
                     
                         if (spell.name === "Cycle of Life") {
 
@@ -433,13 +434,14 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                             buff.canPartialTick = true;
 
                         }
-
+                        //if (spell.name === "Temporal Compression") console.log(buff);
                         state.activeBuffs.push(buff);
                     }
                     else {
     
                         const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
 
+                        addReport(state, `${spell.name} stacks: ${buff.stacks+1}`)
 
                         
                         if (buff.canStack) buff.stacks += 1;
@@ -486,17 +488,16 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
 
     const sequenceLength = 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Manual" // Auto / Manual.
-    state.settings.reporting = true;
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0;
     const startTime = performance.now();
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
-    const shamanSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats);
+    const evokerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats);
     
 
     // Create Echo clones.
-    for (const [spellName, spellData] of Object.entries(shamanSpells)) {
+    for (const [spellName, spellData] of Object.entries(evokerSpells)) {
         
         // Make sure spell can be copied by Echo.
         // Right now this is almost anything but we'll expect them to make changes later in Alpha.
@@ -506,7 +507,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
             // Make any Echo changes necessary.
 
             // Save the new spell.
-            shamanSpells[spellName+"(Echo)"] = echoSpell;
+            evokerSpells[spellName+"(Echo)"] = echoSpell;
         }
     }
 
@@ -581,16 +582,16 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
 
             let spellName = "";
             if (seqType === "Manual") spellName = seq.shift();
-            else spellName = genSpell(state, shamanSpells);
+            else spellName = genSpell(state, evokerSpells);
 
-            const fullSpell = shamanSpells[spellName];
+            const fullSpell = evokerSpells[spellName];
 
             // We'll iterate through the different effects the spell has.
             // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,
             // and the absorb effect).
             state.manaSpent += fullSpell[0].cost || 0;
 
-            runSpell(fullSpell, state, spellName, shamanSpells);
+            runSpell(fullSpell, state, spellName, evokerSpells);
 
             // Check if Echo
             // If we have the Echo buff active, and our current cast is Echo compatible (this will probably change through Alpha) then:
@@ -604,8 +605,8 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                 for (let j = 0; j < echoNum; j++) {
                     // Cast the Echo'd version of our spell j times.
                     
-                    const echoSpell = shamanSpells[spellName + "(Echo)"]
-                    runSpell(echoSpell, state, spellName + "(Echo)", shamanSpells)
+                    const echoSpell = evokerSpells[spellName + "(Echo)"]
+                    runSpell(echoSpell, state, spellName + "(Echo)", evokerSpells)
   
                 }
 
@@ -626,7 +627,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                         if (buffStacks === 4) triggerTemporal(state);
                     }
 
-                    nextSpell += castTime; // Add Haste to empowered spells pls Blizzard.
+                    nextSpell += castTime / getHaste(currentStats); // Empowered spells do scale with haste.
 
                 } 
 

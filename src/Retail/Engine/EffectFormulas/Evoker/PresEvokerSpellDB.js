@@ -126,13 +126,14 @@ export const EVOKERSPELLDB = {
         stacks: 0, // Note that we can have Echo out on multiple people at once, just not two on one person.
         canStack: false,
         castTime: 0,
-        expiration: 999,
+        buffDuration: 999,
         cooldown: 0,
         buffType: 'special',
     }],
     "Reversion": [{
         // Big heal over time effect, extended by crits. 12s base duration, 9s cooldown, crits extend by one tick.
         // Talent to increase it's base duration by 6s.
+        name: "Reversion (HoT)",
         type: "buff",
         buffType: "function",
         school: "bronze",
@@ -222,6 +223,7 @@ export const EVOKERSPELLDB = {
         secondaries: ['crit', 'vers']
     },
     {
+        name: "Fire Breath (DoT)",
         type: "buff",
         buffType: "damage",
         tickRate: 2,
@@ -281,7 +283,7 @@ export const baseTalents = {
     callOfYsera: false, // Rescue increases the effectiveness of your next Dream Breath by 40% or Living Flame by 100%.
     timeOfNeed: false, // Needs testing.
     sacralEmpowerment: false, // Consuming a full Temporal Compression grants Essence Burst (next essence ability is free). Need to test.
-    exhiliratingBurst: false, // Each time you gain Essence Burst gain +50% crit damage / healing for 8 seconds.
+    exhiliratingBurst: true, // Each time you gain Essence Burst gain +50% crit damage / healing for 8 seconds.
     groveTender: false, // Dream Breath, Spiritbloom and Emerald Blossom cost 10% less mana.
     fontOfMagic: false, // Your Empower spells go to 4 (longer cast time).
     energyLoop: false, // Disintegrate grants 1200 mana over it's duration.

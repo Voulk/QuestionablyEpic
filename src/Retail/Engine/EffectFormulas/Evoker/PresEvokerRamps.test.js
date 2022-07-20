@@ -82,7 +82,7 @@ describe("Evang Cast Sequence", () => {
 }
     
 
-    const settings = {}
+    const settings = {reporting: true}
 
     const print = (name, base, healing) => {
         let percInc = Math.round(10000*(healing / base - 1))/100;
@@ -131,8 +131,8 @@ describe("Evang Cast Sequence", () => {
         const results = {healingDone: 0, manaSpent: 0};
 
         for (let i = 0; i < iter; i++) {
-            //const seq = ["Reversion", "Echo", "Echo", "Echo", "Fire Breath", "Echo", "Echo", "Spiritbloom"] 
-            const seq = ["Emerald Blossom", "Emerald Blossom", "Emerald Blossom", "Living Flame", "Living Flame"]
+            const seq = ["Reversion", "Echo", "Echo", "Echo", "Fire Breath", "Echo", "Echo", "Spiritbloom"] 
+            const seq2 = ["Emerald Blossom", "Emerald Blossom", "Emerald Blossom", "Living Flame", "Living Flame"]
             const baseline = runCastSequence(seq, activeStats, settings, talents)
 
             results.healingDone += baseline.totalHealing;
@@ -143,7 +143,7 @@ describe("Evang Cast Sequence", () => {
             //console.log("Baseline: " + JSON.stringify(baseline));
         }
         
-        console.log(`Healing Done over ${iter} iterations: ` + results.healingDone / iter);
+        console.log(`Healing Done over ${iter} iterations: ` + results.healingDone / iter + " at cost: " + results.manaSpent / iter);
         
 
         /*
