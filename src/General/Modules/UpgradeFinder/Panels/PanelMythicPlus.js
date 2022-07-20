@@ -28,7 +28,6 @@ export default function MythicPlusGearContainer(props) {
   const gameType = useSelector((state) => state.gameType);
 
   const contentGenerator = () => {
-
     return encounterDB["-1"].bossOrder.map((key, i) => (
       <Grid item xs={12} key={"mythicContainer-" + i}>
         {console.log(key)}
