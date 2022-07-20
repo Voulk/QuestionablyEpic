@@ -42,24 +42,6 @@ const useStyles = makeStyles((theme) => ({
 const spellList = Object.keys(EVOKERSPELLDB);
 
 
-const imgs = {
-    default: require("Images/Legendaries/TheDarkTitansLesson.jpg").default,
-    "Spiritbloom": require("Images/Spells/ability_evoker_spiritbloom2.jpg").default,
-    "Living Flame": require("Images/Spells/ability_evoker_livingflame.jpg").default,
-    "Emerald Blossom": require("Images/Spells/ability_evoker_emeraldblossom.jpg").default,
-    "Rescue": require("Images/Spells/ability_evoker_rescue.jpg").default,
-    "Reversion": require("Images/Spells/ability_evoker_reversion.jpg").default,
-    "Echo": require("Images/Spells/ability_evoker_echo.jpg").default,
-    "Living Flame D": require("Images/Spells/ability_evoker_livingflame.jpg").default,
-    "Dream Breath": require("Images/Spells/ability_evoker_dreambreath.jpg").default,
-    "Fire Breath": require("Images/Spells/ability_evoker_firebreath.jpg").default,
-    "Dream Flight": require("Images/Spells/ability_evoker_dreamflight.jpg").default,
-    "Azure Strike": require("Images/Spells/ability_evoker_azurestrike.jpg").default,
-    "Temporal Anomaly": require("Images/Spells/ability_evoker_temporalanomaly.jpg").default, 
-    "Blessing of the Bronze": require("Images/Spells/ability_evoker_blessingofthebronze.jpg").default,
-}
-
-
 export default function SequenceGenerator(props) {
 
     const classes = useStyles();
@@ -109,11 +91,11 @@ export default function SequenceGenerator(props) {
 
             {spellList.map((spell, index) => (
                 <Grid item xs={12} sm={12} md={1} lg={1} xl={1} key={index}>
-                <a data-wowhead={"spell=" + 364342}>
+                <a data-wowhead={"spell=" + EVOKERSPELLDB[spell][0].spellData.id}>
                 <img
                     height={40}
                     width={40}
-                    src={imgs[spell]}
+                    src={ require("Images/Spells/" + EVOKERSPELLDB[spell][0].spellData.icon + ".jpg").default || "" }
                     alt=""
                     onClick={(e) => addSpell(index, e)}
                     style={{
