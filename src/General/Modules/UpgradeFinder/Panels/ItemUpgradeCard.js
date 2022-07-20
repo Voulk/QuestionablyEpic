@@ -83,7 +83,9 @@ export default function ItemCard(props) {
     console.log(item.source.encounterId);
     /* ------------------------------ Dungeon Name ------------------------------ */
     if (item.source.instanceId === -1) {
-      let dungeons = Object.assign(encounterDB["-1"], encounterDB[123]);
+      let dungeons = {...encounterDB["-1"]};
+      dungeons = Object.assign(dungeons, encounterDB[123]);
+
       return dungeons[item.source.encounterId].name[currentLanguage];
     } else if (item.source.instanceId === 1194) {
       return encounterDB[1194][item.source.encounterId].name[currentLanguage] + " (Tazavesh)";
