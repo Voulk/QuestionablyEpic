@@ -3,6 +3,7 @@ import "./App.css";
 import CooldownPlannerModule from "General/Modules/CooldownPlanner/CooldownPlannerModule.js";
 import FightAnalysis from "General/Modules/FightAnalysis/FightAnalysis";
 import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
+import SequenceGen from "General/Modules/SequenceGenerator/SequenceGenerator.js";
 import LegendaryCompare from "Retail/Modules/Legendaries/LegendaryCompare.js";
 import TrinketAnalysis from "General/Modules/TrinketAnalysis/TrinketAnalysis";
 import QuickCompare from "General/Modules/QuickCompare/QuickCompare";
@@ -345,6 +346,7 @@ class App extends Component {
                   <Route path="/fightAnalysis" render={() => <FightAnalysis />} />
                   <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule />} />
                   <Route path="/holydiver" render={() => <TestingPage />} />
+                  <Route path="/sequenceGen" render={() => <SequenceGen />} />
                   <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} />} />
                   <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} />} />
                   <Route
