@@ -39,7 +39,8 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const spellList = Object.keys(EVOKERSPELLDB);
+const dpsSpells = Object.keys(EVOKERSPELLDB).filter(spell => EVOKERSPELLDB[spell][0].type === "damage");
+const healSpells = Object.keys(EVOKERSPELLDB).filter(spell => EVOKERSPELLDB[spell][0].type === "heal" || spell === "Reversion");
 
 
 export default function SequenceGenerator(props) {
@@ -47,7 +48,7 @@ export default function SequenceGenerator(props) {
     const classes = useStyles();
     const [seq, setSeq] = useState([]);
     const [talents, settalents] = useState({...baseTalents});
-    const [result, setResult] = useState({totalHealing: 0, hpm: 0})
+    const [result, setResult] = useState({totalDamage: 0, totalHealing: 0, hpm: 0})
 
 
     const stats = {
@@ -61,9 +62,9 @@ export default function SequenceGenerator(props) {
         critMult: 1,
 }
 
-    const addSpell = (ind) => {
+    const addSpell = (spell) => {
 
-        setSeq([...seq, spellList[ind]]);
+        setSeq([...seq, spell]);
         console.log(seq);
     }
 
@@ -82,14 +83,10 @@ export default function SequenceGenerator(props) {
             <div className={classes.root}>
             <Grid container spacing={1}>
             <Typography variant="subtitle2" align="left" style={{ width: "100%", padding: "25px 10px 5px 10px" }} color="primary">
-                {"Seq 1: " + seq.toString().replace(",", ", ")}
+                {"Seq 1"}
             </Typography>
 
-            <Typography variant="h6" align="left" style={{ width: "100%", padding: "25px 10px 5px 10px" }} color="primary">
-                {"Spells"}
-            </Typography>
-
-            {spellList.map((spell, index) => (
+            {seq.map((spell, index) => (
                 <Grid item xs={12} sm={12} md={1} lg={1} xl={1} key={index}>
                 <a data-wowhead={"spell=" + EVOKERSPELLDB[spell][0].spellData.id}>
                 <img
@@ -97,7 +94,56 @@ export default function SequenceGenerator(props) {
                     width={40}
                     src={ require("Images/Spells/" + EVOKERSPELLDB[spell][0].spellData.icon + ".jpg").default || "" }
                     alt=""
-                    onClick={(e) => addSpell(index, e)}
+                    style={{
+                      borderRadius: 4,
+                      borderWidth: "1px",
+                      borderStyle: "solid",
+                      borderColor: "#008CFF",
+                      marginRight: 0,
+                    }}
+                    />
+                    </a>
+                </Grid>
+            ))}
+
+            <Typography variant="h6" align="left" style={{ width: "100%", padding: "25px 10px 5px 10px" }} color="primary">
+                {"Healing Spells"}
+            </Typography>
+
+            {healSpells.map((spell, index) => (
+                <Grid item xs={12} sm={12} md={1} lg={1} xl={1} key={index}>
+                <a data-wowhead={"spell=" + EVOKERSPELLDB[spell][0].spellData.id}>
+                <img
+                    height={40}
+                    width={40}
+                    src={ require("Images/Spells/" + EVOKERSPELLDB[spell][0].spellData.icon + ".jpg").default || "" }
+                    alt=""
+                    onClick={(e) => addSpell(spell, e)}
+                    style={{
+                      borderRadius: 4,
+                      borderWidth: "1px",
+                      borderStyle: "solid",
+                      borderColor: "#ff8000",
+                      marginRight: 0,
+                    }}
+                    />
+                    </a>
+                </Grid>
+            ))}
+
+            <Typography variant="h6" align="left" style={{ width: "100%", padding: "25px 10px 5px 10px" }} color="primary">
+                {"DPS Spells"}
+            </Typography>
+
+            {dpsSpells.map((spell, index) => (
+                <Grid item xs={12} sm={12} md={1} lg={1} xl={1} key={index}>
+                <a data-wowhead={"spell=" + EVOKERSPELLDB[spell][0].spellData.id}>
+                <img
+                    height={40}
+                    width={40}
+                    src={ require("Images/Spells/" + EVOKERSPELLDB[spell][0].spellData.icon + ".jpg").default || "" }
+                    alt=""
+                    onClick={(e) => addSpell(spell, e)}
                     style={{
                       borderRadius: 4,
                       borderWidth: "1px",
@@ -153,7 +199,7 @@ export default function SequenceGenerator(props) {
             </Button>
           </Grid>
 
-        <p style={{ color: "whitesmoke", paddingTop: "10px" }}>{"Healing: " + result.totalHealing + ". HPM: " + Math.round(100*result.hpm)/100}</p>
+        <p style={{ color: "whitesmoke", paddingTop: "10px" }}>{"Damage: " + result.totalDamage + ". Healing: " + result.totalHealing + ". HPM: " + Math.round(100*result.hpm)/100}</p>
 
         </Grid>
             </div>
