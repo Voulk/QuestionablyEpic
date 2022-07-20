@@ -109,9 +109,10 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
     // Evoker Class Talents
     if (talents.bountifulBloom) evokerSpells['Emerald Blossom'][0].targets += 2;
-
-
-
+    if (talents.enkindled) {
+        evokerSpells['Living Flame'][1].coeff *= (0.05 * talents.enkindled);
+        evokerSpells['Living Flame D'][1].coeff *= (0.05 * talents.enkindled);
+    }
 
     // Evoker Spec Talents
     if (talents.renewingBreath) evokerSpells['Dream Breath'].push({

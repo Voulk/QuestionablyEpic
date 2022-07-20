@@ -71,7 +71,7 @@ describe("Evang Cast Sequence", () => {
             stamina: 1900,
     } */
     const activeStats = {
-        intellect: 2000,
+        intellect: 1,
         haste: 600,
         crit: 600,
         mastery: 600,
