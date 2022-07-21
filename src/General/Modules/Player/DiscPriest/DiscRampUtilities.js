@@ -65,7 +65,7 @@ export const allRampsHealing = (boonSeq, fiendSeq, stats, settings = {}, conduit
 export const allRamps = (fiendSeq, stats, settings = {}, talents, reporting = false) => {
 
     let rampResult = {totalHealing: 0, ramps: [], rampSettings: settings}
-    const miniSeq = buildRamp('Mini', 6, [], stats.haste || 0, settings.playstyle || "", [], talents)
+    const miniSeq = buildRamp('Mini', 6, [], stats.haste || 0, settings.playstyle || "", talents)
     const miniRamp = runCastSequence(miniSeq, stats, settings, talents);
     //const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
     const fiendRamp = runCastSequence(fiendSeq, stats, settings, talents);

@@ -1,6 +1,6 @@
 // 
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-import { DISCSPELLS } from "./DiscSpellDB";
+import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 
@@ -54,9 +54,9 @@ const DISCCONSTANTS = {
             castTime: 0,
             cost: 0,
             cooldown: 0,
-            buffType: 'statsMult',
+            buffType: 'stats',
             stat: 'mastery',
-            value: (3 * talents.puppetMaster * 35 * DISCCONSTANTS.masteryMod), // 
+            value: (talents.puppetMaster * 150), // 
             buffDuration: 12,
         }
     ) };
@@ -595,7 +595,11 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
 
     // Add up our healing values (including atonement) and return it.
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
-    state.totalHealing = sumValues(state.healingDone);
+    state.totalDamage = Object.keys(state.damageDone).length > 0 ? Math.round(sumValues(state.damageDone)) : 0;
+    state.totalHealing = Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0;
+    state.hps = (state.totalHealing / sequenceLength);
+    state.dps = (state.totalDamage / sequenceLength);
+    state.hpm = (state.totalHealing / state.manaSpent) || 0;
 
     return state;
 

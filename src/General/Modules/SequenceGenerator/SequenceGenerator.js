@@ -8,7 +8,8 @@ import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/
 import { runCastSequence as discSequence } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 
 import { EVOKERSPELLDB, baseTalents } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerSpellDB"
-import { DISCSPELLS } from "General/Modules/Player/DiscPriest/DiscSpellDB";
+import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/DiscPriest/DiscSpellDB";
+import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 import LooksOneIcon from "@mui/icons-material/LooksOne";
 
@@ -103,6 +104,10 @@ export default function SequenceGenerator(props) {
         console.log(sim);
     }
 
+    const autoGen = () => {
+        setSeq(buildRamp("Primary", 10, [], stats.haste, "", discTalents))
+    }
+
     return (
         <div style={{ backgroundColor: "#313131" }}>
           <div className={classes.root}>
@@ -119,9 +124,9 @@ export default function SequenceGenerator(props) {
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                       <Paper style={{ padding: "8px 8px 4px 8px" }} elevation={0}>
                         <Grid container spacing={1} alignItems="center">
-                          <Grid item xs="auto">
+                          {/*<Grid item xs="auto">
                             <LooksOneIcon fontSize="large" />
-                          </Grid>
+                            </Grid> */}
     
                           {seq.map((spell, index) => {
                             return (
@@ -227,6 +232,26 @@ export default function SequenceGenerator(props) {
                         {"Clear"}
                       </Button>
                     </Grid>
+
+                    <Grid item xs={12}>
+                      <Button
+                        key={321}
+                        variant="contained"
+                        onClick={() => autoGen()}
+                        color="secondary"
+                        style={{
+                          width: "100%",
+                          height: "35px",
+                          whiteSpace: "nowrap",
+                          justifyContent: "center",
+                          textTransform: "none",
+                          paddingLeft: "32px",
+                          color: "#F2BF59",
+                        }}
+                      >
+                        {"Auto-Generate Sequence"}
+                      </Button>
+                    </Grid>
     
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                       <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
@@ -235,7 +260,7 @@ export default function SequenceGenerator(props) {
                     </Grid>
                     <Grid item xs={12}>
                       <Paper style={{ backgroundColor: "#525252", padding: 16 }} elevation={0}>
-                        <p style={{ color: "whitesmoke", paddingTop: "10px" }}>{"Damage: " + result.totalDamage + ". Healing: " + result.totalHealing + ". HPM: " + Math.round(100 * result.hpm) / 100}</p>
+                        <p style={{ color: "whitesmoke", paddingTop: "10px" }}>{"Damage: " + result.totalDamage.toLocaleString("en-US") + ". Healing: " + result.totalHealing.toLocaleString("en-US") + ". HPM: " + Math.round(100 * result.hpm) / 100}</p>
                       </Paper>
                     </Grid>
                   </Grid>

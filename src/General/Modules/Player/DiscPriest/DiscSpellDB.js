@@ -325,6 +325,58 @@ export const DISCSPELLS = {
     }],
 }
 
+export const baseTalents = {
+    // Priest class tree
+    improvedSmite: 2,
+    mindRestrain: 0, // NYI. Requires Alpha. Mind Blast SL absorb just left in for now.
+    throesOfPain: 2,
+    puppetMaster: 2,
+    improvedShadowfiend: false,
+    mindbender: true,
+    rabidShadows: 0,
+
+    mindgames: true,
+
+
+    // Disc spec tree
+    // Tier 1
+    shiningRadiance: 0,
+    shieldDiscipline: false,
+    powerWordSolace: false,
+    maliciousScission: false,
+
+    // Tier 2
+    contrition: 0,
+    purgeTheWicked: false,
+    darkIndulgence: 0,
+    revelInPurity: 0,
+    castigation: 0,
+    rapture: false,
+    sinsOfTheMany: 0,
+    shadowCovenant: 0,
+    embraceShadow: 0,
+    maliciousScission: false,
+
+    // Tier 3
+    evangelism: true,
+    spiritShell: false,
+    exaltation: false, // lol
+    divineStar: false,
+    halo: false,
+    evenfall: 0,
+    lessonInHumility: 0,
+    lenience: 0,
+    twilightEmpowerment: 0,
+    harshDiscipline: false,
+    indemnity: false, // +2s Atonement duration on PW:S.
+    lightsWrath: true,
+    solatium: false, // +2s Atonement duration on Shadow Mend.
+    wickedness: false,
+    stolenPsyche: 0,
+
+};
+
+// These aren't used at all in this branch but don't remove because the conduit code hasn't been cleared out from elsewhere yet.
 export const discConduits = (conduit, rank) => {
     if (conduit === "Exaltation") return 0.0675 + (rank * 0.0075);
     else if (conduit === "Shining Radiance") return 0.36 + (rank * 0.04);
