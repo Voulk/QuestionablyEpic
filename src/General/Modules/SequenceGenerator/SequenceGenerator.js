@@ -11,7 +11,6 @@ import { EVOKERSPELLDB, baseTalents } from "Retail/Engine/EffectFormulas/Evoker/
 import { DISCSPELLS } from "General/Modules/Player/DiscPriest/DiscSpellDB";
 
 import LooksOneIcon from "@mui/icons-material/LooksOne";
-import { EVOKERSPELLDB, baseTalents } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerSpellDB";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -109,12 +108,6 @@ export default function SequenceGenerator(props) {
           <div className={classes.root}>
             <Grid container spacing={1}>
               <Grid item xs={12}>
-                <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
-                  {/* // TODO Translate */}
-                  Sequencer
-                </Typography>
-              </Grid>
-              <Grid item xs={12}>
                 <Paper padding={0} style={{ padding: "10px 5px 10px 10px" }}>
                   <Grid container spacing={1}>
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -158,65 +151,36 @@ export default function SequenceGenerator(props) {
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                       <Divider />
                     </Grid>
+
+                {spellCategories.map((cat, index) => 
+                <>
+                <Typography variant="h6" align="left" style={{ width: "100%", padding: "25px 10px 5px 10px" }} color="primary">
+                    {cat + " Spells"}
+                </Typography>
+
+                    {spellList[cat].map((spell, i) => 
+                        <Grid item xs={12} sm={12} md={1} lg={1} xl={1} key={i}>
+                        <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id}>
+                        <img
+                            height={40}
+                            width={40}
+                            src={ require("Images/Spells/" + spellDB[spell][0].spellData.icon + ".jpg").default || "" }
+                            alt=""
+                            onClick={(e) => addSpell(spell, e)}
+                            style={{
+                            borderRadius: 4,
+                            borderWidth: "1px",
+                            borderStyle: "solid",
+                            borderColor: "#ff8000",
+                            marginRight: 0,
+                            }}
+                            />
+                        </a>
+                    </Grid>
+                    )}
+                </>
+            )}
     
-                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                      <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                        {"Healing Spells"}
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                      <Grid container spacing={1}>
-                        {healSpells.map((spell, index) => (
-                          <Grid item xs="auto" key={index}>
-                            <a data-wowhead={"spell=" + EVOKERSPELLDB[spell][0].spellData.id}>
-                              <img
-                                height={40}
-                                width={40}
-                                src={require("Images/Spells/" + EVOKERSPELLDB[spell][0].spellData.icon + ".jpg").default || ""}
-                                alt=""
-                                onClick={(e) => addSpell(spell, e)}
-                                style={{
-                                  borderRadius: 4,
-                                  borderWidth: "1px",
-                                  borderStyle: "solid",
-                                  borderColor: "#ff8000",
-                                  marginRight: 0,
-                                }}
-                              />
-                            </a>
-                          </Grid>
-                        ))}
-                      </Grid>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                      <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                        {"DPS Spells"}
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                      <Grid container spacing={1}>
-                        {dpsSpells.map((spell, index) => (
-                          <Grid item xs="auto" key={index}>
-                            <a data-wowhead={"spell=" + EVOKERSPELLDB[spell][0].spellData.id}>
-                              <img
-                                height={40}
-                                width={40}
-                                src={require("Images/Spells/" + EVOKERSPELLDB[spell][0].spellData.icon + ".jpg").default || ""}
-                                alt=""
-                                onClick={(e) => addSpell(spell, e)}
-                                style={{
-                                  borderRadius: 4,
-                                  borderWidth: "1px",
-                                  borderStyle: "solid",
-                                  borderColor: "#ff8000",
-                                  marginRight: 0,
-                                }}
-                              />
-                            </a>
-                          </Grid>
-                        ))}
-                      </Grid>
-                    </Grid>
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                       <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
                         {"Talents"}
