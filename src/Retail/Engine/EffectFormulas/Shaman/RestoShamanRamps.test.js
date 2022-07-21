@@ -1,13 +1,10 @@
-import { Stats } from 'fs';
-import Player from 'General/Modules/Player/Player';
-import { runCastSequence, allRamps, allRampsHealing } from "./DiscRampUtilities";
-import { getSpellRaw } from "./DiscPriestRamps";
-import { genStatWeights } from './DiscPriestUtilities';
-import { buildRamp } from "./DiscRampGen";
-import { DISCSPELLS } from "./DiscSpellDB";
+import { getSpellRaw, runCastSequence } from "../Shaman/RestoShamanRamps";
+
 
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
+
+/*
 describe("Test Base Spells", () => {
     const errorMargin = 1.1; // There's often some blizzard rounding hijinx in spells. If our formulas are within 1 (a fraction of a percent) then we are likely calculating it correctly.
     const activeStats = {
@@ -61,7 +58,7 @@ describe("Test Base Spells", () => {
 
     // TODO: test more spells.
 });
-
+*/
 describe("Evang Cast Sequence", () => {
     //const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
     /*player.activeStats = {
@@ -73,11 +70,11 @@ describe("Evang Cast Sequence", () => {
             stamina: 1900,
     } */
     const activeStats = {
-        intellect: 1950,
+        intellect: 1300,
         haste: 900,
-        crit: 650,
-        mastery: 400,
-        versatility: 400,
+        crit: 400,
+        mastery: 0,
+        versatility: 450,
         stamina: 0,
 }
     
@@ -87,143 +84,28 @@ describe("Evang Cast Sequence", () => {
     //const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Venthyr Evangelism", ['Rapture'])
     //const evangSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Venthyr Evangelism", ['Rapture'])
     const talents = {
-        // Priest class tree
-        improvedSmite: 2,
-        mindRestrain: 0, // NYI. Requires Alpha. Mind Blast SL absorb just left in for now.
-        throesOfPain: 2,
-        puppetMaster: 2,
-        improvedShadowfiend: false,
-        mindbender: true,
-        rabidShadows: 0,
-
-        mindgames: true,
-
-
-        // Disc spec tree
-        // Tier 1
-        shiningRadiance: 0,
-        shieldDiscipline: false,
-        powerWordSolace: false,
-        maliciousScission: false,
-
-        // Tier 2
-        contrition: 0,
-        purgeTheWicked: false,
-        darkIndulgence: 0,
-        revelInPurity: 0,
-        castigation: 0,
-        rapture: false,
-        sinsOfTheMany: 0,
-        shadowCovenant: 0,
-        embraceShadow: 0,
-        maliciousScission: false,
-
-        // Tier 3
-        evangelism: true,
-        spiritShell: false,
-        exaltation: false, // lol
-        divineStar: false,
-        halo: false,
-        evenfall: 0,
-        lessonInHumility: 0,
-        lenience: 0,
-        twilightEmpowerment: 0,
-        harshDiscipline: false,
-        indemnity: false, // +2s Atonement duration on PW:S.
-        lightsWrath: true,
-        solatium: false, // +2s Atonement duration on Shadow Mend.
-        wickedness: false,
-        stolenPsyche: 0,
-
+        
     };
-
-    const imprTalents = {
-        // Priest class tree
-        improvedSmite: 2,
-        mindRestrain: 0, // NYI. Requires Alpha. Mind Blast SL absorb just left in for now.
-        throesOfPain: 2,
-        puppetMaster: 2,
-        improvedShadowfiend: true,
-        mindbender: true,
-        rabidShadows: 2,
-
-        mindgames: true,
-
-
-        // Disc spec tree
-        // Tier 1
-        shiningRadiance: 0,
-        shieldDiscipline: false,
-        powerWordSolace: false,
-        maliciousScission: false,
-
-        // Tier 2
-        contrition: 2,
-        purgeTheWicked: true,
-        darkIndulgence: 2,
-        revelInPurity: 0,
-        castigation: 1,
-        rapture: true,
-        sinsOfTheMany: 2,
-        shadowCovenant: 0,
-        embraceShadow: 0,
-        maliciousScission: false,
-        swiftPenitence: 0,
-
-        // Tier 3
-        evangelism: true,
-        spiritShell: false,
-        exaltation: false, // lol
-        divineStar: false,
-        halo: false,
-        evenfall: 0,
-        lessonInHumility: 0,
-        lenience: 0,
-        twilightEmpowerment: 0,
-        harshDiscipline: false,
-        indemnity: false, // +2s Atonement duration on PW:S
-        solatium: false,// +2s Atonement duration on Shadowmend
-        wickedness: false,
-        stolenPsyche: 0,
-        lightsWrath: true,
-
-    };
-
-    /*const seq = ["Shadow Word: Pain", "Rapture", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
-                    "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
-                    "Power Word: Radiance", "Power Word: Radiance", "Evangelism", "Mindbender", "Schism", "Mindgames", "Penance", "Mind Blast", 
-                    "Smite", "Smite", "Smite", "Penance", "Smite", "Smite", "Smite", "Smite"]; 
-
-    const seq2 = ["Purge the Wicked", "Rapture", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
-        "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
-        "Power Word: Radiance", "Power Word: Radiance", "Evangelism", "Mindbender", "Schism", "Mindgames", "Penance", "Mind Blast", 
-        "Smite", "Smite", "Smite", "Penance", "Smite", "Smite", "Smite", "Smite"];  */
-    //const seq = ["Penance"];
-    //console.log(evangSeq)
 
     const print = (name, base, healing) => {
         let percInc = Math.round(10000*(healing / base - 1))/100;
         console.log(name + ": " + healing + " (+" + percInc + "%)")
     }
 
+    const seq = ["Cloudburst Totem", "Wellspring"] 
 
     test("Test Stuff", () => {
 
         //const baseline = allRamps(evangSeq, fiendSeq, activeStats, {"playstyle": "Venthyr Evangelism", "Power of the Dark Side": true, true);
 
-        //console.log("Baseline: " + JSON.stringify(runCastSequence(seq, activeStats, {}, talents)))
 
-        const seq = buildRamp('Primary', 10, [], activeStats.haste, "", [], talents)
-        const seq2 = buildRamp('Primary', 10, [], activeStats.haste, "", [], {...talents, purgeTheWicked: true})
-        const seq3 = buildRamp('Primary', 10, [], activeStats.haste, "", [], {...talents, rapture: true})
+        //console.log(seq);
 
-        console.log(seq);
-
-        const settings = {'Power of the Dark Side': true}
-        const baseline = allRampsHealing(seq, activeStats, settings, talents)
+        const settings = {}
+        const baseline = runCastSequence(seq, activeStats, settings, talents)
         //const baseline = allRamps(runCastSequence(seq, activeStats, settings, talents).totalHealing)
-        console.log("Baseline: " + baseline);
-
+        console.log("Baseline: " + JSON.stringify(baseline));
+        /*
         print("Indemnity", baseline, allRampsHealing(seq, activeStats, settings, {...talents, indemnity: true}))
         print("Rapture", baseline, allRampsHealing(seq3, activeStats, settings, {...talents, rapture: true}))
         print("Exaltation & Rapture", baseline, allRampsHealing(seq3, activeStats, settings, {...talents, rapture: true, exaltation: true}))
@@ -245,7 +127,7 @@ describe("Evang Cast Sequence", () => {
                 revelInPurity: 2, purgeTheWicked: true, lessonInHumility: 2, evenfall: 2, indemnity: true}))
         print("PtW / Swift Pen / Lesson in Humi / Evenfall / LW / Indem", baseline, allRampsHealing(seq2, activeStats, settings, {...imprTalents, 
                 swiftPenitence: 2, purgeTheWicked: true, lessonInHumility: 2, evenfall: 2, indemnity: true}))                                                            
-        
+        */
         //console.log(allRamps(seq, activeStats, settings, {...talents, stolenPsyche: 2}, true))
         //runCastSequence(seq, activeStats, settings, conduits);
 

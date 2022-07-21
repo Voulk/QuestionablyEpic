@@ -55,16 +55,25 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 200,
-        coeff: 0.497025, // 0.47 x 1.5 (smite rank 2) x 0.75 (smite aura nerf) x 0.94 (disc aura nerf)
+        coeff: 0.33135, // 0.75 (smite aura nerf) x 0.94 (disc aura nerf)
         cooldown: 0,
         atoneOverheal: 0.28,
+        secondaries: ['crit', 'vers'],
+    }],
+    "Light's Wrath": [{
+        type: "damage",
+        castTime: 2.5,
+        cost: 0,
+        coeff: 1.75, // This is almost definitely incorrect.
+        cooldown: 90,
+        atoneOverheal: 0.33,
         secondaries: ['crit', 'vers'],
     }],
     "Mindgames": [{
         type: "damage",
         castTime: 1.5,
         cost: 1000,
-        coeff: 2.397, // 3 x 0.94 (disc aura nerf) x 0.85 (Mindgames specific aura nerf)
+        coeff: 2.54, // 3 x 0.94 (disc aura nerf) x 0.85 (Mindgames specific aura nerf)
         cooldown: 40,
         atoneOverheal: 0.23,
         secondaries: ['crit', 'vers'],
@@ -86,6 +95,16 @@ export const DISCSPELLS = {
         buffDuration: 9,
         atoneOverheal: 0.28,
         secondaries: ['crit', 'vers'],
+    },
+    {
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        buffDuration: 9,
+        buffType: "special",
+        value: 1.25,
+        name: "Schism",
+        canStack: false,
     }],
     "Penance": [{
         type: "special",
@@ -236,16 +255,10 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 900,
-        coeff: 0.21,
         aura: 1,
+        coeff: 0.21,
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.2,
-        dot: { // Replaced and now unused.
-            tickRate: 2,
-            coeff: 0.12,
-            aura: 1,
-            duration: 26, // 20 x 1.3
-        }
+        atoneOverheal: 0.15,
     },
     {
         castTime: 0,
@@ -254,7 +267,7 @@ export const DISCSPELLS = {
         coeff: 0.12, // 
         tickRate: 2,
         buffDuration: 26,
-        atoneOverheal: 0.2,
+        atoneOverheal: 0.15,
         secondaries: ['crit', 'vers'], // + Haste
         canPartialTick: true,
     }],
@@ -265,13 +278,6 @@ export const DISCSPELLS = {
         coeff: 0.1292,
         aura: 1,
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.2,
-        dot: { // Now unused. Will remove in a few updates. 
-            tickRate: 2,
-            coeff: 0.09588,
-            aura: 1,
-            duration: 15.6, // 12 x 1.3
-        }
     },
     {
         castTime: 0,
@@ -279,25 +285,20 @@ export const DISCSPELLS = {
         buffType: "damage",
         coeff: 0.09588, // 
         tickRate: 2,
-        buffDuration: 15.6,
-        atoneOverheal: 0.07,
+        buffDuration: 20.8,
+        atoneOverheal: 0.15,
         secondaries: ['crit', 'vers'], // + Haste
         canPartialTick: true,
     }],
-    "Shadowfiend": [/*{
+    "Shadowfiend": [{
         type: "",
         castTime: 1.5,
         cost: 900,
-        coeff: 0.13,
+        coeff: 0.46, // Unused. Change coefficient below instead.
         aura: 1,
         secondaries: ['crit', 'vers'],
         atoneOverheal: 0.22,
-        dot: {
-            tickRate: 1.5,
-            coeff: 0.46,
-            duration: 15,
-        }
-    },*/
+    },
     {
         castTime: 1.5,
         cost: 900,
@@ -306,6 +307,27 @@ export const DISCSPELLS = {
         coeff: 0.46, // 
         tickRate: 1.5,
         buffDuration: 15,
+        atoneOverheal: 0.22,
+        secondaries: ['crit', 'vers'], // Shadowfiend scales with Haste but the DoT / HoT function will handle that. 
+        canPartialTick: false,
+    }],
+    "Mindbender": [{
+        type: "",
+        castTime: 1.5,
+        cost: 900,
+        coeff: 0.34,
+        aura: 1,
+        secondaries: ['crit', 'vers'],
+        atoneOverheal: 0.22,
+    },
+    {
+        castTime: 0,
+        cost: 0,
+        type: "buff",
+        buffType: "damage",
+        coeff: 0.34, // 
+        tickRate: 1.5,
+        buffDuration: 12,
         atoneOverheal: 0.22,
         secondaries: ['crit', 'vers'], // Shadowfiend scales with Haste but the DoT / HoT function will handle that. 
         canPartialTick: false,

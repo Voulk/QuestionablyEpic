@@ -1,9 +1,8 @@
 
 import { allRampsHealing } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
-import { buildRamp } from "./DiscRampGen";
+import { buildRamp } from "./HolyPaladinRampGen";
 
 export const getRampData = (playerStats, playerTrinkets, playstyle) => {
-    /*
     const rampTime = 180;
 
     // Baselines
@@ -33,8 +32,7 @@ export const getRampData = (playerStats, playerTrinkets, playstyle) => {
         penitentOne: (penitentOne - discBaseline) / rampTime, 
         shadowWordManip: (shadowWordManip - discBaseline) / rampTime,
     }
-    return rampData; */
-    return {};
+    return rampData;
 
 }
 
