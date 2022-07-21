@@ -88,9 +88,7 @@ export default function SequenceGenerator(props) {
 }
 
     const addSpell = (spell) => {
-
         setSeq([...seq, spell]);
-        console.log(seq);
     }
 
     const clearSeq = () => {
