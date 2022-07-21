@@ -13,15 +13,15 @@ import { DISCSPELLS } from "General/Modules/Player/DiscPriest/DiscSpellDB";
 import LooksOneIcon from "@mui/icons-material/LooksOne";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    [theme.breakpoints.down("md")]: {
-      margin: "auto",
-      width: "100%",
-      justifyContent: "center",
-      display: "block",
-      marginTop: 140,
-    },
-    [theme.breakpoints.up("sm")]: {
+    root: {
+      [theme.breakpoints.down("md")]: {
+        margin: "auto",
+        width: "100%",
+        justifyContent: "center",
+        display: "block",
+        marginTop: 140,
+      },
+      [theme.breakpoints.up("sm")]: {
         margin: "auto",
         width: "80%",
         justifyContent: "center",
@@ -69,9 +69,9 @@ export default function SequenceGenerator(props) {
     const [talents, settalents] = useState({...baseTalents});
     const [result, setResult] = useState({totalDamage: 0, totalHealing: 0, hpm: 0})
 
-    const spellList = {"Damage":  Object.keys(spellDB).filter(spell => spellDB[spell][0].type === "damage"|| spell === "Penance"),
-                    "Healing": Object.keys(spellDB).filter(spell => spellDB[spell][0].type === "heal" ),
-                    "Cooldowns & Other": []}
+    const spellList = {"Damage":  Object.keys(spellDB).filter(spell => spellDB[spell][0].spellData.cat === "damage"),
+                    "Healing": Object.keys(spellDB).filter(spell => spellDB[spell][0].spellData.cat === "heal"),
+                    "Cooldowns & Other": Object.keys(spellDB).filter(spell => spellDB[spell][0].spellData.cat === "cooldown")}
     const dpsSpells = []
     const healSpells = []
 
@@ -108,7 +108,7 @@ export default function SequenceGenerator(props) {
           <div className={classes.root}>
             <Grid container spacing={1}>
               <Grid item xs={12}>
-                <Paper padding={0} style={{ padding: "10px 5px 10px 10px" }}>
+                <Paper padding={0} style={{ padding: "10px 5px 10px 10px", opacity: 100, backgroundColor: 'transparent'}}>
                   <Grid container spacing={1}>
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                       <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
@@ -117,7 +117,7 @@ export default function SequenceGenerator(props) {
                     </Grid>
     
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                      <Paper style={{ backgroundColor: "#525252", padding: "8px 8px 4px 8px" }} elevation={0}>
+                      <Paper style={{ padding: "8px 8px 4px 8px" }} elevation={0}>
                         <Grid container spacing={1} alignItems="center">
                           <Grid item xs="auto">
                             <LooksOneIcon fontSize="large" />
@@ -126,11 +126,11 @@ export default function SequenceGenerator(props) {
                           {seq.map((spell, index) => {
                             return (
                               <Grid item xs="auto" key={index}>
-                                <a data-wowhead={"spell=" + EVOKERSPELLDB[spell][0].spellData.id}>
+                                <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id}>
                                   <img
                                     height={40}
                                     width={40}
-                                    src={require("Images/Spells/" + EVOKERSPELLDB[spell][0].spellData.icon + ".jpg").default || ""}
+                                    src={require("Images/Spells/" + spellDB[spell][0].spellData.icon + ".jpg").default || ""}
                                     alt=""
                                     style={{
                                       borderRadius: 4,
@@ -159,7 +159,8 @@ export default function SequenceGenerator(props) {
                 </Typography>
 
                     {spellList[cat].map((spell, i) => 
-                        <Grid item xs={12} sm={12} md={1} lg={1} xl={1} key={i}>
+                        <Grid item xs={1} sm={1} md={1} lg={1} xl={1} key={i}>
+                        <Grid container spacing={1}>
                         <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id}>
                         <img
                             height={40}
@@ -176,6 +177,7 @@ export default function SequenceGenerator(props) {
                             }}
                             />
                         </a>
+                        </Grid>
                     </Grid>
                     )}
                 </>
