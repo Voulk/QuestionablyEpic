@@ -55,10 +55,10 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
   const { t } = useTranslation();
   let origValue = ls
     .get("healerInfo")
-    .filter((filter) => props.rowData[name] === filter.name && props.rowData[nameClass] === filter.class)
-    .map((obj, i) => i)
-    .toString();
-  const [value, setValue] = useState(origValue || props.rowData[name] || props.value || "");
+    .map((obj, i) => obj.name + obj.class)
+    .indexOf(props.rowData[name] + props.rowData[nameClass]);
+
+  const [value, setValue] = useState(origValue >= 0 ? origValue : props.rowData[name] || props.value || "");
   const nameValidation = ls.get("healerInfo").map((key, i) => key.name);
   return (
     <StyledEngineProvider injectFirst>
