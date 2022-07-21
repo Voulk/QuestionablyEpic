@@ -128,27 +128,25 @@ export default function SequenceGenerator(props) {
                             <LooksOneIcon fontSize="large" />
                             </Grid> */}
 
-                      {seq.map((spell, index) => {
-                        return (
-                          <Grid item xs="auto" key={index}>
-                            <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id}>
-                              <img
-                                height={40}
-                                width={40}
-                                src={require("Images/Spells/" + spellDB[spell][0].spellData.icon + ".jpg").default || ""}
-                                alt=""
-                                style={{
-                                  borderRadius: 4,
-                                  borderWidth: "1px",
-                                  borderStyle: "solid",
-                                  borderColor: "#008CFF",
-                                  marginRight: 0,
-                                }}
-                              />
-                            </a>
-                          </Grid>
-                        );
-                      })}
+                      {seq.map((spell, index) => (
+                        <Grid item xs="auto" key={index}>
+                          <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id}>
+                            <img
+                              height={40}
+                              width={40}
+                              src={require("Images/Spells/" + spellDB[spell][0].spellData.icon + ".jpg").default || ""}
+                              alt=""
+                              style={{
+                                borderRadius: 4,
+                                borderWidth: "1px",
+                                borderStyle: "solid",
+                                borderColor: "#008CFF",
+                                marginRight: 0,
+                              }}
+                            />
+                          </a>
+                        </Grid>
+                      ))}
                     </Grid>
                   </Paper>
                 </Grid>
