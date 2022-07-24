@@ -5,7 +5,7 @@ import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
 import { getEffectValue } from "../../Retail/Engine/EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
-import { bonus_IDs } from "Retail/Engine/BonusIDs"
+import { bonus_IDs } from "Retail/Engine/BonusIDs";
 import { translatedStat, STATDIMINISHINGRETURNS } from "./STAT";
 import Item from "../Modules/Player/Item";
 // import { useTranslation } from "react-i18next";
@@ -156,7 +156,16 @@ export function filterItemListBySource(itemList, sourceInstance, sourceBoss, lev
   let temp = itemList.filter(function (item) {
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
-    if (itemEncounter == 2457 || itemEncounter == 2467 || itemEncounter == 2464) expectedItemLevel += 7;
+    if (
+      itemEncounter == 2425 || // Stone Legion Generals
+      itemEncounter == 2424 || // Sire Denathrius
+      itemEncounter == 2440 || // Kel'Thuzad
+      itemEncounter == 2441 || // Sylvanas Windrunner
+      itemEncounter == 2457 || // Lords of Dread
+      itemEncounter == 2467 || // Rygelon
+      itemEncounter == 2464 // The Jailer
+    )
+      expectedItemLevel += 7;
     if (itemEncounter == 2456) expectedItemLevel = 233; // Mor'geth
     if (itemEncounter == 2468) expectedItemLevel = 259; // Antros
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
@@ -239,24 +248,21 @@ export function getItem(id, gameType = "Retail") {
   else return "";
 }
 
-
-
 export function applyDiminishingReturns(stats) {
   //console.log("Stats Pre-DR" + JSON.stringify(stats));
   const diminishedStats = JSON.parse(JSON.stringify(stats));
   for (const [key, value] of Object.entries(stats)) {
     if (["crit", "haste", "mastery", "versatility", "leech"].includes(key)) {
-
       const DRBreakpoints = STATDIMINISHINGRETURNS[key.toUpperCase()];
-  
+
       const baseStat = diminishedStats[key];
       for (var j = 0; j < DRBreakpoints.length; j++) {
         diminishedStats[key] -= Math.max((baseStat - DRBreakpoints[j]) * 0.1, 0);
       }
-    } 
+    }
   }
   //console.log("Stats Post-DR" + JSON.stringify(diminishedStats));
-    
+
   return diminishedStats;
 }
 
@@ -436,7 +442,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
       //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
       stats[key] = Math.round(rand_prop * allocation * 0.0001 * combat_mult);
     } else if (key === "intellect") {
-      stats[key] = Math.round((rand_prop * allocation * 0.0001) * 1);
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1);
     } else if (key === "stamina") {
       // todo
     }
@@ -469,13 +475,12 @@ export function getLegendaryID(tag) {
   for (const prop in bonus_IDs) {
     const entry = bonus_IDs[prop];
 
-    if ('effect' in entry && entry.effect !== null && 'spell' in entry.effect) {
-        if (entry.effect.spell.name === tag) legendaryID = prop;
-    }   
+    if ("effect" in entry && entry.effect !== null && "spell" in entry.effect) {
+      if (entry.effect.spell.name === tag) legendaryID = prop;
+    }
   }
   return legendaryID;
 }
-
 
 export function buildStatString(stats, effect, lang = "en") {
   let statString = "";
@@ -630,8 +635,8 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
   let item_stats = { ...item.stats };
 
   // Check if Dom Slot
-  if (item.hasDomSocket && 'domGemID' in item && item.domGemID != 0) {
-    const effect = getDomGemEffect(item.domGemID)
+  if (item.hasDomSocket && "domGemID" in item && item.domGemID != 0) {
+    const effect = getDomGemEffect(item.domGemID);
     bonus_stats = getEffectValue(effect, player, player.getActiveModel(contentType), contentType, item.level, {}, gameType, player.activeStats);
   }
   // Calculate Effect.
@@ -657,7 +662,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
 
   // Add any bonus DPS. This is valued 1:1 with bonus HPS in dungeons only.
   if (contentType === "Dungeon" && "bonus_stats" in item_stats && "dps" in bonus_stats) {
-    score += (bonus_stats.dps * 1.5 / player.getHPS(contentType)) * player.activeStats.intellect;
+    score += ((bonus_stats.dps * 1.5) / player.getHPS(contentType)) * player.activeStats.intellect;
   }
 
   // Add any bonus Mana
