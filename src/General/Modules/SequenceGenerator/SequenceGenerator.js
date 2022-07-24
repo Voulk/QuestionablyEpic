@@ -130,12 +130,12 @@ export default function SequenceGenerator(props) {
 
   const onDragStart = (e, spell) => {
     e.dataTransfer.setData("text/plain", spell);
-    // clearing the wowhead tooltip so it doesn't block the drop location
+    // clearing the wowhead tooltip so it doesn't block the drop location and doesn't trigger the chrome drag bug
     $WowheadPower.clearTouchTooltip();
   }
 
-  // required for dnd to work
   const onDragOver = e => {
+    // required for dnd to work
     e.preventDefault();
   }
 
@@ -153,8 +153,7 @@ export default function SequenceGenerator(props) {
                 </Grid>
 
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                  <Paper style={{ padding: "8px 8px 4px 8px" }} elevation={0}> {
-                  }
+                  <Paper style={{ padding: "8px 8px 4px 8px" }} elevation={0}>
                     <Grid container spacing={1} alignItems="center" className="backgroundDropTarget" onDragOver={onDragOver} onDrop={onDrop}>
                       {/*<Grid item xs="auto">
                             <LooksOneIcon fontSize="large" />
