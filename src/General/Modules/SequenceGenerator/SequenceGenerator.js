@@ -76,8 +76,6 @@ export default function SequenceGenerator(props) {
   const dpsSpells = [];
   const healSpells = [];
 
-  console.log(healSpells);
-
   const stats = {
     intellect: 2000,
     haste: 600,
@@ -91,6 +89,15 @@ export default function SequenceGenerator(props) {
 
   const addSpell = (spell) => {
     setSeq([...seq, spell]);
+  };
+
+  const insertSpellAtIndex = (spell, index) => {
+    const editSeq = [
+      ...seq.slice(0, index),
+      spell,
+      ...seq.slice(index)
+    ];
+    setSeq(editSeq);
   };
 
   const clearSeq = () => {
@@ -108,6 +115,30 @@ export default function SequenceGenerator(props) {
     setSeq(buildRamp("Primary", 10, [], stats.haste, "", discTalents));
   };
 
+  const onDrop = (e, index = null) => {
+    e.preventDefault();
+    const spell = e.dataTransfer.getData("text");
+    if (spell === null)
+      return;
+
+    // The dropping behavior is a bit weird, dropping an item on top of a spell will trigger both the spell drop & background drop so we have to circumvent double insertions
+    if (e.target.className.includes("backgroundDropTarget"))
+      addSpell(spell);
+    else if (index !== null)
+      insertSpellAtIndex(spell, index);
+  }
+
+  const onDragStart = (e, spell) => {
+    e.dataTransfer.setData("text/plain", spell);
+    // clearing the wowhead tooltip so it doesn't block the drop location
+    $WowheadPower.clearTouchTooltip();
+  }
+
+  // required for dnd to work
+  const onDragOver = e => {
+    e.preventDefault();
+  }
+
   return (
     <div style={{ backgroundColor: "#313131" }}>
       <div className={classes.root}>
@@ -122,15 +153,16 @@ export default function SequenceGenerator(props) {
                 </Grid>
 
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                  <Paper style={{ padding: "8px 8px 4px 8px" }} elevation={0}>
-                    <Grid container spacing={1} alignItems="center">
+                  <Paper style={{ padding: "8px 8px 4px 8px" }} elevation={0}> {
+                  }
+                    <Grid container spacing={1} alignItems="center" className="backgroundDropTarget" onDragOver={onDragOver} onDrop={onDrop}>
                       {/*<Grid item xs="auto">
                             <LooksOneIcon fontSize="large" />
                             </Grid> */}
 
                       {seq.map((spell, index) => (
-                        <Grid item xs="auto" key={index}>
-                          <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id}>
+                        <Grid item xs="auto" key={index} onDragOver={onDragOver} onDrop={(e) => { onDrop(e, index) }}>
+                          <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id} style={{ display: "flex" }}>
                             <img
                               height={40}
                               width={40}
@@ -165,9 +197,10 @@ export default function SequenceGenerator(props) {
                       </Grid>
                       <Grid container spacing={1}>
                         {spellList[cat].map((spell, i) => (
-                          <Grid item xs="auto" key={index}>
-                            <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id}>
+                          <Grid item xs="auto" key={spellDB[spell][0].spellData.id}>
+                            <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id} style={{ display: "flex" }} draggable onDragStart={(e) => { onDragStart(e, spell) }}>
                               <img
+                                draggable="false" // lets drag the whole thing instead of just the image
                                 height={40}
                                 width={40}
                                 src={require("Images/Spells/" + spellDB[spell][0].spellData.icon + ".jpg").default || ""}
@@ -236,7 +269,7 @@ export default function SequenceGenerator(props) {
 
                 <Grid item xs={12}>
                   <Button
-                    key={321}
+                    key={322}
                     variant="contained"
                     onClick={() => autoGen()}
                     color="secondary"
