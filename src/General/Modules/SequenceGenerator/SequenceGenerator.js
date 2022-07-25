@@ -218,8 +218,8 @@ export default function SequenceGenerator(props) {
                             </Grid> */}
 
                       {seq.map((spell, index) => (
-                        <Grid item xs="auto" key={index} draggable onDragOver={onDragOver} onDragEnd={dropMove} onDrop={dropInsertion} onDragStart={(e) => { dragStart(e, index) }} onDragEnter={(e) => { dragEnter(e, index) }} >
-                          <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id} style={{ display: "flex" }}>
+                        <Grid item xs="auto" key={index} onDragOver={onDragOver} onDragEnd={dropMove} onDrop={dropInsertion} onDragEnter={(e) => { dragEnter(e, index) }} >
+                          <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id} style={{ display: "flex" }} draggable onDragStart={(e) => { dragStart(e, index) }}>
                             <img
                               draggable="false"
                               height={40}
