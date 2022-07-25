@@ -6,9 +6,11 @@ import makeStyles from "@mui/styles/makeStyles";
 
 import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
 import { runCastSequence as discSequence } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { runCastSequence as shamanSequence } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanRamps";
 
 import { EVOKERSPELLDB, baseTalents } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerSpellDB";
 import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/DiscPriest/DiscSpellDB";
+import { SHAMANSPELLDB } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanSpellDB";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 import LooksOneIcon from "@mui/icons-material/LooksOne";
@@ -47,11 +49,13 @@ const useStyles = makeStyles((theme) => ({
 const getSpellDB = (spec) => {
   if (spec === "Preservation Evoker") return EVOKERSPELLDB;
   if (spec === "Discipline Priest") return DISCSPELLS;
+  if (spec === "Restoration Shaman") return SHAMANSPELLDB;
 };
 
 const getSequence = (spec) => {
   if (spec === "Preservation Evoker") return evokerSequence;
-  else if (spec === "Discipline Priest") return discSequence;
+  if (spec === "Discipline Priest") return discSequence;
+  if (spec === "Restoration Shaman") return shamanSequence;
 };
 
 const dpsSpells = Object.keys(EVOKERSPELLDB).filter((spell) => EVOKERSPELLDB[spell][0].type === "damage");
@@ -69,9 +73,9 @@ export default function SequenceGenerator(props) {
   const [result, setResult] = useState({ totalDamage: 0, totalHealing: 0, hpm: 0 });
 
   const spellList = {
-    Damage: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData.cat === "damage"),
-    Healing: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData.cat === "heal"),
-    "Cooldowns & Other": Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData.cat === "cooldown"),
+    Damage: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "damage"),
+    Healing: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "heal"),
+    "Cooldowns & Other": Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "cooldown"),
   };
   const dpsSpells = [];
   const healSpells = [];
