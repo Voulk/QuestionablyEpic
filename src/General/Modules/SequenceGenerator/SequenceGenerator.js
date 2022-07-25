@@ -115,6 +115,8 @@ export default function SequenceGenerator(props) {
     setSeq(buildRamp("Primary", 10, [], stats.haste, "", discTalents));
   };
 
+  //#region Drag and Drop Functions
+  // TODO: drag and drop within the sequence itself
   const onDrop = (e, index = null) => {
     e.preventDefault();
     const spell = e.dataTransfer.getData("text");
@@ -138,6 +140,7 @@ export default function SequenceGenerator(props) {
     // required for dnd to work
     e.preventDefault();
   }
+  //#endregion
 
   return (
     <div style={{ backgroundColor: "#313131" }}>
@@ -163,6 +166,7 @@ export default function SequenceGenerator(props) {
                         <Grid item xs="auto" key={index} onDragOver={onDragOver} onDrop={(e) => { onDrop(e, index) }}>
                           <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id} style={{ display: "flex" }}>
                             <img
+                              draggable="false"
                               height={40}
                               width={40}
                               src={require("Images/Spells/" + spellDB[spell][0].spellData.icon + ".jpg").default || ""}
