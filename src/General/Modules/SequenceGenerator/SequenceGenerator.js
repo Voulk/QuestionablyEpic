@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactGA from "react-ga";
 import { useTranslation } from "react-i18next";
 import { Grid, Button, Typography, Tooltip, Paper, Divider } from "@mui/material";
@@ -116,25 +116,72 @@ export default function SequenceGenerator(props) {
   };
 
   //#region Drag and Drop Functions
-  // TODO: drag and drop within the sequence itself
-  const onDrop = (e, index = null) => {
-    e.preventDefault();
-    const spell = e.dataTransfer.getData("text");
-    if (spell === null)
+  const dragSpell = useRef();
+  const dragOverSpell = useRef();
+  /**
+   * Drag and Drop inside of the Sequence.
+   * Moves the drag target to the location of a different spell
+   * using their indexes.
+   *  
+   * @param {*} e
+   */
+  const dropMove = e => {
+    const copySeq = [...seq];
+    if (dragSpell.current === null || dragOverSpell.current === null)
       return;
 
+    if (Number.isInteger(dragSpell.current)) {
+      const dragItemContent = copySeq[dragSpell.current];
+      copySeq.splice(dragSpell.current, 1);
+      copySeq.splice(dragOverSpell.current, 0, dragItemContent);
+      setSeq(copySeq);
+    }
+
+    dragSpell.current = null;
+    dragOverSpell.current = null;
+  };
+
+  /**
+   * Drag and Drop from outside into the Sequence.
+   * Inserts a spell using the spell name into the list
+   * at the location of your cursor.
+   *  
+   * @param {*} e
+   */
+  const dropInsertion = e => {
+    if (dragSpell.current === null || Number.isInteger(dragSpell.current))
+      return;
+
+    const spell = dragSpell.current;
     // The dropping behavior is a bit weird, dropping an item on top of a spell will trigger both the spell drop & background drop so we have to circumvent double insertions
     if (e.target.className.includes("backgroundDropTarget"))
       addSpell(spell);
-    else if (index !== null)
-      insertSpellAtIndex(spell, index);
+    else if (dragOverSpell.current !== null)
+      insertSpellAtIndex(spell, dragOverSpell.current);
+
+    dragSpell.current = null;
+    dragOverSpell.current = null;
   }
 
-  const onDragStart = (e, spell) => {
-    e.dataTransfer.setData("text/plain", spell);
-    // clearing the wowhead tooltip so it doesn't block the drop location and doesn't trigger the chrome drag bug
+  /**
+   * Saves the picked up spell in a reference so we can use it
+   * whenever we drop the item.
+   * 
+   * @param {*} e 
+   * @param {*} value Either the index or the spell name
+   */
+  const dragStart = (e, value) => {
+    dragSpell.current = value;
     $WowheadPower.clearTouchTooltip();
-  }
+  };
+
+  /**
+   * @param {*} e 
+   * @param {*} position Index of the spell location we're hovering over.
+   */
+  const dragEnter = (e, position) => {
+    dragOverSpell.current = position;
+  };
 
   const onDragOver = e => {
     // required for dnd to work
@@ -156,14 +203,14 @@ export default function SequenceGenerator(props) {
                 </Grid>
 
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                  <Paper style={{ padding: "8px 8px 4px 8px" }} elevation={0}>
-                    <Grid container spacing={1} alignItems="center" className="backgroundDropTarget" onDragOver={onDragOver} onDrop={onDrop}>
+                  <Paper style={{ padding: "8px 8px 4px 8px", minHeight: 40 }} elevation={0}>
+                    <Grid container spacing={1} alignItems="center" className="backgroundDropTarget" onDragOver={onDragOver} onDrop={dropInsertion}>
                       {/*<Grid item xs="auto">
                             <LooksOneIcon fontSize="large" />
                             </Grid> */}
 
                       {seq.map((spell, index) => (
-                        <Grid item xs="auto" key={index} onDragOver={onDragOver} onDrop={(e) => { onDrop(e, index) }}>
+                        <Grid item xs="auto" key={index} draggable onDragOver={onDragOver} onDragEnd={dropMove} onDrop={dropInsertion} onDragStart={(e) => { dragStart(e, index) }} onDragEnter={(e) => { dragEnter(e, index) }} >
                           <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id} style={{ display: "flex" }}>
                             <img
                               draggable="false"
@@ -201,7 +248,7 @@ export default function SequenceGenerator(props) {
                       <Grid container spacing={1}>
                         {spellList[cat].map((spell, i) => (
                           <Grid item xs="auto" key={spellDB[spell][0].spellData.id}>
-                            <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id} style={{ display: "flex" }} draggable onDragStart={(e) => { onDragStart(e, spell) }}>
+                            <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id} style={{ display: "flex" }} draggable onDragStart={(e) => { dragStart(e, spell) }}>
                               <img
                                 draggable="false" // lets drag the whole thing instead of just the image
                                 height={40}
