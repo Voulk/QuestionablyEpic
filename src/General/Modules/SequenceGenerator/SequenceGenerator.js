@@ -104,6 +104,14 @@ export default function SequenceGenerator(props) {
     setSeq(editSeq);
   };
 
+  const moveSpell = (indexOld, indexNew) => {
+    const editSeq = [...seq];
+    const dragItemContent = editSeq[indexOld];
+    editSeq.splice(indexOld, 1);
+    editSeq.splice(indexNew, 0, dragItemContent);
+    setSeq(editSeq);
+  };
+
   const clearSeq = () => {
     setSeq([]);
   };
@@ -130,15 +138,11 @@ export default function SequenceGenerator(props) {
    * @param {*} e
    */
   const dropMove = e => {
-    const copySeq = [...seq];
     if (dragSpell.current === null || dragOverSpell.current === null)
       return;
 
     if (Number.isInteger(dragSpell.current)) {
-      const dragItemContent = copySeq[dragSpell.current];
-      copySeq.splice(dragSpell.current, 1);
-      copySeq.splice(dragOverSpell.current, 0, dragItemContent);
-      setSeq(copySeq);
+      moveSpell(dragSpell.current, dragOverSpell.current);
     }
 
     dragSpell.current = null;
