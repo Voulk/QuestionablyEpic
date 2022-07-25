@@ -96,6 +96,17 @@ export default function CooldownPlanner(props) {
 
   /* ------------------------------- Loads relevant plan into table ------------------------------- */
   const loadPlanData = (currentBoss, newPlan, currentDif) => {
+    let raid = "";
+    if ([2398, 2418, 2383, 2405, 2402, 2406, 2412, 2417, 2399, 2407].includes(currentBoss)) {
+      raid = 2296;
+    }
+    if ([(2435, 2442, 2439, 2444, 2445, 2443, 2446, 2447, 2440, 2441)].includes(currentBoss)) {
+      raid = 2450;
+    }
+    if ([(2458, 2465, 2470, 2460, 2459, 2461, 2463, 2469, 2457, 2467, 2464)].includes(currentBoss)) {
+      raid = 2481;
+    }
+    setCurrentRaid(raid);
     setCurrentBoss(currentBoss);
     setCurrentPlan(newPlan);
     const bossCooldowns = cooldownObject.getCooldowns(currentBoss, currentDif); // Get List of Plans for the boss
@@ -326,6 +337,7 @@ export default function CooldownPlanner(props) {
                       changeDifficulty={changeDifficulty}
                       currentRaid={currentRaid}
                       changeBoss={changeBoss}
+                      setCurrentRaid={setCurrentRaid}
                     />
                   </Grid>
 

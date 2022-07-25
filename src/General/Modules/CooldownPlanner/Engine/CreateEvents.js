@@ -6,11 +6,17 @@ import createVigilantEvents from "./BossEvents/SepulcherEvents/Vigilant";
 import createXymoxEvents from "./BossEvents/SepulcherEvents/Xymox";
 import createPantheonEvents from "./BossEvents/SepulcherEvents/Pantheon";
 import createDesaugneEvents from "./BossEvents/SepulcherEvents/Desaugne";
+import createShriekwingEvents from "./BossEvents/NathriaEvents/Shriekwing";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData) {
   let returnedEvents = [];
 
   const logGuids = damageTakenData.map((key) => key.ability.guid).concat(debuffs.map((key) => key.ability.guid));
+
+  /* ------------------------------------------ Shriekwing ------------------------------------------ */
+  if (bossID === 2398) {
+    returnedEvents = createShriekwingEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
+  }
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                   Sepulcher of the First Ones                                  */
