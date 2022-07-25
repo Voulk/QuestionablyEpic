@@ -1,5 +1,5 @@
 
-import { SpellcheckRounded } from "@mui/icons-material";
+import { FamilyRestroom, SpellcheckRounded } from "@mui/icons-material";
 import { runHeal, getHaste, runDamage } from "./RestoShamanRamps";
 
 // This is the Rshaman spell database. 
@@ -289,5 +289,33 @@ export const SHAMANSPELLDB = {
     expectedOverheal: 0.19,
     secondaries: ['crit', 'vers', 'mastery']
   }],
+
+}
+
+
+// Adding talents with pure utility benefit is not currently necessary.
+export const shamanTalents = {
+  // Class Talents
+  earthShield: false,
+  fireAndIce: false,
+  focusedInsight: 0,
+
+
+  // Spec Talents
+  waterShield: false,
+  tidalWaves: false,
+  deluge: false,
+  acidRain: false,
+  callOfThunder: false,
+  overflowingShores: 0, // /2
+  lavaSurge: false,
+  flashFlood: 0, // /2
+  waterTotemMastery: false,
+  wavespeakersBlessing: false,
+  masterOfTheElements: false,
+  cloudBurstTotem: false,
+  livingStream: false,
+
+
 
 }

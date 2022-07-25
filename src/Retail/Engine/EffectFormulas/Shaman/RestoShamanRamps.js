@@ -59,10 +59,6 @@ const applyLoadoutEffects = (shamanSpells, settings, talents, state) => {
 const getDamMult = (state, buffs, t, spellName, talents) => {
   let mult = SHAMANCONSTANTS.auraDamageBuff;
 
-  mult *= (buffs.filter((buff) => { return buff.name === "Avenging Wrath" }).length > 0 ? 1.2 : 1);
-
-  if (discSettings.chaosBrand) mult = mult * 1.05; // TODO: Split into Phys / Magic
-
   return mult;
 }
 
@@ -70,8 +66,6 @@ const getDamMult = (state, buffs, t, spellName, talents) => {
  */
 const getHealingMult = (buffs, t, spellName, talents) => {
   let mult = SHAMANCONSTANTS.auraHealingBuff;
-
-  mult *= (buffs.filter(function (buff) { return buff.name === "Avenging Wrath" }).length > 0 ? 1.2 : 1);
 
   return mult;
 }
@@ -116,9 +110,7 @@ const canCastSpell = (state, spellDB, spellName) => {
   const spell = spellDB[spellName][0];
   let miscReq = true;
   const cooldownReq = (state.t > spell.activeCooldown) || !spell.cooldown;
-  if (spellName === "Hammer of Wrath") {
-    if (!checkBuffActive(state.activeBuffs, "Avenging Wrath")) miscReq = false;
-  }
+
   //console.log("Checking if can cast: " + spellName + ": " + cooldownReq)
   return cooldownReq && miscReq;
 }
@@ -135,27 +127,6 @@ export const genSpell = (state, spells) => {
 
   const usableSpells = [...apl].filter(spell => canCastSpell(state, spells, spell));
 
-  /*
-  if (state.holyPower >= 3) {
-      spellName = "Light of Dawn";
-  }
-  else {
-      let possibleCasts = [{name: "Holy Shock", score: 0}, {name: "Flash of Light", score: 0}]
-
-      possibleCasts.forEach(spellData => {
-          if (canCastSpell(state, spells, spellData['name'])) {
-              spellData.score = getSpellHPM(state, spells, spellData['name'])
-          }
-          else {
-              spellData.score = -1;
-          }
-      });
-      possibleCasts.sort((a, b) => (a.score < b.score ? 1 : -1));
-      console.log(possibleCasts);
-      spellName = possibleCasts[0].name;
-  }
-  console.log("Gen: " + spellName + "|");
-  */
   return usableSpells[0];
 
 }
@@ -179,7 +150,6 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
 
   const sequenceLength = 20; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
   const seqType = "Manual" // Auto / Manual.
-  let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
   let nextSpell = 0;
 
   // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
@@ -275,7 +245,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
 
         // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
         else if (spell.type === 'damage') {
-          runDamage(state, spell, spellName, atonementApp)
+          runDamage(state, spell, spellName)
         }
         // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
         else if (spell.type === 'function') {
