@@ -222,16 +222,15 @@ const getDifficultyName = (difficulty) => {
 const getDifficultyBaseLevel = (difficulty) => {
   switch (difficulty) {
     case 0:
-      return 239;
-    case 1:
-      return 252;
-    case 2:
       return 265;
-    case 3:
+    case 1:
       return 278;
+    case 2:
+      return 291;
+    case 3:
+      return 304;
   }
 };
-
 export default function RaidGearContainer(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
