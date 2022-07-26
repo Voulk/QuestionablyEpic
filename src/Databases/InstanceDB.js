@@ -1170,10 +1170,14 @@ export const encounterDB = {
       // 1194, // Tazavesh
       -20, // Tazavesh
       -21, // Tazavesh 2
-      -22, // 1178, // Mechagon Lower
-      -23, // 1178, // Mechagon Upper
-      -24, // 860, // Return to Karazahn Lower
-      -25, // 860, // Return to Karazahn Upper
+
+      -14, // Mechagon Junkyard
+      -15, // Mechagon Workshop
+
+      -26, // Karazhan Lower
+      -27, // Karazhan Upper
+
+
       536, // Grimrail Depot
       558, // Iron Docks
     ],
@@ -1276,7 +1280,7 @@ export const encounterDB = {
         ch: "Tazavesh 2",
       },
     },
-    "-22": {
+    "-14": {
       name: {
         en: "Mechagon Lower",
         fr: "Mechagon Lower",
@@ -1285,7 +1289,7 @@ export const encounterDB = {
         ch: "Mechagon Lower",
       },
     },
-    "-23": {
+    "-15": {
       name: {
         en: "Mechagon Upper",
         fr: "Mechagon Upper",
@@ -1294,7 +1298,7 @@ export const encounterDB = {
         ch: "Mechagon Upper",
       },
     },
-    "-24": {
+    "-26": {
       name: {
         en: "Return to Karazahn Lower",
         fr: "Return to Karazahn Lower",
@@ -1303,7 +1307,7 @@ export const encounterDB = {
         ch: "Return to Karazahn Lower",
       },
     },
-    "-25": {
+    "-27": {
       name: {
         en: "Return to Karazahn Upper",
         fr: "Return to Karazahn Upper",
