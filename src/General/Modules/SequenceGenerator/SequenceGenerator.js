@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactGA from "react-ga";
 import { useTranslation } from "react-i18next";
 import { Grid, Button, Typography, Tooltip, Paper, Divider } from "@mui/material";
@@ -80,8 +80,6 @@ export default function SequenceGenerator(props) {
   const dpsSpells = [];
   const healSpells = [];
 
-  console.log(healSpells);
-
   const stats = {
     intellect: 2000,
     haste: 600,
@@ -95,6 +93,23 @@ export default function SequenceGenerator(props) {
 
   const addSpell = (spell) => {
     setSeq([...seq, spell]);
+  };
+
+  const insertSpellAtIndex = (spell, index) => {
+    const editSeq = [
+      ...seq.slice(0, index),
+      spell,
+      ...seq.slice(index)
+    ];
+    setSeq(editSeq);
+  };
+
+  const moveSpell = (indexOld, indexNew) => {
+    const editSeq = [...seq];
+    const dragItemContent = editSeq[indexOld];
+    editSeq.splice(indexOld, 1);
+    editSeq.splice(indexNew, 0, dragItemContent);
+    setSeq(editSeq);
   };
 
   const clearSeq = () => {
@@ -112,6 +127,76 @@ export default function SequenceGenerator(props) {
     setSeq(buildRamp("Primary", 10, [], stats.haste, "", discTalents));
   };
 
+  //#region Drag and Drop Functions
+  const dragSpell = useRef();
+  const dragOverSpell = useRef();
+  /**
+   * Drag and Drop inside of the Sequence.
+   * Moves the drag target to the location of a different spell
+   * using their indexes.
+   *  
+   * @param {*} e
+   */
+  const dropMove = e => {
+    if (dragSpell.current === null || dragOverSpell.current === null)
+      return;
+
+    if (Number.isInteger(dragSpell.current)) {
+      moveSpell(dragSpell.current, dragOverSpell.current);
+    }
+
+    dragSpell.current = null;
+    dragOverSpell.current = null;
+  };
+
+  /**
+   * Drag and Drop from outside into the Sequence.
+   * Inserts a spell using the spell name into the list
+   * at the location of your cursor.
+   *  
+   * @param {*} e
+   */
+  const dropInsertion = e => {
+    if (dragSpell.current === null || Number.isInteger(dragSpell.current))
+      return;
+
+    const spell = dragSpell.current;
+    // The dropping behavior is a bit weird, dropping an item on top of a spell will trigger both the spell drop & background drop so we have to circumvent double insertions
+    if (e.target.className.includes("backgroundDropTarget"))
+      addSpell(spell);
+    else if (dragOverSpell.current !== null)
+      insertSpellAtIndex(spell, dragOverSpell.current);
+
+    dragSpell.current = null;
+    dragOverSpell.current = null;
+  }
+
+  /**
+   * Saves the picked up spell in a reference so we can use it
+   * whenever we drop the item.
+   * 
+   * @param {*} e 
+   * @param {*} value Either the index or the spell name
+   */
+  const dragStart = (e, value) => {
+    dragSpell.current = value;
+    $WowheadPower.clearTouchTooltip();
+  };
+
+  /**
+   * @param {*} e 
+   * @param {*} position Index of the spell location we're hovering over.
+   */
+  const dragEnter = (e, position) => {
+    dragOverSpell.current = position;
+  };
+
+  const onDragOver = e => {
+    // required for dnd to work
+    e.preventDefault();
+  }
+  //#endregion
+
   return (
     <div style={{ backgroundColor: "#313131" }}>
       <div className={classes.root}>
@@ -126,16 +211,17 @@ export default function SequenceGenerator(props) {
                 </Grid>
 
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                  <Paper style={{ padding: "8px 8px 4px 8px" }} elevation={0}>
-                    <Grid container spacing={1} alignItems="center">
+                  <Paper style={{ padding: "8px 8px 4px 8px", minHeight: 40 }} elevation={0}>
+                    <Grid container spacing={1} alignItems="center" className="backgroundDropTarget" onDragOver={onDragOver} onDrop={dropInsertion}>
                       {/*<Grid item xs="auto">
                             <LooksOneIcon fontSize="large" />
                             </Grid> */}
 
                       {seq.map((spell, index) => (
-                        <Grid item xs="auto" key={index}>
-                          <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id}>
+                        <Grid item xs="auto" key={index} onDragOver={onDragOver} onDragEnd={dropMove} onDrop={dropInsertion} onDragEnter={(e) => { dragEnter(e, index) }} >
+                          <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id} style={{ display: "flex" }} draggable onDragStart={(e) => { dragStart(e, index) }}>
                             <img
+                              draggable="false"
                               height={40}
                               width={40}
                               src={require("Images/Spells/" + spellDB[spell][0].spellData.icon + ".jpg").default || ""}
@@ -169,9 +255,10 @@ export default function SequenceGenerator(props) {
                       </Grid>
                       <Grid container spacing={1}>
                         {spellList[cat].map((spell, i) => (
-                          <Grid item xs="auto" key={index}>
-                            <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id}>
+                          <Grid item xs="auto" key={spellDB[spell][0].spellData.id}>
+                            <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id} style={{ display: "flex" }} draggable onDragStart={(e) => { dragStart(e, spell) }}>
                               <img
+                                draggable="false" // lets drag the whole thing instead of just the image
                                 height={40}
                                 width={40}
                                 src={require("Images/Spells/" + spellDB[spell][0].spellData.icon + ".jpg").default || ""}
@@ -240,7 +327,7 @@ export default function SequenceGenerator(props) {
 
                 <Grid item xs={12}>
                   <Button
-                    key={321}
+                    key={322}
                     variant="contained"
                     onClick={() => autoGen()}
                     color="secondary"
