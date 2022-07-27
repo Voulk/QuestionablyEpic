@@ -62,7 +62,7 @@ const dpsSpells = Object.keys(EVOKERSPELLDB).filter((spell) => EVOKERSPELLDB[spe
 const healSpells = Object.keys(EVOKERSPELLDB).filter((spell) => EVOKERSPELLDB[spell][0].type === "heal" || spell === "Reversion");
 
 export default function SequenceGenerator(props) {
-  const selectedSpec = "Discipline Priest";
+  const selectedSpec = "Preservation Evoker";
   const spellDB = getSpellDB(selectedSpec);
 
   const spellCategories = ["Healing", "Damage", "Cooldowns & Other"];

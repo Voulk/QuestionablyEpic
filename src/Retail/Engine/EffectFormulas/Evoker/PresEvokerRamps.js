@@ -507,6 +507,9 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
 
             // Make any Echo changes necessary.
 
+            if (spellName === "Spiritbloom") echoSpell[0].targets = 1; // An Echo'd Spiritbloom just adds one target.
+            if (spellName === "Emerald Blossom") echoSpell[0].targets = 1; // An Echo'd Emerald Blossom just adds one target.
+
             // Save the new spell.
             evokerSpells[spellName+"(Echo)"] = echoSpell;
         }
