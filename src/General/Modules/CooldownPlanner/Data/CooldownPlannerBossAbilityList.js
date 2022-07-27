@@ -209,7 +209,34 @@ export const bossAbilities = {
 
   2418: [
     /* -------------------------------------- Huntsman Altimor -------------------------------------- */
-
+    {
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 334860,
+      icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/CrushingStoneIcon.jpg").default,
+      importActive: false,
+      name: {
+        cn: "碾石",
+        de: "Zerschmetternder Stein",
+        en: "Crushing Stone",
+        fr: "Pierre écrasante",
+        ru: "Размалывающий камень",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: true,
+      guid: 334504,
+      icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/achievement_raid_revendrethraid_huntsmangargon.jpg").default,
+      importActive: false,
+      name: {
+        cn: "猎手羁绊",
+        de: "Band des Jägersmanns",
+        en: "Huntsman's Bond",
+        fr: "Lien du veneur",
+        ru: "Связь охотника",
+      },
+    },
     {
       cooldownPlannerActive: true,
       createEvent: false,
@@ -239,7 +266,7 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 335116,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/SinseekerIcon.jpg").default,
@@ -253,7 +280,7 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 335304,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/SinseekerIcon.jpg").default,
@@ -432,7 +459,7 @@ export const bossAbilities = {
       createEvent: false,
       guid: 334522,
       icon: require("Images/Bosses/CastleNathria/HungeringDestroyer/Icons/ConsumeIcon.jpg").default,
-      importActive: false,
+      importActive: true,
       name: {
         cn: "",
         de: "",
@@ -446,7 +473,7 @@ export const bossAbilities = {
       createEvent: false,
       guid: 329742,
       icon: require("Images/Bosses/CastleNathria/HungeringDestroyer/Icons/ExpungeIcon.jpg").default,
-      importActive: false,
+      importActive: true,
       name: {
         cn: "",
         de: "",
@@ -460,7 +487,7 @@ export const bossAbilities = {
       createEvent: false,
       guid: 329455,
       icon: require("Images/Bosses/CastleNathria/HungeringDestroyer/Icons/DesolateIcon.jpg").default,
-      importActive: false,
+      importActive: true,
       name: {
         cn: "",
         de: "",
