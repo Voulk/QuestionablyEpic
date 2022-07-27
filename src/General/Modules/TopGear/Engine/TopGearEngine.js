@@ -618,6 +618,10 @@ export function evalDiscRamp(itemSet, setStats, castModel, effectList, reporting
         rampSettings["4T28"] = true; 
         specialSpells.push("4T28");
       }
+      if (effectList.filter(effect => effect.name === "Drape of Shame").length > 0) {
+        // We are wearing Drape of Shame and should account for it.
+        rampSettings["Drape of Shame"] = true; 
+      }
       const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
       const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
   
