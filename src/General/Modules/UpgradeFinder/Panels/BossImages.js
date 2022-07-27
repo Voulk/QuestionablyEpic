@@ -27,6 +27,52 @@ export default function UpgradeFinderBossImages(props, gameType, other) {
   } else {
     switch (props) {
       /* ---------------------------------------------------------------------------------------------- */
+      /*                                         Castle Nathria                                         */
+      /* ---------------------------------------------------------------------------------------------- */
+      case 2418: // Artificer
+        return require("Images/Bosses/CastleNathria/ArtificerXymox/Artificer.png").default;
+      case 2429: // Huntsman Altimor
+        return require("Images/Bosses/CastleNathria/HuntsmanAltimor/HuntsmanAltimor.png").default;
+      case 2428: // Hungering Destroyer
+        return require("Images/Bosses/CastleNathria/HungeringDestroyer/Hungering.png").default;
+      case 2420: // Lady Inerva Darkvein
+        return require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Darkvein.png").default;
+      case 2426: // The Council of Blood
+        return require("Images/Bosses/CastleNathria/TheCouncilOfBlood/Council.png").default;
+      case 2424: // Sire Denathrius
+        return require("Images/Bosses/CastleNathria/SireDenathrius/Denathrius.png").default;
+      case 2425: // Stone Legion Generals
+        return require("Images/Bosses/CastleNathria/StoneLegionGenerals/StoneLegion.png").default;
+      case 2393: // Shriekwing
+        return require("Images/Bosses/CastleNathria/Shriekwing/Shriekwing.png").default;
+      case 2394: // Sludgefist
+        return require("Images/Bosses/CastleNathria/Sludgefist/Sludgefist.png").default;
+      case 2422: // Kael'thas
+        return require("Images/Bosses/CastleNathria/SunKingsSalvation/SunKing.png").default;
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                      Sanctum of Domination                                     */
+      /* ---------------------------------------------------------------------------------------------- */
+      case 2435: // The Tarragrue
+        return require("Images/Bosses/SanctumOfDomination/TheTarragrue/TarragrueUF.png").default;
+      case 2442: // The Eye of the Jailer
+        return require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/EyeoftheJailer.png").default;
+      case 2439: // The Nine
+        return require("Images/Bosses/SanctumOfDomination/TheNine/TheNine.png").default;
+      case 2444: // Remnant of Ner'zhul
+        return require("Images/Bosses/SanctumOfDomination/RemnantOfNerzhul/RemnantOfNerzhulUF.png").default;
+      case 2445: // Soulrender Dormazain
+        return require("Images/Bosses/SanctumOfDomination/SoulrenderDormazain/SoulrenderDormazain.png").default;
+      case 2443: // Painsmith Raznal
+        return require("Images/Bosses/SanctumOfDomination/PainsmithRaznal/PainsmithRaznalUF.png").default;
+      case 2446: // Guardian of the First Ones
+        return require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/GuardianOfTheFirstOnesUF.png").default;
+      case 2447: // Fatescribe Roh-Kalo
+        return require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/FatescribeRohKaloUF.png").default;
+      case 2440: // Kel'Thuzad
+        return require("Images/Bosses/SanctumOfDomination/Kelthuzad/KelthuzadUF.png").default;
+      case 2441: // Sylvanas Windrunner
+        return require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/SylvanusWindrunnerUF.png").default;
+      /* ---------------------------------------------------------------------------------------------- */
       /*                                   Sepulcher of the First Ones                                  */
       /* ---------------------------------------------------------------------------------------------- */
       case 2458: // Vigilant Guardian

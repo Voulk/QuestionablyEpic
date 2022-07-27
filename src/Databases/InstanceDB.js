@@ -76,7 +76,6 @@ export const encounterDB = {
     609, // 1590, // Illidan Stormrage
   ],
 
-  // TODO: This is temporary Zul'Aman
   321: [
     1189, // Akil'zon
     1190, // Nalorakk
@@ -191,7 +190,6 @@ export const encounterDB = {
     -20, // Tazavesh
     -21, // Tazavesh 2
     //1194, // Tazavesh
-
   ],
   /* ---------------------------------- Tazavesh, The Vieled City --------------------------------- */
   1194: [

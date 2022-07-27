@@ -1,4 +1,179 @@
+export const raidDB = [
+  {
+    ID: 2296,
+    name: {
+      en: "Castle Nathria",
+      cn: "纳斯利亚堡",
+      fr: "Château Nathria",
+      ru: "Замок Нафрия",
+      de: "Schloss Nathria",
+    },
+    icon: require("Images/achievement_raid_revendrethraid_castlenathria.jpg").default,
+    expansion: 8,
+  },
+  {
+    ID: 2450,
+    name: {
+      en: "Sanctum of Domination",
+      cn: "统御圣所",
+      fr: "Sanctum de Domination",
+      ru: "Святилище Господства",
+      de: "Sanktum der Herrschaft",
+    },
+    expansion: 8,
+    icon: require("Images/achievement_raid_torghastraid.jpg").default,
+  },
+  {
+    ID: 2481,
+    name: {
+      en: "Sepulcher of the First Ones",
+      cn: "初诞者圣墓",
+      fr: "Sépulcre des Fondateurs",
+      ru: "Гробница Предвечных",
+      de: "Mausoleum der Ersten",
+    },
+    expansion: 8,
+    icon: require("Images/inv_achievement_raid_progenitorraid.jpg").default,
+  },
+];
+
 export const bossList = [
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                         Castle Nathria                                         */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  {
+    DungeonEncounterID: 2398,
+    ID: 2393,
+    name: "",
+    name: {
+      en: "Shriekwing",
+      cn: "[Shriekwing]",
+      fr: "Hurlaile",
+      ru: "Визгунья",
+      de: "Schrillschwinge",
+    },
+    zoneID: 2296,
+    icon: require("Images/Bosses/CastleNathria/Shriekwing/Icons/ShriekwingIcon.jpg").default,
+  },
+  {
+    DungeonEncounterID: 2418,
+    ID: 2429,
+    name: {
+      en: "Huntsman Altimor",
+      cn: "猎手阿尔迪莫",
+      fr: "Altimor le Veneur",
+      ru: "Ловчий Альтимор",
+      de: "Jäger Altimor",
+    },
+    zoneID: 2296,
+    icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/HuntsmanAltimorIcon.jpg").default,
+  },
+  {
+    DungeonEncounterID: 2402,
+    ID: 2422,
+    name: {
+      en: "Sun King's Salvation",
+      cn: "太阳之王的救赎",
+      fr: "Salut du roi-soleil",
+      ru: "Спасение Солнечного короля",
+      de: "Rettung des Sonnenkönigs",
+    },
+    zoneID: 2296,
+    icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/KaelthasSunstriderIcon.jpg").default,
+  },
+  {
+    DungeonEncounterID: 2405,
+    ID: 2418,
+    name: {
+      en: "Artificer Xy'mox",
+      cn: "圣物匠赛·墨克斯",
+      fr: "Artificier Xy'mox",
+      ru: "Изобретатель Зи'Мокс",
+      de: "Konstrukteur Xy'mox",
+    },
+    zoneID: 2296,
+    icon: require("Images/Bosses/CastleNathria/ArtificerXymox/Icons/ArtificerIcon.jpg").default,
+  },
+  {
+    DungeonEncounterID: 2383,
+    ID: 2428,
+    name: {
+      en: "Hungering Destroyer",
+      cn: "饥饿的毁灭者",
+      fr: "Destructeur affamé",
+      ru: "Алчущий разрушитель",
+      de: "Hungernder Zerstörer",
+    },
+    zoneID: 2296,
+    icon: require("Images/Bosses/CastleNathria/HungeringDestroyer/Icons/HungeringDestroyerIcon.jpg").default,
+  },
+  {
+    DungeonEncounterID: 2406,
+    ID: 2420,
+    name: {
+      en: "Lady Inerva Darkvein",
+      cn: "伊涅瓦·暗脉女勋爵",
+      fr: "Dame Inerva Sombreveine",
+      ru: "Леди Инерва Дарквейн",
+      de: "Lady Inerva Dunkelader",
+    },
+    zoneID: 2296,
+    icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/LadyInervaDarkveinIcons.jpg").default,
+  },
+  {
+    DungeonEncounterID: 2412,
+    ID: 2426,
+    name: {
+      en: "The Council of Blood",
+      cn: "猩红议会",
+      fr: "Le conseil du Sang",
+      ru: "Совет Крови",
+      de: "Der Rat des Blutes",
+    },
+    zoneID: 2296,
+    icon: require("Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/TheCouncilOfBloodIcon.jpg").default,
+  },
+  {
+    DungeonEncounterID: 2399,
+    ID: 2394,
+    name: {
+      en: "Sludgefist",
+      cn: "泥拳",
+      fr: "Fangepoing",
+      ru: "Грязешмяк",
+      de: "Schlickfaust",
+    },
+    zoneID: 2296,
+    icon: require("Images/Bosses/CastleNathria/Sludgefist/Icons/SludgefistIcon.jpg").default,
+  },
+  {
+    DungeonEncounterID: 2417,
+    ID: 2425,
+    name: {
+      en: "Stone Legion Generals",
+      cn: "顽石军团干将",
+      fr: "Généraux de la Légion de pierre",
+      ru: "Генералы Каменного легиона",
+      de: "Generäle der Steinlegion",
+    },
+    zoneID: 2296,
+    icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/StonebornGeneralsIcons.jpg").default,
+  },
+  {
+    DungeonEncounterID: 2407,
+    ID: 2424,
+    name: {
+      en: "Sire Denathrius",
+      cn: "德纳修斯大帝",
+      fr: "Sire Denathrius",
+      ru: "Сир Денатрий",
+      de: "Graf Denathrius",
+    },
+    zoneID: 2296,
+    icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/SireDenathriusIcon.jpg").default,
+  },
+
   /* ---------------------------------------------------------------------------------------------- */
   /*                                      Sanctum of Domination                                     */
   /* ---------------------------------------------------------------------------------------------- */

@@ -3,7 +3,7 @@ import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "@materia
 import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search } from "@mui/icons-material";
 import { Button, TextField, MenuItem, Paper, Grid } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
-import { bossList } from "../Data/CooldownPlannerBossList";
+import { bossList, raidDB } from "../Data/CooldownPlannerBossList";
 import { useTranslation } from "react-i18next";
 import { getTableLocale } from "locale/GetTableLocale";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
@@ -55,6 +55,7 @@ export default function CooldownPlanner(props) {
   const cooldownObject = new Cooldowns();
   const healTeamDialogOpen = props.healTeamDialogOpen;
   const RosterCheck = ls.get("healerInfo") === null ? true : ls.get("healerInfo").length === 0 ? true : false;
+  const expansion = 8; // shadowlands
   const [currentRaid, setCurrentRaid] = useState(2481);
   const [currentBoss, setCurrentBoss] = useState(2512);
   const [currentDifficulty, setDifficulty] = useState("Mythic");
@@ -216,11 +217,23 @@ export default function CooldownPlanner(props) {
                       size="small"
                       sx={{ minWidth: 200, width: "100%" }}
                     >
-                      {[2450, 2481].map((key, i, arr) => (
-                        <MenuItem key={"RS" + i} value={key}>
-                          {key}
-                        </MenuItem>
-                      ))}
+                      {raidDB
+                        .filter((obj) => {
+                          return obj.expansion === expansion;
+                        })
+                        .map((key, i, arr) => {
+                          let lastItem = i + 1 === arr.length ? false : true;
+                          return (
+                            <MenuItem divider={lastItem} key={"RS" + i} value={key.ID}>
+                              <img
+                                style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
+                                src={key.icon}
+                                alt={key.name[currentLanguage]}
+                              />
+                              {key.name[currentLanguage]}
+                            </MenuItem>
+                          );
+                        })}
                     </TextField>
                   </Grid> */}
                   {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
