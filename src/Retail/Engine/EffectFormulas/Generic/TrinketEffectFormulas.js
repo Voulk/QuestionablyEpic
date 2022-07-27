@@ -1121,6 +1121,42 @@ else if (
 
     bonus_stats.dps = effectValue  * effect.ppm * effect.hits  / 60;
 } 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                      Deteriorated Construct Core                                   */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Deteriorated Construct Core"
+) {
+
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
+
+    bonus_stats.dps = effectValue  * effect.ppm * effect.targets / 60;
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                         Aran's Relaxing Ruby                                   */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Aran's Relaxing Ruby"
+) {
+
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
+
+    bonus_stats.dps = effectValue  * effect.ppm * effect.targets / 60;
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Dreadfire Vessel                                   */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Dreadfire Vessel"
+) {
+
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatMultiplier("CRITVERS");
+
+    bonus_stats.dps = effectValue * effect.targets / effect.cooldown;
+} 
 
   else {
     /* ---------------------------------------------------------------------------------------------- */
