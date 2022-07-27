@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactGA from "react-ga";
 import { useTranslation } from "react-i18next";
-import { Grid, Button, Typography, Tooltip, Paper, Divider } from "@mui/material";
+import { Grid, Button, Typography, Tooltip, Paper, Divider, TextField } from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
 
 import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
@@ -77,8 +77,6 @@ export default function SequenceGenerator(props) {
     Healing: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "heal"),
     "Cooldowns & Other": Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "cooldown"),
   };
-  const dpsSpells = [];
-  const healSpells = [];
 
   const stats = {
     intellect: 2000,
@@ -356,6 +354,9 @@ export default function SequenceGenerator(props) {
                       {"Damage: " + result.totalDamage.toLocaleString("en-US") + ". Healing: " + result.totalHealing.toLocaleString("en-US") + ". HPM: " + Math.round(100 * result.hpm) / 100}
                     </p>
                   </Paper>
+                </Grid>
+                <Grid item xs={12}>
+                    <TextField value={`Combat Log Coming Soon`} variant="outlined" multiline minRows={4} fullWidth disabled style={{whiteSpace: 'pre-line'}} />
                 </Grid>
               </Grid>
             </Paper>
