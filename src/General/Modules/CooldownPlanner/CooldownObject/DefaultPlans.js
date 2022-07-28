@@ -1,6 +1,116 @@
 export const defaultPlans = {
-  // Vigilant Guardian
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                         Castle Nathria                                         */
+  /* ---------------------------------------------------------------------------------------------- */
+  2398: {
+    // Shriekwing
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2418: {
+    // Huntsman Altimor
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2402: {
+    // Sun King's Salvation
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2405: {
+    // Artificer Xy'mox
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2383: {
+    // Hungering Destroyer
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2406: {
+    // Lady Inerva Darkvein
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2412: {
+    // The Council of Blood
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2399: {
+    // Sludgefist
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2417: {
+    // Stone Legion Generals
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2407: {
+    // Sire Denathrius
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                      Sanctum of Domination                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  2423: {
+    // The Tarragrue
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2433: {
+    // The Eye of the Jailer
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2429: {
+    // The Nine
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2432: {
+    // Remnant of Ner'zhul
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2434: {
+    // Soulrender Dormazain
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2430: {
+    // Painsmith Raznal
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2436: {
+    // Guardian of the First Ones
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2431: {
+    // Fatescribe Roh-Kalo
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2422: {
+    // Kel'Thuzad
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+  2435: {
+    // Sylvanas Windrunner
+    Heroic: { default: [] },
+    Mythic: { default: [] },
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                   Sepulcher of the First Ones                                  */
+  /* ---------------------------------------------------------------------------------------------- */
   2512: {
+    // Vigilant Guardian
     Heroic: {
       default: [
         { time: "01:30", bossAbility: 360409 }, // Exposed Core
@@ -26,8 +136,8 @@ export const defaultPlans = {
     },
   },
 
-  // Skolex, the Insatiable Ravener
   2542: {
+    // Skolex, the Insatiable Ravener
     Heroic: {
       default: [
         { time: "00:04", bossAbility: 359829 }, // Dust Flail
@@ -81,8 +191,8 @@ export const defaultPlans = {
     },
   },
 
-  // Artificer Xy'mox
   2553: {
+    // Artificer Xy'mox
     Heroic: {
       default: [
         { time: "00:19", bossAbility: 362850 }, // Hyperlight Sparknova
@@ -121,8 +231,8 @@ export const defaultPlans = {
     },
   },
 
-  // Dausegne, the Fallen Oracle
   2540: {
+    // Dausegne, the Fallen Oracle
     Heroic: {
       default: [
         { time: "00:13", bossAbility: 365373 }, // Disintegration Halo 1
@@ -187,8 +297,8 @@ export const defaultPlans = {
     },
   },
 
-  // Prototype Pantheon
   2544: {
+    // Prototype Pantheon
     Heroic: {
       default: [
         { time: "00:50", bossAbility: 360636 }, // Runecarver's Deathtouch
@@ -221,8 +331,8 @@ export const defaultPlans = {
     },
   },
 
-  // Lihuvim, Principal Architect
   2539: {
+    // Lihuvim, Principal Architect
     Heroic: {
       default: [
         { time: "00:15", bossAbility: 360159 }, // Unstable Mote
@@ -271,8 +381,8 @@ export const defaultPlans = {
     },
   },
 
-  // Halondrus the Reclaimer
   2529: {
+    // Halondrus the Reclaimer
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" }, // Phase 1
@@ -353,8 +463,8 @@ export const defaultPlans = {
     },
   },
 
-  // Anduin Wrynn
   2546: {
+    // Anduin Wrynn
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" }, // Phase 1
@@ -443,8 +553,8 @@ export const defaultPlans = {
     },
   },
 
-  // Lords of Dread
   2543: {
+    // Lords of Dread
     Heroic: {
       default: [
         { time: "00:15", bossAbility: 361913 }, // Manifest Shadows
@@ -485,8 +595,8 @@ export const defaultPlans = {
     },
   },
 
-  // Rygelon
   2549: {
+    // Rygelon
     Heroic: {
       default: [
         { time: "00:10", bossAbility: 362275 }, // Celestial Collapse
@@ -525,8 +635,8 @@ export const defaultPlans = {
     },
   },
 
-  // The Jailer, Zovaal
   2537: {
+    // The Jailer, Zovaal
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" }, // Phase 1

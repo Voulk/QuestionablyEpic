@@ -6,12 +6,27 @@ import createVigilantEvents from "./BossEvents/SepulcherEvents/Vigilant";
 import createXymoxEvents from "./BossEvents/SepulcherEvents/Xymox";
 import createPantheonEvents from "./BossEvents/SepulcherEvents/Pantheon";
 import createDesaugneEvents from "./BossEvents/SepulcherEvents/Desaugne";
+import createShriekwingEvents from "./BossEvents/NathriaEvents/Shriekwing";
+import createHuntsmanEvents from "./BossEvents/NathriaEvents/Huntsman";
+import createHungeringEvents from "./BossEvents/NathriaEvents/Hungering";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData) {
   let returnedEvents = [];
 
   const logGuids = damageTakenData.map((key) => key.ability.guid).concat(debuffs.map((key) => key.ability.guid));
 
+  /* ------------------------------------------ Shriekwing ------------------------------------------ */
+  if (bossID === 2398) {
+    returnedEvents = createShriekwingEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
+  }
+  /* -------------------------------------- Huntsman Altimor -------------------------------------- */
+  if (bossID === 2418) {
+    returnedEvents = createHuntsmanEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
+  }
+
+  if (bossID === 2383) {
+    returnedEvents = createHungeringEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
+  }
   /* ---------------------------------------------------------------------------------------------- */
   /*                                   Sepulcher of the First Ones                                  */
   /* ---------------------------------------------------------------------------------------------- */

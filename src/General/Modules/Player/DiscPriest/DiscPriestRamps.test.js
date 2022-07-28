@@ -90,7 +90,7 @@ describe("Evang Cast Sequence", () => {
     test("Legendaries & Soulbinds", () => {
 
         const startTime = performance.now()
-        const baseline = allRamps(evangSeq, fiendSeq, activeStats, {"playstyle": "Venthyr Evangelism", "4T28": false, "Clarity of Mind": false, "Pelagos": false, "Power of the Dark Side": true}, {"Rabid Shadows": 252, "Shining Radiance": 252, "Courageous Ascension": 252}, true);
+        const baseline = allRamps(evangSeq, fiendSeq, activeStats, {"playstyle": "Venthyr Evangelism", "Drape of Shame": true, "4T28": false, "Clarity of Mind": false, "Pelagos": false, "Power of the Dark Side": true}, {"Rabid Shadows": 252, "Shining Radiance": 252, "Courageous Ascension": 252}, true);
         //const baseline = runCastSequence(fiendSeq, activeStats, {"4T28": true, "Clarity of Mind": false, "Pelagos": false, "Power of the Dark Side": true}, {});
         const endTime = performance.now()
 

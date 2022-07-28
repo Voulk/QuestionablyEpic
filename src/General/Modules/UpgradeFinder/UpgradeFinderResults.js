@@ -245,7 +245,7 @@ export default function UpgradeFinderResults(props) {
                 TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
               >
                 {/* Raid */}
-                <Tab className={classes.raidHeaderStyle} label={t("UpgradeFinder.CurrentRaid")} {...a11yProps(0)} />
+                <Tab className={classes.raidHeaderStyle} label={t("Raids")} {...a11yProps(0)} />
                 {/* Mythic Plus */}
                 <Tab className={classes.mythicPlusHeaderStyle} label={t("UpgradeFinder.MythicPlus")} {...a11yProps(1)} />
                 {/* Legion Timewalking */}

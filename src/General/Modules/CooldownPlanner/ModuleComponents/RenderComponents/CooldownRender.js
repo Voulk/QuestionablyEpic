@@ -1,6 +1,5 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import abilityIcons from "../../Functions/IconFunctions/AbilityIcons";
 import { useTranslation } from "react-i18next";
 import { cooldownDB } from "../../Data/CooldownDB";
 

@@ -1,29 +1,33 @@
-import { bossList } from "../Data/CooldownPlannerBossList";
+import { bossList, raidDB } from "../Data/CooldownPlannerBossList";
 import ls from "local-storage";
 import { defaultPlans } from "./DefaultPlans";
 
 class Cooldowns {
   constructor(plan) {
     this.cooldowns = JSON.parse(ls.get("cooldownPlans")) || {};
-
-    if (Object.entries(this.cooldowns).length === 0) {
-      bossList.filter((filter) => filter.zoneID === 2481).map((map) => Object.assign(this.cooldowns, { [map.DungeonEncounterID]: this.defaultTimeGenerator(map.DungeonEncounterID) }));
+    raidDB.map((key) => {
+      bossList
+        .filter((filter) => filter.zoneID === key.ID)
+        .map((map) => {
+          if (Object.entries(this.cooldowns[map.DungeonEncounterID] === undefined || this.cooldowns[map.DungeonEncounterID]).length === 0) {
+            Object.assign(this.cooldowns, { [map.DungeonEncounterID]: this.defaultTimeGenerator(map.DungeonEncounterID) });
+          }
+        });
       this.updateCooldownsAll(this.cooldowns);
-    }
+    });
 
     // Generate New Default on Load
     if (Object.entries(this.cooldowns).length > 0) {
-      bossList
-        .filter((filter) => filter.zoneID === 2481)
-        .map((map) => Object.assign(this.cooldowns[map.DungeonEncounterID]["Heroic"]["default"], this.defaultTimeGenerator(map.DungeonEncounterID)["Heroic"]["default"]));
-      bossList
-        .filter((filter) => filter.zoneID === 2481)
-        .map((map) => Object.assign(this.cooldowns[map.DungeonEncounterID]["Mythic"]["default"], this.defaultTimeGenerator(map.DungeonEncounterID)["Mythic"]["default"]));
+      raidDB.map((key) => {
+        bossList
+          .filter((filter) => filter.zoneID === key.ID)
+          .map((map) => Object.assign(this.cooldowns[map.DungeonEncounterID]["Heroic"]["default"], this.defaultTimeGenerator(map.DungeonEncounterID)["Heroic"]["default"]));
+        bossList
+          .filter((filter) => filter.zoneID === key.ID)
+          .map((map) => Object.assign(this.cooldowns[map.DungeonEncounterID]["Mythic"]["default"], this.defaultTimeGenerator(map.DungeonEncounterID)["Mythic"]["default"]));
+      });
       this.updateCooldownsAll(this.cooldowns);
     }
-
-    // bossList.filter((filter) => filter.zoneID === 2481).map((map) => Object.assign(this.cooldowns, { [map.DungeonEncounterID]: this.defaultTimeGenerator(map.DungeonEncounterID) }));
-    // this.updateCooldownsAll(this.cooldowns);
   }
 
   getCooldownsArray = () => {

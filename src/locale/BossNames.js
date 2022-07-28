@@ -1,0 +1,572 @@
+export const bossDB = [
+  /* --------------------------------------- Karazahn Bosses -------------------------------------- */
+  {
+    name: {
+      en: "Servant's Quarters",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 1552,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Attumen the Huntsman",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 652,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Moroes",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 653,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Maiden of Virtue",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 654,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Opera Hall",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 655,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "The Curator",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 656,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Shade of Aran",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 657,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Terestian Illhoof",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 658,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Netherspite",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 659,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Chess Event",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 660,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Prince Malchezaar",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 661,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Nightbane",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 662,
+    expansion: "BurningCrusade",
+  },
+  /* ---------------------------------------- Gruul's Lair ---------------------------------------- */
+  {
+    name: {
+      en: "High King Maulgar",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 649,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Gruul the Dragonkiller",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 650,
+    expansion: "BurningCrusade",
+  },
+  /* ------------------------------------- Magtheridon's lair ------------------------------------- */
+  {
+    name: {
+      en: "Magtheridon",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 651,
+    expansion: "BurningCrusade",
+  },
+  /* ------------------------------------ Serpentshrine Cavern ------------------------------------ */
+  {
+    name: {
+      en: "Hydross the Unstable",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 623,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "The Lurker Below",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 624,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Leotheras the Blind",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 625,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Fathom-Lord Karathress",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 626,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Morogrim Tidewalker",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 627,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Lady Vashj",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 628,
+    expansion: "BurningCrusade",
+  },
+  /* ---------------------------------------- Tempest Keep ---------------------------------------- */
+  {
+    name: {
+      en: "Al'ar",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 730,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Void Reaver",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 731,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "High Astromancer Solarian",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 732,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Kael'thas Sunstrider",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 733,
+    expansion: "BurningCrusade",
+  },
+  /* --------------------------------- The Battle for Mount Hyjal --------------------------------- */
+  {
+    name: {
+      en: "Rage Winterchill",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 618,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Anetheron",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 619,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Kaz'rogal",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 620,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Azgalor",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 621,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Archimonde",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 622,
+    expansion: "BurningCrusade",
+  },
+  /* ---------------------------------------- Black Temple ---------------------------------------- */
+  {
+    name: {
+      en: "High Warlord Naj'entus",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 601,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Supremus",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 602,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Shade of Akama",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 603,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Teron Gorefiend",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 604,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Gurtogg Bloodboil",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 605,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Reliquary of Souls",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 606,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Mother Shahraz",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 607,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "The Illidari Council",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 608,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Illidan Stormrage",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 609,
+    expansion: "BurningCrusade",
+  },
+  /* --------------------------------------- Sunwell Plateau -------------------------------------- */
+  {
+    name: {
+      en: "Kalecgos",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 724,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Brutallus",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 725,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Felmyst",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 726,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "The Eredar Twins",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 727,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "M'uru",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 728,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Kil'jaeden",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 729,
+    expansion: "BurningCrusade",
+  },
+  /* ------------------------------------------ Zul'Aman ------------------------------------------ */
+  {
+    name: {
+      en: "Akil'zon",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 1189,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Nalorakk",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 1190,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Jan'alai",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 1191,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Halazzi",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 1192,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Hex Lord Malacrass",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 1193,
+    expansion: "BurningCrusade",
+  },
+  {
+    name: {
+      en: "Zul'jin",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 1194,
+    expansion: "BurningCrusade",
+  },
+];

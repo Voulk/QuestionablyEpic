@@ -1075,12 +1075,89 @@ else if (
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Resonant Reservoir"
 ) {
-  let effect = activeTrinket.effects[0];
-  //const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
+
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
+
+    // Due to a quirk in being a ground effect that adds a DoT, the trinket gains slightly more value than doubling up every stack. That's represented here.
+    bonus_stats.dps = effectValue * effect.avgTargets * effect.avgStacks * effect.ticks * 1.22 / effect.cooldown;
   
-  bonus_stats.dps = 0;
-  //
 } 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                           Miniscule Mailemental in an Envelope                                 */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Miniscule Mailemental in an Envelope"
+) {
+
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
+
+    bonus_stats.dps = effectValue  * effect.ppm * effect.classMult[player.getSpec()] / 60;
+  
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                    Infinitely Divisible Ooze                                   */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Infinitely Divisible Ooze"
+) {
+
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
+
+    bonus_stats.dps = effectValue  * effect.ppm * effect.hits  / 60;
+  
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                      Oakheart's Gnarled Root                                   */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Oakheart's Gnarled Root"
+) {
+
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
+
+    bonus_stats.dps = effectValue  * effect.ppm * effect.hits  / 60;
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                      Deteriorated Construct Core                                   */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Deteriorated Construct Core"
+) {
+
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
+
+    bonus_stats.dps = effectValue  * effect.ppm * effect.targets / 60;
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                         Aran's Relaxing Ruby                                   */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Aran's Relaxing Ruby"
+) {
+
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
+
+    bonus_stats.dps = effectValue  * effect.ppm * effect.targets / 60;
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Dreadfire Vessel                                   */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Dreadfire Vessel"
+) {
+
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatMultiplier("CRITVERS");
+
+    bonus_stats.dps = effectValue * effect.targets / effect.cooldown;
+} 
+
   else {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        No Trinkets Found                                       */
