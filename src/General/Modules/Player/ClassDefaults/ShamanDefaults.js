@@ -101,7 +101,7 @@ export const shamanDefaultStatWeights = (contentType) => {
     intellect: 1,
     haste: 0.49,
     crit: 0.6,
-    mastery: 0.52,
+    mastery: 0.48,
     versatility: 0.59,
     leech: 0.47,
   };

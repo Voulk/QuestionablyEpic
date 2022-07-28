@@ -400,6 +400,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     bonus_stats.haste = runeStats;
     bonus_stats.crit = runeStats;
     bonus_stats.versatility = runeStats;
+    //bonus_stats.mastery = runeStats; // Fourth Rune.
     //
   } 
   else if (
@@ -947,7 +948,6 @@ else if (
     const itemSetHighestSecondary = getHighestStat(setStats);
     const statRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel);
     const statValue = getDiminishedValue(itemSetHighestSecondary, statRaw, setStats[itemSetHighestSecondary])
-    
     
     bonus_stats[itemSetHighestSecondary] = statValue;
 
