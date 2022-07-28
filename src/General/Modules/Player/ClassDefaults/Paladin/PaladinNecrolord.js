@@ -42,10 +42,10 @@ export const paladinNecrolordSpellData = (contentType) => {
         OneManaHealing: 1.9,
         CastsPerMinute: 27,
         cooldownMult: {
-          oneMinute: 1.2,
+          oneMinute: 1.1,
           ninetySeconds: 1.1,
           twoMinutes: 1.12,
-          twoMinutesOrb: 1.12,
+          twoMinutesOrb: 1.04,
           threeMinutes: 1,
         },
         HoldYourGroundUptime: 0.4
@@ -57,7 +57,7 @@ export const paladinNecrolordSpellData = (contentType) => {
         cooldownMult: {
           oneMinute: 1.2,
           ninetySeconds: 1,
-          twoMinutes: 1.24,
+          twoMinutes: 1.04,
           twoMinutesOrb: 1,
           threeMinutes: 1,
         },

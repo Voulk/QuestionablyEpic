@@ -23,6 +23,12 @@ import HellfireCitadelDungeons from "../../../../../Images/BurningCrusade/Dungeo
 import MagistersTerrace from "../../../../../Images/BurningCrusade/Dungeons/MagistersTerraceDungeons.jpg";
 import TempestKeepDungeons from "../../../../../Images/BurningCrusade/Dungeons/TempestKeepDungeons.jpg";
 
+import ReturnToKarazhan from "../../../../../Images/MythicPlus/ReturntoKarazhan.png";
+import MechagonLower from "../../../../../Images/MythicPlus/MechagonLower.png";
+import MechagonUpper from "../../../../../Images/MythicPlus/MechagonUpper.png";
+import Grimrail from "../../../../../Images/MythicPlus/Grimrail.png";
+import IronDocks from "../../../../../Images/MythicPlus/IronDocks.png";
+
 export default function DungeonHeaderIcons(props) {
   let source = "";
 
@@ -69,6 +75,31 @@ export default function DungeonHeaderIcons(props) {
   /* --------------------------------- Tazavesh the Veiled Market Part II --------------------------------- */
   if (props === 13577 || props === -21) {
     source = TtVM;
+  }
+
+  /* ---------------------------------- Return to Karazhan Upper ---------------------------------- */
+  if (props === 860 || props === -25) {
+    source = ReturnToKarazhan;
+  }
+  /* ---------------------------------- Return to Karazhan Lower ---------------------------------- */
+  if (props === 860 || props === -24) {
+    source = ReturnToKarazhan;
+  }
+  /* ---------------------------------- Operation: Mechagon Lower --------------------------------- */
+  if (props === 1178 || props === -22) {
+    source = MechagonLower;
+  }
+  /* ---------------------------------- Operation: Mechagon Upper --------------------------------- */
+  if (props === 1178 || props === -23) {
+    source = MechagonUpper;
+  }
+  /* --------------------------------------- Grimrail Depot --------------------------------------- */
+  if (props === 536) {
+    source = Grimrail;
+  }
+  /* ----------------------------------------- Iron Docks ----------------------------------------- */
+  if (props === 558) {
+    source = Grimrail;
   }
 
   /* ---------------------------------------------------------------------------------------------- */

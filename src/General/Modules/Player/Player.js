@@ -649,7 +649,7 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 2000,
+        intellect: 2500,
         haste: 890,
         crit: 460,
         mastery: 600,
@@ -669,7 +669,7 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Necrolord Default", 4));
 
       this.activeStats = {
-        intellect: 2300,
+        intellect: 2500,
         haste: 850,
         crit: 400,
         mastery: 800,
@@ -681,7 +681,7 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 2000,
+        intellect: 2500,
         haste: 125,
         crit: 790,
         mastery: 220,
@@ -699,7 +699,7 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Venthyr Evangelism", 2));
 
       this.activeStats = {
-        intellect: 2250,
+        intellect: 2500,
         haste: 940,
         crit: 650,
         mastery: 220,
@@ -711,7 +711,7 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 2100,
+        intellect: 2500,
         haste: 424,
         crit: 770,
         mastery: 700,
@@ -732,7 +732,7 @@ class Player {
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 
       this.activeStats = {
-        intellect: 2000,
+        intellect: 2500,
         haste: 620,
         crit: 860,
         mastery: 120,

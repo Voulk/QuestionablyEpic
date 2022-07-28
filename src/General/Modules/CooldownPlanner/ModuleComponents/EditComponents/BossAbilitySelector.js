@@ -70,9 +70,9 @@ export default function BossAbilitySelector(props, currentBoss, difficulty) {
   const currentLanguage = i18n.language;
   const abilityArr = [
     ...bossAbilities[currentBoss]
-      .filter((obj) => {
-        return obj.cooldownPlannerActive === true;
-      })
+      // .filter((obj) => {
+      //   return obj.cooldownPlannerActive === true;
+      // })
       .map((key, i, arr) => key.guid),
   ];
   const [custom, setCustom] = React.useState(props.value === "" || props.value === undefined ? false : abilityArr.includes(props.value) ? false : true);

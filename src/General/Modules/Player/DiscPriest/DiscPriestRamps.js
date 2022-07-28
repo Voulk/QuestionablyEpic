@@ -6,7 +6,8 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
-    chaosBrand: true
+    chaosBrand: true,
+    critMult: 2
 }
 
 
@@ -216,8 +217,9 @@ const getActiveAtone = (atoneApp, timer) => {
 const getStatMult = (currentStats, stats) => {
     let mult = 1;
     
+    const critChance = 0.05 + currentStats['crit'] / 35 / 100;
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / 40 / 100);
-    if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100); // TODO: Re-enable
+    if (stats.includes("crit")) mult *= (discSettings.critMult * critChance + (1 - critChance)); // TODO: Re-enable
     if (stats.includes("mastery")) mult *= (1.108 + currentStats['mastery'] / 25.9259 / 100);
     return mult;
 }
@@ -373,11 +375,11 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
 
     }
 
+    if (settings['Drape of Shame']) discSettings.critMult = 2.05;
     // ==== Soulbinds ====
     // Don't include Conduits here just any relevant soulbind nodes themselves.
     // This section can be expanded with more nodes, particularly those from other covenants.
     // Examples: Combat Meditation, Pointed Courage
-
     // --- Combat Meditation ---
     // Mastery buff on Casting Boon. Pre-DR stat buff.
     if (settings['Pelagos']) discSpells['Boon of the Ascended'].push({

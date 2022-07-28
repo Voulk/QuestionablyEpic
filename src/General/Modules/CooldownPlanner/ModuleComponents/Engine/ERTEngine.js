@@ -15,7 +15,7 @@ const debug = false;
 export default function ertEngine(tableData, bossID, lang, setERTData, hideNoCooldownsChecked) {
   debug && console.log(" -- Debugging On -> ERTEngine.js --");
   const seperator = " - ";
-  const space = " ";
+  const space = "  ";
 
   const abilityArr = [
     ...bossAbilities[bossID]

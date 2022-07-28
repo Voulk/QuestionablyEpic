@@ -41,7 +41,7 @@ export const effectData = [
       name: "Sepulcher's Savior",
       effects: [
         {
-            coefficient: 231.3687,
+            coefficient: 231.3687 * 1.2,
             cooldown: 180,
             table: -8 // -9
         },
@@ -130,9 +130,9 @@ export const effectData = [
       // The effects are similar enough in strength that a different distribution of procs doesn't particularly matter - so long as they are being used.
       name: "Genesis Lathe",
       effects: [
-        {name: "Absorb", coefficient: 92.22098, table: -8, percProcs: 0.75, ticks: 1, secondaries: ["Versatility"]},
-        {name: "FlatHeal", coefficient: 107.5911, table: -8, percProcs: 0.1, ticks: 1, secondaries: ["Versatility", "Crit"]},
-        {name: "Hot", coefficient: 16.04781, table: -8, percProcs: 0.15, ticks: 5, secondaries: ["Versatility", "Crit", "Haste"]}]
+        {name: "Absorb", coefficient: 92.22098*1.1, table: -8, percProcs: 0.75, ticks: 1, secondaries: ["Versatility"]},
+        {name: "FlatHeal", coefficient: 107.5911*1.1, table: -8, percProcs: 0.1, ticks: 1, secondaries: ["Versatility", "Crit"]},
+        {name: "Hot", coefficient: 16.04781*1.1, table: -8, percProcs: 0.15, ticks: 5, secondaries: ["Versatility", "Crit", "Haste"]}]
     },
 
 
