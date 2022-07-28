@@ -63,12 +63,12 @@ export const trinket_data = [
     effects: [
       {
         /* --------- This is the coefficient for the portion that scales with mana expenditure. --------- */
-        coefficient: 12.82759,
+        coefficient: 12.82759 * 1.2,
         table: -8,
       },
       {
         /*  This is the portion for the direct heal, and also includes cooldown and efficiency information for the entire trinket.  */
-        coefficient: 80.17241,
+        coefficient: 80.17241 * 1.1,
         table: -8,
         cooldown: 60,
         efficiency: {Raid: 0.5, Dungeon: 0.6}
@@ -139,7 +139,7 @@ export const trinket_data = [
     name: "Scars of Fraternal Strife",
     effects: [
       {
-        coefficient: 0.345768,
+        coefficient: 0.345768 * 1.25,
         table: -7,
       },
     ],
@@ -170,7 +170,7 @@ export const trinket_data = [
         coefficient: 0.467903,
         table: -7,
         duration: 21, // You get a 20 second duration every time you touch a new Spirit. They each live about 5 seconds.
-        stacks: 2.5, // You should be able to hit all four pretty reliably, but will spend some time with lower than four stacks as you meet each.
+        stacks: 2.6, // You should be able to hit all four pretty reliably, but will spend some time with lower than four stacks as you meet each.
         cooldown: 90,
       },
     ],
@@ -404,7 +404,7 @@ export const trinket_data = [
     name: "Inscrutable Quantum Device",
     effects: [
       {
-        coefficient: 3.55,
+        coefficient: 3.55 * 0.75,
         table: -7,
         duration: 20,
         cooldown: 180,
@@ -923,10 +923,10 @@ export const trinket_data = [
     name: "Resonant Silver Bell", // Spell Name: Spectral Feline
     effects: [
       {
-        coefficient: 83.59375,
+        coefficient: 83.59375 * 1.15,
         table: -8,
         ppm: 2,
-        efficiency: 0.35, // 
+        efficiency: 0.38, // 
       },
     ],
   },
@@ -939,7 +939,7 @@ export const trinket_data = [
     name: "Shadowed Orb of Torment", // Tormented Insight
     effects: [
       {
-        coefficient: 1.328551 * 1.61, // 1.328551
+        coefficient: 1.328551 * 1.61 * 1.12, // 1.328551
         table: -7,
         duration: 40,
         cooldown: 120,
@@ -1219,19 +1219,6 @@ export const trinket_data = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
-    /*                                 Scars of Fraternal Strife                                      */
-    /* ---------------------------------------------------------------------------------------------- */
-    // Jailer trinket. Effects unknown
-    name: "Scars of Fraternal Strife", 
-    effects: [
-      {
-        coefficient: 0,
-        table: -0, 
-      },
-    ],
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
     /*                                        The First Sigil                                         */
     /* ---------------------------------------------------------------------------------------------- */
     // Signature ability reset and a massive vers buff on a 5 minute cooldown.
@@ -1257,8 +1244,8 @@ export const trinket_data = [
         table: -8, // -9
         ppm: 10,
         baseCooldown: 600,
-        cdrPerProc: 3,
-        efficiency: 0.7,
+        cdrPerProc: 6,
+        efficiency: 0.65,
       },
     ],
   },
