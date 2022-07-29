@@ -622,13 +622,16 @@ export function evalDiscRamp(itemSet, setStats, castModel, effectList, reporting
         // We are wearing Drape of Shame and should account for it.
         rampSettings["Drape of Shame"] = true; 
       }
-      const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
-      const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
-  
+
       if (onUseTrinkets !== null && onUseTrinkets.length > 0) {
         itemSet.onUseTrinkets.forEach((trinket) => {
           rampSettings[trinket.name] = getTrinketValue(trinket.name, trinket.level);
         });
+      }
+      if (effectList.filter(effect => effect.name === "Neural Synapse Enhancer").length > 0) {
+        // We are wearing Drape of Shame and should account for it.
+        rampSettings["Neural Synapse Enhancer"] = 573; 
+        onUseTrinkets.push("Neural Synapse Enhancer");
       }
   
       if (castModel.modelName === "Kyrian Evangelism") {
@@ -643,6 +646,9 @@ export function evalDiscRamp(itemSet, setStats, castModel, effectList, reporting
       if (itemSet.setLegendary === "Clarity of Mind") rampSettings["Clarity of Mind"] = true;
       if (itemSet.setLegendary === "Penitent One") rampSettings["Penitent One"] = true;
   
+
+      const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
+      const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
       // Perform our ramp, and then add it to our sets expected HPS. Our set's stats are included here which means we don't need to score them later in the function.
       // The ramp sequence also includes any diminishing returns.
       const setRamp = allRamps(boonSeq, fiendSeq, setStats, rampSettings, { "Courageous Ascension": 239, "Rabid Shadows": 239 }, true);
