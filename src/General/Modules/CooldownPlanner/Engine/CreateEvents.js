@@ -9,6 +9,7 @@ import createDesaugneEvents from "./BossEvents/SepulcherEvents/Desaugne";
 import createShriekwingEvents from "./BossEvents/NathriaEvents/Shriekwing";
 import createHuntsmanEvents from "./BossEvents/NathriaEvents/Huntsman";
 import createHungeringEvents from "./BossEvents/NathriaEvents/Hungering";
+import createNathriaXymoxEvents from "./BossEvents/NathriaEvents/NathriaXymox";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData) {
   let returnedEvents = [];
@@ -23,9 +24,13 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
   if (bossID === 2418) {
     returnedEvents = createHuntsmanEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
   }
-
+  /* ------------------------------------- Hungering Destroyer ------------------------------------ */
   if (bossID === 2383) {
     returnedEvents = createHungeringEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
+  }
+  /* --------------------------------------- Artificer Xymox -------------------------------------- */
+  if (bossID === 2405) {
+    returnedEvents = createNathriaXymoxEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
   }
   /* ---------------------------------------------------------------------------------------------- */
   /*                                   Sepulcher of the First Ones                                  */
