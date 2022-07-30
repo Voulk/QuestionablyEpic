@@ -12,6 +12,7 @@ import createHungeringEvents from "./BossEvents/NathriaEvents/Hungering";
 import createNathriaXymoxEvents from "./BossEvents/NathriaEvents/NathriaXymox";
 import createDarkveinEvents from "./BossEvents/NathriaEvents/Darkvein";
 import createSunKingEvents from "./BossEvents/NathriaEvents/SunKing";
+import createCouncilOfBloodEvents from "./BossEvents/NathriaEvents/CouncilOfBlood";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth) {
   let returnedEvents = [];
@@ -34,13 +35,14 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
   if (bossID === 2405) {
     returnedEvents = createNathriaXymoxEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
   }
-
   if (bossID === 2406) {
     returnedEvents = createDarkveinEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
   }
-
   if (bossID === 2402) {
     returnedEvents = createSunKingEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+  }
+  if (bossID === 2412) {
+    returnedEvents = createCouncilOfBloodEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
   }
 
   /* ---------------------------------------------------------------------------------------------- */
