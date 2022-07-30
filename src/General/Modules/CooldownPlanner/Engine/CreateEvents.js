@@ -10,6 +10,7 @@ import createShriekwingEvents from "./BossEvents/NathriaEvents/Shriekwing";
 import createHuntsmanEvents from "./BossEvents/NathriaEvents/Huntsman";
 import createHungeringEvents from "./BossEvents/NathriaEvents/Hungering";
 import createNathriaXymoxEvents from "./BossEvents/NathriaEvents/NathriaXymox";
+import createDarkveinEvents from "./BossEvents/NathriaEvents/Darkvein";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData) {
   let returnedEvents = [];
@@ -32,6 +33,11 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
   if (bossID === 2405) {
     returnedEvents = createNathriaXymoxEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
   }
+
+  if (bossID === 2406) {
+    returnedEvents = createDarkveinEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData);
+  }
+
   /* ---------------------------------------------------------------------------------------------- */
   /*                                   Sepulcher of the First Ones                                  */
   /* ---------------------------------------------------------------------------------------------- */
