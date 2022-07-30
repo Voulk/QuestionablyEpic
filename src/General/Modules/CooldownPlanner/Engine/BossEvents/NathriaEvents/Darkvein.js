@@ -16,7 +16,6 @@ export default function createDarkveinEvents(bossID, difficulty, damageTakenData
   /* ---------------------------------------------------------------------------------------------- */
   /*                                        Container Changes                                       */
   /* ---------------------------------------------------------------------------------------------- */
-  events.push({ time: "00:00", bossAbility: "Phase 1" }); // Push Phase 1 Object into events
 
   const containerChange1 = enemyHealthData.filter((filter) => filter.health <= 75)[0];
   containerChange1 !== undefined ? events.push({ time: moment.utc(fightDuration(containerChange1.time, starttime)).startOf("second").format("mm:ss"), bossAbility: focusAnima }) : "";

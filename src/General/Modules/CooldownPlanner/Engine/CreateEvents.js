@@ -13,6 +13,7 @@ import createNathriaXymoxEvents from "./BossEvents/NathriaEvents/NathriaXymox";
 import createDarkveinEvents from "./BossEvents/NathriaEvents/Darkvein";
 import createSunKingEvents from "./BossEvents/NathriaEvents/SunKing";
 import createCouncilOfBloodEvents from "./BossEvents/NathriaEvents/CouncilOfBlood";
+import createSludgefistEvents from "./BossEvents/NathriaEvents/SludgeFist";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth) {
   let returnedEvents = [];
@@ -43,6 +44,9 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
   }
   if (bossID === 2412) {
     returnedEvents = createCouncilOfBloodEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+  }
+  if (bossID === 2399) {
+    returnedEvents = createSludgefistEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
   }
 
   /* ---------------------------------------------------------------------------------------------- */

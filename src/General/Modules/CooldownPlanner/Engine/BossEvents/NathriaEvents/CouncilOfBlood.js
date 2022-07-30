@@ -13,6 +13,7 @@ export default function createCouncilOfBloodEvents(bossID, difficulty, damageTak
   /* ---------------------------------------------------------------------------------------------- */
   /*                                          Phase Changes                                         */
   /* ---------------------------------------------------------------------------------------------- */
+  events.push({ time: "00:00", bossAbility: "Phase 1" });
   if (logGuids.includes(danseMacabre)) {
     const danseMacabreEvents = enemyCasts.filter((filter) => filter.ability.guid === danseMacabre);
     const danseMacabreOne = danseMacabreEvents[0];
