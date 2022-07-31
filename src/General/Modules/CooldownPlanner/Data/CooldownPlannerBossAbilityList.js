@@ -1546,16 +1546,72 @@ export const bossAbilities = {
 
     {
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 339728,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/PulverizingMeteorIcon.jpg").default,
       importActive: false,
       name: {
-        cn: "",
-        de: "",
+        cn: "粉碎流星",
+        de: "Pulverisierender Meteor",
         en: "Pulverizing Meteor",
-        fr: "",
-        ru: "",
+        fr: "Météore destructeur",
+        ru: "Измельчающий метеорит",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: true,
+      guid: 329808,
+      icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/trade_archaeology_druidprieststatueset.jpg").default,
+      importActive: false,
+      name: {
+        cn: "坚岩形态",
+        de: "Gehärtete Steingestalt",
+        en: "Hardened Stone Form",
+        fr: "Forme de pierre durcie",
+        ru: "Закаленный каменный облик",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: true,
+      guid: 329636,
+      icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/trade_archaeology_druidprieststatueset.jpg").default,
+      importActive: false,
+      name: {
+        cn: "坚岩形态",
+        de: "Gehärtete Steingestalt",
+        en: "Hardened Stone Form",
+        fr: "Forme de pierre durcie",
+        ru: "Закаленный каменный облик",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: true,
+      guid: 344500,
+      icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/inv_elementalearth2.jpg").default,
+      importActive: false,
+      name: {
+        cn: "震荡爆发",
+        de: "Hallende Eruption",
+        en: "Reverberating Eruption",
+        fr: "Éruption réverbérante",
+        ru: "Раскатистый взрыв",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: true,
+      guid: 344721,
+      icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/spell_nature_earthquake.jpg").default,
+      importActive: false,
+      name: {
+        cn: "回荡湮灭",
+        de: "Widerhallende Vernichtung",
+        en: "Echoing Annihilation",
+        fr: "Annihilation résonnante",
+        ru: "Отдающаяся эхом аннигиляция",
       },
     },
 
@@ -1823,7 +1879,7 @@ export const bossAbilities = {
     /* ----------------------------------------- Denathrius ----------------------------------------- */
 
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 330627,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_shadow_unholystrength.jpg").default,
@@ -1837,7 +1893,7 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 336162,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_animarevendreth_missile.jpg").default,
@@ -1855,7 +1911,7 @@ export const bossAbilities = {
       createEvent: false,
       guid: 326707,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_animarevendreth_wave.jpg").default,
-      importActive: false,
+      importActive: true,
       name: {
         cn: "",
         de: "",
@@ -1867,9 +1923,9 @@ export const bossAbilities = {
     {
       cooldownPlannerActive: true,
       createEvent: false,
-      guid: 326858,
+      guid: 326994,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/ability_ironmaidens_whirlofblood.jpg").default,
-      importActive: false,
+      importActive: true,
       name: {
         cn: "",
         de: "",
@@ -1909,9 +1965,9 @@ export const bossAbilities = {
     {
       cooldownPlannerActive: true,
       createEvent: false,
-      guid: 332626,
+      guid: 332619,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/sha_spell_fire_blueflamestrike_nightmare.jpg").default,
-      importActive: false,
+      importActive: true,
       name: {
         cn: "",
         de: "",
@@ -1946,6 +2002,20 @@ export const bossAbilities = {
         en: "Crimson Chorus",
         fr: "",
         ru: "",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 329943,
+      icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/ability_backstab.jpg").default,
+      importActive: true,
+      name: {
+        cn: "穿刺",
+        de: "Durchbohren",
+        en: "Impale",
+        fr: "Empaler",
+        ru: "Пригвождение",
       },
     },
   ],
