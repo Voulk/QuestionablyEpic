@@ -12,7 +12,7 @@ import LinearWithValueLabel from "../BasicComponents/LinearProgressBar";
 import transformData from "../Engine/TransformData";
 import NameChanger from "./ReplaceNames/NameChanger";
 import ReplaceNames from "./ReplaceNames/ReplaceNames";
-import {raidDB} from "../Data/CooldownPlannerBossList"
+import { raidDB } from "../Data/CooldownPlannerBossList";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -75,6 +75,7 @@ export default function AddPlanDialog(props) {
     debuffData: [],
     enemyHealth: [],
     buffData: [],
+    friendlyHealth: [],
   });
   const [logDataLoading, setLogDataLoading] = React.useState(false);
   const [loadingProgress, setLoadingProgress] = React.useState(0);
@@ -144,7 +145,19 @@ export default function AddPlanDialog(props) {
 
   const handler = (info) => {
     // reset logData state on new selection
-    setLogData({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false, damageTaken: [], debuffData: [], enemyHealth: [], buffData: [] });
+    setLogData({
+      enemyCasts: [],
+      healerCasts: [],
+      healers: [],
+      bossID: 0,
+      difficulty: "",
+      importSuccessful: false,
+      damageTaken: [],
+      debuffData: [],
+      enemyHealth: [],
+      buffData: [],
+      friendlyHealth: [],
+    });
     // set data returned from wcl (some useless data here as we are reusing code)
     setLogInfo([
       {
@@ -179,8 +192,9 @@ export default function AddPlanDialog(props) {
     const debuffData = logData.debuffData;
     const enemyHealth = logData.enemyHealth;
     const buffData = logData.buffData;
+    const friendlyHealth = logData.friendlyHealth;
     // transform the imported data into plan data
-    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData, enemyHealth, buffData, importType, nameObject);
+    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData, enemyHealth, buffData, importType, nameObject, friendlyHealth);
     cooldownObject.importLogPlan(planName, boss, difficulty, transformedData);
     loadPlanData(boss, planName, difficulty); // load the imported plan data
     handleAddPlanDialogClose(true);
