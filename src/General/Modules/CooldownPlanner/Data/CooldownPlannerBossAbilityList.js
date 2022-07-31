@@ -1525,6 +1525,20 @@ export const bossAbilities = {
         ru: "Темный бал",
       },
     },
+    {
+      cooldownPlannerActive: false,
+      createEvent: true,
+      guid: 330959,
+      icon: require("Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/ability_rogue_shadowdance.jpg").default,
+      importActive: false,
+      name: {
+        cn: "断魂之舞",
+        de: "Totentanz",
+        en: "Danse Macabre",
+        fr: "Danse macabre",
+        ru: "Пляска смерти",
+      },
+    },
   ],
 
   2417: [
@@ -1804,7 +1818,6 @@ export const bossAbilities = {
         ru: "",
       },
     },
-
   ],
   2407: [
     /* ----------------------------------------- Denathrius ----------------------------------------- */
