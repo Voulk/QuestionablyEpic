@@ -23,11 +23,6 @@ export default function createStoneLegionEvents(bossID, difficulty, damageTakenD
   const kaalStoneFormRemoved = buffData.filter((filter) => filter.ability.guid === kaalStoneform && filter.type === "removebuff")[0];
   const grashaalStoneform = 329808;
   const grashaalStoneFormRemoved = buffData.filter((filter) => filter.ability.guid === grashaalStoneform && filter.type === "removebuff")[0];
-
-  console.log(buffData);
-  console.log(kaalStoneFormRemoved);
-  console.log(grashaalStoneFormRemoved);
-
   const pulverizingMeteor = 339728;
   const echoingAnnihilation = 344721;
   const reverberatingEruption = 344500;

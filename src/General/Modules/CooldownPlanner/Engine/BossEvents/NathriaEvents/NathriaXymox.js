@@ -4,17 +4,6 @@ import { fightDuration } from "General/Modules/CooldownPlanner/Functions/Functio
 export default function createNathriaXymoxEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData) {
   let events = [];
   const logGuids = damageTakenData.map((key) => key.ability.guid).concat(enemyCasts.map((key) => key.ability.guid));
-  const xymox = 166644;
-  const xymoxData = enemyHealth["series"].filter((filter) => filter.guid === xymox);
-  const xymoxHealthdata = Object.entries(xymoxData[0]["data"]).map((key) => {
-    return {
-      time: key[1][0],
-      health: key[1][1],
-    };
-  });
-  const phase2Percent = 70;
-  const phase3Percent = 40;
-
   const glyphOfDestruction = 325324;
   const rootOfExtinction = 329770; // Phase 2 indicator
   const edgeOfAnnihilation = 328880;
