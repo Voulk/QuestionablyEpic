@@ -6,7 +6,6 @@ export default function createHungeringEvents(bossID, difficulty, damageTakenDat
   const logGuids = damageTakenData.map((key) => key.ability.guid).concat(debuffs.map((key) => key.ability.guid));
   const expunge = 329742;
 
-  events.push({ time: "00:00", bossAbility: "Phase 1" });
   if (logGuids.includes(expunge)) {
     const expungeEvents = damageTakenData.filter((filter) => filter.ability.guid === expunge);
     const threshold = 30000;
