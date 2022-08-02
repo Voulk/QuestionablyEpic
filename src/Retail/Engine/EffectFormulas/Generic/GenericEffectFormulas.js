@@ -18,6 +18,12 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0,
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
 
   } 
+  if (effectName === "Neural Synapse Enhancer") {
+    const effect = activeEffect.effects[0];
+
+    bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
+
+  } 
   if (effectName === "Drape of Shame") {
     const effect = 2.05
     const crit = player.getStatPerc("Crit") + (player.getSpec() === "Holy Paladin" ? 0.16: 0) - 1;

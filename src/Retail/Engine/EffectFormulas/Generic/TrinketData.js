@@ -1352,7 +1352,7 @@ export const trinket_data = [
       {
         coefficient: 27.45337,
         table: -8,
-        targets: 3.8,
+        targets: 3.6,
         ppm: 2,
       }]},
       {

@@ -447,7 +447,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   }
 
   itemSet.itemList.forEach(item => {
-    if (item.id === 169157) mechaEffect.ppm = 3.9; // Division
+    if (item.id === 169157) mechaEffect.ppm = 3.7; // Division
     else if (item.id === 169158) mechaEffect.ppm = 3.8; // Recursion
     else if (item.id === 169156) mechaEffect.ppm = 2.9; // Synergy
     else if (item.id === 169076) mechaEffect.ppm = 1.6; // Maintenance

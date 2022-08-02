@@ -1130,8 +1130,10 @@ else if (
 
     const effect = activeTrinket.effects[0];
     const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
-
-    bonus_stats.dps = effectValue  * effect.ppm * effect.targets / 60;
+    let ppm = effect.ppm
+    if (player.getSpec() === "Holy Paladin") ppm *= 0.2; // TODO: Test with live data.
+    else if (player.getSpec() === "Mistweaver Monk") ppm = 0; // TODO: Test with live data.
+    bonus_stats.dps = effectValue  * ppm * effect.targets / 60;
 } 
 else if (
   /* ---------------------------------------------------------------------------------------------- */
