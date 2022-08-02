@@ -438,6 +438,30 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     }
   }
 
+  // Mechagon Rings
+  const mechaEffect = {
+    type: "special",
+    name: "",
+    ppm: 0,
+    ilvl: 0
+  }
+
+  itemSet.itemList.forEach(item => {
+    if (item.id === 169157) mechaEffect.ppm = 3.7; // Division
+    else if (item.id === 169158) mechaEffect.ppm = 3.8; // Recursion
+    else if (item.id === 169156) mechaEffect.ppm = 2.9; // Synergy
+    else if (item.id === 169076) mechaEffect.ppm = 1.6; // Maintenance
+
+    // Effects
+    if (item.id === 168977) {mechaEffect.name = "Rebooting Bit Band"; mechaEffect.ilvl = item.level; }
+    else if (item.id === 169159) { mechaEffect.name = "Overclocking Bit Band"; mechaEffect.ilvl = item.level; }
+    else if (item.id === 169161) { mechaEffect.name = "Protecting Bit Band"; mechaEffect.ilvl = item.level; }
+  })
+
+
+  if (mechaEffect.name !== "" && mechaEffect.ppm > 0) effectList.push(mechaEffect)
+  //
+
   //effectStats.push(bonus_stats);
   for (var x = 0; x < effectList.length; x++) {
     const effect = effectList[x];

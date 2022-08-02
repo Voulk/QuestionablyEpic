@@ -242,7 +242,7 @@ export const trinket_data = [
     effects: [
       {
         /* ------------------------------ Crit buff portion of the trinket. ----------------------------- */
-        coefficient: 2.269577 * 0.85, // This represents the upcoming 15% nerf. When the change is live the coefficient itself can be updated instead. 
+        coefficient: 2.269577 * 0.85 * 0.75, // This represents the upcoming 15% nerf. When the change is live the coefficient itself can be updated instead. 
         table: -7,
         duration: 16,
         multiplier: 1.62, // This assumes your average boss health is just under 50% which feels like a fair average.
@@ -1286,6 +1286,40 @@ export const trinket_data = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Enforcer's Stun Grenade                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+
+    */
+    name: "Enforcer's Stun Grenade",
+    effects: [
+      {
+        coefficient: 3.333333,
+        table: -7, // -8 in spell data
+        duration: 20,
+        cooldown: 120,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Fleshrender's Meathook                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+
+    */
+    name: "Fleshrender's Meathook",
+    effects: [
+      {
+        coefficient: 3.333333,
+        table: -7, // -8 in spell data
+        duration: 20,
+        cooldown: 120,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                           Grim Eclipse                                         */
     /* ---------------------------------------------------------------------------------------------- */
     name: "Grim Eclipse",
@@ -1352,8 +1386,8 @@ export const trinket_data = [
       {
         coefficient: 27.45337,
         table: -8,
-        targets: 3.8,
-        ppm: 2,
+        targets: 3.6,
+        ppm: 1, // 2 in spell data, and then nerfed by 50% for healing specs.
       }]},
       {
     /* ---------------------------------------------------------------------------------------------- */
