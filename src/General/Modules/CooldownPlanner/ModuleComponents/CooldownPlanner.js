@@ -100,10 +100,10 @@ export default function CooldownPlanner(props) {
     if ([2398, 2418, 2383, 2405, 2402, 2406, 2412, 2417, 2399, 2407].includes(currentBoss)) {
       raid = 2296;
     }
-    if ([(2435, 2442, 2439, 2444, 2445, 2443, 2446, 2447, 2440, 2441)].includes(currentBoss)) {
+    if ([2423, 2433, 2429, 2432, 2434, 2430, 2436, 2431, 2422, 2435].includes(currentBoss)) {
       raid = 2450;
     }
-    if ([(2458, 2465, 2470, 2460, 2459, 2461, 2463, 2469, 2457, 2467, 2464)].includes(currentBoss)) {
+    if ([2458, 2465, 2470, 2460, 2459, 2461, 2463, 2469, 2457, 2467, 2464].includes(currentBoss)) {
       raid = 2481;
     }
     setCurrentRaid(raid);
