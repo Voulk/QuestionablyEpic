@@ -231,6 +231,19 @@ const getDifficultyBaseLevel = (difficulty) => {
       return 304;
   }
 };
+
+const raidImage = (raidID) => {
+  switch (raidID) {
+    case 1190:
+      return require("Images/Bosses/CastleNathria/CastleNathriaBackground.png").default;
+    case 1193:
+      return require("Images/Bosses/SanctumOfDomination/SanctumBackground.png").default;
+    case 1195:
+      return require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesBackground.png").default;
+    default:
+      return require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesBackground.png").default;
+  }
+};
 export default function RaidGearContainer(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
@@ -339,9 +352,7 @@ export default function RaidGearContainer(props) {
                                       height: "100%",
                                       paddingLeft: 8,
                                       // background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))", `url(${require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesBackground.png").default})`,
-                                      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${
-                                        require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesBackground.png").default
-                                      })`,
+                                      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${raidImage(raidID)})`,
                                       backgroundRepeat: "no-repeat",
                                       backgroundPosition: "center 60%",
                                       backgroundSize: "auto 100%",
