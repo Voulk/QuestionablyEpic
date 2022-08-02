@@ -8,7 +8,7 @@ import { effectData} from "./EffectData";
 // Examples include the legendary cloak, Azshara's Staff, most Crucible of Storms items and so forth.
 // Shadowlands is light on them so far but we can expect to see more as the expansion progresses.
 
-export function getGenericEffect(effectName, player, contentType, itemLevel = 0) {
+export function getGenericEffect(effectName, player, contentType, itemLevel = 0, effectNotes = {}) {
   let bonus_stats = {};
   let activeEffect = effectData.find((effect) => effect.name === effectName);
 
@@ -64,8 +64,8 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
   } 
   else if (effectName === "Rebooting Bit Band") { // TODO: Split it's proc rate by proc ring.
     const effect = activeEffect.effects[0];
-    const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel)
-    const ppm = 3.4 // TODO
+    const oneHeal = getProcessedValue(effect.coefficient, effect.table, effectNotes.ilvl)
+    const ppm = effectNotes.ppm; 
 
     bonus_stats.hps =  oneHeal * effect.targets * ppm * player.getStatPerc("versatility") * player.getStatPerc("crit") * (1 - effect.expectedOverhealing) / 60;
 
