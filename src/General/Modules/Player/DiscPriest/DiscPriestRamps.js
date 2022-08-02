@@ -73,7 +73,7 @@ export const allRampsHealing = (boonSeq, fiendSeq, stats, settings = {}, conduit
 export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits, reporting) => {
 
     let rampResult = {totalHealing: 0, ramps: [], rampSettings: settings}
-    const miniSeq = buildRamp('Mini', 6, [], stats.haste, settings.playstyle || "", [])
+    const miniSeq = buildRamp('Mini', 6, settings["Neural Synapse Enhancer"] || false, stats.haste, settings.playstyle || "", [])
     const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
     const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
     const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
@@ -428,6 +428,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
     if (settings["Flame of Battle"]) discSpells["Flame of Battle"][0].value = settings["Flame of Battle"];
     if (settings['Shadowed Orb']) discSpells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
     if (settings['Soulletting Ruby']) discSpells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
+    if (settings['Neural Synapse Enhancer']) discSpells['Neural Synapse Enhancer'][0].value = settings['Neural Synapse Enhancer'];
     //
 
     // ==== Conduits ====

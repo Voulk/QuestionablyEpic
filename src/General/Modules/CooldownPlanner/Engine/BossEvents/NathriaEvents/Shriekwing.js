@@ -76,8 +76,6 @@ export default function createShriekwingEvents(bossID, difficulty, damageTakenDa
 
     events.push({ time: "00:00", bossAbility: "Phase 1" });
     const Phase2one = enemyCasts.filter((filter) => filter.ability.guid === BloodShroudCast)[0];
-    console.log(enemyCasts.filter((filter) => filter.ability.guid === BloodShroudCast))
-    console.log(Phase2one)
     Phase2one !== undefined
       ? events.push({
           time: moment
