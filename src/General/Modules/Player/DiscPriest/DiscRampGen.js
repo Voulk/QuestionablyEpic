@@ -22,33 +22,33 @@ export const buildRamp = (type, applicators, trinkets, haste, playstyle, special
     if (talents.includes('Purge the Wicked')) specialSpells.push('Purge the Wicked');
     if (talents.includes('Divine Star')) specialSpells.push("Divine Star");
 
-    const trinketList = buildTrinkets(trinkets);
+
     if (type === "Mini") {
         return buildMiniRamp(applicators, trinkets, specialSpells, playstyle);
     }
-    else if (type === "Fiend") {
-        // Build a sequence for a Fiend ramp. See it's function for more information.
-        return buildFiendRamp(applicators, trinketList['Fiend'], specialSpells, playstyle);
-    }
-    else if (type === "Boon") {
-        // TODO: Rename Boon to "Primary" since we'll actually include both types of primary ramp here. 
-        // Mindgames ramps will of course occur much more frequently than Boon ramps. 
-        if (playstyle === "Kyrian Evangelism") {
-            return buildBoonEvangRamp(applicators, trinketList['Boon'], haste, specialSpells);
-        }
-        else if (playstyle === "Kyrian Spirit Shell") {
-            return buildBoonShellRamp(applicators, trinketList['Boon'], haste, specialSpells);
-        }
-        else if (playstyle === "Venthyr Evangelism") { // Coming soon
-            return buildMindgamesRamp(applicators, trinketList['Boon'], specialSpells);
-        }
-        else if (playstyle === "Venthyr Spirit Shell") { // Coming soon
-            //return buildMindgamesRamp(applicators, trinketList['Boon'], haste, specialSpells);
-        }
-        // If there was a desire or a need to add specializations for Night Fae or Necrolord then they could be added here. 
-    }
     else {
-        console.error("Invalid Ramp");
+        const trinketList = buildTrinkets(trinkets);
+        if (type === "Fiend") {
+            // Build a sequence for a Fiend ramp. See it's function for more information.
+            return buildFiendRamp(applicators, trinketList['Fiend'], specialSpells, playstyle);
+        }
+        else if (type === "Boon") {
+            // TODO: Rename Boon to "Primary" since we'll actually include both types of primary ramp here. 
+            // Mindgames ramps will of course occur much more frequently than Boon ramps. 
+            if (playstyle === "Kyrian Evangelism") {
+                return buildBoonEvangRamp(applicators, trinketList['Boon'], haste, specialSpells);
+            }
+            else if (playstyle === "Kyrian Spirit Shell") {
+                return buildBoonShellRamp(applicators, trinketList['Boon'], haste, specialSpells);
+            }
+            else if (playstyle === "Venthyr Evangelism") { // Coming soon
+                return buildMindgamesRamp(applicators, trinketList['Boon'], specialSpells);
+            }
+            else if (playstyle === "Venthyr Spirit Shell") { // Coming soon
+                //return buildMindgamesRamp(applicators, trinketList['Boon'], haste, specialSpells);
+            }
+            // If there was a desire or a need to add specializations for Night Fae or Necrolord then they could be added here. 
+        }
     }
 }
 
@@ -64,8 +64,9 @@ const buildTrinkets = (trinkets) => {
     // 1.5 minute CD trinkets. We'll auto-include these in both Evang / Shell ramps. 
     if (trinkets.includes("Flame of Battle")) { onUse.Fiend = "Flame of Battle"; onUse.Boon = "Flame of Battle"; }
     if (trinkets.includes("Instructor's Divine Bell")) { onUse.Fiend = "Instructor's Divine Bell"; onUse.Boon = "Instructor's Divine Bell";}
-    if (trinkets.includes("Instructor's Divine Bell (new)")) { onUse.Fiend = "Instructor's Divine Bell (new)"; onUse.Boon = "Instructor's Divine Bell (new)";}
     
+    if (trinkets.includes("Instructor's Divine Bell (new)")) { onUse.Fiend = "Instructor's Divine Bell (new)"; onUse.Boon = "Instructor's Divine Bell (new)";}
+    if (trinkets.includes("Neural Synapse Enhancer")) { onUse.Fiend = "Neural Synapse Enhancer"; onUse.Boon = "Neural Synapse Enhancer";}
     // 2 minute or longer CD trinkets. These need to be assigned to a specific ramp. If we are wearing two such trinkets at once then assign one to Boon and the other to Fiend. 
     if (trinkets.includes("Soulletting Ruby")) onUse.Boon = "Soulletting Ruby";
     else if (trinkets.includes("Shadowed Orb of Torment")) onUse.Boon = "Shadowed Orb of Torment";
@@ -81,7 +82,7 @@ const buildTrinkets = (trinkets) => {
  * @param {*} playstyle Our current playstyle. Setting playstyle to Venthyr will include Mindgames in the mini-ramp.
  * @returns Returns a sequence of spells representing a mini ramp.
  */
-export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle) => {
+export const buildMiniRamp = (applicators, neural, specialSpells, playstyle) => {
     let sequence = [];
     
     if (specialSpells.includes('Purge the Wicked')) sequence.push('Purge the Wicked');
@@ -90,6 +91,7 @@ export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle) =
     for (var x = 0; x < applicators; x++) {
         sequence.push('Power Word: Shield');
     }
+    if (neural) sequence.push("Neural Synapse Enhancer");
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
     sequence.push('Schism');
@@ -135,6 +137,7 @@ export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle) =
         sequence.push('Power Word: Shield');
     }
     // Note for Ruby that this is the time we expect to get the buff, NOT the time we cast it.
+    if (trinket === "Neural Synapse Enhancer") sequence.push("Neural Synapse Enhancer");
     if (trinket === "Soulletting Ruby") sequence.push("Soulletting Ruby");
     if (trinket === "Instructor's Divine Bell") sequence.push("Instructor's Divine Bell");
     if (trinket === "Instructor's Divine Bell (new)") sequence.push("Instructor's Divine Bell (new)");
@@ -187,6 +190,7 @@ export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = 
         sequence.push('Power Word: Shield');
     }
     if (trinket === "Soulletting Ruby") sequence.push("Soulletting Ruby");
+    if (trinket === "Neural Synapse Enhancer") sequence.push("Neural Synapse Enhancer");
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
     if (trinket === "Instructor's Divine Bell (new)") sequence.push("Instructor's Divine Bell (new)");
@@ -258,6 +262,7 @@ export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = 
     
     // Shadowed Orb lasts a very long time so if we're using it we're safe to use it at the start of our ramp (or before).
     if (trinket === "Shadowed Orb of Torment") sequence.push("Shadowed Orb");
+
     if (specialSpells.includes("Rapture")) {sequence.push('Rapture'); applicators -= 1 };
     for (var x = 0; x < applicators; x++) {
         // Power Word: Shield can also be swapped out for Shadow Mend on non-Rapture ramps.
@@ -265,6 +270,7 @@ export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = 
     }
     // Note for Ruby that this is the time we expect to get the buff, NOT the time we cast it.
     if (trinket === "Soulletting Ruby") sequence.push("Soulletting Ruby");
+    if (trinket === "Neural Synapse Enhancer") sequence.push("Neural Synapse Enhancer");
     if (trinket === "Instructor's Divine Bell") sequence.push("Instructor's Divine Bell");
     if (trinket === "Instructor's Divine Bell (new)") sequence.push("Instructor's Divine Bell (new)");
     

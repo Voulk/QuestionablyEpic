@@ -45,7 +45,7 @@ describe("Genesis Lathe Check", () => {
 
     each`
     level   | expectedResult
-    ${226}  | ${[5988, 6986, 1042]}
+    ${226}  | ${[6586, 7685, 1146]}
     // add new test cases here. There aren't any in-game values for it yet so the 226 tester is the only one available. Update when obtainable.
     `.test("Genesis Lathe Data Check Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         

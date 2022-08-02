@@ -400,6 +400,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
     bonus_stats.haste = runeStats;
     bonus_stats.crit = runeStats;
     bonus_stats.versatility = runeStats;
+    //bonus_stats.mastery = runeStats; // Fourth Rune.
     //
   } 
   else if (
@@ -896,6 +897,7 @@ else if (
   let effect = activeTrinket.effects[0];
 
   bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm[player.getSpec()]) / 60;
+
   //
 }
 else if (
@@ -947,9 +949,7 @@ else if (
     const statRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel);
     const statValue = getDiminishedValue(itemSetHighestSecondary, statRaw, setStats[itemSetHighestSecondary])
     
-    
     bonus_stats[itemSetHighestSecondary] = statValue;
-
 
   //
 }
@@ -974,12 +974,44 @@ else if (
   let effect = activeTrinket.effects[0];
 
   const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
-  const trinketValue = getDiminishedValue('Versatility', trinketRaw, setStats.crit)
+  const trinketValue = getDiminishedValue('Versatility', trinketRaw, setStats.versatility)
 
   bonus_stats.versatility = (trinketValue * effect.duration) / effect.cooldown;
   //bonus_stats.versatility *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
 
   
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                  Enforcer's Stun Grenade                                       */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Enforcer's Stun Grenade"
+) {
+  let effect = activeTrinket.effects[0];
+
+  const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
+  const trinketValue = getDiminishedValue('Versatility', trinketRaw, setStats.versatility)
+
+  bonus_stats.versatility = (trinketValue * effect.duration) / effect.cooldown;
+  bonus_stats.versatility *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
+
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                  Fleshrender's Meathook                                        */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Fleshrender's Meathook"
+) {
+  let effect = activeTrinket.effects[0];
+
+  const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
+  const trinketValue = getDiminishedValue('Haste', trinketRaw, setStats.haste)
+
+  bonus_stats.haste = (trinketValue * effect.duration) / effect.cooldown;
+  bonus_stats.haste *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
+
   //
 }
 else if (
@@ -1033,6 +1065,44 @@ else if (
 } 
 else if (
   /* ---------------------------------------------------------------------------------------------- */
+  /*                                            Faith's Crucible                                    */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Faith's Crucible"
+) {
+  let effect = activeTrinket.effects[0];
+  const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
+  
+  bonus_stats.hps = (oneHeal * effect.hits * player.getStatMultiplier("CRITVERS") / effect.cooldown);
+  //
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                     Fluctuating Energy                                         */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Fluctuating Energy"
+) {
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm * effect.efficiency * player.getStatPerc("Haste")) / 60;
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                  Ingenious Mana Battery                                        */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Ingenious Mana Battery"
+) {
+  const manaEffect = activeTrinket.effects[0];
+  const versEffect = activeTrinket.effects[1];
+
+  //bonus_stats.mana = getProcessedValue(manaEffect.coefficient, manaEffect.table, itemLevel) / player.getFightLength(contentType);
+  bonus_stats.mana = 1738 / player.getFightLength(contentType);
+  bonus_stats.versatility = getProcessedValue(versEffect.coefficient, versEffect.table, itemLevel) * versEffect.uptime;
+
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
   /*                                      Resonant Reservoir                                        */
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Resonant Reservoir"
@@ -1082,6 +1152,44 @@ else if (
     const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
 
     bonus_stats.dps = effectValue  * effect.ppm * effect.hits  / 60;
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                      Deteriorated Construct Core                                   */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Deteriorated Construct Core"
+) {
+
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
+    let ppm = effect.ppm
+    if (player.getSpec() === "Holy Paladin") ppm *= 0.2; // TODO: Test with live data.
+    else if (player.getSpec() === "Mistweaver Monk") ppm = 0; // TODO: Test with live data.
+    bonus_stats.dps = effectValue  * ppm * effect.targets / 60;
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                         Aran's Relaxing Ruby                                   */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Aran's Relaxing Ruby"
+) {
+
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatPerc("Haste") * player.getStatMultiplier("CRITVERS");
+
+    bonus_stats.dps = effectValue  * effect.ppm * effect.targets / 60;
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Dreadfire Vessel                                   */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Dreadfire Vessel"
+) {
+
+    const effect = activeTrinket.effects[0];
+    const effectValue = getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getStatMultiplier("CRITVERS");
+
+    bonus_stats.dps = effectValue * effect.targets / effect.cooldown;
 } 
 
   else {

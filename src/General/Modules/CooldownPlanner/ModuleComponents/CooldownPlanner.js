@@ -96,6 +96,17 @@ export default function CooldownPlanner(props) {
 
   /* ------------------------------- Loads relevant plan into table ------------------------------- */
   const loadPlanData = (currentBoss, newPlan, currentDif) => {
+    let raid = "";
+    if ([2398, 2418, 2383, 2405, 2402, 2406, 2412, 2417, 2399, 2407].includes(currentBoss)) {
+      raid = 2296;
+    }
+    if ([2423, 2433, 2429, 2432, 2434, 2430, 2436, 2431, 2422, 2435].includes(currentBoss)) {
+      raid = 2450;
+    }
+    if ([2458, 2465, 2470, 2460, 2459, 2461, 2463, 2469, 2457, 2467, 2464].includes(currentBoss)) {
+      raid = 2481;
+    }
+    setCurrentRaid(raid);
     setCurrentBoss(currentBoss);
     setCurrentPlan(newPlan);
     const bossCooldowns = cooldownObject.getCooldowns(currentBoss, currentDif); // Get List of Plans for the boss
@@ -207,7 +218,7 @@ export default function CooldownPlanner(props) {
                     </LightTooltip>
                   </Grid>
                   {/* ---------------------------------- Raid Selection Drop Down ---------------------------------- */}
-                  {/* <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                     <TextField
                       id="RaidSelector"
                       select
@@ -235,7 +246,7 @@ export default function CooldownPlanner(props) {
                           );
                         })}
                     </TextField>
-                  </Grid> */}
+                  </Grid>
                   {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
                   <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
                     <TextField
@@ -326,6 +337,7 @@ export default function CooldownPlanner(props) {
                       changeDifficulty={changeDifficulty}
                       currentRaid={currentRaid}
                       changeBoss={changeBoss}
+                      setCurrentRaid={setCurrentRaid}
                     />
                   </Grid>
 

@@ -41,9 +41,39 @@ export const effectData = [
       name: "Sepulcher's Savior",
       effects: [
         {
-            coefficient: 231.3687,
+            coefficient: 231.3687 * 1.2,
             cooldown: 180,
             table: -8 // -9
+        },
+      ],
+    },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                    Neural Synapse Enhancer                                     */
+      /* -----------------------------------------------------------------------------------------------*/
+      // This is an on-use int boost on a 45s cooldown. It also deals damage to the player which is ignored for now.
+      name: "Neural Synapse Enhancer",
+      effects: [
+        {
+            coefficient: 26.2144,
+            cooldown: 45,
+            duration: 15,
+            table: -1 
+        },
+      ],
+    },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                           Rebooting Bit Band                                   */
+      /* ---------------------------------------------------------------------------------------------- */
+      // 
+      name: "Rebooting Bit Band",
+      effects: [
+        {
+            coefficient: 18,
+            targets: 5,
+            table: -8, // -9
+            expectedOverhealing: 0.4,
         },
       ],
     },
@@ -115,9 +145,9 @@ export const effectData = [
       // The effects are similar enough in strength that a different distribution of procs doesn't particularly matter - so long as they are being used.
       name: "Genesis Lathe",
       effects: [
-        {name: "Absorb", coefficient: 92.22098, table: -8, percProcs: 0.75, ticks: 1, secondaries: ["Versatility"]},
-        {name: "FlatHeal", coefficient: 107.5911, table: -8, percProcs: 0.1, ticks: 1, secondaries: ["Versatility", "Crit"]},
-        {name: "Hot", coefficient: 16.04781, table: -8, percProcs: 0.15, ticks: 5, secondaries: ["Versatility", "Crit", "Haste"]}]
+        {name: "Absorb", coefficient: 92.22098*1.1, table: -8, percProcs: 0.75, ticks: 1, secondaries: ["Versatility"]},
+        {name: "FlatHeal", coefficient: 107.5911*1.1, table: -8, percProcs: 0.1, ticks: 1, secondaries: ["Versatility", "Crit"]},
+        {name: "Hot", coefficient: 16.04781*1.1, table: -8, percProcs: 0.15, ticks: 5, secondaries: ["Versatility", "Crit", "Haste"]}]
     },
 
 
