@@ -6,7 +6,8 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
-    chaosBrand: true
+    chaosBrand: true,
+    critMult: 2
 }
 
 
@@ -72,7 +73,7 @@ export const allRampsHealing = (boonSeq, fiendSeq, stats, settings = {}, conduit
 export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits, reporting) => {
 
     let rampResult = {totalHealing: 0, ramps: [], rampSettings: settings}
-    const miniSeq = buildRamp('Mini', 6, [], stats.haste, settings.playstyle || "", [])
+    const miniSeq = buildRamp('Mini', 6, settings["Neural Synapse Enhancer"] || false, stats.haste, settings.playstyle || "", [])
     const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
     const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
     const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
@@ -216,8 +217,9 @@ const getActiveAtone = (atoneApp, timer) => {
 const getStatMult = (currentStats, stats) => {
     let mult = 1;
     
+    const critChance = 0.05 + currentStats['crit'] / 35 / 100;
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / 40 / 100);
-    if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100); // TODO: Re-enable
+    if (stats.includes("crit")) mult *= (discSettings.critMult * critChance + (1 - critChance)); // TODO: Re-enable
     if (stats.includes("mastery")) mult *= (1.108 + currentStats['mastery'] / 25.9259 / 100);
     return mult;
 }
@@ -373,11 +375,11 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
 
     }
 
+    if (settings['Drape of Shame']) discSettings.critMult = 2.05;
     // ==== Soulbinds ====
     // Don't include Conduits here just any relevant soulbind nodes themselves.
     // This section can be expanded with more nodes, particularly those from other covenants.
     // Examples: Combat Meditation, Pointed Courage
-
     // --- Combat Meditation ---
     // Mastery buff on Casting Boon. Pre-DR stat buff.
     if (settings['Pelagos']) discSpells['Boon of the Ascended'].push({
@@ -426,6 +428,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
     if (settings["Flame of Battle"]) discSpells["Flame of Battle"][0].value = settings["Flame of Battle"];
     if (settings['Shadowed Orb']) discSpells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
     if (settings['Soulletting Ruby']) discSpells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
+    if (settings['Neural Synapse Enhancer']) discSpells['Neural Synapse Enhancer'][0].value = settings['Neural Synapse Enhancer'];
     //
 
     // ==== Conduits ====

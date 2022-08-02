@@ -112,10 +112,10 @@ describe("Resonant Silver Bell Data Tests", () => {
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
-    ${259}  | ${8811}
-    ${246}  | ${7307}
-    ${233}  | ${6031}
-    ${220}  | ${4951}
+    ${259}  | ${10133}
+    ${246}  | ${8403}
+    ${233}  | ${6936}
+    ${220}  | ${5694}
     // add new test cases here
     `.test("Resonant Silver Bell - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
@@ -226,7 +226,7 @@ describe("Inscrutable Quantum Device", () => {
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
-    ${226}  | ${718}
+    ${226}  | ${539}
     // add new test cases here
     `.test("Inscrutable Quantum Device Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   

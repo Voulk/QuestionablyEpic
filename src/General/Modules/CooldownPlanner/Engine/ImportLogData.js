@@ -12,11 +12,13 @@ import importDebuffDataFiltered from "./Imports/importDebuffDataFiltered";
 import importDamageLogDataFiltered from "./Imports/importDamageLogDataFiltered";
 import importCasts from "./Imports/importCasts";
 import importEnemyBuffs from "./Imports/importEnemyBuffs";
+import importFriendlyHealth from "./Imports/importFriendlyHealth";
 
 export default async function importLogData(starttime, endtime, reportID, boss, logDif, setLogData, setLoadingProgress) {
   setLoadingProgress(20);
 
   const enemyHealth = await importEnemyHealth(starttime, endtime, reportID);
+  const friendlyHealth = await importFriendlyHealth(starttime, endtime, reportID);
   const dif = logDifficulty(logDif);
   /* ----------- Import Healer Info from the Logs healing table for each healing class. ----------- */
   setLoadingProgress(40);
@@ -62,5 +64,6 @@ export default async function importLogData(starttime, endtime, reportID, boss, 
     debuffData: debuffData,
     enemyHealth: enemyHealth,
     buffData: buffData,
+    friendlyHealth: friendlyHealth,
   });
 }

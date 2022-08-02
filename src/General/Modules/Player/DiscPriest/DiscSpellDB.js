@@ -367,6 +367,16 @@ export const DISCSPELLS = {
         stat: "crit",
         value: 900, // Trinket values are replaced by the value on the specific version of the trinket.
     }],
+    "Neural Synapse Enhancer": [{
+        type: "buff",
+        castTime: 0, 
+        cost: 0,
+        cooldown: 45,
+        buffDuration: 15,
+        buffType: 'stats',
+        stat: "intellect",
+        value: 0, // Effect values are replaced by the value on the specific version of the trinket.
+    }],
     "Moonlit Prism": [{
         type: "buff",
         castTime: 0, // While this has a 2s cast time, it can be used well before our ramp starts which means it functionally does not cost us cast time.

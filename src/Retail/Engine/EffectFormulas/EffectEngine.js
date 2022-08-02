@@ -48,7 +48,7 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
       // A special effect is one that appears on an item slot where an effect isn't usually expected.
       // This includes stuff like Drape of Shame that adds a crit bonus to a cape slot.
       // Does NOT include trinkets, legendaries, set bonuses etc.
-      bonus_stats = getGenericEffect(effectName, player, contentType, itemLevel);
+      bonus_stats = getGenericEffect(effectName, player, contentType, itemLevel, effect);
     } 
     else if (effect.type === "domination gem") {
       // Domination gems don't work in patch 9.2 content and no longer need to be calculated.

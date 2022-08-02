@@ -7,6 +7,7 @@ import "./Panels.css";
 import { useTranslation } from "react-i18next";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { filterItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
+import i18n from "i18next";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -21,9 +22,10 @@ export default function WorldBossGearContainer(props) {
   const { t } = useTranslation();
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
+  const currentLanguage = i18n.language;
 
   const contentGenerator = () => {
-    return encounterDB[1192].map((key, i) => (
+    return encounterDB[1192].bossOrder.map((key, i) => (
       <Grid item xs={12} key={"worldBossContainer-" + i}>
         <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
           <Grid container>
@@ -40,7 +42,7 @@ export default function WorldBossGearContainer(props) {
                 className="container-UpgradeCards"
               >
                 <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
-                  {t("WorldBosses." + key)}
+                  {encounterDB[1192][key].name[currentLanguage]}
                 </Typography>
               </div>
             </Grid>

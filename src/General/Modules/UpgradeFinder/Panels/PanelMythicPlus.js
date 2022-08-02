@@ -20,14 +20,17 @@ const useStyles = makeStyles(() => ({
 
 export default function MythicPlusGearContainer(props) {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
   const difficulty = props.playerSettings.dungeon;
   const gameType = useSelector((state) => state.gameType);
+
   const contentGenerator = () => {
-    return encounterDB[1].map((key, i) => (
+    return encounterDB["-1"].bossOrder.map((key, i) => (
       <Grid item xs={12} key={"mythicContainer-" + i}>
+        {console.log(key)}
         <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
           <Grid container>
             <Grid item xs={12} sm="auto">
@@ -35,7 +38,7 @@ export default function MythicPlusGearContainer(props) {
                 style={{
                   width: 207,
                   height: "100%",
-                  backgroundImage: `url(${DungeonHeaderIcons(key)})`,
+                  backgroundImage: `url(${DungeonHeaderIcons(parseInt(key))})`,
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center 60%",
                   backgroundSize: "auto 100%",
@@ -43,13 +46,13 @@ export default function MythicPlusGearContainer(props) {
                 className="container-UpgradeCards"
               >
                 <Typography variant="h6" style={{ width: "100%" }} className="centered-UpgradeCards-Dungeons">
-                  {t("DungeonNames." + key)}
+                  {encounterDB["-1"][key].name[currentLanguage]}
                 </Typography>
               </div>
             </Grid>
             <Divider orientation="vertical" flexItem />
             <Grid item xs={12} sm container spacing={1} style={{ padding: 8 }}>
-              {[...filterItemListBySource(itemList, -1, key, itemLevels.dungeon[difficulty])].map((item, index) => (
+              {[...filterItemListBySource(itemList, "-1", key, itemLevels.dungeon[difficulty])].map((item, index) => (
                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
               ))}
             </Grid>
@@ -60,7 +63,7 @@ export default function MythicPlusGearContainer(props) {
   };
 
   const contentGeneratorBC = () => {
-    return encounterDB[123].map((key, i) => (
+    return encounterDB[123].bossOrder.map((key, i) => (
       <Grid item xs={12} key={"mythicContainer-" + i}>
         <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
           <Grid container>
@@ -70,7 +73,7 @@ export default function MythicPlusGearContainer(props) {
                   width: 300,
                   height: "100%",
                   // paddingLeft: 8,
-                  backgroundImage: `url(${DungeonHeaderIcons(key)})`,
+                  backgroundImage: `url(${DungeonHeaderIcons(parseInt(key))})`,
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center 60%",
                   backgroundSize: "auto 100%",
@@ -78,7 +81,7 @@ export default function MythicPlusGearContainer(props) {
                 className="container-UpgradeCards"
               >
                 <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
-                  {t("BurningCrusade.Dungeons." + key)}
+                  {encounterDB[123][key].name[currentLanguage]}
                 </Typography>
               </div>
             </Grid>
@@ -93,7 +96,7 @@ export default function MythicPlusGearContainer(props) {
       </Grid>
     ));
   };
-
+  console.log(gameType);
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>

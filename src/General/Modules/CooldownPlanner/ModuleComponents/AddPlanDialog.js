@@ -12,6 +12,7 @@ import LinearWithValueLabel from "../BasicComponents/LinearProgressBar";
 import transformData from "../Engine/TransformData";
 import NameChanger from "./ReplaceNames/NameChanger";
 import ReplaceNames from "./ReplaceNames/ReplaceNames";
+import { raidDB } from "../Data/CooldownPlannerBossList";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -40,7 +41,19 @@ function a11yProps(index) {
 }
 
 export default function AddPlanDialog(props) {
-  const { handleAddPlanDialogClose, handleAddPlanDialogClickOpen, openAddPlanDialog, cooldownObject, currentBoss, loadPlanData, currentDifficulty, disabledCheck, changeBoss, currentRaid } = props;
+  const {
+    handleAddPlanDialogClose,
+    handleAddPlanDialogClickOpen,
+    openAddPlanDialog,
+    cooldownObject,
+    currentBoss,
+    loadPlanData,
+    currentDifficulty,
+    disabledCheck,
+    changeBoss,
+    currentRaid,
+    setCurrentRaid,
+  } = props;
   const [planName, setPlanName] = useState("");
   const [difficulty, setDifficulty] = useState(currentDifficulty);
   const [importType, setImportType] = useState("Smart");
@@ -48,7 +61,7 @@ export default function AddPlanDialog(props) {
   const duplicatePlanNameCheck = bossPlans.includes(planName) ? true : false;
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-
+  const expansion = 8; // shadowlands
   const [value, setValue] = React.useState(0);
   const [reportid, setReportid] = React.useState(0);
   const [logData, setLogData] = React.useState({
@@ -62,6 +75,7 @@ export default function AddPlanDialog(props) {
     debuffData: [],
     enemyHealth: [],
     buffData: [],
+    friendlyHealth: [],
   });
   const [logDataLoading, setLogDataLoading] = React.useState(false);
   const [loadingProgress, setLoadingProgress] = React.useState(0);
@@ -131,7 +145,19 @@ export default function AddPlanDialog(props) {
 
   const handler = (info) => {
     // reset logData state on new selection
-    setLogData({ enemyCasts: [], healerCasts: [], healers: [], bossID: 0, difficulty: "", importSuccessful: false, damageTaken: [], debuffData: [], enemyHealth: [], buffData: [] });
+    setLogData({
+      enemyCasts: [],
+      healerCasts: [],
+      healers: [],
+      bossID: 0,
+      difficulty: "",
+      importSuccessful: false,
+      damageTaken: [],
+      debuffData: [],
+      enemyHealth: [],
+      buffData: [],
+      friendlyHealth: [],
+    });
     // set data returned from wcl (some useless data here as we are reusing code)
     setLogInfo([
       {
@@ -166,8 +192,9 @@ export default function AddPlanDialog(props) {
     const debuffData = logData.debuffData;
     const enemyHealth = logData.enemyHealth;
     const buffData = logData.buffData;
+    const friendlyHealth = logData.friendlyHealth;
     // transform the imported data into plan data
-    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData, enemyHealth, buffData, importType, nameObject);
+    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData, enemyHealth, buffData, importType, nameObject, friendlyHealth);
     cooldownObject.importLogPlan(planName, boss, difficulty, transformedData);
     loadPlanData(boss, planName, difficulty); // load the imported plan data
     handleAddPlanDialogClose(true);
@@ -200,6 +227,31 @@ export default function AddPlanDialog(props) {
         <TabPanel value={value} index={0}>
           <div sx={{ padding: "8px" }}>
             <Grid item container spacing={1} xl={12} alignItems="center" sx={{ marginTop: "1px" }}>
+              <Grid item xl={12}>
+                <Typography color="primary" align="center">
+                  Raid
+                </Typography>
+                <TextField sx={{ minWidth: 100, width: "100%" }} size="small" select value={currentRaid} onChange={(e) => setCurrentRaid(e.target.value)}>
+                  {raidDB
+                    .filter((obj) => {
+                      return obj.expansion === expansion;
+                    })
+                    .map((key, i, arr) => {
+                      let lastItem = i + 1 === arr.length ? false : true;
+                      return (
+                        <MenuItem divider={lastItem} key={"RS" + i} value={key.ID}>
+                          <img
+                            style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
+                            src={key.icon}
+                            alt={key.name[currentLanguage]}
+                          />
+                          {key.name[currentLanguage]}
+                        </MenuItem>
+                      );
+                    })}
+                </TextField>
+              </Grid>
+
               <Grid item xl={12}>
                 <Typography color="primary" align="center">
                   Boss
