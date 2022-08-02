@@ -10,6 +10,21 @@
 export const changeLog = [
   {
     version: "9.2.5 / 2.5.4",
+    update: 21,
+    date: "2 August (Major)",
+    changes: [ 
+      "Added all Season 4 Content.",
+      "Cooldown Planner: Added Castle Nathria Fated.",
+      "Upgrade Finder: Added Karazhan, Mechagon, Grimrail Depot and Iron Docks.",
+      "Upgrade Finder: Added Castle Nathria and Sanctum of Domination at Fated item levels.",
+      "New Effects: Added Mechagon ring sets, Drape of Shame, Neural Synapse Enhancer and more.",
+      "Added Karazhan & Mechagon trinkets. Updated trinket item levels.",
+      
+
+    ],
+  },
+  {
+    version: "9.2.5 / 2.5.4",
     update: 20,
     date: "15 July (Minor)",
     changes: [ 
