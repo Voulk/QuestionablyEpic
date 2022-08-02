@@ -1,4 +1,4 @@
-name: CI/CD
+name: Staging CI/CD
 
 on:
   push:
@@ -29,7 +29,7 @@ jobs:
       run: npm test
 
     - name: Build
-      run: CI=false env-cmd -f .env npm run build
+      run: CI=false npm run build:dev
     
     - name: Sync
       env:
