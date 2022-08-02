@@ -25,7 +25,7 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0,
 
   } 
   if (effectName === "Drape of Shame") {
-    const effect = 2.05
+    const effect = 2.03;
     const crit = player.getStatPerc("Crit") + (player.getSpec() === "Holy Paladin" ? 0.16: 0) - 1;
     const healingIncrease = ((1 - crit) + (crit * effect)) / ((1 - crit) + (crit * 2)) - 1
 

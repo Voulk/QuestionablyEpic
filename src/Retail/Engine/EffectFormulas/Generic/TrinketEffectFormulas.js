@@ -974,12 +974,44 @@ else if (
   let effect = activeTrinket.effects[0];
 
   const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
-  const trinketValue = getDiminishedValue('Versatility', trinketRaw, setStats.crit)
+  const trinketValue = getDiminishedValue('Versatility', trinketRaw, setStats.versatility)
 
   bonus_stats.versatility = (trinketValue * effect.duration) / effect.cooldown;
   //bonus_stats.versatility *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
 
   
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                  Enforcer's Stun Grenade                                       */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Enforcer's Stun Grenade"
+) {
+  let effect = activeTrinket.effects[0];
+
+  const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
+  const trinketValue = getDiminishedValue('Versatility', trinketRaw, setStats.versatility)
+
+  bonus_stats.versatility = (trinketValue * effect.duration) / effect.cooldown;
+  bonus_stats.versatility *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
+
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                  Fleshrender's Meathook                                        */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Fleshrender's Meathook"
+) {
+  let effect = activeTrinket.effects[0];
+
+  const trinketRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel)
+  const trinketValue = getDiminishedValue('Haste', trinketRaw, setStats.haste)
+
+  bonus_stats.haste = (trinketValue * effect.duration) / effect.cooldown;
+  bonus_stats.haste *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
+
   //
 }
 else if (
