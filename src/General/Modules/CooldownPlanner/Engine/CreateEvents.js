@@ -21,6 +21,7 @@ import createNineEvents from "./BossEvents/SanctumEvents/TheNine";
 import createRemnantEvents from "./BossEvents/SanctumEvents/RemnantOfNerzhul";
 import createSoulrenderEvents from "./BossEvents/SanctumEvents/Soulrender";
 import createPainsmithEvents from "./BossEvents/SanctumEvents/Painsmith";
+import createFatescribeEvents from "./BossEvents/SanctumEvents/Fatescribe";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth) {
   let returnedEvents = [];
@@ -81,6 +82,9 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
   }
   if (bossID === 2430) {
     returnedEvents = createPainsmithEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+  }
+  if (bossID === 2431) {
+    returnedEvents = createFatescribeEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
   }
 
   /* ---------------------------------------------------------------------------------------------- */
