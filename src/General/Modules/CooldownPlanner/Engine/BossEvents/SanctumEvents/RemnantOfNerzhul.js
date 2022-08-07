@@ -9,7 +9,7 @@ export default function createRemnantEvents(bossID, difficulty, damageTakenData,
   // Malevolence Dispels (Damage Taken)
   if (logGuids.includes(malevolence)) {
     const malevolenceEvents = damageTakenData.filter((filter) => filter.ability.guid === malevolence);
-    const threshold = 10000;
+    const threshold = 3000;
     events.push(
       malevolenceEvents.map((key) => {
         return { time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: malevolence };
