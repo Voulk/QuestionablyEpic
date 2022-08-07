@@ -76,6 +76,13 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0,
     bonus_stats.hps =  oneHeal * effect.targets * ppm * player.getStatPerc("versatility") * player.getStatPerc("crit") * (1 - effect.expectedOverhealing) / 60;
 
   } 
+  else if (effectName === "Overclocking Bit Band") { // TODO: Split it's proc rate by proc ring.
+    const effect = activeEffect.effects[0];
+    const hasteBuff = getProcessedValue(effect.coefficient, effect.table, effectNotes.ilvl)
+    const uptime = effectNotes.ppm * 15 / 60; 
+
+    bonus_stats.haste =  hasteBuff * uptime;
+  } 
   else if (effectName === "Cosmic Protoweave") {
     const effect = activeEffect.effects[0];
     bonus_stats.hps = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * player.getStatPerc("haste") * player.getStatPerc("versatility") * player.getStatPerc("crit") * effect.ppm / 60;
