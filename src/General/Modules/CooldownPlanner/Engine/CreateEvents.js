@@ -29,7 +29,6 @@ import createSylvanusEvents from "./BossEvents/SanctumEvents/Sylvanus";
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth) {
   let returnedEvents = [];
 
-  const logGuids = damageTakenData.map((key) => key.ability.guid).concat(debuffs.map((key) => key.ability.guid));
   /* ---------------------------------------------------------------------------------------------- */
   /*                                         Castle Nathria                                         */
   /* ---------------------------------------------------------------------------------------------- */

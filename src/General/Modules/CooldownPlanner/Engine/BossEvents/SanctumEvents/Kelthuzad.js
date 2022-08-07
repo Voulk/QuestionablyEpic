@@ -22,9 +22,7 @@ export default function createKelthuzadEvents(bossID, difficulty, damageTakenDat
   events.push({ time: "00:00", bossAbility: "Phase 1" });
   // Phase 2 Events
   let phase2 = kelthuzadHealthData.filter((filter) => filter.health === 0);
-  console.log(phase2);
   phase2.length > 3 ? phase2.splice(3) : "";
-  console.log(phase2);
   let lastChosenPhase = phase2.map((key) => key.time)[0];
   const thresholdPhase = 15000;
   events.push(
