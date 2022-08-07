@@ -34,7 +34,6 @@ export default async function importLogData(starttime, endtime, reportID, boss, 
   );
 
   const damageTakenData = await importDamageLogDataFiltered(starttime, endtime, reportID, boss);
-  // console.log(damageTakenData);
 
   const debuffData = await importDebuffDataFiltered(starttime, endtime, reportID, boss);
   const buffData = await importEnemyBuffs(starttime, endtime, reportID, boss);

@@ -19,11 +19,16 @@ import createDenathriusEvents from "./BossEvents/NathriaEvents/Denathrius";
 import createEyeEvents from "./BossEvents/SanctumEvents/EyeOfTheJailer";
 import createNineEvents from "./BossEvents/SanctumEvents/TheNine";
 import createRemnantEvents from "./BossEvents/SanctumEvents/RemnantOfNerzhul";
+import createSoulrenderEvents from "./BossEvents/SanctumEvents/Soulrender";
+import createPainsmithEvents from "./BossEvents/SanctumEvents/Painsmith";
+import createFatescribeEvents from "./BossEvents/SanctumEvents/Fatescribe";
+import createKelthuzadEvents from "./BossEvents/SanctumEvents/Kelthuzad";
+import createGuardianEvents from "./BossEvents/SanctumEvents/Guardian";
+import createSylvanusEvents from "./BossEvents/SanctumEvents/Sylvanus";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth) {
   let returnedEvents = [];
 
-  const logGuids = damageTakenData.map((key) => key.ability.guid).concat(debuffs.map((key) => key.ability.guid));
   /* ---------------------------------------------------------------------------------------------- */
   /*                                         Castle Nathria                                         */
   /* ---------------------------------------------------------------------------------------------- */
@@ -74,7 +79,24 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
   if (bossID === 2432) {
     returnedEvents = createRemnantEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
   }
-
+  if (bossID === 2434) {
+    returnedEvents = createSoulrenderEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+  }
+  if (bossID === 2430) {
+    returnedEvents = createPainsmithEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+  }
+  if (bossID === 2431) {
+    returnedEvents = createFatescribeEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+  }
+  if (bossID === 2422) {
+    returnedEvents = createKelthuzadEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+  }
+  if (bossID === 2436) {
+    returnedEvents = createGuardianEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+  }
+  if (bossID === 2435) {
+    returnedEvents = createSylvanusEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+  }
   /* ---------------------------------------------------------------------------------------------- */
   /*                                   Sepulcher of the First Ones                                  */
   /* ---------------------------------------------------------------------------------------------- */
