@@ -19,8 +19,6 @@ export const changeLog = [
       "Upgrade Finder: Added Castle Nathria and Sanctum of Domination at Fated item levels.",
       "New Effects: Added Mechagon ring sets, Drape of Shame, Neural Synapse Enhancer and more.",
       "Added Karazhan & Mechagon trinkets. Updated trinket item levels.",
-      
-
     ],
   },
   {
