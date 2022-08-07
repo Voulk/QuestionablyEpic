@@ -23,6 +23,8 @@ import createSoulrenderEvents from "./BossEvents/SanctumEvents/Soulrender";
 import createPainsmithEvents from "./BossEvents/SanctumEvents/Painsmith";
 import createFatescribeEvents from "./BossEvents/SanctumEvents/Fatescribe";
 import createKelthuzadEvents from "./BossEvents/SanctumEvents/Kelthuzad";
+import createGuardianEvents from "./BossEvents/SanctumEvents/Guardian";
+import createSylvanusEvents from "./BossEvents/SanctumEvents/Sylvanus";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth) {
   let returnedEvents = [];
@@ -90,8 +92,12 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
   if (bossID === 2422) {
     returnedEvents = createKelthuzadEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
   }
-  
-
+  if (bossID === 2436) {
+    returnedEvents = createGuardianEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+  }
+  if (bossID === 2435) {
+    returnedEvents = createSylvanusEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+  }
   /* ---------------------------------------------------------------------------------------------- */
   /*                                   Sepulcher of the First Ones                                  */
   /* ---------------------------------------------------------------------------------------------- */
