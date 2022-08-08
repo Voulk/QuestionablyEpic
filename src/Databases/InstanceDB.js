@@ -6,6 +6,7 @@ export const instanceDB = {
   "1190": "Castle Nathria",
   "1192": "World Bosses",
   "1193": "Sanctum of Domination",
+  "1200": "Vault of the Incarnates",
 };
 
 export const encounterDB = {
@@ -1177,7 +1178,6 @@ export const encounterDB = {
       -26, // Karazhan Lower
       -27, // Karazhan Upper
 
-
       536, // Grimrail Depot
       558, // Iron Docks
     ],
@@ -1469,6 +1469,186 @@ export const encounterDB = {
         de: "Der Hof der Sterne",
         ru: "Квартал Звезд",
         ch: "群星庭院",
+      },
+    },
+  },
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                          Dragonflight                                          */
+  /* ---------------------------------------------------------------------------------------------- */
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                              Raids                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+  /* ----------------------------------- Vault of the Incarnates ---------------------------------- */
+  1200: {
+    name: {
+      en: "Vault of the Incarnates",
+      fr: "Caveau des Incarnations",
+      de: "Gewölbe der Inkarnationen",
+      ru: "Хранилище Воплощений",
+      ch: "化身巨龙牢窟",
+    },
+    bossOrder: [2480, 2500, 2486, 2482, 2502, 2491, 2493, 2499, 999],
+    bosses: {
+      2480: {
+        name: {
+          en: "Eranog",
+          fr: "Éranog",
+          de: "Eranog",
+          ru: "Эраног",
+          ch: "艾拉诺格",
+        },
+      },
+      2500: {
+        name: {
+          en: "Terros",
+          fr: "Terros",
+          de: "Terros",
+          ru: "Террос",
+          ch: "泰洛斯",
+        },
+      },
+      2486: {
+        name: {
+          en: "The Primalist Council",
+          fr: "Le Conseil primaliste",
+          de: "Der Primalistenrat",
+          ru: "Совет воинов стихий",
+          ch: "拜荒者议会",
+        },
+      },
+      2482: {
+        name: {
+          en: "Sennarth, The Cold Breath",
+          fr: "Sennarth, la Glaciale",
+          de: "Sennarth, der kalte Atem",
+          ru: "Сеннарт Дыхание Льда",
+          ch: "瑟娜尔丝，冰冷之息",
+        },
+      },
+      2502: {
+        name: {
+          en: "Dathea, Ascended",
+          fr: "Dathéa, transcendée",
+          de: "Dathea, die Aufgestiegene",
+          ru: "Дафия Перерожденная",
+          ch: "晋升者达瑟雅",
+        },
+      },
+      2491: {
+        name: {
+          en: "Kurog Grimtotem",
+          fr: "Kurog Totem-Sinistre",
+          de: "Kurog Grimmtotem",
+          ru: "Курог Зловещий Тотем",
+          ch: "库洛格·恐怖图腾",
+        },
+      },
+      2493: {
+        name: {
+          en: "Broodkeeper Diurna",
+          fr: "Garde-couvée Diurna",
+          de: "Bruthüterin Diurna",
+          ru: "Хранительница стаи Денна",
+          ch: "巢穴守护者迪乌尔娜",
+        },
+      },
+      2499: {
+        name: {
+          en: "Raszageth the Storm-Eater",
+          fr: "Raszageth la Mange-tempêtes",
+          de: "Raszageth die Sturmfresserin",
+          ru: "Рашагет Пожирательница Бурь",
+          ch: "莱萨杰丝，噬雷之龙",
+        },
+      },
+    },
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                            Dungeons                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+  // temp key until DF
+  "-1000": {
+    bossOrder: [
+      1197, // Uldaman: Legacy of Tyr
+      1201, // Taz'algeth Academy
+      1202, // Ruby Life Pools
+      1204, // Halls of Infusion
+      1203, // The Azure Vault
+      1199, // Neltharus
+      1198, // The Nokhud Offensive
+      1196, // Brackenhide Hollow
+    ],
+    1197: {
+      name: {
+        en: "Uldaman: Legacy of Tyr",
+        fr: "Uldaman : l’héritage de Tyr",
+        de: "Uldaman: Vermächtnis von Tyr",
+        ru: "Ульдаман: наследие Тира",
+        ch: "奥达曼：提尔的遗产",
+      },
+    },
+    1201: {
+      name: {
+        en: "Taz'algeth Academy",
+        fr: "Académie de Taz’algeth",
+        de: "Akademie von Taz'algeth",
+        ru: "Академия Таз'алгет",
+        ch: "塔兹艾杰斯学院",
+      },
+    },
+    1202: {
+      name: {
+        en: "Ruby Life Pools",
+        fr: "Bassins de l’Essence rubis",
+        de: "Rubinlebensbecken",
+        ru: "Рубиновые Омуты Жизни",
+        ch: "红玉新生法池",
+      },
+    },
+    1204: {
+      name: {
+        en: "Halls of Infusion",
+        fr: "Salles de l’Imprégnation",
+        de: "Hallen der Infusion",
+        ru: "Чертоги Насыщения",
+        ch: "注能大厅",
+      },
+    },
+    1203: {
+      name: {
+        en: "The Azure Vault",
+        fr: "Caveau d’Azur",
+        de: "Das Azurblaue Gewölbe",
+        ru: "Лазурное хранилище",
+        ch: "碧蓝魔馆",
+      },
+    },
+    1199: {
+      name: {
+        en: "Neltharus",
+        fr: "Neltharus",
+        de: "Neltharus",
+        ru: "Нелтарий",
+        ch: "奈萨鲁斯	",
+      },
+    },
+    1198: {
+      name: {
+        en: "The Nokhud Offensive",
+        fr: "L’offensive nokhud",
+        de: "Der Angriff der Nokhud",
+        ru: "Наступление клана Нокхуд",
+        ch: "诺库德阻击战",
+      },
+    },
+    1196: {
+      name: {
+        en: "Brackenhide Hollow",
+        fr: "Creux des Fougerobes",
+        de: "Brackenfellhöhle",
+        ru: "Пещера Бурошкуров",
+        ch: "蕨皮山谷",
       },
     },
   },
