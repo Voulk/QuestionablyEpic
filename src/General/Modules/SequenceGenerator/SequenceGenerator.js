@@ -102,6 +102,16 @@ export default function SequenceGenerator(props) {
     updateSequence([...seq, spell]);
   };
 
+  const removeSpellAtIndex = (index, e = null) => {
+    if (!!e) {
+      e.preventDefault();
+    }
+
+    const editSeq = [...seq];
+    editSeq.splice(index, 1);
+    updateSequence(editSeq);
+  }
+
   const insertSpellAtIndex = (spell, index) => {
     const editSeq = [
       ...seq.slice(0, index),
@@ -225,8 +235,8 @@ export default function SequenceGenerator(props) {
                             </Grid> */}
 
                       {seq.map((spell, index) => (
-                        <Grid item xs="auto" key={index} onDragOver={onDragOver} onDragEnd={dropMove} onDrop={dropInsertion} onDragEnter={(e) => { dragEnter(e, index) }} >
-                          <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id} style={{ display: "flex" }} draggable onDragStart={(e) => { dragStart(e, index) }}>
+                        <Grid item xs="auto" key={index} onDragOver={onDragOver} onDragEnd={dropMove} onDrop={dropInsertion} onDragEnter={(e) => { dragEnter(e, index) }}>
+                          <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id} style={{ display: "flex" }} draggable onDragStart={(e) => { dragStart(e, index) }} onContextMenu={(e) => removeSpellAtIndex(index, e) }>
                             <img
                               draggable="false"
                               height={40}
