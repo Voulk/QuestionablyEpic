@@ -89,8 +89,17 @@ export default function SequenceGenerator(props) {
     critMult: 1,
   };
 
+  const updateSequence = (sequence) => {
+    const simFunc = getSequence(selectedSpec);
+    const sim = simFunc(sequence, stats, {}, {});
+
+    // multiple state updates get bundled by react into one update
+    setSeq(sequence);
+    setResult(sim);
+  }
+
   const addSpell = (spell) => {
-    setSeq([...seq, spell]);
+    updateSequence([...seq, spell]);
   };
 
   const insertSpellAtIndex = (spell, index) => {
@@ -99,7 +108,7 @@ export default function SequenceGenerator(props) {
       spell,
       ...seq.slice(index)
     ];
-    setSeq(editSeq);
+    updateSequence(editSeq);
   };
 
   const moveSpell = (indexOld, indexNew) => {
@@ -107,11 +116,11 @@ export default function SequenceGenerator(props) {
     const dragItemContent = editSeq[indexOld];
     editSeq.splice(indexOld, 1);
     editSeq.splice(indexNew, 0, dragItemContent);
-    setSeq(editSeq);
+    updateSequence(editSeq);
   };
 
   const clearSeq = () => {
-    setSeq([]);
+    updateSequence([]);
   };
 
   const runSeq = () => {
@@ -122,7 +131,7 @@ export default function SequenceGenerator(props) {
   };
 
   const autoGen = () => {
-    setSeq(buildRamp("Primary", 10, [], stats.haste, "", discTalents));
+    updateSequence(buildRamp("Primary", 10, [], stats.haste, "", discTalents));
   };
 
   //#region Drag and Drop Functions
