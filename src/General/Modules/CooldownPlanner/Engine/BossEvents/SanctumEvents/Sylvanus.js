@@ -24,21 +24,6 @@ export default function createSylvanusEvents(bossID, difficulty, damageTakenData
       buffData.map((key) => key.ability.guid),
     );
 
-  /* ---------------------------------------- Intermission ---------------------------------------- */
-  if (logGuids.includes(bansheeShroud)) {
-    const bansheeShroudEvents = buffData.filter((filter) => filter.ability.guid === bansheeShroud && filter.type === "applybuff");
-    bansheeShroudEvents !== [] ? events.push({ time: moment.utc(fightDuration(bansheeShroudEvents[0].timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: "Intermission" }) : "";
-  }
-
-  /* ---------------------------------------- Phase 2 ---------------------------------------- */
-  if (logGuids.includes(bansheeWail)) {
-    const bansheeWailEvents = enemyCasts.filter((filter) => filter.ability.guid === bansheeWail);
-    bansheeWailEvents !== [] ? events.push({ time: moment.utc(fightDuration(bansheeWailEvents[0].timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 2" }) : "";
-  }
-
-  /* ------------------------------------------- Phase 3 ------------------------------------------ */
-  anduinHealthData !== [] ? events.push({ time: moment.utc(fightDuration(anduinHealthData[0].time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 3" }) : "";
-
   if (logGuids.includes(shadowDaggers)) {
     const shadowDaggersEvents = damageTakenData.filter((filter) => filter.ability.guid === shadowDaggers);
     let lastChosen = shadowDaggersEvents.map((key) => key.timestamp)[0];
@@ -89,6 +74,24 @@ export default function createSylvanusEvents(bossID, difficulty, damageTakenData
       }
     });
   }
+
+  events.push({ time: "00:00", bossAbility: "Phase 1" }); // Push Phase 1 Object into events
+  /* ---------------------------------------- Intermission ---------------------------------------- */
+  if (logGuids.includes(bansheeShroud)) {
+    const bansheeShroudEvents = buffData.filter((filter) => filter.ability.guid === bansheeShroud && filter.type === "applybuff");
+    console.log(logGuids);
+    console.log(bansheeShroudEvents);
+    bansheeShroudEvents !== [] ? events.push({ time: moment.utc(fightDuration(bansheeShroudEvents[0].timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: "Intermission" }) : "";
+  }
+
+  /* ---------------------------------------- Phase 2 ---------------------------------------- */
+  if (logGuids.includes(bansheeWail)) {
+    const bansheeWailEvents = enemyCasts.filter((filter) => filter.ability.guid === bansheeWail);
+    bansheeWailEvents !== [] ? events.push({ time: moment.utc(fightDuration(bansheeWailEvents[0].timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 2" }) : "";
+  }
+
+  /* ------------------------------------------- Phase 3 ------------------------------------------ */
+  anduinHealthData !== [] ? events.push({ time: moment.utc(fightDuration(anduinHealthData[0].time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 3" }) : "";
 
   return events;
 }

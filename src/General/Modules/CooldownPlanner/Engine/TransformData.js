@@ -190,6 +190,6 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
         Object.keys(generatedObject).includes("name4") && generatedObject.name4 === Object.keys(key)[0] ? (results[i].name4 = Object.values(key)[0]) : "";
       }),
     );
-
+  console.log(results);
   return results;
 }
