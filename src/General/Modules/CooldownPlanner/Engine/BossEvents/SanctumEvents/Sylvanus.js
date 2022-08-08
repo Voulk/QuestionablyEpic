@@ -79,8 +79,6 @@ export default function createSylvanusEvents(bossID, difficulty, damageTakenData
   /* ---------------------------------------- Intermission ---------------------------------------- */
   if (logGuids.includes(bansheeShroud)) {
     const bansheeShroudEvents = buffData.filter((filter) => filter.ability.guid === bansheeShroud && filter.type === "applybuff");
-    console.log(logGuids);
-    console.log(bansheeShroudEvents);
     bansheeShroudEvents !== [] ? events.push({ time: moment.utc(fightDuration(bansheeShroudEvents[0].timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: "Intermission" }) : "";
   }
 
