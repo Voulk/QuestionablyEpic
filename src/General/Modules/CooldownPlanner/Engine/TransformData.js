@@ -96,7 +96,8 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
   // ];
 
   // merge the healer and enemy cast arrays of  objects
-  let data = [...newTimeline, ...enemyCastsTimeline]; //...data in question
+  let data = [];
+  transformType === "blank" ? (data = [...enemyCastsTimeline]) : (data = [...newTimeline, ...enemyCastsTimeline]); //...data in question
   // filter lines to only have bossAbility or cooldowns, not just time only
   data = data.filter(
     (filter) =>

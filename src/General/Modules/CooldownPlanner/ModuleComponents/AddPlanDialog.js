@@ -376,6 +376,12 @@ export default function AddPlanDialog(props) {
                   Import Type
                 </Typography>
                 <ToggleButtonGroup value={importType} exclusive onChange={handleContent} aria-label="text alignment" fullWidth>
+                  <ToggleButton value="blank" aria-label="BlankPlan">
+                    <Tooltip title={"Import boss abilities and phases only, No Coolowns"}>
+                      <div>Blank</div>
+                    </Tooltip>
+                  </ToggleButton>
+
                   <ToggleButton value="Precise" aria-label="Precise">
                     <Tooltip title={"Import log data exactly as abilities were cast"}>
                       <div>Precise</div>
