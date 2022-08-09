@@ -184,6 +184,7 @@ export const filterIDS = {
     172858, // https://www.wowhead.com/npc=172858/stone-legion-goliath
     174335, // https://www.wowhead.com/npc=174335/stone-legion-skirmisher
     169601, // https://www.wowhead.com/npc=169601/stone-legion-commando
+    0, // Environmentals
   ],
   2407: [
     168156, // https://www.wowhead.com/npc=168156/remornia
@@ -200,6 +201,7 @@ export const filterIDS = {
     188302, // https://www.wowhead.com/npc=188302/reconfiguration-emitter
     168158, // https://www.wowhead.com/npc=168158/remornia
     170710, // https://www.wowhead.com/npc=170710/sinister-reflection
+    0, // Environmentals
   ],
 
   2423: [
@@ -207,11 +209,13 @@ export const filterIDS = {
     178555, // https://www.wowhead.com/npc=178555/remnant-of-forgotten-torments
     178556, // https://www.wowhead.com/npc=178556/remnant-of-forgotten-torments
     178554, // https://www.wowhead.com/npc=178554/remnant-of-forgotten-torments
+    0, // Environmentals
   ],
   2433: [
     175725, // https://www.wowhead.com/npc=175725/eye-of-the-jailer
     176521, // https://www.wowhead.com/npc=176521/stygian-abductor
     176531, // https://www.wowhead.com/npc=176531/deathseeker-eye
+    0, // Environmentals
   ],
   2429: [
     177095, // https://www.wowhead.com/npc=177095/kyra
@@ -223,6 +227,7 @@ export const filterIDS = {
     177099, // https://www.wowhead.com/npc=177099/daschla
     178738, // https://www.wowhead.com/npc=178738/kyra
     178736, // https://www.wowhead.com/npc=178736/signe
+    0, // Environmentals
   ],
   2432: [
     175729, // https://www.wowhead.com/npc=175729/remnant-of-nerzhul
@@ -230,6 +235,7 @@ export const filterIDS = {
     177287, // https://www.wowhead.com/npc=177287/malicious-gauntlet
     177117, // https://www.wowhead.com/npc=177117/orb-of-torment
     177289, // https://www.wowhead.com/npc=177289/rattlecage-of-agony
+    0, // Environmentals
   ],
   2434: [
     175727, // https://www.wowhead.com/npc=175727/soulrender-dormazain
@@ -237,23 +243,27 @@ export const filterIDS = {
     177594, // https://www.wowhead.com/npc=177594/mawsworn-agonizer
     179177, // https://www.wowhead.com/npc=179177/mawsworn-overlord
     177668, // https://www.wowhead.com/npc=177668/pain-cone-brain
+    0, // Environmentals
   ],
   2430: [
     176523, // https://www.wowhead.com/npc=176523/painsmith-raznal
     179847, // https://www.wowhead.com/npc=179847/shadowsteel-horror
     176581, // https://www.wowhead.com/npc=176581/spiked-ball
+    0, // Environmentals
   ],
   2436: [
     175731, // https://www.wowhead.com/npc=175731/guardian-of-the-first-ones
     178668, // https://www.wowhead.com/npc=178668/sentry
     179994, // https://www.wowhead.com/npc=179994/threat-neutralization
     176583, // https://www.wowhead.com/npc=176583/energy-core
+    0, // Environmentals
   ],
   2431: [
     175730, // https://www.wowhead.com/npc=175730/fatescribe-roh-kalo
     179010, // https://www.wowhead.com/npc=179010/fatespawn-anomaly
     180323, // https://www.wowhead.com/npc=180323/fatespawn-monstrosity
     179124, // https://www.wowhead.com/npc=179124/shade-of-destiny
+    0, // Environmentals
   ],
   2422: [
     175559, // https://www.wowhead.com/npc=175559/kelthuzad
@@ -263,6 +273,7 @@ export const filterIDS = {
     176974, // https://www.wowhead.com/npc=176974/soul-reaver
     176605, // https://www.wowhead.com/npc=176605/soul-shard
     176973, // https://www.wowhead.com/npc=176973/unstoppable-abomination
+    0, // Environmentals
   ],
   2435: [
     175732, // https://www.wowhead.com/npc=175732/sylvanas-windrunner
@@ -278,6 +289,7 @@ export const filterIDS = {
     177154, // https://www.wowhead.com/npc=177154/mawsworn-vanguard
     179963, // https://www.wowhead.com/npc=179963/terror-orb
     178079, // https://www.wowhead.com/npc=178079/the-jailer
+    0, // Environmentals
   ]
 
 };
