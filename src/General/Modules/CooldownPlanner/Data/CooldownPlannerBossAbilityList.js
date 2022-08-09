@@ -2850,10 +2850,10 @@ export const bossAbilities = {
     },
     {
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 355352,
       icon: require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/Icons/spell_progenitor_orb2.jpg").default,
-      importActive: true,
+      importActive: false,
       // https://www.wowhead.com/spell=355352/obliterate
       name: {
         cn: "湮灭",
@@ -2864,11 +2864,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 350732,
       icon: require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/Icons/spell_progenitor_orb2.jpg").default,
-      importActive: true,
+      importActive: false,
       // https://www.wowhead.com/spell=355352/obliterate
       name: {
         cn: "破甲",
