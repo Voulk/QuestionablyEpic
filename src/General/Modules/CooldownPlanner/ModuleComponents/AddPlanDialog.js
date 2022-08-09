@@ -395,7 +395,7 @@ export default function AddPlanDialog(props) {
                   </ToggleButton>
                 </ToggleButtonGroup>
               </Grid>
-              <ReplaceNames logData={logData} nameObject={nameObject} setNameObject={setNameObject} disabled={loadingProgress !== 100} />
+              <ReplaceNames logData={logData} nameObject={nameObject} setNameObject={setNameObject} disabled={loadingProgress !== 100 || importType === "blank"} />
               <Grid item xs={12}>
                 <Typography color="primary" align="center">
                   New Plan Name
