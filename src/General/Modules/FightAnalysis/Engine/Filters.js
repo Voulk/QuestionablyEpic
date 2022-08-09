@@ -112,4 +112,172 @@ export const filterIDS = {
     182311, // https://www.wowhead.com/npc=182311/pre-fabricated-sentry
     0, // Environmentals
   ],
+
+  2398: [
+    164406, // https://www.wowhead.com/npc=164406/shriekwing
+    0, // Environmentals
+  ],
+  2418: [
+    169457, // https://www.wowhead.com/npc=169457/bargast
+    169458, // https://www.wowhead.com/npc=169458/hecutis
+    165066, // https://www.wowhead.com/npc=165066/huntsman-altimor
+    165067, // https://www.wowhead.com/npc=165067/margore
+    188302, // https://www.wowhead.com/npc=188302/reconfiguration-emitter
+    171577, // https://www.wowhead.com/npc=171577/ripped-soul
+    171557, // https://www.wowhead.com/npc=171557/shade-of-bargast
+    0, // Environmentals
+  ],
+  2383: [
+    164261, // https://www.wowhead.com/npc=164261/hungering-destroyer
+    188703, // https://www.wowhead.com/npc=188703/protoform-barrier,
+    0, // Environmentals
+  ],
+  2402: [
+    168973, // https://www.wowhead.com/npc=168973/high-torturer-darithos
+    165805, // https://www.wowhead.com/npc=165805/shade-of-kaelthas
+    167566, // https://www.wowhead.com/npc=167566/bleakwing-assassin
+    168700, // https://www.wowhead.com/npc=168700/pestering-fiend
+    188703, // https://www.wowhead.com/npc=188703/protoform-barrier
+    168962, // https://www.wowhead.com/npc=168962/reborn-phoenix
+    165764, // https://www.wowhead.com/npc=165764/rockbound-vanquisher
+    165763, // https://www.wowhead.com/npc=165763/vile-occultist
+    0, // Environmentals
+  ],
+  2405: [
+    166644, // https://www.wowhead.com/npc=166644/artificer-xymox
+    189707, // https://www.wowhead.com/npc=189707/chaotic-mote
+    168512, // https://www.wowhead.com/npc=168512/crystal-of-phantasms
+    169062, // https://www.wowhead.com/npc=169062/edge-of-annihilation
+    169271, // https://www.wowhead.com/npc=169271/rift-blast-portal
+    169267, // https://www.wowhead.com/npc=169267/root-of-extinction
+    167691, // https://www.wowhead.com/npc=167691/stasis-trap
+    0, // Environmentals
+  ],
+  2406: [
+    165521, // https://www.wowhead.com/npc=165521/lady-inerva-darkvein
+    170197, // https://www.wowhead.com/npc=170197/conjured-manifestation
+    166766, // https://www.wowhead.com/npc=166766/sins-of-the-past
+    170199, // https://www.wowhead.com/npc=170199/harnessed-specter
+    0, // Environmentals
+  ],
+  2412: [
+    166969, // https://www.wowhead.com/npc=166969/baroness-frieda
+    166971, // https://www.wowhead.com/npc=166971/castellan-niklaus
+    166970, // https://www.wowhead.com/npc=166970/lord-stavros
+    168870, // https://www.wowhead.com/npc=168870/dance-controller
+    169925, // https://www.wowhead.com/npc=169925/begrudging-waiter
+    169924, // https://www.wowhead.com/npc=169924/veteran-stoneguard
+    173053, // https://www.wowhead.com/npc=173053/afterimage-of-lord-stavros
+    188302, // https://www.wowhead.com/npc=188302/reconfiguration-emitter
+    175992, // https://www.wowhead.com/npc=175992/dutiful-attendant
+    0, // Environmentals
+  ],
+  2399: [
+    164407, // https://www.wowhead.com/npc=164407/sludgefist
+    189707, // https://www.wowhead.com/npc=189707/chaotic-mote
+    0, // Environmentals
+  ],
+  2417: [
+    168112, // https://www.wowhead.com/npc=168113/general-grashaal
+    168113, // https://www.wowhead.com/npc=168112/general-kaal
+    175102, // https://www.wowhead.com/npc=175102/reverberating-eruption-stalker
+    172858, // https://www.wowhead.com/npc=172858/stone-legion-goliath
+    174335, // https://www.wowhead.com/npc=174335/stone-legion-skirmisher
+    169601, // https://www.wowhead.com/npc=169601/stone-legion-commando
+  ],
+  2407: [
+    168156, // https://www.wowhead.com/npc=168156/remornia
+    167406, // https://www.wowhead.com/npc=167406/sire-denathrius
+    175205, // https://www.wowhead.com/npc=175205/baleful-shadow
+    173163, // https://www.wowhead.com/npc=173163/baron-duskhollow
+    173164, // https://www.wowhead.com/npc=173164/countess-gloomveil
+    169470, // https://www.wowhead.com/npc=169470/crimson-cabalist
+    169196, // https://www.wowhead.com/npc=169196/crimson-cabalist
+    167999, // https://www.wowhead.com/npc=167999/echo-of-sin
+    169813, // https://www.wowhead.com/npc=169813/hand-of-destruction
+    173161, // https://www.wowhead.com/npc=173161/lady-sinsear
+    173162, // https://www.wowhead.com/npc=173162/lord-evershade
+    188302, // https://www.wowhead.com/npc=188302/reconfiguration-emitter
+    168158, // https://www.wowhead.com/npc=168158/remornia
+    170710, // https://www.wowhead.com/npc=170710/sinister-reflection
+  ],
+
+  2423: [
+    175611, // https://www.wowhead.com/npc=175611/the-tarragrue
+    178555, // https://www.wowhead.com/npc=178555/remnant-of-forgotten-torments
+    178556, // https://www.wowhead.com/npc=178556/remnant-of-forgotten-torments
+    178554, // https://www.wowhead.com/npc=178554/remnant-of-forgotten-torments
+  ],
+  2433: [
+    175725, // https://www.wowhead.com/npc=175725/eye-of-the-jailer
+    176521, // https://www.wowhead.com/npc=176521/stygian-abductor
+    176531, // https://www.wowhead.com/npc=176531/deathseeker-eye
+  ],
+  2429: [
+    177095, // https://www.wowhead.com/npc=177095/kyra
+    177094, // https://www.wowhead.com/npc=177094/signe
+    175726, // https://www.wowhead.com/npc=175726/skyja
+    177222, // https://www.wowhead.com/npc=177222/aradne
+    177098, // https://www.wowhead.com/npc=177098/arthura
+    177101, // https://www.wowhead.com/npc=177101/brynja
+    177099, // https://www.wowhead.com/npc=177099/daschla
+    178738, // https://www.wowhead.com/npc=178738/kyra
+    178736, // https://www.wowhead.com/npc=178736/signe
+  ],
+  2432: [
+    175729, // https://www.wowhead.com/npc=175729/remnant-of-nerzhul
+    177268, // https://www.wowhead.com/npc=177268/helm-of-suffering
+    177287, // https://www.wowhead.com/npc=177287/malicious-gauntlet
+    177117, // https://www.wowhead.com/npc=177117/orb-of-torment
+    177289, // https://www.wowhead.com/npc=177289/rattlecage-of-agony
+  ],
+  2434: [
+    175727, // https://www.wowhead.com/npc=175727/soulrender-dormazain
+    175728, // https://www.wowhead.com/npc=175728/garrosh-hellscream
+    177594, // https://www.wowhead.com/npc=177594/mawsworn-agonizer
+    179177, // https://www.wowhead.com/npc=179177/mawsworn-overlord
+    177668, // https://www.wowhead.com/npc=177668/pain-cone-brain
+  ],
+  2430: [
+    176523, // https://www.wowhead.com/npc=176523/painsmith-raznal
+    179847, // https://www.wowhead.com/npc=179847/shadowsteel-horror
+    176581, // https://www.wowhead.com/npc=176581/spiked-ball
+  ],
+  2436: [
+    175731, // https://www.wowhead.com/npc=175731/guardian-of-the-first-ones
+    178668, // https://www.wowhead.com/npc=178668/sentry
+    179994, // https://www.wowhead.com/npc=179994/threat-neutralization
+    176583, // https://www.wowhead.com/npc=176583/energy-core
+  ],
+  2431: [
+    175730, // https://www.wowhead.com/npc=175730/fatescribe-roh-kalo
+    179010, // https://www.wowhead.com/npc=179010/fatespawn-anomaly
+    180323, // https://www.wowhead.com/npc=180323/fatespawn-monstrosity
+    179124, // https://www.wowhead.com/npc=179124/shade-of-destiny
+  ],
+  2422: [
+    175559, // https://www.wowhead.com/npc=175559/kelthuzad
+    176929, // https://www.wowhead.com/npc=176929/remnant-of-kelthuzad
+    176703, // https://www.wowhead.com/npc=176703/frostbound-devoted
+    175861, // https://www.wowhead.com/npc=175861/glacial-spike
+    176974, // https://www.wowhead.com/npc=176974/soul-reaver
+    176605, // https://www.wowhead.com/npc=176605/soul-shard
+    176973, // https://www.wowhead.com/npc=176973/unstoppable-abomination
+  ],
+  2435: [
+    175732, // https://www.wowhead.com/npc=175732/sylvanas-windrunner
+    178072, // https://www.wowhead.com/npc=178072/anduin-wrynn
+    176404, // https://www.wowhead.com/npc=176404/dark-sentinel
+    178008, // https://www.wowhead.com/npc=178008/decrepit-orb
+    176920, // https://www.wowhead.com/npc=176920/domination-arrow
+    177893, // https://www.wowhead.com/npc=177893/mawforged-colossus
+    177892, // https://www.wowhead.com/npc=177892/mawforged-goliath
+    177889, // https://www.wowhead.com/npc=177889/mawforged-souljudge
+    177891, // https://www.wowhead.com/npc=177891/mawforged-summoner
+    177787, // https://www.wowhead.com/npc=177787/mawsworn-hopebreaker
+    177154, // https://www.wowhead.com/npc=177154/mawsworn-vanguard
+    179963, // https://www.wowhead.com/npc=179963/terror-orb
+    178079, // https://www.wowhead.com/npc=178079/the-jailer
+  ]
+
 };
