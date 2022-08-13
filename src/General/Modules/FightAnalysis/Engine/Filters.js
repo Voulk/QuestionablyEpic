@@ -1,4 +1,7 @@
 export const filterIDS = {
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                   Sepulcher of the First Ones                                  */
+  /* ---------------------------------------------------------------------------------------------- */
   2537: [
     /* ----------------------------------------- The Jailer ----------------------------------------- */
     180990, // https://www.wowhead.com/npc=180990/the-jailer
@@ -113,11 +116,16 @@ export const filterIDS = {
     0, // Environmentals
   ],
 
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                         Castle Nathria                                         */
+  /* ---------------------------------------------------------------------------------------------- */
   2398: [
+    /* ----------------------------------------- Shriekwing ----------------------------------------- */
     164406, // https://www.wowhead.com/npc=164406/shriekwing
     0, // Environmentals
   ],
   2418: [
+    /* -------------------------------------- Huntsman Altimor -------------------------------------- */
     169457, // https://www.wowhead.com/npc=169457/bargast
     169458, // https://www.wowhead.com/npc=169458/hecutis
     165066, // https://www.wowhead.com/npc=165066/huntsman-altimor
@@ -128,11 +136,13 @@ export const filterIDS = {
     0, // Environmentals
   ],
   2383: [
+    /* ------------------------------------- Hungering Destroyer ------------------------------------ */
     164261, // https://www.wowhead.com/npc=164261/hungering-destroyer
     188703, // https://www.wowhead.com/npc=188703/protoform-barrier,
     0, // Environmentals
   ],
   2402: [
+    /* ------------------------------------- Sunking's Salvation ------------------------------------ */
     168973, // https://www.wowhead.com/npc=168973/high-torturer-darithos
     165805, // https://www.wowhead.com/npc=165805/shade-of-kaelthas
     167566, // https://www.wowhead.com/npc=167566/bleakwing-assassin
@@ -144,6 +154,7 @@ export const filterIDS = {
     0, // Environmentals
   ],
   2405: [
+    /* --------------------------------------- Artificer Xymox -------------------------------------- */
     166644, // https://www.wowhead.com/npc=166644/artificer-xymox
     189707, // https://www.wowhead.com/npc=189707/chaotic-mote
     168512, // https://www.wowhead.com/npc=168512/crystal-of-phantasms
@@ -154,6 +165,7 @@ export const filterIDS = {
     0, // Environmentals
   ],
   2406: [
+    /* ------------------------------------ Lady Inverva Darkvein ----------------------------------- */
     165521, // https://www.wowhead.com/npc=165521/lady-inerva-darkvein
     170197, // https://www.wowhead.com/npc=170197/conjured-manifestation
     166766, // https://www.wowhead.com/npc=166766/sins-of-the-past
@@ -161,6 +173,7 @@ export const filterIDS = {
     0, // Environmentals
   ],
   2412: [
+    /* -------------------------------------- Council of Blood -------------------------------------- */
     166969, // https://www.wowhead.com/npc=166969/baroness-frieda
     166971, // https://www.wowhead.com/npc=166971/castellan-niklaus
     166970, // https://www.wowhead.com/npc=166970/lord-stavros
@@ -173,11 +186,13 @@ export const filterIDS = {
     0, // Environmentals
   ],
   2399: [
+    /* ----------------------------------------- Sludgefist ----------------------------------------- */
     164407, // https://www.wowhead.com/npc=164407/sludgefist
     189707, // https://www.wowhead.com/npc=189707/chaotic-mote
     0, // Environmentals
   ],
   2417: [
+    /* ------------------------------------ Stone Legion Generals ----------------------------------- */
     168112, // https://www.wowhead.com/npc=168113/general-grashaal
     168113, // https://www.wowhead.com/npc=168112/general-kaal
     175102, // https://www.wowhead.com/npc=175102/reverberating-eruption-stalker
@@ -187,6 +202,7 @@ export const filterIDS = {
     0, // Environmentals
   ],
   2407: [
+    /* --------------------------------------- Sire Denathrius -------------------------------------- */
     168156, // https://www.wowhead.com/npc=168156/remornia
     167406, // https://www.wowhead.com/npc=167406/sire-denathrius
     175205, // https://www.wowhead.com/npc=175205/baleful-shadow
@@ -204,7 +220,11 @@ export const filterIDS = {
     0, // Environmentals
   ],
 
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                      Sanctum of Domination                                     */
+  /* ---------------------------------------------------------------------------------------------- */
   2423: [
+    /* ---------------------------------------- The Tarragrue --------------------------------------- */
     175611, // https://www.wowhead.com/npc=175611/the-tarragrue
     178555, // https://www.wowhead.com/npc=178555/remnant-of-forgotten-torments
     178556, // https://www.wowhead.com/npc=178556/remnant-of-forgotten-torments
@@ -212,6 +232,7 @@ export const filterIDS = {
     0, // Environmentals
   ],
   2433: [
+    /* -------------------------------------- Eye of the Jailer ------------------------------------- */
     175725, // https://www.wowhead.com/npc=175725/eye-of-the-jailer
     176521, // https://www.wowhead.com/npc=176521/stygian-abductor
     176531, // https://www.wowhead.com/npc=176531/deathseeker-eye
@@ -290,6 +311,5 @@ export const filterIDS = {
     179963, // https://www.wowhead.com/npc=179963/terror-orb
     178079, // https://www.wowhead.com/npc=178079/the-jailer
     0, // Environmentals
-  ]
-
+  ],
 };
