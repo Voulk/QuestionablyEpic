@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import { covenantIcons } from "../CooldownPlanner/Functions/CovenantFunctions";
+import { getTranslatedRaceName } from "Databases/RacesDB";
 
 const useStyles = makeStyles(() => ({
   formControl: {
@@ -45,7 +46,8 @@ const useStyles = makeStyles(() => ({
 
 export default function WelcomeDialog(props) {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const gameType = useSelector((state) => state.gameType);
   const availableClasses = classRaceDB;
   const [open, setOpen] = React.useState(props.welcomeOpen);
@@ -241,7 +243,7 @@ export default function WelcomeDialog(props) {
                           <MenuItem divider={lastItem} key={i} value={key}>
                             <div style={{ display: "inline-flex" }}>
                               {raceIcons(key)}
-                              {t(key)}
+                              {getTranslatedRaceName(key, currentLanguage)}
                             </div>
                           </MenuItem>
                         );

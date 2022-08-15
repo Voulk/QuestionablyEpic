@@ -49,6 +49,7 @@ import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { covenantIcons } from "../../CooldownPlanner/Functions/CovenantFunctions";
 import { classTranslator } from "General/Functions/CommonFunctions";
+import { getTranslatedRaceName } from "Databases/RacesDB";
 
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
@@ -175,7 +176,8 @@ export default function CharCards(props) {
   const classes = useStyles();
   const contentType = useSelector((state) => state.contentType);
   const player = props.char;
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
 
   const [tabvalue, setTabValue] = React.useState(0);
 
@@ -531,7 +533,7 @@ export default function CharCards(props) {
                                     <MenuItem divider={lastItem} key={"charCardRace" + i} value={key}>
                                       <div style={{ display: "inline-flex" }}>
                                         {raceIcons(key)}
-                                        {t(key)}
+                                        {getTranslatedRaceName(key, currentLanguage)}
                                       </div>
                                     </MenuItem>
                                   );

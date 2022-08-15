@@ -8,6 +8,7 @@ import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import { covenantIcons } from "../../CooldownPlanner/Functions/CovenantFunctions";
 import Autocomplete from "@mui/material/Autocomplete";
 import { classRaceDB } from "../../../../Databases/ClassRaceDB";
+import { getTranslatedRaceName } from "Databases/RacesDB";
 import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import { useSelector } from "react-redux";
@@ -58,7 +59,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function AddNewChar(props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const classes = useStyles();
   const gameType = useSelector((state) => state.gameType);
   const availableClasses = classRaceDB;
@@ -207,7 +209,7 @@ export default function AddNewChar(props) {
                           <MenuItem divider={lastItem} key={"race" + i} value={key}>
                             <div style={{ display: "inline-flex" }}>
                               {raceIcons(key)}
-                              {t(key)}
+                              {getTranslatedRaceName(key, currentLanguage)}
                             </div>
                           </MenuItem>
                         );
