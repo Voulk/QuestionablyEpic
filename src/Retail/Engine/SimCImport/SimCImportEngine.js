@@ -57,7 +57,7 @@ export function processAllLines(player, contentType, covenant, lines, linkedItem
     // If our line doesn't include an item ID, skip it.
     if (line.includes("id=")) {
       if (line.includes("unknown")) {
-        //processToken(line, player, contentType, type, covenant);
+        processToken(line, player, contentType, type, covenant);
       } else {
         const item = processItem(line, player, contentType, type)
         if (item) player.addActiveItem(item);
