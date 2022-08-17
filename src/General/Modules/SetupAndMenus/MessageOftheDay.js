@@ -7,7 +7,7 @@ export default function MessageOfTheDay(props) {
   const messageOfTheDay = {
     "Retail": [
       "QE Live is now updated for Season 4!",
-      "Holy Priest Legendary support coming soon.",
+      "The Stun Grenade & Meathook changes are now live.",
   ],
   "BurningCrusade": [""]
   }
