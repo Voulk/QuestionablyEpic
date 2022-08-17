@@ -6,8 +6,8 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "Great Vault: Make sure you consider tier & catalyst opportunities.",
-      "Holy Priest Legendary support coming soon.",
+      "QE Live is now updated for Season 4!",
+      "The Stun Grenade & Meathook changes are now live.",
   ],
   "BurningCrusade": [""]
   }

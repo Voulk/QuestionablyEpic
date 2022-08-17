@@ -438,6 +438,30 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     }
   }
 
+  // Mechagon Rings
+  const mechaEffect = {
+    type: "special",
+    name: "",
+    ppm: 0,
+    ilvl: 0
+  }
+
+  itemSet.itemList.forEach(item => {
+    if (item.id === 169157) mechaEffect.ppm = 3.7; // Division
+    else if (item.id === 169158) mechaEffect.ppm = 3.8; // Recursion
+    else if (item.id === 169156) mechaEffect.ppm = 2.9; // Synergy
+    else if (item.id === 169076) mechaEffect.ppm = 1.6; // Maintenance
+
+    // Effects
+    if (item.id === 168977) {mechaEffect.name = "Rebooting Bit Band"; mechaEffect.ilvl = item.level; }
+    else if (item.id === 169159) { mechaEffect.name = "Overclocking Bit Band"; mechaEffect.ilvl = item.level; }
+    else if (item.id === 169161) { mechaEffect.name = "Protecting Bit Band"; mechaEffect.ilvl = item.level; }
+  })
+
+
+  if (mechaEffect.name !== "" && mechaEffect.ppm > 0) effectList.push(mechaEffect)
+  //
+
   //effectStats.push(bonus_stats);
   for (var x = 0; x < effectList.length; x++) {
     const effect = effectList[x];
@@ -489,7 +513,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     if (stat === "hps") {
       hardScore += (evalStats[stat] / baseHPS) * player.activeStats.intellect;
     } else if (stat === "dps") {
-      if (contentType === "Dungeon") hardScore += (evalStats[stat] / baseHPS) * player.activeStats.intellect;
+      if (contentType === "Dungeon") hardScore += (evalStats[stat] * 1.5 / baseHPS) * player.activeStats.intellect;
       else continue;
     } 
     else if (stat === "mana") {
@@ -622,13 +646,16 @@ export function evalDiscRamp(itemSet, setStats, castModel, effectList, reporting
         // We are wearing Drape of Shame and should account for it.
         rampSettings["Drape of Shame"] = true; 
       }
-      const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
-      const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
-  
+
       if (onUseTrinkets !== null && onUseTrinkets.length > 0) {
         itemSet.onUseTrinkets.forEach((trinket) => {
           rampSettings[trinket.name] = getTrinketValue(trinket.name, trinket.level);
         });
+      }
+      if (effectList.filter(effect => effect.name === "Neural Synapse Enhancer").length > 0) {
+        // We are wearing Drape of Shame and should account for it.
+        rampSettings["Neural Synapse Enhancer"] = 573; 
+        onUseTrinkets.push("Neural Synapse Enhancer");
       }
   
       if (castModel.modelName === "Kyrian Evangelism") {
@@ -643,6 +670,9 @@ export function evalDiscRamp(itemSet, setStats, castModel, effectList, reporting
       if (itemSet.setLegendary === "Clarity of Mind") rampSettings["Clarity of Mind"] = true;
       if (itemSet.setLegendary === "Penitent One") rampSettings["Penitent One"] = true;
   
+
+      const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
+      const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
       // Perform our ramp, and then add it to our sets expected HPS. Our set's stats are included here which means we don't need to score them later in the function.
       // The ramp sequence also includes any diminishing returns.
       const setRamp = allRamps(boonSeq, fiendSeq, setStats, rampSettings, { "Courageous Ascension": 239, "Rabid Shadows": 239 }, true);

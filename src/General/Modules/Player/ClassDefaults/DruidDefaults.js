@@ -43,7 +43,7 @@ export const druidDefaultStatWeights = (contentType) => {
     intellect: 1,
     haste: 0.65,
     crit: 0.62,
-    mastery: 0.48,
+    mastery: 0.45,
     versatility: 0.62,
     leech: 0.38,
     defaults: true,
@@ -57,12 +57,12 @@ export const druidDefaultSpecialQueries = (contentType) => {
   if (contentType === "Raid") {
     specialQueries = {
       ConvokeChannelHPS: 480,
-      OneManaHealing: 14.6,
+      OneManaHealing: 16.2,
       CastsPerMinute: 32, // ONLY tracks spells with a mana cost.
       cooldownMult: {
         oneMinute: 1.4, // 1.7 once 4pc,
         ninetySeconds: 1.12,
-        twoMinutes: 1.58,
+        twoMinutes: 1.4,
         twoMinutesOrb: 1.1,
         threeMinutes: 1.2,
       },

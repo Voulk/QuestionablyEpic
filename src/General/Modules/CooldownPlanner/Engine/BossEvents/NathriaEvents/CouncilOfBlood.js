@@ -36,10 +36,6 @@ export default function createCouncilOfBloodEvents(bossID, difficulty, damageTak
   const friedaDeath = friedaHealthData.filter((filter) => filter.health === 0)[0];
 
   const totalHealthData = [stavrosDeath, niklausDeath, friedaDeath].sort((a, b) => (a.time > b.time && 1) || -1);
-  console.log(stavrosHealthdata);
-  console.log(stavrosDeath);
-  console.log(friedaDeath);
-  console.log(totalHealthData);
   const logGuids = damageTakenData
     .map((key) => key.ability.guid)
     .concat(debuffs.map((key) => key.ability.guid))

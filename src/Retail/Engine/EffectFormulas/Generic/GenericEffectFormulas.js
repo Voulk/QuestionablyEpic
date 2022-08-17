@@ -8,7 +8,7 @@ import { effectData} from "./EffectData";
 // Examples include the legendary cloak, Azshara's Staff, most Crucible of Storms items and so forth.
 // Shadowlands is light on them so far but we can expect to see more as the expansion progresses.
 
-export function getGenericEffect(effectName, player, contentType, itemLevel = 0) {
+export function getGenericEffect(effectName, player, contentType, itemLevel = 0, effectNotes = {}) {
   let bonus_stats = {};
   let activeEffect = effectData.find((effect) => effect.name === effectName);
 
@@ -18,8 +18,14 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
 
   } 
+  if (effectName === "Neural Synapse Enhancer") {
+    const effect = activeEffect.effects[0];
+
+    bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
+
+  } 
   if (effectName === "Drape of Shame") {
-    const effect = 2.05
+    const effect = 2.03;
     const crit = player.getStatPerc("Crit") + (player.getSpec() === "Holy Paladin" ? 0.16: 0) - 1;
     const healingIncrease = ((1 - crit) + (crit * effect)) / ((1 - crit) + (crit * 2)) - 1
 
@@ -64,11 +70,18 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0)
   } 
   else if (effectName === "Rebooting Bit Band") { // TODO: Split it's proc rate by proc ring.
     const effect = activeEffect.effects[0];
-    const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel)
-    const ppm = 3.4 // TODO
+    const oneHeal = getProcessedValue(effect.coefficient, effect.table, effectNotes.ilvl)
+    const ppm = effectNotes.ppm; 
 
     bonus_stats.hps =  oneHeal * effect.targets * ppm * player.getStatPerc("versatility") * player.getStatPerc("crit") * (1 - effect.expectedOverhealing) / 60;
 
+  } 
+  else if (effectName === "Overclocking Bit Band") { // TODO: Split it's proc rate by proc ring.
+    const effect = activeEffect.effects[0];
+    const hasteBuff = getProcessedValue(effect.coefficient, effect.table, effectNotes.ilvl)
+    const uptime = effectNotes.ppm * 15 / 60; 
+
+    bonus_stats.haste =  hasteBuff * uptime;
   } 
   else if (effectName === "Cosmic Protoweave") {
     const effect = activeEffect.effects[0];
