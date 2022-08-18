@@ -14,6 +14,8 @@ import { SHAMANSPELLDB } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanSp
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 import LooksOneIcon from "@mui/icons-material/LooksOne";
+import { SpellIcon } from "./SpellIcon";
+import "./Sequence.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -236,22 +238,13 @@ export default function SequenceGenerator(props) {
 
                       {seq.map((spell, index) => (
                         <Grid item xs="auto" key={index} onDragOver={onDragOver} onDragEnd={dropMove} onDrop={dropInsertion} onDragEnter={(e) => { dragEnter(e, index) }}>
-                          <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id} style={{ display: "flex" }} draggable onDragStart={(e) => { dragStart(e, index) }} onContextMenu={(e) => removeSpellAtIndex(index, e) }>
-                            <img
-                              draggable="false"
-                              height={40}
-                              width={40}
-                              src={require("Images/Spells/" + spellDB[spell][0].spellData.icon + ".jpg").default || ""}
-                              alt=""
-                              style={{
-                                borderRadius: 4,
-                                borderWidth: "1px",
-                                borderStyle: "solid",
-                                borderColor: "#008CFF",
-                                marginRight: 0,
-                              }}
-                            />
-                          </a>
+                          <SpellIcon
+                            spell={spellDB[spell][0]}
+                            draggable
+                            onDragStart={(e) => { dragStart(e, index) }}
+                            onContextMenu={(e) => removeSpellAtIndex(index, e)}
+                            style={{ display: "flex" }}
+                          />
                         </Grid>
                       ))}
                     </Grid>
@@ -273,23 +266,13 @@ export default function SequenceGenerator(props) {
                       <Grid container spacing={1}>
                         {spellList[cat].map((spell, i) => (
                           <Grid item xs="auto" key={spellDB[spell][0].spellData.id}>
-                            <a data-wowhead={"spell=" + spellDB[spell][0].spellData.id} style={{ display: "flex" }} draggable onDragStart={(e) => { dragStart(e, spell) }}>
-                              <img
-                                draggable="false" // lets drag the whole thing instead of just the image
-                                height={40}
-                                width={40}
-                                src={require("Images/Spells/" + spellDB[spell][0].spellData.icon + ".jpg").default || ""}
-                                alt=""
-                                onClick={(e) => addSpell(spell, e)}
-                                style={{
-                                  borderRadius: 4,
-                                  borderWidth: "1px",
-                                  borderStyle: "solid",
-                                  borderColor: "#ff8000",
-                                  marginRight: 0,
-                                }}
-                              />
-                            </a>
+                            <SpellIcon
+                              spell={spellDB[spell][0]}
+                              draggable
+                              onDragStart={(e) => { dragStart(e, spell) }}
+                              onClick={(e) => addSpell(spell, e)}
+                              style={{ display: "flex" }}
+                            />
                           </Grid>
                         ))}
                       </Grid>
