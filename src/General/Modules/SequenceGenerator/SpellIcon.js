@@ -17,7 +17,6 @@ export const SpellIcon = ({ spell, className, alt = '', ...others }) => {
       data-wowhead={"spell=" + spellId}
       target="_blank"
       rel="noopener noreferrer"
-      className="spell_link"
     >
       <img
         src={`${baseURL}/${icon}.jpg`}
