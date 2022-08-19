@@ -74,6 +74,7 @@ const getSqrt = (targets) => {
   return Math.sqrt(targets);
 }
 
+const getHotName = (spellName) => spellName; // + " (hot)" throws issues when doing things by name comparison
 export const runHeal = (state, spell, spellName, compile = true) => {
 
   // Pre-heal processing
@@ -208,8 +209,10 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
       const spell = buff.attSpell;
       spell.coeff = spell.coeff * partialTickPercentage;
 
-      if (buff.buffType === "damage") runDamage(state, spell, buff.name);
-      else if (buff.buffType === "healing") runHeal(state, spell, buff.name + "(hot)")
+      if (buff.buffType === "damage")
+        runDamage(state, spell, buff.name);
+      else if (buff.buffType === "heal")
+        runHeal(state, spell, getHotName(buff.name));
     })
 
     // Remove any buffs that have expired. Note that we call this after we handle partial ticks. 

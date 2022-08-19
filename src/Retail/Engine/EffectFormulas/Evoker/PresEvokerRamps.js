@@ -21,7 +21,6 @@ const EVOKERCONSTANTS = {
     
     masteryMod: 1.8, 
     masteryEfficiency: 0.92, 
-    baseMastery: 0.14,
     baseMana: 10000,
 
     //CBT: {transferRate: 0.3, expectedOverhealing: 0.25},
