@@ -1,0 +1,469 @@
+{
+    "translations": {
+        "Account": "Account",
+        "Add": "Add",
+        "Avoidance": "Avoidance",
+        "Battletag": "Battletag",
+        "Burning Crusade": "Burning Crusade",
+        "Cancel": "Cancel",
+        "Casts": "Casts",
+        "Changelog": {
+            "Date": "Date",
+            "Header": "更改日誌",
+            "LastUpdated": "Last Updated",
+            "Update": "Update",
+            "Version": "Version"
+        },
+        "CharacterCreator": {
+            "AddChar": "Add Character",
+            "CharacterInfo": "Character Information",
+            "CharName": "Character Name",
+            "CreateChar": "Create New Character",
+            "DeleteCharacter": "Delete Character",
+            "SavedLogs": {
+                "Boss": "Boss",
+                "FightLength": "Fight Length",
+                "Header": "Current Log",
+                "HPS": "HPS",
+                "RawHPS": "Raw HPS",
+                "Report": "Report",
+                "ResetToDefaults": "Reset to Defaults",
+                "TabHeader": "Saved Logs(Coming Soon)"
+            },
+            "ServerName": "Server Name",
+            "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.",
+            "StatWeights": "Stat Weights"
+        },
+        "Class": "Class",
+        "Cooldown": "Cooldown",
+        "CooldownPlanner": {
+            "ChartLabels": {
+                "_Comments1": "Translations for HD Charts",
+                "MitigatedDamageLabel": "Mitigated",
+                "UnmitigatedDamageLabel": "Unmitigated"
+            },
+            "Headers": {
+                "CooldownTimeline": "Cooldown Timeline",
+                "EnemyCastTimeline": "Enemy Cast Timeline",
+                "ExternalTimeline": "External Timeline"
+            },
+            "HealerCards": {
+                "Crit": "Critical",
+                "Haste": "Haste",
+                "Item Level": "ilvl",
+                "Mastery": "Mastery",
+                "SoulbindAbilities": "Soulbind Abilities",
+                "SoulbindConduits": "Soulbind Conduits",
+                "StatsHeading": "Stats",
+                "TalentHeader": "Talents",
+                "Versatility": "Versatility"
+            },
+            "TableLabels": {
+                "BossAbilityLabel": "Boss Ability",
+                "BossSelectorLabel": "Select Boss",
+                "CastTimeLabel": "Cast",
+                "HealTeamHeader": "Roster",
+                "NotesLabel": "Notes",
+                "OffCooldownLabel": "Off-CD",
+                "RaidSelectorLabel": "Select Raid",
+                "TypeSelector": "Formats"
+            },
+            "UserInputs": {
+                "fightButtonLabel": "Select Fight",
+                "Loglink": "Paste WarcraftLog Link Here"
+            },
+            "AddPlanDialog": {
+                "ButtonLabel": "",
+                "ButtonTooltip": "",
+                "HeaderTitle": ""
+            },
+            "CopyPlanDialog": {
+                "ButtonLabel": "",
+                "ButtonTooltip": "",
+                "NewPlanTitle": "",
+                "SelectPlanTitle": ""
+            },
+            "DeletePlanDialog": {
+                "ButtonLabel": "",
+                "ButtonTooltip": "",
+                "HeaderTitle": "",
+                "PlaceholderText": ""
+            },
+            "DuplicatePlanError": "",
+            "ExportPlanDialog": {
+                "ButtonLabel": "",
+                "HeaderTitle": ""
+            },
+            "ImportPlanDialog": {
+                "ButtonLabel": "",
+                "Errors": {
+                    "DuplicatePlanWarning": "",
+                    "HeaderError": "",
+                    "StringError": ""
+                },
+                "HeaderTitle": ""
+            },
+            "NoteExportDialog": {
+                "ButtonLabel": "",
+                "HeaderTitle": "",
+                "NoteExportTooltip": ""
+            }
+        },
+        "Covenants": {
+            "Kyrian": "格里恩",
+            "Necrolords": "通灵领主",
+            "NightFae": "法夜",
+            "Soulbinds": {
+                "Draven": "德莱文将军",
+                "Dreamweaver": "织梦者",
+                "Emeni": "艾米妮",
+                "Heirmir": "骨匠海尔米尔",
+                "Kleia": "克雷雅",
+                "Korayn": "柯莱恩",
+                "Marileth": "魔药设计师马里莱斯",
+                "Mikanikos": "掌炉宗师米卡尼科斯",
+                "Nadjia": "娜德佳，迷雾之刃",
+                "Niya": "尼娅",
+                "Pelagos": "裴拉戈斯",
+                "Theotar": "癫狂公爵西塔尔"
+            },
+            "Venthyr": "温西尔"
+        },
+        "Crit": "Crit",
+        "Default": "Default",
+        "Delete": "Delete",
+        "DominationSelection": {
+            "HeaderTitle": "Domination Gems",
+            "ShardNotOwned": "not owned"
+        },
+        "Dungeon": "Dungeon",
+        "Edit": "Edit",
+        "Email": "Email",
+        "Equipped": "Equipped",
+        "Error": "Error",
+        "Filter": "Filter",
+        "GameTypeToggle": {
+            "Classic": "Change to Classic (Burning Crusade)",
+            "Retail": "Change to Retail (Shadowlands)"
+        },
+        "HallOfFame": {
+            "buttonLabel": "QE Hall of Fame",
+            "introduction": "QE would not have been possible without you. Thank you so much!",
+            "title": "Hall of Fame"
+        },
+        "Haste": "Haste",
+        "Healing": "Healing",
+        "HowToUse": "How to Use",
+        "HPS": "HPS",
+        "InsertLog": {
+            "InsertLogHeader": "Paste Your Warcraft Logs Report Here",
+            "PlsSelectFight": "Please Select a Fight"
+        },
+        "Intellect": "Intellect",
+        "itemTags": {
+            "effect": "Effect",
+            "greatvault": "Great Vault"
+        },
+        "Lee": "Leech",
+        "LegendaryCompare": {
+            "Title": "Legendaries at a Glance"
+        },
+        "Login": "登录",
+        "MainMenu": {
+            "Articles": {
+                "Header": "Recent Spec Articles",
+                "HelpText": ""
+            },
+            "CharHeader": "Characters",
+            "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.",
+            "CooldownPlanner": "Cooldown Planner (Coming Soon)",
+            "DominationAnalysis": "Domination Analysis (Beta)",
+            "ExploreCovenants": "Explore Covenants",
+            "FightAnalysis": "Fight Analysis (Coming Soon)",
+            "LegendaryAnalysis": "Legendary Analysis",
+            "PatronInvite": "Love the app? Support the site on Patreon!",
+            "PatronThanks": "Thank you so much for your support!",
+            "Profile": "Profile",
+            "QuickCompare": "Gear Quick Compare",
+            "TierSets": "Tier Sets",
+            "Tooltips": {
+                "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
+                "ExploreCovenants": "Explore Soulbinds for each covenant",
+                "LegendaryAnalysis": "Find your best legendary power and where to get it",
+                "Profile": "Edit your details",
+                "QuickCompare": "Compare Items for each slot",
+                "TopGear": "Find your best gear set",
+                "UpgradeFinder": "Find your next piece of gear!",
+                "DominationAnalysis": "",
+                "TierSets": "",
+                "TrinketAnalysis": ""
+            },
+            "TopGear": "Top Gear (Beta)",
+            "TrinketAnalysis": "Trinket Analysis",
+            "UpgradeFinder": "Upgrade Finder (Coming Soon)"
+        },
+        "Mastery": "Mastery",
+        "Name": "Name",
+        "No": "No",
+        "None": "None",
+        "Overhealing": " Overhealing",
+        "PatreonTiers": {
+            "Diamond": "Diamond",
+            "Gold": "Gold",
+            "RollsRoyce": "Rolls Royce"
+        },
+        "PvPCurrency": {
+            "Conquest": "征服点数",
+            "Honor": "荣誉点数",
+            "-16": "",
+            "-17": ""
+        },
+        "QeHeader": {
+            "InsertLogLabel": "Insert Log",
+            "Tooltip": {
+                "ChangeToDungeon": "Change to Dungeon Content",
+                "ChangeToRaid": "Change to Raid Content",
+                "Home": "Main Menu",
+                "InsertLog": "Insert a log to increase accuracy",
+                "Language": "Change Language",
+                "Login": "Login to your Battle.net Account",
+                "SimC": "Insert a SimC string to import your gear",
+                "BurningCrusadeSimC": "",
+                "RetailSimC": ""
+            },
+            "Login": ""
+        },
+        "QeProfile": {
+            "EditionAffix": "Edition",
+            "EmailMsg": "Enter\/Update your Email to link to Patreon",
+            "NoBattleTag": "No Battlenet Account Linked",
+            "NoEmail": "No Email Entered",
+            "ProfileHeader": "Profile Information",
+            "QeTier": "QE Live Tier",
+            "StandardEdition": "Standard Edition"
+        },
+        "QuickCompare": {
+            "AddButton": "Add",
+            "DominationSocket": "Domination",
+            "HelpText": "Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.",
+            "ItemAdded": "Item Added!",
+            "ItemBarTitle": "Add Items (Optional)",
+            "ItemDeleted": "Item Deleted!",
+            "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300",
+            "ItemLevel": "物品等级",
+            "ItemName": "名称",
+            "Missives": "Missives",
+            "Slot": "物品栏",
+            "Socket": "Socket",
+            "Tertiary": "Tertiary",
+            "Title": "Quick Compare"
+        },
+        "Race": "Race",
+        "Raid": "Raid",
+        "RaidDifficulty": {
+            "Heroic": "",
+            "Mythic": "",
+            "Normal": "",
+            "Raid Finder": ""
+        },
+        "Region": "Region",
+        "Remove": "Remove",
+        "Save": "Save",
+        "Select Class": "Select Class",
+        "Select Race": "Select Race",
+        "Settings": {
+            "BurningCrusade": {
+                "Setting0TextFieldLabel": "",
+                "Setting0Title": "",
+                "Setting0Tooltip": "",
+                "Setting1TextFieldLabel": "",
+                "Setting1Title": "",
+                "Setting1Tooltip": "",
+                "Setting2TextFieldLabel": "",
+                "Setting2Title": "",
+                "Setting2Tooltip": "",
+                "Setting3TextFieldLabel": "",
+                "Setting3Title": "",
+                "Setting3Tooltip": "",
+                "Setting4TextFieldLabel": "",
+                "Setting4Title": "",
+                "Setting4Tooltip": "",
+                "Setting5TextFieldLabel": "",
+                "Setting5Title": "",
+                "Setting5Tooltip": ""
+            },
+            "Retail": {
+                "Setting0TextFieldLabel": "Allies",
+                "Setting0Title": "Hymnal Allies",
+                "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
+                "Setting1TextFieldLabel": "",
+                "Setting1Title": "Group Benefits",
+                "Setting1Tooltip": "Treat items that buff allies as if it were personal throughput",
+                "Setting2TextFieldLabel": "Talent",
+                "Setting2Title": "Talent",
+                "Setting2Tooltip": "Select Discipline Talent",
+                "Setting3TextFieldLabel": "",
+                "Setting3Title": "Auto Socket Items",
+                "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
+                "Setting4TextFieldLabel": "Vault Dom Gem",
+                "Setting4Title": "Vault Dom Gem",
+                "Setting4Tooltip": "Choose a Gem to socket into your vault items",
+                "Setting5TextFieldLabel": "",
+                "Setting5Title": "",
+                "Setting5Tooltip": "",
+                "Setting6TextFieldLabel": "",
+                "Setting6Title": "",
+                "Setting6Tooltip": "",
+                "Setting7TextFieldLabel": "",
+                "Setting7Title": "",
+                "Setting7Tooltip": ""
+            },
+            "SettingsTitle": "Settings"
+        },
+        "Shadowlands": "Shadowlands",
+        "SimCInput": {
+            "SimCDialogueTitle": "Paste Your SimC String",
+            "SimCHeaderButtonLabel": "SimC",
+            "SimCStringLabel": "SimC String",
+            "SimCDialogueTitleBurningCrusade": "",
+            "SimCDialogueTitleRetail": "",
+            "SimCHeaderButtonLabelBurningCrusade": "",
+            "SimCHeaderButtonLabelRetail": ""
+        },
+        "slotNames": {
+            "back": "Cape",
+            "chest": "Chest",
+            "feet": "Boots",
+            "finger": "Ring",
+            "hands": "Gloves",
+            "head": "头部",
+            "legs": "Legs",
+            "mainHands": "Weapons",
+            "neck": "Neck",
+            "offhands": "Off-Hands",
+            "relics": "圣物",
+            "shoulder": "肩部",
+            "trinket": "Trinkets",
+            "waist": "腰部",
+            "weaponCombos": "Weapon Combos",
+            "weapons": "Weapons",
+            "wrists": "Bracers"
+        },
+        "Snackbars": {
+            "CharAddSuccess": "Character Added!",
+            "CharUpdateSuccess": "Character Updated!",
+            "EmailError": "Please check the Email and try again",
+            "EmailUpdateSuccess": "Email Updated!",
+            "LogImportSuccess": "Log Imported Successfully!",
+            "LoginSuccess": "Logged in Successfully!",
+            "SimCImportSuccess": "SimC String Imported Successfully!"
+        },
+        "Soulbinds": {
+            "ConduitInstructions": "Right\/Left Click Conduits to change Ilvl",
+            "EnduranceConduit": "韧如树皮",
+            "FinesseConduit": "灵巧导灵器",
+            "Header": "Covenant Exploration",
+            "PotencyConduit": "效能导灵器",
+            "RenownTooltip": "Import your Renown via SimC \/ Enter your Renown level here",
+            "StatPanel": {
+                "CovenantEstimate": "Covenant Ability Est",
+                "Score": "Score",
+                "SelectedNodes": "Selected Nodes",
+                "Summary": "Summary"
+            }
+        },
+        "Source": "来源",
+        "SourceToggle": {
+            "FilterTooltip": "You can filter the graph by toggling these buttons"
+        },
+        "stats": {
+            "crit": "Crit",
+            "haste": "Haste",
+            "mastery": "Mastery",
+            "versatility": "Versatility"
+        },
+        "Submit": "Submit",
+        "TierSets": {
+            "2Set": "2 Set HPS",
+            "4Set": "4 Set HPS",
+            "6Set": "6 Set HPS",
+            "Title": "Tier Sets"
+        },
+        "TopGear": {
+            "CompetitiveAlternative": "Competitive Alternatives",
+            "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have a valid weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each",
+            "GoMsg": "Go!",
+            "HelpText": "Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included in the comparison. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the app.",
+            "itemMissingError": "Error: Add item - ",
+            "ItemsHereMessage": "Your items will go here after you import.",
+            "SelectedItems": "Selected Items",
+            "StatPanel": {
+                "AvgStats": "Average Stats (includes procs)"
+            },
+            "Title": "者名",
+            "BackToGearSelection": "",
+            "CompetitiveAlternativeHelp": "",
+            "HelpTextBurningCrusade": "",
+            "HelpTextRetail": ""
+        },
+        "TrinketAnalysis": {
+            "Header": "Trinket Analysis",
+            "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing."
+        },
+        "UpgradeFinder": {
+            "CurrentRaid": "初诞者圣墓",
+            "Header": "Upgrade Finder Results",
+            "MythicPlus": "大秘境",
+            "PvP": "PvP",
+            "UpgradeBySlot": "Upgrade by Slot",
+            "WorldBosses": "World Bosses",
+            "BackButton": ""
+        },
+        "UpgradeFinderFront": {
+            "Header": "Upgrade Finder",
+            "HelpText": "Insert a SimC String, Select up to two raid difficulties, your standard mythic keystone level, and your PVP rating to see where you can find your next upgrade!",
+            "MythicPlusBody": "Use the Slider to Select the level of keys you usually complete",
+            "MythicPlusHeader": "Mythic Plus Key Level",
+            "PvPBody": "Select  your Rating",
+            "PvPHeader": "PvP Rating",
+            "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
+            "RaidDifficultyHeader": "Raid Difficulty",
+            "SimCBody1": "Current SimC String Status:",
+            "SimCBody1Good": "SimC - All Set!",
+            "SimCBody1Invalid": "SimC - Empty Item Slot",
+            "SimCBody1Missing": "SimC - Missing",
+            "SimCBody2": "Current Equipped Gear:",
+            "SimCButton": "Import SimC",
+            "SimCHeader": "SimC Import",
+            "DungeonBodyBC": ""
+        },
+        "Versatility": "Versatility",
+        "Yes": "Yes",
+        "BadgeGear": "",
+        "Bonus DPS": "",
+        "Bonus HPS": "",
+        "Catalyst": "",
+        "Covenant": "",
+        "CovLegendaries": "",
+        "CreationCatalyst": "",
+        "DominationSocketAnalysis": {
+            "Header": "",
+            "HelpText": ""
+        },
+        "External": "",
+        "kyrian": "",
+        "Leech": "",
+        "Mana": "",
+        "necrolord": "",
+        "night_fae": "",
+        "Renown Level": "",
+        "Tier": "",
+        "venthyr": "",
+        "Welcome": {
+            "ContinueMessage": "",
+            "CreateCharacter": "",
+            "GameTypeMessage": "",
+            "WelcomeTo": ""
+        }
+    }
+}
