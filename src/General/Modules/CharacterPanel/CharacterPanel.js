@@ -11,7 +11,7 @@ import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunction
 import Settings from "../Settings/Settings";
 import { covenantIcons, covenantColours } from "../CooldownPlanner/Functions/CovenantFunctions";
 // import ErrorTooltip from "./ErrorTooltip";
-import { classTranslator } from "General/Functions/CommonFunctions";
+import { getTranslatedClassName } from "locale/ClassNames";
 
 const useStyles = makeStyles(() => ({
   simcerror: {
@@ -172,7 +172,7 @@ export default function CharacterPanel(props) {
                   />
                 )}
                 <div style={{ position: "absolute", bottom: 1, left: 1 }}>
-                  <Tooltip title={t(classTranslator(currentCharacter.spec))} placement="left" arrow>
+                  <Tooltip title={getTranslatedClassName(currentCharacter.spec)} placement="left" arrow>
                     {classIcons(
                       currentCharacter.spec,
                       gameType === "Retail"

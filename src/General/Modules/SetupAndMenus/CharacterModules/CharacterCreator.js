@@ -12,6 +12,7 @@ import { getTranslatedRaceName } from "Databases/RacesDB";
 import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import { useSelector } from "react-redux";
+import { getTranslatedClassName } from "locale/ClassNames";
 
 const addBtn = require("../../../../Images/AddBtn.jpg").default;
 
@@ -189,7 +190,7 @@ export default function AddNewChar(props) {
                               borderRadius: 4,
                               border: "1px solid rgba(255, 255, 255, 0.12)",
                             })}
-                            {t("Classes." + key)}
+                            {getTranslatedClassName(key)}
                           </div>
                         </MenuItem>
                       );

@@ -35,51 +35,11 @@
       "StatWeights": "Stat Weights"
     },
     "Class": "Classe",
-    "Classes": {
-      "Death Knight": "Death Knight",
-      "DeathKnight": "Death Knight",
-      "Discipline Priest": "Discipline Priest",
-      "DisciplinePriest": "Discipline Priest",
-      "Havoc Demon Hunter": "Havoc Demon Hunter",
-      "HavocDemonHunter": "Havoc Demon Hunter",
-      "Holy Paladin": "Holy Paladin",
-      "Holy Paladin BC": "Holy Paladin",
-      "Holy Priest": "Holy Priest",
-      "Holy Priest BC": "Holy Priest",
-      "HolyPaladin": "Holy Paladin",
-      "HolyPriest": "Holy Priest",
-      "Mistweaver Monk": "Mistweaver Monk",
-      "MistweaverMonk": "Mistweaver Monk",
-      "Restoration Druid": "Restoration Druid",
-      "Restoration Druid BC": "Restoration Druid",
-      "Restoration Shaman": "Restoration Shaman",
-      "Restoration Shaman BC": "Restoration Shaman",
-      "RestorationDruid": "Restoration Druid",
-      "RestorationShaman": "Restoration Shaman",
-      "Shadow Priest": "Shadow Priest",
-      "ShadowPriest": "Shadow Priest",
-      "undefined": "",
-      "Warrior": "Warrior"
-    },
     "Cooldown": "Recharge",
     "CooldownPlanner": {
       "ChartLabels": {
         "MitigatedDamageLabel": "Mitigated",
         "UnmitigatedDamageLabel": "Unmitigated Damage"
-      },
-      "Classes": {
-        "DeathKnight": "Death Knight",
-        "DisciplinePriest": "Discipline Priest",
-        "Druid": "Druide",
-        "HavocDemonHunter": "Havoc Demon Hunter",
-        "HolyPaladin": "Holy Paladin",
-        "HolyPriest": "Holy Priest",
-        "MistweaverMonk": "Mistweaver Monk",
-        "RestorationDruid": "Restoration Druid",
-        "RestorationShaman": "Restoration Shaman",
-        "ShadowPriest": "Shadow Priest",
-        "undefined": "",
-        "Warrior": "Warrior"
       },
       "Headers": {
         "CooldownTimeline": "Cooldown Timeline",

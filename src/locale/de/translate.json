@@ -35,52 +35,12 @@
       "StatWeights": "Stat Weights"
     },
     "Class": "Klasse",
-    "Classes": {
-      "Death Knight": "Todesritter",
-      "DeathKnight": "Todesritter",
-      "Discipline Priest": "Disziplin Priester",
-      "DisciplinePriest": "Disziplin Priester",
-      "Havoc Demon Hunter": "Verwüstung Dämonenjäger",
-      "HavocDemonHunter": "Verwüstung Dämonenjäger",
-      "Holy Paladin": "Heilig Paladin",
-      "Holy Paladin BC": "Heilig Paladin",
-      "Holy Priest": "Heilig Priester",
-      "Holy Priest BC": "Heilig Priester",
-      "HolyPaladin": "Heilig Paladin",
-      "HolyPriest": "Heilig Priester",
-      "Mistweaver Monk": "Nebelwirker Mönch",
-      "MistweaverMonk": "Nebelwirker Mönch",
-      "Restoration Druid": "Wiederherstellung Druide",
-      "Restoration Druid BC": "Wiederherstellung Druide",
-      "Restoration Shaman": "Wiederherstellung Schamane",
-      "Restoration Shaman BC": "Wiederherstellung Schamane",
-      "RestorationDruid": "Wiederherstellung Druide",
-      "RestorationShaman": "Wiederherstellung Schamane",
-      "Shadow Priest": "Schattenpriester",
-      "ShadowPriest": "Schattenpriester",
-      "undefined": "",
-      "Warrior": "Krieger"
-    },
     "Cooldown": "Cooldown",
     "CooldownPlanner": {
       "ChartLabels": {
         "_Comments1": "Translations for HD Charts",
         "MitigatedDamageLabel": "Mitigated",
         "UnmitigatedDamageLabel": "Unmitigated"
-      },
-      "Classes": {
-        "DeathKnight": "Todesritter",
-        "DisciplinePriest": "Disziplin Priester",
-        "Druid": "Druide",
-        "HavocDemonHunter": "Verwüstung Dämonenjäger",
-        "HolyPaladin": "Heilig Paladin",
-        "HolyPriest": "Heilig Priester",
-        "MistweaverMonk": "Nebelwirker Mönch",
-        "RestorationDruid": "Wiederherstellung Druide",
-        "RestorationShaman": "Wiederherstellung Schamane",
-        "ShadowPriest": "Schattenpriester",
-        "undefined": "",
-        "Warrior": "Krieger"
       },
       "Headers": {
         "CooldownTimeline": "Cooldown Timeline",

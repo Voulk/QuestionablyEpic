@@ -35,52 +35,12 @@
       "StatWeights": "Stat Weights"
     },
     "Class": "класс",
-    "Classes": {
-      "Death Knight": "Рыцарь смерти",
-      "DeathKnight": "Рыцарь смерти",
-      "Discipline Priest": "Жрец Послушания",
-      "DisciplinePriest": "Жрец Послушания",
-      "Havoc Demon Hunter": "Охотник на демонов Истребления",
-      "HavocDemonHunter": "Охотник на демонов Истребления",
-      "Holy Paladin": "Паладин Света",
-      "Holy Paladin BC": "Паладин Света",
-      "Holy Priest": "Жрец Света",
-      "Holy Priest BC": "Жрец Света",
-      "HolyPaladin": "Паладин Света",
-      "HolyPriest": "Жрец Света",
-      "Mistweaver Monk": "Монах Ткач Туманов",
-      "MistweaverMonk": "Монах Ткач Туманов",
-      "Restoration Druid": "Друид Исцеления",
-      "Restoration Druid BC": "Друид Исцеления",
-      "Restoration Shaman": "Шаман Исцеления",
-      "Restoration Shaman BC": "Шаман Исцеления",
-      "RestorationDruid": "Друид Исцеления",
-      "RestorationShaman": "Шаман Исцеления",
-      "Shadow Priest": "Жрец Тьмы",
-      "ShadowPriest": "Жрец Тьмы",
-      "undefined": "",
-      "Warrior": "Воин"
-    },
     "Cooldown": "Cooldown",
     "CooldownPlanner": {
       "ChartLabels": {
         "_Comments1": "Translations for HD Charts",
         "MitigatedDamageLabel": "Mitigated",
         "UnmitigatedDamageLabel": "Unmitigated Damage"
-      },
-      "Classes": {
-        "DeathKnight": "Death Knight",
-        "DisciplinePriest": "Discipline Priest",
-        "Druid": "Друид",
-        "HavocDemonHunter": "Havoc Demon Hunter",
-        "HolyPaladin": "Holy Paladin",
-        "HolyPriest": "Holy Priest",
-        "MistweaverMonk": "Mistweaver Monk",
-        "RestorationDruid": "Restoration Druid",
-        "RestorationShaman": "Restoration Shaman",
-        "ShadowPriest": "Shadow Priest",
-        "undefined": "",
-        "Warrior": "Warrior"
       },
       "Headers": {
         "CooldownTimeline": "Cooldown Timeline",

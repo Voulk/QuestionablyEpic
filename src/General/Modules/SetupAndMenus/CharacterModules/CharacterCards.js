@@ -48,8 +48,8 @@ import { apiGetPlayerImage } from "../ConnectionUtilities";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { covenantIcons } from "../../CooldownPlanner/Functions/CovenantFunctions";
-import { classTranslator } from "General/Functions/CommonFunctions";
 import { getTranslatedRaceName } from "Databases/RacesDB";
+import { getTranslatedClassName } from "locale/ClassNames.js";
 
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
@@ -373,7 +373,7 @@ export default function CharCards(props) {
                   <Grid item xs={10}>
                     <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec), display: "inline-flex" }}>
                       {props.name}
-                      <Tooltip title={t(classTranslator(spec))} style={{ color: classColoursJS(spec) }} placement="top">
+                      <Tooltip title={getTranslatedClassName(spec)} style={{ color: classColoursJS(spec) }} placement="top">
                         {/* ----------------------------------------- Class Icon -----------------------------------------  */}
                         {classIcons(spec, {
                           height: 20,
@@ -512,7 +512,7 @@ export default function CharCards(props) {
                                 <MenuItem divider={lastItem} key={"charCardClass" + i} value={key}>
                                   <div style={{ display: "inline-flex" }}>
                                     {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
-                                    {t("Classes." + key)}
+                                    {getTranslatedClassName(key)}
                                   </div>
                                 </MenuItem>
                               );

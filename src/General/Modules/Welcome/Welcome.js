@@ -15,6 +15,7 @@ import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import { covenantIcons } from "../CooldownPlanner/Functions/CovenantFunctions";
 import { getTranslatedRaceName } from "Databases/RacesDB";
+import { getTranslatedClassName } from "locale/ClassNames";
 
 const useStyles = makeStyles(() => ({
   formControl: {
@@ -222,7 +223,7 @@ export default function WelcomeDialog(props) {
                               borderRadius: 4,
                               border: "1px solid rgba(255, 255, 255, 0.12)",
                             })}
-                            {t("Classes." + key)}
+                            {getTranslatedClassName(key)}
                           </div>
                         </MenuItem>
                       );

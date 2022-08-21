@@ -39,32 +39,6 @@
       "StatWeights": "Stat Weights"
     },
     "Class": "Class",
-    "Classes": {
-      "Death Knight": "Death Knight",
-      "DeathKnight": "Death Knight",
-      "Discipline Priest": "Discipline Priest",
-      "DisciplinePriest": "Discipline Priest",
-      "HavocDemon Hunter": "Havoc Demon Hunter",
-      "HavocDemonHunter": "Havoc Demon Hunter",
-      "Holy Paladin": "Holy Paladin",
-      "Holy Paladin BC": "Holy Paladin",
-      "Holy Priest": "Holy Priest",
-      "Holy Priest BC": "Holy Priest",
-      "HolyPaladin": "Holy Paladin",
-      "HolyPriest": "Holy Priest",
-      "Mistweaver Monk": "Mistweaver Monk",
-      "MistweaverMonk": "Mistweaver Monk",
-      "Restoration Druid": "Restoration Druid",
-      "Restoration Druid BC": "Restoration Druid",
-      "Restoration Shaman": "Restoration Shaman",
-      "Restoration Shaman BC": "Restoration Shaman",
-      "RestorationDruid": "Restoration Druid",
-      "RestorationShaman": "Restoration Shaman",
-      "Shadow Priest": "Shadow Priest",
-      "ShadowPriest": "Shadow Priest",
-      "undefined": "",
-      "Warrior": "Warrior"
-    },
     "Cooldown": "Cooldown",
     "CooldownPlanner": {
       "AddPlanDialog": {
@@ -76,20 +50,6 @@
         "_Comments1": "Translations for HD Charts",
         "MitigatedDamageLabel": "Mitigated",
         "UnmitigatedDamageLabel": "Unmitigated"
-      },
-      "Classes": {
-        "DeathKnight": "Death Knight",
-        "DisciplinePriest": "Discipline Priest",
-        "Druid": "Druid",
-        "HavocDemonHunter": "Havoc Demon Hunter",
-        "HolyPaladin": "Holy Paladin",
-        "HolyPriest": "Holy Priest",
-        "MistweaverMonk": "Mistweaver Monk",
-        "RestorationDruid": "Restoration Druid",
-        "RestorationShaman": "Restoration Shaman",
-        "ShadowPriest": "Shadow Priest",
-        "undefined": "",
-        "Warrior": "Warrior"
       },
       "CopyPlanDialog": {
         "ButtonLabel": "Copy",
