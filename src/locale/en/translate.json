@@ -20,15 +20,15 @@
     },
     "CharacterCreator": {
       "AddChar": "Add Character",
-      "CharacterInfo": "Character Information",
       "CharName": "Character Name",
+      "CharacterInfo": "Character Information",
       "CreateChar": "Create New Character",
       "DeleteCharacter": "Delete Character",
       "SavedLogs": {
         "Boss": "Boss",
         "FightLength": "Fight Length",
-        "Header": "Current Log",
         "HPS": "HPS",
+        "Header": "Current Log",
         "RawHPS": "Raw HPS",
         "Report": "Report",
         "ResetToDefaults": "Reset to Defaults",
@@ -47,9 +47,9 @@
         "HeaderTitle": "Enter Plan Name"
       },
       "ChartLabels": {
-        "_Comments1": "Translations for HD Charts",
         "MitigatedDamageLabel": "Mitigated",
-        "UnmitigatedDamageLabel": "Unmitigated"
+        "UnmitigatedDamageLabel": "Unmitigated",
+        "_Comments1": "Translations for HD Charts"
       },
       "CopyPlanDialog": {
         "ButtonLabel": "Copy",
@@ -96,7 +96,7 @@
       "NoteExportDialog": {
         "ButtonLabel": "MRT Note",
         "HeaderTitle": "Note Export",
-        "NoteExportTooltip": "Export your plan into a note format compatible with ERT / MRT."
+        "NoteExportTooltip": "Export your plan into a note format compatible with ERT \/ MRT."
       },
       "TableLabels": {
         "BossAbilityLabel": "Boss Ability",
@@ -109,10 +109,11 @@
         "TypeSelector": "Formats"
       },
       "UserInputs": {
-        "fightButtonLabel": "Select Fight",
-        "Loglink": "Paste WarcraftLog Link Here"
+        "Loglink": "Paste WarcraftLog Link Here",
+        "fightButtonLabel": "Select Fight"
       }
     },
+    "CovLegendaries": "Covenant Legendaries",
     "Covenant": "Covenant",
     "Covenants": {
       "Kyrian": "Kyrian",
@@ -134,7 +135,6 @@
       },
       "Venthyr": "Venthyr"
     },
-    "CovLegendaries": "Covenant Legendaries",
     "CreationCatalyst": "Creation Catalyst",
     "Crit": "Crit",
     "Default": "Default",
@@ -158,6 +158,7 @@
       "Classic": "Change to Classic (Burning Crusade)",
       "Retail": "Change to Retail (Shadowlands)"
     },
+    "HPS": "HPS",
     "HallOfFame": {
       "buttonLabel": "QE Hall of Fame",
       "introduction": "QE would not have been possible without you. Thank you so much!",
@@ -166,17 +167,12 @@
     "Haste": "Haste",
     "Healing": "Healing",
     "HowToUse": "How it works",
-    "HPS": "HPS",
     "InsertLog": {
       "InsertLogHeader": "Paste Your Warcraft Logs Report Here",
       "PlsSelectFight": "Please Select a Fight"
     },
     "Intellect": "Intellect",
-    "itemTags": {
-      "effect": "Effect",
-      "greatvault": "Great Vault"
-    },
-    "kyrian": "Kyrian",
+    "Lee": "",
     "Leech": "Leech",
     "LegendaryCompare": {
       "Title": "Legendaries at a Glance"
@@ -218,8 +214,6 @@
     "Mana": "Mana",
     "Mastery": "Mastery",
     "Name": "Name",
-    "necrolord": "Necrolord",
-    "night_fae": "Night Fae",
     "No": "No",
     "None": "None",
     "Overhealing": " Overhealing",
@@ -245,12 +239,13 @@
         "InsertLog": "Insert a log to increase accuracy.",
         "Language": "Change Language",
         "Login": "Login to your Battle.net Account",
-        "RetailSimC": "Insert a SimC string to import your gear."
+        "RetailSimC": "Insert a SimC string to import your gear.",
+        "SimC": ""
       }
     },
     "QeProfile": {
       "EditionAffix": "Edition",
-      "EmailMsg": "Enter/Update your Email to link to Patreon",
+      "EmailMsg": "Enter\/Update your Email to link to Patreon",
       "NoBattleTag": "No Battlenet Account Linked",
       "NoEmail": "No Email Entered",
       "ProfileHeader": "Profile Information",
@@ -315,6 +310,9 @@
         "Setting1TextFieldLabel": "",
         "Setting1Title": "Ally Buffs",
         "Setting1Tooltip": "Some items give buffs to allies. If you check this it'll include an estimate of that benefit in an items score.",
+        "Setting2TextFieldLabel": "",
+        "Setting2Title": "",
+        "Setting2Tooltip": "",
         "Setting3TextFieldLabel": "",
         "Setting3Title": "Add Sockets",
         "Setting3Tooltip": "This will automatically add a socket to items that don't have them in compatible slots.",
@@ -335,30 +333,13 @@
     },
     "Shadowlands": "Shadowlands",
     "SimCInput": {
+      "SimCDialogueTitle": "",
       "SimCDialogueTitleBurningCrusade": "Paste Your QE Import String",
       "SimCDialogueTitleRetail": "Paste Your SimC String",
+      "SimCHeaderButtonLabel": "",
       "SimCHeaderButtonLabelBurningCrusade": "Gear Import",
       "SimCHeaderButtonLabelRetail": "SimC",
       "SimCStringLabel": "Import String"
-    },
-    "slotNames": {
-      "back": "Cape",
-      "chest": "Chest",
-      "feet": "Boots",
-      "finger": "Ring",
-      "hands": "Gloves",
-      "head": "Helm",
-      "legs": "Legs",
-      "mainHands": "Weapons",
-      "neck": "Neck",
-      "offhands": "Off-Hands",
-      "relics": "Relics & Wands",
-      "shoulder": "Shoulders",
-      "trinket": "Trinkets",
-      "waist": "Belt",
-      "weaponCombos": "Weapon Combos",
-      "weapons": "Weapons",
-      "wrists": "Bracers"
     },
     "Snackbars": {
       "CharAddSuccess": "Character Added!",
@@ -370,12 +351,12 @@
       "SimCImportSuccess": "Gear Imported Successfully!"
     },
     "Soulbinds": {
-      "ConduitInstructions": "Right/Left Click Conduits to change Ilvl",
+      "ConduitInstructions": "Right\/Left Click Conduits to change Ilvl",
       "EnduranceConduit": "Endurance Conduit",
       "FinesseConduit": "Finesse Conduit",
       "Header": "Covenant Exploration",
       "PotencyConduit": "Potency Conduit",
-      "RenownTooltip": "Import your Renown via SimC / Enter your Renown level here",
+      "RenownTooltip": "Import your Renown via SimC \/ Enter your Renown level here",
       "StatPanel": {
         "CovenantEstimate": "Covenant Ability",
         "Score": "Score",
@@ -383,14 +364,9 @@
         "Summary": "Summary"
       }
     },
+    "Source": "",
     "SourceToggle": {
       "FilterTooltip": "You can filter the graph by toggling these buttons"
-    },
-    "stats": {
-      "crit": "Crit",
-      "haste": "Haste",
-      "mastery": "Mastery",
-      "versatility": "Versatility"
     },
     "Submit": "Submit",
     "Tier": "Tier",
@@ -406,15 +382,16 @@
       "CompetitiveAlternativeHelp": "This is how close other sets are to your best. Anything extremely close in score can be considered a sidegrade.",
       "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have an intellect weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each.",
       "GoMsg": "Go!",
+      "HelpText": "",
       "HelpTextBurningCrusade": "Top Gear lets you compare every possible combination of your selected gear at once!",
       "HelpTextRetail": "Top Gear lets you compare every possible combination of your selected gear at once!",
-      "itemMissingError": "Error: Add item - ",
       "ItemsHereMessage": "Your items will go here after you import, then hit 'Go' once happy with your selection.",
       "SelectedItems": "Selected Items",
       "StatPanel": {
         "AvgStats": "Average Stats (includes procs)"
       },
-      "Title": "Top Gear"
+      "Title": "Top Gear",
+      "itemMissingError": "Error: Add item - "
     },
     "TrinketAnalysis": {
       "Header": "Trinket Analysis",
@@ -439,21 +416,54 @@
       "PvPHeader": "PvP Rating",
       "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
       "RaidDifficultyHeader": "Raid Difficulty",
+      "SimCBody1": "",
       "SimCBody1Good": "Import - All Set!",
       "SimCBody1Invalid": "Import - Empty Item Slot",
       "SimCBody1Missing": "Import - Missing",
       "SimCBody2": "Current Equipped Gear:",
       "SimCButton": "Import Gear",
-      "SimCHeader": "SimC/QE Import"
+      "SimCHeader": "SimC\/QE Import"
     },
-    "venthyr": "Venthyr",
     "Versatility": "Versatility",
     "Welcome": {
-      "ContinueMessage": "To begin using the app, add one of your characters below. ",
+      "ContinueMessage": "To begin using the app, add one of your characters below.",
       "CreateCharacter": "Create Character",
       "GameTypeMessage": "Select which version you'd like to start with.",
       "WelcomeTo": "Welcome To"
     },
-    "Yes": "Yes"
+    "Yes": "Yes",
+    "itemTags": {
+      "effect": "Effect",
+      "greatvault": "Great Vault"
+    },
+    "kyrian": "Kyrian",
+    "necrolord": "Necrolord",
+    "night_fae": "Night Fae",
+    "slotNames": {
+      "back": "Cape",
+      "chest": "Chest",
+      "feet": "Boots",
+      "finger": "Ring",
+      "hands": "Gloves",
+      "head": "Helm",
+      "legs": "Legs",
+      "mainHands": "Weapons",
+      "neck": "Neck",
+      "offhands": "Off-Hands",
+      "relics": "Relics & Wands",
+      "shoulder": "Shoulders",
+      "trinket": "Trinkets",
+      "waist": "Belt",
+      "weaponCombos": "Weapon Combos",
+      "weapons": "Weapons",
+      "wrists": "Bracers"
+    },
+    "stats": {
+      "crit": "Crit",
+      "haste": "Haste",
+      "mastery": "Mastery",
+      "versatility": "Versatility"
+    },
+    "venthyr": "Venthyr"
   }
 }
