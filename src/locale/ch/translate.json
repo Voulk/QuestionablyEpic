@@ -71,6 +71,42 @@
       "UserInputs": {
         "fightButtonLabel": "Select Fight",
         "Loglink": "Paste WarcraftLog Link Here"
+      },
+      "AddPlanDialog": {
+        "ButtonLabel": "Add",
+        "ButtonTooltip": "Add a new plan with a sample log, a set of defaults, or a blank slate.",
+        "HeaderTitle": "Enter Plan Name"
+      },
+      "CopyPlanDialog": {
+        "ButtonLabel": "Copy",
+        "ButtonTooltip": "Copy a plan under a new name",
+        "NewPlanTitle": "New Plan Name",
+        "SelectPlanTitle": "Select plan to copy"
+      },
+      "DeletePlanDialog": {
+        "ButtonLabel": "Delete",
+        "ButtonTooltip": "Delete your plan permanently.",
+        "HeaderTitle": "Are you sure you want to delete the current plan?",
+        "PlaceholderText": "Type 'Delete' to confirm"
+      },
+      "DuplicatePlanError": "Duplicate plan name detected, please choose another.",
+      "ExportPlanDialog": {
+        "ButtonLabel": "Export",
+        "HeaderTitle": "Export Plan"
+      },
+      "ImportPlanDialog": {
+        "ButtonLabel": "Import",
+        "Errors": {
+          "DuplicatePlanWarning": "Duplicate plan name detected, Importing this plan will overwrite it with this import!",
+          "HeaderError": "This does not appear to be a QE Planner String, please check it and try again",
+          "StringError": "There's something wrong with the string, please check it and try again"
+        },
+        "HeaderTitle": "Import Plan"
+      },
+      "NoteExportDialog": {
+        "ButtonLabel": "MRT Note",
+        "HeaderTitle": "Note Export",
+        "NoteExportTooltip": "Export your plan into a note format compatible with ERT \/ MRT."
       }
     },
     "Covenants": {
@@ -157,7 +193,10 @@
         "Profile": "Edit your details",
         "QuickCompare": "Compare Items for each slot",
         "TopGear": "Find your best gear set",
-        "UpgradeFinder": "Find your next piece of gear!"
+        "UpgradeFinder": "Find your next piece of gear!",
+        "DominationAnalysis": "Get a glance at all Domination Bonuses at once!",
+        "TierSets": "Find out how strong your classes tier sets are.",
+        "TrinketAnalysis": "A graph view comparing most trinkets in the game"
       },
       "TopGear": "Top Gear (Beta)",
       "TrinketAnalysis": "Trinket Analysis",
@@ -175,7 +214,9 @@
     },
     "PvPCurrency": {
       "Conquest": "征服点数",
-      "Honor": "荣誉点数"
+      "Honor": "荣誉点数",
+      "-16": "Honor",
+      "-17": "Conquest"
     },
     "QeHeader": {
       "InsertLogLabel": "Insert Log",
@@ -186,12 +227,15 @@
         "InsertLog": "Insert a log to increase accuracy",
         "Language": "Change Language",
         "Login": "Login to your Battle.net Account",
-        "SimC": "Insert a SimC string to import your gear"
-      }
+        "SimC": "Insert a SimC string to import your gear",
+        "BurningCrusadeSimC": "Insert a QE Import string to import your gear.",
+        "RetailSimC": "Insert a SimC string to import your gear."
+      },
+      "Login": "Login"
     },
     "QeProfile": {
       "EditionAffix": "Edition",
-      "EmailMsg": "Enter/Update your Email to link to Patreon",
+      "EmailMsg": "Enter\/Update your Email to link to Patreon",
       "NoBattleTag": "No Battlenet Account Linked",
       "NoEmail": "No Email Entered",
       "ProfileHeader": "Profile Information",
@@ -217,10 +261,10 @@
     "Race": "Race",
     "Raid": "Raid",
     "RaidDifficulty": {
-      "Heroic": "",
-      "Mythic": "",
-      "Normal": "",
-      "Raid Finder": ""
+      "Heroic": "Heroic",
+      "Mythic": "Mythic",
+      "Normal": "Normal",
+      "Raid Finder": "Looking for Raid"
     },
     "Region": "Region",
     "Remove": "Remove",
@@ -230,20 +274,20 @@
     "Settings": {
       "BurningCrusade": {
         "Setting0TextFieldLabel": "",
-        "Setting0Title": "",
-        "Setting0Tooltip": "",
+        "Setting0Title": "Mana Profile",
+        "Setting0Tooltip": "Mana varies a little in value based on fight length and how frequently you cast.",
         "Setting1TextFieldLabel": "",
-        "Setting1Title": "",
-        "Setting1Tooltip": "",
+        "Setting1Title": "Include Raid Buffs?",
+        "Setting1Tooltip": "Enable this to include common raid buffs in the gear comparison.",
         "Setting2TextFieldLabel": "",
-        "Setting2Title": "",
-        "Setting2Tooltip": "",
+        "Setting2Title": "Meta Gem",
+        "Setting2Tooltip": "Pick which Meta gem you'd like the app to try and socket.",
         "Setting3TextFieldLabel": "",
-        "Setting3Title": "",
+        "Setting3Title": "Auto-Enchant Items?",
         "Setting3Tooltip": "",
         "Setting4TextFieldLabel": "",
-        "Setting4Title": "",
-        "Setting4Tooltip": "",
+        "Setting4Title": "Gem Rarity",
+        "Setting4Tooltip": "Pick which gems you'd like the app to socket. Jewelcrafting-specifics ignored for now.",
         "Setting5TextFieldLabel": "",
         "Setting5Title": "",
         "Setting5Tooltip": ""
@@ -264,9 +308,15 @@
         "Setting4TextFieldLabel": "Vault Dom Gem",
         "Setting4Title": "Vault Dom Gem",
         "Setting4Tooltip": "Choose a Gem to socket into your vault items",
-        "Setting5TextFieldLabel": "",
-        "Setting5Title": "",
-        "Setting5Tooltip": ""
+        "Setting5TextFieldLabel": "Playstyle",
+        "Setting5Title": "Playstyle",
+        "Setting5Tooltip": "Choose your playstyle",
+        "Setting6TextFieldLabel": "Limit",
+        "Setting6Title": "Catalyst Limit",
+        "Setting6Tooltip": "Select how many Catalyst charges you have. This determines how many Catalyst items Top Gear will be restricted to.",
+        "Setting7TextFieldLabel": "Leech",
+        "Setting7Title": "UF: Leech",
+        "Setting7Tooltip": "Turning this on will automatically add Leech to all Upgrade Finder choices."
       },
       "SettingsTitle": "Settings"
     },
@@ -274,7 +324,11 @@
     "SimCInput": {
       "SimCDialogueTitle": "Paste Your SimC String",
       "SimCHeaderButtonLabel": "SimC",
-      "SimCStringLabel": "SimC String"
+      "SimCStringLabel": "SimC String",
+      "SimCDialogueTitleBurningCrusade": "Paste Your QE Import String",
+      "SimCDialogueTitleRetail": "Paste Your SimC String",
+      "SimCHeaderButtonLabelBurningCrusade": "Gear Import",
+      "SimCHeaderButtonLabelRetail": "SimC"
     },
     "slotNames": {
       "back": "Cape",
@@ -305,12 +359,12 @@
       "SimCImportSuccess": "SimC String Imported Successfully!"
     },
     "Soulbinds": {
-      "ConduitInstructions": "Right/Left Click Conduits to change Ilvl",
+      "ConduitInstructions": "Right\/Left Click Conduits to change Ilvl",
       "EnduranceConduit": "韧如树皮",
       "FinesseConduit": "灵巧导灵器",
       "Header": "Covenant Exploration",
       "PotencyConduit": "效能导灵器",
-      "RenownTooltip": "Import your Renown via SimC / Enter your Renown level here",
+      "RenownTooltip": "Import your Renown via SimC \/ Enter your Renown level here",
       "StatPanel": {
         "CovenantEstimate": "Covenant Ability Est",
         "Score": "Score",
@@ -346,7 +400,11 @@
       "StatPanel": {
         "AvgStats": "Average Stats (includes procs)"
       },
-      "Title": "者名"
+      "Title": "者名",
+      "BackToGearSelection": "Back to Gear Selection",
+      "CompetitiveAlternativeHelp": "This is how close other sets are to your best. Anything extremely close in score can be considered a sidegrade.",
+      "HelpTextBurningCrusade": "Top Gear lets you compare every possible combination of your selected gear at once!",
+      "HelpTextRetail": "Top Gear lets you compare every possible combination of your selected gear at once!"
     },
     "TrinketAnalysis": {
       "Header": "Trinket Analysis",
@@ -358,7 +416,8 @@
       "MythicPlus": "大秘境",
       "PvP": "PvP",
       "UpgradeBySlot": "Upgrade by Slot",
-      "WorldBosses": "World Bosses"
+      "WorldBosses": "World Bosses",
+      "BackButton": "Back to Setup"
     },
     "UpgradeFinderFront": {
       "Header": "Upgrade Finder",
@@ -375,9 +434,36 @@
       "SimCBody1Missing": "SimC - Missing",
       "SimCBody2": "Current Equipped Gear:",
       "SimCButton": "Import SimC",
-      "SimCHeader": "SimC Import"
+      "SimCHeader": "SimC Import",
+      "DungeonBodyBC": ""
     },
     "Versatility": "Versatility",
-    "Yes": "Yes"
+    "Yes": "Yes",
+    "BadgeGear": "Badges of Justice",
+    "Bonus DPS": "Bonus DPS",
+    "Bonus HPS": "Bonus HPS",
+    "Catalyst": "Catalyst",
+    "Covenant": "Covenant",
+    "CovLegendaries": "Covenant Legendaries",
+    "CreationCatalyst": "Creation Catalyst",
+    "DominationSocketAnalysis": {
+      "Header": "Domination Socket Analysis",
+      "HelpText": "This is a quick way to see how strong Domination Gems are for your character. These are still being tuned and results could change. This is still a very new module, and use it as rough guidance only."
+    },
+    "External": "External",
+    "kyrian": "Kyrian",
+    "Leech": "Leech",
+    "Mana": "Mana",
+    "necrolord": "Necrolord",
+    "night_fae": "Night Fae",
+    "Renown Level": "Renown Level",
+    "Tier": "Tier",
+    "venthyr": "Venthyr",
+    "Welcome": {
+      "ContinueMessage": "To begin using the app, add one of your characters below.",
+      "CreateCharacter": "Create Character",
+      "GameTypeMessage": "Select which version you'd like to start with.",
+      "WelcomeTo": "Welcome To"
+    }
   }
 }

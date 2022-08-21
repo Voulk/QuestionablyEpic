@@ -31,7 +31,7 @@
         "TabHeader": "Сохраненные логи(Скоро)"
       },
       "ServerName": "Название сервера",
-      "StatMessage": "Для получения актуального веса характеристик, загрузите ваш свежий лог на WowAnalyzer.com и введите сюда значения с вкладки 'Statistics'. ",
+      "StatMessage": "Для получения актуального веса характеристик, загрузите ваш свежий лог на WowAnalyzer.com и введите сюда значения с вкладки 'Statistics'.",
       "StatWeights": "Stat Weights"
     },
     "Class": "класс",
@@ -71,9 +71,44 @@
       "UserInputs": {
         "fightButtonLabel": "Выберите бой",
         "Loglink": "Вставьте сюда ссылку с WarcraftLogs"
+      },
+      "AddPlanDialog": {
+        "ButtonLabel": "Add",
+        "ButtonTooltip": "Add a new plan with a sample log, a set of defaults, or a blank slate.",
+        "HeaderTitle": "Enter Plan Name"
+      },
+      "CopyPlanDialog": {
+        "ButtonLabel": "Copy",
+        "ButtonTooltip": "Copy a plan under a new name",
+        "NewPlanTitle": "New Plan Name",
+        "SelectPlanTitle": "Select plan to copy"
+      },
+      "DeletePlanDialog": {
+        "ButtonLabel": "Delete",
+        "ButtonTooltip": "Delete your plan permanently.",
+        "HeaderTitle": "Are you sure you want to delete the current plan?",
+        "PlaceholderText": "Type 'Delete' to confirm"
+      },
+      "DuplicatePlanError": "Duplicate plan name detected, please choose another.",
+      "ExportPlanDialog": {
+        "ButtonLabel": "Export",
+        "HeaderTitle": "Export Plan"
+      },
+      "ImportPlanDialog": {
+        "ButtonLabel": "Import",
+        "Errors": {
+          "DuplicatePlanWarning": "Duplicate plan name detected, Importing this plan will overwrite it with this import!",
+          "HeaderError": "This does not appear to be a QE Planner String, please check it and try again",
+          "StringError": "There's something wrong with the string, please check it and try again"
+        },
+        "HeaderTitle": "Import Plan"
+      },
+      "NoteExportDialog": {
+        "ButtonLabel": "MRT Note",
+        "HeaderTitle": "Note Export",
+        "NoteExportTooltip": "Export your plan into a note format compatible with ERT \/ MRT."
       }
     },
-    "Covenant": "Covenant",
     "Covenants": {
       "Kyrian": "Кирии",
       "Necrolords": "Некролорды",
@@ -100,10 +135,6 @@
     "DominationSelection": {
       "HeaderTitle": "Domination Gems",
       "ShardNotOwned": "not owned"
-    },
-    "DominationSocketAnalysis": {
-      "Header": "Domination Socket Analysis",
-      "HelpText": "This is a quick way to see how strong Domination Gems are for your character. These are still being tuned and results could change."
     },
     "Dungeon": "Подземелье",
     "Edit": "Edit",
@@ -133,8 +164,7 @@
       "effect": "Эффект",
       "greatvault": "Великое Xранилище"
     },
-    "kyrian": "Kyrian",
-    "Leech": "Самоисцеление",
+    "Lee": "",
     "LegendaryCompare": {
       "Title": "Взгляд на легендарные эффекты"
     },
@@ -163,7 +193,10 @@
         "Profile": "Отредактировать информацию о себе",
         "QuickCompare": "Сравнить предметы для каждого слота.",
         "TopGear": "Найти лучший набор экипировки для вашего персонажа.",
-        "UpgradeFinder": "Найти улучшения Вашей экипировки из рейда, подземелий или PVP"
+        "UpgradeFinder": "Найти улучшения Вашей экипировки из рейда, подземелий или PVP",
+        "DominationAnalysis": "Get a glance at all Domination Bonuses at once!",
+        "TierSets": "Find out how strong your classes tier sets are.",
+        "TrinketAnalysis": "A graph view comparing most trinkets in the game"
       },
       "TopGear": "Лучшая экипировка",
       "TrinketAnalysis": "Анализ аксессуаров",
@@ -171,8 +204,6 @@
     },
     "Mastery": "Искусность",
     "Name": "имя",
-    "necrolord": "Necrolord",
-    "night_fae": "Night Fae",
     "No": "No",
     "None": "Нет",
     "Overhealing": " Overhealing",
@@ -182,10 +213,10 @@
       "RollsRoyce": "Rolls Royce"
     },
     "PvPCurrency": {
-      "-16": "Честь",
-      "-17": "Очки завоевания",
       "Conquest": "Очки завоевания",
-      "Honor": "Честь"
+      "Honor": "Честь",
+      "-16": "Честь",
+      "-17": "Очки завоевания"
     },
     "QeHeader": {
       "InsertLogLabel": "Загрузить лог",
@@ -196,12 +227,15 @@
         "InsertLog": "Вставьте ссылку на лог для повышения точности рассчётов",
         "Language": "Поменять язык",
         "Login": "Войти в вашу учетную запись Battle.net",
-        "SimC": "Вставьте строку SimC для импорта вашей экипировки"
-      }
+        "SimC": "Вставьте строку SimC для импорта вашей экипировки",
+        "BurningCrusadeSimC": "Insert a QE Import string to import your gear.",
+        "RetailSimC": "Insert a SimC string to import your gear."
+      },
+      "Login": "Login"
     },
     "QeProfile": {
       "EditionAffix": "Edition",
-      "EmailMsg": "Укажите/Обновите ваш Email-адрес от аккаунта Patreon, чтобы привязать его к QE Live ",
+      "EmailMsg": "Укажите\/Обновите ваш Email-адрес от аккаунта Patreon, чтобы привязать его к QE Live",
       "NoBattleTag": "Аккаунт Battle.net не привязан",
       "NoEmail": "Email не указан",
       "ProfileHeader": "Профиль",
@@ -240,20 +274,20 @@
     "Settings": {
       "BurningCrusade": {
         "Setting0TextFieldLabel": "",
-        "Setting0Title": "",
-        "Setting0Tooltip": "",
+        "Setting0Title": "Mana Profile",
+        "Setting0Tooltip": "Mana varies a little in value based on fight length and how frequently you cast.",
         "Setting1TextFieldLabel": "",
-        "Setting1Title": "",
-        "Setting1Tooltip": "",
+        "Setting1Title": "Include Raid Buffs?",
+        "Setting1Tooltip": "Enable this to include common raid buffs in the gear comparison.",
         "Setting2TextFieldLabel": "",
-        "Setting2Title": "",
-        "Setting2Tooltip": "",
+        "Setting2Title": "Meta Gem",
+        "Setting2Tooltip": "Pick which Meta gem you'd like the app to try and socket.",
         "Setting3TextFieldLabel": "",
-        "Setting3Title": "",
+        "Setting3Title": "Auto-Enchant Items?",
         "Setting3Tooltip": "",
         "Setting4TextFieldLabel": "",
-        "Setting4Title": "",
-        "Setting4Tooltip": "",
+        "Setting4Title": "Gem Rarity",
+        "Setting4Tooltip": "Pick which gems you'd like the app to socket. Jewelcrafting-specifics ignored for now.",
         "Setting5TextFieldLabel": "",
         "Setting5Title": "",
         "Setting5Tooltip": ""
@@ -274,9 +308,15 @@
         "Setting4TextFieldLabel": "Vault Dom Gem",
         "Setting4Title": "Vault Dom Gem",
         "Setting4Tooltip": "Choose a Gem to socket into your vault items",
-        "Setting5TextFieldLabel": "",
-        "Setting5Title": "",
-        "Setting5Tooltip": ""
+        "Setting5TextFieldLabel": "Playstyle",
+        "Setting5Title": "Playstyle",
+        "Setting5Tooltip": "Choose your playstyle",
+        "Setting6TextFieldLabel": "Limit",
+        "Setting6Title": "Catalyst Limit",
+        "Setting6Tooltip": "Select how many Catalyst charges you have. This determines how many Catalyst items Top Gear will be restricted to.",
+        "Setting7TextFieldLabel": "Leech",
+        "Setting7Title": "UF: Leech",
+        "Setting7Tooltip": "Turning this on will automatically add Leech to all Upgrade Finder choices."
       },
       "SettingsTitle": "Настройки"
     },
@@ -284,7 +324,11 @@
     "SimCInput": {
       "SimCDialogueTitle": "Вставьте вашу строку SimC",
       "SimCHeaderButtonLabel": "SimC",
-      "SimCStringLabel": "Строка SimC"
+      "SimCStringLabel": "Строка SimC",
+      "SimCDialogueTitleBurningCrusade": "Paste Your QE Import String",
+      "SimCDialogueTitleRetail": "Paste Your SimC String",
+      "SimCHeaderButtonLabelBurningCrusade": "Gear Import",
+      "SimCHeaderButtonLabelRetail": "SimC"
     },
     "slotNames": {
       "back": "Спина",
@@ -315,12 +359,12 @@
       "SimCImportSuccess": "Строка SimC успешно импортирована!"
     },
     "Soulbinds": {
-      "ConduitInstructions": "Правый/Левый клик по проводнику для изменения уровня",
+      "ConduitInstructions": "Правый\/Левый клик по проводнику для изменения уровня",
       "EnduranceConduit": "Проводник выносливости",
       "FinesseConduit": "Проводник точности",
       "Header": "Covenant Exploration",
       "PotencyConduit": "Проводник силы",
-      "RenownTooltip": "Import your Renown via SimC / Enter your Renown level here",
+      "RenownTooltip": "Import your Renown via SimC \/ Enter your Renown level here",
       "StatPanel": {
         "CovenantEstimate": "Способность ковенанта",
         "Score": "Общий HPS",
@@ -346,9 +390,7 @@
       "Title": "Tier Sets"
     },
     "TopGear": {
-      "BackToGearSelection": "Вернуться к выбору экипировки",
       "CompetitiveAlternative": "Возможные альтернативы",
-      "CompetitiveAlternativeHelp": "This is how close other sets are to your best. Anything extremely close in score can be considered a sidegrade.",
       "ErrorMessage": "Очень жаль, похоже вы столкнулись с ошибкой. Попробуйте вернуться в главное меню и попробовать снова.",
       "GoMsg": "Вперёд!",
       "HelpText": "'Лучшая экипировка' позволяет подобрать весь набор экипировки целиком. Начните с импорта своего SimC профиля выше. Затем, кликом мыши подсветите предметы, которые хотите добавить в сравнение. Когда всё будет готово, нажмите 'Вперёд!' внизу страницы. Чтобы добавить предметы вручную, вернитесь в главное меню и добавьте их в 'Быстром сравнении'.",
@@ -358,7 +400,11 @@
       "StatPanel": {
         "AvgStats": "Усреднённые характеристики (включая проки)"
       },
-      "Title": "Лучшая экипировка"
+      "Title": "Лучшая экипировка",
+      "BackToGearSelection": "Вернуться к выбору экипировки",
+      "CompetitiveAlternativeHelp": "This is how close other sets are to your best. Anything extremely close in score can be considered a sidegrade.",
+      "HelpTextBurningCrusade": "Top Gear lets you compare every possible combination of your selected gear at once!",
+      "HelpTextRetail": "Top Gear lets you compare every possible combination of your selected gear at once!"
     },
     "TrinketAnalysis": {
       "Header": "Анализ аксессуаров",
@@ -370,7 +416,8 @@
       "MythicPlus": "Эпохальный+",
       "PvP": "PvP",
       "UpgradeBySlot": "Улучшения по слотам",
-      "WorldBosses": "Мировые боссы"
+      "WorldBosses": "Мировые боссы",
+      "BackButton": "Back to Setup"
     },
     "UpgradeFinderFront": {
       "Header": "Поиск улучшений",
@@ -387,10 +434,36 @@
       "SimCBody1Missing": "SimC - Отутствует",
       "SimCBody2": "Экипировка на персонаже:",
       "SimCButton": "Импортируйте SimC",
-      "SimCHeader": "Импорт SimC"
+      "SimCHeader": "Импорт SimC",
+      "DungeonBodyBC": ""
     },
-    "venthyr": "Venthyr",
     "Versatility": "Yниверсальность",
-    "Yes": "Yes"
+    "Yes": "Yes",
+    "BadgeGear": "Badges of Justice",
+    "Bonus DPS": "Bonus DPS",
+    "Bonus HPS": "Bonus HPS",
+    "Catalyst": "Catalyst",
+    "Covenant": "Covenant",
+    "CovLegendaries": "Covenant Legendaries",
+    "CreationCatalyst": "Creation Catalyst",
+    "DominationSocketAnalysis": {
+      "Header": "Domination Socket Analysis",
+      "HelpText": "This is a quick way to see how strong Domination Gems are for your character. These are still being tuned and results could change."
+    },
+    "External": "External",
+    "kyrian": "Kyrian",
+    "Leech": "Самоисцеление",
+    "Mana": "Mana",
+    "necrolord": "Necrolord",
+    "night_fae": "Night Fae",
+    "Renown Level": "Renown Level",
+    "Tier": "Tier",
+    "venthyr": "Venthyr",
+    "Welcome": {
+      "ContinueMessage": "To begin using the app, add one of your characters below.",
+      "CreateCharacter": "Create Character",
+      "GameTypeMessage": "Select which version you'd like to start with.",
+      "WelcomeTo": "Welcome To"
+    }
   }
 }
