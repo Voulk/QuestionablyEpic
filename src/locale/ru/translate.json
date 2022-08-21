@@ -1,396 +1,469 @@
 {
-  "translations": {
-    "Account": "Account",
-    "Add": "Добавить",
-    "Avoidance": "Избегание",
-    "Battletag": "BattleTag",
-    "Burning Crusade": "Burning Crusade",
-    "Cancel": "Отменить",
-    "Casts": "Casts",
-    "Changelog": {
-      "Date": "Date",
-      "Header": "Журнализация изменений проекта",
-      "LastUpdated": "Last Updated",
-      "Update": "Update",
-      "Version": "Version"
-    },
-    "CharacterCreator": {
-      "AddChar": "Добавить персонажа",
-      "CharacterInfo": "Иформация о персонаже",
-      "CharName": "Имя персонажа",
-      "CreateChar": "Create New Character",
-      "DeleteCharacter": "Удалить персонажа",
-      "SavedLogs": {
-        "Boss": "Босс",
-        "FightLength": "Длительность боя",
-        "Header": "Текущий лог",
-        "HPS": "HPS",
-        "RawHPS": "Raw HPS",
-        "Report": "Отчет",
-        "ResetToDefaults": "Сбросить",
-        "TabHeader": "Сохраненные логи(Скоро)"
-      },
-      "ServerName": "Название сервера",
-      "StatMessage": "Для получения актуального веса характеристик, загрузите ваш свежий лог на WowAnalyzer.com и введите сюда значения с вкладки 'Statistics'. ",
-      "StatWeights": "Stat Weights"
-    },
-    "Class": "класс",
-    "Cooldown": "Cooldown",
-    "CooldownPlanner": {
-      "ChartLabels": {
-        "_Comments1": "Translations for HD Charts",
-        "MitigatedDamageLabel": "Mitigated",
-        "UnmitigatedDamageLabel": "Unmitigated Damage"
-      },
-      "Headers": {
-        "CooldownTimeline": "Cooldown Timeline",
-        "EnemyCastTimeline": "Enemy Cast Timeline",
-        "ExternalTimeline": "External Timeline"
-      },
-      "HealerCards": {
+    "translations": {
+        "Account": "Account",
+        "Add": "Добавить",
+        "Avoidance": "Избегание",
+        "Battletag": "BattleTag",
+        "Burning Crusade": "Burning Crusade",
+        "Cancel": "Отменить",
+        "Casts": "Casts",
+        "Changelog": {
+            "Date": "Date",
+            "Header": "Журнализация изменений проекта",
+            "LastUpdated": "Last Updated",
+            "Update": "Update",
+            "Version": "Version"
+        },
+        "CharacterCreator": {
+            "AddChar": "Добавить персонажа",
+            "CharacterInfo": "Иформация о персонаже",
+            "CharName": "Имя персонажа",
+            "CreateChar": "Create New Character",
+            "DeleteCharacter": "Удалить персонажа",
+            "SavedLogs": {
+                "Boss": "Босс",
+                "FightLength": "Длительность боя",
+                "Header": "Текущий лог",
+                "HPS": "HPS",
+                "RawHPS": "Raw HPS",
+                "Report": "Отчет",
+                "ResetToDefaults": "Сбросить",
+                "TabHeader": "Сохраненные логи(Скоро)"
+            },
+            "ServerName": "Название сервера",
+            "StatMessage": "Для получения актуального веса характеристик, загрузите ваш свежий лог на WowAnalyzer.com и введите сюда значения с вкладки 'Statistics'.",
+            "StatWeights": "Stat Weights"
+        },
+        "Class": "класс",
+        "Cooldown": "Cooldown",
+        "CooldownPlanner": {
+            "ChartLabels": {
+                "_Comments1": "Translations for HD Charts",
+                "MitigatedDamageLabel": "Mitigated",
+                "UnmitigatedDamageLabel": "Unmitigated Damage"
+            },
+            "Headers": {
+                "CooldownTimeline": "Cooldown Timeline",
+                "EnemyCastTimeline": "Enemy Cast Timeline",
+                "ExternalTimeline": "External Timeline"
+            },
+            "HealerCards": {
+                "Crit": "Критический удар",
+                "Haste": "Скорость",
+                "Item Level": "ilvl",
+                "Mastery": "Искусность",
+                "SoulbindAbilities": "Soulbind Abilities",
+                "SoulbindConduits": "Soulbind Conduits",
+                "StatsHeading": "Stats",
+                "TalentHeader": "Talents",
+                "Versatility": "универсальность"
+            },
+            "TableLabels": {
+                "BossAbilityLabel": "Boss Ability",
+                "BossSelectorLabel": "Select Boss",
+                "CastTimeLabel": "Cast Time",
+                "HealTeamHeader": "Roster",
+                "NotesLabel": "Notes",
+                "OffCooldownLabel": "Off Cooldown",
+                "RaidSelectorLabel": "Select Raid",
+                "TypeSelector": "Formats"
+            },
+            "UserInputs": {
+                "fightButtonLabel": "Выберите бой",
+                "Loglink": "Вставьте сюда ссылку с WarcraftLogs"
+            },
+            "AddPlanDialog": {
+                "ButtonLabel": "",
+                "ButtonTooltip": "",
+                "HeaderTitle": ""
+            },
+            "CopyPlanDialog": {
+                "ButtonLabel": "",
+                "ButtonTooltip": "",
+                "NewPlanTitle": "",
+                "SelectPlanTitle": ""
+            },
+            "DeletePlanDialog": {
+                "ButtonLabel": "",
+                "ButtonTooltip": "",
+                "HeaderTitle": "",
+                "PlaceholderText": ""
+            },
+            "DuplicatePlanError": "",
+            "ExportPlanDialog": {
+                "ButtonLabel": "",
+                "HeaderTitle": ""
+            },
+            "ImportPlanDialog": {
+                "ButtonLabel": "",
+                "Errors": {
+                    "DuplicatePlanWarning": "",
+                    "HeaderError": "",
+                    "StringError": ""
+                },
+                "HeaderTitle": ""
+            },
+            "NoteExportDialog": {
+                "ButtonLabel": "",
+                "HeaderTitle": "",
+                "NoteExportTooltip": ""
+            }
+        },
+        "Covenants": {
+            "Kyrian": "Кирии",
+            "Necrolords": "Некролорды",
+            "NightFae": "Ночной народец",
+            "Soulbinds": {
+                "Draven": "Генерал Дрейвен",
+                "Dreamweaver": "Творец Снов",
+                "Emeni": "Эмени",
+                "Heirmir": "Костоплав Гейрмир",
+                "Kleia": "Клейя",
+                "Korayn": "Корейн",
+                "Marileth": "Изобретатель чумы Марилет",
+                "Mikanikos": "Верховный автоматург Миканикос",
+                "Nadjia": "Наджия, Клинок Туманов",
+                "Niya": "Ния",
+                "Pelagos": "Пелагий",
+                "Theotar": "Безумный герцог Теотар"
+            },
+            "Venthyr": "Вентиры"
+        },
         "Crit": "Критический удар",
+        "Default": "Default",
+        "Delete": "Delete",
+        "DominationSelection": {
+            "HeaderTitle": "Domination Gems",
+            "ShardNotOwned": "not owned"
+        },
+        "Dungeon": "Подземелье",
+        "Edit": "Edit",
+        "Email": "Email",
+        "Equipped": "Надето",
+        "Error": "Error",
+        "Filter": "Filter",
+        "GameTypeToggle": {
+            "Classic": "Change to Classic (Burning Crusade)",
+            "Retail": "Change to Retail (Shadowlands)"
+        },
+        "HallOfFame": {
+            "buttonLabel": "Зал славы",
+            "introduction": "Thank you so much for your support.",
+            "title": "Зал славы"
+        },
         "Haste": "Скорость",
-        "Item Level": "ilvl",
+        "Healing": "Healing",
+        "HowToUse": "Как пользоваться приложением",
+        "HPS": "HPS",
+        "InsertLog": {
+            "InsertLogHeader": "Вставьте сюда ссылку на ваш лог с Warcraft Logs",
+            "PlsSelectFight": "Пожалуйста, выберите бой"
+        },
+        "Intellect": "Интеллект",
+        "itemTags": {
+            "effect": "Эффект",
+            "greatvault": "Великое Xранилище"
+        },
+        "Lee": "",
+        "LegendaryCompare": {
+            "Title": "Взгляд на легендарные эффекты"
+        },
+        "Login": "Войти",
+        "MainMenu": {
+            "Articles": {
+                "Header": "Последние статьи",
+                "HelpText": ""
+            },
+            "CharHeader": "Персонажи",
+            "CharHelpText": "Добавьте сюда своих персонажей. Кликните по ним правой кнопкой, чтобы изменить вес характеристик, сервер и остальное.",
+            "CooldownPlanner": "Планировщик кулдаунов",
+            "DominationAnalysis": "Domination Analysis (Beta)",
+            "ExploreCovenants": "Исследуйте ковенанты",
+            "FightAnalysis": "Fight Analysis (Coming Soon)",
+            "LegendaryAnalysis": "Анализ легендарных эффектов",
+            "PatronInvite": "Нравится приложение? Поддержите сайт на Patreon",
+            "PatronThanks": "Большое спасибо за вашу поддержку!",
+            "Profile": "Профиль",
+            "QuickCompare": "Быстрое сравнение экипировки",
+            "TierSets": "Tier Sets",
+            "Tooltips": {
+                "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
+                "ExploreCovenants": "Изучить проводники каждого из ковенантов.",
+                "LegendaryAnalysis": "Найти лучший легендарный эффект и узнать как его добыть.",
+                "Profile": "Отредактировать информацию о себе",
+                "QuickCompare": "Сравнить предметы для каждого слота.",
+                "TopGear": "Найти лучший набор экипировки для вашего персонажа.",
+                "UpgradeFinder": "Найти улучшения Вашей экипировки из рейда, подземелий или PVP",
+                "DominationAnalysis": "",
+                "TierSets": "",
+                "TrinketAnalysis": ""
+            },
+            "TopGear": "Лучшая экипировка",
+            "TrinketAnalysis": "Анализ аксессуаров",
+            "UpgradeFinder": "Поиск улучшений"
+        },
         "Mastery": "Искусность",
-        "SoulbindAbilities": "Soulbind Abilities",
-        "SoulbindConduits": "Soulbind Conduits",
-        "StatsHeading": "Stats",
-        "TalentHeader": "Talents",
-        "Versatility": "универсальность"
-      },
-      "TableLabels": {
-        "BossAbilityLabel": "Boss Ability",
-        "BossSelectorLabel": "Select Boss",
-        "CastTimeLabel": "Cast Time",
-        "HealTeamHeader": "Roster",
-        "NotesLabel": "Notes",
-        "OffCooldownLabel": "Off Cooldown",
-        "RaidSelectorLabel": "Select Raid",
-        "TypeSelector": "Formats"
-      },
-      "UserInputs": {
-        "fightButtonLabel": "Выберите бой",
-        "Loglink": "Вставьте сюда ссылку с WarcraftLogs"
-      }
-    },
-    "Covenant": "Covenant",
-    "Covenants": {
-      "Kyrian": "Кирии",
-      "Necrolords": "Некролорды",
-      "NightFae": "Ночной народец",
-      "Soulbinds": {
-        "Draven": "Генерал Дрейвен",
-        "Dreamweaver": "Творец Снов",
-        "Emeni": "Эмени",
-        "Heirmir": "Костоплав Гейрмир",
-        "Kleia": "Клейя",
-        "Korayn": "Корейн",
-        "Marileth": "Изобретатель чумы Марилет",
-        "Mikanikos": "Верховный автоматург Миканикос",
-        "Nadjia": "Наджия, Клинок Туманов",
-        "Niya": "Ния",
-        "Pelagos": "Пелагий",
-        "Theotar": "Безумный герцог Теотар"
-      },
-      "Venthyr": "Вентиры"
-    },
-    "Crit": "Критический удар",
-    "Default": "Default",
-    "Delete": "Delete",
-    "DominationSelection": {
-      "HeaderTitle": "Domination Gems",
-      "ShardNotOwned": "not owned"
-    },
-    "DominationSocketAnalysis": {
-      "Header": "Domination Socket Analysis",
-      "HelpText": "This is a quick way to see how strong Domination Gems are for your character. These are still being tuned and results could change."
-    },
-    "Dungeon": "Подземелье",
-    "Edit": "Edit",
-    "Email": "Email",
-    "Equipped": "Надето",
-    "Error": "Error",
-    "Filter": "Filter",
-    "GameTypeToggle": {
-      "Classic": "Change to Classic (Burning Crusade)",
-      "Retail": "Change to Retail (Shadowlands)"
-    },
-    "HallOfFame": {
-      "buttonLabel": "Зал славы",
-      "introduction": "Thank you so much for your support.",
-      "title": "Зал славы"
-    },
-    "Haste": "Скорость",
-    "Healing": "Healing",
-    "HowToUse": "Как пользоваться приложением",
-    "HPS": "HPS",
-    "InsertLog": {
-      "InsertLogHeader": "Вставьте сюда ссылку на ваш лог с Warcraft Logs",
-      "PlsSelectFight": "Пожалуйста, выберите бой"
-    },
-    "Intellect": "Интеллект",
-    "itemTags": {
-      "effect": "Эффект",
-      "greatvault": "Великое Xранилище"
-    },
-    "kyrian": "Kyrian",
-    "Leech": "Самоисцеление",
-    "LegendaryCompare": {
-      "Title": "Взгляд на легендарные эффекты"
-    },
-    "Login": "Войти",
-    "MainMenu": {
-      "Articles": {
-        "Header": "Последние статьи",
-        "HelpText": ""
-      },
-      "CharHeader": "Персонажи",
-      "CharHelpText": "Добавьте сюда своих персонажей. Кликните по ним правой кнопкой, чтобы изменить вес характеристик, сервер и остальное.",
-      "CooldownPlanner": "Планировщик кулдаунов",
-      "DominationAnalysis": "Domination Analysis (Beta)",
-      "ExploreCovenants": "Исследуйте ковенанты",
-      "FightAnalysis": "Fight Analysis (Coming Soon)",
-      "LegendaryAnalysis": "Анализ легендарных эффектов",
-      "PatronInvite": "Нравится приложение? Поддержите сайт на Patreon",
-      "PatronThanks": "Большое спасибо за вашу поддержку!",
-      "Profile": "Профиль",
-      "QuickCompare": "Быстрое сравнение экипировки",
-      "TierSets": "Tier Sets",
-      "Tooltips": {
-        "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
-        "ExploreCovenants": "Изучить проводники каждого из ковенантов.",
-        "LegendaryAnalysis": "Найти лучший легендарный эффект и узнать как его добыть.",
-        "Profile": "Отредактировать информацию о себе",
-        "QuickCompare": "Сравнить предметы для каждого слота.",
-        "TopGear": "Найти лучший набор экипировки для вашего персонажа.",
-        "UpgradeFinder": "Найти улучшения Вашей экипировки из рейда, подземелий или PVP"
-      },
-      "TopGear": "Лучшая экипировка",
-      "TrinketAnalysis": "Анализ аксессуаров",
-      "UpgradeFinder": "Поиск улучшений"
-    },
-    "Mastery": "Искусность",
-    "Name": "имя",
-    "necrolord": "Necrolord",
-    "night_fae": "Night Fae",
-    "No": "No",
-    "None": "Нет",
-    "Overhealing": " Overhealing",
-    "PatreonTiers": {
-      "Diamond": "Diamond",
-      "Gold": "Gold",
-      "RollsRoyce": "Rolls Royce"
-    },
-    "PvPCurrency": {
-      "-16": "Честь",
-      "-17": "Очки завоевания",
-      "Conquest": "Очки завоевания",
-      "Honor": "Честь"
-    },
-    "QeHeader": {
-      "InsertLogLabel": "Загрузить лог",
-      "Tooltip": {
-        "ChangeToDungeon": "Сменить на подземелья",
-        "ChangeToRaid": "Сменить на рейды",
-        "Home": "Главное меню",
-        "InsertLog": "Вставьте ссылку на лог для повышения точности рассчётов",
-        "Language": "Поменять язык",
-        "Login": "Войти в вашу учетную запись Battle.net",
-        "SimC": "Вставьте строку SimC для импорта вашей экипировки"
-      }
-    },
-    "QeProfile": {
-      "EditionAffix": "Edition",
-      "EmailMsg": "Укажите/Обновите ваш Email-адрес от аккаунта Patreon, чтобы привязать его к QE Live ",
-      "NoBattleTag": "Аккаунт Battle.net не привязан",
-      "NoEmail": "Email не указан",
-      "ProfileHeader": "Профиль",
-      "QeTier": "QE Live Tier",
-      "StandardEdition": "Стандартное издание"
-    },
-    "QuickCompare": {
-      "AddButton": "Добавить",
-      "DominationSocket": "Domination",
-      "HelpText": "'Быстрое сравнение' позволяет сравнивать предметы по одному. Вы можете добавлять предметы вручную с помощью выпадающего списка выше, либо добавить их все сразу, вставив строку импорта SimC. Счёт автоматически отображается в правом-верхнем углу, а предметы сортируются по эффективности.",
-      "ItemAdded": "Предмет добавлен!",
-      "ItemBarTitle": "Add Items (Optional)",
-      "ItemDeleted": "Предмет удалён!",
-      "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300",
-      "ItemLevel": "Уровень предмета",
-      "ItemName": "Название предмета",
-      "Missives": "Missives",
-      "Slot": "Слот",
-      "Socket": "Гнездо",
-      "Tertiary": "Третичные",
-      "Title": "Быстрое сравнение экипировки"
-    },
-    "Race": "Раса",
-    "Raid": "Рейд",
-    "RaidDifficulty": {
-      "Heroic": "Героический",
-      "Mythic": "Эпохальный",
-      "Normal": "Обычный",
-      "Raid Finder": "Поиск рейда"
-    },
-    "Region": "Регион",
-    "Remove": "Remove",
-    "Save": "Сохранить",
-    "Select Class": "Выберите класс",
-    "Select Race": "Выберите расу",
-    "Settings": {
-      "BurningCrusade": {
-        "Setting0TextFieldLabel": "",
-        "Setting0Title": "",
-        "Setting0Tooltip": "",
-        "Setting1TextFieldLabel": "",
-        "Setting1Title": "",
-        "Setting1Tooltip": "",
-        "Setting2TextFieldLabel": "",
-        "Setting2Title": "",
-        "Setting2Tooltip": "",
-        "Setting3TextFieldLabel": "",
-        "Setting3Title": "",
-        "Setting3Tooltip": "",
-        "Setting4TextFieldLabel": "",
-        "Setting4Title": "",
-        "Setting4Tooltip": "",
-        "Setting5TextFieldLabel": "",
-        "Setting5Title": "",
-        "Setting5Tooltip": ""
-      },
-      "Retail": {
-        "Setting0TextFieldLabel": "Allies",
-        "Setting0Title": "Союзники с Гимнарием кабалиста",
-        "Setting0Tooltip": "Эффект Гимнария кабалиста увеличивается на 5% за каждого союзника",
-        "Setting1TextFieldLabel": "",
-        "Setting1Title": "Усиления союзников",
-        "Setting1Tooltip": "Считать усиления союзников с предметов как Вашу личную эффективность",
-        "Setting2TextFieldLabel": "Talent",
-        "Setting2Title": "Talent",
-        "Setting2Tooltip": "Select Discipline Talent",
-        "Setting3TextFieldLabel": "",
-        "Setting3Title": "Auto Socket Items",
-        "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
-        "Setting4TextFieldLabel": "Vault Dom Gem",
-        "Setting4Title": "Vault Dom Gem",
-        "Setting4Tooltip": "Choose a Gem to socket into your vault items",
-        "Setting5TextFieldLabel": "",
-        "Setting5Title": "",
-        "Setting5Tooltip": ""
-      },
-      "SettingsTitle": "Настройки"
-    },
-    "Shadowlands": "Shadowlands",
-    "SimCInput": {
-      "SimCDialogueTitle": "Вставьте вашу строку SimC",
-      "SimCHeaderButtonLabel": "SimC",
-      "SimCStringLabel": "Строка SimC"
-    },
-    "slotNames": {
-      "back": "Спина",
-      "chest": "Грудь",
-      "feet": "Ступни",
-      "finger": "Палец",
-      "hands": "Кисти рук",
-      "head": "Голова",
-      "legs": "Ноги",
-      "mainHands": "Оружие",
-      "neck": "Шея",
-      "offhands": "Левая рука",
-      "relics": "Реликвия",
-      "shoulder": "Плечо",
-      "trinket": "Аксессуар",
-      "waist": "Пояс",
-      "weaponCombos": "Наборы оружия",
-      "weapons": "Оружие",
-      "wrists": "Запястья"
-    },
-    "Snackbars": {
-      "CharAddSuccess": "Персонаж добавлен!",
-      "CharUpdateSuccess": "Персонаж обновлен!",
-      "EmailError": "Пожалуйста, проверьте адрес электронной почты и повторите попытку",
-      "EmailUpdateSuccess": "Email обновлен!",
-      "LogImportSuccess": "Лог успешно импортирован!",
-      "LoginSuccess": "Вход успешно выполнен!",
-      "SimCImportSuccess": "Строка SimC успешно импортирована!"
-    },
-    "Soulbinds": {
-      "ConduitInstructions": "Правый/Левый клик по проводнику для изменения уровня",
-      "EnduranceConduit": "Проводник выносливости",
-      "FinesseConduit": "Проводник точности",
-      "Header": "Covenant Exploration",
-      "PotencyConduit": "Проводник силы",
-      "RenownTooltip": "Import your Renown via SimC / Enter your Renown level here",
-      "StatPanel": {
-        "CovenantEstimate": "Способность ковенанта",
-        "Score": "Общий HPS",
-        "SelectedNodes": "Выбранные ячейки",
-        "Summary": "Сводка"
-      }
-    },
-    "Source": "Источник",
-    "SourceToggle": {
-      "FilterTooltip": "You can filter the graph by toggling these buttons"
-    },
-    "stats": {
-      "crit": "Критический удар",
-      "haste": "Скорость",
-      "mastery": "Искусность",
-      "versatility": "универсальность"
-    },
-    "Submit": "Отправить",
-    "TierSets": {
-      "2Set": "2 Set HPS",
-      "4Set": "4 Set HPS",
-      "6Set": "6 Set HPS",
-      "Title": "Tier Sets"
-    },
-    "TopGear": {
-      "BackToGearSelection": "Вернуться к выбору экипировки",
-      "CompetitiveAlternative": "Возможные альтернативы",
-      "CompetitiveAlternativeHelp": "This is how close other sets are to your best. Anything extremely close in score can be considered a sidegrade.",
-      "ErrorMessage": "Очень жаль, похоже вы столкнулись с ошибкой. Попробуйте вернуться в главное меню и попробовать снова.",
-      "GoMsg": "Вперёд!",
-      "HelpText": "'Лучшая экипировка' позволяет подобрать весь набор экипировки целиком. Начните с импорта своего SimC профиля выше. Затем, кликом мыши подсветите предметы, которые хотите добавить в сравнение. Когда всё будет готово, нажмите 'Вперёд!' внизу страницы. Чтобы добавить предметы вручную, вернитесь в главное меню и добавьте их в 'Быстром сравнении'.",
-      "itemMissingError": "Ошибка: добавьте предмет",
-      "ItemsHereMessage": "Здесь появятся ваши предметы после импорта.",
-      "SelectedItems": "Выбранные предметы:",
-      "StatPanel": {
-        "AvgStats": "Усреднённые характеристики (включая проки)"
-      },
-      "Title": "Лучшая экипировка"
-    },
-    "TrinketAnalysis": {
-      "Header": "Анализ аксессуаров",
-      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. World quest trinkets and settings panel coming soon."
-    },
-    "UpgradeFinder": {
-      "CurrentRaid": "Гробница Предвечных",
-      "Header": "Результаты поиска",
-      "MythicPlus": "Эпохальный+",
-      "PvP": "PvP",
-      "UpgradeBySlot": "Улучшения по слотам",
-      "WorldBosses": "Мировые боссы"
-    },
-    "UpgradeFinderFront": {
-      "Header": "Поиск улучшений",
-      "HelpText": "Чтобы найти источники получения лучшей экипировки: вставьте строку SimC, выберите до двух режимов рейдовой сложности, ваш обычный уровень ключа, который вы закрываете, и укажите ваш рейтинг PvP.",
-      "MythicPlusBody": "С помощью ползунка выберите уровень ключей, которые вы обычно закрываете.",
-      "MythicPlusHeader": "Уровень эпохального ключа",
-      "PvPBody": "Select  your currency and Rating",
-      "PvPHeader": "Рейтинг PvP",
-      "RaidDifficultyBody": "Выберите до двух сложностей, которые будут учитываться при поиске улучшений.",
-      "RaidDifficultyHeader": "Сложность рейда",
-      "SimCBody1": "Текущее состояние строки SimC:",
-      "SimCBody1Good": "SimC - Все в готово!",
-      "SimCBody1Invalid": "SimC - Не хватает предмета в слоте",
-      "SimCBody1Missing": "SimC - Отутствует",
-      "SimCBody2": "Экипировка на персонаже:",
-      "SimCButton": "Импортируйте SimC",
-      "SimCHeader": "Импорт SimC"
-    },
-    "venthyr": "Venthyr",
-    "Versatility": "Yниверсальность",
-    "Yes": "Yes"
-  }
+        "Name": "имя",
+        "No": "No",
+        "None": "Нет",
+        "Overhealing": " Overhealing",
+        "PatreonTiers": {
+            "Diamond": "Diamond",
+            "Gold": "Gold",
+            "RollsRoyce": "Rolls Royce"
+        },
+        "PvPCurrency": {
+            "Conquest": "Очки завоевания",
+            "Honor": "Честь",
+            "-16": "Честь",
+            "-17": "Очки завоевания"
+        },
+        "QeHeader": {
+            "InsertLogLabel": "Загрузить лог",
+            "Tooltip": {
+                "ChangeToDungeon": "Сменить на подземелья",
+                "ChangeToRaid": "Сменить на рейды",
+                "Home": "Главное меню",
+                "InsertLog": "Вставьте ссылку на лог для повышения точности рассчётов",
+                "Language": "Поменять язык",
+                "Login": "Войти в вашу учетную запись Battle.net",
+                "SimC": "Вставьте строку SimC для импорта вашей экипировки",
+                "BurningCrusadeSimC": "",
+                "RetailSimC": ""
+            },
+            "Login": ""
+        },
+        "QeProfile": {
+            "EditionAffix": "Edition",
+            "EmailMsg": "Укажите\/Обновите ваш Email-адрес от аккаунта Patreon, чтобы привязать его к QE Live",
+            "NoBattleTag": "Аккаунт Battle.net не привязан",
+            "NoEmail": "Email не указан",
+            "ProfileHeader": "Профиль",
+            "QeTier": "QE Live Tier",
+            "StandardEdition": "Стандартное издание"
+        },
+        "QuickCompare": {
+            "AddButton": "Добавить",
+            "DominationSocket": "Domination",
+            "HelpText": "'Быстрое сравнение' позволяет сравнивать предметы по одному. Вы можете добавлять предметы вручную с помощью выпадающего списка выше, либо добавить их все сразу, вставив строку импорта SimC. Счёт автоматически отображается в правом-верхнем углу, а предметы сортируются по эффективности.",
+            "ItemAdded": "Предмет добавлен!",
+            "ItemBarTitle": "Add Items (Optional)",
+            "ItemDeleted": "Предмет удалён!",
+            "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300",
+            "ItemLevel": "Уровень предмета",
+            "ItemName": "Название предмета",
+            "Missives": "Missives",
+            "Slot": "Слот",
+            "Socket": "Гнездо",
+            "Tertiary": "Третичные",
+            "Title": "Быстрое сравнение экипировки"
+        },
+        "Race": "Раса",
+        "Raid": "Рейд",
+        "RaidDifficulty": {
+            "Heroic": "Героический",
+            "Mythic": "Эпохальный",
+            "Normal": "Обычный",
+            "Raid Finder": "Поиск рейда"
+        },
+        "Region": "Регион",
+        "Remove": "Remove",
+        "Save": "Сохранить",
+        "Select Class": "Выберите класс",
+        "Select Race": "Выберите расу",
+        "Settings": {
+            "BurningCrusade": {
+                "Setting0TextFieldLabel": "",
+                "Setting0Title": "",
+                "Setting0Tooltip": "",
+                "Setting1TextFieldLabel": "",
+                "Setting1Title": "",
+                "Setting1Tooltip": "",
+                "Setting2TextFieldLabel": "",
+                "Setting2Title": "",
+                "Setting2Tooltip": "",
+                "Setting3TextFieldLabel": "",
+                "Setting3Title": "",
+                "Setting3Tooltip": "",
+                "Setting4TextFieldLabel": "",
+                "Setting4Title": "",
+                "Setting4Tooltip": "",
+                "Setting5TextFieldLabel": "",
+                "Setting5Title": "",
+                "Setting5Tooltip": ""
+            },
+            "Retail": {
+                "Setting0TextFieldLabel": "Allies",
+                "Setting0Title": "Союзники с Гимнарием кабалиста",
+                "Setting0Tooltip": "Эффект Гимнария кабалиста увеличивается на 5% за каждого союзника",
+                "Setting1TextFieldLabel": "",
+                "Setting1Title": "Усиления союзников",
+                "Setting1Tooltip": "Считать усиления союзников с предметов как Вашу личную эффективность",
+                "Setting2TextFieldLabel": "Talent",
+                "Setting2Title": "Talent",
+                "Setting2Tooltip": "Select Discipline Talent",
+                "Setting3TextFieldLabel": "",
+                "Setting3Title": "Auto Socket Items",
+                "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
+                "Setting4TextFieldLabel": "Vault Dom Gem",
+                "Setting4Title": "Vault Dom Gem",
+                "Setting4Tooltip": "Choose a Gem to socket into your vault items",
+                "Setting5TextFieldLabel": "",
+                "Setting5Title": "",
+                "Setting5Tooltip": "",
+                "Setting6TextFieldLabel": "",
+                "Setting6Title": "",
+                "Setting6Tooltip": "",
+                "Setting7TextFieldLabel": "",
+                "Setting7Title": "",
+                "Setting7Tooltip": ""
+            },
+            "SettingsTitle": "Настройки"
+        },
+        "Shadowlands": "Shadowlands",
+        "SimCInput": {
+            "SimCDialogueTitle": "Вставьте вашу строку SimC",
+            "SimCHeaderButtonLabel": "SimC",
+            "SimCStringLabel": "Строка SimC",
+            "SimCDialogueTitleBurningCrusade": "",
+            "SimCDialogueTitleRetail": "",
+            "SimCHeaderButtonLabelBurningCrusade": "",
+            "SimCHeaderButtonLabelRetail": ""
+        },
+        "slotNames": {
+            "back": "Спина",
+            "chest": "Грудь",
+            "feet": "Ступни",
+            "finger": "Палец",
+            "hands": "Кисти рук",
+            "head": "Голова",
+            "legs": "Ноги",
+            "mainHands": "Оружие",
+            "neck": "Шея",
+            "offhands": "Левая рука",
+            "relics": "Реликвия",
+            "shoulder": "Плечо",
+            "trinket": "Аксессуар",
+            "waist": "Пояс",
+            "weaponCombos": "Наборы оружия",
+            "weapons": "Оружие",
+            "wrists": "Запястья"
+        },
+        "Snackbars": {
+            "CharAddSuccess": "Персонаж добавлен!",
+            "CharUpdateSuccess": "Персонаж обновлен!",
+            "EmailError": "Пожалуйста, проверьте адрес электронной почты и повторите попытку",
+            "EmailUpdateSuccess": "Email обновлен!",
+            "LogImportSuccess": "Лог успешно импортирован!",
+            "LoginSuccess": "Вход успешно выполнен!",
+            "SimCImportSuccess": "Строка SimC успешно импортирована!"
+        },
+        "Soulbinds": {
+            "ConduitInstructions": "Правый\/Левый клик по проводнику для изменения уровня",
+            "EnduranceConduit": "Проводник выносливости",
+            "FinesseConduit": "Проводник точности",
+            "Header": "Covenant Exploration",
+            "PotencyConduit": "Проводник силы",
+            "RenownTooltip": "Import your Renown via SimC \/ Enter your Renown level here",
+            "StatPanel": {
+                "CovenantEstimate": "Способность ковенанта",
+                "Score": "Общий HPS",
+                "SelectedNodes": "Выбранные ячейки",
+                "Summary": "Сводка"
+            }
+        },
+        "Source": "Источник",
+        "SourceToggle": {
+            "FilterTooltip": "You can filter the graph by toggling these buttons"
+        },
+        "stats": {
+            "crit": "Критический удар",
+            "haste": "Скорость",
+            "mastery": "Искусность",
+            "versatility": "универсальность"
+        },
+        "Submit": "Отправить",
+        "TierSets": {
+            "2Set": "2 Set HPS",
+            "4Set": "4 Set HPS",
+            "6Set": "6 Set HPS",
+            "Title": "Tier Sets"
+        },
+        "TopGear": {
+            "CompetitiveAlternative": "Возможные альтернативы",
+            "ErrorMessage": "Очень жаль, похоже вы столкнулись с ошибкой. Попробуйте вернуться в главное меню и попробовать снова.",
+            "GoMsg": "Вперёд!",
+            "HelpText": "'Лучшая экипировка' позволяет подобрать весь набор экипировки целиком. Начните с импорта своего SimC профиля выше. Затем, кликом мыши подсветите предметы, которые хотите добавить в сравнение. Когда всё будет готово, нажмите 'Вперёд!' внизу страницы. Чтобы добавить предметы вручную, вернитесь в главное меню и добавьте их в 'Быстром сравнении'.",
+            "itemMissingError": "Ошибка: добавьте предмет",
+            "ItemsHereMessage": "Здесь появятся ваши предметы после импорта.",
+            "SelectedItems": "Выбранные предметы:",
+            "StatPanel": {
+                "AvgStats": "Усреднённые характеристики (включая проки)"
+            },
+            "Title": "Лучшая экипировка",
+            "BackToGearSelection": "Вернуться к выбору экипировки",
+            "CompetitiveAlternativeHelp": "This is how close other sets are to your best. Anything extremely close in score can be considered a sidegrade.",
+            "HelpTextBurningCrusade": "",
+            "HelpTextRetail": ""
+        },
+        "TrinketAnalysis": {
+            "Header": "Анализ аксессуаров",
+            "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. World quest trinkets and settings panel coming soon."
+        },
+        "UpgradeFinder": {
+            "CurrentRaid": "Гробница Предвечных",
+            "Header": "Результаты поиска",
+            "MythicPlus": "Эпохальный+",
+            "PvP": "PvP",
+            "UpgradeBySlot": "Улучшения по слотам",
+            "WorldBosses": "Мировые боссы",
+            "BackButton": ""
+        },
+        "UpgradeFinderFront": {
+            "Header": "Поиск улучшений",
+            "HelpText": "Чтобы найти источники получения лучшей экипировки: вставьте строку SimC, выберите до двух режимов рейдовой сложности, ваш обычный уровень ключа, который вы закрываете, и укажите ваш рейтинг PvP.",
+            "MythicPlusBody": "С помощью ползунка выберите уровень ключей, которые вы обычно закрываете.",
+            "MythicPlusHeader": "Уровень эпохального ключа",
+            "PvPBody": "Select  your currency and Rating",
+            "PvPHeader": "Рейтинг PvP",
+            "RaidDifficultyBody": "Выберите до двух сложностей, которые будут учитываться при поиске улучшений.",
+            "RaidDifficultyHeader": "Сложность рейда",
+            "SimCBody1": "Текущее состояние строки SimC:",
+            "SimCBody1Good": "SimC - Все в готово!",
+            "SimCBody1Invalid": "SimC - Не хватает предмета в слоте",
+            "SimCBody1Missing": "SimC - Отутствует",
+            "SimCBody2": "Экипировка на персонаже:",
+            "SimCButton": "Импортируйте SimC",
+            "SimCHeader": "Импорт SimC",
+            "DungeonBodyBC": ""
+        },
+        "Versatility": "Yниверсальность",
+        "Yes": "Yes",
+        "BadgeGear": "",
+        "Bonus DPS": "",
+        "Bonus HPS": "",
+        "Catalyst": "",
+        "Covenant": "Covenant",
+        "CovLegendaries": "",
+        "CreationCatalyst": "",
+        "DominationSocketAnalysis": {
+            "Header": "Domination Socket Analysis",
+            "HelpText": "This is a quick way to see how strong Domination Gems are for your character. These are still being tuned and results could change."
+        },
+        "External": "",
+        "kyrian": "Kyrian",
+        "Leech": "Самоисцеление",
+        "Mana": "",
+        "necrolord": "Necrolord",
+        "night_fae": "Night Fae",
+        "Renown Level": "",
+        "Tier": "",
+        "venthyr": "Venthyr",
+        "Welcome": {
+            "ContinueMessage": "",
+            "CreateCharacter": "",
+            "GameTypeMessage": "",
+            "WelcomeTo": ""
+        }
+    }
 }
