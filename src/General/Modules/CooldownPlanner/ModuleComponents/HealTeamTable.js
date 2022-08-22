@@ -34,7 +34,8 @@ const tableIcons = {
 };
 
 export default function HealTeam() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.currentLanguage;
 
   let columns = [
     /* ------------------------------------- Healer Name Column ------------------------------------- */
@@ -73,7 +74,7 @@ export default function HealTeam() {
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class), display: "inline-flex" }}>
           {classIcons(rowData.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
-          {getTranslatedClassName(rowData.class)}
+          {getTranslatedClassName(rowData.class, currentLanguage)}
         </div>
       ),
       editComponent: (props) => (

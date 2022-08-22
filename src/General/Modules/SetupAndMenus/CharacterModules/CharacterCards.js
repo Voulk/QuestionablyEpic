@@ -373,7 +373,7 @@ export default function CharCards(props) {
                   <Grid item xs={10}>
                     <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec), display: "inline-flex" }}>
                       {props.name}
-                      <Tooltip title={getTranslatedClassName(spec)} style={{ color: classColoursJS(spec) }} placement="top">
+                      <Tooltip title={getTranslatedClassName(spec, currentLanguage)} style={{ color: classColoursJS(spec) }} placement="top">
                         {/* ----------------------------------------- Class Icon -----------------------------------------  */}
                         {classIcons(spec, {
                           height: 20,
@@ -512,7 +512,7 @@ export default function CharCards(props) {
                                 <MenuItem divider={lastItem} key={"charCardClass" + i} value={key}>
                                   <div style={{ display: "inline-flex" }}>
                                     {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
-                                    {getTranslatedClassName(key)}
+                                    {getTranslatedClassName(key, currentLanguage)}
                                   </div>
                                 </MenuItem>
                               );

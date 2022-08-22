@@ -190,7 +190,7 @@ export default function AddNewChar(props) {
                               borderRadius: 4,
                               border: "1px solid rgba(255, 255, 255, 0.12)",
                             })}
-                            {getTranslatedClassName(key)}
+                            {getTranslatedClassName(key, currentLanguage)}
                           </div>
                         </MenuItem>
                       );

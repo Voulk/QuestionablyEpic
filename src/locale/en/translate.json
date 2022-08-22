@@ -38,6 +38,7 @@
       "StatMessage": "While Stat Weights are editable, the QE Live defaults are recommended for most situations.",
       "StatWeights": "Stat Weights"
     },
+    "Item Level": "ilvl",
     "Class": "Class",
     "Cooldown": "Cooldown",
     "CooldownPlanner": {
@@ -74,15 +75,10 @@
         "ExternalTimeline": "External Timeline"
       },
       "HealerCards": {
-        "Crit": "Critical",
-        "Haste": "Haste",
-        "Item Level": "ilvl",
-        "Mastery": "Mastery",
         "SoulbindAbilities": "Soulbind Abilities",
         "SoulbindConduits": "Soulbind Conduits",
         "StatsHeading": "Stats",
-        "TalentHeader": "Talents",
-        "Versatility": "Versatility"
+        "TalentHeader": "Talents"
       },
       "ImportPlanDialog": {
         "ButtonLabel": "Import",
@@ -114,26 +110,6 @@
       }
     },
     "Covenant": "Covenant",
-    "Covenants": {
-      "Kyrian": "Kyrian",
-      "Necrolords": "Necrolords",
-      "NightFae": "Night Fae",
-      "Soulbinds": {
-        "Draven": "Draven",
-        "Dreamweaver": "Dreamweaver",
-        "Emeni": "Emeni",
-        "Heirmir": "Heirmir",
-        "Kleia": "Kleia",
-        "Korayn": "Korayn",
-        "Marileth": "Marileth",
-        "Mikanikos": "Mikanikos",
-        "Nadjia": "Nadjia",
-        "Niya": "Niya",
-        "Pelagos": "Pelagos",
-        "Theotar": "Theotar"
-      },
-      "Venthyr": "Venthyr"
-    },
     "CovLegendaries": "Covenant Legendaries",
     "CreationCatalyst": "Creation Catalyst",
     "Crit": "Crit",

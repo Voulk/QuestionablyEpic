@@ -172,7 +172,7 @@ export default function CharacterPanel(props) {
                   />
                 )}
                 <div style={{ position: "absolute", bottom: 1, left: 1 }}>
-                  <Tooltip title={getTranslatedClassName(currentCharacter.spec)} placement="left" arrow>
+                  <Tooltip title={getTranslatedClassName(currentCharacter.spec, currentLanguage)} placement="left" arrow>
                     {classIcons(
                       currentCharacter.spec,
                       gameType === "Retail"

@@ -16,6 +16,8 @@ import { useSelector } from "react-redux";
 import { CONSTRAINTS } from "../../../../General/Engine/CONSTRAINTS";
 import userSettings from "General/Modules/Settings/SettingsObject";
 import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
+import { getTranslatedSoulbind } from "locale/soulbindLocale";
+import { getTranslatedCovenantName } from "locale/covenants";
 // import { styled } from "@mui/material/styles";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -136,7 +138,8 @@ export default function CovenantExploration(props) {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
   const contentType = useSelector((state) => state.contentType);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const classes = useStyles();
   const [tabvalue, setTabValue] = useState(0);
   const [soulbindValue, setSoulbindValue] = useState(0);
@@ -251,8 +254,12 @@ export default function CovenantExploration(props) {
                   className={classes.kyrianHeaderStyle}
                   icon={
                     <div className="container">
-                      <img height={45} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/CovenantSigils/Kyrian_Sigil.png"} alt={t("Covenants.Kyrian")} />
-                      <div className="centered"> {t("Covenants.Kyrian")} </div>
+                      <img
+                        height={45}
+                        src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/CovenantSigils/Kyrian_Sigil.png"}
+                        alt={getTranslatedCovenantName("Kyrian", currentLanguage)}
+                      />
+                      <div className="centered"> {getTranslatedCovenantName("Kyrian", currentLanguage)} </div>
                     </div>
                   }
                   {...a11yProps(0)}
@@ -262,8 +269,12 @@ export default function CovenantExploration(props) {
                   className={classes.nightFaeHeaderStyle}
                   icon={
                     <div className="container">
-                      <img height={45} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/CovenantSigils/Fae_Sigil.png"} alt={t("Covenants.NightFae")} />
-                      <div className="centered"> {t("Covenants.NightFae")} </div>
+                      <img
+                        height={45}
+                        src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/CovenantSigils/Fae_Sigil.png"}
+                        alt={getTranslatedCovenantName("NightFae", currentLanguage)}
+                      />
+                      <div className="centered"> {getTranslatedCovenantName("NightFae", currentLanguage)} </div>
                     </div>
                   }
                   {...a11yProps(1)}
@@ -273,8 +284,12 @@ export default function CovenantExploration(props) {
                   className={classes.venthyrHeaderStyle}
                   icon={
                     <div className="container">
-                      <img height={45} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/CovenantSigils/Venthyr_Sigil.png"} alt={t("Covenants.Venthyr")} />
-                      <div className="centered"> {t("Covenants.Venthyr")} </div>
+                      <img
+                        height={45}
+                        src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/CovenantSigils/Venthyr_Sigil.png"}
+                        alt={getTranslatedCovenantName("Venthyr", currentLanguage)}
+                      />
+                      <div className="centered"> {getTranslatedCovenantName("Venthyr", currentLanguage)} </div>
                     </div>
                   }
                   {...a11yProps(2)}
@@ -284,8 +299,12 @@ export default function CovenantExploration(props) {
                   className={classes.necrolordHeaderStyle}
                   icon={
                     <div className="container">
-                      <img height={45} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/CovenantSigils/Death_Lords_Sigil.png"} alt={t("Covenants.Necrolords")} />
-                      <div className="centered"> {t("Covenants.Necrolords")} </div>
+                      <img
+                        height={45}
+                        src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/CovenantSigils/Death_Lords_Sigil.png"}
+                        alt={getTranslatedCovenantName("Necrolords", currentLanguage)}
+                      />
+                      <div className="centered"> {getTranslatedCovenantName("Necrolords", currentLanguage)} </div>
                     </div>
                   }
                   {...a11yProps(3)}
@@ -311,22 +330,28 @@ export default function CovenantExploration(props) {
                   {/* ----------------------------------------- Pelagos Tab ----------------------------------------  */}
                   <Tab
                     style={{ color: "white" }}
-                    icon={<img height={139} alt={t("Covenants.Soulbinds.Pelagos")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Pelagos.png"} />}
-                    label={t("Covenants.Soulbinds.Pelagos")}
+                    icon={<img height={139} alt={getTranslatedSoulbind("Pelagos", currentLanguage)} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Pelagos.png"} />}
+                    label={getTranslatedSoulbind("Pelagos", currentLanguage)}
                     {...a11yPropsVert(0)}
                   />
                   {/* ------------------------------------------ Kleia Tab -----------------------------------------  */}
                   <Tab
                     style={{ color: "white" }}
-                    icon={<img height={139} alt={t("Covenants.Soulbinds.Kleia")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Kleia.png"} />}
-                    label={t("Covenants.Soulbinds.Kleia")}
+                    icon={<img height={139} alt={getTranslatedSoulbind("Kleia", currentLanguage)} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Kleia.png"} />}
+                    label={getTranslatedSoulbind("Kleia", currentLanguage)}
                     {...a11yPropsVert(1)}
                   />
                   {/* ---------------------------------------- Mikanikos Tab ---------------------------------------  */}
                   <Tab
                     style={{ color: "white" }}
-                    icon={<img height={139} alt={t("Covenants.Soulbinds.Mikanikos")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/forgelite-prime-mikanikos.png"} />}
-                    label={t("Covenants.Soulbinds.Mikanikos")}
+                    icon={
+                      <img
+                        height={139}
+                        alt={getTranslatedSoulbind("Mikanikos", currentLanguage)}
+                        src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/forgelite-prime-mikanikos.png"}
+                      />
+                    }
+                    label={getTranslatedSoulbind("Mikanikos", currentLanguage)}
                     {...a11yPropsVert(2)}
                   />
                 </Tabs>
@@ -363,22 +388,24 @@ export default function CovenantExploration(props) {
                   {/* ------------------------------------------ Niya Tab ------------------------------------------ */}
                   <Tab
                     style={{ color: "white" }}
-                    icon={<img height={139} alt={t("Covenants.Soulbinds.Niya")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Niya.png"} />}
-                    label={t("Covenants.Soulbinds.Niya")}
+                    icon={<img height={139} alt={getTranslatedSoulbind("Niya", currentLanguage)} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Niya.png"} />}
+                    label={getTranslatedSoulbind("Niya", currentLanguage)}
                     {...a11yPropsVert(0)}
                   />
                   {/* --------------------------------------- Dreamweaver Tab -------------------------------------- */}
                   <Tab
                     style={{ color: "white" }}
-                    icon={<img height={139} alt={t("Covenants.Soulbinds.Dreamweaver")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Dreamweaver.png"} />}
-                    label={t("Covenants.Soulbinds.Dreamweaver")}
+                    icon={
+                      <img height={139} alt={getTranslatedSoulbind("Dreamweaver", currentLanguage)} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Dreamweaver.png"} />
+                    }
+                    label={getTranslatedSoulbind("Dreamweaver", currentLanguage)}
                     {...a11yPropsVert(1)}
                   />
                   {/* ----------------------------------------- Korayn Tab ----------------------------------------- */}
                   <Tab
                     style={{ color: "white" }}
-                    icon={<img height={139} alt={t("Covenants.Soulbinds.Korayn")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Korayn.png"} />}
-                    label={t("Covenants.Soulbinds.Korayn")}
+                    icon={<img height={139} alt={getTranslatedSoulbind("Korayn", currentLanguage)} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Korayn.png"} />}
+                    label={getTranslatedSoulbind("Korayn", currentLanguage)}
                     {...a11yPropsVert(2)}
                   />
                 </Tabs>
@@ -415,22 +442,22 @@ export default function CovenantExploration(props) {
                   {/* ----------------------------------------- Nadjia Tab ----------------------------------------- */}
                   <Tab
                     style={{ color: "white" }}
-                    icon={<img height={139} alt={t("Covenants.Soulbinds.Nadjia")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Nadjia.png"} />}
-                    label={t("Covenants.Soulbinds.Nadjia")}
+                    icon={<img height={139} alt={getTranslatedSoulbind("Nadjia", currentLanguage)} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Nadjia.png"} />}
+                    label={getTranslatedSoulbind("Nadjia", currentLanguage)}
                     {...a11yPropsVert(0)}
                   />
                   {/* ----------------------------------------- Theotar Tab ---------------------------------------- */}
                   <Tab
                     style={{ color: "white" }}
-                    icon={<img height={139} alt={t("Covenants.Soulbinds.Theotar")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Theotar.png"} />}
-                    label={t("Covenants.Soulbinds.Theotar")}
+                    icon={<img height={139} alt={getTranslatedSoulbind("Theotar", currentLanguage)} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Theotar.png"} />}
+                    label={getTranslatedSoulbind("Theotar", currentLanguage)}
                     {...a11yPropsVert(1)}
                   />
                   {/* ----------------------------------------- Draven Tab ----------------------------------------- */}
                   <Tab
                     style={{ color: "white" }}
-                    icon={<img height={139} alt={t("Covenants.Soulbinds.Draven")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Draven.png"} />}
-                    label={t("Covenants.Soulbinds.Draven")}
+                    icon={<img height={139} alt={getTranslatedSoulbind("Draven", currentLanguage)} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Draven.png"} />}
+                    label={getTranslatedSoulbind("Draven", currentLanguage)}
                     {...a11yPropsVert(2)}
                   />
                 </Tabs>
@@ -469,22 +496,22 @@ export default function CovenantExploration(props) {
                   {/* ---------------------------------------- Marileth Tab ----------------------------------------  */}
                   <Tab
                     style={{ color: "white" }}
-                    icon={<img height={139} alt={t("Covenants.Soulbinds.Marileth")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Marileth.png"} />}
-                    label={t("Covenants.Soulbinds.Marileth")}
+                    icon={<img height={139} alt={getTranslatedSoulbind("Marileth", currentLanguage)} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Marileth.png"} />}
+                    label={getTranslatedSoulbind("Marileth", currentLanguage)}
                     {...a11yPropsVert(0)}
                   />
                   {/* ------------------------------------------ Emeni Tab -----------------------------------------  */}
                   <Tab
                     style={{ color: "white" }}
-                    icon={<img height={139} alt={t("Covenants.Soulbinds.Emeni")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Emeni.png"} />}
-                    label={t("Covenants.Soulbinds.Emeni")}
+                    icon={<img height={139} alt={getTranslatedSoulbind("Emeni", currentLanguage)} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Emeni.png"} />}
+                    label={getTranslatedSoulbind("Emeni", currentLanguage)}
                     {...a11yPropsVert(1)}
                   />
                   {/* ----------------------------------------- Heirmir Tab ----------------------------------------  */}
                   <Tab
                     style={{ color: "white" }}
-                    icon={<img height={139} alt={t("Covenants.Soulbinds.Heirmir")} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Heirmir.png"} />}
-                    label={t("Covenants.Soulbinds.Heirmir")}
+                    icon={<img height={139} alt={getTranslatedSoulbind("Heirmir", currentLanguage)} src={process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/Soulbinds/Heirmir.png"} />}
+                    label={getTranslatedSoulbind("Heirmir", currentLanguage)}
                     {...a11yPropsVert(2)}
                   />
                 </Tabs>

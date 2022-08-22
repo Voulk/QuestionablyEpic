@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 
 export const classMenus = () => {
   const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.currentLanguage;
   const healerClasses = ["HolyPaladin", "RestorationDruid", "HolyPriest", "DisciplinePriest", "RestorationShaman", "MistweaverMonk"];
   const utilityClasses = ["HavocDemonHunter", "Warrior", "DeathKnight", "Druid", "ShadowPriest"];
 
@@ -22,7 +23,7 @@ export const classMenus = () => {
           src={getClassIcon(key)}
           alt="Holy Paladin"
         />
-        {getTranslatedClassName(key)}
+        {getTranslatedClassName(key, currentLanguage)}
       </MenuItem>
     ));
   };
@@ -41,7 +42,7 @@ export const classMenus = () => {
           src={getClassIcon(key)}
           alt="Holy Paladin"
         />
-        {getTranslatedClassName(key)}
+        {getTranslatedClassName(key, currentLanguage)}
       </MenuItem>
     ));
   };
