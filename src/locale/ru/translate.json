@@ -74,27 +74,6 @@
       }
     },
     "Covenant": "Covenant",
-    "Covenants": {
-      "Kyrian": "Кирии",
-      "Necrolords": "Некролорды",
-      "NightFae": "Ночной народец",
-      "Soulbinds": {
-        "Draven": "Генерал Дрейвен",
-        "Dreamweaver": "Творец Снов",
-        "Emeni": "Эмени",
-        "Heirmir": "Костоплав Гейрмир",
-        "Kleia": "Клейя",
-        "Korayn": "Корейн",
-        "Marileth": "Изобретатель чумы Марилет",
-        "Mikanikos": "Верховный автоматург Миканикос",
-        "Nadjia": "Наджия, Клинок Туманов",
-        "Niya": "Ния",
-        "Pelagos": "Пелагий",
-        "Theotar": "Безумный герцог Теотар"
-      },
-      "Venthyr": "Вентиры"
-    },
-    "Crit": "Критический удар",
     "Default": "Default",
     "Delete": "Delete",
     "DominationSelection": {
@@ -120,7 +99,6 @@
       "introduction": "Thank you so much for your support.",
       "title": "Зал славы"
     },
-    "Haste": "Скорость",
     "Healing": "Healing",
     "HowToUse": "Как пользоваться приложением",
     "HPS": "HPS",
@@ -128,13 +106,10 @@
       "InsertLogHeader": "Вставьте сюда ссылку на ваш лог с Warcraft Logs",
       "PlsSelectFight": "Пожалуйста, выберите бой"
     },
-    "Intellect": "Интеллект",
     "itemTags": {
       "effect": "Эффект",
       "greatvault": "Великое Xранилище"
     },
-    "kyrian": "Kyrian",
-    "Leech": "Самоисцеление",
     "LegendaryCompare": {
       "Title": "Взгляд на легендарные эффекты"
     },
@@ -169,10 +144,7 @@
       "TrinketAnalysis": "Анализ аксессуаров",
       "UpgradeFinder": "Поиск улучшений"
     },
-    "Mastery": "Искусность",
     "Name": "имя",
-    "necrolord": "Necrolord",
-    "night_fae": "Night Fae",
     "No": "No",
     "None": "Нет",
     "Overhealing": " Overhealing",
@@ -286,25 +258,6 @@
       "SimCHeaderButtonLabel": "SimC",
       "SimCStringLabel": "Строка SimC"
     },
-    "slotNames": {
-      "back": "Спина",
-      "chest": "Грудь",
-      "feet": "Ступни",
-      "finger": "Палец",
-      "hands": "Кисти рук",
-      "head": "Голова",
-      "legs": "Ноги",
-      "mainHands": "Оружие",
-      "neck": "Шея",
-      "offhands": "Левая рука",
-      "relics": "Реликвия",
-      "shoulder": "Плечо",
-      "trinket": "Аксессуар",
-      "waist": "Пояс",
-      "weaponCombos": "Наборы оружия",
-      "weapons": "Оружие",
-      "wrists": "Запястья"
-    },
     "Snackbars": {
       "CharAddSuccess": "Персонаж добавлен!",
       "CharUpdateSuccess": "Персонаж обновлен!",
@@ -331,12 +284,6 @@
     "Source": "Источник",
     "SourceToggle": {
       "FilterTooltip": "You can filter the graph by toggling these buttons"
-    },
-    "stats": {
-      "crit": "Критический удар",
-      "haste": "Скорость",
-      "mastery": "Искусность",
-      "versatility": "универсальность"
     },
     "Submit": "Отправить",
     "TierSets": {
@@ -389,8 +336,6 @@
       "SimCButton": "Импортируйте SimC",
       "SimCHeader": "Импорт SimC"
     },
-    "venthyr": "Venthyr",
-    "Versatility": "Yниверсальность",
     "Yes": "Yes"
   }
 }

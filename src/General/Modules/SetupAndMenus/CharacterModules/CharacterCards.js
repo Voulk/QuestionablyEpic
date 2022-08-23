@@ -50,6 +50,8 @@ import { useSelector } from "react-redux";
 import { covenantIcons } from "../../CooldownPlanner/Functions/CovenantFunctions";
 import { getTranslatedRaceName } from "Databases/RacesDB";
 import { getTranslatedClassName } from "locale/ClassNames.js";
+import { getTranslatedStats } from "locale/statsLocale.js";
+import { getTranslatedCovenantName } from "locale/covenants.js";
 
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
@@ -386,7 +388,7 @@ export default function CharCards(props) {
                       </Tooltip>
                       {/* ---------------------------------------- Covenant Icon ---------------------------------------  */}
                       {gameType === "Retail" ? (
-                        <Tooltip title={t(covenant)} style={{ color: classColoursJS(spec) }} placement="top">
+                        <Tooltip title={getTranslatedCovenantName(covenant, currentLanguage)} style={{ color: classColoursJS(spec) }} placement="top">
                           {covenantIcons(covenant, {
                             height: 20,
                             width: 20,
@@ -561,7 +563,7 @@ export default function CharCards(props) {
                                           borderRadius: 4,
                                           border: "1px solid rgba(255, 255, 255, 0.12)",
                                         })}
-                                        {t(key)}
+                                        {getTranslatedCovenantName(key, currentLanguage)}
                                       </div>
                                     </MenuItem>
                                   );
@@ -595,7 +597,7 @@ export default function CharCards(props) {
                         <TextField
                           id="IntellectInput"
                           type="number"
-                          label={t("Intellect")}
+                          label={getTranslatedStats("Intellect", currentLanguage)}
                           style={{ textAlignLast: "center" }}
                           inputProps={{
                             step: 0.01,
@@ -616,7 +618,7 @@ export default function CharCards(props) {
                       <Grid item xs={4}>
                         <TextField
                           id="CriticalInput"
-                          label={t("Crit")}
+                          label={getTranslatedStats("Crit", currentLanguage)}
                           style={{ textAlignLast: "center" }}
                           inputProps={{
                             step: 0.01,
@@ -637,7 +639,7 @@ export default function CharCards(props) {
                       <Grid item xs={4}>
                         <TextField
                           id="HasteInput"
-                          label={t("Haste")}
+                          label={getTranslatedStats("Haste", currentLanguage)}
                           style={{ textAlignLast: "center" }}
                           inputProps={{
                             step: 0.01,
@@ -658,7 +660,7 @@ export default function CharCards(props) {
                       <Grid item xs={4}>
                         <TextField
                           id="MasteryInput"
-                          label={t("Mastery")}
+                          label={getTranslatedStats("Mastery", currentLanguage)}
                           style={{ textAlignLast: "center" }}
                           inputProps={{
                             step: 0.01,
@@ -679,7 +681,7 @@ export default function CharCards(props) {
                       <Grid item xs={4}>
                         <TextField
                           id="VersatilityInput"
-                          label={t("Versatility")}
+                          label={getTranslatedStats("Versatility", currentLanguage)}
                           style={{ textAlignLast: "center" }}
                           inputProps={{
                             step: 0.01,
@@ -700,7 +702,7 @@ export default function CharCards(props) {
                       <Grid item xs={4}>
                         <TextField
                           id="LeechInput"
-                          label={t("Leech")}
+                          label={getTranslatedStats("Leech", currentLanguage)}
                           style={{ textAlignLast: "center" }}
                           inputProps={{
                             step: 0.01,

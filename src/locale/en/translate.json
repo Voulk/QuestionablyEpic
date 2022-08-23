@@ -2,7 +2,6 @@
   "translations": {
     "Account": "Account",
     "Add": "Add",
-    "Avoidance": "Avoidance",
     "BadgeGear": "Badges of Justice",
     "Battletag": "Battletag",
     "Bonus DPS": "Bonus DPS",
@@ -112,7 +111,6 @@
     "Covenant": "Covenant",
     "CovLegendaries": "Covenant Legendaries",
     "CreationCatalyst": "Creation Catalyst",
-    "Crit": "Crit",
     "Default": "Default",
     "Delete": "Delete",
     "DominationSelection": {
@@ -139,7 +137,6 @@
       "introduction": "QE would not have been possible without you. Thank you so much!",
       "title": "Hall of Fame"
     },
-    "Haste": "Haste",
     "Healing": "Healing",
     "HowToUse": "How it works",
     "HPS": "HPS",
@@ -152,8 +149,6 @@
       "effect": "Effect",
       "greatvault": "Great Vault"
     },
-    "kyrian": "Kyrian",
-    "Leech": "Leech",
     "LegendaryCompare": {
       "Title": "Legendaries at a Glance"
     },
@@ -191,11 +186,7 @@
       "TrinketAnalysis": "Trinkets",
       "UpgradeFinder": "Upgrade Finder (Beta)"
     },
-    "Mana": "Mana",
-    "Mastery": "Mastery",
     "Name": "Name",
-    "necrolord": "Necrolord",
-    "night_fae": "Night Fae",
     "No": "No",
     "None": "None",
     "Overhealing": " Overhealing",
@@ -317,25 +308,6 @@
       "SimCHeaderButtonLabelRetail": "SimC",
       "SimCStringLabel": "Import String"
     },
-    "slotNames": {
-      "back": "Cape",
-      "chest": "Chest",
-      "feet": "Boots",
-      "finger": "Ring",
-      "hands": "Gloves",
-      "head": "Helm",
-      "legs": "Legs",
-      "mainHands": "Weapons",
-      "neck": "Neck",
-      "offhands": "Off-Hands",
-      "relics": "Relics & Wands",
-      "shoulder": "Shoulders",
-      "trinket": "Trinkets",
-      "waist": "Belt",
-      "weaponCombos": "Weapon Combos",
-      "weapons": "Weapons",
-      "wrists": "Bracers"
-    },
     "Snackbars": {
       "CharAddSuccess": "Character Added!",
       "CharUpdateSuccess": "Character Updated!",
@@ -361,12 +333,6 @@
     },
     "SourceToggle": {
       "FilterTooltip": "You can filter the graph by toggling these buttons"
-    },
-    "stats": {
-      "crit": "Crit",
-      "haste": "Haste",
-      "mastery": "Mastery",
-      "versatility": "Versatility"
     },
     "Submit": "Submit",
     "Tier": "Tier",
@@ -422,8 +388,6 @@
       "SimCButton": "Import Gear",
       "SimCHeader": "SimC/QE Import"
     },
-    "venthyr": "Venthyr",
-    "Versatility": "Versatility",
     "Welcome": {
       "ContinueMessage": "To begin using the app, add one of your characters below. ",
       "CreateCharacter": "Create Character",

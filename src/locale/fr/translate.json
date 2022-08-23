@@ -2,7 +2,6 @@
   "translations": {
     "Account": "Account",
     "Add": "Add",
-    "Avoidance": "Avoidance",
     "Battletag": "Battletag",
     "Burning Crusade": "Burning Crusade",
     "Cancel": "Annuler",
@@ -47,15 +46,11 @@
         "ExternalTimeline": "External Timeline"
       },
       "HealerCards": {
-        "Crit": "Score de crit",
-        "Haste": "Hâte",
         "Item Level": "ilvl",
-        "Mastery": "Mastery",
         "SoulbindAbilities": "Soulbind Abilities",
         "SoulbindConduits": "Soulbind Conduits",
         "StatsHeading": "Stats",
-        "TalentHeader": "Talents",
-        "Versatility": "Versatility"
+        "TalentHeader": "Talents"
       },
       "TableLabels": {
         "BossAbilityLabel": "Boss Ability",
@@ -72,27 +67,6 @@
         "Loglink": "Paste WarcraftLog Link Here"
       }
     },
-    "Covenants": {
-      "Kyrian": "Kyrians",
-      "Necrolords": "Nécro-seigneurs",
-      "NightFae": "Faë nocturnes",
-      "Soulbinds": {
-        "Draven": "Général Draven",
-        "Dreamweaver": "Tisse-Rêves",
-        "Emeni": "Eméni",
-        "Heirmir": "Forge-os Heirmir",
-        "Kleia": "Kléia",
-        "Korayn": "Korayn",
-        "Marileth": "Marileth, catalyseur de peste",
-        "Mikanikos": "Premier forgelite Mikanikos",
-        "Nadjia": "Nadjia la Lame fantôme",
-        "Niya": "Niya",
-        "Pelagos": "Pélagos",
-        "Theotar": "Théotar le duc fou"
-      },
-      "Venthyr": "Venthyrs"
-    },
-    "Crit": "Score de crit",
     "Default": "Default",
     "Delete": "Delete",
     "DominationSelection": {
@@ -114,7 +88,6 @@
       "introduction": "QE would not have been possible without you. Thank you so much!",
       "title": "Hall of Fame"
     },
-    "Haste": "Hâte",
     "Healing": "Healing",
     "HowToUse": "Comment-faire",
     "HPS": "HPS",
@@ -122,12 +95,10 @@
       "InsertLogHeader": "Collez votre lien de rapport Warcraft (Logs) ici",
       "PlsSelectFight": "Veuillez choisir un combat"
     },
-    "Intellect": "Intelligence",
     "itemTags": {
       "effect": "Effet",
       "greatvault": "Chambre Forte"
     },
-    "Leech": "Leech",
     "LegendaryCompare": {
       "Title": "Legendaries at a Glance"
     },
@@ -162,7 +133,6 @@
       "TrinketAnalysis": "Trinket Analysis",
       "UpgradeFinder": "Trouver de meilleur équipement"
     },
-    "Mastery": "Maîtrise",
     "Name": "Nom",
     "No": "Non",
     "None": "None",
@@ -276,25 +246,6 @@
       "SimCHeaderButtonLabel": "SimC",
       "SimCStringLabel": "SimC String"
     },
-    "slotNames": {
-      "back": "Dos",
-      "chest": "Torse",
-      "feet": "Pieds",
-      "finger": "Doigt",
-      "hands": "Mains",
-      "head": "Tête",
-      "legs": "Jambes",
-      "mainHands": "Armes",
-      "neck": "Cou",
-      "offhands": "Main Gauche",
-      "relics": "Relique",
-      "shoulder": "Épaule",
-      "trinket": "Bijou",
-      "waist": "Taille",
-      "weaponCombos": "Combos d'armes",
-      "weapons": "Main Gauche",
-      "wrists": "Poignets"
-    },
     "Snackbars": {
       "CharAddSuccess": "Character Added!",
       "CharUpdateSuccess": "Character Updated!",
@@ -321,12 +272,6 @@
     "Source": "Source",
     "SourceToggle": {
       "FilterTooltip": "You can filter the graph by toggling these buttons"
-    },
-    "stats": {
-      "crit": "Score de crit",
-      "haste": "Hâte",
-      "mastery": "Maîtrise",
-      "versatility": "Versatilité"
     },
     "Submit": "Submit",
     "TierSets": {
@@ -377,7 +322,6 @@
       "SimCButton": "Import SimC",
       "SimCHeader": "SimC Import"
     },
-    "Versatility": "Versatilité",
     "Yes": "Oui"
   }
 }

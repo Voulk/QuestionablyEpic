@@ -12,9 +12,9 @@ export const statsLocale = [
   {
     name: {
       en: "Crit",
-      fr: "",
-      de: "",
-      ru: "",
+      fr: "Score de crit",
+      de: "Kritische Trefferwertung",
+      ru: "Критический удар",
       ch: "",
     },
     id: ["Crit", "crit"],
@@ -22,9 +22,9 @@ export const statsLocale = [
   {
     name: {
       en: "Haste",
-      fr: "",
-      de: "",
-      ru: "",
+      fr: "Hâte",
+      de: "Tempo",
+      ru: "Скорость",
       ch: "",
     },
     id: ["Haste", "haste"],
@@ -32,9 +32,9 @@ export const statsLocale = [
   {
     name: {
       en: "Intellect",
-      fr: "",
-      de: "",
-      ru: "",
+      fr: "Intelligence",
+      de: "Intelligenz",
+      ru: "Интеллект",
       ch: "",
     },
     id: ["Intellect", "intellect"],
@@ -42,9 +42,9 @@ export const statsLocale = [
   {
     name: {
       en: "Leech",
-      fr: "",
-      de: "",
-      ru: "",
+      fr: "Leech",
+      de: "Lebensraub",
+      ru: "Самоисцеление",
       ch: "",
     },
     id: ["Leech", "leech"],
@@ -62,9 +62,9 @@ export const statsLocale = [
   {
     name: {
       en: "Mastery",
-      fr: "",
-      de: "",
-      ru: "",
+      fr: "Maîtrise",
+      de: "Meisterschaft",
+      ru: "Искусность",
       ch: "",
     },
     id: ["Mastery", "mastery"],
@@ -72,9 +72,9 @@ export const statsLocale = [
   {
     name: {
       en: "Versatility",
-      fr: "",
-      de: "",
-      ru: "",
+      fr: "Versatilité",
+      de: "Vielseitigkeit",
+      ru: "универсальность",
       ch: "",
     },
     id: ["Versatility", "versatility"],
@@ -82,7 +82,9 @@ export const statsLocale = [
 ];
 
 export const getTranslatedStats = (stat, currentLanguage) => {
-  let stats = classNameDB
+  console.log(stat);
+  console.log(currentLanguage);
+  let stats = statsLocale
     .filter((obj) => {
       return obj.id.includes(stat);
     })

@@ -2,7 +2,6 @@
   "translations": {
     "Account": "Account",
     "Add": "Add",
-    "Avoidance": "Avoidance",
     "Battletag": "Battletag",
     "Burning Crusade": "Burning Crusade",
     "Cancel": "Cancel",
@@ -48,15 +47,11 @@
         "ExternalTimeline": "External Timeline"
       },
       "HealerCards": {
-        "Crit": "Critical",
-        "Haste": "Haste",
         "Item Level": "ilvl",
-        "Mastery": "Mastery",
         "SoulbindAbilities": "Soulbind Abilities",
         "SoulbindConduits": "Soulbind Conduits",
         "StatsHeading": "Stats",
-        "TalentHeader": "Talents",
-        "Versatility": "Versatility"
+        "TalentHeader": "Talents"
       },
       "TableLabels": {
         "BossAbilityLabel": "Boss Ability",
@@ -73,27 +68,6 @@
         "Loglink": "Paste WarcraftLog Link Here"
       }
     },
-    "Covenants": {
-      "Kyrian": "格里恩",
-      "Necrolords": "通灵领主",
-      "NightFae": "法夜",
-      "Soulbinds": {
-        "Draven": "德莱文将军",
-        "Dreamweaver": "织梦者",
-        "Emeni": "艾米妮",
-        "Heirmir": "骨匠海尔米尔",
-        "Kleia": "克雷雅",
-        "Korayn": "柯莱恩",
-        "Marileth": "魔药设计师马里莱斯",
-        "Mikanikos": "掌炉宗师米卡尼科斯",
-        "Nadjia": "娜德佳，迷雾之刃",
-        "Niya": "尼娅",
-        "Pelagos": "裴拉戈斯",
-        "Theotar": "癫狂公爵西塔尔"
-      },
-      "Venthyr": "温西尔"
-    },
-    "Crit": "Crit",
     "Default": "Default",
     "Delete": "Delete",
     "DominationSelection": {
@@ -115,7 +89,6 @@
       "introduction": "QE would not have been possible without you. Thank you so much!",
       "title": "Hall of Fame"
     },
-    "Haste": "Haste",
     "Healing": "Healing",
     "HowToUse": "How to Use",
     "HPS": "HPS",
@@ -123,12 +96,10 @@
       "InsertLogHeader": "Paste Your Warcraft Logs Report Here",
       "PlsSelectFight": "Please Select a Fight"
     },
-    "Intellect": "Intellect",
     "itemTags": {
       "effect": "Effect",
       "greatvault": "Great Vault"
     },
-    "Lee": "Leech",
     "LegendaryCompare": {
       "Title": "Legendaries at a Glance"
     },
@@ -163,7 +134,6 @@
       "TrinketAnalysis": "Trinket Analysis",
       "UpgradeFinder": "Upgrade Finder (Coming Soon)"
     },
-    "Mastery": "Mastery",
     "Name": "Name",
     "No": "No",
     "None": "None",
@@ -276,25 +246,6 @@
       "SimCHeaderButtonLabel": "SimC",
       "SimCStringLabel": "SimC String"
     },
-    "slotNames": {
-      "back": "Cape",
-      "chest": "Chest",
-      "feet": "Boots",
-      "finger": "Ring",
-      "hands": "Gloves",
-      "head": "头部",
-      "legs": "Legs",
-      "mainHands": "Weapons",
-      "neck": "Neck",
-      "offhands": "Off-Hands",
-      "relics": "圣物",
-      "shoulder": "肩部",
-      "trinket": "Trinkets",
-      "waist": "腰部",
-      "weaponCombos": "Weapon Combos",
-      "weapons": "Weapons",
-      "wrists": "Bracers"
-    },
     "Snackbars": {
       "CharAddSuccess": "Character Added!",
       "CharUpdateSuccess": "Character Updated!",
@@ -321,12 +272,6 @@
     "Source": "来源",
     "SourceToggle": {
       "FilterTooltip": "You can filter the graph by toggling these buttons"
-    },
-    "stats": {
-      "crit": "Crit",
-      "haste": "Haste",
-      "mastery": "Mastery",
-      "versatility": "Versatility"
     },
     "Submit": "Submit",
     "TierSets": {
@@ -377,7 +322,6 @@
       "SimCButton": "Import SimC",
       "SimCHeader": "SimC Import"
     },
-    "Versatility": "Versatility",
     "Yes": "Yes"
   }
 }

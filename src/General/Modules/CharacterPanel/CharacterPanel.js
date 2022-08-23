@@ -12,6 +12,8 @@ import Settings from "../Settings/Settings";
 import { covenantIcons, covenantColours } from "../CooldownPlanner/Functions/CovenantFunctions";
 // import ErrorTooltip from "./ErrorTooltip";
 import { getTranslatedClassName } from "locale/ClassNames";
+import { getTranslatedStats } from "locale/statsLocale";
+import { getTranslatedCovenantName } from "locale/covenants";
 
 const useStyles = makeStyles(() => ({
   simcerror: {
@@ -73,10 +75,11 @@ export default function CharacterPanel(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
   const gameType = useSelector((state) => state.gameType);
   const contentType = useSelector((state) => state.contentType);
-  const currentLanguage = i18n.currentLanguage;
+  const currentLang = i18n.currentLanguage;
+  const currentLanguage = i18n.language;
   const simcStatus = getSimCStatus(props.player, gameType);
   // const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
-  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
+  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLang;
   const currentCharacter = props.allChars.allChar[props.allChars.activeChar];
   const covenant = currentCharacter.covenant;
 
@@ -199,7 +202,7 @@ export default function CharacterPanel(props) {
                 </div>
                 {gameType === "Retail" ? (
                   <div style={{ position: "absolute", bottom: 24, left: 1 }}>
-                    <Tooltip title={t(covenant)} placement="left" arrow>
+                    <Tooltip title={getTranslatedCovenantName(covenant, currentLanguage)} placement="left" arrow>
                       {covenantIcons(covenant, {
                         height: 22,
                         width: 22,
@@ -278,7 +281,7 @@ export default function CharacterPanel(props) {
                           .filter((filterOut) => filterOut !== "stamina" && filterOut !== "hps" && filterOut !== "dps" && filterOut !== "leech")
                           .map((key, i) => (
                             <Grid item xs={4} sm="auto" key={"stat" + i}>
-                              <Typography style={{ fontSize: 11, lineHeight: 1 }}>{t(capitalizeFirstLetter(key)) + ": " + playerStats[key]}</Typography>
+                              <Typography style={{ fontSize: 11, lineHeight: 1 }}>{getTranslatedStats(capitalizeFirstLetter(key), currentLanguage) + ": " + playerStats[key]}</Typography>
                             </Grid>
                           ))}
                       </Grid>

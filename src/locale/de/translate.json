@@ -2,7 +2,6 @@
   "translations": {
     "Account": "Account",
     "Add": "Hinzufügen",
-    "Avoidance": "Avoidance",
     "Battletag": "Battletag",
     "Burning Crusade": "Burning Crusade",
     "Cancel": "Abbrechen",
@@ -48,15 +47,11 @@
         "ExternalTimeline": "External Timeline"
       },
       "HealerCards": {
-        "Crit": "Critical",
-        "Haste": "Haste",
         "Item Level": "ilvl",
-        "Mastery": "Mastery",
         "SoulbindAbilities": "Soulbind Abilities",
         "SoulbindConduits": "Soulbind Conduits",
         "StatsHeading": "Stats",
-        "TalentHeader": "Talents",
-        "Versatility": "Versatility"
+        "TalentHeader": "Talents"
       },
       "TableLabels": {
         "BossAbilityLabel": "Boss Ability",
@@ -74,27 +69,6 @@
       }
     },
     "Covenant": "Covenant",
-    "Covenants": {
-      "Kyrian": "Kyrianer",
-      "Necrolords": "Nekrolords",
-      "NightFae": "Nachtfae",
-      "Soulbinds": {
-        "Draven": "General Draven",
-        "Dreamweaver": "Traumweber",
-        "Emeni": "Emeni",
-        "Heirmir": "Knochenschmiedin Heirmir",
-        "Kleia": "Kleia",
-        "Korayn": "Korayn",
-        "Marileth": "Seuchenerfinder Marileth",
-        "Mikanikos": "Oberster Schmied Mikanikos",
-        "Nadjia": "Nadjia Nebelklinge",
-        "Niya": "Niya",
-        "Pelagos": "Pelagos",
-        "Theotar": "Theotar, der Wahnsinnige Herzog"
-      },
-      "Venthyr": "Venthyr"
-    },
-    "Crit": "Kritische Trefferwertung",
     "Default": "Default",
     "Delete": "Delete",
     "DominationSelection": {
@@ -120,7 +94,6 @@
       "introduction": "QE would not have been possible without you. Thank you so much!",
       "title": "Hall of Fame"
     },
-    "Haste": "Tempo",
     "Healing": "Healing",
     "HowToUse": "Hilfe!",
     "HPS": "HPS",
@@ -128,13 +101,10 @@
       "InsertLogHeader": "Füge deinen Warcraftlogbericht hier ein",
       "PlsSelectFight": "Bitte wähle einen Kampf aus"
     },
-    "Intellect": "Intelligenz",
     "itemTags": {
       "effect": "Bewirken",
       "greatvault": "Große Schatzkammer"
     },
-    "kyrian": "Kyrian",
-    "Leech": "Lebensraub",
     "LegendaryCompare": {
       "Title": "Legendäre Effekte auf einen Blick"
     },
@@ -168,10 +138,7 @@
       "TrinketAnalysis": "Trinket Analysis (New)",
       "UpgradeFinder": "Upgradeanzeige"
     },
-    "Mastery": "Meisterschaft",
     "Name": "Charaktername",
-    "necrolord": "Necrolord",
-    "night_fae": "Night Fae",
     "No": "No",
     "None": "Kein Tertiärattribut",
     "Overhealing": " Overhealing",
@@ -283,25 +250,6 @@
       "SimCHeaderButtonLabel": "SimC",
       "SimCStringLabel": "SimC String"
     },
-    "slotNames": {
-      "back": "Rücken",
-      "chest": "Brust",
-      "feet": "Füße",
-      "finger": "Finger",
-      "hands": "Hände",
-      "head": "Kopf",
-      "legs": "Beine",
-      "mainHands": "Waffen",
-      "neck": "Hals",
-      "offhands": "Schildhand",
-      "relics": "Relikt",
-      "shoulder": "Schulter",
-      "trinket": "Schmuck",
-      "waist": "Taille",
-      "weaponCombos": "Waffenkombinationen",
-      "weapons": "Waffen",
-      "wrists": "Handgelenk"
-    },
     "Snackbars": {
       "CharAddSuccess": "Character Added!",
       "CharUpdateSuccess": "Character Updated!",
@@ -328,12 +276,6 @@
     "Source": "Quelle",
     "SourceToggle": {
       "FilterTooltip": "You can filter the graph by toggling these buttons"
-    },
-    "stats": {
-      "crit": "Kritische Trefferwertung",
-      "haste": "Tempo",
-      "mastery": "Meisterschaft",
-      "versatility": "Vielseitigkeit"
     },
     "Submit": "Einfügen",
     "TierSets": {
@@ -386,8 +328,6 @@
       "SimCButton": "Import vom SimC Addon",
       "SimCHeader": "SimC Import"
     },
-    "venthyr": "Venthyr",
-    "Versatility": "Vielseitigkeit",
     "Yes": "Yes"
   }
 }
