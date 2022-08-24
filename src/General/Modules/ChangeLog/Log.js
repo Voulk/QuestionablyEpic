@@ -9,6 +9,14 @@
 
 export const changeLog = [
   {
+    version: "9.2.7",
+    update: 3,
+    date: "16 August (Minor)",
+    changes: [ 
+      "Added the Fleshrender's Meathook & Enforcer's Stun Grenade hotfixes.",
+    ],
+  },
+  {
     version: "9.2.5 / 2.5.4",
     update: 21,
     date: "2 August (Major)",
