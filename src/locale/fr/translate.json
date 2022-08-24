@@ -69,10 +69,6 @@
     },
     "Default": "Default",
     "Delete": "Delete",
-    "DominationSelection": {
-      "HeaderTitle": "Domination Gems",
-      "ShardNotOwned": "not owned"
-    },
     "Dungeon": "Donjon",
     "Edit": "Edit",
     "Email": "Email",
@@ -105,13 +101,11 @@
     "Login": "Connexion",
     "MainMenu": {
       "Articles": {
-        "Header": "Recent Spec Articles",
-        "HelpText": ""
+        "Header": "Recent Spec Articles"
       },
       "CharHeader": "Personnages",
       "CharHelpText": "Ajouter vos personnages ici. Clique-droit pour modifier vos informations liés aux Stats Weights, nom de votre serveur et autre.",
       "CooldownPlanner": "Planificateur de cooldown (Coming Soon)",
-      "DominationAnalysis": "Domination Analysis (Beta)",
       "ExploreCovenants": "Explorer les Covenants",
       "FightAnalysis": "Fight Analysis (Coming Soon)",
       "LegendaryAnalysis": "Analyse de Légendaire",
@@ -142,10 +136,6 @@
       "Gold": "Gold",
       "RollsRoyce": "Rolls Royce"
     },
-    "PvPCurrency": {
-      "Conquest": "Points de conquête",
-      "Honor": "Honneur"
-    },
     "QeHeader": {
       "InsertLogLabel": "Inséré le rapport",
       "Login": "Connexion",
@@ -170,7 +160,6 @@
     },
     "QuickCompare": {
       "AddButton": "Add",
-      "DominationSocket": "Domination",
       "HelpText": "La fonction 'Comparaison rapide d'équipement' vous permets de comparer vos pièces individuellement. Vous pouvez ajouter des équipements manuellement en utilisant le menu déroulant ci-dessus ou via l'importation de vos données SimC. Le pointage est automatiquement affiché dans le coin supérieur droit en jaune, et les équipements sont ensuite triés en commençant par la pièce ayant le meilleur pointage.",
       "ItemAdded": "Item Added!",
       "ItemBarTitle": "Add Items (Optional)",

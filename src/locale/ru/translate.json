@@ -76,14 +76,6 @@
     "Covenant": "Covenant",
     "Default": "Default",
     "Delete": "Delete",
-    "DominationSelection": {
-      "HeaderTitle": "Domination Gems",
-      "ShardNotOwned": "not owned"
-    },
-    "DominationSocketAnalysis": {
-      "Header": "Domination Socket Analysis",
-      "HelpText": "This is a quick way to see how strong Domination Gems are for your character. These are still being tuned and results could change."
-    },
     "Dungeon": "Подземелье",
     "Edit": "Edit",
     "Email": "Email",
@@ -116,13 +108,11 @@
     "Login": "Войти",
     "MainMenu": {
       "Articles": {
-        "Header": "Последние статьи",
-        "HelpText": ""
+        "Header": "Последние статьи"
       },
       "CharHeader": "Персонажи",
       "CharHelpText": "Добавьте сюда своих персонажей. Кликните по ним правой кнопкой, чтобы изменить вес характеристик, сервер и остальное.",
       "CooldownPlanner": "Планировщик кулдаунов",
-      "DominationAnalysis": "Domination Analysis (Beta)",
       "ExploreCovenants": "Исследуйте ковенанты",
       "FightAnalysis": "Fight Analysis (Coming Soon)",
       "LegendaryAnalysis": "Анализ легендарных эффектов",
@@ -153,12 +143,6 @@
       "Gold": "Gold",
       "RollsRoyce": "Rolls Royce"
     },
-    "PvPCurrency": {
-      "-16": "Честь",
-      "-17": "Очки завоевания",
-      "Conquest": "Очки завоевания",
-      "Honor": "Честь"
-    },
     "QeHeader": {
       "InsertLogLabel": "Загрузить лог",
       "Tooltip": {
@@ -182,7 +166,6 @@
     },
     "QuickCompare": {
       "AddButton": "Добавить",
-      "DominationSocket": "Domination",
       "HelpText": "'Быстрое сравнение' позволяет сравнивать предметы по одному. Вы можете добавлять предметы вручную с помощью выпадающего списка выше, либо добавить их все сразу, вставив строку импорта SimC. Счёт автоматически отображается в правом-верхнем углу, а предметы сортируются по эффективности.",
       "ItemAdded": "Предмет добавлен!",
       "ItemBarTitle": "Add Items (Optional)",

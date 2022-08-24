@@ -47,7 +47,6 @@
         "HeaderTitle": "Enter Plan Name"
       },
       "ChartLabels": {
-        "_Comments1": "Translations for HD Charts",
         "MitigatedDamageLabel": "Mitigated",
         "UnmitigatedDamageLabel": "Unmitigated"
       },
@@ -113,14 +112,6 @@
     "CreationCatalyst": "Creation Catalyst",
     "Default": "Default",
     "Delete": "Delete",
-    "DominationSelection": {
-      "HeaderTitle": "Domination Gems",
-      "ShardNotOwned": "not owned"
-    },
-    "DominationSocketAnalysis": {
-      "Header": "Domination Socket Analysis",
-      "HelpText": "This is a quick way to see how strong Domination Gems are for your character. These are still being tuned and results could change. This is still a very new module, and use it as rough guidance only."
-    },
     "Dungeon": "Dungeon",
     "Edit": "Edit",
     "Email": "Email",
@@ -155,13 +146,11 @@
     "Login": "Login",
     "MainMenu": {
       "Articles": {
-        "Header": "Recent Spec Articles",
-        "HelpText": ""
+        "Header": "Recent Spec Articles"
       },
       "CharHeader": "Characters",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.",
       "CooldownPlanner": "Cooldown Planner (Coming Soon)",
-      "DominationAnalysis": "Domination Analysis (Beta)",
       "ExploreCovenants": "Covenants & Conduits",
       "FightAnalysis": "Fight Analysis (Coming Soon)",
       "LegendaryAnalysis": "Legendary Breakdown",
@@ -172,7 +161,6 @@
       "TierSets": "Tier Sets",
       "Tooltips": {
         "CooldownPlanner": "Plan your Sepulcher healing cooldowns",
-        "DominationAnalysis": "Get a glance at all Domination Bonuses at once!",
         "ExploreCovenants": "Soulbind and conduit information",
         "LegendaryAnalysis": "Your specs best legendaries and where to craft them",
         "Profile": "Edit your details and connect to Patreon",
@@ -194,12 +182,6 @@
       "Diamond": "Diamond",
       "Gold": "Gold",
       "RollsRoyce": "Rolls Royce"
-    },
-    "PvPCurrency": {
-      "-16": "Honor",
-      "-17": "Conquest",
-      "Conquest": "Conquest",
-      "Honor": "Honor"
     },
     "QeHeader": {
       "InsertLogLabel": "Insert Log",
@@ -226,7 +208,6 @@
     },
     "QuickCompare": {
       "AddButton": "Add",
-      "DominationSocket": "Domination",
       "HelpText": "Quick Compare allows you to compare items one by one. Scores include stats, gems and effects, but not set bonuses or diminishing returns. Use Top Gear to include those.",
       "ItemAdded": "Item Added!",
       "ItemBarTitle": "Add Items (Optional)",

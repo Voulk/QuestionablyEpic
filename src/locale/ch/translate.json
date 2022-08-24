@@ -70,10 +70,6 @@
     },
     "Default": "Default",
     "Delete": "Delete",
-    "DominationSelection": {
-      "HeaderTitle": "Domination Gems",
-      "ShardNotOwned": "not owned"
-    },
     "Dungeon": "Dungeon",
     "Edit": "Edit",
     "Email": "Email",
@@ -106,13 +102,11 @@
     "Login": "登录",
     "MainMenu": {
       "Articles": {
-        "Header": "Recent Spec Articles",
-        "HelpText": ""
+        "Header": "Recent Spec Articles"
       },
       "CharHeader": "Characters",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.",
       "CooldownPlanner": "Cooldown Planner (Coming Soon)",
-      "DominationAnalysis": "Domination Analysis (Beta)",
       "ExploreCovenants": "Explore Covenants",
       "FightAnalysis": "Fight Analysis (Coming Soon)",
       "LegendaryAnalysis": "Legendary Analysis",
@@ -143,10 +137,6 @@
       "Gold": "Gold",
       "RollsRoyce": "Rolls Royce"
     },
-    "PvPCurrency": {
-      "Conquest": "征服点数",
-      "Honor": "荣誉点数"
-    },
     "QeHeader": {
       "InsertLogLabel": "Insert Log",
       "Tooltip": {
@@ -170,7 +160,6 @@
     },
     "QuickCompare": {
       "AddButton": "Add",
-      "DominationSocket": "Domination",
       "HelpText": "Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.",
       "ItemAdded": "Item Added!",
       "ItemBarTitle": "Add Items (Optional)",

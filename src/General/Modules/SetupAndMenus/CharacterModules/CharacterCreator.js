@@ -13,6 +13,7 @@ import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import { useSelector } from "react-redux";
 import { getTranslatedClassName } from "locale/ClassNames";
+import { getTranslatedCovenantName } from "locale/covenants.js";
 
 const addBtn = require("../../../../Images/AddBtn.jpg").default;
 
@@ -238,7 +239,7 @@ export default function AddNewChar(props) {
                                   borderRadius: "4px",
                                   border: "1px solid rgba(255, 255, 255, 0.12)",
                                 })}
-                                {t(key)}
+                                {getTranslatedCovenantName(key, currentLanguage)}
                               </div>
                             </MenuItem>
                           );
