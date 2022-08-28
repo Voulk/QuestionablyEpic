@@ -285,7 +285,6 @@ export default function RaidGearContainer(props) {
       return obj.raidID === raid;
     })[0]["name"][currentLanguage];
 
-    console.log(raidName);
     return raidName;
   };
 

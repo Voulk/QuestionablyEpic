@@ -80,8 +80,6 @@ export default function ItemCard(props) {
   }
 
   const sourceName = (item) => {
-    console.log(item.source.instanceId);
-    console.log(item.source.encounterId);
     /* ------------------------------ Dungeon Name ------------------------------ */
     if (item.source.instanceId === -1) {
       let dungeons = { ...encounterDB["-1"] };

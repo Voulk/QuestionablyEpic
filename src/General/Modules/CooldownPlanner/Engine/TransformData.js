@@ -19,7 +19,6 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
   // filter out healers to remove
   if (idsToRemove !== []) {
     healerCasts = healerCasts.filter((filter) => idsToRemove.includes(filter.sourceID) === false);
-    console.log(healerCasts);
   }
   // filter out removed healers
   nameObject = nameObject.filter((filter) => Object.values(filter)[0] !== "removeLineFromArray");
