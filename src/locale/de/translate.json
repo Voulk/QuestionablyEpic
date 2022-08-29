@@ -2,10 +2,14 @@
   "translations": {
     "Account": "Account",
     "Add": "Hinzufügen",
+    "BadgeGear": "Badges of Justice",
     "Battletag": "Battletag",
+    "Bonus DPS": "Bonus DPS",
+    "Bonus HPS": "Bonus HPS",
     "Burning Crusade": "Burning Crusade",
     "Cancel": "Abbrechen",
     "Casts": "Casts",
+    "Catalyst": "Catalyst",
     "Changelog": {
       "Date": "Date",
       "Header": "Änderungsprotokoll",
@@ -15,15 +19,15 @@
     },
     "CharacterCreator": {
       "AddChar": "Charakter hinzufügen",
-      "CharacterInfo": "Character Information",
       "CharName": "Charaktername",
+      "CharacterInfo": "Character Information",
       "CreateChar": "Create New Character",
       "DeleteCharacter": "Charakter löschen",
       "SavedLogs": {
         "Boss": "Boss",
         "FightLength": "Fight Length",
-        "Header": "Current Log",
         "HPS": "HPS",
+        "Header": "Current Log",
         "RawHPS": "Raw HPS",
         "Report": "Report",
         "ResetToDefaults": "Reset to Defaults",
@@ -36,10 +40,31 @@
     "Class": "Klasse",
     "Cooldown": "Cooldown",
     "CooldownPlanner": {
+      "AddPlanDialog": {
+        "ButtonLabel": "Add",
+        "ButtonTooltip": "Add a new plan with a sample log, a set of defaults, or a blank slate.",
+        "HeaderTitle": "Enter Plan Name"
+      },
       "ChartLabels": {
-        "_Comments1": "Translations for HD Charts",
         "MitigatedDamageLabel": "Mitigated",
         "UnmitigatedDamageLabel": "Unmitigated"
+      },
+      "CopyPlanDialog": {
+        "ButtonLabel": "Copy",
+        "ButtonTooltip": "Copy a plan under a new name",
+        "NewPlanTitle": "New Plan Name",
+        "SelectPlanTitle": "Select plan to copy"
+      },
+      "DeletePlanDialog": {
+        "ButtonLabel": "Delete",
+        "ButtonTooltip": "Delete your plan permanently.",
+        "HeaderTitle": "Are you sure you want to delete the current plan?",
+        "PlaceholderText": "Type 'Delete' to confirm"
+      },
+      "DuplicatePlanError": "Duplicate plan name detected, please choose another.",
+      "ExportPlanDialog": {
+        "ButtonLabel": "Export",
+        "HeaderTitle": "Export Plan"
       },
       "Headers": {
         "CooldownTimeline": "Cooldown Timeline",
@@ -47,11 +72,24 @@
         "ExternalTimeline": "External Timeline"
       },
       "HealerCards": {
-        "Item Level": "ilvl",
         "SoulbindAbilities": "Soulbind Abilities",
         "SoulbindConduits": "Soulbind Conduits",
         "StatsHeading": "Stats",
         "TalentHeader": "Talents"
+      },
+      "ImportPlanDialog": {
+        "ButtonLabel": "Import",
+        "Errors": {
+          "DuplicatePlanWarning": "Duplicate plan name detected, Importing this plan will overwrite it with this import!",
+          "HeaderError": "This does not appear to be a QE Planner String, please check it and try again",
+          "StringError": "There's something wrong with the string, please check it and try again"
+        },
+        "HeaderTitle": "Import Plan"
+      },
+      "NoteExportDialog": {
+        "ButtonLabel": "MRT Note",
+        "HeaderTitle": "Note Export",
+        "NoteExportTooltip": "Export your plan into a note format compatible with ERT / MRT."
       },
       "TableLabels": {
         "BossAbilityLabel": "Boss Ability",
@@ -64,11 +102,13 @@
         "TypeSelector": "Formats"
       },
       "UserInputs": {
-        "fightButtonLabel": "Bitte wähle einen Kampf aus",
-        "Loglink": "Füge deinen Warcraftlogbericht hier ein"
+        "Loglink": "Füge deinen Warcraftlogbericht hier ein",
+        "fightButtonLabel": "Bitte wähle einen Kampf aus"
       }
     },
+    "CovLegendaries": "Covenant Legendaries",
     "Covenant": "Covenant",
+    "CreationCatalyst": "Creation Catalyst",
     "Default": "Default",
     "Delete": "Delete",
     "Dungeon": "Instanz",
@@ -76,11 +116,13 @@
     "Email": "Email",
     "Equipped": "Equipped",
     "Error": "Error",
+    "External": "External",
     "Filter": "Filter",
     "GameTypeToggle": {
       "Classic": "Change to Classic (Burning Crusade)",
       "Retail": "Change to Retail (Shadowlands)"
     },
+    "HPS": "HPS",
     "HallOfFame": {
       "buttonLabel": "QE Hall of Fame",
       "introduction": "QE would not have been possible without you. Thank you so much!",
@@ -88,15 +130,12 @@
     },
     "Healing": "Healing",
     "HowToUse": "Hilfe!",
-    "HPS": "HPS",
     "InsertLog": {
       "InsertLogHeader": "Füge deinen Warcraftlogbericht hier ein",
       "PlsSelectFight": "Bitte wähle einen Kampf aus"
     },
-    "itemTags": {
-      "effect": "Bewirken",
-      "greatvault": "Große Schatzkammer"
-    },
+    "Intellect": "Intellect",
+    "Item Level": "ilvl",
     "LegendaryCompare": {
       "Title": "Legendäre Effekte auf einen Blick"
     },
@@ -107,7 +146,7 @@
       },
       "CharHeader": "Charaktere",
       "CharHelpText": "Füge deine Charaktere hier hinzu. Rechtsklick um deine Wertegewichtungen, Serverinformationen und mehr zu bearbeiten.",
-      "CooldownPlanner": "Cooldownplaner (Coming Soon)",
+      "CooldownPlanner": "Cooldown Planner (Coming Soon)",
       "ExploreCovenants": "Erkunde die Pakte",
       "FightAnalysis": "Fight Analysis (Coming Soon)",
       "LegendaryAnalysis": "Analyse der legendären Effekte",
@@ -117,21 +156,24 @@
       "QuickCompare": "Schnellvergleich",
       "TierSets": "Tier Sets",
       "Tooltips": {
-        "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
+        "CooldownPlanner": "Plan your Sepulcher healing cooldowns",
         "ExploreCovenants": "Entdecke die Seelenbande für jeden Pakt.",
         "LegendaryAnalysis": "Finde deinen besten legendären Effekt und finde heraus, woher du ihn bekommst.",
         "Profile": "Bearbeite deine Angaben",
         "QuickCompare": "Vergleiche Gegenstände für jeden Slot.",
-        "TopGear": "Finde dein bestes Ausrüstungsset."
+        "TierSets": "Find out how strong your classes tier sets are.",
+        "TopGear": "Finde dein bestes Ausrüstungsset.",
+        "TrinketAnalysis": "A graph view comparing most trinkets in the game",
+        "UpgradeFinder": "Find your next piece of gear"
       },
       "TopGear": "Beste Ausrüstung",
-      "TrinketAnalysis": "Trinket Analysis (New)",
+      "TrinketAnalysis": "Trinkets",
       "UpgradeFinder": "Upgradeanzeige"
     },
     "Name": "Charaktername",
     "No": "No",
     "None": "Kein Tertiärattribut",
-    "Overhealing": " Overhealing",
+    "Overhealing": "Overhealing",
     "PatreonTiers": {
       "Diamond": "Diamond",
       "Gold": "Gold",
@@ -139,14 +181,16 @@
     },
     "QeHeader": {
       "InsertLogLabel": "Warcraftlog einfügen",
+      "Login": "Login",
       "Tooltip": {
+        "BurningCrusadeSimC": "Insert a QE Import string to import your gear.",
         "ChangeToDungeon": "Wechsle zu den Instanzinhalten",
         "ChangeToRaid": "Wechsle zu den Schlachtzugsinhalten",
         "Home": "Hauptmenü",
         "InsertLog": "Füge ein Log ein, um die Genauigkeit der Angaben zu erhöhen",
         "Language": "Sprache ändern",
         "Login": "Logge dich in deinen Battle.net Account ein",
-        "SimC": "Füge einen SimC String ein, um deine Ausrüstung zu importieren"
+        "RetailSimC": "Insert a SimC string to import your gear."
       }
     },
     "QeProfile": {
@@ -164,12 +208,12 @@
       "ItemAdded": "Gegenstand hinzugefügt!",
       "ItemBarTitle": "Add Items (Optional)",
       "ItemDeleted": "Gegenstand entfernt!",
-      "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300",
+      "ItemErrorMsg": "Item Not Added. Ilvl Cap exceeded.",
       "ItemLevel": "Gegenstandsstufe",
       "ItemName": "Name des Gegenstands",
       "Missives": "Missives",
       "Slot": "Slot",
-      "Socket": "Sockel",
+      "Socket": "Socket",
       "Tertiary": "Tertiärattribut",
       "Title": "Schnellvergleich"
     },
@@ -183,57 +227,52 @@
     },
     "Region": "Region",
     "Remove": "Remove",
+    "Renown Level": "Renown Level",
     "Save": "Speichern",
     "Select Class": "Klasse auswählen",
     "Select Race": "Rasse auswählen",
     "Settings": {
       "BurningCrusade": {
-        "Setting0TextFieldLabel": "",
-        "Setting0Title": "",
-        "Setting0Tooltip": "",
-        "Setting1TextFieldLabel": "",
-        "Setting1Title": "",
-        "Setting1Tooltip": "",
-        "Setting2TextFieldLabel": "",
-        "Setting2Title": "",
-        "Setting2Tooltip": "",
-        "Setting3TextFieldLabel": "",
-        "Setting3Title": "",
-        "Setting3Tooltip": "",
-        "Setting4TextFieldLabel": "",
-        "Setting4Title": "",
-        "Setting4Tooltip": "",
-        "Setting5TextFieldLabel": "",
-        "Setting5Title": "",
-        "Setting5Tooltip": ""
+        "Setting0Title": "Mana Profile",
+        "Setting0Tooltip": "Mana varies a little in value based on fight length and how frequently you cast.",
+        "Setting1Title": "Include Raid Buffs?",
+        "Setting1Tooltip": "Enable this to include common raid buffs in the gear comparison.",
+        "Setting2Title": "Meta Gem",
+        "Setting2Tooltip": "Pick which Meta gem you'd like the app to try and socket.",
+        "Setting3Title": "Auto-Enchant Items?",
+        "Setting4Title": "Gem Rarity",
+        "Setting4Tooltip": "Pick which gems you'd like the app to socket. Jewelcrafting-specifics ignored for now."
       },
       "Retail": {
         "Setting0TextFieldLabel": "Allies",
         "Setting0Title": "Hymnal Allies",
         "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
-        "Setting1TextFieldLabel": "",
-        "Setting1Title": "Group Benefits",
-        "Setting1Tooltip": "Treat items that buff allies as if it were personal throughput",
-        "Setting2TextFieldLabel": "Talent",
-        "Setting2Title": "Talent",
-        "Setting2Tooltip": "Select Discipline Talent",
-        "Setting3TextFieldLabel": "",
-        "Setting3Title": "Auto Socket Items",
-        "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
-        "Setting4TextFieldLabel": "Vault Dom Gem",
-        "Setting4Title": "Vault Dom Gem",
-        "Setting4Tooltip": "Choose a Gem to socket into your vault items",
-        "Setting5TextFieldLabel": "",
-        "Setting5Title": "",
-        "Setting5Tooltip": ""
+        "Setting1Title": "Ally Buffs",
+        "Setting1Tooltip": "Some items give buffs to allies. If you check this it'll include an estimate of that benefit in an items score.",
+        "Setting3Title": "Add Sockets",
+        "Setting3Tooltip": "This will automatically add a socket to items that don't have them in compatible slots.",
+        "Setting4TextFieldLabel": "Upgrade Finder: Display",
+        "Setting4Title": "UF: Result Display",
+        "Setting4Tooltip": "You can show Upgrade Finder results as either a % upgrade, or in effective HPS.",
+        "Setting5TextFieldLabel": "Playstyle",
+        "Setting5Title": "Playstyle",
+        "Setting5Tooltip": "Choose your playstyle",
+        "Setting6TextFieldLabel": "Limit",
+        "Setting6Title": "Catalyst Limit",
+        "Setting6Tooltip": "Select how many Catalyst charges you have. This determines how many Catalyst items Top Gear will be restricted to.",
+        "Setting7TextFieldLabel": "Leech",
+        "Setting7Title": "UF: Leech",
+        "Setting7Tooltip": "Turning this on will automatically add Leech to all Upgrade Finder choices."
       },
       "SettingsTitle": "Einstellungen"
     },
     "Shadowlands": "Shadowlands",
     "SimCInput": {
-      "SimCDialogueTitle": "Füge deinen SimC String hier ein",
-      "SimCHeaderButtonLabel": "SimC",
-      "SimCStringLabel": "SimC String"
+      "SimCDialogueTitleBurningCrusade": "Paste Your QE Import String",
+      "SimCDialogueTitleRetail": "Paste Your SimC String",
+      "SimCHeaderButtonLabelBurningCrusade": "Gear Import",
+      "SimCHeaderButtonLabelRetail": "SimC",
+      "SimCStringLabel": "Import String"
     },
     "Snackbars": {
       "CharAddSuccess": "Character Added!",
@@ -242,7 +281,7 @@
       "EmailUpdateSuccess": "Email Updated!",
       "LogImportSuccess": "Log Imported Successfully!",
       "LoginSuccess": "Logged in Successfully!",
-      "SimCImportSuccess": "SimC String Imported Successfully!"
+      "SimCImportSuccess": "Gear Imported Successfully!"
     },
     "Soulbinds": {
       "ConduitInstructions": "Rechts-/Linksklicke auf ein Medium, um die Gegenstandsstufe zu verändern.",
@@ -263,6 +302,7 @@
       "FilterTooltip": "You can filter the graph by toggling these buttons"
     },
     "Submit": "Einfügen",
+    "Tier": "Tier",
     "TierSets": {
       "2Set": "2 Set HPS",
       "4Set": "4 Set HPS",
@@ -275,25 +315,27 @@
       "CompetitiveAlternativeHelp": "This is how close other sets are to your best. Anything extremely close in score can be considered a sidegrade.",
       "ErrorMessage": "Entschuldige bitte, es scheint ein Fehler aufgetreten zu sein. Versuche, ins Hauptmenü zurückzukehren und es noch einmal zu probieren.",
       "GoMsg": "Start!",
-      "HelpText": "'Beste Ausrüstung' erlaubt es dir, ein ganzes Ausrüstungsset auf einmal zu generieren. Beginne, indem du deinen 'SimC'-Addontext oben einfügst. Dann brauchst du nur noch alle Gegenstände anklicken, die du vergleichen willst und auf 'Start!' drücken, wenn du fertig bist. Wenn du die Gegenstände lieber manuell vergleichen willst, kannst du ins Hauptmenü zurückkehren und den 'QE Schnellvergleich' nutzen.",
-      "itemMissingError": "Error: Add item - ",
+      "HelpTextBurningCrusade": "Top Gear lets you compare every possible combination of your selected gear at once!",
+      "HelpTextRetail": "Top Gear lets you compare every possible combination of your selected gear at once!",
       "ItemsHereMessage": "Deine Items werden hier erscheinen, wenn sie importiert sind.",
       "SelectedItems": "Ausgewählte Gegenstände",
       "StatPanel": {
         "AvgStats": "Durchschnittliche Werte (inkl. aller zufälligen Effekte)"
       },
-      "Title": "Beste Ausrüstung"
+      "Title": "Beste Ausrüstung",
+      "itemMissingError": "Error: Add item - "
     },
     "TrinketAnalysis": {
       "Header": "Trinket Analysis",
-      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. World quest trinkets and settings panel coming soon."
+      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing."
     },
     "UpgradeFinder": {
+      "BackButton": "Back to Setup",
       "CurrentRaid": "Mausoleum der Ersten",
       "Header": "Resultate des Upgradefinders",
       "MythicPlus": "Mythisch+",
       "PvP": "PvP",
-      "UpgradeBySlot": "Upgrade by Slot",
+      "UpgradeBySlot": "Upgrades by Slot",
       "WorldBosses": "World Bosses"
     },
     "UpgradeFinderFront": {
@@ -301,18 +343,27 @@
       "HelpText": "Kopiere deinen SimC String hier herein, wähle bis zu zwei Schlachtzugsschwierigkeiten, dein durchschnittliches Schlüsselsteinlevel und deine PvP Wertung aus, um herauszufinden, wo du dein nächstes Upgrade finden kannst!",
       "MythicPlusBody": "Nutze den Regler, um die durchschnittliche Höhe der Schlüsselsteine anzugeben, die du bewältigst",
       "MythicPlusHeader": "Mythisch Plus Schlüsselsteinlevel",
-      "PvPBody": "Select your Rating",
+      "PvPBody": "Select  your Rating",
       "PvPHeader": "PvP Wertung",
       "RaidDifficultyBody": "Wähle bis zu zwei verschiedene Schwierigkeitsstufen, um mögliche Upgrades zu finden",
       "RaidDifficultyHeader": "Schlachtzugsschwierigkeit",
-      "SimCBody1": "Aktueller Status des SimC Strings:",
-      "SimCBody1Good": "SimC - All Set!",
-      "SimCBody1Invalid": "SimC - Empty Item Slot",
-      "SimCBody1Missing": "SimC - Missing",
+      "SimCBody1Good": "Import - All Set!",
+      "SimCBody1Invalid": "Import - Empty Item Slot",
+      "SimCBody1Missing": "Import - Missing",
       "SimCBody2": "Aktuell ausgerüstete Ausrüstung:",
       "SimCButton": "Import vom SimC Addon",
-      "SimCHeader": "SimC Import"
+      "SimCHeader": "SimC/QE Import"
     },
-    "Yes": "Yes"
+    "Welcome": {
+      "ContinueMessage": "To begin using the app, add one of your characters below.",
+      "CreateCharacter": "Create Character",
+      "GameTypeMessage": "Select which version you'd like to start with.",
+      "WelcomeTo": "Welcome To"
+    },
+    "Yes": "Yes",
+    "itemTags": {
+      "effect": "Bewirken",
+      "greatvault": "Große Schatzkammer"
+    }
   }
 }

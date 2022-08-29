@@ -2,10 +2,14 @@
   "translations": {
     "Account": "Account",
     "Add": "Add",
+    "BadgeGear": "Badges of Justice",
     "Battletag": "Battletag",
+    "Bonus DPS": "Bonus DPS",
+    "Bonus HPS": "Bonus HPS",
     "Burning Crusade": "Burning Crusade",
     "Cancel": "Annuler",
     "Casts": "Casts",
+    "Catalyst": "Catalyst",
     "Changelog": {
       "Date": "Date",
       "Header": "Changelog",
@@ -15,30 +19,52 @@
     },
     "CharacterCreator": {
       "AddChar": "Ajouter un personnage",
-      "CharacterInfo": "Character Information",
       "CharName": "Character Name",
+      "CharacterInfo": "Character Information",
       "CreateChar": "Create New Character",
       "DeleteCharacter": "Delete Character",
       "SavedLogs": {
         "Boss": "Boss",
         "FightLength": "Fight Length",
-        "Header": "Current Log",
         "HPS": "HPS",
+        "Header": "Current Log",
         "RawHPS": "Raw HPS",
         "Report": "Report",
         "ResetToDefaults": "Reset to Defaults",
         "TabHeader": "Saved Logs(Coming Soon)"
       },
       "ServerName": "Server Name",
-      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.",
+      "StatMessage": "While Stat Weights are editable, the QE Live defaults are recommended for most situations.",
       "StatWeights": "Stat Weights"
     },
     "Class": "Classe",
     "Cooldown": "Recharge",
     "CooldownPlanner": {
+      "AddPlanDialog": {
+        "ButtonLabel": "Add",
+        "ButtonTooltip": "Add a new plan with a sample log, a set of defaults, or a blank slate.",
+        "HeaderTitle": "Enter Plan Name"
+      },
       "ChartLabels": {
         "MitigatedDamageLabel": "Mitigated",
-        "UnmitigatedDamageLabel": "Unmitigated Damage"
+        "UnmitigatedDamageLabel": "Unmitigated"
+      },
+      "CopyPlanDialog": {
+        "ButtonLabel": "Copy",
+        "ButtonTooltip": "Copy a plan under a new name",
+        "NewPlanTitle": "New Plan Name",
+        "SelectPlanTitle": "Select plan to copy"
+      },
+      "DeletePlanDialog": {
+        "ButtonLabel": "Delete",
+        "ButtonTooltip": "Delete your plan permanently.",
+        "HeaderTitle": "Are you sure you want to delete the current plan?",
+        "PlaceholderText": "Type 'Delete' to confirm"
+      },
+      "DuplicatePlanError": "Duplicate plan name detected, please choose another.",
+      "ExportPlanDialog": {
+        "ButtonLabel": "Export",
+        "HeaderTitle": "Export Plan"
       },
       "Headers": {
         "CooldownTimeline": "Cooldown Timeline",
@@ -46,27 +72,43 @@
         "ExternalTimeline": "External Timeline"
       },
       "HealerCards": {
-        "Item Level": "ilvl",
         "SoulbindAbilities": "Soulbind Abilities",
         "SoulbindConduits": "Soulbind Conduits",
         "StatsHeading": "Stats",
         "TalentHeader": "Talents"
       },
+      "ImportPlanDialog": {
+        "ButtonLabel": "Import",
+        "Errors": {
+          "DuplicatePlanWarning": "Duplicate plan name detected, Importing this plan will overwrite it with this import!",
+          "HeaderError": "This does not appear to be a QE Planner String, please check it and try again",
+          "StringError": "There's something wrong with the string, please check it and try again"
+        },
+        "HeaderTitle": "Import Plan"
+      },
+      "NoteExportDialog": {
+        "ButtonLabel": "MRT Note",
+        "HeaderTitle": "Note Export",
+        "NoteExportTooltip": "Export your plan into a note format compatible with ERT / MRT."
+      },
       "TableLabels": {
         "BossAbilityLabel": "Boss Ability",
         "BossSelectorLabel": "Select Boss",
-        "CastTimeLabel": "Cast Time",
+        "CastTimeLabel": "Cast",
         "HealTeamHeader": "Roster",
         "NotesLabel": "Notes",
-        "OffCooldownLabel": "Off Cooldown",
+        "OffCooldownLabel": "Off-CD",
         "RaidSelectorLabel": "Select Raid",
         "TypeSelector": "Formats"
       },
       "UserInputs": {
-        "fightButtonLabel": "Select Fight",
-        "Loglink": "Paste WarcraftLog Link Here"
+        "Loglink": "Paste WarcraftLog Link Here",
+        "fightButtonLabel": "Select Fight"
       }
     },
+    "CovLegendaries": "Covenant Legendaries",
+    "Covenant": "Covenant",
+    "CreationCatalyst": "Creation Catalyst",
     "Default": "Default",
     "Delete": "Delete",
     "Dungeon": "Donjon",
@@ -74,27 +116,26 @@
     "Email": "Email",
     "Equipped": "Equipped",
     "Error": "Error",
+    "External": "External",
     "Filter": "Filtrer",
     "GameTypeToggle": {
       "Classic": "Change to Classic (Burning Crusade)",
       "Retail": "Change to Retail (Shadowlands)"
     },
+    "HPS": "HPS",
     "HallOfFame": {
-      "buttonLabel": "Hall of Fame",
+      "buttonLabel": "QE Hall of Fame",
       "introduction": "QE would not have been possible without you. Thank you so much!",
       "title": "Hall of Fame"
     },
     "Healing": "Healing",
     "HowToUse": "Comment-faire",
-    "HPS": "HPS",
     "InsertLog": {
       "InsertLogHeader": "Collez votre lien de rapport Warcraft (Logs) ici",
       "PlsSelectFight": "Veuillez choisir un combat"
     },
-    "itemTags": {
-      "effect": "Effet",
-      "greatvault": "Chambre Forte"
-    },
+    "Intellect": "Intellect",
+    "Item Level": "ilvl",
     "LegendaryCompare": {
       "Title": "Legendaries at a Glance"
     },
@@ -115,22 +156,24 @@
       "QuickCompare": "Comparaison rapide d'équipement",
       "TierSets": "Tier Sets",
       "Tooltips": {
-        "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
-        "ExploreCovenants": "Explore Soulbinds for each covenant.",
-        "LegendaryAnalysis": "Find your best legendary power and where to get it",
-        "Profile": "Edit your details",
-        "QuickCompare": "Compare Items for each slot.",
+        "CooldownPlanner": "Plan your Sepulcher healing cooldowns",
+        "ExploreCovenants": "Soulbind and conduit information",
+        "LegendaryAnalysis": "Your specs best legendaries and where to craft them",
+        "Profile": "Edit your details and connect to Patreon",
+        "QuickCompare": "A quick view of all your items at once",
+        "TierSets": "Find out how strong your classes tier sets are.",
         "TopGear": "Find your best gear set",
-        "UpgradeFinder": "Find your next piece of gear!"
+        "TrinketAnalysis": "A graph view comparing most trinkets in the game",
+        "UpgradeFinder": "Find your next piece of gear"
       },
       "TopGear": "Meilleur équipement (Bêta)",
-      "TrinketAnalysis": "Trinket Analysis",
+      "TrinketAnalysis": "Trinkets",
       "UpgradeFinder": "Trouver de meilleur équipement"
     },
     "Name": "Nom",
     "No": "Non",
     "None": "None",
-    "Overhealing": " Overhealing",
+    "Overhealing": "Overhealing",
     "PatreonTiers": {
       "Diamond": "Diamond",
       "Gold": "Gold",
@@ -140,13 +183,14 @@
       "InsertLogLabel": "Inséré le rapport",
       "Login": "Connexion",
       "Tooltip": {
+        "BurningCrusadeSimC": "Insert a QE Import string to import your gear.",
         "ChangeToDungeon": "Changer pour le contenu de Donjon",
         "ChangeToRaid": "Changer pour le contenu de Raid",
         "Home": "Main Menu",
         "InsertLog": "Insert a log to increase accuracy.",
         "Language": "Change Language",
         "Login": "Login to your Battle.net Account",
-        "SimC": "Insert a SimC string to import your gear."
+        "RetailSimC": "Insert a SimC string to import your gear."
       }
     },
     "QeProfile": {
@@ -164,7 +208,7 @@
       "ItemAdded": "Item Added!",
       "ItemBarTitle": "Add Items (Optional)",
       "ItemDeleted": "Item Deleted!",
-      "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300",
+      "ItemErrorMsg": "Item Not Added. Ilvl Cap exceeded.",
       "ItemLevel": "Niveau de la pièce",
       "ItemName": "Nom de la pièce",
       "Missives": "Missives",
@@ -176,64 +220,59 @@
     "Race": "Race",
     "Raid": "Raid",
     "RaidDifficulty": {
-      "Heroic": "",
-      "Mythic": "",
-      "Normal": "",
-      "Raid Finder": ""
+      "Heroic": "Heroic",
+      "Mythic": "Mythic",
+      "Normal": "Normal",
+      "Raid Finder": "Looking for Raid"
     },
     "Region": "Region",
     "Remove": "Remove",
+    "Renown Level": "Renown Level",
     "Save": "Sauvegarder",
     "Select Class": "Select Class",
     "Select Race": "Select Race",
     "Settings": {
       "BurningCrusade": {
-        "Setting0TextFieldLabel": "",
-        "Setting0Title": "",
-        "Setting0Tooltip": "",
-        "Setting1TextFieldLabel": "",
-        "Setting1Title": "",
-        "Setting1Tooltip": "",
-        "Setting2TextFieldLabel": "",
-        "Setting2Title": "",
-        "Setting2Tooltip": "",
-        "Setting3TextFieldLabel": "",
-        "Setting3Title": "",
-        "Setting3Tooltip": "",
-        "Setting4TextFieldLabel": "",
-        "Setting4Title": "",
-        "Setting4Tooltip": "",
-        "Setting5TextFieldLabel": "",
-        "Setting5Title": "",
-        "Setting5Tooltip": ""
+        "Setting0Title": "Mana Profile",
+        "Setting0Tooltip": "Mana varies a little in value based on fight length and how frequently you cast.",
+        "Setting1Title": "Include Raid Buffs?",
+        "Setting1Tooltip": "Enable this to include common raid buffs in the gear comparison.",
+        "Setting2Title": "Meta Gem",
+        "Setting2Tooltip": "Pick which Meta gem you'd like the app to try and socket.",
+        "Setting3Title": "Auto-Enchant Items?",
+        "Setting4Title": "Gem Rarity",
+        "Setting4Tooltip": "Pick which gems you'd like the app to socket. Jewelcrafting-specifics ignored for now."
       },
       "Retail": {
         "Setting0TextFieldLabel": "Allies",
         "Setting0Title": "Hymnal Allies",
         "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
-        "Setting1TextFieldLabel": "",
-        "Setting1Title": "Group Benefits",
-        "Setting1Tooltip": "Treat items that buff allies as if it were personal throughput",
-        "Setting2TextFieldLabel": "Talent",
-        "Setting2Title": "Talent",
-        "Setting2Tooltip": "Select Discipline Talent",
-        "Setting3TextFieldLabel": "",
-        "Setting3Title": "Auto Socket Items",
-        "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
-        "Setting4TextFieldLabel": "Vault Dom Gem",
-        "Setting4Title": "Vault Dom Gem",
-        "Setting4Tooltip": "Choose a Gem to socket into your vault items",
-        "Setting5TextFieldLabel": "",
-        "Setting5Title": "",
-        "Setting5Tooltip": ""
+        "Setting1Title": "Ally Buffs",
+        "Setting1Tooltip": "Some items give buffs to allies. If you check this it'll include an estimate of that benefit in an items score.",
+        "Setting3Title": "Add Sockets",
+        "Setting3Tooltip": "This will automatically add a socket to items that don't have them in compatible slots.",
+        "Setting4TextFieldLabel": "Upgrade Finder: Display",
+        "Setting4Title": "UF: Result Display",
+        "Setting4Tooltip": "You can show Upgrade Finder results as either a % upgrade, or in effective HPS.",
+        "Setting5TextFieldLabel": "Playstyle",
+        "Setting5Title": "Playstyle",
+        "Setting5Tooltip": "Choose your playstyle",
+        "Setting6TextFieldLabel": "Limit",
+        "Setting6Title": "Catalyst Limit",
+        "Setting6Tooltip": "Select how many Catalyst charges you have. This determines how many Catalyst items Top Gear will be restricted to.",
+        "Setting7TextFieldLabel": "Leech",
+        "Setting7Title": "UF: Leech",
+        "Setting7Tooltip": "Turning this on will automatically add Leech to all Upgrade Finder choices."
       },
       "SettingsTitle": "Paramètres"
     },
     "Shadowlands": "Shadowlands",
     "SimCInput": {
-      "SimCDialogueTitle": "Paste Your SimC String",
-      "SimCHeaderButtonLabel": "SimC",
-      "SimCStringLabel": "SimC String"
+      "SimCDialogueTitleBurningCrusade": "Paste Your QE Import String",
+      "SimCDialogueTitleRetail": "Paste Your SimC String",
+      "SimCHeaderButtonLabelBurningCrusade": "Gear Import",
+      "SimCHeaderButtonLabelRetail": "SimC",
+      "SimCStringLabel": "Import String"
     },
     "Snackbars": {
       "CharAddSuccess": "Character Added!",
@@ -242,7 +281,7 @@
       "EmailUpdateSuccess": "Email Updated!",
       "LogImportSuccess": "Log Imported Successfully!",
       "LoginSuccess": "Logged in Successfully!",
-      "SimCImportSuccess": "SimC String Imported Successfully!"
+      "SimCImportSuccess": "Gear Imported Successfully!"
     },
     "Soulbinds": {
       "ConduitInstructions": "Clique droit/gauche sur les Conduits pour changer le niveau (iLvl)",
@@ -263,6 +302,7 @@
       "FilterTooltip": "You can filter the graph by toggling these buttons"
     },
     "Submit": "Submit",
+    "Tier": "Tier",
     "TierSets": {
       "2Set": "2 Set HPS",
       "4Set": "4 Set HPS",
@@ -270,47 +310,60 @@
       "Title": "Tier Sets"
     },
     "TopGear": {
+      "BackToGearSelection": "Back to Gear Selection",
       "CompetitiveAlternative": "Les alternatives intéressantes",
+      "CompetitiveAlternativeHelp": "This is how close other sets are to your best. Anything extremely close in score can be considered a sidegrade.",
       "ErrorMessage": "Désolé, mais il semble qu'une erreur se soit produite. Retournez au menu principal et veuillez essayer à nouveau.",
       "GoMsg": "Go!",
-      "HelpText": "La fonction 'Meilleur équipement' vous permet de générer un ensemble d'équipement complet. Commencez par entrer vos données SimC ci-dessus, ensuite veuillez cliquer sur les équipements que vous voulez comparer. Quand vous avez terminé, cliquez sur 'Go!' au bas de la page. Pour entrer des équipements manuellement, retournez au menu principal et veuillez les inclures dans la fonction 'Comparaison rapide d'équipement'.",
-      "itemMissingError": "Error: Add item - ",
+      "HelpTextBurningCrusade": "Top Gear lets you compare every possible combination of your selected gear at once!",
+      "HelpTextRetail": "Top Gear lets you compare every possible combination of your selected gear at once!",
       "ItemsHereMessage": "Vos pièces iront ici après l'importation.",
       "SelectedItems": "Pièces choisies:",
       "StatPanel": {
         "AvgStats": "Moyenne de stats (Incluant les procs)"
       },
-      "Title": "Meilleur équipement"
+      "Title": "Meilleur équipement",
+      "itemMissingError": "Error: Add item - "
     },
     "TrinketAnalysis": {
       "Header": "Trinket Analysis",
       "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing."
     },
     "UpgradeFinder": {
+      "BackButton": "Back to Setup",
       "CurrentRaid": "Sépulcre des Fondateurs",
-      "Header": "Upgrade Finder Results",
+      "Header": "Find your next upgrade!",
       "MythicPlus": "Mythique +",
       "PvP": "PvP",
-      "UpgradeBySlot": "Upgrade by Slot",
+      "UpgradeBySlot": "Upgrades by Slot",
       "WorldBosses": "World Bosses"
     },
     "UpgradeFinderFront": {
       "Header": "Trouver de meilleur équipement",
-      "HelpText": "Insert a SimC String, Select up to two raid difficulties, your standard mythic keystone level, and your PVP rating to see where you can find your next upgrade!",
-      "MythicPlusBody": "Use the Slider to Select the level of keys you usually complete",
-      "MythicPlusHeader": "Mythic Plus Key Level",
+      "HelpText": "Find your next item with instance-by-instance and slot-by-slot item lists, all based on your specific character.",
+      "MythicPlusBody": "Use the slider to select dungeon item level",
+      "MythicPlusHeader": "Mythic Plus Ilvl (Keys & Valor)",
       "PvPBody": "Select  your Rating",
       "PvPHeader": "PvP Rating",
       "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
       "RaidDifficultyHeader": "Raid Difficulty",
-      "SimCBody1": "Current SimC String Status:",
-      "SimCBody1Good": "SimC - All Set!",
-      "SimCBody1Invalid": "SimC - Empty Item Slot",
-      "SimCBody1Missing": "SimC - Missing",
+      "SimCBody1Good": "Import - All Set!",
+      "SimCBody1Invalid": "Import - Empty Item Slot",
+      "SimCBody1Missing": "Import - Missing",
       "SimCBody2": "Current Equipped Gear:",
-      "SimCButton": "Import SimC",
-      "SimCHeader": "SimC Import"
+      "SimCButton": "Import Gear",
+      "SimCHeader": "SimC/QE Import"
     },
-    "Yes": "Oui"
+    "Welcome": {
+      "ContinueMessage": "To begin using the app, add one of your characters below.",
+      "CreateCharacter": "Create Character",
+      "GameTypeMessage": "Select which version you'd like to start with.",
+      "WelcomeTo": "Welcome To"
+    },
+    "Yes": "Oui",
+    "itemTags": {
+      "effect": "Effet",
+      "greatvault": "Chambre Forte"
+    }
   }
 }

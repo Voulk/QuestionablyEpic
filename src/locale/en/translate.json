@@ -19,15 +19,15 @@
     },
     "CharacterCreator": {
       "AddChar": "Add Character",
-      "CharacterInfo": "Character Information",
       "CharName": "Character Name",
+      "CharacterInfo": "Character Information",
       "CreateChar": "Create New Character",
       "DeleteCharacter": "Delete Character",
       "SavedLogs": {
         "Boss": "Boss",
         "FightLength": "Fight Length",
-        "Header": "Current Log",
         "HPS": "HPS",
+        "Header": "Current Log",
         "RawHPS": "Raw HPS",
         "Report": "Report",
         "ResetToDefaults": "Reset to Defaults",
@@ -37,7 +37,6 @@
       "StatMessage": "While Stat Weights are editable, the QE Live defaults are recommended for most situations.",
       "StatWeights": "Stat Weights"
     },
-    "Item Level": "ilvl",
     "Class": "Class",
     "Cooldown": "Cooldown",
     "CooldownPlanner": {
@@ -103,12 +102,12 @@
         "TypeSelector": "Formats"
       },
       "UserInputs": {
-        "fightButtonLabel": "Select Fight",
-        "Loglink": "Paste WarcraftLog Link Here"
+        "Loglink": "Paste WarcraftLog Link Here",
+        "fightButtonLabel": "Select Fight"
       }
     },
-    "Covenant": "Covenant",
     "CovLegendaries": "Covenant Legendaries",
+    "Covenant": "Covenant",
     "CreationCatalyst": "Creation Catalyst",
     "Default": "Default",
     "Delete": "Delete",
@@ -123,6 +122,7 @@
       "Classic": "Change to Classic (Burning Crusade)",
       "Retail": "Change to Retail (Shadowlands)"
     },
+    "HPS": "HPS",
     "HallOfFame": {
       "buttonLabel": "QE Hall of Fame",
       "introduction": "QE would not have been possible without you. Thank you so much!",
@@ -130,16 +130,12 @@
     },
     "Healing": "Healing",
     "HowToUse": "How it works",
-    "HPS": "HPS",
     "InsertLog": {
       "InsertLogHeader": "Paste Your Warcraft Logs Report Here",
       "PlsSelectFight": "Please Select a Fight"
     },
     "Intellect": "Intellect",
-    "itemTags": {
-      "effect": "Effect",
-      "greatvault": "Great Vault"
-    },
+    "Item Level": "ilvl",
     "LegendaryCompare": {
       "Title": "Legendaries at a Glance"
     },
@@ -177,7 +173,7 @@
     "Name": "Name",
     "No": "No",
     "None": "None",
-    "Overhealing": " Overhealing",
+    "Overhealing": "Overhealing",
     "PatreonTiers": {
       "Diamond": "Diamond",
       "Gold": "Gold",
@@ -237,33 +233,22 @@
     "Select Race": "Select Race",
     "Settings": {
       "BurningCrusade": {
-        "Setting0TextFieldLabel": "",
         "Setting0Title": "Mana Profile",
         "Setting0Tooltip": "Mana varies a little in value based on fight length and how frequently you cast.",
-        "Setting1TextFieldLabel": "",
         "Setting1Title": "Include Raid Buffs?",
         "Setting1Tooltip": "Enable this to include common raid buffs in the gear comparison.",
-        "Setting2TextFieldLabel": "",
         "Setting2Title": "Meta Gem",
         "Setting2Tooltip": "Pick which Meta gem you'd like the app to try and socket.",
-        "Setting3TextFieldLabel": "",
         "Setting3Title": "Auto-Enchant Items?",
-        "Setting3Tooltip": "",
-        "Setting4TextFieldLabel": "",
         "Setting4Title": "Gem Rarity",
-        "Setting4Tooltip": "Pick which gems you'd like the app to socket. Jewelcrafting-specifics ignored for now.",
-        "Setting5TextFieldLabel": "",
-        "Setting5Title": "",
-        "Setting5Tooltip": ""
+        "Setting4Tooltip": "Pick which gems you'd like the app to socket. Jewelcrafting-specifics ignored for now."
       },
       "Retail": {
         "Setting0TextFieldLabel": "Allies",
         "Setting0Title": "Hymnal Allies",
         "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
-        "Setting1TextFieldLabel": "",
         "Setting1Title": "Ally Buffs",
         "Setting1Tooltip": "Some items give buffs to allies. If you check this it'll include an estimate of that benefit in an items score.",
-        "Setting3TextFieldLabel": "",
         "Setting3Title": "Add Sockets",
         "Setting3Tooltip": "This will automatically add a socket to items that don't have them in compatible slots.",
         "Setting4TextFieldLabel": "Upgrade Finder: Display",
@@ -312,6 +297,7 @@
         "Summary": "Summary"
       }
     },
+    "Source": "Source",
     "SourceToggle": {
       "FilterTooltip": "You can filter the graph by toggling these buttons"
     },
@@ -331,13 +317,13 @@
       "GoMsg": "Go!",
       "HelpTextBurningCrusade": "Top Gear lets you compare every possible combination of your selected gear at once!",
       "HelpTextRetail": "Top Gear lets you compare every possible combination of your selected gear at once!",
-      "itemMissingError": "Error: Add item - ",
       "ItemsHereMessage": "Your items will go here after you import, then hit 'Go' once happy with your selection.",
       "SelectedItems": "Selected Items",
       "StatPanel": {
         "AvgStats": "Average Stats (includes procs)"
       },
-      "Title": "Top Gear"
+      "Title": "Top Gear",
+      "itemMissingError": "Error: Add item - "
     },
     "TrinketAnalysis": {
       "Header": "Trinket Analysis",
@@ -353,7 +339,6 @@
       "WorldBosses": "World Bosses"
     },
     "UpgradeFinderFront": {
-      "DungeonBodyBC": "",
       "Header": "Upgrade Finder",
       "HelpText": "Find your next item with instance-by-instance and slot-by-slot item lists, all based on your specific character.",
       "MythicPlusBody": "Use the slider to select dungeon item level",
@@ -370,11 +355,15 @@
       "SimCHeader": "SimC/QE Import"
     },
     "Welcome": {
-      "ContinueMessage": "To begin using the app, add one of your characters below. ",
+      "ContinueMessage": "To begin using the app, add one of your characters below.",
       "CreateCharacter": "Create Character",
       "GameTypeMessage": "Select which version you'd like to start with.",
       "WelcomeTo": "Welcome To"
     },
-    "Yes": "Yes"
+    "Yes": "Yes",
+    "itemTags": {
+      "effect": "Effect",
+      "greatvault": "Great Vault"
+    }
   }
 }

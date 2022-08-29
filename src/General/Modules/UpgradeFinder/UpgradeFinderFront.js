@@ -439,9 +439,6 @@ export default function UpgradeFinderFront(props) {
                     <Typography color="primary" align="center" variant="h5">
                       {t("Dungeon")}
                     </Typography>
-                    <Grid item xs={12}>
-                      <Typography align="center">{t("UpgradeFinderFront.DungeonBodyBC")}</Typography>
-                    </Grid>
                   </Grid>
                 </Grid>
 

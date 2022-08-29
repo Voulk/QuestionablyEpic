@@ -2,11 +2,14 @@
   "translations": {
     "Account": "Account",
     "Add": "Добавить",
-    "Avoidance": "Избегание",
-    "Battletag": "BattleTag",
+    "BadgeGear": "Badges of Justice",
+    "Battletag": "Battletag",
+    "Bonus DPS": "Bonus DPS",
+    "Bonus HPS": "Bonus HPS",
     "Burning Crusade": "Burning Crusade",
     "Cancel": "Отменить",
     "Casts": "Casts",
+    "Catalyst": "Catalyst",
     "Changelog": {
       "Date": "Date",
       "Header": "Журнализация изменений проекта",
@@ -16,31 +19,52 @@
     },
     "CharacterCreator": {
       "AddChar": "Добавить персонажа",
-      "CharacterInfo": "Иформация о персонаже",
       "CharName": "Имя персонажа",
+      "CharacterInfo": "Иформация о персонаже",
       "CreateChar": "Create New Character",
       "DeleteCharacter": "Удалить персонажа",
       "SavedLogs": {
         "Boss": "Босс",
         "FightLength": "Длительность боя",
-        "Header": "Текущий лог",
         "HPS": "HPS",
+        "Header": "Текущий лог",
         "RawHPS": "Raw HPS",
         "Report": "Отчет",
         "ResetToDefaults": "Сбросить",
         "TabHeader": "Сохраненные логи(Скоро)"
       },
       "ServerName": "Название сервера",
-      "StatMessage": "Для получения актуального веса характеристик, загрузите ваш свежий лог на WowAnalyzer.com и введите сюда значения с вкладки 'Statistics'. ",
+      "StatMessage": "Для получения актуального веса характеристик, загрузите ваш свежий лог на WowAnalyzer.com и введите сюда значения с вкладки 'Statistics'.",
       "StatWeights": "Stat Weights"
     },
     "Class": "класс",
     "Cooldown": "Cooldown",
     "CooldownPlanner": {
+      "AddPlanDialog": {
+        "ButtonLabel": "Add",
+        "ButtonTooltip": "Add a new plan with a sample log, a set of defaults, or a blank slate.",
+        "HeaderTitle": "Enter Plan Name"
+      },
       "ChartLabels": {
-        "_Comments1": "Translations for HD Charts",
         "MitigatedDamageLabel": "Mitigated",
-        "UnmitigatedDamageLabel": "Unmitigated Damage"
+        "UnmitigatedDamageLabel": "Unmitigated"
+      },
+      "CopyPlanDialog": {
+        "ButtonLabel": "Copy",
+        "ButtonTooltip": "Copy a plan under a new name",
+        "NewPlanTitle": "New Plan Name",
+        "SelectPlanTitle": "Select plan to copy"
+      },
+      "DeletePlanDialog": {
+        "ButtonLabel": "Delete",
+        "ButtonTooltip": "Delete your plan permanently.",
+        "HeaderTitle": "Are you sure you want to delete the current plan?",
+        "PlaceholderText": "Type 'Delete' to confirm"
+      },
+      "DuplicatePlanError": "Duplicate plan name detected, please choose another.",
+      "ExportPlanDialog": {
+        "ButtonLabel": "Export",
+        "HeaderTitle": "Export Plan"
       },
       "Headers": {
         "CooldownTimeline": "Cooldown Timeline",
@@ -48,32 +72,43 @@
         "ExternalTimeline": "External Timeline"
       },
       "HealerCards": {
-        "Crit": "Критический удар",
-        "Haste": "Скорость",
-        "Item Level": "ilvl",
-        "Mastery": "Искусность",
         "SoulbindAbilities": "Soulbind Abilities",
         "SoulbindConduits": "Soulbind Conduits",
         "StatsHeading": "Stats",
-        "TalentHeader": "Talents",
-        "Versatility": "универсальность"
+        "TalentHeader": "Talents"
+      },
+      "ImportPlanDialog": {
+        "ButtonLabel": "Import",
+        "Errors": {
+          "DuplicatePlanWarning": "Duplicate plan name detected, Importing this plan will overwrite it with this import!",
+          "HeaderError": "This does not appear to be a QE Planner String, please check it and try again",
+          "StringError": "There's something wrong with the string, please check it and try again"
+        },
+        "HeaderTitle": "Import Plan"
+      },
+      "NoteExportDialog": {
+        "ButtonLabel": "MRT Note",
+        "HeaderTitle": "Note Export",
+        "NoteExportTooltip": "Export your plan into a note format compatible with ERT / MRT."
       },
       "TableLabels": {
         "BossAbilityLabel": "Boss Ability",
         "BossSelectorLabel": "Select Boss",
-        "CastTimeLabel": "Cast Time",
+        "CastTimeLabel": "Cast",
         "HealTeamHeader": "Roster",
         "NotesLabel": "Notes",
-        "OffCooldownLabel": "Off Cooldown",
+        "OffCooldownLabel": "Off-CD",
         "RaidSelectorLabel": "Select Raid",
         "TypeSelector": "Formats"
       },
       "UserInputs": {
-        "fightButtonLabel": "Выберите бой",
-        "Loglink": "Вставьте сюда ссылку с WarcraftLogs"
+        "Loglink": "Вставьте сюда ссылку с WarcraftLogs",
+        "fightButtonLabel": "Выберите бой"
       }
     },
+    "CovLegendaries": "Covenant Legendaries",
     "Covenant": "Covenant",
+    "CreationCatalyst": "Creation Catalyst",
     "Default": "Default",
     "Delete": "Delete",
     "Dungeon": "Подземелье",
@@ -81,27 +116,26 @@
     "Email": "Email",
     "Equipped": "Надето",
     "Error": "Error",
+    "External": "External",
     "Filter": "Filter",
     "GameTypeToggle": {
       "Classic": "Change to Classic (Burning Crusade)",
       "Retail": "Change to Retail (Shadowlands)"
     },
+    "HPS": "HPS",
     "HallOfFame": {
       "buttonLabel": "Зал славы",
-      "introduction": "Thank you so much for your support.",
+      "introduction": "QE would not have been possible without you. Thank you so much!",
       "title": "Зал славы"
     },
     "Healing": "Healing",
     "HowToUse": "Как пользоваться приложением",
-    "HPS": "HPS",
     "InsertLog": {
       "InsertLogHeader": "Вставьте сюда ссылку на ваш лог с Warcraft Logs",
       "PlsSelectFight": "Пожалуйста, выберите бой"
     },
-    "itemTags": {
-      "effect": "Эффект",
-      "greatvault": "Великое Xранилище"
-    },
+    "Intellect": "Intellect",
+    "Item Level": "ilvl",
     "LegendaryCompare": {
       "Title": "Взгляд на легендарные эффекты"
     },
@@ -122,12 +156,14 @@
       "QuickCompare": "Быстрое сравнение экипировки",
       "TierSets": "Tier Sets",
       "Tooltips": {
-        "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
+        "CooldownPlanner": "Plan your Sepulcher healing cooldowns",
         "ExploreCovenants": "Изучить проводники каждого из ковенантов.",
         "LegendaryAnalysis": "Найти лучший легендарный эффект и узнать как его добыть.",
         "Profile": "Отредактировать информацию о себе",
         "QuickCompare": "Сравнить предметы для каждого слота.",
+        "TierSets": "Find out how strong your classes tier sets are.",
         "TopGear": "Найти лучший набор экипировки для вашего персонажа.",
+        "TrinketAnalysis": "A graph view comparing most trinkets in the game",
         "UpgradeFinder": "Найти улучшения Вашей экипировки из рейда, подземелий или PVP"
       },
       "TopGear": "Лучшая экипировка",
@@ -137,7 +173,7 @@
     "Name": "имя",
     "No": "No",
     "None": "Нет",
-    "Overhealing": " Overhealing",
+    "Overhealing": "Overhealing",
     "PatreonTiers": {
       "Diamond": "Diamond",
       "Gold": "Gold",
@@ -145,19 +181,21 @@
     },
     "QeHeader": {
       "InsertLogLabel": "Загрузить лог",
+      "Login": "Login",
       "Tooltip": {
+        "BurningCrusadeSimC": "Insert a QE Import string to import your gear.",
         "ChangeToDungeon": "Сменить на подземелья",
         "ChangeToRaid": "Сменить на рейды",
         "Home": "Главное меню",
         "InsertLog": "Вставьте ссылку на лог для повышения точности рассчётов",
         "Language": "Поменять язык",
         "Login": "Войти в вашу учетную запись Battle.net",
-        "SimC": "Вставьте строку SimC для импорта вашей экипировки"
+        "RetailSimC": "Insert a SimC string to import your gear."
       }
     },
     "QeProfile": {
       "EditionAffix": "Edition",
-      "EmailMsg": "Укажите/Обновите ваш Email-адрес от аккаунта Patreon, чтобы привязать его к QE Live ",
+      "EmailMsg": "Укажите/Обновите ваш Email-адрес от аккаунта Patreon, чтобы привязать его к QE Live",
       "NoBattleTag": "Аккаунт Battle.net не привязан",
       "NoEmail": "Email не указан",
       "ProfileHeader": "Профиль",
@@ -170,7 +208,7 @@
       "ItemAdded": "Предмет добавлен!",
       "ItemBarTitle": "Add Items (Optional)",
       "ItemDeleted": "Предмет удалён!",
-      "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300",
+      "ItemErrorMsg": "Item Not Added. Ilvl Cap exceeded.",
       "ItemLevel": "Уровень предмета",
       "ItemName": "Название предмета",
       "Missives": "Missives",
@@ -187,58 +225,53 @@
       "Normal": "Обычный",
       "Raid Finder": "Поиск рейда"
     },
-    "Region": "Регион",
+    "Region": "Region",
     "Remove": "Remove",
+    "Renown Level": "Renown Level",
     "Save": "Сохранить",
     "Select Class": "Выберите класс",
     "Select Race": "Выберите расу",
     "Settings": {
       "BurningCrusade": {
-        "Setting0TextFieldLabel": "",
-        "Setting0Title": "",
-        "Setting0Tooltip": "",
-        "Setting1TextFieldLabel": "",
-        "Setting1Title": "",
-        "Setting1Tooltip": "",
-        "Setting2TextFieldLabel": "",
-        "Setting2Title": "",
-        "Setting2Tooltip": "",
-        "Setting3TextFieldLabel": "",
-        "Setting3Title": "",
-        "Setting3Tooltip": "",
-        "Setting4TextFieldLabel": "",
-        "Setting4Title": "",
-        "Setting4Tooltip": "",
-        "Setting5TextFieldLabel": "",
-        "Setting5Title": "",
-        "Setting5Tooltip": ""
+        "Setting0Title": "Mana Profile",
+        "Setting0Tooltip": "Mana varies a little in value based on fight length and how frequently you cast.",
+        "Setting1Title": "Include Raid Buffs?",
+        "Setting1Tooltip": "Enable this to include common raid buffs in the gear comparison.",
+        "Setting2Title": "Meta Gem",
+        "Setting2Tooltip": "Pick which Meta gem you'd like the app to try and socket.",
+        "Setting3Title": "Auto-Enchant Items?",
+        "Setting4Title": "Gem Rarity",
+        "Setting4Tooltip": "Pick which gems you'd like the app to socket. Jewelcrafting-specifics ignored for now."
       },
       "Retail": {
         "Setting0TextFieldLabel": "Allies",
         "Setting0Title": "Союзники с Гимнарием кабалиста",
         "Setting0Tooltip": "Эффект Гимнария кабалиста увеличивается на 5% за каждого союзника",
-        "Setting1TextFieldLabel": "",
         "Setting1Title": "Усиления союзников",
         "Setting1Tooltip": "Считать усиления союзников с предметов как Вашу личную эффективность",
-        "Setting2TextFieldLabel": "Talent",
-        "Setting2Title": "Talent",
-        "Setting2Tooltip": "Select Discipline Talent",
-        "Setting3TextFieldLabel": "",
-        "Setting3Title": "Auto Socket Items",
-        "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
-        "Setting4TextFieldLabel": "Vault Dom Gem",
-        "Setting4Title": "Vault Dom Gem",
-        "Setting4Tooltip": "Choose a Gem to socket into your vault items",
-        "Setting5TextFieldLabel": "",
-        "Setting5Title": "",
-        "Setting5Tooltip": ""
+        "Setting3Title": "Add Sockets",
+        "Setting3Tooltip": "This will automatically add a socket to items that don't have them in compatible slots.",
+        "Setting4TextFieldLabel": "Upgrade Finder: Display",
+        "Setting4Title": "UF: Result Display",
+        "Setting4Tooltip": "You can show Upgrade Finder results as either a % upgrade, or in effective HPS.",
+        "Setting5TextFieldLabel": "Playstyle",
+        "Setting5Title": "Playstyle",
+        "Setting5Tooltip": "Choose your playstyle",
+        "Setting6TextFieldLabel": "Limit",
+        "Setting6Title": "Catalyst Limit",
+        "Setting6Tooltip": "Select how many Catalyst charges you have. This determines how many Catalyst items Top Gear will be restricted to.",
+        "Setting7TextFieldLabel": "Leech",
+        "Setting7Title": "UF: Leech",
+        "Setting7Tooltip": "Turning this on will automatically add Leech to all Upgrade Finder choices."
       },
       "SettingsTitle": "Настройки"
     },
     "Shadowlands": "Shadowlands",
     "SimCInput": {
-      "SimCDialogueTitle": "Вставьте вашу строку SimC",
-      "SimCHeaderButtonLabel": "SimC",
+      "SimCDialogueTitleBurningCrusade": "Paste Your QE Import String",
+      "SimCDialogueTitleRetail": "Paste Your SimC String",
+      "SimCHeaderButtonLabelBurningCrusade": "Gear Import",
+      "SimCHeaderButtonLabelRetail": "SimC",
       "SimCStringLabel": "Строка SimC"
     },
     "Snackbars": {
@@ -269,6 +302,7 @@
       "FilterTooltip": "You can filter the graph by toggling these buttons"
     },
     "Submit": "Отправить",
+    "Tier": "Tier",
     "TierSets": {
       "2Set": "2 Set HPS",
       "4Set": "4 Set HPS",
@@ -281,20 +315,22 @@
       "CompetitiveAlternativeHelp": "This is how close other sets are to your best. Anything extremely close in score can be considered a sidegrade.",
       "ErrorMessage": "Очень жаль, похоже вы столкнулись с ошибкой. Попробуйте вернуться в главное меню и попробовать снова.",
       "GoMsg": "Вперёд!",
-      "HelpText": "'Лучшая экипировка' позволяет подобрать весь набор экипировки целиком. Начните с импорта своего SimC профиля выше. Затем, кликом мыши подсветите предметы, которые хотите добавить в сравнение. Когда всё будет готово, нажмите 'Вперёд!' внизу страницы. Чтобы добавить предметы вручную, вернитесь в главное меню и добавьте их в 'Быстром сравнении'.",
-      "itemMissingError": "Ошибка: добавьте предмет",
+      "HelpTextBurningCrusade": "Top Gear lets you compare every possible combination of your selected gear at once!",
+      "HelpTextRetail": "Top Gear lets you compare every possible combination of your selected gear at once!",
       "ItemsHereMessage": "Здесь появятся ваши предметы после импорта.",
       "SelectedItems": "Выбранные предметы:",
       "StatPanel": {
         "AvgStats": "Усреднённые характеристики (включая проки)"
       },
-      "Title": "Лучшая экипировка"
+      "Title": "Лучшая экипировка",
+      "itemMissingError": "Ошибка: добавьте предмет"
     },
     "TrinketAnalysis": {
       "Header": "Анализ аксессуаров",
-      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. World quest trinkets and settings panel coming soon."
+      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing."
     },
     "UpgradeFinder": {
+      "BackButton": "Back to Setup",
       "CurrentRaid": "Гробница Предвечных",
       "Header": "Результаты поиска",
       "MythicPlus": "Эпохальный+",
@@ -311,7 +347,6 @@
       "PvPHeader": "Рейтинг PvP",
       "RaidDifficultyBody": "Выберите до двух сложностей, которые будут учитываться при поиске улучшений.",
       "RaidDifficultyHeader": "Сложность рейда",
-      "SimCBody1": "Текущее состояние строки SimC:",
       "SimCBody1Good": "SimC - Все в готово!",
       "SimCBody1Invalid": "SimC - Не хватает предмета в слоте",
       "SimCBody1Missing": "SimC - Отутствует",
@@ -319,6 +354,16 @@
       "SimCButton": "Импортируйте SimC",
       "SimCHeader": "Импорт SimC"
     },
-    "Yes": "Yes"
+    "Welcome": {
+      "ContinueMessage": "To begin using the app, add one of your characters below.",
+      "CreateCharacter": "Create Character",
+      "GameTypeMessage": "Select which version you'd like to start with.",
+      "WelcomeTo": "Welcome To"
+    },
+    "Yes": "Yes",
+    "itemTags": {
+      "effect": "Эффект",
+      "greatvault": "Великое Xранилище"
+    }
   }
 }
