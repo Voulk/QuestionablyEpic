@@ -12,8 +12,6 @@ export default function createNathriaXymoxEvents(bossID, difficulty, damageTaken
   /*                                          Phase Changes                                         */
   /* ---------------------------------------------------------------------------------------------- */
   events.push({ time: "00:00", bossAbility: "Phase 1" }); // Push Phase 1 Object into events
-  console.log(enemyCasts);
-  console.log(enemyCasts.filter((filter) => filter.ability.guid === rootOfExtinction)[0]);
   if (logGuids.includes(rootOfExtinction)) {
     const phase2 = enemyCasts.filter((filter) => filter.ability.guid === rootOfExtinction)[0];
     phase2 !== undefined ? events.push({ time: moment.utc(fightDuration(phase2.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 2" }) : ""; // if valid then push "Phase 2" event

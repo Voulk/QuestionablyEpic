@@ -5,6 +5,24 @@ import moment from "moment";
 import smartTransformData from "General/Modules/CooldownPlanner/Engine/SmartTransformData";
 
 export default function transformData(starttime, boss, enemyCasts, healerCasts, healerIDs, difficulty, damageTaken, debuffs, enemyHealth, buffData, transformType, nameObject, friendlyHealth) {
+  let idsToRemove = [];
+  // push healer ids to remove from the cast array
+  nameObject
+    .filter((filter) => Object.values(filter)[0] === "removeLineFromArray")
+    .map((key) =>
+      healerIDs
+        .filter((obj) => {
+          return obj.name === Object.keys(key)[0];
+        })
+        .map((obj) => idsToRemove.push(obj.id)),
+    );
+  // filter out healers to remove
+  if (idsToRemove !== []) {
+    healerCasts = healerCasts.filter((filter) => idsToRemove.includes(filter.sourceID) === false);
+  }
+  // filter out removed healers
+  nameObject = nameObject.filter((filter) => Object.values(filter)[0] !== "removeLineFromArray");
+
   // We'll convert a list of enemy casts that we're interested in to an array of timestamps.
   let enemyQuickTimeline = enemyCasts
     .filter(

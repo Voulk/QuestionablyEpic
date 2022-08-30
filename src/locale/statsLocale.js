@@ -82,8 +82,6 @@ export const statsLocale = [
 ];
 
 export const getTranslatedStats = (stat, currentLanguage) => {
-  console.log(stat);
-  console.log(currentLanguage);
   let stats = statsLocale
     .filter((obj) => {
       return obj.id.includes(stat);
