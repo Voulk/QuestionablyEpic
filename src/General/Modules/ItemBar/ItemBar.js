@@ -12,6 +12,7 @@ import { getItemDB, getValidArmorTypes, getValidWeaponTypesBySpec, getItemProp, 
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { dominationGemDB } from "../../../Databases/DominationGemDB";
+import { getTranslatedStats } from "locale/statsLocale";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -70,17 +71,17 @@ export default function ItemBar(props) {
     ).map((key) => newItemList.push({ value: key.id, label: key.names[currentLanguage] }));
 
     newItemList = newItemList.reduce((unique, o) => {
-      if(!unique.some(obj => obj.label === o.label)) {
+      if (!unique.some((obj) => obj.label === o.label)) {
         unique.push(o);
       }
       return unique;
-    },[]);
+    }, []);
 
     newItemList.sort((a, b) => (a.label > b.label ? 1 : -1));
-    
+
     return newItemList;
   };
- 
+
   const [itemDropdown, setItemDropdown] = useState(fillItems("", props.player.spec)); // Filled later based on item slot and armor type.
   /* ------------------------------ Define State ----------------------------- */
   const [itemLevel, setItemLevel] = useState("");
@@ -438,11 +439,11 @@ export default function ItemBar(props) {
             >
               <InputLabel id="itemtertiary">{t("QuickCompare.Tertiary")}</InputLabel>
               <Select key={"TertiarySelect"} labelId="itemtertiary" value={itemTertiary} onChange={itemTertiaryChanged} label={t("QuickCompare.Tertiary")}>
-                <MenuItem divider key={"LeechItem"} label={t("Leech")} value={"Leech"}>
-                  {t("Leech")}
+                <MenuItem divider key={"LeechItem"} label={getTranslatedStats("Leech", currentLanguage)} value={"Leech"}>
+                  {getTranslatedStats("Leech", currentLanguage)}
                 </MenuItem>
-                <MenuItem divider key={"AvoidanceItem"} label={t("Avoidance")} value={"Avoidance"}>
-                  {t("Avoidance")}
+                <MenuItem divider key={"AvoidanceItem"} label={getTranslatedStats("Avoidance", currentLanguage)} value={"Avoidance"}>
+                  {getTranslatedStats("Avoidance", currentLanguage)}
                 </MenuItem>
                 <MenuItem key={"NoneItem"} label={t("None")} value={"None"} onClick={""}>
                   {t("None")}

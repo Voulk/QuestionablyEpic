@@ -15,6 +15,7 @@ import Settings from "../Settings/Settings";
 import userSettings from "../Settings/SettingsObject";
 import ItemBar from "../ItemBar/ItemBar";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
+import { getTranslatedSlotName } from "locale/slotsLocale";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -56,23 +57,24 @@ function Alert(props) {
 // These are value : label pairs that automatically pull the translated version of the slot name.
 // TODO: Add the remaining slots.
 function getSlots() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   let slots = [
-    { value: "Head", activeItem: "Head", label: t("slotNames.head") },
-    { value: "Neck", activeItem: "Neck", label: t("slotNames.neck") },
-    { value: "Shoulder", activeItem: "Shoulder", label: t("slotNames.shoulder") },
-    { value: "Back", activeItem: "Back", label: t("slotNames.back") },
-    { value: "Chest", activeItem: "Chest", label: t("slotNames.chest") },
-    { value: "Wrist", activeItem: "Wrist", label: t("slotNames.wrists") },
-    { value: "Hands", activeItem: "Hands", label: t("slotNames.hands") },
-    { value: "Waist", activeItem: "Waist", label: t("slotNames.waist") },
-    { value: "Legs", activeItem: "Legs", label: t("slotNames.legs") },
-    { value: "Feet", activeItem: "Feet", label: t("slotNames.feet") },
-    { value: "Finger", activeItem: "Finger", label: t("slotNames.finger") },
-    { value: "Trinket", activeItem: "Trinket", label: t("slotNames.trinket") },
-    { value: "Weapons", activeItem: "1H Weapon", label: t("slotNames.weapons") },
-    { value: "Offhands", activeItem: "Offhands", label: t("slotNames.offhands") },
-    { value: "Relics & Wands", activeItem: "Relics & Wands", label: t("slotNames.relics") },
+    { value: "Head", activeItem: "Head", label: getTranslatedSlotName("head", currentLanguage) },
+    { value: "Neck", activeItem: "Neck", label: getTranslatedSlotName("neck", currentLanguage) },
+    { value: "Shoulder", activeItem: "Shoulder", label: getTranslatedSlotName("shoulder", currentLanguage) },
+    { value: "Back", activeItem: "Back", label: getTranslatedSlotName("back", currentLanguage) },
+    { value: "Chest", activeItem: "Chest", label: getTranslatedSlotName("chest", currentLanguage) },
+    { value: "Wrist", activeItem: "Wrist", label: getTranslatedSlotName("wrists", currentLanguage) },
+    { value: "Hands", activeItem: "Hands", label: getTranslatedSlotName("hands", currentLanguage) },
+    { value: "Waist", activeItem: "Waist", label: getTranslatedSlotName("waist", currentLanguage) },
+    { value: "Legs", activeItem: "Legs", label: getTranslatedSlotName("legs", currentLanguage) },
+    { value: "Feet", activeItem: "Feet", label: getTranslatedSlotName("feet", currentLanguage) },
+    { value: "Finger", activeItem: "Finger", label: getTranslatedSlotName("finger", currentLanguage) },
+    { value: "Trinket", activeItem: "Trinket", label: getTranslatedSlotName("trinket", currentLanguage) },
+    { value: "Weapons", activeItem: "1H Weapon", label: getTranslatedSlotName("weapons", currentLanguage) },
+    { value: "Offhands", activeItem: "Offhands", label: getTranslatedSlotName("offhands", currentLanguage) },
+    { value: "Relics & Wands", activeItem: "Relics & Wands", label: getTranslatedSlotName("relics", currentLanguage) },
   ];
 
   return slots;
@@ -86,7 +88,7 @@ export default function QuickCompare(props) {
   }, props.player.scoreActiveItems(contentType));
 
   const { t, i18n } = useTranslation();
-  // const currentLanguage = i18n.language;
+  const currentLanguage = i18n.language;
   const classes = useStyles();
   /* ----------------------------- Snackbar State ----------------------------- */
   const [openDelete, setOpenDelete] = useState(false);
@@ -215,7 +217,7 @@ export default function QuickCompare(props) {
         {wepCombos.length > 0 ? (
           <Grid item xs={12}>
             <Typography color="primary" variant="h5">
-              {t("slotNames.weaponCombos")}
+              {getTranslatedSlotName("weaponCombos", currentLanguage)}
             </Typography>
             <Divider style={{ marginBottom: 10 }} />
             <Grid container spacing={1}>
