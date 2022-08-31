@@ -11,7 +11,7 @@ import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEff
 import { allRamps, allRampsHealing } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { buildBestDomSet } from "../Utilities/DominationGemUtilities";
-import { getItemSet } from "BurningCrusade/Databases/ItemSetsDBRetail.js";
+import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
 import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 
 /**

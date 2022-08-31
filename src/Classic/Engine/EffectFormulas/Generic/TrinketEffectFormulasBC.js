@@ -1,7 +1,7 @@
 
 
 // TODO: Write proper comments. See Lingering Sunmote for an example.
-export function getTrinketEffectBC(effectName, player, contentType, itemLevel, userSettings = {}) {
+export function getTrinketEffectClassic(effectName, player, contentType, itemLevel, userSettings = {}) {
   let bonus_stats = {};
 
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */
@@ -124,7 +124,7 @@ else if (
     const effect = {
       reduction: 22,
       duration: 15,
-      casts: {"Holy Priest BC": 15/1.7, "Restoration Shaman BC": 15/2.6, "Restoration Druid BC": 15/1.7, "Holy Paladin BC": 15/1.7},
+      casts: {"Holy Priest Classic": 15/1.7, "Restoration Shaman Classic": 15/2.6, "Restoration Druid Classic": 15/1.7, "Holy Paladin Classic": 15/1.7},
       cooldown: 60,
     }
     bonus_stats.mp5 = (effect.reduction * effect.casts[player.getSpec()] / effect.cooldown * 5);

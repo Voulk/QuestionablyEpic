@@ -1,10 +1,11 @@
 import Player from './Player';
 import CastModel from "./CastModel";
 
-class BCPlayer extends Player {
+class ClassicPlayer extends Player {
     constructor(playerName, specName, charID, region, realm, race, statWeights = "default") {
-        super(playerName, specName, charID, region, realm, race, statWeights, "BurningCrusade")
-        this.gameType = "BurningCrusade"
+        super(playerName, specName, charID, region, realm, race, statWeights, "Classic")
+        this.gameType = "Classic"
+        
         this.setupDefaults(specName);
 
         if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
@@ -28,11 +29,11 @@ class BCPlayer extends Player {
     setupDefaults = (spec) => {
         this.castModel = {
             Raid: new CastModel(spec, "Raid"),
-            Dungeon: new CastModel(spec, "Dungeon"), // Unused in BC.
+            Dungeon: new CastModel(spec, "Dungeon"), // Unused in Classic.
         };
         this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
         // These are starter weights, and can and will change during the engine calculation process.
-        if (spec === "Restoration Druid BC") {
+        if (spec === "Restoration Druid Classic") {
             this.statWeights = {
                 Raid: {
                     intellect: 0.83,
@@ -51,7 +52,7 @@ class BCPlayer extends Player {
                 DefaultWeights: true,
               };
         }
-        else if (spec === "Holy Paladin BC") {
+        else if (spec === "Holy Paladin Classic") {
             this.statWeights = {
                 Raid: {
                     intellect: 0.36,
@@ -70,7 +71,7 @@ class BCPlayer extends Player {
                 DefaultWeights: true,
               };
         }
-        else if (spec === "Restoration Shaman BC") {
+        else if (spec === "Restoration Shaman Classic") {
             this.statWeights = {
                 Raid: {
                     intellect: 0.46,
@@ -89,7 +90,7 @@ class BCPlayer extends Player {
                 DefaultWeights: true,
               };
         }
-        else if (spec === "Holy Priest BC") {
+        else if (spec === "Holy Priest Classic") {
             this.statWeights = {
                 Raid: {
                     intellect: 0.55,
@@ -131,4 +132,4 @@ class BCPlayer extends Player {
 
 }
 
-export default BCPlayer;
+export default ClassicPlayer;

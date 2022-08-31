@@ -1,8 +1,8 @@
-import { BCItemDB} from "../../../Databases/BCItemDB";
+import { ClassicItemDB} from "../../../Databases/ClassicItemDB";
 import { calcStatsAtLevel, getItemProp, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
-import BCItem from "../../../General/Modules/Player/BCItem";
+import ClassicItem from "../../../General/Modules/Player/ClassicItem";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
-import { suffixDB } from "BurningCrusade/Databases/SuffixDB";
+import { suffixDB } from "Classic/Databases/SuffixDB";
 
 
 export function runBCSimC(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput) {
@@ -57,11 +57,11 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
     let line = simCHeader[i];
 
     if (line !== "" && playerClass.toLowerCase().includes(line.split("=")[0].toLowerCase())) checks.class = true;
-    else if (line.split("=")[0] === "level" && line.split("=")[1] >= "50") checks.level = true;
+    else if (line.split("=")[0] === "level" && line.split("=")[1] >= "60") checks.level = true;
   }
 
   if (!checks.class) errorMessage += "You're currently a " + playerClass + " but this SimC string is for a different spec.";
-  if (!checks.level) errorMessage += "QE Live BC is best used on level 50+ characters.";
+  if (!checks.level) errorMessage += "QE Live WotLK is best used on level 60+ characters.";
   if (!checks.length) errorMessage += "Your SimC string is a bit long. Make sure you haven't pasted it in twice!";
 
   setErrorMessage(errorMessage);
@@ -111,8 +111,8 @@ function processItem(line, player, contentType, type) {
   }
 
   // Grab the items base level from our item database.
-  itemLevel = getItemProp(itemID, "itemLevel", "BurningCrusade");
-  itemSlot = getItemProp(itemID, "slot", "BurningCrusade");
+  itemLevel = getItemProp(itemID, "itemLevel", "Classic");
+  itemSlot = getItemProp(itemID, "slot", "Classic");
 
   // Process Item Suffix
   
@@ -138,14 +138,14 @@ function processItem(line, player, contentType, type) {
   // Add the new item to our characters item collection.
   if (itemID !== 0 && itemSlot !== "") {
 
-    let item = new BCItem(itemID, "", itemSlot, bonusIDS);
+    let item = new ClassicItem(itemID, "", itemSlot, bonusIDS);
     item.active = itemEquipped;
     item.isEquipped = itemEquipped;
     item.stats = compileStats(item.stats, itemBonusStats);
     
     item.suffix = suffix;
     //item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");
-    item.softScore = scoreItem(item, player, contentType, "BurningCrusade");
+    item.softScore = scoreItem(item, player, contentType, "Classic");
 
     player.addActiveItem(item);
   } else {

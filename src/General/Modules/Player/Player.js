@@ -17,7 +17,7 @@ import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/Connec
 
 class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
-    this.spec = specName;
+    this.spec = specName.replace("BC", "Classic");
     this.charName = playerName;
     this.charID = charID;
 
@@ -116,6 +116,7 @@ class Player {
   };
 
   getStatWeight = (contentType, stat) => {
+    console.log(this);
     const lcStat = stat.toLowerCase();
     const weights = this.getActiveModel(contentType).getBaseStatWeights();
     if (!weights) {
@@ -743,7 +744,7 @@ class Player {
       this.statWeights.Raid = monkDefaultStatWeights("Raid");
       this.statWeights.Dungeon = monkDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true; */
-    } else if (spec.includes("BC")) {
+    } else if (spec.includes("Classic")) {
     } else {
       // Invalid spec replied. Error.
       reportError(this, "Player", "Invalid Spec Supplied during setupDefaults", spec);

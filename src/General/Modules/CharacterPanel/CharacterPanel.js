@@ -35,7 +35,7 @@ const checkCharacterValid = (player, gameType) => {
   const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
   if (gameType === "Retail") {
     return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
-  } else if (gameType === "BurningCrusade") {
+  } else if (gameType === "Classic") {
     return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 16) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 17);
   }
 };
@@ -59,10 +59,10 @@ const specImages = {
   "Holy Priest": require("Images/HPriestSmall.jpg"),
   "Mistweaver Monk": require("Images/MistweaverSmall.jpg"),
 
-  "Holy Paladin BC": require("Images/classicon_paladin.jpg"),
-  "Restoration Druid BC": require("Images/classicon_druid.jpg"),
-  "Restoration Shaman BC": require("Images/classicon_shaman.jpg"),
-  "Holy Priest BC": require("Images/classicon_priest.jpg"),
+  "Holy Paladin Classic": require("Images/classicon_paladin.jpg"),
+  "Restoration Druid Classic": require("Images/classicon_druid.jpg"),
+  "Restoration Shaman Classic": require("Images/classicon_shaman.jpg"),
+  "Holy Priest Classic": require("Images/classicon_priest.jpg"),
 };
 
 export default function CharacterPanel(props) {
@@ -79,7 +79,7 @@ export default function CharacterPanel(props) {
   const currentLanguage = i18n.language;
   const simcStatus = getSimCStatus(props.player, gameType);
   // const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
-  const wowheadDom = (gameType === "BurningCrusade" ? "wotlk-" : "") + currentLang;
+  const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLang;
   const currentCharacter = props.allChars.allChar[props.allChars.activeChar];
   const covenant = currentCharacter.covenant;
 

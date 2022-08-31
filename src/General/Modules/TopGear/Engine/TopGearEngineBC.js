@@ -7,11 +7,11 @@ import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 
 import { gemGear, getGemStatLoadout } from "../Utilities/GemUtilities";
 import { convertPPMToUptime } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
-import BCPlayer from "../../Player/BCPlayer";
+import ClassicPlayer from "../../Player/ClassicPlayer";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine"
 import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction } from "./TopGearEngineShared"
-import { getItemSet } from "BurningCrusade/Databases/ItemSetsDB"
+import { getItemSet } from "Classic/Databases/ItemSetsDB"
 import { createBuilderStatusReporter } from "typescript";
 
 
@@ -24,11 +24,11 @@ const DR_CONST = 0.00196669230769231;
 const DR_CONSTLEECH = 0.04322569230769231;
 
 const classRaceStats = {
-  "Restoration Druid BC": {
+  "Restoration Druid Classic": {
     "Night Elf": {intellect: 120, spirit: 133},
     "Tauren": {intellect: 115, spirit: 135},
   },
-  "Holy Priest BC": {
+  "Holy Priest Classic": {
     "Human": {intellect: 145, spirit: 151},
     "Night Elf": {intellect: 145, spirit: 151},
     "Dwarf": {intellect: 144, spirit: 150},
@@ -37,13 +37,13 @@ const classRaceStats = {
     "Troll": {intellect: 141, spirit: 152},
     "Blood Elf": {intellect: 149, spirit: 150},
   },
-  "Holy Paladin BC": {
+  "Holy Paladin Classic": {
     "Human": {intellect: 83, spirit: 89},
     "Dwarf": {intellect: 82, spirit: 88},
     "Draenei": {intellect: 84, spirit: 91},
     "Blood Elf": {intellect: 87, spirit: 88},
   },
-  "Restoration Shaman BC": {
+  "Restoration Shaman Classic": {
     "Draenei": {intellect: 109, spirit: 122},
     "Orc": {intellect: 105, spirit: 123},
     "Troll": {intellect: 104, spirit: 121},
@@ -63,7 +63,7 @@ export function expensive(time) {
 // Unfortunately we aren't able to pass objects through to our worker. This recreates our player object since we'll need it for effect formulas. 
 function setupPlayer(player, contentType, castModel) {
 
-  let newPlayer = new BCPlayer(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights);
+  let newPlayer = new ClassicPlayer(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights);
   //newPlayer = Object.assign(newPlayer, player);
 
   //newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
@@ -72,7 +72,7 @@ function setupPlayer(player, contentType, castModel) {
 }
 
 export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
-    //console.log("TOP GEAR BC");
+    //console.log("TOP GEAR Classic");
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     //console.log("CL::::" + currentLanguage);
     var t0 = performance.now();
@@ -125,7 +125,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 // THIS IS BURNING CRUSADE CODE AND IS NOT COMPATIBLE WITH RETAIL.
 function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     // Get Base Stats
-    let builtSet = itemSet.compileStats("BurningCrusade");
+    let builtSet = itemSet.compileStats("Classic");
     let setStats = builtSet.setStats;
     let hardScore = 0;
     const setBonuses = builtSet.sets;
@@ -268,19 +268,19 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     }
 
     // This can be properly formalized.
-    if (player.getSpec() === "Holy Paladin BC") {
+    if (player.getSpec() === "Holy Paladin Classic") {
       talent_stats.intellect = setStats.intellect * 0.1;
       talent_stats.spelldamage = (setStats.intellect + talent_stats.intellect) * 0.35;
     }
-    else if (player.getSpec() === "Restoration Shaman BC") {
+    else if (player.getSpec() === "Restoration Shaman Classic") {
       talent_stats.bonushealing = (setStats.intellect) * 0.3;
       talent_stats.spelldamage = (setStats.intellect) * 0.3;
     }
-    else if (player.getSpec() === "Restoration Druid BC") {
+    else if (player.getSpec() === "Restoration Druid Classic") {
       // Also gets 30% of spirit MP5 as MP5
       talent_stats.spirit = (setStats.spirit) * 0.15;
     }
-    else if (player.getSpec() === "Holy Priest BC") {
+    else if (player.getSpec() === "Holy Priest Classic") {
       // Also gets 30% of spirit MP5 as MP5
       talent_stats.spirit += (setStats.spirit + talent_stats.spirit) * 0.05;
       //talent_stats.bonushealing = (setStats.spirit + talent_stats.spirit) * 0.25;
@@ -294,7 +294,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     effectStats.push(bonus_stats);
     for (var x = 0; x < effectList.length; x++) {
       //console.log(effectList[x]);
-      effectStats.push(getEffectValue(effectList[x], player, "", contentType, effectList[x].level, userSettings, "BurningCrusade", setStats));
+      effectStats.push(getEffectValue(effectList[x], player, "", contentType, effectList[x].level, userSettings, "Classic", setStats));
   
     }
     bonus_stats = mergeBonusStats(effectStats);
@@ -479,7 +479,7 @@ function createSets(itemList, rawWepCombos) {
                                           splitItems['Relics & Wands'][relics],
                                         ];
                                         let sumSoft = sumScore(softScore);
-                                        itemSets.push(new ItemSet(setCount, includedItems, sumSoft, "BurningCrusade"));
+                                        itemSets.push(new ItemSet(setCount, includedItems, sumSoft, "Classic"));
                                         setCount++;
                                     }
                                   }

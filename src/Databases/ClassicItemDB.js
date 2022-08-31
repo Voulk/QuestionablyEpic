@@ -1,4 +1,4 @@
-export const BCItemDB = [
+export const ClassicItemDB = [
     {
         "id": 21875,
         "name": "Primal Mooncloth Robe",

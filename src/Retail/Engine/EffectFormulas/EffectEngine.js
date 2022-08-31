@@ -7,8 +7,8 @@ import { getShamanSpecEffect } from "./Shaman/ShamanSpecEffects";
 import { getPaladinSpecEffect } from "./Paladin/PaladinSpecEffects";
 import { getGenericLegendary } from "./Generic/GenericLegendaryFormulas";
 import { getTrinketEffect} from "./Generic/TrinketEffectFormulas";
-import { getTrinketEffectBC} from "BurningCrusade/Engine/EffectFormulas/Generic/TrinketEffectFormulasBC"
-import { getGenericEffectBC} from "BurningCrusade/Engine/EffectFormulas/Generic/GenericEffectBC"
+import { getTrinketEffectClassic} from "Classic/Engine/EffectFormulas/Generic/TrinketEffectFormulasBC"
+import { getGenericEffectBC} from "Classic/Engine/EffectFormulas/Generic/GenericEffectBC"
 
 import { getPriestConduit } from "./Priest/PriestConduitFormulas";
 import { getPaladinConduit } from "./Paladin/PaladinConduitFormulas";
@@ -19,16 +19,16 @@ import { getPaladinCovAbility } from "./Paladin/PaladinMiscFormulas";
 import SPEC from "../../../General/Engine/SPECS";
 import { getShamanCovAbility } from "./Shaman/ShamanCovenantFormulas";
 
-import { getDruidTierSet } from "BurningCrusade/Engine/EffectFormulas/Druid/DruidTierSets";
-import { getShamanTierSet } from "BurningCrusade/Engine/EffectFormulas/Shaman/ShamanTierSets";
-import { getPaladinTierSet } from "BurningCrusade/Engine/EffectFormulas/Paladin/PaladinTierSets";
-import { getPriestTierSet } from "BurningCrusade/Engine/EffectFormulas/Priest/PriestTierSets";
+import { getDruidTierSet } from "Classic/Engine/EffectFormulas/Druid/DruidTierSets";
+import { getShamanTierSet } from "Classic/Engine/EffectFormulas/Shaman/ShamanTierSets";
+import { getPaladinTierSet } from "Classic/Engine/EffectFormulas/Paladin/PaladinTierSets";
+import { getPriestTierSet } from "Classic/Engine/EffectFormulas/Priest/PriestTierSets";
 
-import { getDruidRelic } from "BurningCrusade/Engine/EffectFormulas/Druid/DruidRelics";
-import { getShamanRelic } from "BurningCrusade/Engine/EffectFormulas/Shaman/ShamanRelics";
-import { getPaladinRelic } from "BurningCrusade/Engine/EffectFormulas/Paladin/PaladinRelics";
+import { getDruidRelic } from "Classic/Engine/EffectFormulas/Druid/DruidRelics";
+import { getShamanRelic } from "Classic/Engine/EffectFormulas/Shaman/ShamanRelics";
+import { getPaladinRelic } from "Classic/Engine/EffectFormulas/Paladin/PaladinRelics";
 
-import { getGenericSet } from "BurningCrusade/Engine/EffectFormulas/Generic/GenericSets";
+import { getGenericSet } from "Classic/Engine/EffectFormulas/Generic/GenericSets";
 
 // Effect is a small "dictionary" with two key : value pairs.
 // The EffectEngine is basically a routing device. It will take your effect and effect type and grab the right formula from the right place.
@@ -99,19 +99,19 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
 
   // ----- Burning Crusade Effect Formulas -----
   // Includes "Tier Set" bonuses, trinkets, and special effects on items that aren't just pure stats. 
-  else if (gameType === "BurningCrusade") {
+  else if (gameType === "Classic") {
     if (effectType === "set bonus" && ('class' in effect && effect.class !== -1)) {
       switch (player.spec) {
-        case "Holy Priest BC":
+        case "Holy Priest Classic":
           bonus_stats = getPriestTierSet(effectName, player);
           break;
-        case "Restoration Druid BC":
+        case "Restoration Druid Classic":
           bonus_stats = getDruidTierSet(effectName, player);
           break;
-        case "Holy Paladin BC":
+        case "Holy Paladin Classic":
           bonus_stats = getPaladinTierSet(effectName, player);
           break;
-        case "Restoration Shaman BC":
+        case "Restoration Shaman Classic":
           bonus_stats = getShamanTierSet(effectName, player);
           break;
         default:
@@ -124,17 +124,17 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
       bonus_stats = getGenericSet(effectName, player, setStats);
     }
     else if (effectType === "trinket") {
-      bonus_stats = getTrinketEffectBC(effectName, player, userSettings);
+      bonus_stats = getTrinketEffectClassic(effectName, player, userSettings);
     }
     else if (effectType === "relic") {
       switch (player.spec) {
-        case "Restoration Shaman BC":
+        case "Restoration Shaman Classic":
           bonus_stats = getShamanRelic(effectName, player, userSettings);
           break;
-        case "Restoration Druid BC":
+        case "Restoration Druid Classic":
           bonus_stats = getDruidRelic(effectName, player, userSettings);
           break;
-        case "Holy Paladin BC":
+        case "Holy Paladin Classic":
           bonus_stats = getPaladinRelic(effectName, player, userSettings);
           break;
       }

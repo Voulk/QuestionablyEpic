@@ -9,7 +9,7 @@ export default function MessageOfTheDay(props) {
       "QE Live is now updated for Season 4!",
       "The Stun Grenade & Meathook changes are now live.",
   ],
-  "BurningCrusade": [""]
+  "Classic": [""]
   }
 ;
 

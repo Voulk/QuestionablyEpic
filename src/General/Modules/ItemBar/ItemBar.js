@@ -7,7 +7,7 @@ import { Autocomplete } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
-import BCItem from "../Player/BCItem";
+import ClassicItem from "../Player/ClassicItem";
 import { getItemDB, getValidArmorTypes, getValidWeaponTypesBySpec, getItemProp, scoreItem, getItemAllocations, calcStatsAtLevel, getLegendaryID } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
@@ -67,7 +67,7 @@ export default function ItemBar(props) {
           key.slot === "Offhand" ||
           key.slot === "Shield" ||
           (key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
-          (key.itemClass === 2 && spec === "Holy Priest BC")), // Wands
+          (key.itemClass === 2 && spec === "Holy Priest Classic")), // Wands
     ).map((key) => newItemList.push({ value: key.id, label: key.names[currentLanguage] }));
 
     newItemList = newItemList.reduce((unique, o) => {
@@ -148,7 +148,7 @@ export default function ItemBar(props) {
       }
     } else {
       // Burning Crusade
-      item = new BCItem(itemID, itemName, getItemProp(itemID, "slot", gameType), "");
+      item = new ClassicItem(itemID, itemName, getItemProp(itemID, "slot", gameType), "");
     }
 
     item.softScore = scoreItem(item, player, contentType, gameType);
@@ -172,7 +172,7 @@ export default function ItemBar(props) {
     } else {
       setItemID(val.value);
       setItemName(val.name);
-      if (gameType === "BurningCrusade") setItemLevel(getItemProp(val.value, "itemLevel", gameType));
+      if (gameType === "Classic") setItemLevel(getItemProp(val.value, "itemLevel", gameType));
     }
   };
 

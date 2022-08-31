@@ -118,131 +118,131 @@ export default function UpgradeFinderBossImages(props, gameType, other) {
       /*                                            Karazhan                                            */
       /* ---------------------------------------------------------------------------------------------- */
       case 1552: // Servant Quarters
-        return require("Images/BurningCrusade/Raid/Karazhan/ServantQuarters.png").default;
+        return require("Images/Classic/Raid/Karazhan/ServantQuarters.png").default;
       case 652: // Attumen The Huntsman
-        return require("Images/BurningCrusade/Raid/Karazhan/AttumenTheHuntsman.png").default;
+        return require("Images/Classic/Raid/Karazhan/AttumenTheHuntsman.png").default;
       case 653: // Moroes
-        return require("Images/BurningCrusade/Raid/Karazhan/Moroes.png").default;
+        return require("Images/Classic/Raid/Karazhan/Moroes.png").default;
       case 654: // Maiden of Virtue
-        return require("Images/BurningCrusade/Raid/Karazhan/Maiden.png").default;
+        return require("Images/Classic/Raid/Karazhan/Maiden.png").default;
       case 655: // Opera Event
-        return require("Images/BurningCrusade/Raid/Karazhan/Opera.png").default;
+        return require("Images/Classic/Raid/Karazhan/Opera.png").default;
       case 656: // Curator
-        return require("Images/BurningCrusade/Raid/Karazhan/Curator.png").default;
+        return require("Images/Classic/Raid/Karazhan/Curator.png").default;
       case 659: // Netherspite
-        return require("Images/BurningCrusade/Raid/Karazhan/Netherspite.png").default;
+        return require("Images/Classic/Raid/Karazhan/Netherspite.png").default;
       case 661: // Prince Malchezaar
-        return require("Images/BurningCrusade/Raid/Karazhan/PrinceMalchezaar.png").default;
+        return require("Images/Classic/Raid/Karazhan/PrinceMalchezaar.png").default;
       case 660: // Chess Event
-        return require("Images/BurningCrusade/Raid/Karazhan/ChessEvent.png").default;
+        return require("Images/Classic/Raid/Karazhan/ChessEvent.png").default;
       case 658: // Illhoof
-        return require("Images/BurningCrusade/Raid/Karazhan/Illhoof.png").default;
+        return require("Images/Classic/Raid/Karazhan/Illhoof.png").default;
       case 657: // Shade of Aran
-        return require("Images/BurningCrusade/Raid/Karazhan/ShadeofAran.png").default;
+        return require("Images/Classic/Raid/Karazhan/ShadeofAran.png").default;
       case 662: // Nightbane
-        return require("Images/BurningCrusade/Raid/Karazhan/Nightbane.png").default;
+        return require("Images/Classic/Raid/Karazhan/Nightbane.png").default;
       /* ---------------------------------------------------------------------------------------------- */
       /*                                          Gruul's Lair                                          */
       /* ---------------------------------------------------------------------------------------------- */
       case 649: // High King Maulgar
-        return require("Images/BurningCrusade/Raid/GruulsLair/HighKingMaulgar.png").default;
+        return require("Images/Classic/Raid/GruulsLair/HighKingMaulgar.png").default;
       case 650: // Gruul
-        return require("Images/BurningCrusade/Raid/GruulsLair/Gruul.png").default;
+        return require("Images/Classic/Raid/GruulsLair/Gruul.png").default;
       /* ---------------------------------------------------------------------------------------------- */
       /*                                       Magtheridon's Lair                                       */
       /* ---------------------------------------------------------------------------------------------- */
       case 651: // Magtheridon
-        return require("Images/BurningCrusade/Raid/MagtheridonsLair/MagtheridonsLair.png").default;
+        return require("Images/Classic/Raid/MagtheridonsLair/MagtheridonsLair.png").default;
       /* ---------------------------------------------------------------------------------------------- */
       /*                                          Tempest Keep                                          */
       /* ---------------------------------------------------------------------------------------------- */
       case 730: // Al'ar
-        return require("Images/BurningCrusade/Raid/TempestKeep/Alar.png").default;
+        return require("Images/Classic/Raid/TempestKeep/Alar.png").default;
       case 731: // Void Reaver
-        return require("Images/BurningCrusade/Raid/TempestKeep/VoidReaver.png").default;
+        return require("Images/Classic/Raid/TempestKeep/VoidReaver.png").default;
       case 732: // High Astromancer Solarian
-        return require("Images/BurningCrusade/Raid/TempestKeep/HighAstromancerSolarian.png").default;
+        return require("Images/Classic/Raid/TempestKeep/HighAstromancerSolarian.png").default;
       case 733: // High Astromancer Solarian
-        return require("Images/BurningCrusade/Raid/TempestKeep/KaelthasSunstrider.png").default;
+        return require("Images/Classic/Raid/TempestKeep/KaelthasSunstrider.png").default;
       /* ---------------------------------------------------------------------------------------------- */
       /*                                      Serpentshrine Cavern                                      */
       /* ---------------------------------------------------------------------------------------------- */
       case 623: // Hydross the Unstable
-        return require("Images/BurningCrusade/Raid/SerpentshrineCavern/HydrosstheUnstable.png").default;
+        return require("Images/Classic/Raid/SerpentshrineCavern/HydrosstheUnstable.png").default;
       case 624: // The Lurker Below
-        return require("Images/BurningCrusade/Raid/SerpentshrineCavern/TheLurkerBelow.png").default;
+        return require("Images/Classic/Raid/SerpentshrineCavern/TheLurkerBelow.png").default;
       case 625: // Leotheras the Blind
-        return require("Images/BurningCrusade/Raid/SerpentshrineCavern/LeotherastheBlind.png").default;
+        return require("Images/Classic/Raid/SerpentshrineCavern/LeotherastheBlind.png").default;
       case 626: // Fathom Lord Karathress
-        return require("Images/BurningCrusade/Raid/SerpentshrineCavern/FathomLordKarathress.png").default;
+        return require("Images/Classic/Raid/SerpentshrineCavern/FathomLordKarathress.png").default;
       case 627: // Morogrim Tidewalker
-        return require("Images/BurningCrusade/Raid/SerpentshrineCavern/MorogrimTidewalker.png").default;
+        return require("Images/Classic/Raid/SerpentshrineCavern/MorogrimTidewalker.png").default;
       case 628: // Lady Vashj
-        return require("Images/BurningCrusade/Raid/SerpentshrineCavern/LadyVashj.png").default;
+        return require("Images/Classic/Raid/SerpentshrineCavern/LadyVashj.png").default;
       /* ---------------------------------------------------------------------------------------------- */
       /*                                     Battle for Mount Hyjal                                     */
       /* ---------------------------------------------------------------------------------------------- */
       case 618: // Rage Winterchill
-        return require("Images/BurningCrusade/Raid/TheBattleforMountHyjal/RageWinterchill.png").default;
+        return require("Images/Classic/Raid/TheBattleforMountHyjal/RageWinterchill.png").default;
       case 619: // Anetheron
-        return require("Images/BurningCrusade/Raid/TheBattleforMountHyjal/Anetheron.png").default;
+        return require("Images/Classic/Raid/TheBattleforMountHyjal/Anetheron.png").default;
       case 620: // Kaz'rogal
-        return require("Images/BurningCrusade/Raid/TheBattleforMountHyjal/Kazrogal.png").default;
+        return require("Images/Classic/Raid/TheBattleforMountHyjal/Kazrogal.png").default;
       case 621: // Azgalor
-        return require("Images/BurningCrusade/Raid/TheBattleforMountHyjal/Azgalor.png").default;
+        return require("Images/Classic/Raid/TheBattleforMountHyjal/Azgalor.png").default;
       case 622: // Archimonde
-        return require("Images/BurningCrusade/Raid/TheBattleforMountHyjal/Archimonde.png").default;
+        return require("Images/Classic/Raid/TheBattleforMountHyjal/Archimonde.png").default;
       /* ---------------------------------------------------------------------------------------------- */
       /*                                          Black Temple                                          */
       /* ---------------------------------------------------------------------------------------------- */
       case 601: // High Warlord Naj'entus
-        return require("Images/BurningCrusade/Raid/BlackTemple/HighWarlordNajentus.png").default;
+        return require("Images/Classic/Raid/BlackTemple/HighWarlordNajentus.png").default;
       case 602: // Supremus
-        return require("Images/BurningCrusade/Raid/BlackTemple/Supremus.png").default;
+        return require("Images/Classic/Raid/BlackTemple/Supremus.png").default;
       case 603: // Shade of Akama
-        return require("Images/BurningCrusade/Raid/BlackTemple/ShadeofAkama.png").default;
+        return require("Images/Classic/Raid/BlackTemple/ShadeofAkama.png").default;
       case 604: // Teron Gorefiend
-        return require("Images/BurningCrusade/Raid/BlackTemple/TeronGorefiend.png").default;
+        return require("Images/Classic/Raid/BlackTemple/TeronGorefiend.png").default;
       case 605: // Gurtogg Bloodboil
-        return require("Images/BurningCrusade/Raid/BlackTemple/GurtoggBloodboil.png").default;
+        return require("Images/Classic/Raid/BlackTemple/GurtoggBloodboil.png").default;
       case 606: // Reliquary of Souls
-        return require("Images/BurningCrusade/Raid/BlackTemple/ReliquaryoftheLost.png").default;
+        return require("Images/Classic/Raid/BlackTemple/ReliquaryoftheLost.png").default;
       case 607: // Mother Shahraz
-        return require("Images/BurningCrusade/Raid/BlackTemple/MotherShahraz.png").default;
+        return require("Images/Classic/Raid/BlackTemple/MotherShahraz.png").default;
       case 608: // The Illidari Council
-        return require("Images/BurningCrusade/Raid/BlackTemple/IllidariCouncil.png").default;
+        return require("Images/Classic/Raid/BlackTemple/IllidariCouncil.png").default;
       case 609: // Illidan Stormrage
-        return require("Images/BurningCrusade/Raid/BlackTemple/IllidanStormrage.png").default;
+        return require("Images/Classic/Raid/BlackTemple/IllidanStormrage.png").default;
       /* ---------------------------------------------------------------------------------------------- */
       /*                                            Zul'Aman                                            */
       /* ---------------------------------------------------------------------------------------------- */
       case 1189: // Akil'zon
-        return require("Images/BurningCrusade/Raid/Zulaman/Akilzon.png").default;
+        return require("Images/Classic/Raid/Zulaman/Akilzon.png").default;
       case 1190: // Nalorakk
-        return require("Images/BurningCrusade/Raid/Zulaman/Nalorakk.png").default;
+        return require("Images/Classic/Raid/Zulaman/Nalorakk.png").default;
       case 1191: // Jan'alai
-        return require("Images/BurningCrusade/Raid/Zulaman/Janalai.png").default;
+        return require("Images/Classic/Raid/Zulaman/Janalai.png").default;
       case 1192: // Halazzi
-        return require("Images/BurningCrusade/Raid/Zulaman/Halazzi.png").default;
+        return require("Images/Classic/Raid/Zulaman/Halazzi.png").default;
       case 1193: // Hex Lord Malacrass
-        return require("Images/BurningCrusade/Raid/Zulaman/HexLordMalacrass.png").default;
+        return require("Images/Classic/Raid/Zulaman/HexLordMalacrass.png").default;
       case 1194: // Zul'jin
-        return require("Images/BurningCrusade/Raid/Zulaman/Zuljin.png").default;
+        return require("Images/Classic/Raid/Zulaman/Zuljin.png").default;
       /* ---------------------------------------------------------------------------------------------- */
       /*                                         Sunwell Plateau                                        */
       /* ---------------------------------------------------------------------------------------------- */
       case 724: // Kalecgos
-        return require("Images/BurningCrusade/Raid/SunwellPlateau/Kalecgos.png").default;
+        return require("Images/Classic/Raid/SunwellPlateau/Kalecgos.png").default;
       case 725: // Brutallus
-        return require("Images/BurningCrusade/Raid/SunwellPlateau/Brutallus.png").default;
+        return require("Images/Classic/Raid/SunwellPlateau/Brutallus.png").default;
       case 726: // Felmyst
-        return require("Images/BurningCrusade/Raid/SunwellPlateau/Felmyst.png").default;
+        return require("Images/Classic/Raid/SunwellPlateau/Felmyst.png").default;
       case 727: // The Eredar Twins
-        return require("Images/BurningCrusade/Raid/SunwellPlateau/EredarTwins.png").default;
+        return require("Images/Classic/Raid/SunwellPlateau/EredarTwins.png").default;
       case 728: // M'uru
-        return require("Images/BurningCrusade/Raid/SunwellPlateau/Muru.png").default;
+        return require("Images/Classic/Raid/SunwellPlateau/Muru.png").default;
       case 729: // Kil'jaeden
-        return require("Images/BurningCrusade/Raid/SunwellPlateau/KilJaeden.png").default;
+        return require("Images/Classic/Raid/SunwellPlateau/KilJaeden.png").default;
       default:
         // Error Checking
         return "Error: Boss Missing :(";

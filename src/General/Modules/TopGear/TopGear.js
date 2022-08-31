@@ -220,7 +220,7 @@ export default function TopGear(props) {
           })
           .catch((err) => {
             // If top gear crashes for any reason, log the error and then terminate the worker.
-            reportError("", "BC Top Gear Crash", err, strippedPlayer.spec);
+            reportError("", "Classic Top Gear Crash", err, strippedPlayer.spec);
             setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
             instance.terminate();
             setBtnActive(true);
@@ -275,7 +275,7 @@ export default function TopGear(props) {
     { label: getTranslatedSlotName("weapons", currentLanguage), slotName: "AllMainhands" },
     { label: getTranslatedSlotName("offhands", currentLanguage), slotName: "Offhands" },
   ];
-  if (gameType === "BurningCrusade") slotList.push({ label: getTranslatedSlotName("relics", currentLanguage), slotName: "Relics & Wands" });
+  if (gameType === "Classic") slotList.push({ label: getTranslatedSlotName("relics", currentLanguage), slotName: "Relics & Wands" });
   return (
     <div className={classes.root}>
       <Grid container spacing={1} justifyContent="center">

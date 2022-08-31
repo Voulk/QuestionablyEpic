@@ -51,7 +51,7 @@ export default function ItemCard(props) {
   const itemDifferential = props.itemDifferential;
   const hasDom = item.isTierPiece();
   const gameType = useSelector((state) => state.gameType);
-  const wowheadDomain = (gameType === "BurningCrusade" ? "wotlk-" : "") + currentLanguage;
+  const wowheadDomain = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
 
   /*
   const itemQuality = (itemLevel) => {
@@ -99,7 +99,7 @@ export default function ItemCard(props) {
     if (item.source.instanceId === 1195 && item.source.encounterId > 0) {
       return encounterDB[1195].bosses[item.source.encounterId].name[currentLanguage];
     }
-    /* -------------------------- BC Bosses ---------------------- */
+    /* -------------------------- Classic Bosses ---------------------- */
     if ([745, 746].includes(item.source.instanceId)) {
       return encounterDB[item.source.instanceId].bosses[item.source.encounterId].name[currentLanguage];
     }

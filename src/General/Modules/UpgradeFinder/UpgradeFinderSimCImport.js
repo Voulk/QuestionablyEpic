@@ -30,7 +30,7 @@ const checkCharacterValid = (player, gameType) => {
   if (gameType === "Retail") {
     return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
   }
-  else if (gameType === "BurningCrusade") {
+  else if (gameType === "Classic") {
     return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 16) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 17);
   }
   
@@ -49,7 +49,7 @@ export default function UpgradeFinderSimC(props) {
   const currentLanguage = i18n.currentLanguage;
   const simcStatus = getSimCStatus(props.player, gameType);
   const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
-  const wowheadDom = (gameType === "BurningCrusade" ? "wotlk-" : "") + currentLanguage;
+  const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
 
   const check = (simcStatus) => {
     let style = "";

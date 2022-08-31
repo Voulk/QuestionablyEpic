@@ -1,4 +1,4 @@
-// This module will be focused on BC mostly, Until Retail reintroduces tier sets
+// This module will be focused on Classic mostly, Until Retail reintroduces tier sets
 
 import React, { useEffect } from "react";
 import makeStyles from '@mui/styles/makeStyles';
@@ -69,7 +69,7 @@ export default function LegendaryCompare(props) {
         {/* ------------------------------ Map the Legendary list into Cards ----------------------------- */}
         <Grid item container spacing={1} direction="row">
           {tierSets
-            .filter((filter) => (filter.spec + " BC") === props.player.getSpec())
+            .filter((filter) => (filter.spec + " Classic") === props.player.getSpec())
             .map((set, index) => (
               <TierObject key={index} set={set} player={props.player} />
             ))}

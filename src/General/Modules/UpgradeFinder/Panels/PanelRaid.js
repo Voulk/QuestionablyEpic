@@ -7,7 +7,7 @@ import "./Panels.css";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { raidDB } from "../../CooldownPlanner/Data/CooldownPlannerBossList";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, filterBCItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
+import { filterItemListBySource, filterClassicItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import i18n from "i18next";
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 4,
   },
   karazhanHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/Karazhan.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/Karazhan.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   gruulsHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/Gruul&Mag.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/Gruul&Mag.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   zulamanHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/ZulAman.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/ZulAman.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   magtheridonHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/MagtheridonsLair.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/MagtheridonsLair.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   serpentshringHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/SerpentshrineCavern.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/SerpentshrineCavern.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   tempestKeepHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/TempestKeep.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/TempestKeep.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -91,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   mountHyjalHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/MountHyjal.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/MountHyjal.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -103,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   blackTempleHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/BlackTemple.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/BlackTemple.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -115,7 +115,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   sunwellHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/SunwellPlateau.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/SunwellPlateau.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -127,7 +127,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   sunwellHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/SunwellPlateau.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/SunwellPlateau.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -139,7 +139,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   sunwellHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/SunwellPlateau.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/SunwellPlateau.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -509,7 +509,7 @@ export default function RaidGearContainer(props) {
                                 </Grid>
                                 <Divider orientation="vertical" flexItem />
                                 <Grid item xs={12} sm container style={{ padding: 8 }} spacing={1}>
-                                  {[...filterBCItemListBySource(itemList, raidID, parseInt(key))].map((item, index) => (
+                                  {[...filterClassicItemListBySource(itemList, raidID, parseInt(key))].map((item, index) => (
                                     <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                   ))}
                                 </Grid>

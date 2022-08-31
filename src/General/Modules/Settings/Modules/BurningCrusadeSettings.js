@@ -46,13 +46,13 @@ export default function BurningCrusadeSettings(props) {
         <Tooltip
           title={
             <Typography align="center" variant="body2">
-              {t("Settings.BurningCrusade.Setting0Tooltip")}
+              {t("Settings.Classic.Setting0Tooltip")}
             </Typography>
           }
           placement="top-start"
         >
           <TextField
-            label={t("Settings.BurningCrusade.Setting0Title")}
+            label={t("Settings.Classic.Setting0Title")}
             labelId="slots"
             variant="outlined"
             size="small"
@@ -82,13 +82,13 @@ export default function BurningCrusadeSettings(props) {
         <Tooltip
           title={
             <Typography align="center" variant="body2">
-              {t("Settings.BurningCrusade.Setting1Tooltip")}
+              {t("Settings.Classic.Setting1Tooltip")}
             </Typography>
           }
           placement="top-start"
         >
           <TextField
-            label={t("Settings.BurningCrusade.Setting1Title")}
+            label={t("Settings.Classic.Setting1Title")}
             InputProps={{ variant: "outlined" }}
             select
             variant="outlined"
@@ -116,13 +116,13 @@ export default function BurningCrusadeSettings(props) {
         <Tooltip
           title={
             <Typography align="center" variant="body2">
-              {t("Settings.BurningCrusade.Setting2Tooltip")}
+              {t("Settings.Classic.Setting2Tooltip")}
             </Typography>
           }
           placement="top-start"
         >
           <TextField
-            label={t("Settings.BurningCrusade.Setting2Title")}
+            label={t("Settings.Classic.Setting2Title")}
             labelId="slots"
             InputProps={{ variant: "outlined" }}
             select
@@ -146,7 +146,7 @@ export default function BurningCrusadeSettings(props) {
       /* ---------------------------------------------------------------------------------------------- */}
       <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
         <TextField
-          label={t("Settings.BurningCrusade.Setting3Title")}
+          label={t("Settings.Classic.Setting3Title")}
           labelId="groupValue"
           InputProps={{ variant: "outlined" }}
           select
@@ -172,13 +172,13 @@ export default function BurningCrusadeSettings(props) {
         <Tooltip
           title={
             <Typography align="center" variant="body2">
-              {t("Settings.BurningCrusade.Setting4Tooltip")}
+              {t("Settings.Classic.Setting4Tooltip")}
             </Typography>
           }
           placement="top-start"
         >
           <TextField
-            label={t("Settings.BurningCrusade.Setting4Title")}
+            label={t("Settings.Classic.Setting4Title")}
             labelId="groupValue"
             InputProps={{ variant: "outlined" }}
             select

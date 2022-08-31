@@ -66,8 +66,8 @@ export default function GameTypeSwitch(props) {
       allChars.setLowestChar(gameType)
       charUpdate(allChars);
       dispatch(toggleGameType(gameType));
-      if (gameType === "BurningCrusade") {
-        // If we're on the Burning Crusade setting then automatically update to Raid since there is no dungeon support.
+      if (gameType === "Classic") {
+        // If we're on the Classic setting then automatically update to Raid since there is no dungeon support.
         dispatch(toggleContent("Raid"))
       }
       
@@ -91,7 +91,7 @@ export default function GameTypeSwitch(props) {
       {/* ---------------------------------------------------------------------------------------------- */
       /*                            Burning Crusade: Classic Game Type Toggle                           */
       /* ---------------------------------------------------------------------------------------------- */}
-      <ToggleButton className={classes.root} value="BurningCrusade" aria-label="classicLabel">
+      <ToggleButton className={classes.root} value="Classic" aria-label="classicLabel">
         <Tooltip title={t("GameTypeToggle.Classic")} arrow>
           <div style={{ display: "inline-flex" }}>
             <img src={require("../../../Images/Logos/Logo_LichKing.png").default} alt={t("Burning Crusade")} />

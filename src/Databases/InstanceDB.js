@@ -34,7 +34,7 @@ export const encounterDB = {
       //     ch: "仆役宿舍",
       //   },
       //   id: 1552,
-      //   expansion: "BurningCrusade",
+      //   expansion: "Classic",
       // },
       652: {
         name: {

@@ -2,20 +2,20 @@ import { calcStatsAtLevel, getItemAllocations, getItemProp } from "../../Engine/
 import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
 import Item from "./Item";
 
-// Based on, but not inheriting from Item. Ideally both should use an Interface, or both RetailItem and BCItem should inherit from a higher Item parent.
-class BCItem {
+// Based on, but not inheriting from Item. Ideally both should use an Interface, or both RetailItem and ClassicItem should inherit from a higher Item parent.
+class ClassicItem {
   constructor(id, name, slot, bonusIDS) {
     this.id = id;
     this.name = name;
-    this.level = getItemProp(id, "itemLevel", "BurningCrusade"); //Math.max(1, Math.min(300, level));
+    this.level = getItemProp(id, "itemLevel", "Classic"); //Math.max(1, Math.min(300, level));
     this.slot = slot;
     this.uniqueHash = this.getUnique(id);
     this.bonusIDS = bonusIDS || "";
-    this.effect = getItemProp(id, "effect", "BurningCrusade");
-    this.stats = getItemProp(id, "stats", "BurningCrusade");
-    this.setID = getItemProp(id, "itemset", "BurningCrusade");
+    this.effect = getItemProp(id, "effect", "Classic");
+    this.stats = getItemProp(id, "stats", "Classic");
+    this.setID = getItemProp(id, "itemset", "Classic");
     if (this.stats !== "") this.stats['bonus_stats'] = {};
-    this.sockets = getItemProp(id, "sockets", "BurningCrusade");
+    this.sockets = getItemProp(id, "sockets", "Classic");
     this.socketedGems = {};
 
   }
@@ -57,7 +57,7 @@ class BCItem {
   }
 
   getQualityColor() {
-    const quality = getItemProp(this.id, "quality", "BurningCrusade")
+    const quality = getItemProp(this.id, "quality", "Classic")
     if (quality === 5) return "#ff8000";
     else if (quality === 4) return "#a73fee";
     else if (quality === 3) return "#328CE3";
@@ -77,4 +77,4 @@ class BCItem {
 
 
 
-export default BCItem;
+export default ClassicItem;

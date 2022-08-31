@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Paper, Typography, Grid, Tooltip } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Item from "../Player/Item";
-import BCItem from "../Player/BCItem";
+import ClassicItem from "../Player/ClassicItem";
 import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreItem, getTranslatedItemName, getItemDB } from "../../Engine/ItemUtilities";
 import VerticalChart from "./Charts/VerticalChart";
 import BCChart from "./Charts/BCChart";
@@ -62,13 +62,14 @@ const getTrinketAtItemLevel = (id, itemLevel, player, contentType) => {
 // Wrath of the Lich King
 const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
 
+  /*
   let temp = getItemDB(gameType).filter(function (item) {
     return item.id === trinketID;
   });
 
   const itemDifficulties = temp[0].difficulties;
 
-  console.log(itemDifficulties);
+  console.log(itemDifficulties); */
 
 
   return getBCTrinketScore(id, player, difficulty)
@@ -77,8 +78,8 @@ const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
 };
 
 const getBCTrinketScore = (id, player) => {
-  let item = new BCItem(id, "", "Trinket", "");
-  item.softScore = scoreItem(item, player, "Raid", "BurningCrusade");
+  let item = new ClassicItem(id, "", "Trinket", "");
+  item.softScore = scoreItem(item, player, "Raid", "Classic");
 
   return item.softScore;
 };
@@ -175,7 +176,7 @@ export default function TrinketAnalysis(props) {
   const trinketDB = getItemDB(gameType).filter(
     (key) =>
       key.slot === "Trinket" &&
-      ((gameType === "BurningCrusade" && "phase" in key && (!("class" in key) || props.player.getSpec().includes(key.class))) || (gameType === "Retail" && key.levelRange.length > 0)),
+      ((gameType === "Classic" && "phase" in key && (!("class" in key) || props.player.getSpec().includes(key.class))) || (gameType === "Retail" && key.levelRange.length > 0)),
   );
   const filteredTrinketDB = sourceHandler(trinketDB, sources);
 
@@ -200,7 +201,7 @@ export default function TrinketAnalysis(props) {
       name: getTranslatedItemName(trinket.id, "en"),
     };
 
-    if (gameType === "BurningCrusade") {
+    if (gameType === "Classic") {
       const difficulties = ["10N", "10H", "25N", "25H"]
       for (var x = 0; x < difficulties.length; x++) {
           trinketAtLevels[difficulties[x]] = getTrinketAtContentLevel(trinket.id, difficulties[x], props.player, "Raid");
@@ -215,7 +216,7 @@ export default function TrinketAnalysis(props) {
     }
   }
 
-  if (gameType === "BurningCrusade") {
+  if (gameType === "Classic") {
     activeTrinkets.sort((a, b) => (a.i100 < b.i100 ? 1 : -1));
   } else {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, gameType) < getHighestTrinketScore(finalDB, b, gameType) ? 1 : -1));
