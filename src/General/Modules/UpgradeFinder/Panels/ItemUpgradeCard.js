@@ -51,7 +51,7 @@ export default function ItemCard(props) {
   const itemDifferential = props.itemDifferential;
   const hasDom = item.isTierPiece();
   const gameType = useSelector((state) => state.gameType);
-  const wowheadDomain = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
+  const wowheadDomain = (gameType === "BurningCrusade" ? "wotlk-" : "") + currentLanguage;
 
   /*
   const itemQuality = (itemLevel) => {

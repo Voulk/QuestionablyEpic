@@ -58,7 +58,7 @@ export default function ItemCardReport(props) {
     mastery: masterySocket,
     versatility: versSocket,
   };
-  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
+  const wowheadDom = (gameType === "BurningCrusade" ? "wotlk-" : "") + currentLanguage;
   const gemString = gameType === "BurningCrusade" ? props.gems : "&gems=" + item.gemString;
   const socketImage = socketImg[enchants["Gems"]];
   const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;

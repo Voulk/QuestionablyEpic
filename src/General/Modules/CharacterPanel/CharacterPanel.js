@@ -79,7 +79,7 @@ export default function CharacterPanel(props) {
   const currentLanguage = i18n.language;
   const simcStatus = getSimCStatus(props.player, gameType);
   // const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
-  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLang;
+  const wowheadDom = (gameType === "BurningCrusade" ? "wotlk-" : "") + currentLang;
   const currentCharacter = props.allChars.allChar[props.allChars.activeChar];
   const covenant = currentCharacter.covenant;
 

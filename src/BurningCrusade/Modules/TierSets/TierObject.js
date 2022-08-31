@@ -73,7 +73,7 @@ export default function TierObject(props) {
                   .filter((filter) => set.slots[filter].id > 0)
                   .map((key, i) => (
                     <Grid item key={i}>
-                      <a data-wowhead={"item=" + set.slots[key].id + "&domain=tbc-" + currentLanguage}>
+                      <a data-wowhead={"item=" + set.slots[key].id + "&domain=wotlk-" + currentLanguage}>
                         <img
                           height={40}
                           width={40}

@@ -49,7 +49,7 @@ export default function UpgradeFinderSimC(props) {
   const currentLanguage = i18n.currentLanguage;
   const simcStatus = getSimCStatus(props.player, gameType);
   const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
-  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
+  const wowheadDom = (gameType === "BurningCrusade" ? "wotlk-" : "") + currentLanguage;
 
   const check = (simcStatus) => {
     let style = "";

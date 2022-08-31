@@ -94,7 +94,7 @@ export default function GameTypeSwitch(props) {
       <ToggleButton className={classes.root} value="BurningCrusade" aria-label="classicLabel">
         <Tooltip title={t("GameTypeToggle.Classic")} arrow>
           <div style={{ display: "inline-flex" }}>
-            <img src={require("../../../Images/Logos/Logo_BurningCrusade.png").default} alt={t("Burning Crusade")} />
+            <img src={require("../../../Images/Logos/Logo_LichKing.png").default} alt={t("Burning Crusade")} />
           </div>
         </Tooltip>
       </ToggleButton>

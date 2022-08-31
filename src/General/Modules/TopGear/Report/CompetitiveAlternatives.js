@@ -11,7 +11,7 @@ function CompetitiveAlternatives(props) {
   // const item = props.item
   const differentials = props.differentials;
   const gameType = useSelector((state) => state.gameType);
-  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
+  const wowheadDom = (gameType === "BurningCrusade" ? "wotlk-" : "") + currentLanguage;
   const itemQuality = (item, gameType) => {
     if (gameType === "Retail") {
       const isLegendary = item.effect.type === "spec legendary";
