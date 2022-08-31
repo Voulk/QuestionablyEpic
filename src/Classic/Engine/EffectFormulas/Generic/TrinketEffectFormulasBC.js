@@ -1,5 +1,12 @@
 
 
+export function getEffectPPM(procChance, internalCooldown, gcd) {
+
+  return 60 / (internalCooldown + 1/procChance*gcd)
+
+}
+
+
 // TODO: Write proper comments. See Lingering Sunmote for an example.
 export function getTrinketEffectClassic(effectName, player, contentType, itemLevel, userSettings = {}) {
   let bonus_stats = {};
@@ -9,6 +16,11 @@ export function getTrinketEffectClassic(effectName, player, contentType, itemLev
   const activeTrinket = effectName;
 
   const cpm = 24;
+  const gcd = 1.5; // TODO
+
+
+
+
 
   if (activeTrinket === undefined) {
     /* ---------------------------------------------------------------------------------------------- */
@@ -16,7 +28,193 @@ export function getTrinketEffectClassic(effectName, player, contentType, itemLev
     /* ---------------------------------------------------------------------------------------------- */
     console.log("no trinket found");
     return bonus_stats;
-  } else if ( 
+  } 
+  // Wrath of the Lich King Trinkets
+  else if (effectName === "Darkmoon Card: Greatness") {
+    const effect = {
+      duration: 15,
+      value: 300,
+      ppm: getEffectPPM(0.35, 45, gcd)
+    }
+
+    bonus_stats.intellect = effect.duration * effect.value * effect.ppm / 60;
+  }
+  else if (effectName === "Majestic Dragon Figurine") { 
+    const effect = {
+      value: 18,
+      stacks: 10,
+    }
+    bonus_stats.spirit = effect.value * effect.stacks;
+  }
+  else if (effectName === "Althor's Abacus") { 
+    // TODO: Add Heroic version. Check for crits.
+    const effect = {
+      value: 6789,
+      ppm: getEffectPPM(0.3, 45, gcd),
+      expectedOverhealing: 0.2,
+    }
+    bonus_stats.hps = effect.value * effect.ppm * (1 - effect.expectedOverhealing) / 60;
+  }
+  else if (effectName === "Purified Lunar Dust") { 
+
+    const effect = {
+      value: 304,
+      ppm: getEffectPPM(0.1, 50, gcd),
+      duration: 15,
+    }
+    bonus_stats.mp5 = effect.value * effect.ppm * effect.duration / 60;
+  }
+  else if (effectName === "Show of Faith") { 
+
+    const effect = {
+      value: 241,
+      ppm: getEffectPPM(0.1, 50, gcd),
+      duration: 15,
+    }
+    bonus_stats.mp5 = effect.value * effect.ppm * effect.duration / 60;
+  }
+  else if (effectName === "Spark of Life") { 
+    const effect = {
+      value: 220,
+      ppm: getEffectPPM(0.1, 50, gcd),
+      duration: 15,
+    }
+    bonus_stats.mp5 = effect.value * effect.ppm * effect.duration / 60;
+  }
+  else if (effectName === "Soul Preserver") { 
+    const effect = {
+      value: 800 * 0.8, // 800 is the maximum amount of mana the trinket can give. Spec-by-spec breakdowns probably useful.
+      ppm: getEffectPPM(0.02, 0, gcd),
+    }
+    bonus_stats.mp5 = effect.value * effect.ppm / 60 * 5;
+
+  }
+  else if (effectName === "Je'Tze's Bell") { 
+    const effect = {
+      value: 125,
+      ppm: getEffectPPM(0.1, 50, gcd),
+      duration: 15,
+    }
+    bonus_stats.mp5 = effect.value * effect.ppm * effect.duration / 60;
+  }
+  else if (effectName === "Tears of the Vanquished") { 
+
+    const effect = {
+      value: 500,
+      ppm: getEffectPPM(0.25, 45, gcd),
+    }
+    bonus_stats.mp5 = effect.value * effect.ppm / 60 * 5;
+  }
+  else if (effectName === "Pandora's Plea") { 
+
+    const effect = {
+      value: 751,
+      ppm: getEffectPPM(0.1, 45, gcd),
+      duration: 10,
+    }
+    bonus_stats.spellpower = effect.value * effect.ppm * effect.duration / 60;
+  }
+  else if (effectName === "Forge Ember") { 
+
+    const effect = {
+      value: 512,
+      ppm: getEffectPPM(0.1, 45, gcd),
+      duration: 10,
+    }
+    bonus_stats.spellpower = effect.value * effect.ppm * effect.duration / 60;
+  }
+  else if (effectName === "Solace of the Fallen" || effectName === "Solace of the Defeated") { 
+    const effect = {
+      value: 18,
+      stacks: 8,
+    }
+    bonus_stats.mp5 = effect.value * effect.stacks;
+  }
+  else if (effectName === "Illustration of the Dragon Soul") { 
+    const effect = {
+      value: 20,
+      stacks: 10,
+    }
+    bonus_stats.spellpower = effect.value * effect.stacks;
+  }
+  else if (effectName === "Sliver of Pure Ice") { 
+
+    const effect = {
+      value: 1830,
+      cooldown: 120,
+    } 
+
+    bonus_stats.mp5 = effect.value / effect.cooldown * 5; 
+  }
+  else if (effectName === "Spirit-World Glass") { 
+    // TODO: Combine with Druid Innervate
+    const effect = {
+      value: 336,
+      cooldown: 120,
+      duration: 20
+    } 
+
+    bonus_stats.spirit = effect.value * effect.duration / effect.cooldown; 
+  }
+  else if (effectName === "Cannoneer's Morale") { 
+    // TODO: Combine with Druid Innervate
+    const effect = {
+      value: 281,
+      cooldown: 120,
+      duration: 20
+    } 
+
+    bonus_stats.spellpower = effect.value * effect.duration / effect.cooldown; 
+  }
+  else if (effectName === "Energy Siphon") { 
+    const effect = {
+      value: 408,
+      duration: 20,
+      cooldown: 120,
+    } 
+    bonus_stats.spellpower = effect.value * effect.duration / effect.cooldown; 
+  }
+  else if (effectName === "Winged Talisman") { 
+    const effect = {
+      value: 346,
+      duration: 20,
+      cooldown: 120,
+    } 
+    bonus_stats.spellpower = effect.value * effect.duration / effect.cooldown; 
+  }
+  else if (effectName === "Figurine - Sapphire Owl") { 
+    const effect = {
+      value: 2340,
+      cooldown: 300,
+    } 
+    bonus_stats.mp5 = effect.value / effect.cooldown * 5; 
+  }
+  else if (effectName === "Darkmoon Card: Illusion") { 
+    const effect = {
+      absorb: 1500,
+      mana: 1500,
+      cooldown: 300,
+    }
+    bonus_stats.hps = effect.absorb / effect.cooldown;
+    bonus_stats.mp5 = effect.mana / effect.cooldown * 5;
+  }
+  else if (effectName === "Living Ice Crystals") { 
+    const effect = {
+      value: 2710,
+      cooldown: 60,
+    }
+    bonus_stats.hps = effect.value / effect.cooldown;
+  }
+  else if (effectName === "Bauble of True Blood") { 
+    const effect = {
+      value: 8000,
+      cooldown: 120,
+    }
+    bonus_stats.hps = effect.value / effect.cooldown;
+
+  }
+  
+  else if ( 
     /* ---------------------------------------------------------------------------------------------- */
     /*                                      Essence of the Martyr                                     */
     /* ---------------------------------------------------------------------------------------------- */

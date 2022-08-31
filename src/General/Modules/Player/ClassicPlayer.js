@@ -36,16 +36,16 @@ class ClassicPlayer extends Player {
         if (spec === "Restoration Druid Classic") {
             this.statWeights = {
                 Raid: {
-                    intellect: 0.83,
+                    intellect: 0.9,
+                    spellpower: 2.28,
+                    spelldamage: 2.1,
                     hps: 1,
-                    bonushealing: 0.88,
-                    mp5: 1.9,
-                    spelldamage: 0.88,
-                    spirit: 0.85,
-                    crit: 0,
-                    spellcrit: 0.03,
+                    mp5: 2.3,
+                    spirit: 0.7,
+                    crit: 0.06,
                     stamina: 0.15,
-                    spellhaste: 0.1,
+                    haste: 1.54,
+                    
                 },
                 Dungeon: {
                 },

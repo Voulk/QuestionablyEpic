@@ -22160,7 +22160,6 @@ export const ClassicItemDB = [
             "type": "trinket",
             "name": "Redeemer's Alchemist Stone"
         },
-        "phase": 1,
         "stats": {}
     },
     {
@@ -26569,6 +26568,7 @@ export const ClassicItemDB = [
             "type": "trinket",
             "name": "Tome of Arcane Phenomena"
         },
+        "phase": 1,
         "stats": {
             "spellpower": 68
         }
@@ -33272,7 +33272,10 @@ export const ClassicItemDB = [
             "type": "trinket",
             "name": "Je'Tze's Bell"
         },
-        "stats": {}
+        "phase": 1,
+        "stats": {
+            "spellpower": 106
+        }
     },
     {
         "id": 37842,
@@ -49578,6 +49581,7 @@ export const ClassicItemDB = [
             "type": "trinket",
             "name": "The Egg of Mortal Essence"
         },
+        "phase": 1,
         "stats": {
             "spellpower": 98
         }
@@ -103924,6 +103928,7 @@ export const ClassicItemDB = [
             "type": "trinket",
             "name": "Mercurial Alchemist Stone"
         },
+        "phase": 1,
         "stats": {
             "spellpower": 59,
             "haste": 50

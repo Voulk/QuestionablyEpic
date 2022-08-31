@@ -176,7 +176,7 @@ export default function TrinketAnalysis(props) {
   const trinketDB = getItemDB(gameType).filter(
     (key) =>
       key.slot === "Trinket" &&
-      ((gameType === "Classic" && "phase" in key && (!("class" in key) || props.player.getSpec().includes(key.class))) || (gameType === "Retail" && key.levelRange.length > 0)),
+      ((gameType === "Classic" && "phase" in key && key.phase === 1 && (!("class" in key) || props.player.getSpec().includes(key.class))) || (gameType === "Retail" && key.levelRange.length > 0)),
   );
   const filteredTrinketDB = sourceHandler(trinketDB, sources);
 
@@ -202,11 +202,11 @@ export default function TrinketAnalysis(props) {
     };
 
     if (gameType === "Classic") {
-      const difficulties = ["10N", "10H", "25N", "25H"]
+      /*const difficulties = ["10N", "10H", "25N", "25H"]
       for (var x = 0; x < difficulties.length; x++) {
           trinketAtLevels[difficulties[x]] = getTrinketAtContentLevel(trinket.id, difficulties[x], props.player, "Raid");
-      }
-      //trinketAtLevels["i100"] = getBCTrinketScore(trinket.id, props.player);
+      }*/
+      trinketAtLevels["i100"] = getBCTrinketScore(trinket.id, props.player);
       activeTrinkets.push(trinketAtLevels);
     } else {
       for (var x = 0; x < itemLevels.length; x++) {

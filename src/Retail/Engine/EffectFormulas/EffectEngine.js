@@ -37,6 +37,7 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   let bonus_stats = {};
   let effectName = effect.name;
   let effectType = effect.type;
+  console.log("Plss");
   // ----- Retail Effect -----
   // Can either be a Spec Legendary, Trinket, or a special item effect like those found back in Crucible of Storms or the legendary BFA cloak.
   if (gameType === "Retail") {
@@ -97,9 +98,9 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   }
   // -------------------------------------------
 
-  // ----- Burning Crusade Effect Formulas -----
+  // ----- Burning Crusade & Wrath of the Lich King Effect Formulas -----
   // Includes "Tier Set" bonuses, trinkets, and special effects on items that aren't just pure stats. 
-  else if (gameType === "Classic") {
+  else if (gameType === "Classic" || gameType === "BurningCrusade") {
     if (effectType === "set bonus" && ('class' in effect && effect.class !== -1)) {
       switch (player.spec) {
         case "Holy Priest Classic":

@@ -119,7 +119,7 @@
     "External": "External",
     "Filter": "Filter",
     "GameTypeToggle": {
-      "Classic": "Change to Classic (Burning Crusade)",
+      "Classic": "Change to Classic (Wrath of the Lich King)",
       "Retail": "Change to Retail (Shadowlands)"
     },
     "HPS": "HPS",
@@ -183,7 +183,7 @@
       "InsertLogLabel": "Insert Log",
       "Login": "Login",
       "Tooltip": {
-        "BurningCrusadeSimC": "Insert a QE Import string to import your gear.",
+        "ClassicSimC": "Insert a QE Import string to import your gear.",
         "ChangeToDungeon": "Change to Dungeon Content",
         "ChangeToRaid": "Change to Raid Content",
         "Home": "Main Menu",
@@ -268,9 +268,9 @@
     },
     "Shadowlands": "Shadowlands",
     "SimCInput": {
-      "SimCDialogueTitleBurningCrusade": "Paste Your QE Import String",
+      "SimCDialogueTitleClassic": "Paste Your QE Import String",
       "SimCDialogueTitleRetail": "Paste Your SimC String",
-      "SimCHeaderButtonLabelBurningCrusade": "Gear Import",
+      "SimCHeaderButtonLabelClassic": "Gear Import",
       "SimCHeaderButtonLabelRetail": "SimC",
       "SimCStringLabel": "Import String"
     },
@@ -315,7 +315,7 @@
       "CompetitiveAlternativeHelp": "This is how close other sets are to your best. Anything extremely close in score can be considered a sidegrade.",
       "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have an intellect weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each.",
       "GoMsg": "Go!",
-      "HelpTextBurningCrusade": "Top Gear lets you compare every possible combination of your selected gear at once!",
+      "HelpTextClassic": "Top Gear lets you compare every possible combination of your selected gear at once!",
       "HelpTextRetail": "Top Gear lets you compare every possible combination of your selected gear at once!",
       "ItemsHereMessage": "Your items will go here after you import, then hit 'Go' once happy with your selection.",
       "SelectedItems": "Selected Items",
