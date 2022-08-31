@@ -192,10 +192,11 @@ export function getTrinketEffectClassic(effectName, player, contentType, itemLev
   else if (effectName === "Darkmoon Card: Illusion") { 
     const effect = {
       absorb: 1500,
+      expectedWastage: 0.4,
       mana: 1500,
       cooldown: 300,
     }
-    bonus_stats.hps = effect.absorb / effect.cooldown;
+    bonus_stats.hps = effect.absorb * (1 - effect.expectedWastage) / effect.cooldown;
     bonus_stats.mp5 = effect.mana / effect.cooldown * 5;
   }
   else if (effectName === "Living Ice Crystals") { 
