@@ -435,7 +435,17 @@ export default function RaidGearContainer(props) {
   const contentGeneratorBC = () => {
     // Raid Panel
 
-    const burningCrusadeList = [745, 746, 748, 749, 750, 751, 321, 752];
+    const burningCrusadeList = [
+      754, // Naxxramas
+      756, // The Eye of Eternity
+      759, // Ulduar
+      753, // Vault of Archavon
+      755, // The Obsidian Sanctum
+      760, // Onyxia's Lair
+      757, // Trial of the Crusader
+      761, // The Ruby Sanctum
+      758, // Icecrown Citadel
+    ];
 
     return (
       <Grid item xs={12}>
@@ -459,21 +469,22 @@ export default function RaidGearContainer(props) {
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
                   {/* ------------------------------------------ Karazhan ------------------------------------------ */}
-                  <Tab className={classes.karazhanHeaderStyle} label={encounterDB[745].name[currentLanguage]} {...a11yProps(0)} />
+                  <Tab className={classes.karazhanHeaderStyle} label={encounterDB[754].name[currentLanguage]} {...a11yProps(0)} />
                   {/* ---------------------------------------- Gruul's Lair ---------------------------------------- */}
-                  <Tab className={classes.gruulsHeaderStyle} label={encounterDB[746].name[currentLanguage]} {...a11yProps(1)} />
+                  <Tab className={classes.gruulsHeaderStyle} label={encounterDB[756].name[currentLanguage]} {...a11yProps(1)} />
                   {/* ------------------------------------ Serpentshrine Cavern ------------------------------------ */}
-                  <Tab className={classes.serpentshringHeaderStyle} label={encounterDB[748].name[currentLanguage]} {...a11yProps(2)} />
+                  <Tab className={classes.serpentshringHeaderStyle} label={encounterDB[759].name[currentLanguage]} {...a11yProps(2)} />
                   {/* ---------------------------------------- Tempest Keep ---------------------------------------- */}
-                  <Tab className={classes.tempestKeepHeaderStyle} label={encounterDB[749].name[currentLanguage]} {...a11yProps(3)} />
+                  <Tab className={classes.tempestKeepHeaderStyle} label={encounterDB[753].name[currentLanguage]} {...a11yProps(3)} />
                   {/* --------------------------------- The Battle for Mount Hyjal --------------------------------- */}
-                  <Tab className={classes.mountHyjalHeaderStyle} label={encounterDB[750].name[currentLanguage]} {...a11yProps(4)} />
+                  <Tab className={classes.mountHyjalHeaderStyle} label={encounterDB[755].name[currentLanguage]} {...a11yProps(4)} />
                   {/* ---------------------------------------- Black Temple ---------------------------------------- */}
-                  <Tab className={classes.blackTempleHeaderStyle} label={encounterDB[751].name[currentLanguage]} {...a11yProps(5)} />
+                  <Tab className={classes.blackTempleHeaderStyle} label={encounterDB[760].name[currentLanguage]} {...a11yProps(5)} />
                   {/* ------------------------------------------ Zul'Aman ------------------------------------------ */}
-                  <Tab className={classes.zulamanHeaderStyle} label={encounterDB[321].name[currentLanguage]} {...a11yProps(6)} />
+                  <Tab className={classes.zulamanHeaderStyle} label={encounterDB[757].name[currentLanguage]} {...a11yProps(6)} />
                   {/* --------------------------------------- Sunwell Plateau -------------------------------------- */}
-                  <Tab className={classes.sunwellHeaderStyle} label={encounterDB[752].name[currentLanguage]} {...a11yProps(7)} />
+                  <Tab className={classes.sunwellHeaderStyle} label={encounterDB[761].name[currentLanguage]} {...a11yProps(7)} />
+                  <Tab label={encounterDB[758].name[currentLanguage]} {...a11yProps(8)} />
                 </Tabs>
               </AppBar>
             </Grid>
