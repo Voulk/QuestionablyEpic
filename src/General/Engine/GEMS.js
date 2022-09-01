@@ -3,87 +3,79 @@ export const GEMS = [
   /*                                            Red Gems                                            */
   /* ---------------------------------------------------------------------------------------------- */
 
-  /* ------------------------------------ Teardrop Living Ruby ------------------------------------ */
+  /* ------------------------------------ Runed Scarlet Ruby ------------------------------------ */
   // Phase 1
-  // https://tbc.wowhead.com/item=24029/teardrop-living-ruby
-  // +18 Healing and +6 Spell Damage
-  { name: "Teardrop Living Ruby", id: 24029, color: "red", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 18 } },
+  // +19 spellpower
+  { name: "Runed Scarlet Ruby", id: 39998, color: "red", rarity: "rare", jewelcrafting: false, stats: { spellpower: 19 } },
 
-  /* ----------------------------------- Teardrop Crimson Spinel ---------------------------------- */
-  // Phase 3
-  // https://tbc.wowhead.com/item=32195/teardrop-crimson-spinel
-  // +22 Healing and +8 Spell Damage
-  { name: "Teardrop Crimson Spinel", id: 32195, color: "red", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 22 } },
+  /* ----------------------------------- Runed Cardinal Ruby ---------------------------------- */
+  // Phase 3 / Patch 3.2
+  // +23 spellpower
+  { name: "Runed Cardinal Ruby", id: 40113, color: "red", rarity: "epic", jewelcrafting: false, stats: { spellpower: 23 } },
 
-  /* ---------------------------------------- Kailee's Rose --------------------------------------- */
-  // Phase 2
-  // https://tbc.wowhead.com/item=33134/kailees-rose
-  // +26 Healing and +9 Spell Damage JC Only (BOP)
-  { name: "Kailee's Rose", id: 33134, color: "red", rarity: "epic", jewelcrafting: true, stats: { bonushealing: 26 } },
+  /* ---------------------------------------- Runed Dragon's Eye --------------------------------------- */
+  // +39 spellpower
+  { name: "Runed Dragon's Eye", id: 42144, color: "red", rarity: "epic", jewelcrafting: true, stats: { spellpower: 39 } },
 
-  /* ------------------------------------- Teardrop Tourmaline ------------------------------------ */
+  /* ------------------------------------- Runed Bloodstone ------------------------------------ */
   // Phase 1
-  // https://tbc.wowhead.com/item=28460/teardrop-tourmaline
-  // +9 Healing and +3 Spell Damage
-  { name: "Teardrop Tourmaline", id: 28460, color: "red", rarity: "basic", jewelcrafting: false, stats: { bonushealing: 9 } },
+  // +14 spellpower
+  { name: "Runed Bloodstone", id: 53834, color: "red", rarity: "basic", jewelcrafting: false, stats: { spellpower: 14 } },
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                           Yellow Gems                                          */
   /* ---------------------------------------------------------------------------------------------- */
 
-  /* ------------------------------------- Gleaming Dawnstone ------------------------------------- */
+  /* ------------------------------------- Smooth Autumn's Glow ------------------------------------- */
   // Phase 1
-  // https://tbc.wowhead.com/item=24050/gleaming-dawnstone
-  // +8 Spell Critical Rating
-  { name: "Gleaming Dawnstone", id: 24050, color: "yellow", rarity: "rare", jewelcrafting: false, stats: { spellcrit: 8 } },
+  // +16 Critical Rating
+  { name: "Smooth Autumn's Glow", id: 24050, color: "yellow", rarity: "rare", jewelcrafting: false, stats: { crit: 16 } },
 
-  /* ---------------------------------- Gleaming Ornate Dawnstone --------------------------------- */
+  /* ---------------------------------- Smooth Kings Amber --------------------------------- */
   // Phase 1
-  // https://tbc.wowhead.com/item=28120/gleaming-ornate-dawnstone
-  // +10 Spell Critical Strike Rating
-  { name: "Gleaming Ornate Dawnstone", id: 28120, color: "yellow", rarity: "epic", jewelcrafting: false, stats: { spellcrit: 10 } },
+  // +20 crit
+  { name: "Smooth Kings Amber", id: 40124, color: "yellow", rarity: "epic", jewelcrafting: false, stats: { crit: 20 } },
 
-  /* --------------------------------------- Blood of Amber --------------------------------------- */
-  // Phase ?
-  // https://tbc.wowhead.com/item=33140/blood-of-amber
-  // +12 Spell Critical Rating
-  { name: "Blood of Amber", id: 33140, color: "yellow", rarity: "epic", jewelcrafting: true, stats: { spellcrit: 12 } },
-
-  /* --------------------------------------- Gleaming Amber --------------------------------------- */
-  // Phase 1
-  // https://tbc.wowhead.com/item=28469/gleaming-amber
-  // +4 Spell Critical Rating
-  { name: "Gleaming Amber", id: 28469, color: "yellow", rarity: "basic", jewelcrafting: false, stats: { spellcrit: 4 } },
-
-  /* ------------------------------------- Brilliant Dawnstone ------------------------------------ */
-  // Phase 1
-  // https://tbc.wowhead.com/item=24047/brilliant-dawnstone
-  // +8 Intellect
-  { name: "Brilliant Dawnstone", id: 24047, color: "yellow", rarity: "rare", jewelcrafting: false, stats: { intellect: 8 } },
-
-  /* ------------------------------------- Brilliant Lionseye ------------------------------------- */
+  /* --------------------------------------- Smooth Dragons Eye --------------------------------------- */
   // Phase 3
-  // https://tbc.wowhead.com/item=32204/brilliant-lionseye
-  // +10 Intellect
-  { name: "Brilliant Lionseye", id: 32204, color: "yellow", rarity: "epic", jewelcrafting: false, stats: { intellect: 10 } },
+  // +34 crit
+  { name: "Smooth Dragons Eye", id: 42149, color: "yellow", rarity: "epic", jewelcrafting: true, stats: { crit: 34 } },
 
-  /* --------------------------------------- Brilliant Amber -------------------------------------- */
+  /* --------------------------------------- Smooth Sun Crystal --------------------------------------- */
   // Phase 1
-  // https://tbc.wowhead.com/item=28466/brilliant-amber
-  // +4 Intellect
-  { name: "Brilliant Amber", id: 28466, color: "basic", rarity: "basic", jewelcrafting: false, stats: { intellect: 4 } },
+  // +12 Crit
+  { name: "Smooth Sun Crystal", id: 53853, color: "yellow", rarity: "basic", jewelcrafting: false, stats: { crit: 12 } },
 
-  /* --------------------------------------- Quick Dawnstone -------------------------------------- */
+  /* ------------------------------------- Brilliant Autumn's Glow ------------------------------------ */
   // Phase 1
-  // https://tbc.wowhead.com/item=35315/quick-dawnstone
+  { name: "Brilliant Autumn's Glow", id: 40012, color: "yellow", rarity: "rare", jewelcrafting: false, stats: { intellect: 16 } },
+
+  /* ------------------------------------- Brilliant Kings Amber ------------------------------------- */
+  // Phase 3
+  { name: "Brilliant Kings Amber", id: 40123, color: "yellow", rarity: "epic", jewelcrafting: false, stats: { intellect: 20 } },
+
+  /* --------------------------------------- Brilliant Sun Crystal -------------------------------------- */
+  // Phase 1
+  { name: "Brilliant Sun Crystal", id: 39912, color: "yellow", rarity: "basic", jewelcrafting: false, stats: { intellect: 12 } },
+
+  /* --------------------------------------- Brilliant Dragon's Eye -------------------------------------- */
+  // Phase 1
+  { name: "Brilliant Dragon's Eye", id: 42148, color: "yellow", rarity: "basic", jewelcrafting: true, stats: { intellect: 34 } },
+
+  /* --------------------------------------- Quick Autumn's Glow -------------------------------------- */
+  // Phase 1
   // +8 Spell Haste Rating
-  { name: "Quick Dawnstone", color: "yellow", rarity: "rare", jewelcrafting: false, stats: { haste: 8 } },
+  { name: "Quick Autumn's Glow", color: "yellow", rarity: "rare", jewelcrafting: false, stats: { haste: 16 } },
+
+  /* --------------------------------------- Quick Dragon's Eye --------------------------------------- */
+  // Phase 3
+  // +10 Spell Haste Rating
+  { name: "Quick Dragon's Eye", color: "yellow", rarity: "epic", jewelcrafting: true, stats: { haste: 34 } },
 
   /* --------------------------------------- Quick Lionseye --------------------------------------- */
   // Phase 3
-  // https://tbc.wowhead.com/item=35761/quick-lionseye
   // +10 Spell Haste Rating
-  { name: "Quick Lionseye", color: "yellow", rarity: "epic", jewelcrafting: false, stats: { haste: 10 } },
+  { name: "Quick Sun Crystal", color: "yellow", rarity: "basic", jewelcrafting: false, stats: { haste: 12 } },
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                            Blue Gems                                           */
