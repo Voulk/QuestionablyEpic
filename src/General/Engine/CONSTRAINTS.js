@@ -13,7 +13,7 @@ export const CONSTRAINTS = {
         minRenown: 1,
         maxRenown: 80
     },
-    BurningCrusade: {
+    Classic: {
 
 
     },

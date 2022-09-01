@@ -16,12 +16,12 @@ import DHT from "../../../../../Images/MythicPlus/LegionTimewalking/DarkheartThi
 import VotW from "../../../../../Images/MythicPlus/LegionTimewalking/VaultOfTheWardens.jpg";
 import EoA from "../../../../../Images/MythicPlus/LegionTimewalking/EyeOfAzshara.jpg";
 
-import AuchindounDungeons from "../../../../../Images/BurningCrusade/Dungeons/AuchindounDungeons.jpg";
-import CavernsOfTimeDungeons from "../../../../../Images/BurningCrusade/Dungeons/CavernsOfTimeDungeons.jpg";
-import CoilfangReservoirDungeons from "../../../../../Images/BurningCrusade/Dungeons/CoilfangReservoirDungeons.jpg";
-import HellfireCitadelDungeons from "../../../../../Images/BurningCrusade/Dungeons/HellfireCitadelDungeons.jpg";
-import MagistersTerrace from "../../../../../Images/BurningCrusade/Dungeons/MagistersTerraceDungeons.jpg";
-import TempestKeepDungeons from "../../../../../Images/BurningCrusade/Dungeons/TempestKeepDungeons.jpg";
+import AuchindounDungeons from "../../../../../Images/Classic/Dungeons/AuchindounDungeons.jpg";
+import CavernsOfTimeDungeons from "../../../../../Images/Classic/Dungeons/CavernsOfTimeDungeons.jpg";
+import CoilfangReservoirDungeons from "../../../../../Images/Classic/Dungeons/CoilfangReservoirDungeons.jpg";
+import HellfireCitadelDungeons from "../../../../../Images/Classic/Dungeons/HellfireCitadelDungeons.jpg";
+import MagistersTerrace from "../../../../../Images/Classic/Dungeons/MagistersTerraceDungeons.jpg";
+import TempestKeepDungeons from "../../../../../Images/Classic/Dungeons/TempestKeepDungeons.jpg";
 
 import ReturnToKarazhan from "../../../../../Images/MythicPlus/ReturntoKarazhan.png";
 import MechagonLower from "../../../../../Images/MythicPlus/MechagonLower.png";

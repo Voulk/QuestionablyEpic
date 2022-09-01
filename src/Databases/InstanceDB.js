@@ -14,125 +14,166 @@ export const encounterDB = {
   /* ---------------------------------------------------------------------------------------------- */
 
   /* ------------------------------------------ Karazhan ------------------------------------------ */
-  745: {
+  754: {
     name: {
-      en: "Karazhan",
-      fr: "Karazhan",
-      de: "Karazhan",
-      ru: "Каражан",
-      ch: "卡拉赞",
+      en: "Naxxramas",
+      fr: "Naxxramas",
+      de: "Naxxramas",
+      ru: "Наксрамас",
+      ch: "纳克萨玛斯",
     },
-    bossOrder: [652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 999],
-
+    bossOrder: [
+      1107, // Anub'Rekhan
+      1110, // Grand Widow Faerlina
+      1116, // Maexxna
+      1117, // Noth the Plaguebringer
+      1112, // Heigan the Unclean
+      1115, // Loatheb
+      1113, // Instructor Razuvious
+      1109, // Gothik the Harvester
+      1121, // The Four Horsemen
+      1118, // Patchwerk
+      1111, // Grobbulus
+      1108, // Gluth
+      1120, // Thaddius
+      1119, // Sapphiron
+      1114, // Kel'Thuzad
+      999,
+    ],
     bosses: {
-      // {
-      //   name: {
-      //     en: "Servant's Quarters",
-      //     fr: "Quartiers des serviteurs",
-      //     de: "Bedienstetenunterkünfte",
-      //     ru: "Комнаты слуг",
-      //     ch: "仆役宿舍",
-      //   },
-      //   id: 1552,
-      //   expansion: "BurningCrusade",
-      // },
-      652: {
+      1107: {
         name: {
-          en: "Attumen the Huntsman",
-          fr: "Attumen le Veneur",
-          de: "Attumen der Jäger",
-          ru: "Ловчий Аттумен",
-          ch: "猎手阿图门",
+          en: "Anub'Rekhan",
+          fr: "Anub’Rekhan",
+          de: "Anub'Rekhan",
+          ru: "Ануб'Рекан",
+          ch: "阿努布雷坎",
         },
       },
-      653: {
+      1110: {
         name: {
-          en: "Moroes",
-          fr: "Moroes",
-          de: "Moroes",
-          ru: "Мороуз",
-          ch: "莫罗斯",
+          en: "Grand Widow Faerlina",
+          fr: "Grande veuve Faerlina",
+          de: "Großwitwe Faerlina",
+          ru: "Великая вдова Фарлина",
+          ch: "黑女巫法琳娜",
         },
       },
-      654: {
+      1116: {
         name: {
-          en: "Maiden of Virtue",
-          fr: "Damoiselle de vertu",
-          de: "Tugendhafte Maid",
-          ru: "Благочестивая дева",
-          ch: "贞节圣女",
+          en: "Maexxna",
+          fr: "Maexxna",
+          de: "Maexxna",
+          ru: "Мексна",
+          ch: "迈克斯纳",
         },
       },
-      655: {
+      1117: {
         name: {
-          en: "Opera Hall",
-          fr: "L’Opéra",
-          de: "Opernsaal",
-          ru: "Оперный зал",
-          ch: "歌剧院",
+          en: "Noth the Plaguebringer",
+          fr: "Noth le Porte-Peste",
+          de: "Noth der Seuchenfürst",
+          ru: "Нот Чумной",
+          ch: "药剂师诺斯",
         },
       },
-      656: {
+      1112: {
         name: {
-          en: "The Curator",
-          fr: "Le Conservateur",
-          de: "Der Kurator",
-          ru: "Смотритель",
-          ch: "馆长",
+          en: "Heigan the Unclean",
+          fr: "Heigan l’Impur",
+          de: "Heigan der Unreine",
+          ru: "Хейган Нечестивый",
+          ch: "肮脏的希尔盖",
         },
       },
-      657: {
+      1115: {
         name: {
-          en: "Shade of Aran",
-          fr: "Ombre d’Aran",
-          de: "Arans Schemen",
-          ru: "Тень Арана",
-          ch: "埃兰之影",
+          en: "Loatheb",
+          fr: "Horreb",
+          de: "Loatheb",
+          ru: "Лотхиб",
+          ch: "洛欧塞布",
         },
       },
-      658: {
+      1113: {
         name: {
-          en: "Terestian Illhoof",
-          fr: "Terestian Malsabot",
-          de: "Terestian Siechhuf",
-          ru: "Терестиан Больное Копыто",
-          ch: "特雷斯坦·邪蹄",
+          en: "Instructor Razuvious",
+          fr: "Instructeur Razuvious",
+          de: "Instrukteur Razuvious",
+          ru: "Инструктор Разувий",
+          ch: "教官拉苏维奥斯	",
         },
       },
-      659: {
+      1109: {
         name: {
-          en: "Netherspite",
-          fr: "Dédain-du-Néant",
-          de: "Nethergroll",
-          ru: "Гнев Пустоты",
-          ch: "虚空幽龙",
+          en: "Gothik the Harvester",
+          fr: "Gothik le Moissonneur",
+          de: "Gothik der Ernter",
+          ru: "Готик Жнец",
+          ch: "收割者戈提克",
         },
       },
-      660: {
+      1121: {
         name: {
-          en: "Chess Event",
-          fr: "Évènement de l’échiquier",
-          de: "Das Schachspiel",
-          ru: "Шахматы",
-          ch: "国际象棋",
+          en: "The Four Horsemen",
+          fr: "Les quatre cavaliers",
+          de: "Die Vier Reiter",
+          ru: "Четыре Всадника",
+          ch: "天启四骑士",
         },
       },
-      661: {
+      1118: {
         name: {
-          en: "Prince Malchezaar",
-          fr: "Prince Malchezaar",
-          de: "Prinz Malchezaar",
-          ru: "Принц Малчезар",
-          ch: "玛克扎尔王子",
+          en: "Patchwerk",
+          fr: "Le Recousu",
+          de: "Flickwerk",
+          ru: "Лоскутик",
+          ch: "帕奇维克",
         },
       },
-      662: {
+      1111: {
         name: {
-          en: "Nightbane",
-          fr: "",
-          de: "",
-          ru: "",
-          ch: "",
+          en: "Grobbulus",
+          fr: "Grobbulus",
+          de: "Grobbulus",
+          ru: "Гроббулус",
+          ch: "格罗布鲁斯",
+        },
+      },
+      1108: {
+        name: {
+          en: "Gluth",
+          fr: "Gluth",
+          de: "Gluth",
+          ru: "Глут",
+          ch: "格拉斯",
+        },
+      },
+      1120: {
+        name: {
+          en: "Thaddius",
+          fr: "Thaddius",
+          de: "Thaddius",
+          ru: "Таддиус",
+          ch: "塔迪乌斯",
+        },
+      },
+      1119: {
+        name: {
+          en: "Sapphiron",
+          fr: "Saphiron",
+          de: "Saphiron",
+          ru: "Сапфирон",
+          ch: "萨菲隆",
+        },
+      },
+      1114: {
+        name: {
+          en: "Kel'Thuzad",
+          fr: "Kel’Thuzad",
+          de: "Kel'Thuzad",
+          ru: "Кел'Тузад",
+          ch: "克尔苏加德",
         },
       },
       999: {
@@ -147,448 +188,583 @@ export const encounterDB = {
     },
   },
 
-  /* ---------------------------------------- Gruul's Lair ---------------------------------------- */
-  746: {
+  756: {
     name: {
-      en: "Gruul & Mag",
-      fr: "Repaire de Gruul",
-      de: "Gruuls Unterschlupf",
-      ru: "Логово Груула",
-      ch: "格鲁尔的巢穴",
+      en: "The Eye of Eternity",
+      fr: "L’Œil de l’éternité",
+      de: "Das Auge der Ewigkeit",
+      ru: "Око Вечности",
+      ch: "永恒之眼",
     },
-    bossOrder: [649, 650, 651],
+    bossOrder: [
+      1094, // Malygos
+      999,
+    ],
     bosses: {
-      649: {
+      1094: {
         name: {
-          en: "High King Maulgar",
-          fr: "Haut Roi Maulgar",
-          de: "Hochkönig Maulgar",
-          ru: "Король Молгар",
-          ch: "莫加尔大王",
+          en: "Malygos",
+          fr: "Malygos",
+          de: "Malygos",
+          ru: "Малигос",
+          ch: "玛里苟斯",
         },
       },
-      650: {
+      999: {
         name: {
-          en: "Gruul the Dragonkiller",
-          fr: "Gruul le Tue-Dragon",
-          de: "Gruul der Drachenschlächter",
-          ru: "Груул Драконобой",
-          ch: "屠龙者格鲁尔",
-        },
-      },
-      651: {
-        name: {
-          en: "Magtheridon",
-          fr: "Magtheridon",
-          de: "Magtheridon",
-          ru: "Магтеридон",
-          ch: "玛瑟里顿",
+          en: "BoE Trash Drops",
+          fr: "BoE Trash Drops",
+          de: "BoE Trash Drops",
+          ru: "BoE Trash Drops",
+          ch: "BoE Trash Drops",
         },
       },
     },
   },
 
-  /* ------------------------------------ Serpentshrine Cavern ------------------------------------ */
-  748: {
+  759: {
     name: {
-      en: "Serpentshrine",
-      fr: "Caverne du sanctuaire du Serpent",
-      de: "Höhle des Schlangenschreins",
-      ru: "Змеиное святилище",
-      ch: "毒蛇神殿",
+      en: "Ulduar",
+      fr: "Ulduar",
+      de: "Ulduar",
+      ru: "Ульдуар",
+      ch: "奥杜尔",
     },
-    bossOrder: [623, 624, 625, 626, 627, 628],
+    bossOrder: [
+      1132, // Flame Leviathan
+      1136, // Ignis the Furnace Master
+      1139, // Razorscale
+      1142, // XT-002 Deconstructor
+      1140, // The Assembly of Iron
+      1137, // Kologarn
+      1131, // Auriaya
+      1135, // Hodir
+      1141, // Thorim
+      1133, // Freya
+      1138, // Mimiron
+      1134, // General Vezax
+      1143, // Yogg-Saron
+      1130, // Algalon the Observer
+      999,
+    ],
     bosses: {
-      623: {
+      1132: {
         name: {
-          en: "Hydross the Unstable",
-          fr: "Hydross l’Instable",
-          de: "Hydross der Unstete",
-          ru: "Гидросс Нестабильный",
-          ch: "不稳定的海度斯",
+          en: "Flame Leviathan",
+          fr: "Léviathan des flammes",
+          de: "Flammenleviathan",
+          ru: "Огненный Левиафан",
+          ch: "烈焰巨兽",
         },
       },
-      624: {
+      1136: {
         name: {
-          en: "The Lurker Below",
-          fr: "Le Rôdeur d’En bas",
-          de: "Das Grauen aus der Tiefe",
-          ru: "Скрытень из глубин",
-          ch: "鱼斯拉",
+          en: "Ignis the Furnace Master",
+          fr: "Ignis le maître de la Fournaise",
+          de: "Ignis, Meister des Eisenwerks",
+          ru: "Повелитель горнов Игнис",
+          ch: "掌炉者伊格尼斯",
         },
       },
-      625: {
+      1139: {
         name: {
-          en: "Leotheras the Blind",
-          fr: "Leotheras l’Aveugle",
-          de: "Leotheras der Blinde",
-          ru: "Леотерас Слепец",
-          ch: "盲眼者莱欧瑟拉斯",
+          en: "Razorscale",
+          fr: "Tranchécaille",
+          de: "Klingenschuppe",
+          ru: "Острокрылая",
+          ch: "锋鳞",
         },
       },
-      626: {
+      1142: {
         name: {
-          en: "Fathom-Lord Karathress",
-          fr: "Seigneur des fonds Karathress",
-          de: "Tiefenlord Karathress",
-          ru: "Повелитель глубин Каратресс",
-          ch: "深水领主卡拉瑟雷斯",
+          en: "XT-002 Deconstructor",
+          fr: "Déconstructeur XT-002",
+          de: "XT-002 Dekonstruktor",
+          ru: "Разрушитель XT-002",
+          ch: "XT-002拆解者",
         },
       },
-      627: {
+      1140: {
         name: {
-          en: "Morogrim Tidewalker",
-          fr: "Morogrim Marcheur-des-flots",
-          de: "Morogrim Gezeitenwandler",
-          ru: "Морогрим Волноступ",
-          ch: "莫洛格里·踏潮者",
+          en: "The Assembly of Iron",
+          fr: "L’assemblée du Fer",
+          de: "Die Versammlung des Eisens",
+          ru: "Железное Собрание",
+          ch: "钢铁议会",
         },
       },
-      628: {
+      1137: {
         name: {
-          en: "Lady Vashj",
-          fr: "Dame Vashj",
-          de: "Lady Vashj",
-          ru: "Леди Вайш",
-          ch: "瓦丝琪",
+          en: "Kologarn",
+          fr: "Kologarn",
+          de: "Kologarn",
+          ru: "Кологарн",
+          ch: "科隆加恩",
+        },
+      },
+      1131: {
+        name: {
+          en: "Auriaya",
+          fr: "Auriaya",
+          de: "Auriaya",
+          ru: "Ауриайя",
+          ch: "欧尔莉亚",
+        },
+      },
+      1135: {
+        name: {
+          en: "Hodir",
+          fr: "Hodir",
+          de: "Hodir",
+          ru: "Ходир",
+          ch: "霍迪尔",
+        },
+      },
+      1141: {
+        name: {
+          en: "Thorim",
+          fr: "Thorim",
+          de: "Thorim",
+          ru: "Торим",
+          ch: "托里姆",
+        },
+      },
+      1133: {
+        name: {
+          en: "Freya",
+          fr: "Freya",
+          de: "Freya",
+          ru: "Фрейя",
+          ch: "弗蕾亚",
+        },
+      },
+      1138: {
+        name: {
+          en: "Mimiron",
+          fr: "Mimiron",
+          de: "Mimiron",
+          ru: "Мимирон",
+          ch: "米米尔隆",
+        },
+      },
+      1134: {
+        name: {
+          en: "General Vezax",
+          fr: "Général Vezax",
+          de: "General Vezax",
+          ru: "Генерал Везакс",
+          ch: "维扎克斯将军",
+        },
+      },
+      1143: {
+        name: {
+          en: "Yogg-Saron",
+          fr: "Yogg-Saron",
+          de: "Yogg-Saron",
+          ru: "Йогг-Сарон",
+          ch: "尤格-萨隆",
+        },
+      },
+      1130: {
+        name: {
+          en: "Algalon the Observer",
+          fr: "Algalon l’Observateur",
+          de: "Algalon der Beobachter",
+          ru: "Алгалон Наблюдатель",
+          ch: "观察者奥尔加隆",
+        },
+      },
+      999: {
+        name: {
+          en: "BoE Trash Drops",
+          fr: "BoE Trash Drops",
+          de: "BoE Trash Drops",
+          ru: "BoE Trash Drops",
+          ch: "BoE Trash Drops",
         },
       },
     },
   },
 
-  /* ---------------------------------------- Tempest Keep ---------------------------------------- */
-  749: {
+  753: {
     name: {
-      en: "Tempest Keep",
-      fr: "L’Œil",
-      de: "Das Auge",
-      ru: "Око",
-      ch: "风暴要塞",
+      en: "Vault of Archavon",
+      fr: "Caveau d’Archavon",
+      de: "Archavons Kammer",
+      ru: "Хранилище Аркавона",
+      ch: "阿尔卡冯的宝库",
     },
-    bossOrder: [730, 731, 732, 733],
+    bossOrder: [
+      1126, // Archavon the Stone Watcher
+      1127, // Emalon the Storm Watcher
+      1128, // Koralon the Flame Watcher
+      1129, // Toravon the Ice Watcher
+      999,
+    ],
     bosses: {
-      730: {
+      1126: {
         name: {
-          en: "Al'ar",
-          fr: "Al'ar",
-          de: "Al'ar",
-          ru: "Ал'ар",
-          ch: "奥",
+          en: "Archavon the Stone Watcher",
+          fr: "Archavon le Gardien des pierres",
+          de: "Archavon der Steinwächter",
+          ru: "Аркавон Страж Камня",
+          ch: "岩石看守者阿尔卡冯",
         },
       },
-      731: {
+      1127: {
         name: {
-          en: "Void Reaver",
-          fr: "Saccageur du Vide",
-          de: "Leerhäscher",
-          ru: "Страж Бездны",
-          ch: "空灵机甲",
+          en: "Emalon the Storm Watcher",
+          fr: "Emalon le Guetteur d’orage",
+          de: "Emalon der Sturmwächter",
+          ru: "Эмалон Страж Бури",
+          ch: "风暴看守者埃玛尔隆",
         },
       },
-      732: {
+      1128: {
         name: {
-          en: "High Astromancer Solarian",
-          fr: "Grande astromancienne Solarian",
-          de: "Hochastromantin Solarian",
-          ru: "Верховный звездочет Солариан",
-          ch: "大星术师索兰莉安",
+          en: "Koralon the Flame Watcher",
+          fr: "Koralon le Veilleur des flammes",
+          de: "Koralon der Flammenwächter",
+          ru: "Коралон Страж Огня",
+          ch: "火焰看守者科拉隆",
         },
       },
-      733: {
+      1129: {
         name: {
-          en: "Kael'thas Sunstrider",
-          fr: "Kael’thas Haut-Soleil",
-          de: "Kael'thas Sonnenwanderer",
-          ru: "Кель'тас Солнечный Скиталец",
-          ch: "凯尔萨斯·逐日者",
+          en: "Toravon the Ice Watcher",
+          fr: "Toravon la Sentinelle de glace",
+          de: "Toravon der Eiswächter",
+          ru: "Торавон Страж Льда",
+          ch: "寒冰看守者图拉旺",
+        },
+      },
+      999: {
+        name: {
+          en: "BoE Trash Drops",
+          fr: "BoE Trash Drops",
+          de: "BoE Trash Drops",
+          ru: "BoE Trash Drops",
+          ch: "BoE Trash Drops",
         },
       },
     },
   },
 
-  /* --------------------------------- The Battle for Mount Hyjal --------------------------------- */
-  750: {
+  755: {
     name: {
-      en: "Mount Hyjal",
-      fr: "La bataille du mont Hyjal",
-      de: "Die Schlacht um den Hyjal",
-      ru: "Битва за гору Хиджал",
-      ch: "海加尔山之战",
+      en: "The Obsidian Sanctum",
+      fr: "Le sanctum Obsidien",
+      de: "Das Obsidiansanktum",
+      ru: "Обсидиановое святилище",
+      ch: "黑曜石圣殿",
     },
-    bossOrder: [618, 619, 620, 621, 622],
+    bossOrder: [
+      1090, // Sartharion
+      999,
+    ],
     bosses: {
-      618: {
+      1090: {
         name: {
-          en: "Rage Winterchill",
-          fr: "Rage Froidhiver",
-          de: "Furor Winterfrost",
-          ru: "Лютый Хлад",
-          ch: "雷基·冬寒",
+          en: "Sartharion",
+          fr: "Sartharion",
+          de: "Sartharion",
+          ru: "Сартарион",
+          ch: "萨塔里奥",
         },
       },
-      619: {
+      999: {
         name: {
-          en: "Anetheron",
-          fr: "Anetheron",
-          de: "Anetheron",
-          ru: "Анетерон",
-          ch: "安纳塞隆",
-        },
-      },
-      620: {
-        name: {
-          en: "Kaz'rogal",
-          fr: "Kaz’rogal",
-          de: "Kaz'rogal",
-          ru: "Каз'рогал",
-          ch: "卡兹洛加",
-        },
-      },
-      621: {
-        name: {
-          en: "Azgalor",
-          fr: "Azgalor",
-          de: "Azgalor",
-          ru: "Азгалор",
-          ch: "阿兹加洛",
-        },
-      },
-      622: {
-        name: {
-          en: "Archimonde",
-          fr: "Archimonde",
-          de: "Archimonde",
-          ru: "Архимонд",
-          ch: "阿克蒙德",
+          en: "BoE Trash Drops",
+          fr: "BoE Trash Drops",
+          de: "BoE Trash Drops",
+          ru: "BoE Trash Drops",
+          ch: "BoE Trash Drops",
         },
       },
     },
   },
 
-  /* ---------------------------------------- Black Temple ---------------------------------------- */
-  751: {
+  760: {
     name: {
-      en: "Black Temple",
-      fr: "Le Temple noir",
-      de: "Der Schwarze Tempel",
-      ru: "Черный храм",
-      ch: "黑暗神殿",
+      en: "Onyxia's Lair",
+      fr: "Repaire d’Onyxia",
+      de: "Onyxias Hort",
+      ru: "Логово Ониксии",
+      ch: "奥妮克希亚的巢穴",
     },
-    bossOrder: [601, 602, 603, 604, 605, 606, 607, 608, 609],
+    bossOrder: [
+      1084, // Onyxia
+      999,
+    ],
     bosses: {
-      601: {
+      1084: {
         name: {
-          en: "High Warlord Naj'entus",
-          fr: "Grand seigneur de guerre Naj’entus",
-          de: "Oberster Kriegsfürst Naj'entus",
-          ru: "Верховный полководец Надж'ентус",
-          ch: "高阶督军纳因图斯",
+          en: "Onyxia",
+          fr: "Onyxia",
+          de: "Onyxia",
+          ru: "Ониксия",
+          ch: "奥妮克希亚",
         },
       },
-      602: {
+      999: {
         name: {
-          en: "Supremus",
-          fr: "Supremus",
-          de: "Supremus",
-          ru: "Супремус",
-          ch: "苏普雷姆斯",
-        },
-      },
-      603: {
-        name: {
-          en: "Shade of Akama",
-          fr: "Ombre d’Akama",
-          de: "Akamas Schemen",
-          ru: "Тень Акамы",
-          ch: "阿卡玛之影",
-        },
-      },
-      604: {
-        name: {
-          en: "Teron Gorefiend",
-          fr: "Teron Fielsang",
-          de: "Teron Blutschatten",
-          ru: "Терон Кровожад",
-          ch: "塔隆·血魔",
-        },
-      },
-      605: {
-        name: {
-          en: "Gurtogg Bloodboil",
-          fr: "Gurtogg Fièvresang",
-          de: "Gurtogg Siedeblut",
-          ru: "Гуртогг Кипящая Кровь",
-          ch: "古尔图格·血沸",
-        },
-      },
-      606: {
-        name: {
-          en: "Reliquary of Souls",
-          fr: "Reliquaire des âmes",
-          de: "Reliquiar der Seelen",
-          ru: "Реликварий душ",
-          ch: "灵魂之匣",
-        },
-      },
-      607: {
-        name: {
-          en: "Mother Shahraz",
-          fr: "Mère Shahraz",
-          de: "Mutter Shahraz",
-          ru: "Матушка Шахраз",
-          ch: "莎赫拉丝主母",
-        },
-      },
-      608: {
-        name: {
-          en: "The Illidari Council",
-          fr: "Le conseil illidari",
-          de: "Der Rat der Illidari",
-          ru: "Совет иллидари",
-          ch: "伊利达雷议会",
-        },
-      },
-      609: {
-        name: {
-          en: "Illidan Stormrage",
-          fr: "Illidan Hurlorage",
-          de: "Illidan Sturmgrimm",
-          ru: "Иллидан Ярость Бури",
-          ch: "伊利丹·怒风",
-        },
-      },
-    },
-  },
-  321: {
-    name: {
-      en: "Zul'Aman",
-      fr: "Zul'Aman",
-      de: "Zul'Aman",
-      ru: "Zul'Aman",
-      ch: "Zul'Aman",
-    },
-    bossOrder: [1189, 1190, 1191, 1192, 1193, 1194],
-    bosses: {
-      1189: {
-        name: {
-          en: "Akil'zon",
-          fr: "Akil'zon",
-          de: "Akil'zon",
-          ru: "Акил'зон",
-          ch: "埃基尔松",
-        },
-      },
-      1190: {
-        name: {
-          en: "Nalorakk",
-          fr: "Nalorakk",
-          de: "Nalorakk",
-          ru: "Налоракк",
-          ch: "纳洛拉克",
-        },
-      },
-      1191: {
-        name: {
-          en: "Jan'alai",
-          fr: "Jan'alai",
-          de: "Jan'alai",
-          ru: "Джан'алай",
-          ch: "加亚莱",
-        },
-      },
-      1192: {
-        name: {
-          en: "Halazzi",
-          fr: "Halazzi",
-          de: "Halazzi",
-          ru: "Халаззи",
-          ch: "哈尔拉兹",
-        },
-      },
-      1193: {
-        name: {
-          en: "Hex Lord Malacrass",
-          fr: "Seigneur des maléfices Malacrass",
-          de: "Hex Lord Malacrass",
-          ru: "Повелитель проклятий Малакрасс",
-          ch: "妖术领主玛拉卡斯",
-        },
-      },
-      1194: {
-        name: {
-          en: "Zul'jin",
-          fr: "Zul'jin",
-          de: "Zul'jin",
-          ru: "Зул'джин",
-          ch: "祖尔金",
+          en: "BoE Trash Drops",
+          fr: "BoE Trash Drops",
+          de: "BoE Trash Drops",
+          ru: "BoE Trash Drops",
+          ch: "BoE Trash Drops",
         },
       },
     },
   },
 
-  /* --------------------------------------- Sunwell Plateau -------------------------------------- */
-  752: {
+  757: {
     name: {
-      en: "Sunwell Plateau",
-      fr: "Plateau du Puits de soleil",
-      de: "Sonnenbrunnenplateau",
-      ru: "Плато Солнечного Колодца",
-      ch: "太阳之井高地",
+      en: "Trial of the Crusader",
+      fr: "L’épreuve du croisé",
+      de: "Prüfung des Kreuzfahrers",
+      ru: "Испытание крестоносца",
+      ch: "十字军的试炼",
     },
-    bossOrder: [724, 725, 726, 727, 728, 729],
+    bossOrder: [
+      1088, // The Northrend Beasts
+      1087, // Lord Jaraxxus
+      1086, // Champions of the Alliance
+      1089, // Twin Val'kyr
+      1085, // Anub'arak
+      999,
+    ],
     bosses: {
-      724: {
+      1088: {
         name: {
-          en: "Kalecgos",
-          fr: "Kalecgos",
-          de: "Kalecgos",
-          ru: "Калесгос",
-          ch: "卡雷苟斯",
+          en: "The Northrend Beasts",
+          fr: "Les bêtes du Norfendre",
+          de: "Die Bestien von Nordend",
+          ru: "Чудовища Нордскола",
+          ch: "诺森德猛兽",
         },
       },
-      725: {
+      1087: {
         name: {
-          en: "Brutallus",
-          fr: "Brutallus",
-          de: "Brutallus",
-          ru: "Бруталл",
-          ch: "布鲁塔卢斯",
+          en: "Lord Jaraxxus",
+          fr: "Seigneur Jaraxxus",
+          de: "Lord Jaraxxus",
+          ru: "Лорд Джараксус",
+          ch: "加拉克苏斯大王",
         },
       },
-      726: {
+      1086: {
         name: {
-          en: "Felmyst",
-          fr: "Gangrebrume",
-          de: "Teufelsruch",
-          ru: "Пророк Скверны",
-          ch: "菲米丝",
+          en: "Champions of the Alliance / Champions of the Horde",
+          fr: "Champions de l’Alliance / Champions de la Horde",
+          de: "Champions der Allianz / Champions der Horde",
+          ru: "Чемпионы Альянса / Чемпионы Орды",
+          ch: "联盟的冠军 / 部落的冠军",
         },
       },
-      727: {
+      1089: {
         name: {
-          en: "The Eredar Twins",
-          fr: "Les jumelles érédars",
-          de: "Die Eredarzwillinge",
-          ru: "Эредарские близнецы",
-          ch: "艾瑞达双子",
+          en: "Twin Val'kyr",
+          fr: "Jumelles val’kyrs",
+          de: "Zwillingsval'kyr",
+          ru: "Валь'киры-близнецы",
+          ch: "瓦格里双子",
         },
       },
-      728: {
+      1085: {
         name: {
-          en: "M'uru",
-          fr: "M'uru",
-          de: "M'uru",
-          ru: "М'ууру",
-          ch: "穆鲁",
+          en: "Anub'arak",
+          fr: "Anub’arak",
+          de: "Anub'arak",
+          ru: "Ануб'арак",
+          ch: "阿努巴拉克",
         },
       },
-      729: {
+      999: {
         name: {
-          en: "Kil'jaeden",
-          fr: "Kil'jaeden",
-          de: "Kil'jaeden",
-          ru: "Кил'джеден",
-          ch: "基尔加丹",
+          en: "BoE Trash Drops",
+          fr: "BoE Trash Drops",
+          de: "BoE Trash Drops",
+          ru: "BoE Trash Drops",
+          ch: "BoE Trash Drops",
+        },
+      },
+    },
+  },
+
+  761: {
+    name: {
+      en: "The Ruby Sanctum",
+      fr: "Le sanctum Rubis",
+      de: "Das Rubinsanktum",
+      ru: "Рубиновое святилище",
+      ch: "红玉圣殿",
+    },
+    bossOrder: [
+      1150, // Halion
+      999,
+    ],
+    bosses: {
+      1150: {
+        name: {
+          en: "Halion",
+          fr: "Halion",
+          de: "Halion",
+          ru: "Халион	",
+          ch: "海里昂",
+        },
+      },
+      999: {
+        name: {
+          en: "BoE Trash Drops",
+          fr: "BoE Trash Drops",
+          de: "BoE Trash Drops",
+          ru: "BoE Trash Drops",
+          ch: "BoE Trash Drops",
+        },
+      },
+    },
+  },
+
+  758: {
+    name: {
+      en: "Icecrown Citadel",
+      fr: "Citadelle de la Couronne de glace",
+      de: "Die Eiskronenzitadelle",
+      ru: "Цитадель Ледяной Короны",
+      ch: "冰冠堡垒",
+    },
+    bossOrder: [
+      1101, // Lord Marrowgar
+      1100, // Lady Deathwhisper
+      1099, // Icecrown Gunship Battle
+      1096, // Deathbringer Saurfang
+      1097, // Festergut
+      1104, // Rotface
+      1102, // Professor Putricide
+      1095, // Blood Prince Council
+      1103, // Blood-Queen Lana'thel
+      1098, // Valithria Dreamwalker
+      1105, // Sindragosa
+      1106, // The Lich King
+      999,
+    ],
+    bosses: {
+      1101: {
+        name: {
+          en: "Lord Marrowgar",
+          fr: "Seigneur Gargamoelle",
+          de: "Lord Mark'gar",
+          ru: "Лорд Ребрад",
+          ch: "玛洛加尔领主",
+        },
+      },
+      1100: {
+        name: {
+          en: "Lady Deathwhisper",
+          fr: "Dame Murmemort",
+          de: "Lady Todeswisper",
+          ru: "Леди Смертный Шепот",
+          ch: "亡语者女士",
+        },
+      },
+      1099: {
+        name: {
+          en: "Icecrown Gunship Battle",
+          fr: "Bataille des canonnières de la Couronne de glace",
+          de: "Kanonenschiffsschlacht von Eiskrone",
+          ru: "Битва на кораблях в Ледяной Короне",
+          ch: "冰冠冰川炮舰战",
+        },
+      },
+      1096: {
+        name: {
+          en: "Deathbringer Saurfang",
+          fr: "Porte-mort Saurcroc",
+          de: "Todesbringer Saurfang",
+          ru: "Саурфанг Смертоносный",
+          ch: "死亡使者萨鲁法尔",
+        },
+      },
+      1097: {
+        name: {
+          en: "Festergut",
+          fr: "Pulentraille",
+          de: "Fauldarm",
+          ru: "Тухлопуз",
+          ch: "烂肠",
+        },
+      },
+      1104: {
+        name: {
+          en: "Rotface",
+          fr: "Trognepus",
+          de: "Modermiene",
+          ru: "Гниломорд",
+          ch: "腐面",
+        },
+      },
+      1102: {
+        name: {
+          en: "Professor Putricide",
+          fr: "Professeur Putricide",
+          de: "Professor Seuchenmord",
+          ru: "Профессор Мерзоцид",
+          ch: "普崔塞德教授",
+        },
+      },
+      1095: {
+        name: {
+          en: "Blood Prince Council",
+          fr: "Conseil des princes de sang",
+          de: "Rat der Blutprinzen",
+          ru: "Совет кровавых принцев",
+          ch: "鲜血王子议会",
+        },
+      },
+      1103: {
+        name: {
+          en: "Blood-Queen Lana'thel",
+          fr: "Reine de sang Lana’thel",
+          de: "Blutkönigin Lana'thel",
+          ru: "Кровавая королева Лана'тель",
+          ch: "鲜血女王兰娜瑟尔",
+        },
+      },
+      1098: {
+        name: {
+          en: "Valithria Dreamwalker",
+          fr: "Valithria Marcherêve",
+          de: "Valithria Traumwandler",
+          ru: "Валитрия Сноходица",
+          ch: "踏梦者瓦莉瑟瑞娅",
+        },
+      },
+      1105: {
+        name: {
+          en: "Sindragosa",
+          fr: "Sindragosa",
+          de: "Sindragosa",
+          ru: "Синдрагоса",
+          ch: "辛达苟萨",
+        },
+      },
+      1106: {
+        name: {
+          en: "The Lich King",
+          fr: "Le roi-liche",
+          de: "Der Lichkönig",
+          ru: "Король-лич",
+          ch: "巫妖王",
+        },
+      },
+      999: {
+        name: {
+          en: "BoE Trash Drops",
+          fr: "BoE Trash Drops",
+          de: "BoE Trash Drops",
+          ru: "BoE Trash Drops",
+          ch: "BoE Trash Drops",
         },
       },
     },
@@ -596,153 +772,140 @@ export const encounterDB = {
 
   /* ------------------------------------------ Dungeons ------------------------------------------ */
   123: {
-    bossOrder: [248, 256, 259, 260, 261, 262, 250, 247, 252, 253, 258, 257, 254, 251, 255, 249],
-    248: {
+    bossOrder: [271, 272, 279, 273, 280, 274, 275, 276, 278, 281, 282, 283, 284, 285, 286],
+    271: {
       name: {
-        en: "Hellfire Ramparts",
-        fr: "Remparts des Flammes infernales",
-        de: "Höllenfeuerbollwerk",
-        ru: "Бастионы Адского Пламени",
-        ch: "地狱火城墙",
+        en: "Ahn'kahet: The Old Kingdom",
+        fr: "Ahn’kahet : l’Ancien royaume",
+        de: "Ahn'kahet: Das Alte Königreich",
+        ru: "Ан'кахет: Старое Королевство",
+        ch: "安卡赫特：古代王国",
       },
     },
-    256: {
+    272: {
       name: {
-        en: "The Blood Furnace",
-        fr: "La Fournaise du sang",
-        de: "Der Blutkessel",
-        ru: "Кузня Крови",
-        ch: "鲜血熔炉",
+        en: "Azjol-Nerub",
+        fr: "Azjol-Nérub",
+        de: "Azjol-Nerub",
+        ru: "Азжол-Неруб",
+        ch: "艾卓-尼鲁布",
       },
     },
-    259: {
+    279: {
       name: {
-        en: "The Shattered Halls",
-        fr: "Les salles Brisées",
-        de: "Die Zerschmetterten Hallen",
-        ru: "Разрушенные залы",
-        ch: "破碎大厅",
+        en: "The Culling of Stratholme",
+        fr: "L’Épuration de Stratholme",
+        de: "Das Ausmerzen von Stratholme",
+        ru: "Очищение Стратхольма",
+        ch: "净化斯坦索姆",
       },
     },
-
-    260: {
+    273: {
       name: {
-        en: "The Slave Pens",
-        fr: "Les enclos aux esclaves",
-        de: "Die Sklavenunterkünfte",
-        ru: "Узилище",
-        ch: "奴隶围栏",
+        en: "Drak'Tharon Keep",
+        fr: "Donjon de Drak’Tharon",
+        de: "Feste Drak'Tharon",
+        ru: "Крепость Драк'Тарон",
+        ch: "达克萨隆要塞",
       },
     },
-    261: {
+    280: {
       name: {
-        en: "The Steamvault",
-        fr: "Le caveau de la Vapeur",
-        de: "Die Dampfkammer",
-        ru: "Паровое подземелье",
-        ch: "蒸汽地窟",
+        en: "The Forge of Souls",
+        fr: "La Forge des Âmes",
+        de: "Die Seelenschmiede",
+        ru: "Кузня Душ",
+        ch: "灵魂洪炉",
       },
     },
-    262: {
+    274: {
       name: {
-        en: "The Underbog",
-        fr: "La Basse-tourbière",
-        de: "Der Tiefensumpf",
-        ru: "Нижетопь",
-        ch: "幽暗沼泽",
+        en: "Gundrak",
+        fr: "Gundrak",
+        de: "Gundrak",
+        ru: "Гундрак",
+        ch: "古达克",
       },
     },
-
-    250: {
+    275: {
       name: {
-        en: "Mana-Tombs",
-        fr: "Tombes-mana",
-        de: "Managruft",
-        ru: "Гробницы маны",
-        ch: "法力陵墓",
+        en: "Halls of Lightning",
+        fr: "Les salles de Foudre",
+        de: "Hallen der Blitze",
+        ru: "Чертоги Молний",
+        ch: "闪电大厅",
       },
     },
-    247: {
+    276: {
       name: {
-        en: "Auchenai Crypts",
-        fr: "Cryptes Auchenaï",
-        de: "Auchenaikrypta",
-        ru: "Аукенайские гробницы",
-        ch: "奥金尼地穴",
+        en: "Halls of Reflection",
+        fr: "Salles des Reflets",
+        de: "Hallen der Reflexion",
+        ru: "Залы Отражений",
+        ch: "映像大厅",
       },
     },
-    252: {
+    278: {
       name: {
-        en: "Sethekk Halls",
-        fr: "Les salles des Sethekk",
-        de: "Sethekkhallen",
-        ru: "Сетеккские залы",
-        ch: "塞泰克大厅",
+        en: "Pit of Saron",
+        fr: "Fosse de Saron",
+        de: "Grube von Saron",
+        ru: "Яма Сарона",
+        ch: "萨隆矿坑",
       },
     },
-    253: {
+    281: {
       name: {
-        en: "Shadow Labyrinth",
-        fr: "Labyrinthe des Ombres",
-        de: "Schattenlabyrinth",
-        ru: "Темный лабиринт",
-        ch: "暗影迷宫",
+        en: "The Nexus",
+        fr: "Le Nexus",
+        de: "Der Nexus",
+        ru: "Нексус",
+        ch: "魔枢",
       },
     },
-
-    258: {
+    282: {
       name: {
-        en: "The Mechanar",
-        fr: "Le Méchanar",
-        de: "Die Mechanar",
-        ru: "Механар",
-        ch: "能源舰",
+        en: "The Oculus",
+        fr: "L’Oculus",
+        de: "Das Oculus",
+        ru: "Окулус",
+        ch: "魔环",
       },
     },
-    257: {
+    283: {
       name: {
-        en: "The Botanica",
-        fr: "La Botanica",
-        de: "Die Botanika",
-        ru: "Ботаника",
-        ch: "生态船",
+        en: "The Violet Hold",
+        fr: "Le fort Pourpre",
+        de: "Die Violette Festung",
+        ru: "Аметистовая крепость",
+        ch: "紫罗兰监狱",
       },
     },
-    254: {
+    284: {
       name: {
-        en: "The Arcatraz",
-        fr: "L’Arcatraz",
-        de: "Die Arkatraz",
-        ru: "Аркатрац",
-        ch: "禁魔监狱",
+        en: "Trial of the Champion",
+        fr: "L’épreuve du champion",
+        de: "Prüfung des Champions",
+        ru: "Испытание чемпиона",
+        ch: "冠军的试炼",
       },
     },
-
-    251: {
+    285: {
       name: {
-        en: "Old Hillsbrad Foothills",
-        fr: "Contreforts de Hautebrande d’antan",
-        de: "Vorgebirge des Alten Hügellands",
-        ru: "Старые предгорья Хилсбрада",
-        ch: "旧希尔斯布莱德丘陵",
+        en: "Utgarde Keep",
+        fr: "Donjon d’Utgarde",
+        de: "Burg Utgarde",
+        ru: "Крепость Утгард",
+        ch: "乌特加德城堡",
       },
     },
-    255: {
+    286: {
       name: {
-        en: "The Black Morass",
-        fr: "Le Noir marécage",
-        de: "Der Schwarze Morast",
-        ru: "Черные топи",
-        ch: "黑色沼泽",
-      },
-    },
-    249: {
-      name: {
-        en: "Magister's Terrace",
-        fr: "Terrasse des Magistères",
-        de: "Terrasse der Magister",
-        ru: "Терраса Магистров",
-        ch: "魔导师平台",
+        en: "Utgarde Pinnacle",
+        fr: "Cime d’Utgarde",
+        de: "Turm Utgarde",
+        ru: "Вершина Утгард",
+        ch: "乌特加德之巅",
       },
     },
   },
@@ -1176,7 +1339,6 @@ export const encounterDB = {
 
       -26, // Karazhan Lower
       -27, // Karazhan Upper
-
 
       536, // Grimrail Depot
       558, // Iron Docks

@@ -11,7 +11,7 @@ function CompetitiveAlternatives(props) {
   // const item = props.item
   const differentials = props.differentials;
   const gameType = useSelector((state) => state.gameType);
-  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
+  const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
   const itemQuality = (item, gameType) => {
     if (gameType === "Retail") {
       const isLegendary = item.effect.type === "spec legendary";
@@ -20,7 +20,7 @@ function CompetitiveAlternatives(props) {
       else if (item.level >= 120) return "#328CE3";
       else return "#1eff00";
     } else {
-      const quality = getItemProp(item.id, "quality", "BurningCrusade");
+      const quality = getItemProp(item.id, "quality", "Classic");
       if (quality === 5) return "#ff8000";
       else if (quality === 4) return "#a73fee";
       else if (quality === 3) return "#328CE3";

@@ -182,13 +182,13 @@ class CastModel {
     } 
     
     // Burning Crusade Profiles
-    else if (spec === "Restoration Druid BC") {
+    else if (spec === "Restoration Druid Classic") {
       spellList = this.getClassicDruid();
-    } else if (spec === "Restoration Shaman BC") {
+    } else if (spec === "Restoration Shaman Classic") {
       spellList = this.getClassicShaman();
-    } else if (spec === "Holy Priest BC") {
+    } else if (spec === "Holy Priest Classic") {
       spellList = this.getClassicPriest();
-    } else if (spec === "Holy Paladin BC") {
+    } else if (spec === "Holy Paladin Classic") {
       spellList = this.getClassicPaladin();
     } else {
       spellList = {};
