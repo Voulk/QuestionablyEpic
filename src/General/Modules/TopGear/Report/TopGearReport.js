@@ -11,8 +11,8 @@ import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
 import { covenantIcons, covenantColours } from "../../CooldownPlanner/Functions/CovenantFunctions";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import { classTranslator } from "../../../Functions/CommonFunctions";
 import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared";
+import { getTranslatedClassName } from "locale/ClassNames";
 
 function TopGearReport(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
@@ -237,7 +237,7 @@ function TopGearReport(props) {
                                         {props.player.charName}
                                       </Typography>
 
-                                      <Tooltip title={t(classTranslator(props.player.spec))} style={{ color: classColoursJS(props.player.spec) }} placement="top" arrow>
+                                      <Tooltip title={getTranslatedClassName(props.player.spec)} style={{ color: classColoursJS(props.player.spec) }} placement="top" arrow>
                                         {classIcons(props.player.spec, {
                                           height: 22,
                                           width: 22,

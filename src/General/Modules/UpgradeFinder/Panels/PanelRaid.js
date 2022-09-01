@@ -285,7 +285,6 @@ export default function RaidGearContainer(props) {
       return obj.raidID === raid;
     })[0]["name"][currentLanguage];
 
-    console.log(raidName);
     return raidName;
   };
 
@@ -302,7 +301,6 @@ export default function RaidGearContainer(props) {
     const firstDifficulty = difficulties[0];
     const secondDifficulty = difficulties.length === 2 ? difficulties[1] : -1;
     const retailBossList = Array.from(Object.keys(encounterDB[1195].bosses));
-    console.log(retailBossList);
 
     return (
       <Grid item xs={12}>
@@ -490,7 +488,6 @@ export default function RaidGearContainer(props) {
                         //filter((key) => key === raidID)
                         .map((key, i) => (
                           <Grid item xs={12} key={"bossContainer-" + i}>
-                            {console.log(key)}
                             <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
                               <Grid container justifyContent="center" alignItems="flex-start">
                                 <Grid item style={{ alignSelf: "center" }}>

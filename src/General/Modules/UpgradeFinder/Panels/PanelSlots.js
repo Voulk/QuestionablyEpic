@@ -10,6 +10,7 @@ import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import withStyles from "@mui/styles/withStyles";
+import { getTranslatedSlotName } from "locale/slotsLocale";
 
 function filterItemListBySlot(itemList, slot) {
   const excludedInstance = [748, 749, 750, 751, 321, 752];
@@ -67,7 +68,8 @@ const useStyles = makeStyles(() => ({
 
 export default function SlotsContainer(props) {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   let itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
 
@@ -114,14 +116,13 @@ export default function SlotsContainer(props) {
         return [-1];
     }
   };
-
   const contentGenerator = () => {
     return slotList.map((key, i) => (
-      <Accordion key={t("slotNames." + key.label) + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+      <Accordion key={getTranslatedSlotName(key.label, currentLanguage) + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
           <img src={iconReturn(key.slot, props.player.spec)} height={30} width={30} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
           <Typography align="center" variant="h6" noWrap color="primary">
-            {t("slotNames." + key.label)} -{" "}
+            {getTranslatedSlotName(key.label, currentLanguage)} -{" "}
             {[...filterItemListBySlot(itemList, key.slot)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades
           </Typography>
         </AccordionSummary>

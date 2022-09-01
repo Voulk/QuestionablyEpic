@@ -53,7 +53,7 @@ export default function LogDetailsTable(props) {
                   <a data-wowhead={"spell=" + row}>
                     <img height={16} width={16} style={{ marginRight: 4 }} />
                   </a>
-                  {t("SpellNames." + row)}
+                  {/* {t("SpellNames." + row)} */}
                 </div>
               </TableCell>
               <TableCell align="right" style={{ paddingRight: 8 }}>

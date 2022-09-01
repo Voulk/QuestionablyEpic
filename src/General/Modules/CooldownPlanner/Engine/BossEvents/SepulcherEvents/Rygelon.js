@@ -180,7 +180,6 @@ export default function createRygelonEvents(bossID, difficulty, damageTakenData,
       const stellarDecayEvents = debuffs.filter((filter) => filter.ability.guid === stellarDecayDebuff && filter.type === "applydebuff"); // filter dubuffs to stellar decay
       const stellarDecayEventsReduced = stellarDecayEvents.filter((filter, i) => {
         let entryOk = true;
-        // console.log("First Timestamp: " + filter.timestamp);
         for (var a = 1; a <= clusterEvents; a++) {
           if (a + i < stellarDecayEvents.length) {
             const comparisonTimestamp = stellarDecayEvents[a + i].timestamp;

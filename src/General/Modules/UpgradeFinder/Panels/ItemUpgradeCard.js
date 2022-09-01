@@ -6,6 +6,7 @@ import "./ItemUpgrade.css";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { encounterDB } from "../../../../Databases/InstanceDB";
+import { getTranslatedPvP } from "locale/pvpLocale";
 
 const useStyles = makeStyles({
   root: {
@@ -79,11 +80,9 @@ export default function ItemCard(props) {
   }
 
   const sourceName = (item) => {
-    console.log(item.source.instanceId);
-    console.log(item.source.encounterId);
     /* ------------------------------ Dungeon Name ------------------------------ */
     if (item.source.instanceId === -1) {
-      let dungeons = {...encounterDB["-1"]};
+      let dungeons = { ...encounterDB["-1"] };
       dungeons = Object.assign(dungeons, encounterDB[123]);
 
       return dungeons[item.source.encounterId].name[currentLanguage];
@@ -110,7 +109,7 @@ export default function ItemCard(props) {
     }
     /* ---------------------------------- Honor --------------------------------- */
     if (item.source.instanceId === -16 || item.source.encounterId === -16) {
-      return t("PvPCurrency.-16");
+      return getTranslatedPvP("-16", currentLanguage);
     }
     /* ----------------------- Creation Catalyst --------------------------------- */
     if (item.source.instanceId === -22) {
@@ -118,7 +117,7 @@ export default function ItemCard(props) {
     }
     /* -------------------------------- Conquest -------------------------------- */
     if (item.source.instanceId === -17 || item.source.encounterId === -17) {
-      return t("PvPCurrency.-17");
+      return getTranslatedPvP("-17", currentLanguage);
     }
     /* -------------------------------- TBC Badge Gear -------------------------------- */
     if (item.source.instanceId === -4) {

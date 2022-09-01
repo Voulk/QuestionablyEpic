@@ -30,7 +30,6 @@ export default function MythicPlusGearContainer(props) {
   const contentGenerator = () => {
     return encounterDB["-1"].bossOrder.map((key, i) => (
       <Grid item xs={12} key={"mythicContainer-" + i}>
-        {console.log(key)}
         <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
           <Grid container>
             <Grid item xs={12} sm="auto">
@@ -96,7 +95,6 @@ export default function MythicPlusGearContainer(props) {
       </Grid>
     ));
   };
-  console.log(gameType);
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
