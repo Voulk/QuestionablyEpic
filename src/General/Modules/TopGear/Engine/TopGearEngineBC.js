@@ -12,7 +12,6 @@ import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine"
 import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction } from "./TopGearEngineShared"
 import { getItemSet } from "Classic/Databases/ItemSetsDB"
-import { createBuilderStatusReporter } from "typescript";
 
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
@@ -151,40 +150,36 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   
     let bonus_stats = {
         intellect: 0,
-        bonushealing: 0,
-        spelldamage: 0,
+        spellpower: 0,
         spirit: 0,
-        spellcrit: 0,
+        crit: 0,
         stamina: 0,
         mp5: 0,
-        spellhaste: 0,
+        haste: 0,
     };
 
     let enchant_stats = {
       intellect: 0,
-      bonushealing: 0,
-      spelldamage: 0,
+      spellpower: 0,
       spirit: 0,
-      spellcrit: 0,
+      crit: 0,
       stamina: 0,
       mp5: 0,
-      spellhaste: 0,
+      haste: 0,
     };
 
     // Talents
     let talent_stats = {
       intellect: 0,
-      bonushealing: 0,
-      spelldamage: 0,
+      spellpower: 0,
       spirit: 0,
-      spellcrit: 0,
+      haste: 0,
+      crit: 0,
       stamina: 0,
       mp5: 0,
-      spellhaste: 0,
     }
   
     /*
-    
     let adjusted_weights = {
       intellect: 1,
       haste: player.statWeights[contentType]["haste"],
@@ -322,10 +317,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   
     }
     bonus_stats = mergeBonusStats(effectStats);
-
-    // Convert spelldamage to bonushealing
-    setStats.bonushealing = (setStats.bonushealing + setStats.spelldamage);
-    setStats.spelldamage = 0;
 
     for (var stat in setStats) {
       if (stat === "hps") {

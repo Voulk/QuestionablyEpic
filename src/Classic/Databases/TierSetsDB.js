@@ -236,111 +236,136 @@ export const tierSets = [
   /*                           Restoration Druid Tier 4 [Marlorne Raiment]                          */
   /* ---------------------------------------------------------------------------------------------- */
   {
-    name: { en: "Malorne Raiment", de: "Malornes Gewandung", fr: "Grande tenue de Malorne", ru: "Одеяния Малорна", ch: "玛洛恩圣装" },
+    name: { en: "Dreamwalker Regalia", de: "Dreamwalker Regalia", fr: "Dreamwalker Regalia", ru: "Dreamwalker Regalia", ch: "Dreamwalker Regalia" },
     spec: "Restoration Druid",
     slots: {
-      head: { id: 29086, icon: require("Images/Classic/TierSetIcons/inv_helmet_81.jpg").default },
+      head: { id: 43754, icon: require("Images/Classic/TierSetIcons/inv_helmet_15.jpg").default },
       shoulder: { id: 29089, icon: require("Images/Classic/TierSetIcons/inv_shoulder_44.jpg").default },
       chest: { id: 29087, icon: require("Images/Classic/TierSetIcons/inv_chest_leather_11.jpg").default },
-      wrist: { id: -1, icon: -1 },
       hands: { id: 29090, icon: require("Images/Classic/TierSetIcons/inv_gauntlets_44.jpg").default },
-      waist: { id: -1, icon: -1 },
       legs: { id: 29088, icon: require("Images/Classic/TierSetIcons/inv_pants_leather_22.jpg").default },
-      boots: { id: -1, icon: -1 },
     },
     twoSet: {
       effect: {
-        en: "(2) Your helpful spells have a chance to restore up to 120 mana.",
-        de: "(2) Gewährt Euren unterstützenden Zaubern die Chance, bis zu 120 Mana wiederherzustellen.",
-        fr: "(2) Vos sorts bénéfiques ont une chance de rendre un maximum de 120 points de mana.",
-        ru: "(2) Ваши помогающие заклинания могут восполнить до 120 ед. маны.",
-        ch: "(2) 你的有益法术有一定几率为你恢复最多120点法力值。",
+        en: "(2) The cost of your Lifebloom is reduced by 5%.",
+        de: "(2) The cost of your Lifebloom is reduced by 5%.",
+        fr: "(2) The cost of your Lifebloom is reduced by 5%.",
+        ru: "(2) The cost of your Lifebloom is reduced by 5%.",
+        ch: "(2) The cost of your Lifebloom is reduced by 5%.",
       },
       hps: 100,
     },
     fourSet: {
       effect: {
-        en: "(4) Reduces the cooldown on your Nature's Swiftness ability by 24 sec.",
-        de: "(4) Verringert die Abklingzeit Eurer Fähigkeit 'Schnelligkeit der Natur' um 24 Sek.",
-        fr: "(4) Réduit le temps de recharge de votre technique Rapidité de la nature de 24 s.",
-        ru: "(4) Уменьшает время восстановления 'Природной стремительности' на 24 сек.",
-        cn: "(4) 使你的自然迅捷技能的冷却时间缩短24秒。",
+        en: "(4) Your Nourish heals for an additional 5% for each HoT present on the target.",
+        de: "(4) Your Nourish heals for an additional 5% for each HoT present on the target.",
+        fr: "(4) Your Nourish heals for an additional 5% for each HoT present on the target.",
+        ru: "(4) Your Nourish heals for an additional 5% for each HoT present on the target.",
+        cn: "(4) Your Nourish heals for an additional 5% for each HoT present on the target.",
       },
       hps: 300,
     },
   },
 
   /* ---------------------------------------------------------------------------------------------- */
-  /*                          Restoration Druid Tier 5 [Nordrassil Raiment]                         */
+  /*                              Restoration Druid Tier 8 (Ulduar)                                 */
   /* ---------------------------------------------------------------------------------------------- */
   {
-    name: { en: "Nordrassil Raiment", de: "Gewandung von Nordrassil", fr: "Grande tenue de Nordrassil", ru: "Одеяния Нордрассила", ch: "玛洛恩圣装" },
+    name: { en: "Nightsong Regalia", de: "Nightsong Regalia", fr: "Nightsong Regalia", ru: "Nightsong Regalia", ch: "Nightsong Regalia" },
     spec: "Restoration Druid",
     slots: {
       head: { id: 30219, icon: require("Images/Classic/TierSetIcons/inv_helmet_85.jpg").default },
       shoulder: { id: 30221, icon: require("Images/Classic/TierSetIcons/inv_shoulder_48.jpg").default },
       chest: { id: 30216, icon: require("Images/Classic/TierSetIcons/inv_chest_leather_12.jpg").default },
-      wrist: { id: -1, icon: -1 },
       hands: { id: 30217, icon: require("Images/Classic/TierSetIcons/inv_gauntlets_48.jpg").default },
-      waist: { id: -1, icon: -1 },
       legs: { id: 30220, icon: require("Images/Classic/TierSetIcons/inv_pants_leather_23.jpg").default },
-      boots: { id: -1, icon: -1 },
     },
     twoSet: {
       effect: {
-        en: "(2) Increases the duration of your Regrowth spell by 6 sec.",
-        de: "(2) Erhöht die Dauer Eures Zaubers 'Nachwachsen' um 6 Sek.",
-        fr: "(2) Augmente la durée de votre sort Rétablissement de 6 s.",
-        ru: "(2) Увеличивает время действия 'Восстановления' на 6 сек.",
-        ch: "(2) 你的有益法术有一定几率为你恢复最多120点法力值。",
+        en: "(2) Increases the healing done by Swiftmend by 10%.",
+        de: "(2) Increases the healing done by Swiftmend by 10%.",
+        fr: "(2) Increases the healing done by Swiftmend by 10%.",
+        ru: "(2) Increases the healing done by Swiftmend by 10%.",
+        ch: "(2) Increases the healing done by Swiftmend by 10%.",
       },
       hps: 100,
     },
     fourSet: {
       effect: {
-        en: "(4) Increases the final amount healed by your Lifebloom spell by 150.",
-        de: "(4) Erhöht die sofortige Heilung Eurer Fähigkeit 'Blühendes Leben' um 150.",
-        fr: "(4) Augmente de 150 la quantité finale de points de vie rendus par votre sort Fleur de vie.",
-        ru: "(4) Уменьшает время восстановления 'Природной стремительности' на 24 сек.",
-        cn: "(4) Увеличивает финальный объем здоровья, восполняемого 'Жизнецветом', на 150 ед.",
+        en: "(4) Your Rejuvenation also provides an instant heal for your target.",
+        de: "(4) Your Rejuvenation also provides an instant heal for your target.",
+        fr: "(4) Your Rejuvenation also provides an instant heal for your target.",
+        ru: "(4) Your Rejuvenation also provides an instant heal for your target.",
+        cn: "(4) Your Rejuvenation also provides an instant heal for your target.",
       },
       hps: 300,
     },
   },
 
   /* ---------------------------------------------------------------------------------------------- */
-  /*                         Restoration Druid Tier 6 [Thunderheart Raiment]                        */
+  /*                                     Restoration Druid Tier 9 (ToC)                             */
   /* ---------------------------------------------------------------------------------------------- */
   {
-    name: { en: "Thunderheart Raiment", de: "Gewandung des Donnerherzens", fr: "Grande tenue Cœur-de-tonnerre", ru: "Одеяния Громового сердца", ch: "雷霆之心圣服" },
+    name: { en: "Malfurion's Garb", de: "Malfurion's Garb", fr: "Malfurion's Garb", ru: "Malfurion's Garb", ch: "Malfurion's Garb" },
     spec: "Restoration Druid",
     slots: {
       head: { id: 31037, icon: require("Images/Classic/TierSetIcons/inv_helmet_94.jpg").default },
       shoulder: { id: 31047, icon: require("Images/Classic/TierSetIcons/inv_shoulder_58.jpg").default },
       chest: { id: 31041, icon: require("Images/Classic/TierSetIcons/inv_chest_leather_15.jpg").default },
-      wrist: { id: 34445, icon: require("Images/Classic/TierSetIcons/inv_bracer_08.jpg").default },
       hands: { id: 31032, icon: require("Images/Classic/TierSetIcons/inv_gauntlets_58.jpg").default },
-      waist: { id: 34554, icon: require("Images/Classic/TierSetIcons/inv_belt_24.jpg").default },
       legs: { id: 31045, icon: require("Images/Classic/TierSetIcons/inv_pants_leather_26.jpg").default },
-      boots: { id: 34571, icon: require("Images/Classic/TierSetIcons/inv_boots_08.jpg").default },
     },
     twoSet: {
       effect: {
-        en: "(2) Reduces the cooldown of your Swiftmend ability by 2 sec.",
-        de: "(2) Verringert die Abklingzeit Eures Zaubers 'Rasche Heilung' um 2 Sek.",
-        fr: "(2) Réduit le temps de recharge de votre technique Prompte guérison de 2 s.",
-        ru: "(2) Сокращает время восстановления способности 'Быстрое восстановление' на 2 сек.",
-        ch: "(2) 你的迅捷治愈技能的冷却时间缩短2秒。",
+        en: "(2) Increases the critical strike effect of Nourish by 5%.",
+        de: "(2) Increases the critical strike effect of Nourish by 5%.",
+        fr: "(2) Increases the critical strike effect of Nourish by 5%.",
+        ru: "(2) Increases the critical strike effect of Nourish by 5%.",
+        ch: "(2) Increases the critical strike effect of Nourish by 5%.",
       },
       hps: 100,
     },
     fourSet: {
       effect: {
-        en: "(4) Increases the healing from your Healing Touch ability by 5%.",
-        de: "(4) Erhöht die durch Euren Zauber 'Heilende Berührung' hervorgerufene Heilung um 5%.",
-        fr: "(4) Augmente de 5% les soins prodigués par votre technique Toucher guérisseur.",
-        ru: "(4) Увеличивает эффективность 'Целительного прикосновения' на 5%.",
-        cn: "(4) 治疗之触的治疗效果提高5%。",
+        en: "(4) Your Rejuvenation ability can now crit.",
+        de: "(4) Your Rejuvenation ability can now crit.",
+        fr: "(4) Your Rejuvenation ability can now crit.",
+        ru: "(4) Your Rejuvenation ability can now crit.",
+        cn: "(4) Your Rejuvenation ability can now crit.",
+      },
+      hps: 300,
+    },
+  },
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                     Restoration Druid Tier 10 (ICC)                             */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    name: { en: "Lasherweave Garb", de: "Lasherweave Garb", fr: "Lasherweave Garb", ru: "Lasherweave Garb", ch: "Lasherweave Garb" },
+    spec: "Restoration Druid",
+    slots: {
+      head: { id: 31037, icon: require("Images/Classic/TierSetIcons/inv_helmet_94.jpg").default },
+      shoulder: { id: 31047, icon: require("Images/Classic/TierSetIcons/inv_shoulder_58.jpg").default },
+      chest: { id: 31041, icon: require("Images/Classic/TierSetIcons/inv_chest_leather_15.jpg").default },
+      hands: { id: 31032, icon: require("Images/Classic/TierSetIcons/inv_gauntlets_58.jpg").default },
+      legs: { id: 31045, icon: require("Images/Classic/TierSetIcons/inv_pants_leather_26.jpg").default },
+    },
+    twoSet: {
+      effect: {
+        en: "(2) The healing granted by Wild Growth reduces 30% less over time.",
+        de: "(2) The healing granted by Wild Growth reduces 30% less over time.",
+        fr: "(2) The healing granted by Wild Growth reduces 30% less over time.",
+        ru: "(2) The healing granted by Wild Growth reduces 30% less over time.",
+        ch: "(2) The healing granted by Wild Growth reduces 30% less over time.",
+      },
+      hps: 100,
+    },
+    fourSet: {
+      effect: {
+        en: "(4) Each time your Rejuvenation heals it has a 2% chance to jump to a new target at full duration.",
+        de: "(4) Each time your Rejuvenation heals it has a 2% chance to jump to a new target at full duration.",
+        fr: "(4) Each time your Rejuvenation heals it has a 2% chance to jump to a new target at full duration.",
+        ru: "(4) Each time your Rejuvenation heals it has a 2% chance to jump to a new target at full duration.",
+        cn: "(4) Each time your Rejuvenation heals it has a 2% chance to jump to a new target at full duration.",
       },
       hps: 300,
     },
