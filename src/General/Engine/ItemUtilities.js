@@ -13,6 +13,7 @@ import Item from "../Modules/Player/Item";
 import { reportError } from "../SystemTools/ErrorLogging/ErrorReporting";
 import { useSelector } from "react-redux";
 import { GEMS } from "General/Engine/GEMS";
+import userSettings from "General/Modules/Settings/SettingsObject";
 
 /*
 
@@ -641,9 +642,9 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
   }
   // Calculate Effect.
   if (item.effect) {
-    bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, {}, gameType, player.activeStats);
+    bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, userSettings, gameType, player.activeStats);
   }
-
+  console.log(userSettings);
   // Multiply the item's stats by our stat weights.
   let sumStats = compileStats(item_stats, bonus_stats);
   if (gameType === "Classic") sumStats = applyClassicStatMods(player.getSpec(), sumStats);
@@ -662,7 +663,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
 
   // Add any bonus DPS. This is valued 1:1 with bonus HPS in dungeons only.
   if (contentType === "Dungeon" && "bonus_stats" in item_stats && "dps" in bonus_stats) {
-    score += ((bonus_stats.dps * 1.5) / player.getHPS(contentType)) * player.activeStats.intellect;
+    score += ((bonus_stats.dps * 1.2) / player.getHPS(contentType)) * player.activeStats.intellect;
   }
 
   // Add any bonus Mana
