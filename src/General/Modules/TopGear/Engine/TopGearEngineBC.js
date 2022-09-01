@@ -25,29 +25,38 @@ const DR_CONSTLEECH = 0.04322569230769231;
 
 const classRaceStats = {
   "Restoration Druid Classic": {
-    "Night Elf": {intellect: 120, spirit: 133},
-    "Tauren": {intellect: 115, spirit: 135},
+    "Night Elf": {intellect: 143, spirit: 159},
+    "Tauren": {intellect: 139, spirit: 161},
   },
   "Holy Priest Classic": {
-    "Human": {intellect: 145, spirit: 151},
-    "Night Elf": {intellect: 145, spirit: 151},
-    "Dwarf": {intellect: 144, spirit: 150},
-    "Draenei": {intellect: 146, spirit: 153},
-    "Undead": {intellect: 143, spirit: 156},
-    "Troll": {intellect: 141, spirit: 152},
-    "Blood Elf": {intellect: 149, spirit: 150},
+    "Human": {intellect: 174, spirit: 181},
+    "Night Elf": {intellect: 174, spirit: 181},
+    "Dwarf": {intellect: 173, spirit: 180},
+    "Draenei": {intellect: 174, spirit: 183},
+    "Undead": {intellect: 172, spirit: 186},
+    "Troll": {intellect: 170, spirit: 182},
+    "Blood Elf": {intellect: 177, spirit: 179},
+  },
+  "Discipline Priest Classic": {
+    "Human": {intellect: 174, spirit: 181},
+    "Night Elf": {intellect: 174, spirit: 181},
+    "Dwarf": {intellect: 173, spirit: 180},
+    "Draenei": {intellect: 174, spirit: 183},
+    "Undead": {intellect: 172, spirit: 186},
+    "Troll": {intellect: 170, spirit: 182},
+    "Blood Elf": {intellect: 177, spirit: 179},
   },
   "Holy Paladin Classic": {
-    "Human": {intellect: 83, spirit: 89},
-    "Dwarf": {intellect: 82, spirit: 88},
-    "Draenei": {intellect: 84, spirit: 91},
-    "Blood Elf": {intellect: 87, spirit: 88},
+    "Human": {intellect: 98, spirit: 105},
+    "Dwarf": {intellect: 97, spirit: 104},
+    "Draenei": {intellect: 98, spirit: 107},
+    "Blood Elf": {intellect: 101, spirit: 103},
   },
   "Restoration Shaman Classic": {
-    "Draenei": {intellect: 109, spirit: 122},
-    "Orc": {intellect: 105, spirit: 123},
-    "Troll": {intellect: 104, spirit: 121},
-    "Tauren": {intellect: 103, spirit: 122},
+    "Draenei": {intellect: 128, spirit: 145},
+    "Orc": {intellect: 125, spirit: 145},
+    "Troll": {intellect: 124, spirit: 144},
+    "Tauren": {intellect: 124, spirit: 145},
   }
 
 }
@@ -203,37 +212,42 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     // -- ENCHANTS --
 
     if (userSettings.autoEnchant) {
-      enchant_stats.bonushealing += 35;
-      enchant_stats.mp5 += 7;
-      enchants['Head'] = "Glyph of Renewal"
+      enchant_stats.spellpower += 30;
+      enchant_stats.mp5 += 10;
+      enchants['Head'] = "Arcanum of Blissful Mending" // Crit version also available.
   
-      enchant_stats.bonushealing += 33;
-      enchant_stats.mp5 += 4;
-      enchants['Shoulder'] = "Greater Inscription of Faith"
+      enchant_stats.spellpower += 24;
+      enchant_stats.mp5 += 8;
+      enchants['Shoulder'] = "Greater Inscription of the Crag" // Lesser version + crit versions available.
   
-      enchant_stats.mp5 += 6;
-      enchants['Chest'] = "Restore Mana - Prime"
+      enchant_stats.intellect += 10;
+      enchant_stats.spirit += 10;
+      enchants['Chest'] = "Powerful Stats" // TODO
   
-      enchant_stats.bonushealing += 30;
-      enchants['Wrist'] = "Superior Healing"
+      enchant_stats.haste += 30;
+      enchants['Back'] = "Greater Speed" // Tailoring version available.
+
+      enchant_stats.spellpower += 30;
+      enchants['Wrist'] = "Superior Spellpower"
   
-      enchant_stats.bonushealing += 35;
-      enchants['Hands'] = "Major Healing"
+      enchant_stats.spellpower += 28;
+      enchants['Hands'] = "Exceptional Spellpower"
   
-      enchant_stats.bonushealing += 66;
-      enchants['Legs'] = "Golden Spellthread"
+      enchant_stats.spellpower += 50;
+      enchant_stats.spirit += 20
+      enchants['Legs'] = "Brilliant Spellthread"
   
-      enchant_stats.stamina += 9;
-      enchants['Feet'] = "Boar's Speed"
+      enchant_stats.stamina += 15;
+      enchants['Feet'] = "Tuskarr's Vitality" // Spirit version available but not great.
   
       if ("profession" === "Enchanting") // todo 
       {
-        enchant_stats.bonushealing += (20 * 2); // Two finger slots.
-        enchants['Finger'] = "Healing Power"
+        enchant_stats.spellpower += (23 * 2); // Two finger slots.
+        enchants['Finger'] = "Greater Spellpower"
       }
   
-      enchant_stats.bonushealing += 81;
-      enchants['CombinedWeapon'] = "Major Healing"
+      enchant_stats.spellpower += 63;
+      enchants['CombinedWeapon'] = "Mighty Spellpower"
     }
 
     // ----- SOCKETS -----
@@ -264,17 +278,19 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
 
     // Human
     if (player.race.includes("Human")) {
-      talent_stats.spirit = (setStats.spirit) * 0.1;
+      talent_stats.spirit = (setStats.spirit) * 0.03;
     }
 
     // This can be properly formalized.
     if (player.getSpec() === "Holy Paladin Classic") {
       talent_stats.intellect = setStats.intellect * 0.1;
-      talent_stats.spelldamage = (setStats.intellect + talent_stats.intellect) * 0.35;
+      talent_stats.spellpower = (setStats.intellect + talent_stats.intellect) * 0.2;
+      talent_stats.crit = (5 + 5) * 35; 
     }
     else if (player.getSpec() === "Restoration Shaman Classic") {
-      talent_stats.bonushealing = (setStats.intellect) * 0.3;
-      talent_stats.spelldamage = (setStats.intellect) * 0.3;
+      talent_stats.intellect = setStats.intellect * 0.1;
+      talent_stats.spellpower = (setStats.intellect + talent_stats.intellect) * 0.15;
+      talent_stats.crit = 4 * 35; // Blessing of the Eternals
     }
     else if (player.getSpec() === "Restoration Druid Classic") {
       // Also gets 30% of spirit MP5 as MP5
@@ -282,9 +298,17 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     }
     else if (player.getSpec() === "Holy Priest Classic") {
       // Also gets 30% of spirit MP5 as MP5
-      talent_stats.spirit += (setStats.spirit + talent_stats.spirit) * 0.05;
-      //talent_stats.bonushealing = (setStats.spirit + talent_stats.spirit) * 0.25;
+      //talent_stats.spirit += (setStats.spirit + talent_stats.spirit) * 0.05;
+      talent_stats.crit = 5 * 35;
       talent_stats.spelldamage = (setStats.spirit + talent_stats.spirit) * 0.25;
+    }
+    else if (player.getSpec() === "Discipline Priest Classic") {
+      // Also gets 30% of spirit MP5 as MP5
+      //talent_stats.spirit += (setStats.spirit + talent_stats.spirit) * 0.05;
+      talent_stats.intellect = setStats.intellect * 0.15;
+      talent_stats.spirit = setStats.spirit * 0.06;
+      talent_stats.haste = 32.79 * 3;
+      //talent_stats.spelldamage = (setStats.spirit + talent_stats.spirit) * 0.25;
     }
 
     compileStats(setStats, talent_stats);
