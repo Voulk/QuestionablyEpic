@@ -372,10 +372,10 @@ export const tierSets = [
   },
 
   /* ---------------------------------------------------------------------------------------------- */
-  /*                             Holy Paladin Tier 4 [Justicar Raiment]                             */
+  /*                                       Holy Paladin Tier 7                                      */
   /* ---------------------------------------------------------------------------------------------- */
   {
-    name: { en: "Justicar Raiment", de: "Gewandung des Rechtsprechers", fr: "Grande tenue de justicier", ru: "Одеяния вершителя правосудия", ch: "公正圣装" },
+    name: { en: "Heroes' Redemption Regalia", de: "Heroes' Redemption Regalia", fr: "Heroes' Redemption Regalia", ru: "Heroes' Redemption Regalia", ch: "Heroes' Redemption Regalia" },
     spec: "Holy Paladin",
     slots: {
       head: { id: 29061, icon: require("Images/Classic/TierSetIcons/inv_helmet_77.jpg").default },
@@ -389,31 +389,31 @@ export const tierSets = [
     },
     twoSet: {
       effect: {
-        en: "(2) Increases the amount healed by your Judgment of Light by 20.",
-        de: "(2) Increases the amount healed by your Judgment of Light by 20.",
-        fr: "(2) Increases the amount healed by your Judgment of Light by 20.",
-        ru: "(2) Increases the amount healed by your Judgment of Light by 20.",
-        ch: "(2) Increases the amount healed by your Judgment of Light by 20.",
+        en: "(2) Your Holy Shock gains an additional 10% chance to critically strike.",
+        de: "(2) Your Holy Shock gains an additional 10% chance to critically strike.",
+        fr: "(2) Your Holy Shock gains an additional 10% chance to critically strike.",
+        ru: "(2) Your Holy Shock gains an additional 10% chance to critically strike.",
+        ch: "(2) Your Holy Shock gains an additional 10% chance to critically strike.",
       },
       hps: 100,
     },
     fourSet: {
       effect: {
-        en: "(4) Reduces the cooldown on your Divine Favor ability by 15 sec.",
-        de: "(4) Reduces the cooldown on your Divine Favor ability by 15 sec.",
-        fr: "(4) Reduces the cooldown on your Divine Favor ability by 15 sec.",
-        ru: "(4) Reduces the cooldown on your Divine Favor ability by 15 sec",
-        cn: "(4) Reduces the cooldown on your Divine Favor ability by 15 sec",
+        en: "(4) The cost of your Holy Light is reduced by 5%.",
+        de: "(4) The cost of your Holy Light is reduced by 5%.",
+        fr: "(4) The cost of your Holy Light is reduced by 5%.",
+        ru: "(4) The cost of your Holy Light is reduced by 5%.",
+        cn: "(4) The cost of your Holy Light is reduced by 5%.",
       },
       hps: 300,
     },
   },
 
   /* ---------------------------------------------------------------------------------------------- */
-  /*                           Holy Paladin Tier 5 [Crystalforge Raiment]                           */
+  /*                                       Holy Paladin Tier 8                                      */
   /* ---------------------------------------------------------------------------------------------- */
   {
-    name: { en: "Crystalforge Raiment", de: "Kristallgeschmiedete Gewandung", fr: "Grande tenue de Cristalforge", ru: "Одеяния Хрустальной Кузницы", ch: "晶铸圣装" },
+    name: { en: "Aegis Regalia", de: "Aegis Regalia", fr: "Aegis Regalia", ru: "Aegis Regalia", ch: "Aegis Regalia" },
     spec: "Holy Paladin",
     slots: {
       head: { id: 30136, icon: require("Images/Classic/TierSetIcons/inv_helmet_78.jpg").default },
@@ -427,34 +427,34 @@ export const tierSets = [
     },
     twoSet: {
       effect: {
-        en: "(2) Each time you cast a Judgment, your party members gain 50 mana.",
-        de: "(2) Jedes Mal, wenn Ihr ein Richturteil wirkt, erhalten Eure Gruppenmitglieder 50 Mana.",
-        fr: "(2) Chaque fois que vous lancez un Jugement, les membres de votre groupe reçoivent 50 points de mana.",
-        ru: "(2) Каждый раз, когда вы свершаете 'Правосудие', участники вашей группы получают 50 ед. маны.",
-        ch: "(2) 你每次施放审判法术，你的小队成员都获得50点法力值。",
+        en: "(2) Your Holy Shock crits place a HoT on the target, healing for 15% of the Holy Shock's heal amount over 9 sec.",
+        de: "(2) Your Holy Shock crits place a HoT on the target, healing for 15% of the Holy Shock's heal amount over 9 sec.",
+        fr: "(2) Your Holy Shock crits place a HoT on the target, healing for 15% of the Holy Shock's heal amount over 9 sec.",
+        ru: "(2) Your Holy Shock crits place a HoT on the target, healing for 15% of the Holy Shock's heal amount over 9 sec.",
+        ch: "(2) Your Holy Shock crits place a HoT on the target, healing for 15% of the Holy Shock's heal amount over 9 sec.",
       },
       hps: 100,
     },
     fourSet: {
       effect: {
-        en: "(4) Your critical heals from Flash of Light and Holy Light reduce the cast time of your next Holy Light spell by 0.50 sec for 10 sec. This effect cannot occur more than once per minute.",
+        en: "Your Sacred Shield can now trigger every 4 seconds instead of every 6.",
         de:
-          "(4) Eure kritischen Heilungen mit 'Lichtblitz' und 'Heiliges Licht' verringern die Zauberzeit Eures nächsten Einsatzes von 'Heiliges Licht' oder 'Lichtblitz' 10 sec lang um 0.50 Sek. Dieser Effekt kann nicht häufiger als einmal pro Minute auftreten.",
+        "Your Sacred Shield can now trigger every 4 seconds instead of every 6.",
         fr:
-          "(4) Les effets critiques obtenus avec les sorts Éclair lumineux et Lumière sacrée réduisent le temps d’incantation de votre prochain sort Lumière sacrée ou Éclair lumineux de 0.50 s pendant 10 sec. Cet effet ne peut se produire plus d’une fois par minute.",
+        "Your Sacred Shield can now trigger every 4 seconds instead of every 6.",
         ru:
-          "(4) Если 'Вспышка Света' или 'Свет небес' имеет критический эффект, время применения следующего 'Света небес' или 'Вспышки Света' сокращается на 0.50 сек. Время действия – 10 sec. Срабатывает не чаще чем раз в минуту.",
-        ch: "(4) 你的圣光闪现和圣光术的爆击效果可以使你的下一次圣光术或圣光闪现的施法时间减少0.50秒，持续10 sec。这个效果每1分钟只能触发一次。",
+        "Your Sacred Shield can now trigger every 4 seconds instead of every 6.",
+        ch: "Your Sacred Shield can now trigger every 4 seconds instead of every 6.",
       },
       hps: 300,
     },
   },
 
   /* ---------------------------------------------------------------------------------------------- */
-  /*                           Holy Paladin Tier 6 [ Lightbringer Raiment]                          */
+  /*                                      Holy Paladin Tier 9                                       */
   /* ---------------------------------------------------------------------------------------------- */
   {
-    name: { en: "Lightbringer Raiment", de: "Gewandung des Lichtbringers", fr: "Grande tenue de porteur de Lumière", ru: "Одеяния Светоносного", ch: "光明使者圣服" },
+    name: { en: "Liadrin's Garb", de: "Liadrin's Garb", fr: "Liadrin's Garb", ru: "Liadrin's Garb", ch: "Liadrin's Garb" },
     spec: "Holy Paladin",
     slots: {
       head: { id: 30988, icon: require("Images/Classic/TierSetIcons/inv_helmet_96.jpg").default },
@@ -468,21 +468,59 @@ export const tierSets = [
     },
     twoSet: {
       effect: {
-        en: "(2) Increases the spell power of your Flash of Light ability by 5%.",
-        de: "(2) Erhöht die Zaubermacht Eures Zaubers 'Lichtblitz' um 5%.",
-        fr: "(2) Augmente de 5% la puissance de votre technique Éclair lumineux.",
-        ru: "(2) Увеличивает силу заклинания 'Вспышка Света' на 5%.",
-        ch: "(2) 使你的圣光闪现的法术强度提高5%。",
+        en: "(2) Increases the duration of your judgements by 10s.",
+        de: "(2) Increases the duration of your judgements by 10s.",
+        fr: "(2) Increases the duration of your judgements by 10s.",
+        ru: "(2) Increases the duration of your judgements by 10s.",
+        ch: "(2) Increases the duration of your judgements by 10s.",
       },
       hps: 100,
     },
     fourSet: {
       effect: {
-        en: "(4) Increases the critical strike chance of your Holy Light ability by 5%.",
-        de: "(4) Erhöht die Chance für einen kritischen Treffer Eures Zaubers 'Heiliges Licht' um 5%.",
-        fr: "(4) Augmente de 5% vos chances de réaliser un coup critique avec votre technique Lumière sacrée.",
-        ru: "(4) Повышает вероятность критического эффекта заклинания 'Свет небес' на 5%.",
-        ch: "(4) 使你的圣光术的爆击几率提高5%。",
+        en: "(4) Increases Flash of Lights HoT component on Sacred Shield by 100%.",
+        de: "(4) Increases Flash of Lights HoT component on Sacred Shield by 100%.",
+        fr: "(4) Increases Flash of Lights HoT component on Sacred Shield by 100%.",
+        ru: "(4) Increases Flash of Lights HoT component on Sacred Shield by 100%.",
+        ch: "(4) Increases Flash of Lights HoT component on Sacred Shield by 100%.",
+      },
+      hps: 300,
+    },
+  },
+
+    /* ---------------------------------------------------------------------------------------------- */
+  /*                                      Holy Paladin Tier 10                                       */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    name: { en: "Lightsworn Garb", de: "Lightsworn Garb", fr: "Lightsworn Garb", ru: "Lightsworn Garb", ch: "Lightsworn Garb" },
+    spec: "Holy Paladin",
+    slots: {
+      head: { id: 30988, icon: require("Images/Classic/TierSetIcons/inv_helmet_96.jpg").default },
+      shoulder: { id: 30996, icon: require("Images/Classic/TierSetIcons/inv_shoulder_60.jpg").default },
+      chest: { id: 30992, icon: require("Images/Classic/TierSetIcons/inv_chest_plate_22.jpg").default },
+      wrist: { id: 34432, icon: require("Images/Classic/TierSetIcons/inv_bracer_02.jpg").default },
+      hands: { id: 30983, icon: require("Images/Classic/TierSetIcons/inv_gauntlets_60.jpg").default },
+      waist: { id: 34487, icon: require("Images/Classic/TierSetIcons/inv_belt_27.jpg").default },
+      legs: { id: 30994, icon: require("Images/Classic/TierSetIcons/inv_pants_plate_26.jpg").default },
+      boots: { id: 34559, icon: require("Images/Classic/TierSetIcons/inv_boots_chain_08.jpg").default },
+    },
+    twoSet: {
+      effect: {
+        en: "(2) While Divine Illumination is active your healing spells are 35% stronger.",
+        de: "(2) While Divine Illumination is active your healing spells are 35% stronger.",
+        fr: "(2) While Divine Illumination is active your healing spells are 35% stronger.",
+        ru: "(2) While Divine Illumination is active your healing spells are 35% stronger.",
+        ch: "(2) While Divine Illumination is active your healing spells are 35% stronger.",
+      },
+      hps: 100,
+    },
+    fourSet: {
+      effect: {
+        en: "Your Holy Shock spell causes the next Holy Light you cast within 10 sec to have 0.3 sec reduced cast time.",
+        de: "Your Holy Shock spell causes the next Holy Light you cast within 10 sec to have 0.3 sec reduced cast time.",
+        fr: "Your Holy Shock spell causes the next Holy Light you cast within 10 sec to have 0.3 sec reduced cast time.",
+        ru: "Your Holy Shock spell causes the next Holy Light you cast within 10 sec to have 0.3 sec reduced cast time.",
+        ch: "Your Holy Shock spell causes the next Holy Light you cast within 10 sec to have 0.3 sec reduced cast time.",
       },
       hps: 300,
     },
