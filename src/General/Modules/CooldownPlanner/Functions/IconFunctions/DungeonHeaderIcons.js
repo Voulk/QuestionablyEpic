@@ -16,12 +16,21 @@ import DHT from "../../../../../Images/MythicPlus/LegionTimewalking/DarkheartThi
 import VotW from "../../../../../Images/MythicPlus/LegionTimewalking/VaultOfTheWardens.jpg";
 import EoA from "../../../../../Images/MythicPlus/LegionTimewalking/EyeOfAzshara.jpg";
 
-import AuchindounDungeons from "../../../../../Images/Classic/Dungeons/AuchindounDungeons.jpg";
-import CavernsOfTimeDungeons from "../../../../../Images/Classic/Dungeons/CavernsOfTimeDungeons.jpg";
-import CoilfangReservoirDungeons from "../../../../../Images/Classic/Dungeons/CoilfangReservoirDungeons.jpg";
-import HellfireCitadelDungeons from "../../../../../Images/Classic/Dungeons/HellfireCitadelDungeons.jpg";
-import MagistersTerrace from "../../../../../Images/Classic/Dungeons/MagistersTerraceDungeons.jpg";
-import TempestKeepDungeons from "../../../../../Images/Classic/Dungeons/TempestKeepDungeons.jpg";
+import Ahnkahet from "../../../../../Images/Classic/Dungeons/Ahnkahet.jpg";
+import AzjolNerub from "../../../../../Images/Classic/Dungeons/AzjolNerub.jpg";
+import CullingOfStratholme from "../../../../../Images/Classic/Dungeons/CullingOfStratholme.jpg";
+import DrakTharon from "../../../../../Images/Classic/Dungeons/DrakTharon.jpg";
+import ForgeOfSouls from "../../../../../Images/Classic/Dungeons/ForgeOfSouls.jpg";
+import GunDrak from "../../../../../Images/Classic/Dungeons/GunDrak.jpg";
+import HallsOfLightning from "../../../../../Images/Classic/Dungeons/HallsOfLightning.jpg";
+import HallsofReflection from "../../../../../Images/Classic/Dungeons/HallsofReflection.jpg";
+import PitofSaron from "../../../../../Images/Classic/Dungeons/PitofSaron.jpg";
+import Oculus from "../../../../../Images/Classic/Dungeons/Oculus.jpg";
+import Nexus from "../../../../../Images/Classic/Dungeons/Nexus.jpg";
+import VioletHold from "../../../../../Images/Classic/Dungeons/VioletHold.jpg";
+import TrialOfChampion from "../../../../../Images/Classic/Dungeons/TrialOfChampion.jpg";
+import UtgardeKeep from "../../../../../Images/Classic/Dungeons/UtgardeKeep.jpg";
+import UtgardePinnecle from "../../../../../Images/Classic/Dungeons/UtgardePinnecle.jpg";
 
 import ReturnToKarazhan from "../../../../../Images/MythicPlus/ReturntoKarazhan.png";
 import MechagonLower from "../../../../../Images/MythicPlus/MechagonLower.png";
@@ -99,7 +108,7 @@ export default function DungeonHeaderIcons(props) {
   }
   /* ----------------------------------------- Iron Docks ----------------------------------------- */
   if (props === 558) {
-    source = Grimrail;
+    source = IronDocks;
   }
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -132,71 +141,54 @@ export default function DungeonHeaderIcons(props) {
   }
 
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                         Burning Crusade                                        */
+  /*                                             Classic                                            */
   /* ---------------------------------------------------------------------------------------------- */
 
-  if (
-    /* --------------------------------------- Auchenai Crypts -------------------------------------- */
-    props === 247 ||
-    /* ----------------------------------------- Mana-Tombs ----------------------------------------- */
-    props === 250 ||
-    /* ---------------------------------------- Sethekk Halls --------------------------------------- */
-    props === 252 ||
-    /* -------------------------------------- Shadow Labyrinth -------------------------------------- */
-    props === 253
-  ) {
-    source = AuchindounDungeons;
+  if (props === 271) {
+    source = Ahnkahet;
+  }
+  if (props === 272) {
+    source = AzjolNerub;
+  }
+  if (props === 279) {
+    source = CullingOfStratholme;
+  }
+  if (props === 273) {
+    source = DrakTharon;
+  }
+  if (props === 280) {
+    source = ForgeOfSouls;
+  }
+  if (props === 274) {
+    source = GunDrak;
+  }
+  if (props === 275) {
+    source = HallsOfLightning;
+  }
+  if (props === 276) {
+    source = HallsofReflection;
+  }
+  if (props === 278) {
+    source = PitofSaron;
+  }
+  if (props === 281) {
+    source = Nexus;
+  }
+  if (props === 282) {
+    source = Oculus;
+  }
+  if (props === 283) {
+    source = VioletHold;
+  }
+  if (props === 284) {
+    source = TrialOfChampion;
+  }
+  if (props === 285) {
+    source = UtgardeKeep;
+  }
+  if (props === 286) {
+    source = UtgardePinnecle;
   }
 
-  if (
-    /* ----------------------------------- Old Hillsbrad Foothills ---------------------------------- */
-    props === 251 ||
-    /* -------------------------------------- The Black Morass -------------------------------------- */
-    props === 255
-  ) {
-    source = CavernsOfTimeDungeons;
-  }
-
-  if (
-    /* --------------------------------------- The Slave Pens --------------------------------------- */
-    props === 260 ||
-    /* --------------------------------------- The Steamvault --------------------------------------- */
-    props === 261 ||
-    /* ---------------------------------------- The Underbog ---------------------------------------- */
-    props === 262
-  ) {
-    source = CoilfangReservoirDungeons;
-  }
-
-  if (
-    /* -------------------------------------- Hellfire Ramparts ------------------------------------- */
-    props === 248 ||
-    /* -------------------------------------- The Blood Furnace ------------------------------------- */
-    props === 256 ||
-    /* ------------------------------------- The Shattered Halls ------------------------------------ */
-    props === 259
-  ) {
-    source = HellfireCitadelDungeons;
-  }
-
-  if (
-    /* ---------------------------------------- The Arcatraz ---------------------------------------- */
-    props === 254 ||
-    /* ---------------------------------------- The Botanica ---------------------------------------- */
-    props === 257 ||
-    /* ---------------------------------------- The Mechanar ---------------------------------------- */
-    props === 258
-  ) {
-    source = TempestKeepDungeons;
-  }
-
-  if (
-    /* ------------------------------------- Magister's Terrace ------------------------------------- */
-    props === 249
-  ) {
-    source = MagistersTerrace;
-  }
-
-  // return <img style={{ ...style }} src={source} alt={props} />;
   return source;
 }
