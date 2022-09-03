@@ -116,5 +116,177 @@ export default function bossHeaders(props, style) {
     source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-Jailer.png").default;
   }
 
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Classic                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+  if (props === 1107) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-AnubRekhan.png").default;
+  }
+  if (props === 1110) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-GrandWidowFaerlina.png").default;
+  }
+  if (props === 1116) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Maexxna.png").default;
+  }
+  if (props === 1117) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-NoththePlaguebringer.png").default;
+  }
+  if (props === 1112) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-HeigantheUnclean.png").default;
+  }
+  if (props === 1115) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Loatheb.png").default;
+  }
+  if (props === 1113) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-InstructorRazuvious.png").default;
+  }
+  if (props === 1109) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-GothiktheHarvester.png").default;
+  }
+  if (props === 1121) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-FourHorseman.png").default;
+  }
+  if (props === 1118) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Patchwerk.png").default;
+  }
+  if (props === 1111) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Grobbulus.png").default;
+  }
+  if (props === 1108) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Gluth.png").default;
+  }
+  if (props === 1120) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Thaddius.png").default;
+  }
+  if (props === 1119) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Sapphiron.png").default;
+  }
+  if (props === 1114) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-KelThuzad.png").default;
+  }
+  if (props === 999) {
+    source = require("Images/Bosses/BOE.png").default;
+  }
+  if (props === 1094) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Malygos.png").default;
+  }
+
+  if (props === 1132) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-FlameLeviathan.png").default;
+  }
+  if (props === 1136) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-IgnistheFurnaceMaster.png").default;
+  }
+  if (props === 1139) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Razorscale.png").default;
+  }
+  if (props === 1142) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-XT002Deconstructor.png").default;
+  }
+  if (props === 1140) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-AssemblyOfIron.png").default;
+  }
+  if (props === 1137) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Kologarn.png").default;
+  }
+  if (props === 1131) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Auriaya.png").default;
+  }
+  if (props === 1135) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Hodir.png").default;
+  }
+  if (props === 1141) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Thorim.png").default;
+  }
+  if (props === 1133) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Freya.png").default;
+  }
+  if (props === 1138) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Mimiron.png").default;
+  }
+  if (props === 1134) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-GeneralVezax.png").default;
+  }
+  if (props === 1143) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-YoggSaron.png").default;
+  }
+  if (props === 1130) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-AlgalontheObserver.png").default;
+  }
+
+  if (props === 1126) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-ArchavontheStoneWatcher.png").default;
+  }
+  if (props === 1127) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-EmalontheStormWatcher.png").default;
+  }
+  if (props === 1128) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-KoralontheFlameWatcher.png").default;
+  }
+  if (props === 1129) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-TaravontheIceWatcher.png").default;
+  }
+
+  if (props === 1090) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Sartharion.png").default;
+  }
+
+  if (props === 1084) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Onyxia.png").default;
+  }
+
+  if (props === 1088) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-NorthrendBeasts.png").default;
+  }
+  if (props === 1087) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-LordJaraxxus.png").default;
+  }
+  if (props === 1086) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-GrandChampions-Horde.png").default;
+  }
+  if (props === 1089) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-TwinValkyr.png").default;
+  }
+  if (props === 1085) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Anubarak.png").default;
+  }
+
+  if (props === 1101) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-LordMarrowgar.png").default;
+  }
+  if (props === 1100) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-LadyDeathwhisper.png").default;
+  }
+  if (props === 1099) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-GunshipHorde.png").default;
+  }
+  if (props === 1096) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-DeathbringerSaurfang.png").default;
+  }
+  if (props === 1097) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Festergut.png").default;
+  }
+  if (props === 1104) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Rotface.png").default;
+  }
+  if (props === 1102) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-ProfessorPutricide.png").default;
+  }
+  if (props === 1095) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-BloodPrinceCouncil.png").default;
+  }
+  if (props === 1103) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-BloodQueenLanathel.png").default;
+  }
+  if (props === 1098) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-ValithriaDreamwalker.png").default;
+  }
+  if (props === 1105) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Sindragosa.png").default;
+  }
+  if (props === 1106) {
+    source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-TheLichKing.png").default;
+  }
+
   return <img style={{ ...style }} src={source} alt={props} />;
 }

@@ -9,6 +9,7 @@ import { raidDB } from "../../CooldownPlanner/Data/CooldownPlannerBossList";
 import { useTranslation } from "react-i18next";
 import { filterItemListBySource, filterClassicItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
+import bossHeaders from "General/Modules/CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import PropTypes from "prop-types";
 import i18n from "i18next";
 
@@ -497,12 +498,19 @@ export default function RaidGearContainer(props) {
                                   <Typography
                                     variant="h6"
                                     color="primary"
-                                    align="center"
+                                    align="left"
                                     style={{
                                       backgroundColor: "#35383e",
                                       borderRadius: "4px 4px 0px 0px",
                                     }}
                                   >
+                                    {bossHeaders(key, {
+                                      height: 36,
+                                      // width: 100,
+                                      padding: "0px 5px 0px 5px",
+                                      verticalAlign: "middle",
+                                      marginRight: "-10px",
+                                    })}
                                     {encounterDB[raidID].bosses[key].name[currentLanguage]}
                                   </Typography>
                                 </Grid>
