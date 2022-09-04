@@ -165,7 +165,7 @@ export default function bossHeaders(props, style) {
     source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-KelThuzad.png").default;
   }
   if (props === 999) {
-    source = require("Images/Bosses/BOE.png").default;
+    source = require("Images/Classic/Raid/JournalImages/BOE.png").default;
   }
   if (props === 1094) {
     source = require("Images/Classic/Raid/JournalImages/UI-EJ-BOSS-Malygos.png").default;
