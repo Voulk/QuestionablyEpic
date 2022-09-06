@@ -382,50 +382,58 @@ export default function RaidGearContainer(props) {
                 <TabPanel key={"panel" + index} value={tabvalue} index={index}>
                   <div className={classes.panel}>
                     <Grid container spacing={1}>
-                      {encounterDB[raidID].bossOrder
-                        //.filter((key) => key === raidID)
-                        .map((key, i) => (
-                          <Grid item xs={12} key={"bossContainer-" + i}>
-                            <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
-                              <Grid container>
-                                <Grid item xs={12} sm="auto">
-                                  <div
-                                    style={{
-                                      width: 175,
-                                      height: "100%",
-                                      paddingLeft: 8,
-                                      // background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))", `url(${require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesBackground.png").default})`,
-                                      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${raidImage(raidID)})`,
-                                      backgroundRepeat: "no-repeat",
-                                      backgroundPosition: "center 60%",
-                                      backgroundSize: "auto 100%",
-                                      // backgroundColor: "rgba(0,0,0,0.5)",
-                                    }}
-                                    className="container-UpgradeCards"
-                                  >
-                                    <img
-                                      src={UpgradeFinderBossImages(parseInt(key))}
-                                      style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", maxHeight: "90%", maxWidth: "90%" }}
-                                    />
-                                    <Typography variant="h6" style={{ width: "100%" }} className="centered-UpgradeCards">
-                                      {encounterDB[raidID].bosses[key].name[currentLanguage]}
-                                    </Typography>
-                                  </div>
-                                </Grid>
-                                <Divider orientation="vertical" flexItem />
+                      <Grid item xs={12}>
+                        {encounterDB[raidID].bossOrder
+                          //.filter((key) => key === raidID)
+                          .map((key, i) => (
+                            <Accordion key={encounterDB[raidID].bosses[key].name[currentLanguage] + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+                              <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
+                                <Typography
+                                  variant="h6"
+                                  color="primary"
+                                  align="left"
+                                  style={{
+                                    // backgroundColor: "#35383e",
+                                    borderRadius: "4px 4px 0px 0px",
+                                    display: "flex",
+                                  }}
+                                >
+                                  {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
+                                  <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
+                                  {encounterDB[raidID].bosses[key].name[currentLanguage]} -{" "}
+                                  {[...filterItemListBySource(itemList, raidID, key, getDifficultyBaseLevel(firstDifficulty))]
+                                    .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
+                                    .filter((item) => item !== 0).length +
+                                    (secondDifficulty !== -1
+                                      ? [...filterItemListBySource(itemList, raidID, key, getDifficultyBaseLevel(secondDifficulty))]
+                                          .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
+                                          .filter((item) => item !== 0).length
+                                      : 0)}{" "}
+                                  Upgrades
+                                </Typography>
+                              </AccordionSummary>
+                              <AccordionDetails style={{ backgroundColor: "#191c23" }}>
                                 <Grid item xs={12} sm container direction="row" style={{ padding: 8 }} spacing={1}>
                                   <Grid item xs={12} container spacing={1}>
                                     <Grid item xs={12}>
                                       <Typography
                                         variant="h6"
                                         color="primary"
-                                        align="center"
+                                        align="left"
                                         style={{
                                           backgroundColor: "#35383e",
                                           borderRadius: 4,
                                         }}
                                       >
-                                        {getDifficultyName(firstDifficulty)}
+                                        <div style={{ marginLeft: 8 }}>
+                                          {getDifficultyName(firstDifficulty)} -{" "}
+                                          {
+                                            [...filterItemListBySource(itemList, raidID, key, getDifficultyBaseLevel(firstDifficulty))]
+                                              .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
+                                              .filter((item) => item !== 0).length
+                                          }{" "}
+                                          Upgrades
+                                        </div>
                                       </Typography>
                                     </Grid>
 
@@ -440,13 +448,21 @@ export default function RaidGearContainer(props) {
                                         <Typography
                                           variant="h6"
                                           color="primary"
-                                          align="center"
+                                          align="left"
                                           style={{
                                             backgroundColor: "#35383e",
                                             borderRadius: 4,
                                           }}
                                         >
-                                          {getDifficultyName(secondDifficulty)}
+                                          <div style={{ marginLeft: 8 }}>
+                                            {getDifficultyName(secondDifficulty)} -{" "}
+                                            {
+                                              [...filterItemListBySource(itemList, raidID, key, getDifficultyBaseLevel(secondDifficulty))]
+                                                .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
+                                                .filter((item) => item !== 0).length
+                                            }{" "}
+                                            Upgrades
+                                          </div>
                                         </Typography>
                                       </Grid>
 
@@ -458,10 +474,10 @@ export default function RaidGearContainer(props) {
                                     ""
                                   )}
                                 </Grid>
-                              </Grid>
-                            </Paper>
-                          </Grid>
-                        ))}
+                              </AccordionDetails>
+                            </Accordion>
+                          ))}
+                      </Grid>
                     </Grid>
                   </div>
                 </TabPanel>
@@ -543,89 +559,38 @@ export default function RaidGearContainer(props) {
                       <div className={classes.panel}>
                         <Grid container spacing={1}>
                           <Grid item xs={12}>
-                            {
-                              encounterDB[raidID].bossOrder.map((key, i) => (
-                                <Accordion key={encounterDB[raidID].bosses[key].name[currentLanguage] + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
-                                  <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
-                                    <Typography
-                                      variant="h6"
-                                      color="primary"
-                                      align="left"
-                                      style={{
-                                        // backgroundColor: "#35383e",
-                                        borderRadius: "4px 4px 0px 0px",
-                                        display: "flex",
-                                      }}
-                                    >
-                                      {bossHeaders(key, {
-                                        height: 36,
-                                        // width: 100,
-                                        verticalAlign: "middle",
-                                        // marginRight: "-10px",
-
-                                        backgroundImage: `url(${raidImage(raidID)})`,
-                                        backgroundRepeat: "no-repeat",
-                                        backgroundPosition: "center 60%",
-                                        backgroundSize: "120% auto",
-                                      })}
-                                      <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-                                      {encounterDB[raidID].bosses[key].name[currentLanguage]} -{" "}
-                                      {
-                                        [...filterClassicItemListBySource(itemList, key.slot)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0)
-                                          .length
-                                      }{" "}
-                                      Upgrades
-                                    </Typography>
-                                  </AccordionSummary>
-                                  <AccordionDetails style={{ backgroundColor: "#191c23" }}>
-                                    <Grid xs={12} container spacing={1}>
-                                      {[...filterClassicItemListBySource(itemList, raidID, parseInt(key))].map((item, index) => (
-                                        <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
-                                      ))}
-                                    </Grid>
-                                  </AccordionDetails>
-                                </Accordion>
-                              ))
-
-                              // <Grid item xs={12} key={"bossContainer-" + i}>
-                              //   <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
-                              //     <Grid container justifyContent="center" alignItems="flex-start">
-                              //       <Grid xs={12} item>
-                              //         <Grid item xs={12}>
-                              //           <Typography
-                              //             variant="h6"
-                              //             color="primary"
-                              //             align="left"
-                              //             style={{
-                              //               backgroundColor: "#35383e",
-                              //               borderRadius: "4px 4px 0px 0px",
-                              //               display: "flex",
-                              //             }}
-                              //           >
-                              //             {bossHeaders(key, {
-                              //               height: 36,
-                              //               // width: 100,
-                              //               // padding: "0px 5px 0px 5px",
-                              //               verticalAlign: "middle",
-                              //               // marginRight: "-10px",
-
-                              //               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${raidImage(raidID)})`,
-                              //               backgroundRepeat: "no-repeat",
-                              //               backgroundPosition: "center 60%",
-                              //               backgroundSize: "100% auto",
-                              //             })}
-                              //             <Divider flexItem orientation="vertical" />
-                              //             {encounterDB[raidID].bosses[key].name[currentLanguage]}
-                              //           </Typography>
-                              //         </Grid>
-                              //       </Grid>
-                              //       <Grid item xs={12} sm container style={{ padding: 8 }} spacing={1}>
-
-                              //       </Grid>
-                              //     </Grid>
-                              //   </Paper>
-                              // </Grid>
-                            }
+                            {encounterDB[raidID].bossOrder.map((key, i) => (
+                              <Accordion key={encounterDB[raidID].bosses[key].name[currentLanguage] + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+                                <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
+                                  <Typography
+                                    variant="h6"
+                                    color="primary"
+                                    align="left"
+                                    style={{
+                                      // backgroundColor: "#35383e",
+                                      borderRadius: "4px 4px 0px 0px",
+                                      display: "flex",
+                                    }}
+                                  >
+                                    {bossHeaders(key, { height: 36, verticalAlign: "middle" })}
+                                    <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
+                                    {encounterDB[raidID].bosses[key].name[currentLanguage]} -{" "}
+                                    {
+                                      [...filterClassicItemListBySource(itemList, key.slot)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0)
+                                        .length
+                                    }{" "}
+                                    Upgrades
+                                  </Typography>
+                                </AccordionSummary>
+                                <AccordionDetails style={{ backgroundColor: "#191c23" }}>
+                                  <Grid xs={12} container spacing={1}>
+                                    {[...filterClassicItemListBySource(itemList, raidID, parseInt(key))].map((item, index) => (
+                                      <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
+                                    ))}
+                                  </Grid>
+                                </AccordionDetails>
+                              </Accordion>
+                            ))}
                           </Grid>
                         </Grid>
                       </div>
