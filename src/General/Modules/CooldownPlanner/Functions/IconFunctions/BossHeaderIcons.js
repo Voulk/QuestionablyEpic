@@ -5,6 +5,24 @@ export default function bossHeaders(props, style, QEmodule) {
 
   // temp fix for Upgrade Finder, will need to redo boss ids
   if (QEmodule === "UpgradeFinder") {
+    if (props === 2468) {
+      source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-Antros.png").default;
+    }
+    if (props === 2456) {
+      source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-MawswornCaster.png").default;
+    }
+    if (props === 2430) {
+      source = require("Images/Bosses/WorldBosses/valinor.png").default;
+    }
+    if (props === 2431) {
+      source = require("Images/Bosses/WorldBosses/mortanis.png").default;
+    }
+    if (props === 2432) {
+      source = require("Images/Bosses/WorldBosses/oranomonos.png").default;
+    }
+    if (props === 2433) {
+      source = require("Images/Bosses/WorldBosses/nurgash.png").default;
+    }
 
     if (props === 2418) {
       source = require("Images/Bosses/CastleNathria/ArtificerXymox/ArtificerXymoxEJ.png").default;

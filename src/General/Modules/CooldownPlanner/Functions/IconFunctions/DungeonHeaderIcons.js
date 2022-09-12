@@ -87,19 +87,19 @@ export default function DungeonHeaderIcons(props) {
   }
 
   /* ---------------------------------- Return to Karazhan Upper ---------------------------------- */
-  if (props === 860 || props === -25) {
+  if (props === 860 || props === -27) {
     source = ReturnToKarazhan;
   }
   /* ---------------------------------- Return to Karazhan Lower ---------------------------------- */
-  if (props === 860 || props === -24) {
+  if (props === 860 || props === -26) {
     source = ReturnToKarazhan;
   }
   /* ---------------------------------- Operation: Mechagon Lower --------------------------------- */
-  if (props === 1178 || props === -22) {
+  if (props === 1178 || props === -14) {
     source = MechagonLower;
   }
   /* ---------------------------------- Operation: Mechagon Upper --------------------------------- */
-  if (props === 1178 || props === -23) {
+  if (props === 1178 || props === -15) {
     source = MechagonUpper;
   }
   /* --------------------------------------- Grimrail Depot --------------------------------------- */

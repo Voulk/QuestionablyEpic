@@ -413,7 +413,7 @@ export default function RaidGearContainer(props) {
                                 </Typography>
                               </AccordionSummary>
                               <AccordionDetails style={{ backgroundColor: "#191c23" }}>
-                                <Grid item xs={12} sm container direction="row" style={{ padding: 8 }} spacing={1}>
+                                <Grid item xs={12} sm container direction="row" spacing={1}>
                                   <Grid item xs={12} container spacing={1}>
                                     <Grid item xs={12}>
                                       <Typography
