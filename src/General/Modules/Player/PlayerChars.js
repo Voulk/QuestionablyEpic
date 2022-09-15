@@ -16,7 +16,6 @@ class PlayerChars {
   constructor() {
     // Check our local storage for our characters.
     let playerChars = JSON.parse(ls.get("allChar")) || [];
-    console.log(playerChars);
     //
     let charArray = [];
     // If we have characters in storage, loop through them and create a new Player object for each.

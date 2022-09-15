@@ -11,12 +11,13 @@ export const changeLog = [
   {
     version: "9.2.7 / 3.4.0",
     update: 3,
-    date: "16 August (Minor)",
+    date: "14 September",
     changes: [ 
       "Converted Burning Crusade characters to Wrath of the Lich King characters.",
       "Burning Crusade Classic support ended. Wrath of the Lich King support coming soon.",
       "Fixed Dreadfire Vessel item levels on the trinket chart.",
-      "Slightly reduced the value of DPS in dungeons due to it being a healing heavy tier."
+      "Slightly reduced the value of DPS in dungeons due to it being a healing heavy tier.",
+      "Added Burning Crusade Timewalking items."
     ],
   },
   {

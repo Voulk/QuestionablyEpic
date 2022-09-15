@@ -644,7 +644,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
   if (item.effect) {
     bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, userSettings, gameType, player.activeStats);
   }
-  console.log(userSettings);
+
   // Multiply the item's stats by our stat weights.
   let sumStats = compileStats(item_stats, bonus_stats);
   if (gameType === "Classic") sumStats = applyClassicStatMods(player.getSpec(), sumStats);
