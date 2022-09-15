@@ -1,11 +1,11 @@
 import { itemDB } from "../../Databases/ItemDB";
 import { dominationGemDB } from "../../Databases/DominationGemDB";
-import { BCItemDB } from "Databases/BCItemDB";
+import { ClassicItemDB } from "Databases/ClassicItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
 import { getEffectValue } from "../../Retail/Engine/EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
-import { bonus_IDs } from "Retail/Engine/BonusIDs"
+import { bonus_IDs } from "Retail/Engine/BonusIDs";
 import { translatedStat, STATDIMINISHINGRETURNS } from "./STAT";
 import Item from "../Modules/Player/Item";
 // import { useTranslation } from "react-i18next";
@@ -13,6 +13,8 @@ import Item from "../Modules/Player/Item";
 import { reportError } from "../SystemTools/ErrorLogging/ErrorReporting";
 import { useSelector } from "react-redux";
 import { GEMS } from "General/Engine/GEMS";
+import userSettings from "General/Modules/Settings/SettingsObject";
+import { CONSTANTS } from "./CONSTANTS";
 
 /*
 
@@ -35,20 +37,20 @@ export function getValidArmorTypes(spec) {
     case SPEC.HOLYPRIEST:
     case SPEC.DISCPRIEST:
       return [0, 1]; // Misc + Cloth
-    case "Holy Paladin BC":
+    case "Holy Paladin Classic":
       return [0, 1, 2, 3, 4, 6, 7]; // Misc + Plate + Shields
-    case "Restoration Druid BC":
+    case "Restoration Druid Classic":
       return [0, 1, 2, 8]; // Misc + Plate + Shields
-    case "Restoration Shaman BC":
+    case "Restoration Shaman Classic":
       return [0, 1, 2, 3, 6, 9]; // Misc + Plate + Shields
-    case "Holy Priest BC":
+    case "Holy Priest Classic":
       return [0, 1]; // Misc + Plate + Shields
     default:
       return [-1];
   }
 }
 
-// Weapon SubClasses
+// Weapon SuClassiclasses
 // 0 One-Handed Axes
 // 1 Two-Handed Axes
 // 2 Bows
@@ -79,8 +81,8 @@ export function getValidWeaponTypes(spec, slot) {
       switch (spec) {
         case SPEC.RESTOSHAMAN:
         case SPEC.HOLYPALADIN:
-        case "Holy Paladin BC":
-        case "Restoration Shaman BC":
+        case "Holy Paladin Classic":
+        case "Restoration Shaman Classic":
           return [0, 6];
         default:
           return [0];
@@ -100,13 +102,13 @@ export function getValidWeaponTypes(spec, slot) {
           return [4, 10, 15, 19];
         case SPEC.DISCPRIEST:
           return [4, 10, 15, 19];
-        case "Holy Paladin BC":
+        case "Holy Paladin Classic":
           return [0, 1, 4, 5, 6, 7, 8];
-        case "Restoration Druid BC":
+        case "Restoration Druid Classic":
           return [4, 5, 6, 10, 13, 15];
-        case "Restoration Shaman BC":
+        case "Restoration Shaman Classic":
           return [0, 1, 4, 5, 10, 13, 15];
-        case "Holy Priest BC":
+        case "Holy Priest Classic":
           return [4, 10, 15, 19];
         default:
           return [-1];
@@ -131,20 +133,20 @@ export function getValidWeaponTypesBySpec(spec) {
       return [4, 10, 15, 19];
     case SPEC.DISCPRIEST:
       return [4, 10, 15, 19];
-    case "Holy Paladin BC":
+    case "Holy Paladin Classic":
       return [0, 1, 4, 5, 6, 7, 8];
-    case "Restoration Druid BC":
+    case "Restoration Druid Classic":
       return [4, 5, 6, 10, 13, 15];
-    case "Restoration Shaman BC":
+    case "Restoration Shaman Classic":
       return [0, 1, 4, 5, 6, 10, 13, 15];
-    case "Holy Priest BC":
+    case "Holy Priest Classic":
       return [4, 10, 15, 19];
     default:
       return [-1, 0];
   }
 }
 
-export function filterBCItemListBySource(itemList, sourceInstance, sourceBoss) {
+export function filterClassicItemListBySource(itemList, sourceInstance, sourceBoss) {
   let temp = itemList.filter(function (item) {
     return (item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0);
   });
@@ -156,7 +158,16 @@ export function filterItemListBySource(itemList, sourceInstance, sourceBoss, lev
   let temp = itemList.filter(function (item) {
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
-    if (itemEncounter == 2457 || itemEncounter == 2467 || itemEncounter == 2464) expectedItemLevel += 7;
+    if (
+      itemEncounter == 2425 || // Stone Legion Generals
+      itemEncounter == 2424 || // Sire Denathrius
+      itemEncounter == 2440 || // Kel'Thuzad
+      itemEncounter == 2441 || // Sylvanas Windrunner
+      itemEncounter == 2457 || // Lords of Dread
+      itemEncounter == 2467 || // Rygelon
+      itemEncounter == 2464 // The Jailer
+    )
+      expectedItemLevel += 7;
     if (itemEncounter == 2456) expectedItemLevel = 233; // Mor'geth
     if (itemEncounter == 2468) expectedItemLevel = 259; // Antros
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
@@ -188,7 +199,7 @@ function sortItems(container) {
 }
 
 export function getItemDB(gameType = "Retail") {
-  return gameType === "Retail" ? itemDB : BCItemDB;
+  return gameType === "Retail" ? itemDB : ClassicItemDB;
 }
 
 export function getDifferentialByID(diffList, id, level) {
@@ -239,24 +250,21 @@ export function getItem(id, gameType = "Retail") {
   else return "";
 }
 
-
-
 export function applyDiminishingReturns(stats) {
   //console.log("Stats Pre-DR" + JSON.stringify(stats));
   const diminishedStats = JSON.parse(JSON.stringify(stats));
   for (const [key, value] of Object.entries(stats)) {
     if (["crit", "haste", "mastery", "versatility", "leech"].includes(key)) {
-
       const DRBreakpoints = STATDIMINISHINGRETURNS[key.toUpperCase()];
-  
+
       const baseStat = diminishedStats[key];
       for (var j = 0; j < DRBreakpoints.length; j++) {
         diminishedStats[key] -= Math.max((baseStat - DRBreakpoints[j]) * 0.1, 0);
       }
-    } 
+    }
   }
   //console.log("Stats Post-DR" + JSON.stringify(diminishedStats));
-    
+
   return diminishedStats;
 }
 
@@ -280,7 +288,7 @@ export function getItemProp(id, prop, gameType = "Retail") {
 // Add some support for missing icons.
 export function getItemIcon(id, gameType = "Retail") {
   const item = getItem(id, gameType);
-  if (gameType === "BurningCrusade" && item !== "") return "https://wow.zamimg.com/images/wow/icons/large/" + item.icon + ".jpg";
+  if (gameType === "Classic" && item !== "") return "https://wow.zamimg.com/images/wow/icons/large/" + item.icon + ".jpg";
   else if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
   else if (item !== "") {
     reportError(this, "ItemUtilities", "Icon not found for ID", id);
@@ -436,7 +444,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
       //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
       stats[key] = Math.round(rand_prop * allocation * 0.0001 * combat_mult);
     } else if (key === "intellect") {
-      stats[key] = Math.round((rand_prop * allocation * 0.0001) * 1);
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1);
     } else if (key === "stamina") {
       // todo
     }
@@ -469,13 +477,12 @@ export function getLegendaryID(tag) {
   for (const prop in bonus_IDs) {
     const entry = bonus_IDs[prop];
 
-    if ('effect' in entry && entry.effect !== null && 'spell' in entry.effect) {
-        if (entry.effect.spell.name === tag) legendaryID = prop;
-    }   
+    if ("effect" in entry && entry.effect !== null && "spell" in entry.effect) {
+      if (entry.effect.spell.name === tag) legendaryID = prop;
+    }
   }
   return legendaryID;
 }
-
 
 export function buildStatString(stats, effect, lang = "en") {
   let statString = "";
@@ -600,18 +607,18 @@ function compileStats(stats, bonus_stats) {
   return stats;
 }
 
-function applyBCStatMods(spec, setStats) {
+function applyClassicStatMods(spec, setStats) {
   // This can be properly formalized.
-  if (spec === "Holy Paladin BC") {
+  if (spec === "Holy Paladin Classic") {
     setStats.intellect = (setStats.intellect || 0) + (setStats.intellect || 0) * 0.1;
     setStats.spelldamage = (setStats.spelldamage || 0) + (setStats.intellect || 0) * 0.35;
-  } else if (spec === "Restoration Shaman BC") {
+  } else if (spec === "Restoration Shaman Classic") {
     setStats.bonushealing = (setStats.bonushealing || 0) + (setStats.intellect || 0) * 0.3;
     setStats.spelldamage = (setStats.spelldamage || 0) + (setStats.intellect || 0) * 0.3;
-  } else if (spec === "Restoration Druid BC") {
+  } else if (spec === "Restoration Druid Classic") {
     // Also gets 30% of spirit MP5 as MP5
     setStats.spirit = (setStats.spirit || 0) * 1.15;
-  } else if (spec === "Holy Priest BC") {
+  } else if (spec === "Holy Priest Classic") {
     // Also gets 30% of spirit MP5 as MP5
     setStats.spirit = setStats.spirit * 1.05 || 0;
     //talent_stats.bonushealing = (setStats.spirit + talent_stats.spirit) * 0.25;
@@ -630,18 +637,18 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
   let item_stats = { ...item.stats };
 
   // Check if Dom Slot
-  if (item.hasDomSocket && 'domGemID' in item && item.domGemID != 0) {
-    const effect = getDomGemEffect(item.domGemID)
+  if (item.hasDomSocket && "domGemID" in item && item.domGemID != 0) {
+    const effect = getDomGemEffect(item.domGemID);
     bonus_stats = getEffectValue(effect, player, player.getActiveModel(contentType), contentType, item.level, {}, gameType, player.activeStats);
   }
   // Calculate Effect.
   if (item.effect) {
-    bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, {}, gameType, player.activeStats);
+    bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, userSettings, gameType, player.activeStats);
   }
 
   // Multiply the item's stats by our stat weights.
   let sumStats = compileStats(item_stats, bonus_stats);
-  if (gameType === "BurningCrusade") sumStats = applyBCStatMods(player.getSpec(), sumStats);
+  if (gameType === "Classic") sumStats = applyClassicStatMods(player.getSpec(), sumStats);
 
   for (var stat in sumStats) {
     if (stat !== "bonus_stats") {
@@ -657,7 +664,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
 
   // Add any bonus DPS. This is valued 1:1 with bonus HPS in dungeons only.
   if (contentType === "Dungeon" && "bonus_stats" in item_stats && "dps" in bonus_stats) {
-    score += (bonus_stats.dps / player.getHPS(contentType)) * player.activeStats.intellect;
+    score += ((bonus_stats.dps * CONSTANTS.dpsValue) / player.getHPS(contentType)) * player.activeStats.intellect;
   }
 
   // Add any bonus Mana
@@ -670,7 +677,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
     score += 16 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType));
   }
 
-  // BC specific sockets
+  // Classic specific sockets
   if (item.sockets) {
     socketItem(item, player.statWeights["Raid"]);
     score += item.socketedGems["score"];

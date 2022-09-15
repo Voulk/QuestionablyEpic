@@ -4,16 +4,16 @@
 // but isn't giving them information they can actually use. 
 export const CONSTRAINTS = {
     Retail: {
-        maxItemLevel: 300,
+        maxItemLevel: 420,
         minItemLevel: 90,
-        maxSecondaryWeight: 0.9,
+        maxSecondaryWeight: 1.3,
         minSecondaryWeight: 0,
-        maxTertiaryWeight: 1.5,
+        maxTertiaryWeight: 2,
         minTertiaryWeight: 0,
         minRenown: 1,
         maxRenown: 80
     },
-    BurningCrusade: {
+    Classic: {
 
 
     },

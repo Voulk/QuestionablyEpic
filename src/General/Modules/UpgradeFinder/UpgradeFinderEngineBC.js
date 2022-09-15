@@ -1,5 +1,5 @@
-import { BCItemDB} from "../../../Databases/BCItemDB";
-import BCItem from "../Player/BCItem";
+import { ClassicItemDB} from "../../../Databases/ClassicItemDB";
+import ClassicItem from "../Player/ClassicItem";
 import { runTopGearBC } from "../TopGear/Engine/TopGearEngineBC";
 import {
   buildWepCombos,
@@ -46,7 +46,7 @@ export function buildWepCombosUF(player, itemList) {
         // If both main hand and off hand are vault items, then we can't make a combination out of them.
         continue;
       } else {
-        let item = new BCItem(
+        let item = new ClassicItem(
           main_hand.id,
           "Combined Weapon", // TODO
           "CombinedWeapon",
@@ -116,11 +116,11 @@ function buildItem(player, rawItem, source) {
   const itemSlot = rawItem.slot;
   const itemID = rawItem.id;
 
-  let item = new BCItem(itemID, "", itemSlot);
+  let item = new ClassicItem(itemID, "", itemSlot);
   //let itemAllocations = getItemAllocations(itemID, []);
   //item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, "");
   //item.level = itemLevel;
-  item.softScore = scoreItem(item, player, "Raid", "BurningCrusade");
+  item.softScore = scoreItem(item, player, "Raid", "Classic");
   item.source = itemSource;
 
   return item;
@@ -130,8 +130,8 @@ function buildItemPossibilities(player, contentType, playerSettings) {
   let itemPoss = [];
   const dungeonDifficulty = playerSettings.dungeon = 6 ? 1 : playerSettings.dungeon;
   // Grab items.
-  for (var i = 0; i < BCItemDB.length; i++) {
-    const rawItem = BCItemDB[i];
+  for (var i = 0; i < ClassicItemDB.length; i++) {
+    const rawItem = ClassicItemDB[i];
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
         if (rawItem.sources[0].instanceId === -1) {
           if (rawItem.sources[0].difficultyId === dungeonDifficulty) {

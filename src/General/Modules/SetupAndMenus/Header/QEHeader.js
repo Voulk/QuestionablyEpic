@@ -125,7 +125,7 @@ export default function QEHeader(props) {
                 style={{ paddingLeft: 10, paddingRight: 10 }}
               >
                 {(props.allChars && props.allChars.allChar.length) > 0 ? (
-                  <Grid item item xs={gameType === "Retail" ? 6 : "auto"} sm="auto">
+                  <Grid item xs={gameType === "Retail" ? 6 : "auto"} sm="auto">
                     <CharacterHeaderButton player={props.pl} allChars={props.allChars} />
                   </Grid>
                 ) : (

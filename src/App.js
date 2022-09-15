@@ -13,7 +13,7 @@ import TopGearReport from "General/Modules/TopGear/Report/TopGearReport";
 import QEProfile from "General/Modules/SetupAndMenus/QEProfile";
 import PlayerChars from "General/Modules/Player/PlayerChars";
 import CovenantExploration from "Retail/Modules/Covenants/Components/CovenantExploration.js";
-import TierSets from "./BurningCrusade/Modules/TierSets/TierSets";
+import TierSets from "./Classic/Modules/TierSets/TierSets";
 import { UpgradeFinder } from "General/Modules/UpgradeFinder/UpgradeFinder";
 import { ConfirmLogin, QELogin } from "General/Modules/SetupAndMenus/Header/QELogin";
 import { withTranslation } from "react-i18next";

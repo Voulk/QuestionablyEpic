@@ -4,7 +4,25 @@ import createEvents from "./CreateEvents";
 import moment from "moment";
 import smartTransformData from "General/Modules/CooldownPlanner/Engine/SmartTransformData";
 
-export default function transformData(starttime, boss, enemyCasts, healerCasts, healerIDs, difficulty, damageTaken, debuffs, enemyHealth, buffData, transformType) {
+export default function transformData(starttime, boss, enemyCasts, healerCasts, healerIDs, difficulty, damageTaken, debuffs, enemyHealth, buffData, transformType, nameObject, friendlyHealth) {
+  let idsToRemove = [];
+  // push healer ids to remove from the cast array
+  nameObject
+    .filter((filter) => Object.values(filter)[0] === "removeLineFromArray")
+    .map((key) =>
+      healerIDs
+        .filter((obj) => {
+          return obj.name === Object.keys(key)[0];
+        })
+        .map((obj) => idsToRemove.push(obj.id)),
+    );
+  // filter out healers to remove
+  if (idsToRemove !== []) {
+    healerCasts = healerCasts.filter((filter) => idsToRemove.includes(filter.sourceID) === false);
+  }
+  // filter out removed healers
+  nameObject = nameObject.filter((filter) => Object.values(filter)[0] !== "removeLineFromArray");
+
   // We'll convert a list of enemy casts that we're interested in to an array of timestamps.
   let enemyQuickTimeline = enemyCasts
     .filter(
@@ -18,7 +36,7 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
     .map((cast) => cast.timestamp);
 
   // Create Events such as Phases, Any spells that don't have logged cast times such as gaining debuffs or damage taken at a certain event.
-  let generatedEvents = createEvents(boss, difficulty, damageTaken, debuffs, starttime, enemyHealth, enemyCasts, buffData);
+  let generatedEvents = createEvents(boss, difficulty, damageTaken, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
 
   // Map enemy ability casts into objects for the cooldown planner
   let enemyCastsTimeline = enemyCasts
@@ -96,7 +114,8 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
   // ];
 
   // merge the healer and enemy cast arrays of  objects
-  let data = [...newTimeline, ...enemyCastsTimeline]; //...data in question
+  let data = [];
+  transformType === "blank" ? (data = [...enemyCastsTimeline]) : (data = [...newTimeline, ...enemyCastsTimeline]); //...data in question
   // filter lines to only have bossAbility or cooldowns, not just time only
   data = data.filter(
     (filter) =>
@@ -174,8 +193,22 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
       generatedResults.push(newObject);
     }
   });
+
   results.push(generatedResults);
   results = results.flat();
+
+  nameObject
+    .filter((filter) => Object.values(filter)[0] !== Object.keys(filter)[0])
+    .filter((filter2) => filter2 !== {})
+    .map((key) =>
+      results.map((generatedObject, i) => {
+        Object.keys(generatedObject).includes("name0") && generatedObject.name0 === Object.keys(key)[0] ? (results[i].name0 = Object.values(key)[0]) : "";
+        Object.keys(generatedObject).includes("name1") && generatedObject.name1 === Object.keys(key)[0] ? (results[i].name1 = Object.values(key)[0]) : "";
+        Object.keys(generatedObject).includes("name2") && generatedObject.name2 === Object.keys(key)[0] ? (results[i].name2 = Object.values(key)[0]) : "";
+        Object.keys(generatedObject).includes("name3") && generatedObject.name3 === Object.keys(key)[0] ? (results[i].name3 = Object.values(key)[0]) : "";
+        Object.keys(generatedObject).includes("name4") && generatedObject.name4 === Object.keys(key)[0] ? (results[i].name4 = Object.values(key)[0]) : "";
+      }),
+    );
 
   return results;
 }

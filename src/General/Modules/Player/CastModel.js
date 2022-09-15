@@ -63,8 +63,8 @@ class CastModel {
 
   setDefaults = (spec, contentType, modelID) => {
     this.fightInfo = {
-      hps: 14100,
-      rawhps: 15200,
+      hps: 20000,
+      rawhps: 24200,
       dps: 1000,
       fightLength: 340,
       reportID: "Default",
@@ -182,13 +182,13 @@ class CastModel {
     } 
     
     // Burning Crusade Profiles
-    else if (spec === "Restoration Druid BC") {
+    else if (spec === "Restoration Druid Classic") {
       spellList = this.getClassicDruid();
-    } else if (spec === "Restoration Shaman BC") {
+    } else if (spec === "Restoration Shaman Classic") {
       spellList = this.getClassicShaman();
-    } else if (spec === "Holy Priest BC") {
+    } else if (spec === "Holy Priest Classic") {
       spellList = this.getClassicPriest();
-    } else if (spec === "Holy Paladin BC") {
+    } else if (spec === "Holy Paladin Classic") {
       spellList = this.getClassicPaladin();
     } else {
       spellList = {};

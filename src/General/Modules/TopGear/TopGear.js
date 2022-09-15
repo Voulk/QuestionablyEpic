@@ -20,6 +20,7 @@ import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems
 import ItemBar from "../ItemBar/ItemBar";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
+import { getTranslatedSlotName } from "locale/slotsLocale";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -80,7 +81,7 @@ const TOPGEARCAP = 32; // TODO
 
 export default function TopGear(props) {
   const { t, i18n } = useTranslation();
-  // const currentLanguage = i18n.language;
+  const currentLanguage = i18n.language;
   const contentType = useSelector((state) => state.contentType);
   const classes = useStyles();
   const gameType = useSelector((state) => state.gameType);
@@ -141,10 +142,10 @@ export default function TopGear(props) {
     for (const key in slotLengths) {
       if ((key === "Finger" || key === "Trinket") && slotLengths[key] < 2) {
         topgearOk = false;
-        errorMessage = t("TopGear.itemMissingError") + t("slotNames." + key.toLowerCase());
+        errorMessage = t("TopGear.itemMissingError") + getTranslatedSlotName(key.toLowerCase(), currentLanguage);
       } else if (slotLengths[key] === 0) {
         topgearOk = false;
-        errorMessage = t("TopGear.itemMissingError") + t("slotNames." + key.toLowerCase());
+        errorMessage = t("TopGear.itemMissingError") + getTranslatedSlotName(key.toLowerCase(), currentLanguage);
       }
     }
     setErrorMessage(errorMessage);
@@ -219,7 +220,7 @@ export default function TopGear(props) {
           })
           .catch((err) => {
             // If top gear crashes for any reason, log the error and then terminate the worker.
-            reportError("", "BC Top Gear Crash", err, strippedPlayer.spec);
+            reportError("", "Classic Top Gear Crash", err, strippedPlayer.spec);
             setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
             instance.terminate();
             setBtnActive(true);
@@ -259,22 +260,22 @@ export default function TopGear(props) {
   };
 
   const slotList = [
-    { label: t("slotNames.head"), slotName: "Head" },
-    { label: t("slotNames.neck"), slotName: "Neck" },
-    { label: t("slotNames.shoulder"), slotName: "Shoulder" },
-    { label: t("slotNames.back"), slotName: "Back" },
-    { label: t("slotNames.chest"), slotName: "Chest" },
-    { label: t("slotNames.wrists"), slotName: "Wrist" },
-    { label: t("slotNames.hands"), slotName: "Hands" },
-    { label: t("slotNames.waist"), slotName: "Waist" },
-    { label: t("slotNames.legs"), slotName: "Legs" },
-    { label: t("slotNames.feet"), slotName: "Feet" },
-    { label: t("slotNames.finger"), slotName: "Finger" },
-    { label: t("slotNames.trinket"), slotName: "Trinket" },
-    { label: t("slotNames.weapons"), slotName: "AllMainhands" },
-    { label: t("slotNames.offhands"), slotName: "Offhands" },
+    { label: getTranslatedSlotName("head", currentLanguage), slotName: "Head" },
+    { label: getTranslatedSlotName("neck", currentLanguage), slotName: "Neck" },
+    { label: getTranslatedSlotName("shoulder", currentLanguage), slotName: "Shoulder" },
+    { label: getTranslatedSlotName("back", currentLanguage), slotName: "Back" },
+    { label: getTranslatedSlotName("chest", currentLanguage), slotName: "Chest" },
+    { label: getTranslatedSlotName("wrists", currentLanguage), slotName: "Wrist" },
+    { label: getTranslatedSlotName("hands", currentLanguage), slotName: "Hands" },
+    { label: getTranslatedSlotName("waist", currentLanguage), slotName: "Waist" },
+    { label: getTranslatedSlotName("legs", currentLanguage), slotName: "Legs" },
+    { label: getTranslatedSlotName("feet", currentLanguage), slotName: "Feet" },
+    { label: getTranslatedSlotName("finger", currentLanguage), slotName: "Finger" },
+    { label: getTranslatedSlotName("trinket", currentLanguage), slotName: "Trinket" },
+    { label: getTranslatedSlotName("weapons", currentLanguage), slotName: "AllMainhands" },
+    { label: getTranslatedSlotName("offhands", currentLanguage), slotName: "Offhands" },
   ];
-  if (gameType === "BurningCrusade") slotList.push({ label: t("slotNames.relics"), slotName: "Relics & Wands" });
+  if (gameType === "Classic") slotList.push({ label: getTranslatedSlotName("relics", currentLanguage), slotName: "Relics & Wands" });
   return (
     <div className={classes.root}>
       <Grid container spacing={1} justifyContent="center">

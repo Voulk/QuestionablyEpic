@@ -9,7 +9,7 @@ export const bossDB = [
       ch: "",
     },
     id: 1552,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -20,7 +20,7 @@ export const bossDB = [
       ch: "",
     },
     id: 652,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -31,7 +31,7 @@ export const bossDB = [
       ch: "",
     },
     id: 653,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -42,7 +42,7 @@ export const bossDB = [
       ch: "",
     },
     id: 654,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -53,7 +53,7 @@ export const bossDB = [
       ch: "",
     },
     id: 655,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -64,7 +64,7 @@ export const bossDB = [
       ch: "",
     },
     id: 656,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -75,7 +75,7 @@ export const bossDB = [
       ch: "",
     },
     id: 657,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -86,7 +86,7 @@ export const bossDB = [
       ch: "",
     },
     id: 658,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -97,7 +97,7 @@ export const bossDB = [
       ch: "",
     },
     id: 659,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -108,7 +108,7 @@ export const bossDB = [
       ch: "",
     },
     id: 660,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -119,7 +119,7 @@ export const bossDB = [
       ch: "",
     },
     id: 661,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -130,7 +130,7 @@ export const bossDB = [
       ch: "",
     },
     id: 662,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   /* ---------------------------------------- Gruul's Lair ---------------------------------------- */
   {
@@ -142,7 +142,7 @@ export const bossDB = [
       ch: "",
     },
     id: 649,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -153,7 +153,7 @@ export const bossDB = [
       ch: "",
     },
     id: 650,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   /* ------------------------------------- Magtheridon's lair ------------------------------------- */
   {
@@ -165,7 +165,7 @@ export const bossDB = [
       ch: "",
     },
     id: 651,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   /* ------------------------------------ Serpentshrine Cavern ------------------------------------ */
   {
@@ -177,7 +177,7 @@ export const bossDB = [
       ch: "",
     },
     id: 623,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -188,7 +188,7 @@ export const bossDB = [
       ch: "",
     },
     id: 624,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -199,7 +199,7 @@ export const bossDB = [
       ch: "",
     },
     id: 625,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -210,7 +210,7 @@ export const bossDB = [
       ch: "",
     },
     id: 626,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -221,7 +221,7 @@ export const bossDB = [
       ch: "",
     },
     id: 627,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -232,7 +232,7 @@ export const bossDB = [
       ch: "",
     },
     id: 628,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   /* ---------------------------------------- Tempest Keep ---------------------------------------- */
   {
@@ -244,7 +244,7 @@ export const bossDB = [
       ch: "",
     },
     id: 730,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -255,7 +255,7 @@ export const bossDB = [
       ch: "",
     },
     id: 731,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -266,7 +266,7 @@ export const bossDB = [
       ch: "",
     },
     id: 732,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -277,7 +277,7 @@ export const bossDB = [
       ch: "",
     },
     id: 733,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   /* --------------------------------- The Battle for Mount Hyjal --------------------------------- */
   {
@@ -289,7 +289,7 @@ export const bossDB = [
       ch: "",
     },
     id: 618,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -300,7 +300,7 @@ export const bossDB = [
       ch: "",
     },
     id: 619,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -311,7 +311,7 @@ export const bossDB = [
       ch: "",
     },
     id: 620,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -322,7 +322,7 @@ export const bossDB = [
       ch: "",
     },
     id: 621,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -333,7 +333,7 @@ export const bossDB = [
       ch: "",
     },
     id: 622,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   /* ---------------------------------------- Black Temple ---------------------------------------- */
   {
@@ -345,7 +345,7 @@ export const bossDB = [
       ch: "",
     },
     id: 601,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -356,7 +356,7 @@ export const bossDB = [
       ch: "",
     },
     id: 602,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -367,7 +367,7 @@ export const bossDB = [
       ch: "",
     },
     id: 603,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -378,7 +378,7 @@ export const bossDB = [
       ch: "",
     },
     id: 604,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -389,7 +389,7 @@ export const bossDB = [
       ch: "",
     },
     id: 605,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -400,7 +400,7 @@ export const bossDB = [
       ch: "",
     },
     id: 606,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -411,7 +411,7 @@ export const bossDB = [
       ch: "",
     },
     id: 607,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -422,7 +422,7 @@ export const bossDB = [
       ch: "",
     },
     id: 608,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -433,7 +433,7 @@ export const bossDB = [
       ch: "",
     },
     id: 609,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   /* --------------------------------------- Sunwell Plateau -------------------------------------- */
   {
@@ -445,7 +445,7 @@ export const bossDB = [
       ch: "",
     },
     id: 724,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -456,7 +456,7 @@ export const bossDB = [
       ch: "",
     },
     id: 725,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -467,7 +467,7 @@ export const bossDB = [
       ch: "",
     },
     id: 726,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -478,7 +478,7 @@ export const bossDB = [
       ch: "",
     },
     id: 727,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -489,7 +489,7 @@ export const bossDB = [
       ch: "",
     },
     id: 728,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -500,7 +500,7 @@ export const bossDB = [
       ch: "",
     },
     id: 729,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   /* ------------------------------------------ Zul'Aman ------------------------------------------ */
   {
@@ -512,7 +512,7 @@ export const bossDB = [
       ch: "",
     },
     id: 1189,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -523,7 +523,7 @@ export const bossDB = [
       ch: "",
     },
     id: 1190,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -534,7 +534,7 @@ export const bossDB = [
       ch: "",
     },
     id: 1191,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -545,7 +545,7 @@ export const bossDB = [
       ch: "",
     },
     id: 1192,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -556,7 +556,7 @@ export const bossDB = [
       ch: "",
     },
     id: 1193,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
   {
     name: {
@@ -567,6 +567,6 @@ export const bossDB = [
       ch: "",
     },
     id: 1194,
-    expansion: "BurningCrusade",
+    expansion: "Classic",
   },
 ];

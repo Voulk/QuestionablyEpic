@@ -11,15 +11,15 @@ import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
 import { covenantIcons, covenantColours } from "../../CooldownPlanner/Functions/CovenantFunctions";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import { classTranslator } from "../../../Functions/CommonFunctions";
 import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared";
+import { getTranslatedClassName } from "locale/ClassNames";
 
 function TopGearReport(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const gameType = useSelector((state) => state.gameType);
-  const boxWidth = gameType === "BurningCrusade" ? "60%" : "60%";
+  const boxWidth = gameType === "Classic" ? "60%" : "60%";
   let contentType = "";
 
   /* ----------------------------- On Component load get player image ----------------------------- */
@@ -36,21 +36,21 @@ function TopGearReport(props) {
     switch (props.player.spec) {
       case "Holy Paladin":
         return require("Images/Classes/Paladin/icon-paladin.png").default;
-      case "Holy Paladin BC":
+      case "Holy Paladin Classic":
         return require("Images/Classes/Paladin/icon-paladin.png").default;
       case "Restoration Shaman":
         return require("Images/Classes/Shaman/icon-shaman.png").default;
-      case "Restoration Shaman BC":
+      case "Restoration Shaman Classic":
         return require("Images/Classes/Shaman/icon-shaman.png").default;
       case "Holy Priest":
         return require("Images/Classes/Priest/icon-priest.png").default;
-      case "Holy Priest BC":
+      case "Holy Priest Classic":
         return require("Images/Classes/Priest/icon-priest.png").default;
       case "Discipline Priest":
         return require("Images/Classes/Priest/icon-priest.png").default;
       case "Restoration Druid":
         return require("Images/Classes/Druid/icon-druid.png").default;
-      case "Restoration Druid BC":
+      case "Restoration Druid Classic":
         return require("Images/Classes/Druid/icon-druid.png").default;
       case "Mistweaver Monk":
         return require("Images/Classes/Monk/icon-monk.png").default;
@@ -79,7 +79,7 @@ function TopGearReport(props) {
     differentials = result.differentials;
     itemList = topSet.itemList;
     contentType = result.contentType;
-    gemStats = gameType === "BurningCrusade" && "socketInformation" in topSet ? topSet.socketInformation : "";
+    gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
     domGems = gameType === "Retail" && "domGemList" in topSet ? topSet.domGemList : "";
     statList = topSet.setStats;
 
@@ -237,7 +237,7 @@ function TopGearReport(props) {
                                         {props.player.charName}
                                       </Typography>
 
-                                      <Tooltip title={t(classTranslator(props.player.spec))} style={{ color: classColoursJS(props.player.spec) }} placement="top" arrow>
+                                      <Tooltip title={getTranslatedClassName(props.player.spec)} style={{ color: classColoursJS(props.player.spec) }} placement="top" arrow>
                                         {classIcons(props.player.spec, {
                                           height: 22,
                                           width: 22,

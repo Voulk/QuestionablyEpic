@@ -6,7 +6,8 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
-    chaosBrand: true
+    chaosBrand: true,
+    critMult: 2
 }
 
 const DISCCONSTANTS = {
@@ -100,10 +101,11 @@ const DISCCONSTANTS = {
     // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
     // Unity Note: Unity is automatically converted to the legendary it represents and should not have an entry here.
 
-    // -- Clarity of Mind --
-    // Clarity of Mind adds 6 seconds to the Atonement granted by Power Word: Shield during Rapture. 
-    // It's a straightfoward addition.
-    if (settings['Clarity of Mind']) discSpells['Rapture'][0].atonement = 21;
+    let rampResult = {totalHealing: 0, ramps: [], rampSettings: settings}
+    const miniSeq = buildRamp('Mini', 6, settings["Neural Synapse Enhancer"] || false, stats.haste, settings.playstyle || "", [])
+    const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
+    const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
+    const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
 
     // -- Shadow Word: Manipulation --
     // SWM has two effects. 
@@ -303,8 +305,9 @@ const getActiveAtone = (atoneApp, timer) => {
 const getStatMult = (currentStats, stats) => {
     let mult = 1;
     
+    const critChance = 0.05 + currentStats['crit'] / 35 / 100;
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / 40 / 100);
-    if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100);
+    if (stats.includes("crit")) mult *= (discSettings.critMult * critChance + (1 - critChance)); // TODO: Re-enable
     if (stats.includes("mastery")) mult *= (1.108 + currentStats['mastery'] / 25.9259 / 100);
     return mult;
 }

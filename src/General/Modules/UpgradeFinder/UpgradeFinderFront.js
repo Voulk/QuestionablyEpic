@@ -127,7 +127,7 @@ export default function UpgradeFinderFront(props) {
       value: 0,
       label: (
         <div className={classes.labels}>
-          <div>lvl 236</div>
+          <div>lvl 262</div>
           <div>M 0</div>
         </div>
       ),
@@ -136,7 +136,7 @@ export default function UpgradeFinderFront(props) {
       value: 1,
       label: (
         <div className={classes.labels}>
-          <div>lvl 236</div>
+          <div>lvl 262</div>
           <div>M 2</div>
         </div>
       ),
@@ -145,7 +145,7 @@ export default function UpgradeFinderFront(props) {
       value: 2,
       label: (
         <div className={classes.labels}>
-          <div>lvl 239</div>
+          <div>lvl 265</div>
           <div>M 3</div>
         </div>
       ),
@@ -154,7 +154,7 @@ export default function UpgradeFinderFront(props) {
       value: 3,
       label: (
         <div className={classes.labels}>
-          <div>lvl 242</div>
+          <div>lvl 268</div>
           <div>M 4</div>
         </div>
       ),
@@ -163,7 +163,7 @@ export default function UpgradeFinderFront(props) {
       value: 4,
       label: (
         <div className={classes.labels}>
-          <div>lvl 246</div>
+          <div>lvl 272</div>
           <div>M 5</div>
         </div>
       ),
@@ -172,7 +172,7 @@ export default function UpgradeFinderFront(props) {
       value: 5,
       label: (
         <div className={classes.labels}>
-          <div>lvl 249</div>
+          <div>lvl 275</div>
           <div>M 6-7</div>
         </div>
       ),
@@ -181,7 +181,7 @@ export default function UpgradeFinderFront(props) {
       value: 6,
       label: (
         <div className={classes.labels}>
-          <div>lvl 252</div>
+          <div>lvl 278</div>
           <div>M 8-9</div>
         </div>
       ),
@@ -190,7 +190,7 @@ export default function UpgradeFinderFront(props) {
       value: 7,
       label: (
         <div className={classes.labels}>
-          <div>lvl 255</div>
+          <div>lvl 281</div>
           <div>M 10-11</div>
         </div>
       ),
@@ -199,7 +199,7 @@ export default function UpgradeFinderFront(props) {
       value: 8,
       label: (
         <div className={classes.labels}>
-          <div>lvl 259</div>
+          <div>lvl 285</div>
           <div>M 12-13</div>
         </div>
       ),
@@ -208,7 +208,7 @@ export default function UpgradeFinderFront(props) {
       value: 9,
       label: (
         <div className={classes.labels}>
-          <div>lvl 262</div>
+          <div>lvl 288</div>
           <div>M 14-15</div>
         </div>
       ),
@@ -217,7 +217,7 @@ export default function UpgradeFinderFront(props) {
       value: 10,
       label: (
         <div className={classes.labels}>
-          <div>lvl 265</div>
+          <div>lvl 291</div>
         </div>
       ),
     },
@@ -225,7 +225,7 @@ export default function UpgradeFinderFront(props) {
       value: 11,
       label: (
         <div className={classes.labels}>
-          <div>lvl 268</div>
+          <div>lvl 294</div>
         </div>
       ),
     },
@@ -233,7 +233,7 @@ export default function UpgradeFinderFront(props) {
       value: 12,
       label: (
         <div className={classes.labels}>
-          <div>lvl 272</div>
+          <div>lvl 298</div>
         </div>
       ),
     },
@@ -241,7 +241,7 @@ export default function UpgradeFinderFront(props) {
       value: 13,
       label: (
         <div className={classes.labels}>
-          <div>lvl 275</div>
+          <div>lvl 301</div>
         </div>
       ),
     },
@@ -249,7 +249,7 @@ export default function UpgradeFinderFront(props) {
       value: 14,
       label: (
         <div className={classes.labels}>
-          <div>lvl 278</div>
+          <div>lvl 304</div>
         </div>
       ),
     },
@@ -284,7 +284,7 @@ export default function UpgradeFinderFront(props) {
       const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
       props.setItemSelection(result);
       props.setShowReport(true);
-    } else if (gameType === "BurningCrusade") {
+    } else if (gameType === "Classic") {
       const playerSettings = props.playerSettings;
       const result = runUpgradeFinderBC(props.player, contentType, currentLanguage, playerSettings, userSettings);
       props.setItemSelection(result);
@@ -313,13 +313,13 @@ export default function UpgradeFinderFront(props) {
     const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
     if (gameType === "Retail") {
       return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
-    } else if (gameType === "BurningCrusade") {
+    } else if (gameType === "Classic") {
       return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 16) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 17);
     }
   };
 
   const getUpgradeFinderReady = (player) => {
-    return getSimCStatus(player) === "Good" && (props.playerSettings.raid.length > 0 || gameType == "BurningCrusade");
+    return getSimCStatus(player) === "Good" && (props.playerSettings.raid.length > 0 || gameType == "Classic");
   };
 
   return (
@@ -439,9 +439,6 @@ export default function UpgradeFinderFront(props) {
                     <Typography color="primary" align="center" variant="h5">
                       {t("Dungeon")}
                     </Typography>
-                    <Grid item xs={12}>
-                      <Typography align="center">{t("UpgradeFinderFront.DungeonBodyBC")}</Typography>
-                    </Grid>
                   </Grid>
                 </Grid>
 

@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import "./HealerCardInfo.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { STATPERONEPERCENT } from "../../../Engine/STAT";
+import { getTranslatedStats } from "locale/statsLocale.js";
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -96,7 +97,7 @@ export default function HealerInfoCards(props) {
                 }}
               >
                 {classicons(key.icon, { width: 22, height: 22, verticalAlign: "middle", marginRight: 4, borderRadius: 4 })}
-                {key.name} - {t("CooldownPlanner.HealerCards.Item Level")} {key.stats.map((stats) => stats.ilvl)} - {key.icon}
+                {key.name} - {t("Item Level")} {key.stats.map((stats) => stats.ilvl)} - {key.icon}
               </Typography>
             </AccordionSummary>
             <Divider style={{ marginTop: 4 }} />
@@ -140,7 +141,7 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("Intellect")}: {stats.intellect}
+                          {getTranslatedStats("Intellect", currentLanguage)}: {stats.intellect}
                         </Typography>
 
                         {/* ----------------------------- Critical Strike ----------------------------  */}
@@ -151,7 +152,7 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("CooldownPlanner.HealerCards.Crit")}: {roundTo(stats.crit / STATPERONEPERCENT.Retail.CRIT + 5, 2)}
+                          {getTranslatedStats("Crit", currentLanguage)}: {roundTo(stats.crit / STATPERONEPERCENT.Retail.CRIT + 5, 2)}
                           {"%"}
                         </Typography>
 
@@ -163,7 +164,7 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("CooldownPlanner.HealerCards.Haste")}: {roundTo(stats.haste / STATPERONEPERCENT.Retail.HASTE, 2)}
+                          {getTranslatedStats("Haste", currentLanguage)}: {roundTo(stats.haste / STATPERONEPERCENT.Retail.HASTE, 2)}
                           {"%"}
                         </Typography>
 
@@ -175,7 +176,7 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("CooldownPlanner.HealerCards.Mastery")}: {roundTo(masteryCalc(key.icon, stats.mastery), 2)}
+                          {getTranslatedStats("Mastery", currentLanguage)}: {roundTo(masteryCalc(key.icon, stats.mastery), 2)}
                           {"%"}
                         </Typography>
 
@@ -187,7 +188,7 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("CooldownPlanner.HealerCards.Versatility")}: {roundTo(stats.versatility / STATPERONEPERCENT.Retail.VERSATILITY, 2)}
+                          {getTranslatedStats("Versatility", currentLanguage)}: {roundTo(stats.versatility / STATPERONEPERCENT.Retail.VERSATILITY, 2)}
                           {"%"}
                         </Typography>
                       </div>

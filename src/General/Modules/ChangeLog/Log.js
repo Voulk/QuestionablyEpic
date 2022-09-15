@@ -9,6 +9,68 @@
 
 export const changeLog = [
   {
+    version: "9.2.7 / 3.4.0",
+    update: 3,
+    date: "14 September",
+    changes: [ 
+      "New Setting: Hymnal Allies. Note that the trinket chart won't update automatically.",
+      "Converted Burning Crusade characters to Wrath of the Lich King characters.",
+      "Burning Crusade Classic support ended. Wrath of the Lich King support coming soon.",
+      "Fixed Dreadfire Vessel item levels on the trinket chart.",
+      "Slightly reduced the value of DPS in dungeons due to it being a healing heavy tier.",
+      "Added Burning Crusade Timewalking items."
+    ],
+  },
+  {
+    version: "9.2.7",
+    update: 3,
+    date: "16 August (Minor)",
+    changes: [ 
+      "Added the Fleshrender's Meathook & Enforcer's Stun Grenade hotfixes.",
+    ],
+  },
+  {
+    version: "9.2.5 / 2.5.4",
+    update: 21,
+    date: "2 August (Major)",
+    changes: [ 
+      "Added all Season 4 Content.",
+      "Cooldown Planner: Added Castle Nathria Fated.",
+      "Upgrade Finder: Added Karazhan, Mechagon, Grimrail Depot and Iron Docks.",
+      "Upgrade Finder: Added Castle Nathria and Sanctum of Domination at Fated item levels.",
+      "New Effects: Added Mechagon ring sets, Drape of Shame, Neural Synapse Enhancer and more.",
+      "Added Karazhan & Mechagon trinkets. Updated trinket item levels.",
+    ],
+  },
+  {
+    version: "9.2.5 / 2.5.4",
+    update: 20,
+    date: "15 July (Minor)",
+    changes: [ 
+      "Fight Analysis (Alpha): Added a personal defensives panel.",
+      "Added the Circle of Life and Death legendary to manual legendary creation.",
+      "Re-added Auxiliary Attendant Charm to the trinket chart."
+    ],
+  },
+  {
+    version: "9.2.5 / 2.5.4",
+    update: 19,
+    date: "7 July (Major)",
+    changes: [ 
+      "Added the following DPS Trinkets: Resonant Reservoir, Infinitely Divisible Ooze, Oakheart's Gnarled Root, Mailemental.",
+      "Cooldown Planner (Alpha): Fixed a bug in ERT exports.",
+      "Cooldown Planner (Alpha): Added a converter to WCL plan imports."
+    ],
+  },
+  {
+    version: "9.2.5 / 2.5.4",
+    update: 18,
+    date: "24 June (Major)",
+    changes: [ 
+      "Added an Alpha version of the Cooldown Planner & Fight Analysis Modules",
+    ],
+  },
+  {
     version: "9.2.5 / 2.5.4",
     update: 17,
     date: "3 June",
@@ -343,7 +405,7 @@ export const changeLog = [
       "You can now add items directly in Top Gear.",
       "Bugfix: The auto-socket items setting will no longer add a prismatic socket Dom items.",
       "Bugfix: Adding a Domination item without a gem inserted will no longer crash the app.",
-      "BC: Fixed a bug where Top Gear could crash with specific items."
+      "Classic: Fixed a bug where Top Gear could crash with specific items."
     ],
   },
   {
@@ -355,7 +417,7 @@ export const changeLog = [
       "Blood Link buffed on live servers by 20%.",
       "Multiple in-game bugs with Winds of Winter fixed including Ashen Hallow & Pets",
       "Bugfix: Fixed the order of two traits in Theotars tree.",
-      "BC: Fixed a bug where Domination Shards could occasionally appear on BC items."
+      "Classic: Fixed a bug where Domination Shards could occasionally appear on Classic items."
     ],
   },
   {
@@ -467,7 +529,7 @@ export const changeLog = [
     date: "5th July",
     changes: [
       "Launched the 9.1 Upgrade Finder.",
-      "Added a back button to the Retail upgrade Finder. BC already had it.",
+      "Added a back button to the Retail upgrade Finder. Classic already had it.",
       "Bugfix: Crafted items should no longer import with more stats than they should.",
     ],
   },
@@ -515,9 +577,9 @@ export const changeLog = [
     update: 9,
     date: "22nd June",
     changes: [
-      "Bugfix: BC Troll Priests should no longer get an error when running Top Gear or Upgrade Finder.",
+      "Bugfix: Classic Troll Priests should no longer get an error when running Top Gear or Upgrade Finder.",
       "Bugfix: Importing Suffixed items multiple times should no longer double their stat allocations.",
-      "Bugfix: Fixed a rare bug where some BC gems weren't using the correct stat line."
+      "Bugfix: Fixed a rare bug where some Classic gems weren't using the correct stat line."
     ],
   },
   {
@@ -527,7 +589,7 @@ export const changeLog = [
     changes: [
       "Improved clarity around the QE Import addon, and where to get it.",
       "Revamped the help text at the top of every module.",
-      "BC: Added Badge gear to Upgrade Finder."
+      "Classic: Added Badge gear to Upgrade Finder."
     ],
   },
   {
@@ -536,7 +598,7 @@ export const changeLog = [
     date: "8th June",
     changes: [
       "Fixed a bug where gems were being counted twice in set scores.",
-      "Fixed a bug where Spirit was being undervalued for BC Druid.",
+      "Fixed a bug where Spirit was being undervalued for Classic Druid.",
       "Fixed some minor UI bugs."
     ],
   },
@@ -556,9 +618,9 @@ export const changeLog = [
     date: "1st June",
     changes: [
       "Added full support for all four Burning Crusade Classic specs.",
-      "BC: Added Tier Sets module.",
+      "Classic: Added Tier Sets module.",
       "Added Welcome screen for players new to the app.",
-      "Retail / BC: All items now have attached tooltips."
+      "Retail / Classic: All items now have attached tooltips."
     ],
   },
   {

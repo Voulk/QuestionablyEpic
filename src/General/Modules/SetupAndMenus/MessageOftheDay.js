@@ -6,10 +6,9 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "Great Vault: Make sure you consider tier & catalyst opportunities.",
-      "Holy Priest Legendary support coming soon.",
+      "Hymnal now has a setting for number of allies.",
   ],
-  "BurningCrusade": [""]
+  "Classic": [""]
   }
 ;
 
