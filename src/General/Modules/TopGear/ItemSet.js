@@ -39,7 +39,7 @@ class ItemSet {
   // Set bonuses
   sets = {};
 
-  // BC Socket List
+  // Classic Socket List
   bcSockets = {};
 
   domSockets = 0; // Number of domination sockets.

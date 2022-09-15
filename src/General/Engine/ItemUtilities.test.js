@@ -16,8 +16,8 @@ import {
 } from "./ItemUtilities";
 import SPEC from "../Engine/SPECS";
 import each from "jest-each";
-import BCItem from "General/Modules/Player/BCItem";
-import BCPlayer from "General/Modules/Player/BCPlayer";
+import ClassicItem from "General/Modules/Player/ClassicItem";
+import ClassicPlayer from "General/Modules/Player/ClassicPlayer";
 
 describe("Test Item Level", () => {
   test("Sylvan Whiteshield ilvl", () => {
@@ -263,8 +263,8 @@ describe("getItemSlot func", () => {
 
 describe("socketItem", () => {
   test("Red Gem Test", () => {
-    const player = new BCPlayer("Mock", "Restoration Druid BC", 99, "NA", "Stonemaul", "Night Elf");
-    const item = new BCItem(29087, "Chestguard of Malorne", "Chest", "");
+    const player = new ClassicPlayer("Mock", "Restoration Druid Classic", 99, "NA", "Stonemaul", "Night Elf");
+    const item = new ClassicItem(29087, "Chestguard of Malorne", "Chest", "");
 
     socketItem(item, player);
 

@@ -4,6 +4,8 @@ import { getItemIcon, getTranslatedItemName } from "../../../Engine/ItemUtilitie
 import "./VerticalChart.css";
 import i18n from "i18next";
 
+
+
 /* ------------------------ Cleans Zeros from Objects ----------------------- */
 const cleanZerosFromArray = (obj) => {
   return Object.keys(obj)
@@ -30,6 +32,8 @@ export default class BCChart extends PureComponent {
     const currentLanguage = i18n.language;
     const data = this.props.data;
 
+    const barColours = this.props.theme;
+
     let arr = [];
     let cleanedArray = [];
     Object.entries(data)
@@ -44,7 +48,7 @@ export default class BCChart extends PureComponent {
 
     /* ------------ Map new Array of Cleaned Objects (No Zero Values) ----------- */
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
-
+    console.log("item=" + 100 + "&domain=wotlk-" + currentLanguage);
     /* ----------------------- Y-Axis Label Customization ----------------------- */
     const CustomizedYAxisTick = (props) => {
       const { x, y, payload } = props;
@@ -52,10 +56,10 @@ export default class BCChart extends PureComponent {
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
             <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
-              {truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "BurningCrusade"), 32)}
+              {truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 32)}
             </text>
-            <a data-wowhead={"item=" + payload.value + "&ilvl=200" + "&domain=tbc-" + currentLanguage}>
-              <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value, "BurningCrusade")} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
+            <a data-wowhead={"item=" + payload.value + "&domain=wotlk-" + currentLanguage}>
+              <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value, "Classic")} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </a>
           </foreignObject>
         </g>
@@ -63,7 +67,7 @@ export default class BCChart extends PureComponent {
     };
 
     return (
-      <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={2}>
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={1.6}>
         <BarChart
           barCategoryGap="15%"
           data={cleanedArray}
@@ -83,7 +87,7 @@ export default class BCChart extends PureComponent {
               backgroundColor: "#1b1b1b",
               border: "1px solid rgba(255, 255, 255, 0.12)",
             }}
-            labelFormatter={(timeStr) => getTranslatedItemName(timeStr, currentLanguage, "", "BurningCrusade")}
+            labelFormatter={(timeStr) => getTranslatedItemName(timeStr, currentLanguage, "", "Classic")}
             formatter={(value, name, props) => {
               {
                 if (value > 0) {
@@ -106,6 +110,9 @@ export default class BCChart extends PureComponent {
           {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
           {/*<Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" /> */}
           <Bar dataKey={100} fill={"#e6bc53"} stackId="a" />
+          {/*[""].map((key, i) => (
+            <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
+          ))*/}
         </BarChart>
       </ResponsiveContainer>
     );

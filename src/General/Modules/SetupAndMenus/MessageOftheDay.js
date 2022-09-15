@@ -6,10 +6,9 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "QE Live is now updated for Season 4!",
-      "The Stun Grenade & Meathook changes are now live.",
+      "Hymnal now has a setting for number of allies.",
   ],
-  "BurningCrusade": [""]
+  "Classic": [""]
   }
 ;
 

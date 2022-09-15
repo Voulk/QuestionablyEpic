@@ -62,10 +62,10 @@ const specImages = {
   "Holy Priest": require("Images/HPriestSmall.jpg"),
   "Mistweaver Monk": require("Images/MistweaverSmall.jpg"),
 
-  "Holy Paladin BC": require("Images/classicon_paladin.jpg"),
-  "Restoration Druid BC": require("Images/classicon_druid.jpg"),
-  "Restoration Shaman BC": require("Images/classicon_shaman.jpg"),
-  "Holy Priest BC": require("Images/classicon_priest.jpg"),
+  "Holy Paladin Classic": require("Images/classicon_paladin.jpg"),
+  "Restoration Druid Classic": require("Images/classicon_druid.jpg"),
+  "Restoration Shaman Classic": require("Images/classicon_shaman.jpg"),
+  "Holy Priest Classic": require("Images/classicon_priest.jpg"),
 };
 
 /* ------------------- Called when a character is clicked. ------------------ */

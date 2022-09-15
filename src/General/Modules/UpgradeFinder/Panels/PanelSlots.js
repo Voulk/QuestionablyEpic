@@ -98,18 +98,18 @@ export default function SlotsContainer(props) {
   const iconReturn = (slot, spec) => {
     switch (spec) {
       case "Restoration Druid":
-      case "Restoration Druid BC":
+      case "Restoration Druid Classic":
         return require("Images/UpgradeFinderIcons/Leather/" + slot + ".jpg").default;
       case "Mistweaver Monk":
         return require("Images/UpgradeFinderIcons/Leather/" + slot + ".jpg").default;
       case "Holy Paladin":
-      case "Holy Paladin BC":
+      case "Holy Paladin Classic":
         return require("Images/UpgradeFinderIcons/Plate/" + slot + ".jpg").default;
       case "Restoration Shaman":
-      case "Restoration Shaman BC":
+      case "Restoration Shaman Classic":
         return require("Images/UpgradeFinderIcons/Mail/" + slot + ".jpg").default;
       case "Holy Priest":
-      case "Holy Priest BC":
+      case "Holy Priest Classic":
       case "Discipline Priest":
         return require("Images/UpgradeFinderIcons/Cloth/" + slot + ".jpg").default;
       default:

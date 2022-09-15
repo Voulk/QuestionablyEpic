@@ -1,6 +1,6 @@
 import Player from "./Player";
 import ls from "local-storage";
-import BCPlayer from "./BCPlayer";
+import ClassicPlayer from "./ClassicPlayer";
 // On app start, load player data.
 // First, we will check if they are signed in and have character data.
 // If they do, load that, if they don't, we will try their localstorage instead.
@@ -16,7 +16,6 @@ class PlayerChars {
   constructor() {
     // Check our local storage for our characters.
     let playerChars = JSON.parse(ls.get("allChar")) || [];
-
     //
     let charArray = [];
     // If we have characters in storage, loop through them and create a new Player object for each.
@@ -26,8 +25,8 @@ class PlayerChars {
       let index = 0;
       playerChars.forEach(function (player) {
         // This could be changed later if we end up storing more information about a character. Say, the most recent log they were in.
-        if (player.gameType === "BurningCrusade") {
-          charArray.push(new BCPlayer(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights));
+        if (player.gameType === "Classic" || player.gameType === "BurningCrusade") {
+          charArray.push(new ClassicPlayer(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights));
         }
         else {
           let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights);
@@ -109,8 +108,8 @@ class PlayerChars {
   // Add a new character to the array then save it.
   addChar = (name, spec, region, realm, race, gameType, covenant = "") => {
     //alert("Adding new Character")
-    if (gameType === "BurningCrusade") {
-      this.allChar.push(new BCPlayer(name, spec, this.allChar.length, region, realm, race))
+    if (gameType === "Classic" || gameType === "BurningCrusade") {
+      this.allChar.push(new ClassicPlayer(name, spec, this.allChar.length, region, realm, race))
     }
     else {
       let newChar = new Player(name, spec, this.allChar.length, region, realm, race)

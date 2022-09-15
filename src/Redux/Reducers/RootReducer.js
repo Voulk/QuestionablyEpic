@@ -14,6 +14,7 @@ const initialState = {
   gameType: ls.get("gameType") || "Retail",
   contentType: ls.get("contentType") || "Raid",
 };
+if (initialState.gameType === "BurningCrusade") initialState.gameType = "Classic";
 
 export default function rootReducer(state = initialState, action) {
   switch (action.type) {
