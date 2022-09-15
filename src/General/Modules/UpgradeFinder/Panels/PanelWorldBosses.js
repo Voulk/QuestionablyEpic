@@ -2,7 +2,6 @@ import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Typography, Grid, Divider, Paper } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
-import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
 import { encounterDB } from "../../../../Databases/InstanceDB";

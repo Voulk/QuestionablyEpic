@@ -2,7 +2,6 @@ import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Typography, Grid, Divider, Paper, AppBar, Tabs, Tab, Box } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
-import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { raidDB } from "../../CooldownPlanner/Data/CooldownPlannerBossList";

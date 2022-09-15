@@ -149,37 +149,6 @@ export default function MythicPlusGearContainer(props) {
           </Grid>
         </AccordionDetails>
       </Accordion>
-
-      // <Grid item xs={12} key={"mythicContainer-" + i}>
-      //   <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
-      //     <Grid container>
-      //       <Grid item xs={12} sm="auto">
-      //         <div
-      //           style={{
-      //             width: 300,
-      //             height: "100%",
-      //             // paddingLeft: 8,
-      //             backgroundImage: `url(${DungeonHeaderIcons(parseInt(key))})`,
-      //             backgroundRepeat: "no-repeat",
-      //             backgroundPosition: "center 60%",
-      //             backgroundSize: "auto 100%",
-      //           }}
-      //           className="container-UpgradeCards"
-      //         >
-      //           <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
-      //             {encounterDB[123][key].name[currentLanguage]}
-      //           </Typography>
-      //         </div>
-      //       </Grid>
-      //       <Divider orientation="vertical" flexItem />
-      //       <Grid item xs={12} sm container spacing={1} style={{ padding: 8 }}>
-      //         {[...filterClassicItemListBySource(itemList, -1, key)].map((item, index) => (
-      //           <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
-      //         ))}
-      //       </Grid>
-      //     </Grid>
-      //   </Paper>
-      // </Grid>
     ));
   };
   return (
