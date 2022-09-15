@@ -31,6 +31,12 @@ export default function classIcons(props, style) {
     alt = "Restoration Druid";
   }
 
+  // Preservation Evoker
+  if (props === "PreservationEvoker" || props === "Preservation Evoker" || props === "Evoker-Preservation") {
+    src = RestorationDruidIcon;
+    alt = "Preservation Evoker";
+  }
+
   // Restoration Druid
   if (props === "Druid") {
     src = DruidIcon;

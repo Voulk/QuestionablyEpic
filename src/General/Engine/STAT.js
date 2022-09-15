@@ -26,6 +26,7 @@ export const BASESTAT = {
     "Holy Priest": 0.1,
     "Discipline Priest": 0.108,
     "Restoration Shaman": 0.25,
+    "Preservation Evoker": 0, // TODO
   },
 };
 
@@ -52,6 +53,7 @@ export const STATPERONEPERCENT = {
       "Holy Priest": 28,
       "Discipline Priest": 25.93,
       "Restoration Shaman": 11.66,
+      "Preservation Evoker": 0,
     },
     MASTERY: {
       "Druid-Restoration": 70,
@@ -60,6 +62,7 @@ export const STATPERONEPERCENT = {
       "Priest-Holy": 28,
       "Priest-Discipline": 25.93,
       "Shaman-Restoration": 11.66,
+      "Preservation Evoker": 0,
     },
   },
   Classic: {

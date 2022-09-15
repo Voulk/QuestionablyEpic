@@ -180,6 +180,15 @@ class CastModel {
       this.baseStatWeights = holyPriestDefaultStatWeights(contentType);
       this.fightInfo.dps = (contentType === "Raid" ? 875 : 2100);
     } 
+
+    else if (spec === SPEC.PRESEVOKER) {
+      // TODO
+      this.modelName = "Default";
+      spellList = holyPriestDefaultSpellData(contentType);
+      specialQueries = holyPriestDefaultSpecialQueries(contentType);
+      this.baseStatWeights = holyPriestDefaultStatWeights(contentType);
+      this.fightInfo.dps = (contentType === "Raid" ? 875 : 2100);
+    } 
     
     // Burning Crusade Profiles
     else if (spec === "Restoration Druid Classic") {
