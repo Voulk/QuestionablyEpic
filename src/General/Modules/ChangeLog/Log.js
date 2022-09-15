@@ -13,6 +13,7 @@ export const changeLog = [
     update: 3,
     date: "14 September",
     changes: [ 
+      "New Setting: Hymnal Allies. Note that the trinket chart won't update automatically.",
       "Converted Burning Crusade characters to Wrath of the Lich King characters.",
       "Burning Crusade Classic support ended. Wrath of the Lich King support coming soon.",
       "Fixed Dreadfire Vessel item levels on the trinket chart.",
