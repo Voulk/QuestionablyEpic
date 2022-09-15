@@ -64,11 +64,12 @@ export const checkBuffActive = (buffs, buffName) => {
  */
 export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     let mult = 1;
+    const baseMastery = specConstants.masteryMod / 100 * 8; // Every spec owns 8 mastery points baseline
 
     const critChance = 0.05 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100);
     if (stats.includes("crit")) mult *= (1 + critChance * currentStats['critMult']);
-    if (stats.includes("mastery")) mult *= (1+(specConstants.baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency) ;
+    if (stats.includes("mastery")) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency);
     return mult;
 }
 

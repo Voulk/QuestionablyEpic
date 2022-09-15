@@ -31,7 +31,7 @@ export const EVOKERSPELLDB = {
     // Living Flame
     "Living Flame": [{ 
         // Can be used for DPS or Healing. This is the healing version but both can be included either together or separately (the latter might be more efficient).
-        spellData: {id: 361469, icon: "ability_evoker_livingflame"},
+        spellData: {id: 361469, icon: "ability_evoker_livingflame", cat: "heal"},
         type: "heal",
         school: 'red',
         castTime: 2,
@@ -42,7 +42,7 @@ export const EVOKERSPELLDB = {
     }],
     "Living Flame D": [{ 
         // This is the DPS version of Living Flame.
-        spellData: {id: 361469, icon: "ability_evoker_livingflame"},
+        spellData: {id: 361469, icon: "ability_evoker_livingflame", cat: "damage"},
         type: "damage",
         school: "red",
         castTime: 2,
@@ -52,7 +52,7 @@ export const EVOKERSPELLDB = {
     }],
     "Rescue": [{ 
         // Single target heal that also moves you to the targets location.
-        spellData: {id: 360995, icon: "ability_evoker_rescue"},
+        spellData: {id: 360995, icon: "ability_evoker_rescue", cat: "heal"},
         type: "heal",
         school: "green",
         castTime: 0,
@@ -65,7 +65,7 @@ export const EVOKERSPELLDB = {
     "Spiritbloom": [{  
         // Spiritbloom is a charge ability that adds a target per charge tier.
         // TODO: Assumption is chained targets are random injured not lowest health or distance based. 
-        spellData: {id: 382731, icon: "ability_evoker_spiritbloom2"},
+        spellData: {id: 382731, icon: "ability_evoker_spiritbloom2", cat: "heal"},
         type: "heal",
         school: "green",
         castTime: [1, 1.75, 2.5, 3.25],
@@ -79,7 +79,7 @@ export const EVOKERSPELLDB = {
     }],
     "Dream Breath": [{  
         // Dream Breath heals for more per charge tier and also has a lower cooldown.
-        spellData: {id: 355936, icon: "ability_evoker_dreambreath"},
+        spellData: {id: 355936, icon: "ability_evoker_dreambreath", cat: "heal"},
         type: "heal",
         school: "green",
         castTime: [1, 1.75, 2.5, 3.25],
@@ -94,7 +94,7 @@ export const EVOKERSPELLDB = {
     "Emerald Blossom": [{
         // Instant, 3 Essence cost, heals 3 targets after a 2s delay.
         // This hooks into a lot of different talents.
-        spellData: {id: 355913, icon: "ability_evoker_emeraldblossom"},
+        spellData: {id: 355913, icon: "ability_evoker_emeraldblossom", cat: "heal"},
         type: "heal",
         castTime: 0,
         school: 'green',
@@ -111,7 +111,7 @@ export const EVOKERSPELLDB = {
         // Cast time, 2 Essence Cost, Single target, 
         // The next ST healing spell you cast is duplicated on the Echo target for 70% of it's healing value.
         // Does spread Reversion. 
-        spellData: {id: 364343, icon: "ability_evoker_echo"},
+        spellData: {id: 364343, icon: "ability_evoker_echo", cat: "heal"},
         // To confirm:
         // - Stasis Interaction
         type: "heal",
@@ -139,7 +139,7 @@ export const EVOKERSPELLDB = {
     "Reversion": [{
         // Big heal over time effect, extended by crits. 12s base duration, 9s cooldown, crits extend by one tick.
         // Talent to increase it's base duration by 6s.
-        spellData: {id: 366155, icon: "ability_evoker_reversion"},
+        spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "heal"},
         name: "Reversion (HoT)",
         type: "buff",
         buffType: "function",
@@ -162,7 +162,7 @@ export const EVOKERSPELLDB = {
     "Temporal Anomaly": [{
         // Lasts 8s and heals every 1s within range but it. Heals 3 targets per tick. 6s cooldown.
         // Travels very fast but NYI in Alpha.
-        spellData: {id: 373861, icon: "ability_evoker_temporalanomaly"},
+        spellData: {id: 373861, icon: "ability_evoker_temporalanomaly", cat: "heal"},
         type: "heal",
         school: "bronze",
         castTime: 1.5,
@@ -175,7 +175,7 @@ export const EVOKERSPELLDB = {
     }],
     "Blessing of the Bronze": [{
         // Blessing of the Bronze is a short CD buff spell that buffs the raid. It can also be used as a generic Bronze spell for Temporal Compression.
-        spellData: {id: 364342, icon: "ability_evoker_blessingofthebronze"},
+        spellData: {id: 364342, icon: "ability_evoker_blessingofthebronze", cat: "cooldown"},
         type: "rest",
         school: "bronze",
         castTime: 1.5,
@@ -185,7 +185,7 @@ export const EVOKERSPELLDB = {
     "Dream Flight": [{
         // Large upfront heal and leaves a 15s HoT on anyone it hits.
         // 1 min cooldown. Travels up to 60 yards. 
-        spellData: {id: 359816, icon: "ability_evoker_dreamflight"},
+        spellData: {id: 359816, icon: "ability_evoker_dreamflight", cat: "cooldown"},
         type: "heal",
         school: "green",
         castTime: 3, // TODO: This one has variance based on how far we travel. 
@@ -208,7 +208,7 @@ export const EVOKERSPELLDB = {
     }],
     "Azure Strike": [{
         // Two target hit. Instant.
-        spellData: {id: 362969, icon: "ability_evoker_azurestrike"},
+        spellData: {id: 362969, icon: "ability_evoker_azurestrike", cat: "damage"},
         type: "damage",
         school: "blue",
         castTime: 0,
@@ -224,7 +224,7 @@ export const EVOKERSPELLDB = {
         // - Is it sqrt scaling after 5 targets?
         // - Is the HoT also reduced damage after 5 targets?
         // - Does Lifegivers Flame also heal for the DoT amount?
-        spellData: {id: 357208, icon: "ability_evoker_firebreath"},
+        spellData: {id: 357208, icon: "ability_evoker_firebreath", cat: "damage"},
         type: "damage",
         empowered: true,
         school: "red",

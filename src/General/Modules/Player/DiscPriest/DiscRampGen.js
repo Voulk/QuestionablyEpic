@@ -16,26 +16,26 @@
  * @param {*} specialSpells Special spells are those that can change our ramp in some way. Rapture is the most prominent current example.
  * @returns The function returns a sequence of spells (which might include trinket uses).
  */
-export const buildRamp = (type, applicators, trinkets, haste, playstyle, specialSpells = [], talents) => {
+export const buildRamp = (type, applicators, trinkets, haste, playstyle, talents) => {
     //const talents = ['Power Word: Solace', 'Divine Star']
 
     const trinketList = buildTrinkets(trinkets);
     if (type === "Mini") {
-        return buildMiniRamp(applicators, trinkets, specialSpells, playstyle, talents);
+        return buildMiniRamp(applicators, trinkets, playstyle, talents);
     }
     else if (type === "Primary") { 
         // With Boon gone, our primary ramp will generally be with Fiend. 
         // The particular label doesn't matter all that much since it's just a way to categorize what we're intending to cast. 
-        return buildFiendRamp(applicators, trinketList['Fiend'], specialSpells, playstyle, talents); 
+        return buildFiendRamp(applicators, trinketList['Fiend'], playstyle, talents); 
     }
     else if (type === "Secondary") {
         // Our second Evang or Spirit Shell ramp. If we're running Fiend it won't be in here, but Mindbender might.
         // Change Note: In Shadowlands Fiend was considered a secondary ramp to Boons primary ramp. 
         if (playstyle === "Evangelism") {
-            return buildBoonEvangRamp(applicators, trinketList['Boon'], haste, specialSpells, talents); 
+            return buildBoonEvangRamp(applicators, trinketList['Boon'], haste, talents); 
         }
         else if (playstyle === "Spirit Shell") {
-            return buildBoonShellRamp(applicators, trinketList['Boon'], haste, specialSpells, talents); // Spirit Shell NYI.
+            return buildBoonShellRamp(applicators, trinketList['Boon'], haste, talents); // Spirit Shell NYI.
         }
         // Further ramp types can be added here.
         
@@ -74,7 +74,7 @@ const buildTrinkets = (trinkets) => {
  * @param {*} playstyle Our current playstyle. Setting playstyle to Venthyr will include Mindgames in the mini-ramp.
  * @returns Returns a sequence of spells representing a mini ramp.
  */
-export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle, talents) => {
+export const buildMiniRamp = (applicators, trinkets, playstyle, talents) => {
     let sequence = [];
     
     if (talents.purgeTheWicked) sequence.push('Purge the Wicked');
@@ -114,7 +114,7 @@ export const buildMiniRamp = (applicators, trinkets, specialSpells, playstyle, t
  * @param {*} playstyle Options: Kyrian Evangelism, Kyrian Spirit Shell, Venthyr Evanglism (coming soon), Venthyr Spirit Shell (coming soon).
  * @returns Returns a sequence of spells representing a Shadowfiend ramp.
  */
-export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle, talents) => {
+export const buildFiendRamp = (applicators, trinket, playstyle, talents) => {
     let sequence = []
 
     if (talents.purgeTheWicked) sequence.push('Purge the Wicked');
@@ -130,7 +130,6 @@ export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle, t
 
     if (talents.mindbender) sequence.push('Mindbender');
     else sequence.push('Shadowfiend');
-
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
     sequence.push('Evangelism');
@@ -168,7 +167,7 @@ export const buildFiendRamp = (applicators, trinket, specialSpells, playstyle, t
  * @param {*} specialSpells Any special spells to combine with your ramp. Rapture is a common example.
  * @returns Returns a sequence representing a Boon Evangelism ramp.
  */
-export const buildBoonEvangRamp = (applicators, trinket, haste, specialSpells = []) => {
+export const buildBoonEvangRamp = (applicators, trinket, haste) => {
     let sequence = []
     if (specialSpells.includes('Purge the Wicked')) sequence.push('Purge the Wicked');
     else sequence.push('Shadow Word: Pain');

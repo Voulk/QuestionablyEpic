@@ -24,34 +24,8 @@
 
 // Spell coefficients combine a spells base coefficient with any relevant auras that might impact the spell. 
 export const DISCSPELLS = {
-    "Mind Blast": [{
-        type: "damage",
-        castTime: 1.5,
-        cost: 1250,
-        coeff: 0.744642, // 0.9792 x 0.809 (Mind Blast aura) x 0.94 (Disc aura)
-        cooldown: 15,
-        atoneOverheal: 0.29,
-        secondaries: ['crit', 'vers']
-    },
-    {
-        type: "heal",
-        castTime: 0,
-        coeff: 3,
-        aura: 1,
-        targets: 1,
-        secondaries: ['vers'],
-        overheal: 0,
-    }],
-    "Power Word: Solace": [{
-        type: "damage",
-        castTime: 1.5,
-        cost: 0,
-        coeff: 0.752,
-        cooldown: 15,
-        atoneOverheal: 0.3,
-        secondaries: ['crit', 'vers']
-    }],
     "Smite": [{
+        spellData: {id: 585, icon: "spell_holy_holysmite", cat: "damage"},
         type: "damage",
         castTime: 1.5,
         cost: 200,
@@ -60,34 +34,27 @@ export const DISCSPELLS = {
         atoneOverheal: 0.28,
         secondaries: ['crit', 'vers'],
     }],
-    "Light's Wrath": [{
-        type: "damage",
-        castTime: 2.5,
-        cost: 0,
-        coeff: 1.75, // This is almost definitely incorrect.
-        cooldown: 90,
-        atoneOverheal: 0.33,
+    "Penance": [{
+        spellData: {id: 47540, icon: "spell_holy_penance", cat: "damage"},
+        type: "special",
+        castTime: 0, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
+        cost: 800,
+        coeff: 1.128, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
+        bolts: 3,
+        atoneOverheal: 0.26,
         secondaries: ['crit', 'vers'],
     }],
-    "Mindgames": [{
+    "PenanceTick": [{
+        spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
         type: "damage",
-        castTime: 1.5,
-        cost: 1000,
-        coeff: 2.54, // 3 x 0.94 (disc aura nerf) x 0.85 (Mindgames specific aura nerf)
-        cooldown: 40,
-        atoneOverheal: 0.23,
+        castTime: 0.66, // This will still be dynamically adjusted at runtime.
+        cost: 0,
+        coeff: 0.376,
+        atoneOverheal: 0.27,
         secondaries: ['crit', 'vers'],
-    },
-    { // This is the absorb / damage reverse portion.
-        type: "heal",
-        castTime: 0,
-        coeff: 9, // This is 4.5 x 2 since the damage is both negated and then the target healed.
-        aura: 1,
-        targets: 1,
-        secondaries: ['vers'],
-        overheal: 0.15, // 
     }],
     "Schism": [{
+        spellData: {id: 214621, icon: "spell_warlock_focusshadow", cat: "damage"},
         type: "damage",
         castTime: 1.5,
         cost: 0,
@@ -106,86 +73,70 @@ export const DISCSPELLS = {
         name: "Schism",
         canStack: false,
     }],
-    "Penance": [{
-        type: "special",
-        castTime: 0, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
-        cost: 800,
-        coeff: 1.128, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
-        bolts: 3,
-        atoneOverheal: 0.26,
-        secondaries: ['crit', 'vers'],
-    }],
-    "PenanceTick": [{
+    "Mind Blast": [{
+        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "damage"},
         type: "damage",
-        castTime: 0.66, // This will still be dynamically adjusted at runtime.
-        cost: 0,
-        coeff: 0.376,
-        atoneOverheal: 0.27,
-        secondaries: ['crit', 'vers'],
+        castTime: 1.5,
+        cost: 1250,
+        coeff: 0.744642, // 0.9792 x 0.809 (Mind Blast aura) x 0.94 (Disc aura)
+        cooldown: 15,
+        atoneOverheal: 0.29,
+        secondaries: ['crit', 'vers']
+    },
+    {
+        type: "heal",
+        castTime: 0,
+        coeff: 3,
+        aura: 1,
+        targets: 1,
+        secondaries: ['vers'],
+        overheal: 0,
     }],
-    "Ascended Blast": 
-        [{
+    "Power Word: Solace": [{
+        spellData: {id: 129250, icon: "ability_priest_flashoflight", cat: "damage"},
         type: "damage",
         castTime: 1.5,
         cost: 0,
-        coeff: 1.68,
-        aura: 1,
+        coeff: 0.752,
+        cooldown: 15,
+        atoneOverheal: 0.3,
+        secondaries: ['crit', 'vers']
+    }],
+    "Light's Wrath": [{
+        spellData: {id: 207948, icon: "inv_staff_2h_artifacttome_d_01", cat: "cooldown"},
+        type: "damage",
+        castTime: 2.5,
+        cost: 0,
+        coeff: 1.75, // This is almost definitely incorrect.
+        cooldown: 90,
+        atoneOverheal: 0.33,
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.36,
-        },
-        {
-            type: "heal",
-            castTime: 0,
-            coeff: 2.15,
-            aura: 1,
-            targets: 1,
-            secondaries: ['crit', 'vers', 'mastery'],
-            overheal: 0.4,
-        }],
-    "Ascended Nova": 
-        [{
-            type: "damage",
-            castTime: 1,
-            cost: 0,
-            coeff: 0.7,
-            aura: 1,
-            secondaries: ['crit', 'vers'],
-            atoneOverheal: 0.34,
-        },
-        {
-            type: "heal",
-            castTime: 0,
-            coeff: 0.24,
-            aura: 1,
-            targets: 6,
-            secondaries: ['crit', 'vers', 'mastery'],
-            overheal: 0.3,
-        }],
-    "Ascended Eruption": 
-        [{
-            type: "damage",
-            castTime: 0,
-            cost: 0,
-            coeff: 1.68,
-            aura: 1,
-            secondaries: ['crit', 'vers'],
-            atoneOverheal: 0.44,
-        },
-        {
-            type: "heal",
-            castTime: 0,
-            coeff: 2.15,
-            aura: 1,
-            targets: 20,
-            secondaries: ['crit', 'vers'],
-            tags: ['sqrt'],
-            overheal: 0.3,
-        }],
+    }],
+    "Mindgames": [{
+        spellData: {id: 323673, icon: "ability_revendreth_priest", cat: "damage"},
+        type: "damage",
+        castTime: 1.5,
+        cost: 1000,
+        coeff: 2.54, // 3 x 0.94 (disc aura nerf) x 0.85 (Mindgames specific aura nerf)
+        cooldown: 40,
+        atoneOverheal: 0.23,
+        secondaries: ['crit', 'vers'],
+    },
+    { // This is the absorb / damage reverse portion.
+        type: "heal",
+        castTime: 0,
+        coeff: 9, // This is 4.5 x 2 since the damage is both negated and then the target healed.
+        aura: 1,
+        targets: 1,
+        secondaries: ['vers'],
+        overheal: 0.15, // 
+    }],
     "Divine Star": 
     // Divine Star deals damage and heals both on the way out and on the way back. 
     // We won't be modelling the time right now, but this is possible in future when we upgrade the base engine.
     // Instead we're just doubling the coefficients so that both are taken into account.
     [{
+        spellData: {id: 110744, icon: "spell_priest_divinestar", cat: "damage"},
         type: "damage",
         castTime: 1.5,
         cost: 1000,
@@ -205,6 +156,7 @@ export const DISCSPELLS = {
         overheal: 0.4,
     }],
     "Power Word: Shield": [{
+        spellData: {id: 17, icon: "spell_holy_powerwordshield", cat: "heal"},
         type: "heal",
         castTime: 1.5,
         cost: 1550,
@@ -217,9 +169,24 @@ export const DISCSPELLS = {
         secondaries: ['crit', 'vers'],
         overheal: 0,
     }],
+    "Shadow Mend": [{
+        spellData: {id: 186263, icon: "spell_shadow_shadowmend", cat: "heal"},
+        type: "heal",
+        castTime: 1.5,
+        cost: 1750,
+        coeff: 3.2,
+        aura: 1,
+        cooldown: 0,
+        atonement: 15,
+        atonementPos: 'end',
+        targets: 1,
+        secondaries: ['crit', 'vers'],
+        overheal: 0.35,
+    }],
     // Rapture both buffs Power Word: Shield and adds an absorb to the target that is functionally the same as a buffed Power Word: Shield.
     // We'll match that in-game behavior here too.
     "Rapture": [{
+        spellData: {id: 47536, icon: "spell_holy_rapture", cat: "cooldown"},
         type: "heal",
         castTime: 1.5,
         cost: 1550,
@@ -239,6 +206,7 @@ export const DISCSPELLS = {
         buffDuration: 8,
     }],
     "Power Word: Radiance": [{
+        spellData: {id: 194509, icon: "spell_priest_power-word", cat: "heal"},
         type: "heal",
         castTime: 2,
         cost: 3250,
@@ -252,6 +220,7 @@ export const DISCSPELLS = {
         overheal: 0.3,
     }],
     "Purge the Wicked": [{
+        spellData: {id: 204197, icon: "ability_mage_firestarter", cat: "damage"},
         type: "damage",
         castTime: 1.5,
         cost: 900,
@@ -272,6 +241,7 @@ export const DISCSPELLS = {
         canPartialTick: true,
     }],
     "Shadow Word: Pain": [{
+        spellData: {id: 589, icon: "spell_shadow_shadowwordpain", cat: "damage"},
         type: "damage",
         castTime: 1.5,
         cost: 900,
@@ -291,6 +261,7 @@ export const DISCSPELLS = {
         canPartialTick: true,
     }],
     "Shadowfiend": [{
+        spellData: {id: 34433, icon: "spell_shadow_shadowfiend", cat: "cooldown"},
         type: "",
         castTime: 1.5,
         cost: 900,
@@ -312,6 +283,7 @@ export const DISCSPELLS = {
         canPartialTick: false,
     }],
     "Mindbender": [{
+        spellData: {id: 123040, icon: "spell_shadow_soulleech_3", cat: "cooldown"},
         type: "",
         castTime: 1.5,
         cost: 900,
@@ -333,23 +305,15 @@ export const DISCSPELLS = {
         canPartialTick: false,
     }],
     "Evangelism": [{
+        spellData: {id: 246287, icon: "spell_holy_divineillumination", cat: "cooldown"},
         type: "atonementExtension",
         castTime: 1.5,
         cost: 0,
         coeff: 0,
         extension: 6,
     }],
-    "Instructor's Divine Bell": [{
-        type: "buff",
-        castTime: 0,
-        cost: 0,
-        cooldown: 90,
-        buffDuration: 9,
-        buffType: 'stats',
-        stat: "mastery",
-        value: 668, // Trinket values are replaced by the value on the specific version of the trinket.
-    }],
     "Instructor's Divine Bell (new)": [{
+        spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
         type: "buff",
         castTime: 0,
         cost: 0,
@@ -359,56 +323,60 @@ export const DISCSPELLS = {
         stat: "mastery",
         value: 450, // Trinket values are replaced by the value on the specific version of the trinket.
     }],
-    "Flame of Battle": [{
-        type: "buff",
-        castTime: 0,
-        cost: 0,
-        cooldown: 90,
-        buffDuration: 12,
-        buffType: 'stats',
-        stat: "versatility",
-        value: 668, // Trinket values are replaced by the value on the specific version of the trinket.
-    }],
-    "Shadowed Orb": [{
-        type: "buff",
-        castTime: 0, // While this has a 2s cast time, it can be used well before our ramp starts which means it functionally does not cost us cast time.
-        cost: 0,
-        cooldown: 120,
-        buffDuration: 40,
-        buffType: 'stats',
-        stat: "mastery",
-        value: 400, // Trinket values are replaced by the value on the specific version of the trinket.
-    }],
-    "Soulletting Ruby": [{
-        type: "buff",
-        castTime: 0, // While this has a 2s cast time, it can be used well before our ramp starts which means it functionally does not cost us cast time.
-        cost: 0,
-        cooldown: 120,
-        buffDuration: 16,
-        buffType: 'stats',
-        stat: "crit",
-        value: 900, // Trinket values are replaced by the value on the specific version of the trinket.
-    }],
-    "Moonlit Prism": [{
-        type: "buff",
-        castTime: 0, // While this has a 2s cast time, it can be used well before our ramp starts which means it functionally does not cost us cast time.
-        cost: 0,
-        cooldown: 90,
-        buffDuration: 20,
-        buffType: 'stats',
-        stat: "intellect",
-        value: 25, // Trinket values are replaced by the value on the specific version of the trinket.
-    }],
-    "Boon of the Ascended": [{
-        type: "buff",
-        castTime: 1.5,
-        cost: 0,
-        cooldown: 180,
-        buffType: "spec",
-        buffDuration: 10,
-    }],
 }
 
+export const baseTalents = {
+    // Priest class tree
+    improvedSmite: 2,
+    mindRestrain: 0, // NYI. Requires Alpha. Mind Blast SL absorb just left in for now.
+    throesOfPain: 2,
+    puppetMaster: 2,
+    improvedShadowfiend: false,
+    mindbender: true,
+    rabidShadows: 0,
+
+    mindgames: true,
+
+
+    // Disc spec tree
+    // Tier 1
+    shiningRadiance: 0,
+    shieldDiscipline: false,
+    powerWordSolace: false,
+    maliciousScission: false,
+
+    // Tier 2
+    contrition: 0,
+    purgeTheWicked: false,
+    darkIndulgence: 0,
+    revelInPurity: 0,
+    castigation: 0,
+    rapture: false,
+    sinsOfTheMany: 0,
+    shadowCovenant: 0,
+    embraceShadow: 0,
+    maliciousScission: false,
+
+    // Tier 3
+    evangelism: true,
+    spiritShell: false,
+    exaltation: false, // lol
+    divineStar: false,
+    halo: false,
+    evenfall: 0,
+    lessonInHumility: 0,
+    lenience: 0,
+    twilightEmpowerment: 0,
+    harshDiscipline: false,
+    indemnity: false, // +2s Atonement duration on PW:S.
+    lightsWrath: true,
+    solatium: false, // +2s Atonement duration on Shadow Mend.
+    wickedness: false,
+    stolenPsyche: 0,
+
+};
+
+// These aren't used at all in this branch but don't remove because the conduit code hasn't been cleared out from elsewhere yet.
 export const discConduits = (conduit, rank) => {
     if (conduit === "Exaltation") return 0.0675 + (rank * 0.0075);
     else if (conduit === "Shining Radiance") return 0.36 + (rank * 0.04);

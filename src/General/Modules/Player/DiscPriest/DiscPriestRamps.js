@@ -1,6 +1,6 @@
 // 
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-import { DISCSPELLS } from "./DiscSpellDB";
+import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 
@@ -54,9 +54,9 @@ const DISCCONSTANTS = {
             castTime: 0,
             cost: 0,
             cooldown: 0,
-            buffType: 'statsMult',
+            buffType: 'stats',
             stat: 'mastery',
-            value: (3 * talents.puppetMaster * 35 * DISCCONSTANTS.masteryMod), // 
+            value: (talents.puppetMaster * 150), // 
             buffDuration: 12,
         }
     ) };
@@ -464,7 +464,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
             spell.coeff = spell.coeff * partialTickPercentage;
             
             if (buff.buffType === "damage") runDamage(state, spell, buff.name, atonementApp);
-            else if (buff.buffType === "healing") runHeal(state, spell, buff.name)
+            else if (buff.buffType === "heal") runHeal(state, spell, buff.name)
         })
 
         // Remove any buffs that have expired. Note that we call this after we handle partial ticks. 
@@ -524,7 +524,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                     else if (spell.buffType === "statsMult") {
                         state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "statsMult", value: spell.value, stat: spell.stat});
                     }
-                    else if (spell.buffType === "damage" || spell.buffType === "healing") {     
+                    else if (spell.buffType === "damage" || spell.buffType === "heal") {     
                         const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
                             tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
 
@@ -595,7 +595,11 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
 
     // Add up our healing values (including atonement) and return it.
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
-    state.totalHealing = sumValues(state.healingDone);
+    state.totalDamage = Object.keys(state.damageDone).length > 0 ? Math.round(sumValues(state.damageDone)) : 0;
+    state.totalHealing = Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0;
+    state.hps = (state.totalHealing / sequenceLength);
+    state.dps = (state.totalDamage / sequenceLength);
+    state.hpm = (state.totalHealing / state.manaSpent) || 0;
 
     return state;
 

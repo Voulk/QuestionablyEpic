@@ -618,8 +618,8 @@ export function evalDiscRamp(itemSet, setStats, castModel, effectList, reporting
         rampSettings["4T28"] = true; 
         specialSpells.push("4T28");
       }
-      const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
-      const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
+      const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, castModel.modelName);
+      const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, castModel.modelName);
   
       if (onUseTrinkets !== null && onUseTrinkets.length > 0) {
         itemSet.onUseTrinkets.forEach((trinket) => {
