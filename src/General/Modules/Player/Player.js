@@ -116,7 +116,6 @@ class Player {
   };
 
   getStatWeight = (contentType, stat) => {
-    console.log(this);
     const lcStat = stat.toLowerCase();
     const weights = this.getActiveModel(contentType).getBaseStatWeights();
     if (!weights) {
