@@ -64,7 +64,7 @@ const dpsSpells = Object.keys(EVOKERSPELLDB).filter((spell) => EVOKERSPELLDB[spe
 const healSpells = Object.keys(EVOKERSPELLDB).filter((spell) => EVOKERSPELLDB[spell][0].type === "heal" || spell === "Reversion");
 
 export default function SequenceGenerator(props) {
-  const selectedSpec = "Preservation Evoker";
+  const selectedSpec = props.player.getSpec();
   const spellDB = getSpellDB(selectedSpec);
 
   const spellCategories = ["Healing", "Damage", "Cooldowns & Other"];
@@ -240,6 +240,7 @@ export default function SequenceGenerator(props) {
                         <Grid item xs="auto" key={index} onDragOver={onDragOver} onDragEnd={dropMove} onDrop={dropInsertion} onDragEnter={(e) => { dragEnter(e, index) }}>
                           <SpellIcon
                             spell={spellDB[spell][0]}
+                            spec={selectedSpec}
                             draggable
                             onDragStart={(e) => { dragStart(e, index) }}
                             onContextMenu={(e) => removeSpellAtIndex(index, e)}
@@ -268,6 +269,7 @@ export default function SequenceGenerator(props) {
                           <Grid item xs="auto" key={spellDB[spell][0].spellData.id}>
                             <SpellIcon
                               spell={spellDB[spell][0]}
+                              spec={selectedSpec}
                               draggable
                               onDragStart={(e) => { dragStart(e, spell) }}
                               onClick={(e) => addSpell(spell, e)}
