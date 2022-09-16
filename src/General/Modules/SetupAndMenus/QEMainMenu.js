@@ -67,12 +67,10 @@ export default function QEMainMenu(props) {
           "MainMenu.TopGear": ["/topgear", true, "TopGear"],
           "MainMenu.UpgradeFinder": ["/UpgradeFinder", true, "UpgradeFinder"],
           "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
-          "MainMenu.ExploreCovenants": ["/soulbinds", true, "ExploreCovenants"],
-          "MainMenu.LegendaryAnalysis": ["/legendaries", true, "LegendaryAnalysis"],
           "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
-          //"MainMenu.DominationAnalysis": ["/dominationgems", false, "DominationAnalysis"],
-          "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
-          // "MainMenu.FightAnalysis": ["/fightAnalysis", true, "FightAnalysis"],
+          "MainMenu.CooldownPlanner": ["/holydiver", true, "CooldownPlanner"],
+          "MainMenu.FightAnalysis": ["/fightAnalysis", true, "FightAnalysis"],
+          "MainMenu.SequenceSandbox": ["/sequenceGen", true, "SequenceSandbox"],
           "MainMenu.Profile": ["/profile", true, "Profile"],
         }
       : {

@@ -254,6 +254,17 @@ export const raceDB = [
     id: "Races.Zandalari Troll",
     icon: "",
   },
+  {
+    name: {
+      en: "Drakthyr",
+      fr: "Drakthyr",
+      de: "Drakthyr",
+      ru: "Drakthyr",
+      ch: "Drakthyr",
+    },
+    id: "Races.Drakthyr",
+    icon: "",
+  },
 ];
 
 export const getTranslatedRaceName = (string, currentLanguage) => {
