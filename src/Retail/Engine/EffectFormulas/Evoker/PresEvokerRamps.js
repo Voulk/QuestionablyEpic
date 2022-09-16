@@ -25,8 +25,8 @@ const EVOKERCONSTANTS = {
 
     //CBT: {transferRate: 0.3, expectedOverhealing: 0.25},
     defaultEmpower: 3,
-    auraHealingBuff: 1, 
-    auraDamageBuff: 1, 
+    auraHealingBuff: 0.6, 
+    auraDamageBuff: 1.15, 
 
     enemyTargets: 1, 
     echoExceptionSpells: ['Echo', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D'], // These are spells that do not consume or otherwise interact with our Echo buff.

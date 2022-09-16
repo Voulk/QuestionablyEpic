@@ -47,7 +47,7 @@ export const EVOKERSPELLDB = {
         school: "red",
         castTime: 2,
         cost: 2.0,
-        coeff: 2,
+        coeff: 1.61,
         secondaries: ['crit', 'vers']
     }],
     "Rescue": [{ 
@@ -160,18 +160,22 @@ export const EVOKERSPELLDB = {
 
     }],
     "Temporal Anomaly": [{
-        // Lasts 8s and heals every 1s within range but it. Heals 3 targets per tick. 6s cooldown.
-        // Travels very fast but NYI in Alpha.
+        // Lasts 8s and heals every 1s within range but it. Puts absorbs on allies. 
+        // Stacks to 3, however the cap is based on how much 3 stacks would absorb pre-mastery.
         spellData: {id: 373861, icon: "ability_evoker_temporalanomaly", cat: "heal"},
-        type: "heal",
+        name: "Temporal Anomaly",
+        type: "buff",
+        buffType: "heal",
         school: "bronze",
         castTime: 1.5,
-        duration: 0,
-        cooldown: 9,
-        cost: 9999,
-        coeff: 0.99999, // NYI
-        targets: 1, // 
-        secondaries: ['crit', 'vers', 'mastery']
+        buffDuration: 6,
+        tickRate: 2,
+        cooldown: 6,
+        cost: 7.5,
+        coeff: 1.75, 
+        targets: 2, 
+        expectedOverheal: 0.4, // Note that while this is called ExpectedOverhealing it's really just an efficiency value.
+        secondaries: ['vers', 'mastery']
     }],
     "Blessing of the Bronze": [{
         // Blessing of the Bronze is a short CD buff spell that buffs the raid. It can also be used as a generic Bronze spell for Temporal Compression.
@@ -189,7 +193,7 @@ export const EVOKERSPELLDB = {
         type: "heal",
         school: "green",
         castTime: 3, // TODO: This one has variance based on how far we travel. 
-        cooldown: 60,
+        cooldown: 120,
         cost: 4.0,
         coeff: 4,
         targets: 10, // Can hit everyone. Likely to be retuned around sqrt scaling.
