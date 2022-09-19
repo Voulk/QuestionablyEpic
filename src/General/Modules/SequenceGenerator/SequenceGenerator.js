@@ -73,6 +73,7 @@ export default function SequenceGenerator(props) {
   const [seq, setSeq] = useState([]);
   const [talents, settalents] = useState({ ...baseTalents });
   const [result, setResult] = useState({ totalDamage: 0, totalHealing: 0, hpm: 0 });
+  const [combatLog, setCombatLog] = useState(["Log 1", "Log2"]);
 
   const spellList = {
     Damage: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "damage"),
@@ -93,11 +94,13 @@ export default function SequenceGenerator(props) {
 
   const updateSequence = (sequence) => {
     const simFunc = getSequence(selectedSpec);
-    const sim = simFunc(sequence, stats, {}, {});
+    const sim = simFunc(sequence, stats, {reporting: true}, {});
 
     // multiple state updates get bundled by react into one update
     setSeq(sequence);
     setResult(sim);
+    setCombatLog(sim.report);
+    console.log(sim);
   }
 
   const addSpell = (spell) => {
@@ -139,7 +142,7 @@ export default function SequenceGenerator(props) {
     const simFunc = getSequence(selectedSpec);
     const sim = simFunc(seq, stats, {}, {});
     setResult(sim);
-    console.log(sim);
+
   };
 
   const autoGen = () => {
@@ -360,7 +363,7 @@ export default function SequenceGenerator(props) {
                   </Paper>
                 </Grid>
                 <Grid item xs={12}>
-                    <TextField value={`Combat Log Coming Soon`} variant="outlined" multiline minRows={4} fullWidth disabled style={{whiteSpace: 'pre-line'}} />
+                    <TextField value={combatLog.join("\n")} variant="outlined" multiline minRows={6} maxRows={6} fullWidth disabled style={{whiteSpace: 'pre-line'}} />
                 </Grid>
               </Grid>
             </Paper>
