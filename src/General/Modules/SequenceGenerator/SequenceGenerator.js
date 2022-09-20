@@ -8,7 +8,7 @@ import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/
 import { runCastSequence as discSequence } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { runCastSequence as shamanSequence } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanRamps";
 
-import { EVOKERSPELLDB, baseTalents } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerSpellDB";
+import { EVOKERSPELLDB, evokerTalents } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerSpellDB";
 import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/DiscPriest/DiscSpellDB";
 import { SHAMANSPELLDB } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanSpellDB";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
@@ -54,6 +54,22 @@ const getSpellDB = (spec) => {
   if (spec === "Restoration Shaman") return SHAMANSPELLDB;
 };
 
+const getTalentDB = (spec) => {
+  if (spec === "Preservation Evoker") return evokerTalents;
+  if (spec === "Discipline Priest") return null;
+  if (spec === "Restoration Shaman") return null;
+}
+
+const addTalent = (talentName, talentDB, setTalents) => {
+    console.log(talentName);
+    const talent = talentDB[talentName];
+    
+    talent.points = talent.points === talent.maxPoints ? 0 : talent.points + 1;
+
+    console.log(talent);
+    setTalents({...talentDB});
+}
+
 const getSequence = (spec) => {
   if (spec === "Preservation Evoker") return evokerSequence;
   if (spec === "Discipline Priest") return discSequence;
@@ -67,19 +83,25 @@ export default function SequenceGenerator(props) {
   const selectedSpec = props.player.getSpec();
   const spellDB = getSpellDB(selectedSpec);
 
+
+
   const spellCategories = ["Healing", "Damage", "Cooldowns & Other"];
 
   const classes = useStyles();
   const [seq, setSeq] = useState([]);
-  const [talents, settalents] = useState({ ...baseTalents });
+  
+  const [talentDB, setTalentDB] = useState(getTalentDB(selectedSpec));
   const [result, setResult] = useState({ totalDamage: 0, totalHealing: 0, hpm: 0 });
-  const [combatLog, setCombatLog] = useState(["Log 1", "Log2"]);
+  const [combatLog, setCombatLog] = useState([]);
 
   const spellList = {
     Damage: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "damage"),
     Healing: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "heal"),
     "Cooldowns & Other": Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "cooldown"),
   };
+  const talentList = Object.keys(talentDB).filter(talent => talentDB[talent].select === true);
+  const [talents, setTalents] = useState({ ...talentList });
+  
 
   const stats = {
     intellect: 2000,
@@ -244,6 +266,7 @@ export default function SequenceGenerator(props) {
                           <SpellIcon
                             spell={spellDB[spell][0]}
                             spec={selectedSpec}
+                            iconType={"Spell"}
                             draggable
                             onDragStart={(e) => { dragStart(e, index) }}
                             onContextMenu={(e) => removeSpellAtIndex(index, e)}
@@ -273,6 +296,7 @@ export default function SequenceGenerator(props) {
                             <SpellIcon
                               spell={spellDB[spell][0]}
                               spec={selectedSpec}
+                              iconType={"Spell"}
                               draggable
                               onDragStart={(e) => { dragStart(e, spell) }}
                               onClick={(e) => addSpell(spell, e)}
@@ -289,6 +313,25 @@ export default function SequenceGenerator(props) {
                   <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
                     {"Talents"}
                   </Typography>
+                  <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                    <Grid container>
+                      <Grid container spacing={1}>
+                        {talentList.map((spell, i) => (
+                          <Grid item xs="auto" key={i}>
+                            <SpellIcon
+                              spell={talentDB[spell]}
+                              spec={selectedSpec}
+                              iconType={"Talent"}
+                              draggable
+                              //onDragStart={(e) => { dragStart(e, spell) }}
+                              onClick={(e) => addTalent(spell, talentDB, setTalents, e)}
+                              style={{ display: "flex" }}
+                            />
+                          </Grid>
+                        ))}
+                      </Grid>
+                    </Grid>
+                  </Grid>
                 </Grid>
 
                 <Grid item xs={12}>

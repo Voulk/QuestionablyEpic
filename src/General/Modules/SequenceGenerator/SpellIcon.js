@@ -1,14 +1,24 @@
 import React from 'react';
 
-export const SpellIcon = ({ spell, spec, className, alt = '', ...others }) => {
+export const SpellIcon = ({ spell, spec, iconType, className, alt = '', ...others }) => {
   if (!spell) {
     return null;
   }
 
   const newIconList = []; // Spell IDs that don't return an icon from the live WoW API.
+  let spellId = 0;
+  let icon = "";
 
-  const spellId = spell.spellData.id;
-  let icon = spell.spellData.icon;
+  // Yeah I'm gonna rewrite this.
+  if (iconType === "Talent") {
+    spellId = spell.id;
+    icon = spell.icon;
+  }
+  else {
+    spellId = spell.spellData.id;
+    icon = spell.spellData.icon;
+  }
+
   if (!icon) {
     return null;
   }
@@ -23,7 +33,9 @@ export const SpellIcon = ({ spell, spec, className, alt = '', ...others }) => {
     fullURL = require("Images/Spells/" + icon + ".jpg").default || "";
   }
 
+  // TODO: Refine the centered text here.
   return (
+    <div style={{position: "relative"}}>
     <a
       data-wowhead={"spell=" + spellId}
       target="_blank"
@@ -35,6 +47,8 @@ export const SpellIcon = ({ spell, spec, className, alt = '', ...others }) => {
         className={`icon ${className || ''}`}
         {...others}
       />
+       {iconType === "Talent" ? <div style={{ position: "absolute", top: "25%", width: "100%", textAlign: "center", fontWeight: "bold", fontSize: "20px", textShadow: "1px 1px 4px black" }}> {spell.points} </div> : ""}
     </a>
+    </div>
   );
 };

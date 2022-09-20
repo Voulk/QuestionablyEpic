@@ -286,7 +286,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     if (checkBuffActive(state.activeBuffs, "Cycle of Life")) triggerCycleOfLife(state, healingVal / (1 - spell.expectedOverheal));
 
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
-    addReport(state, `${spellName} healed for ${Math.round(healingVal)} (m: ${healingMult})`)
+    addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult})`)
     //if (compile) state.healingDone['Cloudburst Totem'] = (state.healingDone['Cloudburst Totem'] || 0) + cloudburstHealing;
 
     return healingVal;
