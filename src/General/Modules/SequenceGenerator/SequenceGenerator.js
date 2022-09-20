@@ -264,7 +264,7 @@ export default function SequenceGenerator(props) {
                       {seq.map((spell, index) => (
                         <Grid item xs="auto" key={index} onDragOver={onDragOver} onDragEnd={dropMove} onDrop={dropInsertion} onDragEnter={(e) => { dragEnter(e, index) }}>
                           <SpellIcon
-                            spell={spellDB[spell][0]}
+                            spell={spellDB[spell][0].spellData}
                             spec={selectedSpec}
                             iconType={"Spell"}
                             draggable
@@ -294,7 +294,7 @@ export default function SequenceGenerator(props) {
                         {spellList[cat].map((spell, i) => (
                           <Grid item xs="auto" key={spellDB[spell][0].spellData.id}>
                             <SpellIcon
-                              spell={spellDB[spell][0]}
+                              spell={spellDB[spell][0].spellData}
                               spec={selectedSpec}
                               iconType={"Spell"}
                               draggable
@@ -324,7 +324,10 @@ export default function SequenceGenerator(props) {
                               iconType={"Talent"}
                               draggable
                               //onDragStart={(e) => { dragStart(e, spell) }}
-                              onClick={(e) => addTalent(spell, talentDB, setTalents, e)}
+                              onClick={(e) => {
+                                e.persist();
+                                addTalent(spell, talentDB, setTalents, e)
+                              }}
                               style={{ display: "flex" }}
                             />
                           </Grid>
