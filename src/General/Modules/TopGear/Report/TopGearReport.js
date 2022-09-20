@@ -114,6 +114,25 @@ function TopGearReport(props) {
     }
   };
 
+  // scuffed breakdown of weapon combos to seperate them for the report
+  let newWeaponCombos = [];
+  if (itemList.length > 0) {
+    const weaponCombos = itemList.filter((key) => key.slot === "CombinedWeapon")[0];
+    let mainHandItem = "";
+    let offHandItem = "";
+
+    if (weaponCombos.offhandID > 0) {
+      mainHandItem = props.player.getItemByHash(weaponCombos.mainHandUniqueHash);
+      offHandItem = props.player.getItemByHash(weaponCombos.offHandUniqueHash);
+      newWeaponCombos.push(mainHandItem, offHandItem);
+    } else {
+      mainHandItem = props.player.getItemByHash(weaponCombos.uniqueHash);
+      console.log(mainHandItem);
+      newWeaponCombos.push(mainHandItem);
+    }
+  }
+  newWeaponCombos = newWeaponCombos.flat();
+
   return (
     <div
       style={{
@@ -151,19 +170,13 @@ function TopGearReport(props) {
                         /* ---------------------------------------------------------------------------------------------- */}
                         <Grid container spacing={1}>
                           {itemList
-                            .filter(
-                              (key) =>
-                                key.slot === "Head" ||
-                                key.slot === "Neck" ||
-                                key.slot === "Back" ||
-                                key.slot === "Shoulder" ||
-                                key.slot === "Chest" ||
-                                key.slot === "Wrist" ||
-                                key.slot === "CombinedWeapon",
-                            )
+                            .filter((key) => key.slot === "Head" || key.slot === "Neck" || key.slot === "Back" || key.slot === "Shoulder" || key.slot === "Chest" || key.slot === "Wrist")
                             .map((item, index) => (
                               <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} />
                             ))}
+                          {newWeaponCombos.map((item, index) => (
+                            <ItemCardReport key={index + "weapons"} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} />
+                          ))}
                         </Grid>
                       </Grid>
                       <Grid item xs={4}>

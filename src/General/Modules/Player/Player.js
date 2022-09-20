@@ -294,6 +294,16 @@ class Player {
     return this.sortItems(temp);
   };
 
+  getItemByHash = (uniqueHash) => {
+    console.log(this.activeItems);
+    let temp = this.activeItems.filter(function (item) {
+      return item.uniqueHash === uniqueHash;
+    });
+    console.log(uniqueHash);
+    console.log(temp);
+    return temp;
+  };
+
   deleteActiveItem = (unique) => {
     let tempArray = this.activeItems.filter(function (item) {
       return item.uniqueHash !== unique;
@@ -314,8 +324,14 @@ class Player {
     }); */
     const slot = item.slot;
     const pClass = this.spec;
-    const classTag = {"Holy Priest": "of the Empyrean", "Discipline Priest": "of the Empyrean", "Restoration Druid": "of the Fixed Stars",
-                      "Restoration Shaman": "Theurgic Starspeaker's", "Mistweaver Monk": "of the Grand Upwelling", "Holy Paladin": "Luminous Chevalier's"}
+    const classTag = {
+      "Holy Priest": "of the Empyrean",
+      "Discipline Priest": "of the Empyrean",
+      "Restoration Druid": "of the Fixed Stars",
+      "Restoration Shaman": "Theurgic Starspeaker's",
+      "Mistweaver Monk": "of the Grand Upwelling",
+      "Holy Paladin": "Luminous Chevalier's",
+    };
 
     const temp = itemDB.filter(function (item) {
       return item.slot === slot && item.name.includes(classTag[pClass]);
@@ -326,14 +342,12 @@ class Player {
       const newItem = new Item(match.id, "", slot, item.socket, item.tertiary, 0, item.level, "");
       Object.assign(newItem, { isCatalystItem: true });
       newItem.active = true;
-      if (item.uniqueEquip === "vault") { 
-        newItem.uniqueEquip = "vault"; 
-        newItem.vaultItem = true ;
-      };
+      if (item.uniqueEquip === "vault") {
+        newItem.uniqueEquip = "vault";
+        newItem.vaultItem = true;
+      }
       this.activeItems = this.activeItems.concat(newItem);
-
-    }
-    else {
+    } else {
       // We should probably write an error check here.
     }
   };
@@ -485,8 +499,7 @@ class Player {
         if (this.getActiveModel(contentType).modelName.includes("Venthyr")) this.setCovenant("venthyr");
         else if (this.getActiveModel(contentType).modelName.includes("Necrolord")) this.setCovenant("necrolord");
         else if (this.getActiveModel(contentType).modelName.includes("Kyrian")) this.setCovenant("kyrian");
-      }
-      else if (this.spec === "Discipline Priest") {
+      } else if (this.spec === "Discipline Priest") {
         if (this.getActiveModel(contentType).modelName.includes("Venthyr")) this.setCovenant("venthyr");
         else if (this.getActiveModel(contentType).modelName.includes("Kyrian")) this.setCovenant("kyrian");
 
