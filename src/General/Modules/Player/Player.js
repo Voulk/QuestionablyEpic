@@ -295,12 +295,9 @@ class Player {
   };
 
   getItemByHash = (uniqueHash) => {
-    console.log(this.activeItems);
     let temp = this.activeItems.filter(function (item) {
       return item.uniqueHash === uniqueHash;
     });
-    console.log(uniqueHash);
-    console.log(temp);
     return temp;
   };
 

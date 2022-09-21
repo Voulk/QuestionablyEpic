@@ -127,7 +127,6 @@ function TopGearReport(props) {
       newWeaponCombos.push(mainHandItem, offHandItem);
     } else {
       mainHandItem = props.player.getItemByHash(weaponCombos.uniqueHash);
-      console.log(mainHandItem);
       newWeaponCombos.push(mainHandItem);
     }
   }
@@ -316,7 +315,7 @@ function TopGearReport(props) {
           {/* ---------------------------------------------------------------------------------------------- */
           /*                                    Competitive Alternatives                                    */
           /* ----------------------------------------------------------------------------------------------  */}
-          <CompetitiveAlternatives differentials={differentials} />
+          <CompetitiveAlternatives differentials={differentials} player={props.player} />
 
           <Grid item style={{ height: 40 }} xs={12} />
         </Grid>
