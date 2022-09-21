@@ -260,12 +260,12 @@ export const evokerTalents = {
     // Class Tree
     // Some pure utility based talents might not appear.
 
-    rescue: {points: 0, maxPoints: 1, icon: "ability_evoker_rescue", id: 360995, select: true},
+    rescue: {points: 0, maxPoints: 1, icon: "ability_evoker_rescue", id: 360995, select: false},
 
     naturalConvergence: {points: 0, maxPoints: 1, icon: "ability_evoker_innatemagic4", id: 369913, select: true}, // Disintegrate channels 20% faster.
     //rescue: {points: 0, maxPoints: 1, icon: "", id: 0, select: true},
     innateMagic: {points: 0, maxPoints: 1, icon: "ability_evoker_innatemagic4", id: 375520, select: true}, // Essence regens 5% faster (2 charges).
-    enkindled: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Living Flame does +5% damage / healing.
+    enkindled: {points: 0, maxPoints: 1, icon: "ability_evoker_livingflame", id: 375554, select: true}, // Living Flame does +5% damage / healing.
     scarletAdaptation: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Store 20% of healing dealt. Offensive living flame consumes it to increase damage dealt. Cap is 6x SP x Vers.
     cauterizingFlame: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Big dispel that also heals.
     tipTheScales: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Your next empowered spell casts instantly. 2 min CD.
@@ -276,28 +276,27 @@ export const evokerTalents = {
     lushGrowth: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Green spells heal for 5% more (2 points).
 
     // Spec Tree
-    reversion: {points: 0, maxPoints: 1, icon: "", id: 0, select: true},
-    dreamBreath: {points: 0, maxPoints: 1, icon: "", id: 0, select: true},
-    echo: {points: 0, maxPoints: 1, icon: "", id: 0, select: true},
-
-    temporalCompression: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Bronze spells reduce the cast time of your next finisher by 5%. Stacks to 4. 15s duration.
-    essenceBurst: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Living Flame has a 20% chance to make your next Essence ability free.
-    rewind: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Raid cooldown.
-    spiritbloom: {points: 0, maxPoints: 1, icon: "", id: 0, select: true},
-    lifeGiversFlame: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Fire Breath heals a nearby ally for 80% of damage done.
-    timeDilation: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // ST defensive
-    emeraldCommunion: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // ST self-heal channel
+    reversion: {points: 0, maxPoints: 1, icon: "", id: 0, select: false},
+    dreamBreath: {points: 0, maxPoints: 1, icon: "", id: 0, select: false},
+    echo: {points: 0, maxPoints: 1, icon: "", id: 0, select: false},
+    temporalCompression: {points: 0, maxPoints: 1, icon: "ability_evoker_rewind2", id: 362877, select: true}, // Bronze spells reduce the cast time of your next finisher by 5%. Stacks to 4. 15s duration.
+    essenceBurst: {points: 0, maxPoints: 1, icon: "ability_evoker_essenceburst", id: 359618, select: true}, // Living Flame has a 20% chance to make your next Essence ability free.
+    rewind: {points: 0, maxPoints: 1, icon: "", id: 0, select: false}, // Raid cooldown.
+    spiritbloom: {points: 0, maxPoints: 1, icon: "", id: 0, select: false},
+    lifeGiversFlame: {points: 0, maxPoints: 1, icon: "item_sparkofragnoros", id: 371441, select: true}, // Fire Breath heals a nearby ally for 80% of damage done.
+    timeDilation: {points: 0, maxPoints: 1, icon: "", id: 0, select: false}, // ST defensive
+    emeraldCommunion: {points: 0, maxPoints: 1, icon: "", id: 0, select: false}, // ST self-heal channel
     spiritualClarity: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Spiritbloom CD reduced by 15s. Choice node with Empath.
     empath: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Spiritbloom increases regen rate by 100% for 10 seconds. Choice node with Spiritual Clarity.
     flutteringSeedlings: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Emerald Blossoms sends out 3 flying seedlings when it bursts, each healing for 90% sp.
     essenceStrike: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Azure Strike has a 15% chance to make your next essence ability free.
     goldenHour: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Reversion instantly heals the target for 15% of the damage they took in the last 5 seconds.
-    temporalAnomaly: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Ability.
+    temporalAnomaly: {points: 0, maxPoints: 1, icon: "", id: 0, select: false}, // Ability.
     fieldOfDreams: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Gain a 30% chance for your fluttering seedlings to grow into a new emerald blossom.
-    lifeforceMender: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Living Flame and Fire Breath deal extra damage & healing equal to 1% of your maximum health (3 points).
+    lifeforceMender: {points: 0, maxPoints: 3, icon: "", id: 0, select: true}, // Living Flame and Fire Breath deal extra damage & healing equal to 1% of your maximum health (3 points).
     timeLord: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Echo replicates an additional 30% healing (3 points).
-    nozdormusTeachings: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Temporal Anomaly is instant.
-    temporalDisruption: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Anomaly heals for 40% more in 40% less time. (Needs testing).
+    nozdormusTeachings: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Temporal Anomaly shields one additional target.
+    temporalDisruption: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Temporal Anomaly adds an Echo to allies hit.
     lifebind: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Rescue binds you to your ally, causing any healing either partner receives to splash for 40% on the other.
     callOfYsera: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Rescue increases the effectiveness of your next Dream Breath by 40% or Living Flame by 100%.
     timeOfNeed: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Needs testing.
