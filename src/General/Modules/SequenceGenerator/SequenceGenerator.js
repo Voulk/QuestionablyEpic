@@ -60,15 +60,7 @@ const getTalentDB = (spec) => {
   if (spec === "Restoration Shaman") return null;
 }
 
-const addTalent = (talentName, talentDB, setTalents) => {
-    console.log(talentName);
-    const talent = talentDB[talentName];
-    
-    talent.points = talent.points === talent.maxPoints ? 0 : talent.points + 1;
 
-    console.log(talent);
-    setTalents({...talentDB});
-}
 
 const getSequence = (spec) => {
   if (spec === "Preservation Evoker") return evokerSequence;
@@ -100,7 +92,7 @@ export default function SequenceGenerator(props) {
     "Cooldowns & Other": Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "cooldown"),
   };
   const talentList = Object.keys(talentDB).filter(talent => talentDB[talent].select === true);
-  const [talents, setTalents] = useState({ ...talentList });
+  const [talents, setTalents] = useState({ ...talentDB });
   
 
   const stats = {
@@ -116,7 +108,7 @@ export default function SequenceGenerator(props) {
 
   const updateSequence = (sequence) => {
     const simFunc = getSequence(selectedSpec);
-    const sim = simFunc(sequence, stats, {reporting: true}, {});
+    const sim = simFunc(sequence, stats, {reporting: true}, talents);
 
     // multiple state updates get bundled by react into one update
     setSeq(sequence);
@@ -124,6 +116,15 @@ export default function SequenceGenerator(props) {
     setCombatLog(sim.report);
     console.log(sim);
   }
+
+  const addTalent = (talentName, talentDB, setTalents) => {
+    const talent = talentDB[talentName];
+    
+    talent.points = talent.points === talent.maxPoints ? 0 : talent.points + 1;
+
+    setTalents({...talentDB});
+    updateSequence(seq);
+}
 
   const addSpell = (spell) => {
     updateSequence([...seq, spell]);
@@ -269,7 +270,9 @@ export default function SequenceGenerator(props) {
                             iconType={"Spell"}
                             draggable
                             onDragStart={(e) => { dragStart(e, index) }}
-                            onContextMenu={(e) => removeSpellAtIndex(index, e)}
+                            onContextMenu={(e) => {
+                              e.preventDefault()
+                              removeSpellAtIndex(index, e)}}
                             style={{ display: "flex" }}
                           />
                         </Grid>

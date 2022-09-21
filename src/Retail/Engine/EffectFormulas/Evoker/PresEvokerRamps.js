@@ -103,14 +103,16 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
     }
 
+
     // ==== Talents ====
     // Not all talents just make base modifications to spells, but those that do can be handled here.
 
     // Evoker Class Talents
     if (talents.bountifulBloom) evokerSpells['Emerald Blossom'][0].targets += 2;
     if (talents.enkindled) {
-        evokerSpells['Living Flame'][1].coeff *= (0.05 * talents.enkindled);
-        evokerSpells['Living Flame D'][1].coeff *= (0.05 * talents.enkindled);
+        evokerSpells['Living Flame'][0].coeff *= (1 + 0.05 * talents.enkindled);
+        evokerSpells['Living Flame D'][0].coeff *= (1 + 0.05 * talents.enkindled);
+        console.log(evokerSpells['Living Flame D']);
     }
 
     // Evoker Spec Talents
@@ -482,9 +484,24 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
  * @param {object} conduits Any conduits we want to include. The conduits object is made up of {ConduitName: ConduitLevel} pairs where the conduit level is an item level rather than a rank.
  * @returns The expected healing of the full ramp.
  */
-export const runCastSequence = (sequence, stats, settings = {}, talents = {}) => {
+export const runCastSequence = (sequence, stats, settings = {}, incTalents = {}) => {
     //console.log("Running cast sequence");
+
+    // Flatten talents
+    // Talents come with a lot of extra data we don't need like icons, max points and such.
+    // This quick bit of code flattens it out by creating key / value pairs for name: points.
+    // Can be removed to RampGeneral.
+    const talents = {};
+    for (const [key, value] of Object.entries(incTalents)) {
+        console.log(`${key}: ${value}`);
+        talents[key] = value.points;
+    }
+    console.log(talents);
+
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, essences: 5};
+
+
+
 
     const sequenceLength = 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Manual" // Auto / Manual.
