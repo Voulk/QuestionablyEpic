@@ -6,11 +6,11 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 const GLOBALCONST = {
     rollRNG: true, // Model RNG through chance. Increases the number of iterations required for accuracy but more accurate than other solutions.
     statPoints: {
-        crit: 35,
-        mastery: 35,
-        vers: 40,
-        haste: 33,
-        leech: 21,
+        crit: 220,
+        mastery: 220,
+        vers: 250,
+        haste: 210,
+        leech: 132,
     }
 
 }

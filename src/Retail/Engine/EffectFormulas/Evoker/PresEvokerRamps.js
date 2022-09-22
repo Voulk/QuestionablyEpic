@@ -103,7 +103,8 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
     }
 
-
+    console.log("POST");
+    console.log(evokerSpells);
     // ==== Talents ====
     // Not all talents just make base modifications to spells, but those that do can be handled here.
 
@@ -185,6 +186,8 @@ const triggerCycleOfLife = (state, rawHealing) => {
             }
         })
     }
+
+    
 
     // Setup mana costs & cooldowns.
     for (const [key, value] of Object.entries(evokerSpells)) {
@@ -493,10 +496,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     // Can be removed to RampGeneral.
     const talents = {};
     for (const [key, value] of Object.entries(incTalents)) {
-        console.log(`${key}: ${value}`);
         talents[key] = value.points;
     }
-    console.log(talents);
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, essences: 5};
 
@@ -510,16 +511,18 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     const startTime = performance.now();
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
+    console.log("PRE")
+    console.log(EVOKERSPELLDB);
     const evokerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats);
     
-
     // Create Echo clones.
     for (const [spellName, spellData] of Object.entries(evokerSpells)) {
         
         // Make sure spell can be copied by Echo.
         // Right now this is almost anything but we'll expect them to make changes later in Alpha.
         if (!(EVOKERCONSTANTS.echoExceptionSpells.includes(spellName))) {
-            let echoSpell = [...spellData];
+            //let echoSpell = [...spellData];
+            let echoSpell = JSON.parse(JSON.stringify(spellData));
 
             // Make any Echo changes necessary.
 
