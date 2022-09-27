@@ -303,7 +303,7 @@ export const evokerTalents = {
     exhiliratingBurst: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Each time you gain Essence Burst gain +50% crit damage / healing for 8 seconds.
     fontOfMagic: {points: 0, maxPoints: 1, icon: "", id: 0, select: false}, // Your Empower spells go to 4 (longer cast time).
     energyLoop: {points: 0, maxPoints: 1, icon: "", id: 0, select: false}, // Disintegrate grants mana over it's duration.
-    renewingBreath: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Allies healed by dream breath get a HoT for 15/30% of the amount over 8 seconds (2 points).
+    renewingBreath: {points: 0, maxPoints: 2, icon: "ability_evoker_dreambreath", id: 371257, select: true}, // Allies healed by dream breath get a HoT for 15/30% of the amount over 8 seconds (2 points).
     gracePeriod: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Your healing is increased by 5/10% on allies with Reversion. Echo Reversion applies it's own. Stacks multiplicatively.
     timelessMagic: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Reversion, Time Dilation, Echo last 15/30% longer.
     dreamFlight: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, 

@@ -47,6 +47,20 @@ const EVOKERCONSTANTS = {
         buffType: 'stats',
         stat: 'critMult',
         value: 0.1
+    },
+    renewingBreathBuff: {
+        type: "buff",
+        buffType: "heal",
+        name: "Renewing Breath",
+        tickRate: 2,
+        targets: 5,
+        coeff: 0, // Renewing Breath uses a flat heal system instead of a coefficient since the scaling is based on the healing the Dream Breath did.
+        flatHeal: 0, 
+        hasted: false,
+        buffDuration: 10, // Note that this is contrary to the tooltip.
+        expectedOverheal: 0.45,
+        secondaries: [], // It technically scales with secondaries but these influence the base heal, not the HoT.
+        mult: 0.15, // This is multiplied by our talent points.
     }
 
 }
@@ -116,17 +130,21 @@ const triggerCycleOfLife = (state, rawHealing) => {
     }
 
     // Evoker Spec Talents
+    
+    if (talents.renewingBreath) EVOKERCONSTANTS.renewingBreathBuff.mult = (0.15 * talents.renewingBreath);
+    /*
     if (talents.renewingBreath) evokerSpells['Dream Breath'].push({
         type: "buff",
         buffType: "heal",
+        name: "Renewing Breath",
         tickRate: 2,
         targets: 5,
         coeff: evokerSpells['Dream Breath'][0].coeff[EVOKERCONSTANTS.defaultEmpower] / 4 * (0.15 * talents.renewingBreath) * (1 + 0.05 * talents.lushGrowth),
-        hastedHoT: false,
+        hasted: false,
         buffDuration: 8,
         expectedOverheal: 0.45,
         secondaries: ['crit', 'vers', 'mastery']
-    })
+    }) */
     if (talents.timelessMagic) evokerSpells['Reversion'][0].buffDuration *= (1 + 0.15 * talents.timelessMagic);
     if (talents.timeLord) evokerSpells['Echo'][1].value += (0.1 * talents.timeLord);
     if (talents.flutteringSeedlings) evokerSpells['Emerald Blossom'].push({
@@ -290,8 +308,21 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     if (checkBuffActive(state.activeBuffs, "Cycle of Life")) triggerCycleOfLife(state, healingVal / (1 - spell.expectedOverheal));
 
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
-    addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult})`)
+    addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
     //if (compile) state.healingDone['Cloudburst Totem'] = (state.healingDone['Cloudburst Totem'] || 0) + cloudburstHealing;
+
+    if (spellName === "Dream Breath" && state.talents.renewingBreath) {
+        // Handle Renewing Breath.
+        // These could possibly be pushed into a "Spell Cleanup" section.
+        const renewingHoT = EVOKERCONSTANTS.renewingBreathBuff;
+        renewingHoT.flatHeal = getSpellRaw(spell, currentStats, EVOKERCONSTANTS) * healingMult / 5 * renewingHoT.mult;
+        
+        const buff = {name: "Renewing Breath", buffType: "heal", attSpell: renewingHoT,
+            tickRate: renewingHoT.tickRate, hasted: false, canPartialTick: renewingHoT.canPartialTick, next: state.t + renewingHoT.tickRate}
+        buff['expiration'] = state.t + renewingHoT.buffDuration;
+        state.activeBuffs.push(buff);
+ 
+    }
 
     return healingVal;
 }
@@ -566,7 +597,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                     const spell = buff.attSpell;
                     func(state, spell);
                 } 
-                buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
+                if (buff.hasted) buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
+                else buff.next = buff.next + (buff.tickRate);
             });  
         }
 
