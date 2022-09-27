@@ -58,7 +58,7 @@ const EVOKERCONSTANTS = {
         flatHeal: 0, 
         hasted: false,
         buffDuration: 10, // Note that this is contrary to the tooltip.
-        expectedOverheal: 0.45,
+        expectedOverheal: 0.45, // 0.45
         secondaries: [], // It technically scales with secondaries but these influence the base heal, not the HoT.
         mult: 0.15, // This is multiplied by our talent points.
     }
@@ -117,8 +117,6 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
     }
 
-    console.log("POST");
-    console.log(evokerSpells);
     // ==== Talents ====
     // Not all talents just make base modifications to spells, but those that do can be handled here.
 
@@ -279,6 +277,7 @@ const getHealingMult = (state, t, spellName, talents) => {
         state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
 
     } 
+    else if (spellName.includes("Renewing Breath")) return 1; // Renewing Breath should strictly benefit from no multipliers.
     if (state.talents.attunedToTheDream) mult *= (1 + state.talents.attunedToTheDream * 0.02)
     
     
@@ -316,7 +315,6 @@ export const runHeal = (state, spell, spellName, compile = true) => {
         // These could possibly be pushed into a "Spell Cleanup" section.
         const renewingHoT = EVOKERCONSTANTS.renewingBreathBuff;
         renewingHoT.flatHeal = getSpellRaw(spell, currentStats, EVOKERCONSTANTS) * healingMult / 5 * renewingHoT.mult;
-        
         const buff = {name: "Renewing Breath", buffType: "heal", attSpell: renewingHoT,
             tickRate: renewingHoT.tickRate, hasted: false, canPartialTick: renewingHoT.canPartialTick, next: state.t + renewingHoT.tickRate}
         buff['expiration'] = state.t + renewingHoT.buffDuration;
@@ -586,7 +584,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
                 if (buff.buffType === "heal") {
                     const spell = buff.attSpell;
-                    runHeal(state, spell, buff.name + "(hot)")
+                    runHeal(state, spell, buff.name + " (hot)")
                 }
                 else if (buff.buffType === "damage") {
                     const spell = buff.attSpell;
