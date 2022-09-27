@@ -20,7 +20,7 @@ const getHealth = (stamina) => {
 const EVOKERCONSTANTS = {
     
     masteryMod: 1.8, 
-    masteryEfficiency: 0.92, 
+    masteryEfficiency: 0.88, 
     baseMana: 10000,
 
     //CBT: {transferRate: 0.3, expectedOverhealing: 0.25},
@@ -46,7 +46,7 @@ const EVOKERCONSTANTS = {
         buffDuration: 8,
         buffType: 'stats',
         stat: 'critMult',
-        value: 0.2
+        value: 0.1
     }
 
 }
@@ -111,9 +111,8 @@ const triggerCycleOfLife = (state, rawHealing) => {
     // Evoker Class Talents
     if (talents.bountifulBloom) evokerSpells['Emerald Blossom'][0].targets += 2;
     if (talents.enkindled) {
-        evokerSpells['Living Flame'][0].coeff *= (1 + 0.05 * talents.enkindled);
-        evokerSpells['Living Flame D'][0].coeff *= (1 + 0.05 * talents.enkindled);
-        console.log(evokerSpells['Living Flame D']);
+        evokerSpells['Living Flame'][0].coeff *= (1 + 0.03 * talents.enkindled);
+        evokerSpells['Living Flame D'][0].coeff *= (1 + 0.03 * talents.enkindled);
     }
 
     // Evoker Spec Talents
@@ -146,7 +145,6 @@ const triggerCycleOfLife = (state, rawHealing) => {
         chance: 0.3,
     });
     if (talents.essenceBurst) evokerSpells['Living Flame'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.2})
-    if (talents.essenceStrike) evokerSpells['Azure Strike'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.15})
 
     if (talents.lifeforceMender) {
         evokerSpells['Living Flame'][0].flatHeal = (getHealth(stats.stamina) * talents.lifeforceMender * 0.01);
@@ -160,11 +158,12 @@ const triggerCycleOfLife = (state, rawHealing) => {
         buffDuration: 999,
         buffType: 'special',
     })
+    /* TALENT REMOVED
     if (talents.groveTender) {
         evokerSpells['Dream Breath'][0].cost *= 0.9;
         evokerSpells['Spiritbloom'][0].cost *= 0.9;
         evokerSpells['Emerald Blossom'][0].cost *= 0.9;
-    }
+    } */
     if (talents.cycleOfLife) {
         // This can possibly be handled by just multiplying healing during it's duration like with CBT.
         evokerSpells['Emerald Blossom'].push({
@@ -511,8 +510,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     const startTime = performance.now();
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
-    console.log("PRE")
-    console.log(EVOKERSPELLDB);
+
     const evokerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats);
     
     // Create Echo clones.
@@ -528,6 +526,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
             if (spellName === "Spiritbloom") echoSpell[0].targets = 1; // An Echo'd Spiritbloom just adds one target.
             if (spellName === "Emerald Blossom") echoSpell[0].targets = 1; // An Echo'd Emerald Blossom just adds one target.
+            if (spellName === "Dream Breath") echoSpell[0].targets = 1; // An Echo'd Emerald Blossom just adds one target.
 
             // Save the new spell.
             evokerSpells[spellName+"(Echo)"] = echoSpell;
