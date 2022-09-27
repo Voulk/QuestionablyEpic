@@ -413,7 +413,7 @@ export default function SequenceGenerator(props) {
                 </Grid>
                 {/* Combat Log */}
                 <Grid item xs={12}>
-                    <TextField value={combatLog.join("\n")} variant="outlined" multiline minRows={8} maxRows={8} fullWidth disabled style={{whiteSpace: 'pre-line'}} />
+                    <TextField value={combatLog.join("\n")} variant="outlined" multiline minRows={10} maxRows={10} fullWidth disabled style={{whiteSpace: 'pre-line'}} />
                 </Grid>
               </Grid>
             </Paper>

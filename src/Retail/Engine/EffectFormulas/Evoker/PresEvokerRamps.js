@@ -61,7 +61,13 @@ const EVOKERCONSTANTS = {
         expectedOverheal: 0.45, // 0.45
         secondaries: [], // It technically scales with secondaries but these influence the base heal, not the HoT.
         mult: 0.15, // This is multiplied by our talent points.
-    }
+    },
+
+    // Grace Period can be seen as a healing multiplier on the raid since we don't have a good way of knowing which spells are hitting Grace Period targets.
+    // We'll notably override this for Reversion and Echo Reversion since they will always get full value.
+    // Overall this trades pinpoint accuracy for a fair average performance of the talent.
+    gracePeriodMult: 1, 
+    
 
 }
 
@@ -92,7 +98,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
     const cycleBuffs = state.activeBuffs.filter(buff => buff.name === "Cycle of Life");
 
     cycleBuffs.forEach(buff => {
-        buff.value += rawHealing * 0.05; 
+        buff.value += rawHealing * 0.1; 
     })
 
 }
@@ -144,7 +150,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
         secondaries: ['crit', 'vers', 'mastery']
     }) */
     if (talents.timelessMagic) evokerSpells['Reversion'][0].buffDuration *= (1 + 0.15 * talents.timelessMagic);
-    if (talents.timeLord) evokerSpells['Echo'][1].value += (0.1 * talents.timeLord);
+    if (talents.timeLord) evokerSpells['Echo'][1].value *= (1 + 0.25 * talents.timeLord);
     if (talents.flutteringSeedlings) evokerSpells['Emerald Blossom'].push({
         // TODO
         name: "Fluttering Seedlings",
@@ -167,7 +173,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
         evokerSpells['Fire Breath'][0].flatDamage = (getHealth(stats.stamina) * talents.lifeforceMender * 0.01);
         evokerSpells['Living Flame D'][0].flatDamage = (getHealth(stats.stamina) * talents.lifeforceMender * 0.01);
     }
-    if (talents.callOfYsera) evokerSpells['Rescue'].push({
+    if (talents.callOfYsera) evokerSpells['Verdant Embrace'].push({
         name: "Call of Ysera",
         type: "buff",
         stacks: false,
@@ -186,7 +192,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
             name: "Cycle of Life",
             type: "buff",
             canStack: false,
-            buffDuration: 10,
+            buffDuration: 15,
             value: 0,
             buffType: 'special',
             canPartialTick: true,
@@ -270,6 +276,17 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
 const getHealingMult = (state, t, spellName, talents) => {
     let mult = EVOKERCONSTANTS.auraHealingBuff;
 
+
+    // Grace Period
+    if (talents.gracePeriod) {
+        if (spellName.includes("Reversion")) mult *= (1 + talents.gracePeriod * 0.05);
+        else {
+            const buffsActive = state.activeBuffs.filter(buff => buff.name.includes("Reversion")).length;
+            mult *= (1 + talents.gracePeriod * 0.05 * buffsActive / 20);
+            console.log((1 + talents.gracePeriod * 0.05 * buffsActive / 20))
+        }
+    }
+
     if ((spellName === "Dream Breath" || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Call of Ysera")) {
         if (spellName === "Dream Breath") mult *= 1.4;
         if (spellName === "Living Flame" || spellName === "Living Flame D") mult *= 2;
@@ -307,8 +324,9 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     if (checkBuffActive(state.activeBuffs, "Cycle of Life")) triggerCycleOfLife(state, healingVal / (1 - spell.expectedOverheal));
 
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
-    addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
-    //if (compile) state.healingDone['Cloudburst Totem'] = (state.healingDone['Cloudburst Totem'] || 0) + cloudburstHealing;
+    if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
+    else addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
+
 
     if (spellName === "Dream Breath" && state.talents.renewingBreath) {
         // Handle Renewing Breath.
@@ -595,7 +613,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                     const spell = buff.attSpell;
                     func(state, spell);
                 } 
-                if (buff.hasted) buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
+                if (buff.hasted || buff.hasted === undefined) buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
                 else buff.next = buff.next + (buff.tickRate);
             });  
         }

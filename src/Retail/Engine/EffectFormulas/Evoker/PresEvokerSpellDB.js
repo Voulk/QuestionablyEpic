@@ -50,7 +50,7 @@ export const EVOKERSPELLDB = {
         coeff: 1.61,
         secondaries: ['crit', 'vers']
     }],
-    "Rescue": [{ 
+    "Verdant Embrace": [{ 
         // Single target heal that also moves you to the targets location.
         spellData: {id: 360995, icon: "ability_evoker_rescue", cat: "heal"},
         type: "heal",
@@ -304,11 +304,11 @@ export const evokerTalents = {
     fontOfMagic: {points: 0, maxPoints: 1, icon: "", id: 0, select: false}, // Your Empower spells go to 4 (longer cast time).
     energyLoop: {points: 0, maxPoints: 1, icon: "", id: 0, select: false}, // Disintegrate grants mana over it's duration.
     renewingBreath: {points: 0, maxPoints: 2, icon: "ability_evoker_dreambreath", id: 371257, select: true}, // Allies healed by dream breath get a HoT for 15/30% of the amount over 8 seconds (2 points).
-    gracePeriod: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Your healing is increased by 5/10% on allies with Reversion. Echo Reversion applies it's own. Stacks multiplicatively.
-    timelessMagic: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Reversion, Time Dilation, Echo last 15/30% longer.
-    dreamFlight: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, 
-    stasis: {points: 0, maxPoints: 1, icon: "", id: 0, select: true},
-    cycleOfLife: {points: 0, maxPoints: 1, icon: "", id: 0, select: true}, // Emerald Blossom leaves behind a sprout that absorbs 5% of healing over 10 seconds.
+    gracePeriod: {points: 0, maxPoints: 2, icon: "ability_evoker_reversion_green", id: 376239, select: true}, // Your healing is increased by 5/10% on allies with Reversion. Echo Reversion applies it's own. Stacks multiplicatively.
+    timelessMagic: {points: 0, maxPoints: 2, icon: "inv_artifact_xp05", id: 376240, select: true}, // Reversion, Time Dilation, Echo last 15/30% longer.
+    dreamFlight: {points: 0, maxPoints: 1, icon: "ability_evoker_dreamflight", id: 359816, select: false}, 
+    stasis: {points: 0, maxPoints: 1, icon: "", id: 0, select: false},
+    cycleOfLife: {points: 0, maxPoints: 1, icon: "spell_lifegivingseed", id: 371871, select: true}, // Emerald Blossom leaves behind a sprout that absorbs 10% of healing over 15 seconds.
 
 
 };
