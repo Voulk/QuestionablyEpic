@@ -2,7 +2,7 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { EVOKERSPELLDB } from "./PresEvokerSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks } from "../Generic/RampBase";
+import { checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth } from "../Generic/RampBase";
 
 const addReport = (state, entry) => {
     if (state.settings.reporting) state.report.push(JSON.stringify({t: Math.round(100*state.t)/100, e: entry}));
@@ -13,9 +13,6 @@ const discSettings = {
     chaosBrand: true
 }
 
-const getHealth = (stamina) => {
-    return stamina * 20;
-}
 
 const EVOKERCONSTANTS = {
     
@@ -40,7 +37,7 @@ const EVOKERCONSTANTS = {
         buffType: 'special',
     },
     exhilBurstBuff: {
-        name: "Exhilirating Burst",
+        name: "Exhilarating Burst",
         type: "buff",
         stacks: false,
         buffDuration: 8,
@@ -78,11 +75,11 @@ const triggerTemporal = (state) => {
 }
 
 const triggerEssenceBurst = (state) => {
-    if (state.talents.exhiliratingBurst) {
+    if (state.talents.exhilaratingBurst) {
         // If we're talented into Exhil Burst then also add that buff.
-        // If we already have an Exhilirating Burst active then we'll just refresh it's duration instead.
+        // If we already have an Exhilarating Burst active then we'll just refresh it's duration instead.
         // If not, we'll create a new buff.
-        const activeBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Exhilirating Burst"});
+        const activeBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Exhilarating Burst"});
         const exhilBurst = EVOKERCONSTANTS.exhilBurstBuff;
         if (activeBuff.length > 0) activeBuff.expiration = (state.t + exhilBurst.buffDuration);
         else {
@@ -126,6 +123,49 @@ const triggerCycleOfLife = (state, rawHealing) => {
     // ==== Talents ====
     // Not all talents just make base modifications to spells, but those that do can be handled here.
 
+
+    // Fire Breath talents
+    // Note that Lifegivers Flame should always come last.
+    if (talents.blastFurnace) evokerSpells['Fire Breath'][0].coeff *= (1 + talents.blastFurnace * 0.1);
+
+    // Lifegivers Flame
+    if (talents.lifeGiversFlame) {
+        evokerSpells['Fire Breath'].push({
+        spellData: {id: 357208, icon: "ability_evoker_firebreath", cat: "damage"},
+        type: "heal",
+        school: "red",
+        coeff: (evokerSpells['Fire Breath'][0].coeff * talents.lifeGiversFlame * 0.4 * EVOKERCONSTANTS.auraDamageBuff),
+        expectedOverheal: 0.15,
+        targets: 1,
+        secondaries: ['crit', 'vers']
+        });
+        evokerSpells['Fire Breath'].push({
+            type: "buff",
+            name: "Fire Breath",
+            school: "red",
+            buffType: "heal",
+            buffDuration: evokerSpells['Fire Breath'][1].buffDuration[EVOKERCONSTANTS.defaultEmpower],
+            tickRate: evokerSpells['Fire Breath'][1].tickRate,
+            coeff: (evokerSpells['Fire Breath'][1].coeff * talents.lifeGiversFlame * 0.4 * EVOKERCONSTANTS.auraDamageBuff),
+            expectedOverheal: 0.2,
+            targets: 1,
+            secondaries: ['crit', 'vers']
+        });
+        console.log(evokerSpells['Fire Breath']);
+    }
+    if (talents.lifeforceMender) {
+        const bonus = (talents.lifeforceMender * 0.01 * getHealth(stats, talents))
+        console.log("BONUS: " + bonus);
+        evokerSpells['Fire Breath'][0].flatDamage = bonus;
+        if (evokerSpells.length > 2) evokerSpells['Fire Breath'][2].flatHeal = bonus;
+        evokerSpells['Living Flame D'][0].flatDamage = bonus;
+        evokerSpells['Living Flame'][0].flatHeal = bonus;
+    }
+
+
+    // Life-force Mender
+    //if (talents.lifeforceMender) 
+
     // Evoker Class Talents
     if (talents.bountifulBloom) evokerSpells['Emerald Blossom'][0].targets += 2;
     if (talents.enkindled) {
@@ -168,11 +208,6 @@ const triggerCycleOfLife = (state, rawHealing) => {
     });
     if (talents.essenceBurst) evokerSpells['Living Flame'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.2})
 
-    if (talents.lifeforceMender) {
-        evokerSpells['Living Flame'][0].flatHeal = (getHealth(stats.stamina) * talents.lifeforceMender * 0.01);
-        evokerSpells['Fire Breath'][0].flatDamage = (getHealth(stats.stamina) * talents.lifeforceMender * 0.01);
-        evokerSpells['Living Flame D'][0].flatDamage = (getHealth(stats.stamina) * talents.lifeforceMender * 0.01);
-    }
     if (talents.callOfYsera) evokerSpells['Verdant Embrace'].push({
         name: "Call of Ysera",
         type: "buff",
@@ -294,7 +329,7 @@ const getHealingMult = (state, t, spellName, talents) => {
         state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
 
     } 
-    else if (spellName.includes("Renewing Breath")) return 1; // Renewing Breath should strictly benefit from no multipliers.
+    else if (spellName.includes("Renewing Breath") || spellName.includes("Fire Breath")) return 1; // Renewing Breath should strictly benefit from no multipliers.
     if (state.talents.attunedToTheDream) mult *= (1 + state.talents.attunedToTheDream * 0.02)
     
     
@@ -351,7 +386,7 @@ export const runDamage = (state, spell, spellName, atonementApp, compile = true)
     
     // This is stat tracking, the atonement healing will be returned as part of our result.
     if (compile) state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
-    addReport(state, `${spellName} dealt for ${Math.round(damageVal)} damage`)
+    addReport(state, `${spellName} dealt ${Math.round(damageVal)} damage`)
     return damageVal;
 }
 
@@ -467,7 +502,7 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                         tickRate: spell.tickRate, canPartialTick: spell.canPartialTick || false, 
                         next: state.t + (spell.tickRate / getHaste(state.currentStats))}
                     newBuff.attFunction = spell.function;
-                    if (spellName === "Reversion") newBuff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - 0.25)));
+                    if (spellName === "Reversion") newBuff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - 0.25))); // TODO; Replace 0.25 with crit.
 
                     state.activeBuffs.push(newBuff);
                 }

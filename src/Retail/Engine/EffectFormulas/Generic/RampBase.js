@@ -105,6 +105,10 @@ export const getHaste = (stats) => {
     return 1 + stats.haste / 32 / 100;
 }
 
+export const getHealth = (stats, talents) => {
+    return stats.stamina * 20 * (1 + talents.draconicLegacy * 0.02);
+}
+
 const getSqrt = (targets) => {
     return Math.sqrt(targets);
 }
