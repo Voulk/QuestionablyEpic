@@ -105,6 +105,10 @@ export const getHaste = (stats) => {
     return 1 + stats.haste / 32 / 100;
 }
 
+export const addReport = (state, entry) => {
+    if (state.settings.reporting) state.report.push(JSON.stringify({t: Math.round(100*state.t)/100, e: entry}));
+}
+
 export const getHealth = (stats, talents) => {
     return stats.stamina * 20 * (1 + talents.draconicLegacy * 0.02);
 }

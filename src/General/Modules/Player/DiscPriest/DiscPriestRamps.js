@@ -3,6 +3,7 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
+import { addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth } from "Retail/Engine/EffectFormulas/Generic/RampBase";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
@@ -101,11 +102,6 @@ const DISCCONSTANTS = {
     // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
     // Unity Note: Unity is automatically converted to the legendary it represents and should not have an entry here.
 
-    let rampResult = {totalHealing: 0, ramps: [], rampSettings: settings}
-    const miniSeq = buildRamp('Mini', 6, settings["Neural Synapse Enhancer"] || false, stats.haste, settings.playstyle || "", [])
-    const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
-    const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
-    const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
 
     // -- Shadow Word: Manipulation --
     // SWM has two effects. 
@@ -199,26 +195,6 @@ const extendActiveAtonements = (atoneApp, timer, extension) => {
     });
 }
 
-// Removes a stack of a buff, and removes the buff entirely if it's down to 0 or doesn't have a stack mechanic.
-const removeBuffStack = (buffs, buffName) => {
-    const buff = buffs.filter(buff => buff.name === buffName)[0]
-    const buffStacks = buff.stacks || 0;
-
-    if (buffStacks === 1) {
-        // Remove the buff
-        buffs = buffs.filter(buff => buff.name !== buffName);
-    }
-    else if (buffStacks >= 1) {
-        // The player has more than 1 stack of the buff. Remove one and leave the buff.
-        const activeBuff = buffs.filter(buff => buff.name === buffName)[0];
-        activeBuff.stacks = activeBuff.stacks - 1;
-    }
-    else {
-        // The player doesn't have the buff at all.
-        // This is not necessarily an error.
-    }
-    return buffs;
-}
 
 /** A spells damage multiplier. It's base damage is directly multiplied by anything the function returns.
  * @schism 25% damage buff to primary target if Schism debuff is active.
@@ -271,13 +247,6 @@ const getHealingMult = (buffs, t, spellName, talents) => {
     else return 1;
 }
 
-/** Check if a specific buff is active. Buffs are removed when they expire so this is active buffs only.
- * @param buffs An array of buff objects.
- * @param buffName The name of the buff we're searching for.
- */
-const checkBuffActive = (buffs, buffName) => {
-    return buffs.filter(function (buff) {return buff.name === buffName}).length > 0;
-}
 
 /**
  * The number of atonements currently active. These are stored separately from regular buffs for speed and to separate them from buffs on the active player.
@@ -296,54 +265,6 @@ const getActiveAtone = (atoneApp, timer) => {
 }
 
 
-/**
- * Returns a spells stat multiplier based on which stats it scales with.
- * @param {*} statArray A characters current stats including any active buffs.
- * @param {*} stats The secondary stats a spell scales with. Pulled from it's SpellDB entry.
- * @returns An effective multiplier. For a spell that scales with both crit and vers this would just be crit x vers.
- */
-const getStatMult = (currentStats, stats) => {
-    let mult = 1;
-    
-    const critChance = 0.05 + currentStats['crit'] / 35 / 100;
-    if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / 40 / 100);
-    if (stats.includes("crit")) mult *= (discSettings.critMult * critChance + (1 - critChance)); // TODO: Re-enable
-    if (stats.includes("mastery")) mult *= (1.108 + currentStats['mastery'] / 25.9259 / 100);
-    return mult;
-}
-
-/**
- * Get our players active stats. This is made up of our base stats + any buffs. 
- * Diminishing returns is not in play in this function.
- * @param {} statArray Our active stats.
- * @param {*} buffs Our active buffs.
- * @returns 
- */
-const getCurrentStats = (statArray, buffs) => {
-    const statBuffs = buffs.filter(function (buff) {return buff.buffType === "stats"});
-    statBuffs.forEach(buff => {
-        statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
-    });
-
-    statArray = applyDiminishingReturns(statArray);
-
-    // Check for percentage stat increases which are applied post-DR.
-    // Examples include Power Infusion and the crit portion of Shadow Word: Manipulation.
-    const multBuffs = buffs.filter(function (buff) {return buff.buffType === "statsMult"});
-    multBuffs.forEach(buff => {
-        // Multiplicative Haste buffs need some extra code as they are increased by the amount of haste you already have.
-        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / 32 / 100 + 1) * buff.value)-1) * 32 * 100;
-        else statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
-    });
-
-    return statArray;
-}
-
-// Returns the players current haste percentage. 
-const getHaste = (stats) => {
-    return 1 + stats.haste / 32 / 100;
-}
-
 // Current atonement transfer rate.
 // Diminishing returns are taken care of in the getCurrentStats function and so the number passed 
 // to this function can be considered post-DR.
@@ -354,17 +275,6 @@ const getAtoneTrans = (mastery) => {
 
 const getSqrt = (targets) => {
     return Math.sqrt(targets);
-}
-
-/**
- * Get a spells raw damage or healing. This is made up of it's coefficient, our intellect, and any secondary stats it scales with.
- * We'll take care of multipliers like Schism and Sins in another function.
- * @param {object} spell The spell being cast. Spell data is pulled from DiscSpellDB. 
- * @param {object} currentStats A players current stats, including any buffs.
- * @returns The raw damage or healing of the spell.
- */
-export const getSpellRaw = (spell, currentStats) => {
-    return spell.coeff * currentStats.intellect * getStatMult(currentStats, spell.secondaries); // Multiply our spell coefficient by int and secondaries.
 }
 
 // This function is for time reporting. It just rounds the number to something easier to read. It's not a factor in any results.
@@ -410,7 +320,7 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
  */
 export const runCastSequence = (sequence, stats, settings = {}, talents = {}) => {
     //console.log("Running cast sequence");
-    let state = {t: 0, activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true}
+    let state = {t: 0, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true}
 
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0;

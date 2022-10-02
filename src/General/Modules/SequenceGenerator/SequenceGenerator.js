@@ -56,7 +56,7 @@ const getSpellDB = (spec) => {
 
 const getTalentDB = (spec) => {
   if (spec === "Preservation Evoker") return evokerTalents;
-  if (spec === "Discipline Priest") return null;
+  if (spec === "Discipline Priest") return discTalents;
   if (spec === "Restoration Shaman") return null;
 }
 

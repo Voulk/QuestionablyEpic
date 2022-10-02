@@ -295,7 +295,6 @@ export const evokerTalents = {
     stasis: {points: 0, maxPoints: 1, icon: "", id: 0, select: false},
     cycleOfLife: {points: 0, maxPoints: 1, icon: "spell_lifegivingseed", id: 371871, select: true}, // Emerald Blossom leaves behind a sprout that absorbs 10% of healing over 15 seconds.
 
-
     rescue: {points: 0, maxPoints: 1, icon: "ability_evoker_rescue", id: 360995, select: false},
 
     naturalConvergence: {points: 0, maxPoints: 1, icon: "spell_frost_frostblast", id: 369913, select: true}, // Disintegrate channels 20% faster.
