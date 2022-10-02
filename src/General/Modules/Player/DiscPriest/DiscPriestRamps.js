@@ -8,11 +8,21 @@ import { addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste,
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
     chaosBrand: true,
-    critMult: 2
+    critMult: 2,
+
+    aegisOfWrathWastage: 0.06 // Consumed within 2 seconds on average.
 }
 
 const DISCCONSTANTS = {
     masteryMod: 1.35,
+    masteryEfficiency: 1,
+
+    auraHealingBuff: 1, 
+    auraDamageBuff: 0.94,
+    
+    enemyTargets: 1, 
+    sins: {0: 1.12, 1: 1.12, 2: 1.1, 3: 1.08, 4: 1.07, 5: 1.06, 6: 1.05, 7: 1.05, 8: 1.04, 9: 1.04, 10: 1.03}
+
 }
 
 /**
@@ -47,56 +57,85 @@ const DISCCONSTANTS = {
 
     // ==== Talents ====
     // Not all talents just make base modifications to spells, but those that do can be handled here.
-    if (talents.improvedSmite) discSpells['Smite'][0].coeff *= (1 + 0.25 * talents.improvedSmite);
-    if (talents.rabidShadows) discSpells['Mindbender'][1].tickRate /= (1 + 0.05 * talents.rabidShadows); // Note that Shadowfiend is not buffed since Mindbender is a pre-req.
-    if (talents.puppetMaster) { discSpells['Mindbender'].push(
-        // This is technically accurate, but will make implementing Shadowflame Prism a pain. We'll remake it to use the Mindbender's expiry event to remove the buff instead.
-        {
-            type: "buff",
-            castTime: 0,
-            cost: 0,
-            cooldown: 0,
-            buffType: 'stats',
-            stat: 'mastery',
-            value: (talents.puppetMaster * 150), // 
-            buffDuration: 12,
-        }
-    ) };
 
     if (talents.throesOfPain) {
         // ASSUMPTION: Throes of Pain should work on both DoTs but let's double check anyway.
-        discSpells['Shadow Word: Pain'][0].coeff *= (1 + 0.1 * talents.throesOfPain);
-        discSpells['Purge the Wicked'][0].coeff *= (1 + 0.1 * talents.throesOfPain);
+        discSpells['Shadow Word: Pain'][0].coeff *= (1 + 0.03 * talents.throesOfPain);
+        discSpells['Purge the Wicked'][0].coeff *= (1 + 0.03 * talents.throesOfPain);
     }
-
-    if (talents.swiftPenitence) discSpells['Penance'].push({
-        name: "Swift Penitence",
-        type: "buff",
-        value: 1 + (0.1 * talents.swiftPenitence),
-        castTime: 0,
-        expiration: 999,
-        cost: 0,
-        cooldown: 0,
-        buffType: 'special',
-    })
 
     // Disc specific talents.
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
 
-    if (talents.shiningRadiance) discSpells['Power Word: Radiance'][0].coeff *= (1 + 0.1 * talents.shiningRadiance);
-    if (talents.indemnity) discSpells['Power Word: Shield'][0].atonement += 2;
-    if (talents.solatium) discSpells['Shadow Mend'][0].atonement += 2;
-    if (talents.castigation) discSpells['Penance'][0].bolts += 1;
+    // Tier 1 talents
+    if (talents.indemnity) discSpells['Power Word: Shield'][0].atonement += 3;
+
+
+
+    if (talents.maliciousIntent) discSpells['Schism'][1].buffDuration += 3;
+
+
+
+    // Tier 2 talents
     if (talents.revelInPurity) {
-        discSpells['Purge the Wicked'][0].coeff *= (1 + 0.1 * talents.revelInPurity);
-        discSpells['Purge the Wicked'][1].coeff *= (1 + 0.1 * talents.revelInPurity);
+        discSpells['Purge the Wicked'][0].coeff *= (1 + 0.05 * talents.revelInPurity);
+        discSpells['Purge the Wicked'][1].coeff *= (1 + 0.05 * talents.revelInPurity);
     }
     if (talents.exaltation) {
-        discSpells['Rapture'][0].coeff *= 1.075;
-        discSpells['Rapture'][1].buffDuration += 1;
+        discSpells['Rapture'][1].buffDuration += 3;
     }
-    if (talents.maliciousScission) discSpells['Schism'][1].buffDuration *= 1.5;
-    if (talents.stolenPsyche) discSpells['Mind Blast'][0].atonementBonus = (1 + 0.1 * talents.stolenPsyche);
+    if (talents.painAndSuffering) {
+        // ASSUMPTION: Throes of Pain should work on both DoTs but let's double check anyway.
+        discSpells['Shadow Word: Pain'][0].coeff *= (1 + 0.075 * talents.painAndSuffering);
+        discSpells['Purge the Wicked'][0].coeff *= (1 + 0.075 * talents.painAndSuffering);
+    }
+    if (talents.borrowedTime) {
+
+    }
+    if (talents.castigation) discSpells['Penance'][0].bolts += 1;
+    if (talents.stolenPsyche) discSpells['Mind Blast'][0].atonementBonus = (1 + 0.2 * talents.stolenPsyche);
+
+    // Tier 3 talents
+    if (talents.trainOfThought) {
+
+    }
+    if (talents.divineAegis) {
+        // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
+
+    }
+    if (talents.sinsOfTheMany) {
+        DISCCONSTANTS.sins = {0: 1.12, 1: 1.12, 2: 1.1, 3: 1.08, 4: 1.07, 5: 1.06, 6: 1.05, 7: 1.05, 8: 1.04, 9: 1.04, 10: 1.03};
+        // TODO: add 1 point
+    }
+    if (talents.resplendentLight) {
+        // Add to a special multiplier.
+    }
+    if (talents.wrathUnleashed) {
+        discSpells["Light's Wrath"][0].castTime -= 1;
+        discSpells["Light's Wrath"][0].critMod = 0.15;
+        // TODO: Add Smite buff
+    }
+    if (talents.harshDiscipline) {
+        // Can probably just add a buff on sequence start for the first Penance.
+    }
+    if (talents.expiation) {
+        discSpells["Mindblast"][0].coeff *= 1.1;
+        discSpells["Shadow Word: Death"][0].coeff *= 1.1;
+        // TODO: Add special function to Mindblast / SWD spell that consumes SWP
+    }
+    if (talents.twilightEquilibrium) {
+
+    }
+    if (talents.inescapableTorment) {
+        // TODO: Add two spell components, an AoE damage spell and a Shadowfiend / Mindbender duration increase function spell component.
+    }
+    if (talents.aegisOfWrath) {
+        discSpells["Power Word: Shield"][0].coeff *= 1.5 * (1 - discSettings.aegisOfWrathWastage);
+    }
+    if (talents.makeAmends) {
+
+    }
+
 
     // ==== Legendaries ====
     // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
@@ -288,10 +327,13 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     const currentStats = state.currentStats;
 
     const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.talents); 
-    const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets;
-    const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.overheal) * healingMult * targetMult;
+    const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets) || 1;
+    const healingVal = getSpellRaw(spell, currentStats, DISCCONSTANTS) * (1 - spell.overheal) * healingMult * targetMult;
     
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
+
+    if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.overheal * 100}%)`)
+    else addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.overheal * 100}%)`)
 
 }
 
@@ -299,12 +341,13 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
 
     const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
     const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, spellName, state.talents); // Get our damage multiplier (Schism, Sins etc);
-    const damageVal = getSpellRaw(spell, state.currentStats) * damMultiplier;
-    const atonementHealing = activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * (1 - spell.atoneOverheal) * (spell.atonementBonus || 1)
+    const damageVal = getSpellRaw(spell, state.currentStats, DISCCONSTANTS) * damMultiplier;
+    const atonementHealing = Math.round(activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * (1 - spell.atoneOverheal) * (spell.atonementBonus || 1))
     // This is stat tracking, the atonement healing will be returned as part of our result.
     state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
 
+    addReport(state, `${spellName} dealt ${Math.round(damageVal)} damage (${atonementHealing} atone)`)
     //if (state.reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
 }
 
@@ -318,9 +361,16 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
  * @param {object} conduits Any conduits we want to include. The conduits object is made up of {ConduitName: ConduitLevel} pairs where the conduit level is an item level rather than a rank.
  * @returns The expected healing of the full ramp.
  */
-export const runCastSequence = (sequence, stats, settings = {}, talents = {}) => {
+export const runCastSequence = (sequence, stats, settings = {}, incTalents = {}) => {
     //console.log("Running cast sequence");
+    const talents = {};
+    for (const [key, value] of Object.entries(incTalents)) {
+        talents[key] = value.points;
+    }
+
     let state = {t: 0, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true}
+
+
 
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0;
@@ -351,11 +401,11 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
 
                 if (buff.buffType === "heal") {
                     const spell = buff.attSpell;
-                    runHeal(state, spell, buff.name)
+                    runHeal(state, spell, buff.name + " (hot)")
                 }
                 else if (buff.buffType === "damage") {
                     const spell = buff.attSpell;
-                    runDamage(state, spell, buff.name, atonementApp)
+                    runDamage(state, spell, buff.name + " (dot)", atonementApp)
                 }
                 else if (buff.buffType === "function") {
                     const func = buff.attFunction;
@@ -376,8 +426,8 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
             const spell = buff.attSpell;
             spell.coeff = spell.coeff * partialTickPercentage;
             
-            if (buff.buffType === "damage") runDamage(state, spell, buff.name, atonementApp);
-            else if (buff.buffType === "heal") runHeal(state, spell, buff.name)
+            if (buff.buffType === "damage") runDamage(state, spell, buff.name + " (dot)", atonementApp);
+            else if (buff.buffType === "heal") runHeal(state, spell, buff.name + " (hot)")
         })
 
         // Remove any buffs that have expired. Note that we call this after we handle partial ticks. 
@@ -442,7 +492,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
                             tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
 
                         newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
-                                
+                        console.log(newBuff);
                         state.activeBuffs.push(newBuff)
 
                     }

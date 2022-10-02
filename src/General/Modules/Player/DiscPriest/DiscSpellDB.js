@@ -162,21 +162,23 @@ export const DISCSPELLS = {
         coeff: 2.8,
         aura: 1,
         cooldown: 7.5,
+        atonement: 15,
+        atonementPos: 'start',
         targets: 1,
         secondaries: ['crit', 'vers'],
         overheal: 0,
     }],
     "Renew": [{
+        // To check: See if Renew still has an initial heal, and confirm whether it gets a mastery buff (unlikely).
         spellData: {id: 139, icon: "spell_holy_renew", cat: "heal"},
         type: "heal",
         castTime: 1.5,
         cost: 900,
-        aura: 1,
         coeff: 0.32,
         atonement: 15,
         atonementPos: 'start',
-        secondaries: ['crit', 'vers', 'mastery'],
-        atoneOverheal: 0.15,
+        secondaries: ['crit', 'vers'],
+        overheal: 0.5,
     },
     {
         castTime: 0,
@@ -184,8 +186,9 @@ export const DISCSPELLS = {
         buffType: "heal",
         coeff: 0.32, // 
         tickRate: 3,
+        targets: 1,
         buffDuration: 15,
-        atoneOverheal: 0.15,
+        overheal: 0.45,
         secondaries: ['crit', 'vers', 'mastery'], // + Haste
         canPartialTick: true,
     }],

@@ -16,9 +16,13 @@
  * @param {*} specialSpells Special spells are those that can change our ramp in some way. Rapture is the most prominent current example.
  * @returns The function returns a sequence of spells (which might include trinket uses).
  */
-export const buildRamp = (type, applicators, trinkets, haste, playstyle, talents) => {
+export const buildRamp = (type, applicators, trinkets, haste, playstyle, incTalents) => {
     //const talents = ['Power Word: Solace', 'Divine Star']
-
+    const trinketList = []
+    const talents = {};
+    for (const [key, value] of Object.entries(incTalents)) {
+        talents[key] = value.points;
+    }
 
     if (type === "Mini") {
         return buildMiniRamp(applicators, trinkets, playstyle, talents);
@@ -124,10 +128,10 @@ export const buildFiendRamp = (applicators, trinket, playstyle, talents) => {
     
     // Shadowed Orb lasts a very long time so if we're using it we're safe to use it at the start of our ramp (or before).
     //if (trinket === "Shadowed Orb of Torment") sequence.push("Shadowed Orb");
-    if (talents.rapture) {sequence.push('Rapture'); applicators -= 1 };
+    //if (talents.rapture) {sequence.push('Rapture'); applicators -= 1 };
     for (var x = 0; x < applicators; x++) {
         // Power Word: Shield can also be swapped out for Shadow Mend on non-Rapture ramps.
-        sequence.push('Power Word: Shield');
+        sequence.push('Renew');
     }
 
     if (talents.mindbender) sequence.push('Mindbender');

@@ -68,14 +68,10 @@ const getSequence = (spec) => {
   if (spec === "Restoration Shaman") return shamanSequence;
 };
 
-const dpsSpells = Object.keys(EVOKERSPELLDB).filter((spell) => EVOKERSPELLDB[spell][0].type === "damage");
-const healSpells = Object.keys(EVOKERSPELLDB).filter((spell) => EVOKERSPELLDB[spell][0].type === "heal" || spell === "Reversion");
 
 export default function SequenceGenerator(props) {
   const selectedSpec = props.player.getSpec();
   const spellDB = getSpellDB(selectedSpec);
-
-
 
   const spellCategories = ["Healing", "Damage", "Cooldowns & Other"];
 
