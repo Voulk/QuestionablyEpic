@@ -20,7 +20,6 @@ const EVOKERCONSTANTS = {
     masteryEfficiency: 0.88, 
     baseMana: 10000,
 
-    //CBT: {transferRate: 0.3, expectedOverhealing: 0.25},
     defaultEmpower: 3,
     auraHealingBuff: 0.6, 
     auraDamageBuff: 1.15, 
@@ -558,6 +557,28 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
     }); 
 }
 
+const getSpellCastTime = (spell, state, currentStats) => {
+    if ('castTime' in spell) {
+        let castTime = spell.castTime;
+
+        if (spell.empowered) {
+            // Empowered spells don't currently scale with haste.
+            if (checkBuffActive(state.activeBuffs, "Temporal Compression")) {
+                const buffStacks = getBuffStacks(state.activeBuffs, "Temporal Compression")
+                castTime *= (1 - 0.05 * buffStacks)
+                if (buffStacks === 4) triggerTemporal(state);
+            }
+
+            return castTime / getHaste(currentStats); // Empowered spells do scale with haste.
+
+        } 
+
+        else if (castTime === 0 && spell.onGCD === true) return 0; //return 1.5 / getHaste(currentStats);
+        else return castTime / getHaste(currentStats);
+    }
+    else console.log("CAST TIME ERROR. Spell: " + spellName);
+}
+
 /**
  * Run a full cast sequence. This is where most of the work happens. It runs through a short ramp cycle in order to compare the impact of different trinkets, soulbinds, stat loadouts,
  * talent configurations and more. Any effects missing can be easily included where necessary or desired.
@@ -588,7 +609,9 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     const sequenceLength = 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Manual" // Auto / Manual.
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
-    let nextSpell = 0;
+    let nextSpell = 0; // The time when the next spell cast can begin.
+    let spellFinish = 0; // The time when the cast will finish. HoTs / DoTs can continue while this charges.
+    let queuedSpell = "";
     const startTime = performance.now();
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
@@ -677,19 +700,50 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
         // This is a check of the current time stamp against the tick our GCD ends and we can begin our queued spell.
         // It'll also auto-cast Ascended Eruption if Boon expired.
-        if ((state.t > nextSpell && seq.length > 0))  {
+
+
+        // Check if there is an ongoing cast and if there is, check if it's ended.
+        // Check if the next spell is able to be cast, and if so, queue it.
+
+        // If instant and on GCD: spellFinish = state.t, nextSpell = gcd / haste
+        // If instant and off GCD: spellFinish = state.t, nextSpell = state.t + 0.01
+        // If casted: spellFinish = state.t + castTime, nextSpell = state.t + 0.01
+
+        if (seq.length > 0 && (state.t > nextSpell)) {
+            // We don't have a spell queued. Queue one.
 
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
             let currentStats = {...stats};
             state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
 
+            if (seqType === "Manual") queuedSpell = seq.shift();
+            else queuedSpell = genSpell(state, evokerSpells);
+    
+            const fullSpell = evokerSpells[queuedSpell];
+            const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
+            spellFinish = state.t + castTime - 0.01;
+            if (fullSpell[0].castTime = 0) nextSpell += state.t + 1.5 / getHaste(currentStats);
+            else nextSpell += state.t + castTime;
 
-            let spellName = "";
-            if (seqType === "Manual") spellName = seq.shift();
-            else spellName = genSpell(state, evokerSpells);
+            console.log("Queing " + queuedSpell + ". Next: " + nextSpell + ".Curr: " + state.t);
+            
 
-            const fullSpell = evokerSpells[spellName];
+        }
+        if (queuedSpell !== "" && state.t >= spellFinish) {
+            console.log("Beginning Queued cast" + queuedSpell);
+            // We have a queued spell, check if it's finished.
+            // Instant spells should proc this immediately.
+
+
+            // Update current stats for this combat tick.
+            // Effectively base stats + any current stat buffs.
+            let currentStats = {...stats};
+            state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
+
+            const spellName = queuedSpell;
+            const fullSpell = evokerSpells[queuedSpell];
+
 
             // We'll iterate through the different effects the spell has.
             // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,
@@ -719,28 +773,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                 state.activeBuffs =  state.activeBuffs.filter(function (buff) {return buff.name !== "Echo"})
 
             }
- 
 
-            if ('castTime' in fullSpell[0]) {
-                let castTime = fullSpell[0].castTime;
-
-                if (fullSpell[0].empowered) {
-                    // Empowered spells don't currently scale with haste.
-                    if (checkBuffActive(state.activeBuffs, "Temporal Compression")) {
-                        const buffStacks = getBuffStacks(state.activeBuffs, "Temporal Compression")
-                        castTime *= (1 - 0.05 * buffStacks)
-                        if (buffStacks === 4) triggerTemporal(state);
-                    }
-
-                    nextSpell += castTime / getHaste(currentStats); // Empowered spells do scale with haste.
-
-                } 
-
-                else if (castTime === 0 && fullSpell.onGCD === true) nextSpell += 1.5 / getHaste(currentStats);
-                else nextSpell += (castTime / getHaste(currentStats));
-            }
-            else console.log("CAST TIME ERROR. Spell: " + spellName);
-            
+            // Cleanup
+            queuedSpell = "";
+            spellFinish = 0;
         }
     }
 

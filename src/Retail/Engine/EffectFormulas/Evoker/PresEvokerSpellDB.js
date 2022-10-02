@@ -145,7 +145,7 @@ export const EVOKERSPELLDB = {
         buffType: "function",
         school: "bronze",
         tickRate: 2,
-        castTime: 1.5,
+        castTime: 0,
         coeff: 0.57 * 0.67,
         cost: 2.0,
         buffDuration: 12,
