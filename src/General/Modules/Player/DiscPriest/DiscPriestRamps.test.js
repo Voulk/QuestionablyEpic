@@ -111,6 +111,11 @@ describe("Evang Cast Sequence", () => {
         console.log(name + ": " + healing + " (+" + percInc + "%)")
     }
 
+    const runTalents = (talentName, baseline, talents, settings) => {
+        const seq = buildRamp('Primary', 10, [], activeStats.haste, "", talents)
+        print(talentName, baseline, allRampsHealing(seq, activeStats, settings, talents));
+    }
+
 
     test("Test Stuff", () => {
 
@@ -129,8 +134,15 @@ describe("Evang Cast Sequence", () => {
         //const baseline = allRamps(runCastSequence(seq, activeStats, settings, talents).totalHealing)
         console.log("Baseline: " + baseline);
 
-        print("Pain and Suffering", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, painAndSuffering: {...baseTalents.painAndSuffering, points: 1}}));
-        print("Painful Punishment", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, painfulPunishment: {...baseTalents.painfulPunishment, points: 1}}));
+        
+        runTalents("Pain and Suffering", baseline, {...baseTalents, painAndSuffering: {...baseTalents.painAndSuffering, points: 1}}, settings);
+        runTalents("Painful Punishment", baseline, {...baseTalents, painfulPunishment: {...baseTalents.painfulPunishment, points: 1}}, settings);
+        runTalents("Malicious Intent", baseline, {...baseTalents, maliciousIntent: {...baseTalents.maliciousIntent, points: 1}}, settings)
+        runTalents("Stolen Psyche", baseline, {...baseTalents, stolenPsyche: {...baseTalents.stolenPsyche, points: 1}}, settings)
+        /*
+        runTalents("Sins of the Many", baseline, {...baseTalents, sinsOfTheMany: {...baseTalents.sinsOfTheMany, points: 1}}, settings) */
+        //runTalents("Castigation", baseline, {...baseTalents, sinsOfTheMany: {...baseTalents.sinsOfTheMany, points: 1}}, settings)
+        runTalents("Aegis of Wrath", baseline, {...baseTalents, aegisOfWrath: {...baseTalents.aegisOfWrath, points: 1}}, settings)
 
         /*
         print("PtW / Revel / Lesson in Humi / Evenfall / LW / Indem", baseline, allRampsHealing(seq2, activeStats, settings, {...imprTalents, 

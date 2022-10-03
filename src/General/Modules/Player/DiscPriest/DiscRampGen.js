@@ -24,25 +24,26 @@ export const buildRamp = (type, applicators, trinkets, haste, playstyle, incTale
         talents[key] = value.points;
     }
 
+    // A mini-ramp includes two Radiance charges
     if (type === "Mini") {
         return buildMiniRamp(applicators, trinkets, playstyle, talents);
     }
     else if (type === "Primary") { 
         // With Boon gone, our primary ramp will generally be with Fiend. 
         // The particular label doesn't matter all that much since it's just a way to categorize what we're intending to cast. 
-        return buildFiendRamp(applicators, trinketList['Fiend'], playstyle, talents); 
+        return buildEvangRamp(applicators, trinketList['Fiend'], playstyle, talents, ["Shadowfiend"]); 
     }
     else if (type === "Secondary") {
-        // Our second Evang or Spirit Shell ramp. If we're running Fiend it won't be in here, but Mindbender might.
-        // Change Note: In Shadowlands Fiend was considered a secondary ramp to Boons primary ramp. 
-        if (playstyle === "Evangelism") {
-            return buildBoonEvangRamp(applicators, trinketList['Boon'], haste, talents); 
-        }
-        else if (playstyle === "Spirit Shell") {
-            return buildBoonShellRamp(applicators, trinketList['Boon'], haste, talents); // Spirit Shell NYI.
-        }
-        // Further ramp types can be added here.
-        
+        // 
+        return buildEvangRamp(applicators, trinketList['Fiend'], playstyle, talents, []); 
+
+        // Further ramp types can be added here. 
+    }
+    else if (type === "RaptureLW") {
+        // 
+        return buildRaptureRamp(applicators, trinketList['Fiend'], playstyle, talents, ["Light's Wrath"]); 
+
+        // Further ramp types can be added here. 
     }
     else {
         console.error("Invalid Ramp");
@@ -79,20 +80,66 @@ const buildTrinkets = (trinkets) => {
  * @param {*} playstyle Our current playstyle. Setting playstyle to Venthyr will include Mindgames in the mini-ramp.
  * @returns Returns a sequence of spells representing a mini ramp.
  */
-export const buildMiniRamp = (applicators, trinkets, playstyle, talents) => {
+export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) => {
     let sequence = [];
-    
+    let t = 0;
+
     if (talents.purgeTheWicked) sequence.push('Purge the Wicked');
     else sequence.push('Shadow Word: Pain');
 
     for (var x = 0; x < applicators; x++) {
-        sequence.push('Renew');
+        if (x % 4 === 0) sequence.push('Power Word: Shield')
+        else sequence.push('Renew');
     }
 
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
     sequence.push('Schism');
     if (talents.mindgames) sequence.push("Mindgames");
+    sequence.push('Penance');
+    sequence.push('Mind Blast');
+    if (talents.powerWordSolace) sequence.push('Power Word: Solace');
+    else sequence.push("Smite");
+    if (talents.divineStar) sequence.push("Divine Star");
+
+    for (var i = 0; i < 3; i++) {
+        sequence.push('Smite');
+    }
+    sequence.push('Penance');
+
+    for (var i = 0; i < 6; i++) {
+        // The number of smites here is adjustable but also not very important outside of DPS metrics. 
+        sequence.push('Smite');
+    }
+    return sequence;
+}
+
+/**
+ * A mini ramp. We'll try and include one of these in between every Evang / Shell ramp.
+ * Venthyr can add Mindgames here, whereas for Kyrian it's just Applicators -> Double Rad -> Schism -> DPS spells.
+ * @param {*} applicators The number of single target atonement applicators. Configurable. 
+ * @param {*} trinkets Any trinkets we want to combine with our mini-ramp. Currently unused.
+ * @param {*} specialSpells Any special spells we want to include in our mini-ramp. Currently unused.
+ * @param {*} playstyle Our current playstyle. Setting playstyle to Venthyr will include Mindgames in the mini-ramp.
+ * @returns Returns a sequence of spells representing a mini ramp.
+ */
+ export const buildRaptureRamp = (applicators, trinkets, playstyle, talents, haste) => {
+    let sequence = [];
+    let t = 0;
+
+    if (talents.purgeTheWicked) sequence.push('Purge the Wicked');
+    else sequence.push('Shadow Word: Pain');
+
+    sequence.push("Rapture");
+
+    for (var x = 0; x < applicators; x++) {
+        sequence.push('Power Word: Shield')
+    }
+
+    sequence.push('Power Word: Radiance');
+    sequence.push('Power Word: Radiance');
+    sequence.push('Schism');
+    sequence.push("Light's Wrath")
     sequence.push('Penance');
     sequence.push('Mind Blast');
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
@@ -120,7 +167,7 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents) => {
  * @param {*} playstyle Options: Kyrian Evangelism, Kyrian Spirit Shell, Venthyr Evanglism (coming soon), Venthyr Spirit Shell (coming soon).
  * @returns Returns a sequence of spells representing a Shadowfiend ramp.
  */
-export const buildFiendRamp = (applicators, trinket, playstyle, talents) => {
+export const buildEvangRamp = (applicators, trinket, playstyle, talents, specialSpells = []) => {
     let sequence = []
 
     if (talents.purgeTheWicked) sequence.push('Purge the Wicked');
@@ -134,15 +181,15 @@ export const buildFiendRamp = (applicators, trinket, playstyle, talents) => {
         sequence.push('Renew');
     }
 
-    if (talents.mindbender) sequence.push('Mindbender');
-    else sequence.push('Shadowfiend');
+    if (specialSpells.includes("Shadowfiend")) sequence.push("Shadowfiend");
+    else if (specialSpells.includes("Mindbender")) sequence.push("Mindbender");
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
     sequence.push('Evangelism');
     
     // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     sequence.push('Schism');
-    if (talents.lightsWrath) sequence.push("Light's Wrath");
+    //if (talents.lightsWrath) sequence.push("Light's Wrath");
     if (talents.mindgames) sequence.push('Mindgames');
     sequence.push('Penance');
     sequence.push('Mind Blast');

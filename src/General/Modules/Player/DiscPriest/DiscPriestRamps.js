@@ -21,7 +21,7 @@ const DISCCONSTANTS = {
     auraDamageBuff: 0.94,
     
     enemyTargets: 1, 
-    sins: {0: 1.12, 1: 1.12, 2: 1.1, 3: 1.08, 4: 1.07, 5: 1.06, 6: 1.05, 7: 1.05, 8: 1.04, 9: 1.04, 10: 1.03}
+    sins: {0: 1, 1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1}
 
 }
 
@@ -260,7 +260,7 @@ const extendActiveAtonements = (atoneApp, timer, extension) => {
  * @AscendedEruption A special buff for the Ascended Eruption spell only. The multiplier is equal to 3% (4 with conduit) x the number of Boon stacks accrued.
  */
 const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
-    const sins = {0: 1.12, 1: 1.12, 2: 1.1, 3: 1.08, 4: 1.07, 5: 1.06, 6: 1.05, 7: 1.05, 8: 1.04, 9: 1.04, 10: 1.03}
+    const sins = DISCCONSTANTS.sins;
     let schism = 1;
 
     if (spellName !== "Mindbender" && spellName !== "Shadowfiend") {
@@ -298,8 +298,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
  */
 const getHealingMult = (buffs, t, spellName, talents) => {
     if (spellName === "Power Word: Shield" && checkBuffActive(buffs, "Rapture")) {
-        if (talents.exaltation) return 1 + (2 * 1.075);
-        else return 3;
+        return 1.3;
     }
     else return 1;
 }
