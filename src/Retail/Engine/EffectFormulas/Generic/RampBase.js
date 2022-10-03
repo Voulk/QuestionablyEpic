@@ -54,6 +54,15 @@ export const checkBuffActive = (buffs, buffName) => {
     return buff.stacks || 0;
 }
 
+/**  Extend any buffs named @spellName by @extension seconds. */
+export const extendBuff = (activeBuffs, timer, spellName, extension) => {
+    activeBuffs.forEach((buff) => {
+        if (buff.name === spellName) {
+            buff.expiration += extension;
+        }
+    });
+}
+
 
 /**
  * Returns a spells stat multiplier based on which stats it scales with.

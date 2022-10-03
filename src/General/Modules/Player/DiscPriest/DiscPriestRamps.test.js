@@ -130,7 +130,7 @@ describe("Evang Cast Sequence", () => {
         console.log("Baseline: " + baseline);
 
         print("Pain and Suffering", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, painAndSuffering: {...baseTalents.painAndSuffering, points: 1}}));
-        print("Pain and Suffering", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, painAndSuffering: {...baseTalents.painAndSuffering, points: 1}}));
+        print("Painful Punishment", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, painfulPunishment: {...baseTalents.painfulPunishment, points: 1}}));
 
         /*
         print("PtW / Revel / Lesson in Humi / Evenfall / LW / Indem", baseline, allRampsHealing(seq2, activeStats, settings, {...imprTalents, 

@@ -3,7 +3,7 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth } from "Retail/Engine/EffectFormulas/Generic/RampBase";
+import { addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth, extendBuff } from "Retail/Engine/EffectFormulas/Generic/RampBase";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
@@ -71,10 +71,21 @@ const DISCCONSTANTS = {
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
 
     // Tier 1 talents
-    if (talents.indemnity) discSpells['Power Word: Shield'][0].atonement += 3;
 
+    if (talents.painfulPunishment) {
+        // Add a DoT extension to PenanceTick
+        discSpells['PenanceTick'].push({
+            type: "buffExtension",
+            buffName: "Shadow Word: Pain",
 
-
+            extension: 0.7,
+        },
+        {
+            type: "buffExtension",
+            buffName: "Purge the Wicked",
+            extension: 0.7,
+    })
+    }
     if (talents.maliciousIntent) discSpells['Schism'][1].buffDuration += 3;
 
 
@@ -97,6 +108,7 @@ const DISCCONSTANTS = {
     if (talents.borrowedTime) {
 
     }
+    if (talents.indemnity) discSpells['Power Word: Shield'][0].atonement += 3;
     if (talents.castigation) discSpells['Penance'][0].bolts += 1;
     if (talents.stolenPsyche) discSpells['Mind Blast'][0].atonementBonus = (1 + 0.2 * talents.stolenPsyche);
 
@@ -238,6 +250,7 @@ const extendActiveAtonements = (atoneApp, timer, extension) => {
         };
     });
 }
+
 
 
 /** A spells damage multiplier. It's base damage is directly multiplied by anything the function returns.
@@ -482,6 +495,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                 // The spell extends atonements already active. This is specific to Evanglism. 
                 else if (spell.type === "atonementExtension") {
                     extendActiveAtonements(atonementApp, state.t, spell.extension);
+                }
+                // The spell extends atonements already active. This is specific to Evanglism. 
+                else if (spell.type === "buffExtension") {
+                    extendBuff(state.activeBuffs, state.t, spell.buffName, spell.extension);
                 }
 
                 // The spell adds a buff to our player.
