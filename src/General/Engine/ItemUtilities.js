@@ -398,6 +398,9 @@ export function buildWepCombos(player, active = false, equipped = false) {
         item.offHandLevel = off_hand.level;
         item.mainHandTertiary = main_hand.tertiary;
         item.offHandTertiary = off_hand.tertiary;
+        item.mainHandUniqueHash = main_hand.uniqueHash;
+        item.offHandUniqueHash = off_hand.uniqueHash;
+
         // For future perhaps
         // item.mainHandSocket = main_Hand.socket
         // item.offHandSocket = off_Hand.socket
