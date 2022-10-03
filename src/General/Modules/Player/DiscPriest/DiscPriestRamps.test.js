@@ -143,6 +143,9 @@ describe("Evang Cast Sequence", () => {
         runTalents("Sins of the Many", baseline, {...baseTalents, sinsOfTheMany: {...baseTalents.sinsOfTheMany, points: 1}}, settings) */
         //runTalents("Castigation", baseline, {...baseTalents, sinsOfTheMany: {...baseTalents.sinsOfTheMany, points: 1}}, settings)
         runTalents("Aegis of Wrath", baseline, {...baseTalents, aegisOfWrath: {...baseTalents.aegisOfWrath, points: 1}}, settings)
+        runTalents("Resplendent Light", baseline, {...baseTalents, resplendentLight: {...baseTalents.resplendentLight, points: 1}}, settings)
+        runTalents("Wrath Unleashed", baseline, {...baseTalents, wrathUnleashed: {...baseTalents.wrathUnleashed, points: 1}}, settings)
+        runTalents("Divine Aegis", baseline, {...baseTalents, divineAegis: {...baseTalents.divineAegis, points: 1}}, settings)
 
         /*
         print("PtW / Revel / Lesson in Humi / Evenfall / LW / Indem", baseline, allRampsHealing(seq2, activeStats, settings, {...imprTalents, 

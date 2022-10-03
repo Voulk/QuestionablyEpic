@@ -97,6 +97,7 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) 
     sequence.push('Schism');
     if (talents.mindgames) sequence.push("Mindgames");
     sequence.push('Penance');
+    sequence.push('Shadow Word: Death');
     sequence.push('Mind Blast');
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
     else sequence.push("Smite");
@@ -141,6 +142,7 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) 
     sequence.push('Schism');
     sequence.push("Light's Wrath")
     sequence.push('Penance');
+    sequence.push('Shadow Word: Death');
     sequence.push('Mind Blast');
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
     else sequence.push("Smite");
@@ -192,6 +194,7 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     //if (talents.lightsWrath) sequence.push("Light's Wrath");
     if (talents.mindgames) sequence.push('Mindgames');
     sequence.push('Penance');
+    sequence.push('Shadow Word: Death');
     sequence.push('Mind Blast');
     if (talents.divineStar) sequence.push("Divine Star");
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');

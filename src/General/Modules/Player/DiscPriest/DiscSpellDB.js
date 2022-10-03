@@ -87,7 +87,7 @@ export const DISCSPELLS = {
         atoneOverheal: 0.29,
         secondaries: ['crit', 'vers']
     },
-    {
+    { // ?
         type: "heal",
         castTime: 0,
         coeff: 3,
@@ -105,6 +105,17 @@ export const DISCSPELLS = {
         cooldown: 15,
         atoneOverheal: 0.3,
         school: "holy",
+        secondaries: ['crit', 'vers']
+    }],
+    "Shadow Word: Death": [{
+        spellData: {id: 32379, icon: "spell_shadow_demonicfortitude", cat: "damage"},
+        type: "damage",
+        castTime: 1.5,
+        cost: 0,
+        coeff: 0.85,
+        cooldown: 9,
+        atoneOverheal: 0.25,
+        school: "shadow",
         secondaries: ['crit', 'vers']
     }],
     "Light's Wrath": [{

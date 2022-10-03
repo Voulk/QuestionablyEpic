@@ -34,7 +34,7 @@ const DISCCONSTANTS = {
  * @param {*} talents The talents run in the current set.
  * @returns An updated spell database with any of the above changes made.
  */
- const applyLoadoutEffects = (discSpells, settings, talents, state) => {
+ const applyLoadoutEffects = (discSpells, settings, talents, state, stats) => {
 
     // ==== Default Loadout ====
     // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout
@@ -118,14 +118,12 @@ const DISCCONSTANTS = {
     }
     if (talents.divineAegis) {
         // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
+        stats.critMult *= (1 + 0.15 * talents.divineAegis);
 
     }
     if (talents.sinsOfTheMany) {
         DISCCONSTANTS.sins = {0: 1.12, 1: 1.12, 2: 1.1, 3: 1.08, 4: 1.07, 5: 1.06, 6: 1.05, 7: 1.05, 8: 1.04, 9: 1.04, 10: 1.03};
         // TODO: add 1 point
-    }
-    if (talents.resplendentLight) {
-        // Add to a special multiplier.
     }
     if (talents.wrathUnleashed) {
         discSpells["Light's Wrath"][0].castTime -= 1;
@@ -267,7 +265,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
         schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.25 : 1; 
     }
     
-    let mult = (activeAtones > 10 ? 1.03 : sins[activeAtones]) * schism
+    let mult = (activeAtones > 10 ? sins['10'] : sins[activeAtones]) * schism
     //console.log("Spell: " + spellName + ". Mult: " + mult);
     if (discSettings.chaosBrand) mult = mult * 1.05;
     if (spellName === "PenanceTick") {
@@ -285,10 +283,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
             state.activeBuffs = removeBuffStack(state.activeBuffs, "Swift Penitence")
         }
     }
-    else if (spellName === "Smite" && talents.lessonInHumility) {
-        if (activeAtones >= 3) mult *= (1 + talents.lessonInHumility * 0.1);
-    }
-    else if (spellName === "Light's Wrath") mult *= (1 + 0.1 * activeAtones);
+    else if (spellName === "Light's Wrath") mult *= (1 + (0.1 + talents.resplendentLight * 0.02) * activeAtones);
     return mult; 
 }
 
@@ -395,7 +390,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
-    const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, talents, state);
+    const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, talents, state, stats);
 
     const seq = [...sequence];
     const sequenceLength = 45; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
@@ -534,13 +529,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                 }
 
                 // These are special exceptions where we need to write something special that can't be as easily generalized.
-
-                // TODO: Schism was written early in the app, but can just be converted to a regular buff effect for code cleanliness.
-                else if (spellName === "Schism") {
-                    // Add the Schism buff. 
-                    //state.activeBuffs.push({name: "Schism", expiration: state.t + spell.castTime + spell.buffDuration});
-                }
-
                 // Penance will queue either 3 or 6 ticks depending on if we have a Penitent One proc or not. 
                 // These ticks are queued at the front of our array and will take place immediately. 
                 // This can be remade to work with any given number of ticks.
