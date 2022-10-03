@@ -8,6 +8,8 @@ import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
+
+/*
 describe("Test Base Spells", () => {
     const errorMargin = 1.1; // There's often some blizzard rounding hijinx in spells. If our formulas are within 1 (a fraction of a percent) then we are likely calculating it correctly.
     const activeStats = {
@@ -60,7 +62,7 @@ describe("Test Base Spells", () => {
     });
 
     // TODO: test more spells.
-});
+}); */
 
 describe("Evang Cast Sequence", () => {
     //const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
@@ -73,13 +75,15 @@ describe("Evang Cast Sequence", () => {
             stamina: 1900,
     } */
     const activeStats = {
-        intellect: 1950,
-        haste: 900,
-        crit: 650,
-        mastery: 400,
-        versatility: 400,
-        stamina: 0,
-}
+        intellect: 5605,
+        haste: 2353,
+        crit: 1523,
+        mastery: 188,
+        versatility: 1017,
+        stamina: 6559,
+    
+        critMult: 1,
+      };
     
     // Old Sequences
     //const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Kyrian Evangelism", ['Rapture'])
@@ -88,57 +92,7 @@ describe("Evang Cast Sequence", () => {
     //const evangSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Venthyr Evangelism", ['Rapture'])
 
 
-    const imprTalents = {
-        // Priest class tree
-        improvedSmite: 2,
-        mindRestrain: 0, // NYI. Requires Alpha. Mind Blast SL absorb just left in for now.
-        throesOfPain: 2,
-        puppetMaster: 2,
-        improvedShadowfiend: true,
-        mindbender: true,
-        rabidShadows: 2,
-
-        mindgames: true,
-
-
-        // Disc spec tree
-        // Tier 1
-        shiningRadiance: 0,
-        shieldDiscipline: false,
-        powerWordSolace: false,
-        maliciousScission: false,
-
-        // Tier 2
-        contrition: 2,
-        purgeTheWicked: true,
-        darkIndulgence: 2,
-        revelInPurity: 0,
-        castigation: 1,
-        rapture: true,
-        sinsOfTheMany: 2,
-        shadowCovenant: 0,
-        embraceShadow: 0,
-        maliciousScission: false,
-        swiftPenitence: 0,
-
-        // Tier 3
-        evangelism: true,
-        spiritShell: false,
-        exaltation: false, // lol
-        divineStar: false,
-        halo: false,
-        evenfall: 0,
-        lessonInHumility: 0,
-        lenience: 0,
-        twilightEmpowerment: 0,
-        harshDiscipline: false,
-        indemnity: false, // +2s Atonement duration on PW:S
-        solatium: false,// +2s Atonement duration on Shadowmend
-        wickedness: false,
-        stolenPsyche: 0,
-        lightsWrath: true,
-
-    };
+    const talentSet = {... baseTalents};
 
     /*const seq = ["Shadow Word: Pain", "Rapture", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
                     "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
@@ -164,7 +118,7 @@ describe("Evang Cast Sequence", () => {
 
         //console.log("Baseline: " + JSON.stringify(runCastSequence(seq, activeStats, {}, talents)))
 
-        const seq = buildRamp('Primary', 10, [], activeStats.haste, "", baseTalents)
+        const seq = buildRamp('Primary', 10, [], activeStats.haste, "", talentSet)
         const seq2 = buildRamp('Primary', 10, [], activeStats.haste, "", {...baseTalents, purgeTheWicked: true})
         const seq3 = buildRamp('Primary', 10, [], activeStats.haste, "", {...baseTalents, rapture: true})
 
@@ -175,22 +129,8 @@ describe("Evang Cast Sequence", () => {
         //const baseline = allRamps(runCastSequence(seq, activeStats, settings, talents).totalHealing)
         console.log("Baseline: " + baseline);
 
-        print("Indemnity", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, indemnity: true}))
-        print("Rapture", baseline, allRampsHealing(seq3, activeStats, settings, {...baseTalents, rapture: true}))
-        print("Exaltation & Rapture", baseline, allRampsHealing(seq3, activeStats, settings, {...baseTalents, rapture: true, exaltation: true}))
-        print("Shining Radiance", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, shiningRadiance: 2}))
-        print("Rabid Shadows", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, rabidShadows: 2}))
-        print("Dark Indul", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, darkIndulgence: 2}))
-        print("Swift Penitence", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, swiftPenitence: 2}))
-        print("Castigation", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, castigation: true}))
-        print("Purge the Wicked", baseline, allRampsHealing(seq2, activeStats, settings, {...baseTalents, purgeTheWicked: true}))
-        print("Purge & Revel", baseline, allRampsHealing(seq2, activeStats, settings, {...baseTalents, purgeTheWicked: true, revelInPurity: 2}))
-        
-        
-        print("Malicious Scission", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, maliciousScission: true}))
-        
-        print("Stolen Psyche", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, stolenPsyche: 2}))
-        print("Lesson in Humility", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, lessonInHumility: 2}))
+        print("Pain and Suffering", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, painAndSuffering: {...baseTalents.painAndSuffering, points: 1}}));
+        print("Pain and Suffering", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, painAndSuffering: {...baseTalents.painAndSuffering, points: 1}}));
 
         /*
         print("PtW / Revel / Lesson in Humi / Evenfall / LW / Indem", baseline, allRampsHealing(seq2, activeStats, settings, {...imprTalents, 

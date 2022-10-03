@@ -86,9 +86,9 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents) => {
     else sequence.push('Shadow Word: Pain');
 
     for (var x = 0; x < applicators; x++) {
-        sequence.push('Power Word: Shield');
+        sequence.push('Renew');
     }
-    if (neural) sequence.push("Neural Synapse Enhancer");
+
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
     sequence.push('Schism');
@@ -184,7 +184,7 @@ export const buildBoonEvangRamp = (applicators, trinket, haste) => {
         sequence.push('Power Word: Shield');
     }
     if (trinket === "Soulletting Ruby") sequence.push("Soulletting Ruby");
-    if (trinket === "Neural Synapse Enhancer") sequence.push("Neural Synapse Enhancer");
+
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
     if (trinket === "Instructor's Divine Bell (new)") sequence.push("Instructor's Divine Bell (new)");
@@ -264,7 +264,7 @@ export const buildBoonEvangRamp = (applicators, trinket, haste) => {
     }
     // Note for Ruby that this is the time we expect to get the buff, NOT the time we cast it.
     if (trinket === "Soulletting Ruby") sequence.push("Soulletting Ruby");
-    if (trinket === "Neural Synapse Enhancer") sequence.push("Neural Synapse Enhancer");
+
     if (trinket === "Instructor's Divine Bell") sequence.push("Instructor's Divine Bell");
     if (trinket === "Instructor's Divine Bell (new)") sequence.push("Instructor's Divine Bell (new)");
     

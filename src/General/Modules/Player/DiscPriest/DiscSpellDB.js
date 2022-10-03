@@ -104,6 +104,7 @@ export const DISCSPELLS = {
         coeff: 0.752,
         cooldown: 15,
         atoneOverheal: 0.3,
+        school: "holy",
         secondaries: ['crit', 'vers']
     }],
     "Light's Wrath": [{
@@ -113,6 +114,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 1.75, // This is almost definitely incorrect.
         cooldown: 90,
+        school: "holy",
         atoneOverheal: 0.33,
         secondaries: ['crit', 'vers'],
     }],
@@ -123,6 +125,7 @@ export const DISCSPELLS = {
         cost: 1000,
         coeff: 2.54, // 3 x 0.94 (disc aura nerf) x 0.85 (Mindgames specific aura nerf)
         cooldown: 40,
+        school: "shadow",
         atoneOverheal: 0.23,
         secondaries: ['crit', 'vers'],
     },
@@ -146,6 +149,7 @@ export const DISCSPELLS = {
         cost: 1000,
         coeff: 0.56 * 2,
         aura: 1,
+        school: "holy",
         secondaries: ['crit', 'vers'],
         atoneOverheal: 0.24,
     },
@@ -169,6 +173,7 @@ export const DISCSPELLS = {
         cooldown: 7.5,
         atonement: 15,
         atonementPos: 'start',
+        school: "holy",
         targets: 1,
         secondaries: ['crit', 'vers'],
         overheal: 0,
@@ -253,6 +258,7 @@ export const DISCSPELLS = {
         cost: 900,
         aura: 1,
         coeff: 0.21,
+        school: "fire",
         secondaries: ['crit', 'vers'],
         atoneOverheal: 0.15,
     },
@@ -274,6 +280,7 @@ export const DISCSPELLS = {
         cost: 900,
         coeff: 0.1292,
         aura: 1,
+        school: "shadow",
         secondaries: ['crit', 'vers'],
     },
     {

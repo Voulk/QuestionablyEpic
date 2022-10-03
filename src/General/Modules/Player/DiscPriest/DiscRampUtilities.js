@@ -55,7 +55,7 @@ export const allRampsHealing = (boonSeq, fiendSeq, stats, settings = {}, conduit
 
     if (rampResult.totalHealing > 0) return rampResult.totalHealing;
     else {
-        reportError("", "DiscRamp", "Total Healing is 0", rampResult.totalHealing || 0)
+        //reportError("", "DiscRamp", "Total Healing is 0", rampResult.totalHealing || 0)
         return 0;
     }
 }
@@ -83,6 +83,13 @@ export const allRamps = (fiendSeq, stats, settings = {}, talents, reporting = fa
         rampResult.manaSpent = fiendRamp.manaSpent + miniRamp.manaSpent * 2;
         //rampResult.conduits = conduits;
         
+        rampResult.ramps.forEach(ramp => {
+            console.log("Ramp Name: " + ramp.tag + " (" + Math.round(ramp.totalHealing) + " healing)");
+            console.log("Pre-ramp conditions: " + "[Power of the Dark Side, Purge the Wicked]");
+            console.log(rampShortener(ramp.sequence));
+            console.log(JSON.stringify(rampResult));
+        })
+    }
      
         /*
         console.log("== Set Ramp Information == ")
@@ -91,12 +98,9 @@ export const allRamps = (fiendSeq, stats, settings = {}, talents, reporting = fa
         console.log("Conduits used: " + JSON.stringify(conduits));
         console.log("On use Trinkets used: " + " Instructor's Divine Bell (213 ilvl, ~20% expected overhealing)")
         console.log("Post-DR passive stat breakdown: " + JSON.stringify(stats));
-        rampResult.ramps.forEach(ramp => {
-            console.log("Ramp Name: " + ramp.tag + " (" + Math.round(ramp.totalHealing) + " healing)");
-            console.log("Pre-ramp conditions: " + "[Power of the Dark Side, Purge the Wicked, Pelagos]");
-            console.log(rampShortener(ramp.sequence));
+
             
-    })*/}
+    })*/
 
 
     //console.log(JSON.stringify(rampResult));

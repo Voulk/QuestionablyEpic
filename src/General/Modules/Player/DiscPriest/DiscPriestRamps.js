@@ -62,6 +62,9 @@ const DISCCONSTANTS = {
         // ASSUMPTION: Throes of Pain should work on both DoTs but let's double check anyway.
         discSpells['Shadow Word: Pain'][0].coeff *= (1 + 0.03 * talents.throesOfPain);
         discSpells['Purge the Wicked'][0].coeff *= (1 + 0.03 * talents.throesOfPain);
+
+        discSpells['Shadow Word: Pain'][1].coeff *= (1 + 0.03 * talents.throesOfPain);
+        discSpells['Purge the Wicked'][1].coeff *= (1 + 0.03 * talents.throesOfPain);
     }
 
     // Disc specific talents.
@@ -88,6 +91,8 @@ const DISCCONSTANTS = {
         // ASSUMPTION: Throes of Pain should work on both DoTs but let's double check anyway.
         discSpells['Shadow Word: Pain'][0].coeff *= (1 + 0.075 * talents.painAndSuffering);
         discSpells['Purge the Wicked'][0].coeff *= (1 + 0.075 * talents.painAndSuffering);
+        discSpells['Shadow Word: Pain'][1].coeff *= (1 + 0.075 * talents.painAndSuffering);
+        discSpells['Purge the Wicked'][1].coeff *= (1 + 0.075 * talents.painAndSuffering);
     }
     if (talents.borrowedTime) {
 
@@ -349,6 +354,7 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
 
     addReport(state, `${spellName} dealt ${Math.round(damageVal)} damage (${atonementHealing} atone)`)
     //if (state.reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
+
 }
 
 /**
@@ -492,7 +498,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                             tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
 
                         newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
-                        console.log(newBuff);
                         state.activeBuffs.push(newBuff)
 
                     }
