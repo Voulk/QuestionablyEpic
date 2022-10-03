@@ -2,7 +2,7 @@ import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Typography, Grid, Divider, Paper } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
-import UpgradeFinderBossImages from "./BossImages";
+// import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
 import { filterItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
@@ -32,7 +32,7 @@ export default function TazaveshGearContainer(props) {
                   width: 181,
                   height: 175,
                   paddingLeft: 8,
-                  backgroundImage: `url(${UpgradeFinderBossImages(key, "", 1194)})`,
+                  // backgroundImage: `url(${UpgradeFinderBossImages(key, "", 1194)})`,
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center 60%",
                   backgroundSize: "auto 100%",
