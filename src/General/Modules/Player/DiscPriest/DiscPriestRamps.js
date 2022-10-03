@@ -133,7 +133,7 @@ const DISCCONSTANTS = {
         discSpells["Power Word: Shield"][0].coeff *= 1.5 * (1 - discSettings.aegisOfWrathWastage);
     }
     if (talents.makeAmends) {
-
+        // We can kind of model this, but benefit isn't really going to be concentrated on ramps.
     }
 
 

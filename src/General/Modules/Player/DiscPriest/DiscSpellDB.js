@@ -31,6 +31,7 @@ export const DISCSPELLS = {
         cost: 200,
         coeff: 0.705 * 0.7, // 0.75 (smite aura nerf) x 0.94 (disc aura nerf)
         atoneOverheal: 0.28,
+        school: "holy",
         secondaries: ['crit', 'vers'],
     }],
     "Penance": [{
@@ -41,6 +42,7 @@ export const DISCSPELLS = {
         coeff: 1.128, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
         atoneOverheal: 0.26,
+        school: "holy",
         secondaries: ['crit', 'vers'],
     }],
     "PenanceTick": [{
@@ -49,6 +51,7 @@ export const DISCSPELLS = {
         castTime: 0.66, // This will still be dynamically adjusted at runtime.
         cost: 0,
         coeff: 0.376,
+        school: "holy",
         atoneOverheal: 0.27,
         secondaries: ['crit', 'vers'],
     }],
@@ -59,6 +62,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 1.41,
         buffDuration: 9,
+        school: "shadow",
         atoneOverheal: 0.28,
         secondaries: ['crit', 'vers'],
     },
@@ -79,6 +83,7 @@ export const DISCSPELLS = {
         cost: 1250,
         coeff: 0.744642, // 0.9792 x 0.809 (Mind Blast aura) x 0.94 (Disc aura)
         cooldown: 15,
+        school: "shadow",
         atoneOverheal: 0.29,
         secondaries: ['crit', 'vers']
     },
@@ -350,8 +355,8 @@ export const DISCSPELLS = {
 export const baseTalents = {
     // Disc spec tree
     // Tier 1
-    lightsPromise: {points: 0, maxPoints: 1, icon: "spell_priest_power-word", id: 322115, select: true},
-    darkIndulgence: {points: 0, maxPoints: 1, icon: "spell_shadow_painandsuffering", id: 372972, select: true},
+    lightsPromise: {points: 0, maxPoints: 1, icon: "spell_priest_power-word", id: 322115, select: false},
+    darkIndulgence: {points: 1, maxPoints: 1, icon: "spell_shadow_painandsuffering", id: 372972, select: true},
     powerWordSolace: {points: 0, maxPoints: 1, icon: "ability_priest_flashoflight", id: 129250, select: false},
     schism: {points: 0, maxPoints: 1, icon: "spell_warlock_focusshadow", id: 214621, select: false},
     brightPupil: {points: 0, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 390684, select: true},
@@ -363,18 +368,18 @@ export const baseTalents = {
     maliciousIntent: {points: 0, maxPoints: 1, icon: "ability_demonhunter_darkness", id: 372969, select: true},
     
     // Tier 2
-    purgeTheWicked: {points: 0, maxPoints: 1, icon: "ability_mage_firestarter", id: 204197, select: true},
+    purgeTheWicked: {points: 1, maxPoints: 1, icon: "ability_mage_firestarter", id: 204197, select: true},
     rapture: {points: 0, maxPoints: 1, icon: "spell_holy_rapture", id: 47536, select: true},
     shadowCovenant: {points: 0, maxPoints: 1, icon: "spell_shadow_summonvoidwalker", id: 314867, select: true},
     revelInPurity: {points: 0, maxPoints: 1, icon: "spell_fire_felflamering_red", id: 373003, select: true},
-    contrition: {points: 0, maxPoints: 1, icon: "ability_priest_savinggrace", id: 197419, select: true},
+    contrition: {points: 0, maxPoints: 2, icon: "ability_priest_savinggrace", id: 197419, select: true},
     exaltation: {points: 0, maxPoints: 1, icon: "spell_holy_spiritualguidence", id: 373042, select: true},
     indemnity: {points: 0, maxPoints: 1, icon: "ability_priest_clarityofwill", id: 373049, select: true},
-    painAndSuffering: {points: 0, maxPoints: 1, icon: "spell_shadow_shadowwordpain", id: 390689, select: true},
+    painAndSuffering: {points: 0, maxPoints: 2, icon: "spell_shadow_shadowwordpain", id: 390689, select: true},
     embraceShadow: {points: 0, maxPoints: 1, icon: "spell_warlock_demonsoul", id: 372985, select: true},
     twilightCorruption: {points: 0, maxPoints: 1, icon: "spell_fire_twilightimmolation", id: 373065, select: true},
-    borrowedTime: {points: 0, maxPoints: 1, icon: "ability_priest_angelicbulwark", id: 197762, select: true},
-    castigation: {points: 0, maxPoints: 1, icon: "spell_holy_searinglightpriest", id: 193134, select: true},
+    borrowedTime: {points: 0, maxPoints: 2, icon: "ability_priest_angelicbulwark", id: 197762, select: true},
+    castigation: {points: 1, maxPoints: 1, icon: "spell_holy_searinglightpriest", id: 193134, select: true},
     stolenPsyche: {points: 0, maxPoints: 1, icon: "ability_priest_surgeofdarkness", id: 373054, select: true},
 
     
@@ -384,12 +389,12 @@ export const baseTalents = {
     lenience: {points: 0, maxPoints: 1, icon: "ability_priest_atonement", id: 238063, select: true},
     evangelism: {points: 0, maxPoints: 1, icon: "spell_holy_divineillumination", id: 246287, select: false},
     mindbender: {points: 0, maxPoints: 1, icon: "spell_shadow_soulleech_3", id: 123040, select: true},
-    divineAegis: {points: 0, maxPoints: 1, icon: "spell_holy_devineaegis", id: 47515, select: true},
-    sinsOfTheMany: {points: 0, maxPoints: 1, icon: "spell_holy_holyguidance", id: 280391, select: true},
-    resplendentLight: {points: 0, maxPoints: 1, icon: "inv_staff_2h_artifacttome_d_01", id: 390765, select: true},
-    harshDiscipline: {points: 0, maxPoints: 1, icon: "ability_paladin_handoflight", id: 373180, select: true},
-    expiation: {points: 0, maxPoints: 1, icon: "spell_shadow_shadowpower", id: 390832, select: true},
-    voidSummoner: {points: 0, maxPoints: 1, icon: "spell_shadow_shadowfiend", id: 391218, select: true},
+    divineAegis: {points: 0, maxPoints: 2, icon: "spell_holy_devineaegis", id: 47515, select: true},
+    sinsOfTheMany: {points: 0, maxPoints: 2, icon: "spell_holy_holyguidance", id: 280391, select: true},
+    resplendentLight: {points: 0, maxPoints: 2, icon: "inv_staff_2h_artifacttome_d_01", id: 390765, select: true},
+    harshDiscipline: {points: 0, maxPoints: 2, icon: "ability_paladin_handoflight", id: 373180, select: true},
+    expiation: {points: 0, maxPoints: 2, icon: "spell_shadow_shadowpower", id: 390832, select: true},
+    voidSummoner: {points: 0, maxPoints: 2, icon: "spell_shadow_shadowfiend", id: 391218, select: true},
     aegisOfWrath: {points: 0, maxPoints: 1, icon: "spell_holy_powerwordshield", id: 238135, select: true},
     makeAmends: {points: 0, maxPoints: 1, icon: "spell_holy_penance", id: 391079, select: true},
     wealAndWoe: {points: 0, maxPoints: 1, icon: "spell_priest_burningwill", id: 390786, select: true},
