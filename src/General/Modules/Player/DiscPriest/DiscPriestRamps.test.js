@@ -113,7 +113,7 @@ describe("Evang Cast Sequence", () => {
 
     const runTalents = (talentName, baseline, talents, settings) => {
         const seq = buildRamp('Primary', 10, [], activeStats.haste, "", talents)
-        print(talentName, baseline, allRampsHealing(seq, activeStats, settings, talents));
+        print(talentName, baseline, allRampsHealing(seq, JSON.parse(JSON.stringify(activeStats)), settings, talents));
     }
 
 
@@ -146,6 +146,9 @@ describe("Evang Cast Sequence", () => {
         runTalents("Resplendent Light", baseline, {...baseTalents, resplendentLight: {...baseTalents.resplendentLight, points: 1}}, settings)
         runTalents("Wrath Unleashed", baseline, {...baseTalents, wrathUnleashed: {...baseTalents.wrathUnleashed, points: 1}}, settings)
         runTalents("Divine Aegis", baseline, {...baseTalents, divineAegis: {...baseTalents.divineAegis, points: 1}}, settings)
+        runTalents("Harsh Discipline", baseline, {...baseTalents, harshDiscipline: {...baseTalents.harshDiscipline, points: 1}}, settings)
+        runTalents("Train of Thought", baseline, {...baseTalents, trainOfThought: {...baseTalents.trainOfThought, points: 1}}, settings)
+        runTalents("Contrition", baseline, {...baseTalents, contrition: {...baseTalents.contrition, points: 2}}, settings)
 
         /*
         print("PtW / Revel / Lesson in Humi / Evenfall / LW / Indem", baseline, allRampsHealing(seq2, activeStats, settings, {...imprTalents, 

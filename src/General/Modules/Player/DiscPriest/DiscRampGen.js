@@ -50,6 +50,12 @@ export const buildRamp = (type, applicators, trinkets, haste, playstyle, incTale
     }
 }
 
+const getPenance = (talents) => {
+    // Get the chosen Penance variety. 
+    if (talents.contrition) return "DefPenance"
+    else return "Penance";
+}
+
 // Most of the time we only have one on-use trinket which means we attach it to both ramps if we can, or Boon if we can't.
 // This function will assign which ramp our on-use trinket is attached to if that's necessary. 
 // This doesn't include every on-use trinket in the game, but is an easy framework to expand on if you have a specific trinket you'd like to add.
@@ -88,7 +94,8 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) 
     else sequence.push('Shadow Word: Pain');
 
     for (var x = 0; x < applicators; x++) {
-        if (x % 4 === 0) sequence.push('Power Word: Shield')
+        if (talents.trainOfThought && x % 4 === 0) sequence.push('Power Word: Shield');
+        else if (x % 5 === 0) sequence.push('Power Word: Shield');
         else sequence.push('Renew');
     }
 
@@ -96,7 +103,7 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) 
     sequence.push('Power Word: Radiance');
     sequence.push('Schism');
     if (talents.mindgames) sequence.push("Mindgames");
-    sequence.push('Penance');
+    sequence.push(getPenance(talents));
     sequence.push('Shadow Word: Death');
     sequence.push('Mind Blast');
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
@@ -106,7 +113,7 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) 
     for (var i = 0; i < 3; i++) {
         sequence.push('Smite');
     }
-    sequence.push('Penance');
+    sequence.push(getPenance(talents));
 
     for (var i = 0; i < 6; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
@@ -141,7 +148,7 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) 
     sequence.push('Power Word: Radiance');
     sequence.push('Schism');
     sequence.push("Light's Wrath")
-    sequence.push('Penance');
+    sequence.push(getPenance(talents));
     sequence.push('Shadow Word: Death');
     sequence.push('Mind Blast');
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
@@ -151,7 +158,7 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) 
     for (var i = 0; i < 3; i++) {
         sequence.push('Smite');
     }
-    sequence.push('Penance');
+    sequence.push(getPenance(talents));
 
     for (var i = 0; i < 6; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
@@ -193,7 +200,7 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     sequence.push('Schism');
     //if (talents.lightsWrath) sequence.push("Light's Wrath");
     if (talents.mindgames) sequence.push('Mindgames');
-    sequence.push('Penance');
+    sequence.push(getPenance(talents));
     sequence.push('Shadow Word: Death');
     sequence.push('Mind Blast');
     if (talents.divineStar) sequence.push("Divine Star");
@@ -204,7 +211,7 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
         sequence.push('Smite');
     }
-    sequence.push('Penance');
+    sequence.push(getPenance(talents));
 
     for (var i = 0; i < 8; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
@@ -252,10 +259,8 @@ export const buildBoonEvangRamp = (applicators, trinket, haste) => {
     if (specialSpells.includes("4T28")) {
         // If we have 4pc, Penance after our second Blast instead of double Nova.
         sequence.push('Ascended Blast');
-        //sequence.push('PenanceTick');
-        //sequence.push('PenanceTick');
-        //sequence.push('PenanceTick');
-        sequence.push('Penance');
+
+        sequence.push(getPenance(talents));
         boonDuration -= (1.5 + 2) / hastePerc;
     }
 

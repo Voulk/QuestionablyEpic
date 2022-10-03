@@ -39,7 +39,7 @@ export const DISCSPELLS = {
         type: "special",
         castTime: 0, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
         cost: 800,
-        coeff: 1.128, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
+        coeff: 0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
         atoneOverheal: 0.26,
         school: "holy",
@@ -53,6 +53,27 @@ export const DISCSPELLS = {
         coeff: 0.376,
         school: "holy",
         atoneOverheal: 0.27,
+        secondaries: ['crit', 'vers'],
+    }],
+    "DefPenance": [{
+        spellData: {id: 47540, icon: "spell_holy_penance", cat: "heal"},
+        type: "special",
+        castTime: 0, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
+        cost: 800,
+        coeff: 1.25, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
+        bolts: 3,
+        overheal: 0.15,
+        school: "holy",
+        secondaries: ['crit', 'vers'],
+    }],
+    "DefPenanceTick": [{
+        spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
+        type: "heal",
+        castTime: 1.25, // This will still be dynamically adjusted at runtime.
+        cost: 0,
+        coeff: 0.376,
+        school: "holy",
+        overheal: 0.27,
         secondaries: ['crit', 'vers'],
     }],
     "Schism": [{

@@ -109,12 +109,26 @@ const DISCCONSTANTS = {
 
     }
     if (talents.indemnity) discSpells['Power Word: Shield'][0].atonement += 3;
-    if (talents.castigation) discSpells['Penance'][0].bolts += 1;
+    if (talents.castigation) {
+        discSpells['Penance'][0].bolts += 1;
+        discSpells['DefPenance'][0].bolts += 1;
+    }
+    if (talents.contrition) {
+        discSpells['DefPenanceTick'].push({
+            type: "function",
+            runFunc: function (state, atonementApp) {
+                const atonementCount = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
+                const spell = {type: "heal", coeff: 0.144 * talents.contrition, overheal: 0.15, secondaries: ['crit', 'vers', 'mastery'], targets: atonementCount}
+                console.log("RUNNING CONTRITION");
+                runHeal(state, spell, "Contrition");
+            }
+        })
+    }
     if (talents.stolenPsyche) discSpells['Mind Blast'][0].atonementBonus = (1 + 0.2 * talents.stolenPsyche);
 
     // Tier 3 talents
     if (talents.trainOfThought) {
-
+        // Can be mostly handled in RampGen.
     }
     if (talents.divineAegis) {
         // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
@@ -130,8 +144,9 @@ const DISCCONSTANTS = {
         discSpells["Light's Wrath"][0].critMod = 0.15;
         // TODO: Add Smite buff
     }
-    if (talents.harshDiscipline) {
+    if (talents.harshDiscipline && settings.harshDiscipline) {
         // Can probably just add a buff on sequence start for the first Penance.
+        state.activeBuffs.push({name: "Harsh Discipline", expiration: 999, buffType: "special", value: 3, stacks: 1, canStack: false})
     }
     if (talents.expiation) {
         discSpells["Mindblast"][0].coeff *= 1.1;
@@ -273,7 +288,6 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
         if (checkBuffActive(buffs, "Power of the Dark Side")) {
             const potdsMult = buffs.filter(function (buff) {return buff.name === "Power of the Dark Side"})[0].value;
             mult = mult * potdsMult;
-           
             state.activeBuffs = removeBuffStack(state.activeBuffs, "Power of the Dark Side")
         }
         if (checkBuffActive(buffs, "Swift Penitence")) {
@@ -291,11 +305,26 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
  * @powerwordshield Gets a 200% buff if Rapture is active (modified by Exaltation if taken)
  * @ascendedEruption The healing portion also gets a buff based on number of boon stacks on expiry.
  */
-const getHealingMult = (buffs, t, spellName, talents) => {
+const getHealingMult = (state, buffs, t, spellName, talents) => {
+    let mult = DISCCONSTANTS.auraHealingBuff;
     if (spellName === "Power Word: Shield" && checkBuffActive(buffs, "Rapture")) {
-        return 1.3;
+        mult *= 1.3;
     }
-    else return 1;
+    if (spellName === "DefPenanceTick") {
+
+        if (checkBuffActive(buffs, "Power of the Dark Side")) {
+            const potdsMult = buffs.filter(function (buff) {return buff.name === "Power of the Dark Side"})[0].value;
+            mult = mult * potdsMult;
+            state.activeBuffs = removeBuffStack(state.activeBuffs, "Power of the Dark Side")
+        }
+        if (checkBuffActive(buffs, "Swift Penitence")) {
+
+            const spMult = buffs.filter(function (buff) {return buff.name === "Swift Penitence"})[0].value
+            mult = mult * spMult;
+            state.activeBuffs = removeBuffStack(state.activeBuffs, "Swift Penitence")
+        }
+    }
+    return mult;
 }
 
 
@@ -338,7 +367,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     // Pre-heal processing
     const currentStats = state.currentStats;
 
-    const healingMult = getHealingMult(state.activeBuffs, state.t, spellName, state.talents); 
+    const healingMult = getHealingMult(state, state.activeBuffs, state.t, spellName, state.talents); 
     const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets) || 1;
     const healingVal = getSpellRaw(spell, currentStats, DISCCONSTANTS) * (1 - spell.overheal) * healingMult * targetMult;
     
@@ -494,6 +523,11 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                 else if (spell.type === "buffExtension") {
                     extendBuff(state.activeBuffs, state.t, spell.buffName, spell.extension);
                 }
+                // The spell extends atonements already active. This is specific to Evanglism. 
+                else if (spell.type === "function") {
+                    console.log(spell);
+                    spell.runFunc(state, atonementApp);
+                }
 
                 // The spell adds a buff to our player.
                 // We'll track what kind of buff, and when it expires.
@@ -534,27 +568,26 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                 // This can be remade to work with any given number of ticks.
 
                 // This mini-section is a bit TODO in general.
-                else if (spellName === "Penance") {
+                else if (spellName === "Penance" || spellName === "DefPenance") {
+                    
+                    let penanceBolts = discSpells[spellName][0].bolts;
+                    let penanceCoeff = discSpells[spellName][0].coeff;
+                    let penTickName = spellName === "Penance" ? "PenanceTick" : "DefPenanceTick";
 
                     if (checkBuffActive(state.activeBuffs, "Penitent One")) {
-                        discSpells['PenanceTick'][0].castTime = 2 / 4;
-                        discSpells['PenanceTick'][0].coeff = 0.376;
-
-                        for (var i = 0; i < 4; i++) {
-                            seq.unshift("PenanceTick");
-                        }
+                        penanceBolts += 3;
                         removeBuffStack(state.activeBuffs, "Penitent One"); 
                     }
-                    else {
-                    
-                        discSpells['PenanceTick'][0].castTime = 2 / discSpells['Penance'][0].bolts;
-                        discSpells['PenanceTick'][0].coeff = 0.376;
-                        for (var i = 0; i < discSpells['Penance'][0].bolts; i++) {
-                            seq.unshift("PenanceTick");
-                        }
+                    else if (checkBuffActive(state.activeBuffs, "Harsh Discipline")) {
+                        penanceBolts += 3;
+                        removeBuffStack(state.activeBuffs, "Harsh Discipline");
                     }
 
-                    
+                    discSpells[penTickName][0].castTime = 2 / penanceBolts;
+                    discSpells[penTickName][0].coeff = penanceCoeff;
+                    for (var i = 0; i < penanceBolts; i++) {
+                        seq.unshift(penTickName);
+                    }
                 }
                 
                 // Grab the next timestamp we are able to cast our next spell. This is equal to whatever is higher of a spells cast time or the GCD.
