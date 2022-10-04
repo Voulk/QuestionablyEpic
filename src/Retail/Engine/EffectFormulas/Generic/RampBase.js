@@ -15,6 +15,40 @@ const GLOBALCONST = {
 
 }
 
+export const addBuff = (state, spell, spellName) => {
+    if (spell.buffType === "stats") {
+        state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
+    }
+    else if (spell.buffType === "statsMult") {
+        state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "statsMult", value: spell.value, stat: spell.stat});
+    }
+    else if (spell.buffType === "damage" || spell.buffType === "heal") {     
+        const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
+            tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
+
+        newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
+        state.activeBuffs.push(newBuff)
+
+    }
+    else if (spell.buffType === "special") {
+        // Check if buff already exists, if it does add a stack.
+        const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
+        if (buffStacks === 0) state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, buffType: "special", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack});
+        else {
+            const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
+            
+            if (buff.canStack) buff.stacks += 1;
+        }
+    }     
+    else {
+        state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
+    }
+}
+
+export const removeBuff = (buffs, buffName) => {
+    return buffs.filter((buff) => buff.name !== buffName);
+}
+
 // Removes a stack of a buff, and removes the buff entirely if it's down to 0 or doesn't have a stack mechanic.
 export const removeBuffStack = (buffs, buffName) => {
     const buff = buffs.filter(buff => buff.name === buffName)[0]
@@ -24,7 +58,7 @@ export const removeBuffStack = (buffs, buffName) => {
 
     if (buffStacks === 1) {
         // Remove the buff
-        buffs = buffs.filter(buff => buff.name !== buffName);
+        buffs = removeBuff(buffs, buffName);
     }
     else if (buffStacks >= 1) {
         // The player has more than 1 stack of the buff. Remove one and leave the buff.

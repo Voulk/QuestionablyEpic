@@ -3,7 +3,7 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth, extendBuff } from "Retail/Engine/EffectFormulas/Generic/RampBase";
+import { addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, removeBuff, getBuffStacks, getHealth, extendBuff, addBuff } from "Retail/Engine/EffectFormulas/Generic/RampBase";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
@@ -142,6 +142,13 @@ const DISCCONSTANTS = {
     if (talents.wrathUnleashed) {
         discSpells["Light's Wrath"][0].castTime -= 1;
         discSpells["Light's Wrath"][0].critMod = 0.15;
+        discSpells["Light's Wrath"].push({
+            type: "buff",
+            name: "Wrath Unleashed",
+            buffType: 'special',
+            value: 1.4, // This is equal to 45% crit, though the stats are applied post DR. 
+            buffDuration: 15,
+        })
         // TODO: Add Smite buff
     }
     if (talents.harshDiscipline && settings.harshDiscipline) {
@@ -190,6 +197,19 @@ const DISCCONSTANTS = {
     if (talents.makeAmends) {
         // We can kind of model this, but benefit isn't really going to be concentrated on ramps.
     }
+    if (talents.wealAndWoe) {
+        // Penance bolts increase the damage of Smite by 8% per stack, or Power Word: Shield by 3% per stack.
+        discSpells["PenanceTick"].push({
+            type: "buff",
+            name: "Weal & Woe",
+            buffType: 'special',
+            value: 1.08, // This is equal to 45% crit, though the stats are applied post DR. 
+            buffDuration: 15,
+            canStack: true,
+            stacks: 1,
+            maxStacks: 7,
+        })
+    }
 
 
     // ==== Legendaries ====
@@ -205,14 +225,14 @@ const DISCCONSTANTS = {
         discSpells['Mindgames'][1].coeff *= 1.1; 
 
         discSpells['Mindgames'].push({
-        type: "buff",
-        castTime: 0,
-        cost: 0,
-        cooldown: 0,
-        buffType: 'statsMult',
-        stat: 'crit',
-        value: 45 * 35, // This is equal to 45% crit, though the stats are applied post DR. 
-        buffDuration: 10,
+            type: "buff",
+            castTime: 0,
+            cost: 0,
+            cooldown: 0,
+            buffType: 'statsMult',
+            stat: 'crit',
+            value: 45 * 35, // This is equal to 45% crit, though the stats are applied post DR. 
+            buffDuration: 10,
     })
     }; 
 
@@ -332,9 +352,18 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
         mult *= 1.15;
         if (!spellName.includes("PenanceTick")) state.activeBuffs = removeBuffStack(state.activeBuffs, "Twilight Equilibrium - Holy");
     }
+    if (checkBuffActive(buffs, "Wrath Unleashed") && spellName === "Smite") mult *= 1.4;
+    if (checkBuffActive(buffs, "Weal & Woe") && spellName === "Smite") {
+        mult *= (1 + getBuffStacks(buffs, "Weal & Woe") * 0.08);
+        state.activeBuffs = removeBuff(state.activeBuffs, "Weal & Woe");
+    }
     return mult; 
 }
 
+/**
+ * This acts as a Penance cleanup function since we'll often want buffs to last the duration of the Penance cast instead of just the tick.
+ * @param {*} state 
+ */
 const penanceCleanup = (state) => {
     removeBuffStack(state.activeBuffs, "Twilight Equilibrium - Holy");
 }
@@ -361,6 +390,10 @@ const getHealingMult = (state, buffs, t, spellName, talents) => {
             mult = mult * spMult;
             state.activeBuffs = removeBuffStack(state.activeBuffs, "Swift Penitence")
         }
+    }
+    if (checkBuffActive(buffs, "Weal & Woe") && spellName === "Power Word: Shield") {
+        mult *= (1 + getBuffStacks(buffs, "Weal & Woe") * 0.03);
+        state.activeBuffs = removeBuff(state.activeBuffs, "Weal & Woe");
     }
     return mult;
 }
@@ -569,42 +602,13 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                 // The spell adds a buff to our player.
                 // We'll track what kind of buff, and when it expires.
                 else if (spell.type === "buff") {
-                    if (spell.buffType === "stats") {
-                        state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
-                    }
-                    else if (spell.buffType === "statsMult") {
-                        state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "statsMult", value: spell.value, stat: spell.stat});
-                    }
-                    else if (spell.buffType === "damage" || spell.buffType === "heal") {     
-                        const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
-                            tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
-
-                        newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
-                        state.activeBuffs.push(newBuff)
-
-                    }
-                    else if (spell.buffType === "special") {
-                        
-                        // Check if buff already exists, if it does add a stack.
-                        const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
-                        if (buffStacks === 0) state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, buffType: "special", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack});
-                        else {
-                            const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
-                            
-                            if (buff.canStack) buff.stacks += 1;
-                        }
-                    }     
-                    else {
-                        state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
-                    }
+                    addBuff(state, spell, spellName);
                 }
 
                 // These are special exceptions where we need to write something special that can't be as easily generalized.
                 // Penance will queue either 3 or 6 ticks depending on if we have a Penitent One proc or not. 
                 // These ticks are queued at the front of our array and will take place immediately. 
                 // This can be remade to work with any given number of ticks.
-
-                // This mini-section is a bit TODO in general.
                 else if (spellName === "Penance" || spellName === "DefPenance") {
                     
                     let penanceBolts = discSpells[spellName][0].bolts;
@@ -633,7 +637,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
                     if ('school' in spell && spell.school === "holy") {
                         // Check if buff already exists, if it does add a stack.
-                        console.log("Adding TE - Shadow")
                         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === "Twilight Equilibrium - Shadow"}).length;
                         if (buffStacks === 0) state.activeBuffs.push({name: "Twilight Equilibrium - Shadow", expiration: (state.t + spell.castTime + 6) || 999, buffType: "special", value: 1.15, stacks: 1, canStack: false});
                         else {
@@ -643,7 +646,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                     }
                     else if ('school' in spell && spell.school === "shadow") {
                         // Check if buff already exists, if it does add a stack.
-                        console.log("Adding TE - Holy")
                         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === "Twilight Equilibrium - Holy"}).length;
                         if (buffStacks === 0) state.activeBuffs.push({name: "Twilight Equilibrium - Holy", expiration: (state.t + spell.castTime + 6) || 999, buffType: "special", value: 1.15, stacks: 1, canStack: false});
                         else {

@@ -151,6 +151,7 @@ describe("Evang Cast Sequence", () => {
         runTalents("Contrition", baseline, {...baseTalents, contrition: {...baseTalents.contrition, points: 2}}, settings)
         runTalents("Expiation", baseline, {...baseTalents, expiation: {...baseTalents.expiation, points: 1}}, settings)
         runTalents("Twilight Equilibrium", baseline, {...baseTalents, twilightEquilibrium: {...baseTalents.twilightEquilibrium, points: 1}}, settings)
+        runTalents("Weal & Woe", baseline, {...baseTalents, wealAndWoe: {...baseTalents.wealAndWoe, points: 1}}, settings)
         /*
         print("PtW / Revel / Lesson in Humi / Evenfall / LW / Indem", baseline, allRampsHealing(seq2, activeStats, settings, {...imprTalents, 
                 revelInPurity: 2, purgeTheWicked: true, lessonInHumility: 2, evenfall: 2, indemnity: true}))
