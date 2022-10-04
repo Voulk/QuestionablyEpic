@@ -62,19 +62,19 @@ export const DISCSPELLS = {
         cost: 800,
         coeff: 1.25, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
-        overheal: 0.15,
+        overheal: 0.6,
         school: "holy",
-        secondaries: ['crit', 'vers'],
+        secondaries: ['crit', 'vers', 'mastery'],
     }],
     "DefPenanceTick": [{
         spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
         type: "heal",
         castTime: 1.25, // This will still be dynamically adjusted at runtime.
         cost: 0,
-        coeff: 0.376,
+        coeff: 1.25,
         school: "holy",
-        overheal: 0.27,
-        secondaries: ['crit', 'vers'],
+        overheal: 0.6,
+        secondaries: ['crit', 'vers', 'mastery'],
     }],
     "Schism": [{
         spellData: {id: 214621, icon: "spell_warlock_focusshadow", cat: "damage"},
@@ -107,15 +107,6 @@ export const DISCSPELLS = {
         school: "shadow",
         atoneOverheal: 0.29,
         secondaries: ['crit', 'vers']
-    },
-    { // ?
-        type: "heal",
-        castTime: 0,
-        coeff: 3,
-        aura: 1,
-        targets: 1,
-        secondaries: ['vers'],
-        overheal: 0,
     }],
     "Power Word: Solace": [{
         spellData: {id: 129250, icon: "ability_priest_flashoflight", cat: "damage"},
@@ -290,7 +281,7 @@ export const DISCSPELLS = {
         cost: 900,
         aura: 1,
         coeff: 0.21,
-        school: "fire",
+        school: "holy", // This is Radiant damage so Fire / Holy.
         secondaries: ['crit', 'vers'],
         atoneOverheal: 0.15,
     },

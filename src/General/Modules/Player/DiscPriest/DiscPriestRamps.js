@@ -119,8 +119,7 @@ const DISCCONSTANTS = {
             type: "function",
             runFunc: function (state, atonementApp) {
                 const atonementCount = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
-                const spell = {type: "heal", coeff: 0.144 * talents.contrition, overheal: 0.15, secondaries: ['crit', 'vers', 'mastery'], targets: atonementCount}
-                console.log("RUNNING CONTRITION");
+                const spell = {type: "heal", coeff: 0.144 * talents.contrition, overheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], targets: atonementCount}
                 runHeal(state, spell, "Contrition");
             }
         })
@@ -156,12 +155,25 @@ const DISCCONSTANTS = {
         discSpells["Mind Blast"].push(
         {
             type: "function",
-            runFunc: function (state) {
-                const buff = state.activeBuffs.filter(buff => buff.name === "Purge the Wicked" || buff.name === "Shadow Word: Pain");
-                console.log(buff);
-                console.log("====");
-                let flatDamageInc = 0;
-                //extendBuff("")
+            runFunc: function (state, atonementApp) {
+                const temp = state.activeBuffs.filter(buff => buff.name === "Purge the Wicked" || buff.name === "Shadow Word: Pain");
+                if (temp.length > 0) {
+                    const expiationDuration = 3 * talents.expiation;
+                    const buff = temp[0];
+
+                    const ticks = Math.min(expiationDuration, (buff.expiration - state.t)) / buff.tickRate; // TODO: Add Haste
+                    const attSpell = {...buff.attSpell};
+                    attSpell.coeff *= ticks;
+
+                    runDamage(state, attSpell, "Expiation", atonementApp);
+
+                    buff.expiration -= expiationDuration;
+                    if (state.t > buff.expiration) {
+                        removeBuffStack(state.activeBuffs, "Purge the Wicked");
+                        removeBuffStack(state.activeBuffs, "Shadow Word: Pain");
+                    }
+                }
+
             }
 
         })
@@ -538,7 +550,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                 }
                 // The spell extends atonements already active. This is specific to Evanglism. 
                 else if (spell.type === "function") {
-                    console.log(spell);
                     spell.runFunc(state, atonementApp);
                 }
 
@@ -601,6 +612,28 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                     for (var i = 0; i < penanceBolts; i++) {
                         seq.unshift(penTickName);
                     }
+                }
+
+                if (state.talents.twilightEquilibrium && spell.type === 'damage') {
+                    // If we cast a damage spell and have Twilight Equilibrium then we'll add a 6s buff that 
+                    // increases the power of our next cast of the opposite school by 15%.
+
+                    if ('school' in spell && spell.school === "Holy") {
+                        // Check if buff already exists, if it does add a stack.
+                        const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === "Twilight Equilibrium - Shadow"}).length;
+                        if (buffStacks === 0) state.activeBuffs.push({name: "Twilight Equilibrium - Shadow", expiration: (state.t + spell.castTime + 6) || 999, buffType: "special", value: 1.15, stacks: 1, canStack: false});
+                        else {
+                            const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
+                            buff.expiration = state.t + spell.castTime
+
+                        }
+                    }
+                    else if ('school' in spell && spell.school === "Shadow") {
+
+                    }
+                    // If Spell doesn't have a school, or if it does and it's not Holy / Shadow, then ignore.
+
+
                 }
                 
                 // Grab the next timestamp we are able to cast our next spell. This is equal to whatever is higher of a spells cast time or the GCD.
