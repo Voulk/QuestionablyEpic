@@ -79,7 +79,8 @@ const DISCCONSTANTS = {
             buffName: "Shadow Word: Pain",
 
             extension: 0.7,
-        },
+        })
+        discSpells['PenanceTick'].push(
         {
             type: "buffExtension",
             buffName: "Purge the Wicked",
@@ -149,9 +150,21 @@ const DISCCONSTANTS = {
         state.activeBuffs.push({name: "Harsh Discipline", expiration: 999, buffType: "special", value: 3, stacks: 1, canStack: false})
     }
     if (talents.expiation) {
-        discSpells["Mindblast"][0].coeff *= 1.1;
+        discSpells["Mind Blast"][0].coeff *= 1.1;
         discSpells["Shadow Word: Death"][0].coeff *= 1.1;
         // TODO: Add special function to Mindblast / SWD spell that consumes SWP
+        discSpells["Mind Blast"].push(
+        {
+            type: "function",
+            runFunc: function (state) {
+                const buff = state.activeBuffs.filter(buff => buff.name === "Purge the Wicked" || buff.name === "Shadow Word: Pain");
+                console.log(buff);
+                console.log("====");
+                let flatDamageInc = 0;
+                //extendBuff("")
+            }
+
+        })
     }
     if (talents.twilightEquilibrium) {
 
