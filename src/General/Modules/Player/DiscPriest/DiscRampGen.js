@@ -102,8 +102,8 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) 
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
     sequence.push('Schism');
-    if (talents.mindgames) sequence.push("Mindgames");
     sequence.push(getPenance(talents));
+    if (talents.mindgames) sequence.push("Mindgames");
     sequence.push('Shadow Word: Death');
     sequence.push('Mind Blast');
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
@@ -148,8 +148,8 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) 
     sequence.push('Power Word: Radiance');
     sequence.push('Schism');
     sequence.push("Light's Wrath")
-    sequence.push(getPenance(talents));
     sequence.push('Shadow Word: Death');
+    sequence.push(getPenance(talents));
     sequence.push('Mind Blast');
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
     else sequence.push("Smite");
@@ -199,8 +199,9 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     sequence.push('Schism');
     //if (talents.lightsWrath) sequence.push("Light's Wrath");
-    if (talents.mindgames) sequence.push('Mindgames');
     sequence.push(getPenance(talents));
+    if (talents.mindgames) sequence.push('Mindgames');
+    sequence.push('Smite');
     sequence.push('Shadow Word: Death');
     sequence.push('Mind Blast');
     if (talents.divineStar) sequence.push("Divine Star");

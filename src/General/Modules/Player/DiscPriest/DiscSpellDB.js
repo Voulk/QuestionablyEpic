@@ -441,7 +441,7 @@ export const baseTalents = {
     unwaveringWill: {points: 0, maxPoints: 1, icon: "ability_warrior_unrelentingassault", id: 373456, select: true},
     //twistOfFaith:
     throesOfPain: {points: 0, maxPoints: 1, icon: "spell_shadow_haunting", id: 377427, select: true},
-    mindgames: {points: 0, maxPoints: 1, icon: "ability_revendreth_priest", id: 323673, select: true},
+    mindgames: {points: 1, maxPoints: 1, icon: "ability_revendreth_priest", id: 323673, select: true},
     surgeOfLight: {points: 0, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 114255, select: true},
     crystallineReflection: {points: 0, maxPoints: 1, icon: "ability_priest_reflectiveshield", id: 373457, select: true},
     //manipulation:

@@ -297,7 +297,7 @@ const extendActiveAtonements = (atoneApp, timer, extension) => {
  * @chaosbrand A 5% damage buff if we have Chaos Brand enabled in Disc Settings.
  * @AscendedEruption A special buff for the Ascended Eruption spell only. The multiplier is equal to 3% (4 with conduit) x the number of Boon stacks accrued.
  */
-const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
+const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) => {
     const sins = DISCCONSTANTS.sins;
     let schism = 1;
 
@@ -323,6 +323,15 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
         }
     }
     else if (spellName === "Light's Wrath") mult *= (1 + (0.1 + talents.resplendentLight * 0.02) * activeAtones);
+
+    if (checkBuffActive(buffs, "Twilight Equilibrium - Shadow") && "school" in spell && spell.school === "shadow" && !spellName.includes("dot")) {
+        mult *= 1.15;
+        state.activeBuffs = removeBuffStack(state.activeBuffs, "Twilight Equilibrium - Shadow");
+    }
+    if (checkBuffActive(buffs, "Twilight Equilibrium - Holy") && "school" in spell && spell.school === "holy" && !spellName.includes("dot")) {
+        mult *= 1.15;
+        state.activeBuffs = removeBuffStack(state.activeBuffs, "Twilight Equilibrium - Holy");
+    }
     return mult; 
 }
 
@@ -406,7 +415,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 export const runDamage = (state, spell, spellName, atonementApp) => {
 
     const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
-    const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, spellName, state.talents); // Get our damage multiplier (Schism, Sins etc);
+    const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, spellName, state.talents, spell); // Get our damage multiplier (Schism, Sins etc);
     const damageVal = getSpellRaw(spell, state.currentStats, DISCCONSTANTS) * damMultiplier;
     const atonementHealing = Math.round(activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * (1 - spell.atoneOverheal) * (spell.atonementBonus || 1))
     // This is stat tracking, the atonement healing will be returned as part of our result.
@@ -618,18 +627,25 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                     // If we cast a damage spell and have Twilight Equilibrium then we'll add a 6s buff that 
                     // increases the power of our next cast of the opposite school by 15%.
 
-                    if ('school' in spell && spell.school === "Holy") {
+                    if ('school' in spell && spell.school === "holy") {
                         // Check if buff already exists, if it does add a stack.
+                        console.log("Adding TE - Shadow")
                         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === "Twilight Equilibrium - Shadow"}).length;
                         if (buffStacks === 0) state.activeBuffs.push({name: "Twilight Equilibrium - Shadow", expiration: (state.t + spell.castTime + 6) || 999, buffType: "special", value: 1.15, stacks: 1, canStack: false});
                         else {
-                            const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
-                            buff.expiration = state.t + spell.castTime
-
+                            const buff = state.activeBuffs.filter(buff => buff.name === "Twilight Equilibrium - Shadow")[0]
+                            buff.expiration = state.t + spell.castTime + 6;
                         }
                     }
-                    else if ('school' in spell && spell.school === "Shadow") {
-
+                    else if ('school' in spell && spell.school === "shadow") {
+                        // Check if buff already exists, if it does add a stack.
+                        console.log("Adding TE - Holy")
+                        const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === "Twilight Equilibrium - Holy"}).length;
+                        if (buffStacks === 0) state.activeBuffs.push({name: "Twilight Equilibrium - Holy", expiration: (state.t + spell.castTime + 6) || 999, buffType: "special", value: 1.15, stacks: 1, canStack: false});
+                        else {
+                            const buff = state.activeBuffs.filter(buff => buff.name === "Twilight Equilibrium - Holy")[0]
+                            buff.expiration = state.t + spell.castTime + 6;
+                        }
                     }
                     // If Spell doesn't have a school, or if it does and it's not Holy / Shadow, then ignore.
 
