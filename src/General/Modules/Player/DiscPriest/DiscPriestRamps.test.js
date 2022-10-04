@@ -9,25 +9,8 @@ import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
-/*
-describe("Test Base Spells", () => {
-    const errorMargin = 1.1; // There's often some blizzard rounding hijinx in spells. If our formulas are within 1 (a fraction of a percent) then we are likely calculating it correctly.
-    const activeStats = {
-            intellect: 1974,
-            haste: 869,
-            crit: 1000,
-            mastery: 451,
-            versatility: 528,
-            stamina: 1900,
-    }
-    const critMult = 1.05 + activeStats.crit / 35 / 100; 
-    test("Smite", () => {
-        const spell = DISCSPELLS['Smite'][0];
 
-        const damage = getSpellRaw(spell, activeStats);
-
-        //expect(Math.round(damage)).toEqual(Math.round(1110*critMult));
-    });
+    /*
     test("Mind Blast", () => {
         const spell = DISCSPELLS['Mind Blast'][0];
         expect(Math.abs(getSpellRaw(spell, activeStats) - 1666*critMult)).toBeLessThan(3);

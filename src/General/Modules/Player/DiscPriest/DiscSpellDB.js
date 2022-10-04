@@ -29,7 +29,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 200,
-        coeff: 0.705 * 0.7, // 0.75 (smite aura nerf) x 0.94 (disc aura nerf)
+        coeff: 0.52875, // 0.705 x 0.7 (smite aura nerf)
         atoneOverheal: 0.28,
         school: "holy",
         secondaries: ['crit', 'vers'],
@@ -102,7 +102,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 1250,
-        coeff: 0.744642, // 0.9792 x 0.809 (Mind Blast aura) x 0.94 (Disc aura)
+        coeff: 0.792, // 0.9792 x 0.809 (Mind Blast aura)
         cooldown: 15,
         school: "shadow",
         atoneOverheal: 0.29,
@@ -408,7 +408,7 @@ export const baseTalents = {
     painAndSuffering: {points: 0, maxPoints: 2, icon: "spell_shadow_shadowwordpain", id: 390689, select: true},
     embraceShadow: {points: 0, maxPoints: 1, icon: "spell_warlock_demonsoul", id: 372985, select: true},
     twilightCorruption: {points: 0, maxPoints: 1, icon: "spell_fire_twilightimmolation", id: 373065, select: true},
-    borrowedTime: {points: 0, maxPoints: 2, icon: "ability_priest_angelicbulwark", id: 197762, select: true},
+    borrowedTime: {points: 0, maxPoints: 2, icon: "spell_holy_borrowedtime", id: 390691, select: true},
     castigation: {points: 1, maxPoints: 1, icon: "spell_holy_searinglightpriest", id: 193134, select: true},
     stolenPsyche: {points: 0, maxPoints: 1, icon: "ability_priest_surgeofdarkness", id: 373054, select: true},
 
@@ -434,17 +434,18 @@ export const baseTalents = {
 
     // Priest class tree
     improvedFlashHeal: {points: 0, maxPoints: 1, icon: "spell_holy_heal", id: 393870, select: true},
-    shadowWordDeath: {points: 0, maxPoints: 1, icon: "spell_shadow_demonicfortitude", id: 32379, select: true},
-    focusedMending: {points: 0, maxPoints: 1, icon: "achievement_bg_returnxflags_def_wsg", id: 372354, select: true},
+    shadowWordDeath: {points: 0, maxPoints: 1, icon: "spell_shadow_demonicfortitude", id: 32379, select: false},
+    focusedMending: {points: 0, maxPoints: 1, icon: "achievement_bg_returnxflags_def_wsg", id: 372354, select: false},
     deathAndMadness: {points: 0, maxPoints: 1, icon: "spell_shadow_demonicfortitude", id: 321291, select: true},
     wordsOfThePious: {points: 0, maxPoints: 1, icon: "ability_priest_clarityofwill", id: 377438, select: true},
-    unwaveringWill: {points: 0, maxPoints: 1, icon: "ability_warrior_unrelentingassault", id: 373456, select: true},
+    unwaveringWill: {points: 0, maxPoints: 1, icon: "ability_warrior_unrelentingassault", id: 373456, select: false},
     //twistOfFaith:
     throesOfPain: {points: 0, maxPoints: 1, icon: "spell_shadow_haunting", id: 377427, select: true},
-    mindgames: {points: 1, maxPoints: 1, icon: "ability_revendreth_priest", id: 323673, select: true},
+    
     surgeOfLight: {points: 0, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 114255, select: true},
     crystallineReflection: {points: 0, maxPoints: 1, icon: "ability_priest_reflectiveshield", id: 373457, select: true},
     //manipulation:
+    mindgames: {points: 1, maxPoints: 1, icon: "ability_revendreth_priest", id: 323673, select: false},
     shatteredPerceptions: {points: 0, maxPoints: 1, icon: "spell_animarevendreth_debuff", id: 391112, select: true},
 
 };

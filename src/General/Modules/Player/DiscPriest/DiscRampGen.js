@@ -186,8 +186,9 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     //if (trinket === "Shadowed Orb of Torment") sequence.push("Shadowed Orb");
     //if (talents.rapture) {sequence.push('Rapture'); applicators -= 1 };
     for (var x = 0; x < applicators; x++) {
-        // Power Word: Shield can also be swapped out for Shadow Mend on non-Rapture ramps.
-        sequence.push('Renew');
+        if (talents.trainOfThought && x % 4 === 0) sequence.push('Power Word: Shield');
+        else if (x % 5 === 0) sequence.push('Power Word: Shield');
+        else sequence.push('Renew');
     }
 
     if (specialSpells.includes("Shadowfiend")) sequence.push("Shadowfiend");
@@ -203,7 +204,7 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     if (talents.mindgames) sequence.push('Mindgames');
     sequence.push('Smite');
     sequence.push('Shadow Word: Death');
-    sequence.push('Mind Blast');
+    //sequence.push('Mind Blast');
     if (talents.divineStar) sequence.push("Divine Star");
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
     else sequence.push("Smite");

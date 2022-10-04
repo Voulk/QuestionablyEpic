@@ -92,12 +92,12 @@ export default function SequenceGenerator(props) {
   
 
   const stats = {
-    intellect: 5605,
-    haste: 2353,
-    crit: 1523,
-    mastery: 188,
-    versatility: 1017,
-    stamina: 6559,
+    intellect: 6500,
+    haste: 3500,
+    crit: 1800,
+    mastery: 2000,
+    versatility: 1200,
+    stamina: 8200,
 
     critMult: 1,
   };
@@ -159,7 +159,7 @@ export default function SequenceGenerator(props) {
 
   const runSeq = () => {
     const simFunc = getSequence(selectedSpec);
-    const sim = simFunc(seq, stats, {}, {});
+    const sim = simFunc(seq, stats, {reporting: true}, talents);
     setResult(sim);
 
   };

@@ -107,6 +107,13 @@ const DISCCONSTANTS = {
         discSpells['Purge the Wicked'][1].coeff *= (1 + 0.075 * talents.painAndSuffering);
     }
     if (talents.borrowedTime) {
+        discSpells['Power Word: Shield'].push({
+            type: "buff",
+            buffType: 'statsMult',
+            stat: 'haste',
+            value: (1 + 0.04 * talents.borrowedTime), // This is equal to 4% haste.
+            buffDuration: 4,
+        })
 
     }
     if (talents.indemnity) discSpells['Power Word: Shield'][0].atonement += 3;
@@ -444,9 +451,13 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
 
-    if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.overheal * 100}%)`)
-    else addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.overheal * 100}%)`)
-
+    if (!spellName.includes("hot")) {
+        let base = `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.overheal * 100}%`;
+        if (targetMult > 1) base += `, ${targetMult} targets`;
+        if (spell.atonement) base += `, +${spell.atonement}s atone`;
+        if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.overheal * 100}%)`)
+        addReport(state, base);
+    }
 }
 
 export const runDamage = (state, spell, spellName, atonementApp) => {
@@ -459,7 +470,7 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
     state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
 
-    addReport(state, `${spellName} dealt ${Math.round(damageVal)} damage (${atonementHealing} atone)`)
+    if (!spellName.includes("dot")) addReport(state, `${spellName} dealt ${Math.round(damageVal)} damage (${atonementHealing} atone)`)
     //if (state.reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
 
 }

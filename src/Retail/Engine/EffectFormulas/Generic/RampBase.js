@@ -17,9 +17,11 @@ const GLOBALCONST = {
 
 export const addBuff = (state, spell, spellName) => {
     if (spell.buffType === "stats") {
+        addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds (" + spell.value + " " + spell.stat + ")");
         state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
     }
     else if (spell.buffType === "statsMult") {
+        addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds (" + spell.value + " " + spell.stat + " - Mult)");
         state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "statsMult", value: spell.value, stat: spell.stat});
     }
     else if (spell.buffType === "damage" || spell.buffType === "heal") {     
@@ -31,6 +33,7 @@ export const addBuff = (state, spell, spellName) => {
 
     }
     else if (spell.buffType === "special") {
+        addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds.");
         // Check if buff already exists, if it does add a stack.
         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
         if (buffStacks === 0) state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, buffType: "special", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack});
@@ -43,6 +46,7 @@ export const addBuff = (state, spell, spellName) => {
     else {
         state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
     }
+    
 }
 
 export const removeBuff = (buffs, buffName) => {
@@ -138,8 +142,9 @@ export const getCurrentStats = (statArray, buffs) => {
     const multBuffs = buffs.filter(function (buff) {return buff.buffType === "statsMult"});
     multBuffs.forEach(buff => {
         // Multiplicative Haste buffs need some extra code as they are increased by the amount of haste you already have.
-        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / 32 / 100 + 1) * buff.value)-1) * 32 * 100;
+        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / 170 / 100 + 1) * buff.value)-1) * 170 * 100;
         else statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
+        console.log("Post Haste: " + (((statArray[buff.stat] / 170 / 100 + 1) * buff.value)-1) * 170 * 100);
     });
 
     return statArray;
