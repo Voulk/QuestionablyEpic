@@ -330,9 +330,13 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
     }
     if (checkBuffActive(buffs, "Twilight Equilibrium - Holy") && "school" in spell && spell.school === "holy" && !spellName.includes("dot")) {
         mult *= 1.15;
-        state.activeBuffs = removeBuffStack(state.activeBuffs, "Twilight Equilibrium - Holy");
+        if (!spellName.includes("PenanceTick")) state.activeBuffs = removeBuffStack(state.activeBuffs, "Twilight Equilibrium - Holy");
     }
     return mult; 
+}
+
+const penanceCleanup = (state) => {
+    removeBuffStack(state.activeBuffs, "Twilight Equilibrium - Holy");
 }
 
 /** A healing spells healing multiplier. It's base healing is directly multiplied by whatever the function returns.
@@ -651,6 +655,9 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
 
                 }
+
+                // Penance ticks are a bit weird and need to be cleaned up when we're done with them. 
+                if (spellName === "PenanceTick" && seq[0] !== "PenanceTick") penanceCleanup(state);
                 
                 // Grab the next timestamp we are able to cast our next spell. This is equal to whatever is higher of a spells cast time or the GCD.
                 

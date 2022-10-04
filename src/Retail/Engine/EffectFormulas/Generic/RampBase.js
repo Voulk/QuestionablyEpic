@@ -18,6 +18,8 @@ const GLOBALCONST = {
 // Removes a stack of a buff, and removes the buff entirely if it's down to 0 or doesn't have a stack mechanic.
 export const removeBuffStack = (buffs, buffName) => {
     const buff = buffs.filter(buff => buff.name === buffName)[0]
+    
+    if (buff === undefined) return buffs;
     const buffStacks = buff.stacks || 0;
 
     if (buffStacks === 1) {
