@@ -135,7 +135,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 2.5,
         cost: 0,
-        coeff: 1.75, // This is almost definitely incorrect.
+        coeff: 1.75, 
         cooldown: 90,
         school: "holy",
         atoneOverheal: 0.33,

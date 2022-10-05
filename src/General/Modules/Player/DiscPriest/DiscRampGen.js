@@ -215,7 +215,7 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     }
     sequence.push(getPenance(talents));
 
-    for (var i = 0; i < 8; i++) {
+    for (var i = 0; i < 12; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
         sequence.push('Smite');
     }
