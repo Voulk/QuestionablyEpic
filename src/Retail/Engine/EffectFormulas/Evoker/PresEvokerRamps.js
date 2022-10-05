@@ -641,9 +641,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                 echoSpell[0].name = "Reversion (HoT - Echo)";
                 echoSpell[0].function = spellData[0].function;
             }
-
+            echoSpell[0].coeff *= evokerSpells['Echo'][1].value;
             // Save the new spell.
             evokerSpells[spellName+"(Echo)"] = echoSpell;
+
         }
     }
 
