@@ -148,11 +148,11 @@ const triggerCycleOfLife = (state, rawHealing) => {
             targets: 1,
             secondaries: ['crit', 'vers']
         });
-        console.log(evokerSpells['Fire Breath']);
+
     }
     if (talents.lifeforceMender) {
         const bonus = (talents.lifeforceMender * 0.01 * getHealth(stats, talents))
-        console.log("BONUS: " + bonus);
+
         evokerSpells['Fire Breath'][0].flatDamage = bonus;
         if (evokerSpells.length > 2) evokerSpells['Fire Breath'][2].flatHeal = bonus;
         evokerSpells['Living Flame D'][0].flatDamage = bonus;
@@ -315,7 +315,7 @@ const getHealingMult = (state, t, spellName, talents) => {
         else {
             const buffsActive = state.activeBuffs.filter(buff => buff.name.includes("Reversion")).length;
             mult *= (1 + talents.gracePeriod * 0.05 * buffsActive / 20);
-            console.log((1 + talents.gracePeriod * 0.05 * buffsActive / 20))
+
         }
     }
 
@@ -376,7 +376,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 }
 
 export const runDamage = (state, spell, spellName, atonementApp, compile = true) => {
-
+    console.log(JSON.stringify(state.activeBuffs));
     //const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
     const damMultiplier = getDamMult(state, state.activeBuffs, 0, state.t, spellName, state.talents); // Get our damage multiplier (Schism, Sins etc);
     const damageVal = getSpellRaw(spell, state.currentStats, EVOKERCONSTANTS) * damMultiplier;
@@ -443,6 +443,7 @@ export const genSpell = (state, spells) => {
 const apl = ["Riptide", "Rest"]
 
 const runSpell = (fullSpell, state, spellName, evokerSpells) => {
+
     fullSpell.forEach(spell => {
 
         let canProceed = false
@@ -479,6 +480,7 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
             // The spell adds a buff to our player.
             // We'll track what kind of buff, and when it expires.
             else if (spell.type === "buff") {
+
                 addReport(state, `Adding buff: ${spell.name}`);
                 if (spell.buffType === "stats") {
                     state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
@@ -495,20 +497,23 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
 
                 }
                 else if (spell.buffType === "function") {
-                    const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
+                    const newBuff = {name: spell.name, buffType: spell.buffType, attSpell: spell,
                         tickRate: spell.tickRate, canPartialTick: spell.canPartialTick || false, 
                         next: state.t + (spell.tickRate / getHaste(state.currentStats))}
                     newBuff.attFunction = spell.function;
-                    if (spellName === "Reversion") newBuff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - 0.25))); // TODO; Replace 0.25 with crit.
+
+                    if (spellName.includes("Reversion")) newBuff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - 0.25))); // TODO; Replace 0.25 with crit.
 
                     state.activeBuffs.push(newBuff);
+
                 }
                 else if (spell.buffType === "special") {
                     // Check if buff already exists, if it does add a stack.
                     const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
 
                     if (spell.canStack === false || buffStacks === 0) {
-                        const buff = {name: spell.name, expiration: (state.t  + spell.buffDuration) + (spell.castTime || 0), buffType: spell.buffType, value: spell.value, stacks: 1, canStack: spell.canStack}
+                        const buff = {name: spell.name, expiration: (state.t  + spell.buffDuration) + (spell.castTime || 0), buffType: spell.buffType, 
+                            value: spell.value, stacks: 1, canStack: spell.canStack, maxStacks: spell.maxStacks};
                     
                         if (spell.name === "Cycle of Life") {
 
@@ -524,10 +529,12 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
     
                         const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
 
-                        addReport(state, `${spell.name} stacks: ${buff.stacks+1}`)
-
                         
-                        if (buff.canStack) buff.stacks += 1;
+                        if (buff.canStack) {
+                            buff.stacks += 1;
+                            if (buff.maxStacks) buff.stacks = Math.min(buff.stacks, buff.maxStacks);
+                        }
+                        addReport(state, `${spell.name} stacks: ${buff.stacks}`)
                     }
 
                     if (spell.name === "Essence Burst") {
@@ -630,6 +637,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             if (spellName === "Spiritbloom") echoSpell[0].targets = 1; // An Echo'd Spiritbloom just adds one target.
             if (spellName === "Emerald Blossom") echoSpell[0].targets = 1; // An Echo'd Emerald Blossom just adds one target.
             if (spellName === "Dream Breath") echoSpell[0].targets = 1; // An Echo'd Emerald Blossom just adds one target.
+            if (spellName === "Reversion") {
+                echoSpell[0].name = "Reversion (HoT - Echo)";
+                echoSpell[0].function = spellData[0].function;
+            }
 
             // Save the new spell.
             evokerSpells[spellName+"(Echo)"] = echoSpell;
