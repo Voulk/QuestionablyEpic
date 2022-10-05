@@ -19,7 +19,7 @@ const DISCCONSTANTS = {
 }
 
 describe("Test Base Spells", () => {
-    const errorMargin = 25; // There's often some blizzard rounding hijinx in spells. If our formulas are within 1 (a fraction of a percent) then we are likely calculating it correctly.
+    const errorMargin = 2; // There's often some blizzard rounding hijinx in spells. If our formulas are within 2 (a fraction of a percent) then we are likely calculating it correctly.
     const activeStats = {
             intellect: 4833,
             haste: 1882,
@@ -32,59 +32,35 @@ describe("Test Base Spells", () => {
 
     test("Smite", () => {
         const spell = DISCSPELLS['Smite'][0];
-
         const damage = getSpellRaw(spell, activeStats, DISCCONSTANTS);
-
         expect(Math.abs(damage * DISCCONSTANTS.auraDamageBuff - 2402)).toBeLessThan(errorMargin);
     });
 
     test("Mind Blast", () => {
         const spell = DISCSPELLS['Mind Blast'][0];
-
         const damage = getSpellRaw(spell, activeStats, DISCCONSTANTS);
-
         expect(Math.abs(damage * DISCCONSTANTS.auraDamageBuff - 3598)).toBeLessThan(errorMargin);
     });
     test("Shadow Word: Death", () => {
         const spell = DISCSPELLS['Shadow Word: Death'][0];
-
         const damage = getSpellRaw(spell, activeStats, DISCCONSTANTS);
-
-        expect(Math.abs(damage * DISCCONSTANTS.auraDamageBuff - 0)).toBeLessThan(errorMargin);
+        expect(Math.abs(damage * DISCCONSTANTS.auraDamageBuff - 3862)).toBeLessThan(errorMargin);
     });
     test("Light's Wrath", () => {
         const spell = DISCSPELLS["Light's Wrath"][0];
-
         const damage = getSpellRaw(spell, activeStats, DISCCONSTANTS);
-
-        expect(Math.abs(damage * DISCCONSTANTS.auraDamageBuff - 0)).toBeLessThan(errorMargin);
+        expect(Math.abs(damage * DISCCONSTANTS.auraDamageBuff - 7950)).toBeLessThan(errorMargin);
     });
     test("Mindgames - Damage", () => {
         const spell = DISCSPELLS["Mindgames"][0];
-
         const damage = getSpellRaw(spell, activeStats, DISCCONSTANTS);
-
-        expect(Math.abs(damage * DISCCONSTANTS.auraDamageBuff - 0)).toBeLessThan(errorMargin);
+        expect(Math.abs(damage * DISCCONSTANTS.auraDamageBuff - 12266)).toBeLessThan(errorMargin);
     });
     // Healing Spells
     test("Power Word: Shield", () => {
         const spell = DISCSPELLS['Power Word: Shield'][0];
-
         const healing = getSpellRaw(spell, activeStats, DISCCONSTANTS);
-
-        expect(Math.abs(damage * DISCCONSTANTS.auraHealingBuff - 0)).toBeLessThan(errorMargin);
+        expect(Math.abs(healing * DISCCONSTANTS.auraHealingBuff - 13532)).toBeLessThan(errorMargin);
     });
-    test("Renew", () => {
-        const spell = DISCSPELLS['Renew'][0];
-
-        const healing = getSpellRaw(spell, activeStats, DISCCONSTANTS);
-
-        expect(Math.abs(damage * DISCCONSTANTS.auraHealingBuff - 0)).toBeLessThan(errorMargin);
-    });
-    
-    
-    
-
-    
 
 });

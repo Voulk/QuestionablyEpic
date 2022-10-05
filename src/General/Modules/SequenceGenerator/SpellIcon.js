@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const SpellIcon = ({ spell, spec, iconType, className, alt = '', ...others }) => {
+export const SpellIcon = ({ spell, spec, iconType, size, className, alt = '', ...others }) => {
   if (!spell) {
     return null;
   }

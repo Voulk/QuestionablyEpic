@@ -104,7 +104,7 @@ export default function SequenceGenerator(props) {
 
   const updateSequence = (sequence) => {
     const simFunc = getSequence(selectedSpec);
-    const sim = simFunc(sequence, stats, {reporting: true}, talents);
+    const sim = simFunc(sequence, stats, {reporting: true, harshDiscipline: true}, talents);
 
     // multiple state updates get bundled by react into one update
     setSeq(sequence);
@@ -159,7 +159,7 @@ export default function SequenceGenerator(props) {
 
   const runSeq = () => {
     const simFunc = getSequence(selectedSpec);
-    const sim = simFunc(seq, stats, {reporting: true}, talents);
+    const sim = simFunc(seq, stats, {reporting: true, harshDiscipline: true}, talents);
     setResult(sim);
 
   };
@@ -312,28 +312,38 @@ export default function SequenceGenerator(props) {
                   <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
                     {"Talents"}
                   </Typography>
-                  <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Grid container>
-                      <Grid container spacing={1}>
-                        {talentList.map((spell, i) => (
-                          <Grid item xs="auto" key={i}>
-                            <SpellIcon
-                              spell={talentDB[spell]}
-                              spec={selectedSpec}
-                              iconType={"Talent"}
-                              draggable
-                              //onDragStart={(e) => { dragStart(e, spell) }}
-                              onClick={(e) => {
-                                e.persist();
-                                addTalent(spell, talentDB, setTalents, e)
-                              }}
-                              style={{ display: "flex" }}
-                            />
+                        {[1, 2, 3, 4].map((tier, i) => (
+                        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+
+                          <Grid container spacing={1}>
+                          {talentList.map((spell, j) => (
+                            talentDB[spell].tier === tier ?
+
+                              <Grid item xs="auto" key={j} style={{paddingBottom: 7}}>
+                                <SpellIcon
+                                  spell={talentDB[spell]}
+                                  spec={selectedSpec}
+                                  iconType={"Talent"}
+                                  width={25}
+                                  //onDragStart={(e) => { dragStart(e, spell) }}
+                                  onClick={(e) => {
+                                    e.persist();
+                                    addTalent(spell, talentDB, setTalents, e)
+                                  }}
+                                  style={{ display: "flex"}}
+                                />
+
                           </Grid>
+                               : ""
+                              
+
+                          ))}
+                          <div style={{ height: 25 }} />
+                          </Grid>
+                              </Grid>
+
                         ))}
-                      </Grid>
-                    </Grid>
-                  </Grid>
+
                 </Grid>
 
                 <Grid item xs={12}>

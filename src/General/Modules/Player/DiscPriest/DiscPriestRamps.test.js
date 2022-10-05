@@ -10,43 +10,6 @@ import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
 
-    /*
-    test("Mind Blast", () => {
-        const spell = DISCSPELLS['Mind Blast'][0];
-        expect(Math.abs(getSpellRaw(spell, activeStats) - 1666*critMult)).toBeLessThan(3);
-    });
-    test("Solace", () => {
-        const spell = DISCSPELLS['Power Word: Solace'][0];
-
-        const damage = getSpellRaw(spell, activeStats);
-
-        expect(Math.abs(damage - 1680*critMult)).toBeLessThan(errorMargin);
-    });
-    test("Schism", () => {
-        const spell = DISCSPELLS['Schism'][0];
-
-        const damage = getSpellRaw(spell, activeStats);
-
-        expect(Math.abs(damage - 3150*critMult)).toBeLessThan(errorMargin);
-    });
-    test("Power Word: Radiance", () => {
-        const spell = DISCSPELLS['Power Word: Radiance'][0];
-
-        const healing = getSpellRaw(spell, activeStats);
-
-        expect(Math.abs(healing - 2347*critMult)).toBeLessThan(errorMargin);
-    });
-    test("Power Word: Shield", () => {
-        const spell = DISCSPELLS['Power Word: Shield'][0];
-
-        const healing = getSpellRaw(spell, activeStats);
-
-        expect(Math.abs(healing - 3687*critMult)).toBeLessThan(errorMargin);
-    });
-
-    // TODO: test more spells.
-}); */
-
 describe("Evang Cast Sequence", () => {
     //const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
     /*player.activeStats = {
