@@ -62,6 +62,7 @@ const getTalentDB = (spec) => {
 
 
 
+
 const getSequence = (spec) => {
   if (spec === "Preservation Evoker") return evokerSequence;
   if (spec === "Discipline Priest") return discSequence;
@@ -113,6 +114,36 @@ export default function SequenceGenerator(props) {
     console.log(sim);
   }
 
+  const runIterations = (sequence, simFunc) => {
+    const iter = 1;
+    const results = {totalHealing: 0, totalDamage: 0, manaSpent: 0, hpm: 0};
+    let finalReport = [];
+  
+    for (let i = 0; i < iter; i++) {
+        //const baseline = runCastSequence(sequence, activeStats, settings, talents)
+  
+        //const simFunc = getSequence(selectedSpec);
+        const sim = simFunc(sequence, stats, {reporting: true, harshDiscipline: true}, talents);
+  
+        results.totalHealing += sim.totalHealing;
+        results.manaSpent += sim.manaSpent;
+        results.totalDamage += sim.totalDamage;
+  
+        if (i === iter - 1) finalReport = sim.report;
+  
+        //console.log("Baseline: " + JSON.stringify(baseline));
+    }
+    results.hpm = results.totalHealing / results.manaSpent;
+    results.totalHealing /= iter;
+    results.totalDamage /= iter;
+    results.manaSpent /= iter;
+
+
+    setResult(results);
+    setCombatLog(finalReport);
+  
+  }
+
   const addTalent = (talentName, talentDB, setTalents) => {
     const talent = talentDB[talentName];
     
@@ -158,9 +189,12 @@ export default function SequenceGenerator(props) {
   };
 
   const runSeq = () => {
+
+    
     const simFunc = getSequence(selectedSpec);
-    const sim = simFunc(seq, stats, {reporting: true, harshDiscipline: true}, talents);
-    setResult(sim);
+    //const sim = simFunc(seq, stats, {reporting: true, harshDiscipline: true}, talents);
+    runIterations(seq, simFunc);
+    //setResult(sim);
 
   };
 

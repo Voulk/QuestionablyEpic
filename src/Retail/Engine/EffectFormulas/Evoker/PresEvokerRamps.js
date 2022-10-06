@@ -376,7 +376,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 }
 
 export const runDamage = (state, spell, spellName, atonementApp, compile = true) => {
-    console.log(JSON.stringify(state.activeBuffs));
+
     //const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
     const damMultiplier = getDamMult(state, state.activeBuffs, 0, state.t, spellName, state.talents); // Get our damage multiplier (Schism, Sins etc);
     const damageVal = getSpellRaw(spell, state.currentStats, EVOKERCONSTANTS) * damMultiplier;
@@ -736,12 +736,11 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             if (fullSpell[0].castTime = 0) nextSpell += state.t + 1.5 / getHaste(currentStats);
             else nextSpell += state.t + castTime;
 
-            console.log("Queing " + queuedSpell + ". Next: " + nextSpell + ".Curr: " + state.t);
+            //console.log("Queing " + queuedSpell + ". Next: " + nextSpell + ".Curr: " + state.t);
             
 
         }
         if (queuedSpell !== "" && state.t >= spellFinish) {
-            console.log("Beginning Queued cast" + queuedSpell);
             // We have a queued spell, check if it's finished.
             // Instant spells should proc this immediately.
 
