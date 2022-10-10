@@ -68,7 +68,7 @@ export default function QEMainMenu(props) {
           "MainMenu.UpgradeFinder": ["/UpgradeFinder", true, "UpgradeFinder"],
           "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
           "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
-          "MainMenu.CooldownPlanner": ["/holydiver", true, "CooldownPlanner"],
+          "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
           "MainMenu.FightAnalysis": ["/fightAnalysis", true, "FightAnalysis"],
           "MainMenu.SequenceSandbox": ["/sequenceGen", true, "SequenceSandbox"],
           "MainMenu.Profile": ["/profile", true, "Profile"],

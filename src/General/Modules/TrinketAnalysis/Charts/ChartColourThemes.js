@@ -1,7 +1,7 @@
 import chroma from "chroma-js";
 
 const candidate1 = ["#1f78b4", "#33a02c", "#cd99ff", "#e31a1c", "#ffe375"];
-const candidate2 = ["#1f78b4", "#33a02c", "#ffe375", "#e31a1c", "#cd99ff", "#cd99ff", "#cd99ff"];
+const candidate2 = ["#1f78b4", "#33a02c", "#ffe375", "#e31a1c", "#cd99ff", "#cd99ff", "#cd99ff", "#cd99fe", "#cd99fd"];
 const candidate3 = ["#E1BE6A", "#40B0A6", "#EBF2BB", "#000000", "#FFD5BD", "#E7A9C1", "#D3F27A"];
 const candidate4 = ["#ffff99", "#b15928", "#cab2d6", "#6a3d9a", "#b2df8a", "#33a02c", "#fdbf6f", "#ff7f00", "#fb9a99", "#e31a1c", "#a6cee3", "#1f78b4", "#666666"];
 const candidate5 = ["#8e0152", "#ae206e", "#c74389", "#d967a3", "#e48bbb", "#eeafd1", "#f4d3e5", "#f7f7f7", "#d7edb8", "#b8e187", "#a1d26c", "#8bc255", "#76b241", "#61a22f", "#4d9221"];
