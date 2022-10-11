@@ -2,6 +2,7 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { DRUIDSPELLDB } from "./RestoDruidSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
+import { addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, removeBuff, getBuffStacks, getHealth, extendBuff, addBuff } from "Retail/Engine/EffectFormulas/Generic/RampBase";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
@@ -59,27 +60,6 @@ const DRUIDCONSTANTS = {
 }
 
 
-// Removes a stack of a buff, and removes the buff entirely if it's down to 0 or doesn't have a stack mechanic.
-const removeBuffStack = (buffs, buffName) => {
-    const buff = buffs.filter(buff => buff.name === buffName)[0]
-    const buffStacks = buff.stacks || 0;
-
-    if (buffStacks === 1) {
-        // Remove the buff
-        buffs = buffs.filter(buff => buff.name !== buffName);
-    }
-    else if (buffStacks >= 1) {
-        // The player has more than 1 stack of the buff. Remove one and leave the buff.
-        const activeBuff = buffs.filter(buff => buff.name === buffName)[0];
-        activeBuff.stacks = activeBuff.stacks - 1;
-    }
-    else {
-        // The player doesn't have the buff at all.
-        // This is not necessarily an error.
-    }
-    return buffs;
-}
-
 /** A spells damage multiplier. It's base damage is directly multiplied by anything the function returns.
  * @schism 25% damage buff to primary target if Schism debuff is active.
  * @sins A 3-12% damage buff depending on number of active atonements.
@@ -87,7 +67,7 @@ const removeBuffStack = (buffs, buffName) => {
  * @AscendedEruption A special buff for the Ascended Eruption spell only. The multiplier is equal to 3% (4 with conduit) x the number of Boon stacks accrued.
  */
 const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
-    let mult = PALACONSTANTS.auraDamageBuff;
+    let mult = DRUIDCONSTANTS.auraDamageBuff;
     
     mult *= (buffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.2 : 1); 
     
@@ -101,85 +81,13 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
  * @ascendedEruption The healing portion also gets a buff based on number of boon stacks on expiry.
  */
 const getHealingMult = (buffs, t, spellName, talents) => {
-    let mult = PALACONSTANTS.auraHealingBuff;
+    let mult = DRUIDCONSTANTS.auraHealingBuff;
     
     mult *= (buffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.2 : 1); 
     
     return mult;
 }
 
-/** Check if a specific buff is active. Buffs are removed when they expire so this is active buffs only.
- * @param buffs An array of buff objects.
- * @param buffName The name of the buff we're searching for.
- */
-const checkBuffActive = (buffs, buffName) => {
-    return buffs.filter(function (buff) {return buff.name === buffName}).length > 0;
-}
-
-/**
- * The number of atonements currently active. These are stored separately from regular buffs for speed and to separate them from buffs on the active player.
- * @param atoneApp An array storing our atonement expiry times.
- * @param timer The current time
- * @returns Number of active atonements.
- */
-const getActiveAtone = (atoneApp, timer) => {
-    let count = 0;
-    atoneApp.forEach(application => {
-        if (application >= timer) {
-            count++;
-        };
-    });
-    return count;
-}
-
-
-/**
- * Returns a spells stat multiplier based on which stats it scales with.
- * Haste is included in calculations but isn't usually a raw multiplier since it changes cooldown instead. 
- * @param {*} statArray A characters current stats including any active buffs.
- * @param {*} stats The secondary stats a spell scales with. Pulled from it's SpellDB entry.
- * @returns An effective multiplier. For a spell that scales with both crit and vers this would just be crit x vers.
- */
-const getStatMult = (currentStats, stats, statMods) => {
-    let mult = 1;
-
-    if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / 40 / 100);
-    if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100 + (statMods['crit'] || 0 ));
-    if (stats.includes("mastery")) mult *= (1+(0.12 + currentStats['mastery'] / 35 * PALACONSTANTS.masteryMod / 100) * PALACONSTANTS.masteryEfficiency) ;
-    return mult;
-}
-
-/**
- * Get our players active stats. This is made up of our base stats + any buffs. 
- * Diminishing returns is not in play in this function.
- * @param {} statArray Our active stats.
- * @param {*} buffs Our active buffs.
- * @returns 
- */
-const getCurrentStats = (statArray, buffs) => {
-    const statBuffs = buffs.filter(function (buff) {return buff.buffType === "stats"});
-    statBuffs.forEach(buff => {
-        statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
-    });
-
-    statArray = applyDiminishingReturns(statArray);
-
-    // Check for percentage stat increases which are applied post-DR.
-    // Examples include Power Infusion and the crit portion of Shadow Word: Manipulation.
-    const multBuffs = buffs.filter(function (buff) {return buff.buffType === "statsMult"});
-    multBuffs.forEach(buff => {
-        // Multiplicative Haste buffs need some extra code as they are increased by the amount of haste you already have.
-        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / 32 / 100 + 1) * buff.value)-1) * 32 * 100;
-        else statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
-    });
-
-    return statArray;
-}
-
-// Returns the players current haste percentage. 
-const getHaste = (stats) => {
-    return 1 + stats.haste / 32 / 100;
-}
 
 // Current atonement transfer rate.
 // Diminishing returns are taken care of in the getCurrentStats function and so the number passed 
@@ -193,16 +101,7 @@ const getSqrt = (targets) => {
     return Math.sqrt(targets);
 }
 
-/**
- * Get a spells raw damage or healing. This is made up of it's coefficient, our intellect, and any secondary stats it scales with.
- * We'll take care of multipliers like Schism and Sins in another function.
- * @param {object} spell The spell being cast. Spell data is pulled from DiscSpellDB. 
- * @param {object} currentStats A players current stats, including any buffs.
- * @returns The raw damage or healing of the spell.
- */
-export const getSpellRaw = (spell, currentStats) => {
-    return spell.coeff * currentStats.intellect * getStatMult(currentStats, spell.secondaries, spell.statMods || {}); // Multiply our spell coefficient by int and secondaries.
-}
+
 
 // This function is for time reporting. It just rounds the number to something easier to read. It's not a factor in any results.
 const getTime = (t) => {
@@ -219,11 +118,9 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     const healingVal = getSpellRaw(spell, currentStats) * (1 - spell.expectedOverheal) * healingMult * targetMult;
     
     
-    if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.5 * (1 - PALACONSTANTS.beaconOverhealing);
-    else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.35 * 2 * (1 - PALACONSTANTS.beaconOverhealing);
     
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
-    if (compile) state.healingDone["Beacon of Light"] = (state.healingDone["Beacon of Light"] || 0) + beaconHealing;
+
 
     return healingVal;
 }
@@ -340,7 +237,7 @@ const apl = ["Avenging Wrath", "Light of Dawn", "Holy Shock", "Hammer of Wrath",
 
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
-    const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, talents, state, stats);
+    const discSpells = applyLoadoutEffects(deepCopyFunction(DRUIDSPELLDB), settings, talents, state, stats);
 
     const seq = [...sequence];
     const sequenceLength = 45; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.

@@ -31,19 +31,18 @@ export const DRUIDSPELLDB = {
         cost: 0,
     }],
     "Rejuvenation": [{
-        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "heal"},
+        spellData: {id: 774, icon: "spell_nature_rejuvenation", cat: "heal"},
         type: "heal",
         castTime: 1.5,
         cost: 0.16,
         coeff: 1.55, // Not final
-        cooldown: 7.5,
         expectedOverheal: 0.29,
         holyPower: 1,
         statMods: {'crit': 0.3},
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Wrath": [{
-        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "damage"},
+        spellData: {id: 5176, icon: "spell_nature_wrathv2", cat: "damage"},
         type: "damage",
         castTime: 1.5,
         cost: 0.16,
@@ -55,7 +54,7 @@ export const DRUIDSPELLDB = {
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Tranquility": [{
-        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "cooldown"},
+        spellData: {id: 740, icon: "spell_nature_tranquility", cat: "cooldown"},
         type: "heal",
         castTime: 1.5,
         cost: 0.16,

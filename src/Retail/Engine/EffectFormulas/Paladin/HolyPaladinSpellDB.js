@@ -31,7 +31,7 @@ export const PALADINSPELLDB = {
         cost: 0,
     }],
     "Holy Shock": [{
-        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "heal"},
+        spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "heal"},
         type: "heal",
         castTime: 1.5,
         cost: 0.16,
@@ -43,7 +43,7 @@ export const PALADINSPELLDB = {
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Holy Shock O": [{
-        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "damage"},
+        spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "damage"},
         type: "heal",
         castTime: 1.5,
         cost: 0.16,
@@ -55,7 +55,7 @@ export const PALADINSPELLDB = {
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Flash of Light": [{
-        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "heal"},
+        spellData: {id: 19750, icon: "spell_holy_flashheal", cat: "heal"},
         type: "heal",
         castTime: 1.5,
         cost: 0.22,
@@ -64,7 +64,7 @@ export const PALADINSPELLDB = {
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Crusader Strike": [{
-        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "damage"},
+        spellData: {id: 35395, icon: "spell_holy_crusaderstrike", cat: "damage"},
         type: "damage",
         castTime: 1.5,
         cost: 0.11,
@@ -74,7 +74,7 @@ export const PALADINSPELLDB = {
         secondaries: ['crit', 'vers']
     }],
     "Judgment": [{  
-        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "damage"},
+        spellData: {id: 20271, icon: "spell_holy_righteousfury", cat: "damage"},
         type: "damage",
         castTime: 1.5,
         cost: 0.03,
@@ -83,7 +83,7 @@ export const PALADINSPELLDB = {
         secondaries: ['crit', 'vers']
     }],
     "Hammer of Wrath": [{
-        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "damage"},
+        spellData: {id: 24275, icon: "spell_paladin_hammerofwrath", cat: "damage"},
         type: "damage",
         castTime: 1.5,
         cost: 0,
@@ -94,7 +94,7 @@ export const PALADINSPELLDB = {
         secondaries: ['crit', 'vers']
     }],
     "Light of Dawn": [{
-        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "heal"},
+        spellData: {id: 85222, icon: "spell_paladin_lightofdawn", cat: "heal"},
         type: "heal",
         castTime: 1.5,
         cost: 0,
@@ -105,7 +105,7 @@ export const PALADINSPELLDB = {
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Avenging Wrath": [{
-        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "cooldown"},
+        spellData: {id: 31884, icon: "spell_holy_avenginewrath", cat: "cooldown"},
         type: "buff",
         castTime: 0,
         cost: 0,
