@@ -6,23 +6,63 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 const GLOBALCONST = {
     rollRNG: true, // Model RNG through chance. Increases the number of iterations required for accuracy but more accurate than other solutions.
     statPoints: {
-        crit: 35,
-        mastery: 35,
-        vers: 40,
-        haste: 33,
-        leech: 21,
+        crit: 180,
+        mastery: 180,
+        vers: 205,
+        haste: 170,
+        leech: 110,
     }
 
+}
+
+export const addBuff = (state, spell, spellName) => {
+    if (spell.buffType === "stats") {
+        addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds (" + spell.value + " " + spell.stat + ")");
+        state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
+    }
+    else if (spell.buffType === "statsMult") {
+        addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds (" + spell.value + " " + spell.stat + " - Mult)");
+        state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "statsMult", value: spell.value, stat: spell.stat});
+    }
+    else if (spell.buffType === "damage" || spell.buffType === "heal") {     
+        const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
+            tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
+
+        newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
+        state.activeBuffs.push(newBuff)
+
+    }
+    else if (spell.buffType === "special") {
+        addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds.");
+        // Check if buff already exists, if it does add a stack.
+        const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
+        if (buffStacks === 0) state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, buffType: "special", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack});
+        else {
+            const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
+            
+            if (buff.canStack) buff.stacks += 1;
+        }
+    }     
+    else {
+        state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
+    }
+    
+}
+
+export const removeBuff = (buffs, buffName) => {
+    return buffs.filter((buff) => buff.name !== buffName);
 }
 
 // Removes a stack of a buff, and removes the buff entirely if it's down to 0 or doesn't have a stack mechanic.
 export const removeBuffStack = (buffs, buffName) => {
     const buff = buffs.filter(buff => buff.name === buffName)[0]
+    
+    if (buff === undefined) return buffs;
     const buffStacks = buff.stacks || 0;
 
     if (buffStacks === 1) {
         // Remove the buff
-        buffs = buffs.filter(buff => buff.name !== buffName);
+        buffs = removeBuff(buffs, buffName);
     }
     else if (buffStacks >= 1) {
         // The player has more than 1 stack of the buff. Remove one and leave the buff.
@@ -52,6 +92,15 @@ export const checkBuffActive = (buffs, buffName) => {
  export const getBuffStacks = (buffs, buffName) => {
     const buff = buffs.filter(function (buff) {return buff.name === buffName})[0]
     return buff.stacks || 0;
+}
+
+/**  Extend any buffs named @spellName by @extension seconds. */
+export const extendBuff = (activeBuffs, timer, spellName, extension) => {
+    activeBuffs.forEach((buff) => {
+        if (buff.name === spellName) {
+            buff.expiration += extension;
+        }
+    });
 }
 
 
@@ -93,8 +142,9 @@ export const getCurrentStats = (statArray, buffs) => {
     const multBuffs = buffs.filter(function (buff) {return buff.buffType === "statsMult"});
     multBuffs.forEach(buff => {
         // Multiplicative Haste buffs need some extra code as they are increased by the amount of haste you already have.
-        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / 32 / 100 + 1) * buff.value)-1) * 32 * 100;
+        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / 170 / 100 + 1) * buff.value)-1) * 170 * 100;
         else statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
+        console.log("Post Haste: " + (((statArray[buff.stat] / 170 / 100 + 1) * buff.value)-1) * 170 * 100);
     });
 
     return statArray;
@@ -103,6 +153,14 @@ export const getCurrentStats = (statArray, buffs) => {
 // Returns the players current haste percentage. 
 export const getHaste = (stats) => {
     return 1 + stats.haste / 32 / 100;
+}
+
+export const addReport = (state, entry) => {
+    if (state.settings.reporting) state.report.push(JSON.stringify({t: Math.round(100*state.t)/100, e: entry}));
+}
+
+export const getHealth = (stats, talents) => {
+    return stats.stamina * 20 * (1 + talents.draconicLegacy * 0.02);
 }
 
 const getSqrt = (targets) => {

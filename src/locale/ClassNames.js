@@ -52,6 +52,19 @@ export const classNameDB = [
   },
   {
     name: {
+      en: "Preservation Evoker",
+      fr: "",
+      de: "Wiederherstellung Druide",
+      ru: "Друид Исцеления",
+      ch: "",
+    },
+    id: ["PreservationEvoker", "Preservation Evoker"],
+    cooldownPlannerMenu: true,
+    color: "#33937F",
+    icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg").default,
+  },
+  {
+    name: {
       en: "Druid",
       fr: "",
       de: "",

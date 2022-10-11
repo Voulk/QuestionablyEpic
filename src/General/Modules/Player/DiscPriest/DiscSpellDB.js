@@ -29,29 +29,52 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 200,
-        coeff: 0.33135, // 0.75 (smite aura nerf) x 0.94 (disc aura nerf)
-        cooldown: 0,
+        coeff: 0.52875, // 0.705 x 0.7 (smite aura nerf)
         atoneOverheal: 0.28,
+        school: "holy",
         secondaries: ['crit', 'vers'],
     }],
     "Penance": [{
         spellData: {id: 47540, icon: "spell_holy_penance", cat: "damage"},
         type: "special",
-        castTime: 0, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
+        castTime: 2, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
         cost: 800,
-        coeff: 1.128, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
+        coeff: 0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
         atoneOverheal: 0.26,
+        school: "holy",
         secondaries: ['crit', 'vers'],
     }],
     "PenanceTick": [{
         spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
         type: "damage",
-        castTime: 0.66, // This will still be dynamically adjusted at runtime.
+        castTime: 2, // This will still be dynamically adjusted at runtime.
         cost: 0,
         coeff: 0.376,
+        school: "holy",
         atoneOverheal: 0.27,
         secondaries: ['crit', 'vers'],
+    }],
+    "DefPenance": [{
+        spellData: {id: 47540, icon: "spell_holy_penance", cat: "heal"},
+        type: "special",
+        castTime: 2, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
+        cost: 800,
+        coeff: 1.25, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
+        bolts: 3,
+        overheal: 0.6,
+        school: "holy",
+        secondaries: ['crit', 'vers', 'mastery'],
+    }],
+    "DefPenanceTick": [{
+        spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
+        type: "heal",
+        castTime: 2, // This will still be dynamically adjusted at runtime.
+        cost: 0,
+        coeff: 1.25,
+        school: "holy",
+        overheal: 0.6,
+        secondaries: ['crit', 'vers', 'mastery'],
     }],
     "Schism": [{
         spellData: {id: 214621, icon: "spell_warlock_focusshadow", cat: "damage"},
@@ -60,6 +83,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 1.41,
         buffDuration: 9,
+        school: "shadow",
         atoneOverheal: 0.28,
         secondaries: ['crit', 'vers'],
     },
@@ -78,19 +102,11 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 1250,
-        coeff: 0.744642, // 0.9792 x 0.809 (Mind Blast aura) x 0.94 (Disc aura)
+        coeff: 0.792, // 0.9792 x 0.809 (Mind Blast aura)
         cooldown: 15,
+        school: "shadow",
         atoneOverheal: 0.29,
         secondaries: ['crit', 'vers']
-    },
-    {
-        type: "heal",
-        castTime: 0,
-        coeff: 3,
-        aura: 1,
-        targets: 1,
-        secondaries: ['vers'],
-        overheal: 0,
     }],
     "Power Word: Solace": [{
         spellData: {id: 129250, icon: "ability_priest_flashoflight", cat: "damage"},
@@ -100,6 +116,18 @@ export const DISCSPELLS = {
         coeff: 0.752,
         cooldown: 15,
         atoneOverheal: 0.3,
+        school: "holy",
+        secondaries: ['crit', 'vers']
+    }],
+    "Shadow Word: Death": [{
+        spellData: {id: 32379, icon: "spell_shadow_demonicfortitude", cat: "damage"},
+        type: "damage",
+        castTime: 1.5,
+        cost: 0,
+        coeff: 0.85,
+        cooldown: 9,
+        atoneOverheal: 0.25,
+        school: "shadow",
         secondaries: ['crit', 'vers']
     }],
     "Light's Wrath": [{
@@ -107,8 +135,9 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 2.5,
         cost: 0,
-        coeff: 1.75, // This is almost definitely incorrect.
+        coeff: 1.75, 
         cooldown: 90,
+        school: "holy",
         atoneOverheal: 0.33,
         secondaries: ['crit', 'vers'],
     }],
@@ -117,8 +146,9 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 1000,
-        coeff: 2.54, // 3 x 0.94 (disc aura nerf) x 0.85 (Mindgames specific aura nerf)
+        coeff: 2.7, // 3 x 0.9 (Mindgames specific aura nerf)
         cooldown: 40,
+        school: "shadow",
         atoneOverheal: 0.23,
         secondaries: ['crit', 'vers'],
     },
@@ -142,6 +172,7 @@ export const DISCSPELLS = {
         cost: 1000,
         coeff: 0.56 * 2,
         aura: 1,
+        school: "holy",
         secondaries: ['crit', 'vers'],
         atoneOverheal: 0.24,
     },
@@ -160,22 +191,46 @@ export const DISCSPELLS = {
         type: "heal",
         castTime: 1.5,
         cost: 1550,
-        coeff: 1.65,
+        coeff: 2.8,
         aura: 1,
-        cooldown: 0,
+        cooldown: 7.5,
         atonement: 15,
         atonementPos: 'start',
+        school: "holy",
         targets: 1,
         secondaries: ['crit', 'vers'],
         overheal: 0,
     }],
-    "Shadow Mend": [{
-        spellData: {id: 186263, icon: "spell_shadow_shadowmend", cat: "heal"},
+    "Renew": [{
+        // To check: See if Renew still has an initial heal, and confirm whether it gets a mastery buff (unlikely).
+        spellData: {id: 139, icon: "spell_holy_renew", cat: "heal"},
+        type: "heal",
+        castTime: 1.5,
+        cost: 900,
+        coeff: 0.32,
+        atonement: 15,
+        atonementPos: 'start',
+        secondaries: ['crit', 'vers'],
+        overheal: 0.5,
+    },
+    {
+        castTime: 0,
+        type: "buff",
+        buffType: "heal",
+        coeff: 0.32, // 
+        tickRate: 3,
+        targets: 1,
+        buffDuration: 15,
+        overheal: 0.45,
+        secondaries: ['crit', 'vers', 'mastery'], // + Haste
+        canPartialTick: true,
+    }],
+    "Flash Heal": [{
+        spellData: {id: 2061, icon: "spell_holy_flashheal", cat: "heal"},
         type: "heal",
         castTime: 1.5,
         cost: 1750,
-        coeff: 3.2,
-        aura: 1,
+        coeff: 2.03,
         cooldown: 0,
         atonement: 15,
         atonementPos: 'end',
@@ -226,6 +281,7 @@ export const DISCSPELLS = {
         cost: 900,
         aura: 1,
         coeff: 0.21,
+        school: "holy", // This is Radiant damage so Fire / Holy.
         secondaries: ['crit', 'vers'],
         atoneOverheal: 0.15,
     },
@@ -247,6 +303,7 @@ export const DISCSPELLS = {
         cost: 900,
         coeff: 0.1292,
         aura: 1,
+        school: "shadow",
         secondaries: ['crit', 'vers'],
     },
     {
@@ -326,53 +383,69 @@ export const DISCSPELLS = {
 }
 
 export const baseTalents = {
-    // Priest class tree
-    improvedSmite: 2,
-    mindRestrain: 0, // NYI. Requires Alpha. Mind Blast SL absorb just left in for now.
-    throesOfPain: 2,
-    puppetMaster: 2,
-    improvedShadowfiend: false,
-    mindbender: true,
-    rabidShadows: 0,
-
-    mindgames: true,
-
-
     // Disc spec tree
     // Tier 1
-    shiningRadiance: 0,
-    shieldDiscipline: false,
-    powerWordSolace: false,
-    maliciousScission: false,
-
+    lightsPromise: {points: 0, maxPoints: 1, icon: "spell_priest_power-word", id: 322115, select: false, tier: 1},
+    darkIndulgence: {points: 1, maxPoints: 1, icon: "spell_shadow_painandsuffering", id: 372972, select: true, tier: 1},
+    schism: {points: 0, maxPoints: 1, icon: "spell_warlock_focusshadow", id: 214621, select: false, tier: 1},
+    brightPupil: {points: 0, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 390684, select: true, tier: 1},
+    enduringLuminescence: {points: 0, maxPoints: 1, icon: "spell_priest_power-word", id: 278643, select: true, tier: 1},
+    powerWordSolace: {points: 0, maxPoints: 1, icon: "ability_priest_flashoflight", id: 129250, select: false, tier: 1, exclusive: "shieldDiscipline"},
+    shieldDiscipline: {points: 0, maxPoints: 1, icon: "spell_holy_divineprotection", id: 197045, select: true, tier: 1, exclusive: "powerWordSolace"},
+    powerWordBarrier: {points: 0, maxPoints: 1, icon: "spell_holy_powerwordbarrier", id: 62618, select: false, tier: 1},
+    painfulPunishment: {points: 0, maxPoints: 1, icon: "ability_priest_clarityofpower", id: 390686, select: true, tier: 1},
+    maliciousIntent: {points: 0, maxPoints: 1, icon: "ability_demonhunter_darkness", id: 372969, select: true, tier: 1},
+    
     // Tier 2
-    contrition: 0,
-    purgeTheWicked: false,
-    darkIndulgence: 0,
-    revelInPurity: 0,
-    castigation: 0,
-    rapture: false,
-    sinsOfTheMany: 0,
-    shadowCovenant: 0,
-    embraceShadow: 0,
-    maliciousScission: false,
+    purgeTheWicked: {points: 1, maxPoints: 1, icon: "ability_mage_firestarter", id: 204197, select: true, tier: 2},
+    rapture: {points: 0, maxPoints: 1, icon: "spell_holy_rapture", id: 47536, select: true, tier: 2},
+    shadowCovenant: {points: 0, maxPoints: 1, icon: "spell_shadow_summonvoidwalker", id: 314867, select: true, tier: 2},
+    revelInPurity: {points: 0, maxPoints: 1, icon: "spell_fire_felflamering_red", id: 373003, select: true, tier: 2},
+    contrition: {points: 0, maxPoints: 2, icon: "ability_priest_savinggrace", id: 197419, select: true, tier: 2},
+    exaltation: {points: 0, maxPoints: 1, icon: "spell_holy_spiritualguidence", id: 373042, select: true, tier: 2},
+    indemnity: {points: 0, maxPoints: 1, icon: "ability_priest_clarityofwill", id: 373049, select: true, tier: 2},
+    painAndSuffering: {points: 0, maxPoints: 2, icon: "spell_shadow_shadowwordpain", id: 390689, select: true, tier: 2},
+    embraceShadow: {points: 0, maxPoints: 1, icon: "spell_warlock_demonsoul", id: 372985, select: true, tier: 2},
+    twilightCorruption: {points: 0, maxPoints: 1, icon: "spell_fire_twilightimmolation", id: 373065, select: true, tier: 2},
+    borrowedTime: {points: 0, maxPoints: 2, icon: "spell_holy_borrowedtime", id: 390691, select: true, tier: 2},
+    castigation: {points: 1, maxPoints: 1, icon: "spell_holy_searinglightpriest", id: 193134, select: true, tier: 2},
+    stolenPsyche: {points: 0, maxPoints: 1, icon: "ability_priest_surgeofdarkness", id: 373054, select: true, tier: 2},
 
+    
     // Tier 3
-    evangelism: true,
-    spiritShell: false,
-    exaltation: false, // lol
-    divineStar: false,
-    halo: false,
-    evenfall: 0,
-    lessonInHumility: 0,
-    lenience: 0,
-    twilightEmpowerment: 0,
-    harshDiscipline: false,
-    indemnity: false, // +2s Atonement duration on PW:S.
-    lightsWrath: true,
-    solatium: false, // +2s Atonement duration on Shadow Mend.
-    wickedness: false,
-    stolenPsyche: 0,
+    trainOfThought: {points: 0, maxPoints: 1, icon: "ability_mage_studentofthemind", id: 390693, select: true, tier: 3},
+    lightsWrath: {points: 0, maxPoints: 1, icon: "inv_staff_2h_artifacttome_d_01", id: 373178, select: false, tier: 3},
+    lenience: {points: 0, maxPoints: 1, icon: "ability_priest_atonement", id: 238063, select: true, tier: 3},
+    evangelism: {points: 0, maxPoints: 1, icon: "spell_holy_divineillumination", id: 246287, select: false, tier: 3},
+    mindbender: {points: 0, maxPoints: 1, icon: "spell_shadow_soulleech_3", id: 123040, select: true, tier: 3},
+    divineAegis: {points: 0, maxPoints: 2, icon: "spell_holy_devineaegis", id: 47515, select: true, tier: 3},
+    sinsOfTheMany: {points: 0, maxPoints: 2, icon: "spell_holy_holyguidance", id: 280391, select: true, tier: 3},
+    resplendentLight: {points: 0, maxPoints: 2, icon: "inv_staff_2h_artifacttome_d_01", id: 390765, select: true, tier: 3},
+    harshDiscipline: {points: 0, maxPoints: 2, icon: "ability_paladin_handoflight", id: 373180, select: true, tier: 3},
+    expiation: {points: 0, maxPoints: 2, icon: "spell_shadow_shadowpower", id: 390832, select: true, tier: 3},
+    voidSummoner: {points: 0, maxPoints: 2, icon: "spell_shadow_shadowfiend", id: 391218, select: true, tier: 3},
+    aegisOfWrath: {points: 0, maxPoints: 1, icon: "spell_holy_powerwordshield", id: 238135, select: true, tier: 3},
+    makeAmends: {points: 0, maxPoints: 1, icon: "spell_holy_penance", id: 391079, select: true, tier: 3},
+    wealAndWoe: {points: 0, maxPoints: 1, icon: "spell_priest_burningwill", id: 390786, select: true, tier: 3},
+    wrathUnleashed: {points: 0, maxPoints: 1, icon: "spell_priest_divinestar_holy", id: 390781, select: true, tier: 3},
+    twilightEquilibrium: {points: 0, maxPoints: 1, icon: "ability_priest_innerlightandshadow", id: 390705, select: true, tier: 3},
+    inescapableTorment: {points: 0, maxPoints: 1, icon: "spell_shadow_chilltouch", id: 373427, select: true, tier: 3},
+
+    // Priest class tree
+    improvedFlashHeal: {points: 0, maxPoints: 1, icon: "spell_holy_heal", id: 393870, select: true, tier: 4},
+    shadowWordDeath: {points: 0, maxPoints: 1, icon: "spell_shadow_demonicfortitude", id: 32379, select: false, tier: 4},
+    focusedMending: {points: 0, maxPoints: 1, icon: "achievement_bg_returnxflags_def_wsg", id: 372354, select: false, tier: 4},
+    deathAndMadness: {points: 0, maxPoints: 1, icon: "spell_shadow_demonicfortitude", id: 321291, select: true, tier: 4},
+    wordsOfThePious: {points: 0, maxPoints: 1, icon: "ability_priest_clarityofwill", id: 377438, select: true, tier: 4},
+    unwaveringWill: {points: 0, maxPoints: 1, icon: "ability_warrior_unrelentingassault", id: 373456, select: false, tier: 4},
+    //twistOfFaith:
+    throesOfPain: {points: 0, maxPoints: 1, icon: "spell_shadow_haunting", id: 377427, select: true, tier: 4},
+    
+    surgeOfLight: {points: 0, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 114255, select: true, tier: 4},
+    crystallineReflection: {points: 0, maxPoints: 1, icon: "ability_priest_reflectiveshield", id: 373457, select: true, tier: 4},
+    //manipulation:
+    mindgames: {points: 1, maxPoints: 1, icon: "ability_revendreth_priest", id: 323673, select: false, tier: 4},
+    shatteredPerceptions: {points: 0, maxPoints: 1, icon: "spell_animarevendreth_debuff", id: 391112, select: true, tier: 4},
 
 };
 

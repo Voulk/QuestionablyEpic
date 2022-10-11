@@ -55,7 +55,7 @@ export const allRampsHealing = (boonSeq, fiendSeq, stats, settings = {}, conduit
 
     if (rampResult.totalHealing > 0) return rampResult.totalHealing;
     else {
-        reportError("", "DiscRamp", "Total Healing is 0", rampResult.totalHealing || 0)
+        //reportError("", "DiscRamp", "Total Healing is 0", rampResult.totalHealing || 0)
         return 0;
     }
 }
@@ -65,12 +65,19 @@ export const allRampsHealing = (boonSeq, fiendSeq, stats, settings = {}, conduit
 export const allRamps = (fiendSeq, stats, settings = {}, talents, reporting = false) => {
 
     let rampResult = {totalHealing: 0, ramps: [], rampSettings: settings}
+    // Setup Sequences
     const miniSeq = buildRamp('Mini', 6, [], stats.haste || 0, settings.playstyle || "", talents)
+    const evangSeq = buildRamp('Secondary', 10, [], stats.haste || 0, settings.playstyle || "", talents);
+    const newFiendSeq = buildRamp('Primary', 10, [], stats.haste || 0, settings.playstyle || "", talents);
+    const raptureSeq = buildRamp('RaptureLW', 8, [], stats.haste || 0, settings.playstyle || "", talents)
+
     const miniRamp = runCastSequence(miniSeq, stats, settings, talents);
     //const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
-    const fiendRamp = runCastSequence(fiendSeq, stats, settings, talents);
+    const evangRamp = runCastSequence(evangSeq, stats, {...settings, harshDiscipline: true}, talents);
+    const fiendRamp = runCastSequence(newFiendSeq, stats, {...settings, harshDiscipline: true}, talents);
+    const raptureRamp = runCastSequence(raptureSeq, stats, settings, talents);
 
-    rampResult.totalHealing = fiendRamp.totalHealing + miniRamp.totalHealing;
+    rampResult.totalHealing = fiendRamp.totalHealing + evangRamp.totalHealing + miniRamp.totalHealing * 2 + raptureRamp.totalHealing * 2;
 
     if (reporting) {
         //rampResult.ramps.push({"tag": "Primary Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(boonSeq), "totalHealing": Math.round(boonRamp.totalHealing)});
@@ -83,6 +90,13 @@ export const allRamps = (fiendSeq, stats, settings = {}, talents, reporting = fa
         rampResult.manaSpent = fiendRamp.manaSpent + miniRamp.manaSpent * 2;
         //rampResult.conduits = conduits;
         
+        rampResult.ramps.forEach(ramp => {
+            console.log("Ramp Name: " + ramp.tag + " (" + Math.round(ramp.totalHealing) + " healing)");
+            console.log("Pre-ramp conditions: " + "[Power of the Dark Side, Purge the Wicked]");
+            console.log(rampShortener(ramp.sequence));
+            console.log(JSON.stringify(rampResult));
+        })
+    }
      
         /*
         console.log("== Set Ramp Information == ")
@@ -91,12 +105,9 @@ export const allRamps = (fiendSeq, stats, settings = {}, talents, reporting = fa
         console.log("Conduits used: " + JSON.stringify(conduits));
         console.log("On use Trinkets used: " + " Instructor's Divine Bell (213 ilvl, ~20% expected overhealing)")
         console.log("Post-DR passive stat breakdown: " + JSON.stringify(stats));
-        rampResult.ramps.forEach(ramp => {
-            console.log("Ramp Name: " + ramp.tag + " (" + Math.round(ramp.totalHealing) + " healing)");
-            console.log("Pre-ramp conditions: " + "[Power of the Dark Side, Purge the Wicked, Pelagos]");
-            console.log(rampShortener(ramp.sequence));
+
             
-    })*/}
+    })*/
 
 
     //console.log(JSON.stringify(rampResult));

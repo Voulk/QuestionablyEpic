@@ -1,5 +1,6 @@
 const SPEC = {
   RESTODRUID: "Restoration Druid",
+  PRESEVOKER: "Preservation Evoker",
   MISTWEAVERMONK: "Mistweaver Monk",
   RESTOSHAMAN: "Restoration Shaman",
   HOLYPRIEST: "Holy Priest",
@@ -9,6 +10,7 @@ const SPEC = {
 
 // The spec identifiers used by warcraftlogs.
 const WCLSPEC = {
+  PRESEVOKER: "Evoker-Preservation",
   RESTODRUID: "Druid-Restoration",
   MISTWEAVERMONK: "Monk-Mistweaver",
   RESTOSHAMAN: "Shaman-Restoration",

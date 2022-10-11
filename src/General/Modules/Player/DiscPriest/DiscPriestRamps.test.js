@@ -8,59 +8,7 @@ import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
-describe("Test Base Spells", () => {
-    const errorMargin = 1.1; // There's often some blizzard rounding hijinx in spells. If our formulas are within 1 (a fraction of a percent) then we are likely calculating it correctly.
-    const activeStats = {
-            intellect: 1974,
-            haste: 869,
-            crit: 1000,
-            mastery: 451,
-            versatility: 528,
-            stamina: 1900,
-    }
-    const critMult = 1.05 + activeStats.crit / 35 / 100; 
-    test("Smite", () => {
-        const spell = DISCSPELLS['Smite'][0];
 
-        const damage = getSpellRaw(spell, activeStats);
-
-        //expect(Math.round(damage)).toEqual(Math.round(1110*critMult));
-    });
-    test("Mind Blast", () => {
-        const spell = DISCSPELLS['Mind Blast'][0];
-        expect(Math.abs(getSpellRaw(spell, activeStats) - 1666*critMult)).toBeLessThan(3);
-    });
-    test("Solace", () => {
-        const spell = DISCSPELLS['Power Word: Solace'][0];
-
-        const damage = getSpellRaw(spell, activeStats);
-
-        expect(Math.abs(damage - 1680*critMult)).toBeLessThan(errorMargin);
-    });
-    test("Schism", () => {
-        const spell = DISCSPELLS['Schism'][0];
-
-        const damage = getSpellRaw(spell, activeStats);
-
-        expect(Math.abs(damage - 3150*critMult)).toBeLessThan(errorMargin);
-    });
-    test("Power Word: Radiance", () => {
-        const spell = DISCSPELLS['Power Word: Radiance'][0];
-
-        const healing = getSpellRaw(spell, activeStats);
-
-        expect(Math.abs(healing - 2347*critMult)).toBeLessThan(errorMargin);
-    });
-    test("Power Word: Shield", () => {
-        const spell = DISCSPELLS['Power Word: Shield'][0];
-
-        const healing = getSpellRaw(spell, activeStats);
-
-        expect(Math.abs(healing - 3687*critMult)).toBeLessThan(errorMargin);
-    });
-
-    // TODO: test more spells.
-});
 
 describe("Evang Cast Sequence", () => {
     //const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
@@ -73,13 +21,15 @@ describe("Evang Cast Sequence", () => {
             stamina: 1900,
     } */
     const activeStats = {
-        intellect: 1950,
-        haste: 900,
-        crit: 650,
-        mastery: 400,
-        versatility: 400,
-        stamina: 0,
-}
+        intellect: 5605,
+        haste: 2353,
+        crit: 1523,
+        mastery: 188,
+        versatility: 1017,
+        stamina: 6559,
+    
+        critMult: 1,
+      };
     
     // Old Sequences
     //const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Kyrian Evangelism", ['Rapture'])
@@ -88,57 +38,7 @@ describe("Evang Cast Sequence", () => {
     //const evangSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Venthyr Evangelism", ['Rapture'])
 
 
-    const imprTalents = {
-        // Priest class tree
-        improvedSmite: 2,
-        mindRestrain: 0, // NYI. Requires Alpha. Mind Blast SL absorb just left in for now.
-        throesOfPain: 2,
-        puppetMaster: 2,
-        improvedShadowfiend: true,
-        mindbender: true,
-        rabidShadows: 2,
-
-        mindgames: true,
-
-
-        // Disc spec tree
-        // Tier 1
-        shiningRadiance: 0,
-        shieldDiscipline: false,
-        powerWordSolace: false,
-        maliciousScission: false,
-
-        // Tier 2
-        contrition: 2,
-        purgeTheWicked: true,
-        darkIndulgence: 2,
-        revelInPurity: 0,
-        castigation: 1,
-        rapture: true,
-        sinsOfTheMany: 2,
-        shadowCovenant: 0,
-        embraceShadow: 0,
-        maliciousScission: false,
-        swiftPenitence: 0,
-
-        // Tier 3
-        evangelism: true,
-        spiritShell: false,
-        exaltation: false, // lol
-        divineStar: false,
-        halo: false,
-        evenfall: 0,
-        lessonInHumility: 0,
-        lenience: 0,
-        twilightEmpowerment: 0,
-        harshDiscipline: false,
-        indemnity: false, // +2s Atonement duration on PW:S
-        solatium: false,// +2s Atonement duration on Shadowmend
-        wickedness: false,
-        stolenPsyche: 0,
-        lightsWrath: true,
-
-    };
+    const talentSet = {... baseTalents};
 
     /*const seq = ["Shadow Word: Pain", "Rapture", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
                     "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
@@ -157,6 +57,11 @@ describe("Evang Cast Sequence", () => {
         console.log(name + ": " + healing + " (+" + percInc + "%)")
     }
 
+    const runTalents = (talentName, baseline, talents, settings) => {
+        const seq = buildRamp('Primary', 10, [], activeStats.haste, "", talents)
+        print(talentName, baseline, allRampsHealing(seq, JSON.parse(JSON.stringify(activeStats)), settings, talents));
+    }
+
 
     test("Test Stuff", () => {
 
@@ -164,7 +69,7 @@ describe("Evang Cast Sequence", () => {
 
         //console.log("Baseline: " + JSON.stringify(runCastSequence(seq, activeStats, {}, talents)))
 
-        const seq = buildRamp('Primary', 10, [], activeStats.haste, "", baseTalents)
+        const seq = buildRamp('Primary', 10, [], activeStats.haste, "", talentSet)
         const seq2 = buildRamp('Primary', 10, [], activeStats.haste, "", {...baseTalents, purgeTheWicked: true})
         const seq3 = buildRamp('Primary', 10, [], activeStats.haste, "", {...baseTalents, rapture: true})
 
@@ -175,23 +80,24 @@ describe("Evang Cast Sequence", () => {
         //const baseline = allRamps(runCastSequence(seq, activeStats, settings, talents).totalHealing)
         console.log("Baseline: " + baseline);
 
-        print("Indemnity", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, indemnity: true}))
-        print("Rapture", baseline, allRampsHealing(seq3, activeStats, settings, {...baseTalents, rapture: true}))
-        print("Exaltation & Rapture", baseline, allRampsHealing(seq3, activeStats, settings, {...baseTalents, rapture: true, exaltation: true}))
-        print("Shining Radiance", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, shiningRadiance: 2}))
-        print("Rabid Shadows", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, rabidShadows: 2}))
-        print("Dark Indul", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, darkIndulgence: 2}))
-        print("Swift Penitence", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, swiftPenitence: 2}))
-        print("Castigation", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, castigation: true}))
-        print("Purge the Wicked", baseline, allRampsHealing(seq2, activeStats, settings, {...baseTalents, purgeTheWicked: true}))
-        print("Purge & Revel", baseline, allRampsHealing(seq2, activeStats, settings, {...baseTalents, purgeTheWicked: true, revelInPurity: 2}))
         
-        
-        print("Malicious Scission", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, maliciousScission: true}))
-        
-        print("Stolen Psyche", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, stolenPsyche: 2}))
-        print("Lesson in Humility", baseline, allRampsHealing(seq, activeStats, settings, {...baseTalents, lessonInHumility: 2}))
-
+        runTalents("Pain and Suffering", baseline, {...baseTalents, painAndSuffering: {...baseTalents.painAndSuffering, points: 1}}, settings);
+        runTalents("Painful Punishment", baseline, {...baseTalents, painfulPunishment: {...baseTalents.painfulPunishment, points: 1}}, settings);
+        runTalents("Malicious Intent", baseline, {...baseTalents, maliciousIntent: {...baseTalents.maliciousIntent, points: 1}}, settings)
+        runTalents("Stolen Psyche", baseline, {...baseTalents, stolenPsyche: {...baseTalents.stolenPsyche, points: 1}}, settings)
+        /*
+        runTalents("Sins of the Many", baseline, {...baseTalents, sinsOfTheMany: {...baseTalents.sinsOfTheMany, points: 1}}, settings) */
+        //runTalents("Castigation", baseline, {...baseTalents, sinsOfTheMany: {...baseTalents.sinsOfTheMany, points: 1}}, settings)
+        runTalents("Aegis of Wrath", baseline, {...baseTalents, aegisOfWrath: {...baseTalents.aegisOfWrath, points: 1}}, settings)
+        runTalents("Resplendent Light", baseline, {...baseTalents, resplendentLight: {...baseTalents.resplendentLight, points: 1}}, settings)
+        runTalents("Wrath Unleashed", baseline, {...baseTalents, wrathUnleashed: {...baseTalents.wrathUnleashed, points: 1}}, settings)
+        runTalents("Divine Aegis", baseline, {...baseTalents, divineAegis: {...baseTalents.divineAegis, points: 1}}, settings)
+        runTalents("Harsh Discipline", baseline, {...baseTalents, harshDiscipline: {...baseTalents.harshDiscipline, points: 1}}, settings)
+        runTalents("Train of Thought", baseline, {...baseTalents, trainOfThought: {...baseTalents.trainOfThought, points: 1}}, settings)
+        runTalents("Contrition", baseline, {...baseTalents, contrition: {...baseTalents.contrition, points: 2}}, settings)
+        runTalents("Expiation", baseline, {...baseTalents, expiation: {...baseTalents.expiation, points: 1}}, settings)
+        runTalents("Twilight Equilibrium", baseline, {...baseTalents, twilightEquilibrium: {...baseTalents.twilightEquilibrium, points: 1}}, settings)
+        runTalents("Weal & Woe", baseline, {...baseTalents, wealAndWoe: {...baseTalents.wealAndWoe, points: 1}}, settings)
         /*
         print("PtW / Revel / Lesson in Humi / Evenfall / LW / Indem", baseline, allRampsHealing(seq2, activeStats, settings, {...imprTalents, 
                 revelInPurity: 2, purgeTheWicked: true, lessonInHumility: 2, evenfall: 2, indemnity: true}))

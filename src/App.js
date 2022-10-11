@@ -346,7 +346,7 @@ class App extends Component {
                   <Route path="/fightAnalysis" render={() => <FightAnalysis />} />
                   <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule />} />
                   <Route path="/holydiver" render={() => <TestingPage />} />
-                  <Route path="/sequenceGen" render={() => <SequenceGen />} />
+                  <Route path="/sequenceGen" render={() => <SequenceGen player={activePlayer}/>} />
                   <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} />} />
                   <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} />} />
                   <Route

@@ -7,10 +7,16 @@ import makeStyles from "@mui/styles/makeStyles";
 import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
 import { runCastSequence as discSequence } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { runCastSequence as shamanSequence } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanRamps";
+import { runCastSequence as paladinSequence } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRamps";
+import { runCastSequence as druidSequence } from "Retail/Engine/EffectFormulas/Druid/RestoDruidRamps";
+import { runCastSequence as monkSequence } from "Retail/Engine/EffectFormulas/Monk/MonkSpellSequence";
 
-import { EVOKERSPELLDB, baseTalents } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerSpellDB";
+import { EVOKERSPELLDB, evokerTalents } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerSpellDB";
 import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/DiscPriest/DiscSpellDB";
 import { SHAMANSPELLDB } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanSpellDB";
+import { PALADINSPELLDB, baseTalents as palaTalents } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinSpellDB";
+import { DRUIDSPELLDB, baseTalents as druidTalents } from "Retail/Engine/EffectFormulas/Druid/RestoDruidSpellDB";
+import { MONKSPELLS } from "Retail/Engine/EffectFormulas/Monk/MistweaverSpellDB";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 import LooksOneIcon from "@mui/icons-material/LooksOne";
@@ -52,53 +58,115 @@ const getSpellDB = (spec) => {
   if (spec === "Preservation Evoker") return EVOKERSPELLDB;
   if (spec === "Discipline Priest") return DISCSPELLS;
   if (spec === "Restoration Shaman") return SHAMANSPELLDB;
+  if (spec === "Holy Paladin") return PALADINSPELLDB;
+  if (spec === "Restoration Druid") return DRUIDSPELLDB;
+  if (spec === "Mistweaver Monk") return MONKSPELLS;
 };
+
+const getTalentDB = (spec) => {
+  if (spec === "Preservation Evoker") return evokerTalents;
+  if (spec === "Discipline Priest") return discTalents;
+  if (spec === "Restoration Shaman") return null;
+  if (spec === "Holy Paladin") return palaTalents;
+  if (spec === "Restoration Druid") return druidTalents;
+  if (spec === "Mistweaver Monk") return null;
+}
+
+
+
 
 const getSequence = (spec) => {
   if (spec === "Preservation Evoker") return evokerSequence;
   if (spec === "Discipline Priest") return discSequence;
   if (spec === "Restoration Shaman") return shamanSequence;
+  if (spec === "Holy Paladin") return paladinSequence;
+  if (spec === "Restoration Druid") return druidSequence;
+  if (spec === "Mistweaver Monk") return monkSequence;
 };
 
-const dpsSpells = Object.keys(EVOKERSPELLDB).filter((spell) => EVOKERSPELLDB[spell][0].type === "damage");
-const healSpells = Object.keys(EVOKERSPELLDB).filter((spell) => EVOKERSPELLDB[spell][0].type === "heal" || spell === "Reversion");
 
 export default function SequenceGenerator(props) {
-  const selectedSpec = "Preservation Evoker";
+  const selectedSpec = props.player.getSpec();
   const spellDB = getSpellDB(selectedSpec);
 
   const spellCategories = ["Healing", "Damage", "Cooldowns & Other"];
 
   const classes = useStyles();
   const [seq, setSeq] = useState([]);
-  const [talents, settalents] = useState({ ...baseTalents });
+  
+  const [talentDB, setTalentDB] = useState(getTalentDB(selectedSpec));
   const [result, setResult] = useState({ totalDamage: 0, totalHealing: 0, hpm: 0 });
+  const [combatLog, setCombatLog] = useState([]);
 
   const spellList = {
     Damage: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "damage"),
     Healing: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "heal"),
     "Cooldowns & Other": Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "cooldown"),
   };
+  const talentList = Object.keys(talentDB).filter(talent => talentDB[talent].select === true);
+  const [talents, setTalents] = useState({ ...talentDB });
+  
 
   const stats = {
-    intellect: 2000,
-    haste: 600,
-    crit: 600,
-    mastery: 600,
-    versatility: 600,
-    stamina: 2800,
+    intellect: 6500,
+    haste: 3500,
+    crit: 1800,
+    mastery: 2000,
+    versatility: 1200,
+    stamina: 8200,
 
     critMult: 1,
   };
 
   const updateSequence = (sequence) => {
     const simFunc = getSequence(selectedSpec);
-    const sim = simFunc(sequence, stats, {}, {});
+    const sim = simFunc(sequence, stats, {reporting: true, harshDiscipline: true}, talents);
 
     // multiple state updates get bundled by react into one update
     setSeq(sequence);
     setResult(sim);
+    setCombatLog(sim.report);
+    console.log(sim);
   }
+
+  const runIterations = (sequence, simFunc) => {
+    const iter = 1;
+    const results = {totalHealing: 0, totalDamage: 0, manaSpent: 0, hpm: 0};
+    let finalReport = [];
+  
+    for (let i = 0; i < iter; i++) {
+        //const baseline = runCastSequence(sequence, activeStats, settings, talents)
+  
+        //const simFunc = getSequence(selectedSpec);
+        const sim = simFunc(sequence, stats, {reporting: true, harshDiscipline: true}, talents);
+  
+        results.totalHealing += sim.totalHealing;
+        results.manaSpent += sim.manaSpent;
+        results.totalDamage += sim.totalDamage;
+  
+        if (i === iter - 1) finalReport = sim.report;
+  
+        //console.log("Baseline: " + JSON.stringify(baseline));
+    }
+    results.hpm = results.totalHealing / results.manaSpent;
+    results.totalHealing /= iter;
+    results.totalDamage /= iter;
+    results.manaSpent /= iter;
+
+
+    setResult(results);
+    setCombatLog(finalReport);
+  
+  }
+
+  const addTalent = (talentName, talentDB, setTalents) => {
+    const talent = talentDB[talentName];
+    
+    talent.points = talent.points === talent.maxPoints ? 0 : talent.points + 1;
+
+    setTalents({...talentDB});
+    updateSequence(seq);
+}
 
   const addSpell = (spell) => {
     updateSequence([...seq, spell]);
@@ -136,10 +204,13 @@ export default function SequenceGenerator(props) {
   };
 
   const runSeq = () => {
+
+    
     const simFunc = getSequence(selectedSpec);
-    const sim = simFunc(seq, stats, {}, {});
-    setResult(sim);
-    console.log(sim);
+    //const sim = simFunc(seq, stats, {reporting: true, harshDiscipline: true}, talents);
+    runIterations(seq, simFunc);
+    //setResult(sim);
+
   };
 
   const autoGen = () => {
@@ -239,10 +310,14 @@ export default function SequenceGenerator(props) {
                       {seq.map((spell, index) => (
                         <Grid item xs="auto" key={index} onDragOver={onDragOver} onDragEnd={dropMove} onDrop={dropInsertion} onDragEnter={(e) => { dragEnter(e, index) }}>
                           <SpellIcon
-                            spell={spellDB[spell][0]}
+                            spell={spellDB[spell][0].spellData}
+                            spec={selectedSpec}
+                            iconType={"Spell"}
                             draggable
                             onDragStart={(e) => { dragStart(e, index) }}
-                            onContextMenu={(e) => removeSpellAtIndex(index, e)}
+                            onContextMenu={(e) => {
+                              e.preventDefault()
+                              removeSpellAtIndex(index, e)}}
                             style={{ display: "flex" }}
                           />
                         </Grid>
@@ -267,7 +342,9 @@ export default function SequenceGenerator(props) {
                         {spellList[cat].map((spell, i) => (
                           <Grid item xs="auto" key={spellDB[spell][0].spellData.id}>
                             <SpellIcon
-                              spell={spellDB[spell][0]}
+                              spell={spellDB[spell][0].spellData}
+                              spec={selectedSpec}
+                              iconType={"Spell"}
                               draggable
                               onDragStart={(e) => { dragStart(e, spell) }}
                               onClick={(e) => addSpell(spell, e)}
@@ -284,6 +361,38 @@ export default function SequenceGenerator(props) {
                   <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
                     {"Talents"}
                   </Typography>
+                        {[1, 2, 3, 4].map((tier, i) => (
+                        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+
+                          <Grid container spacing={1}>
+                          {talentList.map((spell, j) => (
+                            talentDB[spell].tier === tier ?
+
+                              <Grid item xs="auto" key={j} style={{paddingBottom: 7}}>
+                                <SpellIcon
+                                  spell={talentDB[spell]}
+                                  spec={selectedSpec}
+                                  iconType={"Talent"}
+                                  width={25}
+                                  //onDragStart={(e) => { dragStart(e, spell) }}
+                                  onClick={(e) => {
+                                    e.persist();
+                                    addTalent(spell, talentDB, setTalents, e)
+                                  }}
+                                  style={{ display: "flex"}}
+                                />
+
+                          </Grid>
+                               : ""
+                              
+
+                          ))}
+                          <div style={{ height: 25 }} />
+                          </Grid>
+                              </Grid>
+
+                        ))}
+
                 </Grid>
 
                 <Grid item xs={12}>
@@ -357,13 +466,15 @@ export default function SequenceGenerator(props) {
                     </p>
                   </Paper>
                 </Grid>
+                {/* Combat Log */}
                 <Grid item xs={12}>
-                    <TextField value={`Combat Log Coming Soon`} variant="outlined" multiline minRows={4} fullWidth disabled style={{whiteSpace: 'pre-line'}} />
+                    <TextField value={combatLog.join("\n")} variant="outlined" multiline minRows={10} maxRows={10} fullWidth disabled style={{whiteSpace: 'pre-line'}} />
                 </Grid>
               </Grid>
             </Paper>
           </Grid>
         </Grid>
+        <div style={{ height: 50 }} />
       </div>
     </div>
   );

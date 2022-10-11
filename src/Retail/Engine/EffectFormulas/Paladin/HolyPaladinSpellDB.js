@@ -23,7 +23,7 @@
 // any values displayed in this DB are placeholders only.
 
 // Spell coefficients combine a spells base coefficient with any relevant auras that might impact the spell. 
-export const PALASPELLDB = {
+export const PALADINSPELLDB = {
     //
     "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
         type: "",
@@ -31,6 +31,19 @@ export const PALASPELLDB = {
         cost: 0,
     }],
     "Holy Shock": [{
+        spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "heal"},
+        type: "heal",
+        castTime: 1.5,
+        cost: 0.16,
+        coeff: 1.55, // Not final
+        cooldown: 7.5,
+        expectedOverheal: 0.29,
+        holyPower: 1,
+        statMods: {'crit': 0.3},
+        secondaries: ['crit', 'vers', 'mastery']
+    }],
+    "Holy Shock O": [{
+        spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "damage"},
         type: "heal",
         castTime: 1.5,
         cost: 0.16,
@@ -42,6 +55,7 @@ export const PALASPELLDB = {
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Flash of Light": [{
+        spellData: {id: 19750, icon: "spell_holy_flashheal", cat: "heal"},
         type: "heal",
         castTime: 1.5,
         cost: 0.22,
@@ -50,6 +64,7 @@ export const PALASPELLDB = {
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Crusader Strike": [{
+        spellData: {id: 35395, icon: "spell_holy_crusaderstrike", cat: "damage"},
         type: "damage",
         castTime: 1.5,
         cost: 0.11,
@@ -58,7 +73,8 @@ export const PALASPELLDB = {
         holyPower: 1,
         secondaries: ['crit', 'vers']
     }],
-    "Judgment": [{ // TODO: Judgment also increases the damage of our next HS or CS by 30%, but this is rather trivial. 
+    "Judgment": [{  
+        spellData: {id: 20271, icon: "spell_holy_righteousfury", cat: "damage"},
         type: "damage",
         castTime: 1.5,
         cost: 0.03,
@@ -67,6 +83,7 @@ export const PALASPELLDB = {
         secondaries: ['crit', 'vers']
     }],
     "Hammer of Wrath": [{
+        spellData: {id: 24275, icon: "spell_paladin_hammerofwrath", cat: "damage"},
         type: "damage",
         castTime: 1.5,
         cost: 0,
@@ -77,6 +94,7 @@ export const PALASPELLDB = {
         secondaries: ['crit', 'vers']
     }],
     "Light of Dawn": [{
+        spellData: {id: 85222, icon: "spell_paladin_lightofdawn", cat: "heal"},
         type: "heal",
         castTime: 1.5,
         cost: 0,
@@ -87,6 +105,7 @@ export const PALASPELLDB = {
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Avenging Wrath": [{
+        spellData: {id: 31884, icon: "spell_holy_avenginewrath", cat: "cooldown"},
         type: "buff",
         castTime: 0,
         cost: 0,
@@ -97,36 +116,6 @@ export const PALASPELLDB = {
         buffDuration: 20,
     }],
 
-
-    
-    "Mind Blast": [{
-        type: "damage",
-        castTime: 1.5,
-        cost: 1250,
-        coeff: 0.744642, // 0.9792 x 0.809 (Mind Blast aura) x 0.94 (Disc aura)
-        cooldown: 15,
-        atoneOverheal: 0.29,
-        secondaries: ['crit', 'vers']
-    },
-    {
-        type: "heal",
-        castTime: 0,
-        coeff: 3,
-        aura: 1,
-        targets: 1,
-        secondaries: ['vers'],
-        overheal: 0,
-    }]
 }
 
-export const discConduits = (conduit, rank) => {
-    if (conduit === "Exaltation") return 0.0675 + (rank * 0.0075);
-    else if (conduit === "Shining Radiance") return 0.36 + (rank * 0.04);
-    else if (conduit === "Pain Transformation") return 0.135 + (rank * 0.015);
-    else if (conduit === "Rabid Shadows") return 0.171 + (rank * 0.19);
-    else if (conduit === "Courageous Ascension") return 0.225 + (rank * 0.025);
-    else if (conduit === "Shattered Perception") return 0.117 + (rank * 0.013);
-    else {
-        console.error("Invalid Conduit");
-    }
-}
+export const baseTalents = { }
