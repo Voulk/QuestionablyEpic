@@ -52,7 +52,7 @@ export const paladinKyrianSpecialQueries = (contentType) => {
       cooldownMult: {
         oneMinute: 1,
         ninetySeconds: 1,
-        twoMinutes: 1.2,
+        twoMinutes: 1.25,
         twoMinutesOrb: 1,
         threeMinutes: 1,
       },
@@ -79,10 +79,10 @@ export const paladinKyrianStatWeights = (contentType) => {
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.59,
-    crit: 0.55,
+    haste: 0.64,
+    crit: 0.59,
     mastery: 0.3,
-    versatility: 0.58,
+    versatility: 0.63,
     leech: 0.52,
     defaults: true,
   };
