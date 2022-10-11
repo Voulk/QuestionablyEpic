@@ -670,7 +670,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
                 if (buff.buffType === "heal") {
                     const spell = buff.attSpell;
-                    runHeal(state, spell, buff.name + " (hot)")
+                    runHeal(state, spell, buff.name + " (HoT)")
                 }
                 else if (buff.buffType === "damage") {
                     const spell = buff.attSpell;
