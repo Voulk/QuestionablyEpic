@@ -996,6 +996,7 @@ else if (
   bonus_stats.versatility = (trinketValue * effect.duration) / effect.cooldown;
   bonus_stats.versatility *= castModel.getSpecialQuery("twoMinutes", "cooldownMult");
 
+
   //
 }
 else if (
