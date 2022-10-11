@@ -1,7 +1,6 @@
 // 
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-import { PALASPELLDB } from "./HolyPaladinSpellDB";
-import { buildRamp } from "./HolyPaladinRampGen";
+import { DRUIDSPELLDB } from "./RestoDruidSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
@@ -9,7 +8,7 @@ const discSettings = {
     chaosBrand: true
 }
 
-const PALACONSTANTS = {
+const DRUIDCONSTANTS = {
     masteryMod: 1.5,
     masteryEfficiency: 0.8,
     wingsBuff: 0.2, // Wings is a 20% buff to damage, healing and crit chance.

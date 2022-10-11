@@ -23,14 +23,14 @@
 // any values displayed in this DB are placeholders only.
 
 // Spell coefficients combine a spells base coefficient with any relevant auras that might impact the spell. 
-export const PALADINSPELLDB = {
+export const DRUIDSPELLDB = {
     //
     "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
         type: "",
         castTime: 1.5,
         cost: 0,
     }],
-    "Holy Shock": [{
+    "Rejuvenation": [{
         spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "heal"},
         type: "heal",
         castTime: 1.5,
@@ -42,9 +42,9 @@ export const PALADINSPELLDB = {
         statMods: {'crit': 0.3},
         secondaries: ['crit', 'vers', 'mastery']
     }],
-    "Holy Shock O": [{
+    "Wrath": [{
         spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "damage"},
-        type: "heal",
+        type: "damage",
         castTime: 1.5,
         cost: 0.16,
         coeff: 1.55, // Not final
@@ -54,66 +54,17 @@ export const PALADINSPELLDB = {
         statMods: {'crit': 0.3},
         secondaries: ['crit', 'vers', 'mastery']
     }],
-    "Flash of Light": [{
-        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "heal"},
-        type: "heal",
-        castTime: 1.5,
-        cost: 0.22,
-        coeff: 2.02, // Not final
-        expectedOverheal: 0.14,
-        secondaries: ['crit', 'vers', 'mastery']
-    }],
-    "Crusader Strike": [{
-        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "damage"},
-        type: "damage",
-        castTime: 1.5,
-        cost: 0.11,
-        coeff: 0.765, 
-        cooldown: 6,
-        holyPower: 1,
-        secondaries: ['crit', 'vers']
-    }],
-    "Judgment": [{  
-        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "damage"},
-        type: "damage",
-        castTime: 1.5,
-        cost: 0.03,
-        coeff: 0.634 * 1.5,
-        cooldown: 12,
-        secondaries: ['crit', 'vers']
-    }],
-    "Hammer of Wrath": [{
-        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "damage"},
-        type: "damage",
-        castTime: 1.5,
-        cost: 0,
-        coeff: 1.2, 
-        cooldown: 7.5,
-        hastedCooldown: true,
-        holyPower: 1,
-        secondaries: ['crit', 'vers']
-    }],
-    "Light of Dawn": [{
-        spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "heal"},
-        type: "heal",
-        castTime: 1.5,
-        cost: 0,
-        coeff: 1.05, // Not final
-        expectedOverheal: 0.4,
-        holyPower: -3,
-        targets: 5,
-        secondaries: ['crit', 'vers', 'mastery']
-    }],
-    "Avenging Wrath": [{
+    "Tranquility": [{
         spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "cooldown"},
-        type: "buff",
-        castTime: 0,
-        cost: 0,
-        cooldown: 120,
-        buffType: 'statsMult',
-        stat: 'crit',
-        value: (20 * 35), // 
-        buffDuration: 20,
+        type: "heal",
+        castTime: 1.5,
+        cost: 0.16,
+        coeff: 1.55, // Not final
+        cooldown: 7.5,
+        expectedOverheal: 0.29,
+        holyPower: 1,
+        statMods: {'crit': 0.3},
+        secondaries: ['crit', 'vers', 'mastery']
     }],
 
 }

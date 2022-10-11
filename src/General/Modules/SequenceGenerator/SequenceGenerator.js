@@ -7,10 +7,16 @@ import makeStyles from "@mui/styles/makeStyles";
 import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
 import { runCastSequence as discSequence } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { runCastSequence as shamanSequence } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanRamps";
+import { runCastSequence as paladinSequence } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRamps";
+import { runCastSequence as druidSequence } from "Retail/Engine/EffectFormulas/Druid/RestoDruidRamps";
+import { runCastSequence as monkSequence } from "Retail/Engine/EffectFormulas/Monk/MonkSpellSequence";
 
 import { EVOKERSPELLDB, evokerTalents } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerSpellDB";
 import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/DiscPriest/DiscSpellDB";
 import { SHAMANSPELLDB } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanSpellDB";
+import { PALADINSPELLDB, baseTalents as palaTalents } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinSpellDB";
+import { DRUIDSPELLDB, baseTalents as druidTalents } from "Retail/Engine/EffectFormulas/Druid/RestoDruidSpellDB";
+import { MONKSPELLS } from "Retail/Engine/EffectFormulas/Monk/MistweaverSpellDB";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 import LooksOneIcon from "@mui/icons-material/LooksOne";
@@ -52,12 +58,18 @@ const getSpellDB = (spec) => {
   if (spec === "Preservation Evoker") return EVOKERSPELLDB;
   if (spec === "Discipline Priest") return DISCSPELLS;
   if (spec === "Restoration Shaman") return SHAMANSPELLDB;
+  if (spec === "Holy Paladin") return PALADINSPELLDB;
+  if (spec === "Restoration Druid") return DRUIDSPELLDB;
+  if (spec === "Mistweaver Monk") return MONKSPELLS;
 };
 
 const getTalentDB = (spec) => {
   if (spec === "Preservation Evoker") return evokerTalents;
   if (spec === "Discipline Priest") return discTalents;
   if (spec === "Restoration Shaman") return null;
+  if (spec === "Holy Paladin") return palaTalents;
+  if (spec === "Restoration Druid") return druidTalents;
+  if (spec === "Mistweaver Monk") return null;
 }
 
 
@@ -67,6 +79,9 @@ const getSequence = (spec) => {
   if (spec === "Preservation Evoker") return evokerSequence;
   if (spec === "Discipline Priest") return discSequence;
   if (spec === "Restoration Shaman") return shamanSequence;
+  if (spec === "Holy Paladin") return paladinSequence;
+  if (spec === "Restoration Druid") return druidSequence;
+  if (spec === "Mistweaver Monk") return monkSequence;
 };
 
 
