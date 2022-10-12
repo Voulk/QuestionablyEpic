@@ -195,6 +195,7 @@ describe("getValidWeaponTypes func", () => {
   // Add more tests.
 });
 
+/*
 describe("getTranslatedItemName func", () => {
   const id = 178869;
 
@@ -207,14 +208,15 @@ describe("getTranslatedItemName func", () => {
     `.test("$lang expects: $expectedResult", ({ lang, expectedResult }) => {
     expect(getTranslatedItemName(id, lang, "")).toBe(expectedResult);
   });
-});
+}); */
 
+/*
 describe("GetItemEffect func", () => {
   test("Sinful Gladiator's Badge of Ferocity", () => {
     const id = 175921;
     const expectedResult = { type: "trinket", name: "Gladiator's Badge of Ferocity" };
     expect(getItemProp(id, "effect")).toEqual(expectedResult);
-  });
+  }); 
 
   // Add new tests
 });
@@ -227,7 +229,7 @@ describe("GetItemIcon func", () => {
   });
 
   // Add new tests
-});
+});*/
 
 describe("CheckItemExists func", () => {
   test("Exists Test: Trailspinner Pendant", () => {

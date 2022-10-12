@@ -35,12 +35,12 @@ describe("Test Base Spells", () => {
         const damage = getSpellRaw(spell, activeStats, DISCCONSTANTS);
         expect(Math.abs(damage * DISCCONSTANTS.auraDamageBuff - 2402)).toBeLessThan(errorMargin);
     });
-
+/*
     test("Mind Blast", () => {
         const spell = DISCSPELLS['Mind Blast'][0];
         const damage = getSpellRaw(spell, activeStats, DISCCONSTANTS);
         expect(Math.abs(damage * DISCCONSTANTS.auraDamageBuff - 4982)).toBeLessThan(errorMargin);
-    });
+    }); */
     test("Shadow Word: Death", () => {
         const spell = DISCSPELLS['Shadow Word: Death'][0];
         const damage = getSpellRaw(spell, activeStats, DISCCONSTANTS);

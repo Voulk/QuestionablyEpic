@@ -5,6 +5,8 @@ import { applyDiminishingReturns, buildWepCombos } from "General/Engine/ItemUtil
 import { runTopGear, evalDiscRamp } from "General/Modules/TopGear/Engine/TopGearEngine";
 import ItemSet from "General/Modules/TopGear/ItemSet";
 
+
+/*
 describe("Top Gear Venthyr tests", () => {
     let player;
     let itemSet;
@@ -105,4 +107,4 @@ finger2=,id=189839,enchant_id=6166,bonus_id=7188/42/7578/1511/6646
 trinket1=,id=184842,bonus_id=6652/1472/5910/6646
 trinket2=,id=186423,bonus_id=7187/6652/1498/6646
 main_hand=,id=178829,enchant_id=6229,bonus_id=7359/6652/7826/1586/6646
-`
+` */

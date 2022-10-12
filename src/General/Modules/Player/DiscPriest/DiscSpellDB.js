@@ -102,7 +102,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 1250,
-        coeff: 0.792, // 0.9792 x 0.809 (Mind Blast aura)
+        coeff: 1.0929, // 0.9792 x 0.809 (Mind Blast aura)
         cooldown: 15,
         school: "shadow",
         atoneOverheal: 0.29,
