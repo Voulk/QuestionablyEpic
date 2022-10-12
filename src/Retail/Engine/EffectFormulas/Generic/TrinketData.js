@@ -1295,7 +1295,7 @@ export const trinket_data = [
     effects: [
       {
         coefficient: 3.333333,
-        table: -7, // -8 in spell data
+        table: -7, 
         duration: 20,
         cooldown: 120,
       },

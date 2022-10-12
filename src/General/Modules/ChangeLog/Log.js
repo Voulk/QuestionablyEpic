@@ -10,6 +10,15 @@
 export const changeLog = [
   {
     version: "9.2.7 / 3.4.0",
+    update: 4,
+    date: "11 October",
+    changes: [ 
+      "Mainhands and Offhands are now displayed separately in Top Gear.",
+      "Re-added a bunch of trinkets to Trinket Analysis."
+    ],
+  },
+  {
+    version: "9.2.7 / 3.4.0",
     update: 3,
     date: "14 September",
     changes: [ 

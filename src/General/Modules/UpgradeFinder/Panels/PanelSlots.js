@@ -61,7 +61,7 @@ const AccordionSummary = withStyles({
 
 const useStyles = makeStyles(() => ({
   root: {
-    // width: "100%",
+    width: "100%",
     padding: "8px 5px",
   },
 }));

@@ -9,6 +9,11 @@ import { filterItemListBySource, getDifferentialByID } from "../../../Engine/Ite
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { itemLevels } from "../../../../Databases/itemLevelsDB";
 import i18n from "i18next";
+import MuiAccordion from "@mui/material/Accordion";
+import MuiAccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import withStyles from "@mui/styles/withStyles";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -17,6 +22,34 @@ const useStyles = makeStyles(() => ({
     padding: 4,
   },
 }));
+
+const Accordion = withStyles({
+  root: {
+    border: "1px solid rgba(255, 255, 255, 0.12)",
+    boxShadow: "none",
+    "&:not(:last-child)": {
+      borderBottom: 0,
+    },
+    "&:before": {
+      display: "none",
+    },
+    "&$expanded": {
+      margin: "auto",
+    },
+  },
+  expanded: {},
+})(MuiAccordion);
+
+const AccordionSummary = withStyles({
+  root: {
+    padding: "0px 16px 0px 0px",
+    backgroundColor: "#35383e",
+    "&$expanded": {
+      backgroundColor: "rgb(255 255 255 / 10%)",
+    },
+  },
+  expanded: {},
+})(MuiAccordionSummary);
 
 export default function LegionTimewalkingGearContainer(props) {
   const classes = useStyles();
@@ -41,42 +74,58 @@ export default function LegionTimewalkingGearContainer(props) {
 
   const contentGenerator = () => {
     return encounterDB[3].bossOrder.map((key, i) => (
-      <Grid item xs={12} key={"LegionTimewalkingContainer-" + i}>
-        <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
-          <Grid container>
-            <Grid item xs={12} sm="auto">
-              <div
-                style={{
-                  width: 207,
-                  height: "100%",
-                  backgroundImage: `url(${DungeonHeaderIcons(key)})`,
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: imagePosition(key),
-                  backgroundSize: "auto 100%",
-                }}
-                className="container-UpgradeCards"
-              >
-                <Typography variant="h6" style={{ width: "100%" }} className="centered-UpgradeCards-Dungeons">
-                  {encounterDB[3][key].name[currentLanguage]}
-                </Typography>
-              </div>
-            </Grid>
-            <Divider orientation="vertical" flexItem />
-            <Grid item xs={12} sm container spacing={1} style={{ padding: 8 }}>
-              {[...filterItemListBySource(itemList, -1, key, itemLevels.dungeon[difficulty])].map((item, index) => (
-                <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
-              ))}
-            </Grid>
+      <Accordion
+        key={encounterDB[3][key].name[currentLanguage] + "-accordian" + i}
+        elevation={0}
+        style={{
+          backgroundColor: "rgba(255, 255, 255, 0.12)",
+        }}
+      >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+          style={{
+            verticalAlign: "middle",
+          }}
+        >
+          <Typography
+            variant="h6"
+            color="primary"
+            align="left"
+            style={{
+              // backgroundColor: "#35383e",
+              borderRadius: "4px 4px 0px 0px",
+              display: "flex",
+            }}
+          >
+            <img style={{ height: 36, verticalAlign: "middle" }} src={DungeonHeaderIcons(key)} alt={encounterDB[3][key].name[currentLanguage]} />
+            <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
+            {encounterDB[3][key].name[currentLanguage]} -{" "}
+            {
+              [...filterItemListBySource(itemList, -1, key, itemLevels.dungeon[difficulty])].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0)
+                .length
+            }{" "}
+            Upgrades
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails style={{ backgroundColor: "#191c23" }}>
+          <Grid xs={12} container spacing={1}>
+            {[...filterItemListBySource(itemList, -1, key, itemLevels.dungeon[difficulty])].map((item, index) => (
+              <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
+            ))}
           </Grid>
-        </Paper>
-      </Grid>
+        </AccordionDetails>
+      </Accordion>
     ));
   };
 
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
-        {contentGenerator()}
+        <Grid item xs={12}>
+          {contentGenerator()}
+        </Grid>
       </Grid>
     </div>
   );
