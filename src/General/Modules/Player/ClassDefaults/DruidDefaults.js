@@ -77,7 +77,7 @@ export const druidDefaultSpecialQueries = (contentType) => {
         oneMinute: 1.2,
         ninetySeconds: 1,
         twoMinutes: 1.35,
-        twoMinutesOrb: 1,
+        twoMinutesOrb: 0.85, // There is no practical way to use Orb to it's maximum potential in dungeons.
         threeMinutes: 1,
       },
       HoldYourGroundUptime: 0.8

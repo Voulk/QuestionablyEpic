@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import makeStyles from "@mui/styles/makeStyles";
-import { MenuItem, Grid, Typography, TextField, Tooltip,  } from "@mui/material";
+import { MenuItem, Grid, Typography, TextField, Tooltip, FormControl, InputLabel } from "@mui/material";
 import { useTranslation } from "react-i18next";
-
+import { setBounds } from "General/Engine/CONSTRAINTS"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,7 +30,7 @@ export default function RetailSettings(props) {
 
   // TODO: Delete hymnal?
   /* ---------------------------------------- Hymnal State ---------------------------------------- */
-  // const [hymnalValue, setHymnalValue] = useState(props.userSettings.hymnalAllies);
+  const [hymnalValue, setHymnalValue] = useState(props.userSettings.hymnalAllies);
 
   /* -------------------------------------- Group Value State ------------------------------------- */
   const [groupValue, setgroupValue] = useState(props.userSettings.includeGroupBenefits);
@@ -57,11 +57,11 @@ export default function RetailSettings(props) {
 
   const specBuilds = props.player.getAllModels(props.contentType);
 
-  // TODO: Delete hymnal?
-  // const updateHymnal = (value) => {
-  //   props.editSettings("hymnalAllies", setBounds(value, 0, 4));
-  //   setHymnalValue(setBounds(value, 0, 4));
-  // };
+
+  const updateHymnalValue = (value) => {
+    props.editSettings("hymnalAllies", setBounds(value, 0, 4));
+    setHymnalValue(setBounds(value, 0, 4));
+  };
 
   const updateGroupValue = (value) => {
     props.editSettings("includeGroupBenefits", value);
@@ -106,55 +106,7 @@ export default function RetailSettings(props) {
 
   return (
     <Grid container spacing={2} direction="row">
-      {/* TODO: Delete hymnal? */}
-      {/* ------------------------- Cabalist's Hymnal Item ------------------------- */}
 
-      {/* {props.hymnalShow === true ? (
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
-          <Grid container spacing={0}>
-            <Grid item xs={12}>
-              <div style={{ display: "inline-flex" }}>
-                <Typography className={classes.heading} color="primary" noWrap>
-                  {t("Settings.Retail.Setting0Title")}
-                </Typography>
-                <Tooltip
-                  title={
-                    <Typography align="center" variant="body2">
-                      {t("Settings.Retail.Setting0Tooltip")}
-                    </Typography>
-                  }
-                  placement="top-start"
-                >
-                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
-                </Tooltip>
-              </div>
-            </Grid>
-            <Grid item xs={12}>
-              <FormControl variant="outlined" size="small" label={t("Settings.Retail.Setting0Title")} fullWidth style={{ textAlign: "center", width: 120 }}>
-                <InputLabel id="NewCovSelector">{t("Settings.Retail.Setting0Title")}</InputLabel>
-                <TextField
-                  id="AlliesNumber"
-                  label={t("Settings.Retail.Setting0Title")}
-                  value={hymnalValue}
-                  onChange={(e) => updateHymnal(e.target.value)}
-                  variant="outlined"
-                  size="small"
-                  type="number"
-                  // fullWidth
-                  inputProps={{
-                    style: { textAlign: "center" },
-                    className: classes.select,
-                  }}
-                />
-              </FormControl>
-            </Grid>
-          </Grid>
-        </Grid>
-      ) : (
-        ""
-      )}  */}
-
-      
       {/* --------------------------------- Playstyle / Build Selection --------------------------------  */}
       <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
         <Tooltip
@@ -188,6 +140,50 @@ export default function RetailSettings(props) {
           </TextField>
         </Tooltip>
       </Grid>
+
+      {/* ------------------------- Cabalist's Hymnal Item ------------------------- */}
+      {props.hymnalShow === true ? (
+        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+          <Tooltip
+            title={
+              <Typography align="center" variant="body2">
+                {t("Settings.Retail.Setting0Tooltip")}
+              </Typography>
+            }
+            placement="top-start"
+          >
+            <TextField
+              label={t("Settings.Retail.Setting0Title")}
+              value={hymnalValue}
+              onChange={(e) => updateHymnalValue(e.target.value)}
+              InputProps={{ variant: "outlined" }}
+              select
+              variant="outlined"
+              size="small"
+              fullWidth
+              style={{ textAlign: "center", minWidth: 120 }}
+            >
+              <MenuItem divider value={0} style={{ justifyContent: "center" }}>
+                {'0'}
+              </MenuItem>
+              <MenuItem divider value={1} style={{ justifyContent: "center" }}>
+                {'1'}
+              </MenuItem>
+              <MenuItem divider value={2} style={{ justifyContent: "center" }}>
+                {'2'}
+              </MenuItem>
+              <MenuItem divider value={3} style={{ justifyContent: "center" }}>
+                {'3'}
+              </MenuItem>
+              <MenuItem divider value={4} style={{ justifyContent: "center" }}>
+                {'4'}
+              </MenuItem>
+            </TextField>
+          </Tooltip>
+        </Grid>
+      ) : (
+        ""
+      )}
 
       {/* ------------------------- Group Buff (Treat Buff as Personal Throughput) ------------------------- */}
       {props.groupBuffShow === true ? (

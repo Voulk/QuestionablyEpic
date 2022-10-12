@@ -284,7 +284,7 @@ export default function UpgradeFinderFront(props) {
       const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
       props.setItemSelection(result);
       props.setShowReport(true);
-    } else if (gameType === "BurningCrusade") {
+    } else if (gameType === "Classic") {
       const playerSettings = props.playerSettings;
       const result = runUpgradeFinderBC(props.player, contentType, currentLanguage, playerSettings, userSettings);
       props.setItemSelection(result);
@@ -313,13 +313,13 @@ export default function UpgradeFinderFront(props) {
     const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
     if (gameType === "Retail") {
       return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
-    } else if (gameType === "BurningCrusade") {
+    } else if (gameType === "Classic") {
       return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 16) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 17);
     }
   };
 
   const getUpgradeFinderReady = (player) => {
-    return getSimCStatus(player) === "Good" && (props.playerSettings.raid.length > 0 || gameType == "BurningCrusade");
+    return getSimCStatus(player) === "Good" && (props.playerSettings.raid.length > 0 || gameType == "Classic");
   };
 
   return (
@@ -439,9 +439,6 @@ export default function UpgradeFinderFront(props) {
                     <Typography color="primary" align="center" variant="h5">
                       {t("Dungeon")}
                     </Typography>
-                    <Grid item xs={12}>
-                      <Typography align="center">{t("UpgradeFinderFront.DungeonBodyBC")}</Typography>
-                    </Grid>
                   </Grid>
                 </Grid>
 

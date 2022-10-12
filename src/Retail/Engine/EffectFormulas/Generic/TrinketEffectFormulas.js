@@ -4,7 +4,7 @@ import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
 import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
 import { getMasteryAddition } from "../Monk/MistweaverMiscFormulas"
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { runCastSequence, allRamps, allRampsHealing } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { allRampsHealing } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 // import { STAT } from "../../../../General/Engine/STAT";
@@ -861,8 +861,8 @@ else if (
   }
 
   // Take an average of our stacks. Note that the trinket decreases from 19 to 10, NOT to 0.
-  bonus_stats.haste = (trinketSum / 10) * convertPPMToUptime(effect.ppm, effect.duration) * effect.efficiency[player.spec];
-
+  //bonus_stats.haste = (trinketSum / 10) * convertPPMToUptime(effect.ppm, effect.duration) * effect.efficiency[player.spec];
+  bonus_stats.haste = 0;
 } 
 else if (
   /* ---------------------------------------------------------------------------------------------- */

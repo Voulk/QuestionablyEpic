@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "auto 100%",
   },
   raidBCHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/BurningCrusade/RaidHeader.jpg").default})`,
+    backgroundImage: `url(${require("../../../Images/Classic/RaidHeader.jpg").default})`,
     borderRadius: "4px 0px 0px 4px",
     whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "auto 100%",
   },
   dungeonBCPlusHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/BurningCrusade/DungeonHeader.jpg").default})`,
+    backgroundImage: `url(${require("../../../Images/Classic/DungeonHeader.jpg").default})`,
     whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
     color: "#fff",
@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "auto 100%",
   },
   pvpBCHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/BurningCrusade/PVP/PVPHeader.jpg").default})`,
+    backgroundImage: `url(${require("../../../Images/Classic/PVP/PVPHeader.jpg").default})`,
     whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
     color: "#fff",
@@ -108,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "auto 100%",
   },
   slotsBCHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/BurningCrusade/SlotsHeader.jpg").default})`,
+    backgroundImage: `url(${require("../../../Images/Classic/SlotsHeader.jpg").default})`,
     borderRadius: "0px 4px 4px 0px",
     whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",

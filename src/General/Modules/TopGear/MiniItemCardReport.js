@@ -49,7 +49,7 @@ export default function ItemCardReport(props) {
   const { t, i18n } = useTranslation();
   const gameType = useSelector((state) => state.gameType);
   const currentLanguage = i18n.language;
-  const statString = gameType === "BurningCrusade" ? "" : buildStatString(item.stats, item.effect, currentLanguage);
+  const statString = gameType === "Classic" ? "" : buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level;
   const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
   const socketImg = {
@@ -58,8 +58,8 @@ export default function ItemCardReport(props) {
     mastery: masterySocket,
     versatility: versSocket,
   };
-  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
-  const gemString = gameType === "BurningCrusade" ? props.gems : "&gems=" + item.gemString;
+  const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
+  const gemString = gameType === "Classic" ? props.gems : "&gems=" + item.gemString;
   const socketImage = socketImg[enchants["Gems"]];
   const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;

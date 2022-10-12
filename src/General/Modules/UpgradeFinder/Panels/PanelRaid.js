@@ -7,7 +7,7 @@ import "./Panels.css";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { raidDB } from "../../CooldownPlanner/Data/CooldownPlannerBossList";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, filterBCItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
+import { filterItemListBySource, filterClassicItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import i18n from "i18next";
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 4,
   },
   karazhanHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/Karazhan.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/Karazhan.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   gruulsHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/Gruul&Mag.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/Gruul&Mag.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   zulamanHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/ZulAman.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/ZulAman.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   magtheridonHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/MagtheridonsLair.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/MagtheridonsLair.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   serpentshringHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/SerpentshrineCavern.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/SerpentshrineCavern.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   tempestKeepHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/TempestKeep.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/TempestKeep.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -91,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   mountHyjalHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/MountHyjal.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/MountHyjal.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -103,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   blackTempleHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/BlackTemple.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/BlackTemple.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -115,7 +115,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   sunwellHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/SunwellPlateau.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/SunwellPlateau.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -127,7 +127,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   sunwellHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/SunwellPlateau.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/SunwellPlateau.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -139,7 +139,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   sunwellHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/SunwellPlateau.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/Classic/Raid/SunwellPlateau.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -285,7 +285,6 @@ export default function RaidGearContainer(props) {
       return obj.raidID === raid;
     })[0]["name"][currentLanguage];
 
-    console.log(raidName);
     return raidName;
   };
 
@@ -302,7 +301,6 @@ export default function RaidGearContainer(props) {
     const firstDifficulty = difficulties[0];
     const secondDifficulty = difficulties.length === 2 ? difficulties[1] : -1;
     const retailBossList = Array.from(Object.keys(encounterDB[1195].bosses));
-    console.log(retailBossList);
 
     return (
       <Grid item xs={12}>
@@ -437,7 +435,17 @@ export default function RaidGearContainer(props) {
   const contentGeneratorBC = () => {
     // Raid Panel
 
-    const burningCrusadeList = [745, 746, 748, 749, 750, 751, 321, 752];
+    const burningCrusadeList = [
+      754, // Naxxramas
+      756, // The Eye of Eternity
+      759, // Ulduar
+      753, // Vault of Archavon
+      755, // The Obsidian Sanctum
+      760, // Onyxia's Lair
+      757, // Trial of the Crusader
+      761, // The Ruby Sanctum
+      758, // Icecrown Citadel
+    ];
 
     return (
       <Grid item xs={12}>
@@ -461,21 +469,22 @@ export default function RaidGearContainer(props) {
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
                   {/* ------------------------------------------ Karazhan ------------------------------------------ */}
-                  <Tab className={classes.karazhanHeaderStyle} label={encounterDB[745].name[currentLanguage]} {...a11yProps(0)} />
+                  <Tab className={classes.karazhanHeaderStyle} label={encounterDB[754].name[currentLanguage]} {...a11yProps(0)} />
                   {/* ---------------------------------------- Gruul's Lair ---------------------------------------- */}
-                  <Tab className={classes.gruulsHeaderStyle} label={encounterDB[746].name[currentLanguage]} {...a11yProps(1)} />
+                  <Tab className={classes.gruulsHeaderStyle} label={encounterDB[756].name[currentLanguage]} {...a11yProps(1)} />
                   {/* ------------------------------------ Serpentshrine Cavern ------------------------------------ */}
-                  <Tab className={classes.serpentshringHeaderStyle} label={encounterDB[748].name[currentLanguage]} {...a11yProps(2)} />
+                  <Tab className={classes.serpentshringHeaderStyle} label={encounterDB[759].name[currentLanguage]} {...a11yProps(2)} />
                   {/* ---------------------------------------- Tempest Keep ---------------------------------------- */}
-                  <Tab className={classes.tempestKeepHeaderStyle} label={encounterDB[749].name[currentLanguage]} {...a11yProps(3)} />
+                  <Tab className={classes.tempestKeepHeaderStyle} label={encounterDB[753].name[currentLanguage]} {...a11yProps(3)} />
                   {/* --------------------------------- The Battle for Mount Hyjal --------------------------------- */}
-                  <Tab className={classes.mountHyjalHeaderStyle} label={encounterDB[750].name[currentLanguage]} {...a11yProps(4)} />
+                  <Tab className={classes.mountHyjalHeaderStyle} label={encounterDB[755].name[currentLanguage]} {...a11yProps(4)} />
                   {/* ---------------------------------------- Black Temple ---------------------------------------- */}
-                  <Tab className={classes.blackTempleHeaderStyle} label={encounterDB[751].name[currentLanguage]} {...a11yProps(5)} />
+                  <Tab className={classes.blackTempleHeaderStyle} label={encounterDB[760].name[currentLanguage]} {...a11yProps(5)} />
                   {/* ------------------------------------------ Zul'Aman ------------------------------------------ */}
-                  <Tab className={classes.zulamanHeaderStyle} label={encounterDB[321].name[currentLanguage]} {...a11yProps(6)} />
+                  <Tab className={classes.zulamanHeaderStyle} label={encounterDB[757].name[currentLanguage]} {...a11yProps(6)} />
                   {/* --------------------------------------- Sunwell Plateau -------------------------------------- */}
-                  <Tab className={classes.sunwellHeaderStyle} label={encounterDB[752].name[currentLanguage]} {...a11yProps(7)} />
+                  <Tab className={classes.sunwellHeaderStyle} label={encounterDB[761].name[currentLanguage]} {...a11yProps(7)} />
+                  <Tab label={encounterDB[758].name[currentLanguage]} {...a11yProps(8)} />
                 </Tabs>
               </AppBar>
             </Grid>
@@ -490,7 +499,6 @@ export default function RaidGearContainer(props) {
                         //filter((key) => key === raidID)
                         .map((key, i) => (
                           <Grid item xs={12} key={"bossContainer-" + i}>
-                            {console.log(key)}
                             <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
                               <Grid container justifyContent="center" alignItems="flex-start">
                                 <Grid item style={{ alignSelf: "center" }}>
@@ -512,7 +520,7 @@ export default function RaidGearContainer(props) {
                                 </Grid>
                                 <Divider orientation="vertical" flexItem />
                                 <Grid item xs={12} sm container style={{ padding: 8 }} spacing={1}>
-                                  {[...filterBCItemListBySource(itemList, raidID, parseInt(key))].map((item, index) => (
+                                  {[...filterClassicItemListBySource(itemList, raidID, parseInt(key))].map((item, index) => (
                                     <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                   ))}
                                 </Grid>

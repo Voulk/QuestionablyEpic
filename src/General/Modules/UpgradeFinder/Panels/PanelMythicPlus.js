@@ -5,7 +5,7 @@ import ItemUpgradeCard from "./ItemUpgradeCard";
 import DungeonHeaderIcons from "../../CooldownPlanner/Functions/IconFunctions/DungeonHeaderIcons";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, filterBCItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
+import { filterItemListBySource, filterClassicItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { itemLevels } from "../../../../Databases/itemLevelsDB";
 import { useSelector } from "react-redux";
@@ -30,7 +30,6 @@ export default function MythicPlusGearContainer(props) {
   const contentGenerator = () => {
     return encounterDB["-1"].bossOrder.map((key, i) => (
       <Grid item xs={12} key={"mythicContainer-" + i}>
-        {console.log(key)}
         <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
           <Grid container>
             <Grid item xs={12} sm="auto">
@@ -87,7 +86,7 @@ export default function MythicPlusGearContainer(props) {
             </Grid>
             <Divider orientation="vertical" flexItem />
             <Grid item xs={12} sm container spacing={1} style={{ padding: 8 }}>
-              {[...filterBCItemListBySource(itemList, -1, key)].map((item, index) => (
+              {[...filterClassicItemListBySource(itemList, -1, key)].map((item, index) => (
                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
               ))}
             </Grid>
@@ -96,7 +95,6 @@ export default function MythicPlusGearContainer(props) {
       </Grid>
     ));
   };
-  console.log(gameType);
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>

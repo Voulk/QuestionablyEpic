@@ -4,6 +4,16 @@ export const classRaceDB = {
   /*                                            Paladins                                            */
   /* ---------------------------------------------------------------------------------------------- */
 
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Druids                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* ------------------------------------------- Retail ------------------------------------------- */
+  "Preservation Evoker": {
+    races: ["Races.Drakthyr"],
+    gameType: "Retail",
+  },
+
   /* ------------------------------------------- Retail ------------------------------------------- */
   "Holy Paladin": {
     races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Lightforged Draenei", "Races.Dark Iron Dwarf", "Races.Blood Elf", "Races.Tauren", "Races.Zandalari Troll"],
@@ -11,9 +21,9 @@ export const classRaceDB = {
   },
 
   /* --------------------------------------- Burning Crusade -------------------------------------- */
-  "Holy Paladin BC": {
+  "Holy Paladin Classic": {
     races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Blood Elf"],
-    gameType: "BurningCrusade",
+    gameType: "Classic",
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -27,9 +37,9 @@ export const classRaceDB = {
   },
 
   /* --------------------------------------- Burning Crusade -------------------------------------- */
-  "Restoration Druid BC": {
+  "Restoration Druid Classic": {
     races: ["Races.Night Elf", "Races.Tauren"],
-    gameType: "BurningCrusade",
+    gameType: "Classic",
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -91,9 +101,9 @@ export const classRaceDB = {
   },
 
   /* --------------------------------------- Burning Crusade -------------------------------------- */
-  "Holy Priest BC": {
+  "Holy Priest Classic": {
     races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Night Elf", "Races.Blood Elf", "Races.Troll", "Races.Undead"],
-    gameType: "BurningCrusade",
+    gameType: "Classic",
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -121,9 +131,9 @@ export const classRaceDB = {
   },
 
   /* --------------------------------------- Burning Crusade -------------------------------------- */
-  "Restoration Shaman BC": {
+  "Restoration Shaman Classic": {
     races: ["Races.Draenei", "Races.Orc", "Races.Tauren", "Races.Troll"],
-    gameType: "BurningCrusade",
+    gameType: "Classic",
   },
 
   /* ---------------------------------------------------------------------------------------------- */

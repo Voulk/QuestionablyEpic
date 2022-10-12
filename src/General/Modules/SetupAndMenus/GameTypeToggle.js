@@ -66,8 +66,8 @@ export default function GameTypeSwitch(props) {
       allChars.setLowestChar(gameType)
       charUpdate(allChars);
       dispatch(toggleGameType(gameType));
-      if (gameType === "BurningCrusade") {
-        // If we're on the Burning Crusade setting then automatically update to Raid since there is no dungeon support.
+      if (gameType === "Classic") {
+        // If we're on the Classic setting then automatically update to Raid since there is no dungeon support.
         dispatch(toggleContent("Raid"))
       }
       
@@ -83,18 +83,18 @@ export default function GameTypeSwitch(props) {
       <ToggleButton className={classes.root} value="Retail" aria-label="retailLabel">
         <Tooltip title={t("GameTypeToggle.Retail")} arrow>
           <div style={{ display: "inline-flex" }}>
-            <img src={require("../../../Images/Logos/Logo_Shadowlands.png").default} alt={t("Shadowlands")} />
+            <img src={require("../../../Images/Logos/Logo_Dragonflight.png").default} alt={t("Dragonflight")} />
           </div>
         </Tooltip>
       </ToggleButton>
 
       {/* ---------------------------------------------------------------------------------------------- */
-      /*                            Burning Crusade: Classic Game Type Toggle                           */
+      /*                            Wrath of the Lich King: Classic Game Type Toggle                           */
       /* ---------------------------------------------------------------------------------------------- */}
-      <ToggleButton className={classes.root} value="BurningCrusade" aria-label="classicLabel">
+      <ToggleButton className={classes.root} value="Classic" aria-label="classicLabel" disabled>
         <Tooltip title={t("GameTypeToggle.Classic")} arrow>
           <div style={{ display: "inline-flex" }}>
-            <img src={require("../../../Images/Logos/Logo_BurningCrusade.png").default} alt={t("Burning Crusade")} />
+            <img src={require("../../../Images/Logos/Logo_LichKingComingSoon.png").default} alt={t("Burning Crusade")} />
           </div>
         </Tooltip>
       </ToggleButton>

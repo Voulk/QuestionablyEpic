@@ -17,7 +17,7 @@ import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/Connec
 
 class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
-    this.spec = specName;
+    this.spec = specName.replace("BC", "Classic");
     this.charName = playerName;
     this.charID = charID;
 
@@ -184,6 +184,7 @@ class Player {
   setDefaultCovenant = (spec) => {
     if (spec === "Holy Paladin") this.covenant = "venthyr";
     else if (spec === "Restoration Druid") this.covenant = "night_fae";
+    else if (spec === "Preservation Evoker") this.covenant = "night_fae";
     else if (spec === "Restoration Shaman") this.covenant = "necrolord";
     else if (spec === "Mistweaver Monk") this.covenant = "venthyr";
     else if (spec === "Discipline Priest") this.covenant = "kyrian";
@@ -628,7 +629,11 @@ class Player {
     } else if (spec === SPEC.RESTOSHAMAN) {
       this.statWeights[contentType] = shamanDefaultStatWeights(contentType);
       this.statWeights.DefaultWeights = true;
-    } else {
+    } else if (spec === SPEC.PRESEVOKER) {
+      this.statWeights[contentType] = holyPriestDefaultStatWeights(contentType);
+      this.statWeights.DefaultWeights = true;
+    }
+    else {
       // Invalid spec replied. Error.
       reportError(this, "Player", "Invalid Spec Supplied for Default Weights", spec);
       throw new Error("Invalid Spec Supplied");
@@ -717,7 +722,19 @@ class Player {
         mastery: 700,
         versatility: 400,
         stamina: 1900,
-      };
+      }
+    }
+      else if (spec === SPEC.PRESEVOKER) {
+        this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
+        this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
+        this.activeStats = {
+          intellect: 2500,
+          haste: 424,
+          crit: 770,
+          mastery: 700,
+          versatility: 400,
+          stamina: 1900,
+        }
       /*
       this.statWeights.Raid = holyPriestDefaultStatWeights("Raid");
       this.statWeights.Dungeon = holyPriestDefaultStatWeights("Dungeon");
@@ -743,7 +760,7 @@ class Player {
       this.statWeights.Raid = monkDefaultStatWeights("Raid");
       this.statWeights.Dungeon = monkDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true; */
-    } else if (spec.includes("BC")) {
+    } else if (spec.includes("Classic")) {
     } else {
       // Invalid spec replied. Error.
       reportError(this, "Player", "Invalid Spec Supplied during setupDefaults", spec);

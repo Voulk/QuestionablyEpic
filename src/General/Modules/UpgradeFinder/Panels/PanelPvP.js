@@ -6,6 +6,7 @@ import "./Panels.css";
 import { useTranslation } from "react-i18next";
 import { filterItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { encounterDB } from "../../../../Databases/InstanceDB";
+import { getTranslatedPvP } from "locale/pvpLocale";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -35,7 +36,8 @@ const itemLevels = {
 
 export default function PvPGearContainer(props) {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
   const difficulty = props.playerSettings.pvp;
@@ -49,7 +51,7 @@ export default function PvPGearContainer(props) {
               <div style={{ width: 181 }} className="container-UpgradeCards">
                 <img src={pvpIcons[key]} style={{ borderRadius: 4 }} />
                 <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
-                  {t("PvPCurrency." + key)}
+                  {getTranslatedPvP(key, currentLanguage)}
                 </Typography>
               </div>
             </Grid>

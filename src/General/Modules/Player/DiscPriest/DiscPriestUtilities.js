@@ -1,8 +1,9 @@
 
-import { allRamps, allRampsHealing } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { allRampsHealing } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "./DiscRampGen";
 
 export const getRampData = (playerStats, playerTrinkets, playstyle) => {
+    /*
     const rampTime = 180;
 
     // Baselines
@@ -32,7 +33,8 @@ export const getRampData = (playerStats, playerTrinkets, playstyle) => {
         penitentOne: (penitentOne - discBaseline) / rampTime, 
         shadowWordManip: (shadowWordManip - discBaseline) / rampTime,
     }
-    return rampData;
+    return rampData; */
+    return {};
 
 }
 
@@ -60,7 +62,7 @@ export const genStatWeights = (activeStats) => {
 
             const seq1 = buildRamp('Boon', 10, [], adjustedStats['haste'], ['Rapture'])
             const seq2 = buildRamp('Fiend', 10, [], adjustedStats['haste'], ['Rapture'])
-            const rampResult = allRamps(seq1, seq2, adjustedStats, {"Clarity of Mind": true, "Pelagos": true}, {"Rabid Shadows": 226, "Courageous Ascension": 226, "Shining Radiance": 226});
+            const rampResult = allRampsHealing(seq1, seq2, adjustedStats, {"Clarity of Mind": true, "Pelagos": true}, {"Rabid Shadows": 226, "Courageous Ascension": 226, "Shining Radiance": 226});
             
             weightHPS += (rampResult / rampTime - baselineHPS);
 
