@@ -4,6 +4,10 @@ import { MenuItem, Grid, Typography, TextField, Tooltip, FormControl, InputLabel
 import { useTranslation } from "react-i18next";
 import { setBounds } from "General/Engine/CONSTRAINTS"
 
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { togglePlayerSettings } from "Redux/Actions";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -24,6 +28,12 @@ export default function RetailSettings(props) {
   const classes = useStyles();
   // const playerSpec = props.player.getSpec();
 
+  const playerSettings = useSelector((state) => state.playerSettings);
+  console.log(playerSettings);
+
+  const dispatch = useDispatch();
+
+  
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             States                                             */
   /* ---------------------------------------------------------------------------------------------- */
@@ -59,6 +69,7 @@ export default function RetailSettings(props) {
 
 
   const updateHymnalValue = (value) => {
+    dispatch(togglePlayerSettings(playerSettings));
     props.editSettings("hymnalAllies", setBounds(value, 0, 4));
     setHymnalValue(setBounds(value, 0, 4));
   };
