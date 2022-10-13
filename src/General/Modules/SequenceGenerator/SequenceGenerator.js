@@ -23,6 +23,8 @@ import LooksOneIcon from "@mui/icons-material/LooksOne";
 import { SpellIcon } from "./SpellIcon";
 import "./Sequence.css";
 
+import SequenceSettings from "General/Modules/SequenceGenerator/SequenceSettings"
+
 const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.down("md")]: {
@@ -72,7 +74,14 @@ const getTalentDB = (spec) => {
   if (spec === "Mistweaver Monk") return null;
 }
 
-
+const getSpecSettings = (spec) => {
+  if (spec === "Preservation Evoker") {
+    return {setting1:  {value: "defaultValue", options: ["defaultValue", "OtherValue"]}}
+  }
+  else {
+    return null;
+  }
+}
 
 
 const getSequence = (spec) => {
@@ -97,6 +106,8 @@ export default function SequenceGenerator(props) {
   const [talentDB, setTalentDB] = useState(getTalentDB(selectedSpec));
   const [result, setResult] = useState({ totalDamage: 0, totalHealing: 0, hpm: 0 });
   const [combatLog, setCombatLog] = useState([]);
+  const seqSettings = getSpecSettings(selectedSpec);
+
 
   const spellList = {
     Damage: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "damage"),
@@ -453,7 +464,11 @@ export default function SequenceGenerator(props) {
                     {"Auto-Generate Sequence"}
                   </Button>
                 </Grid>
-
+                <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                    <SequenceSettings 
+                      possibleSettings = {seqSettings} 
+                      />
+                </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                   <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
                     {"Results"}
