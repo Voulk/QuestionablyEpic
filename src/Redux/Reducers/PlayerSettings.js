@@ -4,7 +4,6 @@ import ls from "local-storage";
 export function playerSettings(state, action) {
   const { playerSettings } = action.payload;
   //ls.set("playerSettings", toggleType);
-  console.log(action.payload);
   return {
     ...state,
     playerSettings: playerSettings,

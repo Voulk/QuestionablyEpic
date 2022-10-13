@@ -15,7 +15,7 @@ import ls from "local-storage";
 const initialState = {
   gameType: ls.get("gameType") || "Retail",
   contentType: ls.get("contentType") || "Raid",
-  playerSettings: {"Sins": 4, "Hymnal": 5}
+  playerSettings: {"groupBenefits": true, "Sins": 4, "Hymnal": 5}
 };
 if (initialState.gameType === "BurningCrusade") initialState.gameType = "Classic";
 
