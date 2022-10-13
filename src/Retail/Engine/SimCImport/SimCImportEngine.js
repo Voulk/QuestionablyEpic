@@ -64,10 +64,6 @@ export function processAllLines(player, contentType, covenant, lines, linkedItem
       }
     }
 
-    /* ------------------- If line includes "conduits_available" then process line ------------------ */
-    if (line.includes("conduits_available")) {
-      processConduits(line, player);
-    }
 
     /* ------------------------ If line includes "renown=" then process line ------------------------ */
     if (line.includes("renown=")) {
@@ -144,7 +140,7 @@ function processConduits(line, player) {
       .map((obj) => obj.itemLevel)[0];
 
     /* --------------------------------------- Update Conduit --------------------------------------- */
-    player.updateConduitLevel(conduitGuid, conduitIlvl);
+    //player.updateConduitLevel(conduitGuid, conduitIlvl);
   }
 }
 

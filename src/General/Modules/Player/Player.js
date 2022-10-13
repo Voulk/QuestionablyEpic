@@ -1,4 +1,4 @@
-import { getAvailableClassConduits } from "../../../Retail/Modules/Covenants/CovenantUtilities";
+
 import SPEC from "../../Engine/SPECS";
 import STAT from "../../Engine/STAT";
 import { itemDB } from "Databases/ItemDB";
@@ -22,7 +22,6 @@ class Player {
     this.charID = charID;
 
     this.activeItems = [];
-    this.activeConduits = [];
     this.renown = 1;
     this.region = region;
     this.realm = realm;
@@ -34,7 +33,6 @@ class Player {
     if (gameType === "Retail") {
       this.setupDefaults(specName);
       this.setDefaultCovenant(specName);
-      this.activeConduits = getAvailableClassConduits(specName);
       this.gameType = "Retail";
     }
     // console.log(this.charImageURL);
@@ -47,7 +45,6 @@ class Player {
   spec = "";
   charID = 0;
   activeItems = [];
-  activeConduits = [];
   renown = 1;
   castModel = {}; // Remove once CastModels is complete.
   castModels = [];
@@ -72,7 +69,7 @@ class Player {
 
   // The players active stats from their character page. These are raw rather than being percentages.
   // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
-  // These are used for items like trinkets or conduits, where a flat healing portion might scale with various secondary stats.
+  // These are used for items like trinkets or spell effects, where a flat healing portion might scale with various secondary stats.
   activeStats = {
     intellect: 1420,
     haste: 400,
@@ -195,27 +192,6 @@ class Player {
       this.covenant = "night_fae";
       //throw new Error("Invalid Spec Supplied to Cov Default");
     }
-  };
-
-  calculateConduits = (contentType) => {
-    this.activeConduits.forEach((conduit) => {
-      conduit.setHPS(this, contentType);
-    });
-  };
-
-  getActiveConduits = (type) => {
-    return this.activeConduits.filter(function (conduits) {
-      return conduits.type == type;
-    });
-  };
-
-  getConduitLevel = (id) => {
-    let tempDict = this.activeConduits.filter(function (conduits) {
-      return conduits.id === id;
-    });
-
-    if (tempDict.length > 0) return tempDict[0].itemLevel;
-    else return 142;
   };
 
   // Used for the purpose of maximising stuff like ring enchants and gems.
@@ -412,13 +388,6 @@ class Player {
     return mult;
   };
 
-  updateConduitLevel = (id, newLevel) => {
-    for (let i = 0; i < this.activeConduits.length; i++) {
-      if (this.activeConduits[i].id === id) {
-        this.activeConduits[i].itemLevel = Math.max(145, Math.min(newLevel, 278));
-      }
-    }
-  };
 
   /* ------------------------------------- Update renown level ------------------------------------ */
   updateRenownLevel = (renownLevel) => {
