@@ -66,7 +66,7 @@ export default function SequenceSettings(props) {
                                 select
                                 label={t(`Settings.Retail.Setting5Title`)}
                                 value={possibleSettings[key].value}
-                                onChange={(e) => props.setPossibleSettings({ ...possibleSettings, [key]: e.target.value })}
+                                onChange={(e) => props.editSettings(key, e.target.value)}
                             >
                                 {possibleSettings[key].options.map((option) => (
                                     <MenuItem key={option} value={option}>
@@ -80,73 +80,6 @@ export default function SequenceSettings(props) {
             })}
 
         </Grid>
-
-            {/*}
-            <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
-            <Tooltip
-            title={
-                <Typography align="center" variant="body2">
-                {t("Settings.Retail.Setting5Tooltip")}
-                </Typography>
-            }
-            placement="top-start"
-            >
-            <TextField
-                className={classes.select}
-                InputProps={{ variant: "outlined" }}
-                select
-                variant="outlined"
-                size="small"
-                fullWidth
-                value={"Hello There"}
-                onChange={null}
-                label={t("Settings.Retail.Setting5Title")}
-                style={{ textAlign: "center", minWidth: 120 }}
-            >
-              <MenuItem divider value={0} style={{ justifyContent: "center" }}>
-                {'Hello There'}
-              </MenuItem>
-              <MenuItem divider value={1} style={{ justifyContent: "center" }}>
-                {'Goodbye There'}
-              </MenuItem>
-            </TextField>
-            </Tooltip>
-        </Grid>
-
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
-            <Tooltip
-            title={
-                <Typography align="center" variant="body2">
-                {t("Settings.Retail.Setting5Tooltip")}
-                </Typography>
-            }
-            placement="top-start"
-            >
-            <TextField
-                className={classes.select}
-                InputProps={{ variant: "outlined" }}
-                select
-                variant="outlined"
-                size="small"
-                fullWidth
-                value={"Hello There"}
-                onChange={null}
-                label={t("Settings.Retail.Setting5Title")}
-                style={{ textAlign: "center", minWidth: 120 }}
-            >
-              <MenuItem divider value={0} style={{ justifyContent: "center" }}>
-                {'Hello There?'}
-              </MenuItem>
-              <MenuItem divider value={1} style={{ justifyContent: "center" }}>
-                {'Goodbye There!'}
-              </MenuItem>
-            </TextField>
-            </Tooltip>
-        </Grid>
-
-        </Grid> */}
-
-
           </AccordionDetails>
         </Accordion>
       </div>

@@ -75,11 +75,17 @@ const getTalentDB = (spec) => {
 }
 
 const getSpecSettings = (spec) => {
+  return {};
   if (spec === "Preservation Evoker") {
-    return {setting1:  {value: "defaultValue", options: ["defaultValue", "OtherValue"]}}
+    return {setting1:  {value: "defaultValue", options: ["defaultValue", "OtherValue"]},
+            includeOverheal: {value: "Yes", options: ["Yes", "No"]}}
   }
+  else if (spec === "Discipline Priest") {
+    return {includeOverheal: {value: "Yes", options: ["Yes", "No"]},
+            openWithDoT: {value: "Yes", options: ["Yes", "No"]}}
+    }  
   else {
-    return null;
+    return {};
   }
 }
 
@@ -106,8 +112,13 @@ export default function SequenceGenerator(props) {
   const [talentDB, setTalentDB] = useState(getTalentDB(selectedSpec));
   const [result, setResult] = useState({ totalDamage: 0, totalHealing: 0, hpm: 0 });
   const [combatLog, setCombatLog] = useState([]);
-  const seqSettings = getSpecSettings(selectedSpec);
+  const [seqSettings, setSeqSettings] = useState(getSpecSettings(selectedSpec));
 
+  const editSettings = (key, value) => {
+    const temp = {...seqSettings};
+    temp[key].value = value;
+    setSeqSettings(temp);
+  }
 
   const spellList = {
     Damage: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "damage"),
@@ -467,6 +478,7 @@ export default function SequenceGenerator(props) {
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                     <SequenceSettings 
                       possibleSettings = {seqSettings} 
+                      editSettings = {editSettings}
                       />
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>

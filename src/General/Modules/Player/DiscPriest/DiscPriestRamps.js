@@ -14,6 +14,7 @@ const discSettings = {
 }
 
 const DISCCONSTANTS = {
+    baseMana: 50000,
     masteryMod: 1.35,
     masteryEfficiency: 1,
 
@@ -303,6 +304,15 @@ const DISCCONSTANTS = {
     if (settings['Shadowed Orb']) discSpells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
     if (settings['Soulletting Ruby']) discSpells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
     //
+
+    // Setup mana costs & cooldowns.
+    for (const [key, value] of Object.entries(discSpells)) {
+        let spell = value[0];
+
+        if (!spell.targets) spell.targets = 1;
+        if (spell.cooldown) spell.activeCooldown = 0;
+        if (spell.cost) spell.cost = spell.cost * DISCCONSTANTS.baseMana / 100;
+    }
 
     return discSpells;
 }
