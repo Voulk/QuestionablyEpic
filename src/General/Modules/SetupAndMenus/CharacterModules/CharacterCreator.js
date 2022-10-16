@@ -220,9 +220,9 @@ export default function AddNewChar(props) {
             {t("Cancel")}
           </Button>
           <Button
-            onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace, gameType, selectedCovenant)}
+            onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace, gameType, "")}
             color="primary"
-            disabled={selectedRace === "" || (selectedCovenant === "" && gameType == "Retail") ? true : false}
+            disabled={selectedRace === "" ? true : false}
             variant="outlined"
           >
             {t("Add")}
