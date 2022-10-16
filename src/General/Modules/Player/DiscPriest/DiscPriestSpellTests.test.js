@@ -5,6 +5,7 @@ import { getSpellRaw } from "Retail/Engine/EffectFormulas/Generic/RampBase";
 import { genStatWeights } from './DiscPriestUtilities';
 import { buildRamp } from "./DiscRampGen";
 import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
+import each from "jest-each";
 
 const DISCCONSTANTS = {
     masteryMod: 1.35,
@@ -30,37 +31,41 @@ describe("Test Base Spells", () => {
             critMult: 0,
     }
 
-    test("Smite", () => {
-        const spell = DISCSPELLS['Smite'][0];
+    each`
+        spellName                       | expectedResult
+        ${"Smite"}                      | ${2402}
+        ${"Shadow Word: Death"}         | ${3862}
+        ${"Light's Wrath"}              | ${7950}
+        ${"Mindgames"}                  | ${12266}
+        ${"Mind Blast"}                 | ${4982}
+
+    // add new test cases here
+    `.test("Base Damage Check: $spellName", ({ spellName, expectedResult }) => {
+        const spell = DISCSPELLS[spellName][0];
         const damage = getSpellRaw(spell, activeStats, DISCCONSTANTS);
-        expect(Math.abs(damage * DISCCONSTANTS.auraDamageBuff - 2402)).toBeLessThan(errorMargin);
+        expect(Math.abs(damage * DISCCONSTANTS.auraDamageBuff - expectedResult)).toBeLessThan(errorMargin);
+        //expect(getValidWeaponTypes(spec, "Offhands").includes(itemSubclass2)).toBe(expectedResult);
     });
-/*
-    test("Mind Blast", () => {
-        const spell = DISCSPELLS['Mind Blast'][0];
-        const damage = getSpellRaw(spell, activeStats, DISCCONSTANTS);
-        expect(Math.abs(damage * DISCCONSTANTS.auraDamageBuff - 4982)).toBeLessThan(errorMargin);
-    }); */
-    test("Shadow Word: Death", () => {
-        const spell = DISCSPELLS['Shadow Word: Death'][0];
-        const damage = getSpellRaw(spell, activeStats, DISCCONSTANTS);
-        expect(Math.abs(damage * DISCCONSTANTS.auraDamageBuff - 3862)).toBeLessThan(errorMargin);
-    });
-    test("Light's Wrath", () => {
-        const spell = DISCSPELLS["Light's Wrath"][0];
-        const damage = getSpellRaw(spell, activeStats, DISCCONSTANTS);
-        expect(Math.abs(damage * DISCCONSTANTS.auraDamageBuff - 7950)).toBeLessThan(errorMargin);
-    });
-    test("Mindgames - Damage", () => {
-        const spell = DISCSPELLS["Mindgames"][0];
-        const damage = getSpellRaw(spell, activeStats, DISCCONSTANTS);
-        expect(Math.abs(damage * DISCCONSTANTS.auraDamageBuff - 12266)).toBeLessThan(errorMargin);
-    });
-    // Healing Spells
-    test("Power Word: Shield", () => {
-        const spell = DISCSPELLS['Power Word: Shield'][0];
+
+    each`
+        spellName                       | expectedResult
+        ${"Power Word: Shield"}         | ${13532}
+        ${"Flash Heal"}                 | ${0}
+
+
+    // add new test cases here
+    `.test("Base Healing Check: $spellName", ({ spellName, expectedResult }) => {
+        const spell = DISCSPELLS[spellName][0];
         const healing = getSpellRaw(spell, activeStats, DISCCONSTANTS);
-        expect(Math.abs(healing * DISCCONSTANTS.auraHealingBuff - 13532)).toBeLessThan(errorMargin);
+        expect(Math.abs(healing * DISCCONSTANTS.auraHealingBuff - expectedResult)).toBeLessThan(errorMargin);
+        //expect(getValidWeaponTypes(spec, "Offhands").includes(itemSubclass2)).toBe(expectedResult);
     });
+});
+
+// Here we'll make sure talents are having the impact on our spells that we desire. 
+// Some of these tests will be pretty basic, but it's still good to make sure they're covered.
+describe("Test Talents", () => {
+
+
 
 });

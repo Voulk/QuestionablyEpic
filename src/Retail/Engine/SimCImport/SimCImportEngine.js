@@ -34,15 +34,7 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
     let linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : lines.length;
     let vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : linkedItems;
 
-    
-
-    // We only use the covenant variable to expand weapon tokens. Setting a default is a better approach than showing none if it's missing,
-    // given the weapons and offhands are near identical anyway.
-    const covenantLine = lines.filter((x) => x.includes("covenant"));
-    const covenant = covenantLine.length > 0 ? covenantLine[0].split("=")[1].toLowerCase() : "venthyr";
-
-    processAllLines(player, contentType, covenant, lines, linkedItems, vaultItems)
-    player.setCovenant(covenant);
+    processAllLines(player, contentType, lines, linkedItems, vaultItems)
 
     snackHandler();
     closeDialog();
@@ -50,24 +42,20 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
   }
 }
 
-export function processAllLines(player, contentType, covenant, lines, linkedItems, vaultItems) {
+export function processAllLines(player, contentType, lines, linkedItems, vaultItems) {
   for (var i = 8; i < lines.length; i++) {
     let line = lines[i];
     let type = i > vaultItems && i < linkedItems ? "Vault" : "Regular";
     // If our line doesn't include an item ID, skip it.
     if (line.includes("id=")) {
       if (line.includes("unknown")) {
-        processToken(line, player, contentType, type, covenant);
+        processToken(line, player, contentType, type);
       } else {
         const item = processItem(line, player, contentType, type)
         if (item) player.addActiveItem(item);
       }
     }
 
-    /* ------------------- If line includes "conduits_available" then process line ------------------ */
-    if (line.includes("conduits_available")) {
-      processConduits(line, player);
-    }
 
     /* ------------------------ If line includes "renown=" then process line ------------------------ */
     if (line.includes("renown=")) {
@@ -144,10 +132,11 @@ function processConduits(line, player) {
       .map((obj) => obj.itemLevel)[0];
 
     /* --------------------------------------- Update Conduit --------------------------------------- */
-    player.updateConduitLevel(conduitGuid, conduitIlvl);
+    //player.updateConduitLevel(conduitGuid, conduitIlvl);
   }
 }
 
+/*
 function processToken(line, player, contentType, type, covenant) {
   let infoArray = line.split(",");
   let tokenID = -1;
@@ -200,7 +189,7 @@ function processToken(line, player, contentType, type, covenant) {
   }
 
   //console.log("Creating Token with level" + tokenLevel + ", and ID: " + tokenID);
-}
+} */
 
 export function processItem(line, player, contentType, type) {
   // Split string.

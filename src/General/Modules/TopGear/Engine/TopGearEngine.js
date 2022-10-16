@@ -420,13 +420,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   compileStats(gearStats, bonus_stats);
   builtSet.baseStats = gearStats;
 
-  // == Domination Gems ==
-  // This function compares every set of possible domination gems, and sockets whichever is best. You can read more about it by navigating to the function itself.
-  // Domination Gems are defunct in 9.2. Thank goodness.
-  //if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
-
   // == Effects ==
-  // Effects include stuff like trinkets, legendaries, domination gems, tier sets and so on.
+  // Effects include stuff like trinkets, legendaries, tier sets and so on.
   // Each effect returns an object containing which stats it offers. Specific details on each effect can be found in the TrinketData, EffectData and EffectEngine files.
   // -- Disc note: On use trinkets and legendaries and handled further down in the ramps section. --
   let effectStats = [];
@@ -739,9 +734,6 @@ function evalSetOld(itemSet, player, contentType, baseHPS, userSettings, castMod
 
   //compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
 
-  // == Domination Gems ==
-  // If the user would prefer to let the app decide their domination gems for them, we'll call a function to automatically put together the best set.
-  if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
 
   // === Handle Effects ===
   // Each effect will return an object of stats. Ruby for example would return it's crit value.
