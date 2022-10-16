@@ -189,6 +189,8 @@ describe("Test Legendary Items", () => {
     });
 });
 
+
+/*
 describe("updatePlayerStats function", () => {
     test("Sample Druid Loadout", () => {
         const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
@@ -231,5 +233,5 @@ describe("updatePlayerStats function", () => {
     });
 
 })
-
+*/
 // Add tests for Domination items.

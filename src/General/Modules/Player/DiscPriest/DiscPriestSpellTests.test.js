@@ -37,7 +37,7 @@ describe("Test Base Spells", () => {
         ${"Shadow Word: Death"}         | ${3862}
         ${"Light's Wrath"}              | ${7950}
         ${"Mindgames"}                  | ${12266}
-        ${"Mind Blast"}                 | ${4982}
+        ${"Mind Blast"}                 | ${4964}
 
     // add new test cases here
     `.test("Base Damage Check: $spellName", ({ spellName, expectedResult }) => {
@@ -50,7 +50,7 @@ describe("Test Base Spells", () => {
     each`
         spellName                       | expectedResult
         ${"Power Word: Shield"}         | ${13532}
-        ${"Flash Heal"}                 | ${0}
+        ${"Flash Heal"}                 | ${9811}
 
 
     // add new test cases here
