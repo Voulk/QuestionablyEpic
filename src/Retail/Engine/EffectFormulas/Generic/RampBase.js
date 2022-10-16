@@ -28,7 +28,7 @@ export const addBuff = (state, spell, spellName) => {
         const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
             tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
 
-        newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration
+        newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
         state.activeBuffs.push(newBuff)
 
     }
@@ -152,7 +152,7 @@ export const getCurrentStats = (statArray, buffs) => {
 
 // Returns the players current haste percentage. 
 export const getHaste = (stats) => {
-    return 1 + stats.haste / 32 / 100;
+    return 1 + stats.haste / 170 / 100;
 }
 
 export const addReport = (state, entry) => {

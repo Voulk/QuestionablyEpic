@@ -611,7 +611,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
 
 
-    const sequenceLength = 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 180; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Manual" // Auto / Manual.
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0; // The time when the next spell cast can begin.
@@ -736,7 +736,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             if (fullSpell[0].castTime = 0) nextSpell += state.t + 1.5 / getHaste(currentStats);
             else nextSpell += state.t + castTime;
 
-            //console.log("Queing " + queuedSpell + ". Next: " + nextSpell + ".Curr: " + state.t);
+            console.log("Queing " + queuedSpell + ". Next: " + nextSpell + ".Curr: " + state.t);
             
 
         }
@@ -786,6 +786,11 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             // Cleanup
             queuedSpell = "";
             spellFinish = 0;
+        }
+
+        if (seq.length === 0 && queuedSpell === "" && healBuffs.length === 0) {
+            // We have no spells queued, no DoTs / HoTs and no spells to queue. We're done.
+            //state.t = 999;
         }
     }
 
