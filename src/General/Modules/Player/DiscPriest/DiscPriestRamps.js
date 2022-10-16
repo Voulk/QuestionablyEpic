@@ -22,9 +22,9 @@ const DISCCONSTANTS = {
     auraDamageBuff: 0.94,
     
     enemyTargets: 1, 
-    sins: {0: 1, 1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1}
-
-}
+    sins: {0: 1, 1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1},
+    shieldDisciplineEfficiency: 0.8,
+}   
 
 /**
  * This function handles all of our effects that might change our spell database before the ramps begin.
@@ -89,8 +89,8 @@ const DISCCONSTANTS = {
     })
     }
     if (talents.maliciousIntent) discSpells['Schism'][1].buffDuration += 3;
-
-
+    if (talents.enduringLuminescence) discSpells['Power Word: Radiance'][0].atonement *= 1.15;
+    if (talents.shieldDiscipline) discSpells['Power Word: Shield'][0].cost -= (0.5 * DISCCONSTANTS.shieldDisciplineEfficiency);
 
     // Tier 2 talents
     if (talents.revelInPurity) {
@@ -199,11 +199,31 @@ const DISCCONSTANTS = {
     if (talents.inescapableTorment) {
         // TODO: Add two spell components, an AoE damage spell and a Shadowfiend / Mindbender duration increase function spell component.
     }
+    if (talents.crystallineReflection) {
+        discSpells["Power Word: Shield"].push({
+            name: "Crystalline Reflection",
+            type: "heal",
+            coeff: 0.42,
+            secondaries: ['crit', 'vers', 'mastery'],
+            overheal: 0.6,
+        })
+        discSpells["Rapture"].push({
+            name: "Crystalline Reflection",
+            type: "heal",
+            coeff: 0.42,
+            secondaries: ['crit', 'vers', 'mastery'],
+            overheal: 0.6,
+        })
+    }
     if (talents.aegisOfWrath) {
         discSpells["Power Word: Shield"][0].coeff *= 1.5 * (1 - discSettings.aegisOfWrathWastage);
     }
     if (talents.makeAmends) {
         // We can kind of model this, but benefit isn't really going to be concentrated on ramps.
+    }
+    if (talents.shatteredPerceptions) {
+        discSpells['Mindgames'][0].coeff *= 1.25;
+        discSpells['Mindgames'][1].coeff *= 1.25;
     }
     if (talents.wealAndWoe) {
         // Penance bolts increase the damage of Smite by 8% per stack, or Power Word: Shield by 3% per stack.
@@ -313,6 +333,10 @@ const DISCCONSTANTS = {
         if (spell.cooldown) spell.activeCooldown = 0;
         if (spell.cost) spell.cost = spell.cost * DISCCONSTANTS.baseMana / 100;
     }
+
+    // Set Rapture to Power Word: Shield.
+    // That way anything that buffs PW:S will also buff Rapture.
+    discSpells['Rapture'][0] = {...discSpells['Power Word: Shield'][0]};
 
     return discSpells;
 }
@@ -465,8 +489,22 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
         let base = `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.overheal * 100}%`;
         if (targetMult > 1) base += `, ${targetMult} targets`;
         if (spell.atonement) base += `, +${spell.atonement}s atone`;
-        if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.overheal * 100}%)`)
+        base += ")";
+        //if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.overheal * 100}%)`)
         addReport(state, base);
+    }
+
+    if ((spell.name === "Power Word: Shield" || spell.name === "Rapture") && state.talents.crystallineReflection) {
+        const reflection = {
+            type: "damage",
+            coeff: 0,
+            atoneOverheal: 0,
+            school: "holy",
+            secondaries: ['crit', 'vers'],
+            flatDamage: getSpellRaw(spell, currentStats, DISCCONSTANTS) * healingMult * 0.1 * state.talents.crystallineReflection
+        };
+        runDamage(state, reflection, "Crystalline Reflection", []);
+
     }
 }
 

@@ -188,6 +188,7 @@ export const DISCSPELLS = {
     }],
     "Power Word: Shield": [{
         spellData: {id: 17, icon: "spell_holy_powerwordshield", cat: "heal"},
+        name: "Power Word: Shield",
         type: "heal",
         castTime: 1.5,
         cost: 3.1,
@@ -368,6 +369,18 @@ export const DISCSPELLS = {
         coeff: 0,
         extension: 6,
     }],
+    "Power Infusion": [{
+        spellData: {id: 10060, icon: "spell_holy_powerinfusion", cat: "cooldown"},
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        cooldown: 120,
+        buffDuration: 20,
+        buffType: 'statsMult',
+        ongcd: true,
+        stat: "haste",
+        value: 1.25, // Trinket values are replaced by the value on the specific version of the trinket.
+    }],
     "Instructor's Divine Bell (new)": [{
         spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
         type: "buff",
@@ -388,7 +401,7 @@ export const baseTalents = {
     darkIndulgence: {points: 1, maxPoints: 1, icon: "spell_shadow_painandsuffering", id: 372972, select: true, tier: 1},
     schism: {points: 0, maxPoints: 1, icon: "spell_warlock_focusshadow", id: 214621, select: false, tier: 1},
     brightPupil: {points: 0, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 390684, select: true, tier: 1},
-    enduringLuminescence: {points: 0, maxPoints: 1, icon: "spell_priest_power-word", id: 278643, select: true, tier: 1},
+    enduringLuminescence: {points: 0, maxPoints: 1, icon: "ability_priest_holybolts01", id: 390685, select: true, tier: 1},
     powerWordSolace: {points: 0, maxPoints: 1, icon: "ability_priest_flashoflight", id: 129250, select: false, tier: 1, exclusive: "shieldDiscipline"},
     shieldDiscipline: {points: 0, maxPoints: 1, icon: "spell_holy_divineprotection", id: 197045, select: true, tier: 1, exclusive: "powerWordSolace"},
     powerWordBarrier: {points: 0, maxPoints: 1, icon: "spell_holy_powerwordbarrier", id: 62618, select: false, tier: 1},
@@ -397,7 +410,7 @@ export const baseTalents = {
     
     // Tier 2
     purgeTheWicked: {points: 1, maxPoints: 1, icon: "ability_mage_firestarter", id: 204197, select: true, tier: 2},
-    rapture: {points: 0, maxPoints: 1, icon: "spell_holy_rapture", id: 47536, select: true, tier: 2},
+    rapture: {points: 0, maxPoints: 1, icon: "spell_holy_rapture", id: 47536, select: false, tier: 2},
     shadowCovenant: {points: 0, maxPoints: 1, icon: "spell_shadow_summonvoidwalker", id: 314867, select: true, tier: 2},
     revelInPurity: {points: 0, maxPoints: 1, icon: "spell_fire_felflamering_red", id: 373003, select: true, tier: 2},
     contrition: {points: 0, maxPoints: 2, icon: "ability_priest_savinggrace", id: 197419, select: true, tier: 2},
@@ -408,7 +421,7 @@ export const baseTalents = {
     twilightCorruption: {points: 0, maxPoints: 1, icon: "spell_fire_twilightimmolation", id: 373065, select: true, tier: 2},
     borrowedTime: {points: 0, maxPoints: 2, icon: "spell_holy_borrowedtime", id: 390691, select: true, tier: 2},
     castigation: {points: 1, maxPoints: 1, icon: "spell_holy_searinglightpriest", id: 193134, select: true, tier: 2},
-    stolenPsyche: {points: 0, maxPoints: 1, icon: "ability_priest_surgeofdarkness", id: 373054, select: true, tier: 2},
+    stolenPsyche: {points: 0, maxPoints: 2, icon: "ability_priest_surgeofdarkness", id: 373054, select: true, tier: 2},
 
     
     // Tier 3
@@ -416,7 +429,7 @@ export const baseTalents = {
     lightsWrath: {points: 0, maxPoints: 1, icon: "inv_staff_2h_artifacttome_d_01", id: 373178, select: false, tier: 3},
     lenience: {points: 0, maxPoints: 1, icon: "ability_priest_atonement", id: 238063, select: true, tier: 3},
     evangelism: {points: 0, maxPoints: 1, icon: "spell_holy_divineillumination", id: 246287, select: false, tier: 3},
-    mindbender: {points: 0, maxPoints: 1, icon: "spell_shadow_soulleech_3", id: 123040, select: true, tier: 3},
+    mindbender: {points: 0, maxPoints: 1, icon: "spell_shadow_soulleech_3", id: 123040, select: false, tier: 3},
     divineAegis: {points: 0, maxPoints: 2, icon: "spell_holy_devineaegis", id: 47515, select: true, tier: 3},
     sinsOfTheMany: {points: 0, maxPoints: 2, icon: "spell_holy_holyguidance", id: 280391, select: true, tier: 3},
     resplendentLight: {points: 0, maxPoints: 2, icon: "inv_staff_2h_artifacttome_d_01", id: 390765, select: true, tier: 3},
@@ -432,16 +445,17 @@ export const baseTalents = {
 
     // Priest class tree
     improvedFlashHeal: {points: 0, maxPoints: 1, icon: "spell_holy_heal", id: 393870, select: true, tier: 4},
+    bindingHeals: {points: 0, maxPoints: 1, icon: "spell_holy_blindingheal", id: 368275, select: true, tier: 4},
     shadowWordDeath: {points: 0, maxPoints: 1, icon: "spell_shadow_demonicfortitude", id: 32379, select: false, tier: 4},
     focusedMending: {points: 0, maxPoints: 1, icon: "achievement_bg_returnxflags_def_wsg", id: 372354, select: false, tier: 4},
     deathAndMadness: {points: 0, maxPoints: 1, icon: "spell_shadow_demonicfortitude", id: 321291, select: true, tier: 4},
     wordsOfThePious: {points: 0, maxPoints: 1, icon: "ability_priest_clarityofwill", id: 377438, select: true, tier: 4},
     unwaveringWill: {points: 0, maxPoints: 1, icon: "ability_warrior_unrelentingassault", id: 373456, select: false, tier: 4},
     //twistOfFaith:
-    throesOfPain: {points: 0, maxPoints: 1, icon: "spell_shadow_haunting", id: 377427, select: true, tier: 4},
+    throesOfPain: {points: 0, maxPoints: 2, icon: "spell_shadow_haunting", id: 377427, select: true, tier: 4},
     
-    surgeOfLight: {points: 0, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 114255, select: true, tier: 4},
-    crystallineReflection: {points: 0, maxPoints: 1, icon: "ability_priest_reflectiveshield", id: 373457, select: true, tier: 4},
+    surgeOfLight: {points: 0, maxPoints: 2, icon: "spell_holy_surgeoflight", id: 114255, select: true, tier: 4},
+    crystallineReflection: {points: 0, maxPoints: 2, icon: "ability_priest_reflectiveshield", id: 373457, select: true, tier: 4},
     //manipulation:
     mindgames: {points: 1, maxPoints: 1, icon: "ability_revendreth_priest", id: 323673, select: false, tier: 4},
     shatteredPerceptions: {points: 0, maxPoints: 1, icon: "spell_animarevendreth_debuff", id: 391112, select: true, tier: 4},

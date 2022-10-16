@@ -135,7 +135,7 @@ export const getCurrentStats = (statArray, buffs) => {
         statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
     });
 
-    statArray = applyDiminishingReturns(statArray);
+    //statArray = applyDiminishingReturns(statArray); // TODO: Update Diminishing Returns
 
     // Check for percentage stat increases which are applied post-DR.
     // Examples include Power Infusion and the crit portion of Shadow Word: Manipulation.
@@ -144,7 +144,6 @@ export const getCurrentStats = (statArray, buffs) => {
         // Multiplicative Haste buffs need some extra code as they are increased by the amount of haste you already have.
         if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / 170 / 100 + 1) * buff.value)-1) * 170 * 100;
         else statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
-        console.log("Post Haste: " + (((statArray[buff.stat] / 170 / 100 + 1) * buff.value)-1) * 170 * 100);
     });
 
     return statArray;
@@ -156,7 +155,9 @@ export const getHaste = (stats) => {
 }
 
 export const addReport = (state, entry) => {
-    if (state.settings.reporting) state.report.push(JSON.stringify({t: Math.round(100*state.t)/100, e: entry}));
+    if (state.settings.reporting) {
+        state.report.push(Math.round(100*state.t)/100 + " " + entry);
+    }
 }
 
 export const getHealth = (stats, talents) => {

@@ -369,7 +369,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
             tickRate: renewingHoT.tickRate, hasted: false, canPartialTick: renewingHoT.canPartialTick, next: state.t + renewingHoT.tickRate}
         buff['expiration'] = state.t + renewingHoT.buffDuration;
         state.activeBuffs.push(buff);
- 
+
     }
 
     return healingVal;
