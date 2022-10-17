@@ -239,6 +239,13 @@ const DISCCONSTANTS = {
         })
     }
 
+    // Settings
+    console.log(settings);
+    if (settings.execute === "Always") discSpells["Shadow Word: Death"][0].coeff *= 2.5
+    else if (settings.execute === "20% of the time") discSpells["Shadow Word: Death"][0].coeff *= (2.5 * 0.2 + 0.8);
+        
+    
+
 
     // ==== Legendaries ====
     // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
