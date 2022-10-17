@@ -256,13 +256,13 @@ export const raceDB = [
   },
   {
     name: {
-      en: "Drakthyr",
-      fr: "Drakthyr",
-      de: "Drakthyr",
-      ru: "Drakthyr",
-      ch: "Drakthyr",
+      en: "Dracthyr",
+      fr: "Dracthyr",
+      de: "Dracthyr",
+      ru: "Драктир",
+      ch: "龙希尔",
     },
-    id: "Races.Drakthyr",
+    id: "Races.Dracthyr",
     icon: "",
   },
 ];
