@@ -239,6 +239,20 @@ const DISCCONSTANTS = {
         })
     }
 
+    // Tier 4 talents
+    if (talents.improvedFlashHeal) discSpells["Flash Heal"][0].coeff *= 1.15;
+    if (talents.bindingHeals) {
+        discSpells["Flash Heal"].push({
+            type: "heal",
+            coeff: discSpells["Flash Heal"][0].coeff * 0.2,
+            atonement: 15,
+            atonementPos: 'end',
+            targets: 1,
+            secondaries: ['crit', 'vers'],
+            overheal: 0.5,
+        })
+    }
+
     // Settings
     if (settings.execute === "Always") discSpells["Shadow Word: Death"][0].coeff *= 2.5
     else if (settings.execute === "20% of the time") discSpells["Shadow Word: Death"][0].coeff *= (2.5 * 0.2 + 0.8);
@@ -338,6 +352,14 @@ const DISCCONSTANTS = {
         if (!spell.targets) spell.targets = 1;
         if (spell.cooldown) spell.activeCooldown = 0;
         if (spell.cost) spell.cost = spell.cost * DISCCONSTANTS.baseMana / 100;
+
+        if (settings.includeOverheal === "No") {
+            value.forEach(spellSlice => {
+                if ('overheal' in spellSlice) spellSlice.overheal = 0;
+                if ('atoneOverheal' in spellSlice) spellSlice.atoneOverheal = 0;
+            })
+
+        }
     }
 
     // Set Rapture to Power Word: Shield.
@@ -558,7 +580,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, talents, state, stats);
 
     const seq = [...sequence];
-    const sequenceLength = 45; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 55; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
 

@@ -95,7 +95,7 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) 
 
     for (var x = 0; x < applicators; x++) {
         if (talents.trainOfThought && x % 4 === 0) sequence.push('Power Word: Shield');
-        else if (x % 5 === 0) sequence.push('Power Word: Shield');
+        else if (!talents.trainOfThought && x % 5 === 0) sequence.push('Power Word: Shield');
         else sequence.push('Renew');
     }
 
@@ -187,7 +187,7 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     //if (talents.rapture) {sequence.push('Rapture'); applicators -= 1 };
     for (var x = 0; x < applicators; x++) {
         if (talents.trainOfThought && x % 4 === 0) sequence.push('Power Word: Shield');
-        else if (x % 5 === 0) sequence.push('Power Word: Shield');
+        else if (!talents.trainOfThought && x % 5 === 0) sequence.push('Power Word: Shield');
         else sequence.push('Renew');
     }
 
