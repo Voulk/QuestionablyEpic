@@ -240,7 +240,6 @@ const DISCCONSTANTS = {
     }
 
     // Settings
-    console.log(settings);
     if (settings.execute === "Always") discSpells["Shadow Word: Death"][0].coeff *= 2.5
     else if (settings.execute === "20% of the time") discSpells["Shadow Word: Death"][0].coeff *= (2.5 * 0.2 + 0.8);
         
