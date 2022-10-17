@@ -14,6 +14,16 @@ export const classRaceDB = {
     gameType: "Retail",
   },
 
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Druids                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* ------------------------------------------- Retail ------------------------------------------- */
+  "Preservation Evoker": {
+    races: ["Races.Dracthyr"],
+    gameType: "Retail",
+  },
+
   /* ------------------------------------------- Retail ------------------------------------------- */
   "Holy Paladin": {
     races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Lightforged Draenei", "Races.Dark Iron Dwarf", "Races.Blood Elf", "Races.Tauren", "Races.Zandalari Troll"],
