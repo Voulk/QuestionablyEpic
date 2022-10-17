@@ -75,14 +75,15 @@ const getTalentDB = (spec) => {
 }
 
 const getSpecSettings = (spec) => {
-  return {};
   if (spec === "Preservation Evoker") {
     return {setting1:  {value: "defaultValue", options: ["defaultValue", "OtherValue"]},
             includeOverheal: {value: "Yes", options: ["Yes", "No"]}}
   }
   else if (spec === "Discipline Priest") {
-    return {includeOverheal: {value: "Yes", options: ["Yes", "No"]},
-            openWithDoT: {value: "Yes", options: ["Yes", "No"]}}
+    return {includeOverheal: {title: "Include Overhealing", value: "Yes", options: ["Yes", "No"]},
+            openWithDoT: {title: "Open with DoT active", value: "Yes", options: ["Yes", "No"]},
+            numEnemyTargets: {title: "Num Enemy Targets", value: 1, options: [1, 2, 3, 4, 5]},
+            execute: {title: "Execute", value: "Ignore", options: ["Ignore", "20% of the time", "Always"]}}
     }  
   else {
     return {};
@@ -142,7 +143,7 @@ export default function SequenceGenerator(props) {
 
   const updateSequence = (sequence) => {
     const simFunc = getSequence(selectedSpec);
-    const sim = simFunc(sequence, stats, {reporting: true, harshDiscipline: true}, talents);
+    const sim = simFunc(sequence, stats, {...{reporting: true, harshDiscipline: true}, ...seqSettings}, talents);
 
     // multiple state updates get bundled by react into one update
     setSeq(sequence);
@@ -160,7 +161,7 @@ export default function SequenceGenerator(props) {
         //const baseline = runCastSequence(sequence, activeStats, settings, talents)
   
         //const simFunc = getSequence(selectedSpec);
-        const sim = simFunc(sequence, stats, {reporting: true, harshDiscipline: true}, talents);
+        const sim = simFunc(sequence, stats, {...{reporting: true, harshDiscipline: true}, ...seqSettings}, talents);
   
         results.totalHealing += sim.totalHealing;
         results.manaSpent += sim.manaSpent;
