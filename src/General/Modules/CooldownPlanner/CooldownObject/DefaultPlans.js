@@ -1403,4 +1403,84 @@ export const defaultPlans = {
       ],
     },
   },
+
+  2587: {
+    // Eranog
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2639: {
+    // Terros
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2590: {
+    // The Primalist Council
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2592: {
+    // Sennarth, The Cold Breath
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2635: {
+    // Dathea, Ascended
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2605: {
+    // Kurog Grimtotem
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2614: {
+    // Broodkeeper Diurna
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2607: {
+    // Raszageth the Storm-Eater
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
 };
