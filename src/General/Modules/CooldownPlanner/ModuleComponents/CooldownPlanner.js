@@ -55,7 +55,7 @@ export default function CooldownPlanner(props) {
   const cooldownObject = new Cooldowns();
   const healTeamDialogOpen = props.healTeamDialogOpen;
   const RosterCheck = ls.get("healerInfo") === null ? true : ls.get("healerInfo").length === 0 ? true : false;
-  const expansion = 9; // shadowlands
+  const expansion = 8; // shadowlands
   const [currentRaid, setCurrentRaid] = useState(2481);
   const [currentBoss, setCurrentBoss] = useState(2512);
   const [currentDifficulty, setDifficulty] = useState("Mythic");
@@ -94,6 +94,18 @@ export default function CooldownPlanner(props) {
     return Object.keys(cooldownObject.getCooldowns(boss, currentDif));
   };
 
+  const changeRaid = (e) => {
+    setCurrentRaid(e.target.value);
+
+    let boss = bossList
+      .filter((obj) => {
+        return obj.zoneID === e.target.value;
+      })
+      .map((key, i) => key.DungeonEncounterID);
+    console.log(boss);
+    changeBoss(boss[0]);
+  };
+
   /* ------------------------------- Loads relevant plan into table ------------------------------- */
   const loadPlanData = (currentBoss, newPlan, currentDif) => {
     let raid = "";
@@ -105,6 +117,9 @@ export default function CooldownPlanner(props) {
     }
     if ([2512, 2542, 2553, 2540, 2544, 2539, 2529, 2546, 2543, 2549, 2537].includes(currentBoss)) {
       raid = 2481;
+    }
+    if ([2587, 2639, 2590, 2592, 2635, 2605, 2614, 2607].includes(currentBoss)) {
+      raid = 2522;
     }
     setCurrentRaid(raid);
     setCurrentBoss(currentBoss);
@@ -223,7 +238,7 @@ export default function CooldownPlanner(props) {
                       id="RaidSelector"
                       select
                       value={currentRaid}
-                      onChange={(e) => setCurrentRaid(e.target.value)}
+                      onChange={(e) => changeRaid(e)}
                       label={t("CooldownPlanner.TableLabels.RaidSelectorLabel")}
                       size="small"
                       sx={{ minWidth: 200, width: "100%" }}

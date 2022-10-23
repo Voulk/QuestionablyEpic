@@ -48,7 +48,7 @@ export const raidDB = [
       ru: "Хранилище Воплощений",
       ch: "化身巨龙牢窟",
     },
-    expansion: 9,
+    expansion: 8,
     icon: require("Images/achievement_raidprimalist_raid.jpg").default,
   },
 ];
