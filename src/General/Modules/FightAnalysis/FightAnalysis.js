@@ -152,6 +152,9 @@ class FightAnalysis extends Component {
   };
 
   getBossPlanNames = (boss) => {
+    if (this.state.currentDifficulty === "LFR" || this.state.currentDifficulty === "Normal") {
+      return [];
+    }
     return Object.keys(this.state.cooldownObject.getCooldowns(boss, this.state.currentDifficulty));
   };
 
@@ -337,6 +340,7 @@ class FightAnalysis extends Component {
                                   value={this.state.customPlanSelected}
                                   onChange={(e) => this.handleCustomPlanChange(e.target.value, this.state.currentBossID)}
                                   label={"Custom Cooldowns"}
+                                  disabled={this.state.currentDifficulty === "LFR" || this.state.currentDifficulty === "Normal" ? true : false}
                                 >
                                   {this.state.currentBossID === null
                                     ? ""
