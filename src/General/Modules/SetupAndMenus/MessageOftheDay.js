@@ -6,14 +6,16 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "Hymnal now has a setting for number of allies.",
+      "-> Warning: The prepatch is volatile and support for it is less thorough than it would be for a regular patch.",
+      "-> New features and modules will be released shortly before Dragonflight.",
+      "-> Evoker will be available in two weeks, matching it's in-game release date."
   ],
   "Classic": [""]
   }
 ;
 
   return (
-    <Paper elevation={0} style={{ border: "1px", padding: 16 }}>
+    <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: "red" }}>
       <Grid container spacing={1}>
         {messageOfTheDay[gameType].map((key, i) => (
           <Grid item xs={12} key={i}>
