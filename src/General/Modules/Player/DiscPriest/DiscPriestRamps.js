@@ -400,25 +400,11 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
 
     // ==== Tier & Other Effects ====
     // Remember that anything that isn't wired into a ramp can just be calculated normally (like Genesis Lathe for example).
-    if (settings['4T28']) {
-        // If player has 4T28, then hook Power of the Dark Side into Power Word Radiance.
-        discSpells['Power Word: Radiance'].push({
-            name: "Power of the Dark Side",
-            type: "buff",
-            buffType: "special",
-            value: 1.95,
-            buffDuration: 20,
-            castTime: 0,
-            stacks: 1,
-            canStack: true,
-        });
 
-    }
-    else {
-        // If player doesn't have 4T28, then we might still opt to start them with a PotDS proc on major ramps since the chance of it being active is extremely high.
-        // This is unnecessary with 4pc since we'll always have a PotDS proc during our sequences due to Radiance always coming before Penance.
-        if (settings['Power of the Dark Side']) state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: 1.5, stacks: 1, canStack: true})
-    }
+    // If player doesn't have 4T28, then we might still opt to start them with a PotDS proc on major ramps since the chance of it being active is extremely high.
+    // This is unnecessary with 4pc since we'll always have a PotDS proc during our sequences due to Radiance always coming before Penance.
+    if (settings['Power of the Dark Side']) state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: 1.5, stacks: 1, canStack: true})
+
     
     // ==== Trinkets ====
     // These settings change the stat value prescribed to a given trinket. We call these when adding trinkets so that we can grab their value at a specific item level.
