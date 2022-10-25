@@ -16,6 +16,7 @@ export const changeLog = [
       "Models updated for patch 10.0.",
       "Covenants module retired.",
       "Tier set bonuses disabled.",
+      "Added the new race combinations for Priest."
     ],
   },
   {
