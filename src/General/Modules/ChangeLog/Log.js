@@ -9,6 +9,16 @@
 
 export const changeLog = [
   {
+    version: "10.0.0 / 3.4.0",
+    update: 1,
+    date: "25 October",
+    changes: [ 
+      "Models updated for patch 10.0.",
+      "Covenants module retired.",
+      "Tier set bonuses disabled.",
+    ],
+  },
+  {
     version: "9.2.7 / 3.4.0",
     update: 4,
     date: "11 October",

@@ -18,7 +18,8 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
     const serenityBaseCPM = 1;
     const serenityAdjCPM = 2.8;
 
-    bonus_stats.hps = getSpellHealing('serenity', player, contentType) * (serenityAdjCPM - serenityBaseCPM) / 60;
+    //bonus_stats.hps = getSpellHealing('serenity', player, contentType) * (serenityAdjCPM - serenityBaseCPM) / 60;
+    bonus_stats.hps = 0;
     
   }
   else if (effectName === "HPriest T28-4") {
@@ -27,7 +28,8 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
     const convPPM = 3.8;
     const convPercentage = 0.6; // The buffed spell is 60% stronger.
 
-    bonus_stats.hps = getSpellHealing('heal', player, contentType) * convPPM * convPercentage / 60;
+    //bonus_stats.hps = getSpellHealing('heal', player, contentType) * convPPM * convPercentage / 60;
+    bonus_stats.hps = 0;
   }
   else if (effectName === "Flash Concentration") {
     // Flash Concentration is a significant change to our playstyle. The formula below doesn't even begin to capture how and why it is so strong. 
