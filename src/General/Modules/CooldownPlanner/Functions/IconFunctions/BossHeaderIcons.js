@@ -439,5 +439,53 @@ export default function bossHeaders(props, style, QEmodule) {
     source = require("Images/Classic/Raid/JournalImages/BOE.png").default;
   }
 
+  // The Jailer, Zovaal
+  if (props === 2537) {
+    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-Jailer.png").default;
+  }
+
+  // The Jailer, Zovaal
+  if (props === 2537) {
+    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-Jailer.png").default;
+  }
+
+  // The Jailer, Zovaal
+  if (props === 2537) {
+    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-Jailer.png").default;
+  }
+
+  // Eranog
+  if (props === 2587) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-Eranog.png").default;
+  }
+  // Terros
+  if (props === 2639) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-Terros.png").default;
+  }
+  // The Primalist Council
+  if (props === 2590) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-ThePrimalCouncil.png").default;
+  }
+  // Sennarth, The Cold Breath
+  if (props === 2592) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-SennarthTheColdBreath.png").default;
+  }
+  // Dathea, Ascended
+  if (props === 2635) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-DatheaAscended.png").default;
+  }
+  // Kurog Grimtotem
+  if (props === 2605) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-KurogGrimtotem.png").default;
+  }
+  // Broodkeeper Diurna
+  if (props === 2614) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-BroodkeeperDiurna.png").default;
+  }
+  // Raszageth the Storm-Eater
+  if (props === 2607) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-RaszagethTheStorm-Eater.png").default;
+  }
+
   return <img style={{ ...style }} src={source} alt={props} />;
 }
