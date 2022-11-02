@@ -10,8 +10,11 @@ import { defensiveDB } from "Databases/DefensiveDB";
 // import i18n from "i18next";
 
 // Returns Seconds from 0 to Loglength
-export function addMissingTimestamps(loglength) {
-  let newarray = [{ timestamp: 0 }];
+export function addMissingTimestamps(loglength, abilityArray, uniqueArrayCD) {
+  let newObject = {};
+  abilityArray.map((key) => Object.assign(newObject, { [key]: 0 }));
+  uniqueArrayCD.map((key) => Object.assign(newObject, { [key]: 0 }));
+  let newarray = [{ timestamp: 0, ...newObject }];
   let ticks = [];
   let tickcount = 0;
   let length = moment.utc(loglength).startOf("second") / 1000;
@@ -19,7 +22,7 @@ export function addMissingTimestamps(loglength) {
     ticks = ticks.concat(tickcount + 1000);
     tickcount = tickcount + 1000;
   }
-  ticks.forEach((element) => newarray.push({ timestamp: element }));
+  ticks.forEach((element) => newarray.push({ timestamp: element, ...newObject }));
   return newarray;
 }
 
