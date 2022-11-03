@@ -473,20 +473,6 @@ export const bossList = [
     icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_jailer.jpg").default,
   },
 
-  {
-    DungeonEncounterID: 2537,
-    ID: 2464,
-    name: {
-      en: "The Jailer, Zovaal",
-      cn: "典狱长佐瓦尔",
-      fr: "Zovaal, le Geôlier",
-      ru: "Тюремщик Зоваал",
-      de: "Zovaal, der Kerkermeister",
-    },
-    zoneID: 2481,
-    icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_jailer.jpg").default,
-  },
-
   /* ---------------------------------------------------------------------------------------------- */
   /*                                     Vault of the Incarnates                                    */
   /* ---------------------------------------------------------------------------------------------- */
