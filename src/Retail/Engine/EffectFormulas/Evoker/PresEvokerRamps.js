@@ -574,12 +574,13 @@ const getSpellCastTime = (spell, state, currentStats) => {
                 if (buffStacks === 4) triggerTemporal(state);
             }
 
-            return castTime / getHaste(currentStats); // Empowered spells do scale with haste.
-
+            castTime = castTime / getHaste(currentStats); // Empowered spells do scale with haste.
         } 
 
-        else if (castTime === 0 && spell.onGCD === true) return 0; //return 1.5 / getHaste(currentStats);
-        else return castTime / getHaste(currentStats);
+        else if (castTime === 0 && spell.onGCD === true) castTime = 0; //return 1.5 / getHaste(currentStats);
+        else castTime = castTime / getHaste(currentStats);
+
+        return castTime;
     }
     else console.log("CAST TIME ERROR. Spell: " + spellName);
 }
@@ -733,10 +734,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             const fullSpell = evokerSpells[queuedSpell];
             const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
             spellFinish = state.t + castTime - 0.01;
-            if (fullSpell[0].castTime = 0) nextSpell += state.t + 1.5 / getHaste(currentStats);
-            else nextSpell += state.t + castTime;
+            if (fullSpell[0].castTime === 0) nextSpell += state.t + 1.5 / getHaste(currentStats);
+            else nextSpell = state.t + castTime;
 
-            console.log("Queing " + queuedSpell + ". Next: " + nextSpell + ".Curr: " + state.t);
+            console.log("Queing " + queuedSpell + ". Next: " + nextSpell + ".Curr: " + state.t + ". Cast Time: " + castTime + " Spell Finish: " + spellFinish);
             
 
         }
