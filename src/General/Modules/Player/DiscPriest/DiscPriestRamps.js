@@ -89,7 +89,7 @@ const DISCCONSTANTS = {
     })
     }
     if (talents.maliciousIntent) discSpells['Schism'][1].buffDuration += 3;
-    if (talents.enduringLuminescence) discSpells['Power Word: Radiance'][0].atonement *= 1.15;
+    if (talents.enduringLuminescence) discSpells['Power Word: Radiance'][0].atonement *= 1.1;
     if (talents.shieldDiscipline) discSpells['Power Word: Shield'][0].cost -= (0.5 * DISCCONSTANTS.shieldDisciplineEfficiency);
 
     // Tier 2 talents
@@ -98,7 +98,7 @@ const DISCCONSTANTS = {
         discSpells['Purge the Wicked'][1].coeff *= (1 + 0.05 * talents.revelInPurity);
     }
     if (talents.exaltation) {
-        discSpells['Rapture'][1].buffDuration += 3;
+        discSpells['Rapture'][1].buffDuration += 5;
     }
     if (talents.painAndSuffering) {
         // ASSUMPTION: Throes of Pain should work on both DoTs but let's double check anyway.
@@ -117,7 +117,7 @@ const DISCCONSTANTS = {
         })
 
     }
-    if (talents.indemnity) discSpells['Power Word: Shield'][0].atonement += 3;
+    if (talents.indemnity) discSpells['Power Word: Shield'][0].atonement += 2;
     if (talents.castigation) {
         discSpells['Penance'][0].bolts += 1;
         discSpells['DefPenance'][0].bolts += 1;
@@ -127,7 +127,7 @@ const DISCCONSTANTS = {
             type: "function",
             runFunc: function (state, atonementApp) {
                 const atonementCount = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
-                const spell = {type: "heal", coeff: 0.144 * talents.contrition, overheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], targets: atonementCount}
+                const spell = {type: "heal", coeff: 0.0936 * talents.contrition, overheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], targets: atonementCount}
                 runHeal(state, spell, "Contrition");
             }
         })
@@ -140,7 +140,7 @@ const DISCCONSTANTS = {
     }
     if (talents.divineAegis) {
         // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
-        stats.critMult *= (1 + 0.15 * talents.divineAegis);
+        stats.critMult *= (1 + 0.1 * talents.divineAegis);
 
     }
     if (talents.sinsOfTheMany) {
@@ -154,7 +154,7 @@ const DISCCONSTANTS = {
             type: "buff",
             name: "Wrath Unleashed",
             buffType: 'special',
-            value: 1.4, // This is equal to 45% crit, though the stats are applied post DR. 
+            value: 1.4, //
             buffDuration: 15,
         })
         // TODO: Add Smite buff
@@ -216,7 +216,7 @@ const DISCCONSTANTS = {
         })
     }
     if (talents.aegisOfWrath) {
-        discSpells["Power Word: Shield"][0].coeff *= 1.5 * (1 - discSettings.aegisOfWrathWastage);
+        discSpells["Power Word: Shield"][0].coeff *= 1.3 * (1 - discSettings.aegisOfWrathWastage);
     }
     if (talents.makeAmends) {
         // We can kind of model this, but benefit isn't really going to be concentrated on ramps.
@@ -231,7 +231,7 @@ const DISCCONSTANTS = {
             type: "buff",
             name: "Weal & Woe",
             buffType: 'special',
-            value: 1.08, // This is equal to 45% crit, though the stats are applied post DR. 
+            value: 1.12, // This is equal to 45% crit, though the stats are applied post DR. 
             buffDuration: 15,
             canStack: true,
             stacks: 1,
@@ -411,7 +411,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
             state.activeBuffs = removeBuffStack(state.activeBuffs, "Swift Penitence")
         }
     }
-    else if (spellName === "Light's Wrath") mult *= (1 + (0.1 + talents.resplendentLight * 0.02) * activeAtones);
+    else if (spellName === "Light's Wrath") mult *= (1 + (0.06 + talents.resplendentLight * 0.02) * activeAtones);
 
     if (checkBuffActive(buffs, "Twilight Equilibrium - Shadow") && "school" in spell && spell.school === "shadow" && !spellName.includes("dot")) {
         mult *= 1.15;
@@ -444,7 +444,7 @@ const penanceCleanup = (state) => {
 const getHealingMult = (state, buffs, t, spellName, talents) => {
     let mult = DISCCONSTANTS.auraHealingBuff;
     if (spellName === "Power Word: Shield" && checkBuffActive(buffs, "Rapture")) {
-        mult *= 1.3;
+        mult *= 1.4;
     }
     if (spellName === "DefPenanceTick") {
 

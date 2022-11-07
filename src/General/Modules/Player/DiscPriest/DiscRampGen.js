@@ -302,7 +302,7 @@ export const buildBoonEvangRamp = (applicators, trinket, haste) => {
  * @param {*} applicators Number of single target atonement applicators. Default is 10 but configurable. 
  * @param {*} trinket The specific trinket we'd like to combine with our Fiend ramp. Note that a name is fine here. We don't need ilvl information since we'll pull that later.
  * @param {*} specialSpells Any special spells we'd like to include in the ramp like Rapture. 
- * @param {*} playstyle Options: Kyrian Evangelism, Kyrian Spirit Shell, Venthyr Evanglism (coming soon), Venthyr Spirit Shell (coming soon).
+ * @param {*} playstyle Options: Kyrian Evangelism, Kyrian Spirit Shell, Venthyr Evangelism (coming soon), Venthyr Spirit Shell (coming soon).
  * @returns Returns a sequence of spells representing a Shadowfiend ramp.
  */
  export const buildMindgamesRamp = (applicators, trinket, specialSpells, playstyle) => {

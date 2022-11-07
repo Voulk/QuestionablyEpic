@@ -50,8 +50,8 @@ const addBreakdowns = (obj, newObj, miniRamp) => {
 }
 
 
-export const allRampsHealing = (boonSeq, fiendSeq, stats, settings = {}, conduits, reporting = false) => {
-    const rampResult = allRamps(boonSeq, fiendSeq, stats, settings, conduits, reporting);
+export const allRampsHealing = (boonSeq, stats, settings = {}, conduits, reporting = false) => {
+    const rampResult = allRamps(boonSeq, stats, settings, conduits, reporting);
 
     if (rampResult.totalHealing > 0) return rampResult.totalHealing;
     else {
