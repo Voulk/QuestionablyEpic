@@ -22,7 +22,8 @@ const DISCCONSTANTS = {
     auraDamageBuff: 0.94,
     
     enemyTargets: 1, 
-    sins: {0: 1, 1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1},
+    sins: {0: 1.3, 1: 1.3, 2: 1.3, 3: 1.3, 4: 1.3, 5: 1.3, 6: 1.26, 7: 1.22, 8: 1.18, 9: 1.15, 10: 1.12,
+            11: 1.09, 12: 1.07, 13: 1.05, 14: 1.04, 15: 1.03, 16: 1.025, 17: 1.02, 18: 1.015, 19: 1.0125, 20: 1.01},
     shieldDisciplineEfficiency: 0.8,
 }   
 
@@ -142,10 +143,6 @@ const DISCCONSTANTS = {
         // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
         stats.critMult *= (1 + 0.1 * talents.divineAegis);
 
-    }
-    if (talents.sinsOfTheMany) {
-        DISCCONSTANTS.sins = {0: 1.12, 1: 1.12, 2: 1.1, 3: 1.08, 4: 1.07, 5: 1.06, 6: 1.05, 7: 1.05, 8: 1.04, 9: 1.04, 10: 1.03};
-        // TODO: add 1 point
     }
     if (talents.wrathUnleashed) {
         discSpells["Light's Wrath"][0].castTime -= 1;
@@ -391,10 +388,10 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
     let schism = 1;
 
     if (spellName !== "Mindbender" && spellName !== "Shadowfiend") {
-        schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.25 : 1; 
+        schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.15 : 1; 
     }
     
-    let mult = (activeAtones > 10 ? sins['10'] : sins[activeAtones]) * schism
+    let mult =  schism * sins[activeAtones];
     //console.log("Spell: " + spellName + ". Mult: " + mult);
     if (discSettings.chaosBrand) mult = mult * 1.05;
     if (spellName === "PenanceTick") {
@@ -489,8 +486,8 @@ const getActiveAtone = (atoneApp, timer) => {
 // Diminishing returns are taken care of in the getCurrentStats function and so the number passed 
 // to this function can be considered post-DR.
 const getAtoneTrans = (mastery) => {
-    const atonementBaseTransfer = 0.5;
-    return atonementBaseTransfer * (1.108 + mastery / 25.9259 / 100);
+    const atonementBaseTransfer = 0.4;
+    return atonementBaseTransfer * (1.108 + mastery / 180 * DISCCONSTANTS.masteryMod / 100);
 }
 
 const getSqrt = (targets) => {
