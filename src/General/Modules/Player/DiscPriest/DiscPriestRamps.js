@@ -89,7 +89,7 @@ const DISCCONSTANTS = {
             extension: 0.7,
     })
     }
-    if (talents.maliciousIntent) discSpells['Schism'][1].buffDuration += 3;
+    if (talents.maliciousIntent) discSpells['Schism'][1].buffDuration += 6;
     if (talents.enduringLuminescence) discSpells['Power Word: Radiance'][0].atonement *= 1.1;
     if (talents.shieldDiscipline) discSpells['Power Word: Shield'][0].cost -= (0.5 * DISCCONSTANTS.shieldDisciplineEfficiency);
 
@@ -391,7 +391,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
         schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.15 : 1; 
     }
     
-    let mult =  schism * sins[activeAtones];
+    let mult =  schism //* sins[activeAtones];
     //console.log("Spell: " + spellName + ". Mult: " + mult);
     if (discSettings.chaosBrand) mult = mult * 1.05;
     if (spellName === "PenanceTick") {
