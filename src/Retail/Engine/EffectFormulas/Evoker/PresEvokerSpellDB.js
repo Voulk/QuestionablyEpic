@@ -85,11 +85,32 @@ export const EVOKERSPELLDB = {
         castTime: [1, 1.75, 2.5, 3.25],
         empowered: true,
         cost: 4.5,
-        coeff: [1.85 * 2, 1.85 * 2.25, 1.85 * 2.5, 1.85 * 2.75],
-        cooldown: [25, 20, 15, 10],
+        coeff: 0.768,
+        cooldown: 30,
         expectedOverheal: 0.25, // 0.25
         targets: 5, // 
         secondaries: ['crit', 'vers', 'mastery']
+    },
+    {  
+        // This is the second portion of Dream Breath. It's effectively a roll up of the HoT portion depending on empower rank.
+        // This makes it a bit unique since it's a direct heal that scales with Haste.
+        type: "heal",
+        coeff: [0, 0.768, 1.536, 2.304],
+        expectedOverheal: 0.25, // 0.25
+        targets: 5, // 
+        secondaries: ['haste', 'crit', 'vers', 'mastery']
+    },
+    {  
+        // Dream Breath heals for more per charge tier and also has a lower cooldown.
+        name: "Dream Breath",
+        type: "buff",
+        buffType: "heal",
+        buffDuration: [16, 12, 8, 4],
+        tickRate: 2,
+        coeff: 0.384, 
+        targets: 5, 
+        expectedOverheal: 0.4,
+        secondaries: ['crit', 'vers', 'mastery'] // Note that Haste for HoTs is included via reduced tick rate so doesn't need to be explicitly included.
     }],
     "Emerald Blossom": [{
         // Instant, 3 Essence cost, heals 3 targets after a 2s delay.

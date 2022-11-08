@@ -18,7 +18,7 @@ const EVOKERCONSTANTS = {
     masteryEfficiency: 0.88, 
     baseMana: 10000,
 
-    defaultEmpower: 3,
+    defaultEmpower: 1,
     auraHealingBuff: 0.6, 
     auraDamageBuff: 1.15, 
 
@@ -243,22 +243,28 @@ const triggerCycleOfLife = (state, rawHealing) => {
     
 
     // Setup mana costs & cooldowns.
-    for (const [key, value] of Object.entries(evokerSpells)) {
-        let spell = value[0];
 
-        if (spell.empowered) {
-            
-            spell.castTime = spell.castTime[EVOKERCONSTANTS.defaultEmpower]
-            if (spell.targets && typeof spell.targets === "object") spell.targets = spell.targets[EVOKERCONSTANTS.defaultEmpower];
-            if (spell.coeff && typeof spell.coeff === "object") spell.coeff = spell.coeff[EVOKERCONSTANTS.defaultEmpower];
-            if (spell.cooldown && typeof spell.cooldown === "object") spell.cooldown = spell.cooldown[EVOKERCONSTANTS.defaultEmpower];
-            
-            if (key === "Fire Breath") value[1].buffDuration = value[1].buffDuration[EVOKERCONSTANTS.defaultEmpower];
-            //console.log(typeof spell.coeff)
-            
+    for (const [key, value] of Object.entries(evokerSpells)) {
+        const fullSpell = value;
+        const spellInfo = fullSpell[0];
+
+
+        if (fullSpell[0].empowered) {
+            fullSpell[0].castTime = fullSpell[0].castTime[EVOKERCONSTANTS.defaultEmpower]
+            fullSpell.forEach(spell => {
+                
+                if (spell.targets && typeof spell.targets === "object") spell.targets = spell.targets[EVOKERCONSTANTS.defaultEmpower];
+                if (spell.coeff && typeof spell.coeff === "object") spell.coeff = spell.coeff[EVOKERCONSTANTS.defaultEmpower];
+                if (spell.cooldown && typeof spell.cooldown === "object") spell.cooldown = spell.cooldown[EVOKERCONSTANTS.defaultEmpower];
+                if (spell.buffDuration && typeof spell.buffDuration === "object") spell.buffDuration = spell.buffDuration[EVOKERCONSTANTS.defaultEmpower];
+                //if (key === "Fire Breath") value[1].buffDuration = value[1].buffDuration[EVOKERCONSTANTS.defaultEmpower];
+                //console.log(typeof spell.coeff)
+                
+            }) 
+            console.log(fullSpell);
         }
 
-        if ('school' in spell && spell.school === "bronze" && talents.temporalCompression) {
+        if ('school' in spellInfo && spellInfo.school === "bronze" && talents.temporalCompression) {
             evokerSpells[key].push({
                 name: "Temporal Compression",
                 type: "buff",
@@ -270,11 +276,11 @@ const triggerCycleOfLife = (state, rawHealing) => {
                 buffType: 'special',
             })
         }
-        if ('school' in spell && spell.school === "green" && talents.lushGrowth) spell.coeff *= (1 + 0.05 * talents.lushGrowth);
+        if ('school' in spellInfo && spellInfo.school === "green" && talents.lushGrowth) spellInfo.coeff *= (1 + 0.05 * talents.lushGrowth);
 
-        if (!spell.targets) spell.targets = 1;
-        if (spell.cooldown) spell.activeCooldown = 0;
-        if (spell.cost) spell.cost = spell.cost * EVOKERCONSTANTS.baseMana / 100;
+        if (!spellInfo.targets) spellInfo.targets = 1;
+        if (spellInfo.cooldown) spellInfo.activeCooldown = 0;
+        if (spellInfo.cost) spellInfo.cost = spellInfo.cost * EVOKERCONSTANTS.baseMana / 100;
     }
     
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
