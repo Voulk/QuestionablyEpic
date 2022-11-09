@@ -1,5 +1,10 @@
 // Contains the list of races localization IDs for each class's available races.
 export const classRaceDB = {
+
+  "Preservation Evoker": {
+    races: ["Races.Dracthyr"],
+    gameType: "Retail",
+  },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                            Paladins                                            */
   /* ---------------------------------------------------------------------------------------------- */

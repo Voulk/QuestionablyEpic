@@ -19,6 +19,12 @@ export default function classIcons(props, style) {
   let src = "";
   let alt = "";
 
+  // Preservation Evoker
+  if (props === "PreservationEvoker" || props === "Preservation Evoker" || props === "Druid-Restoration") {
+    src = RestorationDruidIcon;
+    alt = "Preservation Evoker";
+  }
+
   // Paladin Cooldowns
   if (props === "HolyPaladin" || props === "Holy Paladin" || props === "Paladin-Holy" || props === "Paladin" || props === "Holy Paladin Classic") {
     src = HolyPaladinIcon;

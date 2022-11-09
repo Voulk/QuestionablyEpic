@@ -50,6 +50,8 @@ function TopGearReport(props) {
         return require("Images/Classes/Priest/icon-priest.png").default;
       case "Restoration Druid":
         return require("Images/Classes/Druid/icon-druid.png").default;
+      case "Preservation Evoker":
+        return require("Images/Classes/Druid/icon-druid.png").default;
       case "Restoration Druid Classic":
         return require("Images/Classes/Druid/icon-druid.png").default;
       case "Mistweaver Monk":
