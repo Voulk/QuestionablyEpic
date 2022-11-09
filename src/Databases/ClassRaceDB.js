@@ -2,7 +2,7 @@
 export const classRaceDB = {
 
   "Preservation Evoker": {
-    races: ["Races.Drakthyr"],
+    races: ["Races.Dracthyr"],
     gameType: "Retail",
   },
   /* ---------------------------------------------------------------------------------------------- */
