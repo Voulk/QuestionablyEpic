@@ -1,5 +1,6 @@
 import { convertPPMToUptime, getProcessedValue } from "../EffectUtilities";
-import { trinket_data } from "./TrinketData";
+import { trinket_data } from "./ShadowlandsTrinketData";
+import { raidTrinketData } from "./TrinketData";
 import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
 import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
 import { getMasteryAddition } from "../Monk/MistweaverMiscFormulas"
@@ -60,7 +61,13 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
   let bonus_stats = {};
 
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */
-  let activeTrinket = trinket_data.find((trinket) => trinket.name === effectName);
+  let activeTrinket = raidTrinketData.find((trinket) => trinket.name === effectName);
+  if (activeTrinket !== undefined) {
+    return activeTrinket.runFunc(player, activeTrinket.effects);
+  }
+  else {
+    return bonus_stats;
+  }
 
   if (activeTrinket === undefined) {
     /* ---------------------------------------------------------------------------------------------- */
