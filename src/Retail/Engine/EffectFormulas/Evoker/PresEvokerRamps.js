@@ -172,7 +172,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
     // Evoker Spec Talents
     
-    if (talents.renewingBreath) EVOKERCONSTANTS.renewingBreathBuff.mult = (0.15 * talents.renewingBreath);
+    //if (talents.renewingBreath) EVOKERCONSTANTS.renewingBreathBuff.mult = (0.15 * talents.renewingBreath);
     /*
     if (talents.renewingBreath) evokerSpells['Dream Breath'].push({
         type: "buff",
@@ -365,7 +365,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
     else addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
 
-
+    /* Defunct with the in-game Dream Breath rework.
     if (spellName === "Dream Breath" && state.talents.renewingBreath) {
         // Handle Renewing Breath.
         // These could possibly be pushed into a "Spell Cleanup" section.
@@ -376,7 +376,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
         buff['expiration'] = state.t + renewingHoT.buffDuration;
         state.activeBuffs.push(buff);
 
-    }
+    } */
 
     return healingVal;
 }
