@@ -106,6 +106,7 @@ export default function SlotsContainer(props) {
       case "Holy Paladin Classic":
         return require("Images/UpgradeFinderIcons/Plate/" + slot + ".jpg").default;
       case "Restoration Shaman":
+      case "Preservation Evoker":
       case "Restoration Shaman Classic":
         return require("Images/UpgradeFinderIcons/Mail/" + slot + ".jpg").default;
       case "Holy Priest":

@@ -543,7 +543,7 @@ export const trinket_data = [
         /* ----------------------------------------- HoT Portion ---------------------------------------- */
         coefficient: 1.65,
         table: -7,
-        efficiency: { "Restoration Druid": 0.28, "Discipline Priest": 0.32, "Holy Paladin": 0.34, "Mistweaver Monk": 0.31, "Restoration Shaman": 0.3, "Holy Priest": 0.3 },
+        efficiency: { "Preservation Evoker": 0.28, "Restoration Druid": 0.28, "Discipline Priest": 0.32, "Holy Paladin": 0.34, "Mistweaver Monk": 0.31, "Restoration Shaman": 0.3, "Holy Priest": 0.3 },
         duration: 10,
         cooldown: 30,
         expectedTargetThroughput: 4050, // In a future version this could be dynamically averaged from an inserted log.
@@ -589,7 +589,7 @@ export const trinket_data = [
         coefficient: 1.99949,
         table: -7,
         duration: 10,
-        ppm: { "Restoration Druid": 1.2, "Discipline Priest": 1.5, "Holy Paladin": 1.5, "Mistweaver Monk": 1.4, "Restoration Shaman": 1.2, "Holy Priest": 1.2 },
+        ppm: { "Preservation Evoker": 1.1, "Restoration Druid": 1.2, "Discipline Priest": 1.5, "Holy Paladin": 1.5, "Mistweaver Monk": 1.4, "Restoration Shaman": 1.2, "Holy Priest": 1.2 },
       },
     ],
   },
@@ -640,7 +640,7 @@ export const trinket_data = [
         coefficient: 2.353487,
         table: -1,
         duration: 10,
-        ppm: { "Restoration Druid": 1.1, "Discipline Priest": 1.25, "Holy Paladin": 1.25, "Mistweaver Monk": 1.2, "Restoration Shaman": 1.1, "Holy Priest": 1.1 },
+        ppm: { "Preservation Evoker": 1, "Restoration Druid": 1.1, "Discipline Priest": 1.25, "Holy Paladin": 1.25, "Mistweaver Monk": 1.2, "Restoration Shaman": 1.1, "Holy Priest": 1.1 },
       },
     ],
   },
@@ -805,7 +805,7 @@ export const trinket_data = [
     effects: [
       {
         coefficient: 10, // Flat value
-        stacks: { "Restoration Druid": 7, "Discipline Priest": 10, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 2.4, "Holy Priest": 2.4 },
+        stacks: { "Preservation Evoker": 0, "Restoration Druid": 7, "Discipline Priest": 10, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 2.4, "Holy Priest": 2.4 },
       },
     ],
   },
@@ -984,8 +984,8 @@ export const trinket_data = [
     effects: [
       {
         coefficient: 0.045455,
-        specMod: {"Restoration Druid": 1, "Holy Paladin": 0.6, "Mistweaver Monk": 1, "Restoration Shaman": 0.5, "Holy Priest": 1.25, "Discipline Priest": 0.8},
-        spellList: {"Restoration Druid": 1, "Holy Paladin": 25914, "Mistweaver Monk": 1, "Restoration Shaman": 1, "Holy Priest": 1, "Discipline Priest": 1},
+        specMod: {"Preservation Evoker": 0, "Restoration Druid": 1, "Holy Paladin": 0.6, "Mistweaver Monk": 1, "Restoration Shaman": 0.5, "Holy Priest": 1.25, "Discipline Priest": 0.8},
+        spellList: {"Preservation Evoker": 1, "Restoration Druid": 1, "Holy Paladin": 25914, "Mistweaver Monk": 1, "Restoration Shaman": 1, "Holy Priest": 1, "Discipline Priest": 1},
         table: -1,
         cooldown: 60,
       },
@@ -1021,7 +1021,7 @@ export const trinket_data = [
         coefficient: 0.337095, 
         table: -7,
         duration: 15,
-        averageStacks: {"Restoration Druid": 0.6, "Holy Paladin": 0.4, "Mistweaver Monk": 0, "Restoration Shaman": 0.65, "Holy Priest": 0.6, "Discipline Priest": 1.55},
+        averageStacks: {"Preservation Evoker": 0.5, "Restoration Druid": 0.6, "Holy Paladin": 0.4, "Mistweaver Monk": 0, "Restoration Shaman": 0.65, "Holy Priest": 0.6, "Discipline Priest": 1.55},
         // The average stacks value is correct, but should be rewritten to include the formula in the code.
         ppm: 5,
       },
@@ -1053,7 +1053,7 @@ export const trinket_data = [
         coefficient: 0.286493,
         table: -7,
         duration: 10,
-        efficiency: {"Restoration Druid": 0.8, "Holy Paladin": 0.67, "Mistweaver Monk": 0, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
+        efficiency: {"Preservation Evoker": 0.5, "Restoration Druid": 0.8, "Holy Paladin": 0.67, "Mistweaver Monk": 0, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
         stacks: 15, // You start with 20, lose 1 every second and end with 10 for an average of 15.
         ppm: 1,
       },
@@ -1111,7 +1111,7 @@ export const trinket_data = [
       {
         coefficient: 0.6668381, // 2.07913,
         table: -7, //-8, 
-        ppm: { "Restoration Druid": 20, "Discipline Priest": 15.2, "Holy Paladin": 0, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.5, "Holy Priest": 11 }, // TODO: Refine. 
+        ppm: { "Preservation Evoker": 0, "Restoration Druid": 20, "Discipline Priest": 15.2, "Holy Paladin": 0, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.5, "Holy Priest": 11 }, // TODO: Refine. 
       },
     ],
   },
@@ -1128,7 +1128,7 @@ export const trinket_data = [
         coefficient: 0.199557,
         table: -7, 
         duration: 20,
-        ppm: { "Restoration Druid": 0.5, "Discipline Priest": 0.7, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 0.5, "Holy Priest": 0.5 }, // Baseline: 0.7
+        ppm: { "Preservation Evoker": 0, "Restoration Druid": 0.5, "Discipline Priest": 0.7, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 0.5, "Holy Priest": 0.5 }, // Baseline: 0.7
         averageStacks: 10.5, 
       },
     ],
@@ -1439,7 +1439,7 @@ export const trinket_data = [
         coefficient: 78.73171,
         table: -9,
         ppm: 2.25,
-        classMult: { "Restoration Druid": 1, "Discipline Priest": 1, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 1, "Holy Priest": 1 }
+        classMult: { "Preservation Evoker": 1, "Restoration Druid": 1, "Discipline Priest": 1, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 1, "Holy Priest": 1 }
       }]
     },
     /*                                     Fluctuating Energy                                         */
