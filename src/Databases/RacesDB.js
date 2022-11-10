@@ -14,17 +14,6 @@ export const raceDB = [
   },
   {
     name: {
-      en: "Dracthyr",
-      fr: "",
-      de: "",
-      ru: "",
-      ch: "",
-    },
-    id: "Races.Dracthyr",
-    icon: "",
-  },
-  {
-    name: {
       en: "Dark Iron Dwarf",
       fr: "Nain sombrefer",
       de: "Dunkeleisenzwerg",
@@ -263,6 +252,17 @@ export const raceDB = [
       ch: "赞达拉巨魔",
     },
     id: "Races.Zandalari Troll",
+    icon: "",
+  },
+  {
+    name: {
+      en: "Dracthyr",
+      fr: "Dracthyr",
+      de: "Dracthyr",
+      ru: "Драктир",
+      ch: "龙希尔",
+    },
+    id: "Races.Dracthyr",
     icon: "",
   },
 ];
