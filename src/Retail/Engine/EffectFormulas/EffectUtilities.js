@@ -26,9 +26,29 @@ export function getScalarValue(table, itemLevel) {
   }
 }
 
+/**
+ * @deprecated
+ * Use processedValue for Dragonflight content. 
+ */
 export function getProcessedValue(coefficient, table, itemLevel, efficiency = 1, floor=true) {
   if (floor) return Math.floor(coefficient * getScalarValue(table, itemLevel) * efficiency);
   else return coefficient * getScalarValue(table, itemLevel) * efficiency;
+}
+
+/**
+ * 
+ * @param {*} data 
+ * @param {*} itemLevel The item level to grab the effect value at.
+ * @param {*} efficiency An optional efficiency value. We can use this for stuff like trinkets that don't always get full value.
+ * @param {*} roundType Blizzard are inconsistent on whether they floor or round data. Most of the time they'll floor, but the function can support both via optional parameters.
+ * @returns A flat value representing the in-game effect number at whatever item level we're given.
+ */
+export function processedValue(data, itemLevel, efficiency = 1, roundType = "floor") {
+  const value = data.coefficient * getScalarValue(data.table, itemLevel) * efficiency;
+  if (roundType === "floor") return Math.floor(value);
+  else if (roundType === "round") return Math.round(value);
+  else return value;
+
 }
 
 export function getBestWeaponEnchant(player, contentType) {

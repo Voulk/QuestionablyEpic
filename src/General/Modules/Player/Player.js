@@ -322,19 +322,23 @@ class Player {
     return container;
   };
 
+
   // Convert the players given stats into a percentage.
   // TODO: Implement Mastery
   getStatPerc = (stat) => {
-    var statPerc = 1.0;
+    stat = stat.toLowerCase();
+    let statPerc = 1.0;
     switch (stat) {
-      case "Haste":
+      case "haste":
         statPerc = 1 + this.activeStats.haste / 33 / 100;
         break;
-      case "Crit":
+      case "crit":
         statPerc = 1.05 + this.activeStats.crit / 35 / 100;
         break;
-      case "Mastery":
+      case "mastery":
         statPerc = 1; // TODO
+        
+
         if (this.spec === SPEC.HOLYPALADIN) {
           statPerc = (0.12 + this.activeStats.mastery / 23.3 / 100) * 0.8 + 1; // 0.8 is our average mastery effectiveness.
         } else if (this.spec === SPEC.RESTOSHAMAN) {
@@ -349,7 +353,7 @@ class Player {
           statPerc = 1; // TODO
         }
         break;
-      case "Versatility":
+      case "versatility":
         statPerc = 1 + this.activeStats.versatility / 40 / 100;
         break;
       default:
@@ -361,6 +365,10 @@ class Player {
   };
 
   // Returns a stat multiplier. This function is really bad and needs to be rewritten.
+  /**
+   * @deprecated
+   * Use getStatMults now instead. It's much cleaner. This is an abomination.
+   */
   getStatMultiplier = (flag, statList = []) => {
     let mult = 1;
     if (flag === "ALL") {
@@ -387,6 +395,15 @@ class Player {
 
     return mult;
   };
+
+  getStatMults = (statList) => {
+    let mult = 1;
+    statList.forEach((stat) => {
+      if (stat === "intellect") mult *= this.activeStats.intellect;
+      else mult *= this.getStatPerc(stat);
+    });
+    return mult;
+  }
 
 
   /* ------------------------------------- Update renown level ------------------------------------ */
