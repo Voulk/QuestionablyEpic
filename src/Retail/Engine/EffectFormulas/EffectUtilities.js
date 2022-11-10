@@ -7,7 +7,7 @@ export function convertPPMToUptime(PPM, duration) {
 }
 
 export function getScalarValue(table, itemLevel) {
-  if (table === -8) {
+  if (table === -9) { // Was -8 in SL
       return randPropPoints[itemLevel]["p8"];
   } else if (table === -1) {
       return randPropPoints[itemLevel]["slotValues"][0];
@@ -16,7 +16,7 @@ export function getScalarValue(table, itemLevel) {
   } else if (table === -6) {
       return 23316.22963; // This is a level-scaled value and 23315 is the value for level 60.
   } 
-  else if (table === -9) {
+  else if (table === -8) {
     return randPropPoints[itemLevel]["p1"]; // This is the damage_replace_stat column in SimC.
   } 
 
