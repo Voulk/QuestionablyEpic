@@ -2,19 +2,34 @@ import { combat_ratings_mult_by_ilvl } from "../CombatMultByLevel";
 import { randPropPoints } from "../RandPropPointsBylevel";
 // This file contains utility formulas that might be useful for calculating Effect values.
 
+
+// A lot of trinkets in the game are very generic PPM stat trinkets. These all use effectively the same formula.
+export function runGenericPPMTrinket(effect, itemLevel) {
+    const value = processedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+    return value;
+}
+
+// Other trinkets are generic on-use stat trinkets. These usually don't need anything special either and can be genericized. 
+// TODO.
+export function runGenericOnUseTrinket(effect, itemLevel, castModel) {
+  const value = processedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown 
+                  * castModel.getSpecialQuery("twoMinutes", "cooldownMult");
+  return value;
+}
+
 export function convertPPMToUptime(PPM, duration) {
   return 1.13 * (1 - Math.E ** -((PPM * duration) / 60));
 }
 
 export function getScalarValue(table, itemLevel) {
-  if (table === -9) { // Was -8 in SL
+  if (table === -9) { // Was -8 in SL QE/L.
       return randPropPoints[itemLevel]["p8"];
   } else if (table === -1) {
       return randPropPoints[itemLevel]["slotValues"][0];
   } else if (table === -7) {
       return randPropPoints[itemLevel]["slotValues"][0] * combat_ratings_mult_by_ilvl[itemLevel];
   } else if (table === -6) {
-      return 23316.22963; // This is a level-scaled value and 23315 is the value for level 60.
+      return 166776.2798; // This is a level-scaled value and 23316.22963 is the value for level 60.
   } 
   else if (table === -8) {
     return randPropPoints[itemLevel]["p1"]; // This is the damage_replace_stat column in SimC.
