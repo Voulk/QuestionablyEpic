@@ -10,10 +10,10 @@ import each from "jest-each";
 describe("Broodkeeper's Promise", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Broodkeeper's Promise");;
-    const effect = activeTrinket.effects[0];
+    const effect = activeTrinket.effects[1];
     each`
     level   | expectedResult
-    ${398}  | ${152}
+    ${398}  | ${1325}
     // add new test cases here
     `.test("Broodkeeper's Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect, level)).toBe(expectedResult);
