@@ -40,7 +40,7 @@ export default function classIcons(props, style) {
   }
 
   // Preservation Evoker
-  if (props === "PreservationEvoker" || props === "Preservation Evoker" || props === "Evoker-Preservation") {
+  if (props === "PreservationEvoker" || props === "Preservation Evoker" || props === "Evoker-Preservation" || props === "Evoker") {
     src = EvokerIcon;
     alt = "Preservation Evoker";
   }
