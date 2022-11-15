@@ -1,4 +1,4 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket } from "../EffectUtilities";
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue } from "../EffectUtilities";
 
 export const dungeonTrinketData = [
   {
@@ -192,6 +192,28 @@ export const dungeonTrinketData = [
 
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) / data[0].cooldown;
 
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Horn of Valor                                          */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Horn of Valor",
+    effects: [
+      { 
+        coefficient: 1.334434,
+        table: -1,
+        stat: "intellect",
+        duration: 30,
+        cooldown: 120,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
       return bonus_stats;
     }
   },

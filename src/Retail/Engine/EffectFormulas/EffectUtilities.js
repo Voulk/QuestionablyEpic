@@ -1,7 +1,19 @@
 import { combat_ratings_mult_by_ilvl } from "../CombatMultByLevel";
 import { randPropPoints } from "../RandPropPointsBylevel";
+import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
 // This file contains utility formulas that might be useful for calculating Effect values.
 
+export function getDiminishedValue(statID, procValue, baseStat) {
+  const DRBreakpoints = STATDIMINISHINGRETURNS[statID.toUpperCase()];
+  
+  const totalStat = baseStat + procValue;
+  let currentStat = baseStat + procValue;
+  for (var j = 0; j < DRBreakpoints.length; j++) {
+    currentStat -= Math.max((totalStat - DRBreakpoints[j]) * 0.1, 0);
+  }
+
+  return Math.round(procValue - (totalStat - currentStat));
+}
 
 // A lot of trinkets in the game are very generic PPM stat trinkets. These all use effectively the same formula.
 export function runGenericPPMTrinket(effect, itemLevel) {
@@ -12,8 +24,10 @@ export function runGenericPPMTrinket(effect, itemLevel) {
 // Other trinkets are generic on-use stat trinkets. These usually don't need anything special either and can be genericized. 
 // TODO.
 export function runGenericOnUseTrinket(effect, itemLevel, castModel) {
-  const value = processedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown 
-                  * castModel.getSpecialQuery("twoMinutes", "cooldownMult");
+  console.log(JSON.stringify(effect));
+  console.log(processedValue(effect, itemLevel));
+  const value = processedValue(effect, itemLevel) * effect.duration / effect.cooldown 
+                  //* castModel.getSpecialQuery("twoMinutes", "cooldownMult");
   return value;
 }
 

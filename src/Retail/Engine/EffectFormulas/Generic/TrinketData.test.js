@@ -128,6 +128,20 @@ describe("Mote of Sanctification", () => {
     });
 });
 
+describe("Horn of Valor", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = dungeonTrinketData.find((trinket) => trinket.name === "Horn of Valor");;
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${421}  | ${1263}
+    // add new test cases here
+    `.test("Horn of Valor Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect, level)).toBe(expectedResult);
+    });
+});
+
+
 /*
 describe("Iredus Fragment", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
@@ -188,35 +202,6 @@ describe("Static-Charged Scale", () => {
         expect(processedValue(effect, level)).toBe(expectedResult);
     });
 });
-
-describe("Flask of the Solemn Night", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Flask of the Solemn Nigh");;
-    const effect = activeTrinket.effects[0];
-    each`
-    level   | expectedResult
-    ${141}  | ${15}
-
-    // add new test cases here
-    `.test("Flask of the Solemn Night Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect, level)).toBe(expectedResult);
-    });
-});
-
-describe("Horn of Valor", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Horn of Valor");;
-    const effect = activeTrinket.effects[0];
-    each`
-    level   | expectedResult
-    ${141}  | ${74}
-    // add new test cases here
-    `.test("Horn of Valor Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect, level)).toBe(expectedResult);
-    });
-});
-
-
 
 describe("Voidmender's Shadowgem", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
