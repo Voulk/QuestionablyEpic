@@ -141,6 +141,19 @@ describe("Horn of Valor", () => {
     });
 });
 
+describe("Voidmender's Shadowgem", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = dungeonTrinketData.find((trinket) => trinket.name === "Voidmender's Shadowgem");;
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${124}  | ${125}
+    // add new test cases here
+    `.test("Voidmender's Shadowgem Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect, level)).toBe(expectedResult);
+    });
+});
+
 
 /*
 describe("Iredus Fragment", () => {
@@ -203,18 +216,7 @@ describe("Static-Charged Scale", () => {
     });
 });
 
-describe("Voidmender's Shadowgem", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Voidmender's Shadowgem");;
-    const effect = activeTrinket.effects[0];
-    each`
-    level   | expectedResult
-    ${124}  | ${125}
-    // add new test cases here
-    `.test("Voidmender's Shadowgem Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect, level)).toBe(expectedResult);
-    });
-});
+
 
 describe("Conjured Chillglobe", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.

@@ -24,8 +24,7 @@ export function runGenericPPMTrinket(effect, itemLevel) {
 // Other trinkets are generic on-use stat trinkets. These usually don't need anything special either and can be genericized. 
 // TODO.
 export function runGenericOnUseTrinket(effect, itemLevel, castModel) {
-  console.log(JSON.stringify(effect));
-  console.log(processedValue(effect, itemLevel));
+
   const value = processedValue(effect, itemLevel) * effect.duration / effect.cooldown 
                   //* castModel.getSpecialQuery("twoMinutes", "cooldownMult");
   return value;

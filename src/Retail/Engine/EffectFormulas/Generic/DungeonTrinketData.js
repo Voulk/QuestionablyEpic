@@ -217,6 +217,36 @@ export const dungeonTrinketData = [
       return bonus_stats;
     }
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Horn of Valor                                          */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Voidmender's Shadowgem",
+    effects: [
+      { 
+        coefficient: 1.92032,
+        table: -7,
+        stat: "crit",
+        duration: 15,
+        cooldown: 90,
+      },
+      { // This is the crit bonus effect. It's on a 20ppm.
+        coefficient: 0.240273,
+        table: -7,
+        ppm: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      const critPerStack = processedValue(data[1], itemLevel)
+      const effectiveCrit = processedValue(data[0], itemLevel) + critPerStack * (data[1].ppm * (data[0].duration / 60))
+
+      bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown; // TODO: Add CD Mult.
+      return bonus_stats;
+    }
+  },
 
 
 
