@@ -21,7 +21,7 @@ export default function classIcons(props, style) {
   let alt = "";
 
   // Preservation Evoker
-  if (props === "PreservationEvoker" || props === "Preservation Evoker" || props === "Druid-Restoration") {
+  if (props === "PreservationEvoker" || props === "Preservation Evoker" || props === "Evoker-Preservation") {
     src = RestorationDruidIcon;
     alt = "Preservation Evoker";
   }
