@@ -69,6 +69,10 @@ export default function QELogImport(props) {
       classSpec = "&sourceclass=Druid";
       classIcon = "Druid-Restoration";
     }
+    if (spec === "Preservation Evoker") {
+      classSpec = "&sourceclass=Evoker";
+      classIcon = "Evoker-Preservation";
+    }
     if (spec === "Mistweaver Monk") {
       classSpec = "&sourceclass=Monk";
       classIcon = "Monk-Mistweaver";

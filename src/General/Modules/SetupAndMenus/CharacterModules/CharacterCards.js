@@ -56,6 +56,7 @@ import { getTranslatedCovenantName } from "locale/covenants.js";
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
   "Restoration Druid": require("Images/DruidSmall.jpg"),
+  "Preservation Evoker": require("Images/EvokerSmall.jpg"),
   "Restoration Shaman": require("Images/ShamanSmall.png"),
   "Discipline Priest": require("Images/DiscSmall.jpg"),
   "Holy Paladin": require("Images/PaladinSmall.png"),

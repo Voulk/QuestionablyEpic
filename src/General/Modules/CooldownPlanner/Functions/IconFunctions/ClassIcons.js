@@ -14,10 +14,17 @@ import WarlockIcon from "Images/Classes/Warlock/Icons/WarlockIcon.jpg";
 import MageIcon from "Images/Classes/Mage/Icons/MageIcon.jpg";
 import HunterIcon from "Images/Classes/Hunter/Icons/HunterIcon.jpg";
 import DruidIcon from "Images/Classes/Druid/classicon_druid.jpg";
+import EvokerIcon from "Images/Classes/Evoker/classicon_evoker_preservation.jpg";
 
 export default function classIcons(props, style) {
   let src = "";
   let alt = "";
+
+  // Preservation Evoker
+  if (props === "PreservationEvoker" || props === "Preservation Evoker" || props === "Evoker-Preservation") {
+    src = RestorationDruidIcon;
+    alt = "Preservation Evoker";
+  }
 
   // Paladin Cooldowns
   if (props === "HolyPaladin" || props === "Holy Paladin" || props === "Paladin-Holy" || props === "Paladin" || props === "Holy Paladin Classic") {
@@ -29,6 +36,12 @@ export default function classIcons(props, style) {
   if (props === "RestorationDruid" || props === "Restoration Druid" || props === "Druid-Restoration" || props === "Restoration Druid Classic") {
     src = RestorationDruidIcon;
     alt = "Restoration Druid";
+  }
+
+  // Preservation Evoker
+  if (props === "PreservationEvoker" || props === "Preservation Evoker" || props === "Evoker-Preservation") {
+    src = EvokerIcon;
+    alt = "Preservation Evoker";
   }
 
   // Restoration Druid

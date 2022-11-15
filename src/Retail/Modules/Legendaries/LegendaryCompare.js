@@ -89,6 +89,7 @@ const fillLegendaries = (container, spec, player, contentType) => {
       { name: "Unbridled Swarm", id: 354123, covenant: true },
       { name: "Celestial Spirits", id: 354118, covenant: true },
     ],
+    "Preservation Evoker": [],
     "Holy Paladin": [
       // { name: "Vanguards Momentum", id: 337638, covenant: false },
       { name: "The Magistrates Judgment", id: 337681, covenant: false },
