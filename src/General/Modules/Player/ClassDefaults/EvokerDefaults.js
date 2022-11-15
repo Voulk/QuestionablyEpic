@@ -50,7 +50,7 @@ export const evokerDefaultSpellData = (contentType) => {
           oneMinute: 1, 
           ninetySeconds: 1,
           twoMinutes: 1,
-          twoMinutesOrb: 1,
+          twoMinutesOrb: 0.85, // It is tough to get value in Prepatch.
           threeMinutes: 1,
         },
         HoldYourGroundUptime: 0.8

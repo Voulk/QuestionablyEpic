@@ -34,6 +34,8 @@ export function getValidArmorTypes(spec) {
       return [0, 4, 6]; // Misc + Plate + Shields
     case SPEC.RESTOSHAMAN:
       return [0, 3, 6]; // Misc + Mail + Shields
+    case SPEC.PRESEVOKER:
+      return [0, 3]; // Misc + Mail
     case SPEC.HOLYPRIEST:
     case SPEC.DISCPRIEST:
       return [0, 1]; // Misc + Cloth
@@ -95,7 +97,8 @@ export function getValidWeaponTypes(spec, slot) {
           return [0, 4, 6, 7, 10, 13];
         case SPEC.HOLYPALADIN:
           return [0, 1, 4, 5, 6, 7, 8];
-
+        case SPEC.PRESEVOKER:
+          return [0, 4, 5, 7, 13, 15];
         case SPEC.RESTOSHAMAN:
           return [0, 1, 4, 5, 10, 13, 15];
         case SPEC.HOLYPRIEST:
@@ -126,7 +129,8 @@ export function getValidWeaponTypesBySpec(spec) {
       return [0, 4, 6, 7, 10, 13];
     case SPEC.HOLYPALADIN:
       return [0, 1, 4, 5, 6, 7, 8];
-
+    case SPEC.PRESEVOKER:
+      return [0, 4, 5, 7, 13, 15];
     case SPEC.RESTOSHAMAN:
       return [0, 1, 4, 5, 10, 13, 15];
     case SPEC.HOLYPRIEST:
