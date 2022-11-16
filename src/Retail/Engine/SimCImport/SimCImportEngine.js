@@ -333,6 +333,8 @@ export function processItem(line, player, contentType, type) {
         else if (bonus_id == 7461) itemLevel = 230;
         else if (bonus_id == 7881) itemLevel = 262;
         else if (bonus_id == 7880) itemLevel = 233;
+        else if (bonus_id == 8774) itemLevel = 219 + (dropLevel - 58) * 10;
+        else if (bonus_id == 8775) itemLevel = 242;
 
       } else if ("name_override" in idPayload) {
 
