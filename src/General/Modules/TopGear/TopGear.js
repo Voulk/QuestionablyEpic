@@ -96,11 +96,9 @@ export default function TopGear(props) {
   const [btnActive, setBtnActive] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
   const patronStatus = props.patronStatus;
-  const topGearCaps = {"Standard": 32, "Basic": 32, "Gold": 34, "Diamond": 36, "Rolls Royce": 38}
+  const topGearCaps = {"Standard": 32, "Basic": 32, "Gold": 34, "Diamond": 36, "Rolls Royce": 38, "Sapphire": 38}
   const TOPGEARCAP = topGearCaps[patronStatus] ? topGearCaps[patronStatus] : 32; // TODO
   const selectedItemsColor = patronColor[patronStatus];
-  console.log(patronStatus);
-  console.log(selectedItemsColor);
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
