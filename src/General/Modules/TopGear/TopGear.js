@@ -21,6 +21,7 @@ import ItemBar from "../ItemBar/ItemBar";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getTranslatedSlotName } from "locale/slotsLocale";
+import { patronColor } from "General/Modules/SetupAndMenus/Header/PatronColors"
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -77,7 +78,7 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const TOPGEARCAP = 32; // TODO
+
 
 export default function TopGear(props) {
   const { t, i18n } = useTranslation();
@@ -94,6 +95,10 @@ export default function TopGear(props) {
   const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
   const [btnActive, setBtnActive] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+  const patronStatus = props.patronStatus;
+  const topGearCaps = {"Standard": 32, "Basic": 32, "Gold": 34, "Diamond": 36, "Rolls Royce": 38, "Sapphire": 38}
+  const TOPGEARCAP = topGearCaps[patronStatus] ? topGearCaps[patronStatus] : 32; // TODO
+  const selectedItemsColor = patronColor[patronStatus];
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
@@ -365,7 +370,7 @@ export default function TopGear(props) {
             alignItems: "center",
           }}
         >
-          <Typography align="center" style={{ padding: "2px 2px 2px 2px" }} color="primary">
+          <Typography align="center" style={{ padding: "2px 2px 2px 2px" }} color={selectedItemsColor}>
             {t("TopGear.SelectedItems") + ":" + " " + selectedItemCount + "/" + TOPGEARCAP}
           </Typography>
           <div>
