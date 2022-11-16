@@ -955,6 +955,23 @@ else if (
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
+  /*                                 Storm Hunter's Insignia                                        */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Storm Hunter's Insignia"
+) {
+  let effect = activeTrinket.effects[0];
+
+    // Titanic Ocular Gland increases your highest secondary by X. 
+    const itemSetHighestSecondary = getHighestStat(setStats);
+    const statRaw = getProcessedValue(effect.coefficient, effect.table, itemLevel);
+    const statValue = getDiminishedValue(itemSetHighestSecondary, statRaw, setStats[itemSetHighestSecondary])
+    
+    bonus_stats[itemSetHighestSecondary] = statValue * convertPPMToUptime(effect.ppm, effect.duration);
+
+  //
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
   /*                                  Auxillary Attendant Chime                                     */
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Auxillary Attendant Chime"
@@ -1057,6 +1074,30 @@ else if (
   /*                                   Extract of Prodigious Sands                                  */
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Extract of Prodigious Sands"
+) {
+  let effect = activeTrinket.effects[0];
+  const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
+  const expectedPPM = effect.ppm; //* player.getStatPerc("Haste");
+  bonus_stats.hps = (oneHeal * expectedPPM * player.getStatMultiplier("CRITVERS") / 60);
+  //
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                       Versatile Storm Lure                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Versatile Storm Lure"
+) {
+  let effect = activeTrinket.effects[0];
+  const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
+  const expectedPPM = effect.ppm; //* player.getStatPerc("Haste");
+  bonus_stats.hps = (oneHeal * expectedPPM * player.getStatMultiplier("CRITVERS") / 60);
+  //
+} 
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                       Ekrazathal's Colored Fang                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Ekrazathal's Colored Fang"
 ) {
   let effect = activeTrinket.effects[0];
   const oneHeal = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType])
