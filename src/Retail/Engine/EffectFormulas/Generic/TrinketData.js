@@ -1472,6 +1472,41 @@ export const trinket_data = [
       },
     ],
   },
+
+  // Prepatch Stuff
+    {
+      name: "Storm Hunter's Insignia", // Highest Secondary Stat
+      effects: [
+        {
+          coefficient: 1.405309,
+          table: -7,
+          ppm: 2,
+          duration: 10,
+        },
+      ],
+    },
+    {
+      name: "Versatile Storm Lure", // Heal Proc
+      effects: [
+        {
+          coefficient: 61.51673,
+          table: -8,
+          ppm: 3,
+          efficiency: 0.7 //
+        },
+      ],
+    },
+    {
+      name: "Ekrazathal's Colored Fang", // Heal Proc
+      effects: [
+        {
+          coefficient: 4.204465,
+          table: -8,
+          ppm: 3,
+          efficiency: 0.8 // Unfortunately it is extremely difficult to catch all of the mana orbs.
+        },
+      ],
+    },
 ];
 
 /* ------------------------------------------- Unused ------------------------------------------- */

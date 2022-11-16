@@ -9,6 +9,15 @@
 
 export const changeLog = [
   {
+    version: "10.0.2 / 3.4.0",
+    update: 1,
+    date: "15 November",
+    changes: [ 
+      "Preservation Evoker.",
+      "Added Storm Hunter's Insignia, Versatile Storm Lure and Ekrazathal's Colored Fang.",
+    ],
+  },
+  {
     version: "10.0.0 / 3.4.0",
     update: 1,
     date: "25 October",
