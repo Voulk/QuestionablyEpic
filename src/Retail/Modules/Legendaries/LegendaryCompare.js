@@ -10,6 +10,7 @@ import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import userSettings from "General/Modules/Settings/SettingsObject";
 import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
+import { bannerAd, loadBannerAd } from "General/Ads/AllAds"
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -195,6 +196,8 @@ export default function LegendaryCompare(props) {
   const contentType = useSelector((state) => state.contentType);
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
+    loadBannerAd("Standard");
+
   }, []);
   const { t } = useTranslation();
 
@@ -209,6 +212,7 @@ export default function LegendaryCompare(props) {
 
   return (
     <div className={classes.header}>
+      <div id="banner2"></div>
       <Grid item container spacing={2} direction="row">
         {/* ---------------------------------------- Module Title ---------------------------------------- */}
         <Grid item xs={12}>
@@ -253,6 +257,7 @@ export default function LegendaryCompare(props) {
             ))}
         </Grid>
       </Grid>
+      <div id="banner2"></div>
       <div style={{ height: 100 }} />
     </div>
   );
