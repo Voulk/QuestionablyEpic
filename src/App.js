@@ -31,6 +31,9 @@ import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import ReactGA from "react-ga";
 
+import { useDispatch } from "react-redux";
+import { togglePatronStatus } from "Redux/Actions";
+
 process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
 
 class App extends Component {
@@ -73,7 +76,7 @@ class App extends Component {
       articleList: [],
     };
   }
-
+  
   setTopResult = (set) => {
     this.setState({ topSet: set });
   };
@@ -176,6 +179,9 @@ class App extends Component {
   /* -------------------------- Patron Status Handler ------------------------- */
   setPatron = (status) => {
     this.setState({ patronStatus: status });
+
+    
+    dispatch(togglePatronStatus(response)); // TODO: Check the response is good.
   };
 
   /* ----------------------- Article List Handler ----------------------------- */

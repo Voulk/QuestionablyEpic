@@ -16,9 +16,6 @@ export function dbCheckPatron(email, setPatron) {
       // alert("Success |" + response + "|");
       setPatron(response);
 
-      const dispatch = useDispatch();
-      dispatch(togglePatronStatus(response)); // TODO: Check the response is good.
-
     })
     .catch((err) => console.log(err));
 }
