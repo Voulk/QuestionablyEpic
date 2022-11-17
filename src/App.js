@@ -64,7 +64,7 @@ class App extends Component {
       playerLoginID: "",
       playerBattleTag: "",
       accessToken: "",
-      patronStatus: "",
+      patronStatus: "Standard",
       charSnackState: false,
       charUpdateState: false,
       loginSnackState: false,

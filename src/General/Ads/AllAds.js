@@ -1,8 +1,9 @@
 
 
 export const loadBannerAd = (patronStatus) => {
+    console.log("Trying to load ad" + patronStatus);
     if (/*process.env.NODE_ENV !== "development" && */(patronStatus === "Basic" || patronStatus === "Standard")) {
-        console.log("Loading ad");
+        console.log("Loading Ad: Banner2");
         window['nitroAds'].createAd('banner2', {
             "refreshLimit": 10,
             "refreshTime": 60,
@@ -25,11 +26,12 @@ export const loadBannerAd = (patronStatus) => {
 }
 
 export const loadBottomBannerAd = (patronStatus) => {
-    if (process.env.NODE_ENV !== "development" && (patronStatus === "Basic" || patronStatus === "Standard")) {
+  console.log("Trying to load ad2" + patronStatus);
+    if (/*process.env.NODE_ENV !== "development" && */ (patronStatus === "Basic" || patronStatus === "Standard")) {
         console.log("Loading ad2");
         window['nitroAds'].createAd('qelivead2', {
             "refreshLimit": 10,
-            "refreshTime": 90,
+            "refreshTime": 60,
             "renderVisibleOnly": true,
             "refreshVisibleOnly": true,
             "sizes": [
@@ -44,7 +46,6 @@ export const loadBottomBannerAd = (patronStatus) => {
               "wording": "Report Ad",
               "position": "bottom-right"
             },
-            "mediaQuery": "(min-width: 320px) and (max-width: 767px)"
           });
     }
 }
