@@ -16,6 +16,7 @@ import userSettings from "../Settings/SettingsObject";
 import ItemBar from "../ItemBar/ItemBar";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { getTranslatedSlotName } from "locale/slotsLocale";
+import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds"
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -85,6 +86,8 @@ export default function QuickCompare(props) {
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
+    loadBannerAd(props.patronStatus);
+    loadBottomBannerAd(props.patronStatus);
   }, props.player.scoreActiveItems(contentType));
 
   const { t, i18n } = useTranslation();
@@ -239,6 +242,7 @@ export default function QuickCompare(props) {
           {t("QuickCompare.ItemDeleted")}
         </Alert>
       </Snackbar>
+    <div id="qelivead2"></div>
     </div>
   );
 }
