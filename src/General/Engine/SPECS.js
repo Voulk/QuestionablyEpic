@@ -12,6 +12,7 @@ const SPEC = {
 const WCLSPEC = {
   PRESEVOKER: "Evoker-Preservation",
   RESTODRUID: "Druid-Restoration",
+  PRESEVOKER: "Evoker-Preservation",
   MISTWEAVERMONK: "Monk-Mistweaver",
   RESTOSHAMAN: "Shaman-Restoration",
   HOLYPRIEST: "Paladin-Holy",

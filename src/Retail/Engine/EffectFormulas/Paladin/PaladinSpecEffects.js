@@ -41,7 +41,8 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     const oneLightOfDawn = player.getStatMultiplier("ALL") * 1.05 * 5 * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.6;
     // Notably our overhealing here is higher than usual.
 
-    bonus_stats.hps = (freeCasts.lightOfDawn * oneLightOfDawn + freeCasts.wordOfGlory * oneWordOfGlory) / 33;
+    //bonus_stats.hps = (freeCasts.lightOfDawn * oneLightOfDawn + freeCasts.wordOfGlory * oneWordOfGlory) / 33;
+    
     // The bonus can be procced every 30s but in practice it will be slightly rarer.
 
     
@@ -60,7 +61,7 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
 
     const expectedWingsUptimeInc = postThroughput - preThroughput;
     
-    bonus_stats.hps = player.getHPS(contentType) * expectedWingsUptimeInc;
+    //bonus_stats.hps = player.getHPS(contentType) * expectedWingsUptimeInc;
   }
 
   else if (effectName === "Maraad's Dying Breath" || effectName === "Maraads Dying Breath") {

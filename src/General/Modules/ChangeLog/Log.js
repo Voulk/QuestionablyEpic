@@ -16,6 +16,34 @@ export const changeLog = [
       "Added a new Sequence Generator module. You can now select a talent build and sequence and it'll tell you how much damage / healing it'll do.",
       "Added support for the Evoker class.",
       "Added Dragonflight trinkets & item database."
+  ]},
+  {
+    version: "10.0.2 / 3.4.0",
+    update: 1,
+    date: "15 November",
+    changes: [ 
+      "Preservation Evoker.",
+      "Added Storm Hunter's Insignia, Versatile Storm Lure and Ekrazathal's Colored Fang.",
+    ],
+  },
+  {
+    version: "10.0.0 / 3.4.0",
+    update: 1,
+    date: "25 October",
+    changes: [ 
+      "Models updated for patch 10.0.",
+      "Covenants module retired.",
+      "Tier set bonuses disabled.",
+      "Added the new race combinations for Priest."
+    ],
+  },
+  {
+    version: "9.2.7 / 3.4.0",
+    update: 4,
+    date: "11 October",
+    changes: [ 
+      "Mainhands and Offhands are now displayed separately in Top Gear.",
+      "Re-added a bunch of trinkets to Trinket Analysis."
     ],
   },
   {

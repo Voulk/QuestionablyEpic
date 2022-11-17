@@ -9,6 +9,7 @@ import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatW
 import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { monkSinSpecialQueries, monkSinSpellData, monkSinStatWeights } from "./ClassDefaults/Monk/MonkSinTeachings";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
+import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights } from "./ClassDefaults/EvokerDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./DiscPriest/DiscPriestDefaults";
 import { getRampData, genStatWeights } from "General/Modules/Player/DiscPriest/DiscPriestUtilities";
 
@@ -180,13 +181,12 @@ class CastModel {
       this.baseStatWeights = holyPriestDefaultStatWeights(contentType);
       this.fightInfo.dps = (contentType === "Raid" ? 875 : 2100);
     } 
-
     else if (spec === SPEC.PRESEVOKER) {
       // TODO
       this.modelName = "Default";
-      spellList = holyPriestDefaultSpellData(contentType);
-      specialQueries = holyPriestDefaultSpecialQueries(contentType);
-      this.baseStatWeights = holyPriestDefaultStatWeights(contentType);
+      spellList = evokerDefaultSpellData(contentType);
+      specialQueries = evokerDefaultSpecialQueries(contentType);
+      this.baseStatWeights = evokerDefaultStatWeights(contentType);
       this.fightInfo.dps = (contentType === "Raid" ? 875 : 2100);
     } 
     
