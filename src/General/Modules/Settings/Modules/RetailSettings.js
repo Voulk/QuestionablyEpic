@@ -4,6 +4,10 @@ import { MenuItem, Grid, Typography, TextField, Tooltip, FormControl, InputLabel
 import { useTranslation } from "react-i18next";
 import { setBounds } from "General/Engine/CONSTRAINTS"
 
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { togglePlayerSettings } from "Redux/Actions";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -24,6 +28,16 @@ export default function RetailSettings(props) {
   const classes = useStyles();
   // const playerSpec = props.player.getSpec();
 
+  const playerSettings = useSelector((state) => state.playerSettings);
+  console.log(playerSettings);
+
+  const dispatch = useDispatch();
+
+  const availableSettings = {
+    'groupBenefits': {value: playerSettings.groupBenefits, 'options': []},
+
+
+  }
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             States                                             */
   /* ---------------------------------------------------------------------------------------------- */
@@ -33,8 +47,8 @@ export default function RetailSettings(props) {
   const [hymnalValue, setHymnalValue] = useState(props.userSettings.hymnalAllies);
 
   /* -------------------------------------- Group Value State ------------------------------------- */
-  const [groupValue, setgroupValue] = useState(props.userSettings.includeGroupBenefits);
-
+  const [groupValue, setgroupValue] = useState(availableSettings.groupBenefits.value);
+  console.log(groupValue);
   /* ----------------------------------- Paladin Playstyle State ---------------------------------- */
   const [specBuild, setSpecBuild] = useState(props.player.activeModelID[props.contentType]);
 
@@ -59,11 +73,15 @@ export default function RetailSettings(props) {
 
 
   const updateHymnalValue = (value) => {
+    dispatch(togglePlayerSettings(playerSettings));
     props.editSettings("hymnalAllies", setBounds(value, 0, 4));
     setHymnalValue(setBounds(value, 0, 4));
   };
 
   const updateGroupValue = (value) => {
+    dispatch(togglePlayerSettings({...playerSettings, groupBenefit: value}));
+    console.log("Post");
+    console.log(playerSettings);
     props.editSettings("includeGroupBenefits", value);
     setgroupValue(value);
   };
