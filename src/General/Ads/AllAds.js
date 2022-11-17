@@ -2,7 +2,7 @@
 
 export const loadBannerAd = (patronStatus) => {
     console.log("Trying to load ad" + patronStatus);
-    if (/*process.env.NODE_ENV !== "development" && */(patronStatus === "Basic" || patronStatus === "Standard")) {
+    if (process.env.NODE_ENV !== "development" && (patronStatus === "Basic" || patronStatus === "Standard")) {
         console.log("Loading Ad: Banner2");
         window['nitroAds'].createAd('banner2', {
             "refreshLimit": 10,
@@ -27,7 +27,7 @@ export const loadBannerAd = (patronStatus) => {
 
 export const loadBottomBannerAd = (patronStatus) => {
   console.log("Trying to load ad2" + patronStatus);
-    if (/*process.env.NODE_ENV !== "development" && */ (patronStatus === "Basic" || patronStatus === "Standard")) {
+    if (process.env.NODE_ENV !== "development" &&  (patronStatus === "Basic" || patronStatus === "Standard")) {
         console.log("Loading ad2");
         window['nitroAds'].createAd('qelivead2', {
             "refreshLimit": 10,
