@@ -1,3 +1,7 @@
+
+import { useDispatch } from "react-redux";
+import { togglePatronStatus } from "Redux/Actions";
+
 /* ---------------------------------------------------------------------------------------------- */
 /*               Check if email provided is a Patron and sets the response via Prop               */
 /* ---------------------------------------------------------------------------------------------- */
@@ -11,6 +15,10 @@ export function dbCheckPatron(email, setPatron) {
     .then((response) => {
       // alert("Success |" + response + "|");
       setPatron(response);
+
+      const dispatch = useDispatch();
+      dispatch(togglePatronStatus(response)); // TODO: Check the response is good.
+
     })
     .catch((err) => console.log(err));
 }

@@ -57,6 +57,7 @@ export default function QEHeader(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const gameType = useSelector((state) => state.gameType);
+  const patronStatus = useSelector((state) => state.patronStatus);
 
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -73,7 +74,7 @@ export default function QEHeader(props) {
   // TODO: Implement profile.
   let playerName = props.playerTag || t("QeHeader.Login");
   let linkTarget = props.playerTag === "" ? "/login" : "/profile";
-  let patronStatus = props.patronStatus !== "" && props.patronStatus !== "Basic" ? props.patronStatus : "Standard";
+  //let patronStatus = props.patronStatus !== "" && props.patronStatus !== "Basic" ? props.patronStatus : "Standard";
 
 
   // box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
