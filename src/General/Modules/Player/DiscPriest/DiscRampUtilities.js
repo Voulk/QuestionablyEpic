@@ -50,8 +50,8 @@ const addBreakdowns = (obj, newObj, miniRamp) => {
 }
 
 
-export const allRampsHealing = (boonSeq, fiendSeq, stats, settings = {}, conduits, reporting = false) => {
-    const rampResult = allRamps(boonSeq, fiendSeq, stats, settings, conduits, reporting);
+export const allRampsHealing = (boonSeq, stats, settings = {}, conduits, reporting = false) => {
+    const rampResult = allRamps(boonSeq, stats, settings, conduits, reporting);
 
     if (rampResult.totalHealing > 0) return rampResult.totalHealing;
     else {
@@ -70,14 +70,17 @@ export const allRamps = (fiendSeq, stats, settings = {}, talents, reporting = fa
     const evangSeq = buildRamp('Secondary', 10, [], stats.haste || 0, settings.playstyle || "", talents);
     const newFiendSeq = buildRamp('Primary', 10, [], stats.haste || 0, settings.playstyle || "", talents);
     const raptureSeq = buildRamp('RaptureLW', 8, [], stats.haste || 0, settings.playstyle || "", talents)
+    const microSeq = buildRamp('Micro', 5, [], stats.haste || 0, settings.playstyle || "", talents)
 
     const miniRamp = runCastSequence(miniSeq, stats, settings, talents);
     //const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
     const evangRamp = runCastSequence(evangSeq, stats, {...settings, harshDiscipline: true}, talents);
     const fiendRamp = runCastSequence(newFiendSeq, stats, {...settings, harshDiscipline: true}, talents);
     const raptureRamp = runCastSequence(raptureSeq, stats, settings, talents);
+    const microRamp = runCastSequence(microSeq, stats, settings, talents);
 
-    rampResult.totalHealing = fiendRamp.totalHealing + evangRamp.totalHealing + miniRamp.totalHealing * 2 + raptureRamp.totalHealing * 2;
+
+    rampResult.totalHealing = fiendRamp.totalHealing + evangRamp.totalHealing + miniRamp.totalHealing * 2 + raptureRamp.totalHealing * 2 + microRamp.totalHealing * 7;
 
     if (reporting) {
         //rampResult.ramps.push({"tag": "Primary Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(boonSeq), "totalHealing": Math.round(boonRamp.totalHealing)});

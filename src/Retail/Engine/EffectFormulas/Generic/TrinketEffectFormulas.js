@@ -1,6 +1,8 @@
-import { convertPPMToUptime, getProcessedValue } from "../EffectUtilities";
-import { trinket_data } from "./TrinketData";
-import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
+import { convertPPMToUptime, getProcessedValue, getDiminishedValue } from "../EffectUtilities";
+import { trinket_data } from "./ShadowlandsTrinketData";
+import { raidTrinketData } from "./TrinketData";
+import { dungeonTrinketData } from "./DungeonTrinketData";
+
 import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
 import { getMasteryAddition } from "../Monk/MistweaverMiscFormulas"
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
@@ -10,17 +12,6 @@ import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 // import { STAT } from "../../../../General/Engine/STAT";
 import SPEC from "../../../../General/Engine/SPECS";
 
-export function getDiminishedValue(statID, procValue, baseStat) {
-  const DRBreakpoints = STATDIMINISHINGRETURNS[statID.toUpperCase()];
-  
-  const totalStat = baseStat + procValue;
-  let currentStat = baseStat + procValue;
-  for (var j = 0; j < DRBreakpoints.length; j++) {
-    currentStat -= Math.max((totalStat - DRBreakpoints[j]) * 0.1, 0);
-  }
-
-  return Math.round(procValue - (totalStat - currentStat));
-}
 
 export function getTrinketValue(trinketName, itemLevel) {
   let activeTrinket = trinket_data.find((trinket) => trinket.name === trinketName);
@@ -58,9 +49,19 @@ export function getHighestStat(stats) {
 // TODO: Write proper comments. See Lingering Sunmote for an example.
 export function getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings = {}, setStats = {}) {
   let bonus_stats = {};
+  let additionalData = {contentType: contentType, settings: userSettings, setStats: setStats};
 
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */
-  let activeTrinket = trinket_data.find((trinket) => trinket.name === effectName);
+  const trinketData = raidTrinketData.concat(dungeonTrinketData, /*timewalkTrinketData, otherTrinketData*/)
+  let activeTrinket = trinketData.find((trinket) => trinket.name === effectName);
+
+
+  if (activeTrinket !== undefined) {
+    return activeTrinket.runFunc(activeTrinket.effects, player, itemLevel, additionalData);
+  }
+  else {
+    return {};
+  }
 
   if (activeTrinket === undefined) {
     /* ---------------------------------------------------------------------------------------------- */

@@ -16,6 +16,7 @@ import SourceToggle from "./SourceToggle";
 import ToggleButton from "@mui/material/ToggleButton";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
+import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -100,6 +101,8 @@ const getHighestTrinketScore = (db, trinket) => {
 export default function TrinketAnalysis(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
+    loadBannerAd(props.patronStatus);
+    loadBottomBannerAd(props.patronStatus);
   }, []);
 
   const { t } = useTranslation();
@@ -224,6 +227,7 @@ export default function TrinketAnalysis(props) {
 
   return (
     <div className={classes.root}>
+      <div id="banner2"></div>
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <Typography variant="h4" align="center" style={{ padding: "10px 10px 0px 10px" }} color="primary">

@@ -59,7 +59,7 @@ describe("Evang Cast Sequence", () => {
 
     const runTalents = (talentName, baseline, talents, settings) => {
         const seq = buildRamp('Primary', 10, [], activeStats.haste, "", talents)
-        print(talentName, baseline, allRampsHealing(seq, JSON.parse(JSON.stringify(activeStats)), settings, talents));
+        print(talentName, baseline, allRampsHealing([], JSON.parse(JSON.stringify(activeStats)), settings, talents));
     }
 
 
@@ -70,13 +70,13 @@ describe("Evang Cast Sequence", () => {
         //console.log("Baseline: " + JSON.stringify(runCastSequence(seq, activeStats, {}, talents)))
 
         const seq = buildRamp('Primary', 10, [], activeStats.haste, "", talentSet)
-        const seq2 = buildRamp('Primary', 10, [], activeStats.haste, "", {...baseTalents, purgeTheWicked: true})
-        const seq3 = buildRamp('Primary', 10, [], activeStats.haste, "", {...baseTalents, rapture: true})
+        const fiendSeq = buildRamp('Secondary', 10, [], activeStats.haste, "", talentSet)
+
 
         console.log(seq);
 
-        const settings = {'Power of the Dark Side': true}
-        const baseline = allRampsHealing(seq, activeStats, settings, baseTalents)
+        const settings = {'Power of the Dark Side': true, 'includeOverheal': true}
+        const baseline = allRampsHealing([], JSON.parse(JSON.stringify(activeStats)), settings, baseTalents)
         //const baseline = allRamps(runCastSequence(seq, activeStats, settings, talents).totalHealing)
         console.log("Baseline: " + baseline);
 

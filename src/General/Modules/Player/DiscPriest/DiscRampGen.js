@@ -28,6 +28,10 @@ export const buildRamp = (type, applicators, trinkets, haste, playstyle, incTale
     if (type === "Mini") {
         return buildMiniRamp(applicators, trinkets, playstyle, talents);
     }
+    // A micro-ramp doesn't include any Radiance charges or major cooldowns at all. We tend to throw these out through a fight in between ramps.
+    else if (type === "Micro") {
+        return buildMicroRamp(applicators, trinkets, playstyle, talents);
+    }
     else if (type === "Primary") { 
         // With Boon gone, our primary ramp will generally be with Fiend. 
         // The particular label doesn't matter all that much since it's just a way to categorize what we're intending to cast. 
@@ -95,7 +99,7 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) 
 
     for (var x = 0; x < applicators; x++) {
         if (talents.trainOfThought && x % 4 === 0) sequence.push('Power Word: Shield');
-        else if (x % 5 === 0) sequence.push('Power Word: Shield');
+        else if (!talents.trainOfThought && x % 5 === 0) sequence.push('Power Word: Shield');
         else sequence.push('Renew');
     }
 
@@ -120,6 +124,37 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) 
         sequence.push('Smite');
     }
     return sequence;
+}
+
+export const buildMicroRamp = (applicators, trinkets, playstyle, talents, haste) => {
+    let sequence = [];
+    let t = 0;
+
+    if (talents.purgeTheWicked) sequence.push('Purge the Wicked');
+    else sequence.push('Shadow Word: Pain');
+
+    for (var x = 0; x < applicators; x++) {
+        if (talents.trainOfThought && x % 4 === 0) sequence.push('Power Word: Shield');
+        else if (!talents.trainOfThought && x % 5 === 0) sequence.push('Power Word: Shield');
+        else sequence.push('Renew');
+    }
+
+    sequence.push(getPenance(talents));
+    if (talents.powerWordSolace) sequence.push('Power Word: Solace');
+    else sequence.push("Smite");
+    if (talents.divineStar) sequence.push("Divine Star");
+
+    for (var i = 0; i < 3; i++) {
+        sequence.push('Smite');
+    }
+    sequence.push(getPenance(talents));
+
+    for (var i = 0; i < 3; i++) {
+        // The number of smites here is adjustable but also not very important outside of DPS metrics. 
+        sequence.push('Smite');
+    }
+    return sequence;
+
 }
 
 /**
@@ -187,7 +222,7 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     //if (talents.rapture) {sequence.push('Rapture'); applicators -= 1 };
     for (var x = 0; x < applicators; x++) {
         if (talents.trainOfThought && x % 4 === 0) sequence.push('Power Word: Shield');
-        else if (x % 5 === 0) sequence.push('Power Word: Shield');
+        else if (!talents.trainOfThought && x % 5 === 0) sequence.push('Power Word: Shield');
         else sequence.push('Renew');
     }
 
@@ -302,7 +337,7 @@ export const buildBoonEvangRamp = (applicators, trinket, haste) => {
  * @param {*} applicators Number of single target atonement applicators. Default is 10 but configurable. 
  * @param {*} trinket The specific trinket we'd like to combine with our Fiend ramp. Note that a name is fine here. We don't need ilvl information since we'll pull that later.
  * @param {*} specialSpells Any special spells we'd like to include in the ramp like Rapture. 
- * @param {*} playstyle Options: Kyrian Evangelism, Kyrian Spirit Shell, Venthyr Evanglism (coming soon), Venthyr Spirit Shell (coming soon).
+ * @param {*} playstyle Options: Kyrian Evangelism, Kyrian Spirit Shell, Venthyr Evangelism (coming soon), Venthyr Spirit Shell (coming soon).
  * @returns Returns a sequence of spells representing a Shadowfiend ramp.
  */
  export const buildMindgamesRamp = (applicators, trinket, specialSpells, playstyle) => {

@@ -75,18 +75,27 @@ const getTalentDB = (spec) => {
 }
 
 const getSpecSettings = (spec) => {
-  return {};
   if (spec === "Preservation Evoker") {
     return {setting1:  {value: "defaultValue", options: ["defaultValue", "OtherValue"]},
             includeOverheal: {value: "Yes", options: ["Yes", "No"]}}
   }
   else if (spec === "Discipline Priest") {
-    return {includeOverheal: {value: "Yes", options: ["Yes", "No"]},
-            openWithDoT: {value: "Yes", options: ["Yes", "No"]}}
+    return {includeOverheal: {title: "Include Overhealing", value: "Yes", options: ["Yes", "No"]},
+            openWithDoT: {title: "Open with DoT active", value: "Yes", options: ["Yes", "No"]},
+            numEnemyTargets: {title: "Num Enemy Targets", value: 1, options: [1, 2, 3, 4, 5]},
+            execute: {title: "Execute", value: "Ignore", options: ["Ignore", "20% of the time", "Always"]}}
     }  
   else {
     return {};
   }
+}
+
+const compressSettings = (settings) => {
+  const newObject = {}
+  Object.keys(settings).forEach((key) =>  {
+    newObject[key] = settings[key].value;
+  });
+  return newObject;
 }
 
 
@@ -118,6 +127,8 @@ export default function SequenceGenerator(props) {
     const temp = {...seqSettings};
     temp[key].value = value;
     setSeqSettings(temp);
+    updateSequence(seq);
+
   }
 
   const spellList = {
@@ -142,17 +153,16 @@ export default function SequenceGenerator(props) {
 
   const updateSequence = (sequence) => {
     const simFunc = getSequence(selectedSpec);
-    const sim = simFunc(sequence, stats, {reporting: true, harshDiscipline: true}, talents);
+    const sim = simFunc(sequence, stats, {...{reporting: true, harshDiscipline: true}, ...compressSettings(seqSettings)}, talents);
 
     // multiple state updates get bundled by react into one update
     setSeq(sequence);
     setResult(sim);
     setCombatLog(sim.report);
-    console.log(sim);
   }
 
   const runIterations = (sequence, simFunc) => {
-    const iter = 1;
+    const iter = 20;
     const results = {totalHealing: 0, totalDamage: 0, manaSpent: 0, hpm: 0};
     let finalReport = [];
   
@@ -160,7 +170,7 @@ export default function SequenceGenerator(props) {
         //const baseline = runCastSequence(sequence, activeStats, settings, talents)
   
         //const simFunc = getSequence(selectedSpec);
-        const sim = simFunc(sequence, stats, {reporting: true, harshDiscipline: true}, talents);
+        const sim = simFunc(sequence, stats, {...{reporting: true, harshDiscipline: true}, ...compressSettings(seqSettings)}, talents);
   
         results.totalHealing += sim.totalHealing;
         results.manaSpent += sim.manaSpent;
