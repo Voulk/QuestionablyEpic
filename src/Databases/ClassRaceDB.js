@@ -43,6 +43,16 @@ export const classRaceDB = {
   },
 
   /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Evoker                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* ------------------------------------------- Retail ------------------------------------------- */
+  "Preservation Evoker": {
+    races: ["Races.Dracthyr"],
+    gameType: "Retail",
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
   /*                                             Priest                                             */
   /* ---------------------------------------------------------------------------------------------- */
 
@@ -70,6 +80,8 @@ export const classRaceDB = {
       "Races.Mag'har Orc",
       "Races.Zandalari Troll",
       "Races.Vulpera",
+      "Races.Highmountain Tauren",
+      "Races.Orc",
     ],
     gameType: "Retail",
   },
@@ -96,6 +108,8 @@ export const classRaceDB = {
       "Races.Mag'har Orc",
       "Races.Zandalari Troll",
       "Races.Vulpera",
+      "Races.Highmountain Tauren",
+      "Races.Orc",
     ],
     gameType: "Retail",
   },

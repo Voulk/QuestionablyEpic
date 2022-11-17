@@ -452,5 +452,9 @@ export default function UpgradeFinderResults(props) {
     );
   };
 
-  return <div>{gameType === "Retail" ? upgradeFinderResultsRetail() : upgradeFinderResultsBC()}</div>;
+  return (
+    <div>
+      {gameType === "Retail" ? upgradeFinderResultsRetail() : upgradeFinderResultsBC()} <div style={{ height: 400 }} />
+    </div>
+  );
 }

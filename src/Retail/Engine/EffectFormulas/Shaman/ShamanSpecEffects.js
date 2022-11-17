@@ -40,7 +40,8 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
 
     const wastage = 0.15 // It's very easy to waste stacks here and we should account for that.
 
-    bonusStats.hps = avgHealingPerStack * stacksPerMin * (1 - wastage) / 60;
+    //bonusStats.hps = avgHealingPerStack * stacksPerMin * (1 - wastage) / 60;
+    bonusStats.hps = 0;
   }
   else if (effectName === "Shaman T28-4") {
     // Free chain heals
@@ -57,7 +58,8 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     const cooldownRedPerMin = (player.getSpellCPM(1064, contentType) + freeChainHealsPerMinute) * 4 * player.getStatPerc("Crit");// chain heal CPM x targets x modifiedCritChance
     const hpsFreeTotems = oneHealingTide * (2 / 180 * cooldownRedPerMin) / 60;
 
-    bonusStats.hps = hpsFreeChainHeal / 60 + hpsFreeTotems;
+    //bonusStats.hps = hpsFreeChainHeal / 60 + hpsFreeTotems;
+    bonusStats.hps = 0;
   }
   else if (effectName === PRIMAL_TIDE_CORE) {
     /**
