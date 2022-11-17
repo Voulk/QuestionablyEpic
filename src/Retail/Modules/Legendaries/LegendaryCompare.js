@@ -196,8 +196,8 @@ export default function LegendaryCompare(props) {
   const contentType = useSelector((state) => state.contentType);
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
-    loadBannerAd("Standard");
-    loadBottomBannerAd("Standard");
+    loadBannerAd(props.patronStatus);
+    loadBottomBannerAd(props.patronStatus);
 
   }, []);
   const { t } = useTranslation();

@@ -2,7 +2,6 @@
   "name": "questionably-epic-live",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://questionablyepic.com/",
   "dependencies": {
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",

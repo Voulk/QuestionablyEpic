@@ -29,7 +29,6 @@ export default function RetailSettings(props) {
   // const playerSpec = props.player.getSpec();
 
   const playerSettings = useSelector((state) => state.playerSettings);
-  console.log(playerSettings);
 
   const dispatch = useDispatch();
 

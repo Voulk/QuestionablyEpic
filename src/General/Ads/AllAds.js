@@ -1,7 +1,7 @@
 
 
 export const loadBannerAd = (patronStatus) => {
-    if (process.env.NODE_ENV !== "development" && (patronStatus === "Basic" || patronStatus === "Standard")) {
+    if (/*process.env.NODE_ENV !== "development" && */(patronStatus === "Basic" || patronStatus === "Standard")) {
         console.log("Loading ad");
         window['nitroAds'].createAd('banner2', {
             "refreshLimit": 10,

@@ -148,6 +148,7 @@ export default function QuickCompare(props) {
 
   return (
     <div className={classes.header}>
+      <div id="banner2"></div>
       <Grid container spacing={1} justifyContent="center">
         {/* -------------------------------------------------------------------------- */
         /*                         Quick Compare Title Header                         */

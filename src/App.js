@@ -181,7 +181,7 @@ class App extends Component {
     this.setState({ patronStatus: status });
 
     
-    dispatch(togglePatronStatus(response)); // TODO: Check the response is good.
+    //dispatch(togglePatronStatus(response)); // TODO: Check the response is good.
   };
 
   /* ----------------------- Article List Handler ----------------------------- */
@@ -349,12 +349,12 @@ class App extends Component {
                       />
                     )}
                   />
-                  <Route path="/fightAnalysis" render={() => <FightAnalysis />} />
-                  <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule />} />
+                  <Route path="/fightAnalysis" render={() => <FightAnalysis patronStatus={this.state.patronStatus} />} />
+                  <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule patronStatus={this.state.patronStatus} />} />
                   <Route path="/holydiver" render={() => <TestingPage />} />
                   <Route path="/sequenceGen" render={() => <SequenceGen player={activePlayer}/>} />
-                  <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} />} />
-                  <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} />} />
+                  <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} patronStatus={this.state.patronStatus}/>} />
+                  <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} patronStatus={this.state.patronStatus}/>} />
                   <Route
                     path="/topgear"
                     render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} patronStatus={this.state.patronStatus}/>}
@@ -362,13 +362,13 @@ class App extends Component {
                   <Route
                     path="/legendaries"
                     render={() => (
-                      <LegendaryCompare player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
+                      <LegendaryCompare player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} patronStatus={this.state.patronStatus} />
                     )}
                   />
                   <Route
                     path="/trinkets"
                     render={() => (
-                      <TrinketAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
+                      <TrinketAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} patronStatus={this.state.patronStatus}/>
                     )}
                   />
                   {/*<Route
