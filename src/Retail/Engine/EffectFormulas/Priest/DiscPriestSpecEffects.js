@@ -15,7 +15,7 @@ export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
     const manaPerProc = 1750;
     const procChance = 0.15;
     
-    bonus_stats.mana = procSpellsPerMin * percProcsConsumed * manaPerProc * procChance / 60
+    //bonus_stats.mana = procSpellsPerMin * percProcsConsumed * manaPerProc * procChance / 60
   }
   else if (effectName === "DPriest T28-4") {
     // Discipline Sepulcher tier set 4pc

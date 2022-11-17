@@ -61,7 +61,7 @@ const AccordionSummary = withStyles({
 
 const useStyles = makeStyles(() => ({
   root: {
-    // width: "100%",
+    width: "100%",
     padding: "8px 5px",
   },
 }));
@@ -106,6 +106,7 @@ export default function SlotsContainer(props) {
       case "Holy Paladin Classic":
         return require("Images/UpgradeFinderIcons/Plate/" + slot + ".jpg").default;
       case "Restoration Shaman":
+      case "Preservation Evoker":
       case "Restoration Shaman Classic":
         return require("Images/UpgradeFinderIcons/Mail/" + slot + ".jpg").default;
       case "Holy Priest":

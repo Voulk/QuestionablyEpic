@@ -22,7 +22,8 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     // This needs to be expanded by multiplying only the HPS that doesn't already come from mastery, that is, we're interested in how much the mastery stack 
     // is adding which is additive with pre-existing stacks. 
 
-    bonus_stats.hps = healPortionHPS + masteryStackValue;
+    //bonus_stats.hps = healPortionHPS + masteryStackValue;
+    bonus_stats.hps = 0;
   }
   else if (effectName === "Druid T28-4") {
     // This is too simple a formula, but can be revised with proper log data.
@@ -33,7 +34,8 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     const auraHealingIncrease = hpsDuringBurstWindow * 0.15 * duration; // The extra healing from 15% additional healing
     const rejuvHealingIncrease = (rejuvHPSDuringBurstWindow * 1.15 * 1.5) - rejuvHPSDuringBurstWindow; // The extra healing from the large rejuv buff.
 
-    bonus_stats.hps = (auraHealingIncrease + rejuvHealingIncrease + extraWGHealing) / 60;
+    //bonus_stats.hps = (auraHealingIncrease + rejuvHealingIncrease + extraWGHealing) / 60;
+    bonus_stats.hps = 0;
   }
   /*
     The rejuv spreading legendary can best be expressed as a percentage increase to our rejuv healing. 

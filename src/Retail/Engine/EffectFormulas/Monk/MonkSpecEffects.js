@@ -30,7 +30,8 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
     const risingMistDirect = oneRisingMist * essenceFontCPM * (1); // The additional healing from Rising Mist. We model this as 1 extra RM hit per Essence Font cast.
     const additionalGusts = 0; // The additional Gust of Mists afforded by the extra 2/4s of HoT uptime. This is of low value.    
     
-    bonus_stats.hps = (((hotIncrease + extraHoT) * essenceFontCPM * 14 * (1 - expectedOverhealing))+risingMistDirect+additionalGusts) / 60;
+    //bonus_stats.hps = (((hotIncrease + extraHoT) * essenceFontCPM * 14 * (1 - expectedOverhealing))+risingMistDirect+additionalGusts) / 60;
+    bonus_stats.hps = 0;
   }
   else if (effectName === "Mistweaver T28-4") {
     // Mistweaver Monk Sepulcher tier set 2pc
@@ -40,7 +41,8 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
     const avgEvents = 90 * player.getStatPerc("Haste"); // Average number of healing events in a 4pc window.
     const covMulti = {"night_fae": 1, "venthyr": 1, "necrolord": 1, "kyrian": 1}; // The average multiplier to the 4pc window for the chosen covenant. This is a combination of logs and spell sequencing. 
 
-    bonus_stats.hps = singleEvent * avgEvents * covMulti[player.getCovenant()] / 60
+    //bonus_stats.hps = singleEvent * avgEvents * covMulti[player.getCovenant()] / 60
+    bonus_stats.hps = 0;
   }
 
   else if (effectName === "Ancient Teachings of the Monastery") {

@@ -62,6 +62,9 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
         case "Restoration Druid":
           bonus_stats = getDruidSpecEffect(effectName, player, contentType);
           break;
+        case "Preservation Evoker":
+          bonus_stats = getDruidSpecEffect(effectName, player, contentType);
+          break;
         case "Holy Priest":
           bonus_stats = getHolyPriestSpecEffect(effectName, player, contentType);
           break;
