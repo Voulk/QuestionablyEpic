@@ -85,11 +85,32 @@ export const EVOKERSPELLDB = {
         castTime: [1, 1.75, 2.5, 3.25],
         empowered: true,
         cost: 4.5,
-        coeff: [1.85 * 2, 1.85 * 2.25, 1.85 * 2.5, 1.85 * 2.75],
-        cooldown: [25, 20, 15, 10],
+        coeff: 0.768,
+        cooldown: 30,
         expectedOverheal: 0.25, // 0.25
         targets: 5, // 
         secondaries: ['crit', 'vers', 'mastery']
+    },
+    {  
+        // This is the second portion of Dream Breath. It's effectively a roll up of the HoT portion depending on empower rank.
+        // This makes it a bit unique since it's a direct heal that scales with Haste.
+        type: "heal",
+        coeff: [0, 0.768, 1.536, 2.304],
+        expectedOverheal: 0.25, // 0.25
+        targets: 5, // 
+        secondaries: ['haste', 'crit', 'vers', 'mastery']
+    },
+    {  
+        // Dream Breath heals for more per charge tier and also has a lower cooldown.
+        name: "Dream Breath",
+        type: "buff",
+        buffType: "heal",
+        buffDuration: [16, 12, 8, 4],
+        tickRate: 2,
+        coeff: 0.384, 
+        targets: 5, 
+        expectedOverheal: 0.4,
+        secondaries: ['crit', 'vers', 'mastery'] // Note that Haste for HoTs is included via reduced tick rate so doesn't need to be explicitly included.
     }],
     "Emerald Blossom": [{
         // Instant, 3 Essence cost, heals 3 targets after a 2s delay.
@@ -282,7 +303,7 @@ export const evokerTalents = {
     lifeforceMender: {points: 0, maxPoints: 3, icon: "ability_evoker_dragonrage2", id: 376179, select: true, tier: 2}, // Living Flame and Fire Breath deal extra damage & healing equal to 1% of your maximum health (3 points).
     timeLord: {points: 2, maxPoints: 2, icon: "ability_evoker_innatemagic4", id: 372527, select: true, tier: 2}, // Echo replicates an additional 25/50% healing (2 points).
     nozdormusTeachings: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 2}, // Temporal Anomaly shields one additional target.
-    temporalDisruption: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 2}, // Temporal Anomaly adds an Echo to allies hit.
+    resonatingSphere: {points: 0, maxPoints: 1, icon: "ability_evoker_bronze_01", id: 376236, select: true, tier: 2}, // Temporal Anomaly adds an Echo to allies hit.
     lifebind: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 2}, // Rescue binds you to your ally, causing any healing either partner receives to splash for 40% on the other.
     callOfYsera: {points: 0, maxPoints: 1, icon: "4096390", id: 373835, select: true, tier: 2}, // Rescue increases the effectiveness of your next Dream Breath by 40% or Living Flame by 100%.
     

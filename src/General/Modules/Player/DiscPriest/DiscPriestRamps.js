@@ -22,9 +22,10 @@ const DISCCONSTANTS = {
     auraDamageBuff: 0.94,
     
     enemyTargets: 1, 
-    sins: {0: 1, 1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1}
-
-}
+    sins: {0: 1.3, 1: 1.3, 2: 1.3, 3: 1.3, 4: 1.3, 5: 1.3, 6: 1.26, 7: 1.22, 8: 1.18, 9: 1.15, 10: 1.12,
+            11: 1.09, 12: 1.07, 13: 1.05, 14: 1.04, 15: 1.03, 16: 1.025, 17: 1.02, 18: 1.015, 19: 1.0125, 20: 1.01},
+    shieldDisciplineEfficiency: 0.8,
+}   
 
 /**
  * This function handles all of our effects that might change our spell database before the ramps begin.
@@ -88,9 +89,9 @@ const DISCCONSTANTS = {
             extension: 0.7,
     })
     }
-    if (talents.maliciousIntent) discSpells['Schism'][1].buffDuration += 3;
-
-
+    if (talents.maliciousIntent) discSpells['Schism'][1].buffDuration += 6;
+    if (talents.enduringLuminescence) discSpells['Power Word: Radiance'][0].atonement *= 1.1;
+    if (talents.shieldDiscipline) discSpells['Power Word: Shield'][0].cost -= (0.5 * DISCCONSTANTS.shieldDisciplineEfficiency);
 
     // Tier 2 talents
     if (talents.revelInPurity) {
@@ -98,7 +99,7 @@ const DISCCONSTANTS = {
         discSpells['Purge the Wicked'][1].coeff *= (1 + 0.05 * talents.revelInPurity);
     }
     if (talents.exaltation) {
-        discSpells['Rapture'][1].buffDuration += 3;
+        discSpells['Rapture'][1].buffDuration += 5;
     }
     if (talents.painAndSuffering) {
         // ASSUMPTION: Throes of Pain should work on both DoTs but let's double check anyway.
@@ -117,7 +118,7 @@ const DISCCONSTANTS = {
         })
 
     }
-    if (talents.indemnity) discSpells['Power Word: Shield'][0].atonement += 3;
+    if (talents.indemnity) discSpells['Power Word: Shield'][0].atonement += 2;
     if (talents.castigation) {
         discSpells['Penance'][0].bolts += 1;
         discSpells['DefPenance'][0].bolts += 1;
@@ -127,7 +128,7 @@ const DISCCONSTANTS = {
             type: "function",
             runFunc: function (state, atonementApp) {
                 const atonementCount = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
-                const spell = {type: "heal", coeff: 0.144 * talents.contrition, overheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], targets: atonementCount}
+                const spell = {type: "heal", coeff: 0.0936 * talents.contrition, overheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], targets: atonementCount}
                 runHeal(state, spell, "Contrition");
             }
         })
@@ -140,12 +141,8 @@ const DISCCONSTANTS = {
     }
     if (talents.divineAegis) {
         // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
-        stats.critMult *= (1 + 0.15 * talents.divineAegis);
+        stats.critMult *= (1 + 0.1 * talents.divineAegis);
 
-    }
-    if (talents.sinsOfTheMany) {
-        DISCCONSTANTS.sins = {0: 1.12, 1: 1.12, 2: 1.1, 3: 1.08, 4: 1.07, 5: 1.06, 6: 1.05, 7: 1.05, 8: 1.04, 9: 1.04, 10: 1.03};
-        // TODO: add 1 point
     }
     if (talents.wrathUnleashed) {
         discSpells["Light's Wrath"][0].castTime -= 1;
@@ -154,7 +151,7 @@ const DISCCONSTANTS = {
             type: "buff",
             name: "Wrath Unleashed",
             buffType: 'special',
-            value: 1.4, // This is equal to 45% crit, though the stats are applied post DR. 
+            value: 1.4, //
             buffDuration: 15,
         })
         // TODO: Add Smite buff
@@ -199,11 +196,31 @@ const DISCCONSTANTS = {
     if (talents.inescapableTorment) {
         // TODO: Add two spell components, an AoE damage spell and a Shadowfiend / Mindbender duration increase function spell component.
     }
+    if (talents.crystallineReflection) {
+        discSpells["Power Word: Shield"].push({
+            name: "Crystalline Reflection",
+            type: "heal",
+            coeff: 0.42,
+            secondaries: ['crit', 'vers', 'mastery'],
+            overheal: 0.6,
+        })
+        discSpells["Rapture"].push({
+            name: "Crystalline Reflection",
+            type: "heal",
+            coeff: 0.42,
+            secondaries: ['crit', 'vers', 'mastery'],
+            overheal: 0.6,
+        })
+    }
     if (talents.aegisOfWrath) {
-        discSpells["Power Word: Shield"][0].coeff *= 1.5 * (1 - discSettings.aegisOfWrathWastage);
+        discSpells["Power Word: Shield"][0].coeff *= 1.3 * (1 - discSettings.aegisOfWrathWastage);
     }
     if (talents.makeAmends) {
         // We can kind of model this, but benefit isn't really going to be concentrated on ramps.
+    }
+    if (talents.shatteredPerceptions) {
+        discSpells['Mindgames'][0].coeff *= 1.25;
+        discSpells['Mindgames'][1].coeff *= 1.25;
     }
     if (talents.wealAndWoe) {
         // Penance bolts increase the damage of Smite by 8% per stack, or Power Word: Shield by 3% per stack.
@@ -211,13 +228,33 @@ const DISCCONSTANTS = {
             type: "buff",
             name: "Weal & Woe",
             buffType: 'special',
-            value: 1.08, // This is equal to 45% crit, though the stats are applied post DR. 
+            value: 1.12, // This is equal to 45% crit, though the stats are applied post DR. 
             buffDuration: 15,
             canStack: true,
             stacks: 1,
             maxStacks: 7,
         })
     }
+
+    // Tier 4 talents
+    if (talents.improvedFlashHeal) discSpells["Flash Heal"][0].coeff *= 1.15;
+    if (talents.bindingHeals) {
+        discSpells["Flash Heal"].push({
+            type: "heal",
+            coeff: discSpells["Flash Heal"][0].coeff * 0.2,
+            atonement: 15,
+            atonementPos: 'end',
+            targets: 1,
+            secondaries: ['crit', 'vers'],
+            overheal: 0.5,
+        })
+    }
+
+    // Settings
+    if (settings.execute === "Always") discSpells["Shadow Word: Death"][0].coeff *= 2.5
+    else if (settings.execute === "20% of the time") discSpells["Shadow Word: Death"][0].coeff *= (2.5 * 0.2 + 0.8);
+        
+    
 
 
     // ==== Legendaries ====
@@ -299,7 +336,19 @@ const DISCCONSTANTS = {
         if (!spell.targets) spell.targets = 1;
         if (spell.cooldown) spell.activeCooldown = 0;
         if (spell.cost) spell.cost = spell.cost * DISCCONSTANTS.baseMana / 100;
+
+        if (settings.includeOverheal === "No") {
+            value.forEach(spellSlice => {
+                if ('overheal' in spellSlice) spellSlice.overheal = 0;
+                if ('atoneOverheal' in spellSlice) spellSlice.atoneOverheal = 0;
+            })
+
+        }
     }
+
+    // Set Rapture to Power Word: Shield.
+    // That way anything that buffs PW:S will also buff Rapture.
+    discSpells['Rapture'][0] = {...discSpells['Power Word: Shield'][0]};
 
     return discSpells;
 }
@@ -326,10 +375,10 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
     let schism = 1;
 
     if (spellName !== "Mindbender" && spellName !== "Shadowfiend") {
-        schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.25 : 1; 
+        schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.15 : 1; 
     }
     
-    let mult = (activeAtones > 10 ? sins['10'] : sins[activeAtones]) * schism
+    let mult =  schism //* sins[activeAtones];
     //console.log("Spell: " + spellName + ". Mult: " + mult);
     if (discSettings.chaosBrand) mult = mult * 1.05;
     if (spellName === "PenanceTick") {
@@ -346,7 +395,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
             state.activeBuffs = removeBuffStack(state.activeBuffs, "Swift Penitence")
         }
     }
-    else if (spellName === "Light's Wrath") mult *= (1 + (0.1 + talents.resplendentLight * 0.02) * activeAtones);
+    else if (spellName === "Light's Wrath") mult *= (1 + (0.06 + talents.resplendentLight * 0.02) * activeAtones);
 
     if (checkBuffActive(buffs, "Twilight Equilibrium - Shadow") && "school" in spell && spell.school === "shadow" && !spellName.includes("dot")) {
         mult *= 1.15;
@@ -379,7 +428,7 @@ const penanceCleanup = (state) => {
 const getHealingMult = (state, buffs, t, spellName, talents) => {
     let mult = DISCCONSTANTS.auraHealingBuff;
     if (spellName === "Power Word: Shield" && checkBuffActive(buffs, "Rapture")) {
-        mult *= 1.3;
+        mult *= 1.4;
     }
     if (spellName === "DefPenanceTick") {
 
@@ -424,8 +473,8 @@ const getActiveAtone = (atoneApp, timer) => {
 // Diminishing returns are taken care of in the getCurrentStats function and so the number passed 
 // to this function can be considered post-DR.
 const getAtoneTrans = (mastery) => {
-    const atonementBaseTransfer = 0.5;
-    return atonementBaseTransfer * (1.108 + mastery / 25.9259 / 100);
+    const atonementBaseTransfer = 0.4;
+    return atonementBaseTransfer * (1.108 + mastery / 180 * DISCCONSTANTS.masteryMod / 100);
 }
 
 const getSqrt = (targets) => {
@@ -452,8 +501,22 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
         let base = `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.overheal * 100}%`;
         if (targetMult > 1) base += `, ${targetMult} targets`;
         if (spell.atonement) base += `, +${spell.atonement}s atone`;
-        if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.overheal * 100}%)`)
+        base += ")";
+        //if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.overheal * 100}%)`)
         addReport(state, base);
+    }
+
+    if ((spell.name === "Power Word: Shield" || spell.name === "Rapture") && state.talents.crystallineReflection) {
+        const reflection = {
+            type: "damage",
+            coeff: 0,
+            atoneOverheal: 0,
+            school: "holy",
+            secondaries: ['crit', 'vers'],
+            flatDamage: getSpellRaw(spell, currentStats, DISCCONSTANTS) * healingMult * 0.1 * state.talents.crystallineReflection
+        };
+        runDamage(state, reflection, "Crystalline Reflection", []);
+
     }
 }
 
@@ -501,7 +564,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, talents, state, stats);
 
     const seq = [...sequence];
-    const sequenceLength = 45; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 55; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
 

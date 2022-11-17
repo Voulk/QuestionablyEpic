@@ -60,11 +60,11 @@ export default function SequenceSettings(props) {
 
                 return (
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-                        <Tooltip title={t(`Settings.Retail.Setting5Tooltip`)}>
+                        <Tooltip title={""}>
                             <TextField
                                 fullWidth
                                 select
-                                label={t(`Settings.Retail.Setting5Title`)}
+                                label={possibleSettings[key].title}
                                 value={possibleSettings[key].value}
                                 onChange={(e) => props.editSettings(key, e.target.value)}
                             >

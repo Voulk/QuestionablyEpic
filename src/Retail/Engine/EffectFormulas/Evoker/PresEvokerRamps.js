@@ -18,7 +18,7 @@ const EVOKERCONSTANTS = {
     masteryEfficiency: 0.88, 
     baseMana: 10000,
 
-    defaultEmpower: 3,
+    defaultEmpower: 1,
     auraHealingBuff: 0.6, 
     auraDamageBuff: 1.15, 
 
@@ -172,7 +172,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
     // Evoker Spec Talents
     
-    if (talents.renewingBreath) EVOKERCONSTANTS.renewingBreathBuff.mult = (0.15 * talents.renewingBreath);
+    //if (talents.renewingBreath) EVOKERCONSTANTS.renewingBreathBuff.mult = (0.15 * talents.renewingBreath);
     /*
     if (talents.renewingBreath) evokerSpells['Dream Breath'].push({
         type: "buff",
@@ -243,22 +243,28 @@ const triggerCycleOfLife = (state, rawHealing) => {
     
 
     // Setup mana costs & cooldowns.
-    for (const [key, value] of Object.entries(evokerSpells)) {
-        let spell = value[0];
 
-        if (spell.empowered) {
-            
-            spell.castTime = spell.castTime[EVOKERCONSTANTS.defaultEmpower]
-            if (spell.targets && typeof spell.targets === "object") spell.targets = spell.targets[EVOKERCONSTANTS.defaultEmpower];
-            if (spell.coeff && typeof spell.coeff === "object") spell.coeff = spell.coeff[EVOKERCONSTANTS.defaultEmpower];
-            if (spell.cooldown && typeof spell.cooldown === "object") spell.cooldown = spell.cooldown[EVOKERCONSTANTS.defaultEmpower];
-            
-            if (key === "Fire Breath") value[1].buffDuration = value[1].buffDuration[EVOKERCONSTANTS.defaultEmpower];
-            //console.log(typeof spell.coeff)
-            
+    for (const [key, value] of Object.entries(evokerSpells)) {
+        const fullSpell = value;
+        const spellInfo = fullSpell[0];
+
+
+        if (fullSpell[0].empowered) {
+            fullSpell[0].castTime = fullSpell[0].castTime[EVOKERCONSTANTS.defaultEmpower]
+            fullSpell.forEach(spell => {
+                
+                if (spell.targets && typeof spell.targets === "object") spell.targets = spell.targets[EVOKERCONSTANTS.defaultEmpower];
+                if (spell.coeff && typeof spell.coeff === "object") spell.coeff = spell.coeff[EVOKERCONSTANTS.defaultEmpower];
+                if (spell.cooldown && typeof spell.cooldown === "object") spell.cooldown = spell.cooldown[EVOKERCONSTANTS.defaultEmpower];
+                if (spell.buffDuration && typeof spell.buffDuration === "object") spell.buffDuration = spell.buffDuration[EVOKERCONSTANTS.defaultEmpower];
+                //if (key === "Fire Breath") value[1].buffDuration = value[1].buffDuration[EVOKERCONSTANTS.defaultEmpower];
+                //console.log(typeof spell.coeff)
+                
+            }) 
+            console.log(fullSpell);
         }
 
-        if ('school' in spell && spell.school === "bronze" && talents.temporalCompression) {
+        if ('school' in spellInfo && spellInfo.school === "bronze" && talents.temporalCompression) {
             evokerSpells[key].push({
                 name: "Temporal Compression",
                 type: "buff",
@@ -270,11 +276,11 @@ const triggerCycleOfLife = (state, rawHealing) => {
                 buffType: 'special',
             })
         }
-        if ('school' in spell && spell.school === "green" && talents.lushGrowth) spell.coeff *= (1 + 0.05 * talents.lushGrowth);
+        if ('school' in spellInfo && spellInfo.school === "green" && talents.lushGrowth) spellInfo.coeff *= (1 + 0.05 * talents.lushGrowth);
 
-        if (!spell.targets) spell.targets = 1;
-        if (spell.cooldown) spell.activeCooldown = 0;
-        if (spell.cost) spell.cost = spell.cost * EVOKERCONSTANTS.baseMana / 100;
+        if (!spellInfo.targets) spellInfo.targets = 1;
+        if (spellInfo.cooldown) spellInfo.activeCooldown = 0;
+        if (spellInfo.cost) spellInfo.cost = spellInfo.cost * EVOKERCONSTANTS.baseMana / 100;
     }
     
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
@@ -359,7 +365,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
     else addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
 
-
+    /* Defunct with the in-game Dream Breath rework.
     if (spellName === "Dream Breath" && state.talents.renewingBreath) {
         // Handle Renewing Breath.
         // These could possibly be pushed into a "Spell Cleanup" section.
@@ -369,8 +375,8 @@ export const runHeal = (state, spell, spellName, compile = true) => {
             tickRate: renewingHoT.tickRate, hasted: false, canPartialTick: renewingHoT.canPartialTick, next: state.t + renewingHoT.tickRate}
         buff['expiration'] = state.t + renewingHoT.buffDuration;
         state.activeBuffs.push(buff);
- 
-    }
+
+    } */
 
     return healingVal;
 }
@@ -574,12 +580,13 @@ const getSpellCastTime = (spell, state, currentStats) => {
                 if (buffStacks === 4) triggerTemporal(state);
             }
 
-            return castTime / getHaste(currentStats); // Empowered spells do scale with haste.
-
+            castTime = castTime / getHaste(currentStats); // Empowered spells do scale with haste.
         } 
 
-        else if (castTime === 0 && spell.onGCD === true) return 0; //return 1.5 / getHaste(currentStats);
-        else return castTime / getHaste(currentStats);
+        else if (castTime === 0 && spell.onGCD === true) castTime = 0; //return 1.5 / getHaste(currentStats);
+        else castTime = castTime / getHaste(currentStats);
+
+        return castTime;
     }
     else console.log("CAST TIME ERROR. Spell: " + spellName);
 }
@@ -733,10 +740,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             const fullSpell = evokerSpells[queuedSpell];
             const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
             spellFinish = state.t + castTime - 0.01;
-            if (fullSpell[0].castTime = 0) nextSpell += state.t + 1.5 / getHaste(currentStats);
-            else nextSpell += state.t + castTime;
+            if (fullSpell[0].castTime === 0) nextSpell += state.t + 1.5 / getHaste(currentStats);
+            else nextSpell = state.t + castTime;
 
-            console.log("Queing " + queuedSpell + ". Next: " + nextSpell + ".Curr: " + state.t);
+            console.log("Queing " + queuedSpell + ". Next: " + nextSpell + ".Curr: " + state.t + ". Cast Time: " + castTime + " Spell Finish: " + spellFinish);
             
 
         }
