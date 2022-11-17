@@ -3,7 +3,7 @@
 import { getTrinketEffect, getDiminishedValue } from "./TrinketEffectFormulas";
 import { userSettings } from "General/Modules/Settings/SettingsObject";
 import Player from "General/Modules/Player/Player";
-import { trinket_data} from "./TrinketData";
+import { trinket_data} from "./ShadowlandsTrinketData";
 import each from "jest-each";
 
 describe("Test Trinket Stat DR", () => {
