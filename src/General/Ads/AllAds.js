@@ -1,7 +1,7 @@
 
 
 export const loadBannerAd = (patronStatus) => {
-    if (process.env.NODE_ENV !== "development" && (patronStatus === "Basic" || patronStatus === "Standard")) {
+    if (/*process.env.NODE_ENV !== "development" && */(patronStatus === "Basic" || patronStatus === "Standard")) {
         console.log("Loading ad");
         window['nitroAds'].createAd('banner2', {
             "refreshLimit": 10,
@@ -22,4 +22,29 @@ export const loadBannerAd = (patronStatus) => {
           });
     }
 
+}
+
+export const loadBottomBannerAd = (patronStatus) => {
+    if (process.env.NODE_ENV !== "development" && (patronStatus === "Basic" || patronStatus === "Standard")) {
+        console.log("Loading ad2");
+        window['nitroAds'].createAd('qelivead2', {
+            "refreshLimit": 10,
+            "refreshTime": 90,
+            "renderVisibleOnly": true,
+            "refreshVisibleOnly": true,
+            "sizes": [
+              [
+                "728",
+                "90"
+              ]
+            ],
+            "report": {
+              "enabled": true,
+              "icon": true,
+              "wording": "Report Ad",
+              "position": "bottom-right"
+            },
+            "mediaQuery": "(min-width: 320px) and (max-width: 767px)"
+          });
+    }
 }

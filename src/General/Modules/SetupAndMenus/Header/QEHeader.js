@@ -57,6 +57,7 @@ export default function QEHeader(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const gameType = useSelector((state) => state.gameType);
+  //const patronStatus = useSelector((state) => state.patronStatus);
 
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
