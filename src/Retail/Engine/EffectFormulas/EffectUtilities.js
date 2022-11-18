@@ -17,7 +17,7 @@ export function getDiminishedValue(statID, procValue, baseStat) {
 
 // A lot of trinkets in the game are very generic PPM stat trinkets. These all use effectively the same formula.
 export function runGenericPPMTrinket(effect, itemLevel) {
-    const value = processedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+    const value = processedValue(effect, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
     return value;
 }
 

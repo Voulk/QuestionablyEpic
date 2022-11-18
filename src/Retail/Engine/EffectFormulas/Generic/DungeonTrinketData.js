@@ -244,6 +244,7 @@ export const dungeonTrinketData = [
       const effectiveCrit = processedValue(data[0], itemLevel) + critPerStack * (data[1].ppm * (data[0].duration / 60))
 
       bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown; // TODO: Add CD Mult.
+
       return bonus_stats;
     }
   },
@@ -270,7 +271,7 @@ export const dungeonTrinketData = [
       bonus_stats.crit = averageStatGain / 4;
       bonus_stats.mastery = averageStatGain / 4;
       bonus_stats.versatility = averageStatGain / 4;
-      
+
       return bonus_stats;
     }
   },

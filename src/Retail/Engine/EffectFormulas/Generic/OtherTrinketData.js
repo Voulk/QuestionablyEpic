@@ -41,7 +41,10 @@ export const otherTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel, 1, "round");
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
+
+      // TODO: Add potion.
+
       return bonus_stats;
     }
   },

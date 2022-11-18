@@ -68,7 +68,7 @@ export const raidTrinketData = [
       bonus_stats.dps = processedValue(data[0], itemLevel, data[0].percentUsed) * player.getStatMults(data[0].secondaries) / data[0].cooldown;
 
       // Mana Portion
-      bonus_stats.mana = processedValue(data[1], itemLevel, data[1].percentUsed) * data[1].cooldown;
+      bonus_stats.mana = processedValue(data[1], itemLevel, data[1].percentUsed) / data[1].cooldown;
 
       return bonus_stats;
     }
@@ -103,6 +103,8 @@ export const raidTrinketData = [
 
       // Ally buff
       let sharedBuff = runGenericPPMTrinket(data[1], itemLevel);
+      bonus_stats.crit = sharedBuff;
+      bonus_stats.versatility = sharedBuff;
       // Check if buffs are active and if they are, add them to bonus stats.
       //if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = versatilityBuff;
 
