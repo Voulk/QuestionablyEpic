@@ -33,7 +33,6 @@ class PlayerChars {
           let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights);
           if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
           if (player.spec === "Discipline Priest") newChar.getActiveModel("Raid").setRampInfo(newChar.activeStats, [])
-          if (player.renown > 0) newChar.updateRenownLevel(player.renown);
           newChar.setPlayerAvatars();
           charArray.push(newChar);
         }
