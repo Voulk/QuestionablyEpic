@@ -193,7 +193,11 @@ export default function TopGear(props) {
       const strippedPlayer = JSON.parse(JSON.stringify(props.player));
       const strippedCastModel = JSON.parse(JSON.stringify(props.player.getActiveModel(contentType)));
       if (gameType === "Retail") {
-        const worker = require("workerize-loader!./Engine/TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
+        //const worker = require("workerize-loader!./Engine/TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
+        const worker = new Worker(new URL("./Engine/TopGearEngine.js", import.meta.url), {
+          type: "module",
+         });
+        console.log(worker);
         let instance = new worker();
 
         instance
