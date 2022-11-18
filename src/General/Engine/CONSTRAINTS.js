@@ -10,11 +10,8 @@ export const CONSTRAINTS = {
         minSecondaryWeight: 0,
         maxTertiaryWeight: 2,
         minTertiaryWeight: 0,
-        minRenown: 1,
-        maxRenown: 80
     },
     Classic: {
-
 
     },
     Shared: {

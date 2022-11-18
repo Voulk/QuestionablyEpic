@@ -22,7 +22,6 @@ class Player {
     this.charID = charID;
 
     this.activeItems = [];
-    this.renown = 1;
     this.region = region;
     this.realm = realm;
     this.race = race;
@@ -32,38 +31,21 @@ class Player {
 
     if (gameType === "Retail") {
       this.setupDefaults(specName);
-      this.setDefaultCovenant(specName);
       this.gameType = "Retail";
     }
-    // console.log(this.charImageURL);
-    //if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
 
-    //this.getStatPerc = getStatPerc;
   }
 
   uniqueHash = ""; // used for deletion purposes.
   spec = "";
   charID = 0;
   activeItems = [];
-  renown = 1;
   castModel = {}; // Remove once CastModels is complete.
   castModels = [];
-  covenant = "";
   region = "";
   realm = "";
   race = "";
   talents = [];
-  dominationGemRanks = {
-    "Shard of Bek": 0,
-    "Shard of Jas": 0,
-    "Shard of Rev": 0,
-    "Shard of Cor": 0,
-    "Shard of Tel": 0,
-    "Shard of Kyr": 0,
-    "Shard of Dyz": 0,
-    "Shard of Zed": 0,
-    "Shard of Oth": 0,
-  };
   gameType = ""; // Currently the options are Retail or Burning Crusade.
   activeModelID = { Raid: 0, Dungeon: 1 }; // Currently active Cast Model.
 
@@ -79,15 +61,6 @@ class Player {
     stamina: 1900,
   };
 
-  // Stat weights are normalized around intellect.
-  // Players who don't insert their own stat weights can use the QE defaults.
-  // - Since these change quite often we use a tag. If default = true then their weights will automatically update whenever they open the app.
-  // - If they manually enter weights on the other hand, then this automatic-update won't occur.
-  statWeights = {
-    Raid: {},
-    Dungeon: {},
-    DefaultWeights: true,
-  };
 
   setPlayerAvatars = () => {
     apiGetPlayerImage2(this.region, this.charName, this.realm).then((res) => {
@@ -128,70 +101,11 @@ class Player {
   };
 
   setStatWeights = (newWeights, contentType) => {
-    //this.statWeights[contentType] = newWeights;
     this.getActiveModel(contentType).setStatWeights(newWeights);
   };
 
   getCovenant = () => {
     return this.covenant;
-  };
-
-  setCovenant = (cov) => {
-    let selectedCov = "";
-    if (!cov) selectedCov = "";
-    else selectedCov = cov;
-
-    selectedCov = selectedCov.toLowerCase().replace(/"/g, "");
-    if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(selectedCov)) this.covenant = selectedCov;
-    else {
-      this.setDefaultCovenant(this.spec);
-      //reportError(this, "Player", "Invalid Covenant Supplied", selectedCov);
-    }
-  };
-
-  getDominationRanks = () => {
-    return this.dominationGemRanks;
-  };
-
-  getOwnedDominationShards = () => {
-    let shardsArray = [];
-    for (const [key, value] of Object.entries(this.dominationGemRanks)) {
-      if (value >= 0) shardsArray.push(key);
-    }
-    return shardsArray;
-  };
-
-  getDominationSingleRank = (gem) => {
-    return this.dominationGemRanks[gem];
-  };
-
-  getDominationSetRank = (color) => {
-    let setRank = 0;
-    if (color === "Unholy") setRank = Math.min(this.dominationGemRanks["Shard of Dyz"], this.dominationGemRanks["Shard of Oth"], this.dominationGemRanks["Shard of Zed"]);
-    else if (color === "Blood") setRank = Math.min(this.dominationGemRanks["Shard of Jas"], this.dominationGemRanks["Shard of Rev"], this.dominationGemRanks["Shard of Bek"]);
-    else if (color === "Frost") setRank = Math.min(this.dominationGemRanks["Shard of Tel"], this.dominationGemRanks["Shard of Cor"], this.dominationGemRanks["Shard of Kyr"]);
-
-    return Math.max(0, setRank);
-  };
-
-  setDominationRanks = (newRanks) => {
-    this.dominationGemRanks = newRanks;
-  };
-
-  setDefaultCovenant = (spec) => {
-    if (spec === "Holy Paladin") this.covenant = "venthyr";
-    else if (spec === "Restoration Druid") this.covenant = "night_fae";
-    else if (spec === "Preservation Evoker") this.covenant = "night_fae";
-    else if (spec === "Restoration Shaman") this.covenant = "necrolord";
-    else if (spec === "Mistweaver Monk") this.covenant = "venthyr";
-    else if (spec === "Discipline Priest") this.covenant = "kyrian";
-    else if (spec === "Holy Priest") this.covenant = "night_fae";
-    // This one is very flexible, but is also not used in any current formulas. It will be replaced when the models are updated.
-    else {
-      reportError(this, "Player", "Invalid Covenant Supplied", spec);
-      this.covenant = "night_fae";
-      //throw new Error("Invalid Spec Supplied to Cov Default");
-    }
   };
 
   // Used for the purpose of maximising stuff like ring enchants and gems.
@@ -284,6 +198,7 @@ class Player {
     });
     this.activeItems = tempArray;
   };
+
   activateItem = (unique) => {
     let tempArray = this.activeItems.filter(function (item) {
       if (item.uniqueHash === unique) item.active = !item.active;
@@ -376,7 +291,7 @@ class Player {
     return Math.round(statPerc * 10000) / 10000;
   };
 
-  // Returns a stat multiplier. This function is really bad and needs to be rewritten.
+ 
   /**
    * @deprecated
    * Use getStatMults now instead. It's much cleaner. This is an abomination.
@@ -416,17 +331,6 @@ class Player {
     });
     return mult;
   }
-
-
-  /* ------------------------------------- Update renown level ------------------------------------ */
-  updateRenownLevel = (renownLevel) => {
-    this.renown = Math.max(0, Math.min(renownLevel, 80));
-  };
-
-  /* --------------------------------- Return current renown level -------------------------------- */
-  getRenownLevel = () => {
-    return this.renown;
-  };
 
   getRealmString = () => {
     if (this.realm !== undefined && this.region !== undefined) {
@@ -479,17 +383,7 @@ class Player {
       // Check that it's a valid ID.
       this.activeModelID[contentType] = id;
 
-      // Paladin
-      if (this.spec === "Holy Paladin") {
-        if (this.getActiveModel(contentType).modelName.includes("Venthyr")) this.setCovenant("venthyr");
-        else if (this.getActiveModel(contentType).modelName.includes("Necrolord")) this.setCovenant("necrolord");
-        else if (this.getActiveModel(contentType).modelName.includes("Kyrian")) this.setCovenant("kyrian");
-      } else if (this.spec === "Discipline Priest") {
-        if (this.getActiveModel(contentType).modelName.includes("Venthyr")) this.setCovenant("venthyr");
-        else if (this.getActiveModel(contentType).modelName.includes("Kyrian")) this.setCovenant("kyrian");
-
         this.getActiveModel("Raid").setRampInfo(this.activeStats);
-      }
     } else {
       // This is a critical error that could crash the app so we'll reset models to defaults
       this.activeModelID["Raid"] = 0;

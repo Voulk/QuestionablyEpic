@@ -1,6 +1,6 @@
 
 import Player from "General/Modules/Player/Player";
-import { processItem, processAllLines, runSimC} from "Retail/Engine/SimCImport/SimCImportEngine.js"
+import { processItem, processCurve, processAllLines, runSimC} from "Retail/Engine/SimCImport/SimCImportEngine.js"
 
 const testDruidSet = 
 `
@@ -78,6 +78,22 @@ trinket1=,id=178809,bonus_id=6806/6652/1485/4785
 trinket2=,id=178298,bonus_id=6784/1485/6616
 main_hand=,id=178714,enchant_id=6229,bonus_id=6807/6652/1498/6646
 `
+
+describe("Test Curve IDs", () => {
+    test("Evoker Starting Items", () => {
+        expect(processCurve(30725, 59)).toEqual(229)
+        expect(processCurve(30725, 60)).toEqual(239)
+        expect(processCurve(30726, 59)).toEqual(242) 
+    })
+
+    test("Random Levelling Items", () => {
+        expect(processCurve(16667, 51)).toEqual(139)
+        expect(processCurve(16666, 59)).toEqual(183)
+        
+    });
+    
+    
+})
 
 describe("Test Regular Items", () => {
     const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");

@@ -24,7 +24,7 @@ class Item {
   }
 
   id = 0; // The items ID
-  level = 200; // The items ilvl
+  level = 300; // The items ilvl
   name = ""; // Consider how to store this in a localised form.
   slot = "";
   softScore = 0;
