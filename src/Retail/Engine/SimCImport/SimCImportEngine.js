@@ -2,10 +2,9 @@ import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
 import { curveDB } from "../ItemCurves";
 import { conduitDB, conduitRanks } from "../../../Databases/ConduitDB";
-import { dominationGemDB } from "../../../Databases/DominationGemDB";
 import { calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import Item from "../../../General/Modules/Player/Item";
-import ItemSet from "../../../General/Modules/TopGear/ItemSet";
+
 
 const stat_ids = {
   36: "haste",
