@@ -5,6 +5,8 @@ import { getTranslatedItemName, getItemIcon } from "../../../Engine/ItemUtilitie
 import "./ItemUpgrade.css";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import { encounterDB } from "../../../../Databases/InstanceDB";
+import { getTranslatedPvP } from "locale/pvpLocale";
 
 const useStyles = makeStyles({
   root: {
@@ -49,7 +51,7 @@ export default function ItemCard(props) {
   const itemDifferential = props.itemDifferential;
   const hasDom = item.isTierPiece();
   const gameType = useSelector((state) => state.gameType);
-  const wowheadDomain = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
+  const wowheadDomain = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
 
   /*
   const itemQuality = (itemLevel) => {
@@ -80,31 +82,34 @@ export default function ItemCard(props) {
   const sourceName = (item) => {
     /* ------------------------------ Dungeon Name ------------------------------ */
     if (item.source.instanceId === -1) {
-      return t("DungeonNames." + item.source.encounterId);
+      let dungeons = { ...encounterDB["-1"] };
+      dungeons = Object.assign(dungeons, encounterDB[123]);
+
+      return dungeons[item.source.encounterId].name[currentLanguage];
     } else if (item.source.instanceId === 1194) {
-      return t("BossNames.Tazavesh." + item.source.encounterId) + " (Tazavesh)";
+      return encounterDB[1194][item.source.encounterId].name[currentLanguage] + " (Tazavesh)";
     }
     /* ----------------------------- Raid Boss Name ----------------------------- */
     if (item.source.instanceId === 1190 && item.source.encounterId > 0) {
-      return t("BossNames." + item.source.encounterId);
+      return encounterDB[1190].bosses[item.source.encounterId].name[currentLanguage];
     }
     if (item.source.instanceId === 1193 && item.source.encounterId > 0) {
-      return t("BossNames." + item.source.encounterId);
+      return encounterDB[1193].bosses[item.source.encounterId].name[currentLanguage];
     }
     if (item.source.instanceId === 1195 && item.source.encounterId > 0) {
-      return t("BossNames." + item.source.encounterId);
+      return encounterDB[1195].bosses[item.source.encounterId].name[currentLanguage];
     }
-    /* -------------------------- BC Bosses ---------------------- */
+    /* -------------------------- Classic Bosses ---------------------- */
     if ([745, 746].includes(item.source.instanceId)) {
-      return t("BossNames." + item.source.encounterId);
+      return encounterDB[item.source.instanceId].bosses[item.source.encounterId].name[currentLanguage];
     }
     /* ------------------------------ World Bosses ------------------------------ */
     if (item.source.instanceId === 1192 && item.source.encounterId > 0) {
-      return t("WorldBosses." + item.source.encounterId);
+      return encounterDB[1192][item.source.encounterId].name[currentLanguage];
     }
     /* ---------------------------------- Honor --------------------------------- */
     if (item.source.instanceId === -16 || item.source.encounterId === -16) {
-      return t("PvPCurrency.-16");
+      return getTranslatedPvP("-16", currentLanguage);
     }
     /* ----------------------- Creation Catalyst --------------------------------- */
     if (item.source.instanceId === -22) {
@@ -112,7 +117,7 @@ export default function ItemCard(props) {
     }
     /* -------------------------------- Conquest -------------------------------- */
     if (item.source.instanceId === -17 || item.source.encounterId === -17) {
-      return t("PvPCurrency.-17");
+      return getTranslatedPvP("-17", currentLanguage);
     }
     /* -------------------------------- TBC Badge Gear -------------------------------- */
     if (item.source.instanceId === -4) {
@@ -131,7 +136,7 @@ export default function ItemCard(props) {
                 display: "inline-flex",
               }}
             >
-              <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level +  "?bonus=" + item.bonusIDS + "&domain=" + wowheadDomain}>
+              <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "?bonus=" + item.bonusIDS + "&domain=" + wowheadDomain}>
                 <div className="container-ItemCards" style={{ height: props.slotPanel ? 44 : 30 }}>
                   <img
                     alt="img"

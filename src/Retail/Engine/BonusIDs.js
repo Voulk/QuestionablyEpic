@@ -1,4 +1,3 @@
-
 export const bonus_IDs = {
   "1": {
     "id": 1,
@@ -27,8 +26,7 @@ export const bonus_IDs = {
       }
     ],
     "stats": "100% StrAgiInt [0.5263]",
-    "name": "of Power",
-    "socket": 2
+    "name": "of Power"
   },
   "15": {
     "id": 15,
@@ -7466,8 +7464,7 @@ export const bonus_IDs = {
   "497": {
     "id": 497,
     "name": "of the Merciless",
-    "level": 50,
-    "socket": 1
+    "level": 50
   },
   "498": {
     "id": 498,
@@ -7767,12 +7764,12 @@ export const bonus_IDs = {
   },
   "582": {
     "id": 582,
-    "ilevel": "2 @plvl 1 - 146 @plvl 146",
+    "ilevel": "14 @plvl 1 - 187 @plvl 187",
     "curveId": 956
   },
   "583": {
     "id": 583,
-    "ilevel": "2 @plvl 1 - 146 @plvl 146",
+    "ilevel": "14 @plvl 1 - 187 @plvl 187",
     "curveId": 956
   },
   "584": {
@@ -8260,159 +8257,11 @@ export const bonus_IDs = {
     "id": 710,
     "level": 14
   },
-  "715": {
-    "id": 715,
-    "socket": 1
-  },
-  "716": {
-    "id": 716,
-    "socket": 1
-  },
-  "717": {
-    "id": 717,
-    "socket": 1
-  },
-  "718": {
-    "id": 718,
-    "socket": 1
-  },
-  "719": {
-    "id": 719,
-    "socket": 1
-  },
   "720": {
     "id": 720,
     "ilevel": "39 @plvl 32 - 50 @plvl 50",
     "curveId": 1759,
     "quality": 4
-  },
-  "721": {
-    "id": 721,
-    "socket": 1
-  },
-  "722": {
-    "id": 722,
-    "socket": 1
-  },
-  "723": {
-    "id": 723,
-    "socket": 1
-  },
-  "724": {
-    "id": 724,
-    "socket": 1
-  },
-  "725": {
-    "id": 725,
-    "socket": 1
-  },
-  "726": {
-    "id": 726,
-    "socket": 1
-  },
-  "727": {
-    "id": 727,
-    "socket": 1
-  },
-  "728": {
-    "id": 728,
-    "socket": 1
-  },
-  "729": {
-    "id": 729,
-    "socket": 1
-  },
-  "730": {
-    "id": 730,
-    "socket": 1
-  },
-  "731": {
-    "id": 731,
-    "socket": 1
-  },
-  "732": {
-    "id": 732,
-    "socket": 1
-  },
-  "733": {
-    "id": 733,
-    "socket": 1
-  },
-  "734": {
-    "id": 734,
-    "socket": 1
-  },
-  "735": {
-    "id": 735,
-    "socket": 1
-  },
-  "736": {
-    "id": 736,
-    "socket": 1
-  },
-  "737": {
-    "id": 737,
-    "socket": 1
-  },
-  "738": {
-    "id": 738,
-    "socket": 1
-  },
-  "739": {
-    "id": 739,
-    "socket": 1
-  },
-  "740": {
-    "id": 740,
-    "socket": 1
-  },
-  "741": {
-    "id": 741,
-    "socket": 1
-  },
-  "742": {
-    "id": 742,
-    "socket": 1
-  },
-  "743": {
-    "id": 743,
-    "socket": 1
-  },
-  "744": {
-    "id": 744,
-    "socket": 1
-  },
-  "745": {
-    "id": 745,
-    "socket": 1
-  },
-  "746": {
-    "id": 746,
-    "socket": 1
-  },
-  "747": {
-    "id": 747,
-    "socket": 1
-  },
-  "748": {
-    "id": 748,
-    "socket": 1
-  },
-  "749": {
-    "id": 749,
-    "socket": 1
-  },
-  "750": {
-    "id": 750,
-    "socket": 1
-  },
-  "751": {
-    "id": 751,
-    "socket": 1
-  },
-  "752": {
-    "id": 752,
-    "socket": 1
   },
   "754": {
     "id": 754,
@@ -10479,18 +10328,18 @@ export const bonus_IDs = {
   },
   "1723": {
     "id": 1723,
-    "ilevel": "3 @plvl 1 - 138 @plvl 138",
+    "ilevel": "5 @plvl 1 - 340 @plvl 340",
     "curveId": 1746
   },
   "1724": {
     "id": 1724,
-    "ilevel": "6 @plvl 1 - 146 @plvl 146",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 1748,
     "quality": 3
   },
   "1725": {
     "id": 1725,
-    "ilevel": "11 @plvl 1 - 158 @plvl 158",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 1749,
     "quality": 4
   },
@@ -11387,7 +11236,7 @@ export const bonus_IDs = {
   "1795": {
     "id": 1795,
     "quality": 3,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "1796": {
@@ -14991,7 +14840,7 @@ export const bonus_IDs = {
   },
   "3578": {
     "id": 3578,
-    "ilevel": "5 @plvl 1 - 144 @plvl 144",
+    "ilevel": "1 @plvl 1 - 327 @plvl 327",
     "curveId": 3039
   },
   "3579": {
@@ -15061,7 +14910,7 @@ export const bonus_IDs = {
   },
   "3592": {
     "id": 3592,
-    "ilevel": "2 @plvl 1 - 146 @plvl 146",
+    "ilevel": "14 @plvl 1 - 187 @plvl 187",
     "curveId": 956
   },
   "3593": {
@@ -15165,17 +15014,17 @@ export const bonus_IDs = {
   },
   "3615": {
     "id": 3615,
-    "ilevel": "3 @plvl 1 - 147 @plvl 147",
+    "ilevel": "15 @plvl 1 - 188 @plvl 188",
     "curveId": 959
   },
   "3616": {
     "id": 3616,
-    "ilevel": "5 @plvl 1 - 149 @plvl 149",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 961
   },
   "3617": {
     "id": 3617,
-    "ilevel": "4 @plvl 1 - 148 @plvl 148",
+    "ilevel": "16 @plvl 1 - 189 @plvl 189",
     "curveId": 960
   },
   "3618": {
@@ -15272,732 +15121,732 @@ export const bonus_IDs = {
   },
   "3631": {
     "id": 3631,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3632": {
     "id": 3632,
-    "ilevel": "5 @plvl 1 - 144 @plvl 144",
+    "ilevel": "1 @plvl 1 - 327 @plvl 327",
     "curveId": 3039
   },
   "3633": {
     "id": 3633,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3634": {
     "id": 3634,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3635": {
     "id": 3635,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3636": {
     "id": 3636,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3637": {
     "id": 3637,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3638": {
     "id": 3638,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3639": {
     "id": 3639,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3640": {
     "id": 3640,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3641": {
     "id": 3641,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3642": {
     "id": 3642,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3643": {
     "id": 3643,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3644": {
     "id": 3644,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3645": {
     "id": 3645,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3646": {
     "id": 3646,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3647": {
     "id": 3647,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3648": {
     "id": 3648,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3649": {
     "id": 3649,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3650": {
     "id": 3650,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3651": {
     "id": 3651,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3652": {
     "id": 3652,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3653": {
     "id": 3653,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3654": {
     "id": 3654,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3655": {
     "id": 3655,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3656": {
     "id": 3656,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3657": {
     "id": 3657,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3658": {
     "id": 3658,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3659": {
     "id": 3659,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3660": {
     "id": 3660,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3661": {
     "id": 3661,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3662": {
     "id": 3662,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3663": {
     "id": 3663,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3664": {
     "id": 3664,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3665": {
     "id": 3665,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3666": {
     "id": 3666,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3667": {
     "id": 3667,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3668": {
     "id": 3668,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3669": {
     "id": 3669,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3670": {
     "id": 3670,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3671": {
     "id": 3671,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3672": {
     "id": 3672,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3673": {
     "id": 3673,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3674": {
     "id": 3674,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3675": {
     "id": 3675,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3676": {
     "id": 3676,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3677": {
     "id": 3677,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3678": {
     "id": 3678,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3679": {
     "id": 3679,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3680": {
     "id": 3680,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3681": {
     "id": 3681,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3682": {
     "id": 3682,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3683": {
     "id": 3683,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3684": {
     "id": 3684,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3685": {
     "id": 3685,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3686": {
     "id": 3686,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3687": {
     "id": 3687,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3688": {
     "id": 3688,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3689": {
     "id": 3689,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3690": {
     "id": 3690,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3691": {
     "id": 3691,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3692": {
     "id": 3692,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3693": {
     "id": 3693,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3694": {
     "id": 3694,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3695": {
     "id": 3695,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3696": {
     "id": 3696,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3697": {
     "id": 3697,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3698": {
     "id": 3698,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3699": {
     "id": 3699,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3700": {
     "id": 3700,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3701": {
     "id": 3701,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3702": {
     "id": 3702,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3703": {
     "id": 3703,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3704": {
     "id": 3704,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3705": {
     "id": 3705,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3706": {
     "id": 3706,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3707": {
     "id": 3707,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3708": {
     "id": 3708,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3709": {
     "id": 3709,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3710": {
     "id": 3710,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3711": {
     "id": 3711,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3712": {
     "id": 3712,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3713": {
     "id": 3713,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3714": {
     "id": 3714,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3715": {
     "id": 3715,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3716": {
     "id": 3716,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3717": {
     "id": 3717,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3718": {
     "id": 3718,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3719": {
     "id": 3719,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3720": {
     "id": 3720,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3721": {
     "id": 3721,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3722": {
     "id": 3722,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3723": {
     "id": 3723,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3724": {
     "id": 3724,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3725": {
     "id": 3725,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3726": {
     "id": 3726,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3727": {
     "id": 3727,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3728": {
     "id": 3728,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3729": {
     "id": 3729,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3730": {
     "id": 3730,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3731": {
     "id": 3731,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3732": {
     "id": 3732,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3733": {
     "id": 3733,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3734": {
     "id": 3734,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3735": {
     "id": 3735,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3736": {
     "id": 3736,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3737": {
     "id": 3737,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3738": {
     "id": 3738,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3739": {
     "id": 3739,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3740": {
     "id": 3740,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3741": {
     "id": 3741,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3742": {
     "id": 3742,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3743": {
     "id": 3743,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3744": {
     "id": 3744,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3745": {
     "id": 3745,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3746": {
     "id": 3746,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3747": {
     "id": 3747,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3748": {
     "id": 3748,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3749": {
     "id": 3749,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3750": {
     "id": 3750,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3751": {
     "id": 3751,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3752": {
     "id": 3752,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3753": {
     "id": 3753,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3754": {
     "id": 3754,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3755": {
     "id": 3755,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3756": {
     "id": 3756,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3757": {
     "id": 3757,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3758": {
     "id": 3758,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3759": {
     "id": 3759,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3760": {
     "id": 3760,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3761": {
     "id": 3761,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3762": {
     "id": 3762,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3763": {
     "id": 3763,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3764": {
     "id": 3764,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3765": {
     "id": 3765,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3766": {
     "id": 3766,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3767": {
     "id": 3767,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3768": {
     "id": 3768,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3769": {
     "id": 3769,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3770": {
     "id": 3770,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3771": {
     "id": 3771,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3772": {
     "id": 3772,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3773": {
     "id": 3773,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3774": {
     "id": 3774,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3775": {
     "id": 3775,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3776": {
     "id": 3776,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3777": {
@@ -16007,147 +15856,147 @@ export const bonus_IDs = {
   },
   "3778": {
     "id": 3778,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3779": {
     "id": 3779,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3780": {
     "id": 3780,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3781": {
     "id": 3781,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3782": {
     "id": 3782,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3783": {
     "id": 3783,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3784": {
     "id": 3784,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3785": {
     "id": 3785,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3786": {
     "id": 3786,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3787": {
     "id": 3787,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3788": {
     "id": 3788,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3789": {
     "id": 3789,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3790": {
     "id": 3790,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3791": {
     "id": 3791,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3792": {
     "id": 3792,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "3793": {
     "id": 3793,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3794": {
     "id": 3794,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3795": {
     "id": 3795,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3796": {
     "id": 3796,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3797": {
     "id": 3797,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3798": {
     "id": 3798,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3799": {
     "id": 3799,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3800": {
     "id": 3800,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3801": {
     "id": 3801,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3802": {
     "id": 3802,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3803": {
     "id": 3803,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "3804": {
     "id": 3804,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "3805": {
     "id": 3805,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "3806": {
     "id": 3806,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "3807": {
@@ -16217,17 +16066,17 @@ export const bonus_IDs = {
   },
   "3820": {
     "id": 3820,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "3821": {
     "id": 3821,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "3823": {
     "id": 3823,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "3824": {
@@ -17023,739 +16872,739 @@ export const bonus_IDs = {
   },
   "3998": {
     "id": 3998,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "3999": {
     "id": 3999,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4000": {
     "id": 4000,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4001": {
     "id": 4001,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4002": {
     "id": 4002,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4003": {
     "id": 4003,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4004": {
     "id": 4004,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4005": {
     "id": 4005,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4006": {
     "id": 4006,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4007": {
     "id": 4007,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4008": {
     "id": 4008,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4009": {
     "id": 4009,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4010": {
     "id": 4010,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4011": {
     "id": 4011,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4012": {
     "id": 4012,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4013": {
     "id": 4013,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4014": {
     "id": 4014,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4015": {
     "id": 4015,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4016": {
     "id": 4016,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4017": {
     "id": 4017,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4018": {
     "id": 4018,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4019": {
     "id": 4019,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4020": {
     "id": 4020,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4021": {
     "id": 4021,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4022": {
     "id": 4022,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4023": {
     "id": 4023,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4024": {
     "id": 4024,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4025": {
     "id": 4025,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4026": {
     "id": 4026,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4027": {
     "id": 4027,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4028": {
     "id": 4028,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4029": {
     "id": 4029,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4030": {
     "id": 4030,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4031": {
     "id": 4031,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4032": {
     "id": 4032,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4033": {
     "id": 4033,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4034": {
     "id": 4034,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4035": {
     "id": 4035,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4036": {
     "id": 4036,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4037": {
     "id": 4037,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4038": {
     "id": 4038,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4039": {
     "id": 4039,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4040": {
     "id": 4040,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4041": {
     "id": 4041,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4042": {
     "id": 4042,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4043": {
     "id": 4043,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4044": {
     "id": 4044,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4045": {
     "id": 4045,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4046": {
     "id": 4046,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4047": {
     "id": 4047,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4048": {
     "id": 4048,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4049": {
     "id": 4049,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4050": {
     "id": 4050,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4051": {
     "id": 4051,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4052": {
     "id": 4052,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4053": {
     "id": 4053,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4054": {
     "id": 4054,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4055": {
     "id": 4055,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4056": {
     "id": 4056,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4057": {
     "id": 4057,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4058": {
     "id": 4058,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4059": {
     "id": 4059,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4060": {
     "id": 4060,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4061": {
     "id": 4061,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4062": {
     "id": 4062,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4063": {
     "id": 4063,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4064": {
     "id": 4064,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4065": {
     "id": 4065,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4066": {
     "id": 4066,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4067": {
     "id": 4067,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4068": {
     "id": 4068,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4069": {
     "id": 4069,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4070": {
     "id": 4070,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4071": {
     "id": 4071,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4072": {
     "id": 4072,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451
   },
   "4074": {
     "id": 4074,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4075": {
     "id": 4075,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4076": {
     "id": 4076,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4077": {
     "id": 4077,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4079": {
     "id": 4079,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4080": {
     "id": 4080,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4082": {
     "id": 4082,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4083": {
     "id": 4083,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4085": {
     "id": 4085,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4086": {
     "id": 4086,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4088": {
     "id": 4088,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4089": {
     "id": 4089,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4090": {
     "id": 4090,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4091": {
     "id": 4091,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4092": {
     "id": 4092,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4093": {
     "id": 4093,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4094": {
     "id": 4094,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4095": {
     "id": 4095,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4096": {
     "id": 4096,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4097": {
     "id": 4097,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4098": {
     "id": 4098,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4099": {
     "id": 4099,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4100": {
     "id": 4100,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4101": {
     "id": 4101,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4102": {
     "id": 4102,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4103": {
     "id": 4103,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4104": {
     "id": 4104,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4105": {
     "id": 4105,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4106": {
     "id": 4106,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4107": {
     "id": 4107,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4108": {
     "id": 4108,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4109": {
     "id": 4109,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4110": {
     "id": 4110,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4111": {
     "id": 4111,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4112": {
     "id": 4112,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4113": {
     "id": 4113,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4114": {
     "id": 4114,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4115": {
     "id": 4115,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4116": {
     "id": 4116,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4117": {
     "id": 4117,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4118": {
     "id": 4118,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4119": {
     "id": 4119,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4120": {
     "id": 4120,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4121": {
     "id": 4121,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4122": {
     "id": 4122,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4123": {
     "id": 4123,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4124": {
     "id": 4124,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4125": {
     "id": 4125,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4126": {
     "id": 4126,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4127": {
     "id": 4127,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4128": {
     "id": 4128,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4129": {
     "id": 4129,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4130": {
     "id": 4130,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4131": {
     "id": 4131,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4132": {
     "id": 4132,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4133": {
     "id": 4133,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4134": {
     "id": 4134,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4135": {
     "id": 4135,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4136": {
     "id": 4136,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4137": {
     "id": 4137,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4138": {
     "id": 4138,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4139": {
     "id": 4139,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4140": {
     "id": 4140,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4141": {
     "id": 4141,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4142": {
     "id": 4142,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4143": {
     "id": 4143,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4144": {
@@ -17770,22 +17619,22 @@ export const bonus_IDs = {
   },
   "4146": {
     "id": 4146,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4147": {
     "id": 4147,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4148": {
     "id": 4148,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4149": {
     "id": 4149,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4150": {
@@ -17800,42 +17649,42 @@ export const bonus_IDs = {
   },
   "4152": {
     "id": 4152,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4153": {
     "id": 4153,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4154": {
     "id": 4154,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4155": {
     "id": 4155,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4156": {
     "id": 4156,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4157": {
     "id": 4157,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4158": {
     "id": 4158,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4159": {
     "id": 4159,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4160": {
@@ -17850,169 +17699,169 @@ export const bonus_IDs = {
   },
   "4162": {
     "id": 4162,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4163": {
     "id": 4163,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4164": {
     "id": 4164,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4165": {
     "id": 4165,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4166": {
     "id": 4166,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4167": {
     "id": 4167,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4168": {
     "id": 4168,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4169": {
     "id": 4169,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4170": {
     "id": 4170,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4171": {
     "id": 4171,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4172": {
     "id": 4172,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4173": {
     "id": 4173,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4174": {
     "id": 4174,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4175": {
     "id": 4175,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4176": {
     "id": 4176,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4177": {
     "id": 4177,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4178": {
     "id": 4178,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4179": {
     "id": 4179,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4180": {
     "id": 4180,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4181": {
     "id": 4181,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4182": {
     "id": 4182,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4183": {
     "id": 4183,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4184": {
     "id": 4184,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4185": {
     "id": 4185,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4186": {
     "id": 4186,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4187": {
     "id": 4187,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4188": {
     "id": 4188,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4189": {
     "id": 4189,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4190": {
     "id": 4190,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4191": {
     "id": 4191,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4192": {
     "id": 4192,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448
   },
   "4193": {
     "id": 4193,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
@@ -18030,8 +17879,8 @@ export const bonus_IDs = {
   },
   "4196": {
     "id": 4196,
-    "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 5454,
+    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "curveId": 60486,
     "quality": 4,
     "tag": "Heroic"
   },
@@ -18073,37 +17922,37 @@ export const bonus_IDs = {
   },
   "4205": {
     "id": 4205,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "4206": {
     "id": 4206,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "4207": {
     "id": 4207,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "4208": {
     "id": 4208,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "4209": {
     "id": 4209,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "4210": {
     "id": 4210,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "4211": {
     "id": 4211,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "4212": {
@@ -18202,8 +18051,7 @@ export const bonus_IDs = {
   },
   "4231": {
     "id": 4231,
-    "name": "of the Stormbreaker",
-    "socket": 1
+    "name": "of the Stormbreaker"
   },
   "4232": {
     "id": 4232,
@@ -18212,17 +18060,17 @@ export const bonus_IDs = {
   },
   "4233": {
     "id": 4233,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "4234": {
     "id": 4234,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "4235": {
     "id": 4235,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "4236": {
@@ -18239,13 +18087,13 @@ export const bonus_IDs = {
   },
   "4238": {
     "id": 4238,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
   "4239": {
     "id": 4239,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4240": {
@@ -18255,22 +18103,22 @@ export const bonus_IDs = {
   },
   "4241": {
     "id": 4241,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4242": {
     "id": 4242,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4243": {
     "id": 4243,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4244": {
     "id": 4244,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4246": {
@@ -18635,127 +18483,127 @@ export const bonus_IDs = {
   },
   "4318": {
     "id": 4318,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "4319": {
     "id": 4319,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "4320": {
     "id": 4320,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "4321": {
     "id": 4321,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "4322": {
     "id": 4322,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "4323": {
     "id": 4323,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "4324": {
     "id": 4324,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "4325": {
     "id": 4325,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "4326": {
     "id": 4326,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "4327": {
     "id": 4327,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "4328": {
     "id": 4328,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "4329": {
     "id": 4329,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "4330": {
     "id": 4330,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "4331": {
     "id": 4331,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "4332": {
     "id": 4332,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "4333": {
     "id": 4333,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "4334": {
     "id": 4334,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "4335": {
     "id": 4335,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "4336": {
     "id": 4336,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "4337": {
     "id": 4337,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "4338": {
     "id": 4338,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
@@ -18802,56 +18650,56 @@ export const bonus_IDs = {
   },
   "4742": {
     "id": 4742,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448,
     "quality": 4,
     "tag": "Warforged"
   },
   "4743": {
     "id": 4743,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448,
     "quality": 4,
     "tag": "Warforged"
   },
   "4744": {
     "id": 4744,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448,
     "quality": 4,
     "tag": "Warforged"
   },
   "4745": {
     "id": 4745,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448,
     "quality": 4,
     "tag": "Warforged"
   },
   "4746": {
     "id": 4746,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448,
     "quality": 4,
     "tag": "Warforged"
   },
   "4747": {
     "id": 4747,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448,
     "quality": 4,
     "tag": "Warforged"
   },
   "4748": {
     "id": 4748,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448,
     "quality": 4,
     "tag": "Warforged"
   },
   "4749": {
     "id": 4749,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448,
     "quality": 4,
     "tag": "Warforged"
@@ -18991,7 +18839,7 @@ export const bonus_IDs = {
   "4776": {
     "id": 4776,
     "quality": 3,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "4778": {
@@ -19053,35 +18901,35 @@ export const bonus_IDs = {
   },
   "4790": {
     "id": 4790,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 174 @plvl 174",
     "curveId": 6243
   },
   "4791": {
     "id": 4791,
-    "ilevel": "4 @plvl 1 - 58 @plvl 58",
+    "ilevel": "14 @plvl 1 - 187 @plvl 187",
     "curveId": 6242,
     "quality": 3
   },
   "4792": {
     "id": 4792,
-    "ilevel": "7 @plvl 1 - 59 @plvl 59",
+    "ilevel": "27 @plvl 1 - 200 @plvl 200",
     "curveId": 6244,
     "quality": 4
   },
   "4793": {
     "id": 4793,
-    "ilevel": "2 @plvl 1 - 58 @plvl 58",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 6247
   },
   "4794": {
     "id": 4794,
-    "ilevel": "4 @plvl 1 - 59 @plvl 59",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 6245,
     "quality": 3
   },
   "4795": {
     "id": 4795,
-    "ilevel": "8 @plvl 1 - 59 @plvl 59",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 6246,
     "quality": 4
   },
@@ -19147,18 +18995,18 @@ export const bonus_IDs = {
   },
   "4811": {
     "id": 4811,
-    "ilevel": "4 @plvl 1 - 58 @plvl 58",
+    "ilevel": "14 @plvl 1 - 187 @plvl 187",
     "curveId": 6242,
     "quality": 3
   },
   "4812": {
     "id": 4812,
-    "ilevel": "4 @plvl 1 - 58 @plvl 58",
+    "ilevel": "14 @plvl 1 - 187 @plvl 187",
     "curveId": 6242
   },
   "4813": {
     "id": 4813,
-    "ilevel": "4 @plvl 1 - 59 @plvl 59",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 6245,
     "quality": 3
   },
@@ -19170,13 +19018,13 @@ export const bonus_IDs = {
   },
   "4815": {
     "id": 4815,
-    "ilevel": "7 @plvl 1 - 59 @plvl 59",
+    "ilevel": "27 @plvl 1 - 200 @plvl 200",
     "curveId": 6244,
     "quality": 4
   },
   "4816": {
     "id": 4816,
-    "ilevel": "8 @plvl 1 - 59 @plvl 59",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 6246,
     "quality": 4
   },
@@ -19345,7 +19193,7 @@ export const bonus_IDs = {
   "4990": {
     "id": 4990,
     "quality": 3,
-    "ilevel": "6 @plvl 1 - 146 @plvl 146",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 1748
   },
   "4991": {
@@ -19547,7 +19395,7 @@ export const bonus_IDs = {
   "5036": {
     "id": 5036,
     "quality": 3,
-    "ilevel": "6 @plvl 1 - 146 @plvl 146",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 1748
   },
   "5037": {
@@ -21187,161 +21035,161 @@ export const bonus_IDs = {
   },
   "5483": {
     "id": 5483,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5484": {
     "id": 5484,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5485": {
     "id": 5485,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5486": {
     "id": 5486,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5487": {
     "id": 5487,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5488": {
     "id": 5488,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5489": {
     "id": 5489,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5490": {
     "id": 5490,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5491": {
     "id": 5491,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5492": {
     "id": 5492,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5493": {
     "id": 5493,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5494": {
     "id": 5494,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5495": {
     "id": 5495,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5496": {
     "id": 5496,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5497": {
     "id": 5497,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5498": {
     "id": 5498,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5499": {
     "id": 5499,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5500": {
     "id": 5500,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5501": {
     "id": 5501,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "5502": {
     "id": 5502,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "5503": {
     "id": 5503,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5504": {
     "id": 5504,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5505": {
     "id": 5505,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5506": {
     "id": 5506,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5507": {
     "id": 5507,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5508": {
     "id": 5508,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5509": {
     "id": 5509,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
@@ -21353,1627 +21201,1627 @@ export const bonus_IDs = {
   },
   "5511": {
     "id": 5511,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5512": {
     "id": 5512,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5513": {
     "id": 5513,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5514": {
     "id": 5514,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5515": {
     "id": 5515,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5516": {
     "id": 5516,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5517": {
     "id": 5517,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5518": {
     "id": 5518,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5519": {
     "id": 5519,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5520": {
     "id": 5520,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5521": {
     "id": 5521,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5522": {
     "id": 5522,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5523": {
     "id": 5523,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5524": {
     "id": 5524,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5525": {
     "id": 5525,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5526": {
     "id": 5526,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5528": {
     "id": 5528,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5529": {
     "id": 5529,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5530": {
     "id": 5530,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5531": {
     "id": 5531,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5532": {
     "id": 5532,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5533": {
     "id": 5533,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5534": {
     "id": 5534,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5535": {
     "id": 5535,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5536": {
     "id": 5536,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5537": {
     "id": 5537,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5538": {
     "id": 5538,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5539": {
     "id": 5539,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5540": {
     "id": 5540,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5541": {
     "id": 5541,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5542": {
     "id": 5542,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5543": {
     "id": 5543,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5544": {
     "id": 5544,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5545": {
     "id": 5545,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5546": {
     "id": 5546,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5547": {
     "id": 5547,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5548": {
     "id": 5548,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5549": {
     "id": 5549,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5550": {
     "id": 5550,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5551": {
     "id": 5551,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5552": {
     "id": 5552,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5553": {
     "id": 5553,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5554": {
     "id": 5554,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5555": {
     "id": 5555,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5556": {
     "id": 5556,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5557": {
     "id": 5557,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5558": {
     "id": 5558,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5559": {
     "id": 5559,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5560": {
     "id": 5560,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5561": {
     "id": 5561,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5562": {
     "id": 5562,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5563": {
     "id": 5563,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5564": {
     "id": 5564,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5565": {
     "id": 5565,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5566": {
     "id": 5566,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5567": {
     "id": 5567,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5568": {
     "id": 5568,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5569": {
     "id": 5569,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5570": {
     "id": 5570,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5571": {
     "id": 5571,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5572": {
     "id": 5572,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5573": {
     "id": 5573,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5574": {
     "id": 5574,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5575": {
     "id": 5575,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5576": {
     "id": 5576,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5577": {
     "id": 5577,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5578": {
     "id": 5578,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5579": {
     "id": 5579,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5580": {
     "id": 5580,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5581": {
     "id": 5581,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5582": {
     "id": 5582,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5583": {
     "id": 5583,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5584": {
     "id": 5584,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5585": {
     "id": 5585,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5586": {
     "id": 5586,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5587": {
     "id": 5587,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5588": {
     "id": 5588,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5589": {
     "id": 5589,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5590": {
     "id": 5590,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5591": {
     "id": 5591,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5592": {
     "id": 5592,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5593": {
     "id": 5593,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5594": {
     "id": 5594,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5595": {
     "id": 5595,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5596": {
     "id": 5596,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5597": {
     "id": 5597,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5598": {
     "id": 5598,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5599": {
     "id": 5599,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5600": {
     "id": 5600,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5601": {
     "id": 5601,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5602": {
     "id": 5602,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5603": {
     "id": 5603,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5604": {
     "id": 5604,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5605": {
     "id": 5605,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5606": {
     "id": 5606,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5607": {
     "id": 5607,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5608": {
     "id": 5608,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5609": {
     "id": 5609,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5610": {
     "id": 5610,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5611": {
     "id": 5611,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5612": {
     "id": 5612,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5613": {
     "id": 5613,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5614": {
     "id": 5614,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5615": {
     "id": 5615,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5616": {
     "id": 5616,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5617": {
     "id": 5617,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5618": {
     "id": 5618,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5619": {
     "id": 5619,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5620": {
     "id": 5620,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5621": {
     "id": 5621,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5622": {
     "id": 5622,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5623": {
     "id": 5623,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5624": {
     "id": 5624,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5625": {
     "id": 5625,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5626": {
     "id": 5626,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5627": {
     "id": 5627,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5628": {
     "id": 5628,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5629": {
     "id": 5629,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5630": {
     "id": 5630,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5631": {
     "id": 5631,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5632": {
     "id": 5632,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5633": {
     "id": 5633,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5634": {
     "id": 5634,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5635": {
     "id": 5635,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5636": {
     "id": 5636,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5637": {
     "id": 5637,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5638": {
     "id": 5638,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5639": {
     "id": 5639,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5640": {
     "id": 5640,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5641": {
     "id": 5641,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5642": {
     "id": 5642,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5643": {
     "id": 5643,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5644": {
     "id": 5644,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5645": {
     "id": 5645,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5646": {
     "id": 5646,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5647": {
     "id": 5647,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5648": {
     "id": 5648,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5649": {
     "id": 5649,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5650": {
     "id": 5650,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5651": {
     "id": 5651,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5652": {
     "id": 5652,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5653": {
     "id": 5653,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5654": {
     "id": 5654,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5655": {
     "id": 5655,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5656": {
     "id": 5656,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5657": {
     "id": 5657,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5658": {
     "id": 5658,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5659": {
     "id": 5659,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5660": {
     "id": 5660,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5661": {
     "id": 5661,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5662": {
     "id": 5662,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5663": {
     "id": 5663,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5664": {
     "id": 5664,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5665": {
     "id": 5665,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5666": {
     "id": 5666,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5667": {
     "id": 5667,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5668": {
     "id": 5668,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5669": {
     "id": 5669,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5670": {
     "id": 5670,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5671": {
     "id": 5671,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5672": {
     "id": 5672,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5673": {
     "id": 5673,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5674": {
     "id": 5674,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5675": {
     "id": 5675,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5676": {
     "id": 5676,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5677": {
     "id": 5677,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5678": {
     "id": 5678,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5679": {
     "id": 5679,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5680": {
     "id": 5680,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5681": {
     "id": 5681,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5682": {
     "id": 5682,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5683": {
     "id": 5683,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5684": {
     "id": 5684,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5685": {
     "id": 5685,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5686": {
     "id": 5686,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5687": {
     "id": 5687,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5688": {
     "id": 5688,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5689": {
     "id": 5689,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5690": {
     "id": 5690,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5691": {
     "id": 5691,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5692": {
     "id": 5692,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5693": {
     "id": 5693,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5694": {
     "id": 5694,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5695": {
     "id": 5695,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5696": {
     "id": 5696,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5697": {
     "id": 5697,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5698": {
     "id": 5698,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5699": {
     "id": 5699,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5700": {
     "id": 5700,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5701": {
     "id": 5701,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5702": {
     "id": 5702,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5703": {
     "id": 5703,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5704": {
     "id": 5704,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5705": {
     "id": 5705,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5706": {
     "id": 5706,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5707": {
     "id": 5707,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5708": {
     "id": 5708,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5709": {
     "id": 5709,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5710": {
     "id": 5710,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5711": {
     "id": 5711,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5712": {
     "id": 5712,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5713": {
     "id": 5713,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5714": {
     "id": 5714,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5715": {
     "id": 5715,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5716": {
     "id": 5716,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5717": {
     "id": 5717,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5718": {
     "id": 5718,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5719": {
     "id": 5719,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5720": {
     "id": 5720,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5721": {
     "id": 5721,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5722": {
     "id": 5722,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5723": {
     "id": 5723,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5724": {
     "id": 5724,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5725": {
     "id": 5725,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5726": {
     "id": 5726,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5727": {
     "id": 5727,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5728": {
     "id": 5728,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5729": {
     "id": 5729,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5730": {
     "id": 5730,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5731": {
     "id": 5731,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5732": {
     "id": 5732,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5733": {
     "id": 5733,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5734": {
     "id": 5734,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5735": {
     "id": 5735,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5736": {
     "id": 5736,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5737": {
     "id": 5737,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5738": {
     "id": 5738,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5739": {
     "id": 5739,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5740": {
     "id": 5740,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5741": {
     "id": 5741,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5742": {
     "id": 5742,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5743": {
     "id": 5743,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5744": {
     "id": 5744,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5745": {
     "id": 5745,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5746": {
     "id": 5746,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5747": {
     "id": 5747,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5748": {
     "id": 5748,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5749": {
     "id": 5749,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5750": {
     "id": 5750,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5751": {
     "id": 5751,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5752": {
     "id": 5752,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5753": {
     "id": 5753,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5754": {
     "id": 5754,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5755": {
     "id": 5755,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5756": {
     "id": 5756,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5757": {
     "id": 5757,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5758": {
     "id": 5758,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5759": {
     "id": 5759,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5760": {
     "id": 5760,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5761": {
     "id": 5761,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5762": {
     "id": 5762,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5763": {
     "id": 5763,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5764": {
     "id": 5764,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5765": {
     "id": 5765,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5766": {
     "id": 5766,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5767": {
     "id": 5767,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5768": {
     "id": 5768,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5769": {
     "id": 5769,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5770": {
     "id": 5770,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5771": {
     "id": 5771,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5772": {
     "id": 5772,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5773": {
     "id": 5773,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5774": {
     "id": 5774,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5775": {
     "id": 5775,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5776": {
     "id": 5776,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5777": {
     "id": 5777,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5778": {
     "id": 5778,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5779": {
     "id": 5779,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5780": {
     "id": 5780,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "5781": {
     "id": 5781,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "5782": {
     "id": 5782,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
@@ -22990,22 +22838,22 @@ export const bonus_IDs = {
   },
   "5805": {
     "id": 5805,
-    "ilevel": "2 @plvl 1 - 146 @plvl 146",
+    "ilevel": "14 @plvl 1 - 187 @plvl 187",
     "curveId": 956
   },
   "5806": {
     "id": 5806,
-    "ilevel": "4 @plvl 1 - 148 @plvl 148",
+    "ilevel": "16 @plvl 1 - 189 @plvl 189",
     "curveId": 960
   },
   "5807": {
     "id": 5807,
-    "ilevel": "3 @plvl 1 - 147 @plvl 147",
+    "ilevel": "15 @plvl 1 - 188 @plvl 188",
     "curveId": 959
   },
   "5808": {
     "id": 5808,
-    "ilevel": "5 @plvl 1 - 149 @plvl 149",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 961
   },
   "5814": {
@@ -23014,7 +22862,7 @@ export const bonus_IDs = {
   },
   "5817": {
     "id": 5817,
-    "ilevel": "4 @plvl 1 - 148 @plvl 148",
+    "ilevel": "16 @plvl 1 - 189 @plvl 189",
     "curveId": 1690
   },
   "5821": {
@@ -25738,7 +25586,7 @@ export const bonus_IDs = {
   },
   "6416": {
     "id": 6416,
-    "ilevel": "5 @plvl 1 - 138 @plvl 138",
+    "ilevel": "1 @plvl 1 - 327 @plvl 327",
     "curveId": 14096
   },
   "6417": {
@@ -26529,12 +26377,12 @@ export const bonus_IDs = {
   },
   "6499": {
     "id": 6499,
-    "ilevel": "5 @plvl 1 - 56 @plvl 56",
+    "ilevel": "1 @plvl 1 - 168 @plvl 168",
     "curveId": 16570
   },
   "6500": {
     "id": 6500,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "6501": {
@@ -28125,42 +27973,42 @@ export const bonus_IDs = {
   },
   "6654": {
     "id": 6654,
-    "ilevel": "5 @plvl 1 - 57 @plvl 57",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 16520
   },
   "6655": {
     "id": 6655,
-    "ilevel": "7 @plvl 1 - 57 @plvl 57",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 16522
   },
   "6656": {
     "id": 6656,
-    "ilevel": "4 @plvl 1 - 56 @plvl 56",
+    "ilevel": "1 @plvl 1 - 160 @plvl 160",
     "curveId": 16525
   },
   "6657": {
     "id": 6657,
-    "ilevel": "5 @plvl 1 - 56 @plvl 56",
+    "ilevel": "1 @plvl 1 - 160 @plvl 160",
     "curveId": 16526
   },
   "6658": {
     "id": 6658,
-    "ilevel": "12 @plvl 1 - 58 @plvl 58",
+    "ilevel": "14 @plvl 1 - 183 @plvl 183",
     "curveId": 16527
   },
   "6659": {
     "id": 6659,
-    "ilevel": "14 @plvl 1 - 58 @plvl 58",
+    "ilevel": "14 @plvl 1 - 183 @plvl 183",
     "curveId": 16528
   },
   "6660": {
     "id": 6660,
-    "ilevel": "17 @plvl 1 - 58 @plvl 58",
+    "ilevel": "27 @plvl 1 - 196 @plvl 196",
     "curveId": 16529
   },
   "6661": {
     "id": 6661,
-    "ilevel": "18 @plvl 1 - 58 @plvl 58",
+    "ilevel": "27 @plvl 1 - 196 @plvl 196",
     "curveId": 16530
   },
   "6662": {
@@ -28170,12 +28018,12 @@ export const bonus_IDs = {
   },
   "6663": {
     "id": 6663,
-    "ilevel": "5 @plvl 1 - 57 @plvl 57",
+    "ilevel": "1 @plvl 1 - 168 @plvl 168",
     "curveId": 16569
   },
   "6664": {
     "id": 6664,
-    "ilevel": "5 @plvl 1 - 56 @plvl 56",
+    "ilevel": "1 @plvl 1 - 168 @plvl 168",
     "curveId": 16570
   },
   "6665": {
@@ -28276,12 +28124,12 @@ export const bonus_IDs = {
   },
   "6682": {
     "id": 6682,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "6683": {
     "id": 6683,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "6684": {
@@ -28321,39 +28169,39 @@ export const bonus_IDs = {
   },
   "6691": {
     "id": 6691,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
   "6694": {
     "id": 6694,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
   "6695": {
     "id": 6695,
-    "ilevel": "7 @plvl 1 - 59 @plvl 59",
+    "ilevel": "27 @plvl 1 - 200 @plvl 200",
     "curveId": 6244
   },
   "6696": {
     "id": 6696,
-    "ilevel": "8 @plvl 1 - 59 @plvl 59",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 6246
   },
   "6697": {
     "id": 6697,
-    "ilevel": "3 @plvl 1 - 58 @plvl 58",
+    "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064,
     "quality": 3
   },
   "6700": {
     "id": 6700,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
   "6703": {
     "id": 6703,
-    "ilevel": "6 @plvl 1 - 59 @plvl 59",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
     "quality": 4
   },
@@ -28374,13 +28222,13 @@ export const bonus_IDs = {
   },
   "6709": {
     "id": 6709,
-    "ilevel": "1 @plvl 1 - 56 @plvl 56",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 5451,
     "quality": 2
   },
   "6710": {
     "id": 6710,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
@@ -28391,7 +28239,7 @@ export const bonus_IDs = {
   },
   "6712": {
     "id": 6712,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448,
     "quality": 4
   },
@@ -28558,49 +28406,49 @@ export const bonus_IDs = {
   },
   "6751": {
     "id": 6751,
-    "ilevel": "24 @plvl 0 - 24 @plvl 24",
-    "curveId": 16980
+    "ilevel": "1 @plvl 1 - 174 @plvl 174",
+    "curveId": 6243
   },
   "6752": {
     "id": 6752,
-    "ilevel": "26 @plvl 0 - 26 @plvl 26",
-    "curveId": 16981
+    "ilevel": "1 @plvl 1 - 174 @plvl 174",
+    "curveId": 6243
   },
   "6753": {
     "id": 6753,
-    "ilevel": "22 @plvl 0 - 22 @plvl 22",
-    "curveId": 16982
+    "ilevel": "1 @plvl 1 - 174 @plvl 174",
+    "curveId": 6243
   },
   "6754": {
     "id": 6754,
-    "ilevel": "21 @plvl 0 - 21 @plvl 21",
-    "curveId": 16983
+    "ilevel": "1 @plvl 1 - 174 @plvl 174",
+    "curveId": 6243
   },
   "6755": {
     "id": 6755,
-    "ilevel": "19 @plvl 0 - 19 @plvl 19",
-    "curveId": 16984
+    "ilevel": "1 @plvl 1 - 174 @plvl 174",
+    "curveId": 6243
   },
   "6756": {
     "id": 6756,
-    "ilevel": "16 @plvl 0 - 16 @plvl 16",
-    "curveId": 16985
+    "ilevel": "1 @plvl 1 - 174 @plvl 174",
+    "curveId": 6243
   },
   "6757": {
     "id": 6757,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448,
     "quality": 4
   },
   "6759": {
     "id": 6759,
-    "ilevel": "6 @plvl 1 - 58 @plvl 58",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 5448,
     "quality": 4
   },
   "6760": {
     "id": 6760,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449,
     "quality": 3
   },
@@ -28621,8 +28469,9 @@ export const bonus_IDs = {
   },
   "6764": {
     "id": 6764,
-    "ilevel": "33 @plvl 1 - 33 @plvl 33",
-    "curveId": 17176
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "curveId": 60485,
+    "quality": 3
   },
   "6765": {
     "id": 6765,
@@ -28689,7 +28538,7 @@ export const bonus_IDs = {
   },
   "6813": {
     "id": 6813,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "6815": {
@@ -28729,7 +28578,7 @@ export const bonus_IDs = {
   },
   "6822": {
     "id": 6822,
-    "ilevel": "3 @plvl 1 - 57 @plvl 57",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 5449
   },
   "6823": {
@@ -28750,7 +28599,7 @@ export const bonus_IDs = {
   },
   "6825": {
     "id": 6825,
-    "ilevel": "5 @plvl 1 - 57 @plvl 57",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 16520
   },
   "6826": {
@@ -30601,7 +30450,7 @@ export const bonus_IDs = {
       "spell": {
         "id": 336849,
         "name": "Eagletalon's True Focus",
-        "icon": "ability_trueshot"
+        "icon": "ability_hunter_aspectoftheironhawk"
       }
     },
     "quality": 5,
@@ -31778,10 +31627,7 @@ export const bonus_IDs = {
   },
   "7083": {
     "id": 7083,
-    "effect": {
-      "id": 0,
-      "index": 0
-    },
+    "effect": null,
     "quality": 5
   },
   "7084": {
@@ -32348,7 +32194,7 @@ export const bonus_IDs = {
       "base": "Zoldyck Family Training Shackles",
       "slots": {
         "feet": "Footsteps of the Zoldyck Family",
-        "legs": "Zoldyck Family Training Leggins"
+        "legs": "Zoldyck Family Training Leggings"
       }
     }
   },
@@ -32830,10 +32676,116 @@ export const bonus_IDs = {
     "curveId": 16667,
     "quality": 3
   },
+  "7195": {
+    "id": 7195,
+    "upgrade": {
+      "level": 1,
+      "max": 7,
+      "group": 163,
+      "bonusId": 7195,
+      "itemLevel": 155
+    }
+  },
+  "7196": {
+    "id": 7196,
+    "upgrade": {
+      "level": 2,
+      "max": 7,
+      "group": 163,
+      "bonusId": 7196,
+      "currency": {
+        "amount": 25,
+        "name": "Reservoir Anima",
+        "id": 1813,
+        "icon": "spell_animabastion_orb"
+      },
+      "itemLevel": 164
+    }
+  },
+  "7197": {
+    "id": 7197,
+    "upgrade": {
+      "level": 3,
+      "max": 7,
+      "group": 163,
+      "bonusId": 7197,
+      "currency": {
+        "amount": 50,
+        "name": "Reservoir Anima",
+        "id": 1813,
+        "icon": "spell_animabastion_orb"
+      },
+      "itemLevel": 171
+    }
+  },
+  "7198": {
+    "id": 7198,
+    "upgrade": {
+      "level": 4,
+      "max": 7,
+      "group": 163,
+      "bonusId": 7198,
+      "currency": {
+        "amount": 75,
+        "name": "Reservoir Anima",
+        "id": 1813,
+        "icon": "spell_animabastion_orb"
+      },
+      "itemLevel": 177
+    }
+  },
+  "7199": {
+    "id": 7199,
+    "upgrade": {
+      "level": 5,
+      "max": 7,
+      "group": 163,
+      "bonusId": 7199,
+      "currency": {
+        "amount": 100,
+        "name": "Reservoir Anima",
+        "id": 1813,
+        "icon": "spell_animabastion_orb"
+      },
+      "itemLevel": 184
+    }
+  },
+  "7200": {
+    "id": 7200,
+    "upgrade": {
+      "level": 6,
+      "max": 7,
+      "group": 163,
+      "bonusId": 7200,
+      "currency": {
+        "amount": 125,
+        "name": "Reservoir Anima",
+        "id": 1813,
+        "icon": "spell_animabastion_orb"
+      },
+      "itemLevel": 190
+    }
+  },
+  "7201": {
+    "id": 7201,
+    "upgrade": {
+      "level": 7,
+      "max": 7,
+      "group": 163,
+      "bonusId": 7201,
+      "currency": {
+        "amount": 150,
+        "name": "Reservoir Anima",
+        "id": 1813,
+        "icon": "spell_animabastion_orb"
+      },
+      "itemLevel": 197
+    }
+  },
   "7202": {
     "id": 7202,
-    "ilevel": "33 @plvl 1 - 33 @plvl 33",
-    "curveId": 5452,
+    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "curveId": 60486,
     "quality": 4,
     "tag": "Heroic"
   },
@@ -32938,7 +32890,7 @@ export const bonus_IDs = {
   },
   "7220": {
     "id": 7220,
-    "ilevel": "1 @plvl 1 - 58 @plvl 58",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 5063
   },
   "7222": {
@@ -33252,6 +33204,26 @@ export const bonus_IDs = {
     "curveId": 25832,
     "item_limit_category": 481
   },
+  "7462": {
+    "id": 7462,
+    "upgrade": {
+      "level": 1,
+      "max": 3,
+      "group": 197,
+      "bonusId": 7462,
+      "itemLevel": 150
+    }
+  },
+  "7463": {
+    "id": 7463,
+    "upgrade": {
+      "level": 2,
+      "max": 3,
+      "group": 197,
+      "bonusId": 7463,
+      "itemLevel": 213
+    }
+  },
   "7464": {
     "id": 7464,
     "ilevel": "3 @plvl 1 - 184 @plvl 184",
@@ -33426,16 +33398,16 @@ export const bonus_IDs = {
       "index": 0,
       "spell": {
         "id": 364816,
-        "name": "Sinful Hysteria",
+        "name": "Sinful Indulgence",
         "icon": "ability_revendreth_druid"
       }
     },
     "quality": 5,
     "name_override": {
-      "base": "Sinful Hysteria",
+      "base": "Sinful Indulgence",
       "slots": {
-        "hands": "Grips of Sinful Hysteria",
-        "wrist": "Bindings of the Wrathful Swarm"
+        "hands": "Grips of Sinful Indulgence",
+        "waist": "Cord of Sinful Indulgence"
       }
     }
   },
@@ -33507,173 +33479,1419 @@ export const bonus_IDs = {
       "base": "Toxic Onslaught"
     }
   },
+  "7479": {
+    "id": 7479,
+    "upgrade": {
+      "level": 1,
+      "max": 7,
+      "group": 198,
+      "bonusId": 7479,
+      "itemLevel": 203
+    }
+  },
+  "7480": {
+    "id": 7480,
+    "upgrade": {
+      "level": 2,
+      "max": 7,
+      "group": 198,
+      "bonusId": 7480,
+      "currency": {
+        "amount": 200,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 210
+    }
+  },
+  "7481": {
+    "id": 7481,
+    "upgrade": {
+      "level": 3,
+      "max": 7,
+      "group": 198,
+      "bonusId": 7481,
+      "currency": {
+        "amount": 225,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 216
+    }
+  },
+  "7482": {
+    "id": 7482,
+    "upgrade": {
+      "level": 4,
+      "max": 7,
+      "group": 198,
+      "bonusId": 7482,
+      "currency": {
+        "amount": 275,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 223
+    }
+  },
+  "7483": {
+    "id": 7483,
+    "upgrade": {
+      "level": 5,
+      "max": 7,
+      "group": 198,
+      "bonusId": 7483,
+      "currency": {
+        "amount": 300,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 229
+    }
+  },
+  "7484": {
+    "id": 7484,
+    "upgrade": {
+      "level": 6,
+      "max": 7,
+      "group": 198,
+      "bonusId": 7484,
+      "currency": {
+        "amount": 350,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 236
+    }
+  },
+  "7485": {
+    "id": 7485,
+    "upgrade": {
+      "level": 7,
+      "max": 7,
+      "group": 198,
+      "bonusId": 7485,
+      "currency": {
+        "amount": 375,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 242
+    }
+  },
+  "7486": {
+    "id": 7486,
+    "upgrade": {
+      "level": 1,
+      "max": 7,
+      "group": 199,
+      "bonusId": 7486,
+      "itemLevel": 203
+    }
+  },
+  "7487": {
+    "id": 7487,
+    "upgrade": {
+      "level": 2,
+      "max": 7,
+      "group": 199,
+      "bonusId": 7487,
+      "currency": {
+        "amount": 250,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 210
+    }
+  },
+  "7488": {
+    "id": 7488,
+    "upgrade": {
+      "level": 3,
+      "max": 7,
+      "group": 199,
+      "bonusId": 7488,
+      "currency": {
+        "amount": 300,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 216
+    }
+  },
+  "7489": {
+    "id": 7489,
+    "upgrade": {
+      "level": 4,
+      "max": 7,
+      "group": 199,
+      "bonusId": 7489,
+      "currency": {
+        "amount": 350,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 223
+    }
+  },
+  "7490": {
+    "id": 7490,
+    "upgrade": {
+      "level": 5,
+      "max": 7,
+      "group": 199,
+      "bonusId": 7490,
+      "currency": {
+        "amount": 400,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 229
+    }
+  },
+  "7491": {
+    "id": 7491,
+    "upgrade": {
+      "level": 6,
+      "max": 7,
+      "group": 199,
+      "bonusId": 7491,
+      "currency": {
+        "amount": 450,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 236
+    }
+  },
+  "7492": {
+    "id": 7492,
+    "upgrade": {
+      "level": 7,
+      "max": 7,
+      "group": 199,
+      "bonusId": 7492,
+      "currency": {
+        "amount": 500,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 242
+    }
+  },
+  "7493": {
+    "id": 7493,
+    "upgrade": {
+      "level": 1,
+      "max": 7,
+      "group": 200,
+      "bonusId": 7493,
+      "itemLevel": 203
+    }
+  },
+  "7494": {
+    "id": 7494,
+    "upgrade": {
+      "level": 2,
+      "max": 7,
+      "group": 200,
+      "bonusId": 7494,
+      "currency": {
+        "amount": 325,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 210
+    }
+  },
+  "7495": {
+    "id": 7495,
+    "upgrade": {
+      "level": 3,
+      "max": 7,
+      "group": 200,
+      "bonusId": 7495,
+      "currency": {
+        "amount": 375,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 216
+    }
+  },
+  "7496": {
+    "id": 7496,
+    "upgrade": {
+      "level": 4,
+      "max": 7,
+      "group": 200,
+      "bonusId": 7496,
+      "currency": {
+        "amount": 450,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 223
+    }
+  },
+  "7497": {
+    "id": 7497,
+    "upgrade": {
+      "level": 5,
+      "max": 7,
+      "group": 200,
+      "bonusId": 7497,
+      "currency": {
+        "amount": 500,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 229
+    }
+  },
+  "7498": {
+    "id": 7498,
+    "upgrade": {
+      "level": 6,
+      "max": 7,
+      "group": 200,
+      "bonusId": 7498,
+      "currency": {
+        "amount": 575,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 236
+    }
+  },
+  "7499": {
+    "id": 7499,
+    "upgrade": {
+      "level": 7,
+      "max": 7,
+      "group": 200,
+      "bonusId": 7499,
+      "currency": {
+        "amount": 650,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 242
+    }
+  },
+  "7500": {
+    "id": 7500,
+    "upgrade": {
+      "level": 1,
+      "max": 7,
+      "group": 201,
+      "bonusId": 7500,
+      "itemLevel": 203
+    }
+  },
+  "7501": {
+    "id": 7501,
+    "upgrade": {
+      "level": 2,
+      "max": 7,
+      "group": 201,
+      "bonusId": 7501,
+      "currency": {
+        "amount": 650,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 210
+    }
+  },
+  "7502": {
+    "id": 7502,
+    "upgrade": {
+      "level": 3,
+      "max": 7,
+      "group": 201,
+      "bonusId": 7502,
+      "currency": {
+        "amount": 750,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 216
+    }
+  },
+  "7503": {
+    "id": 7503,
+    "upgrade": {
+      "level": 4,
+      "max": 7,
+      "group": 201,
+      "bonusId": 7503,
+      "currency": {
+        "amount": 900,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 223
+    }
+  },
+  "7504": {
+    "id": 7504,
+    "upgrade": {
+      "level": 5,
+      "max": 7,
+      "group": 201,
+      "bonusId": 7504,
+      "currency": {
+        "amount": 1000,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 229
+    }
+  },
+  "7505": {
+    "id": 7505,
+    "upgrade": {
+      "level": 6,
+      "max": 7,
+      "group": 201,
+      "bonusId": 7505,
+      "currency": {
+        "amount": 1150,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 236
+    }
+  },
+  "7506": {
+    "id": 7506,
+    "upgrade": {
+      "level": 7,
+      "max": 7,
+      "group": 201,
+      "bonusId": 7506,
+      "currency": {
+        "amount": 1300,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 242
+    }
+  },
+  "7507": {
+    "id": 7507,
+    "upgrade": {
+      "level": 1,
+      "max": 7,
+      "group": 203,
+      "bonusId": 7507,
+      "itemLevel": 203
+    }
+  },
+  "7508": {
+    "id": 7508,
+    "upgrade": {
+      "level": 2,
+      "max": 7,
+      "group": 203,
+      "bonusId": 7508,
+      "currency": {
+        "amount": 175,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 210
+    }
+  },
+  "7509": {
+    "id": 7509,
+    "upgrade": {
+      "level": 3,
+      "max": 7,
+      "group": 203,
+      "bonusId": 7509,
+      "currency": {
+        "amount": 200,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 216
+    }
+  },
+  "7510": {
+    "id": 7510,
+    "upgrade": {
+      "level": 4,
+      "max": 7,
+      "group": 203,
+      "bonusId": 7510,
+      "currency": {
+        "amount": 225,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 223
+    }
+  },
+  "7511": {
+    "id": 7511,
+    "upgrade": {
+      "level": 5,
+      "max": 7,
+      "group": 203,
+      "bonusId": 7511,
+      "currency": {
+        "amount": 250,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 229
+    }
+  },
+  "7512": {
+    "id": 7512,
+    "upgrade": {
+      "level": 6,
+      "max": 7,
+      "group": 203,
+      "bonusId": 7512,
+      "currency": {
+        "amount": 300,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 236
+    }
+  },
+  "7513": {
+    "id": 7513,
+    "upgrade": {
+      "level": 7,
+      "max": 7,
+      "group": 203,
+      "bonusId": 7513,
+      "currency": {
+        "amount": 350,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 242
+    }
+  },
+  "7514": {
+    "id": 7514,
+    "upgrade": {
+      "level": 1,
+      "max": 7,
+      "group": 204,
+      "bonusId": 7514,
+      "itemLevel": 203
+    }
+  },
+  "7515": {
+    "id": 7515,
+    "upgrade": {
+      "level": 2,
+      "max": 7,
+      "group": 204,
+      "bonusId": 7515,
+      "currency": {
+        "amount": 475,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 210
+    }
+  },
+  "7516": {
+    "id": 7516,
+    "upgrade": {
+      "level": 3,
+      "max": 7,
+      "group": 204,
+      "bonusId": 7516,
+      "currency": {
+        "amount": 550,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 216
+    }
+  },
+  "7517": {
+    "id": 7517,
+    "upgrade": {
+      "level": 4,
+      "max": 7,
+      "group": 204,
+      "bonusId": 7517,
+      "currency": {
+        "amount": 675,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 223
+    }
+  },
+  "7518": {
+    "id": 7518,
+    "upgrade": {
+      "level": 5,
+      "max": 7,
+      "group": 204,
+      "bonusId": 7518,
+      "currency": {
+        "amount": 750,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 229
+    }
+  },
+  "7519": {
+    "id": 7519,
+    "upgrade": {
+      "level": 6,
+      "max": 7,
+      "group": 204,
+      "bonusId": 7519,
+      "currency": {
+        "amount": 850,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 236
+    }
+  },
+  "7520": {
+    "id": 7520,
+    "upgrade": {
+      "level": 7,
+      "max": 7,
+      "group": 204,
+      "bonusId": 7520,
+      "currency": {
+        "amount": 950,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 242
+    }
+  },
+  "7521": {
+    "id": 7521,
+    "upgrade": {
+      "level": 1,
+      "max": 7,
+      "group": 202,
+      "bonusId": 7521,
+      "itemLevel": 203
+    }
+  },
+  "7522": {
+    "id": 7522,
+    "upgrade": {
+      "level": 2,
+      "max": 7,
+      "group": 202,
+      "bonusId": 7522,
+      "currency": {
+        "amount": 325,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 210
+    }
+  },
+  "7523": {
+    "id": 7523,
+    "upgrade": {
+      "level": 3,
+      "max": 7,
+      "group": 202,
+      "bonusId": 7523,
+      "currency": {
+        "amount": 375,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 216
+    }
+  },
+  "7524": {
+    "id": 7524,
+    "upgrade": {
+      "level": 4,
+      "max": 7,
+      "group": 202,
+      "bonusId": 7524,
+      "currency": {
+        "amount": 450,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 223
+    }
+  },
+  "7525": {
+    "id": 7525,
+    "upgrade": {
+      "level": 5,
+      "max": 7,
+      "group": 202,
+      "bonusId": 7525,
+      "currency": {
+        "amount": 500,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 229
+    }
+  },
+  "7526": {
+    "id": 7526,
+    "upgrade": {
+      "level": 6,
+      "max": 7,
+      "group": 202,
+      "bonusId": 7526,
+      "currency": {
+        "amount": 575,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 236
+    }
+  },
+  "7527": {
+    "id": 7527,
+    "upgrade": {
+      "level": 7,
+      "max": 7,
+      "group": 202,
+      "bonusId": 7527,
+      "currency": {
+        "amount": 650,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 242
+    }
+  },
   "7528": {
     "id": 7528,
-    "tag": "Unranked"
+    "tag": "Unranked",
+    "upgrade": {
+      "level": 1,
+      "max": 9,
+      "group": 205,
+      "bonusId": 7528,
+      "itemLevel": 249
+    }
   },
   "7529": {
     "id": 7529,
-    "tag": "Combatant II"
+    "tag": "Combatant II",
+    "upgrade": {
+      "level": 3,
+      "max": 9,
+      "group": 205,
+      "bonusId": 7529,
+      "currency": {
+        "amount": 500,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 255
+    }
   },
   "7530": {
     "id": 7530,
-    "tag": "Challenger II"
+    "tag": "Challenger II",
+    "upgrade": {
+      "level": 5,
+      "max": 9,
+      "group": 205,
+      "bonusId": 7530,
+      "currency": {
+        "amount": 650,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 262
+    }
   },
   "7531": {
     "id": 7531,
-    "tag": "Rival II"
+    "tag": "Rival II",
+    "upgrade": {
+      "level": 7,
+      "max": 9,
+      "group": 205,
+      "bonusId": 7531,
+      "currency": {
+        "amount": 825,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 268
+    }
   },
   "7532": {
     "id": 7532,
-    "tag": "Elite"
+    "tag": "Elite",
+    "upgrade": {
+      "level": 9,
+      "max": 9,
+      "group": 205,
+      "bonusId": 7532,
+      "currency": {
+        "amount": 1100,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 275
+    }
   },
   "7533": {
     "id": 7533,
-    "tag": "Duelist"
+    "tag": "Duelist",
+    "upgrade": {
+      "level": 8,
+      "max": 9,
+      "group": 205,
+      "bonusId": 7533,
+      "currency": {
+        "amount": 925,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 272
+    }
   },
   "7534": {
     "id": 7534,
-    "tag": "Unranked"
+    "tag": "Unranked",
+    "upgrade": {
+      "level": 1,
+      "max": 9,
+      "group": 206,
+      "bonusId": 7534,
+      "itemLevel": 249
+    }
   },
   "7535": {
     "id": 7535,
-    "tag": "Combatant II"
+    "tag": "Combatant II",
+    "upgrade": {
+      "level": 3,
+      "max": 9,
+      "group": 206,
+      "bonusId": 7535,
+      "currency": {
+        "amount": 675,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 255
+    }
   },
   "7536": {
     "id": 7536,
-    "tag": "Challenger II"
+    "tag": "Challenger II",
+    "upgrade": {
+      "level": 5,
+      "max": 9,
+      "group": 206,
+      "bonusId": 7536,
+      "currency": {
+        "amount": 850,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 262
+    }
   },
   "7537": {
     "id": 7537,
-    "tag": "Rival II"
+    "tag": "Rival II",
+    "upgrade": {
+      "level": 7,
+      "max": 9,
+      "group": 206,
+      "bonusId": 7537,
+      "currency": {
+        "amount": 1100,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 268
+    }
   },
   "7538": {
     "id": 7538,
-    "tag": "Elite"
+    "tag": "Elite",
+    "upgrade": {
+      "level": 9,
+      "max": 9,
+      "group": 206,
+      "bonusId": 7538,
+      "currency": {
+        "amount": 1475,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 275
+    }
   },
   "7539": {
     "id": 7539,
-    "tag": "Duelist"
+    "tag": "Duelist",
+    "upgrade": {
+      "level": 8,
+      "max": 9,
+      "group": 206,
+      "bonusId": 7539,
+      "currency": {
+        "amount": 1225,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 272
+    }
   },
   "7540": {
     "id": 7540,
-    "tag": "Unranked"
+    "tag": "Unranked",
+    "upgrade": {
+      "level": 1,
+      "max": 9,
+      "group": 207,
+      "bonusId": 7540,
+      "itemLevel": 249
+    }
   },
   "7541": {
     "id": 7541,
-    "tag": "Combatant II"
+    "tag": "Combatant II",
+    "upgrade": {
+      "level": 3,
+      "max": 9,
+      "group": 207,
+      "bonusId": 7541,
+      "currency": {
+        "amount": 850,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 255
+    }
   },
   "7542": {
     "id": 7542,
-    "tag": "Challenger II"
+    "tag": "Challenger II",
+    "upgrade": {
+      "level": 5,
+      "max": 9,
+      "group": 207,
+      "bonusId": 7542,
+      "currency": {
+        "amount": 1075,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 262
+    }
   },
   "7543": {
     "id": 7543,
-    "tag": "Rival II"
+    "tag": "Rival II",
+    "upgrade": {
+      "level": 7,
+      "max": 9,
+      "group": 207,
+      "bonusId": 7543,
+      "currency": {
+        "amount": 1375,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 268
+    }
   },
   "7544": {
     "id": 7544,
-    "tag": "Elite"
+    "tag": "Elite",
+    "upgrade": {
+      "level": 9,
+      "max": 9,
+      "group": 207,
+      "bonusId": 7544,
+      "currency": {
+        "amount": 1825,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 275
+    }
   },
   "7545": {
     "id": 7545,
-    "tag": "Duelist"
+    "tag": "Duelist",
+    "upgrade": {
+      "level": 8,
+      "max": 9,
+      "group": 207,
+      "bonusId": 7545,
+      "currency": {
+        "amount": 1525,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 272
+    }
   },
   "7546": {
     "id": 7546,
-    "tag": "Unranked"
+    "tag": "Unranked",
+    "upgrade": {
+      "level": 1,
+      "max": 9,
+      "group": 208,
+      "bonusId": 7546,
+      "itemLevel": 249
+    }
   },
   "7547": {
     "id": 7547,
-    "tag": "Combatant II"
+    "tag": "Combatant II",
+    "upgrade": {
+      "level": 3,
+      "max": 9,
+      "group": 208,
+      "bonusId": 7547,
+      "currency": {
+        "amount": 1700,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 255
+    }
   },
   "7548": {
     "id": 7548,
-    "tag": "Challenger II"
+    "tag": "Challenger II",
+    "upgrade": {
+      "level": 5,
+      "max": 9,
+      "group": 208,
+      "bonusId": 7548,
+      "currency": {
+        "amount": 2150,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 262
+    }
   },
   "7549": {
     "id": 7549,
-    "tag": "Rival II"
+    "tag": "Rival II",
+    "upgrade": {
+      "level": 7,
+      "max": 9,
+      "group": 208,
+      "bonusId": 7549,
+      "currency": {
+        "amount": 2750,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 268
+    }
   },
   "7550": {
     "id": 7550,
-    "tag": "Elite"
+    "tag": "Elite",
+    "upgrade": {
+      "level": 9,
+      "max": 9,
+      "group": 208,
+      "bonusId": 7550,
+      "currency": {
+        "amount": 3650,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 275
+    }
   },
   "7551": {
     "id": 7551,
-    "tag": "Duelist"
+    "tag": "Duelist",
+    "upgrade": {
+      "level": 8,
+      "max": 9,
+      "group": 208,
+      "bonusId": 7551,
+      "currency": {
+        "amount": 3050,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 272
+    }
   },
   "7552": {
     "id": 7552,
-    "tag": "Unranked"
+    "tag": "Unranked",
+    "upgrade": {
+      "level": 1,
+      "max": 9,
+      "group": 210,
+      "bonusId": 7552,
+      "itemLevel": 249
+    }
   },
   "7553": {
     "id": 7553,
-    "tag": "Combatant II"
+    "tag": "Combatant II",
+    "upgrade": {
+      "level": 3,
+      "max": 9,
+      "group": 210,
+      "bonusId": 7553,
+      "currency": {
+        "amount": 425,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 255
+    }
   },
   "7554": {
     "id": 7554,
-    "tag": "Challenger II"
+    "tag": "Challenger II",
+    "upgrade": {
+      "level": 5,
+      "max": 9,
+      "group": 210,
+      "bonusId": 7554,
+      "currency": {
+        "amount": 550,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 262
+    }
   },
   "7555": {
     "id": 7555,
-    "tag": "Rival II"
+    "tag": "Rival II",
+    "upgrade": {
+      "level": 7,
+      "max": 9,
+      "group": 210,
+      "bonusId": 7555,
+      "currency": {
+        "amount": 700,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 268
+    }
   },
   "7556": {
     "id": 7556,
-    "tag": "Elite"
+    "tag": "Elite",
+    "upgrade": {
+      "level": 9,
+      "max": 9,
+      "group": 210,
+      "bonusId": 7556,
+      "currency": {
+        "amount": 900,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 275
+    }
   },
   "7557": {
     "id": 7557,
-    "tag": "Duelist"
+    "tag": "Duelist",
+    "upgrade": {
+      "level": 8,
+      "max": 9,
+      "group": 210,
+      "bonusId": 7557,
+      "currency": {
+        "amount": 775,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 272
+    }
   },
   "7558": {
     "id": 7558,
-    "tag": "Unranked"
+    "tag": "Unranked",
+    "upgrade": {
+      "level": 1,
+      "max": 9,
+      "group": 211,
+      "bonusId": 7558,
+      "itemLevel": 249
+    }
   },
   "7559": {
     "id": 7559,
-    "tag": "Combatant II"
+    "tag": "Combatant II",
+    "upgrade": {
+      "level": 3,
+      "max": 9,
+      "group": 211,
+      "bonusId": 7559,
+      "currency": {
+        "amount": 1275,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 255
+    }
   },
   "7560": {
     "id": 7560,
-    "tag": "Challenger II"
+    "tag": "Challenger II",
+    "upgrade": {
+      "level": 5,
+      "max": 9,
+      "group": 211,
+      "bonusId": 7560,
+      "currency": {
+        "amount": 1600,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 262
+    }
   },
   "7561": {
     "id": 7561,
-    "tag": "Rival II"
+    "tag": "Rival II",
+    "upgrade": {
+      "level": 7,
+      "max": 9,
+      "group": 211,
+      "bonusId": 7561,
+      "currency": {
+        "amount": 2050,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 268
+    }
   },
   "7562": {
     "id": 7562,
-    "tag": "Elite"
+    "tag": "Elite",
+    "upgrade": {
+      "level": 9,
+      "max": 9,
+      "group": 211,
+      "bonusId": 7562,
+      "currency": {
+        "amount": 2750,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 275
+    }
   },
   "7563": {
     "id": 7563,
-    "tag": "Duelist"
+    "tag": "Duelist",
+    "upgrade": {
+      "level": 8,
+      "max": 9,
+      "group": 211,
+      "bonusId": 7563,
+      "currency": {
+        "amount": 2275,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 272
+    }
   },
   "7564": {
     "id": 7564,
-    "tag": "Unranked"
+    "tag": "Unranked",
+    "upgrade": {
+      "level": 1,
+      "max": 9,
+      "group": 209,
+      "bonusId": 7564,
+      "itemLevel": 249
+    }
   },
   "7565": {
     "id": 7565,
-    "tag": "Combatant II"
+    "tag": "Combatant II",
+    "upgrade": {
+      "level": 3,
+      "max": 9,
+      "group": 209,
+      "bonusId": 7565,
+      "currency": {
+        "amount": 850,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 255
+    }
   },
   "7566": {
     "id": 7566,
-    "tag": "Challenger II"
+    "tag": "Challenger II",
+    "upgrade": {
+      "level": 5,
+      "max": 9,
+      "group": 209,
+      "bonusId": 7566,
+      "currency": {
+        "amount": 1075,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 262
+    }
   },
   "7567": {
     "id": 7567,
-    "tag": "Rival II"
+    "tag": "Rival II",
+    "upgrade": {
+      "level": 7,
+      "max": 9,
+      "group": 209,
+      "bonusId": 7567,
+      "currency": {
+        "amount": 1375,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 268
+    }
   },
   "7568": {
     "id": 7568,
-    "tag": "Elite"
+    "tag": "Elite",
+    "upgrade": {
+      "level": 9,
+      "max": 9,
+      "group": 209,
+      "bonusId": 7568,
+      "currency": {
+        "amount": 1825,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 275
+    }
   },
   "7569": {
     "id": 7569,
-    "tag": "Duelist"
+    "tag": "Duelist",
+    "upgrade": {
+      "level": 8,
+      "max": 9,
+      "group": 209,
+      "bonusId": 7569,
+      "currency": {
+        "amount": 1525,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 272
+    }
   },
   "7570": {
     "id": 7570,
@@ -33830,6 +35048,176 @@ export const bonus_IDs = {
     "quality": 5,
     "name_override": {
       "base": "Agony Gaze"
+    }
+  },
+  "7682": {
+    "id": 7682,
+    "upgrade": {
+      "level": 0,
+      "max": 6,
+      "group": 219
+    }
+  },
+  "7683": {
+    "id": 7683,
+    "upgrade": {
+      "level": 0,
+      "max": 6,
+      "group": 219
+    }
+  },
+  "7684": {
+    "id": 7684,
+    "upgrade": {
+      "level": 0,
+      "max": 6,
+      "group": 219
+    }
+  },
+  "7685": {
+    "id": 7685,
+    "upgrade": {
+      "level": 0,
+      "max": 6,
+      "group": 219
+    }
+  },
+  "7686": {
+    "id": 7686,
+    "upgrade": {
+      "level": 0,
+      "max": 6,
+      "group": 219
+    }
+  },
+  "7687": {
+    "id": 7687,
+    "upgrade": {
+      "level": 0,
+      "max": 6,
+      "group": 219
+    }
+  },
+  "7688": {
+    "id": 7688,
+    "upgrade": {
+      "level": 0,
+      "max": 6,
+      "group": 219
+    }
+  },
+  "7689": {
+    "id": 7689,
+    "upgrade": {
+      "level": 0,
+      "max": 6,
+      "group": 219
+    }
+  },
+  "7690": {
+    "id": 7690,
+    "upgrade": {
+      "level": 0,
+      "max": 6,
+      "group": 219
+    }
+  },
+  "7691": {
+    "id": 7691,
+    "upgrade": {
+      "level": 0,
+      "max": 6,
+      "group": 219
+    }
+  },
+  "7692": {
+    "id": 7692,
+    "upgrade": {
+      "level": 1,
+      "max": 6,
+      "group": 219,
+      "bonusId": 7692,
+      "itemLevel": 200
+    }
+  },
+  "7693": {
+    "id": 7693,
+    "upgrade": {
+      "level": 2,
+      "max": 6,
+      "group": 219,
+      "bonusId": 7693,
+      "currency": {
+        "amount": 250,
+        "name": "Cataloged Research",
+        "id": 1931,
+        "icon": "inv_misc_paperbundle04a"
+      },
+      "itemLevel": 207
+    }
+  },
+  "7694": {
+    "id": 7694,
+    "upgrade": {
+      "level": 3,
+      "max": 6,
+      "group": 219,
+      "bonusId": 7694,
+      "currency": {
+        "amount": 750,
+        "name": "Cataloged Research",
+        "id": 1931,
+        "icon": "inv_misc_paperbundle04a"
+      },
+      "itemLevel": 213
+    }
+  },
+  "7695": {
+    "id": 7695,
+    "upgrade": {
+      "level": 4,
+      "max": 6,
+      "group": 219,
+      "bonusId": 7695,
+      "currency": {
+        "amount": 1250,
+        "name": "Cataloged Research",
+        "id": 1931,
+        "icon": "inv_misc_paperbundle04a"
+      },
+      "itemLevel": 220
+    }
+  },
+  "7696": {
+    "id": 7696,
+    "upgrade": {
+      "level": 5,
+      "max": 6,
+      "group": 219,
+      "bonusId": 7696,
+      "currency": {
+        "amount": 2000,
+        "name": "Cataloged Research",
+        "id": 1931,
+        "icon": "inv_misc_paperbundle04a"
+      },
+      "itemLevel": 226
+    }
+  },
+  "7697": {
+    "id": 7697,
+    "upgrade": {
+      "level": 6,
+      "max": 6,
+      "group": 219,
+      "bonusId": 7697,
+      "currency": {
+        "amount": 3000,
+        "name": "Cataloged Research",
+        "id": 1931,
+        "icon": "inv_misc_paperbundle04a"
+      },
+      "itemLevel": 233
     }
   },
   "7698": {
@@ -34614,6 +36002,1462 @@ export const bonus_IDs = {
     "id": 7756,
     "tag": "Timewarped"
   },
+  "7759": {
+    "id": 7759,
+    "upgrade": {
+      "level": 1,
+      "max": 12,
+      "group": 227,
+      "bonusId": 7759,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 236
+    }
+  },
+  "7760": {
+    "id": 7760,
+    "upgrade": {
+      "level": 2,
+      "max": 12,
+      "group": 227,
+      "bonusId": 7760,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 239
+    }
+  },
+  "7761": {
+    "id": 7761,
+    "upgrade": {
+      "level": 3,
+      "max": 12,
+      "group": 227,
+      "bonusId": 7761,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 242
+    }
+  },
+  "7762": {
+    "id": 7762,
+    "upgrade": {
+      "level": 4,
+      "max": 12,
+      "group": 227,
+      "bonusId": 7762,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 246
+    }
+  },
+  "7763": {
+    "id": 7763,
+    "upgrade": {
+      "level": 5,
+      "max": 12,
+      "group": 227,
+      "bonusId": 7763,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 249
+    }
+  },
+  "7764": {
+    "id": 7764,
+    "upgrade": {
+      "level": 6,
+      "max": 12,
+      "group": 227,
+      "bonusId": 7764,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 252
+    }
+  },
+  "7765": {
+    "id": 7765,
+    "upgrade": {
+      "level": 7,
+      "max": 12,
+      "group": 227,
+      "bonusId": 7765,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 255
+    }
+  },
+  "7766": {
+    "id": 7766,
+    "upgrade": {
+      "level": 8,
+      "max": 12,
+      "group": 227,
+      "bonusId": 7766,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 259
+    }
+  },
+  "7767": {
+    "id": 7767,
+    "upgrade": {
+      "level": 9,
+      "max": 12,
+      "group": 227,
+      "bonusId": 7767,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 262
+    }
+  },
+  "7768": {
+    "id": 7768,
+    "upgrade": {
+      "level": 10,
+      "max": 12,
+      "group": 227,
+      "bonusId": 7768,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 265
+    }
+  },
+  "7769": {
+    "id": 7769,
+    "upgrade": {
+      "level": 11,
+      "max": 12,
+      "group": 227,
+      "bonusId": 7769,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 268
+    }
+  },
+  "7770": {
+    "id": 7770,
+    "upgrade": {
+      "level": 12,
+      "max": 12,
+      "group": 227,
+      "bonusId": 7770,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 272
+    }
+  },
+  "7771": {
+    "id": 7771,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 227
+    }
+  },
+  "7772": {
+    "id": 7772,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 227
+    }
+  },
+  "7773": {
+    "id": 7773,
+    "upgrade": {
+      "level": 1,
+      "max": 12,
+      "group": 228,
+      "bonusId": 7773,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 236
+    }
+  },
+  "7774": {
+    "id": 7774,
+    "upgrade": {
+      "level": 2,
+      "max": 12,
+      "group": 228,
+      "bonusId": 7774,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 239
+    }
+  },
+  "7775": {
+    "id": 7775,
+    "upgrade": {
+      "level": 3,
+      "max": 12,
+      "group": 228,
+      "bonusId": 7775,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 242
+    }
+  },
+  "7776": {
+    "id": 7776,
+    "upgrade": {
+      "level": 4,
+      "max": 12,
+      "group": 228,
+      "bonusId": 7776,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 246
+    }
+  },
+  "7777": {
+    "id": 7777,
+    "upgrade": {
+      "level": 5,
+      "max": 12,
+      "group": 228,
+      "bonusId": 7777,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 249
+    }
+  },
+  "7778": {
+    "id": 7778,
+    "upgrade": {
+      "level": 6,
+      "max": 12,
+      "group": 228,
+      "bonusId": 7778,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 252
+    }
+  },
+  "7779": {
+    "id": 7779,
+    "upgrade": {
+      "level": 7,
+      "max": 12,
+      "group": 228,
+      "bonusId": 7779,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 255
+    }
+  },
+  "7780": {
+    "id": 7780,
+    "upgrade": {
+      "level": 8,
+      "max": 12,
+      "group": 228,
+      "bonusId": 7780,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 259
+    }
+  },
+  "7781": {
+    "id": 7781,
+    "upgrade": {
+      "level": 9,
+      "max": 12,
+      "group": 228,
+      "bonusId": 7781,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 262
+    }
+  },
+  "7782": {
+    "id": 7782,
+    "upgrade": {
+      "level": 10,
+      "max": 12,
+      "group": 228,
+      "bonusId": 7782,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 265
+    }
+  },
+  "7783": {
+    "id": 7783,
+    "upgrade": {
+      "level": 11,
+      "max": 12,
+      "group": 228,
+      "bonusId": 7783,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 268
+    }
+  },
+  "7784": {
+    "id": 7784,
+    "upgrade": {
+      "level": 12,
+      "max": 12,
+      "group": 228,
+      "bonusId": 7784,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 272
+    }
+  },
+  "7785": {
+    "id": 7785,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 228
+    }
+  },
+  "7786": {
+    "id": 7786,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 228
+    }
+  },
+  "7787": {
+    "id": 7787,
+    "upgrade": {
+      "level": 1,
+      "max": 12,
+      "group": 229,
+      "bonusId": 7787,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 236
+    }
+  },
+  "7788": {
+    "id": 7788,
+    "upgrade": {
+      "level": 2,
+      "max": 12,
+      "group": 229,
+      "bonusId": 7788,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 239
+    }
+  },
+  "7789": {
+    "id": 7789,
+    "upgrade": {
+      "level": 3,
+      "max": 12,
+      "group": 229,
+      "bonusId": 7789,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 242
+    }
+  },
+  "7790": {
+    "id": 7790,
+    "upgrade": {
+      "level": 4,
+      "max": 12,
+      "group": 229,
+      "bonusId": 7790,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 246
+    }
+  },
+  "7791": {
+    "id": 7791,
+    "upgrade": {
+      "level": 5,
+      "max": 12,
+      "group": 229,
+      "bonusId": 7791,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 249
+    }
+  },
+  "7792": {
+    "id": 7792,
+    "upgrade": {
+      "level": 6,
+      "max": 12,
+      "group": 229,
+      "bonusId": 7792,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 252
+    }
+  },
+  "7793": {
+    "id": 7793,
+    "upgrade": {
+      "level": 7,
+      "max": 12,
+      "group": 229,
+      "bonusId": 7793,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 255
+    }
+  },
+  "7794": {
+    "id": 7794,
+    "upgrade": {
+      "level": 8,
+      "max": 12,
+      "group": 229,
+      "bonusId": 7794,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 259
+    }
+  },
+  "7795": {
+    "id": 7795,
+    "upgrade": {
+      "level": 9,
+      "max": 12,
+      "group": 229,
+      "bonusId": 7795,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 262
+    }
+  },
+  "7796": {
+    "id": 7796,
+    "upgrade": {
+      "level": 10,
+      "max": 12,
+      "group": 229,
+      "bonusId": 7796,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 265
+    }
+  },
+  "7797": {
+    "id": 7797,
+    "upgrade": {
+      "level": 11,
+      "max": 12,
+      "group": 229,
+      "bonusId": 7797,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 268
+    }
+  },
+  "7798": {
+    "id": 7798,
+    "upgrade": {
+      "level": 12,
+      "max": 12,
+      "group": 229,
+      "bonusId": 7798,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 272
+    }
+  },
+  "7799": {
+    "id": 7799,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 229
+    }
+  },
+  "7800": {
+    "id": 7800,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 229
+    }
+  },
+  "7801": {
+    "id": 7801,
+    "upgrade": {
+      "level": 1,
+      "max": 12,
+      "group": 224,
+      "bonusId": 7801,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 236
+    }
+  },
+  "7802": {
+    "id": 7802,
+    "upgrade": {
+      "level": 2,
+      "max": 12,
+      "group": 224,
+      "bonusId": 7802,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 239
+    }
+  },
+  "7803": {
+    "id": 7803,
+    "upgrade": {
+      "level": 3,
+      "max": 12,
+      "group": 224,
+      "bonusId": 7803,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 242
+    }
+  },
+  "7804": {
+    "id": 7804,
+    "upgrade": {
+      "level": 4,
+      "max": 12,
+      "group": 224,
+      "bonusId": 7804,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 246
+    }
+  },
+  "7805": {
+    "id": 7805,
+    "upgrade": {
+      "level": 5,
+      "max": 12,
+      "group": 224,
+      "bonusId": 7805,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 249
+    }
+  },
+  "7806": {
+    "id": 7806,
+    "upgrade": {
+      "level": 6,
+      "max": 12,
+      "group": 224,
+      "bonusId": 7806,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 252
+    }
+  },
+  "7807": {
+    "id": 7807,
+    "upgrade": {
+      "level": 7,
+      "max": 12,
+      "group": 224,
+      "bonusId": 7807,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 255
+    }
+  },
+  "7808": {
+    "id": 7808,
+    "upgrade": {
+      "level": 8,
+      "max": 12,
+      "group": 224,
+      "bonusId": 7808,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 259
+    }
+  },
+  "7809": {
+    "id": 7809,
+    "upgrade": {
+      "level": 9,
+      "max": 12,
+      "group": 224,
+      "bonusId": 7809,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 262
+    }
+  },
+  "7810": {
+    "id": 7810,
+    "upgrade": {
+      "level": 10,
+      "max": 12,
+      "group": 224,
+      "bonusId": 7810,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 265
+    }
+  },
+  "7811": {
+    "id": 7811,
+    "upgrade": {
+      "level": 11,
+      "max": 12,
+      "group": 224,
+      "bonusId": 7811,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 268
+    }
+  },
+  "7812": {
+    "id": 7812,
+    "upgrade": {
+      "level": 12,
+      "max": 12,
+      "group": 224,
+      "bonusId": 7812,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 272
+    }
+  },
+  "7813": {
+    "id": 7813,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 224
+    }
+  },
+  "7814": {
+    "id": 7814,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 224
+    }
+  },
+  "7815": {
+    "id": 7815,
+    "upgrade": {
+      "level": 1,
+      "max": 12,
+      "group": 223,
+      "bonusId": 7815,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 236
+    }
+  },
+  "7816": {
+    "id": 7816,
+    "upgrade": {
+      "level": 2,
+      "max": 12,
+      "group": 223,
+      "bonusId": 7816,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 239
+    }
+  },
+  "7817": {
+    "id": 7817,
+    "upgrade": {
+      "level": 3,
+      "max": 12,
+      "group": 223,
+      "bonusId": 7817,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 242
+    }
+  },
+  "7818": {
+    "id": 7818,
+    "upgrade": {
+      "level": 4,
+      "max": 12,
+      "group": 223,
+      "bonusId": 7818,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 246
+    }
+  },
+  "7819": {
+    "id": 7819,
+    "upgrade": {
+      "level": 5,
+      "max": 12,
+      "group": 223,
+      "bonusId": 7819,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 249
+    }
+  },
+  "7820": {
+    "id": 7820,
+    "upgrade": {
+      "level": 6,
+      "max": 12,
+      "group": 223,
+      "bonusId": 7820,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 252
+    }
+  },
+  "7821": {
+    "id": 7821,
+    "upgrade": {
+      "level": 7,
+      "max": 12,
+      "group": 223,
+      "bonusId": 7821,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 255
+    }
+  },
+  "7822": {
+    "id": 7822,
+    "upgrade": {
+      "level": 8,
+      "max": 12,
+      "group": 223,
+      "bonusId": 7822,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 259
+    }
+  },
+  "7823": {
+    "id": 7823,
+    "upgrade": {
+      "level": 9,
+      "max": 12,
+      "group": 223,
+      "bonusId": 7823,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 262
+    }
+  },
+  "7824": {
+    "id": 7824,
+    "upgrade": {
+      "level": 10,
+      "max": 12,
+      "group": 223,
+      "bonusId": 7824,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 265
+    }
+  },
+  "7825": {
+    "id": 7825,
+    "upgrade": {
+      "level": 11,
+      "max": 12,
+      "group": 223,
+      "bonusId": 7825,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 268
+    }
+  },
+  "7826": {
+    "id": 7826,
+    "upgrade": {
+      "level": 12,
+      "max": 12,
+      "group": 223,
+      "bonusId": 7826,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 272
+    }
+  },
+  "7827": {
+    "id": 7827,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 223
+    }
+  },
+  "7828": {
+    "id": 7828,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 223
+    }
+  },
+  "7829": {
+    "id": 7829,
+    "upgrade": {
+      "level": 1,
+      "max": 12,
+      "group": 226,
+      "bonusId": 7829,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 236
+    }
+  },
+  "7830": {
+    "id": 7830,
+    "upgrade": {
+      "level": 2,
+      "max": 12,
+      "group": 226,
+      "bonusId": 7830,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 239
+    }
+  },
+  "7831": {
+    "id": 7831,
+    "upgrade": {
+      "level": 3,
+      "max": 12,
+      "group": 226,
+      "bonusId": 7831,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 242
+    }
+  },
+  "7832": {
+    "id": 7832,
+    "upgrade": {
+      "level": 4,
+      "max": 12,
+      "group": 226,
+      "bonusId": 7832,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 246
+    }
+  },
+  "7833": {
+    "id": 7833,
+    "upgrade": {
+      "level": 5,
+      "max": 12,
+      "group": 226,
+      "bonusId": 7833,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 249
+    }
+  },
+  "7834": {
+    "id": 7834,
+    "upgrade": {
+      "level": 6,
+      "max": 12,
+      "group": 226,
+      "bonusId": 7834,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 252
+    }
+  },
+  "7835": {
+    "id": 7835,
+    "upgrade": {
+      "level": 7,
+      "max": 12,
+      "group": 226,
+      "bonusId": 7835,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 255
+    }
+  },
+  "7836": {
+    "id": 7836,
+    "upgrade": {
+      "level": 8,
+      "max": 12,
+      "group": 226,
+      "bonusId": 7836,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 259
+    }
+  },
+  "7837": {
+    "id": 7837,
+    "upgrade": {
+      "level": 9,
+      "max": 12,
+      "group": 226,
+      "bonusId": 7837,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 262
+    }
+  },
+  "7838": {
+    "id": 7838,
+    "upgrade": {
+      "level": 10,
+      "max": 12,
+      "group": 226,
+      "bonusId": 7838,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 265
+    }
+  },
+  "7839": {
+    "id": 7839,
+    "upgrade": {
+      "level": 11,
+      "max": 12,
+      "group": 226,
+      "bonusId": 7839,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 268
+    }
+  },
+  "7840": {
+    "id": 7840,
+    "upgrade": {
+      "level": 12,
+      "max": 12,
+      "group": 226,
+      "bonusId": 7840,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 272
+    }
+  },
+  "7841": {
+    "id": 7841,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 226
+    }
+  },
+  "7842": {
+    "id": 7842,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 226
+    }
+  },
+  "7843": {
+    "id": 7843,
+    "upgrade": {
+      "level": 1,
+      "max": 12,
+      "group": 225,
+      "bonusId": 7843,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 236
+    }
+  },
+  "7844": {
+    "id": 7844,
+    "upgrade": {
+      "level": 2,
+      "max": 12,
+      "group": 225,
+      "bonusId": 7844,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 239
+    }
+  },
+  "7845": {
+    "id": 7845,
+    "upgrade": {
+      "level": 3,
+      "max": 12,
+      "group": 225,
+      "bonusId": 7845,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 242
+    }
+  },
+  "7846": {
+    "id": 7846,
+    "upgrade": {
+      "level": 4,
+      "max": 12,
+      "group": 225,
+      "bonusId": 7846,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 246
+    }
+  },
+  "7847": {
+    "id": 7847,
+    "upgrade": {
+      "level": 5,
+      "max": 12,
+      "group": 225,
+      "bonusId": 7847,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 249
+    }
+  },
+  "7848": {
+    "id": 7848,
+    "upgrade": {
+      "level": 6,
+      "max": 12,
+      "group": 225,
+      "bonusId": 7848,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 252
+    }
+  },
+  "7849": {
+    "id": 7849,
+    "upgrade": {
+      "level": 7,
+      "max": 12,
+      "group": 225,
+      "bonusId": 7849,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 255
+    }
+  },
+  "7850": {
+    "id": 7850,
+    "upgrade": {
+      "level": 8,
+      "max": 12,
+      "group": 225,
+      "bonusId": 7850,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 259
+    }
+  },
+  "7851": {
+    "id": 7851,
+    "upgrade": {
+      "level": 9,
+      "max": 12,
+      "group": 225,
+      "bonusId": 7851,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 262
+    }
+  },
+  "7852": {
+    "id": 7852,
+    "upgrade": {
+      "level": 10,
+      "max": 12,
+      "group": 225,
+      "bonusId": 7852,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 265
+    }
+  },
+  "7853": {
+    "id": 7853,
+    "upgrade": {
+      "level": 11,
+      "max": 12,
+      "group": 225,
+      "bonusId": 7853,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 268
+    }
+  },
+  "7854": {
+    "id": 7854,
+    "upgrade": {
+      "level": 12,
+      "max": 12,
+      "group": 225,
+      "bonusId": 7854,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 272
+    }
+  },
+  "7855": {
+    "id": 7855,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 225
+    }
+  },
+  "7856": {
+    "id": 7856,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 225
+    }
+  },
   "7859": {
     "id": 7859,
     "tag": "Combatant II"
@@ -34796,87 +37640,360 @@ export const bonus_IDs = {
   },
   "7893": {
     "id": 7893,
-    "tag": "Combatant I"
+    "tag": "Combatant I",
+    "upgrade": {
+      "level": 2,
+      "max": 9,
+      "group": 205,
+      "bonusId": 7893,
+      "currency": {
+        "amount": 450,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 252
+    }
   },
   "7894": {
     "id": 7894,
-    "tag": "Challenger I"
+    "tag": "Challenger I",
+    "upgrade": {
+      "level": 4,
+      "max": 9,
+      "group": 205,
+      "bonusId": 7894,
+      "currency": {
+        "amount": 550,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 259
+    }
   },
   "7895": {
     "id": 7895,
-    "tag": "Rival I"
+    "tag": "Rival I",
+    "upgrade": {
+      "level": 6,
+      "max": 9,
+      "group": 205,
+      "bonusId": 7895,
+      "currency": {
+        "amount": 725,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 265
+    }
   },
   "7896": {
     "id": 7896,
-    "tag": "Combatant I"
+    "tag": "Combatant I",
+    "upgrade": {
+      "level": 2,
+      "max": 9,
+      "group": 206,
+      "bonusId": 7896,
+      "currency": {
+        "amount": 600,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 252
+    }
   },
   "7897": {
     "id": 7897,
-    "tag": "Challenger I"
+    "tag": "Challenger I",
+    "upgrade": {
+      "level": 4,
+      "max": 9,
+      "group": 206,
+      "bonusId": 7897,
+      "currency": {
+        "amount": 725,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 259
+    }
   },
   "7898": {
     "id": 7898,
-    "tag": "Rival I"
+    "tag": "Rival I",
+    "upgrade": {
+      "level": 6,
+      "max": 9,
+      "group": 206,
+      "bonusId": 7898,
+      "currency": {
+        "amount": 975,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 265
+    }
   },
   "7899": {
     "id": 7899,
-    "tag": "Combatant I"
+    "tag": "Combatant I",
+    "upgrade": {
+      "level": 2,
+      "max": 9,
+      "group": 207,
+      "bonusId": 7899,
+      "currency": {
+        "amount": 775,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 252
+    }
   },
   "7900": {
     "id": 7900,
-    "tag": "Challenger I"
+    "tag": "Challenger I",
+    "upgrade": {
+      "level": 4,
+      "max": 9,
+      "group": 207,
+      "bonusId": 7900,
+      "currency": {
+        "amount": 925,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 259
+    }
   },
   "7901": {
     "id": 7901,
-    "tag": "Rival I"
+    "tag": "Rival I",
+    "upgrade": {
+      "level": 6,
+      "max": 9,
+      "group": 207,
+      "bonusId": 7901,
+      "currency": {
+        "amount": 1225,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 265
+    }
   },
   "7902": {
     "id": 7902,
-    "tag": "Combatant I"
+    "tag": "Combatant I",
+    "upgrade": {
+      "level": 2,
+      "max": 9,
+      "group": 208,
+      "bonusId": 7902,
+      "currency": {
+        "amount": 1550,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 252
+    }
   },
   "7903": {
     "id": 7903,
-    "tag": "Challenger I"
+    "tag": "Challenger I",
+    "upgrade": {
+      "level": 4,
+      "max": 9,
+      "group": 208,
+      "bonusId": 7903,
+      "currency": {
+        "amount": 1850,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 259
+    }
   },
   "7904": {
     "id": 7904,
-    "tag": "Rival I"
+    "tag": "Rival I",
+    "upgrade": {
+      "level": 6,
+      "max": 9,
+      "group": 208,
+      "bonusId": 7904,
+      "currency": {
+        "amount": 2450,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 265
+    }
   },
   "7905": {
     "id": 7905,
-    "tag": "Combatant I"
+    "tag": "Combatant I",
+    "upgrade": {
+      "level": 2,
+      "max": 9,
+      "group": 210,
+      "bonusId": 7905,
+      "currency": {
+        "amount": 375,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 252
+    }
   },
   "7906": {
     "id": 7906,
-    "tag": "Challenger I"
+    "tag": "Challenger I",
+    "upgrade": {
+      "level": 4,
+      "max": 9,
+      "group": 210,
+      "bonusId": 7906,
+      "currency": {
+        "amount": 475,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 259
+    }
   },
   "7907": {
     "id": 7907,
-    "tag": "Rival I"
+    "tag": "Rival I",
+    "upgrade": {
+      "level": 6,
+      "max": 9,
+      "group": 210,
+      "bonusId": 7907,
+      "currency": {
+        "amount": 625,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 265
+    }
   },
   "7908": {
     "id": 7908,
-    "tag": "Combatant I"
+    "tag": "Combatant I",
+    "upgrade": {
+      "level": 2,
+      "max": 9,
+      "group": 211,
+      "bonusId": 7908,
+      "currency": {
+        "amount": 1175,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 252
+    }
   },
   "7909": {
     "id": 7909,
-    "tag": "Challenger I"
+    "tag": "Challenger I",
+    "upgrade": {
+      "level": 4,
+      "max": 9,
+      "group": 211,
+      "bonusId": 7909,
+      "currency": {
+        "amount": 1375,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 259
+    }
   },
   "7910": {
     "id": 7910,
-    "tag": "Rival I"
+    "tag": "Rival I",
+    "upgrade": {
+      "level": 6,
+      "max": 9,
+      "group": 211,
+      "bonusId": 7910,
+      "currency": {
+        "amount": 1825,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 265
+    }
   },
   "7911": {
     "id": 7911,
-    "tag": "Combatant I"
+    "tag": "Combatant I",
+    "upgrade": {
+      "level": 2,
+      "max": 9,
+      "group": 209,
+      "bonusId": 7911,
+      "currency": {
+        "amount": 775,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 252
+    }
   },
   "7912": {
     "id": 7912,
-    "tag": "Challenger I"
+    "tag": "Challenger I",
+    "upgrade": {
+      "level": 4,
+      "max": 9,
+      "group": 209,
+      "bonusId": 7912,
+      "currency": {
+        "amount": 925,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 259
+    }
   },
   "7913": {
     "id": 7913,
-    "tag": "Rival I"
+    "tag": "Rival I",
+    "upgrade": {
+      "level": 6,
+      "max": 9,
+      "group": 209,
+      "bonusId": 7913,
+      "currency": {
+        "amount": 1225,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 265
+    }
   },
   "7914": {
     "id": 7914,
@@ -34911,7 +38028,7 @@ export const bonus_IDs = {
       "spell": {
         "id": 361118,
         "name": "Sustaining Armor Polish",
-        "icon": "inv_alchemy_crystalvial"
+        "icon": "inv_alchemy_optionalreagent_01"
       }
     }
   },
@@ -34921,27 +38038,27 @@ export const bonus_IDs = {
   },
   "7920": {
     "id": 7920,
-    "ilevel": "2 @plvl 1 - 146 @plvl 146",
+    "ilevel": "14 @plvl 1 - 187 @plvl 187",
     "curveId": 956
   },
   "7921": {
     "id": 7921,
-    "ilevel": "3 @plvl 1 - 147 @plvl 147",
+    "ilevel": "15 @plvl 1 - 188 @plvl 188",
     "curveId": 959
   },
   "7922": {
     "id": 7922,
-    "ilevel": "5 @plvl 1 - 149 @plvl 149",
+    "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 961
   },
   "7923": {
     "id": 7923,
-    "ilevel": "4 @plvl 1 - 148 @plvl 148",
+    "ilevel": "16 @plvl 1 - 189 @plvl 189",
     "curveId": 960
   },
   "7924": {
     "id": 7924,
-    "ilevel": "4 @plvl 1 - 148 @plvl 148",
+    "ilevel": "16 @plvl 1 - 189 @plvl 189",
     "curveId": 1690
   },
   "7925": {
@@ -34953,6 +38070,14 @@ export const bonus_IDs = {
   "7926": {
     "id": 7926,
     "tag": "Fated"
+  },
+  "7930": {
+    "id": 7930,
+    "effect": null
+  },
+  "7931": {
+    "id": 7931,
+    "tag": "Quality 4 of 5"
   },
   "7932": {
     "id": 7932,
@@ -34993,6 +38118,98 @@ export const bonus_IDs = {
     },
     "item_limit_category": 492
   },
+  "7935": {
+    "id": 7935,
+    "socket": 1
+  },
+  "7938": {
+    "id": 7938,
+    "tag": "Tier 1 - Fire"
+  },
+  "7939": {
+    "id": 7939,
+    "tag": "Tier 2 - Fire"
+  },
+  "7940": {
+    "id": 7940,
+    "rawStats": [
+      {
+        "stat": 74,
+        "amount": 1000,
+        "name": "StrInt"
+      },
+      {
+        "stat": 7,
+        "amount": 1000,
+        "name": "Sta"
+      }
+    ],
+    "stats": "50% StrInt [0.1000], 50% Sta [0.1000]"
+  },
+  "7941": {
+    "id": 7941,
+    "rawStats": [
+      {
+        "stat": 74,
+        "amount": 20,
+        "name": "StrInt"
+      },
+      {
+        "stat": 7,
+        "amount": 20,
+        "name": "Sta"
+      }
+    ],
+    "stats": "50% StrInt [0.0020], 50% Sta [0.0020]"
+  },
+  "7942": {
+    "id": 7942,
+    "rawStats": [
+      {
+        "stat": 74,
+        "amount": 30,
+        "name": "StrInt"
+      },
+      {
+        "stat": 7,
+        "amount": 30,
+        "name": "Sta"
+      }
+    ],
+    "stats": "50% StrInt [0.0030], 50% Sta [0.0030]"
+  },
+  "7943": {
+    "id": 7943,
+    "rawStats": [
+      {
+        "stat": 74,
+        "amount": 40,
+        "name": "StrInt"
+      },
+      {
+        "stat": 7,
+        "amount": 40,
+        "name": "Sta"
+      }
+    ],
+    "stats": "50% StrInt [0.0040], 50% Sta [0.0040]"
+  },
+  "7944": {
+    "id": 7944,
+    "rawStats": [
+      {
+        "stat": 74,
+        "amount": 50,
+        "name": "StrInt"
+      },
+      {
+        "stat": 7,
+        "amount": 50,
+        "name": "Sta"
+      }
+    ],
+    "stats": "50% StrInt [0.0050], 50% Sta [0.0050]"
+  },
   "7945": {
     "id": 7945,
     "effect": {
@@ -35018,6 +38235,67 @@ export const bonus_IDs = {
       }
     },
     "item_limit_category": 493
+  },
+  "7947": {
+    "id": 7947,
+    "effect": {
+      "id": 140087,
+      "index": 0,
+      "spell": {
+        "id": 364999,
+        "name": "Crystallized",
+        "icon": "trade_engineering"
+      }
+    },
+    "item_limit_category": 493
+  },
+  "7948": {
+    "id": 7948,
+    "upgrade": {
+      "level": 0,
+      "max": 5,
+      "group": 232
+    }
+  },
+  "7949": {
+    "id": 7949,
+    "upgrade": {
+      "level": 0,
+      "max": 5,
+      "group": 232
+    }
+  },
+  "7950": {
+    "id": 7950,
+    "upgrade": {
+      "level": 0,
+      "max": 5,
+      "group": 232
+    }
+  },
+  "7951": {
+    "id": 7951,
+    "upgrade": {
+      "level": 0,
+      "max": 5,
+      "group": 232
+    }
+  },
+  "7952": {
+    "id": 7952,
+    "upgrade": {
+      "level": 0,
+      "max": 5,
+      "group": 232
+    }
+  },
+  "7953": {
+    "id": 7953,
+    "quality": 3
+  },
+  "7954": {
+    "id": 7954,
+    "quality": 4
   },
   "7955": {
     "id": 7955,
@@ -35058,6 +38336,16 @@ export const bonus_IDs = {
     },
     "item_limit_category": 494
   },
+  "7959": {
+    "id": 7959,
+    "upgrade": {
+      "level": 3,
+      "max": 3,
+      "group": 197,
+      "bonusId": 7959,
+      "itemLevel": 239
+    }
+  },
   "7960": {
     "id": 7960,
     "effect": {
@@ -35069,6 +38357,92 @@ export const bonus_IDs = {
         "icon": "trade_engineering"
       }
     }
+  },
+  "7962": {
+    "id": 7962,
+    "level": 3
+  },
+  "7963": {
+    "id": 7963,
+    "ilevel": "206 @plvl 45 - 327 @plvl 327",
+    "curveId": 30724
+  },
+  "7964": {
+    "id": 7964,
+    "ilevel": "219 @plvl 45 - 340 @plvl 340",
+    "curveId": 30725,
+    "quality": 3
+  },
+  "7965": {
+    "id": 7965,
+    "ilevel": "232 @plvl 45 - 353 @plvl 353",
+    "curveId": 30726,
+    "quality": 4
+  },
+  "7966": {
+    "id": 7966,
+    "ilevel": "180 @plvl 50 - 180 @plvl 180",
+    "curveId": 30728
+  },
+  "7967": {
+    "id": 7967,
+    "ilevel": "193 @plvl 50 - 193 @plvl 193",
+    "curveId": 30729
+  },
+  "7968": {
+    "id": 7968,
+    "ilevel": "202 @plvl 50 - 292 @plvl 292",
+    "curveId": 30730
+  },
+  "7969": {
+    "id": 7969,
+    "ilevel": "212 @plvl 50 - 302 @plvl 302",
+    "curveId": 30731
+  },
+  "7970": {
+    "id": 7970,
+    "ilevel": "265 @plvl 1 - 265 @plvl 265",
+    "curveId": 30732
+  },
+  "7971": {
+    "id": 7971,
+    "ilevel": "265 @plvl 1 - 265 @plvl 265",
+    "curveId": 30733
+  },
+  "7972": {
+    "id": 7972,
+    "ilevel": "285 @plvl 1 - 285 @plvl 285",
+    "curveId": 30734
+  },
+  "7973": {
+    "id": 7973,
+    "ilevel": "285 @plvl 1 - 285 @plvl 285",
+    "curveId": 30735
+  },
+  "7976": {
+    "id": 7976,
+    "tag": "Heroic"
+  },
+  "7977": {
+    "id": 7977,
+    "tag": "Mythic"
+  },
+  "7978": {
+    "id": 7978,
+    "ilevel": "226 @plvl 45 - 346 @plvl 346",
+    "curveId": 30771
+  },
+  "7980": {
+    "id": 7980,
+    "tag": "Heroic"
+  },
+  "7981": {
+    "id": 7981,
+    "tag": "Mythic"
+  },
+  "7982": {
+    "id": 7982,
+    "tag": "Raid Finder"
   },
   "7985": {
     "id": 7985,
@@ -37134,6 +40508,11 @@ export const bonus_IDs = {
     "id": 8145,
     "quality": 3
   },
+  "8147": {
+    "id": 8147,
+    "ilevel": "60 @plvl 60 - 80 @plvl 80",
+    "curveId": 32007
+  },
   "8148": {
     "id": 8148,
     "quality": 4
@@ -37141,5 +40520,5089 @@ export const bonus_IDs = {
   "8157": {
     "id": 8157,
     "previewlevel": 0
+  },
+  "8165": {
+    "id": 8165,
+    "ilevel": "5 @plvl 1 - 272 @plvl 272",
+    "curveId": 33534
+  },
+  "8170": {
+    "id": 8170,
+    "ilevel": "219 @plvl 45 - 340 @plvl 340",
+    "curveId": 30725,
+    "quality": 3
+  },
+  "8171": {
+    "id": 8171,
+    "ilevel": "21 @plvl 1 - 359 @plvl 359",
+    "curveId": 56365,
+    "quality": 3
+  },
+  "8172": {
+    "id": 8172,
+    "ilevel": "21 @plvl 1 - 346 @plvl 346",
+    "curveId": 56366,
+    "tag": "Timewarped"
+  },
+  "8174": {
+    "id": 8174,
+    "effect": {
+      "id": 147811,
+      "index": 0,
+      "spell": {
+        "id": 372120,
+        "name": "Alchemical Flavor Pocket",
+        "icon": "inv_misc_food_legion_goochocovanilla_bottle"
+      }
+    }
+  },
+  "8175": {
+    "id": 8175,
+    "effect": {
+      "id": 147812,
+      "index": 0,
+      "spell": {
+        "id": 371700,
+        "name": "Potion Absorption Inhibitor",
+        "icon": "inv_misc_food_legion_gooamber_drop"
+      }
+    }
+  },
+  "8176": {
+    "id": 8176,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 5000,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 2000,
+        "name": "Haste"
+      }
+    ],
+    "stats": "71% Crit [0.5000], 29% Haste [0.2000]",
+    "name": "of the Fireflash"
+  },
+  "8177": {
+    "id": 8177,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2000,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 5000,
+        "name": "Haste"
+      }
+    ],
+    "stats": "29% Crit [0.2000], 71% Haste [0.5000]",
+    "name": "of the Fireflash"
+  },
+  "8178": {
+    "id": 8178,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 5000,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 2000,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "71% Crit [0.5000], 29% Mastery [0.2000]",
+    "name": "of the Peerless"
+  },
+  "8179": {
+    "id": 8179,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2000,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 5000,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "29% Crit [0.2000], 71% Mastery [0.5000]",
+    "name": "of the Peerless"
+  },
+  "8180": {
+    "id": 8180,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 5000,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 2000,
+        "name": "Vers"
+      }
+    ],
+    "stats": "71% Crit [0.5000], 29% Vers [0.2000]",
+    "name": "of the Quickblade"
+  },
+  "8181": {
+    "id": 8181,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2000,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 5000,
+        "name": "Vers"
+      }
+    ],
+    "stats": "29% Crit [0.2000], 71% Vers [0.5000]",
+    "name": "of the Quickblade"
+  },
+  "8182": {
+    "id": 8182,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 5000,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 2000,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "71% Haste [0.5000], 29% Mastery [0.2000]",
+    "name": "of the Feverflare"
+  },
+  "8183": {
+    "id": 8183,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2000,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 5000,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "29% Haste [0.2000], 71% Mastery [0.5000]",
+    "name": "of the Feverflare"
+  },
+  "8184": {
+    "id": 8184,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 5000,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 2000,
+        "name": "Vers"
+      }
+    ],
+    "stats": "71% Haste [0.5000], 29% Vers [0.2000]",
+    "name": "of the Aurora"
+  },
+  "8185": {
+    "id": 8185,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2000,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 5000,
+        "name": "Vers"
+      }
+    ],
+    "stats": "29% Haste [0.2000], 71% Vers [0.5000]",
+    "name": "of the Aurora"
+  },
+  "8186": {
+    "id": 8186,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 5000,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 2000,
+        "name": "Vers"
+      }
+    ],
+    "stats": "71% Mastery [0.5000], 29% Vers [0.2000]",
+    "name": "of the Harmonious"
+  },
+  "8187": {
+    "id": 8187,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 2000,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 5000,
+        "name": "Vers"
+      }
+    ],
+    "stats": "29% Mastery [0.2000], 71% Vers [0.5000]",
+    "name": "of the Harmonious"
+  },
+  "8188": {
+    "id": 8188,
+    "effect": {
+      "id": 147859,
+      "index": 0,
+      "spell": {
+        "id": 396581,
+        "name": "Armor Spikes",
+        "icon": "inv_titanium_shield_spike"
+      }
+    }
+  },
+  "8189": {
+    "id": 8189,
+    "upgrade": {
+      "level": 1,
+      "max": 12,
+      "group": 241,
+      "bonusId": 8189,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 262
+    }
+  },
+  "8190": {
+    "id": 8190,
+    "upgrade": {
+      "level": 2,
+      "max": 12,
+      "group": 241,
+      "bonusId": 8190,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 265
+    }
+  },
+  "8191": {
+    "id": 8191,
+    "upgrade": {
+      "level": 3,
+      "max": 12,
+      "group": 241,
+      "bonusId": 8191,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 268
+    }
+  },
+  "8192": {
+    "id": 8192,
+    "upgrade": {
+      "level": 4,
+      "max": 12,
+      "group": 241,
+      "bonusId": 8192,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 272
+    }
+  },
+  "8193": {
+    "id": 8193,
+    "upgrade": {
+      "level": 5,
+      "max": 12,
+      "group": 241,
+      "bonusId": 8193,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 275
+    }
+  },
+  "8194": {
+    "id": 8194,
+    "upgrade": {
+      "level": 6,
+      "max": 12,
+      "group": 241,
+      "bonusId": 8194,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 278
+    }
+  },
+  "8195": {
+    "id": 8195,
+    "upgrade": {
+      "level": 7,
+      "max": 12,
+      "group": 241,
+      "bonusId": 8195,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 282
+    }
+  },
+  "8196": {
+    "id": 8196,
+    "upgrade": {
+      "level": 8,
+      "max": 12,
+      "group": 241,
+      "bonusId": 8196,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 285
+    }
+  },
+  "8197": {
+    "id": 8197,
+    "upgrade": {
+      "level": 9,
+      "max": 12,
+      "group": 241,
+      "bonusId": 8197,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 288
+    }
+  },
+  "8198": {
+    "id": 8198,
+    "upgrade": {
+      "level": 10,
+      "max": 12,
+      "group": 241,
+      "bonusId": 8198,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 291
+    }
+  },
+  "8199": {
+    "id": 8199,
+    "upgrade": {
+      "level": 11,
+      "max": 12,
+      "group": 241,
+      "bonusId": 8199,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 294
+    }
+  },
+  "8200": {
+    "id": 8200,
+    "upgrade": {
+      "level": 12,
+      "max": 12,
+      "group": 241,
+      "bonusId": 8200,
+      "currency": {
+        "amount": 1000,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 298
+    }
+  },
+  "8201": {
+    "id": 8201,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 241
+    }
+  },
+  "8202": {
+    "id": 8202,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 241
+    }
+  },
+  "8203": {
+    "id": 8203,
+    "upgrade": {
+      "level": 1,
+      "max": 12,
+      "group": 240,
+      "bonusId": 8203,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 262
+    }
+  },
+  "8204": {
+    "id": 8204,
+    "upgrade": {
+      "level": 2,
+      "max": 12,
+      "group": 240,
+      "bonusId": 8204,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 265
+    }
+  },
+  "8205": {
+    "id": 8205,
+    "upgrade": {
+      "level": 3,
+      "max": 12,
+      "group": 240,
+      "bonusId": 8205,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 268
+    }
+  },
+  "8206": {
+    "id": 8206,
+    "upgrade": {
+      "level": 4,
+      "max": 12,
+      "group": 240,
+      "bonusId": 8206,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 272
+    }
+  },
+  "8207": {
+    "id": 8207,
+    "upgrade": {
+      "level": 5,
+      "max": 12,
+      "group": 240,
+      "bonusId": 8207,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 275
+    }
+  },
+  "8208": {
+    "id": 8208,
+    "upgrade": {
+      "level": 6,
+      "max": 12,
+      "group": 240,
+      "bonusId": 8208,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 278
+    }
+  },
+  "8209": {
+    "id": 8209,
+    "upgrade": {
+      "level": 7,
+      "max": 12,
+      "group": 240,
+      "bonusId": 8209,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 282
+    }
+  },
+  "8210": {
+    "id": 8210,
+    "upgrade": {
+      "level": 8,
+      "max": 12,
+      "group": 240,
+      "bonusId": 8210,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 285
+    }
+  },
+  "8211": {
+    "id": 8211,
+    "upgrade": {
+      "level": 9,
+      "max": 12,
+      "group": 240,
+      "bonusId": 8211,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 288
+    }
+  },
+  "8212": {
+    "id": 8212,
+    "upgrade": {
+      "level": 10,
+      "max": 12,
+      "group": 240,
+      "bonusId": 8212,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 291
+    }
+  },
+  "8213": {
+    "id": 8213,
+    "upgrade": {
+      "level": 11,
+      "max": 12,
+      "group": 240,
+      "bonusId": 8213,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 294
+    }
+  },
+  "8214": {
+    "id": 8214,
+    "upgrade": {
+      "level": 12,
+      "max": 12,
+      "group": 240,
+      "bonusId": 8214,
+      "currency": {
+        "amount": 500,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 298
+    }
+  },
+  "8215": {
+    "id": 8215,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 240
+    }
+  },
+  "8216": {
+    "id": 8216,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 240
+    }
+  },
+  "8217": {
+    "id": 8217,
+    "upgrade": {
+      "level": 1,
+      "max": 12,
+      "group": 246,
+      "bonusId": 8217,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 262
+    }
+  },
+  "8218": {
+    "id": 8218,
+    "upgrade": {
+      "level": 2,
+      "max": 12,
+      "group": 246,
+      "bonusId": 8218,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 265
+    }
+  },
+  "8219": {
+    "id": 8219,
+    "upgrade": {
+      "level": 3,
+      "max": 12,
+      "group": 246,
+      "bonusId": 8219,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 268
+    }
+  },
+  "8220": {
+    "id": 8220,
+    "upgrade": {
+      "level": 4,
+      "max": 12,
+      "group": 246,
+      "bonusId": 8220,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 272
+    }
+  },
+  "8221": {
+    "id": 8221,
+    "upgrade": {
+      "level": 5,
+      "max": 12,
+      "group": 246,
+      "bonusId": 8221,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 275
+    }
+  },
+  "8222": {
+    "id": 8222,
+    "upgrade": {
+      "level": 6,
+      "max": 12,
+      "group": 246,
+      "bonusId": 8222,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 278
+    }
+  },
+  "8223": {
+    "id": 8223,
+    "upgrade": {
+      "level": 7,
+      "max": 12,
+      "group": 246,
+      "bonusId": 8223,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 282
+    }
+  },
+  "8224": {
+    "id": 8224,
+    "upgrade": {
+      "level": 8,
+      "max": 12,
+      "group": 246,
+      "bonusId": 8224,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 285
+    }
+  },
+  "8225": {
+    "id": 8225,
+    "upgrade": {
+      "level": 9,
+      "max": 12,
+      "group": 246,
+      "bonusId": 8225,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 288
+    }
+  },
+  "8226": {
+    "id": 8226,
+    "upgrade": {
+      "level": 10,
+      "max": 12,
+      "group": 246,
+      "bonusId": 8226,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 291
+    }
+  },
+  "8227": {
+    "id": 8227,
+    "upgrade": {
+      "level": 11,
+      "max": 12,
+      "group": 246,
+      "bonusId": 8227,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 294
+    }
+  },
+  "8228": {
+    "id": 8228,
+    "upgrade": {
+      "level": 12,
+      "max": 12,
+      "group": 246,
+      "bonusId": 8228,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 298
+    }
+  },
+  "8229": {
+    "id": 8229,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 246
+    }
+  },
+  "8230": {
+    "id": 8230,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 246
+    }
+  },
+  "8231": {
+    "id": 8231,
+    "upgrade": {
+      "level": 1,
+      "max": 12,
+      "group": 242,
+      "bonusId": 8231,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 262
+    }
+  },
+  "8232": {
+    "id": 8232,
+    "upgrade": {
+      "level": 2,
+      "max": 12,
+      "group": 242,
+      "bonusId": 8232,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 265
+    }
+  },
+  "8233": {
+    "id": 8233,
+    "upgrade": {
+      "level": 3,
+      "max": 12,
+      "group": 242,
+      "bonusId": 8233,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 268
+    }
+  },
+  "8234": {
+    "id": 8234,
+    "upgrade": {
+      "level": 4,
+      "max": 12,
+      "group": 242,
+      "bonusId": 8234,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 272
+    }
+  },
+  "8235": {
+    "id": 8235,
+    "upgrade": {
+      "level": 5,
+      "max": 12,
+      "group": 242,
+      "bonusId": 8235,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 275
+    }
+  },
+  "8236": {
+    "id": 8236,
+    "upgrade": {
+      "level": 6,
+      "max": 12,
+      "group": 242,
+      "bonusId": 8236,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 278
+    }
+  },
+  "8237": {
+    "id": 8237,
+    "upgrade": {
+      "level": 7,
+      "max": 12,
+      "group": 242,
+      "bonusId": 8237,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 282
+    }
+  },
+  "8238": {
+    "id": 8238,
+    "upgrade": {
+      "level": 8,
+      "max": 12,
+      "group": 242,
+      "bonusId": 8238,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 285
+    }
+  },
+  "8239": {
+    "id": 8239,
+    "upgrade": {
+      "level": 9,
+      "max": 12,
+      "group": 242,
+      "bonusId": 8239,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 288
+    }
+  },
+  "8240": {
+    "id": 8240,
+    "upgrade": {
+      "level": 10,
+      "max": 12,
+      "group": 242,
+      "bonusId": 8240,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 291
+    }
+  },
+  "8241": {
+    "id": 8241,
+    "upgrade": {
+      "level": 11,
+      "max": 12,
+      "group": 242,
+      "bonusId": 8241,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 294
+    }
+  },
+  "8242": {
+    "id": 8242,
+    "upgrade": {
+      "level": 12,
+      "max": 12,
+      "group": 242,
+      "bonusId": 8242,
+      "currency": {
+        "amount": 750,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 298
+    }
+  },
+  "8243": {
+    "id": 8243,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 242
+    }
+  },
+  "8244": {
+    "id": 8244,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 242
+    }
+  },
+  "8245": {
+    "id": 8245,
+    "upgrade": {
+      "level": 1,
+      "max": 12,
+      "group": 243,
+      "bonusId": 8245,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 262
+    }
+  },
+  "8246": {
+    "id": 8246,
+    "upgrade": {
+      "level": 2,
+      "max": 12,
+      "group": 243,
+      "bonusId": 8246,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 265
+    }
+  },
+  "8247": {
+    "id": 8247,
+    "upgrade": {
+      "level": 3,
+      "max": 12,
+      "group": 243,
+      "bonusId": 8247,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 268
+    }
+  },
+  "8248": {
+    "id": 8248,
+    "upgrade": {
+      "level": 4,
+      "max": 12,
+      "group": 243,
+      "bonusId": 8248,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 272
+    }
+  },
+  "8249": {
+    "id": 8249,
+    "upgrade": {
+      "level": 5,
+      "max": 12,
+      "group": 243,
+      "bonusId": 8249,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 275
+    }
+  },
+  "8250": {
+    "id": 8250,
+    "upgrade": {
+      "level": 6,
+      "max": 12,
+      "group": 243,
+      "bonusId": 8250,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 278
+    }
+  },
+  "8251": {
+    "id": 8251,
+    "upgrade": {
+      "level": 7,
+      "max": 12,
+      "group": 243,
+      "bonusId": 8251,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 282
+    }
+  },
+  "8252": {
+    "id": 8252,
+    "upgrade": {
+      "level": 8,
+      "max": 12,
+      "group": 243,
+      "bonusId": 8252,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 285
+    }
+  },
+  "8253": {
+    "id": 8253,
+    "upgrade": {
+      "level": 9,
+      "max": 12,
+      "group": 243,
+      "bonusId": 8253,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 288
+    }
+  },
+  "8254": {
+    "id": 8254,
+    "upgrade": {
+      "level": 10,
+      "max": 12,
+      "group": 243,
+      "bonusId": 8254,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 291
+    }
+  },
+  "8255": {
+    "id": 8255,
+    "upgrade": {
+      "level": 11,
+      "max": 12,
+      "group": 243,
+      "bonusId": 8255,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 294
+    }
+  },
+  "8256": {
+    "id": 8256,
+    "upgrade": {
+      "level": 12,
+      "max": 12,
+      "group": 243,
+      "bonusId": 8256,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 298
+    }
+  },
+  "8257": {
+    "id": 8257,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 243
+    }
+  },
+  "8258": {
+    "id": 8258,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 243
+    }
+  },
+  "8259": {
+    "id": 8259,
+    "upgrade": {
+      "level": 1,
+      "max": 12,
+      "group": 245,
+      "bonusId": 8259,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 262
+    }
+  },
+  "8260": {
+    "id": 8260,
+    "upgrade": {
+      "level": 2,
+      "max": 12,
+      "group": 245,
+      "bonusId": 8260,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 265
+    }
+  },
+  "8261": {
+    "id": 8261,
+    "upgrade": {
+      "level": 3,
+      "max": 12,
+      "group": 245,
+      "bonusId": 8261,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 268
+    }
+  },
+  "8262": {
+    "id": 8262,
+    "upgrade": {
+      "level": 4,
+      "max": 12,
+      "group": 245,
+      "bonusId": 8262,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 272
+    }
+  },
+  "8263": {
+    "id": 8263,
+    "upgrade": {
+      "level": 5,
+      "max": 12,
+      "group": 245,
+      "bonusId": 8263,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 275
+    }
+  },
+  "8264": {
+    "id": 8264,
+    "upgrade": {
+      "level": 6,
+      "max": 12,
+      "group": 245,
+      "bonusId": 8264,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 278
+    }
+  },
+  "8265": {
+    "id": 8265,
+    "upgrade": {
+      "level": 7,
+      "max": 12,
+      "group": 245,
+      "bonusId": 8265,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 282
+    }
+  },
+  "8266": {
+    "id": 8266,
+    "upgrade": {
+      "level": 8,
+      "max": 12,
+      "group": 245,
+      "bonusId": 8266,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 285
+    }
+  },
+  "8267": {
+    "id": 8267,
+    "upgrade": {
+      "level": 9,
+      "max": 12,
+      "group": 245,
+      "bonusId": 8267,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 288
+    }
+  },
+  "8268": {
+    "id": 8268,
+    "upgrade": {
+      "level": 10,
+      "max": 12,
+      "group": 245,
+      "bonusId": 8268,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 291
+    }
+  },
+  "8269": {
+    "id": 8269,
+    "upgrade": {
+      "level": 11,
+      "max": 12,
+      "group": 245,
+      "bonusId": 8269,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 294
+    }
+  },
+  "8270": {
+    "id": 8270,
+    "upgrade": {
+      "level": 12,
+      "max": 12,
+      "group": 245,
+      "bonusId": 8270,
+      "currency": {
+        "amount": 400,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 298
+    }
+  },
+  "8271": {
+    "id": 8271,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 245
+    }
+  },
+  "8272": {
+    "id": 8272,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 245
+    }
+  },
+  "8273": {
+    "id": 8273,
+    "upgrade": {
+      "level": 1,
+      "max": 12,
+      "group": 244,
+      "bonusId": 8273,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 262
+    }
+  },
+  "8274": {
+    "id": 8274,
+    "upgrade": {
+      "level": 2,
+      "max": 12,
+      "group": 244,
+      "bonusId": 8274,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 265
+    }
+  },
+  "8275": {
+    "id": 8275,
+    "upgrade": {
+      "level": 3,
+      "max": 12,
+      "group": 244,
+      "bonusId": 8275,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 268
+    }
+  },
+  "8276": {
+    "id": 8276,
+    "upgrade": {
+      "level": 4,
+      "max": 12,
+      "group": 244,
+      "bonusId": 8276,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 272
+    }
+  },
+  "8277": {
+    "id": 8277,
+    "upgrade": {
+      "level": 5,
+      "max": 12,
+      "group": 244,
+      "bonusId": 8277,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 275
+    }
+  },
+  "8278": {
+    "id": 8278,
+    "upgrade": {
+      "level": 6,
+      "max": 12,
+      "group": 244,
+      "bonusId": 8278,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 278
+    }
+  },
+  "8279": {
+    "id": 8279,
+    "upgrade": {
+      "level": 7,
+      "max": 12,
+      "group": 244,
+      "bonusId": 8279,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 282
+    }
+  },
+  "8280": {
+    "id": 8280,
+    "upgrade": {
+      "level": 8,
+      "max": 12,
+      "group": 244,
+      "bonusId": 8280,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 285
+    }
+  },
+  "8281": {
+    "id": 8281,
+    "upgrade": {
+      "level": 9,
+      "max": 12,
+      "group": 244,
+      "bonusId": 8281,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 288
+    }
+  },
+  "8282": {
+    "id": 8282,
+    "upgrade": {
+      "level": 10,
+      "max": 12,
+      "group": 244,
+      "bonusId": 8282,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 291
+    }
+  },
+  "8283": {
+    "id": 8283,
+    "upgrade": {
+      "level": 11,
+      "max": 12,
+      "group": 244,
+      "bonusId": 8283,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 294
+    }
+  },
+  "8284": {
+    "id": 8284,
+    "upgrade": {
+      "level": 12,
+      "max": 12,
+      "group": 244,
+      "bonusId": 8284,
+      "currency": {
+        "amount": 250,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
+      },
+      "itemLevel": 298
+    }
+  },
+  "8285": {
+    "id": 8285,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 244
+    }
+  },
+  "8286": {
+    "id": 8286,
+    "upgrade": {
+      "level": 0,
+      "max": 12,
+      "group": 244
+    }
+  },
+  "8289": {
+    "id": 8289,
+    "socket": 1
+  },
+  "8290": {
+    "id": 8290,
+    "upgrade": {
+      "level": 1,
+      "max": 7,
+      "group": 257,
+      "bonusId": 8290,
+      "itemLevel": 229
+    }
+  },
+  "8291": {
+    "id": 8291,
+    "upgrade": {
+      "level": 2,
+      "max": 7,
+      "group": 257,
+      "bonusId": 8291,
+      "currency": {
+        "amount": 200,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 236
+    }
+  },
+  "8292": {
+    "id": 8292,
+    "upgrade": {
+      "level": 3,
+      "max": 7,
+      "group": 257,
+      "bonusId": 8292,
+      "currency": {
+        "amount": 225,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 242
+    }
+  },
+  "8293": {
+    "id": 8293,
+    "upgrade": {
+      "level": 4,
+      "max": 7,
+      "group": 257,
+      "bonusId": 8293,
+      "currency": {
+        "amount": 275,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 249
+    }
+  },
+  "8294": {
+    "id": 8294,
+    "upgrade": {
+      "level": 5,
+      "max": 7,
+      "group": 257,
+      "bonusId": 8294,
+      "currency": {
+        "amount": 300,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 255
+    }
+  },
+  "8295": {
+    "id": 8295,
+    "upgrade": {
+      "level": 6,
+      "max": 7,
+      "group": 257,
+      "bonusId": 8295,
+      "currency": {
+        "amount": 350,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 262
+    }
+  },
+  "8296": {
+    "id": 8296,
+    "upgrade": {
+      "level": 7,
+      "max": 7,
+      "group": 257,
+      "bonusId": 8296,
+      "currency": {
+        "amount": 375,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 268
+    }
+  },
+  "8297": {
+    "id": 8297,
+    "upgrade": {
+      "level": 1,
+      "max": 7,
+      "group": 258,
+      "bonusId": 8297,
+      "itemLevel": 229
+    }
+  },
+  "8298": {
+    "id": 8298,
+    "upgrade": {
+      "level": 2,
+      "max": 7,
+      "group": 258,
+      "bonusId": 8298,
+      "currency": {
+        "amount": 250,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 236
+    }
+  },
+  "8299": {
+    "id": 8299,
+    "upgrade": {
+      "level": 3,
+      "max": 7,
+      "group": 258,
+      "bonusId": 8299,
+      "currency": {
+        "amount": 300,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 242
+    }
+  },
+  "8300": {
+    "id": 8300,
+    "upgrade": {
+      "level": 4,
+      "max": 7,
+      "group": 258,
+      "bonusId": 8300,
+      "currency": {
+        "amount": 350,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 249
+    }
+  },
+  "8301": {
+    "id": 8301,
+    "upgrade": {
+      "level": 5,
+      "max": 7,
+      "group": 258,
+      "bonusId": 8301,
+      "currency": {
+        "amount": 400,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 255
+    }
+  },
+  "8302": {
+    "id": 8302,
+    "upgrade": {
+      "level": 6,
+      "max": 7,
+      "group": 258,
+      "bonusId": 8302,
+      "currency": {
+        "amount": 450,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 262
+    }
+  },
+  "8303": {
+    "id": 8303,
+    "upgrade": {
+      "level": 7,
+      "max": 7,
+      "group": 258,
+      "bonusId": 8303,
+      "currency": {
+        "amount": 500,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 268
+    }
+  },
+  "8304": {
+    "id": 8304,
+    "upgrade": {
+      "level": 1,
+      "max": 7,
+      "group": 256,
+      "bonusId": 8304,
+      "itemLevel": 229
+    }
+  },
+  "8305": {
+    "id": 8305,
+    "upgrade": {
+      "level": 2,
+      "max": 7,
+      "group": 256,
+      "bonusId": 8305,
+      "currency": {
+        "amount": 325,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 236
+    }
+  },
+  "8306": {
+    "id": 8306,
+    "upgrade": {
+      "level": 3,
+      "max": 7,
+      "group": 256,
+      "bonusId": 8306,
+      "currency": {
+        "amount": 375,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 242
+    }
+  },
+  "8307": {
+    "id": 8307,
+    "upgrade": {
+      "level": 4,
+      "max": 7,
+      "group": 256,
+      "bonusId": 8307,
+      "currency": {
+        "amount": 450,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 249
+    }
+  },
+  "8308": {
+    "id": 8308,
+    "upgrade": {
+      "level": 5,
+      "max": 7,
+      "group": 256,
+      "bonusId": 8308,
+      "currency": {
+        "amount": 500,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 255
+    }
+  },
+  "8309": {
+    "id": 8309,
+    "upgrade": {
+      "level": 6,
+      "max": 7,
+      "group": 256,
+      "bonusId": 8309,
+      "currency": {
+        "amount": 575,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 262
+    }
+  },
+  "8310": {
+    "id": 8310,
+    "upgrade": {
+      "level": 7,
+      "max": 7,
+      "group": 256,
+      "bonusId": 8310,
+      "currency": {
+        "amount": 650,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 268
+    }
+  },
+  "8311": {
+    "id": 8311,
+    "upgrade": {
+      "level": 1,
+      "max": 7,
+      "group": 255,
+      "bonusId": 8311,
+      "itemLevel": 229
+    }
+  },
+  "8312": {
+    "id": 8312,
+    "upgrade": {
+      "level": 2,
+      "max": 7,
+      "group": 255,
+      "bonusId": 8312,
+      "currency": {
+        "amount": 650,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 236
+    }
+  },
+  "8313": {
+    "id": 8313,
+    "upgrade": {
+      "level": 3,
+      "max": 7,
+      "group": 255,
+      "bonusId": 8313,
+      "currency": {
+        "amount": 750,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 242
+    }
+  },
+  "8314": {
+    "id": 8314,
+    "upgrade": {
+      "level": 4,
+      "max": 7,
+      "group": 255,
+      "bonusId": 8314,
+      "currency": {
+        "amount": 900,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 249
+    }
+  },
+  "8315": {
+    "id": 8315,
+    "upgrade": {
+      "level": 5,
+      "max": 7,
+      "group": 255,
+      "bonusId": 8315,
+      "currency": {
+        "amount": 1000,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 255
+    }
+  },
+  "8316": {
+    "id": 8316,
+    "upgrade": {
+      "level": 6,
+      "max": 7,
+      "group": 255,
+      "bonusId": 8316,
+      "currency": {
+        "amount": 1150,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 262
+    }
+  },
+  "8317": {
+    "id": 8317,
+    "upgrade": {
+      "level": 7,
+      "max": 7,
+      "group": 255,
+      "bonusId": 8317,
+      "currency": {
+        "amount": 1300,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 268
+    }
+  },
+  "8318": {
+    "id": 8318,
+    "upgrade": {
+      "level": 1,
+      "max": 7,
+      "group": 260,
+      "bonusId": 8318,
+      "itemLevel": 229
+    }
+  },
+  "8319": {
+    "id": 8319,
+    "upgrade": {
+      "level": 2,
+      "max": 7,
+      "group": 260,
+      "bonusId": 8319,
+      "currency": {
+        "amount": 175,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 236
+    }
+  },
+  "8320": {
+    "id": 8320,
+    "upgrade": {
+      "level": 3,
+      "max": 7,
+      "group": 260,
+      "bonusId": 8320,
+      "currency": {
+        "amount": 200,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 242
+    }
+  },
+  "8321": {
+    "id": 8321,
+    "upgrade": {
+      "level": 4,
+      "max": 7,
+      "group": 260,
+      "bonusId": 8321,
+      "currency": {
+        "amount": 225,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 249
+    }
+  },
+  "8322": {
+    "id": 8322,
+    "upgrade": {
+      "level": 5,
+      "max": 7,
+      "group": 260,
+      "bonusId": 8322,
+      "currency": {
+        "amount": 250,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 255
+    }
+  },
+  "8323": {
+    "id": 8323,
+    "upgrade": {
+      "level": 6,
+      "max": 7,
+      "group": 260,
+      "bonusId": 8323,
+      "currency": {
+        "amount": 300,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 262
+    }
+  },
+  "8324": {
+    "id": 8324,
+    "upgrade": {
+      "level": 7,
+      "max": 7,
+      "group": 260,
+      "bonusId": 8324,
+      "currency": {
+        "amount": 350,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 268
+    }
+  },
+  "8325": {
+    "id": 8325,
+    "upgrade": {
+      "level": 1,
+      "max": 7,
+      "group": 259,
+      "bonusId": 8325,
+      "itemLevel": 229
+    }
+  },
+  "8326": {
+    "id": 8326,
+    "upgrade": {
+      "level": 2,
+      "max": 7,
+      "group": 259,
+      "bonusId": 8326,
+      "currency": {
+        "amount": 475,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 236
+    }
+  },
+  "8327": {
+    "id": 8327,
+    "upgrade": {
+      "level": 3,
+      "max": 7,
+      "group": 259,
+      "bonusId": 8327,
+      "currency": {
+        "amount": 550,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 242
+    }
+  },
+  "8328": {
+    "id": 8328,
+    "upgrade": {
+      "level": 4,
+      "max": 7,
+      "group": 259,
+      "bonusId": 8328,
+      "currency": {
+        "amount": 675,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 249
+    }
+  },
+  "8329": {
+    "id": 8329,
+    "upgrade": {
+      "level": 5,
+      "max": 7,
+      "group": 259,
+      "bonusId": 8329,
+      "currency": {
+        "amount": 750,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 255
+    }
+  },
+  "8330": {
+    "id": 8330,
+    "upgrade": {
+      "level": 6,
+      "max": 7,
+      "group": 259,
+      "bonusId": 8330,
+      "currency": {
+        "amount": 850,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 262
+    }
+  },
+  "8331": {
+    "id": 8331,
+    "upgrade": {
+      "level": 7,
+      "max": 7,
+      "group": 259,
+      "bonusId": 8331,
+      "currency": {
+        "amount": 950,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 268
+    }
+  },
+  "8332": {
+    "id": 8332,
+    "upgrade": {
+      "level": 1,
+      "max": 7,
+      "group": 254,
+      "bonusId": 8332,
+      "itemLevel": 229
+    }
+  },
+  "8333": {
+    "id": 8333,
+    "upgrade": {
+      "level": 2,
+      "max": 7,
+      "group": 254,
+      "bonusId": 8333,
+      "currency": {
+        "amount": 325,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 236
+    }
+  },
+  "8334": {
+    "id": 8334,
+    "upgrade": {
+      "level": 3,
+      "max": 7,
+      "group": 254,
+      "bonusId": 8334,
+      "currency": {
+        "amount": 375,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 242
+    }
+  },
+  "8335": {
+    "id": 8335,
+    "upgrade": {
+      "level": 4,
+      "max": 7,
+      "group": 254,
+      "bonusId": 8335,
+      "currency": {
+        "amount": 450,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 249
+    }
+  },
+  "8336": {
+    "id": 8336,
+    "upgrade": {
+      "level": 5,
+      "max": 7,
+      "group": 254,
+      "bonusId": 8336,
+      "currency": {
+        "amount": 500,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 255
+    }
+  },
+  "8337": {
+    "id": 8337,
+    "upgrade": {
+      "level": 6,
+      "max": 7,
+      "group": 254,
+      "bonusId": 8337,
+      "currency": {
+        "amount": 575,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 262
+    }
+  },
+  "8338": {
+    "id": 8338,
+    "upgrade": {
+      "level": 7,
+      "max": 7,
+      "group": 254,
+      "bonusId": 8338,
+      "currency": {
+        "amount": 650,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 268
+    }
+  },
+  "8339": {
+    "id": 8339,
+    "tag": "Unranked",
+    "upgrade": {
+      "level": 1,
+      "max": 9,
+      "group": 250,
+      "bonusId": 8339,
+      "itemLevel": 275
+    }
+  },
+  "8340": {
+    "id": 8340,
+    "tag": "Combatant II",
+    "upgrade": {
+      "level": 3,
+      "max": 9,
+      "group": 250,
+      "bonusId": 8340,
+      "currency": {
+        "amount": 500,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 282
+    }
+  },
+  "8341": {
+    "id": 8341,
+    "tag": "Challenger II",
+    "upgrade": {
+      "level": 5,
+      "max": 9,
+      "group": 250,
+      "bonusId": 8341,
+      "currency": {
+        "amount": 650,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 288
+    }
+  },
+  "8342": {
+    "id": 8342,
+    "tag": "Rival II",
+    "upgrade": {
+      "level": 7,
+      "max": 9,
+      "group": 250,
+      "bonusId": 8342,
+      "currency": {
+        "amount": 825,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 294
+    }
+  },
+  "8343": {
+    "id": 8343,
+    "tag": "Elite",
+    "upgrade": {
+      "level": 9,
+      "max": 9,
+      "group": 250,
+      "bonusId": 8343,
+      "currency": {
+        "amount": 1100,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 301
+    }
+  },
+  "8344": {
+    "id": 8344,
+    "tag": "Duelist",
+    "upgrade": {
+      "level": 8,
+      "max": 9,
+      "group": 250,
+      "bonusId": 8344,
+      "currency": {
+        "amount": 925,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 298
+    }
+  },
+  "8345": {
+    "id": 8345,
+    "tag": "Unranked",
+    "upgrade": {
+      "level": 1,
+      "max": 9,
+      "group": 251,
+      "bonusId": 8345,
+      "itemLevel": 275
+    }
+  },
+  "8346": {
+    "id": 8346,
+    "tag": "Combatant II",
+    "upgrade": {
+      "level": 3,
+      "max": 9,
+      "group": 251,
+      "bonusId": 8346,
+      "currency": {
+        "amount": 675,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 282
+    }
+  },
+  "8347": {
+    "id": 8347,
+    "tag": "Challenger II",
+    "upgrade": {
+      "level": 5,
+      "max": 9,
+      "group": 251,
+      "bonusId": 8347,
+      "currency": {
+        "amount": 850,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 288
+    }
+  },
+  "8348": {
+    "id": 8348,
+    "tag": "Rival II",
+    "upgrade": {
+      "level": 7,
+      "max": 9,
+      "group": 251,
+      "bonusId": 8348,
+      "currency": {
+        "amount": 1100,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 294
+    }
+  },
+  "8349": {
+    "id": 8349,
+    "tag": "Elite",
+    "upgrade": {
+      "level": 9,
+      "max": 9,
+      "group": 251,
+      "bonusId": 8349,
+      "currency": {
+        "amount": 1475,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 301
+    }
+  },
+  "8350": {
+    "id": 8350,
+    "tag": "Duelist",
+    "upgrade": {
+      "level": 8,
+      "max": 9,
+      "group": 251,
+      "bonusId": 8350,
+      "currency": {
+        "amount": 1225,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 298
+    }
+  },
+  "8351": {
+    "id": 8351,
+    "tag": "Unranked",
+    "upgrade": {
+      "level": 1,
+      "max": 9,
+      "group": 249,
+      "bonusId": 8351,
+      "itemLevel": 275
+    }
+  },
+  "8352": {
+    "id": 8352,
+    "tag": "Combatant II",
+    "upgrade": {
+      "level": 3,
+      "max": 9,
+      "group": 249,
+      "bonusId": 8352,
+      "currency": {
+        "amount": 850,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 282
+    }
+  },
+  "8353": {
+    "id": 8353,
+    "tag": "Challenger II",
+    "upgrade": {
+      "level": 5,
+      "max": 9,
+      "group": 249,
+      "bonusId": 8353,
+      "currency": {
+        "amount": 1075,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 288
+    }
+  },
+  "8354": {
+    "id": 8354,
+    "tag": "Rival II",
+    "upgrade": {
+      "level": 7,
+      "max": 9,
+      "group": 249,
+      "bonusId": 8354,
+      "currency": {
+        "amount": 1375,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 294
+    }
+  },
+  "8355": {
+    "id": 8355,
+    "tag": "Elite",
+    "upgrade": {
+      "level": 9,
+      "max": 9,
+      "group": 249,
+      "bonusId": 8355,
+      "currency": {
+        "amount": 1825,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 301
+    }
+  },
+  "8356": {
+    "id": 8356,
+    "tag": "Duelist",
+    "upgrade": {
+      "level": 8,
+      "max": 9,
+      "group": 249,
+      "bonusId": 8356,
+      "currency": {
+        "amount": 1525,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 298
+    }
+  },
+  "8357": {
+    "id": 8357,
+    "tag": "Unranked",
+    "upgrade": {
+      "level": 1,
+      "max": 9,
+      "group": 248,
+      "bonusId": 8357,
+      "itemLevel": 275
+    }
+  },
+  "8358": {
+    "id": 8358,
+    "tag": "Combatant II",
+    "upgrade": {
+      "level": 3,
+      "max": 9,
+      "group": 248,
+      "bonusId": 8358,
+      "currency": {
+        "amount": 1700,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 282
+    }
+  },
+  "8359": {
+    "id": 8359,
+    "tag": "Challenger II",
+    "upgrade": {
+      "level": 5,
+      "max": 9,
+      "group": 248,
+      "bonusId": 8359,
+      "currency": {
+        "amount": 2150,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 288
+    }
+  },
+  "8360": {
+    "id": 8360,
+    "tag": "Rival II",
+    "upgrade": {
+      "level": 7,
+      "max": 9,
+      "group": 248,
+      "bonusId": 8360,
+      "currency": {
+        "amount": 2750,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 294
+    }
+  },
+  "8361": {
+    "id": 8361,
+    "tag": "Elite",
+    "upgrade": {
+      "level": 9,
+      "max": 9,
+      "group": 248,
+      "bonusId": 8361,
+      "currency": {
+        "amount": 3650,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 301
+    }
+  },
+  "8362": {
+    "id": 8362,
+    "tag": "Duelist",
+    "upgrade": {
+      "level": 8,
+      "max": 9,
+      "group": 248,
+      "bonusId": 8362,
+      "currency": {
+        "amount": 3050,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 298
+    }
+  },
+  "8363": {
+    "id": 8363,
+    "tag": "Unranked",
+    "upgrade": {
+      "level": 1,
+      "max": 9,
+      "group": 253,
+      "bonusId": 8363,
+      "itemLevel": 275
+    }
+  },
+  "8364": {
+    "id": 8364,
+    "tag": "Combatant II",
+    "upgrade": {
+      "level": 3,
+      "max": 9,
+      "group": 253,
+      "bonusId": 8364,
+      "currency": {
+        "amount": 425,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 282
+    }
+  },
+  "8365": {
+    "id": 8365,
+    "tag": "Challenger II",
+    "upgrade": {
+      "level": 5,
+      "max": 9,
+      "group": 253,
+      "bonusId": 8365,
+      "currency": {
+        "amount": 550,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 288
+    }
+  },
+  "8366": {
+    "id": 8366,
+    "tag": "Rival II",
+    "upgrade": {
+      "level": 7,
+      "max": 9,
+      "group": 253,
+      "bonusId": 8366,
+      "currency": {
+        "amount": 700,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 294
+    }
+  },
+  "8367": {
+    "id": 8367,
+    "tag": "Elite",
+    "upgrade": {
+      "level": 9,
+      "max": 9,
+      "group": 253,
+      "bonusId": 8367,
+      "currency": {
+        "amount": 900,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 301
+    }
+  },
+  "8368": {
+    "id": 8368,
+    "tag": "Duelist",
+    "upgrade": {
+      "level": 8,
+      "max": 9,
+      "group": 253,
+      "bonusId": 8368,
+      "currency": {
+        "amount": 775,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 298
+    }
+  },
+  "8369": {
+    "id": 8369,
+    "tag": "Unranked",
+    "upgrade": {
+      "level": 1,
+      "max": 9,
+      "group": 252,
+      "bonusId": 8369,
+      "itemLevel": 275
+    }
+  },
+  "8370": {
+    "id": 8370,
+    "tag": "Combatant II",
+    "upgrade": {
+      "level": 3,
+      "max": 9,
+      "group": 252,
+      "bonusId": 8370,
+      "currency": {
+        "amount": 1275,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 282
+    }
+  },
+  "8371": {
+    "id": 8371,
+    "tag": "Challenger II",
+    "upgrade": {
+      "level": 5,
+      "max": 9,
+      "group": 252,
+      "bonusId": 8371,
+      "currency": {
+        "amount": 1600,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 288
+    }
+  },
+  "8372": {
+    "id": 8372,
+    "tag": "Rival II",
+    "upgrade": {
+      "level": 7,
+      "max": 9,
+      "group": 252,
+      "bonusId": 8372,
+      "currency": {
+        "amount": 2050,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 294
+    }
+  },
+  "8373": {
+    "id": 8373,
+    "tag": "Elite",
+    "upgrade": {
+      "level": 9,
+      "max": 9,
+      "group": 252,
+      "bonusId": 8373,
+      "currency": {
+        "amount": 2750,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 301
+    }
+  },
+  "8374": {
+    "id": 8374,
+    "tag": "Duelist",
+    "upgrade": {
+      "level": 8,
+      "max": 9,
+      "group": 252,
+      "bonusId": 8374,
+      "currency": {
+        "amount": 2275,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 298
+    }
+  },
+  "8375": {
+    "id": 8375,
+    "tag": "Unranked",
+    "upgrade": {
+      "level": 1,
+      "max": 9,
+      "group": 247,
+      "bonusId": 8375,
+      "itemLevel": 275
+    }
+  },
+  "8376": {
+    "id": 8376,
+    "tag": "Combatant II",
+    "upgrade": {
+      "level": 3,
+      "max": 9,
+      "group": 247,
+      "bonusId": 8376,
+      "currency": {
+        "amount": 850,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 282
+    }
+  },
+  "8377": {
+    "id": 8377,
+    "tag": "Challenger II",
+    "upgrade": {
+      "level": 5,
+      "max": 9,
+      "group": 247,
+      "bonusId": 8377,
+      "currency": {
+        "amount": 1075,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 288
+    }
+  },
+  "8378": {
+    "id": 8378,
+    "tag": "Rival II",
+    "upgrade": {
+      "level": 7,
+      "max": 9,
+      "group": 247,
+      "bonusId": 8378,
+      "currency": {
+        "amount": 1375,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 294
+    }
+  },
+  "8379": {
+    "id": 8379,
+    "tag": "Elite",
+    "upgrade": {
+      "level": 9,
+      "max": 9,
+      "group": 247,
+      "bonusId": 8379,
+      "currency": {
+        "amount": 1825,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 301
+    }
+  },
+  "8380": {
+    "id": 8380,
+    "tag": "Duelist",
+    "upgrade": {
+      "level": 8,
+      "max": 9,
+      "group": 247,
+      "bonusId": 8380,
+      "currency": {
+        "amount": 1525,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 298
+    }
+  },
+  "8381": {
+    "id": 8381,
+    "tag": "Combatant I",
+    "upgrade": {
+      "level": 2,
+      "max": 9,
+      "group": 250,
+      "bonusId": 8381,
+      "currency": {
+        "amount": 450,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 278
+    }
+  },
+  "8382": {
+    "id": 8382,
+    "tag": "Challenger I",
+    "upgrade": {
+      "level": 4,
+      "max": 9,
+      "group": 250,
+      "bonusId": 8382,
+      "currency": {
+        "amount": 550,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 285
+    }
+  },
+  "8383": {
+    "id": 8383,
+    "tag": "Rival I",
+    "upgrade": {
+      "level": 6,
+      "max": 9,
+      "group": 250,
+      "bonusId": 8383,
+      "currency": {
+        "amount": 725,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 291
+    }
+  },
+  "8384": {
+    "id": 8384,
+    "tag": "Combatant I",
+    "upgrade": {
+      "level": 2,
+      "max": 9,
+      "group": 251,
+      "bonusId": 8384,
+      "currency": {
+        "amount": 600,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 278
+    }
+  },
+  "8385": {
+    "id": 8385,
+    "tag": "Challenger I",
+    "upgrade": {
+      "level": 4,
+      "max": 9,
+      "group": 251,
+      "bonusId": 8385,
+      "currency": {
+        "amount": 725,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 285
+    }
+  },
+  "8386": {
+    "id": 8386,
+    "tag": "Rival I",
+    "upgrade": {
+      "level": 6,
+      "max": 9,
+      "group": 251,
+      "bonusId": 8386,
+      "currency": {
+        "amount": 975,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 291
+    }
+  },
+  "8387": {
+    "id": 8387,
+    "tag": "Combatant I",
+    "upgrade": {
+      "level": 2,
+      "max": 9,
+      "group": 249,
+      "bonusId": 8387,
+      "currency": {
+        "amount": 775,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 278
+    }
+  },
+  "8388": {
+    "id": 8388,
+    "tag": "Challenger I",
+    "upgrade": {
+      "level": 4,
+      "max": 9,
+      "group": 249,
+      "bonusId": 8388,
+      "currency": {
+        "amount": 925,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 285
+    }
+  },
+  "8389": {
+    "id": 8389,
+    "tag": "Rival I",
+    "upgrade": {
+      "level": 6,
+      "max": 9,
+      "group": 249,
+      "bonusId": 8389,
+      "currency": {
+        "amount": 1225,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 291
+    }
+  },
+  "8390": {
+    "id": 8390,
+    "tag": "Combatant I",
+    "upgrade": {
+      "level": 2,
+      "max": 9,
+      "group": 248,
+      "bonusId": 8390,
+      "currency": {
+        "amount": 1550,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 278
+    }
+  },
+  "8391": {
+    "id": 8391,
+    "tag": "Challenger I",
+    "upgrade": {
+      "level": 4,
+      "max": 9,
+      "group": 248,
+      "bonusId": 8391,
+      "currency": {
+        "amount": 1850,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 285
+    }
+  },
+  "8392": {
+    "id": 8392,
+    "tag": "Rival I",
+    "upgrade": {
+      "level": 6,
+      "max": 9,
+      "group": 248,
+      "bonusId": 8392,
+      "currency": {
+        "amount": 2450,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 291
+    }
+  },
+  "8393": {
+    "id": 8393,
+    "tag": "Combatant I",
+    "upgrade": {
+      "level": 2,
+      "max": 9,
+      "group": 253,
+      "bonusId": 8393,
+      "currency": {
+        "amount": 375,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 278
+    }
+  },
+  "8394": {
+    "id": 8394,
+    "tag": "Challenger I",
+    "upgrade": {
+      "level": 4,
+      "max": 9,
+      "group": 253,
+      "bonusId": 8394,
+      "currency": {
+        "amount": 475,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 285
+    }
+  },
+  "8395": {
+    "id": 8395,
+    "tag": "Rival I",
+    "upgrade": {
+      "level": 6,
+      "max": 9,
+      "group": 253,
+      "bonusId": 8395,
+      "currency": {
+        "amount": 625,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 291
+    }
+  },
+  "8396": {
+    "id": 8396,
+    "tag": "Combatant I",
+    "upgrade": {
+      "level": 2,
+      "max": 9,
+      "group": 252,
+      "bonusId": 8396,
+      "currency": {
+        "amount": 1175,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 278
+    }
+  },
+  "8397": {
+    "id": 8397,
+    "tag": "Challenger I",
+    "upgrade": {
+      "level": 4,
+      "max": 9,
+      "group": 252,
+      "bonusId": 8397,
+      "currency": {
+        "amount": 1375,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 285
+    }
+  },
+  "8398": {
+    "id": 8398,
+    "tag": "Rival I",
+    "upgrade": {
+      "level": 6,
+      "max": 9,
+      "group": 252,
+      "bonusId": 8398,
+      "currency": {
+        "amount": 1825,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 291
+    }
+  },
+  "8399": {
+    "id": 8399,
+    "tag": "Combatant I",
+    "upgrade": {
+      "level": 2,
+      "max": 9,
+      "group": 247,
+      "bonusId": 8399,
+      "currency": {
+        "amount": 775,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 278
+    }
+  },
+  "8400": {
+    "id": 8400,
+    "tag": "Challenger I",
+    "upgrade": {
+      "level": 4,
+      "max": 9,
+      "group": 247,
+      "bonusId": 8400,
+      "currency": {
+        "amount": 925,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 285
+    }
+  },
+  "8401": {
+    "id": 8401,
+    "tag": "Rival I",
+    "upgrade": {
+      "level": 6,
+      "max": 9,
+      "group": 247,
+      "bonusId": 8401,
+      "currency": {
+        "amount": 1225,
+        "name": "Honor",
+        "id": 1792,
+        "icon": "achievement_legionpvptier4"
+      },
+      "itemLevel": 291
+    }
+  },
+  "8402": {
+    "id": 8402,
+    "ilevel": "3 @plvl 1 - 210 @plvl 210",
+    "curveId": 29158,
+    "quality": 3,
+    "tag": "Timewarped"
+  },
+  "8403": {
+    "id": 8403,
+    "ilevel": "5 @plvl 1 - 200 @plvl 200",
+    "curveId": 33800,
+    "tag": "Timewarped"
+  },
+  "8756": {
+    "id": 8756,
+    "tag": "Fated Raid Finder"
+  },
+  "8757": {
+    "id": 8757,
+    "tag": "Fated"
+  },
+  "8758": {
+    "id": 8758,
+    "tag": "Fated Heroic"
+  },
+  "8759": {
+    "id": 8759,
+    "tag": "Fated Mythic"
+  },
+  "8760": {
+    "id": 8760,
+    "ilevel": "3 @plvl 1 - 236 @plvl 236",
+    "curveId": 33799,
+    "quality": 3,
+    "tag": "Timewarped"
+  },
+  "8761": {
+    "id": 8761,
+    "tag": "Fated"
+  },
+  "8762": {
+    "id": 8762,
+    "tag": "Fated Mythic"
+  },
+  "8763": {
+    "id": 8763,
+    "tag": "Fated Raid Finder"
+  },
+  "8764": {
+    "id": 8764,
+    "tag": "Fated Heroic"
+  },
+  "8766": {
+    "id": 8766,
+    "quality": 3
+  },
+  "8767": {
+    "id": 8767,
+    "quality": 4
+  },
+  "8768": {
+    "id": 8768,
+    "ilevel": "202 @plvl 45 - 323 @plvl 323",
+    "curveId": 34346
+  },
+  "8769": {
+    "id": 8769,
+    "ilevel": "212 @plvl 45 - 333 @plvl 333",
+    "curveId": 34344,
+    "quality": 3
+  },
+  "8770": {
+    "id": 8770,
+    "ilevel": "222 @plvl 45 - 343 @plvl 343",
+    "curveId": 34347,
+    "quality": 4
+  },
+  "8771": {
+    "id": 8771,
+    "ilevel": "210 @plvl 45 - 331 @plvl 331",
+    "curveId": 34343
+  },
+  "8772": {
+    "id": 8772,
+    "ilevel": "226 @plvl 45 - 347 @plvl 347",
+    "curveId": 34345,
+    "quality": 3
+  },
+  "8773": {
+    "id": 8773,
+    "ilevel": "242 @plvl 45 - 363 @plvl 363",
+    "curveId": 34348,
+    "quality": 4
+  },
+  "8774": {
+    "id": 8774,
+    "ilevel": "219 @plvl 45 - 340 @plvl 340",
+    "curveId": 30725,
+    "quality": 3
+  },
+  "8775": {
+    "id": 8775,
+    "ilevel": "232 @plvl 45 - 353 @plvl 353",
+    "curveId": 30726,
+    "quality": 4
+  },
+  "8776": {
+    "id": 8776,
+    "ilevel": "212 @plvl 45 - 333 @plvl 333",
+    "curveId": 34344,
+    "quality": 3
+  },
+  "8777": {
+    "id": 8777,
+    "ilevel": "222 @plvl 45 - 343 @plvl 343",
+    "curveId": 34347,
+    "quality": 4
+  },
+  "8778": {
+    "id": 8778,
+    "ilevel": "226 @plvl 45 - 347 @plvl 347",
+    "curveId": 34345,
+    "quality": 3
+  },
+  "8779": {
+    "id": 8779,
+    "ilevel": "242 @plvl 45 - 363 @plvl 363",
+    "curveId": 34348,
+    "quality": 4
+  },
+  "8780": {
+    "id": 8780,
+    "socket": 1
+  },
+  "8781": {
+    "id": 8781,
+    "socket": 2
+  },
+  "8782": {
+    "id": 8782,
+    "socket": 3
+  },
+  "8786": {
+    "id": 8786,
+    "upgrade": {
+      "level": 0,
+      "group": 268
+    }
+  },
+  "8787": {
+    "id": 8787,
+    "upgrade": {
+      "level": 0,
+      "group": 268
+    }
+  },
+  "8788": {
+    "id": 8788,
+    "upgrade": {
+      "level": 0,
+      "group": 268
+    }
+  },
+  "8789": {
+    "id": 8789,
+    "upgrade": {
+      "level": 0,
+      "group": 268
+    }
+  },
+  "8796": {
+    "id": 8796,
+    "effect": {
+      "id": 167059,
+      "index": 0,
+      "spell": {
+        "id": 377708,
+        "name": "Fang Adornments",
+        "icon": "inv_misc_blacksaberonfang"
+      }
+    }
+  },
+  "8797": {
+    "id": 8797,
+    "effect": {
+      "id": 167064,
+      "index": 0,
+      "spell": {
+        "id": 378758,
+        "name": "Toxified",
+        "icon": "inv_misc_food_legion_gooslime_chunk"
+      }
+    }
+  },
+  "8798": {
+    "id": 8798,
+    "level": 0
+  },
+  "8799": {
+    "id": 8799,
+    "level": 2
+  },
+  "8800": {
+    "id": 8800,
+    "level": 4
+  },
+  "8801": {
+    "id": 8801,
+    "level": 7
+  },
+  "8802": {
+    "id": 8802,
+    "level": 10
+  },
+  "8803": {
+    "id": 8803,
+    "level": 0
+  },
+  "8804": {
+    "id": 8804,
+    "level": 6
+  },
+  "8805": {
+    "id": 8805,
+    "level": 12
+  },
+  "8806": {
+    "id": 8806,
+    "level": 19
+  },
+  "8807": {
+    "id": 8807,
+    "level": 26
+  },
+  "8810": {
+    "id": 8810,
+    "socket": 1
+  },
+  "8831": {
+    "id": 8831,
+    "previewlevel": 0
+  },
+  "8832": {
+    "id": 8832,
+    "tag": "[PH] Radiant - Equip Limit 2",
+    "effect": {
+      "id": 169758,
+      "index": 0,
+      "spell": {
+        "id": 381643,
+        "name": "Dragon Orb Tracker (DNT)",
+        "icon": "inv_icon_shadowcouncilorb_purple"
+      }
+    }
+  },
+  "8833": {
+    "id": 8833,
+    "quality": 4,
+    "effect": {
+      "id": 169761,
+      "index": 0,
+      "spell": {
+        "id": 381698,
+        "name": "Forgestorm",
+        "icon": "inv_mace_1h_dragondungeon_c_01"
+      }
+    }
+  },
+  "8834": {
+    "id": 8834,
+    "tag": "[PH] Radiant (2)",
+    "effect": {
+      "id": 169763,
+      "index": 0,
+      "spell": {
+        "id": 381712,
+        "name": "Dragon Orb Tracker 2H (DNT)",
+        "icon": "inv_misc_orb_05"
+      }
+    }
+  },
+  "8850": {
+    "id": 8850,
+    "quality": 4
+  },
+  "8856": {
+    "id": 8856,
+    "effect": {
+      "id": 170028,
+      "index": 0,
+      "spell": {
+        "id": 382958,
+        "name": "Dragonflight Darkmoon Deck Shuffler (DNT)",
+        "icon": "inv_inscription_darkmooncard_repose_grey"
+      }
+    }
+  },
+  "8857": {
+    "id": 8857,
+    "effect": {
+      "id": 170029,
+      "index": 0,
+      "spell": {
+        "id": 382913,
+        "name": "Bronzescale Deckbox",
+        "icon": "inv_10_inscription3_darkmoondeckbox_bronze"
+      }
+    }
+  },
+  "8858": {
+    "id": 8858,
+    "effect": {
+      "id": 170030,
+      "index": 0,
+      "spell": {
+        "id": 383333,
+        "name": "Emberscale Deckbox",
+        "icon": "inv_10_inscription3_darkmoondeckbox_red"
+      }
+    }
+  },
+  "8859": {
+    "id": 8859,
+    "effect": {
+      "id": 170031,
+      "index": 0,
+      "spell": {
+        "id": 383336,
+        "name": "Azurescale Deckbox",
+        "icon": "inv_10_inscription3_darkmoondeckbox_blue"
+      }
+    }
+  },
+  "8860": {
+    "id": 8860,
+    "effect": {
+      "id": 170032,
+      "index": 0,
+      "spell": {
+        "id": 383337,
+        "name": "Jetscale Deckbox",
+        "icon": "inv_10_inscription3_darkmoondeckbox_black"
+      }
+    }
+  },
+  "8861": {
+    "id": 8861,
+    "effect": {
+      "id": 170033,
+      "index": 0,
+      "spell": {
+        "id": 383339,
+        "name": "Sagescale Deckbox",
+        "icon": "inv_10_inscription3_darkmoondeckbox_green"
+      }
+    }
+  },
+  "8863": {
+    "id": 8863,
+    "effect": {
+      "id": 170149,
+      "index": 0,
+      "spell": {
+        "id": 384338,
+        "name": "Tinker Safety Fuses",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "8864": {
+    "id": 8864,
+    "effect": {
+      "id": 170150,
+      "index": 0,
+      "spell": {
+        "id": 384341,
+        "name": "Critical Failure Prevention Unit",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "8865": {
+    "id": 8865,
+    "effect": {
+      "id": 170185,
+      "index": 0,
+      "spell": {
+        "id": 384489,
+        "name": "Spring-Loaded Capacitor Casing",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "8912": {
+    "id": 8912,
+    "effect": {
+      "id": 170399,
+      "index": 0,
+      "spell": {
+        "id": 385336,
+        "name": "Room for Dessert",
+        "icon": "inv_misc_food_148_cupcake"
+      }
+    }
+  },
+  "8913": {
+    "id": 8913,
+    "effect": {
+      "id": 170400,
+      "index": 0,
+      "spell": {
+        "id": 385347,
+        "name": "Magazine of Healing Darts",
+        "icon": "inv_gizmo_runichealthinjector"
+      }
+    }
+  },
+  "8932": {
+    "id": 8932,
+    "effect": {
+      "id": 170917,
+      "index": 0,
+      "spell": {
+        "id": 387335,
+        "name": "Blue Silken Lining",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "8934": {
+    "id": 8934,
+    "effect": {
+      "id": 170959,
+      "index": 0,
+      "spell": {
+        "id": 387431,
+        "name": "Unity",
+        "icon": "achievement_mythicdungeons_shadowlands"
+      }
+    },
+    "quality": 5,
+    "name_override": {
+      "base": "Unity"
+    },
+    "item_limit_category": 496
+  },
+  "8935": {
+    "id": 8935,
+    "ilevel": "3 @plvl 1 - 252 @plvl 252",
+    "curveId": 45172,
+    "quality": 3
+  },
+  "8936": {
+    "id": 8936,
+    "ilevel": "146 @plvl 59 - 252 @plvl 252",
+    "curveId": 45206,
+    "quality": 3
+  },
+  "8937": {
+    "id": 8937,
+    "effect": {
+      "id": 171010,
+      "index": 0,
+      "spell": {
+        "id": 396442,
+        "name": "Bronzed Grip Wrappings",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "8938": {
+    "id": 8938,
+    "tag": "Fated"
+  },
+  "8939": {
+    "id": 8939,
+    "tag": "Fated Heroic"
+  },
+  "8940": {
+    "id": 8940,
+    "tag": "Fated Mythic"
+  },
+  "8942": {
+    "id": 8942,
+    "upgrade": {
+      "level": 0,
+      "group": 268
+    }
+  },
+  "8943": {
+    "id": 8943,
+    "tag": "Primal Infused"
+  },
+  "8959": {
+    "id": 8959,
+    "tag": "Primal Infused"
+  },
+  "8960": {
+    "id": 8960,
+    "item_limit_category": 512
+  },
+  "8961": {
+    "id": 8961,
+    "upgrade": {
+      "level": 1,
+      "max": 13,
+      "group": 276,
+      "bonusId": 8961,
+      "itemLevel": 376
+    }
+  },
+  "8962": {
+    "id": 8962,
+    "upgrade": {
+      "level": 2,
+      "max": 13,
+      "group": 276,
+      "bonusId": 8962,
+      "itemLevel": 379
+    }
+  },
+  "8963": {
+    "id": 8963,
+    "upgrade": {
+      "level": 3,
+      "max": 13,
+      "group": 276,
+      "bonusId": 8963,
+      "itemLevel": 382
+    }
+  },
+  "8964": {
+    "id": 8964,
+    "upgrade": {
+      "level": 4,
+      "max": 13,
+      "group": 276,
+      "bonusId": 8964,
+      "itemLevel": 385
+    }
+  },
+  "8965": {
+    "id": 8965,
+    "upgrade": {
+      "level": 5,
+      "max": 13,
+      "group": 276,
+      "bonusId": 8965,
+      "itemLevel": 389
+    }
+  },
+  "8966": {
+    "id": 8966,
+    "upgrade": {
+      "level": 6,
+      "max": 13,
+      "group": 276,
+      "bonusId": 8966,
+      "itemLevel": 392
+    }
+  },
+  "8967": {
+    "id": 8967,
+    "upgrade": {
+      "level": 7,
+      "max": 13,
+      "group": 276,
+      "bonusId": 8967,
+      "itemLevel": 395
+    }
+  },
+  "8968": {
+    "id": 8968,
+    "upgrade": {
+      "level": 8,
+      "max": 13,
+      "group": 276,
+      "bonusId": 8968,
+      "itemLevel": 398
+    }
+  },
+  "8969": {
+    "id": 8969,
+    "upgrade": {
+      "level": 9,
+      "max": 13,
+      "group": 276,
+      "bonusId": 8969,
+      "itemLevel": 402
+    }
+  },
+  "8970": {
+    "id": 8970,
+    "upgrade": {
+      "level": 10,
+      "max": 13,
+      "group": 276,
+      "bonusId": 8970,
+      "itemLevel": 405
+    }
+  },
+  "8971": {
+    "id": 8971,
+    "upgrade": {
+      "level": 11,
+      "max": 13,
+      "group": 276,
+      "bonusId": 8971,
+      "itemLevel": 408
+    }
+  },
+  "8972": {
+    "id": 8972,
+    "upgrade": {
+      "level": 12,
+      "max": 13,
+      "group": 276,
+      "bonusId": 8972,
+      "itemLevel": 411
+    }
+  },
+  "8973": {
+    "id": 8973,
+    "upgrade": {
+      "level": 13,
+      "max": 13,
+      "group": 276,
+      "bonusId": 8973,
+      "itemLevel": 415
+    }
+  },
+  "8974": {
+    "id": 8974,
+    "upgrade": {
+      "level": 0,
+      "max": 13,
+      "group": 276
+    }
+  },
+  "8975": {
+    "id": 8975,
+    "rawStats": [
+      {
+        "stat": 64,
+        "amount": 3000,
+        "name": "Indestructible"
+      }
+    ],
+    "stats": "100% Indestructible [0.3000]"
+  },
+  "8979": {
+    "id": 8979,
+    "ilevel": "5 @plvl 1 - 392 @plvl 392",
+    "curveId": 56397
+  },
+  "8980": {
+    "id": 8980,
+    "ilevel": "382 @plvl 45 - 382 @plvl 382",
+    "curveId": 56679
+  },
+  "8981": {
+    "id": 8981,
+    "ilevel": "392 @plvl 45 - 392 @plvl 392",
+    "curveId": 56680
+  },
+  "8982": {
+    "id": 8982,
+    "ilevel": "395 @plvl 45 - 395 @plvl 395",
+    "curveId": 56681
+  },
+  "8984": {
+    "id": 8984,
+    "ilevel": "222 @plvl 45 - 343 @plvl 343",
+    "curveId": 34347,
+    "quality": 4
+  },
+  "8985": {
+    "id": 8985,
+    "upgrade": {
+      "level": 0,
+      "group": 278
+    }
+  },
+  "8986": {
+    "id": 8986,
+    "upgrade": {
+      "level": 0,
+      "group": 278
+    }
+  },
+  "8987": {
+    "id": 8987,
+    "upgrade": {
+      "level": 0,
+      "group": 278
+    }
+  },
+  "8988": {
+    "id": 8988,
+    "upgrade": {
+      "level": 0,
+      "group": 278
+    }
+  },
+  "8989": {
+    "id": 8989,
+    "upgrade": {
+      "level": 0,
+      "group": 278
+    }
+  },
+  "8991": {
+    "id": 8991,
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "curveId": 5449
+  },
+  "8994": {
+    "id": 8994,
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "curveId": 60485,
+    "quality": 3
+  },
+  "8995": {
+    "id": 8995,
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "curveId": 60485,
+    "quality": 3
+  },
+  "8996": {
+    "id": 8996,
+    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "curveId": 60486,
+    "quality": 4
+  },
+  "8997": {
+    "id": 8997,
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "curveId": 60485,
+    "quality": 3
+  },
+  "8998": {
+    "id": 8998,
+    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "curveId": 60486,
+    "tag": "Heroic",
+    "quality": 3
+  },
+  "8999": {
+    "id": 8999,
+    "upgrade": {
+      "level": 0,
+      "group": 277
+    },
+    "tag": "Unranked"
+  },
+  "9000": {
+    "id": 9000,
+    "upgrade": {
+      "level": 0,
+      "group": 277
+    },
+    "tag": "Combatant I"
+  },
+  "9001": {
+    "id": 9001,
+    "upgrade": {
+      "level": 0,
+      "group": 277
+    },
+    "tag": "Combatant II"
+  },
+  "9002": {
+    "id": 9002,
+    "upgrade": {
+      "level": 0,
+      "group": 277
+    },
+    "tag": "Challenger I"
+  },
+  "9003": {
+    "id": 9003,
+    "upgrade": {
+      "level": 0,
+      "group": 277
+    },
+    "tag": "Challenger II"
+  },
+  "9004": {
+    "id": 9004,
+    "upgrade": {
+      "level": 0,
+      "group": 277
+    },
+    "tag": "Rival I"
+  },
+  "9005": {
+    "id": 9005,
+    "upgrade": {
+      "level": 0,
+      "group": 277
+    },
+    "tag": "Rival II"
+  },
+  "9006": {
+    "id": 9006,
+    "upgrade": {
+      "level": 0,
+      "group": 277
+    },
+    "tag": "Duelist"
+  },
+  "9007": {
+    "id": 9007,
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "curveId": 60485,
+    "quality": 3
+  },
+  "9008": {
+    "id": 9008,
+    "upgrade": {
+      "level": 0,
+      "group": 277
+    },
+    "tag": "Elite"
+  },
+  "9010": {
+    "id": 9010,
+    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "curveId": 60486,
+    "tag": "Heroic",
+    "quality": 3
+  },
+  "9011": {
+    "id": 9011,
+    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "curveId": 60486,
+    "quality": 4
+  },
+  "9012": {
+    "id": 9012,
+    "ilevel": "25 @plvl 1 - 198 @plvl 198",
+    "curveId": 60488,
+    "tag": "Heroic",
+    "quality": 4
+  },
+  "9013": {
+    "id": 9013,
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "curveId": 60485,
+    "quality": 3
+  },
+  "9014": {
+    "id": 9014,
+    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "curveId": 60486,
+    "tag": "Heroic",
+    "quality": 3
+  },
+  "9015": {
+    "id": 9015,
+    "ilevel": "25 @plvl 1 - 198 @plvl 198",
+    "curveId": 60488,
+    "tag": "Mythic",
+    "quality": 4
+  },
+  "9016": {
+    "id": 9016,
+    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "curveId": 60486,
+    "quality": 4,
+    "tag": "Warforged"
+  },
+  "9017": {
+    "id": 9017,
+    "ilevel": "25 @plvl 1 - 198 @plvl 198",
+    "curveId": 60488,
+    "tag": "Warforged",
+    "quality": 4
+  },
+  "9018": {
+    "id": 9018,
+    "ilevel": "27 @plvl 1 - 200 @plvl 200",
+    "curveId": 60943,
+    "tag": "Warforged",
+    "quality": 4
+  },
+  "9019": {
+    "id": 9019,
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "curveId": 60485,
+    "quality": 3
+  },
+  "9020": {
+    "id": 9020,
+    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "curveId": 60486,
+    "tag": "Heroic",
+    "quality": 3
+  },
+  "9021": {
+    "id": 9021,
+    "ilevel": "25 @plvl 1 - 198 @plvl 198",
+    "curveId": 60488,
+    "tag": "Mythic",
+    "quality": 4
+  },
+  "9022": {
+    "id": 9022,
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "curveId": 60485,
+    "quality": 3
+  },
+  "9023": {
+    "id": 9023,
+    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "curveId": 60486,
+    "tag": "Heroic",
+    "quality": 3
+  },
+  "9024": {
+    "id": 9024,
+    "ilevel": "25 @plvl 1 - 198 @plvl 198",
+    "curveId": 60488,
+    "tag": "Mythic",
+    "quality": 4
+  },
+  "9025": {
+    "id": 9025,
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "curveId": 60485,
+    "quality": 3
+  },
+  "9026": {
+    "id": 9026,
+    "ilevel": "60 @plvl 0 - 60 @plvl 60",
+    "curveId": 17847,
+    "tag": "Mythic",
+    "quality": 4
+  },
+  "9027": {
+    "id": 9027,
+    "ilevel": "60 @plvl 0 - 60 @plvl 60",
+    "curveId": 17847,
+    "tag": "Heroic",
+    "quality": 3
+  },
+  "9029": {
+    "id": 9029,
+    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "curveId": 60965,
+    "quality": 4
+  },
+  "9031": {
+    "id": 9031,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60969,
+    "quality": 4
+  },
+  "9032": {
+    "id": 9032,
+    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "curveId": 60973,
+    "quality": 4
+  },
+  "9033": {
+    "id": 9033,
+    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "curveId": 60977,
+    "quality": 4
+  },
+  "9034": {
+    "id": 9034,
+    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "curveId": 60965,
+    "quality": 4
+  },
+  "9035": {
+    "id": 9035,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60969,
+    "quality": 4
+  },
+  "9036": {
+    "id": 9036,
+    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "curveId": 60973,
+    "quality": 4
+  },
+  "9037": {
+    "id": 9037,
+    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "curveId": 60977,
+    "quality": 4
+  },
+  "9038": {
+    "id": 9038,
+    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "curveId": 60965,
+    "quality": 4
+  },
+  "9039": {
+    "id": 9039,
+    "ilevel": "31 @plvl 1 - 204 @plvl 204",
+    "curveId": 60966,
+    "quality": 4
+  },
+  "9040": {
+    "id": 9040,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60969,
+    "quality": 4
+  },
+  "9041": {
+    "id": 9041,
+    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "curveId": 60970,
+    "quality": 4
+  },
+  "9042": {
+    "id": 9042,
+    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "curveId": 60971,
+    "quality": 4
+  },
+  "9043": {
+    "id": 9043,
+    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "curveId": 60972,
+    "quality": 4
+  },
+  "9044": {
+    "id": 9044,
+    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "curveId": 60973,
+    "quality": 4
+  },
+  "9045": {
+    "id": 9045,
+    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "curveId": 60974,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9046": {
+    "id": 9046,
+    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "curveId": 60975,
+    "quality": 4
+  },
+  "9047": {
+    "id": 9047,
+    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "curveId": 60976,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9048": {
+    "id": 9048,
+    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "curveId": 60977,
+    "quality": 4
+  },
+  "9049": {
+    "id": 9049,
+    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "curveId": 60978,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9050": {
+    "id": 9050,
+    "ilevel": "45 @plvl 1 - 218 @plvl 218",
+    "curveId": 60979,
+    "quality": 4
+  },
+  "9051": {
+    "id": 9051,
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "curveId": 60980,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9052": {
+    "id": 9052,
+    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "curveId": 60965,
+    "quality": 4
+  },
+  "9053": {
+    "id": 9053,
+    "ilevel": "31 @plvl 1 - 204 @plvl 204",
+    "curveId": 60966,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9054": {
+    "id": 9054,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60969,
+    "quality": 4
+  },
+  "9055": {
+    "id": 9055,
+    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "curveId": 60970,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9056": {
+    "id": 9056,
+    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "curveId": 60973,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9057": {
+    "id": 9057,
+    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "curveId": 60974,
+    "quality": 4
+  },
+  "9058": {
+    "id": 9058,
+    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "curveId": 60975,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9059": {
+    "id": 9059,
+    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "curveId": 60965,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9060": {
+    "id": 9060,
+    "ilevel": "31 @plvl 1 - 204 @plvl 204",
+    "curveId": 60966,
+    "quality": 4
+  },
+  "9062": {
+    "id": 9062,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60967,
+    "quality": 4,
+    "tag": "Elite"
+  },
+  "9063": {
+    "id": 9063,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60967,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9064": {
+    "id": 9064,
+    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "curveId": 60968,
+    "quality": 4,
+    "tag": "Heroic Elite"
+  },
+  "9065": {
+    "id": 9065,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60969,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9066": {
+    "id": 9066,
+    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "curveId": 60970,
+    "quality": 4
+  },
+  "9067": {
+    "id": 9067,
+    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "curveId": 60971,
+    "quality": 4,
+    "tag": "Thunderforged"
+  },
+  "9068": {
+    "id": 9068,
+    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "curveId": 60971,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9069": {
+    "id": 9069,
+    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "curveId": 60972,
+    "quality": 4,
+    "tag": "Heroic Thunderforged"
+  },
+  "9070": {
+    "id": 9070,
+    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "curveId": 60973,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9071": {
+    "id": 9071,
+    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "curveId": 60974,
+    "quality": 4
+  },
+  "9072": {
+    "id": 9072,
+    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "curveId": 60975,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9073": {
+    "id": 9073,
+    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "curveId": 60976,
+    "quality": 4,
+    "tag": "Mythic"
+  },
+  "9074": {
+    "id": 9074,
+    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "curveId": 60965,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9075": {
+    "id": 9075,
+    "ilevel": "31 @plvl 1 - 204 @plvl 204",
+    "curveId": 60966,
+    "quality": 4
+  },
+  "9076": {
+    "id": 9076,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60967,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9077": {
+    "id": 9077,
+    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "curveId": 60968,
+    "quality": 4,
+    "tag": "Mythic"
+  },
+  "9078": {
+    "id": 9078,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60969,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9079": {
+    "id": 9079,
+    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "curveId": 60970,
+    "quality": 4
+  },
+  "9080": {
+    "id": 9080,
+    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "curveId": 60971,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9081": {
+    "id": 9081,
+    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "curveId": 60972,
+    "quality": 4,
+    "tag": "Mythic"
+  },
+  "9082": {
+    "id": 9082,
+    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "curveId": 60965,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9083": {
+    "id": 9083,
+    "ilevel": "31 @plvl 1 - 204 @plvl 204",
+    "curveId": 60966,
+    "quality": 4
+  },
+  "9084": {
+    "id": 9084,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60967,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9085": {
+    "id": 9085,
+    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "curveId": 60968,
+    "quality": 4,
+    "tag": "Mythic"
+  },
+  "9086": {
+    "id": 9086,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60969,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9087": {
+    "id": 9087,
+    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "curveId": 60970,
+    "quality": 4
+  },
+  "9088": {
+    "id": 9088,
+    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "curveId": 60971,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9089": {
+    "id": 9089,
+    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "curveId": 60972,
+    "quality": 4,
+    "tag": "Mythic"
+  },
+  "9090": {
+    "id": 9090,
+    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "curveId": 60973,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9091": {
+    "id": 9091,
+    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "curveId": 60974,
+    "quality": 4
+  },
+  "9092": {
+    "id": 9092,
+    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "curveId": 60975,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9093": {
+    "id": 9093,
+    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "curveId": 60976,
+    "quality": 4,
+    "tag": "Mythic"
+  },
+  "9094": {
+    "id": 9094,
+    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "curveId": 60977,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9095": {
+    "id": 9095,
+    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "curveId": 60978,
+    "quality": 4
+  },
+  "9096": {
+    "id": 9096,
+    "ilevel": "45 @plvl 1 - 218 @plvl 218",
+    "curveId": 60979,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9097": {
+    "id": 9097,
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "curveId": 60980,
+    "quality": 4,
+    "tag": "Mythic"
+  },
+  "9098": {
+    "id": 9098,
+    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "curveId": 60965,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9099": {
+    "id": 9099,
+    "ilevel": "31 @plvl 1 - 204 @plvl 204",
+    "curveId": 60966,
+    "quality": 4
+  },
+  "9100": {
+    "id": 9100,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60967,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9101": {
+    "id": 9101,
+    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "curveId": 60968,
+    "quality": 4,
+    "tag": "Mythic"
+  },
+  "9102": {
+    "id": 9102,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60969,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9103": {
+    "id": 9103,
+    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "curveId": 60970,
+    "quality": 4
+  },
+  "9104": {
+    "id": 9104,
+    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "curveId": 60971,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9105": {
+    "id": 9105,
+    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "curveId": 60972,
+    "quality": 4,
+    "tag": "Mythic"
+  },
+  "9106": {
+    "id": 9106,
+    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "curveId": 60973,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9107": {
+    "id": 9107,
+    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "curveId": 60974,
+    "quality": 4
+  },
+  "9108": {
+    "id": 9108,
+    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "curveId": 60975,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9109": {
+    "id": 9109,
+    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "curveId": 60976,
+    "quality": 4,
+    "tag": "Mythic"
+  },
+  "9110": {
+    "id": 9110,
+    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "curveId": 60977,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9111": {
+    "id": 9111,
+    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "curveId": 60978,
+    "quality": 4
+  },
+  "9112": {
+    "id": 9112,
+    "ilevel": "45 @plvl 1 - 218 @plvl 218",
+    "curveId": 60979,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9113": {
+    "id": 9113,
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "curveId": 60980,
+    "quality": 4,
+    "tag": "Mythic"
+  },
+  "9114": {
+    "id": 9114,
+    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "curveId": 60965,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9115": {
+    "id": 9115,
+    "ilevel": "31 @plvl 1 - 204 @plvl 204",
+    "curveId": 60966,
+    "quality": 4
+  },
+  "9116": {
+    "id": 9116,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60967,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9117": {
+    "id": 9117,
+    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "curveId": 60968,
+    "quality": 4,
+    "tag": "Mythic"
+  },
+  "9118": {
+    "id": 9118,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60969,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9119": {
+    "id": 9119,
+    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "curveId": 60970,
+    "quality": 4
+  },
+  "9120": {
+    "id": 9120,
+    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "curveId": 60971,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9121": {
+    "id": 9121,
+    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "curveId": 60972,
+    "quality": 4,
+    "tag": "Mythic"
+  },
+  "9122": {
+    "id": 9122,
+    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "curveId": 60973,
+    "quality": 4,
+    "tag": "Raid Finder"
+  },
+  "9123": {
+    "id": 9123,
+    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "curveId": 60974,
+    "quality": 4
+  },
+  "9124": {
+    "id": 9124,
+    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "curveId": 60975,
+    "quality": 4,
+    "tag": "Heroic"
+  },
+  "9125": {
+    "id": 9125,
+    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "curveId": 60976,
+    "quality": 4,
+    "tag": "Mythic"
+  },
+  "9129": {
+    "id": 9129,
+    "quality": 3
+  },
+  "9130": {
+    "id": 9130,
+    "upgrade": {
+      "level": 0,
+      "max": 13,
+      "group": 276
+    }
+  },
+  "9136": {
+    "id": 9136,
+    "quality": 4
   }
 }

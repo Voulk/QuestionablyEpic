@@ -40,7 +40,8 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
 
     const wastage = 0.15 // It's very easy to waste stacks here and we should account for that.
 
-    bonusStats.hps = avgHealingPerStack * stacksPerMin * (1 - wastage) / 60;
+    //bonusStats.hps = avgHealingPerStack * stacksPerMin * (1 - wastage) / 60;
+    bonusStats.hps = 0;
   }
   else if (effectName === "Shaman T28-4") {
     // Free chain heals
@@ -57,7 +58,8 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     const cooldownRedPerMin = (player.getSpellCPM(1064, contentType) + freeChainHealsPerMinute) * 4 * player.getStatPerc("Crit");// chain heal CPM x targets x modifiedCritChance
     const hpsFreeTotems = oneHealingTide * (2 / 180 * cooldownRedPerMin) / 60;
 
-    bonusStats.hps = hpsFreeChainHeal / 60 + hpsFreeTotems;
+    //bonusStats.hps = hpsFreeChainHeal / 60 + hpsFreeTotems;
+    bonusStats.hps = 0;
   }
   else if (effectName === PRIMAL_TIDE_CORE) {
     /**
@@ -102,5 +104,35 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     debug && console.log(JONATS, chHPS, triggerCasts, chCasts, ratio);
     bonusStats.hps = chHPS * (ratio / 5); // Was 10.
   }
+
+  else if (effectName === "Elemental Conduit") {
+    // Up to 5 friendly targets healed by Chain Harvest will have Riptide cast on them. Up to 5 enemy targets damaged by Chain Harvest will have Flame Shock cast on them. 
+    // Flame Shock critical strikes reduce the cooldown of Chain Harvest by 1.0 sec.
+    const targets = contentType == "Raid" ? 6 : 8;
+    const chCooldown = 90 - (targets * 5 * (player.getStatPerc("Crit") + 0.15 - 1)); // TODO: Implement conduit properly, currently this is just 278
+
+    const flameshockUptime = contentType == "Raid" ? 0.7 : 0.95; // TODO: Get better log data
+    const flameshockCDR = 0.5 * player.getStatPerc("Haste") * (player.getStatPerc("Crit") - 1) * flameshockUptime; // CDR per second
+    const fsDungeonAppliedCHCDR = contentType == "Raid" ? 0 : flameshockCDR * 18 * 5;
+    const flameshockTargets = contentType == "Raid" ? 1 : 2; // Can apply up to 3 normally, but typically will be less
+
+    // Get effective CD
+    let effectiveCD = chCooldown - fsDungeonAppliedCHCDR;
+    effectiveCD = effectiveCD / (1 + flameshockCDR * flameshockTargets);
+
+    // One cast, includes core passive
+    const shamanCorePassive = 0.96; // Same multi for both Riptide and Chain Harvest
+    const chOverheal = 0.65;
+    const oneChainHarvest = 3.15 * player.getStatMultiplier("NOHASTE") * 5 * shamanCorePassive * chOverheal; // todo Unleash life
+    const hpsDueToCDR = oneChainHarvest / effectiveCD - oneChainHarvest / chCooldown;
+    
+    const rtOverheal = 0.75;
+    const oneRiptide = 1.7 * player.getStatMultiplier("NOHASTE") * chOverheal * shamanCorePassive + (18 / 3) * 0.22 * player.getStatMultiplier("ALL") * shamanCorePassive * rtOverheal; // todo torrent
+    // Dungeons overridden hots. 
+    const activeRiptideHeal = (((18 + 12 + 6) - 5.4 * 3) / 3) * 0.22 * player.getStatMultiplier("ALL") * shamanCorePassive;
+    const rtLostHeal = contentType == "Raid" ? 3 / 20 * activeRiptideHeal : activeRiptideHeal; 
+    bonusStats.hps = (oneRiptide * 5 / effectiveCD) + hpsDueToCDR - rtLostHeal / effectiveCD; 
+  }
+
   return bonusStats;
 };

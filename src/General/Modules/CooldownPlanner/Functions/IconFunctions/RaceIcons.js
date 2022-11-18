@@ -45,10 +45,12 @@ import WorgenMale from "Images/Races/Worgen/WorgenMale.jpg";
 import WorgenFemale from "Images/Races/Worgen/WorgenFemale.jpg";
 import ZandalariMale from "Images/Races/Zandalari/ZandalariMale.jpg";
 import ZandalariFemale from "Images/Races/Zandalari/ZandalariFemale.jpg";
+import Dracthyr from "Images/Races/Dracthyr/ui_dracthyr.jpg";
 
 export default function raceIcons(props) {
   let sourceMale = "";
   let sourceFemale = "";
+  let source = "";
   let alt = "";
 
   if (props === "Races.Blood Elf") {
@@ -165,6 +167,31 @@ export default function raceIcons(props) {
     sourceMale = ZandalariMale;
     sourceFemale = ZandalariFemale;
     alt = "Zandalari";
+  }
+  if (props === "Races.Zandalari Troll") {
+    sourceMale = ZandalariMale;
+    sourceFemale = ZandalariFemale;
+    alt = "Zandalari";
+  }
+  if (props === "Races.Dracthyr") {
+    source = Dracthyr;
+    alt = "Dracthyr";
+    return (
+      <div>
+        <img
+          style={{
+            height: 20,
+            width: 20,
+            margin: "0px 5px 0px 5px",
+            verticalAlign: "middle",
+            borderRadius: "4px",
+            border: "1px solid rgba(255, 255, 255, 0.12)",
+          }}
+          src={source}
+          alt={alt}
+        />
+      </div>
+    );
   }
 
   return (

@@ -48,21 +48,25 @@ import { apiGetPlayerImage } from "../ConnectionUtilities";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { covenantIcons } from "../../CooldownPlanner/Functions/CovenantFunctions";
-import { classTranslator } from "General/Functions/CommonFunctions";
+import { getTranslatedRaceName } from "Databases/RacesDB";
+import { getTranslatedClassName } from "locale/ClassNames.js";
+import { getTranslatedStats } from "locale/statsLocale.js";
+import { getTranslatedCovenantName } from "locale/covenants.js";
 
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
   "Restoration Druid": require("Images/DruidSmall.jpg"),
+  "Preservation Evoker": require("Images/EvokerSmall.jpg"),
   "Restoration Shaman": require("Images/ShamanSmall.png"),
   "Discipline Priest": require("Images/DiscSmall.jpg"),
   "Holy Paladin": require("Images/PaladinSmall.png"),
   "Holy Priest": require("Images/HPriestSmall.jpg"),
   "Mistweaver Monk": require("Images/MistweaverSmall.jpg"),
 
-  "Holy Paladin BC": require("Images/classicon_paladin.jpg"),
-  "Restoration Druid BC": require("Images/classicon_druid.jpg"),
-  "Restoration Shaman BC": require("Images/classicon_shaman.jpg"),
-  "Holy Priest BC": require("Images/classicon_priest.jpg"),
+  "Holy Paladin Classic": require("Images/classicon_paladin.jpg"),
+  "Restoration Druid Classic": require("Images/classicon_druid.jpg"),
+  "Restoration Shaman Classic": require("Images/classicon_shaman.jpg"),
+  "Holy Priest Classic": require("Images/classicon_priest.jpg"),
 };
 
 /* ------------------- Called when a character is clicked. ------------------ */
@@ -175,7 +179,8 @@ export default function CharCards(props) {
   const classes = useStyles();
   const contentType = useSelector((state) => state.contentType);
   const player = props.char;
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
 
   const [tabvalue, setTabValue] = React.useState(0);
 
@@ -371,7 +376,7 @@ export default function CharCards(props) {
                   <Grid item xs={10}>
                     <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec), display: "inline-flex" }}>
                       {props.name}
-                      <Tooltip title={t(classTranslator(spec))} style={{ color: classColoursJS(spec) }} placement="top">
+                      <Tooltip title={getTranslatedClassName(spec, currentLanguage)} style={{ color: classColoursJS(spec) }} placement="top">
                         {/* ----------------------------------------- Class Icon -----------------------------------------  */}
                         {classIcons(spec, {
                           height: 20,
@@ -384,7 +389,7 @@ export default function CharCards(props) {
                       </Tooltip>
                       {/* ---------------------------------------- Covenant Icon ---------------------------------------  */}
                       {gameType === "Retail" ? (
-                        <Tooltip title={t(covenant)} style={{ color: classColoursJS(spec) }} placement="top">
+                        <Tooltip title={getTranslatedCovenantName(covenant, currentLanguage)} style={{ color: classColoursJS(spec) }} placement="top">
                           {covenantIcons(covenant, {
                             height: 20,
                             width: 20,
@@ -510,7 +515,7 @@ export default function CharCards(props) {
                                 <MenuItem divider={lastItem} key={"charCardClass" + i} value={key}>
                                   <div style={{ display: "inline-flex" }}>
                                     {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
-                                    {t("Classes." + key)}
+                                    {getTranslatedClassName(key, currentLanguage)}
                                   </div>
                                 </MenuItem>
                               );
@@ -531,7 +536,7 @@ export default function CharCards(props) {
                                     <MenuItem divider={lastItem} key={"charCardRace" + i} value={key}>
                                       <div style={{ display: "inline-flex" }}>
                                         {raceIcons(key)}
-                                        {t(key)}
+                                        {getTranslatedRaceName(key, currentLanguage)}
                                       </div>
                                     </MenuItem>
                                   );
@@ -559,7 +564,7 @@ export default function CharCards(props) {
                                           borderRadius: 4,
                                           border: "1px solid rgba(255, 255, 255, 0.12)",
                                         })}
-                                        {t(key)}
+                                        {getTranslatedCovenantName(key, currentLanguage)}
                                       </div>
                                     </MenuItem>
                                   );
@@ -593,7 +598,7 @@ export default function CharCards(props) {
                         <TextField
                           id="IntellectInput"
                           type="number"
-                          label={t("Intellect")}
+                          label={getTranslatedStats("Intellect", currentLanguage)}
                           style={{ textAlignLast: "center" }}
                           inputProps={{
                             step: 0.01,
@@ -614,7 +619,7 @@ export default function CharCards(props) {
                       <Grid item xs={4}>
                         <TextField
                           id="CriticalInput"
-                          label={t("Crit")}
+                          label={getTranslatedStats("Crit", currentLanguage)}
                           style={{ textAlignLast: "center" }}
                           inputProps={{
                             step: 0.01,
@@ -635,7 +640,7 @@ export default function CharCards(props) {
                       <Grid item xs={4}>
                         <TextField
                           id="HasteInput"
-                          label={t("Haste")}
+                          label={getTranslatedStats("Haste", currentLanguage)}
                           style={{ textAlignLast: "center" }}
                           inputProps={{
                             step: 0.01,
@@ -656,7 +661,7 @@ export default function CharCards(props) {
                       <Grid item xs={4}>
                         <TextField
                           id="MasteryInput"
-                          label={t("Mastery")}
+                          label={getTranslatedStats("Mastery", currentLanguage)}
                           style={{ textAlignLast: "center" }}
                           inputProps={{
                             step: 0.01,
@@ -677,7 +682,7 @@ export default function CharCards(props) {
                       <Grid item xs={4}>
                         <TextField
                           id="VersatilityInput"
-                          label={t("Versatility")}
+                          label={getTranslatedStats("Versatility", currentLanguage)}
                           style={{ textAlignLast: "center" }}
                           inputProps={{
                             step: 0.01,
@@ -698,7 +703,7 @@ export default function CharCards(props) {
                       <Grid item xs={4}>
                         <TextField
                           id="LeechInput"
-                          label={t("Leech")}
+                          label={getTranslatedStats("Leech", currentLanguage)}
                           style={{ textAlignLast: "center" }}
                           inputProps={{
                             step: 0.01,

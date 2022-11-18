@@ -17,7 +17,7 @@ import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/Connec
 
 class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
-    this.spec = specName;
+    this.spec = specName.replace("BC", "Classic");
     this.charName = playerName;
     this.charID = charID;
 
@@ -184,6 +184,7 @@ class Player {
   setDefaultCovenant = (spec) => {
     if (spec === "Holy Paladin") this.covenant = "venthyr";
     else if (spec === "Restoration Druid") this.covenant = "night_fae";
+    else if (spec === "Preservation Evoker") this.covenant = "night_fae";
     else if (spec === "Restoration Shaman") this.covenant = "necrolord";
     else if (spec === "Mistweaver Monk") this.covenant = "venthyr";
     else if (spec === "Discipline Priest") this.covenant = "kyrian";
@@ -294,6 +295,13 @@ class Player {
     return this.sortItems(temp);
   };
 
+  getItemByHash = (uniqueHash) => {
+    let temp = this.activeItems.filter(function (item) {
+      return item.uniqueHash === uniqueHash;
+    });
+    return temp;
+  };
+
   deleteActiveItem = (unique) => {
     let tempArray = this.activeItems.filter(function (item) {
       return item.uniqueHash !== unique;
@@ -314,8 +322,15 @@ class Player {
     }); */
     const slot = item.slot;
     const pClass = this.spec;
-    const classTag = {"Holy Priest": "of the Empyrean", "Discipline Priest": "of the Empyrean", "Restoration Druid": "of the Fixed Stars",
-                      "Restoration Shaman": "Theurgic Starspeaker's", "Mistweaver Monk": "of the Grand Upwelling", "Holy Paladin": "Luminous Chevalier's"}
+    const classTag = {
+      "Holy Priest": "of the Empyrean",
+      "Discipline Priest": "of the Empyrean",
+      "Restoration Druid": "of the Fixed Stars",
+      "Restoration Shaman": "Theurgic Starspeaker's",
+      "Mistweaver Monk": "of the Grand Upwelling",
+      "Holy Paladin": "Luminous Chevalier's",
+      //"Preservation Evoker": "",
+    };
 
     const temp = itemDB.filter(function (item) {
       return item.slot === slot && item.name.includes(classTag[pClass]);
@@ -326,14 +341,12 @@ class Player {
       const newItem = new Item(match.id, "", slot, item.socket, item.tertiary, 0, item.level, "");
       Object.assign(newItem, { isCatalystItem: true });
       newItem.active = true;
-      if (item.uniqueEquip === "vault") { 
-        newItem.uniqueEquip = "vault"; 
-        newItem.vaultItem = true ;
-      };
+      if (item.uniqueEquip === "vault") {
+        newItem.uniqueEquip = "vault";
+        newItem.vaultItem = true;
+      }
       this.activeItems = this.activeItems.concat(newItem);
-
-    }
-    else {
+    } else {
       // We should probably write an error check here.
     }
   };
@@ -485,8 +498,7 @@ class Player {
         if (this.getActiveModel(contentType).modelName.includes("Venthyr")) this.setCovenant("venthyr");
         else if (this.getActiveModel(contentType).modelName.includes("Necrolord")) this.setCovenant("necrolord");
         else if (this.getActiveModel(contentType).modelName.includes("Kyrian")) this.setCovenant("kyrian");
-      }
-      else if (this.spec === "Discipline Priest") {
+      } else if (this.spec === "Discipline Priest") {
         if (this.getActiveModel(contentType).modelName.includes("Venthyr")) this.setCovenant("venthyr");
         else if (this.getActiveModel(contentType).modelName.includes("Kyrian")) this.setCovenant("kyrian");
 
@@ -628,6 +640,9 @@ class Player {
     } else if (spec === SPEC.RESTOSHAMAN) {
       this.statWeights[contentType] = shamanDefaultStatWeights(contentType);
       this.statWeights.DefaultWeights = true;
+    } else if (spec === SPEC.PRESEVOKER) {
+      this.statWeights[contentType] = holyPriestDefaultStatWeights(contentType);
+      this.statWeights.DefaultWeights = true;
     } else {
       // Invalid spec replied. Error.
       reportError(this, "Player", "Invalid Spec Supplied for Default Weights", spec);
@@ -649,7 +664,7 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 2000,
+        intellect: 2500,
         haste: 890,
         crit: 460,
         mastery: 600,
@@ -669,10 +684,10 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Necrolord Default", 4));
 
       this.activeStats = {
-        intellect: 2000,
+        intellect: 2500,
         haste: 850,
-        crit: 280,
-        mastery: 900,
+        crit: 400,
+        mastery: 800,
         versatility: 520,
         stamina: 1900,
       };
@@ -681,7 +696,7 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 2000,
+        intellect: 2500,
         haste: 125,
         crit: 790,
         mastery: 220,
@@ -699,7 +714,7 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Venthyr Evangelism", 2));
 
       this.activeStats = {
-        intellect: 2250,
+        intellect: 2500,
         haste: 940,
         crit: 650,
         mastery: 220,
@@ -711,7 +726,7 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 2100,
+        intellect: 2500,
         haste: 424,
         crit: 770,
         mastery: 700,
@@ -732,7 +747,7 @@ class Player {
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 
       this.activeStats = {
-        intellect: 2000,
+        intellect: 2500,
         haste: 620,
         crit: 860,
         mastery: 120,
@@ -743,7 +758,24 @@ class Player {
       this.statWeights.Raid = monkDefaultStatWeights("Raid");
       this.statWeights.Dungeon = monkDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true; */
-    } else if (spec.includes("BC")) {
+    } 
+    else if (spec === SPEC.PRESEVOKER) {
+      this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
+      this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
+      this.activeStats = {
+        intellect: 2500,
+        haste: 424,
+        crit: 670,
+        mastery: 750,
+        versatility: 390,
+        stamina: 1900,
+      }
+    /*
+    this.statWeights.Raid = holyPriestDefaultStatWeights("Raid");
+    this.statWeights.Dungeon = holyPriestDefaultStatWeights("Dungeon");
+    this.statWeights.DefaultWeights = true; */
+  }
+    else if (spec.includes("Classic")) {
     } else {
       // Invalid spec replied. Error.
       reportError(this, "Player", "Invalid Spec Supplied during setupDefaults", spec);

@@ -6,6 +6,12 @@ import "./Panels.css";
 import { useTranslation } from "react-i18next";
 import { filterItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { encounterDB } from "../../../../Databases/InstanceDB";
+import { getTranslatedPvP } from "locale/pvpLocale";
+import MuiAccordion from "@mui/material/Accordion";
+import MuiAccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import withStyles from "@mui/styles/withStyles";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -15,6 +21,34 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+const Accordion = withStyles({
+  root: {
+    border: "1px solid rgba(255, 255, 255, 0.12)",
+    boxShadow: "none",
+    "&:not(:last-child)": {
+      borderBottom: 0,
+    },
+    "&:before": {
+      display: "none",
+    },
+    "&$expanded": {
+      margin: "auto",
+    },
+  },
+  expanded: {},
+})(MuiAccordion);
+
+const AccordionSummary = withStyles({
+  root: {
+    padding: "0px 16px 0px 0px",
+    backgroundColor: "#35383e",
+    "&$expanded": {
+      backgroundColor: "rgb(255 255 255 / 10%)",
+    },
+  },
+  expanded: {},
+})(MuiAccordionSummary);
+
 const getPVPItemLevel = (sourceID, difficulty) => {
   if (sourceID === -17) {
     return itemLevels.pvp[difficulty];
@@ -23,8 +57,8 @@ const getPVPItemLevel = (sourceID, difficulty) => {
 };
 
 const pvpIcons = {
-  "-16": require("Images/Bosses/HonorIcon.jpg"),
-  "-17": require("Images/Bosses/HonorIcon.jpg"),
+  "-16": require("Images/Bosses/HonorIcon.jpg").default,
+  "-17": require("Images/Bosses/ConquestIcon.jpg").default,
 };
 
 const itemLevels = {
@@ -35,41 +69,89 @@ const itemLevels = {
 
 export default function PvPGearContainer(props) {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
   const difficulty = props.playerSettings.pvp;
 
   const contentGenerator = () => {
     return encounterDB[2].map((key, i) => (
-      <Grid item xs={12} key={"pvpContainer-" + i}>
-        <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
-          <Grid container>
-            <Grid item>
-              <div style={{ width: 181 }} className="container-UpgradeCards">
-                <img src={pvpIcons[key]} style={{ borderRadius: 4 }} />
-                <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
-                  {t("PvPCurrency." + key)}
-                </Typography>
-              </div>
-            </Grid>
-            <Divider orientation="vertical" flexItem />
-
-            <Grid item xs={12} sm container spacing={1} style={{ padding: 8 }}>
-              {[...filterItemListBySource(itemList, key, 0, getPVPItemLevel(key, difficulty), difficulty)].map((item, index) => (
-                <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
-              ))}
-            </Grid>
+      <Accordion
+        key={getTranslatedPvP(key, currentLanguage) + "-accordian" + i}
+        elevation={0}
+        style={{
+          backgroundColor: "rgba(255, 255, 255, 0.12)",
+        }}
+      >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+          style={{
+            verticalAlign: "middle",
+          }}
+        >
+          <Typography
+            variant="h6"
+            color="primary"
+            align="left"
+            style={{
+              // backgroundColor: "#35383e",
+              borderRadius: "4px 4px 0px 0px",
+              display: "flex",
+            }}
+          >
+            <img src={pvpIcons[key]} style={{ borderRadius: 4, height: 36 }} />
+            <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
+            {getTranslatedPvP(key, currentLanguage)} -{" "}
+            {
+              [...filterItemListBySource(itemList, key, 0, getPVPItemLevel(key, difficulty), difficulty)]
+                .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
+                .filter((item) => item !== 0).length
+            }{" "}
+            Upgrades
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails style={{ backgroundColor: "#191c23" }}>
+          <Grid xs={12} container spacing={1}>
+            {[...filterItemListBySource(itemList, key, 0, getPVPItemLevel(key, difficulty), difficulty)].map((item, index) => (
+              <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
+            ))}
           </Grid>
-        </Paper>
-      </Grid>
+        </AccordionDetails>
+      </Accordion>
+
+      // <Grid item xs={12} key={"pvpContainer-" + i}>
+      //   <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
+      //     <Grid container>
+      //       <Grid item>
+      //         <div style={{ width: 181 }} className="container-UpgradeCards">
+      //           <img src={pvpIcons[key]} style={{ borderRadius: 4 }} />
+      //           <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
+      //             {getTranslatedPvP(key, currentLanguage)}
+      //           </Typography>
+      //         </div>
+      //       </Grid>
+      //       <Divider orientation="vertical" flexItem />
+
+      //       <Grid item xs={12} sm container spacing={1} style={{ padding: 8 }}>
+      //         {[...filterItemListBySource(itemList, key, 0, getPVPItemLevel(key, difficulty), difficulty)].map((item, index) => (
+      //           <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
+      //         ))}
+      //       </Grid>
+      //     </Grid>
+      //   </Paper>
+      // </Grid>
     ));
   };
 
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
-        {contentGenerator(props.type)}
+        <Grid item xs={12}>
+          {contentGenerator(props.type)}
+        </Grid>
       </Grid>
     </div>
   );

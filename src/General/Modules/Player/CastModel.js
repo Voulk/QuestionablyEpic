@@ -9,6 +9,7 @@ import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatW
 import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { monkSinSpecialQueries, monkSinSpellData, monkSinStatWeights } from "./ClassDefaults/Monk/MonkSinTeachings";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
+import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights } from "./ClassDefaults/EvokerDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./DiscPriest/DiscPriestDefaults";
 import { getRampData, genStatWeights } from "General/Modules/Player/DiscPriest/DiscPriestUtilities";
 
@@ -63,8 +64,8 @@ class CastModel {
 
   setDefaults = (spec, contentType, modelID) => {
     this.fightInfo = {
-      hps: 14100,
-      rawhps: 15200,
+      hps: 20000,
+      rawhps: 24200,
       dps: 1000,
       fightLength: 340,
       reportID: "Default",
@@ -180,15 +181,23 @@ class CastModel {
       this.baseStatWeights = holyPriestDefaultStatWeights(contentType);
       this.fightInfo.dps = (contentType === "Raid" ? 875 : 2100);
     } 
+    else if (spec === SPEC.PRESEVOKER) {
+      // TODO
+      this.modelName = "Default";
+      spellList = evokerDefaultSpellData(contentType);
+      specialQueries = evokerDefaultSpecialQueries(contentType);
+      this.baseStatWeights = evokerDefaultStatWeights(contentType);
+      this.fightInfo.dps = (contentType === "Raid" ? 875 : 2100);
+    } 
     
     // Burning Crusade Profiles
-    else if (spec === "Restoration Druid BC") {
+    else if (spec === "Restoration Druid Classic") {
       spellList = this.getClassicDruid();
-    } else if (spec === "Restoration Shaman BC") {
+    } else if (spec === "Restoration Shaman Classic") {
       spellList = this.getClassicShaman();
-    } else if (spec === "Holy Priest BC") {
+    } else if (spec === "Holy Priest Classic") {
       spellList = this.getClassicPriest();
-    } else if (spec === "Holy Paladin BC") {
+    } else if (spec === "Holy Paladin Classic") {
       spellList = this.getClassicPaladin();
     } else {
       spellList = {};

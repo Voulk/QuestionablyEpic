@@ -421,6 +421,22 @@ export const cooldownDB = [
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
   },
+  {
+    name: {
+      en: "Invoke Chi-Ji, the Red Crane",
+      fr: "Invocation de Chi Ji, la Grue rouge",
+      de: "Chi-Ji den Roten Kranich beschwören",
+      ru: "Призыв Чи-Цзи, Красного Журавля",
+      cn: "朱鹤下凡",
+    },
+    guid: 325197,
+    icon: require("Images/CooldownPlanner/SpellIcons/inv_pet_cranegod.jpg").default,
+    duration: 25,
+    cooldown: 180,
+    class: "MistweaverMonk",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: true,
+  },
   /* ------------------------------------- Covenant Abilities ------------------------------------- */
   {
     name: {

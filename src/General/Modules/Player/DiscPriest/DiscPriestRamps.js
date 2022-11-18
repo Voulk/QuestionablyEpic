@@ -6,7 +6,8 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
-    chaosBrand: true
+    chaosBrand: true,
+    critMult: 2
 }
 
 
@@ -72,7 +73,7 @@ export const allRampsHealing = (boonSeq, fiendSeq, stats, settings = {}, conduit
 export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits, reporting) => {
 
     let rampResult = {totalHealing: 0, ramps: [], rampSettings: settings}
-    const miniSeq = buildRamp('Mini', 6, [], stats.haste, settings.playstyle || "", [])
+    const miniSeq = buildRamp('Mini', 6, settings["Neural Synapse Enhancer"] || false, stats.haste, settings.playstyle || "", [])
     const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
     const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
     const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
@@ -216,8 +217,9 @@ const getActiveAtone = (atoneApp, timer) => {
 const getStatMult = (currentStats, stats) => {
     let mult = 1;
     
+    const critChance = 0.05 + currentStats['crit'] / 35 / 100;
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / 40 / 100);
-    if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100); // TODO: Re-enable
+    if (stats.includes("crit")) mult *= (discSettings.critMult * critChance + (1 - critChance)); // TODO: Re-enable
     if (stats.includes("mastery")) mult *= (1.108 + currentStats['mastery'] / 25.9259 / 100);
     return mult;
 }
@@ -373,11 +375,11 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
 
     }
 
+    if (settings['Drape of Shame']) discSettings.critMult = 2.05;
     // ==== Soulbinds ====
     // Don't include Conduits here just any relevant soulbind nodes themselves.
     // This section can be expanded with more nodes, particularly those from other covenants.
     // Examples: Combat Meditation, Pointed Courage
-
     // --- Combat Meditation ---
     // Mastery buff on Casting Boon. Pre-DR stat buff.
     if (settings['Pelagos']) discSpells['Boon of the Ascended'].push({
@@ -398,25 +400,11 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
 
     // ==== Tier & Other Effects ====
     // Remember that anything that isn't wired into a ramp can just be calculated normally (like Genesis Lathe for example).
-    if (settings['4T28']) {
-        // If player has 4T28, then hook Power of the Dark Side into Power Word Radiance.
-        discSpells['Power Word: Radiance'].push({
-            name: "Power of the Dark Side",
-            type: "buff",
-            buffType: "special",
-            value: 1.95,
-            buffDuration: 20,
-            castTime: 0,
-            stacks: 1,
-            canStack: true,
-        });
 
-    }
-    else {
-        // If player doesn't have 4T28, then we might still opt to start them with a PotDS proc on major ramps since the chance of it being active is extremely high.
-        // This is unnecessary with 4pc since we'll always have a PotDS proc during our sequences due to Radiance always coming before Penance.
-        if (settings['Power of the Dark Side']) state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: 1.5, stacks: 1, canStack: true})
-    }
+    // If player doesn't have 4T28, then we might still opt to start them with a PotDS proc on major ramps since the chance of it being active is extremely high.
+    // This is unnecessary with 4pc since we'll always have a PotDS proc during our sequences due to Radiance always coming before Penance.
+    if (settings['Power of the Dark Side']) state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: 1.5, stacks: 1, canStack: true})
+
     
     // ==== Trinkets ====
     // These settings change the stat value prescribed to a given trinket. We call these when adding trinkets so that we can grab their value at a specific item level.
@@ -426,6 +414,7 @@ const applyLoadoutEffects = (discSpells, settings, conduits, state) => {
     if (settings["Flame of Battle"]) discSpells["Flame of Battle"][0].value = settings["Flame of Battle"];
     if (settings['Shadowed Orb']) discSpells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
     if (settings['Soulletting Ruby']) discSpells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
+    if (settings['Neural Synapse Enhancer']) discSpells['Neural Synapse Enhancer'][0].value = settings['Neural Synapse Enhancer'];
     //
 
     // ==== Conduits ====

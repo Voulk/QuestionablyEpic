@@ -20,6 +20,7 @@ export const STAT = {
 export const BASESTAT = {
   CRIT: 0.05,
   MASTERY: {
+    "Preservation Evoker": 0,
     "Restoration Druid": 0.04,
     "Mistweaver Monk": 0.336,
     "Holy Paladin": 0.12,
@@ -46,6 +47,7 @@ export const STATPERONEPERCENT = {
     VERSATILITY: 40,
     VERSATILITY_DR: 80,
     MASTERYA: {
+      "Preservation Evoker": 19.4,
       "Restoration Druid": 70,
       "Mistweaver Monk": 8.33,
       "Holy Paladin": 23.33,
@@ -55,6 +57,7 @@ export const STATPERONEPERCENT = {
     },
     MASTERY: {
       "Druid-Restoration": 70,
+      "Preservation Evoker": 19.4,
       "Monk-Mistweaver": 8.33,
       "Paladin-Holy": 23.33,
       "Priest-Holy": 28,
@@ -62,7 +65,7 @@ export const STATPERONEPERCENT = {
       "Shaman-Restoration": 11.66,
     },
   },
-  BurningCrusade: {
+  Classic: {
     HASTE: 15.8,
     CRIT: 22.1, // Keep in mind Spell and melee crit are separated, but both cost 22.1 per 1% gain.
     MELEEHIT: 15.8, // Not used for healing specifically, but we'll store it just in case.

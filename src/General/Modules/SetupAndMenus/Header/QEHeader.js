@@ -14,6 +14,7 @@ import ContentSwitch from "./ContentToggle";
 import { useSelector } from "react-redux";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
+import { patronColor } from "./PatronColors";
 
 // import ReactGA from "react-ga";n
 
@@ -72,14 +73,8 @@ export default function QEHeader(props) {
   // TODO: Implement profile.
   let playerName = props.playerTag || t("QeHeader.Login");
   let linkTarget = props.playerTag === "" ? "/login" : "/profile";
-  let patronStatus = props.patronStatus !== "" && props.patronStatus !== "Basic" ? props.patronStatus + " Edition" : "Standard Edition";
-  let color = {
-    "Rolls Royce Edition": "#04E07C",
-    "Diamond Edition": "#FFB6C1",
-    "Gold Edition": "#DAA520",
-    "Standard Edition": "#FFFFFF",
-    "Basic Edition": "#FFFFFF",
-  };
+  let patronStatus = props.patronStatus !== "" && props.patronStatus !== "Basic" ? props.patronStatus : "Standard";
+
 
   // box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
   return (
@@ -102,8 +97,8 @@ export default function QEHeader(props) {
                       </Link>
                     </Grid>
                     <Grid item xs={6} sm={12} md={12} lg={6} xl="auto">
-                      <Typography style={{ color: color[patronStatus], paddingLeft: 10, paddingRight: 10 }} variant="body1" align="center" noWrap>
-                        {patronStatus}
+                      <Typography style={{ color: patronColor[patronStatus], paddingLeft: 10, paddingRight: 10 }} variant="body1" align="center" noWrap>
+                        {patronStatus + " Edition"}
                       </Typography>
                     </Grid>
                   </Grid>
@@ -125,7 +120,7 @@ export default function QEHeader(props) {
                 style={{ paddingLeft: 10, paddingRight: 10 }}
               >
                 {(props.allChars && props.allChars.allChar.length) > 0 ? (
-                  <Grid item item xs={gameType === "Retail" ? 6 : "auto"} sm="auto">
+                  <Grid item xs={gameType === "Retail" ? 6 : "auto"} sm="auto">
                     <CharacterHeaderButton player={props.pl} allChars={props.allChars} />
                   </Grid>
                 ) : (

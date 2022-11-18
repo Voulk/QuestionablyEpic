@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip, Typography, Link } from "@mui/material";
 import { runSimC } from "../../../Retail/Engine/SimCImport/SimCImportEngine";
-import { runBCSimC } from "../../../BurningCrusade/Engine/SimCImport/SimCImportEngineBC";
+import { runBCSimC } from "../../../Classic/Engine/SimCImport/SimCImportEngineBC";
 // import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript";
 import { useSelector } from "react-redux";
 import { styled } from "@mui/system";
@@ -26,7 +26,7 @@ export default function SimCraftInput(props) {
   const characterCount = props.allChars.getAllChar().length || 0;
   const buttonVariant = props.variant;
   const gameType = useSelector((state) => state.gameType);
-  const addonLink = gameType === "BurningCrusade" ? "https://www.curseforge.com/wow/addons/qe-live-gear-importer-bc" : "https://www.curseforge.com/wow/addons/simulationcraft"
+  const addonLink = gameType === "Classic" ? "https://www.curseforge.com/wow/addons/qe-live-gear-importer-Classic" : "https://www.curseforge.com/wow/addons/simulationcraft"
   const handleClickOpen = () => {
     setOpen(true);
   };

@@ -7,11 +7,12 @@ import { Autocomplete } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
-import BCItem from "../Player/BCItem";
+import ClassicItem from "../Player/ClassicItem";
 import { getItemDB, getValidArmorTypes, getValidWeaponTypesBySpec, getItemProp, scoreItem, getItemAllocations, calcStatsAtLevel, getLegendaryID } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { dominationGemDB } from "../../../Databases/DominationGemDB";
+import { getTranslatedStats } from "locale/statsLocale";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -66,21 +67,21 @@ export default function ItemBar(props) {
           key.slot === "Offhand" ||
           key.slot === "Shield" ||
           (key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
-          (key.itemClass === 2 && spec === "Holy Priest BC")), // Wands
+          (key.itemClass === 2 && spec === "Holy Priest Classic")), // Wands
     ).map((key) => newItemList.push({ value: key.id, label: key.names[currentLanguage] }));
 
     newItemList = newItemList.reduce((unique, o) => {
-      if(!unique.some(obj => obj.label === o.label)) {
+      if (!unique.some((obj) => obj.label === o.label)) {
         unique.push(o);
       }
       return unique;
-    },[]);
+    }, []);
 
     newItemList.sort((a, b) => (a.label > b.label ? 1 : -1));
-    
+
     return newItemList;
   };
- 
+
   const [itemDropdown, setItemDropdown] = useState(fillItems("", props.player.spec)); // Filled later based on item slot and armor type.
   /* ------------------------------ Define State ----------------------------- */
   const [itemLevel, setItemLevel] = useState("");
@@ -147,7 +148,7 @@ export default function ItemBar(props) {
       }
     } else {
       // Burning Crusade
-      item = new BCItem(itemID, itemName, getItemProp(itemID, "slot", gameType), "");
+      item = new ClassicItem(itemID, itemName, getItemProp(itemID, "slot", gameType), "");
     }
 
     item.softScore = scoreItem(item, player, contentType, gameType);
@@ -171,7 +172,7 @@ export default function ItemBar(props) {
     } else {
       setItemID(val.value);
       setItemName(val.name);
-      if (gameType === "BurningCrusade") setItemLevel(getItemProp(val.value, "itemLevel", gameType));
+      if (gameType === "Classic") setItemLevel(getItemProp(val.value, "itemLevel", gameType));
     }
   };
 
@@ -438,11 +439,11 @@ export default function ItemBar(props) {
             >
               <InputLabel id="itemtertiary">{t("QuickCompare.Tertiary")}</InputLabel>
               <Select key={"TertiarySelect"} labelId="itemtertiary" value={itemTertiary} onChange={itemTertiaryChanged} label={t("QuickCompare.Tertiary")}>
-                <MenuItem divider key={"LeechItem"} label={t("Leech")} value={"Leech"}>
-                  {t("Leech")}
+                <MenuItem divider key={"LeechItem"} label={getTranslatedStats("Leech", currentLanguage)} value={"Leech"}>
+                  {getTranslatedStats("Leech", currentLanguage)}
                 </MenuItem>
-                <MenuItem divider key={"AvoidanceItem"} label={t("Avoidance")} value={"Avoidance"}>
-                  {t("Avoidance")}
+                <MenuItem divider key={"AvoidanceItem"} label={getTranslatedStats("Avoidance", currentLanguage)} value={"Avoidance"}>
+                  {getTranslatedStats("Avoidance", currentLanguage)}
                 </MenuItem>
                 <MenuItem key={"NoneItem"} label={t("None")} value={"None"} onClick={""}>
                   {t("None")}

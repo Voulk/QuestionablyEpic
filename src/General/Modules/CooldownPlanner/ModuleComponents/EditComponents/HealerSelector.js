@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { TextField, MenuItem } from "@mui/material";
 import ls from "local-storage";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
@@ -53,37 +53,58 @@ const selectMenu = createTheme({
 
 export default function HealerSelector(props, name, nameClass, cooldown) {
   const { t } = useTranslation();
+  let origValue = ls
+    .get("healerInfo")
+    .map((obj, i) => obj.name + obj.class)
+    .indexOf(props.rowData[name] + props.rowData[nameClass]);
 
+  const [value, setValue] = useState(origValue >= 0 ? origValue : props.rowData[name] || props.value || "");
+  const nameValidation = ls.get("healerInfo").map((key, i) => key.name);
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={selectMenu}>
         <TextField
-          value={props.value || ""}
+          value={value}
           select
           sx={{ lineHeight: "normal", width: "100%" }}
           size="small"
           onChange={(e) => {
-            const newClass = ls
-              .get("healerInfo")
-              .filter((obj) => {
-                return obj.name === e.target.value;
-              })
-              .map((obj) => obj.class)
-              .toString();
             let data = { ...props.rowData };
-            data[name] = e.target.value; // Set the name of the row to the selected from dropdown
-            data[nameClass] = newClass; // Update the class from the healerinfo local storage
-            /* ------------------------------- Reset the cooldown for the row ------------------------------- */
-            if (props.rowData[nameClass] !== newClass) {
-              data[cooldown] = undefined;
+            if (e.target.value === "remove") {
+              data[name] = ""; // Set the name of the row to the selected from dropdown
+              data[nameClass] = ""; // Update the class from the healerinfo local storage
+              data[cooldown] = "";
+              setValue("");
+            } else {
+              const healerRoster = ls.get("healerInfo");
+              const healerNum = parseInt(e.target.value);
+              const newClass = healerRoster[healerNum].class || "";
+              const newName = healerRoster[healerNum].name || "";
+
+              data[name] = newName; // Set the name of the row to the selected from dropdown
+              data[nameClass] = newClass; // Update the class from the healerinfo local storage
+              setValue(e.target.value);
+              if (props.rowData[nameClass] !== newClass) {
+                data[cooldown] = undefined;
+              }
             }
+            /* ------------------------------- Reset the cooldown for the row ------------------------------- */
+
             props.onRowDataChange(data); // Update the data
           }}
         >
+          {nameValidation.includes(props.rowData[name]) ? null : (
+            <MenuItem disabled divider style={{ color: classColoursJS(props.rowData[nameClass]) }} key={props.rowData[name] + i} value={props.rowData[name]}>
+              <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
+                {classIcons(props.rowData[nameClass], { height: 20, width: 20, margin: "0px 5px 0px 0px", verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 })}
+                {props.rowData[name]}
+              </div>
+            </MenuItem>
+          )}
           {
             /* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */
             ls.get("healerInfo").map((key, i) => (
-              <MenuItem divider style={{ color: classColoursJS(key.class) }} key={key.name} value={key.name}>
+              <MenuItem divider style={{ color: classColoursJS(key.class) }} key={i} value={i}>
                 <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
                   {classIcons(key.class, { height: 20, width: 20, margin: "0px 5px 0px 0px", verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 })}
                   {key.name}
@@ -91,7 +112,7 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
               </MenuItem>
             ))
           }
-          <MenuItem key={"remove"} value={""}>
+          <MenuItem key={"remove"} value={"remove"}>
             <ClearIcon sx={{ color: "#ad2c34", margin: "0px 4px 0px 0px" }} fontSize="small" />
             {t("Remove")}
           </MenuItem>

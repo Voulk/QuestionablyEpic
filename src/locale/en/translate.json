@@ -1,127 +1,53 @@
 {
   "translations": {
-    "CharacterCreator": {
-      "StatMessage": "While Stat Weights are editable, the QE Live defaults are recommended for most situations.",
-      "DeleteCharacter": "Delete Character",
-      "CreateChar": "Create New Character",
-      "AddChar": "Add Character",
-      "CharName": "Character Name",
-      "ServerName": "Server Name",
-      "CharacterInfo": "Character Information",
-      "StatWeights": "Stat Weights",
-      "SavedLogs": {
-        "TabHeader": "Saved Logs(Coming Soon)",
-        "Header": "Current Log",
-        "Report": "Report",
-        "Boss": "Boss",
-        "FightLength": "Fight Length",
-        "HPS": "HPS",
-        "RawHPS": "Raw HPS",
-        "ResetToDefaults": "Reset to Defaults"
-      }
-    },
-
-    "_Comments1": "Common Words",
     "Account": "Account",
     "Add": "Add",
-    "Avoidance": "Avoidance",
+    "BadgeGear": "Badges of Justice",
     "Battletag": "Battletag",
     "Bonus DPS": "Bonus DPS",
     "Bonus HPS": "Bonus HPS",
     "Burning Crusade": "Burning Crusade",
     "Cancel": "Cancel",
     "Casts": "Casts",
+    "Catalyst": "Catalyst",
+    "Changelog": {
+      "Date": "Date",
+      "Header": "Changelog",
+      "LastUpdated": "Last Updated",
+      "Update": "Update",
+      "Version": "Version"
+    },
+    "CharacterCreator": {
+      "AddChar": "Add Character",
+      "CharName": "Character Name",
+      "CharacterInfo": "Character Information",
+      "CreateChar": "Create New Character",
+      "DeleteCharacter": "Delete Character",
+      "SavedLogs": {
+        "Boss": "Boss",
+        "FightLength": "Fight Length",
+        "HPS": "HPS",
+        "Header": "Current Log",
+        "RawHPS": "Raw HPS",
+        "Report": "Report",
+        "ResetToDefaults": "Reset to Defaults",
+        "TabHeader": "Saved Logs(Coming Soon)"
+      },
+      "ServerName": "Server Name",
+      "StatMessage": "While Stat Weights are editable, the QE Live defaults are recommended for most situations.",
+      "StatWeights": "Stat Weights"
+    },
     "Class": "Class",
     "Cooldown": "Cooldown",
-    "Covenant": "Covenant",
-    "CovLegendaries": "Covenant Legendaries",
-    "Crit": "Crit",
-    "Default": "Default",
-    "Delete": "Delete",
-    "Dungeon": "Dungeon",
-    "Edit": "Edit",
-    "Email": "Email",
-    "Equipped": "Equipped",
-    "Error": "Error",
-    "External": "External",
-    "Filter": "Filter",
-    "Haste": "Haste",
-    "Healing": "Healing",
-    "HowToUse": "How it works",
-    "HPS": "HPS",
-    "Intellect": "Intellect",
-    "kyrian": "Kyrian",
-    "Leech": "Leech",
-    "Login": "Login",
-    "Mastery": "Mastery",
-    "Name": "Name",
-    "necrolord": "Necrolord",
-    "night_fae": "Night Fae",
-    "No": "No",
-    "None": "None",
-    "Overhealing": " Overhealing",
-    "Race": "Race",
-    "Raid": "Raid",
-    "Region": "Region",
-    "Remove": "Remove",
-    "Save": "Save",
-    "Select Class": "Select Class",
-    "Select Race": "Select Race",
-    "Shadowlands": "Shadowlands",
-    "Submit": "Submit",
-    "venthyr": "Venthyr",
-    "Versatility": "Versatility",
-    "Yes": "Yes",
-
-    "Changelog": {
-      "Header": "Changelog",
-      "Version": "Version",
-      "Update": "Update",
-      "LastUpdated": "Last Updated",
-      "Date": "Date"
-    },
-
-    "PatreonTiers": {
-      "RollsRoyce": "Rolls Royce",
-      "Diamond": "Diamond",
-      "Gold": "Gold"
-    },
-
-    "Classes": {
-      "undefined": "",
-      "Retail Class Names": "-----------------",
-      "HolyPaladin": "Holy Paladin",
-      "Holy Paladin": "Holy Paladin",
-      "DisciplinePriest": "Discipline Priest",
-      "Discipline Priest": "Discipline Priest",
-      "RestorationDruid": "Restoration Druid",
-      "Restoration Druid": "Restoration Druid",
-      "HavocDemonHunter": "Havoc Demon Hunter",
-      "HavocDemon Hunter": "Havoc Demon Hunter",
-      "Warrior": "Warrior",
-      "HolyPriest": "Holy Priest",
-      "Holy Priest": "Holy Priest",
-      "MistweaverMonk": "Mistweaver Monk",
-      "Mistweaver Monk": "Mistweaver Monk",
-      "RestorationShaman": "Restoration Shaman",
-      "Restoration Shaman": "Restoration Shaman",
-      "DeathKnight": "Death Knight",
-      "Death Knight": "Death Knight",
-      "ShadowPriest": "Shadow Priest",
-      "Shadow Priest": "Shadow Priest",
-      "Burning Crusade Class Names": "-----------------",
-      "Holy Paladin BC": "Holy Paladin",
-      "Restoration Druid BC": "Restoration Druid",
-      "Holy Priest BC": "Holy Priest",
-      "Restoration Shaman BC": "Restoration Shaman"
-    },
-
     "CooldownPlanner": {
-      "DuplicatePlanError": "Duplicate plan name detected, please choose another.",
       "AddPlanDialog": {
         "ButtonLabel": "Add",
         "ButtonTooltip": "Add a new plan with a sample log, a set of defaults, or a blank slate.",
         "HeaderTitle": "Enter Plan Name"
+      },
+      "ChartLabels": {
+        "MitigatedDamageLabel": "Mitigated",
+        "UnmitigatedDamageLabel": "Unmitigated"
       },
       "CopyPlanDialog": {
         "ButtonLabel": "Copy",
@@ -135,767 +61,310 @@
         "HeaderTitle": "Are you sure you want to delete the current plan?",
         "PlaceholderText": "Type 'Delete' to confirm"
       },
+      "DuplicatePlanError": "Duplicate plan name detected, please choose another.",
       "ExportPlanDialog": {
         "ButtonLabel": "Export",
         "HeaderTitle": "Export Plan"
+      },
+      "Headers": {
+        "CooldownTimeline": "Cooldown Timeline",
+        "EnemyCastTimeline": "Enemy Cast Timeline",
+        "ExternalTimeline": "External Timeline"
+      },
+      "HealerCards": {
+        "SoulbindAbilities": "Soulbind Abilities",
+        "SoulbindConduits": "Soulbind Conduits",
+        "StatsHeading": "Stats",
+        "TalentHeader": "Talents"
+      },
+      "ImportPlanDialog": {
+        "ButtonLabel": "Import",
+        "Errors": {
+          "DuplicatePlanWarning": "Duplicate plan name detected, Importing this plan will overwrite it with this import!",
+          "HeaderError": "This does not appear to be a QE Planner String, please check it and try again",
+          "StringError": "There's something wrong with the string, please check it and try again"
+        },
+        "HeaderTitle": "Import Plan"
       },
       "NoteExportDialog": {
         "ButtonLabel": "MRT Note",
         "HeaderTitle": "Note Export",
         "NoteExportTooltip": "Export your plan into a note format compatible with ERT / MRT."
       },
-      "ImportPlanDialog": {
-        "ButtonLabel": "Import",
-        "HeaderTitle": "Import Plan",
-        "Errors": {
-          "HeaderError": "This does not appear to be a QE Planner String, please check it and try again",
-          "StringError": "There's something wrong with the string, please check it and try again",
-          "DuplicatePlanWarning": "Duplicate plan name detected, Importing this plan will overwrite it with this import!"
-        }
-      },
-      "Classes": {
-        "undefined": "",
-        "HolyPaladin": "Holy Paladin",
-        "DisciplinePriest": "Discipline Priest",
-        "RestorationDruid": "Restoration Druid",
-        "HavocDemonHunter": "Havoc Demon Hunter",
-        "Warrior": "Warrior",
-        "HolyPriest": "Holy Priest",
-        "MistweaverMonk": "Mistweaver Monk",
-        "RestorationShaman": "Restoration Shaman",
-        "DeathKnight": "Death Knight",
-        "ShadowPriest": "Shadow Priest",
-        "Druid": "Druid"
-      },
-      "ChartLabels": {
-        "_Comments1": "Translations for HD Charts",
-        "UnmitigatedDamageLabel": "Unmitigated",
-        "MitigatedDamageLabel": "Mitigated"
-      },
-      "Headers": {
-        "CooldownTimeline": "Cooldown Timeline",
-        "ExternalTimeline": "External Timeline",
-        "EnemyCastTimeline": "Enemy Cast Timeline"
-      },
       "TableLabels": {
-        "_Comments1": "Translations for HD Tables",
-        "RaidSelectorLabel": "Select Raid",
+        "BossAbilityLabel": "Boss Ability",
         "BossSelectorLabel": "Select Boss",
         "CastTimeLabel": "Cast",
-        "BossAbilityLabel": "Boss Ability",
+        "HealTeamHeader": "Roster",
         "NotesLabel": "Notes",
         "OffCooldownLabel": "Off-CD",
-        "HealTeamHeader": "Roster",
+        "RaidSelectorLabel": "Select Raid",
         "TypeSelector": "Formats"
       },
       "UserInputs": {
-        "_Comments1": "Translations for the User Input Components",
         "Loglink": "Paste WarcraftLog Link Here",
         "fightButtonLabel": "Select Fight"
-      },
-      "HealerCards": {
-        "_Comments1": "Translations for the Accordian for Healer Info",
-        "StatsHeading": "Stats",
-        "Item Level": "ilvl",
-        "Crit": "Critical",
-        "Haste": "Haste",
-        "Mastery": "Mastery",
-        "Versatility": "Versatility",
-        "TalentHeader": "Talents",
-        "SoulbindAbilities": "Soulbind Abilities",
-        "SoulbindConduits": "Soulbind Conduits"
-      },
-      "ClassAbilities": {
-        "NoCD": "No Cooldown",
-        "Potion/Healthstone": "Potion/Healthstone",
-        "Personals": "Personals",
-        "undefined": "",
-        "HolyPaladinComment": "Holy Paladin Class Cooldowns",
-        "31821": "Aura Mastery",
-        "31884": "Avenging Wrath",
-        "316958": "Ashen Hallow",
-        "RestorationDruidComment": "Restoration Druid Class Cooldowns",
-        "740": "Tranquility",
-        "33891": "Incarnation: Tree of Life",
-        "323764": "Convoke the Spirits",
-        "197721": "Flourish",
-        "HolyPriestComment": "Holy Priest Class Cooldowns",
-        "265202": "Holy Word: Salvation",
-        "64843": "Divine Hymn",
-        "DisciplinePriestComment": "Discipline Priest Class Cooldowns",
-        "62618": "Power Word: Barrier",
-        "246287": "Evangelism",
-        "109964": "Spirit Shell",
-        "RestorationShamanComment": "Restoration Shaman Class Cooldowns",
-        "108280": "Healing Tide Totem",
-        "98008": "Spirit Link Totem",
-        "207399": "Ancestral Protection Totem",
-        "MistweaverMonkComment": "Mistweaver Monk Class Cooldowns",
-        "115310": "Revival",
-        "322118": "Invoke Yu'lon, the Jade Serpent",
-        "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
-        "196718": "Darkness",
-        "WarriorComment": "Warrior Cooldowns",
-        "97462": "Rallying Cry",
-        "DeathKnightComment": "Death Knight Cooldowns",
-        "15286": "Vampiric Embrace",
-        "ShadowPriestComment": "Shadow Priest Cooldowns",
-        "51052": "Anti-Magic Zone"
       }
     },
-
+    "CovLegendaries": "Covenant Legendaries",
+    "Covenant": "Covenant",
+    "CreationCatalyst": "Creation Catalyst",
+    "Default": "Default",
+    "Delete": "Delete",
+    "Dungeon": "Dungeon",
+    "Edit": "Edit",
+    "Email": "Email",
+    "Equipped": "Equipped",
+    "Error": "Error",
+    "External": "External",
+    "Filter": "Filter",
     "GameTypeToggle": {
-      "Retail": "Change to Retail (Shadowlands)",
-      "Classic": "Change to Classic (Burning Crusade)"
+      "Classic": "Change to Classic (Wrath of the Lich King)",
+      "Retail": "Change to Retail (Shadowlands)"
     },
+    "HPS": "HPS",
     "HallOfFame": {
-      "title": "Hall of Fame",
       "buttonLabel": "QE Hall of Fame",
-      "introduction": "QE would not have been possible without you. Thank you so much!"
+      "introduction": "QE would not have been possible without you. Thank you so much!",
+      "title": "Hall of Fame"
     },
-
+    "Healing": "Healing",
+    "HowToUse": "How it works",
     "InsertLog": {
-      "PlsSelectFight": "Please Select a Fight",
-      "InsertLogHeader": "Paste Your Warcraft Logs Report Here"
+      "InsertLogHeader": "Paste Your Warcraft Logs Report Here",
+      "PlsSelectFight": "Please Select a Fight"
     },
-
-    "itemTags": {
-      "greatvault": "Great Vault",
-      "effect": "Effect"
+    "Intellect": "Intellect",
+    "Item Level": "ilvl",
+    "LegendaryCompare": {
+      "Title": "Legendaries at a Glance"
     },
-
-    "LegendaryCompare": { "Title": "Legendaries at a Glance" },
-
+    "Login": "Login",
     "MainMenu": {
-      "PatronInvite": "Love the app? Support the site on Patreon!",
-      "PatronThanks": "Thank you so much for your support!",
-      "TopGear": "Top Gear",
-      "UpgradeFinder": "Upgrade Finder (Beta)",
-      "QuickCompare": "Item Quick Compare",
-      "ExploreCovenants": "Covenants & Conduits",
-      "LegendaryAnalysis": "Legendary Breakdown",
-      "TrinketAnalysis": "Trinkets",
-      "DominationAnalysis": "Domination Analysis (Beta)",
-      "CooldownPlanner": "Cooldown Planner (Coming Soon)",
-      "Profile": "Profile",
+      "Articles": {
+        "Header": "Recent Spec Articles"
+      },
       "CharHeader": "Characters",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.",
+      "CooldownPlanner": "Cooldown Planner (Coming Soon)",
+      "ExploreCovenants": "Covenants & Conduits",
       "FightAnalysis": "Fight Analysis (Coming Soon)",
+      "LegendaryAnalysis": "Legendary Breakdown",
+      "PatronInvite": "Love the app? Support the site on Patreon!",
+      "PatronThanks": "Thank you so much for your support!",
+      "Profile": "Profile",
+      "QuickCompare": "Item Quick Compare",
       "TierSets": "Tier Sets",
-      "Articles": {
-        "Header": "Recent Spec Articles",
-        "HelpText": ""
-      },
       "Tooltips": {
-        "TopGear": "Find your best gear set",
-        "QuickCompare": "A quick view of all your items at once",
+        "CooldownPlanner": "Plan your Sepulcher healing cooldowns",
         "ExploreCovenants": "Soulbind and conduit information",
         "LegendaryAnalysis": "Your specs best legendaries and where to craft them",
-        "CooldownPlanner": "Plan your Sepulcher healing cooldowns",
         "Profile": "Edit your details and connect to Patreon",
-        "UpgradeFinder": "Find your next piece of gear",
-        "DominationAnalysis": "Get a glance at all Domination Bonuses at once!",
+        "QuickCompare": "A quick view of all your items at once",
+        "TierSets": "Find out how strong your classes tier sets are.",
+        "TopGear": "Find your best gear set",
+        "FightAnalysis": "",
         "TrinketAnalysis": "A graph view comparing most trinkets in the game",
-        "TierSets": "Find out how strong your classes tier sets are."
-      }
+        "UpgradeFinder": "Find your next piece of gear"
+      },
+      "TopGear": "Top Gear",
+      "TrinketAnalysis": "Trinkets",
+      "UpgradeFinder": "Upgrade Finder (Beta)"
     },
-
+    "Name": "Name",
+    "No": "No",
+    "None": "None",
+    "Overhealing": "Overhealing",
+    "PatreonTiers": {
+      "Diamond": "Diamond",
+      "Gold": "Gold",
+      "RollsRoyce": "Rolls Royce"
+    },
     "QeHeader": {
       "InsertLogLabel": "Insert Log",
       "Login": "Login",
       "Tooltip": {
-        "ChangeToRaid": "Change to Raid Content",
+        "ClassicSimC": "Insert a QE Import string to import your gear.",
         "ChangeToDungeon": "Change to Dungeon Content",
+        "ChangeToRaid": "Change to Raid Content",
+        "Home": "Main Menu",
         "InsertLog": "Insert a log to increase accuracy.",
-        "BurningCrusadeSimC": "Insert a QE Import string to import your gear.",
-        "RetailSimC": "Insert a SimC string to import your gear.",
-        "Login": "Login to your Battle.net Account",
         "Language": "Change Language",
-        "Home": "Main Menu"
+        "Login": "Login to your Battle.net Account",
+        "RetailSimC": "Insert a SimC string to import your gear."
       }
     },
-    "Tier": "Tier",
-
     "QeProfile": {
-      "EmailMsg": "Enter/Update your Email to link to Patreon",
-      "NoEmail": "No Email Entered",
-      "QeTier": "QE Live Tier",
-      "ProfileHeader": "Profile Information",
       "EditionAffix": "Edition",
-      "StandardEdition": "Standard Edition",
-      "NoBattleTag": "No Battlenet Account Linked"
+      "EmailMsg": "Enter/Update your Email to link to Patreon",
+      "NoBattleTag": "No Battlenet Account Linked",
+      "NoEmail": "No Email Entered",
+      "ProfileHeader": "Profile Information",
+      "QeTier": "QE Live Tier",
+      "StandardEdition": "Standard Edition"
     },
-
     "QuickCompare": {
-      "Slot": "Slot",
-      "ItemName": "Item Name",
+      "AddButton": "Add",
+      "HelpText": "Quick Compare allows you to compare items one by one. Scores include stats, gems and effects, but not set bonuses or diminishing returns. Use Top Gear to include those.",
+      "ItemAdded": "Item Added!",
+      "ItemBarTitle": "Add Items (Optional)",
+      "ItemDeleted": "Item Deleted!",
+      "ItemErrorMsg": "Item Not Added. Ilvl Cap exceeded.",
       "ItemLevel": "Item Level",
+      "ItemName": "Item Name",
+      "Missives": "Missives",
+      "Slot": "Slot",
       "Socket": "Socket",
       "Tertiary": "Tertiary",
-      "AddButton": "Add",
-      "Title": "Quick Compare",
-      "HelpText": "Quick Compare allows you to compare items one by one. Scores include stats, gems and effects, but not set bonuses or diminishing returns. Use Top Gear to include those.",
-      "ItemErrorMsg": "Item Not Added. Ilvl Cap exceeded.",
-      "ItemAdded": "Item Added!",
-      "ItemDeleted": "Item Deleted!",
-      "DominationSocket": "Domination",
-      "Missives": "Missives",
-      "ItemBarTitle": "Add Items (Optional)"
+      "Title": "Quick Compare"
     },
-
-    "Races": {
-      "Blood Elf": "Blood Elf",
-      "Dark Iron Dwarf": "Dark Iron Dwarf",
-      "Draenei": "Draenei",
-      "Dwarf": "Dwarf",
-      "Gnome": "Gnome",
-      "Goblin": "Goblin",
-      "Highmountain Tauren": "Highmountain Tauren",
-      "Human": "Human",
-      "Kul Tiran": "Kul Tiran",
-      "Lightforged Draenei": "Lightforged Draenei",
-      "Mag'har Orc": "Mag'har Orc",
-      "Mechagnome": "Mechagnome",
-      "Night Elf": "Night Elf",
-      "Nightborne": "Nightborne",
-      "Orc": "Orc",
-      "Pandaren": "Pandaren",
-      "Tauren": "Tauren",
-      "Troll": "Troll",
-      "Undead": "Undead",
-      "Void Elf": "Void Elf",
-      "Vulpera": "Vulpera",
-      "Worgen": "Worgen",
-      "Zandalari Troll": "Zandalari Troll"
-    },
-
-    "BossNames": {
-      "CastleNathria": "CastleNathria",
-      "2393": "Shriekwing",
-      "2429": "Huntsman Altimor",
-      "2422": "Sun King's Salvation",
-      "2418": "Artificer Xy'mox",
-      "2428": "Hungering Destroyer",
-      "2420": "Lady Inerva Darkvein",
-      "2426": "The Council of Blood",
-      "2394": "Sludgefist",
-      "2425": "Stone Legion Generals",
-      "2424": "Sire Denathrius",
-      "999": "BoE Trash Drops",
-      "998": "BoE Trash Drops",
-      "SanctumOfDomination": "SanctumOfDomination",
-      "2435": "The Tarragrue",
-      "2442": "The Eye of the Jailer",
-      "2439": "The Nine",
-      "2444": "Remnant of Ner'zhul",
-      "2445": "Soulrender Dormazain",
-      "2443": "Painsmith Raznal",
-      "2446": "Guardian of the First Ones",
-      "2447": "Fatescribe Roh-Kalo",
-      "2440": "Kel'Thuzad",
-      "2441": "Sylvanas Windrunner",
-      "SepulcherBosses": "",
-      "2458": "Vigilant Guardian",
-      "2465": "Skolex, the Insatiable Ravener",
-      "2470": "Artificer Xy'mox",
-      "2459": "Dausegne, the Fallen Oracle",
-      "2460": "Prototype Pantheon",
-      "2461": "Lihuvim, Principal Architect",
-      "2463": "Halondrus the Reclaimer",
-      "2469": "Anduin Wrynn",
-      "2457": "Lords of Dread",
-      "2467": "Rygelon",
-      "2464": "The Jailer, Zovaal",
-      "Tazavesh Bosses": "",
-      "Tazavesh": {
-        "2437": "Zo'phex the Sentinel",
-        "2454": "The Grand Menagerie",
-        "2436": "Mailroom Mayhem",
-        "2452": "Myza's Oasis",
-        "2451": "So'azmi",
-        "2448": "Hylbrande",
-        "2449": "Timecap'n Hooktail",
-        "2455": "So'leah"
-      },
-      "Karazahn Bosses": " ",
-      "652": "Attumen the Huntsman",
-      "653": "Moroes",
-      "654": "Maiden of Virtue",
-      "655": "Opera Hall",
-      "656": "The Curator",
-      "657": "Shade of Aran",
-      "658": "Terestian Illhoof",
-      "659": "Netherspite",
-      "660": "Chess Event",
-      "661": "Prince Malchezaar",
-      "662": "Nightbane",
-      "649": "High King Maulgar",
-      "650": "Gruul the Dragonkiller",
-      "651": "Magtheridon"
-    },
-    "CreationCatalyst": "Creation Catalyst",
-    "DungeonNames": {
-      "12831": "Halls of Atonement",
-      "13334": "Mists of Tirna Scithe",
-      "12916": "The Necrotic Wake",
-      "13228": "Plaguefall",
-      "12842": "Sanguine Depths",
-      "12841": "Theater of Pain",
-      "13309": "De Other Side",
-      "12837": "Spires of Ascension",
-      "13577": "Tazavesh, the Veiled Market",
-
-      "1185": "Halls of Atonement",
-      "1184": "Mists of Tirna Scithe",
-      "1182": "Necrotic Wake",
-      "1183": "Plaguefall",
-      "1189": "Sanguine Depths",
-      "1187": "Theater of Pain",
-      "1188": "De Other Side",
-      "1186": "Spires of Ascension",
-      "1194": "Tazavesh, the Veiled Market",
-      "-20": "Tazavesh: Streets of Wonder",
-      "-21": "Tazavesh: So'leah's Gambit",
-
-      "707": "Vault of the Wardens",
-      "716": "Eye of Azshara",
-      "740": "Black Rook Hold",
-      "762": "Darkheart Thicket",
-      "767": "Neltharion's Lair",
-      "800": "Court of Stars",
-
-      "248": "Hellfire Ramparts",
-      "256": "The Blood Furnace",
-      "259": "The Shattered Halls",
-
-      "260": "The Slave Pens",
-      "261": "The Steamvault",
-      "262": "The Underbog",
-
-      "250": "Mana-Tombs",
-      "247": "Auchenai Crypts",
-      "252": "Sethekk Halls",
-      "253": "Shadow Labyrinth",
-
-      "258": "The Mechanar",
-      "257": "The Botanica",
-      "254": "The Arcatraz",
-
-      "251": "Old Hillsbrad Foothills",
-      "255": "The Black Morass",
-      "249": "Magister's Terrace"
-    },
-
+    "Race": "Race",
+    "Raid": "Raid",
     "RaidDifficulty": {
-      "Raid Finder": "Looking for Raid",
-      "Normal": "Normal",
       "Heroic": "Heroic",
-      "Mythic": "Mythic"
+      "Mythic": "Mythic",
+      "Normal": "Normal",
+      "Raid Finder": "Looking for Raid"
     },
-
-    "PvPCurrency": {
-      "Honor": "Honor",
-      "Conquest": "Conquest",
-      "-16": "Honor",
-      "-17": "Conquest"
-    },
-    "BadgeGear": "Badges of Justice",
-
-    "WorldBosses": {
-      "2430": "Valinor",
-      "2431": "Mortanis",
-      "2432": "Oranomonos",
-      "2433": "Nurgash",
-      "2456": "Mor'geth",
-      "2468": "Antros"
-    },
-
-    "SimCInput": {
-      "SimCStringLabel": "Import String",
-      "SimCHeaderButtonLabelBurningCrusade": "Gear Import",
-      "SimCHeaderButtonLabelRetail": "SimC",
-      "SimCDialogueTitleRetail": "Paste Your SimC String",
-      "SimCDialogueTitleBurningCrusade": "Paste Your QE Import String"
-    },
-
-    "slotNames": {
-      "head": "Helm",
-      "neck": "Neck",
-      "shoulder": "Shoulders",
-      "back": "Cape",
-      "chest": "Chest",
-      "wrists": "Bracers",
-      "hands": "Gloves",
-      "waist": "Belt",
-      "legs": "Legs",
-      "feet": "Boots",
-      "trinket": "Trinkets",
-      "mainHands": "Weapons",
-      "offhands": "Off-Hands",
-      "finger": "Ring",
-      "weapons": "Weapons",
-      "weaponCombos": "Weapon Combos",
-      "relics": "Relics & Wands"
-    },
-
-    "Catalyst": "Catalyst",
-    "Mana": "Mana",
-
-    "Soulbinds": {
-      "Header": "Covenant Exploration",
-      "PotencyConduit": "Potency Conduit",
-      "EnduranceConduit": "Endurance Conduit",
-      "FinesseConduit": "Finesse Conduit",
-      "ConduitInstructions": "Right/Left Click Conduits to change Ilvl",
-      "RenownTooltip": "Import your Renown via SimC / Enter your Renown level here",
-      "StatPanel": {
-        "Summary": "Summary",
-        "Score": "Score",
-        "CovenantEstimate": "Covenant Ability",
-        "SelectedNodes": "Selected Nodes"
-      }
-    },
-
-    "stats": {
-      "crit": "Crit",
-      "haste": "Haste",
-      "mastery": "Mastery",
-      "versatility": "Versatility"
-    },
+    "Region": "Region",
+    "Remove": "Remove",
+    "Renown Level": "Renown Level",
+    "Save": "Save",
+    "Select Class": "Select Class",
+    "Select Race": "Select Race",
     "Settings": {
-      "SettingsTitle": "Optional Settings",
-      "Retail": {
-        "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
-        "Setting0Title": "Hymnal Allies",
-        "Setting0TextFieldLabel": "Allies",
-
-        "Setting1Tooltip": "Some items give buffs to allies. If you check this it'll include an estimate of that benefit in an items score.",
-        "Setting1Title": "Ally Buffs",
-        "Setting1TextFieldLabel": "",
-
-        "Setting3Tooltip": "This will automatically add a socket to items that don't have them in compatible slots.",
-        "Setting3Title": "Add Sockets",
-        "Setting3TextFieldLabel": "",
-
-        "Setting4Tooltip": "You can show Upgrade Finder results as either a % upgrade, or in effective HPS.",
-        "Setting4Title": "UF: Result Display",
-        "Setting4TextFieldLabel": "Upgrade Finder: Display",
-
-        "Setting5Tooltip": "Choose your playstyle",
-        "Setting5Title": "Playstyle",
-        "Setting5TextFieldLabel": "Playstyle",
-
-        "Setting6Tooltip": "Select how many Catalyst charges you have. This determines how many Catalyst items Top Gear will be restricted to.",
-        "Setting6Title": "Catalyst Limit",
-        "Setting6TextFieldLabel": "Limit",
-
-        "Setting7Tooltip": "Turning this on will automatically add Leech to all Upgrade Finder choices.",
-        "Setting7Title": "UF: Leech",
-        "Setting7TextFieldLabel": "Leech"
-      },
-      "BurningCrusade": {
-        "Setting0Spacer": "--------------------------------------------------------------------",
-        "Setting0Tooltip": "Mana varies a little in value based on fight length and how frequently you cast.",
+      "Classic": {
         "Setting0Title": "Mana Profile",
-        "Setting0TextFieldLabel": "",
-        "Setting1Spacer": "--------------------------------------------------------------------",
-        "Setting1Tooltip": "Enable this to include common raid buffs in the gear comparison.",
+        "Setting0Tooltip": "Mana varies a little in value based on fight length and how frequently you cast.",
         "Setting1Title": "Include Raid Buffs?",
-        "Setting1TextFieldLabel": "",
-        "Setting2Spacer": "--------------------------------------------------------------------",
-        "Setting2Tooltip": "Pick which Meta gem you'd like the app to try and socket.",
+        "Setting1Tooltip": "Enable this to include common raid buffs in the gear comparison.",
         "Setting2Title": "Meta Gem",
-        "Setting2TextFieldLabel": "",
-        "Setting3Spacer": "--------------------------------------------------------------------",
-        "Setting3Tooltip": "",
+        "Setting2Tooltip": "Pick which Meta gem you'd like the app to try and socket.",
         "Setting3Title": "Auto-Enchant Items?",
-        "Setting3TextFieldLabel": "",
-        "Setting4Spacer": "--------------------------------------------------------------------",
-        "Setting4Tooltip": "Pick which gems you'd like the app to socket. Jewelcrafting-specifics ignored for now.",
         "Setting4Title": "Gem Rarity",
-        "Setting4TextFieldLabel": "",
-        "Setting5Spacer": "--------------------------------------------------------------------",
-        "Setting5Tooltip": "",
-        "Setting5Title": "",
-        "Setting5TextFieldLabel": ""
-      }
+        "Setting4Tooltip": "Pick which gems you'd like the app to socket. Jewelcrafting-specifics ignored for now."
+      },
+      "Retail": {
+        "Setting0TextFieldLabel": "Allies",
+        "Setting0Title": "Hymnal Allies",
+        "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
+        "Setting1Title": "Ally Buffs",
+        "Setting1Tooltip": "Some items give buffs to allies. If you check this it'll include an estimate of that benefit in an items score.",
+        "Setting3Title": "Add Sockets",
+        "Setting3Tooltip": "This will automatically add a socket to items that don't have them in compatible slots.",
+        "Setting4TextFieldLabel": "Upgrade Finder: Display",
+        "Setting4Title": "UF: Result Display",
+        "Setting4Tooltip": "You can show Upgrade Finder results as either a % upgrade, or in effective HPS.",
+        "Setting5TextFieldLabel": "Playstyle",
+        "Setting5Title": "Playstyle",
+        "Setting5Tooltip": "Choose your playstyle",
+        "Setting6TextFieldLabel": "Limit",
+        "Setting6Title": "Catalyst Limit",
+        "Setting6Tooltip": "Select how many Catalyst charges you have. This determines how many Catalyst items Top Gear will be restricted to.",
+        "Setting7TextFieldLabel": "Leech",
+        "Setting7Title": "UF: Leech",
+        "Setting7Tooltip": "Turning this on will automatically add Leech to all Upgrade Finder choices."
+      },
+      "SettingsTitle": "Optional Settings"
     },
-
+    "Shadowlands": "Shadowlands",
+    "SimCInput": {
+      "SimCDialogueTitleClassic": "Paste Your QE Import String",
+      "SimCDialogueTitleRetail": "Paste Your SimC String",
+      "SimCHeaderButtonLabelClassic": "Gear Import",
+      "SimCHeaderButtonLabelRetail": "SimC",
+      "SimCStringLabel": "Import String"
+    },
     "Snackbars": {
       "CharAddSuccess": "Character Added!",
       "CharUpdateSuccess": "Character Updated!",
-      "LoginSuccess": "Logged in Successfully!",
-      "SimCImportSuccess": "Gear Imported Successfully!",
-      "LogImportSuccess": "Log Imported Successfully!",
+      "EmailError": "Please check the Email and try again",
       "EmailUpdateSuccess": "Email Updated!",
-      "EmailError": "Please check the Email and try again"
+      "LogImportSuccess": "Log Imported Successfully!",
+      "LoginSuccess": "Logged in Successfully!",
+      "SimCImportSuccess": "Gear Imported Successfully!"
     },
-
-    "SpellNames": {
-      "MonkSpells": "",
-      "124682": "Enveloping Mist",
-      "116670": "Vivify",
-      "115310": "Revival",
-      "191894": "Mastery: Gust of Mists",
-      "325209": "Enveloping Breath",
-      "191837": "Essence Font",
-      "115151": "Renewing Mist",
-      "274909": "Rising Mist",
-      "116849": "Life Cocoon",
-      "115175": "Soothing Mist",
-      "310454": "Weapons of Order",
-      "DruidSpells": "",
-      "774": "Rejuvenation",
-      "48438": "Wild Growth",
-      "8936": "Regrowth",
-      "33763": "Lifebloom",
-      "ShamanSpells": "",
-      "61295": "Riptide",
-      "157153": "Cloudburst Totem",
-      "73920": "Healing Rain",
-      "108280": "Healing Tide Totem",
-      "1064": "Chain Heal",
-      "16191": "Mana Tide Totem",
-      "8004": "Healing Surge",
-      "PaladinSpells": "",
-      "225311": "Light of Dawn",
-      "85673": "Word of Glory",
-      "25914": "Holy Shock",
-      "82326": "Holy Light",
-      "337824": "Shock Barrier"
+    "Soulbinds": {
+      "ConduitInstructions": "Right/Left Click Conduits to change Ilvl",
+      "EnduranceConduit": "Endurance Conduit",
+      "FinesseConduit": "Finesse Conduit",
+      "Header": "Covenant Exploration",
+      "PotencyConduit": "Potency Conduit",
+      "RenownTooltip": "Import your Renown via SimC / Enter your Renown level here",
+      "StatPanel": {
+        "CovenantEstimate": "Covenant Ability",
+        "Score": "Score",
+        "SelectedNodes": "Selected Nodes",
+        "Summary": "Summary"
+      }
     },
-
+    "Source": "Source",
+    "SourceToggle": {
+      "FilterTooltip": "You can filter the graph by toggling these buttons"
+    },
+    "Submit": "Submit",
+    "Tier": "Tier",
     "TierSets": {
-      "Title": "Tier Sets",
       "2Set": "2 Set HPS",
       "4Set": "4 Set HPS",
-      "6Set": "6 Set HPS"
+      "6Set": "6 Set HPS",
+      "Title": "Tier Sets"
     },
-
     "TopGear": {
-      "Title": "Top Gear",
-      "HelpTextRetail": "Top Gear lets you compare every possible combination of your selected gear at once!",
-      "HelpTextBurningCrusade": "Top Gear lets you compare every possible combination of your selected gear at once!",
-      "ItemsHereMessage": "Your items will go here after you import, then hit 'Go' once happy with your selection.",
-      "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have an intellect weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each.",
-      "GoMsg": "Go!",
-      "SelectedItems": "Selected Items",
       "BackToGearSelection": "Back to Gear Selection",
       "CompetitiveAlternative": "Competitive Alternatives",
       "CompetitiveAlternativeHelp": "This is how close other sets are to your best. Anything extremely close in score can be considered a sidegrade.",
-      "StatPanel": { "AvgStats": "Average Stats (includes procs)" },
+      "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have an intellect weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each.",
+      "GoMsg": "Go!",
+      "HelpTextClassic": "Top Gear lets you compare every possible combination of your selected gear at once!",
+      "HelpTextRetail": "Top Gear lets you compare every possible combination of your selected gear at once!",
+      "ItemsHereMessage": "Your items will go here after you import, then hit 'Go' once happy with your selection.",
+      "SelectedItems": "Selected Items",
+      "StatPanel": {
+        "AvgStats": "Average Stats (includes procs)"
+      },
+      "Title": "Top Gear",
       "itemMissingError": "Error: Add item - "
     },
-    "DominationSelection": {
-      "HeaderTitle": "Domination Gems",
-      "ShardNotOwned": "not owned"
+    "TrinketAnalysis": {
+      "Header": "Trinket Analysis",
+      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing."
     },
-
     "UpgradeFinder": {
+      "BackButton": "Back to Setup",
+      "CurrentRaid": "Sepulcher of the First Ones",
       "Header": "Find your next upgrade!",
       "MythicPlus": "Mythic +",
-      "CurrentRaid": "Sepulcher of the First Ones",
       "PvP": "PvP",
-      "WorldBosses": "World Bosses",
       "UpgradeBySlot": "Upgrades by Slot",
-      "BackButton": "Back to Setup"
+      "WorldBosses": "World Bosses"
     },
-    "Renown Level": "Renown Level",
     "UpgradeFinderFront": {
       "Header": "Upgrade Finder",
-      "RaidDifficultyHeader": "Raid Difficulty",
-      "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
-      "MythicPlusHeader": "Mythic Plus Ilvl (Keys & Valor)",
+      "HelpText": "Find your next item with instance-by-instance and slot-by-slot item lists, all based on your specific character.",
       "MythicPlusBody": "Use the slider to select dungeon item level",
-      "PvPHeader": "PvP Rating",
+      "MythicPlusHeader": "Mythic Plus Ilvl (Keys & Valor)",
       "PvPBody": "Select  your Rating",
-      "SimCHeader": "SimC/QE Import",
+      "PvPHeader": "PvP Rating",
+      "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
+      "RaidDifficultyHeader": "Raid Difficulty",
       "SimCBody1Good": "Import - All Set!",
       "SimCBody1Invalid": "Import - Empty Item Slot",
       "SimCBody1Missing": "Import - Missing",
       "SimCBody2": "Current Equipped Gear:",
       "SimCButton": "Import Gear",
-      "HelpText": "Find your next item with instance-by-instance and slot-by-slot item lists, all based on your specific character.",
-      "DungeonBodyBC": ""
-    },
-
-    "TrinketAnalysis": {
-      "Header": "Trinket Analysis",
-      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing."
-    },
-
-    "SourceToggle": { "FilterTooltip": "You can filter the graph by toggling these buttons" },
-
-    "DominationSocketAnalysis": {
-      "Header": "Domination Socket Analysis",
-      "HelpText": "This is a quick way to see how strong Domination Gems are for your character. These are still being tuned and results could change. This is still a very new module, and use it as rough guidance only."
-    },
-
-    "Covenants": {
-      "Kyrian": "Kyrian",
-      "Necrolords": "Necrolords",
-      "Venthyr": "Venthyr",
-      "NightFae": "Night Fae",
-      "Soulbinds": {
-        "KyrianSoulbinds": "",
-        "Pelagos": "Pelagos",
-        "Kleia": "Kleia",
-        "Mikanikos": "Mikanikos",
-        "NecrolordSoulbinds": "",
-        "Marileth": "Marileth",
-        "Emeni": "Emeni",
-        "Heirmir": "Heirmir",
-        "NightFaeSoulbinds": "",
-        "Niya": "Niya",
-        "Dreamweaver": "Dreamweaver",
-        "Korayn": "Korayn",
-        "VenthyrSoulbinds": "",
-        "Nadjia": "Nadjia",
-        "Theotar": "Theotar",
-        "Draven": "Draven"
-      }
-    },
-    "BurningCrusade": {
-      "Raids": {
-        "745": "Karazhan",
-        "321": "Zul'Aman",
-        "746": "Gruul & Mag",
-        "747": "Magtheridon's Lair",
-        "748": "Serpentshrine",
-        "749": "Tempest Keep",
-        "750": "Mount Hyjal",
-        "751": "Black Temple",
-        "752": "Sunwell Plateau"
-      },
-      "Dungeons": {
-        "247": "Auchenai Crypts",
-        "248": "Hellfire Ramparts",
-        "249": "Magister's Terrace",
-        "250": "Mana-Tombs",
-        "251": "Old Hillsbrad Foothills",
-        "252": "Sethekk Halls",
-        "253": "Shadow Labyrinth",
-        "254": "The Arcatraz",
-        "255": "The Black Morass",
-        "256": "The Blood Furnace",
-        "257": "The Botanica",
-        "258": "The Mechanar",
-        "259": "The Shattered Halls",
-        "260": "The Slave Pens",
-        "261": "The Steamvault",
-        "262": "The Underbog"
-      },
-      "BossNames": {
-        "Karazahn Bosses": "",
-        "1552": "Servant's Quarters",
-        "652": "Attumen the Huntsman",
-        "1553": "Attumen the Huntsman",
-        "653": "Moroes",
-        "1554": "Moroes",
-        "654": "Maiden of Virtue",
-        "1555": "Maiden of Virtue",
-        "655": "Opera Hall",
-        "1556": "Opera Hall",
-        "656": "The Curator",
-        "1557": "The Curator",
-        "657": "Shade of Aran",
-        "1559": "Shade of Aran",
-        "658": "Terestian Illhoof",
-        "1560": "Terestian Illhoof",
-        "659": "Netherspite",
-        "1561": "Netherspite",
-        "660": "Chess Event",
-        "1562": "Chess Event",
-        "661": "Prince Malchezaar",
-        "1563": "Prince Malchezaar",
-        "662": "Nightbane",
-        "Gruul's Lair Bosses": "",
-        "649": "High King Maulgar",
-        "1564": "High King Maulgar",
-        "650": "Gruul the Dragonkiller",
-        "1565": "Gruul the Dragonkiller",
-        "Magtheridon's Lair Bosses": "",
-        "651": "Magtheridon",
-        "1566": "Magtheridon",
-        "Serpentshrine Cavern Bosses": "",
-        "623": "Hydross the Unstable",
-        "1567": "Hydross the Unstable",
-        "624": "The Lurker Below",
-        "1568": "The Lurker Below",
-        "625": "Leotheras the Blind",
-        "1569": "Leotheras the Blind",
-        "626": "Fathom-Lord Karathress",
-        "1570": "Fathom-Lord Karathress",
-        "627": "Morogrim Tidewalker",
-        "1571": "Morogrim Tidewalker",
-        "628": "Lady Vashj",
-        "1572": "Lady Vashj",
-        "Tempest Keep Bosses": "",
-        "730": "Al'ar",
-        "1573": "Al'ar",
-        "731": "Void Reaver",
-        "1574": "Void Reaver",
-        "732": "High Astromancer Solarian",
-        "1575": "High Astromancer Solarian",
-        "733": "Kael'thas Sunstrider",
-        "1576": "Kael'thas Sunstrider",
-        "The Battle for Mount Hyjal Bosses": "",
-        "618": "Rage Winterchill",
-        "1577": "Rage Winterchill",
-        "619": "Anetheron",
-        "1578": "Anetheron",
-        "620": "Kaz'rogal",
-        "1579": "Kaz'rogal",
-        "1580": "Azgalor",
-        "621": "Azgalor",
-        "622": "Archimonde",
-        "1581": "Archimonde",
-        "Black Temple Bosses": "",
-        "601": "High Warlord Naj'entus",
-        "1582": "High Warlord Naj'entus",
-        "602": "Supremus",
-        "1583": "Supremus",
-        "603": "Shade of Akama",
-        "1584": "Shade of Akama",
-        "604": "Teron Gorefiend",
-        "1585": "Teron Gorefiend",
-        "605": "Gurtogg Bloodboil",
-        "1586": "Gurtogg Bloodboil",
-        "606": "Reliquary of Souls",
-        "1587": "Reliquary of Souls",
-        "607": "Mother Shahraz",
-        "1588": "Mother Shahraz",
-        "608": "The Illidari Council",
-        "1589": "The Illidari Council",
-        "609": "Illidan Stormrage",
-        "1590": "Illidan Stormrage",
-        "Sunwell Plateau Bosses": "",
-        "724": "Kalecgos",
-        "1591": "Kalecgos",
-        "725": "Brutallus",
-        "1592": "Brutallus",
-        "726": "Felmyst",
-        "1593": "Felmyst",
-        "727": "The Eredar Twins",
-        "1594": "The Eredar Twins",
-        "728": "M'uru",
-        "1595": "M'uru",
-        "729": "Kil'jaeden",
-        "1596": "Kil'jaeden",
-        "Zul'Aman": "",
-        "1189": "Akil'zon",
-        "1190": "Nalorakk",
-        "1191": "Jan'alai",
-        "1192": "Halazzi",
-        "1193": "Hex Lord Malacrass",
-        "1194": "Zul'jin"
-      }
+      "SimCHeader": "SimC/QE Import"
     },
     "Welcome": {
-      "WelcomeTo": "Welcome To",
-      "ContinueMessage": "To begin using the app, add one of your characters below. ",
+      "ContinueMessage": "To begin using the app, add one of your characters below.",
       "CreateCharacter": "Create Character",
-      "GameTypeMessage": "Select which version you'd like to start with."
+      "GameTypeMessage": "Select which version you'd like to start with.",
+      "WelcomeTo": "Welcome To"
+    },
+    "Yes": "Yes",
+    "itemTags": {
+      "effect": "Effect",
+      "greatvault": "Great Vault"
     }
   }
 }

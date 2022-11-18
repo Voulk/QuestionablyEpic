@@ -1,4 +1,4 @@
-import { itemDB } from "../../../Databases/ItemDB";
+import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
 import { conduitDB, conduitRanks } from "../../../Databases/ConduitDB";
 import { dominationGemDB } from "../../../Databases/DominationGemDB";
@@ -57,7 +57,7 @@ export function processAllLines(player, contentType, covenant, lines, linkedItem
     // If our line doesn't include an item ID, skip it.
     if (line.includes("id=")) {
       if (line.includes("unknown")) {
-        //processToken(line, player, contentType, type, covenant);
+        processToken(line, player, contentType, type, covenant);
       } else {
         const item = processItem(line, player, contentType, type)
         if (item) player.addActiveItem(item);
@@ -164,14 +164,14 @@ function processToken(line, player, contentType, type, covenant) {
     else if (info.includes("id=")) tokenID = parseInt(info.split("=")[1]);
   }
   // console.log("Creating Token with level" + tokenLevel + ", and ID: " + tokenID);
-  let token = [] //tokenDB[tokenID.toString()];
+  let token = tokenDB[tokenID.toString()];
   tokenLevel = token.itemLevel;
   tokenSlot = token.slotType;
   // Loop through bonus IDs until we find the item level one. Set Token Item Level.
   for (var k = 0; k < itemBonusIDs.length; k++) {
     let bonus_id = itemBonusIDs[k];
 
-    if (bonus_id >= 1459 && bonus_id <= 1502) tokenLevel += bonus_id - 1472;
+    if (bonus_id >= 1459 && bonus_id <= 1570) tokenLevel += bonus_id - 1472;
   }
 
   // Loop through items in the token list. We check if it's equippable, and if it is we create an item of it's type.
@@ -333,6 +333,8 @@ export function processItem(line, player, contentType, type) {
         else if (bonus_id == 7461) itemLevel = 230;
         else if (bonus_id == 7881) itemLevel = 262;
         else if (bonus_id == 7880) itemLevel = 233;
+        else if (bonus_id == 8774) itemLevel = 219 + (dropLevel - 58) * 10;
+        else if (bonus_id == 8775) itemLevel = 242;
 
       } else if ("name_override" in idPayload) {
 

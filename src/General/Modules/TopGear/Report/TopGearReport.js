@@ -11,15 +11,15 @@ import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
 import { covenantIcons, covenantColours } from "../../CooldownPlanner/Functions/CovenantFunctions";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import { classTranslator } from "../../../Functions/CommonFunctions";
 import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared";
+import { getTranslatedClassName } from "locale/ClassNames";
 
 function TopGearReport(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const gameType = useSelector((state) => state.gameType);
-  const boxWidth = gameType === "BurningCrusade" ? "60%" : "60%";
+  const boxWidth = gameType === "Classic" ? "60%" : "60%";
   let contentType = "";
 
   /* ----------------------------- On Component load get player image ----------------------------- */
@@ -35,23 +35,25 @@ function TopGearReport(props) {
   const classIcon = () => {
     switch (props.player.spec) {
       case "Holy Paladin":
-        return require("Images/Classes/Paladin/icon-paladin.png");
-      case "Holy Paladin BC":
-        return require("Images/Classes/Paladin/icon-paladin.png");
+        return require("Images/Classes/Paladin/icon-paladin.png").default;
+      case "Holy Paladin Classic":
+        return require("Images/Classes/Paladin/icon-paladin.png").default;
       case "Restoration Shaman":
-        return require("Images/Classes/Shaman/icon-shaman.png");
-      case "Restoration Shaman BC":
-        return require("Images/Classes/Shaman/icon-shaman.png");
+        return require("Images/Classes/Shaman/icon-shaman.png").default;
+      case "Restoration Shaman Classic":
+        return require("Images/Classes/Shaman/icon-shaman.png").default;
       case "Holy Priest":
-        return require("Images/Classes/Priest/icon-priest.png");
-      case "Holy Priest BC":
-        return require("Images/Classes/Priest/icon-priest.png");
+        return require("Images/Classes/Priest/icon-priest.png").default;
+      case "Holy Priest Classic":
+        return require("Images/Classes/Priest/icon-priest.png").default;
       case "Discipline Priest":
         return require("Images/Classes/Priest/icon-priest.png");
       case "Restoration Druid":
-        return require("Images/Classes/Druid/icon-druid.png");
-      case "Restoration Druid BC":
-        return require("Images/Classes/Druid/icon-druid.png");
+        return require("Images/Classes/Druid/icon-druid.png").default;
+      case "Preservation Evoker":
+        return require("Images/Classes/Druid/icon-druid.png").default;
+      case "Restoration Druid Classic":
+        return require("Images/Classes/Druid/icon-druid.png").default;
       case "Mistweaver Monk":
         return require("Images/Classes/Monk/icon-monk.png");
       default:
@@ -79,7 +81,7 @@ function TopGearReport(props) {
     differentials = result.differentials;
     itemList = topSet.itemList;
     contentType = result.contentType;
-    gemStats = gameType === "BurningCrusade" && "socketInformation" in topSet ? topSet.socketInformation : "";
+    gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
     domGems = gameType === "Retail" && "domGemList" in topSet ? topSet.domGemList : "";
     statList = topSet.setStats;
 
@@ -113,6 +115,24 @@ function TopGearReport(props) {
       return gemString.slice(0, -1);
     }
   };
+
+  // scuffed breakdown of weapon combos to seperate them for the report
+  let newWeaponCombos = [];
+  if (itemList.length > 0) {
+    const weaponCombos = itemList.filter((key) => key.slot === "CombinedWeapon")[0];
+    let mainHandItem = "";
+    let offHandItem = "";
+
+    if (weaponCombos.offhandID > 0) {
+      mainHandItem = props.player.getItemByHash(weaponCombos.mainHandUniqueHash);
+      offHandItem = props.player.getItemByHash(weaponCombos.offHandUniqueHash);
+      newWeaponCombos.push(mainHandItem, offHandItem);
+    } else {
+      mainHandItem = props.player.getItemByHash(weaponCombos.uniqueHash);
+      newWeaponCombos.push(mainHandItem);
+    }
+  }
+  newWeaponCombos = newWeaponCombos.flat();
 
   return (
     <div
@@ -151,19 +171,13 @@ function TopGearReport(props) {
                         /* ---------------------------------------------------------------------------------------------- */}
                         <Grid container spacing={1}>
                           {itemList
-                            .filter(
-                              (key) =>
-                                key.slot === "Head" ||
-                                key.slot === "Neck" ||
-                                key.slot === "Back" ||
-                                key.slot === "Shoulder" ||
-                                key.slot === "Chest" ||
-                                key.slot === "Wrist" ||
-                                key.slot === "CombinedWeapon",
-                            )
+                            .filter((key) => key.slot === "Head" || key.slot === "Neck" || key.slot === "Back" || key.slot === "Shoulder" || key.slot === "Chest" || key.slot === "Wrist")
                             .map((item, index) => (
                               <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} />
                             ))}
+                          {newWeaponCombos.map((item, index) => (
+                            <ItemCardReport key={index + "weapons"} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} />
+                          ))}
                         </Grid>
                       </Grid>
                       <Grid item xs={4}>
@@ -237,7 +251,7 @@ function TopGearReport(props) {
                                         {props.player.charName}
                                       </Typography>
 
-                                      <Tooltip title={t(classTranslator(props.player.spec))} style={{ color: classColoursJS(props.player.spec) }} placement="top" arrow>
+                                      <Tooltip title={getTranslatedClassName(props.player.spec)} style={{ color: classColoursJS(props.player.spec) }} placement="top" arrow>
                                         {classIcons(props.player.spec, {
                                           height: 22,
                                           width: 22,
@@ -303,7 +317,7 @@ function TopGearReport(props) {
           {/* ---------------------------------------------------------------------------------------------- */
           /*                                    Competitive Alternatives                                    */
           /* ----------------------------------------------------------------------------------------------  */}
-          <CompetitiveAlternatives differentials={differentials} />
+          <CompetitiveAlternatives differentials={differentials} player={props.player} />
 
           <Grid item style={{ height: 40 }} xs={12} />
         </Grid>

@@ -60,7 +60,7 @@ export const monkDefaultSpecialQueries = (contentType) => {
       cooldownMult: {
         oneMinute: 1.2,
         ninetySeconds: 1,
-        twoMinutes: 1.2,
+        twoMinutes: 1.1,
         twoMinutesOrb: 1.11,
         threeMinutes: 1.2,
       },

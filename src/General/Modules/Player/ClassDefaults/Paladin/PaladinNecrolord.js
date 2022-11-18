@@ -42,10 +42,10 @@ export const paladinNecrolordSpellData = (contentType) => {
         OneManaHealing: 1.9,
         CastsPerMinute: 27,
         cooldownMult: {
-          oneMinute: 1.2,
+          oneMinute: 1.1,
           ninetySeconds: 1.1,
           twoMinutes: 1.12,
-          twoMinutesOrb: 1.12,
+          twoMinutesOrb: 1.04,
           threeMinutes: 1,
         },
         HoldYourGroundUptime: 0.4
@@ -57,7 +57,7 @@ export const paladinNecrolordSpellData = (contentType) => {
         cooldownMult: {
           oneMinute: 1.2,
           ninetySeconds: 1,
-          twoMinutes: 1.24,
+          twoMinutes: 1.04,
           twoMinutesOrb: 1,
           threeMinutes: 1,
         },
@@ -75,10 +75,10 @@ export const paladinNecrolordSpellData = (contentType) => {
   
     statWeights.Raid = {
       intellect: 1,
-      haste: 0.61,
+      haste: 0.62,
       crit: 0.51,
-      mastery: 0.6,
-      versatility: 0.57,
+      mastery: 0.61,
+      versatility: 0.56,
       leech: 0.96,
       defaults: true,
     };
@@ -87,7 +87,7 @@ export const paladinNecrolordSpellData = (contentType) => {
       haste: 0.41,
       crit: 0.33,
       mastery: 0.24,
-      versatility: 0.37,
+      versatility: 0.38,
       leech: 0.38,
       defaults: true,
     };

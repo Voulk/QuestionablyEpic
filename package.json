@@ -1,8 +1,8 @@
 {
   "name": "questionably-epic-live",
-  "homepage": "https://questionablyepic.com/live/",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://questionablyepic.com/",
   "dependencies": {
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
@@ -20,6 +20,7 @@
     "@types/react-dom": "^16.9.8",
     "axios": "^0.21.2",
     "chroma-js": "^2.1.0",
+    "env-cmd": "^10.1.0",
     "i18next": "^19.7.0",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-xhr-backend": "^3.2.2",
@@ -45,6 +46,8 @@
     "deploy": "gh-pages -d build",
     "start": "react-scripts --max_old_space_size=4096 start",
     "build": "react-scripts build --max_old_space_size=4096",
+    "build:dev": "env-cmd -f .env.dev react-scripts build --max_old_space_size=4096",
+    "build:prod": "env-cmd -f .env react-scripts build --max_old_space_size=4096",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

@@ -10,6 +10,7 @@ import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import withStyles from "@mui/styles/withStyles";
+import { getTranslatedSlotName } from "locale/slotsLocale";
 
 function filterItemListBySlot(itemList, slot) {
   const excludedInstance = [748, 749, 750, 751, 321, 752];
@@ -60,14 +61,15 @@ const AccordionSummary = withStyles({
 
 const useStyles = makeStyles(() => ({
   root: {
-    // width: "100%",
+    width: "100%",
     padding: "8px 5px",
   },
 }));
 
 export default function SlotsContainer(props) {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   let itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
 
@@ -96,32 +98,32 @@ export default function SlotsContainer(props) {
   const iconReturn = (slot, spec) => {
     switch (spec) {
       case "Restoration Druid":
-      case "Restoration Druid BC":
-        return require("Images/UpgradeFinderIcons/Leather/" + slot + ".jpg");
+      case "Restoration Druid Classic":
+        return require("Images/UpgradeFinderIcons/Leather/" + slot + ".jpg").default;
       case "Mistweaver Monk":
         return require("Images/UpgradeFinderIcons/Leather/" + slot + ".jpg");
       case "Holy Paladin":
-      case "Holy Paladin BC":
-        return require("Images/UpgradeFinderIcons/Plate/" + slot + ".jpg");
+      case "Holy Paladin Classic":
+        return require("Images/UpgradeFinderIcons/Plate/" + slot + ".jpg").default;
       case "Restoration Shaman":
-      case "Restoration Shaman BC":
-        return require("Images/UpgradeFinderIcons/Mail/" + slot + ".jpg");
+      case "Preservation Evoker":
+      case "Restoration Shaman Classic":
+        return require("Images/UpgradeFinderIcons/Mail/" + slot + ".jpg").default;
       case "Holy Priest":
-      case "Holy Priest BC":
+      case "Holy Priest Classic":
       case "Discipline Priest":
         return require("Images/UpgradeFinderIcons/Cloth/" + slot + ".jpg");
       default:
         return [-1];
     }
   };
-
   const contentGenerator = () => {
     return slotList.map((key, i) => (
-      <Accordion key={t("slotNames." + key.label) + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+      <Accordion key={getTranslatedSlotName(key.label, currentLanguage) + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
           <img src={iconReturn(key.slot, props.player.spec)} height={30} width={30} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
           <Typography align="center" variant="h6" noWrap color="primary">
-            {t("slotNames." + key.label)} -{" "}
+            {getTranslatedSlotName(key.label, currentLanguage)} -{" "}
             {[...filterItemListBySlot(itemList, key.slot)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades
           </Typography>
         </AccordionSummary>

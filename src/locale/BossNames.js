@@ -1,0 +1,572 @@
+export const bossDB = [
+  /* --------------------------------------- Karazahn Bosses -------------------------------------- */
+  {
+    name: {
+      en: "Servant's Quarters",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 1552,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Attumen the Huntsman",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 652,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Moroes",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 653,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Maiden of Virtue",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 654,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Opera Hall",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 655,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "The Curator",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 656,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Shade of Aran",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 657,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Terestian Illhoof",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 658,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Netherspite",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 659,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Chess Event",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 660,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Prince Malchezaar",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 661,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Nightbane",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 662,
+    expansion: "Classic",
+  },
+  /* ---------------------------------------- Gruul's Lair ---------------------------------------- */
+  {
+    name: {
+      en: "High King Maulgar",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 649,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Gruul the Dragonkiller",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 650,
+    expansion: "Classic",
+  },
+  /* ------------------------------------- Magtheridon's lair ------------------------------------- */
+  {
+    name: {
+      en: "Magtheridon",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 651,
+    expansion: "Classic",
+  },
+  /* ------------------------------------ Serpentshrine Cavern ------------------------------------ */
+  {
+    name: {
+      en: "Hydross the Unstable",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 623,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "The Lurker Below",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 624,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Leotheras the Blind",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 625,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Fathom-Lord Karathress",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 626,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Morogrim Tidewalker",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 627,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Lady Vashj",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 628,
+    expansion: "Classic",
+  },
+  /* ---------------------------------------- Tempest Keep ---------------------------------------- */
+  {
+    name: {
+      en: "Al'ar",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 730,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Void Reaver",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 731,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "High Astromancer Solarian",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 732,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Kael'thas Sunstrider",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 733,
+    expansion: "Classic",
+  },
+  /* --------------------------------- The Battle for Mount Hyjal --------------------------------- */
+  {
+    name: {
+      en: "Rage Winterchill",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 618,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Anetheron",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 619,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Kaz'rogal",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 620,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Azgalor",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 621,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Archimonde",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 622,
+    expansion: "Classic",
+  },
+  /* ---------------------------------------- Black Temple ---------------------------------------- */
+  {
+    name: {
+      en: "High Warlord Naj'entus",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 601,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Supremus",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 602,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Shade of Akama",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 603,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Teron Gorefiend",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 604,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Gurtogg Bloodboil",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 605,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Reliquary of Souls",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 606,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Mother Shahraz",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 607,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "The Illidari Council",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 608,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Illidan Stormrage",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 609,
+    expansion: "Classic",
+  },
+  /* --------------------------------------- Sunwell Plateau -------------------------------------- */
+  {
+    name: {
+      en: "Kalecgos",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 724,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Brutallus",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 725,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Felmyst",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 726,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "The Eredar Twins",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 727,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "M'uru",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 728,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Kil'jaeden",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 729,
+    expansion: "Classic",
+  },
+  /* ------------------------------------------ Zul'Aman ------------------------------------------ */
+  {
+    name: {
+      en: "Akil'zon",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 1189,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Nalorakk",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 1190,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Jan'alai",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 1191,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Halazzi",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 1192,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Hex Lord Malacrass",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 1193,
+    expansion: "Classic",
+  },
+  {
+    name: {
+      en: "Zul'jin",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: 1194,
+    expansion: "Classic",
+  },
+];

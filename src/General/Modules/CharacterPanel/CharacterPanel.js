@@ -11,7 +11,9 @@ import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunction
 import Settings from "../Settings/Settings";
 import { covenantIcons, covenantColours } from "../CooldownPlanner/Functions/CovenantFunctions";
 // import ErrorTooltip from "./ErrorTooltip";
-import { classTranslator } from "General/Functions/CommonFunctions";
+import { getTranslatedClassName } from "locale/ClassNames";
+import { getTranslatedStats } from "locale/statsLocale";
+import { getTranslatedCovenantName } from "locale/covenants";
 
 const useStyles = makeStyles(() => ({
   simcerror: {
@@ -33,7 +35,7 @@ const checkCharacterValid = (player, gameType) => {
   const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
   if (gameType === "Retail") {
     return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
-  } else if (gameType === "BurningCrusade") {
+  } else if (gameType === "Classic") {
     return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 16) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 17);
   }
 };
@@ -51,16 +53,17 @@ const getSimCStatus = (player, gameType) => {
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
   "Restoration Druid": require("Images/DruidSmall.jpg"),
+  "Preservation Evoker": require("Images/EvokerSmall.jpg"),
   "Restoration Shaman": require("Images/ShamanSmall.png"),
   "Discipline Priest": require("Images/DiscSmall.jpg"),
   "Holy Paladin": require("Images/PaladinSmall.png"),
   "Holy Priest": require("Images/HPriestSmall.jpg"),
   "Mistweaver Monk": require("Images/MistweaverSmall.jpg"),
 
-  "Holy Paladin BC": require("Images/classicon_paladin.jpg"),
-  "Restoration Druid BC": require("Images/classicon_druid.jpg"),
-  "Restoration Shaman BC": require("Images/classicon_shaman.jpg"),
-  "Holy Priest BC": require("Images/classicon_priest.jpg"),
+  "Holy Paladin Classic": require("Images/classicon_paladin.jpg"),
+  "Restoration Druid Classic": require("Images/classicon_druid.jpg"),
+  "Restoration Shaman Classic": require("Images/classicon_shaman.jpg"),
+  "Holy Priest Classic": require("Images/classicon_priest.jpg"),
 };
 
 export default function CharacterPanel(props) {
@@ -73,10 +76,11 @@ export default function CharacterPanel(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
   const gameType = useSelector((state) => state.gameType);
   const contentType = useSelector((state) => state.contentType);
-  const currentLanguage = i18n.currentLanguage;
+  const currentLang = i18n.currentLanguage;
+  const currentLanguage = i18n.language;
   const simcStatus = getSimCStatus(props.player, gameType);
   // const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
-  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
+  const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLang;
   const currentCharacter = props.allChars.allChar[props.allChars.activeChar];
   const covenant = currentCharacter.covenant;
 
@@ -172,7 +176,7 @@ export default function CharacterPanel(props) {
                   />
                 )}
                 <div style={{ position: "absolute", bottom: 1, left: 1 }}>
-                  <Tooltip title={t(classTranslator(currentCharacter.spec))} placement="left" arrow>
+                  <Tooltip title={getTranslatedClassName(currentCharacter.spec, currentLanguage)} placement="left" arrow>
                     {classIcons(
                       currentCharacter.spec,
                       gameType === "Retail"
@@ -199,7 +203,7 @@ export default function CharacterPanel(props) {
                 </div>
                 {gameType === "Retail" ? (
                   <div style={{ position: "absolute", bottom: 24, left: 1 }}>
-                    <Tooltip title={t(covenant)} placement="left" arrow>
+                    <Tooltip title={getTranslatedCovenantName(covenant, currentLanguage)} placement="left" arrow>
                       {covenantIcons(covenant, {
                         height: 22,
                         width: 22,
@@ -278,7 +282,7 @@ export default function CharacterPanel(props) {
                           .filter((filterOut) => filterOut !== "stamina" && filterOut !== "hps" && filterOut !== "dps" && filterOut !== "leech")
                           .map((key, i) => (
                             <Grid item xs={4} sm="auto" key={"stat" + i}>
-                              <Typography style={{ fontSize: 11, lineHeight: 1 }}>{t(capitalizeFirstLetter(key)) + ": " + playerStats[key]}</Typography>
+                              <Typography style={{ fontSize: 11, lineHeight: 1 }}>{getTranslatedStats(capitalizeFirstLetter(key), currentLanguage) + ": " + playerStats[key]}</Typography>
                             </Grid>
                           ))}
                       </Grid>

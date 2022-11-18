@@ -11,9 +11,9 @@ export const classRaceDB = {
   },
 
   /* --------------------------------------- Burning Crusade -------------------------------------- */
-  "Holy Paladin BC": {
+  "Holy Paladin Classic": {
     races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Blood Elf"],
-    gameType: "BurningCrusade",
+    gameType: "Classic",
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -27,9 +27,19 @@ export const classRaceDB = {
   },
 
   /* --------------------------------------- Burning Crusade -------------------------------------- */
-  "Restoration Druid BC": {
+  "Restoration Druid Classic": {
     races: ["Races.Night Elf", "Races.Tauren"],
-    gameType: "BurningCrusade",
+    gameType: "Classic",
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Evoker                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* ------------------------------------------- Retail ------------------------------------------- */
+  "Preservation Evoker": {
+    races: ["Races.Dracthyr"],
+    gameType: "Retail",
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -60,6 +70,8 @@ export const classRaceDB = {
       "Races.Mag'har Orc",
       "Races.Zandalari Troll",
       "Races.Vulpera",
+      "Races.Highmountain Tauren",
+      "Races.Orc",
     ],
     gameType: "Retail",
   },
@@ -86,14 +98,16 @@ export const classRaceDB = {
       "Races.Mag'har Orc",
       "Races.Zandalari Troll",
       "Races.Vulpera",
+      "Races.Highmountain Tauren",
+      "Races.Orc",
     ],
     gameType: "Retail",
   },
 
   /* --------------------------------------- Burning Crusade -------------------------------------- */
-  "Holy Priest BC": {
+  "Holy Priest Classic": {
     races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Night Elf", "Races.Blood Elf", "Races.Troll", "Races.Undead"],
-    gameType: "BurningCrusade",
+    gameType: "Classic",
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -121,9 +135,9 @@ export const classRaceDB = {
   },
 
   /* --------------------------------------- Burning Crusade -------------------------------------- */
-  "Restoration Shaman BC": {
+  "Restoration Shaman Classic": {
     races: ["Races.Draenei", "Races.Orc", "Races.Tauren", "Races.Troll"],
-    gameType: "BurningCrusade",
+    gameType: "Classic",
   },
 
   /* ---------------------------------------------------------------------------------------------- */

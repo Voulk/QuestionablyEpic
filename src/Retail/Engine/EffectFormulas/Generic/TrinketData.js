@@ -63,15 +63,15 @@ export const trinket_data = [
     effects: [
       {
         /* --------- This is the coefficient for the portion that scales with mana expenditure. --------- */
-        coefficient: 12.82759,
+        coefficient: 12.82759 * 1.2,
         table: -8,
       },
       {
         /*  This is the portion for the direct heal, and also includes cooldown and efficiency information for the entire trinket.  */
-        coefficient: 80.17241,
+        coefficient: 80.17241 * 1.1,
         table: -8,
         cooldown: 60,
-        efficiency: {Raid: 0.58, Dungeon: 0.7}
+        efficiency: {Raid: 0.5, Dungeon: 0.6}
       },
     ],
   },
@@ -139,7 +139,7 @@ export const trinket_data = [
     name: "Scars of Fraternal Strife",
     effects: [
       {
-        coefficient: 0.345768,
+        coefficient: 0.345768 * 1.25,
         table: -7,
       },
     ],
@@ -170,7 +170,7 @@ export const trinket_data = [
         coefficient: 0.467903,
         table: -7,
         duration: 21, // You get a 20 second duration every time you touch a new Spirit. They each live about 5 seconds.
-        stacks: 2.5, // You should be able to hit all four pretty reliably, but will spend some time with lower than four stacks as you meet each.
+        stacks: 2.6, // You should be able to hit all four pretty reliably, but will spend some time with lower than four stacks as you meet each.
         cooldown: 90,
       },
     ],
@@ -242,7 +242,7 @@ export const trinket_data = [
     effects: [
       {
         /* ------------------------------ Crit buff portion of the trinket. ----------------------------- */
-        coefficient: 2.269577 * 0.85, // This represents the upcoming 15% nerf. When the change is live the coefficient itself can be updated instead. 
+        coefficient: 2.269577 * 0.85 * 0.75, // This represents the upcoming 15% nerf. When the change is live the coefficient itself can be updated instead. 
         table: -7,
         duration: 16,
         multiplier: 1.62, // This assumes your average boss health is just under 50% which feels like a fair average.
@@ -404,7 +404,7 @@ export const trinket_data = [
     name: "Inscrutable Quantum Device",
     effects: [
       {
-        coefficient: 3.55,
+        coefficient: 3.55 * 0.75,
         table: -7,
         duration: 20,
         cooldown: 180,
@@ -543,7 +543,7 @@ export const trinket_data = [
         /* ----------------------------------------- HoT Portion ---------------------------------------- */
         coefficient: 1.65,
         table: -7,
-        efficiency: { "Restoration Druid": 0.28, "Discipline Priest": 0.32, "Holy Paladin": 0.34, "Mistweaver Monk": 0.31, "Restoration Shaman": 0.3, "Holy Priest": 0.3 },
+        efficiency: { "Preservation Evoker": 0.28, "Restoration Druid": 0.28, "Discipline Priest": 0.32, "Holy Paladin": 0.34, "Mistweaver Monk": 0.31, "Restoration Shaman": 0.3, "Holy Priest": 0.3 },
         duration: 10,
         cooldown: 30,
         expectedTargetThroughput: 4050, // In a future version this could be dynamically averaged from an inserted log.
@@ -589,7 +589,7 @@ export const trinket_data = [
         coefficient: 1.99949,
         table: -7,
         duration: 10,
-        ppm: { "Restoration Druid": 1.2, "Discipline Priest": 1.5, "Holy Paladin": 1.5, "Mistweaver Monk": 1.4, "Restoration Shaman": 1.2, "Holy Priest": 1.2 },
+        ppm: { "Preservation Evoker": 1.1, "Restoration Druid": 1.2, "Discipline Priest": 1.5, "Holy Paladin": 1.5, "Mistweaver Monk": 1.4, "Restoration Shaman": 1.2, "Holy Priest": 1.2 },
       },
     ],
   },
@@ -640,7 +640,7 @@ export const trinket_data = [
         coefficient: 2.353487,
         table: -1,
         duration: 10,
-        ppm: { "Restoration Druid": 1.1, "Discipline Priest": 1.25, "Holy Paladin": 1.25, "Mistweaver Monk": 1.2, "Restoration Shaman": 1.1, "Holy Priest": 1.1 },
+        ppm: { "Preservation Evoker": 1, "Restoration Druid": 1.1, "Discipline Priest": 1.25, "Holy Paladin": 1.25, "Mistweaver Monk": 1.2, "Restoration Shaman": 1.1, "Holy Priest": 1.1 },
       },
     ],
   },
@@ -805,7 +805,7 @@ export const trinket_data = [
     effects: [
       {
         coefficient: 10, // Flat value
-        stacks: { "Restoration Druid": 7, "Discipline Priest": 10, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 2.4, "Holy Priest": 2.4 },
+        stacks: { "Preservation Evoker": 0, "Restoration Druid": 7, "Discipline Priest": 10, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 2.4, "Holy Priest": 2.4 },
       },
     ],
   },
@@ -923,10 +923,10 @@ export const trinket_data = [
     name: "Resonant Silver Bell", // Spell Name: Spectral Feline
     effects: [
       {
-        coefficient: 83.59375,
+        coefficient: 83.59375 * 1.15,
         table: -8,
         ppm: 2,
-        efficiency: 0.35, // 
+        efficiency: 0.38, // 
       },
     ],
   },
@@ -939,7 +939,7 @@ export const trinket_data = [
     name: "Shadowed Orb of Torment", // Tormented Insight
     effects: [
       {
-        coefficient: 1.328551 * 1.61, // 1.328551
+        coefficient: 1.328551 * 1.61 * 1.12, // 1.328551
         table: -7,
         duration: 40,
         cooldown: 120,
@@ -984,8 +984,8 @@ export const trinket_data = [
     effects: [
       {
         coefficient: 0.045455,
-        specMod: {"Restoration Druid": 1, "Holy Paladin": 0.6, "Mistweaver Monk": 1, "Restoration Shaman": 0.5, "Holy Priest": 1.25, "Discipline Priest": 0.8},
-        spellList: {"Restoration Druid": 1, "Holy Paladin": 25914, "Mistweaver Monk": 1, "Restoration Shaman": 1, "Holy Priest": 1, "Discipline Priest": 1},
+        specMod: {"Preservation Evoker": 0, "Restoration Druid": 1, "Holy Paladin": 0.6, "Mistweaver Monk": 1, "Restoration Shaman": 0.5, "Holy Priest": 1.25, "Discipline Priest": 0.8},
+        spellList: {"Preservation Evoker": 1, "Restoration Druid": 1, "Holy Paladin": 25914, "Mistweaver Monk": 1, "Restoration Shaman": 1, "Holy Priest": 1, "Discipline Priest": 1},
         table: -1,
         cooldown: 60,
       },
@@ -1021,7 +1021,7 @@ export const trinket_data = [
         coefficient: 0.337095, 
         table: -7,
         duration: 15,
-        averageStacks: {"Restoration Druid": 0.6, "Holy Paladin": 0.4, "Mistweaver Monk": 0, "Restoration Shaman": 0.65, "Holy Priest": 0.6, "Discipline Priest": 1.55},
+        averageStacks: {"Preservation Evoker": 0.5, "Restoration Druid": 0.6, "Holy Paladin": 0.4, "Mistweaver Monk": 0, "Restoration Shaman": 0.65, "Holy Priest": 0.6, "Discipline Priest": 1.55},
         // The average stacks value is correct, but should be rewritten to include the formula in the code.
         ppm: 5,
       },
@@ -1053,7 +1053,7 @@ export const trinket_data = [
         coefficient: 0.286493,
         table: -7,
         duration: 10,
-        efficiency: {"Restoration Druid": 0.88, "Holy Paladin": 0.75, "Mistweaver Monk": 0, "Restoration Shaman": 0.75, "Holy Priest": 0.75, "Discipline Priest": 0.78},
+        efficiency: {"Preservation Evoker": 0.5, "Restoration Druid": 0.8, "Holy Paladin": 0.67, "Mistweaver Monk": 0, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
         stacks: 15, // You start with 20, lose 1 every second and end with 10 for an average of 15.
         ppm: 1,
       },
@@ -1092,7 +1092,7 @@ export const trinket_data = [
       {
         coefficient: 50.56973,
         table: -9, // -8 in spell data
-        efficiency: { Raid: 0.63, Dungeon: 0.38 }, // 
+        efficiency: { Raid: 0.68, Dungeon: 0.38 }, // 
         ppm: 3,
         targets: 3.8, // The trinket attempts to hit 4 targets, but in logs it often comes up slightly short of this.
 
@@ -1111,7 +1111,7 @@ export const trinket_data = [
       {
         coefficient: 0.6668381, // 2.07913,
         table: -7, //-8, 
-        ppm: { "Restoration Druid": 20, "Discipline Priest": 15.2, "Holy Paladin": 0, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.5, "Holy Priest": 11 }, // TODO: Refine. 
+        ppm: { "Preservation Evoker": 0, "Restoration Druid": 20, "Discipline Priest": 15.2, "Holy Paladin": 0, "Mistweaver Monk": 1.5, "Restoration Shaman": 0.5, "Holy Priest": 11 }, // TODO: Refine. 
       },
     ],
   },
@@ -1128,7 +1128,7 @@ export const trinket_data = [
         coefficient: 0.199557,
         table: -7, 
         duration: 20,
-        ppm: { "Restoration Druid": 0.5, "Discipline Priest": 0.7, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 0.5, "Holy Priest": 0.5 }, // Baseline: 0.7
+        ppm: { "Preservation Evoker": 0, "Restoration Druid": 0.5, "Discipline Priest": 0.7, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 0.5, "Holy Priest": 0.5 }, // Baseline: 0.7
         averageStacks: 10.5, 
       },
     ],
@@ -1219,19 +1219,6 @@ export const trinket_data = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
-    /*                                 Scars of Fraternal Strife                                      */
-    /* ---------------------------------------------------------------------------------------------- */
-    // Jailer trinket. Effects unknown
-    name: "Scars of Fraternal Strife", 
-    effects: [
-      {
-        coefficient: 0,
-        table: -0, 
-      },
-    ],
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
     /*                                        The First Sigil                                         */
     /* ---------------------------------------------------------------------------------------------- */
     // Signature ability reset and a massive vers buff on a 5 minute cooldown.
@@ -1257,8 +1244,8 @@ export const trinket_data = [
         table: -8, // -9
         ppm: 10,
         baseCooldown: 600,
-        cdrPerProc: 3,
-        efficiency: 0.7,
+        cdrPerProc: 6,
+        efficiency: 0.65,
       },
     ],
   },
@@ -1299,6 +1286,40 @@ export const trinket_data = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Enforcer's Stun Grenade                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+
+    */
+    name: "Enforcer's Stun Grenade",
+    effects: [
+      {
+        coefficient: 3.333333,
+        table: -7, 
+        duration: 20,
+        cooldown: 120,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Fleshrender's Meathook                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+
+    */
+    name: "Fleshrender's Meathook",
+    effects: [
+      {
+        coefficient: 3.333333,
+        table: -7, // -8 in spell data
+        duration: 20,
+        cooldown: 120,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                           Grim Eclipse                                         */
     /* ---------------------------------------------------------------------------------------------- */
     name: "Grim Eclipse",
@@ -1320,9 +1341,11 @@ export const trinket_data = [
     effects: [
       {
         coefficient: 7.700482,
-        table: -9,
+        table: -8,
         duration: 6,
-        avgStacks: 2,
+        avgStacks: 2.5, // avg(1, 2, 3, 4)
+        avgTargets: 4.6,
+        ticks: 3,
         cooldown: 90,
       },
     ],
@@ -1341,6 +1364,149 @@ export const trinket_data = [
       },
     ],
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Oakheart's Gnarled Root                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    name: "Oakheart's Gnarled Root",
+    effects: [
+      {
+        coefficient: 16.26412,
+        table: -9,
+        hits: 6,
+        ppm: 2,
+      }]},
+
+      {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Deteriorated Construct Core                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    name: "Deteriorated Construct Core",
+    effects: [
+      {
+        coefficient: 27.45337,
+        table: -8,
+        targets: 3.6,
+        ppm: 1, // 2 in spell data, and then nerfed by 50% for healing specs.
+      }]},
+      {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Dreadfire Vessel                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    name: "Dreadfire Vessel",
+    effects: [
+      {
+        coefficient: 154.9483,
+        table: -8,
+        targets: 1,
+        cooldown: 90,
+      }]},
+    {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                   Aran's Relaxing Ruby                                      */
+      /* ---------------------------------------------------------------------------------------------- */
+      name: "Aran's Relaxing Ruby",
+      effects: [
+        {
+          coefficient: 97.04825,
+          table: -9,
+          targets: 3.8,
+          ppm: 0.46,
+        }]},
+    
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Faith's Crucible                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    {
+    name: "Faith's Crucible",
+    effects: [
+      {
+        coefficient: 18.04542,
+        table: -9,
+        hits: 12,
+        cooldown: 90,
+        efficiency: { Raid: 0.7, Dungeon: 0.4 }, // 
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                           Miniscule Mailemental in an Envelope                                 */
+    /* ---------------------------------------------------------------------------------------------- */
+    name: "Miniscule Mailemental in an Envelope",
+    effects: [
+      {
+        coefficient: 78.73171,
+        table: -9,
+        ppm: 2.25,
+        classMult: { "Preservation Evoker": 1, "Restoration Druid": 1, "Discipline Priest": 1, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 1, "Holy Priest": 1 }
+      }]
+    },
+    /*                                     Fluctuating Energy                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    {
+    name: "Fluctuating Energy",
+    effects: [
+      {
+        coefficient: 4.089027,
+        table: -7,
+        ppm: 2,
+        efficiency: 0.65 // Unfortunately it is extremely difficult to catch all of the mana orbs.
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Ingenious Mana Battery                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    name: "Ingenious Mana Battery",
+    effects: [
+      { // Mana Gain
+        coefficient: 52.68167, // This is currently broken in-game and doesn't scale up. Check again before it goes live.
+        table: -1,
+      },
+      { // Vers effect
+        coefficient: 0.163438 * 2, // The Vers is doubled while the trinket is full.
+        table: -7,
+        uptime: 0.5,
+      },
+    ],
+  },
+
+  // Prepatch Stuff
+    {
+      name: "Storm Hunter's Insignia", // Highest Secondary Stat
+      effects: [
+        {
+          coefficient: 1.405309,
+          table: -7,
+          ppm: 2,
+          duration: 10,
+        },
+      ],
+    },
+    {
+      name: "Versatile Storm Lure", // Heal Proc
+      effects: [
+        {
+          coefficient: 61.51673,
+          table: -8,
+          ppm: 3,
+          efficiency: 0.7 //
+        },
+      ],
+    },
+    {
+      name: "Ekrazathal's Colored Fang", // Heal Proc
+      effects: [
+        {
+          coefficient: 4.204465,
+          table: -8,
+          ppm: 3,
+          efficiency: 0.8 // Unfortunately it is extremely difficult to catch all of the mana orbs.
+        },
+      ],
+    },
 ];
 
 /* ------------------------------------------- Unused ------------------------------------------- */

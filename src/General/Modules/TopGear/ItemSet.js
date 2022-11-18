@@ -39,7 +39,7 @@ class ItemSet {
   // Set bonuses
   sets = {};
 
-  // BC Socket List
+  // Classic Socket List
   bcSockets = {};
 
   domSockets = 0; // Number of domination sockets.
@@ -69,7 +69,7 @@ class ItemSet {
         mana: 0,
       }
       if (this.spec === "Restoration Shaman" || this.spec === "Holy Paladin") stats.intellect = 473;
-      else if (this.spec === "Discipline Priest" || this.spec === "Holy Priest" || this.spec === "Restoration Druid") stats.intellect = 450;
+      else if (this.spec === "Discipline Priest" || this.spec === "Holy Priest" || this.spec === "Restoration Druid" || this.spec === "Preservation Evoker") stats.intellect = 450;
       else if (this.spec === "Mistweaver Monk") stats.intellect = 452;
       return stats
     }

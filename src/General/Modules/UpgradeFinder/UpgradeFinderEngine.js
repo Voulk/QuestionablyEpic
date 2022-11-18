@@ -1,17 +1,7 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import Item from "../Player/Item";
 import { runTopGear } from "../TopGear/Engine/TopGearEngine";
-import {
-  buildWepCombos,
-  calcStatsAtLevel,
-  getItemAllocations,
-  scoreItem,
-  getValidArmorTypes,
-  getValidWeaponTypes,
-  getItem,
-  filterItemListByType,
-  getItemProp
-} from "../../Engine/ItemUtilities";
+import { buildWepCombos, calcStatsAtLevel, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp } from "../../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
 import { itemLevels } from "../../../Databases/itemLevelsDB";
@@ -33,7 +23,6 @@ export function buildWepCombosUF(player, itemList) {
   let main_hands = filterItemListByType(itemList, "1H Weapon");
   let off_hands = filterItemListByType(itemList, "Offhands");
   let two_handers = filterItemListByType(itemList, "2H Weapon");
-
 
   for (let i = 0; i < main_hands.length; i++) {
     // Some say j is the best variable for a nested loop, but are they right?
@@ -109,24 +98,33 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
   let itemLevel = 0;
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
-  if (instanceID === 1195 || instanceID === -22) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]]; // 1195 is Sepulcher gear.
-
+  if (instanceID === 1190 || instanceID === 1193 || instanceID === 1195 || instanceID === -22) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
+  // 1195 is Sepulcher gear.
   // World Bosses
-  else if (instanceID === 1192 && bossID === 2456) itemLevel = 233; // The 9.1 world boss drops 233 gear.
-  else if (instanceID === 1192 && bossID === 2468) itemLevel = 259; // The 9.2 world boss drops 259 gear.
-  else if (instanceID === 1192) itemLevel = 207; // The 9.0 world bosses drop 207 gear.
+  else if (instanceID === 1192 && bossID === 2456) itemLevel = 233;
+  // The 9.1 world boss drops 233 gear.
+  else if (instanceID === 1192 && bossID === 2468) itemLevel = 259;
+  // The 9.2 world boss drops 259 gear.
+  else if (instanceID === 1192) itemLevel = 207;
+  // The 9.0 world bosses drop 207 gear.
   else if (instanceID === -1) {
     itemLevel = itemLevels.dungeon[playerSettings.dungeon];
-  }
-
-
-  else if (instanceID === -16) itemLevel = 203;
+  } else if (instanceID === -16) itemLevel = 203;
   else if (instanceID === -17) {
     // Conquest
     itemLevel = itemLevels.pvp[playerSettings.pvp];
     //if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
   }
-  if (bossID === 2457 || bossID === 2467 || bossID === 2464) itemLevel += 7; // The final three bosses.
+  if (
+    bossID === 2425 || // Stone Legion Generals
+    bossID === 2424 || // Sire Denathrius
+    bossID === 2440 || // Kel'Thuzad
+    bossID === 2441 || // Sylvanas Windrunner
+    bossID === 2457 || // Lords of Dread
+    bossID === 2467 || // Rygelon
+    bossID === 2464 // 2464
+  )
+    itemLevel += 7; // The final three bosses.
 
   return itemLevel;
 }
@@ -156,17 +154,18 @@ function buildItemPossibilities(player, contentType, playerSettings, userSetting
     const rawItem = itemDB[i];
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
       const itemSources = rawItem.sources;
-      const primarySource = itemSources[0].instanceId
-      const isRaid = (primarySource === 1195 || primarySource === -22)
+      const primarySource = itemSources[0].instanceId;
+      const isRaid = primarySource === 1190 || primarySource === 1193 || primarySource === 1195 || primarySource === -22;
 
-      if (isRaid) { // Sepulcher
+      if (isRaid) {
+        // Sepulcher
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.slot);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
           itemPoss.push(item);
         }
-      }
-      /*
+      } else if (primarySource === -1) {
+        /*
       else if (itemSource.instanceId === 1194) {
         // Taz. This will be moved to the Mythic+ section in 9.2 but deserves a separate section for now.
         const item226 = buildItem(player, contentType, rawItem, 226, rawItem.sources[0]);
@@ -175,20 +174,19 @@ function buildItemPossibilities(player, contentType, playerSettings, userSetting
         const item233 = buildItem(player, contentType, rawItem, 233, rawItem.sources[0]);
         itemPoss.push(item233);
       }*/
-      else if (primarySource === -1) {
         // Dungeons including Tazavesh
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
         itemPoss.push(item);
-      }
-      /*
+      } else if (primarySource !== -18) {
+        /*
       else if (primarySource === 1194) {
         // Tazavesh
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[2]);
         itemPoss.push(item);
       } */
-      else if (primarySource !== 1190 && primarySource !== 1193 && primarySource !== -18) { // Exclude Nathria gear.
+        // Exclude Nathria gear.
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
 
@@ -196,7 +194,6 @@ function buildItemPossibilities(player, contentType, playerSettings, userSetting
       }
     }
   }
-
 
   // --------------------------
   // Take care of Tokens >:(
@@ -238,7 +235,7 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.
   let differential = 0;
 
-  if (userSettings.upFinderToggle === "hps") differential = Math.round((newScore - baseScore) / baseScore * baseHPS);
+  if (userSettings.upFinderToggle === "hps") differential = Math.round(((newScore - baseScore) / baseScore) * baseHPS);
   else differential = (newScore - baseScore) / baseScore;
 
   return { item: item.id, level: item.level, score: differential };
@@ -249,19 +246,20 @@ function checkItemViable(rawItem, player) {
   const acceptableArmorTypes = getValidArmorTypes(spec);
   const acceptableWeaponTypes = getValidWeaponTypes(spec, "Weapons");
   const acceptableOffhands = getValidWeaponTypes(spec, "Offhands");
-  const classRestriction = getItemProp(rawItem.id, "classRestriction")
+  const classRestriction = getItemProp(rawItem.id, "classRestriction");
 
   // Check that the item is wearable by the given class. Could be split into an armor and weapons check for code cleanliness.
-  const slotCheck = rawItem.slot === "Back" ||
-                      (rawItem.itemClass === 4 && acceptableArmorTypes.includes(rawItem.itemSubClass)) ||
-                      ((rawItem.slot === "Holdable" || rawItem.slot === "Offhand" || rawItem.slot === "Shield") && acceptableOffhands.includes(rawItem.itemSubClass)) ||
-                      (rawItem.itemClass === 2 && acceptableWeaponTypes.includes(rawItem.itemSubClass))
-  
-  // If an item has a class restriction, make sure that our spec is included.
-  const classCheck = (classRestriction === "" || classRestriction.includes(spec))
+  const slotCheck =
+    rawItem.slot === "Back" ||
+    (rawItem.itemClass === 4 && acceptableArmorTypes.includes(rawItem.itemSubClass)) ||
+    ((rawItem.slot === "Holdable" || rawItem.slot === "Offhand" || rawItem.slot === "Shield") && acceptableOffhands.includes(rawItem.itemSubClass)) ||
+    (rawItem.itemClass === 2 && acceptableWeaponTypes.includes(rawItem.itemSubClass));
 
-  // Strength / agi items appear in the database, but shouldn't appear in the Upgrade Finder since they are just clutter. 
-  const statCheck = !('offspecItem' in rawItem); // We'll exclude any agi / str gear from our results since these will never be upgrades. 
+  // If an item has a class restriction, make sure that our spec is included.
+  const classCheck = classRestriction === "" || classRestriction.includes(spec);
+
+  // Strength / agi items appear in the database, but shouldn't appear in the Upgrade Finder since they are just clutter.
+  const statCheck = !("offspecItem" in rawItem); // We'll exclude any agi / str gear from our results since these will never be upgrades.
 
   return slotCheck && classCheck && statCheck;
 }
