@@ -1,5 +1,6 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
+import { curveDB } from "../ItemCurves";
 import { conduitDB, conduitRanks } from "../../../Databases/ConduitDB";
 import { dominationGemDB } from "../../../Databases/DominationGemDB";
 import { calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
@@ -87,11 +88,11 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
     let line = simCHeader[i];
 
     if (line !== "" && playerClass.toLowerCase().includes(line.split("=")[0].toLowerCase())) checks.class = true;
-    else if (line.split("=")[0] === "level" && line.split("=")[1] === "60") checks.level = true;
+    else if (line.split("=")[0] === "level" && line.split("=")[1] === "70") checks.level = true;
   }
 
   if (!checks.class) errorMessage += "You're currently a " + playerClass + " but this SimC string is for a different spec.";
-  if (!checks.level) errorMessage += "QE Live is designed for level 60 characters. ";
+  if (!checks.level) errorMessage += "QE Live is designed for level 70 characters. ";
   if (!checks.length) errorMessage += "Your SimC string is a bit long. Make sure you haven't pasted it in twice!";
 
   setErrorMessage(errorMessage);
@@ -191,6 +192,34 @@ function processToken(line, player, contentType, type, covenant) {
   //console.log("Creating Token with level" + tokenLevel + ", and ID: " + tokenID);
 } */
 
+/**
+ * 
+ * @param {*} curveID The curveID we'll use to check the item levels available.
+ * @param {*} dropLevel The player level when the item dropped.
+ * @returns 
+ */
+export function processCurve(curveID, dropLevel) {
+  const curve = curveDB[curveID].points;
+
+  let jump = 0;
+  let playerLevelGap = 0;
+  if (curve.length === 0 || curve === undefined) return 0;
+  if (curve.length === 1) return curve[0].itemLevel;
+  else {
+    for (var i = 0; i < curve.length; i++) {
+      if (curve[i].playerLevel > dropLevel) {
+        // We've found the right place in the curve. This is the lowest index that's higher than the drop level.
+        playerLevelGap = curve[i].playerLevel - curve[i-1].playerLevel;
+        jump = (curve[i].itemLevel - curve[i-1].itemLevel) / playerLevelGap;
+        
+        return curve[i-1].itemLevel + jump * (dropLevel - curve[i-1].playerLevel);
+      }
+    }
+  }
+
+  return 0;
+}
+
 export function processItem(line, player, contentType, type) {
   // Split string.
   let infoArray = line.split(",");
@@ -252,10 +281,8 @@ export function processItem(line, player, contentType, type) {
     if (idPayload !== undefined) {
       if ("level" in idPayload) {
         itemLevel += idPayload["level"];
-        //console.log("Adding " + idPayload["level"]);
       } else if ("socket" in idPayload) {
         itemSocket = true;
-        //console.log("Socket found on item: " + itemID)
       } else if (bonus_id === "41") {
         itemTertiary = "Leech";
       } 
@@ -286,44 +313,7 @@ export function processItem(line, player, contentType, type) {
       }
       else if ("curveId" in idPayload) {
         let curve = idPayload["curveId"];
-        //console.log("CURVE: " + bonus_id);
-
-        if (bonus_id == 6706) itemLevel = 92 + (dropLevel - 50) * 6;
-        else if (bonus_id == 6707) itemLevel = 84 + (dropLevel - 50) * 6;
-        else if (bonus_id === 7883) itemLevel = 220; // Doomwalker Loot.
-        else if (bonus_id == 6908) {
-          // This curve is a little painful since the item level only increases every 3 levels and not by a set amount.
-          // We can probably make the code more efficient later but this is otherwise correct.
-          if (dropLevel >= 50 && dropLevel <= 52) itemLevel = 81;
-          else if (dropLevel >= 53 && dropLevel <= 55) itemLevel = 95;
-          else if (dropLevel >= 56 && dropLevel <= 58) itemLevel = 113;
-          else if (dropLevel >= 59) itemLevel = 131;
-        } else if (bonus_id == 6907) {
-          // This curve is a little painful since the item level only increases every 3 levels and not by a set amount.
-          // We can probably make the code more efficient later but this is otherwise correct.
-          if (dropLevel >= 50 && dropLevel <= 52) itemLevel = 80;
-          else if (dropLevel >= 53 && dropLevel <= 55) itemLevel = 93;
-          else if (dropLevel >= 56 && dropLevel <= 58) itemLevel = 111;
-          else if (dropLevel >= 59) itemLevel = 129;
-        } else if (bonus_id == 6771) itemLevel = 92 + (dropLevel - 50) * 6;
-        else if (bonus_id == 6893) {
-          itemLevel = 151;
-        } else if (bonus_id == 6891 || bonus_id == 6892) itemLevel = 165;
-        else if (bonus_id == 6890) itemLevel = 129;
-        else if (bonus_id == 7192) itemLevel = 138;
-        else if (bonus_id == 7191) itemLevel = 158;
-        else if (bonus_id == 7238) itemLevel = 164;
-        else if (bonus_id == 7185) itemLevel = 168;
-        else if (bonus_id == 7239) itemLevel = 181;
-        else if (bonus_id == 7464) itemLevel = 184; // Timewalking WoD
-        else if (bonus_id == 7240 || bonus_id == 7183) itemLevel = 200;
-        else if (bonus_id == 7915) itemLevel = 210; // Timewalking MoP
-        else if (bonus_id == 7241) itemLevel = 180;
-        else if (bonus_id == 7461) itemLevel = 230;
-        else if (bonus_id == 7881) itemLevel = 262;
-        else if (bonus_id == 7880) itemLevel = 233;
-        else if (bonus_id == 8774) itemLevel = 219 + (dropLevel - 58) * 10;
-        else if (bonus_id == 8775) itemLevel = 242;
+        itemLevel = processCurve(curve, dropLevel);
 
       } else if ("name_override" in idPayload) {
 
@@ -347,15 +337,7 @@ export function processItem(line, player, contentType, type) {
 
         //console.log("Legendary detected" + JSON.stringify(itemEffect));
       }
-      // This can be readded when we have better data on it. I'm not confident in target count or possible sqrt scaling.
-      /*if (bonus_id === 7888) {
-        // Cosmic Protoweave
-        itemEffect = {
-          type: "special",
-          name: "Magically Regulated Automa Core",
-          level: itemLevel,
-        };
-      } */
+
     }
     // Missives.
     // Missives are on every legendary, and are annoyingly also on some crafted items.
@@ -381,17 +363,12 @@ export function processItem(line, player, contentType, type) {
     
   }
   if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
-  if (levelOverride !== 0) itemLevel = Math.min(499, levelOverride);
+  if (levelOverride !== 0) itemLevel = Math.min(699, levelOverride);
 
   // Check Gems for Dom sockets
   if (gemID.length > 0) {
     gemID.forEach((gem) => {
-      const effect = checkIfDomGem(parseInt(gem));
       gemString += gem + ":"
-      if (effect) {
-        //itemEffect = effect;
-        domGemID = gem;
-      } 
     })
   }
 
@@ -408,7 +385,7 @@ export function processItem(line, player, contentType, type) {
     if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
 
     item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");
-    //item.domGemID = parseInt(domGemID);
+
     if (item.effect.type && item.effect.type === "spec legendary") item.uniqueEquip = "legendary";
     else if (item.effect.type && item.effect.type === "unity") {
       item.uniqueEquip = "unity";
@@ -424,13 +401,7 @@ export function processItem(line, player, contentType, type) {
   }
 }
 
-function checkIfDomGem(id) {
-  let temp = dominationGemDB.filter(function (gem) {
-    return gem.gemID === id;
-  });
-  if (temp.length > 0 && 'effect' in temp[0]) return temp[0].effect;
-  else return null
-}
+
 
 function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) {
   let allocation = 0;

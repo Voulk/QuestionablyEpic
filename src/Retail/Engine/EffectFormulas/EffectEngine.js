@@ -40,10 +40,6 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   // ----- Retail Effect -----
   // Can either be a Spec Legendary, Trinket, or a special item effect like those found back in Crucible of Storms or the legendary BFA cloak.
   if (gameType === "Retail") {
-    if (effectType === "unity") {
-      effectType = 'spec legendary'
-      effectName = getUnityEffect(player);
-    }
     if (effect.type === "special") {
       // A special effect is one that appears on an item slot where an effect isn't usually expected.
       // This includes stuff like Drape of Shame that adds a crit bonus to a cape slot.
