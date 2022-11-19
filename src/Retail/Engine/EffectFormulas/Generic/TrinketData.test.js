@@ -229,6 +229,20 @@ describe("Alacritous Alchemist Stone", () => {
     });
 }); 
 
+describe("Darkmoon Deck: Dance", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Darkmoon Deck: Dance");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${372}  | ${[10034, 4701]}
+
+    // add new test cases here
+    `.test("Darkmoon Deck: Dance Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect, level)).toBe(expectedResult);
+    });
+});
+
 
 /*
 describe("Iredus Fragment", () => {
@@ -266,18 +280,6 @@ describe("Erupting Spear Fragment", () => {
 
 
 
-describe("Darkmoon Deck: Dance", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Darkmoon Deck: Dance");
-    const effect = activeTrinket.effects[0];
-    each`
-    level   | expectedResult
-    ${372}  | ${[10034, 4701]}
 
-    // add new test cases here
-    `.test("Darkmoon Deck: Dance Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect, level)).toBe(expectedResult);
-    });
-});
 
 */

@@ -48,6 +48,31 @@ export const otherTrinketData = [
       return bonus_stats;
     }
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Darkmoon Deck: Dance                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* There might be some special deck modifiers that we have to add later.
+    */
+    name: "Darkmoon Deck: Dance",
+    effects: [
+      { 
+        coefficient: 20.32447,
+        table: -8,
+        efficiency: 0.6,
+        cooldown: 90
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      const averageHealTargets = 5; // ceil((5 + 12) / 2 / 2)
+      const averageDamageTargets = 4; // floor((5 + 12) / 2 / 2)
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * averageHealTargets / data[0].cooldown;
+      bonus_stats.dps = processedValue(data[0], itemLevel, data[0].efficiency) * averageDamageTargets / data[0].cooldown;
+      console.log("Ilvl: " + itemLevel + " " + processedValue(data[0], itemLevel, 1));
+      return bonus_stats;
+    }
+  },
 
 
 ]

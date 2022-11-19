@@ -103,10 +103,14 @@ export const raidTrinketData = [
 
       // Ally buff
       let sharedBuff = runGenericPPMTrinket(data[1], itemLevel);
-      bonus_stats.crit = sharedBuff;
-      bonus_stats.versatility = sharedBuff;
+
       // Check if buffs are active and if they are, add them to bonus stats.
-      //if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = versatilityBuff;
+      if (additionalData.settings.whisperingIncarnateIcon === "Earth") bonus_stats.versatility = sharedBuff;
+      else if (additionalData.settings.whisperingIncarnateIcon === "Frost") bonus_stats.crit = sharedBuff;
+      else if (additionalData.settings.whisperingIncarnateIcon === "Both")  {
+        bonus_stats.crit = sharedBuff;
+        bonus_stats.versatility = sharedBuff;
+      }     
 
       return bonus_stats;
     }
