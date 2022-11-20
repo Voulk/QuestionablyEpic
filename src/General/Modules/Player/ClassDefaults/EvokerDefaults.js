@@ -20,10 +20,10 @@ export const evokerDefaultSpellData = (contentType) => {
   
     statWeights.Raid = {
       intellect: 1,
-      haste: 0.59,
-      crit: 0.66,
-      mastery: 0.84,
-      versatility: 0.62,
+      haste: 0.32,
+      crit: 0.4,
+      mastery: 0.42,
+      versatility: 0.34,
       leech: 0.81,
       defaults: true,
     };
@@ -44,7 +44,7 @@ export const evokerDefaultSpellData = (contentType) => {
     let specialQueries = {};
     if (contentType === "Raid") {
       specialQueries = {
-        OneManaHealing: 14,
+        OneManaHealing: 11,
         CastsPerMinute: 22, // ONLY tracks spells with a mana cost.
         cooldownMult: {
           oneMinute: 1, 

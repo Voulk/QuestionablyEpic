@@ -17,7 +17,7 @@ import ls from "local-storage";
 const initialState = {
   gameType: ls.get("gameType") || "Retail",
   contentType: ls.get("contentType") || "Raid",
-  playerSettings: {"groupBenefits": true, "Sins": 4, "Hymnal": 5},
+  playerSettings: {"groupBenefits": true, "Sins": 4, "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
   patronStatus: "Standard" // Currently not used. Will be once we evolve app into a functional component.
 };
 if (initialState.gameType === "BurningCrusade") initialState.gameType = "Classic";

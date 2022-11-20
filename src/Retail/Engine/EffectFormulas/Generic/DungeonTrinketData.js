@@ -38,7 +38,7 @@ export const dungeonTrinketData = [
         secondaries: ['haste', 'crit', 'versatility'],
         ticks: 4, // Haste adds ticks / partial ticks. 
         cooldown: 120,
-        mult: 0.6, // Mult = 1 is the target being sub 20% health for it's duration. Mult = 0.5 would be a full health target.
+        mult: 0.7, // Mult = 1 is the target being sub 20% health for it's duration. Mult = 0.5 would be a full health target.
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -92,6 +92,7 @@ export const dungeonTrinketData = [
         table: -1,
         duration: 15,
         cooldown: 180,
+        efficiency: 0.4, // The rune is tiny.
       },
       { // -Crit Portion
         coefficient: 0.907077, 
@@ -103,8 +104,40 @@ export const dungeonTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
-      bonus_stats.crit = -1 * runGenericOnUseTrinket(data[1], itemLevel, additionalData.castModel);
+      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].efficiency;
+      bonus_stats.crit = -1 * runGenericOnUseTrinket(data[1], itemLevel, additionalData.castModel)* data[0].efficiency;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Time Breaching Talon                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // 
+    name: "Time-Breaching Talon",
+    effects: [
+      { // +Int Portion
+        coefficient: 3.477437, 
+        table: -7,
+        duration: 15,
+        cooldown: 150,
+        efficiency: 1,
+      },
+      { // -Int portion
+        coefficient: 1.391347, 
+        table: -7,
+        duration: 15,
+        cooldown: 150,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+
+      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].efficiency;
+
+      bonus_stats.intellect -= runGenericOnUseTrinket(data[1], itemLevel, additionalData.castModel);
 
       return bonus_stats;
     }
@@ -130,7 +163,6 @@ export const dungeonTrinketData = [
       let bonus_stats = {};
 
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].mult * data[0].efficiency, "round") * player.getStatMults(data[0].secondaries) / data[0].cooldown;
-
       return bonus_stats;
     }
   },
@@ -219,7 +251,7 @@ export const dungeonTrinketData = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
-    /*                                         Horn of Valor                                          */
+    /*                                 Voidmender's Shadowgem                                         */
     /* ---------------------------------------------------------------------------------------------- */
     /* 
     */
@@ -241,9 +273,67 @@ export const dungeonTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       const critPerStack = processedValue(data[1], itemLevel)
-      const effectiveCrit = processedValue(data[0], itemLevel) + critPerStack * (data[1].ppm * (data[0].duration / 60))
+      const effectiveCrit = processedValue(data[0], itemLevel) + critPerStack * (data[1].ppm * (data[0].duration / 60)-1)
 
       bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown; // TODO: Add CD Mult.
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Erupting Spear Fragment                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Erupting Spear Fragment",
+    effects: [
+      { 
+        coefficient: 0.540148,
+        table: -7,
+        stat: "crit",
+        duration: 10,
+        cooldown: 90,
+      },
+      { // This is the damage bonus effect. TODO.
+        coefficient: 0.240273,
+        table: -7,
+        ppm: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      const enemyTargets = 5;
+
+      bonus_stats.crit = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * enemyTargets;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Spoils of Neltharus                                          */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Spoils of Neltharus",
+    effects: [
+      { 
+        coefficient: 2.521002,
+        table: -7,
+        stat: "N/A",
+        duration: 20,
+        cooldown: 120,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      const averageStatGain = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel)
+      bonus_stats.haste = averageStatGain / 4;
+      bonus_stats.crit = averageStatGain / 4;
+      bonus_stats.mastery = averageStatGain / 4;
+      bonus_stats.versatility = averageStatGain / 4;
+
       return bonus_stats;
     }
   },
