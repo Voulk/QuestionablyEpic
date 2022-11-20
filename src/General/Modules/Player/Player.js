@@ -257,10 +257,10 @@ class Player {
     let statPerc = 1.0;
     switch (stat) {
       case "haste":
-        statPerc = 1 + this.activeStats.haste / 33 / 100;
+        statPerc = 1 + this.activeStats.haste / 170 / 100;
         break;
       case "crit":
-        statPerc = 1.05 + this.activeStats.crit / 35 / 100;
+        statPerc = 1.05 + this.activeStats.crit / 180 / 100;
         break;
       case "mastery":
         statPerc = 1; // TODO
@@ -281,7 +281,7 @@ class Player {
         }
         break;
       case "versatility":
-        statPerc = 1 + this.activeStats.versatility / 40 / 100;
+        statPerc = 1 + this.activeStats.versatility / 205 / 100;
         break;
       default:
         break;
@@ -640,10 +640,10 @@ class Player {
 
       this.activeStats = {
         intellect: 2500,
-        haste: 620,
-        crit: 860,
-        mastery: 120,
-        versatility: 510,
+        haste: 4000,
+        crit: 2450,
+        mastery: 1000,
+        versatility: 1020,
         stamina: 1900,
       };
       /*

@@ -69,7 +69,6 @@ export const otherTrinketData = [
       const averageDamageTargets = 4; // floor((5 + 12) / 2 / 2)
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * averageHealTargets / data[0].cooldown;
       bonus_stats.dps = processedValue(data[0], itemLevel, data[0].efficiency) * averageDamageTargets / data[0].cooldown;
-      console.log("Ilvl: " + itemLevel + " " + processedValue(data[0], itemLevel, 1));
       return bonus_stats;
     }
   },
