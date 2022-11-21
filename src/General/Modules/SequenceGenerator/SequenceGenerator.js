@@ -76,7 +76,7 @@ const getTalentDB = (spec) => {
 
 const getSpecSettings = (spec) => {
   if (spec === "Preservation Evoker") {
-    return {setting1:  {value: "defaultValue", options: ["defaultValue", "OtherValue"]},
+    return {twoPc:  {value: "Yes", options: ["Yes", "No"]},
             includeOverheal: {value: "Yes", options: ["Yes", "No"]}}
   }
   else if (spec === "Discipline Priest") {
@@ -143,7 +143,7 @@ export default function SequenceGenerator(props) {
   const stats = {
     intellect: 7500,
     haste: 2000,
-    crit: 3200,
+    crit: 6300,
     mastery: 2000,
     versatility: 1200,
     stamina: 8200,
@@ -162,7 +162,7 @@ export default function SequenceGenerator(props) {
   }
 
   const runIterations = (sequence, simFunc) => {
-    const iter = 20;
+    const iter = 100;
     const results = {totalHealing: 0, totalDamage: 0, manaSpent: 0, hpm: 0};
     let finalReport = [];
   

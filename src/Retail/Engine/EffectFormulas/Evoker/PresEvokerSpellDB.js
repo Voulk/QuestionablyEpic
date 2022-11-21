@@ -48,7 +48,7 @@ export const EVOKERSPELLDB = {
         type: "damage",
         school: "red",
         castTime: 2,
-        cost: 2.0,
+        cost: 0,//2.0,
         coeff: 1.61,
         secondaries: ['crit', 'vers']
     }],
@@ -171,9 +171,10 @@ export const EVOKERSPELLDB = {
         castTime: 0,
         coeff: 0.57 * 0.67,
         cost: 2.0,
+        statMods: {'crit': 0.15},
         buffDuration: 12,
         function: function (state, buff) {
-            const hotHeal = { type: "heal", coeff: buff.coeff, expectedOverheal: 0.2, secondaries: ['crit', 'vers', 'mastery']}
+            const hotHeal = { type: "heal", coeff: buff.coeff, expectedOverheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], statMods: buff.statMods}
 
             runHeal(state, hotHeal, buff.name)
             // Roll dice and extend. If RNG is turned off then we can instead calculate expected duration on buff application instead.
@@ -220,7 +221,7 @@ export const EVOKERSPELLDB = {
 
             if (state.talents.resonatingSphere) {
                 const buff = {name: "Echo", expiration: state.t  + 20, buffType: "special", 
-                    value: 0.45, stacks: 1, canStack: false, maxStacks: 1};
+                    value: 0.3 * (1 + state.talents.timeLord * 0.25), stacks: 1, canStack: false, maxStacks: 1};
                 
                 state.activeBuffs.push(buff); 
                 state.activeBuffs.push(buff);
@@ -365,7 +366,7 @@ export const evokerTalents = {
     tipTheScales: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 4}, // Your next empowered spell casts instantly. 2 min CD.
     attunedToTheDream: {points: 2, maxPoints: 2, icon: "ability_rogue_imrovedrecuperate", id: 376930, select: true, tier: 4}, // +2% healing (2 points).
     draconicLegacy: {points: 0, maxPoints: 2, icon: "inv_helm_mail_dracthyrquest_b_02", id: 376166, select: true, tier: 4}, // +2% stamina (2 points).
-    bountifulBloom: {points: 0, maxPoints: 1, icon: "ability_evoker_emeraldblossom", id: 370886, select: true, tier: 4}, // Emerald Blossom heals +2 targets.
+    bountifulBloom: {points: 1, maxPoints: 1, icon: "ability_evoker_emeraldblossom", id: 370886, select: true, tier: 4}, // Emerald Blossom heals +2 targets.
     protractedTalons: {points: 0, maxPoints: 1, icon: "ability_evoker_azurestrike", id: 369909, select: true, tier: 4}, // Azure Strike hits an additional target.
     lushGrowth: {points: 2, maxPoints: 2, icon: "inv_staff_2h_bloodelf_c_01", id: 375561, select: true, tier: 4}, // Green spells heal for 5% more (2 points).
 

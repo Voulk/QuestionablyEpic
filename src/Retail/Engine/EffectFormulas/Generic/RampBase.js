@@ -155,6 +155,10 @@ export const getHaste = (stats) => {
     return 1 + stats.haste / 170 / 100;
 }
 
+export const getCrit = (stats) => {
+    return 1 + stats.crit / 180 / 100;
+}
+
 export const addReport = (state, entry) => {
     if (state.settings.reporting) {
         state.report.push(Math.round(100*state.t)/100 + " " + entry);
