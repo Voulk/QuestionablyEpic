@@ -21,7 +21,7 @@ const EVOKERCONSTANTS = {
     defaultEmpower: 1,
     auraHealingBuff: 0.6, 
     auraDamageBuff: 1.15, 
-
+    goldenHourHealing: 18000,
     enemyTargets: 1, 
     echoExceptionSpells: ['Echo', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
 
@@ -181,7 +181,16 @@ const triggerCycleOfLife = (state, rawHealing) => {
         evokerSpells['Dream Breath'][1].coeff[EVOKERCONSTANTS.defaultEmpower] *= (1 + 0.15 * talents.renewingBreath);
         evokerSpells['Dream Breath'][2].coeff *= (1 + 0.15 * talents.renewingBreath);
     }
-    if (settings.twoPc) evokerSpells['Reversion']
+    //if (settings.twoPc) evokerSpells['Reversion']
+    if (talents.goldenHour) evokerSpells['Reversion'].push({
+        type: "heal",
+        name: "Golden Hour",
+        coeff: 0,
+        flatHeal: EVOKERCONSTANTS.goldenHourHealing,
+        targets: 1, // Can hit everyone. Likely to be retuned around sqrt scaling.
+        expectedOverheal: 0,
+        secondaries: []
+    })
     /*
     if (talents.renewingBreath) evokerSpells['Dream Breath'].push({
         type: "buff",

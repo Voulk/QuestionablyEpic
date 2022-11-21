@@ -18,6 +18,7 @@ import { PALADINSPELLDB, baseTalents as palaTalents } from "Retail/Engine/Effect
 import { DRUIDSPELLDB, baseTalents as druidTalents } from "Retail/Engine/EffectFormulas/Druid/RestoDruidSpellDB";
 import { MONKSPELLS } from "Retail/Engine/EffectFormulas/Monk/MistweaverSpellDB";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
+import { buildEvokerRamp } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
 
 import LooksOneIcon from "@mui/icons-material/LooksOne";
 import { SpellIcon } from "./SpellIcon";
@@ -246,7 +247,13 @@ export default function SequenceGenerator(props) {
   };
 
   const autoGen = () => {
-    updateSequence(buildRamp("Primary", 10, [], stats.haste, "", discTalents));
+
+    if (selectedSpec === "Discipline Priest") {
+      updateSequence(buildRamp("Primary", 10, [], stats.haste, "", discTalents));
+    }
+    else if (selectedSpec === "Preservation Evoker") {
+      updateSequence(buildEvokerRamp("Reversion", 0, [], stats.haste, "", evokerTalents));
+    }
   };
 
   //#region Drag and Drop Functions
