@@ -23,7 +23,7 @@ const EVOKERCONSTANTS = {
     auraDamageBuff: 1.15, 
 
     enemyTargets: 1, 
-    echoExceptionSpells: ['Echo', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D', "Temporal Anomaly"], // These are spells that do not consume or otherwise interact with our Echo buff.
+    echoExceptionSpells: ['Echo', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
 
     essenceBurstBuff: {
         name: "Essence Burst",
@@ -38,10 +38,10 @@ const EVOKERCONSTANTS = {
         name: "Exhilarating Burst",
         type: "buff",
         stacks: false,
-        buffDuration: 8,
+        buffDuration: 10,
         buffType: 'stats',
         stat: 'critMult',
-        value: 0.1
+        value: 0.15
     },
     renewingBreathBuff: {
         type: "buff",
