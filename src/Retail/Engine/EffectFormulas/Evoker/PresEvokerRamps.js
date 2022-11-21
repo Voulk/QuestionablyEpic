@@ -16,14 +16,14 @@ const EVOKERCONSTANTS = {
     
     masteryMod: 1.8, 
     masteryEfficiency: 0.88, 
-    baseMana: 10000,
+    baseMana: 250000,
 
     defaultEmpower: 1,
     auraHealingBuff: 0.6, 
     auraDamageBuff: 1.15, 
 
     enemyTargets: 1, 
-    echoExceptionSpells: ['Echo', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D'], // These are spells that do not consume or otherwise interact with our Echo buff.
+    echoExceptionSpells: ['Echo', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D', "Temporal Anomaly"], // These are spells that do not consume or otherwise interact with our Echo buff.
 
     essenceBurstBuff: {
         name: "Essence Burst",
@@ -171,8 +171,11 @@ const triggerCycleOfLife = (state, rawHealing) => {
     }
 
     // Evoker Spec Talents
-    
-    //if (talents.renewingBreath) EVOKERCONSTANTS.renewingBreathBuff.mult = (0.15 * talents.renewingBreath);
+    if (talents.renewingBreath) {
+        evokerSpells['Dream Breath'][0].coeff *= (1 + 0.15 * talents.renewingBreath);
+        evokerSpells['Dream Breath'][1].coeff[EVOKERCONSTANTS.defaultEmpower] *= (1 + 0.15 * talents.renewingBreath);
+        evokerSpells['Dream Breath'][2].coeff *= (1 + 0.15 * talents.renewingBreath);
+    }
     /*
     if (talents.renewingBreath) evokerSpells['Dream Breath'].push({
         type: "buff",
@@ -212,6 +215,19 @@ const triggerCycleOfLife = (state, rawHealing) => {
         buffDuration: 999,
         buffType: 'special',
     })
+    if (talents.resonatingSphere) /*evokerSpells['Temporal Anomaly'].push({
+
+        // Lasts 8s and heals every 1s within range but it. Puts absorbs on allies. 
+        // Stacks to 3, however the cap is based on how much 3 stacks would absorb pre-mastery.
+        type: "buff",
+        buffType: "special",
+        school: "bronze",
+        name: "Echo",
+        buffDuration: 6,
+        tickRate: 2,
+        value: 0.3 * (1 + talents.timeLord * 0.25),
+        targets: 2, 
+    })*/
     /* TALENT REMOVED
     if (talents.groveTender) {
         evokerSpells['Dream Breath'][0].cost *= 0.9;
@@ -509,7 +525,8 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                     newBuff.attFunction = spell.function;
 
                     if (spellName.includes("Reversion")) newBuff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - 0.25))); // TODO; Replace 0.25 with crit.
-
+                    else newBuff.expiration = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
+                    
                     state.activeBuffs.push(newBuff);
 
                 }
@@ -776,11 +793,22 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                 // We have at least one Echo.
 
                 // Check Echo number.
-                const echoNum = state.activeBuffs.filter(function (buff) {return buff.name === "Echo"}).length;
-                for (let j = 0; j < echoNum; j++) {
-                    // Cast the Echo'd version of our spell j times.
+                const echoBuffs = state.activeBuffs.filter(function (buff) {return buff.name === "Echo"});
+
+                // Our Echo buffs can be of different strengths (say, one comes from TA and one from a hard casted Echo).
+                // Because of this we'll iterate through our buffs 1 by 1 so we can use the correct Echo value.
+                for (let j = 0; j < echoBuffs.length; j++) {
                     
-                    const echoSpell = evokerSpells[spellName + "(Echo)"]
+                    const echoBuff = echoBuffs[j];
+                    
+                    const echoSpell = JSON.parse(JSON.stringify(evokerSpells[spellName + "(Echo)"]));
+
+                    echoSpell.forEach(effect => {
+                        if ('coeff' in effect) effect.coeff = effect.coeff * echoBuff.value;
+                    })
+
+                    // Unfortunately functions are not copied over when we do our deep clone, so we'll have to manually copy them over.
+                    if (spellName === "Reversion") echoSpell[0].function = evokerSpells["Reversion"][0].function;
                     runSpell(echoSpell, state, spellName + "(Echo)", evokerSpells)
   
                 }

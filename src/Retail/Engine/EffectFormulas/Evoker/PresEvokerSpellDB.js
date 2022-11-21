@@ -1,5 +1,7 @@
 
 import { runHeal, getHaste, runDamage } from "./PresEvokerRamps";
+import { addReport } from "../Generic/RampBase";
+
 
 // This is the Evoker spell database. 
 // It contains information on every spell used in a sequence. Each spell is an array which means you can include multiple effects to code spells like Echo that are both a heal,
@@ -87,7 +89,7 @@ export const EVOKERSPELLDB = {
         cost: 4.5,
         coeff: 0.768,
         cooldown: 30,
-        expectedOverheal: 0.25, // 0.25
+        expectedOverheal: 0.3, // 0.25
         targets: 5, // 
         secondaries: ['crit', 'vers', 'mastery']
     },
@@ -96,7 +98,7 @@ export const EVOKERSPELLDB = {
         // This makes it a bit unique since it's a direct heal that scales with Haste.
         type: "heal",
         coeff: [0, 0.768, 1.536, 2.304],
-        expectedOverheal: 0.25, // 0.25
+        expectedOverheal: 0.3, // 0.25
         targets: 5, // 
         secondaries: ['haste', 'crit', 'vers', 'mastery']
     },
@@ -109,7 +111,7 @@ export const EVOKERSPELLDB = {
         tickRate: 2,
         coeff: 0.384, 
         targets: 5, 
-        expectedOverheal: 0.4,
+        expectedOverheal: 0.2,
         secondaries: ['crit', 'vers', 'mastery'] // Note that Haste for HoTs is included via reduced tick rate so doesn't need to be explicitly included.
     }],
     "Emerald Blossom": [{
@@ -180,7 +182,7 @@ export const EVOKERSPELLDB = {
         }
 
     }],
-    "Temporal Anomaly": [{
+    "Temporal Anomaly": [/*{
         // Lasts 8s and heals every 1s within range but it. Puts absorbs on allies. 
         // Stacks to 3, however the cap is based on how much 3 stacks would absorb pre-mastery.
         spellData: {id: 373861, icon: "ability_evoker_temporalanomaly", cat: "heal"},
@@ -197,7 +199,39 @@ export const EVOKERSPELLDB = {
         targets: 2, 
         expectedOverheal: 0.4, // Note that while this is called ExpectedOverhealing it's really just an efficiency value.
         secondaries: ['vers', 'mastery']
-    }],
+    }, */
+    { // I should turn these hasteDuration flags into a proper "flags" subobject.
+        spellData: {id: 373861, icon: "ability_evoker_temporalanomaly", cat: "heal"},
+        name: "Temporal Anomaly",
+        type: "buff",
+        buffType: "function",
+        school: "bronze",
+        tickRate: 2,
+        castTime: 1.5,
+        coeff: 1.75,
+        cost: 7.5,
+        targets: 2,
+        hastedDuration: true,
+        buffDuration: 6,
+        function: function (state, buff) {
+            const absorb = { type: "heal", coeff: buff.coeff, expectedOverheal: 0, secondaries: ['vers', 'mastery'], targets: 2}
+            
+            runHeal(state, absorb, buff.name)
+
+            if (state.talents.resonatingSphere) {
+                const buff = {name: "Echo", expiration: state.t  + 20, buffType: "special", 
+                    value: 0.45, stacks: 1, canStack: false, maxStacks: 1};
+                
+                state.activeBuffs.push(buff); 
+                state.activeBuffs.push(buff);
+                addReport(state, `Adding Buff: Echo (Temporal Anomaly x2)`)
+            }
+
+        }
+
+    },
+
+],
     "Blessing of the Bronze": [{
         // Blessing of the Bronze is a short CD buff spell that buffs the raid. It can also be used as a generic Bronze spell for Temporal Compression.
         spellData: {id: 364342, icon: "ability_evoker_blessingofthebronze", cat: "cooldown"},
