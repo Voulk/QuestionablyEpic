@@ -24,7 +24,25 @@ const EVOKERCONSTANTS = {
     goldenHourHealing: 18000,
     enemyTargets: 1, 
     echoExceptionSpells: ['Echo', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
+    essenceBuff: {
+        name: "EssenceGen",
+        expiration: 5,
+        buffDuration: 5,
+        buffType: 'function',
+        stacks: false,
+        tickRate: 5,
+        hastedDuration: true,
+        function: function (state, buff) {
+            
+            state.essence += 1;
 
+            if (state.essence < 6) {
+                const essenceGenBuff = state.activeBuffs.filter(buff => buff.name === "EssenceGen")[0];
+                essenceGenBuff.expiration = state.t + 5 / getHaste(state.currentStats) + 0.1;
+
+            }
+        }
+    },
     essenceBurstBuff: {
         name: "Essence Burst",
         type: "buff",
@@ -170,6 +188,14 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
     // Evoker Class Talents
     if (talents.bountifulBloom) evokerSpells['Emerald Blossom'][0].targets += 2;
+    if (talents.panacea) evokerSpells['Emerald Blossom'].push({
+        type: "heal",
+        school: "green",
+        coeff: 2.5,
+        targets: 1,
+        expectedOverheal: 0.3,
+        secondaries: ['crit', 'vers']
+    })
     if (talents.enkindled) {
         evokerSpells['Living Flame'][0].coeff *= (1 + 0.03 * talents.enkindled);
         evokerSpells['Living Flame D'][0].coeff *= (1 + 0.03 * talents.enkindled);
@@ -212,7 +238,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
         type: "heal",
         school: "green",
         coeff: (0.3 * talents.flutteringSeedlings),
-        targets: 3, // 
+        targets: 2, // 
         expectedOverheal: 0.25,
         secondaries: ['crit', 'vers', 'mastery']
     });
@@ -295,7 +321,6 @@ const triggerCycleOfLife = (state, rawHealing) => {
                 //console.log(typeof spell.coeff)
                 
             }) 
-            console.log(fullSpell);
         }
 
         if ('school' in spellInfo && spellInfo.school === "bronze" && talents.temporalCompression) {
@@ -431,13 +456,14 @@ const canCastSpell = (state, spellDB, spellName) => {
     
     const spell = spellDB[spellName][0];
     let miscReq = true;
-    const holyPowReq = (spell.holyPower + state.holyPower > 0 ) || !spell.holyPower;
+    const essenceReq = (state.essence >= spell.essence ) || !spell.essence;
     const cooldownReq = (state.t > spell.activeCooldown) || !spell.cooldown;
+    
     if (spellName === "Hammer of Wrath") {
         if (!checkBuffActive(state.activeBuffs, "Avenging Wrath")) miscReq = false;
     } 
 
-    return cooldownReq && holyPowReq && miscReq;
+    return cooldownReq && essenceReq && miscReq;
 }
 
 const getSpellHPM = (state, spellDB, spellName) => {
@@ -480,7 +506,7 @@ export const genSpell = (state, spells) => {
 }
 
 
-const apl = ["Riptide", "Rest"]
+const apl = ["Emerald Blossom", "Verdant Embrace", "Living Flame D", "Rest"]
 
 const runSpell = (fullSpell, state, spellName, evokerSpells) => {
 
@@ -603,14 +629,30 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
     }); 
 }
 
-const getSpellCost = (spell, state) => {
-    if ('essence' in spell[0] && checkBuffActive(state.activeBuffs, "Essence Burst")) {
-        removeBuffStack(state.activeBuffs, "Essence Burst");
-        addReport(state, `Essence Burst consumed!`);
-        return 0;
-    }
-    else if ('cost' in spell[0]) return spell[0].cost;
-    else return 0;    
+const spendSpellCost = (spell, state) => {
+    if ('essence' in spell[0]) {
+        if (checkBuffActive(state.activeBuffs, "Essence Burst")) {
+            removeBuffStack(state.activeBuffs, "Essence Burst");
+            addReport(state, `Essence Burst consumed!`);
+            state.manaSpent += 0;
+        }
+        else {
+            // Essence buff is not active. Spend Essence and mana.
+            state.manaSpent += spell[0].cost;
+            state.essence -= spell[0].essence;
+
+            // Check if we need to begin Essence Recharge. We don't actually need to check if we're below
+            // 6 Essence, since we'll never be able to cast a spell that costs Essence if we're at 6.
+            if (checkBuffActive(state.activeBuffs, "EssenceGen") === false) {
+                addBuff(state, EVOKERCONSTANTS.essenceBuff, "EssenceGen");
+            }
+        }
+    } 
+        
+    else if ('cost' in spell[0]) state.manaSpent += spell[0].cost;
+    else {
+        // No cost. Do nothing.
+    };    
 }
 
 const getSpellCastTime = (spell, state, currentStats) => {
@@ -658,12 +700,13 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
         talents[key] = value.points;
     }
 
-    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, essences: 5};
+    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, essence: 5};
+
+    let currentStats = {...stats};
+    state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
 
 
-
-
-    const sequenceLength = 180; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Manual" // Auto / Manual.
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0; // The time when the next spell cast can begin.
@@ -674,7 +717,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     // Ideally we'll cover as much as we can in here.
 
     const evokerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats);
-    
+
     // Create Echo clones.
     for (const [spellName, spellData] of Object.entries(evokerSpells)) {
         
@@ -736,6 +779,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                     const func = buff.attFunction;
                     const spell = buff.attSpell;
                     func(state, spell);
+
                 } 
                 if (buff.hasted || buff.hasted === undefined) buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
                 else buff.next = buff.next + (buff.tickRate);
@@ -783,17 +827,15 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             let currentStats = {...stats};
             state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
 
-            if (seqType === "Manual") queuedSpell = seq.shift();
+            if (seqType === "Auto") queuedSpell = seq.shift();
             else queuedSpell = genSpell(state, evokerSpells);
     
             const fullSpell = evokerSpells[queuedSpell];
             const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
             spellFinish = state.t + castTime - 0.01;
-            if (fullSpell[0].castTime === 0) nextSpell += state.t + 1.5 / getHaste(currentStats);
+            if (fullSpell[0].castTime === 0) nextSpell = state.t + 1.5 / getHaste(currentStats);
             else nextSpell = state.t + castTime;
 
-            console.log("Queing " + queuedSpell + ". Next: " + nextSpell + ".Curr: " + state.t + ". Cast Time: " + castTime + " Spell Finish: " + spellFinish);
-            
 
         }
         if (queuedSpell !== "" && state.t >= spellFinish) {
@@ -809,7 +851,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             const spellName = queuedSpell;
             const fullSpell = evokerSpells[queuedSpell];
 
-            state.manaSpent += getSpellCost(fullSpell, state);
+            spendSpellCost(fullSpell, state);
 
             runSpell(fullSpell, state, spellName, evokerSpells);
 

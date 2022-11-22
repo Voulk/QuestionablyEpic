@@ -29,6 +29,11 @@ import { addReport } from "../Generic/RampBase";
 // For spells with aura effects, include it in the coefficient itself. Aura effects that buff the entire spec are handled in EVOKERCONST.
 export const EVOKERSPELLDB = {
     // Essence recharge rate: 3s?
+    "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
+        type: "",
+        castTime: 1.5,
+        cost: 0,
+    }],
 
     // Living Flame
     "Living Flame": [{ 
@@ -61,6 +66,7 @@ export const EVOKERSPELLDB = {
         onGCD: true,
         cost: 3.0,
         coeff: 4.3,
+        cooldown: 18,
         expectedOverheal: 0.15,
         secondaries: ['crit', 'vers', 'mastery']
     }],
@@ -138,7 +144,7 @@ export const EVOKERSPELLDB = {
         // To confirm:
         // - Stasis Interaction
         type: "heal",
-        castTime: 3.25,
+        castTime: 0,
         school: "bronze",
         targets: 1,
         essence: 2,
@@ -258,6 +264,7 @@ export const EVOKERSPELLDB = {
     },
     {
         type: "buff",
+        buffName: "Dream Flight",
         buffType: "heal",
         tickRate: 3,
         targets: 10,
@@ -367,6 +374,7 @@ export const evokerTalents = {
     attunedToTheDream: {points: 2, maxPoints: 2, icon: "ability_rogue_imrovedrecuperate", id: 376930, select: true, tier: 4}, // +2% healing (2 points).
     draconicLegacy: {points: 0, maxPoints: 2, icon: "inv_helm_mail_dracthyrquest_b_02", id: 376166, select: true, tier: 4}, // +2% stamina (2 points).
     bountifulBloom: {points: 1, maxPoints: 1, icon: "ability_evoker_emeraldblossom", id: 370886, select: true, tier: 4}, // Emerald Blossom heals +2 targets.
+    panacea: {points: 1, maxPoints: 1, icon: "ability_druid_protectionofthegrove", id: 387761, select: true, tier: 4}, // Emerald Blossom heals +2 targets.
     protractedTalons: {points: 0, maxPoints: 1, icon: "ability_evoker_azurestrike", id: 369909, select: true, tier: 4}, // Azure Strike hits an additional target.
     lushGrowth: {points: 2, maxPoints: 2, icon: "inv_staff_2h_bloodelf_c_01", id: 375561, select: true, tier: 4}, // Green spells heal for 5% more (2 points).
 
