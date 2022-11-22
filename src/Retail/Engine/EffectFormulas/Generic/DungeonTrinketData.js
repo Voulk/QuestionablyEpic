@@ -214,15 +214,16 @@ export const dungeonTrinketData = [
       { 
         coefficient: 180.9063, // Note that this coefficient is for when the target is below 20% health.
         table: -8,
-        secondaries: ['versatility'],
+        secondaries: ['versatility', 'crit'],
         cooldown: 90,
-        efficiency: 0.78, //
+        efficiency: 0.95, //
+        targets: 5,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) / data[0].cooldown;
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].targets * player.getStatMults(data[0].secondaries) / data[0].cooldown;
 
       return bonus_stats;
     }
@@ -262,7 +263,7 @@ export const dungeonTrinketData = [
         table: -7,
         stat: "crit",
         duration: 15,
-        cooldown: 90,
+        cooldown: 120,
       },
       { // This is the crit bonus effect. It's on a 20ppm.
         coefficient: 0.240273,
@@ -273,7 +274,7 @@ export const dungeonTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       const critPerStack = processedValue(data[1], itemLevel)
-      const effectiveCrit = processedValue(data[0], itemLevel) + critPerStack * (data[1].ppm * (data[0].duration / 60)-1)
+      const effectiveCrit = processedValue(data[0], itemLevel) + critPerStack * (data[1].ppm * (data[0].duration / 60)/2)
 
       bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown; // TODO: Add CD Mult.
 
