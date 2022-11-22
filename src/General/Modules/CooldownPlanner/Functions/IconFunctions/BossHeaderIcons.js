@@ -119,6 +119,39 @@ export default function bossHeaders(props, style, QEmodule) {
     if (props === 2464) {
       source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-Jailer.png").default;
     }
+
+    // Eranog
+    if (props === 2480) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-Eranog.png").default;
+    }
+    // Terros
+    if (props === 2500) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-Terros.png").default;
+    }
+    // The Primalist Council
+    if (props === 2486) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-ThePrimalCouncil.png").default;
+    }
+    // Sennarth, The Cold Breath
+    if (props === 2482) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-SennarthTheColdBreath.png").default;
+    }
+    // Dathea, Ascended
+    if (props === 2502) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-DatheaAscended.png").default;
+    }
+    // Kurog Grimtotem
+    if (props === 2491) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-KurogGrimtotem.png").default;
+    }
+    // Broodkeeper Diurna
+    if (props === 2493) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-BroodkeeperDiurna.png").default;
+    }
+    // Raszageth the Storm-Eater
+    if (props === 2499) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-RaszagethTheStorm-Eater.png").default;
+    }
   } else {
     // World Bosses
     // Valinor
@@ -437,21 +470,6 @@ export default function bossHeaders(props, style, QEmodule) {
 
   if (props === 999 || props === 998) {
     source = require("Images/Classic/Raid/JournalImages/BOE.png").default;
-  }
-
-  // The Jailer, Zovaal
-  if (props === 2537) {
-    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-Jailer.png").default;
-  }
-
-  // The Jailer, Zovaal
-  if (props === 2537) {
-    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-Jailer.png").default;
-  }
-
-  // The Jailer, Zovaal
-  if (props === 2537) {
-    source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-Jailer.png").default;
   }
 
   // Eranog

@@ -38,6 +38,15 @@ import MechagonUpper from "../../../../../Images/MythicPlus/MechagonUpper.png";
 import Grimrail from "../../../../../Images/MythicPlus/Grimrail.png";
 import IronDocks from "../../../../../Images/MythicPlus/IronDocks.png";
 
+import UldamanLegacyofTyr from "../../../../../Images/MythicPlus/UldamanLegacyofTyr.png";
+import TheNokhudOffensive from "../../../../../Images/MythicPlus/TheNokhudOffensive.png";
+import TheAzureVault from "../../../../../Images/MythicPlus/TheAzureVault.png";
+import TheAcademy from "../../../../../Images/MythicPlus/TheAcademy.png";
+import RubyLifePools from "../../../../../Images/MythicPlus/RubyLifePools.png";
+import Neltharus from "../../../../../Images/MythicPlus/Neltharus.png";
+import HallsofInfusion from "../../../../../Images/MythicPlus/HallsofInfusion.png";
+import BrackenhideHollow from "../../../../../Images/MythicPlus/BrackenhideHollow.png";
+
 export default function DungeonHeaderIcons(props) {
   let source = "";
 
@@ -109,6 +118,42 @@ export default function DungeonHeaderIcons(props) {
   /* ----------------------------------------- Iron Docks ----------------------------------------- */
   if (props === 558) {
     source = IronDocks;
+  }
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                          DragonFlight                                          */
+  /* ---------------------------------------------------------------------------------------------- */
+  if (props === 1197) {
+    // Uldaman: Legacy of Tyr
+    source = UldamanLegacyofTyr;
+  }
+  if (props === 1201) {
+    // Taz'algeth Academy
+    source = TheAcademy;
+  }
+  if (props === 1202) {
+    // Ruby Life Pools
+    source = RubyLifePools;
+  }
+  if (props === 1204) {
+    // Halls of Infusion
+    source = HallsofInfusion;
+  }
+  if (props === 1203) {
+    // The Azure Vault
+    source = TheAzureVault;
+  }
+  if (props === 1199) {
+    // Neltharus
+    source = Neltharus;
+  }
+  if (props === 1198) {
+    // The Nokhud Offensive
+    source = TheNokhudOffensive;
+  }
+  if (props === 1196) {
+    // Brackenhide Hollow
+    source = BrackenhideHollow;
   }
 
   /* ---------------------------------------------------------------------------------------------- */

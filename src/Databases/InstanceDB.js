@@ -1321,7 +1321,7 @@ export const encounterDB = {
     },
   },
   /* ------------------------------------------ Dungeons ------------------------------------------ */
-  "-1": {
+  "-10000": {
     bossOrder: [
       // 1182, // "Necrotic Wake"
       // 1183, // "Plaguefall"
@@ -1724,6 +1724,15 @@ export const encounterDB = {
           ch: "莱萨杰丝，噬雷之龙",
         },
       },
+      999: {
+        name: {
+          en: "BoE Trash Drops",
+          fr: "BoE Trash Drops",
+          de: "BoE Trash Drops",
+          ru: "BoE Trash Drops",
+          ch: "BoE Trash Drops",
+        },
+      },
     },
   },
 
@@ -1731,7 +1740,7 @@ export const encounterDB = {
   /*                                            Dungeons                                            */
   /* ---------------------------------------------------------------------------------------------- */
   // temp key until DF
-  "-1000": {
+  "-1": {
     bossOrder: [
       1197, // Uldaman: Legacy of Tyr
       1201, // Taz'algeth Academy
