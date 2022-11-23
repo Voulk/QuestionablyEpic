@@ -133,7 +133,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   nathriaHeader: {
-    backgroundImage: `url(${require("../../../../Images/Bosses/CastleNathria/loadingScreenArt.png").default})`,
+    backgroundImage: `url(${require("../../../../Images/Bosses/VaultOfTheIncarnates/VaultOfTheIncarnatesLong.png").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",

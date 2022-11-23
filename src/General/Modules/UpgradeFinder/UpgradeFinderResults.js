@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     borderRight: `1px solid ${theme.palette.divider}`,
   },
   raidHeaderStyle: {
-    backgroundImage: `url(${require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesHeader.png").default})`,
+    backgroundImage: `url(${require("Images/Bosses/VaultOfTheIncarnates/VaultOfTheIncarnates.png").default})`,
     borderRadius: "4px 0px 0px 4px",
     // whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
@@ -245,24 +245,15 @@ export default function UpgradeFinderResults(props) {
                 TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
               >
                 {/* Raid */}
-                <Tab className={classes.raidHeaderStyle} label={t("Raids")} {...a11yProps(0)} />
+                <Tab className={classes.raidHeaderStyle} label={t("Raid")} {...a11yProps(0)} />
                 {/* Mythic Plus */}
-                <Tab className={classes.mythicPlusHeaderStyle} label={t("UpgradeFinder.MythicPlus")} {...a11yProps(1)} />
-                {/* Legion Timewalking */}
-                <Tab
-                  className={classes.LegionTimewalkingStyle}
-                  label={
-                    //t("UpgradeFinder.LegionTimewalking")
-                    "Legion"
-                  }
-                  {...a11yProps(2)}
-                />
+                <Tab className={classes.mythicPlusHeaderStyle} label={t("Dungeon")} {...a11yProps(1)} />
                 {/* PVP */}
-                <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(3)} />
+                <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(2)} />
                 {/* World Bosses */}
-                <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(4)} />
+                <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(3)} />
                 {/* Slots */}
-                <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(5)} />
+                <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(4)} />
               </Tabs>
             </AppBar>
           </Grid>
@@ -295,26 +286,9 @@ export default function UpgradeFinderResults(props) {
             </TabPanel>
           </Grid>
 
-          {/* Legion Timewalking */}
-          <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={2}>
-              <div className={classes.panel}>
-                <Grid container>
-                  <LegionTimewalking
-                    setDungeonDifficulty={props.setDungeonDifficulty}
-                    player={props.player}
-                    itemList={itemList}
-                    itemDifferentials={itemDifferentials}
-                    playerSettings={props.playerSettings}
-                  />
-                </Grid>
-              </div>
-            </TabPanel>
-          </Grid>
-
           {/* PVP */}
           <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={3}>
+            <TabPanel value={tabvalue} index={2}>
               <div className={classes.panel}>
                 <Grid container>
                   <PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
@@ -325,7 +299,7 @@ export default function UpgradeFinderResults(props) {
 
           {/* World Bosses */}
           <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={4}>
+            <TabPanel value={tabvalue} index={3}>
               <div className={classes.panel}>
                 <Grid container>
                   <WorldBossGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
@@ -336,7 +310,7 @@ export default function UpgradeFinderResults(props) {
 
           {/* Slots */}
           <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={5}>
+            <TabPanel value={tabvalue} index={4}>
               <div className={classes.panel}>
                 <Grid container>
                   <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />

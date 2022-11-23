@@ -47,6 +47,11 @@ import Neltharus from "../../../../../Images/MythicPlus/Neltharus.png";
 import HallsofInfusion from "../../../../../Images/MythicPlus/HallsofInfusion.png";
 import BrackenhideHollow from "../../../../../Images/MythicPlus/BrackenhideHollow.png";
 
+import HallsofValor from "../../../../../Images/MythicPlus/HallsOfValor.png";
+import CourtofStars from "../../../../../Images/MythicPlus/CourtofStars.png";
+import ShadowmoonBurialGrounds from "../../../../../Images/MythicPlus/ShadowmoonBurialGrounds.png";
+import TempleoftheJadeSerpent from "../../../../../Images/MythicPlus/TempleoftheJadeSerpent.png";
+
 export default function DungeonHeaderIcons(props) {
   let source = "";
 
@@ -154,6 +159,23 @@ export default function DungeonHeaderIcons(props) {
   if (props === 1196) {
     // Brackenhide Hollow
     source = BrackenhideHollow;
+  }
+
+  if (props === 313) {
+    // Temple of the Jade Serpent
+    source = TempleoftheJadeSerpent;
+  }
+  if (props === 537) {
+    // Shadowmoon Burial Grounds
+    source = ShadowmoonBurialGrounds;
+  }
+  if (props === 721) {
+    // Halls of Valor
+    source = HallsofValor;
+  }
+  if (props === 800) {
+    // Court of Stars
+    source = CourtofStars;
   }
 
   /* ---------------------------------------------------------------------------------------------- */

@@ -1030,59 +1030,41 @@ export const encounterDB = {
 
   /* ---------------------------------------- World Bosses ---------------------------------------- */
   1192: {
-    bossOrder: [2468, 2456, 2430, 2431, 2432, 2433],
-    2468: {
+    bossOrder: [2640, 2651, 2652, 2653],
+    2651: {
       name: {
-        en: "Antros",
-        fr: "Antros",
-        de: "Antros",
-        ru: "Антрос",
-        ch: "安特洛斯",
+        en: "Strunraan, The Sky's Misery",
+        fr: "Strunraan, le Malheur du ciel",
+        de: "Strunraan, Elend des Himmels",
+        ru: "Струнраан Бедствие Небес",
+        ch: "斯图恩兰，苍天苦难",
       },
     },
-    2456: {
+    2640: {
       name: {
-        en: "Mor'geth",
-        fr: "Mor'geth",
-        de: "Mor'geth",
-        ru: "Мор'гет",
-        ch: "Mor'geth",
+        en: "Basrikron, The Shale Wing",
+        fr: "Basrikron, l’Aile de schiste",
+        de: "Basrikron, der Schieferflügel",
+        ru: "Базрикрон Каменное Крыло",
+        ch: "巴斯律孔，页岩之翼",
       },
     },
-    2430: {
+    2653: {
       name: {
-        en: "Valinor",
-        fr: "Valinor",
-        de: "Valinor",
-        ru: "Валинор",
-        ch: "Valinor",
+        en: "Bazual, The Dreaded Flame",
+        fr: "Bazual, la Flamme redoutée",
+        de: "Bazual, die gefürchtete Flamme",
+        ru: "Базуал Чудовищное Пламя",
+        ch: "巴祖阿尔，惊恐烈焰",
       },
     },
-    2431: {
+    2652: {
       name: {
-        en: "Mortanis",
-        fr: "Mortanis",
-        de: "Mortanis",
-        ru: "Мортанис",
-        ch: "Mortanis",
-      },
-    },
-    2432: {
-      name: {
-        en: "Oranomonos",
-        fr: "Oranomonos",
-        de: "Oranomonos",
-        ru: "Ораномонос",
-        ch: "长青之枝",
-      },
-    },
-    2433: {
-      name: {
-        en: "Nurgash",
-        fr: "Nurgash",
-        de: "Nurgash",
-        ru: "Нургаш",
-        ch: "诺尔伽什",
+        en: "Liskanoth, The Futurebane",
+        fr: "Liskanoth, Fléau du futur",
+        de: "Liskanoth, Schrecken der Zukunft",
+        ru: "Лисканот Крах Мироздания",
+        ch: "利斯卡诺兹，未来灾劫",
       },
     },
   },
@@ -1628,7 +1610,7 @@ export const encounterDB = {
     800: {
       name: {
         en: "Court of Stars",
-        fr: "our des Étoiles",
+        fr: "Cour des Étoiles",
         de: "Der Hof der Sterne",
         ru: "Квартал Звезд",
         ch: "群星庭院",
@@ -1742,15 +1724,66 @@ export const encounterDB = {
   // temp key until DF
   "-1": {
     bossOrder: [
+      1196, // Brackenhide Hollow
       1197, // Uldaman: Legacy of Tyr
+      1198, // The Nokhud Offensive
+      1199, // Neltharus
       1201, // Taz'algeth Academy
       1202, // Ruby Life Pools
       1204, // Halls of Infusion
       1203, // The Azure Vault
-      1199, // Neltharus
-      1198, // The Nokhud Offensive
-      1196, // Brackenhide Hollow
     ],
+    bossOrderMythicPlus: [
+      313, // Temple of the Jade Serpent
+      537, // Shadowmoon Burial Grounds
+      721, // Halls of Valor
+      800, // Court of Stars
+      // 1196, // Brackenhide Hollow
+      // 1197, // Uldaman: Legacy of Tyr
+      1198, // The Nokhud Offensive
+      // 1199, // Neltharus
+      1201, // Taz'algeth Academy
+      1202, // Ruby Life Pools
+      1203, // The Azure Vault
+      // 1204, // Halls of Infusion
+    ],
+
+    313: {
+      name: {
+        en: "Temple of the Jade Serpent",
+        fr: "Temple du Serpent de jade",
+        de: "Tempel der Jadeschlange",
+        ru: "Храм Нефритовой Змеи",
+        ch: "青龙寺",
+      },
+    },
+    537: {
+      name: {
+        en: "Shadowmoon Burial Grounds",
+        fr: "Terres sacrées d’Ombrelune",
+        de: "Schattenmondgrabstätte",
+        ru: "Некрополь Призрачной Луны",
+        ch: "影月墓地",
+      },
+    },
+    800: {
+      name: {
+        en: "Court of Stars",
+        fr: "Cour des Étoiles",
+        de: "Der Hof der Sterne",
+        ru: "Квартал Звезд",
+        ch: "群星庭院",
+      },
+    },
+    721: {
+      name: {
+        en: "Halls of Valor",
+        fr: "Salles des Valeureux",
+        de: "Die Hallen der Tapferkeit",
+        ru: "Чертоги Доблести",
+        ch: "英灵殿",
+      },
+    },
     1197: {
       name: {
         en: "Uldaman: Legacy of Tyr",
