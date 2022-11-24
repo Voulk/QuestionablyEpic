@@ -222,7 +222,7 @@ export const dungeonTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-
+      console.log("Mote " + itemLevel + ": " + processedValue(data[0], itemLevel))
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].targets / data[0].cooldown * player.getStatMults(data[0].secondaries);
 
       return bonus_stats;
