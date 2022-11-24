@@ -102,7 +102,7 @@ function processRenown(line, player) {
   /* -------------------------- Set renownLevel to imported renown level -------------------------- */
   let renownLevel = parseInt(line.split("=")[1]);
   /* ---------------------------------- update Renown in "player" --------------------------------- */
-  player.updateRenownLevel(renownLevel);
+  // player.updateRenownLevel(renownLevel);
 }
 
 /* --------- Process "conduits_available=" line in simc string and update conduit ilvls --------- */

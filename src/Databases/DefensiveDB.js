@@ -441,4 +441,19 @@ export const defensiveDB = [
     cooldown: 120,
     class: "Monk",
   },
+
+  {
+    name: {
+      en: "Obsidian Scales",
+      fr: "Écailles d’obsidienne",
+      de: "Obsidianschuppen",
+      ru: "Обсидиановая чешуя",
+      ch: "黑曜鳞片",
+    },
+    guid: 363916,
+    icon: require("Images/Classes/Evoker/inv_artifact_dragonscales.jpg").default,
+    duration: 12,
+    cooldown: 150,
+    class: "Evoker",
+  },
 ];

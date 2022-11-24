@@ -106,7 +106,7 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
 
   /* ---------------- Filter the array to unique entries for Ability name and Guid. --------------- */
   const uniqueArray = damagingAbilities.filter((ele, ind) => ind === damagingAbilities.findIndex((elem) => elem.ability === ele.ability && elem.guid === ele.guid));
-
+  const uniqueAbilityNames = Array.from(new Set(damage.map((key) => key.ability.name)));
   /* -- Map the cd data imported into an array of cds in this format (HealerName - CooldownName) -- */
   /* ------ Unique list of Cds from the previously mapped array is made, then create an array ----- */
   /* -------- We do this for the chart data as these are needed for dataKeys for the chart. ------- */
@@ -295,7 +295,7 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
 
   /* ----------------- Create any missing timestamps in the fight (i.e no damage) ----------------- */
   /* --------- These are needed so the chart doesn't stretch the areas to the next point.) -------- */
-  let times = addMissingTimestamps(fightDuration(endtime, starttime));
+  let times = addMissingTimestamps(fightDuration(endtime, starttime), uniqueAbilityNames, uniqueArrayCD);
 
   /* ------- Concat the damage arrays with the cooldown durations with the missing durations ------ */
   let unmitigatedDamageFromLogWithTimesAddedAndCooldowns = unmitigatedDamageMap.concat(cooldownwithdurations, times);

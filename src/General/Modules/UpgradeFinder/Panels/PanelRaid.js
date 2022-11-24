@@ -133,7 +133,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   nathriaHeader: {
-    backgroundImage: `url(${require("../../../../Images/Bosses/CastleNathria/loadingScreenArt.png").default})`,
+    backgroundImage: `url(${require("../../../../Images/Bosses/VaultOfTheIncarnates/VaultOfTheIncarnatesLong.png").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -338,7 +338,7 @@ export default function RaidGearContainer(props) {
 
   const contentGenerator = () => {
     // Raid Panel
-    const shadowlandsList = [1190, 1193, 1195];
+    const shadowlandsList = [1200];
     const difficulties = props.playerSettings.raid;
 
     difficulties.sort().reverse();
@@ -368,11 +368,11 @@ export default function RaidGearContainer(props) {
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
                   {/* ------------------------------------------ Karazhan ------------------------------------------ */}
-                  <Tab className={classes.nathriaHeader} label={getTranslatedRaidName(1190)} {...a11yProps(0)} />
-                  {/* ---------------------------------------- Gruul's Lair ---------------------------------------- */}
+                  <Tab className={classes.nathriaHeader} label={getTranslatedRaidName(1200)} {...a11yProps(0)} />
+                  {/* ---------------------------------------- Gruul's Lair ----------------------------------------
                   <Tab className={classes.sanctumHeader} label={getTranslatedRaidName(1193)} {...a11yProps(1)} />
                   {/* ------------------------------------ Serpentshrine Cavern ------------------------------------ */}
-                  <Tab className={classes.sepulcherHeader} label={getTranslatedRaidName(1195)} {...a11yProps(2)} />
+                  {/* <Tab className={classes.sepulcherHeader} label={getTranslatedRaidName(1195)} {...a11yProps(2)} />  */}
                 </Tabs>
               </AppBar>
             </Grid>
