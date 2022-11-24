@@ -47,6 +47,11 @@ export const evokerDefaultSpellData = (contentType) => {
         OneManaHealing: 11,
         CastsPerMinute: 22, // ONLY tracks spells with a mana cost.
         cooldownMult: {
+          c60: 1,
+          c90: 1,
+          c120: 1.15,
+          c180: 1,
+
           oneMinute: 1, 
           ninetySeconds: 1,
           twoMinutes: 1,
@@ -61,6 +66,11 @@ export const evokerDefaultSpellData = (contentType) => {
         OneManaHealing: 1.2,
         CastsPerMinute: 30,
         cooldownMult: {
+          c60: 1,
+          c90: 1.15,
+          c120: 1,
+          c180: 1,
+
           oneMinute: 1,
           ninetySeconds: 1,
           twoMinutes: 1,

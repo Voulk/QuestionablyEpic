@@ -32,20 +32,20 @@ export const druidDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.67,
-    crit: 0.6,
-    mastery: 0.64,
-    versatility: 0.59,
-    leech: 0.81,
+    haste: 0.35,
+    crit: 0.3,
+    mastery: 0.33,
+    versatility: 0.31,
+    leech: 0.4,
     defaults: true,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.65,
-    crit: 0.62,
-    mastery: 0.45,
-    versatility: 0.62,
-    leech: 0.38,
+    haste: 0.35,
+    crit: 0.3,
+    mastery: 0.33,
+    versatility: 0.31,
+    leech: 0.33,
     defaults: true,
   };
 
@@ -60,6 +60,11 @@ export const druidDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 16.2,
       CastsPerMinute: 32, // ONLY tracks spells with a mana cost.
       cooldownMult: {
+        c60: 1.2,
+        c90: 1.05,
+        c120: 1.1,
+        c180: 1.05,
+
         oneMinute: 1.4, // 1.7 once 4pc,
         ninetySeconds: 1.12,
         twoMinutes: 1.4,
@@ -74,6 +79,11 @@ export const druidDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 1.2,
       CastsPerMinute: 30,
       cooldownMult: {
+        c60: 1,
+        c90: 1,
+        c120: 1,
+        c180: 1,
+
         oneMinute: 1.2,
         ninetySeconds: 1,
         twoMinutes: 1.35,

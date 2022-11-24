@@ -384,8 +384,8 @@ const getHealingMult = (state, t, spellName, talents) => {
         }
     }
 
-    if ((spellName === "Dream Breath" || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Call of Ysera")) {
-        if (spellName === "Dream Breath") mult *= 1.4;
+    if ((spellName.includes("Dream Breath") || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Call of Ysera")) {
+        if (spellName.includes("Dream Breath")) mult *= 1.4;
         if (spellName === "Living Flame" || spellName === "Living Flame D") mult *= 2;
 
         state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
