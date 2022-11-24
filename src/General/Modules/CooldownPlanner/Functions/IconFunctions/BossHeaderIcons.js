@@ -24,6 +24,26 @@ export default function bossHeaders(props, style, QEmodule) {
       source = require("Images/Bosses/WorldBosses/nurgash.png").default;
     }
 
+    // Dragonflight World Bosses
+    if (props === 2640) {
+      // Basrikron, The Shale Wing
+      source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-BasrikronTheShaleWing.png").default;
+    }
+    if (props === 2651) {
+      // Strunraan, The Sky's Misery
+      source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-StrunraanTheSkysMisery.png").default;
+    }
+    if (props === 2652) {
+      // Liskanoth, The Futurebane
+      source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-LiskanothTheFuturebane.png").default;
+    }
+    if (props === 2653) {
+      // Bazual, The Dreaded Flame
+      source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-BazualTheDradedFlame.png").default;
+    }
+    //
+
+
     if (props === 2418) {
       source = require("Images/Bosses/CastleNathria/ArtificerXymox/ArtificerXymoxEJ.png").default;
     }
