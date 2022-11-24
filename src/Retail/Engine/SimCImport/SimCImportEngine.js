@@ -1,10 +1,8 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
 import { curveDB } from "../ItemCurves";
-import { conduitDB, conduitRanks } from "../../../Databases/ConduitDB";
 import { calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import Item from "../../../General/Modules/Player/Item";
-
 
 const stat_ids = {
   36: "haste",
@@ -30,11 +28,10 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
             We should take care that we never use the Name tags in the string.
     */
 
-    
     let linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : lines.length;
     let vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : linkedItems;
 
-    processAllLines(player, contentType, lines, linkedItems, vaultItems)
+    processAllLines(player, contentType, lines, linkedItems, vaultItems);
 
     snackHandler();
     closeDialog();
@@ -51,18 +48,12 @@ export function processAllLines(player, contentType, lines, linkedItems, vaultIt
       if (line.includes("unknown")) {
         processToken(line, player, contentType, type);
       } else {
-        const item = processItem(line, player, contentType, type)
+        const item = processItem(line, player, contentType, type);
         if (item) player.addActiveItem(item);
       }
     }
-
-
-    /* ------------------------ If line includes "renown=" then process line ------------------------ */
-    if (line.includes("renown=")) {
-      processRenown(line, player);
-    }
   }
-  player.updatePlayerStats(); 
+  player.updatePlayerStats();
 }
 
 // A simC string is valid if it fulfills the following conditions:
@@ -96,44 +87,6 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
 
   setErrorMessage(errorMessage);
   return checks.class && checks.version && checks.level && checks.length;
-}
-
-function processRenown(line, player) {
-  /* -------------------------- Set renownLevel to imported renown level -------------------------- */
-  let renownLevel = parseInt(line.split("=")[1]);
-  /* ---------------------------------- update Renown in "player" --------------------------------- */
-  // player.updateRenownLevel(renownLevel);
-}
-
-/* --------- Process "conduits_available=" line in simc string and update conduit ilvls --------- */
-function processConduits(line, player) {
-  /* --- Remove "conduits_available=" from string and split by / to seperate conduit ID and Rank -- */
-  let infoArray = line.split("=")[1].split("/");
-  /* -------------------- Go through each item in array and update the conduit -------------------- */
-  for (var j = 0; j < infoArray.length; j++) {
-    let info = infoArray[j];
-
-    /* ---------------------- split the object into conduit ID and conduit Rank --------------------- */
-    let conduitSimcID = parseInt(info.split(":")[0]);
-    let conduitRank = parseInt(info.split(":")[1]);
-
-    /* ---------------------------- Return relevant conduit guid from DB ---------------------------- */
-    let conduitGuid = conduitDB
-      .filter((obj) => {
-        return obj.simcID === conduitSimcID;
-      })
-      .map((obj) => obj.guid)[0];
-
-    /* ------------------------------- Return Relevant Ilvl from Ranks ------------------------------ */
-    let conduitIlvl = conduitRanks
-      .filter((obj) => {
-        return obj.rank === conduitRank;
-      })
-      .map((obj) => obj.itemLevel)[0];
-
-    /* --------------------------------------- Update Conduit --------------------------------------- */
-    //player.updateConduitLevel(conduitGuid, conduitIlvl);
-  }
 }
 
 /*
@@ -192,10 +145,10 @@ function processToken(line, player, contentType, type, covenant) {
 } */
 
 /**
- * 
+ *
  * @param {*} curveID The curveID we'll use to check the item levels available.
  * @param {*} dropLevel The player level when the item dropped.
- * @returns 
+ * @returns
  */
 export function processCurve(curveID, dropLevel) {
   const curve = curveDB[curveID].points;
@@ -208,10 +161,10 @@ export function processCurve(curveID, dropLevel) {
     for (var i = 0; i < curve.length; i++) {
       if (curve[i].playerLevel > dropLevel) {
         // We've found the right place in the curve. This is the lowest index that's higher than the drop level.
-        playerLevelGap = curve[i].playerLevel - curve[i-1].playerLevel;
-        jump = (curve[i].itemLevel - curve[i-1].itemLevel) / playerLevelGap;
-        
-        return curve[i-1].itemLevel + jump * (dropLevel - curve[i-1].playerLevel);
+        playerLevelGap = curve[i].playerLevel - curve[i - 1].playerLevel;
+        jump = (curve[i].itemLevel - curve[i - 1].itemLevel) / playerLevelGap;
+
+        return curve[i - 1].itemLevel + jump * (dropLevel - curve[i - 1].playerLevel);
       }
     }
   }
@@ -241,8 +194,7 @@ export function processItem(line, player, contentType, type) {
   let bonusIDS = "";
   let domGemID = 0;
   let uniqueTag = "";
-  let specialAllocations = {}
-  
+  let specialAllocations = {};
 
   // Build out our item information.
   // This is not the finest code in the land but it is effective at pulling the information we need.
@@ -258,15 +210,13 @@ export function processItem(line, player, contentType, type) {
     else if (info.includes("bonus_id=")) {
       itemBonusIDs = info.split("=")[1].split("/");
       bonusIDS = itemBonusIDs.join(":");
-    } 
-    else if (info.includes("gem_id=")) gemID = info.split("=")[1].split("/");
+    } else if (info.includes("gem_id=")) gemID = info.split("=")[1].split("/");
     else if (info.includes("enchant_id=")) enchantID = parseInt(info.split("=")[1]);
     else if (info.includes("id=")) itemID = parseInt(info.split("=")[1]);
     else if (info.includes("drop_level=")) dropLevel = parseInt(info.split("=")[1]);
     else if (info.includes("crafted_stats=")) craftedStats = info.split("=")[1].split("/");
     else if (info.includes("ilevel=") || info.includes("ilvl=")) levelOverride = parseInt(info.split("=")[1]);
   }
-
 
   // Grab the items base level from our item database.
   itemLevel = getItemProp(itemID, "itemLevel");
@@ -284,38 +234,34 @@ export function processItem(line, player, contentType, type) {
         itemSocket = true;
       } else if (bonus_id === "41") {
         itemTertiary = "Leech";
-      } 
-      else if (bonus_id === "7886" && itemID !== 171323) { // This is a temporary measure to stop them from overwriting the Alch Stone effect. TODO.
+      } else if (bonus_id === "7886" && itemID !== 171323) {
+        // This is a temporary measure to stop them from overwriting the Alch Stone effect. TODO.
         // Cosmic Protoweave
         itemEffect = {
           type: "special",
           name: "Cosmic Protoweave",
           level: itemLevel,
         };
-      }
-      else if (bonus_id === "7960" && itemID !== 171323) { // This is a temporary measure to stop them from overwriting the Alch Stone effect. TODO.) {
+      } else if (bonus_id === "7960" && itemID !== 171323) {
+        // This is a temporary measure to stop them from overwriting the Alch Stone effect. TODO.) {
         // Cosmic Protoweave
         itemEffect = {
           type: "special",
           name: "Ephemera Harmonizing Stone",
           level: itemLevel,
         };
-      }
-      else if ("rawStats" in idPayload) {
-        idPayload["rawStats"].forEach(stat => {
-          if (['Haste', 'Crit', 'Vers', 'Mastery', 'Intellect'].includes(stat['name'])) {
-            let statName = stat['name'].toLowerCase();
+      } else if ("rawStats" in idPayload) {
+        idPayload["rawStats"].forEach((stat) => {
+          if (["Haste", "Crit", "Vers", "Mastery", "Intellect"].includes(stat["name"])) {
+            let statName = stat["name"].toLowerCase();
             if (statName === "vers") statName = "versatility"; // Pain
-            specialAllocations[statName] = stat['amount'];
+            specialAllocations[statName] = stat["amount"];
           }
         });
-      }
-      else if ("curveId" in idPayload) {
+      } else if ("curveId" in idPayload) {
         let curve = idPayload["curveId"];
         itemLevel = processCurve(curve, dropLevel);
-
       } else if ("name_override" in idPayload) {
-
         if ("base" in idPayload.name_override && idPayload.name_override.base === "Unity") {
           // Unity
           itemEffect = {
@@ -323,8 +269,7 @@ export function processItem(line, player, contentType, type) {
             name: "Unity",
             level: 0, // Irrelevant to legendaries.
           };
-        }
-        else {
+        } else {
           itemEffect = {
             type: "spec legendary",
             name: idPayload["name_override"]["base"],
@@ -333,10 +278,8 @@ export function processItem(line, player, contentType, type) {
         }
         // Legendaries
 
-
         //console.log("Legendary detected" + JSON.stringify(itemEffect));
       }
-
     }
     // Missives.
     // Missives are on every legendary, and are annoyingly also on some crafted items.
@@ -345,21 +288,17 @@ export function processItem(line, player, contentType, type) {
     else if (bonus_id === "6647") {
       missiveStats.push("crit");
       craftedStats = "";
-    }
-    else if (bonus_id === "6648") {
+    } else if (bonus_id === "6648") {
       missiveStats.push("mastery");
       craftedStats = "";
-    }
-    else if (bonus_id === "6649") {
+    } else if (bonus_id === "6649") {
       missiveStats.push("haste");
       craftedStats = "";
-    }
-    else if (bonus_id === "6650") {
+    } else if (bonus_id === "6650") {
       missiveStats.push("versatility");
       craftedStats = "";
     }
     if (bonus_id === "7881") uniqueTag = "crafted";
-    
   }
   if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
   if (levelOverride !== 0) itemLevel = Math.min(699, levelOverride);
@@ -367,8 +306,8 @@ export function processItem(line, player, contentType, type) {
   // Check Gems for Dom sockets
   if (gemID.length > 0) {
     gemID.forEach((gem) => {
-      gemString += gem + ":"
-    })
+      gemString += gem + ":";
+    });
   }
 
   // Add the new item to our characters item collection.
@@ -380,7 +319,7 @@ export function processItem(line, player, contentType, type) {
     item.active = itemEquipped || item.vaultItem;
     item.isEquipped = itemEquipped;
     item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, itemTertiary);
-    item.gemString = (gemString !== "") ? gemString.slice(0, -1) : "";
+    item.gemString = gemString !== "" ? gemString.slice(0, -1) : "";
     if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
 
     item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");
@@ -389,18 +328,15 @@ export function processItem(line, player, contentType, type) {
     else if (item.effect.type && item.effect.type === "unity") {
       item.uniqueEquip = "unity";
       //item.id = 1044011
-    }
-    else if (item.vaultItem) item.uniqueEquip = "vault";
+    } else if (item.vaultItem) item.uniqueEquip = "vault";
     else item.uniqueEquip = uniqueTag;
     item.softScore = scoreItem(item, player, contentType);
 
     return item;
   } else {
-    return null
+    return null;
   }
 }
-
-
 
 function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) {
   let allocation = 0;
@@ -412,7 +348,6 @@ function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) 
     else if (itemLevel >= 168) allocation = 50;
     else if (itemLevel >= 151) allocation = 40;
     else if (itemLevel >= 129) allocation = 24;
-
   } else if (["Shoulder", "Waist", "Hands", "Feet"].includes(slot)) {
     if (itemLevel >= 262) allocation = 63;
     else if (itemLevel >= 233) allocation = 55;
@@ -420,14 +355,12 @@ function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) 
     else if (itemLevel >= 168) allocation = 37;
     else if (itemLevel >= 151) allocation = 29;
     else if (itemLevel >= 129) allocation = 18;
-
   } else if (["Back", "Wrist"].includes(slot)) {
     if (itemLevel >= 262) allocation = 47;
     else if (itemLevel >= 230) allocation = 41;
     else if (itemLevel >= 168) allocation = 29;
     else if (itemLevel >= 151) allocation = 22;
     else if (itemLevel >= 129) allocation = 12;
-
   } else if (["Neck", "Finger"].includes(slot)) {
     if (itemLevel >= 262) allocation = 78;
     else if (itemLevel >= 230) allocation = 63;
@@ -437,7 +370,6 @@ function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) 
   }
 
   crafted_stats.forEach((stat) => {
-
     bonus_stats[stat_ids[stat]] = allocation;
   });
   return bonus_stats;
@@ -460,6 +392,5 @@ function checkDefaultSocket(id) {
   if (temp.length > 0) {
     const socketType = temp[0].socketType;
     return socketType == "Prismatic";
-  }
-  else return 0;
+  } else return 0;
 }
