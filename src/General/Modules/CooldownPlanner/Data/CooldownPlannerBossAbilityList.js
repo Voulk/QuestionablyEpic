@@ -5084,6 +5084,7 @@ export const bossAbilities = {
   // },
 
   2587: [
+    // Eranog
     // https://www.wowhead.com/spell=370648/primal-flow
     {
       cooldownPlannerActive: false,
@@ -5252,8 +5253,317 @@ export const bossAbilities = {
         ru: "Хрупкая армия",
       },
     },
-  ], // Eranog
-  2639: [], // Terros
+  ],
+  2639: [
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                             Terros                                             */
+    /* ---------------------------------------------------------------------------------------------- */
+
+    /* -------------------------------------------- Casts ------------------------------------------- */
+    {
+      // https://www.wowhead.com/spell=395686/awakened-earth
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 395686,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
+      importActive: true,
+      name: {
+        cn: "觉醒之土",
+        de: "Erweckte Erde",
+        en: "Awakened Earth",
+        fr: "Terre éveillée",
+        ru: "Пробужденная земля",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=376279/concussive-slam
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 376279,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_warrior_titansgrip.jpg").default,
+      importActive: true,
+      name: {
+        cn: "震荡猛击",
+        de: "Erschütterndes Schmettern",
+        en: "Concussive Slam",
+        fr: "Commotion violente",
+        ru: "Оглушающий удар",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=380487/rock-blast
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 380487,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/6bf_blackrock_nova.jpg").default,
+      importActive: true,
+      name: {
+        cn: "岩石冲击",
+        de: "Steineinschlag",
+        en: "Rock Blast",
+        fr: "Éjection rocailleuse",
+        ru: "Каменный выброс",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=383073/shattering-impact
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 383073,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_earthquake.jpg").default,
+      importActive: true,
+      name: {
+        cn: "粉碎冲击",
+        de: "Zerschmetternder Einschlag",
+        en: "Shattering Impact",
+        fr: "Impact fracturant",
+        ru: "Дробящий удар",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=377166/resonating-annihilation
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 377166,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_improvedfirenova.jpg").default,
+      importActive: true,
+      name: {
+        cn: "共鸣湮灭",
+        de: "Resonierende Vernichtung",
+        en: "Resonating Annihilation",
+        fr: "Résonance annihilatrice",
+        ru: "Резонирующая аннигиляция",
+      },
+    },
+
+    /* ------------------------------------------- Damage ------------------------------------------- */
+
+    {
+      //  https://www.wowhead.com/spell=391592/infused-fallout
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 391592,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_quicksand.jpg").default,
+      importActive: false,
+      name: {
+        cn: "注能爆尘",
+        de: "Erfüllter Niederschlag",
+        en: "Infused Fallout",
+        fr: "Retombée imprégnée",
+        ru: "Заряженное облако пыли",
+      },
+    },
+    {
+      //  https://www.wowhead.com/spell=391322/explosive-reaction
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 391322,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_warrior_bloodnova.jpg").default,
+      importActive: false,
+      name: {
+        cn: "爆炸反应",
+        de: "Explosive Reaktion",
+        en: "Explosive Reaction",
+        fr: "Réaction explosive",
+        ru: "Взрывная реакция",
+      },
+    },
+    {
+      //  https://www.wowhead.com/spell=382458/resonant-aftermath
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 382458,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_volatileearth.jpg").default,
+      importActive: false,
+      name: {
+        cn: "共鸣余震",
+        de: "Resonierende Nachwirkung",
+        en: "Resonant Aftermath",
+        fr: "Répercussions résonnantes",
+        ru: "Повторный резонанс",
+      },
+    },
+    {
+      //  https://www.wowhead.com/spell=394347/reactive-bedrock
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 394347,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/item_earthenmight.jpg").default,
+      importActive: false,
+      name: {
+        cn: "感应基岩",
+        de: "Reaktiver Felsboden",
+        en: "Reactive Bedrock",
+        fr: "Roche mère réactive",
+        ru: "Реактивная порода",
+      },
+    },
+    {
+      //  https://www.wowhead.com/spell=381781/concussive-slam
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 381781,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_warrior_titansgrip.jpg").default,
+      importActive: false,
+      name: {
+        cn: "震荡猛击",
+        de: "Erschütterndes Schmettern",
+        en: "Concussive Slam",
+        fr: "Commotion violente",
+        ru: "Оглушающий удар",
+      },
+    },
+    {
+      //  https://www.wowhead.com/spell=381315/awakened-earth
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 381315,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
+      importActive: false,
+      name: {
+        cn: "觉醒之土",
+        de: "Erweckte Erde",
+        en: "Awakened Earth",
+        fr: "Terre éveillée",
+        ru: "Пробужденная земля",
+      },
+    },
+    {
+      //  https://www.wowhead.com/spell=386277/resonating-annihilation
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 386277,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_improvedfirenova.jpg").default,
+      importActive: false,
+      name: {
+        cn: "共鸣湮灭",
+        de: "Resonierende Vernichtung",
+        en: "Resonating Annihilation",
+        fr: "Résonance annihilatrice",
+        ru: "Резонирующая аннигиляция",
+      },
+    },
+    {
+      //  https://www.wowhead.com/spell=378861/fractured-rubble
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 378861,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_elementalcombinedfoozles_earth.jpg").default,
+      importActive: false,
+      name: {
+        cn: "开裂碎石",
+        de: "Gesprungener Schutt",
+        en: "Fractured Rubble",
+        fr: "Décombres fracturés",
+        ru: "Потрескавшиеся обломки",
+      },
+    },
+    {
+      //  https://www.wowhead.com/spell=386400/aftershock
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 386400,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_gift_of_earth.jpg").default,
+      importActive: true,
+      name: {
+        cn: "余震",
+        de: "Nachwirkungen",
+        en: "Aftershock",
+        fr: "Répliques",
+        ru: "Повторный толчок",
+      },
+    },
+    {
+      //  https://www.wowhead.com/spell=381775/resonating-annihilation
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 381775,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_improvedfirenova.jpg").default,
+      importActive: false,
+      name: {
+        cn: "共鸣湮灭",
+        de: "Resonierende Vernichtung",
+        en: "Resonating Annihilation",
+        fr: "Résonance annihilatrice",
+        ru: "Резонирующая аннигиляция",
+      },
+    },
+    {
+      //  https://www.wowhead.com/spell=381595/seismic-assault
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 381595,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_rhyolith_magmaflow_wave.jpg").default,
+      importActive: false,
+      name: {
+        cn: "撼地突袭",
+        de: "Seismischer Angriff",
+        en: "Seismic Assault",
+        fr: "Assaut sismique",
+        ru: "Сейсмический взрыв",
+      },
+    },
+    {
+      //  https://www.wowhead.com/spell=381576/seismic-assault
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 381576,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_rhyolith_magmaflow_wave.jpg").default,
+      importActive: false,
+      name: {
+        cn: "撼地突袭",
+        de: "Seismischer Angriff",
+        en: "Seismic Assault",
+        fr: "Assaut sismique",
+        ru: "Сейсмический взрыв",
+      },
+    },
+    {
+      //  https://www.wowhead.com/spell=381298/rock-blast
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 381298,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/6bf_blackrock_nova.jpg").default,
+      importActive: false,
+      name: {
+        cn: "岩石冲击",
+        de: "Steineinschlag",
+        en: "Rock Blast",
+        fr: "Éjection rocailleuse",
+        ru: "Каменный выброс",
+      },
+    },
+    {
+      //  https://www.wowhead.com/spell=395686/awakened-earth
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 395686,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
+      importActive: false,
+      name: {
+        cn: "觉醒之土",
+        de: "Erweckte Erde",
+        en: "Awakened Earth",
+        fr: "Terre éveillée",
+        ru: "Пробужденная земля",
+      },
+    },
+    {
+      //  https://www.wowhead.com/spell=377166/resonating-annihilation
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 377166,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
+      importActive: false,
+      name: {
+        cn: "共鸣湮灭",
+        de: "Resonierende Vernichtung",
+        en: "Resonating Annihilation",
+        fr: "Résonance annihilatrice",
+        ru: "Резонирующая аннигиляция",
+      },
+    },
+  ],
   2590: [], // The Primalist Council
   2592: [], // Sennarth, The Cold Breath
   2635: [], //  Dathea, Ascended
@@ -5261,4 +5571,3 @@ export const bossAbilities = {
   2614: [], //  Broodkeeper Diurna
   2607: [], //  Raszageth the Storm-Eater
 };
-
