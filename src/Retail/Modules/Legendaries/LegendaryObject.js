@@ -32,13 +32,6 @@ export default function LegendaryObject(props) {
   const dpsString = item.effectiveDPS > 5 ? "DPS: " + paddedDPS : "";
 
   const legendaryDataObject = legendaryNameTranslator(item.name)[currentLanguage];
-  const covFileLoc = process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/CovenantSigils";
-  const covenantSigils = {
-    Kyrian: covFileLoc + "/Kyrian_Sigil.png",
-    "Night Fae": covFileLoc + "/Fae_Sigil.png",
-    Venthyr: covFileLoc + "/Venthyr_Sigil.png",
-    Necrolord: covFileLoc + "/Death_Lords_Sigil.png",
-  };
 
   return (
     // Breakpoints (12 units / row)
@@ -103,11 +96,6 @@ export default function LegendaryObject(props) {
                 <Typography variant="caption">{legendaryDataObject.slot}</Typography>
               </div>
             </div>
-            {covenantSigils[legendaryDataObject.covenant] !== undefined ? (
-              <img height={40} style={{ marginTop: -7 }} src={covenantSigils[legendaryDataObject.covenant]} alt={t("Covenants." + legendaryDataObject.covenant)} />
-            ) : (
-              ""
-            )}
           </div>
           {/* ---------------------------- Divider to seperate header from body ---------------------------- */}
         </CardContent>
