@@ -178,7 +178,7 @@ export function processItem(line, player, contentType, type) {
   let itemID = -1;
   let itemSlot = "";
   let itemBonusIDs = [];
-  let itemLevel = -1;
+  let itemLevel = 0;
   let itemSockets = 0;
   let itemTertiary = "";
   let dropLevel = 0;
@@ -233,6 +233,7 @@ export function processItem(line, player, contentType, type) {
     if (idPayload !== undefined) {
       if ("level" in idPayload) {
         itemLevelGain += idPayload["level"];
+        console.log("Adding ilvl gain: " + JSON.stringify(idPayload));
       } else if ("socket" in idPayload) {
         itemSockets = idPayload["socket"];
       } else if (bonus_id === "41") {
@@ -306,19 +307,19 @@ export function processItem(line, player, contentType, type) {
   }
   if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
   if (levelOverride !== 0) itemLevel = Math.min(699, levelOverride);
-
+  else itemLevel = itemBaseLevel + itemLevelGain;
   // Check Gems for Dom sockets
   if (gemID.length > 0) {
     gemID.forEach((gem) => {
       gemString += gem + ":";
     });
   }
-
+  console.log(itemID + ": " +  itemLevel + " / " + itemLevelGain);
   // Add the new item to our characters item collection.
   if (itemLevel > 60 && itemID !== 0 && getItem(itemID) !== "") {
     let itemAllocations = getItemAllocations(itemID, missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
-    let item = new Item(itemID, "", itemSlot, itemSockets || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel + itemLevelGain, bonusIDS);
+    let item = new Item(itemID, "", itemSlot, itemSockets || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel, bonusIDS);
     item.vaultItem = type === "Vault";
     item.active = itemEquipped || item.vaultItem;
     item.isEquipped = itemEquipped;
