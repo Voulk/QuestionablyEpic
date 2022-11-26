@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
-import { covenantIcons, covenantColours } from "../../CooldownPlanner/Functions/CovenantFunctions";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import { getTranslatedClassName } from "locale/ClassNames";
@@ -261,20 +260,6 @@ function TopGearReport(props) {
                                           border: "1px solid " + classColoursJS(props.player.spec),
                                         })}
                                       </Tooltip>
-                                      {gameType === "Retail" ? (
-                                        <Tooltip title={t(props.player.covenant)} style={{ color: covenantColours(props.player.covenant) }} placement="top" arrow>
-                                          {covenantIcons(props.player.covenant, {
-                                            height: 22,
-                                            width: 22,
-                                            verticalAlign: "middle",
-                                            borderRadius: 4,
-                                            border: "1px solid" + covenantColours(props.player.covenant),
-                                            marginLeft: 4,
-                                          })}
-                                        </Tooltip>
-                                      ) : (
-                                        ""
-                                      )}
                                     </div>
 
                                     <Divider />

@@ -10,8 +10,6 @@ import PvPGearContainer from "./Panels/PanelPvP";
 import RaidGearContainer from "./Panels/PanelRaid";
 import WorldBossGearContainer from "./Panels/PanelWorldBosses";
 import SlotsContainer from "./Panels/PanelSlots";
-import TazaveshGearContainer from "./Panels/TazaveshPanel";
-import LegionTimewalking from "./Panels/PanelLegionTimewalking";
 import "./Panels/ItemUpgrade.css";
 import { useSelector } from "react-redux";
 
