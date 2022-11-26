@@ -192,9 +192,12 @@ export function processItem(line, player, contentType, type) {
   let itemEffect = {}; // This is called automatically for everything except Legendaries.
   let itemEquipped = !line.includes("#");
   let bonusIDS = "";
-  let domGemID = 0;
   let uniqueTag = "";
-  let specialAllocations = {};
+
+  let specialAllocations = {}
+  let itemBaseLevel = 0; // This is an items base level. We'll add any level gain bonus IDs to it.
+  let itemLevelGain = 0;
+  
 
   // Build out our item information.
   // This is not the finest code in the land but it is effective at pulling the information we need.
@@ -219,7 +222,7 @@ export function processItem(line, player, contentType, type) {
   }
 
   // Grab the items base level from our item database.
-  itemLevel = getItemProp(itemID, "itemLevel");
+  itemBaseLevel = getItemProp(itemID, "itemLevel");
   itemSlot = getItemProp(itemID, "slot");
 
   //console.log(itemID + ": " + itemSlot + ". Item Level:" + itemLevel + ". Bonus: " + itemBonusIDs);
@@ -229,7 +232,7 @@ export function processItem(line, player, contentType, type) {
     let idPayload = bonus_IDs[bonus_id];
     if (idPayload !== undefined) {
       if ("level" in idPayload) {
-        itemLevel += idPayload["level"];
+        itemLevelGain += idPayload["level"];
       } else if ("socket" in idPayload) {
         itemSocket = true;
       } else if (bonus_id === "41") {
@@ -260,7 +263,8 @@ export function processItem(line, player, contentType, type) {
         });
       } else if ("curveId" in idPayload) {
         let curve = idPayload["curveId"];
-        itemLevel = processCurve(curve, dropLevel);
+        levelOverride = processCurve(curve, dropLevel);
+
       } else if ("name_override" in idPayload) {
         if ("base" in idPayload.name_override && idPayload.name_override.base === "Unity") {
           // Unity
@@ -314,7 +318,7 @@ export function processItem(line, player, contentType, type) {
   if (itemLevel > 60 && itemID !== 0 && getItem(itemID) !== "") {
     let itemAllocations = getItemAllocations(itemID, missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
-    let item = new Item(itemID, "", itemSlot, itemSocket || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel, bonusIDS);
+    let item = new Item(itemID, "", itemSlot, itemSocket || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel + itemLevelGain, bonusIDS);
     item.vaultItem = type === "Vault";
     item.active = itemEquipped || item.vaultItem;
     item.isEquipped = itemEquipped;

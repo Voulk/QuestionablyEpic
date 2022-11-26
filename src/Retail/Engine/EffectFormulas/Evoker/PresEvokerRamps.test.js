@@ -72,7 +72,7 @@ describe("Evang Cast Sequence", () => {
     } */
     const activeStats = {
         intellect: 1,
-        haste: 600,
+        haste: 4000,
         crit: 600,
         mastery: 600,
         versatility: 600,
@@ -125,7 +125,6 @@ describe("Evang Cast Sequence", () => {
 
         //const baseline = allRamps(evangSeq, fiendSeq, activeStats, {"playstyle": "Venthyr Evangelism", "Power of the Dark Side": true, true);
 
-
         //console.log(seq);
         const iter = 1;
         const results = {healingDone: 0, manaSpent: 0};
@@ -145,18 +144,8 @@ describe("Evang Cast Sequence", () => {
         
         console.log(`Healing Done over ${iter} iterations: ` + results.healingDone / iter + " at cost: " + results.manaSpent / iter);
         
-
         /*
-        print("Indemnity", baseline, allRampsHealing(seq, activeStats, settings, {...talents, indemnity: true}))
-        print("Rapture", baseline, allRampsHealing(seq3, activeStats, settings, {...talents, rapture: true}))
-        print("Exaltation & Rapture", baseline, allRampsHealing(seq3, activeStats, settings, {...talents, rapture: true, exaltation: true}))
-        print("Shining Radiance", baseline, allRampsHealing(seq, activeStats, settings, {...talents, shiningRadiance: 2}))
-        print("Rabid Shadows", baseline, allRampsHealing(seq, activeStats, settings, {...talents, rabidShadows: 2}))
-        print("Dark Indul", baseline, allRampsHealing(seq, activeStats, settings, {...talents, darkIndulgence: 2}))
-        print("Swift Penitence", baseline, allRampsHealing(seq, activeStats, settings, {...talents, swiftPenitence: 2}))
-        print("Castigation", baseline, allRampsHealing(seq, activeStats, settings, {...talents, castigation: true}))
-        print("Purge the Wicked", baseline, allRampsHealing(seq2, activeStats, settings, {...talents, purgeTheWicked: true}))
-        print("Purge & Revel", baseline, allRampsHealing(seq2, activeStats, settings, {...talents, purgeTheWicked: true, revelInPurity: 2}))
+
         
         
         print("Malicious Scission", baseline, allRampsHealing(seq, activeStats, settings, {...talents, maliciousScission: true}))

@@ -42,6 +42,16 @@ export const addBuff = (state, spell, spellName) => {
             
             if (buff.canStack) buff.stacks += 1;
         }
+    }
+    else if (spell.buffType === "function") {
+        const newBuff = {name: spell.name, buffType: spell.buffType, attSpell: spell,
+            tickRate: spell.tickRate / getHaste(state.currentStats), canPartialTick: spell.canPartialTick || false, 
+            next: state.t + (spell.tickRate / getHaste(state.currentStats))}
+        newBuff.attFunction = spell.function;
+        newBuff.expiration = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
+        
+        state.activeBuffs.push(newBuff);
+
     }     
     else {
         state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
@@ -153,6 +163,10 @@ export const getCurrentStats = (statArray, buffs) => {
 // Returns the players current haste percentage. 
 export const getHaste = (stats) => {
     return 1 + stats.haste / 170 / 100;
+}
+
+export const getCrit = (stats) => {
+    return 1 + stats.crit / 180 / 100;
 }
 
 export const addReport = (state, entry) => {

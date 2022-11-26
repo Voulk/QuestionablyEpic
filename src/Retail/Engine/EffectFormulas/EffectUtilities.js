@@ -26,7 +26,7 @@ export function runGenericPPMTrinket(effect, itemLevel) {
 export function runGenericOnUseTrinket(effect, itemLevel, castModel) {
 
   const value = processedValue(effect, itemLevel) * effect.duration / effect.cooldown 
-                  //* castModel.getSpecialQuery("twoMinutes", "cooldownMult");
+                  * (castModel.getSpecialQuery("c" + effect.cooldown, "cooldownMult") || 1);
   return value;
 }
 

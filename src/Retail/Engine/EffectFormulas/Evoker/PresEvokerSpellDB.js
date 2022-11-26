@@ -1,5 +1,7 @@
 
 import { runHeal, getHaste, runDamage } from "./PresEvokerRamps";
+import { addReport } from "../Generic/RampBase";
+
 
 // This is the Evoker spell database. 
 // It contains information on every spell used in a sequence. Each spell is an array which means you can include multiple effects to code spells like Echo that are both a heal,
@@ -27,6 +29,11 @@ import { runHeal, getHaste, runDamage } from "./PresEvokerRamps";
 // For spells with aura effects, include it in the coefficient itself. Aura effects that buff the entire spec are handled in EVOKERCONST.
 export const EVOKERSPELLDB = {
     // Essence recharge rate: 3s?
+    "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
+        type: "",
+        castTime: 1.5,
+        cost: 0,
+    }],
 
     // Living Flame
     "Living Flame": [{ 
@@ -46,7 +53,7 @@ export const EVOKERSPELLDB = {
         type: "damage",
         school: "red",
         castTime: 2,
-        cost: 2.0,
+        cost: 0,//2.0,
         coeff: 1.61,
         secondaries: ['crit', 'vers']
     }],
@@ -59,6 +66,7 @@ export const EVOKERSPELLDB = {
         onGCD: true,
         cost: 3.0,
         coeff: 4.3,
+        cooldown: 18,
         expectedOverheal: 0.15,
         secondaries: ['crit', 'vers', 'mastery']
     }],
@@ -87,7 +95,7 @@ export const EVOKERSPELLDB = {
         cost: 4.5,
         coeff: 0.768,
         cooldown: 30,
-        expectedOverheal: 0.25, // 0.25
+        expectedOverheal: 0.3, // 0.25
         targets: 5, // 
         secondaries: ['crit', 'vers', 'mastery']
     },
@@ -96,7 +104,7 @@ export const EVOKERSPELLDB = {
         // This makes it a bit unique since it's a direct heal that scales with Haste.
         type: "heal",
         coeff: [0, 0.768, 1.536, 2.304],
-        expectedOverheal: 0.25, // 0.25
+        expectedOverheal: 0.3, // 0.25
         targets: 5, // 
         secondaries: ['haste', 'crit', 'vers', 'mastery']
     },
@@ -109,7 +117,7 @@ export const EVOKERSPELLDB = {
         tickRate: 2,
         coeff: 0.384, 
         targets: 5, 
-        expectedOverheal: 0.4,
+        expectedOverheal: 0.2,
         secondaries: ['crit', 'vers', 'mastery'] // Note that Haste for HoTs is included via reduced tick rate so doesn't need to be explicitly included.
     }],
     "Emerald Blossom": [{
@@ -136,7 +144,7 @@ export const EVOKERSPELLDB = {
         // To confirm:
         // - Stasis Interaction
         type: "heal",
-        castTime: 3.25,
+        castTime: 0,
         school: "bronze",
         targets: 1,
         essence: 2,
@@ -169,9 +177,10 @@ export const EVOKERSPELLDB = {
         castTime: 0,
         coeff: 0.57 * 0.67,
         cost: 2.0,
+        statMods: {'crit': 0.15},
         buffDuration: 12,
         function: function (state, buff) {
-            const hotHeal = { type: "heal", coeff: buff.coeff, expectedOverheal: 0.2, secondaries: ['crit', 'vers', 'mastery']}
+            const hotHeal = { type: "heal", coeff: buff.coeff, expectedOverheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], statMods: buff.statMods}
 
             runHeal(state, hotHeal, buff.name)
             // Roll dice and extend. If RNG is turned off then we can instead calculate expected duration on buff application instead.
@@ -180,7 +189,7 @@ export const EVOKERSPELLDB = {
         }
 
     }],
-    "Temporal Anomaly": [{
+    "Temporal Anomaly": [/*{
         // Lasts 8s and heals every 1s within range but it. Puts absorbs on allies. 
         // Stacks to 3, however the cap is based on how much 3 stacks would absorb pre-mastery.
         spellData: {id: 373861, icon: "ability_evoker_temporalanomaly", cat: "heal"},
@@ -197,7 +206,39 @@ export const EVOKERSPELLDB = {
         targets: 2, 
         expectedOverheal: 0.4, // Note that while this is called ExpectedOverhealing it's really just an efficiency value.
         secondaries: ['vers', 'mastery']
-    }],
+    }, */
+    { // I should turn these hasteDuration flags into a proper "flags" subobject.
+        spellData: {id: 373861, icon: "ability_evoker_temporalanomaly", cat: "heal"},
+        name: "Temporal Anomaly",
+        type: "buff",
+        buffType: "function",
+        school: "bronze",
+        tickRate: 2,
+        castTime: 1.5,
+        coeff: 1.75,
+        cost: 7.5,
+        targets: 2,
+        hastedDuration: true,
+        buffDuration: 6,
+        function: function (state, buff) {
+            const absorb = { type: "heal", coeff: buff.coeff, expectedOverheal: 0, secondaries: ['vers', 'mastery'], targets: 2}
+            
+            runHeal(state, absorb, buff.name)
+
+            if (state.talents.resonatingSphere) {
+                const buff = {name: "Echo", expiration: state.t  + 20, buffType: "special", 
+                    value: 0.3 * (1 + state.talents.timeLord * 0.25), stacks: 1, canStack: false, maxStacks: 1};
+                
+                state.activeBuffs.push(buff); 
+                state.activeBuffs.push(buff);
+                addReport(state, `Adding Buff: Echo (Temporal Anomaly x2)`)
+            }
+
+        }
+
+    },
+
+],
     "Blessing of the Bronze": [{
         // Blessing of the Bronze is a short CD buff spell that buffs the raid. It can also be used as a generic Bronze spell for Temporal Compression.
         spellData: {id: 364342, icon: "ability_evoker_blessingofthebronze", cat: "cooldown"},
@@ -223,6 +264,7 @@ export const EVOKERSPELLDB = {
     },
     {
         type: "buff",
+        buffName: "Dream Flight",
         buffType: "heal",
         tickRate: 3,
         targets: 10,
@@ -331,7 +373,8 @@ export const evokerTalents = {
     tipTheScales: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 4}, // Your next empowered spell casts instantly. 2 min CD.
     attunedToTheDream: {points: 2, maxPoints: 2, icon: "ability_rogue_imrovedrecuperate", id: 376930, select: true, tier: 4}, // +2% healing (2 points).
     draconicLegacy: {points: 0, maxPoints: 2, icon: "inv_helm_mail_dracthyrquest_b_02", id: 376166, select: true, tier: 4}, // +2% stamina (2 points).
-    bountifulBloom: {points: 0, maxPoints: 1, icon: "ability_evoker_emeraldblossom", id: 370886, select: true, tier: 4}, // Emerald Blossom heals +2 targets.
+    bountifulBloom: {points: 1, maxPoints: 1, icon: "ability_evoker_emeraldblossom", id: 370886, select: true, tier: 4}, // Emerald Blossom heals +2 targets.
+    panacea: {points: 1, maxPoints: 1, icon: "ability_druid_protectionofthegrove", id: 387761, select: true, tier: 4}, // Emerald Blossom heals +2 targets.
     protractedTalons: {points: 0, maxPoints: 1, icon: "ability_evoker_azurestrike", id: 369909, select: true, tier: 4}, // Azure Strike hits an additional target.
     lushGrowth: {points: 2, maxPoints: 2, icon: "inv_staff_2h_bloodelf_c_01", id: 375561, select: true, tier: 4}, // Green spells heal for 5% more (2 points).
 
