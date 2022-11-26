@@ -10328,7 +10328,7 @@ export const bonus_IDs = {
   },
   "1723": {
     "id": 1723,
-    "ilevel": "5 @plvl 1 - 340 @plvl 340",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 1746
   },
   "1724": {
@@ -26382,8 +26382,8 @@ export const bonus_IDs = {
   },
   "6500": {
     "id": 6500,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
-    "curveId": 5449
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
+    "curveId": 5063
   },
   "6501": {
     "id": 6501,
@@ -27973,12 +27973,12 @@ export const bonus_IDs = {
   },
   "6654": {
     "id": 6654,
-    "ilevel": "1 @plvl 1 - 170 @plvl 170",
+    "ilevel": "16 @plvl 1 - 170 @plvl 170",
     "curveId": 16520
   },
   "6655": {
     "id": 6655,
-    "ilevel": "1 @plvl 1 - 170 @plvl 170",
+    "ilevel": "16 @plvl 1 - 170 @plvl 170",
     "curveId": 16522
   },
   "6656": {
@@ -28207,17 +28207,17 @@ export const bonus_IDs = {
   },
   "6706": {
     "id": 6706,
-    "ilevel": "83 @plvl 45 - 146 @plvl 146",
+    "ilevel": "14 @plvl 1 - 187 @plvl 187",
     "curveId": 16666
   },
   "6707": {
     "id": 6707,
-    "ilevel": "75 @plvl 45 - 138 @plvl 138",
+    "ilevel": "1 @plvl 1 - 174 @plvl 174",
     "curveId": 16667
   },
   "6708": {
     "id": 6708,
-    "ilevel": "95 @plvl 45 - 158 @plvl 158",
+    "ilevel": "27 @plvl 1 - 200 @plvl 200",
     "curveId": 16668
   },
   "6709": {
@@ -28480,32 +28480,32 @@ export const bonus_IDs = {
   },
   "6770": {
     "id": 6770,
-    "ilevel": "75 @plvl 45 - 138 @plvl 138",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 17261
   },
   "6771": {
     "id": 6771,
-    "ilevel": "83 @plvl 45 - 146 @plvl 146",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 17262
   },
   "6772": {
     "id": 6772,
-    "ilevel": "95 @plvl 45 - 158 @plvl 158",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 17263
   },
   "6802": {
     "id": 6802,
-    "ilevel": "75 @plvl 45 - 138 @plvl 138",
+    "ilevel": "5 @plvl 1 - 178 @plvl 178",
     "curveId": 17287
   },
   "6803": {
     "id": 6803,
-    "ilevel": "83 @plvl 45 - 146 @plvl 146",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 17288
   },
   "6804": {
     "id": 6804,
-    "ilevel": "95 @plvl 45 - 158 @plvl 158",
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 17289
   },
   "6806": {
@@ -28599,7 +28599,7 @@ export const bonus_IDs = {
   },
   "6825": {
     "id": 6825,
-    "ilevel": "1 @plvl 1 - 170 @plvl 170",
+    "ilevel": "16 @plvl 1 - 170 @plvl 170",
     "curveId": 16520
   },
   "6826": {
@@ -28803,19 +28803,19 @@ export const bonus_IDs = {
   },
   "6901": {
     "id": 6901,
-    "ilevel": "83 @plvl 45 - 146 @plvl 146",
+    "ilevel": "14 @plvl 1 - 187 @plvl 187",
     "curveId": 16666,
     "quality": 3
   },
   "6902": {
     "id": 6902,
-    "ilevel": "95 @plvl 45 - 158 @plvl 158",
+    "ilevel": "27 @plvl 1 - 200 @plvl 200",
     "curveId": 16668,
     "quality": 4
   },
   "6903": {
     "id": 6903,
-    "ilevel": "146 @plvl 45 - 146 @plvl 146",
+    "ilevel": "187 @plvl 45 - 187 @plvl 187",
     "curveId": 21218,
     "quality": 3
   },
@@ -28847,42 +28847,42 @@ export const bonus_IDs = {
   },
   "6907": {
     "id": 6907,
-    "ilevel": "80 @plvl 1 - 129 @plvl 129",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 17978
   },
   "6908": {
     "id": 6908,
-    "ilevel": "81 @plvl 1 - 131 @plvl 131",
+    "ilevel": "1 @plvl 1 - 170 @plvl 170",
     "curveId": 17967
   },
   "6909": {
     "id": 6909,
-    "ilevel": "70 @plvl 1 - 132 @plvl 132",
+    "ilevel": "1 @plvl 1 - 160 @plvl 160",
     "curveId": 17980
   },
   "6910": {
     "id": 6910,
-    "ilevel": "75 @plvl 1 - 138 @plvl 138",
+    "ilevel": "1 @plvl 1 - 160 @plvl 160",
     "curveId": 17979
   },
   "6911": {
     "id": 6911,
-    "ilevel": "176 @plvl 1 - 176 @plvl 176",
+    "ilevel": "14 @plvl 1 - 183 @plvl 183",
     "curveId": 17968
   },
   "6912": {
     "id": 6912,
-    "ilevel": "176 @plvl 1 - 176 @plvl 176",
+    "ilevel": "14 @plvl 1 - 183 @plvl 183",
     "curveId": 17969
   },
   "6913": {
     "id": 6913,
-    "ilevel": "190 @plvl 1 - 190 @plvl 190",
+    "ilevel": "27 @plvl 1 - 196 @plvl 196",
     "curveId": 17982
   },
   "6914": {
     "id": 6914,
-    "ilevel": "190 @plvl 1 - 190 @plvl 190",
+    "ilevel": "27 @plvl 1 - 196 @plvl 196",
     "curveId": 17981
   },
   "6915": {
@@ -31627,7 +31627,10 @@ export const bonus_IDs = {
   },
   "7083": {
     "id": 7083,
-    "effect": null,
+    "effect": {
+      "id": 0,
+      "index": 0
+    },
     "quality": 5
   },
   "7084": {
@@ -32380,7 +32383,7 @@ export const bonus_IDs = {
   },
   "7127": {
     "id": 7127,
-    "ilevel": "158 @plvl 45 - 158 @plvl 158",
+    "ilevel": "200 @plvl 45 - 200 @plvl 200",
     "curveId": 17860,
     "quality": 4
   },
@@ -32572,7 +32575,7 @@ export const bonus_IDs = {
   },
   "7173": {
     "id": 7173,
-    "ilevel": "95 @plvl 45 - 158 @plvl 158",
+    "ilevel": "27 @plvl 1 - 200 @plvl 200",
     "curveId": 16668,
     "quality": 4
   },
@@ -32672,7 +32675,7 @@ export const bonus_IDs = {
   },
   "7192": {
     "id": 7192,
-    "ilevel": "75 @plvl 45 - 138 @plvl 138",
+    "ilevel": "1 @plvl 1 - 174 @plvl 174",
     "curveId": 16667,
     "quality": 3
   },
@@ -32845,7 +32848,7 @@ export const bonus_IDs = {
   },
   "7217": {
     "id": 7217,
-    "ilevel": "83 @plvl 45 - 146 @plvl 146",
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 17262
   },
   "7218": {
@@ -37610,7 +37613,7 @@ export const bonus_IDs = {
   },
   "7890": {
     "id": 7890,
-    "ilevel": "95 @plvl 45 - 158 @plvl 158",
+    "ilevel": "27 @plvl 1 - 200 @plvl 200",
     "curveId": 16668,
     "quality": 4
   },
@@ -38073,7 +38076,10 @@ export const bonus_IDs = {
   },
   "7930": {
     "id": 7930,
-    "effect": null
+    "effect": {
+      "id": 0,
+      "index": 0
+    }
   },
   "7931": {
     "id": 7931,
@@ -45604,5 +45610,21 @@ export const bonus_IDs = {
   "9136": {
     "id": 9136,
     "quality": 4
+  },
+  "9156": {
+    "id": 9156,
+    "ilevel": "206 @plvl 45 - 327 @plvl 327",
+    "curveId": 30724
+  },
+  "9232": {
+    "id": 9232,
+    "ilevel": "249 @plvl 60 - 340 @plvl 340",
+    "curveId": 62385
+  },
+  "9233": {
+    "id": 9233,
+    "ilevel": "21 @plvl 1 - 236 @plvl 236",
+    "curveId": 62415,
+    "quality": 3
   }
 }

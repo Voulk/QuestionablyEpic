@@ -208,6 +208,7 @@ class Player {
   };
 
   catalyzeItem = (item) => {
+    return item; // The Item Catalyst isn't currently active.
     /*let tempArray = this.activeItems.filter(function (item) {
       return item.uniqueHash === unique;
     }); */

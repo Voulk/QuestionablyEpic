@@ -104,7 +104,7 @@ class ItemSet {
         }
       }
 
-      if (item.socket) setSockets++;
+      if (item.socket) setSockets += item.socket;
       //if (item.hasDomSocket) domSockets++;
       if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
       if (item.isCatalystItem) this.uniques['catalyst'] = (this.uniques['catalyst'] || 0) + 1

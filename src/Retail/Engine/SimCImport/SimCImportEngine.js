@@ -179,7 +179,7 @@ export function processItem(line, player, contentType, type) {
   let itemSlot = "";
   let itemBonusIDs = [];
   let itemLevel = -1;
-  let itemSocket = false;
+  let itemSockets = 0;
   let itemTertiary = "";
   let dropLevel = 0;
   let levelOverride = 0; // A player can forgo the bonus_id system and override an items level if they wish by entering ilevel= at the end of an item.
@@ -234,7 +234,7 @@ export function processItem(line, player, contentType, type) {
       if ("level" in idPayload) {
         itemLevelGain += idPayload["level"];
       } else if ("socket" in idPayload) {
-        itemSocket = true;
+        itemSockets = idPayload["socket"];
       } else if (bonus_id === "41") {
         itemTertiary = "Leech";
       } else if (bonus_id === "7886" && itemID !== 171323) {
@@ -318,7 +318,7 @@ export function processItem(line, player, contentType, type) {
   if (itemLevel > 60 && itemID !== 0 && getItem(itemID) !== "") {
     let itemAllocations = getItemAllocations(itemID, missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
-    let item = new Item(itemID, "", itemSlot, itemSocket || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel + itemLevelGain, bonusIDS);
+    let item = new Item(itemID, "", itemSlot, itemSockets || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel + itemLevelGain, bonusIDS);
     item.vaultItem = type === "Vault";
     item.active = itemEquipped || item.vaultItem;
     item.isEquipped = itemEquipped;
