@@ -16,10 +16,11 @@
  * @param {*} specialSpells Special spells are those that can change our ramp in some way. Rapture is the most prominent current example.
  * @returns The function returns a sequence of spells (which might include trinket uses).
  */
- export const buildRamp = (type, applicators, trinkets, haste, playstyle, incTalents) => {
+ export const buildEvokerRamp = (type, applicators, trinkets, haste, playstyle, incTalents) => {
     //const talents = ['Power Word: Solace', 'Divine Star']
     const trinketList = []
     const talents = {};
+    console.log(incTalents);
     for (const [key, value] of Object.entries(incTalents)) {
         talents[key] = value.points;
     }
@@ -32,14 +33,14 @@
     else if (type === "Micro") {
         return buildMicroRamp(applicators, trinkets, playstyle, talents);
     }
-    else if (type === "Primary") { 
+    else if (type === "Blossom") { 
         // With Boon gone, our primary ramp will generally be with Fiend. 
         // The particular label doesn't matter all that much since it's just a way to categorize what we're intending to cast. 
-        return buildEvangRamp(applicators, trinketList['Fiend'], playstyle, talents, ["Shadowfiend"]); 
+        return buildBlossomBurstFull(applicators, [], playstyle, talents, haste); 
     }
-    else if (type === "Secondary") {
+    else if (type === "Reversion") {
         // 
-        return buildEvangRamp(applicators, trinketList['Fiend'], playstyle, talents, []); 
+        return buildReversionSequence(applicators, [], playstyle, talents, haste); 
 
         // Further ramp types can be added here. 
     }
@@ -93,5 +94,12 @@ export const buildBlossomBurstFull = (applicators, trinkets, playstyle, talents,
 
 
     return sequence;
+}
+
+export const buildReversionSequence = (applicators, trinkets, playstyle, talents) => {
+    let sequence = [];
+    let t = 0;
+
+    return ["Temporal Anomaly", "Echo", "Echo", "Echo", "Reversion"];
 }
 

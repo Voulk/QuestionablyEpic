@@ -65,6 +65,11 @@ export const shamanDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 1.2,
       CastsPerMinute: 24,
       cooldownMult: {
+        c60: 1,
+        c90: 1,
+        c120: 1,
+        c180: 1.1,
+
         oneMinute: 1.1,
         ninetySeconds: 1,
         twoMinutes: 1.18,
@@ -79,6 +84,11 @@ export const shamanDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 0.4,
       CastsPerMinute: 30,
       cooldownMult: {
+        c60: 1,
+        c90: 1,
+        c120: 1,
+        c180: 1,
+
         oneMinute: 1.1,
         ninetySeconds: 1,
         twoMinutes: 1.1,
@@ -99,10 +109,10 @@ export const shamanDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.49,
-    crit: 0.6,
-    mastery: 0.48,
-    versatility: 0.59,
+    haste: 0.26,
+    crit: 0.34,
+    mastery: 0.21,
+    versatility: 0.32,
     leech: 0.47,
   };
   statWeights.Dungeon = {
