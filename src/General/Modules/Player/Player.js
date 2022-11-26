@@ -564,11 +564,11 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Necrolord Default", 4));
 
       this.activeStats = {
-        intellect: 2500,
-        haste: 850,
-        crit: 400,
-        mastery: 800,
-        versatility: 520,
+        intellect: 6500,
+        haste: 2000,
+        crit: 1500,
+        mastery: 1800,
+        versatility: 1200,
         stamina: 1900,
       };
     } else if (spec === SPEC.RESTOSHAMAN) {
@@ -576,11 +576,11 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 2500,
-        haste: 125,
-        crit: 790,
-        mastery: 220,
-        versatility: 570,
+        intellect: 6500,
+        haste: 815,
+        crit: 2300,
+        mastery: 400,
+        versatility: 2000,
         stamina: 1900,
       };
       /*
@@ -618,11 +618,11 @@ class Player {
         this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
         this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
         this.activeStats = {
-          intellect: 2500,
-          haste: 424,
-          crit: 770,
-          mastery: 700,
-          versatility: 400,
+          intellect: 7500,
+          haste: 2000,
+          crit: 1910,
+          mastery: 1750,
+          versatility: 1500,
           stamina: 1900,
         }
       /*

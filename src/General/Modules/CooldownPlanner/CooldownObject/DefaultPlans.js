@@ -4,6 +4,9 @@ export const defaultPlans = {
   /* ---------------------------------------------------------------------------------------------- */
   2398: {
     // Shriekwing
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -30,6 +33,9 @@ export const defaultPlans = {
   },
   2418: {
     // Huntsman Altimor
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -62,6 +68,9 @@ export const defaultPlans = {
   },
   2402: {
     // Sun King's Salvation
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -88,6 +97,9 @@ export const defaultPlans = {
   },
   2405: {
     // Artificer Xy'mox
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -133,6 +145,9 @@ export const defaultPlans = {
   },
   2383: {
     // Hungering Destroyer
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { bossAbility: 329455, time: "00:24" },
@@ -164,6 +179,9 @@ export const defaultPlans = {
   },
   2406: {
     // Lady Inerva Darkvein
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { time: "00:20", bossAbility: 331844 },
@@ -186,6 +204,9 @@ export const defaultPlans = {
   },
   2412: {
     // The Council of Blood
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -223,6 +244,9 @@ export const defaultPlans = {
   },
   2399: {
     // Sludgefist
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { bossAbility: 332687, time: "00:00" },
@@ -255,6 +279,9 @@ export const defaultPlans = {
   },
   2417: {
     // Stone Legion Generals
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -300,6 +327,9 @@ export const defaultPlans = {
   },
   2407: {
     // Sire Denathrius
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -356,11 +386,13 @@ export const defaultPlans = {
   /* ---------------------------------------------------------------------------------------------- */
   2423: {
     // The Tarragrue
+    Normal: { default: [] },
     Heroic: { default: [] },
     Mythic: { default: [] },
   },
   2433: {
     // The Eye of the Jailer
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -401,6 +433,7 @@ export const defaultPlans = {
   },
   2429: {
     // The Nine
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -426,6 +459,7 @@ export const defaultPlans = {
   },
   2432: {
     // Remnant of Ner'zhul
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:28", bossAbility: 351066 },
@@ -457,6 +491,7 @@ export const defaultPlans = {
   },
   2434: {
     // Soulrender Dormazain
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "01:28", bossAbility: 350801 },
@@ -491,6 +526,7 @@ export const defaultPlans = {
   },
   2430: {
     // Painsmith Raznal
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -543,6 +579,7 @@ export const defaultPlans = {
   },
   2436: {
     // Guardian of the First Ones
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:30", bossAbility: 355352 },
@@ -591,6 +628,7 @@ export const defaultPlans = {
   },
   2431: {
     // Fatescribe Roh-Kalo
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -641,6 +679,7 @@ export const defaultPlans = {
   },
   2422: {
     // Kel'Thuzad
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -684,6 +723,7 @@ export const defaultPlans = {
   },
   2435: {
     // Sylvanas Windrunner
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:09", bossAbility: 347670 },
@@ -769,6 +809,7 @@ export const defaultPlans = {
   /* ---------------------------------------------------------------------------------------------- */
   2512: {
     // Vigilant Guardian
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "01:30", bossAbility: 360409 }, // Exposed Core
@@ -796,6 +837,7 @@ export const defaultPlans = {
 
   2542: {
     // Skolex, the Insatiable Ravener
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:04", bossAbility: 359829 }, // Dust Flail
@@ -851,6 +893,7 @@ export const defaultPlans = {
 
   2553: {
     // Artificer Xy'mox
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:19", bossAbility: 362850 }, // Hyperlight Sparknova
@@ -891,6 +934,7 @@ export const defaultPlans = {
 
   2540: {
     // Dausegne, the Fallen Oracle
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:13", bossAbility: 365373 }, // Disintegration Halo 1
@@ -957,6 +1001,7 @@ export const defaultPlans = {
 
   2544: {
     // Prototype Pantheon
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:50", bossAbility: 360636 }, // Runecarver's Deathtouch
@@ -991,6 +1036,7 @@ export const defaultPlans = {
 
   2539: {
     // Lihuvim, Principal Architect
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:15", bossAbility: 360159 }, // Unstable Mote
@@ -1041,6 +1087,7 @@ export const defaultPlans = {
 
   2529: {
     // Halondrus the Reclaimer
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" }, // Phase 1
@@ -1123,6 +1170,7 @@ export const defaultPlans = {
 
   2546: {
     // Anduin Wrynn
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" }, // Phase 1
@@ -1213,6 +1261,7 @@ export const defaultPlans = {
 
   2543: {
     // Lords of Dread
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:15", bossAbility: 361913 }, // Manifest Shadows
@@ -1255,6 +1304,7 @@ export const defaultPlans = {
 
   2549: {
     // Rygelon
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:10", bossAbility: 362275 }, // Celestial Collapse
@@ -1295,6 +1345,7 @@ export const defaultPlans = {
 
   2537: {
     // The Jailer, Zovaal
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" }, // Phase 1
@@ -1401,6 +1452,110 @@ export const defaultPlans = {
         { time: "10:51", bossAbility: 365436 }, // Torment
         { time: "11:00", bossAbility: 360378 }, // Meteor Cleave
       ],
+    },
+  },
+
+  2587: {
+    // Eranog
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2639: {
+    // Terros
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2590: {
+    // The Primalist Council
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2592: {
+    // Sennarth, The Cold Breath
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2635: {
+    // Dathea, Ascended
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2605: {
+    // Kurog Grimtotem
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2614: {
+    // Broodkeeper Diurna
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2607: {
+    // Raszageth the Storm-Eater
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
     },
   },
 };

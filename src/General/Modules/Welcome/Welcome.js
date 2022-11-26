@@ -13,7 +13,6 @@ import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunction
 import { useSelector } from "react-redux";
 import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
-import { covenantIcons } from "../CooldownPlanner/Functions/CovenantFunctions";
 import { getTranslatedRaceName } from "Databases/RacesDB";
 import { getTranslatedClassName } from "locale/ClassNames";
 

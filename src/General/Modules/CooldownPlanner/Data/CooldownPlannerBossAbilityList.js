@@ -5067,26 +5067,198 @@ export const bossAbilities = {
       },
     },
   ],
-  /* ---------------------------------------------------------------------------------------------- */
-  /*                                          Dragonflight                                          */
-  /* ---------------------------------------------------------------------------------------------- */
-  /* ---------------------------------------------------------------------------------------------- */
-  /*                                     Vault of the Incarnates                                    */
-  /* ---------------------------------------------------------------------------------------------- */
-  /* ------------------------------------------- Eranog ------------------------------------------- */
-  2587: [],
-  /* ---------------------------------- Sennarth, The Cold Breath --------------------------------- */
-  2592: [],
-  /* ------------------------------------ The Primalist Council ----------------------------------- */
-  2590: [],
-  /* --------------------------------------- Kurog Grimtotem -------------------------------------- */
-  2605: [],
-  /* ------------------------------------- Broodkeeper Diurna ------------------------------------- */
-  2614: [],
-  /* ---------------------------------- Raszageth the Storm-Eater --------------------------------- */
-  2607: [],
-  /* ------------------------------------------- Terros ------------------------------------------- */
-  2639: [],
-  /* -------------------------------------- Dathea, Ascended -------------------------------------- */
-  2635: [],
+
+  // {
+  //   cooldownPlannerActive: false,
+  //   createEvent: false,
+  //   guid: ,
+  //   icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_azerite_essence06.jpg").default,
+  //   importActive: false,
+  //   name: {
+  //     cn: "",
+  //     de: "",
+  //     en: "",
+  //     fr: "",
+  //     ru: "",
+  //   },
+  // },
+
+  2587: [
+    // https://www.wowhead.com/spell=370648/primal-flow
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 370648,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_volcano.jpg").default,
+      importActive: false,
+      name: {
+        cn: "原始涌流",
+        de: "Urzeitlicher Fluss",
+        en: "Primal Flow",
+        fr: "Flux primordial",
+        ru: "Первичный поток",
+      },
+    },
+    // https://www.wowhead.com/spell=370342/eruption
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 370342,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_improvedfirenova.jpg").default,
+      importActive: true,
+      name: {
+        cn: "喷发",
+        de: "Eruption",
+        en: "Eruption",
+        fr: "Éruption",
+        ru: "Извержение",
+      },
+    },
+    // https://www.wowhead.com/spell=373327/destruction
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 373327,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_gizmo_supersappercharge.jpg").default,
+      importActive: true,
+      name: {
+        cn: "毁灭",
+        de: "Zerstörung",
+        en: "Destruction",
+        fr: "Destruction",
+        ru: "Разрушение",
+      },
+    },
+    // https://www.wowhead.com/beta/spell=396028/molten-spike
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 396028,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/trade_engineering.jpg").default,
+      importActive: true,
+      name: {
+        cn: "",
+        de: "",
+        en: "Molten Spike",
+        fr: "",
+        ru: "",
+      },
+    },
+    // https://www.wowhead.com/beta/spell=396022/molten-spikes
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 396022,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_fomor_boss_pillar02.jpg").default,
+      importActive: true,
+      name: {
+        cn: "",
+        de: "",
+        en: "Molten Spikes",
+        fr: "",
+        ru: "",
+      },
+    },
+    // https://www.wowhead.com/beta/spell=396023/incinerating-roar
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 396023,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_warrior_dragonroar.jpg").default,
+      importActive: true,
+      name: {
+        cn: "",
+        de: "",
+        en: "Incinerating Roar",
+        fr: "",
+        ru: "",
+      },
+    },
+    // https://www.wowhead.com/beta/spell=394917/leaping-flames
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 394917,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_ember.jpg").default,
+      importActive: true,
+      name: {
+        cn: "",
+        de: "",
+        en: "Leaping Flames",
+        fr: "",
+        ru: "",
+      },
+    },
+    // https://www.wowhead.com/spell=390715/primal-rifts
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 390715,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_head_dragon_01.jpg").default,
+      importActive: true,
+      name: {
+        cn: "原始裂隙",
+        de: "Urtümliche Risse",
+        en: "Primal Rifts",
+        fr: "Failles primordiales",
+        ru: "Изначальный портал",
+      },
+    },
+
+    // https://www.wowhead.com/spell=370615/molten-swing
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 370615,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_improvelavalash.jpg").default,
+      importActive: false,
+      name: {
+        cn: "熔火横扫",
+        de: "Geschmolzener Schwung",
+        en: "Molten Swing",
+        fr: "Frappe de la fournaise",
+        ru: "Раскаленный удар",
+      },
+    },
+
+    // https://www.wowhead.com/beta/spell=396040/pyroblast
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 396040,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_mage_greaterpyroblast.jpg").default,
+      importActive: false,
+      name: {
+        cn: "",
+        de: "",
+        en: "Pyroblast",
+        fr: "",
+        ru: "",
+      },
+    },
+
+    // https://www.wowhead.com/spell=370307/collapsing-army
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 370307,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_elemental_totem.jpg").default,
+      importActive: true,
+      name: {
+        cn: "坍缩军团",
+        de: "Kollabierende Armee",
+        en: "Collapsing Army",
+        fr: "Armée en déclin",
+        ru: "Хрупкая армия",
+      },
+    },
+  ], // Eranog
+  2639: [], // Terros
+  2590: [], // The Primalist Council
+  2592: [], // Sennarth, The Cold Breath
+  2635: [], //  Dathea, Ascended
+  2605: [], //  Kurog Grimtotem
+  2614: [], //  Broodkeeper Diurna
+  2607: [], //  Raszageth the Storm-Eater
 };
+

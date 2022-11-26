@@ -38,6 +38,19 @@ export const raidDB = [
     expansion: 8,
     icon: require("Images/inv_achievement_raid_progenitorraid.jpg").default,
   },
+  {
+    ID: 2522,
+    raidID: 1200,
+    name: {
+      en: "Vault of the Incarnates",
+      fr: "Caveau des Incarnations",
+      de: "Gewölbe der Inkarnationen",
+      ru: "Хранилище Воплощений",
+      ch: "化身巨龙牢窟",
+    },
+    expansion: 8,
+    icon: require("Images/achievement_raidprimalist_raid.jpg").default,
+  },
 ];
 
 export const bossList = [
@@ -458,5 +471,121 @@ export const bossList = [
     },
     zoneID: 2481,
     icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_jailer.jpg").default,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                     Vault of the Incarnates                                    */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  {
+    DungeonEncounterID: 2587,
+    ID: 2480,
+    name: {
+      en: "Eranog",
+      fr: "Éranog",
+      de: "Eranog",
+      ru: "Эраног",
+      ch: "艾拉诺格",
+    },
+    zoneID: 2522,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_eranog.jpg").default,
+  },
+
+  {
+    DungeonEncounterID: 2639,
+    ID: 2500,
+    name: {
+      en: "Terros",
+      fr: "Terros",
+      de: "Terros",
+      ru: "Террос",
+      ch: "泰洛斯",
+    },
+    zoneID: 2522,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_terros.jpg").default,
+  },
+
+  {
+    DungeonEncounterID: 2590,
+    ID: 2486,
+    name: {
+      en: "The Primalist Council",
+      fr: "Le Conseil primaliste",
+      de: "Der Primalistenrat",
+      ru: "Совет воинов стихий",
+      ch: "拜荒者议会",
+    },
+    zoneID: 2522,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_council.jpg").default,
+  },
+
+  {
+    DungeonEncounterID: 2592,
+    ID: 2482,
+    name: {
+      en: "Sennarth, The Cold Breath",
+      fr: "Sennarth, la Glaciale",
+      de: "Sennarth, der kalte Atem",
+      ru: "Сеннарт Дыхание Льда",
+      ch: "瑟娜尔丝，冰冷之息",
+    },
+    zoneID: 2522,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_sennarth.jpg").default,
+  },
+
+  {
+    DungeonEncounterID: 2635,
+    ID: 2502,
+    name: {
+      en: "Dathea, Ascended",
+      fr: "Dathéa, transcendée",
+      de: "Dathea, die Aufgestiegene",
+      ru: "Дафия Перерожденная",
+      ch: "晋升者达瑟雅",
+    },
+    zoneID: 2522,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_windelemental.jpg").default,
+  },
+
+  {
+    DungeonEncounterID: 2605,
+    ID: 2491,
+    name: {
+      en: "Kurog Grimtotem",
+      fr: "Kurog Totem-Sinistre",
+      de: "Kurog Grimmtotem",
+      ru: "Курог Зловещий Тотем",
+      ch: "库洛格·恐怖图腾",
+    },
+    zoneID: 2522,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_kurog.jpg").default,
+  },
+
+  {
+    DungeonEncounterID: 2614,
+    ID: 2493,
+    name: {
+      en: "Broodkeeper Diurna",
+      fr: "Garde-couvée Diurna",
+      de: "Bruthüterin Diurna",
+      ru: "Хранительница стаи Денна",
+      ch: "巢穴守护者迪乌尔娜",
+    },
+    zoneID: 2522,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_diurna.jpg").default,
+  },
+
+  {
+    DungeonEncounterID: 2607,
+    ID: 2499,
+    name: {
+      en: "Raszageth the Storm-Eater",
+      fr: "Raszageth la Mange-tempêtes",
+      de: "Raszageth die Sturmfresserin",
+      ru: "Рашагет Пожирательница Бурь",
+      ch: "莱萨杰丝，噬雷之龙",
+    },
+    zoneID: 2522,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
   },
 ];

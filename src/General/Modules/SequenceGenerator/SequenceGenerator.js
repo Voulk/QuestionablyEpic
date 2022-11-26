@@ -18,6 +18,7 @@ import { PALADINSPELLDB, baseTalents as palaTalents } from "Retail/Engine/Effect
 import { DRUIDSPELLDB, baseTalents as druidTalents } from "Retail/Engine/EffectFormulas/Druid/RestoDruidSpellDB";
 import { MONKSPELLS } from "Retail/Engine/EffectFormulas/Monk/MistweaverSpellDB";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
+import { buildEvokerRamp } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
 
 import LooksOneIcon from "@mui/icons-material/LooksOne";
 import { SpellIcon } from "./SpellIcon";
@@ -76,7 +77,7 @@ const getTalentDB = (spec) => {
 
 const getSpecSettings = (spec) => {
   if (spec === "Preservation Evoker") {
-    return {setting1:  {value: "defaultValue", options: ["defaultValue", "OtherValue"]},
+    return {twoPc:  {value: "Yes", options: ["Yes", "No"]},
             includeOverheal: {value: "Yes", options: ["Yes", "No"]}}
   }
   else if (spec === "Discipline Priest") {
@@ -141,9 +142,9 @@ export default function SequenceGenerator(props) {
   
 
   const stats = {
-    intellect: 6500,
-    haste: 3500,
-    crit: 1800,
+    intellect: 7500,
+    haste: 2000,
+    crit: 6300,
     mastery: 2000,
     versatility: 1200,
     stamina: 8200,
@@ -162,7 +163,7 @@ export default function SequenceGenerator(props) {
   }
 
   const runIterations = (sequence, simFunc) => {
-    const iter = 20;
+    const iter = 100;
     const results = {totalHealing: 0, totalDamage: 0, manaSpent: 0, hpm: 0};
     let finalReport = [];
   
@@ -246,7 +247,13 @@ export default function SequenceGenerator(props) {
   };
 
   const autoGen = () => {
-    updateSequence(buildRamp("Primary", 10, [], stats.haste, "", discTalents));
+
+    if (selectedSpec === "Discipline Priest") {
+      updateSequence(buildRamp("Primary", 10, [], stats.haste, "", discTalents));
+    }
+    else if (selectedSpec === "Preservation Evoker") {
+      updateSequence(buildEvokerRamp("Reversion", 0, [], stats.haste, "", evokerTalents));
+    }
   };
 
   //#region Drag and Drop Functions

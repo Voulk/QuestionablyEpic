@@ -2,7 +2,7 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { EVOKERSPELLDB } from "./PresEvokerSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth } from "../Generic/RampBase";
+import { addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff } from "../Generic/RampBase";
 
 
 
@@ -16,31 +16,50 @@ const EVOKERCONSTANTS = {
     
     masteryMod: 1.8, 
     masteryEfficiency: 0.88, 
-    baseMana: 10000,
+    baseMana: 250000,
 
     defaultEmpower: 1,
     auraHealingBuff: 0.6, 
     auraDamageBuff: 1.15, 
-
+    goldenHourHealing: 18000,
     enemyTargets: 1, 
-    echoExceptionSpells: ['Echo', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D'], // These are spells that do not consume or otherwise interact with our Echo buff.
+    echoExceptionSpells: ['Echo', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
+    essenceBuff: {
+        name: "EssenceGen",
+        expiration: 5,
+        buffDuration: 5,
+        buffType: 'function',
+        stacks: false,
+        tickRate: 5,
+        hastedDuration: true,
+        function: function (state, buff) {
+            
+            state.essence += 1;
 
+            if (state.essence < 6) {
+                const essenceGenBuff = state.activeBuffs.filter(buff => buff.name === "EssenceGen")[0];
+                essenceGenBuff.expiration = state.t + 5 / getHaste(state.currentStats) + 0.1;
+
+            }
+        }
+    },
     essenceBurstBuff: {
         name: "Essence Burst",
         type: "buff",
         stacks: true,
         maxStacks: 2,
         expiration: 999,
+        buffDuration: 15,
         buffType: 'special',
     },
     exhilBurstBuff: {
         name: "Exhilarating Burst",
         type: "buff",
         stacks: false,
-        buffDuration: 8,
+        buffDuration: 10,
         buffType: 'stats',
         stat: 'critMult',
-        value: 0.1
+        value: 0.15
     },
     renewingBreathBuff: {
         type: "buff",
@@ -81,9 +100,13 @@ const triggerEssenceBurst = (state) => {
         if (activeBuff.length > 0) activeBuff.expiration = (state.t + exhilBurst.buffDuration);
         else {
             exhilBurst.expiration = (state.t + exhilBurst.buffDuration);
-            addReport(state, `Adding buff: Essence Burst`);
+            addBuff(state, EVOKERCONSTANTS.essenceBurstBuff, "Essence Burst")
+            addReport(state, `Adding buff: Exhilirating Burst`);
             state.activeBuffs.push(exhilBurst);
         }
+    }
+    else {
+        addBuff(state, EVOKERCONSTANTS.essenceBurstBuff, "Essence Burst")
     }
 }
 
@@ -165,14 +188,35 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
     // Evoker Class Talents
     if (talents.bountifulBloom) evokerSpells['Emerald Blossom'][0].targets += 2;
+    if (talents.panacea) evokerSpells['Emerald Blossom'].push({
+        type: "heal",
+        school: "green",
+        coeff: 2.5,
+        targets: 1,
+        expectedOverheal: 0.3,
+        secondaries: ['crit', 'vers']
+    })
     if (talents.enkindled) {
         evokerSpells['Living Flame'][0].coeff *= (1 + 0.03 * talents.enkindled);
         evokerSpells['Living Flame D'][0].coeff *= (1 + 0.03 * talents.enkindled);
     }
 
     // Evoker Spec Talents
-    
-    //if (talents.renewingBreath) EVOKERCONSTANTS.renewingBreathBuff.mult = (0.15 * talents.renewingBreath);
+    if (talents.renewingBreath) {
+        evokerSpells['Dream Breath'][0].coeff *= (1 + 0.15 * talents.renewingBreath);
+        evokerSpells['Dream Breath'][1].coeff[EVOKERCONSTANTS.defaultEmpower] *= (1 + 0.15 * talents.renewingBreath);
+        evokerSpells['Dream Breath'][2].coeff *= (1 + 0.15 * talents.renewingBreath);
+    }
+    //if (settings.twoPc) evokerSpells['Reversion']
+    if (talents.goldenHour) evokerSpells['Reversion'].push({
+        type: "heal",
+        name: "Golden Hour",
+        coeff: 0,
+        flatHeal: EVOKERCONSTANTS.goldenHourHealing,
+        targets: 1, // Can hit everyone. Likely to be retuned around sqrt scaling.
+        expectedOverheal: 0,
+        secondaries: []
+    })
     /*
     if (talents.renewingBreath) evokerSpells['Dream Breath'].push({
         type: "buff",
@@ -194,7 +238,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
         type: "heal",
         school: "green",
         coeff: (0.3 * talents.flutteringSeedlings),
-        targets: 3, // 
+        targets: 2, // 
         expectedOverheal: 0.25,
         secondaries: ['crit', 'vers', 'mastery']
     });
@@ -203,7 +247,10 @@ const triggerCycleOfLife = (state, rawHealing) => {
         storedSpell: "Emerald Blossom",
         chance: 0.3,
     });
-    if (talents.essenceBurst) evokerSpells['Living Flame'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.2})
+    if (talents.essenceBurst) {
+        evokerSpells['Living Flame'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.2})
+        evokerSpells['Living Flame D'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.2})
+    }
 
     if (talents.callOfYsera) evokerSpells['Verdant Embrace'].push({
         name: "Call of Ysera",
@@ -212,6 +259,19 @@ const triggerCycleOfLife = (state, rawHealing) => {
         buffDuration: 999,
         buffType: 'special',
     })
+    if (talents.resonatingSphere) /*evokerSpells['Temporal Anomaly'].push({
+
+        // Lasts 8s and heals every 1s within range but it. Puts absorbs on allies. 
+        // Stacks to 3, however the cap is based on how much 3 stacks would absorb pre-mastery.
+        type: "buff",
+        buffType: "special",
+        school: "bronze",
+        name: "Echo",
+        buffDuration: 6,
+        tickRate: 2,
+        value: 0.3 * (1 + talents.timeLord * 0.25),
+        targets: 2, 
+    })*/
     /* TALENT REMOVED
     if (talents.groveTender) {
         evokerSpells['Dream Breath'][0].cost *= 0.9;
@@ -261,7 +321,6 @@ const triggerCycleOfLife = (state, rawHealing) => {
                 //console.log(typeof spell.coeff)
                 
             }) 
-            console.log(fullSpell);
         }
 
         if ('school' in spellInfo && spellInfo.school === "bronze" && talents.temporalCompression) {
@@ -325,8 +384,8 @@ const getHealingMult = (state, t, spellName, talents) => {
         }
     }
 
-    if ((spellName === "Dream Breath" || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Call of Ysera")) {
-        if (spellName === "Dream Breath") mult *= 1.4;
+    if ((spellName.includes("Dream Breath") || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Call of Ysera")) {
+        if (spellName.includes("Dream Breath")) mult *= 1.4;
         if (spellName === "Living Flame" || spellName === "Living Flame D") mult *= 2;
 
         state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
@@ -397,13 +456,14 @@ const canCastSpell = (state, spellDB, spellName) => {
     
     const spell = spellDB[spellName][0];
     let miscReq = true;
-    const holyPowReq = (spell.holyPower + state.holyPower > 0 ) || !spell.holyPower;
+    const essenceReq = (state.essence >= spell.essence ) || !spell.essence;
     const cooldownReq = (state.t > spell.activeCooldown) || !spell.cooldown;
+    
     if (spellName === "Hammer of Wrath") {
         if (!checkBuffActive(state.activeBuffs, "Avenging Wrath")) miscReq = false;
     } 
 
-    return cooldownReq && holyPowReq && miscReq;
+    return cooldownReq && essenceReq && miscReq;
 }
 
 const getSpellHPM = (state, spellDB, spellName) => {
@@ -446,7 +506,7 @@ export const genSpell = (state, spells) => {
 }
 
 
-const apl = ["Riptide", "Rest"]
+const apl = ["Emerald Blossom", "Verdant Embrace", "Living Flame D", "Rest"]
 
 const runSpell = (fullSpell, state, spellName, evokerSpells) => {
 
@@ -508,8 +568,9 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                         next: state.t + (spell.tickRate / getHaste(state.currentStats))}
                     newBuff.attFunction = spell.function;
 
-                    if (spellName.includes("Reversion")) newBuff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - 0.25))); // TODO; Replace 0.25 with crit.
-
+                    if (spellName.includes("Reversion")) newBuff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - (getCrit(state.currentStats) + spell.statMods.crit - 1)))); // TODO; Replace 0.25 with crit.
+                    else newBuff.expiration = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
+                    
                     state.activeBuffs.push(newBuff);
 
                 }
@@ -568,6 +629,32 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
     }); 
 }
 
+const spendSpellCost = (spell, state) => {
+    if ('essence' in spell[0]) {
+        if (checkBuffActive(state.activeBuffs, "Essence Burst")) {
+            removeBuffStack(state.activeBuffs, "Essence Burst");
+            addReport(state, `Essence Burst consumed!`);
+            state.manaSpent += 0;
+        }
+        else {
+            // Essence buff is not active. Spend Essence and mana.
+            state.manaSpent += spell[0].cost;
+            state.essence -= spell[0].essence;
+
+            // Check if we need to begin Essence Recharge. We don't actually need to check if we're below
+            // 6 Essence, since we'll never be able to cast a spell that costs Essence if we're at 6.
+            if (checkBuffActive(state.activeBuffs, "EssenceGen") === false) {
+                addBuff(state, EVOKERCONSTANTS.essenceBuff, "EssenceGen");
+            }
+        }
+    } 
+        
+    else if ('cost' in spell[0]) state.manaSpent += spell[0].cost;
+    else {
+        // No cost. Do nothing.
+    };    
+}
+
 const getSpellCastTime = (spell, state, currentStats) => {
     if ('castTime' in spell) {
         let castTime = spell.castTime;
@@ -613,12 +700,13 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
         talents[key] = value.points;
     }
 
-    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, essences: 5};
+    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, essence: 5};
+
+    let currentStats = {...stats};
+    state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
 
 
-
-
-    const sequenceLength = 180; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Manual" // Auto / Manual.
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0; // The time when the next spell cast can begin.
@@ -629,7 +717,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     // Ideally we'll cover as much as we can in here.
 
     const evokerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats);
-    
+
     // Create Echo clones.
     for (const [spellName, spellData] of Object.entries(evokerSpells)) {
         
@@ -643,12 +731,16 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
             if (spellName === "Spiritbloom") echoSpell[0].targets = 1; // An Echo'd Spiritbloom just adds one target.
             if (spellName === "Emerald Blossom") echoSpell[0].targets = 1; // An Echo'd Emerald Blossom just adds one target.
-            if (spellName === "Dream Breath") echoSpell[0].targets = 1; // An Echo'd Emerald Blossom just adds one target.
+            if (spellName === "Dream Breath") {
+                echoSpell[0].targets = 1; // An Echo'd Dream Breath just adds one target.
+                echoSpell[1].targets = 1;
+                echoSpell[2].targets = 1;
+            }
             if (spellName === "Reversion") {
                 echoSpell[0].name = "Reversion (HoT - Echo)";
                 echoSpell[0].function = spellData[0].function;
             }
-            echoSpell[0].coeff *= evokerSpells['Echo'][1].value;
+            //echoSpell[0].coeff *= evokerSpells['Echo'][1].value;
             // Save the new spell.
             evokerSpells[spellName+"(Echo)"] = echoSpell;
 
@@ -687,6 +779,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                     const func = buff.attFunction;
                     const spell = buff.attSpell;
                     func(state, spell);
+
                 } 
                 if (buff.hasted || buff.hasted === undefined) buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
                 else buff.next = buff.next + (buff.tickRate);
@@ -734,17 +827,15 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             let currentStats = {...stats};
             state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
 
-            if (seqType === "Manual") queuedSpell = seq.shift();
+            if (seqType === "Auto") queuedSpell = seq.shift();
             else queuedSpell = genSpell(state, evokerSpells);
     
             const fullSpell = evokerSpells[queuedSpell];
             const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
             spellFinish = state.t + castTime - 0.01;
-            if (fullSpell[0].castTime === 0) nextSpell += state.t + 1.5 / getHaste(currentStats);
+            if (fullSpell[0].castTime === 0) nextSpell = state.t + 1.5 / getHaste(currentStats);
             else nextSpell = state.t + castTime;
 
-            console.log("Queing " + queuedSpell + ". Next: " + nextSpell + ".Curr: " + state.t + ". Cast Time: " + castTime + " Spell Finish: " + spellFinish);
-            
 
         }
         if (queuedSpell !== "" && state.t >= spellFinish) {
@@ -760,11 +851,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             const spellName = queuedSpell;
             const fullSpell = evokerSpells[queuedSpell];
 
-
-            // We'll iterate through the different effects the spell has.
-            // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,
-            // and the absorb effect).
-            state.manaSpent += fullSpell[0].cost || 0;
+            spendSpellCost(fullSpell, state);
 
             runSpell(fullSpell, state, spellName, evokerSpells);
 
@@ -776,11 +863,22 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                 // We have at least one Echo.
 
                 // Check Echo number.
-                const echoNum = state.activeBuffs.filter(function (buff) {return buff.name === "Echo"}).length;
-                for (let j = 0; j < echoNum; j++) {
-                    // Cast the Echo'd version of our spell j times.
+                const echoBuffs = state.activeBuffs.filter(function (buff) {return buff.name === "Echo"});
+
+                // Our Echo buffs can be of different strengths (say, one comes from TA and one from a hard casted Echo).
+                // Because of this we'll iterate through our buffs 1 by 1 so we can use the correct Echo value.
+                for (let j = 0; j < echoBuffs.length; j++) {
                     
-                    const echoSpell = evokerSpells[spellName + "(Echo)"]
+                    const echoBuff = echoBuffs[j];
+                    
+                    const echoSpell = JSON.parse(JSON.stringify(evokerSpells[spellName + "(Echo)"]));
+
+                    echoSpell.forEach(effect => {
+                        if ('coeff' in effect) effect.coeff = effect.coeff * echoBuff.value;
+                    })
+
+                    // Unfortunately functions are not copied over when we do our deep clone, so we'll have to manually copy them over.
+                    if (spellName === "Reversion") echoSpell[0].function = evokerSpells["Reversion"][0].function;
                     runSpell(echoSpell, state, spellName + "(Echo)", evokerSpells)
   
                 }
