@@ -405,6 +405,7 @@ function checkDefaultSocket(id) {
 
   if (temp.length > 0) {
     const socketType = temp[0].socketType;
-    return socketType == "Prismatic";
+    if (socketType == "Prismatic") return 1;
+    else return 0;
   } else return 0;
 }

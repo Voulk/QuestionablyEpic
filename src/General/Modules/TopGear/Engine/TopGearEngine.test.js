@@ -10,9 +10,9 @@ describe("Test Stat DRs", () => {
     each`
         rawHaste | expectedResult
         ${990}  | ${990}
-        ${1034}  | ${1030}
-        ${1195}  | ${1175}
-        ${1845}  | ${1688}
+        ${1034}  | ${1034}
+        ${1195}  | ${1195}
+        ${1845}  | ${1845}
         // add new test cases here
 
     `.test("Checks haste DR at $rawHaste", ({ rawHaste, expectedResult }) => {
@@ -31,7 +31,7 @@ describe("Test Stat DRs", () => {
     each`
         rawMastery | expectedResult
         ${1050}  | ${1050}
-        ${1636}  | ${1554}
+        ${1636}  | ${1636}
         // add new test cases here
 
     `.test("Checks mastery DR at $rawMastery", ({ rawMastery, expectedResult }) => {
@@ -50,12 +50,8 @@ describe("Test Stat DRs", () => {
     each`
         rawLeech    | expectedResult
         ${205}  | ${205}
-        ${335}  | ${306}
-        ${362}  | ${322}
-        ${437}  | ${364}
-        ${463}  | ${374}
-        ${477}  | ${380}
-        ${489}  | ${385}
+        ${335}  | ${335}
+
         // add new test cases here
 
         `.test("Checks leech DR at $rawLeech", ({ rawLeech, expectedResult }) => {
