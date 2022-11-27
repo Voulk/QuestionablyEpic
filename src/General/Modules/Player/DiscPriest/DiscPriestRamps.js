@@ -139,6 +139,9 @@ const DISCCONSTANTS = {
     if (talents.trainOfThought) {
         // Can be mostly handled in RampGen.
     }
+    if (talents.blazeOfLight) {
+        // +7.5% to Penance / Smite.
+    }
     if (talents.divineAegis) {
         // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
         // Note that we increase our crit modifier by twice the amount of Divine Aegis since it's a wrapper around the entire crit.
@@ -159,7 +162,7 @@ const DISCCONSTANTS = {
     }
     if (talents.harshDiscipline && settings.harshDiscipline) {
         // Can probably just add a buff on sequence start for the first Penance.
-        //state.activeBuffs.push({name: "Harsh Discipline", expiration: 999, buffType: "special", value: 3, stacks: 1, canStack: false})
+        state.activeBuffs.push({name: "Harsh Discipline", expiration: 999, buffType: "special", value: 3, stacks: 1, canStack: false})
     }
     if (talents.expiation) {
         discSpells["Mind Blast"][0].coeff *= 1.1;
