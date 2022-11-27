@@ -5533,40 +5533,961 @@ export const bossAbilities = {
         ru: "Каменный выброс",
       },
     },
+  ],
+  2590: [
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      The Primalist Council                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* -------------------------------------------- Casts ------------------------------------------- */
+
     {
-      //  https://www.wowhead.com/spell=395686/awakened-earth
+      // https://www.wowhead.com/spell=372275/chain-lightning
       cooldownPlannerActive: false,
       createEvent: false,
-      guid: 395686,
-      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
+      guid: 372275,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_vehicle_electrocharge.jpg").default,
       importActive: false,
       name: {
-        cn: "觉醒之土",
-        de: "Erweckte Erde",
-        en: "Awakened Earth",
-        fr: "Terre éveillée",
-        ru: "Пробужденная земля",
+        cn: "闪电链",
+        de: "Kettenblitzschlag",
+        en: "Chain Lightning",
+        fr: "Chaîne d’éclairs",
+        ru: "Цепная молния",
       },
     },
+
     {
-      //  https://www.wowhead.com/spell=377166/resonating-annihilation
+      // https://www.wowhead.com/spell=372315/frost-spike
       cooldownPlannerActive: false,
       createEvent: false,
-      guid: 377166,
+      guid: 372315,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_staff_15.jpg").default,
+      importActive: false,
+      name: {
+        cn: "冰霜尖刺",
+        de: "Froststachel",
+        en: "Frost Spike",
+        fr: "Pique de givre",
+        ru: "Ледяной шип",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=372394/lightning-bolt
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 372394,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_lightning.jpg").default,
+      importActive: false,
+      name: {
+        cn: "闪电箭",
+        de: "Blitzschlag",
+        en: "Lightning Bolt",
+        fr: "Éclair",
+        ru: "Молния",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=372279/chain-lightning
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 372279,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_vehicle_electrocharge.jpg").default,
+      importActive: false,
+      name: {
+        cn: "闪电链",
+        de: "Kettenblitzschlag",
+        en: "Chain Lightning",
+        fr: "Chaîne d’éclairs",
+        ru: "Цепная молния",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=372056/crush
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 372056,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_warrior_shieldbreak.jpg").default,
+      importActive: false,
+      name: {
+        cn: "碾压",
+        de: "Zermalmen",
+        en: "Crush",
+        fr: "Écraser",
+        ru: "Сокрушение",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=397134/earthen-pillar
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 397134,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
       importActive: false,
       name: {
-        cn: "共鸣湮灭",
-        de: "Resonierende Vernichtung",
-        en: "Resonating Annihilation",
-        fr: "Résonance annihilatrice",
-        ru: "Резонирующая аннигиляция",
+        cn: "大地之柱",
+        de: "Irdene Säule",
+        en: "Earthen Pillar",
+        fr: "Pilier terrestre",
+        ru: "Земляной столп",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=372322/earthen-pillar
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 372322,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
+      importActive: false,
+      name: {
+        cn: "大地之柱",
+        de: "Irdene Säule",
+        en: "Earthen Pillar",
+        fr: "Pilier terrestre",
+        ru: "Земляной столп",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=372027/slashing-blaze
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 372027,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_lavaburst.jpg").default,
+      importActive: false,
+      name: {
+        cn: "劈砍烈焰",
+        de: "Schlitzende Lohe",
+        en: "Slashing Blaze",
+        fr: "Entaille de lave",
+        ru: "Режущее пламя",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=375331/conductive-mark
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 375331,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_staticshock.jpg").default,
+      importActive: false,
+      name: {
+        cn: "传导印记",
+        de: "Leitfähiges Zeichen",
+        en: "Conductive Mark",
+        fr: "Marque conductrice",
+        ru: "Знак проводимости",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=374038/meteor-axes
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 374038,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_offhand_1h_artifactdoomhammer_d_01.jpg").default,
+      importActive: false,
+      name: {
+        cn: "流星之斧",
+        de: "Meteoräxte",
+        en: "Meteor Axes",
+        fr: "Haches météoriques",
+        ru: "Метеоритные топоры",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=373059/primal-blizzard
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 373059,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_arcticwinds.jpg").default,
+      importActive: false,
+      name: {
+        cn: "原始暴风雪",
+        de: "Urzeitlicher Blizzard",
+        en: "Primal Blizzard",
+        fr: "Blizzard primordial",
+        ru: "Изначальная снежная буря",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=386440/glacial-convocation
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 386440,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_hunter_glacialtrap.jpg").default,
+      importActive: false,
+      name: {
+        cn: "冰川之召",
+        de: "Gletscheranrufung",
+        en: "Glacial Convocation",
+        fr: "Convocation glaciale",
+        ru: "Воззвание ко льду",
+      },
+    },
+
+    /* ------------------------------------------- Damage ------------------------------------------- */
+
+    {
+      // https://www.wowhead.com/spell=396328/quaking-pulse
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 396328,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
+      importActive: false,
+      name: {
+        cn: "震地脉冲",
+        de: "Bebender Impuls",
+        en: "Quaking Pulse",
+        fr: "Impulsion sismique",
+        ru: "Сотрясающий импульс",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=371624/conductive-mark
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 371624,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_staticshock.jpg").default,
+      importActive: false,
+      name: {
+        cn: "传导印记",
+        de: "Leitfähiges Zeichen",
+        en: "Conductive Mark",
+        fr: "Marque conductrice",
+        ru: "Знак проводимости",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=375091/meteor-axe
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 375091,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_offhand_1h_artifactdoomhammer_d_01.jpg").default,
+      importActive: false,
+      name: {
+        cn: "流星之斧",
+        de: "Meteoraxt",
+        en: "Meteor Axe",
+        fr: "Hache météorique",
+        ru: "Метеоритный топор",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=374043/meteor-axe
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 374043,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_offhand_1h_artifactdoomhammer_d_01.jpg").default,
+      importActive: false,
+      name: {
+        cn: "流星之斧",
+        de: "Meteoraxt",
+        en: "Meteor Axe",
+        fr: "Hache météorique",
+        ru: "Метеоритный топор",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=386661/glacial-convocation
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 386661,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_hunter_glacialtrap.jpg").default,
+      importActive: false,
+      name: {
+        cn: "冰川之召",
+        de: "Gletscheranrufung",
+        en: "Glacial Convocation",
+        fr: "Convocation glaciale",
+        ru: "Воззвание ко льду",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=371836/primal-blizzard
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 371836,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_arcticwinds.jpg").default,
+      importActive: false,
+      name: {
+        cn: "原始暴风雪",
+        de: "Urzeitlicher Blizzard",
+        en: "Primal Blizzard",
+        fr: "Blizzard primordial",
+        ru: "Изначальная снежная буря",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=371514/scorched-ground
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 371514,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_rhyolith_lavapool.jpg").default,
+      importActive: false,
+      name: {
+        cn: "灼烧之地",
+        de: "Verbrannter Boden",
+        en: "Scorched Ground",
+        fr: "Sol brûlé",
+        ru: "Оплавленная земля",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=371591/frost-tomb
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 371591,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_mage_chilledtothebone.jpg").default,
+      importActive: false,
+      name: {
+        cn: "冰霜之墓",
+        de: "Frostgrab",
+        en: "Frost Tomb",
+        fr: "Tombeau de givre",
+        ru: "Ледяная могила",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=370991/earthen-pillar
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 370991,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
+      importActive: false,
+      name: {
+        cn: "大地之柱",
+        de: "Irdene Säule",
+        en: "Earthen Pillar",
+        fr: "Pilier terrestre",
+        ru: "Земляной столп",
       },
     },
   ],
-  2590: [], // The Primalist Council
-  2592: [], // Sennarth, The Cold Breath
-  2635: [], //  Dathea, Ascended
+  2592: [
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Sennarth, The Cold Breath                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+
+    /* -------------------------------------------- Casts ------------------------------------------- */
+    {
+      // https://www.wowhead.com/spell=372129/web-blast
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 372129,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/sha_spell_fire_bluepyroblast.jpg").default,
+      importActive: false,
+      name: {
+        cn: "蛛网冲击",
+        de: "Netzschuss",
+        en: "Web Blast",
+        fr: "Jet de toile",
+        ru: "Выстрел паутиной",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=372045/caustic-eruption
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 372045,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_corrosivebreath.jpg").default,
+      importActive: false,
+      name: {
+        cn: "酸蚀喷发",
+        de: "Ätzende Eruption",
+        en: "Caustic Eruption",
+        fr: "Éruption caustique",
+        ru: "Едкий взрыв",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=181113/encounter-spawn
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 181113,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_questionmark.jpg").default,
+      importActive: false,
+      name: {
+        cn: "Encounter Spawn",
+        de: "Encounter Spawn",
+        en: "Encounter Spawn",
+        fr: "Encounter Spawn",
+        ru: "Encounter Spawn",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=374327/caustic-blood
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 374327,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_corrosivebreath.jpg").default,
+      importActive: false,
+      name: {
+        cn: "酸蚀血液",
+        de: "Ätzendes Blut",
+        en: "Caustic Blood",
+        fr: "Sang caustique",
+        ru: "Едкая кровь",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=372051/breath-of-ice
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 372051,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_frostblast.jpg").default,
+      importActive: false,
+      name: {
+        cn: "寒冰之息",
+        de: "Eisatem",
+        en: "Breath of Ice",
+        fr: "Souffle de glace",
+        ru: "Ледяное дыхание",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=372648/pervasive-cold
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 372648,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_mage_chilledtothebone.jpg").default,
+      importActive: false,
+      name: {
+        cn: "渗流之寒",
+        de: "Durchdringende Kälte",
+        en: "Pervasive Cold",
+        fr: "Froid pénétrant",
+        ru: "Неотступный холод",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=372765/breath-of-ice
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 372765,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_frostblast.jpg").default,
+      importActive: false,
+      name: {
+        cn: "寒冰之息",
+        de: "Eisatem",
+        en: "Breath of Ice",
+        fr: "Souffle de glace",
+        ru: "Ледяное дыхание",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=372238/call-spiderlings
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 372238,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_monsterspidercarapace_01.jpg").default,
+      importActive: false,
+      name: {
+        cn: "呼唤小蜘蛛",
+        de: "Spinnlinge rufen",
+        en: "Call Spiderlings",
+        fr: "Appel de jeunes araignées",
+        ru: "Призыв паучков",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=373817/chilling-aura
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 373817,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_coldhearted.jpg").default,
+      importActive: false,
+      name: {
+        cn: "寒冷光环",
+        de: "Unterkühlende Aura",
+        en: "Chilling Aura",
+        fr: "Aura glaciale",
+        ru: "Остужающая аура",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=371976/chilling-blast
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 371976,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_blueflamering.jpg").default,
+      importActive: false,
+      name: {
+        cn: "冰冷冲击",
+        de: "Unterkühlende Welle",
+        en: "Chilling Blast",
+        fr: "Explosion glaciale",
+        ru: "Леденящий взрыв",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=372082/enveloping-webs
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 372082,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_web_01.jpg").default,
+      importActive: false,
+      name: {
+        cn: "包围之网",
+        de: "Einhüllende Gespinste",
+        en: "Enveloping Webs",
+        fr: "Toiles collantes",
+        ru: "Опутывающие сети",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=373405/gossamer-burst
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 373405,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/priest_icon_chakra.jpg").default,
+      importActive: false,
+      name: {
+        cn: "薄纱爆裂",
+        de: "Gespinstausbruch",
+        en: "Gossamer Burst",
+        fr: "Explosion de toiles d’araignée",
+        ru: "Взрыв паутины",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=374112/freezing-breath
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 374112,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shadow_focusedpower.jpg").default,
+      importActive: false,
+      name: {
+        cn: "冰冻吐息",
+        de: "Gefrierender Atem",
+        en: "Freezing Breath",
+        fr: "Souffle givrant",
+        ru: "Мерзлое дыхание",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=373027/suffocating-webs
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 373027,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_web_02.jpg").default,
+      importActive: false,
+      name: {
+        cn: "窒息之网",
+        de: "Erstickende Netze",
+        en: "Suffocating Webs",
+        fr: "Toiles suffocantes",
+        ru: "Удушающие тенета",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=371983/repelling-burst
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 371983,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_vehicle_sonicshockwave.jpg").default,
+      importActive: false,
+      name: {
+        cn: "退散爆裂",
+        de: "Abwehrender Ausbruch",
+        en: "Repelling Burst",
+        fr: "Explosion repoussante",
+        ru: "Отталкивающий взрыв",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=372736/permafrost
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 372736,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_arcticwinds.jpg").default,
+      importActive: false,
+      name: {
+        cn: "永冻",
+        de: "Permafrost",
+        en: "Permafrost",
+        fr: "Gel prolongé",
+        ru: "Вечная мерзлота",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=373048/suffocating-webs
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 373048,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_web_02.jpg").default,
+      importActive: false,
+      name: {
+        cn: "窒息之网",
+        de: "Erstickende Netze",
+        en: "Suffocating Webs",
+        fr: "Toiles suffocantes",
+        ru: "Удушающие тенета",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=371979/frost-expulsion
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 371979,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_frostnova.jpg").default,
+      importActive: false,
+      name: {
+        cn: "冰霜驱逐",
+        de: "Frostausstoß",
+        en: "Frost Expulsion",
+        fr: "Expulsion de givre",
+        ru: "Исторжение льда",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=373559/glacial-plume
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 373559,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_blueflamestrike.jpg").default,
+      importActive: false,
+      name: {
+        cn: "冰川之羽",
+        de: "Gletschereruption",
+        en: "Glacial Plume",
+        fr: "Volute glaciale",
+        ru: "Ледовое перо",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=372055/icy-ground
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 372055,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_hunter_icetrap.jpg").default,
+      importActive: false,
+      name: {
+        cn: "冰封地面",
+        de: "Vereister Boden",
+        en: "Icy Ground",
+        fr: "Sol glacial",
+        ru: "Мерзлая земля",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=374466/icy-ground
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 374466,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_hunter_icetrap.jpg").default,
+      importActive: false,
+      name: {
+        cn: "冰封地面",
+        de: "Vereister Boden",
+        en: "Icy Ground",
+        fr: "Sol glacial",
+        ru: "Мерзлая земля",
+      },
+    },
+  ],
+  2635: [
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Dathea, Ascended                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    {
+      // https://www.wowhead.com/spell=384273/storm-bolt
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 384273,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_stormreach.jpg").default,
+      importActive: false,
+      name: {
+        cn: "暴风箭",
+        de: "Sturmblitz",
+        en: "Storm Bolt",
+        fr: "Éclair de tempête",
+        ru: "Удар громовержца",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=388290/cyclone
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 388290,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/creatureportrait_cyclone_nodebris.jpg").default,
+      importActive: false,
+      name: {
+        cn: "旋风",
+        de: "Wirbelsturm",
+        en: "Cyclone",
+        fr: "Cyclone",
+        ru: "Смерч",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=388407/crosswinds
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 388407,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_jewelcrafting_bg_air.jpg").default,
+      importActive: false,
+      name: {
+        cn: "纷乱之风",
+        de: "Scherwinde",
+        en: "Crosswinds",
+        fr: "Vents de travers",
+        ru: "Встречный ветер",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=376851/aerial-buffet
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 376851,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_elementalshardfoozles_air.jpg").default,
+      importActive: false,
+      name: {
+        cn: "飞空打击",
+        de: "Luftstoß",
+        en: "Aerial Buffet",
+        fr: "Frappe aérienne",
+        ru: "Воздушный удар",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=375580/zephyr-slam
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 375580,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_skyreach_wind_wall.jpg").default,
+      importActive: false,
+      name: {
+        cn: "西风猛击",
+        de: "Zephyrschmettern",
+        en: "Zephyr Slam",
+        fr: "Heurt de zéphyr",
+        ru: "Удар южного ветра",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=385812/aerial-slash
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 385812,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_specialreagentfoozles_primalistrune_white.jpg").default,
+      importActive: false,
+      name: {
+        cn: "气流斩击",
+        de: "Luftschlitzen",
+        en: "Aerial Slash",
+        fr: "Entaille aérienne",
+        ru: "Резкий удар ветра",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=389221/gale-expulsion
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 389221,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_eyeofthestorm.jpg").default,
+      importActive: false,
+      name: {
+        cn: "驱逐狂风",
+        de: "Windausstoß",
+        en: "Gale Expulsion",
+        fr: "Expulsion venteuse",
+        ru: "Пульсирующая буря",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=388410/crosswinds
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 388410,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_jewelcrafting_bg_air.jpg").default,
+      importActive: false,
+      name: {
+        cn: "纷乱之风",
+        de: "Scherwinde",
+        en: "Crosswinds",
+        fr: "Vents de travers",
+        ru: "Встречный ветер",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=381688/unstable-gusts
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 381688,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_skyreach_wind.jpg").default,
+      importActive: false,
+      name: {
+        cn: "无常阵风",
+        de: "Instabile Windstöße",
+        en: "Unstable Gusts",
+        fr: "Vents instables",
+        ru: "Нестабильные порывы",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=387943/diverted-essence
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 387943,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_vehicle_electrocharge.jpg").default,
+      importActive: false,
+      name: {
+        cn: "转移精华",
+        de: "Umgeleitete Essenz",
+        en: "Diverted Essence",
+        fr: "Essence détournée",
+        ru: "Перемещенная сущность",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=388302/raging-burst
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 388302,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_broker_missile.jpg").default,
+      importActive: false,
+      name: {
+        cn: "狂怒爆发",
+        de: "Wütender Ausbruch",
+        en: "Raging Burst",
+        fr: "Bourrasque déchaînée",
+        ru: "Яростный импульс",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=376943/cyclone
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 376943,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/creatureportrait_cyclone_nodebris.jpg").default,
+      importActive: false,
+      name: {
+        cn: "旋风",
+        de: "Wirbelsturm",
+        en: "Cyclone",
+        fr: "Cyclone",
+        ru: "Смерч",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=387849/coalescing-storm
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 387849,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_elementalspiritfoozles_air.jpg").default,
+      importActive: false,
+      name: {
+        cn: "凝结风暴",
+        de: "Sturm verdichten",
+        en: "Coalescing Storm",
+        fr: "Tempête coalescente",
+        ru: "Поднимающаяся буря",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=395501/blowback
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 395501,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_volatileair.jpg").default,
+      importActive: false,
+      name: {
+        cn: "反冲",
+        de: "Gegenwind",
+        en: "Blowback",
+        fr: "Renvoi",
+        ru: "Встречный ветер",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=391382/blowback
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 391382,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_volatileair.jpg").default,
+      importActive: false,
+      name: {
+        cn: "反冲",
+        de: "Gegenwind",
+        en: "Blowback",
+        fr: "Renvoi",
+        ru: "Встречный ветер",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=391717/static-discharge
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 391717,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_crashlightning.jpg").default,
+      importActive: false,
+      name: {
+        cn: "静电释放",
+        de: "Statische Entladung",
+        en: "Static Discharge",
+        fr: "Décharge statique",
+        ru: "Статический разряд",
+      },
+    },
+
+    // https://www.wowhead.com/spell=384637/raging-winds
+    // https://www.wowhead.com/spell=391686/conductive-mark
+    // https://www.wowhead.com/spell=387627/blowback
+    // https://www.wowhead.com/spell=375424/raging-tempest
+    // https://www.wowhead.com/spell=384292/storm-bolt
+    // https://www.wowhead.com/spell=390449/thunderbolt
+    // https://www.wowhead.com/spell=388562/unstable-gusts
+  ],
   2605: [], //  Kurog Grimtotem
   2614: [], //  Broodkeeper Diurna
   2607: [], //  Raszageth the Storm-Eater
